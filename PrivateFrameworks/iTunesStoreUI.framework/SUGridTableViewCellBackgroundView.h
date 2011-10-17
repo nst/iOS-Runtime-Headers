@@ -12,21 +12,22 @@
     UIBezierPath *_topCornersPath;
 }
 
-@property(retain) UIImage * borderImage;
 @property int borderedEdges;
+@property(retain) UIImage * borderImage;
 
 
-- (void)setBackgroundColor:(id)arg1;
-- (id)backgroundColor;
-- (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawInteriorBordersWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBorderedEdges:(int)arg1;
 - (void)setBorderImage:(id)arg1;
-- (void)_resetCachedPaths;
 - (id)borderImage;
+- (id)backgroundColor;
+- (void)setBackgroundColor:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (int)borderedEdges;
-- (id)_topCornersPath;
+- (void)setBorderedEdges:(int)arg1;
+- (void)_drawBorderToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)drawInteriorBordersWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_bottomCornersPath;
+- (id)_topCornersPath;
+- (void)_resetCachedPaths;
 
 @end

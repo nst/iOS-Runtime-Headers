@@ -8,8 +8,8 @@
 + (id)disjunctionSlotWithArray:(id)arg1;
 + (id)instanceFromPlist:(id)arg1;
 
-- (id)description;
 - (BOOL)matches:(id)arg1;
+- (id)description;
 - (id)reversed;
 
 @end

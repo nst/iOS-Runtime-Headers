@@ -22,17 +22,8 @@
 @property(copy) NSString * linkColor;
 @property(copy) NSString * vlinkColor;
 
++ (id)mf_listElements;
 
-- (BOOL)hasFocus;
-- (int)height;
-- (void)clear;
-- (void)close;
-- (int)width;
-- (id)bgColor;
-- (id)fgColor;
-- (void)setFgColor:(id)arg1;
-- (void)setBgColor:(id)arg1;
-- (void)open;
 - (id)embeds;
 - (id)plugins;
 - (id)scripts;
@@ -40,8 +31,9 @@
 - (void)setDir:(id)arg1;
 - (id)designMode;
 - (void)setDesignMode:(id)arg1;
-- (id)compatMode;
 - (id)activeElement;
+- (id)fgColor;
+- (void)setFgColor:(id)arg1;
 - (id)alinkColor;
 - (void)setAlinkColor:(id)arg1;
 - (id)linkColor;
@@ -52,9 +44,19 @@
 - (void)writeln:(id)arg1;
 - (void)captureEvents;
 - (void)releaseEvents;
+- (BOOL)hasFocus;
+- (void)open;
+- (id)bgColor;
+- (void)setBgColor:(id)arg1;
 - (id)_createDocumentFragmentWithMarkupString:(id)arg1 baseURLString:(id)arg2;
 - (id)_createDocumentFragmentWithText:(id)arg1;
 - (id)createDocumentFragmentWithMarkupString:(id)arg1 baseURL:(id)arg2;
 - (id)createDocumentFragmentWithText:(id)arg1;
+- (id)compatMode;
+- (int)height;
+- (void)clear;
+- (void)close;
+- (int)width;
+- (id)mf_createMessageQuoteElement;
 
 @end

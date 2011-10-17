@@ -24,18 +24,18 @@
 
 + (id)wrapperWithURL:(id)arg1 delegate:(id)arg2 connections:(id)arg3;
 
-- (void)dealloc;
-- (id)delegate;
-- (id)metadata;
 - (id)connections;
-- (id)outputFileURL;
 - (void)setMetadata:(id)arg1;
-- (void)setReceivedDidStopRecording:(BOOL)arg1;
-- (BOOL)receivedDidStopRecording;
+- (id)metadata;
+- (id)delegate;
 - (id)didStopRecordingReason;
-- (id)initWithURL:(id)arg1 delegate:(id)arg2 connections:(id)arg3;
 - (void)setDidStopRecordingReason:(id)arg1;
+- (BOOL)receivedDidStopRecording;
+- (void)setReceivedDidStopRecording:(BOOL)arg1;
 - (BOOL)receivedDidStartRecording;
 - (void)setReceivedDidStartRecording:(BOOL)arg1;
+- (id)outputFileURL;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2 connections:(id)arg3;
+- (void)dealloc;
 
 @end

@@ -6,7 +6,7 @@
 }
 
 
-- (id)initWithMemory:(id)arg1;
 - (BOOL)isSection32;
+- (id)initWithMemory:(id)arg1;
 
 @end

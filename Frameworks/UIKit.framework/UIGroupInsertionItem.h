@@ -11,9 +11,9 @@
 }
 
 
-- (id)initWithExistingGroup:(int)arg1 andRowRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)initWithNewGroupBeforeGroup:(int)arg1 andRowCount:(int)arg2;
-- (int)groupIndex;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (int)groupIndex;
+- (id)initWithNewGroupBeforeGroup:(int)arg1 andRowCount:(int)arg2;
+- (id)initWithExistingGroup:(int)arg1 andRowRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 
 @end

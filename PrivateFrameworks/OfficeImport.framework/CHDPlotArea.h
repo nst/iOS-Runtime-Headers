@@ -14,17 +14,17 @@
 }
 
 
-- (void)dealloc;
-- (void)setGraphicProperties:(id)arg1;
-- (bool)isCategoryAxesReversed;
+- (bool)isCategoryAxesReversed:(bool)arg1;
 - (bool)hasSecondaryYAxisDeleted;
 - (void)markSecondaryAxes;
 - (bool)containsVolumeStockType;
 - (bool)hasSecondaryAxis;
-- (id)initWithChart:(id)arg1;
+- (id)axes;
 - (id)chartTypes;
 - (void)setContainsVolumeStockType:(bool)arg1;
-- (id)axes;
+- (void)setGraphicProperties:(id)arg1;
 - (id)graphicProperties;
+- (id)initWithChart:(id)arg1;
+- (void)dealloc;
 
 @end

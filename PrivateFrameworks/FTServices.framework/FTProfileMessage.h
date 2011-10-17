@@ -2,28 +2,41 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSString, NSDictionary;
+@class NSDictionary, NSData, NSString;
 
-@interface FTProfileMessage : FTMessage  {
-    NSString *_profileID;
+@interface FTProfileMessage : FTMessage <NSCopying> {
+    NSData *_pushToken;
     NSString *_authToken;
+    NSString *_profileID;
     NSDictionary *_responseAlert;
 }
 
-@property(copy) NSDictionary * responseAlertInfo;
 @property(copy) NSString * profileID;
 @property(copy) NSString * authToken;
+@property(copy) NSData * pushToken;
+@property(copy) NSDictionary * responseAlertInfo;
 
 
+- (int)command;
 - (void)setAuthToken:(id)arg1;
 - (id)authToken;
-- (void)dealloc;
-- (void)handleResponseDictionary:(id)arg1;
-- (void)setResponseAlertInfo:(id)arg1;
-- (id)profileID;
-- (void)setProfileID:(id)arg1;
+- (void)setPushToken:(id)arg1;
+- (id)pushToken;
 - (id)responseAlertInfo;
+- (void)setProfileID:(id)arg1;
+- (id)profileID;
+- (void)setResponseAlertInfo:(id)arg1;
+- (void)handleResponseDictionary:(id)arg1;
+- (id)additionalMessageHeadersForOutgoingPush;
 - (id)additionalMessageHeaders;
-- (BOOL)hasRequiredKeys;
+- (int)responseCommand;
+- (BOOL)hasRequiredKeys:(id*)arg1;
+- (BOOL)wantsBagKey;
+- (BOOL)wantsHTTPHeaders;
+- (BOOL)wantsCompressedBody;
+- (BOOL)wantsBinaryPush;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

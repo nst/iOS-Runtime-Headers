@@ -37,26 +37,6 @@
 @property(copy) NSString * selectedStylesheetSet;
 
 
-- (id)createNodeIterator:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
-- (id)documentElement;
-- (id)getComputedStyle:(id)arg1 pseudoElement:(id)arg2;
-- (id)getElementsByTagName:(id)arg1;
-- (id)images;
-- (id)URL;
-- (id)doctype;
-- (id)body;
-- (id)createRange;
-- (id)createDocumentFragment;
-- (id)links;
-- (id)forms;
-- (id)getElementById:(id)arg1;
-- (id)createCSSStyleDeclaration;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (id)characterSet;
-- (id)head;
-- (id)domain;
-- (void)setBody:(id)arg1;
 - (id)implementation;
 - (id)inputEncoding;
 - (id)xmlEncoding;
@@ -69,6 +49,10 @@
 - (id)defaultView;
 - (id)styleSheets;
 - (id)referrer;
+- (id)cookie;
+- (void)setCookie:(id)arg1;
+- (void)setBody:(id)arg1;
+- (id)head;
 - (id)applets;
 - (id)anchors;
 - (id)lastModified;
@@ -76,10 +60,12 @@
 - (void)setCharset:(id)arg1;
 - (id)defaultCharset;
 - (id)readyState;
+- (id)characterSet;
 - (id)preferredStylesheetSet;
 - (id)selectedStylesheetSet;
 - (void)setSelectedStylesheetSet:(id)arg1;
-- (id)createElement:(id)arg1;
+- (id)compatMode;
+- (id)createDocumentFragment;
 - (id)createTextNode:(id)arg1;
 - (id)createComment:(id)arg1;
 - (id)createCDATASection:(id)arg1;
@@ -126,16 +112,28 @@
 - (id)querySelectorAll:(id)arg1;
 - (id)createTouch:(id)arg1 target:(id)arg2 identifier:(int)arg3 pageX:(int)arg4 pageY:(int)arg5 screenX:(int)arg6 screenY:(int)arg7;
 - (id)createTouchList;
-- (id)cookie;
-- (void)setCookie:(id)arg1;
+- (id)domain;
+- (id)createNodeIterator:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
+- (id)getElementsByTagName:(id)arg1;
+- (id)forms;
+- (id)links;
+- (id)documentElement;
+- (id)createElement:(id)arg1;
+- (id)doctype;
+- (id)getComputedStyle:(id)arg1 pseudoElement:(id)arg2;
+- (id)URL;
+- (id)createRange;
+- (id)body;
+- (id)getElementById:(id)arg1;
+- (id)createCSSStyleDeclaration;
+- (id)title;
+- (id)images;
+- (void)setTitle:(id)arg1;
 - (id)_focusableNodes;
 - (id)_documentRange;
-- (id)_createRangeWithNode:(id)arg1;
-- (id)URLWithAttributeString:(id)arg1;
 - (id)webFrame;
-- (id)mf_head;
-- (struct __DDScanQuery { }*)dd_createScanQuery;
-- (BOOL)dd_urlifyResults:(id)arg1 operation:(id)arg2;
+- (id)URLWithAttributeString:(id)arg1;
+- (id)createBlockPlaceholder;
 - (void)dd_resetResults;
 
 @end

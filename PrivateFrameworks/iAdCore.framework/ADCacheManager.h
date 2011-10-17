@@ -13,22 +13,22 @@
 + (id)sharedCacheManager;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)discardCachesForBundleIdentifier:(id)arg1;
-- (id)cacheForBundleIdentifier:(id)arg1 specificationIdentifier:(id)arg2;
-- (void)setCache:(id)arg1 forBundleIdentifier:(id)arg2 specificationIdentifier:(id)arg3;
-- (void)removeControllerFromAnyCaches:(id)arg1;
-- (void)removeCacheForBundleIdentifier:(id)arg1 specificationIdentifier:(id)arg2;
-- (void)updatePropertiesForController:(id)arg1 withSpecification:(id)arg2;
-- (void)loadDataForController:(id)arg1 withSpecification:(id)arg2;
-- (void)stopLoadingDataForController:(id)arg1 withSpecification:(id)arg2;
-- (void)clearAllCaches;
-- (id)adCaches;
 - (void)setAdCaches:(id)arg1;
-- (void)release;
-- (id)init;
+- (id)adCaches;
+- (void)clearAllCaches;
+- (void)discardCachesForBundleIdentifier:(id)arg1;
+- (void)stopLoadingDataForController:(id)arg1 withSpecification:(id)arg2;
+- (void)loadDataForController:(id)arg1 withSpecification:(id)arg2;
+- (void)updatePropertiesForController:(id)arg1 withSpecification:(id)arg2;
+- (void)removeControllerFromAnyCaches:(id)arg1;
+- (void)setCache:(id)arg1 forBundleIdentifier:(id)arg2 specificationIdentifier:(id)arg3;
+- (id)cacheForBundleIdentifier:(id)arg1 specificationIdentifier:(id)arg2;
+- (void)removeCache:(id)arg1 forBundleIdentifier:(id)arg2 specificationIdentifier:(id)arg3;
+- (unsigned int)retainCount;
 - (id)retain;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)retainCount;
 - (id)autorelease;
+- (id)init;
+- (oneway void)release;
 
 @end

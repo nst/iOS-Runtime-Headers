@@ -6,9 +6,9 @@
 }
 
 
-- (BOOL)shouldProcessInBackground;
 - (BOOL)authenticationRequired;
-- (id)key;
+- (BOOL)shouldProcessInBackground;
 - (void)send;
+- (id)key;
 
 @end

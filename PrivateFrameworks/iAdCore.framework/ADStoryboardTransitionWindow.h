@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class UIImageView, UIView, ADBannerData, <ADStoryboardTransitionWindowDelegate>, UIWebView, ADStoryboardController;
+@class UIImageView, UIView, ADBannerData, <ADStoryboardTransitionWindowDelegate>, ADWebView, ADStoryboardController;
 
 @interface ADStoryboardTransitionWindow : UIWindow  {
     ADStoryboardController *_storyboard;
@@ -11,79 +11,60 @@
     UIImageView *_adImageView;
     ADBannerData *_bannerData;
     BOOL _adReady;
-    BOOL _revealTransitionStillRunning;
-    UIWebView *_bannerWebView;
+    ADWebView *_bannerWebView;
     struct CGImage { } *_screenBeforeTransitionIn;
     int _authoredTransitionState;
 }
 
-@property int authoredTransitionState;
-@property struct CGImage { }* screenBeforeTransitionIn;
-@property(retain) UIWebView * bannerWebView;
-@property BOOL revealTransitionStillRunning;
-@property BOOL adReady;
-@property(retain) ADBannerData * bannerData;
-@property(retain) UIImageView * adImageView;
-@property(retain) UIView * containerView;
-@property <ADStoryboardTransitionWindowDelegate> * adDelegate;
 @property(retain) ADStoryboardController * storyboard;
+@property <ADStoryboardTransitionWindowDelegate> * adDelegate;
+@property(retain) struct CGImage { }* screenBeforeTransitionIn;
+@property(retain) UIView * containerView;
+@property(retain) UIImageView * adImageView;
+@property(retain) ADBannerData * bannerData;
+@property BOOL adReady;
+@property(retain) ADWebView * bannerWebView;
+@property int authoredTransitionState;
 
-+ (void)hideAppSwitcher;
-+ (void)_calculateOffsetForTaskSwitcherInOrientation:(int)arg1;
-+ (void)_setOwnerWindow:(id)arg1;
-+ (void)showAppSwitcher;
 
-- (void)prepareRemoteSheet;
-- (void)dismissRemoteSheet;
-- (void)dismissAd;
-- (void)authoredTransitionInComplete;
-- (id)storyboard;
-- (id)containerView;
-- (id)adImageView;
-- (BOOL)adReady;
-- (struct CGImage { }*)screenBeforeTransitionIn;
-- (id)initWithBannerData:(id)arg1 delegate:(id)arg2;
-- (void)setStoryboard:(id)arg1;
-- (int)_adOrientation;
-- (int)_hostOrientation;
-- (int)_slideTransitionOrientation;
-- (void)_doTransitionBegin;
-- (void)_doTransitionCompleted;
-- (void)_undoTransitionBegin;
-- (void)_undoTransitionCompleted;
-- (struct CGSize { float x1; float x2; })_sizeForAdOrientation;
-- (id)_transitionAdImage;
-- (id)_transitionImage;
-- (struct CGPoint { float x1; float x2; })_transitionOffset;
-- (int)_transitionType;
-- (void)_slideLayout;
-- (void)_doSlide;
-- (void)_undoSlide;
-- (void)_revealLayoutWithOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_doCompleteReveal;
-- (void)_doBeginReveal;
-- (void)_undoReveal;
-- (void)_helper:(id)arg1;
-- (void)_dispatchDOMEventToBannerView:(id)arg1;
-- (void)_doBeginAuthored;
-- (void)readyForAuthoredTransitionIn;
-- (void)mainContentSignalsReady;
-- (void)presentAd;
-- (void)adIsReady;
-- (int)authoredTransitionState;
-- (void)setAuthoredTransitionState:(int)arg1;
-- (void)setScreenBeforeTransitionIn:(struct CGImage { }*)arg1;
-- (id)bannerWebView;
-- (void)setBannerWebView:(id)arg1;
-- (BOOL)revealTransitionStillRunning;
-- (void)setRevealTransitionStillRunning:(BOOL)arg1;
-- (void)setAdReady:(BOOL)arg1;
-- (void)setAdImageView:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setContainerView:(id)arg1;
+- (void)setAuthoredTransitionState:(int)arg1;
+- (int)authoredTransitionState;
+- (struct CGImage { }*)screenBeforeTransitionIn;
+- (id)bannerWebView;
+- (void)setAdReady:(BOOL)arg1;
+- (BOOL)adReady;
+- (void)setAdImageView:(id)arg1;
+- (id)adImageView;
 - (id)adDelegate;
+- (void)_undoSlide;
+- (void)_undoTransitionBegin;
+- (void)_doBeginAuthored;
+- (BOOL)_transitionIsAuthored;
+- (void)_doTransitionBegin;
+- (void)_dispatchDOMEventToBannerView:(id)arg1;
+- (void)_doSlide;
+- (void)setBannerWebView:(id)arg1;
+- (void)setScreenBeforeTransitionIn:(struct CGImage { }*)arg1;
+- (void)_undoTransitionCompleted;
+- (void)_doTransitionCompleted;
+- (void)_slideLayout;
+- (void)mainContentSignalsReady;
+- (void)adIsReady;
 - (void)setAdDelegate:(id)arg1;
+- (void)dismissAd;
+- (void)dismissRemoteSheet;
+- (void)presentAd;
+- (void)prepareRemoteSheet;
+- (id)initWithBannerData:(id)arg1 delegate:(id)arg2;
 - (id)bannerData;
+- (void)setStoryboard:(id)arg1;
 - (void)setBannerData:(id)arg1;
+- (void)authoredTransitionInComplete;
+- (void)readyForAuthoredTransitionIn;
+- (id)containerView;
+- (id)storyboard;
 - (void)dealloc;
 
 @end

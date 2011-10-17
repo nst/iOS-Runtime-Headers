@@ -7,10 +7,11 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class CMMotionManager, NSTimer;
+@class CMMotionManager, NSTimer, CLLocationManager;
 
 @interface CoreMotionManager : NSObject  {
     CMMotionManager *m_motionManager;
+    CLLocationManager *m_locationManager;
     struct HashSet<WebCore::DeviceMotionClientIPhone*,WTF::PtrHash<WebCore::DeviceMotionClientIPhone*>,WTF::HashTraits<WebCore::DeviceMotionClientIPhone*> > { 
         struct HashTable<WebCore::DeviceMotionClientIPhone*,WebCore::DeviceMotionClientIPhone*,WTF::IdentityExtractor<WebCore::DeviceMotionClientIPhone*>,WTF::PtrHash<WebCore::DeviceMotionClientIPhone*>,WTF::HashTraits<WebCore::DeviceMotionClientIPhone*>,WTF::HashTraits<WebCore::DeviceMotionClientIPhone*> > { 
             struct DeviceMotionClientIPhone {} **m_table; 
@@ -31,23 +32,25 @@
     } m_deviceOrientationClients;
     NSTimer *m_updateTimer;
     BOOL m_gyroAvailable;
+    BOOL m_headingAvailable;
 }
 
 + (id)sharedManager;
 
+- (void)addMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
+- (void)removeMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
+- (void)addOrientationClient:(struct DeviceOrientationClientIPhone { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; boolx5; }*)arg1;
+- (void)removeOrientationClient:(struct DeviceOrientationClientIPhone { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; boolx5; }*)arg1;
+- (BOOL)gyroAvailable;
+- (void).cxx_destruct;
+- (void)initializeOnMainThread;
+- (void)checkClientStatus;
+- (BOOL)headingAvailable;
+- (void)sendMotionData:(id)arg1 withHeading:(id)arg2;
+- (void)sendAccelerometerData:(id)arg1;
+- (id).cxx_construct;
 - (void)update;
 - (id)init;
 - (void)dealloc;
-- (void).cxx_destruct;
-- (id).cxx_construct;
-- (void)addOrientationClient:(struct DeviceOrientationClientIPhone { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; boolx5; }*)arg1;
-- (void)removeOrientationClient:(struct DeviceOrientationClientIPhone { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; boolx5; }*)arg1;
-- (void)initializeOnMainThread;
-- (void)checkClientStatus;
-- (void)sendMotionData:(id)arg1;
-- (void)sendAccelerometerData:(id)arg1;
-- (void)addMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
-- (void)removeMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
-- (BOOL)gyroAvailable;
 
 @end

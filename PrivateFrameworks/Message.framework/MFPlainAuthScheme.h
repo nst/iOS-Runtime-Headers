@@ -6,10 +6,10 @@
 }
 
 
-- (id)humanReadableName;
-- (Class)authenticatorClass;
-- (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
 - (id)authenticatorForAccount:(id)arg1 connection:(id)arg2;
+- (id)humanReadableName;
+- (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
+- (Class)authenticatorClass;
 - (id)name;
 
 @end

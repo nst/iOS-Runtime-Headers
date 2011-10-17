@@ -11,10 +11,10 @@
 }
 
 
-- (void)dealloc;
-- (id)initWithConnection:(id)arg1 data:(id)arg2 error:(id)arg3;
-- (void)connectionDidReceiveData:(id)arg1;
-- (void)connectionDidReceiveDataLengthReceived:(id)arg1;
 - (void)connectionDidFailWithError:(id)arg1;
+- (id)initWithConnection:(id)arg1 data:(id)arg2 error:(id)arg3;
+- (void)connectionDidReceiveDataLengthReceived:(id)arg1;
+- (void)connectionDidReceiveData:(id)arg1;
+- (void)dealloc;
 
 @end

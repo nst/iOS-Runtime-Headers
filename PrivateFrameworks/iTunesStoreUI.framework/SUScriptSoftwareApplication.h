@@ -12,21 +12,30 @@
 @property(readonly) NSString * bundleID;
 @property(readonly) NSString * bundleVersion;
 @property(readonly) NSNumber * dsID;
+@property(readonly) NSNumber * ratingRank;
+@property(readonly) NSString * ratingSystem;
+@property(readonly) NSString * softwareType;
 @property(readonly) NSString * storeFrontID;
 @property(readonly) NSNumber * versionID;
+@property(readonly) NSString * softwareTypeNewsstand;
 
 + (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
-- (void)dealloc;
-- (id)initWithApplication:(id)arg1;
-- (id)attributeKeys;
-- (id)versionID;
-- (id)storeFrontID;
 - (id)bundleVersion;
-- (id)dsID;
 - (id)adamID;
 - (id)bundleID;
-- (id)scriptAttributeKeys;
+- (id)attributeKeys;
+- (void)dealloc;
+- (id)softwareTypeNewsstand;
+- (id)versionID;
+- (id)storeFrontID;
+- (id)ratingRank;
+- (id)dsID;
+- (id)initWithApplication:(id)arg1;
+- (id)softwareType;
+- (id)ratingSystem;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

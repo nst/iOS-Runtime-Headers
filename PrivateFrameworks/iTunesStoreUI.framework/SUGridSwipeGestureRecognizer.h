@@ -12,7 +12,7 @@
 
 
 - (void)reset;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end

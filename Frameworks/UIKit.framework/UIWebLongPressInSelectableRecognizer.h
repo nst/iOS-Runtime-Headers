@@ -12,7 +12,7 @@
 
 
 - (void)setDocumentView:(id)arg1;
-- (void)setState:(int)arg1;
 - (id)documentView;
+- (void)setState:(int)arg1;
 
 @end

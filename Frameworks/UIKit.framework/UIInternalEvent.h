@@ -7,7 +7,7 @@
 }
 
 
-- (struct __GSEvent { }*)_gsEvent;
 - (void)_setGSEvent:(struct __GSEvent { }*)arg1;
+- (struct __GSEvent { }*)_gsEvent;
 
 @end

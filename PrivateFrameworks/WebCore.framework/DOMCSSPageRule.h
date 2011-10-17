@@ -11,8 +11,8 @@
 @property(retain,readonly) DOMCSSStyleDeclaration * style;
 
 
-- (id)style;
 - (id)selectorText;
 - (void)setSelectorText:(id)arg1;
+- (id)style;
 
 @end

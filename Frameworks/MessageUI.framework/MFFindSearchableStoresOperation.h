@@ -6,7 +6,7 @@
 }
 
 
-- (void)main;
 - (int)type;
+- (void)main;
 
 @end

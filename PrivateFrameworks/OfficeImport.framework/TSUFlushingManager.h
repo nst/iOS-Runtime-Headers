@@ -34,6 +34,7 @@
     unsigned int _clock;
     BOOL _alwaysFlushing;
     BOOL _stopFlushing;
+    BOOL _stopFlushingWhenQueueEmpty;
     BOOL _isFlushing;
     <TSUFlushable> *_flushingObject;
     BOOL _isWaitingForFlush;
@@ -43,19 +44,11 @@
     NSThread *_bgThread;
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)_singletonAlloc;
 + (id)sharedManager;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)removeObject:(id)arg1;
-- (void)release;
-- (id)init;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (unsigned int)retainCount;
-- (id)autorelease;
-- (void)addObject:(id)arg1;
+- (void)didEnterBackground;
 - (void)protectObject:(id)arg1;
 - (void)stopProtectingObject:(id)arg1;
 - (void)doneWithObject:(id)arg1;
@@ -63,16 +56,27 @@
 - (void)safeToFlush:(id)arg1 wasAccessed:(BOOL)arg2;
 - (void)memoryLevelIncreased:(int)arg1 was:(int)arg2;
 - (void)memoryLevelDecreased:(int)arg1 was:(int)arg2;
-- (void)_startFlushingObjects;
-- (void)_stopFlushingObjects;
-- (void)_backgroundThread:(id)arg1;
-- (BOOL)isNewObject:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned int x5[2]; }*)arg1;
-- (struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned int x5[2]; }*)eraseInfoForObject:(id)arg1;
-- (void)insertObjectInfo:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned int x5[2]; }*)arg1;
-- (void)transferNewObjects;
-- (void)advanceClock;
 - (BOOL)controlsActiveObject:(id)arg1;
 - (BOOL)controlsInactiveObject:(id)arg1;
+- (void)_startFlushingObjects;
+- (void)_stopFlushingObjects;
+- (void)advanceClock;
 - (void)_didUseObject:(id)arg1;
+- (struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned int x5[2]; }*)eraseInfoForObject:(id)arg1;
+- (void)insertObjectInfo:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned int x5[2]; }*)arg1;
+- (void)_flushAllEligible;
+- (void)_backgroundThread:(id)arg1;
+- (BOOL)isNewObject:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned int x5[2]; }*)arg1;
+- (void)transferNewObjects;
+- (void)willEnterForeground;
+- (void)removeObject:(id)arg1;
+- (unsigned int)retainCount;
+- (id)retain;
+- (void)addObject:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
+- (void)release;
+- (void)dealloc;
 
 @end

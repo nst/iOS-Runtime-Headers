@@ -7,7 +7,7 @@
 }
 
 
-- (id)initWithMemory:(id)arg1;
 - (BOOL)isSection64;
+- (id)initWithMemory:(id)arg1;
 
 @end

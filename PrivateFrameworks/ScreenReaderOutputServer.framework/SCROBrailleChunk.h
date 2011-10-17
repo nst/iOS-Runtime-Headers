@@ -6,6 +6,7 @@
 
 @interface SCROBrailleChunk : NSObject <NSCopying> {
     NSString *_text;
+    NSString *_language;
     int _contractionMode;
     BOOL _showEightDot;
     BOOL _isFocused;
@@ -23,17 +24,21 @@
     } _brailleSelection;
 }
 
+@property(readonly) NSString * language;
+
 + (void)initialize;
 
-- (BOOL)hasSelection;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithText:(id)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 token:(int)arg3 focused:(BOOL)arg4 contractionMode:(int)arg5 showEightDot:(BOOL)arg6 showDotsSevenAndEight:(BOOL)arg7;
+- (id)language;
 - (void)translate;
-- (BOOL)focused;
 - (BOOL)isFocusedOrSelected;
 - (int)locationForIndex:(int)arg1;
 - (id)brailleWithIBeamLocation:(int*)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
+- (id)initWithText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5 contractionMode:(int)arg6 showEightDot:(BOOL)arg7 showDotsSevenAndEight:(BOOL)arg8;
+- (id)_tableIdentifierForLanguage:(id)arg1;
+- (BOOL)hasSelection;
+- (BOOL)focused;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (int)token;
 
 @end

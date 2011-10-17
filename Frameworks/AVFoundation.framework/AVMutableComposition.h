@@ -13,19 +13,19 @@
 
 + (id)composition;
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (void)removeTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
-- (id)_initWithComposition:(id)arg1;
-- (id)_newTrackForIndex:(long)arg1;
 - (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)insertTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1 ofAsset:(id)arg2 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 error:(id*)arg4;
 - (void)insertEmptyTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
+- (void)removeTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
 - (void)scaleTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1 toDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (id)addMutableTrackWithMediaType:(id)arg1 preferredTrackID:(int)arg2;
 - (void)removeTrack:(id)arg1;
 - (id)mutableTrackCompatibleWithTrack:(id)arg1;
+- (id)_initWithComposition:(id)arg1;
+- (id)_newTrackForIndex:(long)arg1;
 - (void)_notifyAllTracksThatSegmentsDidChange;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (id)tracks;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

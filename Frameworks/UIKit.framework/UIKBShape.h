@@ -4,7 +4,7 @@
 
 @class UIKBGeometry;
 
-@interface UIKBShape : NSObject <NSCoding> {
+@interface UIKBShape : NSObject <NSCoding, NSCopying> {
     UIKBGeometry *m_geometry;
     struct CGRect { 
         struct CGPoint { 
@@ -39,30 +39,38 @@
     unsigned int m_uid;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } originalFrame;
-@property(readonly) unsigned int uid;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } paddedFrame;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } frame;
 @property(retain) UIKBGeometry * geometry;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } originalFrame;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } paddedFrame;
+@property(readonly) unsigned int uid;
 
++ (id)shapeByCombining:(id)arg1 withShape:(id)arg2;
 + (id)shape;
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)scaleWidth:(float)arg1;
+- (void)addRectFrom:(id)arg1 widthFraction:(float)arg2 adjustOrigin:(BOOL)arg3;
+- (void)addRectFrom:(id)arg1;
 - (void)setFrameOnly:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })originalFrame;
 - (void)makeLikeOther:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 resetOriginalFrame:(BOOL)arg2;
 - (void)setPaddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (unsigned int)uid;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedFrame;
 - (void)setGeometry:(id)arg1;
 - (id)geometry;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })originalFrame;
+- (BOOL)isEmpty;
 - (void)encodeWithCoder:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithGeometry:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 paddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
 
 @end

@@ -12,7 +12,7 @@
 
 
 - (id)animationName;
-- (double)elapsedTime;
 - (void)initWebKitAnimationEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 animationNameArg:(id)arg4 elapsedTimeArg:(double)arg5;
+- (double)elapsedTime;
 
 @end

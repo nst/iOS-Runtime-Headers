@@ -11,24 +11,20 @@
     unsigned int _selectedSegmentIndex;
 }
 
-@property(readonly) float minimumWidth;
+@property <GKRibbonSegmentedControlDelegate> * delegate;
 @property(readonly) float defaultHeight;
+@property(readonly) float minimumWidth;
 @property unsigned int selectedSegmentIndex;
-@property(retain) <GKRibbonSegmentedControlDelegate> * delegate;
 
 
 - (void)_tap:(id)arg1;
-- (id)_todayString;
-- (id)_thisWeekString;
-- (id)_allTimeString;
-- (float)minimumWidth;
+- (void)setDelegate:(id)arg1;
+- (float)defaultHeight;
 - (unsigned int)selectedSegmentIndex;
 - (void)setSelectedSegmentIndex:(unsigned int)arg1;
-- (float)defaultHeight;
-- (void)dealloc;
+- (float)minimumWidth;
+- (id)delegate;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 
 @end

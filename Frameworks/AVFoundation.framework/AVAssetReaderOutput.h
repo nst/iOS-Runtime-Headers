@@ -9,6 +9,7 @@
 }
 
 @property(readonly) NSString * mediaType;
+@property BOOL alwaysCopiesSampleData;
 @property(getter=_weakReferenceToAssetReader,readonly) AVWeakReference * weakReferenceToAssetReader;
 @property(getter=_status,readonly) int status;
 @property(getter=_extractionID,setter=_setExtractionID:) int extractionID;
@@ -18,29 +19,29 @@
 + (void)initialize;
 
 - (void)finalize;
-- (void)release;
-- (id)init;
-- (id)retain;
-- (void)dealloc;
-- (id)mediaType;
-- (void)_setFigAssetReader:(struct OpaqueFigAssetReader { }*)arg1;
-- (id)_weakReferenceToAssetReader;
-- (int)_extractionID;
-- (void)_setExtractionID:(int)arg1;
-- (void)_markAsFinished;
-- (struct opaqueCMSampleBuffer { }*)copyNextSampleBuffer;
+- (void)setAlwaysCopiesSampleData:(BOOL)arg1;
 - (void)_figAssetReaderSampleBufferDidBecomeAvailableForExtractionID:(int)arg1;
 - (void)_figAssetReaderDecodeError;
 - (void)_figAssetReaderFailed;
+- (void)_setFigAssetReader:(struct OpaqueFigAssetReader { }*)arg1;
+- (id)_weakReferenceToAssetReader;
 - (BOOL)_trimsSampleDurations;
-- (id)_figAssetReaderExtractionOptions;
-- (id)_asset;
+- (BOOL)alwaysCopiesSampleData;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
+- (int)_extractionID;
+- (void)_markAsFinished;
+- (id)_figAssetReaderExtractionOptions;
+- (void)_setExtractionID:(int)arg1;
+- (struct OpaqueFigAssetReader { }*)_figAssetReader;
 - (void)_attachToWeakReferenceToAssetReader:(id)arg1;
 - (BOOL)_isFinished;
 - (BOOL)_prepareForReadingReturningError:(id*)arg1;
 - (void)_cancelReading;
-- (struct OpaqueFigAssetReader { }*)_figAssetReader;
 - (int)_status;
+- (struct opaqueCMSampleBuffer { }*)copyNextSampleBuffer;
+- (id)_asset;
+- (id)mediaType;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, NSURL, AVFileValidator;
+@class MPAVItem, NSURL;
 
 @interface MPMovieInternal : NSObject  {
     MPAVItem *_item;
     NSURL *_url;
-    AVFileValidator *_fileValidator;
     int _movieSourceType;
     double _startPlaybackTime;
     double _endPlaybackTime;

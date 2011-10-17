@@ -6,6 +6,7 @@
 }
 
 
+- (void)_repopupIfNecessaryWithNotification:(id)arg1;
 - (void)_appResumed:(id)arg1;
 - (void)_appSuspended:(id)arg1;
 - (id)init;

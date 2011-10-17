@@ -7,16 +7,16 @@
 }
 
 
-- (void)dealloc;
-- (unsigned int)serializeObject:(id)arg1;
-- (id)initForSerializerStream:(id)arg1;
 - (id)serializerStream;
-- (unsigned int)serializeData:(id)arg1;
-- (unsigned int)serializeString:(id)arg1;
-- (unsigned int)serializeList:(id)arg1;
-- (unsigned int)serializeListItemIn:(id)arg1 at:(unsigned int)arg2;
-- (unsigned int)serializePropertyList:(id)arg1;
-- (unsigned int)serializePListKeyIn:(id)arg1 key:(id)arg2 value:(id)arg3;
+- (id)initForSerializerStream:(id)arg1;
 - (unsigned int)serializePListValueIn:(id)arg1 key:(id)arg2 value:(id)arg3;
+- (unsigned int)serializePListKeyIn:(id)arg1 key:(id)arg2 value:(id)arg3;
+- (unsigned int)serializeObject:(id)arg1;
+- (unsigned int)serializeListItemIn:(id)arg1 at:(unsigned int)arg2;
+- (unsigned int)serializeString:(id)arg1;
+- (unsigned int)serializePropertyList:(id)arg1;
+- (unsigned int)serializeList:(id)arg1;
+- (unsigned int)serializeData:(id)arg1;
+- (void)dealloc;
 
 @end

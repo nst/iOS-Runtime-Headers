@@ -9,25 +9,25 @@
     NSString *_hostName;
 }
 
-@property(readonly) NSString * scheme;
 @property(getter=isSecure) BOOL secure;
 @property(readonly) NSString * hostName;
+@property(readonly) NSString * scheme;
 
-+ (id)productionSyncHost;
-+ (id)productionLandingPageHost;
 + (id)developmentSyncHost;
++ (id)productionLandingPageHost;
++ (id)productionSyncHost;
 
+- (id)syncServiceURL;
+- (id)syncCompleteServiceURL;
+- (id)generateTokenServiceURL;
+- (id)getPINStatusServiceURL;
+- (id)generatePINServiceURL;
+- (id)loginURLForToken:(id)arg1;
+- (id)initWithHostName:(id)arg1 secure:(BOOL)arg2;
 - (id)hostName;
 - (void)setSecure:(BOOL)arg1;
 - (BOOL)isSecure;
 - (id)scheme;
 - (void)dealloc;
-- (id)initWithHostName:(id)arg1 secure:(BOOL)arg2;
-- (id)loginURLForToken:(id)arg1;
-- (id)generatePINServiceURL;
-- (id)getPINStatusServiceURL;
-- (id)generateTokenServiceURL;
-- (id)syncCompleteServiceURL;
-- (id)syncServiceURL;
 
 @end

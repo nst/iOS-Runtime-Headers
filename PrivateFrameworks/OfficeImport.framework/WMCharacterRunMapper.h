@@ -14,18 +14,18 @@
 
 + (void)addNonCollapsableSpanAt:(id)arg1 withState:(id)arg2;
 
-- (id)initWithText:(id)arg1;
-- (void)dealloc;
-- (int)defaultTabWidth;
-- (id)boldStyle;
-- (void)mapAt:(id)arg1 withState:(id)arg2;
 - (id)initWithWDCharacterRun:(id)arg1 parent:(id)arg2;
-- (BOOL)isDeleted;
 - (void)map1At:(id)arg1 withState:(id)arg2;
+- (id)createCharacterStyle;
+- (unsigned int)countAndStripLeadingTabs;
 - (void)mapSubstring:(id)arg1 at:(id)arg2;
 - (void)mapTabs:(unsigned int)arg1 at:(id)arg2 afterText:(id)arg3;
-- (unsigned int)countAndStripLeadingTabs;
-- (id)createCharacterStyle;
+- (id)boldStyle;
+- (void)mapAt:(id)arg1 withState:(id)arg2;
+- (int)defaultTabWidth;
 - (id)baseStyle;
+- (BOOL)isDeleted;
+- (id)initWithText:(id)arg1;
+- (void)dealloc;
 
 @end

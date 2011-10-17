@@ -12,11 +12,11 @@
 
 - (id)MIMEType;
 - (void)dealloc;
-- (id)initWithMediaObject:(id)arg1;
-- (id)copyPreparationOperations;
-- (id)newUnfilteredInputSource;
 - (id)_bubbleImageForImage:(id)arg1;
-- (id)composeImage;
+- (id)newUnfilteredInputSource;
+- (id)copyPreparationOperations;
 - (void)generateComposeImage;
+- (id)initWithMediaObject:(id)arg1;
+- (id)composeImage;
 
 @end

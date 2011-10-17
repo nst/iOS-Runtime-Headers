@@ -5,54 +5,63 @@
 @class SUStorePageProtocol, SUPageSectionGroup, SUItem, NSString, SUItemList;
 
 @interface SUStructuredPage : NSObject <NSCopying> {
+    BOOL _artworkShouldFitWidth;
+    float _artworkWidth;
     BOOL _didShowDialog;
     int _displayStyle;
     SUItem *_item;
     SUItemList *_itemList;
     SUStorePageProtocol *_protocol;
     SUPageSectionGroup *_sectionsGroup;
+    BOOL _shouldHideSignInButton;
     NSString *_title;
     int _type;
     BOOL _wantsIndexBar;
 }
 
 @property(readonly) BOOL hasDisplayableContent;
-@property(readonly) BOOL wantsIndexBar;
-@property int type;
-@property(retain) NSString * title;
-@property(retain) SUPageSectionGroup * sectionsGroup;
-@property(retain) SUStorePageProtocol * protocol;
-@property(retain) SUItemList * itemList;
 @property(retain) SUItem * item;
+@property(retain) SUItemList * itemList;
+@property(retain) SUPageSectionGroup * sectionsGroup;
+@property(retain) NSString * title;
+@property(readonly) BOOL artworkShouldFitWidth;
+@property(readonly) float artworkWidth;
 @property(readonly) int displayStyle;
+@property(readonly) BOOL shouldHideSignInButton;
+@property int type;
+@property(readonly) BOOL wantsIndexBar;
 @property(readonly) BOOL didShowDialog;
+@property(retain) SUStorePageProtocol * protocol;
 
 + (int)pageTypeForStorePageString:(id)arg1;
 + (int)pageTypeForStorePageDictionary:(id)arg1;
 
-- (id)item;
 - (id)protocol;
 - (int)type;
-- (void)setType:(int)arg1;
+- (id)item;
 - (id)title;
+- (void)setType:(int)arg1;
+- (void)setTitle:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setTitle:(id)arg1;
-- (id)itemList;
-- (BOOL)loadFromDictionary:(id)arg1;
-- (BOOL)didShowDialog;
-- (BOOL)hasDisplayableContent;
+- (BOOL)wantsIndexBar;
+- (BOOL)shouldHideSignInButton;
+- (id)sectionsGroup;
+- (int)displayStyle;
+- (float)artworkWidth;
+- (BOOL)artworkShouldFitWidth;
+- (int)_displayStyleForString:(id)arg1;
+- (void)setProtocol:(id)arg1;
 - (void)setItem:(id)arg1;
 - (id)_copyItemFromDictionary:(id)arg1;
-- (int)_displayStyleForString:(id)arg1;
-- (void)_parseItemsFromDictionary:(id)arg1;
+- (void)setItemList:(id)arg1;
+- (BOOL)didShowDialog;
+- (void)setSectionsGroup:(id)arg1;
 - (void)_parseProtocolFromDictionary:(id)arg1;
 - (void)_parseTemplateParametersFromDictionary:(id)arg1;
-- (BOOL)wantsIndexBar;
-- (id)sectionsGroup;
-- (void)setSectionsGroup:(id)arg1;
-- (void)setProtocol:(id)arg1;
-- (void)setItemList:(id)arg1;
-- (int)displayStyle;
+- (void)_parseItemsFromDictionary:(id)arg1;
+- (BOOL)hasDisplayableContent;
+- (id)itemList;
+- (BOOL)loadFromDictionary:(id)arg1;
 
 @end

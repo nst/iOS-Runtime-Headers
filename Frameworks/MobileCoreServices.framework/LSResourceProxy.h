@@ -2,49 +2,60 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class LSApplicationProxy, NSArray, NSString, NSURL;
+@class LSApplicationProxy, NSArray, NSString, NSDictionary, NSURL;
 
 @interface LSResourceProxy : NSObject  {
     NSString *_localizedName;
     NSString *_boundApplicationIdentifier;
-    NSString *_boundRoleIdentifier;
+    NSURL *_boundContainerURL;
     NSURL *_boundResourcesDirURL;
+    NSDictionary *_boundIconsDictionary;
+    NSString *_boundIconCacheKey;
     NSArray *_boundIconFileNames;
     LSApplicationProxy *_typeOwner;
     BOOL _boundIconIsPrerendered;
     BOOL _boundIconIsBadge;
 }
 
+@property(readonly) BOOL boundIconIsBadge;
+@property(readonly) NSDictionary * iconsDictionary;
 @property(readonly) NSString * localizedName;
 
 + (struct CGSize { float x1; float x2; })_applicationIconCanvasSize;
 + (int)_compareApplicationIconCanvasSize:(struct CGSize { float x1; float x2; })arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 
-- (id)_initWithLocalizedName:(id)arg1 boundApplicationIdentifier:(id)arg2 boundRoleIdentifier:(id)arg3 boundResourcesDirectoryURL:(id)arg4 boundIconFileNames:(id)arg5 typeOwner:(id)arg6 boundIconIsPrerendered:(BOOL)arg7 boundIconIsBadge:(BOOL)arg8;
-- (id)_initWithLocalizedName:(id)arg1;
-- (void)setLocalizedName:(id)arg1;
-- (id)boundApplicationIdentifier;
-- (void)setBoundApplicationIdentifier:(id)arg1;
-- (id)boundRoleIdentifier;
-- (void)setBoundRoleIdentifier:(id)arg1;
-- (id)boundResourcesDirectoryURL;
-- (void)setBoundResourcesDirectoryURL:(id)arg1;
-- (id)boundIconFileNames;
-- (void)setBoundIconFileNames:(id)arg1;
-- (id)typeOwner;
-- (void)setTypeOwner:(id)arg1;
-- (BOOL)boundIconIsPrerendered;
-- (void)setBoundIconIsPrerendered:(BOOL)arg1;
-- (void)setBoundIconIsBadge:(BOOL)arg1;
+- (id)iconDataForStyle:(id)arg1 width:(int)arg2 height:(int)arg3 options:(unsigned int)arg4;
 - (BOOL)boundIconIsBadge;
 - (id)localizedName;
 - (id)iconDataForVariant:(int)arg1;
+- (id)iconsDictionary;
+- (void)setBoundApplicationIdentifier:(id)arg1;
+- (void)setBoundContainerURL:(id)arg1;
+- (void)setBoundResourcesDirectoryURL:(id)arg1;
+- (void)setBoundIconsDictionary:(id)arg1;
+- (void)setBoundIconCacheKey:(id)arg1;
+- (void)setBoundIconFileNames:(id)arg1;
+- (void)setTypeOwner:(id)arg1;
+- (void)setBoundIconIsPrerendered:(BOOL)arg1;
+- (void)setBoundIconIsBadge:(BOOL)arg1;
+- (id)_initWithLocalizedName:(id)arg1 boundApplicationIdentifier:(id)arg2 boundContainerURL:(id)arg3 boundResourcesDirectoryURL:(id)arg4 boundIconsDictionary:(id)arg5 boundIconCacheKey:(id)arg6 boundIconFileNames:(id)arg7 typeOwner:(id)arg8 boundIconIsPrerendered:(BOOL)arg9 boundIconIsBadge:(BOOL)arg10;
+- (id)boundIconsDictionary;
+- (id)typeOwner;
+- (id)boundResourcesDirectoryURL;
+- (id)boundApplicationIdentifier;
+- (id)boundContainerURL;
+- (id)iconStyleDomain;
+- (id)boundIconCacheKey;
+- (BOOL)boundIconIsPrerendered;
+- (id)boundIconFileNames;
+- (void)setLocalizedName:(id)arg1;
+- (id)_initWithLocalizedName:(id)arg1;
 - (void)dealloc;
-- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconDefinitionForSize:(struct CGSize { float x1; float x2; })arg1 style:(int)arg2;
-- (struct CGSize { float x1; float x2; })_largestImageSize:(int)arg1;
-- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(int)arg1;
-- (id)_imageSizesForStyle:(int)arg1;
-- (id)_iconForStyle:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (id)_iconForStyle:(int)arg1;
+- (id)_iconForStyle:(id)arg1;
+- (id)_iconForStyle:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
+- (struct CGSize { float x1; float x2; })_largestImageSize:(id)arg1;
+- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
+- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconDefinitionForSize:(struct CGSize { float x1; float x2; })arg1 style:(id)arg2;
 
 @end

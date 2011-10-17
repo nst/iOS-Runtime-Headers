@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSLock;
+@class MFLock;
 
 @interface MFWebKitMainThread : NSObject  {
     struct __CFDictionary { } *_visibleDict;
-    NSLock *_visibleDictLock;
+    MFLock *_visibleDictLock;
 }
 
 + (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
 - (void)_mainThreadPopulateDictForMimeType:(id)arg1;
 - (int)dictValueForMimeType:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

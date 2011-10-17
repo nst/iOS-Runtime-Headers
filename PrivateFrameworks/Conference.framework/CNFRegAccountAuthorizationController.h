@@ -17,17 +17,17 @@
 
 - (void)setAuthToken:(id)arg1;
 - (id)authToken;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)setAuthID:(id)arg1;
 - (id)authID;
 - (id)authIdHeaderValue;
-- (void)setAuthID:(id)arg1;
-- (void)doHandoffWithStatus:(int)arg1 appleId:(id)arg2 password:(id)arg3;
 - (id)authTokenHeaderValue;
-- (id)initWithAuthID:(id)arg1 token:(id)arg2;
+- (id)initWithRegController:(id)arg1 authID:(id)arg2 token:(id)arg3;
 - (id)bagKey;
 - (id)logName;
 - (void)cancelTapped;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 
 @end

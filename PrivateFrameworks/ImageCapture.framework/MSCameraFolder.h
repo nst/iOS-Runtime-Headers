@@ -12,16 +12,16 @@
 @property(readonly) long long fsSize;
 
 
-- (BOOL)deleteItemFromCamera:(id)arg1;
-- (void)enumerateContent;
-- (id)itemMatchingName:(id)arg1 fsSN:(unsigned long long)arg2 fsCreationTime:(struct timespec { int x1; long x2; }*)arg3 fsSize:(long long)arg4;
-- (id)folderMatchingPath:(id)arg1;
-- (unsigned long long)fsSN;
-- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 fsSN:(unsigned long long)arg4 fsCreationTime:(struct timespec { int x1; long x2; })arg5 fsModificationTime:(struct timespec { int x1; long x2; })arg6 fsSize:(long long)arg7 fsFlags:(unsigned int)arg8;
-- (struct timespec { int x1; long x2; })fsCreationTime;
-- (struct timespec { int x1; long x2; })fsModificationTime;
-- (long long)fsSize;
 - (void)finalize;
+- (id)itemMatchingName:(id)arg1 fsSN:(unsigned long long)arg2 fsCreationTime:(struct timespec { int x1; long x2; }*)arg3 fsSize:(long long)arg4;
+- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 fsSN:(unsigned long long)arg4 fsCreationTime:(struct timespec { int x1; long x2; })arg5 fsModificationTime:(struct timespec { int x1; long x2; })arg6 fsSize:(long long)arg7 fsFlags:(unsigned int)arg8;
+- (unsigned long long)fsSN;
+- (struct timespec { int x1; long x2; })fsCreationTime;
+- (long long)fsSize;
+- (id)folderMatchingPath:(id)arg1;
+- (struct timespec { int x1; long x2; })fsModificationTime;
+- (void)enumerateContent;
+- (BOOL)deleteItemFromCamera:(id)arg1;
 - (void)dealloc;
 
 @end

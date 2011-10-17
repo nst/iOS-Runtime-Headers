@@ -17,16 +17,16 @@
 
 + (id)_displayModeWithMode:(int)arg1 display:(id)arg2;
 
-- (id)_initWithMode:(int)arg1 display:(id)arg2;
-- (int)_mode;
-- (void)_setWidth:(unsigned long)arg1 height:(unsigned long)arg2;
 - (unsigned long)height;
-- (float)pixelAspectRatio;
 - (id)_display;
-- (unsigned int)hash;
+- (float)pixelAspectRatio;
 - (unsigned long)width;
 - (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
+- (unsigned int)hash;
 - (id)description;
+- (void)dealloc;
+- (void)_setWidth:(unsigned long)arg1 height:(unsigned long)arg2;
+- (int)_mode;
+- (id)_initWithMode:(int)arg1 display:(id)arg2;
 
 @end

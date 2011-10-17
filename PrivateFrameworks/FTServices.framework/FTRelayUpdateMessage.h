@@ -4,7 +4,7 @@
 
 @class NSNumber, NSData, NSString;
 
-@interface FTRelayUpdateMessage : FTMessage  {
+@interface FTRelayUpdateMessage : FTFaceTimeMessage <NSCopying> {
     NSData *_selfPushToken;
     NSData *_selfRelayBlob;
     NSString *_peerID;
@@ -21,53 +21,54 @@
     NSNumber *_peerRelayPort;
 }
 
-@property(copy) NSNumber * peerRelayPort;
-@property(copy) NSData * peerRelayIP;
-@property(copy) NSNumber * selfRelayNATPort;
-@property(copy) NSData * selfRelayNATIP;
-@property(copy) NSNumber * selfRelayPort;
-@property(copy) NSData * selfRelayIP;
-@property(copy) NSData * relayTokenAllocRes;
-@property(copy) NSData * relayTransactionIDAlloc;
-@property(copy) NSData * relayConnectionID;
-@property(copy) NSNumber * relayType;
-@property(copy) NSData * peerPushToken;
-@property(copy) NSString * peerID;
-@property(copy) NSData * selfRelayBlob;
 @property(copy) NSData * selfPushToken;
+@property(copy) NSData * selfRelayBlob;
+@property(copy) NSString * peerID;
+@property(copy) NSData * peerPushToken;
+@property(copy) NSNumber * relayType;
+@property(copy) NSData * relayConnectionID;
+@property(copy) NSData * relayTransactionIDAlloc;
+@property(copy) NSData * relayTokenAllocRes;
+@property(copy) NSData * selfRelayIP;
+@property(copy) NSNumber * selfRelayPort;
+@property(copy) NSData * selfRelayNATIP;
+@property(copy) NSNumber * selfRelayNATPort;
+@property(copy) NSData * peerRelayIP;
+@property(copy) NSNumber * peerRelayPort;
 
 
+- (id)messageBody;
+- (void)setPeerID:(id)arg1;
 - (id)peerID;
-- (id)bagKey;
-- (void)dealloc;
-- (void)setRelayConnectionID:(id)arg1;
-- (id)selfRelayBlob;
-- (id)relayConnectionID;
-- (id)relayTokenAllocRes;
-- (id)selfRelayNATPort;
 - (void)setSelfRelayNATPort:(id)arg1;
-- (id)selfRelayNATIP;
 - (void)setSelfRelayNATIP:(id)arg1;
 - (void)setRelayTokenAllocRes:(id)arg1;
-- (id)relayTransactionIDAlloc;
 - (void)setRelayTransactionIDAlloc:(id)arg1;
+- (void)setRelayConnectionID:(id)arg1;
 - (void)setSelfRelayBlob:(id)arg1;
-- (void)setSelfPushToken:(id)arg1;
-- (void)setPeerPushToken:(id)arg1;
-- (id)selfRelayIP;
-- (id)peerRelayIP;
+- (id)selfRelayBlob;
+- (id)selfRelayNATPort;
+- (id)selfRelayNATIP;
+- (id)relayTokenAllocRes;
+- (id)relayTransactionIDAlloc;
+- (id)relayConnectionID;
 - (id)peerRelayPort;
+- (id)peerRelayIP;
+- (id)selfRelayPort;
+- (id)selfRelayIP;
+- (id)relayType;
+- (void)setPeerPushToken:(id)arg1;
 - (void)setPeerRelayPort:(id)arg1;
 - (void)setPeerRelayIP:(id)arg1;
-- (id)selfRelayPort;
 - (void)setSelfRelayPort:(id)arg1;
 - (void)setSelfRelayIP:(id)arg1;
-- (id)relayType;
 - (void)setRelayType:(id)arg1;
 - (id)peerPushToken;
-- (void)setPeerID:(id)arg1;
+- (void)setSelfPushToken:(id)arg1;
 - (id)selfPushToken;
 - (id)requiredKeys;
-- (id)messageBody;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)bagKey;
 
 @end

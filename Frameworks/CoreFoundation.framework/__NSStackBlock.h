@@ -6,9 +6,9 @@
 }
 
 
-- (void)release;
-- (id)retain;
 - (unsigned int)retainCount;
+- (id)retain;
 - (id)autorelease;
+- (oneway void)release;
 
 @end

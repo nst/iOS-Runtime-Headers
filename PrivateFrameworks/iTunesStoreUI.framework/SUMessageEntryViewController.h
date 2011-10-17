@@ -4,51 +4,51 @@
 
 @class UIImagePickerController, NSArray, NSString, <SUMessageEntryViewControllerDelegate>, SUMessageEntryView;
 
-@interface SUMessageEntryViewController : SUViewController <SUMessageEntryViewDelegate> {
+@interface SUMessageEntryViewController : SUViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SUMessageEntryViewDelegate> {
     <SUMessageEntryViewControllerDelegate> *_delegate;
     UIImagePickerController *_imagePicker;
     NSArray *_imagePickerMediaTypes;
     SUMessageEntryView *_messageEntryView;
 }
 
+@property <SUMessageEntryViewControllerDelegate> * delegate;
+@property(copy) NSArray * imagePickerMediaTypes;
 @property(getter=isPhotoButtonEnabled) BOOL photoButtonEnabled;
 @property(getter=isSendButtonEnabled) BOOL sendButtonEnabled;
 @property(copy) NSString * sendButtonTitle;
-@property(copy) NSArray * imagePickerMediaTypes;
-@property <SUMessageEntryViewControllerDelegate> * delegate;
 
 
-- (void)loadView;
-- (void)imagePickerControllerDidCancel:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)imagePickerControllerDidCancel:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)delegate;
 - (id)init;
 - (void)dealloc;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)focusMessageField;
-- (id)copyMessagePartsWithUTI:(id)arg1;
 - (id)imagePickerMediaTypes;
-- (void)setPhotoButtonEnabled:(BOOL)arg1;
-- (void)setSendButtonEnabled:(BOOL)arg1;
-- (void)setSendButtonTitle:(id)arg1;
-- (BOOL)isPhotoButtonEnabled;
 - (void)setImagePickerMediaTypes:(id)arg1;
-- (BOOL)_allowsCamera;
-- (BOOL)_allowsVideoCamera;
-- (void)_dismissImagePickerAnimated:(BOOL)arg1;
+- (id)copyMessagePartsWithUTI:(id)arg1;
 - (void)_promptForSourceType;
-- (void)_reloadMessageEntryView;
+- (BOOL)_allowsVideoCamera;
+- (BOOL)_allowsCamera;
 - (void)_showImagePickerForSourceType:(unsigned int)arg1;
+- (void)_dismissImagePickerAnimated:(BOOL)arg1;
+- (void)_reloadMessageEntryView;
 - (id)_messageEntryView;
-- (void)messageEntryViewDidChange:(id)arg1;
-- (void)messageEntryViewPhotoButtonAction:(id)arg1;
-- (void)messageEntryViewSendButtonAction:(id)arg1;
-- (void)clearMessage;
-- (BOOL)isSendButtonEnabled;
+- (void)setSendButtonTitle:(id)arg1;
+- (void)setSendButtonEnabled:(BOOL)arg1;
+- (void)setPhotoButtonEnabled:(BOOL)arg1;
 - (id)sendButtonTitle;
+- (BOOL)isSendButtonEnabled;
+- (BOOL)isPhotoButtonEnabled;
+- (void)focusMessageField;
+- (void)clearMessage;
+- (void)messageEntryViewSendButtonAction:(id)arg1;
+- (void)messageEntryViewPhotoButtonAction:(id)arg1;
+- (void)messageEntryViewDidChange:(id)arg1;
 - (id)copyScriptViewController;
 
 @end

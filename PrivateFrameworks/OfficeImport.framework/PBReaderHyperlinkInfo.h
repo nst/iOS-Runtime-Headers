@@ -15,12 +15,12 @@
 @property(retain) NSString * hyperlink1;
 
 
-- (void)dealloc;
-- (id)hyperlink1;
 - (void)setHyperlink1:(id)arg1;
 - (void)setHyperlink2:(id)arg1;
 - (id)screenTip;
+- (id)hyperlink1;
 - (id)hyperlink2;
 - (void)setScreenTip:(id)arg1;
+- (void)dealloc;
 
 @end

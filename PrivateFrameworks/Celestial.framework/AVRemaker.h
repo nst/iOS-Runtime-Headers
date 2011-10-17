@@ -23,27 +23,27 @@
 + (double)maximumDurationWithinLimitsForMode:(id)arg1 options:(id)arg2;
 + (long long)approximateByteSizeForMode:(id)arg1 duration:(double)arg2 options:(id)arg3;
 
-- (double)progress;
 - (id)start;
+- (double)progress;
 - (void)cancel;
 - (void)dealloc;
-- (long long)approximateByteSize;
+- (id)initWithSource:(id)arg1 dest:(id)arg2 mode:(id)arg3 options:(id)arg4;
 - (double)maxDurationWithinLimits;
-- (void)removeListeners;
-- (void)addListeners;
+- (long long)approximateByteSize;
+- (void)setRangeStartTime:(double)arg1 endTime:(double)arg2;
 - (BOOL)multipleNonEmptyEditsInTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
 - (id)audioPropertiesForTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
 - (id)videoPropertiesForTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
-- (void)discoverSourceProperties;
 - (struct CGSize { float x1; float x2; })calculateDimensionsOfSource;
-- (BOOL)sourceHasPortraitOrientationVideo;
-- (id)fileFormatForURL:(id)arg1;
 - (id)settingForFigRemaker;
 - (BOOL)canPassThroughAudio:(id)arg1;
 - (BOOL)canPassThroughVideo:(id)arg1;
+- (BOOL)sourceHasPortraitOrientationVideo;
+- (id)fileFormatForURL:(id)arg1;
+- (void)discoverSourceProperties;
 - (struct OpaqueFigRemaker { }*)createFigRemaker;
-- (id)initWithSource:(id)arg1 dest:(id)arg2 mode:(id)arg3 options:(id)arg4;
-- (void)setRangeStartTime:(double)arg1 endTime:(double)arg2;
+- (void)addListeners;
+- (void)removeListeners;
 - (double)sourceDuration;
 
 @end

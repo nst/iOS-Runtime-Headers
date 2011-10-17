@@ -7,13 +7,14 @@
 @interface NoteBodyObject : NSManagedObject  {
 }
 
-@property(readonly) NSString * contentAsPlainText;
-@property(retain) NSString * externalContentRef;
-@property(retain) NSData * externalRepresentation;
-@property(retain) NoteObject * owner;
 @property(retain) NSString * content;
+@property(readonly) NSString * contentAsPlainText;
+@property(retain) NoteObject * owner;
+@property(retain) NSData * externalRepresentation;
+@property(retain) NSString * externalContentRef;
 
 
+- (id)contentAsPlainTextPreservingNewlines;
 - (id)contentAsPlainText;
 
 @end

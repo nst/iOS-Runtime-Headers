@@ -13,19 +13,19 @@
 }
 
 
-- (id)initWithTitle:(id)arg1 message:(id)arg2 printingProgress:(id)arg3;
-- (void)doneProgress;
-- (void)cancelProgress;
-- (void)setDonePrinting:(BOOL)arg1;
-- (void)cleanupAfterDismiss;
-- (void)dismissAnimated:(BOOL)arg1;
 - (double)rotationDelay;
+- (id)initWithTitle:(id)arg1 message:(id)arg2 printingProgress:(id)arg3;
+- (void)cleanupAfterDismiss;
+- (void)cancelProgress;
+- (void)doneProgress;
+- (void)setDonePrinting:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
+- (void)dismissAnimated:(BOOL)arg1;
 - (BOOL)visible;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)dealloc;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)show;
+- (void)dealloc;
 
 @end

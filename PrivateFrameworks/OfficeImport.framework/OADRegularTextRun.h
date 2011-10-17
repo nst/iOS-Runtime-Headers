@@ -9,9 +9,9 @@
 }
 
 
+- (BOOL)isEmpty;
 - (id)text;
 - (id)init;
 - (void)dealloc;
-- (BOOL)isEmpty;
 
 @end

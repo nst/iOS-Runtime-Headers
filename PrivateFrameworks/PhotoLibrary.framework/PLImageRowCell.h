@@ -5,25 +5,22 @@
 @class NSMutableArray, NSArray;
 
 @interface PLImageRowCell : UITableViewCell  {
-    NSMutableArray *_stackItemViews;
+    NSMutableArray *_stackItemCells;
     struct CGImage { } *_rowImage;
 }
 
-@property(readonly) NSArray * stackItemViews;
+@property(readonly) NSArray * stackItemCells;
 
 + (Class)layerClass;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
-- (void)dealloc;
-- (void)removeStackItemView:(id)arg1;
-- (void)redrawStackItemView:(id)arg1;
-- (void)clearContents;
-- (id)stackItemViews;
 - (void)setRowImage:(struct CGImage { }*)arg1;
-- (void)addStackItemView:(id)arg1;
-- (BOOL)_accessibilityAlwaysReturnsChild;
+- (void)removeStackItemCell:(id)arg1;
+- (id)stackItemCells;
+- (void)insertStackItemCell:(id)arg1 atColumn:(unsigned int)arg2;
+- (void)clearContents;
+- (void)dealloc;
 
 @end

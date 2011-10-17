@@ -12,20 +12,20 @@
     NSError *_error;
 }
 
-@property(readonly) NSDictionary * attributesToMerge;
 @property(readonly) NSArray * attributesToPreserve;
-@property(readonly) NSString * outContent;
+@property(readonly) NSDictionary * attributesToMerge;
 @property(readonly) NSError * error;
-@property(retain,readonly) NSString * _inContent;
+@property(readonly) NSString * outContent;
+@property(readonly) NSString * _inContent;
 
 
-- (void)dealloc;
+- (id)outContent;
 - (id)initWithContent:(id)arg1 attributesToPreserve:(id)arg2 attributesToMerge:(id)arg3;
-- (void)_setOutContent:(id)arg1 error:(id)arg2;
 - (id)attributesToMerge;
 - (id)attributesToPreserve;
-- (id)outContent;
+- (void)_setOutContent:(id)arg1 error:(id)arg2;
 - (id)_inContent;
 - (id)error;
+- (void)dealloc;
 
 @end

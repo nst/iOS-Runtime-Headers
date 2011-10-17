@@ -9,13 +9,13 @@
     NSString *_autocorrection;
 }
 
-@property(readonly) NSString * autocorrection;
 @property(readonly) NSString * typing;
+@property(readonly) NSString * autocorrection;
 
 + (id)recordOfTyping:(id)arg1 forAutocorrection:(id)arg2;
 
-- (id)autocorrection;
 - (id)typing;
+- (id)autocorrection;
 - (void)dealloc;
 
 @end

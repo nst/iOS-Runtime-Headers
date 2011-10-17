@@ -12,17 +12,18 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
+- (void)setFetchRequest:(id)arg1;
+- (id)fetchRequest;
+- (BOOL)isReadOnly;
+- (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6 fetchRequests:(id)arg7;
+- (void)_createCachesAndOptimizeState;
+- (BOOL)isTransient;
+- (unsigned int)_propertyType;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (void)setFetchRequest:(id)arg1;
-- (unsigned int)_propertyType;
-- (id)fetchRequest;
-- (void)_createCachesAndOptimizeState;
-- (BOOL)isReadOnly;
-- (BOOL)isTransient;
 
 @end

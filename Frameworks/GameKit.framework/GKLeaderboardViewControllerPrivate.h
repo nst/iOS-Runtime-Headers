@@ -2,121 +2,15 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKLeaderboardViewControllerDelegate>, GKTableViewCell, GKGame, GKUITheme, GKSparseLeaderboard, UIView, GKLeaderboardViewController, <GKLeaderboardViewControllerPrivateDelegate>, NSString, GKPlayer, UISegmentedControl, NSMutableDictionary;
-
-@interface GKLeaderboardViewControllerPrivate : GKTableViewController  {
-    <GKLeaderboardViewControllerPrivateDelegate> *_delegate;
-    GKGame *_game;
-    GKPlayer *_player;
-    GKSparseLeaderboard *_friendLeaderboard;
-    GKSparseLeaderboard *_globalLeaderboard;
-    NSMutableDictionary *_leaderboardCache;
-    UIView *_timeScopeContainer;
-    NSString *_categoryID;
-    UISegmentedControl *_portraitTimeScopeControl;
-    UISegmentedControl *_landscapeTimeScopeControl;
-    struct { 
-        unsigned int allowFriendSelection : 1; 
-        unsigned int translucentNavBar : 1; 
-        unsigned int reserved : 26; 
-    } _flags;
-    GKUITheme *_theme;
-    int _timeScope;
-    NSMutableDictionary *_players;
-    <GKLeaderboardViewControllerDelegate> *_leaderboardDelegate;
-    GKLeaderboardViewController *_controllerForDelegate;
-    GKTableViewCell *_detailHeaderCell;
-    BOOL _isInFormSheet;
-    int _navbarStyle;
+@interface GKLeaderboardViewControllerPrivate : GKAbstractLeaderboardViewController  {
 }
 
-@property(retain) NSString * categoryID;
-@property BOOL allowsFriendSelection;
-@property int navbarStyle;
-@property BOOL isInFormSheet;
-@property(retain) UIView * timeScopeContainer;
-@property(retain) GKTableViewCell * detailHeaderCell;
-@property GKLeaderboardViewController * controllerForDelegate;
-@property <GKLeaderboardViewControllerDelegate> * leaderboardDelegate;
-@property(retain) NSMutableDictionary * players;
-@property(retain) GKSparseLeaderboard * globalLeaderboard;
-@property(retain) GKSparseLeaderboard * friendLeaderboard;
-@property int timeScope;
-@property(retain) GKUITheme * theme;
-@property(retain) GKGame * game;
-@property(retain) GKPlayer * player;
-@property <GKLeaderboardViewControllerPrivateDelegate> * delegate;
 
-
-- (void)_gkRefreshContents;
-- (void)layoutSubviewsForOrientation:(int)arg1;
-- (id)detailHeaderCell;
-- (id)categoryID;
-- (int)timeScope;
-- (id)game;
-- (void)setPlayer:(id)arg1;
-- (id)friendLeaderboard;
-- (BOOL)allowsFriendSelection;
-- (id)initWithGame:(id)arg1;
-- (id)leaderboardForCategoryID:(id)arg1 timeScope:(int)arg2 playerScope:(int)arg3;
-- (void)setupTableView;
-- (void)setCategoryID:(id)arg1 timeScope:(int)arg2;
-- (BOOL)canSelectPlayer:(id)arg1;
-- (id)leaderboardForSection:(unsigned int)arg1;
-- (void)setCategoryID:(id)arg1;
+- (void)prepareDataSource;
+- (void)didSelectPlayer:(id)arg1;
 - (void)setTimeScope:(int)arg1;
-- (void)setAllowsFriendSelection:(BOOL)arg1;
-- (void)updateNavbarButtons;
-- (void)setNavbarStyle:(int)arg1;
-- (void)updateShowMoreCellForSection:(int)arg1;
-- (id)playerForScore:(id)arg1;
-- (void)loadPlayersForScores:(id)arg1 forLeaderboard:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)loadScoresForLeaderboard:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withCompletionHandler:(id)arg3;
-- (void)reloadSection:(unsigned int)arg1 forVisibleRows:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)_reloadScores;
-- (void)authenticatedStatusChanged;
-- (void)donePressed:(id)arg1;
-- (void)_timeFilterSegmentedControlChanged:(id)arg1;
-- (void)playTapped;
-- (id)headerTextForLeaderboard:(id)arg1;
-- (id)indexPathsForLeaderboardRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inSection:(unsigned int)arg2;
-- (int)navbarStyle;
-- (BOOL)isInFormSheet;
-- (void)setIsInFormSheet:(BOOL)arg1;
-- (id)timeScopeContainer;
-- (void)setTimeScopeContainer:(id)arg1;
-- (void)setDetailHeaderCell:(id)arg1;
-- (id)controllerForDelegate;
-- (void)setControllerForDelegate:(id)arg1;
-- (id)leaderboardDelegate;
-- (void)setLeaderboardDelegate:(id)arg1;
-- (void)setPlayers:(id)arg1;
-- (id)globalLeaderboard;
-- (void)setGlobalLeaderboard:(id)arg1;
-- (void)setFriendLeaderboard:(id)arg1;
-- (id)player;
-- (void)setGame:(id)arg1;
-- (id)players;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (void)loadView;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidUnload;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (float)marginForTableView:(id)arg1;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)theme;
-- (void)setTheme:(id)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
 
 @end

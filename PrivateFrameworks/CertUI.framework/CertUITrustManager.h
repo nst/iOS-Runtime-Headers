@@ -2,18 +2,31 @@
    Image: /System/Library/PrivateFrameworks/CertUI.framework/CertUI
  */
 
+@class NSString;
+
 @interface CertUITrustManager : NSObject  {
+    NSString *_access;
 }
 
 + (id)defaultTrustManager;
-+ (id)defaultServiceForProtocol:(id)arg1;
++ (void)migrateFromVersionOne;
++ (void)migrateFromVersionZero;
++ (void)_migrateVersionZeroFromAccessGroup:(id)arg1 toGroup:(id)arg2;
 
 - (int)actionForTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2 andService:(id)arg3;
 - (void)allowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2 service:(id)arg3;
+- (void)addSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
+- (void)removeSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
+- (BOOL)_hasExceptionsForSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
+- (int)actionForSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
+- (id)initWithAccessGroup:(id)arg1;
 - (void)clearSavedTrustSettingsForTrust:(struct __SecTrust { }*)arg1 host:(id)arg2 service:(id)arg3;
-- (void)clearAllTrustSettings;
-- (void)_migrateVersionZeroFromAccessGroup:(id)arg1 toGroup:(id)arg2;
-- (void)migrateFromVersionZero;
-- (void)migrateFromVersionOne;
+- (void)removeAllTrusts;
+- (void)removeSSLTrust:(struct __SecTrust { }*)arg1 hostname:(id)arg2 service:(id)arg3;
+- (void)addSSLTrust:(struct __SecTrust { }*)arg1 hostname:(id)arg2 service:(id)arg3;
+- (int)actionForSSLTrust:(struct __SecTrust { }*)arg1 hostname:(id)arg2 service:(id)arg3;
+- (int)_actionForTrust:(struct __SecTrust { }*)arg1 exceptions:(id)arg2;
+- (id)init;
+- (void)dealloc;
 
 @end

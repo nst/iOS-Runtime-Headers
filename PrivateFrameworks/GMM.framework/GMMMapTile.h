@@ -7,34 +7,34 @@
     int _tileIndexX;
     int _tileIndexY;
     int _zoomLevel;
-    int _textSize;
     BOOL _hasTextSize;
+    int _textSize;
 }
 
-@property(readonly) BOOL hasTextSize;
-@property int textSize;
-@property int zoomLevel;
-@property int tileIndexY;
-@property int tileIndexX;
 @property int tileType;
+@property int tileIndexX;
+@property int tileIndexY;
+@property int zoomLevel;
+@property BOOL hasTextSize;
+@property int textSize;
 
 
-- (id)dictionaryRepresentation;
-- (void)setTextSize:(int)arg1;
-- (int)textSize;
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTextSize:(BOOL)arg1;
 - (BOOL)hasTextSize;
-- (void)setTileIndexY:(int)arg1;
-- (void)setTileIndexX:(int)arg1;
-- (int)tileType;
-- (void)setTileType:(int)arg1;
 - (int)tileIndexY;
 - (int)tileIndexX;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (int)tileType;
+- (void)setTileIndexY:(int)arg1;
+- (void)setTileIndexX:(int)arg1;
+- (void)setTileType:(int)arg1;
 - (int)zoomLevel;
 - (void)setZoomLevel:(int)arg1;
+- (void)writeTo:(id)arg1;
+- (void)setTextSize:(int)arg1;
+- (id)dictionaryRepresentation;
+- (int)textSize;
+- (id)description;
+- (void)dealloc;
 
 @end

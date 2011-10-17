@@ -2,33 +2,34 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableDictionary, NSDictionary;
-
-@interface SSNetworkConstraints : NSObject  {
-    NSMutableDictionary *_dictionary;
+@interface SSNetworkConstraints : NSObject <SSCoding, SSXPCCoding, NSCopying> {
     struct dispatch_queue_s { } *_dispatchQueue;
-    int _networkType;
+    long long _sizeLimit2G;
+    long long _sizeLimit3G;
+    long long _sizeLimitWiFi;
 }
 
-@property int networkType;
-@property(readonly) NSDictionary * constraintDictionary;
+@property(getter=isAnyNetworkTypeEnabled,readonly) BOOL anyNetworkTypeEnabled;
 
-+ (id)enableEverythingConstraints;
-+ (id)disableEverythingConstraints;
++ (id)newNetworkConstraintsByDownloadKindFromURLBag:(id)arg1;
++ (void)_addNetworkConstraintsToDictionary:(id)arg1 forNetworkType:(int)arg2 legacyDictionary:(id)arg3;
++ (id)_newLegacyNetworkConstraintsWithDictionary:(id)arg1;
++ (id)_newModernNetworkConstraintsWithArray:(id)arg1;
 
+- (long long)sizeLimitForNetworkType:(int)arg1;
+- (void)setSizeLimitsWithStoreConstraintDictionary:(id)arg1;
+- (void)setAllNetworkTypesDisabled;
+- (void)setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
+- (void)_setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
+- (id)copyPropertyListEncoding;
+- (id)initWithPropertyListEncoding:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)setNetworkType:(int)arg1;
-- (id)initWithConstraintDictionary:(id)arg1 forNetworkType:(int)arg2;
-- (id)networkTooSlowErrorWithAssetType:(int)arg1 itemName:(id)arg2;
-- (id)_initSSNetworkConstraints;
-- (id)constraintDictionary;
-- (id)networkTooSlowErrorWithAssetType:(int)arg1 itemName:(id)arg2 canDownloadInITunes:(BOOL)arg3;
-- (void)setContentEnabled:(BOOL)arg1 forConstraintCategory:(id)arg2;
-- (void)setSearchQueryParameters:(id)arg1 forAssetType:(int)arg2;
-- (void)setSizeLimit:(long long)arg1 forAssetType:(int)arg2;
-- (int)networkType;
-- (long long)sizeLimitForAssetType:(int)arg1;
-- (id)searchQueryParametersForAssetType:(int)arg1;
+- (BOOL)isAnyNetworkTypeEnabled;
 
 @end

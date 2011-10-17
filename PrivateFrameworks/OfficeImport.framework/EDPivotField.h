@@ -19,26 +19,26 @@
 
 + (id)pivotField;
 
-- (id)init;
-- (void)dealloc;
-- (void)setCompact:(bool)arg1;
-- (void)setAxis:(int)arg1;
-- (void)setDataField:(bool)arg1;
-- (void)setShowDefaultSubTotal:(bool)arg1;
-- (void)setOutlineItems:(bool)arg1;
-- (bool)subtotalTop;
-- (bool)insertBlankRow;
-- (bool)showDefaultSubTotal;
 - (bool)dataField;
-- (bool)compact;
-- (unsigned int)numFmtId;
+- (void)setDataField:(bool)arg1;
+- (bool)showDefaultSubTotal;
+- (void)setShowDefaultSubTotal:(bool)arg1;
+- (bool)insertBlankRow;
 - (void)setInsertBlankRow:(bool)arg1;
 - (bool)outlineItems;
+- (void)setOutlineItems:(bool)arg1;
 - (bool)showAllItems;
 - (void)setShowAllItems:(bool)arg1;
+- (bool)subtotalTop;
 - (void)setSubtotalTop:(bool)arg1;
 - (id)pivotFieldItems;
+- (unsigned int)numFmtId;
 - (void)setNumFmtId:(unsigned int)arg1;
 - (int)axis;
+- (void)setAxis:(int)arg1;
+- (bool)compact;
+- (void)setCompact:(bool)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

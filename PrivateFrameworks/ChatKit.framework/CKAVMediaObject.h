@@ -10,38 +10,41 @@
     BOOL _remakeDidEnd;
     NSString *_createdFilename;
     double _approximateDuration;
+    BOOL _durationLoaded;
 }
 
 @property BOOL remakeDidEnd;
 
 + (void)initialize;
-+ (double)maxMMSTrimDurationForMediaType:(int)arg1;
 + (id)transcodeOptionsWithMaxBytes:(int)arg1 forMediaType:(int)arg2;
 + (void)_dequeueNextTranscodeOnMainThread;
++ (double)maxMMSTrimDurationForMediaType:(int)arg1;
 
-- (void)dealloc;
-- (double)transcodeEndTime;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 - (void)_determineDurationOnMainThreadWithFile:(id)arg1;
 - (void)_enqueueTranscodeOnMainThreadWithOptions:(id)arg1;
-- (void)_beginRemakingOnMainThreadWithOptions:(id)arg1;
-- (void)_remakeDidComplete:(id)arg1;
 - (BOOL)remakeDidEnd;
 - (void)setRemakeDidEnd:(BOOL)arg1;
-- (id)fileForDataWithExtension:(id)arg1;
+- (void)_beginRemakingOnMainThreadWithOptions:(id)arg1;
+- (void)_remakeDidComplete:(id)arg1;
 - (id)transcodePath;
+- (id)transcodedPathExtension;
+- (id)effectiveExportedFilename;
 - (void)prepareForTranscode;
 - (id)transcodedFilename;
+- (id)fileForDataWithExtension:(id)arg1;
 - (id)transcodeMimeType;
-- (id)transcodedPathExtension;
-- (double)transcodeStartTime;
-- (double)transcodeDuration;
-- (id)effectiveExportedFilename;
+- (void)cleanupAfterTranscode;
 - (BOOL)shouldTranscodeForMMS;
 - (id)newTranscodingForMMSWithMaxByteLength:(int)arg1;
-- (void)cleanupAfterTranscode;
-- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
-- (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
-- (void)copyToPasteboard:(id)arg1;
+- (double)transcodeStartTime;
+- (double)transcodeEndTime;
+- (double)transcodeDuration;
 - (id)previewTitle;
+- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
+- (void)copyToPasteboard:(id)arg1;
+- (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
+- (void)dealloc;
 
 @end

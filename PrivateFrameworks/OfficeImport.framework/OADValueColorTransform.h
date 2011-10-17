@@ -8,8 +8,8 @@
 
 
 - (float)value;
-- (unsigned int)hash;
 - (void)setValue:(float)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 
 @end

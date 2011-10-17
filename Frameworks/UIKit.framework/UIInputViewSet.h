@@ -11,29 +11,29 @@
 }
 
 @property(readonly) UIKeyboard * keyboard;
-@property(getter=isEmpty,readonly) BOOL empty;
-@property(retain) UIView * inputAccessoryView;
 @property(retain) UIView * inputView;
+@property(retain) UIView * inputAccessoryView;
+@property(getter=isEmpty,readonly) BOOL empty;
 
 + (id)inputSetWithInputView:(id)arg1 accessoryView:(id)arg2;
 + (id)inputSetWithKeyboardAndAccessoryView:(id)arg1;
 + (id)emptyInputSet;
 
-- (id)inputView;
-- (id)inputAccessoryView;
 - (id)initWithInputView:(id)arg1 accessoryView:(id)arg2 isKeyboard:(BOOL)arg3;
 - (BOOL)usesKeyClicks;
-- (BOOL)containsResponder:(id)arg1;
 - (BOOL)isStrictSupersetOfViewSet:(id)arg1;
-- (int)keyboardOrientation:(id)arg1;
 - (BOOL)inSyncWithOrientation:(int)arg1 forKeyboard:(id)arg2;
-- (void)setInputAccessoryView:(id)arg1;
-- (void)setInputView:(id)arg1;
+- (BOOL)containsResponder:(id)arg1;
+- (int)keyboardOrientation:(id)arg1;
 - (BOOL)visible;
 - (id)keyboard;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
+- (id)inputView;
+- (id)inputAccessoryView;
+- (void)setInputAccessoryView:(id)arg1;
+- (void)setInputView:(id)arg1;
 - (BOOL)isEmpty;
+- (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (void)dealloc;
 
 @end

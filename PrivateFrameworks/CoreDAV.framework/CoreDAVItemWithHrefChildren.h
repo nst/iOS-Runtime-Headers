@@ -9,21 +9,20 @@
     CoreDAVItemWithNoChildren *_unauthenticated;
 }
 
-@property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 @property(retain) NSMutableSet * hrefs;
+@property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 
 
-- (void)dealloc;
-- (id)description;
-- (id)hrefsAsFullURLs;
-- (id)hrefsAsOriginalURLs;
 - (id)hrefsAsStrings;
-- (void)setHrefs:(id)arg1;
+- (id)hrefsAsOriginalURLs;
 - (void)setUnauthenticated:(id)arg1;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (id)unauthenticated;
-- (id)hrefs;
-- (id)copyParseRules;
+- (void)setHrefs:(id)arg1;
 - (void)addHref:(id)arg1;
+- (id)copyParseRules;
+- (id)hrefs;
+- (id)unauthenticated;
+- (id)hrefsAsFullURLs;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -14,22 +14,23 @@
 
 @property struct CGSize { float width; float height; } originalImageSize;
 
-+ (struct CGPoint { float x1; float x2; })offsetForBubbleInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-+ (float)additionalHeightForBubbleWhenInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (struct CGPoint { float x1; float x2; })entryFieldBalloonOffset;
++ (float)entryFieldBalloonAdditionalHeight;
 
 - (void)setText:(id)arg1;
-- (void)dealloc;
-- (void)setStillImage:(id)arg1;
-- (struct CGSize { float x1; float x2; })originalImageSize;
 - (void)setImage:(id)arg1 mimeType:(id)arg2;
 - (void)setImageWithFilename:(id)arg1;
-- (id)_htmlForImageWithFilename:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (id)_htmlForImageWithData:(id)arg1 mimeType:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
-- (struct CGSize { float x1; float x2; })_scaledImageSize;
-- (void)_wvSetHTML:(id)arg1;
+- (void)setStillImage:(id)arg1;
 - (void)setOriginalImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })_scaledImageSize;
+- (id)_htmlForImageWithData:(id)arg1 mimeType:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
+- (void)_wvSetHTML:(id)arg1;
+- (id)_htmlForImageWithFilename:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { float x1; float x2; })originalImageSize;
+- (float)heightForWidth:(float)arg1;
 - (void)tighten;
 - (float)tightenedWidth;
-- (float)heightForWidth:(float)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
+- (void)dealloc;
 
 @end

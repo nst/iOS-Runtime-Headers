@@ -7,13 +7,13 @@
     BOOL _isFlipped;
 }
 
-@property BOOL isFlipped;
 @property int captureOrientation;
+@property BOOL isFlipped;
 
 
 - (void)setIsFlipped:(BOOL)arg1;
 - (BOOL)isFlipped;
-- (int)captureOrientation;
 - (void)setCaptureOrientation:(int)arg1;
+- (int)captureOrientation;
 
 @end

@@ -13,28 +13,28 @@
 }
 
 
+- (void)finalize;
+- (BOOL)update;
 - (void)setProcInfos:(id)arg1;
 - (void)addProcInfo:(id)arg1;
 - (void)removeProcInfo:(id)arg1;
-- (void)_populateFromSystem;
-- (BOOL)updateFromSystem;
 - (void)setOwnedOnly:(BOOL)arg1;
 - (BOOL)ownedOnly:(BOOL)arg1;
 - (void)setAppsOnly:(BOOL)arg1;
+- (BOOL)appsOnly;
 - (id)allProcInfos;
 - (id)allPIDs;
 - (id)allNames;
 - (id)allPathNames;
 - (id)newestProcInfo;
 - (id)newestProcInfoWithName:(id)arg1;
-- (id)newestProcInfoSatisfyingCondition:(SEL)arg1 forTarget:(id)arg2 withContext:(void*)arg3;
 - (id)newestProcInfoSatisfyingCondition:(SEL)arg1 forTarget:(id)arg2;
 - (id)procInfoWithPID:(int)arg1;
-- (BOOL)appsOnly;
-- (BOOL)update;
-- (void)finalize;
+- (BOOL)updateFromSystem;
+- (void)_populateFromSystem;
+- (id)newestProcInfoSatisfyingCondition:(SEL)arg1 forTarget:(id)arg2 withContext:(void*)arg3;
+- (unsigned int)count;
 - (id)init;
 - (void)dealloc;
-- (unsigned int)count;
 
 @end

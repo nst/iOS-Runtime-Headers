@@ -13,17 +13,12 @@
 
 + (id)sharedConnection;
 
-- (void)unregisterApplication:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (unsigned int)publicPort;
-- (void)invalidateServerPort;
-- (void)_handleSendFailure:(int)arg1 inCodeNamed:(const char *)arg2;
+- (unsigned int)serverPort;
+- (void)preheat;
 - (void)cancelQuery:(id)arg1;
 - (id)startQuery:(id)arg1;
-- (unsigned int)serverPort;
-- (void)appWasSelected:(id)arg1 queryString:(id)arg2;
-- (void)searchResultWasSelected:(unsigned long long)arg1 inDomain:(unsigned int)arg2 queryString:(id)arg3;
+- (void)unregisterApplication:(id)arg1;
+- (void)searchResultWasSelected:(id)arg1 inDomain:(unsigned int)arg2 queryString:(id)arg3;
 - (void)registerApplication:(id)arg1 withCategories:(id)arg2;
 - (BOOL)indexUpdatedContent:(id)arg1 moreComing:(BOOL)arg2;
 - (BOOL)willStartIndexingForDisplayID:(id)arg1 category:(id)arg2;
@@ -31,7 +26,11 @@
 - (BOOL)endRecordUpdatesForApplication:(id)arg1 andCategory:(id)arg2;
 - (BOOL)requestRecordUpdatesForApplication:(id)arg1 category:(id)arg2 andIDs:(id)arg3;
 - (BOOL)startRecordUpdatesForApplication:(id)arg1 andCategory:(id)arg2;
-- (void)preheat;
 - (BOOL)_appInstalled:(BOOL)arg1 withDisplayIdentifier:(id)arg2 withCategories:(id)arg3;
+- (void)_handleSendFailure:(int)arg1 inCodeNamed:(const char *)arg2;
+- (void)invalidateServerPort;
+- (unsigned int)publicPort;
+- (id)init;
+- (void)dealloc;
 
 @end

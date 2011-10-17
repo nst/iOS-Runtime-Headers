@@ -8,16 +8,16 @@
     NSDictionary *_parameterValues;
 }
 
++ (BOOL)supportsDetachedStorage;
 + (id)carrierServiceName;
 + (BOOL)supportsGreetingChanges;
 + (BOOL)supportsPasswordChanges;
 + (BOOL)ignoresRoamingSwitch;
 + (id)messageNotificationFallbackTimeout;
 + (id)retryIntervals;
-+ (BOOL)supportsDetachedStorage;
 
-- (void)dealloc;
-- (id)parameterValueForKey:(id)arg1;
 - (id)initForService:(id)arg1;
+- (id)parameterValueForKey:(id)arg1;
+- (void)dealloc;
 
 @end

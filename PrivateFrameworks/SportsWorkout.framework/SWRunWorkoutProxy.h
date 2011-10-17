@@ -7,35 +7,35 @@
 @interface SWRunWorkoutProxy : NSObject  {
 }
 
-@property(readonly) NSString * currentSongName;
-@property(readonly) int musicSelection;
-@property(readonly) BOOL shouldControlMusic;
-@property(readonly) NSString * powerSongName;
-@property(readonly) BOOL hasPowerSong;
-@property(readonly) BOOL hasEverStarted;
-@property(readonly) NSDictionary * workoutData;
-@property(readonly) NSString * workoutState;
-@property(readonly) NSString * sensorSearchState;
-@property(readonly) float goal;
-@property(readonly) NSString * presetGoal;
 @property(readonly) NSString * goalType;
+@property(readonly) NSString * presetGoal;
+@property(readonly) float goal;
+@property(readonly) NSString * sensorSearchState;
+@property(readonly) NSString * workoutState;
+@property(readonly) NSDictionary * workoutData;
+@property(readonly) BOOL hasEverStarted;
+@property(readonly) BOOL hasPowerSong;
+@property(readonly) NSString * powerSongName;
+@property(readonly) BOOL shouldControlMusic;
+@property(readonly) int musicSelection;
+@property(readonly) NSString * currentSongName;
 
-+ (void)initialize;
 + (id)newProxy;
++ (void)initialize;
 
-- (void)playPowerSong;
-- (void)pauseMusic;
 - (void)playMusic;
-- (void)selectNextSong;
+- (void)pauseMusic;
 - (void)goToNowPlaying;
-- (void)selectPreviousSong;
-- (void)pauseWorkout;
 - (void)prepareToActivateWorkout;
-- (void)activateWorkout;
 - (void)endWorkout;
 - (void)playOnDemandPrompt;
+- (void)selectPreviousSong;
+- (void)selectNextSong;
+- (void)playPowerSong;
+- (void)pauseWorkout;
+- (void)activateWorkout;
 - (void)endSeeking;
-- (void)beginSeekingBackward;
 - (void)beginSeekingForward;
+- (void)beginSeekingBackward;
 
 @end

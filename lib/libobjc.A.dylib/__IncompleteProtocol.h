@@ -2,11 +2,10 @@
    Image: /usr/lib/libobjc.A.dylib
  */
 
-@interface __IncompleteProtocol  {
-    id isa;
+@interface __IncompleteProtocol : NSObject  {
 }
 
-+ (void)initialize;
++ (void)load;
 
 
 @end

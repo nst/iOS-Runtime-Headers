@@ -9,19 +9,19 @@
 }
 
 @property(readonly) id key;
-@property unsigned int _mapkit_cache_accessTime;
-@property(readonly) id _mapkit_cache_key;
 @property(retain) id object;
+@property(readonly) id _mapkit_cache_key;
+@property unsigned int _mapkit_cache_accessTime;
 
 
-- (id)key;
 - (void)setObject:(id)arg1;
+- (id)key;
 - (id)object;
-- (void)dealloc;
-- (id)description;
 - (id)initWithObject:(id)arg1 key:(id)arg2;
-- (id)_mapkit_cache_key;
-- (unsigned int)_mapkit_cache_accessTime;
 - (void)set_mapkit_cache_accessTime:(unsigned int)arg1;
+- (unsigned int)_mapkit_cache_accessTime;
+- (id)_mapkit_cache_key;
+- (id)description;
+- (void)dealloc;
 
 @end

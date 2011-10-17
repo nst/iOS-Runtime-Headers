@@ -9,16 +9,16 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
-- (id)sqlType;
+- (id)attribute;
 - (id)columnDefinition;
 - (id)initWithProperty:(id)arg1;
-- (id)attribute;
-- (int)externalType;
 - (void)setExternalType:(int)arg1;
-- (unsigned int)externalPrecision;
 - (void)setExternalPrecision:(unsigned int)arg1;
-- (int)externalScale;
 - (void)setExternalScale:(int)arg1;
+- (int)externalType;
+- (unsigned int)externalPrecision;
+- (int)externalScale;
+- (id)sqlType;
+- (BOOL)isEqual:(id)arg1;
 
 @end

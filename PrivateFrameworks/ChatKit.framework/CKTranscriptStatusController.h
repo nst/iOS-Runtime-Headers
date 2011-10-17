@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKSendingProgressView, UIView, NSString, CKConversation, NSTimer, NSMutableSet;
+@class CKSendingProgressView, UIView, NSString, NSTimer, CKAggregateConversation, NSMutableSet;
 
 @interface CKTranscriptStatusController : NSObject  {
     UIView *_multipleRecipientTitleView;
     CKSendingProgressView *_statusView;
     NSString *_title;
-    CKConversation *_conversation;
+    CKAggregateConversation *_conversation;
     float _lastVal;
     NSString *_lastMsg;
     NSTimer *_progressUpdateTimer;
@@ -17,37 +17,41 @@
     BOOL _viewTitle;
     BOOL _finishingUp;
     id _delegate;
+    BOOL _suspended;
 }
 
 @property id delegate;
 @property(copy) NSString * title;
-@property(retain) CKConversation * conversation;
+@property(retain) CKAggregateConversation * conversation;
 
 
-- (void)reset;
-- (id)title;
-- (void)dealloc;
-- (void)setTitle:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)refresh;
+- (void)resume;
+- (void)reset;
+- (id)_title;
+- (id)title;
+- (void)suspend;
 - (id)delegate;
-- (id)conversation;
-- (id)_localizedTitleForSendingPart:(int)arg1 ofPart:(int)arg2;
+- (void)setTitle:(id)arg1;
 - (void)_updateTitle:(BOOL)arg1;
 - (void)_hideName;
-- (void)_updateNavItemTitleView:(BOOL)arg1;
 - (void)_updateCurrentMessages;
+- (BOOL)_shouldShowProgress;
+- (void)_updateNavItemTitleView:(BOOL)arg1;
 - (void)_startUpdatingProgress;
-- (void)_refreshNavigationItemView;
+- (id)_localizedTitleForSendingPart:(int)arg1 ofPart:(int)arg2;
+- (id)_statusView;
 - (void)_refreshNavigationItemViewAnimate:(BOOL)arg1;
 - (BOOL)_calcVals:(BOOL*)arg1;
+- (void)_refreshNavigationItemView;
 - (void)_finishProgress;
-- (id)_generateStatusTitle;
 - (float)_generateVal;
-- (id)_statusView;
-- (void)setConversation:(id)arg1;
+- (id)_generateStatusTitle;
 - (void)brieflyShowName;
 - (void)resetProgress;
-- (void)refresh;
-- (id)_title;
+- (id)conversation;
+- (void)setConversation:(id)arg1;
+- (void)dealloc;
 
 @end

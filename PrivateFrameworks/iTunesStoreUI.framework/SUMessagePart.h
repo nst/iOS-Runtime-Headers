@@ -18,13 +18,13 @@
 - (id)MIMEType;
 - (id)init;
 - (void)dealloc;
-- (id)copyPreparationOperations;
-- (id)newUnfilteredInputSource;
-- (id)composeImage;
-- (BOOL)conformsToUTI:(id)arg1;
-- (id)contentEncoding;
-- (id)copyBodyInputSource;
 - (void)setContentEncoding:(id)arg1;
+- (id)copyBodyInputSource;
+- (id)contentEncoding;
+- (id)newUnfilteredInputSource;
+- (id)copyPreparationOperations;
+- (BOOL)conformsToUTI:(id)arg1;
+- (id)composeImage;
 - (id)composeText;
 
 @end

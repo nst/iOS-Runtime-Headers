@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UIImage, NSString, UILabel, MLAlbum;
+@class UIImageView, UIImage, NSString, UILabel;
 
 @interface PLEmptyAlbumView : UIView  {
     UIImage *_image;
     UIImage *_landscapeImage;
     NSString *_title;
     NSString *_message;
-    MLAlbum *_album;
+    struct NSObject { Class x1; } *_album;
     UIImageView *_imageView;
     UILabel *_titleLabel;
     UILabel *_messageLabel;
@@ -26,28 +26,29 @@
     } _edgeInsets;
 }
 
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } edgeInsets;
 @property int filter;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 
 
+- (int)filter;
 - (void)setMessage:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)layoutSubviews;
 - (void)setFilter:(int)arg1;
-- (void)dealloc;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
 - (void)setImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)filter;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 useLargeImages:(BOOL)arg2;
-- (void)setAlbum:(id)arg1;
-- (void)setPortraitImage:(id)arg1 landscapeImage:(id)arg2;
 - (void)setIsCameraAlbum:(BOOL)arg1;
-- (id)_emptyRollImageForAlbum:(id)arg1 interfaceOrientation:(int)arg2;
-- (id)_messageForAlbum:(id)arg1;
-- (id)_titleForAlbum:(id)arg1;
-- (id)_newLabelWithText:(id)arg1;
+- (void)setPortraitImage:(id)arg1 landscapeImage:(id)arg2;
+- (id)_emptyRollImageForAlbum:(struct NSObject { Class x1; }*)arg1 interfaceOrientation:(int)arg2;
+- (void)_sizeLabelToFitView:(id)arg1;
 - (id)_newTextViewWithText:(id)arg1;
+- (id)_messageForAlbum:(struct NSObject { Class x1; }*)arg1;
+- (id)_newLabelWithText:(id)arg1;
+- (id)_titleForAlbum:(struct NSObject { Class x1; }*)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 useLargeImages:(BOOL)arg2;
+- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)dealloc;
 
 @end

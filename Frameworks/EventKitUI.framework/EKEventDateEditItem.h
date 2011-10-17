@@ -19,15 +19,22 @@
         BOOL minute; 
         double second; 
     } _endDateGr;
+    BOOL _showsTimeZone;
 }
 
+@property BOOL showsTimeZone;
 
-- (BOOL)eventEditItemViewControllerCommit:(id)arg1;
-- (BOOL)configureForCalendarConstraints:(id)arg1;
+
+- (BOOL)editItemViewControllerCommit:(id)arg1;
 - (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
-- (void)shortenCell:(id)arg1;
-- (id)cellForSubitemAtIndex:(int)arg1;
-- (void)setEvent:(id)arg1 store:(id)arg2;
+- (void)refreshFromCalendarItemAndStore;
+- (BOOL)requiresReconfigurationOnCommit;
+- (BOOL)configureForCalendarConstraints:(id)arg1;
+- (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
 - (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (id)cellForSubitemAtIndex:(int)arg1;
+- (void)setShowsTimeZone:(BOOL)arg1;
+- (BOOL)showsTimeZone;
+- (void)shortenCell:(id)arg1;
 
 @end

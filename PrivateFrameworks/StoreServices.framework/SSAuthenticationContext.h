@@ -2,63 +2,75 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSString, NSDictionary;
+@class NSArray, NSString, NSDictionary, NSNumber;
 
-@interface SSAuthenticationContext : NSObject <NSCopying, NSMutableCopying> {
+@interface SSAuthenticationContext : NSObject <SSCoding, NSCopying, NSMutableCopying> {
     NSString *_accountName;
     BOOL _accountNameEditable;
     int _accountScope;
     BOOL _canCreateNewAccount;
     NSString *_clientIdentifierHeader;
     BOOL _demoAccount;
+    NSDictionary *_httpHeaders;
+    BOOL _ignoresTokenExpiration;
     NSString *_preferredITunesStoreClient;
     int _promptStyle;
     NSDictionary *_requestParameters;
     NSNumber *_requiredUniqueIdentifier;
     BOOL _shouldFollowAccountButtons;
+    BOOL _shouldIgnoreProtocol;
     NSDictionary *_signupRequestParameters;
     int _tokenType;
+    NSArray *_userAgentComponents;
 }
 
-@property(readonly) int tokenType;
-@property(copy,readonly) NSDictionary * signupRequestParameters;
-@property(readonly) BOOL shouldFollowAccountButtons;
-@property(retain,readonly) NSNumber * requiredUniqueIdentifier;
-@property(copy,readonly) NSDictionary * requestParameters;
-@property(readonly) int promptStyle;
-@property(copy,readonly) NSString * preferredITunesStoreClient;
-@property(getter=isDemoAccount,readonly) BOOL demoAccount;
-@property(copy,readonly) NSString * clientIdentifierHeader;
-@property(readonly) BOOL canCreateNewAccount;
+@property(readonly) NSString * accountName;
 @property(readonly) int accountScope;
 @property(getter=isAccountNameEditable,readonly) BOOL accountNameEditable;
-@property(copy,readonly) NSString * accountName;
+@property(readonly) BOOL canCreateNewAccount;
+@property(readonly) NSDictionary * HTTPHeaders;
+@property(readonly) NSString * preferredITunesStoreClient;
+@property(readonly) int promptStyle;
+@property(readonly) NSDictionary * requestParameters;
+@property(readonly) NSNumber * requiredUniqueIdentifier;
+@property(readonly) BOOL shouldFollowAccountButtons;
+@property(readonly) NSDictionary * signupRequestParameters;
+@property(readonly) NSArray * userAgentComponents;
+@property(readonly) NSString * clientIdentifierHeader;
+@property(getter=isDemoAccount,readonly) BOOL demoAccount;
+@property(readonly) BOOL shouldIgnoreProtocol;
+@property(readonly) int tokenType;
 
 + (id)contextForSignIn;
 
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
+- (id)initWithAccount:(id)arg1;
+- (id)accountName;
+- (id)userAgentComponents;
+- (int)tokenType;
+- (id)signupRequestParameters;
+- (BOOL)shouldIgnoreProtocol;
 - (BOOL)shouldFollowAccountButtons;
+- (int)promptStyle;
 - (id)preferredITunesStoreClient;
-- (id)_initSSAuthenticationContext;
+- (id)clientIdentifierHeader;
+- (BOOL)canCreateNewAccount;
 - (BOOL)isAccountNameEditable;
 - (void)_copyIvarsToCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;
+- (id)_initSSAuthenticationContext;
 - (BOOL)isDemoAccount;
-- (BOOL)canCreateNewAccount;
-- (id)clientIdentifierHeader;
-- (int)promptStyle;
-- (id)signupRequestParameters;
-- (int)tokenType;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (id)requiredUniqueIdentifier;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)initWithAccountIdentifier:(id)arg1;
 - (int)accountScope;
-- (id)initWithAccount:(id)arg1;
+- (id)HTTPHeaders;
 - (id)requestParameters;
-- (id)accountName;
+- (id)requiredUniqueIdentifier;
 
 @end

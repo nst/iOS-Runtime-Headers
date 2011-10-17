@@ -17,13 +17,13 @@
 
 - (id)init;
 - (void)dealloc;
-- (void)updateClientState;
 - (void)setAccelUpdateInterval:(double)arg1;
+- (void)updateClientState;
 - (void)refreshEventSystem;
+- (struct __IOHIDEventSystemClient { }*)eventSystemClient;
 - (void)addClient:(id)arg1;
 - (void)removeClient:(id)arg1;
 - (id)clientList;
-- (struct __IOHIDEventSystemClient { }*)eventSystemClient;
 - (BOOL)managingAccel;
 
 @end

@@ -9,16 +9,16 @@
 }
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)predicateFormat;
+- (id)_expressionWithSubstitutionVariables:(id)arg1;
+- (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
+- (id)variable;
 - (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithObject:(id)arg1;
-- (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (id)variable;
-- (id)predicateFormat;
-- (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

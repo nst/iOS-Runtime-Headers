@@ -10,16 +10,16 @@
     NSDictionary *_expansions;
 }
 
-@property(readonly) NSDictionary * expansions;
 @property(readonly) NSString * delimiter;
 @property(readonly) NSArray * signature;
+@property(readonly) NSDictionary * expansions;
 
 
-- (void)dealloc;
-- (id)description;
 - (id)signature;
-- (id)delimiter;
+- (id)description;
+- (void)dealloc;
 - (id)expansions;
+- (id)delimiter;
 - (id)initFromPlist:(id)arg1;
 
 @end

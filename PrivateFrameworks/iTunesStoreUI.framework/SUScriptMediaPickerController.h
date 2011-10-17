@@ -12,24 +12,25 @@
 @property(retain) NSString * prompt;
 
 + (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
-- (void)setMediaTypes:(id)arg1;
-- (id)mediaTypes;
-- (id)prompt;
-- (void)setPrompt:(id)arg1;
-- (id)initWithMediaTypes:(id)arg1;
-- (BOOL)allowsPickingMultipleItems;
-- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
-- (BOOL)_allowsPickingMultipleItems;
-- (id)_copyMediaTypes;
-- (id)_copyPrompt;
-- (void)_setAllowsPickingMultipleItems:(BOOL)arg1;
-- (void)_setPrompt:(id)arg1;
-- (void)_setMediaTypes:(id)arg1;
-- (id)newNativeViewController;
 - (id)attributeKeys;
-- (id)scriptAttributeKeys;
+- (id)mediaTypes;
+- (void)setMediaTypes:(id)arg1;
+- (void)setPrompt:(id)arg1;
+- (id)prompt;
+- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
+- (BOOL)allowsPickingMultipleItems;
+- (void)_setAllowsPickingMultipleItems:(BOOL)arg1;
+- (BOOL)_allowsPickingMultipleItems;
+- (void)_setMediaTypes:(id)arg1;
+- (id)_copyMediaTypes;
+- (id)initWithMediaTypes:(id)arg1;
+- (void)_setPrompt:(id)arg1;
+- (id)_copyPrompt;
+- (id)newNativeViewController;
 - (void)setNativeViewController:(id)arg1;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

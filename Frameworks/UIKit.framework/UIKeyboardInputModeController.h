@@ -2,19 +2,53 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardInputMode;
+@class UIKeyboardInputMode, NSArray, NSString, NSMutableArray;
 
 @interface UIKeyboardInputModeController : NSObject  {
     UIKeyboardInputMode *_currentInputMode;
+    NSMutableArray *_supportedInputModeIdentifiers;
+    NSArray *_inputModesWithoutHardwareSupport;
+    NSString *currentLocale;
+    NSString *currentLanguage;
+    NSArray *keyboardInputModes;
+    NSArray *enabledInputModes;
+    NSArray *normalizedInputModes;
 }
 
+@property(readonly) NSArray * supportedInputModeIdentifiers;
+@property(readonly) NSArray * inputModesWithoutHardwareSupport;
+@property(readonly) NSArray * enabledInputModeIdentifiers;
+@property(readonly) NSArray * normalizedEnabledInputModeIdentifiers;
 @property(retain) UIKeyboardInputMode * currentInputMode;
+@property(retain) NSString * currentLocale;
+@property(retain) NSString * currentLanguage;
+@property(retain) NSArray * keyboardInputModes;
+@property(retain) NSArray * enabledInputModes;
+@property(retain) NSArray * normalizedInputModes;
 
 + (id)sharedInputModeController;
 
-- (id)inputModeWithIdentifier:(id)arg1;
+- (id)inputModesWithoutHardwareSupport;
+- (id)enabledInputModeIdentifiers:(BOOL)arg1;
+- (id)supportedInputModeIdentifiers;
+- (id)defaultEnabledInputModesForCurrentLocale:(BOOL)arg1;
+- (void)clearCachedValues;
 - (void)setCurrentInputMode:(id)arg1;
+- (id)inputModeWithIdentifier:(id)arg1;
+- (id)normalizedInputModes;
+- (id)currentLanguage;
+- (id)enabledInputModes;
+- (id)keyboardInputModes;
+- (void)setNormalizedInputModes:(id)arg1;
+- (void)setEnabledInputModes:(id)arg1;
+- (void)setKeyboardInputModes:(id)arg1;
+- (void)setCurrentLanguage:(id)arg1;
+- (void)setCurrentLocale:(id)arg1;
+- (id)activeInputModes;
 - (id)currentInputMode;
+- (id)currentLocale;
+- (id)enabledInputModeIdentifiers;
+- (id)normalizedEnabledInputModeIdentifiers;
 - (void)dealloc;
 
 @end

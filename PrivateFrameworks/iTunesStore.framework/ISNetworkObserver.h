@@ -6,9 +6,9 @@
 
 @interface ISNetworkObserver : NSObject <ISSingleton, SSDownloadQueueObserver> {
     struct dispatch_queue_s { } *_dispatchQueue;
+    BOOL _isCellularRestricted;
     double _lastNetworkTypeChangeTime;
     int _networkUsageCount;
-    struct __CFBag { } *_networkUsageCountByAsset;
     int _networkType;
     NSMutableSet *_observedDownloadQueues;
     struct __SCNetworkReachability { } *_reachability;
@@ -17,44 +17,44 @@
 @property int networkType;
 @property(readonly) double lastNetworkTypeChangeTime;
 @property(getter=isUsingNetwork,readonly) BOOL usingNetwork;
+@property(getter=isCellularDataRestricted,readonly) BOOL cellularDataRestricted;
 @property(readonly) BOOL shouldShowCellularAutomaticDownloadsSwitch;
 @property(readonly) NSString * connectionTypeHeader;
 @property(getter=isWiFiEnabled,readonly) BOOL wifiEnabled;
 
-+ (id)sharedInstance;
-+ (void)set3GEnabled:(BOOL)arg1;
-+ (void)setAirplaneModeEnabled:(BOOL)arg1;
 + (void)setWiFiEnabled:(BOOL)arg1;
++ (void)setAirplaneModeEnabled:(BOOL)arg1;
++ (void)set3GEnabled:(BOOL)arg1;
++ (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
 - (BOOL)shouldShowCellularAutomaticDownloadsSwitch;
-- (void)beginObservingDownloadQueue:(id)arg1;
-- (id)copyValueForCarrierBundleKey:(id)arg1;
-- (void)endObservingDownloadQueue:(id)arg1;
-- (void)beginUsingNetworkForAssetType:(int)arg1;
-- (id)copyActiveAssetTypes;
-- (void)endUsingNetworkForAssetType:(int)arg1;
+- (BOOL)isCellularDataRestricted;
+- (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
+- (void)downloadQueueNetworkUsageChanged:(id)arg1;
+- (BOOL)isWiFiEnabled;
+- (void)_reloadCellularRestriction;
 - (void)setNetworkType:(int)arg1;
-- (void)_dataStatusChangedNotification:(id)arg1;
-- (void)_telephonyObserverAvailableNotification:(id)arg1;
-- (int)_currentNetworkType;
+- (void)endObservingDownloadQueue:(id)arg1;
+- (void)beginObservingDownloadQueue:(id)arg1;
 - (int)_networkTypeFromDataIndicator:(id)arg1;
-- (BOOL)_ntsIsUsingNetwork;
 - (void)_postTypeChangedNotificationFromValue:(int)arg1 toValue:(int)arg2;
-- (void)_postUsageChangedToValue:(BOOL)arg1;
-- (void)_reloadNetworkType;
 - (int)_setNetworkType:(int)arg1;
+- (void)_reloadNetworkType;
+- (id)copyValueForCarrierBundleKey:(id)arg1;
+- (void)_postUsageChangedToValue:(BOOL)arg1;
+- (BOOL)_ntsIsUsingNetwork;
+- (void)_telephonyObserverAvailableNotification:(id)arg1;
+- (void)_dataStatusChangedNotification:(id)arg1;
+- (int)_currentNetworkType;
 - (id)connectionTypeHeader;
 - (double)lastNetworkTypeChangeTime;
-- (BOOL)isWiFiEnabled;
-- (int)networkType;
+- (id)init;
+- (void)dealloc;
 - (void)reloadNetworkType;
 - (void)endUsingNetwork;
 - (void)beginUsingNetwork;
-- (void)downloadQueueNetworkUsageChanged:(id)arg1;
-- (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
 - (BOOL)isUsingNetwork;
+- (int)networkType;
 
 @end

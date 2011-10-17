@@ -9,8 +9,8 @@
 
 + (id)newConditionWithDictionary:(id)arg1;
 
+- (BOOL)evaluateWithContext:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (void)dealloc;
-- (BOOL)evaluateWithContext:(id)arg1;
 
 @end

@@ -16,6 +16,8 @@
 }
 
 
+- (unsigned int)deviceIdentifier;
+- (id)initWithDeviceIdentifier:(unsigned int)arg1;
 - (void)addFingerWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2;
 - (void)removeFingerWithIdentifier:(unsigned int)arg1;
 - (unsigned int)fingerCount;
@@ -23,15 +25,13 @@
 - (id)fingerWithIdentifier:(unsigned int)arg1;
 - (id)fingerWithoutIdentifier:(unsigned int)arg1;
 - (id)fingers;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fingerFrame;
 - (struct CGPoint { float x1; float x2; })averageLocation;
 - (struct CGPoint { float x1; float x2; })balancedLocation;
 - (BOOL)isCancelEvent;
 - (struct CGPoint { float x1; float x2; })magneticLocation;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fingerFrame;
 - (double)time;
-- (void)dealloc;
 - (id)description;
-- (unsigned int)deviceIdentifier;
-- (id)initWithDeviceIdentifier:(unsigned int)arg1;
+- (void)dealloc;
 
 @end

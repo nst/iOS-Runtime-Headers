@@ -8,41 +8,47 @@
     NSString *_query;
     GMMGeometry *_geocode;
     NSString *_queryRefinementToken;
-    BOOL _isVia;
     BOOL _hasIsVia;
+    BOOL _isVia;
+    BOOL _hasWaypointType;
+    int _waypointType;
 }
 
-@property(readonly) struct { double latitude; double longitude; } coordinate;
 @property(readonly) BOOL hasQuery;
-@property(readonly) BOOL hasGeocode;
-@property(readonly) BOOL hasQueryRefinementToken;
-@property(readonly) BOOL hasIsVia;
-@property BOOL isVia;
-@property(retain) NSString * queryRefinementToken;
-@property(retain) GMMGeometry * geocode;
 @property(retain) NSString * query;
+@property(readonly) BOOL hasGeocode;
+@property(retain) GMMGeometry * geocode;
+@property(readonly) BOOL hasQueryRefinementToken;
+@property(retain) NSString * queryRefinementToken;
+@property BOOL hasIsVia;
+@property BOOL isVia;
+@property BOOL hasWaypointType;
+@property int waypointType;
 
 
-- (id)dictionaryRepresentation;
-- (id)query;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)description;
-- (BOOL)hasIsVia;
-- (void)setIsVia:(BOOL)arg1;
-- (BOOL)isVia;
-- (BOOL)hasQueryRefinementToken;
-- (void)setQuery:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (BOOL)hasQuery;
-- (void)writeTo:(id)arg1;
+- (void)setQuery:(id)arg1;
+- (id)initWithGEOPlaceSearchRequest:(id)arg1 placeToken:(id)arg2;
+- (void)setHasWaypointType:(BOOL)arg1;
+- (BOOL)hasWaypointType;
+- (void)setHasIsVia:(BOOL)arg1;
+- (BOOL)hasIsVia;
+- (int)waypointType;
+- (BOOL)isVia;
+- (void)setWaypointType:(int)arg1;
+- (void)setIsVia:(BOOL)arg1;
 - (void)setQueryRefinementToken:(id)arg1;
+- (void)setGeocode:(id)arg1;
 - (id)queryRefinementToken;
+- (BOOL)hasQueryRefinementToken;
 - (id)geocode;
 - (BOOL)hasGeocode;
-- (void)setGeocode:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (struct { double x1; double x2; })coordinate;
+- (BOOL)hasQuery;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)query;
+- (id)description;
+- (id)description;
+- (void)dealloc;
 
 @end

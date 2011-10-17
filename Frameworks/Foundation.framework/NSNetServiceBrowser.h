@@ -9,19 +9,19 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
 - (void)finalize;
+- (void)searchForAllDomains;
+- (void)_dispatchCallBack:(void*)arg1 flags:(unsigned long)arg2 error:(struct { int x1; int x2; })arg3;
+- (void)searchForServicesOfType:(id)arg1 inDomain:(id)arg2;
+- (void)searchForRegistrationDomains;
+- (void)searchForBrowsableDomains;
+- (struct __CFNetServiceBrowser { }*)_internalNetServiceBrowser;
+- (void)stop;
+- (id)delegate;
+- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)init;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)searchForBrowsableDomains;
-- (void)searchForRegistrationDomains;
-- (void)searchForServicesOfType:(id)arg1 inDomain:(id)arg2;
-- (struct __CFNetServiceBrowser { }*)_internalNetServiceBrowser;
-- (void)_dispatchCallBack:(void*)arg1 flags:(unsigned long)arg2 error:(struct { int x1; int x2; })arg3;
-- (void)searchForAllDomains;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)stop;
 
 @end

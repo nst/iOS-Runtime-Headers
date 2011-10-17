@@ -4,19 +4,20 @@
 
 @class NSArray;
 
-@interface FTProfileQueryEmailsMessage : FTProfileMessage  {
+@interface FTProfileQueryEmailsMessage : FTProfileMessage <NSCopying> {
     NSArray *_responseEmails;
 }
 
 @property(copy) NSArray * responseEmailAddresses;
 
 
-- (id)bagKey;
-- (void)dealloc;
-- (void)handleResponseDictionary:(id)arg1;
+- (id)messageBody;
 - (id)responseEmailAddresses;
 - (void)setResponseEmailAddresses:(id)arg1;
+- (void)handleResponseDictionary:(id)arg1;
 - (id)requiredKeys;
-- (id)messageBody;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)bagKey;
 
 @end

@@ -12,12 +12,12 @@
 
 
 - (id)identifier;
-- (float)width;
 - (void)setIdentifier:(id)arg1;
-- (void)setWidth:(float)arg1;
-- (id)title;
-- (void)dealloc;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2 width:(float)arg3;
+- (void)setWidth:(float)arg1;
+- (float)width;
+- (id)title;
 - (void)setTitle:(id)arg1;
+- (void)dealloc;
 
 @end

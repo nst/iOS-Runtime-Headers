@@ -12,8 +12,8 @@
 }
 
 
-- (void)dealloc;
-- (id)initWithDataRepresentation:(id)arg1;
 - (const char *)dataAtOffset:(long long)arg1 size:(unsigned long)arg2 end:(long long)arg3;
+- (id)initWithDataRepresentation:(id)arg1;
+- (void)dealloc;
 
 @end

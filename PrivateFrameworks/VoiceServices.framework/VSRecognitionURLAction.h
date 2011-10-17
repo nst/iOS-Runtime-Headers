@@ -12,7 +12,7 @@
 - (int)completionType;
 - (void)setURL:(id)arg1;
 - (id)URL;
-- (void)dealloc;
 - (id)perform;
+- (void)dealloc;
 
 @end

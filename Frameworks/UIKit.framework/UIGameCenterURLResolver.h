@@ -9,8 +9,8 @@
     NSArray *_gameCenterPathPatterns;
 }
 
-+ (id)urlCacheName;
 + (id)urlCacheChangedNotificationName;
++ (id)urlCacheName;
 
 - (BOOL)isGameCenterURL:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

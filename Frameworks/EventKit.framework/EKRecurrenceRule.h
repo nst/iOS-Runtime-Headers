@@ -2,28 +2,16 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSArray, NSString, EKRecurrenceEnd, NSDate;
+@class EKRecurrenceEnd, NSString, NSArray;
 
-@interface EKRecurrenceRule : NSObject  {
-    id _owner;
-    NSArray *_monthsOfTheYear;
-    NSArray *_daysOfTheMonth;
-    NSArray *_daysOfTheWeek;
-    NSArray *_setPositions;
-    NSArray *_weeksOfTheYear;
-    NSArray *_daysOfTheYear;
-    int _firstDayOfTheWeek;
-    int _interval;
-    int _frequency;
-    EKRecurrenceEnd *_recurrenceEnd;
-    NSDate *_cachedEndDate;
-    unsigned int _dirtyFlags;
+@interface EKRecurrenceRule : EKObject <NSCopying> {
+    EKRecurrenceEnd *_cachedEnd;
 }
 
 @property(readonly) NSString * calendarIdentifier;
 @property(copy) EKRecurrenceEnd * recurrenceEnd;
-@property int frequency;
-@property int interval;
+@property(readonly) int frequency;
+@property(readonly) int interval;
 @property(readonly) int firstDayOfTheWeek;
 @property(readonly) NSArray * daysOfTheWeek;
 @property(readonly) NSArray * daysOfTheMonth;
@@ -31,44 +19,51 @@
 @property(readonly) NSArray * weeksOfTheYear;
 @property(readonly) NSArray * monthsOfTheYear;
 @property(readonly) NSArray * setPositions;
+@property(retain) EKRecurrenceEnd * cachedEnd;
 
-+ (id)recurrenceRuleWithType:(int)arg1 interval:(unsigned int)arg2 end:(id)arg3;
-+ (id)iCalendarValueFromRecurrenceType:(int)arg1;
 + (id)iCalendarValueFromDayOfTheWeek:(unsigned int)arg1;
++ (id)recurrenceRuleWithType:(int)arg1 interval:(unsigned int)arg2 end:(id)arg3;
 + (id)iCalendarValueFromDate:(id)arg1 isDateOnly:(BOOL)arg2 isFloating:(BOOL)arg3;
++ (id)iCalendarValueFromRecurrenceType:(int)arg1;
 
+- (id)owner;
+- (id)UUID;
+- (int)firstDayOfTheWeek;
+- (id)cachedEndDate;
+- (BOOL)shouldPinMonthDays;
+- (void)setCachedEnd:(id)arg1;
+- (id)cachedEnd;
+- (id)_persistentRule;
+- (void)setFirstDayOfTheWeek:(unsigned int)arg1;
+- (id)weeksOfTheYear;
+- (id)daysOfTheYear;
+- (id)monthsOfTheYear;
+- (id)setPositions;
+- (id)daysOfTheMonth;
+- (id)daysOfTheWeek;
+- (int)frequency;
+- (id)stringValueAsDateOnly:(BOOL)arg1 isFloating:(BOOL)arg2;
+- (id)initRecurrenceWithFrequency:(int)arg1 interval:(int)arg2 daysOfTheWeek:(id)arg3 daysOfTheMonth:(id)arg4 monthsOfTheYear:(id)arg5 weeksOfTheYear:(id)arg6 daysOfTheYear:(id)arg7 setPositions:(id)arg8 end:(id)arg9;
+- (void)setWeeksOfTheYear:(id)arg1;
+- (void)setDaysOfTheYear:(id)arg1;
+- (void)setMonthsOfTheYear:(id)arg1;
+- (void)setSetPositions:(id)arg1;
+- (void)setDaysOfTheMonth:(id)arg1;
+- (void)setDaysOfTheWeek:(id)arg1;
+- (void)setFrequency:(int)arg1;
+- (id)initRecurrenceWithFrequency:(int)arg1 interval:(int)arg2 end:(id)arg3;
+- (void)setRecurrenceEnd:(id)arg1;
+- (id)recurrenceEnd;
+- (struct { int x1; int x2; int x3; int x4; int x5; double x6; })gregorianUnits;
+- (BOOL)dirtyStateMayAffectExceptionDates;
+- (id)lazyLoadRelationForKey:(id)arg1;
 - (int)interval;
 - (void)setInterval:(int)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
+- (void)reset;
+- (id)calendarIdentifier;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)owner;
-- (void)setOwner:(id)arg1;
-- (id)calendarIdentifier;
-- (BOOL)isDirty;
-- (id)initWithRecurrenceRef:(void*)arg1;
-- (id)initRecurrenceWithFrequency:(int)arg1 interval:(int)arg2 daysOfTheWeek:(id)arg3 daysOfTheMonth:(id)arg4 monthsOfTheYear:(id)arg5 weeksOfTheYear:(id)arg6 daysOfTheYear:(id)arg7 setPositions:(id)arg8 end:(id)arg9;
-- (id)initRecurrenceWithFrequency:(int)arg1 interval:(unsigned int)arg2 end:(id)arg3;
-- (void)updateRecurrenceRef:(void*)arg1 ignoreDirty:(BOOL)arg2;
-- (id)cachedEndDate;
-- (void)setFrequency:(int)arg1;
-- (void)setRecurrenceEnd:(id)arg1;
-- (id)stringValueAsDateOnly:(BOOL)arg1 isFloating:(BOOL)arg2;
-- (id)daysOfTheYear;
-- (id)daysOfTheWeek;
-- (id)daysOfTheMonth;
-- (id)monthsOfTheYear;
-- (int)firstDayOfTheWeek;
-- (struct { int x1; int x2; int x3; int x4; int x5; double x6; })gregorianUnits;
-- (BOOL)shouldPinMonthDays;
-- (id)setPositions;
-- (id)weeksOfTheYear;
-- (void)setCachedEndDate:(id)arg1;
-- (id)recurrenceEnd;
-- (int)frequency;
 
 @end

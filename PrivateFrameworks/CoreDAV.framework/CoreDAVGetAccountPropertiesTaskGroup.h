@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString, NSSet, <CoreDAVGetAccountPropertiesTaskGroupDelegate>, NSURL;
+@class NSMutableSet, NSString, NSSet, <CoreDAVGetAccountPropertiesTaskGroupDelegate>, NSURL;
 
-@interface CoreDAVGetAccountPropertiesTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate, CoreDAVOptionsTaskDelegate, CoreDAVPrincipalSearchPropertySetTaskDelegate> {
+@interface CoreDAVGetAccountPropertiesTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate, CoreDAVOptionsTaskDelegate, CoreDAVPrincipalSearchPropertySetTaskDelegate, CoreDAVTaskDelegate> {
     NSURL *_principalURL;
     NSString *_displayName;
     NSURL *_resourceID;
@@ -13,43 +13,47 @@
     NSSet *_principalSearchProperties;
     BOOL _isExpandPropertyReportSupported;
     BOOL _fetchPrincipalSearchProperties;
-    NSURL *_newServerURL;
+    BOOL _shouldIgnoreHomeSetOnDifferentHost;
+    NSMutableSet *_redirectHistory;
 }
 
-@property <CoreDAVGetAccountPropertiesTaskGroupDelegate> * delegate;
-@property(retain) NSURL * newServerURL;
-@property(readonly) NSSet * principalSearchProperties;
-@property BOOL fetchPrincipalSearchProperties;
-@property(readonly) BOOL isExpandPropertyReportSupported;
-@property(readonly) NSSet * collections;
-@property(readonly) NSSet * emailAddresses;
-@property(readonly) NSURL * resourceID;
-@property(readonly) NSString * displayName;
 @property(readonly) NSURL * principalURL;
+@property(readonly) NSString * displayName;
+@property(readonly) NSURL * resourceID;
+@property(readonly) NSSet * emailAddresses;
+@property(readonly) NSSet * collections;
+@property(readonly) NSSet * principalSearchProperties;
+@property(readonly) BOOL isExpandPropertyReportSupported;
+@property BOOL fetchPrincipalSearchProperties;
+@property <CoreDAVGetAccountPropertiesTaskGroupDelegate> * delegate;
+@property BOOL shouldIgnoreHomeSetOnDifferentHost;
 
 
 - (id)emailAddresses;
-- (id)displayName;
-- (void)dealloc;
-- (id)description;
-- (BOOL)isExpandPropertyReportSupported;
-- (id)principalURL;
-- (void)startTaskGroup;
-- (void)searchPropertySetTask:(id)arg1 completetWithPropertySearchSet:(id)arg2 error:(id)arg3;
-- (void)optionsTask:(id)arg1 error:(id)arg2;
-- (id)resourceID;
+- (void)setShouldIgnoreHomeSetOnDifferentHost:(BOOL)arg1;
 - (id)principalSearchProperties;
-- (void)_setPropertiesFromParsedResponses:(id)arg1;
-- (void)_parseDAVHeader:(id)arg1;
-- (void)_taskCompleted:(id)arg1 withError:(id)arg2;
-- (id)newServerURL;
-- (void)setNewServerURL:(id)arg1;
-- (BOOL)fetchPrincipalSearchProperties;
 - (void)setFetchPrincipalSearchProperties:(BOOL)arg1;
+- (BOOL)isExpandPropertyReportSupported;
+- (void)searchPropertySetTask:(id)arg1 completetWithPropertySearchSet:(id)arg2 error:(id)arg3;
+- (BOOL)fetchPrincipalSearchProperties;
+- (void)_taskCompleted:(id)arg1 withError:(id)arg2;
+- (void)processPrincipalHeaders:(id)arg1;
+- (void)coaxServerForPrincipalHeaders;
+- (BOOL)forceOptionsRequest;
+- (BOOL)shouldIgnoreHomeSetOnDifferentHost;
 - (void)taskGroupWillCancelWithError:(id)arg1;
+- (void)startTaskGroup;
+- (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
-- (id)_copyAccountPropertiesPropFindElements;
+- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
+- (id)resourceID;
 - (id)homeSet;
+- (void)_setPropertiesFromParsedResponses:(id)arg1;
+- (id)_copyAccountPropertiesPropFindElements;
+- (id)displayName;
+- (id)principalURL;
+- (id)description;
+- (void)dealloc;
 - (id)collections;
 
 @end

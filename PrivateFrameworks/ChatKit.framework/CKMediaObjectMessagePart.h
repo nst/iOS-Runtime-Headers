@@ -2,33 +2,35 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSData, CKMediaObject, UIImage;
+@class NSData, CKMediaObject, NSArray;
 
 @interface CKMediaObjectMessagePart : CKMessagePart  {
     CKMediaObject *_mediaObject;
-    UIImage *_composeImage;
+    NSArray *_composeImages;
     NSData *_previewData;
     NSData *_composeData;
     NSData *_dataForHighlight;
 }
 
 @property(readonly) CKMediaObject * mediaObject;
-@property(readonly) UIImage * composeImage;
+@property(copy) NSArray * composeImages;
 
 
 - (int)type;
-- (void)dealloc;
-- (int)_orientation;
-- (void)setPreviewData:(id)arg1;
-- (id)detachedCopy;
 - (void)setComposeData:(id)arg1;
-- (id)highlightData;
+- (id)composeImages;
+- (void)setPreviewData:(id)arg1;
 - (id)composeData;
-- (id)previewData;
+- (void)setComposeImages:(id)arg1;
+- (id)detachedCopy;
+- (int)_orientation;
+- (BOOL)usesColoredBalloon;
 - (void)copyToPasteboard;
+- (id)highlightData;
+- (id)previewData;
+- (void)dealloc;
 - (id)mediaObject;
 - (id)initWithMediaObject:(id)arg1;
-- (id)composeImage;
 - (BOOL)isDisplayable;
 
 @end

@@ -9,23 +9,19 @@
     NSString *_label;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
-- (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (id)initWithRemoveControl:(id)arg1 withTarget:(id)arg2 withLabel:(id)arg3;
-- (void)_controlMouseUp:(struct __GSEvent { }*)arg1;
 - (float)buttonWidth;
-- (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
+- (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
+- (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
+- (void)_controlMouseUp:(struct __GSEvent { }*)arg1;
 - (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
 - (id)_scriptingInfo;
-- (void)sizeToFit;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
-- (void)dealloc;
+- (void)sizeToFit;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
+- (void)dealloc;
 
 @end

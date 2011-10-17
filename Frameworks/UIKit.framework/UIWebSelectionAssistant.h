@@ -4,42 +4,44 @@
 
 @class UILongPressGestureRecognizer, UIWebDocumentView, UIWebSelectionView, UIWebSelection, UITapAndAHalfRecognizer;
 
-@interface UIWebSelectionAssistant : NSObject <UILongPressGestureRecognizerDelegate> {
+@interface UIWebSelectionAssistant : NSObject <UIGestureRecognizerDelegate> {
     UIWebDocumentView *_webView;
-    UIWebSelectionView *_tintView;
+    UIWebSelectionView *_selectionView;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
     UITapAndAHalfRecognizer *_tapAndAHalfGestureRecognizer;
     BOOL _enabled;
 }
 
 @property(readonly) UIWebSelection * selection;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } selectionFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionFrame;
 @property BOOL enabled;
 
 
-- (void)setGestureRecognizers;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionFrame;
-- (void)scaleChanged;
-- (void)makeWebSelection:(id)arg1;
-- (void)tap:(id)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 fromView:(id)arg3;
-- (void)layoutChanged;
-- (void)didRotate:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)isSelectionGestureRecognizer:(id)arg1;
-- (void)resignedFirstResponder;
-- (id)selection;
 - (void)hideCallout;
-- (id)initWithWebView:(id)arg1;
-- (void)willDrag;
-- (void)doneDragging;
-- (void)willRotate:(id)arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 fromView:(id)arg3;
+- (void)tap:(id)arg1;
+- (void)makeWebSelection:(id)arg1;
 - (BOOL)enabled;
-- (void)clearSelection;
+- (BOOL)isSelectionGestureRecognizer:(id)arg1;
+- (void)didEndScrollingPage;
+- (void)willStartScrollingPage;
+- (id)initWithWebView:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionFrame;
+- (void)resignedFirstResponder;
+- (void)scaleChanged;
+- (void)didEndScrollingOverflow;
+- (void)willStartScrollingOverflow;
+- (void)layoutChangedByScrolling:(BOOL)arg1;
+- (void)didRotate:(id)arg1;
+- (void)willRotate:(id)arg1;
 - (void)selectionChanged;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (void)clearSelection;
+- (id)selection;
+- (void)setGestureRecognizers;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (void)setEnabled:(BOOL)arg1;
 - (void)dealloc;
 
 @end

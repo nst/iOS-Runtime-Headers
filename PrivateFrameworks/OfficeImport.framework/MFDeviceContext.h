@@ -39,26 +39,22 @@
 
 + (id)deviceContextWithDriver:(id)arg1;
 
-- (void)setFont:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setMiterLimit:(double)arg1;
-- (void)setTextColour:(id)arg1;
+- (void)setBrush:(id)arg1;
 - (id)initWithDriver:(id)arg1;
-- (void)setTextUpdateCP:(bool)arg1;
 - (bool)getTextUpdateCP;
-- (void)setTextHorizontalAlign:(int)arg1;
+- (void)setTextUpdateCP:(bool)arg1;
 - (int)getTextHorizontalAlign;
+- (void)setTextHorizontalAlign:(int)arg1;
 - (void)setTextVerticalAlign:(int)arg1;
-- (void)setTextDirection:(int)arg1;
 - (int)getTextDirection;
+- (void)setTextDirection:(int)arg1;
 - (int)getTextBreakExtra;
 - (int)getTextBreakCount;
-- (void)setTextCharExtra:(int)arg1;
 - (int)getTextCharExtra;
+- (void)setTextCharExtra:(int)arg1;
 - (int)getBkMode;
-- (void)setBrushOrg:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })getBrushOrg;
+- (void)setBrushOrg:(struct CGPoint { float x1; float x2; })arg1;
 - (int)getStretchBltMode;
 - (void)setCurrentTransform:(id)arg1;
 - (void)setSelectedPalette:(id)arg1;
@@ -75,10 +71,10 @@
 - (struct CGPoint { float x1; float x2; })getPenPosition;
 - (void)setPenPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (int)getPolyFillMode;
-- (void)setBrush:(id)arg1;
 - (id)getSelectedPalette;
 - (id)getTextColour;
 - (id)getBkColour;
+- (void)setTextColour:(id)arg1;
 - (void)setTextJustification:(int)arg1 :(int)arg2;
 - (void)setBkColour:(id)arg1;
 - (void)setBkMode:(int)arg1;
@@ -87,5 +83,9 @@
 - (void)setPolyFillMode:(int)arg1;
 - (void)setRop2:(int)arg1;
 - (void)setPath:(id)arg1;
+- (void)setMiterLimit:(double)arg1;
+- (void)setFont:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

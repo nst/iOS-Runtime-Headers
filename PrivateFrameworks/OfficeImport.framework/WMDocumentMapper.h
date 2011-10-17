@@ -11,24 +11,24 @@
 }
 
 
-- (void)dealloc;
-- (id)fileName;
-- (int)defaultTabWidth;
-- (float)leftMargin;
-- (float)bottomMargin;
-- (float)rightMargin;
-- (id)documentTitle;
-- (id)styleMatrix;
-- (id)archiver;
-- (struct CGSize { float x1; float x2; })contentSizeForDevice;
 - (id)initWithWDom:(id)arg1 archiver:(id)arg2;
-- (id)blipAtIndex:(unsigned int)arg1;
 - (void)setFileName:(id)arg1;
-- (void)mapDefaultCssStylesAt:(id)arg1;
-- (void)mapWithState:(id)arg1;
+- (id)archiver;
 - (struct CGSize { float x1; float x2; })pageSizeForDevice;
+- (struct CGSize { float x1; float x2; })contentSizeForDevice;
+- (id)documentTitle;
+- (void)mapDefaultCssStylesAt:(id)arg1;
 - (BOOL)hasSessionBreakAtIndex:(unsigned int)arg1;
+- (void)mapWithState:(id)arg1;
+- (int)defaultTabWidth;
+- (id)blipAtIndex:(unsigned int)arg1;
+- (float)rightMargin;
 - (float)topMargin;
+- (float)bottomMargin;
 - (float)headerMargin;
+- (float)leftMargin;
+- (id)styleMatrix;
+- (id)fileName;
+- (void)dealloc;
 
 @end

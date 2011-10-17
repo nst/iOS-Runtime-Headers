@@ -9,12 +9,12 @@
 }
 
 
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)finalize;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithString:(id)arg1;
+- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (unsigned int)length;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)length;
 
 @end

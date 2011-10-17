@@ -9,16 +9,16 @@
     NSConditionLock *_blockingLock;
 }
 
-+ (void)initialize;
 + (id)currentReply;
++ (void)initialize;
 
-- (id)init;
-- (void)dealloc;
 - (id)invocation;
 - (void)becomeCurrentReply;
-- (void)sendReply;
 - (void)resignCurrentReply;
 - (id)initWithInvocation:(id)arg1 andBlockingLock:(id)arg2;
 - (void)setReturnValue:(void*)arg1;
+- (void)sendReply;
+- (id)init;
+- (void)dealloc;
 
 @end

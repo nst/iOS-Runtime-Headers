@@ -16,22 +16,22 @@
     BOOL _strokeCurrentPath;
 }
 
-@property BOOL strokeCurrentPath;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property(retain) UIColor * strokeColor;
 @property BOOL fitToImage;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } edgeInsets;
+@property BOOL strokeCurrentPath;
 
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)strokeColor;
 - (void)setStrokeColor:(id)arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setStrokeCurrentPath:(BOOL)arg1;
+- (void)setFitToImage:(BOOL)arg1;
 - (BOOL)strokeCurrentPath;
 - (BOOL)fitToImage;
-- (void)setFitToImage:(BOOL)arg1;
 - (void)drawAfterImageForContext:(struct CGContext { }*)arg1 imageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 finalSize:(struct CGSize { float x1; float x2; })arg3;
 
 @end

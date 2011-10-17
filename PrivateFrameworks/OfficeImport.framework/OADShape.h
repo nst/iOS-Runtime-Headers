@@ -10,17 +10,17 @@
 }
 
 
+- (void)createPresetGeometryWithShapeType:(int)arg1;
+- (void)flattenProperties;
+- (void)removeUnnecessaryOverrides;
+- (void)setTextBody:(id)arg1;
+- (void)setParentTextListStyle:(id)arg1;
+- (id)textBody;
+- (id)shapeProperties;
 - (void)setGeometry:(id)arg1;
 - (id)geometry;
 - (int)type;
 - (id)init;
 - (void)dealloc;
-- (void)setTextBody:(id)arg1;
-- (void)flattenProperties;
-- (void)removeUnnecessaryOverrides;
-- (void)createPresetGeometryWithShapeType:(int)arg1;
-- (void)setParentTextListStyle:(id)arg1;
-- (id)textBody;
-- (id)shapeProperties;
 
 @end

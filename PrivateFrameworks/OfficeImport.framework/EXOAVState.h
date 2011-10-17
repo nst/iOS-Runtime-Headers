@@ -9,7 +9,7 @@
 }
 
 
-- (id)exState;
 - (id)initWithEXState:(id)arg1 packagePart:(id)arg2;
+- (id)exState;
 
 @end

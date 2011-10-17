@@ -11,11 +11,11 @@
 }
 
 
-- (id)target;
-- (id)initWithTarget:(id)arg1;
-- (id)init;
-- (void)invoke;
 - (BOOL)isBeginMark;
 - (BOOL)isEndMark;
+- (id)initWithTarget:(id)arg1;
+- (void)invoke;
+- (id)target;
+- (id)init;
 
 @end

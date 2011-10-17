@@ -4,14 +4,14 @@
 
 @class NSThread;
 
-@interface GeoQueryCollectionRequester : PBRequester  {
+@interface GEOQueryCollectionRequester : PBRequester  {
     NSThread *_thread;
 }
 
 
 - (void)_cancelSubmissionOnThread;
+- (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)dealloc;
-- (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
 
 @end

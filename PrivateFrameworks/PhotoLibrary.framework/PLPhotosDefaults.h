@@ -13,21 +13,21 @@
     MPMediaItemCollection *_musicCollection;
 }
 
-+ (id)sharedInstance;
 + (int)randomTransition;
++ (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
 - (int)transition;
 - (void)setTransition:(int)arg1;
+- (id)musicCollection;
 - (void)setPhotoDefaultValues;
+- (void)setMusicCollection:(id)arg1;
+- (void)setShouldPlayMusic:(BOOL)arg1;
+- (int)transitionForAnimationMovingForward:(BOOL)arg1;
 - (BOOL)shouldRepeat;
 - (BOOL)shouldShuffle;
-- (int)secondsPerSlide;
 - (BOOL)shouldPlayMusic;
-- (void)setMusicCollection:(id)arg1;
-- (id)musicCollection;
-- (int)transitionForAnimationMovingForward:(BOOL)arg1;
-- (void)setShouldPlayMusic:(BOOL)arg1;
+- (int)secondsPerSlide;
+- (id)init;
+- (void)dealloc;
 
 @end

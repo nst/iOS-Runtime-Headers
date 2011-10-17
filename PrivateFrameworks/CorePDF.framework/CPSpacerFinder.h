@@ -68,16 +68,16 @@
 }
 
 
-- (void)dispose;
 - (void)finalize;
-- (void)dealloc;
 - (void)initializeSegmentations;
 - (void)initializeJunctions;
-- (void)findSpacers;
 - (void)assessQuality;
 - (void)determineValidity;
 - (id)initWithContentZone:(id)arg1;
+- (void)findSpacers;
 - (void)splitTextLines;
 - (id)spacers;
+- (void)dispose;
+- (void)dealloc;
 
 @end

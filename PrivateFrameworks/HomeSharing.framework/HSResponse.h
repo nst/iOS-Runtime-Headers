@@ -5,26 +5,30 @@
 @class NSError, NSData, NSDictionary;
 
 @interface HSResponse : NSObject  {
+    struct __CFHTTPMessage { } *_CFHTTPMessage;
     NSData *_responseData;
     unsigned int _responseCode;
     NSDictionary *_responseHeaderFields;
     NSError *_error;
 }
 
-@property(readonly) NSError * error;
-@property(readonly) NSDictionary * responseHeaderFields;
 @property(readonly) unsigned int responseCode;
+@property(readonly) NSDictionary * responseHeaderFields;
 @property(readonly) NSData * responseData;
+@property(readonly) NSError * error;
+@property struct __CFHTTPMessage { }* CFHTTPMessage;
 
 + (id)responseWithResponse:(id)arg1;
 + (id)responseWithCode:(unsigned int)arg1 headerFields:(id)arg2 data:(id)arg3 error:(id)arg4;
 
-- (void)dealloc;
-- (id)description;
+- (struct __CFHTTPMessage { }*)CFHTTPMessage;
+- (id)responseHeaderFields;
+- (id)initWithCode:(unsigned int)arg1 headerFields:(id)arg2 data:(id)arg3 error:(id)arg4;
+- (void)setCFHTTPMessage:(struct __CFHTTPMessage { }*)arg1;
 - (id)responseData;
 - (unsigned int)responseCode;
 - (id)error;
-- (id)initWithCode:(unsigned int)arg1 headerFields:(id)arg2 data:(id)arg3 error:(id)arg4;
-- (id)responseHeaderFields;
+- (id)description;
+- (void)dealloc;
 
 @end

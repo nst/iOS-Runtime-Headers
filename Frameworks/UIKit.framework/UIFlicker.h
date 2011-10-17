@@ -22,17 +22,17 @@
 }
 
 
-- (void)setStartLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setDelay:(float)arg1;
-- (struct CGPoint { float x1; float x2; })offset;
-- (void)_mouseDraggedMemberListTest;
-- (void)_mouseUpMemberListTest;
-- (void)_throwMemberListTest;
-- (void)setIterations:(int)arg1;
-- (void)run;
-- (id)init;
-- (void)setTarget:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)run;
+- (void)setDelay:(float)arg1;
+- (void)setStartLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_throwMemberListTest;
+- (void)_mouseUpMemberListTest;
+- (void)_mouseDraggedMemberListTest;
+- (void)setIterations:(int)arg1;
+- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })offset;
+- (void)setTarget:(id)arg1;
+- (id)init;
 
 @end

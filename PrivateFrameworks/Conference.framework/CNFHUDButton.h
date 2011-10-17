@@ -19,26 +19,23 @@
 @property float contentViewOriginXOffset;
 @property BOOL resizesToFit;
 
-+ (void)_initializeSafeCategory;
 
-- (float)contentViewHeightOffset;
-- (float)contentViewWidthOffset;
+- (void)setOrientation:(int)arg1;
+- (id)imageView;
+- (id)initWithTitle:(id)arg1 image:(id)arg2 tag:(int)arg3;
+- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)titleLabel;
+- (void)layoutSubviews;
+- (void)dealloc;
 - (float)contentViewOriginXOffset;
+- (float)contentViewWidthOffset;
+- (float)contentViewHeightOffset;
 - (void)setContentViewOriginXOffset:(float)arg1;
 - (void)setContentViewWidthOffset:(float)arg1;
 - (void)setContentViewHeightOffset:(float)arg1;
 - (BOOL)resizesToFit;
 - (void)setTitle:(id)arg1 image:(id)arg2;
 - (void)setResizesToFit:(BOOL)arg1;
-- (id)titleLabel;
-- (void)setOrientation:(int)arg1;
-- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)imageView;
-- (id)initWithTitle:(id)arg1 image:(id)arg2 tag:(int)arg3;
-- (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)dealloc;
-- (id)accessibilityLabel;
-- (id)accessibilityValue;
 
 @end

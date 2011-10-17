@@ -2,17 +2,19 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKParticipant;
+@class <EKEditItemViewControllerDelegate>, EKParticipant;
 
-@interface EKParticipantViewController : ABPersonViewController <ABPersonViewControllerDelegate> {
+@interface EKParticipantViewController : ABPersonViewController <ABPersonViewControllerDelegate, EKEditItemViewControllerProtocol> {
     EKParticipant *_participant;
 }
 
+@property <EKEditItemViewControllerDelegate> * editDelegate;
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)dealloc;
-- (void)setParticipant:(id)arg1;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (void)setParticipant:(id)arg1;
+- (void)dealloc;
 - (id)initWithParticipant:(id)arg1;
 
 @end

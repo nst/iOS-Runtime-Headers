@@ -13,15 +13,15 @@
     } m_points[16];
 }
 
-@property(readonly) struct CGPoint { float x; float y; } weightedPoint;
+@property(readonly) struct CGPoint { float x1; float x2; } weightedPoint;
 
 
-- (float)distanceCoveredInInterval:(double)arg1;
 - (struct CGSize { float x1; float x2; })displacementInInterval:(double)arg1;
+- (float)distanceCoveredInInterval:(double)arg1;
 - (BOOL)historyCovers:(double)arg1;
-- (void)clearHistory;
-- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })weightedPoint;
+- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)clearHistory;
 - (struct CGSize { float x1; float x2; })displacementInInterval:(double)arg1 priorTo:(double)arg2;
 - (float)distanceCoveredInInterval:(double)arg1 priorTo:(double)arg2;
 

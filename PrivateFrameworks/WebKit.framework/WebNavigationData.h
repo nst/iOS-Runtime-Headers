@@ -9,13 +9,13 @@
 }
 
 
+- (id)originalRequest;
+- (id)url;
+- (id)response;
+- (id)title;
 - (id)clientRedirectSource;
 - (BOOL)hasSubstituteData;
-- (id)originalRequest;
 - (id)initWithURLString:(id)arg1 title:(id)arg2 originalRequest:(id)arg3 response:(id)arg4 hasSubstituteData:(BOOL)arg5 clientRedirectSource:(id)arg6;
-- (id)response;
-- (id)url;
-- (id)title;
 - (void)dealloc;
 
 @end

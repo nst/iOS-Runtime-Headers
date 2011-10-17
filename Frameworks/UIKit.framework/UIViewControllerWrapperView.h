@@ -5,14 +5,12 @@
 @interface UIViewControllerWrapperView : UIView  {
 }
 
-+ (id)existingWrapperViewForView:(id)arg1;
 + (id)wrapperViewForView:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-+ (void)_initializeSafeCategory;
++ (id)existingWrapperViewForView:(id)arg1;
 
-- (void)unwrapView;
-- (void)unwrapView:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)_accessibilityServesAsContainingParentForOrdering;
+- (void)unwrapView:(id)arg1;
+- (void)unwrapView;
 
 @end

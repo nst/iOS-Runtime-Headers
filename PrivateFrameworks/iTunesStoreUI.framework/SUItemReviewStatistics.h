@@ -12,25 +12,25 @@
     NSString *_numberOfUserReviewsString;
 }
 
-@property(copy) NSString * numberOfUserReviewsString;
-@property int numberOfUserReviews;
-@property(copy) NSString * numberOfUserRatingsString;
-@property int numberOfUserRatings;
 @property float averageUserRating;
+@property int numberOfUserRatings;
+@property(copy) NSString * numberOfUserRatingsString;
+@property int numberOfUserReviews;
+@property(copy) NSString * numberOfUserReviewsString;
 
 
+- (float)averageUserRating;
+- (int)numberOfUserRatings;
 - (id)initWithDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)numberOfUserRatings;
-- (id)numberOfUserRatingsString;
-- (id)numberOfUserReviewsString;
 - (void)setNumberOfUserReviewsString:(id)arg1;
-- (int)numberOfUserReviews;
+- (id)numberOfUserReviewsString;
 - (void)setNumberOfUserReviews:(int)arg1;
+- (int)numberOfUserReviews;
 - (void)setNumberOfUserRatingsString:(id)arg1;
+- (id)numberOfUserRatingsString;
 - (void)setNumberOfUserRatings:(int)arg1;
-- (float)averageUserRating;
 - (void)setAverageUserRating:(float)arg1;
 
 @end

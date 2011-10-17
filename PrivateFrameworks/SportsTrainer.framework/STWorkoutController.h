@@ -15,8 +15,8 @@
     BOOL _skipNextEmpedSearch;
 }
 
-+ (id)stringQuantificationForWorkoutType:(int)arg1 preset:(int)arg2;
 + (id)shortDescriptionForWorkoutType:(int)arg1 preset:(int)arg2;
++ (id)stringQuantificationForWorkoutType:(int)arg1 preset:(int)arg2;
 
 
 @end

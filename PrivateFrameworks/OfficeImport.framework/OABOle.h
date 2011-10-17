@@ -10,12 +10,12 @@
 @interface OABOle : NSObject  {
 }
 
-+ (id)read4ByteFromStream:(struct SsrwOOStream { int (**x1)(); }*)arg1;
-+ (id)readAnsiStringFromStream:(struct SsrwOOStream { int (**x1)(); }*)arg1;
 + (id)stringForCLSID:(struct _SsrwOO_GUID { unsigned int x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
-+ (id)readCLSIDFromStream:(struct SsrwOOStream { int (**x1)(); }*)arg1;
 + (BOOL)isBiffCLSID:(id)arg1;
++ (id)readCLSIDFromStream:(struct SsrwOOStream { int (**x1)(); }*)arg1;
 + (BOOL)isChart:(id)arg1;
++ (id)readAnsiStringFromStream:(struct SsrwOOStream { int (**x1)(); }*)arg1;
++ (id)read4ByteFromStream:(struct SsrwOOStream { int (**x1)(); }*)arg1;
 + (id)readUnicodeStringFromStream:(struct SsrwOOStream { int (**x1)(); }*)arg1;
 + (BOOL)readSharedInfoFor:(id)arg1 fromStorage:(struct SsrwOOStorage { struct _Storage {} *x1; unsigned short x2[36]; }*)arg2;
 + (id)readFromFileName:(id)arg1 cancel:(id)arg2;

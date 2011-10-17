@@ -2,37 +2,53 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface MPMediaChapter : NSObject <NSCoding> {
     int _chapterType;
     id _value;
-    unsigned int _chapterIndex;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _valueLoader;
+
+    unsigned int _indexInChaptersWithAnyType;
+    unsigned int _indexInChaptersWithSameType;
     double _playbackTime;
     double _playbackDuration;
 }
 
+@property int chapterType;
 @property(retain) id value;
+@property unsigned int indexInChaptersWithSameType;
+@property unsigned int indexInChaptersWithAnyType;
 @property double playbackTime;
 @property double playbackDuration;
-@property int chapterType;
-@property unsigned int chapterIndex;
+@property(copy) id valueLoader;
 
 
+- (id)valueLoader;
+- (unsigned int)indexInChaptersWithSameType;
+- (void)setValueLoader:(id)arg1;
+- (void)setPlaybackDuration:(double)arg1;
+- (void)setPlaybackTime:(double)arg1;
+- (void)setIndexInChaptersWithAnyType:(unsigned int)arg1;
+- (void)setIndexInChaptersWithSameType:(unsigned int)arg1;
+- (void)setChapterType:(int)arg1;
+- (int)_sortByChapterIndex:(id)arg1;
+- (unsigned int)indexInChaptersWithAnyType;
+- (double)playbackTime;
+- (int)chapterType;
+- (double)playbackDuration;
 - (double)duration;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (id)title;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (unsigned int)chapterIndex;
-- (double)playbackTime;
-- (void)setPlaybackDuration:(double)arg1;
-- (void)setChapterIndex:(unsigned int)arg1;
-- (void)setChapterType:(int)arg1;
-- (void)setPlaybackTime:(double)arg1;
-- (int)_sortByChapterIndex:(id)arg1;
-- (int)chapterType;
-- (double)playbackDuration;
+- (void)dealloc;
 
 @end

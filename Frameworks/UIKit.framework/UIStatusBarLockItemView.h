@@ -5,11 +5,7 @@
 @interface UIStatusBarLockItemView : UIStatusBarIndicatorItemView  {
 }
 
-+ (void)_initializeSafeCategory;
 
 - (id)contentsImageForStyle:(int)arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
 
 @end

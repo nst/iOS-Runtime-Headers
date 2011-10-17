@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIView<MPVideoOverlay>, UIWindow, MPInlineAudioOverlay, MPInlineVideoOverlay, UIView, NSTimer, NSString, UIPinchGestureRecognizer, MPAudioVideoRoutingPopoverController, UITapGestureRecognizer;
+@class UIView<MPVideoOverlay>, UIViewController, UIWindow, MPInlineAudioOverlay, MPInlineVideoOverlay, UIView, NSTimer, NSString, UIPinchGestureRecognizer, MPAudioVideoRoutingPopoverController, UITapGestureRecognizer;
 
-@interface MPInlineVideoViewController : MPVideoViewController  {
+@interface MPInlineVideoViewController : MPVideoViewController <MPVideoOverlayDelegate, UIPopoverControllerDelegate> {
     int _videoOverlayStyle;
     MPInlineVideoOverlay *_inlineOverlayView;
     UIView<MPVideoOverlay> *_fullscreenOverlayView;
@@ -28,6 +28,7 @@
     unsigned int _inCloneMirrorMode : 1;
     UIView *_fullscreenView;
     UIView *_superviewBeforeFullscreen;
+    UIViewController *_parentViewControllerBeforeFullscreen;
     unsigned int _indexInSuperviewBeforeFullscreen;
     struct CGRect { 
         struct CGPoint { 
@@ -48,83 +49,86 @@
     unsigned int _contentViewDidClipToBounds : 1;
     unsigned int _fullscreenViewSizeIsExternallyManaged : 1;
     unsigned int _swallowNextTapGesture : 1;
+    unsigned int _exited : 1;
 }
 
-@property(readonly) UIView * fullscreenView;
 @property int videoOverlayStyle;
-@property(copy) NSString * playbackErrorDescription;
 @property int audioOverlayStyle;
+@property(readonly) UIView * fullscreenView;
+@property(copy) NSString * playbackErrorDescription;
 
 
-- (void)loadView;
-- (void)viewDidAppear:(BOOL)arg1;
+- (int)videoOverlayStyle;
+- (int)audioOverlayStyle;
+- (void)_transitionFromFullscreenDidEnd;
+- (void)_transitionToFullscreenDidEnd;
+- (id)_viewControllerForRotationForViewController:(id)arg1;
+- (void)_fireOverlayIdleTimer:(id)arg1;
+- (void)_hideOverlayDidEnd:(id)arg1 finished:(id)arg2;
+- (void)_showOverlayDidEnd;
+- (BOOL)_canHideOverlay:(BOOL)arg1;
+- (void)_transitionFromFullscreenAnimated:(BOOL)arg1 fromDoneButton:(BOOL)arg2;
+- (BOOL)_useInlineControls;
+- (void)_transitionFromFullscreenAnimated:(BOOL)arg1;
+- (void)_transitionToFullscreenAnimated:(BOOL)arg1;
+- (void)_updateForInterfaceOrientation:(int)arg1 animate:(BOOL)arg2;
+- (void)_removeCoverView;
+- (void)_hideOverlayAnimated:(BOOL)arg1;
+- (void)_showOverlayAnimated:(BOOL)arg1;
+- (void)_viewWasPinched:(id)arg1;
+- (id)audioOverlayViewIfLoaded;
+- (void)_resetOverlayIdleTimer;
+- (void)_cancelOverlayIdleTimer;
+- (void)_layoutForItemTypeAvailable;
+- (unsigned int)_effectiveItemType;
+- (BOOL)canShowQTAudioOnlyUI;
+- (BOOL)isTransitioningFromFullscreen;
+- (BOOL)isTransitioningToFullscreen;
+- (void)videoView_firstVideoFrameDisplayedNotification:(id)arg1;
+- (id)videoOverlayViewIfLoaded;
+- (void)overlayDidDismissAlternateTracksPopover:(id)arg1;
+- (void)overlayTappedScaleModeButton:(id)arg1;
+- (void)overlayTappedBackButton:(id)arg1;
+- (void)videoView_itemTypeAvailableNotification:(id)arg1;
+- (id)createChapterFlipTransition;
+- (void)stopTicking;
+- (void)startTicking;
+- (BOOL)transportControls:(id)arg1 releasedHeldButtonPart:(unsigned int)arg2;
+- (BOOL)transportControls:(id)arg1 heldButtonPart:(unsigned int)arg2;
+- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned int)arg2;
+- (void)displayVideoViewOnScreen;
+- (void)swipableViewHadActivity:(id)arg1;
+- (void)_viewWasTapped:(id)arg1;
+- (id)playbackErrorDescription;
+- (void)setDisabledParts:(unsigned int)arg1;
+- (id)fullscreenView;
+- (void)setControlsNeedLayout;
+- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setPlaybackErrorDescription:(id)arg1;
+- (void)setAudioOverlayStyle:(int)arg1;
+- (void)setDisableControlsAutohide:(BOOL)arg1;
+- (void)setTVOutEnabled:(BOOL)arg1;
+- (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
+- (id)videoOverlayView;
+- (BOOL)controlsOverlayVisible;
+- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
+- (void)setItemTypeOverride:(unsigned int)arg1;
+- (void)setAllowsWirelessPlayback:(BOOL)arg1;
+- (void)setVideoOverlayStyle:(int)arg1;
+- (void)_bufferingStateDidChangeNotification:(id)arg1;
+- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)isFullscreen;
+- (void)_playbackStateDidChangeNotification:(id)arg1;
+- (id)popViewControllerAnimated:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)backgroundView;
 - (id)init;
 - (void)dealloc;
-- (void)setPlaybackErrorDescription:(id)arg1;
-- (void)startTicking;
-- (id)playbackErrorDescription;
-- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (void)setDisabledParts:(unsigned int)arg1;
-- (void)displayVideoViewOnScreen;
-- (void)overlayDidDismissAlternateTracksPopover:(id)arg1;
-- (void)_viewWasTapped:(id)arg1;
-- (void)_viewWasPinched:(id)arg1;
-- (void)_layoutForItemTypeAvailable;
-- (id)_overlayView;
-- (id)_overlayViewIfLoaded;
-- (id)_audioOverlayViewIfLoaded;
-- (BOOL)_canHideOverlay:(BOOL)arg1;
-- (void)_showOverlayAnimated:(BOOL)arg1;
-- (void)_showOverlayDidEnd;
-- (void)_hideOverlayAnimated:(BOOL)arg1;
-- (void)_hideOverlayDidEnd:(id)arg1 finished:(id)arg2;
-- (void)_fireOverlayIdleTimer:(id)arg1;
-- (void)_resetOverlayIdleTimer;
-- (void)_cancelOverlayIdleTimer;
-- (void)_updateForInterfaceOrientation:(int)arg1 animate:(BOOL)arg2;
-- (BOOL)isTransitioningToFullscreen;
-- (BOOL)isTransitioningFromFullscreen;
-- (void)_transitionToFullscreenAnimated:(BOOL)arg1;
-- (void)_transitionToFullscreenDidEnd;
-- (void)_transitionFromFullscreenAnimated:(BOOL)arg1;
-- (void)_transitionFromFullscreenAnimated:(BOOL)arg1 fromDoneButton:(BOOL)arg2;
-- (void)_transitionFromFullscreenDidEnd;
-- (unsigned int)_effectiveItemType;
-- (id)_viewControllerForRotationForViewController:(id)arg1;
-- (BOOL)_useInlineControls;
-- (void)_removeCoverView;
-- (BOOL)_isMainScreenMirrored;
-- (int)videoOverlayStyle;
-- (int)audioOverlayStyle;
-- (void)_playbackStateDidChangeNotification:(id)arg1;
-- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (void)swipableViewHadActivity:(id)arg1;
-- (void)stopTicking;
-- (BOOL)canShowQTAudioOnlyUI;
-- (BOOL)controlsOverlayVisible;
-- (BOOL)isFullscreen;
-- (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
-- (BOOL)transportControls:(id)arg1 heldButtonPart:(unsigned int)arg2;
-- (BOOL)transportControls:(id)arg1 releasedHeldButtonPart:(unsigned int)arg2;
-- (void)videoView_itemTypeAvailableNotification:(id)arg1;
-- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned int)arg2;
-- (void)overlayTappedBackButton:(id)arg1;
-- (void)overlayTappedScaleModeButton:(id)arg1;
-- (void)setAudioOverlayStyle:(int)arg1;
-- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
-- (void)setControlsNeedLayout;
-- (void)setItemTypeOverride:(unsigned int)arg1;
-- (id)fullscreenView;
-- (void)setVideoOverlayStyle:(int)arg1;
-- (void)setAllowsWirelessPlayback:(BOOL)arg1;
-- (void)setTVOutEnabled:(BOOL)arg1;
-- (void)setDisableControlsAutohide:(BOOL)arg1;
-- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_bufferingStateDidChangeNotification:(id)arg1;
-- (void)_screenDidDisconnect:(id)arg1;
 - (void)setItem:(id)arg1;
 
 @end

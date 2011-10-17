@@ -19,16 +19,16 @@
 @property(retain) NSString * geo_string;
 
 
+- (int)responseCode;
+- (id)geo_string;
+- (int)accuracy;
+- (void)setGeo_string:(id)arg1;
+- (void)setConfidence:(int)arg1;
+- (void)setAccuracy:(int)arg1;
+- (void)setResponseCode:(int)arg1;
 - (void)setPoint:(struct MapPoint { int x1; int x2; int x3; int x4; }*)arg1;
 - (struct MapPoint { int x1; int x2; int x3; int x4; }*)point;
 - (void)dealloc;
 - (int)confidence;
-- (id)geo_string;
-- (void)setResponseCode:(int)arg1;
-- (void)setConfidence:(int)arg1;
-- (void)setGeo_string:(id)arg1;
-- (void)setAccuracy:(int)arg1;
-- (int)accuracy;
-- (int)responseCode;
 
 @end

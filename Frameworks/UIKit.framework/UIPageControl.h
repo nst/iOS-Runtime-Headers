@@ -14,46 +14,38 @@
     } _pageControlFlags;
 }
 
-@property BOOL defersCurrentPageDisplay;
-@property BOOL hidesForSinglePage;
-@property int currentPage;
 @property int numberOfPages;
+@property int currentPage;
+@property BOOL hidesForSinglePage;
+@property BOOL defersCurrentPageDisplay;
 
-+ (void)_initializeSafeCategory;
 
-- (id)_pageIndicatorImageForPage:(int)arg1;
-- (void)_setCurrentPage:(int)arg1;
-- (int)currentPage;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
-- (int)numberOfPages;
-- (BOOL)hidesForSinglePage;
-- (void)_commonPageControlInit;
-- (id)_pageIndicatorCurrentImageForPage:(int)arg1;
-- (void)setNumberOfPages:(int)arg1;
-- (void)setCurrentPage:(int)arg1;
-- (void)setHidesForSinglePage:(BOOL)arg1;
-- (void)setDefersCurrentPageDisplay:(BOOL)arg1;
-- (BOOL)defersCurrentPageDisplay;
-- (void)updateCurrentPageDisplay;
-- (struct CGSize { float x1; float x2; })sizeForNumberOfPages:(int)arg1;
-- (void)_setDisplayedPage:(int)arg1;
 - (int)_displayedPage;
+- (struct CGSize { float x1; float x2; })sizeForNumberOfPages:(int)arg1;
+- (void)updateCurrentPageDisplay;
+- (BOOL)defersCurrentPageDisplay;
+- (void)setDefersCurrentPageDisplay:(BOOL)arg1;
+- (BOOL)hidesForSinglePage;
+- (void)setHidesForSinglePage:(BOOL)arg1;
+- (int)currentPage;
+- (id)_pageIndicatorCurrentImageForPage:(int)arg1;
 - (void)_updateCurrentPageDisplay;
+- (void)_setDisplayedPage:(int)arg1;
+- (void)_setCurrentPage:(int)arg1;
+- (id)_pageIndicatorImageForPage:(int)arg1;
+- (int)numberOfPages;
+- (void)setCurrentPage:(int)arg1;
+- (void)setNumberOfPages:(int)arg1;
+- (void)_commonPageControlInit;
 - (void)endTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
+- (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_populateArchivedSubviews:(id)arg1;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (int)_accessibilityPageControlIndex;
-- (int)_accessibilityPageControlCount;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (void)dealloc;
 
 @end

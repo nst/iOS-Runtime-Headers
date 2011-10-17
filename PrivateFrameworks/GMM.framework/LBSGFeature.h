@@ -12,32 +12,31 @@
     LBSGLatLng *_center;
 }
 
+@property(retain) NSString * name;
+@property int featureType;
+@property(retain) LBSGAddress * address;
 @property(readonly) BOOL hasBounds;
+@property(retain) LBSGRectangle * bounds;
 @property(readonly) BOOL hasCenter;
 @property(retain) LBSGLatLng * center;
-@property(retain) LBSGRectangle * bounds;
-@property(retain) LBSGAddress * address;
-@property int featureType;
-@property(retain) NSString * name;
 
 
-- (id)dictionaryRepresentation;
-- (void)setCenter:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)center;
-- (id)name;
-- (void)setBounds:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)bounds;
-- (BOOL)hasCenter;
-- (void)setFeatureType:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasBounds;
-- (void)writeTo:(id)arg1;
-- (int)featureType;
 - (void)setAddress:(id)arg1;
 - (id)address;
+- (BOOL)readFrom:(id)arg1;
+- (BOOL)hasBounds;
+- (BOOL)hasCenter;
+- (int)featureType;
+- (void)setFeatureType:(int)arg1;
+- (id)bounds;
+- (void)setBounds:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)name;
+- (void)setCenter:(id)arg1;
+- (id)center;
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

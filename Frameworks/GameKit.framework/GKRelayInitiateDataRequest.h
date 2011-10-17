@@ -9,15 +9,15 @@
     NSDictionary *_initRelayResponse;
 }
 
-@property(retain) NSDictionary * initRelayResponse;
 @property(retain) NSDictionary * initRelayRequest;
+@property(retain) NSDictionary * initRelayResponse;
 
 
 - (id)initRelayResponse;
-- (void)setInitRelayResponse:(id)arg1;
-- (id)initRelayRequest;
 - (void)setInitRelayRequest:(id)arg1;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (id)initRelayRequest;
+- (void)setInitRelayResponse:(id)arg1;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)request;
 - (void)dealloc;

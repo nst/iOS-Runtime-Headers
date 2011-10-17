@@ -2,42 +2,48 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSURL, <IMFileCopierDelegate>;
+@class <IMFileCopierDelegate>, NSURL;
 
 @interface IMFileCopier : NSObject  {
+    <IMFileCopierDelegate> *_delegate;
     NSURL *_inputURL;
     NSURL *_outputURL;
     id _identifier;
-    <IMFileCopierDelegate> *_delegate;
-    unsigned int _operation;
-    BOOL _inProgress;
     BOOL _shouldCancel;
     BOOL _didErrorOccur;
+    BOOL _inProgress;
+    unsigned int _operation;
 }
 
-@property(readonly) BOOL didErrorOccur;
-@property(readonly) BOOL wasCancelled;
-@property(readonly) id identifier;
-@property(readonly) NSURL * outputURL;
-@property(readonly) NSURL * inputURL;
 @property <IMFileCopierDelegate> * delegate;
+@property(readonly) NSURL * inputURL;
+@property(readonly) NSURL * outputURL;
+@property(readonly) id identifier;
+@property(readonly) BOOL wasCancelled;
+@property(readonly) BOOL didErrorOccur;
+@property BOOL inProgress;
+@property unsigned int operation;
 
 
-- (id)identifier;
 - (void)start;
-- (void)cancel;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)cleanup;
+- (void)setOperation:(unsigned int)arg1;
+- (void)setInProgress:(BOOL)arg1;
+- (BOOL)didErrorOccur;
 - (BOOL)wasCancelled;
 - (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 delegate:(id)arg5;
-- (id)_temporaryCopierPath;
-- (void)_fillOutputURLFromInputURL;
 - (void)_main_copierFinishedWithResult:(id)arg1;
 - (void)_worker_doCopy;
-- (BOOL)didErrorOccur;
+- (id)_temporaryCopierPath;
 - (id)inputURL;
+- (void)_fillOutputURLFromInputURL;
+- (BOOL)inProgress;
+- (void)cleanup;
+- (id)identifier;
+- (id)delegate;
 - (id)outputURL;
+- (void)cancel;
+- (void)dealloc;
+- (unsigned int)operation;
 
 @end

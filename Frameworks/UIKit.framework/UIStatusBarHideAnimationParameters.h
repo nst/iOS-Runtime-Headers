@@ -7,14 +7,14 @@
     float _additionalSlideHeight;
 }
 
-@property float additionalSlideHeight;
 @property int hideAnimation;
+@property float additionalSlideHeight;
 
 
 - (void)setAdditionalSlideHeight:(float)arg1;
-- (id)initWithDefaultParameters;
 - (float)additionalSlideHeight;
 - (int)hideAnimation;
 - (void)setHideAnimation:(int)arg1;
+- (id)initWithDefaultParameters;
 
 @end

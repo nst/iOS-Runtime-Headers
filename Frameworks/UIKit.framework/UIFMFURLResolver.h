@@ -9,8 +9,8 @@
     NSArray *_fmfPathPatterns;
 }
 
-+ (id)urlCacheName;
 + (id)urlCacheChangedNotificationName;
++ (id)urlCacheName;
 
 - (BOOL)isFMFURL:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

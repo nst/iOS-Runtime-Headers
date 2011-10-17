@@ -5,28 +5,32 @@
 @interface _UIAlertManager : NSObject  {
 }
 
-+ (void)hideTopmostMiniAlert:(int)arg1;
-+ (BOOL)hideTopMostAlertAnimated:(BOOL)arg1;
-+ (BOOL)cancelTopMostAlertAnimated:(BOOL)arg1;
++ (void)applyClientWindowTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
++ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_alertTranslationForInterfaceOrientation:(int)arg1 andTranslation:(float)arg2;
 + (BOOL)cancelAlertsAnimated:(BOOL)arg1;
 + (void)alertWindowAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-+ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_alertTranslationForInterfaceOrientation:(int)arg1 andTranslation:(float)arg2;
-+ (void)reorientAlertWindowTo:(int)arg1 animated:(BOOL)arg2 keyboard:(id)arg3;
-+ (void)addToStack:(id)arg1 dontDimBackground:(BOOL)arg2;
-+ (void)createAlertWindowIfNeeded:(BOOL)arg1;
-+ (id)visibleAlert;
-+ (void)tellSpringboardShowingAlert:(id)arg1 animated:(BOOL)arg2;
-+ (void)tellSpringboardHidingAlert:(id)arg1 animated:(BOOL)arg2;
++ (void)applyInternalWindowTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
++ (void)_applyAlertTransforms;
++ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })calculatedAlertTransform;
++ (BOOL)cancelTopMostAlertAnimated:(BOOL)arg1;
 + (void)createAlertWindowIfNeeded:(BOOL)arg1 deferDisplay:(BOOL)arg2;
 + (void)removeFromStack:(id)arg1;
-+ (BOOL)stackContainsAlert:(id)arg1;
-+ (void)sizeAlertWindowForCurrentOrientation;
 + (id)topMostAlert;
-+ (void)initialize;
++ (void)createAlertWindowIfNeeded:(BOOL)arg1;
++ (void)addToStack:(id)arg1 dontDimBackground:(BOOL)arg2;
++ (void)sizeAlertWindowForCurrentOrientation;
++ (void)tellSpringboardHidingAlert:(id)arg1 animated:(BOOL)arg2;
++ (BOOL)stackContainsAlert:(id)arg1;
++ (BOOL)hideTopMostAlertAnimated:(BOOL)arg1;
++ (void)tellSpringboardShowingAlert:(id)arg1 animated:(BOOL)arg2;
++ (void)reorientAlertWindowTo:(int)arg1 animated:(BOOL)arg2 keyboard:(id)arg3;
++ (id)visibleAlert;
 + (void)showTopmostMiniAlert;
-+ (void)noteOrientationChangingTo:(int)arg1;
++ (void)hideTopmostMiniAlert:(int)arg1;
 + (void)noteOrientationChangingTo:(int)arg1 animated:(BOOL)arg2;
++ (void)initialize;
 + (void)hideAlertsForTermination;
++ (void)noteOrientationChangingTo:(int)arg1;
 
 
 @end

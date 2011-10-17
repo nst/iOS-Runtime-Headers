@@ -2,29 +2,38 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class <FTPushHandlerDelegate>, NSData, NSArray;
+@class NSArray, NSMutableSet, NSData, NSMutableArray;
 
 @interface FTPushHandler : NSObject  {
-    NSArray *_topics;
-    id _delegate;
+    NSMutableSet *_topics;
+    NSMutableArray *_handlers;
     BOOL _registeredForPush;
 }
 
+@property(retain) NSArray * topics;
 @property(readonly) NSData * pushToken;
 @property BOOL registered;
-@property <FTPushHandlerDelegate> * delegate;
-@property(readonly) NSArray * topics;
+@property(readonly) int connectionStatus;
 
 + (id)alloc;
++ (id)sharedInstance;
 
 - (id)pushToken;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)topics;
-- (BOOL)registered;
-- (id)initWithTopics:(id)arg1;
 - (void)setRegistered:(BOOL)arg1;
+- (void)setTopics:(id)arg1;
+- (BOOL)registered;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (void)addListener:(id)arg1;
+- (void)removeListener:(id)arg1;
+- (void)removeTopic:(id)arg1;
+- (void)addTopic:(id)arg1;
 - (void)requestKeepAlive;
+- (void)updateTopics;
+- (id)topics;
+- (int)connectionStatus;
+- (id)init;
+- (void)dealloc;
+- (id)initWithTopics:(id)arg1;
 
 @end

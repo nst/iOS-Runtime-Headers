@@ -8,8 +8,8 @@
 
 
 - (void)setChildren:(struct __CFArray { }*)arg1;
+- (struct __CFArray { }*)children;
 - (BOOL)isBlank;
 - (void)dealloc;
-- (struct __CFArray { }*)children;
 
 @end

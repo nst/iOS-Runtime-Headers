@@ -11,21 +11,21 @@
     NSString *_value;
 }
 
-@property(retain) NSString * value;
-@property(retain) NSString * title;
-@property(getter=isSecure) BOOL secure;
 @property int keyboardType;
+@property(getter=isSecure) BOOL secure;
+@property(retain) NSString * title;
+@property(retain) NSString * value;
 
 + (id)textFieldWithTitle:(id)arg1;
 
 - (void)setSecure:(BOOL)arg1;
 - (BOOL)isSecure;
 - (id)value;
-- (void)setKeyboardType:(int)arg1;
 - (void)setValue:(id)arg1;
 - (int)keyboardType;
+- (void)setKeyboardType:(int)arg1;
 - (id)title;
-- (void)dealloc;
 - (void)setTitle:(id)arg1;
+- (void)dealloc;
 
 @end

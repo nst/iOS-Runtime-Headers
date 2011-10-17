@@ -4,11 +4,16 @@
 
 @interface TIZephyrCandidate : UIKeyboardCandidateSingle  {
     unsigned int _wordOriginFeedbackID;
+    BOOL extensionCandidate;
 }
 
+@property(getter=isExtensionCandidate) BOOL extensionCandidate;
 
+
+- (void)setExtensionCandidate:(BOOL)arg1;
+- (id)initWithCandidate:(id)arg1 wordOriginFeedbackID:(unsigned int)arg2;
 - (unsigned int)wordOriginFeedbackID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithCandidate:(id)arg1 wordOriginFeedbackID:(unsigned int)arg2;
+- (BOOL)isExtensionCandidate;
 
 @end

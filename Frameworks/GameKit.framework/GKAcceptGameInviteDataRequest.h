@@ -11,24 +11,24 @@
     unsigned char _inviteVersion;
 }
 
-@property unsigned char inviteVersion;
-@property(retain) NSDictionary * acceptGameInviteResponse;
-@property(retain) NSData * connectionData;
 @property(retain) GKInvite * invite;
+@property(retain) NSData * connectionData;
+@property(retain) NSDictionary * acceptGameInviteResponse;
+@property unsigned char inviteVersion;
 
 
-- (void)setConnectionData:(id)arg1;
-- (id)connectionData;
 - (void)setInviteVersion:(unsigned char)arg1;
 - (id)acceptGameInviteResponse;
-- (unsigned char)inviteVersion;
-- (void)setAcceptGameInviteResponse:(id)arg1;
 - (void)setInvite:(id)arg1;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (void)setAcceptGameInviteResponse:(id)arg1;
 - (id)invite;
+- (unsigned char)inviteVersion;
+- (id)header;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)request;
+- (id)connectionData;
+- (void)setConnectionData:(id)arg1;
 - (void)dealloc;
-- (id)header;
 
 @end

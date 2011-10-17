@@ -4,22 +4,23 @@
 
 @class NSString;
 
-@interface FTProfileConfirmEmailsMessage : FTProfileMessage  {
-    NSString *_emailAddress;
+@interface FTProfileConfirmEmailsMessage : FTProfileMessage <NSCopying> {
     NSString *_vettingToken;
+    NSString *_emailAddress;
 }
 
 @property(copy) NSString * emailAddress;
 @property(copy) NSString * vettingToken;
 
 
-- (id)bagKey;
-- (void)dealloc;
-- (id)vettingToken;
-- (void)setVettingToken:(id)arg1;
-- (id)requiredKeys;
 - (id)emailAddress;
 - (id)messageBody;
+- (void)setVettingToken:(id)arg1;
+- (id)vettingToken;
 - (void)setEmailAddress:(id)arg1;
+- (id)requiredKeys;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)bagKey;
 
 @end

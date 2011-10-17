@@ -2,14 +2,9 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @class NSObject, NSKeyValueProperty, NSPointerArray;
 
-@interface NSKeyValueObservance : NSObject  {
+@interface NSKeyValueObservance : NSWeakCallback  {
     int _retainCountMinusOne;
     NSObject *_observer;
     NSKeyValueProperty *_property;
@@ -19,23 +14,19 @@
     unsigned int _cachedUnrotatedHashComponent;
     BOOL _cachedIsShareable;
     NSPointerArray *_observationInfos;
-    struct auto_weak_callback_block { 
-        struct auto_weak_callback_block {} *next; 
-        int (*callback_function)(); 
-        void *arg1; 
-        void *arg2; 
-    } _observerWentAwayCallback;
 }
 
 
+- (id)_initWithObserver:(id)arg1 property:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4 originalObservable:(id)arg5;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (unsigned int)hash;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (BOOL)isEqual:(id)arg1;
-- (oneway void)release;
-- (id)retain;
-- (void)dealloc;
+- (unsigned int)hash;
 - (unsigned int)retainCount;
 - (id)description;
-- (id)_initWithObserver:(id)arg1 property:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4 originalObservable:(id)arg5;
+- (id)retain;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

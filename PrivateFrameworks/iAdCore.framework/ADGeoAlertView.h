@@ -21,10 +21,10 @@
 @property(copy) id locationBlock;
 
 
-- (id)guid;
 - (void)setGuid:(id)arg1;
-- (id)locationBlock;
 - (void)setLocationBlock:(id)arg1;
+- (id)locationBlock;
+- (id)guid;
 - (void)dealloc;
 
 @end

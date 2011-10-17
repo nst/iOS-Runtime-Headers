@@ -20,8 +20,7 @@
 }
 
 
-- (int)completionType;
-- (id)_keywords;
+- (void)setKeywords:(id)arg1;
 - (void)setRepeatedSpokenFeedbackString:(id)arg1;
 - (id)repeatedSpokenFeedbackString;
 - (id)sequenceTag;
@@ -32,11 +31,12 @@
 - (void)setKnownValues:(id)arg1 phoneticValues:(id)arg2 forClassIdentifier:(id)arg3;
 - (id)ambiguousValuesForClassIdentifier:(id)arg1;
 - (void)setAmbiguousValues:(id)arg1 phoneticValues:(id)arg2 forClassIdentifier:(id)arg3;
-- (struct __VSRecognitionDisambiguationContext { }*)_disambiguationContext;
+- (id)_keywords;
 - (struct __VSRecognition { }*)_createRecognitionInstanceWithCallbacks:(struct { int (*x1)(); int (*x2)(); int (*x3)(); }*)arg1 info:(void*)arg2;
 - (id)_actionForEmptyResults;
+- (struct __VSRecognitionDisambiguationContext { }*)_disambiguationContext;
+- (int)completionType;
 - (BOOL)_keywordIndexChanged;
 - (void)dealloc;
-- (void)setKeywords:(id)arg1;
 
 @end

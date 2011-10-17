@@ -12,32 +12,33 @@
 @property(copy) NSArray * metadata;
 
 + (void)initialize;
++ (id)recorderCommonMetadataForAVMetadataItemArray:(id)arg1;
 + (BOOL)consolidateMovieFragmentsInFile:(id)arg1 error:(id*)arg2;
 + (BOOL)updateMovieMetadataInFile:(id)arg1 withMetadata:(id)arg2 error:(id*)arg3;
-+ (id)recorderCommonMetadataForAVMetadataItemArray:(id)arg1;
 
-- (void)stopRecording;
-- (id)init;
-- (void)dealloc;
-- (id)metadata;
-- (BOOL)isRecording;
-- (id)outputFileURL;
 - (void)setMetadata:(id)arg1;
+- (id)metadata;
+- (void)stopRecording;
 - (void)setSendsLastVideoPreviewFrame:(BOOL)arg1;
-- (void)startRecordingToOutputFileURL:(id)arg1 recordingDelegate:(id)arg2;
-- (void)didStopForSession:(id)arg1 error:(id)arg2;
-- (BOOL)getRecorderBoolForKey:(id)arg1 withDefault:(BOOL)arg2;
-- (id)connectionMediaTypes;
 - (BOOL)sendsLastVideoPreviewFrame;
-- (long)_avErrorForDidStopRecordingReason:(id)arg1;
-- (void)_handleStartRecordingErrorWithDomain:(id)arg1 code:(long)arg2 info:(id)arg3;
-- (void)handleNotification:(id)arg1 payload:(id)arg2;
+- (BOOL)getRecorderBoolForKey:(id)arg1 withDefault:(BOOL)arg2;
 - (long)_startRecording:(id)arg1;
+- (void)_handleStartRecordingErrorWithDomain:(id)arg1 code:(long)arg2 info:(id)arg3;
+- (long)_avErrorForDidStopRecordingReason:(id)arg1;
+- (void)startRecordingToOutputFileURL:(id)arg1 recordingDelegate:(id)arg2;
 - (BOOL)isRecordingPaused;
 - (void)pauseRecording;
 - (void)resumeRecording;
+- (id)outputFileURL;
+- (void)handleNotification:(id)arg1 payload:(id)arg2;
+- (id)connectionMediaTypes;
+- (void)handleEnabledChangedForConnection:(id)arg1;
+- (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (long)_stopRecording;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (BOOL)isRecording;
+- (id)init;
+- (void)dealloc;
 
 @end

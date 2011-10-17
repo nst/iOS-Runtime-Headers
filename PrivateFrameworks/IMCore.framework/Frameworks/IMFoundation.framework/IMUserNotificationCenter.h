@@ -12,29 +12,43 @@
     NSMutableDictionary *_identifierToCFUserNotificationMap;
 }
 
+@property(retain) NSMutableDictionary * identifierToIMUserNotificationQueueMap;
+@property(retain) NSMutableDictionary * identifierToListenerQueueMap;
+@property(retain) NSMutableDictionary * identifierToBlockQueueMap;
+@property(retain) NSMutableDictionary * identifierToRunLoopSourcesMap;
+@property(retain) NSMutableDictionary * identifierToCFUserNotificationMap;
+
 + (id)sharedInstance;
 
+- (void)setIdentifierToCFUserNotificationMap:(id)arg1;
+- (id)identifierToCFUserNotificationMap;
+- (void)setIdentifierToRunLoopSourcesMap:(id)arg1;
+- (id)identifierToRunLoopSourcesMap;
+- (void)setIdentifierToBlockQueueMap:(id)arg1;
+- (id)identifierToBlockQueueMap;
+- (void)setIdentifierToListenerQueueMap:(id)arg1;
+- (id)identifierToListenerQueueMap;
+- (void)setIdentifierToIMUserNotificationQueueMap:(id)arg1;
+- (id)identifierToIMUserNotificationQueueMap;
+- (void)removeAllListeners;
+- (unsigned int)countForIdentifier:(id)arg1;
+- (void)_handleUserNotification:(struct __CFUserNotification { }*)arg1 responseFlags:(unsigned long)arg2;
+- (id)_frontBlockForIdentifier:(id)arg1;
+- (void)_cancelActiveUserNotificationForIdentifier:(id)arg1;
+- (id)_frontListenerForIdentifier:(id)arg1;
+- (void)_enqueueBlock:(id)arg1 forIdentifier:(id)arg2;
+- (void)_enqueueListener:(id)arg1 forIdentifier:(id)arg2;
+- (void)_enqueueUserNotification:(id)arg1 forIdentifier:(id)arg2;
+- (void)_displayNextUserNotificationForIdentifier:(id)arg1;
+- (id)_frontUserNotificationForIdentifier:(id)arg1;
+- (id)_dequeueBlockForIdentifier:(id)arg1;
+- (id)_dequeueListenerForIdentifier:(id)arg1;
+- (id)_dequeueUserNotificationForIdentifier:(id)arg1;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (void)removeListener:(id)arg1;
+- (void)dealloc;
 - (void)addUserNotification:(id)arg1 listener:(id)arg2;
 - (void)addUserNotification:(id)arg1 listener:(id)arg2 completionHandler:(id)arg3;
-- (oneway void)release;
-- (id)init;
-- (void)dealloc;
-- (unsigned int)retainCount;
-- (id)autorelease;
-- (id)_frontUserNotificationForIdentifier:(id)arg1;
-- (id)_frontListenerForIdentifier:(id)arg1;
-- (id)_frontBlockForIdentifier:(id)arg1;
-- (id)_dequeueUserNotificationForIdentifier:(id)arg1;
-- (id)_dequeueListenerForIdentifier:(id)arg1;
-- (id)_dequeueBlockForIdentifier:(id)arg1;
-- (void)_enqueueUserNotification:(id)arg1 forIdentifier:(id)arg2;
-- (void)_enqueueListener:(id)arg1 forIdentifier:(id)arg2;
-- (void)_enqueueBlock:(id)arg1 forIdentifier:(id)arg2;
-- (void)_cancelActiveUserNotificationForIdentifier:(id)arg1;
-- (void)_displayNextUserNotificationForIdentifier:(id)arg1;
-- (void)_handleUserNotification:(struct __CFUserNotification { }*)arg1 responseFlags:(unsigned long)arg2;
-- (unsigned int)countForIdentifier:(id)arg1;
-- (void)removeAllListeners;
-- (void)removeListener:(id)arg1;
 
 @end

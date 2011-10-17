@@ -6,46 +6,44 @@
 
 @interface LBSAddressComponent : PBCodable  {
     int _type;
-    NSMutableArray *_parsed_names;
-    int _feature_type;
-    BOOL _hasFeature_type;
-    LBSFeatureId *_feature_id;
+    NSMutableArray *_parsedNames;
+    BOOL _hasFeatureType;
+    int _featureType;
+    LBSFeatureId *_featureId;
     LBSAddressRange *_range;
 }
 
-@property(readonly) int parsed_namesCount;
-@property(readonly) BOOL hasFeature_id;
+@property int type;
+@property(retain) NSMutableArray * parsedNames;
+@property BOOL hasFeatureType;
+@property int featureType;
+@property(readonly) BOOL hasFeatureId;
+@property(retain) LBSFeatureId * featureId;
 @property(readonly) BOOL hasRange;
 @property(retain) LBSAddressRange * range;
-@property(retain) LBSFeatureId * feature_id;
-@property(readonly) BOOL hasFeature_type;
-@property int feature_type;
-@property(retain) NSMutableArray * parsed_names;
-@property int type;
 
 
+- (void)setRange:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (id)featureId;
+- (int)featureType;
+- (void)setHasFeatureType:(BOOL)arg1;
+- (BOOL)hasFeatureType;
+- (id)parsedNames;
+- (BOOL)hasRange;
+- (BOOL)hasFeatureId;
+- (id)parsedNameAtIndex:(unsigned int)arg1;
+- (unsigned int)parsedNamesCount;
+- (void)setFeatureType:(int)arg1;
+- (void)addParsedName:(id)arg1;
+- (void)setFeatureId:(id)arg1;
+- (void)setParsedNames:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (int)type;
-- (void)setType:(int)arg1;
 - (id)range;
-- (id)init;
-- (void)dealloc;
+- (void)setType:(int)arg1;
 - (id)description;
-- (id)parsed_names;
-- (BOOL)hasRange;
-- (int)parsed_namesCount;
-- (void)setParsed_name:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)parsed_nameAtIndex:(unsigned int)arg1;
-- (void)addParsed_name:(id)arg1;
-- (void)setFeature_type:(int)arg1;
-- (BOOL)hasFeature_id;
-- (void)setFeature_id:(id)arg1;
-- (BOOL)hasFeature_type;
-- (void)setParsed_names:(id)arg1;
-- (id)feature_id;
-- (int)feature_type;
-- (BOOL)readFrom:(id)arg1;
-- (void)setRange:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)dealloc;
 
 @end

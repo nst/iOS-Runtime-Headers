@@ -39,11 +39,9 @@
 }
 
 
-- (BOOL)_actionStarted:(id)arg1;
-- (void)_actionCompleted:(id)arg1 nextAction:(id)arg2 error:(id)arg3;
-- (id)spokenFeedbackString;
-- (id)spokenFeedbackAttributedString;
-- (id)initWithModelIdentifier:(id)arg1;
+- (BOOL)isFinished;
+- (BOOL)isBusy;
+- (void)setDelegate:(id)arg1;
 - (id)beginNextAction;
 - (BOOL)isRecognizing;
 - (BOOL)isActivelyRecognizing;
@@ -53,10 +51,9 @@
 - (void)setSensitiveActionsEnabled:(BOOL)arg1;
 - (BOOL)sensitiveActionsEnabled;
 - (BOOL)setBluetoothInputAllowed:(BOOL)arg1;
-- (id)cancelMaintainingKeepAlive:(BOOL)arg1;
-- (void)_notifyDelegateActionStarted;
+- (void)_actionCompleted:(id)arg1 nextAction:(id)arg2 error:(id)arg3;
+- (BOOL)_actionStarted:(id)arg1;
 - (id)_notifyDelegateOpenURL:(id)arg1;
-- (id)_currentRecognizeAction;
 - (id)_recognitionResultHandlingThread;
 - (void)recognitionResultHandlingThread:(id)arg1 didHandleResults:(id)arg2 nextAction:(id)arg3;
 - (id)displayResultString;
@@ -66,15 +63,8 @@
 - (void)setKeywordPhase:(unsigned int)arg1;
 - (id)keywordAtIndex:(int)arg1;
 - (int)keywordCount;
-- (struct __CFDictionary { }*)_createKeywordIndex;
-- (id)_createPhaseSortedKeywordsFromArray:(id)arg1;
 - (id)_keywordsForModelIdentifier:(id)arg1;
-- (void)_keywordIndexChanged;
 - (id)beginSpeakingFeedbackString;
-- (id)beginSpeakingString:(id)arg1;
-- (id)_beginSpeakingAttributedString:(id)arg1;
-- (id)_beginSpeakingString:(id)arg1 attributedString:(id)arg2;
-- (void)_notifyDelegateFinishedSpeakingWithError:(id)arg1;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeaking:(BOOL)arg2 withError:(id)arg3;
 - (BOOL)setDebugDumpEnabled:(BOOL)arg1;
 - (id)debugDumpPath;
@@ -82,16 +72,26 @@
 - (BOOL)setNextRecognitionRequiresReset:(BOOL)arg1;
 - (BOOL)setPreferredEngine:(int)arg1;
 - (void)setPerformRecognitionHandlerActions:(BOOL)arg1;
+- (void)_notifyDelegateActionStarted;
+- (id)_currentRecognizeAction;
+- (id)initWithModelIdentifier:(id)arg1;
+- (id)cancelMaintainingKeepAlive:(BOOL)arg1;
+- (id)spokenFeedbackString;
+- (id)spokenFeedbackAttributedString;
+- (struct __CFDictionary { }*)_createKeywordIndex;
+- (id)_createPhaseSortedKeywordsFromArray:(id)arg1;
 - (id)_topLevelKeywords;
-- (BOOL)isValid;
+- (void)_keywordIndexChanged;
+- (id)_beginSpeakingAttributedString:(id)arg1;
+- (id)beginSpeakingString:(id)arg1;
+- (id)_beginSpeakingString:(id)arg1 attributedString:(id)arg2;
+- (void)_notifyDelegateFinishedSpeakingWithError:(id)arg1;
 - (id)reset;
+- (BOOL)isValid;
+- (void)_init;
 - (id)cancel;
 - (id)init;
 - (void)dealloc;
-- (void)_init;
-- (void)setDelegate:(id)arg1;
-- (BOOL)isFinished;
-- (BOOL)isBusy;
 - (void)_setAction:(id)arg1;
 
 @end

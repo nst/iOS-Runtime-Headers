@@ -23,19 +23,19 @@
 + (id)displayLinkWithDisplay:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 + (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
 
-- (id)_initWithDisplayLink:(struct DisplayLink { int (**x1)(); struct Display {} *x2; void *x3; SEL x4; void *x5; int x6; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_7_1_1; } x7; struct Condition { struct _opaque_pthread_cond_t { long x_1_2_1; BOOL x_1_2_2[24]; } x_8_1_1; } x8; struct _opaque_pthread_t {} *x9; id x10; struct __CFRunLoop {} *x11; struct List<const __CFString*> {} *x12; unsigned long long x13; unsigned long long x14; unsigned int x15 : 1; }*)arg1;
-- (int)frameInterval;
-- (void)setUserInfo:(id)arg1;
-- (void)addToRunLoop:(id)arg1 forMode:(id)arg2;
-- (double)duration;
-- (void)setPaused:(BOOL)arg1;
-- (double)timestamp;
 - (void)invalidate;
-- (id)userInfo;
-- (void)setFrameInterval:(int)arg1;
-- (void)dealloc;
-- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
+- (double)duration;
 - (id)display;
+- (void)setUserInfo:(id)arg1;
+- (void)setPaused:(BOOL)arg1;
+- (int)frameInterval;
+- (double)timestamp;
+- (void)addToRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)setFrameInterval:(int)arg1;
+- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (BOOL)isPaused;
+- (id)userInfo;
+- (void)dealloc;
+- (id)_initWithDisplayLink:(struct DisplayLink { int (**x1)(); struct Display {} *x2; void *x3; SEL x4; void *x5; int x6; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_7_1_1; } x7; struct Condition { struct _opaque_pthread_cond_t { long x_1_2_1; BOOL x_1_2_2[24]; } x_8_1_1; } x8; struct _opaque_pthread_t {} *x9; id x10; struct __CFRunLoop {} *x11; struct List<const __CFString*> {} *x12; unsigned long long x13; unsigned long long x14; unsigned int x15 : 1; }*)arg1;
 
 @end

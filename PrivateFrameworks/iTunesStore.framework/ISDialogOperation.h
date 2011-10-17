@@ -12,33 +12,33 @@
     id _userNotification;
 }
 
+@property <ISDialogOperationDelegate> * delegate;
+@property(retain) ISDialog * dialog;
+@property BOOL performDefaultActions;
+@property(retain) ISDialogButton * selectedButton;
 @property(readonly) NSArray * textFieldValues;
 @property(retain) id userNotification;
-@property(retain) ISDialogButton * selectedButton;
-@property BOOL performDefaultActions;
-@property(retain) ISDialog * dialog;
-@property <ISDialogOperationDelegate> * delegate;
 
 + (id)operationWithError:(id)arg1;
 + (id)operationWithDialog:(id)arg1;
 
 - (void)run;
-- (void)cancel;
-- (id)selectedButton;
-- (id)init;
-- (void)dealloc;
 - (void)_run;
-- (void)handleButtonSelected:(int)arg1 withResponseDictionary:(id)arg2;
+- (id)selectedButton;
+- (void)setPerformDefaultActions:(BOOL)arg1;
 - (id)textFieldValues;
 - (void)_handleResponseForNotification:(struct __CFUserNotification { }*)arg1 responseFlags:(unsigned long)arg2;
-- (void)_showUserNotification:(id)arg1;
 - (void)_waitForUserNotificationResponse:(struct __CFUserNotification { }*)arg1;
-- (id)userNotification;
-- (void)setUserNotification:(id)arg1;
-- (void)setSelectedButton:(id)arg1;
+- (void)_showUserNotification:(id)arg1;
 - (BOOL)performDefaultActions;
-- (void)setPerformDefaultActions:(BOOL)arg1;
+- (void)setUserNotification:(id)arg1;
+- (id)userNotification;
+- (void)setSelectedButton:(id)arg1;
+- (void)handleButtonSelected:(int)arg1 withResponseDictionary:(id)arg2;
 - (void)setDialog:(id)arg1;
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
 - (id)dialog;
 
 @end

@@ -17,13 +17,13 @@
 + (id)sharedInstance;
 
 - (void)_resetBuffer;
-- (BOOL)append:(const char *)arg1;
 - (BOOL)_processJournalFile:(id)arg1 db:(struct sqlite3 { }*)arg2;
 - (void)moveOrDeleteFile;
+- (BOOL)append:(const char *)arg1;
 - (BOOL)mergeWithDatabase:(struct sqlite3 { }*)arg1;
+- (BOOL)flush;
 - (id)initWithPath:(id)arg1;
 - (void)clear;
-- (BOOL)flush;
 - (void)dealloc;
 
 @end

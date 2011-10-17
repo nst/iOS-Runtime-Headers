@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableSet, <UILongPressGestureRecognizerDelegate>, NSArray;
+@class NSMutableSet, NSArray;
 
 @interface UILongPressGestureRecognizer : UIGestureRecognizer  {
     NSArray *_touches;
     NSMutableSet *_activeTouches;
     int _numberOfTouchesRequired;
-    double _delay;
+    double _minimumPressDuration;
     float _allowableMovement;
     struct CGPoint { 
         float x; 
@@ -24,57 +24,56 @@
 }
 
 @property int numberOfTapsRequired;
+@property int numberOfTouchesRequired;
 @property double minimumPressDuration;
-@property <UILongPressGestureRecognizerDelegate> * delegate;
-@property(readonly) struct CGPoint { float x; float y; } startPoint;
-@property(readonly) struct CGPoint { float x; float y; } centroid;
-@property BOOL cancelPastAllowableMovement;
 @property float allowableMovement;
 @property double delay;
-@property int numberOfTouchesRequired;
-@property(retain,readonly) NSArray * touches;
+@property(readonly) NSArray * touches;
+@property(readonly) struct CGPoint { float x1; float x2; } startPoint;
+@property(readonly) struct CGPoint { float x1; float x2; } centroid;
+@property BOOL cancelPastAllowableMovement;
 
 + (void)addLongPressGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 minimumPressDuration:(double)arg4 touchCount:(int)arg5;
 
-- (void)startTimer;
-- (struct CGPoint { float x1; float x2; })startPoint;
+- (void)invalidate;
 - (float)allowableMovement;
-- (struct CGPoint { float x1; float x2; })centroid;
-- (int)numberOfTouchesRequired;
 - (void)tapRecognizerFailedToRecognizeTap:(id)arg1;
+- (void)tapRecognizerRecognizedTap:(id)arg1;
+- (BOOL)tapIsPossibleForTapRecognizer:(id)arg1;
+- (void)setCancelPastAllowableMovement:(BOOL)arg1;
 - (BOOL)cancelPastAllowableMovement;
 - (double)minimumPressDuration;
+- (int)numberOfTouchesRequired;
+- (void)_startTapFinishedTimer;
+- (void)startTimer;
+- (struct CGPoint { float x1; float x2; })centroidScreen;
+- (void)tooMuchElapsed:(id)arg1;
+- (void)enoughTimeElapsed:(id)arg1;
 - (int)numberOfTapsRequired;
+- (void)setTouches:(id)arg1;
+- (void)clearTimer;
+- (id)touches;
+- (struct CGPoint { float x1; float x2; })centroid;
+- (void)setAllowableMovement:(float)arg1;
+- (void)_resetGestureRecognizer;
+- (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (void)setNumberOfTapsRequired:(int)arg1;
 - (void)setNumberOfTouchesRequired:(int)arg1;
-- (void)setCancelPastAllowableMovement:(BOOL)arg1;
-- (void)setTouches:(id)arg1;
-- (void)enoughTimeElapsed:(id)arg1;
-- (void)tooMuchElapsed:(id)arg1;
-- (void)clearTimer;
-- (void)_startTapFinishedTimer;
-- (struct CGPoint { float x1; float x2; })centroidScreen;
-- (BOOL)tapIsPossibleForTapRecognizer:(id)arg1;
-- (void)tapRecognizerRecognizedTap:(id)arg1;
-- (void)setAllowableMovement:(float)arg1;
-- (id)touches;
-- (void)_resetGestureRecognizer;
-- (BOOL)canPreventGestureRecognizer:(id)arg1;
-- (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (void)setMinimumPressDuration:(double)arg1;
 - (void)setDelay:(double)arg1;
 - (double)delay;
-- (void)setView:(id)arg1;
-- (void)invalidate;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })startPoint;
+- (void)setMinimumPressDuration:(double)arg1;
+- (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (unsigned int)numberOfTouches;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (void)setView:(id)arg1;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 
 @end

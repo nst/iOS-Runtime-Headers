@@ -11,12 +11,12 @@
 
 
 - (void)finalize;
+- (void)willAccessKVOForKey:(id)arg1;
+- (void)didAccessKVOForKey:(id)arg1;
+- (id)objectForKey:(id)arg1 defaultObjectBlock:(id)arg2;
+- (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
 - (void)dealloc;
-- (id)objectForKey:(id)arg1;
-- (void)didAccessKVOForKey:(id)arg1;
-- (void)willAccessKVOForKey:(id)arg1;
-- (id)objectForKey:(id)arg1 defaultObjectBlock:(id)arg2;
 
 @end

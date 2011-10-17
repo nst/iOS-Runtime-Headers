@@ -13,20 +13,20 @@
 }
 
 
-- (id)init;
-- (void)setDepthPercent:(int)arg1;
-- (void)setPerspective:(int)arg1;
-- (int)depthPercent;
 - (int)rotationY;
 - (int)rotationX;
+- (int)depthPercent;
 - (int)heightPercent;
+- (int)perspective;
 - (bool)isRightAngleAxes;
 - (bool)isCluster;
-- (int)perspective;
 - (void)setRotationX:(int)arg1;
 - (void)setRotationY:(int)arg1;
+- (void)setPerspective:(int)arg1;
 - (void)setRightAngleAxes:(bool)arg1;
+- (void)setDepthPercent:(int)arg1;
 - (void)setHeightPercent:(int)arg1;
 - (void)setCluster:(bool)arg1;
+- (id)init;
 
 @end

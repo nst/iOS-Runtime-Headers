@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSString, NSDictionary, NSMutableDictionary;
+@class IMAccount, NSArray, NSString, NSDictionary, CNFRegAlias, NSMutableDictionary;
 
 @interface PSSpecifier : NSObject  {
     id target;
@@ -25,43 +25,66 @@
     NSMutableDictionary *_properties;
 }
 
+@property(retain) IMAccount * CNFRegAccount;
+@property(retain) CNFRegAlias * CNFRegAlias;
+@property(retain) NSString * identifier;
+@property(retain) NSString * name;
+@property(retain) NSArray * values;
+@property(retain) NSDictionary * shortTitleDictionary;
+@property(retain) NSDictionary * titleDictionary;
+@property(retain) id userInfo;
+@property Class editPaneClass;
+@property int cellType;
+@property Class detailControllerClass;
+@property id target;
+
++ (int)autoCorrectionTypeForNumber:(id)arg1;
 + (int)autoCapsTypeForString:(id)arg1;
 + (int)keyboardTypeForString:(id)arg1;
 + (id)groupSpecifierWithName:(id)arg1;
-+ (id)emptyGroupSpecifier;
-+ (int)autoCorrectionTypeForNumber:(id)arg1;
 + (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(int)arg6 edit:(Class)arg7;
-+ (void)_initializeSafeCategory;
-+ (id)switchSpecifierWithTitle:(id)arg1 target:(id)arg2 setter:(SEL)arg3 getter:(SEL)arg4 key:(id)arg5;
++ (id)emptyGroupSpecifier;
 + (id)buttonSpecifierWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3 confirmationInfo:(id)arg4;
++ (id)switchSpecifierWithTitle:(id)arg1 target:(id)arg2 setter:(SEL)arg3 getter:(SEL)arg4 key:(id)arg5;
 
-- (void)removePropertyForKey:(id)arg1;
-- (void)setUserInfo:(id)arg1;
-- (void)setValues:(id)arg1;
-- (id)identifier;
-- (id)values;
-- (void)setName:(id)arg1;
-- (id)userInfo;
-- (id)name;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (void)setTarget:(id)arg1;
-- (void)setProperties:(id)arg1;
-- (id)properties;
+- (void)setupIconImageWithPath:(id)arg1;
 - (void)loadValuesAndTitlesFromDataSource;
-- (void)setValues:(id)arg1 titles:(id)arg2;
-- (void)setValues:(id)arg1 titles:(id)arg2 shortTitles:(id)arg3;
 - (void)setupIconImageWithBundle:(id)arg1;
-- (id)titleDictionary;
 - (id)shortTitleDictionary;
-- (void)setTitleDictionary:(id)arg1;
-- (void)setShortTitleDictionary:(id)arg1;
 - (void)setKeyboardType:(int)arg1 autoCaps:(int)arg2 autoCorrection:(int)arg3;
 - (int)titleCompare:(id)arg1;
-- (void)setupIconImageWithPath:(id)arg1;
-- (id)propertyForKey:(id)arg1;
+- (id)titleDictionary;
+- (Class)editPaneClass;
+- (void)setEditPaneClass:(Class)arg1;
+- (int)cellType;
+- (void)setCellType:(int)arg1;
+- (Class)detailControllerClass;
+- (void)setDetailControllerClass:(Class)arg1;
+- (void)setValues:(id)arg1 titles:(id)arg2 shortTitles:(id)arg3;
+- (void)setTitleDictionary:(id)arg1;
+- (void)setShortTitleDictionary:(id)arg1;
+- (id)properties;
+- (void)setUserInfo:(id)arg1;
+- (id)values;
+- (void)setValues:(id)arg1;
+- (id)identifier;
+- (void)setIdentifier:(id)arg1;
+- (id)name;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
-- (id)accessibilityIdentification;
+- (id)propertyForKey:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setProperties:(id)arg1;
+- (void)setTarget:(id)arg1;
+- (id)userInfo;
+- (id)description;
+- (id)target;
+- (id)init;
+- (void)dealloc;
+- (void)setValues:(id)arg1 titles:(id)arg2;
+- (void)removePropertyForKey:(id)arg1;
+- (id)CNFRegAccount;
+- (void)setCNFRegAccount:(id)arg1;
+- (id)CNFRegAlias;
+- (void)setCNFRegAlias:(id)arg1;
 
 @end

@@ -5,39 +5,36 @@
 @class MPMediaItemCollection, SUScriptMediaItem, NSArray;
 
 @interface SUScriptMediaItemCollection : SUScriptObject  {
-    int _count;
     NSArray *_items;
-    NSArray *_mediaTypes;
     SUScriptMediaItem *_representativeItem;
     BOOL _watchingLibrary;
 }
 
 @property(readonly) MPMediaItemCollection * nativeCollection;
-@property(getter=_count,readonly) int count;
-@property(getter=_items,retain,readonly) NSArray * items;
-@property(getter=_mediaTypes,retain,readonly) NSArray * mediaTypes;
-@property(getter=_representativeItem,retain,readonly) SUScriptMediaItem * representativeItem;
+@property(readonly) int count;
+@property(readonly) NSArray * items;
+@property(readonly) NSArray * mediaTypes;
+@property(readonly) SUScriptMediaItem * representativeItem;
 
 + (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
+- (id)attributeKeys;
+- (id)mediaTypes;
 - (id)initWithItems:(id)arg1;
+- (id)items;
+- (int)count;
 - (void)dealloc;
-- (id)_copyMediaTypes;
-- (id)_representativeItem;
-- (id)_mediaTypes;
-- (id)_items;
-- (int)_count;
 - (id)nativeCollection;
-- (void)set_count:(int)arg1;
-- (void)set_items:(id)arg1;
-- (void)set_mediaTypes:(id)arg1;
-- (void)set_representativeItem:(id)arg1;
-- (id)_copyItems;
+- (id)representativeItem;
 - (id)_copyRepresentativeItem;
+- (id)_copyMediaTypes;
 - (int)_mainThreadCount;
-- (void)_setItems:(id)arg1;
-- (void)_libraryChangedNotification:(id)arg1;
 - (void)_beginWatchingLibraryIfNecessary;
+- (void)_libraryChangedNotification:(id)arg1;
+- (void)_setItems:(id)arg1;
+- (id)_copyItems;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

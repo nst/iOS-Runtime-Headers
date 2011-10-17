@@ -15,22 +15,22 @@
     UINavigationItem *_lastNavigationItem;
 }
 
-@property(getter=isLoading) BOOL loading;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } accessoryViewInsets;
 @property(retain) UIView * accessoryView;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } accessoryViewInsets;
+@property(getter=isLoading) BOOL loading;
 
 + (Class)classForNavigationButton;
 
+- (void)setLoading:(BOOL)arg1;
 - (void)setAccessoryView:(id)arg1;
-- (id)accessoryView;
 - (BOOL)isLoading;
+- (id)accessoryView;
 - (id)createViewForNavigationItem:(id)arg1;
 - (void)dealloc;
-- (void)setAccessoryViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (id)_navigationButton;
 - (void)_updateViewForAccessoryChange;
+- (id)_navigationButton;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })accessoryViewInsets;
+- (void)setAccessoryViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)configureFromScriptButton:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
 
 @end

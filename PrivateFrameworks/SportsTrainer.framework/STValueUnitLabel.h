@@ -13,32 +13,29 @@
     unsigned int _forceLayout : 1;
 }
 
-@property BOOL reversesLabels;
-@property int textAlignment;
-@property float labelSpacing;
-@property(readonly) UILabel * rightLabel;
 @property(readonly) UILabel * leftLabel;
+@property(readonly) UILabel * rightLabel;
+@property float labelSpacing;
+@property int textAlignment;
+@property BOOL reversesLabels;
 
-+ (void)_initializeSafeCategory;
 
-- (BOOL)reversesLabels;
-- (void)_sizeLabelsToFit;
-- (BOOL)_labelsNeedSizing;
-- (float)labelSpacing;
-- (void)setLabelSpacing:(float)arg1;
-- (void)setReversesLabels:(BOOL)arg1;
 - (id)rightLabel;
 - (id)leftLabel;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplay;
 - (int)textAlignment;
 - (void)setTextAlignment:(int)arg1;
-- (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;
-- (void)setNeedsDisplay;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
+- (float)labelSpacing;
+- (BOOL)reversesLabels;
+- (BOOL)_labelsNeedSizing;
+- (void)_sizeLabelsToFit;
+- (void)setReversesLabels:(BOOL)arg1;
+- (void)setLabelSpacing:(float)arg1;
+- (void)dealloc;
 
 @end

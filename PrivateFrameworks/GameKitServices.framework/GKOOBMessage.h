@@ -9,11 +9,11 @@
 @property(readonly) unsigned short type;
 
 
+- (id)data;
+- (id)initWithMessageType:(unsigned short)arg1;
 - (BOOL)_checkType:(unsigned short)arg1;
 - (BOOL)_checkSize:(unsigned long)arg1;
-- (id)initWithMessageType:(unsigned short)arg1;
 - (id)initWithBytes:(void*)arg1 length:(unsigned long)arg2;
 - (unsigned short)type;
-- (id)data;
 
 @end

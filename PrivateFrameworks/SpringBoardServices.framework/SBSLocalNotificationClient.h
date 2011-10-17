@@ -5,13 +5,18 @@
 @interface SBSLocalNotificationClient : NSObject  {
 }
 
-+ (id)getPendingNotification;
-+ (void)scheduleLocalNotification:(id)arg1;
-+ (void)cancelLocalNotification:(id)arg1;
-+ (void)cancelAllLocalNotifications;
-+ (void)setScheduledLocalNotifications:(id)arg1;
++ (void)scheduleLocalNotification:(id)arg1 bundleIdentifier:(id)arg2;
++ (void)cancelLocalNotification:(id)arg1 bundleIdentifier:(id)arg2;
++ (void)cancelAllLocalNotificationsForBundleIdentifier:(id)arg1;
++ (void)setScheduledLocalNotifications:(id)arg1 bundleIdentifier:(id)arg2;
++ (void)_scheduleLocalNotifications:(id)arg1 cancel:(BOOL)arg2 replace:(BOOL)arg3 optionalBundleIdentifier:(id)arg4;
++ (id)scheduledLocalNotificationsForBundleIdentifier:(id)arg1;
 + (id)scheduledLocalNotifications;
-+ (void)_scheduleLocalNotifications:(id)arg1 cancel:(BOOL)arg2 replace:(BOOL)arg3;
++ (void)setScheduledLocalNotifications:(id)arg1;
++ (void)cancelAllLocalNotifications;
++ (void)cancelLocalNotification:(id)arg1;
++ (void)scheduleLocalNotification:(id)arg1;
++ (id)getPendingNotification;
 
 
 @end

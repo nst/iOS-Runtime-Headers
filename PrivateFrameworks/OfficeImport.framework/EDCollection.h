@@ -8,23 +8,24 @@
     NSMutableArray *mObjects;
 }
 
-+ (id)collection;
 + (id)collectionWithObject:(id)arg1;
++ (id)collection;
 
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (unsigned int)hash;
-- (void)removeAllObjects;
-- (unsigned int)indexOfObject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (unsigned int)count;
-- (unsigned int)addObject:(id)arg1;
-- (unsigned int)addOrEquivalentObject:(id)arg1;
-- (id)initWithObject:(id)arg1;
 - (BOOL)isEqualToCollection:(id)arg1;
+- (unsigned int)addOrEquivalentObject:(id)arg1;
+- (unsigned int)indexOfObject:(id)arg1;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)removeAllObjects;
+- (id)initWithObject:(id)arg1;
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)addObject:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

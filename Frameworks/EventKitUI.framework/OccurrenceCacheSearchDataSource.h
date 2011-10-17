@@ -22,35 +22,35 @@
 }
 
 
-- (void)dealloc;
-- (void)releaseResources;
-- (void)invalidateCachedOccurrences;
-- (void)invalidateCachedDays;
-- (int)cachedDayCount;
-- (int)cachedOccurrenceCount;
-- (int)cachedOccurrenceCountOnOrAfterDate:(double)arg1;
-- (void)loadOccurrencesForRange:(struct { int x1; int x2; })arg1;
-- (int)dayCountBeforeDay:(double)arg1;
-- (int)totalOccurrencesCount;
 - (void)_addResult:(id)arg1;
-- (void)_processResults;
-- (void)_clearResults;
-- (void)dumpInfo;
-- (void)restartSearchWithTerm:(id)arg1;
-- (int)_lockedTotalOccurrencesCount;
-- (void)_tellMobileCalToUpdateItsUI;
-- (void)_notifyThatTheDateToShowResultsWasFound:(id)arg1;
-- (id)initWithDatabase:(struct CalDatabase { }*)arg1 filter:(struct CalFilter { }*)arg2;
-- (void)invalidateCachedDayIndexes;
-- (void)setCachedDayRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)supportsInvitations;
-- (BOOL)supportsFakeTodaySection;
-- (int)countOfOccurrencesOnDay:(double)arg1;
-- (struct __CFArray { }*)_cachedDayIndexes;
-- (void)calSearchComplete:(id)arg1;
-- (void)calSearch:(id)arg1 foundOccurrences:(struct __CFArray { }*)arg2 cachedDays:(struct __CFArray { }*)arg3 cachedDaysIndexes:(struct __CFArray { }*)arg4;
 - (void)calSearch:(id)arg1 showResultsStartingOnDate:(double)arg2;
-- (void)startSearching;
+- (void)calSearch:(id)arg1 foundOccurrences:(struct __CFArray { }*)arg2 cachedDays:(struct __CFArray { }*)arg3 cachedDaysIndexes:(struct __CFArray { }*)arg4;
+- (void)calSearchComplete:(id)arg1;
 - (void)stopSearching;
+- (void)startSearching;
+- (void)dumpInfo;
+- (void)_clearResults;
+- (void)releaseResources;
+- (void)_notifyThatTheDateToShowResultsWasFound:(id)arg1;
+- (void)_processResults;
+- (void)_tellMobileCalToUpdateItsUI;
+- (int)_lockedTotalOccurrencesCount;
+- (void)restartSearchWithTerm:(id)arg1;
+- (int)dayCountBeforeDay:(double)arg1;
+- (int)countOfOccurrencesOnDay:(double)arg1;
+- (void)loadOccurrencesForRange:(struct { int x1; int x2; })arg1;
+- (int)cachedOccurrenceCountOnOrAfterDate:(double)arg1;
+- (int)cachedOccurrenceCount;
+- (BOOL)supportsFakeTodaySection;
+- (BOOL)supportsInvitations;
+- (id)initWithDatabase:(struct CalDatabase { }*)arg1 filter:(struct CalFilter { }*)arg2;
+- (int)totalOccurrencesCount;
+- (int)cachedDayCount;
+- (struct __CFArray { }*)_cachedDayIndexes;
+- (void)setCachedDayRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)invalidateCachedDays;
+- (void)invalidateCachedDayIndexes;
+- (void)invalidateCachedOccurrences;
+- (void)dealloc;
 
 @end

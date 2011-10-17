@@ -6,8 +6,8 @@
 }
 
 
-- (void)dealloc;
-- (id)initForEventUID:(int)arg1;
 - (void)viewControllerWillSuspend:(id)arg1;
+- (id)initForEventUID:(int)arg1;
+- (void)dealloc;
 
 @end

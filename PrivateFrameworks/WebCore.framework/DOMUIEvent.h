@@ -18,7 +18,6 @@
 @property(readonly) int which;
 
 
-- (id)view;
 - (int)detail;
 - (int)layerX;
 - (int)layerY;
@@ -29,5 +28,6 @@
 - (int)pageY;
 - (int)keyCode;
 - (int)charCode;
+- (id)view;
 
 @end

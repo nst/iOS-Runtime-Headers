@@ -6,18 +6,23 @@
 
 @interface MPAVItemImageCacheRequest : MPImageCacheRequest  {
     MPAVItem *_item;
-    int _imageIdentifier;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } _imageTime;
 }
 
-@property(readonly) int imageIdentifier;
 @property(readonly) MPAVItem * AVItem;
+@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } imageTime;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)initWithAVItem:(id)arg1 imageIdentifier:(int)arg2;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })imageTime;
 - (id)AVItem;
 - (id)copyRawImageReturningError:(id*)arg1;
-- (int)imageIdentifier;
+- (id)initWithAVItem:(id)arg1 imageTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (id)init;
+- (void)dealloc;
 
 @end

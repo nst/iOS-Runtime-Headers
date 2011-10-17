@@ -22,15 +22,15 @@
 }
 
 
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)finalize;
 - (void)invalidate;
-- (void)dealloc;
+- (void)finalize;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)initWithPlayer:(id)arg1 interval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 queue:(struct dispatch_queue_s { }*)arg3 block:(id)arg4;
-- (void)_resetTimerForPlayerNewRate:(float)arg1;
-- (void)_stopRespondingToPlayerStateChanges;
-- (void)_startObservingPlaybackItemNotificationsForCurrentItem;
 - (void)itemTimeJumped;
 - (void)_stopObservingPlaybackItemNotifications;
+- (void)_stopRespondingToPlayerStateChanges;
+- (void)_resetTimerForPlayerNewRate:(float)arg1;
+- (void)_startObservingPlaybackItemNotificationsForCurrentItem;
+- (void)dealloc;
 
 @end

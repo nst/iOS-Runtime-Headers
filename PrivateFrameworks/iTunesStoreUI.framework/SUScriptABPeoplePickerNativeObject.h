@@ -6,9 +6,9 @@
 }
 
 
-- (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)_dispatchPickEventWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (void)setupNativeObject;
 - (void)destroyNativeObject;

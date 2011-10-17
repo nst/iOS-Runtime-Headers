@@ -6,7 +6,7 @@
 }
 
 
-- (void)setCategoryData:(id)arg1;
 - (id)categoryData;
+- (void)setCategoryData:(id)arg1;
 
 @end

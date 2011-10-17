@@ -5,9 +5,9 @@
 @interface CKCachedImageBalloonView : CKImageBalloonView  {
 }
 
-+ (BOOL)shouldHaveAccessoryDiclosure;
 
 - (id)balloonImage;
+- (BOOL)shouldHaveAccessoryDiclosure;
 - (void)setMessagePart:(id)arg1;
 
 @end

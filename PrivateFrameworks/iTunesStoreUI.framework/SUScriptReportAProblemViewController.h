@@ -10,16 +10,17 @@
 @property(readonly) NSNumber * adamID;
 
 + (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
-- (id)init;
-- (id)initWithAdamID:(id)arg1;
+- (id)adamID;
 - (void)setAdamID:(id)arg1;
+- (id)attributeKeys;
+- (id)init;
 - (id)_copyAdamID;
 - (BOOL)_initWithAdamID:(id)arg1;
+- (id)initWithAdamID:(id)arg1;
 - (id)newNativeViewController;
-- (id)attributeKeys;
-- (id)adamID;
-- (id)scriptAttributeKeys;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

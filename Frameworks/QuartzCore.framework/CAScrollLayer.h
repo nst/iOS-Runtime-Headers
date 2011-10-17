@@ -9,13 +9,13 @@
 
 @property(copy) NSString * scrollMode;
 
-+ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;
++ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 
+- (void)setScrollMode:(id)arg1;
+- (id)scrollMode;
 - (void)scrollToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)scrollToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)scrollMode;
-- (void)setScrollMode:(id)arg1;
 - (void)_scrollPoint:(struct CGPoint { float x1; float x2; })arg1 fromLayer:(id)arg2;
 - (void)_scrollRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromLayer:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleRectOfLayer:(id)arg1;

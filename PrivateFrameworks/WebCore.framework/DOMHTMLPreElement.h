@@ -9,9 +9,9 @@
 @property BOOL wrap;
 
 
-- (int)width;
-- (void)setWidth:(int)arg1;
-- (void)setWrap:(BOOL)arg1;
 - (BOOL)wrap;
+- (void)setWrap:(BOOL)arg1;
+- (void)setWidth:(int)arg1;
+- (int)width;
 
 @end

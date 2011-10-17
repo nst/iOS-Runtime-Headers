@@ -25,17 +25,17 @@
 @property(readonly) OADDefaultProperties * shapeDefaults;
 
 
-- (void)dealloc;
-- (id)colorMap;
-- (id)initWithTheme:(id)arg1 colorMap:(id)arg2 colorPalette:(id)arg3;
-- (void)applyThemeOverrides:(id)arg1 colorMapOverride:(id)arg2;
 - (id)colorPalette;
-- (void)setColorPalette:(id)arg1;
-- (id)fontScheme;
 - (id)lineDefaults;
-- (id)textDefaults;
+- (void)setColorPalette:(id)arg1;
 - (id)shapeDefaults;
-- (id)styleMatrix;
+- (id)textDefaults;
+- (void)applyThemeOverrides:(id)arg1 colorMapOverride:(id)arg2;
+- (id)colorMap;
 - (id)colorScheme;
+- (id)fontScheme;
+- (id)styleMatrix;
+- (id)initWithTheme:(id)arg1 colorMap:(id)arg2 colorPalette:(id)arg3;
+- (void)dealloc;
 
 @end

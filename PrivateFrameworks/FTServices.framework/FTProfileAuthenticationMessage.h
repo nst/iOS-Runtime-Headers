@@ -2,38 +2,38 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSString, NSDictionary;
+@class NSString;
 
-@interface FTProfileAuthenticationMessage : FTMessage  {
+@interface FTProfileAuthenticationMessage : FTProfileMessage <NSCopying> {
     NSString *_username;
     NSString *_password;
-    NSString *_profileID;
-    NSString *_authToken;
-    NSDictionary *_responseAlert;
+    NSString *_responseProfileID;
+    NSString *_responseAuthToken;
 }
 
-@property(copy) NSDictionary * responseAlertInfo;
-@property(copy) NSString * responseAuthorizationToken;
-@property(copy) NSString * responseProfileID;
-@property(copy) NSString * password;
 @property(copy) NSString * username;
+@property(copy) NSString * password;
+@property(copy) NSString * responseProfileID;
+@property(copy) NSString * responseAuthorizationToken;
 
 
-- (id)bagKey;
-- (id)password;
-- (void)dealloc;
-- (void)handleResponseDictionary:(id)arg1;
-- (void)setResponseAlertInfo:(id)arg1;
-- (id)responseProfileID;
-- (id)responseAuthorizationToken;
-- (id)responseAlertInfo;
-- (void)setResponseAuthorizationToken:(id)arg1;
-- (void)setResponseProfileID:(id)arg1;
-- (id)requiredKeys;
-- (BOOL)payloadCanBeLogged;
+- (id)messageBody;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
-- (id)messageBody;
+- (id)responseAuthorizationToken;
+- (id)responseProfileID;
+- (id)password;
+- (void)setResponseAuthorizationToken:(id)arg1;
+- (void)setResponseProfileID:(id)arg1;
+- (void)handleResponseDictionary:(id)arg1;
+- (id)additionalMessageHeadersForOutgoingPush;
+- (id)additionalMessageHeaders;
+- (BOOL)hasRequiredKeys:(id*)arg1;
+- (BOOL)payloadCanBeLogged;
+- (id)requiredKeys;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)bagKey;
 
 @end

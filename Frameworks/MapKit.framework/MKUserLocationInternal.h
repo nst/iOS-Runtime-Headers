@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLLocation, CLHeading, NSString, MKUserLocationSearchResult;
+@class CLLocation, CLHeading, NSString, <MKUserLocationAnnotation>, <MKAnnotation>;
 
 @interface MKUserLocationInternal : NSObject  {
     CLLocation *location;
@@ -11,42 +11,43 @@
     CLHeading *heading;
     NSString *title;
     NSString *subtitle;
-    MKUserLocationSearchResult *searchResult;
+    <MKUserLocationAnnotation> *_annotation;
     int source;
     double timestamp;
     BOOL updating;
+    <MKAnnotation> *annotation;
 }
 
-@property(retain) NSString * subtitle;
-@property(retain) NSString * title;
-@property double timestamp;
-@property int source;
-@property(readonly) MKUserLocationSearchResult * searchResult;
-@property(retain) CLHeading * heading;
-@property(retain) CLLocation * predictedLocation;
 @property(retain) CLLocation * location;
 @property(retain) CLLocation * fixedLocation;
+@property(retain) CLLocation * predictedLocation;
+@property(retain) CLHeading * heading;
+@property(retain) NSString * title;
+@property(retain) NSString * subtitle;
+@property(readonly) <MKAnnotation> * annotation;
+@property int source;
+@property double timestamp;
 @property(getter=isUpdating) BOOL updating;
 
 
 - (void)setUpdating:(BOOL)arg1;
-- (void)setSubtitle:(id)arg1;
-- (void)setTimestamp:(double)arg1;
-- (int)source;
-- (void)setSource:(int)arg1;
-- (double)timestamp;
 - (void)setLocation:(id)arg1;
-- (id)subtitle;
-- (id)title;
+- (id)heading;
+- (id)annotation;
+- (void)setSource:(int)arg1;
+- (int)source;
 - (id)location;
+- (id)subtitle;
+- (void)setSubtitle:(id)arg1;
+- (id)title;
+- (double)timestamp;
+- (void)setTimestamp:(double)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setPredictedLocation:(id)arg1;
-- (id)searchResult;
-- (BOOL)isUpdating;
-- (id)predictedLocation;
 - (id)fixedLocation;
+- (void)setPredictedLocation:(id)arg1;
+- (id)predictedLocation;
+- (BOOL)isUpdating;
 - (void)setFixedLocation:(id)arg1;
 - (void)setHeading:(id)arg1;
-- (id)heading;
 
 @end

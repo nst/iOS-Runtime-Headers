@@ -11,8 +11,8 @@
 @property int abCellStyle;
 
 
-- (int)sectionLocation;
 - (void)setSectionLocation:(int)arg1;
+- (int)sectionLocation;
 - (int)abCellStyle;
 - (void)setAbCellStyle:(int)arg1;
 

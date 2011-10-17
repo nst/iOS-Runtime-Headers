@@ -7,9 +7,9 @@
 @interface SWAchievement : NSManagedObject  {
 }
 
-@property(retain) NSString * sensorSerialNumber;
-@property(retain) NSDecimalNumber * value;
 @property(retain) NSString * name;
+@property(retain) NSDecimalNumber * value;
+@property(retain) NSString * sensorSerialNumber;
 
 
 

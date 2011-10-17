@@ -2,37 +2,33 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UITextInputTraits, NSTimer, MFComposeRecipient;
+@class <MFComposeRecipientAtomDelegate>, UITextInputTraits, MFComposeRecipient;
 
 @interface MFComposeRecipientAtom : MFAtomView  {
+    <MFComposeRecipientAtomDelegate> *_delegate;
     MFComposeRecipient *_recipient;
     UITextInputTraits *_traits;
-    NSTimer *_holdTimer;
     unsigned int _wasSelectedWhenTouchesBegan : 1;
     unsigned int _touchesWereCancelled : 1;
 }
 
 @property(readonly) MFComposeRecipient * recipient;
-@property(retain) NSTimer * holdTimer;
+@property <MFComposeRecipientAtomDelegate> * delegate;
 
-+ (void)_initializeSafeCategory;
 
-- (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
-- (void)moveRight;
-- (void)moveLeft;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (id)title;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 recipient:(id)arg2;
-- (void)setHoldTimer:(id)arg1;
-- (id)holdTimer;
-- (void)handleTouchAndHold;
 - (id)recipient;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
+- (void)setDelegate:(id)arg1;
+- (void)moveLeft;
+- (void)moveRight;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (id)delegate;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 recipient:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 recipient:(id)arg2 style:(int)arg3;
+- (void)handleTouchAndHold;
+- (void)dealloc;
 
 @end

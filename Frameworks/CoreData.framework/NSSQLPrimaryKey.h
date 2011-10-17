@@ -6,7 +6,7 @@
 }
 
 
-- (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)sqlTypeString;
+- (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 
 @end

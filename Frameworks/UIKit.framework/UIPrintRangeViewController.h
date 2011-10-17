@@ -20,20 +20,20 @@
 
 
 - (id)initWithPrintPanelViewController:(id)arg1;
-- (int)numberOfComponentsInPickerView:(id)arg1;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (void)loadView;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (float)pickerView:(id)arg1 rowHeightForComponent:(int)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)dealloc;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
+- (float)pickerView:(id)arg1 rowHeightForComponent:(int)arg2;
+- (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
+- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
+- (int)numberOfComponentsInPickerView:(id)arg1;
+- (void)dealloc;
 
 @end

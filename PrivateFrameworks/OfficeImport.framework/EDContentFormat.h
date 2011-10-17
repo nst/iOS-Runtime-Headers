@@ -11,22 +11,22 @@
     boolmReferenced;
 }
 
-+ (id)contentFormatWithFormatString:(id)arg1 formatId:(unsigned int)arg2;
 + (id)contentFormatWithNSString:(id)arg1 formatId:(unsigned int)arg2 builtIn:(bool)arg3;
++ (id)contentFormatWithFormatString:(id)arg1 formatId:(unsigned int)arg2;
 + (id)contentFormatWithFormatString:(id)arg1;
 
-- (unsigned int)key;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (bool)builtIn;
-- (unsigned int)formatId;
 - (void)setFormatId:(unsigned int)arg1;
 - (void)setReferenced:(bool)arg1;
-- (BOOL)isEqualToContentFormat:(id)arg1;
-- (bool)referenced;
 - (id)formatString;
+- (unsigned int)formatId;
+- (bool)builtIn;
+- (bool)referenced;
+- (BOOL)isEqualToContentFormat:(id)arg1;
+- (unsigned int)key;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

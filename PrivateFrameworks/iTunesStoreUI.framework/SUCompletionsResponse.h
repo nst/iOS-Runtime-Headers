@@ -9,14 +9,14 @@
     NSString *_title;
 }
 
-@property(readonly) NSString * title;
 @property(readonly) NSArray * completionItems;
+@property(readonly) NSString * title;
 
 
 - (id)title;
 - (id)init;
 - (void)dealloc;
-- (id)initWithPropertyList:(id)arg1;
 - (id)completionItems;
+- (id)initWithPropertyList:(id)arg1;
 
 @end

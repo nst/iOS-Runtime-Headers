@@ -10,18 +10,18 @@
 
 @property(retain) GKPlayer * player;
 
-+ (id)recipientWithPlayer:(id)arg1;
 + (int)_recipientABProperty;
++ (id)recipientWithPlayer:(id)arg1;
 
-- (id)_unformattedAddress;
 - (id)uncommentedAddress;
+- (id)_unformattedAddress;
 - (id)initWithPlayer:(id)arg1;
-- (void)setPlayer:(id)arg1;
-- (id)player;
-- (id)displayString;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)description;
 - (id)address;
+- (void)setPlayer:(id)arg1;
+- (id)displayString;
+- (id)player;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

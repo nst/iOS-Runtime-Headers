@@ -2,24 +2,17 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, GKGame;
+@class GKGame;
 
 @interface GKGetAchievementDescriptionsDataRequest : GKDataRequest  {
     GKGame *_game;
-    NSArray *_descriptions;
 }
 
-@property(readonly) NSArray * descriptions;
 @property(retain) GKGame * game;
 
 
-- (id)descriptions;
-- (int)cachePriority;
-- (int)cacheType;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)game;
 - (void)setGame:(id)arg1;
-- (id)cacheKey;
 - (id)key;
 - (id)request;
 - (void)dealloc;

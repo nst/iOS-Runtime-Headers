@@ -7,22 +7,26 @@
 @interface ABPhonePredicate : ABPredicate  {
     NSString *_phoneNumber;
     NSString *_country;
+    NSString *_dbCountry;
 }
 
+@property(readonly) NSString * dbCountry;
 @property(copy) NSString * country;
 @property(copy) NSString * phoneNumber;
 
 
-- (BOOL)isValid;
-- (id)phoneNumber;
-- (void)setPhoneNumber:(id)arg1;
-- (id)queryJoinsInCompound:(BOOL)arg1;
-- (void)setCountry:(id)arg1;
-- (BOOL)hasCallback;
-- (void)evaluateCallbackWithSqliteContext:(struct sqlite3_context { }*)arg1 predicateContext:(void*)arg2 values:(struct Mem {}**)arg3 count:(int)arg4;
-- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
-- (id)queryWhereString;
-- (id)predicateFormat;
 - (id)country;
+- (id)dbCountry;
+- (void)setCountry:(id)arg1;
+- (void)setPhoneNumber:(id)arg1;
+- (void)evaluateCallbackWithSqliteContext:(struct sqlite3_context { }*)arg1 predicateContext:(void*)arg2 values:(struct Mem {}**)arg3 count:(int)arg4;
+- (BOOL)hasCallback;
+- (id)queryJoinsInCompound:(BOOL)arg1;
+- (id)queryWhereString;
+- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
+- (id)predicateFormat;
+- (id)phoneNumber;
+- (BOOL)isValid;
+- (void)dealloc;
 
 @end

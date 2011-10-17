@@ -13,26 +13,26 @@
     NSSet *_sizes;
 }
 
-@property(copy,readonly) NSSet * sizes;
-@property(retain) NSDictionary * properties;
-@property(copy) NSString * selectedCreativeName;
-@property(retain,readonly) NSDictionary * creatives;
-@property(retain) NSString * name;
 @property(retain) NSString * path;
+@property(retain) NSString * name;
+@property(readonly) NSDictionary * creatives;
+@property(copy) NSString * selectedCreativeName;
+@property(retain) NSDictionary * properties;
+@property(readonly) NSSet * sizes;
 
 + (id)localAdWithURL:(id)arg1;
 
-- (id)sizes;
-- (id)creatives;
 - (id)path;
-- (void)setName:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (id)selectedCreativeName;
 - (void)setSelectedCreativeName:(id)arg1;
-- (void)setProperties:(id)arg1;
-- (void)setPath:(id)arg1;
+- (id)selectedCreativeName;
+- (id)creatives;
+- (id)sizes;
 - (id)properties;
+- (void)setPath:(id)arg1;
+- (id)name;
+- (void)setName:(id)arg1;
+- (void)setProperties:(id)arg1;
+- (void)dealloc;
 - (id)initWithPath:(id)arg1 error:(id*)arg2;
 
 @end

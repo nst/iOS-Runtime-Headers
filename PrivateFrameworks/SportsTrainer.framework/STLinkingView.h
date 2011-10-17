@@ -20,36 +20,35 @@
     UILabel *_fgsnLabel;
 }
 
-@property(copy) NSString * serialNumber;
-@property BOOL bordered;
-@property <STLinkingViewDelegate> * delegate;
 @property int linkingType;
+@property(copy) NSString * serialNumber;
+@property <STLinkingViewDelegate> * delegate;
+@property BOOL bordered;
 
-+ (void)_initializeSafeCategory;
 
-- (void)_sensorHideAnimationDidStop;
-- (void)_receiverHideAnimationDidStop;
+- (void)_startAnimation;
+- (void)setDelegate:(id)arg1;
+- (void)setSerialNumber:(id)arg1;
+- (id)serialNumber;
+- (void)_stopAnimation;
+- (id)_newButton;
+- (void)willMoveToSuperview:(id)arg1;
+- (id)delegate;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)linkingType;
 - (void)setLinkingType:(int)arg1;
 - (void)setLinkingType:(int)arg1 animated:(BOOL)arg2;
-- (void)setBordered:(BOOL)arg1;
-- (void)_startAnimation;
-- (void)_stopAnimation;
-- (void)_rescanForEmped;
-- (void)_rescanForRemote;
-- (void)_done;
-- (void)_linkNewEmped;
 - (void)_linkNewRemote;
 - (void)_unlinkRemote;
+- (void)_linkNewEmped;
+- (void)_done;
+- (void)_rescanForEmped;
+- (void)_rescanForRemote;
+- (void)_receiverHideAnimationDidStop;
+- (void)_sensorHideAnimationDidStop;
+- (void)setBordered:(BOOL)arg1;
 - (BOOL)bordered;
-- (int)linkingType;
-- (void)setSerialNumber:(id)arg1;
-- (void)layoutSubviews;
-- (void)willMoveToSuperview:(id)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)serialNumber;
-- (id)_newButton;
 
 @end

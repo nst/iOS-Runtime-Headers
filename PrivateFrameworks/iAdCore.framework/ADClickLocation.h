@@ -3,43 +3,46 @@
  */
 
 @interface ADClickLocation : PBCodable  {
-    int _x;
     BOOL _hasX;
-    int _y;
+    int _x;
     BOOL _hasY;
-    int _w;
+    int _y;
     BOOL _hasW;
-    int _h;
+    int _w;
     BOOL _hasH;
+    int _h;
 }
 
-@property(readonly) BOOL hasH;
-@property int h;
-@property(readonly) BOOL hasW;
-@property int w;
-@property(readonly) BOOL hasY;
-@property int y;
-@property(readonly) BOOL hasX;
+@property BOOL hasX;
 @property int x;
+@property BOOL hasY;
+@property int y;
+@property BOOL hasW;
+@property int w;
+@property BOOL hasH;
+@property int h;
 
 
-- (BOOL)hasH;
-- (BOOL)hasW;
-- (BOOL)hasY;
-- (BOOL)hasX;
-- (void)setX:(int)arg1;
-- (void)setY:(int)arg1;
-- (void)setW:(int)arg1;
-- (void)setH:(int)arg1;
-- (int)w;
-- (int)x;
-- (id)dictionaryRepresentation;
-- (int)y;
-- (int)h;
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasH:(BOOL)arg1;
+- (BOOL)hasH;
+- (void)setHasW:(BOOL)arg1;
+- (BOOL)hasW;
+- (void)setHasY:(BOOL)arg1;
+- (BOOL)hasY;
+- (void)setHasX:(BOOL)arg1;
+- (BOOL)hasX;
 - (void)writeTo:(id)arg1;
+- (int)h;
+- (int)w;
+- (void)setH:(int)arg1;
+- (void)setW:(int)arg1;
+- (id)dictionaryRepresentation;
+- (void)setY:(int)arg1;
+- (int)y;
+- (void)setX:(int)arg1;
+- (int)x;
+- (id)description;
+- (void)dealloc;
 
 @end

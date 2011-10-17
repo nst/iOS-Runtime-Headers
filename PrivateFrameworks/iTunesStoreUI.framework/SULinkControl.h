@@ -14,16 +14,16 @@
 @property BOOL shouldDrawUnderline;
 
 
-- (void)setStyle:(int)arg1;
 - (void)_updateLabel;
 - (void)setHighlighted:(BOOL)arg1;
+- (void)setStyle:(int)arg1;
+- (void)sizeToFit;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (void)sizeToFit;
-- (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setShouldDrawUnderline:(BOOL)arg1;
+- (void)dealloc;
 - (BOOL)shouldDrawUnderline;
+- (void)setShouldDrawUnderline:(BOOL)arg1;
 - (id)_label;
 
 @end

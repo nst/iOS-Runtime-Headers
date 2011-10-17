@@ -5,10 +5,10 @@
 @interface GQPProcessorFactory : NSObject  {
 }
 
-+ (id)retainedProcessorForDocument:(struct __CFString { }*)arg1 uti:(struct __CFString { }*)arg2 outputType:(int)arg3 outputPath:(struct __CFString { }*)arg4 previewRequest:(struct __QLPreviewRequest { }*)arg5;
++ (id)retainedProcessorForDocument:(struct __CFString { }*)arg1 uti:(struct __CFString { }*)arg2 outputType:(int)arg3 outputPath:(struct __CFString { }*)arg4 previewRequest:(struct __QLPreviewRequest { }*)arg5 progressiveHelper:(id)arg6;
++ (id)retainedProcessorForZipArchive:(id)arg1 uti:(struct __CFString { }*)arg2 outputType:(int)arg3 outputPath:(struct __CFString { }*)arg4 previewRequest:(struct __QLPreviewRequest { }*)arg5 progressiveHelper:(id)arg6;
 + (struct __CFString { }*)createUtiForDocument:(struct __CFString { }*)arg1;
 + (int)applicationForDocumentUti:(struct __CFString { }*)arg1;
-+ (id)retainedProcessorForZipArchive:(id)arg1 uti:(struct __CFString { }*)arg2 outputType:(int)arg3 outputPath:(struct __CFString { }*)arg4 previewRequest:(struct __QLPreviewRequest { }*)arg5;
 
 
 @end

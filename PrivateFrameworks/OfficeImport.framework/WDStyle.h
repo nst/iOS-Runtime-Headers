@@ -21,26 +21,26 @@
 
 + (id)newIDFromName:(id)arg1;
 
-- (int)type;
-- (void)setName:(id)arg1;
-- (BOOL)hidden;
-- (id)name;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setHidden:(BOOL)arg1;
-- (id)paragraphProperties;
 - (id)initWithStyleSheet:(id)arg1 id:(id)arg2 type:(int)arg3;
-- (BOOL)isAnythingOverridden;
 - (id)nextStyle;
+- (id)tableProperties;
+- (id)baseStyle;
 - (void)setNextStyle:(id)arg1;
 - (id)tableRowProperties;
 - (id)tableCellProperties;
 - (id)tableStyleOverrideForPart:(int)arg1;
-- (void)setBaseStyle:(id)arg1;
-- (id)styleSheet;
-- (id)tableProperties;
-- (id)id;
+- (id)paragraphProperties;
 - (id)characterProperties;
-- (id)baseStyle;
+- (void)setBaseStyle:(id)arg1;
+- (BOOL)isAnythingOverridden;
+- (id)id;
+- (id)styleSheet;
+- (BOOL)hidden;
+- (int)type;
+- (id)name;
+- (void)setHidden:(BOOL)arg1;
+- (void)setName:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

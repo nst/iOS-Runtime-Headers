@@ -9,10 +9,10 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (int)timeAnimateValueCount;
 - (id)timeAnimateValueAtIndex:(int)arg1;
 - (void)addTimeAnimateValue:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

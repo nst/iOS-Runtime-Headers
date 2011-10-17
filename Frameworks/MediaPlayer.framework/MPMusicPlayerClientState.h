@@ -2,49 +2,57 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, MPMediaQuery;
+@class MPMediaItem, MPMediaQuery, MPMediaPlaylist;
 
 @interface MPMusicPlayerClientState : NSObject  {
-    MPMediaQuery *_query;
-    MPMediaItem *_firstItem;
-    int _shuffleMode;
-    int _repeatMode;
-    BOOL _useApplicationSpecificQueue;
     BOOL _allowsRemoteUIAccess;
-    BOOL _videoPlaybackEnabled;
-    BOOL _seeking;
     int _backgroundPlaybackAccess;
+    MPMediaItem *_firstItem;
+    MPMediaPlaylist *_geniusMixPlaylist;
+    BOOL _hasAudioBackgroundMode;
+    MPMediaQuery *_query;
+    int _repeatMode;
+    BOOL _seeking;
+    int _shuffleMode;
+    BOOL _useApplicationSpecificQueue;
+    BOOL _videoPlaybackEnabled;
 }
 
-@property BOOL seeking;
-@property BOOL videoPlaybackEnabled;
+@property BOOL allowsRemoteUIAccess;
 @property int backgroundPlaybackAccess;
 @property(retain) MPMediaItem * firstItem;
-@property BOOL allowsRemoteUIAccess;
-@property BOOL useApplicationSpecificQueue;
-@property int shuffleMode;
+@property(retain) MPMediaPlaylist * geniusMixPlaylist;
+@property BOOL hasAudioBackgroundMode;
 @property int repeatMode;
+@property BOOL seeking;
+@property int shuffleMode;
 @property(retain) MPMediaQuery * query;
+@property BOOL useApplicationSpecificQueue;
+@property BOOL videoPlaybackEnabled;
 
 
+- (BOOL)seeking;
+- (BOOL)videoPlaybackEnabled;
+- (id)firstItem;
+- (id)geniusMixPlaylist;
+- (void)setBackgroundPlaybackAccess:(int)arg1;
+- (BOOL)hasAudioBackgroundMode;
+- (int)backgroundPlaybackAccess;
+- (void)setHasAudioBackgroundMode:(BOOL)arg1;
+- (void)setGeniusMixPlaylist:(id)arg1;
+- (void)setQuery:(id)arg1;
+- (void)setFirstItem:(id)arg1;
+- (BOOL)useApplicationSpecificQueue;
+- (void)setSeeking:(BOOL)arg1;
+- (void)setVideoPlaybackEnabled:(BOOL)arg1;
+- (void)setUseApplicationSpecificQueue:(BOOL)arg1;
+- (void)setAllowsRemoteUIAccess:(BOOL)arg1;
+- (BOOL)allowsRemoteUIAccess;
 - (id)query;
 - (void)dealloc;
-- (BOOL)seeking;
-- (void)setSeeking:(BOOL)arg1;
-- (BOOL)videoPlaybackEnabled;
-- (void)setVideoPlaybackEnabled:(BOOL)arg1;
-- (int)backgroundPlaybackAccess;
-- (void)setBackgroundPlaybackAccess:(int)arg1;
-- (id)firstItem;
-- (void)setFirstItem:(id)arg1;
-- (BOOL)allowsRemoteUIAccess;
-- (BOOL)useApplicationSpecificQueue;
-- (void)setUseApplicationSpecificQueue:(BOOL)arg1;
-- (void)setQuery:(id)arg1;
-- (void)setAllowsRemoteUIAccess:(BOOL)arg1;
 - (void)setRepeatMode:(int)arg1;
-- (int)shuffleMode;
 - (int)repeatMode;
 - (void)setShuffleMode:(int)arg1;
+- (int)shuffleMode;
 
 @end

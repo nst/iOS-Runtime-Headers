@@ -10,12 +10,12 @@
 @property(readonly) UIImage * pickedImage;
 
 
-- (id)inputSourceMIMEType;
-- (id)pickedImage;
 - (id)_thumbnailImageForImageData:(id)arg1 size:(float)arg2 orientation:(int)arg3;
-- (id)_fullSizeImage;
+- (id)pickedImage;
 - (id)newInputSource;
-- (void)saveToLibraryWithCompletionBlock:(id)arg1;
+- (id)inputSourceMIMEType;
+- (id)_fullSizeImage;
 - (id)newThumbnailImageWithMaximumSize:(float)arg1;
+- (void)saveToLibraryWithCompletionBlock:(id)arg1;
 
 @end

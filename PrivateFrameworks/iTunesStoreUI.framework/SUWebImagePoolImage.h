@@ -9,8 +9,8 @@
     NSString *_mimeType;
 }
 
-@property(readonly) NSString * MIMEType;
 @property(readonly) UIImage * image;
+@property(readonly) NSString * MIMEType;
 
 
 - (id)MIMEType;

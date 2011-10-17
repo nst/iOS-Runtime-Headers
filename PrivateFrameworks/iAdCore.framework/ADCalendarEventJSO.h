@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class NSDate, NSString, NSNumber;
+@class NSString, EKRecurrenceRule, NSDate, NSNumber;
 
 @interface ADCalendarEventJSO : ADJavaScriptObject  {
     NSString *_eventDescription;
@@ -11,32 +11,36 @@
     NSDate *_start;
     NSDate *_end;
     NSNumber *_allDay;
+    EKRecurrenceRule *_recurrence;
 }
 
-@property(retain) NSNumber * allDay;
-@property(retain) NSDate * end;
-@property(retain) NSDate * start;
-@property(retain) NSString * summary;
-@property(retain) NSString * location;
 @property(retain) NSString * eventDescription;
+@property(retain) NSString * location;
+@property(retain) NSString * summary;
+@property(retain) NSDate * start;
+@property(retain) NSDate * end;
+@property(retain) NSNumber * allDay;
+@property(retain) EKRecurrenceRule * recurrence;
 
 + (id)inputRequiredProperties;
 + (id)scriptingKeys;
 
-- (id)eventDescription;
-- (id)initWithWebScriptObject:(id)arg1;
+- (id)start;
 - (id)allDay;
 - (void)setAllDay:(id)arg1;
 - (void)setEventDescription:(id)arg1;
+- (id)eventDescription;
 - (id)EKEventInEventStore:(id)arg1;
-- (void)setEnd:(id)arg1;
-- (void)setStart:(id)arg1;
-- (id)end;
-- (void)setLocation:(id)arg1;
-- (id)start;
-- (void)dealloc;
-- (id)location;
+- (id)initWithWebScriptObject:(id)arg1;
 - (id)summary;
 - (void)setSummary:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setEnd:(id)arg1;
+- (void)setStart:(id)arg1;
+- (id)location;
+- (id)end;
+- (void)dealloc;
+- (id)recurrence;
+- (void)setRecurrence:(id)arg1;
 
 @end

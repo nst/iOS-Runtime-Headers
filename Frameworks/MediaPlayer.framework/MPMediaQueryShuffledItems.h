@@ -15,27 +15,27 @@
 @property(readonly) MPMediaQuery * sourceMediaQuery;
 
 
+- (id)sourceMediaQuery;
+- (void)unshuffle;
+- (void)shuffleItemsWithInitialIndex:(unsigned int)arg1;
+- (void)shuffleAlbumsWithInitialIndex:(unsigned int)arg1;
+- (void)invalidateSourceMediaQueryAndLoadItems;
+- (unsigned int)indexOfItemWithPersistentID:(unsigned long long)arg1;
+- (id)initWithSourceMediaQuery:(id)arg1;
+- (id)_includeInShuffleItemsForQuery:(id)arg1;
+- (void)_rebuildItemCachesWithInitialItemIndex:(unsigned int)arg1;
+- (void)_rebuildGroupedCachesWithInitialItemIndex:(unsigned int)arg1;
+- (void)_shuffleMutableArray:(id)arg1 withInitialIndex:(unsigned int)arg2;
+- (void)_rebuildCachesWithInitialIndex:(unsigned int)arg1;
+- (void)_rebuildCaches;
+- (id)initWithSourceMediaQuery:(id)arg1 orderedItems:(id)arg2 shuffleType:(unsigned int)arg3;
 - (unsigned int)indexOfObject:(id)arg1;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (void)_resetCaches;
 - (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)count;
-- (id)initWithSourceMediaQuery:(id)arg1 orderedItems:(id)arg2 shuffleType:(unsigned int)arg3;
-- (id)initWithSourceMediaQuery:(id)arg1;
-- (unsigned int)indexOfItemWithPersistentID:(unsigned long long)arg1;
-- (void)invalidateSourceMediaQueryAndLoadItems;
-- (void)shuffleAlbumsWithInitialIndex:(unsigned int)arg1;
-- (void)shuffleItemsWithInitialIndex:(unsigned int)arg1;
-- (void)unshuffle;
-- (id)_includeInShuffleItemsForQuery:(id)arg1;
-- (void)_rebuildCaches;
-- (void)_rebuildCachesWithInitialIndex:(unsigned int)arg1;
-- (void)_rebuildGroupedCachesWithInitialItemIndex:(unsigned int)arg1;
-- (void)_rebuildItemCachesWithInitialItemIndex:(unsigned int)arg1;
-- (void)_shuffleMutableArray:(id)arg1 withInitialIndex:(unsigned int)arg2;
-- (id)sourceMediaQuery;
-- (void)_resetCaches;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

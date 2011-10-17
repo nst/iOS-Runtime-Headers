@@ -10,12 +10,12 @@
 }
 
 
-- (void)dealloc;
 - (id)lists;
-- (id)initWithDocument:(id)arg1;
+- (int)listCount;
 - (id)listAt:(int)arg1;
 - (id)addList:(id)arg1;
+- (id)initWithDocument:(id)arg1;
 - (id)document;
-- (int)listCount;
+- (void)dealloc;
 
 @end

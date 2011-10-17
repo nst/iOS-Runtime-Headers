@@ -15,19 +15,19 @@
 @property(readonly) unsigned int audioFileTypeID;
 
 + (void)initialize;
-+ (id)allFileTypeIdentifiers;
-+ (id)_mediaFileTypeWithFileTypeIdentifier:(id)arg1 exceptionReason:(id*)arg2;
 + (id)mediaFileTypeWithFileTypeIdentifier:(id)arg1;
++ (id)_mediaFileTypeWithFileTypeIdentifier:(id)arg1 exceptionReason:(id*)arg2;
++ (id)allFileTypeIdentifiers;
 
 - (id)UTI;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
-- (unsigned long)audioFileTypeID;
 - (id)defaultFileExtension;
 - (id)initWithFileTypeIdentifier:(id)arg1 exceptionReason:(id*)arg2;
-- (BOOL)supportsOutputSettings:(id)arg1 reason:(id*)arg2;
+- (unsigned long)audioFileTypeID;
 - (id)figFormatReaderFileFormat;
 - (id)supportedMediaTypes;
+- (BOOL)supportsOutputSettings:(id)arg1 reason:(id*)arg2;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

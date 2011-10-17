@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSURL, NSString, <GKComposeControllerDelegate>;
+@class NSMutableSet, NSString, <GKComposeControllerDelegate>, NSURL;
 
 @interface GKComposeController : GKAbstractComposeController  {
     BOOL _alreadySetUp;
@@ -13,38 +13,40 @@
     <GKComposeControllerDelegate> *_delegate;
     NSURL *_serverAddFriendsURL;
     BOOL _messageWasSetExternally;
+    NSMutableSet *_playerFriendRequestsSent;
 }
 
-@property(copy) NSString * defaultMessage;
-@property BOOL messageWasSetExternally;
-@property(retain) NSURL * serverAddFriendsURL;
 @property <GKComposeControllerDelegate> * delegate;
+@property(copy) NSString * defaultMessage;
+@property(retain) NSURL * serverAddFriendsURL;
+@property BOOL messageWasSetExternally;
+@property(retain) NSMutableSet * playerFriendRequestsSent;
 
 
 - (id)serverAddFriendsURL;
 - (void)addPlayerRecipients:(id)arg1;
-- (id)defaultMessage;
-- (void)setDefaultMessage:(id)arg1;
-- (void)setDefaultMessageWithRealName;
-- (void)serverAddFriendsButtonWasTouched;
-- (void)send:(id)arg1;
-- (void)showAlertForSuccess;
 - (void)showAlertForFailures:(id)arg1 allFailed:(BOOL)arg2;
+- (void)setPlayerFriendRequestsSent:(id)arg1;
+- (id)playerFriendRequestsSent;
+- (void)send:(id)arg1;
 - (void)showAlertForError:(id)arg1;
+- (void)setDefaultMessageWithRealName;
+- (void)setServerAddFriendsURL:(id)arg1;
+- (void)serverAddFriendsButtonWasTouched;
 - (BOOL)messageWasSetExternally;
 - (void)setMessageWasSetExternally:(BOOL)arg1;
-- (void)setServerAddFriendsURL:(id)arg1;
-- (void)updateTitle;
+- (void)cancelButtonClicked:(id)arg1;
 - (void)updateNavigationButtons;
-- (void)loadView;
+- (void)updateTitle;
+- (id)defaultMessage;
+- (void)setDefaultMessage:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)dismiss;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)dealloc;
+- (void)loadView;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (void)cancelButtonClicked:(id)arg1;
+- (void)dealloc;
 
 @end

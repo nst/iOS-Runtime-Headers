@@ -12,19 +12,19 @@
 }
 
 
-- (void)setMajorUnitValue:(double)arg1;
-- (void)setBaseTimeUnit:(int)arg1;
-- (int)baseTimeUnit;
-- (int)minorTimeUnit;
+- (double)majorUnitValue;
+- (double)minorUnitValue;
 - (int)majorTimeUnit;
+- (int)minorTimeUnit;
+- (int)baseTimeUnit;
 - (bool)isAutomatic;
 - (void)setAutomatic:(bool)arg1;
 - (bool)isDate;
-- (double)minorUnitValue;
-- (double)majorUnitValue;
+- (void)setMajorUnitValue:(double)arg1;
 - (void)setMinorUnitValue:(double)arg1;
 - (void)setMinorTimeUnit:(int)arg1;
 - (void)setMajorTimeUnit:(int)arg1;
+- (void)setBaseTimeUnit:(int)arg1;
 - (id)initWithResources:(id)arg1;
 
 @end

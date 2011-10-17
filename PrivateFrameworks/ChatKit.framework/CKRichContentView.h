@@ -9,22 +9,22 @@
 @property id richContentDelegate;
 
 
-- (id)supportedPasteboardTypesForCurrentSelection;
 - (id)createDocumentFragment;
-- (void)dealloc;
+- (id)supportedPasteboardTypesForCurrentSelection;
+- (id)DOMDocument;
 - (void)handleEvent:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)brElement;
-- (void)insertImage:(id)arg1 ID:(id)arg2 URL:(id)arg3;
-- (void)_wvHelperThawSelectionTag;
-- (void)_wvInsertHTML:(id)arg1;
+- (id)richContentDelegate;
 - (void)_wvRegisterForDOMEvents;
 - (void)_wvUnregisterForDOMEvents;
-- (id)html;
-- (id)richContentDelegate;
-- (void)setRichContentDelegate:(id)arg1;
+- (void)_wvHelperThawSelectionTag;
+- (void)_wvInsertHTML:(id)arg1;
 - (void)insertHTML:(id)arg1;
-- (id)nodeForImage:(id)arg1 ID:(id)arg2 URL:(id)arg3;
+- (id)brElement;
+- (id)nodeForImageSize:(struct CGSize { float x1; float x2; })arg1 ID:(id)arg2 URL:(id)arg3;
+- (id)html;
 - (void)setHTML:(id)arg1;
+- (void)setRichContentDelegate:(id)arg1;
+- (void)dealloc;
 
 @end

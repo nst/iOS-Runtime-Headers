@@ -13,30 +13,30 @@
     NSData *_sessionToken;
 }
 
-@property(retain) NSData * sessionToken;
-@property BOOL hosted;
-@property(retain) NSString * rid;
-@property(retain) NSData * connectionData;
-@property(retain) NSString * message;
 @property(retain) NSArray * players;
+@property(retain) NSString * message;
+@property(retain) NSData * connectionData;
+@property(retain) NSString * rid;
+@property BOOL hosted;
+@property(retain) NSData * sessionToken;
 
 
-- (void)setConnectionData:(id)arg1;
-- (id)connectionData;
-- (void)setRid:(id)arg1;
-- (BOOL)hosted;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
-- (id)rid;
 - (void)setPlayers:(id)arg1;
-- (void)setHosted:(BOOL)arg1;
-- (void)setSessionToken:(id)arg1;
 - (id)players;
+- (BOOL)hosted;
+- (id)rid;
+- (id)header;
+- (void)setRid:(id)arg1;
+- (void)setSessionToken:(id)arg1;
+- (void)setHosted:(BOOL)arg1;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)sessionToken;
-- (void)setMessage:(id)arg1;
 - (id)message;
+- (void)setMessage:(id)arg1;
 - (id)key;
 - (id)request;
+- (id)connectionData;
+- (void)setConnectionData:(id)arg1;
 - (void)dealloc;
-- (id)header;
 
 @end

@@ -34,18 +34,18 @@
     BOOL _pad;
 }
 
-+ (id)MIMEType;
-+ (BOOL)decodeDownloadHeader:(id)arg1 headerLength:(int*)arg2 modificationTime:(unsigned int*)arg3 filename:(id*)arg4;
 + (BOOL)canDecodeDownloadHeaderData:(id)arg1;
++ (BOOL)decodeDownloadHeader:(id)arg1 headerLength:(int*)arg2 modificationTime:(unsigned int*)arg3 filename:(id*)arg4;
++ (id)MIMEType;
 
 - (void)finalize;
-- (id)init;
-- (void)dealloc;
-- (id)fileAttributes;
-- (id)decodeData:(id)arg1;
+- (id)filenameWithOriginalFilename:(id)arg1;
+- (BOOL)finishDownloadDecoding;
 - (BOOL)decodeDownloadData:(id)arg1 dataForkData:(id*)arg2 resourceForkData:(id*)arg3;
 - (BOOL)isFinishedDecoding;
-- (BOOL)finishDownloadDecoding;
-- (id)filenameWithOriginalFilename:(id)arg1;
+- (id)decodeData:(id)arg1;
+- (id)fileAttributes;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -12,13 +12,13 @@
 
 + (id)readProtoBuffersOfClass:(Class)arg1 fromFile:(id)arg2 error:(id*)arg3;
 
-- (void)dealloc;
-- (id)readProtoBuffer;
-- (id)readBytes:(unsigned int)arg1;
-- (BOOL)seekToOffset:(unsigned int)arg1;
 - (id)initWithStream:(id)arg1;
+- (BOOL)seekToOffset:(unsigned int)arg1;
+- (id)readBytes:(unsigned int)arg1;
 - (id)stream;
+- (id)readProtoBuffer;
 - (void)setStream:(id)arg1;
-- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
+- (int)read:(const char *)arg1 maxLength:(unsigned int)arg2;
+- (void)dealloc;
 
 @end

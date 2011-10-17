@@ -2,26 +2,50 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABCountryCodePicker, ABEditorModel, NSString;
+@class UISearchDisplayController, UITableView, UISearchBar, NSIndexPath, NSDictionary, NSString, UILocalizedIndexedCollation, NSArray;
 
-@interface ABCountryPickerViewController : ABPickerViewController <ABCountryCodePickerDelegate> {
-    ABCountryCodePicker *_countryPicker;
-    ABEditorModel *_editorModel;
+@interface ABCountryPickerViewController : ABPickerViewController <UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate, UISearchBarDelegate> {
+    UITableView *_tableView;
+    UILocalizedIndexedCollation *_collation;
+    NSArray *_sections;
+    NSArray *_sectionIndexTitles;
+    NSDictionary *_indexToSections;
+    UISearchBar *_searchBar;
+    UISearchDisplayController *_searchController;
+    NSArray *_filteredCountries;
     NSString *_selectedCountryCode;
+    NSIndexPath *_selectedIndexPath;
+    NSArray *_allCountries;
 }
 
 @property(retain) NSString * selectedCountryCode;
 
 
-- (void)loadView;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
+- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchDisplayControllerWillEndSearch:(id)arg1;
+- (void)searchDisplayControllerWillBeginSearch:(id)arg1;
+- (void)searchBarSearchButtonClicked:(id)arg1;
+- (void)searchBarTextDidBeginEditing:(id)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
+- (id)sectionIndexTitlesForTableView:(id)arg1;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)init;
 - (void)dealloc;
-- (id)initWithEditedItem:(id)arg1;
-- (void)countryCodePicker:(id)arg1 endedWithSelectionConfirmed:(BOOL)arg2 animate:(BOOL)arg3;
+- (void)reloadCountryCodes;
+- (void)_setSelectedCountryCode:(id)arg1 atPath:(id)arg2;
+- (void)configureSections;
 - (id)selectedCountryCode;
-- (id)countryCodePicker;
-- (float)ab_heightToFitForViewInPopoverView;
 - (void)setSelectedCountryCode:(id)arg1;
+- (void)scrollToSearchFieldAnimated:(BOOL)arg1;
+- (float)ab_heightToFitForViewInPopoverView;
 
 @end

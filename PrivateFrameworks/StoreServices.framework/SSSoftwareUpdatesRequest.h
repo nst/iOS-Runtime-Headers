@@ -12,14 +12,14 @@
 @property <SSSoftwareUpdatesRequestDelegate> * delegate;
 
 
-- (void)dealloc;
-- (void)_sendResponseToDelegate:(id)arg1;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
-- (id)initWithUpdateQueueContext:(id)arg1;
 - (id)updateQueueContext;
+- (id)initWithUpdateQueueContext:(id)arg1;
 - (id)handleFailureResponse:(id)arg1;
+- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
+- (void)_sendResponseToDelegate:(id)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (void)dealloc;
 
 @end

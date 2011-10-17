@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class UIColor, UIImage;
+@class UIFont, UIColor, UIImage;
 
 @interface CNFRegAppearanceController : NSObject  {
 }
@@ -25,8 +25,16 @@
 @property(readonly) UIColor * tableSeparatorTopShadowColor;
 @property(readonly) UIColor * tableSeparatorBottomShadowColor;
 @property(retain,readonly) UIColor * tableHeaderTextColor;
+@property(retain,readonly) UIColor * tableHeaderTextColorSelected;
 @property(retain,readonly) UIColor * tableHeaderTextShadowColor;
 @property(readonly) struct CGSize { float width; float height; } tableHeaderTextShadowOffset;
+@property(retain,readonly) UIFont * tableHeaderFont;
+@property(retain,readonly) UIFont * tableFooterFont;
+@property(readonly) BOOL styleUsesCustomSearchResultsStyle;
+@property(readonly) int searchResultsTableSeparatorStyle;
+@property(readonly) UIColor * searchResultsTableSeparatorColor;
+@property(readonly) UIColor * searchResultsTableSeparatorTopShadowColor;
+@property(readonly) UIColor * searchResultsTableSeparatorBottomShadowColor;
 @property(readonly) BOOL webViewDrawsShadows;
 @property(readonly) int navigationBarStyle;
 @property(readonly) BOOL navigationBarIsTranslucent;
@@ -49,35 +57,38 @@
 @property(retain,readonly) UIColor * tableBackgroundColor;
 
 + (id)appearanceControllerForStyle:(int)arg1;
-+ (id)defaultAppearanceController;
-+ (id)stripedAppearanceController;
 + (id)translucentBlackAppearanceController;
++ (id)stripedAppearanceController;
 + (id)gradientAppearanceController;
++ (id)defaultAppearanceController;
 + (id)globalAppearanceController;
 
-- (id)tableCellTextLabelBackgroundColor;
-- (id)webViewBackgroundColor;
-- (id)learnMoreArrowImagePressed;
-- (BOOL)navigationBarIsTranslucent;
-- (id)tableHeaderTextShadowColor;
-- (id)tableSeparatorColor;
-- (BOOL)styleUsesCustomTableStyle;
-- (BOOL)styleUsesCustomSeparatorStyle;
-- (id)tableCellEditableTextColor;
-- (id)tableSectionShadowImage;
+- (id)tableBackgroundColor;
+- (int)modalPresentationStyle;
 - (id)tableCellEditableInsertionPointColor;
-- (id)tableCellCheckmarkImage;
-- (id)tableCellCheckmarkImageSelected;
+- (id)tableHeaderFont;
+- (id)tableFooterFont;
 - (int)navigationBarActivityIndicatorStyle;
 - (BOOL)actionSheetsUsePopoverStyle;
-- (id)tableHeaderTextColor;
-- (struct CGSize { float x1; float x2; })tableHeaderTextShadowOffset;
 - (id)learnMoreTextColor;
 - (id)learnMoreTextColorSelected;
 - (id)learnMoreShadowColor;
+- (id)tableHeaderTextColor;
+- (id)tableHeaderTextColorSelected;
+- (id)tableHeaderTextShadowColor;
+- (struct CGSize { float x1; float x2; })tableHeaderTextShadowOffset;
 - (id)learnMoreArrowImage;
+- (id)learnMoreArrowImagePressed;
 - (BOOL)learnMoreButtonDrawsUnderline;
+- (BOOL)styleUsesCustomSearchResultsStyle;
+- (int)searchResultsTableSeparatorStyle;
+- (id)searchResultsTableSeparatorColor;
+- (id)searchResultsTableSeparatorTopShadowColor;
+- (id)searchResultsTableSeparatorBottomShadowColor;
+- (BOOL)styleUsesCustomTableStyle;
+- (BOOL)styleUsesCustomSeparatorStyle;
 - (int)tableSeparatorStyle;
+- (id)tableSeparatorColor;
 - (id)tableSeparatorTopShadowColor;
 - (id)tableSeparatorBottomShadowColor;
 - (id)tableSectionBorderColor;
@@ -85,15 +96,20 @@
 - (id)tableCellButtonImageSelected;
 - (id)tableCellBackgroundColor;
 - (id)tableCellTextLabelColor;
+- (id)tableCellTextLabelBackgroundColor;
 - (id)tableCellDetailLabelColor;
 - (id)tableCellDetailLabelBackgroundColor;
 - (id)tableCellEditableTextPlaceholderColor;
 - (id)tableCellEditableTextFieldClearButton;
 - (id)tableCellEditableTextFieldClearButtonPressed;
+- (id)tableCellEditableTextColor;
+- (id)tableCellCheckmarkImage;
+- (id)tableCellCheckmarkImageSelected;
+- (id)tableSectionShadowImage;
+- (id)webViewBackgroundColor;
 - (BOOL)webViewIsOpaque;
 - (BOOL)webViewDrawsShadows;
 - (int)navigationBarStyle;
-- (int)modalPresentationStyle;
-- (id)tableBackgroundColor;
+- (BOOL)navigationBarIsTranslucent;
 
 @end

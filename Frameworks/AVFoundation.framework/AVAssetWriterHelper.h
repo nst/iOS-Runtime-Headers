@@ -23,36 +23,36 @@
 @property(readonly) AVAssetWriterConfigurationState * configurationState;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)startWriting;
-- (id)metadata;
-- (BOOL)canAddInput:(id)arg1;
-- (void)addInput:(id)arg1;
 - (void)setMetadata:(id)arg1;
+- (id)metadata;
+- (void)setWeakReferenceToAssetWriter:(id)arg1;
 - (id)outputURL;
-- (id)configurationState;
-- (id)inputs;
-- (BOOL)shouldOptimizeForNetworkUse;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
-- (id)availableMediaTypes;
 - (id)mediaFileType;
-- (id)initWithConfigurationState:(id)arg1;
+- (id)availableMediaTypes;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (BOOL)shouldOptimizeForNetworkUse;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
 - (int)movieTimeScale;
 - (void)setMovieTimeScale:(int)arg1;
-- (BOOL)_canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2 exceptionReason:(id*)arg3;
+- (id)inputs;
 - (BOOL)canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2;
+- (BOOL)canAddInput:(id)arg1;
+- (void)addInput:(id)arg1;
+- (void)startWriting;
 - (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)cancelWriting;
 - (void)finishWriting;
-- (void)_transitionToClientInitiatedTerminalStatus:(int)arg1;
 - (void)transitionToFailedStatusWithError:(id)arg1;
+- (id)initWithConfigurationState:(id)arg1;
+- (id)configurationState;
+- (BOOL)_canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2 exceptionReason:(id*)arg3;
 - (id)weakReferenceToAssetWriter;
-- (void)setWeakReferenceToAssetWriter:(id)arg1;
-- (id)error;
+- (void)_transitionToClientInitiatedTerminalStatus:(int)arg1;
 - (int)status;
+- (id)error;
+- (id)init;
+- (void)dealloc;
 
 @end

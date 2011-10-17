@@ -25,8 +25,6 @@
 }
 
 
-- (void)updateContent;
-- (void)copyContent:(char *)arg1 ofSize:(unsigned long)arg2;
 - (void)setStandardVersion:(unsigned short)arg1;
 - (unsigned long)vendorExtensionID;
 - (void)setVendorExtensionID:(unsigned long)arg1;
@@ -42,6 +40,7 @@
 - (void)setDevicePropertiesSupported:(id)arg1;
 - (id)captureFormats;
 - (void)setCaptureFormats:(id)arg1;
+- (id)imageFormats;
 - (void)setImageFormats:(id)arg1;
 - (id)manufacturer;
 - (void)setManufacturer:(id)arg1;
@@ -49,20 +48,19 @@
 - (void)setDeviceVersion:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
 - (id)canonicalManufacturer;
+- (void)updateContent;
 - (unsigned short)standardVersion;
 - (id)initWithMutableData:(id)arg1;
 - (id)devicePropertiesSupported;
 - (id)operationsSupported;
+- (void)setContent:(id)arg1;
+- (id)serialNumber;
 - (id)model;
 - (id)content;
-- (unsigned long)contentSize;
-- (id)init;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
 - (id)description;
-- (id)imageFormats;
-- (void)setContent:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setModel:(id)arg1;
-- (id)serialNumber;
 
 @end

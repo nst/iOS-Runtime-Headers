@@ -12,10 +12,10 @@
 
 + (id)writeProtoBuffers:(id)arg1 toFile:(id)arg2;
 
-- (void)dealloc;
-- (id)stream;
 - (id)initWithOutputStream:(id)arg1;
+- (id)stream;
 - (void)setStream:(id)arg1;
-- (int)write:(char *)arg1 maxLength:(unsigned int)arg2;
+- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
+- (void)dealloc;
 
 @end

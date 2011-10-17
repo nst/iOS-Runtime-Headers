@@ -12,26 +12,26 @@
     BOOL _allowsVOIP;
 }
 
-@property BOOL allowsVOIP;
-@property(retain) NSString * isoCountryCode;
-@property(retain) NSString * mobileNetworkCode;
-@property(retain) NSString * mobileCountryCode;
 @property(retain) NSString * carrierName;
+@property(retain) NSString * mobileCountryCode;
+@property(retain) NSString * mobileNetworkCode;
+@property(retain) NSString * isoCountryCode;
+@property BOOL allowsVOIP;
 
 
+- (id)mobileCountryCode;
+- (id)mobileNetworkCode;
+- (void)setAllowsVOIP:(BOOL)arg1;
+- (void)setIsoCountryCode:(id)arg1;
+- (void)setMobileNetworkCode:(id)arg1;
+- (void)setMobileCountryCode:(id)arg1;
+- (void)setCarrierName:(id)arg1;
+- (id)isoCountryCode;
+- (id)carrierName;
+- (BOOL)allowsVOIP;
 - (BOOL)isEqual:(id)arg1;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)description;
-- (void)setMobileCountryCode:(id)arg1;
-- (void)setAllowsVOIP:(BOOL)arg1;
-- (id)mobileCountryCode;
-- (BOOL)allowsVOIP;
-- (id)isoCountryCode;
-- (void)setIsoCountryCode:(id)arg1;
-- (id)mobileNetworkCode;
-- (void)setMobileNetworkCode:(id)arg1;
-- (id)carrierName;
-- (void)setCarrierName:(id)arg1;
 
 @end

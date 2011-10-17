@@ -28,24 +28,23 @@
 @property(readonly) SPSearchResult * sortB;
 
 
-- (id)category;
-- (void)dealloc;
-- (id)displayIdentifier;
 - (id)readBytes:(unsigned int)arg1;
 - (unsigned int)resultCount;
-- (BOOL)deserializeResultAtIndex:(unsigned int)arg1 toCursor:(id)arg2;
 - (unsigned int)domain;
+- (id)displayIdentifier;
 - (int)read:(const char *)arg1 maxLength:(unsigned int)arg2;
-- (id)initWithMappedRegion:(unsigned int)arg1 length:(unsigned int)arg2;
+- (BOOL)deserializeResultAtIndex:(unsigned int)arg1 toCursor:(id)arg2;
+- (id)category;
+- (id)sortB;
 - (id)initWithSerializer:(id)arg1;
-- (void)sortResultsByDate;
 - (void)sortResultsUsingQueryString:(id)arg1;
 - (id)initWithMallocRegion:(unsigned int)arg1 length:(unsigned int)arg2;
+- (id)initWithMappedRegion:(unsigned int)arg1 length:(unsigned int)arg2;
 - (void)_prepareForRandomAccess;
-- (id)sortB;
 - (id)sortA;
 - (id)diacriticMatcher;
 - (id)matcher;
 - (BOOL)readResultIntoCursor:(id)arg1;
+- (void)dealloc;
 
 @end

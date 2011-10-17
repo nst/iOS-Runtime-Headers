@@ -18,16 +18,16 @@
 @property(retain) UIImage * image;
 
 
-- (void)main;
-- (id)image;
-- (void)dealloc;
-- (void)setImage:(id)arg1;
 - (id)imageData;
 - (void)setImageData:(id)arg1;
-- (void)_generatePreviewOnMainThreadForVideoFile:(id)arg1;
+- (id)image;
+- (void)setImage:(id)arg1;
 - (id)imagePickerController;
 - (id)editingInfo;
+- (void)_generatePreviewOnMainThreadForVideoFile:(id)arg1;
 - (void)setEditingInfo:(id)arg1;
 - (void)setImagePickerController:(id)arg1;
+- (void)main;
+- (void)dealloc;
 
 @end

@@ -2,42 +2,48 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSString, UIImage;
+@class UIImageView, UILabel, NSString, UIImage;
 
 @interface CKGenericFileBalloonView : CKBalloonView  {
-    UIImage *_icon;
-    NSString *_text;
-    NSString *_subtext;
-    float _originalWidth;
+    UIImageView *_iconImageView;
+    UILabel *_textLabel;
+    UILabel *_subtextLabel;
 }
 
-@property(retain) UIImage * icon;
-@property(copy) NSString * subtext;
 @property(copy) NSString * text;
+@property(copy) NSString * subtext;
+@property(retain) UIImage * icon;
+@property(retain) UILabel * subtextLabel;
+@property(retain) UILabel * textLabel;
+@property(retain) UIImageView * iconImageView;
 
-+ (struct CGPoint { float x1; float x2; })offsetForBubbleInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (id)textColorForBalloonOrientation:(int)arg1 outgoingBalloonColor:(int)arg2;
 + (float)fixedHeight;
-+ (float)additionalHeightForBubbleWhenInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-+ (BOOL)shouldHaveAccessoryDiclosure;
-+ (void)_initializeSafeCategory;
++ (struct CGPoint { float x1; float x2; })entryFieldBalloonOffset;
++ (float)entryFieldBalloonAdditionalHeight;
++ (float)heightForText:(id)arg1 width:(float)arg2 includeBuffers:(BOOL)arg3;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsetsForBalloonOrientation:(int)arg1;
 
-- (void)setIcon:(id)arg1;
+- (void)updateTextColor;
+- (id)textLabel;
 - (id)icon;
-- (void)setText:(id)arg1;
+- (void)setIcon:(id)arg1;
+- (id)iconImageView;
+- (void)prepareForReuse;
 - (id)text;
-- (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSubtext:(id)arg1;
-- (id)_titleFont;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_iconRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_subtextRect;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setText:(id)arg1;
+- (void)layoutSubviews;
 - (id)subtext;
-- (void)tighten;
+- (void)setIconImageView:(id)arg1;
+- (void)setSubtextLabel:(id)arg1;
+- (id)subtextLabel;
+- (void)setSubtext:(id)arg1;
+- (BOOL)shouldHaveAccessoryDiclosure;
 - (float)tightenedWidth;
+- (void)setTextLabel:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
-- (id)_subtitleFont;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
+- (void)updateTextShadowColor;
+- (void)dealloc;
 
 @end

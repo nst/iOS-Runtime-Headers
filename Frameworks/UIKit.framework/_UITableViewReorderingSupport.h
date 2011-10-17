@@ -11,7 +11,8 @@
     unsigned int _oldShowHorizontalScrollIndicator : 1;
     unsigned int _oldShowVerticalScrollIndicator : 1;
     unsigned int _reloadDataCalled : 1;
-    unsigned int _reserved : 29;
+    unsigned int _reorderingCancelled : 1;
+    unsigned int _reserved : 28;
     NSTimer *_autoscrollTimer;
     UIShadowView *_topShadowView;
     UIShadowView *_bottomShadowView;

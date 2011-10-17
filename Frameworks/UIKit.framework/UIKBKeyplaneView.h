@@ -2,39 +2,55 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBCandidateView, NSString, UIKBKeyplane, UIKBKeyboard, UIKBHandwritingView;
+@class UIKeyboardLayoutStar, UIKBTree, NSTimer, NSMutableDictionary;
 
 @interface UIKBKeyplaneView : UIView  {
-    UIKBKeyboard *_keyboard;
-    UIKBKeyplane *_keyplane;
-    NSString *_visualStyle;
-    UIKBHandwritingView *_handwritingView;
-    UIKBCandidateView *_candidateView;
-    BOOL _redrawBackground;
+    UIKBTree *_keyboard;
+    UIKBTree *_keyplane;
+    UIKeyboardLayoutStar *_layout;
+    NSMutableDictionary *_states;
+    NSMutableDictionary *_subviewIndex;
+    NSMutableDictionary *_activeViewIndex;
+    NSMutableDictionary *_renderedKeyViews;
+    NSMutableDictionary *_delayedDeactivationKeys;
+    NSTimer *_activatedTimer;
+    BOOL _performingDeactivation;
 }
 
-@property BOOL backgroundNeedsRedraw;
-@property UIKBHandwritingView * handwritingView;
-@property UIKBCandidateView * candidateView;
-@property(readonly) NSString * visualStyle;
-@property(retain) UIKBKeyplane * keyplane;
+@property(retain) UIKBTree * keyplane;
+@property UIKeyboardLayoutStar * layout;
 
 
-- (id)cacheKey;
-- (id)candidateView;
-- (id)handwritingView;
+- (void)activateKeys;
+- (id)viewForKey:(id)arg1 state:(int)arg2;
+- (id)cacheIdentifierForKey:(id)arg1;
+- (Class)classForKey:(id)arg1;
+- (id)cacheIdentifierForKey:(id)arg1 withState:(int)arg2;
+- (id)containingViewForKey:(id)arg1 withState:(int)arg2;
+- (void)deactivateKey:(id)arg1;
+- (void)removeKeyFromDelayedDeactivationSet:(id)arg1;
+- (BOOL)keyIsMaskable:(id)arg1;
+- (void)scheduleDelayedDeactivation;
+- (void)performDelayedDeactivation:(id)arg1;
+- (void)cancelDelayedDeactivation;
+- (void)addKeyToDelayedDeactivationSet:(id)arg1;
+- (id)viewForKey:(id)arg1;
+- (void)deactivateKeys;
+- (void)setLayout:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 keyplane:(id)arg3;
-- (BOOL)validForKeyplane:(id)arg1 withVisualStyle:(id)arg2;
-- (BOOL)backgroundNeedsRedraw;
-- (void)setBackgroundNeedsRedraw:(BOOL)arg1;
-- (void)setHandwritingView:(id)arg1;
-- (void)setCandidateView:(id)arg1;
-- (void)setKeyplane:(id)arg1;
+- (BOOL)validForKeyplane:(id)arg1 withVisualStyle:(int)arg2;
+- (void)purgeKeyViews;
+- (int)stateForKey:(id)arg1;
+- (void)setState:(int)arg1 forKey:(id)arg2;
+- (void)purgeSubviews;
+- (id)cacheKey;
 - (id)keyplane;
-- (id)visualStyle;
+- (void)setKeyplane:(id)arg1;
 - (void)displayLayer:(id)arg1;
+- (id)layout;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)dealloc;
+- (void)removeFromSuperview;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

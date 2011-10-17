@@ -13,8 +13,8 @@
 
 
 - (void)setVideoController:(id)arg1;
-- (void)transition:(unsigned int)arg1;
-- (void)_animationDidStop;
 - (id)videoController;
+- (void)_animationDidStop;
+- (void)performTransition:(unsigned int)arg1;
 
 @end

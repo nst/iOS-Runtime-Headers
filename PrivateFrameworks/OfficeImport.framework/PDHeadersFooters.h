@@ -18,7 +18,7 @@
 }
 
 
-- (void)dealloc;
+- (id)header;
 - (BOOL)hasDateTime;
 - (void)setHasDateTime:(BOOL)arg1;
 - (BOOL)hasNowDateTime;
@@ -34,8 +34,8 @@
 - (id)userDateTime;
 - (void)setUserDateTime:(id)arg1;
 - (void)setHeader:(id)arg1;
-- (void)setFooter:(id)arg1;
 - (id)footer;
-- (id)header;
+- (void)setFooter:(id)arg1;
+- (void)dealloc;
 
 @end

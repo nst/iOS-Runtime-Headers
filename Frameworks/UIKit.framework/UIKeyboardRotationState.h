@@ -12,23 +12,23 @@
     int _targetOrientation;
 }
 
-@property int targetOrientation;
-@property(retain) UIInputViewAnimationStyle * animationStyle;
-@property int postRotationState;
-@property BOOL requiresNewState;
 @property int state;
+@property BOOL requiresNewState;
+@property int postRotationState;
+@property(retain) UIInputViewAnimationStyle * animationStyle;
+@property int targetOrientation;
 
 + (id)stateWithState:(int)arg1 targetOrientation:(int)arg2;
 
-- (int)postRotationState;
-- (void)setPostRotationState:(int)arg1 animationStyle:(id)arg2;
-- (int)targetOrientation;
 - (void)setTargetOrientation:(int)arg1;
-- (id)animationStyle;
-- (void)setAnimationStyle:(id)arg1;
 - (void)setPostRotationState:(int)arg1;
-- (BOOL)requiresNewState;
 - (void)setRequiresNewState:(BOOL)arg1;
+- (void)setAnimationStyle:(id)arg1;
+- (void)setPostRotationState:(int)arg1 animationStyle:(id)arg2;
+- (int)postRotationState;
+- (BOOL)requiresNewState;
+- (int)targetOrientation;
+- (id)animationStyle;
 - (void)setState:(int)arg1;
 - (int)state;
 - (void)dealloc;

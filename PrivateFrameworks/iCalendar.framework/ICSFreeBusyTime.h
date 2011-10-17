@@ -8,8 +8,8 @@
 @property int fbtype;
 
 
-- (int)fbtype;
 - (void)setFbtype:(int)arg1;
+- (int)fbtype;
 - (id)initWithPeriod:(id)arg1;
 
 @end

@@ -15,24 +15,24 @@
 @property int popOverState;
 
 
-- (void)printInteractionControllerWillPresentPrinterOptions:(id)arg1;
-- (void)printInteractionControllerDidDismissPrinterOptions:(id)arg1;
-- (BOOL)documentInteractionController:(id)arg1 performAction:(SEL)arg2;
-- (void)documentInteractionControllerDidDismissOpenInMenu:(id)arg1;
-- (void)documentInteractionControllerDidDismissOptionsMenu:(id)arg1;
-- (void)documentInteractionController:(id)arg1 willBeginSendingToApplication:(id)arg2;
-- (BOOL)documentInteractionController:(id)arg1 canPerformAction:(SEL)arg2;
-- (void)documentInteractionControllerWillPresentOptionsMenu:(id)arg1;
-- (void)documentInteractionControllerWillPresentOpenInMenu:(id)arg1;
-- (void)presentOptionsMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (void)presentOpenInMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (void)dismissMenuAnimated:(BOOL)arg1;
-- (void)willRotate;
-- (void)didRotate;
-- (void)dealloc;
 - (void)setPopOverState:(int)arg1;
+- (int)popOverState;
 - (void)presentPrintMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (id)initWithDocumentInteractionController:(id)arg1 delegate:(id)arg2;
-- (int)popOverState;
+- (void)printInteractionControllerDidDismissPrinterOptions:(id)arg1;
+- (void)printInteractionControllerWillPresentPrinterOptions:(id)arg1;
+- (void)presentOptionsMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
+- (void)dismissMenuAnimated:(BOOL)arg1;
+- (void)documentInteractionControllerWillPresentOpenInMenu:(id)arg1;
+- (void)documentInteractionControllerWillPresentOptionsMenu:(id)arg1;
+- (BOOL)documentInteractionController:(id)arg1 canPerformAction:(SEL)arg2;
+- (void)documentInteractionController:(id)arg1 willBeginSendingToApplication:(id)arg2;
+- (void)documentInteractionControllerDidDismissOptionsMenu:(id)arg1;
+- (void)documentInteractionControllerDidDismissOpenInMenu:(id)arg1;
+- (BOOL)documentInteractionController:(id)arg1 performAction:(SEL)arg2;
+- (void)presentOpenInMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
+- (void)didRotate;
+- (void)willRotate;
+- (void)dealloc;
 
 @end

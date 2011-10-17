@@ -5,45 +5,46 @@
 @class NSString;
 
 @interface GMMLink : PBCodable  {
-    int _roadArgb;
+    BOOL _hasYawDegreeE6;
+    int _yawDegreeE6;
+    NSString *_panoId;
     BOOL _hasRoadArgb;
+    int _roadArgb;
     NSString *_linkText;
     NSString *_linkStreetRange;
-    NSString *_panoId;
-    int _yawDegreeE6;
-    BOOL _hasYawDegreeE6;
 }
 
-@property(readonly) BOOL hasLinkText;
-@property(readonly) BOOL hasLinkStreetRange;
-@property(readonly) BOOL hasYawDegreeE6;
+@property BOOL hasYawDegreeE6;
 @property int yawDegreeE6;
 @property(retain) NSString * panoId;
-@property(retain) NSString * linkStreetRange;
-@property(retain) NSString * linkText;
-@property(readonly) BOOL hasRoadArgb;
+@property BOOL hasRoadArgb;
 @property int roadArgb;
+@property(readonly) BOOL hasLinkText;
+@property(retain) NSString * linkText;
+@property(readonly) BOOL hasLinkStreetRange;
+@property(retain) NSString * linkStreetRange;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasRoadArgb:(BOOL)arg1;
+- (BOOL)hasRoadArgb;
+- (void)setHasYawDegreeE6:(BOOL)arg1;
 - (BOOL)hasYawDegreeE6;
+- (id)linkStreetRange;
+- (BOOL)hasLinkStreetRange;
+- (id)linkText;
+- (BOOL)hasLinkText;
+- (int)roadArgb;
+- (int)yawDegreeE6;
 - (void)setRoadArgb:(int)arg1;
 - (void)setYawDegreeE6:(int)arg1;
 - (void)setLinkStreetRange:(id)arg1;
 - (void)setLinkText:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (int)yawDegreeE6;
 - (id)panoId;
-- (BOOL)hasLinkText;
-- (id)linkText;
-- (BOOL)hasLinkStreetRange;
-- (id)linkStreetRange;
-- (BOOL)hasRoadArgb;
-- (int)roadArgb;
 - (void)setPanoId:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

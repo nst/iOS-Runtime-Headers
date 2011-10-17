@@ -10,14 +10,14 @@
 
 @property(retain) ALAssetsFilterInternal * internal;
 
-+ (id)allPhotos;
-+ (id)allVideos;
 + (id)allAssets;
++ (id)allVideos;
++ (id)allPhotos;
 
-- (void)setInternal:(id)arg1;
 - (id)internal;
-- (int)_filter;
+- (void)setInternal:(id)arg1;
 - (void)_setFilter:(int)arg1;
+- (int)_filter;
 - (id)init;
 - (void)dealloc;
 

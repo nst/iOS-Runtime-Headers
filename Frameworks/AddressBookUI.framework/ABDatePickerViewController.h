@@ -16,11 +16,11 @@
 
 + (struct CGSize { float x1; float x2; })datePickerSize;
 
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewDidLoad;
-- (void)setContext:(void*)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void*)context;
+- (void)setContext:(void*)arg1;
 - (void)dealloc;
 - (id)dismissDelegate;
 - (void)setDatePicker:(id)arg1;

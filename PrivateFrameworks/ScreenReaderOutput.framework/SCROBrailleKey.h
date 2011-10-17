@@ -16,17 +16,17 @@
 }
 
 
+- (void)setDisplayToken:(long)arg1;
+- (long)displayToken;
+- (void)addKeyMask:(unsigned long)arg1;
+- (id)keyMasks;
+- (void)setRouterIndex:(long)arg1 token:(int)arg2 location:(long)arg3 appToken:(id)arg4;
+- (BOOL)getRouterIndex:(int*)arg1 token:(int*)arg2 location:(int*)arg3 appToken:(id*)arg4;
 - (id)identifier;
 - (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (long)displayToken;
-- (BOOL)getRouterIndex:(int*)arg1 token:(int*)arg2 location:(int*)arg3 appToken:(id*)arg4;
-- (id)keyMasks;
-- (void)addKeyMask:(unsigned long)arg1;
-- (void)setRouterIndex:(long)arg1 token:(int)arg2 location:(long)arg3 appToken:(id)arg4;
-- (void)setDisplayToken:(long)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -2,39 +2,37 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString;
+@class GKLeaderboardCategoryInternal, NSString, UIImage;
 
 @interface GKLeaderboardCategory : NSObject  {
-    NSString *_categoryID;
-    NSString *_localizedTitle;
-    int _overallRank;
-    int _overallRankCount;
-    int _rankAmongFriends;
-    int _friendCount;
+    GKLeaderboardCategoryInternal *_internal;
+    UIImage *_image;
 }
 
-@property int friendCount;
-@property int rankAmongFriends;
-@property int overallRankCount;
-@property int overallRank;
-@property(retain) NSString * localizedTitle;
 @property(retain) NSString * categoryID;
+@property(retain) NSString * localizedTitle;
+@property int overallRank;
+@property int overallRankCount;
+@property int rankAmongFriends;
+@property int friendCount;
+@property(readonly) NSString * imageURL;
+@property(retain) UIImage * image;
+@property(retain) GKLeaderboardCategoryInternal * internal;
 
-+ (id)categoryWithDictionary:(id)arg1;
 
-- (int)rankAmongFriends;
-- (id)localizedTitle;
-- (id)categoryID;
-- (void)setCategoryID:(id)arg1;
-- (int)overallRankCount;
-- (int)friendCount;
-- (void)setFriendCount:(int)arg1;
-- (void)setRankAmongFriends:(int)arg1;
-- (void)setOverallRankCount:(int)arg1;
-- (int)overallRank;
-- (void)setOverallRank:(int)arg1;
-- (void)setLocalizedTitle:(id)arg1;
-- (void)dealloc;
+- (void)loadImageWithCompletionHandler:(id)arg1;
+- (id)imageURL;
+- (id)internal;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
+- (id)image;
+- (void)setImage:(id)arg1;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

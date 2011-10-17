@@ -39,20 +39,20 @@
 }
 
 
-- (void)_updateLeftFill;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateRightFill;
-- (void)animateFillFramesAway;
+- (void)_updateLeftFill;
 - (void)_clampValueAndLayout;
-- (void)setStartValue:(double)arg1;
-- (void)setEndValue:(double)arg1;
-- (void)setMaximumValue:(double)arg1;
 - (void)setIsZoomed:(BOOL)arg1;
+- (void)setEndValue:(double)arg1;
 - (void)setEditingHandle:(int)arg1;
+- (void)setStartValue:(double)arg1;
+- (void)animateFillFramesAway;
+- (void)setMaximumValue:(double)arg1;
 - (void)setMinimumValue:(double)arg1;
 - (void)setValue:(double)arg1;
-- (void)layoutSubviews;
 - (void)setEditing:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

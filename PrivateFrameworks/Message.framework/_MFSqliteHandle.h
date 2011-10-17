@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MailMessageLibrary;
+@class MFMailMessageLibrary;
 
 @interface _MFSqliteHandle : NSObject  {
-    MailMessageLibrary *library;
+    MFMailMessageLibrary *library;
     struct sqlite3 { } *db;
 }
 

@@ -10,22 +10,23 @@
 
 + (id)sharedHTTPCookieStorage;
 
+- (void)setCookieAcceptPolicy:(unsigned int)arg1;
+- (void)setCookies:(id)arg1 forURL:(id)arg2 mainDocumentURL:(id)arg3;
+- (id)cookiesForURL:(id)arg1;
+- (void)setCookiesFromResponseHeader:(id)arg1 forURL:(id)arg2 policyBaseURL:(id)arg3;
+- (id)cookieRequestHeaderFieldsForURL:(id)arg1;
+- (void)deleteCookie:(id)arg1;
+- (id)cookies;
+- (id)sortedCookiesUsingDescriptors:(id)arg1;
+- (unsigned int)cookieAcceptPolicy;
+- (void)_saveCookies;
+- (void)_setPrivateBrowsingEnabled:(BOOL)arg1;
+- (id)_initWithSharedStorage;
+- (void)_readAcceptCookiesPreference;
+- (struct OpaqueCFHTTPCookieStorage { }*)_cookieStorage;
+- (void)setCookie:(id)arg1;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)description;
-- (id)_internalInit;
-- (unsigned int)cookieAcceptPolicy;
-- (void)_readAcceptCookiesPreference;
-- (void)_setPrivateBrowsingEnabled:(BOOL)arg1;
-- (struct OpaqueCFHTTPCookieStorage { }*)_cookieStorage;
-- (void)_saveCookies;
-- (id)cookies;
-- (void)deleteCookie:(id)arg1;
-- (id)cookieRequestHeaderFieldsForURL:(id)arg1;
-- (void)setCookiesFromResponseHeader:(id)arg1 forURL:(id)arg2 policyBaseURL:(id)arg3;
-- (id)cookiesForURL:(id)arg1;
-- (void)setCookies:(id)arg1 forURL:(id)arg2 mainDocumentURL:(id)arg3;
-- (void)setCookieAcceptPolicy:(unsigned int)arg1;
-- (void)setCookie:(id)arg1;
 
 @end

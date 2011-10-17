@@ -7,7 +7,7 @@
 
 
 - (BOOL)_alwaysShowEditAlertView;
-- (void)undo;
 - (void)redo;
+- (void)undo;
 
 @end

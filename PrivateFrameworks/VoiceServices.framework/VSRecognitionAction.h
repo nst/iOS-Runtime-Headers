@@ -25,22 +25,22 @@
 
 
 - (id)_session;
-- (int)completionType;
 - (void)setResultDisplayString:(id)arg1;
 - (void)setStatusDisplayString:(id)arg1;
-- (id)spokenFeedbackString;
 - (void)setSpokenFeedbackString:(id)arg1;
-- (id)spokenFeedbackAttributedString;
 - (void)setSpokenFeedbackAttributedString:(id)arg1;
 - (void)completeWithNextAction:(id)arg1 error:(id)arg2;
+- (BOOL)sensitiveActionsEnabled;
 - (void)_continueAfterDeferredStart;
 - (BOOL)_hasDeferredStartCallback;
+- (int)completionType;
 - (void)_setSession:(id)arg1;
+- (id)spokenFeedbackString;
+- (id)spokenFeedbackAttributedString;
 - (id)resultDisplayString;
 - (id)statusDisplayString;
-- (BOOL)sensitiveActionsEnabled;
 - (id)cancel;
-- (void)dealloc;
 - (id)perform;
+- (void)dealloc;
 
 @end

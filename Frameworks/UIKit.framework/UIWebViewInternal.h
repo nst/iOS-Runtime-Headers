@@ -2,24 +2,29 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebBrowserView, NSURLRequest, UIScrollView, <UIWebViewDelegate>, UIWebViewWebViewDelegate, UICheckeredPatternView;
+@class UIWebBrowserView, UIWebViewWebViewDelegate, NSURLRequest, UICheckeredPatternView, <UIWebViewDelegate>, UIWebPDFViewHandler, UIScrollView;
 
-@interface UIWebViewInternal : NSObject  {
+@interface UIWebViewInternal : NSObject <UIWebPDFViewHandlerDelegate> {
     UIScrollView *scroller;
     UIWebBrowserView *browserView;
     UICheckeredPatternView *checkeredPatternView;
     <UIWebViewDelegate> *delegate;
     unsigned int scalesPageToFit : 1;
     unsigned int isLoading : 1;
+    unsigned int hasOverriddenOrientationChangeEventHandling : 1;
     unsigned int drawsCheckeredPattern : 1;
     unsigned int usedGeolocation : 1;
     unsigned int webSelectionEnabled : 1;
     unsigned int drawInWebThread : 1;
+    unsigned int inRotation : 1;
     NSURLRequest *request;
     int clickedAlertButtonIndex;
     UIWebViewWebViewDelegate *webViewDelegate;
+    UIWebPDFViewHandler *pdfHandler;
+    int _retainCount;
 }
 
 
+- (void)pdfViewHandler:(id)arg1 linkClicked:(id)arg2;
 
 @end

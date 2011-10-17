@@ -10,17 +10,15 @@
 
 @property(retain) NSString * placeholder;
 
-+ (void)_initializeSafeCategory;
 
-- (BOOL)resignFirstResponder;
 - (void)setPlaceholder:(id)arg1;
-- (id)placeholder;
 - (void)keyboardInputChangedSelection:(id)arg1;
-- (void)setText:(id)arg1;
-- (void)setBackgroundColor:(id)arg1;
-- (void)layoutSubviews;
+- (id)placeholder;
 - (BOOL)becomeFirstResponder;
+- (BOOL)resignFirstResponder;
+- (void)setText:(id)arg1;
+- (void)layoutSubviews;
+- (void)setBackgroundColor:(id)arg1;
 - (void)dealloc;
-- (id)accessibilityLabel;
 
 @end

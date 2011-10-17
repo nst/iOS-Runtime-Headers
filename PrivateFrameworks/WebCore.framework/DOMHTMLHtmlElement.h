@@ -10,7 +10,9 @@
 @property(copy) NSString * version;
 
 
-- (id)version;
 - (void)setVersion:(id)arg1;
+- (id)manifest;
+- (void)setManifest:(id)arg1;
+- (id)version;
 
 @end

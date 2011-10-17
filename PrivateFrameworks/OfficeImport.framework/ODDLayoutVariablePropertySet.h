@@ -9,9 +9,9 @@
 
 + (id)defaultProperties;
 
-- (int)direction;
-- (void)setDirection:(int)arg1;
 - (BOOL)hasDirection;
 - (id)initWithDefaults;
+- (int)direction;
+- (void)setDirection:(int)arg1;
 
 @end

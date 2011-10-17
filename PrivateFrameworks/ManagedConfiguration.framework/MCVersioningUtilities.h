@@ -5,8 +5,8 @@
 @interface MCVersioningUtilities : NSObject  {
 }
 
-+ (BOOL)_allZerosArray:(id)arg1 startingAtIndex:(unsigned int)arg2;
 + (BOOL)versionString:(id)arg1 isOlderThanVersionString:(id)arg2;
++ (BOOL)_allZerosArray:(id)arg1 startingAtIndex:(unsigned int)arg2;
 
 
 @end

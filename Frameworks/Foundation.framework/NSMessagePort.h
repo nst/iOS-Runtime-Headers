@@ -7,27 +7,29 @@
     id _delegate;
 }
 
-+ (BOOL)sendBeforeTime:(double)arg1 streamData:(id)arg2 components:(id)arg3 to:(id)arg4 from:(id)arg5 msgid:(unsigned int)arg6 reserved:(unsigned int)arg7;
 + (void)_fixNSMessagePortLeak;
++ (BOOL)sendBeforeTime:(double)arg1 streamData:(id)arg2 components:(id)arg3 to:(id)arg4 from:(id)arg5 msgid:(unsigned int)arg6 reserved:(unsigned int)arg7;
 
-- (BOOL)isValid;
-- (void)finalize;
-- (BOOL)setName:(id)arg1;
 - (void)invalidate;
-- (oneway void)release;
-- (id)name;
-- (id)init;
-- (id)retain;
-- (void)dealloc;
-- (unsigned int)retainCount;
 - (void)setDelegate:(id)arg1;
+- (void)finalize;
+- (id)initWithRemoteName:(id)arg1;
+- (BOOL)sendBeforeTime:(double)arg1 streamData:(void*)arg2 components:(id)arg3 from:(id)arg4 msgid:(unsigned int)arg5;
+- (BOOL)sendBeforeDate:(id)arg1 msgid:(unsigned int)arg2 components:(id)arg3 from:(id)arg4 reserved:(unsigned int)arg5;
+- (BOOL)sendBeforeDate:(id)arg1 components:(id)arg2 from:(id)arg3 reserved:(unsigned int)arg4;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (id)name;
+- (BOOL)isValid;
 - (id)delegate;
 - (id)initWithName:(id)arg1;
-- (BOOL)sendBeforeTime:(double)arg1 streamData:(void*)arg2 components:(id)arg3 from:(id)arg4 msgid:(unsigned int)arg5;
-- (BOOL)sendBeforeDate:(id)arg1 components:(id)arg2 from:(id)arg3 reserved:(unsigned int)arg4;
-- (BOOL)sendBeforeDate:(id)arg1 msgid:(unsigned int)arg2 components:(id)arg3 from:(id)arg4 reserved:(unsigned int)arg5;
-- (id)initWithRemoteName:(id)arg1;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (BOOL)setName:(id)arg1;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)init;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

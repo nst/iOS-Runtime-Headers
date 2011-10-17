@@ -34,23 +34,23 @@
 }
 
 
+- (void)setDuration:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)showFinger;
+- (void)setStopLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInterpolation:(int (*)())arg1;
+- (void)_smoothScrollingDidEnd:(id)arg1;
+- (void)_smoothScrollingWillStart:(id)arg1;
+- (void)_stopDrag:(id)arg1;
+- (double)_delayUntilNextEvent;
+- (void)_continueDrag:(id)arg1;
+- (void)_postMouseEvent:(int)arg1 timestamp:(unsigned long long)arg2 location:(struct CGPoint { float x1; float x2; })arg3;
+- (void)dragDidEnd;
+- (void)run;
 - (void)setStartLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setAction:(SEL)arg1;
-- (void)setInterpolation:(int (*)())arg1;
-- (void)setStopLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)showFinger;
-- (void)_postMouseEvent:(int)arg1 timestamp:(unsigned long long)arg2 location:(struct CGPoint { float x1; float x2; })arg3;
-- (double)_delayUntilNextEvent;
-- (void)dragDidEnd;
-- (void)_smoothScrollingWillStart:(id)arg1;
-- (void)_smoothScrollingDidEnd:(id)arg1;
-- (void)_stopDrag:(id)arg1;
-- (void)_continueDrag:(id)arg1;
-- (void)run;
+- (void)setTarget:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)setDuration:(double)arg1;
-- (void)setTarget:(id)arg1;
-- (void)setDelegate:(id)arg1;
 
 @end

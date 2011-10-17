@@ -7,15 +7,17 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (Class)classForCoder;
-- (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)userInfo;
-- (oneway void)release;
-- (id)retain;
-- (unsigned int)retainCount;
-- (id)domain;
 - (int)code;
+- (void)finalize;
+- (id)domain;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (Class)classForCoder;
+- (id)userInfo;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
 
 @end

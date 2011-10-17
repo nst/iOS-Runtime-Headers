@@ -27,24 +27,24 @@
 
 + (id)MFMailCompositionContextWithURL:(id)arg1;
 
-- (id)toRecipients;
-- (id)subject;
-- (id)attachments;
-- (id)initWithURL:(id)arg1;
-- (void)dealloc;
-- (id)ccRecipients;
-- (id)initNewMessageWithURL:(id)arg1;
-- (BOOL)showKeyboardImmediately;
-- (void)setShowKeyboardImmediately:(BOOL)arg1;
 - (void)setSendingAddress:(id)arg1;
 - (id)sendingAddress;
+- (id)subject;
+- (id)attachments;
+- (id)messageBody;
+- (void)setSubject:(id)arg1;
+- (id)toRecipients;
+- (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+- (void)setToRecipients:(id)arg1;
+- (id)initWithURL:(id)arg1;
+- (id)initNewMessageWithURL:(id)arg1;
 - (id)bccRecipients;
+- (id)ccRecipients;
+- (BOOL)showKeyboardImmediately;
 - (void)setCcRecipients:(id)arg1;
 - (void)setBccRecipients:(id)arg1;
-- (void)setToRecipients:(id)arg1;
-- (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+- (void)setShowKeyboardImmediately:(BOOL)arg1;
+- (void)dealloc;
 - (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
-- (void)setSubject:(id)arg1;
-- (id)messageBody;
 
 @end

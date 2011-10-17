@@ -10,8 +10,8 @@
 }
 
 
-- (id)placeholderStyle;
 - (BOOL)isVisible;
+- (id)placeholderStyle;
 - (void)dealloc;
 
 @end

@@ -8,20 +8,21 @@
 + (void)initialize;
 + (id)mutablePlaceholder;
 + (id)immutablePlaceholder;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(unsigned int)arg3;
-- (id)keyEnumerator;
 - (void)removeObjectForKey:(id)arg1;
+- (id)initWithContentsOfURL:(id)arg1;
+- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
+- (id)keyEnumerator;
+- (id)initWithContentsOfFile:(id)arg1;
+- (unsigned int)count;
+- (unsigned int)retainCount;
+- (id)objectForKey:(id)arg1;
+- (id)retain;
 - (id)initWithCapacity:(unsigned int)arg1;
-- (oneway void)release;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
-- (id)retain;
-- (id)initWithContentsOfFile:(id)arg1;
+- (oneway void)release;
 - (void)dealloc;
-- (id)objectForKey:(id)arg1;
-- (unsigned int)retainCount;
-- (unsigned int)count;
-- (id)initWithContentsOfURL:(id)arg1;
 
 @end

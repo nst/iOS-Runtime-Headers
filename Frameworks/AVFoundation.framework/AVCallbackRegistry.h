@@ -11,10 +11,10 @@
 + (id)sharedCallbackRegistry;
 
 - (void)finalize;
-- (id)init;
-- (void)dealloc;
 - (void)registerCallbackObserver:(id)arg1;
 - (void)unregisterCallbackObserver:(id)arg1;
 - (id)callbackObserver:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

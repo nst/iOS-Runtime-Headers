@@ -9,8 +9,8 @@
 @property(readonly) int order;
 
 
-- (id)description;
 - (int)order;
 - (id)initWithAction:(int)arg1 context:(id)arg2 order:(int)arg3;
+- (id)description;
 
 @end

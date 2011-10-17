@@ -28,23 +28,8 @@
 @property(copy,readonly) NSURL * absoluteImageURL;
 
 
-- (id)height;
-- (id)form;
-- (id)absoluteImageURL;
-- (id)type;
-- (void)setType:(id)arg1;
-- (id)width;
-- (void)setName:(id)arg1;
-- (void)setWidth:(id)arg1;
-- (id)name;
-- (id)data;
-- (void)setBorder:(id)arg1;
-- (id)align;
-- (void)setHeight:(id)arg1;
-- (void)setData:(id)arg1;
-- (void)setAlign:(id)arg1;
-- (id)border;
 - (id)code;
+- (id)data;
 - (id)codeType;
 - (void)setCodeType:(id)arg1;
 - (BOOL)declare;
@@ -54,7 +39,13 @@
 - (id)useMap;
 - (void)setUseMap:(id)arg1;
 - (id)contentDocument;
+- (id)validity;
 - (BOOL)willValidate;
+- (id)validationMessage;
+- (BOOL)checkValidity;
+- (void)setCustomValidity:(id)arg1;
+- (id)align;
+- (void)setAlign:(id)arg1;
 - (id)archive;
 - (void)setArchive:(id)arg1;
 - (void)setCode:(id)arg1;
@@ -64,6 +55,19 @@
 - (void)setHspace:(int)arg1;
 - (int)vspace;
 - (void)setVspace:(int)arg1;
+- (id)border;
+- (void)setBorder:(id)arg1;
+- (void)setData:(id)arg1;
+- (void)setHeight:(id)arg1;
+- (id)height;
+- (id)absoluteImageURL;
+- (id)form;
+- (id)type;
+- (void)setWidth:(id)arg1;
+- (id)width;
+- (id)name;
+- (void)setType:(id)arg1;
+- (void)setName:(id)arg1;
 - (id)contentFrame;
 - (BOOL)showsTapHighlight;
 

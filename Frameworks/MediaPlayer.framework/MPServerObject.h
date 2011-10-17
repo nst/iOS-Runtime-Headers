@@ -7,15 +7,15 @@
     struct { unsigned int x1[8]; } *_clientAuditToken;
 }
 
-@property(readonly) struct { unsigned int x1[8]; }* clientAuditToken;
 @property(readonly) int clientPID;
+@property(readonly) struct { unsigned int x1[8]; }* clientAuditToken;
 
 + (id)_center;
 
+- (struct { unsigned int x1[8]; }*)clientAuditToken;
+- (id)_forwardMessage:(id)arg1 userInfo:(id)arg2 auditToken:(struct { unsigned int x1[8]; }*)arg3;
+- (void)_registerNotificationsForSelectors;
 - (int)clientPID;
 - (id)init;
-- (void)_registerNotificationsForSelectors;
-- (id)_forwardMessage:(id)arg1 userInfo:(id)arg2 auditToken:(struct { unsigned int x1[8]; }*)arg3;
-- (struct { unsigned int x1[8]; }*)clientAuditToken;
 
 @end

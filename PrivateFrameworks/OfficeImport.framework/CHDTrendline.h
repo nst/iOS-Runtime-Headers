@@ -20,30 +20,30 @@
 
 + (id)trendline;
 
-- (id)label;
-- (int)type;
-- (void)setType:(int)arg1;
-- (void)setLabel:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)init;
-- (void)dealloc;
-- (void)setDisplayEquation:(bool)arg1;
-- (double)backward;
-- (void)setGraphicProperties:(id)arg1;
 - (bool)isDisplayEquation;
 - (bool)isDisplayRSquaredValue;
-- (void)setDisplayRSquaredValue:(bool)arg1;
-- (void)setBackward:(double)arg1;
+- (double)backward;
 - (double)forward;
-- (void)setForward:(double)arg1;
 - (double)interceptYAxis;
 - (int)polynomialOrder;
 - (int)movingAveragePeriod;
 - (id)defaultNameWithSeriesName:(id)arg1;
+- (void)setDisplayEquation:(bool)arg1;
+- (void)setDisplayRSquaredValue:(bool)arg1;
+- (void)setBackward:(double)arg1;
+- (void)setForward:(double)arg1;
 - (void)setInterceptYAxis:(double)arg1;
 - (void)setPolynomialOrder:(int)arg1;
 - (void)setMovingAveragePeriod:(int)arg1;
+- (void)setGraphicProperties:(id)arg1;
 - (id)graphicProperties;
+- (int)type;
+- (id)label;
+- (void)setLabel:(id)arg1;
+- (id)name;
+- (void)setType:(int)arg1;
+- (void)setName:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -17,27 +17,26 @@
 @property(readonly) unsigned int count;
 
 
-- (id)init;
-- (void)dealloc;
-- (unsigned int)count;
-- (id)people;
+- (BOOL)addPeopleFromArray:(id)arg1;
+- (BOOL)removePeopleFromArray:(id)arg1;
 - (BOOL)containsIMHandle:(id)arg1;
-- (BOOL)addIMHandle:(id)arg1;
-- (BOOL)hidePeople;
-- (void)removeNotificationObserver:(id)arg1;
 - (void)addNotificationObserver:(id)arg1 selector:(SEL)arg2;
-- (void)addedIMHandle:(id)arg1;
+- (void)removeNotificationObserver:(id)arg1;
+- (BOOL)addPeopleFromArray:(id)arg1 skipMe:(BOOL)arg2;
 - (void)_addedPeople:(id)arg1;
 - (void)removedIMHandle:(id)arg1;
-- (void)beginCoalescedChanges;
+- (void)addedIMHandle:(id)arg1;
 - (BOOL)coalescingChanges;
-- (BOOL)removePeopleFromArray:(id)arg1;
-- (BOOL)addPeopleFromArray:(id)arg1 skipMe:(BOOL)arg2;
-- (BOOL)addPeopleFromArray:(id)arg1;
-- (void)imHandle:(id)arg1 buddyStatusChanged:(BOOL)arg2;
-- (id)groups;
-- (void)setShouldHidePeople:(BOOL)arg1;
-- (void)endCoalescedChanges;
+- (BOOL)hidePeople;
+- (BOOL)addIMHandle:(id)arg1;
 - (BOOL)removeIMHandle:(id)arg1;
+- (void)endCoalescedChanges;
+- (void)imHandle:(id)arg1 buddyStatusChanged:(BOOL)arg2;
+- (void)beginCoalescedChanges;
+- (void)setShouldHidePeople:(BOOL)arg1;
+- (unsigned int)count;
+- (void)dealloc;
+- (id)people;
+- (id)groups;
 
 @end

@@ -6,7 +6,8 @@
 }
 
 
-- (unsigned long long)generationNumber;
+- (id)deferredOperation;
 - (BOOL)shouldSend;
+- (unsigned long long)generationNumber;
 
 @end

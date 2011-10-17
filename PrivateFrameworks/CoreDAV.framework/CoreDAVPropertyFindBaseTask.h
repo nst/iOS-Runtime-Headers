@@ -13,18 +13,18 @@
 @property(retain) NSSet * propertiesToFind;
 
 
-- (void)dealloc;
-- (id)description;
 - (void)setPropertiesToFind:(id)arg1;
-- (id)parseHints;
-- (id)initWithPropertiesToFind:(id)arg1 atURL:(id)arg2;
-- (id)successfulValueForNameSpace:(id)arg1 elementName:(id)arg2;
 - (void)setMultiStatus:(id)arg1;
+- (id)parseHints;
+- (id)successfulValueForNameSpace:(id)arg1 elementName:(id)arg2;
 - (id)getTotalFailureError;
 - (void)updateMultiStatusFromResponse;
 - (id)propertiesToFind;
-- (void)finishCoreDAVTaskWithError:(id)arg1;
+- (id)initWithPropertiesToFind:(id)arg1 atURL:(id)arg2;
 - (id)multiStatus;
 - (id)copyDefaultParserForContentType:(id)arg1;
+- (void)finishCoreDAVTaskWithError:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

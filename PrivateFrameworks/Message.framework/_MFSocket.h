@@ -2,65 +2,49 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSInvocation, NSString;
+@class MFStream, NSString, NSInvocation, NSCondition;
 
 @interface _MFSocket : NSObject  {
-    struct __CFReadStream { } *_readStream;
-    struct __CFWriteStream { } *_writeStream;
+    NSCondition *_condition;
+    MFStream *_stream;
     NSString *_protocol;
     NSString *_host;
     NSString *_service;
-    void *_stats;
-    void *_request;
-    unsigned int _numTimeoutSecs : 16;
-    unsigned int _openCompleted : 1;
-    unsigned int _canRead : 1;
-    unsigned int _canWrite : 1;
-    unsigned int _error : 1;
-    unsigned int _closed : 1;
-    double _lastUsedTime;
+    BOOL _allowsTrustPrompt;
+    int _numTimeoutSecs;
     struct __CFString { } *_connectionServiceType;
     NSInvocation *_eventHandler;
+    BOOL _canRead;
+    BOOL _canWrite;
 }
 
-+ (int)simulatedSocketSpeed;
-+ (void)setSimulatedSocketSpeed:(int)arg1;
-+ (void)resetStatistics;
-+ (unsigned long long)outBytes;
-+ (unsigned long long)inBytes;
-+ (unsigned long long)outBytesPerSecond;
-+ (unsigned long long)inBytesPerSecond;
-+ (unsigned long long)totalBytesPerSecond;
-+ (unsigned int)connects;
-+ (unsigned int)writes;
-+ (unsigned int)reads;
-+ (void)showStatistics;
-+ (void)initialize;
+@property BOOL allowsTrustPrompt;
+@property int timeout;
+
 
 - (id)serverCertificates;
-- (id)remoteHostname;
-- (struct __CFReadStream { }*)copyReadStream;
-- (id)securityProtocol;
-- (BOOL)_startSSLHandshakeWithProtocol:(id)arg1 disableSSL2:(BOOL)arg2 errorPtr:(id*)arg3;
-- (BOOL)setSecurityProtocol:(id)arg1;
-- (void)setConnectionServiceType:(struct __CFString { }*)arg1;
-- (id)initWithTimeout:(int)arg1;
-- (struct __CFWriteStream { }*)copyWriteStream;
-- (BOOL)connectToHost:(id)arg1 withPort:(unsigned int)arg2 service:(id)arg3 protocol:(id)arg4;
+- (BOOL)connectToHost:(id)arg1 withPort:(unsigned int)arg2 service:(id)arg3;
 - (int)writeBytes:(const char *)arg1 length:(int)arg2;
 - (int)readBytes:(char *)arg1 length:(int)arg2;
 - (void)setEventHandler:(id)arg1;
 - (unsigned int)remotePortNumber;
-- (double)lastUsedTime;
+- (BOOL)isForcedConnection;
+- (BOOL)_startSSLHandshakeWithProtocol:(id)arg1 disableSSL2:(BOOL)arg2 errorPtr:(id*)arg3;
+- (unsigned int)_bufferedByteCount;
+- (id)securityProtocol;
+- (BOOL)setSecurityProtocol:(id)arg1;
+- (void)setTimeout:(int)arg1;
+- (id)remoteHostname;
+- (int)timeout;
 - (id)sourceIPAddress;
 - (BOOL)isWritable;
+- (void)setConnectionServiceType:(struct __CFString { }*)arg1;
+- (BOOL)allowsTrustPrompt;
+- (void)setAllowsTrustPrompt:(BOOL)arg1;
+- (void)abort;
 - (BOOL)isValid;
+- (BOOL)isReadable;
 - (id)init;
 - (void)dealloc;
-- (BOOL)isReadable;
-- (void)abort;
-- (int)fileDescriptor;
-- (int)timeout;
-- (void)setTimeout:(int)arg1;
 
 @end

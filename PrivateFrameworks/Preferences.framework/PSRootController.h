@@ -4,59 +4,61 @@
 
 @class PSSpecifier, NSMutableSet;
 
-@interface PSRootController : UINavigationController <PSController> {
+@interface PSRootController : UINavigationController <PSController, UINavigationControllerDelegate> {
     PSSpecifier *_specifier;
     NSMutableSet *_tasks;
     BOOL _deallocating;
     unsigned char _hasTelephony;
 }
 
-+ (id)readPreferenceValue:(id)arg1;
-+ (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 + (void)writePreference:(id)arg1;
-+ (void)_initializeSafeCategory;
++ (BOOL)processedBundle:(id)arg1 parentController:(id)arg2 parentSpecifier:(id)arg3 bundleControllers:(id*)arg4 settings:(id)arg5;
++ (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
++ (id)readPreferenceValue:(id)arg1;
 
-- (id)readPreferenceValue:(id)arg1;
-- (BOOL)canBeShownFromSuspendedState;
-- (void)didLock;
-- (void)statusBarWillAnimateByHeight:(float)arg1;
-- (void)pushController:(id)arg1;
-- (void)handleURL:(id)arg1;
-- (void)setRootController:(id)arg1;
-- (void)willUnlock;
-- (void)didUnlock;
-- (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
-- (id)rootController;
-- (void)willResignActive;
-- (id)specifier;
-- (void)setSpecifier:(id)arg1;
-- (void)willBecomeActive;
-- (id)specifiers;
-- (void)suspend;
-- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
-- (id)popViewControllerAnimated:(BOOL)arg1;
-- (id)popToRootViewControllerAnimated:(BOOL)arg1;
-- (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)showLeftButton:(id)arg1 withStyle:(int)arg2 rightButton:(id)arg3 withStyle:(int)arg4;
-- (void)dealloc;
-- (id)parentController;
+- (BOOL)deallocating;
 - (void)setParentController:(id)arg1;
-- (void)statusBarWillChangeHeight:(id)arg1;
+- (id)parentController;
+- (void)setSpecifier:(id)arg1;
+- (id)specifier;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2;
 - (id)tasksDescription;
 - (BOOL)taskIsRunning:(id)arg1;
 - (void)addTask:(id)arg1;
 - (void)taskFinished:(id)arg1;
-- (BOOL)busy;
 - (id)contentViewForTopController;
-- (void)sendWillResignActive;
-- (void)sendWillBecomeActive;
-- (BOOL)deallocating;
+- (void)lazyLoadBundle:(id)arg1;
 - (void)willDismissPopupView;
 - (void)didDismissPopupView;
 - (void)willDismissFormSheetView;
 - (void)didDismissFormSheetView;
-- (void)lazyLoadBundle:(id)arg1;
+- (void)sendWillBecomeActive;
+- (void)sendWillResignActive;
+- (void)statusBarWillChangeHeight:(id)arg1;
+- (void)_delayedControllerReleaseAfterPop:(id)arg1;
 - (void)didWake;
+- (id)popToRootViewControllerAnimated:(BOOL)arg1;
+- (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
+- (id)popViewControllerAnimated:(BOOL)arg1;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
+- (void)showLeftButton:(id)arg1 withStyle:(int)arg2 rightButton:(id)arg3 withStyle:(int)arg4;
+- (void)suspend;
+- (BOOL)busy;
+- (void)dealloc;
+- (id)specifiers;
+- (void)didLock;
+- (void)willUnlock;
+- (void)didUnlock;
+- (void)pushController:(id)arg1;
+- (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
+- (id)readPreferenceValue:(id)arg1;
+- (void)statusBarWillAnimateByHeight:(float)arg1;
+- (BOOL)canBeShownFromSuspendedState;
+- (id)rootController;
+- (void)setRootController:(id)arg1;
+- (void)handleURL:(id)arg1;
+- (void)willResignActive;
+- (void)willBecomeActive;
 
 @end

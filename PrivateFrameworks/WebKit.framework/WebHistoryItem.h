@@ -8,10 +8,25 @@
     WebHistoryItemPrivate *_private;
 }
 
++ (void)initialize;
 + (id)entryWithURL:(id)arg1;
 + (void)initWindowWatcherIfNecessary;
-+ (void)initialize;
 
+- (id)URLString;
+- (void)finalize;
+- (id)children;
+- (struct CGPoint { float x1; float x2; })scrollPoint;
+- (id)dictionaryRepresentation;
+- (struct CGPoint { float x1; float x2; })_scrollPoint;
+- (void)_setViewportArguments:(id)arg1;
+- (void)_setScale:(float)arg1 isInitial:(BOOL)arg2;
+- (void)_setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_viewportArguments;
+- (BOOL)_scaleIsInitial;
+- (id)URL;
+- (id)title;
+- (float)_scale;
+- (void)setTitle:(id)arg1;
 - (id)initWithURL:(id)arg1 target:(id)arg2 parent:(id)arg3 title:(id)arg4;
 - (void)setVisitCount:(int)arg1;
 - (BOOL)isTargetItem;
@@ -44,28 +59,13 @@
 - (void)setViewState:(id)arg1;
 - (id)dictionaryRepresentationIncludingChildren:(BOOL)arg1;
 - (id)initFromDictionaryRepresentation:(id)arg1;
-- (id)URLString;
-- (struct CGPoint { float x1; float x2; })scrollPoint;
-- (id)dictionaryRepresentation;
-- (BOOL)_scaleIsInitial;
-- (id)URL;
-- (id)_viewportArguments;
-- (void)_setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_setScale:(float)arg1 isInitial:(BOOL)arg2;
-- (void)_setViewportArguments:(id)arg1;
-- (struct CGPoint { float x1; float x2; })_scrollPoint;
-- (void)finalize;
-- (unsigned int)hash;
-- (id)target;
-- (float)_scale;
 - (BOOL)isEqual:(id)arg1;
-- (id)title;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (unsigned int)hash;
 - (id)description;
-- (void)setTitle:(id)arg1;
-- (id)children;
+- (id)target;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (oneway void)_webcore_releaseOnWebThread;
 - (oneway void)release;
 

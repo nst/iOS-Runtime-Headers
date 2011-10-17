@@ -11,7 +11,7 @@
 
 - (void)setBackgroundColor:(id)arg1;
 - (void)forceSetBackgroundColor:(id)arg1;
-- (void)setDisappearsOnHighlight:(BOOL)arg1;
 - (BOOL)disappearsOnHighlight;
+- (void)setDisappearsOnHighlight:(BOOL)arg1;
 
 @end

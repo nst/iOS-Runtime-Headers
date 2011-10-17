@@ -39,36 +39,31 @@
 
 @property(getter=isOn) BOOL on;
 
-+ (void)_initializeSafeCategory;
 
-- (void)setEnabled:(BOOL)arg1;
+- (void)_deviceOrientationChanged:(id)arg1;
+- (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isOn;
 - (void)setOn:(BOOL)arg1;
-- (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)layoutSubviews;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (int)orientation;
-- (void)dealloc;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_animateImageView:(id)arg1 toTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 withImage:(id)arg3 animated:(BOOL)arg4;
+- (void)_loadLandscapeResources;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rotationTransformForDeviceOrientation:(int)arg1;
+- (void)_loadTrackingResources;
+- (void)_setOn:(BOOL)arg1 animationDuration:(float)arg2;
+- (void)_updateEnabledness;
+- (void)_loadInitialResources;
+- (void)_startWatchingDeviceOrientationChanges;
 - (void)setLockEnabled:(BOOL)arg1;
 - (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
-- (void)_deviceOrientationChanged:(id)arg1;
-- (void)_updateEnabledness;
-- (void)_loadImages;
-- (void)_setOn:(BOOL)arg1 animationDuration:(float)arg2;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rotationTransformForDeviceOrientation:(int)arg1;
-- (void)_animateImageView:(id)arg1 toTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 withImage:(id)arg3 animated:(BOOL)arg4;
 - (void)_stopWatchingDeviceOrientationChanges;
-- (void)_startWatchingDeviceOrientationChanges;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityHint;
-- (id)accessibilityValue;
+- (void)dealloc;
 
 @end

@@ -15,16 +15,18 @@
 + (id)assetReaderVideoCompositionOutputWithVideoTracks:(id)arg1 videoSettings:(id)arg2;
 
 - (void)finalize;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)mediaType;
 - (id)videoSettings;
+- (BOOL)alwaysCopiesSampleData;
+- (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
 - (id)initWithVideoTracks:(id)arg1 videoSettings:(id)arg2;
 - (id)videoTracks;
-- (id)_asset;
-- (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
-- (void)setVideoComposition:(id)arg1;
+- (BOOL)_prepareForReadingReturningError:(id*)arg1;
 - (id)videoComposition;
+- (void)setVideoComposition:(id)arg1;
+- (id)_asset;
+- (id)mediaType;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

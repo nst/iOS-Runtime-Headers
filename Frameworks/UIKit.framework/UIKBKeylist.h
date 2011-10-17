@@ -9,25 +9,25 @@
     NSMutableArray *m_keys;
 }
 
-@property(readonly) unsigned int count;
-@property(retain) NSMutableArray * keys;
 @property(retain) NSString * name;
+@property(retain) NSMutableArray * keys;
+@property(readonly) unsigned int count;
 
 + (id)keylist;
 
-- (id)initWithName:(id)arg1 keys:(id)arg2;
-- (id)keyWithName:(id)arg1;
 - (id)keysWithInteractionType:(id)arg1;
+- (id)keyWithName:(id)arg1;
+- (id)initWithName:(id)arg1 keys:(id)arg2;
 - (void)setKeys:(id)arg1;
 - (id)keys;
-- (void)setName:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (id)name;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
+- (void)setName:(id)arg1;
 - (unsigned int)count;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -9,15 +9,15 @@
     NSString *_subtitle;
 }
 
-@property(readonly) struct { double latitude; double longitude; } coordinate;
-@property(copy) NSString * subtitle;
 @property(copy) NSString * title;
+@property(copy) NSString * subtitle;
+@property(readonly) struct { double x1; double x2; } coordinate;
 
 
-- (void)setSubtitle:(id)arg1;
+- (struct { double x1; double x2; })coordinate;
 - (id)subtitle;
+- (void)setSubtitle:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (struct { double x1; double x2; })coordinate;
 
 @end

@@ -15,19 +15,19 @@
 + (float)defaultHeight;
 
 - (float)maxLabelX;
-- (void)setNavTitle:(id)arg1;
 - (id)navTitle;
-- (id)labelView;
-- (void)setLabelHighlighted:(BOOL)arg1;
+- (void)setNavTitle:(id)arg1;
 - (void)handleTouchesEnded;
-- (void)setLabel:(id)arg1;
-- (void)layoutSubviews;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (id)_automationID;
-- (void)mouseUp:(struct __GSEvent { }*)arg1;
-- (void)dealloc;
+- (BOOL)_canBecomeFirstResponder;
+- (void)setLabelHighlighted:(BOOL)arg1;
+- (id)labelView;
 - (id)theme;
 - (void)setTheme:(id)arg1;
-- (BOOL)_canBecomeFirstResponder;
+- (void)setLabel:(id)arg1;
+- (void)mouseUp:(struct __GSEvent { }*)arg1;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (id)_automationID;
+- (void)layoutSubviews;
+- (void)dealloc;
 
 @end

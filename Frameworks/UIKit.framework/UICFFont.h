@@ -7,10 +7,12 @@
 
 
 - (void)finalize;
-- (unsigned int)hash;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 - (BOOL)isEqual:(id)arg1;
-- (oneway void)release;
-- (id)retain;
+- (unsigned int)hash;
 - (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
 
 @end

@@ -6,11 +6,11 @@
 }
 
 
+- (void)skipDescendants;
+- (void)skipDescendents;
+- (id)directoryAttributes;
+- (id)fileAttributes;
 - (id)nextObject;
 - (unsigned int)level;
-- (id)fileAttributes;
-- (void)skipDescendents;
-- (void)skipDescendants;
-- (id)directoryAttributes;
 
 @end

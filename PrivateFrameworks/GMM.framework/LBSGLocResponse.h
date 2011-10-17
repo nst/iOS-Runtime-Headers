@@ -6,32 +6,30 @@
 
 @interface LBSGLocResponse : PBCodable  {
     int _status;
-    NSMutableArray *_replyElementss;
+    NSMutableArray *_replyElements;
     NSString *_platformKey;
 }
 
-@property(readonly) int replyElementssCount;
+@property int status;
+@property(retain) NSMutableArray * replyElements;
 @property(readonly) BOOL hasPlatformKey;
 @property(retain) NSString * platformKey;
-@property(retain) NSMutableArray * replyElementss;
-@property int status;
 
 
 - (void)setStatus:(int)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (int)replyElementssCount;
-- (void)setReplyElements:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)replyElementsAtIndex:(unsigned int)arg1;
-- (void)addReplyElements:(id)arg1;
-- (void)setReplyElementss:(id)arg1;
-- (BOOL)hasPlatformKey;
-- (id)platformKey;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (id)replyElements;
+- (id)replyElementsAtIndex:(unsigned int)arg1;
+- (unsigned int)replyElementsCount;
+- (void)addReplyElements:(id)arg1;
+- (void)setReplyElements:(id)arg1;
+- (id)platformKey;
+- (BOOL)hasPlatformKey;
 - (void)setPlatformKey:(id)arg1;
-- (id)replyElementss;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
 - (int)status;
+- (id)description;
+- (void)dealloc;
 
 @end

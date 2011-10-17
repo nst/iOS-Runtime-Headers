@@ -13,18 +13,18 @@
 }
 
 
-- (unsigned long long)identifier;
-- (void)dealloc;
 - (int)domain;
+- (unsigned long long)identifier;
 - (id)initWithContent:(void*)arg1 inDomain:(unsigned int)arg2 withResultDomain:(unsigned int)arg3 resultDisplayIdentifier:(id)arg4 query:(id)arg5;
 - (id)initWithContent:(void*)arg1 inDomain:(unsigned int)arg2 query:(id)arg3;
 - (const char *)URLUTF8String;
-- (const char *)resultDisplayIdentifierUTF8String;
-- (const char *)summaryUTF8String;
 - (const char *)auxiliarySubtitleUTF8String;
+- (const char *)auxiliaryTitleUTF8String;
+- (const char *)summaryUTF8String;
 - (const char *)subtitleUTF8String;
 - (const char *)titleUTF8String;
-- (const char *)auxiliaryTitleUTF8String;
+- (const char *)resultDisplayIdentifierUTF8String;
 - (int)resultDomain;
+- (void)dealloc;
 
 @end

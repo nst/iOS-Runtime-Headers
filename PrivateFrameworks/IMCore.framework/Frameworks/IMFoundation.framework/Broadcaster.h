@@ -2,19 +2,18 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class Protocol, NSArray, IMRemoteObjectBroadcaster, NSProtocolChecker;
+@class Protocol, IMRemoteObjectBroadcaster, NSArray;
 
 @interface Broadcaster : NSProxy  {
     NSArray *_targets;
     IMRemoteObjectBroadcaster *_parent;
     Protocol *_protocol;
-    NSProtocolChecker *_checker;
 }
 
 
+- (id)initWithNotifier:(id)arg1 protocol:(id)arg2 targets:(id)arg3;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)dealloc;
-- (id)initWithNotifier:(id)arg1 protocol:(id)arg2 targets:(id)arg3;
 
 @end

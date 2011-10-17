@@ -11,6 +11,7 @@
     int _configLockPid;
     BOOL _usingDevice;
     BOOL _subjectMonitoringEnabled;
+    BOOL _faceDetectionDrivenImageProcessingEnabled;
 }
 
 

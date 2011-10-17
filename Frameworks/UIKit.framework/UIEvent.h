@@ -11,19 +11,18 @@
 @property(readonly) double timestamp;
 
 
-- (id)touchesForGestureRecognizer:(id)arg1;
-- (int)type;
-- (double)timestamp;
 - (void)_setTimestamp:(double)arg1;
 - (int)_shakeState;
-- (id)allTouches;
-- (id)touchesForWindow:(id)arg1;
-- (id)touchesForView:(id)arg1;
 - (id)_touchesForGestureRecognizer:(id)arg1;
-- (int)subtype;
+- (id)touchesForWindow:(id)arg1;
+- (int)type;
 - (id)_initWithEvent:(struct __GSEvent { }*)arg1 touches:(id)arg2;
+- (double)timestamp;
+- (id)touchesForView:(id)arg1;
+- (int)subtype;
 - (struct __GSEvent { }*)_gsEvent;
+- (id)allTouches;
+- (id)touchesForGestureRecognizer:(id)arg1;
 - (id)_init;
-- (id)_mk_copyReplacingTouch:(id)arg1 withTouch:(id)arg2;
 
 @end

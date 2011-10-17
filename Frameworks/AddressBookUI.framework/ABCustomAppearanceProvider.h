@@ -15,18 +15,20 @@
 - (void)dealloc;
 - (Class)propertyCellClass;
 - (Class)actionCellClass;
-- (id)newActionButton;
 - (id)newScrollingBackgroundView;
 - (float)distanceBetweenSections;
-- (BOOL)shouldPropagateStylesThroughUnknownPersonActions;
-- (float)cardTableViewSectionHeaderHeightWhenEditing:(BOOL)arg1;
-- (Class)customCardCellClass;
+- (void)setHighlighted:(BOOL)arg1 onPropertyCell:(id)arg2;
+- (void)customSetEmphasized:(BOOL)arg1 onCell:(id)arg2;
+- (id)newActionButton;
 - (void)setIndicatesFaceTimeHistory:(BOOL)arg1 onActionButton:(id)arg2;
-- (id)newCustomCardActionButton;
+- (id)newCardActionButton;
+- (float)cardTableViewSectionHeaderHeightWhenEditing:(BOOL)arg1;
 - (float)cardTableViewSectionFooterHeightWhenEditing:(BOOL)arg1;
 - (BOOL)shouldPropagateStylesToPickers;
 - (Class)customCardActionCellClass;
+- (Class)customCardCellClass;
 - (id)newCustomCardTableScrollingBackgroundView;
+- (BOOL)shouldPropagateStylesThroughUnknownPersonActions;
 - (int)unknownModalPresentationStyle;
 
 @end

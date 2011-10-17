@@ -17,10 +17,10 @@
 + (id)test;
 + (id)instanceFromPlist:(id)arg1;
 
-- (void)dealloc;
 - (id)description;
-- (id)significantSlots;
+- (void)dealloc;
 - (id)initWithArraysForSignificantSlots:(id)arg1 preContext:(id)arg2 postContext:(id)arg3;
+- (id)significantSlots;
 - (id)indicesOfOccurrencesInTarget:(id)arg1;
 - (id)initFromPlist:(id)arg1;
 

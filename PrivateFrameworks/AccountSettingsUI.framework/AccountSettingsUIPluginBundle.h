@@ -20,9 +20,9 @@
 
 - (id)path;
 - (void)dealloc;
-- (id)accountTypes;
-- (id)plugin;
 - (id)initWithPath:(id)arg1 parentController:(id)arg2 commonSpecifierMode:(int)arg3 accountTypes:(id)arg4;
+- (id)plugin;
+- (id)accountTypes;
 - (int)commonSpecifierMode;
 
 @end

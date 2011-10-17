@@ -17,13 +17,13 @@
 
 + (id)_copySearchTermsFromSearchString:(id)arg1;
 
-- (void)dealloc;
-- (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)initWithSearchString:(id)arg1 searchLimit:(unsigned int)arg2 atURL:(id)arg3 appSpecificDataItemClass:(Class)arg4;
 - (id)_initWithSearchTerms:(id)arg1 searchLimit:(unsigned int)arg2 atURL:(id)arg3 appSpecificDataItemClass:(Class)arg4;
-- (id)initWithSearchTerms:(id)arg1 searchLimit:(unsigned int)arg2 atURL:(id)arg3 appSpecificDataItemClass:(Class)arg4;
+- (id)initWithSearchString:(id)arg1 searchLimit:(unsigned int)arg2 atURL:(id)arg3 appSpecificDataItemClass:(Class)arg4;
 - (void)addFiltersToXMLData:(id)arg1;
+- (id)initWithSearchTerms:(id)arg1 searchLimit:(unsigned int)arg2 atURL:(id)arg3 appSpecificDataItemClass:(Class)arg4;
 - (id)copyDefaultParserForContentType:(id)arg1;
+- (void)finishCoreDAVTaskWithError:(id)arg1;
+- (void)dealloc;
 - (id)httpMethod;
 - (id)requestBody;
 

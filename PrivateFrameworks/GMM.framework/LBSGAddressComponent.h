@@ -10,24 +10,23 @@
     NSString *_locale;
 }
 
+@property(retain) NSString * name;
+@property int featureType;
 @property(readonly) BOOL hasLocale;
 @property(retain) NSString * locale;
-@property int featureType;
-@property(retain) NSString * name;
 
 
-- (id)dictionaryRepresentation;
-- (void)setLocale:(id)arg1;
-- (id)locale;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (void)setFeatureType:(int)arg1;
-- (BOOL)hasLocale;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)hasLocale;
 - (int)featureType;
+- (void)setFeatureType:(int)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)locale;
+- (void)setLocale:(id)arg1;
+- (id)name;
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

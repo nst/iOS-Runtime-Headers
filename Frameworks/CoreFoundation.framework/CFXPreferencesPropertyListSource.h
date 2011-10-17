@@ -2,10 +2,15 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
+@class CFXPreferencesPropertyListSourceSynchronizer;
+
 @interface CFXPreferencesPropertyListSource : CFXPreferencesSource  {
+    unsigned short _mode;
+    unsigned int _owner;
+    CFXPreferencesPropertyListSourceSynchronizer *_synchronizer;
     struct __CFArray { } *_dirtyKeys;
     struct __CFURL { } *_url;
-    int _formatToWrite;
+    long _formatToWrite;
     struct _CFXPreferencesStatInfo { 
         unsigned long long st_ino; 
         long long st_size; 
@@ -14,24 +19,18 @@
             long tv_nsec; 
         } st_mtimex; 
     } _statInfo;
-    unsigned short _mode;
-    unsigned int _owner;
     unsigned int _group;
-    BOOL _checkedOnce;
 }
 
 
-- (void)finalize;
-- (id)init;
-- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
-- (void)dealloc;
 - (unsigned char)synchronize;
-- (unsigned char)writePlistToDisk;
-- (void*)createPlistFromDisk;
+- (void)finalize;
+- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
+- (id)initWithURL:(struct __CFURL { }*)arg1 mode:(unsigned short)arg2 owner:(unsigned int)arg3 group:(unsigned int)arg4 format:(long)arg5;
 - (void)_reenableSuddenTermination;
-- (unsigned char)_backingPlistChangedSinceLastSync;
-- (void*)getValueForKey:(struct __CFString { }*)arg1;
-- (struct __CFArray { }*)copyKeyList;
-- (struct __CFDictionary { }*)copyDictionary;
+- (void)_assimilateSync:(id)arg1;
+- (void)synchronizeInBackgroundWithCompletionBlock:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

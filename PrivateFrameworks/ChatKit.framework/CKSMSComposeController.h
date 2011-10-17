@@ -18,25 +18,27 @@
 
 + (BOOL)acceptsMIMEType:(id)arg1;
 + (double)maxTrimDurationForAudio;
++ (double)maxTrimDurationForVideo;
 + (BOOL)canSendPhotos:(int)arg1 videos:(int)arg2 audioClips:(int)arg3;
 + (id)_newMediaObjectForFilename:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
-+ (double)maxTrimDurationForVideo;
 
 - (void)send:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (BOOL)mimeType;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)_addPart:(id)arg1;
-- (BOOL)_insertMediaObject:(id)arg1;
-- (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
-- (void)setTextEntryContentsVisible:(BOOL)arg1;
-- (BOOL)ckCanDismissWhenSuspending;
-- (void)setMimeType:(BOOL)arg1;
-- (void)transitionFromNewMessageToConversation;
 - (void)cancelButtonClicked:(id)arg1;
-- (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
+- (void)setDelegate:(id)arg1;
+- (BOOL)mimeType;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (id)delegate;
+- (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (BOOL)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
+- (void)setTextEntryContentsVisible:(BOOL)arg1;
+- (void)setMimeType:(BOOL)arg1;
+- (void)_addPart:(id)arg1;
+- (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
+- (BOOL)_insertMediaObject:(id)arg1;
+- (id)initWithNavigationController:(id)arg1;
+- (BOOL)ckCanDismissWhenSuspending;
+- (void)transitionFromNewMessageToConversation;
+- (BOOL)shouldDismissAfterSend;
 
 @end

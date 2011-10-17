@@ -7,21 +7,21 @@
 }
 
 
-- (void)dealloc;
-- (id)deserializeNewObject;
-- (id)deserializeNewData;
-- (id)deserializePListValueIn:(id)arg1 key:(id)arg2 length:(unsigned int)arg3;
-- (id)initForDeserializerStream:(id)arg1;
 - (id)deserializerStream;
+- (id)initForDeserializerStream:(id)arg1;
+- (id)deserializeNewKeyString;
+- (id)deserializePListValueIn:(id)arg1 key:(id)arg2 length:(unsigned int)arg3;
+- (id)deserializePListKeyIn:(id)arg1;
+- (id)deserializePList:(id)arg1;
+- (id)deserializeNewObject;
+- (id)deserializeListItemIn:(id)arg1 at:(unsigned int)arg2 length:(unsigned int)arg3;
+- (id)deserializeList:(id)arg1;
+- (id)deserializeString:(id)arg1;
 - (id)deserializeData:(id)arg1;
 - (id)deserializeNewString;
-- (id)deserializeNewKeyString;
-- (id)deserializeString:(id)arg1;
-- (id)deserializeNewList;
-- (id)deserializeList:(id)arg1;
-- (id)deserializeListItemIn:(id)arg1 at:(unsigned int)arg2 length:(unsigned int)arg3;
 - (id)deserializeNewPList;
-- (id)deserializePList:(id)arg1;
-- (id)deserializePListKeyIn:(id)arg1;
+- (id)deserializeNewList;
+- (id)deserializeNewData;
+- (void)dealloc;
 
 @end

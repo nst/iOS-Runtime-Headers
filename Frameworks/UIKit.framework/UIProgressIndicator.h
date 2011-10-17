@@ -9,11 +9,11 @@
 
 + (struct CGSize { float x1; float x2; })size;
 
-- (void)setAnimating:(BOOL)arg1;
+- (void)startAnimation;
 - (int)progressIndicatorStyle;
 - (void)setProgressIndicatorStyle:(int)arg1;
-- (void)startAnimation;
-- (void)setStyle:(int)arg1;
+- (void)setAnimating:(BOOL)arg1;
 - (void)stopAnimation;
+- (void)setStyle:(int)arg1;
 
 @end

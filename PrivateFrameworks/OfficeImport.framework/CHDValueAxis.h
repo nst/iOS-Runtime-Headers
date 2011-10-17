@@ -12,16 +12,16 @@
 }
 
 
-- (void)setMajorUnitValue:(double)arg1;
-- (void)setScalingLogBase:(double)arg1;
 - (double)scalingLogBase;
 - (bool)isPercentageFormattingFlag;
 - (void)setPercentageFormattingFlag:(bool)arg1;
 - (bool)isAutoMajorUnitValue;
 - (bool)isAutoMinorUnitValue;
-- (void)adjustAxisPositionForHorizontalChart;
-- (double)minorUnitValue;
 - (double)majorUnitValue;
+- (double)minorUnitValue;
+- (void)adjustAxisPositionForHorizontalChart;
+- (void)setScalingLogBase:(double)arg1;
+- (void)setMajorUnitValue:(double)arg1;
 - (void)setMinorUnitValue:(double)arg1;
 - (id)initWithResources:(id)arg1;
 

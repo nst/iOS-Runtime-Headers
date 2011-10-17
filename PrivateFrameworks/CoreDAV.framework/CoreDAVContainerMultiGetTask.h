@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet, NSString, <CoreDAVContainerMultiGetTaskDelegate>;
+@class NSSet, NSString;
 
 @interface CoreDAVContainerMultiGetTask : CoreDAVTask  {
     NSSet *_urls;
@@ -13,23 +13,28 @@
     Class _appSpecificDataItemClass;
     BOOL _shouldIgnoreResponseErrors;
     NSSet *_additionalPropElements;
+    NSSet *_parsedContents;
+    NSSet *_missingURLs;
 }
 
 @property BOOL shouldIgnoreResponseErrors;
+@property(readonly) NSSet * parsedContents;
+@property(readonly) NSSet * missingURLs;
 @property(retain) NSSet * additionalPropElements;
-@property <CoreDAVContainerMultiGetTaskDelegate> * delegate;
 
 
-- (void)dealloc;
-- (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 appSpecificDataItemClass:(Class)arg3;
-- (id)additionalPropElements;
-- (id)copyAdditionalPropElements;
-- (void)setAdditionalProperties:(id)arg1 onDataItem:(id)arg2;
-- (id)copyDefaultParserForContentType:(id)arg1;
-- (BOOL)shouldIgnoreResponseErrors;
+- (id)missingURLs;
+- (id)parsedContents;
 - (void)setShouldIgnoreResponseErrors:(BOOL)arg1;
+- (BOOL)shouldIgnoreResponseErrors;
+- (id)copyDefaultParserForContentType:(id)arg1;
+- (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 appSpecificDataItemClass:(Class)arg3;
+- (void)finishCoreDAVTaskWithError:(id)arg1;
+- (void)setAdditionalProperties:(id)arg1 onDataItem:(id)arg2;
+- (id)additionalPropElements;
 - (void)setAdditionalPropElements:(id)arg1;
+- (id)copyAdditionalPropElements;
+- (void)dealloc;
 - (id)httpMethod;
 - (id)requestBody;
 

@@ -23,22 +23,22 @@
 @property(readonly) BOOL isHorizontal;
 
 
-- (int)x;
-- (int)y;
-- (BOOL)isHorizontal;
-- (int)offsetX;
-- (int)offsetY;
 - (int)wheelDelta;
 - (int)wheelDeltaX;
 - (int)wheelDeltaY;
+- (BOOL)isHorizontal;
 - (void)initWheelEvent:(int)arg1 wheelDeltaY:(int)arg2 view:(id)arg3 screenX:(int)arg4 screenY:(int)arg5 clientX:(int)arg6 clientY:(int)arg7 ctrlKey:(BOOL)arg8 altKey:(BOOL)arg9 shiftKey:(BOOL)arg10 metaKey:(BOOL)arg11;
 - (int)screenX;
 - (int)screenY;
 - (int)clientX;
 - (int)clientY;
+- (int)offsetX;
+- (int)offsetY;
 - (BOOL)ctrlKey;
 - (BOOL)shiftKey;
 - (BOOL)altKey;
 - (BOOL)metaKey;
+- (int)y;
+- (int)x;
 
 @end

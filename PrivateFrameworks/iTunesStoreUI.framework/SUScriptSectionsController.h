@@ -5,29 +5,30 @@
 @class SUScriptSection;
 
 @interface SUScriptSectionsController : SUScriptObject  {
-    id _sections;
-    SUScriptSection *_selectedSection;
 }
 
-@property(getter=_sections,setter=set_sections:,retain) id sections;
-@property(getter=_selectedSection,setter=set_selectedSection:,retain) SUScriptSection * selectedSection;
+@property(readonly) id sections;
+@property(retain) SUScriptSection * selectedSection;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
+- (id)attributeKeys;
+- (id)sections;
+- (id)selectedSection;
 - (id)init;
 - (void)dealloc;
+- (void)setSelectedSection:(id)arg1;
+- (void)setRootViewController:(id)arg1 forSection:(id)arg2;
 - (id)sectionWithIdentifier:(id)arg1;
-- (id)_selectedSection;
-- (id)_sections;
-- (void)set_sections:(id)arg1;
-- (void)set_selectedSection:(id)arg1;
-- (void)_tabBarConfigurationChangedNotification:(id)arg1;
-- (id)_copySections;
-- (id)_copySectionWithIdentifier:(id)arg1;
-- (id)_copySelectedSection;
 - (id)_fixedSelectedIdentifier;
 - (void)_setSelectedIdentifier:(id)arg1;
+- (id)_copySelectedSection;
+- (id)_copySections;
+- (id)_copySectionWithIdentifier:(id)arg1;
+- (void)_tabBarConfigurationChangedNotification:(id)arg1;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

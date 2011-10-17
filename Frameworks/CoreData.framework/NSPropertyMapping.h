@@ -19,26 +19,26 @@
 
 + (void)initialize;
 
+- (id)initWithName:(id)arg1 valueExpression:(id)arg2;
+- (id)_initWithDestinationName:(id)arg1 valueExpression:(id)arg2;
+- (id)_propertyTransforms;
+- (id)valueExpression;
+- (void)_setIsEditable:(BOOL)arg1;
+- (void)_throwIfNotEditable;
+- (void)_createCachesAndOptimizeState;
+- (void)setValueExpression:(id)arg1;
+- (void)_setPropertyTransforms:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (BOOL)isEditable;
-- (void)setName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)userInfo;
-- (void)encodeWithCoder:(id)arg1;
 - (id)name;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)userInfo;
+- (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (id)valueExpression;
-- (void)setValueExpression:(id)arg1;
-- (id)_initWithDestinationName:(id)arg1 valueExpression:(id)arg2;
-- (id)initWithName:(id)arg1 valueExpression:(id)arg2;
-- (id)_propertyTransforms;
-- (void)_throwIfNotEditable;
-- (void)_setIsEditable:(BOOL)arg1;
-- (void)_createCachesAndOptimizeState;
-- (void)_setPropertyTransforms:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

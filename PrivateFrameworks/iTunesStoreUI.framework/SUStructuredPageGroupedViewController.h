@@ -9,14 +9,14 @@
 }
 
 
+- (void)setLoading:(BOOL)arg1;
 - (id)init;
 - (void)dealloc;
-- (BOOL)purchaseItemAtIndexPath:(id)arg1;
-- (BOOL)_addPurchaseBatch:(id)arg1 forIndexPath:(id)arg2;
 - (void)_performPurchaseAnimationForIndexPath:(id)arg1;
+- (BOOL)_addPurchaseBatch:(id)arg1 forIndexPath:(id)arg2;
+- (BOOL)purchaseItemAtIndexPath:(id)arg1;
 - (BOOL)openDocumentForItemAtIndexPath:(id)arg1 withApplication:(id)arg2;
-- (id)itemAtIndexPath:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
 - (id)newNoItemsOverlayLabel;
+- (id)itemAtIndexPath:(id)arg1;
 
 @end

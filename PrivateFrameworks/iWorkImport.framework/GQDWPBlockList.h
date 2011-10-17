@@ -7,8 +7,8 @@
 }
 
 
+- (struct __CFArray { }*)children;
 - (BOOL)isBlank;
 - (void)dealloc;
-- (struct __CFArray { }*)children;
 
 @end

@@ -7,20 +7,26 @@
 @interface NSSQLManyToMany : NSSQLRelationship  {
     NSString *_correlationTableName;
     NSString *_columnName;
+    NSString *_orderColumnName;
 }
 
 
-- (void)dealloc;
-- (id)correlationTableName;
-- (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
-- (BOOL)isMaster;
-- (void)_setCorrelationTableName:(id)arg1;
 - (BOOL)isTableSchemaEqual:(id)arg1;
-- (void)_setColumnName:(id)arg1;
+- (void)_setCorrelationTableName:(id)arg1;
+- (void)_setOrderColumnName:(id)arg1;
 - (void)_setInverseManyToMany:(id)arg1;
 - (BOOL)isReflexive;
 - (id)inverseManyToMany;
+- (BOOL)isMaster;
+- (void)_setColumnName:(id)arg1;
+- (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
+- (unsigned int)columnSQLType;
+- (unsigned int)orderColumnSQLType;
 - (id)columnName;
+- (id)correlationTableName;
 - (id)inverseColumnName;
+- (id)inverseOrderColumnName;
+- (id)orderColumnName;
+- (void)dealloc;
 
 @end

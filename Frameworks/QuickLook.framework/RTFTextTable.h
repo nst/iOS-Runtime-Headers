@@ -11,18 +11,18 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (unsigned int)numberOfColumns;
-- (void)_takeValuesFromTextBlock:(id)arg1;
 - (BOOL)collapsesBorders;
 - (BOOL)hidesEmptyCells;
-- (void)setHidesEmptyCells:(BOOL)arg1;
 - (unsigned int)layoutAlgorithm;
 - (void)setLayoutAlgorithm:(unsigned int)arg1;
 - (unsigned int)_tableFlags;
+- (void)_takeValuesFromTextBlock:(id)arg1;
 - (void)_setTableFlags:(unsigned int)arg1;
-- (void)setNumberOfColumns:(unsigned int)arg1;
 - (void)setCollapsesBorders:(BOOL)arg1;
+- (void)setHidesEmptyCells:(BOOL)arg1;
+- (void)setNumberOfColumns:(unsigned int)arg1;
+- (unsigned int)numberOfColumns;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -21,13 +21,13 @@
 @property(retain) UIWebSelection * selection;
 
 
+- (void)invalidate;
+- (int)oppositeEdge:(int)arg1;
 - (id)initWithSelection:(id)arg1 inGraph:(id)arg2;
 - (id*)nodeByReferenceFromEdge:(int)arg1 outwards:(BOOL)arg2;
-- (int)oppositeEdge:(int)arg1;
 - (id)nodeByMovingEdge:(int)arg1 outwards:(BOOL)arg2;
-- (id)selection;
 - (void)setSelection:(id)arg1;
-- (void)invalidate;
+- (id)selection;
 - (void)dealloc;
 
 @end

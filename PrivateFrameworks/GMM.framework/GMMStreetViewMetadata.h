@@ -5,33 +5,32 @@
 @class GMMModel, GMMAnnotationProperties, GMMDataProperties, GMMProjectionProperties;
 
 @interface GMMStreetViewMetadata : PBCodable  {
+    GMMDataProperties *_dataProperties;
     GMMProjectionProperties *_projectionProperties;
     GMMAnnotationProperties *_annotationProperties;
     GMMModel *_model;
-    GMMDataProperties *_dataProperties;
 }
 
-@property(readonly) BOOL hasModel;
 @property(retain) GMMDataProperties * dataProperties;
-@property(retain) GMMModel * model;
-@property(retain) GMMAnnotationProperties * annotationProperties;
 @property(retain) GMMProjectionProperties * projectionProperties;
+@property(retain) GMMAnnotationProperties * annotationProperties;
+@property(readonly) BOOL hasModel;
+@property(retain) GMMModel * model;
 
 
-- (id)dictionaryRepresentation;
-- (id)model;
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (BOOL)readFrom:(id)arg1;
+- (id)annotationProperties;
+- (id)projectionProperties;
+- (id)dataProperties;
 - (BOOL)hasModel;
-- (void)setDataProperties:(id)arg1;
 - (void)setAnnotationProperties:(id)arg1;
 - (void)setProjectionProperties:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (void)setDataProperties:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (id)dataProperties;
-- (id)projectionProperties;
-- (id)annotationProperties;
+- (id)dictionaryRepresentation;
+- (id)model;
+- (id)description;
+- (void)dealloc;
 - (void)setModel:(id)arg1;
 
 @end

@@ -9,8 +9,8 @@
     ISOperation *_wrappedOperation;
 }
 
-+ (Class)postOperationClassForType:(id)arg1;
 + (void)registerPostOperationClass:(Class)arg1 forType:(id)arg2;
++ (Class)postOperationClassForType:(id)arg1;
 
 - (void)run;
 - (void)dealloc;

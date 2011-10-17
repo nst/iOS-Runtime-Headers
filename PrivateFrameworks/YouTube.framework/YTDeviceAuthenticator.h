@@ -4,7 +4,7 @@
 
 @class NSMutableData, NSString, NSData, NSURLConnection;
 
-@interface YTDeviceAuthenticator : NSObject  {
+@interface YTDeviceAuthenticator : NSObject <NSURLConnectionDelegate> {
     NSURLConnection *_connection;
     NSMutableData *_responseData;
     NSString *_token;
@@ -18,21 +18,21 @@
 
 + (id)sharedAuthenticator;
 
-- (BOOL)isAuthenticating;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)_failWithErrorCode:(int)arg1;
-- (void)_loadStatusChanged;
-- (void)_copyCertificateData:(id*)arg1 privateKey:(struct __SecKey {}**)arg2;
-- (BOOL)canAuthenticate;
-- (BOOL)_authenticate1;
-- (BOOL)_authenticate2;
-- (void)_clearNonces;
-- (void)authenticate;
 - (void)invalidateToken;
-- (void)_succeeded;
+- (void)_copyCertificateData:(id*)arg1 privateKey:(struct __SecKey {}**)arg2;
+- (void)_loadStatusChanged;
+- (void)_clearNonces;
+- (BOOL)_authenticate1;
+- (BOOL)canAuthenticate;
+- (void)authenticate;
 - (void)_connectionDidEnd;
+- (BOOL)_authenticate2;
+- (void)_succeeded;
+- (BOOL)isAuthenticating;
+- (void)_failWithErrorCode:(int)arg1;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (id)token;
 
 @end

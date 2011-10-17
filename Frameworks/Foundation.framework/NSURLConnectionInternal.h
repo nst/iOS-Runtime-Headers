@@ -2,18 +2,38 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURL, NSURLAuthenticationChallenge;
+@class NSOperationQueue, NSURLRequest, NSDictionary, NSURLConnection, NSURL;
 
-@interface NSURLConnectionInternal : NSObject  {
-    struct _CFURLConnection { } *cfConn;
-    struct _CFURLAuthChallenge { } *currCFChallenge;
-    NSURLAuthenticationChallenge *currNSChallenge;
-    NSURL *url;
-    id delegate;
-    boolshouldSkipCancelOnRelease;
-    BOOL connectionActive;
+@interface NSURLConnectionInternal : NSObject <NSURLConnectionRequired, NSURLAuthenticationChallengeSender> {
+    NSURLConnection *_connection;
+    NSOperationQueue *_delegateQueue;
+    NSURL *_url;
+    NSURLRequest *_originalRequest;
+    NSURLRequest *_currentRequest;
+    id _delegate;
+    NSDictionary *_connectionProperties;
+    BOOL _connectionActive;
 }
 
 
+- (void)_withErrorForConnection:(id)arg1;
+- (void)_withConnection:(id)arg1;
+- (void)_withActiveConnectionAndDelegate:(id)arg1;
+- (void)_withConnectionDisconnectFromConnection;
+- (void)setConnectionActive:(BOOL)arg1;
+- (void)invokeForDelegate:(id)arg1;
+- (void)_withConnectionAndDelegate:(id)arg1 onlyActive:(BOOL)arg2;
+- (id)_connectionProperties;
+- (id)currentRequest;
+- (id)originalRequest;
+- (void)_setDelegateQueue:(id)arg1;
+- (id)initWithInfo:(const struct InternalInit { id x1; id x2; id x3; id x4; BOOL x5; long long x6; }*)arg1;
+- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
+- (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
+- (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
+- (void)cancelAuthenticationChallenge:(id)arg1;
+- (void)_invalidate;
+- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
+- (void)dealloc;
 
 @end

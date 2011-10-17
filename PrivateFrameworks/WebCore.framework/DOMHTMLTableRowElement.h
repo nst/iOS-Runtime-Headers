@@ -17,11 +17,7 @@
 @property(copy) NSString * vAlign;
 
 
-- (id)align;
-- (id)bgColor;
 - (int)rowIndex;
-- (void)setBgColor:(id)arg1;
-- (void)setAlign:(id)arg1;
 - (int)sectionRowIndex;
 - (id)cells;
 - (id)insertCell:(int)arg1;
@@ -32,5 +28,9 @@
 - (void)setChOff:(id)arg1;
 - (id)vAlign;
 - (void)setVAlign:(id)arg1;
+- (id)bgColor;
+- (void)setBgColor:(id)arg1;
+- (id)align;
+- (void)setAlign:(id)arg1;
 
 @end

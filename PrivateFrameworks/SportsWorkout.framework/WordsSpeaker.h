@@ -12,9 +12,9 @@
 @property(readonly) BOOL isPlaying;
 
 
-- (BOOL)isPlaying;
 - (id)initWithGender:(id)arg1 language:(id)arg2;
-- (void)stopAllSounds;
 - (BOOL)playSoundsForWords:(id)arg1;
+- (void)stopAllSounds;
+- (BOOL)isPlaying;
 
 @end

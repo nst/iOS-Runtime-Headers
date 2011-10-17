@@ -12,16 +12,16 @@
 }
 
 
-- (int)index;
-- (id)table;
-- (void)dealloc;
+- (int)cellCount;
 - (id)addCellWithIndex:(int)arg1;
 - (id)initWithTable:(id)arg1 at:(int)arg2;
 - (id)cellIterator;
 - (id)newCellIterator;
-- (int)cellCount;
-- (id)cellAt:(int)arg1;
 - (id)addCell;
+- (id)cellAt:(int)arg1;
 - (id)properties;
+- (int)index;
+- (id)table;
+- (void)dealloc;
 
 @end

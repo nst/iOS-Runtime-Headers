@@ -5,8 +5,8 @@
 @interface WXVmlClient : NSObject <OAVClient> {
 }
 
-+ (void)initialize;
 + (void)copyFromDrawable:(id)arg1 toContent:(id)arg2;
++ (BOOL)floating:(id)arg1;
 + (bool)behindText:(id)arg1;
 + (int)horizontalPosition:(id)arg1;
 + (int)relativeHorizontalPosition:(id)arg1;
@@ -16,13 +16,13 @@
 + (double)wrapDistanceTop:(id)arg1;
 + (double)wrapDistanceRight:(id)arg1;
 + (double)wrapDistanceBottom:(id)arg1;
-+ (BOOL)floating:(id)arg1;
 + (int)zIndex:(id)arg1;
-+ (void)readFromDrawable:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 toContent:(id)arg2;
-+ (void)readClientDataFromGroup:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 toGroup:(id)arg2 state:(id)arg3;
 + (void)readTextWrappingFromParent:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 toAnchor:(id)arg2;
-+ (int)vmlSupportLevel;
++ (void)readFromDrawable:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 toContent:(id)arg2;
 + (void)readClientDataFromShape:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 toGraphic:(id)arg2 state:(id)arg3;
++ (void)readClientDataFromGroup:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 toGroup:(id)arg2 state:(id)arg3;
++ (int)vmlSupportLevel;
++ (void)initialize;
 
 
 @end

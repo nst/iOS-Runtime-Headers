@@ -10,25 +10,31 @@
     NSString *_checkCTag;
     CoreDAVXMLData *_pushedData;
     BOOL _validCTag;
-    NSString *_newCTag;
+    NSString *_nextCTag;
     NSMutableDictionary *_uuidToHREF;
     NSMutableDictionary *_hrefToETag;
+    NSMutableDictionary *_uuidToErrorItems;
+    NSMutableDictionary *_hrefToErrorItems;
 }
 
-@property(readonly) NSDictionary * hrefToETag;
+@property(readonly) NSString * nextCTag;
 @property(readonly) NSDictionary * uuidToHREF;
-@property(readonly) NSString * newCTag;
+@property(readonly) NSDictionary * hrefToETag;
+@property(readonly) NSDictionary * uuidToErrorItems;
+@property(readonly) NSDictionary * hrefToErrorItems;
 
 
-- (void)dealloc;
 - (void)fillOutDataWithUUIDsToAddActions:(id)arg1 hrefsToModDeleteActions:(id)arg2;
-- (id)initWithURL:(id)arg1 checkCTag:(id)arg2 uuidsToAddActions:(id)arg3 hrefsToModDeleteActions:(id)arg4;
+- (id)hrefToErrorItems;
+- (id)uuidToErrorItems;
 - (id)hrefToETag;
 - (id)uuidToHREF;
-- (id)newCTag;
+- (id)initWithURL:(id)arg1 checkCTag:(id)arg2 uuidsToAddActions:(id)arg3 hrefsToModDeleteActions:(id)arg4;
 - (id)additionalHeaderValues;
-- (void)finishCoreDAVTaskWithError:(id)arg1;
+- (id)nextCTag;
 - (id)copyDefaultParserForContentType:(id)arg1;
+- (void)finishCoreDAVTaskWithError:(id)arg1;
+- (void)dealloc;
 - (id)httpMethod;
 - (id)requestBody;
 

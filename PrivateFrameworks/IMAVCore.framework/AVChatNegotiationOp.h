@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class FetchICEDataOp, NSString, IMExtendedOperation, IMAVChatParticipant, NSMutableDictionary;
+@class FetchICEDataOp, NSString, IMExtendedOperation, IMAVChatParticipant, NSDictionary, NSMutableDictionary;
 
 @interface AVChatNegotiationOp : IMExtendedOperation  {
     NSMutableDictionary *_result;
@@ -10,12 +10,13 @@
     IMAVChatParticipant *_participant;
     IMExtendedOperation *_ardChannelOp;
     NSString *_conferenceID;
+    NSDictionary *_extraContext;
     unsigned int _useICE : 1;
 }
 
 
 - (void)dealloc;
-- (void)createChildOperations;
 - (id)initWithParticipant:(id)arg1 conferenceID:(id)arg2;
+- (void)createChildOperations;
 
 @end

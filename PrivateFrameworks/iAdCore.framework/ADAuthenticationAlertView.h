@@ -9,15 +9,15 @@
     NSString *_userName;
 }
 
-@property(readonly) NSString * userName;
 @property(readonly) NSURLAuthenticationChallenge * challenge;
+@property(readonly) NSString * userName;
 
 
-- (id)challenge;
-- (id)initWithChallenge:(id)arg1 userName:(id)arg2;
 - (void)showIfNeeded;
-- (id)userName;
+- (id)initWithChallenge:(id)arg1 userName:(id)arg2;
+- (id)challenge;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)userName;
 - (void)dealloc;
 
 @end

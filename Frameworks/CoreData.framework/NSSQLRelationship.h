@@ -10,16 +10,18 @@
 }
 
 
-- (void)dealloc;
-- (id)sourceEntity;
+- (void)_setForeignOrderKey:(id)arg1;
 - (id)initForReadOnlyFetchWithEntity:(id)arg1 propertyDescription:(id)arg2;
-- (id)correlationTableName;
+- (void)_setInverseRelationship:(id)arg1;
+- (id)relationshipDescription;
+- (id)sourceEntity;
 - (void)copyValuesForReadOnlyFetch:(id)arg1;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
-- (void)_setInverseRelationship:(id)arg1;
-- (id)foreignKey;
-- (id)relationshipDescription;
 - (id)inverseRelationship;
+- (BOOL)isOrdered;
 - (id)destinationEntity;
+- (id)correlationTableName;
+- (id)foreignKey;
+- (void)dealloc;
 
 @end

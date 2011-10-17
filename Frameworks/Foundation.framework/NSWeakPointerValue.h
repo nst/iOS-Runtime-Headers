@@ -8,12 +8,12 @@
 }
 
 
-- (unsigned int)hash;
-- (id)nonretainedObjectValue;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)getValue:(void*)arg1;
 - (id)initWithPointer:(void*)arg1;
 - (BOOL)isEqualToValue:(id)arg1;
+- (id)nonretainedObjectValue;
+- (void)getValue:(void*)arg1;
 - (const char *)objCType;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

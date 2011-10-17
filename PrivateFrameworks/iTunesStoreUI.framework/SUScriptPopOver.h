@@ -13,39 +13,40 @@
 @property float contentWidth;
 @property(retain) SUScriptViewController * viewController;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
+- (id)attributeKeys;
 - (void)dismissAnimated:(id)arg1;
 - (float)contentWidth;
 - (id)viewController;
 - (void)setViewController:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)attributeKeys;
+- (void)_setIgnoresDismiss:(BOOL)arg1;
+- (void)setContentWidth:(float)arg1;
+- (void)setContentHeight:(float)arg1;
+- (float)contentHeight;
 - (BOOL)showFromNavigationItem:(id)arg1;
 - (BOOL)showFromElement:(id)arg1;
-- (float)contentHeight;
-- (id)nativePopoverController;
-- (void)setNativePopoverController:(id)arg1;
 - (void)setContentWidth:(float)arg1 height:(float)arg2 animated:(BOOL)arg3;
-- (void)setContentHeight:(float)arg1;
-- (void)setContentWidth:(float)arg1;
-- (void)_overlayWillShowNotification:(id)arg1;
-- (void)_viewControllerDidDismiss:(id)arg1;
-- (void)_dismissAnimated:(BOOL)arg1;
-- (void)_showFromDOMElement:(id)arg1;
-- (void)_showFromNavigationItem:(id)arg1;
+- (void)setNativePopoverController:(id)arg1;
+- (id)nativePopoverController;
+- (void)_showAsModalViewController;
+- (BOOL)_isViewControllerVisible;
 - (id)_activeViewController;
 - (id)_nativeViewController;
-- (BOOL)_isViewControllerVisible;
-- (id)_popOverController;
-- (void)_setIgnoresDismiss:(BOOL)arg1;
 - (void)_setNativeViewController:(id)arg1;
+- (void)_showFromNavigationItem:(id)arg1;
+- (void)_showFromDOMElement:(id)arg1;
+- (id)_popOverController;
 - (BOOL)_shouldDisplayAsPopover;
-- (void)_showAsModalViewController;
-- (id)scriptAttributeKeys;
+- (void)_dismissAnimated:(BOOL)arg1;
+- (void)_viewControllerDidDismiss:(id)arg1;
+- (void)_overlayWillShowNotification:(id)arg1;
 - (void)tearDownUserInterface;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

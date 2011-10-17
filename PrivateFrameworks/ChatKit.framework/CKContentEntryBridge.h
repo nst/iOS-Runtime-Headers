@@ -5,9 +5,11 @@
 @class NSObject<CKContentEntryBridgeClient>;
 
 @interface CKContentEntryBridge : NSObject  {
+    int _outgoingBubbleColor;
     NSObject<CKContentEntryBridgeClient> *_entryView;
 }
 
+@property int outgoingBubbleColor;
 @property NSObject<CKContentEntryBridgeClient> * contentEntryView;
 
 + (id)newContentEntryBridge;
@@ -15,15 +17,18 @@
 - (id)attachments;
 - (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
 - (BOOL)hasContent;
-- (void)dealloc;
 - (id)contentEntryView;
-- (id)newContentViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)updateComposition;
 - (void)setContentEntryView:(id)arg1;
-- (void)setMessageComposition:(id)arg1;
+- (id)newContentViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setOutgoingBubbleColor:(int)arg1;
+- (int)outgoingBubbleColor;
 - (id)messageComposition;
 - (id)messageCompositionIfTextOnly;
-- (id)messageParts;
+- (void)setMessageComposition:(id)arg1;
+- (void)dealloc;
 - (void)setMessageParts:(id)arg1;
+- (id)messageParts;
 - (void)insertMessagePart:(id)arg1;
 
 @end

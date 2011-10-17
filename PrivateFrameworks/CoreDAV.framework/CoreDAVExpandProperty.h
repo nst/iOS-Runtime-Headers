@@ -10,18 +10,18 @@
     NSString *_expandedNameSpace;
 }
 
-@property(retain) NSString * expandedNameSpace;
-@property(retain) NSString * expandedName;
 @property(retain) NSSet * propertiesToFind;
+@property(retain) NSString * expandedName;
+@property(retain) NSString * expandedNameSpace;
 
 
-- (void)dealloc;
+- (void)setExpandedNameSpace:(id)arg1;
+- (id)expandedNameSpace;
+- (void)setExpandedName:(id)arg1;
 - (id)expandedName;
 - (id)initWithPropertiesToFind:(id)arg1 expandedName:(id)arg2 expandedNameSpace:(id)arg3;
-- (id)expandedNameSpace;
-- (void)setExpandedNameSpace:(id)arg1;
-- (void)setExpandedName:(id)arg1;
 - (void)setPropertiesToFind:(id)arg1;
 - (id)propertiesToFind;
+- (void)dealloc;
 
 @end

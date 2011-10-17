@@ -17,13 +17,13 @@
 }
 
 
-- (struct CGPoint { float x1; float x2; })tailCenter;
-- (struct CGPoint { float x1; float x2; })tailPosition;
-- (BOOL)tailAtCenter;
-- (double)tailSize;
-- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
-- (struct CGPath { }*)createBezierPath;
 - (double)cornerRadius;
 - (struct CGSize { float x1; float x2; })size;
+- (struct CGPoint { float x1; float x2; })tailPosition;
+- (double)tailSize;
+- (BOOL)tailAtCenter;
+- (struct CGPoint { float x1; float x2; })tailCenter;
+- (struct CGPath { }*)createBezierPath;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 
 @end

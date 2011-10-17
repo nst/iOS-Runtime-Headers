@@ -6,8 +6,8 @@
 }
 
 
-- (void)setupNativeObject;
 - (void)_libraryChangedNotification:(id)arg1;
+- (void)setupNativeObject;
 - (void)destroyNativeObject;
 
 @end

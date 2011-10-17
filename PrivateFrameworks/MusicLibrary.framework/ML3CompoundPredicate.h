@@ -13,17 +13,17 @@
 
 + (id)predicateMatchingPredicates:(id)arg1;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
 - (id)initWithPredicates:(id)arg1;
+- (id)predicates;
+- (void)setPredicates:(id)arg1;
+- (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
 - (id)SQLJoinClausesForClass:(Class)arg1;
 - (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
-- (void)setPredicates:(id)arg1;
-- (id)predicates;
-- (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -15,26 +15,26 @@
 + (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (void)setCachesFromPropertyList:(id)arg1;
-- (id)_ntsCacheForPersistentIdentifier:(id)arg1;
+- (id)initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 diskPath:(id)arg3;
+- (void)removeAllCachedResponses;
+- (void)removeCachedResponseForRequest:(id)arg1;
+- (void)setDiskCapacity:(unsigned int)arg1;
+- (void)setMemoryCapacity:(unsigned int)arg1;
+- (void)storeCachedResponse:(id)arg1 forRequest:(id)arg2;
+- (id)cachedResponseForRequest:(id)arg1;
+- (unsigned int)currentDiskUsage;
+- (unsigned int)currentMemoryUsage;
+- (unsigned int)diskCapacity;
+- (unsigned int)memoryCapacity;
 - (id)_ntsCacheForRequest:(id)arg1;
 - (void)_reloadForNewCaches:(id)arg1;
-- (id)cachedResponseForRequest:(id)arg1;
-- (void)storeCachedResponse:(id)arg1 forRequest:(id)arg2;
-- (void)removeCachedResponseForRequest:(id)arg1;
-- (unsigned int)memoryCapacity;
-- (unsigned int)diskCapacity;
-- (void)setMemoryCapacity:(unsigned int)arg1;
-- (void)setDiskCapacity:(unsigned int)arg1;
-- (unsigned int)currentMemoryUsage;
-- (unsigned int)currentDiskUsage;
-- (void)removeAllCachedResponses;
-- (id)initWithClientIdentifier:(id)arg1;
+- (id)_ntsCacheForPersistentIdentifier:(id)arg1;
+- (void)setCachesFromPropertyList:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)saveMemoryCacheToDisk;
 - (void)purgeMemoryCache;
+- (id)initWithClientIdentifier:(id)arg1;
 - (id)clientIdentifier;
-- (id)initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 diskPath:(id)arg3;
 
 @end

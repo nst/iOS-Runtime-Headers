@@ -12,9 +12,12 @@
 
 
 - (id)initRequestWithSetFlags:(unsigned long long)arg1 unsetFlags:(unsigned long long)arg2 message:(id)arg3;
-- (id)messageID;
-- (void)dealloc;
 - (unsigned long long)onFlags;
 - (unsigned long long)offFlags;
+- (id)messageID;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 
 @end

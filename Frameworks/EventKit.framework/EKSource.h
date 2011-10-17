@@ -2,35 +2,31 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKEventStore, NSString;
+@class NSSet, NSString;
 
-@interface EKSource : NSObject  {
-    EKEventStore *_store;
-    NSString *_sourceId;
-    void *_object;
-    int _type;
-    NSString *_title;
-    NSString *_externalId;
-    unsigned int _loadFlags;
+@interface EKSource : EKObject  {
 }
 
-@property(readonly) int type;
-@property(copy,readonly) NSString * title;
-@property(copy,readonly) NSString * externalId;
-@property(copy,readonly) NSString * sourceIdentifier;
+@property(readonly) NSString * sourceIdentifier;
+@property(readonly) int sourceType;
+@property(readonly) NSString * title;
+@property(readonly) NSSet * calendars;
 
 
-- (int)type;
-- (BOOL)isEqual:(id)arg1;
-- (id)title;
-- (void)dealloc;
-- (id)description;
-- (void)refresh;
-- (void)_setStoreInternal:(id)arg1;
-- (id)externalId;
-- (void)_storeClosed;
-- (void)reconnectToServer;
+- (id)externalID;
+- (void)setDefaultAlarmOffset:(id)arg1;
+- (id)defaultAlarmOffset;
+- (id)_persistentItem;
+- (id)calendars;
+- (id)allCalendars;
+- (id)constraints;
+- (BOOL)commit:(id*)arg1;
 - (id)sourceIdentifier;
-- (id)initWithStore:(id)arg1 object:(void*)arg2 sourceIdentifier:(id)arg3;
+- (BOOL)remove:(id*)arg1;
+- (int)sourceType;
+- (id)title;
+- (BOOL)isEnabled;
+- (id)description;
+- (id)init;
 
 @end

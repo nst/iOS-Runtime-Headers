@@ -9,18 +9,18 @@
     NSString *_callID;
 }
 
-@property(copy) NSString * callID;
 @property(copy) NSString * callState;
+@property(copy) NSString * callID;
 
 + (id)callForCTCallRef:(struct __CTCall { }*)arg1;
 
-- (void)setCallID:(id)arg1;
 - (id)callID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)description;
+- (void)setCallID:(id)arg1;
 - (void)setCallState:(id)arg1;
 - (id)callState;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 
 @end

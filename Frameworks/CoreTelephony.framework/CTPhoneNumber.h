@@ -10,22 +10,22 @@
     BOOL _isShortCode;
 }
 
-@property BOOL isShortCode;
-@property(readonly) NSString * countryCode;
 @property(readonly) NSString * digits;
+@property(readonly) NSString * countryCode;
+@property BOOL isShortCode;
 
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
 
 - (id)digits;
+- (id)countryCode;
+- (BOOL)isShortCode;
+- (id)formatForCallingCountry:(id)arg1;
+- (id)canonicalFormat;
+- (void)setIsShortCode:(BOOL)arg1;
+- (int)numberOfDigitsForShortCodeNumber;
+- (id)encodedString;
+- (id)initWithDigits:(id)arg1 countryCode:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)countryCode;
-- (id)canonicalFormat;
-- (id)formatForCallingCountry:(id)arg1;
-- (id)encodedString;
-- (int)numberOfDigitsForShortCodeNumber;
-- (BOOL)isShortCode;
-- (void)setIsShortCode:(BOOL)arg1;
-- (id)initWithDigits:(id)arg1 countryCode:(id)arg2;
 
 @end

@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class GKVoiceChatSession, GKSession, NSString;
+@class NSArray, GKSession, NSString, GKVoiceChatSession;
 
-@interface GKVoiceChat : NSObject  {
+@interface GKVoiceChat : NSObject <GKVoiceChatSessionDelegate> {
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -18,31 +18,33 @@
     GKVoiceChatSession *_gkVoiceChatSession;
 }
 
+@property(copy) id playerStateUpdateHandler;
 @property(readonly) NSString * name;
 @property(getter=isActive) BOOL active;
 @property float volume;
-@property(retain) GKVoiceChatSession * gkVoiceChatSession;
+@property(readonly) NSArray * playerIDs;
 @property(retain) GKSession * gkSession;
-@property(copy) id playerStateUpdateHandler;
+@property(retain) GKVoiceChatSession * gkVoiceChatSession;
 
 + (BOOL)isVoIPAllowed;
 
-- (void)gkVoiceChatSession:(id)arg1 stateUpdate:(unsigned int)arg2 forPeer:(id)arg3;
-- (id)initChat:(id)arg1 withSession:(id)arg2;
-- (void)setMute:(BOOL)arg1 forPlayer:(id)arg2;
-- (id)gkVoiceChatSession;
 - (void)setGkVoiceChatSession:(id)arg1;
-- (id)gkSession;
-- (void)setGkSession:(id)arg1;
 - (id)playerStateUpdateHandler;
+- (void)setMute:(BOOL)arg1 forPlayer:(id)arg2;
+- (id)initChat:(id)arg1 withSession:(id)arg2;
+- (void)gkVoiceChatSession:(id)arg1 stateUpdate:(unsigned int)arg2 forPeer:(id)arg3;
+- (id)gkSession;
+- (id)gkVoiceChatSession;
 - (void)setPlayerStateUpdateHandler:(id)arg1;
+- (void)setGkSession:(id)arg1;
+- (id)playerIDs;
 - (void)start;
+- (float)volume;
+- (void)setVolume:(float)arg1;
+- (void)stop;
 - (BOOL)isActive;
 - (void)setActive:(BOOL)arg1;
 - (id)name;
 - (void)dealloc;
-- (float)volume;
-- (void)setVolume:(float)arg1;
-- (void)stop;
 
 @end

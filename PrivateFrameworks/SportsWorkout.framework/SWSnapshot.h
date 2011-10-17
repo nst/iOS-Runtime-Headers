@@ -7,16 +7,16 @@
 @interface SWSnapshot : NSManagedObject  {
 }
 
-@property(retain) SWRunWorkoutRecord * userInteractionSnapshotWorkoutRecord;
-@property(retain) SWRunWorkoutRecord * kilometerSnapshotWorkoutRecord;
-@property(retain) SWRunWorkoutRecord * tenSecondSnapshotWorkoutRecord;
-@property(retain) SWRunWorkoutRecord * mileSnapshotWorkoutRecord;
-@property(retain) NSDecimalNumber * elapsedTimeInSeconds;
-@property(retain) NSDecimalNumber * distanceInMiles;
-@property(retain) NSDecimalNumber * caloriesBurned;
-@property(retain) NSString * event;
-@property(retain) NSDecimalNumber * paceInSecondsPerMile;
 @property(retain) id location;
+@property(retain) NSDecimalNumber * paceInSecondsPerMile;
+@property(retain) NSString * event;
+@property(retain) NSDecimalNumber * caloriesBurned;
+@property(retain) NSDecimalNumber * distanceInMiles;
+@property(retain) NSDecimalNumber * elapsedTimeInSeconds;
+@property(retain) SWRunWorkoutRecord * mileSnapshotWorkoutRecord;
+@property(retain) SWRunWorkoutRecord * tenSecondSnapshotWorkoutRecord;
+@property(retain) SWRunWorkoutRecord * kilometerSnapshotWorkoutRecord;
+@property(retain) SWRunWorkoutRecord * userInteractionSnapshotWorkoutRecord;
 
 
 

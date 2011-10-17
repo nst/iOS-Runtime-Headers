@@ -8,18 +8,19 @@
 + (void)initialize;
 + (id)mutablePlaceholder;
 + (id)immutablePlaceholder;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (id)member:(id)arg1;
 - (id)objectEnumerator;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (void)removeObject:(id)arg1;
-- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
-- (oneway void)release;
-- (id)init;
-- (id)retain;
-- (void)dealloc;
-- (unsigned int)retainCount;
 - (unsigned int)count;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (void)addObject:(id)arg1;
+- (id)init;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

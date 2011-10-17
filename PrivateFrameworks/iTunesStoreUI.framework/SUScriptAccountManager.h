@@ -9,14 +9,14 @@
     NSLock *_lock;
 }
 
-@property(retain,readonly) NSArray * accounts;
+@property(readonly) NSArray * accounts;
 
 + (id)beginAccountManagerSessionForObject:(id)arg1;
 + (void)endAccountManagerSessionForObject:(id)arg1;
 
+- (id)accounts;
 - (id)init;
 - (void)dealloc;
-- (id)accounts;
 - (void)_ntsReloadAccounts;
 - (void)_dispatchEvent:(id)arg1 forName:(id)arg2;
 - (void)_accountsChangedNotification:(id)arg1;

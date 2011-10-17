@@ -9,14 +9,12 @@
     BOOL _showingPlaceholder;
 }
 
-+ (void)_initializeSafeCategory;
 
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
+- (void)setPlaceholderText:(id)arg1;
 - (void)updatePlaceholder;
 - (id)_placeholder;
-- (void)setPlaceholderText:(id)arg1;
-- (id)accessibilityLabel;
+- (void)dealloc;
 
 @end

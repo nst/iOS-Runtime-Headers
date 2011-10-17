@@ -25,23 +25,23 @@
 @property ICCameraDevice * device;
 
 
-- (void)setModificationDate:(id)arg1;
+- (void)setCreationDate:(id)arg1;
+- (BOOL)locked;
+- (void)finalize;
+- (id)modificationDate;
 - (void)setParentFolder:(id)arg1;
 - (void)setUTI:(id)arg1;
 - (id)UTI;
-- (id)userData;
 - (void)setUserData:(id)arg1;
-- (void)finalize;
+- (id)userData;
 - (void)setLocked:(BOOL)arg1;
-- (void)setName:(id)arg1;
 - (id)name;
-- (void)dealloc;
-- (id)creationDate;
-- (void)setCreationDate:(id)arg1;
-- (BOOL)locked;
-- (id)parentFolder;
-- (id)modificationDate;
 - (void)setDevice:(id)arg1;
 - (id)device;
+- (id)creationDate;
+- (void)setModificationDate:(id)arg1;
+- (id)parentFolder;
+- (void)setName:(id)arg1;
+- (void)dealloc;
 
 @end

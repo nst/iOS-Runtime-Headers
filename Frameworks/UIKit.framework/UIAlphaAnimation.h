@@ -8,10 +8,10 @@
 }
 
 
+- (float)alphaForFraction:(float)arg1;
 - (void)setEndAlpha:(float)arg1;
 - (void)setStartAlpha:(float)arg1;
 - (float)_alphaForMultiplier:(float)arg1;
-- (float)alphaForFraction:(float)arg1;
 - (void)setProgress:(float)arg1;
 
 @end

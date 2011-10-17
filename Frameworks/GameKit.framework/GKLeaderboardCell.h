@@ -8,33 +8,37 @@
     int _topEdgeStyle;
     int _bottomEdgeStyle;
     NSArray *_leaderboardCellStyles;
+    NSArray *_leaderboardBorderStyles;
     NSArray *_leaderboardSectionLocations;
 }
 
+@property int topEdgeStyle;
+@property int bottomEdgeStyle;
 @property(readonly) GKLeaderboardCellBackgroundView * leaderboardBackgroundView;
 @property(readonly) GKLeaderboardCellBackgroundView * selectedLeaderboardBackgroundView;
-@property(retain) NSArray * leaderboardSectionLocations;
 @property(retain) NSArray * leaderboardCellStyles;
-@property int bottomEdgeStyle;
-@property int topEdgeStyle;
+@property(retain) NSArray * leaderboardBorderStyles;
+@property(retain) NSArray * leaderboardSectionLocations;
 
 
-- (id)selectedLeaderboardBackgroundView;
-- (id)leaderboardBackgroundView;
-- (void)setTopEdgeStyle:(int)arg1;
-- (void)setBottomEdgeStyle:(int)arg1;
-- (void)setLeaderboardSectionLocations:(id)arg1;
-- (float)contentsMargin;
-- (void)configureBackgroundView;
 - (id)leaderboardSectionLocations;
-- (id)leaderboardCellStyles;
-- (void)updateBackgroundViews;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
-- (int)topEdgeStyle;
+- (id)leaderboardBorderStyles;
 - (int)bottomEdgeStyle;
+- (int)topEdgeStyle;
+- (float)contentsMargin;
+- (void)setLeaderboardSectionLocations:(id)arg1;
+- (void)setBottomEdgeStyle:(int)arg1;
+- (void)setTopEdgeStyle:(int)arg1;
+- (void)setLeaderboardBorderStyles:(id)arg1;
+- (id)selectedLeaderboardBackgroundView;
 - (void)setLeaderboardCellStyles:(id)arg1;
+- (id)leaderboardCellStyles;
+- (id)leaderboardBackgroundView;
+- (void)updateBackgroundViews;
+- (void)configureBackgroundView;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
 - (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
-- (void)dealloc;
 - (id)description;
+- (void)dealloc;
 
 @end

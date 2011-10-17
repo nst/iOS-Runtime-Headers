@@ -10,12 +10,7 @@
 @class NSString;
 
 @interface CATextLayer : CALayer  {
-    struct CATextLayerPrivate { struct Mutex { 
-            struct _opaque_pthread_mutex_t { 
-                long __sig; 
-                BOOL __opaque[40]; 
-            } _m; 
-        } x1; struct __CTTypesetter {} *x2; } *_state;
+    struct CATextLayerPrivate { } *_state;
 }
 
 @property(copy) id truncationString;
@@ -28,41 +23,41 @@
 @property(copy) NSString * truncationMode;
 @property(copy) NSString * alignmentMode;
 
-+ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;
 + (BOOL)needsDisplayForKey:(id)arg1;
++ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 
-- (id)_createStringDict;
-- (struct __CTTypesetter { }*)_retainTypesetter;
-- (struct __CTLine { }*)_createTruncationToken;
-- (void)_applyLinesToFunction:(int (*)())arg1 info:(void*)arg2;
-- (void)_drawLine:(struct __CTLine { }*)arg1 inContext:(struct CGContext { }*)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
-- (BOOL)isWrapped;
-- (void)setWrapped:(BOOL)arg1;
-- (id)truncationMode;
-- (void)setTruncationMode:(id)arg1;
-- (id)alignmentMode;
-- (void)setAlignmentMode:(id)arg1;
-- (BOOL)allowsFontSubpixelQuantization;
-- (BOOL)wrapped;
-- (id)truncationString;
-- (void)setTruncationString:(id)arg1;
-- (void)setAllowsFontSubpixelQuantization:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })_preferredSize;
-- (void)_prepareContext:(struct CGContext { }*)arg1;
-- (id)_implicitActionForKey:(id)arg1;
+- (void)setForegroundColor:(struct CGColor { }*)arg1;
 - (id)initWithLayer:(id)arg1;
-- (id)string;
+- (void)setAlignmentMode:(id)arg1;
+- (struct CGColor { }*)foregroundColor;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (void)setFontSize:(float)arg1;
 - (float)fontSize;
-- (void)setString:(id)arg1;
-- (id)init;
+- (void)setFontSize:(float)arg1;
+- (id)implicitAnimationForKeyPath:(id)arg1;
 - (void*)font;
 - (void)setFont:(void*)arg1;
-- (void)dealloc;
-- (void)setForegroundColor:(struct CGColor { }*)arg1;
-- (struct CGColor { }*)foregroundColor;
 - (void)didChangeValueForKey:(id)arg1;
+- (id)string;
+- (void)setString:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (BOOL)wrapped;
+- (void)setTruncationString:(id)arg1;
+- (void)setAllowsFontSubpixelQuantization:(BOOL)arg1;
+- (void)setWrapped:(BOOL)arg1;
+- (void)setTruncationMode:(id)arg1;
+- (BOOL)isWrapped;
+- (id)_createStringDict;
+- (id)truncationString;
+- (struct __CTTypesetter { }*)_retainTypesetter;
+- (id)alignmentMode;
+- (id)truncationMode;
+- (struct __CTLine { }*)_createTruncationToken;
+- (void)_drawLine:(struct __CTLine { }*)arg1 inContext:(struct CGContext { }*)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
+- (void)_applyLinesToFunction:(int (*)())arg1 info:(void*)arg2;
+- (BOOL)allowsFontSubpixelQuantization;
+- (void)_prepareContext:(struct CGContext { }*)arg1;
+- (struct CGSize { float x1; float x2; })_preferredSize;
 
 @end

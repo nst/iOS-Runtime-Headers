@@ -2,20 +2,19 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSURL, GEOSessionID;
+@class NSURL;
 
 @interface GEOQueryCollector : NSObject  {
-    NSURL *_serverURL;
-    double _lastSessionCreationTime;
-    GEOSessionID *_sessionID;
+    NSURL *_searchQueryServerURL;
+    NSURL *_directionsQueryServerURL;
 }
 
 + (id)sharedCollector;
 
-- (void)_updateSessionIDIfNeeded;
-- (void)submitQuery:(id)arg1 requestType:(int)arg2 centerCoordinate:(struct { double x1; double x2; })arg3 latSpan:(int)arg4 lonSpan:(int)arg5 zoomLevel:(int)arg6 userLocation:(id)arg7;
+- (void)submitDirectionsQuery:(id)arg1;
+- (void)submitSearchQuery:(id)arg1;
+- (void)cancelAllSubmissions;
 - (id)init;
 - (void)dealloc;
-- (void)cancelAllSubmissions;
 
 @end

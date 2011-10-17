@@ -12,32 +12,34 @@
     NSMutableArray *_pages;
     int _currentPage;
     <UIKeyboardEmojiController> *_controller;
+    BOOL _emojiInteractionEnabled;
 }
 
 @property <UIKeyboardEmojiController> * controller;
+@property BOOL emojiInteractionEnabled;
 
-+ (void)_initializeSafeCategory;
 
-- (id)controller;
-- (void)doLayout;
-- (void)layoutRecents;
-- (void)delayedLayout:(id)arg1;
-- (void)layoutPages;
-- (void)interruptScrolling;
-- (void)clearPages;
-- (void)setCategory:(id)arg1;
-- (void)pageChanged;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
-- (void)ensureSurrounded:(int)arg1;
-- (int)currentPage;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)emojiInteractionEnabled;
 - (void)setScrollDelay:(double)arg1;
-- (void)setController:(id)arg1;
+- (void)interruptScrolling;
+- (void)delayedLayout:(id)arg1;
+- (void)ensureSurrounded:(int)arg1;
+- (void)clearPages;
+- (void)layoutPages;
+- (void)layoutRecents;
+- (void)doLayout;
+- (void)pageChanged;
 - (void)goToFirstPage;
+- (void)setCategory:(id)arg1;
+- (void)setEmojiInteractionEnabled:(BOOL)arg1;
+- (id)controller;
+- (void)setController:(id)arg1;
+- (int)currentPage;
 - (void)forceLayout;
 - (void)scrollViewWillBeginDecelerating:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_accessibilityDelayedPost;
+- (void)dealloc;
 
 @end

@@ -5,29 +5,30 @@
 @class LBSGLocRequest;
 
 @interface LBSWrapperRequest : PBRequest  {
-    int _requestType;
     BOOL _hasRequestType;
+    int _requestType;
     LBSGLocRequest *_request;
 }
 
+@property BOOL hasRequestType;
+@property int requestType;
 @property(readonly) BOOL hasRequest;
 @property(retain) LBSGLocRequest * request;
-@property(readonly) BOOL hasRequestType;
-@property int requestType;
 
 
-- (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setRequest:(id)arg1;
-- (id)request;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasRequest;
-- (void)setRequestType:(int)arg1;
-- (BOOL)hasRequestType;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)hasRequest;
+- (void)setHasRequestType:(BOOL)arg1;
+- (BOOL)hasRequestType;
+- (void)setRequestType:(int)arg1;
+- (void)setRequest:(id)arg1;
 - (int)requestType;
+- (unsigned int)requestTypeCode;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)request;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -10,19 +10,19 @@
     NSString *_distanceUnits;
 }
 
-@property(retain) NSString * distanceUnits;
-@property(retain) NSDecimalNumber * repeatInterval;
 @property(retain) NSDecimalNumber * value;
+@property(retain) NSDecimalNumber * repeatInterval;
+@property(retain) NSString * distanceUnits;
 
 + (id)targetWithValue:(id)arg1 repeatInterval:(id)arg2 selector:(SEL)arg3 distanceUnits:(id)arg4;
 
-- (id)value;
-- (id)repeatInterval;
-- (void)setValue:(id)arg1;
-- (void)dealloc;
-- (id)description;
-- (void)setRepeatInterval:(id)arg1;
 - (id)distanceUnits;
 - (void)setDistanceUnits:(id)arg1;
+- (id)repeatInterval;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (void)setRepeatInterval:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

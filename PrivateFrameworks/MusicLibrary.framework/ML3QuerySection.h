@@ -10,15 +10,15 @@
     unsigned int _sectionIndex;
 }
 
+@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property unsigned int sectionIndex;
-@property struct _NSRange { unsigned int location; unsigned int length; } range;
 
 
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (void)dealloc;
-- (id)description;
-- (unsigned int)sectionIndex;
 - (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (unsigned int)sectionIndex;
 - (void)setSectionIndex:(unsigned int)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

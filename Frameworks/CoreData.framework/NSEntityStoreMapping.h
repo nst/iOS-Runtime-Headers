@@ -14,28 +14,28 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)description;
 - (id)initWithEntity:(id)arg1;
-- (void)setEntity:(id)arg1;
-- (id)propertyMappings;
+- (id)createTableStatement;
 - (void)setPropertyMappings:(id)arg1;
-- (id)primaryKeys;
 - (void)setPrimaryKeys:(id)arg1;
-- (BOOL)isSingleTableEntity;
 - (void)setSingleTableEntity:(BOOL)arg1;
-- (id)subentityColumn;
 - (void)setSubentityColumn:(id)arg1;
-- (unsigned int)subentityID;
 - (void)setSubentityID:(unsigned int)arg1;
+- (id)propertyMappings;
+- (id)primaryKeys;
+- (BOOL)isSingleTableEntity;
+- (id)subentityColumn;
+- (unsigned int)subentityID;
 - (id)primaryKeyColumnDefinitions;
 - (id)attributeColumnDefinitions;
 - (id)foreignKeyColumnDefinitions;
 - (id)foreignKeyConstraintDefinitions;
-- (id)createTableStatement;
-- (id)relationshipMappings;
 - (id)attributeMappings;
+- (id)relationshipMappings;
 - (id)entity;
+- (void)setEntity:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

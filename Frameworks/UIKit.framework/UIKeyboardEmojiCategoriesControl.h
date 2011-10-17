@@ -14,17 +14,17 @@
     NSMutableArray *_dividerViews;
 }
 
-@property(readonly) int numSegments;
 @property int selectedIndex;
+@property(readonly) int numSegments;
 
 + (id)categoryControl;
-+ (void)_initializeSafeCategory;
 
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)numSegments;
+- (void)releaseImagesAndViews;
 - (void)setSelectedIndex:(int)arg1;
 - (int)selectedIndex;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

@@ -12,24 +12,24 @@
     EDResources *mResources;
 }
 
-+ (id)dataWithResources:(id)arg1;
 + (id)dataWithDataPointCount:(unsigned int)arg1 resources:(id)arg2;
++ (id)dataWithResources:(id)arg1;
 
-- (void)dealloc;
-- (bool)isEmpty;
-- (id)dataValues;
-- (void)setDataValueIndexCount:(unsigned int)arg1;
+- (unsigned int)averageDataPointDecimalCount;
+- (id)firstValueContentFormatWithWorkbook:(id)arg1;
 - (id)initWithDataPointCount:(unsigned int)arg1 resources:(id)arg2;
 - (unsigned int)dataValueIndexCount;
-- (unsigned int)averageDataPointDecimalCount;
-- (void)setContentFormat:(id)arg1;
-- (id)firstValueContentFormatWithWorkbook:(id)arg1;
-- (unsigned int)contentFormatId;
-- (id)contentFormat;
 - (void)setFormula:(id)arg1 chart:(id)arg2;
-- (id)formula;
-- (id)initWithResources:(id)arg1;
+- (id)dataValues;
+- (void)setDataValueIndexCount:(unsigned int)arg1;
+- (unsigned int)contentFormatId;
 - (void)setContentFormatId:(unsigned int)arg1;
+- (id)formula;
+- (id)contentFormat;
+- (void)setContentFormat:(id)arg1;
 - (unsigned int)countOfCellsBeingReferenced;
+- (id)initWithResources:(id)arg1;
+- (bool)isEmpty;
+- (void)dealloc;
 
 @end

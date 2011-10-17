@@ -5,16 +5,15 @@
 @interface PLPhotosMusicPlayer : NSObject  {
 }
 
-+ (void)startMusicWithSettings:(id)arg1;
-+ (void)startMusicForAlbum:(id)arg1;
-+ (void)stopMusic;
-+ (void)pauseMusic:(BOOL)arg1;
-+ (void)continueMusic;
-+ (void)setShouldRepeatMusic:(BOOL)arg1;
 + (void)setEnableRouteDiscovery:(BOOL)arg1;
-+ (void)routeMusicToAirTunesService:(id)arg1;
++ (void)stopMusic;
++ (void)startMusicForAlbum:(struct NSObject { Class x1; }*)arg1;
 + (void)stopRoutingMusicToAirTunes;
++ (void)pauseMusic:(BOOL)arg1;
++ (void)setShouldRepeatMusic:(BOOL)arg1;
++ (void)startMusicWithSettings:(id)arg1;
++ (void)continueMusic;
++ (void)routeMusicToAirTunesService:(id)arg1;
 
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 
 @end

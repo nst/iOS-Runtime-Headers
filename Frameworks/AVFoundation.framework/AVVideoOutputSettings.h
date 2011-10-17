@@ -7,19 +7,26 @@
 @interface AVVideoOutputSettings : AVOutputSettings  {
 }
 
+@property(readonly) int width;
+@property(readonly) int height;
+@property(readonly) NSDictionary * pixelTransferProperties;
+@property(readonly) BOOL dimensionsAreBoundingBox;
 @property(readonly) NSDictionary * videoSettingsDictionary;
 
 + (id)registeredOutputSettingsClasses;
-+ (id)videoOutputSettingsWithVideoSettingsDictionary:(id)arg1;
 + (id)defaultVideoOutputSettings;
++ (id)videoOutputSettingsWithVideoSettingsDictionary:(id)arg1;
++ (id)_validValuesForScalingMode;
 + (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 
 - (int)height;
 - (int)width;
-- (id)videoSettingsDictionary;
+- (BOOL)dimensionsAreBoundingBox;
+- (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
 - (id)initWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 - (id)compatibleMediaTypes;
-- (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
+- (id)pixelTransferProperties;
+- (id)videoSettingsDictionary;
 
 @end

@@ -13,16 +13,16 @@
 }
 
 
-- (void)setLevel:(unsigned char)arg1;
-- (unsigned char)level;
-- (void)dealloc;
 - (BOOL)isStartNumberOverridden;
-- (id)initWithDocument:(id)arg1;
-- (id)mutableListLevel;
-- (void)setStartNumber:(long)arg1;
-- (id)document;
+- (id)listLevel;
 - (BOOL)isListLevelOverridden;
 - (long)startNumber;
-- (id)listLevel;
+- (id)mutableListLevel;
+- (void)setStartNumber:(long)arg1;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
+- (unsigned char)level;
+- (void)setLevel:(unsigned char)arg1;
+- (void)dealloc;
 
 @end

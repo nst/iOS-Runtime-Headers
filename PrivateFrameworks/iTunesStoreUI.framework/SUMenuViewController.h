@@ -10,28 +10,28 @@
     UITableView *_tableView;
 }
 
-@property int selectedIndex;
 @property <SUMenuViewControllerDelegate> * delegate;
+@property int selectedIndex;
 
 
-- (void)loadView;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)reload;
+- (void)setDelegate:(id)arg1;
 - (void)setSelectedIndex:(int)arg1;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)selectedIndex;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)delegate;
+- (void)reload;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)init;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (struct CGSize { float x1; float x2; })minimumViewSize;
 - (BOOL)_sendDidCancel;
 - (BOOL)isMenuItemEnabledAtIndex:(int)arg1;
+- (id)titleOfMenuItemAtIndex:(int)arg1;
 - (void)performActionForMenuItemAtIndex:(int)arg1;
 - (int)numberOfMenuItems;
-- (id)titleOfMenuItemAtIndex:(int)arg1;
+- (struct CGSize { float x1; float x2; })minimumViewSize;
 - (struct CGSize { float x1; float x2; })maximumViewSize;
 
 @end

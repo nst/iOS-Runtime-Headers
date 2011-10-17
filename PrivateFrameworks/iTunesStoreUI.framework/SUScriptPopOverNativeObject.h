@@ -10,19 +10,19 @@
     SUDOMElement *_sourceDOMElement;
 }
 
-@property(retain) SUDOMElement * sourceDOMElement;
 @property(retain) UIBarButtonItem * sourceButtonItem;
+@property(retain) SUDOMElement * sourceDOMElement;
 
 
 - (void)dealloc;
-- (void)setupNativeObject;
-- (void)destroyNativeObject;
-- (void)_windowDidRotateNotification:(id)arg1;
-- (void)_windowWillRotateNotification:(id)arg1;
-- (BOOL)_isAffectedByWindowNotification:(id)arg1;
 - (id)sourceDOMElement;
-- (void)setSourceDOMElement:(id)arg1;
 - (id)sourceButtonItem;
+- (BOOL)_isAffectedByWindowNotification:(id)arg1;
+- (void)setupNativeObject;
+- (void)_windowWillRotateNotification:(id)arg1;
+- (void)_windowDidRotateNotification:(id)arg1;
+- (void)destroyNativeObject;
+- (void)setSourceDOMElement:(id)arg1;
 - (void)setSourceButtonItem:(id)arg1;
 
 @end

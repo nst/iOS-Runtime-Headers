@@ -5,35 +5,39 @@
 @class NSString;
 
 @interface UIStatusBarServiceItemView : UIStatusBarItemView  {
-    NSString *_pathToBlackServiceImage;
-    NSString *_pathToSilverServiceImage;
+    NSString *_pathToServiceImages[3];
     NSString *_serviceString;
+    NSString *_crossfadeString;
+    unsigned int _crossfadeStep;
+    float _serviceWidth;
+    float _crossfadeWidth;
     int _contentType;
     BOOL _loopingNecessaryForString;
-    BOOL _usingStringForBlack;
-    BOOL _usingStringForSilver;
+    BOOL _usingStringForStyle[3];
     BOOL _loopNowIfNecessary;
     float _letterSpacing;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (id)contentsImageForStyle:(int)arg1;
-- (float)standardPadding;
-- (BOOL)updateForNewData:(struct { BOOL x1[22]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; BOOL x20[256]; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1 actions:(int)arg2;
-- (BOOL)usesSmallerTextFont;
-- (BOOL)animatesFrameChange;
 - (void)_loopAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (id)_serviceContentsImageForStyle:(int)arg1;
+- (id)_crossfadeContentsImageForStyle:(int)arg1;
+- (id)_contentsImageFromString:(id)arg1 withWidth:(float)arg2 letterSpacing:(float)arg3 forStyle:(int)arg4;
+- (void)_setUsingString:(BOOL)arg1 forStyle:(int)arg2;
 - (BOOL)_loopingNecessary;
-- (void)_setUsingString:(BOOL)arg1;
-- (float)updateContentsAndWidth;
-- (BOOL)animatesDataChange;
+- (BOOL)_crossfaded;
+- (void)_crossfadeStepAnimation;
 - (void)performPendedActions;
+- (BOOL)animatesDataChange;
+- (float)extraRightPadding;
+- (float)standardPadding;
 - (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
 - (id)textColorForStyle:(int)arg1;
+- (BOOL)usesSmallerTextFont;
+- (float)updateContentsAndWidth;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (BOOL)animatesFrameChange;
+- (id)contentsImageForStyle:(int)arg1;
 - (void)dealloc;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
 
 @end

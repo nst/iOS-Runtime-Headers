@@ -12,8 +12,8 @@
 
 
 - (void)setForTextPart:(BOOL)arg1;
+- (BOOL)forTextPart;
 - (int)appendData:(id)arg1;
 - (void)done;
-- (BOOL)forTextPart;
 
 @end

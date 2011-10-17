@@ -10,26 +10,25 @@
     PSRootController *_parentRootController;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (void)pushController:(id)arg1;
 - (void)setupController;
+- (void)setParentController:(id)arg1;
+- (id)parentController;
+- (void)pushControllerOnParentWithSpecifier:(id)arg1;
+- (void)popControllerOnParent;
+- (void)statusBarWillChangeHeight:(id)arg1;
+- (BOOL)usePopupStyle;
+- (BOOL)popupStyleIsModal;
 - (void)dismissAnimated:(BOOL)arg1;
-- (void)dismiss;
 - (id)controller;
+- (void)dismiss;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)forwardInvocation:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)parentController;
-- (void)setParentController:(id)arg1;
-- (void)pushControllerOnParentWithSpecifier:(id)arg1;
-- (void)popControllerOnParent;
-- (BOOL)usePopupStyle;
-- (void)statusBarWillChangeHeight:(id)arg1;
-- (BOOL)popupStyleIsModal;
-- (void)viewWillBecomeVisible:(void*)arg1;
+- (void)pushController:(id)arg1;
+- (void)handleURL:(id)arg1;
 
 @end

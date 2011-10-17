@@ -15,12 +15,12 @@
 }
 
 
+- (void)touchEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchBegan:(id)arg1 withEvent:(id)arg2;
 - (BOOL)_touchLocationConsideredMovement:(id)arg1;
-- (void)touchMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchEnded:(id)arg1 withEvent:(id)arg2;
-- (BOOL)cancelTouchTracking;
-- (void)releaseAndClearWeakRefs;
 - (void)clearTapState;
+- (void)releaseAndClearWeakRefs;
+- (BOOL)cancelTouchTracking;
 
 @end

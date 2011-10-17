@@ -26,33 +26,33 @@
 @property(readonly) IMHandle * bestIMHandle;
 @property(readonly) NSArray * imHandles;
 
-+ (id)me;
-+ (id)fallbackUserName;
 + (id)imHandleForService:(id)arg1;
++ (id)fallbackUserName;
++ (id)me;
 
-- (id)guid;
-- (id)firstName;
-- (id)lastName;
-- (id)email;
 - (id)emails;
+- (id)email;
+- (id)lastName;
+- (id)firstName;
+- (id)bestIMHandle;
+- (BOOL)isIMHandleLoginIMHandle:(id)arg1;
+- (id)loginIMHandles;
+- (id)_imHandlesWithIDs:(id)arg1 onAccount:(id)arg2;
+- (void)setFirstName:(id)arg1 lastName:(id)arg2;
+- (void)rebuildIMHandles;
+- (void)myPictureChanged;
+- (BOOL)addIMHandle:(id)arg1;
+- (BOOL)removeIMHandle:(id)arg1;
+- (void)setIMPerson:(id)arg1;
+- (BOOL)addLoginIMHandle:(id)arg1;
+- (void)resetABPerson;
+- (BOOL)removeLoginIMHandle:(id)arg1;
+- (id)imHandles;
+- (id)person;
+- (id)fullName;
+- (id)guid;
 - (id)init;
 - (void)dealloc;
-- (id)fullName;
-- (id)person;
-- (id)bestIMHandle;
-- (id)_imHandlesWithIDs:(id)arg1 onAccount:(id)arg2;
-- (BOOL)removeLoginIMHandle:(id)arg1;
-- (id)loginIMHandles;
-- (BOOL)addIMHandle:(id)arg1;
-- (BOOL)isIMHandleLoginIMHandle:(id)arg1;
-- (id)imHandles;
-- (void)resetABPerson;
-- (void)setIMPerson:(id)arg1;
-- (void)setFirstName:(id)arg1 lastName:(id)arg2;
-- (void)myPictureChanged;
-- (void)rebuildIMHandles;
-- (BOOL)addLoginIMHandle:(id)arg1;
-- (BOOL)removeIMHandle:(id)arg1;
 - (id)nickname;
 
 @end

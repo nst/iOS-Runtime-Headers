@@ -13,13 +13,19 @@
     NSMutableArray *_viewsNotInDocument;
 }
 
++ (id)plugInViewWithArguments:(id)arg1 fromPluginPackage:(id)arg2;
 + (BOOL)isPlugInView:(id)arg1;
 + (void)addPlugInView:(id)arg1;
 + (void)pluginViewHidden:(id)arg1;
-+ (id)plugInViewWithArguments:(id)arg1 fromPluginPackage:(id)arg2;
 
+- (id)initWithDocumentView:(id)arg1;
+- (id)webFrame;
+- (id)webView;
+- (void)setDataSource:(id)arg1;
 - (BOOL)plugInsAreRunning;
 - (id)superlayerForPluginView:(id)arg1;
+- (void)stopPluginsForPageCache;
+- (void)restorePluginsFromCache;
 - (BOOL)processingUserGesture;
 - (id)_webPluginContainerCheckIfAllowedToLoadRequest:(id)arg1 inFrame:(id)arg2 resultObject:(id)arg3 selector:(SEL)arg4;
 - (void)webPlugInContainerLoadRequest:(id)arg1 inFrame:(id)arg2;
@@ -30,6 +36,7 @@
 - (void)_webPluginContainerSetMediaPlayerProxy:(id)arg1 forElement:(id)arg2;
 - (void)_webPluginContainerPostMediaPlayerNotification:(int)arg1 forElement:(id)arg2;
 - (void)stopOnePlugin:(id)arg1;
+- (void)stopOnePluginForPageCache:(id)arg1;
 - (void)destroyOnePlugin:(id)arg1;
 - (void)_cancelOutstandingChecks;
 - (void)webPlugInContainerShowStatus:(id)arg1;
@@ -44,10 +51,6 @@
 - (void)pluginView:(id)arg1 receivedError:(id)arg2;
 - (void)pluginViewFinishedLoading:(id)arg1;
 - (void)pluginViewCreated:(id)arg1;
-- (id)initWithDocumentView:(id)arg1;
-- (id)webFrame;
-- (void)setDataSource:(id)arg1;
-- (id)webView;
 - (void)dealloc;
 
 @end

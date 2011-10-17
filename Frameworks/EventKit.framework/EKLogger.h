@@ -23,27 +23,27 @@
 @property int logLevel;
 @property int outputLevel;
 @property int maxLogFiles;
-@property(retain) NSDate * lastStatDate;
 @property(retain) NSFileHandle * fh;
+@property(retain) NSDate * lastStatDate;
 
 
-- (void)dealloc;
-- (int)logLevel;
-- (void)setLogLevel:(int)arg1;
-- (void)setOutputLevel:(int)arg1;
-- (int)maxLogFiles;
-- (id)_logFilePathWithNumber:(int)arg1;
-- (void)_openLogFile;
-- (void)_closeLogFile;
-- (void)_rollLogs;
-- (void)_statFileIfNecessaryForRollingCheck;
 - (id)lastStatDate;
+- (int)maxLogFiles;
+- (void)setOutputLevel:(int)arg1;
+- (void)setLogLevel:(int)arg1;
+- (void)_statFileIfNecessaryForRollingCheck;
+- (void)_rollLogs;
 - (void)setLastStatDate:(id)arg1;
+- (void)_openLogFile;
 - (id)fh;
 - (void)setFh:(id)arg1;
-- (id)initWithPrefix:(id)arg1 logPath:(id)arg2 logName:(id)arg3;
-- (void)setMaxLogFiles:(int)arg1;
+- (id)_logFilePathWithNumber:(int)arg1;
+- (void)_closeLogFile;
 - (void)logWithFileName:(const char *)arg1 functionName:(const char *)arg2 lineNumber:(int)arg3 level:(int)arg4 format:(id)arg5 arguments:(void*)arg6;
+- (void)setMaxLogFiles:(int)arg1;
+- (id)initWithPrefix:(id)arg1 logPath:(id)arg2 logName:(id)arg3;
+- (int)logLevel;
 - (int)outputLevel;
+- (void)dealloc;
 
 @end

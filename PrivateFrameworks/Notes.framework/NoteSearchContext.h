@@ -13,9 +13,10 @@
 @property(readonly) struct __CXQuery { }* query;
 
 
+- (BOOL)nextSearchResults:(id*)arg1 includePrevious:(BOOL)arg2;
+- (id)initWithSearchTerms:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 - (struct __CXQuery { }*)query;
 - (void)dealloc;
-- (id)initWithSearchTerms:(id)arg1 context:(id)arg2;
-- (BOOL)nextSearchResults:(id*)arg1 includePrevious:(BOOL)arg2;
 
 @end

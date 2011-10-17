@@ -4,7 +4,7 @@
 
 @class <NSObject>, MPAVController, NSDictionary;
 
-@interface MPQueueFeeder : AVQueueFeeder  {
+@interface MPQueueFeeder : NSObject <AVPlaylistFeeder> {
     MPAVController *_avController;
     struct __CFSet { } *_itemsWithReferencesToClear;
     unsigned int _repeatType;
@@ -17,60 +17,65 @@
 }
 
 @property(readonly) Class itemClass;
-@property(retain,readonly) NSDictionary * preferredLanguages;
+@property BOOL fullScreenPlaybackQueue;
+@property(readonly) NSDictionary * preferredLanguages;
 @property(readonly) BOOL trackChangesCanEndPlayback;
+@property(retain) <NSObject> * representedObject;
+@property BOOL isSourceChangeInProgress;
+@property MPAVController * AVController;
 @property(readonly) unsigned int realRepeatType;
 @property(readonly) unsigned int realShuffleType;
-@property BOOL isSourceChangeInProgress;
-@property BOOL fullScreenPlaybackQueue;
-@property(retain) <NSObject> * representedObject;
-@property unsigned int shuffleType;
 @property unsigned int repeatType;
-@property MPAVController * AVController;
+@property unsigned int shuffleType;
 
 + (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2 feederClass:(Class)arg3;
 
+- (id)representedObject;
+- (void)setRepresentedObject:(id)arg1;
+- (void)setFullScreenPlaybackQueue:(BOOL)arg1;
+- (BOOL)fullScreenPlaybackQueue;
+- (void)setShuffleType:(unsigned int)arg1;
+- (void)setRepeatType:(unsigned int)arg1;
+- (void)setAVController:(id)arg1;
+- (id)AVController;
+- (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
+- (unsigned int)realShuffleType;
+- (unsigned int)realRepeatType;
+- (BOOL)trackChangesCanEndPlayback;
+- (unsigned int)itemTypeForIndex:(unsigned int)arg1;
+- (BOOL)shouldBeginPlaybackOfItem:(id)arg1 error:(id*)arg2;
+- (id)errorResolverForItem:(id)arg1;
+- (void)commitSourceChangeWithStartQueueIndex:(unsigned int)arg1;
+- (void)beginSourceChange;
+- (BOOL)reloadWithDataSource:(id)arg1;
+- (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
+- (void)setNextStartTime:(double)arg1 forIndex:(unsigned int)arg2;
+- (void)_fixNextStartTimesByInsertingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)assumeOwnershipOfItems:(id)arg1;
+- (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;
+- (void)addReferenceToItem:(id)arg1;
+- (Class)itemClass;
+- (BOOL)_canPurgeNextStartTimes;
+- (BOOL)isSourceChangeInProgress;
+- (void)_fixNextStartTimesByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (unsigned int)shuffleType;
+- (unsigned int)repeatType;
+- (void)invalidateQueueCaches;
+- (void)setIsSourceChangeInProgress:(BOOL)arg1;
+- (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
+- (id)localizedPositionInPlaylistString:(id)arg1;
+- (void)clearReferencesToItem:(id)arg1;
+- (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (id)preferredLanguages;
 - (void)dealloc;
 - (id)itemForIndex:(unsigned int)arg1;
-- (void)setRepeatType:(unsigned int)arg1;
 - (id)playbackInfoAtIndex:(unsigned int)arg1;
-- (void)setNextStartTime:(double)arg1 forIndex:(unsigned int)arg2;
-- (id)AVController;
-- (void)_fixNextStartTimesByInsertingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)_fixNextStartTimesByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)invalidateQueueCaches;
-- (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
-- (BOOL)reloadWithDataSource:(id)arg1;
-- (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
-- (void)beginSourceChange;
-- (void)commitSourceChangeWithStartQueueIndex:(unsigned int)arg1;
-- (id)errorResolverForItem:(id)arg1;
-- (BOOL)shouldBeginPlaybackOfItem:(id)arg1 error:(id*)arg2;
-- (Class)itemClass;
-- (unsigned int)itemTypeForIndex:(unsigned int)arg1;
-- (BOOL)trackChangesCanEndPlayback;
-- (void)addReferenceToItem:(id)arg1;
-- (unsigned int)realRepeatType;
-- (unsigned int)realShuffleType;
-- (void)contentsDidChangeByInsertingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (unsigned int)numberOfPaths;
+- (id)pathAtIndex:(unsigned int)arg1;
 - (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
-- (BOOL)_canPurgeNextStartTimes;
-- (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;
-- (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
-- (BOOL)isSourceChangeInProgress;
-- (void)setIsSourceChangeInProgress:(BOOL)arg1;
-- (BOOL)fullScreenPlaybackQueue;
-- (void)setFullScreenPlaybackQueue:(BOOL)arg1;
-- (unsigned int)shuffleType;
-- (void)setShuffleType:(unsigned int)arg1;
-- (unsigned int)repeatType;
-- (void)setAVController:(id)arg1;
-- (void)clearReferencesToItem:(id)arg1;
-- (id)localizedPositionInPlaylistString:(id)arg1;
-- (id)copyRawItemAtIndex:(unsigned int)arg1;
-- (void)setRepresentedObject:(id)arg1;
-- (id)representedObject;
+- (unsigned int)itemCount;
+- (void)setMix:(id)arg1;
+- (id)mix;
 
 @end

@@ -9,13 +9,13 @@
 
 + (void)initialize;
 
-- (unsigned int)hash;
-- (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)getValue:(void*)arg1;
-- (id)description;
-- (BOOL)isEqualToValue:(id)arg1;
-- (const char *)objCType;
 - (const void*)_value;
+- (BOOL)isEqualToValue:(id)arg1;
+- (void)getValue:(void*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (const char *)objCType;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

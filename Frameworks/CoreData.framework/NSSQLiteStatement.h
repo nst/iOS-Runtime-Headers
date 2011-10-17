@@ -8,9 +8,9 @@
 
 
 - (void)finalize;
-- (void)dealloc;
 - (void)setCachedSQLiteStatement:(struct sqlite3_stmt { }*)arg1;
 - (void)clearCaches;
 - (struct sqlite3_stmt { }*)cachedSQLiteStatement;
+- (void)dealloc;
 
 @end

@@ -6,27 +6,27 @@
 
 @interface GMMKmlInfo : PBCodable  {
     GMMDocumentInfo *_sourceDocument;
-    BOOL _isUserCreated;
     BOOL _hasIsUserCreated;
+    BOOL _isUserCreated;
 }
 
 @property(readonly) BOOL hasSourceDocument;
-@property(readonly) BOOL hasIsUserCreated;
-@property BOOL isUserCreated;
 @property(retain) GMMDocumentInfo * sourceDocument;
+@property BOOL hasIsUserCreated;
+@property BOOL isUserCreated;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasIsUserCreated:(BOOL)arg1;
+- (BOOL)hasIsUserCreated;
+- (id)sourceDocument;
+- (BOOL)isUserCreated;
 - (BOOL)hasSourceDocument;
 - (void)setIsUserCreated:(BOOL)arg1;
 - (void)setSourceDocument:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (id)sourceDocument;
-- (BOOL)hasIsUserCreated;
-- (BOOL)isUserCreated;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

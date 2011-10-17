@@ -11,21 +11,20 @@
 + (id)sharedLoopbackService;
 
 - (int)unreadCount;
-- (void)dealloc;
-- (void)addMessageToStore:(id)arg1 incrementUnreadCount:(BOOL)arg2;
+- (id)conversationSummaries:(id)arg1 groupIDs:(id)arg2;
 - (void)_reallySendMessage:(id)arg1;
+- (void)addMessageToStore:(id)arg1 incrementUnreadCount:(BOOL)arg2;
 - (void)_receiveMessageForMessage:(id)arg1;
-- (int)unreadConversationCount;
-- (BOOL)supportsMediaAttachments;
-- (id)newMessageWithComposition:(id)arg1 forConversation:(id)arg2;
-- (id)lookupRecipientsForConversation:(id)arg1;
-- (id)messagesForConversation:(id)arg1 limit:(int)arg2 moreToLoad:(BOOL*)arg3;
-- (BOOL)dbFull;
 - (int)unreadCountForConversation:(id)arg1;
-- (int)createConversationWithRecipients:(id)arg1;
-- (id)conversationSummaries:(id*)arg1 groupIDs:(id*)arg2;
-- (void)fixupNames;
 - (id)placeholderMessageForConversation:(id)arg1 withDate:(id)arg2;
+- (void)messagesForConversation:(id)arg1;
+- (BOOL)supportsMediaAttachments;
+- (BOOL)dbFull;
+- (id)lookupRecipientsForConversation:(id)arg1;
+- (id)createConversationWithRecipients:(id)arg1;
+- (int)unreadConversationCount;
+- (id)newMessageWithComposition:(id)arg1 forConversation:(id)arg2;
 - (void)sendMessage:(id)arg1;
+- (void)dealloc;
 
 @end

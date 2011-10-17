@@ -10,13 +10,13 @@
 
 + (float)defaultHeight;
 
-- (void)layoutSubviews;
+- (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
+- (id)newVolumeSlider;
+- (void)_layoutComplexParts;
+- (void)_layoutBasicParts;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 - (id)init;
 - (void)dealloc;
-- (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
-- (id)createVolumeSlider;
-- (void)_layoutBasicParts;
-- (void)_layoutComplexParts;
 
 @end

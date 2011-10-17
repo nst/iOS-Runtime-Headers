@@ -10,6 +10,9 @@
 }
 
 
+- (BOOL)classAllowed:(Class)arg1;
+- (void)setAllowedClasses:(id)arg1;
+- (id)allowedClasses;
 - (void)dealloc;
 
 @end

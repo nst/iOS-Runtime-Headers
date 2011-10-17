@@ -14,39 +14,39 @@
     int mWidth;
 }
 
-+ (id)hashKeyFor:(id)arg1;
 + (id)resourceTypeToMIME:(int)arg1;
 + (id)resourceTypeToExtension:(int)arg1;
++ (id)hashKeyFor:(id)arg1;
 
-- (unsigned int)pageCount;
-- (void)setPageCount:(unsigned int)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setIsThumbnail:(BOOL)arg1;
-- (BOOL)isProgressive;
-- (void)pushText:(id)arg1 toPath:(id)arg2;
-- (id)addResourceForDrawable:(id)arg1 withType:(int)arg2 drawable:(id)arg3;
-- (void)closeResourceAtPath:(id)arg1;
-- (BOOL)isThumbnail;
-- (void)addCssStyle:(id)arg1 withName:(id)arg2;
-- (void)pushData:(id)arg1 toPath:(id)arg2;
-- (id)addResource:(id)arg1 withType:(int)arg2;
 - (id)addResource:(id)arg1 withName:(id)arg2;
+- (id)addResourceForDrawable:(id)arg1 withType:(int)arg2 drawable:(id)arg3;
 - (id)cachedPathForDrawable:(id)arg1;
-- (void)restartProgressiveMappingOnPath:(id)arg1;
-- (BOOL)progressiveMappingIsPausedOnPath:(id)arg1;
 - (int)resourceCount;
 - (id)addCssStyle:(id)arg1;
+- (void)addCssStyle:(id)arg1 withName:(id)arg2;
 - (id)cssStylesheetString;
 - (void)setResourcePathPrefix:(id)arg1;
 - (id)resourcePathPrefix;
 - (id)appendResourcePathToName:(id)arg1;
-- (void)setHTMLHeight:(int)arg1;
-- (void)setHTMLWidth:(int)arg1;
+- (BOOL)isProgressive;
+- (void)pushData:(id)arg1 toPath:(id)arg2;
+- (id)addResource:(id)arg1 withType:(int)arg2;
+- (BOOL)progressiveMappingIsPausedOnPath:(id)arg1;
 - (void)pauseProgressiveMappingOnPath:(id)arg1;
+- (void)restartProgressiveMappingOnPath:(id)arg1;
+- (void)setHTMLWidth:(int)arg1;
+- (void)setHTMLHeight:(int)arg1;
+- (void)pushText:(id)arg1 toPath:(id)arg2;
 - (void)pushCssToPath:(id)arg1;
 - (void)commitDataAtPath:(id)arg1;
+- (void)closeResourceAtPath:(id)arg1;
+- (BOOL)isThumbnail;
+- (void)setIsThumbnail:(BOOL)arg1;
 - (id)newResourceWithName:(id)arg1;
 - (id)newResourceWithType:(int)arg1;
+- (void)setPageCount:(unsigned int)arg1;
+- (unsigned int)pageCount;
+- (id)init;
+- (void)dealloc;
 
 @end

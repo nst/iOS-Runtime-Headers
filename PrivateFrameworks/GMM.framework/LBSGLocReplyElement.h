@@ -10,29 +10,26 @@
     NSMutableArray *_deviceLocations;
 }
 
-@property(readonly) BOOL hasLocation;
-@property(readonly) int deviceLocationsCount;
-@property(retain) NSMutableArray * deviceLocations;
-@property(retain) LBSGLocation * location;
 @property int status;
+@property(readonly) BOOL hasLocation;
+@property(retain) LBSGLocation * location;
+@property(retain) NSMutableArray * deviceLocations;
 
 
 - (void)setStatus:(int)arg1;
-- (id)dictionaryRepresentation;
-- (void)setLocation:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)location;
+- (BOOL)readFrom:(id)arg1;
 - (id)deviceLocations;
-- (int)deviceLocationsCount;
-- (void)setDeviceLocation:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)deviceLocationAtIndex:(unsigned int)arg1;
+- (unsigned int)deviceLocationsCount;
 - (void)addDeviceLocation:(id)arg1;
 - (void)setDeviceLocations:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)hasLocation;
+- (void)writeTo:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)location;
 - (int)status;
+- (id)description;
+- (void)dealloc;
 
 @end

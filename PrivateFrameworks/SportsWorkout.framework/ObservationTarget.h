@@ -7,14 +7,14 @@
     SEL _selector;
 }
 
-@property SEL selector;
 @property BOOL isActive;
+@property SEL selector;
 
 
-- (void)setSelector:(SEL)arg1;
 - (BOOL)isActive;
-- (SEL)selector;
 - (void)setIsActive:(BOOL)arg1;
+- (SEL)selector;
+- (void)setSelector:(SEL)arg1;
 - (id)description;
 
 @end

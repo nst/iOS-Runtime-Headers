@@ -13,9 +13,9 @@
 
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (id)init;
 - (void)dealloc;
-- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)removeTextFieldDelegate:(id)arg1;
 - (int)numberOfTextFieldDelegates;
 - (void)addTextFieldDelegate:(id)arg1;

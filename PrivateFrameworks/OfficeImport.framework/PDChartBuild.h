@@ -7,7 +7,8 @@
 }
 
 
-- (int)type;
 - (id)initWithBuildType:(int)arg1;
+- (int)type;
+- (void)setType:(int)arg1;
 
 @end

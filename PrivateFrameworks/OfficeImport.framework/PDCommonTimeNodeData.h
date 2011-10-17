@@ -26,15 +26,6 @@
 }
 
 
-- (void)setRepeatCount:(int)arg1;
-- (double)duration;
-- (int)type;
-- (void)setType:(int)arg1;
-- (double)speed;
-- (id)init;
-- (void)dealloc;
-- (void)setDuration:(double)arg1;
-- (void)setSpeed:(double)arg1;
 - (id)startTimeConditions;
 - (void)setStartTimeConditions:(id)arg1;
 - (id)endTimeConditions;
@@ -47,25 +38,34 @@
 - (void)setIterate:(id)arg1;
 - (BOOL)hasType;
 - (BOOL)hasPresetClass;
-- (int)animationPresetClass;
 - (void)setAnimationPresetClass:(int)arg1;
 - (int)presetSubType;
 - (void)setPresetSubType:(int)arg1;
 - (int)presetId;
 - (void)setPresetId:(int)arg1;
-- (int)repeatCount;
 - (int)repeatDuration;
 - (void)setRepeatDuration:(int)arg1;
 - (BOOL)hasRestartType;
-- (int)restartType;
 - (void)setRestartType:(int)arg1;
 - (BOOL)hasDuration;
-- (double)acceleration;
 - (void)setAcceleration:(double)arg1;
 - (double)deceleration;
 - (void)setDeceleration:(double)arg1;
 - (void)setGroupIdValue:(int)arg1;
-- (id)groupId;
+- (int)animationPresetClass;
+- (int)restartType;
 - (void)setGroupId:(id)arg1;
+- (id)groupId;
+- (double)duration;
+- (void)setDuration:(double)arg1;
+- (double)speed;
+- (void)setSpeed:(double)arg1;
+- (int)repeatCount;
+- (double)acceleration;
+- (int)type;
+- (void)setRepeatCount:(int)arg1;
+- (void)setType:(int)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -15,10 +15,10 @@
 }
 
 
-- (id)initWithTitle:(id)arg1 childCount:(int)arg2 rowCountBeforeGroup:(int)arg3 isRadioGroup:(BOOL)arg4;
-- (int)childCount;
-- (int)rowCountBeforeGroup;
 - (int)tableRowForRow:(int)arg1;
+- (int)rowCountBeforeGroup;
+- (int)childCount;
+- (id)initWithTitle:(id)arg1 childCount:(int)arg2 rowCountBeforeGroup:(int)arg3 isRadioGroup:(BOOL)arg4;
 - (id)title;
 - (void)dealloc;
 

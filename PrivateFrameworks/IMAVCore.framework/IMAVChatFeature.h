@@ -8,20 +8,20 @@
     IMAVChat *_avChat;
 }
 
-@property(setter=setAVChat:) IMAVChat * avChat;
+@property IMAVChat * avChat;
 
 
-- (id)avChat;
 - (void)dealloc;
-- (unsigned int)addStatusForIMHandle:(id)arg1 asVideo:(BOOL)arg2 ardRole:(int)arg3;
-- (id)initWithAVChat:(id)arg1;
-- (void)delegateChangedTo:(id)arg1;
-- (BOOL)hasAddableParticipantsOtherwiseStatus:(unsigned int*)arg1;
-- (void)participantRemoved:(id)arg1;
-- (void)participantInvited:(id)arg1;
 - (void)conferenceEndedWithReason:(unsigned int)arg1 andError:(int)arg2;
+- (void)participantInvited:(id)arg1;
+- (void)participantRemoved:(id)arg1;
+- (unsigned int)addStatusForIMHandle:(id)arg1 asVideo:(BOOL)arg2 ardRole:(int)arg3;
+- (BOOL)hasAddableParticipantsOtherwiseStatus:(unsigned int*)arg1;
+- (void)delegateChangedTo:(id)arg1;
+- (id)initWithAVChat:(id)arg1;
 - (void)participant:(id)arg1 changedFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
 - (void)setAVChat:(id)arg1;
 - (BOOL)handleGenericAVMessageFromParticipant:(id)arg1 type:(unsigned int)arg2 userInfo:(id)arg3;
+- (id)avChat;
 
 @end

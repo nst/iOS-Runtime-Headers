@@ -2,70 +2,55 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCameraFlashLabelView, UIImage, UIImageView, <PLCameraFlashButtonDelegate>, PLSpacerView;
+@class UIImageView, <PLCameraFlashButtonDelegate>, PLCameraFlashButtonSpacerView, PLCameraOverlayButtonLabel;
 
-@interface PLCameraFlashButton : PLReorientingButton <UIAlertViewDelegate> {
-    PLCameraFlashLabelView *_warningIndicatorLabel;
-    PLCameraFlashLabelView *_autoLabel;
-    PLCameraFlashLabelView *_onLabel;
-    PLCameraFlashLabelView *_offLabel;
-    PLCameraFlashLabelView *_hdrLabel;
-    PLSpacerView *_hdrIconStrip;
-    PLSpacerView *_spacer1;
-    PLSpacerView *_spacer2;
-    PLSpacerView *_spacer3;
-    PLSpacerView *_spacer4;
-    UIImage *_flashImage;
-    UIImage *_hdrImage;
-    UIImageView *_leftImageView;
-    UIImageView *_rightImageView;
+@interface PLCameraFlashButton : PLReorientingButton  {
     int _flashMode;
-    BOOL _enabled;
-    BOOL _showsWarningIndicator;
-    BOOL _showingAllModes;
-    BOOL _hideAuto;
-    BOOL _hideHDR;
+    BOOL _isExpanded;
+    float _fixedLeftWidth;
+    float _fixedRightWidth;
+    UIImageView *_flashIconView;
+    PLCameraOverlayButtonLabel *_autoLabel;
+    PLCameraOverlayButtonLabel *_onLabel;
+    PLCameraOverlayButtonLabel *_offLabel;
+    PLCameraOverlayButtonLabel *_currentLabel;
+    UIImageView *_warningImageView;
+    PLCameraFlashButtonSpacerView *_spacer1;
+    PLCameraFlashButtonSpacerView *_spacer2;
     <PLCameraFlashButtonDelegate> *_delegate;
+    BOOL autoHidden;
+    BOOL showWarningIndicator;
 }
 
-@property int flashMode;
-@property BOOL enabled;
-@property BOOL showsWarningIndicator;
-@property BOOL hideAuto;
-@property BOOL hideHDR;
 @property <PLCameraFlashButtonDelegate> * delegate;
+@property int flashMode;
+@property(getter=isAutoHidden) BOOL autoHidden;
+@property(getter=isShowingWarningIndicator) BOOL showWarningIndicator;
+@property(getter=isExpanded,readonly) BOOL expanded;
 
-+ (void)_initializeSafeCategory;
 
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)enabled;
-- (BOOL)isExpanded;
-- (void)layoutSubviews;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (BOOL)hideAuto;
-- (id)_currentLabel;
-- (BOOL)showsWarningIndicator;
-- (void)_cancelCollapse;
-- (void)_scheduleCollapse;
-- (float)_expandedWidth;
-- (void)_showAllModes;
-- (void)_collapseAndSetMode:(int)arg1 animated:(BOOL)arg2;
-- (void)_collapseAnimated;
-- (void)setHideAuto:(BOOL)arg1;
-- (BOOL)hideHDR;
-- (void)setFlashMode:(int)arg1 notifyDelegate:(BOOL)arg2;
-- (void)setShowsWarningIndicator:(BOOL)arg1;
-- (void)setHideHDR:(BOOL)arg1;
 - (void)collapse;
-- (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
-- (void)_handleSingleTap:(id)arg1;
+- (BOOL)isExpanded;
+- (id)delegate;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)flashMode;
 - (void)setFlashMode:(int)arg1;
-- (void)_accessibilityUpdateCurrentLabel;
-- (BOOL)isAccessibilityElement;
+- (void)_collapseAnimated;
+- (void)_expandAnimated:(BOOL)arg1;
+- (void)_collapseAndSetMode:(int)arg1 animated:(BOOL)arg2;
+- (void)_cancelCollapse;
+- (void)_scheduleCollapse;
+- (BOOL)isAutoHidden;
+- (BOOL)isShowingWarningIndicator;
+- (void)_loadWarningResources;
+- (void)toggleTap:(id)arg1;
+- (float)_currentWidth;
+- (void)setAutoHidden:(BOOL)arg1;
+- (void)setFlashMode:(int)arg1 notifyDelegate:(BOOL)arg2;
+- (void)setShowWarningIndicator:(BOOL)arg1;
+- (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
+- (void)dealloc;
 
 @end

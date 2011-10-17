@@ -21,17 +21,17 @@
 @property int orientation;
 
 
-- (void)main;
+- (void)setDelegate:(id)arg1;
 - (void)setOrientation:(int)arg1;
 - (int)orientation;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (BOOL)generateComposePreview;
 - (void)setGenerateComposePreview:(BOOL)arg1;
 - (void)setMediaObject:(id)arg1;
 - (id)composePreviewResult;
 - (id)previewResult;
+- (void)main;
+- (void)dealloc;
 - (id)mediaObject;
 
 @end

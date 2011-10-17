@@ -14,10 +14,10 @@
 
 
 - (void)finalize;
-- (void)dealloc;
-- (id)right;
-- (id)left;
 - (id)bottom;
+- (id)left;
+- (id)right;
 - (id)top;
+- (void)dealloc;
 
 @end

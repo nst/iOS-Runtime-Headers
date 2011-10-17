@@ -11,16 +11,16 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (id)addRow;
-- (id)tableProperties;
+- (id)masterCellOfPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
+- (id)grid;
+- (id)rowAtIndex:(unsigned int)arg1;
 - (id)cellAtPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
 - (struct OADTMatrixPos { int x1; int x2; })masterPosOfPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
-- (id)masterCellOfPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
-- (void)setParentTextListStyle:(id)arg1;
-- (id)rowAtIndex:(unsigned int)arg1;
-- (id)grid;
+- (id)tableProperties;
+- (id)addRow;
 - (unsigned int)rowCount;
+- (void)setParentTextListStyle:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

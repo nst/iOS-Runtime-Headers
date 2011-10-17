@@ -10,16 +10,16 @@
 }
 
 
-- (void)finalize;
-- (id)string;
-- (id)initWithString:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (unsigned int)length;
 - (id)initWithAttributedString:(id)arg1;
 - (id)initWithString:(id)arg1 attributes:(id)arg2;
+- (void)finalize;
+- (id)_runArrayHoldingAttributes;
 - (id)attributesAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (id)_runArrayHoldingAttributes;
+- (id)initWithString:(id)arg1;
+- (id)string;
+- (unsigned int)length;
+- (id)init;
+- (void)dealloc;
 
 @end

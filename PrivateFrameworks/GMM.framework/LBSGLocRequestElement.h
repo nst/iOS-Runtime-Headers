@@ -4,34 +4,33 @@
 
 @class LBSGGeocodeRequest, LBSGCellularProfile, LBSGLocation;
 
-@interface LBSGLocRequestElement : PBRequest  {
+@interface LBSGLocRequestElement : PBCodable  {
     LBSGCellularProfile *_cellularProfile;
     LBSGLocation *_location;
     LBSGGeocodeRequest *_geocode;
 }
 
 @property(readonly) BOOL hasCellularProfile;
+@property(retain) LBSGCellularProfile * cellularProfile;
 @property(readonly) BOOL hasLocation;
+@property(retain) LBSGLocation * location;
 @property(readonly) BOOL hasGeocode;
 @property(retain) LBSGGeocodeRequest * geocode;
-@property(retain) LBSGLocation * location;
-@property(retain) LBSGCellularProfile * cellularProfile;
 
 
-- (id)dictionaryRepresentation;
-- (void)setLocation:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)location;
+- (BOOL)readFrom:(id)arg1;
+- (id)cellularProfile;
 - (BOOL)hasCellularProfile;
 - (void)setCellularProfile:(id)arg1;
-- (id)cellularProfile;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)setGeocode:(id)arg1;
 - (id)geocode;
 - (BOOL)hasGeocode;
-- (void)setGeocode:(id)arg1;
 - (BOOL)hasLocation;
+- (void)writeTo:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)location;
+- (id)description;
+- (void)dealloc;
 
 @end

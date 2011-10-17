@@ -9,14 +9,14 @@
     SSURLRequestProperties *_urlRequestProperties;
 }
 
-@property(readonly) SSURLRequestProperties * URLRequestProperties;
 @property(readonly) NSString * title;
+@property(readonly) SSURLRequestProperties * URLRequestProperties;
 
 
 - (id)initWithDictionary:(id)arg1;
 - (id)title;
-- (id)init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)dealloc;
 - (id)URLRequestProperties;
 - (id)newViewControllerInSection:(id)arg1;

@@ -2,25 +2,28 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSMutableArray, <CalendarEventLoaderDelegate>, EKEventStore, NSPredicate;
+@class <CalendarEventLoaderDelegate>, NSArray, NSMutableSet, EKEventStore, NSPredicate;
 
 @interface CalendarEventLoader : NSObject  {
     EKEventStore *_store;
     struct CalFilter { } *_filter;
     NSPredicate *_predicate;
     <CalendarEventLoaderDelegate> *_delegate;
-    NSMutableArray *_occurrences;
-    NSMutableArray *_selectedDateOccurrences;
+    NSArray *_occurrences;
+    NSArray *_selectedDateOccurrences;
+    NSMutableSet *_occurrencesAwaitingRefresh;
+    NSMutableSet *_occurrencesAwaitingDeletion;
     struct dispatch_queue_s { } *_queue;
     struct dispatch_queue_s { } *_lock;
     struct dispatch_group_s { } *_group;
     int _seed;
     int _backgroundSeed;
-    NSMutableArray *_backgroundResults;
+    NSArray *_backgroundResults;
     unsigned int _paddingMonthsToLoad;
     BOOL _loadsBlocked;
     BOOL _processingReload;
     NSPredicate *_backgroundPredicate;
+    id _backgroundRequest;
     double _selectedDate;
     struct { 
         int year; 
@@ -64,35 +67,35 @@
 @property <CalendarEventLoaderDelegate> * delegate;
 
 
-- (void)setFilter:(struct CalFilter { }*)arg1;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (id)initWithEventStore:(id)arg1;
 - (struct CalFilter { }*)filter;
-- (void)timeZoneChanged;
+- (void)setFilter:(struct CalFilter { }*)arg1;
+- (id)delegate;
+- (void)addOccurrenceAwaitingDeletion:(id)arg1;
+- (void)addOccurrenceAwaitingRefresh:(id)arg1;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })selectedDate;
+- (void)setSelectedDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 loadMethod:(int)arg2;
+- (id)selectedDateOccurrences:(BOOL)arg1;
+- (void)setPaddingMonthsToLoad:(unsigned int)arg1;
+- (unsigned int)paddingMonthsToLoad;
 - (BOOL)loadsBlocked;
 - (void)setLoadsBlocked:(BOOL)arg1;
-- (unsigned int)paddingMonthsToLoad;
-- (void)setPaddingMonthsToLoad:(unsigned int)arg1;
-- (void)_updatePredicate;
-- (id)selectedDateOccurrences:(BOOL)arg1 loadIsComplete:(BOOL*)arg2;
-- (id)selectedDateOccurrences:(BOOL)arg1;
-- (void)_reloadOccurrences;
-- (void)_setDisplayedDateRange:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 end:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 loadMethod:(int)arg3;
-- (void)displayedDateRange:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg1 end:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg2;
-- (void)setSelectedDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 loadMethod:(int)arg2;
-- (void)_clearOccurrences;
-- (void)_reload:(BOOL)arg1;
-- (void)_notifyDelegateThatOccurrencesDidUpdate;
-- (id)displayedOccurrences:(BOOL)arg1;
-- (id)occurrencesForStartDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 waitForLoad:(BOOL)arg3;
-- (id)occurrencesForDay:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 waitForLoad:(BOOL)arg2;
-- (void)_beginBackgroundLoadForPredicate:(id)arg1;
-- (void)cancelBackgroundLoad;
 - (BOOL)_backgroundLoadCompleted:(id)arg1;
+- (id)occurrencesForStartDate:(id)arg1 endDate:(id)arg2 waitForLoad:(BOOL)arg3;
+- (void)_notifyDelegateThatOccurrencesDidUpdate;
+- (void)cancelBackgroundLoad;
+- (void)_setDisplayedDateRange:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 end:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 loadMethod:(int)arg3;
+- (void)_clearOccurrences;
+- (void)_beginBackgroundLoadForPredicate:(id)arg1;
+- (void)_reloadOccurrences;
 - (BOOL)waitForBackgroundLoad;
+- (id)selectedDateOccurrences:(BOOL)arg1 loadIsComplete:(BOOL*)arg2;
+- (id)occurrencesForDay:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 waitForLoad:(BOOL)arg2;
+- (void)_updatePredicate;
+- (void)_reload:(BOOL)arg1;
 - (void)_eventStoreChanged:(id)arg1;
-- (id)initWithEventStore:(id)arg1;
+- (void)dealloc;
+- (void)timeZoneChanged;
 
 @end

@@ -4,7 +4,7 @@
 
 @class UIButton, UILabel;
 
-@interface DDLinksEventController : UIViewController  {
+@interface DDLinksEventController : UIViewController <EKEventEditViewDelegate> {
     struct __DDResult { } *_result;
     UILabel *_label;
     UIButton *_button;
@@ -12,14 +12,14 @@
 
 
 - (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
-- (id)initWithResult:(struct __DDResult { }*)arg1;
-- (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)viewDidUnload;
 - (id)nibName;
 - (id)nibBundle;
-- (void)viewDidUnload;
-- (void)dealloc;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)didReceiveMemoryWarning;
+- (id)initWithResult:(struct __DDResult { }*)arg1;
+- (void)dealloc;
 - (void)buttonClicked:(id)arg1;
 
 @end

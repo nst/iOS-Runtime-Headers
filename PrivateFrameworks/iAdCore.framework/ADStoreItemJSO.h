@@ -16,37 +16,37 @@
     BOOL _privilegedClient;
 }
 
-@property(getter=isPrivilegedClient) BOOL privilegedClient;
-@property(retain) SSItem * storeItem;
-@property int error;
-@property(copy,readonly) NSArray * previews;
-@property(retain) NSDate * expirationDate;
-@property(copy,readonly) NSArray * offers;
-@property(copy,readonly) NSString * title;
-@property(copy,readonly) NSNumber * adamId;
 @property(retain) WebScriptObject * jsListener;
+@property(readonly) NSNumber * adamId;
+@property(readonly) NSString * title;
+@property(readonly) NSArray * offers;
+@property(retain) NSDate * expirationDate;
+@property(readonly) NSArray * previews;
+@property int error;
+@property(retain) SSItem * storeItem;
+@property(getter=isPrivilegedClient) BOOL privilegedClient;
 
 + (id)scriptingKeys;
 
 - (void)setExpirationDate:(id)arg1;
+- (void)setError:(int)arg1;
+- (void)setStoreItem:(id)arg1;
 - (id)expirationDate;
-- (id)initWithAdamId:(id)arg1;
-- (void)setAdamId:(id)arg1;
-- (void)setOffers:(id)arg1;
-- (void)setPreviews:(id)arg1;
+- (id)storeItem;
 - (id)previews;
-- (id)offers;
 - (id)adamId;
 - (void)setJsListener:(id)arg1;
 - (id)jsListener;
+- (void)setPreviews:(id)arg1;
+- (void)setOffers:(id)arg1;
+- (void)setAdamId:(id)arg1;
+- (id)initWithAdamId:(id)arg1;
 - (BOOL)isPrivilegedClient;
 - (void)setPrivilegedClient:(BOOL)arg1;
-- (void)setStoreItem:(id)arg1;
-- (id)storeItem;
 - (id)title;
-- (void)dealloc;
 - (void)setTitle:(id)arg1;
 - (int)error;
-- (void)setError:(int)arg1;
+- (void)dealloc;
+- (id)offers;
 
 @end

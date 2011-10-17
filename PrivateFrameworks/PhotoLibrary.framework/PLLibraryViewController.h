@@ -2,63 +2,84 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UITableView, PLPhotoLibrary, PLSyncProgressView, NSArray, PLEmptyAlbumView;
+@class UITableView, <PLLibraryViewControllerDelegate>, UIActionSheet, PLSyncProgressView, PLLibraryView, PLEmptyAlbumView, PLPhotosPickerSession, PLLibraryBannerView;
 
-@interface PLLibraryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    UITableView *_tableView;
+@interface PLLibraryViewController : PLAbstractLibraryViewController <UIActionSheetDelegate, PLLibraryTableViewCellEditingDelegate, UITableViewDataSource, UITableViewDelegate, PLPhotosPickerSessionParticipant> {
+    PLLibraryView *_tableView;
     PLEmptyAlbumView *_emptyLibraryView;
     PLSyncProgressView *_syncProgressView;
-    PLPhotoLibrary *_library;
-    NSArray *_albums;
-    int _contentMode;
+    PLLibraryBannerView *_bannerView;
+    UIActionSheet *_deleteAlbumActionSheet;
+    <PLLibraryViewControllerDelegate> *_delegate;
+    unsigned int _renamingAlbumIndex;
+    PLPhotosPickerSession *_currentPickerSession;
     struct { 
-        unsigned int albumsInvalid : 1; 
-        unsigned int visible : 1; 
-        unsigned int filter : 3; 
-        unsigned int syncing : 1; 
-        unsigned int isPhotoStreamslList : 1; 
-        unsigned int reserved : 25; 
-    } _libraryControllerFlags;
+        unsigned int delegateDeterminesAccessoryType : 1; 
+        unsigned int delegateDeterminesEnabledRows : 1; 
+        unsigned int adjustedForKeyboard : 1; 
+        unsigned int endEditingAfterKeyboardDismiss : 1; 
+        unsigned int reserved : 28; 
+    } _lvcFlags;
 }
 
-@property int filter;
-@property BOOL isPhotoStreamsList;
-@property(readonly) int contentMode;
+@property(readonly) UITableView * tableView;
+@property <PLLibraryViewControllerDelegate> * delegate;
+@property(readonly) BOOL allowsEditingAlbums;
+@property(retain) PLPhotosPickerSession * currentPickerSession;
 
++ (void)initialize;
 
-- (void)loadView;
-- (void)viewDidLoad;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)_keyboardDidHide:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)tableView;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)setContentMode:(int)arg1;
+- (id)contentScrollView;
+- (void)_keyboardWillHide:(id)arg1;
+- (void)_keyboardWillShow:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidUnload;
-- (id)contentScrollView;
-- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
-- (void)setFilter:(int)arg1;
-- (int)contentMode;
+- (void)loadView;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)tableView:(id)arg1 targetIndexPathForMoveFromRowAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)applicationDidResume;
+- (id)delegate;
+- (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (BOOL)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)navigateToRevealAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2;
+- (void)setSyncProgressVisible:(BOOL)arg1;
+- (id)syncProgressView;
+- (BOOL)updateInterfaceForDeletedAlbumIndexes:(id)arg1 addedIndexes:(id)arg2 changedIndexes:(id)arg3 needsFullReload:(BOOL)arg4;
+- (void)updateInterfaceForHasContentChange;
+- (void)scrollToAlbumAtIndex:(unsigned int)arg1 animated:(BOOL)arg2 select:(BOOL)arg3;
+- (void)setHiddenAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2;
+- (void)animateBannerThumbnailToAlbum:(struct NSObject { Class x1; }*)arg1 completion:(id)arg2;
+- (void)hideBannerView;
+- (void)showBannerViewWithAssets:(id)arg1;
+- (void)setCurrentPickerSession:(id)arg1;
+- (id)currentPickerSession;
+- (id)tableOffsetKey;
+- (BOOL)_shouldShowAlbumList;
+- (BOOL)allowsEditingAlbums;
+- (void)_logDebuggingStateInfoForChange:(id)arg1;
+- (void)updateNavigationItemButtons;
+- (void)_presentActionSheet:(id)arg1;
+- (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (BOOL)isEnabledRowForAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)loadCurrentConfiguration:(id)arg1;
+- (void)storeCurrentConfiguration:(id)arg1;
+- (void)tableViewCell:(id)arg1 didChangeTextToText:(id)arg2;
+- (void)tableViewCellDidBeginEditingText:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (int)filter;
-- (id)_library;
-- (void)libraryDidChange:(id)arg1;
-- (void)albumDidChange:(id)arg1;
-- (void)setIsPhotoStreamsList:(BOOL)arg1;
-- (BOOL)isPhotoStreamsList;
-- (void)setShowSyncUI:(BOOL)arg1;
-- (void)iTunesSyncDidStart;
-- (void)iTunesSyncDidFinish;
-- (void)didSelectAlbum:(id)arg1;
-- (void)_updateAlbumsIfNecessary;
-- (void)_reloadLibrary;
-- (void)_setAlbums:(id)arg1;
-- (BOOL)_hasContent;
-- (void)_updateInterface;
-- (id)tableOffsetKey;
-- (void)storeCurrentConfiguration:(id)arg1;
-- (void)loadCurrentConfiguration:(id)arg1;
 
 @end

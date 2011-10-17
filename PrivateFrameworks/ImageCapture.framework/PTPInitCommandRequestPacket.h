@@ -10,14 +10,14 @@
 }
 
 
-- (id)initWithInitiatorGUID:(char *)arg1 initiatorFriendlyName:(id)arg2;
 - (const char *)initiatorGUID;
 - (void)setInitiatorGUID:(char *)arg1;
 - (id)initiatorFriendlyName;
 - (void)setInitiatorFriendlyName:(id)arg1;
+- (id)initWithInitiatorGUID:(char *)arg1 initiatorFriendlyName:(id)arg2;
 - (id)contentForTCP;
 - (id)initWithTCPBuffer:(void*)arg1;
-- (void)dealloc;
 - (id)description;
+- (void)dealloc;
 
 @end

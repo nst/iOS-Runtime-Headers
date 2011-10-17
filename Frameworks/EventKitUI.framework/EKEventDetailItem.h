@@ -2,44 +2,44 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEvent, <EKEventDetailItemDelegate>, EKEventStore, EKEventEditItemViewController;
+@class EKEvent, UIViewController<EKEditItemViewControllerProtocol>, <EKEventDetailItemDelegate>, EKEventStore;
 
-@interface EKEventDetailItem : NSObject <EKEventEditItemViewControllerDelegate> {
+@interface EKEventDetailItem : NSObject <EKEditItemViewControllerDelegate> {
     EKEventStore *_store;
     EKEvent *_event;
     <EKEventDetailItemDelegate> *_delegate;
-    EKEventEditItemViewController *_viewController;
+    UIViewController<EKEditItemViewControllerProtocol> *_viewController;
     BOOL _allowsEditing;
     int _cellPosition;
 }
 
-@property int cellPosition;
-@property BOOL allowsEditing;
 @property <EKEventDetailItemDelegate> * delegate;
+@property BOOL allowsEditing;
+@property int cellPosition;
 
 
-- (void)reset;
-- (BOOL)allowsEditing;
-- (void)setAllowsEditing:(BOOL)arg1;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
+- (void)reset;
+- (void)setAllowsEditing:(BOOL)arg1;
+- (BOOL)allowsEditing;
 - (id)delegate;
-- (void)notifyDidStartEditing;
-- (void)notifyDidEndEditing;
-- (int)cellPosition;
-- (int)numberOfSubitems;
-- (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
-- (void)layoutCellsForWidth:(float)arg1 position:(int)arg2;
 - (BOOL)hasDetailViewControllerAtIndex:(unsigned int)arg1;
-- (BOOL)eventEditItemViewControllerCommit:(id)arg1;
+- (void)layoutCellsForWidth:(float)arg1 position:(int)arg2;
+- (int)cellPosition;
 - (void)notifySubitemDidCommit:(int)arg1;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
-- (id)cellForSubitemAtIndex:(int)arg1;
+- (void)notifyDidEndEditing;
+- (BOOL)editItemViewControllerCommit:(id)arg1;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
-- (void)setEvent:(id)arg1 store:(id)arg2;
-- (void)setCellPosition:(int)arg1;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (void)notifyDidStartEditing;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
+- (int)numberOfSubitems;
 - (void)eventViewController:(id)arg1 didSelectSubitem:(int)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (id)cellForSubitemAtIndex:(int)arg1;
+- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (void)setCellPosition:(int)arg1;
+- (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
+- (void)setEvent:(id)arg1 store:(id)arg2;
+- (void)dealloc;
 
 @end

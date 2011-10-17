@@ -22,27 +22,27 @@
 @property(readonly) int version;
 
 
-- (id)initWithPath:(id)arg1 version:(int)arg2;
-- (struct CGImage { }*)createImageForKey:(id)arg1;
-- (struct CGImage { }*)storeImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 draw:(id)arg6;
-- (id)allGroups;
-- (void)removeImagesInGroups:(id)arg1;
-- (int)version;
-- (void)dealloc;
-- (int)setVersion:(int)arg1;
 - (struct sqlite3 { }*)db;
-- (int)imageCount;
-- (id)dbPath;
+- (id)imagePath;
 - (BOOL)findImageWithKey:(id)arg1 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg2;
 - (BOOL)saveImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
 - (struct sqlite3_stmt { }*)findStmt;
+- (void)beginAutoTxn;
 - (struct sqlite3_stmt { }*)saveStmt;
+- (void)createDbAt:(const char *)arg1;
 - (struct sqlite3_stmt { }*)beginStmt;
 - (struct sqlite3_stmt { }*)commitStmt;
-- (void)createDbAt:(const char *)arg1;
-- (void)beginAutoTxn;
+- (int)setVersion:(int)arg1;
+- (void)removeImagesInGroups:(id)arg1;
+- (id)allGroups;
+- (struct CGImage { }*)copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 draw:(id)arg6;
+- (struct CGImage { }*)copyImageForKey:(id)arg1;
 - (void)commitTxn;
-- (id)imagePath;
 - (void)purge;
+- (id)initWithPath:(id)arg1 version:(int)arg2;
+- (int)version;
+- (int)imageCount;
+- (id)dbPath;
+- (void)dealloc;
 
 @end

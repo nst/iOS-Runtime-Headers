@@ -15,14 +15,14 @@
 + (id)_errorWithErrno:(int)arg1 atPath:(id)arg2;
 + (id)filesystemItemRemoveOperationWithPath:(id)arg1;
 
-- (void)main;
-- (id)initWithPath:(id)arg1;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (void)_setFilterUnderbars:(BOOL)arg1;
 - (BOOL)_filtersUnderbars;
 - (void)_setError:(id)arg1;
+- (id)initWithPath:(id)arg1;
+- (id)delegate;
 - (id)error;
+- (void)main;
+- (void)dealloc;
 
 @end

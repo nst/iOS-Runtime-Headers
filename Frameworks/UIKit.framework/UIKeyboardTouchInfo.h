@@ -2,35 +2,39 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBKeyplane, UIKBKey, UITouch;
+@class UIKBTree, UITouch;
 
 @interface UIKeyboardTouchInfo : NSObject  {
     UITouch *_touch;
-    UIKBKey *_key;
-    UIKBKeyplane *_keyplane;
-    UIKBKey *_slidOffKey;
+    UIKBTree *_key;
+    UIKBTree *_keyplane;
+    UIKBTree *_slidOffKey;
     struct CGPoint { 
         float x; 
         float y; 
     } _initialPoint;
+    int _stage;
 }
 
-@property struct CGPoint { float x; float y; } initialPoint;
-@property(retain) UIKBKey * slidOffKey;
-@property(retain) UIKBKeyplane * keyplane;
-@property(retain) UIKBKey * key;
 @property(retain) UITouch * touch;
+@property(retain) UIKBTree * key;
+@property(retain) UIKBTree * keyplane;
+@property(retain) UIKBTree * slidOffKey;
+@property struct CGPoint { float x1; float x2; } initialPoint;
+@property int stage;
 
 
-- (id)key;
-- (void)setTouch:(id)arg1;
-- (struct CGPoint { float x1; float x2; })initialPoint;
+- (void)setStage:(int)arg1;
+- (int)stage;
 - (void)setInitialPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })initialPoint;
 - (id)slidOffKey;
-- (void)setSlidOffKey:(id)arg1;
-- (void)setKey:(id)arg1;
-- (void)setKeyplane:(id)arg1;
 - (id)keyplane;
+- (void)setSlidOffKey:(id)arg1;
+- (void)setKeyplane:(id)arg1;
+- (void)setKey:(id)arg1;
+- (void)setTouch:(id)arg1;
+- (id)key;
 - (id)touch;
 - (void)dealloc;
 

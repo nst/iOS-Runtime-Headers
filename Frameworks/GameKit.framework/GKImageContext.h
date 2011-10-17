@@ -13,18 +13,19 @@
     struct CGContext { } *_CGContext;
 }
 
-@property(readonly) UIImage * image;
-@property(readonly) struct CGContext { }* CGContext;
+@property struct CGSize { float x1; float x2; } size;
 @property(readonly) float scale;
-@property struct CGSize { float width; float height; } size;
+@property(readonly) struct CGContext { }* CGContext;
+@property(readonly) UIImage * image;
 
 
+- (id)initMaskContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (struct CGContext { }*)CGContext;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 opaque:(BOOL)arg3;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)image;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (float)scale;
 - (struct CGSize { float x1; float x2; })size;
 - (void)dealloc;
-- (float)scale;
 
 @end

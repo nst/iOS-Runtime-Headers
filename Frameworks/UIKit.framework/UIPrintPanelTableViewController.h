@@ -7,26 +7,34 @@
 @interface UIPrintPanelTableViewController : UITableViewController  {
     UIPrintPanelViewController *_printPanelViewController;
     UIButton *_printButton;
-    BOOL _waitingForPrinterLookup;
+    int _rangeRow;
+    int _copiesRow;
+    int _duplexRow;
+    int _paperRow;
+    BOOL _contactingPrinter;
 }
 
 
-- (id)initWithPrintPanelViewController:(id)arg1;
-- (void)showCancelButton;
-- (void)viewDidLoad;
-- (void)updatePageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)updateCopies:(id)arg1;
-- (void)updateDuplex:(id)arg1;
 - (void)_setupPrintButtons;
-- (void)_update;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)updatePageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)updateDuplex:(id)arg1;
+- (void)updateCopies:(id)arg1;
+- (void)showContacting;
+- (void)_update:(BOOL)arg1;
+- (void)setShowContactingPrinter:(BOOL)arg1;
+- (void)clearPrintPanelViewController;
+- (void)showCancelButton;
+- (id)initWithPrintPanelViewController:(id)arg1;
+- (void)_updateSize;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidUnload;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)dealloc;
 
 @end

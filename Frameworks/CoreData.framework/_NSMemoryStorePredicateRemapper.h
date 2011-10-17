@@ -7,8 +7,8 @@
 
 + (id)defaultInstance;
 
-- (void)visitPredicateExpression:(id)arg1;
-- (void)visitPredicate:(id)arg1;
 - (id)createPredicateForFetchFromPredicate:(id)arg1;
+- (void)visitPredicate:(id)arg1;
+- (void)visitPredicateExpression:(id)arg1;
 
 @end

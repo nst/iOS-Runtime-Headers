@@ -12,12 +12,12 @@
 
 + (id)textBox;
 
-- (void)setText:(id)arg1;
-- (id)text;
-- (void)dealloc;
-- (void)setProtection:(id)arg1;
 - (void)setAlignmentInfo:(id)arg1;
 - (id)protection;
+- (void)setProtection:(id)arg1;
 - (id)alignmentInfo;
+- (id)text;
+- (void)setText:(id)arg1;
+- (void)dealloc;
 
 @end

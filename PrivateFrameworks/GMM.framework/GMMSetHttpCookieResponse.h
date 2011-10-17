@@ -6,10 +6,10 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

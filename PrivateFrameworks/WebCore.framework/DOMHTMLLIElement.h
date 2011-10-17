@@ -13,7 +13,7 @@
 
 - (id)type;
 - (int)value;
-- (void)setType:(id)arg1;
 - (void)setValue:(int)arg1;
+- (void)setType:(id)arg1;
 
 @end

@@ -45,41 +45,41 @@
 
 + (void)initialize;
 
-- (void)dealloc;
-- (BOOL)display;
-- (BOOL)_allowInset;
 - (void)_updateOffsets;
+- (BOOL)_allowInset;
+- (void)_flush;
 - (BOOL)_blink:(BOOL)arg1;
 - (void)_flushRealStatus;
-- (void)_flush;
-- (int)displayMode;
 - (void)setCurrentUnread:(BOOL)arg1;
 - (void)setAnyUnread:(BOOL)arg1;
 - (void)setDisplayMode:(int)arg1;
 - (void)setAppToken:(id)arg1;
-- (int)tokenForRouterIndex:(int)arg1 location:(int*)arg2 appToken:(id*)arg3;
-- (int)masterStatusCellIndex;
-- (void)setShowDotsSevenAndEight:(BOOL)arg1;
-- (BOOL)showDotsSevenAndEight;
 - (id)initWithDriver:(id)arg1 mainSize:(int)arg2 statusSize:(int)arg3;
+- (id)newLineDescriptorscriptor;
+- (int)tokenForRouterIndex:(int)arg1 location:(int*)arg2 appToken:(id*)arg3;
 - (BOOL)anyUnread;
 - (BOOL)currentUnread;
+- (BOOL)canPanLeft;
+- (BOOL)canPanRight;
 - (void)setFormatter:(id)arg1;
 - (void)setVirtualStatus:(id)arg1 alignment:(int)arg2;
 - (void)setRealStatus:(id)arg1;
-- (id)createLineDescriptor;
 - (void)setMainSize:(int)arg1;
 - (void)setStatusSize:(int)arg1;
 - (BOOL)getStatusRouterIndex:(int*)arg1 forRawIndex:(int)arg2;
+- (BOOL)panLeft;
 - (id)appToken;
 - (int)firstToken;
+- (BOOL)panRight;
 - (int)lastToken;
 - (void)blinker;
 - (BOOL)needsDisplayFlush;
 - (void)setMasterStatusCellIndex:(int)arg1;
-- (BOOL)panLeft;
-- (BOOL)panRight;
-- (BOOL)canPanRight;
-- (BOOL)canPanLeft;
+- (int)masterStatusCellIndex;
+- (void)setShowDotsSevenAndEight:(BOOL)arg1;
+- (BOOL)showDotsSevenAndEight;
+- (int)displayMode;
+- (BOOL)display;
+- (void)dealloc;
 
 @end

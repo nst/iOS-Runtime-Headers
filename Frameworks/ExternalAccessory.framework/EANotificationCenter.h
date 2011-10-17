@@ -19,8 +19,8 @@
 }
 
 
-- (void)setCallback:(int (*)())arg1 andContext:(void*)arg2 andRunLoop:(struct __CFRunLoop { }*)arg3;
 - (void)notificationCallback;
+- (void)setCallback:(int (*)())arg1 andContext:(void*)arg2 andRunLoop:(struct __CFRunLoop { }*)arg3;
 - (void)_notificationHandler:(id)arg1;
 - (id)init;
 - (void)dealloc;

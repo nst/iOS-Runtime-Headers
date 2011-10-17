@@ -6,11 +6,11 @@
 }
 
 
-- (id)webViewBackgroundColor;
+- (int)modalPresentationStyle;
 - (int)navigationBarActivityIndicatorStyle;
 - (BOOL)actionSheetsUsePopoverStyle;
+- (id)webViewBackgroundColor;
 - (BOOL)webViewIsOpaque;
 - (BOOL)webViewDrawsShadows;
-- (int)modalPresentationStyle;
 
 @end

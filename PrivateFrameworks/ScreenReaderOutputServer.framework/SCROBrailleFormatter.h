@@ -21,28 +21,29 @@
 }
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (int)displayMode;
+- (void)setStatusText:(id)arg1;
+- (id)statusText;
 - (struct __CFArray { }*)chunkArray;
 - (struct __CFDictionary { }*)chunkDictionary;
 - (id)initWithContractionMode:(int)arg1 showEightDot:(BOOL)arg2 showDotsSevenAndEight:(BOOL)arg3;
 - (void)setCurrentUnread:(BOOL)arg1;
 - (void)setAnyUnread:(BOOL)arg1;
 - (void)setDisplayMode:(int)arg1;
-- (void)setStatusText:(id)arg1;
 - (void)setAppToken:(id)arg1;
-- (BOOL)showDotsSevenAndEight;
+- (void)addText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5;
 - (BOOL)anyUnread;
 - (BOOL)currentUnread;
-- (id)statusText;
 - (void)addText:(id)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 token:(int)arg3 focused:(BOOL)arg4;
-- (int)contractionMode;
 - (BOOL)showEightDot;
 - (id)appToken;
 - (int)firstToken;
 - (int)lastToken;
 - (void)translate;
 - (id)deepCopyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)showDotsSevenAndEight;
+- (int)contractionMode;
+- (int)displayMode;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

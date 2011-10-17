@@ -13,12 +13,12 @@
 @property(retain) UIKeyboardCandidate * acceptedCandidate;
 
 
-- (BOOL)isPartial;
-- (void)cancel;
-- (void)dealloc;
 - (id)initWithTIWordSearch:(id)arg1 candidate:(id)arg2 isPartial:(BOOL)arg3;
+- (BOOL)isPartial;
 - (id)acceptedCandidate;
 - (void)setAcceptedCandidate:(id)arg1;
+- (void)cancel;
 - (void)perform;
+- (void)dealloc;
 
 @end

@@ -24,18 +24,17 @@
 @property(retain) AAAccount * account;
 
 
+- (void)verifyWithHandler:(id)arg1;
+- (void)sendVerificationEmail;
+- (void)_validateToken:(id)arg1;
+- (void)_verify;
+- (void)setAccount:(id)arg1;
+- (id)initWithAccount:(id)arg1;
+- (id)account;
+- (void)search:(id)arg1 didFinishWithError:(id)arg2;
+- (BOOL)search:(id)arg1 didFindResults:(id)arg2;
 - (void)cancel;
 - (id)init;
 - (void)dealloc;
-- (void)sendVerificationEmail;
-- (void)verifyWithHandler:(id)arg1;
-- (void)_verify;
-- (void)_validateToken:(id)arg1;
-- (BOOL)search:(id)arg1 didFindResults:(id)arg2;
-- (void)search:(id)arg1 didFinishWithError:(id)arg2;
-- (void)_downloadURLConfiguration:(id)arg1;
-- (void)setAccount:(id)arg1;
-- (id)account;
-- (id)initWithAccount:(id)arg1;
 
 @end

@@ -9,31 +9,24 @@
 }
 
 @property <MKReverseGeocoderDelegate> * delegate;
-@property(readonly) struct { double latitude; double longitude; } coordinate;
+@property(readonly) struct { double x1; double x2; } coordinate;
 @property(readonly) MKPlacemark * placemark;
 @property(getter=isQuerying,readonly) BOOL querying;
 
 
+- (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
 - (void)start;
+- (void)setDelegate:(id)arg1;
+- (struct { double x1; double x2; })coordinate;
+- (id)delegate;
+- (id)placemark;
+- (void)_notifyNoResults;
+- (id)_placemarkFromResponse:(id)arg1;
+- (BOOL)isQuerying;
+- (void)_notifyError:(id)arg1;
+- (void)_notifyResult:(id)arg1;
+- (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)cancel;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)_schedulePlacemarkNotify:(id)arg1;
-- (void)requester:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3;
-- (void)requesterDidFinish:(id)arg1;
-- (id)placemark;
-- (BOOL)isQuerying;
-- (void)_scheduleErrorNotify:(id)arg1;
-- (void)_notifyError:(id)arg1;
-- (void)_notifyNoResults;
-- (void)_notifyResult:(id)arg1;
-- (id)_bestAddressInResponse:(id)arg1;
-- (id)_placemarkWithResponse:(id)arg1;
-- (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
-- (void)requester:(id)arg1 didFailWithError:(id)arg2;
-- (void)requesterDidCancel:(id)arg1;
-- (void)setCoordinate:(struct { double x1; double x2; })arg1;
-- (struct { double x1; double x2; })coordinate;
 
 @end

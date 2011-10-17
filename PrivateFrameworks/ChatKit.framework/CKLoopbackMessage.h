@@ -4,21 +4,21 @@
 
 @interface CKLoopbackMessage : CKMessage  {
     BOOL _isOutgoing;
-    BOOL _isRead;
+    BOOL _isLoopBackRead;
     BOOL _isPlaceholder;
 }
 
 
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (BOOL)isOutgoing;
 - (id)initWithConversation:(id)arg1 text:(id)arg2 date:(id)arg3;
 - (id)initWithConversation:(id)arg1 text:(id)arg2;
 - (id)initPlaceholderConversation:(id)arg1 date:(id)arg2;
-- (void)setOutgoing:(BOOL)arg1;
 - (void)markAsSent;
 - (void)markAsRead;
 - (int)sentCount;
-- (BOOL)hasBeenRead;
+- (BOOL)isRead;
+- (BOOL)isOutgoing;
+- (void)setOutgoing:(BOOL)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 
 @end

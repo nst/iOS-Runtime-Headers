@@ -7,11 +7,11 @@
 
 + (int)_recipientABProperty;
 
-- (id)_unformattedAddress;
 - (id)uncommentedAddress;
+- (id)_unformattedAddress;
+- (id)address;
 - (id)displayString;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (id)address;
 
 @end

@@ -18,23 +18,23 @@
 
 + (id)errorBarWithChart:(id)arg1;
 
-- (int)direction;
-- (void)setDirection:(int)arg1;
-- (int)type;
-- (double)value;
-- (void)setType:(int)arg1;
-- (void)setValue:(double)arg1;
-- (void)dealloc;
-- (void)setValueType:(int)arg1;
-- (void)setMinusValues:(id)arg1;
-- (void)setGraphicProperties:(id)arg1;
-- (id)plusValues;
 - (bool)isNoEndCap;
 - (id)minusValues;
-- (id)initWithChart:(id)arg1;
+- (id)plusValues;
 - (void)setNoEndCap:(bool)arg1;
 - (void)setPlusValues:(id)arg1;
-- (int)valueType;
+- (void)setMinusValues:(id)arg1;
+- (void)setGraphicProperties:(id)arg1;
 - (id)graphicProperties;
+- (id)initWithChart:(id)arg1;
+- (int)valueType;
+- (void)setValueType:(int)arg1;
+- (int)type;
+- (int)direction;
+- (double)value;
+- (void)setValue:(double)arg1;
+- (void)setDirection:(int)arg1;
+- (void)setType:(int)arg1;
+- (void)dealloc;
 
 @end

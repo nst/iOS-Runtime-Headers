@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKGame, GKLeaderboardViewController, GKPlayer, <GKLeaderboardViewControllerDelegate>, GKLeaderboardCategory, <GKLeaderboardCategoryPopoverDelegate>, GKGameDetails, NSString, GKLeaderboardViewControllerPrivate, NSArray;
+@class GKGame, GKLeaderboardViewController, GKPlayer, <GKLeaderboardViewControllerDelegate>, GKLeaderboardCategory, <GKLeaderboardCategoryPopoverDelegate>, NSString, GKLeaderboardViewControllerPrivate, NSArray;
 
 @interface GKLeaderboardCategoryViewController : GKTableViewController  {
     GKGame *_game;
     GKPlayer *_player;
-    GKGameDetails *_details;
     BOOL _hasAggregate;
     NSArray *_categories;
     GKLeaderboardCategory *_aggregateCategory;
@@ -18,58 +17,65 @@
     BOOL _isInPopover;
     <GKLeaderboardCategoryPopoverDelegate> *_delegate;
     NSString *_selectedCategoryID;
+    int _navbarStyle;
 }
 
-@property(copy) NSString * selectedCategoryID;
-@property <GKLeaderboardCategoryPopoverDelegate> * delegate;
-@property BOOL isInPopover;
-@property GKLeaderboardViewController * controllerForDelegate;
-@property <GKLeaderboardViewControllerDelegate> * leaderboardDelegate;
-@property(retain,readonly) GKLeaderboardViewControllerPrivate * privateLeaderboard;
-@property GKLeaderboardViewController * publicLeaderboard;
-@property(retain) GKLeaderboardCategory * aggregateCategory;
-@property(retain) NSArray * categories;
-@property BOOL hasAggregate;
-@property(retain) GKGameDetails * details;
-@property(retain) GKPlayer * player;
 @property(retain) GKGame * game;
+@property(retain) GKPlayer * player;
+@property GKLeaderboardViewController * publicLeaderboard;
+@property(readonly) GKLeaderboardViewControllerPrivate * privateLeaderboard;
+@property <GKLeaderboardViewControllerDelegate> * leaderboardDelegate;
+@property GKLeaderboardViewController * controllerForDelegate;
+@property BOOL isInPopover;
+@property <GKLeaderboardCategoryPopoverDelegate> * delegate;
+@property(copy) NSString * selectedCategoryID;
+@property int navbarStyle;
+@property BOOL hasAggregate;
+@property(retain) NSArray * categories;
+@property(retain) GKLeaderboardCategory * aggregateCategory;
 
 
-- (id)privateLeaderboard;
-- (void)configureCellContents:(id)arg1 category:(id)arg2;
-- (id)selectedCategoryID;
-- (void)setSelectedCategoryID:(id)arg1;
-- (BOOL)isInPopover;
 - (void)setIsInPopover:(BOOL)arg1;
-- (id)publicLeaderboard;
-- (BOOL)hasAggregate;
-- (void)setHasAggregate:(BOOL)arg1;
-- (id)details;
-- (void)setDetails:(id)arg1;
-- (void)_gkRefreshContents;
+- (void)updateNavbarButtons;
+- (int)navbarStyle;
+- (id)privateLeaderboard;
+- (id)tokenImageCategory:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)configureCellContents:(id)arg1 category:(id)arg2;
 - (id)aggregateCategory;
+- (void)setSelectedCategoryID:(id)arg1;
 - (void)setAggregateCategory:(id)arg1;
 - (void)setCategories:(id)arg1;
-- (id)game;
-- (void)setPlayer:(id)arg1;
-- (id)initWithGame:(id)arg1 player:(id)arg2;
-- (void)setPublicLeaderboard:(id)arg1;
-- (void)donePressed:(id)arg1;
-- (id)controllerForDelegate;
-- (void)setControllerForDelegate:(id)arg1;
-- (id)leaderboardDelegate;
-- (void)setLeaderboardDelegate:(id)arg1;
-- (id)player;
-- (void)setGame:(id)arg1;
+- (BOOL)hasAggregate;
 - (id)categories;
-- (void)viewDidLoad;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (void)dealloc;
+- (id)selectedCategoryID;
+- (BOOL)isInPopover;
+- (id)publicLeaderboard;
+- (id)controllerForDelegate;
+- (void)setHasAggregate:(BOOL)arg1;
+- (void)donePressed:(id)arg1;
+- (void)playTapped;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
+- (void)_gkResetContents;
+- (void)setControllerForDelegate:(id)arg1;
+- (void)setLeaderboardDelegate:(id)arg1;
+- (id)leaderboardDelegate;
+- (void)setPublicLeaderboard:(id)arg1;
+- (id)initWithGame:(id)arg1 player:(id)arg2;
+- (void)setNavbarStyle:(int)arg1;
+- (id)game;
+- (void)setGame:(id)arg1;
+- (void)setPlayer:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)updateSelection;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (id)delegate;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)player;
+- (void)dealloc;
 
 @end

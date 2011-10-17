@@ -12,7 +12,7 @@
 
 + (id)audioMix;
 
-- (void)setInputParameters:(id)arg1;
 - (id)inputParameters;
+- (void)setInputParameters:(id)arg1;
 
 @end

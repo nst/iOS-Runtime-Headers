@@ -9,10 +9,11 @@
 @property BOOL loginDisabled;
 
 
-- (BOOL)loginDisabled;
-- (void)setLoginDisabled:(BOOL)arg1;
 - (BOOL)authenticationRequired;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (void)setLoginDisabled:(BOOL)arg1;
+- (BOOL)loginDisabled;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)key;
+- (id)request;
 
 @end

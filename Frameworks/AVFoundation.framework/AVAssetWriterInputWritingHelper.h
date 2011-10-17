@@ -15,18 +15,19 @@
 + (id)keyPathsForValuesAffectingReadyForMoreMediaData;
 
 - (void)finalize;
-- (void)dealloc;
+- (struct __CVPixelBufferPool { }*)pixelBufferPool;
 - (id)initWithConfigurationState:(id)arg1 assetWriterTrack:(id)arg2 error:(id*)arg3;
-- (id)_assetWriterTrack;
+- (void)prepareToEndSession;
+- (BOOL)prepareToFinishWritingReturningError:(id*)arg1;
 - (void)transitionToTerminalStatus:(int)arg1;
 - (BOOL)isReadyForMoreMediaData;
 - (void)requestMediaDataWhenReadyOnQueue:(struct dispatch_queue_s { }*)arg1 usingBlock:(id)arg2;
 - (BOOL)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
-- (BOOL)prepareToFinishWritingReturningError:(id*)arg1;
-- (void)markAsFinished;
 - (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
-- (struct __CVPixelBufferPool { }*)pixelBufferPool;
+- (void)markAsFinished;
+- (id)_assetWriterTrack;
 - (id)initWithConfigurationState:(id)arg1;
 - (int)status;
+- (void)dealloc;
 
 @end

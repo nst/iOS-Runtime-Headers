@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIView, <MKAnnotation>, UICalloutView, NSString, MKSearchResult, UIImage;
+@class UIView, <MKAnnotation>, UICalloutView, NSString, UIImage;
 
 @interface MKAnnotationViewInternal : NSObject  {
     <MKAnnotation> *annotation;
@@ -10,7 +10,6 @@
     UIView *leftCalloutAccessoryView;
     UIView *rightCalloutAccessoryView;
     NSString *reuseIdentifier;
-    MKSearchResult *searchResult;
     UIImage *image;
     unsigned int mapType;
     unsigned int zIndex;

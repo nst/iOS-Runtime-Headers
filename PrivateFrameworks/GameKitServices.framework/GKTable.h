@@ -15,21 +15,21 @@
 @property(readonly) unsigned int count;
 
 
+- (void)removeObjectForKey:(unsigned int)arg1;
 - (void)touchObject:(id)arg1;
 - (void)touchObjectForKey:(unsigned int)arg1;
 - (void)print;
-- (void)lock;
 - (id)allObjects;
-- (void)makeObjectsPerformSelector:(SEL)arg1;
 - (void)unlock;
-- (void)removeObjectForKey:(unsigned int)arg1;
-- (void)removeAllObjects;
-- (void)setObject:(id)arg1 forKey:(unsigned int)arg2;
+- (void)lock;
 - (id)initWithSize:(unsigned long)arg1;
+- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
+- (void)removeAllObjects;
+- (void)makeObjectsPerformSelector:(SEL)arg1;
+- (unsigned long)count;
+- (id)objectForKey:(unsigned int)arg1;
+- (void)setObject:(id)arg1 forKey:(unsigned int)arg2;
 - (id)init;
 - (void)dealloc;
-- (id)objectForKey:(unsigned int)arg1;
-- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
-- (unsigned long)count;
 
 @end

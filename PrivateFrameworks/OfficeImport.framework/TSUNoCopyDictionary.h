@@ -7,22 +7,22 @@
 }
 
 
+- (id)initWithCFDictionary:(struct __CFDictionary { }*)arg1;
+- (void)removeObjectForKey:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)allValues;
-- (id)allKeys;
 - (id)keyEnumerator;
 - (id)objectEnumerator;
-- (void)removeObjectForKey:(id)arg1;
+- (id)allValues;
+- (id)allKeys;
 - (void)removeAllObjects;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)objectForKey:(id)arg1;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (id)init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)dealloc;
-- (id)objectForKey:(id)arg1;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (unsigned int)count;
-- (id)initWithCFDictionary:(struct __CFDictionary { }*)arg1;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 
 @end

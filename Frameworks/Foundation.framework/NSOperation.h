@@ -4,45 +4,48 @@
 
 @interface NSOperation : NSObject  {
     id _private;
-    void *_reserved;
+    int _private1;
 }
 
 @property unsigned int tag;
 
-+ (void)initialize;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)initialize;
 
-- (void)main;
-- (void)setCompletionBlock:(id)arg1;
-- (void)finalize;
-- (void)start;
-- (void)cancel;
-- (void)release;
-- (id)init;
-- (id)retain;
-- (void)dealloc;
-- (unsigned int)retainCount;
-- (BOOL)isCancelled;
-- (BOOL)isConcurrent;
-- (BOOL)isAsynchronous;
-- (int)queuePriority;
-- (void)setQueuePriority:(int)arg1;
-- (double)threadPriority;
-- (void)waitUntilFinishedOrTimeout:(double)arg1;
 - (void)addDependency:(id)arg1;
-- (void)removeDependency:(id)arg1;
-- (id)dependencies;
-- (BOOL)isFinished;
-- (BOOL)isExecuting;
-- (void)waitUntilFinished;
-- (id)_implicitObservationInfo;
-- (void)setObservationInfo:(void*)arg1;
-- (void*)observationInfo;
-- (void)setThreadPriority:(double)arg1;
-- (BOOL)isReady;
 - (id)completionBlock;
-- (void)setTag:(unsigned int)arg1;
-- (unsigned int)tag;
+- (BOOL)isFinished;
+- (BOOL)isConcurrent;
+- (void)start;
+- (void)finalize;
+- (BOOL)isAsynchronous;
+- (id)__;
+- (id)dependencies;
+- (void)removeDependency:(id)arg1;
+- (void)waitUntilFinishedOrTimeout:(double)arg1;
+- (void)setQueuePriority:(int)arg1;
+- (int)queuePriority;
+- (void)setThreadPriority:(double)arg1;
+- (double)threadPriority;
+- (BOOL)isReady;
+- (BOOL)isExecuting;
+- (id)_implicitObservationInfo;
+- (void*)observationInfo;
+- (void)setCompletionBlock:(id)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)setObservationInfo:(void*)arg1;
+- (void)waitUntilFinished;
+- (unsigned int)retainCount;
+- (void)main;
+- (void)cancel;
+- (id)retain;
+- (BOOL)isCancelled;
+- (id)init;
+- (oneway void)release;
+- (void)dealloc;
 - (void)NSOperationAdditions_dealloc;
+- (unsigned int)tag;
+- (void)setTag:(unsigned int)arg1;
 
 @end

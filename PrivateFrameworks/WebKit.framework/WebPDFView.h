@@ -2,9 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
+@class NSString;
+
 @interface WebPDFView : WAKView <WebPDFDocumentView, WebPDFDocumentRepresentation> {
     BOOL dataSourceHasBeenSet;
     struct CGPDFDocument { } *_PDFDocument;
+    NSString *_title;
     struct CGRect { struct CGPoint { 
             float x; 
             float y; 
@@ -14,11 +17,20 @@
         } x2; } *_pageRects;
 }
 
-+ (struct CGColor { }*)shadowColor;
 + (struct CGColor { }*)backgroundColor;
++ (struct CGColor { }*)shadowColor;
 + (id)supportedMIMETypes;
-+ (void)_initializeSafeCategory;
++ (Class)_representationClassForWebFrame:(id)arg1;
 
+- (struct CGPDFDocument { }*)doc;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageNumber:(unsigned int)arg1;
+- (unsigned int)totalPages;
+- (void)setNeedsLayout:(BOOL)arg1;
+- (void)layout;
+- (id)title;
+- (void)setDataSource:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned int)pageNumberForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_pagesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawPage:(struct CGPDFPage { }*)arg1;
 - (void)_checkPDFTitle;
@@ -31,23 +43,6 @@
 - (void)receivedData:(id)arg1 withDataSource:(id)arg2;
 - (void)dataSourceUpdated:(id)arg1;
 - (void)receivedError:(id)arg1 withDataSource:(id)arg2;
-- (unsigned int)totalPages;
-- (void)setNeedsLayout:(BOOL)arg1;
-- (struct CGPDFDocument { }*)doc;
-- (unsigned int)pageNumberForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageNumber:(unsigned int)arg1;
-- (void)layout;
-- (void)setDataSource:(id)arg1;
-- (id)title;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)_accessibilityPages;
-- (BOOL)hasSpaces:(struct CGPDFTextString { }*)arg1;
-- (id)accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1;
-- (int)indexOfAccessibilityElement:(id)arg1;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)accessibilityElementCount;
-- (id)accessibilityContainer;
-- (id)accessibilityRootElement;
 
 @end

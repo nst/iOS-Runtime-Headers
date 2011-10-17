@@ -7,9 +7,9 @@
 
 + (void)initialize;
 
+- (BOOL)sendsPlainTextPasswords;
 - (BOOL)hasEncryption;
 - (id)humanReadableName;
-- (BOOL)sendsPlainTextPasswords;
 - (Class)authenticatorClass;
 - (id)name;
 

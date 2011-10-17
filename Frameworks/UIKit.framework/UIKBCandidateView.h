@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIColor, NSObject, NSMutableArray;
+@class NSArray, UIColor, UIKeyboardCandidateScrollViewController, <UIKeyboardCandidateListDelegate>, NSMutableArray;
 
 @interface UIKBCandidateView : UIKBKeyView <UIKeyboardCandidateList> {
     NSArray *m_candidates;
     NSMutableArray *m_buttons;
-    NSObject *m_delegate;
+    <UIKeyboardCandidateListDelegate> *m_delegate;
+    UIKeyboardCandidateScrollViewController *m_scrollViewController;
     int m_columns;
     int m_candidatesPerColumn;
     int m_candidatesPerPage;
@@ -31,30 +32,30 @@
     BOOL m_respondsToAccept;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (void)showPageAtIndex:(unsigned int)arg1;
-- (void)showPreviousPage;
-- (unsigned int)currentIndex;
-- (id)candidateAtIndex:(unsigned int)arg1;
+- (void)jumpToCompositions;
+- (id).cxx_construct;
+- (void)updateForKeyboard:(id)arg1 key:(id)arg2;
+- (void)nextCandidatesAction;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 key:(id)arg3 state:(int)arg4;
 - (void)selectCandidate:(id)arg1;
-- (void)jumpToCompositions;
-- (void)updateKeyboard:(id)arg1 key:(id)arg2;
-- (void)nextCandidatesAction;
-- (id)currentCandidate;
 - (void)configureKeyboard:(id)arg1;
-- (id)candidateList;
+- (id)candidateAtIndex:(unsigned int)arg1;
+- (id)currentCandidate;
+- (void)showPageAtIndex:(unsigned int)arg1;
+- (void)showCandidateAtIndex:(unsigned int)arg1;
+- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
-- (void)layout;
-- (void)showNextCandidate;
+- (unsigned int)currentIndex;
+- (id)candidateList;
+- (void)showPreviousPage;
 - (void)showNextPage;
 - (void)showPreviousCandidate;
-- (void)setUIKeyboardCandidateListDelegate:(id)arg1;
-- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
-- (void)showCandidateAtIndex:(unsigned int)arg1;
+- (void)showNextCandidate;
+- (void)layout;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)dealloc;
 - (unsigned int)count;
+- (void)dealloc;
 
 @end

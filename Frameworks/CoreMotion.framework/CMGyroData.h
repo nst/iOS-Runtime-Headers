@@ -6,15 +6,15 @@
     id _internal;
 }
 
-@property(readonly) struct { double x; double y; double z; } rotationRate;
+@property(readonly) struct { double x1; double x2; double x3; } rotationRate;
 
 
-- (id)initWithRotationRate:(struct { float x1; float x2; float x3; })arg1 andTimestamp:(double)arg2;
+- (struct { double x1; double x2; double x3; })rotationRate;
 - (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (struct { double x1; double x2; double x3; })rotationRate;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)initWithRotationRate:(struct { float x1; float x2; float x3; })arg1 andTimestamp:(double)arg2;
 
 @end

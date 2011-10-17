@@ -2,48 +2,60 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLAlbumView, NSArray, PLEmptyAlbumView, MLAlbum;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface PLAlbumViewController : UIViewController <PLAlbumViewDataSource, PLAlbumViewDelegate> {
-    MLAlbum *_album;
+@class PLAlbumView, PLEmptyAlbumView, NSObject<PLAssetContainer>;
+
+@interface PLAlbumViewController : UIViewController <PLAlbumViewDataSource, PLAlbumViewDelegate, PLAlbumChangeObserver> {
+    struct NSObject { Class x1; } *_album;
     PLEmptyAlbumView *_emptyAlbumView;
     int _currentFilter;
-    NSArray *_filteredItems;
     BOOL _shouldReloadWhenBecomingVisible;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id viewDidAppearCompletion;
+
 }
 
-@property(readonly) MLAlbum * album;
-@property(readonly) PLAlbumView * albumView;
+@property(readonly) NSObject<PLAssetContainer> * album;
 @property int currentFilter;
+@property(readonly) PLAlbumView * albumView;
+@property(getter=isShowingEmptyAlbumView) BOOL showingEmptyAlbumView;
+@property(copy) id viewDidAppearCompletion;
 
-+ (void)_initializeSafeCategory;
 
+- (struct NSObject { Class x1; }*)album;
+- (id)contentScrollView;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)reloadData;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (id)contentScrollView;
-- (id)init;
-- (void)dealloc;
-- (id)albumView:(id)arg1 imageDataForPhotoAtIndex:(unsigned int)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
-- (unsigned int)numberOfPhotosForAlbumView:(id)arg1;
+- (int)currentFilter;
+- (void)beginAddPhotosSession:(id)arg1;
 - (void)albumViewPreheatImageData:(id)arg1 forImagesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)albumView:(id)arg1 textBadgeForPhotoAtIndex:(unsigned int)arg2;
-- (void)invalidateFilteredItems;
-- (void)showEmptyAlbumView:(BOOL)arg1;
+- (void)albumView:(id)arg1 imageCount:(unsigned int*)arg2 videoCount:(unsigned int*)arg3 otherCount:(unsigned int*)arg4 pendingCount:(unsigned int*)arg5 importOperation:(int*)arg6;
+- (id)albumView:(id)arg1 imageDataForPhotoAtIndex:(unsigned int)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
+- (unsigned int)numberOfPhotosForAlbumView:(id)arg1;
+- (BOOL)isShowingEmptyAlbumView;
+- (id)viewDidAppearCompletion;
+- (void)setShowingEmptyAlbumView:(BOOL)arg1;
 - (unsigned int)filteredCount;
-- (void)albumView:(id)arg1 imageCount:(unsigned int*)arg2 videoCount:(unsigned int*)arg3 otherCount:(unsigned int*)arg4;
-- (id)initWithAlbum:(id)arg1;
-- (id)albumView;
-- (void)libraryDidChange:(id)arg1;
-- (void)albumDidChange:(id)arg1;
-- (id)filteredItems;
-- (id)album;
+- (void)invalidateFilteredItems;
 - (void)setCurrentFilter:(int)arg1;
-- (void)setAlbum:(id)arg1;
-- (int)currentFilter;
-- (unsigned long long)albumView:(id)arg1 accessibilityTraitsForPhotoAtIndex:(unsigned int)arg2;
-- (id)albumView:(id)arg1 accessibilityHintForPhotoAtIndex:(unsigned int)arg2;
-- (id)albumView:(id)arg1 accessibilityLabelForPhotoAtIndex:(unsigned int)arg2;
+- (id)filteredItems;
+- (void)libraryDidChange:(id)arg1;
+- (id)albumView;
+- (void)setViewDidAppearCompletion:(id)arg1;
+- (id)initWithAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)albumDidChange:(id)arg1;
+- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

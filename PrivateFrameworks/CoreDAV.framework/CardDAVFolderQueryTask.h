@@ -6,7 +6,7 @@
 }
 
 
-- (id)initWithSearchTerms:(id)arg1 searchLimit:(unsigned int)arg2 atURL:(id)arg3 appSpecificDataItemClass:(Class)arg4;
 - (void)addFiltersToXMLData:(id)arg1;
+- (id)initWithSearchTerms:(id)arg1 searchLimit:(unsigned int)arg2 atURL:(id)arg3 appSpecificDataItemClass:(Class)arg4;
 
 @end

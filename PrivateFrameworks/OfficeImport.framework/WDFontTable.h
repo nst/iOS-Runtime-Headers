@@ -10,13 +10,13 @@
 }
 
 
+- (id)fontWithName:(id)arg1;
+- (id)fontWithName:(id)arg1 create:(BOOL)arg2;
+- (id)createFontWithName:(id)arg1;
+- (id)fonts;
 - (void)clear;
+- (int)count;
 - (id)init;
 - (void)dealloc;
-- (int)count;
-- (id)fontWithName:(id)arg1;
-- (id)createFontWithName:(id)arg1;
-- (id)fontWithName:(id)arg1 create:(BOOL)arg2;
-- (id)fonts;
 
 @end

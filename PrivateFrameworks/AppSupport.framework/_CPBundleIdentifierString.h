@@ -11,12 +11,12 @@
 }
 
 
+- (void)_loadBundleIdentifierOrProcessName;
+- (id)_initWithExecutablePath:(id)arg1;
+- (BOOL)_isProcessName;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
-- (void)dealloc;
 - (unsigned int)length;
-- (id)_initWithExecutablePath:(id)arg1;
-- (void)_loadBundleIdentifierOrProcessName;
-- (BOOL)_isProcessName;
+- (void)dealloc;
 
 @end

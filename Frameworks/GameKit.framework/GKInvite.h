@@ -15,34 +15,34 @@
     GKPlayer *_invitingPlayer;
 }
 
-@property(retain) GKPlayer * invitingPlayer;
-@property(getter=isCancelled) BOOL cancelled;
-@property(getter=isHosted) BOOL hosted;
 @property(retain) NSString * inviter;
-@property(retain) NSString * message;
-@property(retain) NSDictionary * inviteDictionary;
-@property(retain) NSData * sessionToken;
+@property(getter=isHosted) BOOL hosted;
 @property(retain) NSString * inviteID;
+@property(retain) NSData * sessionToken;
+@property(retain) NSDictionary * inviteDictionary;
+@property(retain) NSString * message;
+@property(getter=isCancelled) BOOL cancelled;
+@property(retain) GKPlayer * invitingPlayer;
 
 + (id)inviteWithDictionary:(id)arg1;
 
-- (id)inviteDictionary;
-- (id)invitingPlayer;
-- (void)setInvitingPlayer:(id)arg1;
 - (BOOL)isHosted;
-- (void)setHosted:(BOOL)arg1;
-- (id)inviter;
-- (void)setInviter:(id)arg1;
-- (void)setInviteDictionary:(id)arg1;
+- (id)inviteDictionary;
 - (void)setSessionToken:(id)arg1;
+- (id)inviter;
+- (id)invitingPlayer;
 - (id)inviteID;
+- (void)setHosted:(BOOL)arg1;
+- (void)setInviter:(id)arg1;
+- (void)setInvitingPlayer:(id)arg1;
+- (void)setInviteDictionary:(id)arg1;
 - (void)setInviteID:(id)arg1;
 - (id)sessionToken;
-- (void)setMessage:(id)arg1;
 - (id)message;
+- (void)setMessage:(id)arg1;
 - (void)setCancelled:(BOOL)arg1;
-- (void)dealloc;
 - (id)description;
 - (BOOL)isCancelled;
+- (void)dealloc;
 
 @end

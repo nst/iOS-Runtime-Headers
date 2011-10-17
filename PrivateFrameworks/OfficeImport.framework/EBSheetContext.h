@@ -10,8 +10,8 @@
 }
 
 
-- (void)dealloc;
-- (id)initWithSheetIndex:(unsigned int)arg1 state:(id)arg2;
 - (bool)loadDelayedNode:(id)arg1;
+- (id)initWithSheetIndex:(unsigned int)arg1 state:(id)arg2;
+- (void)dealloc;
 
 @end

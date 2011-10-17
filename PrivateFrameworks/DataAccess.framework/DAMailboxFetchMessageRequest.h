@@ -14,7 +14,10 @@
 - (id)initRequestForBodyFormat:(int)arg1 withMessageID:(id)arg2 withBodySizeLimit:(int)arg3;
 - (int)bodyFormat;
 - (id)messageID;
-- (void)dealloc;
 - (int)maxSize;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 
 @end

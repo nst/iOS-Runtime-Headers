@@ -7,17 +7,17 @@
     BOOL mIsTypeOverridden;
 }
 
-+ (id)defaultProperties;
++ (id)presetPatternHeader;
 + (id)nameForPresetPatternType:(int)arg1;
 + (id)namedBitmapDataForPresetPatternType:(int)arg1;
-+ (id)presetPatternHeader;
++ (id)defaultProperties;
 
-- (int)type;
-- (void)setType:(int)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)isTypeOverridden;
 - (id)initWithDefaults;
+- (int)type;
+- (void)setType:(int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

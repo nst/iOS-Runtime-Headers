@@ -13,8 +13,8 @@
 @property WBReader * reader;
 
 
-- (void)setCurrentTextType:(int)arg1;
 - (int)currentTextType;
+- (void)setCurrentTextType:(int)arg1;
 - (id)reader;
 - (void)setReader:(id)arg1;
 - (id)initWithClient:(Class)arg1;

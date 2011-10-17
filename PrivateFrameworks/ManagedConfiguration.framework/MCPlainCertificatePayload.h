@@ -20,16 +20,16 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
 - (id)password;
-- (void)dealloc;
-- (id)description;
-- (struct __SecCertificate { }*)copyCertificate;
+- (id)certificateData;
 - (int)dataEncoding;
 - (id)certificateFileName;
+- (struct __SecCertificate { }*)copyCertificate;
 - (BOOL)isIdentity;
-- (BOOL)isSigned;
 - (id)persistentResourceID;
+- (BOOL)isSigned;
 - (id)installationWarnings;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (id)certificateData;
+- (id)description;
+- (void)dealloc;
 
 @end

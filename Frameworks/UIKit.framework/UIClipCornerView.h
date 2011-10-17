@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage;
+@class UIColor, UIImage;
 
 @interface UIClipCornerView : UIView  {
     float _cornerRadius;
@@ -13,6 +13,7 @@
     } _pathOrigin;
     struct CGPath { } *_clipPath;
     UIImage *_backgroundImage;
+    UIColor *_cornerMaskColor;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -34,25 +35,28 @@
     BOOL _useSnapshot;
 }
 
-@property BOOL useSnapshot;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } backgroundImageSubrect;
-@property(retain) UIImage * backgroundImage;
 @property float cornerRadius;
+@property(retain) UIImage * backgroundImage;
+@property(retain) UIColor * cornerMaskColor;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } backgroundImageSubrect;
+@property BOOL useSnapshot;
 
 
-- (void)_updateCornerPath;
-- (void)_updateSnapshot;
-- (id)initWithCornerRadius:(float)arg1 forCorner:(int)arg2;
-- (void)setBackgroundImageSubrect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)useSnapshot;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundImageSubrect;
+- (void)setBackgroundImageSubrect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithCornerRadius:(float)arg1 forCorner:(int)arg2;
+- (void)setCornerMaskColor:(id)arg1;
+- (void)_updateSnapshot;
+- (id)cornerMaskColor;
+- (void)_updateCornerPath;
 - (float)cornerRadius;
-- (id)backgroundImage;
-- (void)setCornerRadius:(float)arg1;
 - (void)setUseSnapshot:(BOOL)arg1;
+- (void)setCornerRadius:(float)arg1;
 - (void)setBackgroundImage:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
+- (id)backgroundImage;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

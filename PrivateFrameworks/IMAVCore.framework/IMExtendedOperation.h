@@ -18,28 +18,28 @@
 
 + (id)runLoopModes;
 
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)start;
-- (void)cancel;
-- (void)setName:(id)arg1;
-- (unsigned int)state;
-- (id)name;
-- (void)dealloc;
-- (void)_setState:(unsigned int)arg1;
-- (BOOL)isConcurrent;
+- (void)setTimeout:(double)arg1;
+- (double)timeout;
 - (BOOL)isFinished;
+- (BOOL)isConcurrent;
+- (void)_setState:(unsigned int)arg1;
+- (void)start;
 - (BOOL)isExecuting;
-- (unsigned int)_maxChildOperationState;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)name;
+- (unsigned int)state;
+- (void)setName:(id)arg1;
+- (void)cancel;
+- (void)dealloc;
+- (void)_stopWithState:(unsigned int)arg1;
 - (unsigned int)_minChildOperationState;
 - (void)_startThread;
 - (void)_threadedMain;
-- (void)createChildOperations;
-- (void)didFinish;
-- (void)_stopWithState:(unsigned int)arg1;
 - (void)_timeout;
-- (void)addChildOperation:(id)arg1;
+- (unsigned int)_maxChildOperationState;
+- (void)didFinish;
 - (void)fail;
-- (double)timeout;
-- (void)setTimeout:(double)arg1;
+- (void)createChildOperations;
+- (void)addChildOperation:(id)arg1;
 
 @end

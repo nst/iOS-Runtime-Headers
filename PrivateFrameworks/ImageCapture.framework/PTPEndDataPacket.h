@@ -11,19 +11,19 @@
 }
 
 
+- (id)data;
 - (id)initWithUSBBuffer:(void*)arg1;
-- (id)contentForTCP;
 - (id)contentForUSB;
-- (void)setOperationCode:(unsigned short)arg1;
 - (id)contentForUSBUsingBuffer:(void*)arg1 capacity:(unsigned long)arg2;
-- (unsigned long)transactionID;
+- (void)setOperationCode:(unsigned short)arg1;
 - (void)setTransactionID:(unsigned long)arg1;
-- (id)initWithTCPBuffer:(void*)arg1;
 - (unsigned short)operationCode;
 - (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 andData:(id)arg3;
-- (id)data;
-- (void)dealloc;
-- (id)description;
+- (id)contentForTCP;
+- (unsigned long)transactionID;
+- (id)initWithTCPBuffer:(void*)arg1;
 - (void)setData:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

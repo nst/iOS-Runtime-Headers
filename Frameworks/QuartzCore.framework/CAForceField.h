@@ -22,27 +22,27 @@
 @property(retain) CALayer * layer;
 @property(retain) CAValueFunction * function;
 
-+ (id)forceField;
 + (id)defaultValueForKey:(id)arg1;
++ (id)forceField;
 
+- (id)valueForKey:(id)arg1;
+- (id)layer;
+- (void)setLayer:(id)arg1;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (id)function;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)valueForKeyPath:(id)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (id)name;
+- (BOOL)isEnabled;
+- (void)setValue:(id)arg1 forKeyPath:(id)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setFunction:(id)arg1;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)setValue:(id)arg1 forKeyPath:(id)arg2;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setName:(id)arg1;
-- (id)valueForKeyPath:(id)arg1;
-- (id)valueForKey:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)name;
-- (id)init;
-- (void)setLayer:(id)arg1;
-- (BOOL)isEnabled;
-- (id)layer;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)function;
 
 @end

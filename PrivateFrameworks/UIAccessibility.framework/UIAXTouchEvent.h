@@ -7,8 +7,9 @@
 
 + (void)_initializeSafeCategory;
 
-- (void)dealloc;
 - (BOOL)_accessibilityHitTestsAnyElement;
+- (id)_accessibilityHitTestStartsAtElement;
+- (void)_setAccessibilityHitTestStartsAtElement:(id)arg1;
 - (void)_setAccessibilityHitTestsAnyElement:(BOOL)arg1;
 
 @end

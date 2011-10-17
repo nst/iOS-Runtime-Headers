@@ -10,11 +10,11 @@
 + (void)initialize;
 
 - (id)valueForKey:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithValues:(id*)arg1 objectID:(id)arg2;
-- (void)_doAttributeDecoding;
 - (const id*)attributeValues;
+- (void)_doAttributeDecoding;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 
 @end

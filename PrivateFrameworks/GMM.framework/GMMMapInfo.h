@@ -8,33 +8,33 @@
     GMMMapPoint *_center;
     int _latitudeSpan;
     int _longitudeSpan;
-    int _zoomLevel;
     BOOL _hasZoomLevel;
+    int _zoomLevel;
 }
 
-@property(readonly) BOOL hasZoomLevel;
-@property int zoomLevel;
-@property int longitudeSpan;
-@property int latitudeSpan;
 @property(retain) GMMMapPoint * center;
+@property int latitudeSpan;
+@property int longitudeSpan;
+@property BOOL hasZoomLevel;
+@property int zoomLevel;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (id)initWithGEOMapRegion:(id)arg1 withZoom:(int)arg2;
+- (id)initWithSearchRequest:(id)arg1;
+- (int)zoomLevel;
+- (void)setHasZoomLevel:(BOOL)arg1;
+- (BOOL)hasZoomLevel;
+- (int)longitudeSpan;
+- (int)latitudeSpan;
+- (void)setLongitudeSpan:(int)arg1;
+- (void)setLatitudeSpan:(int)arg1;
+- (void)setZoomLevel:(int)arg1;
+- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)setCenter:(id)arg1;
 - (id)center;
-- (id)init;
-- (void)dealloc;
 - (id)description;
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasZoomLevel;
-- (void)writeTo:(id)arg1;
-- (void)setLatitudeSpan:(int)arg1;
-- (void)setLongitudeSpan:(int)arg1;
-- (int)latitudeSpan;
-- (int)longitudeSpan;
-- (int)zoomLevel;
-- (void)setZoomLevel:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)initWithRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomLevel:(int)arg2;
+- (void)dealloc;
 
 @end

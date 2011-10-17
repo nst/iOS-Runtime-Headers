@@ -15,10 +15,6 @@
 @property(copy) NSString * width;
 
 
-- (id)width;
-- (void)setWidth:(id)arg1;
-- (id)align;
-- (void)setAlign:(id)arg1;
 - (int)span;
 - (void)setSpan:(int)arg1;
 - (id)ch;
@@ -27,5 +23,9 @@
 - (void)setChOff:(id)arg1;
 - (id)vAlign;
 - (void)setVAlign:(id)arg1;
+- (id)align;
+- (void)setAlign:(id)arg1;
+- (void)setWidth:(id)arg1;
+- (id)width;
 
 @end

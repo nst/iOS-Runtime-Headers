@@ -8,34 +8,26 @@
 }
 
 
-- (id)member:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)intersectSet:(id)arg1;
-- (void)unionSet:(id)arg1;
-- (BOOL)intersectsSet:(id)arg1;
-- (id)allObjects;
-- (BOOL)isEqualToSet:(id)arg1;
-- (id)anyObject;
-- (void)makeObjectsPerformSelector:(SEL)arg1;
+- (id)member:(id)arg1;
 - (Class)classForCoder;
 - (id)objectEnumerator;
-- (void)removeAllObjects;
-- (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithArray:(id)arg1;
-- (void)removeObject:(id)arg1;
 - (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)removeObject:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
-- (unsigned int)count;
-- (void)addObject:(id)arg1;
-- (id)descriptionWithLocale:(id)arg1;
-- (BOOL)isSubsetOfSet:(id)arg1;
 - (id)initWithSet:(id)arg1;
 - (unsigned int)countForObject:(id)arg1;
 - (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
+- (void)getObjects:(id*)arg1 count:(unsigned int)arg2;
+- (id)descriptionWithLocale:(id)arg1;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (void)addObject:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

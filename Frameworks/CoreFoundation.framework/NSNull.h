@@ -8,17 +8,18 @@
 + (id)null;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (oneway void)release;
 - (void)encodeWithCoder:(id)arg1;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
+- (unsigned long)_cfTypeID;
 - (unsigned int)retainCount;
 - (id)description;
-- (unsigned long)_cfTypeID;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
+- (void)dealloc;
 - (id)valueForKey:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)appendJsonStringToString:(id)arg1;
 
 @end

@@ -14,14 +14,14 @@
     UIView *_captiveSubview;
 }
 
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property(retain) UIView * captiveSubview;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInsets;
 
 
-- (id)captiveSubview;
 - (void)setCaptiveSubview:(id)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)captiveSubview;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)layoutSubviews;
 - (id)init;
 - (void)dealloc;

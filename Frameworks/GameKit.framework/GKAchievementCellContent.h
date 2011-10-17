@@ -2,32 +2,21 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSNumber, GKUITheme;
-
 @interface GKAchievementCellContent : GKMultilineCellContentView  {
-    NSNumber *_cellRow;
-    GKUITheme *_theme;
     BOOL _highlighted;
     BOOL _offsetImage;
 }
 
-@property BOOL offsetImage;
-@property(retain) NSNumber * cellRow;
-@property(retain) GKUITheme * theme;
 @property(getter=isHighlighted) BOOL highlighted;
+@property BOOL offsetImage;
 
-+ (id)placeholderImage;
 
-- (void)setCellRow:(id)arg1;
-- (BOOL)offsetImage;
 - (void)setOffsetImage:(BOOL)arg1;
-- (id)cellRow;
+- (BOOL)offsetImage;
 - (void)drawLineIndex:(unsigned int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
-- (void)setHighlighted:(BOOL)arg1;
-- (BOOL)isHighlighted;
-- (id)init;
-- (void)dealloc;
-- (id)theme;
 - (void)setTheme:(id)arg1;
+- (BOOL)isHighlighted;
+- (void)setHighlighted:(BOOL)arg1;
+- (id)init;
 
 @end

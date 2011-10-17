@@ -14,25 +14,25 @@
 }
 
 
-- (void)setColor:(id)arg1;
-- (id)color;
-- (unsigned char)width;
-- (void)setStyle:(int)arg1;
-- (int)style;
-- (BOOL)isEqual:(id)arg1;
-- (void)setWidth:(unsigned char)arg1;
-- (BOOL)frame;
-- (void)setFrame:(BOOL)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setShadow:(BOOL)arg1;
-- (void)setBorder:(id)arg1;
 - (void)setNullBorder;
 - (void)setSingleBlackBorder;
 - (void)setSpace:(unsigned char)arg1;
 - (unsigned char)space;
-- (BOOL)isEqualToBorder:(id)arg1;
 - (BOOL)shadow;
+- (void)setShadow:(BOOL)arg1;
+- (BOOL)isEqualToBorder:(id)arg1;
+- (BOOL)frame;
+- (void)setFrame:(BOOL)arg1;
+- (void)setBorder:(id)arg1;
+- (id)color;
+- (void)setColor:(id)arg1;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)setWidth:(unsigned char)arg1;
+- (unsigned char)width;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

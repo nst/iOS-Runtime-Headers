@@ -9,35 +9,38 @@
     NSArray *arguments;
     NSString *hostName;
     NSString *name;
-    void *reserved;
+    int automaticTerminationOptOutCounter;
 }
 
 + (id)processInfo;
 
-- (id)userName;
+- (void)setProcessName:(id)arg1;
+- (id)environment;
+- (unsigned int)activeProcessorCount;
+- (int)_suddenTerminationDisablingCount;
+- (void)_exitWhenSuddenTerminationEnabledWithStatus:(int)arg1;
+- (void)_exitIfSuddenTerminationEnabledWithStatus:(int)arg1;
+- (void)enableSuddenTermination;
+- (void)disableSuddenTermination;
+- (double)systemUptime;
+- (BOOL)isTranslated;
+- (unsigned long long)physicalMemory;
+- (id)operatingSystemVersionString;
+- (id)operatingSystemName;
+- (id)userFullName;
+- (id)globallyUniqueString;
+- (int)processIdentifier;
+- (void)setArguments:(id)arg1;
+- (unsigned int)operatingSystem;
 - (id)hostName;
+- (unsigned int)processorCount;
 - (id)processName;
-- (void)dealloc;
 - (id)arguments;
 - (id)userHomeDirectory;
-- (id)globallyUniqueString;
-- (id)environment;
-- (void)enableSuddenTermination;
-- (void)setArguments:(id)arg1;
-- (void)setProcessName:(id)arg1;
-- (int)processIdentifier;
-- (id)userFullName;
-- (unsigned int)operatingSystem;
-- (id)operatingSystemName;
-- (id)operatingSystemVersionString;
-- (unsigned int)processorCount;
-- (unsigned int)activeProcessorCount;
-- (unsigned long long)physicalMemory;
-- (BOOL)isTranslated;
-- (double)systemUptime;
-- (void)disableSuddenTermination;
-- (void)_exitIfSuddenTerminationEnabledWithStatus:(int)arg1;
-- (void)_exitWhenSuddenTerminationEnabledWithStatus:(int)arg1;
-- (int)_suddenTerminationDisablingCount;
+- (id)userName;
+- (id)init;
+- (void)dealloc;
+- (void)_disableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
+- (void)_enableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 
 @end

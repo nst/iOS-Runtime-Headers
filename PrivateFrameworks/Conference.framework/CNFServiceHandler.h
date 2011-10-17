@@ -2,44 +2,32 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@interface CNFServiceHandler : NSObject <MCProfileConnectionObserver> {
+@interface CNFServiceHandler : NSObject  {
 }
 
-+ (BOOL)isConnecting;
-+ (BOOL)conferencingIsRestricted;
-+ (BOOL)invitationListener;
-+ (BOOL)conferencingIsRegisteredForAccount:(id)arg1;
-+ (BOOL)conferencingHasValidatedAliasForAccount:(id)arg1;
-+ (void)_configureDaemon;
-+ (void)_accountRegistrationStatusChanged:(id)arg1;
-+ (void)_accountActivationChanged:(id)arg1;
-+ (void)_accountLoginStateChanged:(id)arg1;
-+ (void)_aliasValidationStatusChanged:(id)arg1;
-+ (void)_deviceCapabilityChanged:(id)arg1;
-+ (BOOL)connect:(BOOL)arg1;
-+ (void)_daemonDisconnectedNotification:(id)arg1;
++ (BOOL)disconnect;
++ (BOOL)connect;
++ (id)services;
++ (void)setCapabilities:(unsigned long long)arg1;
 + (void)_daemonConnectedNotification:(id)arg1;
-+ (void)setInvitationListener:(BOOL)arg1;
-+ (void)updateConferencingIsAvailable;
++ (BOOL)isConnected;
++ (unsigned long long)capabilities;
++ (BOOL)conferencingHasValidatedAliasForAccount:(id)arg1;
++ (BOOL)_isValidProcess;
++ (BOOL)conferencingIsRegisteredForAccount:(id)arg1;
++ (void)_availabilityChanged:(id)arg1;
++ (void)_accountRegistrationStatusChanged:(id)arg1;
++ (BOOL)invitationListener;
++ (BOOL)conferencingIsSupported;
++ (void)updateConferenceCapabilitiesForControllerType:(int)arg1;
++ (BOOL)conferencingIsRestricted;
 + (BOOL)isFaceTimeActivated;
++ (BOOL)conferencingIsAvailable;
 + (void)activateFaceTime;
 + (void)deactivateFaceTime;
-+ (BOOL)conferencingIsSupported;
 + (int)activationState;
-+ (BOOL)connect;
-+ (unsigned long long)capabilities;
-+ (void)setCapabilities:(unsigned long long)arg1;
-+ (BOOL)isConnected;
-+ (BOOL)disconnect;
-+ (BOOL)conferencingIsAvailable;
++ (BOOL)connect:(BOOL)arg1;
++ (id)faceTimeSourceAccount;
 
-- (id)_accountDomainForAccount:(id)arg1;
-- (id)services;
-- (void)_handleStatusChanged:(id)arg1;
-- (void)_handlePeopleChanged:(id)arg1;
-- (id)imAccountForAVURL:(id)arg1;
-- (id)availableFaceTimeURLs;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -7,7 +7,7 @@
 }
 
 
-- (void)setSpokes:(int)arg1;
 - (int)spokes;
+- (void)setSpokes:(int)arg1;
 
 @end

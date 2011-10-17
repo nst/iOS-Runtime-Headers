@@ -6,10 +6,11 @@
     int _cornerStyle;
 }
 
++ (float)cornerRadius;
 
-- (id)initForOrientation:(int)arg1 alignment:(int)arg2 style:(int)arg3;
-- (id)_imageForCorner:(int)arg1 withStyle:(int)arg2;
+- (id)_imageForCornerWithStyle:(int)arg1;
 - (void)_addCornersForAlignment:(int)arg1 style:(int)arg2;
+- (id)initForOrientation:(int)arg1 alignment:(int)arg2 style:(int)arg3;
 - (int)cornerStyle;
 
 @end

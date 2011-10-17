@@ -2,45 +2,50 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKFriendRequestComposeViewControllerDelegate>, GKComposeController, NSString;
+@class GKComposeController, <GKFriendRequestComposeViewControllerDelegate>, NSString, NSNumber;
 
-@interface GKFriendRequestComposeViewController : UINavigationController  {
+@interface GKFriendRequestComposeViewController : UINavigationController <GKComposeControllerDelegate> {
     <GKFriendRequestComposeViewControllerDelegate> *_composeViewDelegate;
     GKComposeController *_composeController;
     NSString *_message;
     unsigned int _recipientCount;
 }
 
-@property unsigned int recipientCount;
-@property(retain) NSString * message;
-@property(retain) GKComposeController * composeController;
 @property <GKFriendRequestComposeViewControllerDelegate> * composeViewDelegate;
+@property(retain) GKComposeController * composeController;
+@property(retain) NSString * message;
+@property unsigned int recipientCount;
+@property(retain) NSNumber * rid;
 
 + (unsigned int)maxNumberOfRecipients;
 
-- (id)composeViewDelegate;
-- (unsigned int)recipientCount;
-- (void)prepareForNewRecipients:(id)arg1;
-- (void)addRecipientsWithPlayerIDs:(id)arg1;
-- (void)addRecipientsNonPlayerIDCommon:(id)arg1;
-- (void)addRecipientsWithEmailAddresses:(id)arg1;
-- (void)addRecipientsWithAliases:(id)arg1;
-- (void)sendFinishedMessageToDelegate;
 - (void)setRecipientCount:(unsigned int)arg1;
-- (id)composeController;
+- (unsigned int)recipientCount;
 - (void)setComposeController:(id)arg1;
 - (void)setComposeViewDelegate:(id)arg1;
-- (void)composeControllerAppeared:(id)arg1;
+- (void)addRecipientsWithAliases:(id)arg1;
+- (void)addRecipientsWithEmailAddresses:(id)arg1;
+- (void)addRecipientsWithPlayerIDs:(id)arg1;
+- (void)sendFinishedMessageToDelegateCancelled:(BOOL)arg1;
+- (id)composeViewDelegate;
+- (void)addRecipientsNonPlayerIDCommon:(id)arg1;
+- (void)prepareForNewRecipients:(id)arg1;
+- (id)composeController;
 - (void)composeControllerSendStarted:(id)arg1;
+- (void)composeControllerAppeared:(id)arg1;
 - (void)composeControllerCancelled:(id)arg1;
-- (void)viewDidLoad;
-- (void)setMessage:(id)arg1;
+- (id)rid;
+- (void)setRid:(id)arg1;
+- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (id)message;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)setMessage:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)didReceiveMemoryWarning;
 - (id)init;
 - (void)dealloc;
-- (void)didReceiveMemoryWarning;
 
 @end

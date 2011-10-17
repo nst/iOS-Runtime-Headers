@@ -9,9 +9,9 @@
 
 + (id)sharedClient;
 
+- (void)unregisterForRemoteNotifications;
 - (id)init;
 - (void)dealloc;
-- (void)unregisterForRemoteNotifications;
 - (void)registerForRemoteNotifications;
 - (id)popQueuedNotifications;
 

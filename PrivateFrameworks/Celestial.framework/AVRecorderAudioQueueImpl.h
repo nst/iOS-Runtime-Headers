@@ -37,17 +37,24 @@
 }
 
 
-- (void)deactivate;
 - (BOOL)start;
+- (void)stop;
 - (BOOL)isActive;
+- (void)deactivate;
+- (double)recordedDuration;
+- (id)attributeForKey:(id)arg1;
+- (BOOL)isRecording;
 - (id)init;
 - (void)dealloc;
-- (id)attributeForKey:(id)arg1;
-- (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2 useDB:(BOOL)arg3;
-- (void)copyEncoderCookieToFile;
 - (void)haveABuffer:(struct AudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1 withTimeStamp:(const struct AudioTimeStamp { double x1; unsigned long long x2; double x3; unsigned long long x4; struct SMPTETime { short x_5_1_1; short x_5_1_2; unsigned int x_5_1_3; unsigned int x_5_1_4; unsigned int x_5_1_5; short x_5_1_6; short x_5_1_7; short x_5_1_8; short x_5_1_9; } x5; unsigned int x6; unsigned int x7; }*)arg2 andNumPackets:(unsigned long)arg3 andPacketDescs:(const struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)arg4;
+- (void)copyEncoderCookieToFile;
+- (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2 useDB:(BOOL)arg3;
+- (void)setFilePath:(id)arg1;
+- (id)filePath;
+- (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (id)initWithAttributes:(id)arg1;
 - (BOOL)activate:(id*)arg1;
+- (BOOL)takePhoto;
 - (BOOL)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (float)micVolume;
 - (void)setMicVolume:(float)arg1;
@@ -55,12 +62,5 @@
 - (unsigned int)audioNumDeviceChannels;
 - (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
 - (BOOL)audioCurrentAverageDecibelLevels:(float*)arg1 andPeakDecibelLevels:(float*)arg2;
-- (id)filePath;
-- (void)setFilePath:(id)arg1;
-- (void)stop;
-- (BOOL)isRecording;
-- (double)recordedDuration;
-- (BOOL)takePhoto;
-- (void)setAttribute:(id)arg1 forKey:(id)arg2;
 
 @end

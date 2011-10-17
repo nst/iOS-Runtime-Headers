@@ -5,7 +5,7 @@
 @class MPMediaQueryCriteria, MPMediaQuerySectionInfo, NSMutableArray, MPMediaLibrary;
 
 @interface MPMediaEntityStreamArray : NSArray <NSCopying> {
-    int _entityType;
+    Class _entityClass;
     struct dispatch_queue_s { } *_queue;
     MPMediaQueryCriteria *_queryCriteria;
     MPMediaLibrary *_library;
@@ -25,33 +25,33 @@
     unsigned int _hasStartedLoadingEntities : 1;
 }
 
-@property(copy,readonly) MPMediaQuerySectionInfo * sectionInfo;
+@property int containedMediaTypes;
+@property(readonly) MPMediaQuerySectionInfo * sectionInfo;
 @property(readonly) MPMediaLibrary * library;
 @property(readonly) MPMediaQueryCriteria * queryCriteria;
-@property int containedMediaTypes;
 
 
-- (id)objectAtIndex:(unsigned int)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (unsigned int)count;
-- (id)queryCriteria;
-- (int)containedMediaTypes;
 - (id)library;
-- (void)_commonInitMPMediaEntityStreamArray;
-- (id)sectionInfo;
-- (void)setIsEmpty:(BOOL)arg1;
-- (void)setCount:(unsigned int)arg1 sectionInfo:(id)arg2;
-- (void)_onQueueAddObject:(id)arg1;
-- (void)addItemWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2;
-- (void)addCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQueryCriteria:(id)arg3 grouping:(int)arg4;
-- (void)_onQueueStartLoadingIsEmpty;
-- (void)_onQueueStartLoadingEntities;
+- (id)queryCriteria;
 - (void)setContainedMediaTypes:(int)arg1;
-- (id)propertiesToFetch;
+- (int)containedMediaTypes;
+- (void)addCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQueryCriteria:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(long long)arg5;
+- (void)addItemWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2;
+- (void)setCount:(unsigned int)arg1 sectionInfo:(id)arg2;
+- (void)setIsEmpty:(BOOL)arg1;
+- (void)_onQueueAddObject:(id)arg1;
+- (void)_onQueueStartLoadingEntities;
+- (void)_onQueueStartLoadingIsEmpty;
+- (void)_commonInitMPMediaEntityStreamArray;
 - (id)initWithEntityType:(int)arg1 queryCriteria:(id)arg2 library:(id)arg3;
 - (BOOL)MPIsEmpty;
+- (id)sectionInfo;
+- (id)propertiesToFetch;
+- (id)initWithCoder:(id)arg1;
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

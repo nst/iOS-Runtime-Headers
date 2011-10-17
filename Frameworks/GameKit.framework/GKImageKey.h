@@ -10,11 +10,11 @@
     int _sectionLocation;
 }
 
-+ (id)imageKeyWithSectionLocation:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)imageKeyWithSectionLocation:(int)arg1;
++ (id)imageKeyWithSectionLocation:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 
-- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (id)description;
 
 @end

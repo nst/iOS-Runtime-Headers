@@ -9,14 +9,14 @@
 }
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (int)catagoryIndex;
 - (void)setCatagoryIndex:(int)arg1;
-- (int)seriesIndex;
 - (void)setSeriesIndex:(int)arg1;
-- (int)buildStep;
 - (void)setBuildStep:(int)arg1;
+- (int)catagoryIndex;
+- (int)seriesIndex;
+- (int)buildStep;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)init;
 
 @end

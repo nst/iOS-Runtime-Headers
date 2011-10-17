@@ -2,39 +2,32 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, GKPlayer, NSDate, GKGame;
+@class GKGame, NSDate, GKPlayer;
 
 @interface GKGetRecentMatchesDataRequest : GKDataRequest  {
-    GKGame *_game;
     GKPlayer *_otherPlayer;
+    GKGame *_game;
     NSDate *_sinceDate;
     unsigned int _count;
-    NSArray *_matches;
 }
 
-@property(readonly) NSArray * matches;
-@property unsigned int count;
-@property(retain) NSDate * sinceDate;
 @property(retain) GKGame * game;
 @property(retain) GKPlayer * otherPlayer;
+@property(retain) NSDate * sinceDate;
+@property unsigned int count;
 
 
 - (id)sinceDate;
 - (id)otherPlayer;
-- (int)cachePriority;
-- (int)cacheType;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)game;
-- (void)setGame:(id)arg1;
-- (void)setOtherPlayer:(id)arg1;
 - (void)setSinceDate:(id)arg1;
-- (id)matches;
-- (id)cacheKey;
+- (void)setOtherPlayer:(id)arg1;
+- (void)setGame:(id)arg1;
 - (id)key;
-- (void)setCount:(unsigned int)arg1;
 - (id)request;
+- (void)setCount:(unsigned int)arg1;
+- (unsigned int)count;
 - (id)init;
 - (void)dealloc;
-- (unsigned int)count;
 
 @end

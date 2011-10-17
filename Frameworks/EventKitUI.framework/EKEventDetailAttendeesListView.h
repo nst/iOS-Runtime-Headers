@@ -16,41 +16,41 @@
     BOOL _groupsNames;
 }
 
-@property BOOL groupsNames;
-@property BOOL highlighted;
-@property(retain) UIColor * highlightedTextColor;
-@property(retain) UIColor * textColor;
-@property(retain) NSArray * ungroupedNames;
-@property(retain) NSArray * noReplyNames;
-@property(retain) NSArray * declinedNames;
-@property(retain) NSArray * maybeNames;
 @property(retain) NSArray * acceptedNames;
+@property(retain) NSArray * maybeNames;
+@property(retain) NSArray * declinedNames;
+@property(retain) NSArray * noReplyNames;
+@property(retain) NSArray * ungroupedNames;
+@property(retain) UIColor * textColor;
+@property(retain) UIColor * highlightedTextColor;
+@property BOOL highlighted;
+@property BOOL groupsNames;
 
 
+- (BOOL)highlighted;
 - (void)setHighlightedTextColor:(id)arg1;
 - (id)highlightedTextColor;
-- (void)setTextColor:(id)arg1;
-- (BOOL)highlighted;
 - (id)textColor;
-- (void)setHighlighted:(BOOL)arg1;
 - (BOOL)isHighlighted;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setTextColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)acceptedNames;
-- (id)maybeNames;
-- (id)declinedNames;
-- (id)noReplyNames;
 - (id)ungroupedNames;
-- (float)_heightForGroupOfAttendeeNames:(id)arg1;
-- (void)drawInvitees:(id)arg1 withStatus:(id)arg2 startingAtPoint:(struct CGPoint { float x1; float x2; })arg3 givenWidth:(float)arg4;
+- (id)noReplyNames;
+- (id)declinedNames;
+- (id)maybeNames;
+- (id)acceptedNames;
 - (void)_drawColumnOfStrings:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 startingAtPoint:(struct CGPoint { float x1; float x2; })arg3 givenWidth:(float)arg4;
+- (void)drawInvitees:(id)arg1 withStatus:(id)arg2 startingAtPoint:(struct CGPoint { float x1; float x2; })arg3 givenWidth:(float)arg4;
+- (float)_heightForGroupOfAttendeeNames:(id)arg1;
 - (BOOL)groupsNames;
-- (void)setGroupsNames:(BOOL)arg1;
 - (void)setUngroupedNames:(id)arg1;
+- (void)setGroupsNames:(BOOL)arg1;
 - (void)setNoReplyNames:(id)arg1;
 - (void)setDeclinedNames:(id)arg1;
 - (void)setMaybeNames:(id)arg1;
 - (void)setAcceptedNames:(id)arg1;
+- (void)dealloc;
 
 @end

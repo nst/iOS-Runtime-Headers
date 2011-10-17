@@ -11,19 +11,19 @@
     NSNumber *_versionIdentifier;
 }
 
-@property(getter=isValidReview,readonly) BOOL validReview;
-@property float userRating;
 @property(readonly) NSString * applicationPath;
+@property float userRating;
+@property(getter=isValidReview,readonly) BOOL validReview;
 
 
+- (id)applicationPath;
+- (BOOL)scheduleReview;
+- (BOOL)isValidReview;
+- (void)_loadApplicationMetadata;
+- (id)initForApplicationWithPath:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (float)userRating;
 - (void)setUserRating:(float)arg1;
-- (id)initForApplicationWithPath:(id)arg1;
-- (BOOL)isValidReview;
-- (BOOL)scheduleReview;
-- (void)_loadApplicationMetadata;
-- (id)applicationPath;
 
 @end

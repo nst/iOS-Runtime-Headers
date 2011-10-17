@@ -13,26 +13,26 @@
     int _returnCode;
 }
 
-@property int returnCode;
-@property void* context;
-@property SEL selector;
-@property id delegate;
-@property(retain) UIRemoteView * remoteView;
 @property(retain) UIView * sheetView;
+@property(retain) UIRemoteView * remoteView;
+@property id delegate;
+@property SEL selector;
+@property void* context;
+@property int returnCode;
 
 
-- (void)setSelector:(SEL)arg1;
-- (void)setContext:(void*)arg1;
+- (void)setDelegate:(id)arg1;
 - (int)returnCode;
-- (void)setReturnCode:(int)arg1;
 - (id)remoteView;
-- (void)setRemoteView:(id)arg1;
+- (void)setReturnCode:(int)arg1;
 - (id)sheetView;
+- (void)setRemoteView:(id)arg1;
 - (void)setSheetView:(id)arg1;
 - (SEL)selector;
 - (void*)context;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
+- (void)setContext:(void*)arg1;
+- (void)setSelector:(SEL)arg1;
 - (id)delegate;
+- (void)dealloc;
 
 @end

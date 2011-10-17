@@ -18,14 +18,19 @@
     NSString *_value;
 }
 
-@property(retain) NSString * value;
-@property(retain) NSString * placeholder;
-@property unsigned int maxLength;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderInsets;
 @property(retain) NSString * label;
+@property unsigned int maxLength;
+@property(retain) NSString * placeholder;
 @property(getter=isRequired) BOOL required;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } borderInsets;
+@property(retain) NSString * value;
 
 
+- (void)setBorderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;
+- (unsigned int)maxLength;
+- (void)setMaxLength:(unsigned int)arg1;
+- (void)setRequired:(BOOL)arg1;
 - (id)label;
 - (id)value;
 - (void)setValue:(id)arg1;
@@ -33,11 +38,6 @@
 - (void)setPlaceholder:(id)arg1;
 - (id)placeholder;
 - (void)dealloc;
-- (void)setMaxLength:(unsigned int)arg1;
-- (void)setRequired:(BOOL)arg1;
-- (void)setBorderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)isRequired;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;
-- (unsigned int)maxLength;
 
 @end

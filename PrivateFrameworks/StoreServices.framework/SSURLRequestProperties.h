@@ -8,9 +8,8 @@
 
 @class NSArray, NSInputStream, NSString, NSData, NSDictionary, NSURL;
 
-@interface SSURLRequestProperties : NSObject <NSCoding, NSCopying, NSMutableCopying> {
+@interface SSURLRequestProperties : NSObject <SSCoding, NSCoding, NSCopying, NSMutableCopying> {
     int _allowedRetryCount;
-    int _assetType;
     unsigned int _cachePolicy;
     NSString *_clientIdentifier;
     struct dispatch_queue_s { } *_dispatchQueue;
@@ -31,59 +30,63 @@
     id _urlBagURLBlock;
 
     NSArray *_urls;
+    NSArray *_userAgentComponents;
 }
 
 @property(readonly) int allowedRetryCount;
-@property(copy,readonly) NSString * clientIdentifier;
+@property(readonly) NSString * clientIdentifier;
 @property(readonly) unsigned int cachePolicy;
 @property(readonly) long long expectedContentLength;
-@property(copy,readonly) NSData * HTTPBody;
-@property(copy,readonly) NSDictionary * HTTPHeaders;
-@property(copy,readonly) NSString * HTTPMethod;
+@property(readonly) NSData * HTTPBody;
+@property(readonly) NSDictionary * HTTPHeaders;
+@property(readonly) NSString * HTTPMethod;
 @property(getter=isITunesStoreRequest,readonly) BOOL ITunesStoreRequest;
-@property(copy,readonly) NSDictionary * requestParameters;
+@property(readonly) NSDictionary * requestParameters;
 @property(readonly) double timeoutInterval;
-@property(copy,readonly) NSString * URLBagKey;
-@property(retain,readonly) NSURL * URL;
+@property(readonly) NSString * URLBagKey;
+@property(readonly) NSURL * URL;
+@property(readonly) NSArray * userAgentComponents;
 @property(readonly) BOOL canBeResolved;
-@property(readonly) int assetType;
-@property(retain,readonly) NSInputStream * HTTPBodyStream;
+@property(readonly) NSInputStream * HTTPBodyStream;
 @property(readonly) BOOL shouldProcessProtocol;
 @property(readonly) int URLBagType;
-@property(copy,readonly) id URLBagURLBlock;
-@property(copy,readonly) NSArray * URLs;
+@property(readonly) id URLBagURLBlock;
+@property(readonly) NSArray * URLs;
 
 
+- (id)URLBagURLBlock;
+- (BOOL)shouldProcessProtocol;
+- (BOOL)isITunesStoreRequest;
+- (int)URLBagType;
+- (int)allowedRetryCount;
+- (id)userAgentComponents;
+- (id)copyURLRequest;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
+- (id)copyPropertyListEncoding;
+- (id)initWithPropertyListEncoding:(id)arg1;
+- (id)initWithURLRequest:(id)arg1;
+- (long long)expectedContentLength;
+- (id)HTTPBodyStream;
+- (id)HTTPBody;
+- (id)HTTPMethod;
+- (double)timeoutInterval;
+- (unsigned int)cachePolicy;
 - (id)initWithURL:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)URLs;
 - (id)URL;
-- (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
-- (int)allowedRetryCount;
-- (id)URLBagURLBlock;
-- (BOOL)shouldProcessProtocol;
-- (int)URLBagType;
-- (long long)expectedContentLength;
-- (unsigned int)cachePolicy;
-- (id)HTTPMethod;
-- (id)HTTPBody;
-- (id)HTTPBodyStream;
-- (BOOL)isITunesStoreRequest;
-- (id)copyURLRequest;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)HTTPHeaders;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)_initCommon;
-- (id)URLBagKey;
-- (int)assetType;
-- (double)timeoutInterval;
+- (id)HTTPHeaders;
 - (id)clientIdentifier;
-- (id)initWithURLRequest:(id)arg1;
+- (id)URLBagKey;
 - (id)requestParameters;
 - (BOOL)canBeResolved;
 

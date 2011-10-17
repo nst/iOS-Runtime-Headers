@@ -11,23 +11,25 @@
 
 + (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (BOOL)isAmbiguous;
+- (int)cellTelephonyType;
+- (void)_invalidateCachedState;
 - (struct __CFDictionary { }*)_callManagementDictionary;
 - (BOOL)_booleanValueForKey:(struct __CFString { }*)arg1;
+- (int)ambiguityState;
+- (BOOL)_isAmbiguousCallList;
+- (BOOL)_isAmbiguousMultiPartyCall;
 - (int)_intValueForKey:(struct __CFString { }*)arg1;
 - (BOOL)isSwappable;
 - (BOOL)isMergeable;
 - (BOOL)isHoldAllowed;
 - (BOOL)isAddCallAllowed;
-- (int)ambiguityState;
-- (BOOL)isAmbiguousMultiPartyCall;
-- (BOOL)isAmbiguousCallList;
 - (int)maxMultiPartyCallCount;
 - (int)maxSupportedCallCount;
 - (BOOL)isHardPauseAvailable;
-- (int)cellTelephonyType;
-- (void)_invalidateCachedState;
+- (BOOL)isEndAndAnswerAllowed;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

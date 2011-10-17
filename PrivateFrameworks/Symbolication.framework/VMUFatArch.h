@@ -14,13 +14,13 @@
 + (id)fatArchWithMemory:(id)arg1 memoryView:(id)arg2;
 + (id)fatArchWithMemory:(id)arg1 fileOffset:(unsigned int)arg2 size:(unsigned int)arg3 alignment:(unsigned int)arg4;
 
-- (id)memory;
-- (id)initWithMemory:(id)arg1 fileOffset:(unsigned int)arg2 size:(unsigned int)arg3 alignment:(unsigned int)arg4;
-- (id)initWithMemory:(id)arg1 memoryView:(id)arg2;
-- (unsigned int)fileOffset;
-- (id)architecture;
-- (unsigned int)size;
-- (void)dealloc;
 - (unsigned int)alignment;
+- (unsigned int)size;
+- (unsigned int)fileOffset;
+- (id)initWithMemory:(id)arg1 memoryView:(id)arg2;
+- (id)initWithMemory:(id)arg1 fileOffset:(unsigned int)arg2 size:(unsigned int)arg3 alignment:(unsigned int)arg4;
+- (id)memory;
+- (id)architecture;
+- (void)dealloc;
 
 @end

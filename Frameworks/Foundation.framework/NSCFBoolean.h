@@ -7,28 +7,30 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (unsigned char)unsignedCharValue;
-- (unsigned int)unsignedIntValue;
-- (float)floatValue;
+- (BOOL)boolValue;
 - (void)finalize;
+- (unsigned long long)unsignedLongLongValue;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (long long)longLongValue;
-- (unsigned int)hash;
+- (unsigned int)unsignedIntValue;
 - (double)doubleValue;
+- (float)floatValue;
+- (void)getValue:(void*)arg1;
+- (unsigned long)_cfTypeID;
+- (unsigned short)unsignedShortValue;
+- (short)shortValue;
+- (BOOL)charValue;
+- (const char *)objCType;
+- (long)longValue;
+- (unsigned char)unsignedCharValue;
+- (unsigned long)unsignedLongValue;
 - (int)intValue;
 - (BOOL)isEqual:(id)arg1;
-- (oneway void)release;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
 - (id)retain;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)getValue:(void*)arg1;
-- (unsigned int)retainCount;
-- (BOOL)boolValue;
-- (unsigned long long)unsignedLongLongValue;
-- (long)longValue;
-- (unsigned short)unsignedShortValue;
-- (unsigned long)unsignedLongValue;
-- (BOOL)charValue;
-- (short)shortValue;
-- (unsigned long)_cfTypeID;
-- (const char *)objCType;
+- (oneway void)release;
 
 @end

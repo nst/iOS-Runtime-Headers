@@ -2,39 +2,37 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, SUPreOrderQueue, SSDownloadQueue, NSSet, NSString;
+@class SSPreorderManager, SSDownloadManager, NSArray, NSString;
 
-@interface SUScriptDownloadQueue : SUScriptObject <SSDownloadQueueObserver, SUPreOrderQueueObserver> {
-    NSSet *_downloadKinds;
+@interface SUScriptDownloadQueue : SUScriptObject <SSDownloadManagerObserver, SSPreorderManagerObserver> {
     NSArray *_downloads;
-    SSDownloadQueue *_downloadQueue;
-    SUPreOrderQueue *_preOrderQueue;
+    SSDownloadManager *_downloadManager;
+    SSPreorderManager *_preorderManager;
     NSString *_queueType;
 }
 
-@property(getter=_downloads,setter=set_downloads:,retain) NSArray * downloads;
-@property(getter=_queueType,setter=set_queueType:,retain) NSString * queueType;
+@property(readonly) NSArray * downloads;
+@property(readonly) NSString * queueType;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
-- (void)dealloc;
-- (id)_downloads;
-- (id)initWithQueueType:(id)arg1;
-- (void)checkQueue;
-- (void)set_downloads:(id)arg1;
-- (void)set_queueType:(id)arg1;
-- (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
-- (void)downloadQueue:(id)arg1 downloadStatesChangedAtIndexes:(id)arg2;
-- (void)downloadQueuePreOrdersChanged:(id)arg1;
-- (void)preOrderQueueChanged:(id)arg1;
-- (void)_checkQueues;
-- (void)_handleDownloadsChanged;
-- (id)_ntsCopyScriptDownloads;
-- (void)_ntsResetDownloads;
-- (void)_ntsTearDownQueues;
-- (id)_queueType;
+- (void)downloadManagerDownloadsDidChange:(id)arg1;
+- (id)downloads;
 - (void)finalizeForWebScript;
+- (id)attributeKeys;
+- (void)dealloc;
+- (id)queueType;
+- (id)initWithQueueType:(id)arg1;
+- (void)preorderManagerPreordersDidChange:(id)arg1;
+- (void)checkQueue;
+- (void)_handleDownloadsChanged;
+- (id)_copyScriptDownloads;
+- (void)_checkQueues;
+- (void)_ntsTearDownQueues;
+- (void)_ntsResetDownloads;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

@@ -6,35 +6,44 @@
 
 @interface ADLogSysEventRequest : PBRequest  {
     ADLogMetaData *_metaData;
-    int _eventType;
     BOOL _hasEventType;
+    int _eventType;
     ADClickLocation *_clickLocation;
+    BOOL _hasActionableDuration;
+    float _actionableDuration;
 }
 
 @property(readonly) BOOL hasMetaData;
+@property(retain) ADLogMetaData * metaData;
+@property BOOL hasEventType;
+@property int eventType;
 @property(readonly) BOOL hasClickLocation;
 @property(retain) ADClickLocation * clickLocation;
-@property(readonly) BOOL hasEventType;
-@property int eventType;
-@property(retain) ADLogMetaData * metaData;
+@property BOOL hasActionableDuration;
+@property float actionableDuration;
 
 + (void)initialize;
 
-- (unsigned int)requestTypeCode;
-- (void)setClickLocation:(id)arg1;
-- (BOOL)hasEventType;
-- (BOOL)hasMetaData;
 - (Class)responseClass;
-- (int)eventType;
-- (BOOL)hasClickLocation;
-- (id)metaData;
-- (void)setEventType:(int)arg1;
-- (id)clickLocation;
-- (void)setMetaData:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasActionableDuration:(BOOL)arg1;
+- (void)setHasEventType:(BOOL)arg1;
+- (BOOL)hasEventType;
+- (void)setActionableDuration:(float)arg1;
+- (void)setEventType:(int)arg1;
+- (void)setClickLocation:(id)arg1;
+- (BOOL)hasMetaData;
+- (void)setMetaData:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
+- (float)actionableDuration;
+- (BOOL)hasActionableDuration;
+- (id)clickLocation;
+- (BOOL)hasClickLocation;
+- (int)eventType;
+- (id)metaData;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

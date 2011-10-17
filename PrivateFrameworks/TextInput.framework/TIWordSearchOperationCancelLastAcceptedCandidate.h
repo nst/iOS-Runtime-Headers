@@ -6,9 +6,9 @@
 }
 
 
-- (void)cancel;
-- (void)dealloc;
 - (id)initWithTIWordSearchObj:(id)arg1;
+- (void)cancel;
 - (void)perform;
+- (void)dealloc;
 
 @end

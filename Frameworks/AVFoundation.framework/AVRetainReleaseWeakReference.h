@@ -5,19 +5,15 @@
 @class NSString;
 
 @interface AVRetainReleaseWeakReference : AVWeakReference  {
-    id _referencedObject;
     NSString *_cachedReferencedObjectDescription;
-    struct dispatch_queue_s { } *_readWriteDispatchQueue;
-    int _referencedObjectRetainCount;
+    id _weakStorage;
 }
 
 
+- (id)referencedObject;
+- (id)initWithReferencedObject:(id)arg1;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)description;
-- (id)initWithReferencedObject:(id)arg1;
-- (void)referencedObjectWillBeRetained;
-- (id)referencedObject;
-- (void)referencedObjectWillBeReleased;
 
 @end

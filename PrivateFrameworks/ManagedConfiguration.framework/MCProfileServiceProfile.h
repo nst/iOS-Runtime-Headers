@@ -20,20 +20,20 @@
 @property(retain) NSString * URLString;
 
 
-- (id)challenge;
 - (id)URLString;
-- (void)dealloc;
-- (id)description;
-- (id)deviceAttributes;
-- (id)_badDataTypeErrorWithFieldName:(id)arg1;
+- (void)setURLString:(id)arg1;
+- (id)challenge;
 - (id)_unsupportedValueErrorWithFieldName:(id)arg1 value:(id)arg2;
 - (BOOL)confirmInstallation;
 - (id)enrollmentIdentityPersistentID;
 - (void)setEnrollmentIdentityPersistentID:(id)arg1;
-- (void)setURLString:(id)arg1;
-- (id)payloads;
+- (id)deviceAttributes;
+- (id)_badDataTypeErrorWithFieldName:(id)arg1;
 - (id)localizedPayloadSummaryByType;
+- (id)payloads;
 - (id)initWithDictionary:(id)arg1 originalData:(id)arg2 wasEncrypted:(BOOL)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
 - (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 
 @end

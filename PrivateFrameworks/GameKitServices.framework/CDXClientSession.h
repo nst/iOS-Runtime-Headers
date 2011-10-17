@@ -36,26 +36,26 @@
 @property(retain,readonly) CDXClient * CDXClient;
 
 
-- (id)initWithCDXClient:(id)arg1 ticket:(id)arg2 sessionKey:(id)arg3;
-- (void)stopRetransmitTimer;
-- (BOOL)retransmitEvent;
-- (void)resetRetransmitTimer;
-- (void)setTicket:(id)arg1;
-- (id)decrypt:(id)arg1 ticket:(id)arg2;
-- (id)encrypt:(id)arg1;
-- (BOOL)sendRaw:(id)arg1 toParticipants:(id)arg2;
 - (BOOL)sendData:(id)arg1;
-- (BOOL)sendData:(id)arg1 toParticipants:(id)arg2;
-- (void)recvRaw:(id)arg1 ticket:(id)arg2;
+- (void)invalidate;
+- (void)setDelegate:(id)arg1;
+- (void)setTicket:(id)arg1;
 - (id)inboundHandler;
 - (void)setInboundHandler:(id)arg1;
 - (id)participantsInFlight;
 - (id)sessionKey;
-- (id)ticket;
+- (void)stopRetransmitTimer;
+- (BOOL)sendRaw:(id)arg1 toParticipants:(id)arg2;
+- (BOOL)retransmitEvent;
 - (id)CDXClient;
-- (void)invalidate;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
+- (id)ticket;
+- (id)encrypt:(id)arg1;
+- (BOOL)sendData:(id)arg1 toParticipants:(id)arg2;
+- (void)resetRetransmitTimer;
+- (id)decrypt:(id)arg1 ticket:(id)arg2;
+- (void)recvRaw:(id)arg1 ticket:(id)arg2;
+- (id)initWithCDXClient:(id)arg1 ticket:(id)arg2 sessionKey:(id)arg3;
 - (id)delegate;
+- (void)dealloc;
 
 @end

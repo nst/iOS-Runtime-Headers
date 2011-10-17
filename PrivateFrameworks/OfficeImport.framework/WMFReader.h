@@ -13,13 +13,13 @@
 }
 
 
-- (oneway void)release;
-- (void)dealloc;
 - (int)playHeaders;
 - (int)playRecord;
 - (int)checkBytesAvailable:(unsigned int)arg1;
 - (int)moveDataCursor:(unsigned int)arg1;
 - (id)initWithWMFPlayer:(id)arg1;
+- (oneway void)release;
+- (void)dealloc;
 - (int)play:(id)arg1;
 
 @end

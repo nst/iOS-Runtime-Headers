@@ -20,50 +20,38 @@
     NSString *_currentSongName;
 }
 
-@property(readonly) NSString * currentSongName;
-@property(readonly) int musicSelection;
-@property(readonly) BOOL shouldControlMusic;
-@property(readonly) NSString * powerSongName;
-@property(readonly) BOOL hasPowerSong;
-@property(readonly) NSDictionary * workoutData;
-@property(readonly) NSString * workoutState;
-@property(readonly) NSString * sensorSearchState;
-@property(readonly) float goal;
-@property(readonly) NSString * presetGoal;
-@property(readonly) NSString * goalType;
 
-
-- (id)init;
-- (void)dealloc;
-- (void)playPowerSong;
-- (void)pauseMusic;
-- (void)playMusic;
-- (void)selectNextSong;
-- (void)_handlePropertyUpdateNotification:(id)arg1;
-- (void)_sensorSearchStateChanged:(id)arg1;
-- (void)_workoutStateChanged:(id)arg1;
 - (void)_checkinWithServer;
-- (void)_nowPlayingChanged:(id)arg1;
-- (id)currentSongName;
+- (void)_handlePropertyUpdateNotification:(id)arg1;
 - (id)sensorSearchState;
-- (float)goal;
-- (BOOL)hasPowerSong;
+- (id)currentSongName;
 - (int)musicSelection;
+- (void)_nowPlayingChanged:(id)arg1;
+- (void)_workoutStateChanged:(id)arg1;
+- (void)_sensorSearchStateChanged:(id)arg1;
+- (void)playMusic;
+- (void)pauseMusic;
 - (void)goToNowPlaying;
-- (void)selectPreviousSong;
-- (void)pauseWorkout;
 - (id)presetGoal;
-- (id)goalType;
-- (BOOL)shouldControlMusic;
-- (id)workoutData;
-- (id)powerSongName;
+- (id)workoutState;
+- (BOOL)hasPowerSong;
 - (void)prepareToActivateWorkout;
-- (void)activateWorkout;
+- (id)powerSongName;
+- (float)goal;
+- (id)goalType;
 - (void)endWorkout;
 - (void)playOnDemandPrompt;
-- (id)workoutState;
+- (void)selectPreviousSong;
+- (void)selectNextSong;
+- (BOOL)shouldControlMusic;
+- (void)playPowerSong;
+- (void)pauseWorkout;
+- (void)activateWorkout;
+- (id)workoutData;
+- (id)init;
+- (void)dealloc;
 - (void)endSeeking;
-- (void)beginSeekingBackward;
 - (void)beginSeekingForward;
+- (void)beginSeekingBackward;
 
 @end

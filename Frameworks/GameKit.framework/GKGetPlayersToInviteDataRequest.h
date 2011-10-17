@@ -2,19 +2,11 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray;
-
 @interface GKGetPlayersToInviteDataRequest : GKDataRequest  {
-    NSArray *_players;
 }
 
-@property(readonly) NSArray * players;
 
-
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
-- (id)players;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

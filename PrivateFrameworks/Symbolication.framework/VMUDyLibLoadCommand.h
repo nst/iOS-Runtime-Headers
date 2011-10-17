@@ -11,12 +11,12 @@
 }
 
 
-- (id)initWithMemory:(id)arg1;
+- (id)path;
+- (unsigned int)currentVersion;
 - (unsigned int)compatibilityVersion;
 - (BOOL)isLoadDyLib;
-- (id)path;
-- (void)dealloc;
+- (id)initWithMemory:(id)arg1;
 - (id)description;
-- (unsigned int)currentVersion;
+- (void)dealloc;
 
 @end

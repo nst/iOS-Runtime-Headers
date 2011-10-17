@@ -37,35 +37,35 @@
 @property id delegate;
 
 
-- (id)UUIDString;
-- (void)setDeviceManager:(id)arg1;
-- (void)setUsbLocationID:(int)arg1;
-- (void)setUsbProductID:(int)arg1;
-- (void)setUUIDString:(id)arg1;
-- (void)setTransportType:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)finalize;
 - (void)setProductKind:(id)arg1;
-- (void)setHasOpenSession:(BOOL)arg1;
-- (void)setAutoOpenSession:(BOOL)arg1;
-- (id)deviceManager;
-- (BOOL)closeSessionPending;
-- (BOOL)autoOpenSession;
+- (void)setTransportType:(id)arg1;
+- (void)setUUIDString:(id)arg1;
 - (int)usbLocationID;
 - (int)usbProductID;
 - (int)usbVendorID;
+- (id)deviceManager;
+- (void)setDeviceManager:(id)arg1;
+- (void)setUsbLocationID:(int)arg1;
+- (void)setUsbProductID:(int)arg1;
 - (void)setUsbVendorID:(int)arg1;
 - (BOOL)hasOpenSession;
+- (void)setHasOpenSession:(BOOL)arg1;
+- (BOOL)autoOpenSession;
 - (BOOL)openSessionPending;
+- (BOOL)closeSessionPending;
+- (void)setAutoOpenSession:(BOOL)arg1;
 - (void)setOpenSessionPending:(BOOL)arg1;
 - (void)setCloseSessionPending:(BOOL)arg1;
-- (void)setIcon:(struct CGImage { }*)arg1;
-- (struct CGImage { }*)icon;
-- (void)finalize;
-- (void)setName:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)productKind;
 - (id)transportType;
+- (struct CGImage { }*)icon;
+- (void)setIcon:(struct CGImage { }*)arg1;
+- (id)name;
+- (id)delegate;
+- (id)UUIDString;
+- (id)productKind;
+- (void)setName:(id)arg1;
+- (void)dealloc;
 
 @end

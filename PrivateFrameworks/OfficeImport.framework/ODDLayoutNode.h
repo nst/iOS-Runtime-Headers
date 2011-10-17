@@ -9,8 +9,8 @@
 }
 
 
-- (void)dealloc;
 - (id)variableList;
 - (void)setVariableList:(id)arg1;
+- (void)dealloc;
 
 @end

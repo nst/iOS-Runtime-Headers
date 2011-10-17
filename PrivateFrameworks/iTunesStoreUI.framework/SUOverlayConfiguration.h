@@ -16,20 +16,20 @@
     CPRegularExpression *_urlPattern;
 }
 
-@property(readonly) NSString * transitionName;
-@property(readonly) struct CGSize { float width; float height; } size;
-@property(readonly) BOOL shouldShowNavigationBar;
 @property(readonly) int cornerRadius;
+@property(readonly) BOOL shouldShowNavigationBar;
+@property(readonly) struct CGSize { float x1; float x2; } size;
+@property(readonly) NSString * transitionName;
 
 
 - (int)cornerRadius;
 - (id)initWithDictionary:(id)arg1;
-- (id)init;
 - (struct CGSize { float x1; float x2; })size;
+- (id)init;
 - (void)dealloc;
-- (BOOL)matchesURL:(id)arg1;
 - (BOOL)matchesURLBagKey:(id)arg1;
-- (BOOL)shouldShowNavigationBar;
+- (BOOL)matchesURL:(id)arg1;
 - (id)transitionName;
+- (BOOL)shouldShowNavigationBar;
 
 @end

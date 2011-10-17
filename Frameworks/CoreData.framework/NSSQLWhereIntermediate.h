@@ -9,7 +9,7 @@
 }
 
 
-- (id)predicate;
 - (id)initWithPredicate:(id)arg1 inScope:(id)arg2;
+- (id)predicate;
 
 @end

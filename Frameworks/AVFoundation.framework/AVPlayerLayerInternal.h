@@ -14,17 +14,16 @@
     BOOL isObservingPlayer;
     BOOL hasPlayerToObserve;
     BOOL disableActions;
+    BOOL isOverscanSubtitleSupportEnabled;
     struct dispatch_queue_s { } *serialQueue;
     BOOL isPresentationLayer;
     BOOL isReadyForDisplay;
     struct OpaqueFigSimpleMutex { } *isReadyForDisplayMutex;
     AVPlayerItem *itemMarkedReadyForDisplay;
-    BOOL connectLayerWhenInForeground;
     struct CGSize { 
         float width; 
         float height; 
     } presentationSize;
-    BOOL inForeground;
 }
 
 

@@ -2,57 +2,55 @@
    Image: /usr/lib/libobjc.A.dylib
  */
 
-@interface Protocol : Object <NSObject> {
-    char *protocol_name;
-    struct objc_protocol_list { } *protocol_list;
-    struct objc_method_description_list { } *instance_methods;
-    struct objc_method_description_list { } *class_methods;
+@interface Protocol : NSObject <NSObject> {
 }
 
 + (void)load;
-+ (BOOL)respondsToSelector:(SEL)arg1;
-+ (Class)class;
++ (oneway void)release;
 + (id)autorelease;
++ (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
++ (id)retain;
++ (id)debugDescription;
 + (id)description;
 + (unsigned int)retainCount;
-+ (id)retain;
-+ (oneway void)release;
-+ (BOOL)isKindOfClass:(Class)arg1;
-+ (id)performSelector:(SEL)arg1;
-+ (BOOL)isEqual:(id)arg1;
-+ (id)performSelector:(SEL)arg1 withObject:(id)arg2;
-+ (struct _NSZone { }*)zone;
++ (BOOL)respondsToSelector:(SEL)arg1;
 + (BOOL)conformsToProtocol:(id)arg1;
-+ (id)self;
-+ (Class)superclass;
 + (BOOL)isMemberOfClass:(Class)arg1;
-+ (unsigned int)hash;
++ (BOOL)isKindOfClass:(Class)arg1;
 + (BOOL)isProxy;
-+ (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
++ (id)performSelector:(SEL)arg1 withObject:(id)arg2;
++ (id)performSelector:(SEL)arg1;
++ (struct _NSZone { }*)zone;
++ (id)self;
++ (Class)class;
++ (Class)superclass;
++ (unsigned int)hash;
++ (BOOL)isEqual:(id)arg1;
 + (void)initialize;
 
-- (BOOL)conformsTo:(id)arg1;
-- (struct objc_method_description { SEL x1; char *x2; }*)descriptionForInstanceMethod:(SEL)arg1;
 - (struct objc_method_description { SEL x1; char *x2; }*)descriptionForClassMethod:(SEL)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (struct objc_method_description { SEL x1; char *x2; }*)descriptionForInstanceMethod:(SEL)arg1;
+- (BOOL)conformsTo:(id)arg1;
 - (const char *)name;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (Class)class;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (oneway void)release;
 - (id)autorelease;
+- (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
+- (id)retain;
+- (id)debugDescription;
 - (id)description;
 - (unsigned int)retainCount;
-- (id)retain;
-- (oneway void)release;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (id)performSelector:(SEL)arg1;
-- (id)performSelector:(SEL)arg1 withObject:(id)arg2;
-- (struct _NSZone { }*)zone;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (BOOL)conformsToProtocol:(id)arg1;
-- (id)self;
-- (Class)superclass;
 - (BOOL)isMemberOfClass:(Class)arg1;
+- (BOOL)isKindOfClass:(Class)arg1;
 - (BOOL)isProxy;
-- (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
+- (id)performSelector:(SEL)arg1 withObject:(id)arg2;
+- (id)performSelector:(SEL)arg1;
+- (struct _NSZone { }*)zone;
+- (id)self;
+- (Class)class;
+- (Class)superclass;
 
 @end

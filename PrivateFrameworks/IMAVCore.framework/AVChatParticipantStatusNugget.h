@@ -34,23 +34,23 @@
 + (id)filterNuggets:(id)arg1 filterEndedState:(BOOL)arg2 convertFromDict:(BOOL)arg3;
 + (id)nuggetWithDictionaryDescription:(id)arg1;
 
-- (id)ID;
+- (id)invitedBy;
 - (unsigned int)reason;
+- (id)name;
 - (unsigned int)state;
 - (void)encodeWithCoder:(id)arg1;
-- (id)name;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
+- (id)ID;
+- (int)error;
+- (void)dealloc;
 - (void)setVCPartyID:(id)arg1;
+- (unsigned int)ardRole;
+- (BOOL)sendingVideo;
+- (BOOL)sendingAudio;
 - (id)dictionaryDescription;
 - (void)_configureWithDictionaryDescription:(id)arg1;
 - (id)vcPartyID;
 - (BOOL)isUsingICE;
-- (unsigned int)ardRole;
-- (BOOL)sendingVideo;
-- (BOOL)sendingAudio;
-- (id)invitedBy;
 - (id)initWithParticipant:(id)arg1;
-- (int)error;
 
 @end

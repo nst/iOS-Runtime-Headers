@@ -2,81 +2,31 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, EKEventEditItem, <EKEventEditorDelegate>, UIResponder, UIActionSheet, EKEventStore, EKEvent;
+@class EKEvent;
 
-@interface EKEventEditor : UITableViewController <EKEventEditItemDelegate, UIActionSheetDelegate> {
-    EKEventStore *_store;
-    EKEvent *_event;
-    NSArray *_editItems;
-    NSArray *_currentItems;
-    BOOL _simpleView;
-    UIActionSheet *_alertSheet;
-    <EKEventEditorDelegate> *_editorDelegate;
-    id _revertState;
-    EKEventEditItem *_currentEditItem;
-    BOOL _scrollToNotes;
-    BOOL _giveTitleCellKeyboardFocus;
-    UIResponder *_responderToRestoreOnAppearence;
+@interface EKEventEditor : EKCalendarItemEditor  {
+    BOOL _showAttachments;
 }
 
-@property(retain) EKEventStore * store;
 @property(retain) EKEvent * event;
-@property(retain) UIResponder * responderToRestoreOnAppearence;
-@property BOOL scrollToNotes;
-@property <EKEventEditorDelegate> * editorDelegate;
+@property BOOL showAttachments;
 
 
-- (void)loadView;
-- (void)viewDidLoad;
-- (void)done:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
 - (id)event;
 - (void)setEvent:(id)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
-- (void)viewDidUnload;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)didReceiveMemoryWarning;
-- (id)store;
-- (void)setStore:(id)arg1;
-- (id)editorDelegate;
-- (void)_localeChanged;
-- (BOOL)saveWithSpan:(int)arg1 animated:(BOOL)arg2;
-- (void)completeWithAction:(int)arg1 animated:(BOOL)arg2;
-- (void)_configureItemsForStoreConstraintsGivenCalendar:(id)arg1;
-- (void)setupForEvent;
-- (void)_pinKeyboard:(BOOL)arg1;
+- (BOOL)showAttachments;
+- (void)refreshStartAndEndDates;
+- (id)defaultTitleForCalendarItem;
+- (id)_viewForSheet;
+- (id)_nameForDeleteButton;
+- (id)defaultAlertTitle;
 - (void)_copyEventForPossibleRevert;
+- (void)setupDeleteButton;
 - (void)_revertEvent;
-- (void)eventEditItemDidStartEditing:(id)arg1;
-- (void)eventEditItemDidCommit:(id)arg1;
-- (void)eventEditItemDidEndEditing:(id)arg1;
-- (void)eventEditItemTextChanged:(id)arg1;
-- (void)eventEditItem:(id)arg1 wantsKeyboardPinned:(BOOL)arg2;
-- (void)_performDelete:(int)arg1;
-- (void)_presentDetachSheet;
-- (void)_cancelSheetButtonPressed:(int)arg1;
-- (void)_detachSheetButtonPressed:(int)arg1;
-- (void)_deleteSheetButtonPressed:(int)arg1;
-- (void)_deleteRecurringSheetButtonPressed:(int)arg1;
-- (id)responderToRestoreOnAppearence;
-- (void)setResponderToRestoreOnAppearence:(id)arg1;
-- (BOOL)scrollToNotes;
-- (void)setScrollToNotes:(BOOL)arg1;
-- (void)setEditorDelegate:(id)arg1;
+- (id)notificationNamesForLocaleChange;
+- (id)preferredTitle;
 - (id)_editItems;
-- (BOOL)_performSave:(int)arg1 animated:(BOOL)arg2;
-- (void)_presentValidationAlert:(id)arg1;
 - (BOOL)_canDetachSingleOccurrence;
-- (void)_deleteClicked:(id)arg1;
-- (void)cancel:(id)arg1;
+- (void)setShowAttachments:(BOOL)arg1;
 
 @end

@@ -2,45 +2,41 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableSet, NSMutableDictionary, NSMutableArray;
-
 @interface IMHandleRegistrar : NSObject  {
-    NSMutableDictionary *_siblingsMap;
-    NSMutableArray *_allIMHandles;
-    NSMutableDictionary *_candidateNamesMap;
-    NSMutableDictionary *_usedUniqueNames;
-    NSMutableSet *_knownConflictingNames;
-    int _nameStyle;
+    id _internal;
 }
 
 @property int nameStyle;
 
 + (id)sharedInstance;
 
-- (oneway void)release;
+- (void)_dumpOutAllIMHandles;
+- (void)imHandleInfoChanged:(id)arg1;
+- (void)setNameStyle:(int)arg1;
+- (void)_addressBookChanged;
+- (void)reassessIMHandleForUniqueName:(id)arg1 rebuild:(BOOL)arg2;
+- (id)candidateUniqueNamesForIMHandle:(id)arg1;
+- (void)rebuildUniqueNameMap;
+- (void)clearNameReservationsForObject:(id)arg1;
+- (void)_clearSiblingsCacheForIMHandle:(id)arg1 rebuildAfter:(BOOL)arg2;
+- (void)_buildSiblingsForIMHandle:(id)arg1;
+- (void)_emptySiblingCacheForIMHandleGUID:(id)arg1;
+- (void)_rebuildUniqueNameMapWithStyleChange:(BOOL)arg1;
+- (void)_accountsChanged:(id)arg1;
+- (id)allIMHandles;
+- (id)siblingsForIMHandle:(id)arg1;
+- (id)_accountSiblingsForHandle:(id)arg1;
+- (id)_existingAccountSiblingsForHandle:(id)arg1;
+- (void)reassessIMHandleForUniqueName:(id)arg1;
+- (int)nameStyle;
+- (void)_clearAccountSiblingsForGUID:(id)arg1;
+- (void)unregisterIMHandle:(id)arg1;
+- (void)registerIMHandle:(id)arg1;
+- (void)clearSiblingCacheForIMHandle:(id)arg1;
+- (void)_dumpOutAllIMHandlesForAccount:(id)arg1;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 - (id)init;
 - (void)dealloc;
-- (unsigned int)retainCount;
-- (id)autorelease;
-- (int)nameStyle;
-- (void)_addressBookChanged;
-- (void)setNameStyle:(int)arg1;
-- (void)_emptySiblingCacheForIMHandleGUID:(id)arg1;
-- (void)_buildSiblingsForIMHandle:(id)arg1;
-- (void)_clearSiblingsCacheForIMHandle:(id)arg1 rebuildAfter:(BOOL)arg2;
-- (void)clearNameReservationsForObject:(id)arg1;
-- (id)allIMHandles;
-- (id)candidateUniqueNamesForIMHandle:(id)arg1;
-- (void)reassessIMHandleForUniqueName:(id)arg1 rebuild:(BOOL)arg2;
-- (void)reassessIMHandleForUniqueName:(id)arg1;
-- (void)_rebuildUniqueNameMapWithStyleChange:(BOOL)arg1;
-- (void)rebuildUniqueNameMap;
-- (void)imHandleInfoChanged:(id)arg1;
-- (void)_dumpOutAllIMHandles;
-- (void)_dumpOutAllIMHandlesForAccount:(id)arg1;
-- (id)siblingsForIMHandle:(id)arg1;
-- (void)clearSiblingCacheForIMHandle:(id)arg1;
-- (void)registerIMHandle:(id)arg1;
-- (void)unregisterIMHandle:(id)arg1;
 
 @end

@@ -6,8 +6,8 @@
 }
 
 
-- (void)setParentViewController:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)setParentViewController:(id)arg1;
 - (void)reloadCancelBarButtonItem;
 - (void)resetNavigationItem:(id)arg1;
 - (void)setSection:(id)arg1;

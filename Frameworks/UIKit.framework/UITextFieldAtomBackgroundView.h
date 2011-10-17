@@ -6,8 +6,8 @@
     int _atomStyle;
 }
 
-+ (id)_blueAtomBackgroundImage;
 + (id)_purpleAtomBackgroundImage;
++ (id)_blueAtomBackgroundImage;
 
 - (void)setAtomStyle:(int)arg1;
 - (int)atomStyle;

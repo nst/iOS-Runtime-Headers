@@ -2,15 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, AVController, NSString, NSDictionary;
+@class NSDictionary, NSString, NSArray;
 
-@interface MPAudioDeviceController : NSObject  {
-    id _delegate;
-    AVController *_avController;
-    NSDictionary *_pickedRoute;
-    NSArray *_pickableRoutes;
+@interface MPAudioDeviceController : NSObject <UIAlertViewDelegate> {
     NSString *_category;
+    id _delegate;
     BOOL _fakeRouteAvailable;
+    NSArray *_pickableRoutes;
+    NSDictionary *_pickedRoute;
+    BOOL _pickedRouteHasVolumeControl;
+    BOOL _pickedRouteHasVolumeControlIsValid;
 }
 
 @property BOOL routeDiscoveryEnabled;
@@ -18,51 +19,51 @@
 + (BOOL)routeDiscoveryEnabled;
 + (void)setRouteDiscoveryEnabled:(BOOL)arg1;
 
+- (void)_sendFakeRouteChange;
+- (BOOL)pickRouteAtIndex:(unsigned int)arg1;
+- (BOOL)routeRequiresPasswordAtIndex:(unsigned int)arg1;
+- (id)routeDescriptionAtIndex:(unsigned int)arg1;
+- (void)restorePickedRoute;
+- (BOOL)pickBestDeviceRoute;
+- (BOOL)pickHandsetRoute;
+- (BOOL)pickSpeakerRoute;
+- (unsigned int)numberOfAudioRoutes;
+- (BOOL)airtunesRouteIsPicked;
+- (BOOL)handsetRouteIsPicked;
+- (BOOL)receiverRouteIsPicked;
+- (BOOL)speakerRouteIsPicked;
+- (BOOL)routeOtherThanHandsetAndSpeakerIsAvailable;
+- (void)_mediaServerDied;
+- (void)_portStatusDidChangeNotification:(id)arg1;
+- (void)_pickableRoutesChangedNotification:(id)arg1;
+- (BOOL)routeDiscoveryEnabled;
+- (BOOL)_routeIsDisplayPort:(id)arg1;
+- (BOOL)_pickRoute:(id)arg1 withPassword:(id)arg2;
+- (BOOL)_routeIsHeadphones:(id)arg1;
+- (BOOL)_pickRoute:(id)arg1;
+- (BOOL)_routeIsWireless:(id)arg1;
+- (BOOL)_routeIsReceiver:(id)arg1;
+- (id)_pickedRoute;
+- (BOOL)_routeIsSpeaker:(id)arg1;
+- (BOOL)_routeIsHandset:(id)arg1;
+- (id)_pickableRoutes;
+- (id)routeNameAtIndex:(unsigned int)arg1 isPicked:(BOOL*)arg2;
+- (void)clearCachedRoutes;
+- (void)_registerForAVControllerNotifications;
+- (BOOL)pickRouteAtIndex:(unsigned int)arg1 withPassword:(id)arg2;
+- (int)indexOfPickedRoute;
+- (void)determinePickableRoutesWithCompletionHandler:(id)arg1;
+- (void)setRouteDiscoveryEnabled:(BOOL)arg1;
+- (BOOL)routeOtherThanHandsetIsAvailable;
+- (BOOL)wirelessRouteIsPicked;
+- (id)routeTypeAtIndex:(unsigned int)arg1;
+- (id)pickedRouteDescription;
+- (id)nameOfPickedRoute;
+- (BOOL)volumeControlIsAvailable;
+- (void)setDelegate:(id)arg1;
 - (void)setCategory:(id)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)init;
 - (void)dealloc;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)setDelegate:(id)arg1;
-- (BOOL)pickRouteAtIndex:(unsigned int)arg1 withPassword:(id)arg2;
-- (id)routeTypeAtIndex:(unsigned int)arg1;
-- (BOOL)wirelessRouteIsPicked;
-- (BOOL)routeDiscoveryEnabled;
-- (void)invalidateAVController;
-- (BOOL)volumeControlIsAvailable;
-- (BOOL)speakerRouteIsPicked;
-- (BOOL)receiverRouteIsPicked;
-- (BOOL)handsetRouteIsPicked;
-- (BOOL)pickSpeakerRoute;
-- (BOOL)pickHandsetRoute;
-- (void)restorePickedRoute;
-- (void)clearCachedRoutes;
-- (BOOL)routeRequiresPasswordAtIndex:(unsigned int)arg1;
-- (int)indexOfPickedRoute;
-- (BOOL)_pickRoute:(id)arg1;
-- (BOOL)_pickRoute:(id)arg1 withPassword:(id)arg2;
-- (BOOL)_routeIsSpeaker:(id)arg1;
-- (BOOL)_routeIsHeadphones:(id)arg1;
-- (BOOL)_routeIsHandset:(id)arg1;
-- (BOOL)_routeIsReceiver:(id)arg1;
-- (BOOL)_routeIsWireless:(id)arg1;
-- (void)_mediaServerDied;
-- (void)_pickableRoutesChangedNotification:(id)arg1;
-- (void)_portStatusDidChangeNotification:(id)arg1;
-- (void)_registerForAVControllerNotifications;
-- (void)_sendFakeRouteChange;
-- (id)_pickableRoutes;
-- (id)_pickedRoute;
-- (BOOL)routeOtherThanHandsetIsAvailable;
-- (BOOL)pickBestDeviceRoute;
-- (BOOL)airtunesRouteIsPicked;
-- (id)pickedRouteDescription;
-- (void)setAVController:(id)arg1;
-- (id)initWithAVController:(id)arg1;
-- (BOOL)routeOtherThanHandsetAndSpeakerIsAvailable;
-- (unsigned int)numberOfAudioRoutes;
-- (id)routeNameAtIndex:(unsigned int)arg1 isPicked:(BOOL*)arg2;
-- (id)nameOfPickedRoute;
-- (BOOL)pickRouteAtIndex:(unsigned int)arg1;
-- (void)setRouteDiscoveryEnabled:(BOOL)arg1;
 
 @end

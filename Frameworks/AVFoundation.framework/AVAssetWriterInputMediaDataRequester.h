@@ -22,15 +22,15 @@
 @property(readonly) struct dispatch_queue_s { }* requestQueue;
 
 
-- (struct dispatch_queue_s { }*)requestQueue;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)finalize;
 - (void)invalidate;
-- (id)init;
-- (void)dealloc;
-- (id)requestBlock;
+- (void)finalize;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)initWithAssetWriterInputWritingHelper:(id)arg1 requestQueue:(struct dispatch_queue_s { }*)arg2 requestBlock:(id)arg3;
 - (void)startRequestingMediaData;
+- (struct dispatch_queue_s { }*)requestQueue;
+- (id)requestBlock;
 - (void)_requestMediaDataIfReady;
+- (id)init;
+- (void)dealloc;
 
 @end

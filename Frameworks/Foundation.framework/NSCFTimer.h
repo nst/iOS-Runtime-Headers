@@ -5,24 +5,26 @@
 @interface NSCFTimer : NSTimer  {
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id)fireDate;
-- (BOOL)isValid;
-- (id)initWithFireDate:(id)arg1 interval:(double)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 repeats:(BOOL)arg6;
-- (void)finalize;
-- (double)timeInterval;
-- (unsigned int)hash;
 - (void)invalidate;
-- (BOOL)isEqual:(id)arg1;
-- (id)userInfo;
-- (oneway void)release;
-- (id)init;
-- (id)retain;
-- (unsigned int)retainCount;
+- (void)finalize;
+- (id)fireDate;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (double)timeInterval;
+- (id)initWithFireDate:(id)arg1 interval:(double)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 repeats:(BOOL)arg6;
 - (void)setFireDate:(id)arg1;
+- (BOOL)isValid;
 - (void)fire;
 - (unsigned long)_cfTypeID;
+- (id)userInfo;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)init;
+- (oneway void)release;
 
 @end

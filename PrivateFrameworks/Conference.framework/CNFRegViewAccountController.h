@@ -2,34 +2,21 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class <CNFRegViewAccountControllerDelegate>, IMAccount;
+@class <CNFRegViewAccountControllerDelegate>;
 
-@interface CNFRegViewAccountController : CNFRegAccountWebViewController  {
-    IMAccount *_account;
+@interface CNFRegViewAccountController : CNFRegSecureAccountWebViewController  {
     <CNFRegViewAccountControllerDelegate> *_delegate;
-    BOOL _triedGettingNewCredentials;
-    BOOL _gotNewCredential;
 }
 
-@property(retain) IMAccount * account;
 @property <CNFRegViewAccountControllerDelegate> * delegate;
 
 
-- (id)authIdHeaderValue;
-- (void)doHandoffWithStatus:(int)arg1 appleId:(id)arg2 password:(id)arg3;
-- (id)authTokenHeaderValue;
-- (void)_setupAccountHandlers;
-- (void)_handleTimeout;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (id)bagKey;
 - (id)logName;
 - (void)cancelTapped;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)setAccount:(id)arg1;
-- (id)account;
-- (id)initWithAccount:(id)arg1;
+- (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 
 @end

@@ -14,47 +14,47 @@
     unsigned int _useCellDataOnly : 1;
 }
 
-+ (id)displayedAccountTypeString;
-+ (id)displayedShortAccountTypeString;
 + (void)registerAppleServiceDeliveryHostname:(id)arg1;
 + (id)newDefaultInstance;
++ (id)saslProfileName;
++ (id)displayedAccountTypeString;
++ (id)displayedShortAccountTypeString;
 + (id)accountTypeString;
 + (void*)keychainProtocol;
-+ (id)saslProfileName;
 
-- (struct __CFString { }*)connectionServiceType;
-- (id)certUIService;
-- (Class)deliveryClass;
 - (void)setDeliveryClass:(Class)arg1;
-- (BOOL)isCommonPortNumber:(unsigned int)arg1;
-- (unsigned int)keychainPortNumber;
+- (id)customAuthenticationErrorStringForError:(id)arg1 authScheme:(id)arg2;
 - (id)_defaultSettingsWithPort:(unsigned int)arg1 useSSL:(BOOL)arg2 directSSL:(BOOL)arg3;
 - (id)connectionSettingsForAuthentication:(BOOL)arg1 secure:(id)arg2 insecure:(id)arg3;
-- (BOOL)_shouldTryDirectSSLConnectionOnPort:(unsigned int)arg1;
-- (void)setPreferredAuthScheme:(id)arg1;
-- (id)customAuthenticationErrorStringForError:(id)arg1 authScheme:(id)arg2;
-- (BOOL)supportsPipelining;
 - (void)setSupportsPipelining:(BOOL)arg1;
 - (void)disconnect:(id)arg1;
 - (void)connectionExpired:(id)arg1;
 - (void)setTimer;
 - (BOOL)_isAppleServiceDeliveryHostname:(id)arg1;
-- (id)passwordFromKeychain;
-- (id)preferredAuthScheme;
+- (BOOL)supportsPipelining;
 - (id)authenticatedConnection:(BOOL)arg1;
 - (void)setSupportsOutboxCopy:(BOOL)arg1;
 - (void)checkInConnection:(id)arg1;
 - (BOOL)canBeFallbackAccount;
 - (BOOL)supportsOutboxCopy;
-- (void)setPasswordInKeychain:(id)arg1;
-- (unsigned int)defaultPortNumber;
-- (void)releaseAllConnections;
+- (Class)deliveryClass;
 - (void)releaseAllForcedConnections;
-- (Class)connectionClass;
+- (void)setPreferredAuthScheme:(id)arg1;
 - (id)alternateConnectionSettings;
 - (id)insecureConnectionSettings;
 - (id)secureConnectionSettings;
-- (void)dealloc;
+- (void)releaseAllConnections;
+- (BOOL)isCommonPortNumber:(unsigned int)arg1;
+- (unsigned int)keychainPortNumber;
+- (void)setPasswordInKeychain:(id)arg1;
+- (id)passwordFromKeychain;
+- (id)preferredAuthScheme;
+- (unsigned int)defaultPortNumber;
+- (BOOL)_shouldTryDirectSSLConnectionOnPort:(unsigned int)arg1;
+- (Class)connectionClass;
+- (id)certUIService;
+- (struct __CFString { }*)connectionServiceType;
 - (id)serviceName;
+- (void)dealloc;
 
 @end

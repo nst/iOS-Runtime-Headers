@@ -3,23 +3,24 @@
  */
 
 @interface PLUILibraryViewController : PLLibraryViewController  {
-    int _previousStatusBarMode;
-    int _newStatusBarMode;
-    unsigned int _didSetPreviousStatusBarMode : 1;
+    struct NSObject { Class x1; } *_allPhotosAlbumList;
+    int _previousStatusBarStyle;
+    int _newStatusBarStyle;
+    unsigned int _didSetPreviousStatusBarStyle : 1;
 }
 
 
-- (void)loadView;
-- (int)_imagePickerStatusBarMode;
+- (void)cancelButtonClicked:(id)arg1;
 - (void)_setImagePickerMediaTypes:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (int)_imagePickerStatusBarStyle;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)albumListDidChange:(id)arg1;
+- (void)_updateFilteredAlbumListWithFilter:(int)arg1;
+- (void)updateNavigationItemButtons;
+- (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (id)init;
 - (void)dealloc;
-- (void)iTunesSyncPhaseWillStart:(int)arg1;
-- (void)iTunesSyncPhaseDidFinish:(int)arg1 reason:(int)arg2;
-- (void)iTunesSyncDidFinish;
-- (void)didSelectAlbum:(id)arg1;
-- (void)cancelButtonClicked:(id)arg1;
 
 @end

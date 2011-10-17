@@ -5,22 +5,14 @@
 @class NSArray;
 
 @interface UIITunesStoreURLResolver : UIURLResolver  {
-    NSArray *_appleStoreHostPatterns;
-    NSArray *_appleStorePathPatterns;
-    NSArray *_appStoreHostPatterns;
-    NSArray *_appStorePathPatterns;
-    NSArray *_bookStoreHostPatterns;
-    NSArray *_bookStorePathPatterns;
-    NSArray *_hostWhiteList;
-    NSArray *_musicStoreHostPatterns;
-    NSArray *_musicStorePathPatterns;
+    NSArray *_converters;
 }
 
-+ (id)urlCacheName;
 + (id)urlCacheChangedNotificationName;
++ (id)urlCacheName;
 
-- (BOOL)isAppleStoreURL:(id)arg1;
-- (int)storeURLTypeForURL:(id)arg1;
+- (id)_newURLConverterWithHostPatterns:(id)arg1 hostWhiteList:(id)arg2 pathPatterns:(id)arg3;
+- (id)convertedURLForURL:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (void)dealloc;
 

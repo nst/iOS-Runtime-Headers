@@ -14,7 +14,7 @@
 - (id)allAccounts;
 - (id)init;
 - (void)dealloc;
-- (id)accountsBySyncStoreIdentifier;
 - (id)accountWithSyncStoreIdentifier:(id)arg1;
+- (id)accountsBySyncStoreIdentifier;
 
 @end

@@ -4,7 +4,7 @@
 
 @class SSDownloadPhase, NSError;
 
-@interface SSDownloadStatus : NSObject <NSCopying> {
+@interface SSDownloadStatus : NSObject <SSCoding, NSCopying> {
     SSDownloadPhase *_activePhase;
     BOOL _contentRestricted;
     NSError *_error;
@@ -12,32 +12,37 @@
     BOOL _paused;
 }
 
-@property(getter=isFailedTransient,readonly) BOOL failedTransient;
-@property(getter=isPausable,readonly) BOOL pausable;
-@property(readonly) float percentComplete;
-@property(getter=isPaused) BOOL paused;
-@property(getter=isFailed) BOOL failed;
 @property(retain) NSError * error;
+@property(getter=isFailed) BOOL failed;
+@property(getter=isFailedTransient,readonly) BOOL failedTransient;
+@property(getter=isPausable) BOOL pausable;
+@property(getter=isPaused) BOOL paused;
 @property(getter=isContentRestricted) BOOL contentRestricted;
 @property(readonly) SSDownloadPhase * activePhase;
+@property(readonly) float percentComplete;
 
 
-- (void)setPaused:(BOOL)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setFailed:(BOOL)arg1;
+- (void)setPercentComplete:(float)arg1;
 - (float)percentComplete;
+- (void)setError:(id)arg1;
+- (id)activePhase;
 - (BOOL)isFailedTransient;
-- (BOOL)isPausable;
+- (BOOL)isFailed;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
+- (void)setOperationType:(int)arg1;
 - (void)setOperationProgress:(id)arg1;
 - (void)setContentRestricted:(BOOL)arg1;
+- (void)setPausable:(BOOL)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (id)error;
-- (BOOL)isContentRestricted;
+- (void)setPaused:(BOOL)arg1;
+- (void)setFailed:(BOOL)arg1;
 - (BOOL)isPaused;
-- (id)activePhase;
-- (BOOL)isFailed;
-- (void)setError:(id)arg1;
+- (id)error;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (BOOL)isContentRestricted;
+- (BOOL)isPausable;
 
 @end

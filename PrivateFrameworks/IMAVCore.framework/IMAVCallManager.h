@@ -2,35 +2,42 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSArray;
 
 @interface IMAVCallManager : NSObject  {
     unsigned int _callState;
     unsigned int _telephonyCallState;
+    int _token;
     unsigned int _globalCallState;
     NSMutableArray *_chatArray;
 }
 
 @property(readonly) unsigned int callState;
+@property(readonly) BOOL hasActiveCall;
+@property(readonly) NSArray * calls;
 @property(setter=_setCallState:) unsigned int _callState;
 @property(setter=_setTelephonyCallState:) unsigned int _telephonyCallState;
+@property(readonly) NSArray * _FTCalls;
 
 + (id)sharedInstance;
 
-- (oneway void)release;
-- (id)init;
-- (unsigned int)retainCount;
-- (id)autorelease;
+- (BOOL)hasActiveCall;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 - (unsigned int)callState;
+- (id)init;
+- (BOOL)_hasActiveFaceTimeCall;
+- (BOOL)_hasActiveTelephonyCall;
+- (id)calls;
 - (unsigned int)_telephonyCallState;
-- (unsigned int)_callState;
-- (id)_chatList;
-- (id)_nonRetainingChatList;
-- (void)_postStateChangeNamed:(id)arg1 fromState:(unsigned int)arg2 toState:(unsigned int)arg3;
 - (void)_postStateChangeIfNecessary;
-- (void)_setCallState:(unsigned int)arg1;
+- (void)_postStateChangeNamed:(id)arg1 fromState:(unsigned int)arg2 toState:(unsigned int)arg3;
+- (id)_nonRetainingChatList;
+- (id)_FTCalls;
 - (void)__setTelephonyCallState:(unsigned int)arg1;
 - (void)_setTelephonyCallState:(unsigned int)arg1;
+- (unsigned int)_callState;
 - (void)_updateOverallChatState;
+- (void)_setCallState:(unsigned int)arg1;
 
 @end

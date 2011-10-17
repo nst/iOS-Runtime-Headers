@@ -12,19 +12,19 @@
 @property(retain) PKPaper * paper;
 @property(retain) NSMutableDictionary * dict;
 
-+ (id)default;
 + (id)printSettingsForPrinter:(id)arg1;
++ (id)default;
 + (id)photo;
 
-- (void)setPaper:(id)arg1;
-- (id)dict;
+- (id)settingsDict;
+- (void)setDict:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;
+- (void)setPaper:(id)arg1;
+- (id)paper;
+- (id)dict;
+- (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
 - (void)dealloc;
-- (id)objectForKey:(id)arg1;
-- (id)settingsDict;
-- (void)setDict:(id)arg1;
-- (id)paper;
 
 @end

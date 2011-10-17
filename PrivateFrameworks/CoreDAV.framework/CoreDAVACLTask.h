@@ -8,17 +8,17 @@
     NSArray *_accessControlEntities;
 }
 
-@property(retain) NSArray * accessControlEntities;
 @property <CoreDAVACLTaskDelegate> * delegate;
+@property(retain) NSArray * accessControlEntities;
 
 
-- (id)initWithURL:(id)arg1;
-- (void)dealloc;
-- (id)description;
 - (id)initWithAccessControlEntities:(id)arg1 atURL:(id)arg2;
-- (id)accessControlEntities;
 - (void)setAccessControlEntities:(id)arg1;
+- (id)accessControlEntities;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
+- (id)initWithURL:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)httpMethod;
 - (id)requestBody;
 

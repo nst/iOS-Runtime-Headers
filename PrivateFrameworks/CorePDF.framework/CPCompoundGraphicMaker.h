@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPCluster, CPChunk, CPShape;
+@class CPCluster, CPChunk, CPGraphicObject;
 
 @interface CPCompoundGraphicMaker : NSObject <CPDisposable> {
     CPChunk *parentChunk;
+    BOOL shapesAreVectorGraphics;
     unsigned int shapeCount;
-    CPShape **shapes;
+    CPGraphicObject **shapes;
     double pageSpread;
     CPCluster *cluster;
     unsigned int groupInfoCount;
@@ -26,16 +27,16 @@
 
 + (BOOL)makeCompoundGraphicsInZonesOf:(id)arg1;
 
-- (void)dispose;
 - (void)finalize;
-- (void)dealloc;
-- (id)initWithGraphicsIn:(id)arg1;
-- (BOOL)applyPageHint;
-- (void)addGroupInfoWithIndex:(unsigned int)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)makeCompoundGraphicFromShapesAtIndex:(unsigned int)arg1 count:(unsigned int)arg2;
-- (void)coalesceShapeGroups;
-- (BOOL)makeCompoundGraphicsFromShapeGroups;
-- (BOOL)groupOverlappingGraphics;
+- (id)initWithGraphicsIn:(id)arg1 ofClass:(Class)arg2;
 - (BOOL)makeCompoundGraphics;
+- (void)coalesceShapeGroups;
+- (void)makeCompoundGraphicFromShapesAtIndex:(unsigned int)arg1 count:(unsigned int)arg2;
+- (void)addGroupInfoWithIndex:(unsigned int)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (BOOL)makeCompoundGraphicsFromShapeGroups;
+- (BOOL)findClusterLevel;
+- (BOOL)groupOverlappingGraphics;
+- (void)dispose;
+- (void)dealloc;
 
 @end

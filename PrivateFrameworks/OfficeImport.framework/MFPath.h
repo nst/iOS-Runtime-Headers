@@ -6,17 +6,17 @@
 }
 
 
-- (int)begin;
-- (int)end;
-- (int)state;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGPoint { float x1; float x2; })currentPoint;
 - (int)abort;
 - (int)closeFigure;
 - (int)widen:(id)arg1;
 - (int)fill:(id)arg1;
-- (BOOL)isOpen;
 - (int)stroke:(id)arg1;
 - (int)flatten;
+- (int)begin;
+- (BOOL)isOpen;
+- (int)end;
+- (struct CGPoint { float x1; float x2; })currentPoint;
+- (int)state;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

@@ -2,22 +2,22 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSMutableArray, NSArray;
+@class NSArray;
 
 @interface IMDirectlyObservableObject : NSObject  {
-    NSMutableArray *_observers;
+    NSArray *_observers;
 }
 
 @property(retain) NSArray * observers;
 
 
+- (void)setObservers:(id)arg1;
+- (id)observers;
+- (void)_objectDidPostNotification:(id)arg1;
+- (void)informObserversOfNotification:(id)arg1;
+- (void)addObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)_objectDidPostNotification:(id)arg1;
-- (id)observers;
-- (void)setObservers:(id)arg1;
-- (void)informObserversOfNotification:(id)arg1;
-- (void)addObserver:(id)arg1;
 
 @end

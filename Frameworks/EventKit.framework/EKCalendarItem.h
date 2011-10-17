@@ -2,28 +2,100 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSArray, NSString, EKCalendar, NSDate;
+@class NSTimeZone, NSArray, NSString, EKCalendar, NSDate, NSURL;
 
-@interface EKCalendarItem : NSObject  {
+@interface EKCalendarItem : EKObject  {
 }
 
+@property(readonly) NSString * UUID;
 @property(retain) EKCalendar * calendar;
 @property(copy) NSString * title;
+@property(copy) NSString * location;
 @property(copy) NSString * notes;
-@property(copy,readonly) NSDate * lastModifiedDate;
+@property(copy) NSURL * URL;
+@property(readonly) NSDate * lastModifiedDate;
+@property(readonly) NSDate * creationDate;
+@property(copy) NSTimeZone * timeZone;
+@property(readonly) BOOL hasAlarms;
+@property(readonly) BOOL hasRecurrenceRules;
+@property(readonly) BOOL hasAttendees;
+@property(readonly) BOOL hasNotes;
+@property(readonly) NSArray * attendees;
 @property(copy) NSArray * alarms;
+@property(copy) NSArray * recurrenceRules;
 
 
-- (void)setNotes:(id)arg1;
-- (void)setCalendar:(id)arg1;
-- (id)calendar;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (id)lastModifiedDate;
-- (id)notes;
+- (id)attachments;
+- (BOOL)isFloating;
+- (void)setPriority:(int)arg1;
+- (id)UUID;
+- (void)removeAttendee:(id)arg1;
+- (void)setAttendees:(id)arg1;
+- (void)removeRecurrenceRule:(id)arg1;
 - (void)setAlarms:(id)arg1;
-- (void)addAlarm:(id)arg1;
+- (BOOL)hasAlarms;
+- (void)setLastModifiedDate:(id)arg1;
+- (void)setNotes:(id)arg1;
+- (void)_moveToCalendarInternal:(id)arg1;
+- (id)_attachmentsRelation;
+- (id)_organizerRelation;
+- (id)_selfAttendeeRelation;
+- (id)_attendeesRelation;
+- (id)_recurrencesRelation;
+- (id)_alarmsRelation;
+- (BOOL)isSelfOrganized;
+- (BOOL)hasNotes;
+- (id)notes;
+- (id)_persistentItem;
+- (void)setStructuredLocation:(id)arg1;
+- (id)_locationRelation;
 - (void)removeAlarm:(id)arg1;
+- (void)addRecurrenceRule:(id)arg1;
+- (void)addAttendee:(id)arg1;
+- (void)setOrganizer:(id)arg1;
+- (void)addAlarm:(id)arg1;
+- (void)rebase;
+- (id)structuredLocation;
+- (BOOL)hasAttendees;
+- (void)updatePersistentObjectSkippingProperties:(id)arg1;
+- (void)moveToCalendar:(id)arg1;
+- (BOOL)allowsRecurrenceModifications;
+- (BOOL)allowsAttendeeModifications;
+- (BOOL)allowsAlarmModifications;
+- (BOOL)requiresDetach;
+- (BOOL)allowsCalendarModifications;
+- (BOOL)isSelfOrganizedInvitation;
+- (BOOL)canMoveToCalendar:(id)arg1 fromCalendar:(id)arg2 error:(id*)arg3;
+- (BOOL)isExternallyOrganizedInvitation;
+- (void)setRecurrenceRules:(id)arg1;
+- (id)recurrenceRules;
+- (BOOL)hasRecurrenceRules;
 - (id)alarms;
+- (id)organizer;
+- (id)attendees;
+- (id)originalItem;
+- (id)selfAttendee;
+- (void)setAllDay:(BOOL)arg1;
+- (id)lazyLoadRelationForKey:(id)arg1;
+- (void)updatePersistentObject;
+- (BOOL)validate:(id*)arg1;
+- (BOOL)isAllDay;
+- (void)setLocation:(id)arg1;
+- (id)lastModifiedDate;
+- (int)priority;
+- (void)setURL:(id)arg1;
+- (id)calendar;
+- (void)setCalendar:(id)arg1;
+- (id)location;
+- (id)timeZone;
+- (id)URL;
+- (BOOL)isEditable;
+- (id)title;
+- (void)setAction:(id)arg1;
+- (void)setTimeZone:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (id)creationDate;
+- (id)description;
+- (id)action;
 
 @end

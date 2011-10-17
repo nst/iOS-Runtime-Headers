@@ -5,19 +5,29 @@
 @interface DABehaviorOptions : NSObject  {
 }
 
-+ (int)refreshThrottleTime;
-+ (BOOL)ignoreBadLDAPCerts;
-+ (BOOL)_shouldForceCookies:(BOOL*)arg1;
-+ (id)mobileMeServerURL;
-+ (BOOL)allIMAPServersSupportNotesSearch;
-+ (BOOL)completelyIgnoreNotes;
 + (BOOL)isCustomerInstall;
++ (BOOL)isAppleInternalInstall;
++ (BOOL)isInHoldingPattern;
++ (BOOL)sendMeCardEverywhere;
++ (BOOL)completelyIgnoreNotes;
++ (BOOL)allIMAPServersSupportNotesSearch;
++ (id)mobileMeServerURL;
 + (id)APSEnv;
++ (BOOL)calDAVRemindersForAll;
++ (BOOL)icalserverHack;
++ (BOOL)googleHack;
++ (int)calDAVTimeout;
++ (BOOL)ignoreBadLDAPCerts;
++ (int)refreshThrottleTime;
++ (BOOL)_shouldForceCookies:(BOOL*)arg1;
++ (BOOL)promptForAllCerts;
++ (void)initialize;
 + (id)whitelistedEASProtocols;
-+ (double)defaultEASTaskTimeoutOutWasFound:(BOOL*)arg1;
 + (BOOL)cookiesEnabled;
++ (double)defaultEASTaskTimeoutOutWasFound:(BOOL*)arg1;
 + (BOOL)writeOutBrokenCancelationRequests;
 + (BOOL)ignoreSupportedCommands;
++ (void)_startListeningForNotifications;
 
 
 @end

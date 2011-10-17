@@ -12,27 +12,29 @@
     BOOL mHasFileAttributes;
     long long mPlaintextDataLength;
     SFUCryptoKey *mCryptoKey;
+    BOOL mDeleteFileWhenDone;
 }
 
 
-- (id)initWithPath:(id)arg1;
-- (id)path;
-- (void)dealloc;
-- (id)description;
-- (id)initWithPath:(id)arg1 cryptoKey:(id)arg2 dataLength:(long long)arg3;
-- (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2 cryptoKey:(id)arg3 dataLength:(long long)arg4;
-- (id)initWithCopyOfData:(id)arg1 path:(id)arg2;
-- (id)initWithCopyOfData:(id)arg1 path:(id)arg2 cryptoKey:(id)arg3;
-- (void)setFileType:(unsigned long)arg1;
-- (BOOL)isCryptoKeyIdenticalToKey:(id)arg1;
-- (void)readFileAttributes;
-- (BOOL)isEncrypted;
-- (long long)encodedLength;
-- (id)inputStream;
-- (BOOL)isReadable;
 - (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2;
+- (id)initWithCopyOfData:(id)arg1 path:(id)arg2;
+- (void)deleteFileWhenDone;
+- (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2 cryptoKey:(id)arg3 dataLength:(long long)arg4;
+- (id)initWithCopyOfData:(id)arg1 path:(id)arg2 cryptoKey:(id)arg3;
+- (BOOL)isCryptoKeyIdenticalToKey:(id)arg1;
+- (id)initWithPath:(id)arg1 cryptoKey:(id)arg2 dataLength:(long long)arg3;
+- (void)readFileAttributes;
+- (long long)encodedLength;
+- (BOOL)isEncrypted;
 - (BOOL)hasSameLocationAs:(id)arg1;
-- (unsigned long)fileType;
+- (id)inputStream;
 - (long long)dataLength;
+- (id)path;
+- (unsigned long)fileType;
+- (void)setFileType:(unsigned long)arg1;
+- (id)initWithPath:(id)arg1;
+- (BOOL)isReadable;
+- (id)description;
+- (void)dealloc;
 
 @end

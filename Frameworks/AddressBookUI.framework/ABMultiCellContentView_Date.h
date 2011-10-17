@@ -17,7 +17,6 @@
 - (void)dealloc;
 - (BOOL)dateFieldShouldReturn:(id)arg1;
 - (void)updateSubviewsForNewStateAnimated:(BOOL)arg1;
-- (id)viewForFirstResponder;
 - (id)hitTestForTouches:(id)arg1 withEvent:(id)arg2;
 - (BOOL)dateFieldShouldClear:(id)arg1;
 - (void)dateFieldDateDidChange:(id)arg1;
@@ -25,8 +24,9 @@
 - (void)dateFieldDidBeginEditing:(id)arg1;
 - (BOOL)dateFieldShouldEndEditing:(id)arg1;
 - (void)dateFieldDidEndEditing:(id)arg1;
-- (void)reloadFromModel;
 - (void)setUpdateDelegate:(id)arg1;
+- (id)viewForFirstResponder;
 - (void)setAbCellStyle:(int)arg1;
+- (void)reloadFromModel;
 
 @end

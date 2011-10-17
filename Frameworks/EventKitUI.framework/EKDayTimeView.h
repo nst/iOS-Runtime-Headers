@@ -2,26 +2,69 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
+@class EKCurrentTimeMarkerView, NSTimer;
+
 @interface EKDayTimeView : UIView  {
     unsigned int _leftBorder : 1;
+    unsigned int _rightBorder : 1;
+    BOOL _useLightText;
+    double _highlightedHour;
+    int _orientation;
+    float _hourSize;
+    float _designatorSize;
+    EKCurrentTimeMarkerView *_timeMarker;
+    NSTimer *_timeMarkerTimer;
+    float _hourHeight;
+    float _timeWidth;
+    BOOL _showsTimeMarker;
+    int _hoursToPad;
 }
 
 @property BOOL showsLeftBorder;
+@property BOOL showsRightBorder;
+@property BOOL showsTimeMarker;
+@property BOOL usesLightText;
+@property double highlightedHour;
+@property int hoursToPad;
+@property(readonly) float hourHeight;
+@property(readonly) float timeWidth;
+@property(readonly) float defaultHeight;
 
-+ (float)defaultHeight;
-+ (float)designatorSize;
-+ (float)hourSize;
-+ (float)hourHeight;
++ (float)designatorSizeForOrientation:(int)arg1;
++ (float)hourSizeForOrientation:(int)arg1;
++ (float)timeWidthForOrientation:(int)arg1;
 + (float)verticalPadding;
-+ (float)timeWidth;
-+ (float)timeInset;
++ (float)timeInsetForOrientation:(int)arg1;
++ (float)hourHeightForOrientation:(int)arg1;
++ (float)defaultHeightForOrientation:(int)arg1;
 
-- (void)dealloc;
+- (float)topPadding;
+- (void)setOrientation:(int)arg1;
+- (float)defaultHeight;
+- (void)willMoveToSuperview:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setShowsLeftBorder:(BOOL)arg1;
+- (void)setHoursToPad:(int)arg1;
+- (int)hoursToPad;
+- (BOOL)usesLightText;
+- (double)highlightedHour;
+- (void)setHighlightedHour:(double)arg1;
+- (void)setUsesLightText:(BOOL)arg1;
+- (float)_positionOfSecond:(int)arg1;
+- (void)_updateMarkerPosition;
+- (void)_startMarkerTimer;
+- (BOOL)showsRightBorder;
+- (void)setShowsRightBorder:(BOOL)arg1;
 - (BOOL)showsLeftBorder;
+- (BOOL)showsTimeMarker;
+- (void)setShowsTimeMarker:(BOOL)arg1;
 - (float)timeInset;
+- (float)hourHeight;
+- (float)timeWidth;
+- (void)_invalidateMarkerTimer;
+- (void)setShowsLeftBorder:(BOOL)arg1;
 - (void)_localeChanged;
+- (void)dealloc;
 
 @end

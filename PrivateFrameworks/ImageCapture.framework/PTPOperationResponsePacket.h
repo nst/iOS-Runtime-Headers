@@ -10,6 +10,9 @@
 }
 
 
+- (unsigned short)responseCode;
+- (unsigned long)parameterAtIndex:(unsigned long)arg1;
+- (void)setResponseCode:(unsigned short)arg1;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 numParameters:(unsigned long)arg3 parameters:(unsigned int*)arg4;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3;
@@ -17,28 +20,25 @@
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4 parameter3:(unsigned long)arg5;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4 parameter3:(unsigned long)arg5 parameter4:(unsigned long)arg6;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4 parameter3:(unsigned long)arg5 parameter4:(unsigned long)arg6 parameter5:(unsigned long)arg7;
-- (id)initWithUSBBuffer:(void*)arg1;
-- (int)numParameters;
 - (void)setPparameter:(unsigned long)arg1 atIndex:(unsigned long)arg2;
-- (void)setParameter1:(unsigned long)arg1;
-- (void)setParameter2:(unsigned long)arg1;
 - (void)setParameter4:(unsigned long)arg1;
 - (void)setParameter5:(unsigned long)arg1;
-- (id)contentForTCP;
-- (unsigned long)parameter2;
+- (void)setParameter1:(unsigned long)arg1;
+- (void)setParameter2:(unsigned long)arg1;
 - (void)setParameter3:(unsigned long)arg1;
+- (id)initWithUSBBuffer:(void*)arg1;
 - (id)contentForUSB;
 - (id)contentForUSBUsingBuffer:(void*)arg1 capacity:(unsigned long)arg2;
-- (unsigned long)transactionID;
 - (void)setTransactionID:(unsigned long)arg1;
-- (id)initWithTCPBuffer:(void*)arg1;
 - (unsigned long)parameter1;
+- (int)numParameters;
+- (unsigned long)parameter2;
 - (unsigned long)parameter3;
 - (unsigned long)parameter4;
 - (unsigned long)parameter5;
+- (id)contentForTCP;
+- (unsigned long)transactionID;
+- (id)initWithTCPBuffer:(void*)arg1;
 - (id)description;
-- (unsigned long)parameterAtIndex:(unsigned long)arg1;
-- (void)setResponseCode:(unsigned short)arg1;
-- (unsigned short)responseCode;
 
 @end

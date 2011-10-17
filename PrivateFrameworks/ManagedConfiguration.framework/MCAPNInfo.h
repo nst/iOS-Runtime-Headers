@@ -19,19 +19,19 @@
 @property(retain) NSString * apnName;
 
 
-- (id)password;
-- (void)dealloc;
-- (id)description;
-- (id)strippedDefaultsRepresentation;
-- (id)defaultsRepresentation;
-- (void)setProxyPort:(id)arg1;
-- (void)setProxy:(id)arg1;
-- (id)apnName;
-- (void)setApnName:(id)arg1;
-- (id)proxyPort;
-- (id)proxy;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
+- (id)password;
+- (id)proxyPort;
+- (id)proxy;
+- (void)setApnName:(id)arg1;
+- (void)setProxy:(id)arg1;
+- (void)setProxyPort:(id)arg1;
+- (id)defaultsRepresentation;
+- (id)strippedDefaultsRepresentation;
+- (id)apnName;
+- (id)description;
+- (void)dealloc;
 
 @end

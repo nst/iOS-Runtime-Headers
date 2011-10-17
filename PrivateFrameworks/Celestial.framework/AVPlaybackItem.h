@@ -19,7 +19,8 @@
         float height; 
     } _currentSize;
     BOOL _currentSizeIsValid;
-    BOOL _isPreparingForInspection;
+    BOOL _isPreparingForInspectionInitialSamples;
+    BOOL _isPreparingForInspectionAccurateDuration;
     BOOL _isInPlayQueue;
     double _bookmarkTime;
     NSDictionary *_streamStateNotificationInfo;
@@ -28,7 +29,9 @@
     NSDictionary *_playToEndNotificationInfo;
 }
 
-@property BOOL isPreparingForInspection;
+@property(readonly) BOOL isPreparingForInspection;
+@property BOOL isPreparingForInspectionAccurateDuration;
+@property BOOL isPreparingForInspectionInitialSamples;
 @property BOOL isInPlayQueue;
 @property(retain) NSDictionary * lyricsNotificationInfo;
 @property(retain) NSDictionary * streamStateNotificationInfo;
@@ -37,46 +40,49 @@
 
 + (id)convertFigTimeDictionaryToTimeIntervalWithKey:(id)arg1 stringURLToNSURLWithKey:(id)arg2 inArrayOfDictionaries:(id)arg3;
 
+- (id)attributeForKey:(id)arg1;
 - (void)release;
 - (void)dealloc;
-- (id)chapterImageForImageID:(int)arg1;
-- (void)setBookmarkTime:(double)arg1;
-- (id)formatDetailsForTracks;
-- (id)attributeForKey:(id)arg1;
-- (BOOL)addToPlayQueue:(struct OpaqueFigPlayer { }*)arg1 afterItem:(struct OpaqueFigPlaybackItem { }*)arg2;
 - (id)initWithDelegate:(id)arg1 item:(id)arg2;
-- (void)cacheCurrentSize;
+- (BOOL)addToPlayQueue:(struct OpaqueFigPlayer { }*)arg1 afterItem:(struct OpaqueFigPlaybackItem { }*)arg2;
+- (void)removeFromPlayQueue:(struct OpaqueFigPlayer { }*)arg1;
+- (void)setBookmarkTime:(double)arg1;
+- (void)fpItemNotificationInfo:(id)arg1;
+- (void)removeFPListeners;
+- (void)setStreamStateNotificationInfo:(id)arg1;
+- (void)setLyricsNotificationInfo:(id)arg1;
+- (void)setInspectionNotificationInfo:(id)arg1;
+- (void)setPlayToEndNotificationInfo:(id)arg1;
+- (BOOL)isPreparingForInspectionInitialSamples;
+- (BOOL)isPreparingForInspectionAccurateDuration;
 - (void)cacheCurrentDuration;
+- (void)cacheCurrentSize;
+- (BOOL)isPreparingForInspection;
+- (BOOL)isInPlayQueue;
 - (id)fpNotificationNames;
 - (void)addFPListeners;
-- (void)removeFPListeners;
 - (void)applyAttributesFromAVItemToFPItem:(id)arg1;
-- (id)propertiesNeededForInspection;
 - (void)applyBookmarkTime;
-- (void)makeReadyForInspection;
-- (void)removeFromPlayQueue:(struct OpaqueFigPlayer { }*)arg1;
 - (void)fpItemNotificationName:(id)arg1 userInfo:(id)arg2;
-- (void)fpItemNotificationInfo:(id)arg1;
-- (BOOL)isPreparingForInspection;
-- (void)setIsPreparingForInspection:(BOOL)arg1;
-- (BOOL)isInPlayQueue;
+- (void)setIsPreparingForInspectionInitialSamples:(BOOL)arg1;
+- (void)setIsPreparingForInspectionAccurateDuration:(BOOL)arg1;
+- (id)propertiesNeededForInspection;
 - (void)setIsInPlayQueue:(BOOL)arg1;
-- (void)setLyricsNotificationInfo:(id)arg1;
-- (void)setStreamStateNotificationInfo:(id)arg1;
-- (void)setPlayToEndNotificationInfo:(id)arg1;
-- (void)setInspectionNotificationInfo:(id)arg1;
 - (void)ensureFPItem;
 - (struct OpaqueFigPlaybackItem { }*)fpItem;
 - (id)inspectionNotificationInfo;
+- (void)makeReadyForInspection;
 - (void)stealControlOfAVItem;
 - (id)playToEndNotificationInfo;
 - (id)lyricsNotificationInfo;
 - (id)streamStateNotificationInfo;
+- (void)setAttribute:(id)arg1 forKey:(id)arg2;
+- (id)avItem;
 - (id)itemAttribute:(id)arg1 forKey:(id)arg2;
 - (void)setItemAttribute:(id)arg1 value:(id)arg2 forKey:(id)arg3 error:(id*)arg4;
+- (id)formatDetailsForTracks;
+- (id)chapterImageForImageID:(int)arg1;
 - (id)nextThumbnailTimesStartingAt:(double)arg1 minimumInterval:(double)arg2 forwards:(BOOL)arg3 maxCount:(int)arg4;
-- (id)avItem;
 - (id)evenlySpacedThumbnailTimesFromStartTime:(double)arg1 toEndTime:(double)arg2 maxCount:(int)arg3;
-- (void)setAttribute:(id)arg1 forKey:(id)arg2;
 
 @end

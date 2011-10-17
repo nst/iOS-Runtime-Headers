@@ -22,23 +22,23 @@
 }
 
 
-- (id)names;
-- (id)colors;
-- (id)strings;
-- (void)setColors:(id)arg1;
-- (id)links;
-- (void)dealloc;
-- (id)borders;
-- (id)fills;
-- (id)fonts;
-- (id)themes;
-- (id)tableStyles;
-- (id)contentFormats;
-- (id)initWithStringOptimization:(bool)arg1;
-- (id)alignmentInfos;
 - (void)setThemes:(id)arg1;
+- (id)initWithStringOptimization:(bool)arg1;
+- (id)contentFormats;
+- (id)alignmentInfos;
+- (id)fills;
+- (id)tableStyles;
+- (id)fonts;
 - (id)differentialStyles;
+- (id)themes;
+- (id)borders;
 - (id)styles;
 - (id)border;
+- (id)names;
+- (id)colors;
+- (void)setColors:(id)arg1;
+- (id)strings;
+- (id)links;
+- (void)dealloc;
 
 @end

@@ -6,63 +6,63 @@
 
 @interface GMMStreetViewResponse : PBCodable  {
     NSString *_panoId;
+    GMMStreetViewMetadata *_metadata;
     GMMIncomingSuperTile *_incomingSuperTile;
     GMMIncomingTile *_incomingTile;
     GMMIncomingThumbnail *_incomingThumbnail;
     GMMNavigationImage *_navigationImage;
-    GMMStreetViewMetadata *_metadata;
     NSString *_signature;
-    BOOL _throttled;
     BOOL _hasThrottled;
+    BOOL _throttled;
 }
 
 @property(readonly) BOOL hasPanoId;
-@property(readonly) BOOL hasIncomingSuperTile;
-@property(readonly) BOOL hasIncomingTile;
-@property(readonly) BOOL hasIncomingThumbnail;
-@property(readonly) BOOL hasNavigationImage;
-@property(readonly) BOOL hasMetadata;
-@property(readonly) BOOL hasSignature;
-@property(readonly) BOOL hasThrottled;
-@property BOOL throttled;
-@property(retain) NSString * signature;
-@property(retain) GMMStreetViewMetadata * metadata;
-@property(retain) GMMNavigationImage * navigationImage;
-@property(retain) GMMIncomingThumbnail * incomingThumbnail;
-@property(retain) GMMIncomingTile * incomingTile;
-@property(retain) GMMIncomingSuperTile * incomingSuperTile;
 @property(retain) NSString * panoId;
+@property(readonly) BOOL hasMetadata;
+@property(retain) GMMStreetViewMetadata * metadata;
+@property(readonly) BOOL hasIncomingSuperTile;
+@property(retain) GMMIncomingSuperTile * incomingSuperTile;
+@property(readonly) BOOL hasIncomingTile;
+@property(retain) GMMIncomingTile * incomingTile;
+@property(readonly) BOOL hasIncomingThumbnail;
+@property(retain) GMMIncomingThumbnail * incomingThumbnail;
+@property(readonly) BOOL hasNavigationImage;
+@property(retain) GMMNavigationImage * navigationImage;
+@property(readonly) BOOL hasSignature;
+@property(retain) NSString * signature;
+@property BOOL hasThrottled;
+@property BOOL throttled;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasThrottled:(BOOL)arg1;
 - (BOOL)hasThrottled;
-- (BOOL)hasIncomingSuperTile;
-- (BOOL)hasIncomingTile;
-- (BOOL)hasIncomingThumbnail;
-- (BOOL)hasNavigationImage;
+- (id)signature;
+- (id)navigationImage;
+- (id)incomingThumbnail;
+- (id)incomingTile;
+- (id)incomingSuperTile;
+- (BOOL)throttled;
 - (BOOL)hasSignature;
+- (BOOL)hasNavigationImage;
+- (BOOL)hasIncomingThumbnail;
+- (BOOL)hasIncomingTile;
+- (BOOL)hasIncomingSuperTile;
 - (void)setThrottled:(BOOL)arg1;
 - (void)setSignature:(id)arg1;
-- (id)navigationImage;
 - (void)setNavigationImage:(id)arg1;
 - (void)setIncomingThumbnail:(id)arg1;
 - (void)setIncomingTile:(id)arg1;
 - (void)setIncomingSuperTile:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)incomingTile;
-- (BOOL)throttled;
 - (BOOL)hasMetadata;
-- (id)incomingThumbnail;
-- (id)incomingSuperTile;
 - (BOOL)hasPanoId;
 - (id)panoId;
 - (void)setPanoId:(id)arg1;
-- (id)signature;
-- (id)metadata;
 - (void)setMetadata:(id)arg1;
+- (id)metadata;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
 - (id)description;
+- (void)dealloc;
 
 @end

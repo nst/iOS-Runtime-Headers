@@ -12,29 +12,31 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)removeLastObject;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (Class)classForCoder;
 - (void)finalize;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
-- (unsigned int)hash;
-- (void)removeAllObjects;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (Class)classForCoder;
 - (void)removeObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (oneway void)release;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)exchangeObjectAtIndex:(unsigned int)arg1 withObjectAtIndex:(unsigned int)arg2;
 - (void)sortUsingFunction:(int (*)())arg1 context:(void*)arg2;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)removeLastObject;
+- (void)removeAllObjects;
+- (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjects:(id*)arg2 count:(unsigned int)arg3;
+- (BOOL)containsObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (unsigned int)retainCount;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (unsigned int)count;
+- (id)retain;
 - (void)addObject:(id)arg1;
-- (BOOL)containsObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjects:(id*)arg2 count:(unsigned int)arg3;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
 
 @end

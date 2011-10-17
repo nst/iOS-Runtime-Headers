@@ -29,15 +29,15 @@
 
 
 - (void)start;
-- (void)dealloc;
-- (void)stop;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (id)initWithCallback:(struct GeolocationManager { struct RetainPtr<GeolocationCoreLocationDelegate> { id x_1_1_1; } x1; struct HashSet<WebCore::GeolocationLink*,WTF::PtrHash<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*> > { struct HashTable<WebCore::GeolocationLink*,WebCore::GeolocationLink*,WTF::IdentityExtractor<WebCore::GeolocationLink*>,WTF::PtrHash<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*> > { struct GeolocationLink {} **x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_2_1_1; } x2; boolx3; struct RefPtr<WebCore::Geoposition> { struct Geoposition {} *x_4_1_1; } x4; struct RefPtr<WebCore::PositionError> { struct PositionError {} *x_5_1_1; } x5; }*)arg1;
 - (BOOL)wantsHighAccuracy;
 - (void)setWantsHighAccuracy:(BOOL)arg1;
 - (void)createLocationManager;
 - (void)sendError:(id)arg1 withString:(id)arg2;
 - (void)sendLocation:(id)arg1;
+- (void)stop;
+- (void)dealloc;
 
 @end

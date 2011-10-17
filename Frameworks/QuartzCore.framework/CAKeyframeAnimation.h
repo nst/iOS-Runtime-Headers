@@ -23,26 +23,26 @@
 @property(copy) NSString * rotationMode;
 
 
-- (void)CA_prepareRenderValue;
-- (id)biasValues;
-- (id)calculationMode;
-- (id)tensionValues;
-- (void)setTensionValues:(id)arg1;
-- (id)continuityValues;
-- (void)setContinuityValues:(id)arg1;
-- (void)setBiasValues:(id)arg1;
-- (id)rotationMode;
-- (void)setRotationMode:(id)arg1;
-- (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
-- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)_copyRenderAnimationForLayer:(id)arg1;
-- (void)setTimingFunctions:(id)arg1;
-- (void)setKeyTimes:(id)arg1;
-- (void)setValues:(id)arg1;
-- (void)setCalculationMode:(id)arg1;
 - (struct CGPath { }*)path;
-- (id)values;
+- (id)timingFunctions;
+- (void)setTimingFunctions:(id)arg1;
 - (void)setPath:(struct CGPath { }*)arg1;
 - (id)keyTimes;
-- (id)timingFunctions;
+- (void)setKeyTimes:(id)arg1;
+- (id)values;
+- (void)setCalculationMode:(id)arg1;
+- (void)setValues:(id)arg1;
+- (void)setTensionValues:(id)arg1;
+- (void)setContinuityValues:(id)arg1;
+- (void)setBiasValues:(id)arg1;
+- (void)setRotationMode:(id)arg1;
+- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)_copyRenderAnimationForLayer:(id)arg1;
+- (id)calculationMode;
+- (id)tensionValues;
+- (id)continuityValues;
+- (id)biasValues;
+- (id)rotationMode;
+- (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
+- (void)CA_prepareRenderValue;
 
 @end

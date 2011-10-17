@@ -35,41 +35,41 @@
 }
 
 
-- (double)_extractDyldInfoFromSymbolOwner:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1 withNonContiguousMemory:(id)arg2;
-- (id)_readDataFromMemory:(id)arg1 atAddress:(unsigned long long)arg2 size:(unsigned long)arg3;
-- (id)_extractInfoPlistFromSymbolOwner:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1 withNonContiguousMemory:(id)arg2;
-- (void)_extractBinaryImageInfoFromSymbolOwner:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1;
-- (id)parentProcessName;
-- (id)processVersionDictionary;
+- (BOOL)isTranslated;
+- (id)processIdentifier;
+- (id)displayName;
+- (id)processName;
+- (id)executablePath;
+- (id)bundleIdentifier;
+- (id)date;
+- (int)pid;
 - (id)_sanitizeVersion:(id)arg1;
-- (id)processVersion;
 - (BOOL)isAppleApplication;
-- (id)_bundleLock;
-- (id)binaryImages;
-- (id)binaryImageDictionaryForAddress:(unsigned int)arg1;
-- (id)_cpuTypeDescription;
-- (id)_binaryImagesDescriptionForRanges:(id)arg1;
-- (id)_rangesOfBinaryImages:(id)arg1 forBacktraces:(id)arg2;
+- (id)binaryImageDictionaryForAddress:(unsigned long long)arg1;
 - (id)binaryImagesDescriptionForBacktraces:(id)arg1;
-- (id)binaryImagesDescription;
+- (void)_extractBinaryImageInfoFromSymbolOwner:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1;
+- (id)_readDataFromMemory:(id)arg1 atAddress:(unsigned long long)arg2 size:(unsigned long)arg3;
+- (double)_extractDyldInfoFromSymbolOwner:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1 withNonContiguousMemory:(id)arg2;
+- (id)_extractInfoPlistFromSymbolOwner:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1 withNonContiguousMemory:(id)arg2;
+- (id)binaryImages;
+- (id)processVersionDictionary;
+- (id)_bundleLock;
+- (id)_rangesOfBinaryImages:(id)arg1 forBacktraces:(id)arg2;
+- (id)_binaryImagesDescriptionForRanges:(id)arg1;
+- (id)_buildVersionDictionary;
+- (id)_osVersionDictionary;
 - (id)_buildInfoDescription;
+- (id)processVersion;
+- (id)_cpuTypeDescription;
+- (id)parentProcessName;
 - (id)_systemVersionDescription;
 - (id)processDescriptionHeader;
 - (id)dateAndVersionDescription;
-- (id)_osVersionDictionary;
-- (id)_buildVersionDictionary;
 - (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2;
-- (int)cpuType;
-- (int)pid;
-- (id)displayName;
-- (id)date;
-- (id)executablePath;
-- (id)processName;
-- (id)bundleIdentifier;
-- (void)dealloc;
-- (id)description;
-- (id)processIdentifier;
-- (BOOL)isTranslated;
+- (id)binaryImagesDescription;
 - (unsigned int)task;
+- (int)cpuType;
+- (id)description;
+- (void)dealloc;
 
 @end

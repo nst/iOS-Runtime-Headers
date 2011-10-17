@@ -3,43 +3,46 @@
  */
 
 @interface GMMStreetViewViewpoint : PBCodable  {
-    int _panningCount;
-    BOOL _hasPanningCount;
-    int _zoomingCount;
-    BOOL _hasZoomingCount;
-    int _navigationCount;
-    BOOL _hasNavigationCount;
-    int _scene;
     BOOL _hasScene;
+    int _scene;
+    BOOL _hasPanningCount;
+    int _panningCount;
+    BOOL _hasZoomingCount;
+    int _zoomingCount;
+    BOOL _hasNavigationCount;
+    int _navigationCount;
 }
 
-@property(readonly) BOOL hasScene;
+@property BOOL hasScene;
 @property int scene;
-@property(readonly) BOOL hasNavigationCount;
-@property int navigationCount;
-@property(readonly) BOOL hasZoomingCount;
-@property int zoomingCount;
-@property(readonly) BOOL hasPanningCount;
+@property BOOL hasPanningCount;
 @property int panningCount;
+@property BOOL hasZoomingCount;
+@property int zoomingCount;
+@property BOOL hasNavigationCount;
+@property int navigationCount;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (void)setPanningCount:(int)arg1;
-- (void)setZoomingCount:(int)arg1;
-- (void)setNavigationCount:(int)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasNavigationCount:(BOOL)arg1;
 - (BOOL)hasNavigationCount;
+- (void)setHasZoomingCount:(BOOL)arg1;
 - (BOOL)hasZoomingCount;
+- (void)setHasPanningCount:(BOOL)arg1;
 - (BOOL)hasPanningCount;
 - (int)navigationCount;
 - (int)zoomingCount;
 - (int)panningCount;
+- (void)setNavigationCount:(int)arg1;
+- (void)setZoomingCount:(int)arg1;
+- (void)setPanningCount:(int)arg1;
+- (void)setHasScene:(BOOL)arg1;
 - (BOOL)hasScene;
-- (void)setScene:(int)arg1;
 - (int)scene;
-- (BOOL)readFrom:(id)arg1;
+- (void)setScene:(int)arg1;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

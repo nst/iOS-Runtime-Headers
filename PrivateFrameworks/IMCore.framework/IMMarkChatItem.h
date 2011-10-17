@@ -6,7 +6,7 @@
 }
 
 
-- (id)description;
 - (id)initWithDate:(id)arg1;
+- (id)description;
 
 @end

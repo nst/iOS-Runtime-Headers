@@ -6,12 +6,12 @@
 }
 
 
+- (void)_okButtonPressed;
+- (void)_enableButtons;
+- (void)_disableButtons;
 - (void)_cancelButtonPressed;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)init;
-- (void)_disableButtons;
-- (void)_enableButtons;
-- (void)_okButtonPressed;
 
 @end

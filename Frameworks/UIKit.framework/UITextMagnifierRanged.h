@@ -23,49 +23,49 @@
     float _magnifierOffsetFromTouch;
 }
 
-@property struct CGPoint { float x; float y; } magnificationPoint;
-@property(readonly) BOOL terminalPointPlacedCarefully;
-@property(readonly) struct CGPoint { float x; float y; } terminalPoint;
-@property struct CGPoint { float x; float y; } animationPoint;
-@property(retain) UIView * target;
 @property(retain) UIResponder<UITextInput> * text;
+@property(retain) UIView * target;
+@property(readonly) struct CGPoint { float x1; float x2; } terminalPoint;
+@property(readonly) BOOL terminalPointPlacedCarefully;
+@property struct CGPoint { float x1; float x2; } magnificationPoint;
+@property struct CGPoint { float x1; float x2; } animationPoint;
 
 + (id)sharedRangedMagnifier;
 
-- (void)setAnimationPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (int)horizontalMovementAtTime:(double)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplay;
 - (BOOL)wasPlacedCarefullyAtTime:(double)arg1;
-- (int)horizontalMovement;
-- (void)setToMagnifierRenderer;
-- (void)remove;
-- (float)offsetFromMagnificationPoint;
+- (int)horizontalMovementAtTime:(double)arg1;
 - (void)updateFrame;
 - (struct CGPoint { float x1; float x2; })snappedPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (float)offsetFromMagnificationPoint;
 - (struct CGPoint { float x1; float x2; })animationPoint;
-- (id)initWithDefaultFrame;
+- (void)zoomDownAnimation;
+- (void)windowWillRotate:(id)arg1;
+- (void)zoomUpAnimation;
+- (void)detectLostTouches:(id)arg1;
 - (struct CGPoint { float x1; float x2; })magnificationPoint;
-- (struct CGPoint { float x1; float x2; })terminalPoint;
-- (BOOL)terminalPointPlacedCarefully;
+- (void)remove;
+- (void)zoomDownAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)zoomUpAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)animateToAutoscrollRenderer;
 - (void)animateToMagnifierRenderer;
-- (void)autoscrollWillNotStart;
-- (void)zoomUpAnimation;
-- (void)zoomUpAnimationDidStop:(id)arg1 finished:(id)arg2;
-- (void)zoomDownAnimation;
-- (void)zoomDownAnimationDidStop:(id)arg1 finished:(id)arg2;
-- (void)detectLostTouches:(id)arg1;
-- (void)windowWillRotate:(id)arg1;
-- (void)stopMagnifying:(BOOL)arg1;
-- (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { float x1; float x2; })arg3 offset:(struct CGPoint { float x1; float x2; })arg4 animated:(BOOL)arg5;
+- (void)setToMagnifierRenderer;
+- (id)initWithDefaultFrame;
+- (void)setAnimationPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (int)horizontalMovement;
+- (BOOL)terminalPointPlacedCarefully;
 - (void)setAutoscrollDirections:(int)arg1;
-- (id)target;
+- (struct CGPoint { float x1; float x2; })terminalPoint;
+- (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { float x1; float x2; })arg3 offset:(struct CGPoint { float x1; float x2; })arg4 animated:(BOOL)arg5;
+- (void)stopMagnifying:(BOOL)arg1;
 - (void)postAutoscrollPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setText:(id)arg1;
+- (void)autoscrollWillNotStart;
 - (id)text;
-- (void)setNeedsDisplay;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
+- (void)setText:(id)arg1;
 - (void)setTarget:(id)arg1;
+- (id)target;
+- (void)dealloc;
 
 @end

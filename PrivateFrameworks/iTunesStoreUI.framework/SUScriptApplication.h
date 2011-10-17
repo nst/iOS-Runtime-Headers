@@ -10,24 +10,30 @@
 @property(retain) id iconBadgeNumber;
 @property(readonly) id screenHeight;
 @property(readonly) id screenWidth;
+@property(getter=wasLaunchedFromLibrary,readonly) id launchedFromLibrary;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
-- (id)init;
+- (id)attributeKeys;
 - (id)isRunningInStoreDemoMode;
-- (void)endDelayingTerminate;
+- (id)init;
+- (void)setIconBadgeNumber:(id)arg1;
 - (id)screenWidth;
 - (id)screenHeight;
 - (id)isDelayingTerminate;
 - (id)iconBadgeNumber;
+- (void)showNewsstand;
+- (void)exitStore;
+- (void)endDelayingTerminate;
 - (void)beginDelayingTerminate;
-- (void)setIconBadgeNumber:(id)arg1;
+- (id)wasLaunchedFromLibrary;
+- (void)_setIconBadgeNumber:(int)arg1;
 - (struct CGSize { float x1; float x2; })_applicationFrame;
 - (id)_copyIconBadgeNumber;
-- (void)_setIconBadgeNumber:(int)arg1;
+- (void)returnToLibrary;
 - (void)_loadNativeObject;
-- (id)attributeKeys;
 - (id)scriptAttributeKeys;
 
 @end

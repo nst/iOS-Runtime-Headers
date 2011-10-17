@@ -8,16 +8,16 @@
     NSString *_previousETag;
 }
 
-@property(retain) NSString * previousETag;
 @property <CoreDAVTaskDelegate> * delegate;
+@property(retain) NSString * previousETag;
 
 
-- (void)dealloc;
-- (id)description;
-- (id)additionalHeaderValues;
-- (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)previousETag;
 - (void)setPreviousETag:(id)arg1;
+- (id)additionalHeaderValues;
+- (id)previousETag;
+- (void)finishCoreDAVTaskWithError:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)httpMethod;
 - (id)requestBody;
 

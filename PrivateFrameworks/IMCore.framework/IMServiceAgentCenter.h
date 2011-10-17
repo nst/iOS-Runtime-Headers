@@ -7,16 +7,11 @@
 }
 
 
-- (oneway void)postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
-- (void)finalize;
-- (oneway void)postNotificationName:(id)arg1 object:(id)arg2;
-- (oneway void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
-- (oneway void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
-- (oneway void)postNotification:(id)arg1;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
+- (void)finalize;
+- (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
 - (id)delegate;
-- (void)_postUnpackedNotification:(id)arg1;
-- (void)_postNotificationOnMainThread:(id)arg1;
+- (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
+- (void)dealloc;
 
 @end

@@ -21,15 +21,9 @@
 }
 
 
-- (id)image;
-- (void)setText:(id)arg1;
-- (id)text;
-- (void)dealloc;
-- (void)setImage:(id)arg1;
-- (void)setLegal:(BOOL)arg1;
-- (void)setLegacy:(BOOL)arg1;
-- (id)paragraphProperties;
+- (long)startNumber;
 - (BOOL)startNumberOverridden;
+- (int)numberFormat;
 - (BOOL)numberFormatOverridden;
 - (BOOL)imageBullet;
 - (BOOL)imageBulletOverridden;
@@ -40,21 +34,27 @@
 - (int)suffix;
 - (BOOL)suffixOverridden;
 - (BOOL)textOverridden;
+- (long)legacySpace;
+- (long)legacyIndent;
+- (int)justification;
 - (BOOL)justificationOverridden;
-- (id)initWithDocument:(id)arg1;
-- (void)setRestartNumbering:(BOOL)arg1;
+- (BOOL)legacy;
+- (id)paragraphProperties;
+- (id)characterProperties;
 - (void)setStartNumber:(long)arg1;
 - (void)setNumberFormat:(int)arg1;
+- (void)setRestartNumbering:(BOOL)arg1;
+- (void)setLegal:(BOOL)arg1;
 - (void)setSuffix:(int)arg1;
+- (void)setLegacy:(BOOL)arg1;
 - (void)setLegacySpace:(long)arg1;
 - (void)setLegacyIndent:(long)arg1;
 - (void)setJustification:(int)arg1;
-- (long)legacyIndent;
-- (long)legacySpace;
-- (BOOL)legacy;
-- (id)characterProperties;
-- (long)startNumber;
-- (int)numberFormat;
-- (int)justification;
+- (id)initWithDocument:(id)arg1;
+- (id)image;
+- (id)text;
+- (void)setText:(id)arg1;
+- (void)setImage:(id)arg1;
+- (void)dealloc;
 
 @end

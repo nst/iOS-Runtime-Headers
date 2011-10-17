@@ -7,7 +7,7 @@
 
 
 - (id)basicAccountIdentifier;
-- (id)predicateForNotes;
 - (id)collectionInfo;
+- (id)predicateForNotes;
 
 @end

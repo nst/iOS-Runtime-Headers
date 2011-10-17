@@ -28,26 +28,26 @@
 }
 
 
-- (id)group;
-- (void)dealloc;
-- (float)scale;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logicalBounds;
-- (void)setGroup:(id)arg1;
-- (id)presentationNameForPointType:(int)arg1;
-- (void)setPresentationName:(id)arg1 forPointType:(int)arg2;
-- (void)setPointIndex:(int)arg1;
-- (id)textStyle;
-- (void)setTextStyle:(id)arg1;
 - (void)setDefaultStyleLabelName:(id)arg1 forPointType:(int)arg2;
-- (id)drawingTheme;
+- (id)presentationNameForPointType:(int)arg1;
+- (int)pointCount;
 - (int)pointIndex;
 - (id)defaultStyleLabelNameForPointType:(int)arg1;
 - (id)initWithDiagram:(id)arg1 group:(id)arg2 drawingTheme:(id)arg3;
 - (void)setPointCount:(int)arg1;
+- (void)setPointIndex:(int)arg1;
 - (id)diagramOrientedBounds;
 - (void)setLogicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 maintainAspectRatio:(BOOL)arg2;
-- (void)setLogicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)pointCount;
+- (void)setPresentationName:(id)arg1 forPointType:(int)arg2;
 - (id)diagram;
+- (void)setTextStyle:(id)arg1;
+- (id)textStyle;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logicalBounds;
+- (void)setLogicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)drawingTheme;
+- (id)group;
+- (float)scale;
+- (void)setGroup:(id)arg1;
+- (void)dealloc;
 
 @end

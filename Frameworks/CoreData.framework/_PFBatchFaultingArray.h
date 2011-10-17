@@ -20,34 +20,37 @@
     } _flags;
 }
 
++ (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)accessInstanceVariablesDirectly;
 
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
 - (unsigned int)indexOfObject:(id)arg1;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (id)initWithPFArray:(id)arg1 andRequest:(id)arg2 andContext:(id)arg3;
+- (void)_turnAllBatchesIntoFaults;
+- (id)newArrayFromObjectIDs;
+- (id)_newSubArrayInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 asMutable:(BOOL)arg2;
+- (id)managedObjectIDAtIndex:(unsigned int)arg1;
+- (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
+- (id)arrayFromObjectIDs;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
+- (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)isEqualToArray:(id)arg1;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)release;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)getObjects:(id*)arg1;
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)retainCount;
 - (id)description;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (unsigned int)count;
-- (BOOL)isEqualToArray:(id)arg1;
-- (void)getObjects:(id*)arg1;
-- (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
-- (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)initWithPFArray:(id)arg1 andRequest:(id)arg2 andContext:(id)arg3;
-- (id)_newSubArrayInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 asMutable:(BOOL)arg2;
-- (id)managedObjectIDAtIndex:(unsigned int)arg1;
-- (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)arrayFromObjectIDs;
-- (id)newArrayFromObjectIDs;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

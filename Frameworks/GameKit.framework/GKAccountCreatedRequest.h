@@ -8,28 +8,33 @@
     NSString *_playerID;
     NSString *_authToken;
     NSString *_accountName;
+    NSString *_alias;
     BOOL _authenticateFinished;
 }
 
-@property BOOL authenticateFinished;
-@property(retain) NSString * accountName;
-@property(retain) NSString * authToken;
 @property(retain) NSString * playerID;
+@property(retain) NSString * authToken;
+@property(retain) NSString * accountName;
+@property(retain) NSString * alias;
+@property BOOL authenticateFinished;
 
 
-- (void)setPlayerID:(id)arg1;
 - (void)setAuthenticateFinished:(BOOL)arg1;
 - (BOOL)authenticateFinished;
-- (BOOL)shouldProcessInBackground;
+- (void)setAlias:(id)arg1;
 - (BOOL)authenticationRequired;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (Class)responseClass;
+- (BOOL)shouldProcessInBackground;
+- (void)setAccountName:(id)arg1;
+- (id)accountName;
 - (void)setAuthToken:(id)arg1;
 - (id)authToken;
+- (void)handleResponseFromServer:(id)arg1;
+- (id)alias;
 - (id)playerID;
+- (void)setPlayerID:(id)arg1;
 - (id)key;
 - (id)request;
 - (void)dealloc;
-- (void)setAccountName:(id)arg1;
-- (id)accountName;
 
 @end

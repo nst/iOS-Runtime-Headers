@@ -16,6 +16,7 @@
         float x; 
         float y; 
     } _anchorPoint;
+    id _transformAnalyzer;
     UITouch *_touches[2];
 }
 
@@ -23,14 +24,17 @@
 @property(readonly) float velocity;
 
 
-- (float)rotation;
 - (void)setRotation:(float)arg1;
+- (float)rotation;
 - (void)_resetGestureRecognizer;
 - (float)velocity;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 
 @end

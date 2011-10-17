@@ -11,34 +11,34 @@
 }
 
 @property(readonly) int numberOfItems;
+@property BOOL ignoresEmptySections;
 @property(readonly) int numberOfSections;
 @property(readonly) NSArray * sectionIndexTitles;
-@property BOOL ignoresEmptySections;
 
 
-- (void)setItems:(id)arg1;
 - (id)sectionIndexTitles;
-- (int)numberOfSections;
 - (int)numberOfItems;
+- (int)numberOfSections;
+- (void)setItems:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)itemsForSectionAtIndex:(int)arg1;
-- (id)hintTextForKey:(id)arg1;
-- (void)enumerateItemsUsingBlock:(id)arg1;
-- (id)indexPathOfItemWithIdentifier:(unsigned long long)arg1;
-- (void)insertItems:(id)arg1 atIndexPath:(id)arg2;
-- (void)removeItemAtIndexPath:(id)arg1;
-- (id)_groupAtExternalIndex:(int)arg1;
-- (void)_removeHiddenItemsFromArray:(id)arg1;
 - (BOOL)ignoresEmptySections;
-- (void)setIgnoresEmptySections:(BOOL)arg1;
-- (id)itemAtIndexPath:(id)arg1;
+- (id)hintTextForKey:(id)arg1;
+- (void)_removeHiddenItemsFromArray:(id)arg1;
+- (void)insertItems:(id)arg1 atIndexPath:(id)arg2;
+- (id)_groupAtExternalIndex:(int)arg1;
+- (void)enumerateItemsUsingBlock:(id)arg1;
 - (id)sectionItemForSectionAtIndex:(int)arg1;
-- (id)indexPathOfItem:(id)arg1;
+- (void)removeItemAtIndexPath:(id)arg1;
+- (id)itemsForSectionAtIndex:(int)arg1;
+- (void)setIgnoresEmptySections:(BOOL)arg1;
 - (void)replaceItemAtIndexPath:(id)arg1 withItems:(id)arg2;
+- (id)indexPathOfItem:(id)arg1;
+- (id)indexPathOfItemWithIdentifier:(unsigned long long)arg1;
+- (id)itemAtIndexPath:(id)arg1;
 - (int)sectionIndexForIndexTitle:(id)arg1 atIndex:(int)arg2;
-- (id)copyItems;
-- (void)setItemsFromPropertyList:(id)arg1;
 - (void)setHintText:(id)arg1;
+- (void)setItemsFromPropertyList:(id)arg1;
+- (id)copyItems;
 
 @end

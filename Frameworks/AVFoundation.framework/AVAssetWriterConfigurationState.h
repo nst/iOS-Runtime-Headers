@@ -30,18 +30,18 @@
 
 - (void)setURL:(id)arg1;
 - (id)URL;
-- (void)dealloc;
-- (void)setInputs:(id)arg1;
-- (id)metadataItems;
-- (void)setMetadataItems:(id)arg1;
-- (void)setMediaFileType:(id)arg1;
-- (id)inputs;
-- (BOOL)shouldOptimizeForNetworkUse;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (id)mediaFileType;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (BOOL)shouldOptimizeForNetworkUse;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
 - (int)movieTimeScale;
 - (void)setMovieTimeScale:(int)arg1;
+- (id)inputs;
+- (id)metadataItems;
+- (void)setMediaFileType:(id)arg1;
+- (void)setInputs:(id)arg1;
+- (void)setMetadataItems:(id)arg1;
+- (void)dealloc;
 
 @end

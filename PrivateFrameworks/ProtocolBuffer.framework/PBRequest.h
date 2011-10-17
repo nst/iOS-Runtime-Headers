@@ -6,7 +6,7 @@
 }
 
 
-- (unsigned int)requestTypeCode;
 - (Class)responseClass;
+- (unsigned int)requestTypeCode;
 
 @end

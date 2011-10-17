@@ -11,17 +11,17 @@
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) NSString * localizedURLTitle;
-@property(readonly) NSString * localizedTitle;
 @property(readonly) NSString * localizedMessage;
+@property(readonly) NSString * localizedTitle;
+@property(readonly) NSString * localizedURLTitle;
+@property(readonly) NSURL * URL;
 
 
 - (id)localizedTitle;
-- (id)URL;
-- (void)dealloc;
 - (id)localizedURLTitle;
 - (id)localizedMessage;
 - (id)_initWithMessage:(id)arg1 title:(id)arg2 URLTitle:(id)arg3 URL:(id)arg4;
+- (id)URL;
+- (void)dealloc;
 
 @end

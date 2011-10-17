@@ -13,26 +13,26 @@
     struct __CFDictionary { } *_concernedBookmarkPartyToBlockMap;
 }
 
-@property int lastSavedCalSequenceNumber;
 @property int lastSavedABSequenceNumber;
+@property int lastSavedCalSequenceNumber;
 
 + (id)sharedDBWatcher;
 
-- (int)lastSavedCalSequenceNumber;
-- (void)_handleABChangeNotificationWithInfo:(id)arg1;
-- (void)registerConcernedABParty:(id)arg1 withChangedBlock:(id)arg2;
-- (void)removeConcernedABParty:(id)arg1;
-- (void)_handleCalChangeNotification;
-- (void)registerConcernedCalParty:(id)arg1 withChangedBlock:(id)arg2;
-- (void)removeConcernedCalParty:(id)arg1;
-- (void)_handleBookmarkChangeNotification;
-- (void)registerConcernedBookmarkParty:(id)arg1 withChangedBlock:(id)arg2;
 - (void)removeConcernedBookmarkParty:(id)arg1;
+- (void)registerConcernedBookmarkParty:(id)arg1 withChangedBlock:(id)arg2;
+- (void)_handleBookmarkChangeNotification;
+- (void)removeConcernedCalParty:(id)arg1;
+- (void)registerConcernedCalParty:(id)arg1 withChangedBlock:(id)arg2;
+- (void)_handleCalChangeNotification;
+- (void)removeConcernedABParty:(id)arg1;
+- (void)registerConcernedABParty:(id)arg1 withChangedBlock:(id)arg2;
+- (void)_handleABChangeNotificationWithInfo:(id)arg1;
+- (void)noteCalDBDirChanged;
+- (void)noteABDBDirChanged;
+- (void)setLastSavedCalSequenceNumber:(int)arg1;
+- (int)lastSavedCalSequenceNumber;
 - (void)setLastSavedABSequenceNumber:(int)arg1;
 - (int)lastSavedABSequenceNumber;
-- (void)setLastSavedCalSequenceNumber:(int)arg1;
-- (void)noteABDBDirChanged;
-- (void)noteCalDBDirChanged;
 - (id)init;
 - (void)dealloc;
 

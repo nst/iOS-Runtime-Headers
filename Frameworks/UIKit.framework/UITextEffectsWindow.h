@@ -3,27 +3,26 @@
  */
 
 @interface UITextEffectsWindow : UIAutoRotatingWindow  {
-    unsigned int _activeEffectsCount;
+    unsigned long _activeEffectsCount;
     BOOL _inDealloc;
 }
 
 + (void)_releaseSharedInstances;
-+ (id)sharedTextEffectsWindow;
 + (id)sharedTextEffectsWindowAboveStatusBar;
-+ (void)_initializeSafeCategory;
++ (id)sharedTextEffectsWindow;
 
-- (void)updateForOrientation:(int)arg1;
-- (void)delayHideWindow;
+- (void)updateSubviewOrdering;
 - (void)sortSubviews;
+- (void)delayHideWindow;
 - (void)matchDeviceOrientation;
-- (void)sendSubviewToBack:(id)arg1;
-- (void)didAddSubview:(id)arg1;
+- (void)updateForOrientation:(int)arg1;
 - (void)_didRemoveSubview:(id)arg1;
+- (void)didAddSubview:(id)arg1;
 - (BOOL)_disableViewScaling;
-- (void)dealloc;
 - (BOOL)isInternalWindow;
 - (void)bringSubviewToFront:(id)arg1;
+- (void)sendSubviewToBack:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)orderFront:(id)arg1;
+- (void)dealloc;
 
 @end

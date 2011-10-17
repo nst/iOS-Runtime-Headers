@@ -7,8 +7,8 @@
 }
 
 
-- (void)setLabelFrequency:(int)arg1;
 - (int)labelFrequency;
+- (void)setLabelFrequency:(int)arg1;
 - (id)initWithResources:(id)arg1;
 
 @end

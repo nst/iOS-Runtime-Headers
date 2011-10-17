@@ -15,12 +15,12 @@
 @property(copy) NSArray * animations;
 
 
-- (void)setDefaultDuration:(double)arg1;
-- (unsigned int)_propertyFlagsForLayer:(id)arg1;
-- (void)CA_prepareRenderValue;
-- (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
-- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)_copyRenderAnimationForLayer:(id)arg1;
 - (id)animations;
 - (void)setAnimations:(id)arg1;
+- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)_copyRenderAnimationForLayer:(id)arg1;
+- (void)setDefaultDuration:(double)arg1;
+- (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
+- (unsigned int)_propertyFlagsForLayer:(id)arg1;
+- (void)CA_prepareRenderValue;
 
 @end

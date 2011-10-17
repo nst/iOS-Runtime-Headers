@@ -2,11 +2,23 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@interface GKGetFriendIDsDataRequest : GKGetFriendListDataRequest  {
+@class NSString;
+
+@interface GKGetFriendIDsDataRequest : GKDataRequest  {
+    NSString *_playerID;
+    BOOL _findCommonFriends;
 }
 
+@property(retain) NSString * playerID;
+@property BOOL findCommonFriends;
 
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+
+- (BOOL)findCommonFriends;
+- (void)setFindCommonFriends:(BOOL)arg1;
+- (id)playerID;
+- (void)setPlayerID:(id)arg1;
 - (id)key;
+- (id)request;
+- (void)dealloc;
 
 @end

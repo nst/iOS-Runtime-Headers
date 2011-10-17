@@ -2,31 +2,39 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFAtomBackgroundView, UILabel;
+@class UILabel, UIActivityIndicatorView, UIView, NSString, MFAtomBackgroundView;
 
 @interface MFAtomView : UIDefaultKeyboardInput  {
-    MFAtomBackgroundView *_background;
+    UIView *_background;
     UILabel *_label;
-    id _delegate;
-    unsigned int _disclosure : 1;
-    unsigned int _needsCentering : 1;
-    float _width;
+    UIActivityIndicatorView *_activityIndicator;
+    float _scalingFactor;
 }
+
+@property(copy) NSString * title;
+@property int style;
+@property BOOL selected;
+@property(readonly) MFAtomBackgroundView * backgroundView;
 
 + (float)horizontalPadding;
 + (float)defaultHeight;
-+ (struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })backgroundImageSlicesWithDisclosure:(BOOL)arg1;
-+ (id)backgroundImageWithDisclosure:(BOOL)arg1 selected:(BOOL)arg2;
++ (BOOL)showActivityIndicatorForStyle:(int)arg1;
 
 - (void)showBackground:(BOOL)arg1;
 - (BOOL)selected;
 - (void)setSelected:(BOOL)arg1;
-- (void)setShowsDisclosure:(BOOL)arg1;
-- (void)layoutSubviews;
+- (id)backgroundView;
+- (int)style;
+- (void)setStyle:(int)arg1;
 - (id)title;
-- (void)dealloc;
 - (void)setTitle:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (float)preferredWidth;
+- (void)_setupActivityIndicator;
+- (float)_leftInset;
+- (float)_rightInset;
+- (void)setScalingFactor:(float)arg1;
+- (void)dealloc;
 
 @end

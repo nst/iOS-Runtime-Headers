@@ -23,39 +23,38 @@
     unsigned int _wasEnabled : 1;
 }
 
-+ (void)_initializeSafeCategory;
 
+- (void)cancelButtonClicked:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
 - (void)setEnabled:(BOOL)arg1;
-- (void)layoutSubviews;
-- (void)dealloc;
-- (void)setTitle:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (void)setCancelButtonTitle:(id)arg1;
-- (id)modeSwitch;
-- (void)didPlayVideo;
-- (void)didPauseVideo;
-- (void)_createTakePhotoView;
-- (void)_prepareForPhotoEdit;
-- (void)_playPause:(id)arg1;
-- (void)_updatePlayPauseButtonImage:(id)arg1;
-- (void)setModeSwitch:(id)arg1;
-- (void)_animateViewOriginDeltaX:(float)arg1;
-- (void)editCancelButtonClicked:(id)arg1;
-- (void)doneButtonClicked:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_didCapture;
-- (void)didCapturePhoto;
+- (void)_animateViewOriginDeltaX:(float)arg1;
 - (void)_slideAnimationComplete:(id)arg1;
+- (void)_prepareForPhotoEdit;
+- (void)_createTakePhotoView;
+- (void)_updatePlayPauseButtonImage:(id)arg1;
 - (id)_pauseImage;
+- (void)_playPause:(id)arg1;
 - (id)_playImage;
+- (void)doneButtonClicked:(id)arg1;
+- (void)editCancelButtonClicked:(id)arg1;
+- (void)setCancelButtonHidden:(BOOL)arg1;
+- (void)didPauseVideo;
+- (void)didPlayVideo;
+- (void)didCaptureVideo;
+- (void)didCapturePhoto;
+- (void)prepareForVideoEdit;
+- (void)setCancelButtonTitle:(id)arg1;
 - (void)setOKButtonTitle:(id)arg1;
 - (void)setTakePhoto:(BOOL)arg1;
-- (void)prepareForVideoEdit;
+- (id)modeSwitch;
+- (void)setModeSwitch:(id)arg1;
 - (id)shutterButton;
-- (void)didCaptureVideo;
-- (void)cancelButtonClicked:(id)arg1;
-- (void)setCancelButtonHidden:(BOOL)arg1;
+- (void)dealloc;
 
 @end

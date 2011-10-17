@@ -9,19 +9,19 @@
     unsigned int _flushes;
 }
 
-@property unsigned int flushes;
-@property unsigned int requests;
-@property double requestTime;
 @property double loadTime;
+@property double requestTime;
+@property unsigned int requests;
+@property unsigned int flushes;
 
 
 - (void)setFlushes:(unsigned int)arg1;
 - (void)setRequests:(unsigned int)arg1;
 - (void)setRequestTime:(double)arg1;
 - (void)setLoadTime:(double)arg1;
-- (double)loadTime;
-- (double)requestTime;
-- (unsigned int)requests;
 - (unsigned int)flushes;
+- (unsigned int)requests;
+- (double)requestTime;
+- (double)loadTime;
 
 @end

@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImage, MPAVItem, MPTextView, MPNowPlayingItemQueueInfoButton, MPPortraitControlsOverlay;
+@class MPAVController, MPAVItem, UIImage, MPTextView, MPNowPlayingItemQueueInfoButton, MPPortraitControlsOverlay;
 
 @interface MPPortraitInfoOverlay : UIView <MPPlaybackControlsDelegate> {
     id _delegate;
     MPAVItem *_item;
+    MPAVController *_player;
     UIImage *_artworkImage;
     unsigned int _visibleParts;
     MPPortraitControlsOverlay *_controlsView;
@@ -17,53 +18,56 @@
 }
 
 @property BOOL allowsDetailScrubbing;
-@property unsigned int visibleParts;
-@property(retain) MPAVItem * item;
-@property id delegate;
 @property(retain) UIImage * artworkImage;
+@property id delegate;
+@property(retain) MPAVItem * item;
+@property(retain) MPAVController * player;
+@property unsigned int visibleParts;
 
 
-- (id)item;
-- (BOOL)hide;
-- (void)didMoveToSuperview;
-- (void)layoutSubviews;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setAlpha:(float)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)artworkImage;
-- (void)startTicking;
-- (void)controlsOverlayDetailSliderTrackingDidEnd:(id)arg1;
-- (BOOL)controlsOverlay:(id)arg1 shouldUseDetailScrubberForItem:(id)arg2;
-- (void)controlsOverlayDetailSliderInstructionOverlayWillShow:(id)arg1;
 - (void)setArtworkImage:(id)arg1;
+- (id)artworkImage;
+- (void)controlsOverlayDetailSliderInstructionOverlayWillShow:(id)arg1;
+- (void)controlsOverlayDetailSliderTrackingDidBegin:(id)arg1;
+- (BOOL)controlsOverlay:(id)arg1 shouldUseDetailScrubberForItem:(id)arg2;
+- (BOOL)_configureNowPlayingQueueInfoButton:(id)arg1 item:(id)arg2 time:(double)arg3;
+- (id)_itemQueueInfoButton:(BOOL)arg1;
+- (void)_reloadDisplayableTextViewForItem:(id)arg1 animate:(BOOL)arg2;
 - (void)_displayableTextRemovalAnimationDidStop;
+- (void)_removeDisplayableTextWithAnimation:(BOOL)arg1;
+- (id)_displayableTextView;
 - (void)_hideSnapshotAnimationFinished;
+- (void)_updateItemQueueInfoButtonForItem:(id)arg1 atTime:(double)arg2 animate:(BOOL)arg3;
+- (void)_reloadViews;
+- (void)_updateAllItemDependenciesForItem:(id)arg1 animate:(BOOL)arg2;
+- (void)_updateDisplayableTextViewForItem:(id)arg1 animate:(BOOL)arg2;
+- (id)_controlsView;
+- (void)_hideControlsAndTextView;
+- (void)_reloadTextViewArtwork;
 - (void)_displayableTextAvailable:(id)arg1;
 - (void)_crossedTimeMarkerNotification:(id)arg1;
-- (id)_itemQueueInfoButton:(BOOL)arg1;
-- (void)_hideControlsAndTextView;
-- (void)controlsOverlayDetailSliderTrackingDidBegin:(id)arg1;
-- (void)_reloadTextViewArtwork;
-- (void)_reloadDisplayableTextViewForItem:(id)arg1 animate:(BOOL)arg2;
-- (void)_removeDisplayableTextWithAnimation:(BOOL)arg1;
-- (void)_reloadViews;
-- (void)_updateDisplayableTextViewForItem:(id)arg1 animate:(BOOL)arg2;
-- (BOOL)_configureNowPlayingQueueInfoButton:(id)arg1 item:(id)arg2 time:(double)arg3;
-- (void)_updateItemQueueInfoButtonForItem:(id)arg1 atTime:(double)arg2 animate:(BOOL)arg3;
-- (void)_updateAllItemDependenciesForItem:(id)arg1 animate:(BOOL)arg2;
-- (id)_displayableTextView;
-- (id)_controlsView;
+- (void)controlsOverlayDetailSliderTrackingDidEnd:(id)arg1;
 - (void)controlsOverlayDetailSliderInstructionOverlayWillHide:(id)arg1;
-- (void)stopTicking;
-- (BOOL)allowsDetailScrubbing;
-- (void)willTransition;
 - (void)didTransition;
-- (unsigned int)visibleParts;
+- (void)willTransition;
+- (BOOL)allowsDetailScrubbing;
+- (void)stopTicking;
+- (void)startTicking;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)_playbackStateChanged:(id)arg1;
 - (void)setVisibleParts:(unsigned int)arg1;
+- (unsigned int)visibleParts;
+- (void)setPlayer:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (BOOL)hide;
+- (id)item;
+- (void)didMoveToSuperview;
+- (id)delegate;
+- (void)layoutSubviews;
+- (void)setAlpha:(float)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)player;
+- (void)dealloc;
 - (void)setItem:(id)arg1;
 
 @end

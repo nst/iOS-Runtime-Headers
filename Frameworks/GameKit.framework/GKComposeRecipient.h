@@ -14,30 +14,30 @@
 }
 
 + (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
-+ (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 + (id)recipientWithProperty:(int)arg1 address:(id)arg2;
++ (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 
-- (id)commentedAddress;
-- (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
-- (BOOL)isEmail;
-- (BOOL)isPhone;
-- (int)recordID;
-- (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
 - (id)unlocalizedLabel;
-- (id)_unformattedAddress;
+- (id)commentedAddress;
+- (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
+- (int)recordID;
+- (BOOL)isPhone;
+- (id)compositeName;
+- (BOOL)isEmail;
 - (id)uncommentedAddress;
+- (id)_unformattedAddress;
+- (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
+- (id)address;
+- (int)property;
 - (id)displayString;
-- (int)identifier;
 - (id)label;
-- (unsigned int)hash;
+- (int)identifier;
 - (void)setIdentifier:(int)arg1;
+- (void*)record;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)description;
-- (id)address;
-- (void*)record;
-- (id)compositeName;
-- (int)property;
 
 @end

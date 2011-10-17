@@ -3,16 +3,10 @@
  */
 
 @interface GKIsPushEnabledRequest : GKDataRequest  {
-    BOOL _pushEnabled;
 }
 
-@property BOOL pushEnabled;
 
-
-- (BOOL)pushEnabled;
-- (void)setPushEnabled:(BOOL)arg1;
 - (BOOL)authenticationRequired;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)key;
 
 @end

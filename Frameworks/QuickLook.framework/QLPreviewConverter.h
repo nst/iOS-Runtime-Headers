@@ -15,26 +15,39 @@
 @property(readonly) NSURLResponse * previewResponse;
 @property(readonly) QLPreviewParts * previewParts;
 
-+ (BOOL)isSafeURL:(id)arg1;
-+ (BOOL)canConvertDocumentType:(id)arg1;
++ (BOOL)isOfficeDocumentType:(id)arg1;
++ (BOOL)isIWorkDocumentType:(id)arg1;
++ (BOOL)isCSVDocumentType:(id)arg1;
++ (BOOL)isLPDFDocumentType:(id)arg1;
++ (BOOL)isRTFDocumentType:(id)arg1;
++ (BOOL)isSpreadSheetDocumentType:(id)arg1;
 + (BOOL)isSafeRequest:(id)arg1;
++ (id)_officeUTIs;
++ (id)_iWorkUTIs;
++ (id)_csvUTIs;
++ (id)_lpdfUTIs;
++ (id)_rtfUTIs;
++ (id)_spreadSheetUTIs;
++ (BOOL)canConvertDocumentType:(id)arg1;
++ (BOOL)isSafeURL:(id)arg1;
 
-- (void)appendData:(id)arg1;
-- (void)cancel;
-- (void)dealloc;
-- (BOOL)isCancelled;
-- (id)initWithConnection:(id)arg1 delegate:(id)arg2 response:(id)arg3 options:(id)arg4;
-- (id)previewResponse;
-- (id)previewFileName;
-- (void)finishedAppendingData;
-- (void)finishConverting;
+- (id)initWithURL:(id)arg1 uti:(id)arg2 options:(id)arg3;
+- (void)_register;
+- (id)previewParts;
+- (BOOL)isComputed;
 - (id)previewUTI;
 - (id)initWithData:(id)arg1 name:(id)arg2 uti:(id)arg3 options:(id)arg4;
 - (id)previewRequest;
 - (id)safeRequestForRequest:(id)arg1;
-- (id)previewParts;
-- (id)initWithURL:(id)arg1 uti:(id)arg2 options:(id)arg3;
-- (BOOL)isComputed;
-- (void)_register;
+- (id)initWithConnection:(id)arg1 delegate:(id)arg2 response:(id)arg3 options:(id)arg4;
+- (id)previewResponse;
+- (id)previewFileName;
+- (void)appendDataArray:(id)arg1;
+- (void)finishedAppendingData;
+- (void)finishConverting;
+- (void)appendData:(id)arg1;
+- (void)cancel;
+- (BOOL)isCancelled;
+- (void)dealloc;
 
 @end

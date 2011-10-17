@@ -9,10 +9,10 @@
     } _coordinate;
 }
 
-@property struct { double latitude; double longitude; } coordinate;
+@property struct { double x1; double x2; } coordinate;
 
 
-- (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (struct { double x1; double x2; })coordinate;
+- (void)setCoordinate:(struct { double x1; double x2; })arg1;
 
 @end

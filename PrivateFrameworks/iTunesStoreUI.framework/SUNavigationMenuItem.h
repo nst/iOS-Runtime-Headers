@@ -10,16 +10,16 @@
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) NSString * title;
 @property(readonly) SUItemContentRating * contentRating;
+@property(readonly) NSString * title;
+@property(readonly) NSURL * URL;
 
 
 - (id)URL;
 - (id)initWithDictionary:(id)arg1;
 - (id)title;
-- (id)init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)dealloc;
 - (id)contentRating;
 

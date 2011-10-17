@@ -17,26 +17,35 @@
 @property(readonly) BOOL willValidate;
 
 
-- (void)setDisabled:(BOOL)arg1;
-- (int)structuralComplexityContribution;
-- (id)form;
-- (id)type;
-- (id)value;
-- (BOOL)disabled;
-- (void)setValue:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)name;
-- (BOOL)autofocus;
+- (id)formAction;
+- (void)setFormAction:(id)arg1;
+- (id)formEnctype;
+- (void)setFormEnctype:(id)arg1;
+- (id)formMethod;
+- (void)setFormMethod:(id)arg1;
 - (BOOL)formNoValidate;
 - (void)setFormNoValidate:(BOOL)arg1;
+- (id)formTarget;
+- (void)setFormTarget:(id)arg1;
 - (id)validity;
+- (BOOL)autofocus;
 - (void)setAutofocus:(BOOL)arg1;
 - (BOOL)willValidate;
 - (id)validationMessage;
+- (id)labels;
 - (BOOL)checkValidity;
 - (void)setCustomValidity:(id)arg1;
 - (void)click;
 - (id)accessKey;
 - (void)setAccessKey:(id)arg1;
+- (void)setDisabled:(BOOL)arg1;
+- (int)structuralComplexityContribution;
+- (BOOL)disabled;
+- (id)form;
+- (id)type;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (id)name;
+- (void)setName:(id)arg1;
 
 @end

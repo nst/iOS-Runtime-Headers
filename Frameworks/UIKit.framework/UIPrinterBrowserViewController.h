@@ -12,26 +12,26 @@
     BOOL _loaded;
     UIPrinterSearchingView *_searchingView;
     double _displayTime;
+    BOOL _clearCurrentPrinter;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (id)initWithPrintPanelViewController:(id)arg1;
-- (void)loadView;
-- (void)adjustPopoverSize;
-- (void)startPrinterBrowser;
-- (void)stopPrinterBrowser;
-- (void)updateSearching;
-- (void)willEnterForeground;
-- (void)addPrinter:(id)arg1 moreComing:(BOOL)arg2;
 - (void)removePrinter:(id)arg1 moreGoing:(BOOL)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)addPrinter:(id)arg1 moreComing:(BOOL)arg2;
+- (void)updateSearching;
+- (void)startPrinterBrowser;
+- (void)adjustPopoverSize;
+- (void)willEnterForeground;
+- (void)stopPrinterBrowser;
+- (id)initWithPrintPanelViewController:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)dealloc;
 
 @end

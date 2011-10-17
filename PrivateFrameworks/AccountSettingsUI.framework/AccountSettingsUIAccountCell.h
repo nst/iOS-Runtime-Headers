@@ -13,15 +13,13 @@
 
 + (void)initialize;
 + (float)desiredRowHeight;
-+ (void)_initializeSafeCategory;
 
-- (void)setCellEnabled:(BOOL)arg1;
 - (void)layoutSubviews;
+- (void)setCellEnabled:(BOOL)arg1;
 - (void)dealloc;
-- (void)setDetailsText:(id)arg1;
 - (void)setEnabledDataclasses:(id)arg1 supportedDataclasses:(id)arg2;
-- (id)enabledDataclassesTextForWidth:(float)arg1;
+- (void)setDetailsText:(id)arg1;
 - (id)_dataclassesLabel;
-- (id)accessibilityLabel;
+- (id)enabledDataclassesTextForWidth:(float)arg1;
 
 @end

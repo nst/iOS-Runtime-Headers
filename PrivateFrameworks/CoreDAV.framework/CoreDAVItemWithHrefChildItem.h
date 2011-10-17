@@ -11,10 +11,11 @@
 @property(retain) CoreDAVHrefItem * href;
 
 
-- (void)dealloc;
-- (id)description;
+- (id)copyParseRules;
+- (void)write:(id)arg1;
 - (void)setHref:(id)arg1;
 - (id)href;
-- (id)copyParseRules;
+- (id)description;
+- (void)dealloc;
 
 @end

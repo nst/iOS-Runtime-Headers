@@ -15,37 +15,37 @@
     SUComposeTextFieldListView *_textFieldListView;
 }
 
+@property(readonly) int composeReviewStyle;
+@property <SUComposeReviewHeaderDelegate> * delegate;
+@property(retain) ISReview * review;
 @property(readonly) UIResponder * initialFirstResponder;
 @property(readonly) NSString * nickname;
 @property float rating;
 @property(readonly) NSString * title;
-@property(retain) ISReview * review;
-@property <SUComposeReviewHeaderDelegate> * delegate;
-@property(readonly) int composeReviewStyle;
 
 
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
-- (void)layoutSubviews;
-- (id)title;
-- (void)sizeToFit;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)nickname;
 - (void)setRating:(float)arg1;
 - (float)rating;
-- (void)setReview:(id)arg1;
-- (int)numberOfColumnsInTextFieldList:(id)arg1;
-- (id)textFieldList:(id)arg1 configurationForFieldAtIndex:(unsigned int)arg2;
-- (void)textFieldListValidityDidChange:(id)arg1;
-- (void)textFieldListValuesDidChange:(id)arg1;
-- (void)_layoutSubviewsForPadStyle;
+- (void)setDelegate:(id)arg1;
+- (id)title;
+- (void)sizeToFit;
+- (id)delegate;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (void)dealloc;
 - (void)_layoutSubviewsForPhoneStyle;
-- (void)_setupViewsForPadStyle;
+- (void)_layoutSubviewsForPadStyle;
 - (void)_setupViewsForPhoneStyle;
+- (void)_setupViewsForPadStyle;
 - (id)review;
+- (void)textFieldListValuesDidChange:(id)arg1;
+- (void)textFieldListValidityDidChange:(id)arg1;
+- (id)textFieldList:(id)arg1 configurationForFieldAtIndex:(unsigned int)arg2;
 - (int)numberOfFieldsInTextFieldList:(id)arg1;
+- (int)numberOfColumnsInTextFieldList:(id)arg1;
 - (id)initialFirstResponder;
 - (int)composeReviewStyle;
+- (id)nickname;
+- (void)setReview:(id)arg1;
 
 @end

@@ -13,9 +13,9 @@
 
 
 - (void)invalidate;
-- (void)dealloc;
+- (float)averagePowerLevel;
 - (float)peakHoldLevel;
 - (id)initWithConnection:(id)arg1;
-- (float)averagePowerLevel;
+- (void)dealloc;
 
 @end

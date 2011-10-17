@@ -18,16 +18,16 @@
 
 }
 
-@property(copy) id completionHandler;
 @property int requestState;
+@property(copy) id completionHandler;
 
 + (id)requestInfoForPrinter:(id)arg1;
 
-- (void)requestPrintInfo;
-- (id)completionHandler;
 - (void)setCompletionHandler:(id)arg1;
-- (int)requestState;
+- (id)completionHandler;
 - (void)setRequestState:(int)arg1;
+- (int)requestState;
+- (void)requestPrintInfo;
 - (void)dealloc;
 
 @end

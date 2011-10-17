@@ -11,22 +11,22 @@
 
 @property <STEmpedLinkingManagerDelegate> * delegate;
 
-+ (void)_startLinking;
-+ (void)_startRemoteLinking;
 + (void)_stopLinking;
++ (void)_startRemoteLinking;
++ (void)_startLinking;
 
-- (BOOL)isLinking;
-- (void)startLinking;
-- (void)startRemoteLinking;
-- (void)stopLinking;
-- (void)unlinkSensor;
-- (void)_empedLinkingStateChanged:(id)arg1;
-- (void)_remoteLinkingStateChanged:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)unlinkRemote;
+- (id)delegate;
 - (void)_fakeEmpedLinkingStateChanged:(BOOL)arg1 afterDelay:(double)arg2;
+- (void)unlinkSensor;
+- (void)startRemoteLinking;
+- (void)startLinking;
+- (BOOL)isLinking;
+- (void)stopLinking;
+- (void)_remoteLinkingStateChanged:(id)arg1;
+- (void)_empedLinkingStateChanged:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)unlinkRemote;
 
 @end

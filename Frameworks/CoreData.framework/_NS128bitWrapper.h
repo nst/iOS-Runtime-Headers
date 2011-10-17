@@ -10,10 +10,10 @@
 }
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)initWithBytes:(char *)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

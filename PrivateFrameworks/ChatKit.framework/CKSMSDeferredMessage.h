@@ -4,13 +4,13 @@
 
 @class NSString;
 
-@interface CKSMSDeferredMessage : CKMessage  {
+@interface CKSMSDeferredMessage : CKSMSMessage  {
     NSString *_address;
 }
 
 
-- (void)dealloc;
 - (id)address;
 - (id)initWithAddress:(id)arg1;
+- (void)dealloc;
 
 @end

@@ -15,9 +15,9 @@
 + (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;
 
 - (id)initWithArrows:(BOOL)arg1;
+- (void)mapWithState:(id)arg1;
 - (void)setRectHeight:(float)arg1;
 - (void)setMaxNodeCount:(unsigned int)arg1;
 - (void)setMaxColumnCount:(unsigned int)arg1;
-- (void)mapWithState:(id)arg1;
 
 @end

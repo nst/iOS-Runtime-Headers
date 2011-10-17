@@ -18,23 +18,23 @@
     int _state;
 }
 
-@property float startTimestamp;
-@property int state;
+@property struct CGPoint { float x1; float x2; } startLocation;
+@property struct CGPoint { float x1; float x2; } currentLocation;
 @property(retain) UITouch * touch;
-@property struct CGPoint { float x; float y; } currentLocation;
-@property struct CGPoint { float x; float y; } startLocation;
+@property int state;
+@property float startTimestamp;
 
 
-- (id)initWithTouch:(id)arg1 inView:(id)arg2;
-- (float)startTimestamp;
 - (void)setStartTimestamp:(float)arg1;
-- (struct CGPoint { float x1; float x2; })currentLocation;
+- (float)startTimestamp;
 - (void)setCurrentLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })currentLocation;
 - (struct CGPoint { float x1; float x2; })startLocation;
-- (void)setStartLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (id)initWithTouch:(id)arg1 inView:(id)arg2;
 - (void)setTouch:(id)arg1;
-- (void)setState:(int)arg1;
+- (void)setStartLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (id)touch;
+- (void)setState:(int)arg1;
 - (int)state;
 
 @end

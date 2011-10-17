@@ -17,30 +17,30 @@
 @property <ABSimpleTextInputViewControllerDelegate> * delegate;
 
 
-- (void)viewDidLoad;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (id)stringValue;
+- (void)setDelegate:(id)arg1;
 - (void)setStringValue:(id)arg1;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
+- (id)stringValue;
 - (BOOL)_allowsAutorotation;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)setPlaceholder:(id)arg1;
 - (id)placeholder;
-- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (id)delegate;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)cancel:(id)arg1;
+- (void)save:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)save:(id)arg1;
-- (void)cancel:(id)arg1;
-- (void)setTitleLocalizationKey:(id)arg1;
 - (void)updateSaveButton;
 - (void)propertyEditingTableViewCell:(id)arg1 valueDidChange:(id)arg2;
 - (float)ab_heightToFitForViewInPopoverView;
+- (void)setTitleLocalizationKey:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 

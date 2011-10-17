@@ -14,8 +14,8 @@
 }
 
 
-- (void)setStartPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setEndPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setStartPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setProgress:(float)arg1;
 
 @end

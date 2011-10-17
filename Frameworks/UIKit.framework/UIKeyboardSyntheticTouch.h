@@ -18,33 +18,34 @@
     float _pathMajorRadius;
 }
 
-@property(readonly) float _pathMajorRadius;
-@property(readonly) unsigned char _pathIdentity;
-@property(readonly) unsigned char _pathIndex;
-@property struct CGPoint { float x; float y; } locationInWindow;
-@property(retain) UIWindow * window;
-@property unsigned int tapCount;
-@property int phase;
 @property double timestamp;
+@property int phase;
+@property unsigned int tapCount;
+@property(retain) UIWindow * window;
+@property struct CGPoint { float x1; float x2; } locationInWindow;
+@property(readonly) unsigned char _pathIndex;
+@property(readonly) unsigned char _pathIdentity;
+@property float _pathMajorRadius;
 
 + (id)syntheticTouchWithPoint:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 window:(id)arg3;
 
-- (int)phase;
-- (unsigned char)_pathIndex;
-- (id)initWithPoint:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 window:(id)arg3;
-- (struct CGPoint { float x1; float x2; })getLocationInWindow;
-- (void)setLocationInWindow:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTimestamp:(double)arg1;
+- (void)set_pathMajorRadius:(float)arg1;
 - (struct CGPoint { float x1; float x2; })locationInWindow;
-- (float)_pathMajorRadius;
-- (struct CGPoint { float x1; float x2; })previousLocationInView:(id)arg1;
-- (unsigned char)_pathIdentity;
+- (void)setLocationInWindow:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })getLocationInWindow;
+- (id)initWithPoint:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 window:(id)arg3;
 - (unsigned int)tapCount;
-- (void)setTapCount:(unsigned int)arg1;
+- (struct CGPoint { float x1; float x2; })previousLocationInView:(id)arg1;
 - (double)timestamp;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
-- (id)window;
+- (void)setTimestamp:(double)arg1;
 - (void)setPhase:(int)arg1;
+- (void)setTapCount:(unsigned int)arg1;
+- (int)phase;
 - (void)setWindow:(id)arg1;
+- (id)window;
+- (unsigned char)_pathIndex;
+- (unsigned char)_pathIdentity;
+- (float)_pathMajorRadius;
 
 @end

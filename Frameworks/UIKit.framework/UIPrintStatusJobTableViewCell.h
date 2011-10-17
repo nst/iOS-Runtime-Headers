@@ -12,9 +12,9 @@
 @property BOOL showActive;
 
 
+- (void)setShowActive:(BOOL)arg1;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (BOOL)showActive;
-- (void)setShowActive:(BOOL)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;
 

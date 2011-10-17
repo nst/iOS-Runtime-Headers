@@ -18,8 +18,8 @@
 + (BOOL)isEnableAction:(id)arg1;
 + (BOOL)isNonDestructiveAction:(id)arg1;
 
-- (void)setTag:(id)arg1;
 - (id)tag;
+- (void)setTag:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void)setIsEnableAction:(BOOL)arg1;

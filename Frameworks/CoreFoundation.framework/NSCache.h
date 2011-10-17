@@ -9,23 +9,23 @@
 }
 
 
-- (void)setCountLimit:(unsigned int)arg1;
-- (void)setTotalCostLimit:(unsigned int)arg1;
-- (void)setEvictsObjectsWithDiscardedContent:(BOOL)arg1;
-- (void)finalize;
 - (void)removeObjectForKey:(id)arg1;
-- (void)removeAllObjects;
-- (void)setName:(id)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)finalize;
 - (id)name;
+- (id)delegate;
+- (void)removeAllObjects;
+- (void)setEvictsObjectsWithDiscardedContent:(BOOL)arg1;
+- (unsigned int)countLimit;
+- (void)setCountLimit:(unsigned int)arg1;
+- (unsigned int)totalCostLimit;
+- (void)setTotalCostLimit:(unsigned int)arg1;
+- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned int)arg3;
+- (BOOL)evictsObjectsWithDiscardedContent;
+- (void)setName:(id)arg1;
+- (id)objectForKey:(id)arg1;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
 - (void)dealloc;
-- (id)objectForKey:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned int)arg3;
-- (unsigned int)totalCostLimit;
-- (unsigned int)countLimit;
-- (BOOL)evictsObjectsWithDiscardedContent;
 
 @end

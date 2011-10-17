@@ -8,23 +8,27 @@
     id _internal;
 }
 
+@property(getter=isEditable,readonly) BOOL editable;
 @property(retain) ALAssetsGroupPrivate * internal;
 
 
+- (id)internal;
 - (void)setInternal:(id)arg1;
-- (id)initWithPhotoAlbum:(id)arg1 library:(id)arg2 type:(unsigned int)arg3;
+- (struct CGImage { }*)posterImage;
+- (id)valueForProperty:(id)arg1;
+- (BOOL)isEditable;
+- (BOOL)isValid;
+- (void)enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
+- (void)enumerateAssetsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateAssetsUsingBlock:(id)arg1;
+- (id)initWithPhotoAlbum:(struct NSObject { Class x1; }*)arg1 library:(id)arg2 type:(unsigned int)arg3;
+- (void)_enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (void)setAssetsFilter:(id)arg1;
 - (int)numberOfAssets;
-- (void)_enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateAssetsUsingBlock:(id)arg1;
-- (void)enumerateAssetsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
-- (void)enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (id)internal;
 - (id)_typeAsString;
-- (BOOL)isValid;
-- (id)valueForProperty:(id)arg1;
-- (void)dealloc;
+- (BOOL)addAsset:(id)arg1;
+- (id)_uuid;
 - (id)description;
-- (struct CGImage { }*)posterImage;
+- (void)dealloc;
 
 @end

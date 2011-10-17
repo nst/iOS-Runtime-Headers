@@ -11,14 +11,14 @@
 @property(copy) NSString * property;
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (void)setProperty:(id)arg1;
 - (id)SQLJoinClausesForClass:(Class)arg1;
+- (void)setProperty:(id)arg1;
 - (id)initWithProperty:(id)arg1;
 - (id)property;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

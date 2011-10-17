@@ -20,16 +20,8 @@
 @property(copy,readonly) NSURL * absoluteLinkURL;
 
 
-- (void)setDisabled:(BOOL)arg1;
-- (BOOL)_mediaQueryMatchesForOrientation:(int)arg1;
-- (id)absoluteLinkURL;
-- (id)type;
-- (void)setType:(id)arg1;
-- (BOOL)disabled;
-- (id)target;
-- (void)setTarget:(id)arg1;
-- (id)sheet;
 - (void)setMedia:(id)arg1;
+- (id)sheet;
 - (void)setHref:(id)arg1;
 - (id)hreflang;
 - (void)setHreflang:(id)arg1;
@@ -41,5 +33,14 @@
 - (void)setCharset:(id)arg1;
 - (id)href;
 - (id)media;
+- (void)setDisabled:(BOOL)arg1;
+- (BOOL)disabled;
+- (BOOL)_mediaQueryMatches;
+- (BOOL)_mediaQueryMatchesForOrientation:(int)arg1;
+- (id)absoluteLinkURL;
+- (id)type;
+- (void)setType:(id)arg1;
+- (void)setTarget:(id)arg1;
+- (id)target;
 
 @end

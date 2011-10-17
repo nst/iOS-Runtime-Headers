@@ -9,18 +9,20 @@
     NSString *_password;
 }
 
-@property(copy) NSString * password;
 @property(copy) NSString * username;
+@property(copy) NSString * password;
 
 + (Class)responseClass;
 
-- (id)password;
-- (void)dealloc;
+- (id)initWithURLString:(id)arg1 username:(id)arg2 password:(id)arg3;
+- (id)urlCredential;
+- (id)urlRequest;
+- (id)initWithUsername:(id)arg1 password:(id)arg2;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
-- (id)urlRequest;
-- (id)initWithURLString:(id)arg1 username:(id)arg2 password:(id)arg3;
-- (id)urlCredential;
+- (id)password;
+- (id)urlString;
+- (void)dealloc;
 
 @end

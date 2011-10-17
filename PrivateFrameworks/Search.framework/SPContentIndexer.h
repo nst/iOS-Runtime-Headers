@@ -16,16 +16,14 @@
     NSMutableArray *_dirtyRemoves;
 }
 
++ (void)preheat;
 + (void)initialize;
 + (id)indexerForDisplayIdentifier:(id)arg1 category:(id)arg2;
-+ (void)preheat;
 
-- (void)dealloc;
 - (void)cancelSearch;
-- (void)beginSearch:(id)arg1;
-- (BOOL)_openOrCreateStore;
-- (void*)copyResultForIdentifier:(unsigned long long)arg1;
+- (void*)copyResultForIdentifier:(id)arg1;
 - (BOOL)nextSearchResults:(id*)arg1;
+- (void)beginSearch:(id)arg1;
 - (void)removeIdentifier:(id)arg1;
 - (void)setIdentifier:(id)arg1 forRecordDictionary:(id)arg2;
 - (BOOL)commitUpdates;
@@ -33,7 +31,9 @@
 - (id)initWithDisplayIdentifier:(id)arg1 category:(id)arg2 version:(unsigned int)arg3;
 - (void*)_copyRecordForExternalID:(id)arg1;
 - (void)_openOrCreateIndex;
+- (BOOL)_openOrCreateStore;
 - (id)_indexPath;
 - (id)_storePath;
+- (void)dealloc;
 
 @end

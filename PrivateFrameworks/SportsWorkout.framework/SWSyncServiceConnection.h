@@ -14,23 +14,23 @@
 @property(readonly) SWSyncHost * host;
 
 
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)host;
-- (void)dealloc;
-- (id)delegate;
-- (void)connection:(id)arg1 didCancelAuthenticationChallenge:(id)arg2;
-- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
 - (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (id)connection:(id)arg1 willCacheResponse:(id)arg2;
+- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
+- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
+- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
+- (void)connection:(id)arg1 didCancelAuthenticationChallenge:(id)arg2;
 - (id)initWithHost:(id)arg1;
-- (void)_restartBailOutTimer;
-- (void)_bailOutTimerFired:(id)arg1;
 - (void)handleResponse:(id)arg1;
+- (void)_bailOutTimerFired:(id)arg1;
+- (void)_restartBailOutTimer;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (id)host;
+- (id)delegate;
+- (void)dealloc;
 
 @end

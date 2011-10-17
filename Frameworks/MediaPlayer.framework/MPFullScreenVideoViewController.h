@@ -4,51 +4,52 @@
 
 @class MPFullScreenVideoOverlay;
 
-@interface MPFullScreenVideoViewController : MPAbstractFullScreenVideoViewController  {
+@interface MPFullScreenVideoViewController : MPAbstractFullScreenVideoViewController <MPVideoOverlayDelegate> {
     MPFullScreenVideoOverlay *_overlayView;
     int _autorotationState;
     BOOL _inhibitOverlay;
 }
 
+@property(readonly) MPFullScreenVideoOverlay * overlayView;
 @property int autorotationState;
-@property BOOL inhibitOverlay;
 
-+ (void)_initializeSafeCategory;
 
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)removeChildViewController:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)startTicking;
-- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (void)setDisabledParts:(unsigned int)arg1;
-- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (void)stopTicking;
-- (BOOL)controlsOverlayVisible;
-- (BOOL)inhibitOverlay;
+- (id)videoOverlayViewIfLoaded;
+- (void)overlayTappedScaleModeButton:(id)arg1;
+- (void)overlayTappedBackButton:(id)arg1;
+- (void)showChaptersController;
+- (void)videoView_itemTypeAvailableNotification:(id)arg1;
+- (void)_hideOverlayAnimationFinished:(id)arg1;
+- (void)_rotationAnimationFinished:(id)arg1;
 - (BOOL)allowsDetailScrubbing;
 - (id)createChapterFlipTransition;
+- (void)stopTicking;
+- (void)startTicking;
+- (void)_reallyRemoveOverlay;
 - (int)autorotationState;
-- (void)showChaptersController;
-- (void)setAllowsDetailScrubbing:(BOOL)arg1;
+- (void)setAutorotationState:(int)arg1;
+- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned int)arg2;
+- (id)swipableView:(id)arg1 overrideHitTest:(struct CGPoint { float x1; float x2; })arg2 withEvent:(id)arg3;
+- (id)overlayView;
+- (BOOL)inhibitOverlay;
+- (void)hideOverlayAnimated:(BOOL)arg1;
 - (void)transformVideoForInterfaceOrientation:(int)arg1 animate:(BOOL)arg2;
 - (void)playbackStateDidChangeNotification:(id)arg1;
-- (id)swipableView:(id)arg1 overrideHitTest:(struct CGPoint { float x1; float x2; })arg2 withEvent:(id)arg3;
-- (void)_reallyRemoveOverlay;
-- (void)setAutorotationState:(int)arg1;
-- (void)hideOverlayAnimated:(BOOL)arg1;
-- (void)videoView_itemTypeAvailableNotification:(id)arg1;
-- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned int)arg2;
-- (void)_hideOverlayAnimationFinished:(id)arg1;
-- (void)overlayTappedBackButton:(id)arg1;
-- (void)overlayTappedScaleModeButton:(id)arg1;
-- (void)_rotationAnimationFinished:(id)arg1;
-- (void)setInhibitOverlay:(BOOL)arg1;
 - (void)showOverlayAnimated:(BOOL)arg1;
+- (void)setInhibitOverlay:(BOOL)arg1;
+- (void)setDisabledParts:(unsigned int)arg1;
+- (void)setAllowsDetailScrubbing:(BOOL)arg1;
+- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
 - (void)noteIgnoredChangeTypes:(unsigned int)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;
-- (id)overlayView;
+- (id)videoOverlayView;
+- (BOOL)controlsOverlayVisible;
+- (void)removeChildViewController:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setItem:(id)arg1;
 
 @end

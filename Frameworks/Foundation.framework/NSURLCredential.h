@@ -4,31 +4,31 @@
 
 @class NSURLCredentialInternal;
 
-@interface NSURLCredential : NSObject <NSCopying> {
+@interface NSURLCredential : NSObject <NSCoding, NSCopying> {
     NSURLCredentialInternal *_internal;
 }
 
-+ (id)credentialWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
-+ (id)credentialWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
 + (id)credentialForTrust:(struct __SecTrust { }*)arg1;
++ (id)credentialWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
++ (id)credentialWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
 
-- (id)initWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
+- (id)certificates;
+- (struct __SecIdentity { }*)identity;
+- (unsigned int)persistence;
+- (BOOL)hasPassword;
+- (id)initWithTrust:(struct __SecTrust { }*)arg1;
+- (id)initWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
+- (struct _CFURLCredential { }*)_cfurlcredential;
+- (id)_initWithCFURLCredential:(struct _CFURLCredential { }*)arg1;
 - (id)user;
+- (id)initWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
 - (id)password;
-- (unsigned int)hash;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)description;
-- (id)_initWithCFURLCredential:(struct _CFURLCredential { }*)arg1;
-- (id)initWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
-- (BOOL)hasPassword;
-- (unsigned int)persistence;
-- (struct __SecIdentity { }*)identity;
-- (id)certificates;
-- (id)initWithTrust:(struct __SecTrust { }*)arg1;
-- (struct _CFURLCredential { }*)_cfurlcredential;
-- (id)_userName;
-- (id)_userPassword;
 
 @end

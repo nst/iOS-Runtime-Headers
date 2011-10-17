@@ -11,13 +11,12 @@
 @property(retain) NSData * superTileData;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (void)setSuperTileData:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)superTileData;
+- (void)setSuperTileData:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

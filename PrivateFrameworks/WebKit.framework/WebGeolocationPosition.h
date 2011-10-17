@@ -10,5 +10,6 @@
 
 
 - (id)initWithTimestamp:(double)arg1 latitude:(double)arg2 longitude:(double)arg3 accuracy:(double)arg4;
+- (void)dealloc;
 
 @end

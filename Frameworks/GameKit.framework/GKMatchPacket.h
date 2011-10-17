@@ -14,32 +14,32 @@
     NSData *_data;
 }
 
-@property(retain) NSData * data;
-@property BOOL valid;
-@property unsigned short checksum;
-@property unsigned int totalLength;
-@property unsigned int sequenceNumber;
-@property unsigned char packetType;
 @property unsigned char version;
+@property unsigned char packetType;
+@property unsigned int sequenceNumber;
+@property unsigned int totalLength;
+@property unsigned short checksum;
+@property BOOL valid;
+@property(retain) NSData * data;
 
 
-- (unsigned short)checksum;
-- (void)setValid:(BOOL)arg1;
 - (void)setChecksum:(unsigned short)arg1;
+- (unsigned short)checksum;
+- (unsigned char)packetType;
+- (id)initWithMessage:(id)arg1;
 - (unsigned int)totalLength;
 - (void)setTotalLength:(unsigned int)arg1;
-- (unsigned char)packetType;
 - (void)setPacketType:(unsigned char)arg1;
-- (unsigned int)sequenceNumber;
+- (void)setValid:(BOOL)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
+- (unsigned int)sequenceNumber;
+- (id)data;
+- (BOOL)valid;
+- (void)setVersion:(unsigned char)arg1;
+- (void)setData:(id)arg1;
 - (id)message;
 - (unsigned char)version;
-- (BOOL)valid;
 - (id)init;
-- (id)data;
 - (void)dealloc;
-- (id)initWithMessage:(id)arg1;
-- (void)setData:(id)arg1;
-- (void)setVersion:(unsigned char)arg1;
 
 @end

@@ -11,17 +11,17 @@
 
 + (id)defaultProperties;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)addStopWithDash:(float)arg1 space:(float)arg2;
-- (id)stops;
-- (void)setStops:(id)arg1;
-- (BOOL)areStopsOverridden;
-- (id)initWithDefaults;
 - (float)dashAtIndex:(unsigned int)arg1;
 - (float)spaceAtIndex:(unsigned int)arg1;
+- (void)addStopWithDash:(float)arg1 space:(float)arg2;
 - (unsigned int)stopCount;
+- (BOOL)areStopsOverridden;
+- (id)stops;
+- (void)setStops:(id)arg1;
+- (id)initWithDefaults;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

@@ -4,22 +4,23 @@
 
 @class NSNumber, NSArray;
 
-@interface FTCancelMessage : FTMessage  {
-    NSNumber *_reason;
+@interface FTCancelMessage : FTFaceTimeMessage <NSCopying> {
     NSArray *_peers;
+    NSNumber *_reason;
 }
 
-@property(copy) NSNumber * reason;
 @property(copy) NSArray * peers;
+@property(copy) NSNumber * reason;
 
 
+- (id)messageBody;
 - (void)setReason:(id)arg1;
 - (id)peers;
 - (void)setPeers:(id)arg1;
-- (id)bagKey;
 - (id)reason;
-- (void)dealloc;
 - (id)requiredKeys;
-- (id)messageBody;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)bagKey;
 
 @end

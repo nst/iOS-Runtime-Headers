@@ -13,15 +13,17 @@
 }
 
 
+- (void)_fadeOut;
 - (void)startAnimating;
 - (void)stopAnimating;
-- (void)dealloc;
-- (id)init:(BOOL)arg1;
-- (void)scaleFrame:(float)arg1 reposition:(BOOL)arg2;
-- (id)_createContentsAnimation;
-- (id)_createBoundsAnimation;
-- (void)_fadeOut;
-- (void)_fadeOutDidFinish;
 - (void)focusDidEnd;
+- (void)scaleFrame:(float)arg1 reposition:(BOOL)arg2;
+- (void)_fadeOutDidFinish;
+- (id)_createBoundsAnimation;
+- (id)_createContentsAnimation;
+- (id)nameForDarkImage;
+- (id)nameForLightImage;
+- (id)init;
+- (void)dealloc;
 
 @end

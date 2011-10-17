@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADDrawingGroup, OADTextListStyle, NSMutableArray, NSMutableDictionary;
+@class OADTextListStyle, NSMutableArray, NSMutableDictionary;
 
 @interface PDPresentation : OCDDocument  {
-    OADDrawingGroup *mDrawingGroup;
     NSMutableArray *mSlideMasters;
     NSMutableArray *mNotesMasters;
     NSMutableArray *mSlides;
@@ -27,29 +26,24 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (id)drawingGroup;
-- (void)setSlideSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setNotesSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setIsAutoPlay:(BOOL)arg1;
-- (void)addNotesMaster:(id)arg1;
-- (void)addSlide:(id)arg1;
-- (id)defaultTextStyle;
 - (unsigned int)slideMasterCount;
 - (id)slideMasterAtIndex:(unsigned int)arg1;
 - (void)addSlideMaster:(id)arg1;
 - (unsigned int)notesMasterCount;
 - (id)notesMasterAtIndex:(unsigned int)arg1;
-- (unsigned int)slideCount;
-- (id)slideAtIndex:(unsigned int)arg1;
+- (void)addNotesMaster:(id)arg1;
+- (void)addSlide:(id)arg1;
 - (unsigned int)indexOfSlide:(id)arg1;
 - (id)bulletBlipAtIndex:(long)arg1;
 - (unsigned long)addBulletBlip:(id)arg1;
 - (unsigned long)bulletBlipCount;
 - (id)bulletBlips;
+- (struct CGSize { float x1; float x2; })slideSize;
+- (void)setSlideSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })notesSize;
+- (void)setNotesSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)isAutoPlay;
+- (void)setIsAutoPlay:(BOOL)arg1;
 - (BOOL)isCommentsVisible;
 - (void)setIsCommentsVisible:(BOOL)arg1;
 - (BOOL)isLooping;
@@ -58,6 +52,11 @@
 - (void)setIsKiosk:(BOOL)arg1;
 - (id)commentAuthorForId:(unsigned int)arg1;
 - (void)setCommentAuthor:(id)arg1 forId:(unsigned int)arg2;
-- (struct CGSize { float x1; float x2; })slideSize;
+- (id)defaultTextStyle;
+- (void)flushUnusedMastersAndLayouts;
+- (unsigned int)slideCount;
+- (id)slideAtIndex:(unsigned int)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

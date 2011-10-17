@@ -14,24 +14,24 @@
     float _radius;
 }
 
-@property float radius;
-@property float opacity;
-@property struct CGSize { float width; float height; } offset;
 @property(retain) UIColor * color;
+@property struct CGSize { float x1; float x2; } offset;
+@property float opacity;
+@property float radius;
 
 
-- (void)setOffset:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })offset;
-- (void)setColor:(id)arg1;
-- (id)color;
-- (void)setOpacity:(float)arg1;
-- (float)opacity;
-- (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
 - (float)radius;
 - (void)setRadius:(float)arg1;
+- (id)color;
+- (void)setColor:(id)arg1;
+- (void)setOffset:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })offset;
+- (float)opacity;
+- (void)setOpacity:(float)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)applyToLayer:(id)arg1;
 
 @end

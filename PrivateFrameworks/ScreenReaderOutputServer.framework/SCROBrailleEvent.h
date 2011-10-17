@@ -12,11 +12,11 @@
 + (id)eventWithType:(int)arg1 data:(id)arg2;
 + (id)eventWithType:(int)arg1 data:(id)arg2 data2:(id)arg3 data3:(id)arg4;
 
-- (int)type;
-- (id)data;
-- (void)dealloc;
 - (id)initWithType:(int)arg1 data:(id)arg2 data2:(id)arg3 data3:(id)arg4;
 - (id)data3;
 - (id)data2;
+- (id)data;
+- (int)type;
+- (void)dealloc;
 
 @end

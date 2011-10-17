@@ -2,54 +2,45 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString, UIImageView, UILabel;
+@class GKGameRatingBrush;
 
 @interface GKRatingControl : UIControl  {
-    UIImageView *_backgroundImageView;
-    UILabel *_explanationLabel;
-    UIImageView *_foregroundImageView;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _hitPadding;
-    float _starWidth;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _trackingLastPoint;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _trackingStartPoint;
+    GKGameRatingBrush *_brush;
     float _value;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _lastLocation;
+    float _trackingValue;
 }
 
-@property(retain) NSString * explanationText;
+@property(retain) GKGameRatingBrush * brush;
 @property float value;
-@property float starWidth;
+@property struct CGPoint { float x1; float x2; } lastLocation;
+@property float trackingValue;
 
 
+- (void)setBrush:(id)arg1;
+- (float)trackingValue;
+- (struct CGPoint { float x1; float x2; })lastLocation;
+- (void)layoutSubviewsInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)valueForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setLastLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setTrackingValue:(float)arg1;
+- (id)brush;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRatingStarsWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)value;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)setValue:(float)arg1;
-- (BOOL)canHandleSwipes;
+- (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)layoutSubviews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
 - (void)sizeToFit;
-- (BOOL)_alwaysHandleScrollerMouseEvent;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)init;
 - (void)dealloc;
-- (id)initWithBackgroundImage:(id)arg1 foregroundImage:(id)arg2;
-- (void)setHitPadding:(struct CGSize { float x1; float x2; })arg1;
-- (void)setStarWidth:(float)arg1;
-- (void)setExplanationText:(id)arg1;
-- (id)explanationText;
-- (id)_newExplanationLabel;
-- (void)_updateValueForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)starWidth;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_foregroundImageClipBounds;
 
 @end

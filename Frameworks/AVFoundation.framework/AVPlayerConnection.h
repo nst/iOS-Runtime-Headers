@@ -20,16 +20,16 @@
 @property(readonly) struct dispatch_queue_s { }* serializationQueue;
 
 
-- (id)player;
-- (void)dealloc;
-- (id)description;
+- (id)initWithWeakReferenceToPlayer:(id)arg1 weakReferenceToPlayerItem:(id)arg2 shouldAppendItem:(BOOL)arg3;
 - (id)playerItem;
 - (struct dispatch_queue_s { }*)serializationQueue;
-- (id)initWithWeakReferenceToPlayer:(id)arg1 weakReferenceToPlayerItem:(id)arg2 shouldAppendItem:(BOOL)arg3;
 - (BOOL)addItemToPlayQueue;
 - (void)ensureItemAddedToPlayQueueWithCompletionHandler:(id)arg1;
 - (void)removeItemFromPlayQueue;
-- (id)error;
 - (int)status;
+- (id)error;
+- (id)player;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -6,6 +6,7 @@
 
 @interface PKPaper : NSObject  {
     NSString *name;
+    NSString *_baseName;
     int width;
     int height;
     int leftMargin;
@@ -17,6 +18,7 @@
 @property(readonly) struct CGSize { float width; float height; } paperSize;
 @property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } imageableAreaRect;
 @property(readonly) BOOL isBorderless;
+@property(readonly) NSString * baseName;
 @property(readonly) float imageableArea;
 @property int bottomMargin;
 @property int rightMargin;
@@ -27,37 +29,45 @@
 @property(retain) NSString * name;
 @property(retain,readonly) NSString * localizedName;
 
++ (id)genericHagakiPaper;
++ (id)genericWithName:(id)arg1;
++ (BOOL)willAdjustMarginsForDuplexMode:(id)arg1;
++ (id)genericBorderlessWithName:(id)arg1;
++ (id)genericPRC32KPaper;
++ (id)genericA6Paper;
++ (id)documentPapers;
++ (id)photoPapers;
++ (id)genericA4Paper;
++ (id)genericLetterPaper;
 + (id)generic4x6Paper;
 + (id)generic3_5x5Paper;
-+ (id)genericA6Paper;
-+ (id)genericPRC32KPaper;
-+ (id)genericLetterPaper;
-+ (id)genericA4Paper;
-+ (id)genericHagakiPaper;
-+ (BOOL)willAdjustMarginsForDuplexMode:(id)arg1;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageableAreaRect;
-- (struct CGSize { float x1; float x2; })paperSize;
-- (id)localizedName;
-- (int)height;
-- (int)width;
-- (void)setName:(id)arg1;
-- (void)setRightMargin:(int)arg1;
-- (void)setWidth:(int)arg1;
-- (id)name;
-- (void)dealloc;
-- (int)leftMargin;
-- (int)bottomMargin;
-- (void)setHeight:(int)arg1;
 - (int)rightMargin;
-- (void)setTopMargin:(int)arg1;
-- (void)setBottomMargin:(int)arg1;
-- (void)setLeftMargin:(int)arg1;
 - (int)topMargin;
-- (id)initWithWidth:(int)arg1 Height:(int)arg2 Left:(int)arg3 Top:(int)arg4 Right:(int)arg5 Bottom:(int)arg6 localizedName:(id)arg7 codeName:(id)arg8;
+- (void)setTopMargin:(int)arg1;
+- (int)bottomMargin;
+- (void)setBottomMargin:(int)arg1;
+- (int)leftMargin;
+- (void)setLeftMargin:(int)arg1;
 - (id)initWithPWGSize:(struct _pwg_size_s { struct _pwg_map_s { char *x_1_1_1; char *x_1_1_2; } x1; int x2; int x3; int x4; int x5; int x6; int x7; }*)arg1 localizedName:(id)arg2 codeName:(id)arg3;
 - (float)imageableArea;
-- (BOOL)isBorderless;
 - (id)paperWithMarginsAdjustedForDuplexMode:(id)arg1;
+- (id)nameWithoutSuffixes:(id)arg1;
+- (id)initWithWidth:(int)arg1 Height:(int)arg2 Left:(int)arg3 Top:(int)arg4 Right:(int)arg5 Bottom:(int)arg6 localizedName:(id)arg7 codeName:(id)arg8;
+- (void)setHeight:(int)arg1;
+- (BOOL)isBorderless;
+- (id)baseName;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageableAreaRect;
+- (struct CGSize { float x1; float x2; })paperSize;
+- (int)height;
+- (id)localizedName;
+- (void)setRightMargin:(int)arg1;
+- (void)setWidth:(int)arg1;
+- (int)width;
+- (id)name;
+- (void)setName:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

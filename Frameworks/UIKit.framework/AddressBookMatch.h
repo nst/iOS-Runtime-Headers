@@ -13,7 +13,7 @@
 
 
 - (id)initWithValue:(id)arg1 property:(id)arg2 key:(id)arg3 identifier:(int)arg4;
-- (void)dealloc;
 - (id)description;
+- (void)dealloc;
 
 @end

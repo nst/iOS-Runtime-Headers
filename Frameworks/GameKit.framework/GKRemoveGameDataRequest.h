@@ -11,11 +11,9 @@
 @property(retain) NSDictionary * gameDescriptor;
 
 
-- (id)invalidateCacheKeys;
-- (int)cacheType;
+- (void)setGameDescriptor:(id)arg1;
 - (BOOL)authenticationRequired;
 - (id)gameDescriptor;
-- (void)setGameDescriptor:(id)arg1;
 - (id)key;
 - (id)request;
 - (void)dealloc;

@@ -15,20 +15,19 @@
 @property(readonly) unsigned int statusClass;
 @property(readonly) int status;
 
-+ (void)initialize;
 
 - (unsigned int)statusDetail;
-- (id)initWithStatus:(int)arg1;
-- (void)_updateEnhancedStatusCodesFromLastResponse;
-- (void)setLastResponseLine:(id)arg1;
-- (int)failureReason;
 - (unsigned int)statusSubject;
 - (unsigned int)statusClass;
-- (id)errorMessageWithAddress:(id)arg1 defaultMessage:(id)arg2;
+- (void)_updateEnhancedStatusCodesFromLastResponse;
+- (int)failureReason;
 - (id)lastResponseLine;
+- (id)errorMessageWithAddress:(id)arg1 defaultMessage:(id)arg2;
+- (id)initWithStatus:(int)arg1;
+- (void)setLastResponseLine:(id)arg1;
 - (void)setStatus:(int)arg1;
-- (void)dealloc;
-- (id)description;
 - (int)status;
+- (id)description;
+- (void)dealloc;
 
 @end

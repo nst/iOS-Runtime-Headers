@@ -2,43 +2,47 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSDate, NSString;
+@class NSDate, GKAchievementInternal, NSString;
 
 @interface GKAchievement : NSObject <NSCoding> {
-    NSString *_identifier;
-    double _percentComplete;
-    BOOL _isHidden;
-    BOOL _completed;
-    NSDate *_lastReportedDate;
+    GKAchievementInternal *_internal;
+    BOOL _showsCompletionBanner;
+    BOOL _hidden;
 }
 
-@property(retain) NSDate * lastReportedDate;
-@property(getter=isCompleted) BOOL completed;
-@property(getter=isHidden,readonly) BOOL hidden;
-@property double percentComplete;
 @property(retain) NSString * identifier;
+@property double percentComplete;
+@property(getter=isCompleted,readonly) BOOL completed;
+@property(getter=isHidden) BOOL hidden;
+@property(retain) NSDate * lastReportedDate;
+@property BOOL showsCompletionBanner;
+@property(retain) GKAchievementInternal * internal;
 
-+ (void)loadAchievementsForGame:(id)arg1 player:(id)arg2 withCompletionHandler:(id)arg3;
-+ (void)loadAchievementsWithCompletionHandler:(id)arg1;
++ (id)nonHiddenAchievementsForDescriptions:(id)arg1 achievements:(id)arg2;
++ (id)allAchievementsForDescriptions:(id)arg1 achievements:(id)arg2;
 + (void)resetAchievementsWithCompletionHandler:(id)arg1;
++ (void)loadAchievementsWithCompletionHandler:(id)arg1;
++ (void)loadAchievementsForGame:(id)arg1 player:(id)arg2 withCompletionHandler:(id)arg3;
 
-- (id)initWithDescription:(id)arg1;
 - (void)reportAchievementWithCompletionHandler:(id)arg1;
-- (void)setLastReportedDate:(id)arg1;
-- (void)setCompleted:(BOOL)arg1;
-- (id)lastReportedDate;
-- (id)identifier;
+- (id)initWithDescription:(id)arg1;
+- (BOOL)showsCompletionBanner;
+- (void)setShowsCompletionBanner:(BOOL)arg1;
+- (id)internal;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
-- (id)initWithDictionary:(id)arg1;
-- (void)setIdentifier:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (BOOL)isHidden;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
 - (void)setHidden:(BOOL)arg1;
+- (BOOL)isHidden;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isCompleted;
-- (void)setPercentComplete:(double)arg1;
-- (double)percentComplete;
 
 @end

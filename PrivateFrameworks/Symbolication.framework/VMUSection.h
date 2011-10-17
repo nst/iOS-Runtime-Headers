@@ -19,20 +19,20 @@
 }
 
 
-- (unsigned long long)addr;
-- (id)sectionName;
-- (BOOL)isSection32;
+- (unsigned int)align;
+- (unsigned int)flags;
+- (unsigned int)offset;
+- (unsigned long long)size;
 - (BOOL)isSection64;
-- (id)segmentName;
 - (unsigned int)reloff;
 - (unsigned int)nreloc;
 - (unsigned int)reserved1;
 - (unsigned int)reserved2;
-- (unsigned int)flags;
-- (unsigned int)offset;
-- (unsigned long long)size;
-- (void)dealloc;
+- (BOOL)isSection32;
+- (id)segmentName;
+- (id)sectionName;
+- (unsigned long long)addr;
 - (id)description;
-- (unsigned int)align;
+- (void)dealloc;
 
 @end

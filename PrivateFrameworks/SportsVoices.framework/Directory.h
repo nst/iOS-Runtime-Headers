@@ -9,14 +9,14 @@
     NSArray *_orderedSubparts;
 }
 
-@property(retain,readonly) NSArray * orderedSubparts;
+@property(readonly) NSArray * orderedSubparts;
 
 + (id)instanceFromPlist:(id)arg1;
 
-- (void)dealloc;
 - (id)description;
-- (id)appliedTo:(id)arg1;
+- (void)dealloc;
 - (id)orderedSubparts;
+- (id)appliedTo:(id)arg1;
 - (id)initFromPlist:(id)arg1;
 
 @end

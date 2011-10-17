@@ -11,10 +11,10 @@
 }
 
 
-- (void*)content;
-- (void)dealloc;
-- (id)displayIdentifier;
 - (unsigned int)domain;
+- (void*)content;
+- (id)displayIdentifier;
 - (id)initWithContent:(void*)arg1 domain:(unsigned int)arg2 displayIdentifier:(id)arg3;
+- (void)dealloc;
 
 @end

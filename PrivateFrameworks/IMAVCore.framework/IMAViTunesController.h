@@ -8,12 +8,11 @@
 
 + (id)sharedInstance;
 
-- (oneway void)release;
+- (void)resume;
+- (void)pause;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 - (id)init;
 - (void)dealloc;
-- (unsigned int)retainCount;
-- (id)autorelease;
-- (void)pause;
-- (void)resume;
 
 @end

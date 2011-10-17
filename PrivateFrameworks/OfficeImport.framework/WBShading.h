@@ -10,8 +10,8 @@
 @interface WBShading : NSObject  {
 }
 
-+ (void)write:(id)arg1 to:(struct WrdShading { int (**x1)(); struct CsColour { unsigned short x_2_1_1; unsigned short x_2_1_2; unsigned short x_2_1_3; unsigned short x_2_1_4; } x2; struct CsColour { unsigned short x_3_1_1; unsigned short x_3_1_2; unsigned short x_3_1_3; unsigned short x_3_1_4; } x3; int x4; int x5; int x6; }*)arg2;
 + (void)readFrom:(struct WrdShading { int (**x1)(); struct CsColour { unsigned short x_2_1_1; unsigned short x_2_1_2; unsigned short x_2_1_3; unsigned short x_2_1_4; } x2; struct CsColour { unsigned short x_3_1_1; unsigned short x_3_1_2; unsigned short x_3_1_3; unsigned short x_3_1_4; } x3; int x4; int x5; int x6; }*)arg1 to:(id)arg2;
++ (void)write:(id)arg1 to:(struct WrdShading { int (**x1)(); struct CsColour { unsigned short x_2_1_1; unsigned short x_2_1_2; unsigned short x_2_1_3; unsigned short x_2_1_4; } x2; struct CsColour { unsigned short x_3_1_1; unsigned short x_3_1_2; unsigned short x_3_1_3; unsigned short x_3_1_4; } x3; int x4; int x5; int x6; }*)arg2;
 
 
 @end

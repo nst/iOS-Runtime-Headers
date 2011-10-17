@@ -2,124 +2,118 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEvent, NSIndexSet, NSString, UIColor;
+@class EKDayOccurrenceContentView, UIImageView, UIView, EKOccurrenceViewOverlay, NSString, UIColor, EKEvent;
 
 @interface EKDayOccurrenceView : UIControl  {
-    NSString *_title;
-    NSString *_location;
+    EKEvent *_occurrence;
     UIColor *_color;
     UIColor *_textColor;
     float _visibleHeight;
-    NSIndexSet *_titleMetrics;
-    NSIndexSet *_locationMetrics;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _titleEndPoint;
-    float _textEndY;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _titleRect;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _locationRect;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _fullTextRect;
-    EKEvent *_occurrence;
+    UIImageView *_background;
+    EKDayOccurrenceContentView *_content;
+    BOOL _needsContentCalc;
+    BOOL _needsBackgroundUpdate;
+    EKOccurrenceViewOverlay *_overlay;
+    float _lastBackgroundHeight;
+    UIView *_startResizeHandle;
+    UIView *_endResizeHandle;
     id _delegate;
     unsigned int _tentative : 1;
-    unsigned int _cancelled : 1;
-    unsigned int _selected : 1;
-    unsigned int _colorType : 2;
+    unsigned int _allDay : 1;
     unsigned int _darkensSelection : 1;
     unsigned int _dimmed : 1;
-    unsigned int _touchKeptInsideOccurrence;
+    unsigned int _touchKeptInsideOccurrence : 1;
+    unsigned int _drawsResizeHandles : 1;
+    unsigned int _maskedResizeHandles : 1;
+    BOOL _usesSmallText;
+    BOOL _borderless;
+    BOOL _dragging;
 }
 
+@property id delegate;
 @property(retain) EKEvent * occurrence;
-@property(getter=isSelected) BOOL selected;
 @property BOOL darkensSelection;
 @property BOOL dimmed;
+@property BOOL dragging;
+@property BOOL borderless;
+@property BOOL drawsResizeHandles;
+@property BOOL maskedResizeHandles;
+@property BOOL usesSmallText;
 @property(copy) UIColor * color;
 @property(copy) NSString * title;
 @property(copy) NSString * location;
 @property(getter=isTentative) BOOL tentative;
 @property(getter=isCancelled) BOOL cancelled;
-@property id delegate;
+@property(getter=isAllDay) BOOL allDay;
+@property(getter=isBirthday) BOOL birthday;
 
 + (void)clearCaches;
-+ (void)_clearViewCache;
-+ (id)occurrenceViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-+ (float)bottomShadowMargin;
-+ (void)pushRoundedRectPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 withCornerRadius:(float)arg3;
-+ (id)_imageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2 height:(float)arg3;
-+ (id)_cachedImageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2 height:(float)arg3;
-+ (id)_viewCache;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentStretchRectForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (float)minimumHeightForOrientation:(int)arg1;
++ (id)_cachedImageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2;
++ (id)_imageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2;
 + (unsigned int)_viewCacheSize;
-+ (float)minimumHeight;
-+ (void)_initializeSafeCategory;
++ (float)bottomShadowMargin;
++ (id)occurrenceViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (void)_clearViewCache;
++ (id)_viewCache;
 
-- (void)setCancelled:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setLocation:(id)arg1;
-- (void)setColor:(id)arg1;
-- (id)color;
-- (id)textColor;
-- (BOOL)shouldTrack;
-- (void)removeFromSuperview;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (id)title;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
-- (id)location;
-- (void)setTitle:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (BOOL)isCancelled;
-- (void)setDarkensSelection:(BOOL)arg1;
-- (id)_tentativeOutline;
-- (void)_prepareForReuse;
-- (BOOL)darkensSelection;
-- (void)setOccurrence:(id)arg1;
-- (BOOL)isTentative;
-- (void)setVisibleHeight:(float)arg1;
-- (void)_invalidateMetrics;
-- (void)_getTitleMetrics:(id*)arg1 endPoint:(struct CGPoint { float x1; float x2; }*)arg2;
-- (id)_locationFont;
-- (void)_drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)dimmed;
-- (id)_locationMetrics;
-- (void)setTentative:(BOOL)arg1;
-- (id)_titleFont;
-- (void)setDimmed:(BOOL)arg1;
 - (id)occurrence;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
+- (BOOL)isTentative;
+- (void)setAllDay:(BOOL)arg1;
+- (BOOL)isAllDay;
+- (void)setLocation:(id)arg1;
+- (id)location;
+- (id)color;
+- (void)setCancelled:(BOOL)arg1;
+- (void)setColor:(id)arg1;
+- (void)setSelected:(BOOL)arg1;
+- (void)prepareForReuse;
+- (id)title;
+- (void)didMoveToSuperview;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (id)delegate;
+- (void)setTitle:(id)arg1;
+- (void)removeFromSuperview;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDimmed:(BOOL)arg1;
+- (BOOL)dragging;
+- (BOOL)borderless;
+- (BOOL)usesSmallText;
+- (void)bringResizeHandlesToFront;
+- (int)dragTypeFromPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)dimmed;
+- (void)animateToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isAllDay:(BOOL)arg2 beginFromCurrentState:(BOOL)arg3 whenFinished:(id)arg4;
+- (void)setVisibleHeight:(float)arg1;
+- (void)setOccurrence:(id)arg1;
+- (BOOL)darkensSelection;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_computeContentRect;
+- (id)_textColor;
+- (id)_newResizeHandleView;
+- (void)setMaskedResizeHandles:(BOOL)arg1;
+- (BOOL)maskedResizeHandles;
+- (void)_updateResizeHandleLocations;
+- (id)arrayOfResizeHandles;
+- (void)setBorderless:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setDragging:(BOOL)arg1;
+- (BOOL)isBirthday;
+- (BOOL)drawsResizeHandles;
+- (void)_invalidateContentBounds;
+- (void)_possiblyRemoveOverlay;
+- (void)_addOverlayIfNeeded;
+- (void)setBorderless:(BOOL)arg1;
+- (void)setDrawsResizeHandles:(BOOL)arg1;
+- (void)setUsesSmallText:(BOOL)arg1;
+- (void)setDarkensSelection:(BOOL)arg1;
+- (void)setTentative:(BOOL)arg1;
+- (BOOL)isCancelled;
+- (void)dealloc;
+- (void)setBirthday:(BOOL)arg1;
 
 @end

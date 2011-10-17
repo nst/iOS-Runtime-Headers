@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UIView;
+@class UIImageView, UIImage, UIView, UIColor;
 
 @interface UIGradientBar : UIView  {
     UIImageView *_topShineView;
@@ -11,15 +11,26 @@
     float _gradientHeight;
 }
 
-+ (id)gradientFillImage;
-+ (id)bottomLineColor;
+@property(retain) UIImage * customTopShineImage;
+@property(retain) UIImage * customGradientFillImage;
+@property(retain) UIColor * customBottomLineColor;
 
-- (void)_tile;
-- (void)setBottomLineAlpha:(float)arg1;
-- (void)setGradientHeight:(float)arg1;
++ (id)bottomLineColor;
++ (id)topShineImage;
++ (id)gradientFillImage;
+
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setGradientHeight:(float)arg1;
+- (void)setBottomLineAlpha:(float)arg1;
+- (id)customBottomLineColor;
+- (void)setCustomBottomLineColor:(id)arg1;
+- (id)customTopShineImage;
+- (void)setCustomTopShineImage:(id)arg1;
+- (id)customGradientFillImage;
+- (void)setCustomGradientFillImage:(id)arg1;
+- (void)_tile;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

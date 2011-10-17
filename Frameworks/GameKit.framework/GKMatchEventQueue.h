@@ -17,39 +17,39 @@
     int _deferedPlayerState;
 }
 
-@property unsigned int sequenceNumber;
-@property BOOL hasUpdateRelayInfo;
-@property BOOL hasInitRelayInfo;
-@property BOOL relayInitiated;
-@property(retain) NSMutableDictionary * connectionInfo;
-@property BOOL okToSend;
-@property(retain) NSMutableArray * events;
-@property int deferedPlayerState;
-@property BOOL counted;
 @property int playerState;
+@property BOOL counted;
+@property int deferedPlayerState;
+@property(retain) NSMutableArray * events;
+@property BOOL okToSend;
+@property(retain) NSMutableDictionary * connectionInfo;
+@property BOOL relayInitiated;
+@property BOOL hasInitRelayInfo;
+@property BOOL hasUpdateRelayInfo;
+@property unsigned int sequenceNumber;
 
 
-- (BOOL)hasUpdateRelayInfo;
 - (void)setHasUpdateRelayInfo:(BOOL)arg1;
-- (BOOL)hasInitRelayInfo;
+- (BOOL)hasUpdateRelayInfo;
 - (void)setHasInitRelayInfo:(BOOL)arg1;
-- (BOOL)relayInitiated;
+- (BOOL)hasInitRelayInfo;
 - (void)setRelayInitiated:(BOOL)arg1;
-- (id)connectionInfo;
+- (BOOL)relayInitiated;
 - (void)setConnectionInfo:(id)arg1;
-- (BOOL)okToSend;
+- (id)connectionInfo;
 - (void)setOkToSend:(BOOL)arg1;
+- (BOOL)okToSend;
 - (void)setEvents:(id)arg1;
-- (int)deferedPlayerState;
 - (void)setDeferedPlayerState:(int)arg1;
-- (BOOL)counted;
+- (int)deferedPlayerState;
 - (void)setCounted:(BOOL)arg1;
-- (int)playerState;
+- (BOOL)counted;
 - (void)setPlayerState:(int)arg1;
-- (unsigned int)sequenceNumber;
+- (int)playerState;
 - (void)setSequenceNumber:(unsigned int)arg1;
+- (unsigned int)sequenceNumber;
+- (id)events;
 - (id)init;
 - (void)dealloc;
-- (id)events;
 
 @end

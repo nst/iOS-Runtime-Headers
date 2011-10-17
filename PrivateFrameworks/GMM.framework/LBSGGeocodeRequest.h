@@ -5,43 +5,44 @@
 @class LBSGRectangle;
 
 @interface LBSGGeocodeRequest : PBRequest  {
-    unsigned int _numFeatureLimit;
     BOOL _hasNumFeatureLimit;
-    BOOL _includeBoundingBoxes;
+    unsigned int _numFeatureLimit;
     BOOL _hasIncludeBoundingBoxes;
+    BOOL _includeBoundingBoxes;
     LBSGRectangle *_boundingBox;
-    int _addressLinesLimit;
     BOOL _hasAddressLinesLimit;
+    int _addressLinesLimit;
 }
 
-@property(readonly) BOOL hasBoundingBox;
-@property(readonly) BOOL hasAddressLinesLimit;
-@property int addressLinesLimit;
-@property(retain) LBSGRectangle * boundingBox;
-@property(readonly) BOOL hasIncludeBoundingBoxes;
-@property BOOL includeBoundingBoxes;
-@property(readonly) BOOL hasNumFeatureLimit;
+@property BOOL hasNumFeatureLimit;
 @property unsigned int numFeatureLimit;
+@property BOOL hasIncludeBoundingBoxes;
+@property BOOL includeBoundingBoxes;
+@property(readonly) BOOL hasBoundingBox;
+@property(retain) LBSGRectangle * boundingBox;
+@property BOOL hasAddressLinesLimit;
+@property int addressLinesLimit;
 
 
-- (unsigned int)requestTypeCode;
-- (Class)responseClass;
-- (id)boundingBox;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasIncludeBoundingBoxes;
-- (void)setNumFeatureLimit:(unsigned int)arg1;
-- (void)setAddressLinesLimit:(int)arg1;
-- (BOOL)hasNumFeatureLimit;
-- (BOOL)hasBoundingBox;
-- (void)setIncludeBoundingBoxes:(BOOL)arg1;
-- (BOOL)hasAddressLinesLimit;
-- (int)addressLinesLimit;
-- (void)setBoundingBox:(id)arg1;
-- (BOOL)includeBoundingBoxes;
-- (unsigned int)numFeatureLimit;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasNumFeatureLimit:(BOOL)arg1;
+- (BOOL)hasNumFeatureLimit;
+- (void)setHasAddressLinesLimit:(BOOL)arg1;
+- (BOOL)hasAddressLinesLimit;
+- (BOOL)includeBoundingBoxes;
+- (void)setHasIncludeBoundingBoxes:(BOOL)arg1;
+- (BOOL)hasIncludeBoundingBoxes;
+- (unsigned int)numFeatureLimit;
+- (int)addressLinesLimit;
+- (BOOL)hasBoundingBox;
+- (void)setAddressLinesLimit:(int)arg1;
+- (void)setIncludeBoundingBoxes:(BOOL)arg1;
+- (void)setNumFeatureLimit:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setBoundingBox:(id)arg1;
+- (id)boundingBox;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

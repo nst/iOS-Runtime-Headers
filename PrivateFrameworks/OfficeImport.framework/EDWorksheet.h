@@ -26,18 +26,9 @@
 }
 
 
-- (id)tables;
-- (void)setPane:(id)arg1;
-- (void)setDefaultRowHeight:(unsigned short)arg1;
-- (id)conditionalFormattings;
-- (unsigned short)defaultRowHeight;
-- (id)pane;
-- (id)hyperlinks;
-- (id)rowBlocks;
-- (bool)fitToPage;
+- (double)defaultColumnWidth;
 - (void)setDefaultColumnWidth:(double)arg1;
-- (void)setFitToPage:(bool)arg1;
-- (id)worksheetWarnings;
+- (unsigned short)defaultRowHeight;
 - (unsigned int)maxRowOutlineLevel;
 - (void)setMaxRowOutlineLevel:(unsigned int)arg1;
 - (void)updateMaxRowOutlineLevelIfNeeded:(unsigned int)arg1;
@@ -52,15 +43,24 @@
 - (id)maxCellReferencedInFormulas;
 - (id)implicitCellArea;
 - (void)setImplicitCellArea:(id)arg1;
+- (void)setDefaultRowHeight:(unsigned short)arg1;
+- (bool)fitToPage;
+- (void)setFitToPage:(bool)arg1;
+- (id)conditionalFormattings;
+- (id)pane;
+- (void)setPane:(id)arg1;
+- (id)worksheetWarnings;
 - (void)reduceMemoryIfPossible;
 - (void)setup;
-- (void)teardown;
 - (void)updateMaxColumnOutlineLevelIfNeeded:(unsigned int)arg1;
+- (void)teardown;
+- (id)tables;
+- (id)columnInfos;
 - (id)pivotTables;
+- (id)mergedCells;
 - (void)setMergedRowsRef:(id)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3;
 - (void)setMergedColsRef:(id)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3;
-- (id)columnInfos;
-- (id)mergedCells;
-- (double)defaultColumnWidth;
+- (id)rowBlocks;
+- (id)hyperlinks;
 
 @end

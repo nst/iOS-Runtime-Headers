@@ -16,23 +16,23 @@
 @property(retain) NSString * path;
 
 
-- (unsigned long)storageID;
-- (BOOL)deleteItemFromCamera:(id)arg1;
+- (id)path;
+- (void)finalize;
+- (unsigned long)objHandle;
+- (id)itemForObjectHandle:(unsigned long)arg1;
 - (id)folderForObjectHandle:(unsigned long)arg1;
 - (id)folderForObjectHandleCreatingIfNeeded:(unsigned long)arg1 addUsedObjectIDs:(id)arg2 numFoldersCreated:(int*)arg3;
-- (BOOL)hasDCIMParent;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 type:(unsigned int)arg4 storageID:(unsigned long)arg5 objectHandle:(unsigned long)arg6;
-- (unsigned long)objHandle;
+- (unsigned long)storageID;
+- (BOOL)hasDCIMParent;
 - (void)refreshInfo;
-- (id)itemForObjectHandle:(unsigned long)arg1;
 - (void)enumerateContent;
-- (id)path;
-- (unsigned int)type;
-- (void)finalize;
-- (void)setInfo:(id)arg1;
-- (id)info;
-- (void)dealloc;
-- (id)description;
+- (BOOL)deleteItemFromCamera:(id)arg1;
 - (void)setPath:(id)arg1;
+- (unsigned int)type;
+- (id)info;
+- (void)setInfo:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

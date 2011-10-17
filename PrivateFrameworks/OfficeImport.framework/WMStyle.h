@@ -6,13 +6,13 @@
 }
 
 
-- (id)cssStyleString;
 - (id)initWithWMStyle:(id)arg1;
-- (id)initWithWDStyle:(id)arg1;
-- (id)initWithWDStyle:(id)arg1 isInTextFrame:(BOOL)arg2;
 - (id)initWithWDCharacterProperties:(id)arg1;
-- (void)ResoveInterPropertyDependencies;
 - (void)cascadeWithStyle:(id)arg1;
+- (void)ResoveInterPropertyDependencies;
+- (id)cssStyleString;
+- (id)initWithWDStyle:(id)arg1 isInTextFrame:(BOOL)arg2;
 - (void)addCharacterProperties:(id)arg1;
+- (id)initWithWDStyle:(id)arg1;
 
 @end

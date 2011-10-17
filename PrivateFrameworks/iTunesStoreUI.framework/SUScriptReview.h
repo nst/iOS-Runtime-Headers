@@ -6,55 +6,47 @@
 
 @interface SUScriptReview : SUScriptObject  {
     ISReview *_review;
-    NSNumber *_adamID;
-    NSString *_body;
-    id _hasSavedDraft;
-    NSString *_infoURL;
-    NSString *_itemType;
-    NSNumber *_rating;
-    NSNumber *_nickname;
-    id _nicknameIsConfirmed;
-    NSString *_title;
 }
 
-@property(getter=_adamID,retain,readonly) NSNumber * adamID;
-@property(getter=_body,setter=set_body:,retain) NSString * body;
-@property(getter=_hasSavedDraft,retain,readonly) id hasSavedDraft;
-@property(getter=_infoURL,setter=set_infoURL:,retain) NSString * infoURL;
-@property(getter=_itemType,setter=set_itemType:,retain) NSString * itemType;
-@property(getter=_nickname,setter=set_nickname:,retain) NSString * nickname;
-@property(getter=_nicknameIsConfirmed,setter=set_nicknameIsConfirmed:,retain) id nicknameIsConfirmed;
-@property(getter=_rating,setter=set_rating:,retain) NSNumber * rating;
-@property(getter=_title,setter=set_title:,retain) NSString * title;
+@property(readonly) NSNumber * adamID;
+@property(retain) NSString * body;
+@property(readonly) id hasSavedDraft;
+@property(retain) NSString * infoURL;
+@property(retain) NSString * itemType;
+@property(retain) NSString * nickname;
+@property(retain) id nicknameIsConfirmed;
+@property(retain) NSNumber * rating;
+@property(retain) NSString * title;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
+- (void)setRating:(id)arg1;
+- (id)rating;
+- (id)adamID;
+- (id)attributeKeys;
+- (void)setBody:(id)arg1;
+- (id)body;
+- (id)title;
+- (void)setTitle:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)saveAsDraft;
-- (id)restoreFromDraft;
-- (id)removeDraft;
-- (id)_rating;
-- (id)_nicknameIsConfirmed;
-- (id)_nickname;
-- (id)_itemType;
-- (id)_infoURL;
-- (id)_hasSavedDraft;
+- (void)setItemType:(id)arg1;
+- (void)setNicknameIsConfirmed:(id)arg1;
+- (id)hasSavedDraft;
 - (id)initWithReview:(id)arg1;
-- (void)set_hasSavedDraft:(id)arg1;
-- (void)set_infoURL:(id)arg1;
-- (void)set_itemType:(id)arg1;
-- (void)set_nickname:(id)arg1;
-- (void)set_nicknameIsConfirmed:(id)arg1;
-- (void)set_rating:(id)arg1;
-- (void)set_title:(id)arg1;
-- (id)_adamID;
-- (void)set_adamID:(id)arg1;
-- (void)set_body:(id)arg1;
-- (id)_body;
+- (id)nicknameIsConfirmed;
+- (id)infoURL;
+- (id)removeDraft;
+- (id)restoreFromDraft;
+- (id)saveAsDraft;
 - (id)copyReview;
-- (id)_title;
+- (void)setNickname:(id)arg1;
+- (id)nickname;
+- (void)setInfoURL:(id)arg1;
+- (id)itemType;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

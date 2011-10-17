@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString, NSData, NSExpression, NSDictionary, NSMutableArray;
+@class NSString, NSData, NSDictionary, NSExpression, NSMutableArray;
 
 @interface NSEntityMapping : NSObject  {
     void *_reserved;
     void *_reserved1;
-    void *_reserved2;
+    NSDictionary *_mappingsByName;
     NSString *_name;
     unsigned int _mappingType;
     NSString *_sourceEntityName;
@@ -27,42 +27,43 @@
 
 + (void)initialize;
 
-- (void)setUserInfo:(id)arg1;
-- (BOOL)isEditable;
-- (void)setName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)userInfo;
-- (void)encodeWithCoder:(id)arg1;
-- (id)name;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)sourceEntityName;
-- (id)destinationEntityVersionHash;
-- (id)sourceEntityVersionHash;
-- (void)_throwIfNotEditable;
-- (id)relationshipMappings;
-- (void)setSourceEntityName:(id)arg1;
-- (void)setSourceEntityVersionHash:(id)arg1;
-- (id)destinationEntityName;
-- (void)setDestinationEntityVersionHash:(id)arg1;
-- (id)attributeMappings;
-- (void)setAttributeMappings:(id)arg1;
-- (id)sourceExpression;
-- (id)entityMigrationPolicyClassName;
-- (void)setEntityMigrationPolicyClassName:(id)arg1;
 - (id)_migrationPolicy;
-- (id)_initWithSourceEntityDescription:(id)arg1 destinationEntityDescription:(id)arg2;
-- (void)_setIsEditable:(BOOL)arg1;
 - (void)_addAttributeMapping:(id)arg1;
 - (void)_addRelationshipMapping:(id)arg1;
+- (id)_mappingsByName;
+- (void)setEntityMigrationPolicyClassName:(id)arg1;
+- (id)_initWithSourceEntityDescription:(id)arg1 destinationEntityDescription:(id)arg2;
+- (id)sourceEntityVersionHash;
+- (id)destinationEntityVersionHash;
+- (id)sourceExpression;
+- (id)entityMigrationPolicyClassName;
+- (id)attributeMappings;
+- (id)relationshipMappings;
+- (void)_setIsEditable:(BOOL)arg1;
+- (void)_throwIfNotEditable;
 - (void)_createCachesAndOptimizeState;
 - (unsigned int)mappingType;
+- (id)sourceEntityName;
+- (id)destinationEntityName;
 - (void)setSourceExpression:(id)arg1;
+- (void)setAttributeMappings:(id)arg1;
 - (void)setRelationshipMappings:(id)arg1;
+- (void)setSourceEntityName:(id)arg1;
+- (void)setSourceEntityVersionHash:(id)arg1;
 - (void)setDestinationEntityName:(id)arg1;
+- (void)setDestinationEntityVersionHash:(id)arg1;
 - (void)setMappingType:(unsigned int)arg1;
+- (void)setUserInfo:(id)arg1;
+- (BOOL)isEditable;
+- (id)name;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)userInfo;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

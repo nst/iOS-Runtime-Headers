@@ -2,61 +2,70 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableArray, CKSMSMessageDelivery;
+@class NSArray, CKSMSMessageDelivery, NSString, NSMutableArray;
 
 @interface CKSMSMessage : CKMessage  {
     NSMutableArray *_messages;
     int _associationID;
     int _rowID;
     CKSMSMessageDelivery *_delivery;
+    unsigned int _messagePartsLoaded : 1;
+    unsigned int _subjectLoaded : 1;
+    NSArray *_messageParts;
+    NSString *_subject;
 }
 
 @property(retain) CKSMSMessageDelivery * delivery;
-@property(readonly) int rowID;
 @property(readonly) int associationID;
 
 
 - (id)messages;
-- (id)sender;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
+- (id)subject;
+- (BOOL)isPlaceholder;
 - (id)address;
-- (int)associationID;
-- (id)delivery;
-- (void)_loadFailedSendCount;
-- (int)totalMessageCount;
-- (void)_loadUIFlags;
+- (id)sequenceNumber;
+- (int)rowID;
+- (id)sender;
 - (void)setMessages:(id)arg1;
-- (id)initWithCTMessages:(id)arg1 messageParts:(id)arg2;
-- (BOOL)isForward;
 - (void)prepareToResend;
-- (id)alertImageData;
-- (void)deleteMessagePart:(id)arg1;
-- (void)_setupDeliveryIfPending;
 - (void)deliveredSubpart:(int)arg1 totalSubparts:(int)arg2 success:(BOOL)arg3;
 - (void)deliveryCompletedForMessage:(id)arg1;
-- (void)deliveryFailedForMessage:(id)arg1;
 - (void)deliveryPartiallyFailedForMessage:(id)arg1;
-- (id)initWithCTMessage:(struct __CKSMSRecord { }*)arg1 messageParts:(id)arg2;
-- (id)initWithRowID:(int)arg1;
-- (void)setDelivery:(id)arg1;
-- (void)addMessage:(struct __CKSMSRecord { }*)arg1;
-- (int)rowID;
-- (int)messageCount;
-- (double)_loadDate;
-- (void)markAsRead;
-- (void)permanentlyRemoveMessage;
-- (BOOL)_loadOutgoing;
+- (void)_setParts:(id)arg1;
 - (void)_loadSubject;
 - (id)_newParts;
-- (void)_loadText;
-- (void)_storeUIFlags:(unsigned long)arg1;
-- (int)sentCount;
+- (int)associationID;
+- (void)_setupDeliveryIfPending;
+- (id)delivery;
+- (void)deliveryFailedForMessage:(id)arg1;
+- (id)initWithCTMessage:(void*)arg1 messageParts:(id)arg2;
+- (id)initWithRowID:(int)arg1;
+- (id)initWithCTMessages:(id)arg1 messageParts:(id)arg2;
+- (void)setDelivery:(id)arg1;
+- (void)addMessage:(void*)arg1;
 - (BOOL)containsDisplayableMessageParts;
-- (BOOL)receivedDeliveryReceipt;
-- (BOOL)hasBeenRead;
-- (BOOL)isOnlyDisplayableMessagePart:(id)arg1;
-- (BOOL)isPlaceholder;
+- (int)messageCount;
+- (void)markAsRead;
+- (double)_loadDate;
+- (unsigned int)messagePartCount;
+- (BOOL)_loadOutgoing;
+- (void)loadParts;
+- (void)_loadText;
+- (void)_loadUIFlags;
+- (int)totalMessageCount;
+- (int)sentCount;
+- (BOOL)_loadIsFromDowngrading;
+- (BOOL)_loadIsRead;
+- (void)_loadFailedSendCount;
+- (id)messagePartAtIndex:(unsigned int)arg1;
+- (void)deleteMessagePart:(id)arg1;
+- (BOOL)isFromMe;
+- (id)parts;
+- (id)guid;
+- (void)setIsFromDowngrading:(BOOL)arg1;
+- (BOOL)isForward;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

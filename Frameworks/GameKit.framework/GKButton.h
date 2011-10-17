@@ -3,13 +3,31 @@
  */
 
 @interface GKButton : UIButton  {
+    int _buttonKind;
+    BOOL _onHeaderBackground;
+    int _buttonAppearance;
+    BOOL _shouldUseSmallFont;
 }
 
+@property int buttonKind;
+@property BOOL onHeaderBackground;
+@property int buttonAppearance;
+@property BOOL shouldUseSmallFont;
 
-- (id)initWithTheme:(id)arg1 controlSize:(int)arg2;
+
+- (int)buttonKind;
+- (id)initWithTheme:(id)arg1 buttonKind:(int)arg2 headerBackground:(BOOL)arg3;
+- (void)updateButtonAppearance;
+- (void)setButtonAppearance:(int)arg1;
+- (void)setShouldUseSmallFont:(BOOL)arg1;
+- (void)setOnHeaderBackground:(BOOL)arg1;
+- (void)setButtonKind:(int)arg1;
+- (int)buttonAppearance;
+- (BOOL)shouldUseSmallFont;
+- (BOOL)onHeaderBackground;
+- (id)initWithTheme:(id)arg1 buttonKind:(int)arg2;
 - (id)initWithTheme:(id)arg1;
 - (int)buttonType;
-- (id)_backgroundForState:(unsigned int)arg1 usesBackgroundForNormalState:(BOOL*)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

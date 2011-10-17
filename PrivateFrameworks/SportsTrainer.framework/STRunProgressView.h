@@ -9,15 +9,15 @@
 @property float progress;
 
 
-- (id)_progressBarImage;
-- (id)_progressBarFilledImage;
-- (id)_progressBarPastGoalFilledImage;
-- (id)_goalCompletedImage;
-- (id)_progressDividerColor;
-- (id)_gradientImage;
 - (float)progress;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setProgress:(float)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_gradientImage;
+- (id)_progressDividerColor;
+- (id)_goalCompletedImage;
+- (id)_progressBarPastGoalFilledImage;
+- (id)_progressBarFilledImage;
+- (id)_progressBarImage;
 
 @end

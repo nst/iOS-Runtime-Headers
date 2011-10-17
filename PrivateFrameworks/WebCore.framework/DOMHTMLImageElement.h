@@ -29,21 +29,6 @@
 @property(copy,readonly) NSURL * absoluteImageURL;
 
 
-- (int)height;
-- (int)x;
-- (id)dataRepresentation:(BOOL)arg1;
-- (id)mimeType;
-- (id)absoluteImageURL;
-- (int)y;
-- (int)width;
-- (void)setName:(id)arg1;
-- (void)setWidth:(int)arg1;
-- (id)name;
-- (void)setBorder:(id)arg1;
-- (id)align;
-- (void)setHeight:(int)arg1;
-- (void)setAlign:(id)arg1;
-- (id)border;
 - (BOOL)isMap;
 - (void)setIsMap:(BOOL)arg1;
 - (id)useMap;
@@ -58,13 +43,29 @@
 - (void)setLongDesc:(id)arg1;
 - (id)src;
 - (void)setSrc:(id)arg1;
+- (id)align;
+- (void)setAlign:(id)arg1;
 - (id)alt;
 - (void)setAlt:(id)arg1;
 - (int)hspace;
 - (void)setHspace:(int)arg1;
 - (int)vspace;
 - (void)setVspace:(int)arg1;
+- (id)border;
+- (void)setBorder:(id)arg1;
+- (void)setHeight:(int)arg1;
+- (int)height;
+- (int)y;
+- (int)x;
+- (id)absoluteImageURL;
+- (id)mimeType;
+- (id)dataRepresentation:(BOOL)arg1;
+- (void)setWidth:(int)arg1;
+- (int)width;
+- (id)name;
+- (void)setName:(id)arg1;
 - (BOOL)showsTapHighlight;
+- (void)recursivelyRemoveMailAttributes;
 - (void)mf_constrainImageToSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)mf_unconstrainImageSize;
 

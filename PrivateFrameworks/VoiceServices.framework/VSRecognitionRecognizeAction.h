@@ -27,26 +27,27 @@
 }
 
 
-- (int)completionType;
-- (int)_keywordCount;
+- (id)modelIdentifier;
 - (BOOL)_setDebugDumpEnabled:(BOOL)arg1 dumpPath:(id)arg2;
-- (BOOL)_setDebugDumpEnabled:(BOOL)arg1;
 - (void)_configureNewRecognitionInstance;
-- (void)_releaseFromPrepare;
 - (void)_setResults:(id)arg1;
+- (void)_releaseFromPrepare;
 - (void)_handleRecognitionPrepared:(struct __VSRecognition { }*)arg1;
 - (void)_handleRecognitionStarted:(struct __VSRecognition { }*)arg1;
 - (void)_handleRecognitionCompleted:(struct __VSRecognition { }*)arg1 withResults:(struct __CFArray { }*)arg2 error:(struct __CFError { }*)arg3;
-- (id)_debugDumpPath;
 - (id)_keywords;
 - (struct __VSRecognition { }*)_createRecognitionInstanceWithCallbacks:(struct { int (*x1)(); int (*x2)(); int (*x3)(); }*)arg1 info:(void*)arg2;
 - (id)_actionForEmptyResults;
 - (void)_continueAfterDeferredStart;
 - (BOOL)_hasDeferredStartCallback;
+- (id)_debugDumpPath;
+- (id)initWithModelIdentifier:(id)arg1;
 - (BOOL)_isRecognizing;
 - (BOOL)_isActivelyRecognizing;
+- (int)completionType;
 - (BOOL)_setBluetoothInputAllowed:(BOOL)arg1;
 - (BOOL)_setDebugDumpPath:(id)arg1;
+- (BOOL)_setDebugDumpEnabled:(BOOL)arg1;
 - (BOOL)_setPreferredEngine:(int)arg1;
 - (BOOL)_setAudioInputPath:(id)arg1;
 - (BOOL)_setInputLevelUpdateInterval:(double)arg1;
@@ -54,12 +55,11 @@
 - (void)_handledThreadedResults:(id)arg1 nextAction:(id)arg2;
 - (float)_inputLevel;
 - (id)_keywordAtIndex:(int)arg1;
-- (id)initWithModelIdentifier:(id)arg1;
+- (int)_keywordCount;
 - (BOOL)_keywordIndexChanged;
 - (void)_reset;
 - (id)cancel;
-- (void)dealloc;
 - (id)perform;
-- (id)modelIdentifier;
+- (void)dealloc;
 
 @end

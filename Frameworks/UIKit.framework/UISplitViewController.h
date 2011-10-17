@@ -4,7 +4,7 @@
 
 @class UIView, NSString, UIBarButtonItem, UIPopoverController, NSArray, <UISplitViewControllerDelegate>;
 
-@interface UISplitViewController : UIViewController  {
+@interface UISplitViewController : UIViewController <GKContentRefresh, GKURLHandling> {
     id _delegate;
     UIBarButtonItem *_barButtonItem;
     NSString *_buttonTitle;
@@ -14,6 +14,7 @@
     float _gutterWidth;
     float _cornerRadius;
     int _rotatingFromOrientation;
+    int _lastPresentedOrientation;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -35,64 +36,83 @@
         } size; 
     } _rotatingToMasterViewFrame;
     NSArray *_cornerImageViews;
-    unsigned int _hidesMasterViewInPortrait : 1;
-    NSArray *_viewControllers;
+    UIView *_masterBackgroundView;
+    struct { 
+        unsigned int hidesMasterViewInPortrait : 1; 
+        unsigned int delegateImplementsShouldHide : 1; 
+        unsigned int hidden : 3; 
+        unsigned int delegateHandlesTogglingMaster : 1; 
+        unsigned int delegateProvidesBackgroundView : 1; 
+        unsigned int delegateWantsUnSlideCallback : 1; 
+        unsigned int masterOnSlide : 1; 
+        unsigned int delegateWantsWillShowCallback : 1; 
+        unsigned int delegateWantsWillHideCallback : 1; 
+    } _splitViewControllerFlags;
+    unsigned int _slideTransitionCount;
 }
 
 @property(copy) NSArray * viewControllers;
 @property <UISplitViewControllerDelegate> * delegate;
 
-+ (void)_initializeSafeCategory;
++ (BOOL)_optsOutOfPopoverControllerHierarchyCheck;
 
-- (void)loadView;
-- (void)loadSubviews;
-- (void)_loadNewSubviews:(id)arg1;
-- (BOOL)_isLandscape;
-- (void)unloadViewForced:(BOOL)arg1;
-- (BOOL)_masterViewShown;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_masterViewFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame;
-- (struct CGContext { }*)_createContextForCachingWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isOpaque:(BOOL)arg2;
-- (void)_setupRoundedCorners;
-- (void)_removeRoundedCorners;
-- (void)_viewControllerHiding:(id)arg1;
-- (float)leftColumnWidth;
-- (void)setLeftColumnWidth:(float)arg1;
-- (BOOL)hidesMasterViewInPortrait;
-- (void)setHidesMasterViewInPortrait:(BOOL)arg1;
-- (float)masterColumnWidth;
-- (void)setMasterColumnWidth:(float)arg1;
-- (float)gutterWidth;
+- (void)setDelegate:(id)arg1;
 - (void)setGutterWidth:(float)arg1;
-- (void)toggleMasterInPopover:(id)arg1;
-- (BOOL)revealsMasterViewDuringRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
-- (BOOL)hidesMasterViewDuringRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
-- (void)snapshotMasterView;
-- (void)snapshotAllViews;
-- (void)snapshotForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
+- (float)gutterWidth;
+- (void)setMasterColumnWidth:(float)arg1;
+- (float)masterColumnWidth;
+- (void)setHidesMasterViewInPortrait:(BOOL)arg1;
+- (void)_slideIn:(BOOL)arg1 viewController:(id)arg2 animated:(BOOL)arg3 totalDuration:(double)arg4 completion:(id)arg5;
+- (void)setLeftColumnWidth:(float)arg1;
+- (float)leftColumnWidth;
 - (void)_updateMasterViewControllerFrame;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)_removeRoundedCorners;
+- (void)_setupRoundedCorners;
+- (void)snapshotForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
+- (void)snapshotAllViews;
+- (void)snapshotMasterView;
+- (BOOL)hidesMasterViewDuringRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
+- (BOOL)revealsMasterViewDuringRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
+- (void)_toggleVisibilityOfViewController:(id)arg1;
+- (BOOL)_isLandscape;
+- (void)_viewControllerHiding:(id)arg1;
+- (BOOL)_canSlideMaster;
+- (void)toggleMasterVisible:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_masterViewFrame;
+- (BOOL)hidesMasterViewInPortrait;
+- (BOOL)hidesMasterViewInLandscape;
+- (void)_loadNewSubviews:(id)arg1;
+- (void)loadSubviews;
+- (BOOL)_masterViewShown;
 - (id)masterViewController;
+- (id)detailViewController;
+- (void)__viewWillLayoutSubviews;
 - (void)setViewControllers:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillLayoutSubviews;
 - (id)viewControllers;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)purgeMemoryForReason:(int)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)unloadViewForced:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)_shouldPersistViewWhenCoding;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (id)detailViewController;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)purgeMemoryForReason:(int)arg1;
 - (BOOL)isRotating;
 - (void)_commonInit;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (void)_gkRefreshContents;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
+- (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
+- (void)_gkSetContentsNeedUpdateWithHandler:(id)arg1;
+- (void)_gkResetContents;
+- (void)_gkForceNextContentUpdate;
 
 @end

@@ -14,12 +14,12 @@
 }
 
 
-- (double)arrowLength;
-- (double)arrowWidth;
+- (struct CGSize { float x1; float x2; })size;
 - (double)arcWidth;
 - (double)headAngle;
-- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (double)arrowWidth;
+- (double)arrowLength;
 - (struct CGPath { }*)createBezierPath;
-- (struct CGSize { float x1; float x2; })size;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 
 @end

@@ -2,41 +2,39 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSString, NSRecursiveLock, NSDate, NSProtocolChecker;
+@class NSString;
 
 @interface IMRemoteObject : NSObject  {
-    NSRecursiveLock *_lock;
-    unsigned int _port;
-    struct dispatch_source_s { } *_source;
-    struct dispatch_queue_s { } *_queue;
-    double _timeout;
-    NSProtocolChecker *_protocolChecker;
-    NSString *_portName;
-    NSDate *_firstDateClientWasInformedOfDisconnected;
-    BOOL _willBeTerminated;
+    id _internal;
 }
 
-@property(readonly) BOOL isValid;
 @property(readonly) NSString * portName;
 @property double messageSendTimeout;
+@property(readonly) BOOL isValid;
 
++ (id)_remoteObjects;
++ (void)_unregisterIMRemoteObject:(id)arg1;
++ (void)_registerIMRemoteObject:(id)arg1;
 + (void)initialize;
 
-- (BOOL)isValid;
+- (void)invalidate;
+- (void)finalize;
+- (void)_informClientOfDisconnect;
+- (id)initWithPortName:(id)arg1 protocol:(id)arg2;
+- (unsigned int)forwardComponentArray:(id)arg1;
+- (double)messageSendTimeout;
+- (void)_cleanupMachBits;
+- (void)setMessageSendTimeout:(double)arg1;
+- (void)setPortName:(id)arg1;
+- (void)_systemShutdown:(id)arg1;
+- (id)portName;
+- (void)_portDidBecomeInvalid;
+- (id)initWithPort:(unsigned int)arg1 protocol:(id)arg2;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)invalidate;
-- (void)dealloc;
+- (BOOL)isValid;
 - (id)description;
-- (void)_cleanupMachBits;
-- (void)_portDidBecomeInvalid;
-- (void)_systemShutdown:(id)arg1;
-- (unsigned int)forwardComponentArray:(id)arg1;
-- (void)_informClientOfDisconnect;
-- (id)portName;
-- (double)messageSendTimeout;
-- (void)setMessageSendTimeout:(double)arg1;
-- (id)initWithPortName:(id)arg1 protocol:(id)arg2;
+- (void)dealloc;
 - (struct dispatch_queue_s { }*)_queue;
 
 @end

@@ -7,7 +7,6 @@
 @interface MPTimeMarker : NSObject  {
     double _duration;
     unsigned int _index;
-    id _thumbnail;
     double _time;
     NSString *_title;
     NSURL *_url;
@@ -16,37 +15,36 @@
 }
 
 @property(readonly) double comparableTime;
+@property double duration;
+@property unsigned int index;
+@property(readonly) BOOL hasArtworkAtPlaybackTime;
+@property double time;
 @property(readonly) double maxTime;
+@property(retain) NSString * title;
+@property(retain) NSURL * url;
 @property(retain) NSDictionary * metadata;
 @property(readonly) int markerType;
-@property(retain) NSURL * url;
-@property(retain) NSString * title;
-@property double time;
-@property(retain) id thumbnail;
-@property unsigned int index;
-@property double duration;
 
 
+- (int)markerType;
+- (BOOL)hasArtworkAtPlaybackTime;
+- (double)maxTime;
+- (double)comparableTime;
+- (id)initWithMarkerType:(int)arg1;
+- (id)urlTitleTrimmingCharacterSet;
 - (double)duration;
+- (void)setDuration:(double)arg1;
+- (void)setIndex:(unsigned int)arg1;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (unsigned int)index;
-- (void)setTime:(double)arg1;
 - (double)time;
+- (void)setTime:(double)arg1;
 - (id)title;
-- (void)dealloc;
-- (id)description;
-- (void)setDuration:(double)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setThumbnail:(id)arg1;
-- (double)comparableTime;
-- (double)maxTime;
-- (id)urlTitleTrimmingCharacterSet;
-- (id)initWithMarkerType:(int)arg1;
-- (void)setIndex:(unsigned int)arg1;
-- (int)markerType;
-- (id)thumbnail;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

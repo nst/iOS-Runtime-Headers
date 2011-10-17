@@ -17,29 +17,21 @@
 @property(retain) CPListItem * listItem;
 
 
-- (unsigned int)index;
-- (void)setAlignment:(unsigned int)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (unsigned int)alignment;
+- (id)flowProperties;
 - (void)setFlowProperties:(id)arg1;
 - (BOOL)isParagraphRegion;
 - (BOOL)isListItemRegion;
 - (BOOL)isTextRegion;
 - (void)setIsTextRegion:(BOOL)arg1;
 - (void)setNoIndentation:(BOOL)arg1;
+- (BOOL)noIndentation;
+- (BOOL)hasDropCap;
 - (void)setHasDropCap:(BOOL)arg1;
 - (void)explode;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })reducedBounds;
 - (void)setBelow:(BOOL)arg1;
-- (BOOL)isPreformattedWithUnitWidth:(float*)arg1;
-- (void)setListItem:(id)arg1;
-- (id)listItem;
-- (id)flowProperties;
-- (BOOL)hasDropCap;
 - (BOOL)below;
-- (BOOL)noIndentation;
+- (BOOL)isPreformattedWithUnitWidth:(float*)arg1;
 - (BOOL)isBoxRegion;
 - (BOOL)isGraphicalRegion;
 - (BOOL)isRowRegion;
@@ -47,6 +39,14 @@
 - (BOOL)isImageRegion;
 - (BOOL)isShapeRegion;
 - (float)selectionBottom;
+- (void)setListItem:(id)arg1;
+- (id)listItem;
 - (void)accept:(id)arg1;
+- (unsigned int)index;
+- (void)setAlignment:(unsigned int)arg1;
+- (unsigned int)alignment;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

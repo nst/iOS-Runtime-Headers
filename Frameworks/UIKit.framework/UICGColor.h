@@ -7,18 +7,18 @@
 }
 
 
-- (id)colorWithAlphaComponent:(float)arg1;
+- (BOOL)isPatternColor;
+- (float)alphaComponent;
+- (void)setStroke;
 - (void)setFill;
 - (id)colorSpaceName;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
-- (void)setStroke;
-- (float)alphaComponent;
-- (BOOL)isPatternColor;
-- (unsigned int)hash;
+- (id)colorWithAlphaComponent:(float)arg1;
+- (struct CGColor { }*)CGColor;
 - (void)set;
 - (BOOL)isEqual:(id)arg1;
-- (struct CGColor { }*)CGColor;
-- (void)dealloc;
+- (unsigned int)hash;
 - (id)description;
+- (void)dealloc;
 
 @end

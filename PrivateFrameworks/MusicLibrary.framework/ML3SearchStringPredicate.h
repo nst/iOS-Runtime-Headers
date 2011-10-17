@@ -9,24 +9,24 @@
     NSString *_searchString;
 }
 
-@property(copy) NSString * searchString;
 @property(copy) NSArray * properties;
+@property(copy) NSString * searchString;
 
 + (id)predicateWithConcatenatedProperties:(id)arg1 searchString:(id)arg2;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)searchString;
-- (void)setSearchString:(id)arg1;
-- (void)setProperties:(id)arg1;
-- (id)properties;
 - (id)initWithConcatenatedProperties:(id)arg1 searchString:(id)arg2;
+- (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
 - (id)SQLJoinClausesForClass:(Class)arg1;
 - (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
-- (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
+- (id)searchString;
+- (void)setSearchString:(id)arg1;
+- (id)properties;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setProperties:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 
 @end

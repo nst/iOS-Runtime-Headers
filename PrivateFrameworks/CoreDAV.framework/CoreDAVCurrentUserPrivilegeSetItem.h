@@ -11,14 +11,13 @@
 @property(retain) NSMutableSet * privileges;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)privileges;
-- (void)setPrivileges:(id)arg1;
 - (BOOL)hasPrivilegeWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)addPrivilege:(id)arg1;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)copyParseRules;
+- (void)setPrivileges:(id)arg1;
+- (id)privileges;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -10,13 +10,13 @@
     NSString *key;
     NSURLCacheNode *prev;
     NSURLCacheNode *next;
-    unsigned int hash;
+    unsigned long hash;
 }
 
 
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)description;
 - (id)initWithCachedResponse:(id)arg1 request:(id)arg2 key:(id)arg3;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

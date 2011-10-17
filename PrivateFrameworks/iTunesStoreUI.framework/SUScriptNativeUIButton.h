@@ -5,7 +5,7 @@
 @interface SUScriptNativeUIButton : SUScriptButtonNativeObject  {
 }
 
-+ (id)objectWithDefaultButtonForScriptObject:(id)arg1;
++ (id)objectWithDefaultButtonForScriptButton:(id)arg1;
 
 - (id)image;
 - (id)title;

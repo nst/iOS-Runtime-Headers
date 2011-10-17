@@ -15,21 +15,22 @@
 @property int comparison;
 @property int property;
 
++ (id)stringForComparison:(id)arg1 withComparision:(long)arg2;
 
-- (BOOL)isValid;
-- (id)value;
-- (void)setValue:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (long)comparison;
+- (void)setComparison:(long)arg1;
+- (id)stringForComparison:(id)arg1;
 - (id)querySelectProperties;
 - (id)queryJoinsInCompound:(BOOL)arg1;
-- (id)stringForComparison:(id)arg1;
-- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)queryWhereString;
+- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (void)setProperty:(int)arg1;
-- (void)setComparison:(long)arg1;
-- (long)comparison;
 - (id)predicateFormat;
 - (int)property;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (BOOL)isValid;
+- (id)init;
+- (void)dealloc;
 
 @end

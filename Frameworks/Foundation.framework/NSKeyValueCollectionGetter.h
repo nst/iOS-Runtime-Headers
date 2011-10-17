@@ -9,8 +9,8 @@
 }
 
 
-- (void)dealloc;
 - (id)methods;
 - (id)initWithContainerClassID:(id)arg1 key:(id)arg2 methods:(id)arg3 proxyClass:(Class)arg4;
+- (void)dealloc;
 
 @end

@@ -13,25 +13,26 @@
 @property(retain) WebScriptObject * openWithFunction;
 @property(copy) NSString * UTI;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
+- (id)attributeKeys;
 - (void)setUTI:(id)arg1;
 - (id)UTI;
 - (void)dismissMenuAnimated:(id)arg1;
 - (void)dealloc;
+- (id)_openWithFunction;
+- (void)setOpenWithFunction:(id)arg1;
+- (id)openWithFunction;
 - (void)showOpenWithMenuFromNavigationItem:(id)arg1;
 - (void)showOpenWithMenuFromDOMElement:(id)arg1;
-- (id)openWithFunction;
-- (void)setOpenWithFunction:(id)arg1;
 - (id)_nativeDocumentInteractionController;
-- (id)_openWithFunction;
-- (id)cancelFunction;
-- (void)setCancelFunction:(id)arg1;
 - (id)_cancelFunction;
-- (id)attributeKeys;
+- (void)setCancelFunction:(id)arg1;
+- (id)cancelFunction;
 - (id)_nativeObject;
-- (id)scriptAttributeKeys;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

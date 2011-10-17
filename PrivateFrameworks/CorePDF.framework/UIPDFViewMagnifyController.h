@@ -9,35 +9,42 @@
         float x; 
         float y; 
     } _magnifierPoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _touchPoint;
     float _loupeRadius;
+    float _power;
     struct CGSize { 
         float width; 
         float height; 
     } _magnifierSize;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _offset;
-    float _magnification;
+    BOOL _showingLoupe;
     UIPDFMagnifiedView *_magnifiedView;
     UIWindow *_textEffectsWindow;
     UIPDFPageView *_pageView;
-    struct CGImage { } *_image;
+    float _magnification;
 }
 
 @property float magnification;
-@property(retain) UIPDFPageView * pageView;
+@property UIPDFPageView * pageView;
 
 
-- (void)hide;
-- (id)init;
-- (id)pageView;
-- (float)magnification;
-- (void)setMagnification:(float)arg1;
-- (void)setPageView:(id)arg1;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1 loupe:(BOOL)arg2;
+- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1 viewPoint:(struct CGPoint { float x1; float x2; })arg2 loupe:(BOOL)arg3;
+- (void)showLoupe;
 - (void)showMagnifier;
 - (void)move;
-- (void)showLoupe;
+- (float)magnification;
+- (void)setMagnification:(float)arg1;
+- (struct CGImage { }*)createBitMap:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 source:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGPoint { float x1; float x2; })transformPointToTSpace:(struct CGPoint { float x1; float x2; })arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2;
+- (void)selectPower;
+- (struct CGImage { }*)createBackingImage;
+- (void)setSelectionPath;
+- (void)showGlass:(BOOL)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)pageView;
+- (void)setPageView:(id)arg1;
+- (void)hide;
+- (id)init;
 
 @end

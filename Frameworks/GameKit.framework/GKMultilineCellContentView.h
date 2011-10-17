@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, GKUITheme, UIImage;
+@class NSArray;
 
-@interface GKMultilineCellContentView : UIView <GKTableViewCellContents> {
+@interface GKMultilineCellContentView : GKImageCellContents  {
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -17,81 +17,63 @@
         float bottom; 
         float right; 
     } _textInsets;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _imageInsets;
-    UIImage *_image;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _imageSize;
     BOOL _highlighted;
     NSArray *_lines;
-    GKUITheme *_theme;
-    id _representedObject;
     int _disclosureStyle;
-    BOOL _loadingImage;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _confirmationButtonRect;
 }
 
-@property BOOL loadingImage;
-@property int disclosureStyle;
-@property(retain) id representedObject;
-@property(retain) GKUITheme * theme;
-@property(retain) NSArray * lines;
 @property(getter=isHighlighted) BOOL highlighted;
-@property struct CGSize { float width; float height; } imageSize;
-@property(retain) UIImage * image;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } imageInsets;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } textInsets;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInsets;
+@property(readonly) BOOL showingConfirmationButton;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } confirmationButtonRect;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textInsets;
+@property int disclosureStyle;
+@property(retain) NSArray * lines;
 
++ (id)oneLineContentViewWithTheme:(id)arg1;
 + (id)threeLineContentViewWithTheme:(id)arg1 shouldHighlight:(BOOL)arg2;
 + (id)threeLineContentViewWithTheme:(id)arg1;
 
-- (void)setText:(id)arg1 forLine:(unsigned int)arg2;
-- (BOOL)loadingImage;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLines:(id)arg1;
+- (id)lines;
+- (void)drawLines:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)drawImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (BOOL)showingConfirmationButton;
+- (void)setTextInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setConfirmationButtonRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })confirmationButtonRect;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textInsets;
 - (id)lineAtIndex:(unsigned int)arg1;
-- (void)setAttributedText:(id)arg1 forLine:(unsigned int)arg2;
 - (void)setTextColor:(id)arg1 forLine:(unsigned int)arg2;
 - (void)setFont:(id)arg1 forLine:(unsigned int)arg2;
-- (void)drawImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)drawLines:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (float)preferredHeightForOrientation:(int)arg1;
-- (void)setLoadingImage:(BOOL)arg1;
-- (id)lines;
-- (void)setLines:(id)arg1;
-- (void)setTextInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)loadIconForGame:(id)arg1;
+- (void)setAttributedText:(id)arg1 forLine:(unsigned int)arg2;
+- (void)setText:(id)arg1 forLine:(unsigned int)arg2;
 - (id)initWithNumberOfLines:(unsigned int)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)isAccessibilityElement;
-- (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setDisclosureStyle:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)disclosureStyle;
-- (id)image;
-- (void)prepareForReuse;
+- (void)setDisclosureStyle:(int)arg1;
 - (BOOL)isHighlighted;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (id)accessibilityLabel;
-- (void)dealloc;
-- (id)description;
-- (void)setImage:(id)arg1;
+- (void)prepareForReuse;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)theme;
-- (void)setTheme:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textInsets;
-- (void)setRepresentedObject:(id)arg1;
-- (id)representedObject;
+- (id)description;
+- (id)accessibilityLabel;
+- (void)dealloc;
 
 @end

@@ -23,27 +23,41 @@
         struct _CKSpotlightSearchResult {} *array; 
     } _perConversationSearchResults;
     BOOL _shouldDisplayNoResults;
+    BOOL _active;
+    BOOL _showingSearchResults;
 }
 
+@property(getter=isShowingSearchResults,readonly) BOOL showingSearchResults;
+@property(getter=isActive,readonly) BOOL active;
 @property(readonly) UISearchDisplayController * searchController;
 
 
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
-- (id)searchBar;
-- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
-- (BOOL)searchBarShouldBeginEditing:(id)arg1;
-- (void)searchBarCancelButtonClicked:(id)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (void)dealloc;
+- (BOOL)isShowingSearchResults;
 - (void)setDelegate:(id)arg1;
-- (void)_processSearchResults;
+- (id)searchController;
+- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchDisplayControllerWillEndSearch:(id)arg1;
+- (void)searchDisplayControllerWillBeginSearch:(id)arg1;
+- (void)searchDisplayControllerDidEndSearch:(id)arg1;
+- (void)searchDisplayControllerDidBeginSearch:(id)arg1;
+- (void)searchDisplayController:(id)arg1 didHideSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willHideSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 didShowSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willShowSearchResultsTableView:(id)arg2;
+- (void)searchBarCancelButtonClicked:(id)arg1;
+- (BOOL)searchBarShouldBeginEditing:(id)arg1;
+- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
+- (BOOL)isActive;
+- (id)searchBar;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)searchDaemonQuery:(id)arg1 addedResults:(id)arg2;
 - (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
 - (void)searchDaemonQueryCompleted:(id)arg1;
-- (id)searchController;
+- (void)_processSearchResults;
+- (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 - (void)_cancel;
 

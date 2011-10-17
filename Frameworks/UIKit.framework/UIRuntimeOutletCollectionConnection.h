@@ -6,19 +6,23 @@
 
 @interface UIRuntimeOutletCollectionConnection : UIRuntimeConnection  {
     NSString *runtimeCollectionClassName;
+    BOOL addsContentToExistingCollection;
 }
 
 @property(copy) NSString * runtimeCollectionClassName;
+@property BOOL addsContentToExistingCollection;
 
 
-- (void)performConnect;
+- (void)setAddsContentToExistingCollection:(BOOL)arg1;
+- (BOOL)addsContentToExistingCollection;
 - (void)setRuntimeCollectionClassName:(id)arg1;
+- (void)performConnect;
 - (id)runtimeCollectionClassName;
 - (void)connect;
 - (void)connectForSimulator;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
+- (void)dealloc;
 
 @end

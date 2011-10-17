@@ -21,8 +21,6 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (id)commonBehavior;
 - (id)timeBehavior;
 - (void)setTimeBehavior:(id)arg1;
@@ -46,9 +44,11 @@
 - (void)setSequential:(id)arg1;
 - (id)timeConditions;
 - (void)setTimeConditions:(id)arg1;
-- (id)behavior;
-- (void)setBehavior:(id)arg1;
 - (id)cmdBehavior;
 - (void)setCmdBehavior:(id)arg1;
+- (id)behavior;
+- (void)setBehavior:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

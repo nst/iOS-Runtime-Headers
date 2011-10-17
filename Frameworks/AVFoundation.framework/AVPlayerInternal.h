@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSError, NSArray, AVWeakReference, AVPlayerItem, NSMutableSet, CALayer, NSMutableDictionary, AVPropertyStorage;
+@class NSError, NSArray, AVAudioSessionMediaPlayerOnly, AVWeakReference, AVPlayerItem, NSMutableSet, CALayer, NSMutableDictionary, AVPropertyStorage;
 
 @interface AVPlayerInternal : NSObject  {
     AVWeakReference *weakReference;
@@ -11,6 +11,7 @@
     NSMutableDictionary *pendingFigPlayerProperties;
     AVPlayerItem *currentItem;
     AVPlayerItem *lastItem;
+    struct OpaqueFigPlaybackItem { } *figPlaybackItemToIdentifyNextCurrentItem;
     NSMutableSet *items;
     CALayer *caLayer;
     int status;
@@ -21,6 +22,11 @@
     BOOL waitsUntilItemsAreReadyForInspectionBeforeEnqueuingIntoFigPlayer;
     BOOL needsToCreateFigPlayer;
     BOOL logPerformanceData;
+    BOOL reevaluateBackgroundPlayback;
+    BOOL hostApplicationInForeground;
+    BOOL hadAssociatedOnscreenPlayerLayerWhenSuspended;
+    BOOL iapdExtendedModeIsActive;
+    AVAudioSessionMediaPlayerOnly *audioSessionMediaPlayerOnly;
 }
 
 

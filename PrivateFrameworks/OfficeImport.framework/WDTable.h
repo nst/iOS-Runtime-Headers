@@ -10,11 +10,7 @@
 }
 
 
-- (id)initWithText:(id)arg1;
-- (void)dealloc;
-- (id)addRow;
 - (void)clearRows;
-- (int)nestingLevel;
 - (id)rowIterator;
 - (id)newRowIterator;
 - (id)cellIterator;
@@ -23,8 +19,12 @@
 - (id)runIterator;
 - (id)newRunIterator;
 - (id)rowAt:(int)arg1;
-- (int)rowCount;
+- (int)nestingLevel;
+- (id)addRow;
 - (int)blockType;
+- (int)rowCount;
 - (id)properties;
+- (id)initWithText:(id)arg1;
+- (void)dealloc;
 
 @end

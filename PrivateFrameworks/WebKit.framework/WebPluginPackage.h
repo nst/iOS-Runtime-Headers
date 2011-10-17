@@ -2,12 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
+@class NSBundle;
+
 @interface WebPluginPackage : WebBasePluginPackage  {
+    NSBundle *nsBundle;
 }
 
 
-- (Class)viewFactory;
 - (id)initWithPath:(id)arg1;
 - (BOOL)load;
+- (id)bundle;
+- (Class)viewFactory;
+- (void)dealloc;
 
 @end

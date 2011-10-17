@@ -16,16 +16,18 @@
 @property(retain) NSString * name;
 @property(retain) NSString * type;
 
-+ (id)linkedInfoForPeople:(id)arg1 peopleForUnifiedCard:(id)arg2 accountsManager:(id)arg3;
 
 - (id)type;
-- (void)setType:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)name;
+- (void)setType:(id)arg1;
+- (void)setPerson:(void*)arg1;
+- (void*)person;
+- (void)setName:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
 - (void)dealloc;
 - (BOOL)isUnified;
 - (void)setUnified:(BOOL)arg1;
-- (void*)person;
-- (void)setPerson:(void*)arg1;
 
 @end

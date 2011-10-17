@@ -13,19 +13,20 @@
 @property(copy) id URLs;
 
 + (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
+- (void)setTimeoutInterval:(id)arg1;
+- (id)timeoutInterval;
+- (id)attributeKeys;
 - (id)URLs;
 - (void)setURLs:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)URLBagKey;
-- (id)attributeKeys;
-- (void)setTimeoutInterval:(id)arg1;
-- (id)timeoutInterval;
-- (id)initWithNativeRequestProperties:(id)arg1;
 - (id)copyNativeRequestProperties;
-- (id)scriptAttributeKeys;
+- (id)initWithNativeRequestProperties:(id)arg1;
+- (id)URLBagKey;
 - (void)setURLBagKey:(id)arg1;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

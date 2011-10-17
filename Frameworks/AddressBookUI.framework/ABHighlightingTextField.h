@@ -19,26 +19,22 @@
 @property(setter=abSetHighlightingEnabled:) BOOL abIsHighlightingEnabled;
 @property(setter=abSetHighlighted:) BOOL abIsHighlighted;
 
-+ (void)_initializeSafeCategory;
 
-- (id)_previousKeyResponder;
-- (void)setTextColor:(id)arg1;
 - (BOOL)_showsClearButtonWhenEmpty;
 - (BOOL)becomeFirstResponder;
+- (id)_previousKeyResponder;
 - (id)_nextKeyResponder;
+- (void)setTextColor:(id)arg1;
 - (void)dealloc;
-- (void)setResponderDelegate:(id)arg1;
 - (void)abSetHighlighted:(BOOL)arg1;
 - (void)setShowsClearButtonWhenEmpty:(BOOL)arg1;
 - (BOOL)showsClearButtonWhenEmpty;
 - (id)responderDelegate;
+- (void)setResponderDelegate:(id)arg1;
 - (id)abHighlightedTextColor;
 - (void)abSetHighlightedTextColor:(id)arg1;
 - (BOOL)abIsHighlightingEnabled;
 - (void)abSetHighlightingEnabled:(BOOL)arg1;
 - (BOOL)abIsHighlighted;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 
 @end

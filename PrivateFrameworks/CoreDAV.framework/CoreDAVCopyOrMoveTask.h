@@ -9,23 +9,23 @@
     NSURL *_destinationURL;
 }
 
-@property(retain) NSURL * destinationURL;
 @property int overwrite;
+@property(retain) NSURL * destinationURL;
 
 + (id)stringFromOverwriteValue:(int)arg1;
 
-- (id)initWithURL:(id)arg1;
-- (void)dealloc;
-- (id)description;
-- (void)setDestinationURL:(id)arg1;
-- (id)destinationURL;
-- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2;
-- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 andOverwrite:(int)arg3;
-- (int)overwrite;
 - (void)setOverwrite:(int)arg1;
+- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2;
 - (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
+- (int)overwrite;
+- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 andOverwrite:(int)arg3;
 - (id)additionalHeaderValues;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
+- (id)destinationURL;
+- (void)setDestinationURL:(id)arg1;
+- (id)initWithURL:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)requestBody;
 
 @end

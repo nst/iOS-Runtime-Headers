@@ -25,23 +25,24 @@
 }
 
 
-- (void)setAnchor:(id)arg1;
-- (id)anchor;
-- (BOOL)hasText;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)comment;
-- (id)sheet;
-- (void)setTextBox:(id)arg1;
-- (void)setSheet:(id)arg1;
 - (id)clientState;
 - (void)setClientState:(id)arg1;
 - (id)tableModels;
 - (void)setTableModels:(id)arg1;
+- (id)textBox;
+- (void)setTextBox:(id)arg1;
+- (id)comment;
 - (void)setComment:(id)arg1;
 - (bool)areBoundsSet;
+- (void)setSheet:(id)arg1;
 - (BOOL)hasBounds;
-- (id)textBox;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)sheet;
+- (void)setAnchor:(id)arg1;
+- (id)anchor;
+- (BOOL)hasText;
+- (id)init;
+- (void)dealloc;
 
 @end

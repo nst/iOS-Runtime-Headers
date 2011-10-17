@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIScrollView, CKAtomListView, UIImageView;
+@class UIImageView, NSArray, CKAtomListView, UIScrollView;
 
 @interface CKRecipientListView : UIView <CKOverlayViewProtocol> {
     UIScrollView *_recipientScrollView;
     CKAtomListView *_toField;
     UIImageView *_recipientSeparatorShadow;
+    NSArray *_recipients;
+    int _style;
     struct CGSize { 
         float width; 
         float height; 
@@ -15,22 +17,32 @@
     id _delegate;
 }
 
-@property(readonly) struct CGSize { float width; float height; } contentSize;
+@property(getter=isSeparatorShadowHidden) BOOL separatorShadowHidden;
 @property id delegate;
+@property(readonly) struct CGSize { float width; float height; } contentSize;
+@property int style;
+@property(retain,readonly) NSArray * recipients;
 
++ (float)separatorHeight;
 
-- (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })contentSize;
-- (void)dealloc;
+- (id)recipients;
 - (void)setDelegate:(id)arg1;
+- (void)timerFired:(id)arg1;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toFieldRecipients:(id)arg2 delegate:(id)arg3;
-- (void)addressAtomClicked:(id)arg1;
+- (void)layoutSubviews;
+- (BOOL)isSeparatorShadowHidden;
+- (void)_setupToField;
 - (void)_clearToField;
 - (void)_adjustContentSize;
-- (void)_setupToFieldWithRecipients:(id)arg1;
-- (void)atomListView:(id)arg1 sizeDidChange:(struct CGSize { float x1; float x2; })arg2;
+- (void)addressAtomClicked:(id)arg1;
+- (void)atomListView:(id)arg1 contentSizeDidChange:(struct CGSize { float x1; float x2; })arg2;
 - (void)setExpanded:(BOOL)arg1 animate:(BOOL)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toFieldRecipients:(id)arg2 style:(int)arg3 delegate:(id)arg4;
+- (void)setSeparatorShadowHidden:(BOOL)arg1;
 - (float)heightWithoutSeparator;
+- (void)dealloc;
 
 @end

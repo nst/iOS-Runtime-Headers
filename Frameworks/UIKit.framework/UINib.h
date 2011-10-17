@@ -6,20 +6,25 @@
     id storage;
 }
 
-+ (id)nibWithNibName:(id)arg1 bundle:(id)arg2;
 + (id)nibWithData:(id)arg1 bundle:(id)arg2;
++ (id)nibWithNibName:(id)arg1 bundle:(id)arg2;
 
-- (id)initWithBundle:(id)arg1;
-- (id)initWithData:(id)arg1 bundle:(id)arg2;
-- (BOOL)instantiatingForSimulator;
-- (void)setInstantiatingForSimulator:(BOOL)arg1;
-- (id)effectiveBundle;
-- (id)lazyArchiveData;
 - (id)unarchiverForInstantiatingReturningError:(id*)arg1;
-- (id)instantiateWithOwner:(id)arg1 options:(id)arg2;
+- (id)lazyArchiveData;
+- (id)effectiveBundle;
 - (void)didReceiveMemoryWarning:(id)arg1;
+- (id)initWithData:(id)arg1 bundle:(id)arg2;
+- (void)_registerForMemoryWarningIfNeeded;
+- (id)initWithBundle:(id)arg1;
+- (void)setCaptureEnclosingNIBBundleOnDecode:(BOOL)arg1;
+- (BOOL)captureEnclosingNIBBundleOnDecode;
+- (void)setInstantiatingForSimulator:(BOOL)arg1;
+- (BOOL)instantiatingForSimulator;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)instantiateWithOwner:(id)arg1 options:(id)arg2;
 - (id)initWithContentsOfFile:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)dealloc;
 
 @end

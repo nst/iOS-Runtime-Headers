@@ -13,35 +13,35 @@
     BOOL _inDatabase;
 }
 
-@property BOOL inDatabase;
-@property(copy) NSString * path;
-@property BOOL canRequestThumbnail;
-@property BOOL canRequestMetadata;
-@property(retain) NSDictionary * metadata;
 @property(retain) ICCameraFile * cameraFile;
+@property(retain) NSDictionary * metadata;
+@property BOOL canRequestMetadata;
+@property BOOL canRequestThumbnail;
+@property(copy) NSString * path;
+@property BOOL inDatabase;
 
 
 - (id)path;
-- (void)dealloc;
-- (id)description;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 - (void)setPath:(id)arg1;
-- (id)fileExtension;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (BOOL)inDatabase;
 - (void)setCameraFile:(id)arg1;
 - (BOOL)isJPEG;
 - (BOOL)isRaw;
-- (BOOL)isMovie;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (BOOL)inDatabase;
-- (BOOL)canRequestMetadata;
-- (id)cameraFile;
-- (id)initWithCameraFile:(id)arg1;
 - (void)setInDatabase:(BOOL)arg1;
+- (BOOL)canRequestMetadata;
+- (id)initWithCameraFile:(id)arg1;
+- (id)fileExtension;
 - (BOOL)isInDatabaseForce:(BOOL)arg1;
-- (void)setCanRequestMetadata:(BOOL)arg1;
-- (BOOL)canRequestThumbnail;
+- (BOOL)isMovie;
+- (id)cameraFile;
 - (void)setCanRequestThumbnail:(BOOL)arg1;
+- (BOOL)canRequestThumbnail;
+- (void)setCanRequestMetadata:(BOOL)arg1;
 - (BOOL)isAudio;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

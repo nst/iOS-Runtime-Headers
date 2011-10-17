@@ -10,26 +10,23 @@
 }
 
 
-- (id)toolbarBackgroundImage;
-- (BOOL)isEditing;
+- (void)applicationDidBecomeActive;
 - (int)type;
-- (void)cleanUp;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)dealloc;
 - (void)didReceiveMemoryWarning;
-- (BOOL)isDirty;
-- (id)navigationTitle;
-- (id)navigationAreaBackgroundImage;
-- (void)resetInspectSelectedOccurrenceFlag;
-- (void)inspectSelectedOccurrenceAnimated:(BOOL)arg1 isSearching:(BOOL)arg2 isNewEvent:(BOOL)arg3;
-- (void)inspectSelectedOccurrenceAnimated:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForEventOccurrence:(id)arg1 inView:(id)arg2;
-- (void)setInvitationDelegate:(id)arg1;
-- (id)invitationDelegate;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })preferredDateForDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
-- (id)inspectorPassthroughViews;
+- (id)invitationDelegate;
+- (void)setInvitationDelegate:(id)arg1;
+- (id)navigationTitle;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForEventOccurrence:(id)arg1 inView:(id)arg2;
+- (void)inspectSelectedOccurrenceAnimated:(BOOL)arg1;
+- (void)resetInspectSelectedOccurrenceFlag;
 - (BOOL)containsRangeForStartDate:(double)arg1 endDate:(double)arg2;
+- (id)toolbarBackgroundImageForOrientation:(int)arg1;
+- (id)inspectorPassthroughViews;
+- (void)inspectSelectedOccurrenceAnimated:(BOOL)arg1 isSearching:(BOOL)arg2 isNewEvent:(BOOL)arg3;
+- (id)navigationAreaBackgroundImageForOrientation:(int)arg1;
+- (void)dealloc;
 - (id)initWithModel:(id)arg1;
 - (void)setEditDelegate:(id)arg1;
 

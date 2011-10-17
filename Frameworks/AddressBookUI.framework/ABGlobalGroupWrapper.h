@@ -8,15 +8,15 @@
 
 @property BOOL showLinkedPeople;
 
-+ (id)newGlobalGroupWrapperWithAddressBook:(void*)arg1;
 + (id)newGlobalGroupWrapperWithAddressBook:(void*)arg1 showLinkedPeople:(BOOL)arg2;
++ (id)newGlobalGroupWrapperWithAddressBook:(void*)arg1;
 
 - (BOOL)isEditable;
-- (BOOL)isEqual:(id)arg1;
 - (id)name;
+- (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (BOOL)isGlobalWrapper;
 - (void)setShowLinkedPeople:(BOOL)arg1;
+- (BOOL)isGlobalWrapper;
 - (BOOL)showLinkedPeople;
 
 @end

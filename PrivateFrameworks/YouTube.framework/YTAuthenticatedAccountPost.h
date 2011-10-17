@@ -4,7 +4,7 @@
 
 @class NSURLConnection, NSMutableData, NSMutableURLRequest;
 
-@interface YTAuthenticatedAccountPost : NSObject  {
+@interface YTAuthenticatedAccountPost : NSObject <NSURLConnectionDelegate> {
     id _delegate;
     NSMutableURLRequest *_postRequest;
     NSURLConnection *_connection;
@@ -14,29 +14,28 @@
 }
 
 
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)init;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (void)removePlaylist:(id)arg1;
-- (void)_cleanup;
-- (void)_didAuthenticate:(id)arg1;
-- (void)failWithError:(id)arg1;
-- (void)addVideoToFavorites:(id)arg1;
-- (void)submitRequestOfType:(id)arg1;
-- (void)submitRequest;
-- (void)_failedToAuthenticate:(id)arg1;
 - (void)setRating:(BOOL)arg1 forVideo:(id)arg2;
 - (void)postComment:(id)arg1 forVideo:(id)arg2;
 - (void)fileComplaintForVideo:(id)arg1;
-- (void)_deleteVideo:(id)arg1;
+- (void)addVideoToFavorites:(id)arg1;
 - (void)removeVideoFromFavorites:(id)arg1;
 - (void)removeVideoFromPlaylist:(id)arg1;
-- (void)_removePS:(id)arg1;
 - (void)unsubscribeToSubscription:(id)arg1;
+- (void)submitRequestOfType:(id)arg1;
+- (void)submitRequest;
+- (void)_deleteVideo:(id)arg1;
+- (void)_removePS:(id)arg1;
+- (void)_didAuthenticate:(id)arg1;
+- (void)_failedToAuthenticate:(id)arg1;
 - (void)_listenForAuthenticationNotifications:(BOOL)arg1;
+- (void)failWithError:(id)arg1;
+- (void)removePlaylist:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)_cleanup;
+- (void)dealloc;
 
 @end

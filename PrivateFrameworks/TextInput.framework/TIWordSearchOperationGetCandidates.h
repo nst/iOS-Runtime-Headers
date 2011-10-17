@@ -10,24 +10,27 @@
     id _target;
     SEL _action;
     BOOL _withPrediction;
+    NSArray *_geometryModelData;
 }
 
 @property(readonly) BOOL withPrediction;
 @property(readonly) SEL action;
+@property(readonly) NSArray * geometryModelData;
 @property(retain,readonly) id target;
 @property(retain) NSArray * results;
 @property(readonly) NSString * inputString;
 
 
-- (void)setResults:(id)arg1;
-- (id)inputString;
-- (SEL)action;
-- (id)target;
-- (void)dealloc;
-- (id)initWithTIWordSearch:(id)arg1 inputString:(id)arg2 withPrediction:(BOOL)arg3 target:(id)arg4 action:(SEL)arg5;
-- (void)completeSearchOnMainThread;
+- (id)initWithTIWordSearch:(id)arg1 inputString:(id)arg2 withPrediction:(BOOL)arg3 target:(id)arg4 action:(SEL)arg5 geometryModelData:(id)arg6;
 - (BOOL)withPrediction;
+- (SEL)action;
+- (id)geometryModelData;
+- (id)target;
 - (void)perform;
 - (id)results;
+- (void)completeSearchOnMainThreadWithResults:(id)arg1;
+- (void)setResults:(id)arg1;
+- (id)inputString;
+- (void)dealloc;
 
 @end

@@ -12,41 +12,41 @@
     int _style;
 }
 
-@property int style;
-@property(retain) SUStructuredPage * structuredPage;
 @property(retain) SUItem * activeLoadMoreItem;
+@property(retain) SUStructuredPage * structuredPage;
+@property int style;
 
 
 - (id)sectionIndexTitles;
-- (int)numberOfSections;
-- (void)reloadData;
 - (int)tableViewStyle;
-- (void)setStyle:(int)arg1;
+- (int)numberOfSections;
 - (int)style;
+- (void)setStyle:(int)arg1;
 - (int)numberOfRowsInSection:(int)arg1;
+- (void)reloadData;
 - (void)dealloc;
 - (BOOL)canShowItemOfferButtonForItem:(id)arg1;
-- (Class)cellClassForItem:(id)arg1 reuseIdentifier:(id*)arg2;
-- (id)cellForIndexPath:(id)arg1;
-- (Class)cellConfigurationClassForItem:(id)arg1;
-- (id)cellConfigurationForIndex:(int)arg1 item:(id)arg2;
 - (id)newHeaderViewForSection:(int)arg1;
 - (void)_configureLoadMoreCell:(id)arg1 forItem:(id)arg2;
+- (id)cellConfigurationForIndex:(int)arg1 item:(id)arg2;
 - (id)_itemOfferButtonForCell:(id)arg1 item:(id)arg2;
 - (BOOL)_shouldShowItemOfferButtonForItem:(id)arg1;
-- (id)activeLoadMoreItem;
+- (Class)cellClassForItem:(id)arg1 reuseIdentifier:(id*)arg2;
+- (Class)cellConfigurationClassForItem:(id)arg1;
 - (void)setActiveLoadMoreItem:(id)arg1;
-- (id)structuredPage;
+- (id)activeLoadMoreItem;
 - (void)setStructuredPage:(id)arg1;
-- (BOOL)canSelectIndexPath:(id)arg1;
-- (BOOL)deleteIndexPath:(id)arg1;
-- (int)sectionIndexForIndexTitle:(id)arg1 atIndex:(int)arg2;
-- (float)cellHeightForIndexPath:(id)arg1;
+- (id)structuredPage;
 - (void)reloadCellContexts;
-- (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
-- (id)titleForHeaderInSection:(int)arg1;
-- (BOOL)canDeleteIndexPath:(id)arg1;
-- (id)headerViewForSection:(int)arg1;
+- (BOOL)canSelectIndexPath:(id)arg1;
 - (id)titleForDeleteConfirmationForIndexPath:(id)arg1;
+- (float)cellHeightForIndexPath:(id)arg1;
+- (id)headerViewForSection:(int)arg1;
+- (BOOL)canDeleteIndexPath:(id)arg1;
+- (id)titleForHeaderInSection:(int)arg1;
+- (int)sectionIndexForIndexTitle:(id)arg1 atIndex:(int)arg2;
+- (id)cellForIndexPath:(id)arg1;
+- (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
+- (BOOL)deleteIndexPath:(id)arg1;
 
 @end

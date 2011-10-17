@@ -13,30 +13,30 @@
     BOOL _hasRemoteChanges;
 }
 
-@property BOOL hasRemoteChanges;
-@property BOOL isDefault;
-@property int dataclass;
-@property(copy) NSString * parentFolderID;
-@property(copy) NSString * folderID;
 @property(copy) NSString * folderName;
+@property(copy) NSString * folderID;
+@property(copy) NSString * parentFolderID;
+@property int dataclass;
+@property BOOL isDefault;
+@property BOOL hasRemoteChanges;
 
 
+- (id)folderID;
 - (id)folderName;
 - (id)parentFolderID;
-- (id)folderID;
 - (id)mailboxID;
-- (BOOL)hasRemoteChanges;
 - (void)setHasRemoteChanges:(BOOL)arg1;
+- (BOOL)hasRemoteChanges;
 - (id)parentMailboxID;
-- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
+- (unsigned int)hash;
 - (id)description;
-- (void)setFolderName:(id)arg1;
-- (void)setFolderID:(id)arg1;
-- (void)setParentFolderID:(id)arg1;
-- (void)setIsDefault:(BOOL)arg1;
+- (void)dealloc;
 - (BOOL)isDefault;
+- (void)setIsDefault:(BOOL)arg1;
+- (void)setParentFolderID:(id)arg1;
+- (void)setFolderID:(id)arg1;
+- (void)setFolderName:(id)arg1;
 - (void)setDataclass:(int)arg1;
 - (int)dataclass;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLLibraryView : UITableView  {
+@interface PLLibraryView : PLTableView  {
 }
 
 

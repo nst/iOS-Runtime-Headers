@@ -11,27 +11,27 @@
     NSURL *_redirectURL;
 }
 
-@property(retain) NSURL * redirectURL;
+@property(retain) SSAuthenticationContext * authenticationContext;
 @property(retain) ISDialog * dialog;
 @property(retain) NSNumber * authenticatedAccountDSID;
-@property(retain) SSAuthenticationContext * authenticationContext;
+@property(retain) NSURL * redirectURL;
 
 
 - (void)run;
-- (void)dealloc;
-- (BOOL)_copyAccountIdentifier:(id*)arg1 returningError:(id*)arg2;
-- (id)_copyAuthenticationContext;
-- (id)_copyButtonForDialogSkip;
-- (BOOL)_copySelectedButton:(id*)arg1 returningError:(id*)arg2;
 - (BOOL)_handleSelectedButton:(id)arg1;
+- (BOOL)_copyAccountIdentifier:(id*)arg1 returningError:(id*)arg2;
 - (BOOL)_shouldAuthenticateForButton:(id)arg1;
+- (BOOL)_copySelectedButton:(id*)arg1 returningError:(id*)arg2;
+- (id)_copyButtonForDialogSkip;
 - (void)setDialog:(id)arg1;
 - (void)setAuthenticatedAccountDSID:(id)arg1;
+- (id)_copyAuthenticationContext;
 - (void)setRedirectURL:(id)arg1;
-- (void)setAuthenticationContext:(id)arg1;
-- (id)authenticatedAccountDSID;
+- (void)dealloc;
 - (id)dialog;
 - (id)redirectURL;
+- (id)authenticatedAccountDSID;
+- (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
 
 @end

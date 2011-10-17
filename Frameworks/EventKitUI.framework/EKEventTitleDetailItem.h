@@ -13,8 +13,8 @@
 
 
 - (void)reset;
-- (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
-- (id)cellForSubitemAtIndex:(int)arg1;
 - (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (id)cellForSubitemAtIndex:(int)arg1;
+- (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
 
 @end

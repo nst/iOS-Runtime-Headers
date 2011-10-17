@@ -7,7 +7,8 @@
 
 + (Class)responseClass;
 
-- (id)urlRequest;
 - (id)initWithURLString:(id)arg1 username:(id)arg2 password:(id)arg3;
+- (id)urlRequest;
+- (id)urlString;
 
 @end

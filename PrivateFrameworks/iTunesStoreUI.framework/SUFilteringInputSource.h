@@ -10,19 +10,19 @@
     SUInputSource *_inputSource;
 }
 
-@property(readonly) SUInputSource * inputSource;
 @property(readonly) SUFilteringDataConsumer * dataConsumer;
+@property(readonly) SUInputSource * inputSource;
 
 
-- (void)close;
-- (void)dealloc;
-- (BOOL)hasBytesAvailable;
-- (long long)expectedLength;
-- (id)inputSource;
-- (BOOL)open:(id*)arg1;
-- (unsigned int)minimumReadLength;
-- (int)read:(char *)arg1 maxLength:(unsigned int)arg2 error:(id*)arg3;
-- (id)initWithInputSource:(id)arg1 dataConsumer:(id)arg2;
 - (id)dataConsumer;
+- (long long)expectedLength;
+- (void)close;
+- (BOOL)hasBytesAvailable;
+- (BOOL)open:(id*)arg1;
+- (void)dealloc;
+- (id)inputSource;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2 error:(id*)arg3;
+- (unsigned int)minimumReadLength;
+- (id)initWithInputSource:(id)arg1 dataConsumer:(id)arg2;
 
 @end

@@ -10,10 +10,10 @@
 
 - (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
 - (double)timeIntervalSinceReferenceDate;
-- (oneway void)release;
-- (id)init;
-- (id)retain;
-- (void)dealloc;
 - (unsigned int)retainCount;
+- (id)retain;
+- (id)init;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

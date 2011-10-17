@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoChapterCellContentView, MPTimeMarker;
+@class MPVideoChapterCellContentView, MPImageCache, MPTimeMarker;
 
 @interface MPVideoChapterCell : UITableViewCell  {
     MPVideoChapterCellContentView *_chapterContentView;
@@ -13,23 +13,25 @@
 @property BOOL showThumbnailColumn;
 @property float timeColumnWidth;
 @property(retain) MPTimeMarker * timeMarker;
+@property(retain) MPImageCache * artworkImageCache;
 
-+ (void)_initializeSafeCategory;
 
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (unsigned int)index;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
-- (void)dealloc;
+- (id)artworkImageCache;
 - (id)timeMarker;
-- (BOOL)isCurrent;
-- (void)setShowThumbnailColumn:(BOOL)arg1;
-- (BOOL)showThumbnailColumn;
 - (float)timeColumnWidth;
-- (void)setTimeMarker:(id)arg1;
-- (void)setCurrent:(BOOL)arg1;
+- (BOOL)showThumbnailColumn;
+- (BOOL)isCurrent;
+- (void)setArtworkImageRequest:(id)arg1 artworkLoadCompletionHandler:(id)arg2;
+- (void)setArtworkImageCache:(id)arg1;
+- (void)setShowThumbnailColumn:(BOOL)arg1;
 - (void)setTimeColumnWidth:(float)arg1;
+- (void)setCurrent:(BOOL)arg1;
+- (void)setTimeMarker:(id)arg1;
 - (void)setIndex:(unsigned int)arg1;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
+- (unsigned int)index;
+- (void)prepareForReuse;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)dealloc;
 
 @end

@@ -12,22 +12,22 @@
     NSData *_data;
 }
 
-@property(copy) NSData * data;
-@property(copy) NSString * contentLocation;
-@property(copy) NSString * contentId;
 @property(copy) NSString * contentType;
+@property(copy) NSString * contentId;
+@property(copy) NSString * contentLocation;
+@property(copy) NSData * data;
 
 
 - (void)setContentType:(id)arg1;
 - (id)contentLocation;
-- (id)data;
-- (void)dealloc;
 - (id)contentType;
+- (id)data;
 - (void)setData:(id)arg1;
-- (void)addContentTypeParameterWithName:(id)arg1 value:(id)arg2;
-- (id)initWithData:(id)arg1 contentType:(id)arg2;
-- (id)contentTypeParameterWithName:(id)arg1;
 - (id)allContentTypeParameterNames;
+- (void)addContentTypeParameterWithName:(id)arg1 value:(id)arg2;
+- (id)contentTypeParameterWithName:(id)arg1;
+- (id)initWithData:(id)arg1 contentType:(id)arg2;
+- (void)dealloc;
 - (id)contentId;
 - (void)setContentLocation:(id)arg1;
 - (void)setContentId:(id)arg1;

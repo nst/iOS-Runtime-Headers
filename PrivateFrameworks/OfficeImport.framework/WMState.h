@@ -24,21 +24,13 @@
 }
 
 
-- (unsigned int)currentPage;
-- (void)setCurrentPage:(unsigned int)arg1;
-- (id)init;
-- (void)dealloc;
-- (float)leftMargin;
-- (void)setTopMargin:(float)arg1;
-- (BOOL)isCurrentListStateOverridden;
 - (void)clearCurrentListState;
-- (void)setPageHeight:(float)arg1;
+- (BOOL)isCurrentListStateOverridden;
 - (void)setLastHeader:(id)arg1;
 - (id)lastHeader;
 - (void)setIsHeaderOrFooter:(BOOL)arg1;
 - (void)setLastFooter:(id)arg1;
 - (id)lastFooter;
-- (void)setLeftMargin:(float)arg1;
 - (void)setBlockIndex:(unsigned int)arg1;
 - (BOOL)isFrame;
 - (unsigned int)blockIndex;
@@ -59,7 +51,15 @@
 - (float)totalPageHeight;
 - (void)setTotalPageHeight:(float)arg1;
 - (unsigned int)runIndex;
+- (void)setPageHeight:(float)arg1;
 - (float)pageHeight;
 - (float)topMargin;
+- (void)setTopMargin:(float)arg1;
+- (float)leftMargin;
+- (void)setLeftMargin:(float)arg1;
+- (unsigned int)currentPage;
+- (void)setCurrentPage:(unsigned int)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -10,18 +10,18 @@
     unsigned int _valuePlaceholder : 2;
 }
 
-@property(retain,readonly) UILabel * textLabel2;
-@property(retain,readonly) UILabel * detailTextLabel2;
+@property(readonly) UILabel * textLabel2;
+@property(readonly) UILabel * detailTextLabel2;
 
 
 - (void)layoutSubviews;
-- (void)dealloc;
-- (void)setDetailTextIsPlaceholder:(BOOL)arg1;
 - (void)setDetailText2IsPlaceholder:(BOOL)arg1;
-- (id)textLabel2;
-- (void)_copyTextLabelAttributesFrom:(id)arg1 to:(id)arg2;
+- (void)setDetailTextIsPlaceholder:(BOOL)arg1;
 - (id)detailTextLabel2;
-- (BOOL)detailTextIsPlaceholder;
 - (BOOL)detailText2IsPlaceholder;
+- (BOOL)detailTextIsPlaceholder;
+- (void)_copyTextLabelAttributesFrom:(id)arg1 to:(id)arg2;
+- (id)textLabel2;
+- (void)dealloc;
 
 @end

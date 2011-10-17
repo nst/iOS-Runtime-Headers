@@ -3,24 +3,22 @@
  */
 
 @interface GMMOutgoingThumbnail : PBCodable  {
-    int _height;
     int _width;
+    int _height;
 }
 
 @property int width;
 @property int height;
 
-+ (id)standardThumbnail;
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (void)setHeight:(int)arg1;
 - (int)height;
 - (id)dictionaryRepresentation;
-- (int)width;
 - (void)setWidth:(int)arg1;
-- (id)init;
-- (void)dealloc;
+- (int)width;
 - (id)description;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHeight:(int)arg1;
-- (void)writeTo:(id)arg1;
+- (void)dealloc;
 
 @end

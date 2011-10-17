@@ -10,20 +10,20 @@
     NSString *_messageTitle;
 }
 
-@property(retain) NSString * messageTitle;
-@property(retain) NSString * messageBody;
 @property(retain) UIImage * image;
+@property(retain) NSString * messageBody;
+@property(retain) NSString * messageTitle;
 
 
-- (void)loadView;
-- (id)image;
-- (id)init;
-- (void)dealloc;
-- (void)setImage:(id)arg1;
-- (id)messageTitle;
-- (void)setMessageTitle:(id)arg1;
 - (id)messageBody;
 - (void)setMessageBody:(id)arg1;
+- (void)loadView;
+- (id)image;
+- (void)setImage:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)setMessageTitle:(id)arg1;
+- (id)messageTitle;
 - (id)copyArchivableContext;
 
 @end

@@ -9,29 +9,29 @@
 + (id)colorWithSchemeColorId:(int)arg1 tint:(float)arg2;
 + (id)colorWithSchemeColorId:(int)arg1 shade:(float)arg2;
 
-- (void)resolveMarker:(id)arg1 withSeriesGraphicProperties:(id)arg2 forSeriesIndex:(int)arg3;
-- (void)resolvePlotAreaGraphicProperties:(id)arg1;
-- (void)resolveLegendGraphicProperties:(id)arg1;
-- (void)resolveChartAreaGraphicProperties:(id)arg1;
-- (void)resolveFloorGraphicProperties:(id)arg1;
 - (int)styleRow;
 - (int)styleColumn;
-- (id)autoAxisColor;
-- (id)autoMinorGridColor;
-- (id)autoPlotAreaColor;
-- (id)autoChartAreaColor;
-- (void)setDefaultErrorBarPropertiesInGraphicProperties:(id)arg1;
 - (id)autoColorOfFirstColumnSeriesWithIndex:(int)arg1 seriesCount:(int)arg2;
+- (id)autoChartAreaColor;
+- (id)autoAxisColor;
+- (id)autoPlotAreaColor;
+- (id)autoMinorGridColor;
 - (id)autoColorOfSeriesWithIndex:(int)arg1;
-- (id)autoStrokeForSeriesIndex:(int)arg1;
+- (void)setDefaultErrorBarPropertiesInGraphicProperties:(id)arg1;
+- (void)resolveGraphicPropertiesOfSeries:(id)arg1 forSeriesIndex:(int)arg2;
+- (void)resolveGraphicPropertiesOfTrendline:(id)arg1 forSeriesIndex:(int)arg2;
+- (void)resolveGraphicPropertiesOfErrorBar:(id)arg1 forSeriesIndex:(int)arg2;
+- (void)resolveChartAreaGraphicProperties:(id)arg1;
 - (void)resolveWallGraphicProperties:(id)arg1;
+- (void)resolveFloorGraphicProperties:(id)arg1;
+- (void)resolvePlotAreaGraphicProperties:(id)arg1;
 - (void)resolveAxisGraphicProperties:(id)arg1;
 - (void)resolveMajorGridLinesGraphicProperties:(id)arg1;
 - (void)resolveMinorGridLinesGraphicProperties:(id)arg1;
+- (void)resolveLegendGraphicProperties:(id)arg1;
+- (void)resolveMarker:(id)arg1 withSeriesGraphicProperties:(id)arg2 forSeriesIndex:(int)arg3;
 - (id)autoAxisStroke;
-- (void)resolveGraphicPropertiesOfSeries:(id)arg1 forSeriesIndex:(int)arg2;
 - (void)resolveGraphicPropertiesOfSeries:(id)arg1 forSeriesIndex:(int)arg2 isLine:(bool)arg3;
-- (void)resolveGraphicPropertiesOfTrendline:(id)arg1 forSeriesIndex:(int)arg2;
-- (void)resolveGraphicPropertiesOfErrorBar:(id)arg1 forSeriesIndex:(int)arg2;
+- (id)autoStrokeForSeriesIndex:(int)arg1;
 
 @end

@@ -14,21 +14,22 @@
     struct __CFArray { } *_elementStack;
 }
 
-@property(readonly) NSData * data;
 @property BOOL shouldAddFormattingSpaces;
+@property(readonly) NSData * data;
 
 
-- (id)init;
-- (id)data;
-- (void)dealloc;
-- (const char *)_prefixForNameSpace:(const char *)arg1;
-- (void)_startElement:(id)arg1 inNamespace:(id)arg2;
-- (void)_startElement:(id)arg1 inNamespace:(id)arg2 withAttributeNamesAndValues:(id)arg3 attributes:(void*)arg4;
+- (void)appendElement:(id)arg1 inNamespace:(id)arg2 withStringContentAsCDATA:(id)arg3 withAttributeNamesAndValues:(id)arg4;
 - (void)startElement:(id)arg1 inNamespace:(id)arg2 withAttributes:(id)arg3;
 - (BOOL)shouldAddFormattingSpaces;
+- (void)_startElement:(id)arg1 inNamespace:(id)arg2 withAttributeNamesAndValues:(id)arg3 attributes:(void*)arg4;
+- (void)_startElement:(id)arg1 inNamespace:(id)arg2;
+- (const char *)_prefixForNameSpace:(const char *)arg1;
 - (void)setShouldAddFormattingSpaces:(BOOL)arg1;
+- (void)endElement:(id)arg1 inNamespace:(id)arg2;
 - (void)appendElement:(id)arg1 inNamespace:(id)arg2 withStringContent:(id)arg3 withAttributeNamesAndValues:(id)arg4;
 - (void)startElement:(id)arg1 inNamespace:(id)arg2 withAttributeNamesAndValues:(id)arg3;
-- (void)endElement:(id)arg1 inNamespace:(id)arg2;
+- (id)data;
+- (id)init;
+- (void)dealloc;
 
 @end

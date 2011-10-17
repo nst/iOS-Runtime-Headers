@@ -12,10 +12,10 @@
 }
 
 
-- (id)initWithTarget:(id)arg1 context:(id)arg2 continuationSelector:(SEL)arg3;
-- (void)setValue:(id)arg1 forProperty:(id)arg2;
-- (id)valueForProperty:(id)arg1;
 - (void)doContinuation;
+- (void)setValue:(id)arg1 forProperty:(id)arg2;
+- (id)initWithTarget:(id)arg1 context:(id)arg2 continuationSelector:(SEL)arg3;
+- (id)valueForProperty:(id)arg1;
 - (id)context;
 - (void)dealloc;
 

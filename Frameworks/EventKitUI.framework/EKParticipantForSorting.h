@@ -9,16 +9,18 @@
     BOOL _isEmail;
     NSString *_firstName;
     NSString *_lastName;
+    NSString *_cachedDisplayName;
 }
 
 
 - (BOOL)isEmail;
-- (id)firstName;
 - (id)lastName;
+- (id)firstName;
 - (id)displayName;
 - (int)compare:(id)arg1;
-- (void)dealloc;
 - (id)participant;
 - (id)initWithEKParticipant:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

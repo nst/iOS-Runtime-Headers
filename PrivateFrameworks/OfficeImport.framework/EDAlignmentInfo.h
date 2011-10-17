@@ -17,25 +17,25 @@
 
 + (id)alignmentInfo;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)isHorizontalAlignOverridden;
+- (int)horizontalAlignment;
 - (void)setHorizontalAlignment:(int)arg1;
+- (bool)isVerticalAlignOverridden;
+- (int)verticalAlignment;
 - (void)setVerticalAlignment:(int)arg1;
+- (bool)isIndentOverridden;
+- (int)indent;
+- (bool)isTextWrappedOverridden;
+- (bool)isTextWrapped;
+- (void)setTextWrapped:(bool)arg1;
+- (int)textRotation;
 - (void)setTextRotation:(int)arg1;
 - (void)setDoNotModify:(bool)arg1;
 - (BOOL)isEqualToAlignmentInfo:(id)arg1;
-- (void)setTextWrapped:(bool)arg1;
-- (int)indent;
-- (int)textRotation;
-- (bool)isTextWrappedOverridden;
-- (bool)isIndentOverridden;
-- (bool)isHorizontalAlignOverridden;
-- (int)horizontalAlignment;
-- (bool)isTextWrapped;
-- (int)verticalAlignment;
 - (void)setIndent:(int)arg1;
-- (bool)isVerticalAlignOverridden;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 
 @end

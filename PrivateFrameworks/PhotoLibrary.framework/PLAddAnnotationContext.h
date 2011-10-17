@@ -11,22 +11,22 @@
     NSMutableSet *_contextSet;
 }
 
-@property(copy) NSArray * animationOnlyAnnotations;
-@property(copy) NSArray * annotationsToRemoveWhenAddAnimationEnds;
 @property(copy) NSArray * annotationsToRemoveWhenAddAnimationStarts;
+@property(copy) NSArray * annotationsToRemoveWhenAddAnimationEnds;
+@property(copy) NSArray * animationOnlyAnnotations;
 
 + (id)contextWithPlaces:(id)arg1;
 
-- (void)dealloc;
-- (id)description;
-- (void)_appendArray:(id)arg1 toVar:(id*)arg2;
 - (void)appendUniqueContext:(id)arg1;
+- (void)_appendArray:(id)arg1 toVar:(id*)arg2;
 - (void)setAnimationOnlyAnnotations:(id)arg1;
-- (void)setAnnotationsToRemoveWhenAddAnimationEnds:(id)arg1;
-- (void)setAnnotationsToRemoveWhenAddAnimationStarts:(id)arg1;
-- (id)initWithPlaces:(id)arg1;
-- (id)annotationsToRemoveWhenAddAnimationEnds;
-- (id)annotationsToRemoveWhenAddAnimationStarts;
 - (id)animationOnlyAnnotations;
+- (void)setAnnotationsToRemoveWhenAddAnimationEnds:(id)arg1;
+- (id)annotationsToRemoveWhenAddAnimationEnds;
+- (void)setAnnotationsToRemoveWhenAddAnimationStarts:(id)arg1;
+- (id)annotationsToRemoveWhenAddAnimationStarts;
+- (id)initWithPlaces:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

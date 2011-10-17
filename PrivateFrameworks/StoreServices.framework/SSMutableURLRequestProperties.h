@@ -2,51 +2,51 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString, NSInputStream, NSDictionary, NSData, NSURL;
+@class NSArray, NSString, NSData, NSDictionary, NSInputStream, NSURL;
 
 @interface SSMutableURLRequestProperties : SSURLRequestProperties  {
 }
 
-@property(copy) NSArray * URLs;
-@property(retain) NSURL * URL;
-@property(copy) id URLBagURLBlock;
-@property int URLBagType;
-@property(copy) NSString * URLBagKey;
-@property double timeoutInterval;
-@property BOOL shouldProcessProtocol;
-@property(copy) NSDictionary * requestParameters;
-@property(getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
-@property(copy) NSDictionary * HTTPHeaders;
-@property(copy) NSString * HTTPMethod;
-@property(retain) NSInputStream * HTTPBodyStream;
-@property(copy) NSData * HTTPBody;
-@property long long expectedContentLength;
-@property(copy) NSString * clientIdentifier;
-@property unsigned int cachePolicy;
-@property int assetType;
 @property int allowedRetryCount;
+@property unsigned int cachePolicy;
+@property(copy) NSString * clientIdentifier;
+@property long long expectedContentLength;
+@property(copy) NSData * HTTPBody;
+@property(copy) NSString * HTTPMethod;
+@property(getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
+@property double timeoutInterval;
+@property(copy) NSString * URLBagKey;
+@property(retain) NSURL * URL;
+@property(copy) NSArray * userAgentComponents;
+@property(copy) NSDictionary * HTTPHeaders;
+@property(copy) NSDictionary * requestParameters;
+@property(retain) NSInputStream * HTTPBodyStream;
+@property BOOL shouldProcessProtocol;
+@property int URLBagType;
+@property(copy) id URLBagURLBlock;
+@property(copy) NSArray * URLs;
 
 
-- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
-- (void)setURL:(id)arg1;
-- (void)setURLs:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setExpectedContentLength:(long long)arg1;
 - (void)setURLBagURLBlock:(id)arg1;
+- (void)setUserAgentComponents:(id)arg1;
+- (void)setExpectedContentLength:(long long)arg1;
+- (void)setHTTPBodyStream:(id)arg1;
 - (void)setHTTPBody:(id)arg1;
 - (void)setHTTPMethod:(id)arg1;
-- (void)setHTTPBodyStream:(id)arg1;
-- (void)setAllowedRetryCount:(int)arg1;
 - (void)setTimeoutInterval:(double)arg1;
-- (void)setITunesStoreRequest:(BOOL)arg1;
-- (void)setShouldProcessProtocol:(BOOL)arg1;
-- (void)setClientIdentifier:(id)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
+- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
+- (void)setURLs:(id)arg1;
+- (void)setURL:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setAllowedRetryCount:(int)arg1;
+- (void)setClientIdentifier:(id)arg1;
+- (void)setShouldProcessProtocol:(BOOL)arg1;
+- (void)setITunesStoreRequest:(BOOL)arg1;
 - (void)setHTTPHeaders:(id)arg1;
-- (void)setAssetType:(int)arg1;
-- (void)setURLBagKey:(id)arg1;
-- (void)setRequestParameters:(id)arg1;
 - (void)setURLBagType:(int)arg1;
+- (void)setRequestParameters:(id)arg1;
+- (void)setURLBagKey:(id)arg1;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
 
 @end

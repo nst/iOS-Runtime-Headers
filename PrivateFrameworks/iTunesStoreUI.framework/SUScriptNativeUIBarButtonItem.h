@@ -5,8 +5,9 @@
 @interface SUScriptNativeUIBarButtonItem : SUScriptButtonNativeObject  {
 }
 
-+ (id)objectWithDefaultButtonForScriptObject:(id)arg1;
++ (id)objectWithDefaultButtonForScriptButton:(id)arg1;
 
+- (void)setLoading:(BOOL)arg1;
 - (int)buttonType;
 - (BOOL)isLoading;
 - (id)styleString;
@@ -14,9 +15,9 @@
 - (id)title;
 - (void)setTitle:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setupNativeObject;
+- (id)systemItemString;
 - (void)setStyleFromString:(id)arg1;
+- (void)setupNativeObject;
 - (void)destroyNativeObject;
-- (void)setLoading:(BOOL)arg1;
 
 @end

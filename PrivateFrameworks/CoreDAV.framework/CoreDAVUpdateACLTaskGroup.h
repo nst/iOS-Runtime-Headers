@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVPropFindTask, <CoreDAVTaskGroupDelegate>, NSSet, NSURL;
+@class NSSet, NSURL, CoreDAVPropFindTask;
 
 @interface CoreDAVUpdateACLTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate, CoreDAVACLTaskDelegate> {
     int _state;
@@ -11,28 +11,27 @@
     CoreDAVPropFindTask *_fetchTask;
 }
 
-@property(retain) CoreDAVPropFindTask * fetchTask;
-@property(retain) NSURL * url;
-@property(retain) NSSet * aceItems;
 @property int state;
-@property <CoreDAVTaskGroupDelegate> * delegate;
+@property(retain) NSSet * aceItems;
+@property(retain) NSURL * url;
+@property(retain) CoreDAVPropFindTask * fetchTask;
 
 
+- (void)setAceItems:(id)arg1;
+- (id)initWithAccountInfoProvider:(id)arg1 aceItems:(id)arg2 url:(id)arg3 taskManager:(id)arg4;
+- (void)_startSetACLWithAccessControlEntities:(id)arg1;
+- (id)aceItems;
+- (void)_finishWithError:(id)arg1 state:(int)arg2;
+- (void)_startGetACL;
+- (id)fetchTask;
+- (void)setFetchTask:(id)arg1;
+- (void)taskGroupWillCancelWithError:(id)arg1;
+- (void)startTaskGroup;
+- (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (void)setState:(int)arg1;
 - (int)state;
 - (void)dealloc;
-- (void)startTaskGroup;
-- (id)initWithAccountInfoProvider:(id)arg1 aceItems:(id)arg2 url:(id)arg3 taskManager:(id)arg4;
-- (void)_startGetACL;
-- (void)_startSetACLWithAccessControlEntities:(id)arg1;
-- (void)_finishWithError:(id)arg1 state:(int)arg2;
-- (id)fetchTask;
-- (void)setFetchTask:(id)arg1;
-- (id)aceItems;
-- (void)setAceItems:(id)arg1;
-- (void)taskGroupWillCancelWithError:(id)arg1;
-- (void)task:(id)arg1 didFinishWithError:(id)arg2;
 
 @end

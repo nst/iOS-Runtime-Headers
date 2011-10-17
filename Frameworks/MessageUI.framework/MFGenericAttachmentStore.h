@@ -2,17 +2,14 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSConditionLock, NSMutableDictionary, NSMutableArray;
+@class NSMutableArray, MFConditionLock;
 
 @interface MFGenericAttachmentStore : MFWebAttachmentSource  {
-    NSMutableDictionary *_attachmentsByURL;
     struct __CFDictionary { } *_attachmentSizes;
     NSMutableArray *_attachmentsOrder;
     unsigned int _size;
-    unsigned int _imagesSize;
-    int _priority;
     struct dispatch_queue_s { } *_scalingQueue;
-    NSConditionLock *_scalingThrottle;
+    MFConditionLock *_scalingThrottle;
     BOOL _outgoing;
     BOOL _didCancelImageScalingOperations;
 }
@@ -21,20 +18,20 @@
 + (void)endPreventingInlinePDFs;
 + (BOOL)isPreventingInlinePDFs;
 
+- (void)removeAttachmentForURL:(id)arg1;
 - (id)attachments;
-- (id)attachmentForURL:(id)arg1;
-- (int)priority;
-- (void)dealloc;
-- (id)description;
-- (void)setPriority:(int)arg1;
-- (id)initOutgoing;
-- (void)cancelImageScalingOperations;
-- (BOOL)didCancelImageScalingOperations;
-- (void)_enqueueScaleAttachment:(id)arg1 withFlags:(unsigned int)arg2 originalSize:(unsigned int)arg3;
-- (void)removeAttachmentsForURLs:(id)arg1;
-- (void)_delayedSetScalingEnabled;
-- (void)setScalingThrottled:(BOOL)arg1;
+- (BOOL)setAttachment:(id)arg1 forURL:(id)arg2;
+- (BOOL)addAttachment:(id)arg1;
 - (unsigned long)sizeForScale:(int)arg1 imagesOnly:(BOOL)arg2;
-- (BOOL)addAttachment:(id)arg1 renamingContentID:(BOOL)arg2;
+- (id)initOutgoing;
+- (void)removeAttachmentsForURLs:(id)arg1;
+- (BOOL)didCancelImageScalingOperations;
+- (void)_delayedSetScalingEnabled;
+- (void)cancelImageScalingOperations;
+- (void)setScalingThrottled:(BOOL)arg1;
+- (void)_enqueueScaleAttachment:(id)arg1 withFlags:(unsigned int)arg2 originalSize:(unsigned int)arg3;
+- (BOOL)addAttachment:(id)arg1 allowingOverride:(id)arg2;
+- (id)description;
+- (void)dealloc;
 
 @end

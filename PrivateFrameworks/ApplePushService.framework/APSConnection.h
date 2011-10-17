@@ -18,37 +18,48 @@
     NSArray *_ignoredTopics;
     NSMutableDictionary *_subtopics;
     BOOL _enableCriticalReliability;
+    BOOL _enableStatusNotifications;
+    NSMutableDictionary *_idsToOutgoingMessages;
+    unsigned int _nextOutgoingMessageID;
 }
 
-@property(readonly) int serverPID;
 @property <APSConnectionDelegate> * delegate;
+@property(readonly) int serverPID;
 
-+ (struct __SecIdentity { }*)copyIdentity;
 + (double)keepAliveIntervalForEnvironmentName:(id)arg1;
 + (id)connectionsDebuggingState;
++ (struct __SecIdentity { }*)copyIdentity;
 
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)_connect;
-- (int)serverPID;
+- (unsigned int)messageSize;
+- (BOOL)hasIdentity;
+- (void)sendFakeMessage:(id)arg1;
 - (id)initWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2;
+- (void)_sendEnableStatusNotifications;
 - (void)_connectionServerPortInvalidated;
-- (id)_dataForPropertyList:(id)arg1;
 - (void)_sendEnabledTopics;
 - (void)_sendIgnoredTopics;
-- (BOOL)hasIdentity;
 - (void)_sendEnableCriticalReliability;
-- (void)_deliverMessageForTopic:(id)arg1 userInfo:(id)arg2;
+- (id)_dataForPropertyList:(id)arg1;
+- (int)serverPID;
 - (void)_deliverPublicToken:(id)arg1;
-- (id)initWithEnvironmentName:(id)arg1;
-- (void)setEnabledTopics:(id)arg1;
-- (id)publicToken;
-- (void)removeFromRunLoop;
+- (void)_deliverMessageForTopic:(id)arg1 userInfo:(id)arg2;
+- (void)_deliverOutgoingMessageResultWithID:(unsigned int)arg1 error:(id)arg2;
+- (void)_deliverConnectionStatusChange:(BOOL)arg1;
+- (void)_connect;
+- (void)setDelegate:(id)arg1;
 - (void)setIgnoredTopics:(id)arg1;
 - (void)setSubtopic:(id)arg1 forEnabledTopic:(id)arg2;
-- (void)_disconnect;
 - (void)scheduleInRunLoop:(id)arg1;
+- (void)_disconnect;
+- (id)delegate;
+- (void)sendOutgoingMessage:(id)arg1;
+- (void)cancelOutgoingMessage:(id)arg1;
+- (void)setEnabledTopics:(id)arg1;
+- (void)removeFromRunLoop;
+- (id)publicToken;
+- (id)initWithEnvironmentName:(id)arg1;
+- (BOOL)isConnected;
+- (void)dealloc;
 - (void)setEnableCriticalReliability:(BOOL)arg1;
 
 @end

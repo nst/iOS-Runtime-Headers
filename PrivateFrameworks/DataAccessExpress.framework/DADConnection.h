@@ -2,69 +2,90 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class NSInvocation, NSMutableDictionary, NSMutableSet;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSMutableDictionary, NSMutableSet;
 
 @interface DADConnection : NSObject <AccountNotificationProtocol> {
-    unsigned int _publicPort;
-    unsigned int _serverPort;
-    struct __CFMachPort { } *_callbackPort;
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    } _lock;
+    struct _xpc_connection_s { } *_conn;
+    struct dispatch_queue_s { } *_muckingWithConn;
     NSMutableSet *_accountIdsWithAlreadyResetCerts;
     NSMutableSet *_accountIdsWithAlreadyResetThrottleTimers;
-    NSInvocation *_statusReportInvocation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _statusReportBlock;
+
+    NSMutableDictionary *_inFlightSearchQueries;
+    NSMutableDictionary *_inFlightFolderChanges;
+    NSMutableDictionary *_inFlightAttachmentDownloads;
     NSMutableDictionary *_defaultContainerIDCache;
 }
 
-+ (void)setShouldIgnoreAccountChanges;
++ (void)accountDidChange:(id)arg1 forDataclass:(id)arg2;
++ (void)accountWillChange:(id)arg1 forDataclass:(id)arg2;
 + (void)noteAccountChanges:(id)arg1;
++ (void)setShouldIgnoreAccountChanges;
++ (id)sharedConnectionIfServerIsRunning;
 + (id)sharedConnection;
 
 - (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2 ignoreThrottleTimer:(BOOL)arg3;
 - (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2;
+- (BOOL)performServerContactsSearch:(id)arg1 forAccountWithID:(id)arg2;
+- (void)cancelServerContactsSearch:(id)arg1;
+- (void)requestDaemonStopMonitoringAgents;
+- (void)requestDaemonStartMonitoringAgents;
+- (BOOL)registerForInterrogationWithBlock:(id)arg1;
+- (void)removeStoresForAccountWithID:(id)arg1;
 - (void)requestDaemonShutdown;
-- (BOOL)requestDaemonStopMonitoringAgents;
-- (BOOL)requestDaemonStartMonitoringAgents;
-- (BOOL)removeStoresForAccountWithID:(id)arg1;
-- (BOOL)registerForInterrogationWithInvocation:(id)arg1;
-- (BOOL)handleURL:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (unsigned int)publicPort;
-- (void)_handleFoldersUpdated:(id)arg1 forAccountID:(id)arg2;
-- (void)_handleNewPolicyKey:(id)arg1 forAccountID:(id)arg2;
-- (void)invalidateServerPort;
-- (void)_handleSendFailure:(int)arg1 inCodeNamed:(const char *)arg2;
-- (unsigned int)serverPortWithTimeout:(unsigned int)arg1;
-- (void)_setPublicPort:(unsigned int)arg1;
-- (id)_getStatusReportDictsFromClient;
-- (void)handleBrokenPipe;
-- (id)currentPolicyKeyForAccountID:(id)arg1;
-- (BOOL)_requestDaemonChangeAgentMonitoringStatus:(BOOL)arg1;
-- (BOOL)updateContentsOfFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 andDataclass:(int)arg3;
 - (id)statusReports;
-- (void)_reallyRegisterForInterrogation;
-- (BOOL)_resetCertWarningsForAccountId:(id)arg1 andDataclasses:(int)arg2;
-- (BOOL)_resetThrottleTimersForAccountId:(id)arg1;
+- (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataclass:(int)arg2;
+- (BOOL)updateContentsOfFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 andDataclass:(int)arg3;
+- (id)currentPolicyKeyForAccountID:(id)arg1;
+- (void)requestDaemonStartMonitoringAgents_Sync;
+- (void)_requestDaemonStopMonitoringAgents_Sync;
+- (void)_downloadFinished:(void*)arg1;
+- (void)_downloadProgress:(void*)arg1;
+- (void)_getStatusReportsFromClient:(void*)arg1;
+- (void)_folderChangeFinished:(void*)arg1;
+- (void)_serverContactsSearchQueryFinished:(void*)arg1;
+- (void)_logDataAccessStatus:(void*)arg1;
+- (void)_policyKeyChanged:(void*)arg1;
 - (void)resetTimersAndWarnings;
 - (void)_registerForAppResumedNotification;
-- (void)stopWatching;
-- (unsigned int)serverPort;
-- (BOOL)performServerContactsSearch:(id)arg1 forAccountWithID:(id)arg2 onRunloop:(id)arg3;
-- (BOOL)cancelServerContactsSearch:(id)arg1;
-- (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataclass:(int)arg2;
+- (void)_cancelDownloadsWithIDs:(id)arg1 error:(id)arg2;
+- (void)_sendSynchronousXPCMessageWithParameters:(id)arg1 handlerBlock:(id)arg2;
+- (BOOL)updateContentsOfFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 andDataclass:(int)arg3 isUserRequested:(BOOL)arg4;
+- (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2 isUserRequested:(BOOL)arg3;
+- (void)_resetThrottleTimersForAccountId:(id)arg1;
+- (void)_requestDaemonChangeAgentMonitoringStatus:(BOOL)arg1 waitForReply:(BOOL)arg2;
+- (void)_resetCertWarningsForAccountId:(id)arg1 andDataclasses:(int)arg2 isUserRequested:(BOOL)arg3;
+- (void)_serverDiedWithReason:(void*)arg1;
+- (void)_reallyRegisterForInterrogation;
+- (void)_tearDownInFlightObjects;
+- (struct _xpc_connection_s { }*)_connection;
+- (id)_init;
+- (id)beginDownloadingAttachmentWithUUID:(id)arg1 accountID:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 progressBlock:(id)arg4 completionBlock:(id)arg5;
+- (void)cancelDownloadingAttachmentWithDownloadID:(id)arg1 error:(id)arg2;
+- (id)init;
+- (void)dealloc;
+- (void*)_createReplyToRequest:(void*)arg1 withProperties:(id)arg2;
+- (void)_dispatchMessage:(void*)arg1;
 - (id)defaultContainerIdentifierForAccountID:(id)arg1 andDataclass:(int)arg2;
-- (BOOL)processMeetingRequests:(id)arg1 inFolderWithId:(id)arg2 forAccountWithId:(id)arg3;
+- (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataclass:(int)arg2 isUserRequested:(BOOL)arg3;
 - (BOOL)requestPolicyUpdateForAccountID:(id)arg1;
-- (BOOL)resumeWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
-- (int)openDADConnectionOnRunLoop:(struct __CFRunLoop { }*)arg1;
-- (BOOL)watchFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
-- (BOOL)stopWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
-- (BOOL)upgradeAccountWithId:(id)arg1 withProtocolVersion:(id)arg2;
-- (BOOL)setFolderIdsThatExternalClientsCareAboutAdded:(id)arg1 deleted:(id)arg2 foldersTag:(id)arg3 forAccountID:(id)arg4;
+- (void)reportFolderItemsSyncSuccess:(BOOL)arg1 forFolderWithID:(id)arg2 andAccountWithID:(id)arg3;
+- (BOOL)processFolderChange:(id)arg1 forAccountWithID:(id)arg2;
 - (BOOL)suspendWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
-- (BOOL)reportFolderItemsSyncSuccess:(BOOL)arg1 forFolderWithID:(id)arg2 andAccountWithID:(id)arg3;
+- (BOOL)setFolderIdsThatExternalClientsCareAboutAdded:(id)arg1 deleted:(id)arg2 foldersTag:(id)arg3 forAccountID:(id)arg4;
+- (void)applyNewAccountProperties:(id)arg1 onAccountWithId:(id)arg2 forceSave:(BOOL)arg3;
+- (BOOL)processMeetingRequests:(id)arg1 deliveryIdsToClear:(id)arg2 deliveryIdsToSoftClear:(id)arg3 inFolderWithId:(id)arg4 forAccountWithId:(id)arg5;
+- (BOOL)stopWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
+- (BOOL)watchFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
+- (BOOL)resumeWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
+- (void)_foldersUpdated:(void*)arg1;
+- (void)handleURL:(id)arg1;
 
 @end

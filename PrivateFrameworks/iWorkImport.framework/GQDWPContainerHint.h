@@ -22,14 +22,14 @@
 }
 
 
-- (id)initWithPageIndex:(long)arg1 cIndex:(long)arg2 sIndex:(long)arg3 lIndex:(long)arg4 anchorLocation:(long)arg5 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg6;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (long)pageIndex;
 - (long)sIndex;
 - (long)lIndex;
-- (long)pageIndex;
 - (long)cIndex;
 - (double)attachmentPosition;
 - (long)anchorLocation;
+- (id)initWithPageIndex:(long)arg1 cIndex:(long)arg2 sIndex:(long)arg3 lIndex:(long)arg4 anchorLocation:(long)arg5 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg6;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 
 @end

@@ -13,10 +13,10 @@
 
 
 - (void)finalize;
-- (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithObjCType:(BOOL)arg1 count:(unsigned int)arg2 at:(const void*)arg3;
 - (void)fillObjCType:(BOOL)arg1 count:(unsigned int)arg2 at:(void*)arg3;
+- (id)initWithObjCType:(BOOL)arg1 count:(unsigned int)arg2 at:(const void*)arg3;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 
 @end

@@ -17,17 +17,17 @@
 @property(readonly) NSString * errorComment;
 
 
-- (id)date;
 - (void)finalize;
 - (id)initWithDictionary:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)date;
 - (int)errorStatusCode;
-- (id)serverAddress;
-- (id)playbackSessionID;
 - (id)errorDomain;
 - (id)errorComment;
 - (id)URI;
+- (id)serverAddress;
+- (id)playbackSessionID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

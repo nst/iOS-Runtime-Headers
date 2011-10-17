@@ -19,21 +19,21 @@
 @property(retain) NSArray * preEnabledDataclasses;
 
 
-- (void)finishedAccountSetup;
-- (void)handleURL:(id)arg1;
-- (id)specifiers;
+- (id)plugins;
 - (id)init;
 - (void)dealloc;
-- (id)plugins;
 - (id)specifierForAccountType:(id)arg1;
 - (void)popOutOfAddControllers;
 - (void)dontShowSecondLevelOtherAccountTypes;
-- (id)allowedDataclasses;
-- (void)setAllowedDataclasses:(id)arg1;
-- (void)setPlugins:(id)arg1;
-- (void)setPreEnabledDataclasses:(id)arg1;
-- (int)numAddControllersInStack;
-- (id)preEnabledDataclasses;
 - (void)forceMailSetup;
+- (void)setPreEnabledDataclasses:(id)arg1;
+- (void)setPlugins:(id)arg1;
+- (void)setAllowedDataclasses:(id)arg1;
+- (id)allowedDataclasses;
+- (id)preEnabledDataclasses;
+- (int)numAddControllersInStack;
+- (id)specifiers;
+- (void)handleURL:(id)arg1;
+- (void)finishedAccountSetup;
 
 @end

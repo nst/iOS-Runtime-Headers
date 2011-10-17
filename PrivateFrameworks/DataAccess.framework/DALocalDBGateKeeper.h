@@ -25,9 +25,9 @@
 
 + (id)sharedGateKeeper;
 
-- (void)registerWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id)arg3;
-- (void)unregisterWaiterForDataclassLocks:(id)arg1;
 - (void)relinquishLocksForWaiter:(id)arg1 dataclasses:(int)arg2 moreComing:(BOOL)arg3;
+- (void)unregisterWaiterForDataclassLocks:(id)arg1;
+- (void)registerWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id)arg3;
 - (void)claimedOwnershipOfDataclasses:(int)arg1;
 - (id)stateString;
 

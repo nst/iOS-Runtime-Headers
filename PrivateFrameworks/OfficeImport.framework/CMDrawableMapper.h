@@ -39,25 +39,25 @@
 }
 
 
-- (float)rotation;
-- (void)setRotation:(float)arg1;
-- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })box;
-- (id)initWithOadDrawable:(id)arg1 parent:(id)arg2;
-- (id)saveResourceAndReturnPath:(id)arg1 withType:(int)arg2;
-- (void)mapShapeGraphicsAt:(id)arg1 withState:(id)arg2;
-- (void)setBoundingBox;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })uncroppedBox;
-- (void)setWithOadImage:(id)arg1;
 - (void)mapImageBinaryData;
-- (void)mapBounds;
 - (id)convertMetafileToPdf;
-- (id)initWithParent:(id)arg1;
+- (void)mapBounds;
+- (id)initWithOadDrawable:(id)arg1 parent:(id)arg2;
+- (void)setBoundingBox;
+- (void)setWithOadImage:(id)arg1;
 - (void)calculateUncroppedBox:(id)arg1;
 - (BOOL)isCropped;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })uncroppedBox;
+- (id)saveResourceAndReturnPath:(id)arg1 withType:(int)arg2;
+- (void)mapShapeGraphicsAt:(id)arg1 withState:(id)arg2;
+- (void)mapTextBoxAt:(id)arg1 withState:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shapeTextBoxRect;
 - (void)mapDrawingContext:(id)arg1 at:(id)arg2 relative:(BOOL)arg3 withState:(id)arg4;
-- (void)mapTextBoxAt:(id)arg1 withState:(id)arg2;
+- (id)initWithParent:(id)arg1;
 - (id)blipAtIndex:(unsigned int)arg1;
+- (void)setRotation:(float)arg1;
+- (float)rotation;
+- (void)dealloc;
 
 @end

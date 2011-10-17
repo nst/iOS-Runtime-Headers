@@ -6,19 +6,16 @@
 }
 
 + (float)minimumRowHeight;
-+ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 + (id)copyDefaultContext;
-+ (void)_initializeSafeCategory;
++ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
 - (void)reloadData;
 - (id)init;
-- (void)reloadAfterArtworkLoad;
-- (void)reloadImages;
-- (void)reloadLayoutInformation;
 - (struct CGSize { float x1; float x2; })_imageSizeForLayoutSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)reloadAfterArtworkLoad;
 - (id)copyImageDataProvider;
+- (void)reloadLayoutInformation;
 - (void)reloadStrings;
-- (id)accessibilityTableViewCellText;
-- (id)accessibilityLanguage;
+- (void)reloadImages;
 
 @end

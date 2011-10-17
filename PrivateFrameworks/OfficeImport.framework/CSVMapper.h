@@ -9,11 +9,16 @@
     NSMutableArray *mRows;
     NSString *mFileName;
     unsigned int mColumnCount;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } mPageSize;
 }
 
 
-- (void)dealloc;
 - (id)initWithRows:(id)arg1 fileName:(id)arg2 columnCount:(unsigned int)arg3 archiver:(id)arg4;
+- (struct CGSize { float x1; float x2; })pageSize;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (void)dealloc;
 
 @end

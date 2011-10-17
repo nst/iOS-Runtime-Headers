@@ -10,7 +10,7 @@
 }
 
 
-- (void)dealloc;
 - (id)stylesheet;
+- (void)dealloc;
 
 @end

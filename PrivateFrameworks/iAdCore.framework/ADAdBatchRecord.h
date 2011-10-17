@@ -10,17 +10,17 @@
     BOOL _supplyMetrics;
 }
 
-@property BOOL supplyMetrics;
-@property int sequenceNum;
 @property(retain) NSString * batchId;
+@property int sequenceNum;
+@property BOOL supplyMetrics;
 
 
-- (void)setSupplyMetrics:(BOOL)arg1;
-- (int)sequenceNum;
 - (void)setSequenceNum:(int)arg1;
+- (int)sequenceNum;
+- (void)setSupplyMetrics:(BOOL)arg1;
 - (BOOL)supplyMetrics;
-- (id)batchId;
 - (void)setBatchId:(id)arg1;
+- (id)batchId;
 - (void)dealloc;
 
 @end

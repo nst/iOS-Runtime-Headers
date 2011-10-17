@@ -9,9 +9,9 @@
 }
 
 
-- (void)dealloc;
-- (void)addRotationZonesTo:(id)arg1;
 - (void)makeRotationZonesIn:(id)arg1;
 - (id)rotationZones;
+- (void)addRotationZonesTo:(id)arg1;
+- (void)dealloc;
 
 @end

@@ -7,32 +7,32 @@
 @interface ADAssetMetric : PBCodable  {
     NSString *_uniqueIdentifier;
     NSString *_url;
-    unsigned long long _time;
     BOOL _hasTime;
+    unsigned long long _time;
 }
 
 @property(readonly) BOOL hasUniqueIdentifier;
-@property(readonly) BOOL hasUrl;
-@property(readonly) BOOL hasTime;
-@property unsigned long long time;
-@property(retain) NSString * url;
 @property(retain) NSString * uniqueIdentifier;
+@property(readonly) BOOL hasUrl;
+@property(retain) NSString * url;
+@property BOOL hasTime;
+@property unsigned long long time;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTime:(BOOL)arg1;
 - (BOOL)hasTime;
-- (BOOL)hasUniqueIdentifier;
 - (BOOL)hasUrl;
+- (void)writeTo:(id)arg1;
+- (BOOL)hasUniqueIdentifier;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setUrl:(id)arg1;
+- (id)url;
 - (id)dictionaryRepresentation;
 - (id)uniqueIdentifier;
-- (id)url;
-- (void)setTime:(unsigned long long)arg1;
 - (unsigned long long)time;
-- (id)init;
-- (void)dealloc;
+- (void)setTime:(unsigned long long)arg1;
 - (id)description;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)dealloc;
 
 @end

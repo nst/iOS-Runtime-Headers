@@ -10,20 +10,20 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (id)referenceAtIndex:(unsigned int)arg1;
-- (unsigned int)linksCount;
-- (id)linkAtIndex:(unsigned int)arg1;
-- (unsigned int)indexOfFirstLinkWithType:(int)arg1;
-- (unsigned int)addLink:(id)arg1;
-- (unsigned int)linkIndexCreateIfNeededWithType:(int)arg1;
-- (unsigned int)referencesCount;
-- (unsigned int)indexOfReference:(id)arg1;
-- (unsigned int)addReference:(id)arg1;
 - (bool)convertLinkReferenceIndex:(unsigned int)arg1 firstSheetIndex:(unsigned int*)arg2 lastSheetIndex:(unsigned int*)arg3;
 - (unsigned int)addOrEquivalentInternalLinkReferenceWithFirstSheetIndex:(unsigned int)arg1 lastSheetIndex:(unsigned int)arg2;
 - (void)addOrEquivalentExternalAddInName:(id)arg1 linkReferenceIndex:(unsigned int*)arg2 nameIndex:(unsigned int*)arg3;
+- (unsigned int)linksCount;
+- (unsigned int)indexOfFirstLinkWithType:(int)arg1;
+- (unsigned int)addLink:(id)arg1;
+- (unsigned int)referencesCount;
+- (id)linkAtIndex:(unsigned int)arg1;
+- (unsigned int)linkIndexCreateIfNeededWithType:(int)arg1;
+- (unsigned int)indexOfReference:(id)arg1;
+- (unsigned int)addReference:(id)arg1;
 - (unsigned int)addOrEquivalentLinkReferenceOfType:(int)arg1 firstSheetIndex:(unsigned int)arg2 lastSheetIndex:(unsigned int)arg3;
+- (id)referenceAtIndex:(unsigned int)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

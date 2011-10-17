@@ -14,16 +14,16 @@
 @property(retain) CPList * list;
 
 
-- (void)dispose;
-- (void)setNumber:(int)arg1;
-- (id)list;
-- (int)number;
-- (void)finalize;
-- (id)init;
-- (void)dealloc;
 - (void)setList:(id)arg1;
 - (unsigned int)paragraphCount;
 - (id)paragraphAtIndex:(unsigned int)arg1;
+- (void)finalize;
+- (void)setNumber:(int)arg1;
 - (void)addParagraph:(id)arg1;
+- (void)dispose;
+- (int)number;
+- (id)list;
+- (id)init;
+- (void)dealloc;
 
 @end

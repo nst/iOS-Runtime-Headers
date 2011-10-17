@@ -11,7 +11,7 @@
     id _cd_entity;
     NSManagedObjectContext *_cd_managedObjectContext;
     NSManagedObjectID *_cd_objectID;
-    id _cd_faultHandler;
+    unsigned int _cd_extraFlags;
     id _cd_observationInfo;
     id *_cd_snapshots;
     unsigned int _cd_lockingInfo;

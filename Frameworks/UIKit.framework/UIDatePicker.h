@@ -2,61 +2,68 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimeZone, NSLocale, NSCalendar, NSDate, UIPickerView;
+@class UIPickerView, NSLocale, NSCalendar, NSDate, NSTimeZone;
 
 @interface UIDatePicker : UIControl <NSCoding> {
     UIPickerView *_pickerView;
 }
 
-@property int minuteInterval;
-@property double countDownDuration;
-@property(retain) NSDate * maximumDate;
-@property(retain) NSDate * minimumDate;
-@property(retain) NSDate * date;
-@property(copy) NSCalendar * calendar;
-@property(retain) NSTimeZone * timeZone;
-@property(retain) NSLocale * locale;
+@property(getter=_usesBlackChrome,setter=_setUsesBlackChrome:) BOOL usesBlackChrome;
 @property int datePickerMode;
+@property(retain) NSLocale * locale;
+@property(retain) NSTimeZone * timeZone;
+@property(copy) NSCalendar * calendar;
+@property(retain) NSDate * date;
+@property(retain) NSDate * minimumDate;
+@property(retain) NSDate * maximumDate;
+@property double countDownDuration;
+@property int minuteInterval;
 
-+ (void)_initializeSafeCategory;
 
-- (void)setTimeZone:(id)arg1;
-- (void)_insertPickerView;
-- (void)setTimeInterval:(double)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDelegate:(id)arg1;
+- (void)_setHighlightsToday:(BOOL)arg1;
+- (BOOL)_usesBlackChrome;
+- (void)_setUsesBlackChrome:(BOOL)arg1;
+- (void)_setHidesLabels:(BOOL)arg1;
 - (void)setDate:(id)arg1 animate:(BOOL)arg2;
-- (double)countDownDuration;
-- (void)setCalendar:(id)arg1;
-- (void)setLocale:(id)arg1;
-- (void)setDate:(id)arg1 animated:(BOOL)arg2;
-- (void)setMinimumDate:(id)arg1;
-- (void)setMaximumDate:(id)arg1;
-- (int)minute;
 - (int)second;
-- (void)setDatePickerMode:(int)arg1;
-- (void)setMinuteInterval:(int)arg1;
-- (void)setStaggerTimeIntervals:(BOOL)arg1;
+- (int)minute;
+- (int)hour;
 - (void)setHighlightsToday:(BOOL)arg1;
-- (id)dateComponents;
+- (void)setStaggerTimeIntervals:(BOOL)arg1;
 - (void)setDateComponents:(id)arg1;
-- (void)setCountDownDuration:(double)arg1;
+- (id)dateComponents;
+- (id)locale;
 - (int)minuteInterval;
 - (id)maximumDate;
 - (id)minimumDate;
-- (id)timeZone;
-- (id)locale;
-- (int)datePickerMode;
-- (int)hour;
-- (id)date;
+- (double)countDownDuration;
 - (id)calendar;
-- (void)setDate:(id)arg1;
+- (id)_locale;
+- (void)setDate:(id)arg1 animated:(BOOL)arg2;
+- (void)setMaximumDate:(id)arg1;
+- (void)setMinimumDate:(id)arg1;
+- (void)setCountDownDuration:(double)arg1;
+- (int)datePickerMode;
+- (void)setMinuteInterval:(int)arg1;
+- (void)setCalendar:(id)arg1;
+- (void)_setLocale:(id)arg1;
+- (void)_insertPickerView;
+- (float)_contentWidth;
+- (void)setDatePickerMode:(int)arg1;
+- (void)setLocale:(id)arg1;
+- (id)timeZone;
 - (double)timeInterval;
+- (void)setTimeInterval:(double)arg1;
+- (void)awakeFromNib;
+- (void)setTimeZone:(id)arg1;
+- (void)setDate:(id)arg1;
+- (id)date;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_populateArchivedSubviews:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (BOOL)isAccessibilityElement;
 
 @end

@@ -10,8 +10,8 @@
 }
 
 
+- (id)initWithIndexSet:(id)arg1;
 - (id)nextObject;
 - (void)dealloc;
-- (id)initWithIndexSet:(id)arg1;
 
 @end

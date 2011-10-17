@@ -14,22 +14,19 @@
 }
 
 
-- (BOOL)isRotated;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setOrder:(int)arg1;
 - (int)order;
-- (BOOL)isCompoundShape;
 - (BOOL)isBodyZone;
+- (BOOL)isCompoundShape;
 - (void)setIsCompoundShape:(BOOL)arg1;
 - (BOOL)isZone;
-- (void)setNextRegion:(id)arg1;
 - (id)nextRegion;
+- (void)setNextRegion:(id)arg1;
+- (BOOL)isTableCellRegion;
 - (BOOL)isParagraphRegion;
 - (BOOL)isListItemRegion;
 - (BOOL)isTextRegion;
 - (void)setIsTextRegion:(BOOL)arg1;
-- (BOOL)isTableCellRegion;
 - (BOOL)isBoxRegion;
 - (BOOL)isGraphicalRegion;
 - (BOOL)isRowRegion;
@@ -40,5 +37,8 @@
 - (void)accept:(id)arg1;
 - (id)link;
 - (void)setLink:(id)arg1;
+- (BOOL)isRotated;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

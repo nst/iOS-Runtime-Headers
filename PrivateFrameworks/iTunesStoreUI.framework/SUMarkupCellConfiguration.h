@@ -5,11 +5,11 @@
 @interface SUMarkupCellConfiguration : SUItemCellConfiguration  {
 }
 
-+ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 + (id)copyDefaultContext;
++ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
-- (void)reloadImages;
 - (void)reloadLayoutInformation;
 - (void)reloadStrings;
+- (void)reloadImages;
 
 @end

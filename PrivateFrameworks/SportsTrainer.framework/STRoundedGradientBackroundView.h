@@ -11,21 +11,21 @@
     UIGradient *_gradient;
 }
 
-@property(retain) UIColor * borderColor;
-@property(retain) UIColor * bottomColor;
 @property(retain) UIColor * topColor;
+@property(retain) UIColor * bottomColor;
+@property(retain) UIColor * borderColor;
 
 
-- (void)_invalidateGradient;
-- (id)bottomColor;
-- (id)topColor;
-- (id)_gradient;
-- (void)setTopColor:(id)arg1;
-- (void)setBottomColor:(id)arg1;
-- (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)borderColor;
 - (void)setBorderColor:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)bottomColor;
+- (id)topColor;
+- (void)_invalidateGradient;
+- (void)setBottomColor:(id)arg1;
+- (void)setTopColor:(id)arg1;
+- (id)_gradient;
+- (void)dealloc;
 
 @end

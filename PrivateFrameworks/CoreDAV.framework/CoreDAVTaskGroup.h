@@ -14,6 +14,7 @@
     double _timeoutInterval;
     NSMutableSet *_outstandingTasks;
     BOOL _isCancelling;
+    BOOL _isTearingDown;
     <CoreDAVTaskGroupDelegate> *_delegate;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -28,38 +29,37 @@
     NSError *_error;
 }
 
-@property double timeoutInterval;
-@property(readonly) <CoreDAVTaskManager> * taskManager;
-@property(copy) id progressBlock;
-@property(readonly) NSMutableSet * outstandingTasks;
-@property(retain) NSError * error;
 @property <CoreDAVTaskGroupDelegate> * delegate;
+@property double timeoutInterval;
+@property(copy) id progressBlock;
 @property(copy) id completionBlock;
+@property(retain) NSError * error;
+@property(readonly) <CoreDAVTaskManager> * taskManager;
 @property(readonly) <CoreDAVAccountInfoProvider> * accountInfoProvider;
+@property(readonly) NSMutableSet * outstandingTasks;
 
 
-- (void)setCompletionBlock:(id)arg1;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (void)setError:(id)arg1;
+- (id)completionBlock;
+- (id)outstandingTasks;
+- (void)_tearDownAllTasks;
+- (void)finishCoreDAVTaskGroupWithError:(id)arg1;
 - (void)syncAway;
-- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
+- (void)cancelTaskGroup;
+- (void)taskGroupWillCancelWithError:(id)arg1;
 - (void)startTaskGroup;
 - (id)accountInfoProvider;
-- (void)_tearDownAllTasks;
+- (void)bailWithError:(id)arg1;
+- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (id)progressBlock;
 - (void)setProgressBlock:(id)arg1;
-- (id)outstandingTasks;
-- (void)finishCoreDAVTaskGroupWithError:(id)arg1;
-- (void)taskGroupWillCancelWithError:(id)arg1;
-- (void)bailWithError:(id)arg1;
-- (void)cancelTaskGroup;
-- (void)cancelTasks;
-- (id)completionBlock;
-- (id)error;
+- (void)setDelegate:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
 - (double)timeoutInterval;
-- (void)setError:(id)arg1;
+- (void)setCompletionBlock:(id)arg1;
+- (id)delegate;
+- (id)error;
+- (void)dealloc;
 - (id)taskManager;
 
 @end

@@ -17,15 +17,16 @@
 @property(getter=isCancelled,readonly) BOOL cancelled;
 
 
-- (unsigned int)index;
-- (void)cancel;
-- (void)dealloc;
-- (id)description;
-- (unsigned int)count;
-- (id)initWithEntityStreamArray:(id)arg1 queryCriteria:(id)arg2 count:(unsigned int)arg3;
-- (void)writeItemWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2;
 - (void)writeCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2;
-- (void)_writeCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQueryCriteria:(id)arg3;
+- (void)writeItemWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2;
+- (void)_writeCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQueryCriteria:(id)arg3 representativeItemIdentifier:(long long)arg4;
+- (void)writeCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 representativeItemIdentifier:(long long)arg3;
+- (id)initWithEntityStreamArray:(id)arg1 queryCriteria:(id)arg2 count:(unsigned int)arg3;
+- (unsigned int)index;
+- (unsigned int)count;
+- (id)description;
+- (void)cancel;
 - (BOOL)isCancelled;
+- (void)dealloc;
 
 @end

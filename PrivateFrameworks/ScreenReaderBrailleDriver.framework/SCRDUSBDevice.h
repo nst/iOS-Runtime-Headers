@@ -20,11 +20,6 @@
 }
 
 
-- (BOOL)setInterface:(unsigned char)arg1;
-- (BOOL)reset;
-- (BOOL)close;
-- (void)dealloc;
-- (BOOL)isOpen;
 - (BOOL)openWithSeize:(BOOL)arg1;
 - (long)vendor;
 - (long)product;
@@ -36,14 +31,19 @@
 - (unsigned long)readData:(void*)arg1 withSize:(unsigned long)arg2 fromPipe:(unsigned char)arg3 withTimeout:(double)arg4;
 - (BOOL)readData:(void*)arg1 withSize:(unsigned int*)arg2 fromPipe:(unsigned char)arg3;
 - (unsigned long)readData:(void*)arg1 withSize:(unsigned long)arg2 fromBulkPipe:(unsigned char)arg3 withNoDataTimeout:(unsigned long)arg4 andCompletionTimeOut:(unsigned long)arg5;
-- (unsigned long)_transferData:(void*)arg1 withSize:(unsigned long)arg2 toPipe:(unsigned char)arg3 withTimeout:(double)arg4 withFunction:(int (*)())arg5;
 - (BOOL)getInformationForPipe:(unsigned char)arg1 direction:(char *)arg2 number:(char *)arg3 transferType:(char *)arg4 maxPacketSize:(unsigned short*)arg5 interval:(char *)arg6;
-- (void)registerForDisconnectNotifications:(BOOL)arg1;
 - (void)abortPipe:(unsigned char)arg1;
 - (BOOL)clearPipe:(unsigned char)arg1 bothEnds:(BOOL)arg2;
-- (BOOL)open;
-- (BOOL)setConfiguration:(unsigned char)arg1;
-- (BOOL)isConfigured;
+- (void)registerForDisconnectNotifications:(BOOL)arg1;
+- (unsigned long)_transferData:(void*)arg1 withSize:(unsigned long)arg2 toPipe:(unsigned char)arg3 withTimeout:(double)arg4 withFunction:(int (*)())arg5;
 - (id)initWithIOObject:(unsigned int)arg1;
+- (BOOL)isConfigured;
+- (BOOL)isOpen;
+- (BOOL)open;
+- (BOOL)reset;
+- (BOOL)close;
+- (BOOL)setInterface:(unsigned char)arg1;
+- (void)dealloc;
+- (BOOL)setConfiguration:(unsigned char)arg1;
 
 @end

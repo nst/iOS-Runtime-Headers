@@ -5,30 +5,29 @@
 @class NSMutableArray;
 
 @interface GMMDirectionsIconResponse : PBCodable  {
-    int _iconVersion;
     BOOL _hasIconVersion;
+    int _iconVersion;
     NSMutableArray *_iconDefinitions;
 }
 
-@property(readonly) int iconDefinitionsCount;
-@property(retain) NSMutableArray * iconDefinitions;
-@property(readonly) BOOL hasIconVersion;
+@property BOOL hasIconVersion;
 @property int iconVersion;
+@property(retain) NSMutableArray * iconDefinitions;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (int)iconDefinitionsCount;
-- (void)setIconDefinition:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)iconDefinitionAtIndex:(unsigned int)arg1;
-- (void)addIconDefinition:(id)arg1;
-- (void)setIconDefinitions:(id)arg1;
-- (BOOL)hasIconVersion;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (id)iconDefinitions;
+- (void)setHasIconVersion:(BOOL)arg1;
+- (BOOL)hasIconVersion;
+- (id)iconDefinitionAtIndex:(unsigned int)arg1;
+- (unsigned int)iconDefinitionsCount;
 - (int)iconVersion;
 - (void)setIconVersion:(int)arg1;
-- (id)iconDefinitions;
+- (void)addIconDefinition:(id)arg1;
+- (void)setIconDefinitions:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

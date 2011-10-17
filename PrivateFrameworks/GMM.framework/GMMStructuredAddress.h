@@ -15,48 +15,47 @@
 }
 
 @property(readonly) BOOL hasThoroughfare;
+@property(retain) NSString * thoroughfare;
 @property(readonly) BOOL hasDependentLocality;
+@property(retain) NSString * dependentLocality;
 @property(readonly) BOOL hasLocality;
+@property(retain) NSString * locality;
 @property(readonly) BOOL hasRegion;
+@property(retain) NSString * region;
 @property(readonly) BOOL hasPostalCode;
+@property(retain) NSString * postalCode;
 @property(readonly) BOOL hasCountryCode;
+@property(retain) NSString * countryCode;
 @property(readonly) BOOL hasCountryName;
 @property(retain) NSString * countryName;
-@property(retain) NSString * countryCode;
-@property(retain) NSString * postalCode;
-@property(retain) NSString * region;
-@property(retain) NSString * locality;
-@property(retain) NSString * dependentLocality;
-@property(retain) NSString * thoroughfare;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)description;
 - (BOOL)readFrom:(id)arg1;
-- (BOOL)hasThoroughfare;
+- (BOOL)hasCountryName;
 - (BOOL)hasPostalCode;
 - (BOOL)hasRegion;
 - (BOOL)hasLocality;
-- (BOOL)hasCountryCode;
-- (BOOL)hasCountryName;
 - (BOOL)hasDependentLocality;
-- (void)writeTo:(id)arg1;
-- (id)dependentLocality;
-- (id)countryName;
-- (id)locality;
-- (id)postalCode;
-- (id)countryCode;
-- (void)setThoroughfare:(id)arg1;
-- (void)setDependentLocality:(id)arg1;
-- (void)setLocality:(id)arg1;
+- (BOOL)hasThoroughfare;
 - (void)setPostalCode:(id)arg1;
+- (void)setLocality:(id)arg1;
+- (void)setDependentLocality:(id)arg1;
+- (void)setThoroughfare:(id)arg1;
+- (id)dependentLocality;
+- (id)countryCode;
+- (BOOL)hasCountryCode;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
 - (void)setCountryCode:(id)arg1;
-- (void)setCountryName:(id)arg1;
+- (id)postalCode;
+- (id)locality;
 - (id)thoroughfare;
-- (void)setRegion:(id)arg1;
 - (id)region;
+- (void)setRegion:(id)arg1;
+- (id)description;
+- (id)description;
+- (void)dealloc;
+- (void)setCountryName:(id)arg1;
+- (id)countryName;
 
 @end

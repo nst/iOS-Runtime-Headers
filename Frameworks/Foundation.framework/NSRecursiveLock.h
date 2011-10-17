@@ -8,16 +8,16 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)lock;
 - (void)finalize;
-- (void)unlock;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)tryLock;
 - (BOOL)isLocking;
 - (BOOL)lockBeforeDate:(id)arg1;
+- (BOOL)tryLock;
+- (void)unlock;
+- (void)lock;
+- (id)name;
+- (void)setName:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

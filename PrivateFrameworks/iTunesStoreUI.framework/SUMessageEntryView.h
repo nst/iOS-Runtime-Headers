@@ -18,45 +18,45 @@
     SUMessageTextContentView *_textContentView;
 }
 
+@property <SUMessageEntryViewDelegate> * delegate;
 @property(getter=isPhotoButtonEnabled) BOOL photoButtonEnabled;
 @property(getter=isPhotoButtonHidden) BOOL photoButtonHidden;
 @property(getter=isSendButtonEnabled) BOOL sendButtonEnabled;
 @property(copy) NSString * sendButtonTitle;
-@property <SUMessageEntryViewDelegate> * delegate;
 
 
-- (BOOL)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)textContentView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)textContentViewDidChange:(id)arg1;
-- (void)layoutSubviews;
-- (void)sizeToFit;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
+- (void)textContentViewDidChange:(id)arg1;
+- (void)textContentView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
+- (BOOL)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)sizeToFit;
 - (id)delegate;
-- (void)focusMessageField;
-- (void)setPhotoButtonEnabled:(BOOL)arg1;
-- (void)setSendButtonEnabled:(BOOL)arg1;
-- (void)setSendButtonTitle:(id)arg1;
-- (void)messageTextContentView:(id)arg1 didRemoveImageWithIdentifier:(id)arg2;
-- (BOOL)isPhotoButtonEnabled;
-- (void)clearMessage;
-- (id)copyMessage;
-- (id)copyMediaParts;
-- (void)insertMessagePart:(id)arg1;
-- (BOOL)isPhotoButtonHidden;
-- (BOOL)isSendButtonEnabled;
-- (id)sendButtonTitle;
-- (void)setPhotoButtonHidden:(BOOL)arg1;
-- (void)messageTextContentView:(id)arg1 didInsertImageWithIdentifier:(id)arg2;
-- (id)_copyMessageParts;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (BOOL)_isImageIdentifierDeleted:(int)arg1;
-- (id)_newHTMLStringForString:(id)arg1;
-- (id)_newPhotoButton;
-- (id)_newScrollView;
-- (id)_newSendButton;
-- (id)_newTextContentView;
+- (void)setSendButtonTitle:(id)arg1;
+- (void)setSendButtonEnabled:(BOOL)arg1;
+- (void)setPhotoButtonHidden:(BOOL)arg1;
+- (void)setPhotoButtonEnabled:(BOOL)arg1;
+- (id)sendButtonTitle;
+- (BOOL)isSendButtonEnabled;
+- (BOOL)isPhotoButtonHidden;
+- (BOOL)isPhotoButtonEnabled;
+- (void)insertMessagePart:(id)arg1;
+- (void)focusMessageField;
+- (id)copyMediaParts;
+- (id)copyMessage;
+- (void)clearMessage;
+- (void)messageTextContentView:(id)arg1 didRemoveImageWithIdentifier:(id)arg2;
+- (void)messageTextContentView:(id)arg1 didInsertImageWithIdentifier:(id)arg2;
 - (id)_newTextMessagePartFromNode:(id)arg1 toNode:(id)arg2 withBodyNode:(id)arg3;
 - (void)_removePartsForDeletedImages;
+- (id)_newHTMLStringForString:(id)arg1;
+- (id)_copyMessageParts;
+- (id)_newTextContentView;
+- (id)_newSendButton;
+- (id)_newScrollView;
+- (id)_newPhotoButton;
 
 @end

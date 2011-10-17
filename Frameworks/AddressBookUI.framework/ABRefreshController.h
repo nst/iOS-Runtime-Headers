@@ -18,24 +18,30 @@
 
 - (id)init;
 - (void)dealloc;
-- (void)_scheduleRefreshTimerIfNeeded;
-- (void)_invalidateTimer;
-- (void)_proceedWithRefresh:(id)arg1;
 - (void)_setAccountsManager:(id)arg1;
-- (void)accountsChanged;
 - (void)_setRefreshDelay:(double)arg1;
-- (void)_addWrapper:(id)arg1 withObserver:(void*)arg2 toDictionary:(id*)arg3;
-- (void)scheduleRefreshIfNeededForGroupsInGroupWrapper:(id)arg1 withObserver:(void*)arg2;
+- (void)_invalidateTimer;
 - (void)_postponeAllRefreshes;
 - (void)_resumeAllRefreshes;
-- (void)_actuallyRefreshOrphanedAccountsWithAddressBook:(void*)arg1;
-- (void)startRefreshingOrphanedAccountsWithAddressBook:(void*)arg1;
-- (BOOL)groupWrapperNeedsRefresh:(id)arg1;
-- (BOOL)accountGroupListNeedsRefresh:(id)arg1;
+- (void)_proceedWithRefresh:(id)arg1;
+- (void)_scheduleRefreshTimerIfNeeded;
 - (void)refreshGroupWrapper:(id)arg1;
 - (void)refreshAccountGroupList:(id)arg1;
-- (void)cancelAllScheduledRefreshesWithObserver:(void*)arg1;
+- (void)accountsChanged;
+- (BOOL)groupWrapperNeedsRefresh:(id)arg1;
+- (void)_addWrapper:(id)arg1 withObserver:(void*)arg2 toDictionary:(id*)arg3;
+- (BOOL)accountGroupListNeedsRefresh:(id)arg1;
+- (void)_actuallyRefreshOrphanedAccountsWithAddressBook:(void*)arg1;
+- (void)startRefreshingOrphanedAccountsWithAddressBook:(void*)arg1 afterDelay:(BOOL)arg2;
+- (void)_refreshAccount:(id)arg1 isUserRequested:(BOOL)arg2;
+- (void)_refreshAccountGroupList:(id)arg1 isUserRequested:(BOOL)arg2;
+- (id)_allContactsSyncingAccounts;
+- (void)scheduleRefreshIfNeededForGroupsInGroupWrapper:(id)arg1 withObserver:(void*)arg2;
 - (id)accountsManager;
+- (BOOL)hasRefreshableAccounts;
+- (void)refreshEverythingNow;
+- (void)cancelAllScheduledRefreshesWithObserver:(void*)arg1;
 - (void)scheduleRefreshIfNeededForGroupWrapper:(id)arg1 withObserver:(void*)arg2;
+- (void)startRefreshingOrphanedAccountsWithAddressBook:(void*)arg1;
 
 @end

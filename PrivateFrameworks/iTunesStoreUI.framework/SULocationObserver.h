@@ -12,28 +12,28 @@
     ISOperation *_operation;
 }
 
-@property(getter=isObservingLocation,readonly) BOOL observingLocation;
 @property(retain) NSArray * locationSections;
+@property(getter=isObservingLocation,readonly) BOOL observingLocation;
 
 
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
+- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 - (id)init;
 - (void)dealloc;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
-- (void)beginObservingLocation;
-- (void)endObservingLocation;
-- (void)endObserveringLocation;
 - (BOOL)isObservingLocation;
-- (void)_cancelOperation;
-- (void)_checkIfLocationsAreEnabled;
-- (void)_handleEnabledCheckResponse:(id)arg1;
-- (void)_handleLoadSectionsReseponse:(id)arg1;
-- (void)_loadSectionsForLocation:(id)arg1;
+- (void)endObserveringLocation;
+- (void)beginObservingLocation;
+- (void)setLocationSections:(id)arg1;
 - (void)_registerForLocationCallbacks;
 - (void)_setDistanceFilter:(int)arg1;
+- (void)_handleLoadSectionsReseponse:(id)arg1;
+- (void)_handleEnabledCheckResponse:(id)arg1;
+- (void)_loadSectionsForLocation:(id)arg1;
+- (void)endObservingLocation;
+- (void)_checkIfLocationsAreEnabled;
+- (void)_cancelOperation;
 - (void)_unregisterForLocationCallbacks;
-- (id)locationSections;
-- (void)setLocationSections:(id)arg1;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operationFinished:(id)arg1;
+- (id)locationSections;
 
 @end

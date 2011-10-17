@@ -10,12 +10,12 @@
 }
 
 
-- (float)height;
+- (unsigned int)cellCount;
 - (id)cellAtIndex:(unsigned int)arg1;
+- (id)addCell;
+- (void)setHeight:(float)arg1;
+- (float)height;
 - (id)init;
 - (void)dealloc;
-- (unsigned int)cellCount;
-- (void)setHeight:(float)arg1;
-- (id)addCell;
 
 @end

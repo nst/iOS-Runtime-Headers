@@ -8,30 +8,30 @@
     NSDictionary *_constraints;
 }
 
-@property(retain) NSString * constraintsPath;
 @property(retain) NSNumber * type;
+@property(retain) NSString * constraintsPath;
+@property(retain) NSString * accountIdentifier;
+@property(retain) NSSet * stores;
+@property(retain) NoteStoreObject * defaultStore;
+@property(retain) NSString * name;
 @property int accountType;
 @property(retain) NSString * pathToConstraintsPlist;
 @property(retain) NSDictionary * constraints;
-@property(retain) NSString * name;
-@property(retain) NoteStoreObject * defaultStore;
-@property(retain) NSSet * stores;
-@property(retain) NSString * accountIdentifier;
 
 
-- (void)setPathToConstraintsPlist:(id)arg1;
-- (id)pathToConstraintsPlist;
-- (id)storeForExternalId:(id)arg1;
-- (int)accountType;
-- (void)setAccountType:(int)arg1;
-- (void)dealloc;
-- (void)didTurnIntoFault;
 - (BOOL)validateDefaultStore:(id*)arg1 error:(id*)arg2;
 - (void)setConstraints:(id)arg1;
 - (id)basicAccountIdentifier;
-- (id)predicateForNotes;
-- (id)collectionInfo;
 - (BOOL)shouldMarkNotesAsDeleted;
+- (id)collectionInfo;
+- (id)predicateForNotes;
+- (void)setAccountType:(int)arg1;
+- (void)didTurnIntoFault;
 - (id)constraints;
+- (void).cxx_destruct;
+- (int)accountType;
+- (void)setPathToConstraintsPlist:(id)arg1;
+- (id)pathToConstraintsPlist;
+- (id)storeForExternalId:(id)arg1;
 
 @end

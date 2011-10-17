@@ -11,42 +11,45 @@
 }
 
 @property(retain) EKSource * source;
-@property(copy,readonly) NSString * title;
-@property(copy,readonly) NSString * typeTitle;
-@property(retain,readonly) NSArray * calendarInfos;
-@property(copy,readonly) NSSet * calendarSet;
-@property(copy,readonly) NSSet * selectedCalendarSet;
+@property BOOL selected;
+@property(readonly) NSString * title;
+@property(readonly) NSString * typeTitle;
+@property(readonly) NSArray * calendarInfos;
+@property(readonly) NSSet * calendarSet;
+@property(readonly) NSSet * selectedCalendarSet;
 @property(readonly) int numCalendars;
 @property(readonly) int numSelectedCalendars;
+@property(readonly) BOOL showAddCalendarButton;
 @property(readonly) BOOL showCalendarNameIfSolitary;
 @property(readonly) int sortOrder;
 @property(readonly) BOOL isSubscribed;
-@property BOOL selected;
 
 
-- (BOOL)selected;
-- (id)source;
+- (BOOL)isSubscribed;
 - (void)setSource:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (id)source;
+- (BOOL)selected;
 - (void)selectAll;
+- (void)setSelected:(BOOL)arg1;
 - (id)title;
+- (int)sortOrder;
+- (id)copyCalendars;
+- (id)calendarAtIndex:(int)arg1;
+- (id)typeTitle;
+- (id)selectedCalendarSet;
+- (BOOL)showCalendarNameIfSolitary;
+- (void)selectNone;
+- (id)titleForBeginningOfSentence:(BOOL)arg1;
+- (void)insertCalendarInfo:(id)arg1;
+- (int)numCalendars;
+- (int)numSelectedCalendars;
+- (id)calendarSet;
+- (id)initWithSource:(id)arg1;
+- (BOOL)showAddCalendarButton;
+- (id)calendarInfos;
+- (id)description;
 - (id)init;
 - (void)dealloc;
 - (void)removeCalendar:(id)arg1;
-- (int)sortOrder;
-- (BOOL)showCalendarNameIfSolitary;
-- (id)initWithSource:(id)arg1;
-- (void)insertCalendarInfo:(id)arg1;
-- (id)titleForBeginningOfSentence:(BOOL)arg1;
-- (id)typeTitle;
-- (id)calendarInfos;
-- (int)numCalendars;
-- (int)numSelectedCalendars;
-- (id)calendarAtIndex:(int)arg1;
-- (id)copyCalendars;
-- (id)calendarSet;
-- (id)selectedCalendarSet;
-- (void)selectNone;
-- (BOOL)isSubscribed;
 
 @end

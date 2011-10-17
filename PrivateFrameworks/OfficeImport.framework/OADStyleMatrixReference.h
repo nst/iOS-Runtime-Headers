@@ -11,15 +11,15 @@
 
 + (id)styleMatrixReferenceWithMatrixIndex:(unsigned long)arg1 color:(id)arg2;
 
-- (void)setColor:(id)arg1;
-- (id)color;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setMatrixIndex:(unsigned long)arg1;
 - (void)applyToStrokeInProperties:(id)arg1 styleMatrix:(id)arg2;
 - (void)applyToFillInProperties:(id)arg1 styleMatrix:(id)arg2;
 - (void)applyToEffectsInProperties:(id)arg1 styleMatrix:(id)arg2;
 - (unsigned long)matrixIndex;
 - (id)initWithMatrixIndex:(unsigned long)arg1 color:(id)arg2;
+- (id)color;
+- (void)setColor:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

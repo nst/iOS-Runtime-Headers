@@ -16,11 +16,11 @@
 
 
 - (void)_processQueue;
-- (BOOL)isValid;
-- (void)start;
-- (id)initWithTarget:(id)arg1;
-- (void)invalidate;
-- (void)dealloc;
 - (void)enqueueEvent:(id)arg1;
+- (void)start;
+- (void)invalidate;
+- (id)initWithTarget:(id)arg1;
+- (BOOL)isValid;
+- (void)dealloc;
 
 @end

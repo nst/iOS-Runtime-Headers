@@ -18,18 +18,10 @@
     id mObject;
 }
 
-+ (BOOL)isProgIDSupported:(id)arg1;
 + (BOOL)isCLSIDSupported:(id)arg1;
++ (BOOL)isProgIDSupported:(id)arg1;
 
-- (void)setObject:(id)arg1;
-- (id)object;
-- (id)init;
-- (void)dealloc;
-- (void)setMacClipboardFormat:(id)arg1;
-- (void)setUnicodeClipboardFormatName:(id)arg1;
-- (void)setUnicodeProgID:(id)arg1;
 - (BOOL)iconic;
-- (void)setIconic:(BOOL)arg1;
 - (id)CLSID;
 - (void)setCLSID:(id)arg1;
 - (id)ansiUserType;
@@ -39,11 +31,19 @@
 - (unsigned long)winClipboardFormat;
 - (void)setWinClipboardFormat:(unsigned long)arg1;
 - (id)macClipboardFormat;
+- (void)setMacClipboardFormat:(id)arg1;
 - (id)ansiProgID;
 - (void)setAnsiProgID:(id)arg1;
 - (id)unicodeUserType;
 - (void)setUnicodeUserType:(id)arg1;
 - (id)unicodeClipboardFormatName;
+- (void)setUnicodeClipboardFormatName:(id)arg1;
 - (id)unicodeProgID;
+- (void)setUnicodeProgID:(id)arg1;
+- (void)setIconic:(BOOL)arg1;
+- (void)setObject:(id)arg1;
+- (id)object;
+- (id)init;
+- (void)dealloc;
 
 @end

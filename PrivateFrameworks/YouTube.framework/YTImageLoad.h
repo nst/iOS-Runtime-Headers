@@ -4,7 +4,7 @@
 
 @class NSMutableData, NSString, NSURLConnection, NSURL;
 
-@interface YTImageLoad : NSObject  {
+@interface YTImageLoad : NSObject <NSURLConnectionDelegate> {
     NSURL *_URL;
     NSURLConnection *_connection;
     NSMutableData *_imageData;
@@ -12,12 +12,12 @@
 }
 
 
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)start;
-- (void)dealloc;
-- (void)_loadFinished;
 - (void)_createImage;
+- (void)_loadFinished;
+- (void)start;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)dealloc;
 
 @end

@@ -10,6 +10,7 @@
     EKEventStore *_destStore;
     NSMutableArray *_importedEvents;
     NSMutableArray *_unimportedEvents;
+    unsigned int _options;
 }
 
 @property(readonly) EKEventStore * eventStore;
@@ -22,15 +23,15 @@
 
 
 - (id)eventStore;
-- (void)dealloc;
 - (id)allEvents;
 - (int)importedEventCount;
-- (id)importedEvents;
-- (id)unimportedEvents;
-- (id)initWithICSData:(id)arg1 eventStore:(id)arg2;
 - (id)importEvent:(id)arg1 intoCalendar:(id)arg2;
+- (id)importAllIntoCalendar:(id)arg1;
+- (id)unimportedEvents;
+- (id)importedEvents;
 - (int)unimportedEventCount;
 - (int)totalEventCount;
-- (id)importAllIntoCalendar:(id)arg1;
+- (id)initWithICSData:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
+- (void)dealloc;
 
 @end

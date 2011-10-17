@@ -9,23 +9,23 @@
     NSSet *_properties;
 }
 
-@property(copy) NSSet * properties;
 @property(copy) NSString * searchString;
+@property(copy) NSSet * properties;
 
 + (id)predicateWithSearchString:(id)arg1 forProperties:(id)arg2;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)searchString;
 - (id)_ML3PredicateForEntityClass:(Class)arg1;
-- (id)ML3PredicateForTrack;
 - (id)ML3PredicateForContainer;
+- (id)ML3PredicateForTrack;
+- (id)searchString;
 - (void)setSearchString:(id)arg1;
-- (void)setProperties:(id)arg1;
 - (id)properties;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setProperties:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 
 @end

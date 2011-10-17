@@ -2,56 +2,79 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSString, NSData;
+@class NSString, NSData, NSDictionary, NSURL;
 
-@interface CKMediaObject : NSObject  {
+@interface CKMediaObject : NSObject <QLPreviewItem> {
     NSString *_filename;
+    NSString *_transferGUID;
     NSData *_data;
+    BOOL _dataIsPropertyListData;
     NSString *_mimeType;
     NSString *_exportedFilename;
     double _duration;
 }
 
+@property(retain,readonly) NSString * displayFilename;
+@property(copy) NSDictionary * SMSComposePropertyList;
+@property(readonly) NSString * previewItemTitle;
+@property(readonly) NSURL * previewItemURL;
 @property double duration;
-@property(readonly) NSString * exportedFilename;
-@property(readonly) NSString * mimeType;
+@property(copy) NSString * exportedFilename;
+@property(copy) NSString * mimeType;
+@property(copy) NSString * transferGUID;
 @property(readonly) NSString * filename;
 @property(readonly) NSData * data;
 
-+ (BOOL)supportsMIMEType:(id)arg1;
-+ (id)fileExtensionForMIMEType:(id)arg1;
-+ (id)mimeTypesToFileExtensions;
-+ (id)supportedMIMETypes;
++ (id)mimeTypesAllowedForMMS;
 + (id)previewDataMIMEType;
 + (struct CGSize { float x1; float x2; })transcodeMaxSize;
++ (id)mimeTypesToFileExtensions;
++ (id)supportedMIMETypes;
++ (BOOL)supportsMIMEType:(id)arg1;
++ (id)fileExtensionForMIMEType:(id)arg1;
 
-- (double)duration;
-- (id)mimeType;
-- (id)data;
-- (void)dealloc;
-- (void)setDuration:(double)arg1;
 - (unsigned long long)sizeInBytes;
+- (id)data;
+- (double)duration;
+- (void)setDuration:(double)arg1;
+- (id)filename;
 - (id)dataRepresentation;
-- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
-- (id)filenameForMedia;
+- (id)previewItemURL;
+- (id)mimeType;
+- (void)cleanupAfterTranscode;
+- (id)displayFilename;
 - (BOOL)shouldTranscodeForMMS;
 - (id)newTranscodingForMMSWithMaxByteLength:(int)arg1;
-- (void)cleanupAfterTranscode;
-- (id)initWithData:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3;
-- (id)initWithFilename:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3;
-- (float)balloonHeightWithPreviewData:(id)arg1;
-- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
-- (BOOL)shouldGeneratePreviewInBackground;
-- (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
-- (void)copyToPasteboard:(id)arg1;
+- (id)SMSComposePropertyList;
+- (void)setSMSComposePropertyList:(id)arg1;
 - (id)sizeInBytesString;
 - (void)logMediaDiagnotics;
-- (id)dataForMedia;
-- (id)dataFileExtensionForMedia;
 - (id)optionsForMedia;
+- (double)transcodeStartTime;
+- (double)transcodeEndTime;
+- (double)transcodeDuration;
+- (void)setExportedFilename:(id)arg1;
+- (id)transferGUID;
+- (void)setTransferGUID:(id)arg1;
+- (id)_savedPreviewPathForOrientation:(int)arg1;
+- (BOOL)shouldGeneratePreviewInBackground;
+- (id)filenameForMedia;
+- (id)dataFileExtensionForMedia;
 - (id)previewTitle;
+- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
+- (float)balloonHeightWithPreviewData:(id)arg1;
+- (void)savePreviewData:(id)arg1 forOrientation:(int)arg2;
+- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
+- (id)savedPreviewDataForOrientation:(int)arg1;
+- (void)copyToPasteboard:(id)arg1;
+- (void)setMimeType:(id)arg1;
+- (id)initWithData:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3;
+- (id)initWithFilename:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3;
 - (id)exportedFilename;
-- (id)filename;
+- (id)dataForMedia;
+- (BOOL)canBeQuickLooked;
+- (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
 - (int)mediaType;
+- (void)dealloc;
 
 @end

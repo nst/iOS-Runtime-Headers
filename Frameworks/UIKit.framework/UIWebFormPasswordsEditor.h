@@ -13,14 +13,14 @@
 
 + (id)sharedPasswordsEditor;
 
-- (id)protectionSpaceForCredential:(id)arg1;
-- (id)addressStringForCredential:(id)arg1;
-- (void)resetCredentials;
-- (void)credentialsChanged:(id)arg1;
-- (void)startMonitoringCredentials;
-- (void)stopMonitoringCredentials;
-- (void)removeSelectedItems:(id)arg1;
 - (void)removeAll;
+- (void)removeSelectedItems:(id)arg1;
+- (id)addressStringForCredential:(id)arg1;
+- (void)stopMonitoringCredentials;
+- (void)startMonitoringCredentials;
+- (void)credentialsChanged:(id)arg1;
+- (void)resetCredentials;
+- (id)protectionSpaceForCredential:(id)arg1;
 - (void)dealloc;
 
 @end

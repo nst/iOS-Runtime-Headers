@@ -9,8 +9,8 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithProperties:(id)arg1 inScope:(id)arg2;
 - (id)generateSQLStringInContext:(id)arg1;
+- (void)dealloc;
 
 @end

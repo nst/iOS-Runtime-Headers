@@ -12,40 +12,38 @@
     NSData *_payload;
 }
 
-@property(retain) NSData * payload;
-@property(retain) NSMutableArray * extraChildItems;
-@property(retain) NSMutableSet * attributes;
-@property(retain) NSString * nameSpace;
 @property(retain) NSString * name;
+@property(retain) NSString * nameSpace;
+@property(retain) NSMutableSet * attributes;
+@property(retain) NSMutableArray * extraChildItems;
+@property(retain) NSData * payload;
 
 
+- (void)setExtraChildItems:(id)arg1;
+- (id)generateXMLString;
+- (void)setPayloadAsString:(id)arg1;
+- (void)parserSuggestsBaseURL:(id)arg1;
+- (void)parserFoundUnrecognizedElement:(id)arg1;
+- (void)parserFoundPayload:(id)arg1;
+- (void)parserFoundAttributes:(id)arg1;
+- (id)childrenToWrite;
+- (id)hashString;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (void)setNameSpace:(id)arg1;
+- (id)nameSpace;
+- (id)extraChildItems;
+- (id)payloadAsString;
+- (void)write:(id)arg1;
+- (void)setAttributes:(id)arg1;
+- (id)attributes;
+- (id)name;
 - (id)payload;
 - (void)setPayload:(id)arg1;
-- (id)attributes;
-- (void)setAttributes:(id)arg1;
 - (void)setName:(id)arg1;
-- (id)name;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)description;
 - (BOOL)validate;
-- (void)write:(id)arg1;
-- (void)parserFoundAttributes:(id)arg1;
-- (void)setPayloadAsString:(id)arg1;
-- (id)generateXMLString;
-- (id)generateItemTreeString;
-- (id)generateStandardItemStringWithDepth:(unsigned int)arg1;
-- (void)setExtraChildItems:(id)arg1;
-- (void)parserSuggestsBaseURL:(id)arg1;
-- (void)parserFoundPayload:(id)arg1;
-- (void)parserFoundUnrecognizedElement:(id)arg1;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (id)hashString;
-- (id)nameSpace;
-- (id)copyParseRules;
-- (void)generateItemTreeString:(id)arg1 withDepth:(unsigned int)arg2;
-- (void)setNameSpace:(id)arg1;
-- (id)payloadAsString;
-- (id)extraChildItems;
 
 @end

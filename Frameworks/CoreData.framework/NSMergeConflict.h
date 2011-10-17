@@ -22,15 +22,16 @@
 
 
 - (id)valueForKey:(id)arg1;
-- (void)dealloc;
-- (id)objectForKey:(id)arg1;
-- (id)description;
-- (id)sourceObject;
-- (id)objectSnapshot;
-- (unsigned int)newVersionNumber;
 - (id)initWithSource:(id)arg1 newVersion:(unsigned int)arg2 oldVersion:(unsigned int)arg3 cachedSnapshot:(id)arg4 persistedSnapshot:(id)arg5;
 - (unsigned int)oldVersionNumber;
+- (unsigned int)newVersionNumber;
 - (id)persistedSnapshot;
 - (id)cachedSnapshot;
+- (id)objectSnapshot;
+- (id)sourceObject;
+- (id)ancestorSnapshot;
+- (id)description;
+- (id)objectForKey:(id)arg1;
+- (void)dealloc;
 
 @end

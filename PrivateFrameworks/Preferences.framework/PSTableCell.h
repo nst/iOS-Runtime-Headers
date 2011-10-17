@@ -2,66 +2,44 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier, UIView;
+@class UIView;
 
 @interface PSTableCell : PreferencesTableCell  {
-    PSSpecifier *_userInfo;
-    int _type;
     UIView *_topEtchLine;
     UIView *_bottomEtchLine;
     BOOL _etch;
 }
 
-@property int type;
-
 + (int)cellTypeFromString:(id)arg1;
 + (id)_cellForSpecifier:(id)arg1 defaultClass:(Class)arg2 type:(int)arg3;
-+ (void)refreshSwitchCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
-+ (id)switchCellWithSpecifier:(id)arg1;
-+ (id)segmentCellWithSpecifier:(id)arg1;
-+ (void)refreshSliderCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
-+ (id)sliderCellWithSpecifier:(id)arg1;
-+ (void)refreshTextFieldCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
 + (id)textFieldCellWithSpecifier:(id)arg1;
++ (id)switchCellWithSpecifier:(id)arg1;
++ (id)sliderCellWithSpecifier:(id)arg1;
++ (id)segmentCellWithSpecifier:(id)arg1;
 + (id)textViewCellWithSpecifier:(id)arg1;
++ (id)spinnerCellWithSpecifier:(id)arg1;
 + (id)groupHeaderCellWithSpecifier:(id)arg1;
-+ (id)staticTextCellWithSpecifier:(id)arg1;
++ (id)topEtchLineView;
++ (id)bottomEtchLineView;
 + (void)refreshCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
++ (void)refreshSwitchCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
++ (void)refreshSliderCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
++ (void)refreshTextFieldCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
 + (id)cellWithSpecifier:(id)arg1;
-+ (id)NewTopEtchLineView;
-+ (id)NewBottomEtchLineView;
-+ (void)_setAccessibilityData:(id)arg1 onCell:(id)arg2;
-+ (void)_initializeSafeCategory;
 
-- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (BOOL)canReload;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)_updateEtchState:(BOOL)arg1;
 - (void)setIcon:(id)arg1;
-- (void)setUserInfo:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)_contentString;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (int)type;
-- (void)setType:(int)arg1;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)scriptingInfoWithChildren;
+- (id)_automationID;
 - (id)titleTextLabel;
 - (void)layoutSubviews;
-- (id)userInfo;
-- (id)_automationID;
-- (void)willMoveToSuperview:(id)arg1;
-- (id)scriptingInfoWithChildren;
 - (void)dealloc;
-- (void)_updateEtchState:(BOOL)arg1;
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (struct CGPoint { float x1; float x2; })_accessibilityMaxScrubberPosition;
-- (struct CGPoint { float x1; float x2; })_accessibilityMinScrubberPosition;
-- (id)_accessibilityUserTestingChildren;
-- (id)accessibilityLabel;
-- (void)accessibilityDecrement;
-- (void)accessibilityIncrement;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityHint;
-- (id)accessibilityValue;
+- (BOOL)canReload;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
 
 @end

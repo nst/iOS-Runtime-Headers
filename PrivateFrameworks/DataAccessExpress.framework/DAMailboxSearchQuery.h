@@ -15,14 +15,14 @@
     BOOL _rebuildResults;
 }
 
-@property BOOL rebuildResults;
-@property BOOL deepTraversal;
-@property int MIMESupport;
-@property(retain) NSDate * priorToDate;
-@property BOOL allOrNone;
-@property long long truncationSize;
-@property int bodyType;
 @property(retain) NSString * collectionID;
+@property int bodyType;
+@property long long truncationSize;
+@property BOOL allOrNone;
+@property(retain) NSDate * priorToDate;
+@property int MIMESupport;
+@property BOOL deepTraversal;
+@property BOOL rebuildResults;
 
 + (id)mailboxSearchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
 
@@ -30,20 +30,21 @@
 - (void)setCollectionID:(id)arg1;
 - (void)setMIMESupport:(int)arg1;
 - (void)setTruncationSize:(long long)arg1;
-- (void)setRebuildResults:(BOOL)arg1;
+- (void)setPriorToDate:(id)arg1;
 - (void)setDeepTraversal:(BOOL)arg1;
+- (void)setRebuildResults:(BOOL)arg1;
 - (void)setAllOrNone:(BOOL)arg1;
+- (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
 - (id)dictionaryRepresentation;
 - (void)dealloc;
-- (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
-- (int)bodyType;
-- (void)setPriorToDate:(id)arg1;
-- (id)collectionID;
-- (id)priorToDate;
-- (long long)truncationSize;
-- (BOOL)allOrNone;
-- (BOOL)deepTraversal;
+- (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
 - (BOOL)rebuildResults;
+- (BOOL)deepTraversal;
 - (int)MIMESupport;
+- (BOOL)allOrNone;
+- (long long)truncationSize;
+- (int)bodyType;
+- (id)priorToDate;
+- (id)collectionID;
 
 @end

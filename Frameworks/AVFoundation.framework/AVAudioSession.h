@@ -8,6 +8,7 @@
     void *_impl;
 }
 
+@property(readonly) NSString * mode;
 @property(readonly) int currentHardwareOutputNumberOfChannels;
 @property(readonly) int currentHardwareInputNumberOfChannels;
 @property(readonly) double preferredIOBufferDuration;
@@ -19,9 +20,10 @@
 
 + (id)sharedInstance;
 
-- (id)category;
 - (void)setDelegate:(id)arg1;
+- (id)mode;
 - (id)delegate;
+- (id)category;
 - (BOOL)setCategory:(id)arg1 error:(id*)arg2;
 - (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
 - (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
@@ -33,9 +35,10 @@
 - (double)preferredIOBufferDuration;
 - (int)currentHardwareInputNumberOfChannels;
 - (int)currentHardwareOutputNumberOfChannels;
+- (BOOL)setMode:(id)arg1 error:(id*)arg2;
 - (void)privateInputIsAvailableChanged:(id)arg1;
 - (void)privateBeginInterruption;
-- (void)privateEndInterruption;
 - (void)privateEndInterruptionWithFlags:(id)arg1;
+- (void)privateEndInterruption;
 
 @end

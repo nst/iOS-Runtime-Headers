@@ -15,27 +15,28 @@
 }
 
 @property(getter=isGameCenterSupported,readonly) BOOL gameCenterSupported;
-@property(readonly) NSDictionary * screenCapabilities;
-@property(readonly) NSString * gameKitVersion;
-@property(readonly) NSString * buildVersion;
-@property(readonly) NSString * osVersion;
-@property(readonly) NSString * deviceName;
 @property(readonly) NSString * udid;
+@property(readonly) NSString * deviceName;
+@property(readonly) NSString * osVersion;
+@property(readonly) NSString * buildVersion;
+@property(readonly) NSString * gameKitVersion;
+@property(readonly) NSDictionary * screenCapabilities;
 
 + (id)currentDevice;
 
-- (id)osVersion;
+- (id)storeUserAgent;
 - (id)userAgent;
-- (id)udid;
-- (id)userAgentWithProcessName:(id)arg1 protocolVersion:(id)arg2;
-- (id)processNameHeader;
-- (id)protocolVersionHeader;
 - (id)gameKitVersion;
-- (id)screenCapabilities;
+- (id)userAgentWithProcessName:(id)arg1 protocolVersion:(id)arg2;
 - (id)buildVersionHeader;
+- (id)protocolVersionHeader;
+- (id)processNameHeader;
+- (id)udid;
+- (id)screenCapabilities;
 - (BOOL)isGameCenterSupported;
 - (id)buildVersion;
 - (id)deviceName;
+- (id)osVersion;
 - (id)init;
 - (void)dealloc;
 

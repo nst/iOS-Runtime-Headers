@@ -20,10 +20,10 @@
 @property(copy) NSString * groupIdentifier;
 
 
+- (void)setGroupIdentifier:(id)arg1;
+- (id)groupIdentifier;
 - (void)setHandler:(id)arg1;
 - (id)handler;
 - (void)dealloc;
-- (void)setGroupIdentifier:(id)arg1;
-- (id)groupIdentifier;
 
 @end

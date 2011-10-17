@@ -9,15 +9,15 @@
     unsigned int _count;
 }
 
-@property unsigned int count;
 @property(readonly) NSString * key;
+@property unsigned int count;
 
 
+- (void)add:(unsigned int)arg1;
 - (id)key;
 - (void)setCount:(unsigned int)arg1;
-- (void)dealloc;
-- (unsigned int)count;
 - (id)initWithKey:(id)arg1 count:(unsigned int)arg2;
-- (void)add:(unsigned int)arg1;
+- (unsigned int)count;
+- (void)dealloc;
 
 @end

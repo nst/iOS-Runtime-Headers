@@ -12,28 +12,28 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (void)_handlePropertyUpdateTimer:(id)arg1;
 - (void)_postPropertyUpdateNotification;
+- (void)_handlePropertyUpdateTimer:(id)arg1;
 - (void)_clientDidCheckin;
-- (void)playPowerSong;
-- (void)pauseMusic;
-- (void)playMusic;
-- (void)selectNextSong;
-- (void)_sensorSearchStateChanged:(id)arg1;
-- (void)_workoutStateChanged:(id)arg1;
 - (void)_nowPlayingChanged:(id)arg1;
-- (void)getGoing;
+- (void)_workoutStateChanged:(id)arg1;
+- (void)_sensorSearchStateChanged:(id)arg1;
+- (void)playMusic;
+- (void)pauseMusic;
 - (void)goToNowPlaying;
-- (void)selectPreviousSong;
-- (void)pauseWorkout;
+- (void)getGoing;
 - (void)prepareToActivateWorkout;
-- (void)activateWorkout;
 - (void)endWorkout;
 - (void)playOnDemandPrompt;
+- (void)selectPreviousSong;
+- (void)selectNextSong;
+- (void)playPowerSong;
+- (void)pauseWorkout;
+- (void)activateWorkout;
+- (id)init;
+- (void)dealloc;
 - (void)endSeeking;
-- (void)beginSeekingBackward;
 - (void)beginSeekingForward;
+- (void)beginSeekingBackward;
 
 @end

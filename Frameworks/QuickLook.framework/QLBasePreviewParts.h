@@ -10,12 +10,9 @@
 @interface QLBasePreviewParts : QLPreviewParts  {
 }
 
-+ (id)_officeUTIs;
-+ (id)_iWorkUTIs;
-+ (id)_rtfUTIs;
-+ (id)_csvUTIs;
-+ (int (*)())urlCallbackForUTI:(id)arg1;
 + (int (*)())dataCallbackForUTI:(id)arg1 andSize:(unsigned int)arg2;
++ (BOOL)isBundleURL:(id)arg1;
++ (int (*)())urlCallbackForUTI:(id)arg1;
 + (BOOL)canConvertDocumentType:(id)arg1;
 
 - (void)computePreview;

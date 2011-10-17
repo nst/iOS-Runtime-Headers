@@ -10,17 +10,17 @@
     UIColor *_backgroundColor;
 }
 
-@property(retain) UIColor * backgroundColor;
-@property BOOL highlighted;
 @property BOOL opaque;
+@property BOOL highlighted;
+@property(retain) UIColor * backgroundColor;
 
 
-- (BOOL)opaque;
 - (BOOL)highlighted;
-- (void)setOpaque:(BOOL)arg1;
+- (BOOL)opaque;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setBackgroundColor:(id)arg1;
 - (id)backgroundColor;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setOpaque:(BOOL)arg1;
 - (void)dealloc;
 
 @end

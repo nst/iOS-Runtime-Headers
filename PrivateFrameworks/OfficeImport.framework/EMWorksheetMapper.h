@@ -7,8 +7,8 @@
 @interface EMWorksheetMapper : EMSheetMapper  {
     EDWorksheet *edWorksheet;
     CMStyle *mStyle;
-    unsigned int mMaxPopulatedColumn;
-    unsigned int mMaxPopulatedRow;
+    int mMaxPopulatedColumn;
+    int mMaxPopulatedRow;
     double *mColumnGrid;
     double *mRowGrid;
     int mWidth;
@@ -17,30 +17,31 @@
 }
 
 
-- (BOOL)isVisible;
-- (int)height;
-- (int)columnCount;
-- (int)width;
-- (void)dealloc;
+- (double)defaultColumnWidth;
 - (double)defaultRowHeight;
-- (id)initWithEDWorksheet:(id)arg1 parent:(id)arg2;
-- (void)_initWithState:(id)arg1;
-- (double*)columnGrid;
-- (double*)rowGrid;
-- (double)xlColumnWidthToPoints:(double)arg1;
-- (int)preprocessWidthWithState:(id)arg1;
-- (struct CGSize { float x1; float x2; })preprocessSizeWithState:(id)arg1;
-- (void)setRowGrid;
 - (void)countRowsAndColumnsWithState:(id)arg1;
+- (void)setRowGrid;
+- (double)xlColumnWidthToPoints:(double)arg1;
+- (void)_initWithState:(id)arg1;
+- (void)mapTableAt:(id)arg1 withState:(id)arg2;
+- (void)mapDrawablesAt:(id)arg1 withState:(id)arg2;
+- (struct CGSize { float x1; float x2; })preprocessDrawableSizeWithState:(id)arg1;
 - (void)mapColumnInfosAt:(id)arg1 withState:(id)arg2;
 - (void)mapGridAt:(id)arg1;
-- (void)mapDrawablesAt:(id)arg1 withState:(id)arg2;
-- (void)mapTableAt:(id)arg1 withState:(id)arg2;
 - (void)mapTableStyleAt:(id)arg1 withState:(id)arg2;
+- (id)initWithEDWorksheet:(id)arg1 parent:(id)arg2;
+- (struct CGSize { float x1; float x2; })preprocessSizeWithState:(id)arg1;
+- (double*)rowGrid;
+- (double*)columnGrid;
 - (int)maxRowNumber;
-- (double)defaultColumnWidth;
-- (id)columnWidthConvertor;
+- (int)preprocessWidthWithState:(id)arg1;
 - (int)preprocessHeightWithState:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (id)columnWidthConvertor;
+- (int)height;
+- (int)columnCount;
+- (BOOL)isVisible;
+- (int)width;
+- (void)dealloc;
 
 @end

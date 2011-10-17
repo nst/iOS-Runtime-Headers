@@ -2,34 +2,42 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class QLPopOverState, NSOperation, NSURLRequest, UIDocumentInteractionController, UIView, UIViewController, QLPreviewView, UINavigationController, UIBarButtonItem, UITapGestureRecognizer, <QLPreviewControllerDataSource>, <QLPreviewItem>, UIImageView, NSTimer;
+@class UIImageView, QLPopOverState, NSURLRequest, UIToolbar, NSOperation, UIDocumentInteractionController, UIView, UIBarButtonItem, QLSwipeView, UINavigationBar, UITapGestureRecognizer, <QLPreviewControllerDataSource>, <QLPreviewItem>, UISegmentedControl, NSTimer;
 
 @interface QLPreviewControllerReserved : NSObject  {
     <QLPreviewItem> *previewItem;
     id delegate;
     NSURLRequest *previewRequest;
-    unsigned int isHTMLContent : 1;
     BOOL blockRemoteImages;
-    BOOL actionMenuEnabled;
+    BOOL useCustomActionButton;
+    BOOL showActionAsDefaultButton;
     int mode;
     <QLPreviewControllerDataSource> *dataSource;
     unsigned int numberOfPreviewItems;
     int currentPreviewItemIndex;
     <QLPreviewItem> *currentPreviewItem;
     <QLPreviewItem> *cachedPreviewItem;
-    UINavigationController *navigationController;
-    UIViewController *rootViewController;
     UIView *clippingView;
+    QLSwipeView *swipeView;
+    NSTimer *overlayTimer;
     int overlayState;
-    UIBarButtonItem *actionBarButtonItem;
+    UINavigationBar *navigationBar;
+    UISegmentedControl *segmentedArrowControl;
+    UISegmentedControl *customToolbarSegmentedArrowControl;
+    UIBarButtonItem *arrowsItem;
+    UIBarButtonItem *titleItem;
+    UIBarButtonItem *actionItem;
+    UIToolbar *bottomToolBar;
     UIBarButtonItem *leftArrowItem;
     UIBarButtonItem *rightArrowItem;
     NSTimer *idleTimer;
     UITapGestureRecognizer *headerTapRecognizer;
+    BOOL arrowWasTapped;
+    BOOL internalViewsLoaded;
     UIView *mainView;
     UIView *zoomView;
+    UIView *overlayView;
     UIImageView *iconView;
-    QLPreviewView *previewView;
     UIView *sourceView;
     struct CGRect { 
         struct CGPoint { 
@@ -43,8 +51,9 @@
     } sourceFrame;
     int previousStatusBarStyle;
     UIView *parentControllerView;
+    unsigned int isHTMLContent : 1;
     unsigned int statusBarWasHidden : 1;
-    unsigned int isInCustomTransition : 1;
+    unsigned int isZooming : 1;
     unsigned int isZoomingIn : 1;
     unsigned int useZoomAnimation : 1;
     unsigned int useTransitionImage : 1;
@@ -54,6 +63,7 @@
 }
 
 
+- (id)init;
 - (void)dealloc;
 
 @end

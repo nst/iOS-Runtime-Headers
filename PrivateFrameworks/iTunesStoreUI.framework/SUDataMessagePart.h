@@ -12,8 +12,8 @@
 @property(readonly) NSData * data;
 
 
-- (id)MIMEType;
 - (id)data;
+- (id)MIMEType;
 - (void)dealloc;
 - (id)initWithData:(id)arg1 MIMEType:(id)arg2;
 - (id)newUnfilteredInputSource;

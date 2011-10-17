@@ -5,14 +5,17 @@
 @interface IMLogging : NSObject  {
 }
 
-+ (void)initialize;
-+ (BOOL)loggingEnabledForLevel:(int)arg1;
-+ (void)logAtLevel:(int)arg1 category:(id)arg2 format:(id)arg3 arguments:(void*)arg4;
-+ (void)_appendString:(id)arg1 toFileNamed:(id)arg2;
 + (void)enableConsoleLoggingForLevel:(int)arg1;
++ (id)timeFormatter;
++ (void)logAtLevel:(int)arg1 type:(id)arg2 category:(id)arg3 format:(id)arg4 arguments:(void*)arg5;
++ (void)logAtLevel:(int)arg1 type:(id)arg2 category:(id)arg3 insertProcessInfo:(BOOL)arg4 format:(id)arg5;
++ (void)logAtLevel:(int)arg1 type:(id)arg2 category:(id)arg3 format:(id)arg4;
++ (BOOL)loggingEnabledForLevel:(int)arg1;
 + (id)logFileDirectory;
++ (void)logString:(id)arg1 toFolder:(id)arg2 toFileNamed:(id)arg3;
 + (id)dateFormatter;
-+ (void)logAtLevel:(int)arg1 category:(id)arg2 format:(id)arg3;
++ (void)logAtLevel:(int)arg1 type:(id)arg2 category:(id)arg3 insertProcessInfo:(BOOL)arg4 format:(id)arg5 arguments:(void*)arg6;
++ (void)initialize;
 
 
 @end

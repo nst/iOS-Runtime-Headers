@@ -11,12 +11,12 @@
 }
 
 
+- (id)token:(unsigned int)arg1;
+- (id)initWithText:(id)arg1 format:(int)arg2;
+- (id)listLevelTextforOutline:(id)arg1;
+- (id)initWithText:(id)arg1 format:(int)arg2 initNumber:(int)arg3;
+- (unsigned int)tokenCount;
 - (id)initWithText:(id)arg1;
 - (void)dealloc;
-- (id)initWithText:(id)arg1 format:(int)arg2;
-- (id)initWithText:(id)arg1 format:(int)arg2 initNumber:(int)arg3;
-- (id)listLevelTextforOutline:(id)arg1;
-- (unsigned int)tokenCount;
-- (id)token:(unsigned int)arg1;
 
 @end

@@ -8,19 +8,19 @@
     NSDictionary *_buttonDictionary;
 }
 
+@property(readonly) NSDictionary * buttonDictionary;
 @property(readonly) NSString * buttonLocation;
 @property(readonly) NSString * buttonTarget;
 @property(readonly) NSString * buttonTitle;
 @property(readonly) NSURL * URL;
-@property(readonly) NSDictionary * buttonDictionary;
 
 
+- (id)buttonTitle;
 - (id)URL;
-- (id)init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)dealloc;
 - (id)buttonDictionary;
-- (id)buttonTitle;
 - (id)initWithButtonDictionary:(id)arg1;
 - (id)buttonLocation;
 - (id)buttonTarget;

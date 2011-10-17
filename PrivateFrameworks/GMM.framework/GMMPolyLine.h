@@ -5,35 +5,36 @@
 @class NSData;
 
 @interface GMMPolyLine : PBCodable  {
-    int _lineWidth;
     BOOL _hasLineWidth;
-    int _lineColor;
+    int _lineWidth;
     BOOL _hasLineColor;
+    int _lineColor;
     NSData *_line;
 }
 
+@property BOOL hasLineWidth;
+@property int lineWidth;
+@property BOOL hasLineColor;
+@property int lineColor;
 @property(readonly) BOOL hasLine;
 @property(retain) NSData * line;
-@property(readonly) BOOL hasLineColor;
-@property int lineColor;
-@property(readonly) BOOL hasLineWidth;
-@property int lineWidth;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (int)lineWidth;
-- (void)setLineWidth:(int)arg1;
-- (id)description;
-- (BOOL)hasLineColor;
-- (void)setLineColor:(int)arg1;
-- (BOOL)hasLine;
-- (BOOL)hasLineWidth;
-- (void)setLine:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)line;
 - (int)lineColor;
-- (BOOL)readFrom:(id)arg1;
+- (void)setHasLineColor:(BOOL)arg1;
+- (BOOL)hasLineColor;
+- (void)setHasLineWidth:(BOOL)arg1;
+- (BOOL)hasLineWidth;
+- (BOOL)hasLine;
+- (void)setLineColor:(int)arg1;
+- (void)setLine:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (void)setLineWidth:(int)arg1;
+- (int)lineWidth;
+- (id)description;
+- (void)dealloc;
 
 @end

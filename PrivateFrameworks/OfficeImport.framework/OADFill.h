@@ -6,8 +6,8 @@
 }
 
 
+- (void)setStyleColor:(id)arg1;
 - (float)alpha;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setStyleColor:(id)arg1;
 
 @end

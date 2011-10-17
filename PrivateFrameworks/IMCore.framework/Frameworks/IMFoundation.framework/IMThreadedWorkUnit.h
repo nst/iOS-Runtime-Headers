@@ -13,29 +13,30 @@
     BOOL _done;
 }
 
-@property(readonly) BOOL done;
-@property(readonly) BOOL inProgress;
 @property id delegate;
 @property double timeout;
+@property(readonly) BOOL inProgress;
+@property(readonly) BOOL done;
 
 
-- (BOOL)done;
-- (id)init;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (void)setTimeout:(double)arg1;
+- (double)timeout;
 - (void)stopWatchingThread;
-- (void)_workerThreadFinished;
-- (void)_clearTimeoutTimer;
-- (void)_timeoutHit:(id)arg1;
+- (void)startThread;
+- (void)setDelegate:(id)arg1;
 - (void)_setTimeoutTimer;
 - (void)_threadedDoStart;
+- (BOOL)inProgress;
+- (void)_timeoutHit:(id)arg1;
+- (void)_clearTimeoutTimer;
+- (void)_stopWatchingThread;
 - (void)_doSendDone;
 - (void)_timedOut;
-- (void)startThread;
-- (BOOL)inProgress;
+- (void)_workerThreadFinished;
 - (void)_workerThread;
-- (double)timeout;
-- (void)setTimeout:(double)arg1;
+- (BOOL)done;
+- (id)delegate;
+- (id)init;
+- (void)dealloc;
 
 @end

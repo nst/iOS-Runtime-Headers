@@ -7,11 +7,11 @@
 }
 
 
+- (void)_simpleRemoteActionNotification:(id)arg1;
 - (int)type;
 - (int)subtype;
-- (void)_simpleRemoteActionNotification:(id)arg1;
-- (void)dealloc;
-- (id)_init;
 - (void)_setSubtype:(int)arg1;
+- (id)_init;
+- (void)dealloc;
 
 @end

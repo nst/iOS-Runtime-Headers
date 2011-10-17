@@ -13,19 +13,19 @@
 }
 
 @property(readonly) unsigned int limitCount;
-@property(readonly) NSString * selectLimitingSQL;
 @property(readonly) ML3Container * container;
+@property(readonly) NSString * selectLimitingSQL;
 
 
+- (unsigned int)limitCount;
+- (BOOL)requiresSmartLimiting;
+- (id)selectLimitingSQL;
+- (id)initWithEntityClass:(Class)arg1 container:(id)arg2 predicate:(id)arg3 orderingProperties:(id)arg4;
+- (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2;
+- (void)bindToPersistentIDsSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
 - (id)container;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
-- (id)selectLimitingSQL;
-- (unsigned int)limitCount;
-- (id)initWithEntityClass:(Class)arg1 container:(id)arg2 predicate:(id)arg3 orderingProperties:(id)arg4;
-- (BOOL)requiresSmartLimiting;
-- (id)selectPersistentIDsSQL;
-- (void)bindToPersistentIDsSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
+- (void)dealloc;
 
 @end

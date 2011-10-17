@@ -27,24 +27,25 @@
 
 
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (void)dealloc;
-- (id)initWithPlaces:(id)arg1;
-- (void)setDetailsDelegate:(id)arg1;
+- (void)updateMapView:(id)arg1 WithAddedAssets:(id)arg2 deletedAssets:(id)arg3 updatedAssets:(id)arg4;
 - (void)fullResetOfMapView:(id)arg1;
+- (void)setDetailsDelegate:(id)arg1;
+- (void)mapView:(id)arg1 annotationView:(id)arg2 calloutAccessoryControlTapped:(id)arg3;
+- (void)mapView:(id)arg1 didAddAnnotationViews:(id)arg2;
+- (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (void)mapViewWillStartLoadingMap:(id)arg1;
 - (void)mapView:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;
-- (BOOL)_didMapViewChangeZoomLevel:(id)arg1;
-- (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
-- (id)_borderedPosterImageFromImage:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)mapView:(id)arg1 annotationView:(id)arg2 calloutAccessoryControlTapped:(id)arg3;
-- (void)_updateAnnotationsInMapView:(id)arg1;
-- (void)mapView:(id)arg1 didAddAnnotationViews:(id)arg2;
 - (void)_updatePlaces:(id)arg1 inMapView:(id)arg2;
 - (void)_updateVisibleAnnotationsAfterUpdatingMapView:(id)arg1;
+- (id)_borderedPosterImageFromImage:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
+- (BOOL)_displaysAlbumPosterOnLeft;
+- (BOOL)_displayMoreDetailsButton;
+- (id)_createAnnotationViewWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)_didMapViewChangeZoomLevel:(id)arg1;
+- (void)_updateAnnotationsInMapView:(id)arg1;
 - (void)_setupMapViewCenteredOnAllPlaces:(id)arg1;
 - (void)_flushAnnotation:(id)arg1 fromMap:(id)arg2;
-- (id)_createAnnotationViewWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)_displayMoreDetailsButton;
-- (BOOL)_displaysAlbumPosterOnLeft;
+- (id)initWithPlaces:(id)arg1;
+- (void)dealloc;
 
 @end

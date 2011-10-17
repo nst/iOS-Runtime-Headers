@@ -6,8 +6,8 @@
 }
 
 
-- (void)removeContiguousSpecifiers:(id)arg1 animated:(BOOL)arg2;
-- (id)specifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (id)specifiers;
+- (void)removeContiguousSpecifiers:(id)arg1 animated:(BOOL)arg2;
 
 @end

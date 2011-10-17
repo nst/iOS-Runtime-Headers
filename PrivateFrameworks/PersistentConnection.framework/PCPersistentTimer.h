@@ -34,31 +34,31 @@
 + (double)currentMachTimeInterval;
 + (id)lastSystemWakeDate;
 
+- (void)invalidate;
+- (void)scheduleInRunLoop:(id)arg1;
+- (void)setMinimumEarlyFireProportion:(double)arg1;
+- (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
+- (BOOL)disableSystemWaking;
+- (double)minimumEarlyFireProportion;
 - (id)_initWithAbsoluteTime:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 triggerOnGMTChange:(BOOL)arg6;
-- (void)scheduleInRunLoop:(id)arg1 inMode:(id)arg2;
-- (id)_earlyFireDate;
 - (void)_updateTimers;
+- (void)scheduleInRunLoop:(id)arg1 inMode:(id)arg2;
 - (void)_preventSleepFired;
 - (void)_fireTimerFired;
 - (void)_setPowerMonitoringEnabledForRunLoop:(id)arg1 mode:(id)arg2;
-- (void)_powerChangedMessageType:(unsigned int)arg1 notificationID:(void*)arg2;
-- (void)interfaceManagerInternetReachabilityChanged:(id)arg1;
 - (void)_setSignificantTimeChangeMonitoringEnabledForRunLoop:(id)arg1 mode:(id)arg2;
 - (double)_nextForcedAlignmentAbsoluteTime;
-- (BOOL)disableSystemWaking;
-- (double)minimumEarlyFireProportion;
+- (id)_earlyFireDate;
+- (void)_powerChangedMessageType:(unsigned int)arg1 notificationID:(void*)arg2;
 - (id)loggingIdentifier;
 - (void)interfaceManagerWWANInterfaceChangedPowerState:(id)arg1;
 - (void)interfaceManagerWWANInterfaceStatusChanged:(id)arg1;
-- (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
+- (void)interfaceManagerInternetReachabilityChanged:(id)arg1;
 - (void)setDisableSystemWaking:(BOOL)arg1;
 - (BOOL)isValid;
-- (void)invalidate;
+- (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (id)userInfo;
-- (void)dealloc;
 - (id)debugDescription;
-- (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
-- (void)setMinimumEarlyFireProportion:(double)arg1;
-- (void)scheduleInRunLoop:(id)arg1;
+- (void)dealloc;
 
 @end

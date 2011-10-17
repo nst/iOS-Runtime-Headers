@@ -15,14 +15,14 @@
 + (id)emptyAttributeDictionary;
 + (id)newWithDictionary:(id)arg1;
 
+- (void)finalize;
+- (unsigned int)slotForKey:(id)arg1;
+- (id)newWithKey:(id)arg1 object:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)keyEnumerator;
-- (void)finalize;
+- (unsigned int)count;
+- (id)objectForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)objectForKey:(id)arg1;
-- (unsigned int)count;
-- (id)newWithKey:(id)arg1 object:(id)arg2;
-- (unsigned int)slotForKey:(id)arg1;
 
 @end

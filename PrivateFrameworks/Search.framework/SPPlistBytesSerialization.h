@@ -8,9 +8,9 @@
 }
 
 
-- (void)dealloc;
 - (char *)bytes;
-- (unsigned int)length;
 - (id)initWithPropertyList:(id)arg1 error:(id*)arg2;
+- (unsigned int)length;
+- (void)dealloc;
 
 @end

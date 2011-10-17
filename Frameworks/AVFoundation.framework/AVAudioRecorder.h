@@ -16,33 +16,33 @@
 @property(getter=isRecording,readonly) BOOL recording;
 
 
+- (void)setDelegate:(id)arg1;
+- (void)finalize;
+- (void)pause;
+- (void)stop;
 - (id)settings;
 - (id)url;
-- (void)finalize;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (void)stop;
-- (void)pause;
-- (double)currentTime;
-- (BOOL)isRecording;
-- (void)beginInterruption;
-- (void)finishedRecording;
-- (void)baseInitFailed;
 - (id)initWithURL:(id)arg1 settings:(id)arg2 error:(id*)arg3;
+- (BOOL)isRecording;
 - (BOOL)prepareToRecord;
+- (BOOL)record;
 - (BOOL)recordForDuration:(double)arg1;
 - (BOOL)deleteRecording;
+- (void)finishedRecording;
+- (void)baseInitFailed;
+- (double)currentTime;
 - (BOOL)isMeteringEnabled;
 - (void)setMeteringEnabled:(BOOL)arg1;
+- (void)updateMeters;
 - (float)peakPowerForChannel:(unsigned int)arg1;
 - (float)averagePowerForChannel:(unsigned int)arg1;
-- (void)endInterruption;
-- (struct AudioRecorderImpl { id x1; id x2; id x3; id x4; unsigned int x5; struct AudioStreamBasicDescription { double x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; unsigned int x_6_1_4; unsigned int x_6_1_5; unsigned int x_6_1_6; unsigned int x_6_1_7; unsigned int x_6_1_8; unsigned int x_6_1_9; } x6; struct OpaqueAudioFileID {} *x7; struct OpaqueAudioQueue {} *x8; long long x9; long long x10; long long x11; double x12; double x13; double x14; unsigned int x15; char *x16; unsigned int x17; struct AudioFormatListItem {} *x18; boolx19; boolx20; boolx21; boolx22; boolx23; boolx24; boolx25; struct AudioQueueLevelMeterState {} *x26; struct AudioQueueBuffer {} *x27[4]; struct AudioQueueBuffer {} *x28; boolx29; unsigned int x30; boolx31; }*)impl;
-- (id)baseInit;
-- (void)endInterruptionWithFlags;
 - (void)privCommonCleanup;
-- (void)updateMeters;
-- (BOOL)record;
+- (id)baseInit;
+- (struct AudioRecorderImpl { id x1; id x2; id x3; id x4; unsigned int x5; struct AudioStreamBasicDescription { double x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; unsigned int x_6_1_4; unsigned int x_6_1_5; unsigned int x_6_1_6; unsigned int x_6_1_7; unsigned int x_6_1_8; unsigned int x_6_1_9; } x6; struct OpaqueAudioFileID {} *x7; struct OpaqueAudioQueue {} *x8; long long x9; long long x10; long long x11; double x12; double x13; double x14; unsigned int x15; char *x16; unsigned int x17; struct AudioFormatListItem {} *x18; boolx19; boolx20; boolx21; boolx22; boolx23; boolx24; boolx25; struct AudioQueueLevelMeterState {} *x26; struct AudioQueueBuffer {} *x27[4]; struct AudioQueueBuffer {} *x28; boolx29; unsigned int x30; boolx31; }*)impl;
+- (void)beginInterruption;
+- (void)endInterruptionWithFlags;
+- (void)endInterruption;
+- (void)dealloc;
 
 @end

@@ -7,35 +7,40 @@
 @interface CKVideoMediaObject : CKAVMediaObject  {
     NSDictionary *_transcodeOptions;
     UIImage *_videoPreviewImage;
+    UIImage *_videoImage;
     NSString *_transcodePath;
 }
 
++ (id)mimeTypesAllowedForMMS;
 + (id)mimeTypesToFileExtensions;
 
-- (void)dealloc;
 - (unsigned long long)sizeInBytes;
-- (double)transcodeEndTime;
-- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
-- (id)transcodePath;
+- (void)_generateImageOnMainThreadForVideoFile:(id)arg1;
 - (id)_newPreviewImageWithTailStyle:(int)arg1;
 - (id)_newPreviewImageForIncomingVideoWithTailStyle:(int)arg1;
 - (id)_newVideoPreviewImageForImage:(id)arg1 withTailStyle:(int)arg2;
-- (id)filenameForMedia;
-- (id)_transcodeOptions;
-- (id)transcodedFilename;
-- (id)transcodeMimeType;
+- (id)transcodePath;
 - (id)transcodedPathExtension;
-- (double)transcodeStartTime;
-- (double)transcodeDuration;
 - (id)effectiveExportedFilename;
+- (void)prepareForTranscode;
+- (id)transcodedFilename;
+- (id)_transcodeOptions;
+- (id)transcodeMimeType;
 - (void)_generatePreviewOnMainThreadForVideoFile:(id)arg1;
 - (BOOL)shouldTranscodeForMMS;
-- (float)balloonHeightWithPreviewData:(id)arg1;
-- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
-- (BOOL)shouldGeneratePreviewInBackground;
-- (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
-- (void)copyToPasteboard:(id)arg1;
 - (id)optionsForMedia;
+- (double)transcodeStartTime;
+- (double)transcodeEndTime;
+- (double)transcodeDuration;
+- (BOOL)shouldGeneratePreviewInBackground;
+- (id)filenameForMedia;
+- (id)videoImage;
+- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
+- (float)balloonHeightWithPreviewData:(id)arg1;
+- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
+- (void)copyToPasteboard:(id)arg1;
+- (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
 - (int)mediaType;
+- (void)dealloc;
 
 @end

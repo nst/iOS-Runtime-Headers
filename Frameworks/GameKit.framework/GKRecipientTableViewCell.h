@@ -9,15 +9,13 @@
     GKComposeRecipient *_recipient;
 }
 
++ (id)cellForRecipient:(id)arg1;
 + (float)height;
 + (id)identifier;
-+ (id)cellForRecipient:(id)arg1;
-+ (void)_initializeSafeCategory;
 
+- (void)setRecipient:(id)arg1;
+- (id)recipient;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)dealloc;
-- (id)recipient;
-- (void)setRecipient:(id)arg1;
-- (id)accessibilityLabel;
 
 @end

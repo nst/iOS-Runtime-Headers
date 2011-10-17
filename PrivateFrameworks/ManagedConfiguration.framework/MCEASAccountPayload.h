@@ -4,7 +4,7 @@
 
 @class NSNumber, NSString, NSData;
 
-@interface MCEASAccountPayload : MCPayload  {
+@interface MCEASAccountPayload : MCEmailAccountPayloadBase  {
     NSString *_accountDescription;
     NSString *_hostname;
     NSString *_username;
@@ -12,16 +12,21 @@
     NSString *_emailAddress;
     BOOL _useSSL;
     NSNumber *_mailNumberOfPastDaysToSync;
-    NSData *_certificate;
-    NSString *_certificateName;
-    NSString *_certificatePassword;
+    NSData *_embeddedCertificate;
+    NSString *_embeddedCertificateName;
+    NSString *_embeddedCertificatePassword;
+    NSString *_certificateUUID;
     NSString *_accountPersistentUUID;
+    NSData *_certificatePersistentID;
 }
 
+@property(readonly) BOOL hasCertificate;
+@property(retain) NSData * certificatePersistentID;
 @property(copy) NSString * accountPersistentUUID;
-@property(copy) NSString * certificatePassword;
-@property(readonly) NSString * certificateName;
-@property(readonly) NSData * certificate;
+@property(readonly) NSString * certificateUUID;
+@property(copy) NSString * embeddedCertificatePassword;
+@property(readonly) NSString * embeddedCertificateName;
+@property(readonly) NSData * embeddedCertificate;
 @property(readonly) NSNumber * mailNumberOfPastDaysToSync;
 @property(readonly) BOOL useSSL;
 @property(copy) NSString * emailAddress;
@@ -34,29 +39,33 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
 - (id)accountDescription;
+- (id)emailAddress;
 - (id)mailNumberOfPastDaysToSync;
-- (id)password;
-- (id)title;
-- (void)dealloc;
-- (id)description;
-- (id)certificatePassword;
-- (void)setCertificatePassword:(id)arg1;
-- (id)certificateName;
-- (id)certificate;
-- (void)setAccountPersistentUUID:(id)arg1;
-- (id)subtitle1Description;
-- (id)subtitle2Description;
-- (id)subtitle1Label;
-- (id)subtitle2Label;
-- (id)stubDictionary;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
-- (id)hostname;
-- (id)emailAddress;
-- (BOOL)useSSL;
-- (id)accountPersistentUUID;
 - (void)setEmailAddress:(id)arg1;
+- (id)hostname;
+- (id)password;
+- (id)title;
+- (BOOL)hasCertificate;
+- (id)embeddedCertificatePassword;
+- (void)setEmbeddedCertificatePassword:(id)arg1;
+- (id)embeddedCertificateName;
+- (id)embeddedCertificate;
+- (void)setAccountPersistentUUID:(id)arg1;
+- (id)certificateUUID;
+- (void)setCertificatePersistentID:(id)arg1;
+- (id)certificatePersistentID;
+- (id)subtitle1Label;
+- (id)subtitle2Label;
+- (id)subtitle2Description;
+- (id)subtitle1Description;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
+- (id)accountPersistentUUID;
+- (BOOL)useSSL;
 
 @end

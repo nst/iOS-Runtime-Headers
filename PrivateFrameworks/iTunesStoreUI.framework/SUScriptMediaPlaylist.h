@@ -9,11 +9,12 @@
 
 @property(readonly) MPMediaPlaylist * nativePlaylist;
 
++ (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 + (id)scriptPlaylistAttributesForNativePlaylistAttributes:(int)arg1;
 + (int)nativePlaylistAttributesForScriptPlaylistAttributes:(id)arg1;
-+ (id)nativePropertyForScriptProperty:(id)arg1;
 + (id)scriptPropertyForNativeProperty:(id)arg1;
-+ (id)webScriptNameForSelector:(SEL)arg1;
++ (id)nativePropertyForScriptProperty:(id)arg1;
 
 - (id)_valueForProperty:(id)arg1;
 - (id)valueForProperty:(id)arg1;

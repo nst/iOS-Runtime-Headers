@@ -41,35 +41,35 @@
 }
 
 
-- (id)allObjects;
-- (Class)classForCoder;
 - (void)finalize;
-- (unsigned int)hash;
-- (id)objectEnumerator;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)copy;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (unsigned int)count;
-- (void)addObject:(id)arg1;
-- (void)raiseCountUnderflowException;
-- (unsigned int)rehashAround:(unsigned int)arg1;
-- (void)_initBlock;
-- (id)initWithPointerFunctions:(id)arg1 capacity:(unsigned int)arg2;
-- (id)pointerFunctions;
+- (void)rehash;
 - (void)hashGrow;
 - (void)assign:(unsigned int)arg1 key:(const void*)arg2;
-- (void)rehash;
-- (void)removeAllItems;
-- (void*)getItem:(const void*)arg1;
+- (unsigned int)rehashAround:(unsigned int)arg1;
+- (void)raiseCountUnderflowException;
 - (void)insertItem:(const void*)arg1;
-- (void)insertKnownAbsentItem:(const void*)arg1;
-- (void)removeItem:(const void*)arg1;
+- (void)_initBlock;
+- (id)pointerFunctions;
+- (id)initWithPointerFunctions:(id)arg1 capacity:(unsigned int)arg2;
 - (void)getKeys:(void**)arg1 count:(unsigned int*)arg2;
+- (void)insertKnownAbsentItem:(const void*)arg1;
+- (void*)getItem:(const void*)arg1;
 - (id)initWithOptions:(unsigned int)arg1 capacity:(unsigned int)arg2;
+- (Class)classForCoder;
+- (id)objectEnumerator;
+- (id)allObjects;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)removeItem:(const void*)arg1;
+- (void)removeAllItems;
+- (unsigned int)count;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (void)addObject:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)copy;
 
 @end

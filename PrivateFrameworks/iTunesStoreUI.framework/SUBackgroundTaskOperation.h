@@ -17,10 +17,10 @@
 - (void)run;
 - (void)dealloc;
 - (id)permissionIdentifier;
-- (id)operation;
 - (id)initWithOperation:(id)arg1 identifier:(id)arg2;
 - (void)_cancelBackgroundAssertion;
 - (void)_removeBackgroundAssertion;
 - (void)_takeBackgroundAssertion;
+- (id)operation;
 
 @end

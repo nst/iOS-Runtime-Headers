@@ -5,27 +5,31 @@
 @class FTMessageDelivery, NSArray;
 
 @interface FTRegionSupport : NSObject  {
-    FTMessageDelivery *_delivery;
     NSArray *_regions;
+    FTMessageDelivery *_delivery;
 }
 
 @property(readonly) BOOL isLoaded;
 @property(readonly) BOOL isLoading;
 @property(readonly) NSArray * regions;
+@property(retain) FTMessageDelivery * _delivery;
+@property(retain) NSArray * _regions;
 
 + (id)sharedInstance;
 
-- (id)regions;
-- (id)regionForID:(id)arg1;
+- (void)startLoading;
 - (BOOL)isLoaded;
 - (BOOL)isLoading;
-- (oneway void)release;
-- (void)dealloc;
-- (unsigned int)retainCount;
-- (id)autorelease;
-- (void)_buildMessageDeliveryIfNeeded;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (void)set_delivery:(id)arg1;
+- (id)_delivery;
+- (void)set_regions:(id)arg1;
+- (id)_regions;
 - (void)flushRegions;
-- (void)message:(id)arg1 deliveredWithError:(id)arg2 resultCode:(int)arg3 resultDictionary:(id)arg4;
-- (void)startLoading;
+- (void)_buildMessageDeliveryIfNeeded;
+- (void)dealloc;
+- (id)regions;
+- (id)regionForID:(id)arg1;
 
 @end

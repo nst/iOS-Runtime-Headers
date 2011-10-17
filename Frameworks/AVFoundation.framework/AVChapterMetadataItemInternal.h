@@ -6,7 +6,7 @@
 
 @interface AVChapterMetadataItemInternal : NSObject  {
     AVWeakReference *weakReference;
-    struct OpaqueFigFormatReaderLoader { } *loader;
+    struct OpaqueFigAsset { } *figAsset;
     int chapterGroupIndex;
     int chapterIndex;
     NSString *chapterType;

@@ -18,19 +18,21 @@
 @property(retain) NSArray * transitionKeys;
 
 
-- (void)loadView;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (void)viewDidUnload;
-- (void)dealloc;
-- (id)transitionKeys;
+- (void)loadView;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)alternateLocalizations;
-- (void)setSelectedTransition:(id)arg1;
+- (id)transitionKeys;
+- (void)_configureTableCells;
 - (void)setAlternateLocalizations:(id)arg1;
 - (void)setTransitionKeys:(id)arg1;
 - (id)initWithTransitions:(id)arg1 alternateTransitionLocalizations:(id)arg2;
+- (void)setTransitionKeys:(id)arg1 alternateLocalizations:(id)arg2;
+- (void)setSelectedTransition:(id)arg1;
 - (id)selectedTransition;
+- (void)dealloc;
 
 @end

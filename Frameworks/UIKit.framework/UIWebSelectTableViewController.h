@@ -11,41 +11,43 @@
     BOOL _allowsMultipleSelection;
     float _fontSize;
     float _maximumTextWidth;
+    int _textAlignment;
     UIWebSelectPopover *_popover;
 }
 
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property BOOL enablesReturnKeyAutomatically;
-@property int returnKeyType;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property int autocorrectionType;
-@property int autocapitalizationType;
-@property UIWebSelectPopover * _popover;
-@property unsigned int _singleSelectionIndex;
-@property(retain) NSArray * _cachedItems;
 @property(retain) DOMHTMLSelectElement * _selectionNode;
+@property(retain) NSArray * _cachedItems;
+@property unsigned int _singleSelectionIndex;
+@property UIWebSelectPopover * _popover;
+@property int autocapitalizationType;
+@property int autocorrectionType;
+@property int spellCheckingType;
+@property int keyboardType;
+@property int keyboardAppearance;
+@property int returnKeyType;
+@property BOOL enablesReturnKeyAutomatically;
+@property(getter=isSecureTextEntry) BOOL secureTextEntry;
 
 
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (unsigned int)_singleSelectionIndex;
-- (id)_popover;
-- (BOOL)_hasItems;
-- (id)initWithDOMHTMLSelectNode:(id)arg1 cachedItems:(id)arg2 singleSelectionIndex:(unsigned int)arg3 multipleSelection:(BOOL)arg4;
-- (float)heightForItems;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)deleteBackward;
 - (void)set_popover:(id)arg1;
+- (id)_popover;
 - (void)set_singleSelectionIndex:(unsigned int)arg1;
-- (void)set_cachedItems:(id)arg1;
-- (void)set_selectionNode:(id)arg1;
+- (float)heightForItems;
+- (id)initWithDOMHTMLSelectNode:(id)arg1 cachedItems:(id)arg2 singleSelectionIndex:(unsigned int)arg3 multipleSelection:(BOOL)arg4;
+- (BOOL)_hasItems;
+- (unsigned int)_singleSelectionIndex;
 - (id)_cachedItems;
+- (void)set_cachedItems:(id)arg1;
 - (id)_selectionNode;
-- (void)insertText:(id)arg1;
-- (BOOL)hasText;
+- (void)set_selectionNode:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)hasText;
+- (void)insertText:(id)arg1;
+- (void)deleteBackward;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)dealloc;
 
 @end

@@ -5,21 +5,21 @@
 @interface YTSearchRequest : YTFeedRequest  {
 }
 
-+ (unsigned int)videosPerRequest;
 + (id)feedCountryCode;
++ (unsigned int)videosPerRequest;
 + (id)_formatFilter;
 
-- (void)failWithError:(id)arg1;
-- (void)searchForMyVideosStartingAtIndex:(unsigned int)arg1 withDelegate:(id)arg2;
-- (void)searchForVideosMatchingString:(id)arg1 startingAtIndex:(unsigned int)arg2 withDelegate:(id)arg3;
-- (void)searchForVideosRelatedToVideo:(id)arg1 startingAtIndex:(unsigned int)arg2 maxResults:(unsigned int)arg3 withDelegate:(id)arg4;
-- (void)searchForVideosByAuthor:(id)arg1 startingAtIndex:(unsigned int)arg2 maxResults:(unsigned int)arg3 withDelegate:(id)arg4;
-- (void)didParseData;
-- (void)searchForVideoWithID:(id)arg1 withDelegate:(id)arg2;
 - (void)searchForVideosWithIDs:(id)arg1 withDelegate:(id)arg2;
+- (void)searchForVideosMatchingString:(id)arg1 startingAtIndex:(unsigned int)arg2 withDelegate:(id)arg3;
 - (void)searchForVideosWithFeedURLBase:(id)arg1 startingAtIndex:(unsigned int)arg2 maxResults:(int)arg3 withTimeQualifier:(id)arg4 withFormatFilter:(BOOL)arg5 authenticationRequired:(BOOL)arg6 withDelegate:(id)arg7;
 - (void)searchForRecentVideosStartingAtIndex:(unsigned int)arg1 withDelegate:(id)arg2;
+- (void)searchForVideosRelatedToVideo:(id)arg1 startingAtIndex:(unsigned int)arg2 maxResults:(unsigned int)arg3 withDelegate:(id)arg4;
+- (void)searchForVideosByAuthor:(id)arg1 startingAtIndex:(unsigned int)arg2 maxResults:(unsigned int)arg3 withDelegate:(id)arg4;
 - (void)searchForFavoriteVideosStartingAtIndex:(unsigned int)arg1 withDelegate:(id)arg2;
+- (void)searchForMyVideosStartingAtIndex:(unsigned int)arg1 withDelegate:(id)arg2;
 - (BOOL)receivedValidResponse:(id)arg1;
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (void)searchForVideoWithID:(id)arg1 withDelegate:(id)arg2;
 
 @end

@@ -2,22 +2,35 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
+@class NSDictionary;
+
 @interface IMUserNotification : NSObject  {
     id _reserved;
 }
 
-+ (id)userNotificationWithIdentifier:(id)arg1 title:(id)arg2 message:(id)arg3 defaultButton:(id)arg4 alternateButton:(id)arg5 otherButton:(id)arg6;
-+ (id)userNotificationWithIdentifier:(id)arg1 timeout:(double)arg2 alertLevel:(unsigned int)arg3 displayFlags:(unsigned int)arg4 displayInformation:(id)arg5;
+@property(readonly) id identifier;
+@property(readonly) double timeout;
+@property(readonly) unsigned int displayFlags;
+@property(readonly) NSDictionary * displayInformation;
+@property(readonly) unsigned int response;
+@property(readonly) unsigned int responseFlags;
+@property(readonly) NSDictionary * responseInformation;
+@property(retain) NSDictionary * userInfo;
 
-- (unsigned int)response;
-- (id)identifier;
-- (void)dealloc;
-- (id)_initWithIdentifier:(id)arg1 timeout:(double)arg2 displayFlags:(unsigned int)arg3 displayInformation:(id)arg4;
-- (unsigned int)displayFlags;
-- (id)displayInformation;
-- (unsigned int)responseFlags;
++ (id)userNotificationWithIdentifier:(id)arg1 timeout:(double)arg2 alertLevel:(unsigned int)arg3 displayFlags:(unsigned int)arg4 displayInformation:(id)arg5;
++ (id)userNotificationWithIdentifier:(id)arg1 title:(id)arg2 message:(id)arg3 defaultButton:(id)arg4 alternateButton:(id)arg5 otherButton:(id)arg6;
+
+- (double)timeout;
 - (id)responseInformation;
 - (void)_setResponseFlags:(unsigned int)arg1 responseInformation:(id)arg2;
-- (double)timeout;
+- (id)displayInformation;
+- (unsigned int)displayFlags;
+- (unsigned int)responseFlags;
+- (id)_initWithIdentifier:(id)arg1 timeout:(double)arg2 displayFlags:(unsigned int)arg3 displayInformation:(id)arg4;
+- (void)setUserInfo:(id)arg1;
+- (unsigned int)response;
+- (id)identifier;
+- (id)userInfo;
+- (void)dealloc;
 
 @end

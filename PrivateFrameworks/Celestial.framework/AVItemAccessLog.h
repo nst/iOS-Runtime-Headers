@@ -12,13 +12,13 @@
 
 
 - (void)finalize;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
 - (id)events;
 - (id)extendedLogData;
 - (unsigned int)extendedLogDataStringEncoding;
 - (id)initWithLogArray:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

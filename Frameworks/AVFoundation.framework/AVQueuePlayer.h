@@ -15,18 +15,18 @@
 
 - (id)initWithItems:(id)arg1;
 - (id)items;
-- (id)init;
-- (void)dealloc;
-- (void)removeAllItems;
-- (void)removeItem:(id)arg1;
 - (void)advanceToNextItem;
 - (BOOL)canInsertItem:(id)arg1 afterItem:(id)arg2;
-- (BOOL)_shouldEnqueueModifications;
-- (void)_enqueueModification:(id)arg1;
-- (void)insertItem:(id)arg1 afterItem:(id)arg2;
+- (void)removeItem:(id)arg1;
+- (void)removeAllItems;
 - (void)beginModifications;
 - (void)commitModifications;
-- (int)_defaultActionAtItemEnd;
+- (void)insertItem:(id)arg1 afterItem:(id)arg2;
+- (BOOL)_shouldEnqueueModifications;
+- (void)_enqueueModification:(id)arg1;
 - (void)setActionAtItemEnd:(int)arg1;
+- (int)_defaultActionAtItemEnd;
+- (id)init;
+- (void)dealloc;
 
 @end

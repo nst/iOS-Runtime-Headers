@@ -5,30 +5,46 @@
 @class NSString;
 
 @interface MPAVRoute : NSObject  {
-    NSString *_routeName;
-    unsigned int _routeIndex;
-    int _routeType;
+    BOOL _displayIsPicked;
+    int _displayRouteType;
     BOOL _isPicked;
     BOOL _requiresPassword;
+    unsigned int _routeIndex;
+    NSString *_routeName;
+    int _routeType;
+    NSString *_routeUID;
 }
 
-@property(readonly) int routeType;
-@property(readonly) BOOL requiresPassword;
 @property(readonly) NSString * name;
-@property BOOL isPicked;
+@property(readonly) int routeType;
+@property(readonly) NSString * routeUID;
 @property(readonly) unsigned int routeIndex;
+@property BOOL isPicked;
+@property(readonly) BOOL requiresPassword;
+@property BOOL displayIsPicked;
+@property int displayRouteType;
 
++ (id)wirelessDisplayRouteForRoute:(id)arg1;
++ (id)videoRouteForRoute:(id)arg1;
 + (id)_availableRoutesFromAudioDeviceController:(id)arg1 forType:(unsigned int)arg2;
 + (BOOL)availableRoutesExistForType:(unsigned int)arg1;
++ (id)_audioDeviceController;
 + (id)availableRoutesForType:(unsigned int)arg1;
 
-- (id)name;
-- (void)dealloc;
-- (BOOL)isPicked;
-- (id)initWithName:(id)arg1 routeType:(int)arg2 routeIndex:(unsigned int)arg3 requiresPassword:(BOOL)arg4;
-- (void)setIsPicked:(BOOL)arg1;
-- (int)routeType;
-- (unsigned int)routeIndex;
 - (BOOL)requiresPassword;
+- (int)displayRouteType;
+- (BOOL)displayIsPicked;
+- (void)setDisplayRouteType:(int)arg1;
+- (void)setDisplayIsPicked:(BOOL)arg1;
+- (void)setIsPicked:(BOOL)arg1;
+- (id)initWithName:(id)arg1 routeType:(int)arg2 routeUID:(id)arg3 routeIndex:(unsigned int)arg4 requiresPassword:(BOOL)arg5;
+- (id)routeUID;
+- (unsigned int)routeIndex;
+- (int)routeType;
+- (BOOL)isPicked;
+- (id)name;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

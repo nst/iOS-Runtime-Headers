@@ -2,41 +2,44 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class GMMClientCapabilities, NSMutableArray;
+@class GMMClientCapabilities;
 
 @interface GMMDirectionsIconRequest : PBRequest  {
     GMMClientCapabilities *_capabilities;
-    int _cachedIconVersion;
     BOOL _hasCachedIconVersion;
-    NSMutableArray *_cachedIconIDs;
+    int _cachedIconVersion;
+    struct { 
+        long long *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _cachedIconIDs;
 }
 
 @property(readonly) BOOL hasCapabilities;
-@property(readonly) int cachedIconIDsCount;
-@property(retain) NSMutableArray * cachedIconIDs;
-@property(readonly) BOOL hasCachedIconVersion;
-@property int cachedIconVersion;
 @property(retain) GMMClientCapabilities * capabilities;
+@property BOOL hasCachedIconVersion;
+@property int cachedIconVersion;
+@property(readonly) unsigned int cachedIconIDsCount;
+@property(readonly) long long* cachedIconIDs;
 
 
-- (unsigned int)requestTypeCode;
-- (Class)responseClass;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (int)cachedIconVersion;
-- (id)cachedIconIDs;
-- (int)cachedIconIDsCount;
-- (void)setCachedIconID:(long long)arg1 atIndex:(unsigned int)arg2;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasCachedIconVersion:(BOOL)arg1;
+- (BOOL)hasCachedIconVersion;
+- (void)setCachedIconIDs:(long long*)arg1 count:(unsigned int)arg2;
 - (long long)cachedIconIDAtIndex:(unsigned int)arg1;
 - (void)addCachedIconID:(long long)arg1;
-- (BOOL)hasCachedIconVersion;
-- (BOOL)hasCapabilities;
-- (id)capabilities;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setCapabilities:(id)arg1;
+- (void)clearCachedIconIDs;
+- (long long*)cachedIconIDs;
+- (unsigned int)cachedIconIDsCount;
+- (int)cachedIconVersion;
 - (void)setCachedIconVersion:(int)arg1;
-- (void)setCachedIconIDs:(id)arg1;
+- (BOOL)hasCapabilities;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (void)setCapabilities:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)capabilities;
 
 @end

@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UISegmentedControlAppearance, UIColor, UIView;
+@class UIColor, _UISegmentedControlAppearanceStorage, UIView;
 
-@interface UISegment : UIView  {
+@interface UISegment : UIImageView  {
     UIView *_info;
-    _UISegmentedControlAppearance *_appearance;
+    _UISegmentedControlAppearanceStorage *_appearanceStorage;
     float _width;
     struct CGSize { 
         float width; 
@@ -29,64 +29,63 @@
 }
 
 @property(getter=isSelected) BOOL selected;
-@property(getter=isHighlighted) BOOL highlighted;
 @property(getter=isMomentary) BOOL momentary;
 @property int controlSize;
 
-+ (void)_initializeSafeCategory;
 
-- (void)setMomentary:(BOOL)arg1;
-- (void)setContentOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)_commonInitWithInfo:(id)arg1 position:(unsigned int)arg2 autosizeText:(BOOL)arg3;
-- (id)initWithInfo:(id)arg1 style:(int)arg2 size:(int)arg3 barStyle:(int)arg4 tintColor:(id)arg5 position:(unsigned int)arg6 isDisclosure:(BOOL)arg7 autosizeText:(BOOL)arg8;
-- (id)initWithInfo:(id)arg1 appearance:(id)arg2 position:(unsigned int)arg3 autosizeText:(BOOL)arg4;
-- (id)_dividerImageForRight:(BOOL)arg1;
-- (void)insertDividerView;
-- (void)updateDividerViewToMatchSegment:(id)arg1;
-- (void)_tileImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)_texturedLeftCapImage;
-- (id)_texturedRightCapImage;
-- (id)_texturedFillImage;
-- (void)_updateTexturedBackgroundImage;
-- (void)_updateCustomTiledBackgroundImage;
-- (void)_updateBackgroundImage;
-- (void)_updateTextColors;
-- (id)disabledTextColor;
-- (void)setAutosizeText:(BOOL)arg1;
-- (BOOL)isSelected;
-- (void)setShowDivider:(BOOL)arg1;
-- (void)animateAdd:(BOOL)arg1;
-- (void)animateRemoveForWidth:(float)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
-- (void)_positionInfo;
-- (BOOL)_needsUpdateOnSizeChange;
-- (void)setInfo:(id)arg1;
-- (id)info;
-- (id)infoName;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)isMomentary;
-- (void)setTintColor:(id)arg1;
-- (BOOL)useBlockyMagnificationInClassic;
-- (void)setPosition:(unsigned int)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (BOOL)isHighlighted;
-- (void)setControlSize:(int)arg1;
-- (int)controlSize;
-- (void)setBarStyle:(int)arg1;
-- (struct CGSize { float x1; float x2; })contentSize;
-- (void)encodeWithCoder:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPosition:(unsigned int)arg1;
+- (float)_idealWidth;
+- (id)infoName;
+- (void)animateRemoveForWidth:(float)arg1;
+- (void)animateAdd:(BOOL)arg1;
+- (void)setShowDivider:(BOOL)arg1;
+- (void)setMomentary:(BOOL)arg1;
+- (BOOL)isMomentary;
+- (void)setAutosizeText:(BOOL)arg1;
+- (id)initWithInfo:(id)arg1 style:(int)arg2 size:(int)arg3 barStyle:(int)arg4 tintColor:(id)arg5 appearanceStorage:(id)arg6 position:(unsigned int)arg7 isDisclosure:(BOOL)arg8 autosizeText:(BOOL)arg9;
+- (void)_positionInfo;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
+- (float)_barHeight;
+- (float)_paddingForLeft:(BOOL)arg1;
+- (void)_setEnabledAppearance:(BOOL)arg1;
+- (void)updateDividerViewToMatchSegment:(id)arg1;
+- (id)_currentOptionsStyleTextShadowColor;
+- (id)_currentOptionsStyleTextColor;
+- (id)disabledTextColor;
+- (void)_updateTexturedBackgroundImage;
+- (id)_texturedRightCapImage;
+- (void)_tileImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)_texturedFillImage;
+- (id)_texturedLeftCapImage;
+- (id)_dividerImageForRight:(BOOL)arg1;
+- (id)_dividerImageForRight:(BOOL)arg1 isCustom:(BOOL*)arg2;
+- (unsigned int)_segmentState;
+- (BOOL)_isInMiniBar;
+- (id)info;
+- (void)_commonInitWithInfo:(id)arg1 position:(unsigned int)arg2 autosizeText:(BOOL)arg3;
+- (void)_updateTextColors;
+- (void)insertDividerView;
+- (void)setInfo:(id)arg1;
+- (void)setSelected:(BOOL)arg1;
+- (BOOL)isHighlighted;
+- (BOOL)isSelected;
+- (int)controlSize;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setTintColor:(id)arg1;
+- (void)setBarStyle:(int)arg1;
+- (void)setControlSize:(int)arg1;
+- (void)_updateBackgroundImage;
+- (struct CGSize { float x1; float x2; })contentSize;
+- (void)setContentOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
+- (BOOL)useBlockyMagnificationInClassic;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
-- (id)accessibilityLabel;
-- (id)accessibilityLanguage;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityHint;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 
 @end

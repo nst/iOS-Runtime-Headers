@@ -2,42 +2,62 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString, SSItemOffer, SSDownloadMetadata, NSNumber, SSItem;
+@class NSNumber, SSURLRequestProperties, SSItem, NSDictionary, NSString, SSItemOffer, NSMutableDictionary, NSArray;
 
-@interface SSPurchase : NSObject <NSCoding, NSCopying> {
+@interface SSPurchase : NSObject <SSCoding, NSCoding, NSCopying> {
     NSNumber *_accountIdentifier;
     NSString *_buyParameters;
-    SSDownloadMetadata *_downloadMetadata;
+    NSMutableDictionary *_downloadProperties;
+    NSArray *_filteredAssetTypes;
     SSItem *_item;
     SSItemOffer *_itemOffer;
+    long long _placeholderDownloadIdentifier;
+    SSURLRequestProperties *_requestProperties;
     NSString *_uniqueIdentifier;
 }
 
-@property(readonly) NSString * uniqueIdentifier;
-@property(readonly) SSItemOffer * itemOffer;
-@property(readonly) SSItem * item;
-@property(copy) SSDownloadMetadata * downloadMetadata;
-@property(copy) NSString * buyParameters;
 @property(retain) NSNumber * accountIdentifier;
+@property(copy) NSString * buyParameters;
+@property(copy) NSArray * filteredAssetTypes;
+@property long long placeholderDownloadIdentifier;
+@property(copy) SSURLRequestProperties * requestProperties;
+@property(copy) NSDictionary * downloadProperties;
+@property(readonly) SSItem * item;
+@property(readonly) SSItemOffer * itemOffer;
+@property(readonly) NSString * uniqueIdentifier;
 
 + (id)purchaseWithBuyParameters:(id)arg1;
 
-- (id)item;
-- (id)uniqueIdentifier;
-- (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (long long)placeholderDownloadIdentifier;
+- (void)setFilteredAssetTypes:(id)arg1;
 - (id)initWithItem:(id)arg1;
-- (id)itemOffer;
-- (id)buyParameters;
-- (void)setBuyParameters:(id)arg1;
-- (id)initWithItem:(id)arg1 offer:(id)arg2;
-- (id)accountIdentifier;
+- (void)setPlaceholderDownloadIdentifier:(long long)arg1;
+- (id)filteredAssetTypes;
 - (void)setDownloadMetadata:(id)arg1;
 - (id)downloadMetadata;
+- (id)_initSSPurchase;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
+- (id)copyPropertyListEncoding;
+- (id)initWithPropertyListEncoding:(id)arg1;
+- (id)uniqueIdentifier;
+- (id)item;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)itemOffer;
+- (void)setDownloadProperties:(id)arg1;
+- (id)downloadProperties;
+- (id)initWithItem:(id)arg1 offer:(id)arg2;
+- (id)buyParameters;
+- (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
+- (id)accountIdentifier;
+- (id)valueForDownloadProperty:(id)arg1;
+- (id)requestProperties;
+- (void)setRequestProperties:(id)arg1;
+- (void)setBuyParameters:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 
 @end

@@ -15,16 +15,23 @@
 @property <MFMessageComposeViewControllerDelegate> * messageComposeDelegate;
 
 + (BOOL)canSendText;
++ (void)initialize;
++ (void)_startListeningForAvailabilityNotifications;
++ (void)_setupAccountMonitor;
++ (BOOL)_canSendText;
++ (void)_updateServiceAvailability;
++ (void)_serviceAvailabilityChanged:(id)arg1;
 
-- (void)setMessageComposeDelegate:(id)arg1;
 - (id)recipients;
 - (void)setRecipients:(id)arg1;
+- (void)setMessageComposeDelegate:(id)arg1;
+- (void)setBody:(id)arg1;
 - (id)body;
+- (void)setModalPresentationStyle:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)messageComposeDelegate;
-- (void)setBody:(id)arg1;
 - (void)smsComposeControllerCancelled:(id)arg1;
 - (void)smsComposeControllerSendStarted:(id)arg1;
+- (id)messageComposeDelegate;
 
 @end

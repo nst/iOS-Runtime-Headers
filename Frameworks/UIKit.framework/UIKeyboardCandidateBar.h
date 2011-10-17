@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, NSObject, NSMutableArray;
+@class UIKeyboardCandidateBarBackgroundView, UIKeyboardCandidateExtended, NSMutableArray, <UIKeyboardCandidateListDelegate>, UIView, NSString, UIScrollView, NSArray;
 
-@interface UIKeyboardCandidateBar : UIView <UIKeyboardCandidateList> {
-    NSObject *m_delegate;
+@interface UIKeyboardCandidateBar : UIView <UIKeyboardCandidateList, UIKeyboardCandidateListDelegate> {
+    <UIKeyboardCandidateListDelegate> *m_delegate;
+    UIKeyboardCandidateBarBackgroundView *m_cellsContainerView;
     NSArray *m_candidates;
+    NSArray *m_allCandidates;
     NSString *m_inlineText;
     NSMutableArray *m_cells;
-    void *m_pageIndex;
-    unsigned int m_currentOffset;
-    unsigned int m_currentLimit;
     unsigned int m_currentCandidateIndex;
-    int m_currentPage;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -25,37 +23,63 @@
         } size; 
     } m_inlineRect;
     float m_maxX;
-    BOOL m_phone;
     BOOL m_largeUIShowing;
+    UIKeyboardCandidateExtended *m_extendedCandidatesView;
+    UIScrollView *m_scrollView;
+    UIView *m_extendedButton;
+    UIView *m_shadowView;
+    BOOL m_minimized;
+    BOOL m_animating;
 }
 
+@property(retain) UIKeyboardCandidateBarBackgroundView * cellsContainerView;
+@property(retain) UIKeyboardCandidateExtended * extendedCandidatesView;
+@property(getter=isMinimized) BOOL minimized;
+@property(getter=isAnimating) BOOL animating;
+
 + (float)candidateBarHeight;
++ (id)activeInstance;
 + (id)sharedInstance;
 
-- (void)showPageAtIndex:(unsigned int)arg1;
-- (void)showPreviousPage;
-- (unsigned int)currentIndex;
-- (id)candidateAtIndex:(unsigned int)arg1;
+- (void)setCellsContainerView:(id)arg1;
+- (struct CGSize { float x1; float x2; })screenSpaceBetweenStatusBarAndKeyboard;
+- (id)cellsContainerView;
+- (BOOL)_addCells:(int)arg1;
+- (void)_setCurrentCandidateIndex:(unsigned int)arg1;
+- (void)_forceLayoutTo:(unsigned int)arg1;
+- (void)_hideExtendedCandidatesViewWithAnimation:(BOOL)arg1;
+- (void)_bgAddCells:(id)arg1;
 - (void)_clearCells;
 - (void)_clearAll;
-- (void)_showLargeCandidateList;
+- (void)_showExtendedCandidatesView;
+- (id).cxx_construct;
 - (void)_cellSelected:(id)arg1;
-- (void)candidateListSelectionDidChange:(id)arg1;
-- (id)currentCandidate;
+- (void)setExtendedCandidatesView:(id)arg1;
+- (id)extendedCandidatesView;
 - (void)configureKeyboard:(id)arg1;
+- (id)candidateAtIndex:(unsigned int)arg1;
+- (id)currentCandidate;
+- (void)showPageAtIndex:(unsigned int)arg1;
+- (void)candidateListShouldBeDismissed:(id)arg1;
+- (void)candidateListSelectionDidChange:(id)arg1;
+- (void)candidateListAcceptCandidate:(id)arg1;
+- (void)setMinimized:(BOOL)arg1;
+- (void)showCandidateAtIndex:(unsigned int)arg1;
+- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
-- (void)layout;
-- (void)showNextCandidate;
+- (unsigned int)currentIndex;
+- (void)showPreviousPage;
 - (void)showNextPage;
 - (void)showPreviousCandidate;
-- (void)setUIKeyboardCandidateListDelegate:(id)arg1;
-- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
-- (void)showCandidateAtIndex:(unsigned int)arg1;
-- (void)candidateListAcceptCandidate:(id)arg1;
+- (void)showNextCandidate;
+- (BOOL)isMinimized;
+- (void)layout;
+- (BOOL)isAnimating;
+- (void)setAnimating:(BOOL)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)dealloc;
-- (unsigned int)count;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned int)count;
+- (void)dealloc;
 
 @end

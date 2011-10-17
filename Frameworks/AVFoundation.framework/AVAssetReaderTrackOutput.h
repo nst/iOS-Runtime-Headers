@@ -14,16 +14,16 @@
 + (id)assetReaderTrackOutputWithTrack:(id)arg1 outputSettings:(id)arg2;
 
 - (void)finalize;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)mediaType;
-- (id)outputSettings;
+- (BOOL)_trimsSampleDurations;
+- (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
 - (id)initWithTrack:(id)arg1 outputSettings:(id)arg2;
 - (id)track;
-- (BOOL)_trimsSampleDurations;
+- (id)outputSettings;
 - (id)_figAssetReaderExtractionOptions;
 - (id)_asset;
-- (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
+- (id)mediaType;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

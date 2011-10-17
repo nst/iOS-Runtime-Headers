@@ -13,8 +13,8 @@
 
 - (void)main;
 - (void)dealloc;
-- (BOOL)hasActiveWiFi;
 - (BOOL)hasValidNetwork;
+- (BOOL)hasActiveWiFi;
 - (id)initWithParticipant:(id)arg1;
 
 @end

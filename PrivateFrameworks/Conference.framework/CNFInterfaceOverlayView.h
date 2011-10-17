@@ -5,10 +5,7 @@
 @interface CNFInterfaceOverlayView : UIView  {
 }
 
-+ (void)_initializeSafeCategory;
 
-- (void)setOrientation:(int)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)_accessibilityAllowsSiblingsWhenOvergrown;
 
 @end

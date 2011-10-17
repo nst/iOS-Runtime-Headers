@@ -8,14 +8,14 @@
 
 + (id)sharedLogging;
 
-- (id)init;
-- (void)dealloc;
-- (void)addLogDelegate:(id)arg1 forAccountInfoProvider:(id)arg2;
-- (struct __CFSet { }*)_delegatesToLogForProvider:(id)arg1;
-- (BOOL)shouldLogAtLevel:(int)arg1 forAccountInfoProvider:(id)arg2;
-- (BOOL)_shouldOutputAtLevel:(int)arg1 forAccountInfoProvider:(id)arg2;
 - (void)logDiagnosticForProvider:(id)arg1 withLevel:(int)arg2 format:(id)arg3 args:(void*)arg4;
 - (struct __CFSet { }*)delegatesToLogTransmittedDataForAccountInfoProvider:(id)arg1;
 - (void)removeLogDelegate:(id)arg1 forAccountInfoProvider:(id)arg2;
+- (void)addLogDelegate:(id)arg1 forAccountInfoProvider:(id)arg2;
+- (BOOL)_shouldOutputAtLevel:(int)arg1 forAccountInfoProvider:(id)arg2;
+- (BOOL)shouldLogAtLevel:(int)arg1 forAccountInfoProvider:(id)arg2;
+- (struct __CFSet { }*)_delegatesToLogForProvider:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

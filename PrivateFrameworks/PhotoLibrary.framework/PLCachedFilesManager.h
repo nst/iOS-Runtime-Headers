@@ -16,31 +16,28 @@
     NSMutableDictionary *_optionsDictionary;
     unsigned int _dcimDirectoryHasChanged : 1;
     unsigned int _iTunesDatastoreHasChanged : 1;
-    unsigned int _cameraRollNeedsToBeMigrated : 1;
     unsigned int _recreateCachesDirectory : 1;
     unsigned int _iTunesDataExists : 1;
     <PLCachedFilesManagerDelegate> *_delegate;
     <PLCachedFilesManagerPlugin> *_plugin;
 }
 
-+ (BOOL)approximateCachesNeedToBeRecreated;
 + (BOOL)instanceIsRecreatingCaches;
 
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)initWithPhotoLibrary:(id)arg1 imageCache:(id)arg2;
-- (void)setIsRecreatingCaches:(BOOL)arg1;
-- (BOOL)cachesNeedToBeRecreated;
 - (void)recreateCachedFilesAfterSyncWithDelay:(id)arg1;
-- (void)_cancelRecreatingCachedFiles;
-- (void)_actuallyRecreateCaches;
-- (void)_recreateCaches;
-- (id)_pathToCachesMetadataFile;
-- (BOOL)_photosDatabaseHasChangedSinceLastCheck;
-- (BOOL)_cachesDirectoryIsMissingOrIsEmpty;
-- (void)_finishRecreatingCaches;
+- (BOOL)cachesNeedToBeRecreated;
+- (id)initWithPhotoLibrary:(id)arg1 imageCache:(id)arg2;
 - (void)_saveDCIMState;
-- (BOOL)_cameraRollNeedsToBeMigrated;
+- (id)_pathToCachesMetadataFile;
+- (void)_actuallyRecreateCaches;
+- (void)_finishRecreatingCaches;
+- (void)setIsRecreatingCaches:(BOOL)arg1;
+- (void)_recreateCaches;
+- (BOOL)_cachesDirectoryIsMissingOrIsEmpty;
+- (BOOL)_photosDatabaseHasChangedSinceLastCheck;
 - (BOOL)_dcimDirectoryHasChanged;
+- (void)_cancelRecreatingCachedFiles;
+- (void)dealloc;
 
 @end

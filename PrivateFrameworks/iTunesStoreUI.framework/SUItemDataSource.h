@@ -8,19 +8,18 @@
 + (void)setSharedDataSource:(id)arg1;
 + (id)sharedDataSource;
 
+- (id)typeStringForItemType:(int)arg1;
 - (id)newDisplayItemValidationTestsForItem:(id)arg1;
-- (id)newExternalDownloadWithItem:(id)arg1 storeOffer:(id)arg2;
 - (long long)estimatedDiskSpaceNeededForItem:(id)arg1 storeOffer:(id)arg2;
+- (id)_newDownloadMetadataForPodcastEpisode:(id)arg1 storeOffer:(id)arg2;
+- (id)_newTonePurchaseWithPurchase:(id)arg1;
+- (id)_thumbnailImageForItem:(id)arg1;
 - (int)itemTypeForItem:(id)arg1;
+- (id)_newDownloadForPodcastEpisode:(id)arg1 storeOffer:(id)arg2;
+- (id)_newDownloadForDocumentItem:(id)arg1 storeOffer:(id)arg2;
 - (int)itemTypeForTypeString:(id)arg1;
 - (id)newPurchaseWithItem:(id)arg1 storeOffer:(id)arg2;
-- (id)typeStringForItemType:(int)arg1;
-- (id)_newDownloadAssetsForDocumentItem:(id)arg1 storeOffer:(id)arg2;
-- (id)_newDownloadAssetsForPodcastEpisode:(id)arg1 storeOffer:(id)arg2;
-- (id)_newDownloadMetadataForDocumentItem:(id)arg1 storeOffer:(id)arg2;
-- (id)_newDownloadMetadataForPodcastEpisode:(id)arg1 storeOffer:(id)arg2;
-- (id)_newRingtonePurchaseWithPurchase:(id)arg1;
-- (id)_thumbnailImageForItem:(id)arg1;
+- (id)newExternalDownloadWithItem:(id)arg1 storeOffer:(id)arg2;
 - (id)newItemWithItemDictionary:(id)arg1;
 
 @end

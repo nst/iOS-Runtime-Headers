@@ -5,28 +5,29 @@
 @class NSDate, NSString, IMMessage;
 
 @interface IMChatItem : NSObject  {
-    NSString *_guid;
     NSDate *_date;
     id _datum1;
     id _datum2;
     id _datum3;
     BOOL _isFromArchive;
+    NSString *_guid;
 }
 
-@property(readonly) NSString * guid;
+@property(retain) NSString * guid;
 @property(readonly) NSDate * date;
 @property(readonly) NSString * stringValue;
 @property(readonly) IMMessage * message;
 @property(readonly) BOOL isFromArchive;
 
 
-- (id)guid;
-- (id)message;
-- (id)date;
-- (id)stringValue;
-- (void)dealloc;
-- (id)_initWithGUID:(id)arg1 date:(id)arg2 datum1:(id)arg3 datum2:(id)arg4 datum3:(id)arg5;
-- (void)_setIsFromArchive:(BOOL)arg1;
 - (BOOL)isFromArchive;
+- (void)_setIsFromArchive:(BOOL)arg1;
+- (id)_initWithGUID:(id)arg1 date:(id)arg2 datum1:(id)arg3 datum2:(id)arg4 datum3:(id)arg5;
+- (void)setGuid:(id)arg1;
+- (id)message;
+- (id)stringValue;
+- (id)date;
+- (id)guid;
+- (void)dealloc;
 
 @end

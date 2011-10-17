@@ -2,49 +2,63 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MLChapterTOC;
-
 @interface ML3Track : ML3Entity  {
 }
 
-@property(readonly) MLChapterTOC * chapterTOC;
-
-+ (void)initialize;
-+ (id)albumsDefaultOrderingProperties;
-+ (id)artistsDefaultOrderingProperties;
-+ (id)genresDefaultOrderingProperties;
-+ (id)podcastsDefaultOrderingProperties;
++ (id)flattenedChapterDataFromSyncInfoDictionaries:(id)arg1 trackPersistentID:(long long)arg2;
++ (id)_flattenedChapterDataWithImportChapters:(id)arg1 library:(id)arg2 trackPersistentID:(long long)arg3;
++ (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
++ (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2;
++ (id)orderingPropertiesForITTGTrackOrder:(unsigned long)arg1;
++ (BOOL)trackValueAreInTheCloud:(id)arg1;
++ (BOOL)trackWithPersistentID:(long long)arg1 existsInLibrary:(id)arg2;
 + (id)TVShowEpisodesDefaultOrderingProperties;
 + (id)podcastsEpisodesDefaultOrderingProperties;
-+ (id)albumAllArtistsDefaultOrderingProperties;
-+ (id)defaultOrderingProperties;
-+ (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
-+ (id)predisambiguatedProperties;
-+ (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2;
-+ (id)foreignColumnForProperty:(id)arg1;
-+ (id)orderingPropertiesForITTGTrackOrder:(unsigned long)arg1;
-+ (id)artistAllAlbumsDefaultOrderingProperties;
-+ (id)albumAndArtistDefaultOrderingProperties;
-+ (id)sectionPropertyForProperty:(id)arg1;
-+ (id)extraTablesToDelete;
-+ (id)persistentIDColumnForTable:(id)arg1;
-+ (BOOL)libraryContentsChangeForProperty:(id)arg1;
-+ (id)containerQueryWithContainer:(id)arg1;
-+ (id)databaseTable;
-+ (id)subselectStatementForProperty:(id)arg1;
-+ (id)subselectPropertyForProperty:(id)arg1;
-+ (id)joinClauseForProperty:(id)arg1;
-+ (id)foreignDatabaseTableForProperty:(id)arg1;
 + (id)composersDefaultOrderingProperties;
++ (id)albumAndArtistDefaultOrderingProperties;
++ (id)albumAllArtistsDefaultOrderingProperties;
++ (id)artistsDefaultOrderingProperties;
++ (id)artistAllAlbumsDefaultOrderingProperties;
++ (id)podcastsDefaultOrderingProperties;
++ (id)genresDefaultOrderingProperties;
++ (BOOL)_clearLocationFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3;
++ (void)populateSortOrdersOfPropertyValues:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
++ (BOOL)_deleteAssetAtPath:(id)arg1;
++ (void)_enumeratePathsToDeleteFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3 usingBlock:(id)arg4;
++ (id)albumsDefaultOrderingProperties;
++ (BOOL)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3 deletedFileSize:(long long*)arg4;
++ (id)containerQueryWithContainer:(id)arg1;
++ (id)sectionPropertyForProperty:(id)arg1;
++ (id)subselectPropertyForProperty:(id)arg1;
++ (id)subselectStatementForProperty:(id)arg1;
++ (id)predisambiguatedProperties;
++ (BOOL)deleteFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3;
++ (id)extraTablesToDelete;
++ (id)collectionClassesToUpdateBeforeDelete;
++ (BOOL)libraryContentsChangeForProperty:(id)arg1;
++ (id)allProperties;
++ (id)extraTablesToInsert;
++ (id)databaseTable;
++ (id)foreignColumnForProperty:(id)arg1;
++ (id)foreignDatabaseTableForProperty:(id)arg1;
++ (id)joinClauseForProperty:(id)arg1;
++ (id)unsettableProperties;
++ (int)revisionTrackingCode;
++ (id)persistentIDColumnForTable:(id)arg1;
++ (id)defaultOrderingProperties;
++ (void)initialize;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
 
-- (id)chapterTOC;
-- (BOOL)deleteFromLibrary;
+- (void)populateChapterDataByImportingFromAsset;
 - (BOOL)populateArtworkCacheWithArtworkData:(id)arg1;
-- (void)populateChapterDataWithImportChapters:(id)arg1;
 - (void)populateLocationPropertiesWithPath:(id)arg1;
-- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2;
-- (BOOL)isOTAPurchasedContent;
-- (long long)imageDBRecordID:(int)arg1;
+- (void)populateChapterDataWithImportChapters:(id)arg1;
+- (id)artworkCacheIDAtPlaybackTime:(double)arg1;
+- (BOOL)updateIntegrity;
+- (id)absoluteFilePath;
+- (void)updateCollectionCloudStatus;
+- (id)chapterTOC;
+- (void)didChangeValueForProperties:(const id*)arg1 count:(unsigned int)arg2;
+- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 
 @end

@@ -5,42 +5,43 @@
 @class MessageFileWrapper, NSMutableDictionary;
 
 @interface MessageTextAttachment : NSObject  {
-    MessageFileWrapper *_fileWrapper;
     NSMutableDictionary *_cache;
 }
+
+@property(retain) MessageFileWrapper * fileWrapper;
 
 
 - (BOOL)shouldDownloadAttachmentOnDisplay;
 - (id)fileWrapper;
-- (BOOL)hasBeenDownloaded;
 - (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
+- (BOOL)hasBeenDownloaded;
+- (id)textEncodingGuess;
+- (BOOL)isPlaceholder;
 - (id)mimePart;
 - (id)fileWrapperForcingDownload:(BOOL)arg1;
+- (void)download;
+- (void)setMimePart:(id)arg1;
+- (void)setFileWrapper:(id)arg1;
+- (unsigned int)approximateSize;
+- (void)setCachedValue:(id)arg1 forKey:(id)arg2;
+- (id)cachedValueForKey:(id)arg1;
+- (id)initWithWrapper:(id)arg1;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)description;
-- (id)initWithWrapper:(id)arg1;
-- (void)setCachedValue:(id)arg1 forKey:(id)arg2;
-- (unsigned int)approximateSize;
-- (void)setFileWrapper:(id)arg1;
-- (BOOL)allowDownload;
-- (id)cachedValueForKey:(id)arg1;
-- (BOOL)isPlaceholder;
 - (id)contentType;
-- (BOOL)isDisplayableInsidePlugin;
-- (BOOL)isRestrictedMimeType:(id)arg1;
-- (id)contentTypeAndMimeType:(id*)arg1;
-- (BOOL)isCalendarFile;
-- (BOOL)isSinglePagePDFThatIsAllowedToBeInline;
-- (BOOL)isContentTypeDisplayableByMobileMail:(id)arg1;
-- (BOOL)isContentOpenable;
+- (id)mimeType;
+- (id)unzippedContentType;
 - (BOOL)isContentDownloadable;
-- (void)setDisplayableInline:(BOOL)arg1;
+- (BOOL)isDisplayableInsidePlugin;
+- (id)_contentTypeByStrippingZipIfNeeded:(BOOL)arg1;
+- (BOOL)isContentOpenable;
+- (BOOL)_isSinglePagePDFThatIsAllowedToBeInline;
 - (BOOL)isDisplayableInline;
-- (id)mf_copyMarkupURL;
-- (struct CGSize { float x1; float x2; })mf_markupSizeForImageScale:(int)arg1;
 - (id)mf_markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2 imageScale:(int)arg3;
-- (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2 ignoreCachedData:(BOOL)arg3;
+- (struct CGSize { float x1; float x2; })mf_markupSizeForImageScale:(int)arg1;
+- (id)mf_markupURL;
+- (BOOL)isCalendarFile;
 - (void)scaleImageToFit:(int)arg1;
 - (void)setImageScalingFlags:(unsigned int)arg1;
 - (unsigned int)imageScalingFlags;

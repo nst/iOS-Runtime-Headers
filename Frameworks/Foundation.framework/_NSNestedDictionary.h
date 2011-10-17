@@ -8,13 +8,13 @@
 }
 
 
+- (void)removeObjectForKey:(id)arg1;
+- (id)_recursiveAllValues;
+- (id)_recursiveAllKeys;
 - (id)keyEnumerator;
 - (id)objectEnumerator;
-- (void)removeObjectForKey:(id)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2;
-- (id)objectForKey:(id)arg1;
 - (unsigned int)count;
-- (id)_recursiveAllKeys;
-- (id)_recursiveAllValues;
+- (id)objectForKey:(id)arg1;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

@@ -11,14 +11,14 @@
 }
 
 
-- (bool)isLoaded;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)init;
-- (void)dealloc;
-- (void)setSoundData:(id)arg1;
 - (id)soundData;
+- (void)setSoundData:(id)arg1;
 - (long)sizeInBytes;
 - (void)setSizeInBytes:(long)arg1;
+- (bool)isLoaded;
+- (id)name;
+- (void)setName:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

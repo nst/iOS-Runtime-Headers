@@ -11,13 +11,13 @@
 
 
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)setStyle:(int)arg1;
 - (int)style;
+- (void)setStyle:(int)arg1;
 - (id)init;
 - (id)_authenticationQueryParametersForStyle:(int)arg1;
 - (id)_bagKeyForStyle:(int)arg1;
-- (id)newFetchOperation;
-- (id)newViewControllerForPage:(id)arg1 ofType:(int)arg2 returningError:(id*)arg3;
 - (void)handleFailureWithError:(id)arg1;
+- (id)newViewControllerForPage:(id)arg1 ofType:(int)arg2 returningError:(id*)arg3;
+- (id)newFetchOperation;
 
 @end

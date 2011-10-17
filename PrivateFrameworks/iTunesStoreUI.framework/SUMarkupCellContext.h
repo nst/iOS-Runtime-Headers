@@ -11,16 +11,16 @@
     float _webViewWidth;
 }
 
-@property float webViewWidth;
 @property(retain) NSString * stylesheet;
+@property float webViewWidth;
 
 
-- (void)dealloc;
-- (void)webViewDidFinishLoading:(id)arg1;
-- (float)webViewWidth;
-- (void)setWebViewWidth:(float)arg1;
-- (id)webViewForMarkup:(id)arg1;
 - (id)stylesheet;
+- (void)dealloc;
+- (void)setWebViewWidth:(float)arg1;
+- (float)webViewWidth;
+- (id)webViewForMarkup:(id)arg1;
 - (void)setStylesheet:(id)arg1;
+- (void)webViewDidFinishLoading:(id)arg1;
 
 @end

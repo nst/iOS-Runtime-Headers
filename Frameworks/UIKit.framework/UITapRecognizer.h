@@ -4,7 +4,7 @@
 
 @class NSMutableSet, NSArray, NSMutableArray, <UITapRecognizerDelegate>;
 
-@interface UITapRecognizer : NSObject  {
+@interface UITapRecognizer : NSObject <NSCoding> {
     unsigned int _numberOfTouchesRequired;
     unsigned int _numberOfTapsRequired;
     NSMutableSet *_activeTouches;
@@ -27,39 +27,41 @@
     unsigned int _noNewTouches : 1;
 }
 
+@property <UITapRecognizerDelegate> * delegate;
+@property unsigned int numberOfTapsRequired;
+@property unsigned int numberOfTouchesRequired;
 @property float allowableMovement;
 @property double maximumSingleTapDuration;
 @property double maximumIntervalBetweenSuccessiveTaps;
-@property <UITapRecognizerDelegate> * delegate;
 @property(readonly) NSArray * touches;
-@property unsigned int numberOfTouchesRequired;
-@property unsigned int numberOfTapsRequired;
 
 
-- (float)allowableMovement;
-- (void)_reset;
-- (void)clearTapTimer;
+- (void)setDelegate:(id)arg1;
+- (void)setMaximumIntervalBetweenSuccessiveTaps:(double)arg1;
+- (void)setMaximumSingleTapDuration:(double)arg1;
+- (double)maximumSingleTapDuration;
+- (struct CGPoint { float x1; float x2; })_locationOnScreen;
 - (void)startTapTimer:(double)arg1;
 - (void)tooSlow:(id)arg1;
-- (struct CGPoint { float x1; float x2; })_locationOnScreen;
+- (void)clearTapTimer;
+- (float)allowableMovement;
 - (unsigned int)numberOfTouchesRequired;
-- (double)maximumSingleTapDuration;
-- (void)setMaximumSingleTapDuration:(double)arg1;
 - (double)maximumIntervalBetweenSuccessiveTaps;
-- (void)setMaximumIntervalBetweenSuccessiveTaps:(double)arg1;
+- (void)_reset;
 - (unsigned int)numberOfTapsRequired;
+- (id)touches;
+- (void)setAllowableMovement:(float)arg1;
 - (void)setNumberOfTapsRequired:(unsigned int)arg1;
 - (void)setNumberOfTouchesRequired:(unsigned int)arg1;
-- (void)setAllowableMovement:(float)arg1;
-- (id)touches;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (id)delegate;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 
 @end

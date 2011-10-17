@@ -7,11 +7,11 @@
 }
 
 
-- (id)init;
-- (unsigned int)addObject:(id)arg1;
-- (unsigned int)addOrEquivalentObject:(id)arg1;
-- (void)setupDefaults;
-- (void)addDefaultWithNSString:(id)arg1 formatId:(unsigned int)arg2;
 - (bool)isOverwritingKeyOK;
+- (void)addDefaultWithNSString:(id)arg1 formatId:(unsigned int)arg2;
+- (void)setupDefaults;
+- (unsigned int)addOrEquivalentObject:(id)arg1;
+- (unsigned int)addObject:(id)arg1;
+- (id)init;
 
 @end

@@ -17,29 +17,29 @@
 
 + (id)posterCellIdentifier;
 
-- (BOOL)isEditing;
-- (id)value;
-- (BOOL)textFieldShouldEndEditing:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (void)textFieldDidBeginEditing:(id)arg1;
-- (void)textViewDidBeginEditing:(id)arg1;
-- (BOOL)textViewShouldEndEditing:(id)arg1;
-- (void)textViewDidChange:(id)arg1;
-- (void)setValue:(id)arg1;
-- (void)setStyle:(int)arg1;
-- (void)resignFirstResponder;
-- (int)style;
-- (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })contentSize;
-- (void)becomeFirstResponder;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 multiLine:(BOOL)arg2;
-- (id)initHDSDCell;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cellStyle:(int)arg2;
-- (void)forceFirstResponder:(BOOL)arg1;
+- (id)value;
+- (void)textViewDidChange:(id)arg1;
+- (BOOL)textViewShouldEndEditing:(id)arg1;
+- (void)textViewDidBeginEditing:(id)arg1;
+- (void)setValue:(id)arg1;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (BOOL)textFieldShouldEndEditing:(id)arg1;
+- (void)textFieldDidBeginEditing:(id)arg1;
+- (BOOL)isEditing;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (struct CGSize { float x1; float x2; })contentSize;
+- (BOOL)becomeFirstResponder;
+- (BOOL)resignFirstResponder;
+- (void)layoutSubviews;
 - (id)sizeTextLabel;
-- (void)setPlaceholderText:(id)arg1;
+- (void)forceFirstResponder:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cellStyle:(int)arg2;
+- (id)initHDSDCell;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 multiLine:(BOOL)arg2;
 - (void)_textFieldChanged;
+- (void)setPlaceholderText:(id)arg1;
+- (void)dealloc;
 
 @end

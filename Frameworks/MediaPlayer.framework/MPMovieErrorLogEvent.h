@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDate, AVItemErrorLogEvent, NSString;
+@class AVPlayerItemErrorLogEvent, NSDate, NSString;
 
 @interface MPMovieErrorLogEvent : NSObject <NSCopying> {
     struct MPMovieErrorLogEventInternal { 
-        AVItemErrorLogEvent *event; 
+        AVPlayerItemErrorLogEvent *event; 
     } _internal;
 }
 
@@ -17,20 +17,20 @@
 @property(readonly) int errorStatusCode;
 @property(readonly) NSString * errorDomain;
 @property(readonly) NSString * errorComment;
-@property struct MPMovieErrorLogEventInternal { AVItemErrorLogEvent *event; } _internal;
+@property struct MPMovieErrorLogEventInternal { id x1; } _internal;
 
 
-- (id)date;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (struct MPMovieErrorLogEventInternal { id x1; })_internal;
-- (int)errorStatusCode;
 - (id)_initWithAVItemErrorLogEvent:(id)arg1;
-- (id)serverAddress;
-- (id)playbackSessionID;
+- (void)set_internal:(struct MPMovieErrorLogEventInternal { id x1; })arg1;
+- (struct MPMovieErrorLogEventInternal { id x1; })_internal;
+- (id)date;
+- (int)errorStatusCode;
 - (id)errorDomain;
 - (id)errorComment;
-- (void)set_internal:(struct MPMovieErrorLogEventInternal { id x1; })arg1;
 - (id)URI;
+- (id)serverAddress;
+- (id)playbackSessionID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

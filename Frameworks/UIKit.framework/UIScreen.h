@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIScreenMode, UIScreen, NSArray;
+@class UIScreen, UIScreenMode, NSArray, UISoftwareDimmingWindow;
 
 @interface UIScreen : NSObject  {
     id _display;
@@ -22,56 +22,90 @@
         unsigned int bitsPerComponent : 4; 
         unsigned int initialized : 1; 
         unsigned int connected : 1; 
+        unsigned int overscanCompensation : 2; 
     } _screenFlags;
+    BOOL _wantsSoftwareDimming;
+    UISoftwareDimmingWindow *_softwareDimmingWindow;
+    int _ignoreBacklightLevelDidChangeNotificationsCount;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } applicationFrame;
-@property(copy,readonly) NSArray * availableModes;
-@property(retain,readonly) UIScreenMode * preferredMode;
-@property(retain) UIScreenMode * currentMode;
-@property(retain,readonly) UIScreen * mirroredScreen;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } applicationFrame;
 @property(readonly) float scale;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
+@property(readonly) NSArray * availableModes;
+@property(readonly) UIScreenMode * preferredMode;
+@property(retain) UIScreenMode * currentMode;
+@property int overscanCompensation;
+@property(readonly) UIScreen * mirroredScreen;
+@property float brightness;
+@property BOOL wantsSoftwareDimming;
+@property(setter=_setSoftwareDimmingWindow:,retain) UISoftwareDimmingWindow * _softwareDimmingWindow;
+@property(setter=_setIgnoreBacklightLevelDidChangeNotificationsCount:) int _ignoreBacklightLevelDidChangeNotificationsCount;
 
 + (void)_videoOutSettingsChanged;
-+ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForScreenOriginRotation:(float)arg1;
 + (id)screens;
-+ (void)initialize;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromView:(id)arg2;
++ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForScreenOriginRotation:(float)arg1;
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToRotateScreen:(float)arg1;
++ (id)_screenWithDisplayName:(id)arg1;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromView:(id)arg2;
 + (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromView:(id)arg2;
-+ (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toView:(id)arg2;
++ (void)initialize;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toView:(id)arg2;
++ (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toView:(id)arg2;
++ (void)_prepareScreensForAppResume;
 + (id)mainScreen;
 
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id)initWithDisplay:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(int)arg1;
-- (void)_computeMetrics;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_realDisplayBounds;
-- (int)_imageOrientation;
-- (BOOL)_isCloned;
-- (id)mirroredScreen;
-- (id)preferredMode;
-- (id)_preferredMode;
-- (void)setBitsPerComponent:(int)arg1;
-- (void)setCurrentMode:(id)arg1;
-- (int)screenType;
-- (BOOL)_hasStatusBar;
-- (void)_prepareForWindow;
-- (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
-- (void)_setScale:(float)arg1;
-- (id)currentMode;
-- (id)availableModes;
-- (BOOL)_isMainScreen;
-- (float)_rotation;
-- (float)_horizontalPixelScale;
-- (id)_name;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationFrame;
-- (int)bitsPerComponent;
-- (void)dealloc;
-- (id)description;
-- (float)scale;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (void)setWantsSoftwareDimming:(BOOL)arg1;
+- (BOOL)wantsSoftwareDimming;
+- (float)brightness;
+- (void)setBrightness:(float)arg1;
+- (void)setOverscanCompensation:(int)arg1;
+- (int)overscanCompensation;
+- (int)screenType;
+- (void)setBitsPerComponent:(int)arg1;
+- (id)mirroredScreen;
+- (double)_refreshRate;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)_lazySoftwareDimmingWindow;
+- (void)_incrementIgnoreBacklightLevelDidChangeNotificationsCount;
+- (float)rawBrightnessForBacklightLevel:(float)arg1;
+- (BOOL)_supportsBrightness;
+- (void)_postBrightnessDidChangeNotificationIfAppropriate;
+- (void)_decrementIgnoreBacklightLevelDidChangeNotificationsCount;
+- (BOOL)_shouldRepostBacklightLevelChangedNotification;
+- (void)_setIgnoreBacklightLevelDidChangeNotificationsCount:(int)arg1;
+- (int)_ignoreBacklightLevelDidChangeNotificationsCount;
+- (id)_softwareDimmingWindow;
+- (void)setCurrentMode:(id)arg1;
+- (id)preferredMode;
+- (BOOL)_hasWindows;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(int)arg1;
+- (BOOL)_hasStatusBar;
+- (BOOL)_isOverscanned;
+- (BOOL)_overscanAdjustmentNeedsUpdate;
+- (void)_setSoftwareDimmingWindow:(id)arg1;
+- (void)_endObservingBacklightLevelNotifications;
+- (void)_beginObservingBacklightLevelNotifications;
+- (void)_updateOverscanCompensationAllowingBackgroundUpdate:(BOOL)arg1;
+- (id)availableModes;
+- (id)initWithDisplay:(id)arg1;
+- (id)currentMode;
+- (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
+- (int)_imageOrientation;
+- (void)_prepareForWindow;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationFrame;
+- (id)_name;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_realDisplayBounds;
+- (float)_horizontalPixelScale;
+- (BOOL)_isMainScreen;
+- (int)bitsPerComponent;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsInPixels;
+- (float)_rotation;
+- (void)_setScale:(float)arg1;
+- (void)_computeMetrics;
+- (float)scale;
+- (id)description;
+- (void)dealloc;
 
 @end

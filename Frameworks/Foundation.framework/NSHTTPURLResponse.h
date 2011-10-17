@@ -11,23 +11,26 @@
 + (id)localizedStringForStatusCode:(int)arg1;
 + (BOOL)isErrorStatusCode:(int)arg1;
 
+- (id)allHeaderFields;
+- (struct __SecTrust { }*)_peerTrust;
+- (void)_setPeerTrust:(struct __SecTrust { }*)arg1;
+- (id)_clientCertificateState;
+- (id)_clientCertificateChain;
+- (id)initWithURL:(id)arg1 statusCode:(int)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
+- (id)initWithURL:(id)arg1 statusCode:(int)arg2 HTTPVersion:(id)arg3 headerFields:(id)arg4;
+- (id)_peerCertificateChain;
+- (id)_initWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
 - (int)statusCode;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
-- (id)_initWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
-- (id)initWithURL:(id)arg1 statusCode:(int)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
-- (id)_peerCertificateChain;
-- (id)_clientCertificateChain;
-- (id)_clientCertificateState;
-- (void)_setPeerTrust:(struct __SecTrust { }*)arg1;
-- (struct __SecTrust { }*)_peerTrust;
-- (id)allHeaderFields;
+- (void)dealloc;
 - (id)expirationDate;
-- (BOOL)_getCacheControlMaxAge:(double*)arg1;
 - (id)_dateFromExpires;
+- (BOOL)_getCacheControlMaxAge:(double*)arg1;
+- (id)_iTunesStore_valueForHTTPHeader:(id)arg1;
 - (BOOL)getAppleMaxAge:(double*)arg1;
 - (long long)maxExpectedContentLength;
 - (double)expirationInterval;
+- (double)_maxAge;
 
 @end

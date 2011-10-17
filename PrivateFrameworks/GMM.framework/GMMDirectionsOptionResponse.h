@@ -5,23 +5,21 @@
 @class NSMutableArray;
 
 @interface GMMDirectionsOptionResponse : PBCodable  {
-    NSMutableArray *_options;
+    NSMutableArray *_optionDefinitions;
 }
 
-@property(readonly) int optionsCount;
-@property(retain) NSMutableArray * options;
+@property(retain) NSMutableArray * optionDefinitions;
 
 
-- (id)options;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (int)optionsCount;
-- (void)setOption:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)optionAtIndex:(unsigned int)arg1;
-- (void)addOption:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setOptions:(id)arg1;
+- (id)optionDefinitions;
+- (id)optionDefinitionAtIndex:(unsigned int)arg1;
+- (unsigned int)optionDefinitionsCount;
+- (void)addOptionDefinition:(id)arg1;
+- (void)setOptionDefinitions:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

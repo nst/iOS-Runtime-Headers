@@ -6,11 +6,11 @@
 }
 
 
+- (id)pathExpression;
+- (id)predicateFormat;
+- (id)initWithKeyPath:(id)arg1;
+- (id)initWithOperand:(id)arg1 andKeyPath:(id)arg2;
 - (id)keyPath;
 - (void)dealloc;
-- (id)initWithOperand:(id)arg1 andKeyPath:(id)arg2;
-- (id)pathExpression;
-- (id)initWithKeyPath:(id)arg1;
-- (id)predicateFormat;
 
 @end

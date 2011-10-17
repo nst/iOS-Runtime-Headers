@@ -10,26 +10,26 @@
 }
 
 
+- (void)appendPropertyForName:(id)arg1 oadTextSpacing:(id)arg2;
+- (void)appendPropertyForName:(id)arg1 oadTextSpacing:(id)arg2 lineHeight:(float)arg3 unit:(int)arg4;
+- (void)appendPropertyForName:(id)arg1 oadTextSpacing:(id)arg2 unit:(int)arg3;
+- (void)appendPropertyForName:(id)arg1 color:(id)arg2;
+- (id)cssStyleString;
+- (id)attributeForName:(id)arg1;
+- (void)appendPropertyForName:(id)arg1 length:(double)arg2 unit:(int)arg3;
+- (void)appendSizeInfoFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)appendPositionInfoFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)appendDefaultBorderStyle;
+- (void)appendPropertyForName:(id)arg1 floatValue:(float)arg2;
+- (void)appendPropertyString:(id)arg1;
+- (void)appendPropertyForName:(id)arg1 intValue:(int)arg2;
+- (void)appendPropertyForName:(id)arg1 stringWithColons:(id)arg2;
+- (void)appendPropertyForName:(id)arg1 stringValue:(id)arg2;
+- (void)addProperty:(id)arg1 forKey:(id)arg2;
+- (id)propertyForName:(id)arg1;
+- (id)properties;
 - (id)initWithStyle:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)appendPropertyForName:(id)arg1 oadTextSpacing:(id)arg2;
-- (void)appendPropertyForName:(id)arg1 intValue:(int)arg2;
-- (id)cssStyleString;
-- (void)appendPropertyForName:(id)arg1 stringValue:(id)arg2;
-- (id)propertyForName:(id)arg1;
-- (void)appendPropertyForName:(id)arg1 oadTextSpacing:(id)arg2 unit:(int)arg3;
-- (void)appendPropertyForName:(id)arg1 oadTextSpacing:(id)arg2 lineHeight:(float)arg3 unit:(int)arg4;
-- (void)appendPropertyForName:(id)arg1 floatValue:(float)arg2;
-- (void)appendDefaultBorderStyle;
-- (void)appendSizeInfoFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)appendPropertyForName:(id)arg1 color:(id)arg2;
-- (void)addProperty:(id)arg1 forKey:(id)arg2;
-- (id)properties;
-- (id)attributeForName:(id)arg1;
-- (void)appendPropertyForName:(id)arg1 length:(double)arg2 unit:(int)arg3;
-- (void)appendPositionInfoFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)appendPropertyString:(id)arg1;
-- (void)appendPropertyForName:(id)arg1 stringWithColons:(id)arg2;
 
 @end

@@ -2,12 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class MKMapSnapshotCreator, UIImage;
+@class NSMutableDictionary, UIImage, NSString, MKMapSnapshotCreator, GEOTileKeyList;
 
 @interface MKMapSnapshotRequest : NSObject  {
     id _requester;
@@ -22,11 +17,9 @@
         float width; 
         float height; 
     } _size;
-    struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
-        } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; } *_tileRequester;
+    GEOTileKeyList *_tileKeyList;
     UIImage *_image;
+    NSString *_attributionString;
     MKMapSnapshotCreator *_delegate;
     unsigned int _minX;
     unsigned int _minY;
@@ -37,37 +30,41 @@
         float y; 
     } _renderOffset;
     BOOL _paused;
+    NSMutableDictionary *_objects;
+    id _foregroundObserver;
 }
 
-@property(readonly) UIImage * image;
-@property MKMapSnapshotCreator * delegate;
-@property struct CGSize { float width; float height; } size;
-@property unsigned int zoomLevel;
-@property struct { double latitude; double longitude; } coordinate;
-@property(retain) id requester;
 @property(retain) id context;
+@property(retain) id requester;
+@property(retain) NSString * attributionString;
+@property struct { double x1; double x2; } coordinate;
+@property unsigned int zoomLevel;
+@property struct CGSize { float x1; float x2; } size;
+@property MKMapSnapshotCreator * delegate;
+@property(readonly) UIImage * image;
 
 
-- (void)_appResumed:(id)arg1;
-- (void)setContext:(id)arg1;
-- (void)stopLoading;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)image;
-- (id)context;
-- (struct CGSize { float x1; float x2; })size;
-- (void)dealloc;
-- (id)description;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)tileRequester:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1 failedWithError:(id)arg2;
-- (void)tileRequesterProgress:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1;
-- (id)requester;
-- (void)setRequester:(id)arg1;
 - (unsigned int)zoomLevel;
 - (void)setZoomLevel:(unsigned int)arg1;
-- (void)tileRequesterCompleted:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1;
-- (void)setCoordinate:(struct { double x1; double x2; })arg1;
-- (struct { double x1; double x2; })coordinate;
+- (void)setDelegate:(id)arg1;
 - (void)startLoading;
+- (struct { double x1; double x2; })coordinate;
+- (void)stopLoading;
+- (id)image;
+- (id)context;
+- (void)setContext:(id)arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)delegate;
+- (struct CGSize { float x1; float x2; })size;
+- (void)tileRequesterFailedWithError:(id)arg1;
+- (void)tileRequesterCompleted;
+- (void)setAttributionString:(id)arg1;
+- (void)setRequester:(id)arg1;
+- (id)attributionString;
+- (id)requester;
+- (void)setCoordinate:(struct { double x1; double x2; })arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

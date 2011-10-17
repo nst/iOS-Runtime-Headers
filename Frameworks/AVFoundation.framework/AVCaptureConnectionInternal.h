@@ -9,6 +9,7 @@
     AVCaptureOutput *output;
     BOOL active;
     BOOL enabled;
+    int outputChangeSeedOnDisable;
     AVCaptureInputPort *audioInputPort;
     NSMutableArray *audioChannels;
     NSArray *audioChannelLevels;
@@ -19,9 +20,36 @@
     BOOL videoMirroredIsSetByClient;
     BOOL videoOrientationSupported;
     int videoOrientation;
-    BOOL videoOrientationIsSetByClient;
-    float maxVideoScaleAndCropFactor;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } videoMinFrameDuration;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } videoMaxFrameDuration;
+    float videoMaxScaleAndCropFactor;
     float videoScaleAndCropFactor;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } videoCropRect;
+    BOOL videoFirstAndLastFramesUncropped;
+    int videoRetainedBufferCountHint;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } videoMotionFilterOverlapRatios;
 }
 
 

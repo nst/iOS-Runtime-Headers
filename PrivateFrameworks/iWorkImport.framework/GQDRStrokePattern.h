@@ -8,7 +8,7 @@
 
 + (id)solidPattern;
 
-- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (int)type;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 
 @end

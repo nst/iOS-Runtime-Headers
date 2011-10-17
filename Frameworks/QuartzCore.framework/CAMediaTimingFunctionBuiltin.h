@@ -7,9 +7,9 @@
 }
 
 
-- (void)_getPoints:(double*)arg1;
 - (Class)classForCoder;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
+- (void)_getPoints:(double*)arg1;
 
 @end

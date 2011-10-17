@@ -6,7 +6,10 @@
 }
 
 
-- (void)release;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (unsigned int)retainCount;
 - (id)retain;
+- (oneway void)release;
 
 @end

@@ -15,16 +15,16 @@
     BOOL _gotOne;
 }
 
-@property BOOL gotOne;
 @property(copy) id completionHandler;
+@property BOOL gotOne;
 
 
 - (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
-- (BOOL)gotOne;
 - (void)completedSearchWithFirstName:(id)arg1 lastName:(id)arg2;
 - (void)setGotOne:(BOOL)arg1;
-- (id)completionHandler;
+- (BOOL)gotOne;
 - (void)setCompletionHandler:(id)arg1;
+- (id)completionHandler;
 - (void)dealloc;
 
 @end

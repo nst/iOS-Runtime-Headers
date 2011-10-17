@@ -11,9 +11,9 @@
 @property(retain) NSDictionary * cancelRelayRequest;
 
 
-- (id)cancelRelayRequest;
 - (void)setCancelRelayRequest:(id)arg1;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (id)cancelRelayRequest;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)request;
 - (void)dealloc;

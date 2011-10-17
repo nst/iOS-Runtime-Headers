@@ -18,31 +18,31 @@
     UIDelayedAction *_tapTimer;
 }
 
-@property double minimumFinalPressDuration;
-@property float allowableMovement;
-@property(retain) UITouch * touch;
 @property int numberOfFullTaps;
+@property float allowableMovement;
+@property double minimumFinalPressDuration;
+@property(retain) UITouch * touch;
 
 
-- (void)setTouch:(id)arg1;
-- (void)startRecognitionTimer:(double)arg1;
-- (void)recognized:(id)arg1;
-- (void)_verifyMovementInAllowableRange;
-- (double)minimumFinalPressDuration;
 - (void)setMinimumFinalPressDuration:(double)arg1;
 - (void)setNumberOfFullTaps:(int)arg1;
+- (void)_verifyMovementInAllowableRange;
+- (void)startRecognitionTimer:(double)arg1;
+- (double)minimumFinalPressDuration;
+- (void)recognized:(id)arg1;
 - (int)numberOfFullTaps;
-- (float)allowableMovement;
-- (void)clearTapTimer;
 - (void)startTapTimer:(double)arg1;
 - (void)tooSlow:(id)arg1;
+- (void)clearTapTimer;
+- (float)allowableMovement;
 - (void)setAllowableMovement:(float)arg1;
 - (void)_resetGestureRecognizer;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (void)setTouch:(id)arg1;
 - (id)touch;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
 

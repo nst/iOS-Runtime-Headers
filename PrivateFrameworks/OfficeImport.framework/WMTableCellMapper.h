@@ -15,9 +15,9 @@
 
 
 - (id)initWithWDTableCell:(id)arg1 atIndex:(unsigned int)arg2 parent:(id)arg3;
-- (unsigned int)colSpan;
-- (void)mapCellStyleAt:(id)arg1;
 - (id)tableMapper;
+- (void)mapCellStyleAt:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (unsigned int)colSpan;
 
 @end

@@ -13,30 +13,34 @@
     UIImage *_cameraIcon;
     UIImage *_cameraIconLandscape;
     NSArray *_videoRecordingIcons;
-    BOOL _videoMode;
-    BOOL _videoIsRecording;
+    UIImage *_panoRecordingIcon;
+    UIImage *_panoRecordingIconLandscape;
+    int _buttonMode;
+    BOOL _isCapturing;
     int _orientation;
     BOOL _watchingOrientationChanges;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (void)setEnabled:(BOOL)arg1;
-- (id)initWithDefaultSize;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)_setHighlightOnMouseDown:(BOOL)arg1;
-- (int)orientation;
-- (void)dealloc;
-- (void)setLockEnabled:(BOOL)arg1;
-- (void)setVideoIsRecording:(BOOL)arg1;
-- (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)_deviceOrientationChanged:(id)arg1;
+- (id)initWithDefaultSize;
+- (void)_setHighlightOnMouseDown:(BOOL)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (int)orientation;
+- (void)_startWatchingDeviceOrientationChanges;
+- (void)setLockEnabled:(BOOL)arg1;
+- (void)setButtonMode:(int)arg1;
+- (void)setDontShowDisabledState:(BOOL)arg1;
+- (void)_loadPanoResources;
+- (void)_loadPanoLandscapeResources;
+- (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
+- (void)_loadVideoResources;
+- (void)_loadStillResources;
+- (void)_loadStillLandscapeResources;
+- (void)setIsCapturing:(BOOL)arg1;
 - (void)_stopWatchingDeviceOrientationChanges;
 - (void)_setIcon:(id)arg1;
-- (void)setVideoMode:(BOOL)arg1;
-- (void)setDontShowDisabledState:(BOOL)arg1;
-- (void)_startWatchingDeviceOrientationChanges;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
+- (void)dealloc;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class PKPrinter, UIPrintPanelViewController, PKPrintSettings, UIPrintingProgress, UIPrintInfo, UIPrintPageRenderer;
+@class UIPrintPanelViewController, PKPrinter, PKPrintSettings, UIPrintingProgress, UIPrintPaper, UIPrintInfo, UIPrintPageRenderer;
 
 @interface UIPrintInteractionControllerInternals : NSObject  {
     int _pageCount;
@@ -14,6 +14,7 @@
     UIPrintPanelViewController *_printPanelViewController;
     UIPrintingProgress *_printingProgress;
     PKPrinter *_printer;
+    UIPrintPaper *_paper;
     PKPrintSettings *_printSettings;
     UIPrintInfo *_activePrintInfo;
     int _printInfoState;

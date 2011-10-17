@@ -5,7 +5,10 @@
 @interface ABVCardCardDAVRecord : ABVCardRecord  {
 }
 
++ (BOOL)includeABClipRectInVCardPhotos;
 + (BOOL)includeNotesInVCards;
++ (BOOL)includeREVInVCards;
++ (BOOL)includeImageURIInVCards;
 
 - (BOOL)useThumbnailImageFormatIfAvailable;
 

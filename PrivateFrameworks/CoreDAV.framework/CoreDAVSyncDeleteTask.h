@@ -11,7 +11,8 @@
 @property(readonly) CoreDAVAction * action;
 
 
-- (id)action;
+- (id)copyDefaultParserForContentType:(id)arg1;
 - (void)setAction:(id)arg1;
+- (id)action;
 
 @end

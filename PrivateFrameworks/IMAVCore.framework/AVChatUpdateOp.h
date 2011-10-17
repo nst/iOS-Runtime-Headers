@@ -12,7 +12,7 @@
 
 
 - (void)dealloc;
-- (void)didFinish;
 - (id)initWithIMHandle:(id)arg1 data:(id)arg2 avChat:(id)arg3;
+- (void)didFinish;
 
 @end

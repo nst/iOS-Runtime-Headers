@@ -13,7 +13,7 @@
 
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)dealloc;
-- (id)initWithSwipedCell:(id)arg1;
 - (id)swipedCell;
+- (id)initWithSwipedCell:(id)arg1;
 
 @end

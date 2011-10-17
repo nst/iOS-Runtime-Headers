@@ -9,20 +9,20 @@
     NSString *_baseURL;
 }
 
+@property(retain) GKPlayer * player;
 @property(readonly) NSURL * url;
 @property(retain) NSString * baseURL;
-@property(retain) GKPlayer * player;
 
 
-- (void)processGameKitURLComponents:(id)arg1;
 - (void)setBaseURL:(id)arg1;
+- (void)processGameKitURLComponents:(id)arg1;
 - (id)initWithPlayer:(id)arg1;
 - (void)setPlayer:(id)arg1;
-- (id)player;
 - (id)baseURL;
 - (id)url;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)player;
 - (void)dealloc;
 
 @end

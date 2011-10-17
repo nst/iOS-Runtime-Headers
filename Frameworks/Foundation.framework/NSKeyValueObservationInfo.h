@@ -13,13 +13,15 @@
 }
 
 
-- (unsigned int)hash;
+- (id)_initWithObservances:(id*)arg1 count:(unsigned int)arg2;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (BOOL)isEqual:(id)arg1;
-- (oneway void)release;
-- (id)retain;
-- (void)dealloc;
+- (unsigned int)hash;
 - (unsigned int)retainCount;
 - (id)description;
-- (id)_initWithObservances:(id*)arg1 count:(unsigned int)arg2;
+- (id)retain;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

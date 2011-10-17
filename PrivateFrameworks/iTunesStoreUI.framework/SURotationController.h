@@ -17,15 +17,15 @@
 - (void)setViewController:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (BOOL)_orientationAffectsViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })viewFrameForInterfaceOrientation:(int)arg1;
 - (id)rotationStyle;
 - (void)setRotationStyle:(id)arg1;
-- (void)prepareToRotateToInterfaceOrientation:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })viewFrameForInterfaceOrientation:(int)arg1;
-- (BOOL)_orientationAffectsViewFrame;
 - (id)initWithViewController:(id)arg1;
+- (void)prepareForDeferredRotateToInterfaceOrientation:(int)arg1;
+- (BOOL)shouldDeferRotationToInterfaceOrientation:(int)arg1;
+- (void)prepareToRotateToInterfaceOrientation:(int)arg1;
 - (void)animateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)finishRotationFromInterfaceOrientation:(int)arg1;
-- (BOOL)shouldDeferRotationToInterfaceOrientation:(int)arg1;
-- (void)prepareForDeferredRotateToInterfaceOrientation:(int)arg1;
 
 @end

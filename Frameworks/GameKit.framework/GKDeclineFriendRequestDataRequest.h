@@ -6,7 +6,6 @@
 }
 
 
-- (id)invalidateCacheKeys;
 - (id)key;
 - (id)request;
 

@@ -2,46 +2,51 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPImageCacheDelegate>, NSOperationQueue, NSMutableArray, NSMutableDictionary;
+@class CPLRUDictionary, <MPImageCacheDelegate>, NSOperationQueue;
 
 @interface MPImageCache : NSObject <MPImageRequestDelegate> {
-    NSMutableDictionary *_cachedImages;
+    CPLRUDictionary *_cachedImages;
+    struct dispatch_queue_s { } *_cachedImagesQueue;
     unsigned int _cacheSize;
     <MPImageCacheDelegate> *_delegate;
-    NSMutableArray *_leastRecentlyUsed;
     NSOperationQueue *_operationQueue;
+    int _retainCount;
 }
 
-@property(readonly) BOOL hasCachedImages;
+@property unsigned int cacheSize;
 @property BOOL imageRequestsSuspended;
 @property <MPImageCacheDelegate> * delegate;
-@property unsigned int cacheSize;
 
 + (id)sharedImageCache;
 
-- (id)_cachedImageForKey:(id)arg1;
-- (void)_didReceiveMemoryWarning:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (unsigned int)cacheSize;
+- (id)imageForRequest:(id)arg1 fetchIfNecessary:(BOOL)arg2;
 - (BOOL)imageRequestsSuspended;
+- (id)imageForRequest:(id)arg1 error:(id*)arg2;
 - (id)cachedImageForRequest:(id)arg1;
+- (id)imageForRequest:(id)arg1 fetchIfNecessary:(BOOL)arg2 waitUntilFetched:(BOOL)arg3;
+- (void)_zapCache;
+- (void)imageRequest:(id)arg1 loadedImage:(id)arg2;
+- (void)imageRequest:(id)arg1 failedWithError:(id)arg2;
+- (void)_enqueueRequest:(id)arg1;
 - (id)_imageByApplyingModificationsForCachedImageForRequest:(id)arg1;
-- (id)imageForRequest:(id)arg1 error:(id)arg2;
-- (BOOL)hasCachedImages;
+- (void)_cacheImage:(id)arg1 forKey:(id)arg2;
+- (void)_zapCachedPlaceholders;
+- (void)_didReceiveMemoryWarningNotification:(id)arg1;
 - (void)setCacheSize:(unsigned int)arg1;
 - (void)setImageRequestsSuspended:(BOOL)arg1;
 - (void)cancelAllImageRequests;
-- (void)imageRequest:(id)arg1 failedWithError:(id)arg2;
-- (void)imageRequest:(id)arg1 loadedImage:(id)arg2;
-- (void)_cacheImage:(id)arg1 forKey:(id)arg2;
-- (void)_enqueueRequest:(id)arg1;
-- (void)_noteUsedImageForKey:(id)arg1;
-- (void)_resizeCache;
-- (id)imageForRequest:(id)arg1 fetchIfNecessary:(BOOL)arg2;
-- (id)imageForRequest:(id)arg1 fetchIfNecessary:(BOOL)arg2 waitUntilFetched:(BOOL)arg3;
-- (unsigned int)cacheSize;
 - (void)loadImageForRequest:(id)arg1 asynchronously:(BOOL)arg2 completionHandler:(id)arg3;
+- (void)_didEnterBackgroundNotification:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)_cachedImageForKey:(id)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (id)delegate;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)init;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

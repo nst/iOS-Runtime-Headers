@@ -7,6 +7,7 @@
 @interface AVAssetWriterInputConfigurationState : NSObject  {
     NSString *_mediaType;
     AVOutputSettings *_outputSettings;
+    struct opaqueCMFormatDescription { } *_sampleBufferFormatHint;
     NSDictionary *_sourcePixelBufferAttributes;
     BOOL _attachedToPixelBufferAdaptor;
     NSArray *_metadataItems;
@@ -28,26 +29,29 @@
 @property(copy) NSArray * metadataItems;
 @property BOOL attachedToPixelBufferAdaptor;
 @property(copy) NSDictionary * sourcePixelBufferAttributes;
+@property(retain) struct opaqueCMFormatDescription { }* sampleBufferFormatHint;
 @property(copy) AVOutputSettings * outputSettings;
 @property(copy) NSString * mediaType;
 
 
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
-- (void)dealloc;
-- (void)setMediaType:(id)arg1;
-- (id)mediaType;
-- (void)setAttachedToPixelBufferAdaptor:(BOOL)arg1;
-- (void)setOutputSettings:(id)arg1;
 - (BOOL)attachedToPixelBufferAdaptor;
+- (struct opaqueCMFormatDescription { }*)sampleBufferFormatHint;
+- (void)setSampleBufferFormatHint:(struct opaqueCMFormatDescription { }*)arg1;
 - (int)mediaTimeScale;
-- (BOOL)expectsMediaDataInRealTime;
-- (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
-- (void)setSourcePixelBufferAttributes:(id)arg1;
-- (id)sourcePixelBufferAttributes;
 - (void)setMediaTimeScale:(int)arg1;
+- (id)sourcePixelBufferAttributes;
+- (void)setSourcePixelBufferAttributes:(id)arg1;
+- (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
+- (void)setOutputSettings:(id)arg1;
+- (void)setAttachedToPixelBufferAdaptor:(BOOL)arg1;
 - (id)metadataItems;
 - (void)setMetadataItems:(id)arg1;
+- (BOOL)expectsMediaDataInRealTime;
 - (id)outputSettings;
+- (id)mediaType;
+- (void)setMediaType:(id)arg1;
+- (void)dealloc;
 
 @end

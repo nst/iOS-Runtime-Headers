@@ -10,31 +10,33 @@
     id *_keys;
 }
 
++ (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)accessInstanceVariablesDirectly;
 
-- (const id*)keys;
-- (id)allKeys;
-- (Class)classForCoder;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)release;
-- (void)encodeWithCoder:(id)arg1;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (unsigned int)retainCount;
-- (unsigned int)length;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (unsigned int)fastIndexForKnownKey:(id)arg1;
-- (id)initForKeys:(id)arg1;
 - (struct __CFArray { }*)_makeBranchTableForKeys:(const char **)arg1 count:(unsigned long)arg2;
 - (void)_coreCreationForKeys:(const id*)arg1 count:(unsigned long)arg2;
 - (void)_coreDealloc:(BOOL)arg1;
+- (id)initForKeys:(id)arg1;
+- (unsigned int)fastIndexForKnownKey:(id)arg1;
 - (id)initForKeys:(const id*)arg1 count:(unsigned int)arg2;
 - (unsigned int)indexForKey:(id)arg1;
+- (const id*)keys;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (Class)classForCoder;
+- (id)allKeys;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)retain;
+- (unsigned int)length;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

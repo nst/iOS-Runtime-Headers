@@ -8,18 +8,18 @@
     NSData *_inContentAsData;
 }
 
-@property(retain,readonly) NSString * name;
-@property(retain,readonly) NSArray * resultsForLogging;
-@property(retain,readonly) NSData * inContentAsData;
+@property(readonly) NSData * inContentAsData;
+@property(readonly) NSString * name;
+@property(readonly) NSArray * resultsForLogging;
 
 
-- (id)initWithContent:(id)arg1;
 - (id)inContent;
+- (id)initWithContent:(id)arg1;
+- (id)initWithContentAsData:(id)arg1;
+- (id)inContentAsData;
+- (id)resultsForLogging;
 - (void)reset;
 - (id)name;
 - (void)dealloc;
-- (id)resultsForLogging;
-- (id)initWithContentAsData:(id)arg1;
-- (id)inContentAsData;
 
 @end

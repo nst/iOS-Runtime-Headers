@@ -6,31 +6,31 @@
     struct __CFAttributedString { } *_string;
 }
 
-+ (id)string;
 + (id)axAttributedStringWithString:(id)arg1;
++ (id)string;
 
-- (BOOL)hasAttribute:(id)arg1;
-- (void)setAttributes:(id)arg1;
-- (id)string;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
-- (id)initWithString:(id)arg1;
-- (id)substringFromIndex:(unsigned int)arg1;
-- (void)appendString:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
-- (unsigned int)length;
-- (id)attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)attributesAtIndex:(int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
-- (void)setAttribute:(id)arg1 forKey:(id)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (BOOL)isAXAttributedString;
-- (void)setAttribute:(id)arg1 forKey:(id)arg2;
-- (id)initWithCFAttributedString:(struct __CFAttributedString { }*)arg1;
+- (id)axAttributedStringDescription;
+- (id)coalescedFontAttributes;
 - (void)replaceString:(struct __CFString { }*)arg1;
-- (struct __CFAttributedString { }*)cfAttributedString;
 - (void)setAttributes:(id)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)appendAXAttributedString:(id)arg1;
-- (id)coalescedFontAttributes;
-- (id)axAttributedStringDescription;
+- (id)initWithCFAttributedString:(struct __CFAttributedString { }*)arg1;
+- (struct __CFAttributedString { }*)cfAttributedString;
+- (id)attributesAtIndex:(int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
+- (void)setAttributes:(id)arg1;
+- (BOOL)hasAttribute:(id)arg1;
+- (id)attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)isAXAttributedString;
+- (void)setAttribute:(id)arg1 forKey:(id)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (id)initWithString:(id)arg1;
+- (id)string;
+- (id)description;
+- (void)appendString:(id)arg1;
+- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (id)substringFromIndex:(unsigned int)arg1;
+- (unsigned int)length;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)setAttribute:(id)arg1 forKey:(id)arg2;
 
 @end

@@ -12,8 +12,8 @@
 
 
 - (id)initWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2;
+- (struct CGPoint { float x1; float x2; })location;
 - (unsigned int)identifier;
 - (id)description;
-- (struct CGPoint { float x1; float x2; })location;
 
 @end

@@ -9,18 +9,18 @@
     NSArray *_likelyValidUsernames;
 }
 
-+ (id)sharedInstance;
 + (id)serviceName;
 + (id)userAgentString;
 + (id)preferredUsername;
++ (id)sharedInstance;
 
-- (void)dealloc;
-- (BOOL)getUsername:(id*)arg1 andPassword:(id*)arg2;
-- (id)_passwordForUsername:(id)arg1;
-- (id)_validUsernames;
-- (BOOL)hasValidMobileMeAccounts;
-- (id)_usernames;
 - (void)invalidateUserAccounts;
+- (BOOL)hasValidMobileMeAccounts;
 - (BOOL)hasMobileMeAccounts;
+- (BOOL)getUsername:(id*)arg1 andPassword:(id*)arg2;
+- (id)_validUsernames;
+- (id)_usernames;
+- (id)_passwordForUsername:(id)arg1;
+- (void)dealloc;
 
 @end

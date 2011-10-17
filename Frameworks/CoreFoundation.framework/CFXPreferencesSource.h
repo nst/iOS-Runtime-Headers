@@ -4,19 +4,20 @@
 
 @interface CFXPreferencesSource : NSObject  {
     struct __CFDictionary { } *_dict;
-    int _generationCount;
+    long _generationCount;
     BOOL _disabled;
 }
 
 
-- (void)finalize;
-- (id)init;
-- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
-- (void)dealloc;
 - (unsigned char)synchronize;
+- (void)finalize;
+- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (long)generationCount;
-- (void*)getValueForKey:(struct __CFString { }*)arg1;
-- (struct __CFArray { }*)copyKeyList;
+- (void)setDisabled:(BOOL)arg1;
 - (struct __CFDictionary { }*)copyDictionary;
+- (struct __CFArray { }*)copyKeyList;
+- (void*)getValueForKey:(struct __CFString { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

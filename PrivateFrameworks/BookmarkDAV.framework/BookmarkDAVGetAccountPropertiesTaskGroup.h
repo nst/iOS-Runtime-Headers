@@ -11,11 +11,11 @@
 @property(readonly) NSSet * bookmarkHomes;
 
 
-- (void)dealloc;
-- (id)description;
-- (id)bookmarkHomes;
+- (id)homeSet;
 - (void)_setPropertiesFromParsedResponses:(id)arg1;
 - (id)_copyAccountPropertiesPropFindElements;
-- (id)homeSet;
+- (id)bookmarkHomes;
+- (id)description;
+- (void)dealloc;
 
 @end

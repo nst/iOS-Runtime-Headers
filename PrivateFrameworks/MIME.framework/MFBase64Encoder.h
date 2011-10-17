@@ -17,14 +17,14 @@
 
 
 - (void)setStandardLineBreak;
-- (int)appendData:(id)arg1;
-- (void)done;
-- (BOOL)padChar;
 - (void)setAllowSlash:(BOOL)arg1;
-- (BOOL)allowSlash;
 - (void)setPadChar:(BOOL)arg1;
 - (unsigned long)lineBreak;
 - (void)setLineBreak:(unsigned long)arg1;
 - (id)initWithConsumers:(id)arg1;
+- (int)appendData:(id)arg1;
+- (void)done;
+- (BOOL)padChar;
+- (BOOL)allowSlash;
 
 @end

@@ -20,23 +20,23 @@
 @property(readonly) NSDate * timestamp;
 
 
+- (double)magneticHeading;
+- (double)headingAccuracy;
+- (id)shortDescription;
 - (double)z;
+- (double)y;
 - (double)x;
 - (id)timestamp;
-- (double)y;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (double)trueHeading;
+- (id)initWithClientHeading:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; })arg1;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)shortDescription;
-- (id)initWithClientHeading:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; })arg1;
-- (double)headingAccuracy;
-- (double)trueHeading;
-- (double)magneticHeading;
+- (double)heading;
 - (id)compactDescription;
 - (id)initWithHeading:(double)arg1 accuracy:(double)arg2;
 - (BOOL)hasGeomagneticVector;
-- (double)heading;
 
 @end

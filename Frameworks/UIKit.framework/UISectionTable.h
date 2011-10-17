@@ -25,32 +25,32 @@
 }
 
 
-- (void)reloadData;
-- (id)createPreparedCellForRow:(int)arg1 column:(int)arg2;
-- (void)_updateVisibleCellsNow;
-- (void)_reloadRowHeights;
-- (void)scrollRowToVisible:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sectionList:(id)arg2;
-- (void)setRightMargin:(float)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setSectionListStyle:(int)arg1;
+- (void)setShouldHideHeaderInShortLists:(BOOL)arg1;
 - (void)setAllowsScrollIndicators:(BOOL)arg1;
+- (BOOL)sectionHeaderCellWasClicked:(id)arg1;
+- (void)scrollRowToVisible:(int)arg1;
+- (void)scrollToSectionWithTitle:(id)arg1;
+- (BOOL)showsSectionHeaders;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 sectionList:(id)arg2;
+- (void)_reloadRowHeights;
+- (id)indexTitles;
+- (void)scrollToSection:(int)arg1;
+- (void)_replaceCellWithOpaqueOneGapIndex:(int)arg1 viewIndex:(int)arg2 width:(float)arg3;
+- (void)_replaceCellWithTransparentOneGapIndex:(int)arg1 viewIndex:(int)arg2 width:(float)arg3;
+- (void)_updateVisibleCellsNow;
+- (BOOL)_shouldHideHeaders;
 - (id)_createHeaderCellForHeaderAtIndex:(int)arg1 width:(float)arg2 opaque:(BOOL)arg3 adjustOrigin:(BOOL)arg4;
 - (void)_removeHeaderCellsForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)_replaceCellWithTransparentOneGapIndex:(int)arg1 viewIndex:(int)arg2 width:(float)arg3;
-- (void)_replaceCellWithOpaqueOneGapIndex:(int)arg1 viewIndex:(int)arg2 width:(float)arg3;
-- (BOOL)_shouldHideHeaders;
-- (BOOL)showsSectionHeaders;
-- (void)scrollToSection:(int)arg1;
-- (void)scrollToSectionWithTitle:(id)arg1;
-- (BOOL)sectionHeaderCellWasClicked:(id)arg1;
-- (void)setShouldHideHeaderInShortLists:(BOOL)arg1;
-- (void)setSectionListStyle:(int)arg1;
-- (id)indexTitles;
-- (BOOL)floatArray:(id)arg1 loadGapIndexes:(int*)arg2 gapHeight:(float*)arg3 count:(int)arg4;
+- (id)createPreparedCellForRow:(int)arg1 column:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sectionList:(id)arg2;
 - (void)floatArray:(id)arg1 getValueCount:(int*)arg2 gapIndexCount:(int*)arg3;
+- (BOOL)floatArray:(id)arg1 loadGapIndexes:(int*)arg2 gapHeight:(float*)arg3 count:(int)arg4;
 - (void)_updateShowScrollIndicatorsFlag;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRightMargin:(float)arg1;
+- (void)reloadData;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
 
 @end

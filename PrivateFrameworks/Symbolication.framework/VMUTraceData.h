@@ -20,26 +20,26 @@
 }
 
 
+- (void)writeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
+- (void)finalize;
 - (void)addEvent:(id)arg1;
-- (void)freeXrefTable:(id)arg1;
-- (void)buildPCMap:(long*)arg1 withNumPages:(unsigned int)arg2 forTask:(unsigned int)arg3;
 - (id)initWithLogRecords:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int *x4; unsigned int x5; unsigned int x6; unsigned int x7[2]; struct { unsigned int x_8_1_1; unsigned int x_8_1_2; unsigned int x_8_1_3; unsigned int x_8_1_4; } x8[0]; }*)arg1 forTask:(unsigned int)arg2;
 - (id)initWithBacktraces:(id)arg1 forTask:(unsigned int)arg2;
-- (id)symbolForPC:(unsigned int)arg1;
 - (id)threadIDs;
 - (id)traceForThread:(unsigned int)arg1;
-- (id)numberForThread:(unsigned int)arg1;
-- (unsigned int)readAddressFromFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 has64bitAddresses:(BOOL)arg2 needSwap:(BOOL)arg3;
+- (unsigned int)maxDepth;
 - (BOOL)readFromFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
-- (void)addOrIncrementXref:(id)arg1 withParent:(id)arg2 withChild:(id)arg3 withSelector:(SEL)arg4 commutative:(BOOL)arg5;
-- (void)generateXref:(id)arg1 withSelector:(SEL)arg2 commutative:(BOOL)arg3;
 - (id)functionXref;
 - (id)libraryXref;
 - (void)printXrefs:(id)arg1 toString:(id)arg2;
-- (unsigned int)maxDepth;
-- (void)finalize;
+- (void)freeXrefTable:(id)arg1;
+- (id)numberForThread:(unsigned int)arg1;
+- (void)buildPCMap:(long*)arg1 withNumPages:(unsigned int)arg2 forTask:(unsigned int)arg3;
+- (unsigned long long)readAddressFromFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 has64bitAddresses:(BOOL)arg2 needSwap:(BOOL)arg3;
+- (void)addOrIncrementXref:(id)arg1 withParent:(id)arg2 withChild:(id)arg3 withSelector:(SEL)arg4 commutative:(BOOL)arg5;
+- (void)generateXref:(id)arg1 withSelector:(SEL)arg2 commutative:(BOOL)arg3;
+- (id)symbolForPC:(unsigned long long)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)writeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 
 @end

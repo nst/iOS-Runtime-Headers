@@ -2,44 +2,46 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSCFNumber : __NSCFType  {
+@interface __NSCFNumber : NSNumber  {
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (unsigned char)unsignedCharValue;
-- (unsigned int)unsignedIntValue;
+- (BOOL)boolValue;
+- (void)finalize;
+- (unsigned long long)unsignedLongLongValue;
+- (unsigned int)unsignedIntegerValue;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (int)compare:(id)arg1;
 - (int)integerValue;
-- (unsigned int)unsignedIntegerValue;
-- (float)floatValue;
-- (void)finalize;
 - (id)stringValue;
 - (long long)longLongValue;
-- (unsigned int)hash;
+- (BOOL)isEqualToNumber:(id)arg1;
+- (unsigned int)unsignedIntValue;
 - (double)doubleValue;
+- (float)floatValue;
+- (void)getValue:(void*)arg1;
+- (int)_reverseCompare:(id)arg1;
+- (unsigned char)_getValue:(void*)arg1 forType:(long)arg2;
+- (long)_cfNumberType;
+- (unsigned long)_cfTypeID;
+- (unsigned short)unsignedShortValue;
+- (short)shortValue;
+- (BOOL)charValue;
+- (const char *)objCType;
+- (long)longValue;
+- (id)descriptionWithLocale:(id)arg1;
+- (BOOL)isNSNumber__;
+- (unsigned char)unsignedCharValue;
+- (unsigned long)unsignedLongValue;
 - (int)intValue;
 - (BOOL)isEqual:(id)arg1;
-- (oneway void)release;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)getValue:(void*)arg1;
+- (unsigned int)hash;
 - (unsigned int)retainCount;
 - (id)description;
-- (BOOL)boolValue;
-- (unsigned long long)unsignedLongLongValue;
-- (long)longValue;
-- (unsigned short)unsignedShortValue;
-- (unsigned long)unsignedLongValue;
-- (BOOL)isNSNumber__;
-- (BOOL)charValue;
-- (id)descriptionWithLocale:(id)arg1;
-- (short)shortValue;
-- (unsigned long)_cfTypeID;
-- (long)_cfNumberType;
-- (unsigned char)_getValue:(void*)arg1 forType:(long)arg2;
-- (int)_reverseCompare:(id)arg1;
-- (BOOL)isEqualToNumber:(id)arg1;
-- (const char *)objCType;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
 
 @end

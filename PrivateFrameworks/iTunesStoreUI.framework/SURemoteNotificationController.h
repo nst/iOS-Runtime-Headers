@@ -10,9 +10,9 @@
 + (id)sharedInstance;
 
 - (id)init;
-- (int)enabledNotificationTypes;
-- (void)handleRegistrationFailureWithError:(id)arg1;
-- (void)handleRegistrationSuccessWithToken:(id)arg1;
 - (void)handleNotificationDictionary:(id)arg1;
+- (void)handleRegistrationSuccessWithToken:(id)arg1;
+- (void)handleRegistrationFailureWithError:(id)arg1;
+- (int)enabledNotificationTypes;
 
 @end

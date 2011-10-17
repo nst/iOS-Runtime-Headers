@@ -5,35 +5,42 @@
 @interface SUClientDispatch : NSObject  {
 }
 
-+ (id)tabBarController;
-+ (BOOL)openClientURL:(id)arg1;
-+ (id)newScriptInterface;
-+ (BOOL)reportAProblemForItemIdentifier:(unsigned long long)arg1;
-+ (void)exitStoreWithReason:(int)arg1;
-+ (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
-+ (void)endPreOrderQueueSessionWithDownloadKinds:(id)arg1;
 + (id)imageCache;
-+ (struct __CFArray { }*)assetTypes;
-+ (id)beginDownloadQueueSessionForDownloadKind:(id)arg1;
-+ (id)beginDownloadQueueSessionWithDownloadKinds:(id)arg1;
-+ (id)beginPreOrderQueueSessionWithDownloadKinds:(id)arg1;
-+ (BOOL)composeReviewWithViewController:(id)arg1 animated:(BOOL)arg2;
-+ (BOOL)openURL:(id)arg1 inClientApplication:(id)arg2;
-+ (BOOL)sendActionForDialog:(id)arg1 button:(id)arg2;
++ (id)userAgent;
++ (id)tabBarController;
++ (BOOL)wasLaunchedFromLibrary;
++ (void)returnToLibrary;
++ (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
++ (void)endPreorderManagerSessionWithManager:(id)arg1;
++ (id)beginPreorderManagerSessionWithItemKinds:(id)arg1;
 + (id)searchURLBagKey;
 + (id)searchHintsURLBagKey;
-+ (id)imagePool;
-+ (id)scriptExecutionContext;
-+ (void)endDownloadQueueSessionForQueue:(id)arg1;
++ (struct __CFArray { }*)assetTypes;
++ (BOOL)composeReviewWithViewController:(id)arg1 animated:(BOOL)arg2;
++ (void)exitStoreWithReason:(int)arg1;
++ (id)beginDownloadManagerSessionWithDownloadKinds:(id)arg1;
++ (id)beginDownloadManagerSessionForDownloadKind:(id)arg1;
++ (void)endDownloadManagerSessionForManager:(id)arg1;
 + (id)clientIdentifier;
++ (BOOL)sendActionForDialog:(id)arg1 button:(id)arg2;
++ (BOOL)openURL:(id)arg1 inClientApplication:(id)arg2;
 + (BOOL)enterAccountFlowWithViewController:(id)arg1 animated:(BOOL)arg2;
 + (BOOL)openExternalURL:(id)arg1;
-+ (BOOL)gotoStorePage:(id)arg1 animated:(BOOL)arg2;
++ (id)overlayConfigurationForStorePage:(id)arg1;
 + (BOOL)matchesClientApplication:(id)arg1;
++ (BOOL)gotoStorePage:(id)arg1 animated:(BOOL)arg2;
 + (BOOL)isTabBarControllerLoaded;
-+ (id)viewControllerFactory;
++ (id)newScriptInterface;
++ (id)imagePool;
 + (BOOL)selectSectionWithIdentifier:(id)arg1;
 + (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
++ (BOOL)reportAProblemForItemIdentifier:(unsigned long long)arg1;
++ (void)dismissOverlayBackgroundViewController;
++ (BOOL)presentOverlayBackgroundViewController:(id)arg1;
++ (id)viewControllerFactory;
++ (id)overlayBackgroundViewController;
++ (BOOL)openClientURL:(id)arg1;
++ (id)scriptExecutionContext;
 
 
 @end

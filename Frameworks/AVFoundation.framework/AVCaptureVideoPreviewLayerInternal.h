@@ -12,6 +12,7 @@
         float width; 
         float height; 
     } previewSize;
+    float previewRotationDegrees;
     NSString *gravity;
     BOOL disableActions;
     int orientation;
@@ -20,6 +21,8 @@
     BOOL isPresentationLayer;
     BOOL visible;
     BOOL isPaused;
+    BOOL chromaNoiseReductionEnabled;
+    BOOL layerDebuggingEnabled;
 }
 
 

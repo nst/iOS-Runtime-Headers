@@ -19,17 +19,17 @@
 
 
 - (BOOL)isTextOnly;
-- (void)dealloc;
-- (void)calculateInfo;
 - (void)_calculateInfoIfNecessary;
-- (BOOL)infoCalculated;
-- (void)setInfoCalculated:(BOOL)arg1;
-- (void)setCharacterCountDenominator:(int)arg1;
 - (void)setCharacterCountNumerator:(int)arg1;
+- (void)setCharacterCountDenominator:(int)arg1;
+- (void)setInfoCalculated:(BOOL)arg1;
+- (BOOL)infoCalculated;
+- (void)calculateInfo;
 - (void)setIsTextOnly:(BOOL)arg1;
 - (id)initWithContentsOfComposition:(id)arg1;
 - (void)updateByReloadingFromComposition:(id)arg1 replacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (int)characterCountNumerator;
 - (int)characterCountDenominator;
+- (void)dealloc;
 
 @end

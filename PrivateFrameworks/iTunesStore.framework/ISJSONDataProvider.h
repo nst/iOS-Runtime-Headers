@@ -9,8 +9,8 @@
 @property unsigned int parserOptions;
 
 
-- (unsigned int)parserOptions;
 - (void)setParserOptions:(unsigned int)arg1;
+- (unsigned int)parserOptions;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 
 @end

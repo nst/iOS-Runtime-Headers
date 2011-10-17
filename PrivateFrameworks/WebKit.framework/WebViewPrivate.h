@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSURL, <WebFormDelegate>, WebVideoFullscreenController, <WebCaretChangeListener>, WebPreferences, WebEvent, WAKWindow, NSMutableSet, <WebGeolocationProvider>, WebNodeHighlight, WebInspector, NSString, NSTimer;
+@class NSURL, WebFixedPositionContent, <WebFormDelegate>, WebVideoFullscreenController, <WebCaretChangeListener>, WebPreferences, WebEvent, WAKWindow, NSMutableSet, <WebGeolocationProvider>, <WebDeviceOrientationProvider>, WebNodeHighlight, WebInspector, NSString, NSTimer;
 
 @interface WebViewPrivate : NSObject  {
     struct Page { } *page;
@@ -28,11 +28,13 @@
     id formDelegateForwarder;
     WebInspector *inspector;
     WebNodeHighlight *currentNodeHighlight;
+    BOOL allowsRemoteInspection;
     BOOL allowsUndo;
     float zoomMultiplier;
+    BOOL zoomsTextOnly;
     NSString *applicationNameForUserAgent;
     struct String { 
-        struct RefPtr<WebCore::StringImpl> { 
+        struct RefPtr<WTF::StringImpl> { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
     } userAgent;
@@ -50,6 +52,11 @@
         int (*webThreadDidFinishLoadingFromDataSourceFunc)(); 
         int (*webThreadDidFailLoadingWithErrorFromDataSourceFunc)(); 
         int (*webThreadIdentifierForRequestFunc)(); 
+        int (*webThreadDidLoadResourceFromMemoryCacheFunc)(); 
+        int (*webThreadWillSendRequestFunc)(); 
+        int (*webThreadDidReceiveResponseFunc)(); 
+        int (*webThreadDidReceiveContentLengthFunc)(); 
+        int (*webThreadWillCacheResponseFunc)(); 
         int (*identifierForRequestFunc)(); 
         int (*willSendRequestFunc)(); 
         int (*didReceiveResponseFunc)(); 
@@ -60,6 +67,7 @@
         int (*willCacheResponseFunc)(); 
         int (*plugInFailedWithErrorFunc)(); 
         int (*shouldUseCredentialStorageFunc)(); 
+        int (*shouldPaintBrokenImageForURLFunc)(); 
     } resourceLoadDelegateImplementations;
     struct WebFrameLoadDelegateImplementationCache { 
         int (*didClearWindowObjectForFrameFunc)(); 
@@ -89,6 +97,7 @@
     } frameLoadDelegateImplementations;
     struct WebScriptDebugDelegateImplementationCache { 
         BOOL didParseSourceExpectsBaseLineNumber; 
+        BOOL exceptionWasRaisedExpectsHasHandlerFlag; 
         int (*didParseSourceFunc)(); 
         int (*failedToParseSourceFunc)(); 
         int (*didEnterCallFrameFunc)(); 
@@ -109,7 +118,6 @@
     BOOL shouldCloseWithWindow;
     BOOL mainFrameDocumentReady;
     BOOL drawsBackground;
-    BOOL editable;
     BOOL tabKeyCyclesThroughElementsChanged;
     BOOL becomingFirstResponder;
     BOOL becomingFirstResponderFromOutside;
@@ -124,8 +132,6 @@
     BOOL smartInsertDeleteEnabled;
     BOOL selectTrailingWhitespaceEnabled;
     BOOL isStopping;
-    BOOL usesLoaderCache;
-    BOOL shouldCacheFileURLs;
     id UIKitDelegate;
     id UIKitDelegateForwarder;
     id WebMailDelegate;
@@ -167,14 +173,21 @@
     WebEvent *autoscrollTriggerEvent;
     WebVideoFullscreenController *fullscreenController;
     <WebGeolocationProvider> *_geolocationProvider;
+    <WebDeviceOrientationProvider> *m_deviceOrientationProvider;
+    struct RefPtr<WebCore::HistoryItem> { 
+        struct HistoryItem {} *m_ptr; 
+    } _globalHistoryItem;
+    BOOL interactiveFormValidationEnabled;
+    int validationMessageTimerMagnification;
+    WebFixedPositionContent *_fixedPositionContent;
 }
 
 + (void)initialize;
 
 - (void)finalize;
-- (id)init;
-- (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;
+- (id)init;
+- (void)dealloc;
 
 @end

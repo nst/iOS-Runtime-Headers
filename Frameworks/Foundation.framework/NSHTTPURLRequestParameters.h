@@ -17,8 +17,8 @@
 }
 
 
+- (id)initWithCoder:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
 
 @end

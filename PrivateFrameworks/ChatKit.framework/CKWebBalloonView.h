@@ -2,33 +2,39 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIWebDocumentView, DOMHTMLElement;
+@class CKWebDocumentView, DOMHTMLElement;
 
-@interface CKWebBalloonView : CKBalloonView  {
-    UIWebDocumentView *_webLayer;
+@interface CKWebBalloonView : CKBalloonView <CKWebDocumentViewDelegate> {
+    CKWebDocumentView *_webLayer;
     DOMHTMLElement *_textElement;
 }
 
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (BOOL)shouldHaveAccessoryDiclosure;
++ (void)flushURLifiedDOMCache;
++ (void)didRecieveMemoryWarning:(id)arg1;
++ (id)URLifiedDOMCache;
++ (BOOL)needsSingleTapGestureRecognizer;
++ (struct CGSize { float x1; float x2; })balloonSizeConstrainedToWidth:(float)arg1 text:(id)arg2 subject:(id)arg3 textBalloonSize:(struct CGSize { float x1; float x2; }*)arg4 subjectBalloonSize:(struct CGSize { float x1; float x2; }*)arg5;
 + (float)heightForText:(id)arg1 width:(float)arg2 includeBuffers:(BOOL)arg3;
 
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplay;
+- (void)webViewDidDismissElementSheet:(id)arg1;
 - (void)cancelInteraction;
-- (void)setOrientation:(int)arg1;
+- (id)text;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (id)text;
-- (void)setNeedsDisplay;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
-- (void)setMessagePart:(id)arg1;
-- (void)tighten;
-- (void)receiptAnimationProgress:(float)arg1;
-- (void)setComposition:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
-- (void)_fontSizeDidChange;
-- (void)setDraws:(BOOL)arg1;
+- (BOOL)shouldHaveAccessoryDiclosure;
+- (void)webDocumentViewDidFinishDataDetectorAction:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_webLayerBounds;
 - (void)setTapEnabled:(BOOL)arg1;
+- (float)tightenedWidth;
+- (void)setComposition:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
+- (void)updateFontSize;
+- (void)updateTextShadowColor;
+- (void)setMessagePart:(id)arg1;
+- (void)dealloc;
 
 @end

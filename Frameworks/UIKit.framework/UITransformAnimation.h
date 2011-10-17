@@ -22,10 +22,10 @@
 }
 
 
-- (void)setStartTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setEndTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformWithMultiplier:(float)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForFraction:(float)arg1;
+- (void)setEndTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setStartTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformWithMultiplier:(float)arg1;
 - (void)setProgress:(float)arg1;
 
 @end

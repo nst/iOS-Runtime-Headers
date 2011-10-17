@@ -7,28 +7,30 @@
     void *_reserved;
 }
 
-+ (id)currentQueue;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)mainQueue;
++ (id)currentQueue;
 
-- (void)setName:(id)arg1;
-- (void)release;
+- (void)setOvercommitsOperations:(BOOL)arg1;
+- (BOOL)overcommitsOperations;
+- (int)maxConcurrentOperationCount;
+- (void)__:(id)arg1;
+- (id)__;
+- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
+- (void)setSuspended:(BOOL)arg1;
+- (unsigned int)operationCount;
+- (id)operations;
 - (id)name;
-- (id)init;
-- (id)retain;
-- (void)dealloc;
-- (unsigned int)retainCount;
 - (BOOL)isSuspended;
 - (void)addOperationWithBlock:(id)arg1;
-- (int)maxConcurrentOperationCount;
-- (void)waitUntilAllOperationsAreFinished;
-- (id)operations;
-- (unsigned int)operationCount;
-- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
+- (void)setName:(id)arg1;
+- (id)description;
 - (void)setMaxConcurrentOperationCount:(int)arg1;
-- (void)addOperation:(id)arg1;
-- (void)setSuspended:(BOOL)arg1;
 - (void)cancelAllOperations;
+- (void)addOperation:(id)arg1;
+- (void)waitUntilAllOperationsAreFinished;
+- (id)init;
+- (void)dealloc;
 - (void)executeAndWaitForBlock:(id)arg1;
 - (void)addInvocation:(id)arg1;
 

@@ -28,36 +28,36 @@
 }
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (int)setViewportExt:(int)arg1 :(int)arg2;
-- (int)scaleWindowExt:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4;
-- (int)offsetWindowOrg:(int)arg1 :(int)arg2;
-- (int)offsetViewportOrg:(int)arg1 :(int)arg2;
-- (id)getWorldMatrix;
-- (void)setWorldMatrix:(id)arg1;
 - (BOOL)isUpsideDown;
-- (struct CGPoint { float x1; float x2; })getWindowExtent;
-- (struct CGPoint { float x1; float x2; })getViewportExtent;
-- (struct CGPoint { float x1; float x2; })getWindowOrg;
-- (struct CGPoint { float x1; float x2; })getViewportOrg;
-- (int)getMapMode;
-- (void)setWindowOrg:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setViewportOrg:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setWindowExt:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setViewportExt:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTransformMatrix:(id)arg1;
-- (int)updateTransform;
 - (struct CGPoint { float x1; float x2; })DPtoLP:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })LPtoDP:(struct CGPoint { float x1; float x2; })arg1;
+- (int)updateTransform;
+- (id)getWorldMatrix;
+- (void)setWorldMatrix:(id)arg1;
+- (struct CGPoint { float x1; float x2; })getWindowOrg;
+- (void)setWindowOrg:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })getWindowExtent;
+- (void)setWindowExt:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })getViewportOrg;
+- (void)setViewportOrg:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })getViewportExtent;
+- (void)setViewportExt:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setTransformMatrix:(id)arg1;
+- (int)getMapMode;
+- (int)offsetWindowOrg:(int)arg1 :(int)arg2;
+- (int)offsetViewportOrg:(int)arg1 :(int)arg2;
 - (id)initWithDriver:(id)arg1;
 - (id)getTransformMatrix;
 - (int)setWindowExt:(int)arg1 :(int)arg2;
 - (int)setWindowOrg:(int)arg1 :(int)arg2;
+- (int)scaleWindowExt:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4;
 - (int)setWorldTransform:(const struct { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg1;
 - (int)modifyWorldTransform:(const struct { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg1 :(int)arg2;
+- (int)setViewportExt:(int)arg1 :(int)arg2;
 - (int)setViewportOrg:(int)arg1 :(int)arg2;
 - (int)scaleViewportExt:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4;
 - (int)setMapMode:(int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

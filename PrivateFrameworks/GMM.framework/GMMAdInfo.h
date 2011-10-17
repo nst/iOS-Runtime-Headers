@@ -13,41 +13,40 @@
     NSString *_linkUrl;
 }
 
+@property(retain) NSString * uniqueId;
 @property(readonly) BOOL hasHeadline;
+@property(retain) NSString * headline;
 @property(readonly) BOOL hasCreativeLine1;
+@property(retain) NSString * creativeLine1;
 @property(readonly) BOOL hasCreativeLine2;
+@property(retain) NSString * creativeLine2;
 @property(readonly) BOOL hasLinkText;
+@property(retain) NSString * linkText;
 @property(readonly) BOOL hasLinkUrl;
 @property(retain) NSString * linkUrl;
-@property(retain) NSString * linkText;
-@property(retain) NSString * creativeLine2;
-@property(retain) NSString * creativeLine1;
-@property(retain) NSString * headline;
-@property(retain) NSString * uniqueId;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasHeadline;
-- (BOOL)hasCreativeLine1;
-- (BOOL)hasCreativeLine2;
-- (BOOL)hasLinkUrl;
+- (id)uniqueId;
+- (BOOL)readFrom:(id)arg1;
 - (id)linkUrl;
+- (id)creativeLine2;
+- (id)creativeLine1;
+- (BOOL)hasLinkUrl;
+- (BOOL)hasCreativeLine2;
+- (BOOL)hasCreativeLine1;
+- (BOOL)hasHeadline;
 - (void)setLinkUrl:(id)arg1;
 - (void)setCreativeLine2:(id)arg1;
 - (void)setCreativeLine1:(id)arg1;
 - (void)setUniqueId:(id)arg1;
-- (void)setLinkText:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)uniqueId;
-- (void)writeTo:(id)arg1;
-- (BOOL)hasLinkText;
 - (id)linkText;
-- (id)creativeLine1;
-- (id)creativeLine2;
-- (id)headline;
+- (BOOL)hasLinkText;
+- (void)setLinkText:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 - (void)setHeadline:(id)arg1;
+- (id)headline;
 
 @end

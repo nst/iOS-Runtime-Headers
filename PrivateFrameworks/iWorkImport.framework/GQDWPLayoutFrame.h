@@ -15,9 +15,9 @@
 - (id)storage;
 - (unsigned int)textScale;
 - (void)resolveStyleRef;
-- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
-- (BOOL)isBlank;
 - (id)layoutStyle;
+- (BOOL)isBlank;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (void)dealloc;
 
 @end

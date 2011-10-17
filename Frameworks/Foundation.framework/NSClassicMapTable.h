@@ -25,21 +25,21 @@
 }
 
 
+- (void)removeObjectForKey:(id)arg1;
+- (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
+- (BOOL)mapMember:(const void*)arg1 originalKey:(const void**)arg2 value:(const void**)arg3;
+- (void*)existingItemForSetItem:(const void*)arg1 forAbsentKey:(const void*)arg2;
+- (void)setItem:(const void*)arg1 forKnownAbsentKey:(const void*)arg2;
 - (id)allValues;
 - (id)allKeys;
-- (void)removeObjectForKey:(id)arg1;
+- (void)removeAllItems;
+- (unsigned int)count;
 - (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
-- (id)copy;
 - (void)dealloc;
-- (id)objectForKey:(id)arg1;
-- (id)description;
-- (unsigned int)count;
-- (BOOL)mapMember:(const void*)arg1 originalKey:(const void**)arg2 value:(const void**)arg3;
-- (void)setItem:(const void*)arg1 forKnownAbsentKey:(const void*)arg2;
-- (void*)existingItemForSetItem:(const void*)arg1 forAbsentKey:(const void*)arg2;
-- (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
-- (void)removeAllItems;
+- (id)copy;
 
 @end

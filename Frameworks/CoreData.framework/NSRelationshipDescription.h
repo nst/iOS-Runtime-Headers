@@ -18,36 +18,39 @@
 
 + (void)initialize;
 
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (unsigned int)minCount;
+- (void)_setLazyDestinationEntityName:(id)arg1;
 - (void)setMaxCount:(unsigned int)arg1;
 - (void)setMinCount:(unsigned int)arg1;
-- (void)setDestinationEntity:(id)arg1;
 - (void)setDeleteRule:(unsigned int)arg1;
+- (void)setOrdered:(BOOL)arg1;
+- (void)setDestinationEntity:(id)arg1;
 - (void)setInverseRelationship:(id)arg1;
-- (void)_setLazyDestinationEntityName:(id)arg1;
+- (void)_versionHash:(char *)arg1 proxyContext:(id)arg2;
 - (BOOL)_validateValuesAreOfDestinationEntity:(id)arg1 source:(id)arg2;
-- (BOOL)_isRelationship;
-- (id)inverseRelationship;
 - (void)_updateInverse:(id)arg1;
-- (id)versionHash;
 - (BOOL)_isToManyRelationship;
-- (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
-- (unsigned int)_propertyType;
+- (id)inverseRelationship;
 - (unsigned int)maxCount;
-- (id)_initWithName:(id)arg1;
+- (BOOL)isOrdered;
+- (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6 fetchRequests:(id)arg7;
 - (BOOL)isIndexed;
+- (id)_initWithName:(id)arg1;
 - (void)_createCachesAndOptimizeState;
+- (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
 - (void)_versionHash:(char *)arg1;
-- (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6;
 - (id)destinationEntity;
+- (unsigned int)_propertyType;
+- (id)versionHash;
 - (BOOL)isToMany;
+- (unsigned int)minCount;
+- (BOOL)_isRelationship;
 - (unsigned int)deleteRule;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

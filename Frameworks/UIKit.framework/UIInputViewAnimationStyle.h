@@ -9,24 +9,24 @@
     BOOL force;
 }
 
-@property BOOL force;
-@property int outDirection;
-@property double duration;
 @property BOOL animated;
+@property double duration;
+@property int outDirection;
+@property BOOL force;
 
 + (id)animationStyleImmediate;
 + (id)animationStyleDefault;
 + (id)animationStyleAnimated:(BOOL)arg1 duration:(double)arg2 outDirection:(int)arg3;
 
+- (double)duration;
+- (void)setDuration:(double)arg1;
+- (BOOL)force;
+- (void)setOutDirection:(int)arg1;
 - (int)outDirection;
 - (void)setForce:(BOOL)arg1;
-- (void)setOutDirection:(int)arg1;
-- (BOOL)force;
-- (double)duration;
 - (BOOL)animated;
 - (void)setAnimated:(BOOL)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (void)setDuration:(double)arg1;
 
 @end

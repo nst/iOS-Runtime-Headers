@@ -2,39 +2,35 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, NSString, NSData, UIStatusBarLayoutManager;
+@class UILabel, NSString, UIStatusBarComposedData, UIStatusBarLayoutManager;
 
 @interface UIStatusBarForegroundView : UIView  {
     int _foregroundStyle;
     NSString *_statusString;
-    BOOL _itemIsEnabled[22];
+    BOOL _itemIsEnabled[23];
     UIStatusBarLayoutManager *_layoutManagers[3];
     UILabel *_doubleHeightLabel;
     int _ignoreDataLevel;
-    NSData *_pendedData;
+    UIStatusBarComposedData *_pendedData;
     int _pendedActions;
     BOOL _performedStyleChangeReflow;
 }
 
 @property(readonly) int foregroundStyle;
 
-+ (void)_initializeSafeCategory;
 
 - (int)foregroundStyle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 foregroundStyle:(int)arg2;
-- (void)setStatusBarData:(struct { BOOL x1[22]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; BOOL x20[256]; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1 actions:(int)arg2 animated:(BOOL)arg3;
 - (void)reflowItemViews:(BOOL)arg1 suppressCenterAnimation:(BOOL)arg2;
-- (void)setDoubleHeightItemEnabled:(BOOL)arg1;
-- (void)startIgnoringData;
-- (void)stopIgnoringData:(BOOL)arg1;
-- (BOOL)ignoringData;
-- (void)_cleanUpAfterSimpleReflow;
-- (void)_cleanUpAfterDataChange;
-- (void)_reflowItemViewsWithDuration:(double)arg1 suppressCenterAnimation:(BOOL)arg2;
-- (void)_computeVisibleItems:(id*)arg1 eitherSideItems:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 foregroundStyle:(int)arg2;
 - (BOOL)_tryToPlaceItem:(id)arg1 inItemArray:(id)arg2 layoutManager:(id)arg3 roomRemaining:(float*)arg4 allowSwap:(BOOL)arg5 swappedItem:(id*)arg6;
+- (void)_computeVisibleItems:(id*)arg1 eitherSideItems:(id)arg2;
+- (void)stopIgnoringData:(BOOL)arg1;
+- (void)setStatusBarData:(id)arg1 actions:(int)arg2 animated:(BOOL)arg3;
+- (void)_cleanUpAfterSimpleReflow;
+- (void)_reflowItemViewsWithDuration:(double)arg1 suppressCenterAnimation:(BOOL)arg2;
+- (void)_cleanUpAfterDataChange;
+- (void)startIgnoringData;
+- (BOOL)ignoringData;
 - (void)dealloc;
-- (id)_accessibilityFuzzyHitTestElements;
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 
 @end

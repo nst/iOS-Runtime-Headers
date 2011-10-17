@@ -15,37 +15,37 @@
 }
 
 @property(getter=isExplicitContent,readonly) BOOL explicitContent;
+@property int rank;
+@property(copy) NSString * ratingDescription;
+@property(copy) NSString * ratingLabel;
+@property int ratingSystem;
+@property(copy) SSItemArtworkImage * ratingSystemLogo;
 @property(getter=isRestricted,readonly) BOOL restricted;
 @property BOOL shouldHideWhenRestricted;
-@property(copy) SSItemArtworkImage * ratingSystemLogo;
-@property int ratingSystem;
-@property(copy) NSString * ratingLabel;
-@property(copy) NSString * ratingDescription;
-@property int rank;
 
 + (int)ratingSystemFromString:(id)arg1;
 
+- (void)setRank:(int)arg1;
+- (int)rank;
 - (id)valueForProperty:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)rank;
-- (void)setRank:(int)arg1;
-- (BOOL)isExplicitContent;
-- (id)ratingDescription;
-- (int)ratingSystem;
-- (BOOL)_isRatingSystemForApps:(int)arg1;
-- (BOOL)_isRatingSystemForMovies:(int)arg1;
-- (BOOL)_isRatingSystemForMusic:(int)arg1;
-- (BOOL)_isRatingSystemForTV:(int)arg1;
 - (void)setShouldHideWhenRestricted:(BOOL)arg1;
-- (id)ratingSystemLogo;
 - (void)setRatingSystemLogo:(id)arg1;
-- (void)setRatingSystem:(int)arg1;
-- (id)ratingLabel;
+- (id)ratingSystemLogo;
 - (void)setRatingLabel:(id)arg1;
+- (id)ratingLabel;
 - (void)setRatingDescription:(id)arg1;
+- (id)ratingDescription;
+- (BOOL)_isRatingSystemForMusic:(int)arg1;
+- (BOOL)isExplicitContent;
+- (BOOL)_isRatingSystemForTV:(int)arg1;
+- (BOOL)_isRatingSystemForMovies:(int)arg1;
+- (BOOL)_isRatingSystemForApps:(int)arg1;
 - (BOOL)shouldHideWhenRestricted;
+- (int)ratingSystem;
 - (BOOL)isRestricted;
+- (void)setRatingSystem:(int)arg1;
 
 @end

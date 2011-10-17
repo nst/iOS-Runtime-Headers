@@ -13,12 +13,12 @@
 
 
 - (void)setSecurityLevel:(int)arg1;
-- (int)securityLevel;
 - (void)setMaxBuffer:(unsigned int)arg1;
+- (int)securityLevel;
 - (void)setCryptInfo:(void*)arg1;
 - (void)setExpectedResponse:(id)arg1;
-- (id)responseForServerData:(id)arg1;
 - (void)setAuthenticationState:(int)arg1;
+- (id)responseForServerData:(id)arg1;
 - (void)dealloc;
 
 @end

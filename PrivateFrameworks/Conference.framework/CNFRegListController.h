@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class CNFRegController;
+
 @interface CNFRegListController : PSListController  {
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -15,48 +17,63 @@
     BOOL _appeared;
     BOOL _showingChildController;
     BOOL _shouldRerootPreferences;
+    CNFRegController *_regController;
 }
 
 @property(readonly) int currentAppearanceStyle;
+@property(retain) CNFRegController * regController;
 @property BOOL shouldRerootPreferences;
 @property BOOL showingChildController;
 @property(copy) id appearBlock;
 
 
-- (void)authorizationController:(id)arg1 authorizedAccount:(BOOL)arg2;
-- (BOOL)shouldRerootPreferences;
-- (int)currentAppearanceStyle;
-- (void)setAppearBlock:(id)arg1;
-- (void)_performAppearBlock;
+- (void)setSpecifier:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (void)applicationDidResume;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)_updateTitle;
+- (void)dealloc;
 - (BOOL)shouldSelectResponderOnAppearance;
-- (void)handleURL:(id)arg1;
 - (void)changePasswordControllerDidCancel:(id)arg1;
-- (void)changePasswordControllerDidFinish:(id)arg1 withPassword:(id)arg2;
-- (BOOL)wantsWiFiChooser;
-- (void)_updateExistingLabelForSpecifier:(id)arg1 header:(BOOL)arg2;
-- (BOOL)showingChildController;
-- (void)setShowingChildController:(BOOL)arg1;
+- (void)changePasswordControllerDidFinish:(id)arg1 withAppleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
+- (void)authorizationController:(id)arg1 authorizedAccount:(BOOL)arg2;
+- (id)specifiers;
+- (void)_performAppearBlock;
 - (id)appearBlock;
+- (BOOL)wantsWiFiChooser;
+- (BOOL)shouldRerootPreferences;
+- (BOOL)showingChildController;
+- (id)_existingLabelForSpecifier:(id)arg1 header:(BOOL)arg2;
+- (void)_updateExistingLabelForSpecifier:(id)arg1 header:(BOOL)arg2;
+- (id)_existingLabelForSection:(int)arg1 header:(BOOL)arg2;
+- (void)_updateTableLabel:(id)arg1 withTableView:(id)arg2 isTopMostHeader:(BOOL)arg3;
+- (id)customTitle;
 - (id)initWithParentController:(id)arg1;
-- (BOOL)_showWiFiAlertIfNecessary;
 - (void)setShouldRerootPreferences:(BOOL)arg1;
-- (void)willResignActive;
+- (int)currentAppearanceStyle;
+- (void)handleURL:(id)arg1;
 - (BOOL)_handleURLDictionary:(id)arg1;
 - (void)_setLabel:(id)arg1 forSpecifier:(id)arg2 header:(BOOL)arg3;
+- (BOOL)_showWiFiAlertIfNecessary;
+- (void)setShowingChildController:(BOOL)arg1;
+- (void)setAppearBlock:(id)arg1;
+- (id)initWithRegController:(id)arg1;
+- (void)setRegController:(id)arg1;
+- (id)specifierList;
+- (void)_setSpecifierEnabled:(id)arg1 enabled:(BOOL)arg2 animated:(BOOL)arg3;
+- (void)willResignActive;
 - (void)willBecomeActive;
 - (void)_setFieldsEnabled:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_setSpecifierEnabled:(id)arg1 enabled:(BOOL)arg2 animated:(BOOL)arg3;
 - (id)logName;
-- (void)loadView;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (id)init;
-- (void)dealloc;
-- (void)applicationDidResume;
+- (id)regController;
 
 @end

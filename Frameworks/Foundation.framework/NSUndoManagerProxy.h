@@ -9,11 +9,12 @@
 }
 
 
+- (void)superRelease;
+- (id)initWithManager:(id)arg1;
+- (BOOL)_tryRetain;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)release;
 - (id)retain;
-- (id)initWithManager:(id)arg1;
-- (void)superRelease;
+- (oneway void)release;
 
 @end

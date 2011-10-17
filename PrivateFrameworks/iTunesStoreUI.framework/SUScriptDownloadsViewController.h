@@ -8,15 +8,16 @@
 @property(retain) id buttons;
 
 + (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
-- (id)buttons;
-- (id)_copyButtons;
-- (void)_setButtons:(id)arg1;
-- (id)newNativeViewController;
-- (id)attributeKeys;
-- (id)_nativeViewController;
-- (id)scriptAttributeKeys;
 - (void)setButtons:(id)arg1;
+- (id)attributeKeys;
+- (id)buttons;
+- (void)_setButtons:(id)arg1;
+- (id)_copyButtons;
+- (id)newNativeViewController;
+- (id)_nativeViewController;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

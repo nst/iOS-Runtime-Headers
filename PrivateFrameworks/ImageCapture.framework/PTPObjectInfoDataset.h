@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableData, NSString;
+@class NSString;
 
 @interface PTPObjectInfoDataset : NSObject  {
-    NSMutableData *_content;
-    BOOL _dirty;
     unsigned int _storageID;
     unsigned short _objectFormat;
     unsigned short _protectionStatus;
@@ -27,22 +25,22 @@
     NSString *_captureDate;
     NSString *_modificationDate;
     NSString *_keywords;
-    BOOL _readOnlyObject;
     unsigned int _thmFileSize;
     unsigned int _objectHandle;
 }
 
 
-- (void)setContent64:(id)arg1;
-- (id)initWithMutableData64:(id)arg1;
-- (void)updateContent64;
-- (unsigned long)contentSize64;
+- (void)setSequenceNumber:(unsigned long)arg1;
+- (unsigned long)sequenceNumber;
+- (id)keywords;
+- (void)setKeywords:(id)arg1;
+- (void)setFilename:(id)arg1;
+- (id)modificationDate;
+- (id)filename;
 - (id)content64;
-- (unsigned long)storageID;
 - (void)setStorageID:(unsigned long)arg1;
 - (void)setObjectFormat:(unsigned short)arg1;
 - (void)setProtectionStatus:(unsigned short)arg1;
-- (unsigned long long)objectCompressedSize64;
 - (unsigned short)thumbFormat;
 - (void)setThumbFormat:(unsigned short)arg1;
 - (void)setThumbCompressedSize:(unsigned long)arg1;
@@ -56,42 +54,33 @@
 - (void)setThumbPixHeight:(unsigned long)arg1;
 - (void)setImagePixWidth:(unsigned long)arg1;
 - (void)setImagePixHeight:(unsigned long)arg1;
-- (unsigned long)imageBitDepth;
 - (void)setImageBitDepth:(unsigned long)arg1;
 - (void)setParentObject:(unsigned long)arg1;
 - (void)setAssociationType:(unsigned short)arg1;
 - (unsigned long)associationDesc;
 - (void)setAssociationDesc:(unsigned long)arg1;
-- (void)setCaptureDate:(id)arg1;
-- (unsigned long)objectHandle;
-- (void)updateContent;
-- (void)copyContent:(char *)arg1 ofSize:(unsigned long)arg2;
 - (unsigned long)parentObject;
 - (unsigned short)protectionStatus;
+- (unsigned long)storageID;
 - (unsigned short)objectFormat;
 - (unsigned short)associationType;
-- (unsigned long)objectCompressedSize;
-- (id)captureDate;
+- (unsigned long long)objectCompressedSize64;
 - (unsigned long)thumbCompressedSize;
+- (unsigned long)objectHandle;
 - (unsigned long)imagePixWidth;
 - (unsigned long)imagePixHeight;
-- (id)initWithMutableData:(id)arg1;
+- (unsigned long)imageBitDepth;
 - (void)setObjectHandle:(unsigned long)arg1;
 - (void)setObjectCompressedSize:(unsigned long long)arg1;
-- (void)setModificationDate:(id)arg1;
-- (unsigned long)sequenceNumber;
-- (void)setSequenceNumber:(unsigned long)arg1;
+- (id)initWithData64:(id)arg1;
+- (unsigned long)objectCompressedSize;
 - (id)content;
-- (unsigned long)contentSize;
-- (id)init;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
+- (id)captureDate;
+- (void)setCaptureDate:(id)arg1;
+- (void)setModificationDate:(id)arg1;
 - (id)description;
-- (id)keywords;
-- (void)setKeywords:(id)arg1;
-- (id)filename;
-- (void)setFilename:(id)arg1;
-- (id)modificationDate;
-- (void)setContent:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

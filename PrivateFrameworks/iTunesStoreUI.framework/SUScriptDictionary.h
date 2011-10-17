@@ -12,12 +12,12 @@
 
 + (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
 
-- (id)dictionary;
-- (id)initWithDictionary:(id)arg1;
 - (id)valueForKey:(id)arg1;
-- (id)init;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)dealloc;
 - (id)attributeKeys;
+- (id)initWithDictionary:(id)arg1;
+- (id)dictionary;
+- (id)init;
+- (void)dealloc;
 
 @end

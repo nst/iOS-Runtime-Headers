@@ -13,11 +13,11 @@
 + (id)eqPresetForName:(id)arg1;
 + (id)eqPresetForBuiltInPresetType:(int)arg1;
 
+- (int)typeForAVController;
+- (int)builtInPresetType;
+- (id)initWithBuiltInPresetType:(int)arg1;
 - (id)localizedName;
 - (id)name;
 - (void)dealloc;
-- (id)initWithBuiltInPresetType:(int)arg1;
-- (int)builtInPresetType;
-- (int)typeForAVController;
 
 @end

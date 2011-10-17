@@ -11,16 +11,16 @@
     double _elapsedTimePreviousToLastActivation;
 }
 
-@property(readonly) NSDictionary * workoutData;
 @property(readonly) NSString * workoutState;
+@property(readonly) NSDictionary * workoutData;
 
 
+- (id)workoutState;
+- (void)pauseWorkout;
+- (void)activateWorkout;
+- (id)workoutData;
+- (double)getElapsedTimeInSeconds;
 - (id)init;
 - (void)dealloc;
-- (double)getElapsedTimeInSeconds;
-- (void)pauseWorkout;
-- (id)workoutData;
-- (void)activateWorkout;
-- (id)workoutState;
 
 @end

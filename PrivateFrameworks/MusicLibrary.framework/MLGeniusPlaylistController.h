@@ -11,25 +11,24 @@
     NSMutableData *_sharedBlobMutableData;
 }
 
-+ (BOOL)hasGeniusFeatureEnabled;
-+ (BOOL)populateContainer:(id)arg1 withSeedTrack:(id)arg2 error:(id*)arg3;
 + (id)playlistControllerWithSeedTracks:(id)arg1 error:(id*)arg2;
++ (BOOL)populateContainer:(id)arg1 withSeedTrack:(id)arg2 error:(id*)arg3;
 + (void)ignoreUnusedWarnings;
 + (BOOL)useFakeGeniusData;
-+ (BOOL)hasGeniusDataAvailable;
-+ (BOOL)hasGeniusCapableiTunes;
-+ (unsigned int)defaultMinTrackCount;
 + (unsigned int)defaultTrackCount;
++ (unsigned int)defaultMinTrackCount;
++ (BOOL)hasGeniusFeatureEnabled;
++ (BOOL)hasGeniusDataAvailable;
 
+- (id)tracksFromClusterForCount:(unsigned int)arg1 error:(id*)arg2;
+- (id)_sharedBlobMutableData;
+- (id)_tracksFromClusterForPlaylistItemMax:(unsigned int)arg1 error:(id*)arg2;
+- (BOOL)_createClusterPlaylistWithSeedTracks:(id)arg1 error:(id*)arg2;
+- (BOOL)_populateContainer:(id)arg1 seedTrack:(id)arg2 error:(id*)arg3;
+- (BOOL)_fakePopulateContainer:(id)arg1 withSeedTrack:(id)arg2 error:(id*)arg3;
+- (BOOL)_canIncludeTrackInGeniusContainer:(id)arg1;
+- (id)_debugGetTracksStartingAtTrackWithPersistentID:(unsigned long long)arg1 maxTracks:(unsigned int)arg2 stride:(int)arg3;
 - (id)init;
 - (void)dealloc;
-- (id)tracksFromClusterForCount:(unsigned int)arg1 error:(id*)arg2;
-- (BOOL)_canIncludeTrackInGeniusPlaylist:(id)arg1;
-- (BOOL)_canIncludeTrackInGeniusContainer:(id)arg1;
-- (BOOL)_fakePopulateContainer:(id)arg1 withSeedTrack:(id)arg2 error:(id*)arg3;
-- (BOOL)_populateContainer:(id)arg1 seedTrack:(id)arg2 error:(id*)arg3;
-- (BOOL)_createClusterPlaylistWithSeedTracks:(id)arg1 error:(id*)arg2;
-- (id)_tracksFromClusterForPlaylistItemMax:(unsigned int)arg1 error:(id*)arg2;
-- (id)_sharedBlobMutableData;
 
 @end

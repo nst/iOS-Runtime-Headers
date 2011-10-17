@@ -21,10 +21,10 @@
 + (void)enableBundleNamed:(id)arg1;
 + (void)disableBundleNamed:(id)arg1;
 
-- (BOOL)viewCanBeDisplayed;
+- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)isFullscreen;
 - (void)purgeView;
 - (void)setViewCanBeDisplayed:(BOOL)arg1;
-- (void)setFullscreen:(BOOL)arg1 duration:(double)arg2;
 - (BOOL)viewWantsFullscreenLayout;
 - (BOOL)shouldDisableOnRelock;
 - (BOOL)shouldDisableOnUnlock;
@@ -32,8 +32,6 @@
 - (double)viewFadeInDuration;
 - (void)setAlwaysFullscreen:(BOOL)arg1;
 - (BOOL)isAlwaysFullscreen;
-- (BOOL)canBeAlwaysFullscreen;
-- (void)alwaysFullscreenValueHasChanged;
 - (void)deviceLockViewWillShow;
 - (void)deviceLockViewDidHide;
 - (BOOL)retainsPriorityWhileInactive;
@@ -44,23 +42,26 @@
 - (BOOL)canScreenDim;
 - (BOOL)handleMenuButtonTap;
 - (BOOL)handleMenuButtonDoubleTap;
+- (BOOL)wantsMenuButtonHeldEvent;
 - (BOOL)handleMenuButtonHeld;
 - (BOOL)handleGesture:(int)arg1 fingerCount:(unsigned int)arg2;
 - (BOOL)wantsAutomaticFullscreenTimer;
 - (BOOL)wantsSwipeGestureRecognizer;
-- (void)loadView;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (BOOL)viewCanBeDisplayed;
+- (void)setFullscreen:(BOOL)arg1 duration:(double)arg2;
+- (BOOL)canBeAlwaysFullscreen;
+- (void)alwaysFullscreenValueHasChanged;
 - (void)setOrientation:(int)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)setView:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)setView:(id)arg1;
 - (id)view;
-- (id)init;
 - (int)orientation;
+- (id)init;
 - (void)dealloc;
-- (BOOL)isFullscreen;
-- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)disable;
 
 @end

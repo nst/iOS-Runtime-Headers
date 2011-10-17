@@ -13,35 +13,40 @@
     OADTextListStyle *mOtherTextStyle;
 }
 
+@property(retain) NSMutableArray * slideLayouts;
 
-- (id)init;
-- (void)dealloc;
-- (id)otherTextStyle;
-- (id)colorMap;
-- (id)addSlideLayout;
-- (id)titleTextStyle;
-- (id)bodyTextStyle;
+
+- (id)theme;
+- (void)setTheme:(id)arg1;
+- (id)initWithDefaultsAndTheme:(id)arg1;
 - (unsigned int)slideLayoutCount;
 - (id)slideLayoutAtIndex:(unsigned int)arg1;
-- (void)addSlideLayout:(id)arg1;
+- (id)addSlideLayout;
 - (id)slideLayoutOfType:(int)arg1;
 - (void)setTitleTextStyle:(id)arg1;
 - (void)setBodyTextStyle:(id)arg1;
-- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2;
-- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2;
-- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3;
-- (id)parentTextStyleForTables;
-- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2;
-- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2;
-- (void)doneWithContent;
-- (id)theme;
-- (void)setTheme:(id)arg1;
-- (id)drawingTheme;
-- (id)fontScheme;
-- (id)initWithDefaults;
-- (id)parentSlideBase;
+- (void)setOtherTextStyle:(id)arg1;
+- (void)addSlideLayout:(id)arg1;
+- (id)otherTextStyle;
 - (id)defaultTheme;
-- (id)styleMatrix;
+- (id)titleTextStyle;
+- (id)bodyTextStyle;
+- (void)setSlideLayouts:(id)arg1;
+- (id)slideLayouts;
+- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3 overrideIndex:(BOOL)arg4;
+- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)parentSlideBase;
+- (id)colorMap;
+- (id)parentTextStyleForTables;
+- (id)drawingTheme;
 - (id)colorScheme;
+- (id)fontScheme;
+- (id)styleMatrix;
+- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (void)doneWithContent;
+- (id)init;
+- (void)dealloc;
 
 @end

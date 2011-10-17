@@ -6,7 +6,7 @@
 }
 
 
-- (id)initWithChart:(id)arg1;
 - (int)defaultLabelPosition;
+- (id)initWithChart:(id)arg1;
 
 @end

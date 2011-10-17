@@ -14,7 +14,7 @@
 
 - (id)event;
 - (void)setEvent:(id)arg1;
-- (void)dealloc;
 - (id)description;
+- (void)dealloc;
 
 @end

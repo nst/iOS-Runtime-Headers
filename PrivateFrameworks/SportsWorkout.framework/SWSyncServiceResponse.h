@@ -18,28 +18,28 @@
     NSString *_currentLeafElement;
 }
 
-@property(readonly) NSString * errorCode;
-@property(readonly) NSString * serviceException;
-@property(readonly) NSString * token;
-@property(readonly) NSString * screenName;
-@property(readonly) NSString * email;
-@property(readonly) NSString * pinStatus;
-@property(readonly) NSString * pin;
 @property(readonly) NSString * status;
+@property(readonly) NSString * pin;
+@property(readonly) NSString * pinStatus;
+@property(readonly) NSString * email;
+@property(readonly) NSString * screenName;
+@property(readonly) NSString * token;
+@property(readonly) NSString * serviceException;
+@property(readonly) NSString * errorCode;
 
 
-- (id)errorCode;
 - (id)email;
-- (void)dealloc;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
-- (id)initWithData:(id)arg1 error:(id*)arg2;
+- (id)errorCode;
 - (id)serviceException;
 - (id)screenName;
 - (id)pinStatus;
 - (id)pin;
 - (id)status;
+- (id)initWithData:(id)arg1 error:(id*)arg2;
+- (void)dealloc;
 - (id)token;
 
 @end

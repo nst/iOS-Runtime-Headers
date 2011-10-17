@@ -11,15 +11,15 @@
 
 + (void)initialize;
 
-- (void)dealloc;
+- (id)rowForObjectID:(id)arg1 after:(double)arg2;
 - (id)toManyForSourceObjectID:(id)arg1 relationshipName:(id)arg2 after:(double)arg3;
 - (void)registerToMany:(id)arg1 forSourceObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2 relationshipName:(id)arg3 andTimestamp:(double)arg4;
 - (void)forgetRowForObjectID:(struct _NSScalarObjectID { Class x1; }*)arg1;
 - (void)registerSnapshots:(id)arg1;
 - (void)registerRow:(id)arg1 forObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2;
-- (id)rowForObjectID:(id)arg1 after:(double)arg2;
-- (id)rowForObjectID:(id)arg1;
 - (id)adapter;
 - (id)initWithSQLCore:(id)arg1;
+- (id)rowForObjectID:(id)arg1;
+- (void)dealloc;
 
 @end

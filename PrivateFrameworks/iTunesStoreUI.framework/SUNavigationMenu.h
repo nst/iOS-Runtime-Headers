@@ -14,31 +14,31 @@
     NSString *_openTitle;
 }
 
-@property(readonly) NSString * openTitle;
-@property(readonly) NSArray * navigationButtons;
-@property(readonly) NSArray * menuItems;
-@property int location;
-@property(readonly) int initialSelectedIndex;
-@property(readonly) NSString * closedTitle;
 @property(readonly) NSString * cancelTitle;
+@property(readonly) NSString * closedTitle;
+@property(readonly) int initialSelectedIndex;
+@property int location;
+@property(readonly) NSArray * menuItems;
+@property(readonly) NSArray * navigationButtons;
+@property(readonly) NSString * openTitle;
 
 
-- (id)menuItems;
 - (void)setLocation:(int)arg1;
-- (id)initWithDictionary:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)menuItems;
 - (int)location;
-- (id)navigationButtons;
+- (id)initWithDictionary:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)_newMenuItemsFromArray:(id)arg1;
-- (int)_locationForString:(id)arg1;
-- (id)navigationButtonForLocation:(id)arg1;
-- (id)_newNavigationButtonsFromArray:(id)arg1;
-- (int)initialSelectedIndex;
-- (id)cancelTitle;
 - (void)_loadFromDictionary:(id)arg1;
-- (id)closedTitle;
+- (int)_locationForString:(id)arg1;
+- (id)navigationButtons;
+- (id)_newNavigationButtonsFromArray:(id)arg1;
+- (id)cancelTitle;
+- (int)initialSelectedIndex;
 - (id)openTitle;
+- (id)closedTitle;
+- (id)navigationButtonForLocation:(id)arg1;
 
 @end

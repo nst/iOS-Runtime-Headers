@@ -2,19 +2,11 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSData;
-
 @interface GKGetInviteSessionTokenDataRequest : GKDataRequest  {
-    NSData *_inviteSessionToken;
 }
 
-@property(readonly) NSData * inviteSessionToken;
 
-
-- (id)inviteSessionToken;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

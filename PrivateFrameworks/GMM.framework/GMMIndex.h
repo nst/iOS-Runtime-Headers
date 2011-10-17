@@ -3,30 +3,30 @@
  */
 
 @interface GMMIndex : PBCodable  {
-    int _tileYIndex;
-    int _face;
-    BOOL _hasFace;
     int _tileXIndex;
+    int _tileYIndex;
+    BOOL _hasFace;
+    int _face;
 }
 
 @property int tileXIndex;
-@property(readonly) BOOL hasFace;
-@property int face;
 @property int tileYIndex;
+@property BOOL hasFace;
+@property int face;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setTileXIndex:(int)arg1;
-- (void)setTileYIndex:(int)arg1;
+- (void)setHasFace:(BOOL)arg1;
 - (BOOL)hasFace;
-- (int)tileXIndex;
 - (int)tileYIndex;
+- (int)tileXIndex;
+- (void)setTileYIndex:(int)arg1;
+- (void)setTileXIndex:(int)arg1;
+- (void)writeTo:(id)arg1;
 - (int)face;
 - (void)setFace:(int)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

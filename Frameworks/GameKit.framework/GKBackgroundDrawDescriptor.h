@@ -16,21 +16,21 @@
     BOOL _drawOutline;
 }
 
-@property BOOL drawOutline;
-@property int sectionLocation;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } borderInsets;
 @property(retain) UIImage * borderImage;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderInsets;
+@property int sectionLocation;
+@property BOOL drawOutline;
 
 
-- (BOOL)drawOutline;
 - (void)setDrawOutline:(BOOL)arg1;
-- (int)sectionLocation;
-- (void)setSectionLocation:(int)arg1;
-- (void)dealloc;
-- (id)description;
-- (void)setBorderImage:(id)arg1;
-- (id)borderImage;
+- (BOOL)drawOutline;
 - (void)setBorderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;
+- (void)setBorderImage:(id)arg1;
+- (id)borderImage;
+- (void)setSectionLocation:(int)arg1;
+- (int)sectionLocation;
+- (id)description;
+- (void)dealloc;
 
 @end

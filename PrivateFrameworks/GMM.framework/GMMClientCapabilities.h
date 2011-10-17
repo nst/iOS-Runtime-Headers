@@ -2,64 +2,68 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray;
-
 @interface GMMClientCapabilities : PBCodable  {
-    int _maxImageWidth;
     BOOL _hasMaxImageWidth;
-    int _maxImageHeight;
+    int _maxImageWidth;
     BOOL _hasMaxImageHeight;
-    int _availableImageMemory;
+    int _maxImageHeight;
     BOOL _hasAvailableImageMemory;
-    NSMutableArray *_preferredImageFormats;
-    BOOL _htmlBodyOnly;
+    int _availableImageMemory;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _preferredImageFormats;
     BOOL _hasHtmlBodyOnly;
-    BOOL _embedImages;
+    BOOL _htmlBodyOnly;
     BOOL _hasEmbedImages;
+    BOOL _embedImages;
 }
 
-@property(readonly) int preferredImageFormatsCount;
-@property(readonly) BOOL hasEmbedImages;
-@property BOOL embedImages;
-@property(readonly) BOOL hasHtmlBodyOnly;
-@property BOOL htmlBodyOnly;
-@property(retain) NSMutableArray * preferredImageFormats;
-@property(readonly) BOOL hasAvailableImageMemory;
-@property int availableImageMemory;
-@property(readonly) BOOL hasMaxImageHeight;
-@property int maxImageHeight;
-@property(readonly) BOOL hasMaxImageWidth;
+@property BOOL hasMaxImageWidth;
 @property int maxImageWidth;
+@property BOOL hasMaxImageHeight;
+@property int maxImageHeight;
+@property BOOL hasAvailableImageMemory;
+@property int availableImageMemory;
+@property(readonly) unsigned int preferredImageFormatsCount;
+@property(readonly) int* preferredImageFormats;
+@property BOOL hasHtmlBodyOnly;
+@property BOOL htmlBodyOnly;
+@property BOOL hasEmbedImages;
+@property BOOL embedImages;
 
-+ (id)standardCapabilities;
-+ (id)searchCapabilities;
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)preferredImageFormats;
-- (BOOL)hasHtmlBodyOnly;
-- (BOOL)hasEmbedImages;
-- (int)preferredImageFormatsCount;
-- (void)setAvailableImageMemory:(int)arg1;
-- (void)setPreferredImageFormat:(int)arg1 atIndex:(unsigned int)arg2;
-- (int)preferredImageFormatAtIndex:(unsigned int)arg1;
-- (BOOL)htmlBodyOnly;
-- (void)setPreferredImageFormats:(id)arg1;
-- (BOOL)hasAvailableImageMemory;
-- (BOOL)hasMaxImageHeight;
-- (BOOL)hasMaxImageWidth;
-- (int)maxImageWidth;
-- (BOOL)embedImages;
-- (int)availableImageMemory;
-- (int)maxImageHeight;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setMaxImageWidth:(int)arg1;
-- (void)setMaxImageHeight:(int)arg1;
+- (void)setHasEmbedImages:(BOOL)arg1;
+- (BOOL)hasEmbedImages;
+- (void)setHasHtmlBodyOnly:(BOOL)arg1;
+- (BOOL)hasHtmlBodyOnly;
+- (int)availableImageMemory;
+- (void)setHasAvailableImageMemory:(BOOL)arg1;
+- (BOOL)hasAvailableImageMemory;
+- (int)maxImageHeight;
+- (void)setHasMaxImageHeight:(BOOL)arg1;
+- (BOOL)hasMaxImageHeight;
+- (int)maxImageWidth;
+- (void)setHasMaxImageWidth:(BOOL)arg1;
+- (BOOL)hasMaxImageWidth;
+- (BOOL)embedImages;
+- (BOOL)htmlBodyOnly;
+- (void)setPreferredImageFormats:(int*)arg1 count:(unsigned int)arg2;
+- (int)preferredImageFormatAtIndex:(unsigned int)arg1;
 - (void)addPreferredImageFormat:(int)arg1;
+- (void)clearPreferredImageFormats;
+- (int*)preferredImageFormats;
+- (unsigned int)preferredImageFormatsCount;
 - (void)setEmbedImages:(BOOL)arg1;
 - (void)setHtmlBodyOnly:(BOOL)arg1;
+- (void)setAvailableImageMemory:(int)arg1;
+- (void)setMaxImageHeight:(int)arg1;
+- (void)setMaxImageWidth:(int)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -2,25 +2,29 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class Message, MailboxUid, DAMailMessage;
+@class Message, MailboxUid, NSString, DAMailMessage;
 
 @interface MFDAMessage : MailMessage  {
     DAMailMessage *_DAMailMessage;
     Message *_rfc822CreatedMessage;
     MailboxUid *_mailbox;
+    NSString *_externalConversationID;
 }
 
+@property(readonly) DAMailMessage * DAMailMessage;
 
-- (id)remoteID;
-- (id)remoteMailboxURL;
-- (unsigned int)messageSize;
+
 - (id)DAMailMessage;
 - (id)initWithDAMailMessage:(id)arg1 mailbox:(id)arg2;
+- (id)externalConversationID;
+- (id)remoteMailboxURL;
+- (id)remoteID;
 - (id)mailbox;
+- (id)messageBody;
 - (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (unsigned long long)messageFlags;
-- (void)dealloc;
+- (unsigned int)messageSize;
 - (id)headers;
-- (id)messageBody;
+- (void)dealloc;
 
 @end

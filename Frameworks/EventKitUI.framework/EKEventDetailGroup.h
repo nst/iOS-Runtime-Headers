@@ -10,25 +10,25 @@
     NSString *_headerTitle;
 }
 
-@property(retain) NSString * headerTitle;
-@property(retain) NSArray * items;
 @property int tag;
+@property(retain) NSArray * items;
+@property(retain) NSString * headerTitle;
 
 
-- (void)setItems:(id)arg1;
-- (void)setTag:(int)arg1;
-- (int)tag;
-- (id)items;
-- (int)numberOfRows;
-- (void)dealloc;
-- (id)description;
-- (id)_itemAtIndex:(int)arg1 rowOffset:(int*)arg2;
 - (void)setHeaderTitle:(id)arg1;
+- (id)headerTitle;
+- (int)numberOfRows;
+- (void)setItems:(id)arg1;
+- (id)items;
+- (int)tag;
+- (void)setTag:(int)arg1;
+- (BOOL)hasSubitemForIndexPathRow:(unsigned int)arg1;
+- (id)itemAtIndex:(int)arg1 subitemIndex:(int*)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (id)cellForSubitemAtIndex:(int)arg1;
 - (id)initWithTag:(int)arg1 headerTitle:(id)arg2;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
-- (BOOL)hasSubitemForIndexPathRow:(unsigned int)arg1;
-- (id)headerTitle;
+- (id)description;
+- (void)dealloc;
 - (id)itemAtIndex:(int)arg1;
 
 @end

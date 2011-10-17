@@ -2,65 +2,88 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, MPViewController, MPTransitionController, NSTimer;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface MPViewController : UIViewController  {
+@class MPAVController, MPAVItem, NSTimer, MPViewController, MPTransitionController;
+
+@interface MPViewController : UIViewController <MPAVControllerNode> {
     id _delegate;
-    MPAVItem *_item;
+    NSTimer *_idleTimerDisablerTimer;
     int _interfaceOrientation;
+    MPAVItem *_item;
+    MPAVController *_player;
     MPViewController *_pushedViewController;
     MPTransitionController *_pushedTransitionController;
-    NSTimer *_idleTimerDisablerTimer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _popViewControllerHandler;
+
     unsigned int _appearing : 1;
     unsigned int _observesApplicationSuspendResumeEventsOnly : 1;
+    unsigned int _showOverlayWhileAppearingDisabled : 1;
+    int _playerLockedCount;
 }
 
+@property(copy) id popViewControllerHandler;
 @property BOOL observesApplicationSuspendResumeEventsOnly;
 @property id delegate;
 @property(getter=idleTimerDisabled,setter=setIdleTimerDisabled:) BOOL idleTimerDisabled;
-@property int orientation;
 @property(retain) MPAVItem * item;
+@property int orientation;
+@property(retain) MPAVController * player;
 
 
-- (id)item;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (id)popViewControllerAnimated:(BOOL)arg1;
-- (void)setView:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (BOOL)_canReloadView;
-- (id)init;
-- (int)orientation;
-- (void)dealloc;
-- (void)setIdleTimerDisabled:(BOOL)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)startTicking;
-- (void)beginIgnoringChangeTypes:(unsigned int)arg1;
-- (int)displayableInterfaceOrientationForInterfaceOrientation:(int)arg1;
-- (BOOL)isAppearing;
-- (void)applicationDidSuspendEventsOnly;
-- (void)applicationDidResumeEventsOnly;
-- (BOOL)observesApplicationSuspendResumeEventsOnly;
-- (void)setObservesApplicationSuspendResumeEventsOnly:(BOOL)arg1;
-- (void)_disableIdleTimer:(id)arg1;
-- (BOOL)idleTimerDisabled;
 - (void)setAppearing:(BOOL)arg1;
+- (BOOL)idleTimerDisabled;
+- (BOOL)observesApplicationSuspendResumeEventsOnly;
+- (BOOL)isAppearing;
+- (int)displayableInterfaceOrientationForInterfaceOrientation:(int)arg1;
+- (void)beginTransitionOverlayHidding;
+- (void)_disableIdleTimer:(id)arg1;
 - (void)_popTransitionEnded:(id)arg1;
 - (void)_pushTransitionEnded:(id)arg1;
+- (void)applicationDidResumeEventsOnly;
+- (void)applicationDidSuspendEventsOnly;
+- (void)setPopViewControllerHandler:(id)arg1;
+- (void)setObservesApplicationSuspendResumeEventsOnly:(BOOL)arg1;
 - (void)pushViewController:(id)arg1 withTransition:(id)arg2;
-- (void)stopTicking;
 - (id)copyOverlayViewForTransitionToItem:(id)arg1;
-- (void)restoreOverlayViewAfterTransition:(id)arg1;
+- (void)endTransitionOverlayHiddingWithTransferedOverlayView:(id)arg1;
+- (void)stopTicking;
+- (void)startTicking;
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
+- (id)popViewControllerHandler;
+- (void)unlockPlayer;
+- (void)lockPlayer;
+- (void)noteIgnoredChangeTypes:(unsigned int)arg1;
 - (void)didChangeToInterfaceOrientation:(int)arg1;
 - (void)willChangeToInterfaceOrientation:(int)arg1;
-- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
-- (void)noteIgnoredChangeTypes:(unsigned int)arg1;
+- (void)beginIgnoringChangeTypes:(unsigned int)arg1;
 - (void)endIgnoringChangeTypes:(unsigned int)arg1;
-- (void)clearWeakReferencesToObject:(id)arg1;
+- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
+- (void)setPlayer:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setOrientation:(int)arg1;
+- (id)item;
+- (id)popViewControllerAnimated:(BOOL)arg1;
+- (void)addChildViewController:(id)arg1;
+- (void)removeChildViewController:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)_canReloadView;
+- (void)setIdleTimerDisabled:(BOOL)arg1;
+- (void)setView:(id)arg1;
+- (int)orientation;
+- (id)delegate;
+- (id)player;
+- (id)init;
+- (void)dealloc;
 - (void)setItem:(id)arg1;
+- (void)clearWeakReferencesToObject:(id)arg1;
 
 @end

@@ -5,18 +5,18 @@
 @class <CoreDAVTaskDelegate>, NSString;
 
 @interface CoreDAVPutTask : CoreDAVPostOrPutTask  {
-    NSString *_newETag;
+    NSString *_nextETag;
 }
 
-@property(retain) NSString * newETag;
 @property <CoreDAVTaskDelegate> * delegate;
+@property(retain) NSString * nextETag;
 
 
-- (void)dealloc;
-- (id)description;
-- (id)newETag;
-- (void)setNewETag:(id)arg1;
+- (void)setNextETag:(id)arg1;
+- (id)nextETag;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)httpMethod;
 
 @end

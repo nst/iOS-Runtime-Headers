@@ -11,18 +11,17 @@
 }
 
 + (BOOL)loadBundleForAccountWithProperties:(id)arg1;
-+ (void)vendDaemons;
 + (id)sharedInstance;
 
 - (BOOL)loadBundleForAccountWithProperties:(id)arg1;
-- (void)loadFrameworkForAccountType:(id)arg1;
-- (void)_addAccountInfo:(id)arg1 forFrameworkNamed:(id)arg2;
-- (BOOL)_loadFrameworkAtSubpath:(id)arg1;
-- (void)loadDaemonBundleForAccountType:(id)arg1;
+- (Class)agentClassForAccountType:(id)arg1;
 - (Class)accountClassForAccountType:(id)arg1;
 - (Class)clientAccountClassForAccountType:(id)arg1;
 - (Class)daemonAccountClassForAccountType:(id)arg1;
-- (Class)agentClassForAccountType:(id)arg1;
+- (void)loadDaemonBundleForAccountType:(id)arg1;
+- (void)loadFrameworkForAccountType:(id)arg1;
+- (BOOL)_loadFrameworkAtSubpath:(id)arg1;
+- (void)_addAccountInfo:(id)arg1 forFrameworkNamed:(id)arg2;
 - (Class)daemonAppropriateAccountClassForAccountType:(id)arg1;
 - (id)init;
 

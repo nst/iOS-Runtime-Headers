@@ -10,40 +10,40 @@
     NSEntityDescription *_entity;
 }
 
-+ (int)version;
-+ (void)initialize;
-+ (void)release;
-+ (id)retain;
-+ (id)alloc;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)accessInstanceVariablesDirectly;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (Class)classForStore:(id)arg1;
-+ (void)_release_1;
 + (unsigned int)allocateBatch:(id*)arg1 forEntity:(id)arg2 count:(unsigned int)arg3;
++ (id)initWithEntity:(id)arg1;
 + (void)_storeDeallocated;
 + (id)_retain_1;
-+ (id)initWithEntity:(id)arg1;
++ (void)_release_1;
 + (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
 + (void)setObjectStoreIdentifier:(id)arg1;
++ (BOOL)accessInstanceVariablesDirectly;
++ (int)version;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)initialize;
++ (id)retain;
++ (id)alloc;
++ (void)release;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)release;
-- (id)retain;
-- (void)dealloc;
-- (unsigned int)retainCount;
-- (void)_setPersistentStore:(id)arg1;
-- (id)_referenceData;
-- (id)_storeIdentifier;
 - (id)initWithEntity:(id)arg1;
-- (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
 - (BOOL)_isPersistentStoreAlive;
 - (id)URIRepresentation;
+- (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
+- (void)_setPersistentStore:(id)arg1;
+- (id)_storeIdentifier;
+- (id)_referenceData;
 - (id)_retainedURIString;
 - (id)entity;
-- (BOOL)isTemporaryID;
 - (id)persistentStore;
+- (BOOL)isTemporaryID;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
+- (id)retain;
+- (void)release;
+- (void)dealloc;
 
 @end

@@ -12,26 +12,31 @@
 }
 
 @property(retain) EKCalendar * calendar;
-@property(copy,readonly) NSString * title;
+@property(retain) UIColor * color;
+@property BOOL selected;
+@property EKGroupInfo * group;
+@property(readonly) NSString * title;
 @property(readonly) int displayOrder;
 @property(readonly) BOOL isSubscribed;
-@property EKGroupInfo * group;
-@property BOOL selected;
-@property(retain) UIColor * color;
+@property(readonly) BOOL isShared;
+@property(readonly) BOOL isEditable;
 
 
-- (BOOL)selected;
-- (void)setCalendar:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (id)calendar;
-- (void)setColor:(id)arg1;
-- (id)color;
-- (id)group;
-- (id)title;
-- (void)dealloc;
-- (void)setGroup:(id)arg1;
-- (id)initWithCalendar:(id)arg1;
 - (int)displayOrder;
 - (BOOL)isSubscribed;
+- (id)initWithCalendar:(id)arg1;
+- (id)calendar;
+- (void)setCalendar:(id)arg1;
+- (BOOL)selected;
+- (id)group;
+- (BOOL)isEditable;
+- (id)color;
+- (void)setColor:(id)arg1;
+- (void)setSelected:(BOOL)arg1;
+- (id)title;
+- (void)setGroup:(id)arg1;
+- (BOOL)isShared;
+- (id)description;
+- (void)dealloc;
 
 @end

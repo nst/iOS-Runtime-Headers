@@ -5,35 +5,36 @@
 @class NSString, GMMDateTime;
 
 @interface GMMAdEventReportRequest : PBRequest  {
-    NSString *_unique_id;
-    int _event_type;
-    BOOL _hasEvent_type;
-    GMMDateTime *_event_time;
+    NSString *_uniqueId;
+    BOOL _hasEventType;
+    int _eventType;
+    GMMDateTime *_eventTime;
 }
 
-@property(readonly) BOOL hasUnique_id;
-@property(readonly) BOOL hasEvent_time;
-@property(retain) GMMDateTime * event_time;
-@property(readonly) BOOL hasEvent_type;
-@property int event_type;
-@property(retain) NSString * unique_id;
+@property(readonly) BOOL hasUniqueId;
+@property(retain) NSString * uniqueId;
+@property BOOL hasEventType;
+@property int eventType;
+@property(readonly) BOOL hasEventTime;
+@property(retain) GMMDateTime * eventTime;
 
 
-- (unsigned int)requestTypeCode;
+- (id)uniqueId;
 - (Class)responseClass;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasUnique_id;
-- (BOOL)hasEvent_time;
-- (id)event_time;
-- (BOOL)hasEvent_type;
-- (id)unique_id;
 - (BOOL)readFrom:(id)arg1;
-- (int)event_type;
-- (void)setUnique_id:(id)arg1;
-- (void)setEvent_type:(int)arg1;
-- (void)setEvent_time:(id)arg1;
+- (id)eventTime;
+- (BOOL)hasEventTime;
+- (BOOL)hasUniqueId;
+- (void)setEventTime:(id)arg1;
+- (void)setUniqueId:(id)arg1;
+- (void)setHasEventType:(BOOL)arg1;
+- (BOOL)hasEventType;
+- (void)setEventType:(int)arg1;
+- (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
+- (int)eventType;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

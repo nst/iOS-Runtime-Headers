@@ -13,32 +13,32 @@
     BOOL _cloneForSecondDelivery;
 }
 
-@property BOOL cloneForSecondDelivery;
-@property(retain) UIEvent * event;
-@property(retain) UITouch * stateWhenDelivered;
-@property(retain) UITouch * stateWhenDelayed;
 @property(retain) UITouch * touch;
+@property(retain) UITouch * stateWhenDelayed;
+@property(retain) UITouch * stateWhenDelivered;
+@property(retain) UIEvent * event;
+@property BOOL cloneForSecondDelivery;
 
 
-- (void)setTouch:(id)arg1;
-- (int)decrementDelayCount;
-- (void)incrementDelayCount;
-- (int)delayCount;
-- (void)saveCurrentTouchState;
-- (int)phaseForDelivery;
-- (int)timestampForDelivery;
-- (BOOL)cloneForSecondDelivery;
 - (void)setCloneForSecondDelivery:(BOOL)arg1;
 - (id)event;
-- (void)setEvent:(id)arg1;
-- (id)stateWhenDelivered;
 - (void)setStateWhenDelivered:(id)arg1;
+- (id)stateWhenDelivered;
 - (id)stateWhenDelayed;
+- (double)timestampForDelivery;
+- (int)phaseForDelivery;
+- (void)saveCurrentTouchState;
+- (int)delayCount;
+- (void)incrementDelayCount;
+- (int)decrementDelayCount;
+- (BOOL)cloneForSecondDelivery;
 - (void)setStateWhenDelayed:(id)arg1;
+- (void)setEvent:(id)arg1;
+- (void)setTouch:(id)arg1;
 - (id)touch;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

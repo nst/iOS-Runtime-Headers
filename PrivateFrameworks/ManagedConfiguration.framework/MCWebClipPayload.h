@@ -27,16 +27,16 @@
 - (id)label;
 - (id)URL;
 - (id)title;
-- (void)dealloc;
-- (id)description;
-- (id)subtitle1Description;
-- (id)subtitle2Description;
 - (BOOL)precomposed;
 - (BOOL)isRemovable;
 - (id)iconData;
 - (id)subtitle1Label;
 - (id)subtitle2Label;
-- (id)stubDictionary;
+- (id)subtitle2Description;
+- (id)subtitle1Description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 
 @end

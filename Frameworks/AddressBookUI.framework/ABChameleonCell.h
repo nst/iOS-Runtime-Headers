@@ -15,9 +15,9 @@
 
 - (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 - (void)dealloc;
-- (int)abCellStyle;
 - (void)_updateBackgroundViewsForCellStyleAndLocation;
 - (void)_updateTextStylesForCellStyle;
+- (int)abCellStyle;
 - (void)setAbCellStyle:(int)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;

@@ -4,26 +4,35 @@
 
 @interface __NSArrayM : NSMutableArray  {
     unsigned int _used;
-    unsigned int _size;
-    unsigned int _offset;
+    unsigned int _doHardRetain : 1;
+    unsigned int _doWeakAccess : 1;
+    unsigned int _size : 30;
+    unsigned int _hasObjects : 1;
+    unsigned int _hasStrongReferences : 1;
+    unsigned int _offset : 30;
     unsigned long _mutations;
     id *_list;
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)__new:(id*)arg1 :(unsigned int)arg2;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3 :(BOOL)arg4;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)removeLastObject;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)finalize;
+- (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
 - (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
-- (id)objectAtIndex:(unsigned int)arg1;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)removeLastObject;
+- (void)_mutate;
+- (BOOL)_hasStrongReferences;
+- (BOOL)_hasObjects;
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (void)addObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (unsigned int)count;
-- (void)addObject:(id)arg1;
 
 @end

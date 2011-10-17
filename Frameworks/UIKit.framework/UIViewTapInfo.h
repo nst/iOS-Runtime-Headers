@@ -27,20 +27,20 @@
 }
 
 
-- (void)mouseDown:(struct __GSEvent { }*)arg1;
-- (void)mouseDragged:(struct __GSEvent { }*)arg1;
-- (id)initWithDelegate:(id)arg1 view:(id)arg2;
-- (void)releaseAndClearWeakRefs;
-- (void)clearTapState;
-- (void)_handleTapWithCount:(int)arg1 event:(struct __GSEvent { }*)arg2;
-- (void)handleSingleTapEvent:(struct __GSEvent { }*)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)handleDoubleTapEvent:(struct __GSEvent { }*)arg1;
 - (void)scheduleSingleTapHandlerForEvent:(struct __GSEvent { }*)arg1;
-- (void)_sendTouchPauseDownIfNecessary;
 - (void)_sendTouchPauseUpIfNecessary;
 - (BOOL)_eventLocationConsideredMovement:(struct __GSEvent { }*)arg1;
+- (void)_sendTouchPauseDownIfNecessary;
+- (void)handleSingleTapEvent:(struct __GSEvent { }*)arg1;
+- (void)_handleTapWithCount:(int)arg1 event:(struct __GSEvent { }*)arg2;
+- (void)clearTapState;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
+- (void)mouseDragged:(struct __GSEvent { }*)arg1;
+- (void)mouseDown:(struct __GSEvent { }*)arg1;
+- (id)initWithDelegate:(id)arg1 view:(id)arg2;
+- (void)releaseAndClearWeakRefs;
 - (BOOL)cancelMouseTracking;
-- (void)setDelegate:(id)arg1;
 
 @end

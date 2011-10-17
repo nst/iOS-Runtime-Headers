@@ -2,12 +2,16 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@interface UIAccessibilitySafeCategory : NSObject  {
+@class NSString;
+
+@interface UIAccessibilitySafeCategory : NSObject <UIAccessibilityIdentification> {
 }
 
+@property(copy) NSString * accessibilityIdentifier;
+
 + (void)initialize;
-+ (void)installCategoryOnClassNamed:(id)arg1;
 + (void)_addCategoryMethod:(struct objc_method { }*)arg1 toClass:(Class)arg2 isClass:(BOOL)arg3;
++ (void)installCategoryOnClassNamed:(id)arg1;
 
 
 @end

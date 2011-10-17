@@ -9,20 +9,20 @@
     NSTimeZone *_tz;
 }
 
-@property(readonly) NSDate * nsDate;
 @property(retain) NSTimeZone * timeZone;
+@property(readonly) NSDate * nsDate;
 
 + (id)dateWithNSDate:(id)arg1;
 
-- (void)setTimeZone:(id)arg1;
+- (int)dayOfCommonEra;
 - (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
 - (id)timeZone;
+- (void)setTimeZone:(id)arg1;
 - (double)timeIntervalSinceReferenceDate;
-- (void)dealloc;
-- (id)description;
-- (id)initWithNSDate:(id)arg1;
-- (id)nsDate;
 - (id)descriptionWithLocale:(id)arg1;
-- (int)dayOfCommonEra;
+- (id)nsDate;
+- (id)initWithNSDate:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

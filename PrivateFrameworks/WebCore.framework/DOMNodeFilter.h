@@ -7,7 +7,7 @@
 
 
 - (void)finalize;
-- (void)dealloc;
 - (short)acceptNode:(id)arg1;
+- (void)dealloc;
 
 @end

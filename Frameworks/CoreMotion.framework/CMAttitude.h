@@ -9,22 +9,22 @@
 @property(readonly) double roll;
 @property(readonly) double pitch;
 @property(readonly) double yaw;
-@property(readonly) struct { double m11; double m12; double m13; double m21; double m22; double m23; double m31; double m32; double m33; } rotationMatrix;
-@property(readonly) struct { double x; double y; double z; double w; } quaternion;
+@property(readonly) struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; } rotationMatrix;
+@property(readonly) struct { double x1; double x2; double x3; double x4; } quaternion;
 
 
-- (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })rotationMatrix;
-- (void)multiplyByInverseOfAttitude:(id)arg1;
-- (void)setQuaternion:(struct { double x1; double x2; double x3; double x4; })arg1;
-- (id)initWithQuaternion:(struct { double x1; double x2; double x3; double x4; })arg1;
-- (struct { double x1; double x2; double x3; double x4; })quaternion;
+- (double)yaw;
+- (double)pitch;
+- (double)roll;
 - (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (double)pitch;
-- (double)yaw;
-- (double)roll;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)multiplyByInverseOfAttitude:(id)arg1;
+- (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })rotationMatrix;
+- (struct { double x1; double x2; double x3; double x4; })quaternion;
+- (id)initWithQuaternion:(struct { double x1; double x2; double x3; double x4; })arg1;
+- (void)setQuaternion:(struct { double x1; double x2; double x3; double x4; })arg1;
 
 @end

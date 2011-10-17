@@ -7,52 +7,54 @@
 @interface LBSGAppProfile : PBCodable  {
     NSString *_appName;
     NSString *_appKey;
-    int _requestType;
     BOOL _hasRequestType;
-    int _searchType;
+    int _requestType;
     BOOL _hasSearchType;
+    int _searchType;
     NSString *_searchTerm;
-    int _zoomLevel;
     BOOL _hasZoomLevel;
+    int _zoomLevel;
 }
 
 @property(readonly) BOOL hasAppName;
-@property(readonly) BOOL hasAppKey;
-@property(readonly) BOOL hasSearchTerm;
-@property(readonly) BOOL hasZoomLevel;
-@property int zoomLevel;
-@property(retain) NSString * searchTerm;
-@property(readonly) BOOL hasSearchType;
-@property int searchType;
-@property(readonly) BOOL hasRequestType;
-@property int requestType;
-@property(retain) NSString * appKey;
 @property(retain) NSString * appName;
+@property(readonly) BOOL hasAppKey;
+@property(retain) NSString * appKey;
+@property BOOL hasRequestType;
+@property int requestType;
+@property BOOL hasSearchType;
+@property int searchType;
+@property(readonly) BOOL hasSearchTerm;
+@property(retain) NSString * searchTerm;
+@property BOOL hasZoomLevel;
+@property int zoomLevel;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasAppKey;
-- (BOOL)hasAppName;
-- (void)setRequestType:(int)arg1;
-- (void)setSearchType:(int)arg1;
-- (BOOL)hasSearchTerm;
-- (id)searchTerm;
-- (void)setSearchTerm:(id)arg1;
-- (BOOL)hasSearchType;
+- (BOOL)readFrom:(id)arg1;
 - (int)searchType;
+- (void)setHasSearchType:(BOOL)arg1;
+- (BOOL)hasSearchType;
+- (void)setHasRequestType:(BOOL)arg1;
 - (BOOL)hasRequestType;
 - (id)appKey;
-- (void)setAppKey:(id)arg1;
 - (id)appName;
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasZoomLevel;
-- (void)writeTo:(id)arg1;
+- (BOOL)hasSearchTerm;
+- (BOOL)hasAppKey;
+- (BOOL)hasAppName;
+- (void)setSearchType:(int)arg1;
+- (void)setRequestType:(int)arg1;
+- (void)setAppKey:(id)arg1;
 - (void)setAppName:(id)arg1;
 - (int)zoomLevel;
+- (void)setHasZoomLevel:(BOOL)arg1;
+- (BOOL)hasZoomLevel;
 - (void)setZoomLevel:(int)arg1;
 - (int)requestType;
+- (void)setSearchTerm:(id)arg1;
+- (id)searchTerm;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

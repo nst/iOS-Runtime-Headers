@@ -13,13 +13,13 @@
 @property(copy) NSString * valueType;
 
 
+- (id)valueType;
+- (void)setValueType:(id)arg1;
 - (id)type;
 - (id)value;
-- (void)setType:(id)arg1;
 - (void)setValue:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)name;
-- (void)setValueType:(id)arg1;
-- (id)valueType;
+- (void)setType:(id)arg1;
+- (void)setName:(id)arg1;
 
 @end

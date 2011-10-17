@@ -7,19 +7,26 @@
     double _lng;
 }
 
-@property double lng;
 @property double lat;
+@property double lng;
 
 
-- (void)setLng:(double)arg1;
-- (double)lng;
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (double)lat;
 - (BOOL)readFrom:(id)arg1;
+- (int)lngE7;
+- (int)latE7;
+- (unsigned int)unsignedLatE7;
+- (id)coordinateAsString;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (BOOL)isValid;
+- (void)setLng:(double)arg1;
 - (void)setLat:(double)arg1;
+- (double)lng;
+- (double)lat;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
+- (id)initWithGMMGeometry:(id)arg1;
 
 @end

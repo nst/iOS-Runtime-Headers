@@ -12,6 +12,7 @@
 @interface Connection : NSObject  {
     <MFSASLSecurityLayer> *_securityLayer;
     _MFSocket *_socket;
+    double _lastUsedTime;
     char *_buffer;
     int _bufferRemainingBytes;
     unsigned int _bufferStart;
@@ -29,8 +30,6 @@
     unsigned int _compressionEnabled : 1;
 }
 
-+ (void)readLoggingDefaults;
-+ (void)logBytes:(const char *)arg1 length:(int)arg2;
 + (id)logClasses;
 + (void)setLogClasses:(id)arg1;
 + (BOOL)logAllSocketActivity;
@@ -39,39 +38,41 @@
 + (void)setLogActivityOnPorts:(id)arg1;
 + (id)logActivityOnHosts;
 + (void)setLogActivityOnHosts:(id)arg1;
++ (void)logBytes:(const char *)arg1 length:(int)arg2;
++ (void)flushLog;
++ (void)readLoggingDefaults;
 + (BOOL)shouldTryFallbacksAfterError:(id)arg1;
 + (void)initialize;
-+ (void)flushLog;
 
-- (BOOL)isForcedConnection;
 - (void)setIsFetching:(BOOL)arg1;
-- (void)_setupNetworkLogging;
-- (BOOL)connectUsingSettings:(id)arg1;
 - (void)setDesiredReadBufferLength:(unsigned int)arg1;
 - (void)enableReadLogging:(BOOL)arg1;
 - (void)logReadChars:(const char *)arg1 length:(unsigned int)arg2;
 - (BOOL)readBytesIntoData:(id)arg1 desiredLength:(unsigned int)arg2;
 - (BOOL)startTLSForAccount:(id)arg1;
 - (BOOL)startCompression;
-- (id)_newSocket;
-- (id)_socket;
 - (double)lastUsedTime;
+- (void)_setupNetworkLogging;
+- (BOOL)connectUsingSettings:(id)arg1;
+- (BOOL)isForcedConnection;
 - (void)setAllowsFallbacks:(BOOL)arg1;
-- (BOOL)connectUsingAccount:(id)arg1;
+- (id)authenticationMechanisms;
+- (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
+- (id)securityProtocol;
 - (BOOL)writeData:(id)arg1 dontLogBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)writeBytes:(const char *)arg1 length:(unsigned int)arg2 dontLogBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (BOOL)readLineIntoData:(id)arg1;
-- (id)authenticationMechanisms;
-- (BOOL)authenticateUsingAccount:(id)arg1;
-- (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
+- (BOOL)connectUsingAccount:(id)arg1;
 - (BOOL)isFetching;
 - (BOOL)connectUsingFallbacksForAccount:(id)arg1;
+- (BOOL)authenticateUsingAccount:(id)arg1;
 - (BOOL)loginDisabled;
+- (BOOL)writeData:(id)arg1;
+- (void)disconnect;
 - (BOOL)isValid;
+- (BOOL)hasBytesAvailable;
+- (id)description;
 - (void)dealloc;
 - (id)capabilities;
-- (BOOL)writeData:(id)arg1;
-- (BOOL)hasBytesAvailable;
-- (void)disconnect;
 
 @end

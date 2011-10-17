@@ -2,34 +2,37 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoView, UIView, UINavigationBar;
+@class UINavigationBar, UIView, MPVideoView, UIViewController;
 
 @interface MPVideoTransferTransitionController : MPTransitionController  {
     MPVideoView *_inflightVideoView;
     UINavigationBar *_portraitNavigationBar;
-    UIView *_topmostView;
+    BOOL _showOverlayAfterTransition;
     UIView *_transitionBehindView;
+    UIViewController *_inflightBackstopViewController;
+    float _preTransitionWindowLevel;
 }
 
-@property(retain) UIView * topmostView;
-@property(retain) UIView * transitionBehindView;
 @property(retain) UINavigationBar * portraitNavigationBar;
+@property(retain) UIView * transitionBehindView;
+@property(retain) UIViewController * inflightBackstopViewController;
+@property BOOL showOverlayAfterTransition;
 
 
+- (void)setTransitionBehindView:(id)arg1;
+- (id)transitionBehindView;
+- (BOOL)showOverlayAfterTransition;
+- (id)portraitNavigationBar;
+- (id)inflightBackstopViewController;
+- (void)_transformView:(id)arg1 forOrientation:(int)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)_prepareViewsWithBeginAnimationTransactionBlock:(id)arg1;
+- (void)_updateStatusBar;
+- (void)_animationDidStop;
+- (void)performTransition:(unsigned int)arg1;
+- (void)setShowOverlayAfterTransition:(BOOL)arg1;
+- (void)setInflightBackstopViewController:(id)arg1;
+- (void)setPortraitNavigationBar:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)_topmostViewWindow;
-- (void)_prepareViews;
-- (void)_transformView:(id)arg1 forOrientation:(int)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (void)_updateStatusBar;
-- (id)topmostView;
-- (id)transitionBehindView;
-- (void)setTransitionBehindView:(id)arg1;
-- (id)portraitNavigationBar;
-- (void)transition:(unsigned int)arg1;
-- (void)_animationDidStop;
-- (void)setPortraitNavigationBar:(id)arg1;
-- (void)setTopmostView:(id)arg1;
-- (id)_topmostView;
 
 @end

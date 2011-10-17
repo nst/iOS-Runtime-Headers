@@ -2,25 +2,28 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
+@class NSString, NSArray;
 
-@interface SSSoftwareUpdatesContext : NSObject <NSCopying, NSMutableCopying> {
+@interface SSSoftwareUpdatesContext : NSObject <SSCoding, NSCopying, NSMutableCopying> {
     NSString *_clientIdentifierHeader;
     BOOL _forced;
+    NSArray *_softwareTypes;
 }
 
-@property(readonly) NSString * queueIdentifier;
 @property(getter=isForced,readonly) BOOL forced;
-@property(copy,readonly) NSString * clientIdentifierHeader;
+@property(readonly) NSArray * softwareTypes;
+@property(readonly) NSString * clientIdentifierHeader;
 
 
+- (BOOL)isForced;
+- (id)softwareTypes;
+- (id)clientIdentifierHeader;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
+- (id)copyPropertyListEncoding;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)isForced;
-- (id)queueIdentifier;
-- (id)clientIdentifierHeader;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
 
 @end

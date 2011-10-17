@@ -16,36 +16,31 @@
 @property(getter=isRotated) BOOL rotated;
 @property(getter=isHiding) BOOL hiding;
 
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_minusRect;
-+ (id)_deleteImageBackground;
-+ (id)_deleteImage;
-+ (id)_insertImage;
 + (id)_multiSelectNotSelectedImage;
 + (id)_multiSelectSelectedImage;
 + (id)_multiSelectHighlightedImage;
++ (id)_insertImage;
++ (id)_deleteImage;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_minusRect;
++ (id)_deleteImageBackground;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (void)_initializeSafeCategory;
 
-- (id)_minusView;
-- (void)_updateImageView;
-- (void)_toggleRotate;
-- (id)_currentImage;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setRotated:(BOOL)arg1;
+- (void)_toggleRotate;
+- (void)_updateImageView;
+- (id)_minusView;
+- (id)_currentImage;
+- (id)initWithTableViewCell:(id)arg1 editingStyle:(int)arg2;
 - (void)setRotated:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isRotated;
-- (id)initWithTableViewCell:(id)arg1 editingStyle:(int)arg2;
-- (void)setSelected:(BOOL)arg1;
-- (void)_toggleRotateAnimationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (BOOL)isHiding;
 - (void)setHiding:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)_toggleRotateAnimationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)setSelected:(BOOL)arg1;
 - (void)_multiselectColorChanged;
+- (void)setHighlighted:(BOOL)arg1;
 - (BOOL)isRotating;
 - (void)layoutSubviews;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
 
 @end

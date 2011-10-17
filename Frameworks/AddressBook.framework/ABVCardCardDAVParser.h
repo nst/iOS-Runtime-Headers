@@ -2,24 +2,47 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSData;
 
 @interface ABVCardCardDAVParser : ABVCardParser  {
     NSMutableDictionary *_unknownAttributes;
-    unsigned int _existingRecordType;
+    BOOL _removeExistingProperties;
+    BOOL _localRecordHasAdditionalProperties;
+    int _lastCropRectX;
+    int _lastCropRectY;
+    int _lastCropRectWidth;
+    int _lastCropRectHeight;
+    NSData *_lastCropRectChecksum;
 }
 
+@property(readonly) NSData * lastCropRectChecksum;
+@property(readonly) int lastCropRectHeight;
+@property(readonly) int lastCropRectWidth;
+@property(readonly) int lastCropRectY;
+@property(readonly) int lastCropRectX;
+@property(readonly) BOOL localRecordHasAdditionalProperties;
 
-- (id)initWithData:(id)arg1;
-- (void)dealloc;
-- (id)genericLabel;
-- (id)defaultLabel;
-- (id)defaultADRLabel;
-- (id)defaultURLLabel;
-- (BOOL)parseUID;
-- (BOOL)_handleUnknownTag:(id)arg1 withValue:(id)arg2;
+
 - (BOOL)importToPerson:(void*)arg1 removeExistingProperties:(BOOL)arg2;
 - (BOOL)importToGroup:(void*)arg1 removeExistingProperties:(BOOL)arg2;
 - (void*)createRecordInSource:(void*)arg1 outRecordType:(unsigned int*)arg2;
+- (id)lastCropRectChecksum;
+- (int)lastCropRectHeight;
+- (int)lastCropRectWidth;
+- (int)lastCropRectY;
+- (int)lastCropRectX;
+- (BOOL)localRecordHasAdditionalProperties;
+- (id)defaultADRLabel;
+- (void)cleanUpCardState;
+- (id)defaultLabel;
+- (void)setLocalRecordHasAdditionalProperties:(BOOL)arg1;
+- (void)noteLackOfValueForProperty:(unsigned int)arg1;
+- (id)genericLabel;
+- (BOOL)parseUID;
+- (id)defaultURLLabel;
+- (BOOL)_handleUnknownTag:(id)arg1 withValue:(id)arg2;
+- (void)noteLackOfValueForImageData;
+- (id)initWithData:(id)arg1;
+- (void)dealloc;
 
 @end

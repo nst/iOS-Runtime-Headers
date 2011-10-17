@@ -9,10 +9,10 @@
 
 
 - (id)observer;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)description;
 - (id)initWithObserver:(id)arg1 andElement:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)element;
 
 @end

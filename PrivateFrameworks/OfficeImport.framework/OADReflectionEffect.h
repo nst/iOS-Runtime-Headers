@@ -20,38 +20,38 @@
 }
 
 
-- (float)endPosition;
-- (void)setStartPosition:(float)arg1;
-- (float)direction;
-- (void)setDirection:(float)arg1;
-- (unsigned int)hash;
-- (float)startPosition;
-- (void)setAlignment:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)alignment;
-- (void)setDistance:(float)arg1;
-- (float)distance;
-- (void)setBlurRadius:(float)arg1;
-- (void)setXScale:(float)arg1;
-- (void)setRotateWithShape:(BOOL)arg1;
+- (void)setStartOpacity:(float)arg1;
 - (void)setEndOpacity:(float)arg1;
 - (void)setEndPosition:(float)arg1;
 - (void)setFadeDirection:(float)arg1;
 - (float)startOpacity;
-- (void)setStartOpacity:(float)arg1;
 - (float)endOpacity;
 - (float)fadeDirection;
 - (float)blurRadius;
+- (float)distance;
+- (void)setXScale:(float)arg1;
+- (void)setYScale:(float)arg1;
+- (void)setXSkew:(float)arg1;
+- (void)setYSkew:(float)arg1;
 - (float)xScale;
 - (float)yScale;
-- (void)setYScale:(float)arg1;
 - (float)xSkew;
-- (void)setXSkew:(float)arg1;
 - (float)ySkew;
-- (void)setYSkew:(float)arg1;
+- (void)setRotateWithShape:(BOOL)arg1;
 - (BOOL)rotateWithShape;
 - (void)setStyleColor:(id)arg1;
+- (void)setDistance:(float)arg1;
+- (void)setBlurRadius:(float)arg1;
+- (void)setStartPosition:(float)arg1;
+- (float)endPosition;
+- (float)direction;
+- (float)startPosition;
+- (void)setDirection:(float)arg1;
+- (void)setAlignment:(int)arg1;
+- (int)alignment;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 
 @end

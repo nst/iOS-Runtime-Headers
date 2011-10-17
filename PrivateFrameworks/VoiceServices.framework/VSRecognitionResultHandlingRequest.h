@@ -12,10 +12,10 @@
 
 
 - (id)initWithHandler:(id)arg1 results:(id)arg2;
-- (void)setNextAction:(id)arg1;
 - (id)nextAction;
+- (void)setNextAction:(id)arg1;
 - (id)handler;
-- (void)dealloc;
 - (id)results;
+- (void)dealloc;
 
 @end

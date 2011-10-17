@@ -8,10 +8,10 @@
 }
 
 
+- (void)setInUse:(BOOL)arg1;
+- (BOOL)isInUse;
 - (id)key;
 - (id)init;
 - (void)dealloc;
-- (BOOL)isInUse;
-- (void)setInUse:(BOOL)arg1;
 
 @end

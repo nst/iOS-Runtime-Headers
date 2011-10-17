@@ -18,32 +18,32 @@
     unsigned int _timerOn : 1;
 }
 
-@property float minimumVerticalMovement;
 @property int numberOfFingers;
+@property float minimumVerticalMovement;
 
 
-- (int)numberOfFingers;
-- (float)minimumVerticalMovementForTimeInterval:(double)arg1;
-- (float)minimumHorizontalMovementForTimeInterval:(double)arg1;
-- (float)maximumVerticalMovementForTimeInterval:(double)arg1;
-- (float)maximumHorizontalMovementForTimeInterval:(double)arg1;
-- (void)setMinimumVerticalMovement:(float)arg1;
-- (void)startTimer:(double)arg1;
-- (void)tooManyFingers;
-- (BOOL)mergeTouches:(id)arg1;
-- (int)determineStateForTouch:(id)arg1 atTimeInterval:(double)arg2;
-- (int)overallState;
 - (float)minimumVerticalMovement;
+- (void)setNumberOfFingers:(int)arg1;
+- (int)overallState;
+- (int)determineStateForTouch:(id)arg1 atTimeInterval:(double)arg2;
+- (float)minimumHorizontalMovementForTimeInterval:(double)arg1;
+- (float)minimumVerticalMovementForTimeInterval:(double)arg1;
+- (float)maximumHorizontalMovementForTimeInterval:(double)arg1;
+- (float)maximumVerticalMovementForTimeInterval:(double)arg1;
+- (BOOL)mergeTouches:(id)arg1;
+- (void)startTimer:(double)arg1;
+- (int)numberOfFingers;
+- (void)tooManyFingers;
+- (void)setMinimumVerticalMovement:(float)arg1;
 - (void)tooSlow:(id)arg1;
 - (void)clearTimer;
 - (void)_resetGestureRecognizer;
 - (id)infoForTouch:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (void)setState:(int)arg1;
-- (void)setNumberOfFingers:(int)arg1;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)setState:(int)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
 

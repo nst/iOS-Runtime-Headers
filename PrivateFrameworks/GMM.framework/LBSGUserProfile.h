@@ -10,22 +10,21 @@
 }
 
 @property(readonly) BOOL hasUserName;
+@property(retain) NSString * userName;
 @property(readonly) BOOL hasAuthToken;
 @property(retain) NSString * authToken;
-@property(retain) NSString * userName;
 
 
-- (id)userName;
 - (void)setAuthToken:(id)arg1;
 - (id)authToken;
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasUserName;
-- (BOOL)hasAuthToken;
 - (BOOL)readFrom:(id)arg1;
+- (BOOL)hasAuthToken;
+- (BOOL)hasUserName;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
 - (void)setUserName:(id)arg1;
+- (id)userName;
+- (id)description;
+- (void)dealloc;
 
 @end

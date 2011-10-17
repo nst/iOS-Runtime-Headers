@@ -14,19 +14,19 @@
 }
 
 
+- (id)listStyleLink;
+- (int)levelCount;
+- (id)levelAt:(int)arg1;
+- (int)listId;
+- (void)setListId:(int)arg1;
+- (void)setListStyleLink:(id)arg1;
+- (id)addLevel;
+- (void)setListStyle:(id)arg1;
+- (id)listStyle;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
 - (int)type;
 - (void)setType:(int)arg1;
 - (void)dealloc;
-- (id)listStyleLink;
-- (id)initWithDocument:(id)arg1;
-- (void)setListId:(int)arg1;
-- (id)addLevel;
-- (void)setListStyle:(id)arg1;
-- (void)setListStyleLink:(id)arg1;
-- (id)listStyle;
-- (id)document;
-- (int)listId;
-- (int)levelCount;
-- (id)levelAt:(int)arg1;
 
 @end

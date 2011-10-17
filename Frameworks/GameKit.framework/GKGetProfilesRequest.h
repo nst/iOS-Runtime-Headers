@@ -6,28 +6,17 @@
 
 @interface GKGetProfilesRequest : GKDataRequest  {
     NSArray *_playerIDs;
-    BOOL _includeDetails;
-    BOOL _includeEmailAddresses;
-    NSArray *_profiles;
+    unsigned int _profilePieces;
 }
 
-@property(readonly) NSArray * profiles;
-@property BOOL includeEmailAddresses;
-@property BOOL includeDetails;
 @property(retain) NSArray * playerIDs;
+@property unsigned int profilePieces;
 
 
-- (int)cachePriority;
-- (int)cacheType;
-- (BOOL)includeDetails;
-- (BOOL)includeEmailAddresses;
-- (void)setIncludeEmailAddresses:(BOOL)arg1;
-- (void)setIncludeDetails:(BOOL)arg1;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
-- (void)setPlayerIDs:(id)arg1;
-- (id)profiles;
+- (unsigned int)profilePieces;
+- (void)setProfilePieces:(unsigned int)arg1;
 - (id)playerIDs;
-- (id)cacheKey;
+- (void)setPlayerIDs:(id)arg1;
 - (id)key;
 - (id)request;
 - (void)dealloc;

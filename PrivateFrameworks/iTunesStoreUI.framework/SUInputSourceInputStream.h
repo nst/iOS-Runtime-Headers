@@ -32,33 +32,33 @@
 @property(readonly) NSArray * inputSources;
 
 
+- (void)setDelegate:(id)arg1;
+- (void)open;
 - (id)initWithURL:(id)arg1;
 - (void)close;
-- (id)init;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (void)_scheduleCallback;
-- (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
+- (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)open;
-- (unsigned int)streamStatus;
-- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (BOOL)hasBytesAvailable;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
-- (id)initWithFileAtPath:(id)arg1;
-- (id)initWithInputSources:(id)arg1;
-- (id)propertyForKey:(id)arg1;
-- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (id)streamError;
-- (void)_close;
-- (id)_currentInputSource;
-- (void)_setStreamError:(id)arg1;
-- (void)_streamEventCallback;
+- (unsigned int)streamStatus;
+- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
+- (id)propertyForKey:(id)arg1;
+- (id)initWithFileAtPath:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)inputSources;
+- (void)_streamEventCallback;
+- (void)_scheduleCallback;
+- (void)_setStreamError:(id)arg1;
+- (id)_currentInputSource;
+- (void)_close;
+- (id)initWithInputSources:(id)arg1;
 
 @end

@@ -10,20 +10,20 @@
 }
 
 
-- (id)initWithPath:(id)arg1;
-- (id)path;
-- (void)close;
-- (long long)offset;
-- (void)flush;
-- (void)dealloc;
 - (id)initWithTemporaryFile:(id)arg1;
 - (BOOL)moveToPath:(id)arg1;
 - (void)truncateToLength:(unsigned long)arg1;
-- (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
-- (BOOL)canSeek;
 - (void)seekToOffset:(long long)arg1 whence:(int)arg2;
 - (BOOL)canCreateInputStream;
-- (id)closeLocalStream;
 - (id)inputStream;
+- (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
+- (id)closeLocalStream;
+- (BOOL)canSeek;
+- (id)path;
+- (void)flush;
+- (id)initWithPath:(id)arg1;
+- (void)close;
+- (long long)offset;
+- (void)dealloc;
 
 @end

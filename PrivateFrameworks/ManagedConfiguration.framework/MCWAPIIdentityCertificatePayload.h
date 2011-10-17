@@ -13,12 +13,12 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (void)dealloc;
-- (id)description;
 - (id)pemData;
 - (struct __SecCertificate { }*)copyCertificate;
-- (BOOL)isIdentity;
 - (struct __SecIdentity { }*)copyIdentityFromKeychain;
+- (BOOL)isIdentity;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)description;
+- (void)dealloc;
 
 @end

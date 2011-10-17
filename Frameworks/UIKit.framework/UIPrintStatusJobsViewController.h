@@ -11,23 +11,23 @@
 }
 
 
-- (void)pushJob:(id)arg1 animated:(BOOL)arg2;
+- (void)handleJobListDidChange;
 - (void)pushSingleJobAnimated:(BOOL)arg1;
+- (void)updateJobInfo:(id)arg1;
 - (void)updateForJobCountChange;
-- (id)visibleJobs;
 - (void)updateTableViewCell:(id)arg1 withJob:(id)arg2;
-- (void)updateJobInfoAnimated:(BOOL)arg1;
-- (void)loadView;
-- (void)updateJobInfo;
+- (id)visibleJobs;
+- (void)pushJob:(id)arg1 animated:(BOOL)arg2;
 - (void)willReappear;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)init;
 - (void)dealloc;
 

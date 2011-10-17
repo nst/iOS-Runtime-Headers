@@ -10,12 +10,12 @@
 }
 
 
+- (BOOL)tryLock;
 - (BOOL)_lockBlocking:(BOOL)arg1;
-- (void)lock;
 - (id)initWithPath:(id)arg1;
 - (void)unlock;
-- (void)dealloc;
+- (void)lock;
 - (id)initWithName:(id)arg1;
-- (BOOL)tryLock;
+- (void)dealloc;
 
 @end

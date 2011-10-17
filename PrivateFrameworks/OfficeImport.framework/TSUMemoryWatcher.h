@@ -11,9 +11,9 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithFlushingManager:(id)arg1;
 - (void)beginObserving;
 - (void)stopObserving;
+- (void)dealloc;
 
 @end

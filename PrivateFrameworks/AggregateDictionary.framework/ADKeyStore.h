@@ -9,14 +9,17 @@
     NSMutableSet *_whitelistedScalarPrefixes;
     NSMutableSet *_whitelistedDistributionKeys;
     NSMutableSet *_whitelistedDistributionPrefixes;
+    NSMutableSet *_whitelistedMetadataKeys;
     BOOL _isInternalDevice;
 }
 
++ (id)defaultWhitelist;
 
-- (id)initWithPath:(id)arg1 additionalAcceptedClasses:(id)arg2;
-- (id)initWithDefaultPathAndAdditionalAcceptedClasses:(id)arg1;
+- (id)initWithPath:(id)arg1;
+- (id)initWithDefaultPath;
 - (BOOL)scalarKeyIsWhitelisted:(id)arg1;
 - (BOOL)distributionKeyIsWhitelisted:(id)arg1;
+- (BOOL)metadataKeyIsWhitelisted:(id)arg1;
 - (void)dealloc;
 
 @end

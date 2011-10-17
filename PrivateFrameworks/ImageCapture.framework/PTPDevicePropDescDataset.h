@@ -22,8 +22,7 @@
 }
 
 
-- (void)updateContent;
-- (void)copyContent:(char *)arg1 ofSize:(unsigned long)arg2;
+- (id)currentValue;
 - (unsigned short)devicePropertyCode;
 - (void)setDevicePropertyCode:(unsigned short)arg1;
 - (unsigned short)dataTypeCode;
@@ -34,25 +33,24 @@
 - (void)setFactoryDefaultValue:(id)arg1;
 - (unsigned char)formFlag;
 - (void)setFormFlag:(unsigned char)arg1;
-- (id)stepSize;
-- (void)setStepSize:(id)arg1;
 - (unsigned short)numberOfValues;
 - (void)setNumberOfValues:(unsigned short)arg1;
 - (id)supportedValues;
 - (void)setSupportedValues:(id)arg1;
+- (void)updateContent;
 - (id)initWithMutableData:(id)arg1;
+- (void)setContent:(id)arg1;
 - (void)setMaximumValue:(id)arg1;
-- (id)minimumValue;
 - (void)setMinimumValue:(id)arg1;
 - (id)maximumValue;
+- (id)minimumValue;
 - (id)content;
-- (unsigned long)contentSize;
-- (id)init;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
+- (void)setStepSize:(id)arg1;
+- (id)stepSize;
 - (id)description;
-- (void)setContent:(id)arg1;
-- (id)currentValue;
+- (id)init;
+- (void)dealloc;
 - (void)setCurrentValue:(id)arg1;
 
 @end

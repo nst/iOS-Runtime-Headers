@@ -6,14 +6,14 @@
     void *reserved[6];
 }
 
++ (id)propertyListWithStream:(id)arg1 options:(unsigned int)arg2 format:(unsigned int*)arg3 error:(out id*)arg4;
++ (int)writePropertyList:(id)arg1 toStream:(id)arg2 format:(unsigned int)arg3 options:(unsigned int)arg4 error:(out id*)arg5;
 + (BOOL)propertyList:(id)arg1 isValidForFormat:(unsigned int)arg2;
-+ (id)dataFromPropertyList:(id)arg1 format:(unsigned int)arg2 errorDescription:(id*)arg3;
-+ (id)propertyListFromData:(id)arg1 mutabilityOption:(unsigned int)arg2 format:(unsigned int*)arg3 errorDescription:(id*)arg4;
-+ (id)dataWithPropertyList:(id)arg1 format:(unsigned int)arg2 options:(unsigned int)arg3 error:(id*)arg4;
-+ (id)propertyListWithData:(id)arg1 options:(unsigned int)arg2 format:(unsigned int*)arg3 error:(id*)arg4;
++ (id)propertyListFromData:(id)arg1 mutabilityOption:(unsigned int)arg2 format:(unsigned int*)arg3 errorDescription:(out id*)arg4;
++ (id)dataWithPropertyList:(id)arg1 format:(unsigned int)arg2 options:(unsigned int)arg3 error:(out id*)arg4;
++ (id)dataFromPropertyList:(id)arg1 format:(unsigned int)arg2 errorDescription:(out id*)arg3;
++ (id)propertyListWithData:(id)arg1 options:(unsigned int)arg2 format:(unsigned int*)arg3 error:(out id*)arg4;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (int)writePropertyList:(id)arg1 toStream:(id)arg2 format:(unsigned int)arg3 options:(unsigned int)arg4 error:(id*)arg5;
-+ (id)propertyListWithStream:(id)arg1 options:(unsigned int)arg2 format:(unsigned int*)arg3 error:(id*)arg4;
 
 - (id)init;
 

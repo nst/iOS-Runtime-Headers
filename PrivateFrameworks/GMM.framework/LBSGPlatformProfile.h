@@ -14,46 +14,45 @@
     NSString *_userAgent;
 }
 
+@property(retain) NSString * version;
 @property(readonly) BOOL hasPlatform;
+@property(retain) NSString * platform;
 @property(readonly) BOOL hasPlatformKey;
+@property(retain) NSString * platformKey;
 @property(readonly) BOOL hasDistributionChannel;
+@property(retain) NSString * distributionChannel;
 @property(readonly) BOOL hasLocale;
+@property(retain) NSString * locale;
 @property(readonly) BOOL hasIp;
+@property(retain) NSString * ip;
 @property(readonly) BOOL hasUserAgent;
 @property(retain) NSString * userAgent;
-@property(retain) NSString * ip;
-@property(retain) NSString * locale;
-@property(retain) NSString * distributionChannel;
-@property(retain) NSString * platformKey;
-@property(retain) NSString * platform;
-@property(retain) NSString * version;
 
 
-- (id)ip;
 - (id)userAgent;
-- (id)version;
-- (id)dictionaryRepresentation;
-- (void)setLocale:(id)arg1;
-- (id)locale;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasUserAgent;
-- (BOOL)hasIp;
-- (BOOL)hasPlatformKey;
-- (BOOL)hasPlatform;
-- (BOOL)hasDistributionChannel;
-- (void)setIp:(id)arg1;
-- (void)setDistributionChannel:(id)arg1;
-- (id)platform;
+- (BOOL)readFrom:(id)arg1;
 - (id)distributionChannel;
 - (id)platformKey;
-- (BOOL)hasLocale;
-- (BOOL)readFrom:(id)arg1;
-- (void)setVersion:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setPlatform:(id)arg1;
+- (id)platform;
+- (BOOL)hasUserAgent;
+- (BOOL)hasIp;
+- (BOOL)hasDistributionChannel;
+- (BOOL)hasPlatformKey;
+- (BOOL)hasPlatform;
+- (void)setIp:(id)arg1;
+- (void)setDistributionChannel:(id)arg1;
 - (void)setPlatformKey:(id)arg1;
+- (void)setPlatform:(id)arg1;
+- (BOOL)hasLocale;
+- (void)writeTo:(id)arg1;
+- (void)setVersion:(id)arg1;
+- (id)version;
+- (id)dictionaryRepresentation;
+- (id)locale;
+- (void)setLocale:(id)arg1;
+- (id)ip;
+- (id)description;
+- (void)dealloc;
 - (void)setUserAgent:(id)arg1;
 
 @end

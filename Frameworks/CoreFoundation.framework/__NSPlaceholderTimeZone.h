@@ -8,21 +8,21 @@
 + (void)initialize;
 + (id)immutablePlaceholder;
 
-- (int)secondsFromGMTForDate:(id)arg1;
-- (oneway void)release;
-- (id)name;
-- (id)init;
-- (id)retain;
 - (id)data;
-- (void)dealloc;
-- (unsigned int)retainCount;
+- (int)secondsFromGMTForDate:(id)arg1;
+- (id)name;
 - (id)initWithName:(id)arg1;
-- (id)__initWithName:(id)arg1 data:(id)arg2 cache:(BOOL)arg3;
-- (id)__initWithName:(id)arg1 cache:(BOOL)arg2;
-- (id)abbreviationForDate:(id)arg1;
-- (BOOL)isDaylightSavingTimeForDate:(id)arg1;
-- (double)daylightSavingTimeOffsetForDate:(id)arg1;
-- (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
 - (id)initWithName:(id)arg1 data:(id)arg2;
+- (id)__initWithName:(id)arg1 cache:(BOOL)arg2;
+- (id)__initWithName:(id)arg1 data:(id)arg2 cache:(BOOL)arg3;
+- (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
+- (BOOL)isDaylightSavingTimeForDate:(id)arg1;
+- (id)abbreviationForDate:(id)arg1;
+- (double)daylightSavingTimeOffsetForDate:(id)arg1;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)init;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

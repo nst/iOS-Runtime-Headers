@@ -15,18 +15,18 @@
 
 + (id)dd_iteratorForDocument:(id)arg1;
 
+- (id)initWithRange:(id)arg1;
+- (void)advance;
+- (id)currentNode;
 - (id)currentText;
 - (BOOL)atEnd;
 - (id)currentRange;
 - (const unsigned short*)currentTextPointer;
 - (unsigned int)currentTextLength;
 - (void)dealloc;
-- (id)initWithRange:(id)arg1;
-- (void)advance;
-- (id)currentNode;
-- (BOOL)dd_checkCurrentRangeAgainstString:(struct __CFString { }*)arg1;
 - (id)dd_collectDDRangesForQuery:(struct __DDScanQuery { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryFragment {} *x2; int x3; int x4; int (*x5)(); void *x6; }*)arg1 forResults:(id)arg2;
+- (id)dd_doUrlificationForQuery:(struct __DDScanQuery { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryFragment {} *x2; int x3; int x4; int (*x5)(); void *x6; }*)arg1 forResults:(id)arg2 referenceDate:(id)arg3 document:(id)arg4 DOMWasModified:(BOOL*)arg5 URLificationBlock:(id)arg6;
 - (struct __DDScanQuery { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryFragment {} *x2; int x3; int x4; int (*x5)(); void *x6; }*)dd_newQueryStopRange:(id*)arg1;
-- (id)dd_doUrlificationForQuery:(struct __DDScanQuery { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryFragment {} *x2; int x3; int x4; int (*x5)(); void *x6; }*)arg1 forResults:(id)arg2 document:(id)arg3 DOMWasModified:(BOOL*)arg4 URLificationBlock:(id)arg5;
+- (BOOL)dd_checkCurrentRangeAgainstString:(struct __CFString { }*)arg1;
 
 @end

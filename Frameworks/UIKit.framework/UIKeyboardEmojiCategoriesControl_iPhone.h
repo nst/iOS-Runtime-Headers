@@ -10,11 +10,11 @@
 }
 
 
-- (void)updateSegmentImages;
 - (void)updateSegmentAndDividers:(int)arg1;
+- (void)updateSegmentImages;
 - (void)releaseImagesAndViews;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end

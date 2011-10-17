@@ -6,10 +6,12 @@
 }
 
 
-- (oneway void)release;
-- (id)retain;
-- (void)dealloc;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 - (unsigned int)retainCount;
+- (id)retain;
 - (id)autorelease;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

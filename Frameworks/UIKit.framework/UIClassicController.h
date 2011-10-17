@@ -21,29 +21,29 @@
 
 + (id)sharedClassicController;
 
-- (void)_setupWindow;
-- (id)_chromeImageWithOrientation:(int)arg1;
-- (void)_updateImageView:(id)arg1 orientation:(int)arg2;
-- (void)_finishZoom:(BOOL)arg1;
-- (BOOL)isZoomed;
-- (void)_classicChangeStatusBarOrientation:(id)arg1;
-- (void)_classicChangeStatusBarOrientationFinished:(id)arg1 finished:(BOOL)arg2 context:(void*)arg3;
-- (BOOL)_shouldHideStatusBar;
-- (void)setDrawsClassicChrome:(BOOL)arg1;
-- (BOOL)drawsStatusBarFiller;
-- (BOOL)drawsClassicChrome;
-- (BOOL)masksToWindowBounds;
-- (void)setZoomed:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setMasksToWindowBounds:(BOOL)arg1;
-- (void)setMasksToWindowBounds:(BOOL)arg1;
 - (void)setDrawsStatusBarFiller:(BOOL)arg1;
-- (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2;
-- (id)_window;
+- (BOOL)drawsStatusBarFiller;
+- (void)setMasksToWindowBounds:(BOOL)arg1;
+- (void)setMasksToWindowBounds:(BOOL)arg1;
+- (void)setDrawsClassicChrome:(BOOL)arg1;
+- (BOOL)drawsClassicChrome;
 - (void)setZoomed:(BOOL)arg1;
+- (BOOL)isZoomed;
+- (void)_finishZoom:(BOOL)arg1;
+- (void)_setupWindow;
+- (BOOL)_shouldHideStatusBar;
+- (void)_classicChangeStatusBarOrientationFinished:(id)arg1 finished:(BOOL)arg2 context:(void*)arg3;
+- (void)_updateImageView:(id)arg1 orientation:(int)arg2;
+- (void)_classicChangeStatusBarOrientation:(id)arg1;
+- (void)setZoomed:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)_chromeImageWithOrientation:(int)arg1;
 - (BOOL)isClassicControlWindow:(id)arg1;
-- (void)dealloc;
-- (void)_initializeStatusBarOrientation;
-- (void)setStatusBarStyle:(int)arg1 animationParameters:(id)arg2;
+- (BOOL)masksToWindowBounds;
+- (id)_window;
+- (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2;
+- (void)setStatusBarStyle:(int)arg1 animationParameters:(id)arg2;
+- (void)_initializeStatusBarOrientation;
+- (void)dealloc;
 
 @end

@@ -10,22 +10,22 @@
     int _type;
 }
 
-@property int type;
 @property(retain) NSString * sectionIdentifier;
+@property int type;
 
 
+- (void)setSectionIdentifier:(id)arg1;
+- (id)sectionIdentifier;
 - (int)type;
 - (void)setType:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (int)_typeForTypeString:(id)arg1;
+- (void)dealloc;
 - (id)_typeStringForType:(int)arg1;
+- (int)_typeForTypeString:(id)arg1;
 - (id)valueForMetadataKey:(id)arg1;
 - (void)setValue:(id)arg1 forMetadataKey:(id)arg2;
-- (void)setSectionIdentifier:(id)arg1;
-- (id)sectionIdentifier;
 - (id)copyViewController;
 
 @end

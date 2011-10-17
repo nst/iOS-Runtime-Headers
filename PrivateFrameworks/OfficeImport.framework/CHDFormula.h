@@ -12,15 +12,16 @@
 + (id)formulaWithReference:(id)arg1;
 + (id)formulaWithReferences:(id)arg1;
 
-- (id)references;
-- (void)dealloc;
+- (void)prepareTokens;
+- (bool)isConstantStringFormula;
 - (id)initWithReference:(id)arg1;
 - (id)initWithReferences:(id)arg1;
-- (void)setReferences:(id)arg1;
-- (void)prepareTokens;
 - (id)referencesFromFormula;
+- (void)setReferences:(id)arg1;
+- (void)setWorkbook:(id)arg1;
 - (id)initWithWorkbook:(id)arg1;
 - (unsigned int)countOfCellsBeingReferenced;
-- (void)setWorkbook:(id)arg1;
+- (id)references;
+- (void)dealloc;
 
 @end

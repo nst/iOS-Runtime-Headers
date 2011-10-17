@@ -5,13 +5,13 @@
 @interface SUWebImagePoolURLProtocol : NSURLProtocol  {
 }
 
-+ (void)initialize;
-+ (BOOL)canInitWithRequest:(id)arg1;
-+ (id)canonicalRequestForRequest:(id)arg1;
 + (BOOL)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
++ (id)canonicalRequestForRequest:(id)arg1;
++ (BOOL)canInitWithRequest:(id)arg1;
++ (void)initialize;
 + (id)URLScheme;
 
-- (void)stopLoading;
 - (void)startLoading;
+- (void)stopLoading;
 
 @end

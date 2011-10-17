@@ -10,22 +10,22 @@
     int _order;
 }
 
+@property <CoreDAVTaskDelegate> * delegate;
 @property int order;
 @property(retain) NSSet * propertiesToSet;
-@property <CoreDAVTaskDelegate> * delegate;
 
 
-- (id)initWithURL:(id)arg1;
-- (void)dealloc;
-- (id)description;
 - (void)setOrder:(int)arg1;
 - (int)order;
+- (void)setPropertiesToSet:(id)arg1;
+- (id)propertiesToSet;
 - (id)initWithPropertiesToSet:(id)arg1 atURL:(id)arg2;
 - (id)additionalHeaderValues;
-- (id)propertiesToSet;
-- (void)setPropertiesToSet:(id)arg1;
-- (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)copyDefaultParserForContentType:(id)arg1;
+- (void)finishCoreDAVTaskWithError:(id)arg1;
+- (id)initWithURL:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)httpMethod;
 - (id)requestBody;
 

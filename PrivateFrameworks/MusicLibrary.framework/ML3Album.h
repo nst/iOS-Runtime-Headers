@@ -2,22 +2,22 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSNumber;
-
 @interface ML3Album : ML3Collection  {
-    NSNumber *_representativeTrackUIDNumber;
 }
 
-+ (void)initialize;
-+ (id)defaultOrderingProperties;
-+ (id)predisambiguatedProperties;
++ (id)artworkCacheIDProperty;
++ (id)trackForeignPersistentID;
++ (id)propertiesForGroupingKey;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
-+ (id)sectionPropertyForProperty:(id)arg1;
++ (id)predisambiguatedProperties;
++ (id)allProperties;
 + (id)databaseTable;
 + (id)joinClauseForProperty:(id)arg1;
++ (int)revisionTrackingCode;
++ (id)defaultOrderingProperties;
++ (void)initialize;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
 
-- (void)dealloc;
-- (void)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned int)arg3;
+- (void)updateTrackValues:(id)arg1;
 
 @end

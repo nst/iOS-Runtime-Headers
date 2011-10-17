@@ -14,10 +14,10 @@
 
 
 - (void)run;
-- (void)dealloc;
 - (id)mismatches;
 - (id)requiredCapabilities;
 - (void)_postDefaultDialog;
+- (void)dealloc;
 - (id)initWithRequiredCapabilities:(id)arg1 mismatches:(id)arg2;
 
 @end

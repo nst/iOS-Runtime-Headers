@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSMutableDictionary, NSString, <CoreDAVTaskGroupDelegate>, NSDictionary, NSURL;
+@class NSMutableDictionary, NSString, NSDictionary, NSURL;
 
 @interface CoreDAVBulkUploadTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate> {
     NSURL *_folderURL;
@@ -15,39 +15,43 @@
     NSMutableDictionary *_remainingHREFsToModDeleteActions;
     NSMutableDictionary *_uuidToHREF;
     NSMutableDictionary *_hrefToETag;
+    NSMutableDictionary *_uuidToErrorItems;
+    NSMutableDictionary *_hrefToErrorItems;
 }
 
-@property <CoreDAVTaskGroupDelegate> * delegate;
-@property(readonly) NSDictionary * hrefToETag;
-@property(readonly) NSDictionary * uuidToHREF;
-@property(retain) NSString * newCTag;
-@property(readonly) BOOL validCTag;
-@property(readonly) void* context;
-@property(readonly) NSURL * folderURL;
-@property unsigned int multiPutBatchMaxSize;
 @property unsigned int multiPutBatchMaxNumResources;
+@property unsigned int multiPutBatchMaxSize;
+@property(readonly) NSURL * folderURL;
+@property(readonly) void* context;
+@property(readonly) BOOL validCTag;
+@property(retain) NSString * nextCTag;
+@property(readonly) NSDictionary * uuidToHREF;
+@property(readonly) NSDictionary * hrefToETag;
+@property(readonly) NSDictionary * uuidToErrorItems;
+@property(readonly) NSDictionary * hrefToErrorItems;
 
 
-- (void*)context;
-- (void)dealloc;
-- (id)description;
-- (unsigned int)multiPutBatchMaxSize;
-- (id)hrefToETag;
-- (void)_sendNextBatch;
-- (void)syncAway;
-- (id)uuidToHREF;
-- (id)newCTag;
-- (void)setNewCTag:(id)arg1;
 - (BOOL)validCTag;
 - (void)setMultiPutBatchMaxSize:(unsigned int)arg1;
-- (unsigned int)multiPutBatchMaxNumResources;
+- (unsigned int)multiPutBatchMaxSize;
 - (void)setMultiPutBatchMaxNumResources:(unsigned int)arg1;
+- (unsigned int)multiPutBatchMaxNumResources;
 - (id)initWithFolderURL:(id)arg1 checkCTag:(id)arg2 uuidsToAddActions:(id)arg3 hrefsToModDeleteActions:(id)arg4 context:(void*)arg5 accountInfoProvider:(id)arg6 taskManager:(id)arg7;
+- (id)hrefToErrorItems;
+- (id)uuidToErrorItems;
+- (id)hrefToETag;
+- (id)uuidToHREF;
 - (Class)multiPutTaskClass;
-- (void)startTaskGroup;
 - (id)folderURL;
+- (void)syncAway;
+- (void)setNextCTag:(id)arg1;
+- (id)nextCTag;
+- (void)_sendNextBatch;
 - (void)taskGroupWillCancelWithError:(id)arg1;
-- (void)cancelTasks;
+- (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
+- (void*)context;
+- (id)description;
+- (void)dealloc;
 
 @end

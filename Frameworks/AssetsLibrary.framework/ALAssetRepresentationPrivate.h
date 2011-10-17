@@ -2,38 +2,47 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsLibrary, NSString, MLPhoto;
+@class PLSidecarFile, NSString, ALAssetsLibrary, PLPhotoLibrary, PLManagedAsset;
 
 @interface ALAssetRepresentationPrivate : NSObject <ALAssetsLibraryAsset> {
-    MLPhoto *_photo;
-    NSString *_extension;
     ALAssetsLibrary *_library;
+    PLManagedAsset *_photo;
+    PLSidecarFile *_sidecar;
+    NSString *_extension;
     BOOL _isValid;
+    PLPhotoLibrary *_photoLibrary;
 }
 
-@property BOOL isValid;
-@property ALAssetsLibrary * library;
 @property(copy) NSString * extension;
-@property(retain) MLPhoto * photo;
+@property ALAssetsLibrary * library;
+@property BOOL isValid;
+@property(retain) PLManagedAsset * photo;
+@property(retain) PLSidecarFile * sidecar;
+@property(retain) PLPhotoLibrary * _photoLibrary;
 
 + (void)_setupFileDescriptorQueue;
 + (void)_clearFileDescriptorQueue;
-+ (int)_fileDescriptorForPersistentURL:(id)arg1;
 + (void)_setFileDescriptor:(int)arg1 forPersistentURL:(id)arg2;
++ (int)_fileDescriptorForPersistentURL:(id)arg1;
 
-- (void)setExtension:(id)arg1;
-- (void)libraryWillDisappear;
-- (void)libraryDidChange;
-- (void)setIsValid:(BOOL)arg1;
-- (id)extension;
-- (BOOL)_isImage;
-- (BOOL)_isVideo;
-- (id)initWithMLPhoto:(id)arg1 extension:(id)arg2 library:(id)arg3;
-- (BOOL)isValid;
-- (void)dealloc;
-- (void)setLibrary:(id)arg1;
 - (id)library;
+- (void)setLibrary:(id)arg1;
 - (void)setPhoto:(id)arg1;
+- (BOOL)isValid;
+- (void)set_photoLibrary:(id)arg1;
+- (void)setExtension:(id)arg1;
+- (void)setSidecar:(id)arg1;
+- (id)sidecar;
+- (void)libraryDidChange;
+- (void)libraryWillDisappear;
+- (id)_photoLibrary;
+- (void)setIsValid:(BOOL)arg1;
+- (BOOL)_isVideo;
+- (BOOL)_isImage;
+- (id)extension;
+- (id)initWithManagedAsset:(id)arg1 sidecar:(id)arg2 extension:(id)arg3 library:(id)arg4;
+- (void)_performBlockAndWait:(id)arg1;
 - (id)photo;
+- (void)dealloc;
 
 @end

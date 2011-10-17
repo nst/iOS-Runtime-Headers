@@ -2,45 +2,48 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhoto, NSArray, <PLSlideshowPluginDelegate>, MLAlbum;
+@class NSArray, NSObject<PLAssetContainer>, <PLSlideshowPluginDelegate>, PLManagedAsset;
 
 @interface PLSlideshowPlugin : NSObject  {
     <PLSlideshowPluginDelegate> *_delegate;
-    MLAlbum *_album;
-    NSArray *_filteredAlbumImages;
+    struct NSObject { Class x1; } *_album;
+    NSArray *_albumAssets;
     double _secondsPerSlide;
     BOOL _shuffleAlbum;
     BOOL _shouldRepeat;
 }
 
-@property(retain) MLAlbum * album;
-@property(readonly) NSArray * displayedPhotos;
-@property(readonly) MLPhoto * currentPhoto;
-@property BOOL shouldRepeat;
-@property BOOL shuffleAlbum;
-@property double secondsPerSlide;
 @property <PLSlideshowPluginDelegate> * delegate;
+@property(retain) NSObject<PLAssetContainer> * album;
+@property(retain) NSArray * albumAssets;
+@property(readonly) NSArray * displayedPhotos;
+@property(readonly) PLManagedAsset * currentPhoto;
+@property double secondsPerSlide;
+@property BOOL shuffleAlbum;
+@property BOOL shouldRepeat;
 
 
-- (void)dealloc;
+- (struct NSObject { Class x1; }*)album;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (BOOL)shuffleAlbum;
-- (id)newSlideshowView;
-- (void)slideshowViewWillAppear;
-- (void)pauseSlideshow;
+- (id)albumAssets;
 - (void)resumeSlideshow;
 - (id)displayedPhotos;
-- (id)album;
-- (void)setAlbum:(id)arg1;
-- (BOOL)shouldRepeat;
-- (double)secondsPerSlide;
-- (void)slideshowViewDidDisappear;
-- (void)stopSlideshow;
-- (void)slideshowViewDidAppear;
-- (void)setSecondsPerSlide:(double)arg1;
-- (void)setShuffleAlbum:(BOOL)arg1;
-- (void)setShouldRepeat:(BOOL)arg1;
 - (id)currentPhoto;
+- (void)setAlbumAssets:(id)arg1;
+- (void)setShouldRepeat:(BOOL)arg1;
+- (void)setShuffleAlbum:(BOOL)arg1;
+- (void)setSecondsPerSlide:(double)arg1;
+- (void)pauseSlideshow;
+- (void)slideshowViewDidAppear;
+- (void)slideshowViewWillAppear;
+- (id)newSlideshowView;
+- (BOOL)shouldRepeat;
+- (void)stopSlideshow;
+- (void)slideshowViewDidDisappear;
+- (double)secondsPerSlide;
+- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)dealloc;
 
 @end

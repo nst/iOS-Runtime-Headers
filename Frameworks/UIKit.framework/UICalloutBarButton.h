@@ -2,61 +2,80 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, UITextReplacement;
+@class UITextReplacement;
 
 @interface UICalloutBarButton : UIButton  {
     SEL m_action;
     int m_position;
     int m_type;
-    NSTimer *m_flashTimer;
     UITextReplacement *m_textReplacement;
     float m_contentWidth;
     float m_contentScale;
-    int m_flashCount;
+    float m_additionalContentHeight;
+    float m_dividerOffset;
+    float m_imageVerticalAdjust;
+    int m_page;
     BOOL m_isText;
     BOOL m_configured;
     BOOL m_single;
     BOOL m_padLeft;
     BOOL m_padRight;
+    BOOL m_dontDismiss;
+    BOOL forceFlash;
 }
 
-@property(retain) UITextReplacement * textReplacement;
-@property(readonly) int type;
-@property(readonly) float contentScale;
-@property(readonly) float contentWidth;
 @property(readonly) SEL action;
+@property(readonly) float contentWidth;
+@property(readonly) float contentScale;
+@property(readonly) float additionalContentHeight;
+@property(readonly) int type;
+@property BOOL forceFlash;
+@property int page;
+@property float dividerOffset;
+@property float imageVerticalAdjust;
+@property BOOL dontDismiss;
+@property(retain) UITextReplacement * textReplacement;
 
-+ (id)buttonWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
 + (id)buttonWithImage:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
-+ (void)_initializeSafeCategory;
++ (id)buttonWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
++ (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 maxWidth:(float)arg3 action:(SEL)arg4 type:(int)arg5 inView:(id)arg6;
 
-- (void)_commonSetupWithAction:(SEL)arg1 type:(int)arg2;
-- (void)setupWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3;
-- (void)setupWithImage:(id)arg1 action:(SEL)arg2 type:(int)arg3;
-- (void)configureLabel;
-- (void)configureForSingle:(int)arg1;
-- (void)configureForLeftPosition:(int)arg1;
-- (void)configureForMiddlePosition;
-- (void)configureForRightPosition:(int)arg1;
-- (void)setContentScale:(float)arg1;
-- (void)sendCallback;
-- (void)cancelFlash;
-- (void)flash;
-- (void)flashCallback:(id)arg1;
-- (id)textReplacement;
+- (BOOL)dontDismiss;
+- (void)setImageVerticalAdjust:(float)arg1;
+- (float)imageVerticalAdjust;
+- (void)setDividerOffset:(float)arg1;
+- (float)dividerOffset;
+- (void)setPage:(int)arg1;
+- (int)page;
 - (void)setTextReplacement:(id)arg1;
+- (id)textReplacement;
+- (float)additionalContentHeight;
 - (float)contentScale;
+- (void)setContentScale:(float)arg1;
+- (void)configureForRightPosition:(int)arg1;
+- (void)configureForMiddlePosition;
+- (void)configureForLeftPosition:(int)arg1;
+- (void)configureForSingle:(int)arg1;
+- (void)fadeAndSendAction;
+- (void)setForceFlash:(BOOL)arg1;
+- (BOOL)forceFlash;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustRectForPosition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 scaleVertically:(BOOL)arg2;
+- (void)configureLabel;
+- (void)cancelFlash;
+- (void)_commonSetupWithAction:(SEL)arg1 type:(int)arg2;
+- (void)flash;
+- (void)setupWithImage:(id)arg1 action:(SEL)arg2 type:(int)arg3;
+- (void)setupWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3;
+- (void)setupWithTitle:(id)arg1 subtitle:(id)arg2 maxWidth:(float)arg3 action:(SEL)arg4 type:(int)arg5;
 - (float)contentWidth;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)type;
+- (void)setDontDismiss:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (SEL)action;
+- (int)type;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)removeFromSuperview;
 - (void)layoutSubviews;
+- (SEL)action;
 - (void)dealloc;
-- (BOOL)_accessibilityEscape;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
 
 @end

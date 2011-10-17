@@ -7,14 +7,14 @@
     id _context;
 }
 
-@property(readonly) id context;
 @property(readonly) int action;
+@property(readonly) id context;
 
 
 - (id)initWithAction:(int)arg1 context:(id)arg2;
-- (int)action;
 - (id)context;
-- (void)dealloc;
 - (id)description;
+- (int)action;
+- (void)dealloc;
 
 @end

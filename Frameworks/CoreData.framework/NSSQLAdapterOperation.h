@@ -11,16 +11,16 @@
 }
 
 
-- (id)row;
-- (void)dealloc;
-- (id)description;
 - (id)initWithAdapterOperator:(unsigned int)arg1 correlation:(id)arg2;
-- (id)initWithAdapterOperator:(unsigned int)arg1 row:(id)arg2;
-- (unsigned int)adapterOperator;
 - (void)setAdapterOperator:(unsigned int)arg1;
 - (id)correlation;
 - (int)compareAdapterOperation:(id)arg1;
+- (id)initWithAdapterOperator:(unsigned int)arg1 row:(id)arg2;
+- (unsigned int)adapterOperator;
 - (id)_opString;
 - (id)entity;
+- (id)row;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -19,30 +19,30 @@
 }
 
 
-- (void)setLocked:(BOOL)arg1;
-- (void)dealloc;
-- (void)clearProperties;
 - (long)fieldPosition;
-- (void)setFieldPosition:(long)arg1;
+- (unsigned char)fieldType;
 - (BOOL)zombieEmbed;
 - (void)setZombieEmbed:(BOOL)arg1;
 - (BOOL)resultDirty;
 - (void)setResultDirty:(BOOL)arg1;
 - (BOOL)resultEdited;
 - (void)setResultEdited:(BOOL)arg1;
+- (BOOL)locked;
 - (BOOL)privateResult;
 - (void)setPrivateResult:(BOOL)arg1;
 - (BOOL)nested;
 - (void)setNested:(BOOL)arg1;
 - (BOOL)hasSeparator;
 - (void)setHasSeparator:(BOOL)arg1;
-- (void)setFieldType:(unsigned char)arg1;
-- (void)setFieldMarkerType:(int)arg1;
-- (id)initWithParagraph:(id)arg1;
-- (BOOL)locked;
-- (id)properties;
-- (int)runType;
-- (unsigned char)fieldType;
+- (void)clearProperties;
 - (int)fieldMarkerType;
+- (id)initWithParagraph:(id)arg1;
+- (void)setFieldPosition:(long)arg1;
+- (void)setFieldMarkerType:(int)arg1;
+- (void)setFieldType:(unsigned char)arg1;
+- (int)runType;
+- (id)properties;
+- (void)setLocked:(BOOL)arg1;
+- (void)dealloc;
 
 @end

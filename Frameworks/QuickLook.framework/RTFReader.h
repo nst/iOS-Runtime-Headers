@@ -77,21 +77,21 @@
 
 
 - (void)read;
-- (void)setBackgroundColor:(id)arg1;
-- (void)dealloc;
-- (void)setReadOnly:(int)arg1;
-- (id)_initWithArchiver:(id)arg1;
 - (id)initWithData:(id)arg1 archiver:(id)arg2;
 - (id)initWithZippedRTFD:(id)arg1 archiver:(id)arg2;
 - (id)initWithPackageURL:(id)arg1 archiver:(id)arg2;
+- (float)defaultTabInterval;
+- (id)_initWithArchiver:(id)arg1;
 - (int)cocoaVersion;
 - (int)cocoaSubVersion;
 - (void)setCocoaVersion:(int)arg1;
+- (void)setDefaultTabInterval:(float)arg1;
+- (void)setHyphenationFactor:(float)arg1;
 - (void)setCocoaSubVersion:(int)arg1;
 - (float)floatCocoaVersion;
-- (void)setHyphenationFactor:(float)arg1;
-- (void)setDefaultTabInterval:(float)arg1;
-- (float)defaultTabInterval;
 - (void)_insertAttachmentNamed:(id)arg1;
+- (void)setReadOnly:(int)arg1;
+- (void)setBackgroundColor:(id)arg1;
+- (void)dealloc;
 
 @end

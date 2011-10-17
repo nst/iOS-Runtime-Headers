@@ -14,21 +14,22 @@
 @property(readonly) int style;
 
 
-- (id)_buttonForButtonTag:(int)arg1;
+- (void)dim;
+- (void)setDelegate:(id)arg1;
+- (int)style;
+- (id)delegate;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (void)dealloc;
+- (void)setIconOrientation:(int)arg1;
 - (int)_buttonPositionForButton:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForStyle:(int)arg1;
-- (struct CGSize { float x1; float x2; })_defaultButtonSizeForButton:(id)arg1;
 - (void)_buttonPressed:(id)arg1;
-- (void)setButton:(int)arg1 isSelected:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })_defaultButtonSizeForButton:(id)arg1;
+- (id)_buttonForButtonTag:(int)arg1;
 - (id)initWithStyle:(int)arg1 buttons:(id)arg2;
+- (void)setButton:(int)arg1 isSelected:(BOOL)arg2;
 - (void)setTitle:(id)arg1 image:(id)arg2 forButtonTag:(int)arg3;
-- (void)setButton:(int)arg1 isEnabled:(BOOL)arg2;
-- (void)setOrientation:(int)arg1;
-- (int)style;
-- (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (void)undim;
 
 @end

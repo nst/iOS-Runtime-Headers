@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBKey, UIKBKeyboard;
+@class UIKBTree;
 
 @interface UIKBKeyView : UIView  {
-    UIKBKeyboard *m_keyboard;
-    UIKBKey *m_key;
+    UIKBTree *m_keyboard;
+    UIKBTree *m_key;
     int m_state;
     struct CGPoint { 
         float x; 
@@ -15,22 +15,24 @@
     struct __CFBoolean { } *m_allowsCaching;
 }
 
-@property struct CGPoint { float x; float y; } drawOrigin;
+@property(readonly) UIKBTree * keyboard;
+@property(readonly) UIKBTree * key;
 @property(readonly) int state;
-@property(readonly) UIKBKey * key;
-@property(readonly) UIKBKeyboard * keyboard;
+@property struct CGPoint { float x1; float x2; } drawOrigin;
 
 
 - (struct CGPoint { float x1; float x2; })drawOrigin;
+- (BOOL)shouldCache;
+- (void)updateForKeyboard:(id)arg1 key:(id)arg2;
+- (void)setDrawOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 key:(id)arg3 state:(int)arg4;
 - (id)cacheKey;
-- (BOOL)shouldCache;
 - (id)key;
-- (void)setDrawOrigin:(struct CGPoint { float x1; float x2; })arg1;
+- (int)textEffectsVisibilityLevel;
 - (void)displayLayer:(id)arg1;
 - (id)keyboard;
 - (int)state;
-- (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

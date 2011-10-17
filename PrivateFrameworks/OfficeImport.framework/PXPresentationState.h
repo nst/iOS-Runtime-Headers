@@ -17,10 +17,6 @@
 @property(retain) <OCCancelDelegate> * cancelDelegate;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)cancelDelegate;
-- (void)setModelObject:(id)arg1 forLocation:(id)arg2;
 - (id)tgtPresentation;
 - (void)setCancelDelegate:(id)arg1;
 - (void)setTgtPresentation:(id)arg1;
@@ -28,9 +24,13 @@
 - (void)resetOfficeArtState;
 - (void)setSlideIndex:(int)arg1 forSlideURL:(id)arg2;
 - (int)slideIndexForSlideURL:(id)arg1;
+- (id)cancelDelegate;
+- (id)oavState;
 - (id)modelObjectForLocation:(id)arg1;
 - (id)officeArtState;
-- (id)oavState;
+- (void)setModelObject:(id)arg1 forLocation:(id)arg2;
 - (BOOL)isCancelled;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -7,31 +7,31 @@
     unsigned int _modifier;
 }
 
++ (id)operatorWithCustomSelector:(SEL)arg1 modifier:(unsigned int)arg2;
 + (id)_getSymbolForType:(unsigned int)arg1;
 + (SEL)_getSelectorForType:(unsigned int)arg1;
-+ (id)operatorWithType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
 + (id)_newOperatorWithType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
-+ (id)operatorWithCustomSelector:(SEL)arg1 modifier:(unsigned int)arg2;
++ (id)operatorWithType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
 
-- (unsigned int)options;
-- (unsigned int)hash;
-- (SEL)selector;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
 - (void)_setModifier:(unsigned int)arg1;
-- (void)_setOptions:(unsigned int)arg1;
-- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
-- (BOOL)performOperationUsingObject:(id)arg1 andObject:(id)arg2;
-- (unsigned int)operatorType;
-- (id)symbol;
-- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2;
 - (id)initWithOperatorType:(unsigned int)arg1;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2;
+- (void)_setOptions:(unsigned int)arg1;
+- (id)symbol;
+- (BOOL)performOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (id)predicateFormat;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (unsigned int)modifier;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
+- (unsigned int)operatorType;
+- (unsigned int)options;
+- (SEL)selector;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

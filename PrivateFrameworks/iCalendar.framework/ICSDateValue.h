@@ -8,23 +8,24 @@
     int _day;
 }
 
-@property(readonly) int day;
-@property(readonly) int month;
 @property(readonly) int year;
+@property(readonly) int month;
+@property(readonly) int day;
 
 + (id)dateFromICSUTF8String:(const char *)arg1;
 + (id)dateFromICSString:(id)arg1;
 
+- (int)dateType;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (id)components;
+- (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3;
 - (int)month;
+- (int)year;
 - (int)day;
 - (int)compare:(id)arg1;
-- (int)year;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (int)dateType;
-- (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3;
-- (id)components;
+- (id)icsString;
 
 @end

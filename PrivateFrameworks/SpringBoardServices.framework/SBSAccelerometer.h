@@ -27,27 +27,27 @@
 @property <SBSAccelerometerDelegate> * delegate;
 
 
-- (void)setAccelerometerEventsEnabled:(BOOL)arg1;
-- (double)updateInterval;
-- (void)setUpdateInterval:(double)arg1;
-- (void)setXThreshold:(float)arg1;
-- (void)setYThreshold:(float)arg1;
-- (void)setZThreshold:(float)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)setOrientationEventsEnabled:(BOOL)arg1;
-- (int)currentDeviceOrientation;
-- (BOOL)orientationEventsEnabled;
-- (float)yThreshold;
 - (float)xThreshold;
-- (BOOL)accelerometerEventsEnabled;
+- (float)yThreshold;
 - (float)zThreshold;
+- (BOOL)orientationEventsEnabled;
+- (BOOL)accelerometerEventsEnabled;
 - (void)_checkOut;
 - (void)_serverWasRestarted;
 - (void)_orientationDidChange;
 - (id)_orientationEventsThread;
+- (void)setDelegate:(id)arg1;
 - (void)_checkIn;
+- (void)setOrientationEventsEnabled:(BOOL)arg1;
+- (int)currentDeviceOrientation;
+- (void)setZThreshold:(float)arg1;
+- (void)setYThreshold:(float)arg1;
+- (void)setXThreshold:(float)arg1;
+- (void)setUpdateInterval:(double)arg1;
+- (double)updateInterval;
+- (void)setAccelerometerEventsEnabled:(BOOL)arg1;
+- (id)delegate;
+- (id)init;
+- (void)dealloc;
 
 @end

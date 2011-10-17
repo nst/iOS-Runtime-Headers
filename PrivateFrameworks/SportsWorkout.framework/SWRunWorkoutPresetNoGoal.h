@@ -7,7 +7,7 @@
 
 + (id)newPresetGoalNone;
 
-- (void)_fireWorkoutSummaryPromptForWorkoutController:(id)arg1 target:(id)arg2;
 - (void)_fireOnDemandPromptForWorkoutController:(id)arg1 target:(id)arg2;
+- (void)_fireWorkoutSummaryPromptForWorkoutController:(id)arg1 target:(id)arg2;
 
 @end

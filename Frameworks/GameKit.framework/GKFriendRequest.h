@@ -2,33 +2,31 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSDate, NSString, GKPlayer;
+@class GKFriendRequestInternal, NSString, NSDate;
 
 @interface GKFriendRequest : NSObject  {
-    NSString *_requestID;
-    GKPlayer *_player;
-    NSString *_message;
-    NSDate *_date;
+    GKFriendRequestInternal *_internal;
+    int _status;
 }
 
-@property(retain) NSDate * date;
-@property(retain) NSString * message;
-@property(retain) GKPlayer * player;
-@property(retain) NSString * requestID;
+@property(readonly) NSString * playerID;
+@property(readonly) NSString * message;
+@property(readonly) NSDate * date;
+@property int status;
+@property(retain) GKFriendRequestInternal * internal;
 
-+ (id)friendRequestWithDictionary:(id)arg1;
-+ (id)friendRequestsWithDictionaries:(id)arg1;
 
-- (id)requestID;
-- (void)setRequestID:(id)arg1;
-- (id)initWithRequestID:(id)arg1;
-- (void)setPlayer:(id)arg1;
-- (id)player;
-- (void)setMessage:(id)arg1;
-- (id)message;
-- (id)date;
-- (void)setDate:(id)arg1;
-- (void)dealloc;
+- (void)setStatus:(int)arg1;
+- (id)internal;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (int)status;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

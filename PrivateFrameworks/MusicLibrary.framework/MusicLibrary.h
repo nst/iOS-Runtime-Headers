@@ -2,69 +2,51 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
+@class ML3MusicLibrary, NSString;
 
 @interface MusicLibrary : NSObject  {
     NSString *_basePath;
     double _autoflushTargetTime;
     unsigned int _autoflushScheduled : 1;
     unsigned int _needsFlush : 1;
+    ML3MusicLibrary *_library3;
 }
 
-+ (BOOL)flush;
-+ (id)sharedMusicLibrary;
-+ (unsigned long long)syncGenerationID;
-+ (void)noteSyncWillBegin;
-+ (void)noteSyncDidEnd;
-+ (BOOL)isDBSyncActive;
 + (id)mediaFolderRelativePath:(id)arg1;
-+ (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3;
-+ (id)copyLocalizedStringForITTGLocString:(int)arg1;
-+ (int)filenameFormatResourceForPlaylistType:(int)arg1;
-+ (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 createParentFolderIfNecessary:(BOOL)arg3;
-+ (BOOL)requiresPostProcessing;
-+ (id)pathForResourceFileOrFolder:(int)arg1;
-+ (void)beginDatabaseMigrationIfNecessary;
-+ (Class)sharedMusicLibraryClass;
-+ (id)dbModDate;
-+ (id)iTunesLibraryPackageDBTempFolder;
-+ (BOOL)databaseDataFilesExist;
-+ (BOOL)isDatabaseSchemaUnsupported:(id*)arg1;
-+ (BOOL)_isDBSyncActiveIncludePending;
-+ (void)setSyncIsActive:(BOOL)arg1 alreadyInTargetState:(BOOL)arg2 withStateChangeHandlerBlock:(id)arg3;
-+ (void)noteSyncAlreadyActive;
-+ (void)_setSharedMusicLibrary:(id)arg1;
-+ (id)_sharedMusicLibrary:(BOOL)arg1;
-+ (id)sharedMusicLibraryIfExists;
-+ (void)setIsTesting:(BOOL)arg1;
-+ (BOOL)isTesting;
-+ (void)resetLibrary;
-+ (void)flushPreparedStatementCache;
-+ (void)jetsamMemory;
-+ (void)disableFlush;
-+ (void)enableFlush;
-+ (BOOL)isFlushEnabled;
 + (void)commitAllDeferredWork;
-+ (id)controlDirectoryPathWithBasePath:(id)arg1;
++ (BOOL)isFlushEnabled;
++ (id)sharedMusicLibrary;
++ (void)noteSyncDidEnd;
++ (void)noteSyncAlreadyActive;
++ (void)noteSyncWillBegin;
++ (BOOL)isDBSyncActive;
++ (void)beginDatabaseMigrationIfNecessary;
++ (BOOL)databaseDataFilesExist;
 + (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 isFolder:(BOOL*)arg4;
++ (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 createParentFolderIfNecessary:(BOOL)arg4;
++ (id)controlDirectoryPathWithBasePath:(id)arg1;
++ (void)scheduleFlushDatabase;
++ (id)sharedMusicLibraryIfExists;
++ (id)_sharedMusicLibrary:(BOOL)arg1;
++ (BOOL)_isDBSyncActiveIncludePending;
++ (void)enableFlush;
++ (void)_dbSyncDidEnd;
++ (void)resetLibrary;
++ (void)_dbSyncAlreadyActive;
++ (void)setSyncIsActive:(BOOL)arg1 alreadyInTargetState:(BOOL)arg2 withStateChangeHandlerBlock:(id)arg3;
++ (void)_dbSyncWillBegin;
++ (void)disableFlush;
++ (id)pathForResourceFileOrFolder:(int)arg1;
++ (id)mediaFolderPath;
++ (BOOL)flush;
 
+- (void)commitAllDeferredWork;
+- (void)scheduleFlushDatabase;
+- (void)mainThread_scheduleFlushDatabase;
+- (void)_autoflush;
+- (id)initWithBasePath:(id)arg1;
+- (void)_cancelAutoflush;
 - (BOOL)flush;
 - (void)dealloc;
-- (struct MLArtworkFormatSpec { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; int x6; })formatSpecForArtworkFormatID:(unsigned int)arg1;
-- (id)pathForResourceFileOrFolder:(int)arg1;
-- (id)initWithBasePath:(id)arg1;
-- (void)flushPreparedStatementCacheImpl;
-- (void)jetsamMemoryImpl;
-- (void)mainThread_scheduleFlushDatabase;
-- (void)scheduleFlushDatabase;
-- (void)_cancelAutoflush;
-- (void)_autoflush;
-- (id)_debugGetTracksStartingAtTrackWithPersistentID:(unsigned long long)arg1 maxTracks:(unsigned int)arg2 stride:(int)arg3;
-- (id)pathForResourceFileOrFolder:(int)arg1 createParentFolderIfNecessary:(BOOL)arg2;
-- (id)localizedSectionHeaderForSectionHeader:(id)arg1;
-- (id)localizedSectionIndexForSectionHeader:(id)arg1;
-- (id)sectionIndices;
-- (id)sectionIndexEllipsis;
-- (id)sectionIndexForSectionHeader:(id)arg1;
 
 @end

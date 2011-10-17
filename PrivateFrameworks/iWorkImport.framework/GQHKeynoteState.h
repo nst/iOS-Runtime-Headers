@@ -8,13 +8,17 @@
         float width; 
         float height; 
     } mSlideSize;
+    int mProgressiveIndex;
 }
 
 
+- (struct CGSize { float x1; float x2; })slideSize;
+- (void)setSlideSize:(struct CGSize { float x1; float x2; })arg1;
+- (int)progressiveIndex;
+- (void)setProgressiveIndex:(int)arg1;
 - (void)incrementCurrentSlide;
 - (int)currentSlide;
+- (BOOL)shouldStreamContent;
 - (BOOL)shouldMapLinkWithUrl:(struct __CFString { }*)arg1;
-- (void)setSlideSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })slideSize;
 
 @end

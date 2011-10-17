@@ -19,8 +19,8 @@
 
 
 - (void)invalidate;
-- (void)dealloc;
-- (id)initWithProcessAssertion:(struct SBSProcessAssertion { }*)arg1 expirationHandler:(id)arg2;
 - (void)fireExpirationHandler;
+- (id)initWithProcessAssertion:(struct SBSProcessAssertion { }*)arg1 expirationHandler:(id)arg2;
+- (void)dealloc;
 
 @end

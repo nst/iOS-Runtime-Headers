@@ -11,6 +11,7 @@
     int extractionID;
     AVRunLoopCondition *sampleBufferAvailabilityCondition;
     int finished;
+    BOOL alwaysCopiesSampleData;
 }
 
 

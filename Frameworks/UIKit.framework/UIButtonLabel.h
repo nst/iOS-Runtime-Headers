@@ -7,10 +7,10 @@
 }
 
 
-- (void)setLineBreakMode:(int)arg1;
 - (void)setReverseShadow:(BOOL)arg1;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })shadowOffset;
+- (void)setLineBreakMode:(int)arg1;
 - (void)setFont:(id)arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 
 @end

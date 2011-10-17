@@ -13,21 +13,21 @@
 
 + (id)lazySymbolOwnerWithName:(id)arg1 signature:(id)arg2 regions:(id)arg3 flags:(unsigned int)arg4;
 
+- (id)signature;
+- (id)path;
+- (unsigned int)flags;
+- (id)name;
 - (id)initWithName:(id)arg1 signature:(id)arg2 regions:(id)arg3 flags:(unsigned int)arg4;
-- (BOOL)hasRegionsForName:(id)arg1;
+- (BOOL)containsAddress:(unsigned long long)arg1;
 - (void)slideToSegmentAddresses:(id)arg1;
-- (BOOL)isProtected;
 - (BOOL)isLazy;
 - (BOOL)overlapsAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
-- (BOOL)containsAddress:(unsigned long long)arg1;
+- (BOOL)hasRegionsForName:(id)arg1;
+- (BOOL)isProtected;
 - (id)architecture;
-- (id)regions;
-- (unsigned int)flags;
-- (id)path;
-- (id)name;
-- (void)dealloc;
 - (id)description;
-- (id)signature;
+- (void)dealloc;
 - (BOOL)validate;
+- (id)regions;
 
 @end

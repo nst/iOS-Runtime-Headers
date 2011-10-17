@@ -7,8 +7,8 @@
     id _originalDelegate;
 }
 
-@property(retain) id originalDelegate;
 @property SEL didFinishSelector;
+@property(retain) id originalDelegate;
 
 
 - (void)dealloc;

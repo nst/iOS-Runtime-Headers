@@ -12,24 +12,24 @@
     BOOL _titleViewIsCustom;
 }
 
-@property(retain) UIView * titleView;
 @property SUNavigationItem * navigationItem;
-@property(getter=isCustomTitleView) BOOL customTitleView;
 @property(retain) UIBarButtonItem * buttonItem;
+@property(getter=isCustomTitleView) BOOL customTitleView;
+@property(retain) UIView * titleView;
 
 
-- (id)titleView;
+- (void)setNavigationItem:(id)arg1;
 - (id)navigationItem;
-- (void)layoutSubviews;
 - (void)setCustomTitleView:(BOOL)arg1;
 - (void)setTitleView:(id)arg1;
 - (id)initWithNavigationItem:(id)arg1;
+- (id)titleView;
 - (void)sizeToFit;
+- (void)layoutSubviews;
 - (id)init;
 - (void)dealloc;
 - (void)setButtonItem:(id)arg1;
 - (BOOL)isCustomTitleView;
-- (void)setNavigationItem:(id)arg1;
 - (id)buttonItem;
 
 @end

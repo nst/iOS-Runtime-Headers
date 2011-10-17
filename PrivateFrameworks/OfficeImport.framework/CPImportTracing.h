@@ -9,13 +9,13 @@
 }
 
 
-- (void)dealloc;
 - (void)startImporting;
 - (void)stopImporting;
 - (id)initWithFilename:(id)arg1;
-- (void)startReading;
 - (void)startProcessors;
 - (void)stopProcessors;
 - (void)stopReading;
+- (void)startReading;
+- (void)dealloc;
 
 @end

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIPDFPageContentLayer, <UIPDFSelectionWidget>, UIPDFPage, UIPDFViewTouchHandler, <UIPDFPageViewDelegate>;
+@class UIPDFPage, UIActivityIndicatorView, UIPDFDocument, UIPDFSelectionController, UIPDFPageContentDelegate, UIImage, UIPDFViewTouchHandler, CALayer, <NSObject><UIPDFPageViewDelegate>, UIColor;
 
 @interface UIPDFPageView : UIView  {
-    UIPDFPage *_page;
+    UIPDFDocument *_document;
+    unsigned int _pageIndex;
     UIPDFViewTouchHandler *_touchHandler;
     struct CGAffineTransform { 
         float a; 
@@ -35,7 +36,8 @@
     } _cropBox;
     float _margin;
     BOOL _allowSelection;
-    <UIPDFPageViewDelegate> *_delegate;
+    UIPDFSelectionController *_selectionController;
+    <NSObject><UIPDFPageViewDelegate> *_delegate;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -46,50 +48,100 @@
             float height; 
         } size; 
     } zoomRect;
-    UIPDFPageContentLayer *_contentLayer;
+    BOOL _useBackingLayer;
+    CALayer *_backingLayer;
+    UIImage *_backgroundImage;
+    BOOL _boundsChanged;
+    BOOL _useTiledContent;
+    CALayer *_contentLayer;
+    CALayer *_effectsLayer;
+    UIPDFPageContentDelegate *_contentDelegate;
     BOOL _scalePageOnDraw;
-    <UIPDFSelectionWidget> *_selectionWidget;
+    struct CGColor { } *_highLightColor;
+    BOOL _animateSetFrame;
+    UIActivityIndicatorView *_activityIndicator;
+    BOOL _showActivityIndicator;
+    UIColor *_backingLayerColor;
+    int _lock;
 }
 
+@property(readonly) struct CGColor { }* highLightColor;
+@property BOOL showActivityIndicator;
+@property(retain) UIImage * backgroundImage;
+@property BOOL useBackingLayer;
+@property(retain) UIColor * backingLayerColor;
+@property BOOL animateSetFrame;
+@property UIPDFSelectionController * selectionController;
 @property BOOL allowSelection;
-@property(readonly) UIPDFPageContentLayer * contentLayer;
-@property <UIPDFSelectionWidget> * selectionWidget;
-@property <UIPDFPageViewDelegate> * delegate;
+@property(readonly) CALayer * effectsLayer;
+@property(readonly) CALayer * contentLayer;
+@property <NSObject><UIPDFPageViewDelegate> * delegate;
 @property float margin;
-@property(retain) UIPDFPage * page;
+@property UIPDFPage * page;
+@property(readonly) unsigned int pageIndex;
+@property(retain,readonly) UIPDFDocument * document;
 
 
-- (int)pageIndex;
-- (void)setMargin:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setNeedsDisplay;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (struct CGPoint { float x1; float x2; })convertPointToPDFPageSpace:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })convertPointToLayer:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })convertPointFromLayer:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setSelectionWidget:(id)arg1;
-- (id)initWithPage:(id)arg1;
-- (void)setTransforms;
+- (void)setNeedsDisplay;
+- (id)initWithPage:(id)arg1 tiledContent:(BOOL)arg2;
+- (void)removeBackingLayer;
+- (void)layoutTextEffects;
+- (void)doubleTapAt:(struct CGPoint { float x1; float x2; })arg1;
+- (void)singleTapAt:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)willDoSomethingWithTap:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertPointFromPDFPageSpace:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectToPDFPageSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectToLayer:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)displayContent;
+- (struct CGImage { }*)createBitMapRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 scale:(float)arg2;
+- (struct CGImage { }*)createBitMapAtScale:(float)arg1 flip:(BOOL)arg2;
+- (struct CGImage { }*)createBitMapWithMaxSize:(struct CGSize { float x1; float x2; })arg1 flip:(BOOL)arg2 quality:(int)arg3;
+- (void)ignoreTouches:(BOOL)arg1;
+- (void)hideSelection;
+- (BOOL)showActivityIndicator;
+- (BOOL)useBackingLayer;
+- (BOOL)animateSetFrame;
+- (id)selectionController;
+- (void)setSelectionController:(id)arg1;
+- (BOOL)allowSelection;
+- (id)effectsLayer;
+- (id)contentLayer;
+- (struct CGColor { }*)highLightColor;
+- (void)addLayers:(BOOL)arg1;
+- (id)setBackgroundImage:(id)arg1 info:(id)arg2;
+- (id)backingLayerColor;
+- (void)stopActivityIndicator;
+- (void)setTransforms;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectangleOfInterestAt:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPDFDictionary { }*)_annotForPoint:(struct CGPoint { float x1; float x2; })arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
+- (struct CGPoint { float x1; float x2; })convertPointToPDFPageSpace:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fitWidth:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atVertical:(float)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fitRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectangleOfInterestAt:(struct CGPoint { float x1; float x2; })arg1;
-- (void)displayContent;
-- (struct CGImage { }*)createBitMapAtScale:(float)arg1 flip:(BOOL)arg2;
-- (BOOL)allowSelection;
-- (void)setAllowSelection:(BOOL)arg1;
-- (id)contentLayer;
-- (id)selectionWidget;
-- (void)doubleTapAt:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectFromPDFPageSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)addPage:(id)arg1;
 - (float)margin;
-- (id)page;
+- (unsigned int)pageIndex;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectFromPDFPageSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAnimateSetFrame:(BOOL)arg1;
+- (void)setShowActivityIndicator:(BOOL)arg1;
+- (void)setBackingLayerColor:(id)arg1;
+- (void)setUseBackingLayer:(BOOL)arg1;
+- (void)setAllowSelection:(BOOL)arg1;
+- (id)initWithPage:(id)arg1;
 - (void)setPage:(id)arg1;
+- (id)page;
+- (id)document;
+- (void)clearSelection;
+- (void)setMargin:(float)arg1;
+- (void)showSelection;
+- (void)setBackgroundImage:(id)arg1;
+- (id)backgroundImage;
+- (void)willMoveToSuperview:(id)arg1;
+- (id)delegate;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

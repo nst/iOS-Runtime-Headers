@@ -10,10 +10,10 @@
 }
 
 
-- (void)dealloc;
-- (id)baseGetter;
-- (id)initWithContainerClassID:(id)arg1 key:(id)arg2 baseGetter:(id)arg3 baseSetter:(id)arg4 containerIsa:(Class)arg5 proxyClass:(Class)arg6;
-- (id)baseSetter;
 - (BOOL)treatNilValuesLikeEmptyCollections;
+- (id)baseSetter;
+- (id)initWithContainerClassID:(id)arg1 key:(id)arg2 baseGetter:(id)arg3 baseSetter:(id)arg4 containerIsa:(Class)arg5 proxyClass:(Class)arg6;
+- (id)baseGetter;
+- (void)dealloc;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImageView, UILabel, NSTimer, NSString, <MPDetailSliderDelegate>;
+@class UIImageView, UILabel, NSTimer, <MPDetailSliderDelegate>, NSString;
 
 @interface MPDetailSlider : UISlider  {
     unsigned int _allowsDetailScrubbing : 1;
@@ -15,7 +15,6 @@
     unsigned int _didBeginTracking : 1;
     unsigned int _needsCommit : 1;
     unsigned int _canCommit : 1;
-    unsigned int _active : 1;
     struct CGPoint { 
         float x; 
         float y; 
@@ -50,76 +49,72 @@
     int _style;
 }
 
-@property(getter=isActive) BOOL active;
-@property BOOL allowsDetailScrubbing;
-@property(readonly) BOOL detailScrubbingAvailableForCurrentDuration;
-@property(readonly) NSString * localizedScrubSpeedText;
-@property int timeLabelStyle;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } timeLabelInsets;
-@property double duration;
-@property float detailScrubbingVerticalRange;
 @property <MPDetailSliderDelegate> * delegate;
+@property BOOL allowsDetailScrubbing;
+@property float detailScrubbingVerticalRange;
+@property double duration;
 @property double availableDuration;
+@property(readonly) BOOL detailScrubbingAvailableForCurrentDuration;
+@property int timeLabelStyle;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } timeLabelInsets;
+@property(readonly) NSString * localizedScrubSpeedText;
 
++ (Class)labelClass;
 + (float)defaultHeight;
-+ (void)_initializeSafeCategory;
 
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
-- (double)duration;
-- (void)cancelTrackingWithEvent:(id)arg1;
-- (BOOL)isActive;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)currentThumbImage;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 value:(float)arg3;
-- (void)setValue:(float)arg1 animated:(BOOL)arg2;
-- (id)createThumbView;
-- (void)setActive:(BOOL)arg1;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)isTracking;
-- (void)layoutSubviews;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
-- (void)setDuration:(double)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)setTimeLabelInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setDetailScrubbingVerticalRange:(float)arg1;
-- (void)setTimeLabelStyle:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 maxTrackWidth:(float)arg3;
-- (void)_autoscrubTick:(id)arg1;
-- (BOOL)detailScrubbingAvailableForCurrentDuration;
-- (id)localizedScrubSpeedText;
-- (void)_setupControlsForStyle;
-- (void)_updateTrackInset;
-- (void)_adjustMinScale;
-- (float)_scaleForVerticalPosition:(float)arg1;
-- (float)_scaleForIdealValueForVerticalPosition:(float)arg1;
-- (void)_updateTimeDisplayForTime:(double)arg1;
-- (void)_updateTimeDisplayForTime:(double)arg1 force:(BOOL)arg2;
-- (id)_stringForTime:(double)arg1;
-- (id)_stringForCurrentTime:(double)arg1;
-- (id)_stringForInverseCurrentTime:(double)arg1;
-- (void)_resetScrubInfo;
-- (void)_commitValue;
-- (void)_updateForAvailableDuraton;
-- (void)_updateActiveState;
 - (int)timeLabelStyle;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })timeLabelInsets;
 - (float)detailScrubbingVerticalRange;
 - (double)availableDuration;
+- (id)_stringForTime:(double)arg1;
+- (void)_updateTimeDisplayForTime:(double)arg1 force:(BOOL)arg2;
+- (void)_resetScrubInfo;
+- (float)_scaleForIdealValueForVerticalPosition:(float)arg1;
+- (void)_autoscrubTick:(id)arg1;
+- (float)_scaleForVerticalPosition:(float)arg1;
+- (void)_commitValue;
+- (void)_updateTimeDisplayForTime:(double)arg1;
+- (void)_updateForAvailableDuraton;
+- (void)_setValueWhileTracking:(float)arg1 animated:(BOOL)arg2;
+- (void)_updateTrackInset;
+- (void)_adjustMinScale;
+- (id)_stringForInverseCurrentTime:(double)arg1;
+- (id)_stringForCurrentTime:(double)arg1;
+- (id)timeLabelShadowColorForStyle:(int)arg1;
+- (struct CGSize { float x1; float x2; })timeLabelShadowOffsetForStyle:(int)arg1;
+- (id)timeLabelTextColorForStyle:(int)arg1;
+- (id)timeLabelFontForStyle:(int)arg1;
+- (float)timeLabelVerticalOffsetForStyle:(int)arg1;
+- (void)_setupControlsForStyle;
 - (void)cancelTracking;
+- (BOOL)detailScrubbingAvailableForCurrentDuration;
+- (void)setDetailScrubbingVerticalRange:(float)arg1;
+- (void)setTimeLabelInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 maxTrackWidth:(float)arg3;
+- (id)localizedScrubSpeedText;
 - (void)setAvailableDuration:(double)arg1;
+- (void)setTimeLabelStyle:(int)arg1;
 - (BOOL)allowsDetailScrubbing;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
-- (void)_axPostUpdate;
-- (void)_accessibilityCommitPositionChange;
-- (id)accessibilityLabel;
-- (void)accessibilityDecrement;
-- (void)accessibilityIncrement;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityValue;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)duration;
+- (void)setDuration:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setValue:(float)arg1 animated:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 value:(float)arg3;
+- (id)currentThumbImage;
+- (id)createThumbView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)cancelTrackingWithEvent:(id)arg1;
+- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)isTracking;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)delegate;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

@@ -8,9 +8,7 @@
 + (void)initialize;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id)initWithReferencedObject:(id)arg1;
-- (void)referencedObjectWillBeRetained;
 - (id)referencedObject;
-- (void)referencedObjectWillBeReleased;
+- (id)initWithReferencedObject:(id)arg1;
 
 @end

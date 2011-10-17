@@ -13,22 +13,22 @@
 
 + (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 + (void)initialize;
-+ (void)__initializeAudioSession;
-+ (void)__audioSessionInterruptionDidBegin;
-+ (void)__audioSessionInterruptionDidEnd;
-+ (id)__stringForAudioSessionError:(long)arg1;
-+ (id)__sharedPlayQueue;
-+ (void)__clearSharedPlayQueue;
 + (void)__deactivateAudioSession;
-+ (void)__nts_indicateEndOfQueuePlayback:(id)arg1;
 + (void)__nts_queuePlayerStatusChanged:(id)arg1;
++ (void)__nts_indicateEndOfQueuePlayback:(id)arg1;
++ (void)__clearSharedPlayQueue;
++ (id)__sharedPlayQueue;
++ (id)__stringForAudioSessionError:(long)arg1;
++ (void)__initializeAudioSession;
++ (void)__audioSessionInterruptionDidEnd;
++ (void)__audioSessionInterruptionDidBegin;
 
-- (void)dealloc;
-- (id)_playerItemForFileNamed:(id)arg1;
-- (void)_addFileToQueue:(id)arg1;
-- (BOOL)isPlaying;
-- (id)initWithDirectory:(id)arg1 bundle:(id)arg2;
 - (void)playSoundFilesInSequence:(id)arg1;
+- (id)initWithDirectory:(id)arg1 bundle:(id)arg2;
 - (void)stopAllSounds;
+- (BOOL)isPlaying;
+- (void)dealloc;
+- (void)_addFileToQueue:(id)arg1;
+- (id)_playerItemForFileNamed:(id)arg1;
 
 @end

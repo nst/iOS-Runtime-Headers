@@ -8,7 +8,7 @@
 
 @class UITextField, NSString;
 
-@interface PLPasswordAlertView : UIAlertView  {
+@interface PLPasswordAlertView : UIAlertView <UIAlertViewDelegate> {
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -19,17 +19,17 @@
     UITextField *_passwordTextField;
 }
 
-@property(copy) NSString * accountTextFieldPlaceholder;
 @property(readonly) int style;
+@property(copy) NSString * accountTextFieldPlaceholder;
 
 
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (int)style;
-- (void)dealloc;
-- (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
-- (id)initWithStyle:(int)arg1 title:(id)arg2 message:(id)arg3 completionHandler:(id)arg4;
-- (id)accountTextFieldPlaceholder;
 - (void)setAccountTextFieldPlaceholder:(id)arg1;
+- (id)accountTextFieldPlaceholder;
+- (id)initWithStyle:(int)arg1 title:(id)arg2 message:(id)arg3 completionHandler:(id)arg4;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 completionHandler:(id)arg3;
+- (int)style;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
+- (void)dealloc;
 
 @end

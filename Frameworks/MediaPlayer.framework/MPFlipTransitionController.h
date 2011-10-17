@@ -16,21 +16,24 @@
             float height; 
         } size; 
     } _toFrame;
+    float _topMargin;
 }
 
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } toFrame;
 @property(retain) UIView * fromView;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } toFrame;
+@property float topMargin;
 
 
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (float)topMargin;
+- (void)setTopMargin:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })toFrame;
+- (id)_subtypeForTransitionType:(unsigned int)arg1;
+- (void)setFromView:(id)arg1;
+- (void)setToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)performTransition:(unsigned int)arg1;
 - (id)fromView;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)init;
 - (void)dealloc;
-- (void)setFromView:(id)arg1;
-- (BOOL)leaveSpaceForStatusBarAndNavigationBarInOrientation:(int)arg1;
-- (void)transition:(unsigned int)arg1;
-- (id)_subtypeForTransitionType:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })toFrame;
-- (void)setToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

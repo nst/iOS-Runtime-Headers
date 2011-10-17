@@ -2,48 +2,49 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, MFContactsSearchManager, UITableView, <SUContactsSearchDelegate>, NSNumber, MFContactsSearchResultsModel;
+@class NSNumber, MFContactsSearchManager, MFContactsSearchResultsModel, NSMutableArray, UITableView, <SUContactsSearchDelegate>, NSArray;
 
-@interface SUContactsSearchViewController : SUViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface SUContactsSearchViewController : SUViewController <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate> {
     NSNumber *_activeSearchTag;
     <SUContactsSearchDelegate> *_delegate;
     NSArray *_properties;
+    NSMutableArray *_searchResults;
     int _scope;
     MFContactsSearchResultsModel *_searchResultsModel;
     MFContactsSearchManager *_searchManager;
     UITableView *_tableView;
 }
 
-@property(readonly) NSArray * searchResults;
-@property(readonly) int searchScope;
 @property(readonly) NSArray * searchProperties;
+@property(readonly) int searchScope;
 @property <SUContactsSearchDelegate> * delegate;
+@property(readonly) NSArray * searchResults;
 
 
-- (void)loadView;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setDelegate:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)delegate;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)init;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)searchResults;
-- (void)beganNetworkActivity;
-- (void)consumeSearchResults:(id)arg1 type:(int)arg2 taskID:(id)arg3;
-- (void)endedNetworkActivity;
-- (void)finishedSearchingForType:(int)arg1;
-- (void)finishedTaskWithID:(id)arg1;
-- (void)_cancelActiveSearch;
-- (void)_sendResultsDidChange;
 - (int)searchScope;
 - (id)searchProperties;
-- (id)_searchManager;
+- (void)endedNetworkActivity;
+- (void)beganNetworkActivity;
+- (void)finishedTaskWithID:(id)arg1;
+- (void)finishedSearchingForType:(int)arg1;
+- (void)consumeSearchResults:(id)arg1 type:(int)arg2 taskID:(id)arg3;
 - (id)_searchResultsModel;
+- (id)_searchManager;
+- (void)_sendResultsDidChange;
+- (void)_cancelActiveSearch;
 - (void)resetResults;
 - (id)searchForText:(id)arg1;
+- (id)searchResults;
 - (void)cancelSearchWithTag:(id)arg1;
 - (id)initWithProperties:(id)arg1 scope:(int)arg2;
 

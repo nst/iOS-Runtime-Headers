@@ -5,43 +5,44 @@
 @interface IMService : NSObject  {
 }
 
-+ (id)allServicesNonBlocking;
-+ (id)allServices;
-+ (id)serviceWithName:(id)arg1;
-+ (id)serviceWithNameNonBlocking:(id)arg1;
-+ (id)aimService;
++ (id)iMessageService;
++ (id)jabberService;
 + (id)subnetService;
++ (id)canonicalFormOfID:(id)arg1 withIDSensitivity:(int)arg2;
++ (unsigned int)statusForABPerson:(id)arg1;
++ (unsigned int)statusForIMPerson:(id)arg1;
++ (BOOL)isEmailAddress:(id)arg1 inDomains:(id)arg2;
++ (id)serviceWithNameNonBlocking:(id)arg1;
++ (id)myIdleTime;
 + (unsigned int)myStatus;
 + (id)notificationCenter;
-+ (id)jabberService;
-+ (id)facetimeService;
-+ (void)forgetStatusImageAppearance;
-+ (id)imageNameForStatus:(unsigned int)arg1;
++ (id)serviceWithName:(id)arg1;
 + (id)imageURLForStatus:(unsigned int)arg1;
-+ (id)myIdleTime;
-+ (BOOL)isEmailAddress:(id)arg1 inDomains:(id)arg2;
-+ (unsigned int)statusForIMPerson:(id)arg1;
-+ (unsigned int)statusForABPerson:(id)arg1;
-+ (id)canonicalFormOfID:(id)arg1 withIDSensitivity:(int)arg2;
++ (id)imageNameForStatus:(unsigned int)arg1;
++ (void)forgetStatusImageAppearance;
++ (id)aimService;
++ (id)facetimeService;
++ (id)allServicesNonBlocking;
++ (id)allServices;
 
-- (void)login;
+- (id)infoForDisplayedPeople;
+- (id)infoForAllPeople;
+- (id)infoForPerson:(id)arg1;
+- (id)myScreenNames;
+- (id)screenNamesForPerson:(id)arg1;
+- (id)peopleWithScreenName:(id)arg1;
+- (id)canonicalFormOfID:(id)arg1;
+- (id)infoForPreferredScreenNames;
+- (id)infoForAllScreenNames;
+- (id)localizedShortName;
+- (BOOL)initialSyncPerformed;
+- (void)logout;
+- (id)infoForScreenName:(id)arg1;
 - (id)localizedName;
 - (id)name;
 - (BOOL)isEnabled;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)infoForScreenName:(id)arg1;
-- (id)infoForAllScreenNames;
-- (id)infoForPreferredScreenNames;
-- (id)myScreenNames;
-- (void)logout;
-- (BOOL)initialSyncPerformed;
-- (id)localizedShortName;
-- (id)canonicalFormOfID:(id)arg1;
-- (id)peopleWithScreenName:(id)arg1;
-- (id)screenNamesForPerson:(id)arg1;
-- (id)infoForPerson:(id)arg1;
-- (id)infoForAllPeople;
-- (id)infoForDisplayedPeople;
 - (unsigned int)status;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)login;
 
 @end

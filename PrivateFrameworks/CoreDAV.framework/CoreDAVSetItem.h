@@ -11,11 +11,11 @@
 @property(retain) CoreDAVItem * prop;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (void)setProp:(id)arg1;
 - (id)prop;
 - (id)copyParseRules;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

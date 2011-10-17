@@ -13,22 +13,22 @@
 }
 
 @property(getter=isValid,readonly) BOOL valid;
-@property(readonly) NSDictionary * mismatchedSoftwareCapabilities;
-@property(readonly) NSError * genericError;
-@property(readonly) SSPurchase * failedPurchase;
 @property(readonly) SSItemOfferDeviceError * deviceError;
+@property(readonly) SSPurchase * failedPurchase;
+@property(readonly) NSError * genericError;
+@property(readonly) NSDictionary * mismatchedSoftwareCapabilities;
 
 
-- (BOOL)isValid;
-- (void)dealloc;
 - (void)_setValid:(BOOL)arg1;
 - (void)_setDeviceError:(id)arg1;
-- (void)_setFailedPurchase:(id)arg1;
-- (void)_setGenericError:(id)arg1;
 - (void)_setMismatchedSoftwareCapabilities:(id)arg1;
-- (id)genericError;
-- (id)deviceError;
-- (id)mismatchedSoftwareCapabilities;
+- (void)_setGenericError:(id)arg1;
+- (void)_setFailedPurchase:(id)arg1;
+- (BOOL)isValid;
+- (void)dealloc;
 - (id)failedPurchase;
+- (id)mismatchedSoftwareCapabilities;
+- (id)deviceError;
+- (id)genericError;
 
 @end

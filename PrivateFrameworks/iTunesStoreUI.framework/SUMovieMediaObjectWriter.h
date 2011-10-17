@@ -10,8 +10,8 @@
 @property(readonly) SUMovieMediaObject * mediaObject;
 
 
-- (id)initWithMediaObject:(id)arg1;
 - (void)_writeDidFinish:(id)arg1 error:(id)arg2 context:(void*)arg3;
 - (void)writeMediaObject;
+- (id)initWithMediaObject:(id)arg1;
 
 @end

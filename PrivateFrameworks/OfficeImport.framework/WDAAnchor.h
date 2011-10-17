@@ -36,36 +36,36 @@
 @property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
 
 
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)init;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (BOOL)isBehindText;
 - (double)wrapDistanceLeft;
 - (double)wrapDistanceTop;
 - (double)wrapDistanceRight;
 - (double)wrapDistanceBottom;
+- (int)relativeHorizontalPosition;
+- (int)relativeVerticalPosition;
 - (int)zIndexTotal;
 - (void)setZIndexTotal:(int)arg1;
 - (BOOL)allowOverlap;
 - (void)setAllowOverlap:(BOOL)arg1;
 - (int)textWrappingModeType;
-- (void)setRelativeVerticalPosition:(int)arg1;
-- (void)setWrapDistanceBottom:(double)arg1;
-- (void)setTextWrappingMode:(int)arg1;
-- (void)setVerticalPosition:(int)arg1;
+- (int)textWrappingMode;
 - (void)setBehindText:(BOOL)arg1;
-- (void)setZIndex:(int)arg1;
-- (void)setRelativeHorizontalPosition:(int)arg1;
-- (void)setHorizontalPosition:(int)arg1;
-- (void)setTextWrappingModeType:(int)arg1;
+- (void)setWrapDistanceBottom:(double)arg1;
 - (void)setWrapDistanceLeft:(double)arg1;
 - (void)setWrapDistanceRight:(double)arg1;
 - (void)setWrapDistanceTop:(double)arg1;
-- (int)horizontalPosition;
 - (int)verticalPosition;
-- (int)relativeVerticalPosition;
+- (int)horizontalPosition;
+- (void)setHorizontalPosition:(int)arg1;
+- (void)setVerticalPosition:(int)arg1;
+- (void)setRelativeHorizontalPosition:(int)arg1;
+- (void)setRelativeVerticalPosition:(int)arg1;
+- (void)setTextWrappingMode:(int)arg1;
+- (void)setTextWrappingModeType:(int)arg1;
+- (BOOL)isBehindText;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)zIndex;
-- (int)textWrappingMode;
-- (int)relativeHorizontalPosition;
+- (void)setZIndex:(int)arg1;
+- (id)init;
 
 @end

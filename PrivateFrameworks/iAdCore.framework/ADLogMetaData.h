@@ -2,69 +2,73 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class NSString, ADTimeStamp, NSData, ADDeviceOrientation, ADAdConnection;
+@class ADTimeStamp, NSString, NSData;
 
 @interface ADLogMetaData : PBCodable  {
     NSString *_batchId;
-    int _messageSequence;
     BOOL _hasMessageSequence;
+    int _messageSequence;
     NSData *_impressionIdentifierData;
-    int _impressionSequence;
     BOOL _hasImpressionSequence;
-    int _overclickCount;
+    int _impressionSequence;
     BOOL _hasOverclickCount;
+    int _overclickCount;
     ADTimeStamp *_timeStamp;
-    ADDeviceOrientation *_orientation;
-    ADAdConnection *_connectionType;
+    int _orientation;
+    BOOL _hasConnectionType;
+    int _connectionType;
 }
 
 @property(readonly) BOOL hasBatchId;
-@property(readonly) BOOL hasImpressionIdentifierData;
-@property(readonly) BOOL hasTimeStamp;
-@property(readonly) BOOL hasConnectionType;
-@property(retain) ADAdConnection * connectionType;
-@property(retain) ADDeviceOrientation * orientation;
-@property(retain) ADTimeStamp * timeStamp;
-@property(readonly) BOOL hasOverclickCount;
-@property int overclickCount;
-@property(readonly) BOOL hasImpressionSequence;
-@property int impressionSequence;
-@property(retain) NSData * impressionIdentifierData;
-@property(readonly) BOOL hasMessageSequence;
-@property int messageSequence;
 @property(retain) NSString * batchId;
+@property BOOL hasMessageSequence;
+@property int messageSequence;
+@property(readonly) BOOL hasImpressionIdentifierData;
+@property(retain) NSData * impressionIdentifierData;
+@property BOOL hasImpressionSequence;
+@property int impressionSequence;
+@property BOOL hasOverclickCount;
+@property int overclickCount;
+@property(readonly) BOOL hasTimeStamp;
+@property(retain) ADTimeStamp * timeStamp;
+@property int orientation;
+@property BOOL hasConnectionType;
+@property int connectionType;
 
 + (id)metadataForAd:(id)arg1 impressionSequence:(unsigned int)arg2 overclickCount:(unsigned int)arg3;
 + (void)initialize;
 
-- (BOOL)hasConnectionType;
-- (BOOL)hasBatchId;
-- (void)setMessageSequence:(int)arg1;
-- (void)setImpressionIdentifierData:(id)arg1;
-- (void)setConnectionType:(id)arg1;
-- (id)impressionIdentifierData;
-- (BOOL)hasMessageSequence;
-- (int)messageSequence;
-- (BOOL)hasImpressionIdentifierData;
-- (BOOL)hasImpressionSequence;
-- (BOOL)hasOverclickCount;
-- (BOOL)hasTimeStamp;
-- (void)setImpressionSequence:(int)arg1;
-- (int)impressionSequence;
-- (id)connectionType;
-- (id)batchId;
-- (void)setBatchId:(id)arg1;
-- (int)overclickCount;
-- (void)setOverclickCount:(int)arg1;
-- (id)dictionaryRepresentation;
-- (void)setOrientation:(id)arg1;
-- (id)init;
-- (id)orientation;
-- (void)dealloc;
-- (id)description;
-- (id)timeStamp;
-- (BOOL)readFrom:(id)arg1;
 - (void)setTimeStamp:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasOverclickCount:(BOOL)arg1;
+- (void)setHasImpressionSequence:(BOOL)arg1;
+- (void)setHasMessageSequence:(BOOL)arg1;
+- (void)setHasConnectionType:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
+- (BOOL)hasConnectionType;
+- (BOOL)hasTimeStamp;
+- (int)overclickCount;
+- (BOOL)hasOverclickCount;
+- (int)impressionSequence;
+- (BOOL)hasImpressionSequence;
+- (BOOL)hasImpressionIdentifierData;
+- (int)messageSequence;
+- (BOOL)hasMessageSequence;
+- (BOOL)hasBatchId;
+- (void)setConnectionType:(int)arg1;
+- (void)setOverclickCount:(int)arg1;
+- (void)setImpressionSequence:(int)arg1;
+- (void)setImpressionIdentifierData:(id)arg1;
+- (id)impressionIdentifierData;
+- (void)setMessageSequence:(int)arg1;
+- (void)setBatchId:(id)arg1;
+- (id)batchId;
+- (id)timeStamp;
+- (id)dictionaryRepresentation;
+- (void)setOrientation:(int)arg1;
+- (int)orientation;
+- (int)connectionType;
+- (id)description;
+- (void)dealloc;
 
 @end

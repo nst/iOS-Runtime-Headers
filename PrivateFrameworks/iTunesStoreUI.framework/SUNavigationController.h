@@ -4,36 +4,39 @@
 
 @class SUSection;
 
-@interface SUNavigationController : UINavigationController  {
+@interface SUNavigationController : UINavigationController <SUScriptNativeObject> {
+    BOOL _canBeWeakScriptReference;
     BOOL _loading;
     SUSection *_section;
 }
 
-@property(retain) SUSection * section;
 @property(getter=isLoading) BOOL loading;
+@property(retain) SUSection * section;
 
 
-- (id)section;
-- (void)addChildViewController:(id)arg1;
-- (void)setParentViewController:(id)arg1;
-- (id)initWithRootViewController:(id)arg1;
-- (void)setViewControllers:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (BOOL)isLoading;
-- (id)navigationBar;
-- (void)removeChildViewController:(id)arg1;
-- (id)moreListImage;
-- (id)moreListSelectedImage;
-- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
-- (void)dealloc;
-- (id)initWithSection:(id)arg1 rootViewController:(id)arg2;
-- (id)copyScriptViewController;
 - (void)setLoading:(BOOL)arg1;
-- (void)setSection:(id)arg1;
+- (BOOL)isLoading;
+- (void)setViewControllers:(id)arg1;
+- (id)initWithRootViewController:(id)arg1;
+- (void)addChildViewController:(id)arg1;
+- (id)moreListSelectedImage;
+- (id)moreListImage;
+- (void)removeChildViewController:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)setParentViewController:(id)arg1;
+- (id)section;
+- (id)navigationBar;
+- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
+- (id)description;
+- (void)dealloc;
+- (id)copyScriptViewController;
 - (void)_loadingDidChangeNotification:(id)arg1;
-- (id)initWithSection:(id)arg1;
-- (id)copyArchivableContext;
-- (void)restoreArchivableContext:(id)arg1;
+- (BOOL)clearsWeakScriptReferences;
 - (id)_sectionForViewController:(id)arg1;
+- (id)initWithSection:(id)arg1;
+- (void)restoreArchivableContext:(id)arg1;
+- (id)initWithSection:(id)arg1 rootViewController:(id)arg2;
+- (void)setSection:(id)arg1;
+- (id)copyArchivableContext;
 
 @end

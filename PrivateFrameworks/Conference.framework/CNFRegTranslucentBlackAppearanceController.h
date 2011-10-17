@@ -6,29 +6,29 @@
 }
 
 
-- (id)tableCellTextLabelBackgroundColor;
+- (id)tableBackgroundColor;
+- (int)modalPresentationStyle;
 - (id)_buttonImageNamed:(id)arg1;
-- (id)webViewBackgroundColor;
-- (id)learnMoreArrowImagePressed;
-- (BOOL)navigationBarIsTranslucent;
-- (id)tableHeaderTextShadowColor;
-- (id)tableSeparatorColor;
-- (BOOL)styleUsesCustomTableStyle;
-- (BOOL)styleUsesCustomSeparatorStyle;
-- (id)tableCellEditableTextColor;
-- (id)tableSectionShadowImage;
 - (id)tableCellEditableInsertionPointColor;
-- (id)tableCellCheckmarkImage;
-- (id)tableCellCheckmarkImageSelected;
 - (BOOL)actionSheetsUsePopoverStyle;
-- (id)tableHeaderTextColor;
-- (struct CGSize { float x1; float x2; })tableHeaderTextShadowOffset;
 - (id)learnMoreTextColor;
 - (id)learnMoreTextColorSelected;
 - (id)learnMoreShadowColor;
+- (id)tableHeaderTextColor;
+- (id)tableHeaderTextShadowColor;
+- (struct CGSize { float x1; float x2; })tableHeaderTextShadowOffset;
 - (id)learnMoreArrowImage;
+- (id)learnMoreArrowImagePressed;
 - (BOOL)learnMoreButtonDrawsUnderline;
+- (BOOL)styleUsesCustomSearchResultsStyle;
+- (int)searchResultsTableSeparatorStyle;
+- (id)searchResultsTableSeparatorColor;
+- (id)searchResultsTableSeparatorTopShadowColor;
+- (id)searchResultsTableSeparatorBottomShadowColor;
+- (BOOL)styleUsesCustomTableStyle;
+- (BOOL)styleUsesCustomSeparatorStyle;
 - (int)tableSeparatorStyle;
+- (id)tableSeparatorColor;
 - (id)tableSeparatorTopShadowColor;
 - (id)tableSeparatorBottomShadowColor;
 - (id)tableSectionBorderColor;
@@ -36,15 +36,20 @@
 - (id)tableCellButtonImageSelected;
 - (id)tableCellBackgroundColor;
 - (id)tableCellTextLabelColor;
+- (id)tableCellTextLabelBackgroundColor;
 - (id)tableCellDetailLabelColor;
 - (id)tableCellDetailLabelBackgroundColor;
 - (id)tableCellEditableTextPlaceholderColor;
 - (id)tableCellEditableTextFieldClearButton;
 - (id)tableCellEditableTextFieldClearButtonPressed;
+- (id)tableCellEditableTextColor;
+- (id)tableCellCheckmarkImage;
+- (id)tableCellCheckmarkImageSelected;
+- (id)tableSectionShadowImage;
+- (id)webViewBackgroundColor;
 - (BOOL)webViewIsOpaque;
 - (BOOL)webViewDrawsShadows;
 - (int)navigationBarStyle;
-- (int)modalPresentationStyle;
-- (id)tableBackgroundColor;
+- (BOOL)navigationBarIsTranslucent;
 
 @end

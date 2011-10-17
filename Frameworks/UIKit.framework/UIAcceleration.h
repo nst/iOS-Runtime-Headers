@@ -9,19 +9,19 @@
     double z;
 }
 
-@property double z;
-@property double y;
-@property double x;
 @property double timestamp;
+@property double x;
+@property double y;
+@property double z;
 
 
-- (void)setX:(double)arg1;
-- (void)setY:(double)arg1;
-- (double)z;
-- (void)setTimestamp:(double)arg1;
-- (double)x;
 - (void)setZ:(double)arg1;
-- (double)timestamp;
+- (double)z;
+- (void)setY:(double)arg1;
 - (double)y;
+- (void)setX:(double)arg1;
+- (double)x;
+- (double)timestamp;
+- (void)setTimestamp:(double)arg1;
 
 @end

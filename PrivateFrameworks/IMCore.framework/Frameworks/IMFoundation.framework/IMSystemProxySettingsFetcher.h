@@ -16,18 +16,39 @@
 }
 
 @property id delegate;
+@property(copy) NSString * _host;
+@property unsigned short _port;
+@property int _proxyProtocol;
+@property(copy) NSString * _proxyHost;
+@property unsigned short _proxyPort;
+@property(copy) NSString * _proxyAccount;
+@property(copy) NSString * _proxyPassword;
 
 
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)_callProxySettingsDelegateMethod;
-- (void)_callAccountSettingsDelegateMethod;
-- (void)_getProxyAccountAndPasswordFromKeychain;
-- (void)_takeProxySettingsFromDictionary:(struct __CFDictionary { }*)arg1;
-- (id)initWithHost:(id)arg1 port:(unsigned short)arg2 delegate:(id)arg3;
-- (id)initWithProxyProtocol:(int)arg1 proxyHost:(id)arg2 proxyPort:(unsigned short)arg3 delegate:(id)arg4;
-- (void)retrieveProxySettings;
+- (void)set_proxyPassword:(id)arg1;
+- (id)_proxyPassword;
+- (void)set_proxyAccount:(id)arg1;
+- (id)_proxyAccount;
+- (void)set_proxyPort:(unsigned short)arg1;
+- (unsigned short)_proxyPort;
+- (void)set_proxyHost:(id)arg1;
+- (id)_proxyHost;
+- (void)set_proxyProtocol:(int)arg1;
+- (int)_proxyProtocol;
+- (void)set_port:(unsigned short)arg1;
+- (unsigned short)_port;
+- (void)set_host:(id)arg1;
+- (id)_host;
 - (void)retrieveProxyAccountSettings;
+- (void)retrieveProxySettings;
+- (id)initWithProxyProtocol:(int)arg1 proxyHost:(id)arg2 proxyPort:(unsigned short)arg3 delegate:(id)arg4;
+- (id)initWithHost:(id)arg1 port:(unsigned short)arg2 delegate:(id)arg3;
+- (void)_takeProxySettingsFromDictionary:(struct __CFDictionary { }*)arg1;
+- (void)_callProxySettingsDelegateMethod;
+- (void)_getProxyAccountAndPasswordFromKeychain;
+- (void)_callAccountSettingsDelegateMethod;
+- (id)delegate;
+- (void)dealloc;
 
 @end

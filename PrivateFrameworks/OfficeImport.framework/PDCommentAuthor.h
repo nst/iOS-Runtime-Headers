@@ -12,15 +12,15 @@
 }
 
 
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)init;
-- (void)dealloc;
-- (void)setInitials:(id)arg1;
+- (unsigned int)id;
+- (void)setId:(unsigned int)arg1;
 - (id)initials;
+- (void)setInitials:(id)arg1;
 - (unsigned int)colorIndex;
 - (void)setColorIndex:(unsigned int)arg1;
-- (void)setId:(unsigned int)arg1;
-- (unsigned int)id;
+- (id)name;
+- (void)setName:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

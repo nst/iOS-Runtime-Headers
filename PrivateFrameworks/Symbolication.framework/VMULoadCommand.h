@@ -9,16 +9,16 @@
 
 + (id)loadCommandWithMemory:(id)arg1;
 
-- (BOOL)isIDDyLib;
-- (id)initWithMemory:(id)arg1;
-- (BOOL)isSegment;
-- (BOOL)isSymTab;
-- (BOOL)isDyLinker;
 - (unsigned long long)cmdSize;
 - (BOOL)isUUID;
+- (BOOL)isSymTab;
 - (BOOL)isLoadDyLib;
+- (BOOL)isIDDyLib;
+- (BOOL)isSegment;
 - (BOOL)isSegment32;
 - (BOOL)isSegment64;
 - (BOOL)isDySymTab;
+- (BOOL)isDyLinker;
+- (id)initWithMemory:(id)arg1;
 
 @end

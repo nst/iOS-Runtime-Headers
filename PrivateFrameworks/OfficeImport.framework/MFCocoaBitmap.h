@@ -7,7 +7,7 @@
 }
 
 
-- (void)dealloc;
 - (struct CGImage { }*)getImage;
+- (void)dealloc;
 
 @end

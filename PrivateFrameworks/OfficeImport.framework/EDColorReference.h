@@ -13,22 +13,22 @@
 }
 
 + (id)colorReferenceWithColorIndex:(unsigned int)arg1 resources:(id)arg2;
-+ (id)colorReferenceWithColor:(id)arg1 resources:(id)arg2;
-+ (id)colorReferenceWithSystemColorID:(int)arg1 resources:(id)arg2;
-+ (id)colorReferenceWithResources:(id)arg1;
 + (id)colorReferenceWithXlThemeIndex:(unsigned int)arg1 tint:(double)arg2 resources:(id)arg3;
++ (id)colorReferenceWithColor:(id)arg1 resources:(id)arg2;
++ (id)colorReferenceWithResources:(id)arg1;
++ (id)colorReferenceWithSystemColorID:(int)arg1 resources:(id)arg2;
 
-- (bool)isValid;
-- (double)tint;
-- (id)color;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)colorIndex;
-- (id)initWithResources:(id)arg1;
+- (int)systemColorID;
 - (BOOL)isEqualToColorReference:(id)arg1;
 - (id)initWithColor:(id)arg1 resources:(id)arg2;
+- (id)initWithResources:(id)arg1;
 - (unsigned int)themeIndex;
-- (int)systemColorID;
+- (unsigned int)colorIndex;
+- (double)tint;
+- (id)color;
+- (bool)isValid;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

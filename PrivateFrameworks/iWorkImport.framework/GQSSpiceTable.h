@@ -24,9 +24,9 @@
 }
 
 
-- (void)aboutToReadRowVectors;
-- (void)setAlongValue:(float)arg1 forOwnedVectorUid:(char *)arg2;
 - (void)aboutToReadCells;
+- (void)setAlongValue:(float)arg1 forOwnedVectorUid:(char *)arg2;
+- (void)aboutToReadRowVectors;
 - (void)aboutToReadColumnVectors;
 - (float)alongValueForVectorUid:(const char *)arg1;
 - (id)init;

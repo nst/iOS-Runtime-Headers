@@ -9,24 +9,25 @@
     NSDictionary *_fullMetadata;
     unsigned long long _primaryKeyGeneration;
     NSMutableDictionary *_mapData;
+    NSDictionary *_storeOptions;
 }
 
 
-- (void)dealloc;
-- (int)databaseVersion;
-- (unsigned long long)primaryKeyGeneration;
-- (void)setFullMetadata:(id)arg1;
+- (BOOL)readFromFile:(id)arg1 error:(id*)arg2;
 - (BOOL)writeToFile:(id)arg1 error:(id*)arg2;
 - (void)setDatabaseVersion:(int)arg1;
 - (void)setPrimaryKeyGeneration:(unsigned long long)arg1;
-- (id)mapData;
 - (void)setMapData:(id)arg1;
 - (void)clearCurrentValues;
 - (BOOL)readBinaryStoreFromData:(id)arg1 originalPath:(id)arg2 error:(id*)arg3;
-- (BOOL)readFromFile:(id)arg1 error:(id*)arg2;
-- (BOOL)readMetadataFromFile:(id)arg1 error:(id*)arg2;
 - (BOOL)_writeMetadataData:(id)arg1 andMapDataData:(id)arg2 toFile:(id)arg3 error:(id*)arg4;
+- (int)databaseVersion;
+- (unsigned long long)primaryKeyGeneration;
+- (id)mapData;
+- (BOOL)readMetadataFromFile:(id)arg1 error:(id*)arg2;
 - (id)fullMetadata;
+- (void)setFullMetadata:(id)arg1;
 - (BOOL)writeMetadataToFile:(id)arg1 error:(id*)arg2;
+- (void)dealloc;
 
 @end

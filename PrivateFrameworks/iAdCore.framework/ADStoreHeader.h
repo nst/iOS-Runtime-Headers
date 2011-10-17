@@ -9,19 +9,18 @@
     NSString *_value;
 }
 
-@property(retain) NSString * value;
 @property(retain) NSString * key;
+@property(retain) NSString * value;
 
 
-- (id)key;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setKey:(id)arg1;
+- (id)key;
 - (id)dictionaryRepresentation;
 - (id)value;
 - (void)setValue:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)description;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)dealloc;
 
 @end

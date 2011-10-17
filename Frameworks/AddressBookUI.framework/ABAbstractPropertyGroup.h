@@ -15,17 +15,17 @@
 @property(retain) NSArray * people;
 
 
+- (int)property;
+- (BOOL)hasChanges;
 - (id)init;
 - (void)dealloc;
-- (BOOL)hasChanges;
-- (void)reloadFromModel;
+- (id)people;
 - (void)setPeople:(id)arg1;
 - (void)updateRecord;
 - (BOOL)canSave;
-- (void)setStyleProvider:(id)arg1;
-- (id)people;
 - (void)setHasChanges:(BOOL)arg1;
+- (void)reloadFromModel;
+- (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
-- (int)property;
 
 @end

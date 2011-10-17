@@ -9,16 +9,16 @@
     UIImage *_maskFinalImage;
 }
 
-@property(retain) UIImage * maskFinalImage;
 @property(retain) UIImage * maskImage;
+@property(retain) UIImage * maskFinalImage;
 
 
-- (id)maskImage;
-- (id)maskFinalImage;
-- (void)setMaskImage:(id)arg1;
-- (id)maskImageForCGContext;
-- (id)maskImageForCALayerContents;
 - (void)setMaskFinalImage:(id)arg1;
+- (id)maskFinalImage;
+- (id)maskImageForCALayerContents;
+- (id)maskImageForCGContext;
+- (id)maskImage;
+- (void)setMaskImage:(id)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;
 

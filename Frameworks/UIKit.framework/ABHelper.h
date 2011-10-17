@@ -9,8 +9,8 @@
 
 + (id)sharedHelper;
 
-- (id)initHelper;
 - (void*)me;
+- (id)initHelper;
 - (void)dealloc;
 
 @end

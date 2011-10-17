@@ -6,6 +6,26 @@
 
 @interface PLExpandableView : UIView  {
     <PLExpandableViewDelegate> *_delegate;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _contractedFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _expandedFrame;
     struct CGPoint { 
         float x; 
         float y; 
@@ -27,24 +47,15 @@
     float _pinchVelocity;
     double _trackingTimeInterval;
     float _expansionFraction;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _expandedFrame;
     struct { 
         unsigned int state : 3; 
         unsigned int prevState : 3; 
         unsigned int tracking : 1; 
         unsigned int autorotationDisabled : 1; 
         unsigned int animationDisabled : 1; 
+        unsigned int updateContractedFrame : 1; 
+        unsigned int updateExpandedFrame : 1; 
         unsigned int allowsExpansion : 1; 
-        unsigned int delegateExpandedFrame : 1; 
         unsigned int delegateWillBeginExpanding : 1; 
         unsigned int delegateWillCompleteExpanding : 1; 
         unsigned int delegateDidCompleteExpanding : 1; 
@@ -59,60 +70,65 @@
     } _expandFlags;
 }
 
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contractedFrame;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } expandedFrame;
 @property BOOL allowsExpansion;
 
-+ (void)_initializeSafeCategory;
 
+- (void)setDelegate:(id)arg1;
+- (int)previousState;
+- (void)willMoveToWindow:(id)arg1;
 - (BOOL)isTracking;
 - (int)state;
-- (void)willMoveToSuperview:(id)arg1;
-- (void)willMoveToWindow:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (void)startedPinch:(id)arg1;
+- (void)didMoveToWindow;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)canCollapse;
+- (float)expansionFraction;
+- (void)setAllowsExpansion:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })expandedFrame;
+- (void)setExpandedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contractedFrame;
+- (void)expandWithAnimation:(BOOL)arg1;
+- (void)collapseWithAnimation:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pinchRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 insetTouches:(BOOL)arg3;
+- (void)finishTransition;
+- (void)canceledPinch:(id)arg1;
+- (void)finishedPinch:(id)arg1;
 - (void)continuedPinch:(id)arg1;
-- (float)continueTrackingPinch:(id)arg1;
+- (void)startedPinch:(id)arg1;
 - (BOOL)allowsExpansion;
 - (void)finishTransitionToState:(int)arg1;
 - (float)completeTrackingPinch:(id)arg1 toState:(int)arg2 duration:(double)arg3;
-- (int)previousState;
-- (void)_setAutorotationDisabled:(BOOL)arg1;
-- (void)_notifyDidCompleteCollapsing;
-- (void)_notifyWillBeginExpanding;
-- (void)_notifyWillCancelCollapsingWithDuration:(double)arg1;
-- (void)_notifyWillCompleteCollapsingWithDuration:(double)arg1;
-- (void)_notifyWillCompleteExpandingWithDuration:(double)arg1;
-- (void)_notifyWillCancelExpandingWithDuration:(double)arg1;
-- (void)_notifyDidCompleteExpanding;
-- (void)_notifyWillBeginCollapsing;
-- (void)_notifyDidCancelExpanding;
-- (void)_notifyDidCancelCollapsing;
-- (void)_transitionFromContracted:(int)arg1 withDuration:(double)arg2;
-- (void)_transitionFromExpanding:(int)arg1 withDuration:(double)arg2;
-- (void)_transitionFromCompleteExpand:(int)arg1 withDuration:(double)arg2;
-- (void)_transitionFromCancelExpand:(int)arg1 withDuration:(double)arg2;
-- (void)_transitionFromExpanded:(int)arg1 withDuration:(double)arg2;
-- (void)_transitionFromContracting:(int)arg1 withDuration:(double)arg2;
-- (void)_transitionFromCancelContract:(int)arg1 withDuration:(double)arg2;
-- (void)_transitionFromCompleteContract:(int)arg1 withDuration:(double)arg2;
-- (void)stateDidChangeFrom:(int)arg1;
-- (void)_setState:(int)arg1 withDuration:(double)arg2;
-- (void)setExpandedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })expandedFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })expandedContentFrame;
-- (void)_setExpansionFraction:(float)arg1;
-- (float)expansionFraction;
-- (void)notifyExpansionFraction:(float)arg1 force:(BOOL)arg2;
-- (void)finishedPinch:(id)arg1;
-- (void)canceledPinch:(id)arg1;
-- (void)updatePinchState:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pinchRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 insetTouches:(BOOL)arg3;
-- (void)beginTrackingPinch:(id)arg1;
-- (void)collapseWithAnimation:(BOOL)arg1;
-- (void)expandWithAnimation:(BOOL)arg1;
-- (void)setAllowsExpansion:(BOOL)arg1;
-- (BOOL)_canPinch;
 - (int)snapState:(BOOL)arg1;
+- (float)continueTrackingPinch:(id)arg1;
+- (void)notifyExpansionFraction:(float)arg1 force:(BOOL)arg2;
+- (void)beginTrackingPinch:(id)arg1;
+- (void)_setState:(int)arg1 withDuration:(double)arg2;
+- (void)updatePinchState:(id)arg1;
+- (BOOL)_canPinch;
+- (void)_setExpansionFraction:(float)arg1;
+- (void)stateDidChangeFrom:(int)arg1;
+- (void)_transitionFromCompleteContract:(int)arg1 withDuration:(double)arg2;
+- (void)_transitionFromCancelContract:(int)arg1 withDuration:(double)arg2;
+- (void)_transitionFromContracting:(int)arg1 withDuration:(double)arg2;
+- (void)_transitionFromExpanded:(int)arg1 withDuration:(double)arg2;
+- (void)_transitionFromCancelExpand:(int)arg1 withDuration:(double)arg2;
+- (void)_transitionFromCompleteExpand:(int)arg1 withDuration:(double)arg2;
+- (void)_transitionFromExpanding:(int)arg1 withDuration:(double)arg2;
+- (void)_transitionFromContracted:(int)arg1 withDuration:(double)arg2;
+- (void)setContractedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)stateWillChangeTo:(int)arg1;
+- (void)_notifyDidCompleteCollapsing;
+- (void)_notifyDidCancelCollapsing;
+- (void)_notifyWillCompleteCollapsingWithDuration:(double)arg1;
+- (void)_notifyWillCancelCollapsingWithDuration:(double)arg1;
+- (void)_notifyDidCancelExpanding;
+- (void)_notifyWillBeginCollapsing;
+- (void)_notifyDidCompleteExpanding;
+- (void)_notifyWillCancelExpandingWithDuration:(double)arg1;
+- (void)_notifyWillCompleteExpandingWithDuration:(double)arg1;
+- (void)_notifyWillBeginExpanding;
+- (void)_setAutorotationDisabled:(BOOL)arg1;
 
 @end

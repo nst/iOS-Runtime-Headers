@@ -10,24 +10,28 @@
     NSData *archiveData;
     UINibDecoder *nibDecoder;
     BOOL instantiatingForSimulator;
+    BOOL captureEnclosingNIBBundleOnDecode;
 }
 
-@property BOOL instantiatingForSimulator;
-@property(retain) UINibDecoder * nibDecoder;
-@property(copy) NSData * archiveData;
-@property(retain) NSBundle * bundle;
 @property(copy) NSString * bundleResourceName;
+@property(retain) NSBundle * bundle;
+@property(copy) NSData * archiveData;
+@property(retain) UINibDecoder * nibDecoder;
+@property BOOL instantiatingForSimulator;
+@property BOOL captureEnclosingNIBBundleOnDecode;
 
 
+- (void)setCaptureEnclosingNIBBundleOnDecode:(BOOL)arg1;
+- (BOOL)captureEnclosingNIBBundleOnDecode;
+- (void)setInstantiatingForSimulator:(BOOL)arg1;
+- (BOOL)instantiatingForSimulator;
 - (void)setNibDecoder:(id)arg1;
+- (id)nibDecoder;
 - (void)setArchiveData:(id)arg1;
+- (id)archiveData;
 - (void)setBundle:(id)arg1;
 - (void)setBundleResourceName:(id)arg1;
-- (id)nibDecoder;
-- (id)archiveData;
 - (id)bundleResourceName;
-- (BOOL)instantiatingForSimulator;
-- (void)setInstantiatingForSimulator:(BOOL)arg1;
 - (id)bundle;
 - (void)dealloc;
 

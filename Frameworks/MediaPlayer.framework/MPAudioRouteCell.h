@@ -8,12 +8,9 @@
     UIImageView *_pickedImage;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (void)layoutSubviews;
-- (id)initWithRouteName:(id)arg1 isPicked:(BOOL)arg2;
 - (void)setPicked:(BOOL)arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
+- (id)initWithRouteName:(id)arg1 isPicked:(BOOL)arg2;
+- (void)layoutSubviews;
 
 @end

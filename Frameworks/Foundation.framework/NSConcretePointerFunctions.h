@@ -36,28 +36,28 @@
     } slice;
 }
 
++ (void)initializeBackingStore:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; id x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 sentinel:(BOOL)arg2 compactable:(BOOL)arg3;
 + (bool)initializeSlice:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; id x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 withOptions:(unsigned int)arg2;
-+ (void)initializeBackingStore:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; id x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 sentinel:(bool)arg2;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int (*)())sizeFunction;
-- (void)setSizeFunction:(int (*)())arg1;
-- (void)setDescriptionFunction:(int (*)())arg1;
-- (void)setAcquireFunction:(int (*)())arg1;
-- (void)setRelinquishFunction:(int (*)())arg1;
-- (void)setUsesStrongWriteBarrier:(BOOL)arg1;
-- (void)setUsesWeakReadAndWriteBarriers:(BOOL)arg1;
-- (int (*)())hashFunction;
-- (int (*)())isEqualFunction;
-- (int (*)())descriptionFunction;
-- (int (*)())acquireFunction;
-- (int (*)())relinquishFunction;
-- (BOOL)usesStrongWriteBarrier;
 - (BOOL)usesWeakReadAndWriteBarriers;
-- (void)setHashFunction:(int (*)())arg1;
+- (BOOL)usesStrongWriteBarrier;
+- (int (*)())relinquishFunction;
+- (int (*)())acquireFunction;
+- (int (*)())descriptionFunction;
+- (int (*)())isEqualFunction;
+- (int (*)())hashFunction;
+- (int (*)())sizeFunction;
+- (void)setUsesWeakReadAndWriteBarriers:(BOOL)arg1;
+- (void)setUsesStrongWriteBarrier:(BOOL)arg1;
+- (void)setRelinquishFunction:(int (*)())arg1;
+- (void)setAcquireFunction:(int (*)())arg1;
+- (void)setDescriptionFunction:(int (*)())arg1;
+- (void)setSizeFunction:(int (*)())arg1;
 - (void)setIsEqualFunction:(int (*)())arg1;
+- (void)setHashFunction:(int (*)())arg1;
 - (id)initWithOptions:(unsigned int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

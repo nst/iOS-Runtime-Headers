@@ -12,14 +12,14 @@
 
 - (id)init;
 - (void)dealloc;
-- (void)addEventReceiver:(id)arg1;
+- (void)_softwareMapChangedNotification:(id)arg1;
 - (void)_networkTypeChangedNotification:(id)arg1;
 - (void)_restrictionsChangedNotification:(id)arg1;
-- (void)_softwareMapChangedNotification:(id)arg1;
-- (void)_beginObservingNotifications;
 - (void)_dispatchEvent:(id)arg1 forName:(id)arg2;
+- (void)_beginObservingNotifications;
 - (void)_endObservingNotifications;
 - (void)_memoryWarningNotification:(id)arg1;
 - (void)removeEventReceiver:(id)arg1;
+- (void)addEventReceiver:(id)arg1;
 
 @end

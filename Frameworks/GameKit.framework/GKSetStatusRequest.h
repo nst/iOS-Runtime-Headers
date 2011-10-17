@@ -12,10 +12,10 @@
 
 
 - (void)setStatus:(id)arg1;
-- (id)key;
 - (void)send;
+- (id)key;
 - (id)request;
-- (void)dealloc;
 - (id)status;
+- (void)dealloc;
 
 @end

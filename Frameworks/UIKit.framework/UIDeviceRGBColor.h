@@ -11,20 +11,22 @@
 }
 
 
-- (id)colorWithAlphaComponent:(float)arg1;
-- (void)setFill;
-- (struct CGColor { }*)_createCGColorWithAlpha:(float)arg1;
-- (id)colorSpaceName;
+- (BOOL)getHue:(float*)arg1 saturation:(float*)arg2 brightness:(float*)arg3 alpha:(float*)arg4;
 - (id)initWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
-- (id)initWithCGColor:(struct CGColor { }*)arg1;
-- (void)setStroke;
+- (struct CGColor { }*)_createCGColorWithAlpha:(float)arg1;
 - (float)alphaComponent;
-- (unsigned int)hash;
-- (void)set;
-- (BOOL)isEqual:(id)arg1;
-- (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
+- (void)setStroke;
+- (void)setFill;
+- (id)colorSpaceName;
+- (id)initWithCGColor:(struct CGColor { }*)arg1;
+- (id)colorWithAlphaComponent:(float)arg1;
 - (struct CGColor { }*)CGColor;
-- (void)dealloc;
+- (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
+- (void)set;
+- (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (id)description;
+- (void)dealloc;
 
 @end

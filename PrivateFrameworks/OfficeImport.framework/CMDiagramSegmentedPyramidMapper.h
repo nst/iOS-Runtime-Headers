@@ -6,11 +6,11 @@
 }
 
 
-- (unsigned int)layerCount;
 - (id)_suggestedBoundsForPyramidLayerWithIndex:(unsigned int)arg1 inLayer:(unsigned int)arg2 andSlice:(unsigned int)arg3;
-- (int)pointCount;
-- (struct CGSize { float x1; float x2; })sizeForNode:(id)arg1 atIndex:(unsigned int)arg2;
+- (unsigned int)layerCount;
 - (void)mapChildrenAt:(id)arg1 withState:(id)arg2;
+- (struct CGSize { float x1; float x2; })sizeForNode:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (int)pointCount;
 
 @end

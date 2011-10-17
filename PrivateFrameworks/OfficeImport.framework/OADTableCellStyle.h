@@ -9,15 +9,15 @@
     OADFill *mFill;
 }
 
-+ (id)defaultFill;
 + (id)defaultStyle;
++ (id)defaultFill;
 
+- (void)applyOverridesFrom:(id)arg1;
+- (id)shallowCopy;
+- (void)setFill:(id)arg1;
 - (id)borderStyle;
 - (void)setBorderStyle:(id)arg1;
-- (void)dealloc;
 - (id)fill;
-- (void)setFill:(id)arg1;
-- (id)shallowCopy;
-- (void)applyOverridesFrom:(id)arg1;
+- (void)dealloc;
 
 @end

@@ -12,15 +12,15 @@
 + (struct CGSize { float x1; float x2; })preferredContentViewSize;
 + (void)initialize;
 
-- (id)initAlertView;
-- (void)_replaceContentView:(id)arg1 animated:(BOOL)arg2;
-- (void)_changePanelOutAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (void)_changePanelInAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)setContentView:(id)arg1 animated:(BOOL)arg2;
+- (void)_replaceContentView:(id)arg1 animated:(BOOL)arg2;
+- (void)_changePanelInAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)_changePanelOutAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (id)initAlertView;
 - (void)layoutAnimated:(BOOL)arg1;
-- (id)contentView;
 - (BOOL)_canDrawContent;
-- (void)dealloc;
+- (id)contentView;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
+- (void)dealloc;
 
 @end

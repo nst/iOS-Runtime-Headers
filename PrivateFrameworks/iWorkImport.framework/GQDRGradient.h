@@ -24,13 +24,13 @@
 
 + (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
-- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
+- (struct __CFArray { }*)stops;
+- (struct CGPoint { float x1; float x2; })start;
 - (float)angle;
 - (struct CGPoint { float x1; float x2; })end;
 - (int)type;
-- (struct CGPoint { float x1; float x2; })start;
 - (float)opacity;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (void)dealloc;
-- (struct __CFArray { }*)stops;
 
 @end

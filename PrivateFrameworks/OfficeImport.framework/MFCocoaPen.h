@@ -10,8 +10,8 @@
 
 - (id)initWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
 - (void)applyDashedLinesToPath:(id)arg1;
-- (void)applyLineJoinStyleToPath:(id)arg1 :(id)arg2;
 - (void)applyLineCapStyleToPath:(id)arg1;
+- (void)applyLineJoinStyleToPath:(id)arg1 :(id)arg2;
 - (void)strokePath:(id)arg1 :(id)arg2;
 
 @end

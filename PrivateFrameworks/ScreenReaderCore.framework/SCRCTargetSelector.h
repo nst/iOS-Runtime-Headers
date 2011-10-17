@@ -9,8 +9,8 @@
 
 + (id)targetSelectorWithTarget:(id)arg1 selector:(SEL)arg2;
 
-- (id)target;
-- (SEL)selector;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
+- (SEL)selector;
+- (id)target;
 
 @end

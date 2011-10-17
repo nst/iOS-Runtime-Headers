@@ -2,29 +2,37 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray;
+@class __NSHostExtraIvars, NSArray;
 
 @interface NSHost : NSObject  {
     NSArray *names;
     NSArray *addresses;
-    void *reserved;
+    id reserved;
 }
 
-+ (id)currentHost;
-+ (void)_fixNSHostLeak;
-+ (id)hostWithName:(id)arg1;
-+ (id)hostWithAddress:(id)arg1;
-+ (BOOL)isHostCacheEnabled;
-+ (void)setHostCacheEnabled:(BOOL)arg1;
-+ (void)flushHostCache;
+@property __NSHostExtraIvars * reserved;
 
-- (id)localizedName;
-- (id)names;
-- (id)name;
-- (void)dealloc;
-- (id)description;
-- (BOOL)isEqualToHost:(id)arg1;
-- (id)address;
++ (void)flushHostCache;
++ (void)setHostCacheEnabled:(BOOL)arg1;
++ (BOOL)isHostCacheEnabled;
++ (id)hostWithAddress:(id)arg1;
++ (id)hostWithName:(id)arg1;
++ (id)currentHost;
+
 - (id)addresses;
+- (id)address;
+- (BOOL)isEqualToHost:(id)arg1;
+- (void)blockingResolveUntil:(int)arg1;
+- (void)resolve:(id)arg1;
+- (void)resolveCurrentHostWithHandler:(id)arg1;
+- (void)__resolveWithFlags:(int)arg1 resultArray:(id)arg2 handler:(id)arg3;
+- (id)initToResolve:(id)arg1 as:(int)arg2;
+- (void)setReserved:(id)arg1;
+- (id)reserved;
+- (id)names;
+- (id)localizedName;
+- (id)name;
+- (id)description;
+- (void)dealloc;
 
 @end

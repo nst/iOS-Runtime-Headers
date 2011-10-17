@@ -10,9 +10,9 @@
 }
 
 
-- (void)dealloc;
 - (id)mutatingMethods;
-- (id)initWithContainerClassID:(id)arg1 key:(id)arg2 nonmutatingMethods:(id)arg3 mutatingMethods:(id)arg4 proxyClass:(Class)arg5;
 - (id)nonmutatingMethods;
+- (id)initWithContainerClassID:(id)arg1 key:(id)arg2 nonmutatingMethods:(id)arg3 mutatingMethods:(id)arg4 proxyClass:(Class)arg5;
+- (void)dealloc;
 
 @end

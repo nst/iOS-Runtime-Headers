@@ -16,23 +16,24 @@
 
 + (BOOL)line:(id)arg1 alignsWith:(id)arg2;
 
-- (void)dealloc;
-- (BOOL)firstWordOf:(id)arg1 fits:(id)arg2 indent:(float)arg3;
-- (BOOL)isGraphicBetween:(id)arg1 and:(id)arg2;
+- (BOOL)line:(id)arg1 isDirectlyBelow:(id)arg2;
 - (BOOL)line:(id)arg1 isBelow:(id)arg2;
-- (int)linesThatOverlapLineAt:(int)arg1 between:(float)arg2 and:(float)arg3 from:(int)arg4;
 - (int)indexOfUniqueLineBelow:(id)arg1 from:(int)arg2;
-- (BOOL)spacingOf:(id)arg1 and:(id)arg2 and:(id)arg3 is:(float*)arg4;
+- (int)linesThatOverlapLineAt:(int)arg1 between:(float)arg2 and:(float)arg3 from:(int)arg4;
+- (BOOL)isGraphicBetween:(id)arg1 and:(id)arg2;
 - (unsigned int)alignmentOf:(id)arg1 and:(id)arg2;
-- (BOOL)styleOf:(id)arg1 differsFromStyleOf:(id)arg2;
-- (unsigned int)alignmentOf:(id)arg1 and:(id)arg2 and:(id)arg3;
-- (BOOL)line:(id)arg1 isAlignedWith:(id)arg2;
 - (BOOL)fitsBelow:(id)arg1 alignment:(unsigned int)arg2 spacing:(float)arg3 from:(int)arg4;
-- (id)makeInitialParagraph;
+- (BOOL)spacingOf:(id)arg1 and:(id)arg2 and:(id)arg3 is:(float*)arg4;
+- (unsigned int)alignmentOf:(id)arg1 and:(id)arg2 and:(id)arg3;
+- (BOOL)styleOf:(id)arg1 differsFromStyleOf:(id)arg2;
+- (BOOL)firstWordOf:(id)arg1 fits:(id)arg2 indent:(float)arg3;
+- (BOOL)line:(id)arg1 isAlignedWith:(id)arg2;
 - (int)paragraph:(id)arg1 splits:(id)arg2;
-- (void)addLinesTo:(id)arg1;
 - (void)addCompoundedShapesOn:(id)arg1 to:(id)arg2;
+- (id)makeInitialParagraph;
+- (void)addLinesTo:(id)arg1;
 - (void)makeParagraphsIn:(id)arg1;
 - (id)paragraphs;
+- (void)dealloc;
 
 @end

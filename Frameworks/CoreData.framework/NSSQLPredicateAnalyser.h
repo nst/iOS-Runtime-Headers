@@ -13,14 +13,14 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (void)visitPredicateOperator:(id)arg1;
-- (void)visitPredicateExpression:(id)arg1;
-- (void)visitPredicate:(id)arg1;
 - (id)keypaths;
 - (id)subqueries;
 - (id)setExpressions;
+- (void)visitPredicateOperator:(id)arg1;
 - (id)allModifierPredicates;
+- (void)visitPredicate:(id)arg1;
+- (void)visitPredicateExpression:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

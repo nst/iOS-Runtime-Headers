@@ -12,40 +12,40 @@
 @property struct CGSize { float width; float height; } maximumSize;
 @property(copy) NSString * apertureMode;
 @property(copy) AVVideoComposition * videoComposition;
+@property struct { long long value; int timescale; unsigned int flags; long long epoch; } requestedTimeToleranceBefore;
+@property struct { long long value; int timescale; unsigned int flags; long long epoch; } requestedTimeToleranceAfter;
 
 + (id)assetImageGeneratorWithAsset:(id)arg1;
 
 - (void)finalize;
-- (void)release;
-- (id)init;
-- (id)retain;
-- (void)dealloc;
-- (void)setVideoComposition:(id)arg1;
-- (void)_ensureFigAssetImageGenerator;
-- (struct __CFDictionary { }*)_createPixelBufferAttributesWithSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)_makeAutoreleasedAssetReader;
+- (struct CGImage { }*)copyCGImageAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 actualTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 error:(id*)arg3;
 - (void)generateCGImagesAsynchronouslyForTimes:(id)arg1 completionHandler:(id)arg2;
 - (void)cancelAllCGImageGeneration;
+- (void)setAppliesPreferredTrackTransform:(BOOL)arg1;
 - (BOOL)appliesPreferredTrackTransform;
+- (void)setMaximumSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })maximumSize;
 - (void)setApertureMode:(id)arg1;
 - (id)apertureMode;
-- (id)videoComposition;
 - (void)setRequestedTimeToleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })requestedTimeToleranceBefore;
 - (void)setRequestedTimeToleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })requestedTimeToleranceAfter;
-- (id)_optionsDictionary;
 - (void)_didGenerateCGImage:(id)arg1;
 - (void)_failedToGenerateCGImage:(id)arg1;
 - (void)_serverDied;
-- (id)_requestWithRequestID:(id)arg1;
+- (id)videoComposition;
 - (struct CGSize { float x1; float x2; })_scaledSizeForRenderSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct __CFDictionary { }*)_createPixelBufferAttributesWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setVideoComposition:(id)arg1;
+- (id)_makeAutoreleasedAssetReader;
 - (struct CGImage { }*)_copyCGImageAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 usingAssetReader:(id)arg2 error:(id*)arg3;
+- (id)_optionsDictionary;
+- (void)_ensureFigAssetImageGenerator;
 - (id)_NSErrorForError:(long)arg1;
+- (id)_requestWithRequestID:(id)arg1;
 - (id)initWithAsset:(id)arg1;
-- (void)setAppliesPreferredTrackTransform:(BOOL)arg1;
-- (void)setMaximumSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGImage { }*)copyCGImageAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 actualTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 error:(id*)arg3;
+- (id)init;
+- (void)dealloc;
 
 @end

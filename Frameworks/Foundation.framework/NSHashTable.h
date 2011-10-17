@@ -5,45 +5,45 @@
 @interface NSHashTable : NSObject <NSCopying, NSCoding, NSFastEnumeration> {
 }
 
++ (id)hashTableWithOptions:(unsigned int)arg1;
 + (id)hashTableWithWeakObjects;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)hashTableWithOptions:(unsigned int)arg1;
 
-- (id)member:(id)arg1;
+- (id)setRepresentation;
+- (id)mutableSet;
+- (void)minusHashTable:(id)arg1;
+- (void)unionHashTable:(id)arg1;
+- (void)intersectHashTable:(id)arg1;
+- (BOOL)isSubsetOfHashTable:(id)arg1;
+- (BOOL)isEqualToHashTable:(id)arg1;
+- (BOOL)intersectsHashTable:(id)arg1;
+- (id)pointerFunctions;
+- (id)initWithPointerFunctions:(id)arg1 capacity:(unsigned int)arg2;
+- (void)getKeys:(void**)arg1 count:(unsigned int*)arg2;
+- (void)insertKnownAbsentItem:(const void*)arg1;
+- (unsigned int)weakCount;
+- (void*)getItem:(const void*)arg1;
+- (id)initWithOptions:(unsigned int)arg1 capacity:(unsigned int)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)member:(id)arg1;
+- (id)objectEnumerator;
 - (id)allObjects;
 - (id)anyObject;
-- (id)objectEnumerator;
+- (BOOL)containsObject:(id)arg1;
 - (void)removeAllObjects;
-- (void)removeObject:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)copy;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)removeObject:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)removeItem:(const void*)arg1;
+- (void)removeAllItems;
+- (unsigned int)count;
 - (id)description;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (BOOL)containsObject:(id)arg1;
-- (unsigned int)count;
 - (void)addObject:(id)arg1;
-- (unsigned int)weakCount;
-- (BOOL)intersectsHashTable:(id)arg1;
-- (BOOL)isEqualToHashTable:(id)arg1;
-- (BOOL)isSubsetOfHashTable:(id)arg1;
-- (void)intersectHashTable:(id)arg1;
-- (void)unionHashTable:(id)arg1;
-- (void)minusHashTable:(id)arg1;
-- (id)mutableSet;
-- (id)setRepresentation;
-- (id)initWithPointerFunctions:(id)arg1 capacity:(unsigned int)arg2;
-- (id)pointerFunctions;
-- (void)removeAllItems;
-- (void*)getItem:(const void*)arg1;
-- (void)insertKnownAbsentItem:(const void*)arg1;
-- (void)removeItem:(const void*)arg1;
-- (void)getKeys:(void**)arg1 count:(unsigned int*)arg2;
-- (id)initWithOptions:(unsigned int)arg1 capacity:(unsigned int)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (id)copy;
 - (void)_mapkit_removeObjects:(id)arg1;
 
 @end

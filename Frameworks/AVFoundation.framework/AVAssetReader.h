@@ -18,27 +18,26 @@
 + (void)initialize;
 + (id)assetReaderWithAsset:(id)arg1 error:(id*)arg2;
 
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)finalize;
-- (void)release;
-- (id)init;
-- (id)retain;
-- (void)dealloc;
-- (id)description;
-- (BOOL)startReading;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (BOOL)canAddOutput:(id)arg1;
-- (void)addOutput:(id)arg1;
-- (void)setTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
-- (id)initWithAsset:(id)arg1 error:(id*)arg2;
-- (void)_transitionToStatus:(int)arg1 failureError:(id)arg2;
-- (id)outputs;
-- (BOOL)_canAddOutput:(id)arg1 exceptionReason:(id*)arg2;
-- (void)cancelReading;
-- (void)_handleServerDiedNotification;
 - (struct OpaqueFigAssetReader { }*)_figAssetReader;
+- (void)_handleServerDiedNotification;
+- (id)initWithAsset:(id)arg1 error:(id*)arg2;
+- (void)_tearDownFigAssetReader;
+- (BOOL)_canAddOutput:(id)arg1 exceptionReason:(id*)arg2;
+- (void)_transitionToStatus:(int)arg1 failureError:(id)arg2;
 - (id)asset;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
-- (id)error;
+- (void)addOutput:(id)arg1;
+- (id)outputs;
+- (void)setTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
+- (BOOL)startReading;
+- (void)cancelReading;
 - (int)status;
+- (id)error;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

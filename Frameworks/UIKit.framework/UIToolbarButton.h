@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, UIView, UIColor, UIToolbarButtonBadge, UISelectionIndicatorView;
+@class _UIPressedIndicatorView, UILabel, UIView, UIColor, UIToolbarButtonBadge;
 
 @interface UIToolbarButton : UIControl  {
     struct CGRect { 
@@ -18,7 +18,7 @@
     UIView *_info;
     UILabel *_label;
     UIToolbarButtonBadge *_badge;
-    UISelectionIndicatorView *_selectedIndicator;
+    _UIPressedIndicatorView *_pressedIndicator;
     int _barStyle;
     int _style;
     struct UIEdgeInsets { 
@@ -31,7 +31,8 @@
     BOOL _barHeight;
     BOOL _badgeAnimated;
     BOOL _bezel;
-    float _width;
+    float _minimumWidth;
+    float _maximumWidth;
     float _labelHeight;
     struct UIEdgeInsets { 
         float top; 
@@ -39,66 +40,90 @@
         float bottom; 
         float right; 
     } _infoInsets;
-    UIColor *_tintColor;
+    UIColor *_toolbarTintColor;
     BOOL _isAnimatedTrashButton;
-    BOOL _imageIsBackground;
-    id _customToolbarAppearance;
+    id _appearanceStorage;
     BOOL _isInTopBar;
 }
 
 @property(getter=isAnimatedTrashButton) BOOL animatedTrashButton;
+@property(setter=_setTintColor:,retain) UIColor * _tintColor;
 
-+ (id)_defaultLabelFont;
 + (id)_defaultLabelColor;
-+ (id)_pushButtonWithBarStyle:(int)arg1 withStyle:(int)arg2 withTintColor:(id)arg3;
-+ (void)_adjustPushButton:(id)arg1 withBarStyle:(int)arg2 withStyle:(int)arg3 withTintColor:(id)arg4 isMinibar:(BOOL)arg5;
-+ (void)_initializeSafeCategory;
++ (id)_defaultLabelFont;
 
-- (id)_info;
-- (void)_setInfoWidth:(float)arg1;
-- (void)_showSelectedIndicator:(BOOL)arg1 changeSelection:(BOOL)arg2;
-- (void)setEnabled:(BOOL)arg1;
-- (void)_positionBadge;
-- (void)_setBadgeValue:(id)arg1;
-- (void)_setBadgeAnimated:(BOOL)arg1;
-- (void)_setBarHeight:(float)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)_setInTopBar:(BOOL)arg1;
-- (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 labelHeight:(float)arg4 withBarStyle:(int)arg5 withStyle:(int)arg6 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg7 possibleTitles:(id)arg8 withTintColor:(id)arg9 bezel:(BOOL)arg10 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg11 glowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg12;
-- (id)initWithImage:(id)arg1 selectedImage:(id)arg2 highlightImage:(id)arg3 label:(id)arg4 labelHeight:(float)arg5 withBarStyle:(int)arg6 withStyle:(int)arg7 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg8 possibleTitles:(id)arg9 withTintColor:(id)arg10 bezel:(BOOL)arg11 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg12 glowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg13 imageIsBackground:(BOOL)arg14;
-- (void)setSizesToFitImage:(BOOL)arg1;
-- (void)_sizeView:(id)arg1 toPossibleTitles:(id)arg2 selectedTitle:(id)arg3;
-- (void)_setButtonBarHitRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_buttonBarHitRect;
-- (void)setUseSelectedImage:(BOOL)arg1;
-- (void)_badgeAnimationDidStop:(id)arg1 finished:(id)arg2;
-- (void)_adjustPushButton:(BOOL)arg1;
-- (BOOL)_isBordered;
-- (float)_leftPadding;
-- (float)_rightPadding;
-- (void)_setOn:(BOOL)arg1;
-- (BOOL)_isOn;
-- (void)_animateImage:(float)arg1 withButtonBar:(id)arg2 target:(id)arg3 didFinishSelector:(SEL)arg4;
-- (void)_animateImage:(float)arg1 withButtonBar:(id)arg2;
-- (BOOL)_useBarHeight;
-- (void)_adjustPushButtonWithBarStyle:(int)arg1 withTintColor:(id)arg2 isMinibar:(BOOL)arg3;
-- (void)_setCustomToolbarAppearance:(id)arg1;
-- (BOOL)isAnimatedTrashButton;
-- (void)setAnimatedTrashButton:(BOOL)arg1;
-- (void)_setSelected:(BOOL)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setTintColor:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAnimatedTrashButton:(BOOL)arg1;
+- (BOOL)_useBarHeight;
+- (void)_setBarHeight:(float)arg1;
+- (void)_animateImage:(float)arg1 withButtonBar:(id)arg2;
+- (BOOL)_isOn;
+- (void)_setOn:(BOOL)arg1;
+- (BOOL)_canGetPadding;
+- (void)_setInfoExtremityWidth:(float)arg1 isMin:(BOOL)arg2;
+- (void)_setInfoWidth:(float)arg1;
+- (void)_setBadgeAnimated:(BOOL)arg1;
+- (void)_setBadgeValue:(id)arg1;
+- (void)setUseSelectedImage:(BOOL)arg1;
+- (void)_showPressedIndicator:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_buttonBarHitRect;
+- (void)_setButtonBarHitRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSizesToFitImage:(BOOL)arg1;
+- (id)initWithImage:(id)arg1 pressedImage:(id)arg2 label:(id)arg3 labelHeight:(float)arg4 withBarStyle:(int)arg5 withStyle:(int)arg6 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg7 possibleTitles:(id)arg8 withToolbarTintColor:(id)arg9 bezel:(BOOL)arg10 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg11 glowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg12;
+- (void)_setInTopBar:(BOOL)arg1;
+- (void)_updateInfoTextColorsForState:(unsigned int)arg1;
+- (void)_adjustToolbarButtonInfoTintColorHasChanged:(BOOL)arg1;
+- (BOOL)_useSilverLook;
+- (void)setToolbarTintColor:(id)arg1;
+- (void)_animateImage:(float)arg1 withButtonBar:(id)arg2 target:(id)arg3 didFinishSelector:(SEL)arg4;
+- (BOOL)isAnimatedTrashButton;
+- (void)_adjustToolbarButtonInfo;
+- (void)_badgeAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_positionBadge;
+- (void)_setPressed:(BOOL)arg1;
+- (BOOL)_isBordered;
+- (void)_adjustPushButtonForMiniBar:(BOOL)arg1 isChangingBarHeight:(BOOL)arg2;
+- (id)_newButton;
+- (void)_sizeView:(id)arg1 toPossibleTitles:(id)arg2 pressedTitle:(id)arg3;
+- (float)_paddingForLeft:(BOOL)arg1;
+- (id)_info;
+- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
+- (void)_UIAppearance_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
+- (void)_setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
+- (void)_UIAppearance_setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
+- (struct UIOffset { float x1; float x2; })_titlePositionAdjustmentForBarMetrics:(int)arg1;
+- (void)_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
+- (void)_UIAppearance_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
+- (id)_titleTextAttributesForState:(unsigned int)arg1;
+- (id)_backgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
+- (void)_setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
+- (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
+- (void)_setTintColor:(id)arg1;
+- (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
+- (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
+- (void)_UIAppearance_setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
+- (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (void)_UIAppearance_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
+- (void)setHighlighted:(BOOL)arg1;
+- (struct UIOffset { float x1; float x2; })_defaultTitleShadowOffsetForState:(unsigned int)arg1;
+- (id)_defaultTitleShadowColorForState:(unsigned int)arg1;
+- (id)_defaultTitleColorForState:(unsigned int)arg1;
+- (id)_tintColor;
+- (float)_backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
+- (void)_UIAppearance_setTintColor:(id)arg1;
+- (void)setTintColor:(id)arg1;
+- (void)setBarStyle:(int)arg1;
+- (void)_applyBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
+- (void)setEnabled:(BOOL)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (BOOL)_canHandleStatusBarMouseEvents:(struct __GSEvent { }*)arg1;
-- (void)dealloc;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)_canHandleStatusBarTouchAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)layoutSubviews;
 - (void)setImage:(id)arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (void)dealloc;
 
 @end

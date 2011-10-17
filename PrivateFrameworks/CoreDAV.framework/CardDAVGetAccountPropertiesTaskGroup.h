@@ -9,17 +9,17 @@
     NSSet *_directoryGatewayURLs;
 }
 
-@property(readonly) NSSet * directoryGatewayURLs;
 @property(readonly) NSSet * addressBookHomes;
+@property(readonly) NSSet * directoryGatewayURLs;
 
 
-- (void)dealloc;
-- (id)description;
-- (void)_setPropertiesFromParsedResponses:(id)arg1;
-- (id)_copyAccountPropertiesPropFindElements;
-- (id)homeSet;
-- (id)directoryGatewayURL;
 - (id)directoryGatewayURLs;
 - (id)addressBookHomes;
+- (id)directoryGatewayURL;
+- (id)homeSet;
+- (void)_setPropertiesFromParsedResponses:(id)arg1;
+- (id)_copyAccountPropertiesPropFindElements;
+- (id)description;
+- (void)dealloc;
 
 @end

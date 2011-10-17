@@ -18,10 +18,10 @@
 @property(retain) RTFNSColor * shadowColor;
 
 
-- (id)shadowColor;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })shadowOffset;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShadowColor:(id)arg1;
+- (id)shadowColor;
 - (void)setShadowBlurRadius:(float)arg1;
 - (float)shadowBlurRadius;
 

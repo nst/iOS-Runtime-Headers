@@ -18,26 +18,26 @@
 @property(retain) NSString * selectedLabel;
 
 
-- (void)loadView;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (BOOL)_allowsAutorotation;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
 - (id)initWithAddressBook:(void*)arg1 propertyGroup:(id)arg2 itemIndex:(int)arg3 additionalLabels:(id)arg4;
 - (float)ab_heightToFitForViewInPopoverView;
-- (BOOL)didCreateNewLabel;
 - (struct CGSize { float x1; float x2; })fullScreenContentSize;
 - (id)labelPicker;
+- (BOOL)didCreateNewLabel;
+- (id)selectedLabel;
+- (void)setSelectedLabel:(id)arg1;
 - (void)itemLabelPicker:(id)arg1 endedWithSelectionConfirmed:(BOOL)arg2 animate:(BOOL)arg3;
-- (BOOL)itemLabelPickerShouldDismissKeyboard:(id)arg1;
 - (void)setDidCreateNewLabel:(BOOL)arg1;
-- (void)setStyleProvider:(id)arg1;
+- (BOOL)itemLabelPickerShouldDismissKeyboard:(id)arg1;
 - (void)itemLabelPickerDidChangeSelection:(id)arg1;
 - (void)itemLabelPicker:(id)arg1 deletedCustomLabel:(id)arg2;
 - (void)itemLabelPickerDeletedLastCustomLabel:(id)arg1;
-- (void)setSelectedLabel:(id)arg1;
-- (id)selectedLabel;
+- (void)setStyleProvider:(id)arg1;
 
 @end

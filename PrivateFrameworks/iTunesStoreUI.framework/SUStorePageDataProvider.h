@@ -9,15 +9,16 @@
     ISPropertyListProvider *_propertyListDataProvider;
 }
 
-@property(copy) ISPropertyListProvider * propertyListDataProvider;
 @property int outputType;
+@property(copy) ISPropertyListProvider * propertyListDataProvider;
 
 
-- (int)outputType;
 - (void)setOutputType:(int)arg1;
+- (int)outputType;
 - (void)dealloc;
+- (void)setPropertyListDataProvider:(id)arg1;
+- (void)_loadPersonalizedStoreOffersForPage:(id)arg1;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 - (id)propertyListDataProvider;
-- (void)setPropertyListDataProvider:(id)arg1;
 
 @end

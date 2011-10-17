@@ -9,17 +9,17 @@
 + (id)notificationWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (id)initWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (id)object;
 - (Class)classForCoder;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)userInfo;
-- (void)encodeWithCoder:(id)arg1;
 - (id)name;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)userInfo;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (id)description;
-- (id)initWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 
 @end

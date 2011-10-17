@@ -14,10 +14,10 @@
 
 
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 url:(id)arg2;
-- (int)compare:(id)arg1;
 - (id)url;
+- (int)compare:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (void)dealloc;
 - (id)description;
+- (void)dealloc;
 
 @end

@@ -19,28 +19,28 @@
 }
 
 
-- (void)dealloc;
-- (void)setPresentationStyleIndex:(int)arg1;
-- (void)setCustomVerticalFlip:(BOOL)arg1;
-- (void)setCustomScaleY:(double)arg1;
-- (void)setCustomOffsetY:(double)arg1;
-- (void)setCustomOffsetX:(double)arg1;
-- (id)presentationAssociatedId;
 - (id)layoutTypeId;
 - (void)setLayoutTypeId:(id)arg1;
-- (void)setPresentationStyleLabel:(id)arg1;
-- (int)presentationStyleCount;
-- (void)setPresentationStyleCount:(int)arg1;
-- (void)setPresentationAssociatedId:(id)arg1;
-- (BOOL)customVerticalFlip;
-- (void)setCustomScaleX:(double)arg1;
-- (id)presentationStyleLabel;
-- (int)presentationStyleIndex;
-- (double)customScaleX;
-- (double)customScaleY;
-- (double)customOffsetX;
-- (double)customOffsetY;
 - (id)presentationName;
 - (void)setPresentationName:(id)arg1;
+- (id)presentationStyleLabel;
+- (void)setPresentationStyleLabel:(id)arg1;
+- (int)presentationStyleIndex;
+- (void)setPresentationStyleIndex:(int)arg1;
+- (int)presentationStyleCount;
+- (void)setPresentationStyleCount:(int)arg1;
+- (id)presentationAssociatedId;
+- (void)setPresentationAssociatedId:(id)arg1;
+- (BOOL)customVerticalFlip;
+- (void)setCustomVerticalFlip:(BOOL)arg1;
+- (double)customScaleX;
+- (void)setCustomScaleX:(double)arg1;
+- (double)customScaleY;
+- (void)setCustomScaleY:(double)arg1;
+- (double)customOffsetX;
+- (void)setCustomOffsetX:(double)arg1;
+- (double)customOffsetY;
+- (void)setCustomOffsetY:(double)arg1;
+- (void)dealloc;
 
 @end

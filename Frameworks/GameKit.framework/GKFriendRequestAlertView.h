@@ -10,15 +10,15 @@
     UILabel *_aliasLabel;
 }
 
-@property(retain) NSString * request;
 @property(readonly) GKPlayer * player;
+@property(retain) NSString * request;
 
 
 - (id)initWithPlayer:(id)arg1;
 - (void)setRequest:(id)arg1;
-- (id)player;
 - (id)request;
 - (void)layout;
+- (id)player;
 - (void)dealloc;
 
 @end

@@ -11,21 +11,21 @@
 }
 
 @property(copy) NSString * text;
-@property(retain,readonly) UITextView * textView;
+@property(readonly) UITextView * textView;
 @property(retain) NSString * placeholder;
 
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)textView;
-- (void)textChanged:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
-- (id)placeholder;
 - (id)_placeholderLabel;
-- (void)setText:(id)arg1;
-- (void)layoutSubviews;
+- (void)textChanged:(id)arg1;
+- (id)placeholder;
 - (BOOL)becomeFirstResponder;
 - (id)text;
-- (void)dealloc;
+- (void)setText:(id)arg1;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 - (void)_updatePlaceholder;
+- (void)dealloc;
 
 @end

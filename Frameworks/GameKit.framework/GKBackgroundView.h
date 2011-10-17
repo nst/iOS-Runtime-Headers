@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class UIImageView, UIActivityIndicatorView, UILabel, GKUITheme, NSString;
+@class GKButton, UIActivityIndicatorView, UIImageView, UILabel, UIImage, GKUITheme, NSString;
 
-@interface GKBackgroundView : UIView  {
+@interface GKBackgroundView : UIView <GKTableViewCellContents> {
     GKUITheme *_theme;
     BOOL _loading;
     struct UIEdgeInsets { 
@@ -23,85 +23,104 @@
         float bottom; 
         float right; 
     } _backgroundInsets;
-    int _shadowStyle;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _loadingHandler;
 
+    float _infoTextWidth;
+    int _infoTextExpectedNumberOfLines;
+    BOOL _actionExpected;
     UILabel *_statusLabel;
+    UILabel *_infoLabel;
+    GKButton *_actionButton;
+    UIImageView *_imageView;
     UIActivityIndicatorView *_loadingSpinner;
     BOOL _shouldHideLabelAfterLoading;
-    UIImageView *_upperShadowView;
-    UIImageView *_lowerShadowView;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _shadowInsets;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
     } _statusInsets;
+    float currentInfoTextWidth;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } contentBounds;
-@property(retain) NSString * status;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } statusInsets;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } shadowInsets;
-@property(retain) UIImageView * lowerShadowView;
-@property(retain) UIImageView * upperShadowView;
-@property BOOL shouldHideLabelAfterLoading;
-@property(retain) UIActivityIndicatorView * loadingSpinner;
-@property(retain) UILabel * statusLabel;
-@property(copy) id loadingHandler;
-@property int shadowStyle;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } backgroundInsets;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInsets;
 @property BOOL loading;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } backgroundInsets;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentBounds;
+@property(retain) UIImage * image;
+@property(retain) NSString * status;
+@property(retain) NSString * info;
+@property(retain) NSString * actionTitle;
 @property(retain) GKUITheme * theme;
+@property float infoTextWidth;
+@property int infoTextExpectedNumberOfLines;
+@property BOOL actionExpected;
+@property(retain) UILabel * statusLabel;
+@property(retain) GKButton * actionButton;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } statusInsets;
+@property(copy) id loadingHandler;
+@property(retain) UIActivityIndicatorView * loadingSpinner;
+@property(retain) UILabel * infoLabel;
+@property BOOL shouldHideLabelAfterLoading;
+@property(retain) UIImageView * imageView;
+@property float currentInfoTextWidth;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } confirmationButtonRect;
 
-+ (void)_initializeSafeCategory;
++ (float)defaultRowHeight;
 
-- (BOOL)shouldHideLabelAfterLoading;
-- (id)lowerShadowView;
-- (void)updateLoading;
-- (void)setLoadingWithNoDelay;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })statusInsets;
+- (void)setCurrentInfoTextWidth:(float)arg1;
+- (float)currentInfoTextWidth;
 - (void)setStatusInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })shadowInsets;
-- (void)setLowerShadowView:(id)arg1;
-- (id)upperShadowView;
-- (void)setUpperShadowView:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })statusInsets;
 - (void)setShouldHideLabelAfterLoading:(BOOL)arg1;
-- (id)loadingSpinner;
+- (BOOL)shouldHideLabelAfterLoading;
 - (void)setLoadingSpinner:(id)arg1;
+- (id)loadingSpinner;
+- (void)setActionButton:(id)arg1;
+- (void)setInfoLabel:(id)arg1;
 - (void)setStatusLabel:(id)arg1;
+- (void)setActionExpected:(BOOL)arg1;
 - (id)loadingHandler;
+- (BOOL)actionExpected;
+- (id)actionTitle;
+- (int)infoTextExpectedNumberOfLines;
+- (float)infoTextWidth;
+- (void)updateLoading;
+- (void)clearAllButStatus;
+- (BOOL)loading;
+- (void)setActionTitle:(id)arg1;
+- (id)actionButton;
+- (id)infoLabel;
+- (void)setInfoTextExpectedNumberOfLines:(int)arg1;
+- (void)setInfoTextWidth:(float)arg1;
 - (id)statusLabel;
-- (void)setShadowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (int)shadowStyle;
-- (void)updateShadowViews;
-- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setShadowStyle:(int)arg1;
 - (void)setLoadingHandler:(id)arg1;
+- (void)clearStatus;
+- (void)setLoadingWithNoDelay;
+- (void)setInfoWithError:(id)arg1;
+- (float)preferredHeightForOrientation:(int)arg1;
+- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
-- (void)setStatus:(id)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
-- (void)layoutSubviews;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)theme;
 - (void)setTheme:(id)arg1;
-- (id)status;
-- (BOOL)loading;
 - (void)setLoading:(BOOL)arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
+- (void)setStatus:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setImageView:(id)arg1;
+- (id)info;
+- (void)setInfo:(id)arg1;
+- (id)imageView;
+- (void)prepareForReuse;
+- (id)image;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
+- (void)layoutSubviews;
+- (void)setImage:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)status;
+- (void)dealloc;
 
 @end

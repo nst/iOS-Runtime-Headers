@@ -16,24 +16,24 @@
 @property(copy) NSString * studioName;
 
 
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)_setValue:(id)arg1 forKey:(id)arg2;
-- (id)initWithMoviePropertiesDictionary:(id)arg1;
-- (id)castMembers;
-- (id)copyrightWarning;
-- (void)setCastMembers:(id)arg1;
-- (void)setCopyrightWarning:(id)arg1;
-- (void)setDirectors:(id)arg1;
-- (void)setProducers:(id)arg1;
-- (void)setScreenwriters:(id)arg1;
-- (void)setStudioName:(id)arg1;
 - (id)studioName;
-- (id)copyMoviePropertiesDictionary;
-- (void)_setValueCopy:(id)arg1 forKey:(id)arg2;
-- (id)directors;
-- (id)producers;
+- (void)setStudioName:(id)arg1;
+- (void)setScreenwriters:(id)arg1;
+- (void)setProducers:(id)arg1;
+- (void)setDirectors:(id)arg1;
+- (void)setCopyrightWarning:(id)arg1;
+- (void)setCastMembers:(id)arg1;
 - (id)screenwriters;
+- (id)producers;
+- (id)directors;
+- (id)copyrightWarning;
+- (id)castMembers;
+- (void)_setValue:(id)arg1 forKey:(id)arg2;
+- (void)_setValueCopy:(id)arg1 forKey:(id)arg2;
+- (id)copyMoviePropertiesDictionary;
+- (id)initWithMoviePropertiesDictionary:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

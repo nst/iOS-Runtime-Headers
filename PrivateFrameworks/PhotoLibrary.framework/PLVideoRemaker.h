@@ -18,32 +18,31 @@
     id _delegate;
 }
 
-+ (int)getSDRemakerModeForMode:(int)arg1;
-+ (long long)approximateByteSizeForMode:(int)arg1 duration:(double)arg2;
 + (int)getHDRemakerModeForMode:(int)arg1;
++ (long long)approximateByteSizeForMode:(int)arg1 duration:(double)arg2;
++ (int)getSDRemakerModeForMode:(int)arg1;
 + (double)maximumDurationForTrimMode:(int)arg1;
-+ (void)_initializeSafeCategory;
 
-- (id)initWithURL:(id)arg1;
 - (double)duration;
-- (int)mode;
-- (void)cancel;
-- (void)setMode:(int)arg1;
-- (void)dealloc;
 - (void)setDuration:(double)arg1;
 - (void)setDelegate:(id)arg1;
+- (id)progressView;
+- (id)initWithURL:(id)arg1;
+- (int)mode;
+- (void)setMode:(int)arg1;
 - (id)delegate;
-- (double)trimStartTime;
-- (double)trimEndTime;
-- (void)setTrimEndTime:(double)arg1;
-- (void)_resetProgressTimer;
-- (void)_removeProgressTimer;
-- (void)remake;
-- (void)_didEndRemakingWithTemporaryPath:(id)arg1;
 - (void)_updateProgress;
+- (double)trimEndTime;
+- (double)trimStartTime;
+- (void)_didEndRemakingWithTemporaryPath:(id)arg1;
+- (void)_removeProgressTimer;
+- (void)_resetProgressTimer;
 - (id)messageForRemakingProgress;
 - (void)_remakerDidFinish:(id)arg1;
+- (void)setTrimEndTime:(double)arg1;
 - (void)setTrimStartTime:(double)arg1;
-- (id)progressView;
+- (void)remake;
+- (void)cancel;
+- (void)dealloc;
 
 @end

@@ -43,27 +43,27 @@
 
 + (id)request;
 
+- (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImageDataFormatType:(unsigned long)arg1;
+- (void)setStillImageMirrored:(BOOL)arg1;
+- (void)setStillImageOrientation:(int)arg1;
+- (void)setSbufCompletionBlock:(id)arg1;
+- (void)setIosurfaceCompletionBlock:(id)arg1;
+- (void)setIsHDRImage:(BOOL)arg1;
+- (void)setIsEV0Image:(BOOL)arg1;
+- (void)setChromaNoiseReductionEnabled:(BOOL)arg1;
+- (void)setSuspendsVideoProcessing:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })previewImageSize;
+- (unsigned long)imageDataFormatType;
+- (BOOL)isStillImageMirrored;
+- (int)stillImageOrientation;
+- (id)sbufCompletionBlock;
+- (id)iosurfaceCompletionBlock;
+- (BOOL)isHDRImage;
+- (BOOL)isEV0Image;
+- (BOOL)chromaNoiseReductionEnabled;
+- (BOOL)suspendsVideoProcessing;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (unsigned long)imageDataFormatType;
-- (id)iosurfaceCompletionBlock;
-- (BOOL)isEV0Image;
-- (BOOL)suspendsVideoProcessing;
-- (void)setSuspendsVideoProcessing:(BOOL)arg1;
-- (void)setIsEV0Image:(BOOL)arg1;
-- (BOOL)isHDRImage;
-- (void)setIsHDRImage:(BOOL)arg1;
-- (void)setIosurfaceCompletionBlock:(id)arg1;
-- (id)sbufCompletionBlock;
-- (void)setSbufCompletionBlock:(id)arg1;
-- (int)stillImageOrientation;
-- (void)setStillImageOrientation:(int)arg1;
-- (BOOL)isStillImageMirrored;
-- (void)setStillImageMirrored:(BOOL)arg1;
-- (void)setImageDataFormatType:(unsigned long)arg1;
-- (BOOL)chromaNoiseReductionEnabled;
-- (struct CGSize { float x1; float x2; })previewImageSize;
-- (void)setChromaNoiseReductionEnabled:(BOOL)arg1;
 
 @end

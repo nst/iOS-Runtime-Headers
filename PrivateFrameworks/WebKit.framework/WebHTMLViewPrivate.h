@@ -6,11 +6,11 @@
 
 @interface WebHTMLViewPrivate : NSObject  {
     BOOL closed;
-    BOOL needsToApplyStyles;
     BOOL ignoringMouseDraggedEvents;
     BOOL printing;
-    BOOL avoidingPrintOrphan;
+    BOOL paginateScreenContent;
     WAKView *layerHostingView;
+    BOOL drawingIntoLayer;
     WebEvent *mouseDownEvent;
     BOOL handlingMouseDownEvent;
     WebEvent *keyDownEvent;
@@ -29,16 +29,15 @@
     NSArray *pageRects;
     NSMutableDictionary *highlighters;
     BOOL transparentBackground;
-    struct WebHTMLViewInterpretKeyEventsParameters { struct KeyboardEvent {} *x1; BOOL x2; BOOL x3; BOOL x4; } *interpretKeyEventsParameters;
-    BOOL receivedNOOP;
+    struct WebHTMLViewInterpretKeyEventsParameters { struct KeyboardEvent {} *x1; boolx2; boolx3; boolx4; boolx5; } *interpretKeyEventsParameters;
     WebDataSource *dataSource;
     SEL selectorForDoCommandBySelector;
 }
 
 + (void)initialize;
 
-- (void)clear;
 - (void)finalize;
+- (void)clear;
 - (void)dealloc;
 
 @end

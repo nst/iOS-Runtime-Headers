@@ -9,22 +9,23 @@
 }
 
 @property(readonly) NSArray * tracks;
+@property(readonly) struct CGSize { float width; float height; } naturalSize;
 
 + (void)initialize;
 
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)finalize;
-- (id)init;
-- (void)dealloc;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (long)_createEmptyMutableCompositionIfNeeded;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
-- (id)_mutableTracks;
-- (void)_setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_initWithComposition:(id)arg1;
 - (id)_newTrackForIndex:(long)arg1;
+- (id)_mutableTracks;
+- (long)_createEmptyMutableCompositionIfNeeded;
+- (void)_setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_assetInspector;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (id)tracks;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
-- (id)_assetInspector;
+- (id)init;
+- (void)dealloc;
 
 @end

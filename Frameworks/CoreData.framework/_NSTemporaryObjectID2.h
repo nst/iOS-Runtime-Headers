@@ -12,13 +12,13 @@
 + (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
 
 - (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)_setPersistentStore:(id)arg1;
-- (id)_referenceData;
-- (id)_storeIdentifier;
 - (BOOL)_isPersistentStoreAlive;
+- (void)_setPersistentStore:(id)arg1;
+- (id)_storeIdentifier;
+- (id)_referenceData;
 - (id)persistentStore;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

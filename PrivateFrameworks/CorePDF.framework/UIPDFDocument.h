@@ -2,40 +2,41 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIPDFPage;
+@class UIPDFPageImageCache, NSString, UIPDFPage;
 
 @interface UIPDFDocument : NSObject  {
     struct CGPDFDocument { } *_cgDocument;
     UIPDFPage **_pageArray;
     unsigned int _numberOfPages;
     float _cachedWidth;
+    NSString *_documentName;
+    UIPDFPageImageCache *_pageImageCache;
+    unsigned int _imageCacheCount;
+    unsigned int _imageCacheLookAhead;
+    int _lock;
+    int _imageCacheLock;
 }
 
-@property(readonly) struct CGPDFDocument { }* cgPDFDocument;
+@property(retain) UIPDFPageImageCache * pageImageCache;
 @property(readonly) unsigned int numberOfPages;
 
 + (id)documentNamed:(id)arg1;
 
+- (float)sumWidth;
+- (float)sumHeight;
+- (id)pageImageCache;
+- (void)setPageImageCache:(id)arg1;
+- (struct CGPDFDocument { }*)copyCGPDFDocument;
+- (void)_clearCachedState;
+- (void)setCGPDFDocument:(struct CGPDFDocument { }*)arg1;
+- (void)setImageCacheCount:(unsigned int)arg1 lookAhead:(unsigned int)arg2;
+- (float)maxHeight;
+- (float)maxWidth;
+- (void)purgePagesBefore:(unsigned int)arg1;
+- (id)initWithCGPDFDocument:(struct CGPDFDocument { }*)arg1;
+- (id)pageAtIndex:(unsigned int)arg1;
 - (id)initWithURL:(id)arg1;
 - (unsigned int)numberOfPages;
 - (void)dealloc;
-- (void)_clearCachedState;
-- (void)purgePagesBefore:(unsigned int)arg1;
-- (void)_setDocument:(struct CGPDFDocument { }*)arg1;
-- (id)initWithCGPDFDocument:(struct CGPDFDocument { }*)arg1;
-- (id)pageAtIndex:(unsigned int)arg1;
-- (id)findStringForward:(id)arg1 onPage:(id)arg2 fromSelection:(id)arg3 compareFlags:(unsigned long)arg4;
-- (id)findStringBackward:(id)arg1 onPage:(id)arg2 fromSelection:(id)arg3 compareFlags:(unsigned long)arg4;
-- (id)findString:(id)arg1 fromSelection:(id)arg2 options:(unsigned int)arg3;
-- (id)findString:(id)arg1 onPage:(id)arg2 fromSelection:(id)arg3 options:(unsigned int)arg4;
-- (struct CGPDFDocument { }*)cgPDFDocument;
-- (unsigned long)cfCompareFlagsFromNSOptions:(unsigned int)arg1;
-- (float)sumWidth;
-- (float)sumHeight;
-- (unsigned int)indexForPage:(id)arg1;
-- (id)previousPage:(id)arg1;
-- (id)followingPage:(id)arg1;
-- (float)maxHeight;
-- (float)maxWidth;
 
 @end

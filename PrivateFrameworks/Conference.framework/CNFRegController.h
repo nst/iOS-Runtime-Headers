@@ -6,11 +6,12 @@
    See Warning(s) below.
  */
 
-@class IMServiceImpl, NSArray, NSTimer, NSMutableArray, IMAccount;
+@class FTCConnectionHandler, NSSet, IMServiceImpl, NSTimer, NSDictionary, NSString, NSMutableDictionary, NSArray;
 
 @interface CNFRegController : NSObject  {
-    IMAccount *_account;
-    NSMutableArray *_aliases;
+    NSArray *_services;
+    NSArray *_accounts;
+    NSMutableDictionary *_accountFilterCache;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -64,34 +65,66 @@
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
+    id _accountActivationChangedBlock;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _resetBlock;
 
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
+    id _serviceDidBecomeUnsupportedBlock;
+
+    int _serviceType;
+    int _ftcServiceType;
+    FTCConnectionHandler *_connectionHandler;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _alertHandler;
 
-    NSTimer *_idlePulseTimer;
     NSTimer *_wifiAlertWatchTimer;
     int _requiredWifiCount;
     unsigned char _originalWifiFlag;
     unsigned char _originalCellFlag;
     BOOL _originalUsesBackgroundNetwork;
+    NSDictionary *_cachedCallerIDMap;
+    NSString *_logName;
+    unsigned int _logIndent;
     struct { 
         unsigned int listeningForAccountChanges : 1; 
+        unsigned int listeningForCallerIDChanges : 1; 
         unsigned int listeningForAccountActivation : 1; 
         unsigned int preventingIdleSleep : 1; 
+        unsigned int expectingWiFiPicker : 1; 
         unsigned int showedWifiFirstRunAlert : 1; 
+        unsigned int ignoringAccountChanges : 1; 
+        unsigned int activatingAccounts : 1; 
     } _controllerFlags;
 }
 
+@property(copy,readonly) NSArray * emailAccounts;
+@property(copy,readonly) NSArray * phoneAccounts;
+@property(copy,readonly) NSArray * failedAccounts;
+@property(copy,readonly) NSArray * accounts;
 @property(retain,readonly) NSArray * aliases;
-@property(getter=isFaceTimeEnabled) BOOL faceTimeEnabled;
-@property(retain,readonly) IMServiceImpl * service;
+@property(retain,readonly) NSArray * emailAliases;
+@property(getter=isServiceEnabled) BOOL serviceEnabled;
+@property(getter=isServiceSupported,readonly) BOOL serviceSupported;
+@property(retain,readonly) NSSet * serviceNames;
+@property(retain,readonly) IMServiceImpl * firstService;
+@property(copy,readonly) NSDictionary * cachedCallerIDMap;
+@property(copy) id accountActivationChangedBlock;
+@property int ftcServiceType;
+@property int serviceType;
+@property(copy) NSArray * services;
 @property(copy) id accountAuthorizationChangedBlock;
 @property(copy) id profileStatusChangedBlock;
 @property(copy) id profileChangedBlock;
 @property(copy) id alertHandler;
+@property(copy) id serviceDidBecomeUnsupportedBlock;
 @property(copy) id resetBlock;
 @property(copy) id aliasRemovedBlock;
 @property(copy) id aliasAddedBlock;
@@ -100,109 +133,168 @@
 @property(copy) id accountRemovedBlock;
 @property(copy) id accountAddedBlock;
 @property(copy) id accountRegistrationBlock;
-@property(retain) IMAccount * account;
-@property(retain,readonly) NSMutableArray * mutableAliases;
 
-+ (BOOL)deviceSupportsRegistrationInterface;
-+ (id)sharedInstance;
++ (id)controllerForServiceType:(int)arg1;
 
+- (id)accounts;
+- (id)activeAccounts;
+- (void)setServiceType:(int)arg1;
+- (int)serviceType;
 - (void)clearAllCaches;
-- (BOOL)deviceCanTakeNetworkAction;
-- (void)showWiFiAlert;
-- (id)profileBasePhoneNumber;
-- (void)setProfileStatusChangedBlock:(id)arg1;
-- (unsigned int)accountState;
-- (void)resetWifiFirstRunAlert;
-- (id)mutableAliases;
-- (id)accountRegistrationBlock;
-- (id)accountAddedBlock;
-- (id)accountRemovedBlock;
-- (id)displayNameChangedBlock;
-- (id)aliasStatusChangedBlock;
-- (id)aliasAddedBlock;
-- (id)aliasRemovedBlock;
-- (id)resetBlock;
+- (void)connect;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)openURL:(id)arg1;
+- (id)services;
+- (id)accountsWithFilter:(int)arg1;
+- (id)displayAccount;
+- (void)setAlertHandler:(id)arg1;
 - (id)alertHandler;
-- (id)profileChangedBlock;
-- (id)profileStatusChangedBlock;
-- (id)guessedAccountName;
-- (BOOL)signOutAccount:(id)arg1;
-- (BOOL)signOutCurrentAccount;
-- (void)reloadAliases;
-- (id)_rawAccountLogin;
-- (id)accountLogin;
-- (id)useableAliases;
-- (BOOL)validateAlias:(id)arg1;
-- (BOOL)hasAlias:(id)arg1;
-- (int)profileValidationStatus;
-- (id)profileRegionID;
-- (BOOL)hasValidatedLocale;
-- (BOOL)hasFailedLogin;
-- (BOOL)hasFailedLoginDueToBadLogin;
-- (id)authorizationID;
-- (void)startListeningForAccountChanges;
+- (BOOL)isConnected;
+- (id)init;
+- (void)dealloc;
+- (id)failedAccounts;
+- (id)_predicatesWithFilter:(int)arg1;
+- (id)_accountsPassingTests:(id)arg1 message:(id)arg2;
+- (id)accountsWithFilter:(int)arg1 message:(id)arg2;
+- (id)__filter_emailAccountPredicate;
+- (id)__filter_phoneAccountPredicate;
+- (id)__filter_activeAccountsPredicate;
+- (id)__filter_inactiveAccountsPredicate;
+- (id)__filter_failedAccountsPredicate;
+- (id)__filter_registeredAccountPredicate;
+- (id)__filter_validatedAliasPredicate;
+- (id)__filter_validatedProfilePredicate;
+- (BOOL)deviceHasNetworkEnabled;
+- (BOOL)deviceHasSaneNetworkConnection;
+- (void)_showNetworkAlertWithMessage:(id)arg1;
+- (void)showNetworkAlertIfNecessary;
+- (void)_startWiFiAlertWatchTimer;
+- (void)showNetworkFirstRunAlert;
+- (void)_wifiAlertWatchTimerFired:(id)arg1;
+- (BOOL)_isValidCallerIDAlias:(id)arg1 forAccount:(id)arg2;
+- (id)_guessedDisplayAliasFromAccounts:(id)arg1;
+- (id)serviceNames;
+- (void)_rebuildAccountCache;
+- (id)firstAccount;
+- (void)nukeAllAccounts;
+- (BOOL)hasAliasNamed:(id)arg1;
+- (id)aliasSummaryString:(BOOL*)arg1;
+- (id)profileRegionIDForAccount:(id)arg1;
+- (id)profileBasePhoneNumberForAccount:(id)arg1;
+- (id)authorizationIDForAccount:(id)arg1;
+- (id)authorizationTokenForAccount:(id)arg1;
+- (BOOL)refreshAuthorizationCredentialsForAccount:(id)arg1;
+- (id)_logSpace;
+- (void)_incrementLogIndent;
+- (void)_decrementLogIndent;
+- (id)cachedCallerIDMap;
+- (void)_handleCallerIDChanged;
+- (id)initWithServiceType:(int)arg1;
+- (void)setFtcServiceType:(int)arg1;
+- (id)_logName;
+- (void)setServices:(id)arg1;
+- (void)_startListeningForCallerIDChanges;
+- (void)_stopWiFiAlertWatchTimer;
 - (void)stopListeningForAccountChanges;
+- (void)_stopListeningForCallerIDChanges;
+- (id)firstService;
+- (id)loginForAccount:(id)arg1;
+- (id)_createAccountWithLogin:(id)arg1;
+- (void)activateAccountsExcludingAccounts:(id)arg1;
+- (void)_clearAccountCache;
+- (void)_clearFilterCache;
+- (BOOL)hasAlias:(id)arg1;
+- (id)_accountForAlias:(id)arg1 accounts:(id)arg2;
+- (id)_aliasesForAccount:(id)arg1;
+- (id)_aliasesPassingTest:(id)arg1;
+- (id)accountForAlias:(id)arg1;
+- (id)addAlias:(id)arg1 toAccount:(id)arg2;
+- (BOOL)_accountIsAuthenticated:(id)arg1;
+- (BOOL)_accountHasValidatedLocale:(id)arg1;
+- (BOOL)_accountIsRegistered:(id)arg1;
 - (void)accountAdded:(id)arg1;
 - (void)accountRemoved:(id)arg1;
 - (void)accountRegistrationChanged:(id)arg1;
 - (void)accountDisplayNameChanged:(id)arg1;
+- (void)daemonConnected:(id)arg1;
+- (void)daemonDisconnected:(id)arg1;
+- (void)aliasesChanged:(id)arg1;
+- (void)aliasStatusChanged:(id)arg1;
 - (void)profileChanged:(id)arg1;
 - (void)profileValidationStateChanged:(id)arg1;
 - (void)authorizationCredentialsChanged:(id)arg1;
-- (void)handleAliasStatusChanged:(id)arg1 withError:(id)arg2;
-- (void)aliasStatusChanged:(id)arg1;
+- (void)accountActivationStateChanged:(id)arg1;
+- (void)deviceCapabilityChanged:(id)arg1;
+- (BOOL)shouldHandleAccountNotification:(id)arg1;
+- (id)accountAddedBlock;
+- (id)accountRemovedBlock;
+- (id)accountRegistrationBlock;
+- (id)displayNameChangedBlock;
+- (id)profileChangedBlock;
+- (int)profileValidationStatusForAccount:(id)arg1;
+- (id)profileStatusChangedBlock;
+- (id)accountAuthorizationChangedBlock;
+- (id)accountActivationChangedBlock;
+- (id)aliasStatusChangedBlock;
+- (id)aliasAddedBlock;
 - (void)handleAliasAdded:(id)arg1;
 - (void)handleAliasRemoved:(id)arg1;
-- (void)aliasesChanged:(id)arg1;
-- (void)setFaceTimeEnabled:(BOOL)arg1;
-- (BOOL)isFaceTimeEnabled;
-- (void)daemonDisconnected:(id)arg1;
-- (void)daemonConnected:(id)arg1;
-- (BOOL)isConnecting;
-- (void)startRequiringWifi;
-- (void)stopRequiringWifi;
-- (void)_wifiAlertWatchTimerFired:(id)arg1;
-- (void)_startWiFiAlertWatchTimer;
-- (void)_stopWiFiAlertWatchTimer;
-- (void)_pulseIdleTimer:(id)arg1;
-- (void)startPreventingSleepAndDimming;
-- (void)stopPreventingSleepAndDimming;
-- (BOOL)deviceHasSaneNetworkConnection;
-- (BOOL)deviceHasWifiTurnedOn;
-- (void)showWiFiFirstRunAlert;
-- (void)showWiFiAlertIfNecessary;
-- (id)accountAuthorizationChangedBlock;
+- (void)setAccountAddedBlock:(id)arg1;
 - (void)setProfileChangedBlock:(id)arg1;
-- (void)setResetBlock:(id)arg1;
-- (void)setAliasRemovedBlock:(id)arg1;
-- (void)setAliasAddedBlock:(id)arg1;
+- (void)setAccountAuthorizationChangedBlock:(id)arg1;
+- (void)deactivateAccounts;
+- (id)resetBlock;
+- (void)startListeningForAccountChanges;
+- (id)serviceDidBecomeUnsupportedBlock;
+- (void)_nukeCallerIDCache;
+- (void)_handleCallerIDChangedForResume:(id)arg1;
+- (id)guessedDisplayAlias;
+- (void)_postCallerIDChanged;
+- (id)useableAliases;
+- (id)phoneAccounts;
+- (void)nukeAccount:(id)arg1;
+- (id)aliasesForAccounts:(id)arg1;
+- (id)emailAliases;
+- (id)displayAlias;
+- (BOOL)setDisplayAlias:(id)arg1;
+- (void)setAccountActivationChangedBlock:(id)arg1;
 - (void)setDisplayNameChangedBlock:(id)arg1;
 - (void)setAccountRemovedBlock:(id)arg1;
-- (void)setAccountAddedBlock:(id)arg1;
+- (void)setAliasRemovedBlock:(id)arg1;
+- (void)setAliasAddedBlock:(id)arg1;
+- (id)aliasRemovedBlock;
+- (void)activateAccounts;
+- (void)setServiceEnabled:(BOOL)arg1;
+- (BOOL)deviceCanTakeNetworkAction;
+- (void)showNetworkAlert;
+- (void)setProfileStatusChangedBlock:(id)arg1;
 - (void)removeAllHandlers;
-- (BOOL)refreshAuthorizationCredentials;
-- (id)authorizationToken;
-- (void)setAccountAuthorizationChangedBlock:(id)arg1;
-- (BOOL)createAccountWithLogin:(id)arg1 password:(id)arg2;
-- (BOOL)hasRegisteredAccount;
-- (BOOL)hasValidatedAlias;
-- (void)setAccountRegistrationBlock:(id)arg1;
-- (void)setAlertHandler:(id)arg1;
+- (void)setResetBlock:(id)arg1;
+- (void)setServiceDidBecomeUnsupportedBlock:(id)arg1;
+- (unsigned int)accountState:(id)arg1;
+- (BOOL)hasFailedLogin;
+- (BOOL)isServiceSupported;
+- (id)emailAccounts;
+- (BOOL)isServiceEnabled;
+- (void)resetNetworkFirstRunAlert;
+- (int)ftcServiceType;
+- (BOOL)hasFailedLoginDueToBadLogin;
+- (id)guessedAccountName;
+- (id)accountWithLogin:(id)arg1;
+- (BOOL)ensureSingleAppleIDAccountExistsWithUsername:(id)arg1;
+- (id)createAccountWithLogin:(id)arg1 authID:(id)arg2 authToken:(id)arg3;
+- (id)createAccountWithLogin:(id)arg1 password:(id)arg2;
+- (unsigned int)accountState;
+- (void)startRequiringWifi;
+- (void)stopRequiringWifi;
 - (BOOL)removeAlias:(id)arg1;
-- (BOOL)addAlias:(id)arg1;
+- (id)aliasNamed:(id)arg1;
+- (id)addAlias:(id)arg1;
 - (id)guessedAlias;
+- (unsigned int)accountStateForAccount:(id)arg1;
+- (void)setAccountRegistrationBlock:(id)arg1;
 - (void)setAliasStatusChangedBlock:(id)arg1;
-- (BOOL)activateAccount:(id)arg1;
 - (id)aliases;
-- (int)validationStatusForAlias:(id)arg1;
 - (void)connect:(BOOL)arg1;
-- (void)connect;
-- (id)init;
-- (void)dealloc;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)service;
-- (BOOL)isConnected;
-- (void)setAccount:(id)arg1;
-- (id)account;
 
 @end

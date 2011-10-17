@@ -10,32 +10,32 @@
     double m_lastProgressReport;
 }
 
-+ (void)setMessage:(id)arg1;
-+ (void)reset;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (void)setProgress:(double)arg1;
-+ (id)_singletonAlloc;
-+ (id)sharedContext;
-+ (void)addProgressObserver:(id)arg1 selector:(SEL)arg2;
-+ (void)removeProgressObserver:(id)arg1;
 + (void)createStageWithSteps:(double)arg1;
 + (void)nextSubStageWillTakeThisManyOfMySteps:(double)arg1;
++ (id)sharedContext;
 + (double)overallProgress;
-+ (void)setPercentageProgressFromCPProgressContext:(double)arg1;
-+ (void)advanceProgress:(double)arg1;
++ (id)_singletonAlloc;
++ (void)addProgressObserver:(id)arg1 selector:(SEL)arg2;
++ (void)removeProgressObserver:(id)arg1;
 + (double)currentPosition;
++ (void)setPercentageProgressFromCPProgressContext:(double)arg1;
 + (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2;
 + (void)endStage;
++ (void)advanceProgress:(double)arg1;
++ (void)setMessage:(id)arg1;
++ (void)reset;
++ (void)setProgress:(double)arg1;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)_reset;
-- (void)release;
-- (id)init;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (unsigned int)retainCount;
-- (id)autorelease;
 - (id)currentStage;
 - (void)reportProgress:(double)arg1;
+- (void)_reset;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
+- (void)release;
+- (void)dealloc;
 
 @end

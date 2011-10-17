@@ -11,12 +11,12 @@
 }
 
 
-- (int)type;
-- (void)setType:(int)arg1;
-- (unsigned int)hash;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
 - (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (int)type;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (void)setType:(int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)init;
 
 @end

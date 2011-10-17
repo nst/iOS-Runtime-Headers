@@ -11,31 +11,31 @@
 }
 
 
-- (void)closeSessionImp:(id)arg1;
-- (void)syncClockImp:(id)arg1;
-- (void)deleteFileImp:(id)arg1;
 - (void)postCommandCompletionNotification:(id)arg1;
-- (void)getThumbnailOfFileImp:(id)arg1;
-- (int)syncClock:(id)arg1 contextInfo:(void*)arg2;
-- (int)downloadFile:(id)arg1 fromDevice:(id)arg2 options:(id)arg3 contextInfo:(void*)arg4;
 - (void)openDeviceImp:(id)arg1;
 - (void)closeDeviceImp:(id)arg1;
 - (void)openSessionImp:(id)arg1;
+- (void)closeSessionImp:(id)arg1;
+- (void)syncClockImp:(id)arg1;
+- (void)getThumbnailOfFileImp:(id)arg1;
 - (void)getMetadataOfFileImp:(id)arg1;
+- (void)deleteFileImp:(id)arg1;
 - (void)downloadFileImp:(id)arg1;
 - (void)ejectImp:(id)arg1;
 - (int)openDevice:(id)arg1 contextInfo:(void*)arg2;
 - (int)closeDevice:(id)arg1 contextInfo:(void*)arg2;
 - (int)openSession:(id)arg1 contextInfo:(void*)arg2;
 - (int)closeSession:(id)arg1 contextInfo:(void*)arg2;
+- (int)syncClock:(id)arg1 contextInfo:(void*)arg2;
 - (int)deleteFile:(id)arg1 fromDevice:(id)arg2 contextInfo:(void*)arg3;
 - (int)eject:(id)arg1;
+- (int)downloadFile:(id)arg1 fromDevice:(id)arg2 options:(id)arg3 contextInfo:(void*)arg4;
 - (int)getThumbnailOfFile:(id)arg1 fromDevice:(id)arg2 contextInfo:(void*)arg3;
 - (int)getMetadataOfFile:(id)arg1 fromDevice:(id)arg2 contextInfo:(void*)arg3;
 - (void)postNotification:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)startRunning;
 - (void)stopRunning;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -14,46 +14,48 @@
     BOOL m_animating;
 }
 
-@property(readonly) UITextRangeView * hostView;
-@property BOOL animating;
-@property BOOL navigationTransitionFlattened;
+@property BOOL isDotted;
+@property BOOL isStart;
 @property BOOL activeFlattened;
 @property BOOL alertFlattened;
-@property BOOL isStart;
-@property BOOL isDotted;
+@property BOOL navigationTransitionFlattened;
+@property BOOL animating;
+@property(readonly) UITextRangeView * hostView;
 
 + (id)_grabberDot;
 
-- (id)hostView;
-- (void)mustFlattenForAlert:(id)arg1;
-- (void)canExpandAfterAlert:(id)arg1;
-- (void)mustFlattenForResignActive:(id)arg1;
-- (void)canExpandAfterBecomeActive:(id)arg1;
-- (void)mustFlattenForNavigationTransition:(id)arg1;
-- (void)canExpandAfterNavigationTransition:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isScaling;
-- (void)updateDot;
-- (BOOL)animating;
+- (BOOL)clipDot:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)navigationTransitionFlattened;
-- (void)setNavigationTransitionFlattened:(BOOL)arg1;
 - (BOOL)activeFlattened;
-- (void)setActiveFlattened:(BOOL)arg1;
 - (BOOL)alertFlattened;
-- (void)setAlertFlattened:(BOOL)arg1;
 - (BOOL)isStart;
 - (BOOL)isDotted;
-- (void)setIsDotted:(BOOL)arg1;
+- (void)setNavigationTransitionFlattened:(BOOL)arg1;
+- (void)setActiveFlattened:(BOOL)arg1;
+- (void)setAlertFlattened:(BOOL)arg1;
+- (void)canExpandAfterNavigationTransition:(id)arg1;
+- (void)mustFlattenForNavigationTransition:(id)arg1;
+- (void)canExpandAfterBecomeActive:(id)arg1;
+- (void)mustFlattenForResignActive:(id)arg1;
+- (void)canExpandAfterAlert:(id)arg1;
+- (void)mustFlattenForAlert:(id)arg1;
+- (id)hostView;
+- (BOOL)inputViewIsChanging;
 - (void)setIsStart:(BOOL)arg1;
+- (void)setIsDotted:(BOOL)arg1;
+- (void)updateDot;
 - (BOOL)autoscrolled;
+- (BOOL)isScrolling;
+- (BOOL)animating;
 - (void)setAnimating:(BOOL)arg1;
 - (void)didMoveToSuperview;
-- (void)removeFromSuperview;
 - (BOOL)isRotating;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
-- (BOOL)isScrolling;
+- (void)removeFromSuperview;
+- (void)setHidden:(BOOL)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)dealloc;
 
 @end

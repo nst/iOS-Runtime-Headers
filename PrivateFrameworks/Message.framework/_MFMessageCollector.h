@@ -10,8 +10,9 @@
 
 
 - (void)newMessagesAvailable:(id)arg1;
-- (BOOL)shouldCancel;
 - (id)messages;
+- (id)copyMessages;
+- (BOOL)shouldCancel;
 - (id)init;
 - (void)dealloc;
 

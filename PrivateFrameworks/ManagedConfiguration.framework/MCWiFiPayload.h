@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSString, NSDictionary;
+@class NSArray, NSString, NSDictionary, NSNumber;
 
 @interface MCWiFiPayload : MCPayload  {
     NSString *_ssid;
@@ -10,6 +10,7 @@
     NSString *_encryptionType;
     BOOL _isWEP;
     BOOL _isWPA;
+    BOOL _autoJoin;
     NSDictionary *_eapClientConfig;
     BOOL _passwordRequired;
     BOOL _usernameRequired;
@@ -17,8 +18,22 @@
     NSString *_username;
     NSString *_certificateUUID;
     NSArray *_payloadCertificateAnchorUUID;
+    int _proxyType;
+    NSString *_proxyServer;
+    NSNumber *_proxyServerPort;
+    NSString *_proxyPassword;
+    NSString *_proxyPACURLString;
+    NSString *_credentialUUID;
+    NSString *_proxyUsername;
 }
 
+@property(retain) NSString * credentialUUID;
+@property(readonly) NSString * proxyPACURLString;
+@property(readonly) NSString * proxyPassword;
+@property(readonly) NSString * proxyUsername;
+@property(readonly) NSNumber * proxyServerPort;
+@property(readonly) NSString * proxyServer;
+@property(readonly) int proxyType;
 @property(readonly) NSArray * payloadCertificateAnchorUUID;
 @property(readonly) NSString * certificateUUID;
 @property(retain) NSString * password;
@@ -26,6 +41,7 @@
 @property(retain) NSString * username;
 @property(readonly) BOOL usernameRequired;
 @property(readonly) NSDictionary * eapClientConfig;
+@property(readonly) BOOL autoJoin;
 @property(readonly) BOOL isWPA;
 @property(readonly) BOOL isWEP;
 @property(readonly) NSString * encryptionType;
@@ -35,30 +51,40 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (id)password;
-- (BOOL)isHidden;
-- (void)dealloc;
-- (id)description;
-- (BOOL)passwordRequired;
-- (BOOL)_configIsValid:(id)arg1 error:(id*)arg2;
-- (id)_eapUsernameFromConfig:(id)arg1 isRequired:(BOOL*)arg2;
-- (id)_eapPasswordFromConfig:(id)arg1 isRequired:(BOOL*)arg2;
-- (id)payloadCertificateAnchorUUID;
-- (id)certificateUUID;
-- (BOOL)usernameRequired;
-- (id)eapClientConfig;
-- (BOOL)isWPA;
-- (BOOL)isWEP;
-- (id)encryptionType;
-- (id)ssid;
-- (id)subtitle1Description;
-- (id)subtitle2Description;
-- (id)subtitle1Label;
-- (id)subtitle2Label;
-- (id)stubDictionary;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
+- (int)proxyType;
+- (id)password;
+- (BOOL)isHidden;
+- (id)credentialUUID;
+- (void)setCredentialUUID:(id)arg1;
+- (id)proxyPACURLString;
+- (id)proxyPassword;
+- (id)proxyUsername;
+- (id)proxyServerPort;
+- (id)proxyServer;
+- (id)payloadCertificateAnchorUUID;
+- (id)certificateUUID;
+- (BOOL)passwordRequired;
+- (BOOL)usernameRequired;
+- (id)eapClientConfig;
+- (BOOL)autoJoin;
+- (BOOL)isWPA;
+- (BOOL)isWEP;
+- (BOOL)_configIsValid:(id)arg1 error:(id*)arg2;
+- (id)_eapUsernameFromConfig:(id)arg1 isRequired:(BOOL*)arg2;
+- (id)_eapPasswordFromConfig:(id)arg1 isRequired:(BOOL*)arg2;
+- (BOOL)_isEAPSIMConfig:(id)arg1;
+- (id)ssid;
+- (id)encryptionType;
+- (id)subtitle1Label;
+- (id)subtitle2Label;
+- (id)subtitle2Description;
+- (id)subtitle1Description;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 
 @end

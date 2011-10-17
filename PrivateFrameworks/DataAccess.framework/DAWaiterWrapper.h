@@ -19,21 +19,21 @@
     int _waiterNum;
 }
 
-@property(readonly) int waiterNum;
-@property int dataclasses;
-@property(copy) id completionHandler;
 @property(retain) <DADataclassLockWatcher> * waiter;
+@property(copy) id completionHandler;
+@property int dataclasses;
+@property(readonly) int waiterNum;
 
 
-- (id)waiter;
 - (int)waiterNum;
-- (int)dataclasses;
 - (void)setDataclasses:(int)arg1;
+- (int)dataclasses;
 - (void)setWaiter:(id)arg1;
-- (id)completionHandler;
+- (id)waiter;
 - (void)setCompletionHandler:(id)arg1;
+- (id)completionHandler;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)description;
 
 @end

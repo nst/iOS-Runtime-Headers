@@ -10,28 +10,28 @@
     NSMutableArray *m_stackOfBranches;
 }
 
-+ (void)setMessage:(id)arg1;
-+ (void)setProgress:(double)arg1;
 + (void)addProgressObserver:(id)arg1 selector:(SEL)arg2;
 + (void)removeProgressObserver:(id)arg1;
-+ (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3;
 + (id)createBranchWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3;
 + (void)endBranch:(id)arg1;
-+ (void)pushBranch:(id)arg1;
 + (id)contextForCurrentThread;
 + (id)stageForCurrentThread;
-+ (void)advanceProgress:(double)arg1;
 + (double)currentPosition;
 + (void)createContextForCurrentThread;
 + (void)removeContextForCurrentThread;
++ (void)pushBranch:(id)arg1;
 + (void)popBranch;
 + (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2;
++ (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3;
 + (void)endStage;
++ (void)advanceProgress:(double)arg1;
++ (void)setMessage:(id)arg1;
++ (void)setProgress:(double)arg1;
 
-- (id)init;
-- (void)dealloc;
 - (id)currentStage;
 - (id)rootStage;
 - (void)reportProgress:(double)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

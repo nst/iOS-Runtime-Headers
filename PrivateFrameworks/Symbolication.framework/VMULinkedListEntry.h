@@ -13,14 +13,14 @@
 
 + (id)linkedListEntryWithSymbolOwner:(id)arg1;
 
-- (id)initWithSymbolOwner:(id)arg1;
-- (id)symbolOwner;
-- (void)setNext:(id)arg1;
-- (void)setPrev:(id)arg1;
-- (id)prev;
-- (unsigned int)size;
-- (void)dealloc;
-- (id)description;
 - (id)next;
+- (unsigned int)size;
+- (id)initWithSymbolOwner:(id)arg1;
+- (void)setPrev:(id)arg1;
+- (void)setNext:(id)arg1;
+- (id)prev;
+- (id)symbolOwner;
+- (id)description;
+- (void)dealloc;
 
 @end

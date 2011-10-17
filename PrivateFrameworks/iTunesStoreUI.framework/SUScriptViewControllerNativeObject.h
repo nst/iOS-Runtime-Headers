@@ -6,10 +6,10 @@
 }
 
 
-- (void)setupNativeObject;
 - (void)_parentViewControllerChangeNotification:(id)arg1;
 - (void)_reloadVisibility;
-- (void)destroyNativeObject;
 - (void)setScriptObject:(id)arg1;
+- (void)setupNativeObject;
+- (void)destroyNativeObject;
 
 @end

@@ -6,6 +6,7 @@
 
 @interface ABPickerViewController : UITableViewController  {
     void *_context;
+    id _defaultValue;
     SEL _selectionAction;
     <ABPickerViewControllerDelegate> *_delegate;
     <ABPickerViewControllerDismissDelegate> *_dismissDelegate;
@@ -18,27 +19,29 @@
 @property SEL selectionAction;
 @property <ABPickerViewControllerDismissDelegate> * dismissDelegate;
 @property <ABPickerViewControllerDelegate> * delegate;
+@property(retain) id defaultValue;
 @property void* context;
 
 
-- (void)viewDidLoad;
-- (void)setContext:(void*)arg1;
+- (void)cancelButtonClicked:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (BOOL)_allowsAutorotation;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (void)viewDidLoad;
 - (void*)context;
-- (id)init;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
+- (void)setContext:(void*)arg1;
 - (id)delegate;
-- (void)cancelButtonClicked:(id)arg1;
+- (id)defaultValue;
+- (void)setDefaultValue:(id)arg1;
+- (void)dealloc;
 - (id)doneBarButtonItem;
-- (SEL)selectionAction;
 - (id)dismissDelegate;
-- (void)attemptDismissAfterSelectingItem:(id)arg1;
+- (SEL)selectionAction;
 - (void)setSelectionAction:(SEL)arg1;
 - (void)setDismissDelegate:(id)arg1;
-- (id)cancelBarButtonItem;
 - (float)ab_heightToFitForViewInPopoverView;
+- (id)cancelBarButtonItem;
+- (void)attemptDismissAfterSelectingItem:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 

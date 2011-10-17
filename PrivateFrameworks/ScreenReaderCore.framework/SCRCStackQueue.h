@@ -9,19 +9,19 @@
 }
 
 
+- (void)enqueueObject:(id)arg1;
+- (id)dequeueObject;
 - (void)pushArray:(id)arg1;
 - (id)popObject;
-- (id)popObjectRetained;
 - (id)topObject;
-- (void)enqueueObject:(id)arg1;
+- (id)popObjectRetained;
 - (id)dequeueObjectRetained;
-- (id)dequeueObject;
-- (void)pushObject:(id)arg1;
 - (id)objectEnumerator;
-- (void)removeAllObjects;
-- (void)dealloc;
 - (BOOL)isEmpty;
-- (id)description;
+- (void)removeAllObjects;
+- (void)pushObject:(id)arg1;
 - (unsigned int)count;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIImageView, NSString;
+@class PSSpecifier, UIImageView, NSString;
 
 @interface PreferencesTableCell : UITableViewCell  {
     id _value;
@@ -14,36 +14,51 @@
     SEL _pAction;
     id _pTarget;
     BOOL _cellEnabled;
+    PSSpecifier *_specifier;
+    int _type;
+    BOOL _lazyIcon;
+    BOOL _lazyIconDontUnload;
+    BOOL _lazyIconForceSynchronous;
+    NSString *_lazyIconAppID;
 }
 
-+ (void)_initializeSafeCategory;
+@property int type;
+@property(retain) PSSpecifier * specifier;
 
-- (void)setCellEnabled:(BOOL)arg1;
-- (id)valueLabel;
-- (BOOL)canReload;
-- (void)setIcon:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (id)titleLabel;
-- (id)value;
-- (SEL)action;
-- (void)setAction:(SEL)arg1;
-- (void)setChecked:(BOOL)arg1;
-- (id)target;
-- (void)setValue:(id)arg1;
-- (id)iconImageView;
-- (void)setAlignment:(int)arg1;
-- (void)layoutSubviews;
-- (id)title;
-- (void)dealloc;
-- (void)setTarget:(id)arg1;
-- (BOOL)isChecked;
-- (void)setTitle:(id)arg1;
-- (void)setShouldHideTitle:(BOOL)arg1;
-- (BOOL)cellEnabled;
+
+- (void)setSpecifier:(id)arg1;
+- (id)specifier;
+- (id)getIcon;
+- (id)blankIcon;
+- (id)getLazyIcon;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)setShouldHideTitle:(BOOL)arg1;
 - (void)reloadWithSpecifier:(id)arg1;
-- (id)accessibilityTableViewCellText;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
+- (void)forceSynchronousIconLoadOnNextIconLoad;
+- (int)type;
+- (id)value;
+- (BOOL)isChecked;
+- (void)setValue:(id)arg1;
+- (void)setIcon:(id)arg1;
+- (id)iconImageView;
+- (id)title;
+- (void)setAction:(SEL)arg1;
+- (void)willMoveToSuperview:(id)arg1;
+- (void)didMoveToSuperview;
+- (void)setType:(int)arg1;
+- (void)setAlignment:(int)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setChecked:(BOOL)arg1;
+- (id)titleLabel;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
+- (BOOL)cellEnabled;
+- (void)setCellEnabled:(BOOL)arg1;
+- (void)setTarget:(id)arg1;
+- (SEL)action;
+- (id)target;
+- (void)dealloc;
+- (BOOL)canReload;
+- (id)valueLabel;
 
 @end

@@ -16,16 +16,16 @@
 @property unsigned int sentState;
 
 
-- (unsigned int)sentState;
-- (unsigned int)receivedState;
+- (void)setNeedsSend:(BOOL)arg1;
+- (void)setTypeToSend:(unsigned int)arg1;
+- (void)setSentState:(unsigned int)arg1;
 - (BOOL)needsSend;
 - (unsigned int)typeToSend;
-- (void)setLastReceivedBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1;
-- (void)setTypeToSend:(unsigned int)arg1;
-- (void)setNeedsSend:(BOOL)arg1;
-- (void)setReceivedState:(unsigned int)arg1;
-- (void)setSentState:(unsigned int)arg1;
+- (unsigned int)receivedState;
 - (struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)lastReceivedBeacon;
+- (void)setLastReceivedBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1;
+- (void)setReceivedState:(unsigned int)arg1;
+- (unsigned int)sentState;
 - (id)init;
 - (void)dealloc;
 

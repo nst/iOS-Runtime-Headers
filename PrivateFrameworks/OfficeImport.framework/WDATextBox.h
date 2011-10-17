@@ -13,17 +13,17 @@
 }
 
 
-- (void)setText:(id)arg1;
-- (id)text;
-- (id)init;
-- (void)dealloc;
-- (BOOL)isOle;
-- (void)setNextTextBoxId:(unsigned long)arg1;
+- (unsigned long)nextTextBoxId;
 - (void)setDocument:(id)arg1;
-- (id)document;
+- (void)setNextTextBoxId:(unsigned long)arg1;
+- (BOOL)isOle;
+- (id)parent;
 - (void)setOle:(BOOL)arg1;
 - (void)setParent:(id)arg1;
-- (id)parent;
-- (unsigned long)nextTextBoxId;
+- (id)document;
+- (id)text;
+- (void)setText:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

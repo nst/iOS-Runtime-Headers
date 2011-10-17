@@ -10,26 +10,26 @@
     NSMutableArray *m_refs;
 }
 
-@property(readonly) NSArray * references;
-@property(retain) UIKBKeyset * keyset;
 @property(retain) NSString * name;
+@property(retain) UIKBKeyset * keyset;
+@property(readonly) NSArray * references;
 
 + (id)keylayout;
 
-- (id)references;
-- (void)setReferenceWithName:(id)arg1 value:(id)arg2 flags:(unsigned int)arg3;
-- (id)referenceWithName:(id)arg1;
-- (void)setRef:(id)arg1;
 - (void)layoutInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRef:(id)arg1;
+- (id)referenceWithName:(id)arg1;
+- (void)setReferenceWithName:(id)arg1 value:(id)arg2 flags:(unsigned int)arg3;
+- (id)references;
 - (void)setKeyset:(id)arg1;
 - (id)keyset;
-- (void)setName:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (id)name;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setName:(id)arg1;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -29,9 +29,7 @@
 @property double m44;
 
 
-- (id)toString;
 - (void)finalize;
-- (void)dealloc;
 - (double)a;
 - (void)setA:(double)arg1;
 - (double)b;
@@ -83,5 +81,9 @@
 - (id)scale:(double)arg1 scaleY:(double)arg2 scaleZ:(double)arg3;
 - (id)rotate:(double)arg1 rotY:(double)arg2 rotZ:(double)arg3;
 - (id)rotateAxisAngle:(double)arg1 y:(double)arg2 z:(double)arg3 angle:(double)arg4;
+- (id)skewX:(double)arg1;
+- (id)skewY:(double)arg1;
+- (id)toString;
+- (void)dealloc;
 
 @end

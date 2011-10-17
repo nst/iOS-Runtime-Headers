@@ -5,24 +5,25 @@
 @class NSNumberFormatter, NSString;
 
 @interface SUScriptNumberFormatter : SUScriptObject  {
-    NSString *_localeIdentifier;
     NSNumberFormatter *_numberFormatter;
-    NSString *_style;
 }
 
-@property(getter=_localeIdentifier,setter=set_localeIdentifier:,retain) NSString * localeIdentifier;
-@property(getter=_style,setter=set_style:,retain) NSString * style;
+@property(retain) NSString * localeIdentifier;
+@property(retain) NSString * style;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
-- (id)_style;
+- (id)attributeKeys;
+- (id)numberFromString:(id)arg1;
+- (id)stringFromNumber:(id)arg1;
+- (id)localeIdentifier;
+- (id)style;
+- (void)setStyle:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)stringFromNumber:(id)arg1;
-- (id)numberFromString:(id)arg1;
-- (void)set_localeIdentifier:(id)arg1;
-- (id)_localeIdentifier;
-- (void)set_style:(id)arg1;
+- (void)setLocaleIdentifier:(id)arg1;
+- (id)scriptAttributeKeys;
 
 @end

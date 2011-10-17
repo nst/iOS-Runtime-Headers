@@ -8,7 +8,7 @@
 
 - (float)preferredHeightForWidth:(float)arg1;
 - (id)initWithSpecifier:(id)arg1;
-- (id)_labelText;
 - (int)_labelTextAlignment;
+- (id)_labelText;
 
 @end

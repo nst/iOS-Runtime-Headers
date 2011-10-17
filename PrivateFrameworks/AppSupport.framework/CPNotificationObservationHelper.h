@@ -20,8 +20,8 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithObserver:(id)arg1 name:(id)arg2 object:(id)arg3 block:(id)arg4;
 - (void)_notification:(id)arg1;
+- (void)dealloc;
 
 @end

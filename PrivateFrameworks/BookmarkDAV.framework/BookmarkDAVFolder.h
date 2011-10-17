@@ -2,32 +2,55 @@
    Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
  */
 
-@class NSDictionary;
+@class NSData, NSMutableArray, NSDictionary, CoreDAVErrorItem, NSString, NSURL, NSArray;
 
-@interface BookmarkDAVFolder : CoreDAVContainer <CoreDAVModifiedContainer, CoreDAVAddedContainer> {
+@interface BookmarkDAVFolder : CoreDAVContainer <CoreDAVModifiedContainer, CoreDAVAddedContainer, CoreDAVLeafDataPayload> {
     NSDictionary *_appleAttributes;
+    NSMutableArray *_childrenOrder;
+    NSString *_bulkParsedCTag;
+    NSString *_bulkParsedPTag;
+    CoreDAVErrorItem *_bulkUploadErrorItem;
 }
 
-@property(readonly) NSDictionary * appleAttributes;
-@property BOOL isBookmarkMenuFolder;
-@property BOOL isBookmarkBarFolder;
 @property BOOL isBookmarkFolder;
+@property BOOL isBookmarkBarFolder;
+@property BOOL isBookmarkMenuFolder;
+@property(readonly) NSDictionary * appleAttributes;
+@property(retain) NSString * bulkParsedCTag;
+@property(retain) NSString * bulkParsedPTag;
+@property(readonly) NSArray * childrenOrder;
+@property(retain) CoreDAVErrorItem * bulkUploadErrorItem;
+@property(retain) NSURL * serverID;
+@property(readonly) NSData * dataPayload;
+@property(readonly) NSString * syncKey;
 
 + (id)copyPropertyMappingsForParser;
 
-- (void)dealloc;
-- (id)initWithServerID:(id)arg1 containerName:(id)arg2 appleAttributes:(id)arg3;
-- (void)setIsBookmarkFolder:(BOOL)arg1;
-- (void)setIsBookmarkBarFolder:(BOOL)arg1;
-- (void)setIsBookmarkMenuFolder:(BOOL)arg1;
-- (id)appleAttributes;
-- (BOOL)isBookmarkBarFolder;
-- (BOOL)isBookmarkMenuFolder;
-- (BOOL)isBookmarkFolder;
-- (void)_faultResourceType;
-- (id)_appleAttributesString;
-- (id)copyMkcolTask;
 - (id)copyPropPatchTask;
+- (id)copyMkcolTask;
+- (id)childrenOrder;
+- (id)dataPayload;
+- (id)initWithURL:(id)arg1 eTag:(id)arg2 dataPayload:(id)arg3 inContainerWithURL:(id)arg4 withAccountInfoProvider:(id)arg5;
 - (void)applyParsedProperties:(id)arg1;
+- (id)bulkParsedPTag;
+- (id)bulkParsedCTag;
+- (void)setIsBookmarkMenuFolder:(BOOL)arg1;
+- (void)setIsBookmarkBarFolder:(BOOL)arg1;
+- (void)setIsBookmarkFolder:(BOOL)arg1;
+- (BOOL)isBookmarkMenuFolder;
+- (BOOL)isBookmarkBarFolder;
+- (BOOL)isBookmarkFolder;
+- (id)_appleAttributesString;
+- (void)_faultResourceType;
+- (void)setBulkParsedPTag:(id)arg1;
+- (void)setBulkParsedCTag:(id)arg1;
+- (id)initWithServerID:(id)arg1 containerName:(id)arg2 appleAttributes:(id)arg3;
+- (void)setBulkUploadErrorItem:(id)arg1;
+- (id)bulkUploadErrorItem;
+- (id)appleAttributes;
+- (void)dealloc;
+- (id)syncKey;
+- (id)serverID;
+- (void)setServerID:(id)arg1;
 
 @end

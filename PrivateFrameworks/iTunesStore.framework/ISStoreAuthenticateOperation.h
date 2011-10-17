@@ -4,7 +4,7 @@
 
 @class NSNumber, SSAuthenticateRequest, SSAuthenticationContext;
 
-@interface ISStoreAuthenticateOperation : ISOperation  {
+@interface ISStoreAuthenticateOperation : ISOperation <SSAuthenticateRequestDelegate> {
     NSNumber *_authenticatedDSID;
     SSAuthenticateRequest *_request;
 }
@@ -12,15 +12,15 @@
 @property(readonly) SSAuthenticationContext * authenticationContext;
 
 
-- (void)run;
-- (void)dealloc;
 - (id)uniqueKey;
 - (void)authenticateRequest:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (void)run;
 - (void)_setAuthenticatedDSID:(id)arg1;
 - (id)_authenticatedDSID;
+- (void)dealloc;
 - (id)initWithAuthenticationContext:(id)arg1;
 - (id)authenticatedAccountDSID;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (id)authenticationContext;
 
 @end

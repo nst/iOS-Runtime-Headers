@@ -18,14 +18,15 @@
 
 + (id)symbolOwnerWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(unsigned int)arg7 currentVersion:(unsigned int)arg8 compatibilityVersion:(unsigned int)arg9;
 
-- (void)slideToSegmentAddresses:(id)arg1;
-- (id)initWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(unsigned int)arg7 currentVersion:(unsigned int)arg8 compatibilityVersion:(unsigned int)arg9;
-- (id)regionsForName:(id)arg1;
-- (id)symbolForAddress:(unsigned long long)arg1;
-- (id)symbolForName:(id)arg1;
+- (id)signature;
+- (id)path;
+- (unsigned int)currentVersion;
 - (id)symbols;
-- (unsigned int)compatibilityVersion;
-- (BOOL)isProtected;
+- (int)compare:(id)arg1;
+- (unsigned int)flags;
+- (id)name;
+- (unsigned long long)size;
+- (id)symbolForName:(id)arg1;
 - (BOOL)isPEF;
 - (BOOL)isAOut;
 - (BOOL)isDylib;
@@ -33,32 +34,31 @@
 - (BOOL)isBundle;
 - (BOOL)isDsym;
 - (BOOL)isEqualToSymbolOwner:(id)arg1;
+- (id)initWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(unsigned int)arg7 currentVersion:(unsigned int)arg8 compatibilityVersion:(unsigned int)arg9;
 - (id)programTextForAddress:(unsigned long long)arg1;
-- (id)programTextForAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
-- (id)symbolOwnerByAddingContentsOfOwner:(id)arg1;
-- (BOOL)isLazy;
 - (BOOL)containsAddress:(unsigned long long)arg1;
+- (void)slideToSegmentAddresses:(id)arg1;
+- (id)symbolOwnerByAddingContentsOfOwner:(id)arg1;
 - (id)regionForAddress:(unsigned long long)arg1;
+- (BOOL)isLazy;
+- (id)regionsForName:(id)arg1;
+- (id)symbolForAddress:(unsigned long long)arg1;
 - (id)symbolsForName:(id)arg1;
 - (id)symbolsInAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)sourceInfos;
 - (id)sourceInfoForAddress:(unsigned long long)arg1;
+- (id)programTextForAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
+- (BOOL)isProtected;
+- (unsigned int)compatibilityVersion;
 - (BOOL)isCommpage;
 - (id)symbolsForMangledName:(id)arg1;
 - (id)sourceInfosInAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
-- (BOOL)isMachO;
 - (id)architecture;
-- (id)regions;
-- (unsigned int)flags;
-- (int)compare:(id)arg1;
-- (id)path;
-- (id)name;
-- (unsigned long long)size;
+- (BOOL)isMachO;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)description;
-- (unsigned int)currentVersion;
-- (id)signature;
 - (BOOL)validate;
+- (id)regions;
 
 @end

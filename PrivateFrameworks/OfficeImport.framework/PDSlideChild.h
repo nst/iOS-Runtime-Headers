@@ -12,20 +12,20 @@
 }
 
 
+- (BOOL)showMasterPlaceholderAnimations;
+- (void)setShowMasterPlaceholderAnimations:(BOOL)arg1;
+- (BOOL)showMasterShapes;
+- (void)setShowMasterShapes:(BOOL)arg1;
+- (void)setColorMapOverride:(id)arg1;
+- (id)themeOverrides;
+- (id)colorMapOverride;
+- (id)colorMap;
+- (id)drawingTheme;
+- (id)colorScheme;
+- (id)fontScheme;
+- (id)styleMatrix;
+- (void)doneWithContent;
 - (id)init;
 - (void)dealloc;
-- (id)colorMap;
-- (void)setShowMasterPlaceholderAnimations:(BOOL)arg1;
-- (id)themeOverrides;
-- (BOOL)showMasterPlaceholderAnimations;
-- (void)setShowMasterShapes:(BOOL)arg1;
-- (id)colorMapOverride;
-- (void)setColorMapOverride:(id)arg1;
-- (void)doneWithContent;
-- (id)drawingTheme;
-- (id)fontScheme;
-- (BOOL)showMasterShapes;
-- (id)styleMatrix;
-- (id)colorScheme;
 
 @end

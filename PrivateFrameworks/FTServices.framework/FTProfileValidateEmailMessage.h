@@ -2,28 +2,25 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSNumber, NSString, NSData;
+@class NSNumber, NSString;
 
-@interface FTProfileValidateEmailMessage : FTProfileMessage  {
+@interface FTProfileValidateEmailMessage : FTProfileMessage <NSCopying> {
     NSString *_email;
-    NSData *_pushToken;
     NSNumber *_onlyCheck;
 }
 
-@property(copy) NSNumber * onlyCheck;
-@property(copy) NSData * pushToken;
 @property(copy) NSString * emailAddress;
+@property(copy) NSNumber * onlyCheck;
 
 
-- (id)pushToken;
-- (void)setPushToken:(id)arg1;
-- (id)bagKey;
-- (void)dealloc;
-- (id)onlyCheck;
-- (void)setOnlyCheck:(id)arg1;
-- (id)requiredKeys;
 - (id)emailAddress;
 - (id)messageBody;
 - (void)setEmailAddress:(id)arg1;
+- (void)setOnlyCheck:(id)arg1;
+- (id)onlyCheck;
+- (id)requiredKeys;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)bagKey;
 
 @end

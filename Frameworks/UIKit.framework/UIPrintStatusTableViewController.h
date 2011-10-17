@@ -12,18 +12,18 @@
 
 
 - (id)initWithJob:(id)arg1;
-- (void)setupCancelButton;
-- (void)loadView;
-- (void)updateCancelButton;
-- (void)popToJobsView;
-- (void)cancelPrinting;
 - (void)updateJobInfo;
+- (void)popToJobsView;
+- (void)updateCancelButton;
+- (void)setupCancelButton;
+- (void)cancelPrinting;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)dealloc;
 
 @end

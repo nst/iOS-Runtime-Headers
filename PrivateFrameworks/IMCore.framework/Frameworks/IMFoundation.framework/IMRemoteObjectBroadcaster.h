@@ -3,16 +3,19 @@
  */
 
 @interface IMRemoteObjectBroadcaster : NSObject  {
+    struct dispatch_queue_s { } *_queue;
 }
 
 + (id)defaultBroadcaster;
 
-- (oneway void)release;
-- (unsigned int)retainCount;
-- (id)autorelease;
-- (id)broadcastProxyForTargets:(id)arg1 protocol:(id)arg2;
 - (void)flushProxy:(id)arg1;
-- (id)broadcastProxyForTarget:(id)arg1 protocol:(id)arg2;
+- (id)broadcastProxyForTargets:(id)arg1 protocol:(id)arg2;
 - (BOOL)isSendQueueEmpty;
+- (id)broadcastProxyForTarget:(id)arg1 protocol:(id)arg2;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (id)init;
+- (void)dealloc;
+- (struct dispatch_queue_s { }*)_queue;
 
 @end

@@ -2,29 +2,38 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVPlaybackItemInspectorLoader : AVAssetInspectorLoader  {
+@class NSArray;
+
+@interface AVPlaybackItemInspectorLoader : AVAssetMakeReadyForInspectionLoader  {
     struct OpaqueFigPlaybackItem { } *_playbackItem;
-    struct OpaqueFigFormatReaderLoader { } *_formatReaderLoader;
+    NSArray *_trackIDs;
+    BOOL _shouldCacheDuration;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } _cachedDuration;
 }
 
 @property(getter=_playbackItem,readonly) struct OpaqueFigPlaybackItem { }* playbackItem;
 
 
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
+- (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(int*)arg1;
+- (id)_dictionaryOfSpecialGettersForKeyValueStatus;
+- (BOOL)_inspectionRequiresAFormatReader;
+- (id)_loadValuesUsingDefaultLoadingMethodWhileMutexLockedForKeys:(id)arg1;
 - (void)_addFigObjectNotifications;
 - (void)_removeFigObjectNotifications;
-- (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(int*)arg1;
-- (BOOL)_inspectionRequiresAFormatReader;
-- (id)_dictionaryOfSpecialGettersForKeyValueStatus;
 - (id)_playbackItemPropertiesForKeys:(id)arg1;
-- (id)_loadValuesUsingDefaultLoadingMethodWhileMutexLockedForKeys:(id)arg1;
-- (struct OpaqueFigFormatReaderLoader { }*)_formatReaderLoader;
-- (id)initWithURL:(id)arg1 playbackItem:(struct OpaqueFigPlaybackItem { }*)arg2;
-- (id)assetInspector;
+- (id)initWithURL:(id)arg1 playbackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
+- (id)assetInspector;
 - (void)cancelLoading;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

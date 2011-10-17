@@ -17,15 +17,15 @@
 + (void)vendDaemons:(Class)arg1;
 + (id)sharedPowerAssertionManager;
 
-- (void)_retainAssertions;
+- (unsigned int)powerAssertionRetainCount:(id)arg1;
 - (void)_releaseAssertions;
+- (void)_retainAssertions;
+- (void)releasePowerAssertion:(id)arg1;
+- (void)retainPowerAssertion:(id)arg1 withGroupIdentifier:(id)arg2;
 - (id)init;
 - (void)dealloc;
-- (void)retainPowerAssertion:(id)arg1 withGroupIdentifier:(id)arg2;
-- (unsigned int)powerAssertionRetainCount:(id)arg1;
-- (void)releasePowerAssertion:(id)arg1;
-- (id)stateString;
-- (void)reattainPowerAssertionsForGroupIdentifier:(id)arg1;
 - (void)dropPowerAssertionsForGroupIdentifier:(id)arg1;
+- (void)reattainPowerAssertionsForGroupIdentifier:(id)arg1;
+- (id)stateString;
 
 @end

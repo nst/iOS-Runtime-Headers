@@ -8,11 +8,11 @@
 }
 
 
-- (void)dealloc;
-- (id)initWithFilename:(id)arg1;
 - (void)startExporting;
 - (void)stopExporting;
-- (void)startWriting;
 - (void)stopWriting;
+- (id)initWithFilename:(id)arg1;
+- (void)startWriting;
+- (void)dealloc;
 
 @end

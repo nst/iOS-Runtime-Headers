@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OAXTableStyleCache, OADFontScheme, OADColorMap, OCPPackagePart, OADColorScheme, NSMutableArray, OAVState, OADStyleMatrix, OAXClient, NSMutableDictionary, OADDrawingGroup;
+@class OAXTableStyleCache, OADFontScheme, OADColorMap, OCPPackagePart, OADColorScheme, NSMutableArray, OAVState, OADStyleMatrix, OAXClient, NSMutableDictionary, OADBlipCollection;
 
 @interface OAXDrawingState : NSObject  {
     OAXClient *mClient;
@@ -11,7 +11,7 @@
     OAXTableStyleCache *mTableStyleCache;
     NSMutableDictionary *mShapeIdMap;
     id mDocumentState;
-    OADDrawingGroup *mTgtDrawingGroup;
+    OADBlipCollection *mTgtBlipCollection;
     NSMutableDictionary *mSrcURLToTgtBlipIndexMap;
     NSMutableArray *mTgtBulletBlips;
     NSMutableDictionary *mSrcURLToTgtBulletBlipIndexMap;
@@ -22,34 +22,34 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (void)setPackagePart:(id)arg1;
-- (id)colorMap;
-- (id)tableStyleCache;
-- (id)documentState;
-- (void)setStyleMatrix:(id)arg1;
-- (id)targetDrawingGroup;
-- (void)setColorMap:(id)arg1;
-- (void)setFontScheme:(id)arg1;
 - (id)blipRefForURL:(id)arg1;
-- (id)client;
-- (id)packagePart;
-- (id)oavState;
 - (id)bulletBlipRefForURL:(id)arg1;
-- (id)initWithClient:(id)arg1;
-- (void)setTableStyleCache:(id)arg1;
-- (id)drawableForShapeId:(unsigned long)arg1;
-- (void)clearDrawableForShapeIdMap;
-- (void)setDocumentState:(id)arg1;
-- (void)setOavState:(id)arg1;
-- (void)setTargetDrawingGroup:(id)arg1;
-- (void)setTargetBulletBlipArray:(id)arg1;
 - (id)blipRefWithURL:(id)arg1 blipArray:(id)arg2 blipURLtoIndexMap:(id)arg3;
 - (void)setDrawable:(id)arg1 forShapeId:(unsigned long)arg2;
+- (id)targetBlipCollection;
+- (id)drawableForShapeId:(unsigned long)arg1;
+- (void)setPackagePart:(id)arg1;
+- (void)setTableStyleCache:(id)arg1;
+- (void)setColorScheme:(id)arg1;
+- (void)setFontScheme:(id)arg1;
+- (void)setColorMap:(id)arg1;
+- (void)setDocumentState:(id)arg1;
+- (void)setOavState:(id)arg1;
+- (void)setTargetBlipCollection:(id)arg1;
+- (void)setTargetBulletBlipArray:(id)arg1;
+- (id)tableStyleCache;
+- (void)clearDrawableForShapeIdMap;
+- (id)packagePart;
+- (id)oavState;
+- (void)setStyleMatrix:(id)arg1;
+- (id)colorMap;
+- (id)colorScheme;
 - (id)fontScheme;
 - (id)styleMatrix;
-- (id)colorScheme;
-- (void)setColorScheme:(id)arg1;
+- (id)initWithClient:(id)arg1;
+- (id)client;
+- (id)documentState;
+- (id)init;
+- (void)dealloc;
 
 @end

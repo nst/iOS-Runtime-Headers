@@ -8,22 +8,27 @@
     NSDictionary *_properties;
 }
 
++ (void)reloadAccounts;
 + (id)mailAccounts;
 + (id)activeAccounts;
 + (id)accountContainingEmailAddress:(id)arg1 includingInactive:(BOOL)arg2;
 + (id)defaultMailAccountForDelivery;
-+ (void)reloadAccounts;
 
-- (id)firstEmailAddress;
-- (id)fullUserName;
-- (id)emailAddresses;
 - (id)fromEmailAddresses;
-- (void)dealloc;
+- (id)fullUserName;
+- (id)firstEmailAddress;
+- (id)username;
+- (id)emailAddresses;
+- (id)uniqueID;
 - (id)_initWithProperties:(id)arg1;
+- (BOOL)_isActive;
 - (BOOL)isDefaultDeliveryAccount;
+- (id)_emailAddressesAndAliases;
 - (BOOL)allowsEmoji;
 - (BOOL)supportsEmoji;
-- (id)username;
-- (id)uniqueID;
+- (BOOL)restrictsRepliesAndForwards;
+- (id)mailAccount;
+- (void)dealloc;
+- (BOOL)_isRestricted;
 
 @end

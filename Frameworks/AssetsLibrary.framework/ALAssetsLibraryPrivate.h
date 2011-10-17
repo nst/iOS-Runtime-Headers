@@ -10,18 +10,18 @@
     BOOL _isValid;
 }
 
-@property BOOL isValid;
-@property(retain) NSMutableArray * assets;
 @property(retain) PLPhotoLibrary * photoLibrary;
+@property(retain) NSMutableArray * assets;
+@property BOOL isValid;
 
 
-- (void)setIsValid:(BOOL)arg1;
 - (BOOL)isValid;
-- (id)init;
-- (void)dealloc;
-- (id)photoLibrary;
+- (void)setIsValid:(BOOL)arg1;
 - (void)setPhotoLibrary:(id)arg1;
 - (void)setAssets:(id)arg1;
+- (id)photoLibrary;
 - (id)assets;
+- (id)init;
+- (void)dealloc;
 
 @end

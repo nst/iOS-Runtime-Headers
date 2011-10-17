@@ -4,7 +4,7 @@
 
 @class NSString, NSMutableData, NSDate, NSHTTPURLResponse;
 
-@interface YTAccountAuthenticator : NSObject  {
+@interface YTAccountAuthenticator : NSObject <NSURLConnectionDelegate> {
     NSString *_accountToken;
     NSDate *_accountTokenDate;
     NSString *_account;
@@ -15,34 +15,47 @@
     NSString *_authURLBase;
 }
 
+@property(retain) NSHTTPURLResponse * urlResponse;
+@property(retain) NSString * password;
+@property(retain) NSString * accountYouTubeName;
+@property(retain) NSString * account;
+@property(retain) NSDate * accountTokenDate;
+@property(retain) NSString * accountToken;
+
 + (id)sharedAuthenticator;
 
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)init;
-- (void)dealloc;
-- (BOOL)readyToRequestToken;
-- (void)clearAccountInfo;
 - (BOOL)cachedCredentialsValid;
-- (id)accountYouTubeName;
+- (BOOL)loadStoredCredentials;
+- (BOOL)readyToRequestToken;
 - (id)tokenForCurrentAccount;
 - (void)validateAccount:(id)arg1 password:(id)arg2;
+- (id)urlResponse;
+- (id)accountTokenDate;
+- (id)accountToken;
+- (id)_passwordFromKeychain;
+- (void)setAccountYouTubeName:(id)arg1;
+- (void)setAccountToken:(id)arg1;
+- (void)setAccountTokenDate:(id)arg1;
+- (void)_clearURLResponseInfo;
 - (BOOL)_isTokenExpired:(id)arg1;
+- (void)_getNewTokenForAccount:(id)arg1 password:(id)arg2;
 - (id)_authRequestWithURL:(id)arg1;
 - (id)_authRequestForAccount:(id)arg1 password:(id)arg2;
-- (void)_getNewTokenForAccount:(id)arg1 password:(id)arg2;
-- (void)_setAccountToken:(id)arg1;
-- (void)_setAccountTokenDate:(id)arg1;
-- (void)_setAccount:(id)arg1;
-- (void)_setAccountYouTubeName:(id)arg1;
-- (void)_setPassword:(id)arg1;
-- (void)_setURLResponse:(id)arg1;
-- (void)_clearURLResponseInfo;
+- (void)setUrlResponse:(id)arg1;
 - (void)_removePasswordFromKeychain;
+- (void)clearAccountInfo;
 - (void)_postAccountTokenGenerationFailedWithError:(id)arg1;
-- (id)_passwordFromKeychain;
 - (void)_postNewAccountTokenAvailable;
+- (id)accountYouTubeName;
+- (void)setAccount:(id)arg1;
+- (id)account;
+- (void)setPassword:(id)arg1;
+- (id)password;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (id)init;
+- (void)dealloc;
 
 @end

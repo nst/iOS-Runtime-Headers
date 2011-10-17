@@ -17,35 +17,35 @@
     <MPNowPlayingItemQueueInfoButtonDelegate> *_delegate;
 }
 
-@property(readonly) int infoDisplayType;
-@property <MPNowPlayingItemQueueInfoButtonDelegate> * delegate;
-@property unsigned int allowedDisplayTypes;
 @property(retain) NSURL * infoURL;
+@property(readonly) int infoDisplayType;
+@property unsigned int allowedDisplayTypes;
+@property <MPNowPlayingItemQueueInfoButtonDelegate> * delegate;
 
 
+- (void)updateForItemCrossedTimeMarkerNotification:(id)arg1 currentTime:(double)arg2;
+- (void)configureForItem:(id)arg1;
+- (BOOL)_shouldDisplaysInfoCircleImage;
+- (void)_updateFeederCountInfo:(id)arg1;
+- (unsigned int)allowedDisplayTypes;
+- (int)_activeDisplayType;
+- (float)_minSizingTextWidth;
+- (int)_infoDisplayTypeForURL:(id)arg1 urlIsTimed:(BOOL)arg2 feederCount:(unsigned int)arg3 askDelegate:(BOOL)arg4;
+- (void)clicked:(id)arg1;
+- (int)infoDisplayType;
+- (BOOL)configureForItem:(id)arg1 atTime:(double)arg2;
+- (void)setAllowedDisplayTypes:(unsigned int)arg1;
+- (void)setDelegate:(id)arg1;
 - (int)buttonType;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
+- (id)delegate;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 - (id)init;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (int)_infoDisplayTypeForURL:(id)arg1 urlIsTimed:(BOOL)arg2 feederCount:(unsigned int)arg3 askDelegate:(BOOL)arg4;
-- (int)infoDisplayType;
-- (void)_updateFeederCountInfo:(id)arg1;
-- (int)_activeDisplayType;
-- (BOOL)_shouldDisplaysInfoCircleImage;
-- (void)configureForItem:(id)arg1;
-- (void)updateForItemCrossedTimeMarkerNotification:(id)arg1 currentTime:(double)arg2;
-- (void)clicked:(id)arg1;
-- (unsigned int)allowedDisplayTypes;
-- (float)_minSizingTextWidth;
-- (void)setAllowedDisplayTypes:(unsigned int)arg1;
-- (BOOL)configureForItem:(id)arg1 atTime:(double)arg2;
 - (id)infoURL;
-- (void)clearWeakReferencesToObject:(id)arg1;
 - (void)setInfoURL:(id)arg1;
+- (void)clearWeakReferencesToObject:(id)arg1;
 
 @end

@@ -10,14 +10,14 @@
 
 @property int trackID;
 
-+ (id)videoCompositionLayerInstructionWithAssetTrack:(id)arg1;
 + (id)videoCompositionLayerInstruction;
++ (id)videoCompositionLayerInstructionWithAssetTrack:(id)arg1;
 
-- (int)trackID;
 - (void)setTrackID:(int)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
-- (void)setTransformRampFromStartTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 toEndTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3;
 - (void)setOpacity:(float)arg1 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)setTransformRampFromStartTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 toEndTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3;
 - (void)setOpacityRampFromStartOpacity:(float)arg1 toEndOpacity:(float)arg2 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3;
+- (int)trackID;
 
 @end

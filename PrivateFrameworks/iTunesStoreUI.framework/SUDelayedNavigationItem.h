@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIBarButtonItem, SUNavigationItem, UIView;
+@class SUNavigationItem;
 
 @interface SUDelayedNavigationItem : SUNavigationItem  {
-    UIBarButtonItem *_delayedLeftBarButtonItem;
-    UIView *_delayedTitleView;
-    UIBarButtonItem *_delayedRightBarButtonItem;
-    UIBarButtonItem *_delayedSecondaryLeftBarButtonItem;
+    id _delayedLeftBarButtonItem;
+    id _delayedTitleView;
+    id _delayedRightBarButtonItem;
+    id _delayedSecondaryLeftBarButtonItem;
     BOOL _shouldDelayChanges;
     SUNavigationItem *_wrappedNavigationItem;
 }
@@ -17,23 +17,23 @@
 @property BOOL shouldDelayChanges;
 
 
-- (id)titleView;
-- (id)navigationBar;
 - (id)rightBarButtonItem;
 - (id)leftBarButtonItem;
-- (void)setLeftBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (void)setRightBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setTitleView:(id)arg1;
+- (void)setRightBarButtonItem:(id)arg1 animated:(BOOL)arg2;
+- (void)setLeftBarButtonItem:(id)arg1 animated:(BOOL)arg2;
+- (id)navigationBar;
 - (id)initWithNavigationItem:(id)arg1;
+- (id)titleView;
 - (void)dealloc;
-- (void)_prepareButtonItemForDisplay:(id)arg1;
-- (void)_scheduleCommit;
 - (id)wrappedNavigationItem;
+- (void)_scheduleCommit;
 - (BOOL)shouldDelayChanges;
-- (void)setShouldDelayChanges:(BOOL)arg1;
-- (void)setWrappedNavigationItem:(id)arg1;
+- (void)_prepareButtonItemForDisplay:(id)arg1;
 - (void)commitDelayedChanges;
-- (id)internalTitleView;
+- (void)setWrappedNavigationItem:(id)arg1;
+- (void)setShouldDelayChanges:(BOOL)arg1;
 - (void)setSecondaryLeftBarButtonItem:(id)arg1 animated:(BOOL)arg2;
+- (id)internalTitleView;
 
 @end

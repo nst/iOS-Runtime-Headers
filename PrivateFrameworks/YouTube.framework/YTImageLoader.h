@@ -30,29 +30,29 @@
 
 + (id)sharedImageLoader;
 
-- (id)init;
+- (BOOL)isLoadingImages;
+- (struct CGImage { }*)imageForURL:(id)arg1 rounded:(BOOL)arg2 videoID:(id)arg3 loadIfAbsent:(BOOL)arg4;
 - (struct CGImage { }*)largeImageForURL:(id)arg1 videoID:(id)arg2 loadIfAbsent:(BOOL)arg3;
 - (struct CGImage { }*)pluginImageForURL:(id)arg1 videoID:(id)arg2 loadIfAbsent:(BOOL)arg3;
-- (BOOL)isLoadingImages;
-- (struct CGImage { }*)createRoundedThumbnailWithImage:(struct CGImage { }*)arg1;
-- (struct CGImage { }*)_largeThumbnailOverlay;
-- (struct CGImage { }*)createSheenedThumbnailWithImage:(struct CGImage { }*)arg1 overlay:(struct CGImage { }*)arg2 width:(int)arg3 height:(int)arg4;
-- (struct CGImage { }*)imageForURL:(id)arg1 rounded:(BOOL)arg2 videoID:(id)arg3 loadIfAbsent:(BOOL)arg4;
 - (void)saveCache:(id)arg1;
 - (void)loadCache:(id)arg1;
-- (void)_mainThread_postLoadingStatusChanged;
-- (void)_postLoadingStatusChanged;
-- (void)_loadingStatusChanged;
-- (void)_startLoader;
-- (BOOL)_locked_URLIsLoading:(id)arg1;
-- (void)_locked_loadImageForURL:(id)arg1 videoID:(id)arg2;
-- (void)_loadImageURL:(id)arg1 videoID:(id)arg2;
-- (void)_setImageData:(id)arg1 videoID:(id)arg2 forURL:(id)arg3 cacheLocked:(BOOL)arg4;
-- (void)_postImageLoadedNotification:(id)arg1;
-- (void)_locked_imageLoadStarted:(id)arg1;
 - (void)_imageLoadFinished:(id)arg1;
+- (void)_setImageData:(id)arg1 videoID:(id)arg2 forURL:(id)arg3 cacheLocked:(BOOL)arg4;
+- (void)_startLoader;
+- (struct CGImage { }*)createRoundedThumbnailWithImage:(struct CGImage { }*)arg1;
+- (void)_loadImageURL:(id)arg1 videoID:(id)arg2;
 - (id)_locked_saveImageCache:(id)arg1;
 - (id)_locked_loadImageCache:(id)arg1;
+- (void)_mainThread_postLoadingStatusChanged;
+- (void)_postLoadingStatusChanged;
+- (void)_locked_imageLoadStarted:(id)arg1;
+- (void)_loadingStatusChanged;
+- (BOOL)_locked_URLIsLoading:(id)arg1;
+- (void)_locked_loadImageForURL:(id)arg1 videoID:(id)arg2;
+- (struct CGImage { }*)_largeThumbnailOverlay;
+- (struct CGImage { }*)createSheenedThumbnailWithImage:(struct CGImage { }*)arg1 overlay:(struct CGImage { }*)arg2 width:(int)arg3 height:(int)arg4;
+- (void)_postImageLoadedNotification:(id)arg1;
 - (id)notificationCenter;
+- (id)init;
 
 @end

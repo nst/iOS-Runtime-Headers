@@ -9,15 +9,15 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (id)propertiesForListLevel:(unsigned int)arg1;
-- (id)defaultProperties;
 - (void)setPropertiesForListLevel:(unsigned int)arg1 properties:(id)arg2;
-- (void)overrideWithTextStyle:(id)arg1;
-- (void)removeUnnecessaryOverrides;
 - (void)flatten;
+- (id)defaultProperties;
+- (void)removeUnnecessaryOverrides;
+- (void)overrideWithTextStyle:(id)arg1;
+- (id)propertiesForListLevel:(unsigned int)arg1;
 - (void)setParentTextListStyle:(id)arg1;
 - (id)initWithDefaults;
+- (id)init;
+- (void)dealloc;
 
 @end

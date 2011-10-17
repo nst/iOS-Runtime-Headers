@@ -10,15 +10,15 @@
     Parser *postParser;
 }
 
-+ (void)initialize;
 + (id)translatedUnit:(id)arg1;
++ (void)initialize;
 
-- (id)init;
-- (void)dealloc;
 - (id)stringArrayForDecimalNumber:(id)arg1;
 - (id)_slotForUnitString:(id)arg1 number:(id)arg2;
 - (id)wordsForPromptCalled:(id)arg1 withNumber:(id)arg2 units:(id)arg3;
-- (void)setUpWithLanguage:(id)arg1;
 - (id)allWordsForPromptCalled:(id)arg1 withNumber:(id)arg2 units:(id)arg3;
+- (void)setUpWithLanguage:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

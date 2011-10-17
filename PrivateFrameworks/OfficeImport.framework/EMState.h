@@ -13,10 +13,10 @@
 @property(retain) EDWorkbook * workbook;
 
 
-- (void)dealloc;
-- (void)setCurrentSheet:(id)arg1;
-- (id)workbook;
-- (id)currentSheet;
 - (void)setWorkbook:(id)arg1;
+- (void)setCurrentSheet:(id)arg1;
+- (id)currentSheet;
+- (id)workbook;
+- (void)dealloc;
 
 @end

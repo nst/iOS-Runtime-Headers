@@ -11,14 +11,14 @@
 }
 
 
+- (unsigned short)character;
+- (void)clearProperties;
+- (void)setCharacter:(unsigned short)arg1;
+- (id)initWithParagraph:(id)arg1;
+- (int)runType;
+- (id)properties;
 - (id)font;
 - (void)setFont:(id)arg1;
 - (void)dealloc;
-- (void)clearProperties;
-- (void)setCharacter:(unsigned short)arg1;
-- (unsigned short)character;
-- (id)initWithParagraph:(id)arg1;
-- (id)properties;
-- (int)runType;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKScore, NSString, NSArray;
+@class NSArray, NSString, GKScore, NSObject<GKLeaderboardDelegate>;
 
 @interface GKLeaderboard : NSObject  {
     int _timeScope;
@@ -19,52 +19,60 @@
     GKScore *_localPlayerScore;
     int _loadingCount;
     int _sequenceNumber;
+    NSObject<GKLeaderboardDelegate> *_weakDelegate;
 }
 
-@property(getter=isLoading,readonly) BOOL loading;
-@property int sequenceNumber;
-@property int loadingCount;
-@property(retain) GKScore * localPlayerScore;
-@property unsigned int maxRange;
-@property(retain) NSArray * playerIDs;
-@property(retain) NSArray * scores;
-@property(retain) NSString * title;
-@property(retain) NSString * category;
-@property struct _NSRange { unsigned int location; unsigned int length; } range;
-@property int playerScope;
 @property int timeScope;
+@property int playerScope;
+@property(retain) NSString * category;
+@property(retain) NSString * title;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property(retain) NSArray * scores;
+@property unsigned int maxRange;
+@property(retain) GKScore * localPlayerScore;
+@property(getter=isLoading,readonly) BOOL loading;
+@property NSObject<GKLeaderboardDelegate> * delegate;
+@property(retain) NSArray * playerIDs;
+@property int loadingCount;
+@property int sequenceNumber;
 
++ (void)setDefaultLeaderboard:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)loadCategoriesWithCompletionHandler:(id)arg1;
++ (void)loadCategoriesForGame:(id)arg1 withPlayer:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadCategoriesForGame:(id)arg1 withCompletionHandler:(id)arg2;
 
-- (id)scores;
-- (int)timeScope;
-- (int)sequenceNumber;
+- (void)setLoadingCount:(int)arg1;
+- (int)loadingCount;
+- (id)localPlayerScore;
+- (unsigned int)maxRange;
+- (void)loadScoresWithCompletionHandler:(id)arg1;
+- (id)initWithPlayerIDs:(id)arg1;
+- (void)setSequenceNumber:(int)arg1;
+- (void)setLocalPlayerScore:(id)arg1;
 - (void)setScores:(id)arg1;
 - (void)setMaxRange:(unsigned int)arg1;
-- (id)category;
-- (void)setTimeScope:(int)arg1;
-- (void)setPlayerIDs:(id)arg1;
+- (id)scores;
+- (int)sequenceNumber;
+- (void)decrementLoadingCountAtomically;
 - (id)playerIDs;
-- (int)playerScope;
-- (id)localPlayerScore;
-- (id)initWithPlayerIDs:(id)arg1;
-- (void)loadScoresWithCompletionHandler:(id)arg1;
+- (void)incrementLoadingCountAtomically;
 - (void)loadScoresForGame:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)setSequenceNumber:(int)arg1;
-- (int)loadingCount;
-- (void)setLoadingCount:(int)arg1;
-- (void)setLocalPlayerScore:(id)arg1;
-- (unsigned int)maxRange;
+- (int)playerScope;
+- (int)timeScope;
+- (void)setPlayerIDs:(id)arg1;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setPlayerScope:(int)arg1;
+- (void)setTimeScope:(int)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (BOOL)isLoading;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)title;
+- (id)delegate;
+- (void)setTitle:(id)arg1;
+- (id)category;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)description;
-- (void)setTitle:(id)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

@@ -7,6 +7,7 @@
 @interface SCROMobileBrailleDisplayInputManagerCacheObject : NSObject  {
     NSString *_driverIdentifier;
     NSString *_modelIdentifier;
+    int _brailleInputMode;
     NSMutableDictionary *_commandDictionary;
     NSMutableArray *_orderedIdentifiers;
     NSBundle *_bundle;
@@ -16,19 +17,22 @@
 @property(retain) NSMutableArray * orderedIdentifiers;
 @property(retain) NSMutableDictionary * commandDictionary;
 @property(retain) NSString * driverIdentifier;
+@property int brailleInputMode;
 @property(retain) NSString * modelIdentifier;
 
 
+- (void)setOrderedIdentifiers:(id)arg1;
+- (int)brailleInputMode;
+- (void)setDriverIdentifier:(id)arg1;
+- (void)setModelIdentifier:(id)arg1;
+- (void)setCommandDictionary:(id)arg1;
+- (void)setBrailleInputMode:(int)arg1;
+- (id)driverIdentifier;
+- (id)modelIdentifier;
+- (id)commandDictionary;
+- (id)orderedIdentifiers;
 - (void)setBundle:(id)arg1;
 - (id)bundle;
 - (void)dealloc;
-- (id)modelIdentifier;
-- (id)driverIdentifier;
-- (id)orderedIdentifiers;
-- (void)setOrderedIdentifiers:(id)arg1;
-- (id)commandDictionary;
-- (void)setCommandDictionary:(id)arg1;
-- (void)setDriverIdentifier:(id)arg1;
-- (void)setModelIdentifier:(id)arg1;
 
 @end

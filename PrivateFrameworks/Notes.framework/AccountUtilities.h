@@ -12,14 +12,15 @@
 
 + (id)sharedAccountUtilities;
 
-- (id)init;
-- (void)dealloc;
-- (id)allSyncableAccounts;
-- (id)allDisplayAccounts;
 - (id)syncAccountIdForDisplayAccountId:(id)arg1;
+- (id)allDisplayAccounts;
+- (id)allSyncableAccounts;
 - (BOOL)isDeviceLocalAccount:(id)arg1;
 - (BOOL)localNotesExist;
 - (id)defaultStoreSyncIdWithDesiredSyncId:(id)arg1;
+- (void).cxx_destruct;
+- (id)init;
+- (void)dealloc;
 - (void)accountsChanged;
 - (id)accountsManager;
 

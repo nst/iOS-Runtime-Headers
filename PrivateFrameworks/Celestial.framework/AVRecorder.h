@@ -16,15 +16,22 @@
 }
 
 
-- (void)deactivate;
 - (BOOL)start;
+- (void)stop;
 - (BOOL)isActive;
+- (void)deactivate;
+- (double)recordedDuration;
+- (id)attributeForKey:(id)arg1;
+- (BOOL)isRecording;
 - (id)init;
 - (void)dealloc;
-- (id)attributeForKey:(id)arg1;
-- (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
+- (void)setFilePath:(id)arg1;
+- (id)filePath;
+- (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (void)implNotification:(id)arg1;
 - (BOOL)activate:(id*)arg1;
+- (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
+- (BOOL)takePhoto;
 - (BOOL)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (float)micVolume;
 - (void)setMicVolume:(float)arg1;
@@ -32,12 +39,5 @@
 - (unsigned int)audioNumDeviceChannels;
 - (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
 - (BOOL)audioCurrentAverageDecibelLevels:(float*)arg1 andPeakDecibelLevels:(float*)arg2;
-- (id)filePath;
-- (void)setFilePath:(id)arg1;
-- (void)stop;
-- (BOOL)isRecording;
-- (double)recordedDuration;
-- (BOOL)takePhoto;
-- (void)setAttribute:(id)arg1 forKey:(id)arg2;
 
 @end

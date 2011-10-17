@@ -10,11 +10,11 @@
 
 + (struct { unsigned int x1; id x2[4]; }*)_proxyNonGCPoolPointer;
 
-- (id)objectAtIndex:(unsigned int)arg1;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)count;
-- (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
 - (void)_proxyNonGCFinalize;
+- (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)objectsAtIndexes:(id)arg1;
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
 
 @end

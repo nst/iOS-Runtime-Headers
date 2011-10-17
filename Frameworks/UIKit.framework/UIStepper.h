@@ -2,51 +2,64 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIButton, NSTimer;
+@class NSTimer, UIImageView, UIButton;
 
 @interface UIStepper : UIControl  {
-    int _intValue;
-    int _minimumIntValue;
-    int _maximumIntValue;
-    BOOL _continuous;
-    BOOL _autorepeat;
-    BOOL _wraps;
+    BOOL _isRtoL;
+    UIImageView *_middleView;
     UIButton *_plusButton;
     UIButton *_minusButton;
     NSTimer *_repeatTimer;
     int _repeatCount;
+    double _value;
+    double _minimumValue;
+    double _maximumValue;
+    double _stepValue;
+    BOOL _continuous;
+    BOOL _autorepeat;
+    BOOL _wraps;
 }
 
-@property BOOL wraps;
-@property BOOL autorepeat;
 @property(getter=isContinuous) BOOL continuous;
-@property int maximumIntValue;
-@property int minimumIntValue;
-@property int intValue;
+@property BOOL autorepeat;
+@property BOOL wraps;
+@property double value;
+@property double minimumValue;
+@property double maximumValue;
+@property double stepValue;
 
-+ (void)_initializeSafeCategory;
 
-- (BOOL)wraps;
-- (void)setWraps:(BOOL)arg1;
-- (void)_commonStepperInit;
-- (void)_updateButtonEnabled;
-- (void)_startTimer;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAutorepeat:(BOOL)arg1;
+- (BOOL)autorepeat;
+- (double)stepValue;
+- (void)setStepValue:(double)arg1;
 - (void)_stopTimer;
 - (void)_updateCount:(id)arg1;
-- (BOOL)autorepeat;
-- (void)setAutorepeat:(BOOL)arg1;
+- (void)_updateHighlightingAtPoint:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)_startTimer;
+- (void)_updateButtonEnabled;
+- (void)_commonStepperInit;
+- (void)setWraps:(BOOL)arg1;
+- (BOOL)wraps;
+- (void)setMaximumValue:(double)arg1;
+- (void)setMinimumValue:(double)arg1;
 - (void)setContinuous:(BOOL)arg1;
-- (int)maximumIntValue;
-- (int)minimumIntValue;
-- (void)setIntValue:(int)arg1;
-- (void)setMinimumIntValue:(int)arg1;
-- (void)setMaximumIntValue:(int)arg1;
 - (BOOL)isContinuous;
-- (int)intValue;
+- (double)maximumValue;
+- (double)minimumValue;
+- (double)value;
+- (void)setValue:(double)arg1;
+- (void)cancelTrackingWithEvent:(id)arg1;
+- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
+- (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

@@ -34,21 +34,21 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
 - (id)title;
-- (void)dealloc;
-- (id)description;
-- (id)subtitle1Description;
-- (id)isSimplePasscodeAllowed;
-- (id)isAlphanumericPasscodeRequired;
-- (id)maxGracePeriodMinutes;
-- (id)minComplexCharacters;
 - (id)maxPasscodeAgeDays;
 - (id)passcodeHistoryCount;
 - (id)maxInactivityMinutes;
+- (id)maxGracePeriodMinutes;
+- (id)maxFailedAttempts;
 - (id)isManualFetchingWhenRoaming;
 - (id)isPasscodeRequired;
-- (id)stubDictionary;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (id)maxFailedAttempts;
 - (id)minLength;
+- (id)isSimplePasscodeAllowed;
+- (id)isAlphanumericPasscodeRequired;
+- (id)minComplexCharacters;
+- (id)subtitle1Description;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 
 @end

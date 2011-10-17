@@ -9,8 +9,8 @@
 @property int styleAnimation;
 
 
-- (id)initWithDefaultParameters;
 - (int)styleAnimation;
 - (void)setStyleAnimation:(int)arg1;
+- (id)initWithDefaultParameters;
 
 @end

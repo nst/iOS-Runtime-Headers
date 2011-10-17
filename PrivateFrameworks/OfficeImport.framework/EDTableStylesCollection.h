@@ -10,13 +10,13 @@
 }
 
 
-- (void)dealloc;
 - (id)defaultPivotStyle;
-- (id)defaultTableStyle;
 - (id)defaultTableStyleName;
 - (void)setDefaultTableStyleName:(id)arg1;
 - (void)setDefaultPivotStyleName:(id)arg1;
 - (id)defaultPivotStyleName;
 - (id)objectWithName:(id)arg1;
+- (id)defaultTableStyle;
+- (void)dealloc;
 
 @end

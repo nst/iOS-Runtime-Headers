@@ -10,8 +10,10 @@
 
 @interface CARenderer : NSObject  {
 
-  /* Error parsing encoded ivar type info: ^{CARendererPriv=@"CAContext"@"CAAssignedPointer"@"EAGLContext"i^{Context}{CGRect="origin"{CGPoint="x"f"y"f}"size"{CGSize="width"f"height"f}}^{Update}I[2I][2I]Ib8I[0c]} */
-    struct CARendererPriv { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; unsigned char x3; void*x4; unsigned char x5; out in void*x6; void*x7; void*x8; void*x9; void*x10; id x11; void*x12; unsigned char x13; void*x14; void*x15; short x16; short x17; int x18; void*x19; in void*x20; double x21; void*x22; out int x23; in void*x24; void*x25; const void*x26; id x27; void*x28; void*x29; void*x30; void*x31; unsigned long x32; unsigned char x33; out in void*x34; void*x35; void*x36; void*x37; void*x38; int x39; struct Context {} *x40; struct CGRect { 
+  /* Error parsing encoded ivar type info: ^{CARendererPriv=@"CAContext"{Weak<objc_object*>="_value"@}@"EAGLContext"^{Context}^{Renderer}{CGRect="origin"{CGPoint="x"f"y"f}"size"{CGSize="width"f"height"f}}^{Update}I[2I][2I]Ib8I[0c]} */
+    struct CARendererPriv { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; unsigned char x3; void*x4; unsigned char x5; out in void*x6; void*x7; void*x8; void*x9; void*x10; struct Weak<objc_object*> { 
+            id _value; 
+        } x11; id x12; void*x13; void*x14; void*x15; void*x16; unsigned long x17; unsigned char x18; out in void*x19; void*x20; void*x21; void*x22; void*x23; struct Context {} *x24; struct Renderer {} *x25; struct CGRect { 
             struct CGPoint { 
                 float x; 
                 float y; 
@@ -20,7 +22,7 @@
                 float width; 
                 float height; 
             } size; 
-        } x41; struct Update {} *x42; unsigned int x43; unsigned int x44[2]; unsigned int x45[2]; unsigned int x46; unsigned int x47 : 8; unsigned int x48; BOOL x49[0]; } *_priv;
+        } x26; struct Update {} *x27; unsigned int x28; unsigned int x29[2]; unsigned int x30[2]; unsigned int x31; unsigned int x32 : 8; unsigned int x33; BOOL x34[0]; } *_priv;
 
 }
 
@@ -35,19 +37,19 @@
 - (void)addUpdateRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)render;
 - (double)nextFrameTime;
-- (id)_initWithOptions:(id)arg1;
-- (id)_initWithEAGLContext:(id)arg1 options:(id)arg2;
+- (void)endFrame;
+- (id)layer;
+- (void)setLayer:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)context;
+- (void)setContext:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })updateBounds;
 - (BOOL)hasMissingContent;
-- (void)setContext:(id)arg1;
-- (void)endFrame;
-- (id)context;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setLayer:(id)arg1;
-- (id)layer;
-- (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (id)_initWithOptions:(id)arg1;
+- (id)_initWithEAGLContext:(id)arg1 options:(id)arg2;
 
 @end

@@ -9,14 +9,14 @@
     id _target;
 }
 
-@property id target;
 @property SUScriptObjectInvocationBatch * invocationBatch;
+@property id target;
 
 
 - (void)forwardInvocation:(id)arg1;
-- (id)target;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)setTarget:(id)arg1;
+- (id)target;
 - (id)invocationBatch;
 - (void)setInvocationBatch:(id)arg1;
 

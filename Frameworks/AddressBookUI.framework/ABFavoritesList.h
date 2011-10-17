@@ -2,49 +2,31 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableArray;
+@class ABFavoritesListManager;
 
 @interface ABFavoritesList : NSObject  {
-    void *_addressBook;
-    NSMutableArray *_list;
-    struct __CFDictionary { } *_uidToEntry;
-    struct { 
-        unsigned int dirty : 1; 
-        unsigned int postCount : 1; 
-        unsigned int needsReload : 1; 
-        unsigned int unused : 29; 
-    } _flags;
+    ABFavoritesListManager *_favoritesListManager;
 }
 
-+ (id)sharedInstance;
 + (id)sharedInstanceWithAddressBook:(void*)arg1;
++ (id)sharedInstance;
 
 - (id)initWithAddressBook:(void*)arg1;
-- (void)_postChangeNotification;
-- (void)save;
-- (void)dealloc;
-- (void)_loadListWithAddressBook:(void*)arg1;
-- (void)_loadList;
-- (void)_scheduleSave;
 - (id)entries;
-- (BOOL)isFull;
-- (id)entriesForPerson:(void*)arg1;
-- (id)entryWithIdentifier:(int)arg1 forPerson:(void*)arg2;
-- (id)entryWithType:(int)arg1 forPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)containsEntryWithIdentifier:(int)arg1 forPerson:(void*)arg2;
 - (BOOL)containsEntryWithType:(int)arg1 forPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)addEntryForPerson:(void*)arg1 property:(int)arg2 withIdentifier:(int)arg3;
-- (void)_addEntryToMap:(id)arg1;
-- (void)_removeEntryFromMap:(id)arg1 withUid:(int)arg2;
-- (void)_applicationWillSuspend:(id)arg1;
-- (void)_entryIdentityChanged:(id)arg1;
-- (void)_listChangedExternally;
-- (void)addEntry:(id)arg1;
 - (void)removeEntryAtIndex:(int)arg1;
 - (void)moveEntryAtIndex:(int)arg1 toIndex:(int)arg2;
-- (BOOL)_writeFavoritesToFile:(id)arg1;
 - (void)recacheIdentitiesSoon;
-- (void)_delayedLookup;
+- (id)entriesForPerson:(void*)arg1;
+- (id)entryWithType:(int)arg1 forPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (id)entryWithIdentifier:(int)arg1 forPerson:(void*)arg2;
+- (BOOL)isFull;
+- (void)addEntry:(id)arg1;
 - (BOOL)entryIsDuplicateAndThusRemoved:(id)arg1 oldUid:(int)arg2;
+- (void)save;
+- (void)dealloc;
+- (void)_applicationWillSuspend:(id)arg1;
 
 @end

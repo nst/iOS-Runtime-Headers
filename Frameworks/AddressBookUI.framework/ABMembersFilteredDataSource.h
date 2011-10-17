@@ -18,19 +18,19 @@
 
 
 - (void)setAddressBook:(void*)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void*)addressBook;
+- (id)records;
+- (void)setDelegate:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (id)records;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)dealloc;
 - (void)setStyleProvider:(id)arg1;
+- (id)styleProvider;
 - (void)removeAllRecords;
 - (void)addRecords:(id)arg1;
-- (id)styleProvider;
-- (void*)addressBook;
 
 @end

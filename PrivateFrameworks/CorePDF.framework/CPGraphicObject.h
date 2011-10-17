@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPTextLine, NSMutableArray, CPChunk;
+@class CPTextLine, CPChunk<CPGraphicUser>, CPParagraph;
 
 @interface CPGraphicObject : CPChunk  {
-    NSMutableArray *clips;
+    unsigned int clipIndex;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,38 +23,40 @@
     BOOL isInZoneBorder;
     int zoneGraphicType;
     CPTextLine *anchoringTextLine;
-    CPChunk *user;
+    CPParagraph *anchoringParagraph;
+    CPChunk<CPGraphicUser> *user;
 }
 
+@property(retain) CPParagraph * anchoringParagraph;
+@property unsigned int clipIndex;
 
-- (float)baselineOffset;
-- (BOOL)isVisible;
-- (id)user;
-- (void)setMargin:(float)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+
 - (void)setWrapType:(int)arg1;
 - (int)wrapType;
-- (void)setZoneGraphicType:(int)arg1;
-- (id)anchoringTextLine;
-- (void)setAnchoringTextLine:(id)arg1;
+- (void)setUser:(id)arg1;
 - (unsigned short)unicode;
 - (void)setBaselineOffset:(float)arg1;
 - (BOOL)isNarrow;
 - (BOOL)canBeContainer;
-- (BOOL)clipped;
-- (unsigned int)clipPathCount;
-- (struct CGPath { }*)clipPathAtIndex:(unsigned int)arg1 winding:(int*)arg2;
 - (BOOL)isIndivisible;
+- (BOOL)canContainText;
 - (void)setCanContainText:(BOOL)arg1;
+- (BOOL)isInZoneBorder;
 - (void)setIsInZoneBorder:(BOOL)arg1;
 - (int)zoneGraphicType;
-- (BOOL)isInZoneBorder;
-- (BOOL)canContainText;
+- (void)setZoneGraphicType:(int)arg1;
+- (void)setAnchoringTextLine:(id)arg1;
+- (id)anchoringTextLine;
+- (id)anchoringParagraph;
+- (void)setAnchoringParagraph:(id)arg1;
+- (unsigned int)clipIndex;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })renderedBounds;
-- (void)addClipPath:(struct CGPath { }*)arg1 winding:(int)arg2;
+- (void)setClipIndex:(unsigned int)arg1;
 - (float)margin;
-- (void)setUser:(id)arg1;
+- (id)user;
+- (BOOL)isVisible;
+- (void)setMargin:(float)arg1;
+- (float)baselineOffset;
+- (id)init;
 
 @end

@@ -18,23 +18,23 @@
 
 
 - (id)title;
-- (void)dealloc;
-- (id)description;
-- (struct __SecCertificate { }*)copyCertificate;
-- (BOOL)isRoot;
-- (BOOL)isIdentity;
-- (id)certificatePersistentID;
-- (BOOL)isSigned;
-- (struct __SecIdentity { }*)copyIdentityFromKeychain;
-- (id)expiry;
-- (id)installedOnDeviceID;
 - (void)setInstalledOnDeviceID:(id)arg1;
 - (void)setCertificatePersistentID:(id)arg1;
-- (id)subtitle1Description;
-- (id)subtitle2Description;
+- (struct __SecCertificate { }*)copyCertificate;
+- (struct __SecIdentity { }*)copyIdentityFromKeychain;
+- (BOOL)isIdentity;
+- (id)installedOnDeviceID;
+- (id)certificatePersistentID;
+- (BOOL)isRoot;
 - (id)subtitle1Label;
 - (id)subtitle2Label;
-- (id)stubDictionary;
+- (id)subtitle2Description;
+- (id)subtitle1Description;
+- (BOOL)isSigned;
+- (id)expiry;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 
 @end

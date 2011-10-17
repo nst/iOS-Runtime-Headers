@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSError, UIColor, UIWindow, MPMoviePlayerVideoViewController, AVFileValidator, NSURL;
+@class MPAVController, UIColor, UIWindow, MPMoviePlayerVideoViewController, NSError, NSURL;
 
 @interface MPMoviePlayerControllerInternalOld : NSObject  {
+    MPAVController *_player;
     NSURL *_contentURL;
     int _scalingMode;
     int _movieControlMode;
@@ -15,7 +16,6 @@
     unsigned int _previousStatusBarOrientation;
     int _previousStatusBarStyle;
     NSError *_playbackError;
-    AVFileValidator *_fileValidator;
     double _initialPlaybackTime;
     struct { 
         unsigned int active : 1; 
@@ -32,7 +32,8 @@
         unsigned int canShowControlsOverlay : 1; 
         unsigned int tearDownPlayerOnEnd : 1; 
         unsigned int didSendPreloadNotification : 1; 
-        unsigned int unused : 18; 
+        unsigned int isValidating : 1; 
+        unsigned int unused : 17; 
     } _playerBitfield;
 }
 

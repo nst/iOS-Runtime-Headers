@@ -10,8 +10,8 @@
 
 
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)initWithWeakReferenceToObserver:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)initWithWeakReferenceToObserver:(id)arg1;
 
 @end

@@ -11,7 +11,7 @@
 
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)dealloc;
-- (void)removeHitTestTarget:(id)arg1;
 - (void)addHitTestTarget:(id)arg1;
+- (void)removeHitTestTarget:(id)arg1;
 
 @end

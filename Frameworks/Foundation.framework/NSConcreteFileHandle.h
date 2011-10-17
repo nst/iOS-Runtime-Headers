@@ -2,10 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface NSConcreteFileHandle : NSFileHandle  {
     int _fd;
     void *_nativeHandle;
-    void *_avars;
+    struct dispatch_data_s { } *_anchor;
     unsigned short _flags;
     struct dispatch_source_s { } *_dsrc;
     BOOL _padding[2];
@@ -15,40 +19,69 @@
     BOOL _padding2[2];
     int _error;
     void *_resultBytes;
-    unsigned int _resultLength;
+    unsigned long _resultLength;
     int _resultSocket;
+    struct dispatch_queue_s { } *_fhLock;
+    long long _weakRefCount;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _readabilityHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _writeabilityHandler;
+
+    struct dispatch_source_s { } *_readMonitoringSource;
+    struct dispatch_source_s { } *_writeMonitoringSource;
+    struct dispatch_queue_s { } *_readMonitoringQueue;
+    struct dispatch_queue_s { } *_writeMonitoringQueue;
 }
 
 
-- (void)setPort:(id)arg1;
-- (id)port;
 - (void)finalize;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (int)fileDescriptor;
-- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
+- (void)waitForDataInBackgroundAndNotify;
+- (void)acceptConnectionInBackgroundAndNotify;
+- (void)readToEndOfFileInBackgroundAndNotify;
+- (void)readInBackgroundAndNotify;
+- (void)setPort:(id)arg1;
+- (unsigned int)readDataOfLength:(unsigned int)arg1 buffer:(char *)arg2;
 - (id)initWithFileDescriptor:(int)arg1;
+- (void)lockedRelease;
+- (struct dispatch_source_s { }*)_monitor:(const struct dispatch_source_type_s { }*)arg1 source:(struct dispatch_source_s { }*)arg2 onQueue:(struct dispatch_queue_s { }*)arg3;
+- (id)lockedRetain;
+- (void)waitForDataInBackgroundAndNotifyForModes:(id)arg1;
+- (void)acceptConnectionInBackgroundAndNotifyForModes:(id)arg1;
+- (void)readToEndOfFileInBackgroundAndNotifyForModes:(id)arg1;
+- (void)readInBackgroundAndNotifyForModes:(id)arg1;
+- (void)performActivity:(int)arg1 modes:(id)arg2;
+- (void)_cancelDispatchSources;
+- (void)clearWriteabilityHandler;
+- (void)clearReadabilityHandler;
+- (void)setReadabilityHandler:(id)arg1;
+- (id)readabilityHandler;
+- (void)setWriteabilityHandler:(id)arg1;
+- (id)writeabilityHandler;
+- (int)fileDescriptor;
+- (void)synchronizeFile;
+- (void)truncateFileAtOffset:(unsigned long long)arg1;
+- (unsigned long long)seekToEndOfFile;
+- (unsigned long long)offsetInFile;
+- (id)readDataToEndOfFile;
+- (id)availableData;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
-- (id)availableData;
-- (unsigned int)readDataOfLength:(unsigned int)arg1 buffer:(char *)arg2;
-- (id)readDataOfLength:(unsigned int)arg1;
-- (id)readDataToEndOfFile;
-- (void)writeData:(id)arg1;
-- (unsigned long long)offsetInFile;
-- (unsigned long long)seekToEndOfFile;
+- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
 - (void)seekToFileOffset:(unsigned long long)arg1;
-- (void)truncateFileAtOffset:(unsigned long long)arg1;
-- (void)synchronizeFile;
+- (void)writeData:(id)arg1;
 - (void)closeFile;
-- (void)performActivity:(int)arg1 modes:(id)arg2;
-- (void)readInBackgroundAndNotifyForModes:(id)arg1;
-- (void)readInBackgroundAndNotify;
-- (void)readToEndOfFileInBackgroundAndNotifyForModes:(id)arg1;
-- (void)readToEndOfFileInBackgroundAndNotify;
-- (void)acceptConnectionInBackgroundAndNotifyForModes:(id)arg1;
-- (void)acceptConnectionInBackgroundAndNotify;
-- (void)waitForDataInBackgroundAndNotifyForModes:(id)arg1;
-- (void)waitForDataInBackgroundAndNotify;
+- (id)readDataOfLength:(unsigned int)arg1;
+- (id)port;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

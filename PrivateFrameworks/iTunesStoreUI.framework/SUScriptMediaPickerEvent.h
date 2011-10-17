@@ -8,14 +8,16 @@
     SUScriptMediaItemCollection *_collection;
 }
 
-@property(getter=_collection,retain,readonly) SUScriptMediaItemCollection * collection;
+@property(readonly) SUScriptMediaItemCollection * collection;
 
 + (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
-- (void)dealloc;
-- (id)_collection;
-- (void)set_collection:(id)arg1;
 - (id)initWithCollection:(id)arg1;
+- (id)collection;
+- (id)attributeKeys;
+- (void)dealloc;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

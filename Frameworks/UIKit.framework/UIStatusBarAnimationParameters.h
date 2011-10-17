@@ -8,18 +8,18 @@
     int _curve;
 }
 
-@property int curve;
-@property double duration;
 @property double startTime;
+@property double duration;
+@property int curve;
 
 
-- (id)initWithDefaultParameters;
-- (void)setCurve:(int)arg1;
-- (double)startTime;
 - (double)duration;
-- (int)curve;
-- (id)init;
-- (void)setStartTime:(double)arg1;
 - (void)setDuration:(double)arg1;
+- (double)startTime;
+- (int)curve;
+- (void)setCurve:(int)arg1;
+- (void)setStartTime:(double)arg1;
+- (id)initWithDefaultParameters;
+- (id)init;
 
 @end

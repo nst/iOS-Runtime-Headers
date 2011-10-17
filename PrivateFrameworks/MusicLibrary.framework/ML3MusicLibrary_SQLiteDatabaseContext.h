@@ -2,37 +2,46 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
+@class CPLRUDictionary, ML3NondurableWriteSet;
+
 @interface ML3MusicLibrary_SQLiteDatabaseContext : NSObject  {
-    struct sqlite3 {} **_dbStack;
-    unsigned int _dbStackCurrentIndex;
-    void *_iTunesExtensions;
+    struct sqlite3 { } *_db;
+    const void *_iTunesExtensions;
     struct iPhoneSortKeyBuilder { } *_sortKeyBuilder;
-    struct __CFDictionary { } *_statementCache;
-    unsigned int _isInTransaction : 1;
+    CPLRUDictionary *_statementCache;
+    ML3NondurableWriteSet *_nondurableWriteSet;
+    int _transactionKind;
+    unsigned int _writeStatementCount;
     unsigned int _transactionHasChanges : 1;
     unsigned int _transactionHasNonContentsChanges : 1;
+    unsigned int _transactionHasDisplayValuesChanges : 1;
 }
 
 @property(readonly) struct sqlite3 { }* db;
-@property BOOL isInTransaction;
+@property(readonly) struct iPhoneSortKeyBuilder { }* sortKeyBuilder;
+@property(retain) ML3NondurableWriteSet * nondurableWriteSet;
+@property int transactionKind;
 @property BOOL transactionHasChanges;
 @property BOOL transactionHasNonContentsChanges;
-@property(readonly) struct iPhoneSortKeyBuilder { }* sortKeyBuilder;
+@property BOOL transactionHasDisplayValuesChanges;
 
 
-- (void)dealloc;
+- (void)setTransactionKind:(int)arg1;
+- (int)transactionKind;
+- (void)setNondurableWriteSet:(id)arg1;
+- (id)nondurableWriteSet;
+- (struct iPhoneSortKeyBuilder { }*)sortKeyBuilder;
+- (id)copyStatementForSQL:(id)arg1 cache:(BOOL)arg2;
+- (BOOL)executeSQL:(id)arg1;
+- (void)setTransactionHasDisplayValuesChanges:(BOOL)arg1;
+- (BOOL)transactionHasDisplayValuesChanges;
+- (void)setTransactionHasNonContentsChanges:(BOOL)arg1;
+- (BOOL)transactionHasNonContentsChanges;
+- (void)setTransactionHasChanges:(BOOL)arg1;
 - (BOOL)transactionHasChanges;
 - (id)initWithDB:(struct sqlite3 { }*)arg1;
-- (BOOL)isInTransaction;
-- (void)setIsInTransaction:(BOOL)arg1;
-- (void)setTransactionHasChanges:(BOOL)arg1;
-- (BOOL)transactionHasNonContentsChanges;
-- (void)setTransactionHasNonContentsChanges:(BOOL)arg1;
-- (struct sqlite3_stmt { }*)statementForSQL:(id)arg1;
+- (BOOL)executeSQL:(id)arg1 waitIfBusy:(BOOL)arg2;
 - (struct sqlite3 { }*)db;
-- (void)pushDB:(struct sqlite3 { }*)arg1;
-- (void)popDB;
-- (struct iPhoneSortKeyBuilder { }*)sortKeyBuilder;
-- (BOOL)executeSQL:(id)arg1;
+- (void)dealloc;
 
 @end

@@ -27,23 +27,23 @@
 + (void)_loadDefaultValue:(double*)arg1 forKey:(struct __CFString { }*)arg2;
 
 - (id)initWithKeepAliveInterval:(double)arg1 loggingIdentifier:(id)arg2 algorithmName:(id)arg3;
-- (double)minimumKeepAliveInterval;
 - (id)loggingIdentifier;
-- (void)_setCurrentKeepAliveInterval:(double)arg1;
 - (void)_resetAlgorithmToInterval:(double)arg1;
-- (void)processNextAction:(int)arg1;
-- (void)_processInitialGrowthAction:(int)arg1;
-- (void)_processBackoffAction:(int)arg1;
-- (void)_processSteadyStateAction:(int)arg1;
-- (void)_processRefinedGrowthAction:(int)arg1;
-- (double)_steadyStateTimeout;
+- (double)minimumKeepAliveInterval;
+- (void)_setCurrentKeepAliveInterval:(double)arg1;
+- (double)maximumKeepAliveInterval;
 - (id)_stringForAction:(int)arg1;
 - (id)_stringForStage:(int)arg1;
-- (double)maximumKeepAliveInterval;
-- (void)dealloc;
-- (id)description;
+- (void)_processInitialGrowthAction:(int)arg1;
+- (void)_processRefinedGrowthAction:(int)arg1;
+- (void)_processSteadyStateAction:(int)arg1;
+- (void)_processBackoffAction:(int)arg1;
+- (void)processNextAction:(int)arg1;
+- (double)_steadyStateTimeout;
 - (double)currentKeepAliveInterval;
-- (void)setMinimumKeepAliveInterval:(double)arg1;
 - (void)setMaximumKeepAliveInterval:(double)arg1;
+- (void)setMinimumKeepAliveInterval:(double)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

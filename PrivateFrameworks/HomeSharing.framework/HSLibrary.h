@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class <NSObject>, NSString, HSConnection;
+@class <NSObject>, HSConnection, NSString, SSAccount;
 
 @interface HSLibrary : NSObject  {
+    SSAccount *_account;
     HSConnection *_connection;
     <NSObject> *_context;
     NSString *_name;
@@ -13,22 +14,23 @@
     unsigned int _version;
 }
 
-@property(readonly) unsigned int version;
-@property(readonly) NSString * uniqueIdentifier;
-@property(readonly) BOOL requiresPassword;
 @property(readonly) NSString * name;
-@property(retain) <NSObject> * context;
+@property(readonly) NSString * uniqueIdentifier;
+@property(readonly) unsigned int version;
+@property(readonly) BOOL requiresPassword;
 @property(readonly) HSConnection * connection;
+@property(retain) <NSObject> * context;
 
 
-- (void)setContext:(id)arg1;
+- (BOOL)requiresPassword;
+- (id)initWithBaseURL:(id)arg1 forAccount:(id)arg2;
+- (id)initWithName:(id)arg1 uniqueIdentifier:(id)arg2 version:(unsigned int)arg3 baseURL:(id)arg4;
 - (unsigned int)version;
 - (id)uniqueIdentifier;
 - (id)context;
+- (void)setContext:(id)arg1;
 - (id)name;
-- (void)dealloc;
-- (BOOL)requiresPassword;
 - (id)connection;
-- (id)initWithName:(id)arg1 uniqueIdentifier:(id)arg2 version:(unsigned int)arg3 baseURL:(id)arg4;
+- (void)dealloc;
 
 @end

@@ -12,9 +12,9 @@
 @property(readonly) unsigned long long fileSize;
 
 
-- (id)type;
-- (id)name;
+- (double)lastModifiedDate;
 - (id)fileName;
 - (unsigned long long)fileSize;
+- (id)name;
 
 @end

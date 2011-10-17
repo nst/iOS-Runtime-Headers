@@ -11,12 +11,12 @@
 
 + (id)defaultStyle;
 
-- (void)dealloc;
-- (id)shallowCopy;
-- (id)cellStyle;
-- (id)textStyle;
+- (void)applyOverridesFrom:(id)arg1;
 - (void)setTextStyle:(id)arg1;
 - (void)setCellStyle:(id)arg1;
-- (void)applyOverridesFrom:(id)arg1;
+- (id)cellStyle;
+- (id)textStyle;
+- (id)shallowCopy;
+- (void)dealloc;
 
 @end

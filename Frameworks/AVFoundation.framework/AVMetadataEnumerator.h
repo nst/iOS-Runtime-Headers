@@ -17,16 +17,16 @@
 + (id)metadataEnumeratorWithMetadataReader:(struct OpaqueFigMetadataReader { }*)arg1;
 + (id)metadataEnumeratorWithArray:(id)arg1 key:(id)arg2 keySpace:(id)arg3 locale:(id)arg4;
 
-- (id)nextObject;
 - (void)finalize;
-- (void)dealloc;
-- (void)_setKey:(id)arg1;
+- (void)_setLocale:(id)arg1;
+- (id)nextObject;
 - (id)initWithMetadataReader:(struct OpaqueFigMetadataReader { }*)arg1;
 - (id)initWithArray:(id)arg1 key:(id)arg2 keySpace:(id)arg3 locale:(id)arg4;
 - (id)initWithMetadataReader:(struct OpaqueFigMetadataReader { }*)arg1 array:(id)arg2 key:(id)arg3 keySpace:(id)arg4 locale:(id)arg5;
 - (void)_setMetadataReader:(struct OpaqueFigMetadataReader { }*)arg1;
 - (void)_setArrayEnumerator:(id)arg1;
+- (void)_setKey:(id)arg1;
 - (void)_setKeySpace:(id)arg1;
-- (void)_setLocale:(id)arg1;
+- (void)dealloc;
 
 @end

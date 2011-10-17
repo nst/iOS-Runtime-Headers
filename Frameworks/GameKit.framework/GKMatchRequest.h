@@ -13,29 +13,30 @@
     NSArray *_playersToInvite;
 }
 
+@property unsigned int minPlayers;
+@property unsigned int maxPlayers;
+@property unsigned int playerGroup;
+@property unsigned int playerAttributes;
 @property(retain) NSArray * playersToInvite;
 @property BOOL attributesSet;
-@property unsigned int playerAttributes;
-@property unsigned int playerGroup;
-@property unsigned int maxPlayers;
-@property unsigned int minPlayers;
 
 
-- (unsigned int)maxPlayers;
-- (void)setMinPlayers:(unsigned int)arg1;
-- (void)setPlayersToInvite:(id)arg1;
 - (id)playersToInvite;
 - (BOOL)attributesSet;
-- (BOOL)isValidForHosted:(BOOL)arg1;
-- (void)setPlayerAttributes:(unsigned int)arg1;
-- (void)setAttributesSet:(BOOL)arg1;
 - (unsigned int)playerAttributes;
 - (unsigned int)playerGroup;
-- (void)setPlayerGroup:(unsigned int)arg1;
-- (void)setMaxPlayers:(unsigned int)arg1;
+- (unsigned int)maxPlayers;
 - (unsigned int)minPlayers;
-- (id)init;
+- (BOOL)isTurnBasedValid;
+- (BOOL)isValidForHosted:(BOOL)arg1;
+- (void)setPlayersToInvite:(id)arg1;
+- (void)setAttributesSet:(BOOL)arg1;
+- (void)setPlayerAttributes:(unsigned int)arg1;
+- (void)setMaxPlayers:(unsigned int)arg1;
+- (void)setMinPlayers:(unsigned int)arg1;
+- (void)setPlayerGroup:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)dealloc;
 
 @end

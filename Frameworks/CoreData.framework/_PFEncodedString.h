@@ -6,10 +6,14 @@
 }
 
 
-- (void)release;
-- (id)init;
-- (id)retain;
-- (void)dealloc;
+- (Class)classForCoder:(id)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (unsigned int)retainCount;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)release;
+- (void)dealloc;
 
 @end

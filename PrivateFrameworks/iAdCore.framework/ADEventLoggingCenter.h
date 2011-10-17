@@ -2,38 +2,45 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class NSMapTable;
+@class NSMapTable, NSMutableArray;
 
-@interface ADEventLoggingCenter : NSObject  {
+@interface ADEventLoggingCenter : NSObject <PBRequesterDelegate> {
     NSMapTable *_inflightRequests;
-    BOOL _retransmitScheduled;
+    NSMutableArray *_failedRequests;
+    int _throttleCount;
 }
 
-@property(readonly) BOOL isIdle;
-@property BOOL retransmitScheduled;
 @property(retain) NSMapTable * inflightRequests;
+@property(retain) NSMutableArray * failedRequests;
+@property int throttleCount;
 
 + (id)sharedCenter;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id)inflightRequests;
-- (id)_URLForRequest:(id)arg1 baseURL:(id)arg2;
-- (id)_sendRequests:(id)arg1 toURL:(id)arg2 additionalHeaders:(id)arg3;
-- (void)_considerSchedulingRetransmit;
-- (void)_considerPostingDidBecomeIdleNotification;
-- (BOOL)retransmitScheduled;
-- (void)setRetransmitScheduled:(BOOL)arg1;
+- (void)setThrottleCount:(int)arg1;
+- (int)throttleCount;
+- (void)setFailedRequests:(id)arg1;
+- (id)failedRequests;
 - (void)setInflightRequests:(id)arg1;
+- (id)inflightRequests;
 - (void)logEvent:(id)arg1 baseURL:(id)arg2;
-- (void)release;
-- (id)init;
+- (void)requester:(id)arg1 didFailWithError:(id)arg2;
+- (void)requesterDidFinish:(id)arg1;
+- (void)requester:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3;
+- (void)_retransmitRecord:(id)arg1 originalRequester:(id)arg2;
+- (void)_handleRetransmitFailureForRecord:(id)arg1 requester:(id)arg2;
+- (void)_retryStoredRequests;
+- (void)_storeFailedRequests:(id)arg1;
+- (id)_URLForRequest:(id)arg1 baseURL:(id)arg2;
+- (void)_persistFailedRequests;
+- (id)_sendRequests:(id)arg1 toURL:(id)arg2 additionalHeaders:(id)arg3;
+- (id)_assertionForRequest:(id)arg1;
+- (id)_failedRequestURL;
+- (unsigned int)retainCount;
 - (id)retain;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)retainCount;
 - (id)autorelease;
-- (void)requester:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3;
-- (void)requesterDidFinish:(id)arg1;
-- (BOOL)isIdle;
-- (void)requester:(id)arg1 didFailWithError:(id)arg2;
+- (id)init;
+- (oneway void)release;
 
 @end

@@ -16,14 +16,14 @@
 @property(copy) NSDictionary * remakerOptions;
 
 
-- (id)init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)dealloc;
-- (id)remakerMode;
-- (void)setRemakerMode:(id)arg1;
-- (id)mediaFileURL;
 - (id)remakerOptions;
-- (void)setMediaFileURL:(id)arg1;
+- (id)remakerMode;
+- (id)mediaFileURL;
 - (void)setRemakerOptions:(id)arg1;
+- (void)setRemakerMode:(id)arg1;
+- (void)setMediaFileURL:(id)arg1;
 
 @end

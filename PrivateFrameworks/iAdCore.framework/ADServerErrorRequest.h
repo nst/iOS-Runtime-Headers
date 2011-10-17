@@ -6,43 +6,42 @@
 
 @interface ADServerErrorRequest : PBRequest  {
     ADLogMetaData *_metaData;
-    int _errorCode;
     BOOL _hasErrorCode;
+    int _errorCode;
     ADAdData *_badResponse;
     NSMutableArray *_urlWithErrors;
 }
 
 @property(readonly) BOOL hasMetaData;
-@property(readonly) BOOL hasBadResponse;
-@property(readonly) int urlWithErrorsCount;
-@property(retain) NSMutableArray * urlWithErrors;
-@property(retain) ADAdData * badResponse;
-@property(readonly) BOOL hasErrorCode;
-@property int errorCode;
 @property(retain) ADLogMetaData * metaData;
+@property BOOL hasErrorCode;
+@property int errorCode;
+@property(readonly) BOOL hasBadResponse;
+@property(retain) ADAdData * badResponse;
+@property(retain) NSMutableArray * urlWithErrors;
 
 
-- (int)errorCode;
-- (BOOL)hasBadResponse;
-- (int)urlWithErrorsCount;
-- (void)setUrlWithError:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)urlWithErrorAtIndex:(unsigned int)arg1;
-- (id)urlWithErrors;
-- (void)setUrlWithErrors:(id)arg1;
-- (id)badResponse;
-- (void)setBadResponse:(id)arg1;
-- (BOOL)hasErrorCode;
-- (unsigned int)requestTypeCode;
-- (BOOL)hasMetaData;
 - (Class)responseClass;
-- (id)metaData;
-- (void)setMetaData:(id)arg1;
-- (void)setErrorCode:(int)arg1;
-- (void)addUrlWithError:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (BOOL)readFrom:(id)arg1;
+- (id)urlWithErrors;
+- (id)badResponse;
+- (int)errorCode;
+- (void)setHasErrorCode:(BOOL)arg1;
+- (BOOL)hasErrorCode;
+- (id)urlWithErrorAtIndex:(unsigned int)arg1;
+- (unsigned int)urlWithErrorsCount;
+- (BOOL)hasBadResponse;
+- (void)addUrlWithError:(id)arg1;
+- (void)setErrorCode:(int)arg1;
+- (void)setUrlWithErrors:(id)arg1;
+- (void)setBadResponse:(id)arg1;
+- (BOOL)hasMetaData;
+- (void)setMetaData:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
+- (id)metaData;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

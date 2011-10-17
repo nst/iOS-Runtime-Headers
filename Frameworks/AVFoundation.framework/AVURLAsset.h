@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSString, AVURLAssetInternal, AVAssetCache, NSURL;
+@class <AVURLAssetFailedURLRequestHandling>, NSString, AVURLAssetInternal, AVAssetCache, NSURL;
 
 @interface AVURLAsset : AVAsset  {
     AVURLAssetInternal *_asset;
@@ -12,32 +12,47 @@
 @property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
 @property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
 @property(readonly) NSString * cacheKey;
+@property(setter=setFailedURLRequestDelegate:) <AVURLAssetFailedURLRequestHandling> * failedURLRequestDelegate;
 @property(copy,readonly) NSURL * URL;
 
++ (void)initialize;
++ (id)audiovisualTypes;
++ (BOOL)isPlayableExtendedMIMEType:(id)arg1;
 + (id)URLAssetWithURL:(id)arg1 options:(id)arg2;
++ (void)_ensureAudiovisualTypes;
++ (id)audiovisualMIMETypes;
++ (id)_avfValidationPlist;
 
+- (void)finalize;
 - (id)cacheKey;
 - (id)URL;
-- (void)finalize;
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (id)availableChapterLocales;
+- (id)chapterMetadataGroupsWithTitleLocale:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
+- (void)setFailedURLRequestDelegate:(id)arg1;
+- (struct __CFURL { }*)_URL;
+- (void)_tracksDidChange;
+- (id)_assetInspectorLoader;
+- (id)_assetInspector;
 - (id)lyrics;
 - (id)tracks;
-- (struct __CFURL { }*)_URL;
-- (struct OpaqueFigFormatReader { }*)_formatReader;
-- (id)_assetInspectorLoader;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (void)_setAssetInspectorLoader:(id)arg1;
-- (id)_assetInspector;
-- (void)_tracksDidChange;
-- (void)cancelLoading;
+- (id)_errorForFigNotificationPayload:(struct __CFDictionary { }*)arg1 key:(struct __CFString { }*)arg2;
+- (id)failedURLRequestDelegate;
+- (void)finishHandlingFailedURLRequestWithResponseProperties:(id)arg1;
+- (struct OpaqueFigFormatReader { }*)_formatReader;
 - (id)_chapterGroupInfo;
-- (id)availableChapterLocales;
 - (unsigned int)_addChapterMetadataItem:(id)arg1 withDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3 toChapters:(id)arg4 fromIndex:(unsigned int)arg5;
-- (id)chapterMetadataGroupsWithTitleLocale:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
 - (id)assetCache;
 - (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
 - (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
-- (id)initWithURL:(id)arg1 options:(id)arg2;
+- (id)resolvedURL;
+- (id)downloadDestinationURL;
+- (void)cancelLoading;
+- (void)_addFigAssetNotifications;
+- (void)_removeFigAssetNotifications;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

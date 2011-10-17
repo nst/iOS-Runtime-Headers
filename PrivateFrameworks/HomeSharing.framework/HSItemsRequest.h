@@ -13,9 +13,9 @@
 
 - (void)setShouldParseResponse:(BOOL)arg1;
 - (BOOL)shouldParseResponse;
-- (id)initWithDatabaseID:(unsigned int)arg1;
 - (id)initWithDatabaseID:(unsigned int)arg1 containerID:(unsigned int)arg2;
-- (id)canonicalResponseForResponse:(id)arg1;
+- (id)initWithDatabaseID:(unsigned int)arg1;
 - (id)initWithAction:(id)arg1;
+- (id)canonicalResponseForResponse:(id)arg1;
 
 @end

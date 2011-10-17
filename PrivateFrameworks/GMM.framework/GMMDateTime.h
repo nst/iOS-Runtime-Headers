@@ -4,28 +4,26 @@
 
 @interface GMMDateTime : PBCodable  {
     long long _secsSinceEpoch;
-    int _timeZoneOffsetMin;
     BOOL _hasTimeZoneOffsetMin;
+    int _timeZoneOffsetMin;
 }
 
-@property(readonly) BOOL hasTimeZoneOffsetMin;
-@property int timeZoneOffsetMin;
 @property long long secsSinceEpoch;
+@property BOOL hasTimeZoneOffsetMin;
+@property int timeZoneOffsetMin;
 
-+ (id)date;
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)description;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setSecsSinceEpoch:(long long)arg1;
-- (void)setTimeZoneOffsetMin:(int)arg1;
-- (long long)secsSinceEpoch;
+- (void)setHasTimeZoneOffsetMin:(BOOL)arg1;
 - (BOOL)hasTimeZoneOffsetMin;
+- (void)setTimeZoneOffsetMin:(int)arg1;
+- (void)setSecsSinceEpoch:(long long)arg1;
 - (int)timeZoneOffsetMin;
-- (id)calendarDate;
+- (long long)secsSinceEpoch;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (id)description;
+- (void)dealloc;
 
 @end

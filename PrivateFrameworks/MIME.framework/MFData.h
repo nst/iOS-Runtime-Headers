@@ -4,44 +4,40 @@
 
 @class NSData, NSString;
 
-@interface MFData : NSData <NSCopying, NSMutableCopying, WeaklyReferencedObject> {
+@interface MFData : NSData <NSCopying, NSMutableCopying> {
     NSData *_internal;
     NSString *_path;
     NSData *_parent;
     BOOL _subdata;
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)setDefaultMappingThresholdInBytes:(unsigned int)arg1;
 
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
-- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
-- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
-- (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (void)release;
-- (id)init;
-- (id)retain;
 - (id)data;
-- (id)initWithContentsOfFile:(id)arg1;
-- (id)initWithData:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (const void*)bytes;
-- (unsigned int)retainCount;
-- (unsigned int)length;
-- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
-- (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (BOOL)writeToURL:(id)arg1 atomically:(BOOL)arg2;
-- (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)initWithImmutableData:(id)arg1;
-- (id)initWithContentsOfMappedFile:(id)arg1;
+- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
+- (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithContentsOfFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)initWithContentsOfMappedFile:(id)arg1;
+- (id)initWithImmutableData:(id)arg1;
 - (id)_initWithFile:(id)arg1;
-- (id)_initWithData:(id)arg1 maybeMutable:(BOOL)arg2;
 - (id)_initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 from:(id)arg2 retainingParent:(BOOL)arg3;
 - (BOOL)mf_immutable;
+- (id)_initWithData:(id)arg1 maybeMutable:(BOOL)arg2;
+- (id)initWithContentsOfURL:(id)arg1;
+- (BOOL)writeToURL:(id)arg1 atomically:(BOOL)arg2;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (id)initWithData:(id)arg1;
+- (id)initWithContentsOfFile:(id)arg1;
+- (const void*)bytes;
+- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
+- (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
+- (unsigned int)length;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -13,11 +13,11 @@
 
 + (BOOL)canFilterByProperty:(id)arg1;
 
+- (unsigned long long)persistentID;
+- (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
-- (unsigned long long)persistentID;
 - (id)representativeItem;
 - (id)mediaLibrary;
 

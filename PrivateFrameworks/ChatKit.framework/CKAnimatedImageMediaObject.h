@@ -8,10 +8,10 @@
 + (id)mimeTypesToFileExtensions;
 
 - (BOOL)_imageHasAnimation;
-- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
-- (float)balloonHeightWithPreviewData:(id)arg1;
-- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
 - (BOOL)shouldGeneratePreviewInBackground;
+- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
+- (float)balloonHeightWithPreviewData:(id)arg1;
+- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
 
 @end

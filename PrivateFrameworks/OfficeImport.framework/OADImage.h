@@ -11,18 +11,18 @@
 }
 
 
+- (id)movie;
+- (void)setMovie:(id)arg1;
+- (id)createImageFill;
+- (void)createPictureFramePresetGeometry;
+- (id)imageProperties;
+- (id)ole;
+- (id)initWithBlipRef:(id)arg1;
+- (void)setOle:(id)arg1;
+- (void)setParentTextListStyle:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (id)geometry;
 - (id)init;
 - (void)dealloc;
-- (void)setOle:(id)arg1;
-- (id)ole;
-- (id)initWithBlipRef:(id)arg1;
-- (id)movie;
-- (void)setMovie:(id)arg1;
-- (void)setParentTextListStyle:(id)arg1;
-- (id)createImageFill;
-- (void)createPictureFramePresetGeometry;
-- (id)imageProperties;
 
 @end

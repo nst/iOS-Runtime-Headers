@@ -18,18 +18,18 @@
 
 + (id)recordWithScrollView:(id)arg1;
 
-- (id)scrollView;
 - (void)_adjustTableForKeyboardInfo:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)scrollView;
 - (void)setScrollView:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)dealloc;
-- (BOOL)manuallyAdjusted;
-- (id)delayedScrollTimer;
-- (void)cancelDelayedAdjustments;
 - (void)setDelayedScrollTimer:(id)arg1;
+- (id)delayedScrollTimer;
+- (void)setAdjustment:(float)arg1;
 - (void)setManuallyAdjusted:(BOOL)arg1;
 - (float)adjustment;
-- (void)setAdjustment:(float)arg1;
+- (void)cancelDelayedAdjustments;
+- (BOOL)manuallyAdjusted;
 
 @end

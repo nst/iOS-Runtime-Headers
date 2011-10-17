@@ -2,85 +2,57 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class PCPersistentTimer, NSNumber, NSDate, <FTMessageDeliveryDelegate>, FTMessageQueue, FTMessage, NSString, NSData, NSArray;
+@class FTMessageQueue, NSArray, NSString, FTMessage, NSNumber, IMTimer;
 
 @interface FTMessageDelivery : NSObject <FTMessageQueueDelegate> {
-    NSNumber *_playerID;
-    NSNumber *_protocolVersion;
-    NSString *_userID;
-    NSData *_signature;
-    NSString *_deviceID;
-    NSString *_deviceIDPrefix;
-    NSString *_userAgent;
-    NSData *_pushToken;
-    struct __SecIdentity { } *_clientIdentity;
-    NSArray *_clientCertificates;
-    id _delegate;
-    FTMessageQueue *_queue;
-    PCPersistentTimer *_retryTimer;
-    NSDate *_retryDate;
-    BOOL _shouldQueue;
     unsigned int _retries;
+    NSNumber *_protocolVersion;
+    FTMessageQueue *_queue;
+    NSString *_userAgent;
+    unsigned int _maxConcurrentMessages;
+    BOOL _retryInAirplaneMode;
+    IMTimer *_timer;
 }
 
-@property double messageTimeoutTime;
-@property struct __SecIdentity { }* clientIdentity;
-@property(readonly) BOOL hasQueuedItems;
-@property(readonly) BOOL busy;
-@property BOOL shouldQueueItems;
-@property(readonly) FTMessage * currentMessage;
-@property(readonly) NSArray * queuedMessages;
-@property(copy) NSData * signature;
-@property(copy) NSData * pushToken;
-@property <FTMessageDeliveryDelegate> * delegate;
-@property(copy) NSString * deviceIDPrefix;
-@property(copy) NSString * deviceID;
-@property(copy) NSString * userID;
 @property(copy) NSString * userAgent;
 @property(copy) NSNumber * protocolVersion;
-@property(copy) NSArray * clientCertificates;
+@property(readonly) BOOL hasQueuedItems;
+@property(readonly) BOOL busy;
+@property BOOL retryInAirplaneMode;
+@property(readonly) FTMessage * currentMessage;
+@property(readonly) NSArray * queuedMessages;
+@property(readonly) int maxMessageSize;
+@property unsigned int maxConcurrentMessages;
 
-+ (id)alloc;
++ (Class)HTTPMessageDeliveryClass;
++ (Class)APNSMessageDeliveryClass;
 + (id)_errorForTDMessageDeliveryStatus:(int)arg1 userInfo:(id)arg2;
++ (id)alloc;
 
-- (void)setDeviceID:(id)arg1;
 - (id)userAgent;
-- (id)pushToken;
-- (void)setPushToken:(id)arg1;
+- (void)setProtocolVersion:(id)arg1;
+- (id)protocolVersion;
+- (id)queuedMessages;
+- (id)currentMessage;
+- (void)setRetryInAirplaneMode:(BOOL)arg1;
 - (void)invalidate;
+- (void)cancelMessage:(id)arg1;
+- (BOOL)sendMessage:(id)arg1;
+- (BOOL)retryInAirplaneMode;
+- (void)setMaxConcurrentMessages:(unsigned int)arg1;
+- (unsigned int)maxConcurrentMessages;
+- (int)maxMessageSize;
+- (void)_setRetryTimer:(double)arg1;
+- (BOOL)hasQueuedItems;
+- (BOOL)busy;
+- (void)_informDelegateAboutMessage:(id)arg1 error:(id)arg2 result:(id)arg3 resultCode:(int)arg4;
+- (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
+- (void)_retryTimerHit:(id)arg1;
+- (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
+- (void)_clearRetryTimer;
 - (id)init;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)setSignature:(id)arg1;
 - (void)setUserAgent:(id)arg1;
-- (id)signature;
-- (id)userID;
-- (id)deviceIDPrefix;
-- (id)clientCertificates;
-- (id)queuedMessages;
-- (BOOL)hasQueuedItems;
-- (struct __SecIdentity { }*)clientIdentity;
-- (double)messageTimeoutTime;
-- (void)setMessageTimeoutTime:(double)arg1;
-- (void)setClientIdentity:(struct __SecIdentity { }*)arg1;
-- (void)_informDelegateAboutMessage:(id)arg1 error:(id)arg2 result:(id)arg3;
-- (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
-- (void)setShouldQueueItems:(BOOL)arg1;
-- (BOOL)shouldQueueItems;
-- (id)currentMessage;
-- (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
-- (void)cancelMessage:(id)arg1;
-- (int)sendMessage:(id)arg1 error:(id*)arg2;
-- (void)_retryTimerHit:(id)arg1;
-- (void)_clearRetryTimer;
-- (void)_setRetryTimer:(double)arg1;
-- (void)setDeviceIDPrefix:(id)arg1;
-- (void)setUserID:(id)arg1;
-- (void)setClientCertificates:(id)arg1;
-- (id)deviceID;
-- (BOOL)busy;
-- (id)protocolVersion;
-- (void)setProtocolVersion:(id)arg1;
+- (id)_queue;
 
 @end

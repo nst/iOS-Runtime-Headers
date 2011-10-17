@@ -2,31 +2,36 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSIndexPath;
+@class UITableViewUpdateGap, NSIndexPath;
 
 @interface UIUpdateItem : NSObject  {
     int _action;
     NSIndexPath *_indexPath;
     int _animation;
     float _offset;
+    UITableViewUpdateGap *_gap;
 }
 
-@property float offset;
-@property(readonly) int animation;
-@property(readonly) NSIndexPath * indexPath;
 @property(readonly) int action;
+@property(readonly) NSIndexPath * indexPath;
+@property int animation;
+@property float offset;
+@property UITableViewUpdateGap * gap;
 
 
-- (int)animation;
-- (id)initWithAction:(int)arg1 forIndexPath:(id)arg2 animation:(int)arg3;
+- (id)gap;
 - (id)_actionDescription;
+- (void)setAnimation:(int)arg1;
+- (void)setGap:(id)arg1;
+- (id)initWithAction:(int)arg1 forIndexPath:(id)arg2 animation:(int)arg3;
 - (BOOL)isSectionOperation;
 - (id)indexPath;
+- (int)compareIndexPaths:(id)arg1;
+- (int)inverseCompareIndexPaths:(id)arg1;
 - (void)setOffset:(float)arg1;
 - (float)offset;
+- (int)animation;
 - (int)action;
-- (int)inverseCompareIndexPaths:(id)arg1;
-- (int)compareIndexPaths:(id)arg1;
 - (void)dealloc;
 
 @end

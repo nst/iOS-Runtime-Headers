@@ -10,16 +10,16 @@
 
 @property(retain) <SUDataConsumer> * dataConsumer;
 
-+ (int)maxConsumeLengthForReadLength:(int)arg1;
 + (long long)outputLengthForInputLength:(long long)arg1;
++ (int)maxConsumeLengthForReadLength:(int)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (id)initWithDataConsumer:(id)arg1;
-- (int)consumeData:(id)arg1;
-- (void)finish;
-- (unsigned int)minimumConsumeLength;
 - (id)dataConsumer;
 - (void)setDataConsumer:(id)arg1;
+- (void)finish;
+- (id)init;
+- (void)dealloc;
+- (unsigned int)minimumConsumeLength;
+- (id)initWithDataConsumer:(id)arg1;
+- (int)consumeData:(id)arg1;
 
 @end

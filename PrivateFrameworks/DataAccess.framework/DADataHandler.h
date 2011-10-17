@@ -10,19 +10,20 @@
 
 + (id)newDataHandlerForDataclass:(int)arg1 container:(void*)arg2;
 
-- (id)initWithContainer:(void*)arg1;
-- (void)setContainer:(void*)arg1;
-- (int)getIdFromLocalObject:(void*)arg1;
-- (void*)copyLocalObjectFromId:(int)arg1;
-- (BOOL)mapWithoutCommitting;
-- (BOOL)saveContainer;
-- (struct __CFArray { }*)copyOfAllLocalObjectsInContainer;
-- (void)drainContainer;
-- (BOOL)wipeServerIds;
-- (void)openDB;
-- (BOOL)closeDBAndSave:(BOOL)arg1;
 - (id)getDAObjectWithLocalItem:(void*)arg1 serverId:(id)arg2 account:(id)arg3;
+- (BOOL)closeDBAndSave:(BOOL)arg1;
+- (void)openDB;
+- (BOOL)wipeServerIds;
+- (void)drainContainer;
+- (struct __CFArray { }*)copyOfAllLocalObjectsInContainer;
+- (BOOL)saveContainer;
+- (BOOL)mapWithoutCommitting;
+- (void*)copyLocalObjectFromId:(int)arg1;
+- (int)getIdFromLocalObject:(void*)arg1;
+- (void)setContainer:(void*)arg1;
+- (id)initWithContainer:(void*)arg1;
 - (void*)container;
 - (void)dealloc;
+- (int)dataclass;
 
 @end

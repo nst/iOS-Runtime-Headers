@@ -12,12 +12,12 @@
 
 
 - (void)setDisabled:(BOOL)arg1;
-- (id)label;
 - (BOOL)disabled;
+- (id)label;
 - (void)setLabel:(id)arg1;
-- (id)createSelectedItem;
-- (id)createPickerCell;
-- (void)populateCell:(id)arg1;
 - (id)itemTitle;
+- (void)populateCell:(id)arg1;
+- (id)createPickerCell;
+- (id)createSelectedItem;
 
 @end

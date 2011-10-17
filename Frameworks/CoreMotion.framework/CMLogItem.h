@@ -9,11 +9,11 @@
 @property(readonly) double timestamp;
 
 
-- (id)initWithTimestamp:(double)arg1;
 - (double)timestamp;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithTimestamp:(double)arg1;
 
 @end

@@ -9,7 +9,7 @@
 }
 
 
-- (id)initWithWDTableProperties:(id)arg1;
 - (void)addTableProperties:(id)arg1;
+- (id)initWithWDTableProperties:(id)arg1;
 
 @end

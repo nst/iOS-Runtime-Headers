@@ -26,23 +26,23 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
 - (id)accountDescription;
-- (id)password;
-- (id)title;
-- (void)dealloc;
-- (id)description;
-- (id)searchSettings;
-- (void)setAccountPersistentUUID:(id)arg1;
-- (id)subtitle1Description;
-- (id)subtitle2Description;
-- (id)subtitle1Label;
-- (id)subtitle2Label;
-- (id)stubDictionary;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
 - (id)hostname;
-- (BOOL)useSSL;
+- (id)password;
+- (id)title;
+- (id)searchSettings;
+- (void)setAccountPersistentUUID:(id)arg1;
+- (id)subtitle1Label;
+- (id)subtitle2Label;
+- (id)subtitle2Description;
+- (id)subtitle1Description;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 - (id)accountPersistentUUID;
+- (BOOL)useSSL;
 
 @end

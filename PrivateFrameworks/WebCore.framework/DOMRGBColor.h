@@ -13,10 +13,10 @@
 @property(retain,readonly) DOMCSSPrimitiveValue * alpha;
 
 
-- (id)blue;
-- (id)red;
-- (id)green;
 - (void)finalize;
+- (id)blue;
+- (id)green;
+- (id)red;
 - (struct CGColor { }*)color;
 - (id)alpha;
 - (void)dealloc;

@@ -5,17 +5,15 @@
 @interface SUShortLinkCellConfiguration : SUMediaItemCellConfiguration  {
 }
 
-+ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 + (id)copyDefaultContext;
-+ (void)_initializeSafeCategory;
++ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
 - (id)init;
-- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (BOOL)showContentRating;
-- (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (void)reloadLayoutInformation;
 - (id)copyImageDataProvider;
+- (void)reloadLayoutInformation;
 - (void)reloadStrings;
-- (id)accessibilityLabel;
+- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (id)fontForLabelAtIndex:(unsigned int)arg1;
 
 @end

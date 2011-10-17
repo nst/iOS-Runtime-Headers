@@ -2,39 +2,48 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class MLAlbum, ALAssetsLibrary, ALAssetsFilter;
+@class ALAssetsFilter, PLPhotoLibrary, ALAssetsLibrary, NSObject<PLAssetContainer>, NSMutableDictionary;
 
 @interface ALAssetsGroupPrivate : NSObject <ALAssetsLibraryAsset> {
-    MLAlbum *_album;
     BOOL _loadedAssets;
+    ALAssetsLibrary *_library;
+    NSObject<PLAssetContainer> *_album;
     ALAssetsFilter *_assetsFilter;
     unsigned int _groupType;
     BOOL _isValid;
-    ALAssetsLibrary *_library;
+    NSMutableDictionary *_propertyValues;
+    PLPhotoLibrary *_photoLibrary;
 }
 
-@property ALAssetsLibrary * library;
-@property BOOL isValid;
-@property unsigned int groupType;
 @property(retain) ALAssetsFilter * assetsFilter;
-@property(retain) MLAlbum * album;
+@property unsigned int groupType;
+@property BOOL isValid;
+@property(retain) NSMutableDictionary * propertyValues;
+@property ALAssetsLibrary * library;
+@property(retain) NSObject<PLAssetContainer> * album;
+@property(retain) PLPhotoLibrary * _photoLibrary;
 
 
-- (void)resetAssets;
-- (id)assetsFilter;
-- (void)libraryWillDisappear;
-- (void)libraryDidChange;
-- (void)setIsValid:(BOOL)arg1;
-- (id)initWithAlbum:(id)arg1 library:(id)arg2;
-- (void)setGroupType:(unsigned int)arg1;
-- (unsigned int)groupType;
-- (void)populateAssets;
-- (void)setAssetsFilter:(id)arg1;
-- (BOOL)isValid;
-- (void)dealloc;
-- (void)setLibrary:(id)arg1;
 - (id)library;
-- (id)album;
-- (void)setAlbum:(id)arg1;
+- (void)setLibrary:(id)arg1;
+- (struct NSObject { Class x1; }*)album;
+- (BOOL)isValid;
+- (void)setPropertyValues:(id)arg1;
+- (id)assetsFilter;
+- (void)resetAssets;
+- (void)set_photoLibrary:(id)arg1;
+- (void)libraryDidChange;
+- (void)libraryWillDisappear;
+- (id)_photoLibrary;
+- (void)setIsValid:(BOOL)arg1;
+- (void)setAssetsFilter:(id)arg1;
+- (void)populateAssets;
+- (id)propertyValues;
+- (unsigned int)groupType;
+- (void)setGroupType:(unsigned int)arg1;
+- (id)initWithAlbum:(struct NSObject { Class x1; }*)arg1 library:(id)arg2;
+- (void)_performBlockAndWait:(id)arg1;
+- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)dealloc;
 
 @end

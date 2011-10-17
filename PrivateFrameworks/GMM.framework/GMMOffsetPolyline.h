@@ -9,21 +9,20 @@
     NSData *_relativePoints;
 }
 
+@property(retain) GMMGeometry * absolutePoint;
 @property(readonly) BOOL hasRelativePoints;
 @property(retain) NSData * relativePoints;
-@property(retain) GMMGeometry * absolutePoint;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (BOOL)readFrom:(id)arg1;
+- (id)relativePoints;
+- (id)absolutePoint;
 - (BOOL)hasRelativePoints;
 - (void)setRelativePoints:(id)arg1;
 - (void)setAbsolutePoint:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (id)relativePoints;
-- (id)absolutePoint;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -18,36 +18,36 @@
     double _startAngle;
 }
 
-@property double startAngle;
-@property double angle;
 @property BOOL restrictsToAngle;
-@property(retain) UITouch * touch;
-@property double minimumDistance;
-@property struct CGPoint { float x; float y; } startPosition;
+@property double angle;
 @property double maximumDeviation;
+@property double minimumDistance;
+@property struct CGPoint { float x1; float x2; } startPosition;
+@property double startAngle;
+@property(retain) UITouch * touch;
 
 
-- (void)setStartPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTouch:(id)arg1;
 - (double)startAngle;
 - (void)setStartAngle:(double)arg1;
-- (double)angle;
-- (BOOL)restrictsToAngle;
-- (void)setRestrictsToAngle:(BOOL)arg1;
-- (double)minimumDistance;
 - (double)maximumDeviation;
+- (BOOL)restrictsToAngle;
+- (double)minimumDistance;
+- (double)angle;
+- (void)setStartPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setRestrictsToAngle:(BOOL)arg1;
 - (void)tooSlow:(id)arg1;
 - (void)clearTimer;
 - (void)_resetGestureRecognizer;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (void)setAngle:(double)arg1;
-- (void)setMaximumDeviation:(double)arg1;
+- (void)setTouch:(id)arg1;
 - (void)setMinimumDistance:(double)arg1;
+- (void)setMaximumDeviation:(double)arg1;
+- (void)setAngle:(double)arg1;
 - (id)touch;
 - (struct CGPoint { float x1; float x2; })startPosition;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
 

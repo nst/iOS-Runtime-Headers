@@ -8,25 +8,29 @@
     BOOL _loading;
     NSString *_subtitle;
     NSString *_styleString;
+    NSString *_systemItemString;
 }
 
 @property(readonly) int buttonType;
-@property(retain) NSString * subtitle;
-@property(readonly) NSString * styleString;
 @property(getter=isLoading) BOOL loading;
-@property(retain) NSString * title;
 @property(retain) UIImage * image;
+@property(retain) NSString * subtitle;
+@property(readonly) NSString * systemItemString;
+@property(retain) NSString * title;
+@property(readonly) NSString * styleString;
 
-+ (id)objectWithDefaultButtonForScriptObject:(id)arg1;
++ (id)objectWithDefaultButtonForScriptButton:(id)arg1;
 
-- (void)setSubtitle:(id)arg1;
+- (void)setLoading:(BOOL)arg1;
+- (void)buttonAction:(id)arg1;
 - (int)buttonType;
 - (BOOL)isLoading;
 - (id)subtitle;
+- (void)setSubtitle:(id)arg1;
 - (id)styleString;
 - (void)dealloc;
-- (void)buttonAction:(id)arg1;
+- (id)systemItemString;
 - (void)setStyleFromString:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
+- (id)initWithSystemItemString:(id)arg1;
 
 @end

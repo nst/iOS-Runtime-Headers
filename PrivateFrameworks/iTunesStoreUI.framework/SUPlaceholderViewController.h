@@ -12,27 +12,27 @@
     BOOL _shouldShowLoadingView;
 }
 
+@property(copy) SUGradient * backgroundGradient;
+@property(copy) SUGradient * defaultBackgroundGradient;
 @property(readonly) SULoadingView * loadingView;
 @property BOOL shouldShowLoadingView;
-@property(copy) SUGradient * defaultBackgroundGradient;
-@property(copy) SUGradient * backgroundGradient;
 
 
+- (void)setLoading:(BOOL)arg1;
 - (void)loadView;
 - (id)init;
 - (void)dealloc;
-- (id)loadingView;
-- (void)setBackgroundGradient:(id)arg1;
-- (void)setDefaultBackgroundGradient:(id)arg1;
-- (void)setShouldShowLoadingView:(BOOL)arg1;
-- (void)setLoading:(BOOL)arg1;
-- (void)_bagDidLoadNotification:(id)arg1;
-- (void)_reloadBackgroundGradient;
-- (id)_newURLBagBackgroundGradient;
 - (BOOL)shouldShowLoadingView;
 - (id)defaultBackgroundGradient;
-- (id)backgroundGradient;
+- (void)setShouldShowLoadingView:(BOOL)arg1;
+- (void)setDefaultBackgroundGradient:(id)arg1;
+- (id)_newURLBagBackgroundGradient;
+- (void)_reloadBackgroundGradient;
+- (void)_bagDidLoadNotification:(id)arg1;
+- (void)setBackgroundGradient:(id)arg1;
 - (void)parentViewControllerHierarchyDidChange;
+- (id)loadingView;
+- (id)backgroundGradient;
 - (id)copyArchivableContext;
 
 @end

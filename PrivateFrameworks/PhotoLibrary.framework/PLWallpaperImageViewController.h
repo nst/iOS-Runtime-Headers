@@ -14,45 +14,45 @@
     unsigned int _didSetImageMode : 1;
 }
 
-@property(copy) NSString * wallpaperTitle;
 @property BOOL saveWallpaperData;
+@property(copy) NSString * wallpaperTitle;
 
-+ (id)argsForSavingWallpaperFromTile:(id)arg1 mode:(int)arg2;
 + (void)setWallpaperFromArgs:(id)arg1;
++ (id)argsForSavingWallpaperFromTile:(id)arg1 mode:(int)arg2;
 
-- (void)loadView;
+- (void)setWallpaperTitle:(id)arg1;
+- (void)setSaveWallpaperData:(BOOL)arg1;
+- (id)initWithUIImage:(id)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)navigationItem;
-- (id)init;
-- (void)dealloc;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)initWithUIImage:(id)arg1;
 - (void)_adjustScrollViewGeometry;
 - (void)_savePhoto;
-- (void)_backgroundCropWallpaper:(id)arg1;
-- (void)_cropWallpaperFinished:(id)arg1;
-- (id)wallpaperTitle;
-- (void)setWallpaperTitle:(id)arg1;
 - (BOOL)saveWallpaperData;
-- (void)setSaveWallpaperData:(BOOL)arg1;
-- (int)imageFormat;
-- (BOOL)uiipc_useTelephonyUI;
-- (int)cropOverlayMode;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewFrame;
-- (unsigned int)_contentAutoresizingMask;
-- (unsigned int)_tileAutoresizingMask;
-- (BOOL)clientIsWallpaper;
-- (void)setupNavigationItem;
+- (void)_cropWallpaperFinished:(id)arg1;
+- (void)_backgroundCropWallpaper:(id)arg1;
+- (id)wallpaperTitle;
 - (void)_updateTitles;
-- (void)cropOverlayWasCancelled:(id)arg1;
+- (int)imageFormat;
+- (BOOL)clientIsWallpaper;
+- (unsigned int)_tileAutoresizingMask;
+- (void)setupNavigationItem;
+- (unsigned int)_contentAutoresizingMask;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewFrame;
+- (int)cropOverlayMode;
+- (BOOL)uiipc_useTelephonyUI;
 - (void)cropOverlayWasOKed:(id)arg1;
-- (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
+- (void)cropOverlayWasCancelled:(id)arg1;
+- (void)_setImageAsHomeScreenAndLockScreenClicked:(id)arg1;
 - (void)_setImageAsHomeScreenClicked:(id)arg1;
 - (void)_setImageAsLockScreenClicked:(id)arg1;
-- (void)_setImageAsHomeScreenAndLockScreenClicked:(id)arg1;
+- (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -4,43 +4,50 @@
 
 @class NSString;
 
-@interface MFComposeRecipient : NSObject  {
+@interface MFComposeRecipient : NSObject <MFDraggableItem> {
     void *_record;
     int _recordID;
     int _property;
     int _identifier;
     NSString *_address;
     NSString *_label;
+    NSString *_countryCode;
 }
 
-+ (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
-+ (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
-+ (id)recipientWithProperty:(int)arg1 address:(id)arg2;
-+ (id)mf_recipientWithGALResult:(id)arg1;
-+ (void)_initializeSafeCategory;
+@property(retain) NSString * countryCode;
 
-- (id)commentedAddress;
-- (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
-- (int)recordID;
-- (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
++ (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
++ (id)recipientWithProperty:(int)arg1 address:(id)arg2;
++ (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
++ (id)mf_recipientWithGALResult:(id)arg1;
+
 - (id)unlocalizedLabel;
-- (id)_unformattedAddress;
+- (id)commentedAddress;
+- (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
+- (int)recordID;
+- (id)compositeName;
 - (id)uncommentedAddress;
+- (id)_unformattedAddress;
+- (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
+- (id)address;
+- (int)property;
+- (id)countryCode;
 - (id)displayString;
-- (int)identifier;
 - (id)label;
-- (unsigned int)hash;
+- (int)identifier;
 - (void)setIdentifier:(int)arg1;
+- (void)setCountryCode:(id)arg1;
+- (void*)record;
+- (id)supportedDragTypes;
+- (id)objectForDragType:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)address;
-- (void*)record;
-- (id)compositeName;
-- (int)property;
-- (id)accessibilityLabel;
-- (BOOL)isEmail;
 - (BOOL)isPhone;
+- (BOOL)isEmail;
 - (int)property;
+- (struct __CFPhoneNumber { }*)copyPhoneNumber;
+- (id)rawAddress;
 
 @end

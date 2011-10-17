@@ -7,19 +7,18 @@
     unsigned long long _high;
 }
 
-@property unsigned long long high;
 @property unsigned long long low;
+@property unsigned long long high;
 
 
+- (BOOL)readFrom:(id)arg1;
 - (void)setHigh:(unsigned long long)arg1;
+- (void)setLow:(unsigned long long)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
 - (unsigned long long)high;
 - (unsigned long long)low;
-- (void)setLow:(unsigned long long)arg1;
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
 - (id)description;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)dealloc;
 
 @end

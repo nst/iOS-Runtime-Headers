@@ -21,26 +21,26 @@
     NSMutableDictionary *_sharedCacheMap;
 }
 
-+ (id)headerWithPath:(id)arg1;
 + (id)headerFromSharedCacheWithPath:(id)arg1;
-+ (id)memoryWithPath:(id)arg1;
 + (id)memoryWithPath:(id)arg1 fileRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2 mapToAddress:(unsigned long long)arg3 architecture:(id)arg4;
++ (id)memoryWithPath:(id)arg1;
++ (id)headerWithPath:(id)arg1;
 
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
-- (id)initWithPath:(id)arg1 fileRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2 mapToAddress:(unsigned long long)arg3 architecture:(id)arg4;
-- (id)lastModifiedTimestamp;
-- (void)buildSharedCacheMap;
-- (unsigned long long)sharedCacheHeaderOffsetForPath:(id)arg1;
-- (id)swappedView;
-- (id)memoryFromSubRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 mapToAddress:(unsigned long long)arg2 architecture:(id)arg3;
-- (id)memoryAtAddress:(unsigned long long)arg1 maxSize:(unsigned long long)arg2;
-- (BOOL)isContiguous;
-- (id)architecture;
+- (BOOL)map;
 - (id)path;
 - (void)finalize;
 - (id)view;
-- (void)dealloc;
+- (id)lastModifiedTimestamp;
+- (id)initWithPath:(id)arg1 fileRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2 mapToAddress:(unsigned long long)arg3 architecture:(id)arg4;
+- (void)buildSharedCacheMap;
+- (unsigned long long)sharedCacheHeaderOffsetForPath:(id)arg1;
+- (id)swappedView;
+- (id)memoryAtAddress:(unsigned long long)arg1 maxSize:(unsigned long long)arg2;
+- (BOOL)isContiguous;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
+- (id)architecture;
+- (id)memoryFromSubRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 mapToAddress:(unsigned long long)arg2 architecture:(id)arg3;
 - (id)description;
-- (BOOL)map;
+- (void)dealloc;
 
 @end

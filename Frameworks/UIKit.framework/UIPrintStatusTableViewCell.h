@@ -14,11 +14,11 @@
 @property BOOL showActive;
 
 
-- (id)initWithReuseIdentifier:(id)arg1;
-- (id)hostName;
-- (void)setHostName:(id)arg1;
-- (BOOL)showActive;
 - (void)setShowActive:(BOOL)arg1;
+- (void)setHostName:(id)arg1;
+- (id)hostName;
+- (id)initWithReuseIdentifier:(id)arg1;
+- (BOOL)showActive;
 - (void)layoutSubviews;
 - (void)dealloc;
 

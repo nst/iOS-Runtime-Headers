@@ -14,41 +14,41 @@
     BOOL _scaleUp;
 }
 
+@property(copy) NSString * printerID;
+@property(copy) NSString * jobName;
+@property int outputType;
+@property int orientation;
+@property int duplex;
 @property BOOL scaleUp;
 @property int copies;
-@property int duplex;
-@property int orientation;
-@property int outputType;
-@property(copy) NSString * jobName;
-@property(copy) NSString * printerID;
 
-+ (id)printInfo;
-+ (void)_savePrinter:(id)arg1;
 + (void)_saveDuplex:(int)arg1;
++ (void)_savePrinter:(id)arg1;
 + (id)printInfoWithDictionary:(id)arg1;
++ (id)printInfo;
 
-- (int)copies;
-- (void)_updateWithPrinter:(id)arg1;
-- (id)_createPrintSettingsForPrinter:(id)arg1;
-- (void)setDuplex:(int)arg1;
-- (id)printerID;
-- (int)outputType;
-- (int)duplex;
-- (id)_initWithDictionary:(id)arg1;
-- (BOOL)scaleUp;
 - (void)setScaleUp:(BOOL)arg1;
+- (BOOL)scaleUp;
 - (void)setCopies:(int)arg1;
+- (int)copies;
+- (void)setDuplex:(int)arg1;
+- (int)duplex;
 - (void)setOutputType:(int)arg1;
-- (id)jobName;
+- (int)outputType;
 - (void)setJobName:(id)arg1;
+- (id)jobName;
 - (void)setPrinterID:(id)arg1;
+- (id)printerID;
+- (id)_createPrintSettingsForPrinter:(id)arg1;
+- (void)_updateWithPrinter:(id)arg1;
+- (id)_initWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)setOrientation:(int)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)init;
 - (int)orientation;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

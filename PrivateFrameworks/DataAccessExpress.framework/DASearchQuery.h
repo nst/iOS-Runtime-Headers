@@ -5,45 +5,47 @@
 @class NSString, <DASearchQueryConsumer>;
 
 @interface DASearchQuery : NSObject  {
+    int _state;
     NSString *_searchString;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
     } _range;
     int _timeLimit;
-    struct __CFMachPort { } *_callbackPort;
     unsigned int _searchID;
-    BOOL _cancelled;
     <DASearchQueryConsumer> *_consumer;
 }
 
-@property <DASearchQueryConsumer> * consumer;
-@property BOOL cancelled;
-@property int timeLimit;
-@property struct _NSRange { unsigned int location; unsigned int length; } range;
 @property(readonly) NSString * searchString;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property unsigned int maxResults;
+@property int timeLimit;
+@property <DASearchQueryConsumer> * consumer;
+@property unsigned int searchID;
+@property int state;
 
 + (id)searchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
 
-- (int)timeLimit;
-- (void)setTimeLimit:(int)arg1;
-- (void)setCancelled:(BOOL)arg1;
-- (BOOL)cancelled;
+- (void)setConsumer:(id)arg1;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)isQueryRunning;
+- (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
+- (unsigned int)searchID;
+- (void)setSearchID:(unsigned int)arg1;
+- (void)sendResultsToConsumer:(id)arg1;
+- (void)sendFinishedToConsumerWithError:(id)arg1;
+- (id)searchString;
 - (id)dictionaryRepresentation;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (void)dealloc;
+- (void)setState:(int)arg1;
+- (int)state;
+- (int)timeLimit;
+- (void)setTimeLimit:(int)arg1;
+- (void)setMaxResults:(unsigned int)arg1;
 - (id)description;
-- (id)searchString;
-- (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
-- (void)sendResultsToConsumer:(id)arg1;
-- (struct __CFMachPort { }*)callbackPort;
-- (void)setSearchID:(unsigned int)arg1;
-- (void)sendFinishedToConsumerWithError:(id)arg1;
-- (void)setCallbackPort:(struct __CFMachPort { }*)arg1;
-- (unsigned int)searchID;
-- (void)setConsumer:(id)arg1;
-- (void)handleBrokenPipe;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)dealloc;
+- (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
+- (unsigned int)maxResults;
 - (id)consumer;
 
 @end

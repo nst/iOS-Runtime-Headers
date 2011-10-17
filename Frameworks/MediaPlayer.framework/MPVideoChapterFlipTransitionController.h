@@ -11,24 +11,23 @@
     unsigned int _shouldPlayAfterFlip : 1;
 }
 
-@property BOOL playAfterFlip;
 @property(retain) UINavigationBar * navigationBar;
+@property BOOL playAfterFlip;
 
 
-- (id)navigationBar;
-- (void)setNavigationBar:(id)arg1;
-- (void)dealloc;
 - (void)setPlayAfterFlip:(BOOL)arg1;
 - (BOOL)playAfterFlip;
-- (BOOL)leaveSpaceForStatusBarAndNavigationBarInOrientation:(int)arg1;
+- (id)_chapterGuideTitleLabel;
 - (void)_done:(id)arg1;
-- (void)_hideNavigationBarAnimationDidFinish:(id)arg1;
 - (id)_copySwizzledNavigationViews;
+- (void)_hideNavigationBarAnimationDidFinish:(id)arg1;
 - (void)_hideNavigationAndStatusBars;
 - (void)_restoreOriginalNavigationViews:(BOOL)arg1;
 - (void)_showChapterGuideNavigationViews;
-- (id)_chapterGuideTitleLabel;
-- (void)transition:(unsigned int)arg1;
+- (void)performTransition:(unsigned int)arg1;
 - (int)_interfaceOrientation;
+- (void)setNavigationBar:(id)arg1;
+- (id)navigationBar;
+- (void)dealloc;
 
 @end

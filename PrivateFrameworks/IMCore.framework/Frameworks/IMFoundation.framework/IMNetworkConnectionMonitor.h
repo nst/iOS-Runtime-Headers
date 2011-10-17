@@ -13,19 +13,39 @@
     BOOL _isSleeping;
 }
 
+@property(retain) IMReachability * _hostReachability;
+@property(retain) IMReachability * _ipReachability;
+@property unsigned int _hostFlags;
+@property unsigned int _ipFlags;
+@property BOOL _isConnected;
+@property BOOL _isSleeping;
+
 
 - (void)systemDidWake;
 - (void)systemWillSleep;
-- (void)dealloc;
-- (void)_clearReachability:(id*)arg1 flags:(unsigned int*)arg2;
-- (void)_doCallbackNow;
+- (void)set_isSleeping:(BOOL)arg1;
+- (BOOL)_isSleeping;
+- (void)set_isConnected:(BOOL)arg1;
+- (BOOL)_isConnected;
+- (void)set_ipFlags:(unsigned int)arg1;
+- (unsigned int)_ipFlags;
+- (void)set_hostFlags:(unsigned int)arg1;
+- (unsigned int)_hostFlags;
+- (void)set_ipReachability:(id)arg1;
+- (id)_ipReachability;
+- (void)set_hostReachability:(id)arg1;
+- (id)_hostReachability;
+- (void)_setupReachability;
+- (void)_networkManagedUpdated:(id)arg1;
 - (void)_doCallbackLater;
-- (BOOL)isImmediatelyReachable;
-- (BOOL)isReachableAfterModemDial;
-- (void)_setup;
-- (void)goConnectedWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2;
+- (void)_doCallbackNow;
+- (void)_clearReachability:(id*)arg1 flags:(unsigned int*)arg2;
 - (void)goDisconnected;
-- (BOOL)startDialUp;
+- (void)goConnectedWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2;
+- (void)_setup;
 - (void)reachabilityDidChange:(id)arg1;
+- (BOOL)isImmediatelyReachable;
+- (void)clear;
+- (void)dealloc;
 
 @end

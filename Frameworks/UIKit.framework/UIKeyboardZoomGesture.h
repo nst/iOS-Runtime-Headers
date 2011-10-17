@@ -10,27 +10,27 @@
     double _maximumWaitForMovement;
 }
 
-@property double maximumWaitForMovement;
 @property double maximumWaitForMultitouch;
+@property double maximumWaitForMovement;
 @property int zoomType;
 
 
-- (void)failAfterDelay:(double)arg1;
+- (int)zoomType;
 - (struct CGPoint { float x1; float x2; })centroidForTouches:(id)arg1;
-- (float)averageDistanceForTouches:(id)arg1;
+- (void)setZoomType:(int)arg1;
 - (double)maximumWaitForMovement;
-- (void)setMaximumWaitForMovement:(double)arg1;
+- (float)averageDistanceForTouches:(id)arg1;
+- (void)failAfterDelay:(double)arg1;
 - (double)maximumWaitForMultitouch;
 - (void)setMaximumWaitForMultitouch:(double)arg1;
-- (int)zoomType;
-- (void)setZoomType:(int)arg1;
+- (void)setMaximumWaitForMovement:(double)arg1;
 - (void)tooSlow:(id)arg1;
 - (void)_resetGestureRecognizer;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)clearTimers;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 
 @end

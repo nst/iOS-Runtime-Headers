@@ -13,29 +13,29 @@
     int _order;
 }
 
+@property BOOL forceToServer;
 @property int order;
+@property(retain) NSString * previousETag;
 @property(retain) NSData * requestDataPayload;
 @property(retain) NSString * requestDataContentType;
-@property(retain) NSString * previousETag;
-@property BOOL forceToServer;
 
 
-- (id)initWithURL:(id)arg1;
-- (void)dealloc;
-- (id)description;
 - (void)setOrder:(int)arg1;
 - (int)order;
-- (id)additionalHeaderValues;
-- (BOOL)forceToServer;
-- (id)requestDataContentType;
-- (id)requestDataPayload;
 - (void)setRequestDataPayload:(id)arg1;
 - (void)setRequestDataContentType:(id)arg1;
 - (void)setForceToServer:(BOOL)arg1;
-- (id)initWithDataPayload:(id)arg1 dataContentType:(id)arg2 atURL:(id)arg3 previousETag:(id)arg4;
-- (id)previousETag;
+- (id)requestDataContentType;
+- (id)requestDataPayload;
+- (BOOL)forceToServer;
 - (void)setPreviousETag:(id)arg1;
+- (id)additionalHeaderValues;
+- (id)previousETag;
+- (id)initWithDataPayload:(id)arg1 dataContentType:(id)arg2 atURL:(id)arg3 previousETag:(id)arg4;
 - (id)copyDefaultParserForContentType:(id)arg1;
+- (id)initWithURL:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)requestBody;
 
 @end

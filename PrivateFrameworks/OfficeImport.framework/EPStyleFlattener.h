@@ -22,27 +22,27 @@
 }
 
 
-- (void)dealloc;
+- (void)clearCache;
+- (id)wrapDifferentialStyleInATableStyleElement:(id)arg1 type:(int)arg2;
 - (void)processObject:(id)arg1;
+- (id)extractGlobalStyleElements:(id)arg1;
 - (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)cellWithSetupStyleAtRowNumber:(int)arg1 columnNumber:(int)arg2;
 - (void)applyStyleElements:(id)arg1 toCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg2 row:(int)arg3 column:(int)arg4;
 - (void)applyDifferentialStyle:(id)arg1 borderFlags:(int)arg2 precedence:(int)arg3 toCell:(struct EDCellHeader {}**)arg4 row:(int)arg5 column:(int)arg6;
 - (id)flattenBorders:(id)arg1 differentialBorders:(id)arg2 borderFlags:(int)arg3 precedence:(int)arg4 row:(int)arg5 column:(int)arg6 isBordersCopied:(bool*)arg7;
-- (id)flattenBorder:(int)arg1 borders:(id)arg2 differentialBorders:(id)arg3 flag:(bool)arg4 precedence:(int)arg5 row:(int)arg6 column:(int)arg7 isBorderCopied:(bool*)arg8;
 - (id)flattenFill:(id)arg1 differentialFill:(id)arg2 isFillCopied:(bool*)arg3;
 - (id)flattenFont:(id)arg1 differentialFont:(id)arg2 isFontCopied:(bool*)arg3;
-- (id)wrapDifferentialStyleInATableStyleElement:(id)arg1 type:(int)arg2;
-- (id)extractGlobalStyleElements:(id)arg1;
-- (id)extractKeys:(id)arg1 from:(id)arg2 parent:(id)arg3;
-- (void)cacheRange:(id)arg1;
+- (id)flattenBorder:(int)arg1 borders:(id)arg2 differentialBorders:(id)arg3 flag:(bool)arg4 precedence:(int)arg5 row:(int)arg6 column:(int)arg7 isBorderCopied:(bool*)arg8;
 - (id)collectionFromWorksheet:(id)arg1;
 - (id)styleFromObject:(id)arg1;
 - (id)extractRowStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3;
 - (id)extractCellStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3 column:(int)arg4;
 - (id)keysInTheOrderTheyShouldBeApplied;
 - (int)borderFlagsForStyleType:(int)arg1 row:(int)arg2 column:(int)arg3;
+- (id)extractKeys:(id)arg1 from:(id)arg2 parent:(id)arg3;
+- (void)cacheRange:(id)arg1;
 - (void)cacheSizes:(id)arg1 inObject:(id)arg2;
-- (void)clearCache;
 - (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;
+- (void)dealloc;
 
 @end

@@ -9,14 +9,14 @@
     int _timeOption;
 }
 
-@property int timeOption;
 @property(retain) NSArray * times;
+@property int timeOption;
 
 
-- (void)dealloc;
-- (id)times;
-- (int)timeOption;
 - (void)setTimeOption:(int)arg1;
+- (int)timeOption;
 - (void)setTimes:(id)arg1;
+- (id)times;
+- (void)dealloc;
 
 @end

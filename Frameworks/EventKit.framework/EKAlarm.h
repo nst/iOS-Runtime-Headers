@@ -2,38 +2,51 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate;
+@class NSDate, EKObjectToOneRelation;
 
-@interface EKAlarm : NSObject <NSCopying> {
-    NSDate *_absoluteDate;
-    double _relativeOffset;
-    BOOL _dirtyFlag;
+@interface EKAlarm : EKObject <NSCopying> {
+    EKObjectToOneRelation *_locationRelation;
 }
 
 @property double relativeOffset;
 @property(copy) NSDate * absoluteDate;
+@property(retain) EKObjectToOneRelation * locationRelation;
 
++ (BOOL)areLocationsAllowed;
 + (id)alarmWithAbsoluteDate:(id)arg1;
++ (BOOL)areLocationsAvailable;
++ (BOOL)areLocationsAllowedWithAuthorizationStatus:(int)arg1;
 + (id)alarmWithRelativeOffset:(double)arg1;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (BOOL)isDirty;
+- (id)owner;
+- (id)UUID;
+- (void)setLocationRelation:(id)arg1;
+- (id)locationRelation;
+- (id)ownerUUID;
+- (void)setProximity:(int)arg1;
+- (void)setStructuredLocation:(id)arg1;
+- (id)_locationRelation;
+- (int)proximity;
+- (id)absoluteDate;
 - (void)setRelativeOffset:(double)arg1;
 - (void)setAbsoluteDate:(id)arg1;
-- (double)relativeOffset;
-- (id)absoluteDate;
-- (id)triggerDateRelativeTo:(id)arg1;
-- (id)initWithAbsoluteDate:(id)arg1;
 - (id)initWithRelativeOffset:(double)arg1;
+- (id)initWithAbsoluteDate:(id)arg1;
+- (BOOL)rebase;
+- (id)structuredLocation;
+- (double)relativeOffset;
 - (BOOL)isAbsolute;
+- (id)lazyLoadRelationForKey:(id)arg1;
+- (BOOL)validate:(id*)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)localizedDescription;
-- (id)_localizedDescription:(BOOL)arg1;
+- (id)localizedDescriptionForReminder;
+- (id)localizedAllDayDescription;
+- (id)longLocalizedAllDayDescription;
 - (id)longLocalizedDescription;
+- (id)_localizedDescription:(BOOL)arg1 forEvent:(BOOL)arg2 isAllDay:(BOOL)arg3;
 
 @end

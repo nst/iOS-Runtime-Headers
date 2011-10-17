@@ -20,39 +20,39 @@
 
 }
 
-@property(copy) NSString * connectionDisplayName;
-@property(retain) NSString * service;
 @property(retain) NSString * host;
+@property(retain) NSString * service;
+@property(copy) NSString * connectionDisplayName;
 
-+ (id)stringForResponse:(int)arg1;
 + (struct dispatch_queue_s { }*)promptQueue;
++ (id)stringForResponse:(int)arg1;
 
+- (void)setHost:(id)arg1;
 - (void)setService:(id)arg1;
 - (void)setTrust:(struct __SecTrust { }*)arg1;
 - (int)showAndWaitForResponse;
+- (void)showPromptWithResponseBlock:(id)arg1;
+- (void)setConnectionDisplayName:(id)arg1;
+- (id)host;
+- (id)service;
+- (void)_informConsumerOfResponse:(int)arg1;
+- (struct __SecTrust { }*)trust;
+- (int)_sendRemoteMessage;
+- (int)_responseFromReplyDict:(id)arg1;
+- (id)_messagingCenter;
+- (id)_newUserInfoForDisplayName:(id)arg1 hostname:(id)arg2 trust:(struct __SecTrust { }*)arg3;
+- (id)_digestFromTrust:(struct __SecTrust { }*)arg1;
+- (id)_expirationFromTrust:(struct __SecTrust { }*)arg1;
+- (id)_purposeFromTrustProperties:(id)arg1;
+- (id)_subtitleFromTrust:(struct __SecTrust { }*)arg1;
+- (id)_titleFromTrust:(struct __SecTrust { }*)arg1;
+- (id)_sendablePropertiesFromTrust:(struct __SecTrust { }*)arg1;
+- (id)_propertyNamed:(id)arg1 ofType:(id)arg2 inProperties:(id)arg3;
+- (id)_copyPropertiesFromTrust:(struct __SecTrust { }*)arg1;
 - (id)_sendablePropertyFromProperty:(id)arg1;
 - (id)_sendablePropertiesFromProperties:(id)arg1;
-- (id)_copyPropertiesFromTrust:(struct __SecTrust { }*)arg1;
-- (id)_sendablePropertiesFromTrust:(struct __SecTrust { }*)arg1;
-- (id)_titleFromTrust:(struct __SecTrust { }*)arg1;
-- (id)_subtitleFromTrust:(struct __SecTrust { }*)arg1;
-- (id)_propertyNamed:(id)arg1 ofType:(id)arg2 inProperties:(id)arg3;
-- (id)_purposeFromTrustProperties:(id)arg1;
-- (id)_expirationFromTrust:(struct __SecTrust { }*)arg1;
-- (id)_digestFromTrust:(struct __SecTrust { }*)arg1;
-- (id)_newUserInfoForDisplayName:(id)arg1 hostname:(id)arg2 trust:(struct __SecTrust { }*)arg3;
-- (id)_messagingCenter;
-- (int)_responseFromReplyDict:(id)arg1;
-- (int)_sendRemoteMessage;
-- (void)_informConsumerOfResponse:(int)arg1;
 - (id)connectionDisplayName;
-- (void)setConnectionDisplayName:(id)arg1;
-- (void)showPromptWithResponseBlock:(id)arg1;
-- (id)host;
-- (void)dealloc;
 - (id)description;
-- (struct __SecTrust { }*)trust;
-- (id)service;
-- (void)setHost:(id)arg1;
+- (void)dealloc;
 
 @end

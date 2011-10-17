@@ -10,9 +10,9 @@
 }
 
 
+- (id)initWithTarget:(id)arg1 protocol:(id)arg2;
 - (id)protocol;
 - (id)target;
 - (void)dealloc;
-- (id)initWithTarget:(id)arg1 protocol:(id)arg2;
 
 @end

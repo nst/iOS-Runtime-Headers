@@ -44,38 +44,38 @@
 }
 
 
-- (void)dispose;
-- (unsigned int)flags;
-- (float)capHeight;
-- (id)fontName;
 - (void)finalize;
-- (float)xHeight;
-- (float)fontWeight;
-- (float)leading;
-- (void)dealloc;
-- (float)ascent;
-- (float)descent;
-- (struct CGPDFFont { }*)cgPDFFont;
-- (id)matchingFontName;
-- (void)getFontName;
-- (void)loadExternalFontInfoFor:(id)arg1;
-- (void)loadEmbeddedFontInfo;
 - (id)initWith:(struct CGPDFDictionary { }*)arg1;
 - (BOOL)isSameFontAs:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fontBBox;
 - (float)italicAngle;
+- (float)ascent;
+- (float)descent;
 - (float)stemV;
 - (float)stemH;
 - (float)avgWidth;
 - (float)missingWidth;
+- (float)spaceWidth;
 - (float)underlinePosition;
 - (float)underlineThickness;
 - (double)kernBetweenUnicode:(unsigned short)arg1 andUnicode:(unsigned short)arg2;
 - (BOOL)getGlyphs:(unsigned short*)arg1 forCodes:(const unsigned short*)arg2 count:(unsigned int)arg3;
-- (void)uniCharsFor:(unsigned long)arg1 count:(unsigned int*)arg2 toArray:(unsigned short*)arg3 maxChars:(unsigned int)arg4;
+- (id)matchingFontName;
+- (void)loadExternalFontInfoFor:(id)arg1;
+- (void)getFontName;
+- (void)loadEmbeddedFontInfo;
 - (struct CGFont { }*)cgFont;
-- (float)spaceWidth;
+- (void)uniCharsFor:(unsigned long)arg1 count:(unsigned int*)arg2 toArray:(unsigned short*)arg3 maxChars:(unsigned int)arg4;
+- (struct CGPDFFont { }*)cgPDFFont;
+- (void)dispose;
 - (float)fontStretch;
 - (float)maxWidth;
+- (float)xHeight;
+- (unsigned int)flags;
+- (float)fontWeight;
+- (id)fontName;
+- (float)leading;
+- (float)capHeight;
+- (void)dealloc;
 
 @end

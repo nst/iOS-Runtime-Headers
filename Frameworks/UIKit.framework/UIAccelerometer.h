@@ -13,16 +13,16 @@
     } _accelerometerFlags;
 }
 
-@property <UIAccelerometerDelegate> * delegate;
 @property double updateInterval;
+@property <UIAccelerometerDelegate> * delegate;
 
 + (id)sharedAccelerometer;
 
-- (double)updateInterval;
-- (void)setUpdateInterval:(double)arg1;
-- (id)init;
-- (void)_acceleratedInX:(double)arg1 y:(double)arg2 z:(double)arg3 timestamp:(double)arg4;
 - (void)setDelegate:(id)arg1;
+- (void)setUpdateInterval:(double)arg1;
+- (double)updateInterval;
+- (void)_acceleratedInX:(double)arg1 y:(double)arg2 z:(double)arg3 timestamp:(double)arg4;
 - (id)delegate;
+- (id)init;
 
 @end

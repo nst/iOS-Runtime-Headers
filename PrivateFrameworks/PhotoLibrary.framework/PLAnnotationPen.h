@@ -11,26 +11,26 @@
     id _context;
 }
 
-@property id context;
-@property SEL selector;
-@property id target;
 @property(readonly) NSSet * set;
+@property id target;
+@property SEL selector;
+@property id context;
 
 
-- (void)setSelector:(SEL)arg1;
-- (void)setContext:(id)arg1;
-- (id)target;
 - (SEL)selector;
-- (id)set;
 - (id)context;
+- (void)setContext:(id)arg1;
+- (id)set;
+- (void)setSelector:(SEL)arg1;
+- (BOOL)empty;
+- (void)removeAnnotations:(id)arg1;
+- (void)removeAllAnnotations;
+- (void)addAnnotations:(id)arg1;
+- (void)removeAnnotation:(id)arg1;
+- (void)setTarget:(id)arg1;
+- (id)description;
+- (id)target;
 - (id)init;
 - (void)dealloc;
-- (id)description;
-- (void)setTarget:(id)arg1;
-- (void)addAnnotations:(id)arg1;
-- (void)removeAllAnnotations;
-- (void)removeAnnotations:(id)arg1;
-- (void)removeAnnotation:(id)arg1;
-- (BOOL)empty;
 
 @end

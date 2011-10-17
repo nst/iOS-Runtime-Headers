@@ -5,6 +5,7 @@
 @interface MCLazyInitializationUtilities : NSObject  {
 }
 
++ (void)initVPNUtilities;
 + (void)initUIApplication;
 
 

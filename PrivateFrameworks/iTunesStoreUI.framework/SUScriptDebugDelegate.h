@@ -6,7 +6,7 @@
 }
 
 
-- (void)webView:(id)arg1 failedToParseSource:(id)arg2 baseLineNumber:(unsigned int)arg3 fromURL:(id)arg4 withError:(id)arg5 forWebFrame:(id)arg6;
 - (void)webView:(id)arg1 exceptionWasRaised:(id)arg2 sourceId:(long)arg3 line:(int)arg4 forWebFrame:(id)arg5;
+- (void)webView:(id)arg1 failedToParseSource:(id)arg2 baseLineNumber:(unsigned int)arg3 fromURL:(id)arg4 withError:(id)arg5 forWebFrame:(id)arg6;
 
 @end

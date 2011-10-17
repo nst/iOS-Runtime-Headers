@@ -35,13 +35,16 @@
     unsigned int _layoutSubviews : 1;
 }
 
-+ (void)pushViewAnimationState:(id)arg1 context:(void*)arg2;
-+ (void)popAnimationState;
+@property(readonly) BOOL _allowsUserInteraction;
 
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)setAnimationAttributes:(id)arg1;
++ (void)popAnimationState;
++ (void)pushViewAnimationState:(id)arg1 context:(void*)arg2;
+
 - (void)animationDidStart:(id)arg1;
+- (BOOL)_allowsUserInteraction;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)sendDelegateAnimationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)setAnimationAttributes:(id)arg1;
 - (void)dealloc;
 
 @end

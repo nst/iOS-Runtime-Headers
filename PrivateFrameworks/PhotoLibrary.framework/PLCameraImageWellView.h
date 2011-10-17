@@ -2,43 +2,37 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UIImage;
+@class UIView, UIImageView, UIImage;
 
 @interface PLCameraImageWellView : UIView  {
     UIImage *_thumbnailImage;
-    UIImage *_thumbnailImageSelected;
     UIImageView *_containerImageView;
     UIImageView *_thumbnailImageView;
+    UIView *_thumbnailOverlayView;
     BOOL _watchingOrientationChanges;
     int _deviceOrientation;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (id)thumbnailImage;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)layoutSubviews;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbnailFrame;
-- (void)setThumbnailImage:(id)arg1;
-- (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)_deviceOrientationChanged:(id)arg1;
-- (void)_previewImageDidChange:(id)arg1;
-- (void)_albumChangedInLibrary:(id)arg1;
-- (void)_computeSelectedThumbnailImage;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)thumbnailImage;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)layoutSubviews;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbnailFrame;
 - (void)beginContentFadeOutWithDuration:(float)arg1;
+- (void)_setImageViewHighlighted:(BOOL)arg1;
 - (void)addMaskedSubview:(id)arg1;
-- (void)_stopWatchingDeviceOrientationChanges;
+- (void)setThumbnailImage:(id)arg1;
 - (void)_startWatchingDeviceOrientationChanges;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
+- (void)_stopWatchingDeviceOrientationChanges;
+- (void)dealloc;
 
 @end

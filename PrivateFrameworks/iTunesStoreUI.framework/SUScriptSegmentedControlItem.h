@@ -13,37 +13,38 @@
     id _userInfo;
 }
 
+@property(readonly) UIImage * image;
 @property(retain) SUScriptCanvasContext * canvas;
 @property(retain) NSString * identifier;
 @property(retain) NSString * imageURL;
 @property(retain) NSString * title;
 @property(retain) id userInfo;
-@property(readonly) UIImage * image;
 
 + (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
+- (id)imageURL;
+- (id)attributeKeys;
 - (void)setUserInfo:(id)arg1;
 - (id)identifier;
-- (id)image;
 - (void)setIdentifier:(id)arg1;
+- (id)image;
 - (id)title;
+- (void)setTitle:(id)arg1;
 - (id)userInfo;
 - (void)dealloc;
-- (void)setTitle:(id)arg1;
-- (id)newPageSection;
-- (id)imageURL;
 - (void)setImageURL:(id)arg1;
-- (void)_setImage:(id)arg1;
-- (void)_setImageFromURL:(id)arg1;
-- (void)_reloadUserInterface;
 - (id)_segmentedControl;
+- (void)_reloadUserInterface;
+- (void)_setImageFromURL:(id)arg1;
+- (void)_setImage:(id)arg1;
 - (id)initWithPageSection:(id)arg1;
-- (id)_copyTitle;
-- (id)attributeKeys;
-- (id)canvas;
+- (id)newPageSection;
 - (void)setCanvas:(id)arg1;
+- (id)canvas;
+- (id)_copyTitle;
 - (void)_setTitle:(id)arg1;
-- (id)scriptAttributeKeys;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

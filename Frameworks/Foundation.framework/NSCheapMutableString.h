@@ -17,16 +17,16 @@
 }
 
 
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)finalize;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
-- (const char *)cString;
-- (void)dealloc;
-- (unsigned int)length;
-- (BOOL)getBytes:(void*)arg1 maxLength:(unsigned int)arg2 usedLength:(unsigned int*)arg3 encoding:(unsigned int)arg4 options:(unsigned int)arg5 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 remainingRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg7;
 - (void)setContentsNoCopy:(void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3 isUnicode:(BOOL)arg4;
-- (unsigned int)fastestEncoding;
 - (const char *)lossyCString;
+- (BOOL)getBytes:(void*)arg1 maxLength:(unsigned int)arg2 usedLength:(unsigned int*)arg3 encoding:(unsigned int)arg4 options:(unsigned int)arg5 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 remainingRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg7;
+- (const char *)cString;
+- (unsigned int)fastestEncoding;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)cStringLength;
+- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (unsigned int)length;
+- (void)dealloc;
 
 @end

@@ -17,22 +17,22 @@
 @property(copy) NSString * value;
 
 
-- (void)setDisabled:(BOOL)arg1;
-- (BOOL)selected;
-- (id)form;
-- (id)label;
-- (void)setSelected:(BOOL)arg1;
-- (id)value;
-- (BOOL)disabled;
-- (int)index;
-- (void)setValue:(id)arg1;
-- (void)setLabel:(id)arg1;
-- (id)text;
 - (BOOL)defaultSelected;
 - (void)setDefaultSelected:(BOOL)arg1;
-- (id)createSelectedItem;
-- (id)createPickerCell;
-- (void)populateCell:(id)arg1;
+- (void)setDisabled:(BOOL)arg1;
+- (BOOL)disabled;
+- (id)form;
+- (int)index;
+- (id)label;
+- (BOOL)selected;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (void)setLabel:(id)arg1;
+- (void)setSelected:(BOOL)arg1;
+- (id)text;
 - (id)itemTitle;
+- (void)populateCell:(id)arg1;
+- (id)createPickerCell;
+- (id)createSelectedItem;
 
 @end

@@ -8,22 +8,22 @@
 
 @property(readonly) unsigned long long checkingTypes;
 
-+ (void)initialize;
 + (id)dataDetectorWithTypes:(unsigned long long)arg1 error:(id*)arg2;
++ (void)initialize;
 
-- (unsigned int)options;
 - (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)pattern;
-- (id)initWithTypes:(unsigned long long)arg1 error:(id*)arg2;
 - (unsigned long long)checkingTypes;
-- (unsigned int)numberOfCaptureGroups;
+- (id)initWithTypes:(unsigned long long)arg1 error:(id*)arg2;
 - (void)enumerateMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id)arg4;
+- (unsigned int)numberOfCaptureGroups;
 - (id)initWithPattern:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)pattern;
+- (unsigned int)options;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 
 @end

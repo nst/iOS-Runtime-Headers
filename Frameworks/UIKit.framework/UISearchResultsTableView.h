@@ -10,14 +10,11 @@
 
 @property UISearchDisplayController * controller;
 
-+ (void)_initializeSafeCategory;
 
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_offsetForNoResultsMessage;
 - (id)controller;
 - (void)setController:(id)arg1;
 - (void)_numberOfRowsDidChange;
-- (BOOL)accessibilityTreeHidden;
-- (id)accessibilityLabel;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

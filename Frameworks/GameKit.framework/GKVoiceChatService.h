@@ -16,28 +16,28 @@
 @property(readonly) float outputMeterLevel;
 @property(readonly) float inputMeterLevel;
 
-+ (id)defaultVoiceChatService;
 + (BOOL)isVoIPAllowed;
++ (id)defaultVoiceChatService;
 + (void)initialize;
 
-- (void)setClient:(id)arg1;
 - (void)setRemoteParticipantVolume:(float)arg1;
-- (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
+- (float)remoteParticipantVolume;
 - (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
-- (void)stopVoiceChatWithParticipantID:(id)arg1;
-- (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
 - (void)denyCallID:(int)arg1;
-- (BOOL)isInputMeteringEnabled;
-- (float)outputMeterLevel;
+- (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
+- (void)stopVoiceChatWithParticipantID:(id)arg1;
+- (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
+- (void)setClient:(id)arg1;
+- (id)client;
 - (void)receivedRealTimeData:(id)arg1 fromParticipantID:(id)arg2;
 - (BOOL)isOutputMeteringEnabled;
 - (void)setOutputMeteringEnabled:(BOOL)arg1;
-- (float)remoteParticipantVolume;
+- (BOOL)isInputMeteringEnabled;
 - (void)setInputMeteringEnabled:(BOOL)arg1;
-- (BOOL)isMicrophoneMuted;
-- (void)setMicrophoneMuted:(BOOL)arg1;
+- (float)outputMeterLevel;
 - (float)inputMeterLevel;
+- (void)setMicrophoneMuted:(BOOL)arg1;
+- (BOOL)isMicrophoneMuted;
 - (void)dealloc;
-- (id)client;
 
 @end

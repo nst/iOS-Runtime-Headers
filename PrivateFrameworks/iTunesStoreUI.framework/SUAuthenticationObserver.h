@@ -8,28 +8,28 @@
     <SUAuthenticationDelegate> *_delegate;
     double _timeout;
     NSTimer *_timeoutTimer;
-    int _watchingAuthenticationCount;
+    BOOL _watchingAuthentication;
 }
 
-@property(getter=isWatchingForAuthentication,readonly) BOOL watchingForAuthentication;
-@property double timeout;
 @property <SUAuthenticationDelegate> * delegate;
+@property double timeout;
+@property(getter=isWatchingForAuthentication,readonly) BOOL watchingForAuthentication;
 
 
-- (void)dealloc;
+- (void)setTimeout:(double)arg1;
+- (double)timeout;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)dealloc;
+- (void)_sendSuccessToDelegate;
+- (void)_sendFailureToDelegate;
+- (void)_sendTimeoutToDelegate;
+- (void)_cancelTimeoutTimer;
 - (void)_authenticationTimeout:(id)arg1;
 - (void)_daemonExited:(id)arg1;
-- (void)_cancelTimeoutTimer;
-- (void)_sendFailureToDelegate;
-- (void)_sendSuccessToDelegate;
-- (void)_sendTimeoutToDelegate;
 - (void)_teardown;
-- (double)timeout;
-- (void)endWatchingForAuthentication;
-- (void)setTimeout:(double)arg1;
+- (void)watchForAuthentication;
 - (BOOL)isWatchingForAuthentication;
-- (void)beginWatchingForAuthentication;
+- (void)stopWatchingForAuthentication;
 
 @end

@@ -9,17 +9,17 @@
     CoreDAVLeafItem *_descriptionItem;
 }
 
-@property(retain) CoreDAVLeafItem * descriptionItem;
 @property(retain) CoreDAVItem * prop;
+@property(retain) CoreDAVLeafItem * descriptionItem;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (void)setDescriptionItem:(id)arg1;
 - (void)setProp:(id)arg1;
 - (id)descriptionItem;
-- (void)setDescriptionItem:(id)arg1;
 - (id)prop;
 - (id)copyParseRules;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSMutableArray, NSMutableSet, NSArray, DAAccount, <DATask>;
+@class NSMutableArray, NSMutableSet, NSTimer, NSArray, DAAccount, <DATask>;
 
 @interface DATaskManager : NSObject  {
     DAAccount *_account;
@@ -17,69 +17,74 @@
     NSMutableArray *_queuedModalTasks;
     <DATask> *_activeModalTask;
     int _state;
+    NSTimer *_managerIdleTimer;
 }
 
-@property(readonly) NSArray * allTasks;
-@property(readonly) NSArray * queuedTasks;
-@property(readonly) <DATask> * activeQueuedTask;
-@property(readonly) <DATask> * activeModalTask;
 @property DAAccount * account;
+@property(readonly) <DATask> * activeModalTask;
+@property(readonly) <DATask> * activeQueuedTask;
+@property(readonly) NSArray * queuedTasks;
+@property(readonly) NSArray * allTasks;
 
 
 - (void)shutdown;
+- (void)setAccount:(id)arg1;
+- (id)initWithAccount:(id)arg1;
+- (id)accountID;
+- (id)account;
 - (id)userAgent;
+- (id)queuedTasks;
 - (id)activeQueuedTask;
 - (BOOL)_useFakeDescriptions;
-- (void)_performTask:(id)arg1;
-- (void)_requestCancelTasksWithReason:(int)arg1;
-- (void)_startModal:(id)arg1;
-- (void)_reactivateHeldTasks;
-- (void)_makeStateTransition;
 - (void)_scheduleSelector:(SEL)arg1 withArgument:(id)arg2;
-- (void)_schedulePerformTask:(id)arg1;
-- (void)_scheduleStartModal:(id)arg1;
-- (void)_cancelTasksWithReason:(int)arg1;
-- (void)_retainPowerAssertionForTask:(id)arg1;
-- (void)_releasePowerAssertionForTask:(id)arg1;
-- (id)_getQueuedExclusiveTasks;
-- (id)_getIndependentTasks;
-- (id)_getHeldIndependentTasks;
-- (id)_getModalHeldIndependentTasks;
-- (id)_getQueuedTasks;
 - (id)_getQueuedModalTasks;
-- (id)queuedTasks;
+- (id)_getModalHeldIndependentTasks;
+- (void)_useOpportunisticSocketsAgain;
+- (BOOL)_hasTasksForcingNetworkConnection;
+- (void)_scheduleStartModal:(id)arg1;
+- (void)_reactivateHeldTasks;
+- (void)_startModal:(id)arg1;
+- (void)_performTask:(id)arg1;
+- (void)_releasePowerAssertionForTask:(id)arg1;
+- (BOOL)_taskInQueueForcesNetworkConnection:(id)arg1;
+- (BOOL)_taskForcesNetworking:(id)arg1;
+- (void)_cancelTasksWithReason:(int)arg1;
+- (id)_getQueuedTasks;
+- (id)_getHeldIndependentTasks;
+- (id)_getIndependentTasks;
+- (void)_retainPowerAssertionForTask:(id)arg1;
+- (void)_requestCancelTasksWithReason:(int)arg1;
+- (void)_makeStateTransition;
+- (void)_schedulePerformTask:(id)arg1;
+- (id)_getQueuedExclusiveTasks;
 - (int)port;
 - (id)user;
 - (id)password;
 - (id)scheme;
+- (id)server;
+- (id)deviceID;
 - (id)init;
 - (void)dealloc;
-- (id)server;
-- (id)accountID;
-- (id)deviceID;
-- (void)setAccount:(id)arg1;
-- (id)account;
-- (id)initWithAccount:(id)arg1;
-- (id)activeModalTask;
-- (void)cancelTask:(id)arg1 withUnderlyingError:(id)arg2;
-- (id)allTasks;
-- (void)_populateVersionDescriptions;
-- (id)_version;
-- (id)stateString;
-- (void)taskManagerDidAddTask:(id)arg1;
 - (void)taskManagerWillRemoveTask:(id)arg1;
-- (void)cancelTask:(id)arg1;
-- (void)taskRequestModal:(id)arg1;
-- (void)taskEndModal:(id)arg1;
+- (void)taskManagerDidAddTask:(id)arg1;
+- (id)_version;
+- (id)allTasks;
+- (void)cancelTask:(id)arg1 withUnderlyingError:(id)arg2;
+- (id)activeModalTask;
+- (void)_populateVersionDescriptions;
 - (void)taskDidFinish:(id)arg1;
-- (void)submitExclusiveTask:(id)arg1;
+- (void)taskEndModal:(id)arg1;
+- (void)taskRequestModal:(id)arg1;
 - (void)cancelAllTasks;
-- (BOOL)useSSL;
+- (void)submitExclusiveTask:(id)arg1;
 - (id)accountPersistentUUID;
-- (void)submitExclusiveTask:(id)arg1 toFrontOfQueue:(BOOL)arg2;
-- (void)submitQueuedTask:(id)arg1;
-- (void)submitIndependentTask:(id)arg1;
 - (id)identityPersist;
+- (void)submitIndependentTask:(id)arg1;
+- (void)cancelTask:(id)arg1;
+- (void)submitQueuedTask:(id)arg1;
+- (id)stateString;
+- (void)submitExclusiveTask:(id)arg1 toFrontOfQueue:(BOOL)arg2;
 - (id)deviceType;
+- (BOOL)useSSL;
 
 @end

@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface PTPWrappedBytes : NSObject  {
     unsigned long long _offset;
     unsigned long long _capacity;
@@ -10,27 +15,33 @@
     int _fd;
     BOOL _useByteBuffer;
     unsigned long long _excessDataLength;
+    double _progressNotificationTime;
+    int (*_progressNotifier)();
+    void *_progressNotifierContext;
+    int _lastNotifiedProgress;
 }
 
 + (id)wrappedBytesWithBytes:(void*)arg1 capacity64:(unsigned long long)arg2;
 + (id)wrappedBytesWithCapacity64:(unsigned long long)arg1;
 
-- (id)initWithBytes:(void*)arg1 capacity64:(unsigned long long)arg2;
-- (id)initWithFileDescriptor:(int)arg1 capacity64:(unsigned long long)arg2;
-- (unsigned long long)capacity64;
+- (void)setProgressNotifierCallback:(int (*)())arg1 context:(void*)arg2;
 - (unsigned long long)setCapacity64:(unsigned long long)arg1;
-- (BOOL)wasInitWithFD;
 - (unsigned long long)excessDataLength;
-- (void)setLength64:(unsigned long long)arg1;
-- (id)initWithCapacity64:(unsigned long long)arg1;
-- (unsigned long long)length64;
-- (unsigned long long)appendBytes:(const void*)arg1 length64:(unsigned long long)arg2;
+- (id)initWithFileDescriptor:(int)arg1 capacity64:(unsigned long long)arg2;
+- (BOOL)wasInitWithFD;
 - (double)percentFull;
+- (unsigned long long)capacity64;
+- (void)setLength64:(unsigned long long)arg1;
+- (id)initWithBytes:(void*)arg1 capacity64:(unsigned long long)arg2;
+- (id)initWithCapacity64:(unsigned long long)arg1;
+- (unsigned long long)appendBytes:(const void*)arg1 length64:(unsigned long long)arg2;
+- (unsigned long long)length64;
 - (void*)mutableBytes;
 - (unsigned long long)appendData:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (unsigned long long)offset;
 - (const void*)bytes;
 - (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

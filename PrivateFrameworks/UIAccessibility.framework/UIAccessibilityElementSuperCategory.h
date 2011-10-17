@@ -8,24 +8,25 @@
 + (void)_initializeSafeCategory;
 
 - (id)initWithAccessibilityContainer:(id)arg1;
-- (id)accessibilityValue;
-- (id)accessibilityHint;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (unsigned long long)accessibilityTraits;
-- (void)setAccessibilityContainer:(id)arg1;
-- (void)accessibilityElementDidBecomeFocused;
 - (void)accessibilityElementDidLoseFocus;
+- (void)accessibilityElementDidBecomeFocused;
+- (void)setAccessibilityContainer:(id)arg1;
+- (id)accessibilityLanguage;
+- (unsigned long long)accessibilityTraits;
+- (struct CGPoint { float x1; float x2; })accessibilityActivationPoint;
+- (id)accessibilityHint;
+- (id)accessibilityValue;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (BOOL)_accessibilityProvidesOwnFrame;
+- (void)_accessibilitySetValue:(id)arg1;
+- (id)_accessibilityAutomaticIdentifier;
+- (BOOL)_accessibilitySupportsActivateAction;
+- (void)accessibilityActivate;
+- (void)accessibilityZoomOutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)accessibilityZoomInAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)description;
 - (id)accessibilityLabel;
 - (id)init;
 - (void)dealloc;
-- (id)description;
-- (BOOL)_accessibilitySupportsActivateAction;
-- (BOOL)_accessibilityProvidesOwnFrame;
-- (id)_accessibilityAutomaticIdentifier;
-- (void)_accessibilitySetValue:(id)arg1;
-- (void)accessibilityZoomInAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)accessibilityZoomOutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)accessibilityActivate;
-- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
 
 @end

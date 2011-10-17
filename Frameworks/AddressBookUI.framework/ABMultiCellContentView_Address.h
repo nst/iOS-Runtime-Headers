@@ -16,25 +16,25 @@
 }
 
 + (unsigned int)rowsForPropertyGroup:(id)arg1 info:(id)arg2;
-+ (int)calculateStreetRowsForText:(id)arg1;
-+ (id)streetTextForPropertyGroup:(id)arg1 info:(id)arg2;
 + (id)lineInfosForPropertyGroup:(id)arg1 info:(id)arg2;
++ (id)streetTextForPropertyGroup:(id)arg1 info:(id)arg2;
++ (int)calculateStreetRowsForText:(id)arg1;
 + (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 
-- (void)reload;
+- (id)pickerView;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)reload;
 - (void)dealloc;
 - (int)tagForPropertyKey:(id)arg1;
-- (id)propertyKeyForTag:(int)arg1;
 - (void)removeTextFieldAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (id)propertyKeyForTag:(int)arg1;
 - (unsigned int)lineIndexOfStreetField:(id)arg1;
 - (id)streetFieldAtLineIndex:(unsigned int)arg1;
-- (void)removeStreetFieldAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)addStreetFieldAnimated:(BOOL)arg1;
-- (void)setPropertyGroupInfo:(id)arg1;
-- (id)pickerView;
+- (void)removeStreetFieldAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)textFieldTextDidChange:(id)arg1;
+- (void)setPropertyGroupInfo:(id)arg1;
 - (void)reloadFromModel;
 
 @end

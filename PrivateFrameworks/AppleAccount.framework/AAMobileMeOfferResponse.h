@@ -14,10 +14,10 @@
 @property(readonly) NSString * classicMessage;
 
 
+- (id)classicMessage;
+- (id)classicTitle;
 - (id)message;
 - (id)identifier;
 - (id)title;
-- (id)classicMessage;
-- (id)classicTitle;
 
 @end

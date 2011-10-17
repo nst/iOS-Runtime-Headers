@@ -7,26 +7,19 @@
     int _longitude;
 }
 
-@property int longitude;
 @property int latitude;
+@property int longitude;
 
-+ (id)mapPointWithCoordinate:(struct { double x1; double x2; })arg1;
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)readFrom:(id)arg1;
 - (int)latitude;
 - (int)longitude;
-- (void)writeTo:(id)arg1;
-- (void)setLatitude:(int)arg1;
-- (void)setLongitude:(int)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)initWithOldMapPoint:(struct MapPoint { int x1; int x2; int x3; int x4; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
-- (struct { double x1; double x2; })coordinate;
+- (void)setLongitude:(int)arg1;
+- (void)setLatitude:(int)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

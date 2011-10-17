@@ -11,18 +11,18 @@
 }
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
-- (void)setVersion:(id)arg1;
+- (id)initWithRootElement:(id)arg1;
+- (id)rootElement;
+- (void)setCharacterEncoding:(id)arg1;
 - (id)openingTagString;
 - (id)contentString;
-- (id)initWithRootElement:(id)arg1;
-- (void)setRootElement:(id)arg1;
-- (void)setCharacterEncoding:(id)arg1;
-- (id)createMutableXMLString;
-- (id)rootElement;
-- (id)XMLString;
 - (id)closingTagString;
+- (void)setRootElement:(id)arg1;
+- (id)XMLString;
+- (id)createMutableXMLString;
+- (void)setVersion:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

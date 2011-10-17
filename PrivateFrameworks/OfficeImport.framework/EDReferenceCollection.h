@@ -9,14 +9,15 @@
 + (id)noCoalesceCollection;
 + (id)coalesceCollection;
 
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)init;
-- (unsigned int)addObject:(id)arg1;
+- (id)reverseReferencesByRow:(bool)arg1;
 - (id)initWihNoCoalesce;
+- (void)coalesce;
 - (unsigned int)countOfCellsBeingReferenced;
 - (id)referenceToCellWithIndex:(unsigned int)arg1 byRow:(bool)arg2;
-- (id)reverseReferencesByRow:(bool)arg1;
-- (void)coalesce;
 - (bool)coalesceReferenceAtIndex1:(int)arg1 index2:(int)arg2;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (unsigned int)addObject:(id)arg1;
+- (id)init;
 
 @end

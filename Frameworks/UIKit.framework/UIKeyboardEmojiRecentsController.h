@@ -12,15 +12,15 @@
 }
 
 
-- (id)initWithController:(id)arg1;
-- (BOOL)isAncientSequence:(int)arg1;
-- (double)scoreForSequence:(int)arg1;
-- (double)scoreForEmoji:(id)arg1;
-- (void)emojiUsed:(id)arg1;
 - (void)clearAncientHistory;
+- (BOOL)isAncientSequence:(int)arg1;
+- (double)scoreForEmoji:(id)arg1;
+- (double)scoreForSequence:(int)arg1;
+- (id)recents;
+- (void)emojiUsed:(id)arg1;
 - (id)defaultsDictionary;
 - (void)readDefaultsDictionary:(id)arg1;
-- (id)recents;
+- (id)initWithController:(id)arg1;
 - (void)dealloc;
 
 @end

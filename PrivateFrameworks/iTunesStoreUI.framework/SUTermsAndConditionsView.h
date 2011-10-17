@@ -13,30 +13,30 @@
     SULinkControl *_termsAndConditionsControl;
 }
 
-@property int style;
-@property float rightMargin;
 @property BOOL hideAccountButton;
+@property float rightMargin;
+@property int style;
 
-+ (void)_initializeSafeCategory;
 
+- (float)rightMargin;
+- (int)style;
 - (void)setRightMargin:(float)arg1;
 - (void)setStyle:(int)arg1;
-- (int)style;
-- (void)layoutSubviews;
 - (void)sizeToFit;
-- (void)dealloc;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)rightMargin;
-- (void)_termsAndConditionsAction:(id)arg1;
-- (void)_accountsChangedNotification:(id)arg1;
-- (void)_clearButtonSelection:(id)arg1;
-- (void)_destroyButton;
-- (int)_linkStyleForStyle:(int)arg1;
-- (void)_updateButton;
+- (void)dealloc;
 - (BOOL)hideAccountButton;
+- (void)_termsAndConditionsAction:(id)arg1;
+- (void)_updateButton;
+- (void)_clearButtonSelection:(id)arg1;
 - (id)_termsAndConditionsControl;
+- (float)_buttonHeightForStyle:(int)arg1;
 - (id)_button;
+- (int)_linkStyleForStyle:(int)arg1;
+- (void)_destroyButton;
+- (void)_accountsChangedNotification:(id)arg1;
 - (void)setHideAccountButton:(BOOL)arg1;
 - (void)_buttonAction:(id)arg1;
 

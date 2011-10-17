@@ -26,27 +26,28 @@
 
 + (id)defaultSession;
 
-- (void)setEnabled:(BOOL)arg1;
-- (id)init;
-- (BOOL)isEnabled;
-- (void)dealloc;
+- (id)networkName;
 - (id)connections;
+- (id)contacts;
+- (id)localName;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)isEnabled;
 - (BOOL)addConnection:(id)arg1;
 - (BOOL)removeConnection:(id)arg1;
-- (id)localName;
-- (id)networkName;
-- (unsigned int)connectionPolicy;
-- (void)updateFromEntity;
-- (void)setStateToEntity;
 - (unsigned int)networkPort;
+- (unsigned int)connectionPolicy;
 - (void)setConnectionPolicy:(unsigned int)arg1;
-- (BOOL)addOrRemoveConnection:(id)arg1 add:(BOOL)arg2;
-- (id)contacts;
 - (BOOL)addContact:(id)arg1;
 - (BOOL)removeContact:(id)arg1;
-- (void)sessionChanged;
-- (void)contactsChanged;
 - (struct OpaqueMIDIEndpoint { }*)sourceEndpoint;
 - (struct OpaqueMIDIEndpoint { }*)destinationEndpoint;
+- (void)sessionChanged;
+- (void)contactsChanged;
+- (void)setStateToEntity;
+- (void)updateFromEntity;
+- (void)refreshBonjourName;
+- (BOOL)addOrRemoveConnection:(id)arg1 add:(BOOL)arg2;
+- (id)init;
+- (void)dealloc;
 
 @end

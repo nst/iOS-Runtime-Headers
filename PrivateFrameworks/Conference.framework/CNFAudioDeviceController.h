@@ -15,34 +15,36 @@
 @property(retain) NSString * currentAudioRoute;
 
 
-- (id)currentAudioRoute;
-- (BOOL)pickRouteWithUID:(id)arg1;
-- (BOOL)audioCategoryIsTTY;
-- (void)_pickableRoutesChanged;
-- (void)setCurrentAudioRoute:(id)arg1;
-- (BOOL)auxiliaryAudioRoutesAvailable;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (void)invalidateAVController;
-- (BOOL)speakerRouteIsPicked;
-- (BOOL)receiverRouteIsPicked;
-- (BOOL)pickSpeakerRoute;
-- (BOOL)pickHandsetRoute;
+- (void)pickRouteAtIndex:(unsigned int)arg1;
 - (void)restorePickedRoute;
-- (void)clearCachedRoutes;
+- (BOOL)pickHandsetRoute;
+- (BOOL)pickSpeakerRoute;
+- (int)numberOfAudioRoutes;
+- (BOOL)receiverRouteIsPicked;
+- (BOOL)speakerRouteIsPicked;
+- (BOOL)routeOtherThanHandsetAndSpeakerIsAvailable;
+- (void)_mediaServerDied;
 - (BOOL)_pickRoute:(id)arg1;
+- (BOOL)_routeIsReceiver:(id)arg1;
+- (id)_pickedRoute;
 - (BOOL)_routeIsSpeaker:(id)arg1;
 - (BOOL)_routeIsHandset:(id)arg1;
-- (BOOL)_routeIsReceiver:(id)arg1;
-- (void)_mediaServerDied;
-- (void)_registerForAVControllerNotifications;
 - (id)_pickableRoutes;
-- (id)_pickedRoute;
+- (id)routeNameAtIndex:(unsigned int)arg1 isPicked:(BOOL*)arg2;
+- (void)clearCachedRoutes;
+- (void)_registerForAVControllerNotifications;
 - (BOOL)routeOtherThanHandsetIsAvailable;
 - (void)setAVController:(id)arg1;
-- (BOOL)routeOtherThanHandsetAndSpeakerIsAvailable;
-- (int)numberOfAudioRoutes;
-- (id)routeNameAtIndex:(unsigned int)arg1 isPicked:(BOOL*)arg2;
-- (void)pickRouteAtIndex:(unsigned int)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (BOOL)pickRouteWithUID:(id)arg1;
+- (BOOL)isAirPlayMirroring;
+- (BOOL)audioCategoryIsTTY;
+- (BOOL)_routeIsAirTunes:(id)arg1;
+- (id)currentAudioRoute;
+- (void)setCurrentAudioRoute:(id)arg1;
+- (void)invalidateAVController;
+- (void)_pickableRoutesChanged;
+- (BOOL)auxiliaryAudioRoutesAvailable;
 
 @end

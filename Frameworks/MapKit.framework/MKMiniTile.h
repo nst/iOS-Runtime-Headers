@@ -6,8 +6,8 @@
 }
 
 
+- (id)actionForKey:(id)arg1;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)init;
-- (id)actionForKey:(id)arg1;
 
 @end

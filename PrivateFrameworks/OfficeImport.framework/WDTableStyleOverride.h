@@ -19,30 +19,30 @@
 }
 
 
-- (void)setStyle:(id)arg1;
-- (id)style;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (int)part;
 - (BOOL)isParagraphPropertiesOverridden;
 - (void)setParagraphPropertiesOverridden:(BOOL)arg1;
 - (void)setCharacterPropertiesOverridden:(BOOL)arg1;
 - (BOOL)isTablePropertiesOverridden;
 - (void)setTableRowPropertiesOverridden:(BOOL)arg1;
 - (void)setTableCellStylePropertiesOverridden:(BOOL)arg1;
-- (id)paragraphProperties;
-- (void)setPart:(int)arg1;
-- (id)initWithDocument:(id)arg1;
-- (id)mutableParagraphProperties;
-- (id)mutableTableRowProperties;
-- (id)mutableTableCellStyleProperties;
+- (BOOL)isCharacterPropertiesOverridden;
 - (BOOL)isTableRowPropertiesOverridden;
-- (id)tableRowProperties;
 - (BOOL)isTableCellStylePropertiesOverridden;
 - (id)tableCellStyleProperties;
+- (void)setPart:(int)arg1;
+- (id)mutableParagraphProperties;
 - (id)mutableCharacterProperties;
-- (int)part;
+- (id)mutableTableRowProperties;
+- (id)mutableTableCellStyleProperties;
 - (id)tableProperties;
+- (id)tableRowProperties;
+- (id)paragraphProperties;
 - (id)characterProperties;
-- (BOOL)isCharacterPropertiesOverridden;
+- (id)initWithDocument:(id)arg1;
+- (id)style;
+- (void)setStyle:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

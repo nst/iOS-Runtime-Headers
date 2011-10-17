@@ -7,8 +7,6 @@
 }
 
 
-- (void)close;
-- (void)dealloc;
 - (void)releaseCStream;
 - (void)seek:(long)arg1 fromOrigin:(int)arg2;
 - (unsigned long)getPos;
@@ -37,8 +35,10 @@
 - (void)writeLEunichar:(unsigned short)arg1;
 - (void)writeLEwstring:(id)arg1;
 - (void)writeLEwstringNoTerminator:(id)arg1;
-- (id)initWithCStream:(struct _Stream { }*)arg1;
 - (id)getInfo;
 - (void)setClass:(struct { unsigned int x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
+- (id)initWithCStream:(struct _Stream { }*)arg1;
+- (void)close;
+- (void)dealloc;
 
 @end

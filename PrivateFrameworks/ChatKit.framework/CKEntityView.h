@@ -4,19 +4,22 @@
 
 @class CKEntity, UILabel;
 
-@interface CKEntityView : UITableViewCell  {
+@interface CKEntityView : CKTranscriptCell  {
     UILabel *_label;
     CKEntity *_entity;
+    float _bottomMargin;
 }
 
 + (float)defaultWidth;
 + (struct CGSize { float x1; float x2; })sizeForEntity:(id)arg1 withWidth:(float)arg2;
 + (struct CGSize { float x1; float x2; })sizeForEntity:(id)arg1;
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)setBottomMargin:(float)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)sizeToFit;
-- (void)dealloc;
-- (void)setEntity:(id)arg1;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)updateFontSize;
+- (void)setEntity:(id)arg1;
+- (void)dealloc;
 
 @end

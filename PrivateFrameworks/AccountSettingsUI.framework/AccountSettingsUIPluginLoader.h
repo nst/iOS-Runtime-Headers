@@ -13,15 +13,16 @@
 @property(readonly) NSArray * plugins;
 
 
-- (void)dealloc;
 - (id)plugins;
-- (id)orderedPluginsForAdd;
-- (void)_addBundleWithName:(id)arg1 commonSpecifierMode:(int)arg2 accountTypes:(id)arg3;
-- (id)initWithParentController:(id)arg1 includeNonAccountBundles:(BOOL)arg2;
+- (void)dealloc;
 - (id)pluginsForAccountTypes:(id)arg1;
+- (id)orderedPluginsForAdd;
+- (id)pluginsWithCommonsSpecifiers;
+- (void)invalidatePluginParentController;
+- (void)_addBundleWithName:(id)arg1 commonSpecifierMode:(int)arg2 accountTypes:(id)arg3;
 - (id)_pluginsWithCommonSpecifierMode:(int)arg1;
 - (id)pluginsWithEagerlyLoadedCommonSpecifiers;
 - (id)pluginsWithLazilyLoadedCommonSpecifiers;
-- (id)pluginsWithCommonsSpecifiers;
+- (id)initWithParentController:(id)arg1 includeNonAccountBundles:(BOOL)arg2;
 
 @end

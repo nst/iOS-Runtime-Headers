@@ -17,38 +17,38 @@
 @property(retain) NSMutableDictionary * metadata_hidden;
 
 
-- (void)setMetadata_hidden:(id)arg1;
-- (BOOL)fetchingMetadata;
+- (BOOL)hasMetadata;
+- (void)finalize;
+- (id)metadata;
+- (void)setFileSize:(long long)arg1;
+- (void)overrideOrientation:(unsigned int)arg1;
 - (BOOL)raw;
+- (void)setMetadata_hidden:(id)arg1;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
+- (void)setHasMetadata:(BOOL)arg1;
 - (void)setRaw:(BOOL)arg1;
 - (BOOL)hasOverriddenOrientation;
 - (void)setHasThumbnail:(BOOL)arg1;
-- (void)setHasMetadata:(BOOL)arg1;
 - (BOOL)fetchingThumbnail;
-- (void)setFetchingMetadata:(BOOL)arg1;
-- (void)overrideOrientation:(unsigned int)arg1;
-- (void)handleCommandCompletionNotification:(id)arg1;
+- (BOOL)fetchingMetadata;
 - (id)metadata_hidden;
 - (void)setFetchingThumbnail:(BOOL)arg1;
-- (void)finalize;
+- (void)setFetchingMetadata:(BOOL)arg1;
+- (void)handleCommandCompletionNotification:(id)arg1;
+- (long long)fileSize;
 - (void)setOrientation:(unsigned int)arg1;
 - (unsigned int)orientation;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasMetadata;
 - (BOOL)hasThumbnail;
-- (long long)fileSize;
 - (BOOL)isRaw;
-- (void)flushMetadataCache;
 - (void)flushThumbnailCache;
+- (void)flushMetadataCache;
 - (void)requestThumbnail;
 - (void)requestMetadata;
+- (id)description;
+- (void)dealloc;
 - (struct CGImage { }*)thumbnail;
-- (id)metadata;
-- (void)setFileSize:(long long)arg1;
 - (id)fileExtension;
-- (id)importIdentifier;
 - (id)parentFolderName;
+- (id)importIdentifier;
 
 @end

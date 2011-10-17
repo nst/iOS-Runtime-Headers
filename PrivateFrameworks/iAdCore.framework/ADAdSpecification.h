@@ -2,34 +2,37 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class NSMutableArray, NSString;
+@class NSString;
 
 @interface ADAdSpecification : PBCodable  {
-    NSMutableArray *_sizes;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _sizes;
     NSString *_section;
 }
 
-@property(readonly) int sizesCount;
+@property(readonly) unsigned int sizesCount;
+@property(readonly) int* sizes;
 @property(readonly) BOOL hasSection;
 @property(retain) NSString * section;
-@property(retain) NSMutableArray * sizes;
 
 
-- (int)sizesCount;
-- (void)setSize:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)sizeAtIndex:(unsigned int)arg1;
-- (id)sizes;
-- (void)setSizes:(id)arg1;
-- (BOOL)hasSection;
-- (id)_uniqueIdentifier;
-- (void)addSize:(id)arg1;
-- (id)section;
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (BOOL)readFrom:(id)arg1;
+- (void)setSizes:(int*)arg1 count:(unsigned int)arg2;
+- (void)addSize:(int)arg1;
+- (void)clearSizes;
 - (void)writeTo:(id)arg1;
+- (id)_uniqueIdentifier;
+- (BOOL)hasSection;
+- (unsigned int)sizesCount;
+- (int*)sizes;
+- (id)dictionaryRepresentation;
+- (id)section;
+- (int)sizeAtIndex:(unsigned int)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setSection:(id)arg1;
 
 @end

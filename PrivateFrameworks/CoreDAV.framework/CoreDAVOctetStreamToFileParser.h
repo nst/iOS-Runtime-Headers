@@ -11,11 +11,10 @@
 @property(retain) NSFileHandle * fileHandle;
 
 
-- (void)dealloc;
 - (id)fileHandle;
 - (void)setFileHandle:(id)arg1;
 - (id)initWithFileHandle:(id)arg1;
-- (BOOL)task:(id)arg1 receivedData:(id)arg2;
-- (BOOL)processData:(id)arg1;
+- (BOOL)processData:(id)arg1 forTask:(id)arg2;
+- (void)dealloc;
 
 @end

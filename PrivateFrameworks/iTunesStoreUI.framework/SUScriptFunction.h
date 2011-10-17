@@ -15,20 +15,20 @@
 @property SUScriptObject * thisObject;
 
 
-- (void)lock;
 - (void)unlock;
+- (void)lock;
 - (id)init;
 - (void)dealloc;
 - (id)thisObject;
+- (void)_sendResult:(id)arg1 toDelegate:(id)arg2;
 - (void)_callFunction:(id)arg1 withArguments:(id)arg2 delegate:(id)arg3;
 - (id)_copyAdjustedArgumentsForArguments:(id)arg1;
-- (void)_sendResult:(id)arg1 toDelegate:(id)arg2;
 - (BOOL)callWithArguments:(id)arg1;
 - (BOOL)callWithArguments:(id)arg1 delegate:(id)arg2 didFinishSelector:(SEL)arg3;
-- (void)setThisObject:(id)arg1;
 - (id)initWithScriptObject:(id)arg1;
-- (id)scriptObject;
 - (id)callSynchronouslyWithArguments:(id)arg1;
+- (void)setThisObject:(id)arg1;
 - (void)setScriptObject:(id)arg1;
+- (id)scriptObject;
 
 @end

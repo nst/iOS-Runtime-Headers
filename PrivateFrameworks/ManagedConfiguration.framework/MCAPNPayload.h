@@ -15,20 +15,20 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (void)dealloc;
-- (id)description;
+- (id)apnDefaults;
 - (BOOL)wasInstalled;
+- (void)setWasInstalled:(BOOL)arg1;
 - (id)_validationErrorType:(int)arg1 forInvalidKey:(id)arg2;
 - (BOOL)_checkForValidContents:(id)arg1 outError:(id*)arg2;
 - (void)_finishInitializationWithContents:(id)arg1;
-- (id)apnDefaults;
 - (id)_strippedAPNDefaults;
-- (void)setWasInstalled:(BOOL)arg1;
-- (id)subtitle1Description;
-- (id)subtitle2Description;
 - (id)subtitle1Label;
 - (id)subtitle2Label;
-- (id)stubDictionary;
+- (id)subtitle2Description;
+- (id)subtitle1Description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -5,12 +5,11 @@
 @class NSString, <IMConnectionMonitorDelegate>;
 
 @interface IMConnectionMonitor : NSObject  {
-    <IMConnectionMonitorDelegate> *_delegate;
     NSString *_remoteHost;
+    <IMConnectionMonitorDelegate> *_delegate;
 }
 
 @property(readonly) BOOL isImmediatelyReachable;
-@property(readonly) BOOL isReachableAfterModemDial;
 @property(readonly) BOOL requiresDataConnectionActivation;
 @property(setter=setDataConnectionActive:) BOOL isDataConnectionActive;
 @property <IMConnectionMonitorDelegate> * delegate;
@@ -18,19 +17,18 @@
 
 + (id)alloc;
 
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (BOOL)isDataConnectionActive;
 - (id)remoteHost;
-- (BOOL)isImmediatelyReachable;
-- (BOOL)isReachableAfterModemDial;
-- (void)_setup;
-- (void)goConnectedWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2;
-- (void)goDisconnected;
-- (void)setDataConnectionActive:(BOOL)arg1;
 - (BOOL)requiresDataConnectionActivation;
-- (BOOL)startDialUp;
+- (BOOL)isDataConnectionActive;
+- (void)setDataConnectionActive:(BOOL)arg1;
+- (void)goDisconnected;
+- (void)goConnectedWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2;
+- (void)_setup;
+- (BOOL)isImmediatelyReachable;
 - (id)initWithRemoteHost:(id)arg1 delegate:(id)arg2;
+- (void)clear;
+- (id)delegate;
+- (void)dealloc;
 
 @end

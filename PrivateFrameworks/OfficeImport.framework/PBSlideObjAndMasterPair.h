@@ -11,9 +11,9 @@
 
 + (id)createPair:(id)arg1 masterId:(int)arg2;
 
-- (void)dealloc;
+- (id)slide;
 - (void)setSlide:(id)arg1 masterId:(int)arg2;
 - (int)masterId;
-- (id)slide;
+- (void)dealloc;
 
 @end

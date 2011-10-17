@@ -5,18 +5,19 @@
 @class <MFRequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory>, MimePart, Message, MFDAMessageStore;
 
 @interface _MFDAMessageStoreFetchRequest : DAMailboxFetchMessageRequest <MFDAMailAccountRequest> {
-    int format;
+    <MFRequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory> *consumer;
     MFDAMessageStore *store;
     Message *message;
-    <MFRequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory> *consumer;
     MimePart *part;
+    int format;
     BOOL partial;
 }
 
 
-- (unsigned long long)generationNumber;
+- (id)deferredOperation;
 - (BOOL)shouldSend;
-- (unsigned int)hash;
+- (unsigned long long)generationNumber;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 
 @end

@@ -5,8 +5,8 @@
 @interface MFMailMimePart : MimePart  {
 }
 
-+ (BOOL)isRecognizedClassForContent:(id)arg1;
 + (Class)attachmentClass;
++ (BOOL)isRecognizedClassForContent:(id)arg1;
 
 - (id)decodeMessageDelivery_status;
 - (id)decodeMessageRfc822;
@@ -15,20 +15,16 @@
 - (id)decodeTextRichtext;
 - (id)decodeTextEnriched;
 - (id)decodeTextHtml;
-- (id)htmlContentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3;
 - (id)htmlContentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2;
 - (id)htmlContent;
-- (void)_setDecryptedMessageBody:(id)arg1 isEncrypted:(BOOL)arg2 isSigned:(BOOL)arg3;
 - (id)decodeTextPlain;
 - (id)decodeTextCalendar;
-- (id)decodeMultipartSigned;
 - (id)decodeMultipartAppledouble;
-- (id)availableBodyData;
-- (void)loadMoreHtmlContent;
-- (id)fileWrapperForDecodedObject:(id)arg1 withFileData:(id*)arg2;
 - (void)storeData:(id)arg1 inMessage:(id)arg2 isComplete:(BOOL)arg3;
-- (BOOL)_shouldContinueDecodingProcess;
 - (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4 isComplete:(BOOL*)arg5;
+- (id)htmlContentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3;
+- (id)fileWrapperForDecodedObject:(id)arg1 withFileData:(id*)arg2;
+- (BOOL)_shouldContinueDecodingProcess;
 - (void)configureFileWrapper:(id)arg1;
 - (id)fileWrapperForcingDownload:(BOOL)arg1;
 

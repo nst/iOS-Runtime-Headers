@@ -9,20 +9,20 @@
     SimpleSlotSequence *_overlays;
 }
 
-@property(retain) SimpleSlotSequence * overlays;
 @property(retain) NSArray * indices;
+@property(retain) SimpleSlotSequence * overlays;
 
 + (id)productionWithSimpleSlotSequence:(id)arg1;
 + (id)instanceFromPlist:(id)arg1;
 
-- (void)dealloc;
-- (id)description;
 - (id)overlays;
+- (id)description;
+- (void)dealloc;
+- (void)setOverlays:(id)arg1;
+- (void)setIndices:(id)arg1;
 - (id)indices;
 - (id)initWithSimpleSlotSequence:(id)arg1;
 - (id)initWithOverlays:(id)arg1 indices:(id)arg2;
-- (void)setOverlays:(id)arg1;
-- (void)setIndices:(id)arg1;
 - (id)initFromPlist:(id)arg1;
 
 @end

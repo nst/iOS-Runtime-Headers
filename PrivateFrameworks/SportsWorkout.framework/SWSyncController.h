@@ -4,7 +4,8 @@
 
 @class SWSyncHost, NSString, SWSyncServiceConnection, <SWSyncControllerDelegate>, NSMutableArray;
 
-@interface SWSyncController : NSObject  {
+@interface SWSyncController : NSObject <SWSyncServiceConnectionDelegate, SWGeneratePINConnectionDelegate, SWSyncWorkoutConnectionDelegate, SWPINStatusConnectionDelegate> {
+    int _attemptedUploadCount;
     int _uploadCount;
     <SWSyncControllerDelegate> *_syncDelegate;
     SWSyncHost *_syncHost;
@@ -17,32 +18,35 @@
     BOOL _shouldMoveFilesToSynchedDirectoryWhenDone;
 }
 
-@property int uploadCount;
 @property BOOL shouldMoveFilesToSynchedDirectoryWhenDone;
 @property <SWSyncControllerDelegate> * syncDelegate;
+@property int uploadCount;
 
++ (void)releaseSyncInProgressFileLock;
++ (BOOL)takeSyncInProgressFileLock:(BOOL)arg1;
 
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)dealloc;
+- (void)setUploadCount:(int)arg1;
+- (int)uploadCount;
+- (void)setShouldMoveFilesToSynchedDirectoryWhenDone:(BOOL)arg1;
 - (BOOL)shouldMoveFilesToSynchedDirectoryWhenDone;
+- (void)setSyncDelegate:(id)arg1;
+- (id)syncDelegate;
+- (unsigned int)unsyncedWorkoutsCount;
+- (void)syncAllWorkouts;
 - (id)initWithBaseDirectoryPath:(id)arg1;
-- (void)visitNikeWebSite;
+- (id)_syncHost;
 - (void)_syncWorkoutsForNextEmpedDirectory;
+- (void)visitNikeWebSite;
 - (void)_syncNextWorkout;
 - (void)connectionDidSyncWorkout:(id)arg1;
-- (int)uploadCount;
-- (void)setUploadCount:(int)arg1;
-- (void)setShouldMoveFilesToSynchedDirectoryWhenDone:(BOOL)arg1;
-- (id)syncDelegate;
-- (void)setSyncDelegate:(id)arg1;
-- (id)_syncHost;
-- (void)syncAllWorkouts;
-- (void)connection:(id)arg1 didGeneratePIN:(id)arg2;
-- (void)connection:(id)arg1 didConfirmEmail:(id)arg2 screenName:(id)arg3;
-- (void)connection:(id)arg1 didReplaceOldPINWithNewPIN:(id)arg2;
-- (void)connectionDidReturnStatusUnconfirmed:(id)arg1;
-- (void)connectionDidReturnStatusInvalid:(id)arg1;
-- (void)connection:(id)arg1 didGenerateToken:(id)arg2;
 - (void)connectionDidCompleteSync:(id)arg1;
+- (void)connection:(id)arg1 didGenerateToken:(id)arg2;
+- (void)connectionDidReturnStatusInvalid:(id)arg1;
+- (void)connectionDidReturnStatusUnconfirmed:(id)arg1;
+- (void)connection:(id)arg1 didReplaceOldPINWithNewPIN:(id)arg2;
+- (void)connection:(id)arg1 didConfirmEmail:(id)arg2 screenName:(id)arg3;
+- (void)connection:(id)arg1 didGeneratePIN:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)dealloc;
 
 @end

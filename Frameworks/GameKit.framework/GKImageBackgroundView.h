@@ -6,14 +6,17 @@
 
 @interface GKImageBackgroundView : GKBackgroundView  {
     NSArray *_backgroundTiles;
+    UIImage *_backgroundImage;
 }
 
-@property(retain,readonly) UIImage * backgroundImage;
+@property(retain) UIImage * backgroundImage;
 @property(retain) NSArray * backgroundTiles;
 
 
 - (id)backgroundTiles;
+- (id)backgroundImageForCurrentWidth;
 - (void)setBackgroundTiles:(id)arg1;
+- (void)setBackgroundImage:(id)arg1;
 - (id)backgroundImage;
 - (void)layoutSubviews;
 - (void)dealloc;

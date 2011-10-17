@@ -10,11 +10,8 @@
 }
 
 
-- (id)initWithText:(id)arg1;
-- (void)dealloc;
-- (BOOL)isEmpty;
-- (id)runAt:(int)arg1;
-- (void)clearProperties;
+- (BOOL)isContinuationOf:(id)arg1;
+- (BOOL)isTextFrame;
 - (id)initWithText:(id)arg1 string:(id)arg2;
 - (void)insertRun:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)removeRun:(id)arg1;
@@ -22,24 +19,27 @@
 - (id)addAnnotation:(int)arg1;
 - (id)addDateTime:(id)arg1;
 - (int)characterCount;
-- (id)addBookmark:(id)arg1 type:(int)arg2;
-- (void)removeLastCharacter:(unsigned short)arg1;
+- (void)clearProperties;
 - (id)runIterator;
 - (id)newRunIterator;
-- (id)addCharacterRun;
-- (id)addFootnote;
-- (id)addEndnote;
-- (id)addSpecialCharacter;
-- (id)addFieldMarker;
-- (id)addSymbol;
 - (id)addBookmark;
 - (id)addFieldMarker:(int)arg1;
-- (void)addRun:(id)arg1;
-- (id)runs;
+- (id)addCharacterRun;
+- (id)addSpecialCharacter;
+- (id)addSymbol;
+- (id)addFootnote;
+- (id)addEndnote;
+- (id)addFieldMarker;
 - (int)blockType;
-- (BOOL)isTextFrame;
-- (BOOL)isContinuationOf:(id)arg1;
-- (id)properties;
 - (int)runCount;
+- (id)runAt:(int)arg1;
+- (void)removeLastCharacter:(unsigned short)arg1;
+- (void)addRun:(id)arg1;
+- (id)addBookmark:(id)arg1 type:(int)arg2;
+- (id)runs;
+- (id)properties;
+- (id)initWithText:(id)arg1;
+- (BOOL)isEmpty;
+- (void)dealloc;
 
 @end

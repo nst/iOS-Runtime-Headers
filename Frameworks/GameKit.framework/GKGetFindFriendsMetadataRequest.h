@@ -11,26 +11,23 @@
     BOOL _friendFinderVisible;
 }
 
-@property BOOL friendFinderVisible;
 @property(retain) NSString * sectionTitle;
-@property(retain) NSString * buttonTitle;
 @property(retain) NSString * buttonUsageHelp;
+@property(retain) NSString * buttonTitle;
+@property BOOL friendFinderVisible;
 
 
-- (int)cachePriority;
 - (BOOL)friendFinderVisible;
-- (int)cacheType;
-- (void)setFriendFinderVisible:(BOOL)arg1;
 - (id)sectionTitle;
-- (void)setSectionTitle:(id)arg1;
-- (void)setButtonTitle:(id)arg1;
+- (id)buttonTitle;
 - (id)buttonUsageHelp;
+- (void)setSectionTitle:(id)arg1;
+- (void)setFriendFinderVisible:(BOOL)arg1;
 - (void)setButtonUsageHelp:(id)arg1;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
-- (id)cacheKey;
+- (void)setButtonTitle:(id)arg1;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)request;
 - (void)dealloc;
-- (id)buttonTitle;
 
 @end

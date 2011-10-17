@@ -5,22 +5,24 @@
 @interface NSSelfExpression : NSExpression  {
 }
 
++ (id)defaultInstance;
 + (void)initialize;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)defaultInstance;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)release;
-- (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithCoder:(id)arg1;
-- (unsigned int)retainCount;
-- (id)autorelease;
 - (id)_initPrivate;
 - (id)predicateFormat;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
+- (oneway void)release;
 
 @end

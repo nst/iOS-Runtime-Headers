@@ -5,11 +5,10 @@
 @interface IMNetworkManager : NSObject  {
 }
 
-+ (id)sharedInstance;
 + (id)alloc;
++ (id)sharedInstance;
 
-- (oneway void)release;
-- (unsigned int)retainCount;
-- (id)autorelease;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 
 @end

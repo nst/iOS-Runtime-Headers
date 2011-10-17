@@ -23,24 +23,12 @@
 @property(copy,readonly) NSString * titleDisplayString;
 
 
-- (id)innerHTML;
-- (id)innerText;
-- (void)setContentEditable:(id)arg1;
-- (int)structuralComplexityContribution;
-- (id)className;
-- (BOOL)isContentEditable;
-- (void)setInnerHTML:(id)arg1;
-- (int)scrollXOffset;
-- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForPurpleCaret:(BOOL)arg3;
-- (int)scrollYOffset;
-- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (id)children;
+- (id)idName;
 - (void)setIdName:(id)arg1;
 - (id)lang;
 - (void)setLang:(id)arg1;
 - (void)setClassName:(id)arg1;
+- (id)classList;
 - (int)tabIndex;
 - (void)setTabIndex:(int)arg1;
 - (BOOL)draggable;
@@ -50,7 +38,10 @@
 - (void)setOuterHTML:(id)arg1;
 - (id)outerText;
 - (void)setOuterText:(id)arg1;
+- (id)children;
 - (id)contentEditable;
+- (BOOL)spellcheck;
+- (void)setSpellcheck:(BOOL)arg1;
 - (id)titleDisplayString;
 - (id)insertAdjacentElement:(id)arg1 element:(id)arg2;
 - (void)insertAdjacentHTML:(id)arg1 html:(id)arg2;
@@ -58,6 +49,23 @@
 - (id)dir;
 - (void)setDir:(id)arg1;
 - (void)absolutePosition:(int*)arg1 :(int*)arg2 :(int*)arg3 :(int*)arg4;
-- (id)idName;
+- (BOOL)hidden;
+- (int)structuralComplexityContribution;
+- (id)className;
+- (BOOL)isContentEditable;
+- (id)innerHTML;
+- (void)setInnerHTML:(id)arg1;
+- (void)setContentEditable:(id)arg1;
+- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForPurpleCaret:(BOOL)arg3;
+- (id)innerText;
+- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;
+- (int)scrollYOffset;
+- (int)scrollXOffset;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)setHidden:(BOOL)arg1;
+- (void)setLineHeight:(float)arg1;
+- (void)setFontSize:(float)arg1;
+- (void)setTextShadowColor:(id)arg1 offset:(struct CGSize { float x1; float x2; })arg2;
 
 @end

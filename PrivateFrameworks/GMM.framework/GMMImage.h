@@ -11,25 +11,24 @@
 }
 
 @property(readonly) BOOL hasKey;
+@property(retain) NSString * key;
+@property int type;
 @property(readonly) BOOL hasImageData;
 @property(retain) NSData * imageData;
-@property int type;
-@property(retain) NSString * key;
 
 
-- (id)key;
+- (id)imageData;
+- (BOOL)readFrom:(id)arg1;
+- (void)setImageData:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (BOOL)hasKey;
 - (void)setKey:(id)arg1;
+- (id)key;
 - (id)dictionaryRepresentation;
 - (int)type;
 - (void)setType:(int)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)description;
-- (BOOL)hasKey;
+- (void)dealloc;
 - (BOOL)hasImageData;
-- (BOOL)readFrom:(id)arg1;
-- (id)imageData;
-- (void)writeTo:(id)arg1;
-- (void)setImageData:(id)arg1;
 
 @end

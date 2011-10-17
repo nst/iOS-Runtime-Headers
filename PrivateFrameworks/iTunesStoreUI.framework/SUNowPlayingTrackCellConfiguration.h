@@ -5,16 +5,16 @@
 @interface SUNowPlayingTrackCellConfiguration : SUMediaItemCellConfiguration  {
 }
 
-+ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 + (id)copyDefaultContext;
++ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
 - (id)init;
-- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (BOOL)showContentRating;
 - (int)mediaIconType;
-- (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (void)reloadImages;
 - (void)reloadLayoutInformation;
 - (void)reloadStrings;
+- (void)reloadImages;
+- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (id)fontForLabelAtIndex:(unsigned int)arg1;
 
 @end

@@ -10,17 +10,17 @@
     WebScriptObject *_listener;
 }
 
-@property(retain) WebScriptObject * listener;
-@property(retain) NSString * title;
 @property(retain) NSString * url;
+@property(retain) NSString * title;
+@property(retain) WebScriptObject * listener;
 
 
 - (void)setListener:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (id)title;
-- (void)dealloc;
 - (void)setTitle:(id)arg1;
 - (id)listener;
+- (void)dealloc;
 
 @end

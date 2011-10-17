@@ -10,19 +10,19 @@
     UIImage *maxTrack;
 }
 
-@property(readonly) BOOL isEmpty;
-@property(retain) UIImage * maxTrack;
-@property(retain) UIImage * minTrack;
 @property(retain) UIImage * thumb;
+@property(retain) UIImage * minTrack;
+@property(retain) UIImage * maxTrack;
+@property(readonly) BOOL isEmpty;
 
 
-- (id)minTrack;
 - (void)setMaxTrack:(id)arg1;
-- (void)setMinTrack:(id)arg1;
-- (void)setThumb:(id)arg1;
 - (id)maxTrack;
+- (void)setMinTrack:(id)arg1;
+- (id)minTrack;
+- (void)setThumb:(id)arg1;
 - (id)thumb;
-- (void)dealloc;
 - (BOOL)isEmpty;
+- (void)dealloc;
 
 @end

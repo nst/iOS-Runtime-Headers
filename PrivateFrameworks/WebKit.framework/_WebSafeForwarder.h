@@ -9,11 +9,11 @@
 }
 
 
-- (void)clearTarget;
-- (id)initWithTarget:(id)arg1 defaultTarget:(id)arg2 catchExceptions:(BOOL)arg3;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)dealloc;
+- (void)clearTarget;
+- (id)initWithTarget:(id)arg1 defaultTarget:(id)arg2 catchExceptions:(BOOL)arg3;
 - (BOOL)respondsToSelector:(SEL)arg1;
+- (void)dealloc;
 
 @end

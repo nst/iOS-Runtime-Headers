@@ -4,7 +4,7 @@
 
 @class NSNumber, NSString, NSData;
 
-@interface FTRelayCancelMessage : FTMessage  {
+@interface FTRelayCancelMessage : FTFaceTimeMessage <NSCopying> {
     NSString *_peerID;
     NSData *_peerPushToken;
     NSNumber *_relayType;
@@ -16,38 +16,39 @@
     NSNumber *_peerRelayPort;
 }
 
-@property(copy) NSNumber * peerRelayPort;
-@property(copy) NSData * peerRelayIP;
-@property(copy) NSNumber * selfRelayPort;
-@property(copy) NSData * selfRelayIP;
-@property(copy) NSData * relayConnectionID;
-@property(copy) NSNumber * reason;
-@property(copy) NSNumber * relayType;
-@property(copy) NSData * peerPushToken;
 @property(copy) NSString * peerID;
+@property(copy) NSData * peerPushToken;
+@property(copy) NSNumber * relayType;
+@property(copy) NSNumber * reason;
+@property(copy) NSData * relayConnectionID;
+@property(copy) NSData * selfRelayIP;
+@property(copy) NSNumber * selfRelayPort;
+@property(copy) NSData * peerRelayIP;
+@property(copy) NSNumber * peerRelayPort;
 
 
+- (id)messageBody;
 - (void)setReason:(id)arg1;
+- (void)setPeerID:(id)arg1;
 - (id)peerID;
-- (id)bagKey;
 - (id)reason;
-- (void)dealloc;
 - (void)setRelayConnectionID:(id)arg1;
 - (id)relayConnectionID;
-- (void)setPeerPushToken:(id)arg1;
-- (id)selfRelayIP;
-- (id)peerRelayIP;
 - (id)peerRelayPort;
+- (id)peerRelayIP;
+- (id)selfRelayPort;
+- (id)selfRelayIP;
+- (id)relayType;
+- (void)setPeerPushToken:(id)arg1;
 - (void)setPeerRelayPort:(id)arg1;
 - (void)setPeerRelayIP:(id)arg1;
-- (id)selfRelayPort;
 - (void)setSelfRelayPort:(id)arg1;
 - (void)setSelfRelayIP:(id)arg1;
-- (id)relayType;
 - (void)setRelayType:(id)arg1;
 - (id)peerPushToken;
-- (void)setPeerID:(id)arg1;
 - (id)requiredKeys;
-- (id)messageBody;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)bagKey;
 
 @end

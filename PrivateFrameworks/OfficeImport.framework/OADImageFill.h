@@ -19,28 +19,28 @@
 
 + (id)defaultProperties;
 
-- (id)color;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)blipRef;
-- (void)setTechnique:(id)arg1;
-- (void)setBlipRef:(id)arg1;
 - (void)setRotateWithShape:(BOOL)arg1;
-- (void)setSourceRect:(id)arg1;
-- (long)dpi;
-- (void)setDpi:(long)arg1;
-- (BOOL)isDpiOverridden;
-- (BOOL)rotateWithShape;
 - (BOOL)isRotateWithShapeOverridden;
-- (id)technique;
-- (BOOL)isTechniqueOverridden;
-- (void)setParent:(id)arg1;
-- (void)setStyleColor:(id)arg1;
-- (id)initWithDefaults;
-- (id)sourceRect;
+- (BOOL)rotateWithShape;
+- (void)setSourceRect:(id)arg1;
+- (void)setDpi:(long)arg1;
 - (BOOL)isBlipRefOverridden;
 - (BOOL)isSourceRectOverridden;
+- (BOOL)isDpiOverridden;
+- (BOOL)isTechniqueOverridden;
+- (id)sourceRect;
+- (long)dpi;
+- (void)setStyleColor:(id)arg1;
+- (void)setBlipRef:(id)arg1;
+- (void)setTechnique:(id)arg1;
+- (id)technique;
+- (id)blipRef;
+- (void)setParent:(id)arg1;
+- (id)initWithDefaults;
+- (id)color;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

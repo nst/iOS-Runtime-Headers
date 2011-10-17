@@ -26,22 +26,22 @@
 
 - (void)finalize;
 - (id)initWithDictionary:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (int)numberOfDroppedVideoFrames;
-- (int)numberOfStalls;
-- (double)durationWatched;
 - (int)numberOfSegmentsDownloaded;
 - (id)playbackStartDate;
+- (id)URI;
+- (id)serverAddress;
 - (int)numberOfServerAddressChanges;
+- (id)playbackSessionID;
 - (double)playbackStartOffset;
 - (double)segmentsDownloadedDuration;
+- (double)durationWatched;
+- (int)numberOfStalls;
 - (long long)numberOfBytesTransferred;
 - (double)observedBitrate;
 - (double)indicatedBitrate;
-- (id)serverAddress;
-- (id)playbackSessionID;
-- (id)URI;
+- (int)numberOfDroppedVideoFrames;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

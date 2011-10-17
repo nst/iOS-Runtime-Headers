@@ -8,10 +8,7 @@
 @property(readonly) unsigned int length;
 
 
-- (id)item:(unsigned int)arg1;
 - (void)finalize;
-- (void)dealloc;
-- (unsigned int)length;
 - (id)getNamedItem:(id)arg1;
 - (id)setNamedItem:(id)arg1;
 - (id)removeNamedItem:(id)arg1;
@@ -20,5 +17,8 @@
 - (id)setNamedItemNS:(id)arg1;
 - (id)removeNamedItemNS:(id)arg1 localName:(id)arg2;
 - (id)removeNamedItemNS:(id)arg1 :(id)arg2;
+- (id)item:(unsigned int)arg1;
+- (unsigned int)length;
+- (void)dealloc;
 
 @end

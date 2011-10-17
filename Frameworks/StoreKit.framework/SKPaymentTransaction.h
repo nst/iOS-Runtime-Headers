@@ -17,20 +17,20 @@
 @property(readonly) int transactionState;
 
 
+- (id)transactionIdentifier;
+- (id)transactionReceipt;
+- (id)payment;
+- (id)originalTransaction;
+- (BOOL)mergeWithTransaction:(id)arg1;
+- (BOOL)canMergeWithTransaction:(id)arg1;
+- (id)_transactionIdentifier;
+- (id)initWithPayment:(id)arg1;
+- (id)matchingIdentifier;
+- (int)transactionState;
+- (id)transactionDate;
 - (id)initWithDictionary:(id)arg1;
+- (id)error;
 - (id)init;
 - (void)dealloc;
-- (id)originalTransaction;
-- (id)payment;
-- (id)transactionDate;
-- (id)transactionReceipt;
-- (int)transactionState;
-- (id)matchingIdentifier;
-- (id)initWithPayment:(id)arg1;
-- (id)_transactionIdentifier;
-- (BOOL)canMergeWithTransaction:(id)arg1;
-- (BOOL)mergeWithTransaction:(id)arg1;
-- (id)transactionIdentifier;
-- (id)error;
 
 @end

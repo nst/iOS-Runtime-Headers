@@ -11,21 +11,21 @@
 
 + (id)defaultTitleFont;
 
-- (void)updateHighlightColors;
-- (id)titleTextLabel;
-- (void)setUserInteractionEnabled:(BOOL)arg1;
-- (id)image;
-- (id)_getTitleColor;
-- (id)iconImageView;
 - (struct CGPoint { float x1; float x2; })textInset;
 - (struct CGPoint { float x1; float x2; })iconInset;
-- (void)setAlignment:(int)arg1;
-- (id)_scriptingInfo;
-- (void)layoutSubviews;
+- (id)_getTitleColor;
+- (id)iconImageView;
+- (id)image;
 - (id)title;
-- (void)dealloc;
+- (id)_scriptingInfo;
+- (void)setAlignment:(int)arg1;
+- (void)updateHighlightColors;
 - (int)alignment;
+- (id)titleTextLabel;
 - (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
 - (void)setImage:(id)arg1;
+- (void)setUserInteractionEnabled:(BOOL)arg1;
+- (void)dealloc;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableSet, MPViewController, UIView;
+@class NSMutableSet, MPViewController, UIView, UIViewController;
 
 @interface MPTransitionController : NSObject  {
     struct __CFDictionary { } *_observers;
@@ -16,36 +16,43 @@
     int _fromInterfaceOrientation;
     MPViewController *_toViewController;
     int _toInterfaceOrientation;
+    UIViewController *_toContainerViewController;
 }
 
-@property(retain) MPViewController * toViewController;
-@property int toInterfaceOrientation;
-@property(retain) UIView * rootView;
-@property(retain) MPViewController * fromViewController;
-@property int fromInterfaceOrientation;
 @property float duration;
+@property int fromInterfaceOrientation;
+@property(retain) MPViewController * fromViewController;
+@property(retain) UIView * rootView;
+@property int toInterfaceOrientation;
+@property(retain) MPViewController * toViewController;
+@property(retain) UIViewController * toContainerViewController;
 
 
+- (void)addViewToFadeOut:(id)arg1 restoreOnPop:(BOOL)arg2;
+- (void)addViewToFadeIn:(id)arg1 restoreOnPop:(BOOL)arg2;
+- (void)willBeginTransition:(unsigned int)arg1;
+- (void)messageObserversWithSuccess:(BOOL)arg1;
+- (id)toContainerViewController;
+- (void)didFinishTransition:(BOOL)arg1;
+- (void)fadeViewsForRestore:(BOOL)arg1;
+- (id)rootView;
+- (id)toViewController;
+- (void)setToInterfaceOrientation:(int)arg1;
+- (int)toInterfaceOrientation;
+- (void)setFromInterfaceOrientation:(int)arg1;
+- (int)fromInterfaceOrientation;
+- (void)performTransition:(unsigned int)arg1;
+- (void)setToViewController:(id)arg1;
+- (void)setToContainerViewController:(id)arg1;
+- (void)setRootView:(id)arg1;
+- (void)setFromViewController:(id)arg1;
+- (void)transition:(unsigned int)arg1;
+- (void)addObserver:(id)arg1 didEndSelector:(SEL)arg2;
+- (id)fromViewController;
 - (float)duration;
+- (void)setDuration:(float)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)setDuration:(float)arg1;
-- (void)addViewToFadeIn:(id)arg1 restoreOnPop:(BOOL)arg2;
-- (void)addViewToFadeOut:(id)arg1 restoreOnPop:(BOOL)arg2;
-- (void)fadeViewsForRestore:(BOOL)arg1;
-- (int)fromInterfaceOrientation;
-- (id)rootView;
-- (id)fromViewController;
-- (void)messageObserversWithSuccess:(BOOL)arg1;
-- (void)transition:(unsigned int)arg1;
-- (id)toViewController;
-- (void)addObserver:(id)arg1 didEndSelector:(SEL)arg2;
-- (void)setFromViewController:(id)arg1;
-- (void)setRootView:(id)arg1;
-- (void)setToViewController:(id)arg1;
-- (void)setFromInterfaceOrientation:(int)arg1;
-- (void)setToInterfaceOrientation:(int)arg1;
-- (int)toInterfaceOrientation;
 
 @end

@@ -23,18 +23,6 @@
 @property(copy) NSString * width;
 
 
-- (int)structuralComplexityContribution;
-- (id)width;
-- (void)setWidth:(id)arg1;
-- (id)cellSpacing;
-- (void)setBorder:(id)arg1;
-- (void)setCellSpacing:(id)arg1;
-- (id)align;
-- (id)bgColor;
-- (void)setBgColor:(id)arg1;
-- (id)summary;
-- (void)setAlign:(id)arg1;
-- (id)border;
 - (id)caption;
 - (void)setCaption:(id)arg1;
 - (id)tHead;
@@ -42,11 +30,12 @@
 - (id)tFoot;
 - (void)setTFoot:(id)arg1;
 - (id)tBodies;
-- (id)cellPadding;
-- (void)setCellPadding:(id)arg1;
+- (id)cellSpacing;
+- (void)setCellSpacing:(id)arg1;
 - (id)frameBorders;
 - (void)setFrameBorders:(id)arg1;
 - (void)setRules:(id)arg1;
+- (id)summary;
 - (void)setSummary:(id)arg1;
 - (id)createTHead;
 - (void)deleteTHead;
@@ -56,7 +45,18 @@
 - (void)deleteCaption;
 - (id)insertRow:(int)arg1;
 - (void)deleteRow:(int)arg1;
-- (id)rows;
+- (id)bgColor;
+- (void)setBgColor:(id)arg1;
+- (id)align;
+- (void)setAlign:(id)arg1;
 - (id)rules;
+- (id)border;
+- (void)setBorder:(id)arg1;
+- (void)setCellPadding:(id)arg1;
+- (id)cellPadding;
+- (int)structuralComplexityContribution;
+- (id)rows;
+- (void)setWidth:(id)arg1;
+- (id)width;
 
 @end

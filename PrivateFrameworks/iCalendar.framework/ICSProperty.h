@@ -11,27 +11,29 @@
 }
 
 
-- (unsigned int)type;
-- (id)value;
-- (id)stringValue;
-- (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (void)addParametersFromDictionary:(id)arg1;
-- (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (id)allParameters;
-- (void)setValue:(id)arg1 type:(int)arg2;
-- (void)setParameterValue:(id)arg1 forName:(id)arg2;
-- (void)setValueAsProperty:(id)arg1 withRawValue:(const char *)arg2 options:(unsigned int)arg3;
-- (void)addParameter:(id)arg1 withRawValue:(id)arg2 options:(unsigned int)arg3;
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2 additionalParameters:(id)arg3;
-- (void)removeParameterValueForName:(id)arg1;
-- (id)parameterValueForName:(id)arg1;
-- (id)initWithValue:(id)arg1 type:(unsigned int)arg2;
-- (id)ICSStringWithOptions:(unsigned int)arg1;
 - (void)setParameters:(id)arg1;
 - (id)parameters;
+- (void)_setParsedValues:(id)arg1 type:(unsigned int)arg2;
+- (BOOL)isMultiValued;
+- (void)addParameter:(id)arg1 withRawValue:(id)arg2 options:(unsigned int)arg3;
+- (void)setValueAsProperty:(id)arg1 withRawValue:(const char *)arg2 options:(unsigned int)arg3;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2 additionalParameters:(id)arg3;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)removeParameterValueForName:(id)arg1;
+- (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)setParameterValue:(id)arg1 forName:(id)arg2;
+- (void)setValue:(id)arg1 type:(int)arg2;
+- (id)parameterValueForName:(id)arg1;
+- (void)addParametersFromDictionary:(id)arg1;
+- (id)allParameters;
+- (id)initWithValue:(id)arg1 type:(unsigned int)arg2;
+- (id)stringValue;
+- (unsigned int)type;
+- (id)value;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)ICSStringWithOptions:(unsigned int)arg1;
 
 @end

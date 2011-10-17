@@ -5,13 +5,12 @@
 @interface PLMessageUIProxy : NSObject  {
 }
 
++ (BOOL)canSendMail;
 + (id)newMailCompositionContext;
 + (id)newComposeViewControllerWithComposition:(id)arg1;
 + (id)newComposeViewController;
 + (Class)MailCompositionContextClass;
-+ (BOOL)canSendMail;
 + (Class)MFMailComposeViewControllerClass;
-+ (void)_initializeSafeCategory;
 
 
 @end

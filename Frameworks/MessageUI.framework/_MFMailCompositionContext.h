@@ -6,6 +6,7 @@
 
 @interface _MFMailCompositionContext : MFMailCompositionContext  {
     int _composeType;
+    id _autosaveIdentifier;
     MailMessage *_originalMessage;
     id _originalContent;
     MFMessageViewingContext *_loadingContext;
@@ -20,26 +21,31 @@
 @property(retain) MFMessageViewingContext * loadingContext;
 @property(retain) id originalContent;
 @property(retain,readonly) MailMessage * originalMessage;
+@property(readonly) id autosaveIdentifier;
 @property(readonly) int composeType;
 
 
-- (void)dealloc;
-- (id)loadingContext;
-- (id)initWithComposeType:(int)arg1 originalMessage:(id)arg2;
+- (id)initRecoveredAutosavedMessageWithIdentifier:(id)arg1;
 - (id)initReplyToMessage:(id)arg1;
 - (id)initReplyAllToMessage:(id)arg1;
 - (id)initForwardOfMessage:(id)arg1;
 - (id)initDraftRestoreOfMessage:(id)arg1;
+- (id)initDraftRestoreOfRFC822Data:(id)arg1;
 - (id)initOutboxRestoreOfMessage:(id)arg1;
-- (void)setIncludeAttachments:(BOOL)arg1;
+- (id)initWithComposeType:(int)arg1 originalMessage:(id)arg2;
+- (id)initWithURL:(id)arg1 composeType:(int)arg2 originalMessage:(id)arg3;
+- (int)composeType;
+- (id)loadingContext;
 - (id)originalMessage;
 - (void)setLoadingContext:(id)arg1;
 - (void)setLoadRest:(BOOL)arg1;
+- (void)setIncludeAttachments:(BOOL)arg1;
 - (BOOL)loadRest;
 - (id)originalContent;
-- (BOOL)includeAttachments;
 - (void)setOriginalContent:(id)arg1;
-- (int)composeType;
+- (BOOL)includeAttachments;
+- (id)autosaveIdentifier;
 - (id)initWithComposeType:(int)arg1;
+- (void)dealloc;
 
 @end

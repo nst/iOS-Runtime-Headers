@@ -10,17 +10,24 @@
     int m_edgeType;
     UIFont *m_textFont;
     BOOL m_animating;
+    BOOL m_isLongString;
 }
 
+@property BOOL animating;
+@property BOOL isLongString;
 
-- (void)setAnimating:(BOOL)arg1;
+
+- (void)setIsLongString:(BOOL)arg1;
+- (BOOL)isLongString;
+- (BOOL)animating;
 - (BOOL)needsWebDocumentViewEventsDirectly;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 string:(id)arg2 type:(int)arg3 edgeType:(int)arg4;
-- (void)setEdgeType:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateRectForExpandedHitRegion;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setEdgeType:(int)arg1;
+- (void)setAnimating:(BOOL)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (void)dealloc;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

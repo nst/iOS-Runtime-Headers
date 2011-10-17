@@ -12,14 +12,13 @@
 @property(retain) NSString * valueText;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (BOOL)readFrom:(id)arg1;
+- (id)valueText;
 - (BOOL)hasValueText;
 - (void)setValueText:(id)arg1;
-- (id)valueText;
-- (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

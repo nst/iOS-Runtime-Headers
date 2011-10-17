@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSString, NSDictionary, NSNumber, NSMutableDictionary;
+@class NSMutableSet, NSString, NSDictionary, NSNumber, NSMutableDictionary;
 
 @interface PKPrinter : NSObject  {
     NSString *name;
@@ -38,16 +38,28 @@
         } x39; } *job_http;
 
     NSMutableDictionary *privateData;
+    NSMutableSet *mediaReady;
     int maxPDFKBytes;
     int maxJPEGKBytes;
+    int maxCopies;
+    int preferred_landscape;
+    BOOL isLocal;
+    BOOL hasIdentifyPrinterOp;
     int kind;
 }
 
 @property int accessState;
+@property(retain,readonly) NSString * scheme;
 @property(retain) NSDictionary * TXTRecord;
 @property(retain) NSNumber * port;
 @property(retain) NSString * hostname;
 @property(readonly) NSDictionary * printInfoSupported;
+@property(readonly) NSString * uuid;
+@property(readonly) BOOL isIPPS;
+@property(readonly) BOOL hasPrintInfoSupported;
+@property(readonly) BOOL isAdobeRGBSupported;
+@property(readonly) BOOL hasIdentifyPrinterOp;
+@property BOOL isLocal;
 @property(readonly) int accessState;
 @property(readonly) int type;
 @property(readonly) int kind;
@@ -57,43 +69,56 @@
 + (BOOL)printerLookupWithName:(id)arg1 andTimeout:(double)arg2;
 
 - (void)setHostname:(id)arg1;
-- (void)setPort:(id)arg1;
-- (id)matchedPaper:(id)arg1 preferBorderless:(BOOL)arg2 withDuplexMode:(id)arg3 didMatch:(BOOL*)arg4;
-- (int)printURL:(id)arg1 ofType:(id)arg2 printSettings:(id)arg3;
-- (int)startJob:(id)arg1 ofType:(id)arg2;
-- (int)sendData:(const char *)arg1 ofLength:(int)arg2;
-- (int)finishJob;
-- (int)abortJob;
-- (id)displayName;
-- (int)kind;
-- (void)cancelUnlock;
-- (int)accessState;
-- (void)unlockWithCompletionHandler:(id)arg1;
-- (id)paperListForDuplexMode:(id)arg1;
-- (id)printInfoSupported;
-- (id)port;
-- (int)type;
-- (id)name;
-- (void)dealloc;
-- (id)description;
-- (id)location;
+- (id)initWithName:(id)arg1 TXTRecord:(id)arg2;
+- (void)identifySelf;
+- (void)checkOperations:(struct ipp_s { int x1; union ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct ipp_attribute_s {} *x3; struct ipp_attribute_s {} *x4; struct ipp_attribute_s {} *x5; int x6; struct ipp_attribute_s {} *x7; int x8; }*)arg1;
+- (BOOL)isAdobeRGBSupported;
+- (BOOL)hasIdentifyPrinterOp;
+- (id)TXTRecord;
+- (void)updateType;
+- (void)setAccessStateFromTXT:(id)arg1;
 - (void)reconfirmWithForce:(BOOL)arg1;
 - (struct ipp_s { int x1; union ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct ipp_attribute_s {} *x3; struct ipp_attribute_s {} *x4; struct ipp_attribute_s {} *x5; int x6; struct ipp_attribute_s {} *x7; int x8; }*)getPrinterAttributes;
-- (id)initWithName:(id)arg1 TXT:(id)arg2;
-- (id)initWithName:(id)arg1 TXTRecord:(id)arg2;
-- (void)setAccessState:(int)arg1;
-- (void)updateType;
-- (id)TXTRecord;
-- (void)setTXTRecord:(id)arg1;
-- (struct ipp_s { int x1; union ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct ipp_attribute_s {} *x3; struct ipp_attribute_s {} *x4; struct ipp_attribute_s {} *x5; int x6; struct ipp_attribute_s {} *x7; int x8; }*)newMediaColFromPaper:(id)arg1 Source:(id)arg2 Type:(id)arg3 DoMargins:(BOOL)arg4;
-- (struct ipp_s { int x1; union ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct ipp_attribute_s {} *x3; struct ipp_attribute_s {} *x4; struct ipp_attribute_s {} *x5; int x6; struct ipp_attribute_s {} *x7; int x8; }*)createRequest:(id)arg1 ofType:(id)arg2 url:(id)arg3;
 - (int)finalizeJob:(int)arg1;
-- (id)privateObjectForKey:(id)arg1;
+- (struct ipp_s { int x1; union ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct ipp_attribute_s {} *x3; struct ipp_attribute_s {} *x4; struct ipp_attribute_s {} *x5; int x6; struct ipp_attribute_s {} *x7; int x8; }*)createRequest:(id)arg1 ofType:(id)arg2 url:(id)arg3;
 - (void)setPrivateObject:(id)arg1 forKey:(id)arg2;
-- (BOOL)resolveWithTimeout:(int)arg1;
+- (void)setAccessState:(int)arg1;
+- (void)setTXTRecord:(id)arg1;
+- (id)privateObjectForKey:(id)arg1;
+- (struct ipp_s { int x1; union ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct ipp_attribute_s {} *x3; struct ipp_attribute_s {} *x4; struct ipp_attribute_s {} *x5; int x6; struct ipp_attribute_s {} *x7; int x8; }*)newMediaColFromPaper:(id)arg1 Source:(id)arg2 Type:(id)arg3 DoMargins:(BOOL)arg4;
+- (id)initWithName:(id)arg1 TXT:(id)arg2;
+- (void)setIsLocal:(BOOL)arg1;
+- (BOOL)isIPPS;
 - (void)resolve;
+- (BOOL)resolveWithTimeout:(int)arg1;
+- (void)setPort:(id)arg1;
+- (BOOL)isLocal;
 - (id)localName;
 - (id)hostname;
+- (int)sendData:(const char *)arg1 ofLength:(int)arg2;
+- (int)printURL:(id)arg1 ofType:(id)arg2 printSettings:(id)arg3;
+- (int)abortJob;
+- (int)finishJob;
+- (int)startJob:(id)arg1 ofType:(id)arg2;
+- (id)matchedPaper:(id)arg1 preferBorderless:(BOOL)arg2 withDuplexMode:(id)arg3 didMatch:(BOOL*)arg4;
+- (id)displayName;
+- (void)unlockWithCompletionHandler:(id)arg1;
+- (int)accessState;
+- (int)kind;
+- (void)cancelUnlock;
+- (id)paperListForDuplexMode:(id)arg1;
+- (BOOL)isPaperReady:(id)arg1;
+- (BOOL)knowsReadyPaperList;
+- (BOOL)hasPrintInfoSupported;
+- (id)printInfoSupported;
+- (id)port;
+- (id)location;
+- (int)type;
+- (id)name;
+- (id)scheme;
+- (id)uuid;
+- (id)description;
+- (void)dealloc;
 - (BOOL)isEqual:(id)arg1;
 
 @end

@@ -16,19 +16,19 @@
 }
 
 
-- (void)dealloc;
-- (id)destinationInstancesForEntityMapping:(id)arg1 sourceInstance:(id)arg2;
-- (unsigned int)currentMigrationStep;
 - (id)initWithMigrationManager:(id)arg1;
-- (void)clearAssociationTables;
+- (id)currentEntityMapping;
 - (void)setCurrentEntityMapping:(id)arg1;
 - (id)currentPropertyMapping;
+- (unsigned int)currentMigrationStep;
+- (id)destinationInstancesForEntityMapping:(id)arg1 sourceInstance:(id)arg2;
+- (id)sourceInstancesForEntityMapping:(id)arg1 destinationInstance:(id)arg2;
+- (void)clearAssociationTables;
 - (void)setCurrentMigrationStep:(unsigned int)arg1;
 - (void)_createAssociationsBySource:(id)arg1 withDestination:(id)arg2 forEntityMapping:(id)arg3;
 - (void)_createAssociationsByDestination:(id)arg1 fromSource:(id)arg2 forEntityMapping:(id)arg3;
-- (void)associateSourceInstance:(id)arg1 withDestinationInstance:(id)arg2 forEntityMapping:(id)arg3;
-- (id)sourceInstancesForEntityMapping:(id)arg1 destinationInstance:(id)arg2;
-- (id)currentEntityMapping;
 - (void)setCurrentPropertyMapping:(id)arg1;
+- (void)associateSourceInstance:(id)arg1 withDestinationInstance:(id)arg2 forEntityMapping:(id)arg3;
+- (void)dealloc;
 
 @end

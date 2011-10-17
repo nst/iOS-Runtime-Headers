@@ -9,11 +9,10 @@
     UIActivityIndicatorView *_searchingIndicator;
 }
 
-+ (void)_initializeSafeCategory;
 
+- (void)setSearching:(BOOL)arg1;
 - (id)initInView:(id)arg1;
 - (void)searchTimeout;
-- (void)setSearching:(BOOL)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;
 

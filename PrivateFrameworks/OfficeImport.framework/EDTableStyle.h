@@ -11,11 +11,11 @@
 
 + (id)tableStyle;
 
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)tableStyleElements;
+- (id)name;
+- (void)setName:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

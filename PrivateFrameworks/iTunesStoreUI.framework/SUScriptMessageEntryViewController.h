@@ -16,32 +16,33 @@
 @property(copy) NSString * sendButtonTitle;
 @property(retain) id shouldSendMessageFunction;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
+- (id)attributeKeys;
 - (void)focus;
 - (void)dealloc;
-- (int)numberOfAttachmentsWithType:(id)arg1;
-- (id)sendButtonEnabled;
-- (id)allowedAttachmentTypes;
-- (id)messageChangedFunction;
-- (void)setAllowedAttachmentTypes:(id)arg1;
-- (void)setMessageChangedFunction:(id)arg1;
-- (void)setPhotoButtonEnabled:(id)arg1;
-- (void)setSendButtonEnabled:(id)arg1;
-- (void)setSendButtonTitle:(id)arg1;
-- (void)setShouldSendMessageFunction:(id)arg1;
-- (id)shouldSendMessageFunction;
-- (id)_messageEntryViewController;
 - (id)_shouldSendMessageFunction;
 - (id)_messageChangedFunction;
+- (id)shouldSendMessageFunction;
+- (void)setShouldSendMessageFunction:(id)arg1;
+- (void)setMessageChangedFunction:(id)arg1;
+- (void)setAllowedAttachmentTypes:(id)arg1;
+- (id)sendButtonEnabled;
 - (id)photoButtonEnabled;
-- (void)clearMessage;
+- (id)messageChangedFunction;
+- (id)allowedAttachmentTypes;
+- (int)numberOfAttachmentsWithType:(id)arg1;
+- (id)_messageEntryViewController;
+- (void)setSendButtonTitle:(id)arg1;
+- (void)setSendButtonEnabled:(id)arg1;
+- (void)setPhotoButtonEnabled:(id)arg1;
 - (id)sendButtonTitle;
+- (void)clearMessage;
 - (id)newNativeViewController;
-- (id)attributeKeys;
-- (id)scriptAttributeKeys;
 - (void)setNativeViewController:(id)arg1;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

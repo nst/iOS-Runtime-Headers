@@ -11,10 +11,8 @@
 @property(retain) GKScore * score;
 
 
-- (id)invalidateCacheKeys;
-- (int)cacheType;
-- (id)score;
 - (void)setScore:(id)arg1;
+- (id)score;
 - (id)key;
 - (id)request;
 - (void)dealloc;

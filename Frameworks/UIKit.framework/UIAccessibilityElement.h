@@ -4,52 +4,31 @@
 
 @class NSString;
 
-@interface UIAccessibilityElement : NSObject  {
+@interface UIAccessibilityElement : NSObject <UIAccessibilityIdentification> {
     id _storage;
 }
 
 @property id accessibilityDelegate;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property id accessibilityContainer;
 @property BOOL isAccessibilityElement;
-@property unsigned long long accessibilityTraits;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } accessibilityFrame;
+@property(retain) NSString * accessibilityLabel;
 @property(retain) NSString * accessibilityHint;
 @property(retain) NSString * accessibilityValue;
-@property(retain) NSString * accessibilityLabel;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } accessibilityFrame;
+@property unsigned long long accessibilityTraits;
+@property(copy) NSString * accessibilityIdentifier;
 
-+ (void)_initializeSafeCategory;
 
 - (id)initWithAccessibilityContainer:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setData:(id)arg1 forKey:(id)arg2;
 - (id)dataForKey:(id)arg1;
+- (void)delegateSpecificsForAttribute:(int)arg1 delegate:(id*)arg2 selector:(SEL*)arg3;
+- (void)setDelegate:(id)arg1 forAttribute:(int)arg2 withSelector:(SEL)arg3;
+- (void)setTableCellYOffset:(float)arg1;
 - (id)accessibilityDelegate;
 - (void)setAccessibilityDelegate:(id)arg1;
-- (void)setData:(id)arg1 forKey:(id)arg2;
-- (void)setTableCellYOffset:(float)arg1;
-- (void)setDelegate:(id)arg1 forAttribute:(int)arg2 withSelector:(SEL)arg3;
-- (void)delegateSpecificsForAttribute:(int)arg1 delegate:(id*)arg2 selector:(SEL*)arg3;
-- (void)setTableCellYOffset:(float)arg1;
-- (float)initialYOffset;
-- (void)storeSubviewData:(id)arg1;
-- (BOOL)representsSubview;
-- (BOOL)elementMatchesSubview:(id)arg1;
-- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
-- (void)accessibilityActivate;
-- (void)accessibilityZoomOutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)accessibilityZoomInAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_accessibilitySetValue:(id)arg1;
-- (id)_accessibilityAutomaticIdentifier;
-- (BOOL)_accessibilityProvidesOwnFrame;
-- (BOOL)_accessibilitySupportsActivateAction;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (id)accessibilityLabel;
-- (void)accessibilityElementDidLoseFocus;
-- (void)accessibilityElementDidBecomeFocused;
-- (void)setAccessibilityContainer:(id)arg1;
-- (unsigned long long)accessibilityTraits;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityHint;
-- (id)accessibilityValue;
 
 @end

@@ -6,33 +6,36 @@
 }
 
 
-- (id)remoteID;
 - (id)rfc822Data;
-- (id)meetingRequestUUID;
+- (id)conversationId;
 - (id)cc;
 - (int)bodySize;
+- (id)meetingRequestUUID;
 - (id)longID;
+- (int)smimeType;
 - (id)meetingRequestMetaData;
+- (BOOL)read;
 - (BOOL)readIsSet;
+- (BOOL)flaggedIsSet;
+- (BOOL)flagged;
 - (BOOL)verbIsSet;
 - (int)lastVerb;
 - (id)folderID;
-- (BOOL)read;
+- (id)remoteID;
 - (id)subject;
 - (id)attachments;
-- (id)date;
-- (id)body;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)to;
 - (id)from;
-- (id)threadTopic;
-- (id)replyTo;
-- (int)importance;
+- (id)body;
+- (id)date;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)conversationIndex;
-- (id)conversationId;
+- (id)threadTopic;
 - (id)messageClass;
 - (id)displayTo;
+- (id)replyTo;
 - (int)bodyTruncated;
+- (int)importance;
 
 @end

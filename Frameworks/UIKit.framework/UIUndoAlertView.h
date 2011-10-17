@@ -10,16 +10,16 @@
     NSUndoManager *_undoManager;
 }
 
-@property(readonly) NSUndoManager * undoManager;
-@property(readonly) int redoButtonIndex;
 @property(readonly) int undoButtonIndex;
+@property(readonly) int redoButtonIndex;
+@property(readonly) NSUndoManager * undoManager;
 
 
-- (void)dealloc;
-- (id)initWithDelegate:(id)arg1 undoManager:(id)arg2;
-- (void)show;
 - (id)undoManager;
 - (int)redoButtonIndex;
 - (int)undoButtonIndex;
+- (void)show;
+- (id)initWithDelegate:(id)arg1 undoManager:(id)arg2;
+- (void)dealloc;
 
 @end

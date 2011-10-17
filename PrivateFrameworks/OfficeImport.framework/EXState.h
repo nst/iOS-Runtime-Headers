@@ -24,6 +24,7 @@
     boolmIsPredefinedDxfsBeingRead;
     struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; } *mRelationshipNS;
     unsigned int mTotalCellsWithContentCount;
+    unsigned int mTotalCellsWithFormulaCount;
     ECColumnWidthConvertor *mColumnWidthConvertor;
     NSMutableArray *mLegacyDrawables;
     EDWorkbook *mWorkbook;
@@ -35,16 +36,14 @@
 @property(readonly) <OCCancelDelegate> * cancelDelegate;
 
 
-- (void)dealloc;
-- (id)cancelDelegate;
-- (void)setOfficeArtState:(id)arg1;
-- (void)setCurrentSheetIndex:(unsigned int)arg1;
-- (void)setResources:(id)arg1;
-- (void)setSheetDimension:(id)arg1;
-- (void)setDefaultRowHeight:(double)arg1;
+- (double)defaultColumnWidth;
+- (void)setDefaultColumnWidth:(double)arg1;
 - (double)defaultRowHeight;
-- (id)officeArtState;
 - (unsigned int)currentSheetIndex;
+- (void)setCurrentSheetIndex:(unsigned int)arg1;
+- (void)setWorkbook:(id)arg1;
+- (void)setSheetDimension:(id)arg1;
+- (void)setOfficeArtState:(id)arg1;
 - (void)setTextBox:(id)arg1 forReference:(id)arg2;
 - (id)textBoxForReference:(id)arg1;
 - (bool)isPredefinedTableStylesRead;
@@ -54,6 +53,7 @@
 - (struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)relationshipNameSpaceForWorkbook;
 - (void)relationshipNameSpaceForWorkbook:(struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)arg1;
 - (unsigned int)cellsWithContentCount;
+- (id)columnWidthConvertor;
 - (void)resetForNewSheet;
 - (id)workbookPart;
 - (void)setCurrentPart:(id)arg1;
@@ -62,22 +62,24 @@
 - (id)legacyDrawables;
 - (id)sheetDimension;
 - (id)initWithWorkbookPart:(id)arg1 cancelDelegate:(id)arg2 tracing:(id)arg3;
-- (id)workbook;
-- (id)currentSheet;
 - (id)currentPart;
 - (id)arrayedFormulas;
+- (void)incrementCellsWithFormulaCount;
 - (void)addSharedBaseFormulaIndex:(unsigned int)arg1 withIndex:(long)arg2;
 - (unsigned int)sharedBaseFormulaIndexWithIndex:(long)arg1;
 - (void)reportWorksheetWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
-- (id)resources;
+- (id)currentSheet;
 - (void)setCellStyleXfsOffset:(unsigned int)arg1;
 - (unsigned int)cellStyleXfsOffset;
 - (void)incrementCellsWithContentCount;
-- (void)setDefaultColumnWidth:(double)arg1;
+- (void)setDefaultRowHeight:(double)arg1;
+- (void)setResources:(id)arg1;
+- (id)workbook;
+- (id)resources;
+- (id)cancelDelegate;
 - (id)oavState;
-- (void)setWorkbook:(id)arg1;
+- (id)officeArtState;
 - (BOOL)isCancelled;
-- (double)defaultColumnWidth;
-- (id)columnWidthConvertor;
+- (void)dealloc;
 
 @end

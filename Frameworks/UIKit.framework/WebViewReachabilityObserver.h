@@ -7,9 +7,9 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
 - (void)removeReachabilityObserver;
 - (void)networkReachabilityChanged:(id)arg1;
 - (id)init;
-- (void)setDelegate:(id)arg1;
 
 @end

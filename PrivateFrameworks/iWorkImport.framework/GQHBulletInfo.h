@@ -17,22 +17,22 @@
 
 
 - (void)setNumber:(int)arg1;
-- (BOOL)hasNumber;
-- (void)setHasNumber:(BOOL)arg1;
-- (void)setLabelType:(int)arg1;
-- (int)labelType;
-- (void)setBulletChar:(struct __CFString { }*)arg1;
-- (struct __CFString { }*)bulletChar;
-- (struct __CFString { }*)createTierStringNumber;
-- (void)setBulletIndent:(int)arg1;
-- (int)bulletIndent;
-- (int)number;
-- (int)type;
-- (void)setType:(int)arg1;
-- (void)setStyle:(id)arg1;
-- (id)style;
-- (void)dealloc;
 - (int)textIndent;
 - (void)setTextIndent:(int)arg1;
+- (int)number;
+- (int)type;
+- (id)style;
+- (void)setStyle:(id)arg1;
+- (void)setType:(int)arg1;
+- (void)setBulletIndent:(int)arg1;
+- (void)setHasNumber:(BOOL)arg1;
+- (BOOL)hasNumber;
+- (void)setLabelType:(int)arg1;
+- (void)setBulletChar:(struct __CFString { }*)arg1;
+- (struct __CFString { }*)bulletChar;
+- (int)bulletIndent;
+- (struct __CFString { }*)createTierStringNumber;
+- (int)labelType;
+- (void)dealloc;
 
 @end

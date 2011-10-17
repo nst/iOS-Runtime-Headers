@@ -2,24 +2,22 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaLibraryEntityWriteStream, MPMediaQueryCriteria, MPMediaQuery, NSSet;
+@class MPMediaQueryCriteria, MPMediaLibraryEntityWriteStream, NSSet;
 
 @interface MPMediaLibraryFetchRequest : NSObject  {
     id _entityArray;
     MPMediaLibraryEntityWriteStream *_stream;
 }
 
-@property(retain,readonly) MPMediaQueryCriteria * queryCriteria;
-@property(copy,readonly) NSSet * propertiesToFetch;
-@property(retain,readonly) MPMediaQuery * query;
+@property(readonly) MPMediaQueryCriteria * queryCriteria;
+@property(readonly) NSSet * propertiesToFetch;
 
 
-- (id)query;
-- (void)dealloc;
-- (id)description;
+- (id)streamForWritingWithCount:(unsigned int)arg1 containedMediaTypes:(int)arg2 sectionInfo:(id)arg3;
 - (id)queryCriteria;
 - (id)initWithEntityStreamArray:(id)arg1;
 - (id)propertiesToFetch;
-- (id)streamForWritingWithCount:(unsigned int)arg1 containedMediaTypes:(int)arg2 sectionInfo:(id)arg3;
+- (id)description;
+- (void)dealloc;
 
 @end

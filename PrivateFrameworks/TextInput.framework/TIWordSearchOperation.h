@@ -12,9 +12,9 @@
 
 
 - (void)main;
-- (void)dealloc;
+- (void)perform;
 - (id)initWithTIWordSearch:(id)arg1;
 - (id)kbws;
-- (void)perform;
+- (void)dealloc;
 
 @end

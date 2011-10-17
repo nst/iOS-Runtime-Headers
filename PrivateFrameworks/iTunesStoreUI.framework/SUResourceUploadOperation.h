@@ -15,9 +15,9 @@
 
 - (void)run;
 - (void)dealloc;
-- (id)responseDictionary;
 - (void)_setResponseDictionary:(id)arg1;
 - (id)initWithURLRequestProperties:(id)arg1;
+- (id)responseDictionary;
 - (id)URLRequestProperties;
 
 @end

@@ -2,23 +2,24 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSString, UIWebView;
+@class <EKEditItemViewControllerDelegate>, NSString, UIWebView;
 
-@interface EKEventDetailExtendedNotesViewController : UIViewController <UIWebViewDelegate> {
+@interface EKEventDetailExtendedNotesViewController : UIViewController <UIWebViewDelegate, EKEditItemViewControllerProtocol> {
     NSString *_notes;
     UIWebView *_webView;
 }
 
 @property(copy) NSString * notes;
+@property <EKEditItemViewControllerDelegate> * editDelegate;
 
 
 - (void)setNotes:(id)arg1;
+- (id)notes;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (void)loadView;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(unsigned int)arg3;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)notes;
 - (id)_webView;
 
 @end

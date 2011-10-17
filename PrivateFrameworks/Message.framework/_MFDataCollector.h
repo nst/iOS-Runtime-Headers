@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFBufferedDataConsumer, LibraryMessage, MailMessageLibrary, NSString;
+@class MFBufferedDataConsumer, LibraryMessage, NSString, MFMailMessageLibrary;
 
 @interface _MFDataCollector : NSObject <MFCollectingDataConsumer> {
-    MailMessageLibrary *_library;
+    MFMailMessageLibrary *_library;
     LibraryMessage *_message;
     MFBufferedDataConsumer *_consumer;
     NSString *_part;
@@ -16,9 +16,9 @@
 
 - (id)initWithLibrary:(id)arg1 message:(id)arg2 part:(id)arg3 partial:(BOOL)arg4 incomplete:(BOOL)arg5;
 - (id)pathForStorage;
+- (id)data;
 - (int)appendData:(id)arg1;
 - (void)done;
-- (id)data;
 - (void)dealloc;
 
 @end

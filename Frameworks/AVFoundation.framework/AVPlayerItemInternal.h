@@ -2,7 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, AVPropertyStorage, NSError, AVPlayerItem, AVAsset, NSDate, AVVideoComposition, NSArray, NSDictionary, AVPlayerConnection, AVAudioMix, NSMutableArray, NSURL;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class AVWeakReference, NSMutableDictionary, AVPropertyStorage, NSError, AVPlayerItem, AVAsset, NSDate, AVVideoComposition, NSArray, NSDictionary, AVPlayerConnection, NSString, AVAudioMix, NSMutableArray, NSURL;
 
 @interface AVPlayerItemInternal : NSObject  {
     AVWeakReference *weakReference;
@@ -20,8 +24,8 @@
     NSURL *URL;
     AVAsset *asset;
     AVAsset *assetWithFigPlaybackItem;
+    NSArray *trackIDsForAssetWithFigPlaybackItem;
     NSMutableArray *syncLayers;
-    NSArray *chapterImageTimes;
     NSArray *timedMetadata;
     struct { 
         long long value; 
@@ -68,21 +72,37 @@
     AVAudioMix *audioMix;
     AVVideoComposition *videoComposition;
     NSDictionary *gaplessInfo;
+    NSDictionary *audibleDRMInfo;
+    NSDictionary *rampInOutInfo;
     float soundCheckVolumeNormalization;
     float volumeAdjustment;
     NSMutableArray *handlersToCallWhenReadyForEnqueueing;
+    NSMutableDictionary *mediaOptionsSelectedByClient;
+    NSMutableDictionary *tracksSelectedByClientViaAlternateTrackGroupSPI;
     BOOL haveInitialSamples;
     BOOL haveCPEProtector;
     BOOL didSetAssetToAssetWithFigPlaybackItem;
+    BOOL didBecomeReadyForInspectionOfMediaSelectionOptions;
+    BOOL didBecomeReadyForInspectionOfTracks;
+    BOOL didBecomeReadyForInspectionOfPresentationSize;
     BOOL didInformObserversAboutAvailabilityOfTracks;
     BOOL didFireKVOForAssetForNonStreamingItem;
+    BOOL didApplyInitialAudioMix;
     BOOL wasInitializedWithURL;
     BOOL needTimedMetadataNotification;
     BOOL nonForcedSubtitleDisplayEnabled;
-    NSURL *protectedContentPersistentStoragePath;
-    NSDictionary *protectedContentProtectionInfo;
-    NSDictionary *protectedContentAuthorizationInfo;
+    BOOL externalSubtitlesEnabled;
     BOOL externalProtectionRequested;
+    int eqPreset;
+    struct OpaqueFigSimpleMutex { } *seekIDMutex;
+    int nextSeekIDToGenerate;
+    int pendingSeekID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id seekCompletionHandler;
+
+    NSString *dataYouTubeID;
 }
 
 

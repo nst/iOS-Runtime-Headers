@@ -12,16 +12,16 @@
 
 
 - (void)setConnectionNumber:(unsigned long)arg1;
-- (id)initWithConnectionNumber:(unsigned long)arg1 responderGUID:(char *)arg2 responderFriendlyName:(id)arg3;
-- (unsigned long)connectionNumber;
 - (const char *)responderGUID;
-- (id)responderGUIDString;
 - (void)setResponderGUID:(char *)arg1;
 - (id)responderFriendlyName;
 - (void)setResponderFriendlyName:(id)arg1;
 - (id)contentForTCP;
 - (id)initWithTCPBuffer:(void*)arg1;
-- (void)dealloc;
+- (id)initWithConnectionNumber:(unsigned long)arg1 responderGUID:(char *)arg2 responderFriendlyName:(id)arg3;
+- (unsigned long)connectionNumber;
+- (id)responderGUIDString;
 - (id)description;
+- (void)dealloc;
 
 @end

@@ -5,27 +5,28 @@
 @class LBSGLocResponse;
 
 @interface LBSWrapperResponse : PBCodable  {
-    int _status;
     BOOL _hasStatus;
+    int _status;
     LBSGLocResponse *_reply;
 }
 
+@property BOOL hasStatus;
+@property int status;
 @property(readonly) BOOL hasReply;
 @property(retain) LBSGLocResponse * reply;
-@property(readonly) BOOL hasStatus;
-@property int status;
 
 
 - (void)setStatus:(int)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (BOOL)readFrom:(id)arg1;
+- (id)reply;
+- (void)setHasStatus:(BOOL)arg1;
 - (BOOL)hasStatus;
 - (BOOL)hasReply;
 - (void)setReply:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (id)reply;
+- (id)dictionaryRepresentation;
 - (int)status;
+- (id)description;
+- (void)dealloc;
 
 @end

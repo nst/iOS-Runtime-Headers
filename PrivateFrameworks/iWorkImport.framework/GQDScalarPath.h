@@ -12,12 +12,12 @@
 }
 
 
-- (BOOL)isRect;
-- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
-- (BOOL)isRectangular;
-- (double)scalar;
-- (struct CGPath { }*)createBezierPath;
 - (int)type;
 - (struct CGSize { float x1; float x2; })size;
+- (BOOL)isRect;
+- (double)scalar;
+- (BOOL)isRectangular;
+- (struct CGPath { }*)createBezierPath;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 
 @end

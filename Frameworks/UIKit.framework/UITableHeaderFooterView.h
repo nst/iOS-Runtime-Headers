@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableView, UIImage, UITableHeaderFooterViewLabel, NSString;
+@class UITableView, UIImage, UITableHeaderFooterViewLabel, NSString, UILabel;
 
 @interface UITableHeaderFooterView : UIView  {
     UITableHeaderFooterViewLabel *_label;
+    UITableHeaderFooterViewLabel *_detailLabel;
     UIImage *_backgroundImage;
     int _tableViewStyle;
     BOOL _sectionHeader;
@@ -23,47 +24,55 @@
     UITableView *_tableView;
     float _maxTitleWidth;
     BOOL _labelBackgroundColorNeedsUpdate;
+    BOOL _detailLabelBackgroundColorNeedsUpdate;
 }
 
 @property(retain) NSString * text;
-@property int textAlignment;
 @property float maxTitleWidth;
-@property UITableView * tableView;
-@property BOOL sectionHeader;
 @property int tableViewStyle;
+@property BOOL sectionHeader;
+@property UITableView * tableView;
+@property(readonly) UILabel * textLabel;
+@property(readonly) UILabel * detailTextLabel;
+@property int textAlignment;
 
 + (id)_defaultFontForTableViewStyle:(int)arg1 isSectionHeader:(BOOL)arg2;
-+ (void)_initializeSafeCategory;
 
-- (id)tableView;
-- (float)maxTitleWidth;
-- (void)setSectionHeader:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })_textSizeForWidth:(float)arg1;
-- (void)_invalidateLabelBackgroundColor;
-- (void)_updateLabelBackgroundColor;
-- (void)_updateLabelBackgroundColorIfNeeeded;
-- (id)_label:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
-- (void)_updateLayerContents;
-- (void)setTableViewStyle:(int)arg1;
-- (void)setTableView:(id)arg1;
-- (BOOL)sectionHeader;
-- (void)_updateBackgroundImage;
-- (void)setOpaque:(BOOL)arg1;
-- (int)textAlignment;
-- (id)_scriptingInfo;
-- (void)setMaxTitleWidth:(float)arg1;
-- (void)setText:(id)arg1;
-- (void)setTextAlignment:(int)arg1;
-- (void)setBackgroundColor:(id)arg1;
-- (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (id)text;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
+- (float)maxTitleWidth;
+- (void)_updateDetailLabelBackgroundColorIfNeeded;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailLabelFrame;
+- (void)_updateLabelBackgroundColorIfNeeeded;
+- (void)_updateLayerContents;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
+- (struct CGSize { float x1; float x2; })_detailTextSizeForWidth:(float)arg1;
+- (struct CGSize { float x1; float x2; })_textSizeForWidth:(float)arg1;
+- (void)_invalidateDetailLabelBackgroundColor;
+- (void)_invalidateLabelBackgroundColor;
+- (void)_updateDetailLabelBackgroundColor;
+- (void)_updateLabelBackgroundColor;
+- (BOOL)_useDetailText;
+- (id)_label:(BOOL)arg1;
+- (BOOL)sectionHeader;
+- (id)tableView;
+- (id)textLabel;
+- (int)textAlignment;
+- (void)setTextAlignment:(int)arg1;
+- (id)detailTextLabel;
+- (void)setTableView:(id)arg1;
+- (void)setSectionHeader:(BOOL)arg1;
+- (void)setTableViewStyle:(int)arg1;
+- (void)setMaxTitleWidth:(float)arg1;
+- (void)_updateBackgroundImage;
+- (id)_scriptingInfo;
+- (id)text;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setText:(id)arg1;
+- (void)layoutSubviews;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setOpaque:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
+- (void)dealloc;
 
 @end

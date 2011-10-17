@@ -9,16 +9,15 @@
     UIButton *_rightButton;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)reloadView;
+- (id)_newButton;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)dealloc;
-- (void)setConfiguration:(id)arg1;
-- (void)reloadView;
-- (void)_buttonAction:(id)arg1;
-- (id)_newButton;
 - (void)_reloadButtons;
+- (void)_buttonAction:(id)arg1;
+- (void)setConfiguration:(id)arg1;
 
 @end

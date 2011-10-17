@@ -10,20 +10,20 @@
 
 @property(retain) NSString * tzid;
 
-+ (id)name;
 + (id)blocksAfterDate:(id)arg1 untilDate:(id)arg2 forTimeZone:(id)arg3;
 + (id)timeZoneWithSystemTimeZoneName:(id)arg1;
++ (id)name;
 
-- (void)dealloc;
-- (void)setTzid:(id)arg1;
 - (BOOL)isEqualToNSTimeZone:(id)arg1 forDate:(id)arg2;
 - (id)getNSTimeZoneFromDate:(id)arg1 toDate:(id)arg2;
-- (id)getNSTimeZone:(id)arg1;
 - (id)computeTimeZoneChangeListFromDate:(id)arg1 toDate:(id)arg2;
 - (id)initWithSystemTimeZone:(id)arg1;
+- (void)setTzid:(id)arg1;
+- (id)getNSTimeZone:(id)arg1;
 - (id)initWithTimeZone:(id)arg1 fromDate:(id)arg2 options:(int)arg3;
+- (id)tzid;
+- (void)dealloc;
 - (id)initWithSystemTimeZone:(id)arg1 fromDate:(id)arg2 options:(int)arg3;
 - (id)systemTimeZoneForDate:(id)arg1;
-- (id)tzid;
 
 @end

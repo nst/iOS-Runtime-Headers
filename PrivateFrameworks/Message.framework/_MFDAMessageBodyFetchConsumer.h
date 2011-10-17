@@ -17,16 +17,16 @@
 @property(retain) <MFDAStreamingContentConsumer> * streamConsumer;
 
 
-- (id)streamConsumer;
 - (BOOL)wantsData;
-- (BOOL)succeeded;
 - (id)streamingContentConsumer;
 - (void)setStreamConsumer:(id)arg1;
+- (BOOL)succeeded;
+- (id)streamConsumer;
 - (void)handleResponse:(id)arg1 error:(id)arg2;
+- (void)setError:(id)arg1;
 - (id)data;
-- (void)dealloc;
 - (void)setData:(id)arg1;
 - (id)error;
-- (void)setError:(id)arg1;
+- (void)dealloc;
 
 @end

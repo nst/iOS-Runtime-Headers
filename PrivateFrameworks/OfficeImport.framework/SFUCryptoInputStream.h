@@ -11,15 +11,15 @@
 }
 
 
-- (void)close;
-- (long long)offset;
-- (void)dealloc;
+- (id)initForDecryptionWithInputStream:(id)arg1 key:(id)arg2;
+- (id)closeLocalStream;
 - (BOOL)canSeek;
 - (void)seekToOffset:(long long)arg1;
-- (id)initForDecryptionWithInputStream:(id)arg1 key:(id)arg2;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
-- (id)closeLocalStream;
+- (void)close;
+- (long long)offset;
+- (void)dealloc;
 
 @end

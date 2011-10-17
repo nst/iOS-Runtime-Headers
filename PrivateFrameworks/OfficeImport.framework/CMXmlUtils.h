@@ -7,10 +7,10 @@
 
 + (id)xhtmlStringWithXmlDoc:(id)arg1;
 + (id)createFilteredString:(id)arg1;
-+ (void)filterString:(id)arg1;
 + (id)xhtmlStringWithXmlData:(id)arg1;
 + (id)createHeadElementForDeviceWidth:(int)arg1;
 + (id)createHeadElementWithTitle:(id)arg1;
++ (void)filterString:(id)arg1;
 + (id)createXhtmlDocument;
 + (id)createHeadElementWithTitle:(id)arg1 deviceWidth:(int)arg2;
 

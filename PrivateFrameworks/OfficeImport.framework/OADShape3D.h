@@ -17,26 +17,26 @@
 
 + (id)nullShape3D;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setTopBevel:(id)arg1;
 - (void)setBottomBevel:(id)arg1;
+- (void)setExtrusionColor:(id)arg1;
+- (void)setExtrusionHeight:(float)arg1;
 - (void)setContourColor:(id)arg1;
 - (void)setContourWidth:(float)arg1;
+- (void)setShapeDepth:(float)arg1;
+- (void)setMaterial:(int)arg1;
 - (id)topBevel;
 - (id)bottomBevel;
 - (id)extrusionColor;
-- (void)setExtrusionColor:(id)arg1;
-- (float)extrusionHeight;
-- (void)setExtrusionHeight:(float)arg1;
 - (id)contourColor;
+- (float)extrusionHeight;
 - (float)contourWidth;
 - (float)shapeDepth;
-- (void)setShapeDepth:(float)arg1;
 - (int)material;
-- (void)setMaterial:(int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

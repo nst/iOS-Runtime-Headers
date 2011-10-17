@@ -16,16 +16,16 @@
     } _date;
 }
 
-@property struct { int year; BOOL month; BOOL day; BOOL hour; BOOL minute; double second; } date;
 @property(readonly) NSArray * events;
+@property struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; } date;
 
 + (id)sectionWithDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 
 - (void)addEvent:(id)arg1;
-- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })date;
 - (void)setDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
-- (void)dealloc;
-- (id)events;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })date;
 - (id)initWithDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (id)events;
+- (void)dealloc;
 
 @end

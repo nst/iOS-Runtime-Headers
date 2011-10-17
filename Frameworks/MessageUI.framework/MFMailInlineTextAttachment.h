@@ -2,60 +2,37 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString, NSData, MimeTextAttachment;
+@class NSData, MimeTextAttachment;
 
 @interface MFMailInlineTextAttachment : MessageTextAttachment  {
     MimeTextAttachment *_original;
-    NSData *_cachedImageData;
-    NSString *_cachedMimeType;
-    NSString *_encodingGuess;
+    NSData *_iconImageData;
     struct CGSize { 
         float width; 
         float height; 
     } _cachedImageSize;
-    float _constrainedWidth;
-    unsigned int _numBytes;
-    unsigned int _isBeingLoaded : 1;
-    unsigned int _cachedDataIsPlaceholder : 1;
-    unsigned int _shouldNotLoadFully : 1;
-    unsigned int _shouldNotDisplayInline : 1;
     unsigned int _hasBeenDownloaded : 1;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _pluginFrame;
 }
-
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } pluginFrame;
 
 
 - (BOOL)shouldDownloadAttachmentOnDisplay;
-- (BOOL)hasBeenDownloaded;
 - (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
-- (id)fileWrapperForcingDownload:(BOOL)arg1;
-- (void)dealloc;
-- (void)_generateInlineData;
-- (void)_setDataDerivedImage:(id)arg1;
-- (unsigned int)approximateSize;
-- (float)constrainedWidth;
-- (struct CGSize { float x1; float x2; })imageDimensions;
+- (BOOL)hasBeenDownloaded;
+- (id)textEncodingGuess;
+- (void)download;
+- (void)setDisplayableInsidePlugin:(BOOL)arg1;
+- (void)_cacheImageSizeIfNecessary;
 - (void)setFileWrapper:(id)arg1;
 - (void)_setImageDimensions:(struct CGSize { float x1; float x2; })arg1;
-- (void)_setImageDimensionsFromData:(id)arg1;
-- (id)initWithWrapper:(id)arg1 shouldDownload:(BOOL)arg2;
-- (id)initWithMimeTextAttachment:(id)arg1 shouldDownload:(BOOL)arg2 andMessageBody:(id)arg3;
-- (BOOL)allowDownload;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pluginFrame;
-- (void)setPluginFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2 ignoreCachedData:(BOOL)arg3;
+- (struct CGSize { float x1; float x2; })imageDimensions;
+- (float)constrainedWidth;
+- (id)initWithMimeTextAttachment:(id)arg1 andMessageBody:(id)arg2;
 - (void)setupForComposition;
+- (BOOL)isDisplayableInsidePlugin;
+- (unsigned int)approximateSize;
 - (void)setDisplayableInline:(BOOL)arg1;
 - (BOOL)isDisplayableInline;
+- (id)initWithWrapper:(id)arg1;
+- (void)dealloc;
 
 @end

@@ -10,27 +10,25 @@
 }
 
 @property(readonly) BOOL hasMetaData;
-@property(readonly) int metricsCount;
-@property(retain) NSMutableArray * metrics;
 @property(retain) ADLogMetaData * metaData;
+@property(retain) NSMutableArray * metrics;
 
 + (void)initialize;
 
-- (unsigned int)requestTypeCode;
-- (int)metricsCount;
-- (void)setMetric:(id)arg1 atIndex:(unsigned int)arg2;
+- (Class)responseClass;
+- (BOOL)readFrom:(id)arg1;
 - (id)metricAtIndex:(unsigned int)arg1;
 - (void)addMetric:(id)arg1;
-- (BOOL)hasMetaData;
-- (Class)responseClass;
-- (id)metaData;
 - (void)setMetrics:(id)arg1;
+- (BOOL)hasMetaData;
 - (void)setMetaData:(id)arg1;
-- (id)metrics;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
+- (unsigned int)metricsCount;
+- (id)metaData;
+- (id)dictionaryRepresentation;
+- (id)metrics;
+- (id)description;
+- (void)dealloc;
 
 @end

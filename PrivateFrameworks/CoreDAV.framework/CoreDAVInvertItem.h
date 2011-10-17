@@ -11,12 +11,12 @@
 @property(retain) CoreDAVPrincipalItem * principal;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (void)setPrincipal:(id)arg1;
+- (id)copyParseRules;
 - (id)principal;
 - (void)write:(id)arg1;
-- (id)copyParseRules;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

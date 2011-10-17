@@ -10,9 +10,9 @@
 @interface CHBDataLabel : NSObject  {
 }
 
++ (int)xlLabelPositionEnumFromCHDDataLabelPosition:(int)arg1;
 + (id)chdDataLabelFromXlChartCustomLabelText:(struct XlChartCustomLabelText { int (**x1)(); float x2; float x3; float x4; float x5; int x6; int x7; int x8; int x9; struct XlChartLineStyle {} *x10; struct XlChartFillStyle {} *x11; struct XlChartPicF {} *x12; boolx13; boolx14; boolx15; struct OcText {} *x16; struct CsColour { unsigned short x_17_1_1; unsigned short x_17_1_2; unsigned short x_17_1_3; unsigned short x_17_1_4; } x17; char *x18; int x19; int x20; int x21; int x22; int x23; struct ChVector<XlChartTextFrame::TextRun> { struct TextRun {} *x_24_1_1; struct TextRun {} *x_24_1_2; unsigned int x_24_1_3; unsigned int x_24_1_4; unsigned int x_24_1_5; } x24; unsigned int x25; unsigned int x26; short x27; short x28; short x29; short x30; boolx31; boolx32; boolx33; boolx34; boolx35; boolx36; boolx37; boolx38; boolx39; boolx40; boolx41; boolx42; boolx43; boolx44; boolx45; struct XlString {} *x46; unsigned int x47; unsigned short x48; }*)arg1 state:(id)arg2;
 + (int)chdLabelPositionEnumFromXlLabelPosition:(int)arg1;
-+ (int)xlLabelPositionEnumFromCHDDataLabelPosition:(int)arg1;
 + (id)chdDataLabelFromXlChartSeriesFormat:(const struct XlChartSeriesFormat { int (**x1)(); struct XlChartLineStyle {} *x2; struct XlChartFillStyle {} *x3; struct XlChartMarkerStyle {} *x4; struct XlChartPicF {} *x5; int x6; unsigned short x7; unsigned short x8; unsigned short x9; int x10; boolx11; boolx12; boolx13; boolx14; boolx15; boolx16; boolx17; boolx18; boolx19; boolx20; }*)arg1 state:(id)arg2;
 
 

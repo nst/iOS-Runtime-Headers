@@ -10,20 +10,20 @@
 }
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithAssignmentExpression:(id)arg1 expression:(id)arg2;
 - (id)assignmentVariable;
+- (id)initWithAssignmentExpression:(id)arg1 expression:(id)arg2;
 - (id)subexpression;
-- (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (id)variable;
 - (id)initWithAssignmentVariable:(id)arg1 expression:(id)arg2;
 - (id)predicateFormat;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (id)variable;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

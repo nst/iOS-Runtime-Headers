@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLPhotoAlbum, UIImage, NSString, NSData, NSError, NSMutableDictionary;
+@class PLManagedAsset, UIImage, NSString, NSData, NSError, NSMutableDictionary;
 
-@interface PLCameraImportItem : PLPhoto  {
+@interface PLCameraImportItem : NSObject  {
     NSString *_identifier;
     NSString *_parentFolder;
     NSString *_basePath;
@@ -14,74 +14,78 @@
     int _thumbnailState;
     BOOL _metadataRequested;
     BOOL _thumbnailRequested;
-    PLPhotoAlbum *_event;
     BOOL _shouldImport;
     NSError *_importError;
+    NSString *eventName;
+    PLManagedAsset *importedAsset;
 }
 
-@property(retain) NSError * importError;
-@property BOOL shouldImport;
-@property(retain) PLPhotoAlbum * event;
-@property(retain) NSData * thumbnailData;
-@property(readonly) UIImage * thumbnail;
-@property(retain) NSString * basePath;
-@property(readonly) NSString * parentFolder;
 @property(readonly) NSString * identifier;
+@property(readonly) NSString * parentFolder;
+@property(retain) NSString * basePath;
+@property(retain) NSString * eventName;
+@property(retain) PLManagedAsset * importedAsset;
+@property(readonly) UIImage * thumbnail;
+@property(retain) NSData * thumbnailData;
+@property BOOL shouldImport;
+@property(retain) NSError * importError;
 
 
-- (id)event;
-- (void)setEvent:(id)arg1;
+- (unsigned long long)fileSize;
 - (id)identifier;
 - (BOOL)isLocked;
-- (void)dealloc;
-- (id)description;
 - (id)creationDate;
-- (id)jpgExtension;
-- (id)audioExtension;
+- (void)setImportedAsset:(id)arg1;
+- (id)importedAsset;
+- (void)setThumbnailData:(id)arg1;
+- (id)thumbnailData;
 - (id)otherExtensions;
-- (id)parentFolder;
-- (unsigned long long)fileSize;
+- (id)audioExtension;
+- (id)movieExtension;
+- (id)rawExtension;
+- (id)jpgExtension;
+- (BOOL)isStandaloneMovie;
+- (void)clearThumbnail;
+- (void)cancelThumbnailRequest;
+- (void)clearMetadata;
+- (id)metadataForRepresentationWithFileExtension:(id)arg1;
+- (id)_fileExtensionForTypeWithSelector:(SEL)arg1;
 - (BOOL)isJPEG;
 - (BOOL)isRaw;
-- (BOOL)isMovie;
-- (BOOL)canRequestMetadata;
-- (id)basePath;
-- (void)_addRepresentation:(id)arg1;
-- (void)_removeRepresentation:(id)arg1;
-- (id)representationForCameraFile:(id)arg1;
-- (id)metadataForRepresentationWithFileExtension:(id)arg1;
-- (void)clearMetadata;
-- (int)thumbnailState;
-- (void)requestThumbnail;
-- (void)cancelThumbnailRequest;
-- (void)clearThumbnail;
-- (void)setThumbnailWithImageRef:(struct CGImage { }*)arg1;
-- (BOOL)isInDatabaseForce:(BOOL)arg1;
-- (void)markRepresentationsInDatabase;
-- (BOOL)_isTypeWithSelector:(SEL)arg1;
-- (BOOL)isStandaloneMovie;
 - (id)fileExtensions;
-- (id)_fileExtensionForTypeWithSelector:(SEL)arg1;
-- (id)rawExtension;
-- (id)movieExtension;
-- (void)setShouldImport:(BOOL)arg1;
-- (id)thumbnailData;
-- (void)setThumbnailData:(id)arg1;
-- (void)setBasePath:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 parentFolder:(id)arg2;
-- (void)addRepresentationForCameraFile:(id)arg1;
-- (void)removeRepresentationForCameraFile:(id)arg1;
-- (id)representations;
-- (void)requestMetadata;
-- (BOOL)hasAllMetadata;
-- (id)thumbnail;
-- (BOOL)canRequestThumbnail;
-- (void)setThumbnailState:(int)arg1;
-- (BOOL)shouldImport;
-- (BOOL)isOnDisk;
-- (void)setImportError:(id)arg1;
-- (BOOL)isStandalonePhoto;
+- (BOOL)_isTypeWithSelector:(SEL)arg1;
+- (BOOL)canRequestMetadata;
+- (void)_removeRepresentation:(id)arg1;
+- (void)_addRepresentation:(id)arg1;
+- (BOOL)isInDatabaseForce:(BOOL)arg1;
 - (id)importError;
+- (void)markRepresentationsInDatabase;
+- (id)eventName;
+- (id)basePath;
+- (BOOL)isMovie;
+- (BOOL)isStandalonePhoto;
+- (id)parentFolder;
+- (void)setImportError:(id)arg1;
+- (void)setEventName:(id)arg1;
+- (void)setBasePath:(id)arg1;
+- (void)setShouldImport:(BOOL)arg1;
+- (BOOL)isOnDisk;
+- (BOOL)shouldImport;
+- (void)setThumbnailWithImageRef:(struct CGImage { }*)arg1;
+- (void)requestThumbnail;
+- (void)setThumbnailState:(int)arg1;
+- (int)thumbnailState;
+- (BOOL)canRequestThumbnail;
+- (BOOL)hasAllMetadata;
+- (id)representationForCameraFile:(id)arg1;
+- (void)requestMetadata;
+- (id)representations;
+- (void)removeRepresentationForCameraFile:(id)arg1;
+- (void)addRepresentationForCameraFile:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 parentFolder:(id)arg2;
 - (BOOL)isAudio;
+- (id)description;
+- (void)dealloc;
+- (id)thumbnail;
 
 @end

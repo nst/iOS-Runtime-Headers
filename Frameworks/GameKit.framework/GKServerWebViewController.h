@@ -6,10 +6,10 @@
    See Warning(s) below.
  */
 
-@class UIAlertView, NSString, NSURLRequest, NSData, GKImageBackgroundView, UIWebView;
+@class NSURLRequest, UIAlertView, GKBackgroundView, UIWebView, NSString, NSData, GKPhotoPicker;
 
-@interface GKServerWebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate> {
-    GKImageBackgroundView *_backgroundView;
+@interface GKServerWebViewController : GKViewController <UIWebViewDelegate, UIAlertViewDelegate> {
+    GKBackgroundView *_backgroundView;
     UIWebView *_webView;
     NSString *_okCallback;
     NSString *_cancelCallback;
@@ -20,6 +20,7 @@
     NSString *_authToken;
     NSURLRequest *_previousRequest;
     int _status;
+    NSData *_pushToken;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -31,72 +32,89 @@
         float bottom; 
         float right; 
     } _backgroundInsets;
-    NSData *_pushToken;
     UIAlertView *_alert;
+    GKPhotoPicker *_photoPicker;
+    BOOL _dismissOnAuthenticate;
 }
 
+@property(retain) GKBackgroundView * backgroundView;
+@property(retain) UIWebView * webView;
+@property(retain) NSString * okCallback;
+@property(retain) NSString * cancelCallback;
+@property(retain) NSString * leftCallback;
+@property(retain) NSString * rightCallback;
+@property(retain) NSString * playerID;
+@property(retain) NSString * authToken;
+@property(retain) NSURLRequest * previousRequest;
+@property int status;
+@property(retain) NSData * pushToken;
+@property BOOL addedSheetFrame;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } backgroundInsets;
+@property BOOL dismissOnAuthenticate;
 @property(copy) id completionHandler;
 @property(retain) UIAlertView * alert;
-@property BOOL addedSheetFrame;
-@property(retain) NSData * pushToken;
-@property int status;
-@property(retain) NSURLRequest * previousRequest;
-@property(retain) NSString * authToken;
-@property(retain) NSString * playerID;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } backgroundInsets;
-@property(retain) NSString * rightCallback;
-@property(retain) NSString * leftCallback;
-@property(retain) NSString * cancelCallback;
-@property(retain) NSString * okCallback;
+@property(retain) GKPhotoPicker * photoPicker;
 
 
-- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)showMessageForError:(id)arg1;
-- (void)setHeadersForRequest:(id)arg1;
-- (void)authenticateAndTryURLRequestAgain:(id)arg1;
-- (void)processGameKitURLComponents:(id)arg1;
-- (void)parseNavBarURLString:(id)arg1;
-- (void)leftNavButtonPressed;
-- (void)rightNavButtonPressed;
-- (void)parseAlertURLString:(id)arg1;
-- (BOOL)addedSheetFrame;
+- (BOOL)dismissOnAuthenticate;
+- (id)photoPicker;
 - (void)setAddedSheetFrame:(BOOL)arg1;
-- (id)pushToken;
+- (BOOL)addedSheetFrame;
 - (id)previousRequest;
-- (void)setPreviousRequest:(id)arg1;
+- (void)setPhotoPicker:(id)arg1;
+- (id)okCallback;
+- (id)cancelCallback;
+- (void)setCancelCallback:(id)arg1;
+- (void)setOkCallback:(id)arg1;
 - (id)rightCallback;
+- (id)leftCallback;
+- (void)rightNavButtonPressed;
+- (void)leftNavButtonPressed;
 - (void)setRightCallback:(id)arg1;
 - (void)setLeftCallback:(id)arg1;
-- (void)setCancelCallback:(id)arg1;
-- (id)okCallback;
-- (void)setOkCallback:(id)arg1;
-- (id)leftCallback;
-- (id)cancelCallback;
+- (void)authenticateAndTryURLRequestAgain:(id)arg1;
+- (void)setPreviousRequest:(id)arg1;
+- (void)uploadContacts;
+- (void)changePhoto;
+- (void)parseNavBarURLString:(id)arg1;
+- (void)parseAlertURLString:(id)arg1;
+- (void)showMessageForError:(id)arg1;
+- (void)setHeadersForRequest:(id)arg1;
+- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
-- (id)gkBackgroundView;
-- (void)loadURL:(id)arg1;
 - (id)decodeDashEncodedString:(id)arg1;
-- (void)setPlayerID:(id)arg1;
-- (void)cancelAlertWithoutDelegateCallback;
+- (void)processGameKitURLComponents:(id)arg1;
+- (void)loadURL:(id)arg1;
+- (void)setDismissOnAuthenticate:(BOOL)arg1;
 - (void)setAlert:(id)arg1;
 - (id)alert;
-- (void)setPushToken:(id)arg1;
+- (void)cancelAlertWithoutDelegateCallback;
+- (void)finish;
 - (void)setAuthToken:(id)arg1;
 - (id)authToken;
+- (void)setPushToken:(id)arg1;
+- (id)pushToken;
 - (void)setStatus:(int)arg1;
 - (id)playerID;
-- (void)loadView;
-- (id)completionHandler;
+- (void)setPlayerID:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
-- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(unsigned int)arg3;
-- (void)webViewDidStartLoad:(id)arg1;
+- (id)completionHandler;
 - (void)webViewDidFinishLoad:(id)arg1;
+- (void)webViewDidStartLoad:(id)arg1;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
+- (void)setWebView:(id)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)dealloc;
+- (id)webView;
+- (id)backgroundView;
+- (void)setBackgroundView:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)finish;
 - (int)status;
+- (void)dealloc;
 
 @end

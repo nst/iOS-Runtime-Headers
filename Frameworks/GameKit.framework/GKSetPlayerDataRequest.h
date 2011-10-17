@@ -6,7 +6,5 @@
 }
 
 
-- (id)invalidateCacheKeys;
-- (int)cacheType;
 
 @end

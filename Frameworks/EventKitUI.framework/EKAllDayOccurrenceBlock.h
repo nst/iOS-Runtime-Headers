@@ -14,24 +14,24 @@
     EKDayOccurrenceView *_occurrenceView;
 }
 
+@property(readonly) unsigned int eventIndex;
+@property(readonly) unsigned int calendarOrder;
 @property(readonly) unsigned int length;
 @property(readonly) unsigned int rangeStart;
 @property(readonly) unsigned int rangeEnd;
-@property(readonly) unsigned int calendarOrder;
-@property(readonly) unsigned int eventIndex;
 @property(retain) EKDayOccurrenceView * occurrenceView;
 
 
-- (void)dealloc;
-- (unsigned int)length;
 - (unsigned int)calendarOrder;
-- (id)occurrenceView;
-- (id)initWithEventIndex:(unsigned int)arg1 calendarOrder:(unsigned int)arg2 dayRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (unsigned int)rangeStart;
-- (unsigned int)rangeEnd;
-- (unsigned int)gapBetweenBlock:(id)arg1;
 - (void)setOccurrenceView:(id)arg1;
+- (unsigned int)gapBetweenBlock:(id)arg1;
 - (id)lengthForSorting;
+- (id)initWithEventIndex:(unsigned int)arg1 calendarOrder:(unsigned int)arg2 dayRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (unsigned int)rangeEnd;
+- (unsigned int)rangeStart;
 - (unsigned int)eventIndex;
+- (id)occurrenceView;
+- (unsigned int)length;
+- (void)dealloc;
 
 @end

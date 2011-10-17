@@ -11,23 +11,21 @@
     NSString *_newMode;
 }
 
-@property(copy) NSString * newMode;
-
 + (id)activeInstance;
 + (id)sharedInstance;
 
-- (BOOL)isVisible;
-- (void)handleRotate:(id)arg1;
-- (void)showSwitcher;
 - (void)touchSwitcherTimer;
-- (void)cancelSwitcherTimer;
-- (void)clearSwitcherTimer;
 - (id)newMode;
 - (void)setNewMode:(id)arg1;
-- (BOOL)switchMode:(id)arg1 withDelay:(BOOL)arg2;
-- (BOOL)handleSwitchCommand:(BOOL)arg1;
-- (void)hideSwitcher;
+- (void)showSwitcher;
+- (void)handleRotate:(id)arg1;
+- (void)cancelSwitcherTimer;
+- (void)clearSwitcherTimer;
 - (BOOL)handleModifiersChangedEvent:(struct __GSEvent { }*)arg1;
+- (void)hideSwitcher;
+- (BOOL)isVisible;
+- (BOOL)handleSwitchCommand:(BOOL)arg1;
+- (BOOL)switchMode:(id)arg1 withDelay:(BOOL)arg2;
 - (id)init;
 - (void)dealloc;
 

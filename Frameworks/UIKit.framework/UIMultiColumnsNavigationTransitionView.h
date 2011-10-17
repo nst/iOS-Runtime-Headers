@@ -22,30 +22,30 @@
     float _dividersWidth;
 }
 
-@property int columnCount;
-@property float columnWidth;
 @property id delegate;
+@property float columnWidth;
+@property int columnCount;
 
 + (double)defaultDurationForTransition:(int)arg1;
 
-- (int)columnCount;
-- (BOOL)transition:(int)arg1 toViews:(id)arg2;
-- (BOOL)transition:(int)arg1 fromViews:(id)arg2 toViews:(id)arg3;
-- (id)_dividerViewForView:(id)arg1;
-- (void)_removeDividerViewForView:(id)arg1;
-- (id)_containerViewForView:(id)arg1;
-- (void)_removeContainerViewForView:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setColumnCount:(int)arg1;
-- (float)columnWidth;
+- (int)columnCount;
 - (void)setColumnWidth:(float)arg1;
-- (BOOL)isTransitioning;
+- (float)columnWidth;
+- (void)_removeContainerViewForView:(id)arg1;
+- (id)_containerViewForView:(id)arg1;
+- (BOOL)transition:(int)arg1 toViews:(id)arg2;
+- (void)_removeDividerViewForView:(id)arg1;
+- (id)_dividerViewForView:(id)arg1;
+- (BOOL)transition:(int)arg1 fromViews:(id)arg2 toViews:(id)arg3;
 - (void)_navigationTransitionDidStop;
 - (BOOL)_isTransitioningFromView:(id)arg1;
+- (BOOL)isTransitioning;
+- (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (void)dealloc;
 
 @end

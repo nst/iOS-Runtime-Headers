@@ -19,17 +19,17 @@
 }
 
 
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)finalize;
 - (void)invalidate;
-- (void)dealloc;
-- (id)initWithPlayer:(id)arg1 times:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 block:(id)arg4;
-- (void)_stopRespondingToPlayerStateChanges;
+- (void)finalize;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_previousFiringTimeBeforeTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })_nextFiringTimeAfterTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)_startObservingPlaybackItemNotificationsForCurrentItem;
-- (void)_resetTimerForPlayerNewRate:(float)arg1 time:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (id)initWithPlayer:(id)arg1 times:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 block:(id)arg4;
 - (void)itemTimeJumped;
 - (void)_stopObservingPlaybackItemNotifications;
+- (void)_stopRespondingToPlayerStateChanges;
+- (void)_startObservingPlaybackItemNotificationsForCurrentItem;
+- (void)_resetTimerForPlayerNewRate:(float)arg1 time:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_nextFiringTimeAfterTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)dealloc;
 
 @end

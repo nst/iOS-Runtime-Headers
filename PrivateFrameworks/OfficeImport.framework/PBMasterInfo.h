@@ -14,18 +14,18 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (id)slideMaster;
-- (void)setMainPbRef:(unsigned long)arg1;
 - (unsigned long)mainPbRef;
-- (void)setTitlePbRef:(unsigned long)arg1;
 - (unsigned long)titlePbRef;
+- (id)slideLayoutForSlideHolder:(id)arg1;
+- (void)setMainPbRef:(unsigned long)arg1;
+- (struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)sourceTextStyling;
+- (void)setTitlePbRef:(unsigned long)arg1;
 - (void)cacheTargetLayoutType:(int)arg1;
 - (id)allTargetLayoutTypes;
 - (void)cacheSlideLayouts;
-- (struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)sourceTextStyling;
-- (id)slideLayoutForSlideHolder:(id)arg1;
 - (void)setSlideMaster:(id)arg1;
+- (id)slideMaster;
+- (id)init;
+- (void)dealloc;
 
 @end

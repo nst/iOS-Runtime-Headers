@@ -9,8 +9,8 @@
 
 
 - (id)initWithArray:(id)arg1;
+- (unsigned int)count;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (unsigned int)count;
 
 @end

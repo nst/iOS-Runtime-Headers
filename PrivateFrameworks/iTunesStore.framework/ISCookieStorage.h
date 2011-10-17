@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSURL;
+@class NSURL, ISSQLiteDatabase;
 
 @interface ISCookieStorage : NSObject  {
+    ISSQLiteDatabase *_db;
     struct dispatch_queue_s { } *_dispatchQueue;
     void *_processAssertion;
     int _processAssertionCount;
@@ -16,22 +17,23 @@
 + (id)sharedInstance;
 + (id)sharedStorage;
 
-- (id)_cookieForSelectStatement:(struct sqlite3_stmt { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)removeAllCookies;
-- (void)removeCookiesWithProperties:(id)arg1;
+- (void)synchronizeCookies;
 - (id)storageLocation;
-- (void)_beginProcessAssertion;
-- (void)_bindInsertStatement:(struct sqlite3_stmt { }*)arg1 forCookie:(id)arg2 userIdentifier:(id)arg3;
+- (void)removeCookiesWithProperties:(id)arg1;
+- (void)removeAllCookies;
+- (id)_cookieForSelectStatement:(struct sqlite3_stmt { }*)arg1;
 - (BOOL)_bindStatement:(struct sqlite3_stmt { }*)arg1 withValues:(id)arg2;
 - (id)_columnNameForCookieProperty:(id)arg1;
-- (struct __CFSet { }*)_copyPrivateCookiesForURL:(id)arg1 userIdentifier:(id)arg2;
 - (void)_endProcessAssertion;
-- (void)synchronizeCookies;
+- (void)_bindInsertStatement:(struct sqlite3_stmt { }*)arg1 forCookie:(id)arg2 userIdentifier:(id)arg3;
+- (void)_beginProcessAssertion;
+- (struct __CFSet { }*)_copyPrivateCookiesForURL:(id)arg1 userIdentifier:(id)arg2;
+- (BOOL)_setupCookieDatabase:(id)arg1;
 - (id)initWithStorageLocation:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setCookiesForHTTPResponse:(id)arg1 userIdentifier:(id)arg2;
-- (id)cookieHeadersForURL:(id)arg1 userIdentifier:(id)arg2;
 - (void)setCookies:(id)arg1 forUserIdentifier:(id)arg2;
+- (id)cookieHeadersForURL:(id)arg1 userIdentifier:(id)arg2;
 
 @end

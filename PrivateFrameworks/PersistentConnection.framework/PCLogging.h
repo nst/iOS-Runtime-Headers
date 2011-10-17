@@ -5,17 +5,17 @@
 @interface PCLogging : NSObject  {
 }
 
++ (void)enableConsoleLoggingForLevel:(int)arg1;
++ (BOOL)loggingEnabledForLevel:(int)arg1;
++ (id)logFileDirectory;
 + (void)enableFileLogging:(BOOL)arg1;
++ (id)_stringWithCurrentTime;
++ (void)_appendString:(id)arg1 toFileNamed:(id)arg2;
 + (void)logKeepAliveInterval:(double)arg1 forServiceIdentifier:(id)arg2;
 + (void)logAtLevel:(int)arg1 delegate:(id)arg2 format:(id)arg3 arguments:(void*)arg4;
 + (void)logAtLevel:(int)arg1 delegate:(id)arg2 format:(id)arg3;
 + (void)initialize;
-+ (id)_dateFormatter;
-+ (BOOL)loggingEnabledForLevel:(int)arg1;
-+ (void)_appendString:(id)arg1 toFileNamed:(id)arg2;
-+ (void)enableConsoleLoggingForLevel:(int)arg1;
 + (void)enableLoggingForCustomHandler:(id)arg1;
-+ (id)logFileDirectory;
 
 
 @end

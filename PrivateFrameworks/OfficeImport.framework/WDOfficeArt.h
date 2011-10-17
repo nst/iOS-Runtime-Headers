@@ -12,25 +12,25 @@
 
 + (int)textBoxTextTypeForRegularTextType:(int)arg1;
 
-- (id)imageName;
-- (void)dealloc;
-- (void)clearProperties;
 - (id)overrideDrawable;
-- (BOOL)isDrawableOverridden;
 - (void)clearDrawable;
-- (bool)isFloating;
 - (id)imageBlipRef;
 - (void)setImageBlipRef:(id)arg1;
 - (id)imageData;
 - (void)setTextType:(int)arg1 recursivelyToDrawable:(id)arg2;
+- (void)clearProperties;
+- (BOOL)isDrawableOverridden;
 - (void)propagateTextTypeToDrawables;
-- (void)checkForFloating:(id)arg1;
-- (void)setDrawable:(id)arg1;
-- (id)drawable;
 - (void)setFloating:(bool)arg1;
 - (id)initWithParagraph:(id)arg1;
-- (void)setProperties:(id)arg1;
-- (id)properties;
+- (void)checkForFloating:(id)arg1;
+- (bool)isFloating;
 - (int)runType;
+- (void)setDrawable:(id)arg1;
+- (id)drawable;
+- (id)properties;
+- (id)imageName;
+- (void)setProperties:(id)arg1;
+- (void)dealloc;
 
 @end

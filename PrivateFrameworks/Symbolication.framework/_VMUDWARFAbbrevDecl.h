@@ -12,7 +12,7 @@
 
 + (id)abbrevDeclWithTag:(unsigned long long)arg1 withChildren:(BOOL)arg2 withAttributes:(id)arg3;
 
-- (void)dealloc;
 - (id)description;
+- (void)dealloc;
 
 @end

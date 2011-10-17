@@ -2,10 +2,19 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface UIAnimation : NSObject  {
     id _target;
     SEL _action;
     id _delegate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _completion;
+
     struct { 
         unsigned int curve : 4; 
         unsigned int tvOutput : 1; 
@@ -17,22 +26,24 @@
 }
 
 
-- (SEL)action;
-- (void)setAction:(SEL)arg1;
-- (id)target;
+- (void)setDuration:(double)arg1;
+- (void)setDelegate:(id)arg1;
 - (float)progressForFraction:(float)arg1;
+- (void)markStart:(double)arg1;
+- (void)setCompletion:(id)arg1;
+- (id)completion;
+- (void)markStop;
 - (BOOL)tvOutput;
 - (float)fractionForTime:(double)arg1;
-- (void)markStart:(double)arg1;
-- (void)markStop;
-- (id)initWithTarget:(id)arg1;
-- (int)state;
-- (void)setAnimationCurve:(int)arg1;
-- (void)dealloc;
-- (void)setDuration:(double)arg1;
 - (void)stopAnimation;
+- (void)setAction:(SEL)arg1;
+- (id)initWithTarget:(id)arg1;
 - (void)setProgress:(float)arg1;
-- (void)setDelegate:(id)arg1;
+- (void)setAnimationCurve:(int)arg1;
+- (int)state;
 - (id)delegate;
+- (SEL)action;
+- (id)target;
+- (void)dealloc;
 
 @end

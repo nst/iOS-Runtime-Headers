@@ -8,9 +8,9 @@
 }
 
 
-- (void)setOrientation:(int)arg1;
-- (int)orientation;
 - (int)inOut;
 - (void)setInOut:(int)arg1;
+- (void)setOrientation:(int)arg1;
+- (int)orientation;
 
 @end

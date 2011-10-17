@@ -19,8 +19,8 @@
 - (id)confirmedAction;
 - (void)setDeniedAction:(id)arg1;
 - (id)deniedAction;
-- (int)completionType;
 - (id)initWithModelIdentifier:(id)arg1;
+- (int)completionType;
 - (id)init;
 - (void)dealloc;
 

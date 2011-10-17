@@ -2,39 +2,27 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class SSItem, GKUITheme, GKGame;
+@class SSItem;
 
-@interface GKPurchasableGameCellContents : GKMultilineCellContentView  {
-    GKGame *_game;
+@interface GKPurchasableGameCellContents : GKGameCellContents  {
     SSItem *_storeItem;
-    GKUITheme *_theme;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _starsOrigin;
 }
 
-@property struct CGPoint { float x; float y; } starsOrigin;
-@property(retain) GKUITheme * theme;
 @property(retain) SSItem * storeItem;
-@property(retain) GKGame * game;
 
 + (id)purchasableGameCellContentsWithTheme:(id)arg1;
++ (int)lineCount;
 
-- (struct CGPoint { float x1; float x2; })starsOrigin;
-- (void)drawRatingStarsAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)drawStoreRatingAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)configureLines;
+- (void)setConfirmationButtonRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawLineIndex:(unsigned int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
+- (void)refreshExpensiveContent;
 - (void)updateLines;
 - (void)setStoreItem:(id)arg1;
-- (void)loadStoreItemForGame:(id)arg1;
-- (void)setStarsOrigin:(struct CGPoint { float x1; float x2; })arg1;
-- (void)drawLineIndex:(unsigned int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
 - (id)storeItem;
-- (id)game;
 - (void)setGame:(id)arg1;
 - (void)prepareForReuse;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)theme;
-- (void)setTheme:(id)arg1;
 
 @end

@@ -18,16 +18,16 @@
 
 + (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(int)arg6 edit:(Class)arg7;
 
-- (void)setCancelButton:(id)arg1;
-- (id)cancelButton;
-- (id)prompt;
-- (id)title;
-- (void)setPrompt:(id)arg1;
-- (void)dealloc;
-- (void)setTitle:(id)arg1;
-- (void)setupWithDictionary:(id)arg1;
 - (void)setOkButton:(id)arg1;
+- (void)setupWithDictionary:(id)arg1;
 - (id)okButton;
 - (BOOL)isDestructive;
+- (id)cancelButton;
+- (void)setCancelButton:(id)arg1;
+- (void)setPrompt:(id)arg1;
+- (id)prompt;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)dealloc;
 
 @end

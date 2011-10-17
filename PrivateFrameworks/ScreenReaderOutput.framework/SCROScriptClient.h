@@ -11,15 +11,20 @@
     BOOL _isReady;
 }
 
-+ (void)initialize;
 + (id)sharedScriptClient;
++ (void)initialize;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (void)handleCallback:(id)arg1;
-- (void)_killConnection;
 - (BOOL)runScriptFile:(id)arg1;
+- (void)_killConnection;
 - (BOOL)_isReady;
+- (void)handleCallback:(id)arg1;
 - (id)_lazyConnection;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
+- (void)release;
 
 @end

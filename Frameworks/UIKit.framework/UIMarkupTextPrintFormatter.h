@@ -2,14 +2,25 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@class NSString, UIWebDocumentView, UIWebPaginationInfo;
 
 @interface UIMarkupTextPrintFormatter : UIPrintFormatter  {
+    UIWebDocumentView *_webDocumentView;
+    UIWebPaginationInfo *_paginationInfo;
+    NSString *_markupText;
 }
 
 @property(copy) NSString * markupText;
 
 
+- (id)markupText;
 - (id)initWithMarkupText:(id)arg1;
+- (void)setMarkupText:(id)arg1;
+- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forPageAtIndex:(int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageAtIndex:(int)arg1;
+- (void)removeFromPrintPageRenderer;
+- (int)_recalcPageCount;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

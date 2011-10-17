@@ -15,16 +15,16 @@
 @property(readonly) BOOL pointerBeforeReferenceNode;
 
 
-- (id)nextNode;
 - (void)finalize;
-- (void)detach;
-- (void)dealloc;
-- (id)filter;
 - (id)root;
 - (unsigned int)whatToShow;
+- (id)filter;
 - (BOOL)expandEntityReferences;
 - (id)referenceNode;
 - (BOOL)pointerBeforeReferenceNode;
 - (id)previousNode;
+- (id)nextNode;
+- (void)detach;
+- (void)dealloc;
 
 @end

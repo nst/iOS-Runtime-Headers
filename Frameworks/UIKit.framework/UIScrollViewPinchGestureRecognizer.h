@@ -6,16 +6,20 @@
 
 @interface UIScrollViewPinchGestureRecognizer : UIPinchGestureRecognizer  {
     UIScrollView *_scrollView;
+    SEL _scrollViewAction;
     unsigned int _hasParentScrollView : 1;
 }
 
 @property UIScrollView * scrollView;
 
 
+- (void)setDelegate:(id)arg1;
+- (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (id)scrollView;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)setScrollView:(id)arg1;
 - (float)_hysteresis;
+- (void)setScrollView:(id)arg1;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end

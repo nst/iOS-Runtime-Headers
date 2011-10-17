@@ -5,11 +5,10 @@
 @interface MFSoundController : NSObject  {
 }
 
-+ (BOOL)_shouldPlaySound:(id)arg1;
 + (void)playNewMailSound;
 + (void)playSentMailSound;
++ (void)_loadToneLibrary;
++ (Class)TLToneManager;
 
-- (id)init;
-- (void)dealloc;
 
 @end

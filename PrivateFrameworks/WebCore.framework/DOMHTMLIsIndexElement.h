@@ -12,7 +12,7 @@
 
 
 - (id)form;
-- (id)prompt;
 - (void)setPrompt:(id)arg1;
+- (id)prompt;
 
 @end

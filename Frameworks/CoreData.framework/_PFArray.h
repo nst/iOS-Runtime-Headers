@@ -17,34 +17,36 @@
     } _flags;
 }
 
-+ (void)initialize;
 + (BOOL)accessInstanceVariablesDirectly;
++ (void)initialize;
 
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
 - (unsigned int)indexOfObject:(id)arg1;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
-- (void)release;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (unsigned int)retainCount;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (unsigned int)count;
-- (void)getObjects:(id*)arg1;
-- (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
-- (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id*)_objectsPointer;
 - (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2 andFlags:(unsigned int)arg3;
+- (id)newArrayFromObjectIDs;
+- (id*)_objectsPointer;
 - (void)_setShouldRelease:(BOOL)arg1;
 - (void)_setShouldUseExtendedRelease:(BOOL)arg1;
-- (unsigned int)_flags;
 - (id)managedObjectIDAtIndex:(unsigned int)arg1;
-- (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
 - (id)arrayFromObjectIDs;
-- (id)newArrayFromObjectIDs;
+- (unsigned int)_flags;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
+- (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)getObjects:(id*)arg1;
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (unsigned int)retainCount;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

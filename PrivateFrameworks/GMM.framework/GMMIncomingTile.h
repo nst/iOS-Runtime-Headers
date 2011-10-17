@@ -6,35 +6,32 @@
 
 @interface GMMIncomingTile : PBCodable  {
     int _zoom;
-    NSMutableArray *_tiles;
     int _numHorizontalTiles;
     int _numVerticalTiles;
+    NSMutableArray *_tiles;
 }
 
-@property(readonly) int tilesCount;
-@property int numVerticalTiles;
-@property int numHorizontalTiles;
-@property(retain) NSMutableArray * tiles;
 @property int zoom;
+@property int numHorizontalTiles;
+@property int numVerticalTiles;
+@property(retain) NSMutableArray * tiles;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (void)setTile:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setZoom:(int)arg1;
+- (int)zoom;
+- (BOOL)readFrom:(id)arg1;
+- (id)tiles;
+- (int)numVerticalTiles;
+- (int)numHorizontalTiles;
 - (id)tileAtIndex:(unsigned int)arg1;
+- (unsigned int)tilesCount;
 - (void)addTile:(id)arg1;
 - (void)setNumVerticalTiles:(int)arg1;
 - (void)setNumHorizontalTiles:(int)arg1;
 - (void)setTiles:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (int)zoom;
-- (void)setZoom:(int)arg1;
 - (void)writeTo:(id)arg1;
-- (int)numHorizontalTiles;
-- (int)numVerticalTiles;
-- (int)tilesCount;
-- (id)tiles;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

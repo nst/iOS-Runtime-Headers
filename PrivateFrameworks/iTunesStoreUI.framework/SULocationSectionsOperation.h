@@ -16,13 +16,13 @@
 
 
 - (void)setLocation:(id)arg1;
+- (id)location;
 - (void)run;
 - (void)dealloc;
-- (id)location;
-- (void)_setSectionsResponse:(id)arg1;
-- (int)updateDistance;
-- (id)_copyBaseOperation;
 - (void)_setUpdateDistance:(int)arg1;
+- (id)_copyBaseOperation;
+- (int)updateDistance;
 - (id)sectionsResponse;
+- (void)_setSectionsResponse:(id)arg1;
 
 @end

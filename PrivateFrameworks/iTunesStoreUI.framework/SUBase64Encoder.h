@@ -3,31 +3,31 @@
  */
 
 @interface SUBase64Encoder : SUFilteringDataConsumer  {
-    unsigned int _left;
+    unsigned long _left;
     unsigned char _leftovers[3];
-    unsigned int _line;
-    unsigned int _lineBreakLength;
+    unsigned long _line;
+    unsigned long _lineBreakLength;
     BOOL _padChar;
-    char *_table;
+    const char *_table;
 }
 
 @property BOOL allowSlash;
+@property unsigned long lineBreakLength;
 @property BOOL padChar;
-@property unsigned int lineBreakLength;
 
-+ (int)maxConsumeLengthForReadLength:(int)arg1;
 + (long long)outputLengthForInputLength:(long long)arg1;
++ (int)maxConsumeLengthForReadLength:(int)arg1;
 
-- (BOOL)padChar;
-- (id)initWithDataConsumer:(id)arg1;
 - (void)setAllowSlash:(BOOL)arg1;
-- (BOOL)allowSlash;
-- (void)setStandardLineBreakLength;
-- (int)consumeData:(id)arg1;
-- (void)finish;
-- (unsigned int)minimumConsumeLength;
 - (void)setPadChar:(BOOL)arg1;
+- (void)finish;
+- (BOOL)padChar;
 - (unsigned long)lineBreakLength;
+- (void)setStandardLineBreakLength;
+- (BOOL)allowSlash;
 - (void)setLineBreakLength:(unsigned long)arg1;
+- (unsigned int)minimumConsumeLength;
+- (id)initWithDataConsumer:(id)arg1;
+- (int)consumeData:(id)arg1;
 
 @end

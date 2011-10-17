@@ -5,27 +5,7 @@
 @interface UIHardware : NSObject  {
 }
 
-+ (float)TVAspectRatio;
-+ (void)alertSheet:(id)arg1 buttonClicked:(int)arg2;
 + (struct CGSize { float x1; float x2; })mainScreenSize;
-+ (float)statusBarHeight;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fullScreenApplicationContentRect;
-+ (int)ringerState;
-+ (int)deviceOrientation:(BOOL)arg1;
-+ (BOOL)setSpeakerPhoneEnabled:(BOOL)arg1;
-+ (BOOL)isTTYEnabled;
-+ (struct CGSize { float x1; float x2; })TVScreenSize;
-+ (BOOL)_TVOutStatus:(BOOL)arg1;
-+ (BOOL)TVOutCapableAndPreferred;
-+ (BOOL)TVOutCapable;
-+ (void)TVOutResetPreferred;
-+ (void)accessoryAvailabilityChanged;
-+ (id)deviceName;
-+ (id)localizedDeviceName;
-+ (void)_updateSystemSoundActiveStatus:(id)arg1;
-+ (void)_unregisterForSystemSounds:(id)arg1;
-+ (void)_registerForSystemSounds:(id)arg1;
-+ (void)_playSystemSound:(unsigned long)arg1;
 
 
 @end

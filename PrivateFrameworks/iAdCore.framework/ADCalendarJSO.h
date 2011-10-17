@@ -25,45 +25,46 @@
     } _presentRect;
 }
 
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } presentRect;
-@property(retain) WebScriptObject * presentListener;
-@property(retain) ADCalendarEventJSO * presentEvent;
-@property(retain) WebScriptObject * rect;
-@property(retain) WebScriptObject * listener;
-@property(retain) WebScriptObject * event;
-@property(readonly) EKEventStore * eventStore;
-@property <ADJSODelegate> * delegate;
 @property(getter=isPrivilegedClient) BOOL privilegedClient;
+@property <ADJSODelegate> * delegate;
+@property(readonly) EKEventStore * eventStore;
+@property(retain) WebScriptObject * event;
+@property(retain) WebScriptObject * listener;
+@property(retain) WebScriptObject * rect;
+@property(retain) ADCalendarEventJSO * presentEvent;
+@property(retain) WebScriptObject * presentListener;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } presentRect;
 
 + (id)inputRequiredProperties;
 + (void)initializeInContext:(struct OpaqueJSContext { }*)arg1;
 + (id)scriptingKeys;
 + (id)scriptSelectors;
 
+- (void)setDelegate:(id)arg1;
 - (id)eventStore;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })presentRect;
-- (void)presentComposerWithEventProperties:(id)arg1 listener:(id)arg2 popoverRect:(id)arg3;
-- (void)takePresentEvent:(id)arg1;
-- (void)takePresentListener:(id)arg1;
-- (void)takePresentRect:(id)arg1;
-- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
-- (id)eventEditViewControllerDefaultCalendarForNewEvents:(id)arg1;
 - (void)setPresentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })presentRect;
 - (id)presentListener;
-- (void)setPresentListener:(id)arg1;
 - (id)presentEvent;
+- (id)eventEditViewControllerDefaultCalendarForNewEvents:(id)arg1;
+- (void)setPresentListener:(id)arg1;
 - (void)setPresentEvent:(id)arg1;
+- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
+- (void)_popoverDismissed:(id)arg1;
+- (void)takePresentRect:(id)arg1;
+- (void)takePresentListener:(id)arg1;
+- (void)takePresentEvent:(id)arg1;
+- (void)presentComposerWithEventProperties:(id)arg1 listener:(id)arg2 popoverRect:(id)arg3;
+- (void)setListener:(id)arg1;
 - (BOOL)isPrivilegedClient;
 - (void)setPrivilegedClient:(BOOL)arg1;
-- (void)setListener:(id)arg1;
-- (id)rect;
 - (id)event;
 - (void)setEvent:(id)arg1;
 - (void)setRect:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
+- (id)rect;
 - (id)delegate;
 - (id)listener;
+- (id)init;
+- (void)dealloc;
 
 @end

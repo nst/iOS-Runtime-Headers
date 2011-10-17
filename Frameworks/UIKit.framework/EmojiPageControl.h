@@ -6,8 +6,8 @@
 }
 
 
-- (id)_pageIndicatorImageForPage:(int)arg1;
-- (void)_setCurrentPage:(int)arg1;
 - (id)_pageIndicatorCurrentImageForPage:(int)arg1;
+- (void)_setCurrentPage:(int)arg1;
+- (id)_pageIndicatorImageForPage:(int)arg1;
 
 @end

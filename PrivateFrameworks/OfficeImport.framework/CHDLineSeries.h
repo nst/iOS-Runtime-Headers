@@ -10,11 +10,11 @@
 }
 
 
-- (void)dealloc;
-- (void)setMarker:(id)arg1;
-- (void)setSmooth:(bool)arg1;
 - (bool)isSmooth;
-- (id)initWithChart:(id)arg1;
 - (id)marker;
+- (void)setSmooth:(bool)arg1;
+- (void)setMarker:(id)arg1;
+- (id)initWithChart:(id)arg1;
+- (void)dealloc;
 
 @end

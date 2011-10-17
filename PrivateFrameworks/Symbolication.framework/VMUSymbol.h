@@ -13,11 +13,13 @@
 
 + (id)symbolWithName:(id)arg1 mangledName:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3 owner:(id)arg4 flags:(unsigned int)arg5;
 
-- (id)mangledName;
-- (id)initWithName:(id)arg1 mangledName:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3 owner:(id)arg4 flags:(unsigned int)arg5;
+- (id)owner;
+- (void)setOwner:(id)arg1;
+- (int)compare:(id)arg1;
+- (unsigned int)flags;
+- (id)name;
+- (id)text;
 - (id)sourceInfos;
-- (id)sourceInfoForAddress:(unsigned long long)arg1;
-- (BOOL)isFunction;
 - (BOOL)isObjcMethod;
 - (BOOL)isJavaMethod;
 - (BOOL)isDyldStub;
@@ -26,17 +28,15 @@
 - (BOOL)isArm;
 - (BOOL)isThumb;
 - (BOOL)isEqualToSymbol:(id)arg1;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
+- (id)sourceInfoForAddress:(unsigned long long)arg1;
+- (BOOL)isFunction;
+- (id)mangledName;
+- (id)initWithName:(id)arg1 mangledName:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3 owner:(id)arg4 flags:(unsigned int)arg5;
 - (id)sourceInfosInAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
-- (unsigned int)flags;
-- (int)compare:(id)arg1;
-- (id)text;
-- (id)name;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)description;
-- (id)owner;
-- (void)setOwner:(id)arg1;
 - (BOOL)isExternal;
 
 @end

@@ -2,21 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIViewController;
+@class UINavigationController, UIViewController;
 
 @interface UISnapshotModalViewController : UIViewController  {
     int _interfaceOrientation;
     UIViewController *_disappearingViewController;
+    UINavigationController *_parentController;
 }
 
 @property(retain) UIViewController * disappearingViewController;
 
 
-- (void)viewDidDisappear:(BOOL)arg1;
-- (id)initWithInterfaceOrientation:(int)arg1;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
-- (id)disappearingViewController;
 - (void)setDisappearingViewController:(id)arg1;
+- (id)initWithInterfaceOrientation:(int)arg1;
+- (id)disappearingViewController;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)dealloc;
 

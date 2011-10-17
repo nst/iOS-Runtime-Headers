@@ -13,11 +13,11 @@
 
 - (id)init;
 - (void)dealloc;
-- (int)numberOfMenuItems;
-- (id)titleOfMenuItemAtIndex:(int)arg1;
-- (void)_cancelAction:(id)arg1;
 - (void)_protocolButtonAction:(id)arg1;
-- (id)navigationMenu;
+- (void)_cancelAction:(id)arg1;
+- (id)titleOfMenuItemAtIndex:(int)arg1;
+- (int)numberOfMenuItems;
 - (id)initWithNavigationMenu:(id)arg1;
+- (id)navigationMenu;
 
 @end

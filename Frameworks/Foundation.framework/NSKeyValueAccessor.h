@@ -21,13 +21,13 @@
 }
 
 
+- (void*)extraArgument2;
+- (void*)extraArgument1;
+- (unsigned int)extraArgumentCount;
+- (id)containerClassID;
+- (id)initWithContainerClassID:(id)arg1 key:(id)arg2 implementation:(int (*)())arg3 selector:(SEL)arg4 extraArguments:(void*[3])arg5 count:(unsigned int)arg6;
 - (id)key;
 - (SEL)selector;
 - (void)dealloc;
-- (id)initWithContainerClassID:(id)arg1 key:(id)arg2 implementation:(int (*)())arg3 selector:(SEL)arg4 extraArguments:(void*[3])arg5 count:(unsigned int)arg6;
-- (id)containerClassID;
-- (unsigned int)extraArgumentCount;
-- (void*)extraArgument1;
-- (void*)extraArgument2;
 
 @end

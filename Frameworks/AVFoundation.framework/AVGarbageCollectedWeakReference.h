@@ -10,11 +10,9 @@
 }
 
 
-- (id)init;
-- (id)description;
-- (id)initWithReferencedObject:(id)arg1;
-- (void)referencedObjectWillBeRetained;
 - (id)referencedObject;
-- (void)referencedObjectWillBeReleased;
+- (id)initWithReferencedObject:(id)arg1;
+- (id)description;
+- (id)init;
 
 @end

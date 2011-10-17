@@ -14,20 +14,19 @@
 
 + (id)sharedManager;
 
-- (id)emailAddressHistory;
-- (id)_fullPathToConferenceSupportDirectory;
-- (id)_fullPathToConferenceHistoryPlist;
-- (void)_reloadHistory;
-- (void)_writeConferenceHistory;
-- (void)setEmailAddressHistory:(id)arg1;
-- (id)phoneNumberHistory;
-- (void)setPhoneNumberHistory:(id)arg1;
-- (void)setHavePreviouslyConferenced:(BOOL)arg1 withID:(id)arg2;
-- (oneway void)release;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 - (id)init;
 - (void)dealloc;
-- (unsigned int)retainCount;
-- (id)autorelease;
+- (id)emailAddressHistory;
+- (id)phoneNumberHistory;
+- (void)_reloadHistory;
+- (id)_fullPathToConferenceSupportDirectory;
+- (id)_fullPathToConferenceHistoryPlist;
+- (void)setPhoneNumberHistory:(id)arg1;
+- (void)setEmailAddressHistory:(id)arg1;
+- (void)_writeConferenceHistory;
+- (void)setHavePreviouslyConferenced:(BOOL)arg1 withID:(id)arg2;
 - (BOOL)havePreviouslyConferencedWithID:(id)arg1;
 
 @end

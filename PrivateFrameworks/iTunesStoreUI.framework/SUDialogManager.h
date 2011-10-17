@@ -16,12 +16,12 @@
 - (id)init;
 - (void)dealloc;
 - (BOOL)presentDialogForError:(id)arg1;
-- (int)numberOfPendingDialogs;
-- (void)_dialogNotification:(id)arg1;
-- (void)dialog:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)dialogDidCancel:(id)arg1;
+- (void)dialog:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)_finishDialog:(id)arg1 withButtonIndex:(int)arg2;
 - (BOOL)_haveEquivalentDialog:(id)arg1;
+- (void)_dialogNotification:(id)arg1;
+- (int)numberOfPendingDialogs;
 - (BOOL)presentDialog:(id)arg1;
 
 @end

@@ -16,7 +16,7 @@
     NSMutableArray *inputs;
     NSMutableArray *outputs;
     NSMutableArray *connections;
-    NSMutableArray *activeConnections;
+    NSMutableArray *liveConnections;
     AVCaptureVideoPreviewLayer *videoPreviewLayer;
     NSError *stopError;
     BOOL running;

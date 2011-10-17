@@ -9,7 +9,7 @@
 }
 
 
-- (id)excelState;
 - (id)initWithExcelState:(id)arg1;
+- (id)excelState;
 
 @end

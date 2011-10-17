@@ -12,8 +12,8 @@
 @property(retain,readonly) DOMCSSStyleSheet * styleSheet;
 
 
-- (id)styleSheet;
 - (id)href;
 - (id)media;
+- (id)styleSheet;
 
 @end

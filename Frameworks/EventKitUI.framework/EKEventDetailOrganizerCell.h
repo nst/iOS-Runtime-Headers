@@ -10,15 +10,14 @@
     UILabel *_titleView;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (id)_titleView;
 - (BOOL)update;
-- (void)dealloc;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (BOOL)hasCustomLayout;
-- (BOOL)shouldDisplayForEditModel;
+- (id)_titleView;
 - (id)_organizerView;
+- (BOOL)hasCustomLayout;
+- (BOOL)shouldDisplayForEvent;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
+- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
+- (void)dealloc;
 
 @end

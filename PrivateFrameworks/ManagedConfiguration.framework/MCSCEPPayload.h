@@ -33,24 +33,24 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (id)challenge;
 - (id)subject;
 - (id)URLString;
-- (void)dealloc;
-- (id)description;
-- (struct __SecCertificate { }*)copyCertificate;
-- (id)CAInstanceName;
-- (id)CACaps;
-- (unsigned int)retries;
-- (BOOL)isRoot;
-- (BOOL)isIdentity;
+- (id)challenge;
 - (unsigned int)retryDelay;
+- (unsigned int)retries;
 - (id)subjectAltName;
+- (id)CACaps;
+- (id)CAFingerprint;
 - (int)usageFlags;
 - (unsigned int)keySize;
-- (id)CAFingerprint;
+- (id)CAInstanceName;
+- (struct __SecCertificate { }*)copyCertificate;
 - (struct __SecIdentity { }*)copyIdentityFromKeychain;
-- (id)stubDictionary;
+- (BOOL)isIdentity;
+- (BOOL)isRoot;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 
 @end

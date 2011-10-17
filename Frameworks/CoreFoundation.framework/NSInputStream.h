@@ -5,15 +5,15 @@
 @interface NSInputStream : NSStream  {
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)inputStreamWithData:(id)arg1;
-+ (id)inputStreamWithFileAtPath:(id)arg1;
 + (id)inputStreamWithURL:(id)arg1;
++ (id)inputStreamWithFileAtPath:(id)arg1;
++ (id)inputStreamWithData:(id)arg1;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (struct { int x1; int x2; })_cfStreamError;
-- (unsigned long)_cfTypeID;
-- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (BOOL)hasBytesAvailable;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
+- (unsigned long)_cfTypeID;
+- (struct { int x1; int x2; })_cfStreamError;
 
 @end

@@ -18,20 +18,20 @@
 @property id delegate;
 
 
-- (void)printInteractionControllerWillPresentPrinterOptions:(id)arg1;
-- (void)printInteractionControllerWillDismissPrinterOptions:(id)arg1;
-- (void)printInteractionControllerDidDismissPrinterOptions:(id)arg1;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
+- (void)printInteractionControllerDidDismissPrinterOptions:(id)arg1;
+- (void)printInteractionControllerWillDismissPrinterOptions:(id)arg1;
+- (void)printInteractionControllerWillPresentPrinterOptions:(id)arg1;
 - (id)delegate;
-- (void)_setBarButtonItem:(id)arg1;
 - (void)printPhotos:(id)arg1;
+- (id)_barButtonItem;
+- (void)_setBarButtonItem:(id)arg1;
 - (void)printPhotos:(id)arg1 fromBarButtonItem:(id)arg2;
 - (void)dismissAndRepositionPopover;
-- (id)_barButtonItem;
 - (void)dismissPhotoPrinterAnimated:(BOOL)arg1;
-- (BOOL)printOptionsVisible;
-- (void)printPhoto:(id)arg1 fromBarButtonItem:(id)arg2;
 - (void)printPhoto:(id)arg1;
+- (void)printPhoto:(id)arg1 fromBarButtonItem:(id)arg2;
+- (BOOL)printOptionsVisible;
+- (void)dealloc;
 
 @end

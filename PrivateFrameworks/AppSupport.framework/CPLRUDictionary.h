@@ -13,22 +13,22 @@
 
 + (id)dictionaryWithMaximumCapacity:(unsigned int)arg1;
 
-- (id)allKeys;
-- (id)initWithMaximumCapacity:(unsigned int)arg1;
 - (void)removeObjectForKey:(id)arg1;
-- (void)removeAllObjects;
-- (void)setObject:(id)arg1 forKey:(id)arg2;
-- (void)dealloc;
-- (id)objectForKey:(id)arg1;
-- (id)description;
-- (unsigned int)count;
-- (void)_removeNodeFromLinkedList:(id)arg1;
-- (void)_removeNode:(id)arg1;
-- (void)_moveNodeToFront:(id)arg1;
-- (void)_addNodeToFront:(id)arg1;
 - (unsigned int)linkedListCount;
 - (id)allKeysInLRUOrder;
 - (id)allValuesInLRUOrder;
 - (id)objectForKeyWithoutAffectingLRU:(id)arg1;
+- (void)_removeNodeFromLinkedList:(id)arg1;
+- (void)_addNodeToFront:(id)arg1;
+- (void)_moveNodeToFront:(id)arg1;
+- (void)_removeNode:(id)arg1;
+- (id)initWithMaximumCapacity:(unsigned int)arg1;
+- (id)allKeys;
+- (void)removeAllObjects;
+- (unsigned int)count;
+- (id)description;
+- (id)objectForKey:(id)arg1;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
+- (void)dealloc;
 
 @end

@@ -12,27 +12,27 @@
     NSObject *object;
 }
 
-@property(retain) NSObject * object;
-@property(retain) NSNumber * isAccessibilityConfigurationElement;
-@property(retain) NSNumber * accessibilityConfigurationTraits;
-@property(retain) NSString * accessibilityConfigurationLabel;
 @property(retain) NSString * accessibilityConfigurationHint;
+@property(retain) NSString * accessibilityConfigurationLabel;
+@property(retain) NSNumber * accessibilityConfigurationTraits;
+@property(retain) NSNumber * isAccessibilityConfigurationElement;
+@property(retain) NSObject * object;
 
 
-- (id)accessibilityConfigurationHint;
-- (id)isAccessibilityConfigurationElement;
-- (id)initWithObject:(id)arg1 label:(id)arg2 hint:(id)arg3 traits:(id)arg4 andIsAccessibilityElement:(id)arg5;
-- (void)applyConfiguration;
 - (void)setObject:(id)arg1;
 - (void)setIsAccessibilityConfigurationElement:(id)arg1;
+- (id)isAccessibilityConfigurationElement;
 - (void)setAccessibilityConfigurationTraits:(id)arg1;
-- (void)setAccessibilityConfigurationLabel:(id)arg1;
-- (void)setAccessibilityConfigurationHint:(id)arg1;
 - (id)accessibilityConfigurationTraits;
+- (void)setAccessibilityConfigurationLabel:(id)arg1;
 - (id)accessibilityConfigurationLabel;
+- (void)setAccessibilityConfigurationHint:(id)arg1;
+- (id)accessibilityConfigurationHint;
+- (id)initWithObject:(id)arg1 label:(id)arg2 hint:(id)arg3 traits:(id)arg4 andIsAccessibilityElement:(id)arg5;
 - (id)object;
+- (void)applyConfiguration;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 
 @end

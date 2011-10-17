@@ -3,20 +3,27 @@
  */
 
 @interface __NSCFData : NSMutableData  {
+    unsigned char _cfinfo[4];
+    long _length;
+    long _capacity;
+    struct __CFAllocator { } *_bytesDeallocator;
+    char *_bytes;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (void*)mutableBytes;
 - (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (oneway void)release;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (const void*)bytes;
-- (unsigned int)retainCount;
-- (unsigned int)length;
 - (void)setLength:(unsigned int)arg1;
+- (void*)mutableBytes;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (const void*)bytes;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
+- (id)retain;
+- (unsigned int)length;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
 
 @end

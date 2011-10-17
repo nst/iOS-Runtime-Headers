@@ -2,19 +2,31 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class UIImage;
+
 @interface MPMediaItemArtwork : NSObject  {
+    struct MPMediaItemArtworkInternal { 
+        UIImage *image; 
+    } _internal;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } imageCropRect;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageCropRect;
+@property struct MPMediaItemArtworkInternal { id x1; } _internal;
 
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageCropRect;
-- (BOOL)hasArtworkAvailable;
-- (id)imageWithSize:(struct CGSize { float x1; float x2; })arg1 atPlaybackTime:(double)arg2;
-- (id)coverFlowImageWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)albumImageDataWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)albumImageWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)coverFlowImageWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)hasArtworkAvailable;
+- (id)imageDataWithSize:(struct CGSize { float x1; float x2; })arg1 atPlaybackTime:(double)arg2;
+- (id)imageWithSize:(struct CGSize { float x1; float x2; })arg1 atPlaybackTime:(double)arg2;
+- (void)set_internal:(struct MPMediaItemArtworkInternal { id x1; })arg1;
+- (struct MPMediaItemArtworkInternal { id x1; })_internal;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (id)initWithImage:(id)arg1;
+- (void)dealloc;
 - (id)imageWithSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

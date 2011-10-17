@@ -5,52 +5,52 @@
 @class NSData;
 
 @interface PBDataReader : NSObject  {
-    NSData *_data;
     unsigned int _pos;
-    unsigned int _length;
     BOOL _error;
+    NSData *_data;
+    unsigned int _length;
 }
 
-@property unsigned int position;
 @property unsigned int length;
+@property unsigned int position;
 
 
-- (unsigned long long)readFixed64;
-- (float)readFloat;
-- (unsigned int)offset;
-- (void)setPosition:(unsigned int)arg1;
-- (unsigned int)position;
-- (id)data;
-- (id)initWithData:(id)arg1;
-- (void)dealloc;
-- (unsigned int)length;
+- (BOOL)seekToOffset:(unsigned int)arg1;
+- (id)readBytes:(unsigned int)arg1;
+- (BOOL)isAtEnd;
 - (unsigned long long)readBigEndianFixed64;
 - (int)readSfixed32;
-- (unsigned short)readBigEndianFixed16;
-- (BOOL)readInt8;
 - (id)readProtoBuffer;
+- (BOOL)readInt8;
+- (unsigned short)readBigEndianFixed16;
 - (long long)readSint64;
 - (int)readSint32;
-- (id)readBytes:(unsigned int)arg1;
-- (void)setLength:(unsigned int)arg1;
-- (BOOL)seekToOffset:(unsigned int)arg1;
-- (BOOL)isAtEnd;
-- (void)readTag:(unsigned short*)arg1 andType:(char *)arg2;
+- (long long)readInt64;
+- (long long)readVarInt;
+- (unsigned int)readUint32;
+- (unsigned long long)readUint64;
+- (double)readDouble;
+- (id)data;
+- (void)setPosition:(unsigned int)arg1;
+- (unsigned int)readFixed32;
+- (float)readFloat;
+- (BOOL)readBOOL;
+- (int)readInt32;
+- (BOOL)skipValueWithTag:(unsigned short)arg1 andType:(unsigned char)arg2;
+- (unsigned long long)readFixed64;
+- (id)readString;
 - (id)readData;
+- (void)readTag:(unsigned short*)arg1 andType:(char *)arg2;
 - (BOOL)hasMoreData;
 - (BOOL)hasError;
-- (unsigned int)readUint32;
-- (int)readInt32;
-- (id)readString;
-- (unsigned int)readFixed32;
-- (BOOL)readBOOL;
-- (long long)readInt64;
-- (BOOL)skipValueWithTag:(unsigned short)arg1 andType:(unsigned char)arg2;
-- (unsigned int)readBigEndianFixed32;
-- (long long)readVarInt;
+- (void)setLength:(unsigned int)arg1;
 - (long long)readSfixed64;
+- (unsigned int)readBigEndianFixed32;
+- (unsigned int)offset;
+- (unsigned int)position;
+- (id)initWithData:(id)arg1;
 - (int)read:(const char *)arg1 maxLength:(unsigned int)arg2;
-- (double)readDouble;
-- (unsigned long long)readUint64;
+- (unsigned int)length;
+- (void)dealloc;
 
 @end

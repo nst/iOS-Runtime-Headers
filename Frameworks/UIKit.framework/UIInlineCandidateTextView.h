@@ -19,37 +19,36 @@
     BOOL _phraseEditable;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (int)textEffectsVisibilityLevel;
+- (BOOL)_arrowHighlighted;
+- (void)_mouseUp:(struct __GSEvent { }*)arg1 wasCancelled:(BOOL)arg2;
+- (void)redrawArrow;
+- (id)findCell:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_cellSelected:(id)arg1;
 - (float)_layoutCandidates:(id)arg1 maxCount:(int)arg2 height:(float)arg3 maxScreenWidth:(float)arg4;
-- (id)findCell:(struct CGPoint { float x1; float x2; })arg1;
-- (void)redrawArrow;
-- (void)_mouseUp:(struct __GSEvent { }*)arg1 wasCancelled:(BOOL)arg2;
-- (BOOL)_arrowHighlighted;
-- (void)setAnimating:(BOOL)arg1;
-- (unsigned int)numberOfShownItems;
-- (void)showHighlightedArrow;
-- (void)mouseDown:(struct __GSEvent { }*)arg1;
-- (BOOL)needsWebDocumentViewEventsDirectly;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 candidates:(id)arg2 type:(int)arg3 maxScreenWidth:(float)arg4;
-- (int)edgeType;
-- (void)setTarget:(id)arg1 action:(SEL)arg2;
-- (void)setEdgeType:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateRectForExpandedHitRegion;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setSelectedItem:(unsigned int)arg1;
 - (unsigned int)selectedItem;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)mouseDragged:(struct __GSEvent { }*)arg1;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (void)showHighlightedArrow;
+- (unsigned int)numberOfShownItems;
+- (void)setTarget:(id)arg1 action:(SEL)arg2;
+- (int)edgeType;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 candidates:(id)arg2 type:(int)arg3 maxScreenWidth:(float)arg4;
+- (BOOL)needsWebDocumentViewEventsDirectly;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateRectForExpandedHitRegion;
+- (void)setEdgeType:(int)arg1;
+- (int)textEffectsVisibilityLevel;
+- (void)setSelectedItem:(unsigned int)arg1;
+- (void)setAnimating:(BOOL)arg1;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
-- (void)dealloc;
+- (void)mouseDragged:(struct __GSEvent { }*)arg1;
+- (void)mouseDown:(struct __GSEvent { }*)arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

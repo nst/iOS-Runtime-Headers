@@ -19,23 +19,23 @@
 + (void)initialize;
 
 - (void)stopRecording;
-- (id)init;
-- (void)dealloc;
-- (BOOL)isRecording;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })recordedDuration;
-- (id)outputFileURL;
-- (void)setMaxRecordedDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setMaxRecordedFileSize:(long long)arg1;
-- (void)setMinFreeDiskSpaceLimit:(long long)arg1;
 - (void)startRecordingToOutputFileURL:(id)arg1 recordingDelegate:(id)arg2;
-- (long long)maxRecordedFileSize;
 - (BOOL)isRecordingPaused;
 - (void)pauseRecording;
 - (void)resumeRecording;
-- (BOOL)pausesRecordingOnInterruption;
 - (void)setPausesRecordingOnInterruption:(BOOL)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })recordedDuration;
 - (long long)recordedFileSize;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxRecordedDuration;
+- (void)setMaxRecordedDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setMaxRecordedFileSize:(long long)arg1;
+- (void)setMinFreeDiskSpaceLimit:(long long)arg1;
+- (id)outputFileURL;
+- (BOOL)pausesRecordingOnInterruption;
 - (long long)minFreeDiskSpaceLimit;
+- (long long)maxRecordedFileSize;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxRecordedDuration;
+- (BOOL)isRecording;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -2,26 +2,30 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSSet;
+@class SSDownloadManagerOptions, NSArray;
 
 @interface SUClientQueueSession : NSObject  {
     int _count;
-    NSSet *_downloadKinds;
+    NSArray *_downloadKinds;
+    SSDownloadManagerOptions *_managerOptions;
     id _queue;
 }
 
-@property(retain) id queue;
-@property(retain) NSSet * downloadKinds;
 @property int count;
+@property(copy) NSArray * downloadKinds;
+@property(copy) SSDownloadManagerOptions * managerOptions;
+@property(retain) id queue;
 
 
-- (void)setCount:(int)arg1;
-- (void)dealloc;
-- (int)count;
-- (void)setQueue:(id)arg1;
-- (id)queue;
-- (id)initWithQueue:(id)arg1;
 - (void)setDownloadKinds:(id)arg1;
+- (id)initWithQueue:(id)arg1;
+- (void)setCount:(int)arg1;
+- (int)count;
+- (void)dealloc;
+- (id)queue;
+- (void)setQueue:(id)arg1;
+- (void)setManagerOptions:(id)arg1;
 - (id)downloadKinds;
+- (id)managerOptions;
 
 @end

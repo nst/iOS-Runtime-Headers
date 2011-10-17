@@ -14,13 +14,10 @@
 }
 
 
-- (id)object;
-- (void)dealloc;
-- (id)description;
-- (id)rowForUpdate;
-- (void)setDatabaseOperator:(unsigned int)arg1;
-- (id)adapterOperations;
 - (void)removeAdapterOperation:(id)arg1;
+- (id)rowForUpdate;
+- (id)adapterOperations;
+- (void)setDatabaseOperator:(unsigned int)arg1;
 - (id)dbSnapshot;
 - (id)initWithObject:(id)arg1 entity:(id)arg2;
 - (void)setDBSnapshot:(id)arg1;
@@ -30,5 +27,8 @@
 - (void)addAdapterOperation:(id)arg1;
 - (unsigned int)databaseOperator;
 - (id)objectID;
+- (id)object;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -9,10 +9,10 @@
 }
 
 
+- (id)columnAtIndex:(unsigned int)arg1;
+- (id)addColumn;
 - (unsigned int)columnCount;
 - (id)init;
 - (void)dealloc;
-- (id)columnAtIndex:(unsigned int)arg1;
-- (id)addColumn;
 
 @end

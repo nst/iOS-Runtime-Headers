@@ -13,29 +13,29 @@
 
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)lyrics;
-- (id)trackReferences;
-- (BOOL)isReadable;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (float)preferredVolume;
-- (BOOL)providesPreciseDurationAndTiming;
-- (int)naturalTimeScale;
+- (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (void)_setFormatReader:(struct OpaqueFigFormatReader { }*)arg1;
 - (BOOL)_hasQTSaveRestriction;
-- (void*)_propertyAccessor:(struct __CFString { }*)arg1;
-- (long)trackCount;
-- (id)commonMetadata;
 - (id)initWithFormatReader:(struct OpaqueFigFormatReader { }*)arg1;
-- (id)availableMetadataFormats;
-- (struct OpaqueFigFormatReader { }*)_formatReader;
 - (float)preferredRate;
+- (float)preferredVolume;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (int)naturalTimeScale;
+- (BOOL)providesPreciseDurationAndTiming;
 - (id)alternateTrackGroups;
+- (id)trackReferences;
+- (id)lyrics;
+- (id)commonMetadata;
+- (id)availableMetadataFormats;
 - (id)metadataForFormat:(id)arg1;
 - (BOOL)isExportable;
+- (BOOL)isReadable;
 - (BOOL)isComposable;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (struct OpaqueFigFormatReader { }*)_formatReader;
+- (long)trackCount;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

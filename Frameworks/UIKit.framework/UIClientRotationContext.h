@@ -29,36 +29,37 @@
         BOOL animateContentRotation; 
         BOOL preserveHeight; 
         BOOL avoidFadingBottomOfContent; 
+        BOOL skipSnapshotOfEndState; 
         float contentStretchRightEdgeInset; 
         int edgeClip; 
-        float contentBottomInset; 
     } _rotationSettings;
+    float contentBottomInset;
     UIWindow *_window;
 }
 
-@property(readonly) int toOrientation;
-@property(readonly) int fromOrientation;
-@property(readonly) float duration;
-@property(readonly) UIView * contentView;
 @property(readonly) id rotatingClient;
+@property(readonly) UIView * contentView;
+@property(readonly) float duration;
+@property(readonly) int fromOrientation;
+@property(readonly) int toOrientation;
 
 
-- (id)rotatingClient;
-- (void)_positionHeaderView:(id)arg1 andFooterView:(id)arg2 outsideContentViewForInterfaceOrientation:(int)arg3;
-- (void)_slideFooterWithStartSnapshot:(id)arg1 endSnapshot:(id)arg2 duration:(double)arg3;
-- (BOOL)_isHeaderTranslucent;
-- (BOOL)_isFooterTranslucent;
-- (void)finishFirstHalfRotation;
-- (int)fromOrientation;
-- (id)contentView;
 - (float)duration;
-- (id)initWithClient:(id)arg1 toOrientation:(int)arg2 duration:(float)arg3 andWindow:(id)arg4;
-- (void)slideHeaderViewAndFooterViewOffScreen:(BOOL)arg1 forInterfaceOrientation:(int)arg2;
-- (void)setupRotationOrderingKeyboardInAfterRotation:(BOOL)arg1;
-- (void)rotateSnapshots;
-- (int)toOrientation;
+- (void)_slideFooterWithStartSnapshot:(id)arg1 endSnapshot:(id)arg2 duration:(double)arg3;
+- (BOOL)_isFooterTranslucent;
+- (BOOL)_isHeaderTranslucent;
 - (void)finishFullRotateUsingOnePartAnimation:(BOOL)arg1;
+- (int)fromOrientation;
+- (void)finishFirstHalfRotation;
+- (int)toOrientation;
+- (void)rotateSnapshots;
+- (void)setupRotationOrderingKeyboardInAfterRotation:(BOOL)arg1;
+- (void)slideHeaderViewAndFooterViewOffScreen:(BOOL)arg1 forInterfaceOrientation:(int)arg2;
+- (id)rotatingClient;
+- (id)contentView;
+- (id)initWithClient:(id)arg1 toOrientation:(int)arg2 duration:(float)arg3 andWindow:(id)arg4;
 - (void)_slideHeaderView:(id)arg1 andFooterView:(id)arg2 offScreen:(BOOL)arg3 forInterfaceOrientation:(int)arg4;
+- (void)_positionHeaderView:(id)arg1 andFooterView:(id)arg2 outsideContentViewForInterfaceOrientation:(int)arg3;
 - (void)dealloc;
 
 @end

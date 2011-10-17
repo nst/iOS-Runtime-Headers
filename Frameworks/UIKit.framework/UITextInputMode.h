@@ -7,8 +7,9 @@
 @interface UITextInputMode : NSObject  {
 }
 
-@property(retain,readonly) NSString * primaryLanguage;
+@property(readonly) NSString * primaryLanguage;
 
++ (id)activeInputModes;
 + (id)currentInputMode;
 
 - (id)primaryLanguage;

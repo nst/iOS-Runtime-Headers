@@ -11,17 +11,17 @@
 }
 
 
+- (void)requestCategoriesWithDelegate:(id)arg1;
+- (id)_categoriesURL;
+- (void)_didAuthenticate:(id)arg1;
+- (void)_failedToAuthenticate:(id)arg1;
+- (void)_listenForAuthenticationNotifications:(BOOL)arg1;
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (int)parseData:(id)arg1;
 - (void)loadRequest:(id)arg1;
 - (void)clearDelegate;
 - (id)init;
 - (void)dealloc;
-- (void)_didAuthenticate:(id)arg1;
-- (id)_categoriesURL;
-- (void)requestCategoriesWithDelegate:(id)arg1;
-- (void)failWithError:(id)arg1;
-- (void)_failedToAuthenticate:(id)arg1;
-- (void)_listenForAuthenticationNotifications:(BOOL)arg1;
-- (void)didParseData;
-- (int)parseData:(id)arg1;
 
 @end

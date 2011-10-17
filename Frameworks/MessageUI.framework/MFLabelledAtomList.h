@@ -14,26 +14,25 @@
     unsigned int _isChangingFrame : 1;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (id)passthroughViews;
-- (void)setOpaque:(BOOL)arg1;
-- (id)title;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)initWithLabel:(id)arg1 totalWidth:(float)arg2 firstLineWidth:(float)arg3 addresses:(id)arg4 arePhoneNumbers:(id)arg5;
-- (void)setFirstLineWidth:(float)arg1;
-- (void)_setNeedsReflow;
+- (id)passthroughViews;
+- (id)title;
+- (void)setOpaque:(BOOL)arg1;
 - (void)_reflow;
-- (id)labelText;
-- (id)addressAtoms;
-- (void)addressAtom:(id)arg1 displayStringDidChange:(id)arg2;
-- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6;
+- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6 style:(int)arg7;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
-- (void)setAtomAlpha:(float)arg1;
 - (id)atomDisplayStrings;
+- (void)setAtomAlpha:(float)arg1;
+- (id)labelText;
+- (void)setFirstLineWidth:(float)arg1;
 - (void)setAddressAtomTarget:(id)arg1 action:(SEL)arg2;
-- (unsigned long long)accessibilityTraits;
+- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6;
+- (id)initWithLabel:(id)arg1 totalWidth:(float)arg2 firstLineWidth:(float)arg3 addresses:(id)arg4 arePhoneNumbers:(id)arg5;
+- (id)addressAtoms;
+- (void)_setNeedsReflow;
+- (void)addressAtom:(id)arg1 displayStringDidChange:(id)arg2;
+- (void)dealloc;
 
 @end

@@ -7,14 +7,14 @@
     float _textWidth;
 }
 
-@property float textWidth;
 @property float textXPosition;
+@property float textWidth;
 
 
-- (float)textWidth;
-- (BOOL)isTextFieldCenteredLabel;
-- (void)setTextXPosition:(float)arg1;
 - (void)setTextWidth:(float)arg1;
+- (float)textWidth;
+- (void)setTextXPosition:(float)arg1;
 - (float)textXPosition;
+- (BOOL)isTextFieldCenteredLabel;
 
 @end

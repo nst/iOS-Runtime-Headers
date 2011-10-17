@@ -10,14 +10,14 @@
     NSDictionary *_synonyms;
 }
 
-+ (void)loadBinders;
 + (void)clearBinders;
-+ (id)abPointerForControl:(id)arg1 rep:(id)arg2 useFieldName:(BOOL)arg3;
++ (void)loadBinders;
 + (id)synonymsForMatch:(id)arg1;
++ (id)abPointerForControl:(id)arg1 rep:(id)arg2 useFieldName:(BOOL)arg3;
 
 - (void)_indexMapping:(id)arg1;
-- (id)initWithPath:(id)arg1;
 - (id)abPointerForControl:(id)arg1 rep:(id)arg2 useFieldName:(BOOL)arg3 foundByPageScan:(BOOL*)arg4;
+- (id)initWithPath:(id)arg1;
 - (id)synonymsForMatch:(id)arg1;
 - (void)dealloc;
 

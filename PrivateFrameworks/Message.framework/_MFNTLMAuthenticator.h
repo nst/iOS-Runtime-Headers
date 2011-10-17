@@ -8,8 +8,8 @@
 }
 
 
-- (id)responseForServerData:(id)arg1;
 - (void)setAuthenticationState:(int)arg1;
+- (id)responseForServerData:(id)arg1;
 - (void)dealloc;
 
 @end

@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <EAAccessoryDelegate>, NSArray, NSString, NSDictionary;
+@class <EAAccessoryDelegate>, NSArray, NSString, NSDictionary, NSMutableArray;
 
 @interface EAAccessoryInternal : NSObject  {
     BOOL _connected;
@@ -22,6 +22,7 @@
     int _classType;
     NSDictionary *_audioPorts;
     unsigned int _capabilities;
+    NSMutableArray *_sessionsList;
     NSArray *_eqNames;
     unsigned int _eqItems;
     int _iPodOutOptionsMask;
@@ -29,77 +30,77 @@
     int (*_cfAccessoryPortPropertyCallback)();
     void *_cfAccessoryPortPropertyContext;
     NSDictionary *_protocols;
-    NSDictionary *_legacyLingoProperties;
     <EAAccessoryDelegate> *_delegate;
     unsigned int _eqIndex;
 }
 
-@property <EAAccessoryDelegate> * delegate;
-@property NSDictionary * legacyLingoProperties;
-@property NSDictionary * protocols;
-@property void* cfAccessoryPortPropertyContext;
-@property int (* cfAccessoryPortPropertyCallback;
-@property struct __CFAccessory { }* cfAccessory;
-@property int iPodOutOptionsMask;
-@property unsigned int eqIndex;
-@property(retain) NSArray * eqNames;
-@property unsigned int capabilities;
-@property NSDictionary * audioPorts;
-@property int classType;
-@property(copy) NSString * preferredApp;
-@property(copy) NSString * hardwareRevision;
-@property(copy) NSString * firmwareRevision;
-@property(copy) NSString * serialNumber;
-@property(copy) NSString * modelNumber;
-@property(copy) NSString * name;
-@property(copy) NSString * manufacturer;
-@property unsigned int connectionID;
 @property BOOL connected;
+@property unsigned int connectionID;
+@property(copy) NSString * manufacturer;
+@property(copy) NSString * name;
+@property(copy) NSString * modelNumber;
+@property(copy) NSString * serialNumber;
+@property(copy) NSString * firmwareRevision;
+@property(copy) NSString * hardwareRevision;
+@property(copy) NSString * preferredApp;
+@property int classType;
+@property(retain) NSDictionary * audioPorts;
+@property unsigned int capabilities;
+@property(readonly) NSArray * sessionsList;
+@property struct __CFAccessory { }* cfAccessory;
+@property int (* cfAccessoryPortPropertyCallback;
+@property void* cfAccessoryPortPropertyContext;
+@property(retain) NSArray * eqNames;
+@property unsigned int eqIndex;
+@property int iPodOutOptionsMask;
+@property(retain) NSDictionary * protocols;
+@property <EAAccessoryDelegate> * delegate;
 
 
-- (BOOL)connected;
+- (void)setDelegate:(id)arg1;
+- (void)removeSession:(id)arg1;
 - (void)setConnected:(BOOL)arg1;
 - (id)manufacturer;
 - (void)setManufacturer:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
-- (void)setCfAccessory:(struct __CFAccessory { }*)arg1;
-- (id)firmwareRevision;
-- (id)preferredApp;
-- (unsigned int)eqIndex;
-- (struct __CFAccessory { }*)cfAccessory;
-- (int (*)())cfAccessoryPortPropertyCallback;
-- (void*)cfAccessoryPortPropertyContext;
-- (id)legacyLingoProperties;
-- (void)setLegacyLingoProperties:(id)arg1;
-- (id)protocols;
-- (void)setProtocols:(id)arg1;
-- (void)setCfAccessoryPortPropertyContext:(void*)arg1;
-- (void)setCfAccessoryPortPropertyCallback:(int (*)())arg1;
+- (BOOL)connected;
 - (int)iPodOutOptionsMask;
+- (unsigned int)eqIndex;
 - (id)eqNames;
 - (id)audioPorts;
 - (int)classType;
+- (id)preferredApp;
+- (void)setCfAccessoryPortPropertyContext:(void*)arg1;
+- (void*)cfAccessoryPortPropertyContext;
+- (void)setCfAccessoryPortPropertyCallback:(int (*)())arg1;
+- (void)setCfAccessory:(struct __CFAccessory { }*)arg1;
+- (struct __CFAccessory { }*)cfAccessory;
+- (id)sessionsList;
+- (void)addSession:(id)arg1;
+- (id)protocols;
+- (id)hardwareRevision;
+- (id)firmwareRevision;
+- (id)modelNumber;
+- (void)setAudioPorts:(id)arg1;
+- (void)setEqIndex:(unsigned int)arg1;
+- (void)setEqNames:(id)arg1;
 - (void)setClassType:(int)arg1;
 - (void)setPreferredApp:(id)arg1;
-- (id)hardwareRevision;
-- (void)setHardwareRevision:(id)arg1;
-- (id)modelNumber;
+- (void)setProtocols:(id)arg1;
 - (void)setConnectionID:(unsigned int)arg1;
-- (unsigned int)connectionID;
-- (void)setModelNumber:(id)arg1;
+- (void)setHardwareRevision:(id)arg1;
 - (void)setFirmwareRevision:(id)arg1;
-- (void)setEqNames:(id)arg1;
-- (void)setEqIndex:(unsigned int)arg1;
+- (void)setModelNumber:(id)arg1;
 - (void)setIPodOutOptionsMask:(int)arg1;
-- (void)setAudioPorts:(id)arg1;
-- (void)setName:(id)arg1;
+- (int (*)())cfAccessoryPortPropertyCallback;
+- (unsigned int)connectionID;
+- (id)serialNumber;
 - (id)name;
+- (id)delegate;
+- (void)setCapabilities:(unsigned int)arg1;
+- (void)setName:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (unsigned int)capabilities;
-- (void)setCapabilities:(unsigned int)arg1;
-- (id)serialNumber;
 
 @end

@@ -2,18 +2,19 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UILabel;
+@class UIMovieScrubber, UILabel;
 
 @interface PLVideoEditingOverlayView : UIView  {
     UILabel *_titleLabel;
     UILabel *_bodyLabel;
+    UIMovieScrubber *_scrubber;
 }
 
 
-- (void)layoutSubviews;
+- (void)setBody:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBody:(id)arg1;
 
 @end

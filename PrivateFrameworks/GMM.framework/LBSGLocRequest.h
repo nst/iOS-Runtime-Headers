@@ -6,43 +6,39 @@
 
 @interface LBSGLocRequest : PBRequest  {
     LBSGPlatformProfile *_platformProfile;
-    NSMutableArray *_appProfiless;
+    NSMutableArray *_appProfiles;
     LBSGUserProfile *_userProfile;
-    NSMutableArray *_requestElementss;
+    NSMutableArray *_requestElements;
 }
 
-@property(readonly) int appProfilessCount;
-@property(readonly) BOOL hasUserProfile;
-@property(readonly) int requestElementssCount;
-@property(retain) NSMutableArray * requestElementss;
-@property(retain) LBSGUserProfile * userProfile;
-@property(retain) NSMutableArray * appProfiless;
 @property(retain) LBSGPlatformProfile * platformProfile;
+@property(retain) NSMutableArray * appProfiles;
+@property(readonly) BOOL hasUserProfile;
+@property(retain) LBSGUserProfile * userProfile;
+@property(retain) NSMutableArray * requestElements;
 
 
-- (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)userProfile;
-- (int)appProfilessCount;
-- (void)setAppProfiles:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)appProfilesAtIndex:(unsigned int)arg1;
-- (BOOL)hasUserProfile;
-- (int)requestElementssCount;
-- (void)setRequestElements:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)requestElementsAtIndex:(unsigned int)arg1;
-- (id)requestElementss;
-- (void)setRequestElementss:(id)arg1;
-- (void)setUserProfile:(id)arg1;
-- (id)appProfiless;
-- (void)setAppProfiless:(id)arg1;
-- (id)platformProfile;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setPlatformProfile:(id)arg1;
-- (void)addAppProfiles:(id)arg1;
+- (id)requestElements;
+- (id)userProfile;
+- (id)appProfiles;
+- (id)platformProfile;
+- (id)requestElementsAtIndex:(unsigned int)arg1;
+- (unsigned int)requestElementsCount;
+- (BOOL)hasUserProfile;
+- (id)appProfilesAtIndex:(unsigned int)arg1;
+- (unsigned int)appProfilesCount;
 - (void)addRequestElements:(id)arg1;
+- (void)addAppProfiles:(id)arg1;
+- (void)setRequestElements:(id)arg1;
+- (void)setUserProfile:(id)arg1;
+- (void)setAppProfiles:(id)arg1;
+- (void)setPlatformProfile:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

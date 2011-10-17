@@ -4,7 +4,7 @@
 
 @class UIView, <PhotoScrubberDataSource>, LoupeView, NSMutableArray, BezelView;
 
-@interface PLPhotoScrubber : UIControl <PLImageRotationAnimationProtocol> {
+@interface PLPhotoScrubber : UIControl  {
     int _isHorizontal;
     <PhotoScrubberDataSource> *_dataSource;
     unsigned int _displayedImageIndex;
@@ -37,49 +37,38 @@
 
 + (id)_backgroundImage;
 + (id)_shadowImage;
-+ (void)_initializeSafeCategory;
 
-- (void)reloadData;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)didMoveToSuperview;
-- (void)setDataSource:(id)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)didFinishRotation;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)layoutSubviews;
+- (BOOL)isScrubbing;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setImage:(id)arg1 atIndex:(int)arg2;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)didMoveToSuperview;
+- (void)layoutSubviews;
+- (void)reloadData;
+- (void)setDataSource:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithScrubberOrientation:(int)arg1;
-- (void)setDeferImageLoading:(BOOL)arg1;
-- (unsigned int)_thumbnailIndexFromLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (unsigned int)_imageIndexFromLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)reloadImageAtIndex:(int)arg1;
 - (struct CGPoint { float x1; float x2; })_centerForImageAtIndex:(int)arg1;
 - (void)_updateLoupeWithTouch:(id)arg1 forceUpdate:(BOOL)arg2;
-- (void)_setIsScrubbing:(BOOL)arg1;
-- (void)willStartRotatingByDegrees:(int)arg1;
-- (void)didCancelRotation;
-- (void)reloadImageAtIndex:(int)arg1;
-- (void)_updateLoupe:(BOOL)arg1;
-- (void)setLoupeImage:(id)arg1;
-- (void)_setDisplayedImageIndex:(int)arg1 immediately:(BOOL)arg2;
 - (void)_setDisplayedImageIndex:(id)arg1;
-- (void)setDataSource:(id)arg1 reloadData:(BOOL)arg2;
-- (int)displayedImageIndex;
-- (BOOL)isScrubbing;
-- (void)reloadDataWithNewDisplayedIndex:(unsigned int)arg1;
+- (unsigned int)_thumbnailIndexFromLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_setIsScrubbing:(BOOL)arg1;
+- (void)_setDisplayedImageIndex:(int)arg1 immediately:(BOOL)arg2;
+- (unsigned int)_imageIndexFromLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_updateLoupe:(BOOL)arg1;
+- (id)initWithScrubberOrientation:(int)arg1;
 - (void)setDisplayedImageIndex:(int)arg1;
-- (void)_accessibilityOutputIndexChange:(int)arg1;
-- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
-- (id)accessibilityLabel;
-- (void)accessibilityDecrement;
-- (void)accessibilityIncrement;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
+- (void)setLoupeImage:(id)arg1;
+- (int)displayedImageIndex;
+- (void)reloadDataWithNewDisplayedIndex:(unsigned int)arg1;
+- (void)setDeferImageLoading:(BOOL)arg1;
+- (void)setDataSource:(id)arg1 reloadData:(BOOL)arg2;
+- (id)init;
+- (void)dealloc;
 
 @end

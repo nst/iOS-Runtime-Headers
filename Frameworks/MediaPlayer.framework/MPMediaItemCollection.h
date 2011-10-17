@@ -17,24 +17,26 @@
 @property(readonly) MPMediaItem * representativeItem;
 @property(readonly) unsigned int count;
 @property(readonly) int mediaTypes;
-@property struct MPMediaItemCollectionInternal { NSArray *_items; unsigned int _itemsCount; MPMediaItem *_representativeItem; int _containedMediaTypes; } _internal;
+@property struct MPMediaItemCollectionInternal { id x1; unsigned int x2; id x3; int x4; } _internal;
 
-+ (id)collectionWithItems:(id)arg1;
 + (id)representativePersistentIDPropertyForGroupingType:(int)arg1;
++ (id)sortTitlePropertyForGroupingType:(int)arg1;
++ (id)collectionWithItems:(id)arg1;
 + (id)titlePropertyForGroupingType:(int)arg1;
 
-- (id)initWithItems:(id)arg1;
+- (id)itemsQuery;
+- (void)set_internal:(struct MPMediaItemCollectionInternal { id x1; unsigned int x2; id x3; int x4; })arg1;
+- (struct MPMediaItemCollectionInternal { id x1; unsigned int x2; id x3; int x4; })_internal;
 - (int)mediaTypes;
+- (id)initWithItems:(id)arg1;
 - (id)items;
+- (id)_init;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (unsigned int)count;
 - (id)init;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)_init;
-- (unsigned int)count;
-- (id)itemsQuery;
-- (struct MPMediaItemCollectionInternal { id x1; unsigned int x2; id x3; int x4; })_internal;
-- (void)set_internal:(struct MPMediaItemCollectionInternal { id x1; unsigned int x2; id x3; int x4; })arg1;
 - (id)representativeItem;
+- (unsigned int)indexOfMostLikelyItemForStartingPlayback;
 
 @end

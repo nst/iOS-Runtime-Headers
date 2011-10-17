@@ -3,18 +3,9 @@
  */
 
 @interface GKGameMatchFlowRateRequest : GKDataRequest  {
-    unsigned int _activity;
 }
 
-@property unsigned int activity;
 
-
-- (int)cachePriority;
-- (void)setActivity:(unsigned int)arg1;
-- (int)cacheType;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
-- (unsigned int)activity;
-- (id)cacheKey;
 - (id)key;
 
 @end

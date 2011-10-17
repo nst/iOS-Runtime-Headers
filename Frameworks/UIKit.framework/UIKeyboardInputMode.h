@@ -11,24 +11,24 @@
     NSString *hardwareLayout;
 }
 
-@property(retain) NSString * hardwareLayout;
-@property(retain) NSString * softwareLayout;
 @property(retain) NSString * identifier;
 @property(retain) NSString * primaryLanguage;
+@property(retain) NSString * softwareLayout;
+@property(retain) NSString * hardwareLayout;
 
-+ (id)canonicalLanguageIdentifierFromIdentifier:(id)arg1;
-+ (id)softwareLayoutFromIdentifier:(id)arg1;
 + (id)hardwareLayoutFromIdentifier:(id)arg1;
++ (id)softwareLayoutFromIdentifier:(id)arg1;
++ (id)canonicalLanguageIdentifierFromIdentifier:(id)arg1;
 + (id)keyboardInputModeWithIdentifier:(id)arg1;
 
+- (id)softwareLayout;
 - (void)setHardwareLayout:(id)arg1;
 - (void)setSoftwareLayout:(id)arg1;
 - (void)setPrimaryLanguage:(id)arg1;
 - (id)hardwareLayout;
-- (id)softwareLayout;
 - (id)primaryLanguage;
-- (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
+- (id)identifier;
 - (void)setIdentifier:(id)arg1;
 - (void)dealloc;
 

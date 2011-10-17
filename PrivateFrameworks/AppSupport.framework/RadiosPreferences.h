@@ -23,20 +23,20 @@
 @property <RadiosPreferencesDelegate> * delegate;
 
 
-- (void)setAirplaneMode:(BOOL)arg1;
-- (id)init;
-- (void)setValue:(void*)arg1 forKey:(id)arg2;
-- (void)dealloc;
+- (BOOL)airplaneMode;
 - (void)synchronize;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (BOOL)airplaneMode;
-- (void*)getValueForKey:(id)arg1;
+- (void)setValue:(void*)arg1 forKey:(id)arg2;
 - (void)refresh;
-- (void)initializeSCPrefs:(id)arg1;
-- (void)notifyTarget:(unsigned int)arg1;
-- (void)setCallback:(int (*)())arg1 withContext:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
 - (void)setNotifyForExternalChangeOnly:(BOOL)arg1;
+- (void)notifyTarget:(unsigned int)arg1;
+- (void)initializeSCPrefs:(id)arg1;
+- (void)setCallback:(int (*)())arg1 withContext:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
 - (BOOL)notifyForExternalChangeOnly;
+- (void)setAirplaneMode:(BOOL)arg1;
+- (id)delegate;
+- (void*)getValueForKey:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

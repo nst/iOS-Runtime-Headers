@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPTimeMarker;
+@class MPImageCacheRequest, UIImage, MPTimeMarker, MPImageCache;
 
 @interface MPVideoChapterCellContentView : UIView  {
     unsigned int _current : 1;
@@ -11,32 +11,39 @@
     unsigned int _showThumbnailColumn : 1;
     float _timeColumnWidth;
     MPTimeMarker *_timeMarker;
+    UIImage *_artwork;
+    MPImageCache *_artworkImageCache;
+    MPImageCacheRequest *_artworkImageRequest;
 }
 
 @property(getter=isCurrent) BOOL current;
+@property unsigned int index;
 @property(getter=isSelected) BOOL selected;
 @property BOOL showThumbnailColumn;
-@property(retain) MPTimeMarker * timeMarker;
 @property float timeColumnWidth;
-@property unsigned int index;
+@property(retain) MPTimeMarker * timeMarker;
+@property(retain) UIImage * artwork;
+@property(retain) MPImageCache * artworkImageCache;
 
 
-- (void)setSelected:(BOOL)arg1;
-- (unsigned int)index;
-- (BOOL)isSelected;
-- (void)layoutSubviews;
-- (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)artworkImageCache;
 - (id)timeMarker;
-- (BOOL)isCurrent;
-- (void)setShowThumbnailColumn:(BOOL)arg1;
-- (BOOL)showThumbnailColumn;
-- (void)_addThumbnailIfNecessary:(id)arg1;
-- (void)_removeThumbnailIfNecessary:(id)arg1;
 - (float)timeColumnWidth;
-- (void)setTimeMarker:(id)arg1;
-- (void)setCurrent:(BOOL)arg1;
+- (BOOL)showThumbnailColumn;
+- (BOOL)isCurrent;
+- (id)artwork;
+- (void)setArtwork:(id)arg1;
+- (void)setArtworkImageRequest:(id)arg1 artworkLoadCompletionHandler:(id)arg2;
+- (void)setArtworkImageCache:(id)arg1;
+- (void)setShowThumbnailColumn:(BOOL)arg1;
 - (void)setTimeColumnWidth:(float)arg1;
+- (void)setCurrent:(BOOL)arg1;
+- (void)setTimeMarker:(id)arg1;
 - (void)setIndex:(unsigned int)arg1;
+- (unsigned int)index;
+- (void)setSelected:(BOOL)arg1;
+- (BOOL)isSelected;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

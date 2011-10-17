@@ -8,17 +8,17 @@
 }
 
 
+- (void)_alternateTypesChangedNotification:(id)arg1;
+- (void)removeLoadingUI;
+- (void)addLoadingUI;
+- (unsigned int)typeForGroup:(int)arg1;
+- (unsigned int)indexForGroup:(int)arg1;
+- (id)titleForTrack:(id)arg1;
+- (id)arrayForGroup:(int)arg1;
+- (void)saveChanges;
+- (id)alternateTracks;
 - (void)reloadData;
 - (id)init;
 - (void)dealloc;
-- (void)_alternateTypesChangedNotification:(id)arg1;
-- (void)addLoadingUI;
-- (void)removeLoadingUI;
-- (void)saveChanges;
-- (id)alternateTracks;
-- (id)arrayForGroup:(int)arg1;
-- (id)titleForTrack:(id)arg1;
-- (unsigned int)indexForGroup:(int)arg1;
-- (unsigned int)typeForGroup:(int)arg1;
 
 @end

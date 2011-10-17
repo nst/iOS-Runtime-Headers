@@ -9,9 +9,9 @@
 
 + (char *)generatedNameSuffix;
 
-- (void)dealloc;
-- (id)initWithObject:(id)arg1;
 - (id)_referenceData;
 - (id)_retainedURIString;
+- (id)initWithObject:(id)arg1;
+- (void)dealloc;
 
 @end

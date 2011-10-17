@@ -11,21 +11,21 @@
     unsigned int _registeredForNotifications : 1;
 }
 
+@property float adjustmentForKeyboard;
 @property BOOL viewIsDisappearing;
 @property BOOL registeredForNotifications;
-@property float adjustmentForKeyboard;
 
 
-- (void)_keyboardWillHide:(id)arg1;
-- (BOOL)registeredForNotifications;
-- (void)setViewIsDisappearing:(BOOL)arg1;
-- (BOOL)viewIsDisappearing;
-- (void)setRegisteredForNotifications:(BOOL)arg1;
-- (id)initWithTableViewController:(id)arg1;
-- (void)_keyboardDidShow:(id)arg1;
-- (void)_keyboardDidHide:(id)arg1;
-- (float)adjustmentForKeyboard;
 - (void)setAdjustmentForKeyboard:(float)arg1;
+- (float)adjustmentForKeyboard;
+- (void)_keyboardDidHide:(id)arg1;
+- (void)_keyboardDidShow:(id)arg1;
+- (id)initWithTableViewController:(id)arg1;
+- (BOOL)registeredForNotifications;
+- (void)setRegisteredForNotifications:(BOOL)arg1;
+- (BOOL)viewIsDisappearing;
+- (void)setViewIsDisappearing:(BOOL)arg1;
+- (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 
 @end

@@ -13,40 +13,41 @@
     NSMutableDictionary *m_keysetCache;
 }
 
+@property(retain) NSString * name;
+@property(retain) NSString * visualStyle;
+@property(retain) NSArray * keyplanes;
+@property(retain) NSDictionary * keyCache;
+@property(retain) NSMutableDictionary * keysetCache;
 @property(readonly) NSString * layoutName;
 @property(readonly) NSString * cacheKey;
-@property(retain) NSMutableDictionary * keysetCache;
-@property(retain) NSDictionary * keyCache;
-@property(retain) NSArray * keyplanes;
-@property(retain) NSString * visualStyle;
-@property(retain) NSString * name;
 
 + (id)keyboard;
 
-- (void)cacheKey:(id)arg1 onKeyplane:(id)arg2;
-- (id)cachedKeysByKeyName:(id)arg1 onKeyplane:(id)arg2;
-- (id)keysetCache;
 - (void)setKeysetCache:(id)arg1;
+- (id)keysetCache;
 - (void)setKeyCache:(id)arg1;
 - (void)setKeyplanes:(id)arg1;
-- (id)layoutName;
-- (id)cacheKey;
-- (id)keyplanes;
-- (id)keyplaneWithName:(id)arg1;
-- (void)addKeyplane:(id)arg1;
-- (id)keyCache;
 - (id)currentKeyplanes;
+- (void)addKeyplane:(id)arg1;
+- (id)keyplaneWithName:(id)arg1;
+- (id)cachedKeysByKeyName:(id)arg1 onKeyplane:(id)arg2;
+- (id)keyplanes;
+- (void)cacheKey:(id)arg1 onKeyplane:(id)arg2;
+- (id)keyCache;
+- (id)cacheKey;
+- (id)layoutName;
 - (void)makeLikeOther:(id)arg1;
-- (void)setVisualStyle:(id)arg1;
 - (id)visualStyle;
-- (void)layout;
+- (void)setVisualStyle:(id)arg1;
 - (id)keyplaneForKey:(id)arg1;
-- (void)setName:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
+- (void)layout;
 - (id)name;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setName:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
 
 @end

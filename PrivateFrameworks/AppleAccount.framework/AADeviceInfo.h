@@ -2,31 +2,39 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
+@class APSConnection, NSData;
+
 @interface AADeviceInfo : NSObject  {
     struct _lockdown_connection { } *connection;
+    APSConnection *_apsConnection;
+    BOOL _tokenDone;
+    NSData *_token;
+    struct dispatch_semaphore_s { } *_tokenSema;
 }
 
-+ (id)osVersion;
-+ (id)udid;
-+ (id)infoDictionary;
-+ (id)clientInfoHeader;
-+ (id)deviceCredential;
 + (id)signatureWithDictionary:(id)arg1;
++ (id)apnsToken;
++ (id)clientInfoHeader;
++ (id)udid;
++ (id)serialNumber;
++ (id)infoDictionary;
++ (id)osVersion;
 + (id)productVersion;
 
-- (id)osVersion;
+- (id)wifiMacAddress;
+- (id)lockDownValueForKey:(struct __CFString { }*)arg1;
+- (id)regionCode;
+- (id)mobileMeSetupToken;
+- (id)osName;
+- (id)apnsToken;
+- (id)deviceInfoDictionary;
 - (id)udid;
+- (id)serialNumber;
 - (id)buildVersion;
+- (id)osVersion;
+- (id)productType;
 - (id)init;
 - (void)dealloc;
-- (id)serialNumber;
-- (id)deviceInfoDictionary;
-- (id)lockDownValueForKey:(struct __CFString { }*)arg1;
-- (id)wifiMacAddress;
-- (id)productType;
-- (id)osName;
-- (id)mobileMeSetupToken;
-- (id)regionCode;
 - (id)productVersion;
 
 @end

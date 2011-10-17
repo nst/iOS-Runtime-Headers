@@ -2,66 +2,44 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString, NSURLRequest, NSLock;
+@class NSArray, NSURLRequest, NSString, SSURLRequestProperties;
 
-@interface SSDownloadAsset : NSObject <NSCoding> {
-    NSString *_downloadFileName;
-    long long _fileSize;
-    NSString *_finalizedFileName;
-    NSArray *_hashes;
-    long long _numberOfBytesToHash;
-    BOOL _isExternal;
-    NSLock *_lock;
-    NSString *_processedPath;
-    int _type;
-    NSURLRequest *_urlRequest;
+@interface SSDownloadAsset : SSEntity  {
+    int _assetType;
+    SSURLRequestProperties *_localProperties;
 }
 
-@property int type;
-@property(retain) NSURLRequest * URLRequest;
-@property long long fileSize;
-@property(retain) NSString * downloadFileName;
+@property(readonly) NSURLRequest * URLRequest;
+@property(readonly) NSArray * sinfs;
+@property(readonly) long long fileSize;
+@property(readonly) NSString * downloadFileName;
 @property(readonly) NSString * downloadPath;
-@property(retain) NSString * processedPath;
-@property(retain) NSString * finalizedFileName;
 @property(readonly) NSString * finalizedPath;
-@property(readonly) NSString * downloadInformationKey;
-@property(readonly) NSString * purchaseManifestKey;
-@property(getter=isExternal) BOOL external;
-@property(retain) NSArray * hashes;
-@property long long numberOfBytesToHash;
+@property(getter=isExternal,readonly) BOOL external;
+@property(readonly) SSURLRequestProperties * URLRequestProperties;
 
 + (id)assetWithURL:(id)arg1 type:(int)arg2;
++ (long long)_setValuesMessage;
++ (long long)_getValueMessage;
++ (long long)_getExternalValuesMessage;
 
-- (int)type;
-- (void)setType:(int)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (long long)numberOfBytesToHash;
-- (void)setNumberOfBytesToHash:(long long)arg1;
-- (id)hashes;
-- (void)setHashes:(id)arg1;
-- (long long)fileSize;
-- (id)purchaseManifestKey;
-- (id)initWithURLRequest:(id)arg1 type:(int)arg2;
-- (id)downloadFileName;
-- (id)downloadInformationKey;
-- (id)downloadPath;
-- (id)finalizedFileName;
+- (id)sinfs;
 - (id)finalizedPath;
-- (id)processedPath;
-- (void)setDownloadFileName:(id)arg1;
-- (void)setExternal:(BOOL)arg1;
-- (void)setFileSize:(long long)arg1;
-- (void)setFinalizedFileName:(id)arg1;
-- (void)setLocalFileNameFromBase:(id)arg1;
-- (void)setProcessedPath:(id)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (id)downloadPath;
+- (id)downloadFileName;
+- (id)initWithURLRequest:(id)arg1 type:(int)arg2;
+- (id)_copyURLRequestProperties;
+- (void*)copyXPCEncoding;
+- (id)_initWithDownloadMetadata:(id)arg1 type:(id)arg2;
+- (void)_resetLocalIVars;
+- (int)_legacyAssetType;
+- (id)initWithURLRequest:(id)arg1;
+- (long long)bytesDownloaded;
+- (long long)fileSize;
+- (void)dealloc;
 - (BOOL)isExternal;
-- (void)setURLRequest:(id)arg1;
+- (int)assetType;
 - (id)URLRequest;
+- (id)URLRequestProperties;
 
 @end

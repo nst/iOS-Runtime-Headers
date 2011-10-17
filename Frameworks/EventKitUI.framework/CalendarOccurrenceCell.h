@@ -2,51 +2,33 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSString, UIImage;
+@class EKEventOccurrenceListItem;
 
 @interface CalendarOccurrenceCell : UITableViewCell  {
-    NSString *_title;
-    NSString *_location;
-    NSString *_timeString;
-    UIImage *_dot;
-    unsigned int _designator : 2;
-    unsigned int _isAllDay : 1;
-    unsigned int _isBirthday : 1;
-    unsigned int _tentative : 1;
-    unsigned int _cancelled : 1;
-    unsigned int _isEndDate : 1;
-    unsigned int _indentsWithoutDot : 1;
+    EKEventOccurrenceListItem *_view;
 }
 
-+ (void)initialize;
-+ (float)defaultHeight;
-+ (void)_calculateWidths;
-+ (void)_invalidateWidths;
-+ (float)hourWidth;
-+ (float)timeWidthIncludingDots:(BOOL)arg1;
-+ (void)_initializeSafeCategory;
 
-- (void)setCancelled:(BOOL)arg1;
-- (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
-- (BOOL)showDisclosure;
-- (void)setLocation:(id)arg1;
-- (id)_scriptingInfo;
-- (id)init;
-- (void)dealloc;
-- (void)setTitle:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (unsigned int)isCancelled;
+- (id)initWithEvent:(id)arg1;
 - (void)setStartDate:(double)arg1;
-- (void)setIndentsForMissingDot:(BOOL)arg1;
-- (void)setIsAllDay:(BOOL)arg1;
+- (unsigned int)isAllDay;
+- (void)setLocation:(id)arg1;
+- (void)setCancelled:(BOOL)arg1;
+- (BOOL)showDisclosure;
+- (id)_scriptingInfo;
+- (void)setTitle:(id)arg1;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 location:(id)arg3 startDate:(double)arg4 allDay:(BOOL)arg5 tentative:(BOOL)arg6;
-- (void)updateWithEvent:(id)arg1 showColors:(BOOL)arg2;
+- (unsigned int)designator;
+- (void)setShowsColors:(BOOL)arg1;
+- (void)setDotColor:(id)arg1;
 - (void)setIsBirthday:(BOOL)arg1;
 - (void)setIsEndDate:(BOOL)arg1;
+- (void)updateWithEvent:(id)arg1;
 - (void)setTentative:(BOOL)arg1;
-- (void)setDotColor:(id)arg1;
-- (unsigned int)designator;
-- (unsigned int)isAllDay;
-- (id)accessibilityLabel;
+- (void)setIsAllDay:(BOOL)arg1;
+- (unsigned int)isCancelled;
+- (id)init;
+- (void)dealloc;
 
 @end

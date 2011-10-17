@@ -18,20 +18,6 @@
 @property(copy) NSString * target;
 
 
-- (int)structuralComplexityContribution;
-- (void)reset;
-- (id)method;
-- (BOOL)autocapitalize;
-- (BOOL)autocorrect;
-- (id)elements;
-- (id)action;
-- (void)setAction:(id)arg1;
-- (id)target;
-- (void)setName:(id)arg1;
-- (id)name;
-- (int)length;
-- (void)setTarget:(id)arg1;
-- (void)setMethod:(id)arg1;
 - (BOOL)noValidate;
 - (void)setNoValidate:(BOOL)arg1;
 - (id)acceptCharset;
@@ -39,10 +25,24 @@
 - (void)setEncoding:(id)arg1;
 - (id)enctype;
 - (void)setEnctype:(id)arg1;
+- (void)setMethod:(id)arg1;
 - (void)setAutocorrect:(BOOL)arg1;
-- (void)setAutocapitalize:(BOOL)arg1;
+- (id)autocapitalize;
+- (void)setAutocapitalize:(id)arg1;
 - (void)submit;
 - (BOOL)checkValidity;
 - (id)encoding;
+- (int)structuralComplexityContribution;
+- (void)reset;
+- (id)method;
+- (BOOL)autocorrect;
+- (id)elements;
+- (void)setAction:(id)arg1;
+- (id)name;
+- (void)setName:(id)arg1;
+- (void)setTarget:(id)arg1;
+- (id)action;
+- (id)target;
+- (int)length;
 
 @end

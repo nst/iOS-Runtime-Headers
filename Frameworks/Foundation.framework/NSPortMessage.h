@@ -14,15 +14,15 @@
 }
 
 
+- (BOOL)sendBeforeDate:(id)arg1;
+- (id)components;
+- (unsigned int)msgid;
+- (id)receivePort;
+- (id)sendPort;
+- (id)initWithReceivePort:(id)arg1 sendPort:(id)arg2 components:(id)arg3;
+- (void)setMsgid:(unsigned int)arg1;
+- (id)initWithSendPort:(id)arg1 receivePort:(id)arg2 components:(id)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithReceivePort:(id)arg1 sendPort:(id)arg2 components:(id)arg3;
-- (id)sendPort;
-- (id)receivePort;
-- (BOOL)sendBeforeDate:(id)arg1;
-- (unsigned int)msgid;
-- (id)components;
-- (id)initWithSendPort:(id)arg1 receivePort:(id)arg2 components:(id)arg3;
-- (void)setMsgid:(unsigned int)arg1;
 
 @end

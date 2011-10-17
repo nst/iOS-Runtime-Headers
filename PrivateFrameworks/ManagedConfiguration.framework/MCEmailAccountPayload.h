@@ -4,7 +4,7 @@
 
 @class NSNumber, NSString;
 
-@interface MCEmailAccountPayload : MCPayload  {
+@interface MCEmailAccountPayload : MCEmailAccountPayloadBase  {
     NSString *_emailAccountDescription;
     NSString *_emailAccountName;
     NSString *_emailAccountType;
@@ -48,32 +48,32 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
+- (id)emailAddress;
 - (id)title;
-- (void)dealloc;
-- (id)description;
-- (id)subtitle1Description;
-- (id)subtitle2Description;
-- (id)emailAccountDescription;
-- (id)incomingMailServerAuthentication;
-- (id)incomingMailServerUsername;
-- (id)incomingPassword;
-- (BOOL)outgoingPasswordSameAsIncomingPassword;
-- (id)outgoingMailServerHostname;
-- (BOOL)outgoingMailServerUseSSL;
 - (id)outgoingMailServerUsername;
+- (BOOL)outgoingMailServerUseSSL;
 - (id)outgoingMailServerPortNumber;
+- (id)outgoingMailServerHostname;
 - (id)outgoingMailServerAuthentication;
+- (BOOL)outgoingPasswordSameAsIncomingPassword;
 - (id)outgoingPassword;
+- (id)incomingPassword;
 - (id)incomingMailServerIMAPPathPrefix;
+- (id)incomingMailServerUsername;
 - (BOOL)incomingMailServerUseSSL;
 - (id)incomingMailServerPortNumber;
-- (id)incomingMailServerHostname;
-- (id)emailAccountType;
+- (id)incomingMailServerAuthentication;
 - (id)emailAccountName;
+- (id)emailAccountDescription;
+- (id)emailAccountType;
+- (id)incomingMailServerHostname;
 - (id)subtitle1Label;
 - (id)subtitle2Label;
-- (id)stubDictionary;
+- (id)subtitle2Description;
+- (id)subtitle1Description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (id)emailAddress;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -4,7 +4,7 @@
 
 @class CPGraphicObject;
 
-@interface CPTable : CPChunk <CPDisposable> {
+@interface CPTable : CPChunk <CPDisposable, CPGraphicUser> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -28,21 +28,15 @@
 
 @property unsigned int rowCount;
 @property unsigned int columnCount;
-@property(readonly) unsigned int usedGraphicCount;
 @property(readonly) unsigned int backgroundGraphicCount;
 @property(readonly) float* columnX;
 @property(readonly) float* rowY;
 @property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } tableBounds;
 
 
-- (void)dispose;
-- (unsigned int)columnCount;
-- (void)setColumnCount:(unsigned int)arg1;
-- (void)finalize;
-- (struct CGColor { }*)backgroundColor;
-- (void)dealloc;
 - (unsigned int)rowCount;
 - (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)finalize;
 - (void)setRowCount:(unsigned int)arg1;
 - (void)setBackgroundGraphics:(id)arg1;
 - (id)backgroundGraphicAtIndex:(unsigned int)arg1;
@@ -52,5 +46,10 @@
 - (unsigned int)usedGraphicCount;
 - (void)incrementUsedGraphicCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableBounds;
+- (void)dispose;
+- (void)setColumnCount:(unsigned int)arg1;
+- (unsigned int)columnCount;
+- (struct CGColor { }*)backgroundColor;
+- (void)dealloc;
 
 @end

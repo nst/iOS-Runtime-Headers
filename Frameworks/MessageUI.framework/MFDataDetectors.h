@@ -6,6 +6,7 @@
 }
 
 + (id)urlMatchesForString:(id)arg1;
++ (BOOL)urlIfyNode:(id)arg1 phoneNumberTypes:(unsigned int)arg2;
 + (Class)_DDURLifierClass;
 + (BOOL)urlIfyNode:(id)arg1;
 + (id)sharedDetectionController;

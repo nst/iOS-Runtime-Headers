@@ -13,15 +13,15 @@
 }
 
 
+- (id)parent;
 - (id)initWithRoot:(id)arg1;
-- (id)styleWithXmlUid:(char *)arg1;
-- (id)styleWithIdentifier:(char *)arg1;
 - (void)addStyle:(id)arg1 withOwnedIdentifier:(char *)arg2;
-- (void)addStyle:(id)arg1 withOwnedXmlUid:(char *)arg2;
+- (id)styleWithXmlUid:(const char *)arg1;
 - (void)addStyle:(id)arg1 needingParentResolution:(const char *)arg2 resolveInParent:(BOOL)arg3;
 - (void)resolveStyleParents;
 - (struct __CFArray { }*)retainedArrayOfIdentifiedStyles;
+- (id)styleWithIdentifier:(const char *)arg1;
+- (BOOL)addStyle:(id)arg1 withOwnedXmlUid:(char *)arg2;
 - (void)dealloc;
-- (id)parent;
 
 @end

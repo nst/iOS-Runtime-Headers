@@ -4,23 +4,23 @@
 
 @class NSArray, EKEventAttendeePicker;
 
-@interface EKEventAttendeesEditViewController : EKEventEditItemViewController  {
+@interface EKEventAttendeesEditViewController : EKEditItemViewController  {
     EKEventAttendeePicker *_picker;
 }
 
 @property(copy) NSArray * attendees;
 
 
-- (void)viewDidLoad;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSearchAccountID:(id)arg1;
-- (id)_firstInvalidRecipientAddress;
-- (id)_attendeeFromRecipient:(id)arg1;
-- (id)_recipientFromAttendee:(id)arg1;
-- (BOOL)validateAllowingAlert:(BOOL)arg1;
 - (void)setAttendees:(id)arg1;
 - (id)attendees;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidLoad;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_recipientFromAttendee:(id)arg1;
+- (id)_attendeeFromRecipient:(id)arg1;
+- (id)_firstInvalidRecipientAddress;
+- (void)setSearchAccountID:(id)arg1;
+- (BOOL)validateAllowingAlert:(BOOL)arg1;
+- (void)dealloc;
 
 @end

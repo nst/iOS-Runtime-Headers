@@ -11,15 +11,15 @@
 
 + (id)copyDefaultContext;
 
-- (void)dealloc;
 - (void)setRepresentedObject:(id)arg1;
-- (void)reloadAfterArtworkLoad;
-- (id)artworkImageForItemImage:(id)arg1;
-- (id)artworkImageForURL:(id)arg1;
-- (void)cancelArtworkRequests;
-- (id)copyImageDataProvider;
-- (id)_artworkImageForURL:(id)arg1 dataProvider:(id)arg2;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
+- (void)dealloc;
+- (id)artworkImageForURL:(id)arg1;
+- (id)artworkImageForItemImage:(id)arg1;
+- (void)reloadAfterArtworkLoad;
+- (id)_artworkImageForURL:(id)arg1 dataProvider:(id)arg2;
+- (id)copyImageDataProvider;
+- (void)cancelArtworkRequests;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 
 @end

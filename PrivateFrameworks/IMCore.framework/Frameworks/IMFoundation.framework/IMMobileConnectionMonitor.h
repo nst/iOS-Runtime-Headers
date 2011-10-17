@@ -7,11 +7,18 @@
     Class _CPNetworkObserverClass;
 }
 
+@property BOOL _isHostReachable;
+@property(retain) Class _CPNetworkObserverClass;
 
-- (id)init;
-- (void)dealloc;
-- (BOOL)isImmediatelyReachable;
+
+- (void)set_CPNetworkObserverClass:(Class)arg1;
+- (Class)_CPNetworkObserverClass;
+- (void)set_isHostReachable:(BOOL)arg1;
+- (BOOL)_isHostReachable;
 - (void)_handleNetworkObserverDidChange:(id)arg1;
 - (void)_setup;
+- (BOOL)isImmediatelyReachable;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -10,8 +10,8 @@
 
 + (id)solidBrushWithColour:(id)arg1;
 
-- (void)dealloc;
 - (id)initWithColour:(id)arg1;
 - (void)fillPath:(id)arg1 :(id)arg2;
+- (void)dealloc;
 
 @end

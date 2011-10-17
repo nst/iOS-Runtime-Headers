@@ -11,13 +11,14 @@
 @property <GKAchievementViewControllerDelegate> * achievementDelegate;
 
 
-- (id)achievementDelegate;
 - (void)setAchievementDelegate:(id)arg1;
+- (id)achievementDelegate;
 - (void)donePressed:(id)arg1;
 - (id)initWithRootViewController:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (id)init;
+- (void)dealloc;
 
 @end

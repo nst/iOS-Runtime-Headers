@@ -29,23 +29,25 @@
 @property(copy) NSString * playbackErrorDescription;
 
 
-- (void)setStyle:(int)arg1;
-- (int)style;
-- (void)layoutSubviews;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPlaybackErrorDescription:(id)arg1;
-- (void)_updateVisiblePartsForAvailableRoutes;
-- (id)_newDescriptionLabel;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameInBackgroundViewForDescriptionLabel:(id)arg1;
-- (id)videoViewController;
-- (void)setVideoViewController:(id)arg1;
-- (void)_itemDurationDidChangeNotification:(id)arg1;
-- (id)playbackErrorDescription;
-- (id)createProgressIndicator;
-- (void)_availableRoutesDidChangeNotification:(id)arg1;
-- (void)setCurrentTime:(double)arg1;
 - (void)reloadView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameInBackgroundViewForDescriptionLabel:(id)arg1;
+- (id)_newDescriptionLabel;
+- (void)_updateVisiblePartsForAvailableRoutes;
+- (void)_itemDurationDidChangeNotification:(id)arg1;
+- (unsigned int)displayablePartsInPartMask:(unsigned int)arg1;
+- (id)videoViewController;
+- (void)_availableRoutesDidChangeNotification:(id)arg1;
+- (void)setVideoViewController:(id)arg1;
+- (id)playbackErrorDescription;
+- (void)setPlaybackErrorDescription:(id)arg1;
+- (void)setPlayer:(id)arg1;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCurrentTime:(double)arg1;
+- (void)dealloc;
+- (id)newProgressIndicator;
 - (void)setItem:(id)arg1;
 
 @end

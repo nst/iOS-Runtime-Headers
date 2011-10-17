@@ -11,22 +11,23 @@
 }
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
+- (BOOL)_shouldUseParensWithDescription;
+- (id)initWithExpression:(id)arg1 usingIteratorVariable:(id)arg2 predicate:(id)arg3;
+- (id)predicateFormat;
+- (id)_expressionWithSubstitutionVariables:(id)arg1;
+- (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)collection;
 - (id)predicate;
-- (id)initWithExpression:(id)arg1 usingIteratorExpression:(id)arg2 predicate:(id)arg3;
 - (id)variableExpression;
+- (id)initWithExpression:(id)arg1 usingIteratorExpression:(id)arg2 predicate:(id)arg3;
 - (id)variable;
-- (id)initWithExpression:(id)arg1 usingIteratorVariable:(id)arg2 predicate:(id)arg3;
-- (BOOL)_shouldUseParensWithDescription;
-- (id)predicateFormat;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
-- (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)minimalFormInContext:(id)arg1;
 
 @end

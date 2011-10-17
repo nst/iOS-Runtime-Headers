@@ -18,26 +18,26 @@
 
 }
 
-@property(copy) id subscriberCellularProviderDidUpdateNotifier;
 @property(retain) CTCarrier * subscriberCellularProvider;
+@property(copy) id subscriberCellularProviderDidUpdateNotifier;
 
 
+- (id)subscriberCellularProvider;
+- (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
+- (id)subscriberCellularProviderDidUpdateNotifier;
+- (void)reestablishServerConnectionIfNeeded;
+- (void)setSubscriberCellularProvider:(id)arg1;
+- (BOOL)getAllowsVOIP:(BOOL*)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
+- (BOOL)getMobileNetworkCode:(id)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
+- (BOOL)getMobileCountryCode:(id)arg1 andIsoCountryCode:(id)arg2 withCTError:(struct { int x1; int x2; }*)arg3;
+- (BOOL)getCarrierName:(id)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
+- (void)cleanUpServerConnection;
+- (BOOL)updateNetworkInfoAndShouldNotifyClient:(BOOL*)arg1;
+- (void)postUpdatesIfNecessary;
+- (void)cleanUpServerConnectionNoLock;
+- (BOOL)setUpServerConnection;
+- (void)setSubscriberCellularProviderDidUpdateNotifier:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (BOOL)setUpServerConnection;
-- (void)reestablishServerConnectionIfNeeded;
-- (void)cleanUpServerConnectionNoLock;
-- (void)cleanUpServerConnection;
-- (id)subscriberCellularProviderDidUpdateNotifier;
-- (void)setSubscriberCellularProviderDidUpdateNotifier:(id)arg1;
-- (BOOL)getCarrierName:(id)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
-- (BOOL)getMobileCountryCode:(id)arg1 andIsoCountryCode:(id)arg2 withCTError:(struct { int x1; int x2; }*)arg3;
-- (BOOL)getMobileNetworkCode:(id)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
-- (BOOL)getAllowsVOIP:(BOOL*)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
-- (BOOL)updateNetworkInfoAndShouldNotifyClient:(BOOL*)arg1;
-- (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
-- (void)postUpdatesIfNecessary;
-- (id)subscriberCellularProvider;
-- (void)setSubscriberCellularProvider:(id)arg1;
 
 @end

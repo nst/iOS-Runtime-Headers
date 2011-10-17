@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSDictionary, NSString, NSArray;
+@class AVMetadataItem, NSArray, NSString, NSDictionary;
 
-@interface AVAssetInspector : NSObject <NSCopying> {
+@interface AVAssetInspector : AVFigObjectInspector <NSCopying> {
 }
 
 @property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } duration;
@@ -15,8 +15,11 @@
 @property(readonly) int naturalTimeScale;
 @property(readonly) BOOL providesPreciseDurationAndTiming;
 @property(readonly) int trackCount;
+@property(readonly) NSArray * trackIDs;
 @property(readonly) NSArray * alternateTrackGroups;
 @property(readonly) NSDictionary * trackReferences;
+@property(readonly) NSArray * mediaSelectionGroups;
+@property(readonly) AVMetadataItem * creationDate;
 @property(readonly) NSString * lyrics;
 @property(readonly) NSArray * commonMetadata;
 @property(readonly) NSArray * availableMetadataFormats;
@@ -26,32 +29,26 @@
 
 
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)lyrics;
-- (id)trackReferences;
-- (BOOL)isReadable;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (id)_stringForProperty:(struct __CFString { }*)arg1;
+- (float)preferredRate;
 - (float)preferredVolume;
-- (BOOL)providesPreciseDurationAndTiming;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })_CMTimeForProperty:(struct __CFString { }*)arg1;
-- (float)_floatForProperty:(struct __CFString { }*)arg1;
-- (long)_SInt32ForProperty:(struct __CFString { }*)arg1;
-- (unsigned char)_booleanForProperty:(struct __CFString { }*)arg1;
-- (id)_tollFreeBridgedObjectForProperty:(struct __CFString { }*)arg1;
-- (id)_arrayForProperty:(struct __CFString { }*)arg1;
-- (id)_dictionaryForProperty:(struct __CFString { }*)arg1;
-- (void*)_propertyAccessor:(struct __CFString { }*)arg1;
-- (long)trackCount;
+- (BOOL)providesPreciseDurationAndTiming;
+- (id)alternateTrackGroups;
+- (id)trackIDs;
+- (id)mediaSelectionGroups;
+- (id)trackReferences;
+- (id)creationDate;
+- (id)lyrics;
 - (id)commonMetadata;
 - (id)availableMetadataFormats;
-- (float)preferredRate;
-- (id)alternateTrackGroups;
 - (id)metadataForFormat:(id)arg1;
 - (BOOL)hasProtectedContent;
 - (BOOL)isExportable;
+- (BOOL)isReadable;
 - (BOOL)isComposable;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (long)trackCount;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

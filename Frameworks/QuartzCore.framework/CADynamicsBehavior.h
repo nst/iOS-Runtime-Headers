@@ -26,28 +26,28 @@
 
 + (id)defaultValueForKey:(id)arg1;
 
-- (float)drag;
-- (float)springScale;
-- (float)stoppedVelocity;
-- (double)minimumTimeStep;
-- (id)forceFields;
-- (id)springs;
+- (void)setStoppedVelocity:(float)arg1;
+- (void)setSprings:(id)arg1;
+- (void)setReactsToCollisions:(BOOL)arg1;
 - (void)setForceFields:(id)arg1;
-- (double)timeStep;
 - (void)setTimeStep:(double)arg1;
 - (void)setMinimumTimeStep:(double)arg1;
-- (float)stoppedAngularVelocity;
 - (void)setStoppedAngularVelocity:(float)arg1;
-- (double)collisionInterval;
 - (void)setCollisionInterval:(double)arg1;
 - (void)setSpringScale:(float)arg1;
 - (void)setDrag:(float)arg1;
-- (float)angularDrag;
 - (void)setAngularDrag:(float)arg1;
+- (id)springs;
+- (id)forceFields;
+- (double)timeStep;
+- (double)minimumTimeStep;
+- (float)stoppedVelocity;
+- (float)stoppedAngularVelocity;
+- (double)collisionInterval;
+- (float)springScale;
+- (float)drag;
+- (float)angularDrag;
 - (BOOL)reactsToCollisions;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
-- (void)setReactsToCollisions:(BOOL)arg1;
-- (void)setSprings:(id)arg1;
-- (void)setStoppedVelocity:(float)arg1;
 
 @end

@@ -5,33 +5,33 @@
 @interface SpecialCharacters : NSObject  {
 }
 
-+ (id)blankSymbol;
-+ (id)defaultAttribute;
-+ (id)kleeneMarker;
-+ (id)disjunctionMarker;
-+ (id)orderKey;
-+ (id)insertDirective;
-+ (id)indexKey;
-+ (id)postContextKey;
-+ (id)significantSlotsKey;
-+ (id)yesString;
-+ (id)noString;
-+ (id)preContextKey;
-+ (id)negationMarker;
-+ (id)rhsKey;
-+ (id)repeatKey;
-+ (id)lhsKey;
-+ (id)depthKey;
-+ (id)partNameKey;
-+ (id)delimiterKey;
-+ (id)defaultSignatureDelimiter;
-+ (id)signatureKey;
-+ (id)expansionsKey;
-+ (id)wildcardSymbol;
-+ (id)contentKey;
-+ (id)attributeNameKey;
 + (id)suppressPronunciationKey;
 + (id)suppressPronunciationSuffix;
++ (id)noString;
++ (id)yesString;
++ (id)defaultAttribute;
++ (id)postContextKey;
++ (id)preContextKey;
++ (id)significantSlotsKey;
++ (id)negationMarker;
++ (id)kleeneMarker;
++ (id)disjunctionMarker;
++ (id)repeatKey;
++ (id)rhsKey;
++ (id)insertDirective;
++ (id)lhsKey;
++ (id)partNameKey;
++ (id)depthKey;
++ (id)orderKey;
++ (id)expansionsKey;
++ (id)signatureKey;
++ (id)defaultSignatureDelimiter;
++ (id)delimiterKey;
++ (id)contentKey;
++ (id)blankSymbol;
++ (id)wildcardSymbol;
++ (id)attributeNameKey;
++ (id)indexKey;
 
 
 @end

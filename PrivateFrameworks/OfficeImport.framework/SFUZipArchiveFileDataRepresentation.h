@@ -10,15 +10,15 @@
 }
 
 
-- (id)initWithPath:(id)arg1;
-- (id)path;
-- (void)dealloc;
-- (BOOL)isEncrypted;
-- (id)inputStream;
-- (BOOL)isReadable;
 - (id)bufferedInputStreamWithOffset:(long long)arg1 length:(long long)arg2;
-- (BOOL)hasSameLocationAs:(id)arg1;
 - (id)inputStreamWithOffset:(long long)arg1 length:(long long)arg2;
+- (BOOL)isEncrypted;
+- (BOOL)hasSameLocationAs:(id)arg1;
+- (id)inputStream;
 - (long long)dataLength;
+- (id)path;
+- (id)initWithPath:(id)arg1;
+- (BOOL)isReadable;
+- (void)dealloc;
 
 @end

@@ -9,31 +9,37 @@
     unsigned int _reserved;
 }
 
-+ (id)port;
-+ (void)resetAllPorts;
-+ (id)portWithMachPort:(unsigned int)arg1;
-+ (id)portWithMachPort:(unsigned int)arg1 options:(unsigned int)arg2;
 + (void)_fixNSMachPortLeak;
++ (id)portWithMachPort:(unsigned int)arg1 options:(unsigned int)arg2;
++ (void)resetAllPorts;
++ (BOOL)sendBeforeTime:(double)arg1 streamData:(id)arg2 components:(id)arg3 to:(id)arg4 from:(id)arg5 msgid:(unsigned int)arg6 reserved:(unsigned int)arg7;
++ (id)portWithMachPort:(unsigned int)arg1;
++ (id)port;
 
-- (id)initWithMachPort:(unsigned int)arg1;
-- (BOOL)isValid;
-- (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isMemberOfClass:(Class)arg1;
 - (void)invalidate;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (oneway void)release;
-- (id)init;
-- (id)retain;
-- (void)dealloc;
-- (unsigned int)retainCount;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (unsigned int)machPort;
+- (void)finalize;
+- (BOOL)sendBeforeTime:(double)arg1 streamData:(void*)arg2 components:(id)arg3 from:(id)arg4 msgid:(unsigned int)arg5;
 - (id)initWithMachPort:(unsigned int)arg1 options:(unsigned int)arg2;
-- (unsigned long)_cfTypeID;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (BOOL)sendBeforeDate:(id)arg1 msgid:(unsigned int)arg2 components:(id)arg3 from:(id)arg4 reserved:(unsigned int)arg5;
+- (unsigned int)machPort;
+- (BOOL)sendBeforeDate:(id)arg1 components:(id)arg2 from:(id)arg3 reserved:(unsigned int)arg4;
+- (id)initWithMachPort:(unsigned int)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (BOOL)isValid;
+- (id)delegate;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (unsigned long)_cfTypeID;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isKindOfClass:(Class)arg1;
+- (BOOL)isMemberOfClass:(Class)arg1;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)init;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

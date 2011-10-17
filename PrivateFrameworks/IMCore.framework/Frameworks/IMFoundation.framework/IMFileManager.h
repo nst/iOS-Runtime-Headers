@@ -5,18 +5,21 @@
 @interface IMFileManager : NSFileManager  {
 }
 
-+ (id)defaultManager;
 + (id)defaultHFSFileManager;
++ (id)defaultManager;
 
-- (id)attributesOfItemAtPath:(id)arg1 error:(id*)arg2;
-- (oneway void)release;
-- (unsigned int)retainCount;
-- (id)autorelease;
 - (BOOL)setAttributes:(id)arg1 ofItemAtPath:(id)arg2 error:(id*)arg3;
-- (id)createTempFileBasedOnName:(id)arg1 hfsType:(unsigned long)arg2 hfsCreator:(unsigned long)arg3 hfsFlags:(unsigned short)arg4;
-- (id)kindStringForFile:(id)arg1;
-- (id)kindStringForFileWithName:(id)arg1 hfsType:(unsigned long)arg2 hfsCreator:(unsigned long)arg3 hfsFlags:(unsigned short)arg4;
+- (id)pathExtensionForMIMEType:(id)arg1;
+- (id)UTITypeOfPathExtension:(id)arg1;
 - (id)displayNameOfFileWithName:(id)arg1 hfsFlags:(unsigned short)arg2;
+- (id)kindStringForFileWithName:(id)arg1 hfsType:(unsigned long)arg2 hfsCreator:(unsigned long)arg3 hfsFlags:(unsigned short)arg4;
 - (id)MIMETypeOfPathExtension:(id)arg1;
+- (id)kindStringForFile:(id)arg1;
+- (id)createTempFileBasedOnName:(id)arg1 hfsType:(unsigned long)arg2 hfsCreator:(unsigned long)arg3 hfsFlags:(unsigned short)arg4;
+- (id)attributesOfItemAtPath:(id)arg1 error:(id*)arg2;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (id)UTITypeOfPath:(id)arg1;
+- (id)MIMETypeOfPath:(id)arg1;
 
 @end

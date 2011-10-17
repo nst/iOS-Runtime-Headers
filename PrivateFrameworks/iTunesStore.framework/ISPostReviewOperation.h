@@ -9,17 +9,17 @@
     ISReview *_review;
 }
 
-@property(retain) ISReview * review;
 @property(getter=isBackgroundReview) BOOL backgroundReview;
+@property(retain) ISReview * review;
 
 
 - (void)run;
-- (void)dealloc;
 - (id)_httpBody;
-- (BOOL)isBackgroundReview;
 - (void)setBackgroundReview:(BOOL)arg1;
-- (void)setReview:(id)arg1;
+- (BOOL)isBackgroundReview;
+- (void)dealloc;
 - (id)review;
+- (void)setReview:(id)arg1;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 
 @end

@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@class NSString, UIKeyboardCandidate;
 
 @interface UIKeyboardCandidateBarCell : UIView  {
-    NSString *m_candidate;
+    UIKeyboardCandidate *m_candidate;
+    NSString *m_candidateText;
     id m_target;
     SEL m_action;
     struct CGSize { 
@@ -14,32 +15,25 @@
     } m_textSize;
     BOOL m_highlighted;
     BOOL m_special;
-    BOOL m_arrow;
 }
 
+@property(readonly) struct CGSize { float x1; float x2; } stringSize;
 @property BOOL highlighted;
-@property(readonly) BOOL isArrow;
-@property(readonly) struct CGSize { float width; float height; } stringSize;
 
-+ (id)font;
-+ (void)_initializeSafeCategory;
++ (id)fontForCandidateText:(id)arg1;
 
-- (id)initWithCandidate:(id)arg1 tag:(int)arg2 target:(id)arg3 action:(SEL)arg4;
-- (BOOL)isArrow;
 - (struct CGSize { float x1; float x2; })stringSize;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)initWithCandidate:(id)arg1 tag:(int)arg2 target:(id)arg3 action:(SEL)arg4;
+- (id)initWithCandidateText:(id)arg1 tag:(int)arg2 target:(id)arg3 action:(SEL)arg4;
+- (id).cxx_construct;
 - (BOOL)highlighted;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)_accessibilityVisibleItemInList;
-- (id)accessibilityLabel;
-- (id)accessibilityLanguage;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
+- (void)dealloc;
 
 @end

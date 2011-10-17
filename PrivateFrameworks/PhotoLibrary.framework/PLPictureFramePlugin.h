@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCachedImage, PLImageLoadingQueue, PLCroppedImageView, PLImageCache, PLImageSource, MLPhoto;
+@class PLCachedImage, PLImageLoadingQueue, PLCroppedImageView, PLImageCache, PLImageSource, PLManagedAsset;
 
 @interface PLPictureFramePlugin : PLSlideshowPlugin <PLImageLoadingQueueDelegate> {
     PLImageCache *_imageCache;
@@ -10,7 +10,7 @@
     PLImageSource *_imageSource;
     struct __CFArray { } *_imageIndexes;
     unsigned int _currentIndex;
-    MLPhoto *_requestedImage;
+    PLManagedAsset *_requestedImage;
     PLCachedImage *_nextImage;
     PLCroppedImageView *_currentImageView;
     PLCroppedImageView *_nextImageView;
@@ -21,26 +21,26 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentBounds;
-- (id)newSlideshowView;
-- (void)slideshowViewWillAppear;
-- (void)pauseSlideshow;
-- (void)resumeSlideshow;
-- (void)_scheduleSlideshowTimer;
-- (int)_albumImageIndexForSlideIndex:(int)arg1;
-- (void)_requestNextImageSynchronously:(BOOL)arg1;
+- (void)_crossFadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)_transitionToNextImage;
 - (void)_displayFirstImage;
 - (void)_didLoadImage:(id)arg1;
-- (void)_transitionToNextImage;
-- (void)_crossFadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (void)_slideshowTimerFired;
 - (id)_nextImage;
-- (void)setAlbum:(id)arg1;
-- (void)slideshowViewDidDisappear;
-- (void)stopSlideshow;
+- (int)_albumImageIndexForSlideIndex:(int)arg1;
+- (void)_slideshowTimerFired;
+- (void)_scheduleSlideshowTimer;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentBounds;
+- (void)_requestNextImageSynchronously:(BOOL)arg1;
+- (void)resumeSlideshow;
+- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forAsset:(id)arg3 fromSource:(id)arg4;
+- (void)setAlbumAssets:(id)arg1;
+- (void)pauseSlideshow;
 - (void)slideshowViewDidAppear;
-- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forObject:(id)arg3 fromSource:(id)arg4;
+- (void)slideshowViewWillAppear;
+- (id)newSlideshowView;
+- (void)stopSlideshow;
+- (void)slideshowViewDidDisappear;
+- (id)init;
+- (void)dealloc;
 
 @end

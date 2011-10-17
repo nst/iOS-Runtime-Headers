@@ -7,10 +7,10 @@
 }
 
 
-- (void)setGrouping:(int)arg1;
 - (int)grouping;
-- (bool)isGroupingStacked;
 - (id)chdGroupingString;
+- (bool)isGroupingStacked;
+- (void)setGrouping:(int)arg1;
 - (id)initWithChart:(id)arg1;
 
 @end

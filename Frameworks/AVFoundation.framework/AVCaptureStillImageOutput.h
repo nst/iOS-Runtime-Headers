@@ -11,6 +11,7 @@
 @property(copy) NSDictionary * outputSettings;
 @property(readonly) NSArray * availableImageDataCVPixelFormatTypes;
 @property(readonly) NSArray * availableImageDataCodecTypes;
+@property(getter=isCapturingStillImage,readonly) BOOL capturingStillImage;
 
 + (void)initialize;
 + (id)jpegStillImageNSDataRepresentation:(struct opaqueCMSampleBuffer { }*)arg1;
@@ -18,35 +19,35 @@
 + (struct CGImage { }*)cgImageForBGRASurface:(struct __IOSurface { }*)arg1 size:(unsigned long)arg2;
 + (id)jpegStillImageNSDataRepresentationForBGRASurface:(struct __IOSurface { }*)arg1 size:(unsigned long)arg2;
 
-- (id)init;
-- (void)dealloc;
-- (BOOL)resumeVideoProcessing;
-- (void)setSuspendsVideoProcessingDuringStillImageCapture:(BOOL)arg1;
+- (long long)maxStillImageDataSize;
 - (void)setHDRCaptureEnabled:(BOOL)arg1;
 - (void)setEV0CaptureEnabled:(BOOL)arg1;
-- (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)captureStillImageSurfaceAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
+- (void)setSuspendsVideoProcessingDuringStillImageCapture:(BOOL)arg1;
+- (BOOL)resumeVideoProcessing;
+- (BOOL)isCapturingStillImage;
 - (void)captureStillImageAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
-- (unsigned long)imageDataFormatType;
-- (id)availableImageDataCodecTypes;
-- (id)availableImageDataCVPixelFormatTypes;
+- (void)captureStillImageSurfaceAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
+- (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setChromaNoiseReductionEnabled:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })previewImageSize;
+- (unsigned long)imageDataFormatType;
+- (void)_updateStillImageDataSizeForCaptureOptions:(id)arg1;
+- (id)availableImageDataCVPixelFormatTypes;
+- (id)availableImageDataCodecTypes;
+- (id)firstActiveConnection;
+- (id)scaleAndCropDictionary;
 - (BOOL)isHDRCaptureEnabled;
 - (BOOL)isEV0CaptureEnabled;
 - (BOOL)isChromaNoiseReductionEnabled;
-- (void)setChromaNoiseReductionEnabled:(BOOL)arg1;
 - (BOOL)suspendsVideoProcessingDuringStillImageCapture;
-- (BOOL)isCapturingStillImage;
-- (id)firstActiveConnection;
-- (id)scaleAndCropDictionary;
 - (void)configureAndInitiateCopyStillImageForRequest:(id)arg1;
 - (void)handlePhotoTakenForRequest:(id)arg1 info:(id)arg2;
-- (void)_updateStillImageDataSizeForCaptureOptions:(id)arg1;
-- (long long)maxStillImageDataSize;
-- (id)connectionMediaTypes;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
+- (id)connectionMediaTypes;
 - (id)_applyOverridesToCaptureOptions:(id)arg1;
 - (void)setOutputSettings:(id)arg1;
 - (id)outputSettings;
+- (id)init;
+- (void)dealloc;
 
 @end

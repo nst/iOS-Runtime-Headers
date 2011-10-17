@@ -2,34 +2,30 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSDate, EKDayOccurrenceView;
+@class EKCalendarDate, EKDayOccurrenceView;
 
 @interface EKDayViewContentItem : NSObject  {
     unsigned int _eventIndex;
     EKDayOccurrenceView *_view;
-    NSDate *_startDate;
-    NSDate *_endDate;
-    double _duration;
+    EKCalendarDate *_startDate;
+    EKCalendarDate *_endDate;
 }
 
-@property double duration;
-@property(copy) NSDate * endDate;
-@property(copy) NSDate * startDate;
 @property(readonly) unsigned int eventIndex;
 @property(retain) EKDayOccurrenceView * view;
+@property(copy) EKCalendarDate * startDate;
+@property(copy) EKCalendarDate * endDate;
 
 
 - (void)setEndDate:(id)arg1;
-- (double)duration;
+- (void)setStartDate:(id)arg1;
+- (id)endDate;
+- (id)startDate;
 - (void)setView:(id)arg1;
 - (id)view;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setDuration:(double)arg1;
-- (id)startDate;
-- (void)setStartDate:(id)arg1;
 - (id)initWithEventIndex:(unsigned int)arg1;
 - (unsigned int)eventIndex;
-- (id)endDate;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 
 @end

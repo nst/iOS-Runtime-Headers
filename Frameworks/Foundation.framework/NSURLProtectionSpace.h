@@ -4,30 +4,32 @@
 
 @class NSURLProtectionSpaceInternal;
 
-@interface NSURLProtectionSpace : NSObject <NSCopying> {
+@interface NSURLProtectionSpace : NSObject <NSCoding, NSCopying> {
     NSURLProtectionSpaceInternal *_internal;
 }
 
 
-- (id)proxyType;
-- (id)protocol;
-- (int)port;
-- (id)initWithHost:(id)arg1 port:(int)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
-- (id)authenticationMethod;
-- (id)host;
-- (BOOL)isProxy;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithProxyHost:(id)arg1 port:(int)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
-- (id)realm;
-- (BOOL)receivesCredentialSecurely;
-- (id)distinguishedNames;
 - (struct __SecTrust { }*)serverTrust;
-- (id)_initWithCFURLProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
+- (id)distinguishedNames;
+- (BOOL)receivesCredentialSecurely;
+- (id)realm;
+- (id)initWithProxyHost:(id)arg1 port:(int)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
 - (id)_internalInit;
 - (struct _CFURLProtectionSpace { }*)_cfurlprtotectionspace;
+- (id)_initWithCFURLProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
+- (id)protocol;
+- (id)proxyType;
+- (id)initWithHost:(id)arg1 port:(int)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
+- (int)port;
+- (id)authenticationMethod;
+- (id)host;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isProxy;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

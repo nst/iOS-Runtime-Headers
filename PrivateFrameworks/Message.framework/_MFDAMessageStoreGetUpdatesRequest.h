@@ -6,7 +6,9 @@
 }
 
 
-- (unsigned long long)generationNumber;
+- (BOOL)mf_alwaysReportFailures;
+- (id)deferredOperation;
 - (BOOL)shouldSend;
+- (unsigned long long)generationNumber;
 
 @end

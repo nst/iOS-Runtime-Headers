@@ -2,48 +2,39 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSDate, NSString;
+@class NSDate, NSString, GKScoreInternal;
 
 @interface GKScore : NSObject <NSCoding> {
-    long long _value;
-    NSString *_formattedValue;
-    NSString *_category;
-    NSDate *_date;
-    NSString *_playerID;
-    int _rank;
-    BOOL _fakeScore;
+    GKScoreInternal *_internal;
+    BOOL _shouldSetDefaultLeaderboard;
 }
 
-@property BOOL fakeScore;
-@property int rank;
-@property(retain) NSString * playerID;
-@property(retain) NSDate * date;
-@property(retain) NSString * category;
-@property(retain) NSString * formattedValue;
 @property long long value;
+@property(retain) NSString * formattedValue;
+@property(retain) NSString * category;
+@property unsigned long long context;
+@property(readonly) NSDate * date;
+@property(retain) NSString * playerID;
+@property int rank;
+@property BOOL shouldSetDefaultLeaderboard;
+@property(retain) GKScoreInternal * internal;
 
 
-- (void)setPlayerID:(id)arg1;
-- (BOOL)fakeScore;
+- (void)setShouldSetDefaultLeaderboard:(BOOL)arg1;
 - (void)reportScoreWithCompletionHandler:(id)arg1;
-- (void)setFakeScore:(BOOL)arg1;
-- (void)setFormattedValue:(id)arg1;
-- (id)formattedValue;
-- (id)category;
+- (BOOL)shouldSetDefaultLeaderboard;
 - (id)initWithCategory:(id)arg1;
-- (id)playerID;
-- (void)setCategory:(id)arg1;
-- (id)date;
-- (long long)value;
-- (void)setDate:(id)arg1;
-- (void)setValue:(long long)arg1;
-- (id)initWithDictionary:(id)arg1;
+- (id)internal;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (int)rank;
-- (void)setRank:(int)arg1;
 
 @end

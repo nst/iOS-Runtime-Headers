@@ -10,18 +10,18 @@
 }
 
 @property(readonly) NSDictionary * dictRepresentation;
-@property(retain) CoreDAVBulkRequestsItem * simpleItem;
 @property(retain) CoreDAVBulkRequestsItem * crudItem;
+@property(retain) CoreDAVBulkRequestsItem * simpleItem;
 
 
+- (void)setSimpleItem:(id)arg1;
+- (void)setCrudItem:(id)arg1;
+- (id)simpleItem;
+- (id)crudItem;
+- (id)copyParseRules;
+- (id)dictRepresentation;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)description;
-- (id)simpleItem;
-- (void)setSimpleItem:(id)arg1;
-- (id)crudItem;
-- (void)setCrudItem:(id)arg1;
-- (id)dictRepresentation;
-- (id)copyParseRules;
 
 @end

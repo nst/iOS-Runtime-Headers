@@ -19,39 +19,39 @@
 }
 
 
-- (void)setDsymPath:(id)arg1;
-- (unsigned int)compatibilityVersion;
-- (BOOL)isProtected;
-- (id)memory;
-- (id)symbolTable;
-- (id)dySymbolTable;
-- (long long)vmaddrSlide;
+- (unsigned long long)address;
+- (id)signature;
+- (id)path;
+- (unsigned int)currentVersion;
+- (unsigned int)fileType;
+- (id)sections;
+- (void)setPath:(id)arg1;
+- (unsigned int)flags;
+- (id)timestamp;
+- (id)name;
+- (void)setTimestamp:(id)arg1;
 - (id)dsymPath;
+- (void)setDsymPath:(id)arg1;
 - (id)loadCommands;
+- (id)dySymbolTable;
+- (id)commpage;
+- (BOOL)isProtected;
+- (unsigned int)compatibilityVersion;
+- (id)segmentAddresses;
+- (BOOL)isCommpage;
+- (id)dyLinkerPath;
 - (BOOL)isFromSharedCache;
 - (id)segmentNamed:(id)arg1;
-- (id)dyLinkerPath;
-- (BOOL)isCommpage;
-- (id)commpage;
-- (id)segmentAddresses;
+- (id)memory;
+- (id)symbolTable;
 - (unsigned long long)linkEditBase;
-- (BOOL)isMachO;
+- (long long)vmaddrSlide;
 - (id)architecture;
-- (id)regions;
-- (unsigned int)flags;
-- (void)setTimestamp:(id)arg1;
-- (id)path;
-- (id)timestamp;
-- (void)setName:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (id)description;
-- (id)sections;
-- (unsigned int)fileType;
-- (void)setPath:(id)arg1;
-- (unsigned long long)address;
-- (unsigned int)currentVersion;
-- (id)signature;
+- (BOOL)isMachO;
 - (id)uuid;
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)regions;
 
 @end

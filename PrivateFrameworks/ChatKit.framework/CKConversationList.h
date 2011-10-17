@@ -2,47 +2,63 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKService, NSMutableArray, CKConversation;
+@class NSMutableDictionary, NSMutableArray, CKAggregateConversation;
 
 @interface CKConversationList : NSObject  {
     NSMutableArray *_conversations;
-    CKConversation *_pendingConversation;
-    NSMutableArray *_groupsToDelete;
+    CKAggregateConversation *_pendingConversation;
     BOOL _fullyLoaded;
-    BOOL _runningInAppIndexer;
-    CKService *_service;
+    BOOL _loadingConversations;
+    BOOL _needsIncomingConversations;
+    NSMutableDictionary *_recipientHashToConversations;
 }
 
-@property(readonly) CKService * service;
+@property(readonly) BOOL needsIncomingConversations;
+@property(readonly) BOOL loadingConversations;
 
++ (id)sharedConversationList;
 
 - (int)unreadCount;
-- (void)dealloc;
-- (id)conversationForMessage:(id)arg1 create:(BOOL)arg2;
-- (id)service;
-- (void)resort;
-- (id)existingConversationForAddresses:(id)arg1;
-- (id)pendingConversation:(BOOL)arg1;
-- (void)deleteConversationAtIndex:(int)arg1;
-- (id)conversations;
-- (id)initWithService:(id)arg1;
-- (id)_recipientForMessage:(id)arg1;
-- (id)_newConversationForMessage:(id)arg1 groupID:(int)arg2;
-- (id)_conversationForMessage:(id)arg1 groupID:(int)arg2 create:(BOOL)arg3;
-- (id)conversationForGroupID:(int)arg1;
-- (id)existingConversationForGroupID:(int)arg1;
+- (id)conversationForGroupID:(id)arg1 service:(id)arg2;
+- (id)conversationForGroupID:(id)arg1 create:(BOOL)arg2 service:(id)arg3;
+- (id)existingConversationForGroupID:(id)arg1;
+- (id)existingAggregateConversationForGroupID:(id)arg1;
+- (id)conversationForMessage:(id)arg1 create:(BOOL)arg2 service:(id)arg3;
+- (id)existingAggregateConversationForAddresses:(id)arg1;
 - (id)activeConversations;
-- (void)_addGroupToDeletionSchedule:(int)arg1;
-- (void)_deleteGroups;
 - (id)loadedConversations;
+- (void)reloadStaleConversations;
 - (void)reloadConversations;
-- (void)setRunningInAppIndexer;
-- (void)_conversationChanged;
+- (void)deleteConversationAtIndex:(int)arg1;
+- (void)removeConversation:(id)arg1;
+- (id)pendingConversationCreatingIfNecessary;
+- (BOOL)needsIncomingConversations;
+- (void)_abChanged:(id)arg1;
+- (id)_recipientForMessage:(id)arg1;
+- (void)resort;
+- (id)_newConversationForMessage:(id)arg1 groupID:(id)arg2 recipientAddresses:(id)arg3 service:(id)arg4 aggregateConversation:(id*)arg5 updatesDisabled:(BOOL)arg6;
+- (id)_newConversationForMessage:(id)arg1 groupID:(id)arg2 service:(id)arg3 aggregateConversation:(id*)arg4 updatesDisabled:(BOOL)arg5;
 - (void)addConversation:(id)arg1;
+- (id)conversations;
+- (id)_conversationForMessage:(id)arg1 groupID:(id)arg2 create:(BOOL)arg3 service:(id)arg4 aggregateConversation:(id*)arg5;
+- (id)_conversationForRecipients:(id)arg1 create:(BOOL)arg2 service:(id)arg3 aggregateConversation:(id*)arg4;
+- (id)recipientsByService:(id)arg1;
+- (id)aggregateConversationsForRecipients:(id)arg1 create:(BOOL)arg2;
+- (id)conversationForRecipients:(id)arg1 create:(BOOL)arg2 service:(id)arg3;
+- (id)existingConversationForAddresses:(id)arg1;
+- (void)_postConversationListChangedNotification;
+- (BOOL)hasActiveConversations;
+- (void)_addRecipientHash:(id)arg1;
+- (BOOL)loadingConversations;
+- (int)unreadConversationCount;
+- (id)pendingConversation;
+- (BOOL)containsConversation:(id)arg1;
 - (void)applyPendingConversation;
-- (void)fixupNames;
-- (id)conversationForRecipients:(id)arg1 create:(BOOL)arg2;
 - (void)unpendConversation;
+- (id)aggregateConversationForRecipients:(id)arg1 create:(BOOL)arg2;
+- (id)aggregateConversationForRecipients:(id)arg1 create:(BOOL)arg2 service:(id)arg3;
+- (id)init;
+- (void)dealloc;
 - (void)resetCaches;
 
 @end

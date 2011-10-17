@@ -10,21 +10,21 @@
 }
 
 
-- (id)initWithBundleIdentifier:(id)arg1;
-- (id)initWithMachServiceName:(id)arg1;
-- (void)updatePort;
-- (void)hideTopMostMiniAlert:(int)arg1;
-- (void)showTopMostMiniAlert;
-- (void)statusBarWillChangeOrientation:(int)arg1 duration:(float)arg2;
-- (void)simpleRemoteActionDidOccur:(int)arg1;
-- (void)sheetWithRemoteViewIdentifierDidDismiss:(id)arg1;
-- (void)remoteNotificationRegistrationSucceededWithDeviceToken:(id)arg1;
-- (void)remoteNotificationRegistrationFailedWithErrorDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3;
-- (void)remoteNotificationMessageDelivered;
-- (void)localNotificationMessageDelivered:(id)arg1;
-- (void)localNotificationDidSnooze:(id)arg1;
-- (void)backgroundContinuationEnabledDidChange:(BOOL)arg1;
 - (void)wakeTimerFired;
+- (void)backgroundContinuationEnabledDidChange:(BOOL)arg1;
+- (void)localNotificationDidSnooze:(id)arg1;
+- (void)localNotificationMessageDelivered:(id)arg1;
+- (void)remoteNotificationMessageDelivered;
+- (void)remoteNotificationRegistrationFailedWithErrorDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3;
+- (void)remoteNotificationRegistrationSucceededWithDeviceToken:(id)arg1;
+- (void)sheetWithRemoteViewIdentifierDidDismiss:(id)arg1;
+- (void)simpleRemoteActionDidOccur:(int)arg1;
+- (void)statusBarWillChangeOrientation:(int)arg1 duration:(float)arg2;
+- (void)showTopMostMiniAlert;
+- (void)hideTopMostMiniAlert:(int)arg1;
+- (id)initWithBundleIdentifier:(id)arg1;
+- (void)updatePort;
+- (id)initWithMachServiceName:(id)arg1;
 - (void)dealloc;
 
 @end

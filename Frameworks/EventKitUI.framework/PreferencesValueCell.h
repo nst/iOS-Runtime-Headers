@@ -13,7 +13,7 @@
 
 - (void)layoutSubviews;
 - (void)setShortener:(id)arg1;
-- (void)_checkValueWidth;
 - (id)shortener;
+- (void)_checkValueWidth;
 
 @end

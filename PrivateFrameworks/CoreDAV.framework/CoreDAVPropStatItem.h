@@ -11,23 +11,23 @@
     CoreDAVLeafItem *_responseDescription;
 }
 
-@property(retain) CoreDAVLeafItem * responseDescription;
-@property(retain) CoreDAVErrorItem * errorItem;
-@property(retain) CoreDAVItem * prop;
 @property(retain) CoreDAVLeafItem * status;
+@property(retain) CoreDAVItem * prop;
+@property(retain) CoreDAVErrorItem * errorItem;
+@property(retain) CoreDAVLeafItem * responseDescription;
 
 
 - (void)setStatus:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (void)setProp:(id)arg1;
 - (id)prop;
-- (id)copyParseRules;
-- (id)responseDescription;
 - (void)setResponseDescription:(id)arg1;
-- (id)errorItem;
 - (void)setErrorItem:(id)arg1;
+- (id)responseDescription;
+- (id)copyParseRules;
+- (id)errorItem;
 - (id)status;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -9,9 +9,9 @@
 }
 
 
-- (void)setBoundingBox;
 - (void)mapBounds;
 - (id)initWithWDPicture:(id)arg1 parent:(id)arg2;
+- (void)setBoundingBox;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 
 @end

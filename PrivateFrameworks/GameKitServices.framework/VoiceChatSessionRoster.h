@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class VoiceChatMessageSendQueue, NSMutableDictionary, NSString, GKSessionInternal, GKVoiceChatSessionInternal, NSMutableArray;
+@class NSMutableDictionary, NSString, GKSessionInternal, GKVoiceChatSessionInternal, NSMutableArray;
 
 @interface VoiceChatSessionRoster : NSObject  {
     GKSessionInternal *_gkSession;
     NSString *_peerID;
     GKVoiceChatSessionInternal *_gkvs;
-    VoiceChatMessageSendQueue *_sendQueue;
+    struct dispatch_queue_s { } *_sendQueue;
     NSMutableArray *_connectedPeers;
     NSMutableDictionary *_peerStateTable;
     struct _opaque_pthread_mutex_t { 
@@ -26,24 +26,24 @@
 }
 
 
-- (id)initWithGKSession:(id)arg1 peerID:(id)arg2 voiceChatSession:(id)arg3 sendQueue:(id)arg4;
-- (unsigned int)focusID;
-- (void)configureDeviceRating;
-- (BOOL)recalculateFocusRating;
+- (id)initWithGKSession:(id)arg1 peerID:(id)arg2 voiceChatSession:(id)arg3 sendQueue:(struct dispatch_queue_s { }*)arg4;
 - (void)startBeaconWrapper:(id)arg1;
-- (void)startBeacon;
-- (void)updateBeacon;
+- (unsigned int)focusID;
+- (id)subscribedPeers;
 - (void)stopBeacon;
-- (void)sendBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 ToPeer:(id)arg2;
-- (void)sendBeacons;
-- (void)calculateFocus:(id)arg1;
 - (void)peer:(id)arg1 didChangeState:(int)arg2;
 - (void)receivedBeacon:(id)arg1 fromPeer:(id)arg2;
-- (void)processUnsubscribeBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 beaconState:(id)arg2 fromPeer:(id)arg3;
+- (BOOL)recalculateFocusRating;
+- (void)updateBeacon;
+- (void)configureDeviceRating;
+- (void)startBeacon;
+- (void)sendBeacons;
+- (void)calculateFocus:(id)arg1;
+- (void)sendBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 ToPeer:(id)arg2;
 - (void)processSubscribeBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 beaconState:(id)arg2 fromPeer:(id)arg3;
-- (id)subscribedPeers;
+- (void)processUnsubscribeBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 beaconState:(id)arg2 fromPeer:(id)arg3;
 - (BOOL)hasFocus;
-- (void)dealloc;
 - (void)cleanup;
+- (void)dealloc;
 
 @end

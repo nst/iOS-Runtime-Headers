@@ -3,31 +3,30 @@
  */
 
 @interface GMMSetHttpCookieRequest : PBRequest  {
-    BOOL _gmmInstalled;
     BOOL _hasGmmInstalled;
+    BOOL _gmmInstalled;
     BOOL _gmmInvokedViaMimeType;
     BOOL _gmmInvokedViaUrl;
 }
 
-@property BOOL gmmInvokedViaUrl;
-@property BOOL gmmInvokedViaMimeType;
-@property(readonly) BOOL hasGmmInstalled;
+@property BOOL hasGmmInstalled;
 @property BOOL gmmInstalled;
+@property BOOL gmmInvokedViaMimeType;
+@property BOOL gmmInvokedViaUrl;
 
 
-- (unsigned int)requestTypeCode;
-- (Class)responseClass;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasGmmInstalled;
-- (void)setGmmInstalled:(BOOL)arg1;
-- (BOOL)gmmInvokedViaUrl;
-- (void)setGmmInvokedViaUrl:(BOOL)arg1;
-- (BOOL)gmmInvokedViaMimeType;
-- (void)setGmmInvokedViaMimeType:(BOOL)arg1;
-- (BOOL)gmmInstalled;
 - (BOOL)readFrom:(id)arg1;
+- (BOOL)gmmInvokedViaUrl;
+- (BOOL)gmmInvokedViaMimeType;
+- (void)setHasGmmInstalled:(BOOL)arg1;
+- (BOOL)hasGmmInstalled;
+- (BOOL)gmmInstalled;
+- (void)setGmmInvokedViaUrl:(BOOL)arg1;
+- (void)setGmmInvokedViaMimeType:(BOOL)arg1;
+- (void)setGmmInstalled:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

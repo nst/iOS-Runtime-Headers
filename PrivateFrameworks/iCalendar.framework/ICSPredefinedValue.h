@@ -8,10 +8,10 @@
 
 + (id)numberWithLong:(long)arg1;
 
-- (void)getValue:(void*)arg1;
-- (long)longValue;
 - (id)initWithLong:(long)arg1;
 - (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
+- (void)getValue:(void*)arg1;
 - (const char *)objCType;
+- (long)longValue;
 
 @end

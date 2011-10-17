@@ -12,10 +12,10 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
 - (id)title;
-- (void)dealloc;
-- (id)description;
-- (id)subtitle1Description;
 - (id)subtitle1Label;
+- (id)subtitle1Description;
 - (id)initWithURLString:(id)arg1 profile:(id)arg2;
+- (id)description;
+- (void)dealloc;
 
 @end

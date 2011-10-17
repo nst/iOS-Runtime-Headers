@@ -13,15 +13,15 @@
 }
 
 
-- (id)URL;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 URL:(id)arg2;
+- (BOOL)_adjustRangesWithOffset:(int)arg1;
+- (id)resultByAdjustingRangesWithOffset:(int)arg1;
+- (unsigned long long)resultType;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (id)URL;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 URL:(id)arg2;
-- (unsigned long long)resultType;
-- (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (BOOL)_adjustRangesWithOffset:(int)arg1;
+- (void)dealloc;
 
 @end

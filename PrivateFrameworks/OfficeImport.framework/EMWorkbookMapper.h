@@ -32,32 +32,32 @@
     BOOL mLoadingMessageVisible;
 }
 
-+ (void)setBaseDate1904:(BOOL)arg1;
 + (id)cssStyleCache;
-+ (id)borderWidthCache;
++ (void)setBaseDate1904:(BOOL)arg1;
 + (id)baseDate;
 + (id)borderStyleCache;
++ (id)borderWidthCache;
 
-- (void)dealloc;
-- (id)fileName;
-- (id)workbook;
 - (bool)isMultiPage;
 - (BOOL)hasMultipleSheets;
-- (id)_createMainPageAndReturnFront;
-- (id)_mainPageBack;
-- (void)_pushTabForSheet:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)startMappingWithState:(id)arg1;
-- (id)_createStringForSheet:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 andMapper:(id)arg4;
-- (id)createSheetMapperWithEdSheet:(id)arg1;
 - (void)mapBodyStyleAt:(id)arg1;
+- (id)createSheetMapperWithEdSheet:(id)arg1;
+- (id)_createStringForSheet:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 andMapper:(id)arg4;
+- (id)_createMainPageAndReturnFront;
+- (void)_pushTabForSheet:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)_mainPageBack;
 - (id)initWithEDWorkbook:(id)arg1 archiver:(id)arg2;
-- (void)finishMappingWithState:(id)arg1;
+- (void)startMappingWithState:(id)arg1;
 - (void)mapElement:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
-- (id)documentTitle;
-- (id)styleMatrix;
-- (id)archiver;
-- (id)blipAtIndex:(unsigned int)arg1;
+- (void)finishMappingWithState:(id)arg1;
 - (void)setFileName:(id)arg1;
+- (id)archiver;
 - (struct CGSize { float x1; float x2; })pageSizeForDevice;
+- (id)documentTitle;
+- (id)blipAtIndex:(unsigned int)arg1;
+- (id)workbook;
+- (id)styleMatrix;
+- (id)fileName;
+- (void)dealloc;
 
 @end

@@ -5,12 +5,12 @@
 @class NSObject, NSIndexSet;
 
 @interface NSKeyValueChangeDictionary : NSDictionary  {
-    int _retainCountMinusOne;
     struct { 
         unsigned int kind; 
         NSObject *oldValue; 
         NSObject *newValue; 
         NSIndexSet *indexes; 
+        id extraData; 
     } _details;
     NSObject *_originalObservable;
     BOOL _isPriorNotification;
@@ -18,16 +18,13 @@
 }
 
 
-- (id)keyEnumerator;
-- (oneway void)release;
-- (id)retain;
-- (void)dealloc;
-- (id)objectForKey:(id)arg1;
-- (unsigned int)retainCount;
-- (unsigned int)count;
-- (void)setDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; })arg1 originalObservable:(id)arg2;
-- (id)initWithDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; })arg1 originalObservable:(id)arg2 isPriorNotification:(BOOL)arg3;
 - (void)retainObjects;
+- (id)initWithDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; id x5; })arg1 originalObservable:(id)arg2 isPriorNotification:(BOOL)arg3;
+- (void)setDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; id x5; })arg1 originalObservable:(id)arg2;
 - (void)setOriginalObservable:(id)arg1;
+- (id)keyEnumerator;
+- (unsigned int)count;
+- (id)objectForKey:(id)arg1;
+- (void)dealloc;
 
 @end

@@ -2,39 +2,36 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class NSNumber, NSString, SWVicFileLogger;
+@class NSString, SWVicFileLogger;
 
 @interface SWAccessory : NSObject  {
     NSString *_transportType;
     NSString *_serialNumber;
-    NSNumber *_checkpointRegistrationValue;
     NSString *_linkState;
     NSString *_searchState;
     SWVicFileLogger *_vicFileLogger;
 }
 
-@property(retain) SWVicFileLogger * vicFileLogger;
-@property(readonly) NSString * searchState;
-@property(readonly) NSString * linkState;
-@property(readonly) NSNumber * checkpointRegistrationValue;
-@property(readonly) NSString * serialNumber;
 @property(readonly) NSString * transportType;
+@property(readonly) NSString * serialNumber;
+@property(readonly) NSString * linkState;
+@property(readonly) NSString * searchState;
+@property(retain) SWVicFileLogger * vicFileLogger;
 
 
+- (void)setVicFileLogger:(id)arg1;
+- (id)vicFileLogger;
+- (id)searchState;
+- (id)serialNumber;
+- (id)transportType;
+- (void)unlink;
+- (void)cancelSearching;
+- (void)beginSearching;
+- (void)cancelLinking;
+- (void)beginLinking;
+- (id)linkState;
 - (void)deactivate;
 - (id)init;
 - (void)dealloc;
-- (id)searchState;
-- (void)unlink;
-- (id)serialNumber;
-- (id)checkpointRegistrationValue;
-- (id)linkState;
-- (void)beginLinking;
-- (void)cancelLinking;
-- (id)vicFileLogger;
-- (void)setVicFileLogger:(id)arg1;
-- (id)transportType;
-- (void)beginSearching;
-- (void)cancelSearching;
 
 @end

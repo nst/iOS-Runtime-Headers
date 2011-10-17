@@ -15,12 +15,12 @@
 @property(readonly) WebBookmarkCollection * collection;
 
 
-- (id)bookmark;
-- (void)dealloc;
-- (id)description;
-- (id)collection;
 - (id)changeTypeDescription;
 - (id)initWithBookmarkCollection:(id)arg1 bookmark:(id)arg2 changeType:(int)arg3;
+- (id)collection;
+- (id)bookmark;
+- (id)description;
+- (void)dealloc;
 - (int)changeType;
 
 @end

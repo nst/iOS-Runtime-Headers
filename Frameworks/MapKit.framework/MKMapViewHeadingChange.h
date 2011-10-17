@@ -11,22 +11,22 @@
     NSNumber *_rotationDirection;
 }
 
+@property(readonly) CLHeading * heading;
 @property(readonly) MKRotationAnimation * rotationAnimation;
+@property(readonly) BOOL animated;
 @property(readonly) BOOL hasRotationDirection;
 @property int rotationDirection;
-@property(readonly) CLHeading * heading;
-@property(readonly) BOOL animated;
 
 + (id)rotationAnimation;
 
-- (BOOL)animated;
-- (void)dealloc;
-- (id)description;
-- (int)rotationDirection;
-- (void)setRotationDirection:(int)arg1;
-- (id)rotationAnimation;
-- (BOOL)hasRotationDirection;
-- (id)initWithHeading:(id)arg1 animated:(BOOL)arg2;
 - (id)heading;
+- (BOOL)animated;
+- (id)initWithHeading:(id)arg1 animated:(BOOL)arg2;
+- (void)setRotationDirection:(int)arg1;
+- (BOOL)hasRotationDirection;
+- (int)rotationDirection;
+- (id)rotationAnimation;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -11,43 +11,31 @@
     SEL _returnAction;
 }
 
-+ (void)_initializeSafeCategory;
-+ (id)standardTextTableCell;
 
-- (id)textField;
-- (BOOL)canBecomeFirstResponder;
-- (void)_textValueChanged:(id)arg1;
-- (void)setTextFieldOffset:(float)arg1;
 - (void)setPlaceHolderValue:(id)arg1;
-- (void)textFieldDidBecomeFirstResponder:(id)arg1;
-- (id)value;
-- (float)textFieldOffset;
-- (void)setReturnAction:(SEL)arg1;
-- (void)setValueSuffix:(id)arg1;
+- (id)textField;
 - (BOOL)hasValueSuffix;
-- (void)_textFieldStartEditing:(id)arg1;
-- (void)_textFieldEndEditing:(id)arg1;
-- (void)_textFieldEndEditingOnReturn:(id)arg1;
+- (void)setValueSuffix:(id)arg1;
+- (void)setReturnAction:(SEL)arg1;
 - (void)_updateSuffixFrame;
+- (void)_textValueChanged:(id)arg1;
+- (void)_textFieldEndEditingOnReturn:(id)arg1;
+- (void)_textFieldEndEditing:(id)arg1;
+- (void)_textFieldStartEditing:(id)arg1;
+- (id)value;
 - (id)valueTextLabel;
+- (void)setTextFieldOffset:(float)arg1;
+- (float)textFieldOffset;
 - (void)setValue:(id)arg1;
 - (id)_disabledFontColor;
-- (void)setUserInteractionEnabled:(BOOL)arg1;
 - (void)textFieldClearButtonPressed:(id)arg1;
+- (void)textFieldDidBecomeFirstResponder:(id)arg1;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)becomeFirstResponder;
 - (BOOL)resignFirstResponder;
 - (void)layoutSubviews;
-- (BOOL)becomeFirstResponder;
-- (void)dealloc;
+- (void)setUserInteractionEnabled:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)accessibilityLabel;
-- (int)indexOfAccessibilityElement:(id)arg1;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)accessibilityElementCount;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
+- (void)dealloc;
 
 @end

@@ -22,25 +22,27 @@
 }
 
 
-- (void)_readInputFromAccThread;
-- (id)initWithAccessory:(id)arg1 forSession:(id)arg2;
-- (void)_accessoryDidDisconnect:(id)arg1;
-- (void)_performAtEndOfStreamValidation;
-- (void)close;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)_streamEventTrigger;
-- (void)_scheduleCallback;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)open;
-- (unsigned int)streamStatus;
-- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
+- (void)_readInputFromAccThread;
+- (void)endStream;
+- (id)initWithAccessory:(id)arg1 forSession:(id)arg2;
+- (void)_performAtEndOfStreamValidation;
+- (void)openCompleted;
+- (void)_accessoryDidDisconnect:(id)arg1;
+- (void)close;
+- (id)delegate;
 - (BOOL)hasBytesAvailable;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
-- (id)propertyForKey:(id)arg1;
-- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (id)streamError;
+- (unsigned int)streamStatus;
+- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
+- (id)propertyForKey:(id)arg1;
+- (void)_streamEventTrigger;
+- (void)dealloc;
+- (void)_scheduleCallback;
 
 @end

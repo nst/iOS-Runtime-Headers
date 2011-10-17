@@ -9,18 +9,16 @@
     NSString *_handle;
 }
 
-@property(retain) NSString * handle;
 @property(retain) GKPlayer * player;
+@property(retain) NSString * handle;
 
 
-- (id)handle;
-- (void)setHandle:(id)arg1;
-- (id)invalidateCacheKeys;
-- (int)cacheType;
 - (void)setPlayer:(id)arg1;
-- (id)player;
 - (id)key;
 - (id)request;
+- (id)player;
+- (void)setHandle:(id)arg1;
+- (id)handle;
 - (void)dealloc;
 
 @end

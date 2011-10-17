@@ -9,14 +9,14 @@
     int _animationCount;
 }
 
-@property int animationCount;
 @property(retain) NSArray * viewAnimations;
+@property int animationCount;
 
 
 - (id)viewAnimations;
 - (void)setAnimationCount:(int)arg1;
-- (void)setViewAnimations:(id)arg1;
 - (int)animationCount;
+- (void)setViewAnimations:(id)arg1;
 - (void)dealloc;
 
 @end

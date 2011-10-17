@@ -14,21 +14,24 @@
     NSString *_lastName;
 }
 
-@property int mode;
-@property(retain) NSString * lastName;
-@property(retain) NSString * firstName;
-@property(retain) NSString * alias;
-@property(retain) NSString * accountName;
 @property(retain) NSURL * url;
+@property(retain) NSString * accountName;
+@property(retain) NSString * alias;
+@property(retain) NSString * firstName;
+@property(retain) NSString * lastName;
+@property int mode;
 
 
 - (void)processGameKitURLComponents:(id)arg1;
-- (id)firstName;
-- (void)setAlias:(id)arg1;
-- (id)lastName;
-- (id)alias;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
+- (void)setAlias:(id)arg1;
+- (void)finish;
+- (void)setAccountName:(id)arg1;
+- (id)accountName;
+- (id)lastName;
+- (id)firstName;
+- (id)alias;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (int)mode;
@@ -36,8 +39,5 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)dealloc;
-- (void)finish;
-- (void)setAccountName:(id)arg1;
-- (id)accountName;
 
 @end

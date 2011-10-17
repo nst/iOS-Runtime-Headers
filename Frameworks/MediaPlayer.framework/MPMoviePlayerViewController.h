@@ -11,22 +11,22 @@
 @property(readonly) MPMoviePlayerController * moviePlayer;
 
 
-- (void)loadView;
-- (BOOL)canBecomeFirstResponder;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (BOOL)_canReloadView;
-- (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
-- (id)init;
-- (void)remoteControlReceivedWithEvent:(id)arg1;
-- (void)dealloc;
+- (void)_restoreStatusBarAnimated:(BOOL)arg1;
+- (void)_moviePlayerViewController_playbackDidFinishNotification:(id)arg1;
 - (id)moviePlayer;
 - (void)_moviePlayerViewController_applicationDidEnterBackgroundNotification:(id)arg1;
-- (void)_moviePlayerViewController_playbackDidFinishNotification:(id)arg1;
-- (void)_restoreStatusBarAnimated:(BOOL)arg1;
 - (id)initWithContentURL:(id)arg1;
+- (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)_canReloadView;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)canBecomeFirstResponder;
+- (void)remoteControlReceivedWithEvent:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

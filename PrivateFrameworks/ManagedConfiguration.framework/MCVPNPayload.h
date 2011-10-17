@@ -51,34 +51,34 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (id)userName;
+- (void)setPassword:(id)arg1;
+- (id)pin;
 - (id)password;
-- (void)dealloc;
-- (unsigned char)passwordRequired;
-- (unsigned char)pinRequired;
-- (id)passwordKey;
-- (id)pinKey;
-- (void)_validateVPNPayload:(id)arg1;
 - (void)setPin:(id)arg1;
 - (id)sharedSecret;
 - (void)setSharedSecret:(id)arg1;
-- (id)proxyPassword;
 - (void)setProxyPassword:(id)arg1;
 - (id)proxyUserName;
 - (void)setProxyUserName:(id)arg1;
 - (void)setUserName:(id)arg1;
+- (id)pinKey;
 - (id)sharedSecretKey;
 - (id)proxyPasswordKey;
 - (id)proxyUserNameKey;
+- (id)passwordKey;
 - (id)userNameKey;
+- (unsigned char)pinRequired;
 - (unsigned char)sharedSecretRequired;
 - (unsigned char)proxyPasswordRequired;
 - (unsigned char)proxyUserNameRequired;
 - (unsigned char)userNameRequired;
 - (id)atom;
+- (void)_validateVPNPayload:(id)arg1;
+- (id)proxyPassword;
 - (id)certificateUUID;
+- (unsigned char)passwordRequired;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (void)setPassword:(id)arg1;
-- (id)pin;
+- (id)userName;
+- (void)dealloc;
 
 @end

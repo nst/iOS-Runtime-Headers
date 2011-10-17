@@ -6,11 +6,10 @@
 
 @interface CapturedInvocationTrampoline : InvocationTrampoline  {
     NSInvocation **_outInvocation;
-    BOOL _shouldRetainArguments;
 }
 
 
+- (id)initWithTarget:(id)arg1 outInvocation:(id*)arg2;
 - (void)forwardInvocation:(id)arg1;
-- (id)initWithTarget:(id)arg1 outInvocation:(id*)arg2 shouldRetainArguments:(BOOL)arg3;
 
 @end

@@ -2,47 +2,52 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, NSString;
+@class NSString;
 
 @interface GMMRating : PBCodable  {
-    int _starRatingAverage_E3;
-    BOOL _hasStarRatingAverage_E3;
-    int _totalReviews;
+    BOOL _hasStarRatingAverageE3;
+    int _starRatingAverageE3;
     BOOL _hasTotalReviews;
-    NSMutableArray *_numReviewsStarRating1To5s;
+    int _totalReviews;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _numReviewsStarRating1To5s;
     NSString *_snippet;
 }
 
-@property(readonly) int numReviewsStarRating1To5sCount;
+@property BOOL hasStarRatingAverageE3;
+@property int starRatingAverageE3;
+@property BOOL hasTotalReviews;
+@property int totalReviews;
+@property(readonly) unsigned int numReviewsStarRating1To5sCount;
+@property(readonly) int* numReviewsStarRating1To5s;
 @property(readonly) BOOL hasSnippet;
 @property(retain) NSString * snippet;
-@property(retain) NSMutableArray * numReviewsStarRating1To5s;
-@property(readonly) BOOL hasTotalReviews;
-@property int totalReviews;
-@property(readonly) BOOL hasStarRatingAverage_E3;
-@property int starRatingAverage_E3;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (void)setStarRatingAverage_E3:(int)arg1;
-- (void)setTotalReviews:(int)arg1;
-- (int)numReviewsStarRating1To5sCount;
-- (void)setNumReviewsStarRating1To5:(int)arg1 atIndex:(unsigned int)arg2;
-- (int)numReviewsStarRating1To5AtIndex:(unsigned int)arg1;
-- (void)addNumReviewsStarRating1To5:(int)arg1;
-- (BOOL)hasSnippet;
-- (void)setSnippet:(id)arg1;
-- (id)numReviewsStarRating1To5s;
-- (void)setNumReviewsStarRating1To5s:(id)arg1;
-- (BOOL)hasTotalReviews;
-- (BOOL)hasStarRatingAverage_E3;
-- (int)starRatingAverage_E3;
+- (BOOL)readFrom:(id)arg1;
 - (id)snippet;
 - (int)totalReviews;
-- (BOOL)readFrom:(id)arg1;
+- (void)setHasTotalReviews:(BOOL)arg1;
+- (BOOL)hasTotalReviews;
+- (int)starRatingAverageE3;
+- (void)setHasStarRatingAverageE3:(BOOL)arg1;
+- (BOOL)hasStarRatingAverageE3;
+- (BOOL)hasSnippet;
+- (void)setNumReviewsStarRating1To5s:(int*)arg1 count:(unsigned int)arg2;
+- (int)numReviewsStarRating1To5AtIndex:(unsigned int)arg1;
+- (void)addNumReviewsStarRating1To5:(int)arg1;
+- (void)clearNumReviewsStarRating1To5s;
+- (int*)numReviewsStarRating1To5s;
+- (unsigned int)numReviewsStarRating1To5sCount;
+- (void)setTotalReviews:(int)arg1;
+- (void)setStarRatingAverageE3:(int)arg1;
+- (void)setSnippet:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -7,29 +7,34 @@
 @interface GKAuthenticatePlayerRequest : GKDataRequest  {
     NSString *_username;
     NSString *_password;
+    BOOL _validatePasswordOnly;
     NSDictionary *_alertDictionary;
     BOOL _loginDisabled;
 }
 
-@property BOOL loginDisabled;
-@property(retain) NSDictionary * alertDictionary;
-@property(retain) NSString * password;
 @property(retain) NSString * username;
+@property(retain) NSString * password;
+@property BOOL validatePasswordOnly;
+@property(retain) NSDictionary * alertDictionary;
+@property BOOL loginDisabled;
 
 
 - (void)setAlertDictionary:(id)arg1;
-- (BOOL)loginDisabled;
-- (void)setLoginDisabled:(BOOL)arg1;
-- (BOOL)shouldProcessInBackground;
+- (BOOL)validatePasswordOnly;
 - (BOOL)authenticationRequired;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
-- (id)alertDictionary;
-- (id)key;
-- (id)request;
-- (id)password;
-- (void)dealloc;
+- (Class)responseClass;
+- (BOOL)shouldProcessInBackground;
+- (void)setLoginDisabled:(BOOL)arg1;
+- (void)setValidatePasswordOnly:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
+- (BOOL)loginDisabled;
+- (id)alertDictionary;
+- (void)handleResponseFromServer:(id)arg1;
+- (id)password;
+- (id)key;
+- (id)request;
+- (void)dealloc;
 
 @end

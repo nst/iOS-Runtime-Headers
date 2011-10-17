@@ -14,19 +14,19 @@
 }
 
 
-- (void)dealloc;
-- (void)setLineColors:(id)arg1;
-- (void)setTextLineColors:(id)arg1;
-- (void)setTextEffectColors:(id)arg1;
-- (id)fillColors;
 - (void)setFillColors:(id)arg1;
-- (id)lineColors;
-- (id)effectColors;
+- (void)setLineColors:(id)arg1;
 - (void)setEffectColors:(id)arg1;
 - (id)textLineColors;
-- (id)textFillColors;
+- (void)setTextLineColors:(id)arg1;
 - (void)setTextFillColors:(id)arg1;
 - (id)textEffectColors;
+- (void)setTextEffectColors:(id)arg1;
 - (void)applyToShapeStyle:(id)arg1 index:(unsigned int)arg2 count:(unsigned int)arg3 state:(id)arg4;
+- (id)fillColors;
+- (id)lineColors;
+- (id)effectColors;
+- (id)textFillColors;
+- (void)dealloc;
 
 @end

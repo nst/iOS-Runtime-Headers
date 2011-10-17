@@ -10,19 +10,19 @@
     Class _parseClass;
 }
 
-@property Class parseClass;
-@property(retain) NSString * name;
 @property(retain) NSString * nameSpace;
+@property(retain) NSString * name;
+@property Class parseClass;
 
 
-- (void)setName:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (id)description;
-- (void)setParseClass:(Class)arg1;
 - (Class)parseClass;
-- (id)nameSpace;
+- (void)setParseClass:(Class)arg1;
 - (void)setNameSpace:(id)arg1;
 - (id)initWithNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3;
+- (id)nameSpace;
+- (id)name;
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

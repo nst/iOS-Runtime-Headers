@@ -8,15 +8,17 @@
 
 
 - (void)finalize;
-- (oneway void)release;
-- (id)init;
-- (id)retain;
-- (void)dealloc;
+- (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)getValue:(void*)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)retainCount;
-- (id)autorelease;
-- (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
 - (const char *)objCType;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)autorelease;
+- (id)init;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

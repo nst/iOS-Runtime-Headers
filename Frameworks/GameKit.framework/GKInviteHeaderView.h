@@ -12,24 +12,24 @@
     GKRotatedIconView *_iconView;
 }
 
-@property(retain) NSString * title;
-@property(retain) NSURL * fontURL;
-@property(retain) UIImage * outlineImage;
 @property(retain) GKUITheme * theme;
+@property(retain) UIImage * outlineImage;
+@property(retain) NSURL * fontURL;
+@property(retain) NSString * title;
 
 
 - (id)fontURL;
-- (void)setFontURL:(id)arg1;
 - (id)outlineImage;
+- (void)setFontURL:(id)arg1;
 - (void)setOutlineImage:(id)arg1;
 - (void)updateTitle;
-- (void)layoutSubviews;
-- (id)title;
-- (void)dealloc;
-- (void)setTitle:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)theme;
 - (void)setTheme:(id)arg1;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

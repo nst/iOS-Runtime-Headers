@@ -13,29 +13,29 @@
     BOOL _vertical;
 }
 
-@property(getter=isVertical) BOOL vertical;
-@property float splitPosition;
-@property(retain) UIView * secondView;
-@property float minimumPaneSize;
-@property int layoutType;
 @property(retain) UIView * firstView;
+@property int layoutType;
+@property(retain) UIView * secondView;
+@property float splitPosition;
+@property(getter=isVertical) BOOL vertical;
+@property float minimumPaneSize;
 
 
 - (void)layoutSubviews;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)_minimumPaneSizeForLayout;
+- (void)dealloc;
 - (id)secondView;
 - (id)firstView;
-- (void)setMinimumPaneSize:(float)arg1;
-- (void)setFirstView:(id)arg1;
+- (float)_minimumPaneSizeForLayout;
 - (void)setSecondView:(id)arg1;
-- (float)minimumPaneSize;
-- (BOOL)isVertical;
-- (void)setLayoutType:(int)arg1;
-- (void)setSplitPosition:(float)arg1;
+- (void)setFirstView:(id)arg1;
+- (void)setMinimumPaneSize:(float)arg1;
 - (void)setVertical:(BOOL)arg1;
+- (void)setSplitPosition:(float)arg1;
+- (void)setLayoutType:(int)arg1;
+- (BOOL)isVertical;
 - (float)splitPosition;
+- (float)minimumPaneSize;
 - (int)layoutType;
 
 @end

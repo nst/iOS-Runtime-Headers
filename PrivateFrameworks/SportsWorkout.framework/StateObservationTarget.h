@@ -6,19 +6,19 @@
 
 @interface StateObservationTarget : ObservationTarget  {
     NSString *_oldState;
-    NSString *_newState;
+    NSString *_currentState;
 }
 
-@property(retain) NSString * newState;
 @property(retain) NSString * oldState;
+@property(retain) NSString * currentState;
 
 + (id)targetWithOldState:(id)arg1 newState:(id)arg2 selector:(SEL)arg3;
 
-- (void)dealloc;
-- (id)description;
-- (id)newState;
-- (void)setNewState:(id)arg1;
 - (id)oldState;
 - (void)setOldState:(id)arg1;
+- (void)setCurrentState:(id)arg1;
+- (id)currentState;
+- (id)description;
+- (void)dealloc;
 
 @end

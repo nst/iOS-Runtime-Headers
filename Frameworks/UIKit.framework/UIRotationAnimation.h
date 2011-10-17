@@ -8,8 +8,8 @@
 }
 
 
-- (void)setStartRotationAngle:(float)arg1;
 - (void)setEndRotationAngle:(float)arg1;
+- (void)setStartRotationAngle:(float)arg1;
 - (void)setProgress:(float)arg1;
 
 @end

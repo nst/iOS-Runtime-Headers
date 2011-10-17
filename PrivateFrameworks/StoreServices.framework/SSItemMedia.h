@@ -13,26 +13,26 @@
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(getter=isProtectedMedia,readonly) BOOL protectedMedia;
-@property(copy) NSString * mediaKind;
-@property(readonly) long long mediaFileSize;
-@property(readonly) int fullDurationInMilliseconds;
 @property(readonly) int durationInMilliseconds;
+@property(copy) NSString * mediaKind;
+@property(getter=isProtectedMedia,readonly) BOOL protectedMedia;
+@property(readonly) NSURL * URL;
+@property(readonly) int fullDurationInMilliseconds;
+@property(readonly) long long mediaFileSize;
 
 
-- (id)URL;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (int)durationInMilliseconds;
-- (id)initWithStoreOfferDictionary:(id)arg1;
 - (BOOL)isProtectedMedia;
 - (void)setMediaKind:(id)arg1;
-- (long long)mediaFileSize;
-- (int)fullDurationInMilliseconds;
+- (id)initWithStoreOfferDictionary:(id)arg1;
+- (int)durationInMilliseconds;
+- (id)URL;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)mediaKind;
+- (int)fullDurationInMilliseconds;
+- (long long)mediaFileSize;
 
 @end

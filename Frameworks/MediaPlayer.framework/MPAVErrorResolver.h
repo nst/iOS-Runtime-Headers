@@ -11,9 +11,9 @@
 @property <MPAVErrorResolverDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (void)sendDidResolveError:(id)arg1 withResolution:(int)arg2;
 - (void)resolveError:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 
 @end

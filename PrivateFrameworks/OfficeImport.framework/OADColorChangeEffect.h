@@ -10,15 +10,15 @@
 }
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)setStyleColor:(id)arg1;
 - (void)setFromColor:(id)arg1;
 - (void)setToColor:(id)arg1;
-- (void)setStyleColor:(id)arg1;
 - (id)fromColor;
 - (id)toColor;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

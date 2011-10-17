@@ -11,23 +11,18 @@
     BOOL _isTruncatingNotes;
 }
 
+@property(readonly) BOOL isTruncatingNotes;
 @property(retain) UIFont * _font;
-@property BOOL isTruncatingNotes;
 
-+ (void)_initializeSafeCategory;
 
 - (BOOL)update;
 - (id)_font;
-- (void)dealloc;
-- (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (BOOL)isTruncatingNotes;
 - (struct CGSize { float x1; float x2; })_truncatedNotesViewSize:(float)arg1;
-- (void)set_font:(id)arg1;
-- (void)setIsTruncatingNotes:(BOOL)arg1;
 - (id)_notesView;
+- (void)set_font:(id)arg1;
 - (id)_notesTitleView;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (id)accessibilityValue;
+- (void)layoutForWidth:(float)arg1 position:(int)arg2;
+- (void)dealloc;
 
 @end

@@ -10,15 +10,15 @@
     UIView *_separator;
 }
 
-@property(retain) UIView * separatorView;
 @property(retain) UIControl * reorderControl;
+@property(retain) UIView * separatorView;
 
 
+- (void)setSeparatorView:(id)arg1;
+- (id)separatorView;
+- (void)setReorderControl:(id)arg1;
 - (id)reorderControl;
 - (BOOL)dataRequired;
-- (id)separatorView;
-- (void)setSeparatorView:(id)arg1;
-- (void)setReorderControl:(id)arg1;
 - (void)dealloc;
 
 @end

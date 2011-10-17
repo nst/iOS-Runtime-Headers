@@ -10,9 +10,9 @@
 @property(copy,readonly) NSString * type;
 
 
-- (id)type;
 - (void)finalize;
-- (void)dealloc;
 - (BOOL)matchMedium:(id)arg1;
+- (id)type;
+- (void)dealloc;
 
 @end

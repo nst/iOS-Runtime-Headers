@@ -13,22 +13,26 @@
 
 - (id)init;
 - (void)dealloc;
-- (BOOL)isEmailConfigured;
 - (BOOL)isSensitiveUIAllowed;
 - (BOOL)hasCellularDataCapability;
-- (BOOL)isConferencingEverGonnaBeAvailable;
-- (BOOL)hasPreviouslyConferencedWithID:(id)arg1;
-- (id)conferenceURLForDestinationID:(id)arg1;
-- (void)_checkRingtoneStoreAvailability;
-- (BOOL)isRingtoneStoreAvailable;
-- (void)setIsRingtoneStoreAvailable:(BOOL)arg1;
-- (BOOL)hasCellularTelephonyCapability;
-- (id)conferenceURLForPhoneNumber:(id)arg1;
 - (BOOL)hasAdditionalTextTones;
+- (BOOL)isRingtoneStoreAvailable;
+- (void)_checkRingtoneStoreAvailability;
+- (void)setIsRingtoneStoreAvailable:(BOOL)arg1;
+- (BOOL)hasPreviouslyConferencedWithID:(id)arg1;
+- (BOOL)isConferencingEverGonnaBeAvailable;
+- (BOOL)isEmailConfigured;
+- (BOOL)isTwitterServiceAvailable;
+- (BOOL)hasCellularTelephonyCapability;
 - (BOOL)isConferencingAvailable;
-- (BOOL)hasSMSCapability;
+- (id)conferenceURLForPhoneNumber:(id)arg1;
+- (id)conferenceURLForDestinationID:(id)arg1;
 - (BOOL)isMMSConfigured;
 - (BOOL)hasCameraCapability;
+- (BOOL)hasVibratorCapability;
+- (BOOL)areCustomVibrationsEnabled;
 - (BOOL)hasTelephonyCapability;
+- (BOOL)hasSMSCapability;
+- (BOOL)isMadridConfigured;
 
 @end

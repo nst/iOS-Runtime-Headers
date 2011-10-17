@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface NSFontManagerStub  {
 }
+
++ (/* Warning: Unrecognized filer type: '' using 'void*' */ void*)initialize;
+     /* Encoded args for previous method:  */
 
 
 

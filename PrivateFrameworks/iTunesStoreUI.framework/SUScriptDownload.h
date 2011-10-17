@@ -9,20 +9,21 @@
     NSString *_phase;
 }
 
-@property(getter=_adamID,setter=set_adamID:,retain) NSNumber * adamID;
-@property(getter=_phase,setter=set_phase:,retain) NSString * phase;
+@property(readonly) NSNumber * adamID;
+@property(readonly) NSString * phase;
 
-+ (id)phaseStringForDownload:(id)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
++ (id)phaseStringForDownload:(id)arg1;
 
+- (id)adamID;
+- (id)attributeKeys;
+- (id)phase;
 - (void)dealloc;
-- (id)_phase;
-- (id)_adamID;
+- (BOOL)isEqualToDownload:(id)arg1;
 - (id)initWithAdamID:(id)arg1 phase:(id)arg2;
 - (id)initWithDownload:(id)arg1;
-- (BOOL)isEqualToDownload:(id)arg1;
-- (void)set_adamID:(id)arg1;
-- (void)set_phase:(id)arg1;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

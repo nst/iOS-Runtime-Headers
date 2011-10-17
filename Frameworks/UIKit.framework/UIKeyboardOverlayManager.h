@@ -9,10 +9,10 @@
 + (BOOL)overlaysEnabled;
 + (id)sharedInstance;
 
-- (id)overlayList;
 - (id)localizedNameForOverlay:(id)arg1;
+- (id)overlayList;
+- (void)modifyKeyboard:(id)arg1 withOverlay:(id)arg2;
 - (id)baseLayoutForOverlay:(id)arg1;
 - (BOOL)overlayNameIsValid:(id)arg1;
-- (void)modifyKeyboard:(id)arg1 withOverlay:(id)arg2;
 
 @end

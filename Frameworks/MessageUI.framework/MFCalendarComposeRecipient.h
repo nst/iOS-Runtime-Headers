@@ -13,12 +13,12 @@
 
 
 - (id)displayString;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)initWithComposeRecipient:(id)arg1;
 - (void)setCalAttendeeName:(id)arg1;
 - (void)setParticipant:(id)arg1;
 - (id)participant;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

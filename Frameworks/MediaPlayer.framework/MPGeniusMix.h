@@ -13,28 +13,27 @@
 
 @property(readonly) NSString * name;
 @property(readonly) MPMediaQuery * seedTracksQuery;
-@property(readonly) NSArray * representativeArtists;
 @property(readonly) MPMediaPlaylist * playlist;
+@property(readonly) NSArray * representativeArtists;
 
-+ (id)artworkImageForMediaItem:(id)arg1;
 + (id)artworkCacheDirectoryPath;
++ (id)artworkImageForMediaItem:(id)arg1;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)seedTracksQuery;
-- (id)representativeArtists;
-- (unsigned int)countOfRepresentativeImagesWithMaxCount:(unsigned int)arg1;
-- (struct CGImage { }*)representativeImageWithSize:(struct CGSize { float x1; float x2; })arg1 count:(unsigned int)arg2 cacheOnly:(BOOL)arg3;
-- (struct CGImage { }*)_newCGImageForArtworkData:(id)arg1 artworkInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg2;
-- (id)_cacheDirectoryPath;
-- (id)_cachedRepresentativeImagePath;
 - (id)playlist;
-- (id)initWithMPMediaPlaylist:(id)arg1;
+- (id)representativeArtists;
+- (id)_cacheDirectoryPath;
+- (unsigned int)countOfRepresentativeImagesWithMaxCount:(unsigned int)arg1;
+- (id)_cachedRepresentativeImagePath;
+- (struct CGImage { }*)representativeImageWithSize:(struct CGSize { float x1; float x2; })arg1 count:(unsigned int)arg2 cacheOnly:(BOOL)arg3;
+- (id)seedTracksQuery;
 - (struct CGImage { }*)representativeImageWithSize:(struct CGSize { float x1; float x2; })arg1 count:(unsigned int)arg2;
+- (id)initWithMPMediaPlaylist:(id)arg1;
+- (id)name;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -12,12 +12,12 @@
 @property(retain) UIBarButtonItem * secondaryLeftBarButtonItem;
 
 
-- (id)titleView;
 - (void)setTitleView:(id)arg1;
+- (id)titleView;
 - (void)_setReturnsInternalTitleView:(BOOL)arg1;
 - (void)setSecondaryLeftBarButtonItem:(id)arg1;
-- (id)secondaryLeftBarButtonItem;
-- (id)internalTitleView;
 - (void)setSecondaryLeftBarButtonItem:(id)arg1 animated:(BOOL)arg2;
+- (id)internalTitleView;
+- (id)secondaryLeftBarButtonItem;
 
 @end

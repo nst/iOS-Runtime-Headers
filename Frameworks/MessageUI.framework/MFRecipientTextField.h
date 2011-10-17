@@ -5,11 +5,9 @@
 @interface MFRecipientTextField : UITextField  {
 }
 
-+ (void)_initializeSafeCategory;
 
-- (id)_previousKeyResponder;
 - (id)customOverlayContainer;
 - (BOOL)becomeFirstResponder;
-- (id)accessibilityLabel;
+- (id)_previousKeyResponder;
 
 @end

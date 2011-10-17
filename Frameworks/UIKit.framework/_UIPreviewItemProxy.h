@@ -8,20 +8,29 @@
     NSURL *_URL;
     NSURL *_previewURLOverride;
     NSString *_name;
+    NSURL *_URLToDeleteOnDealloc;
+    NSString *_previewItemContentType;
 }
 
-@property(copy) NSString * previewItemTitle;
-@property(copy) NSURL * previewItemURLOverride;
 @property(copy) NSURL * previewItemURL;
+@property(copy) NSURL * previewItemURLOverride;
+@property(copy) NSString * previewItemTitle;
+@property(copy) NSURL * URLToDeleteOnDealloc;
+@property(copy) NSString * previewItemContentType;
 
 
-- (id)previewItemURLForDisplay;
-- (id)previewItemTitle;
+- (void)setURLToDeleteOnDealloc:(id)arg1;
+- (id)URLToDeleteOnDealloc;
 - (void)setPreviewItemTitle:(id)arg1;
-- (id)previewItemURLOverride;
+- (id)previewItemTitle;
 - (void)setPreviewItemURLOverride:(id)arg1;
-- (id)previewItemURL;
 - (void)setPreviewItemURL:(id)arg1;
+- (id)previewItemURLForDisplay;
+- (id)_primitive_previewItemContentType;
+- (id)previewItemContentType;
+- (void)setPreviewItemContentType:(id)arg1;
+- (id)previewItemURLOverride;
+- (id)previewItemURL;
 - (void)dealloc;
 
 @end

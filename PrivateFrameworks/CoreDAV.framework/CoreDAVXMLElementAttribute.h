@@ -10,20 +10,20 @@
     NSString *_value;
 }
 
-@property(retain) NSString * value;
-@property(retain) NSString * nameSpace;
 @property(retain) NSString * name;
+@property(retain) NSString * nameSpace;
+@property(retain) NSString * value;
 
 
+- (id)initWithNameSpace:(id)arg1 name:(id)arg2 value:(id)arg3;
+- (void)setNameSpace:(id)arg1;
+- (id)nameSpace;
 - (id)value;
 - (void)setValue:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)name;
+- (void)setName:(id)arg1;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)description;
-- (id)initWithNameSpace:(id)arg1 name:(id)arg2 value:(id)arg3;
-- (id)nameSpace;
-- (void)setNameSpace:(id)arg1;
 
 @end

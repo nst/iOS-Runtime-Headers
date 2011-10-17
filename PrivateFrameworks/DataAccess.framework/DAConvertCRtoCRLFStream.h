@@ -32,23 +32,23 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
+- (void)open;
 - (void)close;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (void)_streamEventTrigger;
-- (void)_scheduleCallback;
-- (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
+- (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)open;
-- (unsigned int)streamStatus;
-- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (BOOL)hasBytesAvailable;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
+- (unsigned int)streamStatus;
+- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)_streamEventTrigger;
+- (void)dealloc;
 - (id)initWithMIMEData:(id)arg1 preflightData:(id)arg2 postflightData:(id)arg3 intendToStream:(BOOL)arg4;
+- (void)_scheduleCallback;
 
 @end

@@ -11,28 +11,28 @@
     SUScriptViewController *_viewController;
 }
 
-@property(getter=_badgeValue,setter=set_badgeValue:,retain) NSString * badgeValue;
-@property(getter=_identifier,setter=set_identifier:,retain) NSString * identifier;
-@property(getter=_transient,setter=set_transient:) BOOL transient;
-@property(getter=_viewController,setter=set_viewController:,retain) SUScriptViewController * viewController;
+@property(retain) NSString * badgeValue;
+@property(readonly) NSString * identifier;
+@property(readonly) BOOL transient;
+@property(readonly) SUScriptViewController * viewController;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
+- (id)attributeKeys;
+- (id)badgeValue;
+- (void)setBadgeValue:(id)arg1;
+- (id)viewController;
+- (id)identifier;
 - (void)dealloc;
-- (id)_viewController;
-- (BOOL)_transient;
-- (id)_badgeValue;
-- (id)initWithNativeSection:(id)arg1;
-- (void)set_badgeValue:(id)arg1;
-- (void)set_identifier:(id)arg1;
-- (void)set_transient:(BOOL)arg1;
-- (void)set_viewController:(id)arg1;
-- (id)_copyBadgeValue;
+- (BOOL)transient;
 - (id)_copyViewController;
+- (id)_copyBadgeValue;
 - (void)_setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
-- (id)_identifier;
+- (id)initWithNativeSection:(id)arg1;
 - (void)setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

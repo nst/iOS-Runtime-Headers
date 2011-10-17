@@ -20,28 +20,28 @@
 }
 
 + (int)activeThreadCount;
-+ (double)_performSelector:(SEL)arg1 withThreadKey:(id)arg2 onTarget:(id)arg3 waitTime:(double)arg4 cancelMask:(unsigned long)arg5 count:(unsigned long)arg6 firstObject:(id)arg7 moreObjects:(void*)arg8;
 + (double)lastStartTimeForKey:(id)arg1;
 + (void)invalidateForKey:(id)arg1;
 + (void)postStopNotification;
-+ (id)activity;
++ (double)_performSelector:(SEL)arg1 withThreadKey:(id)arg2 onTarget:(id)arg3 waitTime:(double)arg4 cancelMask:(unsigned long)arg5 count:(unsigned long)arg6 firstObject:(id)arg7 moreObjects:(void*)arg8;
 + (void)initialize;
++ (id)activity;
 
-- (id)_initWithKey:(id)arg1 task:(id)arg2;
-- (void)_runThread:(id)arg1;
-- (double)_performSelector:(SEL)arg1 onTarget:(id)arg2 cancelMask:(unsigned long)arg3 count:(unsigned long)arg4 firstObject:(id)arg5 moreObjects:(void*)arg6;
-- (double)performSelector:(SEL)arg1 onTarget:(id)arg2 count:(unsigned long)arg3 objects:(id)arg4;
-- (double)performSelector:(SEL)arg1 onTarget:(id)arg2 cancelMask:(unsigned long)arg3 count:(unsigned long)arg4 objects:(id)arg5;
-- (void)setIsInvalid:(BOOL)arg1;
-- (BOOL)isInvalid;
-- (double)lastStartTime;
-- (void)_enqueueTask:(id)arg1 cancelMask:(unsigned long)arg2 lastStartTime:(double*)arg3;
-- (void)_processQueueFromTimer;
 - (void)_processQueue;
+- (void)_setName:(id)arg1;
+- (double)performSelector:(SEL)arg1 onTarget:(id)arg2 cancelMask:(unsigned long)arg3 count:(unsigned long)arg4 objects:(id)arg5;
+- (id)_initWithKey:(id)arg1 task:(id)arg2;
+- (void)_enqueueTask:(id)arg1 cancelMask:(unsigned long)arg2 lastStartTime:(double*)arg3;
+- (double)lastStartTime;
+- (void)setIsInvalid:(BOOL)arg1;
+- (void)_runThread:(id)arg1;
+- (double)performSelector:(SEL)arg1 onTarget:(id)arg2 count:(unsigned long)arg3 objects:(id)arg4;
+- (BOOL)isInvalid;
+- (double)_performSelector:(SEL)arg1 onTarget:(id)arg2 cancelMask:(unsigned long)arg3 count:(unsigned long)arg4 firstObject:(id)arg5 moreObjects:(void*)arg6;
+- (void)_processQueueFromTimer;
+- (void)_setKey:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)_setKey:(id)arg1;
-- (void)_setName:(id)arg1;
 
 @end

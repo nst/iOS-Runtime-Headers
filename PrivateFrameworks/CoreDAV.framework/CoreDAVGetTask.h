@@ -6,18 +6,23 @@
 
 @interface CoreDAVGetTask : CoreDAVTask  {
     id _appSpecificDataItemResult;
+    BOOL _forceNoCache;
 }
 
-@property(retain) id appSpecificDataItemResult;
 @property <CoreDAVTaskDelegate> * delegate;
+@property(retain) id appSpecificDataItemResult;
+@property BOOL forceNoCache;
 
 
-- (void)dealloc;
-- (id)description;
+- (void)setForceNoCache:(BOOL)arg1;
 - (void)setAppSpecificDataItemResult:(id)arg1;
-- (void)finishCoreDAVTaskWithError:(id)arg1;
+- (BOOL)forceNoCache;
 - (id)appSpecificDataItemResult;
 - (id)copyDefaultParserForContentType:(id)arg1;
+- (void)finishCoreDAVTaskWithError:(id)arg1;
+- (unsigned int)cachePolicy;
+- (id)description;
+- (void)dealloc;
 - (id)httpMethod;
 - (id)requestBody;
 

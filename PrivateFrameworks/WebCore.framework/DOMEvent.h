@@ -19,15 +19,12 @@
 @property BOOL cancelBubble;
 
 
-- (id)type;
 - (void)finalize;
-- (id)target;
-- (void)dealloc;
-- (unsigned long long)timeStamp;
 - (id)currentTarget;
 - (unsigned short)eventPhase;
 - (BOOL)bubbles;
 - (BOOL)cancelable;
+- (unsigned long long)timeStamp;
 - (BOOL)defaultPrevented;
 - (id)srcElement;
 - (BOOL)returnValue;
@@ -39,5 +36,8 @@
 - (void)initEvent:(id)arg1 :(BOOL)arg2 :(BOOL)arg3;
 - (void)stopImmediatePropagation;
 - (void)setReturnValue:(BOOL)arg1;
+- (id)type;
+- (id)target;
+- (void)dealloc;
 
 @end

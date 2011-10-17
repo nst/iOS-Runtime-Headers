@@ -10,19 +10,19 @@
     <PBMessageStreamDelegate> *_delegate;
 }
 
+@property(retain) PBStreamReader * reader;
 @property Class classOfNextMessage;
 @property(retain) <PBMessageStreamDelegate> * delegate;
-@property(retain) PBStreamReader * reader;
 
 
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (id)initWithStream:(id)arg1;
 - (id)reader;
 - (void)setReader:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setClassOfNextMessage:(Class)arg1;
 - (id)nextMessage;
 - (Class)classOfNextMessage;
-- (void)setClassOfNextMessage:(Class)arg1;
+- (id)delegate;
+- (void)dealloc;
 
 @end

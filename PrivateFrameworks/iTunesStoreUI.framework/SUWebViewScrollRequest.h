@@ -18,13 +18,13 @@
     SUDOMElement *_element;
 }
 
-@property(retain) SUDOMElement * element;
-@property(copy) id completionHandler;
 @property BOOL animated;
+@property(copy) id completionHandler;
+@property(retain) SUDOMElement * element;
 
 
-- (id)completionHandler;
 - (void)setCompletionHandler:(id)arg1;
+- (id)completionHandler;
 - (BOOL)animated;
 - (void)setAnimated:(BOOL)arg1;
 - (void)dealloc;

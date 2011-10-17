@@ -2,22 +2,11 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray;
-
 @interface GKGetIncomingFriendRequestsDataRequest : GKDataRequest  {
-    NSArray *_friendRequests;
 }
 
-@property(readonly) NSArray * friendRequests;
 
-
-- (int)cachePriority;
-- (int)cacheType;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
-- (id)friendRequests;
-- (id)cacheKey;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

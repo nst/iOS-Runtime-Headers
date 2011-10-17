@@ -9,7 +9,7 @@
 
 
 - (id)initWithBytes:(char *)arg1 length:(unsigned int)arg2;
-- (void)dealloc;
 - (id)propertyListWithError:(id*)arg1;
+- (void)dealloc;
 
 @end

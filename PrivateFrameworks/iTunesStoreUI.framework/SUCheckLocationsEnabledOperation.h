@@ -7,8 +7,8 @@
     int _updateDistance;
 }
 
-@property int updateDistance;
 @property BOOL locationsEnabled;
+@property int updateDistance;
 
 
 - (void)run;

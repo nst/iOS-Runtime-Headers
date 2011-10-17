@@ -21,23 +21,23 @@
 @property(retain,readonly) NSString * netServiceName;
 @property(retain,readonly) NSString * netServiceDomain;
 
-+ (id)hostWithName:(id)arg1 address:(id)arg2 port:(unsigned int)arg3;
-+ (id)hostWithName:(id)arg1 netServiceName:(id)arg2 netServiceDomain:(id)arg3;
 + (id)hostWithName:(id)arg1 netService:(id)arg2;
 + (id)fromAddressAsText:(id)arg1 withName:(id)arg2;
++ (id)hostWithName:(id)arg1 netServiceName:(id)arg2 netServiceDomain:(id)arg3;
++ (id)hostWithName:(id)arg1 address:(id)arg2 port:(unsigned int)arg3;
 
+- (id)address;
 - (id)displayName;
 - (unsigned int)port;
 - (id)host;
-- (void)setName:(id)arg1;
 - (id)name;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)address;
-- (id)netServiceName;
-- (id)netServiceDomain;
 - (BOOL)hasSameAddressAs:(id)arg1;
 - (id)addressAsText;
+- (id)netServiceName;
+- (id)netServiceDomain;
+- (void)setName:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

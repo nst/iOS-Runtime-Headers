@@ -2,21 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MimePart;
-
 @interface MimeTextAttachment : MessageTextAttachment  {
-    MimePart *_mimePart;
 }
 
 
-- (id)displayedMimePart;
+- (id)_displayedMimePart;
 - (id)initWithMimePart:(id)arg1;
 - (BOOL)hasBeenDownloaded;
-- (id)mimePart;
-- (id)fileWrapperForcingDownload:(BOOL)arg1;
-- (void)dealloc;
-- (id)description;
+- (void)download;
 - (unsigned int)approximateSize;
-- (void)setMimePart:(id)arg1;
 
 @end

@@ -5,49 +5,49 @@
 @interface NSCharacterSet : NSObject <NSCopying, NSMutableCopying, NSCoding> {
 }
 
-+ (id)punctuationCharacterSet;
-+ (id)symbolCharacterSet;
-+ (id)alphanumericCharacterSet;
-+ (void)initialize;
-+ (id)whitespaceCharacterSet;
-+ (id)characterSetWithCharactersInString:(id)arg1;
-+ (id)decimalDigitCharacterSet;
-+ (id)whitespaceAndNewlineCharacterSet;
 + (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-+ (id)uppercaseLetterCharacterSet;
-+ (id)controlCharacterSet;
-+ (id)letterCharacterSet;
-+ (id)lowercaseLetterCharacterSet;
-+ (id)nonBaseCharacterSet;
-+ (id)decomposableCharacterSet;
++ (id)characterSetWithBitmapRepresentation:(id)arg1;
 + (id)illegalCharacterSet;
 + (id)capitalizedLetterCharacterSet;
++ (id)decomposableCharacterSet;
++ (id)nonBaseCharacterSet;
++ (id)controlCharacterSet;
++ (id)letterCharacterSet;
 + (id)newlineCharacterSet;
-+ (id)characterSetWithBitmapRepresentation:(id)arg1;
++ (id)symbolCharacterSet;
++ (id)punctuationCharacterSet;
++ (id)alphanumericCharacterSet;
++ (id)characterSetWithCharactersInString:(id)arg1;
++ (id)decimalDigitCharacterSet;
++ (void)initialize;
++ (id)whitespaceCharacterSet;
 + (id)characterSetWithContentsOfFile:(id)arg1;
++ (id)lowercaseLetterCharacterSet;
++ (id)uppercaseLetterCharacterSet;
++ (id)whitespaceAndNewlineCharacterSet;
 + (id)CJKCharacterSet;
-+ (id)whitespaceNewlineAndSpecialCharacterSet;
 + (id)wordBreakCharacterSet;
++ (id)whitespaceNewlineAndSpecialCharacterSet;
 
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)invertedSet;
-- (BOOL)characterIsMember:(unsigned short)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isEmpty;
-- (unsigned int)count;
-- (BOOL)isSupersetOfSet:(id)arg1;
-- (void)makeImmutable;
 - (id)_retainedBitmapRepresentation;
+- (void)makeImmutable;
 - (BOOL)isMutable;
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)invertedSet;
 - (BOOL)longCharacterIsMember:(unsigned long)arg1;
+- (BOOL)isEmpty;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)hasMemberInPlane:(unsigned char)arg1;
+- (BOOL)isSupersetOfSet:(id)arg1;
 - (id)bitmapRepresentation;
 - (unsigned long)_cfTypeID;
+- (unsigned int)count;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)characterIsMember:(unsigned short)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 
 @end

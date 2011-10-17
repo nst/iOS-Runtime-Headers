@@ -18,17 +18,17 @@
 + (id)memoryWithMachTaskContainer:(id)arg1;
 + (id)memoryWithMachTaskContainer:(id)arg1 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2 architecture:(id)arg3;
 
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
+- (id)view;
 - (id)initWithMachTaskContainer:(id)arg1 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2 architecture:(id)arg3;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })regionAtAddress:(unsigned long long)arg1 minProtection:(int)arg2;
 - (id)swappedView;
-- (id)memoryFromSubRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 mapToAddress:(unsigned long long)arg2 architecture:(id)arg3;
-- (id)memoryAtAddress:(unsigned long long)arg1 maxSize:(unsigned long long)arg2;
 - (id)machTaskContainer;
+- (id)memoryAtAddress:(unsigned long long)arg1 maxSize:(unsigned long long)arg2;
 - (BOOL)isContiguous;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
 - (id)architecture;
-- (id)view;
-- (void)dealloc;
+- (id)memoryFromSubRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 mapToAddress:(unsigned long long)arg2 architecture:(id)arg3;
 - (id)description;
+- (void)dealloc;
 
 @end

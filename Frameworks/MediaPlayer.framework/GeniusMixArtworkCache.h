@@ -10,18 +10,17 @@
 }
 
 @property(readonly) unsigned int coverCount;
-@property(readonly) struct CGSize { float width; float height; } coverSize;
+@property(readonly) struct CGSize { float x1; float x2; } coverSize;
 @property(readonly) struct CGImage { }* artworkImage;
 
 + (id)artworkCacheWithCoverCount:(unsigned int)arg1 coverSize:(struct CGSize { float x1; float x2; })arg2 artworkData:(void*)arg3 length:(unsigned int)arg4;
 + (id)artworkCacheWithContentsOfFile:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
+- (struct CGSize { float x1; float x2; })coverSize;
 - (unsigned int)coverCount;
 - (BOOL)writeToFile:(id)arg1;
-- (void)_cleanUpCachesInBackground;
-- (struct CGSize { float x1; float x2; })coverSize;
 - (struct CGImage { }*)artworkImage;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -2,8 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
+@class NSArray;
+
 @interface AVPlaybackItemInspector : AVAssetInspector  {
     struct OpaqueFigPlaybackItem { } *_playbackItem;
+    NSArray *_trackIDs;
 }
 
 @property(getter=_playbackItem,setter=_setPlaybackItem:,retain) struct OpaqueFigPlaybackItem { }* playbackItem;
@@ -11,20 +14,21 @@
 
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)lyrics;
+- (id)initWithPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackIDs:(id)arg2;
+- (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
+- (void)_setPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
+- (id)compatibleTrackForCompositionTrack:(id)arg1;
+- (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (BOOL)providesPreciseDurationAndTiming;
-- (id)initWithPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
-- (void)_setPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
-- (void*)_propertyAccessor:(struct __CFString { }*)arg1;
-- (long)trackCount;
+- (id)trackIDs;
+- (id)lyrics;
 - (id)commonMetadata;
 - (id)availableMetadataFormats;
-- (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (id)metadataForFormat:(id)arg1;
-- (id)compatibleTrackForCompositionTrack:(id)arg1;
+- (long)trackCount;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

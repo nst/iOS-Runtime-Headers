@@ -10,10 +10,10 @@
 }
 
 
-- (void)loadView;
 - (id)_imageView;
+- (void)loadView;
 - (void)dealloc;
-- (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
 - (void)_backstopAction:(id)arg1;
+- (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
 
 @end

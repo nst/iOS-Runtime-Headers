@@ -15,10 +15,10 @@
 @property(readonly) unsigned int program;
 
 
-- (void)dealloc;
-- (unsigned int*)uniforms;
 - (id)initWithProgram:(unsigned int)arg1 uniforms:(unsigned int*)arg2 uniformCount:(int)arg3;
 - (int)uniformCount;
+- (unsigned int*)uniforms;
 - (unsigned int)program;
+- (void)dealloc;
 
 @end

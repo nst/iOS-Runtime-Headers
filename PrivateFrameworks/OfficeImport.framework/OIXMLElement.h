@@ -12,21 +12,21 @@
 + (void)_initEmptyHTMLNames;
 + (BOOL)isEmptyHTMLElement:(id)arg1;
 
-- (id)stringValue;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)openingTagString;
-- (id)contentString;
-- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setObjectValue:(id)arg1;
-- (id)objectValue;
-- (int)attributeCount;
-- (void)_appendXMLStringToString:(struct __CFString { }*)arg1 level:(int)arg2;
-- (int)childrenCount;
 - (id)initWithName:(id)arg1 stringValue:(id)arg2;
 - (void)addAttribute:(id)arg1;
-- (void)addChild:(id)arg1;
+- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)objectValue;
+- (void)setObjectValue:(id)arg1;
+- (int)attributeCount;
+- (int)childrenCount;
+- (id)openingTagString;
+- (id)contentString;
 - (id)closingTagString;
+- (void)_appendXMLStringToString:(struct __CFString { }*)arg1 level:(int)arg2;
+- (void)addChild:(id)arg1;
+- (id)stringValue;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

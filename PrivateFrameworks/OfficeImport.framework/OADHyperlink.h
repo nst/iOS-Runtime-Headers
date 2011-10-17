@@ -21,27 +21,27 @@
 @property BOOL doEndSound;
 
 
-- (unsigned int)hash;
-- (id)action;
-- (void)setAction:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setInvalidUrl:(id)arg1;
-- (void)setDoAddToHistory:(BOOL)arg1;
-- (int)targetMode;
-- (id)targetLocation;
-- (void)setTooltip:(id)arg1;
-- (void)setDoEndSound:(BOOL)arg1;
-- (void)setIsVisited:(BOOL)arg1;
-- (void)setTargetFrame:(id)arg1;
-- (void)setTargetLocation:(id)arg1;
-- (void)setTargetMode:(int)arg1;
-- (id)invalidUrl;
-- (id)tooltip;
 - (id)targetFrame;
+- (id)invalidUrl;
 - (BOOL)doAddToHistory;
 - (BOOL)isVisited;
 - (BOOL)doEndSound;
+- (id)tooltip;
+- (int)targetMode;
+- (void)setTargetLocation:(id)arg1;
+- (void)setTargetMode:(int)arg1;
+- (void)setTargetFrame:(id)arg1;
+- (void)setTooltip:(id)arg1;
+- (void)setInvalidUrl:(id)arg1;
+- (void)setDoEndSound:(BOOL)arg1;
+- (void)setIsVisited:(BOOL)arg1;
+- (void)setDoAddToHistory:(BOOL)arg1;
+- (id)targetLocation;
+- (void)setAction:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)action;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -2,44 +2,44 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MimePart, MimeBody, NSData, NSDictionary, NSMutableDictionary;
+@class NSMutableDictionary, MimePart, MimeBody, NSData, MFLock, NSURL;
 
 @interface WebMessageDocument : MFWebAttachmentSource  {
-    NSDictionary *_partsByURL;
-    NSDictionary *_partsByFilename;
-    NSMutableDictionary *_attachmentsByURL;
+    unsigned int _uniqueId;
+    NSURL *_baseURL;
     MimeBody *_mimeBody;
     MimePart *_htmlPart;
     NSData *_htmlData;
-    unsigned int _preferredCharset;
-    unsigned int _downloadRemoteURLs : 1;
-    unsigned int _containsRemoteContent : 1;
-    BOOL _messageIsFromEntourage;
+    MFLock *_lock;
+    NSMutableDictionary *_partsByURL;
+    NSMutableDictionary *_partsByFilename;
+    unsigned int _preferredEncoding;
 }
 
+@property unsigned int preferredEncoding;
+@property(readonly) NSData * htmlData;
+@property(readonly) MimePart * mimePart;
+@property(readonly) MimeBody * mimeBody;
+@property(readonly) NSURL * baseURL;
+
++ (id)sourceForURL:(id)arg1;
 
 - (id)initWithMimeBody:(id)arg1;
-- (id)_initWithMimePart:(id)arg1 htmlData:(id)arg2;
-- (id)initWithMimePart:(id)arg1;
 - (id)initWithMimePart:(id)arg1 htmlData:(id)arg2 encoding:(unsigned long)arg3;
-- (id)mimePartForURL:(id)arg1;
 - (id)attachmentsInDocument;
-- (id)htmlData;
 - (id)fileWrapper;
-- (void)setDownloadRemoteURLs:(BOOL)arg1;
-- (BOOL)downloadRemoteURLs;
-- (void)setContainsRemoteContent:(BOOL)arg1;
-- (BOOL)containsRemoteContent;
-- (void)setMessageIsFromEntourage:(BOOL)arg1;
-- (BOOL)messageIsFromEntourage;
-- (void)appendHTMLData:(id)arg1;
+- (id)initWithMimePart:(id)arg1;
+- (id)_initWithMimePart:(id)arg1 htmlData:(id)arg2;
+- (id)mimePartForURL:(id)arg1;
+- (id)htmlData;
 - (id)attachmentForURL:(id)arg1;
-- (id)mimeBody;
 - (id)preferredCharacterSet;
 - (id)mimePart;
+- (id)mimeBody;
+- (unsigned long)preferredEncoding;
 - (void)setPreferredEncoding:(unsigned long)arg1;
+- (id)baseURL;
 - (id)init;
 - (void)dealloc;
-- (id)description;
 
 @end

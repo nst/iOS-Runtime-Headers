@@ -15,35 +15,35 @@
 }
 
 @property(readonly) id segmentedControlItem;
-@property(retain) id userInfo;
-@property(copy) SSURLRequestProperties * URLRequestProperties;
-@property(retain) NSString * title;
-@property int structuredPageType;
-@property(retain) UIImage * image;
-@property(retain) NSString * identifier;
 @property double expirationTime;
+@property(retain) NSString * identifier;
+@property(retain) UIImage * image;
+@property int structuredPageType;
+@property(retain) NSString * title;
+@property(copy) SSURLRequestProperties * URLRequestProperties;
+@property(retain) id userInfo;
 
 
 - (void)setUserInfo:(id)arg1;
 - (id)identifier;
-- (id)image;
 - (void)setIdentifier:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (id)image;
 - (id)title;
-- (id)userInfo;
-- (id)init;
-- (void)dealloc;
 - (void)setTitle:(id)arg1;
 - (void)setImage:(id)arg1;
-- (BOOL)loadFromDictionary:(id)arg1;
-- (int)structuredPageType;
-- (id)URLRequestProperties;
-- (void)setURLRequestProperties:(id)arg1;
 - (void)_setURL:(id)arg1;
+- (id)userInfo;
+- (BOOL)isEqual:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (int)structuredPageType;
+- (id)segmentedControlItem;
 - (void)_setURLBagKey:(id)arg1;
 - (void)setStructuredPageType:(int)arg1;
-- (void)setExpirationTime:(double)arg1;
 - (double)expirationTime;
-- (id)segmentedControlItem;
+- (void)setExpirationTime:(double)arg1;
+- (void)setURLRequestProperties:(id)arg1;
+- (id)URLRequestProperties;
+- (BOOL)loadFromDictionary:(id)arg1;
 
 @end

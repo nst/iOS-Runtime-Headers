@@ -9,40 +9,30 @@
     NSString *_appleClientVersions;
     NSString *_identifier;
     NSLock *_lock;
-    NSString *_mediaLibraryIdentifier;
     NSString *_partnerHeader;
-    BOOL _prefersHighQuality;
-    NSString *_softwareLibraryIdentifier;
+    NSString *_userAgent;
 }
 
+@property(copy) NSString * appleClientApplication;
+@property(copy) NSString * userAgent;
 @property(readonly) NSString * appleClientVersions;
-@property(readonly) NSString * mediaLibraryIdentifier;
-@property(retain) NSString * softwareLibraryIdentifier;
-@property BOOL prefersHighQuality;
-@property(retain) NSString * partnerHeader;
-@property(retain) NSString * identifier;
-@property(retain) NSString * appleClientApplication;
+@property(copy) NSString * identifier;
+@property(copy) NSString * partnerHeader;
 
 + (id)currentClient;
 
+- (id)userAgent;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (BOOL)prefersHighQuality;
-- (id)appleClientVersions;
 - (id)localStoreFrontID;
 - (void)_softwareMapInvalidatedNotification:(id)arg1;
-- (void)_syncDidEndNotification:(id)arg1;
-- (BOOL)_defaultPrefersHighQuality;
-- (void)_registerForMainThreadNotifications;
-- (id)mediaLibraryIdentifier;
-- (id)softwareLibraryIdentifier;
-- (void)setPrefersHighQuality:(BOOL)arg1;
+- (void)setPartnerHeader:(id)arg1;
+- (id)appleClientVersions;
+- (id)init;
+- (void)dealloc;
+- (void)setUserAgent:(id)arg1;
 - (id)appleClientApplication;
 - (void)setAppleClientApplication:(id)arg1;
-- (void)setPartnerHeader:(id)arg1;
-- (void)setSoftwareLibraryIdentifier:(id)arg1;
 - (id)partnerHeader;
 
 @end

@@ -4,22 +4,26 @@
 
 @class NSURLAuthenticationChallengeInternal;
 
-@interface NSURLAuthenticationChallenge : NSObject  {
+@interface NSURLAuthenticationChallenge : NSObject <NSCoding> {
     NSURLAuthenticationChallengeInternal *_internal;
 }
 
-+ (id)_authenticationChallengeForCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
++ (id)_createAuthenticationChallengeForCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
 
-- (int)previousFailureCount;
-- (id)protectionSpace;
+- (void)setSender:(id)arg1;
+- (id)initWithAuthenticationChallenge:(id)arg1 sender:(id)arg2;
+- (id)_initWithCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
+- (id)failureResponse;
+- (id)proposedCredential;
+- (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(int)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
+- (struct _CFURLAuthChallenge { }*)_createCFAuthChallenge;
 - (id)sender;
+- (id)protectionSpace;
+- (int)previousFailureCount;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)error;
 - (id)init;
 - (void)dealloc;
-- (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(int)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
-- (id)initWithAuthenticationChallenge:(id)arg1 sender:(id)arg2;
-- (id)proposedCredential;
-- (id)failureResponse;
-- (struct _CFURLAuthChallenge { }*)_createCFAuthChallenge;
-- (id)error;
 
 @end

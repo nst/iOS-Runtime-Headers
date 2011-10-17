@@ -13,18 +13,19 @@
 @property(readonly) NSArray * payloads;
 
 
-- (void)dealloc;
-- (id)description;
-- (id)installationWarnings;
+- (id)payloadWithUUID:(id)arg1;
 - (BOOL)isManagedByProfileService;
-- (id)payloads;
 - (id)localizedPayloadSummaryByType;
 - (id)earliestCertificateExpiryDate;
-- (id)initWithDictionary:(id)arg1 originalData:(id)arg2 wasEncrypted:(BOOL)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
-- (id)stubDictionary;
-- (void)_addObjectsOfClass:(Class)arg1 fromArray:(id)arg2 toArray:(id)arg3;
-- (void)_sortPayloads;
 - (id)OTAProfile;
 - (void)setOTAProfile:(id)arg1;
+- (id)payloads;
+- (void)_addObjectsOfClass:(Class)arg1 fromArray:(id)arg2 toArray:(id)arg3;
+- (id)initWithDictionary:(id)arg1 originalData:(id)arg2 wasEncrypted:(BOOL)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
+- (void)_sortPayloads;
+- (id)installationWarnings;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 
 @end

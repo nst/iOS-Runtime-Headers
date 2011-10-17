@@ -13,22 +13,22 @@
     SEL _setterMethod;
 }
 
-@property(readonly) SEL setterMethod;
-@property(readonly) Class objectClass;
-@property(readonly) NSString * elementName;
-@property(readonly) NSString * nameSpace;
-@property(readonly) int maximumNumber;
 @property(readonly) int minimumNumber;
+@property(readonly) int maximumNumber;
+@property(readonly) NSString * nameSpace;
+@property(readonly) NSString * elementName;
+@property(readonly) Class objectClass;
+@property(readonly) SEL setterMethod;
 
 
-- (void)dealloc;
-- (id)description;
-- (id)nameSpace;
-- (id)initWithMinimumNumber:(int)arg1 maximumNumber:(int)arg2 nameSpace:(id)arg3 elementName:(id)arg4 objectClass:(Class)arg5 setterMethod:(SEL)arg6;
 - (id)elementName;
-- (Class)objectClass;
-- (SEL)setterMethod;
-- (int)minimumNumber;
+- (id)initWithMinimumNumber:(int)arg1 maximumNumber:(int)arg2 nameSpace:(id)arg3 elementName:(id)arg4 objectClass:(Class)arg5 setterMethod:(SEL)arg6;
+- (id)nameSpace;
+- (id)description;
+- (void)dealloc;
 - (int)maximumNumber;
+- (int)minimumNumber;
+- (SEL)setterMethod;
+- (Class)objectClass;
 
 @end

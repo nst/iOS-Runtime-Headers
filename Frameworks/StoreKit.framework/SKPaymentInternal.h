@@ -11,8 +11,8 @@
 }
 
 
-- (id)init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)dealloc;
 
 @end

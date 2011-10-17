@@ -11,21 +11,21 @@
     NSString *_agentClassName;
 }
 
-@property(retain) NSString * agentClassName;
-@property(retain) NSString * daemonAccountClassName;
-@property(retain) NSString * clientAccountClassName;
 @property(retain) NSString * accountClassName;
+@property(retain) NSString * clientAccountClassName;
+@property(retain) NSString * daemonAccountClassName;
+@property(retain) NSString * agentClassName;
 
 
-- (id)daemonAccountClassName;
 - (id)agentClassName;
+- (id)daemonAccountClassName;
+- (id)clientAccountClassName;
+- (id)accountClassName;
 - (void)setAgentClassName:(id)arg1;
 - (void)setDaemonAccountClassName:(id)arg1;
-- (id)clientAccountClassName;
 - (void)setClientAccountClassName:(id)arg1;
-- (id)accountClassName;
 - (void)setAccountClassName:(id)arg1;
-- (void)dealloc;
 - (id)description;
+- (void)dealloc;
 
 @end

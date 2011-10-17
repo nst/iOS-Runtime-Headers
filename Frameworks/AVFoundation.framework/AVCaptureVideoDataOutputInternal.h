@@ -14,7 +14,7 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } minFrameDuration;
+    } deprecatedMinFrameDuration;
     BOOL alwaysDiscardsLateVideoFrames;
 }
 

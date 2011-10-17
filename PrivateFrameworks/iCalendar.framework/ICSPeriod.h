@@ -11,16 +11,16 @@
 }
 
 
-- (id)end;
-- (id)duration;
-- (id)start;
-- (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithStart:(id)arg1;
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (id)initWithStart:(id)arg1 end:(id)arg2;
 - (id)initWithStart:(id)arg1 duration:(id)arg2;
+- (id)initWithStart:(id)arg1 end:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (id)start;
+- (id)duration;
 - (BOOL)isDurationBased;
+- (id)end;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 
 @end

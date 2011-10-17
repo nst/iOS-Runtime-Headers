@@ -5,11 +5,11 @@
 @interface NSPipe : NSObject  {
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)pipe;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id)init;
-- (id)fileHandleForReading;
 - (id)fileHandleForWriting;
+- (id)fileHandleForReading;
+- (id)init;
 
 @end

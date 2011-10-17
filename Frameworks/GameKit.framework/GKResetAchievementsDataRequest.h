@@ -11,8 +11,6 @@
 @property(retain) GKGame * game;
 
 
-- (id)invalidateCacheKeys;
-- (int)cacheType;
 - (id)game;
 - (void)setGame:(id)arg1;
 - (id)key;

@@ -4,42 +4,40 @@
 
 @class UIAlertView;
 
-@interface DADiagnosticsPSController : PSListController <UIAlertViewDelegate> {
+@interface DADiagnosticsPSController : PSListController <DADiagnosticSaveNotesDelegate, UIAlertViewDelegate> {
     UIAlertView *_simpleAlert;
     UIAlertView *_savingDataAlert;
     SEL _simpleConfirmSheetDismissedSEL;
-    BOOL _ignoringInteractionEvents;
 }
 
-+ (id)linkSpecifier;
-+ (BOOL)diagnosticsVisible;
 + (id)dumpRuntimeStateSpecifiers;
-+ (id)manageLogsSpecifiers;
++ (BOOL)diagnosticsVisible;
++ (id)linkSpecifier;
 
-- (id)specifiers;
+- (id)pathsOfPurgableFiles;
+- (void)handleClearAllLogsForSpecifier:(id)arg1;
+- (void)handleSaveAllLogsForSpecifier:(id)arg1;
+- (id)booleanPropertyWithSpecifier:(id)arg1;
+- (void)setBooleanProperty:(id)arg1 withSpecifier:(id)arg2;
+- (void)saveNotesInBackground:(id)arg1;
+- (void)_dismissSavingDataAlert;
+- (void)_presentNotesController;
+- (void)saveLogsWithNotes:(id)arg1;
+- (void)runSimpleAlertWithTitle:(id)arg1 message:(id)arg2;
+- (void)purgeFileAtPath:(id)arg1;
+- (BOOL)saveFileAtPath:(id)arg1 toDirectory:(id)arg2 withExtension:(id)arg3 error:(id*)arg4;
+- (id)savedLogsDirectoryNameForSpecifier:(id)arg1;
+- (id)pathsOfAllLogFiles;
+- (BOOL)isLoggingEnabledForSpecifier:(id)arg1;
+- (void)setLoggingEnabled:(BOOL)arg1 forSpecifier:(id)arg2;
+- (void)runSimpleAlertWithTitle:(id)arg1 message:(id)arg2 dismissedSelector:(SEL)arg3;
+- (void)handleSaveAllLogsStep2;
+- (id)diagnosticSpecifiers;
+- (void)handleDumpRuntimeStateForSpecifier:(id)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)suspend;
 - (void)dealloc;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)diagnosticSpecifiers;
-- (void)runSimpleAlertWithTitle:(id)arg1 message:(id)arg2 dismissedSelector:(SEL)arg3;
-- (void)runSimpleAlertWithTitle:(id)arg1 message:(id)arg2;
-- (void)setBooleanProperty:(id)arg1 withSpecifier:(id)arg2;
-- (id)booleanPropertyWithSpecifier:(id)arg1;
-- (void)setLoggingEnabled:(BOOL)arg1 forSpecifier:(id)arg2;
-- (BOOL)isLoggingEnabledForSpecifier:(id)arg1;
-- (void)handleDumpRuntimeStateForSpecifier:(id)arg1;
-- (id)savedLogsDirectoryNameForSpecifier:(id)arg1;
-- (BOOL)saveFileAtPath:(id)arg1 toDirectory:(id)arg2 withExtension:(id)arg3 error:(id*)arg4;
-- (void)saveLogsWithNotes:(id)arg1;
-- (void)saveNotesInBackground:(id)arg1;
-- (void)_presentNotesController;
-- (void)handleSaveAllLogsStep2;
-- (void)_dismissSavingDataAlert;
-- (void)handleSaveAllLogsForSpecifier:(id)arg1;
-- (void)handleClearAllLogsForSpecifier:(id)arg1;
-- (id)pathsOfAllLogFiles;
-- (id)pathsOfPurgableFiles;
-- (void)purgeFileAtPath:(id)arg1;
+- (id)specifiers;
 
 @end

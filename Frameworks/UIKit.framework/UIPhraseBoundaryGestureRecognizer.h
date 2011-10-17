@@ -12,21 +12,21 @@
     id _userData;
 }
 
-@property id userData;
-@property(readonly) BOOL secondDelayElapsed;
-@property double secondDelay;
 @property UIResponder<UITextInput> * textInput;
+@property double secondDelay;
+@property(readonly) BOOL secondDelayElapsed;
+@property id userData;
 
 
-- (void)setTextInput:(id)arg1;
+- (void)setUserData:(id)arg1;
+- (id)userData;
+- (BOOL)secondDelayElapsed;
 - (void)setSecondDelay:(double)arg1;
+- (void)setTextInput:(id)arg1;
 - (id)textInput;
+- (double)secondDelay;
 - (void)secondDelayElapsed:(id)arg1;
 - (void)startTimer;
-- (id)userData;
-- (void)setUserData:(id)arg1;
-- (BOOL)secondDelayElapsed;
-- (double)secondDelay;
 - (void)clearTimer;
 - (void)_resetGestureRecognizer;
 - (void)setState:(int)arg1;

@@ -2,38 +2,49 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSDictionary, NSString, NSArray;
+@class NSString, NSData, NSArray;
 
-@interface FTRegistrationMessage : FTMessage  {
-    NSArray *_supportedProtocols;
-    NSDictionary *_aliasInfo;
-    NSString *_responseSignature;
-    NSString *_responseUserID;
-    NSDictionary *_responseAliasInfo;
+@interface FTRegistrationMessage : FTIDSMessage <NSCopying> {
+    NSData *_validationData;
+    NSArray *_responseBindings;
+    NSString *_hardwareVersion;
+    NSString *_osVersion;
+    NSArray *_capabilities;
+    NSString *_softwareVersion;
+    NSString *_protocolVersion;
 }
 
-@property(copy) NSDictionary * responseAliasInfo;
-@property(copy) NSString * responseUserID;
-@property(copy) NSString * responseSignature;
-@property(copy) NSDictionary * aliasInfo;
-@property(copy) NSArray * supportedProtocols;
+@property(copy) NSData * validationData;
+@property(copy) NSString * hardwareVersion;
+@property(copy) NSString * osVersion;
+@property(copy) NSString * softwareVersion;
+@property(copy) NSString * protocolVersion;
+@property(copy) NSArray * capabilities;
+@property(copy) NSArray * responseBindings;
 
 
-- (id)bagKey;
-- (void)dealloc;
-- (void)handleResponseDictionary:(id)arg1;
-- (id)responseUserID;
-- (id)responseSignature;
-- (id)additionalMessageHeaders;
-- (id)responseAliasInfo;
-- (void)setResponseAliasInfo:(id)arg1;
-- (void)setResponseUserID:(id)arg1;
-- (void)setResponseSignature:(id)arg1;
-- (id)aliasInfo;
-- (void)setAliasInfo:(id)arg1;
-- (id)supportedProtocols;
-- (void)setSupportedProtocols:(id)arg1;
-- (id)requiredKeys;
 - (id)messageBody;
+- (void)setProtocolVersion:(id)arg1;
+- (id)protocolVersion;
+- (id)responseBindings;
+- (void)setSoftwareVersion:(id)arg1;
+- (void)setValidationData:(id)arg1;
+- (id)validationData;
+- (void)setCapabilities:(id)arg1;
+- (void)setResponseBindings:(id)arg1;
+- (id)softwareVersion;
+- (void)handleResponseDictionary:(id)arg1;
+- (id)nonStandardMessageHeadersForOutgoingPush;
+- (id)additionalMessageHeaders;
+- (BOOL)hasRequiredKeys:(id*)arg1;
+- (id)requiredKeys;
+- (id)hardwareVersion;
+- (id)osVersion;
+- (void)setOsVersion:(id)arg1;
+- (void)setHardwareVersion:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)capabilities;
+- (id)bagKey;
 
 @end

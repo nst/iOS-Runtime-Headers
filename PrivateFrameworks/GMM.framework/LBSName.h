@@ -2,56 +2,60 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSString, NSMutableArray;
+@class NSString;
 
 @interface LBSName : PBCodable  {
     NSString *_text;
     NSString *_language;
-    NSMutableArray *_flags;
-    int _route_direction;
-    BOOL _hasRoute_direction;
-    NSString *_raw_text;
-    NSString *_short_text;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _flags;
+    BOOL _hasRouteDirection;
+    int _routeDirection;
+    NSString *_rawText;
+    NSString *_shortText;
 }
 
-@property(readonly) BOOL hasLanguage;
-@property(readonly) int flagsCount;
-@property(readonly) BOOL hasRaw_text;
-@property(readonly) BOOL hasShort_text;
-@property(retain) NSString * short_text;
-@property(retain) NSString * raw_text;
-@property(readonly) BOOL hasRoute_direction;
-@property int route_direction;
-@property(retain) NSMutableArray * flags;
-@property(retain) NSString * language;
 @property(retain) NSString * text;
+@property(readonly) BOOL hasLanguage;
+@property(retain) NSString * language;
+@property(readonly) unsigned int flagsCount;
+@property(readonly) int* flags;
+@property BOOL hasRouteDirection;
+@property int routeDirection;
+@property(readonly) BOOL hasRawText;
+@property(retain) NSString * rawText;
+@property(readonly) BOOL hasShortText;
+@property(retain) NSString * shortText;
 
 
-- (id)flags;
-- (id)dictionaryRepresentation;
-- (void)setText:(id)arg1;
-- (id)text;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasLanguage;
-- (int)flagsCount;
-- (void)setFlag:(int)arg1 atIndex:(unsigned int)arg2;
-- (int)flagAtIndex:(unsigned int)arg1;
-- (void)addFlag:(int)arg1;
-- (void)setRoute_direction:(int)arg1;
-- (BOOL)hasShort_text;
-- (void)setShort_text:(id)arg1;
-- (BOOL)hasRoute_direction;
-- (int)route_direction;
-- (id)short_text;
-- (BOOL)hasRaw_text;
-- (void)setRaw_text:(id)arg1;
-- (id)raw_text;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setFlags:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (id)language;
+- (id)shortText;
+- (void)setHasRouteDirection:(BOOL)arg1;
+- (BOOL)hasRouteDirection;
+- (BOOL)hasShortText;
+- (int)routeDirection;
+- (void)setFlags:(int*)arg1 count:(unsigned int)arg2;
+- (int)flagAtIndex:(unsigned int)arg1;
+- (void)addFlag:(int)arg1;
+- (void)clearFlags;
+- (unsigned int)flagsCount;
+- (BOOL)hasLanguage;
+- (void)setRouteDirection:(int)arg1;
+- (void)setShortText:(id)arg1;
+- (id)rawText;
+- (BOOL)hasRawText;
+- (void)setRawText:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (int*)flags;
+- (id)text;
+- (void)setText:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

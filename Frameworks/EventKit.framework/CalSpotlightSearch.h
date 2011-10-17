@@ -21,6 +21,7 @@
     struct __CFArray { } *_partialResults;
     struct __CFSet { } *_matchedEventsSet;
     struct __CFSet { } *_matchedParticipantsSet;
+    struct __CFSet { } *_matchedLocationsSet;
     bool_implementsCancellationCallback;
     struct __CFDictionary { } *_closestEventOccurrences;
     bool_cancelled;
@@ -28,21 +29,25 @@
 
 + (struct __CFDictionary { }*)newQueryCache;
 
-- (void)dealloc;
-- (id)initWithDatabase:(struct CalDatabase { }*)arg1 searchString:(struct __CFString { }*)arg2 dataSink:(id)arg3 queryCache:(struct __CFDictionary { }*)arg4;
-- (id)initWithDatabase:(struct CalDatabase { }*)arg1 titleString:(id)arg2 locationString:(id)arg3 descriptionString:(id)arg4 participantString:(id)arg5 queryCache:(struct __CFDictionary { }*)arg6;
+- (void)calculateSearchWindow:(struct CalEventSpotlightContext { boolx1; boolx2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool*x7; bool*x8; struct CalDatabase {} *x9; int (*x10)(); void *x11; int x12; int x13; int x14; struct __CFDictionary {} *x15; double x16; double x17; double x18; struct CalSpotlightMatchedEventContext { int x_19_1_1; char *x_19_1_2; char *x_19_1_3; char *x_19_1_4; double x_19_1_5; double x_19_1_6; int x_19_1_7; int x_19_1_8; char *x_19_1_9; char *x_19_1_10; char *x_19_1_11; int x_19_1_12; struct __CFArray {} *x_19_1_13; int x_19_1_14; } x19; }*)arg1;
+- (void)_deleteSpotlightEventsContext:(struct CalEventSpotlightContext { boolx1; boolx2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool*x7; bool*x8; struct CalDatabase {} *x9; int (*x10)(); void *x11; int x12; int x13; int x14; struct __CFDictionary {} *x15; double x16; double x17; double x18; struct CalSpotlightMatchedEventContext { int x_19_1_1; char *x_19_1_2; char *x_19_1_3; char *x_19_1_4; double x_19_1_5; double x_19_1_6; int x_19_1_7; int x_19_1_8; char *x_19_1_9; char *x_19_1_10; char *x_19_1_11; int x_19_1_12; struct __CFArray {} *x_19_1_13; int x_19_1_14; } x19; }*)arg1;
+- (void)_getSpotlightEvents:(struct CalEventSpotlightContext { boolx1; boolx2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool*x7; bool*x8; struct CalDatabase {} *x9; int (*x10)(); void *x11; int x12; int x13; int x14; struct __CFDictionary {} *x15; double x16; double x17; double x18; struct CalSpotlightMatchedEventContext { int x_19_1_1; char *x_19_1_2; char *x_19_1_3; char *x_19_1_4; double x_19_1_5; double x_19_1_6; int x_19_1_7; int x_19_1_8; char *x_19_1_9; char *x_19_1_10; char *x_19_1_11; int x_19_1_12; struct __CFArray {} *x_19_1_13; int x_19_1_14; } x19; }*)arg1 callback:(id)arg2;
+- (struct CalEventSpotlightContext { boolx1; boolx2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool*x7; bool*x8; struct CalDatabase {} *x9; int (*x10)(); void *x11; int x12; int x13; int x14; struct __CFDictionary {} *x15; double x16; double x17; double x18; struct CalSpotlightMatchedEventContext { int x_19_1_1; char *x_19_1_2; char *x_19_1_3; char *x_19_1_4; double x_19_1_5; double x_19_1_6; int x_19_1_7; int x_19_1_8; char *x_19_1_9; char *x_19_1_10; char *x_19_1_11; int x_19_1_12; struct __CFArray {} *x_19_1_13; int x_19_1_14; } x19; }*)_createSpotlightEventsContext;
 - (void)performWithBlock:(id)arg1;
-- (id)initWithDatabase:(struct CalDatabase { }*)arg1 titleString:(id)arg2 locationString:(id)arg3 descriptionString:(id)arg4 participantString:(id)arg5 dataSink:(id)arg6 queryCache:(struct __CFDictionary { }*)arg7;
+- (id)initWithDatabase:(struct CalDatabase { }*)arg1 titleString:(id)arg2 locationString:(id)arg3 descriptionString:(id)arg4 participantString:(id)arg5 queryCache:(struct __CFDictionary { }*)arg6;
+- (id)initWithDatabase:(struct CalDatabase { }*)arg1 searchString:(struct __CFString { }*)arg2 dataSink:(id)arg3 queryCache:(struct __CFDictionary { }*)arg4;
 - (void)_startLoadingResults:(id)arg1;
-- (void)_getSpotlightEvents:(struct CalEventSpotlightContext { boolx1; boolx2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFArray {} *x5; bool*x6; bool*x7; struct CalDatabase {} *x8; int (*x9)(); void *x10; int x11; int x12; int x13; struct __CFDictionary {} *x14; double x15; double x16; double x17; struct CalSpotlightMatchedEventContext { int x_18_1_1; char *x_18_1_2; char *x_18_1_3; char *x_18_1_4; double x_18_1_5; double x_18_1_6; int x_18_1_7; int x_18_1_8; char *x_18_1_9; char *x_18_1_10; char *x_18_1_11; int x_18_1_12; struct __CFArray {} *x_18_1_13; int x_18_1_14; } x18; }*)arg1 callback:(id)arg2;
-- (void)calculateSearchWindow:(struct CalEventSpotlightContext { boolx1; boolx2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFArray {} *x5; bool*x6; bool*x7; struct CalDatabase {} *x8; int (*x9)(); void *x10; int x11; int x12; int x13; struct __CFDictionary {} *x14; double x15; double x16; double x17; struct CalSpotlightMatchedEventContext { int x_18_1_1; char *x_18_1_2; char *x_18_1_3; char *x_18_1_4; double x_18_1_5; double x_18_1_6; int x_18_1_7; int x_18_1_8; char *x_18_1_9; char *x_18_1_10; char *x_18_1_11; int x_18_1_12; struct __CFArray {} *x_18_1_13; int x_18_1_14; } x18; }*)arg1;
-- (struct CalEventSpotlightContext { boolx1; boolx2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFArray {} *x5; bool*x6; bool*x7; struct CalDatabase {} *x8; int (*x9)(); void *x10; int x11; int x12; int x13; struct __CFDictionary {} *x14; double x15; double x16; double x17; struct CalSpotlightMatchedEventContext { int x_18_1_1; char *x_18_1_2; char *x_18_1_3; char *x_18_1_4; double x_18_1_5; double x_18_1_6; int x_18_1_7; int x_18_1_8; char *x_18_1_9; char *x_18_1_10; char *x_18_1_11; int x_18_1_12; struct __CFArray {} *x_18_1_13; int x_18_1_14; } x18; }*)_createSpotlightEventsContext;
-- (void)_deleteSpotlightEventsContext:(struct CalEventSpotlightContext { boolx1; boolx2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFArray {} *x5; bool*x6; bool*x7; struct CalDatabase {} *x8; int (*x9)(); void *x10; int x11; int x12; int x13; struct __CFDictionary {} *x14; double x15; double x16; double x17; struct CalSpotlightMatchedEventContext { int x_18_1_1; char *x_18_1_2; char *x_18_1_3; char *x_18_1_4; double x_18_1_5; double x_18_1_6; int x_18_1_7; int x_18_1_8; char *x_18_1_9; char *x_18_1_10; char *x_18_1_11; int x_18_1_12; struct __CFArray {} *x_18_1_13; int x_18_1_14; } x18; }*)arg1;
-- (void)startSearching;
-- (void)stopSearching;
+- (id)initWithDatabase:(struct CalDatabase { }*)arg1 titleString:(id)arg2 locationString:(id)arg3 descriptionString:(id)arg4 participantString:(id)arg5 dataSink:(id)arg6 queryCache:(struct __CFDictionary { }*)arg7;
+- (void)_addMatchedLocationIds:(struct __CFArray { }*)arg1;
 - (void)_addMatchedParticipantIds:(struct __CFArray { }*)arg1;
+- (void)_deleteLocationIdsSearchContext:(struct CalLocationIdsSearchContext { struct __CFArray {} *x1; unsigned int x2; bool*x3; bool*x4; struct CalDatabase {} *x5; }*)arg1;
+- (void)_getLocationSearchResults:(struct CalLocationIdsSearchContext { struct __CFArray {} *x1; unsigned int x2; bool*x3; bool*x4; struct CalDatabase {} *x5; }*)arg1;
+- (struct CalLocationIdsSearchContext { struct __CFArray {} *x1; unsigned int x2; bool*x3; bool*x4; struct CalDatabase {} *x5; }*)_createLocationIdsSearchContext;
+- (void)_deleteParticipantIdsSearchContext:(struct CalParticipantIdsSearchContext { struct __CFArray {} *x1; unsigned int x2; bool*x3; bool*x4; struct CalDatabase {} *x5; }*)arg1;
 - (void)_getParticipantsSearchResults:(struct CalParticipantIdsSearchContext { struct __CFArray {} *x1; unsigned int x2; bool*x3; bool*x4; struct CalDatabase {} *x5; }*)arg1;
 - (struct CalParticipantIdsSearchContext { struct __CFArray {} *x1; unsigned int x2; bool*x3; bool*x4; struct CalDatabase {} *x5; }*)_createParticipantIdsSearchContext;
-- (void)_deleteParticipantIdsSearchContext:(struct CalParticipantIdsSearchContext { struct __CFArray {} *x1; unsigned int x2; bool*x3; bool*x4; struct CalDatabase {} *x5; }*)arg1;
+- (void)stopSearching;
+- (void)startSearching;
+- (void)dealloc;
 
 @end

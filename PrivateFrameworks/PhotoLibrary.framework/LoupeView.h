@@ -14,9 +14,9 @@
 
 
 - (id)image;
-- (id)init;
 - (void)setImage:(id)arg1;
-- (unsigned int)displayedIndex;
 - (void)setDisplayedIndex:(unsigned int)arg1;
+- (unsigned int)displayedIndex;
+- (id)init;
 
 @end

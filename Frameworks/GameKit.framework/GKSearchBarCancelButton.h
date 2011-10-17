@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@interface GKSearchBarCancelButton : UIButton  {
+@interface GKSearchBarCancelButton : UINavigationButton  {
 }
 
 

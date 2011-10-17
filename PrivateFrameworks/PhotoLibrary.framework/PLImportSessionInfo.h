@@ -14,32 +14,32 @@
     NSMutableIndexSet *_importCompleteIndexes;
 }
 
-@property BOOL importingSelection;
-@property(readonly) NSIndexSet * completedIndexes;
-@property(readonly) NSIndexSet * errorIndexes;
-@property(readonly) NSIndexSet * inProgressIndexes;
-@property(readonly) NSIndexSet * importIndexes;
-@property BOOL importStopped;
 @property BOOL importComplete;
+@property BOOL importStopped;
+@property(readonly) NSIndexSet * importIndexes;
+@property(readonly) NSIndexSet * inProgressIndexes;
+@property(readonly) NSIndexSet * errorIndexes;
+@property(readonly) NSIndexSet * completedIndexes;
+@property BOOL importingSelection;
 
 
-- (void)dealloc;
-- (void)beginImportForIndex:(unsigned int)arg1;
-- (id)inProgressIndexes;
-- (void)setImportingSelection:(BOOL)arg1;
-- (void)removeIndex:(unsigned int)arg1;
-- (BOOL)importComplete;
-- (id)importIndexes;
-- (id)completedIndexes;
-- (id)initWithImportIndexes:(id)arg1;
-- (void)addIndexToImport:(unsigned int)arg1;
-- (BOOL)_isImportCompleteForIndex:(unsigned int)arg1;
-- (void)completeImportForIndex:(unsigned int)arg1 error:(BOOL)arg2;
 - (void)shiftIndexesStartingAtIndex:(unsigned int)arg1 by:(unsigned int)arg2;
+- (void)removeIndex:(unsigned int)arg1;
+- (void)setImportingSelection:(BOOL)arg1;
 - (BOOL)importingSelection;
-- (id)errorIndexes;
-- (BOOL)importStopped;
 - (void)setImportStopped:(BOOL)arg1;
+- (BOOL)importStopped;
 - (void)setImportComplete:(BOOL)arg1;
+- (BOOL)importComplete;
+- (void)completeImportForIndex:(unsigned int)arg1 error:(BOOL)arg2;
+- (void)beginImportForIndex:(unsigned int)arg1;
+- (void)addIndexToImport:(unsigned int)arg1;
+- (id)initWithImportIndexes:(id)arg1;
+- (BOOL)_isImportCompleteForIndex:(unsigned int)arg1;
+- (id)inProgressIndexes;
+- (id)errorIndexes;
+- (id)completedIndexes;
+- (id)importIndexes;
+- (void)dealloc;
 
 @end

@@ -15,18 +15,18 @@
 
 + (id)brailleEvent;
 
-- (void)dealloc;
-- (void)setMainDictionary:(id)arg1;
-- (id)initForHandlerType:(int)arg1;
 - (int)handlerType;
 - (void)requestRegisterCallbackForKey:(int)arg1;
-- (void)requestSetValue:(id)arg1 forKey:(int)arg2;
 - (void)requestValueForKey:(int)arg1;
 - (void)requestPerformActionForKey:(int)arg1;
 - (id)claimValueForKey:(int)arg1;
+- (void)setMainDictionary:(id)arg1;
 - (id)mainDictionary;
 - (void)setClaimDictionary:(id)arg1;
 - (id)claimDictionary;
 - (void)performWithHandler:(id)arg1 trusted:(BOOL)arg2;
+- (id)initForHandlerType:(int)arg1;
+- (void)requestSetValue:(id)arg1 forKey:(int)arg2;
+- (void)dealloc;
 
 @end

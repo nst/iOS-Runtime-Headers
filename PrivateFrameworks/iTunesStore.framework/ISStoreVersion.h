@@ -12,8 +12,8 @@
 
 
 - (id)initWithDictionary:(id)arg1;
-- (void)dealloc;
 - (void)setRedirectURL:(id)arg1;
+- (void)dealloc;
 - (id)redirectURL;
 
 @end

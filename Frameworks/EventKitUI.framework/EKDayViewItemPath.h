@@ -7,15 +7,15 @@
     unsigned int _index;
 }
 
-@property(readonly) unsigned int index;
 @property(readonly) int section;
+@property(readonly) unsigned int index;
 
 + (id)itemPathWithIndex:(unsigned int)arg1 inSection:(int)arg2;
 
-- (int)section;
 - (unsigned int)index;
+- (int)section;
+- (id)initWithIndex:(unsigned int)arg1 inSection:(int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithIndex:(unsigned int)arg1 inSection:(int)arg2;
 
 @end

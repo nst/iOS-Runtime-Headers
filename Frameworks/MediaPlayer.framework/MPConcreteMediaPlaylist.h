@@ -2,41 +2,37 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSMutableDictionary, MPMediaQuery;
+@class NSMutableDictionary, MPMediaQuery;
 
 @interface MPConcreteMediaPlaylist : MPMediaPlaylist  {
     NSMutableDictionary *_properties;
     MPMediaQuery *_itemsQuery;
-    NSArray *_items;
     void *_clusterPlaylist;
-    BOOL _ignoreNextLibraryChange;
 }
 
 
+- (void)endGeneratingGeniusClusterItems;
+- (id)geniusClusterItemsWithCount:(unsigned int)arg1 error:(id*)arg2;
+- (BOOL)beginGeneratingGeniusClusterItemsWithSeedItems:(id)arg1 error:(id*)arg2;
+- (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2 completionBlock:(id)arg3;
+- (void)removeItems:(id)arg1 atFilteredIndexes:(id)arg2 completionBlock:(id)arg3;
+- (void)addItems:(id)arg1 completionBlock:(id)arg2;
+- (void)addItem:(id)arg1 completionBlock:(id)arg2;
+- (void)populateWithSeedItem:(id)arg1 completionBlock:(id)arg2;
+- (id)initWithProperties:(id)arg1 itemsQuery:(id)arg2;
+- (BOOL)existsInLibrary;
 - (int)mediaTypes;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
-- (unsigned int)hash;
 - (id)items;
-- (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)removeAllItems;
+- (unsigned int)count;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (unsigned int)count;
-- (id)initWithProperties:(id)arg1 itemsQuery:(id)arg2;
-- (void)_mediaLibraryDidChangeNotification:(id)arg1;
-- (void)addItem:(id)arg1 completionBlock:(id)arg2;
-- (void)insertItem:(id)arg1 atIndex:(unsigned int)arg2 completionBlock:(id)arg3;
-- (void)insertItems:(id)arg1 atIndex:(unsigned int)arg2 completionBlock:(id)arg3;
-- (void)removeItemAtIndex:(unsigned int)arg1 completionBlock:(id)arg2;
-- (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2 completionBlock:(id)arg3;
-- (BOOL)beginGeneratingGeniusClusterItemsWithSeedItems:(id)arg1 error:(id*)arg2;
-- (id)geniusClusterItemsWithCount:(unsigned int)arg1 error:(id*)arg2;
-- (void)endGeneratingGeniusClusterItems;
-- (void)populateWithSeedItem:(id)arg1 completionBlock:(id)arg2;
-- (BOOL)existsInLibrary;
-- (void)removeAllItems;
 - (id)representativeItem;
 
 @end

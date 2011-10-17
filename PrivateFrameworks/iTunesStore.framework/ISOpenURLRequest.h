@@ -7,24 +7,30 @@
 @interface ISOpenURLRequest : NSObject <NSCopying> {
     BOOL _isITunesStoreURL;
     NSString *_targetIdentifier;
+    NSString *_urlBagKey;
     NSURL *_url;
 }
 
 @property(retain) NSURL * URL;
-@property(copy) NSString * targetIdentifier;
+@property(copy) NSString * URLBagKey;
 @property(getter=isITunesStoreURL) BOOL ITunesStoreURL;
+@property(copy) NSString * targetIdentifier;
 
 + (id)openURLRequestWithURL:(id)arg1;
 
 - (id)initWithURL:(id)arg1;
 - (void)setURL:(id)arg1;
 - (id)URL;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)targetIdentifier;
-- (void)setTargetIdentifier:(id)arg1;
 - (BOOL)isITunesStoreURL;
+- (void)setTargetIdentifier:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setITunesStoreURL:(BOOL)arg1;
+- (id)initWithURLBagKey:(id)arg1;
+- (id)URLBagKey;
+- (void)setURLBagKey:(id)arg1;
 
 @end

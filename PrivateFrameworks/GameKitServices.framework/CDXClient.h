@@ -16,6 +16,7 @@
     NSError *error_;
     int fd_;
     unsigned long long holePunchSID_;
+    unsigned long long prevHolePunchSID_;
     NSString *server_;
     unsigned short port_;
     unsigned short localPort_;
@@ -51,28 +52,29 @@
 @property(readonly) struct dispatch_queue_s { }* queue;
 
 
-- (void)setPreblob:(id)arg1;
-- (void)sendHolePunch;
-- (BOOL)handleHolePunchEvent;
-- (void)resetHolepunchTimer;
-- (void)handleFDEvent;
-- (void)networkDidChange;
-- (void)stopListeningOnSockets;
-- (void)startListeningOnSockets;
+- (void)setError:(id)arg1;
+- (void)start;
+- (void)invalidate;
+- (void)setDelegate:(id)arg1;
 - (id)initWithOptions:(id)arg1 delegate:(id)arg2;
-- (BOOL)sendRaw:(id)arg1;
-- (void)invalidateSession:(id)arg1;
+- (id)createSessionWithTicket:(id)arg1 sessionKey:(id)arg2;
 - (id)preblob;
 - (id)preblobCallback;
 - (void)setPreblobCallback:(id)arg1;
-- (id)createSessionWithTicket:(id)arg1 sessionKey:(id)arg2;
-- (void)start;
-- (void)invalidate;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
+- (void)invalidateSession:(id)arg1;
+- (BOOL)sendRaw:(id)arg1;
+- (void)restart;
+- (void)sendHolePunch;
+- (void)setPreblob:(id)arg1;
+- (void)resetHolepunchTimer;
+- (void)networkDidChange;
+- (void)handleFDEvent;
+- (void)startListeningOnSockets;
+- (BOOL)handleHolePunchEvent;
+- (void)stopListeningOnSockets;
 - (id)delegate;
 - (id)error;
+- (void)dealloc;
 - (struct dispatch_queue_s { }*)queue;
-- (void)setError:(id)arg1;
 
 @end

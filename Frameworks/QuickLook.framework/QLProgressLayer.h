@@ -2,16 +2,18 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class UILabel, UIActivityIndicatorView;
+@class UIActivityIndicatorView, UILabel, QLDisplayBundle;
 
-@interface QLProgressLayer : UIView  {
+@interface QLProgressLayer : UIImageView  {
+    QLDisplayBundle *_displayBundle;
     UIActivityIndicatorView *_progressIndicator;
     UILabel *_loadingText;
 }
 
 
+- (id)initWithDisplayBundle:(id)arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

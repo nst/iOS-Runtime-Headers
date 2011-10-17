@@ -3,27 +3,33 @@
  */
 
 @interface UIPrintPaper : NSObject  {
-    BOOL _landscape;
+    int _paperOrientation;
     id _internal;
 }
 
-@property(readonly) struct CGSize { float width; float height; } paperSize;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } printableRect;
-@property BOOL landscape;
+@property(readonly) struct CGSize { float x1; float x2; } paperSize;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } printableRect;
 
-+ (id)_paperListForPrinter:(id)arg1 withDuplexMode:(int)arg2;
-+ (id)_defaultPaperForOuptutType:(int)arg1;
++ (id)_defaultPaperListForOutputType:(int)arg1;
++ (id)_readyPaperListForPrinter:(id)arg1 withDuplexMode:(int)arg2 forContentType:(int)arg3;
 + (id)bestPaperForPageSize:(struct CGSize { float x1; float x2; })arg1 withPapersFromArray:(id)arg2;
++ (id)_defaultPKPaperForOuptutType:(int)arg1;
++ (id)_readyPaperListForPrinter:(id)arg1 withDuplexMode:(int)arg2;
++ (id)_paperListForPrinter:(id)arg1 withDuplexMode:(int)arg2;
++ (id)_defaultPaperForOutputType:(int)arg1;
 
-- (id)_initWithPrintKitPaper:(id)arg1;
-- (void)_updatePKPaper:(id)arg1;
-- (struct CGSize { float x1; float x2; })paperSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })printableRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_printableRectForDuplex:(BOOL)arg1;
-- (id)_pkPaper;
-- (void)setLandscape:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })printRect;
-- (BOOL)landscape;
+- (int)_paperOrientation;
+- (void)_setPaperOrientation:(int)arg1;
+- (id)_localizedName;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_printableRectForDuplex:(BOOL)arg1;
+- (void)_updatePKPaper:(id)arg1;
+- (id)_initWithPrintKitPaper:(id)arg1;
+- (id)_pkPaper;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })printableRect;
+- (struct CGSize { float x1; float x2; })paperSize;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
 - (void)dealloc;
 
 @end

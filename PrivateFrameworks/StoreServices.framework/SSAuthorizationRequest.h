@@ -4,7 +4,7 @@
 
 @class NSNumber, <SSAuthorizationRequestDelegate>;
 
-@interface SSAuthorizationRequest : SSRequest  {
+@interface SSAuthorizationRequest : SSRequest <SSCoding> {
     NSNumber *_accountIdentifier;
     id _token;
 }
@@ -14,14 +14,16 @@
 @property <SSAuthorizationRequestDelegate> * delegate;
 
 
-- (id)authorizationToken;
-- (id)init;
-- (void)dealloc;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (id)initWithAuthorizationToken:(id)arg1 accountIdentifier:(id)arg2;
+- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)accountIdentifier;
+- (id)authorizationToken;
 
 @end

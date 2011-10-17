@@ -11,12 +11,14 @@
 + (BOOL)isActive;
 + (id)mainQueue;
 
-- (id)init;
-- (void)dealloc;
+- (int)maxConcurrentOperationCount;
+- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
+- (void)setSuspended:(BOOL)arg1;
 - (id)operations;
 - (void)setMaxConcurrentOperationCount:(int)arg1;
-- (void)addOperation:(id)arg1;
-- (void)setSuspended:(BOOL)arg1;
 - (void)cancelAllOperations;
+- (void)addOperation:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

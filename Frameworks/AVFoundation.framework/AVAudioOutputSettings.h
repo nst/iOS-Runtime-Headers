@@ -10,15 +10,15 @@
 @property(readonly) NSDictionary * audioSettingsDictionary;
 
 + (id)audioOutputSettingsWithAudioSettingsDictionary:(id)arg1;
-+ (id)defaultAudioOutputSettings;
 + (id)audioConverterPropertiesForAudioSettingsDictionary:(id)arg1;
 + (id)registeredOutputSettingsClasses;
++ (id)defaultAudioOutputSettings;
 + (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)_audioOutputSettingsWithAudioSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 
+- (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
 - (id)initWithAudioSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 - (id)compatibleMediaTypes;
-- (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
 - (id)audioSettingsDictionary;
 
 @end

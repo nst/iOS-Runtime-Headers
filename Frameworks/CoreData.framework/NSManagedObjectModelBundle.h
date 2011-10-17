@@ -10,15 +10,16 @@
 }
 
 
-- (id)initWithPath:(id)arg1;
-- (id)bundle;
-- (void)dealloc;
+- (id)modelVersions;
 - (id)versionInfoDictionary;
 - (id)versionHashInfo;
 - (id)currentVersion;
-- (id)modelVersions;
 - (id)urlForModelVersionWithName:(id)arg1;
-- (id)currentVersionURL;
 - (id)_modelForVersionHashes:(id)arg1;
+- (id)optimizedVersionURL;
+- (id)currentVersionURL;
+- (id)initWithPath:(id)arg1;
+- (id)bundle;
+- (void)dealloc;
 
 @end

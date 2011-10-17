@@ -2,25 +2,41 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
+@class NSString;
+
 @interface CNFRegLearnMoreButton : UIButton  {
     int _displaySize;
+    NSString *_buttonText;
+    BOOL _usesImage;
+    BOOL _alwaysUnderline;
+    int _style;
 }
 
-@property int displaySize;
+@property BOOL alwaysUnderline;
+@property BOOL usesImage;
+@property(copy) NSString * buttonText;
+@property int style;
 
 
-- (void)_setupLearnMoreTextForCurrentStyle;
-- (void)_setupArrowImageForCurrentStyle;
-- (int)displaySize;
-- (void)setDisplaySize:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displaySize:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSelected:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSelected:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
+- (int)style;
+- (void)setStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
+- (id)buttonText;
+- (void)setButtonText:(id)arg1;
+- (void)setUsesImage:(BOOL)arg1;
+- (void)setAlwaysUnderline:(BOOL)arg1;
+- (void)_setupLearnMoreTextForCurrentStyle;
+- (void)_setupArrowImageForCurrentStyle;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 text:(id)arg3;
+- (BOOL)usesImage;
+- (BOOL)alwaysUnderline;
 
 @end

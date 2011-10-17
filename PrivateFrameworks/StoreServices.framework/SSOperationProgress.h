@@ -4,57 +4,60 @@
 
 @class NSMutableArray;
 
-@interface SSOperationProgress : NSObject <NSCopying> {
+@interface SSOperationProgress : NSObject <SSCoding, NSCopying> {
     BOOL _canPause;
     double _changeRate;
     long long _currentValue;
+    struct dispatch_queue_s { } *_dispatchQueue;
     double _estimatedTimeRemaining;
     long long _maxValue;
     long long _normalizedCurrentValue;
     long long _normalizedMaxValue;
     int _operationType;
-    int _units;
     NSMutableArray *_snapshotTimes;
     NSMutableArray *_snapshotValues;
+    int _units;
 }
 
-@property int units;
-@property int operationType;
-@property long long normalizedMaxValue;
-@property long long normalizedCurrentValue;
-@property long long maxValue;
-@property double estimatedTimeRemaining;
-@property long long currentValue;
-@property double changeRate;
 @property BOOL canPause;
+@property int operationType;
+@property double changeRate;
+@property long long currentValue;
+@property double estimatedTimeRemaining;
+@property long long maxValue;
+@property int units;
+@property long long normalizedCurrentValue;
+@property long long normalizedMaxValue;
 
 
-- (void)setMaxValue:(long long)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
-- (void)setCanPause:(BOOL)arg1;
-- (void)resetSnapshots;
-- (void)setOperationType:(int)arg1;
+- (long long)maxValue;
+- (void)snapshot;
 - (void)setUnits:(int)arg1;
 - (void)setEstimatedTimeRemaining:(double)arg1;
-- (long long)maxValue;
-- (double)estimatedTimeRemaining;
-- (void)snapshot;
-- (void)_updateStatisticsFromSnapshots;
-- (int)operationType;
+- (void)setChangeRate:(double)arg1;
+- (void)resetSnapshots;
+- (long long)currentValue;
+- (double)changeRate;
 - (int)units;
+- (long long)normalizedMaxValue;
 - (long long)normalizedCurrentValue;
+- (BOOL)canPause;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
+- (void)setOperationType:(int)arg1;
 - (void)setNormalizedMaxValue:(long long)arg1;
 - (void)setNormalizedCurrentValue:(long long)arg1;
-- (long long)currentValue;
-- (void)setChangeRate:(double)arg1;
-- (double)changeRate;
-- (BOOL)canPause;
-- (long long)normalizedMaxValue;
+- (void)setCanPause:(BOOL)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (int)operationType;
+- (void)setMaxValue:(long long)arg1;
+- (double)estimatedTimeRemaining;
+- (void)_updateStatisticsFromSnapshots;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setCurrentValue:(long long)arg1;
 
 @end

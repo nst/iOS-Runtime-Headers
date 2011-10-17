@@ -9,14 +9,14 @@
     NSString *_textFieldValue;
 }
 
-@property(retain) NSString * textFieldValue;
 @property int buttonIndex;
+@property(retain) NSString * textFieldValue;
 
 
 - (void)dealloc;
-- (void)setTextFieldValue:(id)arg1;
 - (void)setButtonIndex:(int)arg1;
-- (int)buttonIndex;
+- (void)setTextFieldValue:(id)arg1;
 - (id)textFieldValue;
+- (int)buttonIndex;
 
 @end

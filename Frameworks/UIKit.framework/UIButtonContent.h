@@ -12,29 +12,29 @@
     UIColor *shadowColor;
 }
 
-@property(readonly) BOOL isEmpty;
-@property(retain) UIColor * shadowColor;
-@property(retain) UIColor * titleColor;
-@property(retain) UIImage * background;
-@property(retain) UIImage * image;
 @property(retain) NSString * title;
+@property(retain) UIImage * image;
+@property(retain) UIImage * background;
+@property(retain) UIColor * titleColor;
+@property(retain) UIColor * shadowColor;
+@property(readonly) BOOL isEmpty;
 
 
-- (void)setTitleColor:(id)arg1;
-- (void)setBackground:(id)arg1;
 - (id)background;
-- (id)shadowColor;
+- (void)setBackground:(id)arg1;
 - (id)titleColor;
+- (void)setTitleColor:(id)arg1;
 - (id)image;
 - (id)title;
+- (BOOL)isEmpty;
+- (void)setShadowColor:(id)arg1;
+- (id)shadowColor;
+- (void)setTitle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setImage:(id)arg1;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isEmpty;
-- (id)description;
-- (void)setTitle:(id)arg1;
-- (void)setShadowColor:(id)arg1;
-- (void)setImage:(id)arg1;
 
 @end

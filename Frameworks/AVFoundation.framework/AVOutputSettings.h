@@ -14,22 +14,22 @@
 @property(readonly) NSDictionary * outputSettingsDictionary;
 
 + (unsigned int)validateOutputSettingsDictionary:(id)arg1;
-+ (unsigned int)_validateOutputSettingsDictionary:(id)arg1 compatibilityDescription:(id*)arg2;
 + (id)outputSettingsWithOutputSettingsDictionary:(id)arg1;
 + (id)defaultOutputSettingsForMediaType:(id)arg1;
 + (id)registeredOutputSettingsClasses;
 + (id)eligibleOutputSettingsDictionaryKeys;
++ (unsigned int)_validateOutputSettingsDictionary:(id)arg1 compatibilityDescription:(id*)arg2;
 + (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
-- (id)initWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
-- (id)outputSettingsDictionary;
-- (id)compatibleMediaTypes;
 - (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
+- (id)initWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 - (BOOL)isDictionaryFullyFormed;
+- (id)compatibleMediaTypes;
 - (BOOL)willYieldCompressedSamples;
+- (id)outputSettingsDictionary;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

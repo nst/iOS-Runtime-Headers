@@ -22,6 +22,7 @@
 }
 
 
+- (id)table;
 - (bool)splitTable;
 - (double)currentTablePosition;
 - (void)addRowHeight:(float)arg1;
@@ -39,7 +40,6 @@
 - (double)lastAttachmentPosition;
 - (long)nextSplitTableIndex;
 - (double)originalTableHeight;
-- (id)table;
 - (id)init;
 - (void)dealloc;
 

@@ -2,32 +2,44 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class PSSpecifier, UITableView, UILabel;
+@class UITableView, UILabel, CNFRegLearnMoreButton, PSSpecifier, NSString, NSURL;
 
 @interface CNFRegTableLabel : UIView <PreferencesTableCustomView> {
     UILabel *_label;
     PSSpecifier *_specifier;
-    UITableView *_tableView;
+    UITableView *_cnfreg_tableView;
     BOOL _isTopmostHeader;
+    CNFRegLearnMoreButton *_urlButton;
+    NSString *_URLText;
+    NSURL *_URLTarget;
 }
 
+@property(copy) NSURL * URLTarget;
+@property(copy) NSString * URLText;
 @property BOOL isTopmostHeader;
-@property UITableView * tableView;
+@property UITableView * cnfreg_tableView;
 
 
 - (float)preferredHeightForWidth:(float)arg1;
-- (BOOL)isTopmostHeader;
 - (id)initWithSpecifier:(id)arg1;
-- (id)_labelText;
-- (int)_labelTextAlignment;
-- (float)_topPadding;
-- (float)_bottomPadding;
-- (float)_labelInset;
-- (void)updateLabelText;
-- (void)setIsTopmostHeader:(BOOL)arg1;
-- (id)tableView;
-- (void)setTableView:(id)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;
+- (id)URLTarget;
+- (id)URLText;
+- (id)cnfreg_tableView;
+- (BOOL)isTopmostHeader;
+- (float)_labelInset;
+- (float)_topPadding;
+- (int)_labelTextAlignment;
+- (id)_URLTarget;
+- (id)_labelText;
+- (void)_urlTapped:(id)arg1;
+- (id)_URLText;
+- (void)setURLText:(id)arg1;
+- (void)setURLTarget:(id)arg1;
+- (float)_bottomPadding;
+- (void)updateLabelText;
+- (void)setCnfreg_tableView:(id)arg1;
+- (void)setIsTopmostHeader:(BOOL)arg1;
 
 @end

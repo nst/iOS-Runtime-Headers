@@ -7,14 +7,14 @@
     BOOL _notifySpringBoardAndFence;
 }
 
-@property BOOL notifySpringBoardAndFence;
 @property int orientationAnimation;
+@property BOOL notifySpringBoardAndFence;
 
 
-- (id)initWithDefaultParameters;
 - (int)orientationAnimation;
 - (void)setNotifySpringBoardAndFence:(BOOL)arg1;
-- (BOOL)notifySpringBoardAndFence;
 - (void)setOrientationAnimation:(int)arg1;
+- (BOOL)notifySpringBoardAndFence;
+- (id)initWithDefaultParameters;
 
 @end

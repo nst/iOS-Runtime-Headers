@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray;
+@class NSString, NSArray;
 
 @interface MKPolygon : MKMultiPoint <MKOverlay> {
     struct { 
@@ -13,23 +13,25 @@
     BOOL _isDefinitelyConvex;
 }
 
-@property(readonly) struct { struct { double x; double y; } origin; struct { double width; double height; } size; } boundingMapRect;
-@property(readonly) struct { double latitude; double longitude; } coordinate;
-@property BOOL _isDefinitelyConvex;
 @property(readonly) NSArray * interiorPolygons;
+@property BOOL _isDefinitelyConvex;
+@property(readonly) struct { double x1; double x2; } coordinate;
+@property(readonly) NSString * title;
+@property(readonly) NSString * subtitle;
+@property(readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingMapRect;
 
-+ (id)polygonWithPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2 interiorPolygons:(id)arg3;
 + (id)polygonWithCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 + (id)polygonWithCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2 interiorPolygons:(id)arg3;
-+ (id)polygonWithPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
++ (id)polygonWithPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2 interiorPolygons:(id)arg3;
 + (id)polygonEnclosingMapPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
++ (id)polygonWithPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 
-- (void)dealloc;
-- (void)set_isDefinitelyConvex:(BOOL)arg1;
-- (BOOL)_isDefinitelyConvex;
-- (id)interiorPolygons;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
-- (BOOL)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct { double x1; double x2; })coordinate;
+- (id)interiorPolygons;
+- (BOOL)_isDefinitelyConvex;
+- (void)set_isDefinitelyConvex:(BOOL)arg1;
+- (BOOL)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
+- (void)dealloc;
 
 @end

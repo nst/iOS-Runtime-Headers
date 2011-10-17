@@ -18,18 +18,18 @@
     NSString *_systemVersion;
 }
 
-@property(copy) NSString * systemVersion;
-@property(copy) NSString * platformName;
 @property(copy) id itemLookupBlock;
+@property(copy) NSString * platformName;
+@property(copy) NSString * systemVersion;
 
 
+- (void)setPlatformName:(id)arg1;
+- (id)platformName;
+- (id)itemLookupBlock;
+- (void)setSystemVersion:(id)arg1;
 - (id)systemVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setPlatformName:(id)arg1;
-- (void)setSystemVersion:(id)arg1;
-- (id)platformName;
-- (id)itemLookupBlock;
 - (void)setItemLookupBlock:(id)arg1;
 
 @end

@@ -13,31 +13,32 @@
 @property(retain) NSNumber * selectedIndex;
 @property(retain) NSString * title;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
-- (void)setItems:(id)arg1;
-- (void)setSelectedIndex:(id)arg1;
-- (id)action;
-- (void)setAction:(id)arg1;
-- (id)items;
-- (id)selectedIndex;
-- (id)title;
-- (void)dealloc;
-- (void)setTitle:(id)arg1;
-- (void)_setSelectedIndex:(int)arg1;
-- (int)_selectedIndex;
-- (id)_copyItems;
-- (void)_setItems:(id)arg1;
-- (id)itemWithTitle:(id)arg1 userInfo:(id)arg2;
-- (id)_copyAction;
-- (id)_copyTitle;
-- (void)_setAction:(id)arg1;
-- (id)newNativeViewController;
-- (id)_viewController;
 - (id)attributeKeys;
+- (void)setSelectedIndex:(id)arg1;
+- (id)selectedIndex;
+- (void)setItems:(id)arg1;
+- (id)items;
+- (id)title;
+- (void)setAction:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (id)action;
+- (void)dealloc;
+- (id)itemWithTitle:(id)arg1 userInfo:(id)arg2;
+- (void)_setSelectedIndex:(int)arg1;
+- (void)_setItems:(id)arg1;
+- (void)_setAction:(id)arg1;
+- (id)_copyItems;
+- (id)_copyAction;
+- (int)_selectedIndex;
+- (id)_viewController;
+- (id)newNativeViewController;
+- (id)_copyTitle;
 - (void)_setTitle:(id)arg1;
-- (id)scriptAttributeKeys;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

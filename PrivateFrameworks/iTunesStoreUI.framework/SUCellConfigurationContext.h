@@ -9,8 +9,8 @@
 @property int tableViewStyle;
 
 
-- (void)setTableViewStyle:(int)arg1;
 - (int)tableViewStyle;
+- (void)setTableViewStyle:(int)arg1;
 - (void)resetLayoutCaches;
 
 @end

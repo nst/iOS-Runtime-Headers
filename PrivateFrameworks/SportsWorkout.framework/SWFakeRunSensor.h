@@ -8,20 +8,20 @@
     <SWFakeRunSensorDelegate> *_delegate;
 }
 
-+ (void)initialize;
 + (id)_newDelegate;
++ (void)initialize;
 
+- (void)_fakeLinkingFailure;
+- (unsigned int)remainingBatteryLifetimeInHours;
+- (void)cancelSearching;
+- (void)beginSearching;
+- (void)cancelLinking;
+- (void)beginLinking;
+- (void)_fakeNextPacketWithPayload:(id)arg1 timestamp:(unsigned long)arg2;
+- (void)_fakeSearchSuccess;
+- (void)_fakeLinkingSuccess;
 - (void)deactivate;
 - (id)init;
 - (void)dealloc;
-- (void)_fakeNextPacketWithPayload:(id)arg1 timestamp:(unsigned long)arg2;
-- (void)beginLinking;
-- (void)cancelLinking;
-- (unsigned int)remainingBatteryLifetimeInHours;
-- (void)beginSearching;
-- (void)cancelSearching;
-- (void)_fakeLinkingSuccess;
-- (void)_fakeLinkingFailure;
-- (void)_fakeSearchSuccess;
 
 @end

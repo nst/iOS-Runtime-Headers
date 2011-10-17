@@ -13,17 +13,17 @@
 - (id)_predicateRestrictingSuperentitiesForEntity:(id)arg1;
 - (id)_predicateRestrictingToSubentitiesForEntity:(id)arg1;
 - (id)_predicateForSpecificEntity:(id)arg1;
-- (id)predicateForFetchRequestInContext:(id)arg1;
-- (void)generateSelectIntermediateInContext:(id)arg1;
 - (void)generateWhereIntermediatesInContext:(id)arg1;
+- (void)generateGroupByIntermediatesForProperties:(id)arg1 inContext:(id)arg2;
+- (void)generateHavingIntermediateForPredicate:(id)arg1 inContext:(id)arg2;
+- (void)generateSelectIntermediateInContext:(id)arg1;
 - (void)generateOrderIntermediateInContext:(id)arg1;
 - (void)generateIntermediateForLimit:(unsigned int)arg1 inContext:(id)arg2;
 - (void)generateIntermediateForOffset:(unsigned int)arg1 inContext:(id)arg2;
-- (void)generateGroupByIntermediatesForProperties:(id)arg1 inContext:(id)arg2;
-- (void)generateHavingIntermediateForPredicate:(id)arg1 inContext:(id)arg2;
-- (id)generateIntermediatesForFetchInContext:(id)arg1 countOnly:(BOOL)arg2;
+- (id)predicateForFetchRequestInContext:(id)arg1;
 - (id)initializeContextForFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 nestingLevel:(unsigned int)arg3;
-- (id)newSQLStatementForFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 countOnly:(BOOL)arg3 nestingLevel:(unsigned int)arg4;
+- (id)generateIntermediatesForFetchInContext:(id)arg1 countOnly:(BOOL)arg2;
 - (id)initWithPersistentStore:(id)arg1;
+- (id)newSQLStatementForFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 countOnly:(BOOL)arg3 nestingLevel:(unsigned int)arg4;
 
 @end

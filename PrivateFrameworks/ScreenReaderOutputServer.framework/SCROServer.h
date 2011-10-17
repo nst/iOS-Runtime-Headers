@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class <SCROServerDelegate>;
+@class <SCROServerDelegate>, NSLock;
 
 @interface SCROServer : NSObject  {
+    NSLock *_contentLock;
     <SCROServerDelegate> *_delegate;
     struct __CFRunLoopSource { } *_serverSource;
     struct __CFRunLoopSource { } *_deathSource;
@@ -16,24 +17,25 @@
 }
 
 + (void)initialize;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedServer;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)release;
-- (id)init;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)retainCount;
-- (id)autorelease;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)_setClientCount:(long)arg1;
 - (BOOL)isRegisteredWithMach;
 - (BOOL)registerWithMach;
 - (void)unregisterWithMach;
-- (struct __CFRunLoopSource { }*)serverSource;
-- (long)_clientCount;
-- (unsigned int)_deathPort;
+- (long)_incrementClientCount;
 - (struct __CFRunLoopTimer { }*)_deathTimer;
+- (int)_registerForNotificationOnDeathPort:(unsigned int)arg1;
+- (void)_setClientCount:(long)arg1;
+- (long)_clientCount;
+- (void)setDelegate:(id)arg1;
+- (struct __CFRunLoopSource { }*)serverSource;
+- (id)delegate;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
+- (void)release;
 
 @end

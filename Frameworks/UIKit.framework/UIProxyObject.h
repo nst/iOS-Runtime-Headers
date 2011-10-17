@@ -8,16 +8,16 @@
     NSString *proxiedObjectIdentifier;
 }
 
-+ (struct __CFDictionary { }*)proxyDecodingMap;
-+ (void)addMappingFromIdentifier:(id)arg1 toObject:(id)arg2 forCoder:(id)arg3;
 + (id)mappedObjectForCoder:(id)arg1 withIdentifier:(id)arg2;
-+ (void)addMappings:(id)arg1 forCoder:(id)arg2;
++ (struct __CFDictionary { }*)proxyDecodingMap;
 + (void)removeMappingsForCoder:(id)arg1;
++ (void)addMappings:(id)arg1 forCoder:(id)arg2;
++ (void)addMappingFromIdentifier:(id)arg1 toObject:(id)arg2 forCoder:(id)arg3;
 
 - (void)setProxiedObjectIdentifier:(id)arg1;
 - (id)proxiedObjectIdentifier;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 
 @end

@@ -12,14 +12,14 @@
 @property(retain) WDIterator * childIterator;
 
 
-- (void)dealloc;
 - (id)childIterator;
-- (void)setChildIterator:(id)arg1;
 - (void)incrementChildIterator;
+- (id)next;
 - (BOOL)hasNext;
+- (void)setChildIterator:(id)arg1;
 - (id)initWithParentIterator:(id)arg1;
 - (id)childIteratorFrom:(id)arg1;
 - (id)newChildIteratorFrom:(id)arg1;
-- (id)next;
+- (void)dealloc;
 
 @end

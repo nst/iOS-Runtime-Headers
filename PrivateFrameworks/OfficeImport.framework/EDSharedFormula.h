@@ -12,21 +12,22 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (int)rowBaseOrOffset;
+- (void)updateBaseFormulaRangeWithRow:(int)arg1 column:(int)arg2;
 - (unsigned int)baseFormulaIndex;
 - (id)warningWithRowBlocks:(id)arg1;
-- (void)updateBaseFormulaRangeWithRow:(int)arg1 column:(int)arg2;
-- (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(unsigned int*)arg2;
 - (id)baseFormulaRange;
 - (void)setRowBaseOrOffset:(int)arg1;
 - (void)setColumnBaseOrOffset:(int)arg1;
 - (void)setBaseFormulaIndex:(unsigned int)arg1;
 - (id)baseFormulaWithRowBlocks:(id)arg1;
+- (int)rowBaseOrOffset;
 - (int)columnBaseOrOffset;
+- (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(unsigned int*)arg2;
+- (void)archiveByAppendingToMutableData:(struct __CFData { }*)arg1;
+- (id)initWithFormula:(id)arg1;
 - (bool)isSharedFormula;
 - (bool)isBaseFormula;
-- (void)archiveByAppendingToMutableData:(struct __CFData { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

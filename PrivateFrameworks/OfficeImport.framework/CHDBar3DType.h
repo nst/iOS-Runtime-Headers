@@ -9,10 +9,10 @@
 
 + (bool)is3DType;
 
+- (int)shapeType;
+- (int)gapDepth;
 - (void)setShapeType:(int)arg1;
 - (void)setGapDepth:(int)arg1;
 - (id)initWithChart:(id)arg1;
-- (int)shapeType;
-- (int)gapDepth;
 
 @end

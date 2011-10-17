@@ -8,30 +8,30 @@
     int _type;
 }
 
-@property(readonly) NSString * indicatorName;
-@property(readonly) int rightOrder;
-@property(readonly) int leftOrder;
-@property(readonly) int priority;
-@property(readonly) Class viewClass;
 @property(readonly) int type;
+@property(readonly) Class viewClass;
+@property(readonly) int priority;
+@property(readonly) int leftOrder;
+@property(readonly) int rightOrder;
+@property(readonly) NSString * indicatorName;
 
++ (BOOL)itemType:(int)arg1 canBeEnabledForData:(id)arg2 style:(int)arg3;
 + (BOOL)typeIsValid:(int)arg1;
-+ (BOOL)itemType:(int)arg1 canBeEnabledForData:(struct { BOOL x1[22]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; BOOL x20[256]; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg2;
 + (id)itemWithType:(int)arg1;
 
-- (Class)viewClass;
-- (id)indicatorName;
-- (id)initWithType:(int)arg1;
-- (int)leftOrder;
-- (int)rightOrder;
-- (BOOL)appearsInRegion:(int)arg1;
-- (int)compareLeftOrder:(id)arg1;
 - (int)compareRightOrder:(id)arg1;
-- (BOOL)appearsOnLeft;
-- (BOOL)appearsOnRight;
-- (int)comparePriority:(id)arg1;
+- (int)compareLeftOrder:(id)arg1;
+- (Class)viewClass;
+- (int)rightOrder;
+- (int)leftOrder;
+- (id)indicatorName;
 - (int)priority;
+- (int)comparePriority:(id)arg1;
+- (BOOL)appearsInRegion:(int)arg1;
+- (BOOL)appearsOnRight;
+- (BOOL)appearsOnLeft;
 - (int)type;
+- (id)initWithType:(int)arg1;
 - (id)description;
 
 @end

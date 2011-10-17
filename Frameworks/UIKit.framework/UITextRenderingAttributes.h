@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIFont;
+@class UIFont;
 
 @interface UITextRenderingAttributes : NSObject <NSCopying> {
     UIFont *_font;
@@ -26,55 +26,59 @@
             float height; 
         } size; 
     } _truncationRect;
-    NSString **renderString;
+    BOOL _drawUnderline;
+    id *renderString;
 }
 
-@property NSString ** renderString;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } truncationRect;
-@property BOOL includeEmoji;
-@property int alignment;
-@property(readonly) float actualTrackingAdjustment;
-@property float minimumTrackingAdjustment;
-@property float trackingAdjustment;
-@property int baselineAdjustment;
-@property int lineBreakMode;
-@property float lineSpacing;
-@property(readonly) float actualFontSize;
-@property float minimumFontSize;
 @property(retain) UIFont * font;
+@property float minimumFontSize;
+@property(readonly) float actualFontSize;
+@property float lineSpacing;
+@property int lineBreakMode;
+@property int baselineAdjustment;
+@property float trackingAdjustment;
+@property float minimumTrackingAdjustment;
+@property(readonly) float actualTrackingAdjustment;
+@property int alignment;
+@property BOOL includeEmoji;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } truncationRect;
+@property id* renderString;
+@property BOOL drawUnderline;
 
 + (id)attributesWithSystemFontOfSize:(float)arg1;
 
-- (void)setLineBreakMode:(int)arg1;
-- (float)lineSpacing;
-- (int)baselineAdjustment;
-- (void)setActualFontSize:(float)arg1;
-- (int)ellipsisStyle;
-- (float)minimumFontSize;
-- (void)setMinimumFontSize:(float)arg1;
-- (void)setAlignment:(int)arg1;
-- (id)init;
-- (id)font;
-- (int)lineBreakMode;
-- (float)trackingAdjustment;
-- (BOOL)includeEmoji;
-- (void)setActualTrackingAdjustment:(float)arg1;
-- (float)letterSpacing;
+- (void)setDrawUnderline:(BOOL)arg1;
+- (BOOL)drawUnderline;
 - (void)setRenderString:(id*)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })truncationRect;
-- (void)setTruncationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIncludeEmoji:(BOOL)arg1;
-- (float)actualTrackingAdjustment;
-- (float)minimumTrackingAdjustment;
-- (void)setMinimumTrackingAdjustment:(float)arg1;
-- (void)setTrackingAdjustment:(float)arg1;
-- (void)setBaselineAdjustment:(int)arg1;
-- (void)setLineSpacing:(float)arg1;
-- (float)actualFontSize;
-- (void)setFont:(id)arg1;
 - (id*)renderString;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)setTruncationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })truncationRect;
+- (void)setIncludeEmoji:(BOOL)arg1;
+- (BOOL)includeEmoji;
+- (void)setAlignment:(int)arg1;
+- (float)actualTrackingAdjustment;
+- (void)setMinimumTrackingAdjustment:(float)arg1;
+- (float)minimumTrackingAdjustment;
+- (void)setTrackingAdjustment:(float)arg1;
+- (float)trackingAdjustment;
+- (void)setBaselineAdjustment:(int)arg1;
+- (int)baselineAdjustment;
+- (void)setLineBreakMode:(int)arg1;
+- (int)lineBreakMode;
+- (void)setLineSpacing:(float)arg1;
+- (float)lineSpacing;
+- (float)actualFontSize;
+- (void)setMinimumFontSize:(float)arg1;
+- (float)minimumFontSize;
+- (id)font;
+- (int)ellipsisStyle;
+- (float)letterSpacing;
+- (void)setActualTrackingAdjustment:(float)arg1;
+- (void)setActualFontSize:(float)arg1;
+- (void)setFont:(id)arg1;
 - (int)alignment;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

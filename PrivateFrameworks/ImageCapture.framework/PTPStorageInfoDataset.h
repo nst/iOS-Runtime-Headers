@@ -24,6 +24,8 @@
 - (unsigned short)filesystemType;
 - (void)setFilesystemType:(unsigned short)arg1;
 - (void)setAccessCapability:(unsigned short)arg1;
+- (unsigned long long)maxCapacity;
+- (void)setMaxCapacity:(unsigned long long)arg1;
 - (unsigned long long)freeSpaceInBytes;
 - (void)setFreeSpaceInBytes:(unsigned long long)arg1;
 - (unsigned long)freeSpaceInImages;
@@ -33,17 +35,13 @@
 - (id)volumeLabel;
 - (void)setVolumeLabel:(id)arg1;
 - (void)updateContent;
-- (void)copyContent:(char *)arg1 ofSize:(unsigned long)arg2;
 - (id)initWithMutableData:(id)arg1;
 - (unsigned short)accessCapability;
-- (id)content;
-- (unsigned long)contentSize;
-- (id)init;
-- (id)initWithData:(id)arg1;
-- (void)dealloc;
-- (id)description;
-- (unsigned long long)maxCapacity;
-- (void)setMaxCapacity:(unsigned long long)arg1;
 - (void)setContent:(id)arg1;
+- (id)content;
+- (id)initWithData:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

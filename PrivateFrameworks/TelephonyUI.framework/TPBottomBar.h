@@ -7,23 +7,23 @@
     int _style;
 }
 
-+ (float)defaultHeightForOrientation:(int)arg1;
-+ (id)_backgroundImage;
-+ (float)defaultHeightForStyle:(int)arg1;
-+ (float)defaultHeight;
-+ (int)overlayStyle;
-+ (int)fullscreenStyle;
 + (void)preloadImages;
 + (float)defaultHeightForStyle:(int)arg1 orientation:(int)arg2;
++ (id)_backgroundImage;
++ (float)defaultHeight;
++ (float)defaultHeightForStyle:(int)arg1;
++ (int)fullscreenStyle;
++ (int)overlayStyle;
++ (float)defaultHeightForOrientation:(int)arg1;
 
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
-- (void)setOrientation:(int)arg1;
-- (id)initWithDefaultSize;
-- (id)init;
-- (int)orientation;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setOrientation:(int)arg1 updateFrame:(BOOL)arg2;
 - (id)initWithDefaultSizeForOrientation:(int)arg1;
+- (id)initWithDefaultSize;
+- (void)setOrientation:(int)arg1;
+- (int)orientation;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)init;
 
 @end

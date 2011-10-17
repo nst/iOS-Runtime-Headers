@@ -8,40 +8,40 @@
     id _reserved;
 }
 
-+ (id)dictionaryFromTXTRecordData:(id)arg1;
 + (id)dataFromTXTRecordDictionary:(id)arg1;
++ (id)dictionaryFromTXTRecordData:(id)arg1;
 
+- (id)addresses;
+- (void)setDelegate:(id)arg1;
+- (void)finalize;
+- (id)TXTRecordData;
+- (BOOL)setTXTRecordData:(id)arg1;
+- (void)stopMonitoring;
+- (void)startMonitoring;
+- (void)resolve;
+- (BOOL)getInputStream:(id*)arg1 outputStream:(id*)arg2;
+- (void)_dispatchCallBackWithError:(struct { int x1; int x2; })arg1;
+- (void)publish;
+- (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3;
+- (id)initWithCFNetService:(struct __CFNetService { }*)arg1;
+- (void)resolveWithTimeout:(double)arg1;
+- (void)publishWithOptions:(unsigned int)arg1;
+- (id)_monitors;
+- (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3 port:(int)arg4;
+- (void)_scheduleInDefaultRunLoopForMode:(id)arg1;
+- (struct __CFNetService { }*)_internalNetService;
+- (void)stop;
+- (id)domain;
 - (id)hostName;
 - (int)port;
 - (id)type;
-- (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
 - (id)name;
-- (void)dealloc;
-- (id)description;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (id)initWithCFNetService:(struct __CFNetService { }*)arg1;
-- (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3 port:(int)arg4;
-- (void)_scheduleInDefaultRunLoopForMode:(id)arg1;
-- (void)publishWithOptions:(unsigned int)arg1;
-- (void)_dispatchCallBackWithError:(struct { int x1; int x2; })arg1;
-- (struct __CFNetService { }*)_internalNetService;
-- (BOOL)getInputStream:(id*)arg1 outputStream:(id*)arg2;
-- (void)resolveWithTimeout:(double)arg1;
-- (void)resolve;
-- (id)_monitors;
-- (void)startMonitoring;
-- (void)stopMonitoring;
-- (BOOL)setTXTRecordData:(id)arg1;
-- (id)TXTRecordData;
-- (id)addresses;
-- (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3;
-- (id)domain;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)publish;
-- (void)stop;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 
 @end

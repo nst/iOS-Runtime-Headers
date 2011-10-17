@@ -7,46 +7,42 @@
 @interface LBSGCellularProfile : PBCodable  {
     LBSGCell *_primaryCell;
     long long _timestamp;
-    NSMutableArray *_neighborss;
-    NSMutableArray *_historicalCellss;
-    int _prefetchMode;
+    NSMutableArray *_neighbors;
+    NSMutableArray *_historicalCells;
     BOOL _hasPrefetchMode;
+    int _prefetchMode;
 }
 
-@property(readonly) int neighborssCount;
-@property(readonly) int historicalCellssCount;
-@property(readonly) BOOL hasPrefetchMode;
-@property int prefetchMode;
-@property(retain) NSMutableArray * historicalCellss;
-@property(retain) NSMutableArray * neighborss;
-@property long long timestamp;
 @property(retain) LBSGCell * primaryCell;
+@property long long timestamp;
+@property(retain) NSMutableArray * neighbors;
+@property(retain) NSMutableArray * historicalCells;
+@property BOOL hasPrefetchMode;
+@property int prefetchMode;
 
 
-- (void)setTimestamp:(long long)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasPrefetchMode:(BOOL)arg1;
+- (BOOL)hasPrefetchMode;
+- (id)historicalCells;
+- (id)neighbors;
+- (id)primaryCell;
+- (int)prefetchMode;
+- (id)historicalCellsAtIndex:(unsigned int)arg1;
+- (unsigned int)historicalCellsCount;
+- (id)neighborsAtIndex:(unsigned int)arg1;
+- (unsigned int)neighborsCount;
+- (void)setPrefetchMode:(int)arg1;
+- (void)addHistoricalCells:(id)arg1;
+- (void)addNeighbors:(id)arg1;
+- (void)setHistoricalCells:(id)arg1;
+- (void)setNeighbors:(id)arg1;
+- (void)setPrimaryCell:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (long long)timestamp;
-- (id)init;
-- (void)dealloc;
+- (void)setTimestamp:(long long)arg1;
 - (id)description;
-- (id)historicalCellss;
-- (int)historicalCellssCount;
-- (int)neighborssCount;
-- (void)setNeighbors:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)neighborsAtIndex:(unsigned int)arg1;
-- (void)addNeighbors:(id)arg1;
-- (void)setHistoricalCells:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)historicalCellsAtIndex:(unsigned int)arg1;
-- (void)addHistoricalCells:(id)arg1;
-- (void)setPrefetchMode:(int)arg1;
-- (BOOL)hasPrefetchMode;
-- (int)prefetchMode;
-- (void)setHistoricalCellss:(id)arg1;
-- (id)neighborss;
-- (void)setNeighborss:(id)arg1;
-- (id)primaryCell;
-- (void)setPrimaryCell:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)dealloc;
 
 @end

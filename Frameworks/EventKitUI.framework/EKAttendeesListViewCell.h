@@ -14,14 +14,14 @@
 }
 
 
+- (void)setAttendee:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)dealloc;
-- (id)_notAttendingImage;
-- (id)_maybeImage;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 attendee:(id)arg3 showStatusImage:(BOOL)arg4;
 - (id)_imageForStatus:(int)arg1;
 - (id)_pendingImage;
+- (id)_notAttendingImage;
+- (id)_maybeImage;
 - (id)_attendingImage;
-- (void)setAttendee:(id)arg1;
+- (void)dealloc;
 
 @end

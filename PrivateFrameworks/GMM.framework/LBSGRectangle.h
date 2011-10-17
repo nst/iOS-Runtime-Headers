@@ -9,19 +9,18 @@
     LBSGLatLng *_upperRight;
 }
 
-@property(retain) LBSGLatLng * upperRight;
 @property(retain) LBSGLatLng * lowerLeft;
+@property(retain) LBSGLatLng * upperRight;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)upperRight;
-- (void)setUpperRight:(id)arg1;
-- (id)lowerLeft;
-- (void)setLowerLeft:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (id)upperRight;
+- (id)lowerLeft;
+- (void)setUpperRight:(id)arg1;
+- (void)setLowerLeft:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

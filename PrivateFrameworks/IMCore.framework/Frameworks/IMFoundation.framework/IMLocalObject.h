@@ -2,56 +2,54 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSMachPort, NSString, NSRecursiveLock, NSMutableArray, NSProtocolChecker;
+@class NSString, NSMachPort;
 
 @interface IMLocalObject : NSObject  {
-    NSRecursiveLock *_lock;
-    id _target;
-    unsigned int _port;
-    struct dispatch_source_s { } *_source;
-    struct dispatch_queue_s { } *_queue;
-    struct dispatch_semaphore_s { } *_deathLock;
-    NSString *_portName;
-    NSMutableArray *_incomingQueue;
-    NSProtocolChecker *_protocolChecker;
-    int _pid;
-    BOOL _busyForwarding;
+    id _internal;
 }
 
-@property(readonly) NSMachPort * port;
-@property(readonly) BOOL isValid;
-@property(readonly) NSString * portName;
-@property int pid;
 @property id target;
+@property(readonly) NSString * portName;
+@property(readonly) NSMachPort * port;
+@property(readonly) unsigned int mach_port;
+@property int pid;
+@property(readonly) BOOL isValid;
 
-+ (void)initialize;
-+ (void)_registerIMLocalObject:(id)arg1;
 + (void)_unregisterIMLocalObject:(id)arg1;
++ (void)_registerIMLocalObject:(id)arg1;
 + (id)_registeredIMLocalObjectForPort:(unsigned int)arg1;
++ (void)initialize;
 
-- (void)setPid:(int)arg1;
-- (int)pid;
-- (BOOL)isValid;
-- (id)port;
-- (id)target;
 - (void)invalidate;
-- (void)dealloc;
-- (id)description;
-- (void)setTarget:(id)arg1;
-- (void)_clearPort:(BOOL)arg1;
-- (void)_cancelHandlerCompleted;
-- (void)terminated;
-- (void)_enqueueInvocation:(id)arg1;
-- (BOOL)_handleInvocation:(id)arg1;
-- (void)_dequeueInvocationIfNecessary;
-- (void)handleInvocation:(id)arg1;
-- (void)_handleComponents:(id)arg1;
-- (void)handleHeaderData:(unsigned long long*)arg1 headerLength:(unsigned int)arg2 data:(char *)arg3 dataLength:(unsigned int)arg4 fromPid:(int)arg5;
-- (BOOL)isValidSelector:(SEL)arg1;
-- (void)_portDidBecomeInvalid;
+- (id)initWithTarget:(id)arg1 protocol:(id)arg2;
+- (void)setPortName:(id)arg1;
 - (void)_systemShutdown:(id)arg1;
-- (id)portName;
-- (unsigned int)_port;
 - (id)initWithTarget:(id)arg1 portName:(id)arg2 protocol:(id)arg3;
+- (id)portName;
+- (void)_enqueueComponents:(id)arg1;
+- (void)_noteNewInvocation;
+- (BOOL)handleInvocation:(id)arg1;
+- (void)_popInvocation;
+- (id)_peekInvocation;
+- (BOOL)_handleInvocation:(id)arg1;
+- (BOOL)isValidSelector:(SEL)arg1;
+- (void)terminated;
+- (void)_clearPort:(BOOL)arg1;
+- (void)_portDidBecomeInvalid;
+- (void)_cancelHandlerCompleted;
+- (void)_handleNewInvocations;
+- (id)initWithTarget:(id)arg1 port:(unsigned int)arg2 protocol:(id)arg3;
+- (id)initWithTarget:(id)arg1 portName:(id)arg2 checkInPort:(BOOL)arg3 protocol:(id)arg4;
+- (void)handleHeaderData:(unsigned long long*)arg1 headerLength:(unsigned int)arg2 data:(char *)arg3 dataLength:(unsigned int)arg4 fromPid:(int)arg5;
+- (unsigned int)mach_port;
+- (unsigned int)_port;
+- (id)port;
+- (BOOL)isValid;
+- (int)pid;
+- (void)setPid:(int)arg1;
+- (void)setTarget:(id)arg1;
+- (id)description;
+- (id)target;
+- (void)dealloc;
 
 @end

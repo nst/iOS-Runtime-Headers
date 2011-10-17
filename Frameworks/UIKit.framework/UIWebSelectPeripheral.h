@@ -2,26 +2,25 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMHTMLSelectElement, <UIWebSelectControl>;
+@class <UIWebFormControl>, DOMHTMLSelectElement;
 
 @interface UIWebSelectPeripheral : NSObject <UIFormPeripheral> {
     DOMHTMLSelectElement *_selectionNode;
-    <UIWebSelectControl> *_selectControl;
+    <UIWebFormControl> *_selectControl;
 }
 
-@property(retain) <UIWebSelectControl> * _selectControl;
 @property(retain) DOMHTMLSelectElement * _selectionNode;
+@property(retain) <UIWebFormControl> * _selectControl;
 
 + (id)createPeripheralWithDOMHTMLSelectElement:(id)arg1;
-+ (void)_initializeSafeCategory;
 
-- (id)assistantView;
 - (id)_selectControl;
-- (id)initWithDOMHTMLSelectElement:(id)arg1;
+- (id)_selectionNode;
+- (id)assistantView;
 - (void)beginEditing;
+- (id)initWithDOMHTMLSelectElement:(id)arg1;
 - (void)set_selectControl:(id)arg1;
 - (void)set_selectionNode:(id)arg1;
-- (id)_selectionNode;
 - (void)dealloc;
 
 @end

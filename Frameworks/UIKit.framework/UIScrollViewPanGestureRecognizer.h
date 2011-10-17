@@ -6,40 +6,42 @@
 
 @interface UIScrollViewPanGestureRecognizer : UIPanGestureRecognizer  {
     UIScrollView *_scrollView;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _lastTrueScreenLocation;
-    unsigned int _directionalLockEnabled : 1;
-    unsigned int _lockVertical : 1;
-    unsigned int _lockHorizontal : 1;
-    unsigned int _wasLockedVertical : 1;
-    unsigned int _wasLockedHorizontal : 1;
-    unsigned int _hasChildScrollView : 1;
-    unsigned int _hasParentScrollView : 1;
+    SEL _scrollViewAction;
     struct CGPoint { 
         float x; 
         float y; 
     } _reconsideredLockingLocation;
+    unsigned int _lastLockingAxis : 2;
+    unsigned int _lockingAxis : 2;
+    unsigned int _hasChildScrollView : 1;
+    unsigned int _hasParentScrollView : 1;
+    unsigned int _caughtDeceleratingScrollView : 1;
+    unsigned int _directionalLockEnabled : 1;
+    unsigned int _waitingForParentScrollView : 1;
 }
 
-@property(getter=isDirectionalLockEnabled) BOOL directionalLockEnabled;
 @property UIScrollView * scrollView;
+@property(getter=isDirectionalLockEnabled) BOOL directionalLockEnabled;
 
 
-- (id)scrollView;
-- (void)_touchesListChangedFrom:(id)arg1 to:(id)arg2;
-- (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
+- (void)setDelegate:(id)arg1;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
+- (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
+- (struct CGPoint { float x1; float x2; })_adjustScreenLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)_resetGestureRecognizer;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)setScrollView:(id)arg1;
-- (void)setDirectionalLockEnabled:(BOOL)arg1;
-- (BOOL)isDirectionalLockEnabled;
-- (float)_hysteresis;
+- (id)scrollView;
+- (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (void)_scrollViewDidEndZooming;
+- (struct CGPoint { float x1; float x2; })velocityInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })translationInView:(id)arg1;
+- (float)_hysteresis;
+- (BOOL)isDirectionalLockEnabled;
+- (void)setDirectionalLockEnabled:(BOOL)arg1;
+- (void)setScrollView:(id)arg1;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 
 @end

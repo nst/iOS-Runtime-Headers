@@ -9,8 +9,8 @@
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
 @property(readonly) NSString * title;
+@property(readonly) NSURL * URL;
 
 
 - (id)URL;

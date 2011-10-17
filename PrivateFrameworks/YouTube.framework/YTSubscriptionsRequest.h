@@ -15,20 +15,20 @@
 + (BOOL)isSubscription:(id)arg1 channelOfUser:(id)arg2;
 + (id)URLForSubscription:(id)arg1;
 
-- (void)loadRequest:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (void)_didAuthenticate:(id)arg1;
-- (void)_doRequestWithURL:(id)arg1;
 - (void)requestSubscriptions;
 - (void)requestPlaylists;
 - (void)createPlaylistNamed:(id)arg1;
 - (void)subscribeToUser:(id)arg1;
-- (void)failWithError:(id)arg1;
+- (void)_doRequestWithURL:(id)arg1;
+- (void)_didAuthenticate:(id)arg1;
 - (void)_failedToAuthenticate:(id)arg1;
 - (void)_listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (int)parseData:(id)arg1;
+- (void)loadRequest:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

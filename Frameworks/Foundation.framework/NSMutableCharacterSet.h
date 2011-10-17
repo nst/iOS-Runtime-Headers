@@ -5,37 +5,37 @@
 @interface NSMutableCharacterSet : NSCharacterSet <NSCopying, NSMutableCopying> {
 }
 
-+ (id)punctuationCharacterSet;
-+ (id)symbolCharacterSet;
-+ (id)alphanumericCharacterSet;
-+ (id)whitespaceCharacterSet;
-+ (id)characterSetWithCharactersInString:(id)arg1;
-+ (id)decimalDigitCharacterSet;
-+ (id)whitespaceAndNewlineCharacterSet;
 + (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-+ (id)uppercaseLetterCharacterSet;
-+ (id)controlCharacterSet;
-+ (id)letterCharacterSet;
-+ (id)lowercaseLetterCharacterSet;
-+ (id)nonBaseCharacterSet;
-+ (id)decomposableCharacterSet;
++ (id)characterSetWithBitmapRepresentation:(id)arg1;
 + (id)illegalCharacterSet;
 + (id)capitalizedLetterCharacterSet;
++ (id)decomposableCharacterSet;
++ (id)nonBaseCharacterSet;
++ (id)controlCharacterSet;
++ (id)letterCharacterSet;
 + (id)newlineCharacterSet;
-+ (id)characterSetWithBitmapRepresentation:(id)arg1;
++ (id)symbolCharacterSet;
++ (id)punctuationCharacterSet;
++ (id)alphanumericCharacterSet;
++ (id)characterSetWithCharactersInString:(id)arg1;
++ (id)decimalDigitCharacterSet;
++ (id)whitespaceCharacterSet;
 + (id)characterSetWithContentsOfFile:(id)arg1;
++ (id)lowercaseLetterCharacterSet;
++ (id)uppercaseLetterCharacterSet;
++ (id)whitespaceAndNewlineCharacterSet;
 
+- (BOOL)isMutable;
+- (void)addCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)invert;
-- (void)formUnionWithCharacterSet:(id)arg1;
 - (void)addCharactersInString:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)formUnionWithCharacterSet:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)addCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)formIntersectionWithCharacterSet:(id)arg1;
-- (BOOL)isMutable;
-- (void)removeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)removeCharactersInString:(id)arg1;
+- (void)removeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 
 @end

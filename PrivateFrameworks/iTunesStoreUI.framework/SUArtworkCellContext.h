@@ -11,20 +11,20 @@
     UIImage *_placeholderImage;
 }
 
-@property(retain) UIImage * placeholderImage;
-@property(retain) SUImageDataProvider * imageProvider;
-@property(retain) ISURLOperationPool * imagePool;
 @property(retain) SUImageCache * imageCache;
+@property(retain) ISURLOperationPool * imagePool;
+@property(retain) SUImageDataProvider * imageProvider;
+@property(retain) UIImage * placeholderImage;
 
 
-- (void)dealloc;
+- (id)imageCache;
 - (void)setImageCache:(id)arg1;
-- (id)placeholderImage;
+- (void)dealloc;
 - (void)setPlaceholderImage:(id)arg1;
 - (void)setImageProvider:(id)arg1;
-- (id)imageProvider;
-- (id)imageCache;
 - (void)setImagePool:(id)arg1;
+- (id)imageProvider;
+- (id)placeholderImage;
 - (id)imagePool;
 
 @end

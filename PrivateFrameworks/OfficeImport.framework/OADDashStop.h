@@ -8,11 +8,11 @@
 }
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)space;
-- (float)dash;
 - (id)initWithDash:(float)arg1 space:(float)arg2;
+- (float)dash;
+- (float)space;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

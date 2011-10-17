@@ -10,27 +10,31 @@
     NSArray *_moreViewControllers;
     UIMoreListCellLayoutManager *_layoutManager;
     UIBarButtonItem *_moreEditButtonItem;
+    BOOL _moreViewControllersChanged;
 }
 
 @property(retain) NSArray * moreViewControllers;
 @property BOOL allowsCustomizing;
+@property BOOL moreViewControllersChanged;
 
 
-- (void)loadView;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)_layoutCells;
 - (void)_updateEditButton;
+- (void)_layoutCells;
+- (BOOL)moreViewControllersChanged;
 - (BOOL)allowsCustomizing;
+- (void)setMoreViewControllersChanged:(BOOL)arg1;
 - (void)setAllowsCustomizing:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)setMoreViewControllers:(id)arg1;
 - (id)moreViewControllers;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (void)setMoreViewControllers:(id)arg1;
 - (id)tabBarItem;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
 - (id)table;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)init;
 - (void)dealloc;
 

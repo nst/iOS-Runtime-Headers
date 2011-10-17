@@ -11,14 +11,14 @@
 @property(copy,readonly) NSArray * inputParameters;
 
 
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)finalize;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
-- (void)setInputParameters:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)inputParameters;
+- (void)setInputParameters:(id)arg1;
 - (id)_audioVolumeCurveForTrackID:(int)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -24,39 +24,39 @@
 }
 
 
-- (void)setBackground:(id)arg1;
-- (id)background;
-- (void)setName:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (void)setId:(id)arg1;
-- (void)setBand1HorzStyle:(id)arg1;
-- (void)setBand1VertStyle:(id)arg1;
-- (void)setLastRowStyle:(id)arg1;
-- (void)setNorthEastStyle:(id)arg1;
-- (void)setSouthEastStyle:(id)arg1;
 - (id)partStyle:(int)arg1;
 - (void)setWholeTableStyle:(id)arg1;
-- (id)band1HorzStyle;
-- (id)band2HorzStyle;
+- (void)setBand1HorzStyle:(id)arg1;
 - (void)setBand2HorzStyle:(id)arg1;
-- (id)band1VertStyle;
-- (id)band2VertStyle;
+- (void)setBand1VertStyle:(id)arg1;
 - (void)setBand2VertStyle:(id)arg1;
 - (void)setFirstRowStyle:(id)arg1;
-- (id)firstColumnStyle;
 - (void)setFirstColumnStyle:(id)arg1;
-- (id)lastRowStyle;
-- (id)lastColumnStyle;
+- (void)setLastRowStyle:(id)arg1;
 - (void)setLastColumnStyle:(id)arg1;
-- (id)northEastStyle;
-- (id)northWestStyle;
+- (void)setNorthEastStyle:(id)arg1;
 - (void)setNorthWestStyle:(id)arg1;
-- (id)southEastStyle;
-- (id)southWestStyle;
+- (void)setSouthEastStyle:(id)arg1;
 - (void)setSouthWestStyle:(id)arg1;
-- (id)firstRowStyle;
 - (id)wholeTableStyle;
+- (id)band1HorzStyle;
+- (id)band2HorzStyle;
+- (id)band1VertStyle;
+- (id)band2VertStyle;
+- (id)firstRowStyle;
+- (id)lastRowStyle;
+- (id)firstColumnStyle;
+- (id)lastColumnStyle;
+- (id)northWestStyle;
+- (id)northEastStyle;
+- (id)southWestStyle;
+- (id)southEastStyle;
 - (id)id;
+- (void)setId:(id)arg1;
+- (id)background;
+- (void)setBackground:(id)arg1;
+- (id)name;
+- (void)setName:(id)arg1;
+- (void)dealloc;
 
 @end

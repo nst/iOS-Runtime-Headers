@@ -9,9 +9,10 @@
 }
 
 
+- (unsigned int)addOrEquivalentObject:(id)arg1;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (unsigned int)addObject:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (unsigned int)addObject:(id)arg1;
-- (unsigned int)addOrEquivalentObject:(id)arg1;
 
 @end

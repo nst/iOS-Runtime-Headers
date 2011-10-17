@@ -16,21 +16,21 @@
 }
 
 
+- (void)setTreeDepth:(int)arg1;
+- (struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)xRanges;
+- (int)treeDepth;
+- (void)setExtraRowsBetweenParentAndSelf:(int)arg1;
+- (void)setConnectToVerticalSide:(BOOL)arg1;
+- (void)addToXOffsetRelativeToParent:(float)arg1;
+- (void)setXRange:(struct ODIHRange { float x1; float x2; })arg1;
+- (void)setXOffsetRelativeToParent:(float)arg1;
+- (struct ODIHRange { float x1; float x2; })xRange;
+- (int)extraRowsBetweenParentAndSelf;
+- (void)setRow:(int)arg1;
+- (float)xOffsetRelativeToParent;
+- (BOOL)connectToVerticalSide;
 - (int)row;
 - (id)init;
 - (void)dealloc;
-- (struct ODIHRange { float x1; float x2; })xRange;
-- (void)setXRange:(struct ODIHRange { float x1; float x2; })arg1;
-- (int)treeDepth;
-- (void)setTreeDepth:(int)arg1;
-- (void)setRow:(int)arg1;
-- (BOOL)connectToVerticalSide;
-- (void)setConnectToVerticalSide:(BOOL)arg1;
-- (int)extraRowsBetweenParentAndSelf;
-- (void)setExtraRowsBetweenParentAndSelf:(int)arg1;
-- (float)xOffsetRelativeToParent;
-- (void)setXOffsetRelativeToParent:(float)arg1;
-- (void)addToXOffsetRelativeToParent:(float)arg1;
-- (struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)xRanges;
 
 @end

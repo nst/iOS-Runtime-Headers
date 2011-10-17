@@ -31,27 +31,26 @@
 + (id)assetWriterTrackWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 outputSettings:(id)arg4 sourcePixelBufferAttributes:(id)arg5 error:(id*)arg6;
 
 - (void)finalize;
-- (void)release;
-- (id)init;
-- (id)retain;
-- (void)dealloc;
-- (int)trackID;
-- (id)mediaType;
+- (void)setMediaTimeScale:(int)arg1;
 - (struct __CVPixelBufferPool { }*)pixelBufferPool;
-- (void)_figAssetWriterDidDropBelowLowWaterLevelForTrackID:(int)arg1;
-- (void)_refreshAboveHighWaterLevel;
-- (BOOL)isAboveHighWaterLevel;
-- (BOOL)addPixelBuffer:(struct __CVBuffer { }*)arg1 atPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 error:(id*)arg3;
+- (void)setSampleBufferCoalescingInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)prepareToEndSession;
 - (void)setFigMetadata:(id)arg1;
 - (void)setFigTrackMatrix:(id)arg1;
-- (void)setMediaTimeScale:(int)arg1;
+- (BOOL)isAboveHighWaterLevel;
+- (BOOL)addSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 error:(id*)arg2;
+- (BOOL)addPixelBuffer:(struct __CVBuffer { }*)arg1 atPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 error:(id*)arg3;
+- (BOOL)markEndOfDataReturningError:(id*)arg1;
+- (void)_figAssetWriterDidDropBelowLowWaterLevelForTrackID:(int)arg1;
+- (id)initWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 outputSettings:(id)arg4 sourcePixelBufferAttributes:(id)arg5 error:(id*)arg6;
+- (int)_attachToFigAssetWriterUsingOutputSettings:(id)arg1 sourcePixelBufferAttributes:(id)arg2 error:(id*)arg3;
+- (void)_refreshAboveHighWaterLevel;
 - (struct OpaqueFigAssetWriter { }*)figAssetWriter;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })sampleBufferCoalescingInterval;
-- (void)setSampleBufferCoalescingInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (id)initWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 outputSettings:(id)arg4 sourcePixelBufferAttributes:(id)arg5 error:(id*)arg6;
-- (BOOL)addSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 error:(id*)arg2;
-- (BOOL)markEndOfDataReturningError:(id*)arg1;
-- (int)_attachToFigAssetWriterUsingOutputSettings:(id)arg1 sourcePixelBufferAttributes:(id)arg2 error:(id*)arg3;
 - (id)mediaFileType;
+- (id)mediaType;
+- (int)trackID;
+- (id)init;
+- (void)dealloc;
 
 @end

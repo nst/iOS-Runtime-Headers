@@ -11,11 +11,11 @@
 + (void)invalidate;
 + (id)defaultMappingGenerator;
 
-- (id)init;
-- (void)dealloc;
 - (id)newUniqueNameWithBase:(unsigned short*)arg1 withLength:(unsigned int)arg2;
-- (id)uniqueNameWithBase:(id)arg1;
 - (id)generateTableName:(id)arg1;
 - (id)newGeneratedPropertyName:(id)arg1;
+- (id)uniqueNameWithBase:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

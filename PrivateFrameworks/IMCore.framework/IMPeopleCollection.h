@@ -9,17 +9,20 @@
 }
 
 @property(readonly) NSArray * collectedIMPeople;
+@property NSMutableArray * _collectedPeople;
 
 
+- (void)set_collectedPeople:(id)arg1;
+- (BOOL)containsPerson:(id)arg1;
+- (void)removeIMPeople:(id)arg1;
+- (void)addIMPeople:(id)arg1;
+- (BOOL)collectsIMPeople:(id)arg1;
+- (id)collectedIMPeople;
+- (void)_collectionNotification:(id)arg1;
+- (id)_collectedPeople;
 - (id)init;
 - (void)dealloc;
 - (id)people;
-- (BOOL)collectsIMPeople:(id)arg1;
-- (void)addIMPeople:(id)arg1;
-- (void)removeIMPeople:(id)arg1;
-- (void)_collectionNotification:(id)arg1;
-- (BOOL)containsPerson:(id)arg1;
-- (id)collectedIMPeople;
 - (id)groups;
 
 @end

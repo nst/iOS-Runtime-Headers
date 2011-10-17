@@ -2,58 +2,49 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURLAuthenticationChallenge, NSLock, NSMutableArray, NSURLProtocol;
+@class NSURLAuthenticationChallenge, NSURLProtocol;
 
 @interface _NSCFURLProtocolBridge : NSObject <NSURLProtocolClient> {
-    unsigned int flags;
-    NSURLProtocol *nsProt;
+    NSURLProtocol *_nsProt;
     struct _CFURLProtocol { } *_cfProt;
-    struct _CFURLAuthChallenge { } *cfChallenge;
-    NSURLAuthenticationChallenge *nsChallenge;
-    struct __CFRunLoopSource { } *_rlSrc;
-    NSMutableArray *events;
-    NSLock *eventMutex;
-    NSMutableArray *clientInstructions;
-    NSLock *clientMutex;
+    struct _CFURLAuthChallenge { } *_cfChallenge;
+    NSURLAuthenticationChallenge *_nsChallenge;
     BOOL _loading;
 }
 
-+ (void)barRequest:(struct _CFURLRequest { }*)arg1;
 + (void)registerWithCFURLProtocol;
 + (void)permitRequest:(struct _CFURLRequest { }*)arg1;
++ (void)barRequest:(struct _CFURLRequest { }*)arg1;
 
-- (void)finalize;
 - (void)start;
-- (void)dealloc;
-- (id)description;
-- (id)initWithCFURLProtocol:(struct _CFURLProtocol { }*)arg1;
-- (void)schedule:(struct __CFRunLoop { }*)arg1 mode:(struct __CFString { }*)arg2;
-- (void)unschedule:(struct __CFRunLoop { }*)arg1 mode:(struct __CFString { }*)arg2;
-- (void)sendInstruction:(int)arg1;
-- (void)dispatchInstruction:(int)arg1;
-- (void)dispatchInstructions;
-- (void)halt;
-- (void)_forgetClient;
+- (void)bridgeRelease;
+- (void)bridgeRetain;
 - (void)useCredential:(struct _CFURLCredential { }*)arg1 forChallenge:(struct _CFURLAuthChallenge { }*)arg2;
-- (void)wasRedirectedToRequest:(id)arg1 redirectResponse:(id)arg2;
-- (void)cachedResponseIsValid:(id)arg1;
-- (void)didReceiveResponse:(id)arg1;
-- (void)didLoadData:(id)arg1 lengthReceived:(long long)arg2;
-- (void)didFinishLoading;
-- (void)didFailWithError:(id)arg1;
-- (void)didReceiveAuthenticationChallenge:(id)arg1;
-- (void)processEventQ;
-- (void)marshalEvent:(int)arg1 obj:(id)arg2 obj2:(id)arg3;
-- (void)URLProtocol:(id)arg1 wasRedirectedToRequest:(id)arg2 redirectResponse:(id)arg3;
-- (void)URLProtocol:(id)arg1 didLoadData:(id)arg2 lengthReceived:(long long)arg3;
-- (void)URLProtocol:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
+- (void)_forgetClient;
+- (void)halt;
 - (void)URLProtocol:(id)arg1 didCancelAuthenticationChallenge:(id)arg2;
+- (void)URLProtocol:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
+- (void)didReceiveAuthenticationChallenge:(id)arg1;
+- (void)didFailWithError:(id)arg1;
+- (void)didFinishLoading;
+- (void)didLoadData:(id)arg1 lengthReceived:(long long)arg2;
+- (void)didReceiveResponse:(id)arg1;
+- (void)cachedResponseIsValid:(id)arg1;
+- (void)wasRedirectedToRequest:(id)arg1 redirectResponse:(id)arg2;
+- (void)pushEvent:(id)arg1 from:(const char *)arg2;
+- (void)unschedule:(struct __CFRunLoop { }*)arg1 mode:(struct __CFString { }*)arg2;
+- (void)schedule:(struct __CFRunLoop { }*)arg1 mode:(struct __CFString { }*)arg2;
+- (id)initWithCFURLProtocol:(struct _CFURLProtocol { }*)arg1 request:(id)arg2 protocolClass:(Class)arg3;
+- (void)URLProtocol:(id)arg1 wasRedirectedToRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)URLProtocol:(id)arg1 cachedResponseIsValid:(id)arg2;
-- (void)stop;
-- (void)resume;
-- (void)URLProtocol:(id)arg1 didFailWithError:(id)arg2;
-- (void)URLProtocol:(id)arg1 didReceiveResponse:(id)arg2 cacheStoragePolicy:(unsigned int)arg3;
 - (void)URLProtocol:(id)arg1 didLoadData:(id)arg2;
+- (void)URLProtocol:(id)arg1 didLoadData:(id)arg2 lengthReceived:(long long)arg3;
+- (void)URLProtocol:(id)arg1 didFailWithError:(id)arg2;
 - (void)URLProtocolDidFinishLoading:(id)arg1;
+- (void)URLProtocol:(id)arg1 didReceiveResponse:(id)arg2 cacheStoragePolicy:(unsigned int)arg3;
+- (void)resume;
+- (void)stop;
+- (id)description;
+- (void)dealloc;
 
 @end

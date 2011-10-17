@@ -9,18 +9,18 @@
     BOOL mIsColorOverridden;
 }
 
-+ (id)defaultProperties;
 + (id)whiteFill;
++ (id)defaultProperties;
 + (id)blackFill;
 
-- (void)setColor:(id)arg1;
+- (void)setStyleColor:(id)arg1;
+- (BOOL)isColorOverridden;
+- (id)initWithDefaults;
 - (id)color;
-- (unsigned int)hash;
+- (void)setColor:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setStyleColor:(id)arg1;
-- (id)initWithDefaults;
-- (BOOL)isColorOverridden;
 
 @end

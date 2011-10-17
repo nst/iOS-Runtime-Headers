@@ -18,53 +18,47 @@
     UIColor *_topBorderColor;
 }
 
+@property(retain) UIColor * bottomBorderColor;
 @property int clipCorners;
 @property(retain) SUCellConfiguration * configuration;
 @property BOOL drawAsDisabled;
 @property BOOL highlightsOnlyContentView;
-@property(retain,readonly) SUItemOfferButton * itemOfferButton;
+@property(readonly) SUItemOfferButton * itemOfferButton;
+@property struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } position;
 @property BOOL showHighlight;
-@property BOOL usesSubviews;
 @property(retain) UIColor * topBorderColor;
-@property struct { unsigned int localIndex; unsigned int localCount; unsigned int globalIndex; unsigned int globalCount; } position;
-@property(retain) UIColor * bottomBorderColor;
+@property BOOL usesSubviews;
 
-+ (void)_initializeSafeCategory;
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)_canDrawContent;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setShowingDeleteConfirmation:(BOOL)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setPosition:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
-- (void)layoutSubviews;
+- (void)setShowingDeleteConfirmation:(BOOL)arg1;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })position;
-- (void)dealloc;
+- (BOOL)_canDrawContent;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setConfiguration:(id)arg1;
-- (id)configuration;
-- (void)setBottomBorderColor:(id)arg1;
-- (id)copyPurchaseAnimationView;
-- (id)itemOfferButton;
-- (void)setShowHighlight:(BOOL)arg1;
-- (void)setTopBorderColor:(id)arg1;
-- (BOOL)showHighlight;
+- (void)dealloc;
 - (id)topBorderColor;
 - (id)bottomBorderColor;
-- (BOOL)drawAsDisabled;
-- (BOOL)highlightsOnlyContentView;
-- (void)setDrawAsDisabled:(BOOL)arg1;
-- (void)setHighlightsOnlyContentView:(BOOL)arg1;
+- (BOOL)showHighlight;
 - (void)setUsesSubviews:(BOOL)arg1;
+- (void)setTopBorderColor:(id)arg1;
+- (void)setShowHighlight:(BOOL)arg1;
+- (void)setBottomBorderColor:(id)arg1;
+- (id)itemOfferButton;
+- (id)copyPurchaseAnimationView;
 - (BOOL)usesSubviews;
+- (void)setHighlightsOnlyContentView:(BOOL)arg1;
+- (void)setDrawAsDisabled:(BOOL)arg1;
+- (BOOL)drawAsDisabled;
 - (int)clipCorners;
+- (BOOL)highlightsOnlyContentView;
+- (id)configuration;
+- (void)setConfiguration:(id)arg1;
 - (void)setClipCorners:(int)arg1;
-- (id)accessibilityTableViewCellText;
-- (id)description;
-- (id)accessibilityLanguage;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityHint;
 
 @end

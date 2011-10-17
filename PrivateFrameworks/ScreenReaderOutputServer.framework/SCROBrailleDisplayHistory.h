@@ -11,17 +11,17 @@
 
 + (void)initialize;
 
-- (id)init;
-- (void)dealloc;
-- (id)currentString;
 - (void)addString:(id)arg1;
 - (void)snapshotUnread;
 - (void)markSnapshotAsRead;
 - (BOOL)hasUnread;
+- (id)currentString;
 - (BOOL)moveToNext;
 - (BOOL)moveToPrevious;
-- (BOOL)_moveIndexBy:(long)arg1;
 - (BOOL)isOnMostRecent;
 - (void)moveToMostRecent;
+- (BOOL)_moveIndexBy:(long)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

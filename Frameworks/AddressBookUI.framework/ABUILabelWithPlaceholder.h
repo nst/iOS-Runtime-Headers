@@ -20,34 +20,31 @@
 @property struct CGSize { float width; float height; } shadowOffset;
 @property UIFont * font;
 
-+ (void)_initializeSafeCategory;
 
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)label;
-- (id)shadowColor;
 - (void)setHighlightedTextColor:(id)arg1;
 - (id)highlightedTextColor;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)setTextColor:(id)arg1;
-- (id)textColor;
 - (void)setPlaceholder:(id)arg1;
+- (id)textColor;
 - (id)placeholder;
 - (struct CGSize { float x1; float x2; })shadowOffset;
+- (void)sizeToFit;
+- (id)font;
+- (id)text;
+- (void)setTextColor:(id)arg1;
+- (void)setFont:(id)arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShadowColor:(id)arg1;
+- (id)shadowColor;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)text;
-- (void)sizeToFit;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)font;
-- (void)setFont:(id)arg1;
-- (void)dealloc;
-- (void)setShadowColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_setActualText:(id)arg1;
+- (void)dealloc;
 - (void)_setActualTextColor:(id)arg1;
+- (void)_setActualText:(id)arg1;
 - (float)labelLeftEdgeInset;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrameForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

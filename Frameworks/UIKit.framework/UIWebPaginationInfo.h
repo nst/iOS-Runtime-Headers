@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebDocumentView, NSArray;
+@class NSArray, UIWebDocumentView, NSObject<WebDocumentView>;
 
 @interface UIWebPaginationInfo : NSObject  {
+    NSObject<WebDocumentView> *_documentView;
     float _scaleFactor;
     struct CGSize { 
         float width; 
@@ -19,15 +20,16 @@
 @property(retain) UIWebDocumentView * webDocumentView;
 
 
-- (unsigned int)pageCount;
-- (float)lastPageHeight;
-- (struct CGSize { float x1; float x2; })sizeForPageAtIndex:(int)arg1;
 - (id)webDocumentView;
-- (id)initWithScaleFactor:(float)arg1 layoutSize:(struct CGSize { float x1; float x2; })arg2 pageRects:(id)arg3;
-- (void)setWebDocumentView:(id)arg1;
-- (id)pageRects;
-- (float)scaleFactor;
+- (struct CGSize { float x1; float x2; })sizeForPageAtIndex:(int)arg1;
+- (float)lastPageHeight;
+- (unsigned int)pageCount;
 - (struct CGSize { float x1; float x2; })layoutSize;
+- (float)scaleFactor;
+- (id)pageRects;
+- (void)setWebDocumentView:(id)arg1;
+- (id)initWithDocumentView:(id)arg1 scaleFactor:(float)arg2 layoutSize:(struct CGSize { float x1; float x2; })arg3 pageRects:(id)arg4;
+- (id)documentView;
 - (void)dealloc;
 
 @end

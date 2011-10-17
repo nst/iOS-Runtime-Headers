@@ -11,29 +11,29 @@
     UIImage *dividerHighlightedImage;
 }
 
-@property(retain) UIImage * dividerHighlightedImage;
-@property(retain) UIImage * dividerImage;
-@property(retain) UIImage * categoryKeyHighlightedImage;
 @property(retain) UIImage * categoryKeyImage;
+@property(retain) UIImage * categoryKeyHighlightedImage;
+@property(retain) UIImage * dividerImage;
+@property(retain) UIImage * dividerHighlightedImage;
 
 
-- (void)updateSegmentImages;
-- (void)updateSegmentAndDividers:(int)arg1;
-- (void)releaseImagesAndViews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDivider:(int)arg1;
+- (id)dividerImage;
+- (id)dividerHighlightedImage;
+- (id)categoryKeyHighlightedImage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForSegment:(int)arg1;
+- (id)categoryKeyImage;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDivider:(int)arg1;
 - (void)setDividerHighlightedImage:(id)arg1;
 - (void)setDividerImage:(id)arg1;
 - (void)setCategoryKeyHighlightedImage:(id)arg1;
 - (void)setCategoryKeyImage:(id)arg1;
-- (id)dividerHighlightedImage;
-- (id)dividerImage;
-- (id)categoryKeyHighlightedImage;
-- (id)categoryKeyImage;
-- (void)layoutSubviews;
+- (void)updateSegmentAndDividers:(int)arg1;
+- (void)updateSegmentImages;
+- (void)releaseImagesAndViews;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
+- (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

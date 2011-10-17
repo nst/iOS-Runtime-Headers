@@ -2,38 +2,23 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSDictionary, NSString, NSArray;
+@class NSArray;
 
 @interface GKGetStoreBagValuesRequest : GKDataRequest  {
     NSArray *_keys;
-    NSDictionary *_bag;
-    NSString *_playerID;
-    NSString *_authToken;
-    NSString *_accountName;
 }
 
-@property(retain) NSString * accountName;
-@property(retain) NSString * authToken;
-@property(retain) NSString * playerID;
-@property(retain) NSDictionary * bag;
 @property(retain) NSArray * keys;
 
 
-- (void)setPlayerID:(id)arg1;
 - (BOOL)authenticationRequired;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
-- (void)setBag:(id)arg1;
-- (id)bag;
-- (void)setAuthToken:(id)arg1;
-- (id)authToken;
-- (id)playerID;
+- (Class)responseClass;
+- (id)header;
 - (void)setKeys:(id)arg1;
+- (void)send;
 - (id)keys;
 - (id)key;
 - (id)request;
 - (void)dealloc;
-- (id)header;
-- (void)setAccountName:(id)arg1;
-- (id)accountName;
 
 @end

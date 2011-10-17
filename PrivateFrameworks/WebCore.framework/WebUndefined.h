@@ -5,17 +5,17 @@
 @interface WebUndefined : NSObject <NSCoding, NSCopying> {
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)undefined;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)release;
 - (void)encodeWithCoder:(id)arg1;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)retainCount;
 - (id)description;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)autorelease;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

@@ -12,10 +12,9 @@
 
 + (id)searchBarWithTheme:(id)arg1;
 
-- (void)_setupCancelButton;
-- (void)_destroyCancelButton;
-- (void)dealloc;
 - (id)theme;
 - (void)setTheme:(id)arg1;
+- (void)_destroyCancelButton;
+- (void)dealloc;
 
 @end

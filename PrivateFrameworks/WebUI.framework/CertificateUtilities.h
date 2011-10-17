@@ -5,8 +5,7 @@
 @interface CertificateUtilities : NSObject  {
 }
 
-+ (struct __SecPolicy { }*)createSSLPolicyForHost:(id)arg1 client:(BOOL)arg2;
-+ (id)identitiesWithPolicy:(struct __SecPolicy { }*)arg1;
++ (id)identitiesWithProtectionSpace:(id)arg1;
 
 
 @end

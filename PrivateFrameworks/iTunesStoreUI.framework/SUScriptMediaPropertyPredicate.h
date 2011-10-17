@@ -11,26 +11,26 @@
 }
 
 @property(readonly) MPMediaPropertyPredicate * nativePredicate;
-@property(getter=_comparisonType,retain,readonly) NSString * comparisonType;
-@property(getter=_property,retain,readonly) NSString * property;
-@property(getter=_value,retain,readonly) id value;
+@property(readonly) NSString * comparisonType;
+@property(readonly) NSString * property;
+@property(readonly) id value;
 
 + (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
+- (id)property;
+- (id)attributeKeys;
+- (id)value;
 - (void)dealloc;
-- (id)_property;
-- (id)_comparisonType;
-- (void)set_comparisonType:(id)arg1;
-- (void)set_property:(id)arg1;
-- (void)set_value:(id)arg1;
-- (id)_copyComparisonType;
-- (id)_copyProperty;
-- (id)_copyValue;
-- (void)_setProperty:(id)arg1 value:(id)arg2 comparisonType:(int)arg3;
 - (id)_playlistAttributesForScriptArray:(id)arg1;
-- (id)initWithProperty:(id)arg1 value:(id)arg2 comparisonType:(id)arg3;
+- (id)comparisonType;
+- (id)_copyProperty;
+- (id)_copyComparisonType;
+- (void)_setProperty:(id)arg1 value:(id)arg2 comparisonType:(int)arg3;
 - (id)nativePredicate;
-- (id)_value;
+- (id)initWithProperty:(id)arg1 value:(id)arg2 comparisonType:(id)arg3;
+- (id)_copyValue;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

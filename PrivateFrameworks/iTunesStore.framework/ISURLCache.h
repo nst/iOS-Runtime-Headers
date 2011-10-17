@@ -18,23 +18,23 @@
 + (id)cacheDirectoryPath;
 + (id)persistentIdentifierFromPropertyList:(id)arg1;
 
+- (id)persistentIdentifier;
+- (void)removeAllCachedResponses;
+- (void)removeCachedResponseForRequest:(id)arg1;
+- (void)storeCachedResponse:(id)arg1 forRequest:(id)arg2;
+- (id)cachedResponseForRequest:(id)arg1;
+- (unsigned int)currentDiskUsage;
+- (unsigned int)currentMemoryUsage;
+- (unsigned int)diskCapacity;
+- (unsigned int)memoryCapacity;
+- (BOOL)_urlStringMatchesURLPatterns:(id)arg1;
+- (BOOL)_urlStringMatchesFileExtensions:(id)arg1;
+- (BOOL)criteriaMatchesRequest:(id)arg1;
+- (BOOL)isUsableByClientWithIdentifier:(id)arg1;
+- (void)reloadWithCacheConfiguration:(id)arg1;
+- (id)initWithCacheConfiguration:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (BOOL)_urlStringMatchesFileExtensions:(id)arg1;
-- (BOOL)_urlStringMatchesURLPatterns:(id)arg1;
-- (id)persistentIdentifier;
-- (id)initWithCacheConfiguration:(id)arg1;
-- (void)reloadWithCacheConfiguration:(id)arg1;
-- (BOOL)isUsableByClientWithIdentifier:(id)arg1;
-- (BOOL)criteriaMatchesRequest:(id)arg1;
-- (id)cachedResponseForRequest:(id)arg1;
-- (void)storeCachedResponse:(id)arg1 forRequest:(id)arg2;
-- (void)removeCachedResponseForRequest:(id)arg1;
-- (unsigned int)memoryCapacity;
-- (unsigned int)diskCapacity;
-- (unsigned int)currentMemoryUsage;
-- (unsigned int)currentDiskUsage;
-- (void)removeAllCachedResponses;
 - (void)saveMemoryCacheToDisk;
 - (void)purgeMemoryCache;
 

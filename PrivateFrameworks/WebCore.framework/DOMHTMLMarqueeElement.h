@@ -7,6 +7,28 @@
 
 
 - (void)start;
+- (id)behavior;
+- (void)setBehavior:(id)arg1;
+- (int)loop;
+- (void)setLoop:(int)arg1;
+- (int)scrollAmount;
+- (void)setScrollAmount:(int)arg1;
+- (int)scrollDelay;
+- (BOOL)trueSpeed;
+- (void)setTrueSpeed:(BOOL)arg1;
+- (id)bgColor;
+- (void)setBgColor:(id)arg1;
+- (unsigned int)hspace;
+- (void)setHspace:(unsigned int)arg1;
+- (unsigned int)vspace;
+- (void)setVspace:(unsigned int)arg1;
 - (void)stop;
+- (void)setHeight:(id)arg1;
+- (id)height;
+- (void)setScrollDelay:(int)arg1;
+- (id)direction;
+- (void)setDirection:(id)arg1;
+- (void)setWidth:(id)arg1;
+- (id)width;
 
 @end

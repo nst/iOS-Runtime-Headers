@@ -13,20 +13,20 @@
 
 @property(retain) GKUITheme * theme;
 @property(retain) GKSectionHeader * friendImportSectionHeader;
-@property(retain) UILabel * friendImportHelpLabel;
 @property(retain) GKButton * friendImportButton;
+@property(retain) UILabel * friendImportHelpLabel;
 
 
-- (id)friendImportButton;
 - (id)friendImportSectionHeader;
-- (void)setFriendImportSectionHeader:(id)arg1;
 - (id)friendImportHelpLabel;
+- (id)friendImportButton;
 - (void)setFriendImportHelpLabel:(id)arg1;
 - (void)setFriendImportButton:(id)arg1;
+- (void)setFriendImportSectionHeader:(id)arg1;
 - (id)initWithTheme:(id)arg1;
-- (void)layoutSubviews;
-- (void)dealloc;
 - (id)theme;
 - (void)setTheme:(id)arg1;
+- (void)layoutSubviews;
+- (void)dealloc;
 
 @end

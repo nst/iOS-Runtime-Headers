@@ -5,53 +5,50 @@
 @class NSString, NSMutableArray;
 
 @interface LBSAddress : PBCodable  {
-    NSString *_raw_text;
+    NSString *_rawText;
     NSMutableArray *_components;
-    BOOL _is_physical;
-    BOOL _hasIs_physical;
-    BOOL _is_mailing;
-    BOOL _hasIs_mailing;
-    NSMutableArray *_cross_streets;
+    BOOL _hasIsPhysical;
+    BOOL _isPhysical;
+    BOOL _hasIsMailing;
+    BOOL _isMailing;
+    NSMutableArray *_crossStreets;
 }
 
-@property(readonly) BOOL hasRaw_text;
-@property(readonly) int componentsCount;
-@property(readonly) int cross_streetsCount;
-@property(retain) NSMutableArray * cross_streets;
-@property(readonly) BOOL hasIs_mailing;
-@property BOOL is_mailing;
-@property(readonly) BOOL hasIs_physical;
-@property BOOL is_physical;
+@property(readonly) BOOL hasRawText;
+@property(retain) NSString * rawText;
 @property(retain) NSMutableArray * components;
-@property(retain) NSString * raw_text;
+@property BOOL hasIsPhysical;
+@property BOOL isPhysical;
+@property BOOL hasIsMailing;
+@property BOOL isMailing;
+@property(retain) NSMutableArray * crossStreets;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasIs_physical;
-- (BOOL)hasIs_mailing;
-- (int)cross_streetsCount;
-- (BOOL)hasRaw_text;
-- (int)componentsCount;
-- (void)setComponent:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)componentAtIndex:(unsigned int)arg1;
-- (void)addComponent:(id)arg1;
-- (void)setIs_physical:(BOOL)arg1;
-- (void)setIs_mailing:(BOOL)arg1;
-- (void)setCross_street:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)cross_streetAtIndex:(unsigned int)arg1;
-- (void)addCross_street:(id)arg1;
-- (id)cross_streets;
-- (void)setCross_streets:(id)arg1;
-- (BOOL)is_physical;
-- (void)setRaw_text:(id)arg1;
-- (BOOL)is_mailing;
-- (id)raw_text;
 - (BOOL)readFrom:(id)arg1;
+- (id)crossStreets;
+- (BOOL)isMailing;
+- (void)setHasIsMailing:(BOOL)arg1;
+- (BOOL)hasIsMailing;
+- (BOOL)isPhysical;
+- (void)setHasIsPhysical:(BOOL)arg1;
+- (BOOL)hasIsPhysical;
+- (id)rawText;
+- (id)crossStreetAtIndex:(unsigned int)arg1;
+- (unsigned int)crossStreetsCount;
+- (id)componentAtIndex:(unsigned int)arg1;
+- (unsigned int)componentsCount;
+- (BOOL)hasRawText;
+- (void)addCrossStreet:(id)arg1;
+- (void)setIsMailing:(BOOL)arg1;
+- (void)setIsPhysical:(BOOL)arg1;
+- (void)addComponent:(id)arg1;
+- (void)setCrossStreets:(id)arg1;
+- (void)setRawText:(id)arg1;
+- (id)components;
 - (void)writeTo:(id)arg1;
 - (void)setComponents:(id)arg1;
-- (id)components;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

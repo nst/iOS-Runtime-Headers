@@ -7,11 +7,12 @@
 
 
 - (int)tableViewStyle;
-- (BOOL)canShowItemOfferButtonForItem:(id)arg1;
-- (Class)cellClassForItem:(id)arg1 reuseIdentifier:(id*)arg2;
+- (float)heightForFooterInSection:(int)arg1;
 - (id)_subtitleForSectionIndex:(int)arg1;
-- (Class)cellConfigurationClassForItem:(id)arg1;
+- (BOOL)canShowItemOfferButtonForItem:(id)arg1;
 - (id)newHeaderViewForSection:(int)arg1;
+- (Class)cellClassForItem:(id)arg1 reuseIdentifier:(id*)arg2;
+- (Class)cellConfigurationClassForItem:(id)arg1;
 - (void)reloadCellContexts;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 

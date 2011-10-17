@@ -6,34 +6,44 @@
 
 @interface IMReachability : NSObject  {
     <IMReachabilityDelegate> *_delegate;
-    void *_reachabilityRef;
-    NSString *_description;
-    unsigned int _flags;
     BOOL _gettingFlags;
+    unsigned int _flags;
+    NSString *_description;
+    void *_reachabilityRef;
 }
 
-@property(readonly) unsigned int flags;
+@property unsigned int flags;
+@property <IMReachabilityDelegate> * delegate;
 @property(readonly) BOOL connectionRequired;
 @property(readonly) unsigned int status;
-@property <IMReachabilityDelegate> * delegate;
+@property void* reachabilityRef;
+@property(retain) NSString * reachabilityDescription;
+@property BOOL gettingFlags;
 
-+ (id)reachabilityForInternetConnection;
 + (id)reachabilityForLocalWiFi;
++ (id)reachabilityForInternetConnection;
 + (id)reachabilityWithHostName:(id)arg1;
-+ (id)reachabilityWithRemoteAddress:(id)arg1;
 + (id)reachabilityWithLocalAddress:(id)arg1 remoteAddress:(id)arg2;
++ (id)reachabilityWithRemoteAddress:(id)arg1;
 
+- (void)setFlags:(unsigned int)arg1;
 - (BOOL)connectionRequired;
-- (unsigned int)flags;
-- (void)dealloc;
-- (id)description;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)_initWithReachabilityRef:(struct __SCNetworkReachability { }*)arg1 description:(id)arg2 delegate:(id)arg3;
-- (id)initWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2 delegate:(id)arg3;
-- (void)_handleCallbackForSCNetworkReachability:(struct __SCNetworkReachability { }*)arg1;
+- (void)setReachabilityRef:(void*)arg1;
+- (void*)reachabilityRef;
+- (void)setReachabilityDescription:(id)arg1;
+- (id)reachabilityDescription;
+- (void)setGettingFlags:(BOOL)arg1;
+- (BOOL)gettingFlags;
 - (void)_forceGetFlagsIfNecessary;
+- (id)_initWithReachabilityRef:(struct __SCNetworkReachability { }*)arg1 description:(id)arg2 delegate:(id)arg3;
+- (void)_handleCallbackForSCNetworkReachability:(struct __SCNetworkReachability { }*)arg1;
+- (id)initWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2 delegate:(id)arg3;
 - (id)initWithRemoteHost:(id)arg1 delegate:(id)arg2;
+- (unsigned int)flags;
+- (id)delegate;
 - (unsigned int)status;
+- (id)description;
+- (void)dealloc;
 
 @end

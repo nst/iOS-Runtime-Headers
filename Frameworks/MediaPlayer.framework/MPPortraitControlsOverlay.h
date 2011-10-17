@@ -22,31 +22,29 @@
     } _boundsAnimGoal;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (void)layoutSubviews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
-- (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)detailSliderTrackingDidEnd:(id)arg1;
-- (id)createProgressIndicator;
-- (void)detailSliderTrackingDidBegin:(id)arg1;
-- (void)detailSlider:(id)arg1 didChangeScrubSpeed:(int)arg2;
-- (id)createButtonForPart:(unsigned int)arg1;
-- (int)_layoutStyle;
-- (float)_sizeToFitForCurrentStateAnimated:(BOOL)arg1;
-- (void)layoutSubviews_Compact;
-- (void)layoutSubviews_Short;
-- (void)layoutSubviews_Tall;
-- (void)resetDetailSlider:(id)arg1;
-- (void)updateForEndOfDetailScrubbing;
 - (void)_resetStateAfterSliderTrackingDone:(id)arg1;
-- (void)_sizeToFitAnimationDidEnd;
-- (void)_showScrubInstructionOverlayAnimationDidEnd;
 - (void)_hideScrubInstructionOverlayAnimationDidEnd;
+- (void)_showScrubInstructionOverlayAnimationDidEnd;
+- (void)updateForEndOfDetailScrubbing;
+- (void)resetDetailSlider:(id)arg1;
+- (void)layoutSubviews_Tall;
+- (void)layoutSubviews_Short;
+- (void)layoutSubviews_Compact;
+- (float)_sizeToFitForCurrentStateAnimated:(BOOL)arg1;
+- (void)_sizeToFitAnimationDidEnd;
+- (int)_layoutStyle;
+- (id)newButtonForPart:(unsigned int)arg1;
+- (void)detailSlider:(id)arg1 didChangeScrubSpeed:(int)arg2;
 - (void)detailSliderTrackingDidCancel:(id)arg1;
+- (void)detailSliderTrackingDidEnd:(id)arg1;
+- (void)detailSliderTrackingDidBegin:(id)arg1;
 - (void)setVisibleParts:(unsigned int)arg1;
-- (BOOL)_accessibilityObscuresScreen;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
+- (id)newProgressIndicator;
 
 @end

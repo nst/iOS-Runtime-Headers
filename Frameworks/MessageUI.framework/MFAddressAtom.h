@@ -5,6 +5,10 @@
 @class <MFAddressAtomDelegate>, MFSlicedImageView, NSString, UITextLabel;
 
 @interface MFAddressAtom : UIControl  {
+    <MFAddressAtomDelegate> *_delegate;
+    void *_person;
+    NSString *_fullAddress;
+    NSString *_displayString;
     struct { 
         struct CGRect { 
             struct CGPoint { 
@@ -41,10 +45,7 @@
     MFSlicedImageView *_rightCap;
     MFSlicedImageView *_center;
     UITextLabel *_addressLabel;
-    <MFAddressAtomDelegate> *_delegate;
-    NSString *_fullAddress;
-    void *_person;
-    NSString *_displayString;
+    int _style;
     unsigned int _maxWidth;
     int _identifier;
     unsigned int _addressIsPhoneNumber : 1;
@@ -53,34 +54,35 @@
     unsigned int _updatedABPerson : 1;
 }
 
-+ (void)initialize;
-+ (void)_initializeSafeCategory;
+@property int style;
 
-- (id)displayString;
-- (int)identifier;
-- (void)_registerForNotifications;
-- (void)_unregisterForNotifications;
-- (void)setOpaque:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)sendAction:(SEL)arg1 to:(id)arg2 forEvent:(id)arg3;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)sizeToFit;
-- (BOOL)_alwaysHandleScrollerMouseEvent;
++ (void)initialize;
+
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)initWithAddress:(id)arg1 isPhoneNumber:(BOOL)arg2 maxWidth:(float)arg3 useDisplayString:(BOOL)arg4;
-- (void)_updateABPerson;
-- (void)_addressBookRecordDidChange;
-- (void)_updateDisplayStringIncludingABPerson:(BOOL)arg1;
+- (void)setMaxWidth:(unsigned int)arg1;
+- (id)displayString;
+- (void)_unregisterForNotifications;
+- (void)sendAction:(SEL)arg1 to:(id)arg2 forEvent:(id)arg3;
+- (int)identifier;
+- (void)setHighlighted:(BOOL)arg1;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (BOOL)_alwaysHandleScrollerMouseEvent;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)_registerForNotifications;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (void)setOpaque:(BOOL)arg1;
+- (void*)ABPerson;
 - (int)ABPropertyType;
 - (id)unmodifiedAddressString;
-- (void)setMaxWidth:(unsigned int)arg1;
-- (void*)ABPerson;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityHint;
+- (id)initWithAddress:(id)arg1 style:(int)arg2 isPhoneNumber:(BOOL)arg3 maxWidth:(float)arg4 useDisplayString:(BOOL)arg5;
+- (void)_addressBookRecordDidChange;
+- (void)_updateDisplayStringIncludingABPerson:(BOOL)arg1;
+- (void)_setupForStyle;
+- (void)_updateABPerson;
+- (void)dealloc;
 
 @end

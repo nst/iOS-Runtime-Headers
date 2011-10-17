@@ -9,15 +9,15 @@
     UIView *_headerView;
 }
 
-@property(retain) UIView * headerView;
 @property(retain) UIView * contentView;
+@property(retain) UIView * headerView;
 
 
+- (void)setHeaderView:(id)arg1;
+- (id)headerView;
 - (void)setContentView:(id)arg1;
 - (id)contentView;
 - (void)layoutSubviews;
 - (void)dealloc;
-- (void)setHeaderView:(id)arg1;
-- (id)headerView;
 
 @end

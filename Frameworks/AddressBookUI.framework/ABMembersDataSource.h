@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSOperationQueue, ABModel, NSMutableArray, NSMutableSet, <ABStyleProvider>, <ABMembersDataSourceDelegate>, NSMutableDictionary;
+@class ABModel, <ABMembersDataSourceDelegate>, <ABStyleProvider>, NSMutableArray;
 
 @interface ABMembersDataSource : NSObject <UITableViewDelegate, UITableViewDataSource> {
     <ABMembersDataSourceDelegate> *_delegate;
@@ -15,16 +15,8 @@
     struct __CFDictionary { } *_sectionHeaderToDisplayableSectionHeader;
     struct __CFDictionary { } *_displayableSectionIndexToSectionIndex;
     struct __CFDictionary { } *_sectionIndexToDisplayableSectionIndex;
-    BOOL _shouldHideImages;
-    BOOL _shouldShowOnlyPersonImage;
-    NSMutableSet *_forceReloadCells;
-    NSOperationQueue *_personImageLoadingQueue;
-    void *_personImageLoadingAddressBook;
-    NSMutableDictionary *_personImageLoadingCache;
 }
 
-@property BOOL shouldShowImages;
-@property BOOL shouldPickBestImage;
 @property(retain) <ABStyleProvider> * styleProvider;
 @property void* addressBook;
 @property(retain) ABModel * model;
@@ -32,40 +24,30 @@
 
 
 - (void)setAddressBook:(void*)arg1;
-- (id)sectionIndexTitlesForTableView:(id)arg1;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)model;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableView:(id)arg1 frameForSectionIndexGivenProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)dealloc;
+- (void*)addressBook;
 - (void)setDelegate:(id)arg1;
+- (id)model;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableView:(id)arg1 frameForSectionIndexGivenProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)delegate;
-- (BOOL)shouldPickBestImage;
-- (void)setShouldPickBestImage:(BOOL)arg1;
-- (id)personImageLoadingQueue;
-- (void*)personImageLoadingAddressBook;
-- (id)personImageLoadingCache;
+- (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
+- (id)sectionIndexTitlesForTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)dealloc;
+- (id)titleForHeaderInSection:(int)arg1;
 - (void)createAllDisplayableSectionIndexAndHeaderCaches;
+- (id)displayableSectionHeaderFromSectionHeader:(id)arg1;
 - (id)displayableSectionIndexFromSectionIndex:(id)arg1;
 - (id)sectionIndexFromDisplayableSectionIndex:(id)arg1;
-- (id)displayableSectionHeaderFromSectionHeader:(id)arg1;
 - (struct __CFDictionary { }*)sectionHeaderSortingIndices;
-- (void)setModel:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
-- (void)setShouldShowImages:(BOOL)arg1;
-- (void)saveImageCaches;
-- (void)releaseImageCaches;
-- (BOOL)shouldShowImages;
-- (void)reloadCellForPerson:(void*)arg1;
 - (id)styleProvider;
-- (id)titleForHeaderInSection:(int)arg1;
-- (void*)addressBook;
+- (void)setModel:(id)arg1;
 
 @end

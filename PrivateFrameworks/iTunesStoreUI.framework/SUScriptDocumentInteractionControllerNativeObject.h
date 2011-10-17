@@ -18,15 +18,15 @@
 }
 
 
-- (void)documentInteractionControllerDidDismissOpenInMenu:(id)arg1;
-- (void)documentInteractionController:(id)arg1 willBeginSendingToApplication:(id)arg2;
 - (void)documentInteractionControllerWillPresentOpenInMenu:(id)arg1;
+- (void)documentInteractionController:(id)arg1 willBeginSendingToApplication:(id)arg2;
+- (void)documentInteractionControllerDidDismissOpenInMenu:(id)arg1;
 - (void)dealloc;
 - (void)presentUsingBlock:(id)arg1;
-- (void)setupNativeObject;
-- (void)destroyNativeObject;
-- (void)_windowDidRotateNotification:(id)arg1;
-- (void)_windowWillRotateNotification:(id)arg1;
 - (BOOL)_isAffectedByWindowNotification:(id)arg1;
+- (void)setupNativeObject;
+- (void)_windowWillRotateNotification:(id)arg1;
+- (void)_windowDidRotateNotification:(id)arg1;
+- (void)destroyNativeObject;
 
 @end

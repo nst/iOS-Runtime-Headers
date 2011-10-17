@@ -8,20 +8,21 @@
 + (void)initialize;
 + (id)mutablePlaceholder;
 + (id)immutablePlaceholder;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
-- (oneway void)release;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
-- (id)init;
-- (id)retain;
-- (id)initWithContentsOfFile:(id)arg1;
-- (void)dealloc;
-- (unsigned int)retainCount;
-- (unsigned int)count;
 - (id)initWithContentsOfURL:(id)arg1;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)initWithContentsOfFile:(id)arg1;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (id)init;
+- (oneway void)release;
+- (void)dealloc;
 
 @end

@@ -16,18 +16,18 @@
 @property(retain) NSString * path;
 
 
-- (unsigned long)storageID;
-- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 type:(unsigned int)arg4 storageID:(unsigned long)arg5 objectHandle:(unsigned long)arg6;
+- (id)path;
+- (void)finalize;
 - (unsigned long)objHandle;
-- (long)writeDataToFile:(int)arg1 fromOffset:(long long)arg2 ofLength:(long long*)arg3;
+- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 type:(unsigned int)arg4 storageID:(unsigned long)arg5 objectHandle:(unsigned long)arg6;
+- (unsigned long)storageID;
 - (id)thumbData;
 - (id)metadataDict;
-- (id)path;
-- (unsigned int)type;
-- (void)finalize;
-- (void)setInfo:(id)arg1;
-- (id)info;
-- (void)dealloc;
+- (long)writeDataToFile:(int)arg1 fromOffset:(long long)arg2 ofLength:(long long*)arg3;
 - (void)setPath:(id)arg1;
+- (unsigned int)type;
+- (id)info;
+- (void)setInfo:(id)arg1;
+- (void)dealloc;
 
 @end

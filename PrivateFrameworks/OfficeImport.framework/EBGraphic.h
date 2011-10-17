@@ -11,12 +11,12 @@
 }
 
 + (void)readGraphicsInChart:(id)arg1 state:(id)arg2;
-+ (id)readGraphicWithDictionary:(id)arg1 state:(id)arg2;
-+ (void)readOle:(id)arg1 xlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); int x2; short x3; boolx4; boolx5; boolx6; boolx7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; unsigned int x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; } x8; boolx9; int x10; struct XlString {} *x11; int x12; int x13; int x14; boolx15; unsigned short x16; unsigned short x17; unsigned short x18; char *x19; unsigned int x20; unsigned int x21; boolx22; unsigned int x23; unsigned int x24; int x25; int x26; boolx27; struct XlString {} *x28; }*)arg2 state:(id)arg3;
-+ (void)readChart:(id)arg1 chartIndex:(int)arg2 state:(id)arg3;
-+ (void)readImage:(id)arg1 xlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); int x2; short x3; boolx4; boolx5; boolx6; boolx7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; unsigned int x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; } x8; boolx9; int x10; struct XlString {} *x11; int x12; int x13; int x14; boolx15; unsigned short x16; unsigned short x17; unsigned short x18; char *x19; unsigned int x20; unsigned int x21; boolx22; unsigned int x23; unsigned int x24; int x25; int x26; boolx27; struct XlString {} *x28; }*)arg2 state:(id)arg3;
-+ (void)readNotesWithDictionary:(id)arg1 state:(id)arg2;
 + (int)objectTypeForShape:(id)arg1;
++ (id)readGraphicWithDictionary:(id)arg1 state:(id)arg2;
++ (void)readNotesWithDictionary:(id)arg1 state:(id)arg2;
++ (void)readChart:(id)arg1 chartIndex:(int)arg2 state:(id)arg3;
++ (void)readOle:(id)arg1 xlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); int x2; short x3; boolx4; boolx5; boolx6; boolx7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; unsigned int x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; } x8; boolx9; int x10; struct XlString {} *x11; int x12; int x13; int x14; boolx15; unsigned short x16; unsigned short x17; unsigned short x18; char *x19; unsigned int x20; unsigned int x21; boolx22; unsigned int x23; unsigned int x24; int x25; int x26; boolx27; struct XlString {} *x28; }*)arg2 state:(id)arg3;
++ (void)readImage:(id)arg1 xlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); int x2; short x3; boolx4; boolx5; boolx6; boolx7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; unsigned int x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; } x8; boolx9; int x10; struct XlString {} *x11; int x12; int x13; int x14; boolx15; unsigned short x16; unsigned short x17; unsigned short x18; char *x19; unsigned int x20; unsigned int x21; boolx22; unsigned int x23; unsigned int x24; int x25; int x26; boolx27; struct XlString {} *x28; }*)arg2 state:(id)arg3;
 + (id)readMainChartWithState:(id)arg1;
 + (void)readGraphicsWithState:(id)arg1;
 

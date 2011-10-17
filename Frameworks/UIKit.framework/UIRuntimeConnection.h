@@ -11,16 +11,16 @@
 }
 
 
-- (id)source;
-- (id)destination;
-- (id)label;
-- (void)setSource:(id)arg1;
 - (void)setDestination:(id)arg1;
+- (id)destination;
+- (void)setSource:(id)arg1;
+- (id)source;
 - (void)connect;
 - (void)connectForSimulator;
+- (id)label;
 - (void)setLabel:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 
 @end

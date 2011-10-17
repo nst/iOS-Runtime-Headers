@@ -4,7 +4,7 @@
 
 @class NSArray;
 
-@interface UIMenuController : NSObject  {
+@interface UIMenuController : NSObject <UICalloutBarDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -19,26 +19,28 @@
 }
 
 @property(getter=isMenuVisible) BOOL menuVisible;
-@property(copy) NSArray * menuItems;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } menuFrame;
 @property int arrowDirection;
+@property(copy) NSArray * menuItems;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } menuFrame;
 
 + (id)sharedMenuController;
 
-- (void)setMenuVisible:(BOOL)arg1;
-- (void)_windowWillRotate:(id)arg1;
-- (void)setMenuItems:(id)arg1;
-- (id)menuItems;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })menuFrame;
-- (BOOL)_update:(BOOL)arg1;
-- (void)calloutBarWillStartAnimation:(id)arg1;
-- (void)calloutBarDidFinishAnimation:(id)arg1;
-- (int)arrowDirection;
+- (id)menuItems;
+- (void)setMenuItems:(id)arg1;
+- (void)setMenuVisible:(BOOL)arg1;
+- (BOOL)_menuHidden;
+- (void)_windowWillRotate:(id)arg1;
+- (BOOL)_updateAnimated:(BOOL)arg1 checkVisible:(BOOL)arg2;
+- (void)calloutBar:(id)arg1 didFinishAnimation:(id)arg2;
+- (void)calloutBar:(id)arg1 willStartAnimation:(id)arg2;
 - (void)setArrowDirection:(int)arg1;
+- (int)arrowDirection;
 - (void)update;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
 - (void)setMenuVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isMenuVisible;
+- (void)_setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (id)init;
 - (void)dealloc;
 

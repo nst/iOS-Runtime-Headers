@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSString, NSData, NSDate, NSMutableArray;
+@class NSArray, NSString, NSData, NSDate, NSMutableArray, NSDictionary;
 
 @interface MCProfile : NSObject  {
     NSString *_displayName;
@@ -28,6 +28,7 @@
     NSMutableArray *_signerCertificates;
     BOOL _signerHasBeenEvaluated;
     struct dispatch_queue_s { } *_signerEvaluationQueue;
+    NSDictionary *_context;
 }
 
 @property(readonly) NSString * stubFileName;
@@ -45,6 +46,7 @@
 @property(readonly) NSDate * earliestCertificateExpiryDate;
 @property(readonly) BOOL isManagedByProfileService;
 @property(readonly) NSArray * installationWarnings;
+@property(retain) NSDictionary * context;
 @property(retain) NSData * profileData;
 @property(readonly) NSString * productBuildVersion;
 @property(readonly) NSString * productVersion;
@@ -62,48 +64,44 @@
 @property(retain) NSString * displayName;
 @property(readonly) NSString * profileDescription;
 
-+ (id)removeRequiredObjectInDictionary:(id)arg1 key:(id)arg2 type:(Class)arg3 errorDomain:(id)arg4 missingDataCode:(int)arg5 missingDataErrorString:(id)arg6 invalidDataCode:(int)arg7 invalidDataErrorString:(id)arg8 outError:(id*)arg9;
++ (id)missingFieldErrorWithField:(id)arg1;
 + (BOOL)checkString:(id)arg1 isOneOfStrings:(id)arg2 key:(id)arg3 errorDomain:(id)arg4 errorCode:(int)arg5 errorString:(id)arg6 outError:(id*)arg7;
-+ (id)profileWithData:(id)arg1 outError:(id*)arg2;
 + (id)profileWithData:(id)arg1 fileName:(id)arg2 outError:(id*)arg3;
-+ (int)_evaluateSignerTrust:(struct __SecTrust { }*)arg1;
++ (id)profileWithData:(id)arg1 context:(id)arg2 outError:(id*)arg3;
++ (id)profileWithData:(id)arg1 context:(id)arg2 fileName:(id)arg3 outError:(id*)arg4;
 + (int)_evaluateCertificateChain:(id)arg1;
-+ (id)_malformedProfileError;
-+ (id)badFieldTypeErrorWithField:(id)arg1;
-+ (id)profileWithData:(id)arg1 fileName:(id)arg2 allowEmptyPayload:(BOOL)arg3 outError:(id*)arg4;
-+ (id)profileDictionaryFromProfileData:(id)arg1 outWasEncrypted:(BOOL*)arg2 outError:(id*)arg3;
-+ (id)removeRequiredNonZeroLengthStringInDictionary:(id)arg1 key:(id)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
 + (int)evaluateTrustOfData:(id)arg1;
 + (id)signerSummaryOfData:(id)arg1 outSignerCertificates:(id*)arg2;
++ (id)profileWithData:(id)arg1 context:(id)arg2 fileName:(id)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
++ (int)_evaluateSignerTrust:(struct __SecTrust { }*)arg1;
++ (id)_malformedProfileError;
++ (id)profileDictionaryFromProfileData:(id)arg1 outWasEncrypted:(BOOL*)arg2 outError:(id*)arg3;
++ (id)removeRequiredObjectInDictionary:(id)arg1 key:(id)arg2 type:(Class)arg3 errorDomain:(id)arg4 missingDataCode:(int)arg5 missingDataErrorString:(id)arg6 invalidDataCode:(int)arg7 invalidDataErrorString:(id)arg8 outError:(id*)arg9;
++ (id)badFieldTypeErrorWithField:(id)arg1;
 + (id)removeOptionalObjectInDictionary:(id)arg1 key:(id)arg2 type:(Class)arg3 errorDomain:(id)arg4 invalidDataCode:(int)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
 + (id)profileWithDictionary:(id)arg1 fileName:(id)arg2 originalData:(id)arg3 wasEncrypted:(BOOL)arg4 allowEmptyPayload:(BOOL)arg5 outError:(id*)arg6;
++ (id)removeRequiredNonZeroLengthStringInDictionary:(id)arg1 key:(id)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
 + (id)removeOptionalNonZeroLengthStringInDictionary:(id)arg1 key:(id)arg2 errorDomain:(id)arg3 invalidDataCode:(int)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
++ (id)profileWithData:(id)arg1 outError:(id*)arg2;
 
+- (void)setDisplayName:(id)arg1;
+- (BOOL)isEncrypted;
+- (id)UUID;
 - (id)displayName;
 - (int)version;
 - (id)identifier;
 - (void)setLocked:(BOOL)arg1;
+- (id)context;
+- (void)setContext:(id)arg1;
 - (BOOL)isLocked;
-- (void)dealloc;
-- (id)description;
-- (BOOL)isEncrypted;
-- (void)setDisplayName:(id)arg1;
-- (int)trustLevel;
-- (BOOL)isSigned;
-- (BOOL)isStub;
-- (id)installationWarnings;
-- (BOOL)isManagedByProfileService;
-- (void)__evaluateSignerCertificates;
+- (id)profileIDHashFileName;
+- (id)UUIDHashFileName;
+- (BOOL)writeStubToDirectory:(id)arg1;
 - (struct __SecCertificate { }*)signerCertificate;
-- (id)signerCertificates;
-- (id)signerSummary;
 - (void)setSignerSummary:(id)arg1;
 - (void)setSignerCertificates:(id)arg1;
-- (id)payloads;
-- (id)localizedPayloadSummaryByType;
-- (id)earliestCertificateExpiryDate;
-- (void)evaluateSignerTrust;
 - (void)evaluateSignerTrustAsynchronouslyWithCompletion:(id)arg1;
+- (id)profileData;
 - (void)setProfileData:(id)arg1;
 - (id)productBuildVersion;
 - (BOOL)needsReboot;
@@ -111,22 +109,32 @@
 - (void)setInstallDate:(id)arg1;
 - (id)organization;
 - (void)setEncrypted:(BOOL)arg1;
-- (id)profileDescription;
-- (id)UUIDHashFileName;
-- (id)profileIDHashFileName;
-- (id)stubFileName;
-- (id)initWithDictionary:(id)arg1 originalData:(id)arg2 wasEncrypted:(BOOL)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
-- (BOOL)writeStubToDirectory:(id)arg1;
+- (id)signerCertificates;
+- (void)__evaluateSignerCertificates;
+- (int)trustLevel;
+- (BOOL)isSigned;
+- (id)signerSummary;
+- (id)expiryDate;
+- (void)evaluateSignerTrust;
 - (BOOL)writeStubToPath:(id)arg1;
-- (id)stubDictionary;
+- (id)stubFileName;
+- (id)payloadWithUUID:(id)arg1;
+- (BOOL)isManagedByProfileService;
+- (id)localizedPayloadSummaryByType;
+- (id)earliestCertificateExpiryDate;
+- (id)payloads;
+- (id)initWithDictionary:(id)arg1 originalData:(id)arg2 wasEncrypted:(BOOL)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
+- (id)profileDescription;
 - (id)friendlyName;
 - (id)malformedProfileErrorWithError:(id)arg1;
+- (id)installationWarnings;
+- (BOOL)isStub;
 - (id)removalPasscode;
 - (id)removalPasscode;
 - (void)setRemovalPasscode:(id)arg1;
-- (id)expiryDate;
-- (id)profileData;
-- (id)UUID;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 - (id)productVersion;
 
 @end

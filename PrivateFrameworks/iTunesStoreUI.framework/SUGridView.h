@@ -4,7 +4,7 @@
 
 @class UITableView, <SUGridViewDataSource>, SUGridRowTableViewCellLayoutManager, <SUGridViewDelegate>, UIControl, NSMutableDictionary;
 
-@interface SUGridView : UIView  {
+@interface SUGridView : UIView <UITableViewDataSource, UITableViewDelegate> {
     int _animationCount;
     struct __CFArray { } *_columnCountBySection;
     <SUGridViewDataSource> *_dataSource;
@@ -26,47 +26,49 @@
     UIControl *_touchCaptureView;
 }
 
-@property(readonly) UITableView * tableView;
 @property <SUGridViewDataSource> * dataSource;
 @property <SUGridViewDelegate> * delegate;
+@property(readonly) UITableView * tableView;
 
 
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)dequeueReusableCellWithIdentifier:(id)arg1;
-- (id)indexPathForCell:(id)arg1;
-- (void)reloadData;
-- (id)tableView;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (void)setDataSource:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (float)marginForTableView:(id)arg1;
-- (id)dataSource;
-- (int)globalRowForRowAtIndexPath:(id)arg1;
-- (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
-- (void)layoutSubviews;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
+- (id)tableView;
+- (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
+- (id)visibleCells;
+- (id)indexPathForCell:(id)arg1;
+- (float)marginForTableView:(id)arg1;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (int)globalRowForRowAtIndexPath:(id)arg1;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tableViewStyle:(int)arg2;
-- (id)cellForIndexPath:(id)arg1;
-- (void)deleteCellsAtIndexPaths:(id)arg1 animated:(BOOL)arg2;
-- (int)globalIndexForCellAtIndexPath:(id)arg1;
-- (id)indexPathForCellAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_gridSwipeGesture:(id)arg1;
-- (void)_deleteAnimationStopped;
-- (void)_animateDeletionOfCell:(id)arg1;
-- (int)_minimumColumnCount;
+- (id)dataSource;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)dequeueReusableCellWithIdentifier:(id)arg1;
+- (void)layoutSubviews;
+- (void)reloadData;
+- (void)setDataSource:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (void)_reuseColumnCellsForCell:(id)arg1;
-- (void)_animateDeletionOfCellsAtIndexPaths:(id)arg1;
-- (BOOL)_canDeleteCellAtIndexPath:(id)arg1;
+- (void)_animateDeletionOfCell:(id)arg1;
+- (void)reloadCellsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;
+- (void)deleteCellsAtIndexPaths:(id)arg1 animated:(BOOL)arg2;
+- (void)_deleteAnimationStopped;
 - (id)_copyCellSetForIndexPaths:(id)arg1;
+- (int)_minimumColumnCount;
 - (void)_endSwipeToDelete;
+- (BOOL)_canDeleteCellAtIndexPath:(id)arg1;
 - (void)_reloadColumnCounts;
+- (id)indexPathForCellAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (int)globalIndexForCellAtIndexPath:(id)arg1;
+- (void)_animateDeletionOfCellsAtIndexPaths:(id)arg1;
+- (void)_gridSwipeGesture:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tableViewStyle:(int)arg2;
 - (void)_touchCaptureAction:(id)arg1;
+- (id)cellForIndexPath:(id)arg1;
 
 @end

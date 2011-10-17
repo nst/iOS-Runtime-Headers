@@ -16,10 +16,11 @@
 - (id)initWithText:(id)arg1;
 - (int)type;
 - (id)text;
-- (void)dealloc;
 - (id)detachedCopy;
 - (void)copyToPasteboard;
-- (BOOL)isDisplayable;
+- (id)description;
+- (void)dealloc;
 - (void)setContentLocation:(id)arg1;
+- (BOOL)isDisplayable;
 
 @end

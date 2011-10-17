@@ -26,27 +26,27 @@
     BOOL _isCanceled;
 }
 
-@property(getter=isCanceled) BOOL canceled;
-@property(getter=isFinished) BOOL finished;
 @property(getter=isExecuting) BOOL executing;
+@property(getter=isFinished) BOOL finished;
+@property(getter=isCanceled) BOOL canceled;
 
 
 - (void)setFinished:(BOOL)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (BOOL)isCanceled;
+- (void)setExecuting:(BOOL)arg1;
+- (void)setCanceled:(BOOL)arg1;
+- (void)_callHandler;
+- (id)initWithRequest:(id)arg1 handler:(id)arg2;
+- (BOOL)isFinished;
 - (void)start;
-- (void)cancel;
-- (void)dealloc;
+- (BOOL)isExecuting;
 - (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (BOOL)isFinished;
-- (BOOL)isExecuting;
-- (id)initWithRequest:(id)arg1 handler:(id)arg2;
-- (void)_callHandler;
-- (BOOL)isCanceled;
-- (void)setCanceled:(BOOL)arg1;
-- (void)setExecuting:(BOOL)arg1;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)cancel;
+- (void)dealloc;
 
 @end

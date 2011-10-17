@@ -2,49 +2,48 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKUITheme, GKScore, GKPlayer;
+@class NSString, GKScore, NSAttributedString;
 
-@interface GKLeaderboardCellContents : UIView <GKTableViewCellContents> {
+@interface GKLeaderboardCellContents : GKPlayerCellContentView  {
     GKScore *_score;
-    GKPlayer *_player;
+    NSAttributedString *_displayName;
     unsigned int _totalScores;
-    GKUITheme *_theme;
     float _rankWidth;
     int _disclosureStyle;
+    NSString *_placeholderString;
 }
 
-@property(readonly) float rankAvailableWidth;
-@property int disclosureStyle;
-@property(readonly) float contentsMargin;
-@property float rankWidth;
-@property(retain) GKUITheme * theme;
-@property unsigned int totalScores;
-@property(retain) GKPlayer * player;
 @property(retain) GKScore * score;
+@property(retain) NSAttributedString * displayName;
+@property(retain) NSString * placeholderString;
+@property unsigned int totalScores;
+@property(readonly) float contentsMargin;
+@property(readonly) float rankAvailableWidth;
+@property float rankWidth;
+@property int disclosureStyle;
 
-+ (void)_initializeSafeCategory;
 
-- (float)preferredHeightForOrientation:(int)arg1;
-- (unsigned int)totalScores;
-- (float)rankAvailableWidth;
-- (int)digits;
-- (int)fontSizeForRank;
-- (float)rankWidth;
 - (void)setRankWidth:(float)arg1;
+- (float)rankWidth;
 - (void)setTotalScores:(unsigned int)arg1;
-- (id)score;
-- (void)setPlayer:(id)arg1;
+- (unsigned int)totalScores;
+- (BOOL)shouldShowPhoto;
+- (void)setPlaceholderString:(id)arg1;
+- (void)setDisplayName:(id)arg1;
+- (float)fontSizeForRank;
+- (id)placeholderString;
+- (int)digits;
+- (float)rankAvailableWidth;
+- (void)updateLines;
 - (void)setScore:(id)arg1;
-- (id)player;
-- (void)setDisclosureStyle:(int)arg1;
+- (id)score;
+- (id)displayName;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)disclosureStyle;
+- (void)setDisclosureStyle:(int)arg1;
 - (void)prepareForReuse;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)init;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)theme;
-- (void)setTheme:(id)arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

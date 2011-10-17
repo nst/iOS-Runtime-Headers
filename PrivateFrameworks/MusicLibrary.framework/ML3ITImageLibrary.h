@@ -3,21 +3,10 @@
  */
 
 @interface ML3ITImageLibrary : NSObject  {
-    void *_imageLibrary;
-    unsigned int _triedToLoadDatabase : 1;
 }
 
-+ (id)sharedLibrary;
++ (unsigned int)readableArtworkFormatIDForUnreadablreFormatID:(unsigned int)arg1;
 + (struct MLArtworkFormatSpec { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; int x6; })artworkFormatSpecForArtworkFormatID:(unsigned int)arg1;
 
-- (void)dealloc;
-- (id)_init;
-- (id)imageDataForTrack:(id)arg1 artworkType:(int)arg2 formatID:(unsigned int)arg3 atTime:(double)arg4 size:(struct CGSize { float x1; float x2; })arg5 returningArtworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg6;
-- (BOOL)isImageDataAvailableForTrack:(id)arg1 artworkType:(int)arg2;
-- (BOOL)isImageDataIdenticalForTrack:(id)arg1 otherTrack:(id)arg2 artworkType:(int)arg3 missingAlwaysComparesEqual:(BOOL)arg4;
-- (BOOL)_loadDatabase;
-- (struct ITImageInfo { struct DLinkElement { struct DLinkElement {} *x_1_1_1; struct DLinkElement {} *x_1_1_2; } x1; struct ITImageLibrary {} *x2; unsigned int x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned short x8; unsigned short x9; struct SLinkList { struct SLinkElement {} *x_10_1_1; } x10; unsigned int x11; unsigned char x12; unsigned char x13; unsigned short x14; unsigned short x15; unsigned short x16; struct ITImageFaceInstance {} *x17; unsigned int x18; unsigned int x19; double x20; double x21; }*)_lookupITImageInfoForTrack:(id)arg1 artworkType:(int)arg2;
-- (id)availableArtworkFormatIDsForTrack:(id)arg1 artworkType:(int)arg2 atTime:(double)arg3;
-- (BOOL)_loadImageLibraryIfNecessary;
 
 @end

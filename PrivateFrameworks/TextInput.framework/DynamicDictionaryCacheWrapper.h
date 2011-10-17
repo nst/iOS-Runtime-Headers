@@ -7,8 +7,8 @@
 
 + (id)instance;
 
+- (void)clearDynamicDictionaryCache;
 - (id)init;
 - (void)dealloc;
-- (void)clearDynamicDictionaryCache;
 
 @end

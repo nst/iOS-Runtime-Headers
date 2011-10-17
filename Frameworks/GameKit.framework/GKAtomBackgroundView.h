@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@interface GKAtomBackgroundView : GKCollapsableImageView  {
+@interface GKAtomBackgroundView : UIImageView  {
     unsigned int _disclosure : 1;
 }
 

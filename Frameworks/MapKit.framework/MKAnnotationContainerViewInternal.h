@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UICalloutView, MKSearchResult, NSMapTable, MKMapTileView, NSMutableArray, MKUserLocation, MKUserLocationView, MKQuadTrie, NSMutableSet, NSMutableDictionary, MKAnnotationView;
+@class <MKAnnotationContainerViewDelegate>, UICalloutView, MKUserLocation, NSMapTable, MKMapTileView, NSMutableArray, MKUserLocationView, MKQuadTrie, NSMutableSet, MKAnnotationView, <MKAnnotation>;
 
 @interface MKAnnotationContainerViewInternal : NSObject  {
     MKMapTileView *mapTileView;
@@ -24,8 +24,6 @@
     } visibleMapRect;
     NSMutableArray *searchResultPins;
     NSMutableArray *awaitingDropPins;
-    NSMutableDictionary *transitCallouts;
-    BOOL isShowingTransitCallouts;
     UICalloutView *bubble;
     UICalloutView *calculateBubble;
     BOOL isAnimatingCallout;
@@ -33,8 +31,8 @@
     BOOL registeredForAddressBookChanges;
     MKAnnotationView *bubbleAnnotationView;
     MKAnnotationView *selectedAnnotationView;
-    MKSearchResult *searchResultToSelect;
-    id delegate;
+    <MKAnnotation> *annotationToSelect;
+    <MKAnnotationContainerViewDelegate> *delegate;
     MKAnnotationView *draggingAnnotationView;
     struct CGPoint { 
         float x; 
@@ -43,7 +41,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } draggingAnnotationViewPosition;
+    } draggingAnnotationViewCenter;
     unsigned int mapType;
     BOOL clickedOnAnnotationView;
     BOOL didDragAnnotationView;
@@ -53,11 +51,7 @@
     BOOL didAddUserLocationView;
     int userLocationViewUpdateMode;
     int restoreUserLocationViewUpdateMode;
-    struct { 
-        double latitude; 
-        double longitude; 
-    } lastMetaDataCoordinate;
-    double lastMetaDataUpdateTime;
+    float annotationViewsRotationRadians;
     struct CGAffineTransform { 
         float a; 
         float b; 

@@ -10,26 +10,25 @@
     NSString *_phone;
 }
 
+@property(retain) NSString * name;
 @property(readonly) BOOL hasMainUrl;
+@property(retain) NSString * mainUrl;
 @property(readonly) BOOL hasPhone;
 @property(retain) NSString * phone;
-@property(retain) NSString * mainUrl;
-@property(retain) NSString * name;
 
 
-- (id)dictionaryRepresentation;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)description;
+- (BOOL)readFrom:(id)arg1;
 - (BOOL)hasMainUrl;
 - (void)setMainUrl:(id)arg1;
-- (id)mainUrl;
-- (BOOL)readFrom:(id)arg1;
 - (BOOL)hasPhone;
+- (id)mainUrl;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)name;
+- (void)setName:(id)arg1;
+- (id)description;
+- (id)description;
+- (void)dealloc;
 - (id)phone;
 - (void)setPhone:(id)arg1;
 

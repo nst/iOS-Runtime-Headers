@@ -30,28 +30,28 @@
 @property void** argList;
 
 
-- (id)init;
-- (void)dealloc;
 - (struct __IOSurface { }*)createIOSurfaceForWidth:(unsigned long)arg1 height:(unsigned long)arg2 pixelFormat:(unsigned int)arg3 workOnRawData:(id)arg4;
-- (void)setArgList:(void**)arg1;
-- (void)setArgSizeList:(unsigned int*)arg1;
-- (unsigned long)argIndex;
+- (void)setKernelCleanupHandler:(id*)arg1;
 - (void)setImageDims:(struct CGSize { float x1; float x2; })arg1;
+- (id*)cleanupHandler;
+- (unsigned long)argIndex;
+- (void)setArgIndex:(unsigned long)arg1;
+- (unsigned int*)argSizeList;
+- (void)setArgSizeList:(unsigned int*)arg1;
+- (void**)argList;
+- (void)setArgList:(void**)arg1;
 - (void)setCleanupHandler:(id*)arg1;
+- (void)setExtraArgsList:(struct __CFArray { }*)arg1;
 - (struct __CFArray { }*)extraArgsList;
 - (void)_applyFilter:(id)arg1 onInputSurface:(struct __IOSurface { }*)arg2 mirrored:(BOOL)arg3 withResultHandler:(id)arg4;
 - (void)_setKernelArg:(void*)arg1 withSize:(unsigned long)arg2;
 - (void)_setKernelArgAsBuffer:(void*)arg1 withSize:(unsigned long)arg2;
 - (void)_setKernelCleanupHandler:(id*)arg1;
-- (void)setKernelCleanupHandler:(id*)arg1;
-- (void)setExtraArgsList:(struct __CFArray { }*)arg1;
-- (void)setArgIndex:(unsigned long)arg1;
-- (id*)cleanupHandler;
-- (unsigned int*)argSizeList;
-- (void**)argList;
 - (void)applyFilter:(id)arg1 onInputSurface:(struct __IOSurface { }*)arg2 mirrored:(BOOL)arg3 withResultHandler:(id)arg4;
-- (void)setKernelArg:(void*)arg1 withSize:(unsigned long)arg2;
 - (struct CGSize { float x1; float x2; })imageDims;
+- (void)setKernelArg:(void*)arg1 withSize:(unsigned long)arg2;
 - (void)setKernelArgAsBuffer:(void*)arg1 withSize:(unsigned long)arg2;
+- (id)init;
+- (void)dealloc;
 
 @end

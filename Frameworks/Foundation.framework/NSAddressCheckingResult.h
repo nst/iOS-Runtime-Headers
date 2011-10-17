@@ -16,16 +16,16 @@
 @property(readonly) void* underlyingResult;
 
 
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2 underlyingResult:(void*)arg3;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2;
+- (void*)underlyingResult;
+- (BOOL)_adjustRangesWithOffset:(int)arg1;
+- (id)resultByAdjustingRangesWithOffset:(int)arg1;
+- (id)components;
+- (unsigned long long)resultType;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2 underlyingResult:(void*)arg3;
-- (unsigned long long)resultType;
-- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2;
-- (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (BOOL)_adjustRangesWithOffset:(int)arg1;
-- (void*)underlyingResult;
-- (id)components;
+- (void)dealloc;
 
 @end

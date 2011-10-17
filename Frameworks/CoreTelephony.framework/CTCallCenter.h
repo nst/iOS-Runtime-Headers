@@ -18,24 +18,24 @@
 
 }
 
-@property(copy) id callEventHandler;
 @property(retain) NSSet * currentCalls;
+@property(copy) id callEventHandler;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (id)currentCalls;
+- (void)setCurrentCalls:(id)arg1;
 - (id)callEventHandler;
 - (BOOL)getCurrentCallSetFromServer:(id)arg1;
 - (BOOL)calculateCallStateChanges:(id)arg1;
-- (void)setCurrentCalls:(id)arg1;
 - (void)broadcastCallStateChangesIfNeededWithFailureLogMessage:(id)arg1;
-- (BOOL)setUpServerConnection;
-- (void)reestablishServerConnectionIfNeeded;
-- (void)cleanUpServerConnectionNoLock;
-- (void)cleanUpServerConnection;
-- (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
 - (void)setCallEventHandler:(id)arg1;
-- (id)currentCalls;
+- (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
+- (void)reestablishServerConnectionIfNeeded;
+- (void)cleanUpServerConnection;
+- (void)cleanUpServerConnectionNoLock;
+- (BOOL)setUpServerConnection;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

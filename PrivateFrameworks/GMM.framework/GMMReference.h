@@ -10,23 +10,22 @@
     NSString *_domain;
 }
 
-@property(retain) NSString * domain;
-@property(retain) NSString * title;
 @property(retain) NSString * url;
+@property(retain) NSString * title;
+@property(retain) NSString * domain;
 
 
 - (void)setDomain:(id)arg1;
-- (void)setUrl:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)url;
-- (id)title;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)description;
-- (void)setTitle:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)domain;
+- (void)setUrl:(id)arg1;
+- (id)url;
+- (id)dictionaryRepresentation;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (id)description;
+- (id)description;
+- (void)dealloc;
 
 @end

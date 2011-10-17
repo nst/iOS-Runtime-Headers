@@ -12,23 +12,23 @@
 }
 
 
-- (void)didLock;
-- (id)specifiers;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)suspend;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)dealloc;
+- (BOOL)isRestrictionList;
+- (void)setIsRestrictionList:(BOOL)arg1;
 - (void)scrollToSelectedCell;
-- (void)setRowToSelect;
 - (void)setValueForSpecifier:(id)arg1 defaultValue:(id)arg2;
+- (void)setRowToSelect;
 - (void)listItemSelected:(id)arg1;
 - (void)_addStaticText:(id)arg1;
 - (id)itemsFromParent;
 - (id)itemsFromDataSource;
-- (BOOL)isRestrictionList;
-- (void)setIsRestrictionList:(BOOL)arg1;
 - (void)prepareSpecifiersMetadata;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)suspend;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)dealloc;
+- (id)specifiers;
+- (void)didLock;
 
 @end

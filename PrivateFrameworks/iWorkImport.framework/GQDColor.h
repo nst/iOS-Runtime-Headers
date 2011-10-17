@@ -14,24 +14,24 @@
     float mAlpha;
 }
 
-+ (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
++ (id)blackColor;
 + (void)readColorFromProcessor:(id)arg1 reader:(struct _xmlTextReader { }*)arg2;
 + (id)rgbColorFromReader:(struct _xmlTextReader { }*)arg1 calibrated:(BOOL)arg2;
 + (id)whiteColorFromReader:(struct _xmlTextReader { }*)arg1 calibrated:(BOOL)arg2;
 + (id)cmykColorFromReader:(struct _xmlTextReader { }*)arg1;
++ (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 + (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
-+ (id)blackColor;
 
+- (id)blendedColorWithFraction:(float)arg1 ofColor:(id)arg2;
+- (float)redComponent;
+- (float)greenComponent;
+- (float)blueComponent;
+- (float)alphaComponent;
+- (void)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (int)htmlRed;
 - (int)htmlGreen;
 - (int)htmlBlue;
 - (id)initWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-- (float)alphaComponent;
 - (id)description;
-- (float)greenComponent;
-- (id)blendedColorWithFraction:(float)arg1 ofColor:(id)arg2;
-- (float)redComponent;
-- (void)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
-- (float)blueComponent;
 
 @end

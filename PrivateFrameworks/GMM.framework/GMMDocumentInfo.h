@@ -10,22 +10,21 @@
 }
 
 @property(readonly) BOOL hasAuthor;
+@property(retain) NSString * author;
 @property(readonly) BOOL hasAttributionUrl;
 @property(retain) NSString * attributionUrl;
-@property(retain) NSString * author;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (void)setAttributionUrl:(id)arg1;
-- (BOOL)hasAuthor;
-- (BOOL)hasAttributionUrl;
-- (BOOL)readFrom:(id)arg1;
-- (void)setAuthor:(id)arg1;
 - (id)author;
-- (void)writeTo:(id)arg1;
+- (void)setAuthor:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)attributionUrl;
+- (BOOL)hasAttributionUrl;
+- (BOOL)hasAuthor;
+- (void)setAttributionUrl:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

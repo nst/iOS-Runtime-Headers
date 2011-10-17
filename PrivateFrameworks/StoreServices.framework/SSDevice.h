@@ -4,56 +4,66 @@
 
 @class NSString, SSRequest, NSSet, NSMutableArray;
 
-@interface SSDevice : NSObject  {
+@interface SSDevice : NSObject <SSRequestDelegate> {
     struct dispatch_queue_s { } *_dispatchQueue;
     NSMutableArray *_loadStoreFrontHandlers;
     SSRequest *_loadStoreFrontRequest;
     NSString *_localStoreFrontIdentifier;
     BOOL _localStoreFrontIsTransient;
+    id _mediaLibraryIdentifier;
     NSMutableArray *_simpleRequests;
+    id _softwareLibraryIdentifier;
     NSString *_synchedStoreFrontIdentifier;
 }
 
+@property(copy) NSString * softwareLibraryIdentifier;
 @property(readonly) NSString * storeFrontIdentifier;
 @property(readonly) NSSet * automaticDownloadKinds;
+@property(copy) NSString * mediaLibraryIdentifier;
 @property(getter=isStoreFrontIdentifierTransient,readonly) BOOL storeFrontIdentifierTransient;
 @property(readonly) NSString * synchedStoreFrontIdentifier;
 
-+ (id)currentDevice;
-+ (BOOL)setCachedAvailableItemKinds:(id)arg1;
-+ (id)copyCachedAvailableItemKinds;
-+ (BOOL)promptNeedsDisplay:(id)arg1;
-+ (void)setLastPromptAttemptDate:(id)arg1 forPromptWithIdentifier:(id)arg2;
 + (void)setPromptWithIdentifier:(id)arg1 needsDisplay:(BOOL)arg2;
++ (void)setLastPromptAttemptDate:(id)arg1 forPromptWithIdentifier:(id)arg2;
++ (BOOL)setCachedAvailableItemKinds:(id)arg1;
++ (BOOL)promptNeedsDisplay:(id)arg1;
++ (id)copyCachedAvailableItemKinds;
++ (id)currentDevice;
 
-- (id)copyStoreFrontRequestHeaders;
+- (id)softwareLibraryIdentifier;
 - (void)loadStoreFrontWithCompletionHandler:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
-- (void)getAvailableItemKindsWithBlock:(id)arg1;
-- (void)setStoreFrontWithResponseHeaders:(id)arg1;
-- (void)showPromptWithIdentifier:(id)arg1 completionHandler:(id)arg2;
-- (void)minusAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
-- (void)unionAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
-- (void)resetStoreFrontForSignOut;
+- (id)storeFrontIdentifier;
+- (void)_invalidateSoftwareCUID;
 - (void)setStoreFrontIdentifierWithInfo:(id)arg1;
-- (void)_cleanupSimpleRequest:(id)arg1;
+- (void)resetStoreFrontForSignOut;
+- (void)unionAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)synchronizeAutomaticDownloadKinds;
+- (void)setMediaLibraryIdentifier:(id)arg1;
+- (void)minusAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)showPromptWithIdentifier:(id)arg1 completionHandler:(id)arg2;
+- (void)setStoreFrontWithResponseHeaders:(id)arg1;
+- (id)mediaLibraryIdentifier;
 - (void)_finishRequestWithError:(id)arg1;
 - (void)_postStoreFrontDidChangeNotification;
-- (void)_reloadAfterStoreFrontChange;
-- (void)_reloadStoreFrontIdentifier;
-- (void)_setLocalStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
 - (BOOL)_setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
-- (void)_trackSimpleRequest:(id)arg1;
+- (void)_setLocalStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
+- (void)_reloadAfterStoreFrontChange;
 - (void)_updateAutomaticDownloadKinds:(id)arg1 withValue:(id)arg2 completionBlock:(id)arg3;
-- (void)reloadStoreFrontIdentifier;
-- (BOOL)isStoreFrontIdentifierTransient;
-- (id)synchedStoreFrontIdentifier;
-- (void)setAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
-- (id)automaticDownloadKinds;
+- (void)_cleanupSimpleRequest:(id)arg1;
+- (void)setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
+- (void)_trackSimpleRequest:(id)arg1;
+- (void)_reloadStoreFrontIdentifier;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
-- (id)storeFrontIdentifier;
+- (id)copyStoreFrontRequestHeaders;
+- (id)init;
+- (void)dealloc;
+- (id)synchedStoreFrontIdentifier;
+- (BOOL)isStoreFrontIdentifierTransient;
+- (void)reloadStoreFrontIdentifier;
+- (id)automaticDownloadKinds;
+- (void)setAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)setSoftwareLibraryIdentifier:(id)arg1;
+- (void)getAvailableItemKindsWithBlock:(id)arg1;
 
 @end

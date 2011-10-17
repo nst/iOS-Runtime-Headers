@@ -16,19 +16,19 @@
 }
 
 
-- (id)name;
-- (void)dealloc;
 - (id)initWithName:(id)arg1 resourcePathPrefix:(id)arg2;
-- (void)pushText:(id)arg1 toPath:(id)arg2;
-- (void)addCssStyle:(id)arg1 withName:(id)arg2;
 - (void)setIsFrameset;
 - (id)createDictionaryWithSizeInfos:(BOOL)arg1;
 - (id)resourceUrlProtocol;
-- (id)createResourceWithName:(id)arg1;
-- (void)pushData:(id)arg1 toPath:(id)arg2;
 - (int)resourceCount;
 - (id)addCssStyle:(id)arg1;
+- (void)addCssStyle:(id)arg1 withName:(id)arg2;
 - (id)cssStylesheetString;
+- (id)createResourceWithName:(id)arg1;
+- (void)pushData:(id)arg1 toPath:(id)arg2;
+- (void)pushText:(id)arg1 toPath:(id)arg2;
 - (void)pushCssToPath:(id)arg1;
+- (id)name;
+- (void)dealloc;
 
 @end

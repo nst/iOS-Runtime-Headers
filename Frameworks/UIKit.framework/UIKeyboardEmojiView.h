@@ -10,28 +10,23 @@
     UIImageView *_imageView;
 }
 
-@property(retain) UIImageView * imageView;
-@property(retain) UIView * popup;
 @property(retain) UIKeyboardEmoji * emoji;
+@property(retain) UIView * popup;
+@property(retain) UIImageView * imageView;
 
 + (void)recycleEmojiView:(id)arg1;
 + (id)emojiViewForEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-+ (void)_initializeSafeCategory;
 
-- (id)popup;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 emoji:(id)arg2;
 - (void)setEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)setImageView:(id)arg1;
+- (id)popup;
 - (void)setPopup:(id)arg1;
-- (void)setEmoji:(id)arg1;
-- (id)emoji;
-- (void)uninstallPopup;
+- (void)setImageView:(id)arg1;
 - (id)createAndInstallKeyPopupView;
+- (void)uninstallPopup;
+- (id)emoji;
+- (void)setEmoji:(id)arg1;
 - (id)imageView;
 - (void)dealloc;
-- (id)accessibilityLabel;
-- (id)accessibilityLanguage;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
 
 @end

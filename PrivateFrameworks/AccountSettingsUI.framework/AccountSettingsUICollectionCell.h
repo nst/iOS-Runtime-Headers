@@ -5,10 +5,10 @@
 @interface AccountSettingsUICollectionCell : PSTableCell  {
 }
 
-+ (float)desiredRowHeight;
 + (id)localizedAccountNameSeparator;
++ (float)desiredRowHeight;
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)layoutSubviews;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 
 @end

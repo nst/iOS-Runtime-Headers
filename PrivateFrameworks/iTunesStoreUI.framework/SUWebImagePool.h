@@ -11,16 +11,16 @@
 + (id)imageForURL:(id)arg1;
 + (id)_poolImageForPoolIdentifier:(int)arg1 imageIdentifier:(int)arg2;
 + (id)_poolImageForURL:(id)arg1;
-+ (void)addWebImagePool:(id)arg1;
 + (void)removeWebImagePool:(id)arg1;
++ (void)addWebImagePool:(id)arg1;
 
 - (id)init;
 - (void)dealloc;
-- (id)imageForImageIdentifier:(int)arg1;
-- (id)imageURLForImageIdentifier:(int)arg1;
-- (void)removeImageForIdentifier:(int)arg1;
-- (id)_poolImageForImageIdentifier:(int)arg1;
 - (int)_poolIdentifier;
+- (id)imageForImageIdentifier:(int)arg1;
+- (id)_poolImageForImageIdentifier:(int)arg1;
+- (void)removeImageForIdentifier:(int)arg1;
 - (id)addImage:(id)arg1 withMIMEType:(id)arg2 identifier:(int)arg3;
+- (id)imageURLForImageIdentifier:(int)arg1;
 
 @end

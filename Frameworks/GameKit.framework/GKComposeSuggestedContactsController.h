@@ -9,21 +9,21 @@
     <GKComposeSuggestedContactsControllerDelegate> *_delegate;
 }
 
-@property(retain,readonly) UITableView * searchResultsTable;
 @property <GKComposeSuggestedContactsControllerDelegate> * delegate;
+@property(readonly) UITableView * searchResultsTable;
 @property(retain) NSArray * searchResultItems;
 
 
 - (id)searchResultItems;
-- (id)searchResultsTable;
 - (void)setSearchResultItems:(id)arg1;
-- (void)loadView;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)dealloc;
+- (id)searchResultsTable;
 - (void)setDelegate:(id)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)delegate;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)dealloc;
 
 @end

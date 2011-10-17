@@ -12,10 +12,10 @@
 
 
 - (void)start;
-- (void)cancel;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (void)sendErrorToDelegate:(id)arg1;
+- (void)cancel;
 - (void)sendFinishToDelegate;
+- (void)sendErrorToDelegate:(id)arg1;
 
 @end

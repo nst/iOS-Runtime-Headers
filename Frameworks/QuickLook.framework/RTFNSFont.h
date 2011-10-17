@@ -14,18 +14,18 @@
 @property float fontSize;
 @property(retain) NSString * fontName;
 
-+ (id)systemFontOfSize:(float)arg1;
-+ (id)fontWithName:(id)arg1 size:(float)arg2;
 + (id)userFixedPitchFontOfSize:(float)arg1;
 + (id)userFontOfSize:(float)arg1;
++ (id)fontWithName:(id)arg1 size:(float)arg2;
++ (id)systemFontOfSize:(float)arg1;
 
-- (void)setFontName:(id)arg1;
-- (id)initWithName:(id)arg1 size:(float)arg2;
-- (id)fontName;
-- (void)setFontSize:(float)arg1;
-- (float)fontSize;
-- (float)pointSize;
 - (unsigned int)mostCompatibleStringEncoding;
 - (void)setPointSize:(float)arg1;
+- (void)setFontName:(id)arg1;
+- (id)initWithName:(id)arg1 size:(float)arg2;
+- (float)fontSize;
+- (void)setFontSize:(float)arg1;
+- (id)fontName;
+- (float)pointSize;
 
 @end

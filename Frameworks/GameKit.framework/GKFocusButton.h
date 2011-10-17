@@ -12,9 +12,9 @@
 @property(retain) GKUITheme * theme;
 
 
-- (void)updateForMiniBarState:(BOOL)arg1;
-- (void)dealloc;
 - (id)theme;
 - (void)setTheme:(id)arg1;
+- (void)updateForMiniBarState:(BOOL)arg1;
+- (void)dealloc;
 
 @end

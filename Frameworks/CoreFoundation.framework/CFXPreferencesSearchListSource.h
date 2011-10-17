@@ -7,16 +7,17 @@
 }
 
 
-- (void)finalize;
-- (id)init;
-- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
-- (void)dealloc;
 - (unsigned char)synchronize;
+- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (long)generationCount;
-- (void)addSource:(id)arg1;
 - (void)removeSource:(id)arg1;
-- (void*)getValueForKey:(struct __CFString { }*)arg1;
-- (struct __CFArray { }*)copyKeyList;
+- (void)addSource:(id)arg1;
+- (void)synchronizeInBackgroundWithCompletionBlock:(id)arg1;
+- (void)_removeValueForKey:(struct __CFString { }*)arg1;
 - (struct __CFDictionary { }*)copyDictionary;
+- (struct __CFArray { }*)copyKeyList;
+- (void*)getValueForKey:(struct __CFString { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

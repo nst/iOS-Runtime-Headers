@@ -5,29 +5,22 @@
 @interface UITextLabel : UILabel  {
 }
 
-+ (void)_initializeSafeCategory;
 
-- (struct CGSize { float x1; float x2; })ellipsizedTextSize;
-- (void)setColor:(id)arg1;
-- (id)highlightedColor;
-- (void)setCentersHorizontally:(BOOL)arg1;
-- (BOOL)centersHorizontally;
-- (void)setTextAutoresizesToFit:(BOOL)arg1;
-- (BOOL)textAutoresizesToFit;
-- (void)setMinFontSize:(float)arg1;
 - (float)minFontSize;
-- (void)setEllipsisStyle:(int)arg1;
-- (int)ellipsisStyle;
-- (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawContentsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setMinFontSize:(float)arg1;
+- (BOOL)textAutoresizesToFit;
+- (void)setTextAutoresizesToFit:(BOOL)arg1;
+- (id)highlightedColor;
+- (BOOL)centersHorizontally;
+- (void)setCentersHorizontally:(BOOL)arg1;
+- (BOOL)wrapsText;
+- (struct CGSize { float x1; float x2; })ellipsizedTextSize;
+- (void)setWrapsText:(BOOL)arg1;
 - (id)color;
 - (void)setHighlightedColor:(id)arg1;
-- (void)setWrapsText:(BOOL)arg1;
-- (BOOL)wrapsText;
+- (void)setColor:(id)arg1;
 - (void)setAlignment:(int)arg1;
 - (int)alignment;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

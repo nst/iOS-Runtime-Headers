@@ -6,8 +6,8 @@
 }
 
 
-- (id)responseForServerData:(id)arg1;
 - (id)saslName;
+- (id)responseForServerData:(id)arg1;
 - (BOOL)justSentPlainTextPassword;
 
 @end

@@ -8,17 +8,17 @@
     NSDictionary *_defaultsByDomain;
 }
 
-+ (id)typeStrings;
 + (id)_allowedDefaults;
++ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (void)dealloc;
-- (id)description;
+- (id)domains;
 - (id)subtitle1Description;
 - (BOOL)_checkForValidDefaults:(id)arg1 outError:(id*)arg2;
-- (id)domains;
 - (id)defaultsForDomain:(id)arg1;
-- (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 
 @end

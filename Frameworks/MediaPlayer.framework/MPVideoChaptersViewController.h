@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoView, UIMovieChapterListView, NSArray;
+@class NSArray, MPVideoView, MPImageCache, UIMovieChapterListView;
 
 @interface MPVideoChaptersViewController : MPViewController <UITableViewDataSource, UITableViewDelegate> {
     MPVideoView *_videoView;
+    MPImageCache *_imageCache;
     unsigned int _currentMarker;
     NSArray *_chapterTimeMarkers;
     UIMovieChapterListView *_chapterListView;
@@ -14,36 +15,36 @@
     unsigned int _videoOutActive : 1;
 }
 
+@property unsigned int currentMarkerIndex;
+@property(retain) NSArray * chapterTimeMarkers;
 @property float topPadding;
 @property BOOL videoOutActive;
-@property(retain) NSArray * chapterTimeMarkers;
 @property(retain) MPVideoView * videoView;
-@property unsigned int currentMarkerIndex;
 
 
-- (void)loadView;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (unsigned int)currentMarkerIndex;
+- (void)setCurrentMarker:(unsigned int)arg1;
+- (id)newImageRequestWithMediaEntity:(id)arg1 timeMarker:(id)arg2;
+- (float)topPadding;
+- (void)_sizeColumnsToFit;
+- (void)setTopPadding:(float)arg1;
+- (void)_reloadThumbnails;
+- (void)setVideoOutActive:(BOOL)arg1;
+- (void)setCurrentMarkerIndex:(unsigned int)arg1;
+- (void)setChapterTimeMarkers:(id)arg1;
+- (BOOL)videoOutActive;
+- (void)setVideoView:(id)arg1;
+- (id)chapterTimeMarkers;
+- (id)videoView;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)viewDidUnload;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)init;
 - (void)dealloc;
-- (void)setCurrentMarker:(unsigned int)arg1;
-- (void)setVideoOutActive:(BOOL)arg1;
-- (void)videoView:(id)arg1 madeThumbnail:(id)arg2 forTime:(float)arg3;
-- (void)_reloadThumbnails;
-- (void)_sizeColumnsToFit;
-- (unsigned int)currentMarkerIndex;
-- (void)setCurrentMarkerIndex:(unsigned int)arg1;
-- (void)setTopPadding:(float)arg1;
-- (float)topPadding;
-- (void)setChapterTimeMarkers:(id)arg1;
-- (id)chapterTimeMarkers;
-- (void)setVideoView:(id)arg1;
-- (BOOL)videoOutActive;
-- (id)videoView;
 
 @end

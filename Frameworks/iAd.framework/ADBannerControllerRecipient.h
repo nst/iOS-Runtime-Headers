@@ -11,8 +11,8 @@
 @property <ADBannerControllerRecipient> * owner;
 
 
-- (void)bannerControllerDidBecomeAvailable:(id)arg1;
 - (id)owner;
+- (void)bannerControllerDidBecomeAvailable:(id)arg1;
 - (void)setOwner:(id)arg1;
 
 @end

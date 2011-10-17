@@ -7,8 +7,8 @@
 
 
 - (id)tildeAbbreviatedPath;
+- (id)fullPath;
 - (id)storeForMailboxUid:(id)arg1;
 - (id)displayName;
-- (id)fullPath;
 
 @end

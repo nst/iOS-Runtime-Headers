@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class NSNumber, NoteStoreObject, NSMutableSet;
+@class NoteStoreObject, NSNumber, NSMutableSet;
 
 @interface NoteChangeObject : NSManagedObject  {
 }
 
-@property(retain) NSMutableSet * noteServerIntIds;
-@property(retain) NSMutableSet * noteServerIds;
-@property(retain) NSMutableSet * noteIntegerIds;
-@property(retain) NSNumber * changeType;
 @property(retain) NoteStoreObject * store;
+@property(retain) NSNumber * changeType;
+@property(retain) NSMutableSet * noteIntegerIds;
+@property(retain) NSMutableSet * noteServerIds;
+@property(retain) NSMutableSet * noteServerIntIds;
 
 
 

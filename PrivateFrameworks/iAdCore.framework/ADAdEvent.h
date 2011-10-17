@@ -2,43 +2,47 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class ADAdConnection, NSString, ADDeviceOrientation;
+@class NSString;
 
 @interface ADAdEvent : PBCodable  {
-    unsigned long long _timestampEvent;
     BOOL _hasTimestampEvent;
+    unsigned long long _timestampEvent;
     NSString *_context;
-    ADDeviceOrientation *_deviceOrientation;
-    ADAdConnection *_connectionType;
+    BOOL _hasDeviceOrientation;
+    int _deviceOrientation;
+    BOOL _hasConnectionType;
+    int _connectionType;
 }
 
-@property(readonly) BOOL hasContext;
-@property(readonly) BOOL hasDeviceOrientation;
-@property(readonly) BOOL hasConnectionType;
-@property(retain) ADAdConnection * connectionType;
-@property(retain) ADDeviceOrientation * deviceOrientation;
-@property(retain) NSString * context;
-@property(readonly) BOOL hasTimestampEvent;
+@property BOOL hasTimestampEvent;
 @property unsigned long long timestampEvent;
+@property(readonly) BOOL hasContext;
+@property(retain) NSString * context;
+@property BOOL hasDeviceOrientation;
+@property int deviceOrientation;
+@property BOOL hasConnectionType;
+@property int connectionType;
 
 
-- (BOOL)hasConnectionType;
-- (BOOL)hasDeviceOrientation;
-- (BOOL)hasContext;
-- (id)deviceOrientation;
-- (unsigned long long)timestampEvent;
-- (void)setConnectionType:(id)arg1;
-- (BOOL)hasTimestampEvent;
-- (void)setTimestampEvent:(unsigned long long)arg1;
-- (id)connectionType;
-- (void)setContext:(id)arg1;
-- (id)dictionaryRepresentation;
-- (void)setDeviceOrientation:(id)arg1;
-- (id)context;
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasConnectionType:(BOOL)arg1;
+- (void)setHasDeviceOrientation:(BOOL)arg1;
+- (BOOL)hasDeviceOrientation;
+- (void)setHasTimestampEvent:(BOOL)arg1;
+- (BOOL)hasContext;
 - (void)writeTo:(id)arg1;
+- (int)deviceOrientation;
+- (BOOL)hasConnectionType;
+- (unsigned long long)timestampEvent;
+- (BOOL)hasTimestampEvent;
+- (void)setConnectionType:(int)arg1;
+- (void)setTimestampEvent:(unsigned long long)arg1;
+- (id)dictionaryRepresentation;
+- (void)setDeviceOrientation:(int)arg1;
+- (id)context;
+- (void)setContext:(id)arg1;
+- (int)connectionType;
+- (id)description;
+- (void)dealloc;
 
 @end

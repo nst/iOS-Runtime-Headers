@@ -2,53 +2,43 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@class UIView, UIPopoverController, UIViewController, UIWindow;
+@class UIView, UIPopoverController, UIViewController, DDAction, UIWindow;
 
-@interface DDActionController : NSObject <ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate, EKEventEditViewDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate> {
+@interface DDActionController : NSObject <UIAlertViewDelegate, UIPopoverControllerDelegate> {
     UIViewController *_presentedViewController;
     UIPopoverController *_currentPopoverController;
     UIView *_baseView;
     UIViewController *_currentBaseViewController;
+    DDAction *_currentAction;
     id _interactionDelegate;
     UIWindow *_originalWindow;
 }
 
-@property(retain) UIView * baseView;
-@property(retain) UIPopoverController * popoverController;
 @property(retain) id interactionDelegate;
+@property(retain) UIPopoverController * popoverController;
+@property(retain) UIView * baseView;
+@property(retain) DDAction * currentAction;
 
 
-- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowInsertEditorForPerson:(void*)arg2 insertProperty:(int*)arg3 copyInsertValue:(id*)arg4 copyInsertLabel:(id*)arg5;
+- (void)setPopoverController:(id)arg1;
 - (id)popoverController;
-- (void)setInteractionDelegate:(id)arg1;
 - (id)interactionDelegate;
+- (void)setInteractionDelegate:(id)arg1;
+- (id)currentAction;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)actionDidFinish;
+- (id)baseView;
+- (void)dismissCurrentController;
+- (void)_presentController:(id)arg1;
+- (void)setCurrentAction:(id)arg1;
+- (void)_dismissCurrentViewControllerOurselves;
+- (void)_presentCurrentViewControllerOurselves;
+- (void)setBaseView:(id)arg1;
+- (id)defaultActionForURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
+- (id)actionsForURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
+- (void)_cleanup;
 - (id)init;
 - (void)dealloc;
-- (void)setPopoverController:(id)arg1;
-- (void)_cleanup;
-- (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
-- (void)peoplePickerNavigationController:(id)arg1 insertEditorDidConfirm:(BOOL)arg2 forPerson:(void*)arg3;
-- (void)_copyURL:(id)arg1;
-- (void)_presentController:(id)arg1;
-- (void)dismissCurrentController;
-- (void)_presentCurrentViewControllerInWindow:(id)arg1;
-- (void)_dismissCurrentViewController;
-- (void)fallBackViewControllerWasDismissed:(id)arg1;
-- (void)_presentEventCreationPanelForResult:(struct __DDResult { }*)arg1 context:(id)arg2;
-- (void)_presentNewPerson:(void*)arg1;
-- (void)_presentPeoplePickerForValue:(id)arg1 property:(int)arg2;
-- (void)_augmentRecord:(void*)arg1 withResult:(struct __DDResult { }*)arg2;
-- (id)baseView;
-- (id)actionNamesForResult:(struct __DDResult { }*)arg1;
-- (id)actionNamesForURL:(id)arg1;
-- (void)setBaseView:(id)arg1;
-- (void)performActionNumber:(int)arg1 forResult:(struct __DDResult { }*)arg2 isDefaultAction:(BOOL)arg3 context:(id)arg4;
-- (void)performActionNumber:(int)arg1 forURL:(id)arg2 isDefaultAction:(BOOL)arg3 context:(id)arg4;
+- (void)performAction:(id)arg1;
 
 @end

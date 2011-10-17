@@ -11,7 +11,7 @@
 
 
 - (void)createPath;
-- (id)initWithCircle:(id)arg1;
 - (id)circle;
+- (id)initWithCircle:(id)arg1;
 
 @end

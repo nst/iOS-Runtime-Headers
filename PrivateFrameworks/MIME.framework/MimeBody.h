@@ -12,7 +12,6 @@
 }
 
 + (id)copyNewMimeBoundary;
-+ (void)initialize;
 + (id)versionString;
 
 - (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
@@ -20,21 +19,20 @@
 - (id)topLevelPart;
 - (id)attachments;
 - (id)textHtmlPart;
-- (id)mimeType;
-- (id)init;
-- (void)dealloc;
-- (int)numberOfAlternatives;
-- (void)setPreferredAlternative:(int)arg1;
-- (unsigned int)totalTextSize;
 - (void)setTopLevelPart:(id)arg1;
 - (void)setPreferredTextEncoding:(unsigned long)arg1;
 - (id)mimeSubtype;
 - (id)partWithNumber:(id)arg1;
-- (void)decodeIfNecessary;
-- (int)preferredAlternative;
 - (id)preferredBodyPart;
+- (int)preferredAlternative;
 - (unsigned long)preferredTextEncoding;
 - (BOOL)isRich;
+- (id)mimeType;
+- (int)numberOfAlternatives;
+- (void)setPreferredAlternative:(int)arg1;
+- (unsigned int)totalTextSize;
 - (unsigned int)numberOfAttachmentsSigned:(BOOL*)arg1 encrypted:(BOOL*)arg2;
+- (id)init;
+- (void)dealloc;
 
 @end

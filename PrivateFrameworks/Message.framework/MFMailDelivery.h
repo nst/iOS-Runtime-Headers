@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class Message, MailAccount, PlainTextDocument, MutableMessageHeaders, DeliveryAccount, NSString, NSArray;
+@class Message, PlainTextDocument, MailAccount, NSDictionary, MutableMessageHeaders, DeliveryAccount, NSString, NSArray;
 
 @interface MFMailDelivery : NSObject  {
     id _delegate;
@@ -10,6 +10,7 @@
     MailAccount *_archiveAccount;
     DeliveryAccount *_account;
     MutableMessageHeaders *_headers;
+    NSDictionary *_compositionSpecification;
     NSArray *_mixedContent;
     BOOL _textPartsAreHTML;
     NSString *_htmlString;
@@ -21,30 +22,34 @@
     unsigned int __UNUSED__ : 24;
 }
 
-+ (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
-+ (id)newWithMessage:(id)arg1;
-+ (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
-+ (BOOL)deliverMessage:(id)arg1;
+@property(retain) NSDictionary * compositionSpecification;
 
-- (void)setCellDataOnly:(BOOL)arg1;
++ (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
++ (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
++ (BOOL)deliverMessage:(id)arg1;
++ (id)newWithMessage:(id)arg1;
+
 - (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
-- (id)newMessageWriter;
 - (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
 - (id)archiveAccount;
 - (void)setArchiveAccount:(id)arg1;
+- (void)setAccount:(id)arg1;
 - (int)deliveryStatus;
+- (void)deliverAsynchronously;
+- (void)setCellDataOnly:(BOOL)arg1;
+- (void)setCompositionSpecification:(id)arg1;
+- (int)deliverSynchronously;
+- (id)newMessageWriter;
 - (id)originalHeaders;
 - (id)headersForDelivery;
-- (void)deliverAsynchronously;
-- (int)deliverSynchronously;
 - (int)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
-- (id)message;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)initWithMessage:(id)arg1;
-- (void)archive;
-- (void)setAccount:(id)arg1;
+- (id)compositionSpecification;
 - (id)account;
+- (id)initWithMessage:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)archive;
+- (id)message;
+- (id)delegate;
+- (void)dealloc;
 
 @end

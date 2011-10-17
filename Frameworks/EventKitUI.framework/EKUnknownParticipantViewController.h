@@ -10,9 +10,9 @@
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)dealloc;
-- (void)setParticipant:(id)arg1;
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
+- (void)setParticipant:(id)arg1;
+- (void)dealloc;
 - (id)initWithParticipant:(id)arg1;
 
 @end

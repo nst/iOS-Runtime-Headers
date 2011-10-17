@@ -9,11 +9,11 @@
 }
 
 
+- (id)initWithRed:(unsigned char)arg1 green:(unsigned char)arg2 blue:(unsigned char)arg3;
 - (unsigned char)blue;
-- (unsigned char)red;
 - (unsigned char)green;
+- (unsigned char)red;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRed:(unsigned char)arg1 green:(unsigned char)arg2 blue:(unsigned char)arg3;
 
 @end

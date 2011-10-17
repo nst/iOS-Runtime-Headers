@@ -13,16 +13,16 @@
 
 + (id)defaultProperties;
 
-- (int)type;
-- (void)setType:(int)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setFillToRect:(id)arg1;
 - (BOOL)isFillToRectOverridden;
 - (BOOL)isTypeOverridden;
-- (id)initWithDefaults;
 - (id)fillToRect;
+- (id)initWithDefaults;
+- (int)type;
+- (void)setType:(int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

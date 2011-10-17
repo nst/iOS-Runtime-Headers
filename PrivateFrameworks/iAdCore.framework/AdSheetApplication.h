@@ -6,12 +6,10 @@
 }
 
 
-- (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2;
 - (BOOL)_supportsShakesWhenNotActive;
-- (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2 changeApplicationFlag:(BOOL)arg3;
+- (BOOL)canShowAlerts;
+- (BOOL)_isWindowServerHostingManaged;
 - (void)menuButtonUp:(struct __GSEvent { }*)arg1;
 - (void)sendEvent:(id)arg1;
-- (BOOL)_isWindowServerHostingManaged;
-- (BOOL)canShowAlerts;
 
 @end

@@ -16,9 +16,9 @@
 + (id)cachedWallpaperDataForVariant:(int)arg1;
 
 - (id)initWithVariant:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
 - (id)data;
-- (void)dealloc;
 - (int)variant;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 
 @end

@@ -24,21 +24,21 @@
 
 
 - (int)requestedFormat;
-- (double)timeOfLastActivity;
+- (void)setAlternatePartConsumer:(id)arg1;
 - (id)consumerFactory;
 - (id)alternatePartConsumer;
-- (void)setAlternatePartConsumer:(id)arg1;
+- (id)dataConsumer;
+- (id)dataConsumerForPart:(id)arg1;
+- (double)timeOfLastActivity;
+- (BOOL)succeeded;
+- (void)setRequestedFormat:(int)arg1;
+- (void)setDataConsumer:(id)arg1;
+- (void)setConsumerFactory:(id)arg1;
 - (BOOL)shouldBeginStreamingForMailMessage:(id)arg1 format:(int)arg2;
 - (void)consumeData:(char *)arg1 length:(int)arg2 format:(int)arg3 mailMessage:(id)arg4;
-- (void)setRequestedFormat:(int)arg1;
-- (void)setConsumerFactory:(id)arg1;
-- (id)dataConsumerForPart:(id)arg1;
 - (void)didEndStreamingForMailMessage:(id)arg1;
-- (BOOL)succeeded;
 - (id)bodyData;
 - (id)data;
 - (void)dealloc;
-- (id)dataConsumer;
-- (void)setDataConsumer:(id)arg1;
 
 @end

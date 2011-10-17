@@ -16,15 +16,15 @@
 @property(readonly) NSArray * sectionTitles;
 @property(readonly) NSArray * sectionIndexTitles;
 
-+ (id)collationWithDictionary:(id)arg1;
 + (id)currentCollation;
++ (id)collationWithDictionary:(id)arg1;
 
-- (id)transformedCollationStringForString:(id)arg1;
-- (id)sectionTitles;
-- (id)sectionIndexTitles;
-- (int)sectionForSectionIndexTitleAtIndex:(int)arg1;
-- (int)sectionForObject:(id)arg1 collationStringSelector:(SEL)arg2;
 - (id)sortedArrayFromArray:(id)arg1 collationStringSelector:(SEL)arg2;
+- (int)sectionForObject:(id)arg1 collationStringSelector:(SEL)arg2;
+- (int)sectionForSectionIndexTitleAtIndex:(int)arg1;
+- (id)sectionIndexTitles;
+- (id)sectionTitles;
+- (id)transformedCollationStringForString:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (void)dealloc;
 

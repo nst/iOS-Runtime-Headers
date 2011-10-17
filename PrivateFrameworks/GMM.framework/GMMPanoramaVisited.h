@@ -5,23 +5,22 @@
 @class NSString, GMMMapPoint;
 
 @interface GMMPanoramaVisited : PBCodable  {
-    GMMMapPoint *_latLon;
     NSString *_panoId;
+    GMMMapPoint *_latLon;
 }
 
 @property(retain) NSString * panoId;
 @property(retain) GMMMapPoint * latLon;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)latLon;
 - (id)panoId;
-- (void)setPanoId:(id)arg1;
 - (void)setLatLon:(id)arg1;
+- (void)setPanoId:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

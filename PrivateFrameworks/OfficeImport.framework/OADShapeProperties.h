@@ -8,9 +8,9 @@
 
 + (id)defaultProperties;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
 - (void)setIsTextBox:(BOOL)arg1;
 - (BOOL)isTextBox;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 
 @end

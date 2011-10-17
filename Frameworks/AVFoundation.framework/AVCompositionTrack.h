@@ -12,9 +12,9 @@
 
 
 - (void)finalize;
-- (void)dealloc;
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 - (id)segments;
+- (void)dealloc;
 
 @end

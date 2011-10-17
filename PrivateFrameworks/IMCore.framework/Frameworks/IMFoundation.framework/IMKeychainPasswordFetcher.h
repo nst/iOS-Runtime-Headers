@@ -10,10 +10,20 @@
     NSString *_password;
 }
 
+@property(retain) NSString * _service;
+@property(retain) NSString * _username;
+@property(retain) NSString * _password;
 
-- (void)dealloc;
-- (void)_workerThreadFinished;
+
 - (id)initWithUsername:(id)arg1 service:(id)arg2;
+- (void)set_password:(id)arg1;
+- (id)_password;
+- (void)set_username:(id)arg1;
+- (id)_username;
+- (void)set_service:(id)arg1;
+- (id)_service;
+- (void)_workerThreadFinished;
 - (void)_workerThread;
+- (void)dealloc;
 
 @end

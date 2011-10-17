@@ -6,36 +6,36 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (BOOL)hasEverStarted;
-- (void)playPowerSong;
-- (void)pauseMusic;
-- (void)playMusic;
-- (void)selectNextSong;
-- (void)_sensorSearchStateChanged:(id)arg1;
-- (void)_workoutStateChanged:(id)arg1;
-- (void)_nowPlayingChanged:(id)arg1;
-- (id)currentSongName;
 - (id)sensorSearchState;
-- (float)goal;
-- (BOOL)hasPowerSong;
+- (id)currentSongName;
 - (int)musicSelection;
+- (void)_nowPlayingChanged:(id)arg1;
+- (void)_workoutStateChanged:(id)arg1;
+- (void)_sensorSearchStateChanged:(id)arg1;
+- (void)playMusic;
+- (void)pauseMusic;
 - (void)goToNowPlaying;
-- (void)selectPreviousSong;
-- (void)pauseWorkout;
 - (id)presetGoal;
-- (id)goalType;
-- (BOOL)shouldControlMusic;
-- (id)workoutData;
-- (id)powerSongName;
+- (BOOL)hasEverStarted;
+- (id)workoutState;
+- (BOOL)hasPowerSong;
 - (void)prepareToActivateWorkout;
-- (void)activateWorkout;
+- (id)powerSongName;
+- (float)goal;
+- (id)goalType;
 - (void)endWorkout;
 - (void)playOnDemandPrompt;
-- (id)workoutState;
+- (void)selectPreviousSong;
+- (void)selectNextSong;
+- (BOOL)shouldControlMusic;
+- (void)playPowerSong;
+- (void)pauseWorkout;
+- (void)activateWorkout;
+- (id)workoutData;
+- (id)init;
+- (void)dealloc;
 - (void)endSeeking;
-- (void)beginSeekingBackward;
 - (void)beginSeekingForward;
+- (void)beginSeekingBackward;
 
 @end

@@ -4,31 +4,33 @@
 
 @class NSString, NSDictionary;
 
-@interface FTProfileGetDefaultInvitationContext : FTProfileMessage  {
-    NSString *_responseRegionID;
+@interface FTProfileGetDefaultInvitationContext : FTProfileMessage <NSCopying> {
     NSString *_responseBasePhoneNumber;
-    BOOL _responseValidated;
+    NSString *_responseRegionID;
     NSDictionary *_responseExtraInfo;
+    BOOL _responseValidated;
 }
 
-@property BOOL responseValidated;
-@property(copy) NSDictionary * responseExtraInfo;
 @property(copy) NSString * responseRegionID;
 @property(copy) NSString * responseBasePhoneNumber;
+@property(copy) NSDictionary * responseExtraInfo;
+@property BOOL responseValidated;
 
 
-- (id)bagKey;
-- (void)dealloc;
-- (id)responseBasePhoneNumber;
-- (void)setResponseBasePhoneNumber:(id)arg1;
-- (id)responseRegionID;
+- (id)messageBody;
 - (BOOL)responseValidated;
-- (void)setResponseValidated:(BOOL)arg1;
 - (id)responseExtraInfo;
+- (id)responseBasePhoneNumber;
+- (id)responseRegionID;
+- (void)setResponseValidated:(BOOL)arg1;
 - (void)setResponseExtraInfo:(id)arg1;
 - (void)setResponseRegionID:(id)arg1;
+- (void)setResponseBasePhoneNumber:(id)arg1;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)requiredKeys;
-- (id)messageBody;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)bagKey;
 
 @end

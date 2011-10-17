@@ -15,17 +15,19 @@
 @property SUScriptObject * scriptObject;
 
 + (id)objectWithNativeObject:(id)arg1;
++ (void)makeReferencesToObjectWeak:(id)arg1;
 + (void)clearWeakReferencesToObject:(id)arg1;
 
-- (void)lock;
 - (void)setObject:(id)arg1;
 - (id)object;
 - (void)unlock;
+- (void)lock;
 - (id)init;
 - (void)dealloc;
-- (void)setupNativeObject;
-- (id)scriptObject;
-- (void)destroyNativeObject;
+- (void)_nativeObjectBecameWeakNotification:(id)arg1;
 - (void)setScriptObject:(id)arg1;
+- (id)scriptObject;
+- (void)setupNativeObject;
+- (void)destroyNativeObject;
 
 @end

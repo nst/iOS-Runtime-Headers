@@ -3,37 +3,38 @@
  */
 
 @interface GMMMetadata : PBCodable  {
-    BOOL _needsLinkStreetRange;
     BOOL _hasNeedsLinkStreetRange;
-    BOOL _fetchDepthMap;
+    BOOL _needsLinkStreetRange;
     BOOL _hasFetchDepthMap;
-    BOOL _fetchPanoMap;
+    BOOL _fetchDepthMap;
     BOOL _hasFetchPanoMap;
+    BOOL _fetchPanoMap;
 }
 
-@property(readonly) BOOL hasFetchPanoMap;
-@property BOOL fetchPanoMap;
-@property(readonly) BOOL hasFetchDepthMap;
-@property BOOL fetchDepthMap;
-@property(readonly) BOOL hasNeedsLinkStreetRange;
+@property BOOL hasNeedsLinkStreetRange;
 @property BOOL needsLinkStreetRange;
+@property BOOL hasFetchDepthMap;
+@property BOOL fetchDepthMap;
+@property BOOL hasFetchPanoMap;
+@property BOOL fetchPanoMap;
 
-+ (id)standardMetadata;
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (void)setNeedsLinkStreetRange:(BOOL)arg1;
-- (void)setFetchDepthMap:(BOOL)arg1;
-- (void)setFetchPanoMap:(BOOL)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasFetchPanoMap:(BOOL)arg1;
 - (BOOL)hasFetchPanoMap;
+- (void)setHasFetchDepthMap:(BOOL)arg1;
 - (BOOL)hasFetchDepthMap;
+- (void)setHasNeedsLinkStreetRange:(BOOL)arg1;
 - (BOOL)hasNeedsLinkStreetRange;
 - (BOOL)fetchPanoMap;
 - (BOOL)fetchDepthMap;
 - (BOOL)needsLinkStreetRange;
-- (BOOL)readFrom:(id)arg1;
+- (void)setFetchPanoMap:(BOOL)arg1;
+- (void)setFetchDepthMap:(BOOL)arg1;
+- (void)setNeedsLinkStreetRange:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)description;
+- (void)dealloc;
 
 @end

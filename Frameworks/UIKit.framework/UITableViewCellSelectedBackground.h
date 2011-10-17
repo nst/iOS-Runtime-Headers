@@ -7,21 +7,25 @@
 @interface UITableViewCellSelectedBackground : UIView  {
     int _selectionStyle;
     UIColor *_multiselectBackgroundColor;
+    UIColor *_selectionTintColor;
     BOOL _multiselect;
 }
 
-@property(getter=isMultiselect) BOOL multiselect;
-@property(retain) UIColor * multiselectBackgroundColor;
 @property int selectionStyle;
+@property(retain) UIColor * multiselectBackgroundColor;
+@property(getter=isMultiselect) BOOL multiselect;
+@property(retain) UIColor * selectionTintColor;
 
 
-- (int)selectionStyle;
-- (id)multiselectBackgroundColor;
-- (void)setMultiselect:(BOOL)arg1;
-- (BOOL)isMultiselect;
+- (id)selectionTintColor;
 - (void)setMultiselectBackgroundColor:(id)arg1;
+- (id)multiselectBackgroundColor;
+- (int)selectionStyle;
+- (BOOL)isMultiselect;
+- (void)setMultiselect:(BOOL)arg1;
+- (void)setSelectionTintColor:(id)arg1;
 - (void)setSelectionStyle:(int)arg1;
-- (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

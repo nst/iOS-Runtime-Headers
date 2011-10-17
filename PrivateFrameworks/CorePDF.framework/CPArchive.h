@@ -9,17 +9,18 @@
     struct __CFArray { } *imageNodes;
     NSMutableString *plainText;
     NSMutableString *htmlString;
+    NSMutableString *htmlStringNoImages;
     NSData *webArchiveData;
 }
 
 
-- (void)dispose;
-- (id)webArchiveData;
 - (id)plainText;
 - (void)finalize;
+- (void)addSelection:(struct CGPDFSelection { }*)arg1;
+- (id)webArchiveData;
+- (void)dispose;
+- (id)html;
 - (id)init;
 - (void)dealloc;
-- (id)html;
-- (void)addSelection:(struct CGPDFSelection { }*)arg1;
 
 @end

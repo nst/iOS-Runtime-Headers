@@ -12,9 +12,9 @@
 @property(retain) EKEventViewController * eventViewController;
 
 
-- (void)dealloc;
 - (void)setEventViewController:(id)arg1;
 - (id)eventViewController;
 - (id)initForEventUID:(int)arg1;
+- (void)dealloc;
 
 @end

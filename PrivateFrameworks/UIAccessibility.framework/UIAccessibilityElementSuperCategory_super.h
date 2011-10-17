@@ -5,26 +5,6 @@
 @interface UIAccessibilityElementSuperCategory_super : UIAccessibilitySafeCategory  {
 }
 
-+ (void)_initializeSafeCategory;
 
-- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
-- (void)accessibilityActivate;
-- (void)accessibilityZoomOutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)accessibilityZoomInAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_accessibilitySetValue:(id)arg1;
-- (id)_accessibilityAutomaticIdentifier;
-- (BOOL)_accessibilitySupportsActivateAction;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (id)accessibilityLabel;
-- (void)accessibilityElementDidLoseFocus;
-- (void)accessibilityElementDidBecomeFocused;
-- (void)setAccessibilityContainer:(id)arg1;
-- (unsigned long long)accessibilityTraits;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityHint;
-- (id)accessibilityValue;
-- (id)initWithAccessibilityContainer:(id)arg1;
 
 @end

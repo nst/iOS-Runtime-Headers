@@ -20,30 +20,30 @@
     id reserved;
 }
 
++ (id)classNameDecodedForArchiveClassName:(id)arg1;
++ (void)decodeClassName:(id)arg1 asClassName:(id)arg2;
 + (id)unarchiveObjectWithFile:(id)arg1;
 + (id)unarchiveObjectWithData:(id)arg1;
 + (void)initialize;
-+ (void)decodeClassName:(id)arg1 asClassName:(id)arg2;
-+ (id)classNameDecodedForArchiveClassName:(id)arg1;
 
-- (void)_setAllowedClasses:(id)arg1;
-- (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
-- (id)decodeDataObject;
-- (id)decodeObject;
-- (void)decodeValuesOfObjCTypes:(const char *)arg1;
-- (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
-- (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
+- (BOOL)isAtEnd;
+- (id)data;
+- (void)finalize;
+- (struct _NSZone { }*)objectZone;
+- (void)setObjectZone:(struct _NSZone { }*)arg1;
+- (id)classNameDecodedForArchiveClassName:(id)arg1;
+- (void)decodeClassName:(id)arg1 asClassName:(id)arg2;
 - (int)versionForClassName:(id)arg1;
+- (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
+- (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
+- (void)decodeValuesOfObjCTypes:(const char *)arg1;
+- (id)decodeObject;
+- (id)decodeDataObject;
+- (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
 - (id)initForReadingWithData:(id)arg1;
 - (unsigned int)systemVersion;
-- (void)finalize;
-- (id)data;
+- (void)_setAllowedClasses:(id)arg1;
 - (void)dealloc;
-- (BOOL)isAtEnd;
-- (void)setObjectZone:(struct _NSZone { }*)arg1;
-- (void)decodeClassName:(id)arg1 asClassName:(id)arg2;
-- (id)classNameDecodedForArchiveClassName:(id)arg1;
-- (struct _NSZone { }*)objectZone;
 
 @end

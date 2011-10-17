@@ -9,16 +9,16 @@
     NSString *_bundleIdentifier;
 }
 
-@property(retain) NSString * bundleIdentifier;
 @property(retain) id badgeValue;
+@property(retain) NSString * bundleIdentifier;
 
 
-- (void)setBadgeValue:(id)arg1;
+- (void)setBundleIdentifier:(id)arg1;
+- (id)uniqueKey;
 - (id)badgeValue;
+- (void)setBadgeValue:(id)arg1;
 - (void)run;
 - (id)bundleIdentifier;
 - (void)dealloc;
-- (id)uniqueKey;
-- (void)setBundleIdentifier:(id)arg1;
 
 @end

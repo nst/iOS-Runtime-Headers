@@ -13,13 +13,13 @@
 
 + (void)addConnectionToPoint:(id)arg1 order:(unsigned long)arg2 array:(id*)arg3;
 
-- (int)type;
-- (void)setType:(int)arg1;
-- (void)setText:(id)arg1;
-- (id)text;
-- (id)init;
-- (void)dealloc;
 - (id)propertySet;
 - (id)shapeProperties;
+- (int)type;
+- (void)setType:(int)arg1;
+- (id)text;
+- (void)setText:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

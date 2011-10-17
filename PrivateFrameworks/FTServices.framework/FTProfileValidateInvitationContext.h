@@ -4,35 +4,36 @@
 
 @class NSString, NSDictionary;
 
-@interface FTProfileValidateInvitationContext : FTProfileMessage  {
-    NSString *_regionID;
+@interface FTProfileValidateInvitationContext : FTProfileMessage <NSCopying> {
     NSString *_basePhoneNumber;
-    NSString *_responseRegionID;
+    NSString *_regionID;
     NSString *_responseBasePhoneNumber;
+    NSString *_responseRegionID;
     NSDictionary *_responseExtraInfo;
 }
 
-@property(copy) NSDictionary * responseExtraInfo;
-@property(copy) NSString * responseRegionID;
-@property(copy) NSString * responseBasePhoneNumber;
 @property(copy) NSString * regionID;
 @property(copy) NSString * basePhoneNumber;
+@property(copy) NSString * responseRegionID;
+@property(copy) NSString * responseBasePhoneNumber;
+@property(copy) NSDictionary * responseExtraInfo;
 
 
+- (id)messageBody;
+- (void)setBasePhoneNumber:(id)arg1;
+- (id)responseExtraInfo;
+- (id)responseBasePhoneNumber;
+- (id)responseRegionID;
+- (void)setRegionID:(id)arg1;
+- (void)setResponseExtraInfo:(id)arg1;
+- (void)setResponseRegionID:(id)arg1;
+- (void)setResponseBasePhoneNumber:(id)arg1;
+- (void)handleResponseDictionary:(id)arg1;
+- (id)requiredKeys;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)basePhoneNumber;
 - (id)regionID;
 - (id)bagKey;
-- (void)dealloc;
-- (id)responseBasePhoneNumber;
-- (void)setResponseBasePhoneNumber:(id)arg1;
-- (void)setRegionID:(id)arg1;
-- (void)setBasePhoneNumber:(id)arg1;
-- (id)responseRegionID;
-- (id)responseExtraInfo;
-- (void)setResponseExtraInfo:(id)arg1;
-- (void)setResponseRegionID:(id)arg1;
-- (void)handleResponseDictionary:(id)arg1;
-- (id)requiredKeys;
-- (id)messageBody;
 
 @end

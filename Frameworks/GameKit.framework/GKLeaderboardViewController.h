@@ -16,22 +16,22 @@
 @property(retain) GKLeaderboardCategoryViewController * categoryController;
 
 
-- (int)timeScope;
-- (id)game;
+- (void)authenticatedStatusChanged;
+- (void)setLeaderboardDelegate:(id)arg1;
+- (id)leaderboardDelegate;
 - (id)categoryController;
-- (id)category;
+- (void)setCategoryController:(id)arg1;
 - (id)privateViewController;
 - (void)setPrivateViewController:(id)arg1;
-- (void)setCategoryController:(id)arg1;
-- (void)setTimeScope:(int)arg1;
-- (void)authenticatedStatusChanged;
-- (id)leaderboardDelegate;
-- (void)setLeaderboardDelegate:(id)arg1;
+- (id)game;
 - (void)setGame:(id)arg1;
+- (int)timeScope;
+- (void)setTimeScope:(int)arg1;
 - (void)setCategory:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (id)category;
 - (id)init;
 - (void)dealloc;
 

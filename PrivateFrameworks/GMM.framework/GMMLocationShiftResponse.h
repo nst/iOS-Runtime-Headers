@@ -2,50 +2,56 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, GMMMapPoint;
+@class GMMMapPoint;
 
 @interface GMMLocationShiftResponse : PBCodable  {
     int _status;
-    NSMutableArray *_coefficients;
+    struct { 
+        long long *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _coefficients;
     GMMMapPoint *_originalPoint;
-    int _validSquareLength;
     BOOL _hasValidSquareLength;
-    int _cacheSquareLength;
+    int _validSquareLength;
     BOOL _hasCacheSquareLength;
+    int _cacheSquareLength;
 }
 
-@property(readonly) int coefficientsCount;
-@property(readonly) BOOL hasOriginalPoint;
-@property(readonly) BOOL hasCacheSquareLength;
-@property int cacheSquareLength;
-@property(readonly) BOOL hasValidSquareLength;
-@property int validSquareLength;
-@property(retain) GMMMapPoint * originalPoint;
-@property(retain) NSMutableArray * coefficients;
 @property int status;
+@property(readonly) unsigned int coefficientsCount;
+@property(readonly) long long* coefficients;
+@property(readonly) BOOL hasOriginalPoint;
+@property(retain) GMMMapPoint * originalPoint;
+@property BOOL hasValidSquareLength;
+@property int validSquareLength;
+@property BOOL hasCacheSquareLength;
+@property int cacheSquareLength;
 
 
 - (void)setStatus:(int)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (void)setCoefficient:(long long)arg1 atIndex:(unsigned int)arg2;
+- (BOOL)readFrom:(id)arg1;
+- (int)cacheSquareLength;
+- (void)setHasCacheSquareLength:(BOOL)arg1;
+- (BOOL)hasCacheSquareLength;
+- (int)validSquareLength;
+- (void)setHasValidSquareLength:(BOOL)arg1;
+- (BOOL)hasValidSquareLength;
+- (BOOL)hasOriginalPoint;
+- (void)setCoefficients:(long long*)arg1 count:(unsigned int)arg2;
 - (long long)coefficientAtIndex:(unsigned int)arg1;
 - (void)addCoefficient:(long long)arg1;
-- (void)setValidSquareLength:(int)arg1;
+- (void)clearCoefficients;
+- (long long*)coefficients;
+- (unsigned int)coefficientsCount;
 - (void)setCacheSquareLength:(int)arg1;
-- (void)setCoefficients:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (int)coefficientsCount;
-- (BOOL)hasOriginalPoint;
-- (BOOL)hasValidSquareLength;
-- (BOOL)hasCacheSquareLength;
-- (id)coefficients;
-- (int)validSquareLength;
-- (int)cacheSquareLength;
+- (void)setValidSquareLength:(int)arg1;
 - (id)originalPoint;
-- (void)writeTo:(id)arg1;
 - (void)setOriginalPoint:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
 - (int)status;
+- (id)description;
+- (void)dealloc;
 
 @end

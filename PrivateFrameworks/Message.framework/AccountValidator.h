@@ -27,20 +27,20 @@
 - (void)validateAccountWithoutFallbacks:(id)arg1;
 - (void)cancelValidation;
 - (id)_ispAccountInfo;
+- (BOOL)accountValidationCanceled;
+- (BOOL)accountIsValid;
+- (BOOL)accountSupportsSSL;
+- (void)_validateAccountInBackground:(id)arg1 withFallbacks:(BOOL)arg2;
 - (void)_backgroundValidateAccountFinished:(id)arg1 authSchemes:(id)arg2;
 - (void)_validateAccount:(id)arg1;
 - (void)_validateAccountWithoutFallbacks:(id)arg1;
-- (BOOL)_incomingServerValid;
 - (BOOL)_outgoingServerValid;
-- (BOOL)accountValidationCanceled;
-- (void)_validateAccountInBackground:(id)arg1 withFallbacks:(BOOL)arg2;
-- (BOOL)accountIsValid;
-- (BOOL)accountSupportsSSL;
-- (id)init;
-- (void)dealloc;
+- (BOOL)_incomingServerValid;
+- (id)account;
 - (void)setDelegate:(id)arg1;
 - (void)stop;
 - (id)error;
-- (id)account;
+- (id)init;
+- (void)dealloc;
 
 @end

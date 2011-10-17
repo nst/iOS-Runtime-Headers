@@ -8,13 +8,13 @@
     NSString *_syncToken;
 }
 
-@property(retain,readonly) NSString * syncToken;
+@property(readonly) NSString * syncToken;
 
 
-- (void)dealloc;
-- (id)description;
 - (void)_setSyncTokenItem:(id)arg1;
-- (id)syncToken;
 - (id)copyParseRules;
+- (id)syncToken;
+- (id)description;
+- (void)dealloc;
 
 @end

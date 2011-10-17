@@ -12,17 +12,17 @@
 }
 
 
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
-- (void)setGlowAnimationEnabled:(BOOL)arg1;
 - (void)setSuppressesGlow:(BOOL)arg1;
-- (void)_setGlowAnimationEnabled:(BOOL)arg1 waitForNextCycle:(BOOL)arg2;
-- (BOOL)_styleCanGlow:(int)arg1;
-- (void)_startGlowAnimationWaitForNextCycle:(BOOL)arg1;
-- (void)_stopGlowAnimation;
+- (void)setGlowAnimationEnabled:(BOOL)arg1;
 - (id)_imageNameForStyle:(int)arg1;
-- (id)_baseImageForStyle:(int)arg1;
 - (id)_glowImageForStyle:(int)arg1;
+- (BOOL)_styleCanGlow:(int)arg1;
+- (void)_stopGlowAnimation;
+- (void)_startGlowAnimationWaitForNextCycle:(BOOL)arg1;
+- (void)_setGlowAnimationEnabled:(BOOL)arg1 waitForNextCycle:(BOOL)arg2;
+- (id)_baseImageForStyle:(int)arg1;
 - (int)style;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)dealloc;
 
 @end

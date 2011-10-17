@@ -12,23 +12,23 @@
     UIViewController *_viewController;
 }
 
-@property(retain) UIViewController * viewController;
-@property(retain) SUOverlayTransition * transition;
-@property(retain) UIViewController * otherViewController;
-@property int animationCount;
 @property int actionType;
+@property int animationCount;
+@property(retain) UIViewController * otherViewController;
+@property(retain) SUOverlayTransition * transition;
+@property(retain) UIViewController * viewController;
 
 
-- (void)setAnimationCount:(int)arg1;
-- (id)viewController;
-- (void)setViewController:(id)arg1;
-- (int)animationCount;
-- (void)dealloc;
 - (id)transition;
 - (void)setTransition:(id)arg1;
-- (int)actionType;
-- (void)setActionType:(int)arg1;
-- (id)otherViewController;
+- (id)viewController;
+- (void)setViewController:(id)arg1;
+- (void)setAnimationCount:(int)arg1;
+- (int)animationCount;
+- (void)dealloc;
 - (void)setOtherViewController:(id)arg1;
+- (id)otherViewController;
+- (void)setActionType:(int)arg1;
+- (int)actionType;
 
 @end

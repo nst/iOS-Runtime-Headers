@@ -11,14 +11,14 @@
 }
 
 
-- (void)setColors:(id)arg1;
-- (void)dealloc;
 - (void)setHueDirection:(int)arg1;
-- (void)setMethod:(int)arg1;
 - (id)cycleColorAtIndex:(unsigned int)arg1;
 - (id)repeatColorAtIndex:(unsigned int)arg1;
 - (id)spanColorAtIndex:(unsigned int)arg1 count:(unsigned int)arg2 state:(id)arg3;
 - (void)getComponentsForIndex:(unsigned int)arg1 hue:(float*)arg2 saturation:(float*)arg3 brightness:(float*)arg4 state:(id)arg5;
 - (id)colorAtIndex:(unsigned int)arg1 count:(unsigned int)arg2 state:(id)arg3;
+- (void)setMethod:(int)arg1;
+- (void)setColors:(id)arg1;
+- (void)dealloc;
 
 @end

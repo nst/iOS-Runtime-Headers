@@ -9,12 +9,12 @@
 }
 
 
+- (void)download;
+- (void)_invalidate;
+- (void)use;
+- (void)ignore;
 - (void)_usePolicy:(int)arg1;
 - (id)_initWithTarget:(id)arg1 action:(SEL)arg2;
-- (void)download;
-- (void)ignore;
-- (void)use;
-- (void)_invalidate;
 - (void)dealloc;
 - (oneway void)_webcore_releaseOnWebThread;
 - (oneway void)release;

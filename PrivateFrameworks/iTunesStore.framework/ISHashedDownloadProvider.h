@@ -23,38 +23,38 @@
     long long _validatedBytes;
 }
 
-@property long long validatedBytes;
-@property long long streamedBytes;
-@property long long numberOfBytesToHash;
 @property(retain) NSString * localFilePath;
 @property(retain) NSArray * hashes;
+@property long long numberOfBytesToHash;
+@property long long streamedBytes;
+@property long long validatedBytes;
 
 
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
-- (BOOL)_checkHashForByteCount:(long long)arg1;
-- (void)_closeFile;
-- (BOOL)_openFile;
-- (BOOL)_truncateToSize:(long long)arg1;
-- (long long)_verifiedBytesByInitializingHashForFileSize:(long long)arg1;
-- (BOOL)_writeDataWithHashing:(id)arg1 returningError:(id*)arg2;
-- (BOOL)_writeDataWithoutHashing:(id)arg1 returningError:(id*)arg2;
-- (long long)validatedBytes;
-- (void)setValidatedBytes:(long long)arg1;
-- (void)setStreamedBytes:(long long)arg1;
+- (void)setup;
 - (long long)numberOfBytesToHash;
 - (void)setNumberOfBytesToHash:(long long)arg1;
+- (BOOL)_checkHashForByteCount:(long long)arg1;
+- (void)setStreamedBytes:(long long)arg1;
+- (void)setValidatedBytes:(long long)arg1;
+- (long long)_verifiedBytesByInitializingHashForFileSize:(long long)arg1;
+- (long long)validatedBytes;
+- (BOOL)_truncateToSize:(long long)arg1;
+- (BOOL)_openFile;
+- (BOOL)_writeDataWithHashing:(id)arg1 returningError:(id*)arg2;
+- (BOOL)_writeDataWithoutHashing:(id)arg1 returningError:(id*)arg2;
 - (id)localFilePath;
-- (void)setLocalFilePath:(id)arg1;
 - (id)hashes;
+- (void)setLocalFilePath:(id)arg1;
 - (void)setHashes:(id)arg1;
-- (BOOL)isStream;
-- (long long)streamedBytes;
-- (void)closeStream;
+- (void)_closeFile;
+- (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
 - (void)resetStream;
-- (void)setup;
+- (void)closeStream;
+- (long long)streamedBytes;
+- (BOOL)isStream;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 
 @end

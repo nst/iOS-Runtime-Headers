@@ -11,27 +11,27 @@
     BOOL _authError;
 }
 
-@property(retain,readonly) NSSet * resultPrincipalURLs;
+@property(readonly) NSSet * resultPrincipalURLs;
 @property(readonly) BOOL didReceiveAuthenticationError;
-@property(retain) NSURL * urlBeingExamined;
-@property(retain) NSMutableSet * principalURLs;
 @property(retain) NSMutableSet * urlsToExamine;
+@property(retain) NSMutableSet * principalURLs;
+@property(retain) NSURL * urlBeingExamined;
 
 
-- (void)dealloc;
-- (id)urlBeingExamined;
+- (void)setPrincipalURLs:(id)arg1;
 - (id)resultPrincipalURLs;
 - (id)initWithAccountInfoProvider:(id)arg1 urls:(id)arg2 taskManager:(id)arg3;
-- (void)_finishWithError:(id)arg1;
-- (void)_fetchNextURL;
-- (void)startTaskGroup;
-- (BOOL)didReceiveAuthenticationError;
-- (void)setUrlBeingExamined:(id)arg1;
-- (id)principalURLs;
-- (void)setPrincipalURLs:(id)arg1;
-- (id)urlsToExamine;
 - (void)setUrlsToExamine:(id)arg1;
+- (void)_fetchNextURL;
+- (id)urlBeingExamined;
+- (void)setUrlBeingExamined:(id)arg1;
+- (void)_finishWithError:(id)arg1;
+- (id)urlsToExamine;
+- (id)principalURLs;
+- (BOOL)didReceiveAuthenticationError;
 - (void)cancelTaskGroup;
+- (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
+- (void)dealloc;
 
 @end

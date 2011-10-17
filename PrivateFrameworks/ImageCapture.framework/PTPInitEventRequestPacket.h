@@ -7,11 +7,11 @@
 }
 
 
-- (id)initWithConnectionNumber:(unsigned long)arg1;
 - (void)setConnectionNumber:(unsigned long)arg1;
-- (unsigned long)connectionNumber;
 - (id)contentForTCP;
+- (id)initWithConnectionNumber:(unsigned long)arg1;
 - (id)initWithTCPBuffer:(void*)arg1;
+- (unsigned long)connectionNumber;
 - (id)description;
 
 @end

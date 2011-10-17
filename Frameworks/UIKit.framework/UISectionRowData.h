@@ -23,18 +23,20 @@
 }
 
 
-- (void)invalidateSectionOffset;
-- (float)_headerOrFooterSizeForTable:(id)arg1 title:(id)arg2 isHeader:(BOOL)arg3;
-- (void)addOffset:(float)arg1 fromRow:(int)arg2;
-- (void)setHeight:(float)arg1 forRow:(int)arg2;
-- (float)_defaultSectionHeaderHeightForSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
-- (float)_defaultSectionFooterHeightForSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
-- (void)refreshWithSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
-- (void)insertRowAtIndex:(int)arg1 inSection:(int)arg2 rowHeight:(float)arg3 tableViewRowData:(id)arg4;
-- (void)deleteRowAtIndex:(int)arg1;
-- (int)sectionLocationForRow:(int)arg1;
-- (int)sectionLocationForReorderedRow:(int)arg1;
 - (void)invalidate;
+- (int)rowForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (int)sectionLocationForReorderedRow:(int)arg1;
+- (int)sectionLocationForRow:(int)arg1;
+- (void)deleteRowAtIndex:(int)arg1;
+- (void)insertRowAtIndex:(int)arg1 inSection:(int)arg2 rowHeight:(float)arg3 tableViewRowData:(id)arg4;
+- (void)refreshWithSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
+- (void)setHeight:(float)arg1 forRow:(int)arg2;
+- (void)addOffset:(float)arg1 fromRow:(int)arg2;
+- (int)_rowForPoint:(struct CGPoint { float x1; float x2; })arg1 beginningWithRow:(int)arg2 numberOfRows:(int)arg3;
+- (float)_defaultSectionFooterHeightForSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
+- (float)_defaultSectionHeaderHeightForSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
+- (float)_headerOrFooterSizeForTable:(id)arg1 title:(id)arg2 detailText:(id)arg3 isHeader:(BOOL)arg4;
+- (void)invalidateSectionOffset;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 

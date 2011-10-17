@@ -6,7 +6,7 @@
 }
 
 
-- (BOOL)isMinimized;
 - (void)setMinimized:(BOOL)arg1;
+- (BOOL)isMinimized;
 
 @end

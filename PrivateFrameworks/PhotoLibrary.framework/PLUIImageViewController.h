@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLVideoView, PLVideoRemaker, PLImage, PLPhotoTileViewController, PLImageCache, MLPhoto, PLImageLoadingQueue, UIImage, NSString, PLImageSource, PLCropOverlay;
+@class PLVideoView, PLVideoRemaker, PLManagedAsset, PLPhotoTileViewController, PLImageCache, PLImageLoadingQueue, UIImage, NSString, PLImageSource, PLCropOverlay;
 
 @interface PLUIImageViewController : UIViewController <PLVideoViewDelegate, PLImageLoadingQueueDelegate, PLPhotoTileViewControllerDelegate> {
-    MLPhoto *_photo;
+    PLManagedAsset *_photo;
     struct CGImage { } *_imageRef;
     UIImage *_image;
-    PLImage *_plImage;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -27,8 +26,8 @@
     PLImageCache *_imageCache;
     PLImageLoadingQueue *_imageLoadingQueue;
     PLImageSource *_imageSource;
-    int _previousStatusBarMode;
-    int _newStatusBarMode;
+    int _previousStatusBarStyle;
+    int _newStatusBarStyle;
     unsigned int _allowEditing : 1;
     unsigned int _statusBarWasHidden : 1;
     unsigned int _isVideo : 1;
@@ -36,64 +35,62 @@
     unsigned int _remaking : 1;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (void)loadView;
-- (void)setParentViewController:(id)arg1;
-- (BOOL)_displaysFullScreen;
-- (void)viewDidAppear:(BOOL)arg1;
-- (id)initWithImageData:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)initWithUIImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setAllowsEditing:(BOOL)arg1;
+- (BOOL)_displaysFullScreen;
+- (id)initWithUIImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)initWithImageData:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)_removedAsTopViewController;
+- (int)_imagePickerStatusBarStyle;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (int)_imagePickerStatusBarMode;
-- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)dealloc;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)videoViewDidPausePlayback:(id)arg1 didFinish:(BOOL)arg2;
 - (void)cropOverlay:(id)arg1 didFinishSaving:(id)arg2;
-- (BOOL)photoTileViewControllerAllowsEditing:(id)arg1;
-- (void)photoTileViewControllerWillBeginGesture:(id)arg1;
-- (void)photoTileViewControllerDidEndGesture:(id)arg1;
-- (id)_trimMessage;
-- (void)didChooseVideoAtPath:(id)arg1 options:(id)arg2;
-- (void)videoRemakerDidBeginRemaking:(id)arg1;
-- (int)imageFormat;
-- (void)videoViewDidEndPlayback:(id)arg1 didFinish:(BOOL)arg2;
-- (BOOL)videoViewCanBeginPlayback:(id)arg1;
-- (id)initWithImage:(struct CGImage { }*)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)initWithVideoPath:(id)arg1;
-- (int)cropOverlayMode;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewFrame;
-- (unsigned int)_contentAutoresizingMask;
-- (unsigned int)_tileAutoresizingMask;
-- (id)useButtonTitle;
-- (BOOL)clientIsWallpaper;
-- (void)setupNavigationItem;
-- (Class)_viewClass;
+- (id)initWithImage:(struct CGImage { }*)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forAsset:(id)arg3 fromSource:(id)arg4;
+- (int)imageFormat;
+- (id)_trimMessage;
+- (void)_enableCropOverlayIfNecessary;
+- (void)didChooseVideoAtPath:(id)arg1 options:(id)arg2;
 - (void)_editabilityChanged:(id)arg1;
 - (void)_updateGestureSettings;
-- (void)_updateTitles;
-- (void)_enableCropOverlayIfNecessary;
-- (void)cropOverlayPlay:(id)arg1;
+- (BOOL)clientIsWallpaper;
+- (unsigned int)_tileAutoresizingMask;
+- (void)setupNavigationItem;
+- (unsigned int)_contentAutoresizingMask;
+- (Class)_viewClass;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewFrame;
+- (int)cropOverlayMode;
+- (id)useButtonTitle;
 - (void)cropOverlayPause:(id)arg1;
-- (float)videoViewScrubberYOrigin:(id)arg1 forOrientation:(int)arg2;
-- (void)videoViewDidPausePlayback:(id)arg1 didFinish:(BOOL)arg2;
+- (void)cropOverlayPlay:(id)arg1;
 - (void)videoRemakerDidEndRemaking:(id)arg1 temporaryPath:(id)arg2;
-- (BOOL)photoTileViewControllerIsDisplayingLandscape:(id)arg1;
-- (void)cropOverlayWasCancelled:(id)arg1;
+- (void)videoRemakerDidBeginRemaking:(id)arg1;
 - (void)cropOverlayWasOKed:(id)arg1;
-- (void)videoViewIsReadyToBeginPlayback:(id)arg1;
-- (id)initWithPhoto:(id)arg1;
-- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forObject:(id)arg3 fromSource:(id)arg4;
-- (BOOL)videoViewShouldDisplayScrubber:(id)arg1;
-- (void)videoViewDidBeginPlayback:(id)arg1;
+- (void)cropOverlayWasCancelled:(id)arg1;
+- (BOOL)photoTileViewControllerIsDisplayingLandscape:(id)arg1;
 - (BOOL)videoViewCanCreateMetadata:(id)arg1;
-- (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
-- (void)photoTileViewControllerRequestsFullSizeImage:(id)arg1;
-- (void)photoTileViewControllerCancelImageRequests:(id)arg1;
-- (void)photoTileViewController:(id)arg1 willAppear:(BOOL)arg2;
-- (void)photoTileViewController:(id)arg1 didDisappear:(BOOL)arg2;
+- (void)videoViewDidEndPlayback:(id)arg1 didFinish:(BOOL)arg2;
+- (void)videoViewDidBeginPlayback:(id)arg1;
+- (void)videoViewIsReadyToBeginPlayback:(id)arg1;
+- (BOOL)videoViewCanBeginPlayback:(id)arg1;
+- (float)videoViewScrubberYOrigin:(id)arg1 forOrientation:(int)arg2;
+- (BOOL)photoTileViewControllerAllowsEditing:(id)arg1;
+- (void)photoTileViewControllerDidEndGesture:(id)arg1;
+- (void)photoTileViewControllerWillBeginGesture:(id)arg1;
 - (void)photoTileViewControllerSingleTap:(id)arg1;
+- (void)photoTileViewControllerRequestsFullSizeImage:(id)arg1;
+- (void)photoTileViewController:(id)arg1 didDisappear:(BOOL)arg2;
+- (void)photoTileViewController:(id)arg1 didAppear:(BOOL)arg2;
+- (void)photoTileViewController:(id)arg1 willAppear:(BOOL)arg2;
+- (id)initWithPhoto:(id)arg1;
+- (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
+- (void)photoTileViewControllerCancelImageRequests:(id)arg1;
+- (void)dealloc;
 
 @end

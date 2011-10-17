@@ -19,28 +19,28 @@
 
 + (id)sharedFavoritesController;
 
-- (void)dealloc;
 - (void)setUsingAccountFavorites:(BOOL)arg1;
 - (BOOL)shouldOfferMergeOfLocalBookmarks;
-- (void)setLocalBookmarksMergeOffered;
-- (void)_processNextPendingFavoritesBatch;
 - (void)mergeLocalBookmarksToAccountFavoritesWithDelegate:(id)arg1;
-- (void)_bookmarksDidChangeNotifyObservers:(BOOL)arg1;
-- (void)_saveBookmarks;
-- (void)_loadBookmarks;
-- (void)searchRequestReturnedVideos:(id)arg1;
-- (void)addLocalBookmarkForVideo:(id)arg1;
 - (void)addFavoriteForVideo:(id)arg1;
 - (void)removeFavoriteForVideo:(id)arg1;
-- (void)saveBookmarksIfNeeded;
 - (id)batchURL;
 - (void)accountFeedRequest:(id)arg1 receivedVideos:(id)arg2;
 - (void)accountFeedRequest:(id)arg1 didFailWithError:(id)arg2;
+- (void)_processNextPendingFavoritesBatch;
+- (void)saveBookmarksIfNeeded;
+- (void)_saveBookmarks;
+- (void)_loadBookmarks;
+- (void)setLocalBookmarksMergeOffered:(BOOL)arg1;
+- (void)_bookmarksDidChangeNotifyObservers:(BOOL)arg1;
+- (void)addLocalBookmarkForVideo:(id)arg1;
 - (void)YTAuthenticatedAccountPost:(id)arg1 didFinishWithType:(int)arg2 error:(id)arg3;
 - (void)bookmarksSearchRequestInterrupted;
 - (id)bookmarkedVideos;
+- (void)searchRequestReturnedVideos:(id)arg1;
 - (void)setBatchURL:(id)arg1;
 - (BOOL)usingAccountFavorites;
 - (id)bookmarkedShortIDs;
+- (void)dealloc;
 
 @end

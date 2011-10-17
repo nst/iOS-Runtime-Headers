@@ -11,23 +11,25 @@
 @property(retain) ALAssetRepresentationPrivate * internal;
 
 
-- (void)setInternal:(id)arg1;
 - (id)internal;
-- (id)initWithMLPhoto:(id)arg1 extension:(id)arg2 library:(id)arg3;
-- (unsigned int)getBytes:(char *)arg1 fromOffset:(long long)arg2 length:(unsigned int)arg3 error:(id*)arg4;
-- (id)_dataFromFileDescriptor;
-- (struct CGImage { }*)CGImageWithOptions:(id)arg1;
-- (struct CGImage { }*)fullScreenImage;
+- (void)setInternal:(id)arg1;
+- (id)filename;
+- (id)metadata;
 - (struct CGImage { }*)fullResolutionImage;
-- (BOOL)isValid;
 - (id)UTI;
 - (id)url;
+- (BOOL)isValid;
+- (float)scale;
 - (int)orientation;
 - (long long)size;
-- (void)dealloc;
-- (id)description;
-- (float)scale;
+- (struct CGImage { }*)fullScreenImage;
+- (struct CGImage { }*)CGImageWithOptions:(id)arg1;
+- (struct CGImage { }*)CGImageWithOptions:(id)arg1 format:(int)arg2 bakeInOrientation:(int)arg3;
+- (id)_imageData;
+- (unsigned int)getBytes:(char *)arg1 fromOffset:(long long)arg2 length:(unsigned int)arg3 error:(id*)arg4;
+- (id)initWithManagedAsset:(id)arg1 sidecar:(id)arg2 extension:(id)arg3 library:(id)arg4;
 - (int)_fileDescriptor;
-- (id)metadata;
+- (id)description;
+- (void)dealloc;
 
 @end

@@ -15,19 +15,19 @@
 @property(readonly) unsigned int count;
 
 
-- (BOOL)hasID:(unsigned int)arg1;
+- (void)print;
 - (void)addID:(unsigned int)arg1;
 - (void)copyItemsInto:(id)arg1;
-- (void)addIDsFromList:(id)arg1;
+- (BOOL)hasID:(unsigned int)arg1;
 - (void)removeID:(unsigned int)arg1;
+- (void)addIDsFromList:(id)arg1;
 - (void)removeAllIDs;
 - (id)allMatchingObjectsFromTable:(id)arg1;
-- (void)print;
-- (void)lock;
 - (void)unlock;
+- (void)lock;
 - (id)initWithSize:(unsigned long)arg1;
+- (unsigned long)count;
 - (id)init;
 - (void)dealloc;
-- (unsigned long)count;
 
 @end

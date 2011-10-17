@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDate, NSString, AVItemAccessLogEvent;
+@class AVPlayerItemAccessLogEvent, NSDate, NSString;
 
 @interface MPMovieAccessLogEvent : NSObject <NSCopying> {
     struct MPMovieAccessLogEventInternal { 
-        AVItemAccessLogEvent *event; 
+        AVPlayerItemAccessLogEvent *event; 
     } _internal;
 }
 
@@ -24,27 +24,27 @@
 @property(readonly) double observedBitrate;
 @property(readonly) double indicatedBitrate;
 @property(readonly) int numberOfDroppedVideoFrames;
-@property struct MPMovieAccessLogEventInternal { AVItemAccessLogEvent *event; } _internal;
+@property struct MPMovieAccessLogEventInternal { id x1; } _internal;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (int)numberOfDroppedVideoFrames;
-- (int)numberOfStalls;
-- (double)durationWatched;
+- (void)set_internal:(struct MPMovieAccessLogEventInternal { id x1; })arg1;
 - (id)_initWithAVItemAccessLogEvent:(id)arg1;
+- (struct MPMovieAccessLogEventInternal { id x1; })_internal;
 - (unsigned int)numberOfSegmentsDownloaded;
 - (id)playbackStartDate;
+- (id)URI;
+- (id)serverAddress;
 - (unsigned int)numberOfServerAddressChanges;
+- (id)playbackSessionID;
 - (double)playbackStartOffset;
 - (double)segmentsDownloadedDuration;
+- (double)durationWatched;
+- (int)numberOfStalls;
 - (long long)numberOfBytesTransferred;
 - (double)observedBitrate;
 - (double)indicatedBitrate;
-- (struct MPMovieAccessLogEventInternal { id x1; })_internal;
-- (id)serverAddress;
-- (id)playbackSessionID;
-- (void)set_internal:(struct MPMovieAccessLogEventInternal { id x1; })arg1;
-- (id)URI;
+- (int)numberOfDroppedVideoFrames;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

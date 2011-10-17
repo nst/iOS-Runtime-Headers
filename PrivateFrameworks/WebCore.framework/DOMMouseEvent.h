@@ -25,16 +25,13 @@
 @property(retain,readonly) DOMNode * toElement;
 
 
-- (int)x;
-- (unsigned short)button;
-- (int)y;
-- (int)offsetX;
-- (int)offsetY;
 - (int)screenX;
 - (int)screenY;
 - (int)clientX;
 - (int)clientY;
 - (id)relatedTarget;
+- (int)offsetX;
+- (int)offsetY;
 - (id)fromElement;
 - (id)toElement;
 - (void)initMouseEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 detail:(int)arg5 screenX:(int)arg6 screenY:(int)arg7 clientX:(int)arg8 clientY:(int)arg9 ctrlKey:(BOOL)arg10 altKey:(BOOL)arg11 shiftKey:(BOOL)arg12 metaKey:(BOOL)arg13 button:(unsigned short)arg14 relatedTarget:(id)arg15;
@@ -43,5 +40,8 @@
 - (BOOL)shiftKey;
 - (BOOL)altKey;
 - (BOOL)metaKey;
+- (int)y;
+- (int)x;
+- (unsigned short)button;
 
 @end

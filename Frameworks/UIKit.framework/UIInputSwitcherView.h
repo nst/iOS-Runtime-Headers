@@ -2,77 +2,38 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSTimer, UITableView;
+@class NSMutableArray, NSArray;
 
-@interface UIInputSwitcherView : UIView <UITableViewDataSource, UITableViewDelegate> {
-    UITableView *m_table;
-    UIView *m_shadowView;
-    UIView *m_selExtraView;
-    int m_mode;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } m_referenceRect;
-    float m_pointerOffset;
+@interface UIInputSwitcherView : UIKeyboardMenuView  {
     int m_currentInputModeIndex;
-    int m_firstVisibleRow;
-    int m_visibleRows;
-    BOOL m_scrollable;
-    BOOL m_scrolling;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } m_point;
-    double m_scrollStartTime;
-    int m_scrollDirection;
-    NSTimer *m_scrollTimer;
+    BOOL m_keyboardSettingsFromSwitcher;
+    NSMutableArray *m_inputModes;
 }
 
-@property(readonly) int mode;
+@property(retain) NSArray * inputModes;
+@property BOOL keyboardSettingsFromSwitcher;
 
 + (id)activeInstance;
 + (id)sharedInstance;
-+ (void)_initializeSafeCategory;
 
-- (BOOL)isVisible;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)showAsHUD;
-- (void)showAsPopupFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
-- (void)fadeWithDelay:(double)arg1;
-- (void)fadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (void)setNeedsDisplayForCell:(id)arg1;
-- (void)setNeedsDisplayForTopBottomCells;
-- (void)endScrolling:(id)arg1;
+- (void)selectPreviousInputMode;
+- (void)selectNextInputMode;
+- (void)setInputModes:(id)arg1;
 - (void)selectRowForInputMode:(id)arg1;
+- (id)inputModes;
+- (BOOL)keyboardSettingsFromSwitcher;
+- (void)setKeyboardSettingsFromSwitcher:(BOOL)arg1;
+- (id)titleForItemAtIndex:(int)arg1;
+- (void)didSelectItemAtIndex:(int)arg1;
+- (int)defaultSelectedIndex;
+- (struct CGSize { float x1; float x2; })preferredSize;
 - (void)selectInputMode:(id)arg1;
 - (id)nextInputMode;
-- (void)selectNextInputMode;
 - (id)previousInputMode;
-- (void)selectPreviousInputMode;
-- (int)indexForIndexPath:(id)arg1;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)autoscrollTimerFired:(id)arg1;
-- (void)stopAnyAutoscrolling;
-- (void)updateSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)fade;
 - (id)selectedInputMode;
-- (int)mode;
+- (int)numberOfItems;
 - (void)setInputMode:(id)arg1;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)hide;
-- (void)removeFromSuperview;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)font;
-- (void)dealloc;
-- (void)applicationWillSuspend:(id)arg1;
-- (void)show;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

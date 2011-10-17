@@ -13,27 +13,27 @@
     NSError *_error;
 }
 
-@property int locationSource;
-@property int commandType;
 @property int pointType;
-@property(retain) NSError * error;
-@property(retain) CLLocation * location;
+@property int commandType;
 @property(retain) CLHeading * heading;
+@property int locationSource;
+@property(retain) CLLocation * location;
+@property(retain) NSError * error;
 
 + (id)tripPoint;
 
-- (void)setLocation:(id)arg1;
-- (void)dealloc;
-- (id)location;
+- (void)setError:(id)arg1;
 - (int)pointType;
 - (void)setPointType:(int)arg1;
-- (void)setLocationSource:(int)arg1;
-- (int)commandType;
 - (int)locationSource;
-- (void)setCommandType:(int)arg1;
-- (void)setHeading:(id)arg1;
+- (void)setLocationSource:(int)arg1;
+- (void)setLocation:(id)arg1;
 - (id)heading;
+- (id)location;
 - (id)error;
-- (void)setError:(id)arg1;
+- (void)setCommandType:(int)arg1;
+- (int)commandType;
+- (void)setHeading:(id)arg1;
+- (void)dealloc;
 
 @end

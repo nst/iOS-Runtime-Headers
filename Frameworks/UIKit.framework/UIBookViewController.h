@@ -23,39 +23,39 @@
     double _turnDuration;
 }
 
-@property double turnDuration;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInset;
-@property float turnMargin;
-@property(retain) UIViewController * evenPage;
-@property(retain) UIViewController * oddPage;
 @property <UIBookViewControllerDelegate> * delegate;
+@property(retain) UIViewController * oddPage;
+@property(retain) UIViewController * evenPage;
+@property float turnMargin;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property double turnDuration;
 
 
-- (id)oddPage;
-- (float)turnMargin;
-- (double)turnDuration;
-- (void)setEvenPage:(id)arg1;
-- (void)setOddPage:(id)arg1;
-- (void)turnPages:(int)arg1 animated:(BOOL)arg2;
-- (void)setTurnDuration:(double)arg1;
-- (void)setTurnMargin:(float)arg1;
-- (id)evenPage;
-- (void)_setNewPage:(id)arg1 isLeft:(BOOL)arg2;
-- (void)_positionPage:(id)arg1 isLeft:(BOOL)arg2;
-- (void)_turnSinglePageAnimated;
-- (void)_setupCurlFilters;
-- (void)_startCurlAnimation;
-- (void)_turnAllPagesNonAnimated;
-- (void)_setupContentViewIfNecessary;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
-- (id)view;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)_startCurlAnimation;
+- (void)_setupCurlFilters;
+- (void)setTurnDuration:(double)arg1;
+- (double)turnDuration;
+- (void)setTurnMargin:(float)arg1;
+- (float)turnMargin;
+- (id)evenPage;
+- (id)oddPage;
+- (void)turnPages:(int)arg1 animated:(BOOL)arg2;
+- (void)setOddPage:(id)arg1;
+- (void)setEvenPage:(id)arg1;
+- (void)_turnAllPagesNonAnimated;
+- (void)_turnSinglePageAnimated;
+- (void)_positionPage:(id)arg1 isLeft:(BOOL)arg2;
+- (void)_setNewPage:(id)arg1 isLeft:(BOOL)arg2;
+- (void)_setupContentViewIfNecessary;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (id)view;
 - (id)delegate;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 
 @end

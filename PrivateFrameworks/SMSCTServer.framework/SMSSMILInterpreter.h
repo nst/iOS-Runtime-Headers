@@ -49,13 +49,13 @@
 }
 
 
-- (void)dealloc;
 - (id)orderedParts;
 - (id)_smilData;
 - (id)_orderedPartsForSMILString:(id)arg1;
+- (id)_parseParTagArrayFromSMIL:(id)arg1;
 - (id)_newDictionaryRepresentationOfOriginalParts;
 - (void)_initializeSAXHandler;
-- (id)_parseParTagArrayFromSMIL:(id)arg1;
+- (void)dealloc;
 - (id)initWithMessageParts:(id)arg1;
 
 @end

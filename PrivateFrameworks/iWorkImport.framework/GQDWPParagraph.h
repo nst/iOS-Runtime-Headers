@@ -13,13 +13,13 @@
 }
 
 
-- (BOOL)restartList;
-- (id)paragraphStyle;
-- (BOOL)cont;
-- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
-- (BOOL)isBlank;
-- (BOOL)isHidden;
-- (void)dealloc;
 - (long)listLevel;
+- (BOOL)isHidden;
+- (id)paragraphStyle;
+- (BOOL)restartList;
+- (BOOL)cont;
+- (BOOL)isBlank;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (void)dealloc;
 
 @end

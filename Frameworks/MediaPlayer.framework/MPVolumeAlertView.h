@@ -9,9 +9,9 @@
 }
 
 
-- (void)layout;
-- (void)dealloc;
 - (id)volumeView;
 - (void)setVolumeAudioCategory:(id)arg1;
+- (void)layout;
+- (void)dealloc;
 
 @end

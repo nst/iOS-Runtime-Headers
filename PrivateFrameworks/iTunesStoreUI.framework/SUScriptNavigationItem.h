@@ -6,6 +6,7 @@
 
 @interface SUScriptNavigationItem : SUScriptObject  {
     id _scriptLeftItem;
+    id _scriptLeftMostItem;
     id _scriptRightItem;
 }
 
@@ -14,45 +15,54 @@
 @property(retain) NSString * title;
 @property id hidesBackButton;
 @property(retain) <SUScriptNavigationItem> * leftItem;
+@property(retain) <SUScriptNavigationItem> * leftMostItem;
 @property(retain) <SUScriptNavigationItem> * rightItem;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
++ (id)_rootScriptObjectForObject:(id)arg1;
++ (void)_disconnectNavigationItem:(id)arg1 scriptObject:(id)arg2;
++ (void)disconnectNavigationItem:(id)arg1 forScriptObject:(id)arg2;
 
+- (id)attributeKeys;
 - (void)setHidesBackButton:(id)arg1;
+- (void)setPrompt:(id)arg1;
 - (id)prompt;
 - (id)hidesBackButton;
 - (void)setHidesBackButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)title;
-- (void)setPrompt:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)setTitle:(id)arg1;
-- (id)_copyPrompt;
-- (void)_setPrompt:(id)arg1;
-- (id)nativeNavigationItem;
-- (id)_copyLeftItem;
-- (id)_copyRightItem;
-- (BOOL)_hidesBackButton;
-- (void)_setHidesBackButton:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_setLeftItem:(id)arg1 animated:(BOOL)arg2;
-- (void)_setRightItem:(id)arg1 animated:(BOOL)arg2;
+- (void)setLeftMostItem:(id)arg1;
+- (id)leftMostItem;
 - (id)_copyScriptButtonForButtonItem:(id)arg1;
-- (id)_copyScriptObjectForButtonItem:(id)arg1;
-- (void)_setScriptLeftItem:(id)arg1;
+- (void)_setRightItem:(id)arg1 animated:(BOOL)arg2;
+- (void)_setLeftItem:(id)arg1 animated:(BOOL)arg2;
+- (void)_setPrompt:(id)arg1;
+- (void)setLeftMostItem:(id)arg1 animated:(BOOL)arg2;
+- (void)_setHidesBackButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setScriptRightItem:(id)arg1;
+- (id)_copyRightItem;
+- (id)_copyPrompt;
+- (void)_setScriptLeftMostItem:(id)arg1;
+- (id)_copyScriptObjectForButtonItem:(id)arg1;
+- (id)nativeNavigationItem;
+- (void)_setScriptLeftItem:(id)arg1;
+- (id)_copyLeftItem;
+- (BOOL)_hidesBackButton;
 - (id)_copyTitle;
-- (id)attributeKeys;
 - (void)_setTitle:(id)arg1;
+- (void)setRightItem:(id)arg1;
+- (void)setLeftItem:(id)arg1;
+- (id)initWithNativeNavigationItem:(id)arg1;
 - (void)setRightItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftItem:(id)arg1 animated:(BOOL)arg2;
 - (id)rightItem;
 - (id)leftItem;
-- (id)initWithNativeNavigationItem:(id)arg1;
-- (void)setLeftItem:(id)arg1;
-- (void)setRightItem:(id)arg1;
-- (id)scriptAttributeKeys;
 - (void)tearDownUserInterface;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

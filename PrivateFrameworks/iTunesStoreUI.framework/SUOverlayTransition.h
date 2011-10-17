@@ -10,22 +10,22 @@
     int _type;
 }
 
-@property int type;
-@property(retain) SUDOMElement * sourceElement;
 @property double duration;
+@property(retain) SUDOMElement * sourceElement;
+@property int type;
 
 + (int)transitionTypeFromString:(id)arg1;
 
 - (double)duration;
+- (void)setDuration:(double)arg1;
 - (int)type;
 - (void)setType:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
-- (void)setDuration:(double)arg1;
-- (id)sourceElement;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setSourceElement:(id)arg1;
+- (id)sourceElement;
 
 @end

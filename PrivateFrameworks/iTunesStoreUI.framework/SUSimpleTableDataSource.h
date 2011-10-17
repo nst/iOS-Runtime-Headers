@@ -9,21 +9,21 @@
     NSArray *_objects;
 }
 
-@property(retain) NSArray * objects;
 @property(retain) Class cellConfigurationClass;
+@property(retain) NSArray * objects;
 
 
+- (id)objects;
 - (int)numberOfSections;
 - (int)numberOfRowsInSection:(int)arg1;
 - (void)dealloc;
-- (id)cellForIndexPath:(id)arg1;
 - (void)setObjects:(id)arg1;
-- (Class)cellConfigurationClass;
-- (id)objects;
-- (id)objectForIndexPath:(id)arg1;
-- (float)cellHeightForIndexPath:(id)arg1;
-- (void)reloadCellContexts;
 - (void)setCellConfigurationClass:(Class)arg1;
+- (Class)cellConfigurationClass;
+- (id)objectForIndexPath:(id)arg1;
+- (void)reloadCellContexts;
+- (float)cellHeightForIndexPath:(id)arg1;
+- (id)cellForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 
 @end

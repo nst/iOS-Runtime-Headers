@@ -10,16 +10,16 @@
 }
 
 
-- (unsigned int)messageSize;
 - (id)messageStore;
-- (id)messageBodyIfAvailable;
-- (id)messageData;
-- (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
-- (id)mutableHeaders;
-- (void)setMutableHeaders:(id)arg1;
-- (void)dealloc;
-- (id)headers;
 - (id)messageBody;
+- (id)messageBodyIfAvailable;
+- (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (void)setMessageBody:(id)arg1;
+- (void)setMutableHeaders:(id)arg1;
+- (id)messageData;
+- (id)mutableHeaders;
+- (unsigned int)messageSize;
+- (id)headers;
+- (void)dealloc;
 
 @end

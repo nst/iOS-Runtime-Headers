@@ -7,7 +7,7 @@
 
 
 - (void)finalize;
-- (void)dealloc;
 - (id)lookupNamespaceURI:(id)arg1;
+- (void)dealloc;
 
 @end

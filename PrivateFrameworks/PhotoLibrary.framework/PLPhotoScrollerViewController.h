@@ -2,46 +2,59 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UINavigationItem, NSArray;
+@class UIToolbar, NSArray, UINavigationItem, UIBarButtonItem;
 
-@interface PLPhotoScrollerViewController : PLPhotoBrowserController  {
-    unsigned int _itemIndex;
+@interface PLPhotoScrollerViewController : PLPhotoBrowserController <PLAlbumChangeObserver> {
     UINavigationItem *_navItem;
+    UIBarButtonItem *_doneItem;
     NSArray *_items;
     int _previousInterfaceOrientation;
-    unsigned int _didDisplay : 1;
     unsigned int _modalSheetIsPresent : 1;
     unsigned int _dontChangeStatusBar : 1;
     unsigned int _toolbarWasHiddenWhenSelfWasPushed : 1;
     unsigned int _viewWillDisappear : 1;
 }
 
-@property unsigned int visibleItemIndex;
+@property(readonly) unsigned int visibleItemIndex;
+@property(retain) UIToolbar * buttonBar;
+@property(retain) UIBarButtonItem * doneItem;
 
 
-- (void)loadView;
 - (id)initWithItems:(id)arg1;
-- (void)setParentViewController:(id)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)setParentViewController:(id)arg1;
 - (void)viewDidUnload;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)navigationItem;
-- (id)toolbarItems;
-- (void)dealloc;
-- (void)albumDidChange:(id)arg1;
+- (void)willPresentActionSheet:(id)arg1;
+- (void)_updateToolbar:(BOOL)arg1;
+- (id)initWithItems:(id)arg1 startingIndex:(int)arg2;
 - (unsigned int)visibleItemIndex;
-- (id)_initWithAlbum:(id)arg1 lockStatusBar:(BOOL)arg2 currentImageIndex:(int)arg3;
-- (void)_setCurrentImageIndex:(unsigned int)arg1;
-- (void)setDontChangeStatusBar:(BOOL)arg1;
+- (id)doneItem;
+- (void)setDoneItem:(id)arg1;
 - (BOOL)dontChangeStatusBar;
-- (void)startSettingWallpaper;
-- (void)setVisibleItemIndex:(unsigned int)arg1;
-- (id)itemAtIndex:(unsigned int)arg1;
-- (BOOL)_visibleItemAllowsRotation;
+- (void)setDontChangeStatusBar:(BOOL)arg1;
 - (void)_forceRotationToPortaitIfNecessary;
-- (void)didMoveToPhotoAtIndex:(unsigned int)arg1;
+- (void)setToolbarHidden:(BOOL)arg1 withDuration:(double)arg2;
+- (void)_setupButtonBar;
+- (id)_currentToolbarItems;
+- (BOOL)_visibleItemAllowsRotation;
+- (id)buttonBar;
+- (void)setButtonBar:(id)arg1;
+- (id)_initWithAlbum:(struct NSObject { Class x1; }*)arg1 lockStatusBar:(BOOL)arg2 currentImageIndex:(int)arg3 delayImageLoading:(BOOL)arg4;
+- (void)addAirTunesButton;
+- (void)updateAirTunesButton;
+- (void)removeAirTunesButton;
+- (id)airTunesButton;
+- (void)startSettingWallpaper;
 - (void)updateNavigationItemTitle;
+- (void)didMoveToPhotoAtIndex:(unsigned int)arg1;
+- (id)remakerContainerView;
+- (void)dealloc;
+- (id)itemAtIndex:(unsigned int)arg1;
 
 @end

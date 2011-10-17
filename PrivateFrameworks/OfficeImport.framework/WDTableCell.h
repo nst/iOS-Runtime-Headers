@@ -13,16 +13,16 @@
 }
 
 
-- (int)index;
-- (id)row;
-- (id)text;
-- (void)dealloc;
+- (double)cellWidth;
 - (id)initWithRow:(id)arg1 at:(int)arg2;
 - (BOOL)useTrackedProperties;
 - (void)setUseTrackedProperties:(BOOL)arg1;
 - (int)compareIndex:(id)arg1;
 - (void)clearProperties;
-- (double)cellWidth;
 - (id)properties;
+- (int)index;
+- (id)text;
+- (id)row;
+- (void)dealloc;
 
 @end

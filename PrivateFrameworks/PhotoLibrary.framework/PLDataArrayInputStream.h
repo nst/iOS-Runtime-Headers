@@ -36,28 +36,28 @@
 @property <PLDataArrayInputStreamProgressDelegate> * progressDelegate;
 
 
-- (void)close;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)initWithDataArray:(id)arg1;
-- (void)_streamEventTrigger;
-- (void)_scheduleCallback;
-- (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
-- (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
-- (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)open;
-- (unsigned int)streamStatus;
-- (void)_updateProgress;
-- (void)_scheduleProgressUpdate;
-- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
-- (unsigned int)totalBytes;
+- (void)close;
+- (id)delegate;
+- (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
+- (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
+- (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (BOOL)hasBytesAvailable;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
-- (id)progressDelegate;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
+- (unsigned int)streamStatus;
+- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)_updateProgress;
 - (void)setProgressDelegate:(id)arg1;
+- (id)progressDelegate;
+- (void)_streamEventTrigger;
+- (id)initWithDataArray:(id)arg1;
+- (void)_scheduleProgressUpdate;
+- (unsigned int)totalBytes;
 - (unsigned int)bytesRead;
+- (void)dealloc;
+- (void)_scheduleCallback;
 
 @end

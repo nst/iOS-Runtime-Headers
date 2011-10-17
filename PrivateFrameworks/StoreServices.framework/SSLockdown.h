@@ -14,20 +14,21 @@
 
 + (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
-- (void*)copyValueForKey:(struct __CFString { }*)arg1 domain:(struct __CFString { }*)arg2;
-- (void*)copyITunesValueForKey:(struct __CFString { }*)arg1 usedDomain:(const struct __CFString {}**)arg2;
-- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 domain:(struct __CFString { }*)arg3;
-- (long long)totalDiskCapacity;
 - (struct __CFString { }*)copyDeviceGUID;
+- (void)_setLocalValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 domain:(struct __CFString { }*)arg3;
 - (void*)_copyLocalValueForKey:(struct __CFString { }*)arg1 domain:(struct __CFString { }*)arg2;
+- (void)removeAccountFromDomain:(struct __CFString { }*)arg1;
+- (id)copyAccountDictionaryForDomain:(struct __CFString { }*)arg1;
+- (long long)totalDiskCapacity;
+- (BOOL)_ntsSaveLocalDictionary;
+- (id)_localDictionaryFileName;
 - (id)_localDictionaryDirectory;
 - (id)_ntsLocalDictionary;
-- (BOOL)_ntsSaveLocalDictionary;
-- (void)_setLocalValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 domain:(struct __CFString { }*)arg3;
+- (void*)copyValueForKey:(struct __CFString { }*)arg1 domain:(struct __CFString { }*)arg2;
+- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 domain:(struct __CFString { }*)arg3;
+- (void*)copyITunesValueForKey:(struct __CFString { }*)arg1 usedDomain:(const struct __CFString {}**)arg2;
+- (id)init;
+- (void)dealloc;
 - (long long)availableDiskSpace;
-- (id)copyAccountDictionaryForDomain:(struct __CFString { }*)arg1;
-- (void)removeAccountFromDomain:(struct __CFString { }*)arg1;
 
 @end

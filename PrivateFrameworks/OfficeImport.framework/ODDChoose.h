@@ -10,11 +10,11 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (void)setOtherwise:(id)arg1;
 - (id)whens;
 - (void)addWhen:(id)arg1;
 - (id)otherwise;
+- (void)setOtherwise:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

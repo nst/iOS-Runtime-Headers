@@ -13,11 +13,11 @@
 
 - (id)markupString;
 - (id)subject;
-- (void)setMessage:(id)arg1;
-- (id)message;
-- (BOOL)isTextOnly;
-- (void)dealloc;
 - (id)resources;
+- (id)message;
+- (void)setMessage:(id)arg1;
+- (BOOL)isTextOnly;
 - (id)textString;
+- (void)dealloc;
 
 @end

@@ -14,11 +14,11 @@
 
 + (void)initialize;
 
-- (void)lock;
 - (void)finalize;
+- (BOOL)tryLock;
 - (void)unlock;
+- (void)lock;
 - (id)init;
 - (void)dealloc;
-- (BOOL)tryLock;
 
 @end

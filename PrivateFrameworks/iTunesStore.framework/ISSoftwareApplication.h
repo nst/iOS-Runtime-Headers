@@ -2,57 +2,67 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSNumber, NSString, NSArray;
+@class SSItemContentRating, NSArray, NSString, NSNumber;
 
-@interface ISSoftwareApplication : NSObject  {
+@interface ISSoftwareApplication : NSObject <SSXPCCoding> {
     NSNumber *_accountDSID;
     NSString *_accountIdentifier;
     NSString *_bundleIdentifier;
     NSString *_bundleShortVersionString;
     NSString *_bundleVersion;
     NSString *_containerPath;
+    SSItemContentRating *_contentRating;
     NSNumber *_itemIdentifier;
+    NSString *_softwareType;
     NSNumber *_storeFrontIdentifier;
     NSNumber *_versionIdentifier;
     NSArray *_versionOrdering;
 }
 
-@property(retain) NSArray * versionOrdering;
-@property(retain) NSNumber * versionIdentifier;
-@property(retain) NSNumber * storeFrontIdentifier;
-@property(retain) NSNumber * itemIdentifier;
-@property(retain) NSString * containerPath;
-@property(retain) NSString * bundleVersion;
-@property(retain) NSString * bundleShortVersionString;
-@property(retain) NSString * bundleIdentifier;
-@property(retain) NSString * accountIdentifier;
 @property(retain) NSNumber * accountDSID;
+@property(copy) NSString * accountIdentifier;
+@property(copy) NSString * bundleIdentifier;
+@property(copy) NSString * bundleShortVersionString;
+@property(copy) NSString * bundleVersion;
+@property(copy) NSString * containerPath;
+@property(copy) SSItemContentRating * contentRating;
+@property(retain) NSNumber * itemIdentifier;
+@property(copy) NSString * softwareType;
+@property(retain) NSNumber * storeFrontIdentifier;
+@property(retain) NSNumber * versionIdentifier;
+@property(copy) NSArray * versionOrdering;
 
 + (id)lookupAttributeKeys;
 
+- (id)bundleVersion;
+- (id)storeFrontIdentifier;
+- (void)setBundleVersion:(id)arg1;
+- (void)setBundleIdentifier:(id)arg1;
+- (void)setStoreFrontIdentifier:(id)arg1;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (id)bundleIdentifier;
-- (void)dealloc;
-- (id)description;
-- (id)bundleShortVersionString;
 - (void)_loadMetadataFromContainer:(id)arg1;
-- (id)versionOrdering;
+- (void)setContainerPath:(id)arg1;
+- (void)setAccountDSID:(id)arg1;
+- (void)setBundleShortVersionString:(id)arg1;
+- (id)bundleShortVersionString;
+- (id)containerPath;
+- (id)description;
+- (void)dealloc;
 - (void)setVersionOrdering:(id)arg1;
 - (void)setVersionIdentifier:(id)arg1;
-- (void)setStoreFrontIdentifier:(id)arg1;
-- (id)containerPath;
-- (void)setContainerPath:(id)arg1;
-- (void)setBundleShortVersionString:(id)arg1;
-- (void)setAccountDSID:(id)arg1;
-- (void)setItemIdentifier:(id)arg1;
-- (void)setBundleVersion:(id)arg1;
-- (id)accountIdentifier;
+- (void)setSoftwareType:(id)arg1;
+- (void)setContentRating:(id)arg1;
+- (id)versionOrdering;
 - (id)initWithMobileInstallationDictionary:(id)arg1;
-- (void)setBundleIdentifier:(id)arg1;
-- (id)itemIdentifier;
-- (id)bundleVersion;
 - (id)versionIdentifier;
+- (id)softwareType;
+- (id)contentRating;
+- (void)setItemIdentifier:(id)arg1;
+- (id)accountIdentifier;
+- (id)itemIdentifier;
 - (void)setAccountIdentifier:(id)arg1;
-- (id)storeFrontIdentifier;
 - (id)accountDSID;
 
 @end

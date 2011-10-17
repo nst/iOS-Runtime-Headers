@@ -18,20 +18,20 @@
 @property(retain) id byValue;
 
 
-- (void)CA_prepareRenderValue;
-- (id)byValue;
-- (void)setByValue:(id)arg1;
-- (BOOL)roundsToInteger;
-- (float)endAngle;
-- (void)setEndAngle:(float)arg1;
-- (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
-- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)_copyRenderAnimationForLayer:(id)arg1;
-- (float)startAngle;
-- (void)setStartAngle:(float)arg1;
-- (void)setFromValue:(id)arg1;
-- (void)setToValue:(id)arg1;
-- (void)setRoundsToInteger:(BOOL)arg1;
 - (id)fromValue;
 - (id)toValue;
+- (float)startAngle;
+- (void)setStartAngle:(float)arg1;
+- (void)setRoundsToInteger:(BOOL)arg1;
+- (void)setToValue:(id)arg1;
+- (void)setFromValue:(id)arg1;
+- (id)byValue;
+- (void)setEndAngle:(float)arg1;
+- (void)setByValue:(id)arg1;
+- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)_copyRenderAnimationForLayer:(id)arg1;
+- (BOOL)roundsToInteger;
+- (float)endAngle;
+- (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
+- (void)CA_prepareRenderValue;
 
 @end

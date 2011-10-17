@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, UIKBIdentifierList, UIKBAttributeList, NSMutableArray;
 
-@interface UIKBKeyplane : NSObject <NSCoding, NSCopying, UIKeyboardRivenKeyplane> {
+@interface UIKBKeyplane : NSObject <NSCoding, NSCopying> {
     NSString *m_name;
     NSMutableArray *m_keylayouts;
     UIKBAttributeList *m_attributes;
@@ -12,45 +12,46 @@
     NSArray *m_keys;
 }
 
+@property(retain) NSString * name;
+@property(retain) NSArray * keylayouts;
 @property(readonly) NSArray * keys;
 @property(readonly) NSArray * keysOrderedByPosition;
-@property(copy) UIKBIdentifierList * supportedTypes;
 @property(copy) UIKBAttributeList * attributes;
-@property(retain) NSArray * keylayouts;
-@property(retain) NSString * name;
+@property(copy) UIKBIdentifierList * supportedTypes;
 
 + (id)keyplane;
 
-- (id)keysOrderedByPosition;
-- (id)initWithName:(id)arg1 keylayouts:(id)arg2 attributes:(id)arg3 supportedTypes:(id)arg4;
-- (id)keylayoutWithName:(id)arg1;
-- (BOOL)looksLike:(id)arg1;
-- (BOOL)looksLikeShiftAlternate;
-- (id)keysByKeyName:(id)arg1;
 - (BOOL)usesAdaptiveKeys;
-- (id)supportedTypes;
+- (id)keysOrderedByPosition;
+- (BOOL)looksLike:(id)arg1;
+- (id)keylayoutWithName:(id)arg1;
+- (id)initWithName:(id)arg1 keylayouts:(id)arg2 attributes:(id)arg3 supportedTypes:(id)arg4;
 - (void)setSupportedTypes:(id)arg1;
+- (id)supportedTypes;
 - (void)setKeylayouts:(id)arg1;
-- (id)keys;
-- (void)layoutInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)attributes;
 - (id)keylayouts;
-- (id)shiftAlternateKeyplaneName;
-- (BOOL)supportsType:(int)arg1;
-- (BOOL)isShiftKeyplane;
-- (BOOL)usesKeyCharging;
-- (id)alternateKeyplaneName;
+- (void)layoutInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setAttributes:(id)arg1;
-- (BOOL)usesAutoShift;
+- (id)attributes;
+- (id)alternateKeyplaneName;
+- (BOOL)usesKeyCharging;
+- (BOOL)supportsType:(int)arg1;
+- (BOOL)notUseCandidateSelection;
+- (id)keysByKeyName:(id)arg1;
+- (id)shiftAlternateKeyplaneName;
+- (BOOL)isShiftKeyplane;
+- (BOOL)looksLikeShiftAlternate;
+- (id)keys;
 - (BOOL)isShiftKeyPlaneChooser;
 - (BOOL)shouldSkipCandidateSelection;
-- (void)setName:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
+- (BOOL)usesAutoShift;
 - (id)name;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setName:(id)arg1;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

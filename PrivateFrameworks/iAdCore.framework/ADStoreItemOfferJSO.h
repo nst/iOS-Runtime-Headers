@@ -11,22 +11,22 @@
     BOOL _preorder;
 }
 
+@property(readonly) NSString * identifier;
+@property(readonly) NSString * price;
+@property(readonly) NSString * action;
 @property(readonly) BOOL preorder;
-@property(copy,readonly) NSString * action;
-@property(copy,readonly) NSString * price;
-@property(copy,readonly) NSString * identifier;
 
 + (id)scriptingKeys;
 
-- (void)setPrice:(id)arg1;
-- (void)setPreorder:(BOOL)arg1;
 - (BOOL)preorder;
+- (void)setPreorder:(BOOL)arg1;
+- (void)setPrice:(id)arg1;
 - (id)price;
 - (id)initWithSSItemOffer:(id)arg1;
 - (id)identifier;
-- (id)action;
-- (void)setAction:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setAction:(id)arg1;
+- (id)action;
 - (void)dealloc;
 
 @end

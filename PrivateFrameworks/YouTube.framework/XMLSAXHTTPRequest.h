@@ -9,7 +9,7 @@
 
 @class NSURLRequest, NSURLConnection, NSMutableData;
 
-@interface XMLSAXHTTPRequest : NSObject  {
+@interface XMLSAXHTTPRequest : NSObject <NSURLConnectionDelegate> {
     NSURLRequest *_request;
     NSURLConnection *_connection;
     NSMutableData *_rawData;
@@ -50,27 +50,27 @@
     BOOL _invalidResponse;
 }
 
-+ (id)serviceUnavailableError;
 + (BOOL)anyRequestLoading;
++ (id)serviceUnavailableError;
 + (unsigned int)uniqueQueryID;
 
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)_startedLoading;
+- (void)willParseData;
+- (void)loadStatusChanged;
+- (BOOL)receivedValidResponse:(id)arg1;
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (int)parseData:(id)arg1;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)request;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (BOOL)isLoading;
+- (id)request;
 - (void)loadRequest:(id)arg1;
+- (void)_finishedLoading;
 - (void)cancel;
 - (id)init;
 - (void)dealloc;
-- (void)loadStatusChanged;
-- (void)failWithError:(id)arg1;
-- (void)_startedLoading;
-- (void)_finishedLoading;
-- (void)willParseData;
-- (void)didParseData;
-- (BOOL)receivedValidResponse:(id)arg1;
-- (int)parseData:(id)arg1;
 
 @end

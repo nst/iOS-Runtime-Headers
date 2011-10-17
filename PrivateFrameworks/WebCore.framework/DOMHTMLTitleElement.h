@@ -10,7 +10,7 @@
 @property(copy) NSString * text;
 
 
-- (void)setText:(id)arg1;
 - (id)text;
+- (void)setText:(id)arg1;
 
 @end

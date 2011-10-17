@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIImageView, UIButton, UIView, StrikethroughLabel, UILabel, CalendarCustomTimeView;
+@class UIImageView, UIButton, UIView, EKStrikethroughLabel, UIView<CalendarLabelTextMetrics>, CalendarCustomTimeView;
 
 @interface EKEventInfoHeaderView : UIView  {
     int _style;
@@ -11,30 +11,28 @@
     UIView *_editButtonClippingView;
     UIView *_timeClippingView;
     UIImageView *_dotView;
-    StrikethroughLabel *_titleView;
-    UILabel *_locationView;
+    EKStrikethroughLabel *_titleView;
+    UIView<CalendarLabelTextMetrics> *_locationView;
     CalendarCustomTimeView *_customTimeView;
     float _lastLayoutWidth;
     float _lastMaxY;
     BOOL _isBirthday;
 }
 
-+ (void)_initializeSafeCategory;
 
 - (id)_titleView;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)dealloc;
-- (id)initWithEvent:(id)arg1 color:(id)arg2 style:(int)arg3;
-- (id)initWithEvent:(id)arg1 color:(id)arg2 style:(int)arg3 opaque:(BOOL)arg4;
-- (id)textColorForCalendarColor:(id)arg1;
-- (BOOL)setEvent:(id)arg1 color:(id)arg2;
-- (id)editButton;
-- (void)setEditButtonVisibility:(BOOL)arg1;
-- (float)layoutHeaderForWidth:(float)arg1;
 - (void)layoutForWidth:(float)arg1;
+- (void)setEditButtonVisibility:(BOOL)arg1;
+- (id)editButton;
+- (id)textColorForCalendarColor:(id)arg1;
+- (float)layoutHeaderForWidth:(float)arg1;
 - (id)_customTimeView;
 - (id)_editButton;
+- (id)initWithEvent:(id)arg1 color:(id)arg2 style:(int)arg3 opaque:(BOOL)arg4;
+- (id)initWithEvent:(id)arg1 color:(id)arg2 style:(int)arg3;
+- (BOOL)setEvent:(id)arg1 color:(id)arg2;
 - (id)_locationView;
-- (id)accessibilityLabel;
+- (void)dealloc;
 
 @end

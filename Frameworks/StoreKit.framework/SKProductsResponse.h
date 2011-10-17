@@ -12,9 +12,9 @@
 @property(readonly) NSArray * invalidProductIdentifiers;
 
 
+- (id)products;
+- (id)invalidProductIdentifiers;
 - (id)init;
 - (void)dealloc;
-- (id)invalidProductIdentifiers;
-- (id)products;
 
 @end

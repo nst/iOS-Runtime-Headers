@@ -16,7 +16,7 @@
 }
 
 
-- (id)description;
 - (id)initWithOriginalClass:(Class)arg1;
+- (id)description;
 
 @end

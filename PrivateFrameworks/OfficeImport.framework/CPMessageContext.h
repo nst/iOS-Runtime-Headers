@@ -11,9 +11,6 @@
     NSMutableDictionary *m_placeholderToObjectIdMap;
 }
 
-+ (void)initialize;
-+ (void)reportObjectOrPlaceholder:(id)arg1 withWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg2 parameters:(void*)arg3;
-+ (id)currentObjectOrPlaceholder;
 + (void)reportObject:(id)arg1 withWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg2;
 + (void)reportError:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 + (void)reportErrorException:(id)arg1;
@@ -21,20 +18,23 @@
 + (void)removeContextForCurrentThread;
 + (id)getWarningArray;
 + (id)getErrorArray;
-+ (void)setIsFileStructuredStorage:(BOOL)arg1;
 + (BOOL)isFileStructuredStorage;
-+ (void)popCurrentObject;
 + (id)pushCurrentPlaceholder;
-+ (void)popCurrentPlaceholder:(id)arg1;
-+ (void)setObject:(id)arg1 forPlaceholder:(id)arg2;
 + (void)replacePlaceholdersWithObjects;
 + (unsigned int)saveObjectStack;
 + (void)restoreObjectStack:(unsigned int)arg1;
 + (id)errorsUsingName:(id)arg1;
 + (id)warningsUsingName:(id)arg1;
++ (void)reportObjectOrPlaceholder:(id)arg1 withWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg2 parameters:(void*)arg3;
++ (id)currentObjectOrPlaceholder;
++ (void)setObject:(id)arg1 forPlaceholder:(id)arg2;
++ (void)popCurrentPlaceholder:(id)arg1;
++ (void)setIsFileStructuredStorage:(BOOL)arg1;
 + (void)pushCurrentObject:(id)arg1;
++ (void)popCurrentObject;
 + (void)reportWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 + (void)reportWarningException:(id)arg1;
++ (void)initialize;
 
 - (id)init;
 - (void)dealloc;

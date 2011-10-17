@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSError, AVURLAsset, AVWeakReference, AVAudioMix, NSString, NSURL, AVVideoComposition, NSArray;
+@class NSError, AVURLAsset, AVWeakReference, AVAssetTrack, AVAudioMix, NSString, NSURL, AVVideoComposition, NSArray;
 
 @interface AVAssetExportSessionInternal : NSObject  {
     AVWeakReference *weakReference;
@@ -16,6 +16,7 @@
     NSError *error;
     float progress;
     AVURLAsset *asset;
+    AVAssetTrack *firstVideoTrack;
     NSString *preset;
     NSString *preset16x9;
     NSURL *outputURL;

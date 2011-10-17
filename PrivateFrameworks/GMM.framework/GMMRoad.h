@@ -3,13 +3,13 @@
  */
 
 @interface GMMRoad : NSObject  {
-    unsigned int numPoints;
+    unsigned long numPoints;
     struct Point { int x1; int x2; } *points;
 }
 
 
-- (void)dealloc;
-- (id)initWithPoints:(struct Point { int x1; int x2; }*)arg1 count:(unsigned long)arg2;
 - (void)getPoints:(struct Point {}**)arg1 count:(unsigned int*)arg2;
+- (id)initWithPoints:(struct Point { int x1; int x2; }*)arg1 count:(unsigned long)arg2;
+- (void)dealloc;
 
 @end

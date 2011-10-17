@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKScrollView, UIImageView, GMMRequester, <MKMapViewDelegate><MKMapViewDelegatePrivate>, MKAnnotationView, NSMutableArray, NSTimer, UIEvent, UITapGestureRecognizer, MKMapViewPositioningChange, MKMapView, MKOverlayContainerView, UITextField, UILongPressGestureRecognizer, UILabel, MKSearchResult, MKMapTileView, <MKOverlay>, MKRouteLoader, NSArray, MKRouteOverlayView, UITouch, UIColor, MKAnnotationContainerView, UIView;
+@class <MKMapViewDelegate><MKMapViewDelegatePrivate>, UIGestureRecognizer, MKMapView, GEOTileAvailabilityRequest, UITouch, UILabel, UIEvent, UIColor, MKMapViewPositioningChange, MKAnnotationContainerView, UILongPressGestureRecognizer, UIView, MKVariableDelayTapRecognizer, MKOverlayContainerView, MKMapTileView, MKScrollView, UITapGestureRecognizer, UIImageView, NSTimer;
 
-@interface MKMapViewInternal : NSObject <UITextFieldDelegate, PBRequesterDelegate, UILongPressGestureRecognizerDelegate> {
+@interface MKMapViewInternal : NSObject <UITextFieldDelegate, PBRequesterDelegate> {
     MKMapView *view;
     UIView *contentView;
     MKScrollView *scrollView;
@@ -12,49 +12,18 @@
     MKAnnotationContainerView *annotationContainer;
     UIImageView *badgeView;
     UILabel *copyrightLabel;
-    NSMutableArray *displayPromises;
-    MKRouteOverlayView *routeView;
-    UIImageView *routePositionView;
-    MKRouteLoader *routeLoader;
     int trafficStatus;
-    GMMRequester *hasTrafficRequester;
+    GEOTileAvailabilityRequest *hasTrafficRequest;
     NSTimer *annotationTimer;
-    NSTimer *displayPromiseTimer;
-    NSTimer *startIdleTimer;
+    NSTimer *startEffectsTimer;
     NSTimer *copyrightLabelTimer;
     unsigned int lastCopyrightMapType;
     <MKMapViewDelegate><MKMapViewDelegatePrivate> *delegate;
     int animationType;
-    int animationTypeHistory;
-    unsigned int suspendedIdleCount;
-    struct { 
-        double latitude; 
-        double longitude; 
-    } routePositionViewCoordinate;
-    struct { 
-        double latitude; 
-        double longitude; 
-    } routeTopLeftCoordinate;
-    struct { 
-        double latitude; 
-        double longitude; 
-    } routeBottomRightCoordinate;
-    struct { 
-        double latitude; 
-        double longitude; 
-    } routeCenterCoordinate;
-    int routeSummaryZoomLevel;
-    unsigned int routeStepIndex;
+    unsigned int suspendedEffectsCount;
     unsigned int eventMode;
     unsigned int eventModeHistory;
     unsigned int mapType;
-    float futureScale;
-    struct { 
-        double x; 
-        double y; 
-    } futureCenterPoint;
-    float futureZoomLevelDelta;
-    float futureDuration;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -68,47 +37,38 @@
     unsigned int tileCount;
     unsigned int levelViewLoadingCount;
     unsigned int levelViewTrafficLoadingCount;
-    struct BillingPointTracker { int x1; int x2; struct MapPoint { 
-            int latitude_; 
-            int longitude_; 
-            int x_pixels_at_max_zoom_; 
-            int y_pixels_at_max_zoom_; 
-        } x3; int x4; int x5; unsigned char x6; } *billingPointTracker;
-    int searchMode;
     NSTimer *defaultLocationTimer;
     double hoverStartTime;
     NSTimer *hoverExpirationTimer;
     NSTimer *scrollToReCenterUserTimer;
     NSTimer *positioningChangeTimer;
     NSTimer *trafficAvailabilityTimer;
-    UITextField *debugView;
+    UILabel *debugView;
+    NSTimer *debugTimer;
     MKMapViewPositioningChange *positioningChange;
-    NSArray *searchResultsWhileSuspendedResultProcessing;
-    MKSearchResult *selectedSearchResultWhileSuspendedResultProcessing;
     NSTimer *tapAndHoldTimer;
     int rotationDirection;
     double heading;
     double annotationViewPerspectiveHeading;
     UILongPressGestureRecognizer *longPressGestureRecognizer;
     UITapGestureRecognizer *tapGestureRecognizer;
-    UITapGestureRecognizer *doubleTapGestureRecognizer;
+    UITapGestureRecognizer *immediateTapGesture;
+    MKVariableDelayTapRecognizer *doubleTapGestureRecognizer;
     UITapGestureRecognizer *twoFingerTapGestureRecognizer;
+    UIGestureRecognizer *locationConsoleGesture;
+    UIGestureRecognizer *toggleCountryGesture;
     int scrollViewTouchCount;
     UITouch *savedTouchBegan;
     UIEvent *savedEventBegan;
-    MKAnnotationView *touchRecepientAnnotationView;
     MKOverlayContainerView *overlayContainer;
     int rotationState;
     float angularVelocity;
-    MKRouteOverlayView *routeViewB;
-    <MKOverlay> *routeViewBModel;
     UIColor *darkCopyrightTextColor;
     UIColor *darkCopyrightShadowColor;
     UIColor *lightCopyrightTextColor;
     UIColor *lightCopyrightShadowColor;
     int userTrackingMode;
-    struct $_1092 { 
-        unsigned int animateFlagWhileSuspendedResultProcessing : 1; 
+    struct { 
         unsigned int callsDelegateForAllRegionChanges : 1; 
         unsigned int changingRegion : 1; 
         unsigned int checkTrafficAvailable : 1; 
@@ -117,25 +77,17 @@
         unsigned int draggingInterrupted : 1; 
         unsigned int didStartSmoothScrolling : 1; 
         unsigned int drawGridBackground : 1; 
-        unsigned int hasUserSpecifiedZoomLevel : 1; 
+        unsigned int hasRenderedSomething : 1; 
         unsigned int hot : 1; 
         unsigned int ignoreHeadingUpdates : 1; 
         unsigned int ignoreLocationUpdates : 1; 
-        unsigned int isLoadingEnabled : 1; 
         unsigned int isRunningPositioningChange : 1; 
         unsigned int isSuspended : 1; 
         unsigned int levelCrossFade : 1; 
         unsigned int liveTrackingAutoSelectZoomLevel : 1; 
         unsigned int longPressing : 1; 
         unsigned int needsPerspectiveUpdate : 1; 
-        unsigned int needToShowRoute : 1; 
-        unsigned int pansAndZoomsToRouteStep : 1; 
-        unsigned int pansAndZoomsToRouteOverview : 1; 
-        unsigned int routeStartStepIsActive : 1; 
-        unsigned int showsPinAtRouteStart : 1; 
-        unsigned int showsPinAtRouteEnd : 1; 
         unsigned int persistFixedUserLocation : 1; 
-        unsigned int recalculatesRouteStepZoomLevels : 1; 
         unsigned int regionChangeIsAnimated : 1; 
         unsigned int regionChangeIsUserInitiated : 1; 
         unsigned int rotationSupported : 1; 
@@ -143,9 +95,7 @@
         unsigned int scrolling : 1; 
         unsigned int scrollIsAnimated : 1; 
         unsigned int shouldRotateForHeading : 1; 
-        unsigned int showingRoute : 1; 
         unsigned int showsUserLocation : 1; 
-        unsigned int suspendSearchResultProcessing : 1; 
         unsigned int trafficEnabled : 1; 
         unsigned int zoomEnabled : 1; 
         unsigned int zoomIsAnimated : 1; 
@@ -154,7 +104,9 @@
         unsigned int inSetZoomScale : 1; 
         unsigned int annotationViewsAreAddedImmediately : 1; 
         unsigned int nextPositioningChangeIsInstant : 1; 
+        unsigned int isChangingViewSize : 1; 
         unsigned int delegateShouldReceiveTouch : 1; 
+        unsigned int delegateShouldDelayTapResponse : 1; 
         unsigned int delegateWillChangeRotation : 1; 
         unsigned int delegateWillChangeRotationAnimation : 1; 
         unsigned int delegateDidUpdateUserLocation : 1; 
@@ -165,25 +117,18 @@
         unsigned int delegateDidFinishMapRendering : 1; 
         unsigned int delegateDidChangeUserTrackingMode : 1; 
         unsigned int delegateDidChangeUserTrackingModeButton : 1; 
+        unsigned int delegateDidChangeMapType : 1; 
     } flags;
 }
 
 
-- (BOOL)longPressGestureCanTransitionToRecognizedState:(id)arg1;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)requester:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3;
-- (void)requesterDidFinish:(id)arg1;
-- (void)reachabilityChanged:(id)arg1;
-- (void)delayedShowAddedAnnotationsAnimated;
-- (void)showAddedAnnotationsAndRouteAnimated;
-- (void)startIdle;
-- (void)updateTrafficAvailable;
-- (void)stopHoverWithChange:(id)arg1;
-- (void)scrollToUserLocation;
-- (void)runPositioningChangeIfNeeded;
 - (void)runPositioningChangeIfNeeded:(id)arg1;
-- (void)requester:(id)arg1 didFailWithError:(id)arg2;
-- (void)requesterDidCancel:(id)arg1;
+- (void)runPositioningChangeIfNeeded;
+- (void)scrollToUserLocation;
+- (void)stopHoverWithChange:(id)arg1;
+- (void)showAddedAnnotationsAndRouteAnimated;
+- (void)delayedShowAddedAnnotationsAnimated;
+- (void)updateTrafficAvailable;
+- (void)startEffects;
 
 @end

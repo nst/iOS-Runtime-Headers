@@ -10,8 +10,8 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithZipArchive:(id)arg1;
 - (id)entryWithName:(id)arg1;
+- (void)dealloc;
 
 @end

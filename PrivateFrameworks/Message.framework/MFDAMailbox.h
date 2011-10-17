@@ -9,12 +9,12 @@
 }
 
 
-- (id)initWithName:(id)arg1 attributes:(unsigned int)arg2 account:(id)arg3 folder:(id)arg4;
-- (void)setDAFolder:(id)arg1;
 - (id)folderID;
+- (id)initWithName:(id)arg1 attributes:(unsigned int)arg2 account:(id)arg3 folder:(id)arg4;
 - (id)DAFolder;
+- (void)setDAFolder:(id)arg1;
 - (id)URLStringWithAccount:(id)arg1;
-- (void)dealloc;
 - (id)description;
+- (void)dealloc;
 
 @end

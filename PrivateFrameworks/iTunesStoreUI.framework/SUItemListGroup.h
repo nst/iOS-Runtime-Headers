@@ -10,16 +10,16 @@
 }
 
 @property(readonly) NSString * indexBarTitle;
-@property(retain) SUItem * separatorItem;
 @property(retain) NSMutableArray * items;
+@property(retain) SUItem * separatorItem;
 
 
 - (void)setItems:(id)arg1;
 - (id)items;
-- (void)dealloc;
 - (id)description;
-- (id)indexBarTitle;
-- (id)separatorItem;
+- (void)dealloc;
 - (void)setSeparatorItem:(id)arg1;
+- (id)separatorItem;
+- (id)indexBarTitle;
 
 @end

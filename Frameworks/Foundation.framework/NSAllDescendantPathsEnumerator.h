@@ -19,14 +19,14 @@
 
 + (id)newWithPath:(id)arg1 prepend:(id)arg2 attributes:(id)arg3 cross:(BOOL)arg4 depth:(unsigned int)arg5;
 
+- (id)currentSubdirectoryAttributes;
+- (id)_under;
+- (void)skipDescendants;
+- (void)skipDescendents;
+- (id)directoryAttributes;
+- (id)fileAttributes;
 - (id)nextObject;
 - (unsigned int)level;
 - (void)dealloc;
-- (id)fileAttributes;
-- (id)currentSubdirectoryAttributes;
-- (id)_under;
-- (void)skipDescendents;
-- (void)skipDescendants;
-- (id)directoryAttributes;
 
 @end

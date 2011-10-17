@@ -10,23 +10,28 @@
     NSString *_protocolString;
     NSInputStream *_inputStream;
     NSOutputStream *_outputStream;
+    BOOL _openCompleted;
 }
 
-@property(readonly) NSOutputStream * outputStream;
-@property(readonly) NSInputStream * inputStream;
-@property(readonly) NSString * protocolString;
 @property(readonly) EAAccessory * accessory;
+@property(readonly) NSString * protocolString;
+@property(readonly) NSInputStream * inputStream;
+@property(readonly) NSOutputStream * outputStream;
 
 
-- (id)accessory;
+- (id)inputStream;
 - (id)outputStream;
+- (id)accessory;
+- (void)setOpenCompleted:(BOOL)arg1;
+- (BOOL)isOpenCompleted;
+- (void)_endStreams;
 - (id)initWithAccessory:(id)arg1 forProtocol:(id)arg2;
 - (id)_shortDescription;
-- (id)protocolString;
+- (void)_streamClosed;
 - (unsigned int)_sessionID;
+- (id)protocolString;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)description;
-- (id)inputStream;
 
 @end

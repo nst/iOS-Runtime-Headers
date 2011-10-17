@@ -2,21 +2,21 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSConditionLock, MFGenericAttachmentStore;
+@class MFGenericAttachmentStore, MFConditionLock;
 
 @interface _MFAttachmentScalingDataConsumer : MFCountingDataConsumer  {
     MFGenericAttachmentStore *_store;
-    NSConditionLock *_lock;
+    MFConditionLock *_lock;
 }
 
-@property NSConditionLock * lock;
+@property MFConditionLock * lock;
 @property MFGenericAttachmentStore * store;
 
 
 - (void)setLock:(id)arg1;
-- (id)lock;
-- (int)appendData:(id)arg1;
-- (id)store;
 - (void)setStore:(id)arg1;
+- (id)store;
+- (int)appendData:(id)arg1;
+- (id)lock;
 
 @end

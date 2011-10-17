@@ -9,30 +9,30 @@
     NSString *_localizedTitle;
 }
 
+@property(retain) NSString * localizedMessage;
+@property(retain) NSString * localizedTitle;
 @property(readonly) BOOL hasPassword;
-@property(retain,readonly) NSString * password;
-@property(retain,readonly) NSString * user;
+@property(readonly) NSString * password;
+@property(readonly) NSString * user;
 @property(readonly) int failureCount;
 @property(readonly) BOOL userNameIsEditable;
 @property(readonly) BOOL userNameIsEmail;
 @property(readonly) <NSURLAuthenticationChallengeSender> * sender;
-@property(retain) NSString * localizedTitle;
-@property(retain) NSString * localizedMessage;
 
 
-- (id)localizedTitle;
-- (void)cancelAuthentication;
 - (void)setLocalizedTitle:(id)arg1;
-- (id)user;
-- (id)sender;
-- (id)password;
-- (void)dealloc;
-- (BOOL)userNameIsEditable;
-- (BOOL)userNameIsEmail;
+- (void)cancelAuthentication;
+- (id)localizedTitle;
 - (id)localizedMessage;
-- (void)setLocalizedMessage:(id)arg1;
-- (int)failureCount;
-- (void)useCredential:(id)arg1;
 - (BOOL)hasPassword;
+- (id)user;
+- (id)password;
+- (id)sender;
+- (BOOL)userNameIsEmail;
+- (BOOL)userNameIsEditable;
+- (int)failureCount;
+- (void)setLocalizedMessage:(id)arg1;
+- (void)useCredential:(id)arg1;
+- (void)dealloc;
 
 @end

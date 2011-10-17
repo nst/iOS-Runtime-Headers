@@ -12,25 +12,25 @@
     boolmVaryColors;
 }
 
-+ (id)chartTypeWithChart:(id)arg1;
 + (bool)is3DType;
++ (id)chartTypeWithChart:(id)arg1;
 
-- (void)dealloc;
-- (void)setDefaultDataLabel:(id)arg1;
 - (bool)isPlotedOnSecondaryAxis;
 - (id)axisForClass:(Class)arg1;
 - (void)setSeriesCollection:(id)arg1;
 - (bool)isVaryColors;
-- (id)initWithChart:(id)arg1;
-- (id)contentFormat;
 - (int)defaultLabelPosition;
-- (id)chart;
-- (bool)isHorizontal;
+- (id)defaultDataLabel;
+- (id)axes;
 - (void)setVaryColors:(bool)arg1;
 - (id)axisIds;
-- (id)defaultTitleWithResources:(id)arg1;
-- (id)axes;
 - (id)seriesCollection;
-- (id)defaultDataLabel;
+- (void)setDefaultDataLabel:(id)arg1;
+- (id)defaultTitleWithResources:(id)arg1;
+- (id)initWithChart:(id)arg1;
+- (id)chart;
+- (id)contentFormat;
+- (bool)isHorizontal;
+- (void)dealloc;
 
 @end

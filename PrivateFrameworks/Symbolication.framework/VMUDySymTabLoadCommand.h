@@ -24,9 +24,9 @@
 }
 
 
-- (id)initWithMemory:(id)arg1;
 - (BOOL)isDySymTab;
 - (unsigned int)indirectsymoff;
 - (unsigned int)nindirectsyms;
+- (id)initWithMemory:(id)arg1;
 
 @end

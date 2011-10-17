@@ -2,65 +2,46 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@class ML3SqliteDatabase;
 
 @interface ITDBGeniusDatabase : NSObject  {
-    struct CPSqliteDatabase { struct __CFString {} *x1; struct CPSqliteConnection {} *x2; int (*x3)(); int (*x4)(); int (*x5)(); void *x6; int (*x7)(); int (*x8)(); int (*x9)(); boolx10; void *x11; int x12; struct { 
-            unsigned int checkVersion : 1; 
-            unsigned int checkedJournalPermissions : 1; 
-            unsigned int propertiesDisabled : 1; 
-            unsigned int threadSafety : 1; 
-            unsigned int shouldNotify : 1; 
-            unsigned int shouldYield : 1; 
-            unsigned int notifyRegisterAttempted : 1; 
-            unsigned int notifyRegisterSucceeded : 1; 
-            unsigned int postedRequest : 1; 
-            unsigned int receivedRequest : 1; 
-        } x13; struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
-        } x14; int x15; int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); void *x20; int x21; struct __CFString {} *x22; } *_db;
-    struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; unsigned int x8; } *_dbrc;
-    int _transactionCount;
+    ML3SqliteDatabase *_db;
     double _connectionFailedTime;
-    unsigned int _hasGeniusSchema : 1;
-    unsigned int _hasGeniusSchemaCached : 1;
+    struct __CFDictionary { } *_statementCache;
+    BOOL _isInTransaction;
 }
 
-+ (id)geniusDatabaseFilePath;
-+ (id)fallbackGeniusDatabaseFilePath;
-+ (id)sharedGeniusDatabase;
+@property BOOL isInTransaction;
 
-- (id)init;
-- (BOOL)hasGeniusFeatureEnabled;
-- (struct CPSqliteDatabase { struct __CFString {} *x1; struct CPSqliteConnection {} *x2; int (*x3)(); int (*x4)(); int (*x5)(); void *x6; int (*x7)(); int (*x8)(); int (*x9)(); boolx10; void *x11; int x12; struct { unsigned int x_13_1_1 : 1; unsigned int x_13_1_2 : 1; unsigned int x_13_1_3 : 1; unsigned int x_13_1_4 : 1; unsigned int x_13_1_5 : 1; unsigned int x_13_1_6 : 1; unsigned int x_13_1_7 : 1; unsigned int x_13_1_8 : 1; unsigned int x_13_1_9 : 1; unsigned int x_13_1_10 : 1; } x13; struct _opaque_pthread_mutex_t { long x_14_1_1; BOOL x_14_1_2[40]; } x14; int x15; int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); void *x20; int x21; struct __CFString {} *x22; }*)_loadedDatabaseAtPath:(id)arg1;
-- (void)_connect;
-- (unsigned int)_getCountOfResultsInTable:(id)arg1 where:(id)arg2 limit:(unsigned int)arg3;
-- (BOOL)_schemaHasDefinedTable:(id)arg1;
-- (unsigned int)_getInt32ValueInTable:(id)arg1 column:(id)arg2 where:(id)arg3 limit:(unsigned int)arg4;
-- (unsigned long long)_getInt64ValueInTable:(id)arg1 column:(id)arg2 where:(id)arg3 limit:(unsigned int)arg4;
-- (BOOL)_copyBlobData:(id*)arg1 blobAllocType:(int)arg2 table:(id)arg3 blobColumn:(id)arg4 where:(id)arg5 limit:(unsigned int)arg6 sqliteStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg7;
-- (id)_copyBlobDataAndBytesInTable:(id)arg1 blobColumn:(id)arg2 where:(id)arg3 limit:(unsigned int)arg4 sqliteStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg5;
-- (BOOL)_readBlobIntoData:(id)arg1 table:(id)arg2 blobColumn:(id)arg3 where:(id)arg4 limit:(unsigned int)arg5 sqliteStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg6;
-- (BOOL)_readBlobForRowID:(unsigned long long)arg1 intoData:(id)arg2 table:(const char *)arg3 blobColumn:(const char *)arg4;
-- (BOOL)hasDatabase;
-- (BOOL)_hasAnySongs;
-- (id)copyGeniusConfigrationDataAndBytes;
-- (unsigned int)geniusConfigurationVersion;
-- (id)copyGeniusMetadataDataAndBytesForGlobalID:(unsigned long long)arg1;
-- (id)copyGeniusSimilaritiesDataAndBytesForGlobalID:(unsigned long long)arg1;
-- (BOOL)getGeniusConfigrationDataAndBytesIntoData:(id)arg1;
-- (struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)_cachedStatementForReading:(id)arg1;
-- (BOOL)getGeniusMetadataDataAndBytesForGlobalID:(unsigned long long)arg1 intoData:(id)arg2;
++ (id)sharedGeniusDatabase;
++ (id)fallbackGeniusDatabaseFilePath;
++ (id)geniusDatabaseFilePath;
+
+- (void)setIsInTransaction:(BOOL)arg1;
+- (BOOL)isInTransaction;
 - (BOOL)getGeniusSimilaritiesDataAndBytesForGlobalID:(unsigned long long)arg1 intoData:(id)arg2;
-- (BOOL)hasGeniusDataAvailable;
-- (BOOL)hasGeniusCapableiTunes;
-- (unsigned int)defaultMinTrackCount;
+- (BOOL)getGeniusMetadataDataAndBytesForGlobalID:(unsigned long long)arg1 intoData:(id)arg2;
+- (BOOL)getGeniusConfigrationDataAndBytesIntoData:(id)arg1;
+- (id)copyGeniusSimilaritiesDataAndBytesForGlobalID:(unsigned long long)arg1;
+- (id)copyGeniusMetadataDataAndBytesForGlobalID:(unsigned long long)arg1;
+- (unsigned int)geniusConfigurationVersion;
+- (id)copyGeniusConfigrationDataAndBytes;
 - (unsigned int)defaultTrackCount;
-- (void)endTransaction;
-- (void)beginTransaction;
+- (unsigned int)defaultMinTrackCount;
+- (BOOL)hasGeniusFeatureEnabled;
+- (BOOL)hasGeniusDataAvailable;
+- (BOOL)hasDatabase;
+- (unsigned long long)_getInt64ValueInTable:(id)arg1 column:(id)arg2 where:(id)arg3 limit:(unsigned int)arg4;
+- (BOOL)_readBlobForRowID:(unsigned long long)arg1 intoData:(id)arg2 table:(const char *)arg3 blobColumn:(const char *)arg4;
+- (BOOL)_readBlobIntoData:(id)arg1 table:(id)arg2 blobColumn:(id)arg3 where:(id)arg4;
+- (id)_copyBlobDataAndBytesInTable:(id)arg1 blobColumn:(id)arg2 where:(id)arg3;
+- (unsigned int)_getInt32ValueInTable:(id)arg1 column:(id)arg2;
+- (unsigned int)_hasRowsInTable:(id)arg1;
+- (BOOL)_hasAnySongs;
+- (BOOL)_copyBlobData:(id*)arg1 blobAllocType:(int)arg2 table:(id)arg3 blobColumn:(id)arg4 where:(id)arg5;
+- (void)_connect;
+- (void)_loadDatabaseAtPath:(id)arg1;
+- (id)database;
+- (id)init;
 
 @end

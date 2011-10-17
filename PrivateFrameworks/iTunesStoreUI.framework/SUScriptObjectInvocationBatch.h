@@ -16,13 +16,13 @@
 
 - (id)init;
 - (void)dealloc;
-- (id)batchProxyForObject:(id)arg1;
-- (void)dequeueInvocations;
-- (void)_delayedDequeueInvocations;
 - (void)enqueueInvocation:(id)arg1;
+- (void)_delayedDequeueInvocations;
+- (void)dequeueInvocations;
+- (id)batchProxyForObject:(id)arg1;
 - (id)rootObject;
 - (id)copyQueuedInvocationsForObject:(id)arg1;
-- (void)checkOutBatchTarget:(id)arg1;
 - (void)setRootObject:(id)arg1;
+- (void)checkOutBatchTarget:(id)arg1;
 
 @end

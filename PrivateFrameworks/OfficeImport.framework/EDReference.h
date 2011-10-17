@@ -11,36 +11,36 @@
     } mAreaReference;
 }
 
-+ (id)referenceWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
-+ (id)reference;
 + (id)referenceWithAreaReference:(struct EDAreaReference { int x1; int x2; int x3; int x4; }*)arg1;
++ (id)reference;
++ (id)referenceWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setFirstRow:(int)arg1;
+- (void)setFirstColumn:(int)arg1;
+- (void)setLastRow:(int)arg1;
+- (void)setLastColumn:(int)arg1;
 - (void)unionWithRow:(int)arg1 column:(int)arg2;
 - (void)unionWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
-- (int)firstColumn;
-- (id)initWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
-- (id)initWithAreaReference:(struct EDAreaReference { int x1; int x2; int x3; int x4; }*)arg1;
 - (struct EDAreaReference { int x1; int x2; int x3; int x4; })areaReference;
 - (bool)containsRow:(int)arg1 column:(int)arg2;
 - (bool)isCellReference;
+- (id)initWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
+- (id)initWithAreaReference:(struct EDAreaReference { int x1; int x2; int x3; int x4; }*)arg1;
 - (bool)isValidCellReference;
 - (bool)isValidAreaReference;
+- (unsigned int)countOfCellsBeingReferenced;
 - (bool)fullyAdjacentToReference:(id)arg1;
 - (BOOL)isEqualToReference:(id)arg1;
 - (void)unionWithReference:(id)arg1;
-- (unsigned int)countOfCellsBeingReferenced;
+- (int)firstRow;
+- (int)lastRow;
+- (int)firstColumn;
+- (int)lastColumn;
 - (bool)isRowReference;
 - (bool)isColumnReference;
-- (void)setFirstRow:(int)arg1;
-- (int)lastRow;
-- (void)setLastRow:(int)arg1;
-- (void)setLastColumn:(int)arg1;
-- (int)lastColumn;
-- (int)firstRow;
-- (void)setFirstColumn:(int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 
 @end

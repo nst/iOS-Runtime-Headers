@@ -7,23 +7,25 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)removeLastObject;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (Class)classForCoder;
 - (void)finalize;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (Class)classForCoder;
 - (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)objectAtIndex:(unsigned int)arg1;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (oneway void)release;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)removeLastObject;
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (unsigned int)retainCount;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (unsigned int)count;
+- (id)retain;
 - (void)addObject:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
 
 @end

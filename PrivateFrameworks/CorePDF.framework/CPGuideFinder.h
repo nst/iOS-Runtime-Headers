@@ -24,31 +24,31 @@
 + (void)reclusterPreservingAlignment:(id)arg1;
 + (void)reclusterBetweenGuides:(id)arg1;
 
-- (void)dispose;
 - (void)finalize;
-- (void)dealloc;
-- (id)initWithContentZone:(id)arg1;
+- (float)medianFontSizeOfFirstCharacter;
+- (float)medianFontSizeOfLastCharacter;
+- (BOOL)addStripTo:(id)arg1 bottom:(float)arg2 left:(float)arg3 top:(float)arg4 right:(float)arg5;
+- (void)setAlignForWordWithExtent:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg1 stripArray:(id)arg2 stripMax:(double)arg3;
+- (void)subdivideStripInto:(id)arg1 from:(double)arg2 to:(double)arg3 borderedBy:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg4 ofCount:(unsigned int)arg5 crossedBy:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg6 ofCount:(unsigned int)arg7;
 - (void)getWordEdges;
-- (void)addStripTo:(id)arg1 bottom:(float)arg2 left:(float)arg3 top:(float)arg4 right:(float)arg5;
-- (void)setAlignForWordWithExtent:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg1 stripArray:(id)arg2 stripMax:(float)arg3;
-- (void)subdivideStripInto:(id)arg1 from:(float)arg2 to:(float)arg3 borderedBy:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg4 ofCount:(unsigned int)arg5 crossedBy:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg6 ofCount:(unsigned int)arg7;
+- (void)findWordEdgeClusters;
 - (void)subdivideGutterFrom:(unsigned int)arg1 to:(unsigned int)arg2;
 - (void)subdivideLeftGuideAt:(unsigned int)arg1;
 - (void)subdivideRightGuideAt:(unsigned int)arg1;
-- (void)findWordEdgeClusters;
-- (void)findGutters;
-- (void)findGuides;
-- (void)splitTextLinesAtBorderWords;
-- (void)splitTextLinesBetweenBorderWords;
-- (void)splitTextLines;
-- (void)markTextLines;
 - (BOOL)hasGutters;
 - (BOOL)hasLeftGuides;
 - (BOOL)hasRightGuides;
+- (void)splitTextLinesAtBorderWords;
+- (void)splitTextLinesBetweenBorderWords;
+- (id)initWithContentZone:(id)arg1;
+- (void)findGutters;
+- (void)findGuides;
+- (void)markTextLines;
+- (void)splitTextLines;
 - (id)leftGuides;
-- (id)gutters;
-- (float)medianFontSizeOfLastCharacter;
-- (float)medianFontSizeOfFirstCharacter;
 - (id)rightGuides;
+- (id)gutters;
+- (void)dispose;
+- (void)dealloc;
 
 @end

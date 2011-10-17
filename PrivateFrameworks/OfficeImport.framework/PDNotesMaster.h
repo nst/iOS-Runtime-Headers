@@ -11,22 +11,22 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
+- (id)theme;
+- (id)parentSlideBase;
 - (id)colorMap;
-- (id)notesTextStyle;
 - (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2;
 - (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2;
 - (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3;
 - (id)parentTextStyleForTables;
 - (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2;
 - (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2;
-- (void)doneWithContent;
-- (id)theme;
 - (id)drawingTheme;
-- (id)fontScheme;
-- (id)parentSlideBase;
-- (id)styleMatrix;
 - (id)colorScheme;
+- (id)fontScheme;
+- (id)styleMatrix;
+- (id)notesTextStyle;
+- (void)doneWithContent;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -11,22 +11,22 @@
     int _feederMode;
 }
 
-@property int feederMode;
-@property double currentTime;
-@property unsigned int currentItemIndex;
 @property(retain) MPQueueFeeder * feeder;
+@property unsigned int currentItemIndex;
+@property double currentTime;
+@property int feederMode;
 
 
-- (void)dealloc;
-- (id)description;
-- (unsigned int)currentItemIndex;
 - (void)setCurrentItemIndex:(unsigned int)arg1;
+- (unsigned int)currentItemIndex;
 - (id)initWithStateOfAVController:(id)arg1;
 - (int)feederMode;
+- (void)setFeederMode:(int)arg1;
 - (void)setFeeder:(id)arg1;
 - (id)feeder;
-- (void)setFeederMode:(int)arg1;
 - (double)currentTime;
 - (void)setCurrentTime:(double)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

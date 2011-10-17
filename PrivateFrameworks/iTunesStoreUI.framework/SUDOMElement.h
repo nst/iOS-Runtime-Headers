@@ -10,19 +10,19 @@
     SUWebView *_webView;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } frame;
+@property(readonly) DOMElement * element;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
 @property(readonly) UIImage * imageRepresentation;
 @property(retain) SUWebView * webView;
-@property(readonly) DOMElement * element;
 
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (void)setWebView:(id)arg1;
 - (id)webView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (void)dealloc;
 - (void)setProperty:(id)arg1 value:(id)arg2;
-- (id)element;
 - (id)imageRepresentation;
 - (id)initWithDOMElement:(id)arg1;
+- (id)element;
 
 @end

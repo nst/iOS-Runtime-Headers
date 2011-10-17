@@ -9,14 +9,14 @@
     NSArray *_annotations;
 }
 
-@property(retain) NSArray * annotations;
 @property(retain) MKMapView * mapView;
+@property(retain) NSArray * annotations;
 
 
-- (void)dealloc;
-- (id)annotations;
 - (void)setAnnotations:(id)arg1;
-- (id)mapView;
+- (id)annotations;
 - (void)setMapView:(id)arg1;
+- (id)mapView;
+- (void)dealloc;
 
 @end

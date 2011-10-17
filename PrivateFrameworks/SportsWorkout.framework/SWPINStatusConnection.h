@@ -9,15 +9,15 @@
     NSString *_PIN;
 }
 
-@property(readonly) NSString * PIN;
 @property <SWSyncServiceConnectionDelegate><SWPINStatusConnectionDelegate> * delegate;
+@property(readonly) NSString * PIN;
 
 
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)initWithPIN:(id)arg1 host:(id)arg2 delegate:(id)arg3;
 - (id)PIN;
+- (id)initWithPIN:(id)arg1 host:(id)arg2 delegate:(id)arg3;
 - (void)handleResponse:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 
 @end

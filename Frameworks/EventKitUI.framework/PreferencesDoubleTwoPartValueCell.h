@@ -9,14 +9,15 @@
     TwoPartTextLabel *_twoPartLabel2;
 }
 
-@property(retain,readonly) UILabel * textLabel2;
-@property(retain,readonly) TwoPartTextLabel * twoPartTextLabel2;
+@property(readonly) UILabel * textLabel2;
+@property(readonly) TwoPartTextLabel * twoPartTextLabel2;
 
 
 - (id)twoPartTextLabel2;
-- (void)_layoutSubviewsCore;
-- (void)checkValueWidths;
-- (void)layoutText:(id)arg1 andValue:(id)arg2;
 - (id)textLabel2;
+- (void)checkValueWidths;
+- (void)_layoutSubviewsCore;
+- (void)layoutText:(id)arg1 andValue:(id)arg2;
+- (void)dealloc;
 
 @end

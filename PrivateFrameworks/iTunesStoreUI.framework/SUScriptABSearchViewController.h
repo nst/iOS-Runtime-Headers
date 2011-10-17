@@ -11,25 +11,25 @@
 
 @property(readonly) int numberOfResults;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (id)webScriptNameForKey:(const char *)arg1;
 
+- (id)attributeKeys;
+- (id)initWithOptions:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (int)numberOfResults;
 - (void)resetResults;
 - (id)searchForText:(id)arg1;
 - (void)cancelSearchWithTag:(id)arg1;
-- (int)numberOfResults;
-- (void)_cancelSearchWithTag:(id)arg1;
-- (int)_numberOfResults;
-- (id)_searchForText:(id)arg1;
-- (void)_resetResults;
 - (id)_contactsSearchViewController;
-- (id)initWithOptions:(id)arg1;
+- (int)_numberOfResults;
+- (void)_resetResults;
+- (id)_searchForText:(id)arg1;
+- (void)_cancelSearchWithTag:(id)arg1;
 - (id)newNativeViewController;
-- (id)attributeKeys;
-- (id)scriptAttributeKeys;
 - (void)setNativeViewController:(id)arg1;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

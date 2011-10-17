@@ -16,9 +16,9 @@
 
 
 - (int)compare:(id)arg1;
-- (id)init;
-- (id)description;
-- (id)initWithTargetIdentifier:(id)arg1;
 - (id)copyURLForURL:(id)arg1;
+- (id)initWithTargetIdentifier:(id)arg1;
+- (id)description;
+- (id)init;
 
 @end

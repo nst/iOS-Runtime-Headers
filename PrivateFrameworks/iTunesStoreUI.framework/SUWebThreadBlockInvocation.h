@@ -15,7 +15,7 @@
 }
 
 
-- (void)invoke;
 - (id)initWithBlock:(id)arg1;
+- (void)invoke;
 
 @end

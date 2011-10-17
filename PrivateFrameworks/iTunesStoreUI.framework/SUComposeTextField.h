@@ -16,31 +16,30 @@
     UITextField *_textField;
 }
 
+@property(readonly) int composeReviewStyle;
+@property id delegate;
 @property(readonly) SUComposeTextFieldConfiguration * configuration;
 @property(retain) NSString * text;
-@property(getter=isValid,readonly) BOOL valid;
 @property(readonly) UITextField * textField;
-@property id delegate;
-@property(readonly) int composeReviewStyle;
+@property(getter=isValid,readonly) BOOL valid;
 
 + (id)labelColorForStyle:(int)arg1;
 + (id)labelFontForStyle:(int)arg1;
-+ (void)_initializeSafeCategory;
 
+- (void)setDelegate:(id)arg1;
 - (id)textField;
-- (BOOL)isValid;
 - (BOOL)textField:(id)arg1 shouldInsertText:(id)arg2 replacingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (BOOL)isValid;
+- (id)text;
+- (id)delegate;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (id)text;
-- (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)configuration;
+- (void)dealloc;
 - (id)initWithConfiguration:(id)arg1 style:(int)arg2;
-- (void)_textChanged:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_textFieldOrigin;
+- (void)_textChanged:(id)arg1;
 - (int)composeReviewStyle;
+- (id)configuration;
 
 @end

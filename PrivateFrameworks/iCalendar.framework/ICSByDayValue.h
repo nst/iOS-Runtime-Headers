@@ -9,20 +9,20 @@
     int _weekday;
 }
 
-@property(retain) NSNumber * number;
 @property int weekday;
+@property(retain) NSNumber * number;
 
-+ (int)weekdayFromICSString:(id)arg1;
 + (id)byDayValueFromICSString:(id)arg1;
++ (int)weekdayFromICSString:(id)arg1;
 
-- (void)setNumber:(id)arg1;
-- (int)weekday;
-- (void)setWeekday:(int)arg1;
-- (id)number;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithWeekday:(int)arg1;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)setNumber:(id)arg1;
 - (id)initWithWeekday:(int)arg1 number:(id)arg2;
+- (id)number;
+- (void)setWeekday:(int)arg1;
+- (int)weekday;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

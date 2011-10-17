@@ -12,10 +12,10 @@
 @property(copy,readonly) NSString * separator;
 
 
-- (id)identifier;
 - (void)finalize;
-- (void)dealloc;
 - (id)listStyle;
 - (id)separator;
+- (id)identifier;
+- (void)dealloc;
 
 @end

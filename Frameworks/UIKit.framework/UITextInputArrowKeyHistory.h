@@ -14,28 +14,28 @@
     BOOL affinityDownstream;
 }
 
-@property int amount;
-@property BOOL affinityDownstream;
-@property(retain) UITextPosition * end;
-@property(retain) UITextPosition * start;
-@property(retain) UITextPosition * cursor;
-@property int anchor;
 @property(retain) UITextPosition * startPosition;
+@property int anchor;
+@property(retain) UITextPosition * start;
+@property(retain) UITextPosition * end;
+@property(retain) UITextPosition * cursor;
+@property BOOL affinityDownstream;
+@property int amount;
 
 
+- (id)start;
+- (int)amount;
 - (void)setAmount:(int)arg1;
 - (void)setAffinityDownstream:(BOOL)arg1;
 - (void)setCursor:(id)arg1;
-- (void)setAnchor:(int)arg1;
-- (void)setStartPosition:(id)arg1;
 - (BOOL)affinityDownstream;
-- (id)cursor;
+- (void)setAnchor:(int)arg1;
 - (int)anchor;
-- (int)amount;
+- (id)cursor;
+- (void)setStartPosition:(id)arg1;
 - (void)setEnd:(id)arg1;
 - (void)setStart:(id)arg1;
 - (id)end;
-- (id)start;
 - (id)startPosition;
 - (void)dealloc;
 

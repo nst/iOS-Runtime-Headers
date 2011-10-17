@@ -8,17 +8,17 @@
 }
 
 
-- (unsigned int)options;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)_setOptions:(unsigned int)arg1;
-- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 negate:(BOOL)arg3 options:(unsigned int)arg4;
-- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 negate:(BOOL)arg3;
-- (BOOL)isNegation;
 - (void)setNegation:(BOOL)arg1;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 negate:(BOOL)arg3;
+- (void)_setOptions:(unsigned int)arg1;
 - (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (id)predicateFormat;
+- (BOOL)isNegation;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 negate:(BOOL)arg3 options:(unsigned int)arg4;
+- (unsigned int)options;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

@@ -2,13 +2,32 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface CKTranscriptTableView : UITableView  {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _panGestureRecognizerBlock;
+
+    BOOL ignoresContentOffsetChanges;
 }
 
-+ (void)_initializeSafeCategory;
+@property BOOL ignoresContentOffsetChanges;
+@property(copy) id panGestureRecognizerBlock;
+
 
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)_accessibilityUsesSpecialKeyboardDismiss;
-- (BOOL)isAccessibilityElement;
+- (void)handlePan:(id)arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)cancelPanGesture;
+- (void)setIgnoresContentOffsetChanges:(BOOL)arg1;
+- (BOOL)isFastAnimationAvailableForContentOffset;
+- (BOOL)ignoresContentOffsetChanges;
+- (void)setPanGestureRecognizerBlock:(id)arg1;
+- (id)panGestureRecognizerBlock;
+- (void)dealloc;
 
 @end

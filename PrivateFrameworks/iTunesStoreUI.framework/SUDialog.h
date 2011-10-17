@@ -14,15 +14,15 @@
 @property <SUDialogDelegate> * delegate;
 
 
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)dealloc;
-- (void)show;
-- (void)alertViewCancel:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)_alertView;
-- (id)initWithDialog:(id)arg1;
-- (id)dialog;
 - (BOOL)isEquivalent:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)alertViewCancel:(id)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)show;
+- (id)delegate;
+- (void)dealloc;
+- (id)_alertView;
+- (id)dialog;
+- (id)initWithDialog:(id)arg1;
 
 @end

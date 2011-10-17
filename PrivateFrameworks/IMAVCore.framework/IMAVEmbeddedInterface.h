@@ -2,99 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class NSMutableArray, AVConference;
-
-@interface IMAVEmbeddedInterface : IMAVInterface <AVConferenceDelegate> {
-    NSMutableArray *_avConferencesToCleanup;
-    AVConference *_vcc;
-    BOOL _duringInit;
-    BOOL _previewStarted;
-    BOOL _pendingCleanup;
+@interface IMAVEmbeddedInterface : IMAVConferenceInterface  {
 }
 
-@property(readonly) AVConference * controller;
-
-+ (id)bestChatForCallID:(int)arg1 errorString:(id)arg2;
 + (void)updateCriticalState;
 
-- (void)conference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3;
-- (void)conference:(id)arg1 didStartSession:(BOOL)arg2 withUserInfo:(id)arg3;
-- (void)conference:(id)arg1 receivedFirstPreviewForCallID:(int)arg2;
-- (void)conference:(id)arg1 receivedFirstRemoteFrameForCallID:(int)arg2;
-- (void)conference:(id)arg1 remoteOrientationChangedForCallID:(int)arg2 orientation:(unsigned int)arg3;
-- (void)conference:(id)arg1 remoteCameraBeingChangedForCallID:(int)arg2;
-- (void)conference:(id)arg1 remoteCameraChangedForCallID:(int)arg2 cameraType:(unsigned int)arg3;
-- (void)conference:(id)arg1 remoteAudioPaused:(BOOL)arg2 callID:(int)arg3;
-- (void)conference:(id)arg1 remoteVideoPaused:(BOOL)arg2 callID:(int)arg3;
-- (void)conference:(id)arg1 receivedNoRemotePacketsForTime:(double)arg2 callID:(int)arg3;
-- (void)conference:(id)arg1 inititiateRelayRequest:(int)arg2 requestDict:(id)arg3;
-- (void)conference:(id)arg1 sendRelayUpdate:(int)arg2 updateDict:(id)arg3;
-- (void)conference:(id)arg1 updateInputMeterLevel:(float)arg2;
-- (void)conference:(id)arg1 updateOutputMeterLevel:(float)arg2;
-- (void*)remoteVideoBackLayer;
-- (id)localDisplayNameForCallID:(int)arg1;
-- (id)remoteDisplayNameForCallID:(int)arg1;
-- (void*)localVideoLayer;
-- (void*)remoteVideoLayer;
-- (id)natType;
-- (void)setLocalVideoLayer:(void*)arg1;
-- (void)setRemoteVideoLayer:(void*)arg1;
-- (void)setRemoteVideoBackLayer:(void*)arg1;
-- (void)setLocalVideoBackLayer:(void*)arg1;
-- (void*)localVideoBackLayer;
-- (BOOL)startPreviewWithError:(id*)arg1;
-- (void)setCameraOrientation:(unsigned int)arg1;
-- (id)controller;
-- (id)init;
-- (void)dealloc;
-- (unsigned long long)capabilities;
-- (void)setCameraType:(unsigned int)arg1;
-- (unsigned int)cameraType;
-- (unsigned int)cameraOrientation;
-- (BOOL)stopPreview;
 - (void)_conferenceEnded:(id)arg1;
-- (void)avChat:(id)arg1 setPaused:(BOOL)arg2;
-- (int)_checkNetwork;
-- (void)_cleanupAVInterface;
-- (void)_queueAVConferenceForCleanup:(id)arg1;
-- (BOOL)isAVInterfaceReady;
 - (void)_conferenceWillStart:(id)arg1;
-- (BOOL)allowsVideoForAVChat:(id)arg1;
-- (BOOL)closeCamera;
-- (int)endConferenceForAVChat:(id)arg1;
-- (void)avChat:(id)arg1 enableSoftwareCamera:(BOOL)arg2;
-- (void)avChat:(id)arg1 enableSoftwareMicrophone:(BOOL)arg2;
-- (unsigned int)avChat:(id)arg1 enableAudioReflector:(BOOL)arg2;
-- (void)conference:(id)arg1 cancelRelayRequest:(int)arg2 requestDict:(id)arg3;
-- (void)handleRelayUpdate:(id)arg1 fromParticipant:(id)arg2;
-- (void)handleRelayCancel:(id)arg1 fromParticipant:(id)arg2;
 - (void)chatStateUpdated;
-- (BOOL)supportsLayers;
-- (BOOL)supportsRelay;
-- (BOOL)systemCanHostARD;
-- (BOOL)systemCanARD;
-- (BOOL)systemCanAudioChat;
-- (BOOL)isMuteForAVChat:(id)arg1;
-- (void)avChat:(id)arg1 setMute:(BOOL)arg2;
-- (BOOL)isPausedForAVChat:(id)arg1;
-- (BOOL)isSendingAudioForAVChat:(id)arg1;
-- (void)avChat:(id)arg1 setSendingAudio:(BOOL)arg2;
-- (BOOL)isSendingVideoForAVChat:(id)arg1;
-- (void)avChat:(id)arg1 setSendingVideo:(BOOL)arg2;
-- (unsigned long long)capabilitiesOfNetwork;
-- (unsigned long long)capabilitiesOfCPU;
-- (BOOL)avChat:(id)arg1 startConferenceWithUserID:(id)arg2;
-- (int)avChat:(id)arg1 endConferenceForUserID:(id)arg2;
-- (id)avChat:(id)arg1 localICEDataForHandle:(id)arg2 usingRelay:(BOOL)arg3;
-- (void)handleRelayInitate:(id)arg1 fromParticipant:(id)arg2;
-- (void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
-- (BOOL)systemCanVideoChat;
-- (void)initAVInterface;
-- (void)avChat:(id)arg1 prepareConnectionWithRemoteConnectionData:(id)arg2 localConnectionData:(id)arg3;
-- (void)_notifyAboutPotentialCall;
-- (BOOL)openCamera;
-- (void)invalidateAVInterface;
-- (void)setupComplete;
-- (id)getNatIPFromICEData:(id)arg1;
 
 @end

@@ -13,11 +13,11 @@
 }
 
 
-- (void)registerPID:(unsigned int)arg1;
 - (void)unregisterPID:(unsigned int)arg1;
+- (void)registerPID:(unsigned int)arg1;
 - (BOOL)hasActivePID:(unsigned int)arg1;
-- (void)lock;
 - (void)unlock;
+- (void)lock;
 - (id)init;
 
 @end

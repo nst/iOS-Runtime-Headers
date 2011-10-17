@@ -15,14 +15,14 @@
 @property(readonly) NSString * productIdentifier;
 
 
-- (id)price;
 - (id)localizedTitle;
+- (id)priceLocale;
+- (id)productIdentifier;
+- (id)price;
 - (id)localizedDescription;
 - (void)setLocale:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)priceLocale;
-- (id)productIdentifier;
 
 @end

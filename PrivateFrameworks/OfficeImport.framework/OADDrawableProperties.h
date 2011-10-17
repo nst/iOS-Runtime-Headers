@@ -15,25 +15,25 @@
 }
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)orientedBounds;
-- (BOOL)isAspectRatioLocked;
-- (id)hoverHyperlink;
-- (BOOL)isWrdInline;
-- (void)setClickHyperlink:(id)arg1;
-- (void)removeUnnecessaryOverrides;
-- (void)setAspectRatioLocked:(BOOL)arg1;
 - (BOOL)hasAspectRatioLocked;
+- (BOOL)isAspectRatioLocked;
+- (void)setAspectRatioLocked:(BOOL)arg1;
 - (BOOL)hasClickHyperlink;
 - (BOOL)hasHoverHyperlink;
-- (void)setWrdInline:(BOOL)arg1;
 - (BOOL)hasWrdInline;
-- (void)setOrientedBounds:(id)arg1;
-- (BOOL)hasOrientedBounds;
-- (id)initWithDefaults;
+- (BOOL)isWrdInline;
+- (void)setWrdInline:(BOOL)arg1;
 - (id)clickHyperlink;
+- (id)hoverHyperlink;
+- (BOOL)hasOrientedBounds;
+- (void)setOrientedBounds:(id)arg1;
+- (void)setClickHyperlink:(id)arg1;
 - (void)setHoverHyperlink:(id)arg1;
+- (void)removeUnnecessaryOverrides;
+- (id)orientedBounds;
+- (id)initWithDefaults;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

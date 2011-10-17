@@ -8,20 +8,20 @@
     id _internal;
 }
 
-@property(copy,readonly) NSString * productIdentifier;
-@property(copy,readonly) NSData * requestData;
+@property(readonly) NSString * productIdentifier;
+@property(readonly) NSData * requestData;
 @property(readonly) int quantity;
 
-+ (id)paymentWithProduct:(id)arg1;
 + (id)paymentWithProductIdentifier:(id)arg1;
++ (id)paymentWithProduct:(id)arg1;
 
+- (id)requestData;
+- (int)quantity;
+- (id)productIdentifier;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (id)init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)dealloc;
-- (id)requestData;
-- (id)productIdentifier;
-- (int)quantity;
 
 @end

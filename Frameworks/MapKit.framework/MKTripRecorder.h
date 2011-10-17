@@ -12,30 +12,30 @@
     NSDate *_timeStampDate;
 }
 
-@property(retain) NSMutableString * buffer;
-@property(retain) NSDate * lastRecordingDate;
 @property(retain) NSDate * startDate;
-@property BOOL isRecording;
 @property(retain) NSDate * timeStampDate;
+@property(retain) NSDate * lastRecordingDate;
+@property(retain) NSMutableString * buffer;
+@property BOOL isRecording;
 
 
 - (void)start;
-- (void)dealloc;
-- (id)timeStampDate;
-- (id)lastRecordingDate;
-- (id)buffer;
-- (void)_writeVersion;
-- (void)addAbsoluteTimeCommentIfNeeded;
-- (void)setBuffer:(id)arg1;
-- (void)setLastRecordingDate:(id)arg1;
-- (void)setIsRecording:(BOOL)arg1;
-- (void)setTimeStampDate:(id)arg1;
-- (id)startDate;
 - (void)setStartDate:(id)arg1;
-- (void)writeTripToPath:(id)arg1;
-- (void)recordLocation:(id)arg1;
-- (void)recordError:(id)arg1;
+- (id)startDate;
 - (void)stop;
 - (BOOL)isRecording;
+- (id)buffer;
+- (id)lastRecordingDate;
+- (void)addAbsoluteTimeCommentIfNeeded;
+- (id)timeStampDate;
+- (void)setTimeStampDate:(id)arg1;
+- (void)_writeVersion;
+- (void)setLastRecordingDate:(id)arg1;
+- (void)setIsRecording:(BOOL)arg1;
+- (void)setBuffer:(id)arg1;
+- (void)recordError:(id)arg1;
+- (void)recordLocation:(id)arg1;
+- (void)writeTripToPath:(id)arg1;
+- (void)dealloc;
 
 @end

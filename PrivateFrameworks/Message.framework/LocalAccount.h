@@ -9,26 +9,29 @@
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)accountTypeString;
 
-- (Class)storeClass;
+- (id)password:(BOOL)arg1;
+- (id)transientDraftsFolder;
+- (BOOL)canFetch;
+- (id)pushedMailboxUids;
 - (id)initWithLibrary:(id)arg1 properties:(id)arg2;
 - (id)primaryMailboxUid;
-- (id)password:(BOOL)arg1;
+- (id)mailboxUidForFileSystemPath:(id)arg1;
+- (BOOL)renameMailbox:(id)arg1 newName:(id)arg2 parent:(id)arg3;
 - (void)_synchronouslyLoadListingForParent:(id)arg1;
 - (BOOL)_setChildren:(id)arg1 forMailboxUid:(id)arg2;
-- (id)_URLScheme;
-- (BOOL)deleteInPlaceForMailbox:(id)arg1;
+- (Class)storeClass;
 - (id)mailboxPathExtension;
-- (id)mailboxUidForFileSystemPath:(id)arg1;
-- (BOOL)canFetch;
-- (BOOL)renameMailbox:(id)arg1 newName:(id)arg2 parent:(id)arg3;
-- (void)setHostname:(id)arg1;
-- (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 existingMailboxUid:(id)arg4 permanentTag:(id)arg5 dictionary:(id)arg6;
+- (id)_URLScheme;
 - (id)_infoForMatchingURL:(id)arg1;
-- (BOOL)canGoOffline;
+- (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 existingMailboxUid:(id)arg4 dictionary:(id)arg5;
+- (BOOL)supportsAppend;
 - (void)setIsOffline:(BOOL)arg1;
-- (id)displayName;
+- (BOOL)canGoOffline;
+- (void)setHostname:(id)arg1;
 - (id)uniqueId;
+- (BOOL)deleteInPlaceForMailbox:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
+- (id)displayName;
 
 @end

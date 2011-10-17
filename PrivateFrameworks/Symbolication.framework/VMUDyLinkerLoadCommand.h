@@ -9,10 +9,10 @@
 }
 
 
-- (id)initWithMemory:(id)arg1;
-- (BOOL)isDyLinker;
 - (id)name;
-- (void)dealloc;
+- (BOOL)isDyLinker;
+- (id)initWithMemory:(id)arg1;
 - (id)description;
+- (void)dealloc;
 
 @end

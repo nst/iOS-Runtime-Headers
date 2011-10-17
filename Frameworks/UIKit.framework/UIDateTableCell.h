@@ -7,14 +7,12 @@
     float _verticalOffset;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (void)setHorizontalOffset:(float)arg1;
-- (id)shadowColor;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
-- (void)layoutSubviews;
 - (void)setVerticalOffset:(float)arg1;
+- (void)setHorizontalOffset:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
+- (id)shadowColor;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)accessibilityLabel;
 
 @end

@@ -2,42 +2,47 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADInterstitialView, <ADInterstitialAdDelegate>;
+@class ADInterstitialView, ADInterstitialModalViewController, <ADInterstitialAdDelegate>;
 
-@interface ADInterstitialAd : NSObject  {
-    <ADInterstitialAdDelegate> *_delegate;
+@interface ADInterstitialAd : NSObject <ADInterstitialViewDelegate> {
+    <ADInterstitialAdDelegate> *_weakDelegate;
     ADInterstitialView *_interstitialView;
+    ADInterstitialModalViewController *_modalViewController;
     BOOL _presentedInView;
 }
 
+@property <ADInterstitialAdDelegate> * delegate;
 @property(getter=isLoaded,readonly) BOOL loaded;
 @property(getter=isActionInProgress,readonly) BOOL actionInProgress;
-@property BOOL presentedInView;
 @property(retain) ADInterstitialView * interstitialView;
-@property <ADInterstitialAdDelegate> * delegate;
+@property(retain) ADInterstitialModalViewController * modalViewController;
+@property BOOL presentedInView;
 
 
-- (void)setLocalAd:(id)arg1;
-- (void)setAuthenticationUserName:(id)arg1;
-- (BOOL)isLoaded;
-- (id)init;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (BOOL)presentInView:(id)arg1;
-- (void)presentFromViewController:(id)arg1;
-- (void)interstitialView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
-- (BOOL)interstitialViewActionShouldBegin:(id)arg1 willLeaveApplication:(BOOL)arg2;
 - (BOOL)presentedInView;
+- (void)presentFromViewController:(id)arg1;
+- (BOOL)presentInView:(id)arg1;
+- (void)setDebuggingDelegate:(id)arg1;
 - (void)setPresentedInView:(BOOL)arg1;
+- (void)cancelAction;
+- (BOOL)isActionInProgress;
 - (id)interstitialView;
 - (void)setInterstitialView:(id)arg1;
 - (void)interstitialViewDidLoadAd:(id)arg1;
+- (void)interstitialViewWillLoadAd:(id)arg1;
+- (void)interstitialView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (void)interstitialViewActionDidFinish:(id)arg1;
+- (BOOL)interstitialViewActionShouldBegin:(id)arg1 willLeaveApplication:(BOOL)arg2;
 - (void)interstitialViewDidUnloadAd:(id)arg1;
-- (void)cancelAction;
-- (void)setDebuggingDelegate:(id)arg1;
-- (BOOL)isActionInProgress;
+- (void)setLocalAd:(id)arg1;
+- (void)setAuthenticationUserName:(id)arg1;
+- (BOOL)isLoaded;
+- (id)modalViewController;
+- (id)delegate;
+- (id)init;
+- (void)dealloc;
+- (void)setModalViewController:(id)arg1;
 - (void)setSection:(id)arg1;
 
 @end

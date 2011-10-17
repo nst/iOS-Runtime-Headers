@@ -5,18 +5,16 @@
 @interface SUTallLinkCellConfiguration : SUMediaItemCellConfiguration  {
 }
 
-+ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 + (id)copyDefaultContext;
-+ (void)_initializeSafeCategory;
++ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
 - (id)init;
-- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (BOOL)showContentRating;
-- (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (void)reloadImages;
-- (void)reloadLayoutInformation;
 - (id)copyImageDataProvider;
+- (void)reloadLayoutInformation;
 - (void)reloadStrings;
-- (id)accessibilityLabel;
+- (void)reloadImages;
+- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (id)fontForLabelAtIndex:(unsigned int)arg1;
 
 @end

@@ -9,7 +9,7 @@
 
 
 - (id)nextObject;
-- (void)dealloc;
 - (id)initWithObject:(id)arg1;
+- (void)dealloc;
 
 @end

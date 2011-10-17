@@ -4,30 +4,31 @@
 
 @class NSNumber, NSData, NSString;
 
-@interface FTRejectMessage : FTMessage  {
-    NSData *_peerPushToken;
+@interface FTRejectMessage : FTFaceTimeMessage <NSCopying> {
     NSData *_selfPushToken;
+    NSData *_peerPushToken;
     NSString *_peerID;
     NSNumber *_reason;
 }
 
-@property(copy) NSNumber * reason;
-@property(copy) NSString * peerID;
 @property(copy) NSData * peerPushToken;
 @property(copy) NSData * selfPushToken;
+@property(copy) NSString * peerID;
+@property(copy) NSNumber * reason;
 
 
+- (id)messageBody;
 - (void)setReason:(id)arg1;
+- (void)setPeerID:(id)arg1;
 - (id)peerID;
-- (id)bagKey;
 - (id)reason;
-- (void)dealloc;
-- (void)setSelfPushToken:(id)arg1;
 - (void)setPeerPushToken:(id)arg1;
 - (id)peerPushToken;
-- (void)setPeerID:(id)arg1;
+- (void)setSelfPushToken:(id)arg1;
 - (id)selfPushToken;
 - (id)requiredKeys;
-- (id)messageBody;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)bagKey;
 
 @end

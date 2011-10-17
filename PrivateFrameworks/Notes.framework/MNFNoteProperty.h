@@ -7,8 +7,8 @@
 @interface MNFNoteProperty : NSManagedObject  {
 }
 
-@property(retain) id propertyValue;
 @property(retain) NSString * propertyKey;
+@property(retain) id propertyValue;
 
 
 

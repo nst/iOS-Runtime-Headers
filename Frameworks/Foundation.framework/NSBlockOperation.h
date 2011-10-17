@@ -9,10 +9,10 @@
 
 + (id)blockOperationWithBlock:(id)arg1;
 
+- (id)executionBlocks;
+- (void)addExecutionBlock:(id)arg1;
 - (void)main;
 - (id)init;
 - (void)dealloc;
-- (void)addExecutionBlock:(id)arg1;
-- (id)executionBlocks;
 
 @end

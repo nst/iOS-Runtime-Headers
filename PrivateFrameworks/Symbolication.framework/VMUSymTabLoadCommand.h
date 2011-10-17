@@ -10,9 +10,9 @@
 }
 
 
+- (BOOL)isSymTab;
 - (id)initWithMemory:(id)arg1;
 - (unsigned int)symoff;
-- (BOOL)isSymTab;
 - (unsigned int)stroff;
 - (unsigned int)nsyms;
 - (unsigned int)strsize;

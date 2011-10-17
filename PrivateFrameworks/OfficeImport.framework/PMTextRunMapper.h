@@ -9,10 +9,10 @@
 }
 
 
-- (id)fontScheme;
-- (BOOL)_isDefaultFill:(id)arg1;
 - (id)createCharacterStyleWithState:(id)arg1;
+- (BOOL)_isDefaultFill:(id)arg1;
 - (id)initWithOadTextRun:(id)arg1 parent:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (id)fontScheme;
 
 @end

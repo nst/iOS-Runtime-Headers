@@ -10,18 +10,18 @@
     BOOL _footerVisible;
 }
 
-@property(getter=isFooterVisible) BOOL footerVisible;
-@property(retain) UIView * footerView;
 @property(retain) UIView * contentView;
+@property(retain) UIView * footerView;
+@property(getter=isFooterVisible) BOOL footerVisible;
 
 
+- (void)setFooterView:(id)arg1;
+- (id)footerView;
 - (void)setContentView:(id)arg1;
 - (id)contentView;
 - (void)layoutSubviews;
 - (void)dealloc;
-- (void)setFooterView:(id)arg1;
-- (void)setFooterVisible:(BOOL)arg1;
 - (BOOL)isFooterVisible;
-- (id)footerView;
+- (void)setFooterVisible:(BOOL)arg1;
 
 @end

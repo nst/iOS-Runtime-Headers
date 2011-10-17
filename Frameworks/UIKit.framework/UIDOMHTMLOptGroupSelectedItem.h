@@ -11,13 +11,13 @@
 @property(retain) DOMHTMLOptGroupElement * _node;
 
 
-- (BOOL)selected;
-- (void)setSelected:(BOOL)arg1;
-- (id)node;
 - (void)unselect;
-- (void)set_node:(id)arg1;
-- (id)_node;
+- (id)node;
 - (id)initWithHTMLOptGroupNode:(id)arg1;
+- (BOOL)selected;
+- (id)_node;
+- (void)set_node:(id)arg1;
+- (void)setSelected:(BOOL)arg1;
 - (void)dealloc;
 
 @end

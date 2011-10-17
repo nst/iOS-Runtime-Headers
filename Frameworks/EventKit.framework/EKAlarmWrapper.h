@@ -8,12 +8,12 @@
 
 + (id)wrapperWithAlarmOccurrence:(struct CalAlarmOccurrence { }*)arg1;
 
-- (double)fireDate;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)description;
-- (id)initWithAlarmOccurrence:(struct CalAlarmOccurrence { }*)arg1;
 - (id)occurrence;
+- (id)initWithAlarmOccurrence:(struct CalAlarmOccurrence { }*)arg1;
+- (double)fireDate;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 
 @end

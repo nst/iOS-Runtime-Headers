@@ -17,10 +17,10 @@
 - (void)reset;
 - (void)dealloc;
 - (id)caches;
-- (id)cacheForClass:(Class)arg1;
-- (id)cellContext;
-- (id)initWithTableHeight:(float)arg1;
 - (void)setCellContext:(id)arg1;
+- (id)initWithTableHeight:(float)arg1;
+- (id)cellContext;
+- (id)cacheForClass:(Class)arg1;
 - (void)resetLayoutCaches;
 
 @end

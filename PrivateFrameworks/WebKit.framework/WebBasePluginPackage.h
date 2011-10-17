@@ -7,57 +7,72 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSMutableDictionary, NSMutableSet, NSString, NSDictionary, NSBundle;
+@class NSMutableSet;
 
-@interface WebBasePluginPackage : NSObject <WebCorePluginInfo> {
+@interface WebBasePluginPackage : NSObject  {
     NSMutableSet *pluginDatabases;
-    NSString *name;
-    NSString *path;
-    NSString *pluginDescription;
-    NSBundle *bundle;
-    struct __CFBundle { } *cfBundle;
-    NSDictionary *MIMEToDescription;
-    NSDictionary *MIMEToExtensions;
-    NSMutableDictionary *extensionToMIME;
+    struct String { 
+        struct RefPtr<WTF::StringImpl> { 
+            struct StringImpl {} *m_ptr; 
+        } m_impl; 
+    } path;
+    struct PluginInfo { 
+        struct String { 
+            struct RefPtr<WTF::StringImpl> { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+        } name; 
+        struct String { 
+            struct RefPtr<WTF::StringImpl> { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+        } file; 
+        struct String { 
+            struct RefPtr<WTF::StringImpl> { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+        } desc; 
+        struct Vector<WebCore::MimeClassInfo,0ul> { 
+            unsigned int m_size; 
+            struct VectorBuffer<WebCore::MimeClassInfo,0ul> { 
+                struct MimeClassInfo {} *m_buffer; 
+                unsigned int m_capacity; 
+            } m_buffer; 
+        } mimes; 
+    } pluginInfo;
+    struct RetainPtr<__CFBundle*> { 
+        struct __CFBundle {} *m_ptr; 
+    } cfBundle;
     int (*BP_CreatePluginMIMETypesPreferences)();
 }
 
++ (void)initialize;
 + (id)pluginWithPath:(id)arg1;
 + (id)preferredLocalizationName;
-+ (void)initialize;
 
+- (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
+- (void)finalize;
+- (id)MIMETypeForExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
+- (unsigned long)versionNumber;
+- (void)unload;
+- (void).cxx_destruct;
+- (id).cxx_construct;
+- (id)initWithPath:(id)arg1;
+- (BOOL)load;
+- (BOOL)isQuickTimePlugIn;
+- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleIdentifier;
+- (BOOL)supportsMIMEType:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
 - (BOOL)getPluginInfoFromPLists;
-- (id)extensionEnumerator;
+- (const struct PluginInfo { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct Vector<WebCore::MimeClassInfo,0ul> { unsigned int x_4_1_1; struct VectorBuffer<WebCore::MimeClassInfo,0ul> { struct MimeClassInfo {} *x_2_2_1; unsigned int x_2_2_2; } x_4_1_2; } x4; }*)pluginInfo;
+- (BOOL)supportsExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
 - (BOOL)isJavaPlugIn;
 - (BOOL)isNativeLibraryData:(id)arg1;
 - (void)wasAddedToPluginDatabase:(id)arg1;
 - (void)wasRemovedFromPluginDatabase:(id)arg1;
-- (id)pathByResolvingSymlinksAndAliasesInPath:(id)arg1;
-- (void)setMIMEToExtensionsDictionary:(id)arg1;
-- (void)setMIMEToDescriptionDictionary:(id)arg1;
-- (void)setPluginDescription:(id)arg1;
 - (void)createPropertyListFile;
+- (id)_objectForInfoDictionaryKey:(id)arg1;
 - (id)pListForPath:(id)arg1 createFile:(BOOL)arg2;
-- (BOOL)getPluginInfoFromBundleAndMIMEDictionary:(id)arg1;
-- (id)initWithPath:(id)arg1;
-- (id)path;
-- (id)bundle;
-- (void)finalize;
-- (BOOL)isQuickTimePlugIn;
-- (void)setName:(id)arg1;
-- (id)name;
 - (void)dealloc;
-- (id)description;
-- (BOOL)load;
-- (void)setPath:(id)arg1;
-- (id)extensionsForMIMEType:(id)arg1;
-- (id)MIMETypeForExtension:(id)arg1;
-- (void)unload;
-- (unsigned long)versionNumber;
-- (id)filename;
-- (id)pluginDescription;
-- (id)MIMETypeEnumerator;
-- (id)descriptionForMIMEType:(id)arg1;
 - (oneway void)_webcore_releaseOnWebThread;
 - (oneway void)release;
 

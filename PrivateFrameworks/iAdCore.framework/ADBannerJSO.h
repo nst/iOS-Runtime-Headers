@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class UIWebView, <AdSheetBannerViewDelegate>;
+@class ADWebView, <AdSheetBannerViewDelegate>;
 
 @interface ADBannerJSO : ADJavaScriptObject  {
     <AdSheetBannerViewDelegate> *_delegate;
@@ -20,35 +20,34 @@
         float x; 
         float y; 
     } _tapLocationBeforeTransition;
-    UIWebView *_webView;
+    ADWebView *_webView;
     BOOL _contentVisible;
 }
 
-@property BOOL contentVisible;
-@property UIWebView * webView;
-@property struct CGPoint { float x; float y; } tapLocationBeforeTransition;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } screenRectBeforeTransition;
 @property <AdSheetBannerViewDelegate> * delegate;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenRectBeforeTransition;
+@property struct CGPoint { float x1; float x2; } tapLocationBeforeTransition;
+@property ADWebView * webView;
+@property BOOL contentVisible;
 
 + (id)scriptingKeys;
 + (id)scriptSelectors;
 
-- (void)readyForTransitionIn;
-- (void)transitionInComplete;
-- (void)_dispatchDOMEvent:(id)arg1;
-- (struct CGPoint { float x1; float x2; })tapLocationBeforeTransition;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenRectBeforeTransition;
-- (void)setScreenRectBeforeTransition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDelegate:(id)arg1;
 - (BOOL)contentVisible;
+- (void)setTapLocationBeforeTransition:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })tapLocationBeforeTransition;
+- (void)setScreenRectBeforeTransition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenRectBeforeTransition;
+- (void)setContentVisible:(BOOL)arg1;
 - (id)tapLocation;
 - (id)rectOnScreen;
-- (void)setTapLocationBeforeTransition:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setVisible:(BOOL)arg1;
+- (void)fireTestProbe:(id)arg1 withOptions:(id)arg2;
+- (void)transitionInComplete;
+- (void)readyForTransitionIn;
 - (void)setWebView:(id)arg1;
+- (void)setVisible:(BOOL)arg1;
 - (id)webView;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (void)setContentVisible:(BOOL)arg1;
-- (void)log:(id)arg1;
 
 @end

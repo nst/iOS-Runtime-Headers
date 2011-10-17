@@ -22,27 +22,27 @@
 @property(readonly) NSString * path;
 
 
-- (void)deleteAllValuesOnOrBeforeDate:(int)arg1;
-- (void)insertScalar:(long long)arg1 forKey:(id)arg2 withDaysSince1970:(int)arg3;
-- (void)deleteScalarForKey:(id)arg1 withDaysSince1970:(int)arg2;
-- (void)insertDistribution:(struct { double x1; double x2; double x3; double x4; int x5; }*)arg1 forKey:(id)arg2 withDaysSince1970:(int)arg3;
-- (id)initWithDefaultPath;
-- (BOOL)scalarsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 rowHandler:(id)arg4;
+- (BOOL)_createTables;
+- (id)path;
+- (int)beginTransaction;
+- (id)initWithPath:(id)arg1;
+- (int)commitTransaction;
 - (BOOL)scalarsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 withConsumer:(id)arg4;
-- (BOOL)distributionsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 rowHandler:(id)arg4;
+- (id)initWithDefaultPath;
 - (BOOL)distributionsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 withConsumer:(id)arg4;
 - (void)incrementalVacuum;
+- (void)deleteAllValuesOnOrBeforeDate:(int)arg1;
 - (int)scalar:(long long*)arg1 forKey:(id)arg2 withDaysSince1970:(int)arg3;
 - (int)distribution:(struct { double x1; double x2; double x3; double x4; int x5; }*)arg1 forKey:(id)arg2 withDaysSince1970:(int)arg3;
 - (void)updateScalar:(long long)arg1 forID:(int)arg2;
 - (void)updateDistribution:(struct { double x1; double x2; double x3; double x4; int x5; }*)arg1 forID:(int)arg2;
+- (void)insertScalar:(long long)arg1 forKey:(id)arg2 withDaysSince1970:(int)arg3;
+- (void)insertDistribution:(struct { double x1; double x2; double x3; double x4; int x5; }*)arg1 forKey:(id)arg2 withDaysSince1970:(int)arg3;
+- (void)deleteScalarForKey:(id)arg1 withDaysSince1970:(int)arg2;
 - (void)deleteDistributionForKey:(id)arg1 withDaysSince1970:(int)arg2;
 - (int)_schemaVersion;
-- (BOOL)_createTables;
-- (id)initWithPath:(id)arg1;
-- (id)path;
+- (BOOL)scalarsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 rowHandler:(id)arg4;
+- (BOOL)distributionsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 rowHandler:(id)arg4;
 - (void)dealloc;
-- (int)commitTransaction;
-- (int)beginTransaction;
 
 @end

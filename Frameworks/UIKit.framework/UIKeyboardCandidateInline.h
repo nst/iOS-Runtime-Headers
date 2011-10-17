@@ -2,17 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIImage, NSTimer, UILabel, UIScroller, UIView, NSArray, UIKeyboardCandidateSafetyNetVie, UIKeyboardGenericKeyView, NSString, UIImageView, UIAutocorrectInlinePrompt;
+@class NSArray, NSString, UIView<UIKeyboardCandidateList>, <UIKeyboardCandidateListDelegate>, UIKeyboardCandidateExtended;
 
-@interface UIKeyboardCandidateInline : UIView <UIKeyboardCandidateList> {
-    id _delegate;
+@interface UIKeyboardCandidateInline : NSObject <UIKeyboardCandidateList, UIKeyboardCandidateListDelegate> {
+    <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
     NSArray *_candidates;
-    unsigned int _currentCandidateIndex;
-    unsigned int _numCandidates;
-    unsigned int _currentPageIndex;
-    int _promptTextType;
-    UILabel *_inlineTextLabel;
     NSString *_inlineText;
+    int _promptTextType;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,167 +19,61 @@
             float height; 
         } size; 
     } _inlineRect;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _frame;
-    unsigned int _lineHeight;
-    unsigned int _numColumns;
-    BOOL _alwaysShowBackground;
-    BOOL _showControls;
-    NSMutableArray *_candidateLines;
-    UIAutocorrectInlinePrompt *_inlineView;
-    UIScroller *_scrollView;
-    UIImageView *_controlsView;
-    UIKeyboardGenericKeyView *_subviewButton;
-    UIKeyboardGenericKeyView *_nextPageButton;
-    UIKeyboardGenericKeyView *_prevPageButton;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _inlineCandidateFrame;
-    float _lazyLayoutNextOriginY;
-    unsigned int _lazyLayoutNextCandidateIndex;
-    int _orientation;
-    BOOL _forMobileNotes;
-    BOOL _landscape;
-    BOOL _animating;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _windowFrame;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _draggingStartOffset;
-    UIImageView *_closeButton;
-    UIImage *_backgroundImage;
-    UIImage *_backgroundTopImage;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _closeButtonFrame;
-    BOOL _showScroller;
-    NSTimer *_deferredLayoutTimer;
-    UIView *_shadowView;
-    BOOL _caretVisible;
-    BOOL _caretblinking;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } m_caretRect;
-    UIView *m_caretView;
-    NSTimer *m_caretTimer;
-    BOOL m_caretShowingNow;
-    BOOL m_showingCompletions;
-    UIKeyboardCandidateSafetyNetVie *m_landscapeSafetyNetView;
-    int _windowType;
+    UIKeyboardCandidateExtended *_extendedCandidatesView;
+    BOOL _showingExtendedCandidatesView;
 }
+
+@property <UIKeyboardCandidateListDelegate> * candidateListDelegate;
+@property(copy) NSArray * candidates;
+@property(copy) NSString * inlineText;
+@property int promptTextType;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } inlineRect;
+@property(readonly) UIView<UIKeyboardCandidateList> * inlineView;
+@property(retain) UIKeyboardCandidateExtended * extendedCandidatesView;
+@property BOOL showingExtendedCandidatesView;
 
 + (void)releaseSharedInstance;
 + (id)sharedInstance;
-+ (void)_initializeSafeCategory;
 
-- (void)showCaret:(BOOL)arg1 gradually:(BOOL)arg2;
-- (void)setAlwaysShowBackground:(BOOL)arg1;
-- (void)showPageAtIndex:(unsigned int)arg1;
-- (void)showPreviousPage;
-- (unsigned int)currentIndex;
-- (id)candidateAtIndex:(unsigned int)arg1;
-- (int)textEffectsVisibilityLevel;
-- (void)_setupButton:(id)arg1;
-- (void)adjustForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2;
-- (void)_setInlineText:(id)arg1;
-- (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
-- (id)cellAtIndex:(unsigned int)arg1;
-- (id)currentCandidate;
-- (void)setCurrentIndex:(unsigned int)arg1;
+- (int)promptTextType;
+- (void)setPromptTextType:(int)arg1;
+- (void)animateInlineCandidate;
+- (void)hideExtendedCandidatesView;
+- (void)showExtendedCandidatesView;
+- (void)setExtendedCandidatesView:(id)arg1;
+- (void)setShowingExtendedCandidatesView:(BOOL)arg1;
+- (BOOL)showingExtendedCandidatesView;
+- (id)extendedCandidatesView;
+- (id)candidateListDelegate;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inlineRect;
+- (id)inlineText;
+- (void)setInlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setInlineText:(id)arg1;
+- (void)setCandidateListDelegate:(id)arg1;
 - (void)configureKeyboard:(id)arg1;
-- (void)setShowControls:(BOOL)arg1;
-- (void)inlineCandidateClicked:(id)arg1;
-- (void)cellSelected:(id)arg1;
-- (void)cancelButtonSelected:(id)arg1;
-- (void)prevPageButtonSelected:(id)arg1;
-- (void)nextPageButtonSelected:(id)arg1;
-- (void)layoutWithWindowType:(int)arg1;
-- (void)_showCandidateListInline;
-- (void)clearLayout;
-- (void)_clearInlineCandidate;
-- (void)_fadeInlineCandidate;
-- (void)_animateInlineCandidate;
-- (void)_showCandidateListBottom;
-- (float)_adjustedCandidateFrameWidth;
-- (void)_adjustFrameSizeForCandidateLines:(int)arg1;
-- (void)inlineCandidateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (void)_showBackground;
-- (void)scrollerDidEndAnimatedScrolling:(id)arg1;
-- (void)installLandscapeSafetyNetView;
-- (void)removeLandscapeSafetyNetView;
-- (void)_startBackgroundLayoutIfNeeded;
-- (void)_stopBackgroundLayout;
-- (void)_hideBackground;
-- (void)_periodicLayoutNextPage:(id)arg1;
-- (BOOL)_layoutNextLine;
-- (BOOL)_layoutNextLineWithMarginLeft:(float)arg1 marginRight:(float)arg2 candidateFrameWidth:(float)arg3;
-- (void)setCaretPosition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)_inlineView;
-- (void)mouseDown:(struct __GSEvent { }*)arg1;
-- (BOOL)scroller:(id)arg1 shouldAdjustSmoothScrollEndForVelocity:(struct CGSize { float x1; float x2; })arg2;
-- (void)scrollerWillStartDragging:(id)arg1;
+- (id)candidateAtIndex:(unsigned int)arg1;
+- (id)currentCandidate;
+- (void)showPageAtIndex:(unsigned int)arg1;
 - (BOOL)needsWebDocumentViewEventsDirectly;
-- (void)obsoleteCandidates;
-- (BOOL)obstructsView;
+- (id)_inlineView;
+- (void)candidateListShouldBeDismissed:(id)arg1;
+- (void)candidateListSelectionDidChange:(id)arg1;
+- (void)candidateListAcceptCandidate:(id)arg1;
+- (void)showCandidateAtIndex:(unsigned int)arg1;
+- (void)setCompletionContext:(id)arg1;
+- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
+- (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
-- (void)layout;
-- (void)showNextCandidate;
+- (void)setCandidates:(id)arg1;
+- (unsigned int)currentIndex;
+- (void)showPreviousPage;
 - (void)showNextPage;
 - (void)showPreviousCandidate;
-- (void)setUIKeyboardCandidateListDelegate:(id)arg1;
-- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
-- (void)setCompletionContext:(id)arg1;
-- (void)showCandidateAtIndex:(unsigned int)arg1;
-- (void)candidateListAcceptCandidate:(id)arg1;
-- (void)autocorrectionAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)mouseUp:(struct __GSEvent { }*)arg1;
-- (int)orientation;
-- (id)rotatingContentViewForWindow:(id)arg1;
-- (void)dealloc;
+- (void)showNextCandidate;
+- (void)layout;
 - (unsigned int)count;
-- (BOOL)ignoresMouseEvents;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGPoint { float x1; float x2; })scroller:(id)arg1 adjustSmoothScrollEnd:(struct CGPoint { float x1; float x2; })arg2 velocity:(struct CGSize { float x1; float x2; })arg3;
-- (void)scrollerDidEndDragging:(id)arg1 willSmoothScroll:(BOOL)arg2;
+- (id)candidates;
+- (void)dealloc;
 
 @end

@@ -6,37 +6,88 @@
    See Warning(s) below.
  */
 
-@class NSURLRequest;
+@class NSURLResponse, NSURLRequest, NSMutableData, NSString, NSURLConnection;
 
 @interface ADResourceDownloadJob : NSObject  {
-    NSURLRequest *request;
+    NSURLRequest *_request;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
-    id successBlock;
+    id _successBlock;
 
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
-    id failureBlock;
+    id _failureBlock;
 
-    unsigned int maximumSize;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _authenticationBlock;
+
+    unsigned int _maximumSize;
+    double _enqueueTime;
+    double _startTime;
+    double _completeTime;
+    double _responseTime;
+    NSURLConnection *_connection;
+    NSURLResponse *_response;
+    NSMutableData *_data;
+    int _status;
+    NSString *_mimeType;
+    id _userData;
 }
 
-@property unsigned int maximumSize;
-@property(copy) id failureBlock;
-@property(copy) id successBlock;
 @property(retain) NSURLRequest * request;
+@property(copy) id successBlock;
+@property(copy) id failureBlock;
+@property(copy) id authenticationBlock;
+@property unsigned int maximumSize;
+@property(readonly) double totalTime;
+@property(retain) NSURLResponse * response;
+@property(retain) NSMutableData * data;
+@property int status;
+@property(copy) NSString * mimeType;
+@property(retain) id userData;
+@property double enqueueTime;
+@property double startTime;
+@property double completeTime;
+@property double responseTime;
+@property(retain) NSURLConnection * connection;
 
++ (id)downloadJobWithRequest:(id)arg1 maximumSize:(unsigned int)arg2 successBlock:(id)arg3 failureBlock:(id)arg4;
 
-- (id)successBlock;
-- (void)setFailureBlock:(id)arg1;
-- (id)failureBlock;
-- (void)setSuccessBlock:(id)arg1;
+- (void)setStatus:(int)arg1;
 - (void)setRequest:(id)arg1;
+- (id)data;
+- (void)setResponse:(id)arg1;
+- (void)setResponseTime:(double)arg1;
+- (double)responseTime;
+- (void)setCompleteTime:(double)arg1;
+- (double)completeTime;
+- (void)setEnqueueTime:(double)arg1;
+- (double)enqueueTime;
+- (void)setAuthenticationBlock:(id)arg1;
+- (id)authenticationBlock;
+- (id)failureBlock;
+- (id)successBlock;
+- (double)totalTime;
+- (void)setFailureBlock:(id)arg1;
+- (void)setSuccessBlock:(id)arg1;
+- (void)setData:(id)arg1;
+- (double)startTime;
+- (void)setUserData:(id)arg1;
+- (id)userData;
+- (id)mimeType;
 - (id)request;
-- (void)dealloc;
-- (unsigned int)maximumSize;
+- (id)response;
+- (void)setStartTime:(double)arg1;
+- (void)setMimeType:(id)arg1;
 - (void)setMaximumSize:(unsigned int)arg1;
+- (unsigned int)maximumSize;
+- (int)status;
+- (void)setConnection:(id)arg1;
+- (id)connection;
+- (void)dealloc;
 
 @end

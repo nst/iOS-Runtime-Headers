@@ -6,16 +6,20 @@
 }
 
 
+- (void)setReadabilityHandler:(id)arg1;
+- (id)readabilityHandler;
+- (void)setWriteabilityHandler:(id)arg1;
+- (id)writeabilityHandler;
 - (int)fileDescriptor;
-- (id)availableData;
-- (id)readDataOfLength:(unsigned int)arg1;
-- (id)readDataToEndOfFile;
-- (void)writeData:(id)arg1;
-- (unsigned long long)offsetInFile;
-- (unsigned long long)seekToEndOfFile;
-- (void)seekToFileOffset:(unsigned long long)arg1;
-- (void)truncateFileAtOffset:(unsigned long long)arg1;
 - (void)synchronizeFile;
+- (void)truncateFileAtOffset:(unsigned long long)arg1;
+- (unsigned long long)seekToEndOfFile;
+- (unsigned long long)offsetInFile;
+- (id)readDataToEndOfFile;
+- (id)availableData;
+- (void)seekToFileOffset:(unsigned long long)arg1;
+- (void)writeData:(id)arg1;
 - (void)closeFile;
+- (id)readDataOfLength:(unsigned int)arg1;
 
 @end

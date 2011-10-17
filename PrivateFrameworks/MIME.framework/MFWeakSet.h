@@ -2,22 +2,63 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@class NSLock;
 
-@interface MFWeakSet : MFWeakObject <MFWeakReferenceHolder> {
-    struct __CFSet { } *_set;
+@interface MFWeakSet : NSMutableSet  {
+    NSLock *_lock;
+    unsigned long _gen;
+    struct __CFDictionary { } *_objects;
 }
 
++ (id)setWithCapacity:(unsigned int)arg1;
++ (id)setWithArray:(id)arg1;
++ (id)setWithObjects:(id)arg1;
++ (id)set;
++ (id)setWithObject:(id)arg1;
++ (id)setWithSet:(id)arg1;
++ (id)setWithObjects:(id*)arg1 count:(unsigned int)arg2;
 
-- (void)objectWillBeDeallocated:(id)arg1;
+- (id)_copyAllItems;
+- (id)setByAddingObjectsFromArray:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)member:(id)arg1;
+- (BOOL)intersectsSet:(id)arg1;
+- (void)unionSet:(id)arg1;
+- (id)objectEnumerator;
+- (BOOL)isEqualToSet:(id)arg1;
+- (id)initWithArray:(id)arg1;
 - (id)allObjects;
+- (id)anyObject;
+- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
+- (id)setByAddingObjectsFromSet:(id)arg1;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (id)objectsPassingTest:(id)arg1;
+- (void)minusSet:(id)arg1;
+- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
+- (void)intersectSet:(id)arg1;
+- (id)initWithObjects:(id)arg1;
+- (BOOL)containsObject:(id)arg1;
+- (void)enumerateObjectsUsingBlock:(id)arg1;
+- (void)removeAllObjects;
+- (void)makeObjectsPerformSelector:(SEL)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (void)removeObject:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)setByAddingObject:(id)arg1;
+- (BOOL)isSubsetOfSet:(id)arg1;
+- (void)setSet:(id)arg1;
+- (id)initWithSet:(id)arg1;
+- (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
+- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (id)descriptionWithLocale:(id)arg1;
+- (void)addObjectsFromArray:(id)arg1;
+- (unsigned int)count;
+- (id)description;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (void)addObject:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)addObject:(id)arg1;
-- (void)applyFunction:(int (*)())arg1 context:(void*)arg2;
 
 @end

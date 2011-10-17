@@ -12,8 +12,8 @@
 
 - (void)main;
 - (void)dealloc;
-- (void)createChildOperations;
 - (void)didFinish;
 - (id)initWithParticipant:(id)arg1 conferenceID:(id)arg2;
+- (void)createChildOperations;
 
 @end

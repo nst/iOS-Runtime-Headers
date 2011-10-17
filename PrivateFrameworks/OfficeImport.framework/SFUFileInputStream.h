@@ -11,17 +11,17 @@
 }
 
 
-- (void)close;
-- (long long)offset;
-- (void)dealloc;
-- (BOOL)canSeek;
 - (id)initWithFileDescriptor:(int)arg1 offset:(long long)arg2 length:(long long)arg3;
 - (id)initWithPath:(id)arg1 offset:(long long)arg2 length:(long long)arg3;
-- (void)seekToOffset:(long long)arg1;
 - (id)initWithPath:(id)arg1 offset:(long long)arg2;
+- (id)closeLocalStream;
+- (BOOL)canSeek;
+- (void)seekToOffset:(long long)arg1;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
-- (id)closeLocalStream;
+- (void)close;
+- (long long)offset;
+- (void)dealloc;
 
 @end

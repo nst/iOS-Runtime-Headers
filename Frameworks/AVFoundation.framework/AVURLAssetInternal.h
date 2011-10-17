@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray, AVAssetInspectorLoader, NSString, NSURL;
+@class NSArray, AVAssetInspectorLoader, NSString, <AVURLAssetFailedURLRequestHandling>, NSURL;
 
 @interface AVURLAssetInternal : NSObject  {
     AVAssetInspectorLoader *loader;
@@ -10,6 +10,7 @@
     NSArray *tracks;
     NSArray *chapterGroupInfo;
     NSString *anchorChapterType;
+    <AVURLAssetFailedURLRequestHandling> *failedURLRequestDelegate;
 }
 
 

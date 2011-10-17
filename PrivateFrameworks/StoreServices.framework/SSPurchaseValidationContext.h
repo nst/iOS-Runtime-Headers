@@ -2,37 +2,45 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString, SSNetworkConstraints, NSIndexSet;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSString, NSIndexSet;
 
 @interface SSPurchaseValidationContext : NSObject <NSCopying> {
     NSIndexSet *_allowedDeviceIdentifiers;
     long long _diskSpaceAvailable;
-    SSNetworkConstraints *_networkConstraints;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _sizeLimitBlock;
+
     NSString *_systemName;
     NSString *_systemVersion;
 }
 
-@property(copy) NSString * systemVersion;
-@property(copy) NSString * systemName;
-@property(retain) SSNetworkConstraints * networkConstraints;
-@property long long diskSpaceAvailable;
 @property(copy) NSIndexSet * allowedDeviceIdentifiers;
+@property long long diskSpaceAvailable;
+@property(copy) id sizeLimitBlock;
+@property(copy) NSString * systemName;
+@property(copy) NSString * systemVersion;
 
 
-- (id)systemName;
+- (void)setSystemName:(id)arg1;
+- (void)setSizeLimitBlock:(id)arg1;
+- (void)setDiskSpaceAvailable:(long long)arg1;
+- (void)setAllowedDeviceIdentifiers:(id)arg1;
+- (BOOL)_isAnyIPod;
+- (BOOL)_isAnyIPad;
+- (id)allowedDeviceIdentifiers;
+- (id)_supportedDeviceForOffer:(id)arg1;
+- (id)sizeLimitBlock;
+- (void)setSystemVersion:(id)arg1;
 - (id)systemVersion;
+- (id)systemName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)networkConstraints;
-- (void)setDiskSpaceAvailable:(long long)arg1;
-- (void)setSystemName:(id)arg1;
-- (void)setNetworkConstraints:(id)arg1;
-- (void)setAllowedDeviceIdentifiers:(id)arg1;
-- (void)setSystemVersion:(id)arg1;
-- (BOOL)_isAnyIPad;
-- (BOOL)_isAnyIPod;
-- (id)_supportedDeviceForOffer:(id)arg1;
-- (id)allowedDeviceIdentifiers;
 - (long long)diskSpaceAvailable;
 
 @end

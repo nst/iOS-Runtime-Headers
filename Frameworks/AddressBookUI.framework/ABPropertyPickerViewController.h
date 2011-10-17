@@ -2,8 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
+@class NSArray;
+
 @interface ABPropertyPickerViewController : ABPickerViewController <ABCardPropertyPickerDelegate> {
     struct __CFArray { } *_properties;
+    NSArray *_policies;
     void *_addressBook;
     void *_person;
 }
@@ -11,21 +14,25 @@
 @property void* addressBook;
 @property void* person;
 @property struct __CFArray { }* properties;
+@property(retain) NSArray * policies;
 
 
 - (void)setAddressBook:(void*)arg1;
-- (void)loadView;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)dealloc;
-- (void)setProperties:(struct __CFArray { }*)arg1;
-- (struct __CFArray { }*)properties;
-- (float)ab_heightToFitForViewInPopoverView;
-- (id)propertyPicker;
-- (void)propertyPicker:(id)arg1 selectedProperty:(int)arg2;
-- (void*)person;
-- (void)setPerson:(void*)arg1;
 - (void*)addressBook;
+- (struct __CFArray { }*)properties;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)setPerson:(void*)arg1;
+- (void*)person;
+- (void)setProperties:(struct __CFArray { }*)arg1;
+- (void)dealloc;
+- (id)policies;
+- (void)setPolicies:(id)arg1;
+- (id)propertyPicker;
+- (float)ab_heightToFitForViewInPopoverView;
+- (void)propertyPicker:(id)arg1 selectedProperty:(int)arg2;
+- (void)propertyPicker:(id)arg1 selectedProperty:(int)arg2 withDefaultValue:(id)arg3;
 
 @end

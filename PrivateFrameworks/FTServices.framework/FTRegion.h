@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class FTRegion, NSArray, NSString, NSDictionary;
+@class NSArray, FTRegion, NSString, NSDictionary;
 
 @interface FTRegion : NSObject  {
     NSDictionary *_dictionary;
-    FTRegion *_parentRegion;
     NSArray *_subRegions;
+    FTRegion *_parentRegion;
 }
 
 @property(readonly) NSString * isoCode;
@@ -16,19 +16,25 @@
 @property(readonly) NSString * basePhoneNumber;
 @property(readonly) FTRegion * parentRegion;
 @property(readonly) NSArray * subRegions;
+@property(retain) NSDictionary * _dictionary;
+@property(retain) FTRegion * _parentRegion;
 
 
+- (id)_initWithDictionary:(id)arg1;
+- (id)label;
+- (void)set_parentRegion:(id)arg1;
+- (id)_parentRegion;
+- (void)set_dictionary:(id)arg1;
+- (id)_dictionary;
+- (void)_setParentRegion:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)parentRegion;
 - (id)regionWithID:(id)arg1;
 - (id)subRegions;
 - (id)basePhoneNumber;
 - (id)isoCode;
 - (id)regionID;
-- (id)_initWithDictionary:(id)arg1;
-- (id)label;
-- (void)dealloc;
-- (id)description;
-- (void)_setParentRegion:(id)arg1;
 - (BOOL)isLeafNode;
 - (BOOL)search:(id)arg1 withResults:(id)arg2;
 

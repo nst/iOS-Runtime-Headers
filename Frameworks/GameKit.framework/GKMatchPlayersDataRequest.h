@@ -17,43 +17,43 @@
     unsigned char _matchVersion;
 }
 
-@property unsigned char matchVersion;
-@property(retain) NSArray * relayPushes;
-@property(retain) NSData * cdxTicket;
-@property(retain) NSData * sessionToken;
-@property(retain) NSArray * matches;
-@property(retain) NSString * rid;
-@property(retain) NSData * connectionData;
-@property int connectedPeers;
-@property BOOL serverHosted;
 @property(retain) GKMatchRequest * matchRequest;
+@property BOOL serverHosted;
+@property int connectedPeers;
+@property(retain) NSData * connectionData;
+@property(retain) NSString * rid;
+@property(retain) NSArray * matches;
+@property(retain) NSData * sessionToken;
+@property(retain) NSData * cdxTicket;
+@property(retain) NSArray * relayPushes;
+@property unsigned char matchVersion;
 
 
-- (void)setConnectionData:(id)arg1;
-- (id)connectionData;
-- (id)matchRequest;
-- (int)connectedPeers;
 - (unsigned char)matchVersion;
-- (id)relayPushes;
-- (void)setRelayPushes:(id)arg1;
-- (id)cdxTicket;
 - (void)setCdxTicket:(id)arg1;
+- (void)setRelayPushes:(id)arg1;
 - (void)setMatches:(id)arg1;
-- (void)setRid:(id)arg1;
+- (int)connectedPeers;
 - (BOOL)serverHosted;
-- (void)setServerHosted:(BOOL)arg1;
-- (void)cancelWithError:(id)arg1;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (id)matchRequest;
 - (id)rid;
+- (id)header;
+- (void)cancelWithError:(id)arg1;
+- (void)setRid:(id)arg1;
 - (void)setSessionToken:(id)arg1;
-- (void)setMatchRequest:(id)arg1;
-- (void)setConnectedPeers:(int)arg1;
+- (void)handleResponseFromServer:(id)arg1;
 - (void)setMatchVersion:(unsigned char)arg1;
-- (id)matches;
+- (void)setConnectedPeers:(int)arg1;
+- (id)relayPushes;
+- (id)cdxTicket;
 - (id)sessionToken;
+- (id)matches;
+- (void)setServerHosted:(BOOL)arg1;
+- (void)setMatchRequest:(id)arg1;
 - (id)key;
 - (id)request;
+- (id)connectionData;
+- (void)setConnectionData:(id)arg1;
 - (void)dealloc;
-- (id)header;
 
 @end

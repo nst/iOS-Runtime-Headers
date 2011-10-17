@@ -11,37 +11,37 @@
 }
 
 
-- (id)initWithUSBBuffer:(void*)arg1;
+- (unsigned long)parameterAtIndex:(unsigned long)arg1;
 - (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 dataPhaseInfo:(unsigned long)arg3 numParameters:(unsigned long)arg4 parameters:(unsigned int*)arg5;
-- (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 dataPhaseInfo:(unsigned long)arg3;
 - (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 dataPhaseInfo:(unsigned long)arg3 parameter1:(unsigned long)arg4 parameter2:(unsigned long)arg5 parameter3:(unsigned long)arg6 parameter4:(unsigned long)arg7;
 - (unsigned long)dataPhaseInfo;
 - (void)setDataPhaseInfo:(unsigned long)arg1;
-- (int)numParameters;
 - (void)setPparameter:(unsigned long)arg1 atIndex:(unsigned long)arg2;
-- (void)setParameter1:(unsigned long)arg1;
-- (void)setParameter2:(unsigned long)arg1;
 - (void)setParameter4:(unsigned long)arg1;
 - (void)setParameter5:(unsigned long)arg1;
-- (id)contentForTCP;
-- (unsigned long)parameter2;
+- (void)setParameter1:(unsigned long)arg1;
+- (void)setParameter2:(unsigned long)arg1;
 - (void)setParameter3:(unsigned long)arg1;
+- (id)initWithUSBBuffer:(void*)arg1;
 - (id)contentForUSB;
-- (void)setOperationCode:(unsigned short)arg1;
 - (id)contentForUSBUsingBuffer:(void*)arg1 capacity:(unsigned long)arg2;
-- (unsigned long)transactionID;
+- (void)setOperationCode:(unsigned short)arg1;
 - (void)setTransactionID:(unsigned long)arg1;
-- (id)initWithTCPBuffer:(void*)arg1;
+- (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 dataPhaseInfo:(unsigned long)arg3;
 - (unsigned long)parameter1;
 - (unsigned short)operationCode;
 - (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 dataPhaseInfo:(unsigned long)arg3 parameter1:(unsigned long)arg4;
 - (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 dataPhaseInfo:(unsigned long)arg3 parameter1:(unsigned long)arg4 parameter2:(unsigned long)arg5 parameter3:(unsigned long)arg6;
 - (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 dataPhaseInfo:(unsigned long)arg3 parameter1:(unsigned long)arg4 parameter2:(unsigned long)arg5 parameter3:(unsigned long)arg6 parameter4:(unsigned long)arg7 parameter5:(unsigned long)arg8;
 - (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 dataPhaseInfo:(unsigned long)arg3 parameter1:(unsigned long)arg4 parameter2:(unsigned long)arg5;
+- (int)numParameters;
+- (unsigned long)parameter2;
 - (unsigned long)parameter3;
 - (unsigned long)parameter4;
 - (unsigned long)parameter5;
+- (id)contentForTCP;
+- (unsigned long)transactionID;
+- (id)initWithTCPBuffer:(void*)arg1;
 - (id)description;
-- (unsigned long)parameterAtIndex:(unsigned long)arg1;
 
 @end

@@ -5,7 +5,7 @@
 @class IMConnectionMonitor, NSString, NSArray;
 
 @interface NetworkChangeNotifier : NSObject <IMSystemMonitorListener, IMConnectionMonitorDelegate> {
-    struct __SCDynamicStore { } *_store;
+    const struct __SCDynamicStore { } *_store;
     struct __CFRunLoopSource { } *_runLoopSource;
     NSString *_myIP;
     NSArray *_myIPs;
@@ -18,23 +18,41 @@
 @property(readonly) NSArray * myIPAddresses;
 @property(readonly) unsigned short nextAvailablePort;
 @property(readonly) struct __SCDynamicStore { }* getDynamicStore;
+@property struct __SCDynamicStore { }* store;
+@property struct __CFRunLoopSource { }* runLoopSource;
+@property BOOL lastPostedNetworkUp;
+@property(retain) IMConnectionMonitor * connectionMonitor;
+@property(retain) NSString * myIP;
+@property(retain) NSArray * myIPs;
 
-+ (id)sharedNotifier;
-+ (BOOL)enableNotifications;
 + (void)disableNotifications;
++ (BOOL)enableNotifications;
++ (id)sharedNotifier;
 
 - (BOOL)isNetworkUp;
 - (void)systemDidWake;
 - (void)systemWillSleep;
+- (void)setLastPostedNetworkUp:(BOOL)arg1;
+- (BOOL)lastPostedNetworkUp;
+- (void)setConnectionMonitor:(id)arg1;
+- (id)connectionMonitor;
+- (void)setMyIPs:(id)arg1;
+- (id)myIPs;
+- (void)setMyIP:(id)arg1;
+- (id)myIP;
+- (void)setRunLoopSource:(struct __CFRunLoopSource { }*)arg1;
+- (struct __CFRunLoopSource { }*)runLoopSource;
+- (struct __SCDynamicStore { }*)getDynamicStore;
+- (unsigned short)nextAvailablePort;
+- (id)myIPAddresses;
+- (void)connectionMonitorDidUpdate:(id)arg1;
+- (void)_clearSharedDNSService;
+- (BOOL)_listenForChanges;
+- (void)_clearIPCache;
+- (void)setStore:(struct __SCDynamicStore { }*)arg1;
+- (struct __SCDynamicStore { }*)store;
 - (id)init;
 - (void)dealloc;
-- (void)_clearIPCache;
-- (id)myIPAddresses;
-- (unsigned short)nextAvailablePort;
-- (void)_clearSharedDNSService;
-- (struct __SCDynamicStore { }*)getDynamicStore;
-- (void)connectionMonitorDidUpdate:(id)arg1;
-- (BOOL)_listenForChanges;
 - (id)myIPAddress;
 
 @end

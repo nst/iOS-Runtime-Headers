@@ -6,13 +6,13 @@
 }
 
 @property(readonly) BOOL lengthComputable;
-@property(readonly) unsigned int loaded;
-@property(readonly) unsigned int total;
+@property(readonly) unsigned long long loaded;
+@property(readonly) unsigned long long total;
 
 
 - (BOOL)lengthComputable;
-- (unsigned int)loaded;
-- (unsigned int)total;
-- (void)initProgressEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 lengthComputableArg:(BOOL)arg4 loadedArg:(unsigned int)arg5 totalArg:(unsigned int)arg6;
+- (unsigned long long)loaded;
+- (unsigned long long)total;
+- (void)initProgressEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 lengthComputableArg:(BOOL)arg4 loadedArg:(unsigned long long)arg5 totalArg:(unsigned long long)arg6;
 
 @end

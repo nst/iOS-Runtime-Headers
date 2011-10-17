@@ -8,5 +8,6 @@
 + (void)_initializeSafeCategory;
 
 - (BOOL)loadAndReturnError:(id*)arg1;
+- (void)_loadAXBundleForBundleOnMainThread;
 
 @end

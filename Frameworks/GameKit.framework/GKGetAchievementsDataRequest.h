@@ -2,30 +2,23 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKPlayer, NSArray, GKGame;
+@class GKPlayer, GKGame;
 
 @interface GKGetAchievementsDataRequest : GKDataRequest  {
     GKGame *_game;
     GKPlayer *_player;
-    NSArray *_achievements;
 }
 
-@property(readonly) NSArray * achievements;
-@property(retain) GKPlayer * player;
 @property(retain) GKGame * game;
+@property(retain) GKPlayer * player;
 
 
-- (id)achievements;
-- (int)cachePriority;
-- (int)cacheType;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)game;
-- (void)setPlayer:(id)arg1;
-- (id)player;
 - (void)setGame:(id)arg1;
-- (id)cacheKey;
+- (void)setPlayer:(id)arg1;
 - (id)key;
 - (id)request;
+- (id)player;
 - (void)dealloc;
 
 @end

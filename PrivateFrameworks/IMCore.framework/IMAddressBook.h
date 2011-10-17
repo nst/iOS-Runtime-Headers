@@ -6,6 +6,9 @@
 }
 
 + (id*)abAddressBook;
++ (void*)_abAddressBookRef;
++ (void*)_threadedABAddressBookRef;
++ (id)_threadedABAddressBookLock;
 + (void*)abAddressBookRef;
 
 

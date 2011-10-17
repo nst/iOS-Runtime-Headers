@@ -16,12 +16,8 @@
 @property(copy) NSString * type;
 
 
-- (id)event;
-- (void)setEvent:(id)arg1;
-- (id)type;
-- (void)setType:(id)arg1;
-- (void)setText:(id)arg1;
-- (id)text;
+- (BOOL)async;
+- (void)setAsync:(BOOL)arg1;
 - (BOOL)defer;
 - (void)setDefer:(BOOL)arg1;
 - (id)htmlFor;
@@ -30,5 +26,11 @@
 - (void)setSrc:(id)arg1;
 - (id)charset;
 - (void)setCharset:(id)arg1;
+- (id)event;
+- (void)setEvent:(id)arg1;
+- (id)type;
+- (void)setType:(id)arg1;
+- (id)text;
+- (void)setText:(id)arg1;
 
 @end

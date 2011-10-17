@@ -15,20 +15,20 @@
 @property CKSMSMessage * message;
 
 
-- (void)setMessage:(id)arg1;
 - (id)message;
+- (void)setMessage:(id)arg1;
 - (float)progress;
-- (id)init;
-- (void)dealloc;
 - (BOOL)isSending;
+- (void)_sentMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
+- (void)_errorSendingMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
 - (void)_finishedSendingMessages;
-- (void)_notifyDelegatesOfMessageDelivery:(struct __CKSMSRecord { }*)arg1 success:(BOOL)arg2;
-- (void)_errorSendingMessage:(struct __CKSMSRecord { }*)arg1;
-- (void)sendOutboundMessage:(struct __CKSMSRecord { }*)arg1;
-- (struct { int x1; int x2; })_sendMessage:(struct __CKSMSRecord { }*)arg1;
-- (void)_fakeSendMessage:(struct __CKSMSRecord { }*)arg1 afterDelay:(double)arg2;
+- (void)_notifyDelegatesOfMessageDelivery:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 success:(BOOL)arg2;
+- (struct { int x1; int x2; })_sendMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
+- (void)sendOutboundMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
+- (void)_fakeSendMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 afterDelay:(double)arg2;
 - (void)redeliverPartiallyFailedMessage;
 - (void)sendMessage;
-- (void)_sentMessage:(struct __CKSMSRecord { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

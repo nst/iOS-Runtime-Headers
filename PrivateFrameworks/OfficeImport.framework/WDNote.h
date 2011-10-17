@@ -11,12 +11,12 @@
 }
 
 
-- (id)text;
-- (void)dealloc;
-- (void)setAutomaticNumbering:(BOOL)arg1;
 - (id)initWithParagraph:(id)arg1 footnote:(BOOL)arg2;
 - (BOOL)automaticNumbering;
-- (id)reference;
+- (void)setAutomaticNumbering:(BOOL)arg1;
 - (int)runType;
+- (id)reference;
+- (id)text;
+- (void)dealloc;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableDictionary, NSDictionary;
+@class NSDate, NSMutableDictionary, NSDictionary;
 
 @interface NSFileAttributes : NSDictionary  {
     NSMutableDictionary *dict;
@@ -40,10 +40,7 @@
     } statInfo;
     struct { 
         BOOL extensionHidden; 
-        struct timespec { 
-            int tv_sec; 
-            long tv_nsec; 
-        } creationDate; 
+        NSDate *creationDate; 
         struct _fields { 
             unsigned int extensionHidden : 1; 
             unsigned int creationDate : 1; 
@@ -54,27 +51,27 @@
     int fileProtectionClass;
 }
 
-+ (id)attributesAtPath:(id)arg1 traverseLink:(BOOL)arg2;
-+ (id)_attributesAtPath:(id)arg1 partialReturn:(BOOL)arg2 filterResourceFork:(BOOL)arg3 error:(id*)arg4;
 + (id)_attributesAtURL:(id)arg1 partialReturn:(BOOL)arg2 filterResourceFork:(BOOL)arg3 error:(id*)arg4;
++ (id)attributesAtPath:(id)arg1 traverseLink:(BOOL)arg2;
 + (id)attributesWithStat:(struct stat { int x1; unsigned short x2; unsigned short x3; unsigned long long x4; unsigned int x5; unsigned int x6; int x7; struct timespec { int x_8_1_1; long x_8_1_2; } x8; struct timespec { int x_9_1_1; long x_9_1_2; } x9; struct timespec { int x_10_1_1; long x_10_1_2; } x10; struct timespec { int x_11_1_1; long x_11_1_2; } x11; long long x12; long long x13; int x14; unsigned int x15; unsigned int x16; int x17; long long x18[2]; }*)arg1;
++ (id)_attributesAtPath:(id)arg1 partialReturn:(BOOL)arg2 filterResourceFork:(BOOL)arg3 error:(id*)arg4;
 
+- (BOOL)isDirectory;
+- (unsigned int)fileSystemFileNumber;
+- (int)fileSystemNumber;
+- (unsigned int)fileGroupOwnerAccountNumber;
+- (id)fileGroupOwnerAccountName;
+- (unsigned int)fileOwnerAccountNumber;
+- (id)fileOwnerAccountName;
+- (unsigned int)filePosixPermissions;
+- (unsigned long long)fileSize;
+- (id)fileType;
 - (id)fileModificationDate;
 - (id)keyEnumerator;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)objectForKey:(id)arg1;
 - (unsigned int)count;
-- (id)fileType;
-- (unsigned int)filePosixPermissions;
-- (BOOL)isDirectory;
-- (id)fileOwnerAccountName;
-- (unsigned int)fileOwnerAccountNumber;
-- (id)fileGroupOwnerAccountName;
-- (unsigned int)fileGroupOwnerAccountNumber;
-- (int)fileSystemNumber;
-- (unsigned int)fileSystemFileNumber;
-- (unsigned long long)fileSize;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)objectForKey:(id)arg1;
+- (void)dealloc;
 
 @end

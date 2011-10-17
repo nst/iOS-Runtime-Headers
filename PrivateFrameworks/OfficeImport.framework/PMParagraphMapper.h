@@ -9,11 +9,11 @@
 }
 
 
-- (id)fontScheme;
-- (int)firstTextRunFontSize;
 - (id)createParagraphStyleWithState:(id)arg1;
 - (void)addEndCharacterStyleToStyle:(id)arg1;
+- (int)firstTextRunFontSize;
 - (id)initWithOadParagraph:(id)arg1 parent:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (id)fontScheme;
 
 @end

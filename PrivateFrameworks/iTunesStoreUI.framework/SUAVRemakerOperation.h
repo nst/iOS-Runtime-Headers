@@ -16,14 +16,14 @@
 - (void)cancel;
 - (id)init;
 - (void)dealloc;
-- (id)remakerOutput;
-- (id)initWithSourceURL:(id)arg1 remakerMode:(id)arg2 options:(id)arg3;
 - (id)initWithImagePickerInfo:(id)arg1 remakerMode:(id)arg2;
-- (void)stopRunLoop;
 - (void)_remakerNotification:(id)arg1;
-- (void)_updateProgress:(id)arg1;
+- (void)stopRunLoop;
+- (id)remakerOutput;
 - (void)_beginObservingAVRemaker:(id)arg1;
+- (void)_updateProgress:(id)arg1;
 - (void)_endObservingAVRemaker;
 - (id)_newDestinationURLForSourceURL:(id)arg1;
+- (id)initWithSourceURL:(id)arg1 remakerMode:(id)arg2 options:(id)arg3;
 
 @end

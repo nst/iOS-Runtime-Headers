@@ -14,22 +14,22 @@
 
 + (id)contextWithOptions:(id)arg1;
 + (id)context;
-+ (id)server;
 + (id)serverIfRunning;
++ (id)server;
 
-- (void)addDisplay:(id)arg1;
-- (void)removeDisplay:(id)arg1;
-- (void)removeAllDisplays;
-- (void)_detectDisplays;
-- (unsigned int)rendererFlags;
-- (void)setMirroringEnabled:(BOOL)arg1;
-- (BOOL)isMirroringEnabled;
+- (id)displays;
+- (void)setRendererFlags:(unsigned int)arg1;
+- (id)_init;
+- (id)description;
 - (id)init;
 - (void)dealloc;
-- (id)description;
-- (id)_init;
-- (void)setRendererFlags:(unsigned int)arg1;
-- (id)displays;
+- (void)removeDisplay:(id)arg1;
+- (void)removeAllDisplays;
 - (id)displayWithName:(id)arg1;
+- (unsigned int)rendererFlags;
+- (void)_detectDisplays;
+- (void)addDisplay:(id)arg1;
+- (void)setMirroringEnabled:(BOOL)arg1;
+- (BOOL)isMirroringEnabled;
 
 @end

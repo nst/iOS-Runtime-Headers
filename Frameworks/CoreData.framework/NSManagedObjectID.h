@@ -5,21 +5,23 @@
 @interface NSManagedObjectID : NSObject <NSCopying> {
 }
 
++ (BOOL)accessInstanceVariablesDirectly;
 + (int)version;
 + (void)initialize;
-+ (BOOL)accessInstanceVariablesDirectly;
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
-- (long long)_referenceData64;
-- (id)_referenceData;
-- (id)_storeIdentifier;
 - (BOOL)_isPersistentStoreAlive;
 - (id)URIRepresentation;
+- (id)_storeIdentifier;
 - (id)_storeInfo1;
+- (id)_referenceData;
 - (id)_retainedURIString;
+- (long long)_referenceData64;
 - (id)entity;
-- (BOOL)isTemporaryID;
 - (id)persistentStore;
+- (BOOL)isTemporaryID;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

@@ -29,30 +29,30 @@
     NSDictionary *_userInfo;
 }
 
-@property(readonly) NSDictionary * userInfo;
-@property(copy) id responseBlock;
 @property(readonly) CPDistributedMessagingCenter * messagingCenter;
 @property(readonly) NSString * messageName;
-@property(copy) id didFinishBlock;
+@property(readonly) NSDictionary * userInfo;
 @property(copy) id didFailBlock;
+@property(copy) id didFinishBlock;
+@property(copy) id responseBlock;
 
 
-- (id)messagingCenter;
-- (id)userInfo;
-- (id)init;
-- (void)dealloc;
-- (void)sendDidFinish;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
-- (void)sendDidFailWithError:(id)arg1;
 - (id)responseBlock;
+- (id)messagingCenter;
 - (id)messageName;
 - (id)didFinishBlock;
 - (id)didFailBlock;
-- (void)setDidFailBlock:(id)arg1;
-- (void)setDidFinishBlock:(id)arg1;
 - (id)initWithMessagingCenter:(id)arg1 messageName:(id)arg2 userInfo:(id)arg3;
 - (void)setResponseBlock:(id)arg1;
+- (void)setDidFinishBlock:(id)arg1;
+- (void)setDidFailBlock:(id)arg1;
 - (id)initWithMessageName:(id)arg1 userInfo:(id)arg2;
+- (void)sendDidFailWithError:(id)arg1;
+- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
+- (void)sendDidFinish;
+- (id)userInfo;
+- (id)init;
+- (void)dealloc;
 
 @end

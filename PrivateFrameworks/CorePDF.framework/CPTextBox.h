@@ -7,14 +7,14 @@
 }
 
 
-- (BOOL)isRotated;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (float)rotationAngle;
 - (void)setRotationAngle:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (BOOL)isBoxRegion;
 - (void)accept:(id)arg1;
+- (BOOL)isRotated;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 
 @end

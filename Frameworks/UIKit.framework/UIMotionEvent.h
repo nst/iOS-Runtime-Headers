@@ -25,25 +25,25 @@
 @property int shakeState;
 
 
-- (int)type;
-- (void)_willResume;
-- (void)_willSuspend;
-- (void)_accelerometerDidDetectMovementWithTimestamp:(double)arg1;
-- (void)_idleTimerFired;
 - (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
-- (int)_feedStateMachine:(float)arg1 currentState:(int)arg2 timestamp:(double)arg3;
-- (float)_highPass:(float)arg1;
-- (void)_resetLowPassState;
 - (float)_lowPass:(float)arg1;
+- (float)_highPass:(float)arg1;
+- (int)_feedStateMachine:(float)arg1 currentState:(int)arg2 timestamp:(double)arg3;
 - (float)_determineShakeLevelX:(float)arg1 y:(float)arg2 z:(float)arg3 currentState:(int)arg4;
+- (void)_accelerometerDidDetectMovementWithTimestamp:(double)arg1;
+- (void)_resetLowPassState;
+- (void)_idleTimerFired;
+- (void)_willSuspend;
+- (void)_willResume;
 - (void)_enablePeakDetectionIfNecessary;
 - (int)_shakeState;
+- (int)type;
 - (int)subtype;
 - (int)shakeState;
-- (void)dealloc;
-- (id)description;
-- (id)_init;
-- (void)_setSubtype:(int)arg1;
 - (void)setShakeState:(int)arg1;
+- (void)_setSubtype:(int)arg1;
+- (id)_init;
+- (id)description;
+- (void)dealloc;
 
 @end

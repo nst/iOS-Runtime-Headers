@@ -8,28 +8,28 @@
     UICompletionTablePrivate *_private;
 }
 
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInset;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } scrollIndicatorInsets;
+@property id delegate;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } scrollIndicatorInsets;
 
 + (id)_cellFont;
 + (id)_shadowImage;
-+ (void)_initializeSafeCategory;
 
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)dequeueReusableCellWithIdentifier:(id)arg1;
-- (void)setScrollIndicatorInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)reloadData;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setDelegate:(id)arg1;
 - (void)setTopStrokeColor:(id)arg1;
 - (id)_completionForRow:(int)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
-- (void)layoutSubviews;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })scrollIndicatorInsets;
-- (void)dealloc;
+- (void)setScrollIndicatorInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (id)delegate;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)dequeueReusableCellWithIdentifier:(id)arg1;
+- (void)layoutSubviews;
+- (void)reloadData;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (id)table:(id)arg1 cellForRow:(int)arg2 column:(id)arg3;
+- (void)dealloc;
 
 @end

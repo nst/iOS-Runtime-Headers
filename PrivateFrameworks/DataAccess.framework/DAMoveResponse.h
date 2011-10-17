@@ -11,18 +11,19 @@
     DAMessageMoveRequest *_origRequest;
 }
 
-@property(retain) DAMessageMoveRequest * origRequest;
-@property(readonly) NSString * destID;
-@property(readonly) NSString * sourceID;
 @property(readonly) int status;
+@property(readonly) NSString * sourceID;
+@property(readonly) NSString * destID;
+@property(retain) DAMessageMoveRequest * origRequest;
 
 
 - (id)sourceID;
-- (id)origRequest;
 - (id)destID;
-- (void)dealloc;
+- (id)origRequest;
 - (int)status;
-- (id)initWithStatus:(int)arg1 sourceID:(id)arg2 destID:(id)arg3;
+- (id)description;
+- (void)dealloc;
 - (void)setOrigRequest:(id)arg1;
+- (id)initWithStatus:(int)arg1 sourceID:(id)arg2 destID:(id)arg3;
 
 @end

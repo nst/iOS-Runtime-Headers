@@ -10,20 +10,21 @@
     GKMultilineCellContentView *_bottomContents;
 }
 
-@property(retain) GKMultilineCellContentView * bottomContents;
 @property(retain) GKMultilineCellContentView * topContents;
+@property(retain) GKMultilineCellContentView * bottomContents;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } confirmationButtonRect;
 
 
-- (float)preferredHeightForOrientation:(int)arg1;
-- (void)setTopContents:(id)arg1;
-- (void)setBottomContents:(id)arg1;
-- (id)topContents;
 - (id)bottomContents;
+- (id)topContents;
+- (float)preferredHeightForOrientation:(int)arg1;
+- (void)setBottomContents:(id)arg1;
+- (void)setTopContents:(id)arg1;
+- (id)theme;
+- (void)setTheme:(id)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 - (id)init;
 - (void)dealloc;
-- (id)theme;
-- (void)setTheme:(id)arg1;
 
 @end

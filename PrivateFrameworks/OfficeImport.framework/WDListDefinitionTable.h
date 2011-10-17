@@ -13,15 +13,15 @@
 }
 
 
-- (void)dealloc;
 - (int)nextId;
 - (void)setLastKnowGoodListDefinition:(id)arg1;
-- (id)initWithDocument:(id)arg1;
 - (int)definitionCount;
 - (id)definitionAt:(int)arg1;
-- (id)definitionWithId:(int)arg1;
 - (id)addDefinition;
+- (id)definitionWithId:(int)arg1;
 - (id)addDefinition:(int)arg1;
+- (id)initWithDocument:(id)arg1;
 - (id)document;
+- (void)dealloc;
 
 @end

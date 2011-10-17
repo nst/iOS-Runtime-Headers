@@ -8,44 +8,45 @@
     NSString *_name;
     NSString *_address;
     struct BTDeviceImpl { } *_device;
+    BOOL _isLowEnergy;
 }
 
 
-- (BOOL)connected;
-- (int)compare:(id)arg1;
-- (void)connect;
-- (int)batteryLevel;
-- (int)type;
-- (id)name;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
-- (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
+- (id)address;
+- (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2 isLE:(BOOL)arg3;
+- (BOOL)isLowEnergy;
 - (void)_clearName;
-- (BOOL)isServiceSupported:(unsigned int)arg1;
 - (BOOL)_isNameCached;
+- (unsigned int)majorClass;
 - (unsigned int)minorClass;
 - (id)scoUID;
+- (BOOL)paired;
 - (unsigned int)connectedServices;
 - (unsigned int)connectedServicesCount;
 - (BOOL)supportsBatteryLevel;
-- (BOOL)isAccessory;
-- (void)setAuthorizedServices:(unsigned int)arg1;
+- (BOOL)isServiceSupported:(unsigned int)arg1;
 - (void)connectWithServices:(unsigned int)arg1;
 - (void)acceptSSP:(int)arg1;
+- (void)unpair;
 - (void)startVoiceCommand;
 - (void)endVoiceCommand;
-- (id)address;
-- (void)unpair;
 - (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; })syncSettings;
 - (void)setSyncSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; })arg1;
 - (id)syncGroups;
 - (void)setSyncGroup:(int)arg1 enabled:(BOOL)arg2;
-- (BOOL)paired;
-- (unsigned int)majorClass;
+- (BOOL)isAccessory;
 - (void)setPIN:(id)arg1;
+- (BOOL)connected;
 - (void)disconnect;
+- (void)connect;
+- (int)batteryLevel;
+- (int)compare:(id)arg1;
+- (int)type;
+- (id)name;
 - (void)setDevice:(struct BTDeviceImpl { }*)arg1;
 - (struct BTDeviceImpl { }*)device;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

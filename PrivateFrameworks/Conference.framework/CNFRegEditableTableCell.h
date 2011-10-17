@@ -22,26 +22,26 @@
 @property BOOL skipDelegateCallback;
 
 
-- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3;
-- (id)shadowView;
-- (id)customCheckmarkImage;
-- (id)customCheckmarkImageSelected;
-- (void)_updateTextFieldOffsetWithDict:(id)arg1;
-- (void)notifyTextFieldEmptyStateChanged:(BOOL)arg1;
-- (BOOL)_textFieldIsCurrentlyEmpty;
-- (void)_handleTextChanged;
-- (void)_startListeningForTextChanges;
-- (void)_stopListeningForTextChanges;
-- (void)setShadowImage:(id)arg1;
-- (void)setCustomCheckmarkImageSelected:(id)arg1;
-- (void)setCustomCheckmarkImage:(id)arg1;
-- (void)setShadowView:(id)arg1;
 - (id)shadowImage;
-- (BOOL)skipDelegateCallback;
-- (void)setSkipDelegateCallback:(BOOL)arg1;
+- (void)setShadowImage:(id)arg1;
+- (void)setShadowView:(id)arg1;
+- (id)shadowView;
+- (void)setTitle:(id)arg1;
 - (void)setChecked:(BOOL)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;
-- (void)setTitle:(id)arg1;
+- (void)setCustomCheckmarkImageSelected:(id)arg1;
+- (void)setCustomCheckmarkImage:(id)arg1;
+- (void)setSkipDelegateCallback:(BOOL)arg1;
+- (BOOL)skipDelegateCallback;
+- (void)_updateTextFieldOffsetWithDict:(id)arg1;
+- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
+- (BOOL)_textFieldIsCurrentlyEmpty;
+- (void)notifyTextFieldEmptyStateChanged:(BOOL)arg1;
+- (void)_handleTextChanged;
+- (id)customCheckmarkImage;
+- (id)customCheckmarkImageSelected;
+- (void)_startListeningForTextChanges;
+- (void)_stopListeningForTextChanges;
 
 @end

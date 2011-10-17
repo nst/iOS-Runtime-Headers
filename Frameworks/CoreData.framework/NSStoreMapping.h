@@ -9,12 +9,12 @@
 }
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 - (void)setExternalName:(id)arg1;
 - (void)copyValuesForReadOnlyFetch:(id)arg1;
-- (id)externalName;
 - (id)initWithExternalName:(id)arg1;
+- (id)externalName;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

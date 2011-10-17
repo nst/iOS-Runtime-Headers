@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWindow, UIPrintPanelTableViewController, UIPrintInteractionController, PKPrinter, UIViewController, UIPopoverController, UINavigationController;
+@class UIPrintPaper, UIWindow, UIPrintPanelTableViewController, UIPrintInteractionController, PKPrinter, UIViewController, UIPopoverController, UINavigationController, NSArray;
 
 @interface UIPrintPanelViewController : NSObject  {
     UIPrintInteractionController *_printInteractionController;
@@ -15,43 +15,50 @@
     BOOL _dismissed;
     BOOL _animated;
     BOOL _observingRotation;
+    BOOL _parentHasNoPopover;
 }
 
+@property(retain) PKPrinter * printer;
 @property(readonly) int pageCount;
-@property struct _NSRange { unsigned int location; unsigned int length; } pageRange;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } pageRange;
 @property BOOL duplex;
+@property(readonly) NSArray * paperList;
+@property(retain) UIPrintPaper * paper;
 @property int copies;
 @property(readonly) BOOL showDuplex;
 @property(readonly) BOOL showPageRange;
-@property(retain) PKPrinter * printer;
+@property(readonly) BOOL showPaper;
 
-+ (void)_initializeSafeCategory;
 
-- (void)setPageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)dismissAnimated:(BOOL)arg1;
-- (void)cancelPrinting;
-- (int)copies;
-- (void)presentPrintPanelAnimated:(BOOL)arg1;
-- (void)presentPrintPanelFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
-- (BOOL)showDuplex;
 - (id)printer;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })pageRange;
-- (void)setDuplex:(BOOL)arg1;
+- (BOOL)showPaper;
+- (BOOL)showDuplex;
+- (void)cancelPrinting;
 - (void)startPrinting;
-- (void)setPrinter:(id)arg1;
-- (int)pageCount;
-- (id)initWithPrintInterationController:(id)arg1 inParentController:(id)arg2;
-- (void)_presentInParentAnimated:(BOOL)arg1;
-- (void)_presentWindow;
-- (void)_keyWindowWillRotate:(id)arg1;
 - (void)presentPrintPanelFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (void)dismissPrintPanel:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)controllerDidDisappear;
+- (void)presentPrintPanelFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
+- (void)presentPrintPanelAnimated:(BOOL)arg1;
+- (id)initWithPrintInterationController:(id)arg1 inParentController:(id)arg2;
+- (id)paperList;
+- (void)setPaper:(id)arg1;
+- (id)paper;
+- (void)setPageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })pageRange;
 - (BOOL)showPageRange;
-- (BOOL)duplex;
+- (void)dismissPrintPanel:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_presentInParentAnimated:(BOOL)arg1;
+- (void)_keyWindowWillRotate:(id)arg1;
+- (void)_presentWindow;
+- (void)controllerDidDisappear;
+- (void)setPrinter:(id)arg1;
 - (void)setCopies:(int)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (int)copies;
+- (void)setDuplex:(BOOL)arg1;
+- (BOOL)duplex;
+- (void)dismissAnimated:(BOOL)arg1;
+- (int)pageCount;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)dealloc;
 
 @end

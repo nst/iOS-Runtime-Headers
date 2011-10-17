@@ -24,34 +24,34 @@
 @property(copy) NSString * width;
 
 
-- (id)height;
-- (id)width;
-- (void)setWidth:(id)arg1;
-- (void)setNoWrap:(BOOL)arg1;
-- (BOOL)noWrap;
-- (id)align;
-- (void)setAxis:(id)arg1;
-- (void)setScope:(id)arg1;
-- (id)scope;
-- (id)bgColor;
-- (id)axis;
-- (void)setHeight:(id)arg1;
-- (void)setRowSpan:(int)arg1;
-- (int)rowSpan;
-- (void)setBgColor:(id)arg1;
-- (void)setAlign:(id)arg1;
-- (int)colSpan;
 - (int)cellIndex;
 - (id)abbr;
 - (void)setAbbr:(id)arg1;
+- (id)axis;
+- (void)setAxis:(id)arg1;
 - (id)ch;
 - (void)setCh:(id)arg1;
 - (id)chOff;
 - (void)setChOff:(id)arg1;
+- (int)colSpan;
 - (void)setColSpan:(int)arg1;
 - (id)headers;
 - (void)setHeaders:(id)arg1;
+- (BOOL)noWrap;
+- (void)setNoWrap:(BOOL)arg1;
+- (int)rowSpan;
+- (void)setRowSpan:(int)arg1;
+- (id)scope;
+- (void)setScope:(id)arg1;
 - (id)vAlign;
 - (void)setVAlign:(id)arg1;
+- (id)bgColor;
+- (void)setBgColor:(id)arg1;
+- (id)align;
+- (void)setAlign:(id)arg1;
+- (void)setHeight:(id)arg1;
+- (id)height;
+- (void)setWidth:(id)arg1;
+- (id)width;
 
 @end

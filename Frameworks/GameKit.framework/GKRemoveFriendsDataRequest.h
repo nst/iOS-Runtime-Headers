@@ -11,12 +11,10 @@
 @property(retain) GKPlayer * player;
 
 
-- (id)invalidateCacheKeys;
-- (int)cacheType;
 - (void)setPlayer:(id)arg1;
-- (id)player;
 - (id)key;
 - (id)request;
+- (id)player;
 - (void)dealloc;
 
 @end

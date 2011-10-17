@@ -13,9 +13,9 @@
 
 - (void)main;
 - (void)dealloc;
+- (id)networkCheckOperation;
+- (id)ICEData;
 - (void)createChildOperations;
 - (id)initWithParticipant:(id)arg1;
-- (id)ICEData;
-- (id)networkCheckOperation;
 
 @end

@@ -10,8 +10,8 @@
 }
 
 
+- (id)initWithMessageFields:(id)arg1 recordID:(unsigned int)arg2;
 - (void)main;
 - (void)dealloc;
-- (id)initWithMessageFields:(id)arg1 recordID:(unsigned int)arg2;
 
 @end

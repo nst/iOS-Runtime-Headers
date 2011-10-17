@@ -8,30 +8,28 @@
     int _allowedRetryCount;
     int _currentRetryCount;
     NSDictionary *_dictionary;
-    unsigned int _optionFlags;
+    unsigned long _optionFlags;
     NSDictionary *_userInfo;
 }
 
-@property(retain) NSDictionary * userInfo;
-@property unsigned int optionFlags;
-@property(retain) NSDictionary * dictionary;
-@property int currentRetryCount;
+@property(readonly) NSDictionary * dictionary;
+@property(readonly) unsigned long optionFlags;
 @property int allowedRetryCount;
+@property int currentRetryCount;
+@property(retain) NSDictionary * userInfo;
 
 
+- (int)allowedRetryCount;
 - (void)setUserInfo:(id)arg1;
 - (id)dictionary;
+- (unsigned long)optionFlags;
+- (id)initWithDictionary:(id)arg1 options:(unsigned long)arg2;
+- (void)setCurrentRetryCount:(int)arg1;
+- (int)currentRetryCount;
+- (struct __CFUserNotification { }*)copyUserNotification;
 - (id)userInfo;
 - (id)init;
 - (void)dealloc;
-- (id)initWithDictionary:(id)arg1 options:(unsigned long)arg2;
-- (unsigned long)optionFlags;
-- (void)setOptionFlags:(unsigned long)arg1;
-- (struct __CFUserNotification { }*)copyUserNotification;
-- (void)setCurrentRetryCount:(int)arg1;
-- (int)currentRetryCount;
-- (int)allowedRetryCount;
-- (void)setDictionary:(id)arg1;
 - (void)setAllowedRetryCount:(int)arg1;
 
 @end

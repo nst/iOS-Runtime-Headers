@@ -22,13 +22,6 @@
 @property(readonly) int height;
 
 
-- (int)height;
-- (int)structuralComplexityContribution;
-- (void)setLocation:(id)arg1;
-- (int)width;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)location;
 - (id)frameBorder;
 - (void)setFrameBorder:(id)arg1;
 - (id)longDesc;
@@ -43,8 +36,15 @@
 - (void)setScrolling:(id)arg1;
 - (id)contentDocument;
 - (id)contentWindow;
+- (void)setLocation:(id)arg1;
 - (id)src;
 - (void)setSrc:(id)arg1;
+- (int)height;
+- (int)structuralComplexityContribution;
+- (id)location;
+- (int)width;
+- (id)name;
+- (void)setName:(id)arg1;
 - (id)contentFrame;
 
 @end

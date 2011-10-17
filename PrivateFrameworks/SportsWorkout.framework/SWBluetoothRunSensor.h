@@ -15,33 +15,33 @@
     double _disconnectionTime;
 }
 
-@property(readonly) double secondsConnected;
 @property(readonly) unsigned int packetCount;
+@property(readonly) double secondsConnected;
 
 + (void)__writePacketRecord:(id)arg1;
 
+- (unsigned int)packetCount;
+- (unsigned int)_remainingBatteryLifetimeInHoursForPacket:(id)arg1 timestamp:(unsigned int)arg2;
+- (id)_serialNumberForPacket:(id)arg1 timestamp:(unsigned int)arg2 radioId:(unsigned int*)arg3;
+- (BOOL)_isValidPacketForPaceModel:(id)arg1 timestamp:(unsigned int)arg2;
+- (void)_receivedInputReadNotification:(id)arg1;
+- (void)_registerToReadInput;
+- (void)_connectToDeviceWithAddress:(struct { unsigned char x1[6]; })arg1;
+- (struct { unsigned char x1[6]; })_deviceAddressForSerialNumber:(id)arg1;
+- (void)_discoverDevice;
+- (double)secondsConnected;
+- (void)_receivedConnectionFailureNotification:(id)arg1;
+- (void)_receivedConnectionNotification:(id)arg1;
+- (void)_receivedDiscoveryNotification:(id)arg1;
+- (void)_receivedActivationNotification:(id)arg1;
+- (void)unlink;
+- (unsigned int)remainingBatteryLifetimeInHours;
+- (void)cancelSearching;
+- (void)beginSearching;
+- (void)cancelLinking;
+- (void)beginLinking;
 - (void)deactivate;
 - (id)init;
 - (void)dealloc;
-- (unsigned int)packetCount;
-- (double)secondsConnected;
-- (void)_discoverDevice;
-- (void)_connectToDeviceWithAddress:(struct { unsigned char x1[6]; })arg1;
-- (void)_registerToReadInput;
-- (void)_receivedActivationNotification:(id)arg1;
-- (void)_receivedDiscoveryNotification:(id)arg1;
-- (void)_receivedConnectionNotification:(id)arg1;
-- (void)_receivedConnectionFailureNotification:(id)arg1;
-- (void)_receivedInputReadNotification:(id)arg1;
-- (BOOL)_isValidPacketForPaceModel:(id)arg1 timestamp:(unsigned int)arg2;
-- (id)_serialNumberForPacket:(id)arg1 timestamp:(unsigned int)arg2 radioId:(unsigned int*)arg3;
-- (struct { unsigned char x1[6]; })_deviceAddressForSerialNumber:(id)arg1;
-- (unsigned int)_remainingBatteryLifetimeInHoursForPacket:(id)arg1 timestamp:(unsigned int)arg2;
-- (void)unlink;
-- (void)beginLinking;
-- (void)cancelLinking;
-- (unsigned int)remainingBatteryLifetimeInHours;
-- (void)beginSearching;
-- (void)cancelSearching;
 
 @end

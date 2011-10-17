@@ -7,7 +7,7 @@
 }
 
 
-- (void)setHasPlaceholderImage:(BOOL)arg1;
 - (BOOL)hasPlaceholderImage;
+- (void)setHasPlaceholderImage:(BOOL)arg1;
 
 @end

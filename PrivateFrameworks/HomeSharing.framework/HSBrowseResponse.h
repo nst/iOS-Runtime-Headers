@@ -12,7 +12,7 @@
 
 
 - (void)dealloc;
-- (id)collections;
 - (void)setCollections:(id)arg1;
+- (id)collections;
 
 @end

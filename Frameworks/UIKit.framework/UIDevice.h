@@ -10,6 +10,7 @@
     struct { 
         unsigned int batteryMonitoringEnabled : 1; 
         unsigned int proximityMonitoringEnabled : 1; 
+        unsigned int expectsFaceContactInLandscape : 1; 
         unsigned int orientation : 3; 
         unsigned int batteryState : 2; 
         unsigned int proximityState : 1; 
@@ -17,14 +18,14 @@
 }
 
 @property int orientation;
-@property(retain,readonly) NSString * buildVersion;
-@property(retain,readonly) NSString * name;
-@property(retain,readonly) NSString * model;
-@property(retain,readonly) NSString * localizedModel;
-@property(retain,readonly) NSString * systemName;
-@property(retain,readonly) NSString * systemVersion;
+@property(readonly) NSString * buildVersion;
+@property(readonly) NSString * name;
+@property(readonly) NSString * model;
+@property(readonly) NSString * localizedModel;
+@property(readonly) NSString * systemName;
+@property(readonly) NSString * systemVersion;
 @property(readonly) int orientation;
-@property(retain,readonly) NSString * uniqueIdentifier;
+@property(readonly) NSString * uniqueIdentifier;
 @property(getter=isGeneratingDeviceOrientationNotifications,readonly) BOOL generatesDeviceOrientationNotifications;
 @property(getter=isBatteryMonitoringEnabled) BOOL batteryMonitoringEnabled;
 @property(readonly) int batteryState;
@@ -33,39 +34,52 @@
 @property(readonly) BOOL proximityState;
 @property(getter=isMultitaskingSupported,readonly) BOOL multitaskingSupported;
 @property(readonly) int userInterfaceIdiom;
+@property(setter=_setBacklightLevel:) float _backlightLevel;
 
 + (id)modelSpecificLocalizedStringKeyForKey:(id)arg1;
-+ (id)currentDevice;
 + (int)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
++ (id)currentDevice;
 
-- (void)_enableDeviceOrientationEvents:(BOOL)arg1;
-- (int)userInterfaceIdiom;
-- (BOOL)proximityState;
-- (id)localizedModel;
-- (id)model;
-- (id)systemName;
-- (id)systemVersion;
-- (id)uniqueIdentifier;
-- (void)beginGeneratingDeviceOrientationNotifications;
-- (void)endGeneratingDeviceOrientationNotifications;
-- (BOOL)isBatteryMonitoringEnabled;
-- (void)setBatteryMonitoringEnabled:(BOOL)arg1;
-- (int)batteryState;
-- (float)batteryLevel;
-- (void)setProximityMonitoringEnabled:(BOOL)arg1;
-- (BOOL)isMultitaskingSupported;
-- (void)playInputClick;
-- (id)buildVersion;
-- (void)_setProximityState:(BOOL)arg1;
-- (void)_setBatteryState:(int)arg1;
+- (BOOL)_isTTYEnabled;
 - (void)_setBatteryLevel:(float)arg1;
+- (void)_setBatteryState:(int)arg1;
+- (float)_softwareDimmingAlpha;
+- (void)playInputClick;
+- (BOOL)isMultitaskingSupported;
+- (BOOL)proximityState;
+- (void)_setExpectsFaceContactInLandscape:(BOOL)arg1;
+- (float)batteryLevel;
+- (int)batteryState;
+- (void)setBatteryMonitoringEnabled:(BOOL)arg1;
+- (BOOL)isBatteryMonitoringEnabled;
+- (id)uniqueIdentifier;
+- (id)buildVersion;
+- (id)systemVersion;
+- (id)systemName;
+- (id)localizedModel;
+- (void)_updateSystemSoundActiveStatus:(id)arg1;
+- (id)deviceInfoForKey:(struct __CFString { }*)arg1;
+- (void)_enableDeviceOrientationEvents:(BOOL)arg1;
+- (void)_playSystemSound:(unsigned long)arg1;
 - (void)setOrientation:(int)arg1;
+- (id)model;
 - (id)name;
-- (int)orientation;
-- (BOOL)isGeneratingDeviceOrientationNotifications;
-- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
-- (void)setIsWildcat:(BOOL)arg1;
+- (void)endGeneratingDeviceOrientationNotifications;
+- (void)beginGeneratingDeviceOrientationNotifications;
 - (BOOL)isProximityMonitoringEnabled;
+- (void)setProximityMonitoringEnabled:(BOOL)arg1;
+- (void)_setProximityState:(BOOL)arg1;
+- (float)_backlightLevel;
+- (void)_setBacklightLevel:(float)arg1;
+- (void)setIsWildcat:(BOOL)arg1;
+- (int)orientation;
+- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
+- (BOOL)isGeneratingDeviceOrientationNotifications;
+- (void)_registerForSystemSounds:(id)arg1;
+- (void)_unregisterForSystemSounds:(id)arg1;
+- (int)userInterfaceIdiom;
 - (BOOL)isWildcat;
+- (void)setIsMediaPicker:(BOOL)arg1;
+- (BOOL)isMediaPicker;
 
 @end

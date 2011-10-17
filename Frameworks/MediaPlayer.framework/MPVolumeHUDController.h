@@ -13,15 +13,15 @@
 
 + (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
-- (id)mainContext;
-- (id)pushContext;
 - (void)popContext;
-- (void)unregisterView:(id)arg1 inContext:(id)arg2;
 - (BOOL)_sliderIsVisible:(id)arg1;
 - (void)_updateVisibility;
+- (id)pushContext;
+- (void)unregisterView:(id)arg1 inContext:(id)arg2;
 - (void)registerView:(id)arg1 inContext:(id)arg2;
+- (id)mainContext;
 - (void)setNeedsUpdate;
+- (id)init;
+- (void)dealloc;
 
 @end

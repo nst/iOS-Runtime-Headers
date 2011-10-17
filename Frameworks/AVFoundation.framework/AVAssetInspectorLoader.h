@@ -2,30 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetInspector, NSMutableArray, AVWeakReference, NSDictionary, NSString, NSURL, AVAssetCache, NSArray;
+@class NSArray, NSString, AVWeakReference, AVAssetCache, NSURL;
 
 @interface AVAssetInspectorLoader : NSObject <NSCopying, AVAsynchronousKeyValueLoading> {
-    AVAssetInspector *_assetInspector;
-    AVAssetCache *_assetCache;
-    BOOL _shouldMatchDataInCacheByURLPathComponentOnly;
-    BOOL _shouldMatchDataInCacheByURLWithoutQueryComponent;
-    NSDictionary *_validationPlist;
-    BOOL _URLIsStreamingURL;
     AVWeakReference *_weakReference;
-    struct OpaqueFigFormatReader { } *_formatReader;
-    struct OpaqueFigSimpleMutex { } *_loadingMutex;
-    NSMutableArray *_keysAwaitingCompletion;
-    int _durationLoadingStatus;
-    int _tracksLoadingStatus;
-    int _lyricsLoadingStatus;
-    int _chapterGroupInfoLoadingStatus;
-    int _status;
-    int _basicInspectionFailureCode;
-    NSURL *_URL;
 }
 
+@property(readonly) NSURL * URL;
 @property(getter=_formatReader,readonly) struct OpaqueFigFormatReader { }* formatReader;
-@property(getter=_formatReaderLoader,readonly) struct OpaqueFigFormatReaderLoader { }* formatReaderLoader;
+@property(getter=_figAsset,readonly) struct OpaqueFigAsset { }* figAsset;
 @property(getter=_playbackItem,readonly) struct OpaqueFigPlaybackItem { }* playbackItem;
 @property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } duration;
 @property(readonly) NSString * lyrics;
@@ -33,74 +18,52 @@
 @property(getter=isExportable,readonly) BOOL exportable;
 @property(getter=isReadable,readonly) BOOL readable;
 @property(getter=isComposable,readonly) BOOL composable;
+@property(getter=isCompatibleWithSavedPhotosAlbum,readonly) BOOL compatibleWithSavedPhotosAlbum;
 @property(readonly) NSArray * chapterGroupInfo;
+@property(readonly) AVAssetCache * assetCache;
+@property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
+@property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
+@property(readonly) NSURL * resolvedURL;
+@property(readonly) NSURL * downloadDestinationURL;
 @property(readonly) BOOL hasProtectedContent;
 @property(getter=_isStreaming,readonly) BOOL streaming;
+@property(readonly) unsigned int referenceRestrictions;
 @property(getter=_weakReference,readonly) AVWeakReference * weakReference;
-@property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
-@property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
-@property(readonly) AVAssetCache * assetCache;
-@property(readonly) NSURL * URL;
 
++ (void)initialize;
 
-- (id)initWithURL:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (id)initWithURL:(id)arg1;
 - (id)URL;
-- (void)finalize;
-- (void)release;
-- (id)init;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)lyrics;
-- (BOOL)isReadable;
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (id)chapterGroupInfo;
-- (id)_statusOfValueForKeyThatIsAlwaysLoaded;
-- (id)_statusOfValueOfDurationWhileMutexLocked;
-- (id)_statusOfValueOfTracksWhileMutexLocked;
-- (id)_statusOfValueOfLyricsWhileMutexLocked;
-- (id)_statusOfValueOfChapterGroupInfoWhileMutexLocked;
-- (int)_statusOfValueWhileMutexLockedForKey:(id)arg1 error:(id*)arg2;
-- (BOOL)_statusOfValuesIsTerminalWhileMutexLockedForKeys:(id)arg1;
-- (id)_getAndPruneCompletionsWhileMutexLocked;
 - (id)_mapFigErrorCodeToNSError:(long)arg1;
-- (BOOL)_updateStatusWhileMutexLocked:(int)arg1 figErrorCode:(long)arg2;
-- (void)_setStatus:(int)arg1 figErrorCode:(long)arg2;
-- (void)_updateDurationStatusWhileMutexLocked:(int)arg1;
-- (void)_updateTracksStatusWhileMutexLocked:(int)arg1;
-- (void)_updateLyricsStatusWhileMutexLocked:(int)arg1;
-- (void)_updateChapterGroupInfoStatusWhileMutexLocked:(int)arg1;
-- (id)_dictionaryOfSpecialLoadingMethodsForKeys;
-- (id)_loadValuesWhileMutexLockedForKeys:(id)arg1;
-- (void)_loadLyricsSynchronously;
-- (id)_lyrics;
-- (void)_loadChapterGroupInfoSynchronously;
-- (BOOL)isPlayable;
-- (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
-- (BOOL)_providesAccurateTiming;
-- (void)_loadDurationSynchronously;
-- (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(int*)arg1;
-- (BOOL)_inspectionRequiresAFormatReader;
-- (id)_dictionaryOfSpecialGettersForKeyValueStatus;
-- (id)_loadValuesUsingDefaultLoadingMethodWhileMutexLockedForKeys:(id)arg1;
-- (struct OpaqueFigFormatReaderLoader { }*)_formatReaderLoader;
-- (id)_weakReference;
-- (struct OpaqueFigFormatReader { }*)_formatReader;
-- (int)_status;
-- (id)assetInspector;
-- (void)_loadTracksSynchronously;
-- (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (BOOL)_isStreaming;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id)arg3;
+- (struct OpaqueFigPlaybackItem { }*)_playbackItem;
+- (unsigned int)referenceRestrictions;
+- (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;
+- (id)lyrics;
 - (void)_serverHasDied;
 - (BOOL)hasProtectedContent;
+- (BOOL)isPlayable;
 - (BOOL)isExportable;
+- (BOOL)isReadable;
 - (BOOL)isComposable;
-- (void)cancelLoading;
-- (id)_chapterGroupInfo;
+- (BOOL)isCompatibleWithSavedPhotosAlbum;
+- (id)_weakReference;
+- (id)assetInspector;
+- (struct OpaqueFigFormatReader { }*)_formatReader;
+- (id)chapterGroupInfo;
 - (id)assetCache;
 - (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
 - (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
+- (id)resolvedURL;
+- (id)downloadDestinationURL;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
+- (void)cancelLoading;
+- (struct OpaqueFigAsset { }*)_figAsset;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

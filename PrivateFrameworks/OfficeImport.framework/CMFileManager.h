@@ -5,8 +5,8 @@
 @interface CMFileManager : NSObject  {
 }
 
-+ (int)getFileTypeFromPath:(id)arg1;
 + (id)getTmpDirectory;
++ (int)getFileTypeFromPath:(id)arg1;
 + (int)getFileTypeFromUTI:(id)arg1;
 + (id)canonicalUrlPrefix:(id)arg1;
 + (id)getUrlProtocol:(id)arg1;

@@ -14,23 +14,24 @@
 @property(retain) NSArray * resources;
 @property(readonly) BOOL hasContent;
 
-+ (id)newCompositionForText:(id)arg1;
-+ (id)newCompositionForMessage:(id)arg1;
-+ (id)newComposition;
-+ (void)deleteFileWithPrefix:(id)arg1 path:(id)arg2;
 + (id)messageCompositionFromFileWithPrefix:(id)arg1 path:(id)arg2;
++ (void)deleteFileWithPrefix:(id)arg1 path:(id)arg2;
++ (id)newComposition;
++ (id)newCompositionForMessage:(id)arg1;
++ (id)newCompositionForText:(id)arg1;
 
 - (id)markupString;
 - (id)subject;
-- (BOOL)isTextOnly;
-- (BOOL)hasContent;
+- (void)setSubject:(id)arg1;
 - (void)setResources:(id)arg1;
 - (id)resources;
+- (BOOL)isTextOnly;
+- (BOOL)hasContent;
 - (void)writeToFileWithPrefix:(id)arg1 path:(id)arg2;
+- (void)setIsTextOnly:(BOOL)arg1;
 - (void)setMarkupString:(id)arg1;
 - (void)setTextString:(id)arg1;
-- (void)setIsTextOnly:(BOOL)arg1;
 - (id)textString;
-- (void)setSubject:(id)arg1;
+- (id)messageParts;
 
 @end

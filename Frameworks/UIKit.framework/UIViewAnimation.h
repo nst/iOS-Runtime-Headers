@@ -25,35 +25,43 @@
     BOOL _shouldDeleteAfterAnimation;
     BOOL _editing;
     BOOL _shouldAnimateShadow;
+    BOOL _shouldRasterizeAfterAnimation;
+    BOOL _shouldResetRasterizationAfterAnimation;
 }
 
-@property BOOL shouldAnimateShadow;
-@property(readonly) BOOL editing;
-@property(readonly) BOOL shouldDeleteAfterAnimation;
-@property(readonly) BOOL animateFromCurrentPosition;
-@property(readonly) int curve;
-@property(readonly) float endFraction;
-@property(readonly) float startFraction;
-@property(readonly) float endAlpha;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } endRect;
-@property(readonly) NSIndexPath * indexPath;
 @property(readonly) UIView * view;
+@property(readonly) NSIndexPath * indexPath;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endRect;
+@property(readonly) float endAlpha;
+@property(readonly) float startFraction;
+@property(readonly) float endFraction;
+@property(readonly) int curve;
+@property(readonly) BOOL animateFromCurrentPosition;
+@property(readonly) BOOL shouldDeleteAfterAnimation;
+@property(readonly) BOOL editing;
+@property BOOL shouldAnimateShadow;
+@property BOOL shouldRasterizeAfterAnimation;
+@property BOOL shouldResetRasterizationAfterAnimation;
 
 
-- (id)initWithView:(id)arg1 indexPath:(id)arg2 endRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 endAlpha:(float)arg4 startFraction:(float)arg5 endFraction:(float)arg6 curve:(int)arg7 animateFromCurrentPosition:(BOOL)arg8 shouldDeleteAfterAnimation:(BOOL)arg9 editing:(BOOL)arg10;
 - (void)setShouldAnimateShadow:(BOOL)arg1;
-- (BOOL)animateFromCurrentPosition;
+- (id)initWithView:(id)arg1 indexPath:(id)arg2 endRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 endAlpha:(float)arg4 startFraction:(float)arg5 endFraction:(float)arg6 curve:(int)arg7 animateFromCurrentPosition:(BOOL)arg8 shouldDeleteAfterAnimation:(BOOL)arg9 editing:(BOOL)arg10;
+- (BOOL)shouldDeleteAfterAnimation;
+- (BOOL)shouldRasterizeAfterAnimation;
+- (BOOL)shouldResetRasterizationAfterAnimation;
+- (BOOL)editing;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endRect;
+- (BOOL)shouldAnimateShadow;
+- (void)setShouldResetRasterizationAfterAnimation:(BOOL)arg1;
+- (void)setShouldRasterizeAfterAnimation:(BOOL)arg1;
+- (float)endAlpha;
 - (int)curve;
+- (BOOL)animateFromCurrentPosition;
 - (float)endFraction;
+- (float)startFraction;
 - (id)indexPath;
 - (id)view;
-- (float)startFraction;
-- (float)endAlpha;
-- (BOOL)shouldAnimateShadow;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endRect;
-- (BOOL)editing;
-- (BOOL)shouldDeleteAfterAnimation;
-- (void)dealloc;
 - (id)description;
+- (void)dealloc;
 
 @end

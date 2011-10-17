@@ -6,9 +6,9 @@
 }
 
 
-- (void)setupNativeObject;
-- (void)_webViewControllerNote:(id)arg1;
 - (id)_eventNameForNote:(id)arg1;
+- (void)_webViewControllerNote:(id)arg1;
+- (void)setupNativeObject;
 - (void)destroyNativeObject;
 
 @end

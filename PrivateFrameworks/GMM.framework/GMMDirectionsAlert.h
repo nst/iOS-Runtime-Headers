@@ -11,27 +11,26 @@
 }
 
 @property(readonly) BOOL hasHeadline;
+@property(retain) NSString * headline;
 @property(readonly) BOOL hasText;
+@property(retain) NSString * text;
 @property(readonly) BOOL hasUrl;
 @property(retain) NSString * url;
-@property(retain) NSString * text;
-@property(retain) NSString * headline;
 
 
-- (BOOL)hasUrl;
-- (void)setUrl:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)url;
-- (BOOL)hasText;
-- (void)setText:(id)arg1;
-- (id)text;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasHeadline;
 - (BOOL)readFrom:(id)arg1;
+- (BOOL)hasHeadline;
+- (BOOL)hasUrl;
 - (void)writeTo:(id)arg1;
-- (id)headline;
+- (void)setUrl:(id)arg1;
+- (id)url;
+- (id)dictionaryRepresentation;
+- (BOOL)hasText;
+- (id)text;
+- (void)setText:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setHeadline:(id)arg1;
+- (id)headline;
 
 @end

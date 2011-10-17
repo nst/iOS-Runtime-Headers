@@ -2,14 +2,64 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@interface AdSheetAppDelegate : NSObject <UIApplicationDelegate> {
+@class UIWindow, NSCountedSet, NSTimer;
+
+@interface AdSheetAppDelegate : NSObject <SBSAccelerometerDelegate, UIApplicationDelegate> {
+    NSCountedSet *_activeAssertions;
+    NSTimer *_terminationTimer;
+    double _lastURLCachePersist;
+    struct dispatch_source_s { } *_memoryNotificationSource;
+    struct dispatch_queue_s { } *_watchdogDispatchQueue;
+    double _powerAssertionExpiration;
+    double _lastClientPowerAssertionReturned;
+    unsigned int _powerAssertionID;
+    int _currentDeviceOrientation;
 }
 
+@property(retain) NSCountedSet * activeAssertions;
+@property(readonly) int currentDeviceOrientation;
+@property(retain) NSTimer * terminationTimer;
+@property double lastURLCachePersist;
+@property struct dispatch_source_s { }* memoryNotificationSource;
+@property struct dispatch_queue_s { }* watchdogDispatchQueue;
+@property double powerAssertionExpiration;
+@property double lastClientPowerAssertionReturned;
+@property unsigned int powerAssertionID;
+@property(retain) UIWindow * window;
 
-- (void)considerExiting;
++ (void)takeAssertion:(id)arg1;
++ (void)returnAssertion:(id)arg1;
++ (void)takeAssertion:(id)arg1 duration:(double)arg2;
+
+- (void)shutdown;
+- (void)setPowerAssertionID:(unsigned int)arg1;
+- (unsigned int)powerAssertionID;
+- (void)setLastClientPowerAssertionReturned:(double)arg1;
+- (double)lastClientPowerAssertionReturned;
+- (void)setPowerAssertionExpiration:(double)arg1;
+- (double)powerAssertionExpiration;
+- (void)setWatchdogDispatchQueue:(struct dispatch_queue_s { }*)arg1;
+- (struct dispatch_queue_s { }*)watchdogDispatchQueue;
+- (void)setMemoryNotificationSource:(struct dispatch_source_s { }*)arg1;
+- (struct dispatch_source_s { }*)memoryNotificationSource;
+- (void)setLastURLCachePersist:(double)arg1;
+- (double)lastURLCachePersist;
+- (id)terminationTimer;
+- (void)setActiveAssertions:(id)arg1;
 - (void)_postLaunchSetup;
-- (void)eventLoggingCenterDidBecomeIdle:(id)arg1;
-- (void)application:(id)arg1 didFinishLaunchingSuspendedWithOptions:(id)arg2;
+- (void)persistURLCache;
+- (void)setTerminationTimer:(id)arg1;
+- (void)managePowerAssertion;
+- (id)activeAssertions;
+- (void)storyboardDismissed;
+- (void)storyboardPresentedWithPrecomposedErrorReport:(id)arg1 serverURL:(id)arg2;
+- (void)takeAssertion:(id)arg1;
+- (int)currentDeviceOrientation;
+- (void)returnAssertion:(id)arg1;
+- (void)takeAssertion:(id)arg1 duration:(double)arg2;
+- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 - (void)applicationDidFinishLaunching:(id)arg1;
+- (void)application:(id)arg1 didFinishLaunchingSuspendedWithOptions:(id)arg2;
+- (void)accelerometer:(id)arg1 didChangeDeviceOrientation:(int)arg2;
 
 @end

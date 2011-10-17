@@ -4,7 +4,7 @@
 
 @class UIRoundedCornerView, UIView;
 
-@interface UILayoutContainerView : UIView <NSCoding> {
+@interface UILayoutContainerView : UIView <NSCoding, _UIViewFastModeSupport> {
     id _delegate;
     BOOL _usesRoundedCorners;
     float _cornerRadius;
@@ -20,27 +20,25 @@
 @property BOOL useFastMode;
 @property BOOL usesRoundedCorners;
 
-+ (void)_initializeSafeCategory;
 
-- (void)setUsesRoundedCorners:(BOOL)arg1;
-- (void)setUsesInnerShadow:(BOOL)arg1;
-- (void)_installShadowViews;
-- (void)_tearDownShadowViews;
-- (void)_beginFastMode;
-- (void)_endFastMode;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)usesInnerShadow;
-- (BOOL)useFastMode;
 - (BOOL)usesRoundedCorners;
+- (BOOL)useFastMode;
+- (void)_endFastMode;
+- (void)_beginFastMode;
+- (void)_tearDownShadowViews;
+- (void)_installShadowViews;
+- (void)setUseFastMode:(BOOL)arg1;
+- (void)setUsesInnerShadow:(BOOL)arg1;
+- (void)setUsesRoundedCorners:(BOOL)arg1;
+- (id)delegate;
 - (void)addSubview:(id)arg1;
 - (void)layoutSubviews;
-- (void)setUseFastMode:(BOOL)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (BOOL)_accessibilityServesAsContainingParentForOrdering;
+- (void)dealloc;
 
 @end

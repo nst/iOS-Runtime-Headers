@@ -6,8 +6,8 @@
 }
 
 
-- (id)deserializeNewData;
 - (void)fixupDirInfo:(id)arg1;
 - (id)deserializeNewPList;
+- (id)deserializeNewData;
 
 @end

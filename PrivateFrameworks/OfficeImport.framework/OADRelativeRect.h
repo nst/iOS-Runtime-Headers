@@ -10,18 +10,18 @@
 }
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setLeft:(float)arg1;
-- (void)setRight:(float)arg1;
-- (void)setTop:(float)arg1;
 - (id)initWithLeft:(float)arg1 top:(float)arg2 right:(float)arg3 bottom:(float)arg4;
-- (void)setBottom:(float)arg1;
-- (float)right;
-- (float)left;
 - (float)bottom;
+- (void)setBottom:(float)arg1;
+- (float)left;
+- (void)setLeft:(float)arg1;
+- (float)right;
+- (void)setRight:(float)arg1;
 - (float)top;
+- (void)setTop:(float)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 
 @end

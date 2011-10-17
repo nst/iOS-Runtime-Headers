@@ -6,5 +6,6 @@
 }
 
 
+- (BOOL)bordersWindClockwise;
 
 @end

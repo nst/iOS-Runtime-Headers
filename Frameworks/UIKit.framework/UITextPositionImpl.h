@@ -15,7 +15,7 @@
 - (void)setWebVisiblePosition:(id)arg1;
 - (id)webVisiblePosition;
 - (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)description;
+- (void)dealloc;
 
 @end

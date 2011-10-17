@@ -13,28 +13,28 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL * url;
-@property unsigned int softwareVersionIdentifier;
-@property(retain) ISReview * review;
-@property unsigned long long itemIdentifier;
-@property(getter=isBackgroundReview) BOOL backgroundReview;
 @property int assetType;
+@property unsigned int softwareVersionIdentifier;
+@property unsigned long long itemIdentifier;
+@property(retain) NSURL * url;
+@property(getter=isBackgroundReview) BOOL backgroundReview;
+@property(retain) ISReview * review;
 
 
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (void)run;
-- (void)dealloc;
+- (void)setSoftwareVersionIdentifier:(unsigned int)arg1;
 - (unsigned int)softwareVersionIdentifier;
 - (void)_fetchReviewInformation;
-- (void)setSoftwareVersionIdentifier:(unsigned int)arg1;
-- (BOOL)isBackgroundReview;
 - (void)setBackgroundReview:(BOOL)arg1;
-- (void)setItemIdentifier:(unsigned long long)arg1;
+- (BOOL)isBackgroundReview;
+- (void)dealloc;
 - (int)assetType;
-- (unsigned long long)itemIdentifier;
-- (void)setReview:(id)arg1;
 - (id)review;
+- (void)setReview:(id)arg1;
+- (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)setAssetType:(int)arg1;
+- (unsigned long long)itemIdentifier;
 
 @end

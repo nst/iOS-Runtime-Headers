@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class SSMutableURLRequestProperties, NSMutableData, NSCountedSet, NSURLRequest, NSURLResponse, SSURLRequestProperties, <ISURLOperationDelegate>, NSURLConnection, ISDataProvider, SSAuthenticationContext;
+@class SSMutableURLRequestProperties, NSMutableData, NSCountedSet, NSURLRequest, NSURLResponse, <ISURLOperationDelegate>, SSURLRequestProperties, NSURLConnection, ISDataProvider, SSAuthenticationContext;
 
 @interface ISURLOperation : ISOperation  {
     NSURLRequest *_activeURLRequest;
     SSAuthenticationContext *_authenticationContext;
     NSURLConnection *_connection;
-    long long _contentLength;
     NSMutableData *_dataBuffer;
     ISDataProvider *_dataProvider;
     int _networkRetryCount;
@@ -18,68 +17,67 @@
     BOOL _shouldSetCookies;
 }
 
-@property(copy) SSURLRequestProperties * requestProperties;
-@property(getter=_shouldSetCookies,setter=_setShouldSetCookies:) BOOL _shouldSetCookies;
-@property(retain) NSURLResponse * response;
+@property <ISURLOperationDelegate> * delegate;
 @property(retain) ISDataProvider * dataProvider;
 @property(retain) SSAuthenticationContext * authenticationContext;
-@property <ISURLOperationDelegate> * delegate;
+@property(copy) SSURLRequestProperties * requestProperties;
+@property(retain) NSURLResponse * response;
+@property(getter=_shouldSetCookies,setter=_setShouldSetCookies:) BOOL _shouldSetCookies;
 
 + (id)copyUserAgent;
 
+- (void)_sendResponseToDelegate:(id)arg1;
 - (void)setRequest:(id)arg1;
-- (id)response;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
+- (void)setResponse:(id)arg1;
+- (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
+- (void)handleResponse:(id)arg1;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (id)request;
+- (id)response;
 - (void)run;
+- (void)_run;
+- (void)_updateProgress;
+- (void)_setShouldSetCookies:(BOOL)arg1;
+- (id)_copyConnectionProperties;
+- (BOOL)_runRequestWithURL:(id)arg1;
+- (void)_logRequest:(id)arg1;
+- (void)_sendRequestToDelegate:(id)arg1;
+- (BOOL)_validateContentLength:(long long)arg1 error:(id*)arg2;
+- (void)_sendContentLengthToDelegate:(long long)arg1;
+- (void)_retry;
+- (BOOL)handleRedirectFromDataProvider:(id)arg1;
+- (id)_errorWithDomain:(id)arg1 code:(int)arg2;
+- (void)_sendOutputToDelegate:(id)arg1;
+- (void)_logResponseBody:(id)arg1;
+- (void)_handleFinishedLoading;
+- (id)_handleRedirectRequest:(id)arg1 response:(id)arg2;
+- (BOOL)_shouldSetCookies;
+- (BOOL)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
+- (id)_sanitizedStringForString:(id)arg1;
+- (void)_handleReceivedResponse:(id)arg1;
+- (void)_handleReceivedData:(id)arg1;
+- (void)_stopConnection;
+- (id)_errorWithDefaultStringsForError:(id)arg1;
+- (id)_copyAcceptLanguageString;
+- (id)_accountIdentifier;
+- (void)_setActiveURLRequest:(id)arg1;
+- (id)newRequestWithURL:(id)arg1;
+- (id)_copyQueryStringDictionaryForRedirect:(id)arg1;
+- (id)_requestProperties;
+- (id)_sanitizedURLForURL:(id)arg1;
+- (id)_activeURL;
+- (id)_copyAuthenticationContext;
 - (id)init;
 - (void)dealloc;
-- (void)_run;
-- (id)_accountIdentifier;
-- (id)newRequestWithURL:(id)arg1;
-- (id)_networkConstraints;
-- (BOOL)handleRedirectFromDataProvider:(id)arg1;
-- (BOOL)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
-- (void)_handleFinishedLoading;
-- (void)_handleReceivedData:(id)arg1;
-- (void)_handleReceivedResponse:(id)arg1;
-- (id)_handleRedirectRequest:(id)arg1 response:(id)arg2;
-- (id)_activeURL;
-- (id)_copyAcceptLanguageString;
-- (id)_copyConnectionProperties;
-- (id)_copyQueryStringDictionaryForRedirect:(id)arg1;
-- (void)_logRequest:(id)arg1;
-- (void)_logResponseBody:(id)arg1;
-- (BOOL)_preflightWithURL:(id)arg1 error:(id*)arg2;
-- (void)_retry;
-- (BOOL)_runRequestWithURL:(id)arg1;
-- (BOOL)_runWithURL:(id)arg1;
-- (void)_sendContentLengthToDelegate:(long long)arg1;
-- (void)_sendOutputToDelegate:(id)arg1;
-- (void)_sendRequestToDelegate:(id)arg1;
-- (void)_sendResponseToDelegate:(id)arg1;
-- (void)_setActiveURLRequest:(id)arg1;
-- (void)_setContentLength:(long long)arg1;
-- (void)_stopConnection;
-- (BOOL)_validateContentLength:(long long)arg1 error:(id*)arg2;
-- (void)_setShouldSetCookies:(BOOL)arg1;
-- (void)setResponse:(id)arg1;
-- (BOOL)_shouldSetCookies;
-- (id)_requestProperties;
-- (long long)_contentLength;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
-- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (void)_updateProgress;
-- (void)handleResponse:(id)arg1;
-- (void)setAuthenticationContext:(id)arg1;
-- (void)_networkTypeChanged:(id)arg1;
 - (id)dataProvider;
-- (void)setRequestProperties:(id)arg1;
-- (void)setDataProvider:(id)arg1;
 - (id)requestProperties;
+- (void)setDataProvider:(id)arg1;
+- (void)setRequestProperties:(id)arg1;
+- (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
 
 @end

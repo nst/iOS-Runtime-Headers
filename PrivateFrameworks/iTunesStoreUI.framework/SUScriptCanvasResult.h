@@ -7,13 +7,13 @@
     struct CGPath { } *_path;
 }
 
-@property(readonly) struct CGPath { }* canvasPath;
 @property(readonly) struct CGImage { }* canvasImage;
+@property(readonly) struct CGPath { }* canvasPath;
 
 
 - (void)dealloc;
-- (id)_initWithCanvas:(id)arg1;
 - (struct CGPath { }*)canvasPath;
+- (id)_initWithCanvas:(id)arg1;
 - (struct CGImage { }*)canvasImage;
 
 @end

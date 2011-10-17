@@ -10,31 +10,22 @@
     BOOL _forceFirstResponder;
 }
 
-+ (void)_initializeSafeCategory;
 
-- (void)setCellEnabled:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
 - (id)textField;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)isEditing;
-- (BOOL)canResignFirstResponder;
 - (id)value;
 - (void)setValue:(id)arg1;
+- (BOOL)canResignFirstResponder;
 - (BOOL)isFirstResponder;
-- (BOOL)resignFirstResponder;
-- (void)layoutSubviews;
+- (BOOL)isEditing;
+- (BOOL)canBecomeFirstResponder;
 - (BOOL)becomeFirstResponder;
-- (void)dealloc;
+- (BOOL)resignFirstResponder;
 - (void)setTitle:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 - (void)setPlaceholderText:(id)arg1;
-- (id)_accessibilityChildren;
-- (BOOL)_accessibilityAlwaysReturnsChild;
-- (id)_accessibilityTextViewTextOperationResponder;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
+- (void)setCellEnabled:(BOOL)arg1;
+- (void)dealloc;
 
 @end

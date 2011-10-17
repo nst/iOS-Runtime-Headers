@@ -10,12 +10,12 @@
 }
 
 
+- (void)applyToParagraphProperties:(id)arg1;
+- (void)setIndex:(int)arg1;
 - (int)index;
-- (void)setColor:(id)arg1;
 - (id)color;
+- (void)setColor:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setIndex:(int)arg1;
-- (void)applyToParagraphProperties:(id)arg1;
 
 @end

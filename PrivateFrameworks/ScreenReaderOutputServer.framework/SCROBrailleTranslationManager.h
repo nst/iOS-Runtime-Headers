@@ -8,24 +8,41 @@
     NSLock *_contentLock;
     <SCROBrailleTranslatorProtocol> *_translator;
     NSBundle *_translatorBundle;
+    BOOL _tableSupportsContractedBraille;
+    BOOL _tableSupportsEightDotBraille;
+    <SCROBrailleTranslatorProtocol> *_auxTranslator;
+    NSBundle *_auxTranslatorBundle;
+    BOOL _auxTableSupportsContractedBraille;
+    BOOL _auxTableSupportsEightDotBraille;
 }
 
+@property(readonly) BOOL auxiliaryTableSupportsEightDotBraille;
+@property(readonly) BOOL auxiliaryTableSupportsContractedBraille;
+@property(readonly) BOOL primaryTableSupportsEightDotBraille;
+@property(readonly) BOOL primaryTableSupportsContractedBraille;
+
++ (id)sharedManager;
 + (void)initialize;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)sharedManager;
 
-- (void)release;
-- (id)init;
+- (BOOL)auxiliaryTableSupportsEightDotBraille;
+- (BOOL)auxiliaryTableSupportsContractedBraille;
+- (id)printBrailleForText:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
+- (id)textForPrintBraille:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
+- (id)primaryTableIdentifier;
+- (void)setPrimaryTranslationTableWithTableIdentifier:(id)arg1;
+- (id)textForPrintBraille:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
+- (BOOL)primaryTableSupportsEightDotBraille;
+- (BOOL)primaryTableSupportsContractedBraille;
+- (void)setAuxiliaryTranslationTableWithTableIdentifier:(id)arg1;
+- (id)auxiliaryTableIdentifier;
+- (id)printBrailleForText:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
+- (unsigned int)retainCount;
 - (id)retain;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (unsigned int)retainCount;
 - (id)autorelease;
-- (BOOL)tableSupportsContractedBraille;
-- (BOOL)tableSupportsEightDotBraille;
-- (id)tableIdentifier;
-- (void)setTranslationTableWithTableIdentifier:(id)arg1;
-- (id)textForPrintBraille:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
-- (id)printBrailleForText:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
+- (id)init;
+- (void)release;
+- (void)dealloc;
 
 @end

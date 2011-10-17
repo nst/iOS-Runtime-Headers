@@ -3,29 +3,30 @@
  */
 
 @interface ADTimeStamp : PBCodable  {
-    unsigned long long _timestampEvent;
     BOOL _hasTimestampEvent;
-    unsigned long long _timestampReport;
+    unsigned long long _timestampEvent;
     BOOL _hasTimestampReport;
+    unsigned long long _timestampReport;
 }
 
-@property(readonly) BOOL hasTimestampReport;
-@property unsigned long long timestampReport;
-@property(readonly) BOOL hasTimestampEvent;
+@property BOOL hasTimestampEvent;
 @property unsigned long long timestampEvent;
+@property BOOL hasTimestampReport;
+@property unsigned long long timestampReport;
 
 
-- (void)setTimestampReport:(unsigned long long)arg1;
-- (BOOL)hasTimestampReport;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestampReport:(BOOL)arg1;
+- (void)setHasTimestampEvent:(BOOL)arg1;
+- (void)writeTo:(id)arg1;
 - (unsigned long long)timestampReport;
+- (BOOL)hasTimestampReport;
 - (unsigned long long)timestampEvent;
 - (BOOL)hasTimestampEvent;
 - (void)setTimestampEvent:(unsigned long long)arg1;
+- (void)setTimestampReport:(unsigned long long)arg1;
 - (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
 - (id)description;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)dealloc;
 
 @end

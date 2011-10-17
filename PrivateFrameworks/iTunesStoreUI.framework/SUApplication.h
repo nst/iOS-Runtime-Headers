@@ -9,25 +9,25 @@
     UIWindow *_window;
 }
 
-+ (void)_initializeSafeCategory;
+@property(retain) UIWindow * window;
+
 
 - (void)_applicationDidFinishLaunching:(id)arg1;
 - (BOOL)runTest:(id)arg1 options:(id)arg2;
+- (double)defaultImageSnapshotExpiration;
+- (void)applicationDidFinishLaunching:(id)arg1;
+- (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
+- (void)applicationWillEnterForeground:(id)arg1;
+- (void)applicationDidEnterBackground:(id)arg1;
+- (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
 - (id)init;
 - (void)dealloc;
-- (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
-- (void)applicationDidEnterBackground:(id)arg1;
-- (void)applicationWillEnterForeground:(id)arg1;
-- (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
-- (void)applicationDidFinishLaunching:(id)arg1;
-- (double)defaultImageSnapshotExpiration;
 - (void)runTestInvocation:(id)arg1;
 - (void)_runScriptTestWithOptions:(id)arg1;
-- (void)_storeEnabledChangeNotification:(id)arg1;
 - (void)_exitForStoreNotAvailable;
 - (void)_exitIfStoreNotAvailable;
 - (void)_setupUI;
 - (void)_teardownUI;
-- (id)_accessibilityContentLanguage;
+- (void)_storeEnabledChangeNotification:(id)arg1;
 
 @end

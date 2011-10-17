@@ -17,20 +17,20 @@
 @property(retain) NSString * propertyName;
 
 
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)valueExpression;
+- (void)setPropertyName:(id)arg1;
 - (id)prerequisiteTransform;
 - (BOOL)replaceMissingValueOnly;
-- (void)setPropertyName:(id)arg1;
-- (void)setValueExpression:(id)arg1;
+- (id)valueExpression;
 - (id)initWithPropertyName:(id)arg1 valueExpression:(id)arg2;
 - (void)setPrerequisiteTransform:(id)arg1;
 - (void)setReplaceMissingValueOnly:(BOOL)arg1;
+- (void)setValueExpression:(id)arg1;
 - (id)propertyName;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

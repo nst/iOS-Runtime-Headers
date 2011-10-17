@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSOperationQueue, NSMutableArray, NSArray;
+@class AAAccount, NSOperationQueue, NSArray, NSMutableArray;
 
 @interface AAAccountManager : NSObject  {
     NSMutableArray *_accounts;
@@ -11,22 +11,25 @@
 }
 
 @property(readonly) NSArray * accounts;
+@property(readonly) AAAccount * primaryAccount;
 
-+ (id)sharedManager;
 + (void)showMobileMeOfferIfNecessary;
++ (id)sharedManager;
 
+- (id)accountWithPersonID:(id)arg1;
+- (void)downloadMobileMeOffer;
+- (void)_delayNextCheckByFourToFiveDays;
+- (void)presentMobileMeOfferWithTitle:(id)arg1 message:(id)arg2;
+- (void)reloadAccounts;
+- (id)accounts;
+- (id)accountWithIdentifier:(id)arg1;
 - (void)saveAllAccounts;
+- (void)removeAccount:(id)arg1;
+- (void)updateAccount:(id)arg1;
 - (void)dealloc;
 - (id)accountWithUsername:(id)arg1;
 - (id)accountsEnabledForDataclass:(id)arg1;
-- (void)updateAccount:(id)arg1;
-- (id)accounts;
-- (void)reloadAccounts;
-- (void)_delayNextCheckByFourToFiveDays;
-- (void)presentMobileMeOfferWithTitle:(id)arg1 message:(id)arg2;
-- (void)downloadMobileMeOffer;
-- (void)_downloadURLConfiguration:(id)arg1;
-- (void)removeAccount:(id)arg1;
+- (id)primaryAccount;
 - (void)addAccount:(id)arg1;
 
 @end

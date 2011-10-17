@@ -13,36 +13,35 @@
     BOOL _disableReplay;
 }
 
-@property(readonly) BOOL wasAutomaticallyCancelled;
-@property BOOL disableReplay;
-@property(retain) NSArray * bundleIdentifiers;
 @property(getter=isAnonymous) BOOL anonymous;
+@property(retain) NSArray * bundleIdentifiers;
+@property BOOL disableReplay;
+@property(readonly) BOOL wasAutomaticallyCancelled;
 
-+ (void)_resetRequestCounts;
-+ (void)_setupNetworkConfiguration;
-+ (BOOL)allowRequestForType:(int)arg1;
++ (BOOL)allowRequests:(id)arg1;
 + (id)_requestHTTPHeaders;
++ (void)_setupNetworkConfiguration;
++ (void)_resetRequestCounts;
 
-- (void)_applicationDidEnterBackground:(id)arg1;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (void)start;
-- (void)dealloc;
-- (void)_prepareClientProperties;
-- (void)handleResponse:(id)arg1 forInternalRequest:(id)arg2;
-- (id)requestPreamble;
-- (void)writeRequest:(id)arg1 into:(id)arg2;
-- (BOOL)readResponsePreamble:(id)arg1;
-- (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2 forResponseClass:(Class)arg3;
-- (void)_handleResumeOnThread;
 - (BOOL)wasAutomaticallyCancelled;
-- (BOOL)disableReplay;
 - (void)setDisableReplay:(BOOL)arg1;
-- (id)bundleIdentifiers;
 - (void)setBundleIdentifiers:(id)arg1;
+- (id)bundleIdentifiers;
+- (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2 forResponseClass:(Class)arg3;
+- (BOOL)readResponsePreamble:(id)arg1;
+- (void)writeRequest:(id)arg1 into:(id)arg2;
+- (id)requestPreamble;
+- (void)handleResponse:(id)arg1 forInternalRequest:(id)arg2;
+- (id)initWithRequesterDelegate:(id)arg1;
+- (void)_handleResumeOnThread;
+- (BOOL)disableReplay;
+- (void)_prepareClientProperties;
+- (void)_handleSuspendOnThread;
+- (void)start;
 - (BOOL)isAnonymous;
 - (void)setAnonymous:(BOOL)arg1;
-- (void)_handleSuspendOnThread;
-- (id)initWithRequesterDelegate:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)dealloc;
 
 @end

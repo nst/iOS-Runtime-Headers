@@ -10,34 +10,36 @@
     NSArray *_accountDisplayNames;
     NSDictionary *_groupsByAccountIdentifier;
     NSMutableDictionary *_headerViewsBySection;
-    BOOL _hidesSearchableStores;
+    BOOL _hidesSearchableSources;
+    BOOL _hidesGlobalGroupWrapper;
     AccountsManager *_accountsManager;
 }
 
 @property(retain) ABModel * model;
 @property(retain) AccountsManager * accountsManager;
-@property BOOL hidesSearchableStores;
+@property BOOL hidesGlobalGroupWrapper;
+@property BOOL hidesSearchableSources;
 
 
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)reloadData;
+- (int)numberOfAccounts;
 - (id)model;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)reloadData;
 - (id)init;
 - (void)dealloc;
-- (id)defaultGroupWrapper;
-- (void)reloadDataIncludingAccountsManager:(BOOL)arg1;
-- (id)accountGroupWrappers;
-- (int)numberOfGroupsInAccountAtIndex:(int)arg1;
-- (int)numberOfAccounts;
-- (id)groupNameForIndexPath:(id)arg1;
 - (int)numberOfGroupsForAccountIdentifier:(id)arg1;
+- (void)reloadDataIncludingAccountsManager:(BOOL)arg1;
+- (int)numberOfGroupsInAccountAtIndex:(int)arg1;
+- (id)groupNameForIndexPath:(id)arg1;
+- (id)accountGroupWrappers;
 - (void)setAccountsManager:(id)arg1;
-- (id)accountsManager;
 - (int)preferredTableViewStyle;
 - (BOOL)hasMultipleAccountsOrGroups;
+- (id)defaultGroupWrapper;
+- (BOOL)hidesGlobalGroupWrapper;
 - (id)indexPathForGroupWrapper:(id)arg1;
 - (void)scheduleRefresh;
 - (void)cancelScheduledRefresh;
@@ -45,8 +47,10 @@
 - (id)accountDisplayNameAtIndex:(int)arg1;
 - (void)cacheHeaderView:(id)arg1 forSection:(unsigned int)arg2;
 - (id)groupWrapperForIndexPath:(id)arg1;
-- (BOOL)hidesSearchableStores;
-- (void)setHidesSearchableStores:(BOOL)arg1;
+- (id)accountsManager;
+- (BOOL)hidesSearchableSources;
+- (void)setHidesSearchableSources:(BOOL)arg1;
+- (void)setHidesGlobalGroupWrapper:(BOOL)arg1;
 - (void)setModel:(id)arg1;
 
 @end

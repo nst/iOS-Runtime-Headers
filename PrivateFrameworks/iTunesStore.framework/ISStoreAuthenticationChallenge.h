@@ -13,28 +13,28 @@
     BOOL _userNameIsEditable;
 }
 
-@property BOOL userNameIsEditable;
-@property(retain) NSString * user;
-@property <NSURLAuthenticationChallengeSender> * sender;
-@property(retain) NSString * password;
-@property BOOL hasPassword;
 @property int failureCount;
+@property BOOL hasPassword;
+@property(retain) NSString * password;
+@property <NSURLAuthenticationChallengeSender> * sender;
+@property(retain) NSString * user;
+@property BOOL userNameIsEditable;
 
 
-- (id)user;
-- (id)sender;
-- (id)password;
-- (id)init;
-- (void)dealloc;
-- (BOOL)userNameIsEditable;
-- (BOOL)userNameIsEmail;
-- (void)setUserNameIsEditable:(BOOL)arg1;
-- (void)setHasPassword:(BOOL)arg1;
-- (void)setFailureCount:(int)arg1;
-- (int)failureCount;
-- (BOOL)hasPassword;
-- (void)setSender:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUser:(id)arg1;
+- (BOOL)hasPassword;
+- (void)setSender:(id)arg1;
+- (id)user;
+- (id)password;
+- (id)sender;
+- (void)setHasPassword:(BOOL)arg1;
+- (void)setFailureCount:(int)arg1;
+- (void)setUserNameIsEditable:(BOOL)arg1;
+- (BOOL)userNameIsEmail;
+- (BOOL)userNameIsEditable;
+- (int)failureCount;
+- (id)init;
+- (void)dealloc;
 
 @end

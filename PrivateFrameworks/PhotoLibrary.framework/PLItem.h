@@ -2,24 +2,42 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString;
+@class NSURL, NSString, NSData;
 
 @interface PLItem : NSObject  {
-    id _internal;
+    NSString *_title;
+    NSString *_temporaryFileName;
 }
 
-@property(readonly) int itemType;
 @property(copy) NSString * title;
+@property(readonly) NSURL * URL;
+@property(readonly) BOOL allowsRotation;
+@property(readonly) NSData * imageData;
+@property(readonly) int itemType;
 
-+ (Class)_internalClass;
++ (id)itemsWithURLsAndData:(id)arg1;
++ (id)writeTemporaryFileWithItemData:(id)arg1 pathExtension:(id)arg2 type:(id*)arg3;
++ (id)typeFromPathExtension:(id)arg1 typeHint:(id)arg2;
++ (struct __CFString { }*)baseType;
 
+- (id)imageData;
+- (id)initWithData:(id)arg1 type:(id)arg2;
+- (id)videoView;
 - (id)initWithURL:(id)arg1;
-- (id)init;
+- (id)URL;
+- (id)title;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
+- (void)setTitle:(id)arg1;
+- (id)asset;
+- (id)initVideoWithURL:(id)arg1;
+- (id)initImageWithData:(id)arg1;
 - (id)initWithData:(id)arg1 pathExtension:(id)arg2;
+- (id)initWithData:(id)arg1 pathExtension:(id)arg2 type:(id)arg3;
+- (id)initWithURL:(id)arg1 type:(id)arg2;
+- (id)initWithURL:(id)arg1 typeHint:(id)arg2;
+- (id)imageWithFormat:(int)arg1;
+- (BOOL)allowsRotation;
+- (void)dealloc;
 - (int)itemType;
-- (BOOL)_allowsRotation;
-- (id)_MLPhoto;
 
 @end

@@ -2,36 +2,44 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray;
+@class NSArray, UIView;
 
 @interface MPPlaybackTitlesView : UIControl  {
+    UIView *_contentView;
     NSArray *_labels;
     NSArray *_titles;
     BOOL _showingLoadingUI;
+    unsigned int _marqueeScrollableIndex;
+    BOOL _marqueeScrollingActive;
 }
 
-@property BOOL showingLoadingUI;
 @property(retain) NSArray * titles;
+@property BOOL showingLoadingUI;
+@property BOOL marqueeScrollingActive;
+@property unsigned int marqueeScrollableIndex;
+@property(readonly) UIView * contentView;
 
-+ (void)_initializeSafeCategory;
 
+- (void)setMarqueeScrollableIndex:(unsigned int)arg1;
+- (void)setMarqueeScrollingActive:(BOOL)arg1;
+- (BOOL)marqueeScrollingActive;
+- (unsigned int)marqueeScrollableIndex;
+- (id)_addLoadingLabel;
+- (BOOL)showingLoadingUI;
+- (void)_tearDownLabels;
+- (void)_updateLabelMarqueeScrolling;
+- (void)_layoutLabels;
+- (void)_layoutLoadingUI;
+- (id)_addLabel:(unsigned int)arg1;
+- (void)_applicationDidBecomeActiveNotification:(id)arg1;
+- (void)setShowingLoadingUI:(BOOL)arg1;
 - (id)titles;
 - (void)setTitles:(id)arg1;
+- (id)contentView;
 - (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)init;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)_addLoadingLabel;
-- (id)_addLabel:(unsigned int)arg1;
-- (void)_layoutLoadingUI;
-- (void)_layoutLabels;
-- (void)_tearDownLabels;
-- (BOOL)showingLoadingUI;
-- (void)setShowingLoadingUI:(BOOL)arg1;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 
 @end

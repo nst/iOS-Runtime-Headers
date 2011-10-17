@@ -10,13 +10,13 @@
 }
 
 
-- (void)lock;
+- (BOOL)tryLock;
 - (void)unlock;
-- (void)setName:(id)arg1;
+- (void)lock;
 - (id)name;
+- (id)initWithName:(id)arg1;
+- (void)setName:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)initWithName:(id)arg1;
-- (BOOL)tryLock;
 
 @end

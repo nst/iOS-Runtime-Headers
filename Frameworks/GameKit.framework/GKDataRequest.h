@@ -6,71 +6,69 @@
    See Warning(s) below.
  */
 
-@class NSDictionary, NSString, NSArray;
+@class NSString, NSDictionary;
 
 @interface GKDataRequest : NSOperation  {
     struct dispatch_source_s { } *_replySource;
+    BOOL _isExecuting;
+    BOOL _isFinished;
+    BOOL _isCancelled;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
 
-    BOOL _isExecuting;
-    BOOL _isFinished;
-    BOOL _isCancelled;
-    id _authObserver;
     int _sequenceNumber;
+    double _startTime;
 }
 
-@property(retain,readonly) NSArray * invalidateCacheKeys;
-@property(readonly) int cachePriority;
-@property(readonly) int cacheType;
+@property(readonly) int sequenceNumber;
+@property(readonly) NSString * key;
+@property(readonly) NSDictionary * header;
+@property(readonly) NSDictionary * request;
 @property(readonly) BOOL authenticationRequired;
 @property(readonly) BOOL shouldProcessInBackground;
-@property(readonly) int sequenceNumber;
 @property(copy) id completionBlock;
-@property(readonly) NSDictionary * request;
-@property(readonly) NSDictionary * header;
-@property(readonly) NSString * cacheKey;
-@property(readonly) NSString * key;
+@property double startTime;
 
-+ (BOOL)useTestProtocol;
-+ (unsigned int)bootstrapPort;
-+ (void)_resetRequestPort;
-+ (void)_cancelActiveRequestsWithError:(id)arg1 force:(BOOL)arg2;
-+ (unsigned int)requestPort;
-+ (id)requestQueue;
 + (id)protocolVersion;
++ (unsigned int)requestPort;
++ (void)_cancelActiveRequestsWithError:(id)arg1 force:(BOOL)arg2;
++ (void)_resetRequestPort;
++ (struct dispatch_queue_s { }*)responseQueue;
++ (unsigned int)bootstrapPort;
++ (BOOL)useTestProtocol;
++ (id)requestQueue;
 
-- (int)cachePriority;
-- (id)invalidateCacheKeys;
-- (int)cacheType;
-- (int)sequenceNumber;
-- (BOOL)shouldProcessInBackground;
-- (BOOL)authenticationRequired;
-- (void)_cancelSources;
+- (id)completionBlock;
+- (BOOL)isFinished;
+- (BOOL)isConcurrent;
+- (void)finish;
 - (void)addToQueue;
+- (void)handleUnauthenticatedError;
+- (void)playerAuthenticationDidChange:(id)arg1;
+- (BOOL)authenticationRequired;
+- (Class)responseClass;
+- (id)header;
+- (void)_cancelSources;
 - (void)cancelWithError:(id)arg1;
-- (id)errorForResponse:(id)arg1;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
-- (id)demarshalResponseData:(id)arg1;
+- (BOOL)shouldProcessInBackground;
 - (void)wasCancelledByServer;
-- (id)cacheKey;
-- (id)key;
+- (void)handleResponseFromServer:(id)arg1;
+- (id)demarshalResponseData:(id)arg1;
+- (int)sequenceNumber;
+- (void)start;
+- (BOOL)isExecuting;
+- (double)startTime;
 - (void)send;
 - (void)setCompletionBlock:(id)arg1;
+- (id)key;
 - (id)request;
-- (void)start;
+- (void)setStartTime:(double)arg1;
+- (id)description;
 - (void)cancel;
+- (BOOL)isCancelled;
 - (id)init;
 - (void)dealloc;
-- (id)description;
-- (id)header;
-- (BOOL)isCancelled;
-- (BOOL)isConcurrent;
-- (BOOL)isFinished;
-- (BOOL)isExecuting;
-- (id)completionBlock;
-- (void)finish;
 
 @end

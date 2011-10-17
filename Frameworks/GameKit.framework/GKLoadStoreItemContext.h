@@ -18,21 +18,21 @@
     SSItemLookupRequest *_request;
 }
 
-@property(retain) SSItemLookupRequest * request;
-@property(copy) id completionHandler;
 @property(copy) NSArray * games;
+@property(copy) id completionHandler;
+@property(retain) SSItemLookupRequest * request;
 
 
-- (void)setGames:(id)arg1;
 - (void)itemLookupRequest:(id)arg1 didFindItems:(id)arg2;
-- (void)setRequest:(id)arg1;
 - (id)games;
-- (id)completionHandler;
-- (void)setCompletionHandler:(id)arg1;
-- (id)request;
+- (void)setGames:(id)arg1;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (void)setRequest:(id)arg1;
 - (void)start;
+- (void)setCompletionHandler:(id)arg1;
+- (id)completionHandler;
+- (id)request;
 - (void)cancel;
 - (void)dealloc;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
 
 @end

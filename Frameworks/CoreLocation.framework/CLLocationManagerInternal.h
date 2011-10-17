@@ -20,7 +20,9 @@
         double altitude; 
         double verticalAccuracy; 
         double speed; 
+        double speedAccuracy; 
         double course; 
+        double courseAccuracy; 
         double timestamp; 
         int confidence; 
         double lifespan; 
@@ -31,25 +33,16 @@
         double bestAccuracy; 
     } fCapabilities;
     BOOL fUpdatingHeading;
-    struct { 
-        double x; 
-        double y; 
-        double z; 
-        double magneticHeading; 
-        double trueHeading; 
-        double accuracy; 
-        double timestamp; 
-        double temperature; 
-        double magnitude; 
-        double inclination; 
-        int calibration; 
-    } fHeading;
     double fHeadingFilter;
     int fHeadingOrientation;
+    BOOL fPersistentMonitoringEnabled;
+    BOOL fLocationServicesPreferencesDialogEnabled;
+    BOOL fPreviousAuthorizationStatusValid;
+    int fPreviousAuthorizationStatus;
 }
 
 
+- (id)initWithInfo:(id)arg1 bundleIdentifier:(id)arg2 bundle:(id)arg3;
 - (void)dealloc;
-- (id)initWithInfo:(id)arg1;
 
 @end

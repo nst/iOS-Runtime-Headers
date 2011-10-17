@@ -11,23 +11,23 @@
     CoreDAVItem *_prop;
 }
 
-@property(retain) CoreDAVItem * prop;
-@property(retain) CoreDAVItem * include;
-@property(retain) CoreDAVItemWithNoChildren * allProp;
 @property(retain) CoreDAVItemWithNoChildren * propName;
+@property(retain) CoreDAVItemWithNoChildren * allProp;
+@property(retain) CoreDAVItem * include;
+@property(retain) CoreDAVItem * prop;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (void)setProp:(id)arg1;
-- (id)propName;
-- (id)allProp;
 - (void)setInclude:(id)arg1;
 - (void)setAllProp:(id)arg1;
 - (void)setPropName:(id)arg1;
 - (id)include;
+- (id)allProp;
+- (id)propName;
+- (void)setProp:(id)arg1;
 - (id)prop;
 - (id)copyParseRules;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

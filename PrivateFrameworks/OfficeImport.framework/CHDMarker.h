@@ -11,13 +11,13 @@
 }
 
 
-- (void)setSize:(unsigned int)arg1;
-- (void)setStyle:(int)arg1;
-- (int)style;
-- (id)init;
-- (unsigned int)size;
-- (void)dealloc;
 - (void)setGraphicProperties:(id)arg1;
 - (id)graphicProperties;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)setSize:(unsigned int)arg1;
+- (unsigned int)size;
+- (id)init;
+- (void)dealloc;
 
 @end

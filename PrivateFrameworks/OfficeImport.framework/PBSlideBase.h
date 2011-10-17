@@ -10,12 +10,15 @@
 @interface PBSlideBase : NSObject  {
 }
 
-+ (void)readDrawingGroup:(id)arg1 slide:(id)arg2 state:(id)arg3;
-+ (void)readColorScheme:(id)arg1 colorScheme:(id)arg2 colorMap:(id)arg3 state:(id)arg4;
++ (void)writeSlideShowInfo:(id)arg1 slideBase:(id)arg2 state:(id)arg3;
 + (BOOL)slideFollowsMasterBackground:(id)arg1;
 + (void)parseSlideShowInfo:(struct PptSSSlideInfoAtom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; int x7; int x8; unsigned char x9; int x10; unsigned short x11; int x12; }*)arg1 slideBase:(id)arg2 state:(id)arg3;
++ (void)initTransitionMap:(id)arg1;
++ (unsigned char)mapDirection:(id)arg1;
 + (int)parseTransType:(int)arg1 direction:(long)arg2;
 + (id)createOptions:(long)arg1 transType:(int)arg2;
++ (void)readColorScheme:(id)arg1 colorScheme:(id)arg2 colorMap:(id)arg3 state:(id)arg4;
++ (void)readDrawingGroup:(id)arg1 slide:(id)arg2 state:(id)arg3;
 + (void)mapSlideNumberPlaceholder:(id)arg1 tgtSlideBase:(id)arg2 state:(id)arg3;
 
 

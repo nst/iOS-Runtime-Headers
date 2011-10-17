@@ -10,22 +10,21 @@
 }
 
 @property(readonly) BOOL hasLocation;
+@property(retain) LBSGLocation * location;
 @property(readonly) BOOL hasCell;
 @property(retain) LBSGCell * cell;
-@property(retain) LBSGLocation * location;
 
 
-- (id)dictionaryRepresentation;
-- (id)cell;
-- (void)setLocation:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)location;
-- (BOOL)hasCell;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)hasCell;
 - (BOOL)hasLocation;
+- (void)writeTo:(id)arg1;
+- (void)setLocation:(id)arg1;
 - (void)setCell:(id)arg1;
+- (id)cell;
+- (id)dictionaryRepresentation;
+- (id)location;
+- (id)description;
+- (void)dealloc;
 
 @end

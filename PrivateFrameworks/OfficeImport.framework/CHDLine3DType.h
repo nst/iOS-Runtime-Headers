@@ -8,8 +8,8 @@
 
 + (bool)is3DType;
 
+- (int)gapDepth;
 - (void)setGapDepth:(int)arg1;
 - (id)initWithChart:(id)arg1;
-- (int)gapDepth;
 
 @end

@@ -9,21 +9,20 @@
     NSData *_image;
 }
 
+@property long long iconId;
 @property(readonly) BOOL hasImage;
 @property(retain) NSData * image;
-@property long long iconId;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (long long)iconId;
+- (BOOL)hasImage;
+- (void)setIconId:(long long)arg1;
+- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)image;
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (void)setImage:(id)arg1;
-- (void)setIconId:(long long)arg1;
-- (BOOL)hasImage;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (long long)iconId;
+- (id)description;
+- (void)dealloc;
 
 @end

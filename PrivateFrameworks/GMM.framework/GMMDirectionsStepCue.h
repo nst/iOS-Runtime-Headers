@@ -5,40 +5,40 @@
 @class NSString;
 
 @interface GMMDirectionsStepCue : PBCodable  {
-    int _type;
     BOOL _hasType;
+    int _type;
     NSString *_name;
     NSString *_iconUrl;
     NSString *_iconText;
 }
 
+@property BOOL hasType;
+@property int type;
 @property(readonly) BOOL hasName;
+@property(retain) NSString * name;
 @property(readonly) BOOL hasIconUrl;
+@property(retain) NSString * iconUrl;
 @property(readonly) BOOL hasIconText;
 @property(retain) NSString * iconText;
-@property(retain) NSString * iconUrl;
-@property(retain) NSString * name;
-@property(readonly) BOOL hasType;
-@property int type;
 
 
-- (id)dictionaryRepresentation;
-- (int)type;
-- (void)setType:(int)arg1;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)hasIconUrl;
-- (BOOL)hasIconText;
-- (id)iconText;
-- (void)setIconText:(id)arg1;
-- (void)setIconUrl:(id)arg1;
-- (id)iconUrl;
 - (BOOL)readFrom:(id)arg1;
 - (BOOL)hasType;
+- (id)iconText;
+- (id)iconUrl;
+- (void)setHasType:(BOOL)arg1;
+- (BOOL)hasIconText;
+- (BOOL)hasIconUrl;
+- (void)setIconText:(id)arg1;
+- (void)setIconUrl:(id)arg1;
 - (BOOL)hasName;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (int)type;
+- (id)name;
+- (void)setType:(int)arg1;
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

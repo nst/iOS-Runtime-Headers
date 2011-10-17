@@ -15,17 +15,32 @@
 
 @interface WebFramePolicyListener : NSObject <WebPolicyDecisionListener, WebFormSubmissionListener> {
 
-  /* Error parsing encoded ivar type info: ^{Frame=i^{Page}{FrameTree="m_thisFrame"^{Frame}"m_parent"^{Frame}"m_name"{AtomicString="m_string"{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}}"m_nextSibling"{RefPtr<WebCore::Frame>="m_ptr"^{Frame}}"m_previousSibling"^{Frame}"m_firstChild"{RefPtr<WebCore::Frame>="m_ptr"^{Frame}}"m_lastChild"^{Frame}"m_childCount"I}{FrameLoader="_vptr$FrameLoader"^^?"m_frame"^{Frame}"m_client"^{FrameLoaderClient}"m_policyChecker"{PolicyChecker="m_frame"^{Frame}"m_delegateIsDecidingNavigationPolicy"B"m_delegateIsHandlingUnimplementablePolicy"B"m_loadType"i"m_callback"{PolicyCallback="m_request"{ResourceRequest="m_url"{KURL="m_string"{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}"m_isValid"b1"m_protocolInHTTPFamily"b1"m_schemeEnd"i"m_userStart"i"m_userEnd"i"m_passwordEnd"i"m_hostEnd"i"m_portEnd"i"m_pathAfterLastSlash"i"m_pathEnd"i"m_queryEnd"i"m_fragmentEnd"i}"m_cachePolicy"i"m_timeoutInterval"d"m_firstPartyForCookies"{KURL="m_string"{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}"m_isValid"b1"m_protocolInHTTPFamily"b1"m_schemeEnd"i"m_userStart"i"m_userEnd"i"m_passwordEnd"i"m_hostEnd"i"m_portEnd"i"m_pathAfterLastSlash"i"m_pathEnd"i"m_queryEnd"i"m_fragmentEnd"i}"m_httpMethod"{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}"m_httpHeaderFields"{HTTPHeaderMap="m_impl"{HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> >="m_table"^{pair<WebCore::AtomicString,WebCore::String>}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}"m_responseContentDispositionEncodingFallbackArray"{Vector<WebCore::String,0ul>="m_size"I"m_buffer"{VectorBuffer<WebCore::String,0ul>="m_buffer"^{String}"m_capacity"I}}"m_httpBody"{RefPtr<WebCore::FormData>="m_ptr"^{FormData}}"m_allowCookies"B"m_resourceRequestUpdated"B"m_platformRequestUpdated"B"m_reportUploadProgress"B"m_priority"i"m_targetType"i"m_mainResourceRequest"B"m_nsRequest"{RetainPtr<NSURLRequest>="m_ptr"@"NSURLRequest"}}"m_formState"{RefPtr<WebCore::FormState>="m_ptr"^{FormState}}"m_frameName"{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}"m_navigationFunction"^?"m_newWindowFunction"^?"m_contentFunction"^?"m_argument"^v}}"m_history"{HistoryController="m_frame"^{Frame}"m_currentItem"{RefPtr<WebCore::HistoryItem>="m_ptr"^{HistoryItem}}"m_previousItem"{RefPtr<WebCore::HistoryItem>="m_ptr"^{HistoryItem}}"m_provisionalItem"{RefPtr<WebCore::HistoryItem>="m_ptr"^{HistoryItem}}}"m_notifer"{ResourceLoadNotifier="m_frame"^{Frame}}"m_writer"{DocumentWriter="m_frame"^{Frame}"m_receivedData"B"m_mimeType"{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}"m_encodingWasChosenByUser"B"m_encoding"{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}"m_decoder"{RefPtr<WebCore::TextResourceDecoder>="m_ptr"^{TextResourceDecoder}}}"m_state"i"m_loadType"i"m_documentLoader"{RefPtr<WebCore::DocumentLoader>="m_ptr"^{DocumentLoader}}"m_provisionalDocumentLoader"{RefPtr<WebCore::DocumentLoader>="m_ptr"^{DocumentLoader}}"m_policyDocumentLoader"{RefPtr<WebCore::DocumentLoader>="m_ptr"^{DocumentLoader}}"m_delegateIsHandlingProvisionalLoadError"B"m_firstLayoutDone"B"m_quickRedirectComing"B"m_sentRedirectNotification"B"m_inStopAllLoaders"B"m_outgoingReferrer"{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}"m_isExecutingJavaScriptFormAction"B"m_didCallImplicitClose"B"m_wasUnloadEventEmitted"B"m_pageDismissalEventBeingDispatched"B"m_isComplete"B"m_isLoadingMainResource"B"m_pendingStateObject"{RefPtr<WebCore::SerializedScriptValue>="m_ptr"^{SerializedScriptValue}}"m_URL"{KURL="m_string"{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}"m_isValid"b1"m_protocolInHTTPFamily"b1"m_schemeEnd"i"m_userStart"i"m_userEnd"i"m_passwordEnd"i"m_hostEnd"i"m_portEnd"i"m_pathAfterLastSlash"i"m_pathEnd"i"m_queryEnd"i"m_fragmentEnd"i}"m_workingURL"{KURL="m_string"{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}"m_isValid"b1"m_protocolInHTTPFamily"b1"m_schemeEnd"i"m_userStart"i"m_userEnd"i"m_passwordEnd"i"m_hostEnd"i"m_portEnd"i"m_pathAfterLastSlash"i"m_pathEnd"i"m_queryEnd"i"m_fragmentEnd"i}"m_iconLoader"{OwnPtr<WebCore::IconLoader>="m_ptr"^{IconLoader}}"m_mayLoadIconLater"B"m_cancellingWithLoadInProgress"B"m_needsClear"B"m_receivedData"B"m_containsPlugIns"B"m_submittedFormURL"{KURL="m_string"{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}"m_isValid"b1"m_protocolInHTTPFamily"b1"m_schemeEnd"i"m_userStart"i"m_userEnd"i"m_passwordEnd"i"m_hostEnd"i"m_portEnd"i"m_pathAfterLastSlash"i"m_pathEnd"i"m_queryEnd"i"m_fragmentEnd"i}"m_checkTimer"{Timer<WebCore::FrameLoader>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{FrameLoader}"m_function"{?="__pfn"^"__delta"i}}"m_shouldCallCheckCompleted"B"m_shouldCallCheckLoadComplete"B"m_opener"^{Frame}"m_openedFrames"{HashSet<WebCore::Frame*,WTF::PtrHash<WebCore::Frame*>,WTF::HashTraits<WebCore::Frame*> >="m_impl"{HashTable<WebCore::Frame*,WebCore::Frame*,WTF::IdentityExtractor<WebCore::Frame*>,WTF::PtrHash<WebCore::Frame*>,WTF::HashTraits<WebCore::Frame*>,WTF::HashTraits<WebCore::Frame*> >="m_table"^^{Frame}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}"m_creatingInitialEmptyDocument"B"m_isDisplayingInitialEmptyDocument"B"m_committedFirstRealDocumentLoad"B"m_didPerformFirstNavigation"B"m_loadingFromCachedPage"B"m_suppressOpenerInNewFrame"B"m_sandboxFlags"i"m_forcedSandboxFlags"i"m_loadsSynchronously"B}{RedirectScheduler="m_frame"^{Frame}"m_timer"{Timer<WebCore::RedirectScheduler>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{RedirectScheduler}"m_function"{?="__pfn"^"__delta"i}}"m_redirect"{OwnPtr<WebCore::ScheduledNavigation>="m_ptr"^{ScheduledNavigation}}}{RefPtr<WebCore::DOMWindow>="m_ptr"^{DOMWindow}}{HashSet<WebCore::DOMWindow*,WTF::PtrHash<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*> >="m_impl"{HashTable<WebCore::DOMWindow*,WebCore::DOMWindow*,WTF::IdentityExtractor<WebCore::DOMWindow*>,WTF::PtrHash<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*> >="m_table"^^{DOMWindow}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}^{HTMLFrameOwnerElement}{RefPtr<WebCore::FrameView>="m_ptr"^{FrameView}}{RefPtr<WebCore::Document>="m_ptr"^{Document}}{ScriptController="m_windowShells"{HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>,JSC::ProtectedPtr<WebCore::JSDOMWindowShell>,WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::HashTraits<JSC::ProtectedPtr<WebCore::JSDOMWindowShell> > >="m_impl"{HashTable<WTF::RefPtr<WebCore::DOMWrapperWorld>,std::pair<WTF::RefPtr<WebCore::DOMWrapperWorld>, JSC::ProtectedPtr<WebCore::JSDOMWindowShell> >,WTF::PairFirstExtractor<std::pair<WTF::RefPtr<WebCore::DOMWrapperWorld>, JSC::ProtectedPtr<WebCore::JSDOMWindowShell> > >,WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::PairHashTraits<WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> >, WTF::HashTraits<JSC::ProtectedPtr<WebCore::JSDOMWindowShell> > >,WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> > >="m_table"^{pair<WTF::RefPtr<WebCore::DOMWrapperWorld>,JSC::ProtectedPtr<WebCore::JSDOMWindowShell> >}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}"m_frame"^{Frame}"m_handlerLineNumber"i"m_sourceURL"^{String}"m_inExecuteScript"B"m_processingTimerCallback"B"m_paused"B"m_allowPopupsFromPlugin"B"m_bindingRootObject"{RefPtr<JSC::Bindings::RootObject>="m_ptr"^{RootObject}}"m_rootObjects"{HashMap<void*,WTF::RefPtr<JSC::Bindings::RootObject>,WTF::PtrHash<void*>,WTF::HashTraits<void*>,WTF::HashTraits<WTF::RefPtr<JSC::Bindings::RootObject> > >="m_impl"{HashTable<void*,std::pair<void*, WTF::RefPtr<JSC::Bindings::RootObject> >,WTF::PairFirstExtractor<std::pair<void*, WTF::RefPtr<JSC::Bindings::RootObject> > >,WTF::PtrHash<void*>,WTF::PairHashTraits<WTF::HashTraits<void*>, WTF::HashTraits<WTF::RefPtr<JSC::Bindings::RootObject> > >,WTF::HashTraits<void*> >="m_table"^{pair<void*,WTF::RefPtr<JSC::Bindings::RootObject> >}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}"m_windowScriptObject"{RetainPtr<WebScriptObject>="m_ptr"@"WebScriptObject"}"m_XSSAuditor"{OwnPtr<WebCore::XSSAuditor>="m_ptr"^{XSSAuditor}}}{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}{String="m_impl"{RefPtr<WebCore::StringImpl>="m_ptr"^{StringImpl}}}f{SelectionController="m_frame"^{Frame}"m_xPosForVerticalArrowNavigation"i"m_selection"{VisibleSelection="m_base"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_extent"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_start"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_end"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_affinity"i"m_selectionType"i"m_baseIsFirst"B}"m_granularity"i"m_caretBlinkTimer"{Timer<WebCore::SelectionController>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{SelectionController}"m_function"{?="__pfn"^"__delta"i}}"m_caretRect"{IntRect="m_location"{IntPoint="m_x"i"m_y"i}"m_size"{IntSize="m_width"i"m_height"i}}"m_absCaretBounds"{IntRect="m_location"{IntPoint="m_x"i"m_y"i}"m_size"{IntSize="m_width"i"m_height"i}}"m_absoluteCaretRepaintBounds"{IntRect="m_location"{IntPoint="m_x"i"m_y"i}"m_size"{IntSize="m_width"i"m_height"i}}"m_needsLayout"B"m_absCaretBoundsDirty"B"m_isDirectional"B"m_isDragCaretController"B"m_isCaretBlinkingSuspended"B"m_focused"B"m_caretVisible"B"m_caretPaint"B"m_updateAppearanceEnabled"B"m_caretBlinks"B"m_caretColor"{Color="m_color"I"m_valid"B}"m_closeTypingSuppressions"i}{VisibleSelection="m_base"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_extent"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_start"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_end"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_affinity"i"m_selectionType"i"m_baseIsFirst"B}{Editor="m_frame"^{Frame}"m_deleteButtonController"{OwnPtr<WebCore::DeleteButtonController>="m_ptr"^{DeleteButtonController}}"m_lastEditCommand"{RefPtr<WebCore::EditCommand>="m_ptr"^{EditCommand}}"m_removedAnchor"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_compositionNode"{RefPtr<WebCore::Text>="m_ptr"^{Text}}"m_compositionStart"I"m_compositionEnd"I"m_customCompositionUnderlines"{Vector<WebCore::CompositionUnderline,0ul>="m_size"I"m_buffer"{VectorBuffer<WebCore::CompositionUnderline,0ul>="m_buffer"^{CompositionUnderline}"m_capacity"I}}"m_ignoreCompositionSelectionChange"B"m_shouldStartNewKillRingSequence"B"m_shouldStyleWithCSS"B}{EventHandler="m_frame"^{Frame}"m_mousePressed"B"m_capturesDragging"B"m_mousePressNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_mouseDownMayStartSelect"B"m_mouseDownWasSingleClickInSelection"B"m_beganSelectingText"B"m_panScrollStartPos"{IntPoint="m_x"i"m_y"i}"m_panScrollInProgress"B"m_panScrollButtonPressed"B"m_springLoadedPanScrollInProgress"B"m_hoverTimer"{Timer<WebCore::EventHandler>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{EventHandler}"m_function"{?="__pfn"^"__delta"i}}"m_autoscrollTimer"{Timer<WebCore::EventHandler>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{EventHandler}"m_function"{?="__pfn"^"__delta"i}}"m_autoscrollRenderer"^{RenderObject}"m_autoscrollInProgress"B"m_mouseDownMayStartAutoscroll"B"m_mouseDownWasInSubframe"B"m_fakeMouseMoveEventTimer"{Timer<WebCore::EventHandler>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{EventHandler}"m_function"{?="__pfn"^"__delta"i}}"m_svgPan"B"m_instanceUnderMouse"{RefPtr<WebCore::SVGElementInstance>="m_ptr"^{SVGElementInstance}}"m_lastInstanceUnderMouse"{RefPtr<WebCore::SVGElementInstance>="m_ptr"^{SVGElementInstance}}"m_resizeLayer"^{RenderLayer}"m_capturingMouseEventsNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_nodeUnderMouse"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_lastNodeUnderMouse"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_lastMouseMoveEventSubframe"{RefPtr<WebCore::Frame>="m_ptr"^{Frame}}"m_lastScrollbarUnderMouse"{RefPtr<WebCore::Scrollbar>="m_ptr"^{Scrollbar}}"m_clickCount"i"m_clickNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_gestureInitialDiameter"f"m_gestureLastDiameter"f"m_gestureInitialRotation"f"m_gestureLastRotation"f"m_firstTouchID"I"m_touchesByID"{HashMap<unsigned int,WTF::RefPtr<WebCore::Touch>,WTF::IntHash<unsigned int>,WTF::HashTraits<unsigned int>,WTF::HashTraits<WTF::RefPtr<WebCore::Touch> > >="m_impl"{HashTable<unsigned int,std::pair<unsigned int, WTF::RefPtr<WebCore::Touch> >,WTF::PairFirstExtractor<std::pair<unsigned int, WTF::RefPtr<WebCore::Touch> > >,WTF::IntHash<unsigned int>,WTF::PairHashTraits<WTF::HashTraits<unsigned int>, WTF::HashTraits<WTF::RefPtr<WebCore::Touch> > >,WTF::HashTraits<unsigned int> >="m_table"^{pair<unsigned int,WTF::RefPtr<WebCore::Touch> >}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}"m_gestureTargets"{HashSet<WTF::RefPtr<WebCore::EventTarget>,WTF::PtrHash<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> > >="m_impl"{HashTable<WTF::RefPtr<WebCore::EventTarget>,WTF::RefPtr<WebCore::EventTarget>,WTF::IdentityExtractor<WTF::RefPtr<WebCore::EventTarget> >,WTF::PtrHash<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> > >="m_table"^{RefPtr<WebCore::EventTarget>}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}"m_touchEventTargetSubframe"{RefPtr<WebCore::Frame>="m_ptr"^{Frame}}"m_frameSetBeingResized"{RefPtr<WebCore::HTMLFrameSetElement>="m_ptr"^{HTMLFrameSetElement}}"m_offsetFromResizeCorner"{IntSize="m_width"i"m_height"i}"m_currentMousePosition"{IntPoint="m_x"i"m_y"i}"m_mouseDownPos"{IntPoint="m_x"i"m_y"i}"m_mouseDownTimestamp"d"m_mouseDown"{PlatformMouseEvent="m_position"{IntPoint="m_x"i"m_y"i}"m_globalPosition"{IntPoint="m_x"i"m_y"i}"m_button"i"m_eventType"i"m_clickCount"i"m_shiftKey"B"m_ctrlKey"B"m_altKey"B"m_metaKey"B"m_timestamp"d"m_modifierFlags"I}"m_useLatchedWheelEventNode"B"m_latchedWheelEventNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_widgetIsLatched"B"m_previousWheelScrolledNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_mouseDownView"@"WAKView""m_sendingEventToSubview"B}{AnimationController="m_data"^{AnimationControllerPrivate}}{RefPtr<WebCore::CSSMutableStyleDeclaration>="m_ptr"^{CSSMutableStyleDeclaration}}{Timer<WebCore::Frame>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{Frame}"m_function"{?="__pfn"^"__delta"i}}f{IntPoint="m_x"i"m_y"i}{ViewportArguments="initialScale"f"minimumScale"f"maximumScale"f"width"f"height"f"userScalable"f}B{VisibleSelection="m_base"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_extent"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_start"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_end"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_affinity"i"m_selectionType"i"m_baseIsFirst"B}{VisibleSelection="m_base"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_extent"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_start"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_end"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_affinity"i"m_selectionType"i"m_baseIsFirst"B}{FloatSize="m_width"f"m_height"f}IIIdd{Timer<WebCore::Frame>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{Frame}"m_function"{?="__pfn"^"__delta"i}}iBBBBBBi} */
-    struct Frame { int x1; struct Page {} *x2; struct FrameTree { 
+  /* Error parsing encoded ivar type info: ^{Frame=i{HashSet<WebCore::FrameDestructionObserver*,WTF::PtrHash<WebCore::FrameDestructionObserver*>,WTF::HashTraits<WebCore::FrameDestructionObserver*> >="m_impl"{HashTable<WebCore::FrameDestructionObserver*,WebCore::FrameDestructionObserver*,WTF::IdentityExtractor<WebCore::FrameDestructionObserver*>,WTF::PtrHash<WebCore::FrameDestructionObserver*>,WTF::HashTraits<WebCore::FrameDestructionObserver*>,WTF::HashTraits<WebCore::FrameDestructionObserver*> >="m_table"^^{FrameDestructionObserver}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}^{Page}{FrameTree="m_thisFrame"^{Frame}"m_parent"^{Frame}"m_name"{AtomicString="m_string"{String="m_impl"{RefPtr<WTF::StringImpl>="m_ptr"^{StringImpl}}}}"m_uniqueName"{AtomicString="m_string"{String="m_impl"{RefPtr<WTF::StringImpl>="m_ptr"^{StringImpl}}}}"m_nextSibling"{RefPtr<WebCore::Frame>="m_ptr"^{Frame}}"m_previousSibling"^{Frame}"m_firstChild"{RefPtr<WebCore::Frame>="m_ptr"^{Frame}}"m_lastChild"^{Frame}"m_childCount"I}{FrameLoader="_vptr$FrameLoader"^^?"m_frame"^{Frame}"m_client"^{FrameLoaderClient}"m_policyChecker"{PolicyChecker="m_frame"^{Frame}"m_delegateIsDecidingNavigationPolicy"B"m_delegateIsHandlingUnimplementablePolicy"B"m_loadType"i"m_callback"{PolicyCallback="m_request"{ResourceRequest="m_url"{KURL="m_string"{String="m_impl"{RefPtr<WTF::StringImpl>="m_ptr"^{StringImpl}}}"m_isValid"b1"m_protocolIsInHTTPFamily"b1"m_schemeEnd"i"m_userStart"i"m_userEnd"i"m_passwordEnd"i"m_hostEnd"i"m_portEnd"i"m_pathAfterLastSlash"i"m_pathEnd"i"m_queryEnd"i"m_fragmentEnd"i}"m_cachePolicy"i"m_timeoutInterval"d"m_firstPartyForCookies"{KURL="m_string"{String="m_impl"{RefPtr<WTF::StringImpl>="m_ptr"^{StringImpl}}}"m_isValid"b1"m_protocolIsInHTTPFamily"b1"m_schemeEnd"i"m_userStart"i"m_userEnd"i"m_passwordEnd"i"m_hostEnd"i"m_portEnd"i"m_pathAfterLastSlash"i"m_pathEnd"i"m_queryEnd"i"m_fragmentEnd"i}"m_httpMethod"{String="m_impl"{RefPtr<WTF::StringImpl>="m_ptr"^{StringImpl}}}"m_httpHeaderFields"{HTTPHeaderMap="m_impl"{HashTable<WTF::AtomicString,std::pair<WTF::AtomicString, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::AtomicString, WTF::String> >,WTF::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::AtomicString> >="m_table"^{pair<WTF::AtomicString,WTF::String>}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}"m_responseContentDispositionEncodingFallbackArray"{Vector<WTF::String,0ul>="m_size"I"m_buffer"{VectorBuffer<WTF::String,0ul>="m_buffer"^{String}"m_capacity"I}}"m_httpBody"{RefPtr<WebCore::FormData>="m_ptr"^{FormData}}"m_allowCookies"B"m_resourceRequestUpdated"B"m_platformRequestUpdated"B"m_reportUploadProgress"B"m_reportLoadTiming"B"m_reportRawHeaders"B"m_priority"i"m_targetType"i"m_mainResourceRequest"B"m_cfRequest"{RetainPtr<const _CFURLRequest*>="m_ptr"^{_CFURLRequest}}"m_nsRequest"{RetainPtr<NSURLRequest>="m_ptr"@"NSURLRequest"}}"m_formState"{RefPtr<WebCore::FormState>="m_ptr"^{FormState}}"m_frameName"{String="m_impl"{RefPtr<WTF::StringImpl>="m_ptr"^{StringImpl}}}"m_navigationAction"{NavigationAction="m_URL"{KURL="m_string"{String="m_impl"{RefPtr<WTF::StringImpl>="m_ptr"^{StringImpl}}}"m_isValid"b1"m_protocolIsInHTTPFamily"b1"m_schemeEnd"i"m_userStart"i"m_userEnd"i"m_passwordEnd"i"m_hostEnd"i"m_portEnd"i"m_pathAfterLastSlash"i"m_pathEnd"i"m_queryEnd"i"m_fragmentEnd"i}"m_type"i"m_event"{RefPtr<WebCore::Event>="m_ptr"^{Event}}}"m_navigationFunction"^?"m_newWindowFunction"^?"m_contentFunction"^?"m_argument"^v}}"m_history"{HistoryController="m_frame"^{Frame}"m_currentItem"{RefPtr<WebCore::HistoryItem>="m_ptr"^{HistoryItem}}"m_previousItem"{RefPtr<WebCore::HistoryItem>="m_ptr"^{HistoryItem}}"m_provisionalItem"{RefPtr<WebCore::HistoryItem>="m_ptr"^{HistoryItem}}"m_frameLoadComplete"B"m_defersLoading"B"m_deferredItem"{RefPtr<WebCore::HistoryItem>="m_ptr"^{HistoryItem}}"m_deferredFrameLoadType"i}"m_notifer"{ResourceLoadNotifier="m_frame"^{Frame}}"m_subframeLoader"{SubframeLoader="m_containsPlugins"B"m_frame"^{Frame}}"m_stateMachine"{FrameLoaderStateMachine="m_state"i}"m_state"i"m_loadType"i"m_documentLoader"{RefPtr<WebCore::DocumentLoader>="m_ptr"^{DocumentLoader}}"m_provisionalDocumentLoader"{RefPtr<WebCore::DocumentLoader>="m_ptr"^{DocumentLoader}}"m_policyDocumentLoader"{RefPtr<WebCore::DocumentLoader>="m_ptr"^{DocumentLoader}}"m_delegateIsHandlingProvisionalLoadError"B"m_quickRedirectComing"B"m_sentRedirectNotification"B"m_inStopAllLoaders"B"m_outgoingReferrer"{String="m_impl"{RefPtr<WTF::StringImpl>="m_ptr"^{StringImpl}}}"m_isExecutingJavaScriptFormAction"B"m_didCallImplicitClose"B"m_wasUnloadEventEmitted"B"m_pageDismissalEventBeingDispatched"B"m_isComplete"B"m_isLoadingMainResource"B"m_pendingStateObject"{RefPtr<WebCore::SerializedScriptValue>="m_ptr"^{SerializedScriptValue}}"m_workingURL"{KURL="m_string"{String="m_impl"{RefPtr<WTF::StringImpl>="m_ptr"^{StringImpl}}}"m_isValid"b1"m_protocolIsInHTTPFamily"b1"m_schemeEnd"i"m_userStart"i"m_userEnd"i"m_passwordEnd"i"m_hostEnd"i"m_portEnd"i"m_pathAfterLastSlash"i"m_pathEnd"i"m_queryEnd"i"m_fragmentEnd"i}"m_iconLoader"{OwnPtr<WebCore::IconLoader>="m_ptr"^{IconLoader}}"m_mayLoadIconLater"B"m_needsClear"B"m_submittedFormURL"{KURL="m_string"{String="m_impl"{RefPtr<WTF::StringImpl>="m_ptr"^{StringImpl}}}"m_isValid"b1"m_protocolIsInHTTPFamily"b1"m_schemeEnd"i"m_userStart"i"m_userEnd"i"m_passwordEnd"i"m_hostEnd"i"m_portEnd"i"m_pathAfterLastSlash"i"m_pathEnd"i"m_queryEnd"i"m_fragmentEnd"i}"m_checkTimer"{Timer<WebCore::FrameLoader>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{FrameLoader}"m_function"{?="__pfn"^"__delta"i}}"m_shouldCallCheckCompleted"B"m_shouldCallCheckLoadComplete"B"m_opener"^{Frame}"m_openedFrames"{HashSet<WebCore::Frame*,WTF::PtrHash<WebCore::Frame*>,WTF::HashTraits<WebCore::Frame*> >="m_impl"{HashTable<WebCore::Frame*,WebCore::Frame*,WTF::IdentityExtractor<WebCore::Frame*>,WTF::PtrHash<WebCore::Frame*>,WTF::HashTraits<WebCore::Frame*>,WTF::HashTraits<WebCore::Frame*> >="m_table"^^{Frame}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}"m_didPerformFirstNavigation"B"m_loadingFromCachedPage"B"m_suppressOpenerInNewFrame"B"m_sandboxFlags"i"m_forcedSandboxFlags"i"m_networkingContext"{RefPtr<WebCore::FrameNetworkingContext>="m_ptr"^{FrameNetworkingContext}}"m_previousUrl"{KURL="m_string"{String="m_impl"{RefPtr<WTF::StringImpl>="m_ptr"^{StringImpl}}}"m_isValid"b1"m_protocolIsInHTTPFamily"b1"m_schemeEnd"i"m_userStart"i"m_userEnd"i"m_passwordEnd"i"m_hostEnd"i"m_portEnd"i"m_pathAfterLastSlash"i"m_pathEnd"i"m_queryEnd"i"m_fragmentEnd"i}"m_loadsSynchronously"B}{NavigationScheduler="m_frame"^{Frame}"m_timer"{Timer<WebCore::NavigationScheduler>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{NavigationScheduler}"m_function"{?="__pfn"^"__delta"i}}"m_redirect"{OwnPtr<WebCore::ScheduledNavigation>="m_ptr"^{ScheduledNavigation}}}{RefPtr<WebCore::DOMWindow>="m_ptr"^{DOMWindow}}{HashSet<WebCore::DOMWindow*,WTF::PtrHash<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*> >="m_impl"{HashTable<WebCore::DOMWindow*,WebCore::DOMWindow*,WTF::IdentityExtractor<WebCore::DOMWindow*>,WTF::PtrHash<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*> >="m_table"^^{DOMWindow}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}^{HTMLFrameOwnerElement}{RefPtr<WebCore::FrameView>="m_ptr"^{FrameView}}{RefPtr<WebCore::Document>="m_ptr"^{Document}}{ScriptController="m_windowShells"{HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>,JSC::Strong<WebCore::JSDOMWindowShell>,WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::HashTraits<JSC::Strong<WebCore::JSDOMWindowShell> > >="m_impl"{HashTable<WTF::RefPtr<WebCore::DOMWrapperWorld>,std::pair<WTF::RefPtr<WebCore::DOMWrapperWorld>, JSC::Strong<WebCore::JSDOMWindowShell> >,WTF::PairFirstExtractor<std::pair<WTF::RefPtr<WebCore::DOMWrapperWorld>, JSC::Strong<WebCore::JSDOMWindowShell> > >,WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::PairHashTraits<WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> >, WTF::HashTraits<JSC::Strong<WebCore::JSDOMWindowShell> > >,WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> > >="m_table"^{pair<WTF::RefPtr<WebCore::DOMWrapperWorld>,JSC::Strong<WebCore::JSDOMWindowShell> >}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}"m_frame"^{Frame}"m_sourceURL"^{String}"m_inExecuteScript"B"m_processingTimerCallback"B"m_paused"B"m_allowPopupsFromPlugin"B"m_bindingRootObject"{RefPtr<JSC::Bindings::RootObject>="m_ptr"^{RootObject}}"m_cacheableBindingRootObject"{RefPtr<JSC::Bindings::RootObject>="m_ptr"^{RootObject}}"m_rootObjects"{HashMap<void*,WTF::RefPtr<JSC::Bindings::RootObject>,WTF::PtrHash<void*>,WTF::HashTraits<void*>,WTF::HashTraits<WTF::RefPtr<JSC::Bindings::RootObject> > >="m_impl"{HashTable<void*,std::pair<void*, WTF::RefPtr<JSC::Bindings::RootObject> >,WTF::PairFirstExtractor<std::pair<void*, WTF::RefPtr<JSC::Bindings::RootObject> > >,WTF::PtrHash<void*>,WTF::PairHashTraits<WTF::HashTraits<void*>, WTF::HashTraits<WTF::RefPtr<JSC::Bindings::RootObject> > >,WTF::HashTraits<void*> >="m_table"^{pair<void*,WTF::RefPtr<JSC::Bindings::RootObject> >}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}"m_windowScriptObject"{RetainPtr<WebScriptObject>="m_ptr"@"WebScriptObject"}}{Editor="m_frame"^{Frame}"m_deleteButtonController"{OwnPtr<WebCore::DeleteButtonController>="m_ptr"^{DeleteButtonController}}"m_lastEditCommand"{RefPtr<WebCore::EditCommand>="m_ptr"^{EditCommand}}"m_removedAnchor"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_compositionNode"{RefPtr<WebCore::Text>="m_ptr"^{Text}}"m_compositionStart"I"m_compositionEnd"I"m_customCompositionUnderlines"{Vector<WebCore::CompositionUnderline,0ul>="m_size"I"m_buffer"{VectorBuffer<WebCore::CompositionUnderline,0ul>="m_buffer"^{CompositionUnderline}"m_capacity"I}}"m_ignoreCompositionSelectionChange"B"m_shouldStartNewKillRingSequence"B"m_shouldStyleWithCSS"B"m_killRing"{OwnPtr<WebCore::KillRing>="m_ptr"^{KillRing}}"m_spellChecker"{OwnPtr<WebCore::SpellChecker>="m_ptr"^{SpellChecker}}"m_spellingCorrector"{OwnPtr<WebCore::SpellingCorrectionController>="m_ptr"^{SpellingCorrectionController}}"m_mark"{VisibleSelection="m_base"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_extent"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_start"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_end"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_affinity"i"m_selectionType"i"m_baseIsFirst"B}"m_areMarkedTextMatchesHighlighted"B}{FrameSelection="m_caretLocalRect"{IntRect="m_location"{IntPoint="m_x"i"m_y"i}"m_size"{IntSize="m_width"i"m_height"i}}"m_caretRectNeedsUpdate"B"m_caretVisibility"i"m_frame"^{Frame}"m_xPosForVerticalArrowNavigation"i"m_selection"{VisibleSelection="m_base"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_extent"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_start"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_end"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_affinity"i"m_selectionType"i"m_baseIsFirst"B}"m_granularity"i"m_typingStyle"{RefPtr<WebCore::EditingStyle>="m_ptr"^{EditingStyle}}"m_caretBlinkTimer"{Timer<WebCore::FrameSelection>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{FrameSelection}"m_function"{?="__pfn"^"__delta"i}}"m_absCaretBounds"{IntRect="m_location"{IntPoint="m_x"i"m_y"i}"m_size"{IntSize="m_width"i"m_height"i}}"m_absoluteCaretRepaintBounds"{IntRect="m_location"{IntPoint="m_x"i"m_y"i}"m_size"{IntSize="m_width"i"m_height"i}}"m_absCaretBoundsDirty"B"m_caretPaint"B"m_isDirectional"B"m_isCaretBlinkingSuspended"B"m_focused"B"m_updateAppearanceEnabled"B"m_caretBlinks"B"m_caretColor"{Color="m_color"I"m_valid"B}"m_closeTypingSuppressions"i"m_scrollingSuppressCount"i}{EventHandler="m_frame"^{Frame}"m_mousePressed"B"m_capturesDragging"B"m_mousePressNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_mouseDownMayStartSelect"B"m_mouseDownWasSingleClickInSelection"B"m_beganSelectingText"B"m_panScrollStartPos"{IntPoint="m_x"i"m_y"i}"m_panScrollInProgress"B"m_panScrollButtonPressed"B"m_springLoadedPanScrollInProgress"B"m_hoverTimer"{Timer<WebCore::EventHandler>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{EventHandler}"m_function"{?="__pfn"^"__delta"i}}"m_autoscrollTimer"{Timer<WebCore::EventHandler>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{EventHandler}"m_function"{?="__pfn"^"__delta"i}}"m_autoscrollRenderer"^{RenderObject}"m_autoscrollInProgress"B"m_mouseDownMayStartAutoscroll"B"m_mouseDownWasInSubframe"B"m_fakeMouseMoveEventTimer"{Timer<WebCore::EventHandler>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{EventHandler}"m_function"{?="__pfn"^"__delta"i}}"m_svgPan"B"m_instanceUnderMouse"{RefPtr<WebCore::SVGElementInstance>="m_ptr"^{SVGElementInstance}}"m_lastInstanceUnderMouse"{RefPtr<WebCore::SVGElementInstance>="m_ptr"^{SVGElementInstance}}"m_resizeLayer"^{RenderLayer}"m_capturingMouseEventsNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_eventHandlerWillResetCapturingMouseEventsNode"B"m_nodeUnderMouse"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_lastNodeUnderMouse"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_lastMouseMoveEventSubframe"{RefPtr<WebCore::Frame>="m_ptr"^{Frame}}"m_lastScrollbarUnderMouse"{RefPtr<WebCore::Scrollbar>="m_ptr"^{Scrollbar}}"m_clickCount"i"m_clickNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_gestureInitialDiameter"f"m_gestureLastDiameter"f"m_gestureInitialRotation"f"m_gestureLastRotation"f"m_firstTouchID"I"m_touches"{Vector<WTF::RefPtr<WebCore::Touch>,0ul>="m_size"I"m_buffer"{VectorBuffer<WTF::RefPtr<WebCore::Touch>,0ul>="m_buffer"^{RefPtr<WebCore::Touch>}"m_capacity"I}}"m_gestureTargets"{HashSet<WTF::RefPtr<WebCore::EventTarget>,WTF::PtrHash<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> > >="m_impl"{HashTable<WTF::RefPtr<WebCore::EventTarget>,WTF::RefPtr<WebCore::EventTarget>,WTF::IdentityExtractor<WTF::RefPtr<WebCore::EventTarget> >,WTF::PtrHash<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> > >="m_table"^{RefPtr<WebCore::EventTarget>}"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}"m_touchEventTargetSubframe"{RefPtr<WebCore::Frame>="m_ptr"^{Frame}}"m_frameSetBeingResized"{RefPtr<WebCore::HTMLFrameSetElement>="m_ptr"^{HTMLFrameSetElement}}"m_offsetFromResizeCorner"{IntSize="m_width"i"m_height"i}"m_currentMousePosition"{IntPoint="m_x"i"m_y"i}"m_mouseDownPos"{IntPoint="m_x"i"m_y"i}"m_mouseDownTimestamp"d"m_mouseDown"{PlatformMouseEvent="m_position"{IntPoint="m_x"i"m_y"i}"m_globalPosition"{IntPoint="m_x"i"m_y"i}"m_button"i"m_eventType"i"m_clickCount"i"m_shiftKey"B"m_ctrlKey"B"m_altKey"B"m_metaKey"B"m_timestamp"d"m_modifierFlags"I}"m_useLatchedWheelEventNode"B"m_latchedWheelEventNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_widgetIsLatched"B"m_previousWheelScrolledNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_mouseDownView"@"WAKView""m_sendingEventToSubview"B}{AnimationController="m_data"^{AnimationControllerPrivate}}{Timer<WebCore::Frame>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{Frame}"m_function"{?="__pfn"^"__delta"i}}f{IntPoint="m_x"i"m_y"i}{ViewportArguments="initialScale"f"minimumScale"f"maximumScale"f"width"f"height"f"userScalable"f}B{VisibleSelection="m_base"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_extent"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_start"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_end"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_affinity"i"m_selectionType"i"m_baseIsFirst"B}{VisibleSelection="m_base"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_extent"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_start"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_end"{Position="m_anchorNode"{RefPtr<WebCore::Node>="m_ptr"^{Node}}"m_offset"i"m_anchorType"b2"m_isLegacyEditingPosition"b1}"m_affinity"i"m_selectionType"i"m_baseIsFirst"B}{FloatSize="m_width"f"m_height"f}IIIdd{Timer<WebCore::Frame>="_vptr$TimerBase"^^?"m_nextFireTime"d"m_repeatInterval"d"m_heapIndex"i"m_heapInsertionOrder"I"m_object"^{Frame}"m_function"{?="__pfn"^"__delta"i}}fffiBBBBi} */
+    struct Frame { int x1; struct HashSet<WebCore::FrameDestructionObserver*,WTF::PtrHash<WebCore::FrameDestructionObserver*>,WTF::HashTraits<WebCore::FrameDestructionObserver*> > { 
+            struct HashTable<WebCore::FrameDestructionObserver*,WebCore::FrameDestructionObserver*,WTF::IdentityExtractor<WebCore::FrameDestructionObserver*>,WTF::PtrHash<WebCore::FrameDestructionObserver*>,WTF::HashTraits<WebCore::FrameDestructionObserver*>,WTF::HashTraits<WebCore::FrameDestructionObserver*> > { 
+                struct FrameDestructionObserver {} **m_table; 
+                int m_tableSize; 
+                int m_tableSizeMask; 
+                int m_keyCount; 
+                int m_deletedCount; 
+            } m_impl; 
+        } x2; struct Page {} *x3; struct FrameTree { 
             struct Frame {} *m_thisFrame; 
             struct Frame {} *m_parent; 
             struct AtomicString { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
             } m_name; 
+            struct AtomicString { 
+                struct String { 
+                    struct RefPtr<WTF::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
+            } m_uniqueName; 
             struct RefPtr<WebCore::Frame> { 
                 struct Frame {} *m_ptr; 
             } m_nextSibling; 
@@ -35,7 +50,7 @@
             } m_firstChild; 
             struct Frame {} *m_lastChild; 
             unsigned int m_childCount; 
-        } x3; struct FrameLoader { 
+        } x4; struct FrameLoader { 
             int (**_vptr$FrameLoader)(); 
             struct Frame {} *m_frame; 
             struct FrameLoaderClient {} *m_client; 
@@ -48,12 +63,12 @@
                     struct ResourceRequest { 
                         struct KURL { 
                             struct String { 
-                                struct RefPtr<WebCore::StringImpl> { 
+                                struct RefPtr<WTF::StringImpl> { 
                                     struct StringImpl {} *m_ptr; 
                                 } m_impl; 
                             } m_string; 
                             unsigned int m_isValid : 1; 
-                            unsigned int m_protocolInHTTPFamily : 1; 
+                            unsigned int m_protocolIsInHTTPFamily : 1; 
                             int m_schemeEnd; 
                             int m_userStart; 
                             int m_userEnd; 
@@ -69,12 +84,12 @@
                         double m_timeoutInterval; 
                         struct KURL { 
                             struct String { 
-                                struct RefPtr<WebCore::StringImpl> { 
+                                struct RefPtr<WTF::StringImpl> { 
                                     struct StringImpl {} *m_ptr; 
                                 } m_impl; 
                             } m_string; 
                             unsigned int m_isValid : 1; 
-                            unsigned int m_protocolInHTTPFamily : 1; 
+                            unsigned int m_protocolIsInHTTPFamily : 1; 
                             int m_schemeEnd; 
                             int m_userStart; 
                             int m_userEnd; 
@@ -87,22 +102,22 @@
                             int m_fragmentEnd; 
                         } m_firstPartyForCookies; 
                         struct String { 
-                            struct RefPtr<WebCore::StringImpl> { 
+                            struct RefPtr<WTF::StringImpl> { 
                                 struct StringImpl {} *m_ptr; 
                             } m_impl; 
                         } m_httpMethod; 
                         struct HTTPHeaderMap { 
-                            struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
-                                struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
+                            struct HashTable<WTF::AtomicString,std::pair<WTF::AtomicString, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::AtomicString, WTF::String> >,WTF::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::AtomicString> > { 
+                                struct pair<WTF::AtomicString,WTF::String> {} *m_table; 
                                 int m_tableSize; 
                                 int m_tableSizeMask; 
                                 int m_keyCount; 
                                 int m_deletedCount; 
                             } m_impl; 
                         } m_httpHeaderFields; 
-                        struct Vector<WebCore::String,0ul> { 
+                        struct Vector<WTF::String,0ul> { 
                             unsigned int m_size; 
-                            struct VectorBuffer<WebCore::String,0ul> { 
+                            struct VectorBuffer<WTF::String,0ul> { 
                                 struct String {} *m_buffer; 
                                 unsigned int m_capacity; 
                             } m_buffer; 
@@ -114,9 +129,14 @@
                         boolm_resourceRequestUpdated; 
                         boolm_platformRequestUpdated; 
                         boolm_reportUploadProgress; 
+                        boolm_reportLoadTiming; 
+                        boolm_reportRawHeaders; 
                         int m_priority; 
                         int m_targetType; 
                         boolm_mainResourceRequest; 
+                        struct RetainPtr<const _CFURLRequest*> { 
+                            struct _CFURLRequest {} *m_ptr; 
+                        } m_cfRequest; 
                         struct RetainPtr<NSURLRequest> { 
                             NSURLRequest *m_ptr; 
                         } m_nsRequest; 
@@ -125,10 +145,35 @@
                         struct FormState {} *m_ptr; 
                     } m_formState; 
                     struct String { 
-                        struct RefPtr<WebCore::StringImpl> { 
+                        struct RefPtr<WTF::StringImpl> { 
                             struct StringImpl {} *m_ptr; 
                         } m_impl; 
                     } m_frameName; 
+                    struct NavigationAction { 
+                        struct KURL { 
+                            struct String { 
+                                struct RefPtr<WTF::StringImpl> { 
+                                    struct StringImpl {} *m_ptr; 
+                                } m_impl; 
+                            } m_string; 
+                            unsigned int m_isValid : 1; 
+                            unsigned int m_protocolIsInHTTPFamily : 1; 
+                            int m_schemeEnd; 
+                            int m_userStart; 
+                            int m_userEnd; 
+                            int m_passwordEnd; 
+                            int m_hostEnd; 
+                            int m_portEnd; 
+                            int m_pathAfterLastSlash; 
+                            int m_pathEnd; 
+                            int m_queryEnd; 
+                            int m_fragmentEnd; 
+                        } m_URL; 
+                        int m_type; 
+                        struct RefPtr<WebCore::Event> { 
+                            struct Event {} *m_ptr; 
+                        } m_event; 
+                    } m_navigationAction; 
                     int (*m_navigationFunction)(); 
                     int (*m_newWindowFunction)(); 
                     int (*m_contentFunction)(); 
@@ -146,28 +191,23 @@
                 struct RefPtr<WebCore::HistoryItem> { 
                     struct HistoryItem {} *m_ptr; 
                 } m_provisionalItem; 
+                boolm_frameLoadComplete; 
+                boolm_defersLoading; 
+                struct RefPtr<WebCore::HistoryItem> { 
+                    struct HistoryItem {} *m_ptr; 
+                } m_deferredItem; 
+                int m_deferredFrameLoadType; 
             } m_history; 
             struct ResourceLoadNotifier { 
                 struct Frame {} *m_frame; 
             } m_notifer; 
-            struct DocumentWriter { 
+            struct SubframeLoader { 
+                boolm_containsPlugins; 
                 struct Frame {} *m_frame; 
-                boolm_receivedData; 
-                struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
-                        struct StringImpl {} *m_ptr; 
-                    } m_impl; 
-                } m_mimeType; 
-                boolm_encodingWasChosenByUser; 
-                struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
-                        struct StringImpl {} *m_ptr; 
-                    } m_impl; 
-                } m_encoding; 
-                struct RefPtr<WebCore::TextResourceDecoder> { 
-                    struct TextResourceDecoder {} *m_ptr; 
-                } m_decoder; 
-            } m_writer; 
+            } m_subframeLoader; 
+            struct FrameLoaderStateMachine { 
+                int m_state; 
+            } m_stateMachine; 
             int m_state; 
             int m_loadType; 
             struct RefPtr<WebCore::DocumentLoader> { 
@@ -180,12 +220,11 @@
                 struct DocumentLoader {} *m_ptr; 
             } m_policyDocumentLoader; 
             boolm_delegateIsHandlingProvisionalLoadError; 
-            boolm_firstLayoutDone; 
             boolm_quickRedirectComing; 
             boolm_sentRedirectNotification; 
             boolm_inStopAllLoaders; 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_outgoingReferrer; 
@@ -200,31 +239,12 @@
             } m_pendingStateObject; 
             struct KURL { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
                 unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
-                int m_schemeEnd; 
-                int m_userStart; 
-                int m_userEnd; 
-                int m_passwordEnd; 
-                int m_hostEnd; 
-                int m_portEnd; 
-                int m_pathAfterLastSlash; 
-                int m_pathEnd; 
-                int m_queryEnd; 
-                int m_fragmentEnd; 
-            } m_URL; 
-            struct KURL { 
-                struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
-                        struct StringImpl {} *m_ptr; 
-                    } m_impl; 
-                } m_string; 
-                unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
                 int m_schemeEnd; 
                 int m_userStart; 
                 int m_userEnd; 
@@ -240,18 +260,15 @@
                 struct IconLoader {} *m_ptr; 
             } m_iconLoader; 
             boolm_mayLoadIconLater; 
-            boolm_cancellingWithLoadInProgress; 
             boolm_needsClear; 
-            boolm_receivedData; 
-            boolm_containsPlugIns; 
             struct KURL { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
                 unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
                 int m_schemeEnd; 
                 int m_userStart; 
                 int m_userEnd; 
@@ -286,24 +303,43 @@
                     int m_deletedCount; 
                 } m_impl; 
             } m_openedFrames; 
-            boolm_creatingInitialEmptyDocument; 
-            boolm_isDisplayingInitialEmptyDocument; 
-            boolm_committedFirstRealDocumentLoad; 
             boolm_didPerformFirstNavigation; 
             boolm_loadingFromCachedPage; 
             boolm_suppressOpenerInNewFrame; 
             int m_sandboxFlags; 
             int m_forcedSandboxFlags; 
+            struct RefPtr<WebCore::FrameNetworkingContext> { 
+                struct FrameNetworkingContext {} *m_ptr; 
+            } m_networkingContext; 
+            struct KURL { 
+                struct String { 
+                    struct RefPtr<WTF::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
+                int m_schemeEnd; 
+                int m_userStart; 
+                int m_userEnd; 
+                int m_passwordEnd; 
+                int m_hostEnd; 
+                int m_portEnd; 
+                int m_pathAfterLastSlash; 
+                int m_pathEnd; 
+                int m_queryEnd; 
+                int m_fragmentEnd; 
+            } m_previousUrl; 
             boolm_loadsSynchronously; 
-        } x4; struct RedirectScheduler { 
+        } x5; struct NavigationScheduler { 
             struct Frame {} *m_frame; 
-            struct Timer<WebCore::RedirectScheduler> { 
+            struct Timer<WebCore::NavigationScheduler> { 
                 int (**_vptr$TimerBase)(); 
                 double m_nextFireTime; 
                 double m_repeatInterval; 
                 int m_heapIndex; 
                 unsigned int m_heapInsertionOrder; 
-                struct RedirectScheduler {} *m_object; 
+                struct NavigationScheduler {} *m_object; 
                 struct { 
                     void**__pfn; 
                 } m_function; 
@@ -311,9 +347,9 @@
             struct OwnPtr<WebCore::ScheduledNavigation> { 
                 struct ScheduledNavigation {} *m_ptr; 
             } m_redirect; 
-        } x5; struct RefPtr<WebCore::DOMWindow> { 
+        } x6; struct RefPtr<WebCore::DOMWindow> { 
             struct DOMWindow {} *m_ptr; 
-        } x6; struct HashSet<WebCore::DOMWindow*,WTF::PtrHash<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*> > { 
+        } x7; struct HashSet<WebCore::DOMWindow*,WTF::PtrHash<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*> > { 
             struct HashTable<WebCore::DOMWindow*,WebCore::DOMWindow*,WTF::IdentityExtractor<WebCore::DOMWindow*>,WTF::PtrHash<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*> > { 
                 struct DOMWindow {} **m_table; 
                 int m_tableSize; 
@@ -321,14 +357,14 @@
                 int m_keyCount; 
                 int m_deletedCount; 
             } m_impl; 
-        } x7; struct HTMLFrameOwnerElement {} *x8; struct RefPtr<WebCore::FrameView> { 
+        } x8; struct HTMLFrameOwnerElement {} *x9; struct RefPtr<WebCore::FrameView> { 
             struct FrameView {} *m_ptr; 
-        } x9; struct RefPtr<WebCore::Document> { 
+        } x10; struct RefPtr<WebCore::Document> { 
             struct Document {} *m_ptr; 
-        } x10; struct ScriptController { 
-            struct HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>,JSC::ProtectedPtr<WebCore::JSDOMWindowShell>,WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::HashTraits<JSC::ProtectedPtr<WebCore::JSDOMWindowShell> > > { 
-                struct HashTable<WTF::RefPtr<WebCore::DOMWrapperWorld>,std::pair<WTF::RefPtr<WebCore::DOMWrapperWorld>, JSC::ProtectedPtr<WebCore::JSDOMWindowShell> >,WTF::PairFirstExtractor<std::pair<WTF::RefPtr<WebCore::DOMWrapperWorld>, JSC::ProtectedPtr<WebCore::JSDOMWindowShell> > >,WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::PairHashTraits<WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> >, WTF::HashTraits<JSC::ProtectedPtr<WebCore::JSDOMWindowShell> > >,WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> > > { 
-                    struct pair<WTF::RefPtr<WebCore::DOMWrapperWorld>,JSC::ProtectedPtr<WebCore::JSDOMWindowShell> > {} *m_table; 
+        } x11; struct ScriptController { 
+            struct HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>,JSC::Strong<WebCore::JSDOMWindowShell>,WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::HashTraits<JSC::Strong<WebCore::JSDOMWindowShell> > > { 
+                struct HashTable<WTF::RefPtr<WebCore::DOMWrapperWorld>,std::pair<WTF::RefPtr<WebCore::DOMWrapperWorld>, JSC::Strong<WebCore::JSDOMWindowShell> >,WTF::PairFirstExtractor<std::pair<WTF::RefPtr<WebCore::DOMWrapperWorld>, JSC::Strong<WebCore::JSDOMWindowShell> > >,WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::PairHashTraits<WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> >, WTF::HashTraits<JSC::Strong<WebCore::JSDOMWindowShell> > >,WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> > > { 
+                    struct pair<WTF::RefPtr<WebCore::DOMWrapperWorld>,JSC::Strong<WebCore::JSDOMWindowShell> > {} *m_table; 
                     int m_tableSize; 
                     int m_tableSizeMask; 
                     int m_keyCount; 
@@ -336,7 +372,6 @@
                 } m_impl; 
             } m_windowShells; 
             struct Frame {} *m_frame; 
-            int m_handlerLineNumber; 
             struct String {} *m_sourceURL; 
             boolm_inExecuteScript; 
             boolm_processingTimerCallback; 
@@ -345,6 +380,9 @@
             struct RefPtr<JSC::Bindings::RootObject> { 
                 struct RootObject {} *m_ptr; 
             } m_bindingRootObject; 
+            struct RefPtr<JSC::Bindings::RootObject> { 
+                struct RootObject {} *m_ptr; 
+            } m_cacheableBindingRootObject; 
             struct HashMap<void*,WTF::RefPtr<JSC::Bindings::RootObject>,WTF::PtrHash<void*>,WTF::HashTraits<void*>,WTF::HashTraits<WTF::RefPtr<JSC::Bindings::RootObject> > > { 
                 struct HashTable<void*,std::pair<void*, WTF::RefPtr<JSC::Bindings::RootObject> >,WTF::PairFirstExtractor<std::pair<void*, WTF::RefPtr<JSC::Bindings::RootObject> > >,WTF::PtrHash<void*>,WTF::PairHashTraits<WTF::HashTraits<void*>, WTF::HashTraits<WTF::RefPtr<JSC::Bindings::RootObject> > >,WTF::HashTraits<void*> > { 
                     struct pair<void*,WTF::RefPtr<JSC::Bindings::RootObject> > {} *m_table; 
@@ -357,18 +395,92 @@
             struct RetainPtr<WebScriptObject> { 
                 WebScriptObject *m_ptr; 
             } m_windowScriptObject; 
-            struct OwnPtr<WebCore::XSSAuditor> { 
-                struct XSSAuditor {} *m_ptr; 
-            } m_XSSAuditor; 
-        } x11; struct String { 
-            struct RefPtr<WebCore::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } x12; struct String { 
-            struct RefPtr<WebCore::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } x13; float x14; struct SelectionController { 
+        } x12; struct Editor { 
+            struct Frame {} *m_frame; 
+            struct OwnPtr<WebCore::DeleteButtonController> { 
+                struct DeleteButtonController {} *m_ptr; 
+            } m_deleteButtonController; 
+            struct RefPtr<WebCore::EditCommand> { 
+                struct EditCommand {} *m_ptr; 
+            } m_lastEditCommand; 
+            struct RefPtr<WebCore::Node> { 
+                struct Node {} *m_ptr; 
+            } m_removedAnchor; 
+            struct RefPtr<WebCore::Text> { 
+                struct Text {} *m_ptr; 
+            } m_compositionNode; 
+            unsigned int m_compositionStart; 
+            unsigned int m_compositionEnd; 
+            struct Vector<WebCore::CompositionUnderline,0ul> { 
+                unsigned int m_size; 
+                struct VectorBuffer<WebCore::CompositionUnderline,0ul> { 
+                    struct CompositionUnderline {} *m_buffer; 
+                    unsigned int m_capacity; 
+                } m_buffer; 
+            } m_customCompositionUnderlines; 
+            boolm_ignoreCompositionSelectionChange; 
+            boolm_shouldStartNewKillRingSequence; 
+            boolm_shouldStyleWithCSS; 
+            struct OwnPtr<WebCore::KillRing> { 
+                struct KillRing {} *m_ptr; 
+            } m_killRing; 
+            struct OwnPtr<WebCore::SpellChecker> { 
+                struct SpellChecker {} *m_ptr; 
+            } m_spellChecker; 
+            struct OwnPtr<WebCore::SpellingCorrectionController> { 
+                struct SpellingCorrectionController {} *m_ptr; 
+            } m_spellingCorrector; 
+            struct VisibleSelection { 
+                struct Position { 
+                    struct RefPtr<WebCore::Node> { 
+                        struct Node {} *m_ptr; 
+                    } m_anchorNode; 
+                    int m_offset; 
+                    unsigned int m_anchorType : 2; 
+                    unsigned int m_isLegacyEditingPosition : 1; 
+                } m_base; 
+                struct Position { 
+                    struct RefPtr<WebCore::Node> { 
+                        struct Node {} *m_ptr; 
+                    } m_anchorNode; 
+                    int m_offset; 
+                    unsigned int m_anchorType : 2; 
+                    unsigned int m_isLegacyEditingPosition : 1; 
+                } m_extent; 
+                struct Position { 
+                    struct RefPtr<WebCore::Node> { 
+                        struct Node {} *m_ptr; 
+                    } m_anchorNode; 
+                    int m_offset; 
+                    unsigned int m_anchorType : 2; 
+                    unsigned int m_isLegacyEditingPosition : 1; 
+                } m_start; 
+                struct Position { 
+                    struct RefPtr<WebCore::Node> { 
+                        struct Node {} *m_ptr; 
+                    } m_anchorNode; 
+                    int m_offset; 
+                    unsigned int m_anchorType : 2; 
+                    unsigned int m_isLegacyEditingPosition : 1; 
+                } m_end; 
+                int m_affinity; 
+                int m_selectionType; 
+                boolm_baseIsFirst; 
+            } m_mark; 
+            boolm_areMarkedTextMatchesHighlighted; 
+        } x13; struct FrameSelection { 
+            struct IntRect { 
+                struct IntPoint { 
+                    int m_x; 
+                    int m_y; 
+                } m_location; 
+                struct IntSize { 
+                    int m_width; 
+                    int m_height; 
+                } m_size; 
+            } m_caretLocalRect; 
+            boolm_caretRectNeedsUpdate; 
+            int m_caretVisibility; 
             struct Frame {} *m_frame; 
             int m_xPosForVerticalArrowNavigation; 
             struct VisibleSelection { 
@@ -409,27 +521,20 @@
                 boolm_baseIsFirst; 
             } m_selection; 
             int m_granularity; 
-            struct Timer<WebCore::SelectionController> { 
+            struct RefPtr<WebCore::EditingStyle> { 
+                struct EditingStyle {} *m_ptr; 
+            } m_typingStyle; 
+            struct Timer<WebCore::FrameSelection> { 
                 int (**_vptr$TimerBase)(); 
                 double m_nextFireTime; 
                 double m_repeatInterval; 
                 int m_heapIndex; 
                 unsigned int m_heapInsertionOrder; 
-                struct SelectionController {} *m_object; 
+                struct FrameSelection {} *m_object; 
                 struct { 
                     void**__pfn; 
                 } m_function; 
             } m_caretBlinkTimer; 
-            struct IntRect { 
-                struct IntPoint { 
-                    int m_x; 
-                    int m_y; 
-                } m_location; 
-                struct IntSize { 
-                    int m_width; 
-                    int m_height; 
-                } m_size; 
-            } m_caretRect; 
             struct IntRect { 
                 struct IntPoint { 
                     int m_x; 
@@ -450,14 +555,11 @@
                     int m_height; 
                 } m_size; 
             } m_absoluteCaretRepaintBounds; 
-            boolm_needsLayout; 
             boolm_absCaretBoundsDirty; 
+            boolm_caretPaint; 
             boolm_isDirectional; 
-            boolm_isDragCaretController; 
             boolm_isCaretBlinkingSuspended; 
             boolm_focused; 
-            boolm_caretVisible; 
-            boolm_caretPaint; 
             boolm_updateAppearanceEnabled; 
             boolm_caretBlinks; 
             struct Color { 
@@ -465,69 +567,8 @@
                 boolm_valid; 
             } m_caretColor; 
             int m_closeTypingSuppressions; 
-        } x15; struct VisibleSelection { 
-            struct Position { 
-                struct RefPtr<WebCore::Node> { 
-                    struct Node {} *m_ptr; 
-                } m_anchorNode; 
-                int m_offset; 
-                unsigned int m_anchorType : 2; 
-                unsigned int m_isLegacyEditingPosition : 1; 
-            } m_base; 
-            struct Position { 
-                struct RefPtr<WebCore::Node> { 
-                    struct Node {} *m_ptr; 
-                } m_anchorNode; 
-                int m_offset; 
-                unsigned int m_anchorType : 2; 
-                unsigned int m_isLegacyEditingPosition : 1; 
-            } m_extent; 
-            struct Position { 
-                struct RefPtr<WebCore::Node> { 
-                    struct Node {} *m_ptr; 
-                } m_anchorNode; 
-                int m_offset; 
-                unsigned int m_anchorType : 2; 
-                unsigned int m_isLegacyEditingPosition : 1; 
-            } m_start; 
-            struct Position { 
-                struct RefPtr<WebCore::Node> { 
-                    struct Node {} *m_ptr; 
-                } m_anchorNode; 
-                int m_offset; 
-                unsigned int m_anchorType : 2; 
-                unsigned int m_isLegacyEditingPosition : 1; 
-            } m_end; 
-            int m_affinity; 
-            int m_selectionType; 
-            boolm_baseIsFirst; 
-        } x16; struct Editor { 
-            struct Frame {} *m_frame; 
-            struct OwnPtr<WebCore::DeleteButtonController> { 
-                struct DeleteButtonController {} *m_ptr; 
-            } m_deleteButtonController; 
-            struct RefPtr<WebCore::EditCommand> { 
-                struct EditCommand {} *m_ptr; 
-            } m_lastEditCommand; 
-            struct RefPtr<WebCore::Node> { 
-                struct Node {} *m_ptr; 
-            } m_removedAnchor; 
-            struct RefPtr<WebCore::Text> { 
-                struct Text {} *m_ptr; 
-            } m_compositionNode; 
-            unsigned int m_compositionStart; 
-            unsigned int m_compositionEnd; 
-            struct Vector<WebCore::CompositionUnderline,0ul> { 
-                unsigned int m_size; 
-                struct VectorBuffer<WebCore::CompositionUnderline,0ul> { 
-                    struct CompositionUnderline {} *m_buffer; 
-                    unsigned int m_capacity; 
-                } m_buffer; 
-            } m_customCompositionUnderlines; 
-            boolm_ignoreCompositionSelectionChange; 
-            boolm_shouldStartNewKillRingSequence; 
-            boolm_shouldStyleWithCSS; 
-        } x17; struct EventHandler { 
+            int m_scrollingSuppressCount; 
+        } x14; struct EventHandler { 
             struct Frame {} *m_frame; 
             boolm_mousePressed; 
             boolm_capturesDragging; 
@@ -592,6 +633,7 @@
             struct RefPtr<WebCore::Node> { 
                 struct Node {} *m_ptr; 
             } m_capturingMouseEventsNode; 
+            boolm_eventHandlerWillResetCapturingMouseEventsNode; 
             struct RefPtr<WebCore::Node> { 
                 struct Node {} *m_ptr; 
             } m_nodeUnderMouse; 
@@ -613,15 +655,13 @@
             float m_gestureInitialRotation; 
             float m_gestureLastRotation; 
             unsigned int m_firstTouchID; 
-            struct HashMap<unsigned int,WTF::RefPtr<WebCore::Touch>,WTF::IntHash<unsigned int>,WTF::HashTraits<unsigned int>,WTF::HashTraits<WTF::RefPtr<WebCore::Touch> > > { 
-                struct HashTable<unsigned int,std::pair<unsigned int, WTF::RefPtr<WebCore::Touch> >,WTF::PairFirstExtractor<std::pair<unsigned int, WTF::RefPtr<WebCore::Touch> > >,WTF::IntHash<unsigned int>,WTF::PairHashTraits<WTF::HashTraits<unsigned int>, WTF::HashTraits<WTF::RefPtr<WebCore::Touch> > >,WTF::HashTraits<unsigned int> > { 
-                    struct pair<unsigned int,WTF::RefPtr<WebCore::Touch> > {} *m_table; 
-                    int m_tableSize; 
-                    int m_tableSizeMask; 
-                    int m_keyCount; 
-                    int m_deletedCount; 
-                } m_impl; 
-            } m_touchesByID; 
+            struct Vector<WTF::RefPtr<WebCore::Touch>,0ul> { 
+                unsigned int m_size; 
+                struct VectorBuffer<WTF::RefPtr<WebCore::Touch>,0ul> { 
+                    struct RefPtr<WebCore::Touch> {} *m_buffer; 
+                    unsigned int m_capacity; 
+                } m_buffer; 
+            } m_touches; 
             struct HashSet<WTF::RefPtr<WebCore::EventTarget>,WTF::PtrHash<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> > > { 
                 struct HashTable<WTF::RefPtr<WebCore::EventTarget>,WTF::RefPtr<WebCore::EventTarget>,WTF::IdentityExtractor<WTF::RefPtr<WebCore::EventTarget> >,WTF::PtrHash<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> > > { 
                     struct RefPtr<WebCore::EventTarget> {} *m_table; 
@@ -679,11 +719,9 @@
             } m_previousWheelScrolledNode; 
             WAKView *m_mouseDownView; 
             boolm_sendingEventToSubview; 
-        } x18; struct AnimationController { 
+        } x15; struct AnimationController { 
             struct AnimationControllerPrivate {} *m_data; 
-        } x19; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { 
-            struct CSSMutableStyleDeclaration {} *m_ptr; 
-        } x20; struct Timer<WebCore::Frame> { 
+        } x16; struct Timer<WebCore::Frame> { 
             int (**_vptr$TimerBase)(); 
             double m_nextFireTime; 
             double m_repeatInterval; 
@@ -693,17 +731,17 @@
             struct { 
                 void**__pfn; 
             } m_function; 
-        } x21; float x22; struct IntPoint { 
+        } x17; float x18; struct IntPoint { 
             int m_x; 
             int m_y; 
-        } x23; struct ViewportArguments { 
+        } x19; struct ViewportArguments { 
             float initialScale; 
             float minimumScale; 
             float maximumScale; 
             float width; 
             float height; 
             float userScalable; 
-        } x24; boolx25; struct VisibleSelection { 
+        } x20; boolx21; struct VisibleSelection { 
             struct Position { 
                 struct RefPtr<WebCore::Node> { 
                     struct Node {} *m_ptr; 
@@ -739,7 +777,7 @@
             int m_affinity; 
             int m_selectionType; 
             boolm_baseIsFirst; 
-        } x26; struct VisibleSelection { 
+        } x22; struct VisibleSelection { 
             struct Position { 
                 struct RefPtr<WebCore::Node> { 
                     struct Node {} *m_ptr; 
@@ -775,10 +813,10 @@
             int m_affinity; 
             int m_selectionType; 
             boolm_baseIsFirst; 
-        } x27; struct FloatSize { 
+        } x23; struct FloatSize { 
             float m_width; 
             float m_height; 
-        } x28; unsigned int x29; unsigned int x30; unsigned int x31; double x32; double x33; struct Timer<WebCore::Frame> { 
+        } x24; unsigned int x25; unsigned int x26; unsigned int x27; double x28; double x29; struct Timer<WebCore::Frame> { 
             int (**_vptr$TimerBase)(); 
             double m_nextFireTime; 
             double m_repeatInterval; 
@@ -788,20 +826,20 @@
             struct { 
                 void**__pfn; 
             } m_function; 
-        } x34; int x35; boolx36; boolx37; boolx38; boolx39; boolx40; boolx41; int x42; } *m_frame;
+        } x30; float x31; float x32; float x33; int x34; boolx35; boolx36; boolx37; boolx38; int x39; } *m_frame;
 
 }
 
 + (void)initialize;
 
-- (void)download;
-- (id)initWithWebCoreFrame:(struct Frame { int x1; struct Page {} *x2; struct FrameTree { struct Frame {} *x_3_1_1; struct Frame {} *x_3_1_2; struct AtomicString { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_3_2_1; } x_3_1_3; struct RefPtr<WebCore::Frame> { struct Frame {} *x_4_2_1; } x_3_1_4; struct Frame {} *x_3_1_5; struct RefPtr<WebCore::Frame> { struct Frame {} *x_6_2_1; } x_3_1_6; struct Frame {} *x_3_1_7; unsigned int x_3_1_8; } x3; struct FrameLoader { int (**x_4_1_1)(); struct Frame {} *x_4_1_2; struct FrameLoaderClient {} *x_4_1_3; struct PolicyChecker { struct Frame {} *x_4_2_1; boolx_4_2_2; boolx_4_2_3; int x_4_2_4; struct PolicyCallback { struct ResourceRequest { struct KURL { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_7_1; } x_1_6_1; } x_1_5_1; unsigned int x_1_5_2 : 1; unsigned int x_1_5_3 : 1; int x_1_5_4; int x_1_5_5; int x_1_5_6; int x_1_5_7; int x_1_5_8; int x_1_5_9; int x_1_5_10; int x_1_5_11; int x_1_5_12; int x_1_5_13; } x_1_4_1; int x_1_4_2; double x_1_4_3; struct KURL { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_7_1; } x_1_6_1; } x_4_5_1; unsigned int x_4_5_2 : 1; unsigned int x_4_5_3 : 1; int x_4_5_4; int x_4_5_5; int x_4_5_6; int x_4_5_7; int x_4_5_8; int x_4_5_9; int x_4_5_10; int x_4_5_11; int x_4_5_12; int x_4_5_13; } x_1_4_4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_6_1; } x_5_5_1; } x_1_4_5; struct HTTPHeaderMap { struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { struct pair<WebCore::AtomicString,WebCore::String> {} *x_1_6_1; int x_1_6_2; int x_1_6_3; int x_1_6_4; int x_1_6_5; } x_6_5_1; } x_1_4_6; struct Vector<WebCore::String,0ul> { unsigned int x_7_5_1; struct VectorBuffer<WebCore::String,0ul> { struct String {} *x_2_6_1; unsigned int x_2_6_2; } x_7_5_2; } x_1_4_7; struct RefPtr<WebCore::FormData> { struct FormData {} *x_8_5_1; } x_1_4_8; boolx_1_4_9; boolx_1_4_10; boolx_1_4_11; boolx_1_4_12; int x_1_4_13; int x_1_4_14; boolx_1_4_15; struct RetainPtr<NSURLRequest> { id x_16_5_1; } x_1_4_16; } x_5_3_1; struct RefPtr<WebCore::FormState> { struct FormState {} *x_2_4_1; } x_5_3_2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_5_1; } x_3_4_1; } x_5_3_3; int (*x_5_3_4)(); int (*x_5_3_5)(); int (*x_5_3_6)(); void *x_5_3_7; } x_4_2_5; } x_4_1_4; struct HistoryController { struct Frame {} *x_5_2_1; struct RefPtr<WebCore::HistoryItem> { struct HistoryItem {} *x_2_3_1; } x_5_2_2; struct RefPtr<WebCore::HistoryItem> { struct HistoryItem {} *x_3_3_1; } x_5_2_3; struct RefPtr<WebCore::HistoryItem> { struct HistoryItem {} *x_4_3_1; } x_5_2_4; } x_4_1_5; struct ResourceLoadNotifier { struct Frame {} *x_6_2_1; } x_4_1_6; struct DocumentWriter { struct Frame {} *x_7_2_1; boolx_7_2_2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_4_1; } x_3_3_1; } x_7_2_3; boolx_7_2_4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_4_1; } x_5_3_1; } x_7_2_5; struct RefPtr<WebCore::TextResourceDecoder> { struct TextResourceDecoder {} *x_6_3_1; } x_7_2_6; } x_4_1_7; int x_4_1_8; int x_4_1_9; struct RefPtr<WebCore::DocumentLoader> { struct DocumentLoader {} *x_10_2_1; } x_4_1_10; struct RefPtr<WebCore::DocumentLoader> { struct DocumentLoader {} *x_11_2_1; } x_4_1_11; struct RefPtr<WebCore::DocumentLoader> { struct DocumentLoader {} *x_12_2_1; } x_4_1_12; boolx_4_1_13; boolx_4_1_14; boolx_4_1_15; boolx_4_1_16; boolx_4_1_17; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_18_2_1; } x_4_1_18; boolx_4_1_19; boolx_4_1_20; boolx_4_1_21; boolx_4_1_22; boolx_4_1_23; boolx_4_1_24; struct RefPtr<WebCore::SerializedScriptValue> { struct SerializedScriptValue {} *x_25_2_1; } x_4_1_25; struct KURL { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_26_2_1; unsigned int x_26_2_2 : 1; unsigned int x_26_2_3 : 1; int x_26_2_4; int x_26_2_5; int x_26_2_6; int x_26_2_7; int x_26_2_8; int x_26_2_9; int x_26_2_10; int x_26_2_11; int x_26_2_12; int x_26_2_13; } x_4_1_26; struct KURL { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_27_2_1; unsigned int x_27_2_2 : 1; unsigned int x_27_2_3 : 1; int x_27_2_4; int x_27_2_5; int x_27_2_6; int x_27_2_7; int x_27_2_8; int x_27_2_9; int x_27_2_10; int x_27_2_11; int x_27_2_12; int x_27_2_13; } x_4_1_27; struct OwnPtr<WebCore::IconLoader> { struct IconLoader {} *x_28_2_1; } x_4_1_28; boolx_4_1_29; boolx_4_1_30; boolx_4_1_31; boolx_4_1_32; boolx_4_1_33; struct KURL { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_34_2_1; unsigned int x_34_2_2 : 1; unsigned int x_34_2_3 : 1; int x_34_2_4; int x_34_2_5; int x_34_2_6; int x_34_2_7; int x_34_2_8; int x_34_2_9; int x_34_2_10; int x_34_2_11; int x_34_2_12; int x_34_2_13; } x_4_1_34; struct Timer<WebCore::FrameLoader> { int (**x_35_2_1)(); double x_35_2_2; double x_35_2_3; int x_35_2_4; unsigned int x_35_2_5; struct FrameLoader {} *x_35_2_6; struct { int *x_7_3_1; } x_35_2_7; } x_4_1_35; boolx_4_1_36; boolx_4_1_37; struct Frame {} *x_4_1_38; struct HashSet<WebCore::Frame*,WTF::PtrHash<WebCore::Frame*>,WTF::HashTraits<WebCore::Frame*> > { struct HashTable<WebCore::Frame*,WebCore::Frame*,WTF::IdentityExtractor<WebCore::Frame*>,WTF::PtrHash<WebCore::Frame*>,WTF::HashTraits<WebCore::Frame*>,WTF::HashTraits<WebCore::Frame*> > { struct Frame {} **x_1_3_1; int x_1_3_2; int x_1_3_3; int x_1_3_4; int x_1_3_5; } x_39_2_1; } x_4_1_39; boolx_4_1_40; boolx_4_1_41; boolx_4_1_42; boolx_4_1_43; boolx_4_1_44; boolx_4_1_45; int x_4_1_46; int x_4_1_47; boolx_4_1_48; } x4; struct RedirectScheduler { struct Frame {} *x_5_1_1; struct Timer<WebCore::RedirectScheduler> { int (**x_2_2_1)(); double x_2_2_2; double x_2_2_3; int x_2_2_4; unsigned int x_2_2_5; struct RedirectScheduler {} *x_2_2_6; struct { int *x_7_3_1; } x_2_2_7; } x_5_1_2; struct OwnPtr<WebCore::ScheduledNavigation> { struct ScheduledNavigation {} *x_3_2_1; } x_5_1_3; } x5; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_6_1_1; } x6; struct HashSet<WebCore::DOMWindow*,WTF::PtrHash<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*> > { struct HashTable<WebCore::DOMWindow*,WebCore::DOMWindow*,WTF::IdentityExtractor<WebCore::DOMWindow*>,WTF::PtrHash<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*> > { struct DOMWindow {} **x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_7_1_1; } x7; struct HTMLFrameOwnerElement {} *x8; struct RefPtr<WebCore::FrameView> { struct FrameView {} *x_9_1_1; } x9; struct RefPtr<WebCore::Document> { struct Document {} *x_10_1_1; } x10; struct ScriptController { struct HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>,JSC::ProtectedPtr<WebCore::JSDOMWindowShell>,WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::HashTraits<JSC::ProtectedPtr<WebCore::JSDOMWindowShell> > > { struct HashTable<WTF::RefPtr<WebCore::DOMWrapperWorld>,std::pair<WTF::RefPtr<WebCore::DOMWrapperWorld>, JSC::ProtectedPtr<WebCore::JSDOMWindowShell> >,WTF::PairFirstExtractor<std::pair<WTF::RefPtr<WebCore::DOMWrapperWorld>, JSC::ProtectedPtr<WebCore::JSDOMWindowShell> > >,WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::PairHashTraits<WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> >, WTF::HashTraits<JSC::ProtectedPtr<WebCore::JSDOMWindowShell> > >,WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> > > { struct pair<WTF::RefPtr<WebCore::DOMWrapperWorld>,JSC::ProtectedPtr<WebCore::JSDOMWindowShell> > {} *x_1_3_1; int x_1_3_2; int x_1_3_3; int x_1_3_4; int x_1_3_5; } x_1_2_1; } x_11_1_1; struct Frame {} *x_11_1_2; int x_11_1_3; struct String {} *x_11_1_4; boolx_11_1_5; boolx_11_1_6; boolx_11_1_7; boolx_11_1_8; struct RefPtr<JSC::Bindings::RootObject> { struct RootObject {} *x_9_2_1; } x_11_1_9; struct HashMap<void*,WTF::RefPtr<JSC::Bindings::RootObject>,WTF::PtrHash<void*>,WTF::HashTraits<void*>,WTF::HashTraits<WTF::RefPtr<JSC::Bindings::RootObject> > > { struct HashTable<void*,std::pair<void*, WTF::RefPtr<JSC::Bindings::RootObject> >,WTF::PairFirstExtractor<std::pair<void*, WTF::RefPtr<JSC::Bindings::RootObject> > >,WTF::PtrHash<void*>,WTF::PairHashTraits<WTF::HashTraits<void*>, WTF::HashTraits<WTF::RefPtr<JSC::Bindings::RootObject> > >,WTF::HashTraits<void*> > { struct pair<void*,WTF::RefPtr<JSC::Bindings::RootObject> > {} *x_1_3_1; int x_1_3_2; int x_1_3_3; int x_1_3_4; int x_1_3_5; } x_10_2_1; } x_11_1_10; struct RetainPtr<WebScriptObject> { id x_11_2_1; } x_11_1_11; struct OwnPtr<WebCore::XSSAuditor> { struct XSSAuditor {} *x_12_2_1; } x_11_1_12; } x11; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_13_1_1; } x13; float x14; struct SelectionController { struct Frame {} *x_15_1_1; int x_15_1_2; struct VisibleSelection { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_4_1; } x_1_3_1; int x_1_3_2; unsigned int x_1_3_3 : 2; unsigned int x_1_3_4 : 1; } x_3_2_1; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_4_1; } x_2_3_1; int x_2_3_2; unsigned int x_2_3_3 : 2; unsigned int x_2_3_4 : 1; } x_3_2_2; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_4_1; } x_3_3_1; int x_3_3_2; unsigned int x_3_3_3 : 2; unsigned int x_3_3_4 : 1; } x_3_2_3; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_4_1; } x_4_3_1; int x_4_3_2; unsigned int x_4_3_3 : 2; unsigned int x_4_3_4 : 1; } x_3_2_4; int x_3_2_5; int x_3_2_6; boolx_3_2_7; } x_15_1_3; int x_15_1_4; struct Timer<WebCore::SelectionController> { int (**x_5_2_1)(); double x_5_2_2; double x_5_2_3; int x_5_2_4; unsigned int x_5_2_5; struct SelectionController {} *x_5_2_6; struct { int *x_7_3_1; } x_5_2_7; } x_15_1_5; struct IntRect { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_6_2_1; struct IntSize { int x_2_3_1; int x_2_3_2; } x_6_2_2; } x_15_1_6; struct IntRect { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_7_2_1; struct IntSize { int x_2_3_1; int x_2_3_2; } x_7_2_2; } x_15_1_7; struct IntRect { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_8_2_1; struct IntSize { int x_2_3_1; int x_2_3_2; } x_8_2_2; } x_15_1_8; boolx_15_1_9; boolx_15_1_10; boolx_15_1_11; boolx_15_1_12; boolx_15_1_13; boolx_15_1_14; boolx_15_1_15; boolx_15_1_16; boolx_15_1_17; boolx_15_1_18; struct Color { unsigned int x_19_2_1; boolx_19_2_2; } x_15_1_19; int x_15_1_20; } x15; struct VisibleSelection { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_1_2_1; int x_1_2_2; unsigned int x_1_2_3 : 2; unsigned int x_1_2_4 : 1; } x_16_1_1; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_2_2_1; int x_2_2_2; unsigned int x_2_2_3 : 2; unsigned int x_2_2_4 : 1; } x_16_1_2; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_3_2_1; int x_3_2_2; unsigned int x_3_2_3 : 2; unsigned int x_3_2_4 : 1; } x_16_1_3; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_4_2_1; int x_4_2_2; unsigned int x_4_2_3 : 2; unsigned int x_4_2_4 : 1; } x_16_1_4; int x_16_1_5; int x_16_1_6; boolx_16_1_7; } x16; struct Editor { struct Frame {} *x_17_1_1; struct OwnPtr<WebCore::DeleteButtonController> { struct DeleteButtonController {} *x_2_2_1; } x_17_1_2; struct RefPtr<WebCore::EditCommand> { struct EditCommand {} *x_3_2_1; } x_17_1_3; struct RefPtr<WebCore::Node> { struct Node {} *x_4_2_1; } x_17_1_4; struct RefPtr<WebCore::Text> { struct Text {} *x_5_2_1; } x_17_1_5; unsigned int x_17_1_6; unsigned int x_17_1_7; struct Vector<WebCore::CompositionUnderline,0ul> { unsigned int x_8_2_1; struct VectorBuffer<WebCore::CompositionUnderline,0ul> { struct CompositionUnderline {} *x_2_3_1; unsigned int x_2_3_2; } x_8_2_2; } x_17_1_8; boolx_17_1_9; boolx_17_1_10; boolx_17_1_11; } x17; struct EventHandler { struct Frame {} *x_18_1_1; boolx_18_1_2; boolx_18_1_3; struct RefPtr<WebCore::Node> { struct Node {} *x_4_2_1; } x_18_1_4; boolx_18_1_5; boolx_18_1_6; boolx_18_1_7; struct IntPoint { int x_8_2_1; int x_8_2_2; } x_18_1_8; boolx_18_1_9; boolx_18_1_10; boolx_18_1_11; struct Timer<WebCore::EventHandler> { int (**x_12_2_1)(); double x_12_2_2; double x_12_2_3; int x_12_2_4; unsigned int x_12_2_5; struct EventHandler {} *x_12_2_6; struct { int *x_7_3_1; } x_12_2_7; } x_18_1_12; struct Timer<WebCore::EventHandler> { int (**x_13_2_1)(); double x_13_2_2; double x_13_2_3; int x_13_2_4; unsigned int x_13_2_5; struct EventHandler {} *x_13_2_6; struct { int *x_7_3_1; } x_13_2_7; } x_18_1_13; struct RenderObject {} *x_18_1_14; boolx_18_1_15; boolx_18_1_16; boolx_18_1_17; struct Timer<WebCore::EventHandler> { int (**x_18_2_1)(); double x_18_2_2; double x_18_2_3; int x_18_2_4; unsigned int x_18_2_5; struct EventHandler {} *x_18_2_6; struct { int *x_7_3_1; } x_18_2_7; } x_18_1_18; boolx_18_1_19; struct RefPtr<WebCore::SVGElementInstance> { struct SVGElementInstance {} *x_20_2_1; } x_18_1_20; struct RefPtr<WebCore::SVGElementInstance> { struct SVGElementInstance {} *x_21_2_1; } x_18_1_21; struct RenderLayer {} *x_18_1_22; struct RefPtr<WebCore::Node> { struct Node {} *x_23_2_1; } x_18_1_23; struct RefPtr<WebCore::Node> { struct Node {} *x_24_2_1; } x_18_1_24; struct RefPtr<WebCore::Node> { struct Node {} *x_25_2_1; } x_18_1_25; struct RefPtr<WebCore::Frame> { struct Frame {} *x_26_2_1; } x_18_1_26; struct RefPtr<WebCore::Scrollbar> { struct Scrollbar {} *x_27_2_1; } x_18_1_27; int x_18_1_28; struct RefPtr<WebCore::Node> { struct Node {} *x_29_2_1; } x_18_1_29; float x_18_1_30; float x_18_1_31; float x_18_1_32; float x_18_1_33; unsigned int x_18_1_34; struct HashMap<unsigned int,WTF::RefPtr<WebCore::Touch>,WTF::IntHash<unsigned int>,WTF::HashTraits<unsigned int>,WTF::HashTraits<WTF::RefPtr<WebCore::Touch> > > { struct HashTable<unsigned int,std::pair<unsigned int, WTF::RefPtr<WebCore::Touch> >,WTF::PairFirstExtractor<std::pair<unsigned int, WTF::RefPtr<WebCore::Touch> > >,WTF::IntHash<unsigned int>,WTF::PairHashTraits<WTF::HashTraits<unsigned int>, WTF::HashTraits<WTF::RefPtr<WebCore::Touch> > >,WTF::HashTraits<unsigned int> > { struct pair<unsigned int,WTF::RefPtr<WebCore::Touch> > {} *x_1_3_1; int x_1_3_2; int x_1_3_3; int x_1_3_4; int x_1_3_5; } x_35_2_1; } x_18_1_35; struct HashSet<WTF::RefPtr<WebCore::EventTarget>,WTF::PtrHash<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> > > { struct HashTable<WTF::RefPtr<WebCore::EventTarget>,WTF::RefPtr<WebCore::EventTarget>,WTF::IdentityExtractor<WTF::RefPtr<WebCore::EventTarget> >,WTF::PtrHash<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> > > { struct RefPtr<WebCore::EventTarget> {} *x_1_3_1; int x_1_3_2; int x_1_3_3; int x_1_3_4; int x_1_3_5; } x_36_2_1; } x_18_1_36; struct RefPtr<WebCore::Frame> { struct Frame {} *x_37_2_1; } x_18_1_37; struct RefPtr<WebCore::HTMLFrameSetElement> { struct HTMLFrameSetElement {} *x_38_2_1; } x_18_1_38; struct IntSize { int x_39_2_1; int x_39_2_2; } x_18_1_39; struct IntPoint { int x_40_2_1; int x_40_2_2; } x_18_1_40; struct IntPoint { int x_41_2_1; int x_41_2_2; } x_18_1_41; double x_18_1_42; struct PlatformMouseEvent { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_43_2_1; struct IntPoint { int x_2_3_1; int x_2_3_2; } x_43_2_2; int x_43_2_3; int x_43_2_4; int x_43_2_5; boolx_43_2_6; boolx_43_2_7; boolx_43_2_8; boolx_43_2_9; double x_43_2_10; unsigned int x_43_2_11; } x_18_1_43; boolx_18_1_44; struct RefPtr<WebCore::Node> { struct Node {} *x_45_2_1; } x_18_1_45; boolx_18_1_46; struct RefPtr<WebCore::Node> { struct Node {} *x_47_2_1; } x_18_1_47; id x_18_1_48; boolx_18_1_49; } x18; struct AnimationController { struct AnimationControllerPrivate {} *x_19_1_1; } x19; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_20_1_1; } x20; struct Timer<WebCore::Frame> { int (**x_21_1_1)(); double x_21_1_2; double x_21_1_3; int x_21_1_4; unsigned int x_21_1_5; struct Frame {} *x_21_1_6; struct { int *x_7_2_1; } x_21_1_7; } x21; float x22; struct IntPoint { int x_23_1_1; int x_23_1_2; } x23; struct ViewportArguments { float x_24_1_1; float x_24_1_2; float x_24_1_3; float x_24_1_4; float x_24_1_5; float x_24_1_6; } x24; boolx25; struct VisibleSelection { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_1_2_1; int x_1_2_2; unsigned int x_1_2_3 : 2; unsigned int x_1_2_4 : 1; } x_26_1_1; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_2_2_1; int x_2_2_2; unsigned int x_2_2_3 : 2; unsigned int x_2_2_4 : 1; } x_26_1_2; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_3_2_1; int x_3_2_2; unsigned int x_3_2_3 : 2; unsigned int x_3_2_4 : 1; } x_26_1_3; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_4_2_1; int x_4_2_2; unsigned int x_4_2_3 : 2; unsigned int x_4_2_4 : 1; } x_26_1_4; int x_26_1_5; int x_26_1_6; boolx_26_1_7; } x26; struct VisibleSelection { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_1_2_1; int x_1_2_2; unsigned int x_1_2_3 : 2; unsigned int x_1_2_4 : 1; } x_27_1_1; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_2_2_1; int x_2_2_2; unsigned int x_2_2_3 : 2; unsigned int x_2_2_4 : 1; } x_27_1_2; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_3_2_1; int x_3_2_2; unsigned int x_3_2_3 : 2; unsigned int x_3_2_4 : 1; } x_27_1_3; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_4_2_1; int x_4_2_2; unsigned int x_4_2_3 : 2; unsigned int x_4_2_4 : 1; } x_27_1_4; int x_27_1_5; int x_27_1_6; boolx_27_1_7; } x27; struct FloatSize { float x_28_1_1; float x_28_1_2; } x28; unsigned int x29; unsigned int x30; unsigned int x31; double x32; double x33; struct Timer<WebCore::Frame> { int (**x_34_1_1)(); double x_34_1_2; double x_34_1_3; int x_34_1_4; unsigned int x_34_1_5; struct Frame {} *x_34_1_6; struct { int *x_7_2_1; } x_34_1_7; } x34; int x35; boolx36; boolx37; boolx38; boolx39; boolx40; boolx41; int x42; }*)arg1;
-- (void)receivedPolicyDecision:(int)arg1;
-- (void)ignore;
-- (void)use;
-- (void)continue;
-- (void)finalize;
 - (void)invalidate;
+- (void)finalize;
+- (void)download;
+- (void)continue;
+- (void)use;
+- (void)ignore;
+- (id)initWithWebCoreFrame:(struct Frame { int x1; struct HashSet<WebCore::FrameDestructionObserver*,WTF::PtrHash<WebCore::FrameDestructionObserver*>,WTF::HashTraits<WebCore::FrameDestructionObserver*> > { struct HashTable<WebCore::FrameDestructionObserver*,WebCore::FrameDestructionObserver*,WTF::IdentityExtractor<WebCore::FrameDestructionObserver*>,WTF::PtrHash<WebCore::FrameDestructionObserver*>,WTF::HashTraits<WebCore::FrameDestructionObserver*>,WTF::HashTraits<WebCore::FrameDestructionObserver*> > { struct FrameDestructionObserver {} **x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_2_1_1; } x2; struct Page {} *x3; struct FrameTree { struct Frame {} *x_4_1_1; struct Frame {} *x_4_1_2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_3_2_1; } x_4_1_3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_4_2_1; } x_4_1_4; struct RefPtr<WebCore::Frame> { struct Frame {} *x_5_2_1; } x_4_1_5; struct Frame {} *x_4_1_6; struct RefPtr<WebCore::Frame> { struct Frame {} *x_7_2_1; } x_4_1_7; struct Frame {} *x_4_1_8; unsigned int x_4_1_9; } x4; struct FrameLoader { int (**x_5_1_1)(); struct Frame {} *x_5_1_2; struct FrameLoaderClient {} *x_5_1_3; struct PolicyChecker { struct Frame {} *x_4_2_1; boolx_4_2_2; boolx_4_2_3; int x_4_2_4; struct PolicyCallback { struct ResourceRequest { struct KURL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_7_1; } x_1_6_1; } x_1_5_1; unsigned int x_1_5_2 : 1; unsigned int x_1_5_3 : 1; int x_1_5_4; int x_1_5_5; int x_1_5_6; int x_1_5_7; int x_1_5_8; int x_1_5_9; int x_1_5_10; int x_1_5_11; int x_1_5_12; int x_1_5_13; } x_1_4_1; int x_1_4_2; double x_1_4_3; struct KURL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_7_1; } x_1_6_1; } x_4_5_1; unsigned int x_4_5_2 : 1; unsigned int x_4_5_3 : 1; int x_4_5_4; int x_4_5_5; int x_4_5_6; int x_4_5_7; int x_4_5_8; int x_4_5_9; int x_4_5_10; int x_4_5_11; int x_4_5_12; int x_4_5_13; } x_1_4_4; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_6_1; } x_5_5_1; } x_1_4_5; struct HTTPHeaderMap { struct HashTable<WTF::AtomicString,std::pair<WTF::AtomicString, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::AtomicString, WTF::String> >,WTF::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::AtomicString> > { struct pair<WTF::AtomicString,WTF::String> {} *x_1_6_1; int x_1_6_2; int x_1_6_3; int x_1_6_4; int x_1_6_5; } x_6_5_1; } x_1_4_6; struct Vector<WTF::String,0ul> { unsigned int x_7_5_1; struct VectorBuffer<WTF::String,0ul> { struct String {} *x_2_6_1; unsigned int x_2_6_2; } x_7_5_2; } x_1_4_7; struct RefPtr<WebCore::FormData> { struct FormData {} *x_8_5_1; } x_1_4_8; boolx_1_4_9; boolx_1_4_10; boolx_1_4_11; boolx_1_4_12; boolx_1_4_13; boolx_1_4_14; int x_1_4_15; int x_1_4_16; boolx_1_4_17; struct RetainPtr<const _CFURLRequest*> { struct _CFURLRequest {} *x_18_5_1; } x_1_4_18; struct RetainPtr<NSURLRequest> { id x_19_5_1; } x_1_4_19; } x_5_3_1; struct RefPtr<WebCore::FormState> { struct FormState {} *x_2_4_1; } x_5_3_2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_5_1; } x_3_4_1; } x_5_3_3; struct NavigationAction { struct KURL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_7_1; } x_1_6_1; } x_1_5_1; unsigned int x_1_5_2 : 1; unsigned int x_1_5_3 : 1; int x_1_5_4; int x_1_5_5; int x_1_5_6; int x_1_5_7; int x_1_5_8; int x_1_5_9; int x_1_5_10; int x_1_5_11; int x_1_5_12; int x_1_5_13; } x_4_4_1; int x_4_4_2; struct RefPtr<WebCore::Event> { struct Event {} *x_3_5_1; } x_4_4_3; } x_5_3_4; int (*x_5_3_5)(); int (*x_5_3_6)(); int (*x_5_3_7)(); void *x_5_3_8; } x_4_2_5; } x_5_1_4; struct HistoryController { struct Frame {} *x_5_2_1; struct RefPtr<WebCore::HistoryItem> { struct HistoryItem {} *x_2_3_1; } x_5_2_2; struct RefPtr<WebCore::HistoryItem> { struct HistoryItem {} *x_3_3_1; } x_5_2_3; struct RefPtr<WebCore::HistoryItem> { struct HistoryItem {} *x_4_3_1; } x_5_2_4; boolx_5_2_5; boolx_5_2_6; struct RefPtr<WebCore::HistoryItem> { struct HistoryItem {} *x_7_3_1; } x_5_2_7; int x_5_2_8; } x_5_1_5; struct ResourceLoadNotifier { struct Frame {} *x_6_2_1; } x_5_1_6; struct SubframeLoader { boolx_7_2_1; struct Frame {} *x_7_2_2; } x_5_1_7; struct FrameLoaderStateMachine { int x_8_2_1; } x_5_1_8; int x_5_1_9; int x_5_1_10; struct RefPtr<WebCore::DocumentLoader> { struct DocumentLoader {} *x_11_2_1; } x_5_1_11; struct RefPtr<WebCore::DocumentLoader> { struct DocumentLoader {} *x_12_2_1; } x_5_1_12; struct RefPtr<WebCore::DocumentLoader> { struct DocumentLoader {} *x_13_2_1; } x_5_1_13; boolx_5_1_14; boolx_5_1_15; boolx_5_1_16; boolx_5_1_17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_18_2_1; } x_5_1_18; boolx_5_1_19; boolx_5_1_20; boolx_5_1_21; boolx_5_1_22; boolx_5_1_23; boolx_5_1_24; struct RefPtr<WebCore::SerializedScriptValue> { struct SerializedScriptValue {} *x_25_2_1; } x_5_1_25; struct KURL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_26_2_1; unsigned int x_26_2_2 : 1; unsigned int x_26_2_3 : 1; int x_26_2_4; int x_26_2_5; int x_26_2_6; int x_26_2_7; int x_26_2_8; int x_26_2_9; int x_26_2_10; int x_26_2_11; int x_26_2_12; int x_26_2_13; } x_5_1_26; struct OwnPtr<WebCore::IconLoader> { struct IconLoader {} *x_27_2_1; } x_5_1_27; boolx_5_1_28; boolx_5_1_29; struct KURL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_30_2_1; unsigned int x_30_2_2 : 1; unsigned int x_30_2_3 : 1; int x_30_2_4; int x_30_2_5; int x_30_2_6; int x_30_2_7; int x_30_2_8; int x_30_2_9; int x_30_2_10; int x_30_2_11; int x_30_2_12; int x_30_2_13; } x_5_1_30; struct Timer<WebCore::FrameLoader> { int (**x_31_2_1)(); double x_31_2_2; double x_31_2_3; int x_31_2_4; unsigned int x_31_2_5; struct FrameLoader {} *x_31_2_6; struct { int *x_7_3_1; } x_31_2_7; } x_5_1_31; boolx_5_1_32; boolx_5_1_33; struct Frame {} *x_5_1_34; struct HashSet<WebCore::Frame*,WTF::PtrHash<WebCore::Frame*>,WTF::HashTraits<WebCore::Frame*> > { struct HashTable<WebCore::Frame*,WebCore::Frame*,WTF::IdentityExtractor<WebCore::Frame*>,WTF::PtrHash<WebCore::Frame*>,WTF::HashTraits<WebCore::Frame*>,WTF::HashTraits<WebCore::Frame*> > { struct Frame {} **x_1_3_1; int x_1_3_2; int x_1_3_3; int x_1_3_4; int x_1_3_5; } x_35_2_1; } x_5_1_35; boolx_5_1_36; boolx_5_1_37; boolx_5_1_38; int x_5_1_39; int x_5_1_40; struct RefPtr<WebCore::FrameNetworkingContext> { struct FrameNetworkingContext {} *x_41_2_1; } x_5_1_41; struct KURL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_42_2_1; unsigned int x_42_2_2 : 1; unsigned int x_42_2_3 : 1; int x_42_2_4; int x_42_2_5; int x_42_2_6; int x_42_2_7; int x_42_2_8; int x_42_2_9; int x_42_2_10; int x_42_2_11; int x_42_2_12; int x_42_2_13; } x_5_1_42; boolx_5_1_43; } x5; struct NavigationScheduler { struct Frame {} *x_6_1_1; struct Timer<WebCore::NavigationScheduler> { int (**x_2_2_1)(); double x_2_2_2; double x_2_2_3; int x_2_2_4; unsigned int x_2_2_5; struct NavigationScheduler {} *x_2_2_6; struct { int *x_7_3_1; } x_2_2_7; } x_6_1_2; struct OwnPtr<WebCore::ScheduledNavigation> { struct ScheduledNavigation {} *x_3_2_1; } x_6_1_3; } x6; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_7_1_1; } x7; struct HashSet<WebCore::DOMWindow*,WTF::PtrHash<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*> > { struct HashTable<WebCore::DOMWindow*,WebCore::DOMWindow*,WTF::IdentityExtractor<WebCore::DOMWindow*>,WTF::PtrHash<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*>,WTF::HashTraits<WebCore::DOMWindow*> > { struct DOMWindow {} **x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_8_1_1; } x8; struct HTMLFrameOwnerElement {} *x9; struct RefPtr<WebCore::FrameView> { struct FrameView {} *x_10_1_1; } x10; struct RefPtr<WebCore::Document> { struct Document {} *x_11_1_1; } x11; struct ScriptController { struct HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>,JSC::Strong<WebCore::JSDOMWindowShell>,WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::HashTraits<JSC::Strong<WebCore::JSDOMWindowShell> > > { struct HashTable<WTF::RefPtr<WebCore::DOMWrapperWorld>,std::pair<WTF::RefPtr<WebCore::DOMWrapperWorld>, JSC::Strong<WebCore::JSDOMWindowShell> >,WTF::PairFirstExtractor<std::pair<WTF::RefPtr<WebCore::DOMWrapperWorld>, JSC::Strong<WebCore::JSDOMWindowShell> > >,WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld> >,WTF::PairHashTraits<WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> >, WTF::HashTraits<JSC::Strong<WebCore::JSDOMWindowShell> > >,WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld> > > { struct pair<WTF::RefPtr<WebCore::DOMWrapperWorld>,JSC::Strong<WebCore::JSDOMWindowShell> > {} *x_1_3_1; int x_1_3_2; int x_1_3_3; int x_1_3_4; int x_1_3_5; } x_1_2_1; } x_12_1_1; struct Frame {} *x_12_1_2; struct String {} *x_12_1_3; boolx_12_1_4; boolx_12_1_5; boolx_12_1_6; boolx_12_1_7; struct RefPtr<JSC::Bindings::RootObject> { struct RootObject {} *x_8_2_1; } x_12_1_8; struct RefPtr<JSC::Bindings::RootObject> { struct RootObject {} *x_9_2_1; } x_12_1_9; struct HashMap<void*,WTF::RefPtr<JSC::Bindings::RootObject>,WTF::PtrHash<void*>,WTF::HashTraits<void*>,WTF::HashTraits<WTF::RefPtr<JSC::Bindings::RootObject> > > { struct HashTable<void*,std::pair<void*, WTF::RefPtr<JSC::Bindings::RootObject> >,WTF::PairFirstExtractor<std::pair<void*, WTF::RefPtr<JSC::Bindings::RootObject> > >,WTF::PtrHash<void*>,WTF::PairHashTraits<WTF::HashTraits<void*>, WTF::HashTraits<WTF::RefPtr<JSC::Bindings::RootObject> > >,WTF::HashTraits<void*> > { struct pair<void*,WTF::RefPtr<JSC::Bindings::RootObject> > {} *x_1_3_1; int x_1_3_2; int x_1_3_3; int x_1_3_4; int x_1_3_5; } x_10_2_1; } x_12_1_10; struct RetainPtr<WebScriptObject> { id x_11_2_1; } x_12_1_11; } x12; struct Editor { struct Frame {} *x_13_1_1; struct OwnPtr<WebCore::DeleteButtonController> { struct DeleteButtonController {} *x_2_2_1; } x_13_1_2; struct RefPtr<WebCore::EditCommand> { struct EditCommand {} *x_3_2_1; } x_13_1_3; struct RefPtr<WebCore::Node> { struct Node {} *x_4_2_1; } x_13_1_4; struct RefPtr<WebCore::Text> { struct Text {} *x_5_2_1; } x_13_1_5; unsigned int x_13_1_6; unsigned int x_13_1_7; struct Vector<WebCore::CompositionUnderline,0ul> { unsigned int x_8_2_1; struct VectorBuffer<WebCore::CompositionUnderline,0ul> { struct CompositionUnderline {} *x_2_3_1; unsigned int x_2_3_2; } x_8_2_2; } x_13_1_8; boolx_13_1_9; boolx_13_1_10; boolx_13_1_11; struct OwnPtr<WebCore::KillRing> { struct KillRing {} *x_12_2_1; } x_13_1_12; struct OwnPtr<WebCore::SpellChecker> { struct SpellChecker {} *x_13_2_1; } x_13_1_13; struct OwnPtr<WebCore::SpellingCorrectionController> { struct SpellingCorrectionController {} *x_14_2_1; } x_13_1_14; struct VisibleSelection { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_4_1; } x_1_3_1; int x_1_3_2; unsigned int x_1_3_3 : 2; unsigned int x_1_3_4 : 1; } x_15_2_1; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_4_1; } x_2_3_1; int x_2_3_2; unsigned int x_2_3_3 : 2; unsigned int x_2_3_4 : 1; } x_15_2_2; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_4_1; } x_3_3_1; int x_3_3_2; unsigned int x_3_3_3 : 2; unsigned int x_3_3_4 : 1; } x_15_2_3; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_4_1; } x_4_3_1; int x_4_3_2; unsigned int x_4_3_3 : 2; unsigned int x_4_3_4 : 1; } x_15_2_4; int x_15_2_5; int x_15_2_6; boolx_15_2_7; } x_13_1_15; boolx_13_1_16; } x13; struct FrameSelection { struct IntRect { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_1_2_1; struct IntSize { int x_2_3_1; int x_2_3_2; } x_1_2_2; } x_14_1_1; boolx_14_1_2; int x_14_1_3; struct Frame {} *x_14_1_4; int x_14_1_5; struct VisibleSelection { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_4_1; } x_1_3_1; int x_1_3_2; unsigned int x_1_3_3 : 2; unsigned int x_1_3_4 : 1; } x_6_2_1; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_4_1; } x_2_3_1; int x_2_3_2; unsigned int x_2_3_3 : 2; unsigned int x_2_3_4 : 1; } x_6_2_2; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_4_1; } x_3_3_1; int x_3_3_2; unsigned int x_3_3_3 : 2; unsigned int x_3_3_4 : 1; } x_6_2_3; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_4_1; } x_4_3_1; int x_4_3_2; unsigned int x_4_3_3 : 2; unsigned int x_4_3_4 : 1; } x_6_2_4; int x_6_2_5; int x_6_2_6; boolx_6_2_7; } x_14_1_6; int x_14_1_7; struct RefPtr<WebCore::EditingStyle> { struct EditingStyle {} *x_8_2_1; } x_14_1_8; struct Timer<WebCore::FrameSelection> { int (**x_9_2_1)(); double x_9_2_2; double x_9_2_3; int x_9_2_4; unsigned int x_9_2_5; struct FrameSelection {} *x_9_2_6; struct { int *x_7_3_1; } x_9_2_7; } x_14_1_9; struct IntRect { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_10_2_1; struct IntSize { int x_2_3_1; int x_2_3_2; } x_10_2_2; } x_14_1_10; struct IntRect { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_11_2_1; struct IntSize { int x_2_3_1; int x_2_3_2; } x_11_2_2; } x_14_1_11; boolx_14_1_12; boolx_14_1_13; boolx_14_1_14; boolx_14_1_15; boolx_14_1_16; boolx_14_1_17; boolx_14_1_18; struct Color { unsigned int x_19_2_1; boolx_19_2_2; } x_14_1_19; int x_14_1_20; int x_14_1_21; } x14; struct EventHandler { struct Frame {} *x_15_1_1; boolx_15_1_2; boolx_15_1_3; struct RefPtr<WebCore::Node> { struct Node {} *x_4_2_1; } x_15_1_4; boolx_15_1_5; boolx_15_1_6; boolx_15_1_7; struct IntPoint { int x_8_2_1; int x_8_2_2; } x_15_1_8; boolx_15_1_9; boolx_15_1_10; boolx_15_1_11; struct Timer<WebCore::EventHandler> { int (**x_12_2_1)(); double x_12_2_2; double x_12_2_3; int x_12_2_4; unsigned int x_12_2_5; struct EventHandler {} *x_12_2_6; struct { int *x_7_3_1; } x_12_2_7; } x_15_1_12; struct Timer<WebCore::EventHandler> { int (**x_13_2_1)(); double x_13_2_2; double x_13_2_3; int x_13_2_4; unsigned int x_13_2_5; struct EventHandler {} *x_13_2_6; struct { int *x_7_3_1; } x_13_2_7; } x_15_1_13; struct RenderObject {} *x_15_1_14; boolx_15_1_15; boolx_15_1_16; boolx_15_1_17; struct Timer<WebCore::EventHandler> { int (**x_18_2_1)(); double x_18_2_2; double x_18_2_3; int x_18_2_4; unsigned int x_18_2_5; struct EventHandler {} *x_18_2_6; struct { int *x_7_3_1; } x_18_2_7; } x_15_1_18; boolx_15_1_19; struct RefPtr<WebCore::SVGElementInstance> { struct SVGElementInstance {} *x_20_2_1; } x_15_1_20; struct RefPtr<WebCore::SVGElementInstance> { struct SVGElementInstance {} *x_21_2_1; } x_15_1_21; struct RenderLayer {} *x_15_1_22; struct RefPtr<WebCore::Node> { struct Node {} *x_23_2_1; } x_15_1_23; boolx_15_1_24; struct RefPtr<WebCore::Node> { struct Node {} *x_25_2_1; } x_15_1_25; struct RefPtr<WebCore::Node> { struct Node {} *x_26_2_1; } x_15_1_26; struct RefPtr<WebCore::Frame> { struct Frame {} *x_27_2_1; } x_15_1_27; struct RefPtr<WebCore::Scrollbar> { struct Scrollbar {} *x_28_2_1; } x_15_1_28; int x_15_1_29; struct RefPtr<WebCore::Node> { struct Node {} *x_30_2_1; } x_15_1_30; float x_15_1_31; float x_15_1_32; float x_15_1_33; float x_15_1_34; unsigned int x_15_1_35; struct Vector<WTF::RefPtr<WebCore::Touch>,0ul> { unsigned int x_36_2_1; struct VectorBuffer<WTF::RefPtr<WebCore::Touch>,0ul> { struct RefPtr<WebCore::Touch> {} *x_2_3_1; unsigned int x_2_3_2; } x_36_2_2; } x_15_1_36; struct HashSet<WTF::RefPtr<WebCore::EventTarget>,WTF::PtrHash<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> > > { struct HashTable<WTF::RefPtr<WebCore::EventTarget>,WTF::RefPtr<WebCore::EventTarget>,WTF::IdentityExtractor<WTF::RefPtr<WebCore::EventTarget> >,WTF::PtrHash<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> >,WTF::HashTraits<WTF::RefPtr<WebCore::EventTarget> > > { struct RefPtr<WebCore::EventTarget> {} *x_1_3_1; int x_1_3_2; int x_1_3_3; int x_1_3_4; int x_1_3_5; } x_37_2_1; } x_15_1_37; struct RefPtr<WebCore::Frame> { struct Frame {} *x_38_2_1; } x_15_1_38; struct RefPtr<WebCore::HTMLFrameSetElement> { struct HTMLFrameSetElement {} *x_39_2_1; } x_15_1_39; struct IntSize { int x_40_2_1; int x_40_2_2; } x_15_1_40; struct IntPoint { int x_41_2_1; int x_41_2_2; } x_15_1_41; struct IntPoint { int x_42_2_1; int x_42_2_2; } x_15_1_42; double x_15_1_43; struct PlatformMouseEvent { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_44_2_1; struct IntPoint { int x_2_3_1; int x_2_3_2; } x_44_2_2; int x_44_2_3; int x_44_2_4; int x_44_2_5; boolx_44_2_6; boolx_44_2_7; boolx_44_2_8; boolx_44_2_9; double x_44_2_10; unsigned int x_44_2_11; } x_15_1_44; boolx_15_1_45; struct RefPtr<WebCore::Node> { struct Node {} *x_46_2_1; } x_15_1_46; boolx_15_1_47; struct RefPtr<WebCore::Node> { struct Node {} *x_48_2_1; } x_15_1_48; id x_15_1_49; boolx_15_1_50; } x15; struct AnimationController { struct AnimationControllerPrivate {} *x_16_1_1; } x16; struct Timer<WebCore::Frame> { int (**x_17_1_1)(); double x_17_1_2; double x_17_1_3; int x_17_1_4; unsigned int x_17_1_5; struct Frame {} *x_17_1_6; struct { int *x_7_2_1; } x_17_1_7; } x17; float x18; struct IntPoint { int x_19_1_1; int x_19_1_2; } x19; struct ViewportArguments { float x_20_1_1; float x_20_1_2; float x_20_1_3; float x_20_1_4; float x_20_1_5; float x_20_1_6; } x20; boolx21; struct VisibleSelection { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_1_2_1; int x_1_2_2; unsigned int x_1_2_3 : 2; unsigned int x_1_2_4 : 1; } x_22_1_1; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_2_2_1; int x_2_2_2; unsigned int x_2_2_3 : 2; unsigned int x_2_2_4 : 1; } x_22_1_2; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_3_2_1; int x_3_2_2; unsigned int x_3_2_3 : 2; unsigned int x_3_2_4 : 1; } x_22_1_3; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_4_2_1; int x_4_2_2; unsigned int x_4_2_3 : 2; unsigned int x_4_2_4 : 1; } x_22_1_4; int x_22_1_5; int x_22_1_6; boolx_22_1_7; } x22; struct VisibleSelection { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_1_2_1; int x_1_2_2; unsigned int x_1_2_3 : 2; unsigned int x_1_2_4 : 1; } x_23_1_1; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_2_2_1; int x_2_2_2; unsigned int x_2_2_3 : 2; unsigned int x_2_2_4 : 1; } x_23_1_2; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_3_2_1; int x_3_2_2; unsigned int x_3_2_3 : 2; unsigned int x_3_2_4 : 1; } x_23_1_3; struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_3_1; } x_4_2_1; int x_4_2_2; unsigned int x_4_2_3 : 2; unsigned int x_4_2_4 : 1; } x_23_1_4; int x_23_1_5; int x_23_1_6; boolx_23_1_7; } x23; struct FloatSize { float x_24_1_1; float x_24_1_2; } x24; unsigned int x25; unsigned int x26; unsigned int x27; double x28; double x29; struct Timer<WebCore::Frame> { int (**x_30_1_1)(); double x_30_1_2; double x_30_1_3; int x_30_1_4; unsigned int x_30_1_5; struct Frame {} *x_30_1_6; struct { int *x_7_2_1; } x_30_1_7; } x30; float x31; float x32; float x33; int x34; boolx35; boolx36; boolx37; boolx38; int x39; }*)arg1;
+- (void)receivedPolicyDecision:(int)arg1;
 - (void)dealloc;
 
 @end

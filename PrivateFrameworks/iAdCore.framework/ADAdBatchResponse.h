@@ -5,50 +5,50 @@
 @class ADAdDefaultsOverrides, NSString, NSMutableArray;
 
 @interface ADAdBatchResponse : PBCodable  {
-    int _error;
     BOOL _hasError;
+    int _error;
     NSString *_batchId;
     NSMutableArray *_ads;
-    BOOL _supplyMetrics;
     BOOL _hasSupplyMetrics;
+    BOOL _supplyMetrics;
     ADAdDefaultsOverrides *_overrideDefaults;
 }
 
+@property BOOL hasError;
+@property int error;
 @property(readonly) BOOL hasBatchId;
-@property(readonly) int adsCount;
+@property(retain) NSString * batchId;
+@property(retain) NSMutableArray * ads;
+@property BOOL hasSupplyMetrics;
+@property BOOL supplyMetrics;
 @property(readonly) BOOL hasOverrideDefaults;
 @property(retain) ADAdDefaultsOverrides * overrideDefaults;
-@property(readonly) BOOL hasSupplyMetrics;
-@property BOOL supplyMetrics;
-@property(retain) NSMutableArray * ads;
-@property(retain) NSString * batchId;
-@property(readonly) BOOL hasError;
-@property int error;
 
 + (void)initialize;
 
-- (BOOL)hasBatchId;
-- (BOOL)hasOverrideDefaults;
-- (int)adsCount;
-- (void)setAd:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)adAtIndex:(unsigned int)arg1;
-- (void)addAd:(id)arg1;
-- (id)overrideDefaults;
-- (void)setOverrideDefaults:(id)arg1;
-- (id)ads;
-- (void)setAds:(id)arg1;
-- (BOOL)hasSupplyMetrics;
-- (void)setSupplyMetrics:(BOOL)arg1;
-- (BOOL)supplyMetrics;
-- (id)batchId;
-- (void)setBatchId:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasError;
-- (void)writeTo:(id)arg1;
-- (int)error;
 - (void)setError:(int)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasSupplyMetrics:(BOOL)arg1;
+- (void)setHasError:(BOOL)arg1;
+- (id)adAtIndex:(unsigned int)arg1;
+- (unsigned int)adsCount;
+- (void)setSupplyMetrics:(BOOL)arg1;
+- (void)addAd:(id)arg1;
+- (void)setOverrideDefaults:(id)arg1;
+- (void)setAds:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)overrideDefaults;
+- (BOOL)hasOverrideDefaults;
+- (id)ads;
+- (BOOL)supplyMetrics;
+- (BOOL)hasSupplyMetrics;
+- (BOOL)hasError;
+- (BOOL)hasBatchId;
+- (void)setBatchId:(id)arg1;
+- (id)batchId;
+- (id)dictionaryRepresentation;
+- (int)error;
+- (id)description;
+- (void)dealloc;
 
 @end

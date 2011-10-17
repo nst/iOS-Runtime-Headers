@@ -13,23 +13,23 @@
 
 @property(retain) NSString * body;
 @property(retain) UIImage * image;
-@property(retain) NSString * title;
 @property int layoutPreset;
+@property(retain) NSString * title;
 
 
+- (void)setBody:(id)arg1;
 - (id)_imageView;
 - (id)_titleLabel;
 - (id)body;
 - (id)image;
-- (void)layoutSubviews;
 - (id)title;
-- (void)dealloc;
 - (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
 - (void)setImage:(id)arg1;
-- (void)setBody:(id)arg1;
+- (void)dealloc;
+- (id)_bodyLabel;
 - (void)_layoutForSlowNetwork;
 - (int)layoutPreset;
-- (id)_bodyLabel;
 - (void)setLayoutPreset:(int)arg1;
 
 @end

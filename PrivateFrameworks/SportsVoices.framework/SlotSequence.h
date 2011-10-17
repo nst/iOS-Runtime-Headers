@@ -10,27 +10,27 @@
 
 @property(retain) NSMutableArray * slots;
 
-+ (id)emptySlotSequence;
 + (id)slotSequenceWithArray:(id)arg1;
++ (id)emptySlotSequence;
 
-- (id)initWithArray:(id)arg1;
-- (void)dealloc;
-- (id)description;
-- (int)count;
 - (id)first;
 - (BOOL)matches:(id)arg1;
-- (id)reversed;
-- (id)portionFollowingOccurrenceOfSequence:(id)arg1 atIndex:(int)arg2;
+- (id)initWithArray:(id)arg1;
+- (BOOL)empty;
+- (int)count;
+- (id)description;
+- (void)dealloc;
+- (void)setSlots:(id)arg1;
 - (id)subsequenceFromIndex:(int)arg1;
 - (id)slotSubsequenceFromIndex:(int)arg1;
-- (void)setSlots:(id)arg1;
-- (id)indicesOfOccurrencesInTarget:(id)arg1;
-- (id)occurrenceOfSequence:(id)arg1 atIndex:(int)arg2;
-- (id)portionPrecedingOccurrenceOfSequence:(id)arg1 atIndex:(int)arg2;
 - (id)rest;
+- (id)portionFollowingOccurrenceOfSequence:(id)arg1 atIndex:(int)arg2;
+- (id)portionPrecedingOccurrenceOfSequence:(id)arg1 atIndex:(int)arg2;
+- (id)occurrenceOfSequence:(id)arg1 atIndex:(int)arg2;
+- (id)indicesOfOccurrencesInTarget:(id)arg1;
 - (id)slots;
-- (id)initFromPlist:(id)arg1;
+- (id)reversed;
 - (id)overlayedOn:(id)arg1;
-- (BOOL)empty;
+- (id)initFromPlist:(id)arg1;
 
 @end

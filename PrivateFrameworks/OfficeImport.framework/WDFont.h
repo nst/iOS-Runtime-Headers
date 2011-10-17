@@ -13,21 +13,21 @@
 }
 
 
-- (unsigned int)hash;
-- (void)setName:(id)arg1;
-- (void)setFontFamily:(int)arg1;
-- (int)fontFamily;
-- (BOOL)isEqual:(id)arg1;
-- (id)name;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setPitch:(int)arg1;
 - (id)secondName;
-- (int)characterSet;
 - (void)setSecondName:(id)arg1;
 - (void)setCharacterSet:(int)arg1;
+- (int)characterSet;
+- (void)setPitch:(int)arg1;
 - (int)pitch;
+- (int)fontFamily;
+- (void)setFontFamily:(int)arg1;
+- (id)name;
 - (id)initWithName:(id)arg1;
+- (void)setName:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

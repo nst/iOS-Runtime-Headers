@@ -15,29 +15,37 @@
     DDActionController *_actionController;
 }
 
-+ (id)sharedController;
 + (id)tapAndHoldSchemes;
++ (id)sharedController;
 
 - (void)startURLificationForFrame:(id)arg1 detectedTypes:(unsigned int)arg2 options:(int)arg3;
-- (void)frameWillBeRemoved:(id)arg1;
-- (void)cancelURLificationForFrame:(id)arg1;
+- (id)defaultActionForDOMNode:(id)arg1 forFrame:(id)arg2;
+- (BOOL)shouldImmediatelyShowActionSheetForURL:(id)arg1 forFrame:(id)arg2;
+- (void)performAction:(id)arg1 inView:(id)arg2 withPopoverController:(id)arg3 interactionDelegate:(id)arg4;
+- (id)actionsForDOMNode:(id)arg1 forFrame:(id)arg2;
+- (void)resetResultsForFrame:(id)arg1;
 - (void)startURLificationForFrame:(id)arg1 detectedTypes:(unsigned int)arg2;
+- (void)cancelURLificationForFrame:(id)arg1;
+- (void)frameWillBeRemoved:(id)arg1;
+- (void)performActionNumber:(int)arg1 forDOMNode:(id)arg2 forFrame:(id)arg3 withPopoverController:(id)arg4 interactionDelegate:(id)arg5;
+- (void)performActionNumber:(int)arg1 forDOMNode:(id)arg2 forFrame:(id)arg3 inView:(id)arg4 interactionDelegate:(id)arg5;
 - (void)performDefaultActionForURL:(id)arg1 forFrame:(id)arg2 inView:(id)arg3;
 - (id)actionNamesForURL:(id)arg1 inFrame:(id)arg2;
-- (void)performActionNumber:(int)arg1 forURL:(id)arg2 forFrame:(id)arg3 inView:(id)arg4 interactionDelegate:(id)arg5;
-- (void)performActionNumber:(int)arg1 forURL:(id)arg2 forFrame:(id)arg3 withPopoverController:(id)arg4 interactionDelegate:(id)arg5;
-- (BOOL)shouldImmediatelyShowActionSheetForURL:(id)arg1 forFrame:(id)arg2;
-- (void)resetResultsForFrame:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct __DDQueryOffset { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; void *x9; }*)resultForDOMNode:(id)arg1 forFrame:(id)arg2;
+- (void)_doURLificationOnWebThreadAndRelease:(id)arg1;
+- (void)_enqueueOperationAndRelease:(id)arg1;
+- (void)setIgnoreUIKitNotifications:(BOOL)arg1 forFrame:(id)arg2;
+- (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct __DDQueryOffset { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; void *x9; }*)_resultForIdentifier:(id)arg1 forFrame:(id)arg2 context:(id*)arg3;
+- (id)defaultActionForAnchor:(id)arg1 url:(id)arg2 forFrame:(id)arg3;
+- (id)actionsForAnchor:(id)arg1 url:(id)arg2 forFrame:(id)arg3;
+- (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct __DDQueryOffset { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; void *x9; }*)resultForNode:(id)arg1 url:(id)arg2 frame:(id)arg3 contextRef:(id*)arg4;
+- (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct __DDQueryOffset { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; void *x9; }*)_resultForURL:(id)arg1 forFrame:(id)arg2 context:(id*)arg3;
+- (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct __DDQueryOffset { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; void *x9; }*)_resultForAnchor:(id)arg1 forFrame:(id)arg2 context:(id*)arg3;
+- (void)_reallyStartURLificationForOperation:(id)arg1;
+- (id)_newOperationForFrame:(id)arg1;
 - (void)setResults:(struct __CFArray { }*)arg1 forFrame:(id)arg2;
 - (void)setContext:(id)arg1 forFrame:(id)arg2;
-- (void)_enqueueOperationAndRelease:(id)arg1;
-- (void)_doURLificationOnWebThreadAndRelease:(id)arg1;
-- (id)_newOperationForFrame:(id)arg1;
-- (void)_reallyStartURLificationForOperation:(id)arg1;
-- (void)setIgnoreUIKitNotifications:(BOOL)arg1 forFrame:(id)arg2;
-- (void)performDefaultActionForURL:(id)arg1 inFrame:(id)arg2;
-- (struct __DDResult { }*)_resultForURL:(id)arg1 forFrame:(id)arg2 context:(id*)arg3;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -13,23 +13,23 @@
 }
 
 
-- (void)dispose;
-- (void)finalize;
-- (void)dealloc;
-- (id)initWithKernData:(struct __CFData { }*)arg1;
-- (id)initWithCGFont:(struct CGFont { }*)arg1;
-- (unsigned char)readByte;
 - (unsigned short)readUnsignedShort;
+- (void)finalize;
+- (id)initWithCGFont:(struct CGFont { }*)arg1;
 - (short)readShort;
-- (unsigned int)readUnsignedLong;
+- (struct __CFDictionary { }*)createKernTable;
+- (id)initWithKernData:(struct __CFData { }*)arg1;
 - (void)doKerningPair;
 - (void)doSubtableFormat0;
 - (void)doSubtableFormat1;
 - (void)doSubtableFormat2;
 - (void)doSubtableFormat3;
-- (void)doTTSubtable;
 - (void)doOTSubtable;
+- (void)doTTSubtable;
 - (void)doTable;
-- (struct __CFDictionary { }*)createKernTable;
+- (unsigned char)readByte;
+- (unsigned int)readUnsignedLong;
+- (void)dispose;
+- (void)dealloc;
 
 @end

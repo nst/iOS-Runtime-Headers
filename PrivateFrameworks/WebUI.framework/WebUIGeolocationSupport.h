@@ -13,12 +13,12 @@
 
 + (id)sharedWebUIGeolocationSupport;
 
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)clear;
-- (void)save;
-- (void)webView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
-- (void)load;
 - (id)siteFile;
 - (BOOL)webFrame:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2;
+- (void)clear;
+- (void)load;
+- (void)webView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)save;
 
 @end

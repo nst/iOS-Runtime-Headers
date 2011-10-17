@@ -13,9 +13,11 @@
     NSString *_checkInURLString;
     int _accessRights;
     BOOL _signMessage;
+    BOOL _checkOutWhenRemoved;
 }
 
 @property(readonly) NSArray * localizedAccessRightDescriptions;
+@property(readonly) BOOL checkOutWhenRemoved;
 @property(readonly) BOOL signMessage;
 @property(readonly) int accessRights;
 @property(readonly) NSString * checkInURLString;
@@ -29,26 +31,28 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
 - (id)title;
-- (void)dealloc;
-- (id)description;
-- (id)identityUUID;
-- (int)accessRights;
 - (id)localizedAccessRightDescriptions;
-- (id)_invalidRightsError;
-- (id)_invalidTopicError;
+- (BOOL)checkOutWhenRemoved;
 - (BOOL)signMessage;
+- (int)accessRights;
 - (id)checkInURLString;
 - (BOOL)useDevelopmentAPNS;
 - (id)serverURLString;
 - (id)topic;
 - (id)identityPersistentID;
 - (void)setIdentityPersistentID:(id)arg1;
-- (id)subtitle1Description;
-- (id)subtitle2Description;
+- (id)identityUUID;
+- (id)_invalidRightsError;
+- (id)_invalidTopicError;
+- (id)_nonHTTPSURLErrorForField:(id)arg1;
 - (id)subtitle1Label;
 - (id)subtitle2Label;
+- (id)subtitle2Description;
+- (id)subtitle1Description;
 - (id)installationWarnings;
-- (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)stubDictionary;
+- (id)description;
+- (void)dealloc;
 
 @end

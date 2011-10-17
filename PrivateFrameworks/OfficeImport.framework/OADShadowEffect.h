@@ -12,19 +12,19 @@
 }
 
 
-- (id)initWithType:(int)arg1;
-- (float)angle;
-- (void)setAngle:(float)arg1;
-- (void)setColor:(id)arg1;
-- (id)color;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setDistance:(float)arg1;
-- (float)distance;
-- (void)setBlurRadius:(float)arg1;
 - (float)blurRadius;
+- (float)distance;
 - (id)initWithShadowEffect:(id)arg1 type:(int)arg2;
 - (void)setStyleColor:(id)arg1;
+- (void)setDistance:(float)arg1;
+- (void)setBlurRadius:(float)arg1;
+- (float)angle;
+- (void)setAngle:(float)arg1;
+- (id)color;
+- (void)setColor:(id)arg1;
+- (id)initWithType:(int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

@@ -6,15 +6,15 @@
     id _internal;
 }
 
-@property(readonly) struct { double x; double y; double z; } magneticField;
+@property(readonly) struct { double x1; double x2; double x3; } magneticField;
 
 
-- (struct { double x1; double x2; double x3; })magneticField;
-- (id)initWithMagneticField:(struct { float x1; float x2; float x3; })arg1 andTimestamp:(double)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)initWithMagneticField:(struct { float x1; float x2; float x3; })arg1 andTimestamp:(double)arg2;
+- (struct { double x1; double x2; double x3; })magneticField;
 
 @end

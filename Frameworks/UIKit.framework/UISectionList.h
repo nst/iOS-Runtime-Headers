@@ -18,27 +18,27 @@
 
 + (float)defaultIndexWidth;
 
+- (id)table;
+- (id)_indexTitlesAsSet;
+- (void)noteIndexTitlesDidChange;
+- (void)setNonIndexedTitlesShownLast:(BOOL)arg1;
+- (float)marginForIndexControl:(BOOL)arg1;
+- (id)allTitles;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 showSectionIndex:(BOOL)arg2;
+- (void)_setIndexVisible:(BOOL)arg1;
+- (void)setSectionListStyle:(int)arg1;
+- (void)setShouldHideHeaderInShortLists:(BOOL)arg1;
+- (void)setAllowsScrollIndicators:(BOOL)arg1;
+- (BOOL)showsSectionHeaders;
+- (id)indexTitles;
+- (int)closestSectionForTitle:(id)arg1;
+- (BOOL)showsSectionIndex;
+- (id)titleForSection:(int)arg1;
+- (void)_languageChanged;
 - (int)numberOfSections;
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 showSectionIndex:(BOOL)arg2;
-- (float)marginForIndexControl:(BOOL)arg1;
-- (id)allTitles;
-- (void)setAllowsScrollIndicators:(BOOL)arg1;
-- (BOOL)showsSectionIndex;
-- (void)setNonIndexedTitlesShownLast:(BOOL)arg1;
-- (void)noteIndexTitlesDidChange;
-- (void)_setIndexVisible:(BOOL)arg1;
-- (id)table;
-- (id)_indexTitlesAsSet;
-- (id)titleForSection:(int)arg1;
-- (int)closestSectionForTitle:(id)arg1;
-- (BOOL)showsSectionHeaders;
-- (void)setShouldHideHeaderInShortLists:(BOOL)arg1;
-- (void)setSectionListStyle:(int)arg1;
-- (id)indexTitles;
-- (void)_languageChanged;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

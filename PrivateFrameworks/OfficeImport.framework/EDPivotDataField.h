@@ -15,19 +15,19 @@
 
 + (id)pivotDataField;
 
-- (void)setName:(id)arg1;
+- (int)baseField;
+- (void)setBaseField:(int)arg1;
+- (unsigned int)baseItem;
+- (void)setBaseItem:(unsigned int)arg1;
+- (unsigned int)fieldId;
+- (void)setFieldId:(unsigned int)arg1;
+- (unsigned int)numFmtId;
+- (void)setNumFmtId:(unsigned int)arg1;
+- (int)showDataAs;
+- (void)setShowDataAs:(int)arg1;
 - (id)name;
+- (void)setName:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)setBaseField:(int)arg1;
-- (void)setShowDataAs:(int)arg1;
-- (int)showDataAs;
-- (unsigned int)baseItem;
-- (int)baseField;
-- (unsigned int)fieldId;
-- (unsigned int)numFmtId;
-- (void)setBaseItem:(unsigned int)arg1;
-- (void)setNumFmtId:(unsigned int)arg1;
-- (void)setFieldId:(unsigned int)arg1;
 
 @end

@@ -10,13 +10,13 @@
 }
 
 
-- (void)removeAllObjects;
-- (void)dealloc;
-- (void)markObject:(id)arg1 processor:(Class)arg2;
 - (void)addProcessorClass:(Class)arg1;
-- (id)initWithWorkbook:(id)arg1;
 - (bool)hasProcessors;
 - (void)removeProcessorClass:(Class)arg1;
 - (void)applyProcessorsWithSheet:(id)arg1;
+- (id)initWithWorkbook:(id)arg1;
+- (void)markObject:(id)arg1 processor:(Class)arg2;
+- (void)removeAllObjects;
+- (void)dealloc;
 
 @end

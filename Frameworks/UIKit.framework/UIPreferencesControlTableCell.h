@@ -9,8 +9,8 @@
 }
 
 
-- (void)setControl:(id)arg1;
 - (id)control;
+- (void)setControl:(id)arg1;
 - (void)_controlClicked:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 

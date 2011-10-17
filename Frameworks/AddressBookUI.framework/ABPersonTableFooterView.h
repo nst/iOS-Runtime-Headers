@@ -20,23 +20,23 @@
 @property(getter=isEditing) BOOL tableEditing;
 
 
-- (BOOL)isEditing;
 - (void)setAccessoryView:(id)arg1;
 - (id)accessoryView;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setEditing:(BOOL)arg1;
-- (void)dealloc;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)isEditing;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deleteViewFrame;
+- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })attributionFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deleteViewFrame;
 - (void)setDeleteActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 animated:(BOOL)arg4;
 - (void)removeDeleteAction;
 - (void)setTableEditing:(BOOL)arg1;
-- (void)setAttribution:(id)arg1 enabled:(BOOL)arg2 target:(id)arg3 action:(SEL)arg4;
 - (BOOL)isAttributionEnabled;
 - (id)attribution;
+- (void)setAttribution:(id)arg1 enabled:(BOOL)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 

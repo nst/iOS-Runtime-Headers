@@ -7,14 +7,16 @@
 @interface UICheckeredPatternView : UIView  {
     UIColor *m_patternColor;
     UIColor *m_checkerColor;
+    float m_scale;
 }
 
 
-- (BOOL)_canDrawContent;
-- (void)updatePatternColor;
-- (id)checkerColor;
 - (void)setCheckerColor:(id)arg1;
-- (void)dealloc;
+- (id)checkerColor;
+- (void)updatePatternColor;
+- (BOOL)_canDrawContent;
+- (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

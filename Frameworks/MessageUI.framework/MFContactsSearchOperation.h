@@ -13,19 +13,19 @@
 }
 
 @property(readonly) NSSet * properties;
-@property(retain,readonly) NSString * text;
+@property(readonly) NSString * text;
 @property(readonly) NSNumber * taskID;
 @property(readonly) MFContactsSearchManager * owner;
 @property(readonly) void* addressBook;
 
 + (id)operationWithAddressBook:(void*)arg1 owner:(id)arg2 text:(id)arg3 taskID:(id)arg4 properties:(id)arg5;
 
+- (void*)addressBook;
+- (id)owner;
+- (id)properties;
 - (int)type;
 - (id)text;
 - (void)dealloc;
-- (id)owner;
-- (id)properties;
-- (void*)addressBook;
 - (id)taskID;
 
 @end

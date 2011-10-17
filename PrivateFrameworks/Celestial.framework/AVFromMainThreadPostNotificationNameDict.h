@@ -10,10 +10,10 @@
 
 + (id)dict;
 
-- (void)release;
+- (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
+- (void)release;
 - (void)dealloc;
-- (id)objectForKey:(id)arg1;
 
 @end

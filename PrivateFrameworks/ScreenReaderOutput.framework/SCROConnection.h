@@ -12,23 +12,23 @@
     id _delegate;
 }
 
-+ (void)initialize;
 + (void)_createConnectionRunLoop;
 + (void)_configServer;
 + (void)_unconfigServerAndRetry:(BOOL)arg1;
 + (void)_addConnectionToRunLoop:(id)arg1;
++ (void)initialize;
 
-- (void)invalidate;
-- (void)dealloc;
-- (int)sendEvent:(id)arg1;
-- (void)_stopConnection;
-- (id)initWithHandlerType:(int)arg1 delegate:(id)arg2;
 - (void)_startConnection;
 - (void)_ping;
 - (id)handlerValueForKey:(int)arg1;
+- (id)initWithHandlerType:(int)arg1 delegate:(id)arg2;
 - (int)registerHandlerCallbackForKey:(int)arg1;
 - (int)setHandlerValue:(id)arg1 forKey:(int)arg2;
 - (int)performHandlerActionForKey:(int)arg1;
 - (id)handlerValueForKey:(int)arg1 withObject:(id)arg2;
+- (void)invalidate;
+- (int)sendEvent:(id)arg1;
+- (void)_stopConnection;
+- (void)dealloc;
 
 @end

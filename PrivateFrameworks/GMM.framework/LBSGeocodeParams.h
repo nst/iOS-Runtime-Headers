@@ -7,47 +7,48 @@
 @interface LBSGeocodeParams : PBCodable  {
     NSString *_resultLanguage;
     int _numFeatureLimit;
-    BOOL _includeBoundingBoxes;
     BOOL _hasIncludeBoundingBoxes;
+    BOOL _includeBoundingBoxes;
     LBSUserLocation *_location;
     LBSGRectangle *_boundingBox;
-    int _addressLinesLimit;
     BOOL _hasAddressLinesLimit;
+    int _addressLinesLimit;
 }
 
-@property(readonly) BOOL hasLocation;
-@property(readonly) BOOL hasBoundingBox;
-@property(readonly) BOOL hasAddressLinesLimit;
-@property int addressLinesLimit;
-@property(retain) LBSGRectangle * boundingBox;
-@property(retain) LBSUserLocation * location;
-@property(readonly) BOOL hasIncludeBoundingBoxes;
-@property BOOL includeBoundingBoxes;
-@property int numFeatureLimit;
 @property(retain) NSString * resultLanguage;
+@property int numFeatureLimit;
+@property BOOL hasIncludeBoundingBoxes;
+@property BOOL includeBoundingBoxes;
+@property(readonly) BOOL hasLocation;
+@property(retain) LBSUserLocation * location;
+@property(readonly) BOOL hasBoundingBox;
+@property(retain) LBSGRectangle * boundingBox;
+@property BOOL hasAddressLinesLimit;
+@property int addressLinesLimit;
 
 
-- (id)boundingBox;
-- (id)dictionaryRepresentation;
-- (void)setLocation:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)location;
-- (BOOL)hasIncludeBoundingBoxes;
-- (void)setNumFeatureLimit:(int)arg1;
-- (void)setAddressLinesLimit:(int)arg1;
-- (BOOL)hasBoundingBox;
-- (void)setIncludeBoundingBoxes:(BOOL)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasAddressLinesLimit:(BOOL)arg1;
 - (BOOL)hasAddressLinesLimit;
-- (int)addressLinesLimit;
-- (void)setBoundingBox:(id)arg1;
-- (void)setResultLanguage:(id)arg1;
 - (BOOL)includeBoundingBoxes;
+- (void)setHasIncludeBoundingBoxes:(BOOL)arg1;
+- (BOOL)hasIncludeBoundingBoxes;
 - (int)numFeatureLimit;
 - (id)resultLanguage;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (int)addressLinesLimit;
+- (BOOL)hasBoundingBox;
+- (void)setAddressLinesLimit:(int)arg1;
+- (void)setIncludeBoundingBoxes:(BOOL)arg1;
+- (void)setNumFeatureLimit:(int)arg1;
+- (void)setResultLanguage:(id)arg1;
 - (BOOL)hasLocation;
+- (void)writeTo:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setBoundingBox:(id)arg1;
+- (id)boundingBox;
+- (id)dictionaryRepresentation;
+- (id)location;
+- (id)description;
+- (void)dealloc;
 
 @end

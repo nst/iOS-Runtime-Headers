@@ -2,62 +2,50 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSSet, NSMutableSet;
+@class NSMutableDictionary;
 
 @interface IMParentalControls : NSObject  {
-    NSMutableSet *_aimWhitelist;
-    NSMutableSet *_subnetWhitelist;
-    NSMutableSet *_jabberWhitelist;
-    unsigned int _active : 1;
-    unsigned int _disableAV : 1;
-    unsigned int _disableAimService : 1;
-    unsigned int _forceAimWhitelist : 1;
-    unsigned int _disableSubnetService : 1;
-    unsigned int _forceSubnetWhitelist : 1;
-    unsigned int _disableJabberService : 1;
-    unsigned int _forceJabberWhitelist : 1;
-    unsigned int _forceChatLogging : 1;
-    unsigned int _shouldPostNotifications : 1;
+    BOOL _shouldPostNotifications;
+    BOOL _active;
+    NSMutableDictionary *_parentalControls;
+    BOOL _disableAV;
+    BOOL _forceChatLogging;
 }
 
 @property(readonly) BOOL active;
 @property(readonly) BOOL disableAV;
-@property(readonly) BOOL disableAimService;
-@property(readonly) BOOL forceAimWhitelist;
-@property(readonly) NSSet * aimWhitelist;
-@property(readonly) BOOL disableSubnetService;
-@property(readonly) BOOL forceSubnetWhitelist;
-@property(readonly) NSSet * subnetWhitelist;
-@property(readonly) BOOL disableJabberService;
-@property(readonly) BOOL forceJabberWhitelist;
-@property(readonly) NSSet * jabberWhitelist;
 @property(readonly) BOOL forceChatLogging;
+@property BOOL shouldPostNotifications;
+@property(readonly) NSMutableDictionary * _parentalControls;
+@property(readonly) BOOL _disableAV;
+@property(readonly) BOOL _forceChatLogging;
 
-+ (id)objectForKey:(id)arg1;
 + (id)standardControls;
++ (id)objectForKey:(id)arg1;
 
-- (BOOL)active;
-- (oneway void)release;
-- (id)init;
-- (void)dealloc;
-- (unsigned int)retainCount;
-- (id)autorelease;
-- (BOOL)forceChatLogging;
-- (id)jabberWhitelist;
-- (id)subnetWhitelist;
-- (void)_updateParentalSettings;
-- (void)_managedPrefsNotification:(id)arg1;
-- (BOOL)accountIsEnabled:(id)arg1;
+- (BOOL)_forceChatLogging;
+- (BOOL)_disableAV;
+- (id)_parentalControls;
+- (BOOL)shouldPostNotifications;
 - (BOOL)accountHasWhitelist:(id)arg1;
+- (BOOL)forceWhitelistForAccount:(id)arg1;
+- (id)whitelistForAccount:(id)arg1;
+- (BOOL)disableAccount:(id)arg1;
+- (BOOL)accountIsEnabled:(id)arg1;
+- (BOOL)forceWhitelistForService:(id)arg1;
+- (id)whitelistForService:(id)arg1;
+- (BOOL)disableService:(id)arg1;
+- (BOOL)forceChatLogging;
 - (BOOL)disableAV;
-- (BOOL)disableAimService;
-- (BOOL)forceAimWhitelist;
-- (id)aimWhitelist;
-- (BOOL)disableSubnetService;
-- (BOOL)forceSubnetWhitelist;
-- (BOOL)disableJabberService;
-- (BOOL)forceJabberWhitelist;
+- (id)_serviceWithName:(id)arg1;
+- (void)_managedPrefsNotification:(id)arg1;
+- (void)_updateParentalSettings;
 - (void)setShouldPostNotifications:(BOOL)arg1;
 - (BOOL)okToConnectAccount:(id)arg1;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (BOOL)active;
+- (id)init;
+- (void)dealloc;
 
 @end

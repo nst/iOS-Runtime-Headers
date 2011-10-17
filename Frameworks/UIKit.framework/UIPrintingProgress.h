@@ -24,19 +24,18 @@
 }
 
 
-- (id)initWithPrinterName:(id)arg1 cancelHandler:(id)arg2;
-- (BOOL)progressVisible;
 - (void)showProgress:(id)arg1 immediately:(BOOL)arg2;
-- (void)hideProgressAnimated:(BOOL)arg1;
 - (void)progressCancel;
-- (void)didPresentAlertView:(id)arg1;
-- (void)didEnterBackground;
+- (BOOL)progressVisible;
+- (void)hideProgressAnimated:(BOOL)arg1;
 - (void)endProgress;
 - (double)nextPrintDelay;
-- (void)setPrintInfoState:(int)arg1;
 - (void)setPage:(int)arg1 ofPage:(int)arg2;
+- (void)setPrintInfoState:(int)arg1;
+- (id)initWithPrinterName:(id)arg1 cancelHandler:(id)arg2;
+- (void)didPresentAlertView:(id)arg1;
+- (void)alertViewCancel:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)dealloc;
-- (void)alertViewCancel:(id)arg1;
 
 @end

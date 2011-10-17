@@ -10,22 +10,17 @@
     NSMutableArray *roadsAtSpeed[4];
 }
 
-@property(getter=isExpired,readonly) BOOL expired;
-@property(getter=isSoonExpired,readonly) BOOL soonExpired;
-@property(readonly) double expirationTime;
 @property(getter=isEmpty,readonly) BOOL empty;
+@property(readonly) double expirationTime;
 
 + (double)defaultExpirationTime;
 
-- (void)invalidate;
-- (id)init;
-- (void)dealloc;
-- (BOOL)isEmpty;
 - (BOOL)readFromStream:(struct InputDataStream { char *x1; unsigned int x2; unsigned int x3; boolx4; boolx5; }*)arg1 tilePath:(const struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg2;
 - (id)getRoadsAtSpeed:(int)arg1;
+- (void)invalidate;
+- (BOOL)isEmpty;
+- (id)init;
+- (void)dealloc;
 - (double)expirationTime;
-- (id)description;
-- (BOOL)isSoonExpired;
-- (BOOL)isExpired;
 
 @end

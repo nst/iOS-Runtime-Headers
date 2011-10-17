@@ -2,28 +2,31 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLForeignKey, NSSQLForeignEntityKey;
+@class NSSQLForeignKey, NSSQLForeignEntityKey, NSSQLForeignOrderKey;
 
 @interface NSSQLToOne : NSSQLRelationship  {
     NSSQLForeignKey *_foreignKey;
     NSSQLForeignEntityKey *_foreignEntityKey;
+    NSSQLForeignOrderKey *_foreignOrderKey;
     unsigned int _slot;
     BOOL _isVirtual;
 }
 
 
-- (void)dealloc;
-- (id)description;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2 virtualForToMany:(id)arg3;
+- (void)_setForeignOrderKey:(id)arg1;
 - (id)initForReadOnlyFetchWithEntity:(id)arg1 propertyDescription:(id)arg2;
+- (id)initWithEntity:(id)arg1 inverseToMany:(id)arg2;
 - (BOOL)isVirtual;
+- (id)foreignEntityKey;
+- (id)foreignOrderKey;
 - (void)copyValuesForReadOnlyFetch:(id)arg1;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
-- (id)foreignEntityKey;
-- (BOOL)isOptional;
-- (id)initWithEntity:(id)arg1 inverseToMany:(id)arg2;
-- (id)foreignKey;
-- (unsigned int)slot;
 - (id)columnName;
+- (unsigned int)slot;
+- (id)foreignKey;
+- (BOOL)isOptional;
+- (id)description;
+- (void)dealloc;
 
 @end

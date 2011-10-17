@@ -3,43 +3,60 @@
  */
 
 @interface GEOMapRegion : PBCodable  {
-    double _centerLng;
-    BOOL _hasCenterLng;
-    double _centerLat;
-    BOOL _hasCenterLat;
-    double _spanLng;
-    BOOL _hasSpanLng;
-    double _spanLat;
-    BOOL _hasSpanLat;
+    BOOL _hasSouthLat;
+    double _southLat;
+    BOOL _hasWestLng;
+    double _westLng;
+    BOOL _hasNorthLat;
+    double _northLat;
+    BOOL _hasEastLng;
+    double _eastLng;
 }
 
-@property(readonly) BOOL hasSpanLat;
-@property double spanLat;
-@property(readonly) BOOL hasSpanLng;
-@property double spanLng;
-@property(readonly) BOOL hasCenterLat;
-@property double centerLat;
-@property(readonly) BOOL hasCenterLng;
-@property double centerLng;
+@property(readonly) double centerLat;
+@property(readonly) double centerLng;
+@property(readonly) double spanLat;
+@property(readonly) double spanLng;
+@property BOOL hasSouthLat;
+@property double southLat;
+@property BOOL hasWestLng;
+@property double westLng;
+@property BOOL hasNorthLat;
+@property double northLat;
+@property BOOL hasEastLng;
+@property double eastLng;
 
 
-- (BOOL)hasSpanLng;
-- (void)setCenterLng:(double)arg1;
-- (void)setCenterLat:(double)arg1;
-- (void)setSpanLng:(double)arg1;
-- (void)setSpanLat:(double)arg1;
-- (BOOL)hasSpanLat;
-- (double)spanLat;
-- (BOOL)hasCenterLat;
-- (BOOL)hasCenterLng;
-- (double)spanLng;
-- (double)centerLat;
-- (double)centerLng;
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (BOOL)readFrom:(id)arg1;
+- (double)spanLng;
+- (double)spanLat;
+- (double)centerLng;
+- (double)centerLat;
+- (id)initWithSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
+- (void)setHasEastLng:(BOOL)arg1;
+- (void)setHasNorthLat:(BOOL)arg1;
+- (void)setHasWestLng:(BOOL)arg1;
+- (void)setHasSouthLat:(BOOL)arg1;
+- (void)setSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
+- (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
+- (double)westLng;
+- (double)eastLng;
+- (double)southLat;
+- (double)northLat;
+- (BOOL)hasWestLng;
+- (BOOL)hasEastLng;
+- (BOOL)hasSouthLat;
+- (BOOL)hasNorthLat;
+- (void)setEastLng:(double)arg1;
+- (void)setNorthLat:(double)arg1;
+- (void)setWestLng:(double)arg1;
+- (void)setSouthLat:(double)arg1;
+- (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
+- (id)description;
+- (void)dealloc;
+- (id)initWithGMMGeometry:(id)arg1;
+- (id)initWithGMMMapInfo:(id)arg1;
 
 @end

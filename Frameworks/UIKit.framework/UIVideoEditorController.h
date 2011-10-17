@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UINavigationControllerDelegate><UIVideoEditorControllerDelegate>, NSMutableDictionary, NSString;
+@class NSString, NSMutableDictionary, <UINavigationControllerDelegate><UIVideoEditorControllerDelegate>;
 
 @interface UIVideoEditorController : UINavigationController  {
-    int _previousStatusBarMode;
+    int _previousStatusBarStyle;
     NSMutableDictionary *_properties;
     struct { 
         unsigned int visible : 1; 
@@ -14,37 +14,37 @@
     } _flags;
 }
 
+@property <UINavigationControllerDelegate><UIVideoEditorControllerDelegate> * delegate;
 @property(copy) NSString * videoPath;
 @property double videoMaximumDuration;
 @property unsigned int videoQuality;
-@property <UINavigationControllerDelegate><UIVideoEditorControllerDelegate> * delegate;
 
 + (BOOL)canEditVideoAtPath:(id)arg1;
 
-- (void)setParentViewController:(id)arg1;
-- (id)videoPath;
-- (id)_createInitialController;
-- (void)_setupControllers;
-- (void)editVideoViewControllerDidCancel:(id)arg1;
-- (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;
-- (void)editVideoViewController:(id)arg1 didFailWithError:(id)arg2;
 - (void)setVideoPath:(id)arg1;
-- (double)videoMaximumDuration;
-- (void)setVideoQuality:(unsigned int)arg1;
-- (void)_setProperties:(id)arg1;
-- (void)_setValue:(id)arg1 forProperty:(id)arg2;
-- (void)setVideoMaximumDuration:(double)arg1;
-- (unsigned int)videoQuality;
-- (void)_initializeProperties;
-- (id)_valueForProperty:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (id)videoPath;
+- (void)editVideoViewController:(id)arg1 didFailWithError:(id)arg2;
+- (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;
+- (void)editVideoViewControllerDidCancel:(id)arg1;
+- (void)_setupControllers;
 - (BOOL)_didRevertStatusBar;
-- (void)_removeAllChildren;
+- (void)_setProperties:(id)arg1;
+- (void)setVideoQuality:(unsigned int)arg1;
+- (unsigned int)videoQuality;
+- (void)setVideoMaximumDuration:(double)arg1;
+- (double)videoMaximumDuration;
 - (void)_autoDismiss;
+- (id)_createInitialController;
+- (void)_removeAllChildren;
+- (void)_initializeProperties;
+- (void)_setValue:(id)arg1 forProperty:(id)arg2;
+- (id)_valueForProperty:(id)arg1;
 - (id)_properties;
-- (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillUnload;
 - (id)init;
 
 @end

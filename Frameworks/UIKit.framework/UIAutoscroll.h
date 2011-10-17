@@ -18,32 +18,32 @@
     BOOL m_active;
 }
 
-@property BOOL active;
-@property int count;
-@property double repeatInterval;
-@property int directions;
-@property struct CGPoint { float x; float y; } point;
-@property(retain) UIView<UIAutoscrollContainer> * scrollContainer;
 @property(retain) id target;
+@property(retain) UIView<UIAutoscrollContainer> * scrollContainer;
+@property struct CGPoint { float x1; float x2; } point;
+@property int directions;
+@property double repeatInterval;
+@property int count;
+@property BOOL active;
 
 
+- (void)invalidate;
 - (BOOL)active;
-- (void)setCount:(int)arg1;
-- (double)repeatInterval;
 - (void)setDirections:(int)arg1;
 - (void)setPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)scrollContainer;
 - (void)setScrollContainer:(id)arg1;
-- (id)target;
+- (double)repeatInterval;
+- (id)scrollContainer;
 - (void)timerFired:(id)arg1;
-- (BOOL)startAutoscroll:(id)arg1 scrollContainer:(id)arg2 point:(struct CGPoint { float x1; float x2; })arg3 directions:(int)arg4 repeatInterval:(double)arg5;
-- (int)directions;
 - (struct CGPoint { float x1; float x2; })point;
+- (int)directions;
+- (BOOL)startAutoscroll:(id)arg1 scrollContainer:(id)arg2 point:(struct CGPoint { float x1; float x2; })arg3 directions:(int)arg4 repeatInterval:(double)arg5;
 - (void)setActive:(BOOL)arg1;
-- (void)invalidate;
-- (void)dealloc;
-- (void)setTarget:(id)arg1;
+- (void)setCount:(int)arg1;
 - (void)setRepeatInterval:(double)arg1;
+- (void)setTarget:(id)arg1;
 - (int)count;
+- (id)target;
+- (void)dealloc;
 
 @end

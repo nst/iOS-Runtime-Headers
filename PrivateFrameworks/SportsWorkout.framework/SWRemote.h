@@ -10,7 +10,7 @@
 
 
 - (BOOL)isListeningToRemote;
-- (void)beginListeningToRemoteCommands;
 - (void)stopListeningToRemoteCommands;
+- (void)beginListeningToRemoteCommands;
 
 @end

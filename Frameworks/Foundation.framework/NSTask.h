@@ -5,35 +5,39 @@
 @interface NSTask : NSObject  {
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)currentTaskDictionary;
-+ (id)launchedTaskWithDictionary:(id)arg1;
-+ (id)launchedTaskWithLaunchPath:(id)arg1 arguments:(id)arg2;
+@property(copy) id terminationHandler;
 
-- (BOOL)suspend;
-- (id)init;
-- (id)arguments;
-- (id)currentDirectoryPath;
-- (int)terminationStatus;
-- (int)terminationReason;
-- (void)launch;
-- (void)setCurrentDirectoryPath:(id)arg1;
++ (id)launchedTaskWithLaunchPath:(id)arg1 arguments:(id)arg2;
++ (id)launchedTaskWithDictionary:(id)arg1;
++ (id)currentTaskDictionary;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
+
 - (void)setEnvironment:(id)arg1;
-- (void)setLaunchPath:(id)arg1;
-- (id)launchPath;
 - (id)environment;
-- (void)interrupt;
-- (void)terminate;
-- (int)suspendCount;
-- (void)setStandardInput:(id)arg1;
-- (void)setStandardOutput:(id)arg1;
-- (void)setStandardError:(id)arg1;
-- (id)standardInput;
-- (id)standardOutput;
 - (id)standardError;
-- (void)setArguments:(id)arg1;
+- (id)standardOutput;
+- (id)standardInput;
+- (void)setStandardError:(id)arg1;
+- (void)setStandardOutput:(id)arg1;
+- (void)setStandardInput:(id)arg1;
+- (id)launchPath;
+- (int)suspendCount;
+- (void)terminate;
+- (void)interrupt;
+- (void)setLaunchPath:(id)arg1;
+- (void)setCurrentDirectoryPath:(id)arg1;
+- (void)launch;
+- (int)terminationReason;
+- (int)terminationStatus;
 - (int)processIdentifier;
+- (void)setArguments:(id)arg1;
+- (id)currentDirectoryPath;
 - (BOOL)resume;
 - (BOOL)isRunning;
+- (id)arguments;
+- (BOOL)suspend;
+- (void)setTerminationHandler:(id)arg1;
+- (id)terminationHandler;
+- (id)init;
 
 @end

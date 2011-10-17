@@ -8,9 +8,9 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
-- (id)initWithAutoNumberSchemeType:(int)arg1 startIndex:(unsigned int)arg2;
-- (unsigned int)startIndex;
 - (int)autoNumberSchemeType;
+- (unsigned int)startIndex;
+- (id)initWithAutoNumberSchemeType:(int)arg1 startIndex:(unsigned int)arg2;
+- (BOOL)isEqual:(id)arg1;
 
 @end

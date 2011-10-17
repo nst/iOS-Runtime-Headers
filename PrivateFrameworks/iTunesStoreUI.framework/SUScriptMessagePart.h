@@ -13,15 +13,16 @@
 @property(readonly) NSString * encodingBase64;
 
 + (id)webScriptNameForKey:(const char *)arg1;
++ (void)initialize;
 
+- (id)attributeKeys;
 - (id)MIMEType;
 - (id)encodingBase64;
-- (void)setNativeMessagePart:(id)arg1;
 - (id)nativeMessagePart;
-- (id)contentEncoding;
+- (void)setNativeMessagePart:(id)arg1;
 - (void)setContentEncoding:(id)arg1;
-- (id)attributeKeys;
-- (id)scriptAttributeKeys;
+- (id)contentEncoding;
 - (id)_className;
+- (id)scriptAttributeKeys;
 
 @end

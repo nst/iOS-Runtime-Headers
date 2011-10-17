@@ -10,19 +10,20 @@
     <EKCellShortener> *_shortener;
 }
 
-@property(retain,readonly) TwoPartTextLabel * twoPartTextLabel;
-@property(retain,readonly) UIColor * valueColor;
+@property(readonly) TwoPartTextLabel * twoPartTextLabel;
 @property <EKCellShortener> * shortener;
+@property(readonly) UIColor * valueColor;
 
 
 - (id)valueColor;
 - (void)layoutSubviews;
-- (void)setShortener:(id)arg1;
 - (id)twoPartTextLabel;
 - (void)shorten;
-- (id)shortener;
-- (void)_layoutSubviewsCore;
 - (void)checkValueWidths;
+- (void)_layoutSubviewsCore;
 - (void)layoutText:(id)arg1 andValue:(id)arg2;
+- (void)setShortener:(id)arg1;
+- (id)shortener;
+- (void)dealloc;
 
 @end

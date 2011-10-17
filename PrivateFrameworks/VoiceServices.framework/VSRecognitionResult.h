@@ -8,20 +8,20 @@
 + (id)recognitionResultWithModelIdentifier:(id)arg1 classIdentifiers:(id)arg2 values:(id)arg3;
 + (void)initialize;
 
-- (id)createHandler;
-- (void)setRecognitionAction:(id)arg1;
-- (id)recognitionResultByReplacingValueForClassIdentifier:(id)arg1 withValue:(id)arg2;
-- (BOOL)getElementClassIdentifier:(id*)arg1 value:(id*)arg2 atIndex:(int)arg3;
-- (id)valueOfFirstElementWithClassIdentifier:(id)arg1;
-- (id)recognitionAction;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (oneway void)release;
-- (id)init;
-- (id)retain;
-- (unsigned int)retainCount;
-- (id)description;
 - (int)elementCount;
 - (id)modelIdentifier;
+- (id)recognitionResultByReplacingValueForClassIdentifier:(id)arg1 withValue:(id)arg2;
+- (id)valueOfFirstElementWithClassIdentifier:(id)arg1;
+- (id)createHandler;
+- (void)setRecognitionAction:(id)arg1;
+- (id)recognitionAction;
+- (BOOL)getElementClassIdentifier:(id*)arg1 value:(id*)arg2 atIndex:(int)arg3;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
+- (id)description;
+- (id)retain;
+- (id)init;
+- (oneway void)release;
 
 @end

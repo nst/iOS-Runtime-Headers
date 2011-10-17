@@ -15,7 +15,7 @@
 - (id)init;
 - (void)dealloc;
 - (id)movieMediaObject;
-- (id)initWithMovieMediaObject:(id)arg1;
 - (BOOL)_movieNeedsRemakeForMode:(id)arg1;
+- (id)initWithMovieMediaObject:(id)arg1;
 
 @end

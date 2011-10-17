@@ -16,9 +16,9 @@
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (void)dealloc;
+- (void)_textDidEndEditingOnExit:(id)arg1;
+- (void)_textDidChange:(id)arg1;
 - (void)setupNativeObject;
 - (void)destroyNativeObject;
-- (void)_textDidChange:(id)arg1;
-- (void)_textDidEndEditingOnExit:(id)arg1;
 
 @end

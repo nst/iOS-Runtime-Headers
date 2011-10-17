@@ -2,48 +2,53 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSSet, NSMutableSet;
+@class NSArray, NSSet, NSMutableSet;
 
 @interface MPMediaQueryCriteria : NSObject <NSCopying> {
     NSMutableSet *_filterPredicates;
     int _entityOrder;
     int _groupingType;
+    NSArray *_orderingProperties;
     NSSet *_itemPropertiesToFetch;
     NSSet *_collectionPropertiesToFetch;
 }
 
 @property(readonly) BOOL specifiesPlaylistItems;
 @property(readonly) BOOL excludesEntitiesWithBlankNames;
-@property(copy) NSSet * itemPropertiesToFetch;
 @property(copy) NSSet * filterPredicates;
-@property int groupingType;
+@property(copy) NSSet * itemPropertiesToFetch;
 @property(copy) NSSet * collectionPropertiesToFetch;
+@property int groupingType;
+@property(copy) NSArray * orderingProperties;
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
-- (BOOL)excludesEntitiesWithBlankNames;
-- (id)sanitizedQueryCriteria;
 - (void)removePredicatesForProperty:(id)arg1;
 - (id)ML3OrderingPropertiesForGroupingType:(int)arg1;
-- (id)ML3ItemsQueryInLibrary:(id)arg1;
 - (id)ML3ItemsQueryInLibrary:(id)arg1 orderingProperties:(id)arg2 nameBlankProperty:(id)arg3;
+- (id)ML3OrderingPropertiesForMPOrderingProperties:(id)arg1;
 - (id)ML3CollectionsQueryInLibrary:(id)arg1;
+- (id)ML3ItemsQueryInLibrary:(id)arg1;
+- (void)setOrderingProperties:(id)arg1;
 - (id)predicateForProperty:(id)arg1;
-- (id)itemPropertiesToFetch;
-- (id)collectionPropertiesToFetch;
+- (BOOL)excludesEntitiesWithBlankNames;
 - (void)setCollectionPropertiesToFetch:(id)arg1;
+- (id)collectionPropertiesToFetch;
+- (id)itemPropertiesToFetch;
+- (id)sanitizedQueryCriteria;
 - (BOOL)specifiesPlaylistItems;
-- (void)addFilterPredicate:(id)arg1;
-- (id)filterPredicates;
-- (int)groupingType;
-- (void)setFilterPredicates:(id)arg1;
+- (id)orderingProperties;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setGroupingType:(int)arg1;
-- (void)removeFilterPredicate:(id)arg1;
+- (void)setFilterPredicates:(id)arg1;
+- (int)groupingType;
+- (id)filterPredicates;
 - (void)setItemPropertiesToFetch:(id)arg1;
+- (void)removeFilterPredicate:(id)arg1;
+- (void)addFilterPredicate:(id)arg1;
 
 @end

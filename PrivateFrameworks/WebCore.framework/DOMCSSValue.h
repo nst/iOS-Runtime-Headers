@@ -12,9 +12,9 @@
 
 
 - (void)finalize;
-- (id)cssText;
-- (void)setCssText:(id)arg1;
-- (void)dealloc;
 - (unsigned short)cssValueType;
+- (void)setCssText:(id)arg1;
+- (id)cssText;
+- (void)dealloc;
 
 @end

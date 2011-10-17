@@ -10,20 +10,22 @@
     NSString *_matchTypeAttribute;
 }
 
-@property(retain) NSString * matchTypeAttribute;
-@property(retain) NSString * match;
 @property(retain) CoreDAVLeafItem * prop;
+@property(retain) NSString * match;
+@property(retain) NSString * matchTypeAttribute;
 
 
 - (id)match;
 - (void)setMatch:(id)arg1;
-- (void)dealloc;
-- (id)description;
-- (void)write:(id)arg1;
+- (void)setMatchTypeAttribute:(id)arg1;
 - (id)initWithSearchPropertyNameSpace:(id)arg1 andName:(id)arg2;
 - (id)matchTypeAttribute;
-- (void)setMatchTypeAttribute:(id)arg1;
 - (void)setProp:(id)arg1;
 - (id)prop;
+- (void)write:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (int)wellKnownPrincipalSearchType;
 
 @end

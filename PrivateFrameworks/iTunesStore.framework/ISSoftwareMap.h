@@ -2,30 +2,32 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableArray, NSArray;
+@class NSArray;
 
 @interface ISSoftwareMap : NSObject  {
-    NSMutableArray *_applications;
+    NSArray *_applications;
 }
 
 @property(readonly) NSArray * applications;
 
-+ (id)currentMap;
-+ (BOOL)haveApplicationsOfType:(struct __CFString { }*)arg1;
 + (void)_startWatchingInstallationNotifications;
-+ (BOOL)currentMapIsValid;
++ (BOOL)haveApplicationsOfType:(struct __CFString { }*)arg1;
++ (id)currentMap;
 + (void)setCurrentMap:(id)arg1;
++ (BOOL)currentMapIsValid;
++ (id)applicationForBundleIdentifier:(id)arg1 applicationType:(struct __CFString { }*)arg2;
 + (id)applicationForBundleIdentifier:(id)arg1;
 + (void)invalidateCurrentMap;
 + (void)startObservingNotifications;
 + (id)loadedMap;
 
-- (id)init;
-- (void)dealloc;
 - (id)copySoftwareUpdatesPropertyList;
-- (void)_loadFromMobileInstallation;
 - (id)_newSoftwareUpdateDictionaryForApplication:(id)arg1;
 - (id)_softwareUpdatesAccountsStringForApplications:(id)arg1;
+- (id)copySoftwareUpdatesPropertyListWithUpdatesContext:(id)arg1;
+- (void)_loadFromMobileInstallation;
+- (id)init;
+- (void)dealloc;
 - (id)applicationForBundleIdentifier:(id)arg1;
 - (id)applications;
 - (id)applicationForItemIdentifier:(id)arg1;

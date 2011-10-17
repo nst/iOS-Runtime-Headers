@@ -11,18 +11,18 @@
     NSMutableSet *_searchQueries;
 }
 
-@property(retain,readonly) NSMutableSet * searchQueries;
-@property(retain,readonly) NSMutableSet * operations;
-@property(retain,readonly) NSString * text;
-@property(retain,readonly) <MFContactsSearchConsumer> * consumer;
+@property(readonly) NSMutableSet * searchQueries;
+@property(readonly) NSMutableSet * operations;
+@property(readonly) NSString * text;
+@property(readonly) <MFContactsSearchConsumer> * consumer;
 
 + (id)contextWithConsumer:(id)arg1 text:(id)arg2 operations:(id)arg3 searchQueries:(id)arg4;
 
+- (id)operations;
 - (BOOL)done;
 - (id)text;
-- (void)dealloc;
-- (id)operations;
 - (id)searchQueries;
+- (void)dealloc;
 - (id)consumer;
 
 @end

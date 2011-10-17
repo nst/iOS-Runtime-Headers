@@ -13,23 +13,23 @@
     unsigned int _sectionIndexTitleIndex;
 }
 
-@property unsigned int sectionIndexTitleIndex;
-@property struct _NSRange { unsigned int location; unsigned int length; } range;
 @property(copy) NSString * title;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property unsigned int sectionIndexTitleIndex;
 
 
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSectionIndexTitleIndex:(unsigned int)arg1;
+- (unsigned int)sectionIndexTitleIndex;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)title;
-- (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
 - (id)_init;
 - (void)setTitle:(id)arg1;
-- (unsigned int)sectionIndexTitleIndex;
-- (void)setSectionIndexTitleIndex:(unsigned int)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

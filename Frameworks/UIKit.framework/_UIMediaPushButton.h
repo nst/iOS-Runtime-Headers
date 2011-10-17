@@ -12,25 +12,25 @@
     UIImage *_highlightedTableIcon;
 }
 
-@property(retain) UIImage * highlightedTableIcon;
-@property(retain) UIImage * tableIcon;
-@property(retain) UIImageView * selectionMark;
 @property(retain) UIImageView * icon;
+@property(retain) UIImageView * selectionMark;
+@property(retain) UIImage * tableIcon;
+@property(retain) UIImage * highlightedTableIcon;
 
 
-- (void)setupTextAttributes;
-- (void)setHighlightedTableIcon:(id)arg1;
-- (id)tableIcon;
 - (id)selectionMark;
-- (void)setIcon:(id)arg1;
-- (void)setTableIcon:(id)arg1;
+- (void)setupTextAttributes;
 - (void)setSelectionMark:(id)arg1;
 - (id)highlightedTableIcon;
-- (id)icon;
-- (void)setHighlighted:(BOOL)arg1;
+- (id)tableIcon;
+- (void)setHighlightedTableIcon:(id)arg1;
+- (void)setTableIcon:(id)arg1;
 - (void)_drawImageAndTextPartInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)icon;
+- (void)setIcon:(id)arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;
-- (void)setTitle:(id)arg1;
 
 @end

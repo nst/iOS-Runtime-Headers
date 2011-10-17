@@ -13,9 +13,9 @@
 + (id)arrayWithFrames:(void**)arg1 count:(unsigned int)arg2 symbols:(BOOL)arg3;
 
 - (void)finalize;
+- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
+- (unsigned int)count;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (unsigned int)count;
-- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 
 @end

@@ -10,13 +10,13 @@
 
 
 - (void)cancelAuthentication;
+- (BOOL)hasPassword;
 - (id)user;
-- (id)sender;
 - (id)password;
-- (void)dealloc;
-- (id)initWithAuthenticationChallenge:(id)arg1;
+- (id)sender;
 - (int)failureCount;
 - (void)useCredential:(id)arg1;
-- (BOOL)hasPassword;
+- (id)initWithAuthenticationChallenge:(id)arg1;
+- (void)dealloc;
 
 @end

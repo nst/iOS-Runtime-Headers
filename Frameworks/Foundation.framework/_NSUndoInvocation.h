@@ -9,9 +9,9 @@
 }
 
 
-- (void)dealloc;
-- (id)description;
-- (void)invoke;
 - (id)initWithTarget:(id)arg1 invocation:(id)arg2;
+- (void)invoke;
+- (id)description;
+- (void)dealloc;
 
 @end

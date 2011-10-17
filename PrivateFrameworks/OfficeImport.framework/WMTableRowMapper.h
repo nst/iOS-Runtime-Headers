@@ -11,9 +11,9 @@
 
 + (BOOL)isTableRowDeleted:(id)arg1;
 
-- (double)height;
 - (void)setRowProperties:(id)arg1;
 - (id)initWithWDTableRow:(id)arg1 parent:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (double)height;
 
 @end

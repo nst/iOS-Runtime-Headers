@@ -13,36 +13,34 @@
     CoreDAVItemWithHrefChildItem *_location;
 }
 
-@property(retain) CoreDAVItemWithHrefChildItem * location;
-@property(retain) CoreDAVLeafItem * responseDescription;
-@property(retain) CoreDAVErrorItem * errorItem;
-@property(retain) NSMutableSet * propStats;
-@property(retain) CoreDAVLeafItem * status;
 @property(retain) NSMutableArray * hrefs;
+@property(retain) CoreDAVLeafItem * status;
+@property(retain) NSMutableSet * propStats;
+@property(retain) CoreDAVErrorItem * errorItem;
+@property(retain) CoreDAVLeafItem * responseDescription;
+@property(retain) CoreDAVItemWithHrefChildItem * location;
 
 
 - (void)setStatus:(id)arg1;
-- (void)setLocation:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)location;
-- (void)setHrefs:(id)arg1;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (BOOL)hasPropertyError;
-- (id)hrefs;
-- (id)copyParseRules;
+- (void)setHrefs:(id)arg1;
+- (void)setPropStats:(id)arg1;
+- (void)setResponseDescription:(id)arg1;
+- (void)setErrorItem:(id)arg1;
 - (void)addPropStat:(id)arg1;
 - (void)addHref:(id)arg1;
-- (id)firstHref;
-- (void)generateItemTreeString:(id)arg1 withDepth:(unsigned int)arg2;
 - (id)responseDescription;
-- (void)setResponseDescription:(id)arg1;
-- (id)errorItem;
-- (void)setErrorItem:(id)arg1;
 - (id)propStats;
-- (void)setPropStats:(id)arg1;
+- (id)copyParseRules;
+- (id)errorItem;
+- (id)firstHref;
+- (id)hrefs;
 - (id)successfulPropertiesToValues;
+- (void)setLocation:(id)arg1;
+- (id)location;
 - (id)status;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

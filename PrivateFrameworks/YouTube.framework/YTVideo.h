@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSURL, NSArray, NSString, NSCalendarDate;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSURL, NSArray, NSString, NSMutableArray, NSCalendarDate;
 
 @interface YTVideo : NSObject  {
     NSString *_id;
@@ -24,69 +28,76 @@
     NSURL *_commentsURL;
     NSURL *_editURL;
     NSURL *_ratingsURL;
+    NSURL *_captionsURL;
     NSString *_shortID;
     NSString *_unplayable;
     BOOL _isProcessing;
+    NSMutableArray *_captions;
+    int _privacy;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _thumbnailProxyBlock;
+
 }
 
-+ (void)enableNotifications;
-+ (void)disableNotifications;
-+ (id)videoIsProcessingError;
 + (void)reset3GPlaybackStallCount;
 + (void)playbackDidStall;
 + (id)videoNotFoundError;
 + (id)unsupportedVideoError;
-+ (BOOL)resolveClassMethod:(SEL)arg1;
-+ (BOOL)__original_resolveClassMethod:(SEL)arg1;
-+ (void)_initializeSafeCategory;
++ (id)videoIsProcessingError;
++ (void)disableNotifications;
++ (void)enableNotifications;
 
-- (BOOL)isProcessing;
-- (id)ID;
-- (id)editURL;
-- (id)category;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)title;
-- (void)dealloc;
-- (id)description;
-- (double)age;
-- (id)author;
-- (BOOL)isPlayable;
-- (unsigned int)numLikes;
-- (unsigned int)numDislikes;
-- (id)archiveDictionary;
-- (int)batchStatus;
-- (id)initFromArchiveDictionary:(id)arg1;
-- (void)_postVideoDidChange;
-- (void)_thumbnailDidLoad;
-- (id)initWithID:(id)arg1 title:(id)arg2 dateUpdated:(id)arg3 dateAdded:(id)arg4 videoReferences:(id)arg5 infoURL:(id)arg6 videoDescription:(id)arg7 category:(id)arg8 tags:(id)arg9 author:(id)arg10 thumbnailURL:(id)arg11 numLikes:(unsigned int)arg12 numDislikes:(unsigned int)arg13 numberOfViews:(unsigned int)arg14 batchStatus:(int)arg15 commentsURL:(id)arg16 editURL:(id)arg17 ratingsURL:(id)arg18 shortID:(id)arg19 unplayable:(id)arg20 isProcessing:(BOOL)arg21;
+- (id)dateAdded;
 - (id)dateUpdated;
 - (id)dateAddedString;
+- (id)commentsURL;
 - (id)ratingsURL;
+- (id)captionsURL;
+- (id)videoDescription;
+- (id)tags;
 - (id)tagsString;
+- (unsigned int)numLikes;
+- (unsigned int)numDislikes;
 - (BOOL)positiveRating;
 - (id)ratingPercentageString;
-- (struct CGImage { }*)thumbnailLoadIfAbsent:(BOOL)arg1;
+- (unsigned int)numberOfViews;
+- (int)batchStatus;
 - (struct CGImage { }*)roundedThumbnailLoadIfAbsent:(BOOL)arg1;
 - (struct CGImage { }*)largeThumbnailLoadIfAbsent:(BOOL)arg1;
 - (struct CGImage { }*)pluginThumbnailLoadIfAbsent:(BOOL)arg1;
+- (void)loadThumbnailWithCallback:(id)arg1;
+- (id)anyVideoReference;
+- (id)privacyString;
+- (BOOL)ownVideo;
+- (id)initFromArchiveDictionary:(id)arg1;
+- (id)initWithID:(id)arg1 title:(id)arg2 dateUpdated:(id)arg3 dateAdded:(id)arg4 videoReferences:(id)arg5 infoURL:(id)arg6 videoDescription:(id)arg7 category:(id)arg8 tags:(id)arg9 author:(id)arg10 thumbnailURL:(id)arg11 numLikes:(unsigned int)arg12 numDislikes:(unsigned int)arg13 numberOfViews:(unsigned int)arg14 batchStatus:(int)arg15 commentsURL:(id)arg16 editURL:(id)arg17 ratingsURL:(id)arg18 captionsURL:(id)arg19 shortID:(id)arg20 unplayable:(id)arg21 isProcessing:(BOOL)arg22 privacy:(int)arg23;
+- (id)archiveDictionary;
+- (struct CGImage { }*)thumbnailLoadIfAbsent:(BOOL)arg1;
+- (void)_postVideoDidChange;
+- (void)carrierBundleDidChangeNotification:(id)arg1;
+- (void)_thumbnailDidLoad;
 - (id)videoReferenceForProfile:(int)arg1;
 - (BOOL)allowsHighQuality3GPlayback;
+- (id)captions;
 - (id)bestVideoReference;
-- (id)anyVideoReference;
-- (id)unplayable;
 - (id)shortID;
-- (id)commentsURL;
-- (unsigned int)numberOfViews;
-- (id)thumbnailURL;
-- (id)tags;
-- (id)videoDescription;
-- (id)dateAdded;
 - (BOOL)isBookmarked;
+- (id)unplayable;
+- (BOOL)isProcessing;
+- (id)editURL;
+- (id)author;
+- (double)age;
+- (id)title;
+- (id)ID;
+- (BOOL)isPlayable;
+- (id)category;
+- (id)thumbnailURL;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (id)infoURL;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (id)__original_forwardingTargetForSelector:(SEL)arg1;
-- (id)accessibilityExtendedText;
-- (id)accessibilityLabel;
 
 @end

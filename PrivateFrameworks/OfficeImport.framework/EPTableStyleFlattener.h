@@ -11,6 +11,7 @@
 }
 
 
+- (void)clearCache;
 - (id)extractGlobalStyleElements:(id)arg1;
 - (id)collectionFromWorksheet:(id)arg1;
 - (id)styleFromObject:(id)arg1;
@@ -18,9 +19,8 @@
 - (id)extractCellStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3 column:(int)arg4;
 - (id)keysInTheOrderTheyShouldBeApplied;
 - (int)borderFlagsForStyleType:(int)arg1 row:(int)arg2 column:(int)arg3;
-- (void)cacheSizes:(id)arg1 inObject:(id)arg2;
-- (void)clearCache;
 - (int)stripeOffset:(int)arg1 row:(bool)arg2;
+- (void)cacheSizes:(id)arg1 inObject:(id)arg2;
 - (bool)isObjectSupported:(id)arg1;
 
 @end

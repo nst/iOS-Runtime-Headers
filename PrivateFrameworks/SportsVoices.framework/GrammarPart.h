@@ -10,19 +10,19 @@
     NSString *_name;
 }
 
-@property(readonly) NSString * name;
-@property(readonly) int depth;
 @property(readonly) int order;
+@property(readonly) int depth;
+@property(readonly) NSString * name;
 
 + (id)instanceFromPlist:(id)arg1;
 
-- (id)name;
-- (void)dealloc;
-- (id)description;
 - (int)order;
+- (int)depth;
+- (id)name;
+- (id)description;
+- (void)dealloc;
+- (id)appliedTo:(id)arg1;
 - (int)orderComparedTo:(id)arg1;
 - (void)genericSetUpFromPlist:(id)arg1;
-- (id)appliedTo:(id)arg1;
-- (int)depth;
 
 @end

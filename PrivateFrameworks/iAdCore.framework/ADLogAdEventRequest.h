@@ -10,27 +10,25 @@
 }
 
 @property(readonly) BOOL hasMetaData;
-@property(readonly) int eventsCount;
-@property(retain) NSMutableArray * events;
 @property(retain) ADLogMetaData * metaData;
+@property(retain) NSMutableArray * events;
 
 + (void)initialize;
 
-- (unsigned int)requestTypeCode;
-- (BOOL)hasMetaData;
-- (void)setEvent:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)eventAtIndex:(unsigned int)arg1;
-- (void)addEvent:(id)arg1;
-- (Class)responseClass;
-- (id)metaData;
-- (int)eventsCount;
-- (void)setMetaData:(id)arg1;
 - (void)setEvents:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)description;
-- (id)events;
+- (Class)responseClass;
 - (BOOL)readFrom:(id)arg1;
+- (id)eventAtIndex:(unsigned int)arg1;
+- (BOOL)hasMetaData;
+- (void)addEvent:(id)arg1;
+- (void)setMetaData:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
+- (unsigned int)eventsCount;
+- (id)metaData;
+- (id)dictionaryRepresentation;
+- (id)events;
+- (id)description;
+- (void)dealloc;
 
 @end

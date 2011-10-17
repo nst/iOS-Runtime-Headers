@@ -18,7 +18,6 @@
 
 - (BOOL)valid;
 - (void)finalize;
-- (void)dealloc;
 - (BOOL)valueMissing;
 - (BOOL)typeMismatch;
 - (BOOL)patternMismatch;
@@ -27,5 +26,6 @@
 - (BOOL)rangeOverflow;
 - (BOOL)stepMismatch;
 - (BOOL)customError;
+- (void)dealloc;
 
 @end

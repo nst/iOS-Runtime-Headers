@@ -13,10 +13,10 @@
 @property(retain) OADFontScheme * fontScheme;
 
 
-- (void)dealloc;
 - (void)setFontScheme:(id)arg1;
+- (id)colorScheme;
 - (id)fontScheme;
 - (id)styleMatrix;
-- (id)colorScheme;
+- (void)dealloc;
 
 @end

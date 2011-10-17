@@ -8,34 +8,36 @@
     NSDictionary *_currentAVChatInfo;
 }
 
-@property(readonly) NSArray * myAvailableMessages;
-@property(readonly) NSArray * myAwayMessages;
+@property(retain) NSArray * myAvailableMessages;
+@property(retain) NSArray * myAwayMessages;
 @property(readonly) unsigned long long vcCapabilities;
 @property(readonly) NSDictionary * currentAVChatInfo;
 @property(readonly) unsigned int requestAudioReflectorStart;
 @property(readonly) unsigned int requestAudioReflectorStop;
 
-+ (oneway void)setServiceAgentCapabilities:(int)arg1;
++ (void)setServiceAgentCapabilities:(int)arg1;
 + (int)serviceAgentCapabilities;
-+ (id)sharedAgent;
 + (id)notificationCenter;
-+ (oneway void)forgetStatusImageAppearance;
-+ (id)imageNameForStatus:(unsigned int)arg1;
++ (id)sharedAgent;
 + (id)imageURLForStatus:(unsigned int)arg1;
++ (id)imageNameForStatus:(unsigned int)arg1;
++ (void)forgetStatusImageAppearance;
 
-- (id)serviceWithName:(id)arg1;
-- (id)serviceWithNameNonBlocking:(id)arg1;
-- (void)dealloc;
-- (id)currentAVChatInfo;
-- (unsigned int)requestAudioReflectorStop;
-- (id)myAwayMessages;
-- (oneway void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
-- (id)myAvailableMessages;
-- (unsigned int)requestAudioReflectorStart;
 - (unsigned int)requestVideoStillForPerson:(id)arg1;
-- (oneway void)launchIfNecessary;
+- (unsigned int)requestAudioReflectorStop;
+- (unsigned int)requestAudioReflectorStart;
+- (void)setMyAwayMessages:(id)arg1;
+- (void)setMyAvailableMessages:(id)arg1;
+- (id)myAwayMessages;
+- (id)myAvailableMessages;
+- (void)launchIfNecessary;
+- (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
 - (unsigned long long)vcCapabilities;
 - (id)myPictureData;
+- (id)serviceWithNameNonBlocking:(id)arg1;
 - (id)notificationCenter;
+- (id)serviceWithName:(id)arg1;
+- (void)dealloc;
+- (id)currentAVChatInfo;
 
 @end

@@ -11,11 +11,11 @@
 @property(retain,readonly) DOMCSSRuleList * cssRules;
 
 
-- (void)setName:(id)arg1;
-- (id)name;
 - (void)insertRule:(id)arg1;
 - (id)findRule:(id)arg1;
 - (id)cssRules;
 - (void)deleteRule:(id)arg1;
+- (id)name;
+- (void)setName:(id)arg1;
 
 @end

@@ -5,37 +5,38 @@
 @interface _NSCoreManagedObjectID : NSManagedObjectID  {
 }
 
++ (unsigned int)allocateBatch:(id*)arg1 count:(unsigned int)arg2;
++ (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2;
++ (id)managedObjectIDFromURIRepresentation:(id)arg1;
++ (void)_storeDeallocated;
++ (char *)generatedNameSuffix;
++ (id)_retain_1;
++ (void)_release_1;
++ (void)setObjectStoreIdentifier:(id)arg1;
++ (Class)classWithStore:(id)arg1 andEntity:(id)arg2;
++ (id)_storeInfo1;
++ (void)_setStoreInfo1:(id)arg1;
++ (BOOL)accessInstanceVariablesDirectly;
 + (int)version;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)initialize;
-+ (void)release;
 + (id)retain;
 + (id)alloc;
++ (void)release;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)accessInstanceVariablesDirectly;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (void)_release_1;
-+ (unsigned int)allocateBatch:(id*)arg1 count:(unsigned int)arg2;
-+ (void)_storeDeallocated;
-+ (id)_retain_1;
-+ (Class)classWithStore:(id)arg1 andEntity:(id)arg2;
-+ (id)managedObjectIDFromURIRepresentation:(id)arg1;
-+ (void)setObjectStoreIdentifier:(id)arg1;
-+ (void)_setStoreInfo1:(id)arg1;
-+ (id)_storeInfo1;
-+ (char *)generatedNameSuffix;
 
 - (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)release;
-- (id)retain;
-- (unsigned int)retainCount;
-- (id)_storeIdentifier;
 - (BOOL)_isPersistentStoreAlive;
 - (id)URIRepresentation;
+- (id)_storeIdentifier;
 - (id)_storeInfo1;
 - (id)entity;
-- (BOOL)isTemporaryID;
 - (id)persistentStore;
+- (BOOL)isTemporaryID;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
+- (id)retain;
+- (void)release;
 
 @end

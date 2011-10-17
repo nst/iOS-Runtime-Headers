@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIFont, UIColor, NSString;
+@class UILabel, NSString, UIColor, UIFont;
 
 @interface SUTableHeaderView : UIView  {
     UIColor *_bottomBorderColor;
@@ -13,63 +13,47 @@
         float right; 
     } _edgeInsets;
     int _index;
-    UIColor *_shadowColor;
     int _style;
-    NSString *_subtitle;
-    UIFont *_subtitleFont;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _subtitleSize;
-    UIColor *_textColor;
-    NSString *_title;
-    UIFont *_titleFont;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _titleSize;
+    UILabel *_subtitleLabel;
+    UILabel *_titleLabel;
 }
 
-@property(retain) UIFont * titleFont;
-@property(retain) NSString * title;
-@property(retain) UIColor * textColor;
-@property(retain) UIFont * subtitleFont;
-@property(retain) NSString * subtitle;
-@property int style;
-@property(retain) UIColor * shadowColor;
-@property int index;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } edgeInsets;
 @property(retain) UIColor * bottomBorderColor;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property int index;
+@property(retain) UIColor * shadowColor;
+@property int style;
+@property(retain) NSString * subtitle;
+@property(retain) UIFont * subtitleFont;
+@property(retain) NSString * title;
+@property(retain) UIFont * titleFont;
+@property(retain) UIColor * textColor;
 
-+ (void)_initializeSafeCategory;
 
-- (void)setSubtitle:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (void)setIndex:(int)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (id)shadowColor;
-- (void)setTitleFont:(id)arg1;
 - (int)index;
 - (id)subtitle;
-- (void)setTextColor:(id)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setSubtitle:(id)arg1;
 - (id)textColor;
+- (void)setTitleFont:(id)arg1;
 - (id)titleFont;
 - (int)style;
+- (void)setStyle:(int)arg1;
 - (id)title;
 - (void)sizeToFit;
-- (void)dealloc;
-- (void)setTitle:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (void)setTextColor:(id)arg1;
 - (void)setShadowColor:(id)arg1;
+- (id)shadowColor;
+- (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIndex:(int)arg1;
+- (void)dealloc;
 - (id)subtitleFont;
 - (void)setSubtitleFont:(id)arg1;
-- (struct CGSize { float x1; float x2; })_titleSize;
-- (struct CGSize { float x1; float x2; })_subtitleSize;
-- (void)setBottomBorderColor:(id)arg1;
 - (id)bottomBorderColor;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
+- (void)setBottomBorderColor:(id)arg1;
 
 @end

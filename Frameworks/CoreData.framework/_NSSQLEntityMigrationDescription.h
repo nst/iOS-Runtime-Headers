@@ -8,7 +8,6 @@
     NSEntityMapping *_entityMapping;
     NSMutableDictionary *_sqlValuesByColumnName;
     NSMutableDictionary *_sourceEntitiesByToOneWithNewEntityKey;
-    NSMutableDictionary *_mappingsByName;
     NSSQLEntity *_dstEntity;
     NSSQLEntity *_srcEntity;
     int _migrationType;
@@ -25,23 +24,22 @@
 @property(readonly) NSSQLEntity * sourceEntity;
 
 
-- (void)dealloc;
-- (id)nextPropertyTransform;
-- (id)removedManyToManys;
-- (id)transformedManyToManys;
 - (id)initWithEntityMapping:(id)arg1 sourceEntity:(id)arg2 destinationEntity:(id)arg3;
-- (id)mappingsByName;
-- (void)_generateSQLValueMappingsWithMigrationContext:(struct _NSSQLMigrationContext { id x1; })arg1;
 - (id)sourceEntitiesByToOneWithNewEntityKey;
-- (void)_populateSQLValuesForDestinationToOne:(id)arg1 fromSourceToOne:(id)arg2;
-- (id)_unmappedRelationshipForFormerlyVirtualToOne:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
-- (void)_populateSQLValuesForVirtualToOnesWithMigrationContext:(struct _NSSQLMigrationContext { id x1; })arg1;
-- (void)_populateSQLValuesByPropertyFromTransforms:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
 - (id)sqlValueForColumnName:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
 - (id)addedManyToManys;
+- (id)removedManyToManys;
+- (id)transformedManyToManys;
+- (id)nextPropertyTransform;
 - (int)migrationType;
-- (id)sourceEntity;
+- (void)_populateSQLValuesByPropertyFromTransforms:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
+- (void)_populateSQLValuesForVirtualToOnesWithMigrationContext:(struct _NSSQLMigrationContext { id x1; })arg1;
 - (id)entityMapping;
+- (void)_populateSQLValuesForDestinationToOne:(id)arg1 fromSourceToOne:(id)arg2;
+- (id)_unmappedRelationshipForFormerlyVirtualToOne:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
+- (void)_generateSQLValueMappingsWithMigrationContext:(struct _NSSQLMigrationContext { id x1; })arg1;
+- (id)sourceEntity;
 - (id)destinationEntity;
+- (void)dealloc;
 
 @end

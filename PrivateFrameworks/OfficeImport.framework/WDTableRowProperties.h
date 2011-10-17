@@ -45,36 +45,36 @@
 }
 
 
-- (long)height;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (short)widthBefore;
-- (BOOL)isWidthBeforeOverridden;
-- (int)widthBeforeType;
-- (BOOL)isWidthBeforeTypeOverridden;
-- (short)widthAfter;
-- (BOOL)isWidthAfterOverridden;
-- (int)widthAfterType;
-- (BOOL)isWidthAfterTypeOverridden;
-- (int)heightType;
-- (BOOL)isHeightTypeOverridden;
-- (BOOL)isHeaderOverridden;
+- (BOOL)header;
 - (void)addPropertiesValues:(struct { short x1; int x2; short x3; int x4; int x5; int x6; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; }*)arg1 to:(struct { short x1; int x2; short x3; int x4; int x5; int x6; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; }*)arg2;
-- (id)initWithDocument:(id)arg1;
-- (void)setHeightType:(int)arg1;
+- (void)addProperties:(id)arg1;
+- (id)tableProperties;
 - (void)setWidthBefore:(short)arg1;
 - (void)setWidthBeforeType:(int)arg1;
 - (void)setWidthAfter:(short)arg1;
 - (void)setWidthAfterType:(int)arg1;
-- (void)setResolveMode:(int)arg1;
-- (void)addProperties:(id)arg1;
-- (int)resolveMode;
-- (void)setHeader:(BOOL)arg1;
-- (BOOL)header;
-- (void)setHeight:(long)arg1;
-- (id)tableProperties;
-- (BOOL)isHeightOverridden;
+- (void)setHeightType:(int)arg1;
+- (BOOL)isWidthBeforeOverridden;
+- (short)widthBefore;
+- (BOOL)isWidthBeforeTypeOverridden;
+- (int)widthBeforeType;
+- (BOOL)isWidthAfterOverridden;
+- (short)widthAfter;
+- (BOOL)isWidthAfterTypeOverridden;
+- (int)widthAfterType;
+- (BOOL)isHeaderOverridden;
+- (BOOL)isHeightTypeOverridden;
+- (int)heightType;
 - (id)characterProperties;
+- (void)setResolveMode:(int)arg1;
+- (int)resolveMode;
+- (BOOL)isHeightOverridden;
+- (void)setHeader:(BOOL)arg1;
+- (void)setHeight:(long)arg1;
+- (long)height;
+- (id)initWithDocument:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

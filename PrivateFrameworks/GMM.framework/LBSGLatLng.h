@@ -7,23 +7,22 @@
     int _lngE7;
 }
 
-@property int lngE7;
 @property int latE7;
+@property int lngE7;
 
 
-- (id)dictionaryRepresentation;
-- (id)init;
-- (void)dealloc;
-- (id)description;
+- (BOOL)readFrom:(id)arg1;
+- (float)lon;
+- (void)setLon:(float)arg1;
 - (int)lngE7;
+- (void)setLngE7:(int)arg1;
 - (int)latE7;
 - (void)setLatE7:(int)arg1;
-- (void)setLngE7:(int)arg1;
-- (float)lat;
-- (float)lon;
-- (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)dictionaryRepresentation;
 - (void)setLat:(float)arg1;
-- (void)setLon:(float)arg1;
+- (float)lat;
+- (id)description;
+- (void)dealloc;
 
 @end

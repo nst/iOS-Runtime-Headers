@@ -15,19 +15,19 @@
 
 + (id)differentialStyle;
 
+- (void)setAlignmentInfo:(id)arg1;
+- (id)protection;
+- (void)setProtection:(id)arg1;
+- (id)contentFormat;
+- (void)setContentFormat:(id)arg1;
+- (id)alignmentInfo;
+- (id)borders;
+- (void)setBorders:(id)arg1;
+- (void)setFill:(id)arg1;
 - (id)font;
+- (id)fill;
 - (void)setFont:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)fill;
-- (void)setFill:(id)arg1;
-- (void)setContentFormat:(id)arg1;
-- (id)contentFormat;
-- (void)setProtection:(id)arg1;
-- (id)borders;
-- (void)setBorders:(id)arg1;
-- (void)setAlignmentInfo:(id)arg1;
-- (id)protection;
-- (id)alignmentInfo;
 
 @end

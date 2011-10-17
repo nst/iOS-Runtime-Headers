@@ -8,21 +8,21 @@
     NSAttributedString *_inString;
 }
 
-@property(retain,readonly) NSString * name;
-@property(retain,readonly) NSArray * resultsForLogging;
+@property(readonly) NSAttributedString * inString;
+@property(readonly) NSString * name;
+@property(readonly) NSArray * resultsForLogging;
 @property(readonly) BOOL shouldPreprocess;
-@property(retain,readonly) NSAttributedString * inString;
 
 
+- (id)initWithAttributedString:(id)arg1;
+- (void)parserDidEnd:(id)arg1;
+- (void)parser:(id)arg1 foundAttributes:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (BOOL)shouldPreprocess;
+- (void)parserDidStart:(id)arg1;
+- (id)inString;
+- (id)parser:(id)arg1 preprocessedAttributesForAttributes:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (id)resultsForLogging;
 - (id)name;
 - (void)dealloc;
-- (id)resultsForLogging;
-- (void)parserDidStart:(id)arg1;
-- (void)parser:(id)arg1 foundAttributes:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (void)parserDidEnd:(id)arg1;
-- (BOOL)shouldPreprocess;
-- (id)parser:(id)arg1 preprocessedAttributesForAttributes:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (id)inString;
-- (id)initWithAttributedString:(id)arg1;
 
 @end

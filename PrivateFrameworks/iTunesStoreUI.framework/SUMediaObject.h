@@ -19,23 +19,23 @@
 
 + (id)newMediaObjectWithImagePickerInfo:(id)arg1;
 
+- (id)mediaType;
 - (id)init;
 - (void)dealloc;
-- (id)mediaURL;
-- (id)mediaType;
-- (id)copyPreparationOperations;
-- (id)inputSourceMIMEType;
-- (unsigned int)imagePickerQualityType;
-- (id)initWithImagePickerInfo:(id)arg1;
-- (id)referenceURL;
-- (id)_newLibraryThumbnail;
-- (id)_fullSizeImage;
-- (id)newInputSource;
 - (id)newComposeImageWithMaximumSize:(float)arg1;
+- (id)newInputSource;
+- (id)inputSourceMIMEType;
+- (id)copyPreparationOperations;
+- (id)_fullSizeImage;
+- (id)_newLibraryThumbnail;
+- (id)referenceURL;
+- (id)initWithImagePickerInfo:(id)arg1;
+- (id)mediaURL;
+- (unsigned int)imagePickerQualityType;
+- (id)imagePickerInfo;
+- (id)newThumbnailImageWithMaximumSize:(float)arg1;
 - (void)saveToLibraryWithCompletionBlock:(id)arg1;
 - (void)loadLibraryThumbnailWithCompletionBlock:(id)arg1;
-- (id)newThumbnailImageWithMaximumSize:(float)arg1;
-- (id)imagePickerInfo;
 - (void)setImagePickerQualityType:(unsigned int)arg1;
 
 @end

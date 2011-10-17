@@ -2,24 +2,28 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSHashTable, MKMapTileNormalizerView, <MKMapTileViewDelegate>, MKMapTileView, NSTimer, MKTilePathArray, MKTiledLayer, MKTrafficHighlightView;
+@class MKTrafficHighlightView, MKMapTileNormalizerView, <MKMapTileViewDelegate>, MKMapTileView, NSLock, GEOTileKeyList, MKTiledLayer, NSMutableSet, NSTimer;
 
 @interface MKMapTileViewImp : NSObject  {
     <MKMapTileViewDelegate> *delegate;
     unsigned int mapType;
     MKMapTileView *view;
     MKTiledLayer *layer;
-    NSHashTable *requesters;
-    MKTilePathArray *requestTiles;
+    NSLock *requestersLock;
+    NSMutableSet *requesters;
+    NSLock *requestTilesLock;
+    GEOTileKeyList *requestTiles;
     unsigned int loadingTileCount;
+    NSLock *tileRequestTimerLock;
     NSTimer *tileRequestTimer;
     NSTimer *tileExpirationTimer;
     NSTimer *drawingExpirationTimer;
-    double lastTileRequestTime;
     float screenScale;
     MKMapTileNormalizerView *normalizerView;
     MKTrafficHighlightView *trafficHighlightView;
-    struct $_1157 { 
+    NSLock *loadingEnabledLock;
+    unsigned short provider;
+    struct { 
         unsigned int canDrawOnMainThread : 1; 
         unsigned int canDisplayTraffic : 1; 
         unsigned int drawing : 1; 
@@ -28,6 +32,7 @@
         unsigned int shouldDisplayBaseTiles : 1; 
         unsigned int shouldDisplayTraffic : 1; 
         unsigned int shouldDisplayEffects : 1; 
+        unsigned int shouldReloadSynchronously : 1; 
         unsigned int delegateDidStartRendering : 1; 
         unsigned int delegateDidFinishRendering : 1; 
         unsigned int delegateDidStartLoading : 1; 

@@ -2,34 +2,23 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, GKPlayer, GKGame, GKLeaderboardCategory;
+@class GKPlayer, GKGame;
 
 @interface GKGetleaderboardCategoriesDataRequest : GKDataRequest  {
     GKGame *_game;
     GKPlayer *_player;
-    NSArray *_categories;
-    GKLeaderboardCategory *_aggregateCategory;
 }
 
-@property(retain) GKLeaderboardCategory * aggregateCategory;
-@property(retain) NSArray * categories;
-@property(retain) GKPlayer * player;
 @property(retain) GKGame * game;
+@property(retain) GKPlayer * player;
 
 
-- (id)aggregateCategory;
-- (void)setAggregateCategory:(id)arg1;
-- (void)setCategories:(id)arg1;
-- (int)cacheType;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)game;
-- (void)setPlayer:(id)arg1;
-- (id)player;
 - (void)setGame:(id)arg1;
-- (id)categories;
-- (id)cacheKey;
+- (void)setPlayer:(id)arg1;
 - (id)key;
 - (id)request;
+- (id)player;
 - (void)dealloc;
 
 @end

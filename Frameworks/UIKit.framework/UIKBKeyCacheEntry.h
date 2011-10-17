@@ -9,13 +9,13 @@
     UIKBKeyplane *m_keyplane;
 }
 
-@property(retain,readonly) UIKBKeyplane * keyplane;
-@property(retain,readonly) UIKBKey * key;
+@property(readonly) UIKBKey * key;
+@property(readonly) UIKBKeyplane * keyplane;
 
 + (id)entryWithKey:(id)arg1 keyPlane:(id)arg2;
 
 - (id)initWithKey:(id)arg1 keyPlane:(id)arg2;
-- (id)key;
 - (id)keyplane;
+- (id)key;
 
 @end

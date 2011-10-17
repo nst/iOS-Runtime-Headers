@@ -17,19 +17,19 @@
 
 + (BOOL)isStroked:(id)arg1;
 
-- (id)styleString;
-- (id)init;
-- (id)initWithOADStroke:(id)arg1;
-- (void)setNoneAtLocation:(int)arg1;
-- (void)adjustValues;
 - (BOOL)isNoneAtLocation:(int)arg1;
+- (void)setNoneAtLocation:(int)arg1;
 - (void)setFromOadStroke:(id)arg1 atLocation:(int)arg2 state:(id)arg3;
 - (id)cssString;
+- (id)widthString;
+- (id)colorString;
 - (id)stringFromStyleEnum:(int)arg1;
 - (id)stringFromWidthEnum:(int)arg1;
 - (id)stringFromColor:(id)arg1;
-- (id)widthString;
-- (id)colorString;
+- (id)initWithOADStroke:(id)arg1;
 - (id)cssStringForName:(id)arg1;
+- (void)adjustValues;
+- (id)styleString;
+- (id)init;
 
 @end

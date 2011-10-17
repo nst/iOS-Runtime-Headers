@@ -11,21 +11,21 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL * URL;
-@property(copy) NSString * title;
-@property int linkType;
 @property int linkTarget;
+@property int linkType;
+@property(copy) NSString * title;
+@property(retain) NSURL * URL;
 
 
 - (void)setURL:(id)arg1;
 - (id)URL;
 - (id)title;
+- (void)setTitle:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setTitle:(id)arg1;
-- (int)linkTarget;
-- (void)setLinkTarget:(int)arg1;
 - (void)setLinkType:(int)arg1;
+- (void)setLinkTarget:(int)arg1;
+- (int)linkTarget;
 - (int)linkType;
 
 @end

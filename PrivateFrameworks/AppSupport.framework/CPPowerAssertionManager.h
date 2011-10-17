@@ -19,20 +19,20 @@
 
 + (id)sharedInstance;
 
-- (void)_retainAssertions;
-- (void)_releaseAssertions;
-- (id)init;
-- (void)dealloc;
-- (id)description;
 - (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)uuid;
 - (unsigned int)retainCountForContext:(id)arg1;
 - (void)setUUIDPrefix:(id)arg1;
 - (void)retainPowerAssertionWithContext:(id)arg1;
-- (void)retainPowerAssertionWithContext:(id)arg1 withGroupIdentifier:(id)arg2;
 - (void)releasePowerAssertionWithContext:(id)arg1;
 - (void)temporarilyReleasePowerAssertionsForGroupIdentifier:(id)arg1;
 - (void)reretainPowerAssertionsForGroupIdentifier:(id)arg1;
+- (void)retainPowerAssertionWithContext:(id)arg1 withGroupIdentifier:(id)arg2;
+- (void)_releaseAssertions;
+- (void)_retainAssertions;
+- (id)delegate;
+- (id)uuid;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 
 @end

@@ -13,9 +13,9 @@
 
 - (void)main;
 - (void)dealloc;
-- (void)createChildOperations;
-- (void)didFinish;
 - (id)initWithParticipant:(id)arg1 response:(unsigned int)arg2 conferenceID:(id)arg3;
 - (void)_sendMessageToBuddy:(id)arg1 result:(id)arg2;
+- (void)didFinish;
+- (void)createChildOperations;
 
 @end

@@ -2,65 +2,66 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUKeyboardBackstopViewController, SUScriptTextFieldDelegate, UISearchField, <SUSearchFieldControllerDelegate>, UIPopoverController, SUCompletionTableViewController, SUSearchFieldConfiguration;
+@class NSArray, SUScriptTextFieldDelegate, UISearchBar, SUSearchDisplayController, UIViewController, ISStoreURLOperation, SUSearchFieldConfiguration;
 
-@interface SUSearchFieldController : NSObject <SUCompletionTableDelegate, SUKeyboardBackstopDelegate, UIPopoverControllerDelegate, UITextFieldDelegate> {
-    SUCompletionTableViewController *_completionsViewController;
+@interface SUSearchFieldController : NSObject <ISStoreURLOperationDelegate, SUScriptTextFieldDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
+    NSArray *_completions;
+    ISStoreURLOperation *_completionsOperation;
     SUSearchFieldConfiguration *_configuration;
-    <SUSearchFieldControllerDelegate> *_delegate;
-    SUKeyboardBackstopViewController *_keyboardBackstopController;
-    UIPopoverController *_popoverController;
-    BOOL _redisplayPopover;
-    UISearchField *_searchField;
+    UIViewController *_dimmerViewController;
+    UISearchBar *_searchBar;
+    SUSearchDisplayController *_searchController;
+    int _searchFieldStyle;
     SUScriptTextFieldDelegate *_textFieldDelegate;
 }
 
-@property(readonly) UISearchField * searchField;
+@property(getter=isActive,readonly) BOOL active;
+@property(readonly) UISearchBar * searchBar;
 @property(copy) SUSearchFieldConfiguration * searchFieldConfiguration;
-@property <SUSearchFieldControllerDelegate> * delegate;
+@property int searchFieldStyle;
 
 
-- (id)searchField;
-- (BOOL)textFieldShouldEndEditing:(id)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
+- (void)operationDidFinish:(id)arg1;
+- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchBarSearchButtonClicked:(id)arg1;
+- (void)searchBarTextDidEndEditing:(id)arg1;
+- (BOOL)searchBarShouldEndEditing:(id)arg1;
+- (BOOL)searchBarShouldBeginEditing:(id)arg1;
+- (BOOL)isActive;
+- (id)searchBar;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)init;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)completionTableControllerCompletionsDidChange:(id)arg1;
-- (void)keyboardBackstopDidDismiss:(id)arg1;
-- (void)keyboardBackstopRequestsDismiss:(id)arg1;
-- (void)_searchFieldDidChange:(id)arg1;
-- (void)_searchFieldDidEnd:(id)arg1;
-- (void)_searchFieldDidEndOnExit:(id)arg1;
-- (void)_savedSearchTermChangedNotification:(id)arg1;
+- (int)searchFieldStyle;
 - (id)_cancelButtonView;
-- (id)_defaultSearchTerm;
-- (void)_fetchResultsForTerm:(id)arg1;
-- (void)_fetchResultsForURL:(id)arg1;
-- (void)_fetchResultsForURLRequestProperties:(id)arg1;
-- (BOOL)_focusTransientViewController;
-- (void)_hideCompletionsViewController;
-- (id)_newBlankStorePageViewController;
-- (id)_newSearchField;
 - (id)_newTransientViewController;
-- (void)_noEventSetSearchFieldText:(id)arg1;
-- (void)_reloadCompletionsViewController;
-- (void)_reloadSearchField;
-- (void)_saveSearchTermToDefaults:(id)arg1;
-- (void)_showCompletionsPopover;
-- (void)_showCompletionsViewController;
-- (void)_showKeyboardBackstopView;
+- (void)_dimmerViewAction:(id)arg1;
+- (id)_newBlankStorePageViewController;
 - (id)_targetViewController;
-- (void)_tearDownKeyboardBackstop;
-- (id)_completionsViewController;
+- (void)_fetchResultsForURLRequestProperties:(id)arg1;
+- (void)_fetchCompletions;
+- (id)_defaultSearchTerm;
+- (void)_reloadCompletionsForSearchString:(id)arg1;
+- (void)_cancelCompletionsOperation;
+- (void)_showDimmerView;
+- (BOOL)_focusTransientViewController;
+- (void)_fetchResultsForTerm:(id)arg1;
+- (void)_saveSearchTermToDefaults:(id)arg1;
+- (void)_reloadSearchBar;
+- (id)_newSearchBar;
+- (void)_fetchResultsForURL:(id)arg1;
+- (void)_tearDownDimmerView;
+- (void)_savedSearchTermChangedNotification:(id)arg1;
+- (id)_newSearchDisplayControllerWithContentsController:(id)arg1;
 - (void)scriptDidChangeTextForTextField:(id)arg1;
-- (void)completionTableController:(id)arg1 pickedCompletionItem:(id)arg2;
+- (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
+- (void)setSearchFieldStyle:(int)arg1;
+- (id)initWithContentsController:(id)arg1;
 - (void)handleSearchURL:(id)arg1;
-- (void)setSearchFieldConfiguration:(id)arg1;
 - (id)searchFieldConfiguration;
+- (void)setSearchFieldConfiguration:(id)arg1;
 
 @end

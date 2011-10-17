@@ -13,7 +13,7 @@
 
 - (int)compare:(id)arg1;
 - (id)title;
-- (void)dealloc;
 - (void)setTitle:(id)arg1;
+- (void)dealloc;
 
 @end

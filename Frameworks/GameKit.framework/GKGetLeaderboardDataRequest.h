@@ -2,42 +2,24 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, NSString, GKLeaderboard, GKGame, NSDictionary;
+@class GKLeaderboard, GKGame;
 
 @interface GKGetLeaderboardDataRequest : GKDataRequest  {
     GKGame *_game;
     GKLeaderboard *_leaderboard;
-    NSArray *_scores;
-    NSString *_scoreType;
-    unsigned int _maxRange;
-    NSDictionary *_playerScore;
-    NSString *_categoryTitle;
 }
 
-@property(readonly) NSString * categoryTitle;
-@property(readonly) NSDictionary * playerScore;
-@property(readonly) unsigned int maxRange;
-@property(readonly) NSString * scoreType;
-@property(readonly) NSArray * scores;
-@property(retain) GKLeaderboard * leaderboard;
 @property(retain) GKGame * game;
+@property(retain) GKLeaderboard * leaderboard;
 
 
-- (void)setLeaderboard:(id)arg1;
 - (id)leaderboard;
-- (id)scores;
-- (id)_timeScope:(int)arg1;
 - (id)_playerScope:(int)arg1;
-- (id)playerScore;
-- (id)scoreType;
-- (int)cachePriority;
-- (int)cacheType;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (id)_timeScope:(int)arg1;
+- (Class)responseClass;
 - (id)game;
+- (void)setLeaderboard:(id)arg1;
 - (void)setGame:(id)arg1;
-- (id)categoryTitle;
-- (unsigned int)maxRange;
-- (id)cacheKey;
 - (id)key;
 - (id)request;
 - (void)dealloc;

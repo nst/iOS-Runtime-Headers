@@ -11,21 +11,21 @@
     NSString *_currentTest;
 }
 
-@property int scrollLength;
-@property int yDelta;
-@property(retain) NSString * currentTest;
 @property int iterations;
+@property int yDelta;
+@property int scrollLength;
+@property(retain) NSString * currentTest;
 
 
 - (void)setScrollLength:(int)arg1;
 - (void)setCurrentTest:(id)arg1;
 - (void)setIterations:(int)arg1;
-- (id)initWithName:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
-- (id)currentTest;
-- (int)yDelta;
-- (int)scrollLength;
-- (void)setYDelta:(int)arg1;
 - (int)iterations;
+- (void)setYDelta:(int)arg1;
+- (int)scrollLength;
+- (int)yDelta;
+- (id)currentTest;
+- (id)initWithName:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
 - (void)dealloc;
 
 @end

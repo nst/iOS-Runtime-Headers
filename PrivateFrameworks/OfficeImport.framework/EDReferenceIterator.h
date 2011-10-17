@@ -23,15 +23,15 @@
 + (id)referenceIteratorWithReference:(id)arg1 workbook:(id)arg2;
 + (id)referenceIteratorWithReferenceArray:(id)arg1 workbook:(id)arg2;
 
-- (void)dealloc;
 - (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)nextCell;
+- (unsigned int)currentCellIndex;
 - (id)initWithReferenceArray:(id)arg1 reference:(id)arg2 workbook:(id)arg3;
 - (id)initWithReference:(id)arg1 workbook:(id)arg2;
 - (id)initWithReferenceArray:(id)arg1 workbook:(id)arg2;
-- (unsigned int)currentCellIndex;
-- (bool)nextReference;
 - (bool)nextRow;
+- (bool)nextReference;
 - (void)setCurrentSheet:(id)arg1;
 - (void)setReference:(id)arg1;
+- (void)dealloc;
 
 @end

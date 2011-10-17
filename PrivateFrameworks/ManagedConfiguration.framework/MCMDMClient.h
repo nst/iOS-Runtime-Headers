@@ -10,13 +10,12 @@
 
 + (id)sharedClient;
 
-- (id)init;
-- (id)_invalidServerResponseErrorWithPayloadName:(id)arg1;
-- (id)_invalidServerChallengeResponseErrorWithPayloadName:(id)arg1;
-- (id)_untrustedServerPushCertificateErrorWithPayloadName:(id)arg1;
-- (BOOL)authenticateWithCheckInURL:(id)arg1 payloadName:(id)arg2 identity:(struct __SecIdentity { }*)arg3 topic:(id)arg4 useDevelopmentAPNS:(BOOL)arg5 signMessage:(BOOL)arg6 outError:(id*)arg7;
-- (void)simulatePush;
-- (void)scheduleTokenUpdate;
+- (BOOL)authenticateWithCheckInURL:(id)arg1 identity:(struct __SecIdentity { }*)arg2 topic:(id)arg3 useDevelopmentAPNS:(BOOL)arg4 signMessage:(BOOL)arg5 outError:(id*)arg6;
+- (BOOL)checkOutCheckInURL:(id)arg1 identity:(struct __SecIdentity { }*)arg2 topic:(id)arg3 signMessage:(BOOL)arg4 outError:(id*)arg5;
 - (void)notifyNewConfiguration;
+- (void)scheduleTokenUpdate;
+- (void)simulatePush;
+- (void)removeManagedAppsAccordingToFlags;
+- (id)init;
 
 @end

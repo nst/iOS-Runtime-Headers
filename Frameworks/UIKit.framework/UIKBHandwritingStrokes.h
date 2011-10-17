@@ -3,20 +3,12 @@
  */
 
 @interface UIKBHandwritingStrokes : NSObject <NSCopying> {
-    struct KBStrokeList { struct COWQueue<writing_point16_t> { 
-            unsigned int m_size; 
-            unsigned int m_capacity; 
-            struct SharedElements {} *m_elements; 
-        } x1; struct COWQueue<int> { 
-            unsigned int m_size; 
-            unsigned int m_capacity; 
-            struct SharedElements {} *m_elements; 
-        } x2; int x3; } *_strokes;
+    struct KBStrokeList { struct COWQueue<writing_point16_t> { unsigned int x_1_1_1; unsigned int x_1_1_2; struct SharedElements {} *x_1_1_3; } x1; struct COWQueue<int> { unsigned int x_2_1_1; unsigned int x_2_1_2; struct SharedElements {} *x_2_1_3; } x2; int x3; } *_strokes;
 }
 
 
-- (id)initWithStrokes:(struct KBStrokeList { struct COWQueue<writing_point16_t> { unsigned int x_1_1_1; unsigned int x_1_1_2; struct SharedElements {} *x_1_1_3; } x1; struct COWQueue<int> { unsigned int x_2_1_1; unsigned int x_2_1_2; struct SharedElements {} *x_2_1_3; } x2; int x3; }*)arg1;
 - (const struct KBStrokeList { struct COWQueue<writing_point16_t> { unsigned int x_1_1_1; unsigned int x_1_1_2; struct SharedElements {} *x_1_1_3; } x1; struct COWQueue<int> { unsigned int x_2_1_1; unsigned int x_2_1_2; struct SharedElements {} *x_2_1_3; } x2; int x3; }*)strokes;
+- (id)initWithStrokes:(struct KBStrokeList { struct COWQueue<writing_point16_t> { unsigned int x_1_1_1; unsigned int x_1_1_2; struct SharedElements {} *x_1_1_3; } x1; struct COWQueue<int> { unsigned int x_2_1_1; unsigned int x_2_1_2; struct SharedElements {} *x_2_1_3; } x2; int x3; }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 

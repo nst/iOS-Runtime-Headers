@@ -9,6 +9,7 @@
 
 
 - (void)finalize;
+- (id)type;
 - (unsigned long long)size;
 - (void)dealloc;
 

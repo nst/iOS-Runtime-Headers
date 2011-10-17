@@ -30,32 +30,29 @@
 @property(getter=isHighlighted) BOOL highlighted;
 @property ABSwellTextView * parent;
 
-+ (void)_initializeSafeCategory;
 
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (id)shadowColor;
+- (id)parent;
+- (void)setParent:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlightedTextColor:(id)arg1;
 - (id)highlightedTextColor;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)setTextColor:(id)arg1;
-- (void)_beginPinningInputViews;
 - (void)_endPinningInputViews;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)_beginPinningInputViews;
 - (struct CGSize { float x1; float x2; })shadowOffset;
-- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)isHighlighted;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)becomeFirstResponder;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
+- (void)setTextColor:(id)arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShadowColor:(id)arg1;
+- (id)shadowColor;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setParent:(id)arg1;
-- (id)parent;
-- (void)setDisallowsSetContentOffset:(BOOL)arg1;
-- (void)_secretSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_updateStylesheet;
+- (void)dealloc;
 - (BOOL)disallowsSetContentOffset;
-- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (void)_updateStylesheet;
+- (void)_secretSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDisallowsSetContentOffset:(BOOL)arg1;
 
 @end

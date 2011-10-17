@@ -11,24 +11,24 @@
 @property <SKRequestDelegate> * delegate;
 
 
-- (void)_registerForNotifications;
-- (void)_unregisterForNotifications;
+- (void)_sendErrorToDelegate:(id)arg1;
+- (void)_mainThreadDaemonExited:(id)arg1;
+- (id)_newIdentifier;
+- (void)_requestFinishedNotification:(id)arg1;
+- (void)_requestFailedNotification:(id)arg1;
+- (void)_beginBackgroundTask;
+- (void)_endBackgroundTask;
 - (void)start;
+- (void)setDelegate:(id)arg1;
+- (void)_sendFinishToDelegate;
+- (void)issueRequestForIdentifier:(id)arg1;
+- (BOOL)handleFinishResponse:(id)arg1 returningError:(id*)arg2;
+- (void)_unregisterForNotifications;
+- (void)_registerForNotifications;
+- (id)delegate;
 - (void)cancel;
 - (id)init;
 - (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)_sendErrorToDelegate:(id)arg1;
-- (BOOL)handleFinishResponse:(id)arg1 returningError:(id*)arg2;
-- (void)_sendFinishToDelegate;
-- (void)issueRequestForIdentifier:(id)arg1;
-- (void)_requestFailedNotification:(id)arg1;
-- (void)_requestFinishedNotification:(id)arg1;
-- (void)_beginBackgroundTask;
-- (void)_endBackgroundTask;
-- (id)_newIdentifier;
-- (void)_mainThreadDaemonExited:(id)arg1;
 - (void)_daemonExited:(id)arg1;
 
 @end

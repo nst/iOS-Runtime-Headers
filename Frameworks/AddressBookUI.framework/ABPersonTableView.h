@@ -10,13 +10,11 @@
 
 @property ABPersonViewControllerHelper * helper;
 
-+ (void)_initializeSafeCategory;
 
+- (BOOL)touchesShouldCancelInContentView:(id)arg1;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (BOOL)touchesShouldCancelInContentView:(id)arg1;
-- (id)helper;
 - (void)setHelper:(id)arg1;
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
+- (id)helper;
 
 @end

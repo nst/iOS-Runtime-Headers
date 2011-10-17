@@ -2,19 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, UIWindow, <MPMediaPickerControllerDelegate>, CALayerHost;
+@class NSString, <MPMediaPickerControllerDelegate>;
 
 @interface MPMediaPickerControllerInternal : NSObject  {
-    int _mediaTypes;
-    unsigned int _allowsPickingMultipleItems : 1;
-    NSString *_prompt;
     <MPMediaPickerControllerDelegate> *_delegate;
-    unsigned int _serverPort;
-    unsigned int _replyPort;
-    struct __CFRunLoopSource { } *_replyPortRunLoopSource;
-    UIWindow *_layerHostProxyWindow;
-    CALayerHost *_layerHost;
-    unsigned int _layerHostIsActive : 1;
+    int _mediaTypes;
+    id _modalContext;
+    NSString *_prompt;
+    unsigned int _allowsPickingMultipleItems : 1;
 }
 
 

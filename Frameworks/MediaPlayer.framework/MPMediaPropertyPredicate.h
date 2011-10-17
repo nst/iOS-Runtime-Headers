@@ -15,28 +15,28 @@
 @property(copy) NSString * property;
 @property(copy) id value;
 @property int comparisonType;
-@property struct MPMediaPropertyPredicateInternal { NSString *_property; id _value; int _comparisonType; } _internal;
+@property struct MPMediaPropertyPredicateInternal { id x1; id x2; int x3; } _internal;
 
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2 comparisonType:(int)arg3;
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2;
 
-- (id)value;
-- (unsigned int)hash;
-- (void)setValue:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
 - (id)_ML3PredicateForML3EntityProperty:(id)arg1;
-- (id)ML3PredicateForTrack;
 - (id)ML3PredicateForContainer;
-- (id)descriptionOfValue:(id)arg1 forProperty:(id)arg2;
-- (void)setProperty:(id)arg1;
+- (id)ML3PredicateForTrack;
 - (void)setComparisonType:(int)arg1;
-- (struct MPMediaPropertyPredicateInternal { id x1; id x2; int x3; })_internal;
+- (id)descriptionOfValue:(id)arg1 forProperty:(id)arg2;
 - (void)set_internal:(struct MPMediaPropertyPredicateInternal { id x1; id x2; int x3; })arg1;
+- (struct MPMediaPropertyPredicateInternal { id x1; id x2; int x3; })_internal;
+- (void)setProperty:(id)arg1;
 - (id)property;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (int)comparisonType;
 
 @end

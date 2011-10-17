@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFDAMailbox, MailMessageLibrary, MFDAMessageStore, ActivityMonitor, MFError;
+@class MFDAMailbox, ActivityMonitor, MFDAMessageStore, MFError, MFMailMessageLibrary;
 
 @interface _MFDAMSBasicConsumer : MFBufferedQueue  {
     MFDAMailbox *mailbox;
     MFDAMessageStore *store;
-    MailMessageLibrary *library;
+    MFMailMessageLibrary *library;
     ActivityMonitor *monitor;
-    int numNewMessages;
     MFError *error;
+    int numNewMessages;
 }
 
 @property(retain) MFError * error;
@@ -18,10 +18,10 @@
 
 
 - (void)setMonitor:(id)arg1;
+- (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 - (id)monitor;
-- (id)init;
-- (void)dealloc;
-- (id)error;
 - (void)setError:(id)arg1;
+- (id)error;
+- (void)dealloc;
 
 @end

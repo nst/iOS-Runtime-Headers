@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface DALocalDBHelper : NSObject  {
     void *_abDB;
     int _abConnectionCount;
@@ -9,33 +13,40 @@
     int _calConnectionCount;
     void *_bookmarkDB;
     int _bookmarkConnectionCount;
-    id _calUnitTestCallbackObject;
-    SEL _calUnitTestCallbackSelector;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _calUnitTestCallbackBlock;
+
 }
 
-+ (void)abSetTestABDBDir:(id)arg1;
-+ (id)abTestABDBDir;
-+ (void)calSetTestCalDBDir:(id)arg1;
 + (id)calTestCalDBDir;
++ (void)calSetTestCalDBDir:(id)arg1;
++ (id)abTestABDBDir;
++ (void)abSetTestABDBDir:(id)arg1;
 + (id)sharedInstanceForAccountType:(id)arg1 creatingClass:(Class)arg2;
 
-- (void)abProcessAddedRecords;
-- (BOOL)abSaveDB;
-- (id)abConstraintPlistPath;
-- (void*)bookmarkDB;
-- (BOOL)bookmarkOpenDB;
-- (void)bookmarkSaveDB;
+- (void)calUnitTestsSetCallbackBlockForSave:(id)arg1;
 - (void)bookmarkCloseDBAndSave:(BOOL)arg1;
-- (void)calUnitTestsSetCallbackObjectForSave:(id)arg1 callbackSelector:(SEL)arg2;
-- (void)abOpenDB;
-- (BOOL)abCloseDBAndSave:(BOOL)arg1;
+- (void)bookmarkSaveDB;
+- (BOOL)bookmarkOpenDB;
+- (void*)bookmarkDB;
+- (int)calConnectionCount;
 - (BOOL)calSaveDBAndFlushCaches;
-- (void)calProcessAddedRecords;
 - (void)calOpenDBWithChangeLogging;
-- (BOOL)calCloseDBAndSave:(BOOL)arg1;
+- (id)abConstraintPlistPath;
+- (BOOL)abCloseDBAndSave:(BOOL)arg1;
+- (void)abProcessAddedImages;
+- (void)abProcessAddedRecords;
+- (void)abOpenDB;
+- (void)_registerForCalendarYieldNotifications;
+- (void)_registerForAddressBookYieldNotifications;
 - (void*)abDB;
+- (BOOL)abSaveDB;
+- (BOOL)calSaveDB;
+- (void)calProcessAddedRecords;
+- (BOOL)calCloseDBAndSave:(BOOL)arg1;
 - (void)calOpenDB;
 - (struct CalDatabase { }*)calDB;
-- (BOOL)calSaveDB;
 
 @end

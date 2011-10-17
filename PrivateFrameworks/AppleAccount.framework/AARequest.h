@@ -2,22 +2,27 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSURLRequest, NSString, NSURLCredential;
+@class NSURLRequest, NSString;
 
 @interface AARequest : NSObject  {
     NSString *_urlString;
+    BOOL _flushCache;
 }
 
 @property(readonly) NSURLRequest * urlRequest;
-@property(readonly) NSURLCredential * urlCredential;
+@property BOOL flushCache;
 
-+ (Class)responseClass;
 + (id)protocolVersion;
++ (Class)responseClass;
 
-- (void)dealloc;
-- (id)urlRequest;
-- (id)initWithURLString:(id)arg1;
+- (BOOL)flushCache;
 - (id)urlCredential;
+- (id)initWithURLString:(id)arg1;
 - (id)bodyDictionary;
+- (id)urlRequest;
+- (void)performRequestWithHandler:(id)arg1;
+- (void)setFlushCache:(BOOL)arg1;
+- (id)urlString;
+- (void)dealloc;
 
 @end

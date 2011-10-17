@@ -13,12 +13,12 @@
 
 + (void)mapEmptyRowAt:(id)arg1 colspan:(int)arg2 height:(double)arg3;
 
+- (BOOL)isMergedCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg1;
 - (id)initWithEDRowBlock:(id)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2 parent:(id)arg3;
 - (BOOL)isColumnHidden:(int)arg1;
-- (void)mapEmptyCellsAt:(id)arg1 withState:(id)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
 - (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)cellWithColumnNumber:(int)arg1;
-- (BOOL)isMergedCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg1;
 - (void)insertEmptyCellAt:(id)arg1 withColSpan:(int)arg2 height:(double)arg3;
+- (void)mapEmptyCellsAt:(id)arg1 withState:(id)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 
 @end

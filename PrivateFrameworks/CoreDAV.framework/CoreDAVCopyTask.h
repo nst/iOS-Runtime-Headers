@@ -10,9 +10,9 @@
 @property <CoreDAVCopyTaskDelegate> * delegate;
 
 
-- (void)dealloc;
 - (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
 - (BOOL)validate:(id*)arg1;
+- (void)dealloc;
 - (id)httpMethod;
 
 @end

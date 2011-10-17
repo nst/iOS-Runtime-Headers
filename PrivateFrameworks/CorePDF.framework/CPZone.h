@@ -9,7 +9,7 @@
 
 @class NSArray, CPZoneProfile, NSMutableArray, CPCharSequence;
 
-@interface CPZone : CPRegion  {
+@interface CPZone : CPRegion <CPGraphicUser> {
     NSMutableArray *zoneBorders;
     struct CGPoint { float x1; float x2; } *outerVertices;
     struct CGPoint { float x1; float x2; } *swollenOuterVertices;
@@ -23,55 +23,61 @@
     CPCharSequence *charactersInZone;
     NSMutableArray *textLinesInZone;
     NSArray *graphicsInZone;
+    NSMutableArray *backgroundGraphics;
+    unsigned int usedGraphicCount;
 }
 
 
-- (BOOL)isRectangular;
-- (id)background;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (BOOL)hasBorders;
-- (int)compareArea:(id)arg1;
-- (void)setCharactersInZone:(id)arg1;
-- (id)textLinesInZone;
-- (id)leftGuides;
-- (id)gutters;
+- (id)graphicsInZone;
 - (void)setZoneBorders:(id)arg1;
-- (BOOL)hasNeighborShape:(id)arg1;
 - (void)removeUnfilledNeighborShapes;
-- (long)borderZOrder;
-- (long)neighborZOrder;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })zoneBounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })swollenZoneBounds;
 - (BOOL)rectangleBordersAtLeft:(id*)arg1 top:(id*)arg2 right:(id*)arg3 bottom:(id*)arg4;
 - (BOOL)canContain:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)addPDFChar:(void*)arg1;
+- (void)setCharactersInZone:(id)arg1;
+- (id)charactersInZone;
 - (void)addContentFrom:(id)arg1;
+- (int)compareArea:(id)arg1;
+- (BOOL)isStraddleZone;
 - (void)setIsStraddleZone:(BOOL)arg1;
+- (id)zoneProfile;
 - (void)setZoneProfile:(id)arg1;
 - (void)setLeftGuides:(id)arg1;
+- (id)leftGuides;
 - (void)setRightGuides:(id)arg1;
-- (void)setGutters:(id)arg1;
-- (void)setSpacers:(id)arg1;
-- (id)graphicsInZone;
-- (id)charactersInZone;
-- (id)spacers;
 - (id)rightGuides;
-- (id)zoneProfile;
-- (BOOL)isStraddleZone;
+- (void)setGutters:(id)arg1;
+- (id)gutters;
+- (void)setSpacers:(id)arg1;
+- (id)spacers;
+- (BOOL)hasNeighborShape:(id)arg1;
 - (double)area;
+- (long)borderZOrder;
+- (long)neighborZOrder;
 - (struct CGPoint { float x1; float x2; }*)swollenOuterVertices;
+- (BOOL)hasBorders;
 - (id)zoneBorders;
+- (BOOL)bordersWindClockwise;
 - (BOOL)mapToWords:(int (*)())arg1 passing:(void*)arg2;
-- (BOOL)mapToWordsWithIndex:(int (*)())arg1 passing:(void*)arg2;
 - (BOOL)mapToWordPairs:(int (*)())arg1 passing:(void*)arg2;
 - (BOOL)mapToWordPairsWithIndex:(int (*)())arg1 passing:(void*)arg2;
+- (BOOL)mapToWordsWithIndex:(int (*)())arg1 passing:(void*)arg2;
+- (id)backgroundGraphics;
 - (unsigned int)wordCount;
+- (unsigned int)usedGraphicCount;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })zoneBounds;
+- (struct CGColor { }*)createBackgroundColor;
 - (BOOL)isZone;
-- (unsigned int)vertexCount;
+- (void)incrementUsedGraphicCount;
 - (struct CGPoint { float x1; float x2; }*)outerVertices;
 - (void)accept:(id)arg1;
+- (id)textLinesInZone;
 - (BOOL)contains:(id)arg1;
+- (BOOL)isRectangular;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (unsigned int)vertexCount;
 
 @end

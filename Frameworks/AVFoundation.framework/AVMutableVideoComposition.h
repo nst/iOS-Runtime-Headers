@@ -14,19 +14,21 @@
 @property(copy) NSArray * instructions;
 @property(retain) AVVideoCompositionCoreAnimationTool * animationTool;
 
++ (id)videoCompositionForAsset:(id)arg1;
++ (id)videoCompositionForAsset:(id)arg1 videoGravity:(id)arg2;
 + (id)videoComposition;
 
-- (id)instructions;
-- (float)renderScale;
 - (void)setCompositor:(id)arg1;
 - (void)setFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setRenderSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRenderScale:(float)arg1;
+- (id)instructions;
 - (void)setInstructions:(id)arg1;
-- (id)animationTool;
 - (void)setAnimationTool:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })frameDuration;
 - (id)compositor;
+- (id)animationTool;
 - (struct CGSize { float x1; float x2; })renderSize;
+- (float)renderScale;
 
 @end

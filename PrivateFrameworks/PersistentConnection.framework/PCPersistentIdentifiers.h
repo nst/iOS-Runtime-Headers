@@ -6,10 +6,10 @@
 }
 
 + (id)_processNamePrefix;
-+ (id)processNameAndPidIdentifier;
 + (int)pidFromMatchingIdentifer:(id)arg1;
 + (id)processNamePidAndStringIdentifier:(id)arg1;
 + (unsigned long long)hostUniqueIdentifier;
++ (id)processNameAndPidIdentifier;
 
 
 @end

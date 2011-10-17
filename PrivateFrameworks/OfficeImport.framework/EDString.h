@@ -11,20 +11,10 @@
     boolmDoNotModify;
 }
 
-+ (id)string;
-+ (id)edStringWithString:(id)arg1;
 + (id)edStringWithString:(id)arg1 runs:(id)arg2;
++ (id)edStringWithString:(id)arg1;
++ (id)string;
 
-- (id)string;
-- (unsigned int)hash;
-- (id)initWithString:(id)arg1;
-- (void)setString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (bool)isEmpty;
-- (BOOL)isEqualToString:(id)arg1;
 - (id)firstRunFont;
 - (bool)areThereRuns;
 - (void)setRuns:(id)arg1;
@@ -32,7 +22,17 @@
 - (BOOL)isEqualToEDString:(id)arg1;
 - (id)phoneticInfo;
 - (void)setPhoneticInfo:(id)arg1;
-- (void)setDoNotModify:(bool)arg1;
 - (id)runs;
+- (void)setDoNotModify:(bool)arg1;
+- (bool)isEmpty;
+- (id)initWithString:(id)arg1;
+- (id)string;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqualToString:(id)arg1;
+- (void)setString:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

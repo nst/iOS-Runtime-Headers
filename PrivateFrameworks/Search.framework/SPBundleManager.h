@@ -15,12 +15,12 @@
 
 + (id)sharedManager;
 
-- (void)dealloc;
-- (id)searchBundles;
 - (void)resetDatastores;
 - (id)domainMap;
 - (id)datastores;
+- (id)searchBundles;
 - (void)_loadSearchBundles;
 - (id)datastoreForDomain:(unsigned int)arg1;
+- (void)dealloc;
 
 @end

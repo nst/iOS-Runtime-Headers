@@ -5,13 +5,13 @@
 @interface CalendarMessageUIProxy : NSObject  {
 }
 
-+ (Class)ComposeRecipientViewClass;
-+ (Class)RecipientTableViewCellClass;
-+ (Class)CalendarComposeRecipientClass;
-+ (Class)MailComposeRecipientClass;
-+ (Class)SearchShadowViewClass;
-+ (Class)MFContactsSearchManagerClass;
 + (Class)MFContactsSearchResultsModelClass;
++ (Class)MFContactsSearchManagerClass;
++ (Class)SearchShadowViewClass;
++ (Class)RecipientTableViewCellClass;
++ (Class)ComposeRecipientViewClass;
++ (Class)MailComposeRecipientClass;
++ (Class)CalendarComposeRecipientClass;
 
 
 @end

@@ -1,6 +1,6 @@
 Here are iOS Objective-C headers as derived from runtime introspection.
 
-The headers were produced using [RuntimeBrowser for iPhone](http://code.google.com/p/runtimebrowser/).
+The headers were produced using [RuntimeBrowser for iPhone](https://github.com/nst/RuntimeBrowser/).
 
 You can use the headers this way:
 

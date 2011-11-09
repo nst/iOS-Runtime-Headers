@@ -11,3 +11,9 @@ You can use the headers this way:
     id nc = [NetworkController sharedInstance];
 
     NSLog(@"-- IMEI: %@", [nc IMEI]);
+
+You can search the headers with github search: [https://github.com/search](https://github.com/search)
+
+    Search: code
+    written in: Any Language
+    "repo:nst/iOS-Runtime-Headers radar"

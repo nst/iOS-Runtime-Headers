@@ -12,8 +12,6 @@ You can use the headers this way:
 
     NSLog(@"-- IMEI: %@", [nc IMEI]);
 
-You can search the headers with github search: [https://github.com/search](https://github.com/search)
+You can search the headers with [github search](https://github.com/search):
 
-    - Search      : code
-    - written in  : Any Language
-    - sample query: repo:nst/iOS-Runtime-Headers radar
+[https://github.com/search?type=Code&q=repo:nst/iOS-Runtime-Headers+radar](https://github.com/search?type=Code&q=repo:nst/iOS-Runtime-Headers+radar)

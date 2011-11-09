@@ -14,6 +14,6 @@ You can use the headers this way:
 
 You can search the headers with github search: [https://github.com/search](https://github.com/search)
 
-    Search: code
-    written in: Any Language
-    "repo:nst/iOS-Runtime-Headers radar"
+    - Search      : code
+    - written in  : Any Language
+    - sample query: repo:nst/iOS-Runtime-Headers radar

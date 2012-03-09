@@ -22,9 +22,17 @@
 @property(readonly) float percentComplete;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (BOOL)isPaused;
 - (void)setPercentComplete:(float)arg1;
 - (float)percentComplete;
 - (void)setError:(id)arg1;
+- (id)error;
+- (void)setFailed:(BOOL)arg1;
+- (void)setPaused:(BOOL)arg1;
+- (BOOL)isContentRestricted;
+- (BOOL)isPausable;
 - (id)activePhase;
 - (BOOL)isFailedTransient;
 - (BOOL)isFailed;
@@ -36,13 +44,5 @@
 - (void)setPausable:(BOOL)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (void)setPaused:(BOOL)arg1;
-- (void)setFailed:(BOOL)arg1;
-- (BOOL)isPaused;
-- (id)error;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (BOOL)isContentRestricted;
-- (BOOL)isPausable;
 
 @end

@@ -44,26 +44,26 @@
 @property(copy) id shutdownHandler;
 
 
+- (void)dealloc;
+- (void)setIdleTimerInterval:(double)arg1;
+- (void)_runShutdownHandler;
+- (void)_rescheduleIdleTimerSourceWithInterval:(double)arg1;
+- (BOOL)_doingWork;
+- (void)_resetMessageFlag;
+- (void)setLockdownHandler:(id)arg1;
+- (id)lockdownHandler;
 - (void)setShutdownHandler:(id)arg1;
 - (id)shutdownHandler;
 - (id)defaultMessageHandler;
-- (void)setIdleTimerInterval:(double)arg1;
-- (void)_runShutdownHandler;
 - (void)setHandlerForMessageName:(id)arg1 handler:(id)arg2;
 - (id)initListenerWithServiceName:(id)arg1;
-- (void)_rescheduleIdleTimerSourceWithInterval:(double)arg1;
-- (BOOL)_doingWork;
+- (struct dispatch_queue_s { }*)_highAvailabilityQueue;
 - (void)setDefaultMessageHandler:(id)arg1;
 - (void)_handleNewConnection:(struct _xpc_connection_s { }*)arg1;
-- (struct dispatch_queue_s { }*)_highAvailabilityQueue;
 - (id)_handlerForMessageName:(id)arg1;
 - (id)_connections;
-- (void)_resetMessageFlag;
-- (id)disconnectHandler;
-- (void)setLockdownHandler:(id)arg1;
-- (id)lockdownHandler;
 - (void)setDisconnectHandler:(id)arg1;
+- (id)disconnectHandler;
 - (id)connections;
-- (void)dealloc;
 
 @end

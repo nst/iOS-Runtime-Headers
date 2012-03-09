@@ -10,7 +10,6 @@
     UIBarButtonItem *_copyItem;
     UIBarButtonItem *_addToFromItem;
     UIBarButtonItem *_deleteItem;
-    UIBarButtonItem *_savePhotoItem;
     UIBarButtonItem *_doneItem;
     NSMutableArray *_shareButtonTitles;
     UINavigationController *_composeNavigationController;
@@ -64,7 +63,12 @@
 @property(retain) PLPhotosPickerSession * currentPickerSession;
 
 
+- (void)dealloc;
 - (void)_fadeOut;
+- (void)smsComposeControllerDataInserted:(id)arg1;
+- (void)smsComposeControllerAppeared:(id)arg1;
+- (void)smsComposeControllerCancelled:(id)arg1;
+- (void)smsComposeControllerSendStarted:(id)arg1;
 - (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;
 - (void)editVideoViewControllerDidCancel:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -85,10 +89,7 @@
 - (void)prepareForDefaultImageSnapshot;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)applicationWillEnterForeground:(id)arg1;
-- (void)smsComposeControllerDataInserted:(id)arg1;
-- (void)smsComposeControllerAppeared:(id)arg1;
-- (void)smsComposeControllerCancelled:(id)arg1;
-- (void)smsComposeControllerSendStarted:(id)arg1;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (void)setCanPlaySlideshow:(BOOL)arg1;
 - (BOOL)canPlaySlideshow;
 - (BOOL)_isPerformingModalTransitionFromCamera;
@@ -103,15 +104,14 @@
 - (void)_showTrimViewControllerForVideo:(id)arg1 maximumTrimDuration:(double)arg2 trimButtonTitle:(id)arg3;
 - (void)_clearPublishingAgentIfCurrent:(id)arg1;
 - (void)_fadeOutAnimation:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (void)_addPhotos:(id)arg1 toAlbum:(struct NSObject { Class x1; }*)arg2 removeFromCurrentAlbum:(BOOL)arg3;
 - (void)_cancelAlbumPicker:(id)arg1;
 - (void)_presentActionSheet;
 - (BOOL)_canEmailMedia;
 - (void)_showMoveActions:(id)arg1;
 - (void)_updateShareButtonTitles:(id)arg1;
-- (void)_saveSelectedItems:(id)arg1;
 - (void)_copySelectedItems:(id)arg1;
 - (void)_shareSelectedItems:(id)arg1;
+- (BOOL)_allowSavingToCameraRoll;
 - (int)_allowedDeleteOperation;
 - (void)_showSlideshowSettings:(id)arg1;
 - (BOOL)_shouldShowActionButton;
@@ -127,6 +127,7 @@
 - (void)_sendViaEmail:(id)arg1;
 - (void)_showCreateAlbumDialogWithPhotos:(id)arg1;
 - (void)_showAlbumPickerToAddPhotos:(id)arg1 removeFromCurrentAlbum:(BOOL)arg2;
+- (void)_saveAssetsToCameraRoll:(id)arg1;
 - (void)_deleteSelectedItems:(id)arg1;
 - (void)_removeSelectedItems:(id)arg1;
 - (void)pushPhotoScrollerViewControllerForPhoto:(id)arg1 animated:(BOOL)arg2;
@@ -183,7 +184,5 @@
 - (void)_publishingAgentsDidForceCancel:(id)arg1;
 - (void)_publishingAgentDidStartRemaking:(id)arg1;
 - (void)_publishingAgentDidFinishPublishing:(id)arg1;
-- (void)dealloc;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 
 @end

@@ -12,10 +12,29 @@
 
 @property id delegate;
 
-+ (id)tonePickerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)ringtonePickerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)texttonePickerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (id)tonePickerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
+- (void)dealloc;
+- (id)selectedVibrationIdentifier;
+- (void)setShowsNone:(BOOL)arg1;
+- (void)setNoneAtTop:(BOOL)arg1;
+- (void)setShowsDefault:(BOOL)arg1;
+- (void)setShowsVibrations:(BOOL)arg1;
+- (id)selectedRingtoneIdentifier;
+- (void)setSelectedRingtoneIdentifier:(id)arg1;
+- (void)setShowsNothingSelected:(BOOL)arg1;
+- (void)setSelectedVibrationIdentifier:(id)arg1;
+- (void)setAVController:(id)arg1;
+- (void)stopPlaying;
+- (void)displayScrollerIndicators;
+- (id)delegate;
+- (void)didMoveToWindow;
+- (void)setDelegate:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)contentHeight;
+- (void)_reloadData;
 - (void)ringtoneTableController:(id)arg1 willPlayRingtoneWithIdentifier:(id)arg2;
 - (void)ringtoneTableController:(id)arg1 selectedRingtoneWithIdentifier:(id)arg2;
 - (void)ringtoneManagerContentsChanged:(id)arg1;
@@ -32,24 +51,5 @@
 - (void)buildUIWithAVController:(id)arg1 filter:(unsigned int)arg2 tonePicker:(BOOL)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avController:(id)arg2 filter:(unsigned int)arg3 tonePicker:(BOOL)arg4;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avController:(id)arg2;
-- (void)setAVController:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)displayScrollerIndicators;
-- (id)delegate;
-- (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)stopPlaying;
-- (void)_reloadData;
-- (void)dealloc;
-- (float)contentHeight;
-- (id)selectedVibrationIdentifier;
-- (void)setShowsNone:(BOOL)arg1;
-- (void)setNoneAtTop:(BOOL)arg1;
-- (void)setShowsDefault:(BOOL)arg1;
-- (void)setShowsVibrations:(BOOL)arg1;
-- (id)selectedRingtoneIdentifier;
-- (void)setSelectedRingtoneIdentifier:(id)arg1;
-- (void)setShowsNothingSelected:(BOOL)arg1;
-- (void)setSelectedVibrationIdentifier:(id)arg1;
 
 @end

@@ -12,11 +12,15 @@
 
 + (int)textBoxTextTypeForRegularTextType:(int)arg1;
 
+- (void)setProperties:(id)arg1;
+- (void)dealloc;
+- (id)properties;
 - (id)overrideDrawable;
 - (void)clearDrawable;
 - (id)imageBlipRef;
 - (void)setImageBlipRef:(id)arg1;
 - (id)imageData;
+- (id)imageName;
 - (void)setTextType:(int)arg1 recursivelyToDrawable:(id)arg2;
 - (void)clearProperties;
 - (BOOL)isDrawableOverridden;
@@ -28,9 +32,5 @@
 - (int)runType;
 - (void)setDrawable:(id)arg1;
 - (id)drawable;
-- (id)properties;
-- (id)imageName;
-- (void)setProperties:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -37,13 +37,6 @@
 + (void)setGlobalAppearanceStyle:(int)arg1;
 + (void)setSupportsAutoRotation:(BOOL)arg1;
 
-- (void)setupController;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)controllersToShow;
@@ -80,5 +73,12 @@
 - (void)setRegController:(id)arg1;
 - (void)dismissWithState:(unsigned int)arg1;
 - (id)regController;
+- (void)setupController;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

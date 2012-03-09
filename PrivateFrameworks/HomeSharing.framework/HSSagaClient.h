@@ -31,6 +31,21 @@
 @property(copy) id updateInProgressChangedHandler;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)setUpdateInProgressChangedHandler:(id)arg1;
+- (void)loadIsUpdateInProgressWithCompletionHandler:(id)arg1;
+- (id)updateInProgressChangedHandler;
+- (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 completionHandler:(id)arg4;
+- (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (void)loadUpdateProgressWithCompletionHandler:(id)arg1;
+- (void)incrementItemProperty:(id)arg1 forSagaID:(unsigned long long)arg2;
+- (void)isAuthenticatedWithCompletionHandler:(id)arg1;
+- (void)addGeniusPlaylistWithName:(id)arg1 seedItemSagaIDs:(id)arg2 itemSagaIDs:(id)arg3 completionHandler:(id)arg4;
+- (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
+- (void)loadArtworkDataForSagaID:(unsigned long long)arg1;
+- (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (void)authenticateWithCompletionHandler:(id)arg1;
 - (void)_serverUpdateInProgressDidChange;
 - (void)_serverDidLaunch;
@@ -41,19 +56,8 @@
 - (void)_loadURLBagWithCompletionHandler:(id)arg1;
 - (void)_scheduleUpdatePolling;
 - (void)_handleMessage:(unsigned long long)arg1 withResponse:(void*)arg2;
+- (id)initWithAccount:(id)arg1 baseURL:(id)arg2 userAgent:(id)arg3 cookieHeaders:(id)arg4 buildIdentifier:(id)arg5;
 - (id)initWithAccount:(id)arg1 baseURL:(id)arg2 userAgent:(id)arg3 cookieHeaders:(id)arg4;
-- (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 completionHandler:(id)arg4;
-- (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
-- (void)incrementItemProperty:(id)arg1 forSagaID:(unsigned long long)arg2;
-- (void)isAuthenticatedWithCompletionHandler:(id)arg1;
-- (void)setUpdateInProgressChangedHandler:(id)arg1;
-- (void)loadIsUpdateInProgressWithCompletionHandler:(id)arg1;
-- (id)updateInProgressChangedHandler;
-- (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
-- (void)loadArtworkDataForSagaID:(unsigned long long)arg1;
-- (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
-- (id)init;
-- (void)dealloc;
 - (void)becomeActive;
 - (void)resignActive;
 

@@ -5,26 +5,16 @@
 @interface NSCalendar : NSObject <NSCopying, NSCoding> {
 }
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)currentCalendar;
 + (void)initialize;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)autoupdatingCurrentCalendar;
 + (id)gregorianCalendar;
 
-- (id)initWithCalendarIdentifier:(id)arg1;
-- (id)monthSymbols;
-- (BOOL)rangeOfUnit:(unsigned int)arg1 startDate:(id*)arg2 interval:(double*)arg3 forDate:(id)arg4;
-- (id)dateByAddingComponents:(id)arg1 toDate:(id)arg2 options:(unsigned int)arg3;
-- (id)dateFromComponents:(id)arg1;
-- (id)components:(unsigned int)arg1 fromDate:(id)arg2;
-- (id)components:(unsigned int)arg1 fromDate:(id)arg2 toDate:(id)arg3 options:(unsigned int)arg4;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfUnit:(unsigned int)arg1 inUnit:(unsigned int)arg2 forDate:(id)arg3;
-- (id)locale;
-- (void)setLocale:(id)arg1;
-- (id)timeZone;
-- (void)setTimeZone:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (unsigned char)_diffComponents:(double)arg1 :(double)arg2 :(unsigned long)arg3 :(const char *)arg4 :(void*)arg5;
 - (unsigned char)_addComponents:(double*)arg1 :(unsigned long)arg2 :(const char *)arg3 :(void*)arg4;
 - (unsigned char)_decomposeAbsoluteTime:(double)arg1 :(const char *)arg2 :(void*)arg3;
@@ -68,10 +58,20 @@
 - (unsigned int)firstWeekday;
 - (id)calendarIdentifier;
 - (unsigned long)_cfTypeID;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
+- (BOOL)rangeOfUnit:(unsigned int)arg1 startDate:(id*)arg2 interval:(double*)arg3 forDate:(id)arg4;
+- (id)dateByAddingComponents:(id)arg1 toDate:(id)arg2 options:(unsigned int)arg3;
+- (id)dateFromComponents:(id)arg1;
+- (id)components:(unsigned int)arg1 fromDate:(id)arg2;
+- (id)components:(unsigned int)arg1 fromDate:(id)arg2 toDate:(id)arg3 options:(unsigned int)arg4;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfUnit:(unsigned int)arg1 inUnit:(unsigned int)arg2 forDate:(id)arg3;
+- (id)locale;
+- (void)setLocale:(id)arg1;
+- (id)timeZone;
+- (void)setTimeZone:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithCalendarIdentifier:(id)arg1;
+- (id)monthSymbols;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

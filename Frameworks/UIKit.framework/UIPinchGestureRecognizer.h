@@ -37,6 +37,7 @@
 
 + (void)addPinchGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
 
+- (void)dealloc;
 - (void)setScaleThreshold:(float)arg1;
 - (float)scaleThreshold;
 - (void)_setEndsOnSingleTouch:(BOOL)arg1;
@@ -54,6 +55,5 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (float)scale;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

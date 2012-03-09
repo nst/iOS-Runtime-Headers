@@ -19,7 +19,9 @@
 + (void)_postParticipantScreenAttributesChangeNotification:(id)arg1 cameraChanged:(BOOL)arg2 orientationChanged:(BOOL)arg3 aspectChanged:(BOOL)arg4 cameraWillSwitch:(BOOL)arg5 camera:(unsigned int)arg6 orentation:(unsigned int)arg7 aspect:(struct CGSize { float x1; float x2; })arg8;
 + (BOOL)_useMultipleAVConference;
 
-- (id)controller;
+- (unsigned long long)capabilities;
+- (id)init;
+- (void)dealloc;
 - (void)conference:(id)arg1 didStartSession:(BOOL)arg2 withUserInfo:(id)arg3;
 - (void)conference:(id)arg1 receivedFirstPreviewForCallID:(int)arg2;
 - (void)conference:(id)arg1 receivedFirstRemoteFrameForCallID:(int)arg2;
@@ -43,9 +45,7 @@
 - (void)conference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3;
 - (void)conference:(id)arg1 updateInputMeterLevel:(float)arg2;
 - (void)conference:(id)arg1 updateOutputMeterLevel:(float)arg2;
-- (id)init;
-- (void)dealloc;
-- (unsigned long long)capabilities;
+- (id)controller;
 - (BOOL)_hasAVConferenceObjectsForChatsOtherThan:(id)arg1;
 - (void)conference:(id)arg1 cancelRelayRequest:(int)arg2 requestDict:(id)arg3;
 - (id)_avChatForConference:(id)arg1 callID:(int)arg2 errorString:(id)arg3;

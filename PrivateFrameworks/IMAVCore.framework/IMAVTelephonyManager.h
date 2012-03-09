@@ -18,11 +18,11 @@
 + (id)sharedInstance;
 + (id)numberToDialForNumber:(id)arg1 dialAssist:(BOOL*)arg2;
 
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
-- (unsigned int)callState;
 - (id)init;
 - (void)dealloc;
+- (unsigned int)callState;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 - (void)stopWatchingForCTRequests;
 - (void)_disconnectCSCallWithID:(id)arg1;
 - (void)_handleCTServiceRequestName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2 contextInfo:(void*)arg3;

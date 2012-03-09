@@ -80,7 +80,8 @@
 + (id)_UTIForFilename:(id)arg1;
 + (void)initialize;
 
-- (void)setDelegate:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)dealloc;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setAnnotation:(id)arg1;
 - (unsigned int)applicationCount;
@@ -146,7 +147,6 @@
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)gestureRecognizers;
 - (id)delegate;
-- (void)setName:(id)arg1;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

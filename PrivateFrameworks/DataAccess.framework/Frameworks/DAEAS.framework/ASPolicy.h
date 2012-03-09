@@ -16,12 +16,12 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (id)key;
-- (id)type;
 - (void)_setKey:(id)arg1;
-- (int)status;
 - (id)description;
 - (void)dealloc;
+- (int)status;
+- (id)key;
+- (id)type;
 - (void)_setStatus:(id)arg1;
 - (void)_setType:(id)arg1;
 - (id)perDomainDictsForPolicy;

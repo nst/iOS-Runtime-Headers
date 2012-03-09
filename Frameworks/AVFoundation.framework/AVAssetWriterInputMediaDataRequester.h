@@ -18,19 +18,19 @@
 
 }
 
-@property(readonly) id requestBlock;
 @property(readonly) struct dispatch_queue_s { }* requestQueue;
+@property(readonly) id requestBlock;
 
 
-- (void)invalidate;
-- (void)finalize;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id)initWithAssetWriterInputWritingHelper:(id)arg1 requestQueue:(struct dispatch_queue_s { }*)arg2 requestBlock:(id)arg3;
-- (void)startRequestingMediaData;
-- (struct dispatch_queue_s { }*)requestQueue;
-- (id)requestBlock;
-- (void)_requestMediaDataIfReady;
 - (id)init;
 - (void)dealloc;
+- (void)_requestMediaDataIfReady;
+- (id)requestBlock;
+- (void)startRequestingMediaData;
+- (id)initWithAssetWriterInputWritingHelper:(id)arg1 requestQueue:(struct dispatch_queue_s { }*)arg2 requestBlock:(id)arg3;
+- (struct dispatch_queue_s { }*)requestQueue;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)finalize;
+- (void)invalidate;
 
 @end

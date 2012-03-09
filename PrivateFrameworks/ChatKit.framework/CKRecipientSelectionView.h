@@ -26,6 +26,7 @@
 
 + (float)separatorHeight;
 
+- (void)dealloc;
 - (void)reallyResignFirstResponder;
 - (void)composeRecipientViewReturnPressed:(id)arg1;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
@@ -41,16 +42,6 @@
 - (void)reflow;
 - (id)toField;
 - (id)recipients;
-- (void)setDelegate:(id)arg1;
-- (void)reset;
-- (id)searchText;
-- (BOOL)hasText;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)_updateContentSize;
-- (void)animationDidStop:(id)arg1;
-- (id)delegate;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)_hideSearchField:(BOOL)arg1;
 - (BOOL)isRecipientAvailable:(id)arg1;
 - (void)setSearchText:(id)arg1;
@@ -62,7 +53,16 @@
 - (void)showErrorAlertForTooManyRecipientsIfNecessary;
 - (BOOL)isShowingSearchField;
 - (float)heightWithoutSeparator;
-- (void)dealloc;
+- (void)reset;
+- (id)searchText;
+- (BOOL)hasText;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)_updateContentSize;
+- (void)animationDidStop:(id)arg1;
+- (id)delegate;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setDelegate:(id)arg1;
 - (void)endedNetworkActivity;
 - (void)beganNetworkActivity;
 - (void)finishedTaskWithID:(id)arg1;

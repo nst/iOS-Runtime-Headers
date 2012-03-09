@@ -13,9 +13,11 @@
 }
 
 
-- (id)currentContext;
-- (void)setCurrentContext:(id)arg1;
+- (void)dealloc;
+- (id)connection;
 - (void)finalize;
+- (void)setCurrentContext:(id)arg1;
+- (id)currentContext;
 - (id)_propertiesToFetch;
 - (void)selectRowsWithFetchRequest:(id)arg1;
 - (void)selectRowsWithStatement:(id)arg1;
@@ -30,7 +32,5 @@
 - (void)setCurrentEntity:(id)arg1;
 - (id)initWithSQLCore:(id)arg1;
 - (id)sqlCore;
-- (id)connection;
-- (void)dealloc;
 
 @end

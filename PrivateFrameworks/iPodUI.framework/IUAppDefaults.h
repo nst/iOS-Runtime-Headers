@@ -5,10 +5,10 @@
 @interface IUAppDefaults : NSObject  {
 }
 
++ (void)initialize;
 + (id)valueForKey:(id)arg1;
 + (void)synchronize;
 + (void)setValue:(id)arg1 forKey:(id)arg2;
-+ (void)initialize;
 + (BOOL)onTheGoEnabled;
 + (int)enumValueForKey:(id)arg1;
 + (void)setEnumValue:(int)arg1 forKey:(id)arg2;

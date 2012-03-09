@@ -9,11 +9,11 @@
 }
 
 
-- (id)_localizedStringForKey:(id)arg1 value:(void*)arg2;
-- (void)addPolicy:(id)arg1;
-- (void)_ensureFullLocalizationDictionaryIsLoaded;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)_localizedStringForKey:(id)arg1 value:(void*)arg2;
+- (void)addPolicy:(id)arg1;
+- (void)_ensureFullLocalizationDictionaryIsLoaded;
 
 @end

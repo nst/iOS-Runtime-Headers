@@ -15,9 +15,9 @@
 
 + (id)centerNamed:(id)arg1;
 
-- (void)startDeliveringNotificationsToMainThread;
+- (void)dealloc;
+- (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)runServerOnCurrentThread;
-- (BOOL)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
 - (id)_initWithServerName:(id)arg1;
 - (void)_checkOutAndRemoveSource;
 - (void)_notificationServerWasRestarted;
@@ -26,11 +26,11 @@
 - (void)_createReceiveSourceForRunLoop:(struct __CFRunLoop { }*)arg1;
 - (void)deliverNotification:(id)arg1 userInfo:(id)arg2;
 - (void)_receivedCheckIn:(unsigned int)arg1 auditToken:(struct { unsigned int x1[8]; }*)arg2;
+- (void)startDeliveringNotificationsToMainThread;
 - (id)name;
 - (void)runServer;
-- (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
-- (void)stopDeliveringNotifications;
-- (void)dealloc;
+- (BOOL)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
 - (void)postNotificationName:(id)arg1;
+- (void)stopDeliveringNotifications;
 
 @end

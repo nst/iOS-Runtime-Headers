@@ -15,6 +15,9 @@
 @property(copy) NSDictionary * responseDictionary;
 
 
+- (void)dealloc;
+- (void)setResponseDictionary:(id)arg1;
+- (id)responseDictionary;
 - (void)setAuthenticateResponseType:(int)arg1;
 - (int)authenticateResponseType;
 - (void)setAuthenticatedAccount:(id)arg1;
@@ -23,8 +26,5 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (void)dealloc;
-- (id)responseDictionary;
-- (void)setResponseDictionary:(id)arg1;
 
 @end

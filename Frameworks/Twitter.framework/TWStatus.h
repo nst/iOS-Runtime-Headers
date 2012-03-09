@@ -13,12 +13,12 @@
 @property(retain) NSArray * imageDatas;
 
 
-- (void)setStatus:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)status;
 - (void)dealloc;
+- (void)setStatus:(id)arg1;
+- (id)status;
 - (void)setImageDatas:(id)arg1;
 - (id)imageDatas;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

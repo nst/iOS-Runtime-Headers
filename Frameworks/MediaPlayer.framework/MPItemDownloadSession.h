@@ -21,8 +21,8 @@
 @property int sessionState;
 
 
-- (void)setPercentComplete:(float)arg1;
-- (float)percentComplete;
+- (id)description;
+- (void)dealloc;
 - (void)snapshotProgressForItem:(id)arg1;
 - (id)sessionError;
 - (int)sessionState;
@@ -35,8 +35,8 @@
 - (void)setAVAsset:(id)arg1;
 - (id)AVAsset;
 - (BOOL)isNetworkConstrainedForNetworkType:(int)arg1;
-- (id)description;
-- (void)dealloc;
+- (void)setPercentComplete:(float)arg1;
+- (float)percentComplete;
 - (id)downloadProperties;
 
 @end

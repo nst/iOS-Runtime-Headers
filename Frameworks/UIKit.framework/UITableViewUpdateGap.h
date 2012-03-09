@@ -26,6 +26,9 @@
 
 + (id)gapWithUpdateItem:(id)arg1;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)insertItems;
 - (id)deleteItems;
 - (id)lastUpdateItem;
@@ -38,8 +41,5 @@
 - (void)addUpdateItem:(id)arg1;
 - (void)setLastUpdateItem:(id)arg1;
 - (void)setFirstUpdateItem:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

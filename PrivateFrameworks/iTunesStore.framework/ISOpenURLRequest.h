@@ -18,16 +18,16 @@
 
 + (id)openURLRequestWithURL:(id)arg1;
 
-- (id)initWithURL:(id)arg1;
-- (void)setURL:(id)arg1;
-- (id)URL;
-- (id)targetIdentifier;
-- (BOOL)isITunesStoreURL;
-- (void)setTargetIdentifier:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)targetIdentifier;
+- (BOOL)isITunesStoreURL;
+- (void)setTargetIdentifier:(id)arg1;
+- (id)initWithURL:(id)arg1;
+- (void)setURL:(id)arg1;
+- (id)URL;
 - (void)setITunesStoreURL:(BOOL)arg1;
 - (id)initWithURLBagKey:(id)arg1;
 - (id)URLBagKey;

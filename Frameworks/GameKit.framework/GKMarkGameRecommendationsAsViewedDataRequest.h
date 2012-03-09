@@ -13,12 +13,12 @@
 @property BOOL viewed;
 
 
+- (void)dealloc;
 - (void)setViewed:(BOOL)arg1;
 - (BOOL)viewed;
 - (void)setRecommendations:(id)arg1;
 - (id)recommendations;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

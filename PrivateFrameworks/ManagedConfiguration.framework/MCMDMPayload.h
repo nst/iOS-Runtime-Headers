@@ -30,7 +30,8 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (id)title;
+- (id)description;
+- (void)dealloc;
 - (id)localizedAccessRightDescriptions;
 - (BOOL)checkOutWhenRemoved;
 - (BOOL)signMessage;
@@ -52,7 +53,6 @@
 - (id)installationWarnings;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
+- (id)title;
 
 @end

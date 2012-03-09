@@ -42,6 +42,9 @@
 
 + (id)codedPropertyKeys;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 - (void)setLastTurnPlayerID:(id)arg1;
 - (id)lastTurnPlayerID;
 - (void)setTurnNumber:(int)arg1;
@@ -56,6 +59,7 @@
 - (void)setMatchData:(id)arg1;
 - (id)matchData;
 - (void)setCurrentParticipant:(int)arg1;
+- (id)creationDate;
 - (void)setParticipants:(id)arg1;
 - (id)participants;
 - (id)matchID;
@@ -63,19 +67,15 @@
 - (int)currentParticipant;
 - (void)setReason:(id)arg1;
 - (void)setStatus:(id)arg1;
+- (id)status;
 - (int)maxPlayers;
 - (int)minPlayers;
 - (void)setMaxPlayers:(int)arg1;
 - (void)setMinPlayers:(int)arg1;
+- (id)sessionID;
+- (void)setSessionID:(id)arg1;
 - (id)message;
 - (void)setMessage:(id)arg1;
 - (id)reason;
-- (id)status;
-- (id)creationDate;
-- (id)sessionID;
-- (void)setSessionID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 
 @end

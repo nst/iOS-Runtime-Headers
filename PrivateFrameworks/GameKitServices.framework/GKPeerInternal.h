@@ -39,8 +39,14 @@
 
 + (void)freeLookupList:(struct _DNSServiceRef_t {}**)arg1 andAddrList:(id*)arg2 andInterfaceList:(unsigned int*)arg3 count:(int)arg4;
 
+- (void)dealloc;
+- (id)serviceName;
+- (id)session;
+- (void)setSession:(id)arg1;
 - (BOOL)isBusy;
 - (void)setBusy:(BOOL)arg1;
+- (unsigned int)pid;
+- (id)displayName;
 - (void)copyLookupList:(struct _DNSServiceRef_t {}***)arg1 count:(int*)arg2;
 - (BOOL)moreResolvesComing;
 - (void)setMoreResolvesComing:(BOOL)arg1;
@@ -67,11 +73,5 @@
 - (struct _DNSServiceRef_t { }*)resolveService;
 - (void)setServicePort:(unsigned int)arg1;
 - (void)addLookup:(struct _DNSServiceRef_t { }*)arg1;
-- (id)displayName;
-- (id)serviceName;
-- (id)session;
-- (void)setSession:(id)arg1;
-- (unsigned int)pid;
-- (void)dealloc;
 
 @end

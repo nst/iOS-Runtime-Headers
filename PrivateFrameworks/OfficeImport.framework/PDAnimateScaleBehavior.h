@@ -18,12 +18,12 @@
 }
 
 
+- (id)init;
 - (struct CGPoint { float x1; float x2; })to;
 - (void)setTo:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })from;
 - (void)setFrom:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })by;
 - (void)setBy:(struct CGPoint { float x1; float x2; })arg1;
-- (id)init;
 
 @end

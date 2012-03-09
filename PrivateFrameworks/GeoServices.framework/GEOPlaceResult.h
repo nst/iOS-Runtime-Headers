@@ -23,11 +23,8 @@
 @property(retain) NSString * quad;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)setPlace:(id)arg1;
-- (void)setHasConfidence:(BOOL)arg1;
-- (BOOL)hasConfidence;
-- (void)setConfidence:(double)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)tokenEntity;
 - (id)additionalPlaces;
 - (BOOL)hasQuad;
@@ -38,12 +35,15 @@
 - (void)setQuad:(id)arg1;
 - (void)setTokenEntity:(id)arg1;
 - (void)setAdditionalPlaces:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)quad;
-- (id)place;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (double)confidence;
+- (void)setPlace:(id)arg1;
+- (void)setHasConfidence:(BOOL)arg1;
+- (BOOL)hasConfidence;
+- (void)setConfidence:(double)arg1;
+- (id)place;
 
 @end

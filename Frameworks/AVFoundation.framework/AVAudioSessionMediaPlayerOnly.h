@@ -8,38 +8,41 @@
     AVAudioSessionMediaPlayerOnlyInternal *_audioSession;
 }
 
+@property <AVAudioSessionDelegateMediaPlayerOnly> * delegate;
 @property(readonly) NSString * category;
+@property(readonly) NSString * mode;
 @property(readonly) double preferredHardwareSampleRate;
 @property(readonly) double preferredIOBufferDuration;
 @property(readonly) BOOL inputIsAvailable;
 @property(readonly) double currentHardwareSampleRate;
 @property(readonly) int currentHardwareInputNumberOfChannels;
 @property(readonly) int currentHardwareOutputNumberOfChannels;
-@property <AVAudioSessionDelegateMediaPlayerOnly> * delegate;
 
 + (void)initialize;
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (BOOL)isApplicationAudioSession;
-- (void)setApplicationAudioSession:(BOOL)arg1;
-- (void)_removeFPListeners;
-- (void)_addFPListeners;
-- (BOOL)_setFigPlayer:(struct OpaqueFigPlayer { }*)arg1;
-- (id)_weakReference;
-- (id)category;
-- (BOOL)setCategory:(id)arg1 error:(id*)arg2;
-- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
-- (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
-- (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
-- (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
-- (BOOL)inputIsAvailable;
-- (double)currentHardwareSampleRate;
-- (double)preferredHardwareSampleRate;
-- (double)preferredIOBufferDuration;
-- (int)currentHardwareInputNumberOfChannels;
-- (int)currentHardwareOutputNumberOfChannels;
 - (id)init;
 - (void)dealloc;
+- (BOOL)isApplicationAudioSession;
+- (void)setApplicationAudioSession:(BOOL)arg1;
+- (void)_setFigPlayer:(struct OpaqueFigPlayer { }*)arg1;
+- (void)_addFPListeners;
+- (void)_removeFPListeners;
+- (id)_weakReference;
+- (BOOL)setMode:(id)arg1 error:(id*)arg2;
+- (int)currentHardwareOutputNumberOfChannels;
+- (int)currentHardwareInputNumberOfChannels;
+- (double)preferredIOBufferDuration;
+- (double)preferredHardwareSampleRate;
+- (double)currentHardwareSampleRate;
+- (BOOL)inputIsAvailable;
+- (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
+- (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
+- (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
+- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
+- (BOOL)setCategory:(id)arg1 error:(id*)arg2;
+- (id)category;
+- (id)mode;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

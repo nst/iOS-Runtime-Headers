@@ -13,24 +13,24 @@
 }
 
 
-- (void)addDisplay:(id)arg1 withState:(int)arg2;
-- (void)setState:(int)arg1 forDisplay:(id)arg2;
-- (int)stateForDisplay:(id)arg1;
-- (id)displayForToken:(long)arg1;
-- (unsigned int)displayCountIncludingDisconnectedDisplays:(BOOL)arg1;
-- (id)primaryDisplay;
-- (void)setPrimaryDisplay:(id)arg1;
-- (unsigned int)activeQueueMaximumSize;
-- (void)setActiveQueueMaximumSize:(unsigned int)arg1;
-- (id)activeDisplays;
-- (id)activePendingDisplays;
-- (id)sleepingDisplays;
-- (id)loadingDisplays;
-- (id)_queueForState:(int)arg1 createQueue:(BOOL)arg2;
-- (void)_fillActiveBrailleDisplayQueue;
-- (id)disconnectedDisplays;
 - (id)init;
 - (void)dealloc;
 - (void)removeDisplay:(id)arg1;
+- (id)loadingDisplays;
+- (id)sleepingDisplays;
+- (id)activePendingDisplays;
+- (id)activeDisplays;
+- (void)setActiveQueueMaximumSize:(unsigned int)arg1;
+- (unsigned int)activeQueueMaximumSize;
+- (void)setPrimaryDisplay:(id)arg1;
+- (id)primaryDisplay;
+- (unsigned int)displayCountIncludingDisconnectedDisplays:(BOOL)arg1;
+- (id)displayForToken:(long)arg1;
+- (int)stateForDisplay:(id)arg1;
+- (void)setState:(int)arg1 forDisplay:(id)arg2;
+- (void)addDisplay:(id)arg1 withState:(int)arg2;
+- (id)disconnectedDisplays;
+- (void)_fillActiveBrailleDisplayQueue;
+- (id)_queueForState:(int)arg1 createQueue:(BOOL)arg2;
 
 @end

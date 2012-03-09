@@ -21,6 +21,9 @@
 @property(retain) CoreDAVItemWithNoChildren * selfItem;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setAuthenticated:(id)arg1;
 - (id)initTypeIsSelf;
 - (id)initTypeIsUnauthenticated;
@@ -37,13 +40,10 @@
 - (id)hashString;
 - (id)copyParseRules;
 - (id)unauthenticated;
-- (void)setProperty:(id)arg1;
-- (id)property;
 - (void)write:(id)arg1;
 - (void)setHref:(id)arg1;
 - (id)href;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)setProperty:(id)arg1;
+- (id)property;
 
 @end

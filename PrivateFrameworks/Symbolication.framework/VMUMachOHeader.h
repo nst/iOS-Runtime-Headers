@@ -19,17 +19,11 @@
 }
 
 
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (unsigned long long)address;
-- (id)signature;
-- (id)path;
-- (unsigned int)currentVersion;
-- (unsigned int)fileType;
-- (id)sections;
-- (void)setPath:(id)arg1;
-- (unsigned int)flags;
-- (id)timestamp;
-- (id)name;
-- (void)setTimestamp:(id)arg1;
+- (id)regions;
 - (id)dsymPath;
 - (void)setDsymPath:(id)arg1;
 - (id)loadCommands;
@@ -48,10 +42,16 @@
 - (long long)vmaddrSlide;
 - (id)architecture;
 - (BOOL)isMachO;
+- (unsigned int)fileType;
+- (id)sections;
+- (void)setPath:(id)arg1;
+- (unsigned int)flags;
+- (id)path;
+- (id)timestamp;
+- (id)name;
+- (void)setTimestamp:(id)arg1;
+- (unsigned int)currentVersion;
+- (id)signature;
 - (id)uuid;
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)regions;
 
 @end

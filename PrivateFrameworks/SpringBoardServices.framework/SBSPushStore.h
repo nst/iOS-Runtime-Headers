@@ -17,14 +17,14 @@
 + (id)bundleIDsWithUpdatesSince:(id)arg1;
 + (void)initialize;
 
+- (void)removeObserver:(id)arg1;
+- (void)dealloc;
+- (void)addObserver:(id)arg1;
 - (id)storedNotifications;
 - (id)initWithBundleID:(id)arg1;
 - (void)notifyPushStoreUpdated;
 - (void)notifyPushStoreCleared;
 - (void)notifyPushSettingsChanged;
 - (void)notifyPushDeliveryAccepted;
-- (void)addObserver:(id)arg1;
-- (void)removeObserver:(id)arg1;
-- (void)dealloc;
 
 @end

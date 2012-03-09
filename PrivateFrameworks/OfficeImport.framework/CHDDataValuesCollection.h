@@ -10,6 +10,10 @@
 }
 
 
+- (unsigned int)count;
+- (id)init;
+- (void)dealloc;
+- (void)cleanup;
 - (void)resetWithDataPointCount:(unsigned int)arg1;
 - (bool)addDataValue:(id)arg1;
 - (id)dataValueWithIndex:(unsigned int)arg1;
@@ -21,9 +25,5 @@
 - (id)dataValueAtIndex:(unsigned int)arg1;
 - (bool)addDataPoint:(struct CHDDataPoint { unsigned int x1; struct EDValue { int x_2_1_1; union $_622 { boolx_2_2_1; double x_2_2_2; id x_2_2_3; unsigned int x_2_2_4; int x_2_2_5; } x_2_1_2; } x2; unsigned int x3; }*)arg1;
 - (void)finishReading;
-- (void)cleanup;
-- (unsigned int)count;
-- (id)init;
-- (void)dealloc;
 
 @end

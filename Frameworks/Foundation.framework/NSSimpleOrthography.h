@@ -18,9 +18,9 @@
 - (id)dominantScript;
 - (unsigned int)orthographyFlags;
 - (id)initWithDominantScript:(id)arg1 languageMap:(id)arg2;
+- (id)initWithFlags:(unsigned int)arg1;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFlags:(unsigned int)arg1;
 
 @end

@@ -12,6 +12,7 @@
 @property(retain) DOMHTMLOptionElement * _node;
 
 
+- (void)dealloc;
 - (void)unselect;
 - (id)node;
 - (BOOL)selected;
@@ -19,6 +20,5 @@
 - (id)_node;
 - (void)set_node:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
-- (void)dealloc;
 
 @end

@@ -14,6 +14,7 @@
 
 + (id)createPeripheralWithDOMHTMLSelectElement:(id)arg1;
 
+- (void)dealloc;
 - (id)_selectControl;
 - (id)_selectionNode;
 - (id)assistantView;
@@ -21,6 +22,5 @@
 - (id)initWithDOMHTMLSelectElement:(id)arg1;
 - (void)set_selectControl:(id)arg1;
 - (void)set_selectionNode:(id)arg1;
-- (void)dealloc;
 
 @end

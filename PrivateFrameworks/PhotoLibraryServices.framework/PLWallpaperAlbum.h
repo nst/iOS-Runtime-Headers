@@ -5,13 +5,13 @@
 @interface PLWallpaperAlbum : PLManagedAlbum  {
 }
 
-+ (id)entityName;
 + (id)wallpaperAlbumInLibrary:(id)arg1;
++ (id)entityName;
 + (id)entityInManagedObjectContext:(id)arg1;
 
-- (id)localizedTitle;
-- (id)posterImage;
-- (void)awakeFromInsert;
 - (id)_kindDescription;
+- (id)posterImage;
+- (id)localizedTitle;
+- (void)awakeFromInsert;
 
 @end

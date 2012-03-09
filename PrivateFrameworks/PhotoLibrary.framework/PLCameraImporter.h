@@ -13,6 +13,7 @@
     PLCameraImportQueue *_importQueue;
     PLCameraImportQueue *_deleteQueue;
     NSMutableArray *_orphanItems;
+    NSMutableArray *_coalescedDeletedItems;
     BOOL _importInProgress;
     NSMutableDictionary *_parentFolderMapping;
     BOOL _autosplitEvents;
@@ -31,13 +32,14 @@
 @property(copy) NSString * importSessionIdentifier;
 
 
+- (void)dealloc;
 - (void)removeItems:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (void)setCamera:(id)arg1;
+- (id)camera;
 - (void)setItems:(id)arg1;
 - (id)items;
 - (id)delegate;
-- (void)setCamera:(id)arg1;
-- (id)camera;
+- (void)setDelegate:(id)arg1;
 - (void)setItemsMapping:(id)arg1;
 - (void)stopImport;
 - (void)importItems:(id)arg1;
@@ -66,6 +68,7 @@
 - (void)didRemoveDevice:(id)arg1;
 - (void)didReceiveMetadata:(id)arg1 forCameraFile:(id)arg2 error:(id)arg3;
 - (void)didReceiveThumbnail:(struct CGImage { }*)arg1 forCameraFile:(id)arg2 error:(id)arg3;
+- (void)_coalescedRemoveImportItems;
 - (void)removeImportItemsForCameraFiles:(id)arg1;
 - (void)cameraDidError:(id)arg1;
 - (void)camaraDidEnumerateContents;
@@ -87,7 +90,6 @@
 - (id)_eventNameFromDate:(id)arg1;
 - (void)importImportItem:(id)arg1;
 - (void)didReceiveThumbnail:(struct CGImage { }*)arg1 forImportItem:(id)arg2 error:(id)arg3;
-- (void)_removeImportItemForCameraFile:(id)arg1;
 - (void)_didFinishDeletingItems:(id)arg1;
 - (void)_deleteImportItemFromDisk:(id)arg1;
 - (void)_addImportItemFromCameraFile:(id)arg1;
@@ -95,6 +97,5 @@
 - (id)importItemForCameraFile:(id)arg1;
 - (void)setImportSessionIdentifier:(id)arg1;
 - (void)didReceiveImportNotification:(id)arg1;
-- (void)dealloc;
 
 @end

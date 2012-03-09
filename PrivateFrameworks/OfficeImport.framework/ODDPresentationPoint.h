@@ -10,10 +10,10 @@
 }
 
 
+- (void)dealloc;
+- (void)setType:(int)arg1;
+- (id)children;
 - (void)addChild:(id)arg1 order:(unsigned long)arg2;
 - (id)parent;
-- (id)children;
-- (void)setType:(int)arg1;
-- (void)dealloc;
 
 @end

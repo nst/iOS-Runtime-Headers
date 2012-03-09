@@ -9,9 +9,14 @@
     NSDictionary *_dictionary;
 }
 
-+ (id)defaultConditionalContext;
 + (void)setDefaultConditionalContext:(id)arg1;
++ (id)defaultConditionalContext;
 
+- (id)init;
+- (void)dealloc;
+- (id)initWithDictionary:(id)arg1;
+- (id)dictionaryByRemovingConditions;
+- (id)dictionaryByEvaluatingConditions;
 - (id)_dictionaryByEvaluatingChildrenOfDictionary:(id)arg1 withForcedValue:(int)arg2;
 - (BOOL)_checkConditions:(id)arg1 withOperator:(id)arg2;
 - (int)_logicalOperatorForString:(id)arg1;
@@ -19,10 +24,5 @@
 - (id)_dictionaryByEvaluatingDictionary:(id)arg1 withForcedValue:(int)arg2;
 - (id)_dictionaryByEvaluatingWithForcedValue:(int)arg1;
 - (id)initWithDictionary:(id)arg1 conditionalContext:(id)arg2;
-- (id)initWithDictionary:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)dictionaryByRemovingConditions;
-- (id)dictionaryByEvaluatingConditions;
 
 @end

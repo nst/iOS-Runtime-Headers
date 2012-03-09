@@ -33,8 +33,9 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })extendRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (void)outerVertices:(struct CGPoint { float x1; float x2; }*)arg1 fromBorders:(id)arg2 swollenBy:(float)arg3;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)initWithGraphicObject:(id)arg1;
 - (void)addToArray:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)removeFromArrayAtIndex:(unsigned int)arg1;
@@ -76,11 +77,10 @@
 - (int)compareXBounds:(id)arg1;
 - (int)compareYBounds:(id)arg1;
 - (long)zOrder;
-- (BOOL)isHorizontal;
 - (id)page;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (BOOL)isHorizontal;
 - (BOOL)isVertical;
 
 @end

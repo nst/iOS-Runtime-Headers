@@ -13,7 +13,13 @@
 @property(retain) NSMutableArray * components;
 
 
+- (id)components;
+- (id)description;
+- (void)dealloc;
+- (void)setComponents:(id)arg1;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)formattedAddressLineAtIndex:(unsigned int)arg1;
 - (unsigned int)formattedAddressLinesCount;
 - (void)addFormattedAddressLine:(id)arg1;
@@ -21,12 +27,6 @@
 - (id)componentAtIndex:(unsigned int)arg1;
 - (unsigned int)componentsCount;
 - (void)addComponent:(id)arg1;
-- (id)components;
-- (void)writeTo:(id)arg1;
-- (void)setComponents:(id)arg1;
-- (id)dictionaryRepresentation;
 - (id)formattedAddressLines;
-- (id)description;
-- (void)dealloc;
 
 @end

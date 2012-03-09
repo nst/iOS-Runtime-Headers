@@ -46,8 +46,8 @@
 @property BOOL previewMode;
 
 
+- (void)dealloc;
 - (void)cancelButtonClicked:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
 - (void)okButtonClicked:(id)arg1;
 - (void)dismiss;
@@ -56,6 +56,7 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)beginBackgroundSaveWithTile:(id)arg1 progressTitle:(id)arg2 completionCallbackTarget:(id)arg3 options:(int)arg4;
 - (BOOL)previewMode;
@@ -76,6 +77,7 @@
 - (void)setControlsAreVisible:(BOOL)arg1;
 - (BOOL)controlsAreVisible;
 - (void)setCancelButtonHidden:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleCropRect;
 - (void)cropOverlayBottomBarPauseButtonClicked:(id)arg1;
 - (void)cropOverlayBottomBarPlayButtonClicked:(id)arg1;
 - (void)_fadeOutCompleted:(id)arg1;
@@ -98,6 +100,7 @@
 - (id)shutterButton;
 - (id)_newOverlayViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 lighterEdgeOnTop:(BOOL)arg2;
 - (void)_updateToolbarItems:(BOOL)arg1;
+- (void)_updateCropRectInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_pauseButtonPressed:(id)arg1;
 - (void)_playButtonPressed:(id)arg1;
 - (void)setProgressDone;
@@ -107,6 +110,5 @@
 - (void)setShowProgress:(BOOL)arg1 title:(id)arg2;
 - (void)setTitle:(id)arg1 okButtonTitle:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2;
-- (void)dealloc;
 
 @end

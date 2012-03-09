@@ -13,9 +13,9 @@
 @property(readonly) NSString * personID;
 
 
-- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
-- (id)authToken;
-- (id)personID;
 - (void)dealloc;
+- (id)personID;
+- (id)authToken;
+- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 
 @end

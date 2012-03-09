@@ -15,11 +15,6 @@
 - (void)setAccount:(id)arg1;
 - (id)initWithAccount:(id)arg1;
 - (id)account;
-- (id)bundle;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)_handleDaemonConnected:(id)arg1;
-- (BOOL)isConnectedToDaemon;
 - (void)dealloc;
 - (void)killImagent;
 - (id)accountLoginStatus:(id)arg1;
@@ -37,5 +32,10 @@
 - (id)specifierForAlias:(id)arg1;
 - (id)specifiers;
 - (BOOL)canBeShownFromSuspendedState;
+- (void)_handleDaemonConnected:(id)arg1;
+- (BOOL)isConnectedToDaemon;
+- (id)bundle;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 
 @end

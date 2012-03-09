@@ -37,6 +37,8 @@
 @property(retain) GKSectionHeader * statusView;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setLeaderboards:(id)arg1;
 - (void)setUsesUppercaseTitles:(BOOL)arg1;
 - (void)setPlayerInfo:(id)arg1;
@@ -92,6 +94,7 @@
 - (id)globalLeaderboard;
 - (void)setAllowsFriendSelection:(BOOL)arg1;
 - (BOOL)allowsFriendSelection;
+- (void)tableView:(id)arg1 refreshCellAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
 - (void)tableView:(id)arg1 willDrawCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -101,11 +104,12 @@
 - (int)sectionItemCountInTableView:(id)arg1;
 - (id)sectionReuseIdentifierInTableView:(id)arg1;
 - (float)sectionHeaderHeightInTableView:(id)arg1;
-- (void)filterWithSearchText:(id)arg1;
 - (id)tableView:(id)arg1 willSelectIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forItem:(id)arg3;
 - (id)tableView:(id)arg1 itemAtIndex:(int)arg2;
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
+- (void)filterWithSearchText:(id)arg1;
+- (id)player;
 - (void)setLeaderboardDelegate:(id)arg1;
 - (id)leaderboardDelegate;
 - (id)initWithGame:(id)arg1;
@@ -113,18 +117,15 @@
 - (void)setStatusView:(id)arg1;
 - (id)game;
 - (void)setCategoryID:(id)arg1;
+- (void)setPlayer:(id)arg1;
 - (void)setGame:(id)arg1;
 - (int)playerScope;
 - (int)timeScope;
 - (void)setPlayerScope:(int)arg1;
 - (void)setTimeScope:(int)arg1;
 - (id)categoryID;
-- (void)setPlayer:(id)arg1;
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)player;
-- (id)init;
-- (void)dealloc;
 
 @end

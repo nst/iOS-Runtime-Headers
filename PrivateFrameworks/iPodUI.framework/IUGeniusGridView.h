@@ -5,58 +5,62 @@
 @class UIImageView, UILabel, <IUGeniusGridViewDelegate>, UIView, NSMutableArray, NSString, NSArray;
 
 @interface IUGeniusGridView : UIView  {
+    UILabel *_artistsLabel;
     <IUGeniusGridViewDelegate> *_delegate;
-    NSString *_title;
-    UILabel *_titleLabel;
+    BOOL _enabled;
     struct CGImage { } *_image;
     UIView *_coversViewContainer;
     NSMutableArray *_coverViews;
+    int _orientation;
     UIImageView *_playImageView;
     NSArray *_representativeArtists;
-    UILabel *_artistsLabel;
-    int _orientation;
     BOOL _showsPlayButton;
+    NSString *_title;
+    UILabel *_titleLabel;
 }
 
 @property <IUGeniusGridViewDelegate> * delegate;
-@property(copy) NSString * title;
+@property(readonly) UIView * coversViewContainer;
+@property(getter=isEnabled) BOOL enabled;
 @property struct CGImage { }* image;
 @property(retain) NSArray * representativeArtists;
 @property BOOL showsPlayButton;
-@property(readonly) UIView * coversViewContainer;
+@property(copy) NSString * title;
 @property(readonly) double durationForFlip;
 @property(readonly) int orientation;
 
 + (float)coverImageSideLength;
 
+- (void)dealloc;
 - (id)representativeArtists;
-- (void)setDelegate:(id)arg1;
 - (void)viewDidUnload;
 - (void)prepareForReuse;
 - (struct CGImage { }*)image;
 - (id)title;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)isEnabled;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (int)orientation;
 - (id)delegate;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
 - (void)setImage:(struct CGImage { }*)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)showsPlayButton;
 - (void)_removeAllAnimations;
 - (double)durationForFlip;
 - (void)_addFlipAnimationToLayer:(id)arg1 withBeginTime:(double)arg2 forwards:(BOOL)arg3;
-- (void)_updateArtistsLabelForStatusBarHeightChange;
 - (void)_setCoverImages;
+- (void)_updateArtistsLabelLayout;
 - (void)_invalidateLayout;
 - (id)_playButtonImage;
 - (unsigned int)_gridSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gridFrame;
 - (void)_statusBarHeightDidChange:(id)arg1;
 - (void)flipToOrientation:(int)arg1 animated:(BOOL)arg2;
-- (void)setShowsPlayButton:(BOOL)arg1;
 - (void)setRepresentativeArtists:(id)arg1;
+- (void)setShowsPlayButton:(BOOL)arg1;
 - (id)coversViewContainer;
-- (void)dealloc;
 
 @end

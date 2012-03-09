@@ -10,15 +10,15 @@
 }
 
 
-- (id)initWithDrawable:(id)arg1 groupId:(id)arg2;
-- (void)setDrawable:(id)arg1;
-- (id)drawable;
-- (void)setGroupId:(id)arg1;
-- (id)groupId;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)initWithDrawable:(id)arg1 groupId:(id)arg2;
+- (void)setDrawable:(id)arg1;
+- (id)drawable;
+- (void)setGroupId:(id)arg1;
+- (id)groupId;
 
 @end

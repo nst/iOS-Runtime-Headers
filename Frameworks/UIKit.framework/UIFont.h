@@ -34,6 +34,7 @@
 + (id)systemFontOfSize:(float)arg1;
 + (id)boldSystemFontOfSize:(float)arg1;
 
+- (id)description;
 - (BOOL)isFixedPitch;
 - (float)xHeight;
 - (Class)classForCoder;
@@ -56,7 +57,6 @@
 - (float)ascender;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
 - (struct __CTFont { }*)_gkCTFont;
 
 @end

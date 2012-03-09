@@ -16,13 +16,13 @@
 @property(copy) NSString * sendButtonTitle;
 @property(retain) id shouldSendMessageFunction;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
-- (void)focus;
 - (void)dealloc;
+- (void)focus;
+- (id)attributeKeys;
 - (id)_shouldSendMessageFunction;
 - (id)_messageChangedFunction;
 - (id)shouldSendMessageFunction;

@@ -6,11 +6,11 @@
 }
 
 
-- (int)command;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (double)customRetryInterval;
 - (BOOL)wantsCustomRetryInterval;
 - (BOOL)ignoresNetworkConnectivity;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
+- (int)command;
 
 @end

@@ -27,6 +27,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithGeniusMixPlaylist:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithQuery:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 setShuffleMode:(int)arg2;
@@ -43,7 +45,5 @@
 - (id)nowPlayingItemForMusicPlayerServer:(id)arg1;
 - (void)musicPlayerServer:(id)arg1 setNowPlayingItem:(id)arg2;
 - (void)_appDefaultsChangedNotification:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

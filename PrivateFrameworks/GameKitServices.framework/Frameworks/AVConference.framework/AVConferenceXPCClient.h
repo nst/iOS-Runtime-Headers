@@ -17,6 +17,14 @@
 
 + (id)AVConferenceXPCClientSingleton;
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
+- (void)dealloc;
+- (id)allocWithZone:(struct _NSZone { }*)arg1;
 - (void)deregisterFromService:(char *)arg1;
 - (id)registeredBlocks;
 - (id)createServerDiedDictionary;
@@ -27,13 +35,5 @@
 - (void)registerBlockForService:(char *)arg1 block:(id)arg2;
 - (struct _xpc_connection_s { }*)connection;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 reply:(id)arg3;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
-- (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 @end

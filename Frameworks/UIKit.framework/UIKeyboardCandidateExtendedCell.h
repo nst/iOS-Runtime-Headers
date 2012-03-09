@@ -88,6 +88,11 @@
 + (id)placeholderCellWithVisualStyle:(int)arg1;
 + (id)cellWithCandidate:(id)arg1 visualStyle:(int)arg2;
 
+- (void)setTarget:(id)arg1;
+- (SEL)action;
+- (id)target;
+- (id)candidate;
+- (void)dealloc;
 - (void)setUsesGroupHeaderAppearance:(BOOL)arg1;
 - (void)setOnRightEdge:(BOOL)arg1;
 - (void)setOnLeftEdge:(BOOL)arg1;
@@ -153,10 +158,5 @@
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })size;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTarget:(id)arg1;
-- (SEL)action;
-- (id)target;
-- (id)candidate;
-- (void)dealloc;
 
 @end

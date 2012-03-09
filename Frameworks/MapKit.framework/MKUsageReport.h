@@ -13,11 +13,11 @@
 @property unsigned int count;
 
 
-- (void)add:(unsigned int)arg1;
+- (unsigned int)count;
+- (void)dealloc;
 - (id)key;
 - (void)setCount:(unsigned int)arg1;
 - (id)initWithKey:(id)arg1 count:(unsigned int)arg2;
-- (unsigned int)count;
-- (void)dealloc;
+- (void)add:(unsigned int)arg1;
 
 @end

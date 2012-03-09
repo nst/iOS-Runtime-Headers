@@ -13,11 +13,11 @@
 @property(readonly) SSURLRequestProperties * URLRequestProperties;
 
 
-- (id)initWithDictionary:(id)arg1;
-- (id)title;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)initWithDictionary:(id)arg1;
+- (id)title;
 - (id)URLRequestProperties;
 - (id)newViewControllerInSection:(id)arg1;
 

@@ -11,11 +11,11 @@
 
 + (id)swapperForObject:(id)arg1 withClassName:(id)arg2;
 
-- (id)object;
+- (void)dealloc;
 - (id)className;
 - (id)initWithObject:(id)arg1 andClassName:(id)arg2;
+- (id)object;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

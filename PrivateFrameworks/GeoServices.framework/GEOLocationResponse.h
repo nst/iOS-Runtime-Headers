@@ -13,18 +13,18 @@
 @property(retain) NSMutableArray * locations;
 
 
-- (void)setStatus:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)locationAtIndex:(unsigned int)arg1;
 - (unsigned int)locationsCount;
 - (void)addLocation:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)setStatus:(int)arg1;
+- (int)status;
 - (void)setLocations:(id)arg1;
 - (id)dictionaryRepresentation;
-- (int)status;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)locations;
-- (id)description;
-- (void)dealloc;
 - (id)initWithGMMWaypointFeedback:(id)arg1;
 
 @end

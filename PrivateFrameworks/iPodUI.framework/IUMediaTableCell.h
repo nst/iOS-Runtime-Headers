@@ -28,6 +28,7 @@
 @property SEL mediaCellAccessoryAction;
 
 
+- (void)dealloc;
 - (void)_didCreateContentView;
 - (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
 - (void)setAccessoryView:(id)arg1;
@@ -43,6 +44,10 @@
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDrawAsDisabled:(BOOL)arg1;
+- (BOOL)drawAsDisabled;
+- (id)configuration;
+- (void)setConfiguration:(id)arg1;
 - (int)mediaDisclosureStyle;
 - (void)setMediaCellAccessoryAction:(SEL)arg1;
 - (void)setMediaCellTarget:(id)arg1;
@@ -65,10 +70,5 @@
 - (void)_drawBackgroundInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
 - (BOOL)useSubviewLayout;
 - (void)_fixupDebugBackgroundColors;
-- (void)dealloc;
-- (void)setDrawAsDisabled:(BOOL)arg1;
-- (BOOL)drawAsDisabled;
-- (id)configuration;
-- (void)setConfiguration:(id)arg1;
 
 @end

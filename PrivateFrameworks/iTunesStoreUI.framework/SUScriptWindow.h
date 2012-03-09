@@ -28,13 +28,14 @@
 @property(retain) NSNumber * width;
 @property(readonly) SUScriptViewController * windowParentViewController;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 + (void)_dismissWindowsAnimated:(BOOL)arg1;
 + (void)dismissWindowsWithOptions:(id)arg1;
 
-- (id)attributeKeys;
+- (id)init;
+- (void)dealloc;
 - (void)setHeight:(id)arg1;
 - (id)height;
 - (void)_setWidth:(float)arg1;
@@ -45,8 +46,7 @@
 - (id)context;
 - (void)setWidth:(id)arg1;
 - (id)width;
-- (id)init;
-- (void)dealloc;
+- (id)attributeKeys;
 - (void)_reloadVisibility;
 - (id)windowParentViewController;
 - (void)setMaskFunction:(id)arg1;

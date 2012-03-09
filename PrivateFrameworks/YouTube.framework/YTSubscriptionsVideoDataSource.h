@@ -10,7 +10,7 @@
 }
 
 
-- (void)setSubscriptionURL:(id)arg1 requiresAuthentication:(BOOL)arg2;
 - (void)reloadData;
+- (void)setSubscriptionURL:(id)arg1 requiresAuthentication:(BOOL)arg2;
 
 @end

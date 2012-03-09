@@ -52,13 +52,13 @@
 }
 
 
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)layoutSubviews;
 - (void)didRotateToInterfaceOrientation:(int)arg1;
 - (void)setDelayedScrollViewDelegate:(id)arg1;
 - (void)_setIsRotating:(BOOL)arg1;
 - (void)_centerRotationRectWithWebViewToScale:(id)arg1;
 - (void)_redrawWebView:(id)arg1 withOldWidth:(float)arg2 andNewSize:(struct CGSize { float x1; float x2; })arg3 enablingTileDrawing:(BOOL)arg4;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)layoutSubviews;
 
 @end

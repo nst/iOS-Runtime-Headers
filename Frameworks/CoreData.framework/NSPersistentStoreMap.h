@@ -14,6 +14,7 @@
 
 + (void)initialize;
 
+- (void)dealloc;
 - (id)externalMapping;
 - (unsigned long long)_cheatAndLookAtCurrentValueOfnextPK64;
 - (id)_storeMetadataForSaving;
@@ -33,6 +34,5 @@
 - (void)setMetadata:(id)arg1;
 - (id)_updatedMetadataWithSeed:(id)arg1 includeVersioning:(BOOL)arg2;
 - (id)metadata;
-- (void)dealloc;
 
 @end

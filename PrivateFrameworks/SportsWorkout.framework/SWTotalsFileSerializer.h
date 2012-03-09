@@ -36,11 +36,16 @@
 
 + (void)initialize;
 
-- (double)weight;
 - (void)parserDidStartDocument:(id)arg1;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
+- (id)init;
+- (void)dealloc;
+- (id)initWithContentsOfURL:(id)arg1;
+- (void)reset;
+- (id)url;
+- (double)weight;
 - (unsigned int)totalWeightWorkouts;
 - (void)parseWeight;
 - (void)parseTotalWeightWorkouts;
@@ -64,10 +69,5 @@
 - (unsigned int)total10K;
 - (unsigned int)total5K;
 - (unsigned int)totalWorkouts;
-- (id)initWithContentsOfURL:(id)arg1;
-- (void)reset;
-- (id)url;
-- (id)init;
-- (void)dealloc;
 
 @end

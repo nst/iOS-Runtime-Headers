@@ -32,6 +32,8 @@
 
 + (id)codedPropertyKeys;
 
+- (id)description;
+- (void)dealloc;
 - (void)setShouldUsePipelining:(BOOL)arg1;
 - (void)setMaxPlayersTurnBased:(unsigned int)arg1;
 - (void)setMaxPlayersHosted:(unsigned int)arg1;
@@ -54,7 +56,5 @@
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
 - (void)setGame:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

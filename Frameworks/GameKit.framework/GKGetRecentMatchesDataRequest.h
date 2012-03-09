@@ -17,6 +17,9 @@
 @property unsigned int count;
 
 
+- (unsigned int)count;
+- (id)init;
+- (void)dealloc;
 - (id)sinceDate;
 - (id)otherPlayer;
 - (id)game;
@@ -26,8 +29,5 @@
 - (id)key;
 - (id)request;
 - (void)setCount:(unsigned int)arg1;
-- (unsigned int)count;
-- (id)init;
-- (void)dealloc;
 
 @end

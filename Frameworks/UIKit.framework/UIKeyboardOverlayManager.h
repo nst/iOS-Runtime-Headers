@@ -5,9 +5,9 @@
 @interface UIKeyboardOverlayManager : NSObject  {
 }
 
++ (id)sharedInstance;
 + (id)overlayDirectory;
 + (BOOL)overlaysEnabled;
-+ (id)sharedInstance;
 
 - (id)localizedNameForOverlay:(id)arg1;
 - (id)overlayList;

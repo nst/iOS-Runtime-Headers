@@ -18,6 +18,7 @@
 + (int)lineCount;
 + (float)defaultRowHeight;
 
+- (void)dealloc;
 - (void)setLocalDetails:(id)arg1;
 - (id)textForLine:(int)arg1;
 - (id)leaderboardStringWithGameRecord:(id)arg1 localGameRecord:(id)arg2;
@@ -34,6 +35,5 @@
 - (void)setGame:(id)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

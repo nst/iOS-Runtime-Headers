@@ -13,16 +13,16 @@
 @property int value;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasValue:(BOOL)arg1;
-- (BOOL)hasValue;
-- (void)setOptionID:(int)arg1;
-- (void)writeTo:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (int)optionID;
 - (id)dictionaryRepresentation;
 - (int)value;
 - (void)setValue:(int)arg1;
-- (int)optionID;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasValue:(BOOL)arg1;
+- (BOOL)hasValue;
+- (void)writeTo:(id)arg1;
+- (void)setOptionID:(int)arg1;
 
 @end

@@ -21,6 +21,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithPDPresentation:(id)arg1 archiver:(id)arg2;
 - (void)setHtmlDocumentSizeInArchiver;
 - (void)_pushEmptySlideWithMessage:(id)arg1;
@@ -33,6 +34,5 @@
 - (void)mapDefaultCssStylesAt:(id)arg1;
 - (id)blipAtIndex:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })slideSize;
-- (void)dealloc;
 
 @end

@@ -15,13 +15,13 @@
 @property id delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)finalize;
+- (void)dealloc;
 - (void)setInternalDevices:(id)arg1;
 - (BOOL)isBrowsing;
 - (void)setBrowsing:(BOOL)arg1;
 - (id)internalDevices;
+- (void)finalize;
 - (id)delegate;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

@@ -27,6 +27,7 @@
 @property(retain) NSDate * lastStatDate;
 
 
+- (void)dealloc;
 - (id)lastStatDate;
 - (int)maxLogFiles;
 - (void)setOutputLevel:(int)arg1;
@@ -44,6 +45,5 @@
 - (id)initWithPrefix:(id)arg1 logPath:(id)arg2 logName:(id)arg3;
 - (int)logLevel;
 - (int)outputLevel;
-- (void)dealloc;
 
 @end

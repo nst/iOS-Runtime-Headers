@@ -22,6 +22,7 @@
 @property unsigned int arrowDirections;
 
 
+- (void)dealloc;
 - (unsigned int)arrowDirections;
 - (BOOL)_presentSheetWithDisabledWebView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculatePresentationRect;
@@ -36,6 +37,5 @@
 - (id)node;
 - (void)didRotate:(id)arg1;
 - (void)willRotate:(id)arg1;
-- (void)dealloc;
 
 @end

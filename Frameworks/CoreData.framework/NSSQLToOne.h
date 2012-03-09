@@ -13,6 +13,8 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2 virtualForToMany:(id)arg3;
 - (void)_setForeignOrderKey:(id)arg1;
 - (id)initForReadOnlyFetchWithEntity:(id)arg1 propertyDescription:(id)arg2;
@@ -26,7 +28,5 @@
 - (unsigned int)slot;
 - (id)foreignKey;
 - (BOOL)isOptional;
-- (id)description;
-- (void)dealloc;
 
 @end

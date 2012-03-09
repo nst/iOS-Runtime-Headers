@@ -16,6 +16,8 @@
 @property(retain) NSMutableArray * slideLayouts;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)theme;
 - (void)setTheme:(id)arg1;
 - (id)initWithDefaultsAndTheme:(id)arg1;
@@ -46,7 +48,5 @@
 - (id)styleMatrix;
 - (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
 - (void)doneWithContent;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -10,6 +10,10 @@
 }
 
 
+- (void)save;
+- (id)init;
+- (void)dealloc;
+- (id)identifier;
 - (id)_pathFromURI:(id)arg1;
 - (id)getNewIDForObject:(id)arg1;
 - (void)_addObject:(id)arg1 objectIDMap:(id)arg2;
@@ -32,9 +36,5 @@
 - (id)executeSaveChangesRequest:(id)arg1 withContext:(id)arg2;
 - (id)executeCountRequest:(id)arg1 withContext:(id)arg2;
 - (id)metadata;
-- (id)identifier;
-- (void)save;
-- (id)init;
-- (void)dealloc;
 
 @end

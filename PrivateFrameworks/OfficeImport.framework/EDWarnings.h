@@ -7,9 +7,9 @@
 }
 
 
-- (void)reportWarningsWithAssociatedObject:(id)arg1;
-- (void)addWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)reportWarningsWithAssociatedObject:(id)arg1;
+- (void)addWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 
 @end

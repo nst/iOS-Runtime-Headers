@@ -19,6 +19,7 @@
 + (id)defaultObliqueStroke;
 + (id)defaultStyle;
 
+- (void)dealloc;
 - (id)stroke:(int)arg1;
 - (id)leftStroke;
 - (id)rightStroke;
@@ -38,6 +39,5 @@
 - (void)setBottomLeftToTopRightStroke:(id)arg1;
 - (void)applyOverridesFrom:(id)arg1;
 - (id)shallowCopy;
-- (void)dealloc;
 
 @end

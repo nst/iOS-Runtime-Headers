@@ -17,8 +17,8 @@
 - (void)resultsForMessageMove:(id)arg1;
 - (id)initWithMessageIDs:(id)arg1 newRemoteIDsByMessageID:(id)arg2 failures:(id)arg3;
 - (void)taskFailed:(id)arg1 withStatusCode:(int)arg2;
+- (void)dealloc;
 - (void)setError:(id)arg1;
 - (id)error;
-- (void)dealloc;
 
 @end

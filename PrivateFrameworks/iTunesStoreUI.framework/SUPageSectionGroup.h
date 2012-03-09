@@ -15,13 +15,13 @@
 @property int style;
 
 
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)sections;
 - (void)setSections:(id)arg1;
 - (int)style;
 - (void)setStyle:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (int)_sectionStyleForString:(id)arg1;
 - (int)defaultSectionIndex;
 - (void)setDefaultSectionIndex:(int)arg1;

@@ -11,15 +11,15 @@
 }
 
 
-- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
+- (void)dealloc;
+- (void)buttonClicked:(id)arg1;
+- (id)initWithResult:(struct __DDResult { }*)arg1;
 - (void)viewDidUnload;
 - (id)nibName;
 - (id)nibBundle;
 - (void)viewDidLoad;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)didReceiveMemoryWarning;
-- (id)initWithResult:(struct __DDResult { }*)arg1;
-- (void)dealloc;
-- (void)buttonClicked:(id)arg1;
+- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 
 @end

@@ -16,15 +16,15 @@
 + (id)pairWithFirstPointer:(id)arg1 andSecondPointer:(id)arg2;
 + (id)pairWithFirst:(id)arg1 andSecond:(id)arg2;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
+- (id)second;
 - (id)initWithFirstPointer:(id)arg1 andSecond:(id)arg2;
 - (id)initWithFirst:(id)arg1 andSecondPointer:(id)arg2;
 - (id)initWithFirstPointer:(id)arg1 andSecondPointer:(id)arg2;
 - (id)initWithFirst:(id)arg1 andSecond:(id)arg2;
 - (id)first;
-- (id)second;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -36,12 +36,13 @@
 }
 
 
+- (void)dealloc;
+- (void)setScale:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })scale;
 - (int)paragraphCount;
 - (int)outlineLevel;
 - (void)setOutlineLevel:(int)arg1;
 - (id)initWithState:(id)arg1;
-- (void)setScale:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })scale;
 - (struct __CFString { }*)createStyleName:(id)arg1 type:(const char *)arg2;
 - (BOOL)multiColumned;
 - (struct __CFString { }*)cachedClassStringForCellStyle:(id)arg1 fillStyle:(id)arg2 cellClass:(Class)arg3 vectorStyles:(id*)arg4 groupLevel:(unsigned short)arg5 hasFormula:(BOOL)arg6;
@@ -87,6 +88,5 @@
 - (void)setParagraphIndex:(int)arg1;
 - (unsigned int)textScale;
 - (id)tableState;
-- (void)dealloc;
 
 @end

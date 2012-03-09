@@ -11,6 +11,7 @@
 @property(retain) UIAutocorrectInlinePrompt * inlineView;
 
 
+- (void)dealloc;
 - (void)setInlineView:(id)arg1;
 - (id)inlineView;
 - (void)inlineShowPreviousCandidate;
@@ -19,6 +20,5 @@
 - (void)showInlineView;
 - (void)hideInlineView;
 - (BOOL)handleTabKeyWithShift:(BOOL)arg1;
-- (void)dealloc;
 
 @end

@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (void)formWillHide;
 - (BOOL)formWasEdited;
 - (void)dataSourceHasChangedForFrame:(id)arg1;
@@ -30,6 +31,5 @@
 - (BOOL)hasCurrentSuggestions;
 - (struct { id x1; unsigned int x2; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
 - (void)acceptedAutoFillWord:(id)arg1;
-- (void)dealloc;
 
 @end

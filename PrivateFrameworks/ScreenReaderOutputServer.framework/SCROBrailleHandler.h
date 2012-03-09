@@ -26,26 +26,26 @@
 }
 
 
+- (void)dealloc;
+- (int)handleSetValue:(id)arg1 forKey:(int)arg2 trusted:(BOOL)arg3;
+- (int)handleRegisterCallbackForKey:(int)arg1 trusted:(BOOL)arg2;
+- (int)handlePerformActionForKey:(int)arg1 trusted:(BOOL)arg2;
+- (void)handleDisplayModeChanged:(id)arg1;
+- (void)handleBrailleTableFailedToLoad:(id)arg1;
+- (void)handleFailedToLoadBluetoothDevice:(id)arg1;
+- (void)handleBrailleDidShowNextAnnouncement:(id)arg1;
+- (void)handleBrailleDidShowPreviousAnnouncement:(id)arg1;
+- (void)handleBrailleDidPanRight:(id)arg1 elementToken:(id)arg2 appToken:(id)arg3;
+- (void)handleBrailleDidPanLeft:(id)arg1 elementToken:(id)arg2 appToken:(id)arg3;
+- (void)handleBrailleDidDisplay:(id)arg1;
+- (void)handleBrailleKeyMemorize:(id)arg1;
+- (void)handleBrailleKeyWillMemorize:(id)arg1;
+- (void)handleBrailleKeypress:(id)arg1;
+- (void)invalidate;
 - (id)initWithBrailleDisplayManager:(id)arg1;
 - (int)handleGetValue:(id*)arg1 forKey:(int)arg2 withObject:(id)arg3 trusted:(BOOL)arg4;
-- (void)configurationDidChange;
-- (void)handleBrailleDriverDidLoad;
 - (void)handleBrailleDriverDisconnected;
-- (int)handlePerformActionForKey:(int)arg1 trusted:(BOOL)arg2;
-- (int)handleRegisterCallbackForKey:(int)arg1 trusted:(BOOL)arg2;
-- (int)handleSetValue:(id)arg1 forKey:(int)arg2 trusted:(BOOL)arg3;
-- (void)handleBrailleKeypress:(id)arg1;
-- (void)handleBrailleKeyWillMemorize:(id)arg1;
-- (void)handleBrailleKeyMemorize:(id)arg1;
-- (void)handleBrailleDidDisplay:(id)arg1;
-- (void)handleBrailleDidPanLeft:(id)arg1 elementToken:(id)arg2 appToken:(id)arg3;
-- (void)handleBrailleDidPanRight:(id)arg1 elementToken:(id)arg2 appToken:(id)arg3;
-- (void)handleBrailleDidShowPreviousAnnouncement:(id)arg1;
-- (void)handleBrailleDidShowNextAnnouncement:(id)arg1;
-- (void)handleFailedToLoadBluetoothDevice:(id)arg1;
-- (void)handleBrailleTableFailedToLoad:(id)arg1;
-- (void)handleDisplayModeChanged:(id)arg1;
-- (void)invalidate;
-- (void)dealloc;
+- (void)handleBrailleDriverDidLoad;
+- (void)configurationDidChange;
 
 @end

@@ -46,6 +46,14 @@
 + (id)defaultEscherWordArtProperties;
 + (id)defaultProperties;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)init;
+- (void)dealloc;
+- (void)setRotation:(double)arg1;
+- (double)rotation;
+- (void)setColumnCount:(int)arg1;
+- (int)columnCount;
 - (void)setRespectLastFirstLineSpacing:(BOOL)arg1;
 - (void)setTopInset:(double)arg1;
 - (void)setLeftInset:(double)arg1;
@@ -101,13 +109,5 @@
 - (void)removeUnnecessaryOverrides;
 - (void)setVerticalType:(int)arg1;
 - (id)initWithDefaults;
-- (void)setRotation:(double)arg1;
-- (double)rotation;
-- (void)setColumnCount:(int)arg1;
-- (int)columnCount;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)init;
-- (void)dealloc;
 
 @end

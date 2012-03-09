@@ -11,7 +11,10 @@
 - (void)setAccount:(id)arg1;
 - (BOOL)isEnabledForDataclass:(id)arg1;
 - (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
+- (void)dealloc;
+- (void)_accountsChanged:(id)arg1;
 - (void)cancelButtonClicked:(id)arg1;
+- (id)specifiers;
 - (void)_foldersToPushChanged;
 - (id)numFoldersToPushString:(id)arg1;
 - (id)accountIntegerPropertyWithSpecifier:(id)arg1;
@@ -22,14 +25,11 @@
 - (id)_accountFromManager;
 - (id)_accountInSpecifier;
 - (void)reloadAccountOnSpecifier;
-- (void)_accountsChanged:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewDidLoad;
-- (void)dealloc;
 - (void)_folderHierarchyChanged;
-- (id)specifiers;
 - (id)otherSpecifiers;
 - (Class)accountInfoControllerClass;
 - (BOOL)backgroundDeleteAccountData;

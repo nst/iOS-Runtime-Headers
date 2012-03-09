@@ -10,6 +10,7 @@
 + (id)localURLForAsset:(struct __MobileAsset { }*)arg1;
 + (id)assetDownloadOptionsFromMetadata:(id)arg1 priority:(int)arg2;
 + (id)defaultAssetDownloadOptionsWithPriority:(int)arg1;
++ (void)cancelDownloadIfNecessary:(struct __MobileAsset { }*)arg1;
 + (id)tryCreateDocumentationFromAsset:(struct __MobileAsset { }*)arg1;
 + (id)createPossibleDocumentationAssetsFromDescriptor:(id)arg1;
 + (id)createDescriptorFromAsset:(struct __MobileAsset { }*)arg1 state:(id)arg2;

@@ -27,7 +27,7 @@
 + (void)_flushCacheOnNotification:(id)arg1;
 + (void)initialize;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (void)setSelectionTintColor:(id)arg1 layoutSubviews:(BOOL)arg2;
 - (void)_setSectionLocationAnimationDidStop;
 - (void)_decrementAnimationCount;
@@ -61,9 +61,9 @@
 - (void)setSeparatorStyle:(int)arg1;
 - (id)_backgroundColor;
 - (id)backgroundColor;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

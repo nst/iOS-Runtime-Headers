@@ -13,10 +13,10 @@
 }
 
 
-- (void)finishWithError:(id)arg1;
-- (id)contentType;
 - (double)timeoutInterval;
 - (void)dealloc;
+- (void)finishWithError:(id)arg1;
+- (id)contentType;
 - (BOOL)shouldLogIncomingData;
 - (BOOL)requiresEASVersionInformaton;
 - (BOOL)shouldHandlePasswordErrors;

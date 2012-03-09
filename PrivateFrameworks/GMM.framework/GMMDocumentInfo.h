@@ -15,16 +15,16 @@
 @property(retain) NSString * attributionUrl;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (id)author;
 - (void)setAuthor:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)attributionUrl;
 - (BOOL)hasAttributionUrl;
 - (BOOL)hasAuthor;
 - (void)setAttributionUrl:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -6,18 +6,18 @@
 }
 
 
-- (float)maxValue;
-- (float)unit;
-- (bool)isLogarithmic;
-- (bool)centerLabels;
-- (struct CGColor { }*)strokeColor;
-- (float)strokeWidth;
-- (id)labels;
 - (unsigned int)type;
 - (id)label;
 - (id)values;
 - (float)minValue;
 - (struct CGColor { }*)textColor;
 - (id)position;
+- (id)labels;
+- (float)maxValue;
+- (float)unit;
+- (bool)isLogarithmic;
+- (bool)centerLabels;
+- (struct CGColor { }*)strokeColor;
+- (float)strokeWidth;
 
 @end

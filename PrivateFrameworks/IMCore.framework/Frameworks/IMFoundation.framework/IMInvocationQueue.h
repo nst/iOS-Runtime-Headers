@@ -26,8 +26,12 @@
 @property(readonly) NSProtocolChecker * protocolChecker;
 
 
-- (void)setDelegate:(id)arg1;
 - (id)peek;
+- (void)setTarget:(id)arg1;
+- (unsigned int)count;
+- (id)target;
+- (id)init;
+- (void)dealloc;
 - (BOOL)holdQueue;
 - (id)protocolChecker;
 - (double)dequeueRate;
@@ -48,18 +52,14 @@
 - (BOOL)_invokeInvocation:(id)arg1;
 - (int)_enqueueInvocation:(id)arg1 options:(unsigned int)arg2;
 - (unsigned int)_optionsForInvocation:(id)arg1;
+- (id)queue;
 - (id)protocol;
 - (id)options;
 - (void)forwardInvocation:(id)arg1;
 - (BOOL)isEmpty;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)delegate;
-- (void)setTarget:(id)arg1;
-- (unsigned int)count;
-- (id)target;
-- (id)init;
-- (void)dealloc;
-- (id)queue;
+- (void)setDelegate:(id)arg1;
 - (void)setProtocol:(id)arg1;
 
 @end

@@ -22,10 +22,10 @@
 + (id)cssStringFromOADColor:(id)arg1;
 + (float)transformedAlphaFromOADColor:(id)arg1;
 
+- (id)initWithColor:(id)arg1;
+- (id)value;
 - (BOOL)isEqualTo:(id)arg1;
 - (id)cssString;
 - (id)cssStringForName:(id)arg1;
-- (id)initWithColor:(id)arg1;
-- (id)value;
 
 @end

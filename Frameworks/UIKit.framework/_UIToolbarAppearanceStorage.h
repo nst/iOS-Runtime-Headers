@@ -17,6 +17,7 @@
 @property(retain) UIImage * miniTopBackgroundImage;
 
 
+- (void)dealloc;
 - (void)setMiniTopBackgroundImage:(id)arg1;
 - (id)miniTopBackgroundImage;
 - (void)setTopBackgroundImage:(id)arg1;
@@ -25,6 +26,5 @@
 - (id)miniBackgroundImage;
 - (void)setBackgroundImage:(id)arg1;
 - (id)backgroundImage;
-- (void)dealloc;
 
 @end

@@ -12,8 +12,7 @@
 + (void)_assertMFClient;
 + (id)sharedClientComposeService;
 
-- (BOOL)_connect;
-- (BOOL)_disconnect;
+- (void)dealloc;
 - (void)_disconnected;
 - (BOOL)canSendMessageWithMediaObjectTypes:(int*)arg1;
 - (int)maxRecipientCount;
@@ -33,6 +32,7 @@
 - (BOOL)canAcceptMediaObject:(id)arg1 givenMediaObjects:(id)arg2;
 - (BOOL)isValidAddress:(id)arg1;
 - (BOOL)restrictsMediaObjects;
-- (void)dealloc;
+- (BOOL)_disconnect;
+- (BOOL)_connect;
 
 @end

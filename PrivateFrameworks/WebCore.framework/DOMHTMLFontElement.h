@@ -12,11 +12,11 @@
 @property(copy) NSString * size;
 
 
-- (id)face;
-- (void)setFace:(id)arg1;
 - (id)color;
 - (void)setColor:(id)arg1;
 - (void)setSize:(id)arg1;
 - (id)size;
+- (id)face;
+- (void)setFace:(id)arg1;
 
 @end

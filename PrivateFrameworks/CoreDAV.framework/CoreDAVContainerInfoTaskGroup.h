@@ -18,6 +18,8 @@
 @property(readonly) NSSet * containerURLs;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)containerURLs;
 - (void)setContainerInfoDepth:(int)arg1;
 - (int)containerInfoDepth;
@@ -29,7 +31,5 @@
 - (void)_getContainerHomeSet;
 - (void)_getContainerTopLevelInfo;
 - (id)initWithAccountInfoProvider:(id)arg1 containerURLs:(id)arg2 taskManager:(id)arg3;
-- (id)description;
-- (void)dealloc;
 
 @end

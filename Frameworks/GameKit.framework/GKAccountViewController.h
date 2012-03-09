@@ -22,6 +22,7 @@
 @property int mode;
 
 
+- (void)dealloc;
 - (void)processGameKitURLComponents:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
@@ -38,6 +39,5 @@
 - (void)setMode:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)dealloc;
 
 @end

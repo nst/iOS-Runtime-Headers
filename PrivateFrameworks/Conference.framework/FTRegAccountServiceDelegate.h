@@ -32,15 +32,9 @@
 
 - (void)setAccount:(id)arg1;
 - (id)account;
-- (int)serviceType;
-- (id)displayName;
-- (void)setCompletionHandler:(id)arg1;
-- (id)completionHandler;
-- (void)_cleanup;
 - (id)init;
 - (void)dealloc;
-- (id)responseDictionary;
-- (void)_handleFailureWithError:(id)arg1;
+- (void)_cleanup;
 - (void)setupOperationFailed;
 - (id)delegateServiceIdentifier;
 - (id)accountSetupRequestParameters;
@@ -72,5 +66,11 @@
 - (void)_stopTimeout;
 - (double)timeoutDuration;
 - (id)regController;
+- (id)displayName;
+- (void)setCompletionHandler:(id)arg1;
+- (id)completionHandler;
+- (id)responseDictionary;
+- (void)_handleFailureWithError:(id)arg1;
+- (int)serviceType;
 
 @end

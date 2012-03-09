@@ -28,14 +28,14 @@
 + (id)sharedManager;
 + (void)setSharedManager:(id)arg1;
 
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (id)init;
+- (void)dealloc;
 - (void)requestDidFinish:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (id)delegate;
 - (void)endUpdates;
 - (void)beginUpdates;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (void)purchaseScriptObject:(id)arg1;
 - (void)enqueueScriptPurchases:(id)arg1;
 - (id)copyPurchaseForScriptObject:(id)arg1;

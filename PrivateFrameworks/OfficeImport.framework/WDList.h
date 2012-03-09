@@ -12,6 +12,9 @@
 }
 
 
+- (void)dealloc;
+- (id)document;
+- (int)index;
 - (id)listDefinition;
 - (int)levelOverrideCount;
 - (id)levelOverrideAt:(int)arg1;
@@ -20,8 +23,5 @@
 - (int)listId;
 - (id)addLevelOverride;
 - (void)setIndex:(int)arg1;
-- (id)document;
-- (int)index;
-- (void)dealloc;
 
 @end

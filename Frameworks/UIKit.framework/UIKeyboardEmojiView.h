@@ -2,21 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, UIImageView, UIKeyboardEmoji;
+@class UIView, UIKeyboardEmojiImageView, UIKeyboardEmoji;
 
 @interface UIKeyboardEmojiView : UIControl  {
     UIKeyboardEmoji *_emoji;
     UIView *_popup;
-    UIImageView *_imageView;
+    UIKeyboardEmojiImageView *_imageView;
 }
 
 @property(retain) UIKeyboardEmoji * emoji;
 @property(retain) UIView * popup;
-@property(retain) UIImageView * imageView;
+@property(retain) UIKeyboardEmojiImageView * imageView;
 
 + (void)recycleEmojiView:(id)arg1;
 + (id)emojiViewForEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 emoji:(id)arg2;
 - (void)setEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)popup;
@@ -27,6 +28,5 @@
 - (id)emoji;
 - (void)setEmoji:(id)arg1;
 - (id)imageView;
-- (void)dealloc;
 
 @end

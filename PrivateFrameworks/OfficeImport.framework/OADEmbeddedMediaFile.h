@@ -13,10 +13,10 @@
 @property(retain) NSData * data;
 
 
-- (id)data;
-- (void)setData:(id)arg1;
-- (id)name;
 - (void)setName:(id)arg1;
 - (void)dealloc;
+- (id)name;
+- (id)data;
+- (void)setData:(id)arg1;
 
 @end

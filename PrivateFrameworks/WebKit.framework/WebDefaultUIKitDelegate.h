@@ -7,6 +7,15 @@
 
 + (id)sharedUIKitDelegate;
 
+- (struct CGPoint { float x1; float x2; })contentsPointForWebView:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentVisibleRectForWebView:(id)arg1;
+- (void)webViewDidSimulateClick:(id)arg1;
+- (void)webViewWillSimulateClick:(id)arg1;
+- (void)webViewDidNotSimulateClick:(id)arg1;
+- (void)webViewDidLayout:(id)arg1;
+- (void)webView:(id)arg1 didFinishDocumentLoadForFrame:(id)arg2;
+- (void)webView:(id)arg1 formStateDidFocusNode:(id)arg2;
+- (void)webView:(id)arg1 formStateDidBlurNode:(id)arg2;
 - (void)webView:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)webView:(id)arg1 elementDidBlurNode:(id)arg2;
 - (void)webView:(id)arg1 elementDidFocusNode:(id)arg2;
@@ -26,7 +35,7 @@
 - (void)_webthread_webView:(id)arg1 attachRootLayer:(id)arg2;
 - (void)revealedSelectionByScrollingWebFrame:(id)arg1;
 - (id)readDataFromPasteboard:(id)arg1 withIndex:(int)arg2;
-- (BOOL)isUnperturbedMarsVoltaResultMarker:(id)arg1;
+- (BOOL)isUnperturbedDictationResultMarker:(id)arg1;
 - (int)getPasteboardChangeCount;
 - (BOOL)performsTwoStepPaste:(id)arg1;
 - (int)getPasteboardItemsCount;
@@ -49,14 +58,5 @@
 - (void)addInputString:(id)arg1 fromVariantKey:(BOOL)arg2;
 - (void)deleteFromInput;
 - (id)supportedPasteboardTypesForCurrentSelection;
-- (struct CGPoint { float x1; float x2; })contentsPointForWebView:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentVisibleRectForWebView:(id)arg1;
-- (void)webViewDidSimulateClick:(id)arg1;
-- (void)webViewWillSimulateClick:(id)arg1;
-- (void)webViewDidNotSimulateClick:(id)arg1;
-- (void)webViewDidLayout:(id)arg1;
-- (void)webView:(id)arg1 didFinishDocumentLoadForFrame:(id)arg2;
-- (void)webView:(id)arg1 formStateDidFocusNode:(id)arg2;
-- (void)webView:(id)arg1 formStateDidBlurNode:(id)arg2;
 
 @end

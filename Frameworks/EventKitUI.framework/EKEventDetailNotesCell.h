@@ -15,14 +15,14 @@
 @property(retain) UIFont * _font;
 
 
-- (BOOL)update;
-- (id)_font;
+- (void)dealloc;
 - (BOOL)isTruncatingNotes;
 - (struct CGSize { float x1; float x2; })_truncatedNotesViewSize:(float)arg1;
 - (id)_notesView;
 - (void)set_font:(id)arg1;
 - (id)_notesTitleView;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
-- (void)dealloc;
+- (BOOL)update;
+- (id)_font;
 
 @end

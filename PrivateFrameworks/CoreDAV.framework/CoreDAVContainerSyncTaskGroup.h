@@ -50,6 +50,8 @@
 @property(retain) NSString * nextCTag;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setActionsOnly:(BOOL)arg1;
 - (BOOL)actionsOnly;
 - (void)setBulkChangeCheckCTag:(id)arg1;
@@ -86,6 +88,7 @@
 - (void)setPreviousSyncToken:(id)arg1;
 - (void)applyAdditionalPropertiesFromPostTask:(id)arg1;
 - (void)applyAdditionalPropertiesFromPutTask:(id)arg1;
+- (BOOL)isWhitelistedError:(id)arg1;
 - (void)_bulkChange;
 - (id)copyGetTaskWithURL:(id)arg1;
 - (id)copyMultiGetTaskWithURLs:(id)arg1;
@@ -113,7 +116,5 @@
 - (void)setAddMemberURL:(id)arg1;
 - (id)bulkRequests;
 - (void*)context;
-- (id)description;
-- (void)dealloc;
 
 @end

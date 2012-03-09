@@ -55,8 +55,7 @@
 @property(getter=_hasCustomCalendar,readonly) BOOL hasCustomCalendar;
 
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)delegateOfDatePicker;
 - (void)pickerViewLoaded:(id)arg1;
 - (void)pickerTableView:(id)arg1 didChangeSelectionBarRowFrom:(int)arg2 to:(int)arg3;
@@ -94,6 +93,7 @@
 - (int)_secondForRow:(int)arg1;
 - (int)_incrementedAmountForValue:(int)arg1 withElement:(unsigned int)arg2;
 - (int)_minuteForRow:(int)arg1;
+- (struct __CFDateFormatter { }*)_properlyConfiguredSharedDateFormatter;
 - (void)_updateLabels:(BOOL)arg1;
 - (void)_updateRowInColumn:(int)arg1 toValue:(int)arg2 withRepeatingAmount:(int)arg3 element:(unsigned int)arg4 animated:(BOOL)arg5;
 - (unsigned int)_elementForColumn:(int)arg1;
@@ -110,10 +110,10 @@
 - (int)_numberOfDaysInDate:(id)arg1;
 - (void)_updateReferenceBits;
 - (void)_doneLoadingDateOrTime;
-- (BOOL)_updateDateOrTime;
 - (void)_todayChanged:(id)arg1;
 - (void)_datePickerReset:(id)arg1;
-- (void)_updateBitsForDate:(id)arg1 andReload:(BOOL)arg2 animateIfNeeded:(BOOL)arg3;
+- (void)_updateBitsForDate:(id)arg1 forced:(BOOL)arg2 andReload:(BOOL)arg3 animateIfNeeded:(BOOL)arg4;
+- (BOOL)_updateDateOrTime;
 - (BOOL)_usesBlackChrome;
 - (void)_setUsesBlackChrome:(BOOL)arg1;
 - (void)_setHidesLabels:(BOOL)arg1;
@@ -152,14 +152,15 @@
 - (void)_selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3 notify:(BOOL)arg4;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)_tableRowHeight;
 - (float)pickerView:(id)arg1 rowHeightForComponent:(int)arg2;
 - (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (int)numberOfComponentsInPickerView:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (id)pickerImageNamePrefix;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

@@ -15,9 +15,9 @@
 
 - (void)recycle;
 - (id)initWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
-- (id)object;
-- (id)name;
 - (id)userInfo;
 - (void)dealloc;
+- (id)object;
+- (id)name;
 
 @end

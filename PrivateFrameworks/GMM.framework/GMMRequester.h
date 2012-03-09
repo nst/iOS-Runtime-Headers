@@ -23,6 +23,12 @@
 + (void)_setupNetworkConfiguration;
 + (void)_resetRequestCounts;
 
+- (void)dealloc;
+- (BOOL)isAnonymous;
+- (void)setAnonymous:(BOOL)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)start;
 - (BOOL)wasAutomaticallyCancelled;
 - (void)setDisableReplay:(BOOL)arg1;
 - (void)setBundleIdentifiers:(id)arg1;
@@ -37,11 +43,5 @@
 - (BOOL)disableReplay;
 - (void)_prepareClientProperties;
 - (void)_handleSuspendOnThread;
-- (void)start;
-- (BOOL)isAnonymous;
-- (void)setAnonymous:(BOOL)arg1;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (void)_applicationDidEnterBackground:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -40,8 +40,8 @@
 
 
 - (id)messageBody;
-- (void)setPeerID:(id)arg1;
-- (id)peerID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setPeerNatType:(id)arg1;
 - (void)setSelfNatType:(id)arg1;
 - (id)peerNatType;
@@ -72,8 +72,8 @@
 - (id)selfPushToken;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)bagKey;
+- (void)setPeerID:(id)arg1;
+- (id)peerID;
 
 @end

@@ -10,13 +10,13 @@
 
 @property(copy) NSString * actionType;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)attributeKeys;
 - (id)initWithActionType:(id)arg1;
 - (void)setActionType:(id)arg1;
 - (void)performAction;

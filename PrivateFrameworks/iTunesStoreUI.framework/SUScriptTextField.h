@@ -19,12 +19,13 @@
 @property(retain) NSString * value;
 @property(retain) NSNumber * width;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)_canBecomeFirstResponder;
-- (id)attributeKeys;
 - (BOOL)focus;
 - (BOOL)blur;
 - (void)_setWidth:(float)arg1;
@@ -45,8 +46,7 @@
 - (void)setStyle:(id)arg1;
 - (void)setWidth:(id)arg1;
 - (id)width;
-- (id)init;
-- (void)dealloc;
+- (id)attributeKeys;
 - (id)shouldFocusFunction;
 - (void)setShouldFocusFunction:(id)arg1;
 - (void)setNativeTextField:(id)arg1;

@@ -13,8 +13,7 @@
 }
 
 
-- (unsigned short)readUnsignedShort;
-- (void)finalize;
+- (void)dealloc;
 - (id)initWithCGFont:(struct CGFont { }*)arg1;
 - (short)readShort;
 - (struct __CFDictionary { }*)createKernTable;
@@ -29,7 +28,8 @@
 - (void)doTable;
 - (unsigned char)readByte;
 - (unsigned int)readUnsignedLong;
+- (unsigned short)readUnsignedShort;
+- (void)finalize;
 - (void)dispose;
-- (void)dealloc;
 
 @end

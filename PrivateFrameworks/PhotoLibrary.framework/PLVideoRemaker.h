@@ -23,15 +23,16 @@
 + (int)getSDRemakerModeForMode:(int)arg1;
 + (double)maximumDurationForTrimMode:(int)arg1;
 
-- (double)duration;
-- (void)setDuration:(double)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)progressView;
+- (void)cancel;
+- (void)dealloc;
+- (void)_updateProgress;
 - (id)initWithURL:(id)arg1;
 - (int)mode;
 - (void)setMode:(int)arg1;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 - (id)delegate;
-- (void)_updateProgress;
+- (void)setDelegate:(id)arg1;
 - (double)trimEndTime;
 - (double)trimStartTime;
 - (void)_didEndRemakingWithTemporaryPath:(id)arg1;
@@ -39,10 +40,9 @@
 - (void)_resetProgressTimer;
 - (id)messageForRemakingProgress;
 - (void)_remakerDidFinish:(id)arg1;
+- (id)progressView;
 - (void)setTrimEndTime:(double)arg1;
 - (void)setTrimStartTime:(double)arg1;
 - (void)remake;
-- (void)cancel;
-- (void)dealloc;
 
 @end

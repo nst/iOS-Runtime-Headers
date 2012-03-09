@@ -11,9 +11,9 @@
 @property(retain) NSString * businessQuery;
 
 
-- (void)setBusinessQuery:(id)arg1;
-- (id)businessQuery;
 - (void)dealloc;
+- (id)businessQuery;
+- (void)setBusinessQuery:(id)arg1;
 - (id)initWithGMMSearchResponse:(id)arg1 includePanoramaID:(BOOL)arg2;
 
 @end

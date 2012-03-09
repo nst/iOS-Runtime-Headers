@@ -23,9 +23,17 @@
 @property(retain) NSMutableArray * clientHistory;
 @property struct _xpc_connection_s { }* xpcListenConnection;
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedInstance;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
+- (double)startTime;
+- (void)setStartTime:(double)arg1;
 - (void)setXpcListenConnection:(struct _xpc_connection_s { }*)arg1;
 - (struct _xpc_connection_s { }*)xpcListenConnection;
 - (void)setClientHistory:(id)arg1;
@@ -44,18 +52,9 @@
 - (id)recordForSessionIdentifier:(id)arg1;
 - (void)_handleBannerMessage:(id)arg1 forSession:(id)arg2 userInfo:(id)arg3;
 - (void)_handleMessage:(id)arg1 forSession:(id)arg2 userInfo:(id)arg3;
-- (id)_sessionForConnection:(id)arg1 create:(BOOL)arg2;
 - (void)_handleAppStateChanged:(id)arg1;
 - (void)setLoggingTimer:(id)arg1;
 - (void)logClients:(id)arg1;
 - (void)_handleListenConnectionEvent:(void*)arg1;
-- (double)startTime;
-- (void)setStartTime:(double)arg1;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (id)init;
-- (oneway void)release;
 
 @end

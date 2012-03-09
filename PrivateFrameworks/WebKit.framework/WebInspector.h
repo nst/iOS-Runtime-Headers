@@ -11,9 +11,7 @@
 
 + (id)webInspector;
 
-- (void)detach:(id)arg1;
-- (id)initWithWebView:(id)arg1;
-- (void)show:(id)arg1;
+- (void)dealloc;
 - (void)close:(id)arg1;
 - (void)setWebFrame:(id)arg1;
 - (void)showWindow:(id)arg1;
@@ -35,6 +33,8 @@
 - (BOOL)isProfilingJavaScript;
 - (void)stopProfilingJavaScript:(id)arg1;
 - (void)startProfilingJavaScript:(id)arg1;
-- (void)dealloc;
+- (void)detach:(id)arg1;
+- (id)initWithWebView:(id)arg1;
+- (void)show:(id)arg1;
 
 @end

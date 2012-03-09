@@ -19,29 +19,29 @@
     NSArray *_inputs;
 }
 
-@property(copy) NSArray * inputs;
-@property int movieTimeScale;
-@property(copy) NSArray * metadataItems;
-@property BOOL shouldOptimizeForNetworkUse;
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } movieFragmentInterval;
-@property(copy) AVMediaFileType * mediaFileType;
 @property(copy) NSURL * URL;
+@property(copy) AVMediaFileType * mediaFileType;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
+@property BOOL shouldOptimizeForNetworkUse;
+@property(copy) NSArray * metadataItems;
+@property int movieTimeScale;
+@property(copy) NSArray * inputs;
 
 
+- (void)dealloc;
+- (void)setInputs:(id)arg1;
+- (id)inputs;
+- (void)setMovieTimeScale:(int)arg1;
+- (int)movieTimeScale;
+- (void)setMetadataItems:(id)arg1;
+- (id)metadataItems;
+- (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
+- (BOOL)shouldOptimizeForNetworkUse;
+- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
+- (void)setMediaFileType:(id)arg1;
+- (id)mediaFileType;
 - (void)setURL:(id)arg1;
 - (id)URL;
-- (id)mediaFileType;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
-- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (BOOL)shouldOptimizeForNetworkUse;
-- (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
-- (int)movieTimeScale;
-- (void)setMovieTimeScale:(int)arg1;
-- (id)inputs;
-- (id)metadataItems;
-- (void)setMediaFileType:(id)arg1;
-- (void)setInputs:(id)arg1;
-- (void)setMetadataItems:(id)arg1;
-- (void)dealloc;
 
 @end

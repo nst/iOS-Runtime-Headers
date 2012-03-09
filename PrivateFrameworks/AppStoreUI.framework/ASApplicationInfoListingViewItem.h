@@ -36,8 +36,8 @@
 @property float valueWidth;
 
 
+- (void)dealloc;
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setCompact:(BOOL)arg1;
 - (float)height;
 - (int)type;
 - (id)label;
@@ -56,6 +56,6 @@
 - (BOOL)wrapsIfNecessary;
 - (id)combinedValues;
 - (BOOL)shouldCompact;
-- (void)dealloc;
+- (void)setCompact:(BOOL)arg1;
 
 @end

@@ -15,6 +15,9 @@
 @property int action;
 
 
+- (id)description;
+- (int)action;
+- (void)dealloc;
 - (void)finishWithError:(id)arg1;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
@@ -24,9 +27,6 @@
 - (void)setAction:(int)arg1;
 - (void)setState:(int)arg1;
 - (int)state;
-- (id)description;
-- (int)action;
-- (void)dealloc;
 - (id)initWithSharingAction:(int)arg1 atCalendarURL:(id)arg2 accountInfoProvider:(id)arg3 taskManager:(id)arg4;
 
 @end

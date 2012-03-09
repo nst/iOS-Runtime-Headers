@@ -26,6 +26,8 @@
 
 - (id)library;
 - (void)setLibrary:(id)arg1;
+- (void)dealloc;
+- (void)_performBlockAndWait:(id)arg1;
 - (struct NSObject { Class x1; }*)album;
 - (BOOL)isValid;
 - (void)setPropertyValues:(id)arg1;
@@ -42,8 +44,6 @@
 - (unsigned int)groupType;
 - (void)setGroupType:(unsigned int)arg1;
 - (id)initWithAlbum:(struct NSObject { Class x1; }*)arg1 library:(id)arg2;
-- (void)_performBlockAndWait:(id)arg1;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)dealloc;
 
 @end

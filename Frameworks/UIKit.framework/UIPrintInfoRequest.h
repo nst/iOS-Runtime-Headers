@@ -23,11 +23,11 @@
 
 + (id)requestInfoForPrinter:(id)arg1;
 
+- (void)dealloc;
 - (void)setCompletionHandler:(id)arg1;
 - (id)completionHandler;
 - (void)setRequestState:(int)arg1;
 - (int)requestState;
 - (void)requestPrintInfo;
-- (void)dealloc;
 
 @end

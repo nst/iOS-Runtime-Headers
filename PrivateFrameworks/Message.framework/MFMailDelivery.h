@@ -35,6 +35,8 @@
 - (void)setArchiveAccount:(id)arg1;
 - (void)setAccount:(id)arg1;
 - (int)deliveryStatus;
+- (BOOL)shouldSignMessage;
+- (BOOL)shouldEncryptMessage;
 - (void)deliverAsynchronously;
 - (void)setCellDataOnly:(BOOL)arg1;
 - (void)setCompositionSpecification:(id)arg1;
@@ -45,11 +47,11 @@
 - (int)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
 - (id)compositionSpecification;
 - (id)account;
+- (void)dealloc;
 - (id)initWithMessage:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)archive;
 - (id)message;
 - (id)delegate;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)archive;
 
 @end

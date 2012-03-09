@@ -7,10 +7,10 @@
 }
 
 
+- (int)type;
+- (void)setType:(int)arg1;
 - (id)equivalentCustomGeometry;
 - (id)oa12EquivalentCustomGeometry;
 - (id)escherEquivalentCustomGeometry;
-- (int)type;
-- (void)setType:(int)arg1;
 
 @end

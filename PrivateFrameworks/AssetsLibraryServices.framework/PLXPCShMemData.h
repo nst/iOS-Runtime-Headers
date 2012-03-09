@@ -8,10 +8,10 @@
 }
 
 
-- (id)initWithXPCShmem:(void*)arg1;
-- (const void*)bytes;
 - (id)debugDescription;
 - (unsigned int)length;
 - (void)dealloc;
+- (const void*)bytes;
+- (id)initWithXPCShmem:(void*)arg1;
 
 @end

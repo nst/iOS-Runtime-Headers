@@ -35,7 +35,8 @@
 
 - (id)subject;
 - (id)URLString;
-- (id)challenge;
+- (id)description;
+- (void)dealloc;
 - (unsigned int)retryDelay;
 - (unsigned int)retries;
 - (id)subjectAltName;
@@ -50,7 +51,6 @@
 - (BOOL)isRoot;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
+- (id)challenge;
 
 @end

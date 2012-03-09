@@ -21,6 +21,7 @@
 + (unsigned int)_selectedZIndex;
 + (unsigned int)_zIndex;
 
+- (void)dealloc;
 - (void)setOrientation:(int)arg1;
 - (id)label;
 - (id)image;
@@ -41,6 +42,5 @@
 - (void)updateCountdowns;
 - (unsigned int)_orientationCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
-- (void)dealloc;
 
 @end

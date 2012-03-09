@@ -15,6 +15,11 @@
 }
 
 
+- (void)dealloc;
+- (void)setDate:(id)arg1;
+- (id)date;
+- (id)text;
+- (void)setOwner:(id)arg1;
 - (id)initWithParagraph:(id)arg1 type:(int)arg2;
 - (int)annotationType;
 - (id)owner;
@@ -24,10 +29,5 @@
 - (void)setReferencePropertiesFixed;
 - (int)runType;
 - (id)reference;
-- (void)setOwner:(id)arg1;
-- (void)setDate:(id)arg1;
-- (id)date;
-- (id)text;
-- (void)dealloc;
 
 @end

@@ -30,6 +30,8 @@
 @property(retain) NSDate * expirationDate;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setUseLargeIcons:(BOOL)arg1;
 - (void)tableView:(id)arg1 willDrawCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)currentSectionHeaderSecondaryTitleInTableView:(id)arg1;
@@ -62,7 +64,5 @@
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
 - (void)setIsInFormSheet:(BOOL)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -16,7 +16,6 @@
 + (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
 
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (id)init;
 - (void)dealloc;
 - (void)startNetworkAvailabilityTimer;
@@ -37,5 +36,6 @@
 - (void)_partnerHeaderChanged:(id)arg1;
 - (void)operationFinished:(id)arg1;
 - (id)partnerIdentifier;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

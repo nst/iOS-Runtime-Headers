@@ -21,10 +21,15 @@
 @property <IUModalContextDelegate><MediaPickerModalContextDelegate> * delegate;
 
 
+- (void)dealloc;
 - (void)_doneAction:(id)arg1;
 - (id)viewController;
 - (void)setPrompt:(id)arg1;
 - (id)prompt;
+- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
+- (BOOL)allowsPickingMultipleItems;
+- (id)initWithMediaTypes:(int)arg1;
+- (void)_cancelAction:(id)arg1;
 - (void)orderOut;
 - (BOOL)wantsNavigationButtons;
 - (void)setWantsNavigationButtons:(BOOL)arg1;
@@ -39,10 +44,5 @@
 - (BOOL)canHandleSelectionForIndex:(unsigned int)arg1 dataSource:(id)arg2;
 - (id)copyQueryForQuery:(id)arg1;
 - (void)dismissWithSuccess:(BOOL)arg1;
-- (void)dealloc;
-- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
-- (BOOL)allowsPickingMultipleItems;
-- (id)initWithMediaTypes:(int)arg1;
-- (void)_cancelAction:(id)arg1;
 
 @end

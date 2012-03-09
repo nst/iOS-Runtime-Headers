@@ -34,6 +34,7 @@
 + (id)URLForNoMail;
 
 - (id)emailAddress;
+- (void)setRsvp:(BOOL)arg1;
 - (void)setEmail:(id)arg1;
 - (id)email;
 - (id)x_calendarserver_email;
@@ -60,12 +61,11 @@
 - (int)cutype;
 - (BOOL)isEmailAddress;
 - (id)cn;
-- (id)dir;
-- (void)setDir:(id)arg1;
 - (id)displayName;
 - (id)initWithURL:(id)arg1;
 - (void)setURL:(id)arg1;
-- (void)setRsvp:(BOOL)arg1;
+- (id)dir;
+- (void)setDir:(id)arg1;
 - (void)setScheduleagent:(int)arg1;
 
 @end

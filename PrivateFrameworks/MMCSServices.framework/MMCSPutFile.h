@@ -23,11 +23,11 @@
 @property(copy) id progressUpdateBlock;
 
 
+- (void)dealloc;
 - (id)completionBlock;
-- (id)progressUpdateBlock;
-- (void)setProgressUpdateBlock:(id)arg1;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setProgress:(double)arg1;
-- (void)dealloc;
+- (id)progressUpdateBlock;
+- (void)setProgressUpdateBlock:(id)arg1;
 
 @end

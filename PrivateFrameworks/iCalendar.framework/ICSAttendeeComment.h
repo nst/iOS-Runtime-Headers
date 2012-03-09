@@ -11,11 +11,11 @@
 @property(retain) ICSDateValue * x_calendarserver_dtstamp;
 
 
-- (void)setComment:(id)arg1;
 - (id)x_calendarserver_dtstamp;
 - (void)setX_calendarserver_dtstamp:(id)arg1;
 - (id)x_calendarserver_attendee_ref;
 - (void)setX_calendarserver_attendee_ref:(id)arg1;
 - (id)initWithComment:(id)arg1;
+- (void)setComment:(id)arg1;
 
 @end

@@ -50,14 +50,11 @@
 + (Class)classForEntityName:(id)arg1;
 
 - (void)setFlags:(unsigned long)arg1;
+- (void)rollback;
+- (oneway void)release;
+- (id)init;
+- (void)dealloc;
 - (int)sequenceNumber;
-- (void)setInsertedObjects:(id)arg1;
-- (void)setUpdatedObjects:(id)arg1;
-- (void)setDeletedObjects:(id)arg1;
-- (id)registeredObjects;
-- (id)insertedObjects;
-- (id)deletedObjects;
-- (id)updatedObjects;
 - (void)setDbChangedQueue:(struct dispatch_queue_s { }*)arg1;
 - (struct dispatch_queue_s { }*)dbChangedQueue;
 - (void)setUnsavedChangesQueue:(struct dispatch_queue_s { }*)arg1;
@@ -164,13 +161,13 @@
 - (id)predicateForCompletedRemindersWithDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3;
 - (id)_predicateForRemindersWithDate:(id)arg1 useAsCompletionDate:(BOOL)arg2 calendars:(id)arg3 limitToCompletedOrIncomplete:(BOOL)arg4 completed:(BOOL)arg5 includeDatesBefore:(BOOL)arg6 sortOrder:(int)arg7;
 - (id)reminderWithUUID:(id)arg1;
-- (void)_deleteObject:(id)arg1;
 - (BOOL)removeReminder:(id)arg1 commit:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)saveReminder:(id)arg1 commit:(BOOL)arg2 error:(id*)arg3;
 - (id)calendarWithID:(id)arg1;
 - (void)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned int)arg3 completion:(id)arg4;
 - (void)_performServerFunction:(id)arg1 replyHandler:(id)arg2;
 - (id)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned int)arg3;
+- (void)_deleteObject:(id)arg1;
 - (void)_insertObject:(id)arg1;
 - (BOOL)removeEvent:(id)arg1 span:(int)arg2 commit:(BOOL)arg3 error:(id*)arg4;
 - (BOOL)saveEvent:(id)arg1 span:(int)arg2 commit:(BOOL)arg3 error:(id*)arg4;
@@ -193,18 +190,21 @@
 - (void)daemonRestarted;
 - (void)_notifyStoreChanged;
 - (id)initWithOptions:(unsigned long)arg1 path:(id)arg2;
+- (id)connection;
 - (void)reset;
 - (id)timeZone;
 - (unsigned long)flags;
 - (void)setTimeZone:(id)arg1;
-- (id)connection;
-- (void)rollback;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
-- (id)stringForColor:(id)arg1;
+- (void)setInsertedObjects:(id)arg1;
+- (void)setUpdatedObjects:(id)arg1;
+- (void)setDeletedObjects:(id)arg1;
+- (id)registeredObjects;
+- (id)insertedObjects;
+- (id)deletedObjects;
+- (id)updatedObjects;
 - (id)defaultCalendarColorsInRainbowOrder;
 - (id)defaultCalendarColors;
 - (id)colorForCalendar:(id)arg1;
+- (id)stringForColor:(id)arg1;
 
 @end

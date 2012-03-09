@@ -24,6 +24,7 @@
 
 + (id)codedPropertyKeys;
 
+- (void)dealloc;
 - (void)setFriendCount:(unsigned int)arg1;
 - (void)setRankAmongFriends:(unsigned int)arg1;
 - (void)setOverallRankCount:(unsigned int)arg1;
@@ -38,6 +39,5 @@
 - (id)categoryID;
 - (id)icons;
 - (void)setIcons:(id)arg1;
-- (void)dealloc;
 
 @end

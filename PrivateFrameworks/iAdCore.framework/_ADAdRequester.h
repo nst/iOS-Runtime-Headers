@@ -18,16 +18,16 @@
 @property(readonly) BOOL finished;
 
 
+- (BOOL)finished;
+- (void)dealloc;
+- (void)setGroup:(id)arg1;
+- (double)startTime;
+- (id)group;
+- (void)setStartTime:(double)arg1;
 - (int)numberOfBannersPendingLoading;
 - (void)handleSuccess;
 - (BOOL)successful;
 - (void)handleFailure;
 - (void)setNumberOfBannersPendingLoading:(int)arg1;
-- (double)startTime;
-- (id)group;
-- (void)setStartTime:(double)arg1;
-- (void)setGroup:(id)arg1;
-- (BOOL)finished;
-- (void)dealloc;
 
 @end

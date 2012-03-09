@@ -20,13 +20,6 @@
 @property BOOL resizesToFit;
 
 
-- (void)setOrientation:(int)arg1;
-- (id)imageView;
-- (id)initWithTitle:(id)arg1 image:(id)arg2 tag:(int)arg3;
-- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)titleLabel;
-- (void)layoutSubviews;
 - (void)dealloc;
 - (float)contentViewOriginXOffset;
 - (float)contentViewWidthOffset;
@@ -37,5 +30,12 @@
 - (BOOL)resizesToFit;
 - (void)setTitle:(id)arg1 image:(id)arg2;
 - (void)setResizesToFit:(BOOL)arg1;
+- (void)setOrientation:(int)arg1;
+- (id)imageView;
+- (id)initWithTitle:(id)arg1 image:(id)arg2 tag:(int)arg3;
+- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)titleLabel;
+- (void)layoutSubviews;
 
 @end

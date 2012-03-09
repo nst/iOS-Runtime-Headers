@@ -56,6 +56,8 @@
 
 + (id)codedPropertyKeys;
 
+- (id)description;
+- (void)dealloc;
 - (void)setPhotos:(id)arg1;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setNumberOfAchievementPoints:(int)arg1;
@@ -91,6 +93,7 @@
 - (id)photos;
 - (void)setFriends:(id)arg1;
 - (id)emailAddresses;
+- (id)status;
 - (id)alias;
 - (int)numberOfAchievementPoints;
 - (int)numberOfAchievements;
@@ -102,8 +105,5 @@
 - (id)lastPlayedGame;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
-- (id)status;
-- (id)description;
-- (void)dealloc;
 
 @end

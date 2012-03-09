@@ -9,11 +9,11 @@
 }
 
 
+- (unsigned int)count;
+- (void)dealloc;
 - (id)initWithStopArray:(id)arg1;
 - (void)mergeStopArray:(id)arg1;
 - (float)stopAt:(unsigned int)arg1;
 - (unsigned int)columnSpan:(float)arg1 at:(unsigned int)arg2;
-- (unsigned int)count;
-- (void)dealloc;
 
 @end

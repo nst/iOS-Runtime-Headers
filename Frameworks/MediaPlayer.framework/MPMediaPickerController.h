@@ -15,19 +15,19 @@
 
 + (void)preheatMediaPicker;
 
+- (id)init;
+- (void)dealloc;
 - (void)modalContextDidDismiss:(id)arg1 withSuccess:(BOOL)arg2;
 - (void)mediaPickerModalContext:(id)arg1 didPickMediaItems:(id)arg2;
 - (void)_pickerDidPickItems:(id)arg1;
 - (void)_pickerDidCancel;
-- (void)setDelegate:(id)arg1;
 - (int)mediaTypes;
 - (void)viewDidUnload;
 - (void)loadView;
 - (void)setPrompt:(id)arg1;
 - (id)prompt;
 - (id)delegate;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (void)setAllowsPickingMultipleItems:(BOOL)arg1;
 - (BOOL)allowsPickingMultipleItems;
 - (id)initWithMediaTypes:(int)arg1;

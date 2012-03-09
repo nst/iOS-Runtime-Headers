@@ -11,6 +11,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)_errorIsFairPlayError:(id)arg1;
 - (id)initWithMediaItem:(id)arg1;
 - (void)resolveError:(id)arg1;
@@ -20,7 +22,5 @@
 - (id)_mediaItem;
 - (void)_rentalDataDidLoadNotification:(id)arg1;
 - (void)_cancelPlaybackAlertView:(BOOL)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

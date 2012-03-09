@@ -20,11 +20,12 @@
 @property(readonly) BOOL hasActiveFileTransfers;
 @property(readonly) BOOL hasPendingFileTransfers;
 
++ (id)sharedInstance;
 + (void)setTransferCenterClass:(Class)arg1;
 + (Class)fileTransferClass;
 + (Class)transferCenterClass;
-+ (id)sharedInstance;
 
+- (void)dealloc;
 - (void)preauthorizeFileTransferFromOtherPerson:(id)arg1 account:(id)arg2 filename:(id)arg3 saveToPath:(id)arg4;
 - (void)clearFinishedTransfers;
 - (id)orderedTransfers;
@@ -63,6 +64,5 @@
 - (id)guidForNewOutgoingTransferWithLocalURL:(id)arg1;
 - (void)assignTransfer:(id)arg1 toMessage:(id)arg2 account:(id)arg3;
 - (id)transferForGUID:(id)arg1;
-- (void)dealloc;
 
 @end

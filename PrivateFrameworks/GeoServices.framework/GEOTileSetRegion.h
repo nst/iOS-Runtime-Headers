@@ -19,7 +19,8 @@
 @property unsigned int maxZ;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (BOOL)containsTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 enforceZoomLevel:(BOOL)arg2;
 - (unsigned int)maxZ;
 - (unsigned int)minZ;
@@ -31,11 +32,10 @@
 - (void)setMaxY:(unsigned int)arg1;
 - (void)setMinY:(unsigned int)arg1;
 - (void)setMinX:(unsigned int)arg1;
-- (void)writeTo:(id)arg1;
 - (unsigned int)maxX;
 - (void)setMaxX:(unsigned int)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

@@ -68,8 +68,6 @@
 }
 
 
-- (void)removeObjectForKey:(id)arg1;
-- (void)finalize;
 - (id)dump;
 - (BOOL)containsKeys:(const void**)arg1 values:(const void**)arg2 count:(unsigned int)arg3;
 - (void)zeroPairedEntries;
@@ -91,14 +89,6 @@
 - (unsigned int)rehashAround:(unsigned int)arg1;
 - (void)raiseCountUnderflowException;
 - (void)_initBlock;
-- (id)initWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2 capacity:(unsigned int)arg3;
-- (id)keyEnumerator;
-- (Class)classForCoder;
-- (id)objectEnumerator;
-- (id)allValues;
-- (id)allKeys;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)removeAllItems;
 - (unsigned int)count;
 - (BOOL)isEqual:(id)arg1;
@@ -106,9 +96,19 @@
 - (id)description;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (id)objectForKey:(id)arg1;
+- (id)copy;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
 - (void)dealloc;
-- (id)copy;
+- (id)keyEnumerator;
+- (void)finalize;
+- (Class)classForCoder;
+- (id)objectEnumerator;
+- (id)allValues;
+- (id)allKeys;
+- (void)removeObjectForKey:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2 capacity:(unsigned int)arg3;
 
 @end

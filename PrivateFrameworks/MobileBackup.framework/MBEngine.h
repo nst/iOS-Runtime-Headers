@@ -37,7 +37,9 @@
 + (id)stringForEngineMode:(int)arg1;
 + (id)stringForRestoreType:(int)arg1;
 
+- (void)dealloc;
 - (id)properties;
+- (BOOL)isMigrate;
 - (id)initWithSettingsContext:(id)arg1 debugContext:(id)arg2 domainManager:(id)arg3;
 - (BOOL)isForegroundRestore;
 - (BOOL)isBackgroundRestore;
@@ -60,7 +62,5 @@
 - (id)restoreTypeString;
 - (id)aggregateDictionaryKey:(id)arg1;
 - (id)appManager;
-- (void)dealloc;
-- (BOOL)isMigrate;
 
 @end

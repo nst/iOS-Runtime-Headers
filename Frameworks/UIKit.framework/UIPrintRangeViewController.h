@@ -19,6 +19,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithPrintPanelViewController:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
@@ -34,6 +35,5 @@
 - (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (int)numberOfComponentsInPickerView:(id)arg1;
-- (void)dealloc;
 
 @end

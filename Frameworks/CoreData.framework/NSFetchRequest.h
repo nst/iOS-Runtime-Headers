@@ -30,10 +30,23 @@
     } _flags;
 }
 
++ (void)initialize;
 + (id)fetchRequestWithEntityName:(id)arg1;
 + (BOOL)accessInstanceVariablesDirectly;
-+ (void)initialize;
 
+- (void)setEntity:(id)arg1;
+- (id)sortDescriptors;
+- (void)setSortDescriptors:(id)arg1;
+- (BOOL)hasChanges;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (unsigned int)resultType;
 - (void)_resolveEntityWithContext:(id)arg1;
 - (void)_incrementInUseCounter;
 - (id)stores;
@@ -78,18 +91,5 @@
 - (unsigned int)fetchLimit;
 - (id)entity;
 - (id)predicate;
-- (unsigned int)resultType;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setEntity:(id)arg1;
-- (id)sortDescriptors;
-- (void)setSortDescriptors:(id)arg1;
-- (BOOL)hasChanges;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

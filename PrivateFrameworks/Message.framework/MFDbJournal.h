@@ -21,9 +21,9 @@
 - (void)moveOrDeleteFile;
 - (BOOL)append:(const char *)arg1;
 - (BOOL)mergeWithDatabase:(struct sqlite3 { }*)arg1;
-- (BOOL)flush;
+- (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (void)clear;
-- (void)dealloc;
+- (BOOL)flush;
 
 @end

@@ -10,11 +10,11 @@
 }
 
 
+- (void)dealloc;
+- (id)fill;
 - (BOOL)hasEffects;
 - (id)effects;
 - (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
-- (id)fill;
-- (void)dealloc;
 
 @end

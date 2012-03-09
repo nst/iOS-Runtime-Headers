@@ -6,8 +6,8 @@
 }
 
 
-- (int)command;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
+- (int)command;
 
 @end

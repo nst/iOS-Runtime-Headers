@@ -14,19 +14,19 @@
 @property(getter=isQuerying,readonly) BOOL querying;
 
 
-- (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
+- (void)cancel;
+- (void)dealloc;
 - (void)start;
-- (void)setDelegate:(id)arg1;
-- (struct { double x1; double x2; })coordinate;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (id)placemark;
 - (void)_notifyNoResults;
 - (id)_placemarkFromResponse:(id)arg1;
 - (BOOL)isQuerying;
+- (struct { double x1; double x2; })coordinate;
+- (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)_notifyError:(id)arg1;
 - (void)_notifyResult:(id)arg1;
-- (void)setCoordinate:(struct { double x1; double x2; })arg1;
-- (void)cancel;
-- (void)dealloc;
 
 @end

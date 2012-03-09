@@ -9,9 +9,9 @@
 
 + (id)sharedManager;
 
+- (id)init;
 - (void)resetNetworkActivity;
 - (void)endNetworkActivity;
 - (void)beginNetworkActivity;
-- (id)init;
 
 @end

@@ -14,12 +14,12 @@
 
 + (id)customAttributes;
 
+- (void)setInputPoint:(id)arg1;
 - (id)inputPoint;
 - (id)_kernel;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
 - (id)outputImage;
 - (void)setDefaults;
-- (void)setInputPoint:(id)arg1;
 
 @end

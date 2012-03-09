@@ -26,9 +26,11 @@
 
 
 - (void)setFlags:(unsigned long)arg1;
-- (id)owner;
-- (void)setPropertyName:(id)arg1;
-- (id)objectID;
+- (void)rollback;
+- (BOOL)hasChanges;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 - (void)setWeakRelations:(id)arg1;
 - (id)weakRelations;
 - (void)setRelations:(id)arg1;
@@ -69,13 +71,11 @@
 - (id)initWithPersistentObject:(id)arg1;
 - (BOOL)refresh;
 - (BOOL)isNew;
-- (id)propertyName;
 - (void)reset;
 - (unsigned long)flags;
-- (void)rollback;
-- (BOOL)hasChanges;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
+- (id)propertyName;
+- (id)owner;
+- (void)setPropertyName:(id)arg1;
+- (id)objectID;
 
 @end

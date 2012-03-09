@@ -45,6 +45,9 @@
 + (id)personPredicateWithName:(id)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithPhoneLike:(id)arg1 countryHint:(id)arg2 addressBook:(void*)arg3;
 
+- (void)main;
+- (void)cancel;
+- (void)dealloc;
 - (BOOL)isConcurrent;
 - (void)setAddressBook:(void*)arg1;
 - (void*)addressBook;
@@ -59,14 +62,11 @@
 - (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 - (BOOL)predicateShouldContinue:(id)arg1;
 - (void)setProgressBlock:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setPredicate:(id)arg1;
-- (id)predicate;
 - (void*)context;
 - (void)setContext:(void*)arg1;
 - (id)delegate;
-- (void)main;
-- (void)cancel;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)setPredicate:(id)arg1;
+- (id)predicate;
 
 @end

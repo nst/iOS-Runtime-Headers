@@ -29,6 +29,7 @@
 @property double m44;
 
 
+- (void)dealloc;
 - (void)finalize;
 - (double)a;
 - (void)setA:(double)arg1;
@@ -84,6 +85,5 @@
 - (id)skewX:(double)arg1;
 - (id)skewY:(double)arg1;
 - (id)toString;
-- (void)dealloc;
 
 @end

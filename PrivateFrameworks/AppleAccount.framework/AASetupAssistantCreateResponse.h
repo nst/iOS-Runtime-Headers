@@ -13,7 +13,7 @@
 
 
 - (id)statusMessage;
-- (id)status;
 - (id)personID;
+- (id)status;
 
 @end

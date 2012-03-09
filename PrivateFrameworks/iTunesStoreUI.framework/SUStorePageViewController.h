@@ -37,10 +37,10 @@
 @property(readonly) BOOL canBeResolved;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)applicationWillEnterForeground;
 - (void)setLoading:(BOOL)arg1;
-- (void)invalidate;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (BOOL)isLoaded;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
@@ -54,9 +54,8 @@
 - (void)setParentViewController:(id)arg1;
 - (void)loadView;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)invalidate;
 - (void)reload;
-- (id)init;
-- (void)dealloc;
 - (id)sectionSegmentedControl;
 - (id)sectionGroup;
 - (id)searchFieldController;
@@ -85,15 +84,14 @@
 - (void)_reloadNavigationButtons;
 - (BOOL)pushStorePage:(id)arg1 withTarget:(int)arg2 animated:(BOOL)arg3;
 - (BOOL)isExternalRequest;
+- (void)_fetchPage:(BOOL)arg1;
 - (void)_moveToRootSectionForChildViewController:(id)arg1 protocol:(id)arg2;
 - (void)_finishSuccessfulLoad;
 - (void)enqueueFetchOperation;
-- (void)_fetchPage:(BOOL)arg1;
 - (void)enqueueFetchOperationForPageSection:(id)arg1;
 - (void)_finishHandlingFailure;
 - (void)_performActionForProtocolButton:(id)arg1;
 - (void)_tearDownNavigationMenu;
-- (void)_delayedFetchPage;
 - (void)_dismissNavigationMenuViewController;
 - (BOOL)_shouldFetchAutomatically;
 - (void)_moveChildViewController:(id)arg1 toOverlayForProtocol:(id)arg2;
@@ -157,5 +155,6 @@
 - (void)setSection:(id)arg1;
 - (id)copyArchivableContext;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

@@ -22,14 +22,9 @@
 @property BOOL skipDelegateCallback;
 
 
+- (void)dealloc;
 - (id)shadowImage;
 - (void)setShadowImage:(id)arg1;
-- (void)setShadowView:(id)arg1;
-- (id)shadowView;
-- (void)setTitle:(id)arg1;
-- (void)setChecked:(BOOL)arg1;
-- (void)layoutSubviews;
-- (void)dealloc;
 - (void)setCustomCheckmarkImageSelected:(id)arg1;
 - (void)setCustomCheckmarkImage:(id)arg1;
 - (void)setSkipDelegateCallback:(BOOL)arg1;
@@ -43,5 +38,10 @@
 - (id)customCheckmarkImageSelected;
 - (void)_startListeningForTextChanges;
 - (void)_stopListeningForTextChanges;
+- (void)setShadowView:(id)arg1;
+- (id)shadowView;
+- (void)setTitle:(id)arg1;
+- (void)setChecked:(BOOL)arg1;
+- (void)layoutSubviews;
 
 @end

@@ -37,11 +37,8 @@
 @property(copy) NSString * symbol;
 
 
-- (struct { double x1; double x2; unsigned long long x3; }*)maxValue;
-- (id)symbol;
-- (void)setMinValue:(struct { double x1; double x2; unsigned long long x3; }*)arg1;
-- (void)setMaxValue:(struct { double x1; double x2; unsigned long long x3; }*)arg1;
-- (struct { double x1; double x2; unsigned long long x3; }*)minValue;
+- (id)description;
+- (void)dealloc;
 - (id)labelInfoArrayForYAxis:(BOOL)arg1 detailedMode:(BOOL)arg2;
 - (void)setLabelInfoArray:(id)arg1 forYAxis:(BOOL)arg2 detailedMode:(BOOL)arg3;
 - (BOOL)hasVolume;
@@ -50,12 +47,12 @@
 - (void)setInterestingIndexes:(id)arg1;
 - (void)setMarketOpenDate:(id)arg1;
 - (void)setMarketCloseDate:(id)arg1;
+- (void)setMarketTimeZone:(id)arg1;
 - (void)setHasVolume:(BOOL)arg1;
 - (struct { double x1; double x2; unsigned long long x3; }*)allocateStockValuesWithCount:(unsigned int)arg1;
 - (struct { double x1; double x2; unsigned long long x3; }*)stockValues;
 - (unsigned int)stockValueCount;
 - (id)interestingIndexes;
-- (void)setMarketTimeZone:(id)arg1;
 - (void)setIsUnavailable:(BOOL)arg1;
 - (id)marketOpenDate;
 - (id)marketCloseDate;
@@ -64,11 +61,14 @@
 - (id)marketTimeZone;
 - (int)chartInterval;
 - (void)clearAllImageSets;
-- (void)setSymbol:(id)arg1;
 - (void)setImageSet:(id)arg1 forStockGraphSize:(int)arg2;
-- (id)description;
-- (void)dealloc;
+- (void)setMinValue:(struct { double x1; double x2; unsigned long long x3; }*)arg1;
+- (void)setMaxValue:(struct { double x1; double x2; unsigned long long x3; }*)arg1;
+- (struct { double x1; double x2; unsigned long long x3; }*)minValue;
+- (struct { double x1; double x2; unsigned long long x3; }*)maxValue;
 - (double)expirationTime;
 - (void)setExpirationTime:(double)arg1;
+- (void)setSymbol:(id)arg1;
+- (id)symbol;
 
 @end

@@ -19,6 +19,10 @@
 
 + (id)defaultProperties;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)clearStops;
 - (unsigned int)stopCount;
 - (id)stopColorAtIndex:(unsigned int)arg1;
@@ -42,9 +46,5 @@
 - (void)setStops:(id)arg1;
 - (void)setParent:(id)arg1;
 - (id)initWithDefaults;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

@@ -18,6 +18,7 @@
 
 + (id)routesPreferringMirroring;
 
+- (void)dealloc;
 - (void)_mirroringSwitchValueDidChange:(id)arg1;
 - (id)_effectivePickedRouteReturningActualPickedRouteType:(int*)arg1;
 - (BOOL)_wirelessDisplayCapableRouteIsPicked;
@@ -31,6 +32,5 @@
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
 
 @end

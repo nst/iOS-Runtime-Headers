@@ -17,6 +17,7 @@
 + (void)enableAnimation;
 + (void)disableAnimation;
 
+- (void)dealloc;
 - (void)_LCDHeartbeatCallback:(id)arg1;
 - (void)_TVHeartbeatCallback:(id)arg1;
 - (void)_advance:(BOOL)arg1 withTimestamp:(double)arg2;
@@ -29,6 +30,5 @@
 - (void)removeAnimationsForTarget:(id)arg1;
 - (void)addAnimation:(id)arg1 withDuration:(double)arg2 start:(BOOL)arg3;
 - (void)removeAnimationsForTarget:(id)arg1 ofKind:(Class)arg2;
-- (void)dealloc;
 
 @end

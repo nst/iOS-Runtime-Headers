@@ -18,9 +18,13 @@
 @property int property;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)setProperty:(int)arg1;
-- (int)property;
+- (void)dealloc;
+- (BOOL)usesLargeFont;
+- (void)setUsesLargeFont:(BOOL)arg1;
+- (void)textFieldValueDidChange:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2 property:(int)arg3 delegate:(id)arg4;
+- (void)_resizeAndCenterTextField;
+- (id)styleProvider;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
 - (id)value;
 - (void)setValue:(id)arg1;
@@ -33,12 +37,8 @@
 - (BOOL)resignFirstResponder;
 - (id)delegate;
 - (void)layoutSubviews;
-- (void)dealloc;
-- (BOOL)usesLargeFont;
-- (void)setUsesLargeFont:(BOOL)arg1;
-- (void)textFieldValueDidChange:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2 property:(int)arg3 delegate:(id)arg4;
-- (void)_resizeAndCenterTextField;
-- (id)styleProvider;
+- (void)setDelegate:(id)arg1;
+- (void)setProperty:(int)arg1;
+- (int)property;
 
 @end

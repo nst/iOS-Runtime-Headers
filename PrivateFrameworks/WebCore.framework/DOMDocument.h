@@ -37,6 +37,23 @@
 @property(copy) NSString * selectedStylesheetSet;
 
 
+- (id)domain;
+- (id)createNodeIterator:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
+- (id)getElementsByTagName:(id)arg1;
+- (id)forms;
+- (id)links;
+- (id)documentElement;
+- (id)createElement:(id)arg1;
+- (id)doctype;
+- (id)getComputedStyle:(id)arg1 pseudoElement:(id)arg2;
+- (id)URL;
+- (id)createRange;
+- (id)body;
+- (id)getElementById:(id)arg1;
+- (id)createCSSStyleDeclaration;
+- (id)title;
+- (id)images;
+- (void)setTitle:(id)arg1;
 - (id)implementation;
 - (id)inputEncoding;
 - (id)xmlEncoding;
@@ -112,27 +129,10 @@
 - (id)querySelectorAll:(id)arg1;
 - (id)createTouch:(id)arg1 target:(id)arg2 identifier:(int)arg3 pageX:(int)arg4 pageY:(int)arg5 screenX:(int)arg6 screenY:(int)arg7;
 - (id)createTouchList;
-- (id)domain;
-- (id)createNodeIterator:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
-- (id)getElementsByTagName:(id)arg1;
-- (id)forms;
-- (id)links;
-- (id)documentElement;
-- (id)createElement:(id)arg1;
-- (id)doctype;
-- (id)getComputedStyle:(id)arg1 pseudoElement:(id)arg2;
-- (id)URL;
-- (id)createRange;
-- (id)body;
-- (id)getElementById:(id)arg1;
-- (id)createCSSStyleDeclaration;
-- (id)title;
-- (id)images;
-- (void)setTitle:(id)arg1;
 - (id)_focusableNodes;
 - (id)_documentRange;
-- (id)webFrame;
 - (id)URLWithAttributeString:(id)arg1;
+- (id)webFrame;
 - (id)createBlockPlaceholder;
 - (void)dd_resetResults;
 

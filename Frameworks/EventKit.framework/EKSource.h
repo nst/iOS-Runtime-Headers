@@ -14,6 +14,8 @@
 
 
 - (id)externalID;
+- (id)description;
+- (id)init;
 - (void)setDefaultAlarmOffset:(id)arg1;
 - (id)defaultAlarmOffset;
 - (id)_persistentItem;
@@ -22,11 +24,9 @@
 - (id)constraints;
 - (BOOL)commit:(id*)arg1;
 - (id)sourceIdentifier;
-- (BOOL)remove:(id*)arg1;
 - (int)sourceType;
 - (id)title;
 - (BOOL)isEnabled;
-- (id)description;
-- (id)init;
+- (BOOL)remove:(id*)arg1;
 
 @end

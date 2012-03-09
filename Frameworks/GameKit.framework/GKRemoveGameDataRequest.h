@@ -11,11 +11,11 @@
 @property(retain) NSDictionary * gameDescriptor;
 
 
+- (void)dealloc;
 - (void)setGameDescriptor:(id)arg1;
 - (BOOL)authenticationRequired;
 - (id)gameDescriptor;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

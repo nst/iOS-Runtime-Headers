@@ -12,6 +12,9 @@
 
 + (int)mediaEntityType;
 
+- (id)init;
+- (void)dealloc;
+- (void)_isGeniusEnabledDidChangeNotification:(id)arg1;
 - (unsigned long long)selectedPlaylistPersistentID;
 - (int)rowIndexOfPlaylistWithPersistentUID:(unsigned long long)arg1;
 - (void)setSelectedPlaylistPersistentID:(unsigned long long)arg1;
@@ -31,7 +34,5 @@
 - (id)deleteConfirmationSheetForIndex:(unsigned int)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (BOOL)allowsDeletion;
-- (id)init;
-- (void)dealloc;
 
 @end

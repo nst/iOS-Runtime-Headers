@@ -29,7 +29,17 @@
 @property(readonly) NSMutableArray * viaWaypoints;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)setEndPlaceToken:(id)arg1;
+- (void)setStartPlaceToken:(id)arg1;
+- (void)setCachedIconIDs:(id)arg1;
+- (void)setMaxRoutes:(unsigned int)arg1;
+- (void)setMapZoomLevel:(int)arg1;
+- (void)setTransitIconSize:(unsigned int)arg1;
+- (void)setTimezoneOffset:(int)arg1;
 - (Class)responseClass;
+- (void)setProviderID:(unsigned short)arg1;
 - (unsigned short)providerID;
 - (unsigned int)transitIconSize;
 - (int)timezoneOffset;
@@ -42,16 +52,6 @@
 - (id)cachedIconIDs;
 - (int)cachedIconVersion;
 - (void)setCachedIconVersion:(int)arg1;
-- (void)setEndPlaceToken:(id)arg1;
-- (void)setStartPlaceToken:(id)arg1;
-- (void)setCachedIconIDs:(id)arg1;
-- (void)setMaxRoutes:(unsigned int)arg1;
-- (void)setMapZoomLevel:(int)arg1;
-- (void)setTransitIconSize:(unsigned int)arg1;
-- (void)setTimezoneOffset:(int)arg1;
-- (void)setProviderID:(unsigned short)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)calendarDate;
 
 @end

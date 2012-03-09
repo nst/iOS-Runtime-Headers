@@ -16,13 +16,13 @@
 
 + (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3;
 
-- (id)MIMEType;
-- (id)name;
+- (void)dealloc;
 - (id)iconStyleDomain;
 - (void)bind;
 - (id)initWithName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3;
 - (id)typeIdentifier;
-- (void)dealloc;
+- (id)MIMEType;
+- (id)name;
 - (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
 - (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
 

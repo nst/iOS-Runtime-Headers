@@ -46,7 +46,14 @@
 @property(retain) NSString * deprecatedDuration;
 
 
+- (id)description;
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
+- (int)mode;
+- (void)setMode:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)altDescription;
 - (id)deprecatedDuration;
 - (id)deprecatedDistance;
@@ -92,12 +99,5 @@
 - (BOOL)hasDurationSeconds;
 - (int)distanceMeters;
 - (BOOL)hasDistanceMeters;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (int)mode;
-- (void)setMode:(int)arg1;
-- (id)description;
-- (id)description;
-- (void)dealloc;
 
 @end

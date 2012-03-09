@@ -21,6 +21,7 @@
 + (id)canonicalLanguageIdentifierFromIdentifier:(id)arg1;
 + (id)keyboardInputModeWithIdentifier:(id)arg1;
 
+- (void)dealloc;
 - (id)softwareLayout;
 - (void)setHardwareLayout:(id)arg1;
 - (void)setSoftwareLayout:(id)arg1;
@@ -30,6 +31,5 @@
 - (id)initWithIdentifier:(id)arg1;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
-- (void)dealloc;
 
 @end

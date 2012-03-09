@@ -19,8 +19,11 @@
 @property(readonly) int state;
 
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setError:(id)arg1;
-- (void)setEstimatedTimeRemaining:(unsigned int)arg1;
+- (id)error;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (float)progress;
 - (id)dictionaryRepresentation;
@@ -30,11 +33,8 @@
 - (id)date;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)error;
-- (id)initWithState:(int)arg1 progress:(float)arg2 estimatedTimeRemaining:(unsigned int)arg3 error:(id)arg4;
+- (void)setEstimatedTimeRemaining:(unsigned int)arg1;
 - (unsigned int)estimatedTimeRemaining;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)initWithState:(int)arg1 progress:(float)arg2 estimatedTimeRemaining:(unsigned int)arg3 error:(id)arg4;
 
 @end

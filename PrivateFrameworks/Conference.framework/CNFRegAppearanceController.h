@@ -63,8 +63,6 @@
 + (id)defaultAppearanceController;
 + (id)globalAppearanceController;
 
-- (id)tableBackgroundColor;
-- (int)modalPresentationStyle;
 - (id)tableCellEditableInsertionPointColor;
 - (id)tableHeaderFont;
 - (id)tableFooterFont;
@@ -111,5 +109,7 @@
 - (BOOL)webViewDrawsShadows;
 - (int)navigationBarStyle;
 - (BOOL)navigationBarIsTranslucent;
+- (id)tableBackgroundColor;
+- (int)modalPresentationStyle;
 
 @end

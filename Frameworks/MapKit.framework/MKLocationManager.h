@@ -102,18 +102,13 @@
 
 + (id)sharedLocationManager;
 
+- (id)init;
+- (void)setHeadingOrientation:(int)arg1;
+- (BOOL)hasLocation;
+- (void)startRecording;
+- (BOOL)isWiFiEnabled;
 - (id)lastLocation;
 - (void)setLastLocation:(id)arg1;
-- (BOOL)isWiFiEnabled;
-- (BOOL)hasLocation;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
-- (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
-- (BOOL)locationManagerShouldDisplayHeadingCalibration:(id)arg1;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
-- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
-- (double)desiredAccuracy;
-- (void)setDesiredAccuracy:(double)arg1;
-- (id)heading;
 - (id)currentLocation;
 - (void)stopRecording;
 - (void)reset;
@@ -123,7 +118,6 @@
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
-- (void)startRecording;
 - (void)setUseCourseForHeading:(BOOL)arg1;
 - (BOOL)useCourseForHeading;
 - (void)setCorrected:(BOOL)arg1;
@@ -210,7 +204,14 @@
 - (void)_updateWifiEnabled;
 - (void)wiFiStatusChanged:(id)arg1;
 - (void)_countryProvidersDidChange:(id)arg1;
-- (void)setHeadingOrientation:(int)arg1;
+- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
+- (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
+- (BOOL)locationManagerShouldDisplayHeadingCalibration:(id)arg1;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (double)desiredAccuracy;
+- (void)setDesiredAccuracy:(double)arg1;
+- (id)heading;
 - (void)setHeading:(id)arg1;
 - (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
 - (BOOL)isLocationServicesPreferencesDialogEnabled;
@@ -218,6 +219,5 @@
 - (int)headingOrientation;
 - (double)expectedGpsUpdateInterval;
 - (int)_authorizationStatus;
-- (id)init;
 
 @end

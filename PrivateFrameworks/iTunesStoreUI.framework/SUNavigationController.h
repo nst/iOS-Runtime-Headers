@@ -14,6 +14,8 @@
 @property(retain) SUSection * section;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setLoading:(BOOL)arg1;
 - (BOOL)isLoading;
 - (void)setViewControllers:(id)arg1;
@@ -27,8 +29,6 @@
 - (id)section;
 - (id)navigationBar;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
-- (id)description;
-- (void)dealloc;
 - (id)copyScriptViewController;
 - (void)_loadingDidChangeNotification:(id)arg1;
 - (BOOL)clearsWeakScriptReferences;

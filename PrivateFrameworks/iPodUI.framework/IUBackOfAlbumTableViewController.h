@@ -11,9 +11,9 @@
 @property <IUBackOfAlbumTableViewControllerDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)_beginPlaybackForRow:(int)arg1;
 - (void)performDefaultActionForRow:(int)arg1;
 

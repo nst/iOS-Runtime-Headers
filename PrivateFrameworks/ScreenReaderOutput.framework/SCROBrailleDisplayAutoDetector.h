@@ -10,18 +10,18 @@
     NSMutableDictionary *_iteratorDict;
 }
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedDetector;
 + (void)initialize;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (BOOL)isAutoDetectEnabled;
-- (void)detectDisplays;
-- (void)stopDetectingDisplays;
 - (unsigned int)retainCount;
 - (id)retain;
+- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)autorelease;
 - (id)init;
-- (void)release;
+- (void)stopDetectingDisplays;
+- (void)detectDisplays;
+- (BOOL)isAutoDetectEnabled;
 
 @end

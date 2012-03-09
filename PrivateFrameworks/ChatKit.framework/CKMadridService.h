@@ -12,7 +12,7 @@
     BOOL _blockingForChatLoad;
 }
 
-+ (void)tearDown;
++ (unsigned long long)capabilities;
 + (void)setCapabilities:(unsigned long long)arg1;
 + (BOOL)_connectToDaemon;
 + (BOOL)isConnectedToDaemon;
@@ -27,12 +27,13 @@
 + (BOOL)isMadridSupported;
 + (BOOL)isMadridEnabled;
 + (id)sharedMadridService;
-+ (unsigned long long)capabilities;
++ (void)tearDown;
 
 - (int)unreadCount;
-- (BOOL)isAvailable;
+- (id)init;
+- (void)dealloc;
 - (Class)entityClass;
-- (id)displayName;
+- (BOOL)isAvailable;
 - (BOOL)ensureMadridConnection;
 - (void)_setConversation:(id)arg1 forPreloadQuery:(id)arg2;
 - (void)_removePreloadQuery:(id)arg1;
@@ -125,7 +126,6 @@
 - (BOOL)isValidAddress:(id)arg1;
 - (void)sendDowngradePingForMessage:(id)arg1 inConversation:(id)arg2 manualDowngrade:(BOOL)arg3;
 - (BOOL)restrictsMediaObjects;
-- (id)init;
-- (void)dealloc;
+- (id)displayName;
 
 @end

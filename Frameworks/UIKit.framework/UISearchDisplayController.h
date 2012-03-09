@@ -53,7 +53,8 @@
 @property(readonly) BOOL hidNavigationBar;
 
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setSearchResultsTitle:(id)arg1;
 - (id)searchResultsDelegate;
 - (id)searchResultsDataSource;
@@ -126,9 +127,8 @@
 - (void)_clearViewController;
 - (void)setActive:(BOOL)arg1;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -11,6 +11,7 @@
 + (int)mediaEntityType;
 + (id)tabBarItemTitleKey;
 
+- (void)dealloc;
 - (void)setQuery:(id)arg1;
 - (id)_tvShowNameForTallyingFromItem:(id)arg1;
 - (unsigned int)_seasonCountForShowOfSeasonAtIndex:(unsigned int)arg1;
@@ -20,6 +21,5 @@
 - (BOOL)deleteRemovesEntireGroup;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (BOOL)shouldLoadLocalImagesSynchronously;
-- (void)dealloc;
 
 @end

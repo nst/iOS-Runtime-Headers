@@ -13,11 +13,6 @@
 @property void* addressBook;
 
 
-- (void)setAddressBook:(void*)arg1;
-- (void*)addressBook;
-- (void)displayScrollerIndicators;
-- (id)contentView;
-- (void)reload;
 - (id)init;
 - (void)dealloc;
 - (id)contentControllerDelegate;
@@ -27,5 +22,10 @@
 - (void)preloadController;
 - (void)back:(BOOL)arg1 save:(BOOL)arg2;
 - (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
+- (void)setAddressBook:(void*)arg1;
+- (void*)addressBook;
+- (void)displayScrollerIndicators;
+- (id)contentView;
+- (void)reload;
 
 @end

@@ -12,9 +12,9 @@
 }
 
 
-- (void)setDelegate:(id)arg1;
-- (id)footerView;
-- (void)reset;
+- (id)init;
+- (void)dealloc;
+- (void)setStyleProvider:(id)arg1;
 - (void)_handleCommitForDueDateEditViewController:(id)arg1;
 - (BOOL)_shouldShowRecurrence;
 - (BOOL)editItemViewControllerCommit:(id)arg1;
@@ -25,8 +25,9 @@
 - (void)setCalendarItem:(id)arg1 store:(id)arg2;
 - (BOOL)configureForCalendarConstraints:(id)arg1;
 - (id)cellForSubitemAtIndex:(int)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setStyleProvider:(id)arg1;
+- (id)footerView;
+- (void)reset;
+- (BOOL)applicationDidResume;
+- (void)setDelegate:(id)arg1;
 
 @end

@@ -10,15 +10,15 @@
 }
 
 
-- (id)initWithPlayer:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)_rateDidChangeNotification:(id)arg1;
 - (void)_playbackStateChanged:(id)arg1;
 - (void)_timeDidJumpNotification:(id)arg1;
 - (id)_currentItem;
+- (id)initWithPlayer:(id)arg1;
 - (void)_repeatTypeChanged:(id)arg1;
 - (void)_itemChanged:(id)arg1;
 - (void)_contentsChanged:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

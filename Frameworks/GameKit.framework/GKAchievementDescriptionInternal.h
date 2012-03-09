@@ -24,6 +24,8 @@
 
 + (id)codedPropertyKeys;
 
+- (id)description;
+- (void)dealloc;
 - (void)setMaximumPoints:(unsigned int)arg1;
 - (void)setUnachievedDescription:(id)arg1;
 - (void)setAchievedDescription:(id)arg1;
@@ -38,7 +40,5 @@
 - (void)setTitle:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (BOOL)isHidden;
-- (id)description;
-- (void)dealloc;
 
 @end

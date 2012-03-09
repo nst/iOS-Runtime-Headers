@@ -15,10 +15,9 @@
 @property(readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingMapRect;
 
 
-- (id)routeAtIndex:(unsigned int)arg1;
-- (void)addRoute:(id)arg1;
-- (id)routes;
-- (struct { double x1; double x2; })coordinate;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)removeAllRoutes;
 - (void)replaceRouteAtIndex:(unsigned int)arg1 withRoute:(id)arg2;
 - (void)addRoutes:(id)arg1;
@@ -27,8 +26,9 @@
 - (unsigned int)indexOfRouteIdenticalTo:(id)arg1;
 - (BOOL)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (struct { double x1; double x2; })coordinate;
+- (id)routeAtIndex:(unsigned int)arg1;
+- (void)addRoute:(id)arg1;
+- (id)routes;
 
 @end

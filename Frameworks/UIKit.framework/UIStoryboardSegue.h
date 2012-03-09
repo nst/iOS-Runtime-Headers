@@ -15,11 +15,11 @@
 @property(readonly) id destinationViewController;
 
 
+- (void)perform;
+- (void)dealloc;
 - (id)destinationViewController;
 - (id)sourceViewController;
 - (id)initWithIdentifier:(id)arg1 source:(id)arg2 destination:(id)arg3;
 - (id)identifier;
-- (void)perform;
-- (void)dealloc;
 
 @end

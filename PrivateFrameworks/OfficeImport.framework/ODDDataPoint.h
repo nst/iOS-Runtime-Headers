@@ -9,9 +9,9 @@
 }
 
 
+- (void)dealloc;
 - (id)presentations;
 - (void)addPresentation:(id)arg1 order:(unsigned long)arg2;
 - (void)addAssociatedPresentation:(id)arg1;
-- (void)dealloc;
 
 @end

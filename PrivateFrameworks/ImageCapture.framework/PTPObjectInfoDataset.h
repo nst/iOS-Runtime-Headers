@@ -30,13 +30,14 @@
 }
 
 
+- (id)modificationDate;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)captureDate;
+- (void)setCaptureDate:(id)arg1;
 - (void)setSequenceNumber:(unsigned long)arg1;
 - (unsigned long)sequenceNumber;
-- (id)keywords;
-- (void)setKeywords:(id)arg1;
-- (void)setFilename:(id)arg1;
-- (id)modificationDate;
-- (id)filename;
 - (id)content64;
 - (void)setStorageID:(unsigned long)arg1;
 - (void)setObjectFormat:(unsigned short)arg1;
@@ -76,11 +77,10 @@
 - (unsigned long)objectCompressedSize;
 - (id)content;
 - (id)initWithData:(id)arg1;
-- (id)captureDate;
-- (void)setCaptureDate:(id)arg1;
+- (id)keywords;
+- (void)setKeywords:(id)arg1;
+- (void)setFilename:(id)arg1;
+- (id)filename;
 - (void)setModificationDate:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

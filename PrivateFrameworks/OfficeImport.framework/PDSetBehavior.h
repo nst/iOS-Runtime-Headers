@@ -7,9 +7,9 @@
 }
 
 
-- (id)value;
-- (void)setValue:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)value;
+- (void)setValue:(id)arg1;
 
 @end

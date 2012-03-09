@@ -15,8 +15,8 @@
 @property(copy) NSString * countryCode;
 
 
-- (id)countryCode;
 - (void)setCountryCode:(id)arg1;
+- (id)countryCode;
 - (id)phoneticCountryName;
 - (void)setCountryName:(id)arg1;
 - (void)setPhoneticCountryName:(id)arg1;

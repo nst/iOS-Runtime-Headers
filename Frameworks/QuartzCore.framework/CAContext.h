@@ -14,23 +14,23 @@
 @property(retain) CALayer * layer;
 @property(readonly) unsigned int contextId;
 
-+ (id)remoteContextWithOptions:(id)arg1;
-+ (id)currentContext;
-+ (id)objectForSlot:(unsigned int)arg1;
 + (id)localContext;
 + (id)remoteContext;
-+ (id)localContextWithOptions:(id)arg1;
-+ (void)setClientPort:(unsigned int)arg1;
++ (id)objectForSlot:(unsigned int)arg1;
 + (id)allContexts;
++ (id)localContextWithOptions:(id)arg1;
++ (id)remoteContextWithOptions:(id)arg1;
++ (void)setClientPort:(unsigned int)arg1;
++ (id)currentContext;
 
-- (void)invalidate;
+- (void)deleteSlot:(unsigned int)arg1;
 - (unsigned int)createSlot;
 - (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
-- (void)deleteSlot:(unsigned int)arg1;
+- (void)orderBelow:(unsigned int)arg1;
 - (unsigned int)createFencePort;
 - (void)setFence:(unsigned int)arg1 count:(unsigned int)arg2;
 - (void)setFencePort:(unsigned int)arg1;
 - (void)orderAbove:(unsigned int)arg1;
-- (void)orderBelow:(unsigned int)arg1;
+- (void)invalidate;
 
 @end

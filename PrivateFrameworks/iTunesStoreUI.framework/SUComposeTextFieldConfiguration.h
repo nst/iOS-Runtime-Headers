@@ -26,18 +26,18 @@
 @property(retain) NSString * value;
 
 
+- (void)dealloc;
 - (void)setBorderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;
-- (unsigned int)maxLength;
-- (void)setMaxLength:(unsigned int)arg1;
-- (void)setRequired:(BOOL)arg1;
 - (id)label;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
 - (id)placeholder;
-- (void)dealloc;
+- (unsigned int)maxLength;
+- (void)setMaxLength:(unsigned int)arg1;
+- (void)setRequired:(BOOL)arg1;
 - (BOOL)isRequired;
 
 @end

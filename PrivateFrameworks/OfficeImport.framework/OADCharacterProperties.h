@@ -48,6 +48,15 @@
 
 + (void)initialize;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
+- (double)opacity;
+- (void)setOpacity:(double)arg1;
+- (void)setSize:(double)arg1;
+- (id)stroke;
+- (id)fill;
+- (double)size;
 - (BOOL)isShadowed;
 - (void)setFormatKerningType:(int)arg1;
 - (void)setIsVerticalText:(BOOL)arg1;
@@ -118,14 +127,5 @@
 - (void)setSymbolFont:(id)arg1;
 - (void)setFill:(id)arg1;
 - (id)initWithDefaults;
-- (double)opacity;
-- (void)setOpacity:(double)arg1;
-- (void)setSize:(double)arg1;
-- (id)stroke;
-- (id)fill;
-- (double)size;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 
 @end

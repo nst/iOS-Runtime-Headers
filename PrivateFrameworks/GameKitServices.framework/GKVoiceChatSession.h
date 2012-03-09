@@ -16,6 +16,7 @@
 @property float sessionVolume;
 
 
+- (void)dealloc;
 - (id)peerList;
 - (float)sessionVolume;
 - (void)setSessionVolume:(float)arg1;
@@ -25,11 +26,10 @@
 - (void)stopSession;
 - (void)startSession;
 - (id)initWithGKSession:(id)arg1 sessionName:(id)arg2;
-- (void)setDelegate:(id)arg1;
-- (float)outputMeterForPeer:(id)arg1;
-- (id)delegate;
 - (float)inputMeter;
 - (id)sessionName;
-- (void)dealloc;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (float)outputMeterForPeer:(id)arg1;
 
 @end

@@ -6,8 +6,8 @@
 }
 
 
+- (id)description;
 - (int)appendData:(id)arg1;
 - (void)done;
-- (id)description;
 
 @end

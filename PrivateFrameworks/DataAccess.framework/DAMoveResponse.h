@@ -19,10 +19,10 @@
 
 - (id)sourceID;
 - (id)destID;
-- (id)origRequest;
-- (int)status;
 - (id)description;
 - (void)dealloc;
+- (int)status;
+- (id)origRequest;
 - (void)setOrigRequest:(id)arg1;
 - (id)initWithStatus:(int)arg1 sourceID:(id)arg2 destID:(id)arg3;
 

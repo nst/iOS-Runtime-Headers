@@ -8,13 +8,13 @@
 
 + (void)initialize;
 
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (id)init;
+- (void)dealloc;
 - (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2;
 - (void)setOrderedSectionIDs:(id)arg1;
 - (void)setSectionOrderRule:(unsigned int)arg1;
 - (void)getSectionInfoWithCompletion:(id)arg1;
 - (void)getSectionOrderRuleWithCompletion:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 
 @end

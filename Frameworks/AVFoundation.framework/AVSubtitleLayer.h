@@ -8,27 +8,27 @@
     AVSubtitleLayerInternal *_subtitleLayer;
 }
 
+@property(retain) AVPlayer * player;
 @property(getter=isOverscanSubtitleSupportEnabled) BOOL overscanSubtitleSupportEnabled;
 @property(readonly) CADisplay * subtitleLayerDisplay;
-@property(retain) AVPlayer * player;
 
 + (id)subtitleLayerWithPlayer:(id)arg1;
 
-- (id)initWithLayer:(id)arg1;
-- (void)layerDidBecomeVisible:(BOOL)arg1;
-- (void)setPlayer:(id)arg1;
-- (void)finalize;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)_updateNonForcedSubtitleDisplayEnabled:(BOOL)arg1;
-- (void)subtitlesDidChange:(id)arg1;
-- (void)_invalidateBoundaryTimeObserver;
-- (id)player;
-- (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
-- (BOOL)isOverscanSubtitleSupportEnabled;
-- (void)setOverscanSubtitleSupportEnabled:(BOOL)arg1;
-- (id)subtitleLayerDisplay;
 - (id)init;
 - (void)dealloc;
+- (void)_invalidateBoundaryTimeObserver;
+- (void)subtitlesDidChange:(id)arg1;
+- (void)_updateNonForcedSubtitleDisplayEnabled:(BOOL)arg1;
+- (void)setOverscanSubtitleSupportEnabled:(BOOL)arg1;
+- (id)subtitleLayerDisplay;
+- (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
+- (BOOL)isOverscanSubtitleSupportEnabled;
+- (id)player;
+- (void)setPlayer:(id)arg1;
+- (void)layerDidBecomeVisible:(BOOL)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)initWithLayer:(id)arg1;
+- (void)finalize;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

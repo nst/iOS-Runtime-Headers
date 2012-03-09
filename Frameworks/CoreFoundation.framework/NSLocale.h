@@ -5,11 +5,7 @@
 @interface NSLocale : NSObject <NSCopying, NSCoding> {
 }
 
-+ (id)componentsFromLocaleIdentifier:(id)arg1;
-+ (id)canonicalLanguageIdentifierFromString:(id)arg1;
-+ (id)currentLocale;
-+ (id)preferredLanguages;
-+ (id)localeIdentifierFromComponents:(id)arg1;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (unsigned int)lineDirectionForLanguage:(id)arg1;
 + (unsigned int)characterDirectionForLanguage:(id)arg1;
 + (unsigned int)windowsLocaleCodeFromLocaleIdentifier:(id)arg1;
@@ -22,24 +18,28 @@
 + (id)availableLocaleIdentifiers;
 + (id)localeWithLocaleIdentifier:(id)arg1;
 + (id)systemLocale;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)componentsFromLocaleIdentifier:(id)arg1;
++ (id)canonicalLanguageIdentifierFromString:(id)arg1;
++ (id)currentLocale;
++ (id)preferredLanguages;
++ (id)localeIdentifierFromComponents:(id)arg1;
 + (id)autoupdatingCurrentLocale;
 + (id)GMMLocaleID;
 
-- (id)localeIdentifier;
-- (id)initWithLocaleIdentifier:(id)arg1;
-- (id)identifier;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)_copyDisplayNameForKey:(id)arg1 value:(id)arg2;
-- (id)_prefs;
-- (id)displayNameForKey:(id)arg1 value:(id)arg2;
-- (unsigned long)_cfTypeID;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)objectForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
+- (id)_copyDisplayNameForKey:(id)arg1 value:(id)arg2;
+- (id)_prefs;
+- (id)displayNameForKey:(id)arg1 value:(id)arg2;
+- (unsigned long)_cfTypeID;
+- (id)localeIdentifier;
+- (id)initWithLocaleIdentifier:(id)arg1;
+- (id)identifier;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

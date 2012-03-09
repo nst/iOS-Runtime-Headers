@@ -181,13 +181,16 @@
 + (id)viewControllerForView:(id)arg1;
 + (void)_endAppearanceTransitionFromViewController:(id)arg1 toViewController:(id)arg2;
 + (void)_beginAppearanceTransitionFromViewController:(id)arg1 toViewController:(id)arg2 animated:(BOOL)arg3;
-+ (void)_enqueueTransitionSafeInvocation:(id)arg1;
-+ (void)_dequeueTransitionSafeInvocations;
++ (void)_iTunesStoreUI_enqueueTransitionSafeInvocation:(id)arg1;
++ (void)_iTunesStoreUI_dequeueTransitionSafeInvocations;
++ (void)_iTunesStoreUI_timeoutTransitionSafety;
 + (void)beginTransitionSafety;
 + (void)endTransitionSafety;
 + (id)transitionSafetyDelegate;
 + (id)transitionSafePerformer:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)_setUseTelephonyUI:(BOOL)arg1;
 - (BOOL)_displaysFullScreen;
 - (void)_setImagePickerMediaTypes:(id)arg1;
@@ -518,8 +521,6 @@
 - (void)setTitle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (BOOL)ab_wantsToPresentModalViewControllerWithoutAnyHelp;
 - (int)abViewControllerType;
 - (void)presentMoviePlayerViewControllerAnimated:(id)arg1;
@@ -614,6 +615,7 @@
 - (id)wildcatVideosViewController;
 - (BOOL)rotationDisabled;
 - (void)updateInterfaceOrientation;
+- (id)player;
 - (int)localizedCompare:(id)arg1;
 - (BOOL)allowsCustomizing;
 - (void)setAllowsCustomizing:(BOOL)arg1;
@@ -621,7 +623,6 @@
 - (int)statusBarStyle;
 - (BOOL)isStatusBarHidden;
 - (id)query;
-- (id)player;
 - (BOOL)shouldShowNowPlayingButton;
 - (BOOL)shouldHideContainerNavigationBar;
 - (id)rootIdentifier;

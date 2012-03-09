@@ -17,6 +17,9 @@
 @property(retain) NSArray * footerSections;
 
 
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setCurrentDataSourceIndex:(int)arg1;
 - (void)setSectionDataSources:(id)arg1;
 - (void)refreshCurrentDataSourceWithCompletionHandlerAndError:(id)arg1;
@@ -31,8 +34,5 @@
 - (unsigned long long)contextForTableView:(id)arg1 updateStatusViewBeforeLoading:(id)arg2;
 - (void)tableView:(id)arg1 prepareExpensiveContentAtIndexPaths:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

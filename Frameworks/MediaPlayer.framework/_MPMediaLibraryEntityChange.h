@@ -7,18 +7,18 @@
 @interface _MPMediaLibraryEntityChange : NSObject  {
     MPMediaEntity *_entity;
     NSString *_anchor;
-    BOOL _deleted;
+    int _deletionType;
 }
 
 @property(readonly) MPMediaEntity * entity;
 @property(readonly) NSString * anchor;
-@property(getter=isDeleted,readonly) BOOL deleted;
+@property(readonly) int deletionType;
 
 
-- (id)initWithEntity:(id)arg1 anchor:(id)arg2 deleted:(BOOL)arg3;
-- (BOOL)isDeleted;
-- (id)entity;
-- (id)anchor;
 - (void)dealloc;
+- (int)deletionType;
+- (id)initWithEntity:(id)arg1 anchor:(id)arg2 deletionType:(int)arg3;
+- (id)anchor;
+- (id)entity;
 
 @end

@@ -5,11 +5,11 @@
 @interface WebUIDelayedSpinner : NSObject  {
 }
 
++ (void)hide;
 + (void)showWithDelay;
 + (void)_setShowStatusBarSpinnerTimer:(id)arg1;
 + (void)_showStatusBarSpinner:(id)arg1;
 + (void)_setShowStatusBarSpinner:(BOOL)arg1 withDelay:(double)arg2;
-+ (void)hide;
 
 
 @end

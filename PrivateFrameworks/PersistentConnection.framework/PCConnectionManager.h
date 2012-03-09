@@ -53,6 +53,19 @@
 + (BOOL)_isCachedKeepAliveIntervalStillValid:(double)arg1 date:(id)arg2;
 
 - (void)log:(id)arg1;
+- (void)dealloc;
+- (double)currentKeepAliveInterval;
+- (void)resumeManagerWithAction:(int)arg1;
+- (BOOL)shouldClientScheduleReconnectDueToFailure;
+- (void)stopManager;
+- (void)setMaximumKeepAliveInterval:(double)arg1;
+- (void)setMinimumKeepAliveInterval:(double)arg1;
+- (void)setKeepAliveGracePeriod:(double)arg1;
+- (id)initWithConnectionClass:(int)arg1 delegate:(id)arg2 serviceIdentifier:(id)arg3;
+- (int)currentStyle;
+- (void)setPollingIntervalOverride:(double)arg1;
+- (void)startManager;
+- (void)setOnlyAllowedStyle:(int)arg1;
 - (void)cancelPollingIntervalOverride;
 - (void)setFallBackToAlternateInterface:(BOOL)arg1;
 - (void)logAtLevel:(int)arg1 format:(id)arg2;
@@ -86,18 +99,5 @@
 - (void)interfaceManagerInHomeCountryStatusChanged:(id)arg1;
 - (void)interfaceManagerWWANInterfaceStatusChanged:(id)arg1;
 - (void)interfaceManagerInternetReachabilityChanged:(id)arg1;
-- (int)currentStyle;
-- (double)currentKeepAliveInterval;
-- (void)resumeManagerWithAction:(int)arg1;
-- (BOOL)shouldClientScheduleReconnectDueToFailure;
-- (void)stopManager;
-- (void)setMaximumKeepAliveInterval:(double)arg1;
-- (void)setMinimumKeepAliveInterval:(double)arg1;
-- (void)setKeepAliveGracePeriod:(double)arg1;
-- (id)initWithConnectionClass:(int)arg1 delegate:(id)arg2 serviceIdentifier:(id)arg3;
-- (void)dealloc;
-- (void)setPollingIntervalOverride:(double)arg1;
-- (void)startManager;
-- (void)setOnlyAllowedStyle:(int)arg1;
 
 @end

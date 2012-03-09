@@ -18,6 +18,7 @@
 @property(readonly) int purchaseReason;
 
 
+- (void)dealloc;
 - (id)mediaItems;
 - (id)_purchaseForMediaItem:(id)arg1;
 - (BOOL)_shouldCancelRemainingRequestForError:(id)arg1;
@@ -29,6 +30,5 @@
 - (id)initWithMediaItem:(id)arg1 purchaseReason:(int)arg2;
 - (void)prioritizeMediaItem:(id)arg1 forPlayback:(BOOL)arg2 purchaseCompletionHandler:(id)arg3;
 - (int)purchaseReasonForMediaItemPersistentID:(id)arg1;
-- (void)dealloc;
 
 @end

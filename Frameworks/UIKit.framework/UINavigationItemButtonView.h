@@ -13,6 +13,7 @@
 @property(setter=_setTintColor:,retain) UIColor * _tintColor;
 
 
+- (void)dealloc;
 - (struct UIOffset { float x1; float x2; })_backButtonTitlePositionAdjustmentForBarMetrics:(int)arg1;
 - (id)_backButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (float)_backButtonBackgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
@@ -53,6 +54,5 @@
 - (id)_appearanceStorage;
 - (id)_scriptingInfo;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

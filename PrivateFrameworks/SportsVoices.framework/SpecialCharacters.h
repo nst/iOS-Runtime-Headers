@@ -5,8 +5,6 @@
 @interface SpecialCharacters : NSObject  {
 }
 
-+ (id)suppressPronunciationKey;
-+ (id)suppressPronunciationSuffix;
 + (id)noString;
 + (id)yesString;
 + (id)defaultAttribute;
@@ -32,6 +30,8 @@
 + (id)wildcardSymbol;
 + (id)attributeNameKey;
 + (id)indexKey;
++ (id)suppressPronunciationKey;
++ (id)suppressPronunciationSuffix;
 
 
 @end

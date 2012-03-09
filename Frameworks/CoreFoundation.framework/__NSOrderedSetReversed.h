@@ -8,10 +8,10 @@
 }
 
 
-- (unsigned int)indexOfObject:(id)arg1;
-- (id)initWithOrderedSet:(id)arg1;
 - (unsigned int)count;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (void)dealloc;
+- (id)initWithOrderedSet:(id)arg1;
+- (unsigned int)indexOfObject:(id)arg1;
 
 @end

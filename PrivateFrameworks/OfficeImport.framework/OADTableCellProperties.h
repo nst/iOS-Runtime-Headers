@@ -40,6 +40,9 @@
 }
 
 
+- (void)dealloc;
+- (void)setRightMargin:(float)arg1;
+- (id)fill;
 - (id)stroke:(int)arg1;
 - (BOOL)isLeftStrokeOverridden;
 - (BOOL)isRightStrokeOverridden;
@@ -88,8 +91,5 @@
 - (float)leftMargin;
 - (void)setLeftMargin:(float)arg1;
 - (void)setFill:(id)arg1;
-- (void)setRightMargin:(float)arg1;
-- (id)fill;
-- (void)dealloc;
 
 @end

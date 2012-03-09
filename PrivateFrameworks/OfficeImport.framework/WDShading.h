@@ -11,17 +11,17 @@
 }
 
 
-- (BOOL)isEqualToShading:(id)arg1;
-- (void)setShading:(id)arg1;
-- (void)setForeground:(id)arg1;
-- (id)foreground;
-- (id)background;
-- (void)setBackground:(id)arg1;
-- (int)style;
-- (void)setStyle:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)background;
+- (void)setBackground:(id)arg1;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (BOOL)isEqualToShading:(id)arg1;
+- (void)setShading:(id)arg1;
+- (void)setForeground:(id)arg1;
+- (id)foreground;
 
 @end

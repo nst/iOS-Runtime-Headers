@@ -12,6 +12,7 @@
 }
 
 
+- (void)dealloc;
 - (id)defaultCellFillWithState:(id)arg1;
 - (void)mapTablePropertiesWithState:(id)arg1;
 - (void)mapColumnGridAt:(id)arg1 withState:(id)arg2;
@@ -23,6 +24,5 @@
 - (id)grid;
 - (id)cellStyle;
 - (unsigned int)rowCount;
-- (void)dealloc;
 
 @end

@@ -43,6 +43,8 @@
 @property(copy) id didSelectAlbumHandler;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidUnload;
@@ -53,7 +55,7 @@
 - (id)didSelectAlbumHandler;
 - (void)shouldReload:(id)arg1;
 - (void)_updateHasContent;
-- (void)beginAddPhotosSessionForAlbum:(struct NSObject { Class x1; }*)arg1 completionHandler:(id)arg2;
+- (void)beginAddPhotosSessionForAlbum:(id)arg1 completionHandler:(id)arg2;
 - (void)setHiddenAlbum:(struct NSObject { Class x1; }*)arg1;
 - (id)_syncProgressAlbums;
 - (void)_updateSyncProgress;
@@ -78,7 +80,5 @@
 - (struct NSObject { Class x1; }*)hiddenAlbum;
 - (struct NSObject { Class x1; }*)albumList;
 - (void)albumDidChange:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

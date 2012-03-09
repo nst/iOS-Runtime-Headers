@@ -19,6 +19,7 @@
 @property(copy) NSString * previewItemContentType;
 
 
+- (void)dealloc;
 - (void)setURLToDeleteOnDealloc:(id)arg1;
 - (id)URLToDeleteOnDealloc;
 - (void)setPreviewItemTitle:(id)arg1;
@@ -31,6 +32,5 @@
 - (void)setPreviewItemContentType:(id)arg1;
 - (id)previewItemURLOverride;
 - (id)previewItemURL;
-- (void)dealloc;
 
 @end

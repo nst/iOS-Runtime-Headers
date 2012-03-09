@@ -16,8 +16,7 @@
 
 
 - (void)shutdown;
-- (void)send;
-- (void)close;
+- (void)dealloc;
 - (void)_sendPendingData;
 - (void)readWebSocketMessage:(const char *)arg1 length:(long)arg2;
 - (void)readHTTPMessage:(const char *)arg1 length:(long)arg2;
@@ -31,6 +30,7 @@
 - (id)initWithSocketFileDescriptor:(int)arg1;
 - (void)clearChannel;
 - (void)sendWebSocketMessage:(id)arg1;
-- (void)dealloc;
+- (void)send;
+- (void)close;
 
 @end

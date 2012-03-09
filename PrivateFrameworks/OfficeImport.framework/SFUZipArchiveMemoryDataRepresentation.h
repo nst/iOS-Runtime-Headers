@@ -9,16 +9,16 @@
 }
 
 
+- (void)dealloc;
+- (id)data;
+- (id)initWithData:(id)arg1;
 - (id)bufferedInputStreamWithOffset:(long long)arg1 length:(long long)arg2;
 - (id)inputStreamWithOffset:(long long)arg1 length:(long long)arg2;
 - (id)bufferedInputStreamWithBufferSize:(unsigned long)arg1;
+- (BOOL)isReadable;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (id)bufferedInputStream;
 - (id)inputStream;
 - (long long)dataLength;
-- (id)data;
-- (id)initWithData:(id)arg1;
-- (BOOL)isReadable;
-- (void)dealloc;
 
 @end

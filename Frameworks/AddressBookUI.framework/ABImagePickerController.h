@@ -24,20 +24,7 @@
 @property <ABPersonImageDataDelegate> * imageDataDelegate;
 
 
-- (void)choosePhoto;
-- (void)resume;
-- (void)imagePickerController:(id)arg1 didFinishPickingImage:(id)arg2 editingInfo:(id)arg3;
-- (void)imagePickerControllerDidCancel:(id)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)orderOut:(id)arg1;
-- (id)contentView;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)suspend;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)reload;
 - (void)dealloc;
-- (void)takePhoto;
 - (BOOL)hasMultipleActions;
 - (void)multipleSourcePicker:(id)arg1 didSelectPerson:(void*)arg2;
 - (void)multipleSourcePickerDidSelectPhotoPicker:(id)arg1;
@@ -68,5 +55,18 @@
 - (void)setImageDataDelegate:(id)arg1;
 - (void)back:(BOOL)arg1 save:(BOOL)arg2;
 - (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
+- (void)takePhoto;
+- (void)choosePhoto;
+- (void)resume;
+- (void)imagePickerController:(id)arg1 didFinishPickingImage:(id)arg2 editingInfo:(id)arg3;
+- (void)imagePickerControllerDidCancel:(id)arg1;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)orderOut:(id)arg1;
+- (id)contentView;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)suspend;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)reload;
 
 @end

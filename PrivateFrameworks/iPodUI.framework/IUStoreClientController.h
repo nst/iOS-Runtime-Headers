@@ -18,20 +18,20 @@
 + (id)sharedController;
 + (id)musicStoreURLWithAction:(id)arg1;
 
-- (void)downloadManagerNetworkUsageDidChange:(id)arg1;
-- (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (id)init;
+- (void)dealloc;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (void)downloadManagerNetworkUsageDidChange:(id)arg1;
+- (void)bagDidLoadNotification:(id)arg1;
+- (void)_networkTypeChangedNotification:(id)arg1;
+- (id)initWithClientIdentifier:(id)arg1;
+- (void)becomeActive;
 - (id)socialHistory;
 - (void)setShouldIgnoreSocial:(BOOL)arg1;
 - (BOOL)shouldIgnoreSocial;
 - (BOOL)isSocialEnabled;
 - (void)_reloadSocialEnabled;
 - (void)_accountStoreChangedNotification:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)becomeActive;
-- (void)bagDidLoadNotification:(id)arg1;
-- (void)_networkTypeChangedNotification:(id)arg1;
-- (id)initWithClientIdentifier:(id)arg1;
 
 @end

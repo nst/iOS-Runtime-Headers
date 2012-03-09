@@ -260,6 +260,9 @@
 + (id)readFromFileName:(id)arg1 cancel:(id)arg2 tracing:(id)arg3 asThumbnail:(BOOL)arg4;
 + (id)readFromData:(id)arg1 cancel:(id)arg2 tracing:(id)arg3 asThumbnail:(BOOL)arg4;
 
+- (void)dealloc;
+- (void)initialize;
+- (id)fileName;
 - (void)setAnnotationRangeStart:(id)arg1;
 - (BOOL)isThumbnail;
 - (struct WrdAnnotationTable { int (**x1)(); struct ChVector<WrdAnnotation*> { struct WrdAnnotation {} **x_2_1_1; struct WrdAnnotation {} **x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; unsigned int x_2_1_5; } x2; }*)annotationTable;
@@ -300,8 +303,5 @@
 - (id)drawableForShapeId:(unsigned int)arg1;
 - (id)cancelDelegate;
 - (id)officeArtState;
-- (id)fileName;
-- (void)initialize;
-- (void)dealloc;
 
 @end

@@ -37,6 +37,10 @@
 @property(retain) NSDictionary * transactionRecordContent;
 
 
+- (id)managedObjectContext;
+- (void)setPersistentStoreCoordinator:(id)arg1;
+- (id)persistentStoreCoordinator;
+- (void)dealloc;
 - (id)initForImportWithExternalRecordsPath:(id)arg1 persistentStoreCoordinator:(id)arg2;
 - (id)importUbiquityExternalRecords:(id*)arg1;
 - (void)setExternalRecordsPath:(id)arg1;
@@ -69,9 +73,5 @@
 - (id)objectForEntityName:(id)arg1 primaryKey:(id)arg2;
 - (id)transactionObjectsData;
 - (BOOL)_processDeletedObjects:(id*)arg1;
-- (id)managedObjectContext;
-- (void)setPersistentStoreCoordinator:(id)arg1;
-- (id)persistentStoreCoordinator;
-- (void)dealloc;
 
 @end

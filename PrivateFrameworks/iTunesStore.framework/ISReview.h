@@ -34,14 +34,8 @@
 @property unsigned int titleMaxLength;
 
 
-- (void)setRating:(float)arg1;
-- (float)rating;
-- (void)setBody:(id)arg1;
-- (id)body;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setTitleMaxLength:(unsigned int)arg1;
 - (void)setSubmitURL:(id)arg1;
 - (id)submitURL;
@@ -49,8 +43,14 @@
 - (void)setBodyMaxLength:(unsigned int)arg1;
 - (id)_draftFileName;
 - (id)_draftsDirectoryPath;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)setRating:(float)arg1;
+- (float)rating;
+- (id)body;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setBody:(id)arg1;
 - (void)setNicknameIsConfirmed:(BOOL)arg1;
 - (BOOL)hasSavedDraft;
 - (unsigned int)nicknameMaxLength;

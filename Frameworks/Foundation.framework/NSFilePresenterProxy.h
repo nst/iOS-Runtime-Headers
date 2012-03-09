@@ -29,14 +29,16 @@
 - (void)relinquishToReadingClaimWithID:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 resultHandler:(id)arg4;
 - (void)forwardObservationMessageWithKind:(id)arg1 parameters:(id)arg2;
 - (void)observeChangeByWriterWithPurposeID:(id)arg1;
-- (BOOL)didObserveMoving;
+- (void)observeChangeOfSubitemAtURL:(id)arg1 byWriterWithPurposeID:(id)arg2;
 - (void)resetMoveObserving;
+- (BOOL)didObserveMoving;
 - (void)beforeReacquiringFromWriterInvokeProcedure:(id)arg1;
 - (id)currentWriterPurposeID;
 - (BOOL)hasRelinquishedToWriter;
 - (void)setInSuperarbiter;
 - (void)observeVersionChangeOfKind:(id)arg1 withClientID:(id)arg2 name:(id)arg3 subitemPath:(id)arg4;
 - (void)observeMoveByWriterWithPurposeID:(id)arg1;
+- (void)observeMoveOfSubitemAtURL:(id)arg1 toURL:(id)arg2 byWriterWithPurposeID:(id)arg3;
 - (void)setItemLocation:(id)arg1;
 - (void)dealloc;
 

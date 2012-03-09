@@ -17,6 +17,7 @@
 @property BOOL friendFinderVisible;
 
 
+- (void)dealloc;
 - (BOOL)friendFinderVisible;
 - (id)sectionTitle;
 - (id)buttonTitle;
@@ -28,6 +29,5 @@
 - (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

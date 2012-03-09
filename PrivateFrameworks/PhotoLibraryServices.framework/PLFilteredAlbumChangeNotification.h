@@ -18,23 +18,23 @@
 
 + (id)notificationForFilteredAlbum:(id)arg1 fromAlbumChangeNotification:(id)arg2;
 
-- (id)album;
-- (id)object;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setFilteredIndexes:(id)arg1;
+- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (BOOL)countDidChange;
 - (id)updatedFilteredIndexes;
 - (id)initWithFilteredAlbum:(id)arg1 albumChangeNotification:(id)arg2;
 - (id)_changedObjects;
 - (BOOL)keyAssetDidChange;
 - (id)_diffDescription;
-- (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
 - (id)indexMapper;
+- (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
 - (id)filteredIndexes;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (id)album;
+- (id)object;
 - (BOOL)titleDidChange;
 - (BOOL)shouldReload;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

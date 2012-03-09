@@ -11,20 +11,20 @@
 }
 
 
-- (Class)classForCoder:(id)arg1;
-- (void)_replaceObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (const id*)_values;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (id)mutableCopy;
 - (unsigned int)count;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)retainCount;
 - (id)description;
 - (id)retain;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
 - (id)copy;
+- (oneway void)release;
+- (id)init;
+- (void)dealloc;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (id)mutableCopy;
+- (Class)classForCoder:(id)arg1;
+- (void)_replaceObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (const id*)_values;
 
 @end

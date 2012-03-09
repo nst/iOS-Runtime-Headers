@@ -19,15 +19,15 @@
 + (id)preferredMimeCharset;
 
 - (id)charsetName;
+- (id)description;
+- (void)dealloc;
 - (BOOL)canBeUsedForOutgoingMessages;
 - (BOOL)useBase64InHeaders;
 - (id)initWithEncoding:(unsigned long)arg1;
 - (void)_setPrimaryLanguage:(id)arg1;
 - (BOOL)coversLargeUnicodeSubset;
-- (unsigned long)encoding;
 - (id)displayName;
 - (id)primaryLanguage;
-- (id)description;
-- (void)dealloc;
+- (unsigned long)encoding;
 
 @end

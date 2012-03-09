@@ -13,6 +13,7 @@
 }
 
 
+- (void)dealloc;
 - (double)rotationDelay;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 printingProgress:(id)arg3;
 - (void)cleanupAfterDismiss;
@@ -26,6 +27,5 @@
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)show;
-- (void)dealloc;
 
 @end

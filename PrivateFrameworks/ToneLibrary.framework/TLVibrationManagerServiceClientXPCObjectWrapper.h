@@ -9,8 +9,8 @@
 @property(setter=setXPCObject:) void* xpcObject;
 
 
+- (void)dealloc;
 - (void*)xpcObject;
 - (void)setXPCObject:(void*)arg1;
-- (void)dealloc;
 
 @end

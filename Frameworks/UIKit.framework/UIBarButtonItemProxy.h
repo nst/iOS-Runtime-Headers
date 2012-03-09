@@ -10,9 +10,9 @@
 }
 
 
+- (void)dealloc;
 - (id)item;
 - (id)initWithItem:(id)arg1 inToolbar:(id)arg2;
 - (id)view;
-- (void)dealloc;
 
 @end

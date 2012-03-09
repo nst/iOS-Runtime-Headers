@@ -13,6 +13,7 @@
 @property UIStatusBarForegroundView * foregroundView;
 
 
+- (void)dealloc;
 - (id)foregroundView;
 - (void)itemView:(id)arg1 widthChangedBy:(float)arg2;
 - (BOOL)updateDoubleHeightItem;
@@ -45,6 +46,5 @@
 - (void)setForegroundView:(id)arg1;
 - (id)initWithRegion:(int)arg1 foregroundView:(id)arg2;
 - (float)_startPosition;
-- (void)dealloc;
 
 @end

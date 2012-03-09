@@ -24,6 +24,7 @@
 @property(retain) UITouch * touch;
 
 
+- (void)dealloc;
 - (void)setMinimumFinalPressDuration:(double)arg1;
 - (void)setNumberOfFullTaps:(int)arg1;
 - (void)_verifyMovementInAllowableRange;
@@ -44,6 +45,5 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 
 @end

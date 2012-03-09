@@ -6,15 +6,15 @@
     struct _filesec { } *_filesec;
 }
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (id)__new:(struct _filesec { }*)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)__new:(struct _filesec { }*)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (void)finalize;
-- (BOOL)setOwner:(unsigned int)arg1;
-- (BOOL)setMode:(unsigned short)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (BOOL)setAccessControlList:(struct _acl { }*)arg1;
 - (BOOL)copyAccessControlList:(struct _acl {}**)arg1;
 - (BOOL)setGroupUUID:(unsigned char[16])arg1;
@@ -26,10 +26,10 @@
 - (BOOL)getGroup:(unsigned int*)arg1;
 - (BOOL)getOwner:(unsigned int*)arg1;
 - (struct _filesec { }*)_filesec;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)finalize;
+- (BOOL)setMode:(unsigned short)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)setOwner:(unsigned int)arg1;
 
 @end

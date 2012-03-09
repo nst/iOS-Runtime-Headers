@@ -21,12 +21,12 @@
 + (id)ICSStringFromAction:(int)arg1;
 + (id)name;
 
+- (int)action;
 - (void)fixAlarm;
 - (id)x_apple_proximity;
 - (id)x_wr_alarmuid;
 - (void)setX_apple_proximity:(id)arg1;
 - (void)setX_wr_alarmuid:(id)arg1;
 - (void)setAction:(int)arg1;
-- (int)action;
 
 @end

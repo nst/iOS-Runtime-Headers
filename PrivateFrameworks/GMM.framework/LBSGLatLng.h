@@ -11,18 +11,18 @@
 @property int lngE7;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (float)lon;
 - (void)setLon:(float)arg1;
 - (int)lngE7;
 - (void)setLngE7:(int)arg1;
 - (int)latE7;
 - (void)setLatE7:(int)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
 - (void)setLat:(float)arg1;
 - (float)lat;
-- (id)description;
-- (void)dealloc;
 
 @end

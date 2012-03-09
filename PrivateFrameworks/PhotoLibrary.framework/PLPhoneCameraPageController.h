@@ -12,7 +12,7 @@
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (id)newAlbumNavigationController;
-- (void)dismissCameraAlbumAnimated:(BOOL)arg1;
+- (void)dismissCameraAlbumAnimated:(BOOL)arg1 forSuspension:(BOOL)arg2;
 - (void)_transformViewToPortrait:(id)arg1 fromOrientation:(int)arg2;
 - (void)prepareAlbumNavigationControllerForReuse:(id)arg1;
 - (id)_doneButtonItem;

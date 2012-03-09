@@ -22,7 +22,6 @@
     BOOL visible;
     BOOL isPaused;
     BOOL chromaNoiseReductionEnabled;
-    BOOL layerDebuggingEnabled;
 }
 
 

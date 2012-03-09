@@ -19,6 +19,9 @@
 
 + (id)defaultProperties;
 
+- (void)dealloc;
+- (id)style;
+- (void)setStyle:(id)arg1;
 - (BOOL)rightToLeft;
 - (void)setRightToLeft:(BOOL)arg1;
 - (void)setBandRow:(BOOL)arg1;
@@ -41,8 +44,5 @@
 - (BOOL)lastColumn;
 - (void)setEffects:(id)arg1;
 - (id)initWithDefaults;
-- (id)style;
-- (void)setStyle:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -14,14 +14,14 @@
 
 
 - (long long)expectedLength;
+- (id)init;
+- (void)dealloc;
+- (BOOL)hasBytesAvailable;
 - (id)initWithFileURL:(id)arg1;
 - (id)fileURL;
 - (void)close;
-- (BOOL)hasBytesAvailable;
-- (BOOL)open:(id*)arg1;
-- (id)init;
-- (void)dealloc;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2 error:(id*)arg3;
+- (BOOL)open:(id*)arg1;
 - (void)_close;
 
 @end

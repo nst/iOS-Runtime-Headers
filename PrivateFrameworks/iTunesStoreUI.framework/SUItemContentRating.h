@@ -25,12 +25,12 @@
 
 + (int)ratingSystemFromString:(id)arg1;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setRank:(int)arg1;
 - (int)rank;
 - (id)valueForProperty:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setShouldHideWhenRestricted:(BOOL)arg1;
 - (void)setRatingSystemLogo:(id)arg1;
 - (id)ratingSystemLogo;

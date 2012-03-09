@@ -11,11 +11,11 @@
 @property(retain) UIView * noContentView;
 
 
+- (void)dealloc;
 - (id)noContentView;
 - (id)noContentViewContextForContexts:(id)arg1;
 - (void)_goToMovieStore:(id)arg1;
 - (void)setNoContentView:(id)arg1;
 - (void)reloadSegmentedControl;
-- (void)dealloc;
 
 @end

@@ -11,9 +11,9 @@
 
 + (Class)responseClass;
 
+- (void)dealloc;
 - (id)urlRequest;
 - (id)initWithSetupParameters:(id)arg1 signingSession:(id)arg2;
 - (id)urlString;
-- (void)dealloc;
 
 @end

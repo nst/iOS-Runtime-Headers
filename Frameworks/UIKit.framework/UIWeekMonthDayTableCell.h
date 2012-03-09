@@ -12,6 +12,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setWeekdayString:(id)arg1;
 - (void)setWeekdayWidth:(float)arg1;
 - (void)setWeekdayLast:(BOOL)arg1;
@@ -21,6 +22,5 @@
 - (id)_weekdayLabelColor;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
-- (void)dealloc;
 
 @end

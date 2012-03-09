@@ -24,13 +24,16 @@
 @property BOOL allowRedirects;
 
 
-- (id)initWithRequest:(id)arg1;
+- (void)setStatusCode:(int)arg1;
+- (void)setAllowRedirects:(BOOL)arg1;
+- (BOOL)allowRedirects;
+- (void)_finished;
+- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
+- (void)main;
+- (void)dealloc;
 - (void)setError:(id)arg1;
 - (void)setRequest:(id)arg1;
-- (id)data;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
-- (void)setResponse:(id)arg1;
-- (void)setData:(id)arg1;
+- (id)error;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -38,12 +41,9 @@
 - (int)statusCode;
 - (id)request;
 - (id)response;
-- (id)error;
-- (void)main;
-- (void)dealloc;
-- (void)setStatusCode:(int)arg1;
-- (void)setAllowRedirects:(BOOL)arg1;
-- (BOOL)allowRedirects;
-- (void)_finished;
+- (id)data;
+- (void)setData:(id)arg1;
+- (void)setResponse:(id)arg1;
+- (id)initWithRequest:(id)arg1;
 
 @end

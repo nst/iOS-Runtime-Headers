@@ -10,9 +10,9 @@
 
 + (id)sharedUsage;
 
-- (void)logRequest:(id)arg1 count:(unsigned int)arg2;
-- (void)submitUsageNow;
 - (id)init;
 - (void)dealloc;
+- (void)logRequest:(id)arg1 count:(unsigned int)arg2;
+- (void)submitUsageNow;
 
 @end

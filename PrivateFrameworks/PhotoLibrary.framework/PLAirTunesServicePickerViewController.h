@@ -14,7 +14,7 @@
 @property <PLAirTunesServicePickerViewControllerDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
@@ -23,9 +23,9 @@
 - (id)delegate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setDelegate:(id)arg1;
 - (void)_setCell:(id)arg1 checked:(BOOL)arg2;
 - (id)initWithAvailableAirTunesServices:(id)arg1 previouslySelectedService:(id)arg2;
 - (void)setAvailableServices:(id)arg1;
-- (void)dealloc;
 
 @end

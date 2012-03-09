@@ -42,6 +42,10 @@
 + (Class)buttonClass;
 + (unsigned int)defaultVisibleParts;
 
+- (void)setTarget:(id)arg1;
+- (id)target;
+- (id)init;
+- (void)dealloc;
 - (BOOL)alwaysHidesSystemVolumeHUD;
 - (void)buttonHoldReleased:(id)arg1;
 - (void)buttonHeld:(id)arg1;
@@ -83,19 +87,15 @@
 - (void)setVisibleParts:(unsigned int)arg1;
 - (unsigned int)visibleParts;
 - (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
+- (id)player;
 - (void)setPlayer:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)item;
 - (void)didMoveToSuperview;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)didMoveToWindow;
 - (void)setAlpha:(float)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)player;
-- (void)setTarget:(id)arg1;
-- (id)target;
-- (id)init;
-- (void)dealloc;
 - (void)setItem:(id)arg1;
 
 @end

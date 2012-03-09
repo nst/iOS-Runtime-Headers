@@ -39,16 +39,6 @@
 @property(retain) ABNamePropertyGroup * namePropertyGroup;
 
 
-- (id)messageFont;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)message;
-- (void)setMessage:(id)arg1;
-- (void)copy:(id)arg1;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPrimaryProperty:(int)arg1;
 - (void)dealloc;
 - (void)_setSubviewsHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHeadline:(id)arg1;
@@ -91,5 +81,15 @@
 - (void)setStyleProvider:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
+- (id)messageFont;
+- (void)setPrimaryProperty:(int)arg1;
+- (id)message;
+- (void)setMessage:(id)arg1;
+- (void)copy:(id)arg1;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

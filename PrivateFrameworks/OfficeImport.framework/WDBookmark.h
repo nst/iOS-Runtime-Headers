@@ -10,12 +10,12 @@
 }
 
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
+- (id)name;
 - (id)initWithParagraph:(id)arg1 name:(id)arg2 type:(int)arg3;
 - (void)setBookmarkType:(int)arg1;
 - (int)bookmarkType;
 - (int)runType;
-- (id)name;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

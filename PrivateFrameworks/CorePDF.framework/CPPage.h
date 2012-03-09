@@ -84,8 +84,9 @@
 
 + (void)sortByReadingOrder:(id)arg1;
 
-- (id)parent;
-- (void)finalize;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (struct CPPDFClipBuffer { unsigned int x1; unsigned int x2; unsigned int *x3; unsigned int x4; }*)clipBuffer;
 - (BOOL)populatePDFLayout:(struct CGPDFLayout { }*)arg1;
 - (id)hitTest;
@@ -124,16 +125,15 @@
 - (id)bodyZone;
 - (void)layDownObjectsOnPage;
 - (void)sortByReadingOrder;
-- (void)dispose;
-- (id)children;
 - (void)setRotation:(int)arg1;
 - (int)rotation;
+- (void)finalize;
 - (void)addImage:(id)arg1;
 - (struct CGPDFLayout { }*)layout;
 - (id)background;
 - (void)setBackground:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)children;
+- (id)parent;
+- (void)dispose;
 
 @end

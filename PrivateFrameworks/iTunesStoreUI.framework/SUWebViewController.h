@@ -27,8 +27,8 @@
 @property(readonly) SUWebView * webView;
 
 
+- (void)dealloc;
 - (void)applicationWillEnterForeground;
-- (void)invalidate;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)webViewDidStartLoad:(id)arg1;
 - (void)webView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
@@ -44,7 +44,7 @@
 - (id)webView;
 - (int)style;
 - (void)setStyle:(int)arg1;
-- (void)dealloc;
+- (void)invalidate;
 - (void)_setLastKnownOrientation:(int)arg1;
 - (void)_setTrackListController:(id)arg1;
 - (void)_updateTrackListRootItem;

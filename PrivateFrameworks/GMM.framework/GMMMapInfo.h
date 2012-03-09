@@ -19,7 +19,13 @@
 @property int zoomLevel;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
+- (void)setCenter:(id)arg1;
+- (id)center;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)initWithGEOMapRegion:(id)arg1 withZoom:(int)arg2;
 - (id)initWithSearchRequest:(id)arg1;
 - (int)zoomLevel;
@@ -30,11 +36,5 @@
 - (void)setLongitudeSpan:(int)arg1;
 - (void)setLatitudeSpan:(int)arg1;
 - (void)setZoomLevel:(int)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (void)setCenter:(id)arg1;
-- (id)center;
-- (id)description;
-- (void)dealloc;
 
 @end

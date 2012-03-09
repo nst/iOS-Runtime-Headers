@@ -39,8 +39,14 @@
 }
 
 
+- (id)cancel;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isFinished;
 - (BOOL)isBusy;
+- (id)reset;
+- (BOOL)isValid;
+- (void)_init;
 - (void)setDelegate:(id)arg1;
 - (id)beginNextAction;
 - (BOOL)isRecognizing;
@@ -86,12 +92,6 @@
 - (id)beginSpeakingString:(id)arg1;
 - (id)_beginSpeakingString:(id)arg1 attributedString:(id)arg2;
 - (void)_notifyDelegateFinishedSpeakingWithError:(id)arg1;
-- (id)reset;
-- (BOOL)isValid;
-- (void)_init;
-- (id)cancel;
-- (id)init;
-- (void)dealloc;
 - (void)_setAction:(id)arg1;
 
 @end

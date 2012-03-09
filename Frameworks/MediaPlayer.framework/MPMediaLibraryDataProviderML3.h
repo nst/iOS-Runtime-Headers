@@ -25,6 +25,7 @@
 
 - (id)library;
 - (void)setLibrary:(id)arg1;
+- (void)dealloc;
 - (BOOL)_removeEntitiesWithIdentifiers:(long long*)arg1 count:(unsigned int)arg2 entityClass:(Class)arg3;
 - (void)_loadProperties:(id)arg1 ofEntityWithIdentifier:(long long)arg2 ML3EntityClass:(Class)arg3 completionBlock:(id)arg4;
 - (void)_loadEntitiesUsingFetchRequest:(id)arg1 entityQuery:(id)arg2 writeBlock:(id)arg3;
@@ -54,8 +55,10 @@
 - (BOOL)playlistExistsWithPersistentID:(unsigned long long)arg1;
 - (BOOL)itemExistsWithPersistentID:(unsigned long long)arg1;
 - (id)syncValidity;
+- (BOOL)performTransactionWithBlock:(id)arg1;
 - (id)preferredSubtitleLanguages;
 - (id)preferredAudioLanguages;
+- (double)timestampForAppliedUbiquitousBookmarkKey:(id)arg1;
 - (void)updateUbiquitousBookmarksWithKey:(id)arg1 bookmarkMediaValue:(id)arg2 timestamp:(double)arg3;
 - (void)downloadItemWithIdentifier:(long long)arg1 completionHandler:(id)arg2;
 - (BOOL)removePlaylistWithIdentifier:(long long)arg1;
@@ -63,18 +66,16 @@
 - (long long)addPlaylistWithValuesForProperties:(id)arg1;
 - (BOOL)hasGeniusMixes;
 - (BOOL)hasMediaOfType:(int)arg1;
+- (BOOL)writable;
+- (long long)playlistGeneration;
+- (unsigned long long)syncGenerationID;
 - (id)initWithLibrary:(id)arg1;
 - (void)enumerateCollectionIdentifiersForQueryCriteria:(id)arg1 cancelBlock:(id)arg2 usingBlock:(id)arg3;
 - (void)enumerateItemIdentifiersForQueryCriteria:(id)arg1 cancelBlock:(id)arg2 usingBlock:(id)arg3;
 - (void)loadValueForAggregateFunction:(id)arg1 onItemsForProperty:(id)arg2 queryCriteria:(id)arg3 completionBlock:(id)arg4;
 - (void)loadValueForAggregateFunction:(id)arg1 onCollectionsForProperty:(id)arg2 queryCriteria:(id)arg3 completionBlock:(id)arg4;
-- (double)timestampForAppliedUbiquitousBookmarkKey:(id)arg1;
-- (unsigned long long)syncGenerationID;
-- (BOOL)writable;
-- (BOOL)performTransactionWithBlock:(id)arg1;
-- (id)lastModifiedDate;
 - (id)uniqueIdentifier;
 - (id)name;
-- (void)dealloc;
+- (id)lastModifiedDate;
 
 @end

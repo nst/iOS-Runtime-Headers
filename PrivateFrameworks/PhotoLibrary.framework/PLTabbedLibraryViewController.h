@@ -20,12 +20,15 @@
 @property(retain) PLPhotosPickerSession * currentPickerSession;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)showBarWithTransition:(int)arg1;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)viewDidLoad;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)prepareForDefaultImageSnapshot;
+- (id)selectedNavigationController;
 - (void)setImportViewController:(id)arg1;
 - (id)importViewController;
 - (void)hideImportTab:(BOOL)arg1;
@@ -48,8 +51,5 @@
 - (id)currentPickerSession;
 - (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)albumDidChange:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)selectedNavigationController;
 
 @end

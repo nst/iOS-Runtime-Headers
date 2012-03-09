@@ -14,10 +14,10 @@
 
 + (id)reachabilityWithHostName:(id)arg1;
 
+- (void)dealloc;
 - (void)setError:(id)arg1;
+- (id)error;
 - (void)setHostName:(id)arg1;
 - (id)hostName;
-- (id)error;
-- (void)dealloc;
 
 @end

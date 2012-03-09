@@ -15,16 +15,16 @@
 @property(retain) NSData * thumbnailData;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setHeight:(int)arg1;
 - (int)height;
 - (id)dictionaryRepresentation;
 - (void)setWidth:(int)arg1;
 - (int)width;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setThumbnailData:(id)arg1;
 - (id)thumbnailData;
-- (id)description;
-- (void)dealloc;
 
 @end

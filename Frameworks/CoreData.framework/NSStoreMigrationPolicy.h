@@ -28,6 +28,10 @@
 + (int)migrationDebugLevel;
 + (void)setMigrationDebugLevel:(int)arg1;
 
+- (void)setPersistentStoreCoordinator:(id)arg1;
+- (id)persistentStoreCoordinator;
+- (void)dealloc;
+- (id)sourceType;
 - (void)setSourceURL:(id)arg1;
 - (void)setSourceConfiguration:(id)arg1;
 - (void)setSourceMetadata:(id)arg1;
@@ -43,6 +47,7 @@
 - (id)sourceConfiguration;
 - (id)sourceOptions;
 - (id)sourceURL;
+- (id)externalDataReferencesURLForDestination:(id)arg1 forStoreOfType:(id)arg2;
 - (id)sourceModelForStoreAtURL:(id)arg1 metadata:(id)arg2 error:(id*)arg3;
 - (void)setSourceModel:(id)arg1;
 - (id)mappingModelForSourceModel:(id)arg1 destinationModel:(id)arg2 error:(id*)arg3;
@@ -68,9 +73,5 @@
 - (id)sourceModel;
 - (id)destinationModel;
 - (id)mappingModel;
-- (id)sourceType;
-- (void)setPersistentStoreCoordinator:(id)arg1;
-- (id)persistentStoreCoordinator;
-- (void)dealloc;
 
 @end

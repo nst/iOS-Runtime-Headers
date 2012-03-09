@@ -14,7 +14,7 @@
 @property(readonly) UILabel * detailTextLabel2;
 
 
-- (void)layoutSubviews;
+- (void)dealloc;
 - (void)setDetailText2IsPlaceholder:(BOOL)arg1;
 - (void)setDetailTextIsPlaceholder:(BOOL)arg1;
 - (id)detailTextLabel2;
@@ -22,6 +22,6 @@
 - (BOOL)detailTextIsPlaceholder;
 - (void)_copyTextLabelAttributesFrom:(id)arg1 to:(id)arg2;
 - (id)textLabel2;
-- (void)dealloc;
+- (void)layoutSubviews;
 
 @end

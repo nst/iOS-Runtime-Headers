@@ -12,10 +12,10 @@
 }
 
 
-- (void)finishWithError:(id)arg1;
 - (double)timeoutInterval;
-- (void)loadRequest:(id)arg1;
 - (void)dealloc;
+- (void)finishWithError:(id)arg1;
+- (void)loadRequest:(id)arg1;
 - (BOOL)shouldReportTimeInNetwork;
 - (int)interfaceBinding;
 - (id)initWithHeartbeat:(int)arg1 folders:(id)arg2 oldHeartbeat:(int)arg3 oldFolders:(id)arg4;

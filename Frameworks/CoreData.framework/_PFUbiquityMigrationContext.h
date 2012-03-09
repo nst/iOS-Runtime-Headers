@@ -15,13 +15,13 @@
 @property(retain) PFUbiquityTransactionLog * transactionLog;
 
 
+- (void)dealloc;
 - (id)sourceStoreSaveSnapshot;
-- (void)setTransactionLog:(id)arg1;
 - (void)setSourceStoreSaveSnapshot:(id)arg1;
 - (void)setDestinationStoreSaveSnapshot:(id)arg1;
 - (id)sourceGlobalObjectIDFromCompressedID:(id)arg1;
 - (id)destinationStoreSaveSnapshot;
 - (id)transactionLog;
-- (void)dealloc;
+- (void)setTransactionLog:(id)arg1;
 
 @end

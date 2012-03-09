@@ -19,6 +19,11 @@
 + (void)resetURLConfiguration;
 + (id)urlConfiguration;
 
+- (id)init;
+- (void)dealloc;
+- (void)setPassword:(id)arg1;
+- (void)setAppleID:(id)arg1;
+- (id)appleID;
 - (void)setEmailChoice:(id)arg1;
 - (void)setupDelegateAccountsWithParameters:(id)arg1 handler:(id)arg2;
 - (void)updateAppleIDWithParameters:(id)arg1 handler:(id)arg2;
@@ -28,11 +33,6 @@
 - (id)initWithAppleID:(id)arg1 password:(id)arg2;
 - (id)emailChoice;
 - (id)_signingSession;
-- (void)setPassword:(id)arg1;
 - (id)password;
-- (id)init;
-- (void)dealloc;
-- (void)setAppleID:(id)arg1;
-- (id)appleID;
 
 @end

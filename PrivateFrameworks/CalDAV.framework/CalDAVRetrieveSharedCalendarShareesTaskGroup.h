@@ -13,12 +13,12 @@
 @property(retain) NSURL * url;
 
 
+- (void)dealloc;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (void)setUrl:(id)arg1;
 - (id)url;
-- (void)dealloc;
 - (id)initWithCalendarURL:(id)arg1 accountInfoProvider:(id)arg2 taskManager:(id)arg3;
 - (id)sharees;
 - (void)setSharees:(id)arg1;

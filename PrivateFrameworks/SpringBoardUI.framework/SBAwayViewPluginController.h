@@ -21,6 +21,8 @@
 + (void)enableBundleNamed:(id)arg1;
 + (void)disableBundleNamed:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isFullscreen;
 - (void)purgeView;
@@ -60,8 +62,6 @@
 - (void)setView:(id)arg1;
 - (id)view;
 - (int)orientation;
-- (id)init;
-- (void)dealloc;
 - (void)disable;
 
 @end

@@ -2,42 +2,33 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <AVRecorderImpl>;
-
 @interface AVRecorder : NSObject  {
-
-  /* Error parsing encoded ivar type info: ^{AVRecorderPrivate=@"NSMutableDictionary"@"<AVRecorderImpl>"} */
-    struct AVRecorderPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; void*x4; void*x5; void*x6; void*x7; unsigned int x8/* : ? */; long x9; void*x10; void*x11; int x12; BOOL x13; void*x14; int x15; out in void*x16; const void*x17; void*x18; <AVRecorderImpl> *x19; } *_priv;
-
+    struct AVRecorderPrivate { id x1; id x2; } *_priv;
 }
 
 
-- (BOOL)start;
-- (void)stop;
-- (BOOL)isActive;
-- (void)deactivate;
+- (id)init;
+- (void)dealloc;
 - (double)recordedDuration;
 - (id)attributeForKey:(id)arg1;
 - (BOOL)isRecording;
-- (id)init;
-- (void)dealloc;
-- (void)setFilePath:(id)arg1;
-- (id)filePath;
-- (void)setAttribute:(id)arg1 forKey:(id)arg2;
-- (void)implNotification:(id)arg1;
-- (BOOL)activate:(id*)arg1;
-- (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
 - (BOOL)takePhoto;
-- (BOOL)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)micVolume;
-- (void)setMicVolume:(float)arg1;
-- (long long)recordedFileSizeInBytes;
-- (unsigned int)audioNumDeviceChannels;
-- (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
 - (BOOL)audioCurrentAverageDecibelLevels:(float*)arg1 andPeakDecibelLevels:(float*)arg2;
+- (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
+- (unsigned int)audioNumDeviceChannels;
+- (long long)recordedFileSizeInBytes;
+- (void)setMicVolume:(float)arg1;
+- (float)micVolume;
+- (BOOL)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
+- (BOOL)activate:(id*)arg1;
+- (void)implNotification:(id)arg1;
+- (void)setAttribute:(id)arg1 forKey:(id)arg2;
+- (id)filePath;
+- (void)setFilePath:(id)arg1;
+- (void)stop;
+- (BOOL)isActive;
+- (BOOL)start;
+- (void)deactivate;
 
 @end

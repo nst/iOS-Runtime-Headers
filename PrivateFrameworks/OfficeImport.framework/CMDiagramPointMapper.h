@@ -12,6 +12,8 @@
 }
 
 
+- (id)stroke;
+- (id)fill;
 - (void)mapSiblingTextAt:(id)arg1 style:(id)arg2 level:(int)arg3 withState:(id)arg4;
 - (void)renderShapeAsBackgroundInBounds:(id)arg1;
 - (void)mapStyledRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 at:(id)arg2 withState:(id)arg3;
@@ -33,7 +35,5 @@
 - (void)setPresentationName:(id)arg1;
 - (id)plainText;
 - (id)styleMatrix;
-- (id)stroke;
-- (id)fill;
 
 @end

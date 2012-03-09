@@ -24,17 +24,21 @@
 + (id)_newNavigationControllerWithRootContextIdentifier:(id)arg1;
 + (id)defaultIdentifiers;
 
+- (id)init;
+- (void)dealloc;
 - (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
 - (void)_setSelectedViewController:(id)arg1;
 - (id)moreNavigationController;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (id)topViewController;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
+- (id)selectedIdentifier;
+- (void)saveOrderingToDefaults;
 - (void)setAllowsSearch:(BOOL)arg1;
 - (BOOL)allowsSearch;
 - (void)switchToShortcutIdentifier:(id)arg1;
+- (void)switchToPlaylistContextForSpecifier:(id)arg1 behindTopController:(BOOL)arg2;
 - (void)switchToAlbumContextForSpecifier:(id)arg1 behindTopController:(BOOL)arg2;
-- (void)_delayedPopViewController:(id)arg1;
 - (void)_reloadIPodViewControllers;
 - (id)visibleCustomViewControllers;
 - (id)_rawSelectedIdentifier;
@@ -42,7 +46,7 @@
 - (void)_fixMoreListNavigationBar;
 - (BOOL)_shouldPushContextDuringSwitch:(id)arg1;
 - (BOOL)_pushContextForSpecifier:(id)arg1 unlessMatchesFinalIdentifier:(id)arg2 animated:(BOOL)arg3;
-- (void)_switchToContextBehindCurrentController:(id)arg1 withRootControllerIdentifier:(id)arg2;
+- (void)_switchToContextBehindCurrentController:(id)arg1 withRootControllerIdentifier:(id)arg2 withPlaybackDataSource:(id)arg3;
 - (id)_navigationControllerForIdentifier:(id)arg1 outIndex:(unsigned int*)arg2;
 - (id)identifiers;
 - (void)_setNavigationControllerDelegates:(id)arg1;
@@ -52,7 +56,7 @@
 - (id)initWithControllersWithAvailableIdentifiers:(id)arg1 initialIdentifier:(id)arg2;
 - (void)_updateViewControllersModalContext;
 - (void)presentModalContext:(id)arg1 animated:(BOOL)arg2;
-- (void)switchToPlaylistContextForSpecifier:(id)arg1 behindTopController:(BOOL)arg2;
+- (void)switchToPlaylistContextForSpecifier:(id)arg1 behindTopController:(BOOL)arg2 withPlaybackDataSource:(id)arg3;
 - (BOOL)restoreArchivedContexts:(id)arg1;
 - (void)willRestoreArchivedContexts:(id)arg1;
 - (id)copyArchivableContexts;
@@ -63,9 +67,5 @@
 - (void)selectNextIdentifier;
 - (id)modalContext;
 - (void)selectControllerWithIdentifier:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)selectedIdentifier;
-- (void)saveOrderingToDefaults;
 
 @end

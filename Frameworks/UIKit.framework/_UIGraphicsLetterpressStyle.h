@@ -46,6 +46,9 @@
 + (id)defaultLetterpressStyle;
 + (id)old2xLetterpressStyle;
 
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (float)innerOpacity;
 - (id)bottomGradientColor;
@@ -75,7 +78,5 @@
 - (void)setEmbossSize:(float)arg1;
 - (void)setEmbossShadowColor:(id)arg1;
 - (void)setEmbossHighlightColor:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

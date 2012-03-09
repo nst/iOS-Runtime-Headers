@@ -23,7 +23,7 @@
 @property int amount;
 
 
-- (id)start;
+- (void)dealloc;
 - (int)amount;
 - (void)setAmount:(int)arg1;
 - (void)setAffinityDownstream:(BOOL)arg1;
@@ -36,7 +36,7 @@
 - (void)setEnd:(id)arg1;
 - (void)setStart:(id)arg1;
 - (id)end;
+- (id)start;
 - (id)startPosition;
-- (void)dealloc;
 
 @end

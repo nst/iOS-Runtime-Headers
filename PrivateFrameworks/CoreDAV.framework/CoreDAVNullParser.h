@@ -11,8 +11,8 @@
 @property(readonly) NSError * parserError;
 
 
-- (BOOL)processData:(id)arg1 forTask:(id)arg2;
 - (id)parserError;
 - (void)dealloc;
+- (BOOL)processData:(id)arg1 forTask:(id)arg2;
 
 @end

@@ -10,14 +10,14 @@
 }
 
 
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (void)dealloc;
+- (id)initWithNavigationController:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)initWithNavigationController:(id)arg1;
 - (id)_navigationControllerForRow:(int)arg1;
 - (id)_table;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (void)dealloc;
 
 @end

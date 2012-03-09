@@ -57,11 +57,7 @@
 @property(retain) NSString * volumePath;
 
 
-- (BOOL)locked;
-- (void)setTimeOffset:(double)arg1;
-- (double)timeOffset;
-- (void)setContents:(id)arg1;
-- (void)finalize;
+- (void)dealloc;
 - (BOOL)contentReceived;
 - (int)contentsLock;
 - (void)setContentsLock:(int)arg1;
@@ -105,11 +101,15 @@
 - (void)lockContents;
 - (void)unlockContents;
 - (unsigned int)batteryLevel;
+- (void)finalize;
 - (void)setLocked:(BOOL)arg1;
+- (void)setContents:(id)arg1;
 - (id)contents;
+- (double)timeOffset;
+- (void)setTimeOffset:(double)arg1;
+- (BOOL)locked;
 - (id)mediaFiles;
 - (unsigned int)contentCatalogPercentCompleted;
 - (unsigned int)estimatedNumberOfDownloadableItems;
-- (void)dealloc;
 
 @end

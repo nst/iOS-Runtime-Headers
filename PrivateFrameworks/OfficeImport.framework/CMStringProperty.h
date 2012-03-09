@@ -9,9 +9,9 @@
 }
 
 
-- (id)cssStringForName:(id)arg1;
-- (id)value;
 - (id)initWithString:(id)arg1;
 - (void)dealloc;
+- (id)value;
+- (id)cssStringForName:(id)arg1;
 
 @end

@@ -23,19 +23,20 @@
 + (id)_filenameWithBase:(id)arg1 generationalFormat:(id)arg2 generation:(int)arg3;
 + (id)loggerWithFilename:(id)arg1;
 
-- (id)initWithFilename:(id)arg1;
-- (void)slurpDataFromFile:(id)arg1;
-- (id)compressFile:(id)arg1;
-- (id)_fullCompressedFilePathWithGenerationNumber:(int)arg1;
-- (void)_loadUpHandle;
-- (id)_fullFilePathWithGenerationNumber:(int)arg1;
-- (id)_filenameWithGenerationNumber:(int)arg1;
+- (void)dealloc;
 - (id)lastStatDate;
 - (void)_statFileIfNecessaryForRollingCheck;
 - (void)_rollLogs;
 - (void)setLastStatDate:(id)arg1;
 - (id)fh;
 - (void)setFh:(id)arg1;
+- (void)slurpDataFromFile:(id)arg1;
+- (id)compressFile:(id)arg1;
+- (id)_fullCompressedFilePathWithGenerationNumber:(int)arg1;
+- (void)_loadUpHandle;
+- (id)_fullFilePathWithGenerationNumber:(int)arg1;
+- (id)_filenameWithGenerationNumber:(int)arg1;
+- (id)initWithFilename:(id)arg1;
 - (void)logData:(id)arg1;
 - (void)logString:(id)arg1;
 

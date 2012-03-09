@@ -7,7 +7,6 @@
     int _cpuSubtype;
 }
 
-+ (void)initialize;
 + (id)currentArchitecture;
 + (id)anyArchitecture;
 + (id)ppcArchitecture;
@@ -18,9 +17,12 @@
 + (id)x86_64Architecture;
 + (id)armArchitecture;
 + (id)architectureWithCpuType:(int)arg1 cpuSubtype:(int)arg2;
++ (void)initialize;
 
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })commpageAddressRange;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })objcpageAddressRange;
 - (BOOL)matchesArchitecture:(id)arg1;
@@ -32,9 +34,7 @@
 - (BOOL)isEqualToArchitecture:(id)arg1;
 - (BOOL)is32Bit;
 - (BOOL)isBigEndian;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

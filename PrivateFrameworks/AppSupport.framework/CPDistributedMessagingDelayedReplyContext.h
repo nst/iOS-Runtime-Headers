@@ -11,11 +11,11 @@
 @property unsigned int replyPort;
 
 
+- (void)dealloc;
 - (void)setPortPassing:(BOOL)arg1;
 - (id)initWithReplyPort:(unsigned int)arg1 portPassing:(BOOL)arg2;
 - (void)setReplyPort:(unsigned int)arg1;
 - (BOOL)portPassing;
 - (unsigned int)replyPort;
-- (void)dealloc;
 
 @end

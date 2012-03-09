@@ -11,22 +11,27 @@
 }
 
 @property(readonly) BOOL isCloudEnabled;
-@property(readonly) BOOL isUpdateInProgress;
 @property(readonly) BOOL hasCloudLockerAccount;
+@property(readonly) BOOL isUpdateInProgress;
+@property(readonly) BOOL isGeniusEnabled;
 
 + (id)sharedCloudController;
 
-- (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 completionHandler:(id)arg3;
-- (BOOL)isUpdateInProgress;
-- (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
-- (void)incrementItemProperty:(id)arg1 forSagaID:(unsigned long long)arg2;
-- (void)_initializeUpdateInProgressState;
-- (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
-- (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
-- (BOOL)isCloudEnabled;
-- (BOOL)hasCloudLockerAccount;
 - (id)init;
 - (void)dealloc;
+- (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 completionHandler:(id)arg3;
+- (BOOL)isUpdateInProgress;
+- (BOOL)hasCloudLockerAccount;
+- (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (void)loadUpdateProgressWithCompletionHandler:(id)arg1;
+- (void)incrementItemProperty:(id)arg1 forSagaID:(unsigned long long)arg2;
+- (void)_initializeUpdateInProgressState;
+- (void)addGeniusPlaylistWithName:(id)arg1 seedItemSagaIDs:(id)arg2 itemSagaIDs:(id)arg3 completionHandler:(id)arg4;
+- (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
+- (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
+- (BOOL)isCloudEnabled;
+- (BOOL)isGeniusEnabled;
 - (void)becomeActive;
 - (void)resignActive;
 

@@ -42,8 +42,8 @@
 - (BOOL)inAirplaneMode;
 - (BOOL)isOnWWAN;
 - (BOOL)isFatPipe;
-- (void)invalidate;
 - (id)init;
 - (void)dealloc;
+- (void)invalidate;
 
 @end

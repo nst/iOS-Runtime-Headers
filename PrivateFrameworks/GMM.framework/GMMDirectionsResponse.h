@@ -47,8 +47,15 @@
 @property(retain) NSMutableArray * alternateModes;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setStatus:(int)arg1;
+- (int)status;
+- (id)icons;
+- (void)setIcons:(id)arg1;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)alternateModes;
 - (id)alerts;
 - (id)optionsUseds;
@@ -100,12 +107,5 @@
 - (unsigned int)modesCount;
 - (void)setRequestedTimeType:(int)arg1;
 - (void)setRequestedDateTime:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)icons;
-- (void)setIcons:(id)arg1;
-- (id)dictionaryRepresentation;
-- (int)status;
-- (id)description;
-- (void)dealloc;
 
 @end

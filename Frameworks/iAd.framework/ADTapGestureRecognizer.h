@@ -31,6 +31,7 @@
 @property(copy) id touchUpHandler;
 
 
+- (void)dealloc;
 - (id)touchUpHandler;
 - (id)touchMovedHandler;
 - (id)touchDownHandler;
@@ -44,6 +45,5 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 
 @end

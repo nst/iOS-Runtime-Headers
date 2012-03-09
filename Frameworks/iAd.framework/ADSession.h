@@ -28,9 +28,15 @@
 @property(retain) id remoteSession;
 @property(retain) NSMutableDictionary * profilingSessions;
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedInstance;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
 - (void)setProfilingSessions:(id)arg1;
 - (id)profilingSessions;
 - (void)setRecentlyCreatedControllers:(unsigned int)arg1;
@@ -88,11 +94,5 @@
 - (id)bannerControllers;
 - (void)setServerURL:(id)arg1;
 - (id)serverURL;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (id)init;
-- (oneway void)release;
 
 @end

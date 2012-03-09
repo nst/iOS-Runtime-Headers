@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setAVPlayer:(id)arg1;
 - (BOOL)_pickRouteAtIndex:(unsigned int)arg1 withPassword:(id)arg2;
 - (id)initWithAVPlayer:(id)arg1;
@@ -21,6 +22,5 @@
 - (void)willMoveToSuperview:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
 
 @end

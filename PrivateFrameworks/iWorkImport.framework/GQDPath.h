@@ -9,6 +9,7 @@
 + (struct __CFString { }*)createString:(struct CGPath { }*)arg1;
 + (char *)createPathString:(struct CGPath { }*)arg1;
 
+- (void)dealloc;
 - (BOOL)horizontalFlip;
 - (BOOL)isRect;
 - (BOOL)isRectangular;
@@ -17,6 +18,5 @@
 - (BOOL)hasVerticalFlip;
 - (BOOL)hasHorizontalFlip;
 - (BOOL)verticalFlip;
-- (void)dealloc;
 
 @end

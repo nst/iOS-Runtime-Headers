@@ -40,6 +40,8 @@
 + (Class)tableCellClass;
 + (Class)tableViewClass;
 
+- (id)init;
+- (void)dealloc;
 - (void)applicationResumedEventsOnly:(BOOL)arg1;
 - (id)tableView;
 - (id)searchDisplayController;
@@ -81,6 +83,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)reloadData;
+- (void)_updateFooterView;
 - (void)setSelectionImage:(id)arg1;
 - (void)setVisibleCellsUseSubviewLayout:(BOOL)arg1;
 - (BOOL)isShowingIndexBar;
@@ -133,8 +136,5 @@
 - (void)mediaListAggregateView:(id)arg1 performActionForSimpleCellPreset:(int)arg2;
 - (void)reloadCellAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (void)_delayedDeselectIndexPath:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)_updateFooterView;
 
 @end

@@ -6,12 +6,12 @@
 }
 
 
+- (void)dealloc;
 - (void)startAnimating;
 - (void)stopAnimating;
 - (void)setAnimating:(BOOL)arg1;
 - (void)stopAnimation;
 - (void)_removeAllAnimations:(BOOL)arg1;
 - (void)reallyStartAnimating;
-- (void)dealloc;
 
 @end

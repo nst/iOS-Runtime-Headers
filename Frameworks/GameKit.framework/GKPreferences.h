@@ -20,6 +20,7 @@
 @property(getter=isAddingFriendsRestricted,readonly) BOOL addingFriendsRestricted;
 @property(getter=isMultiplayerGamingRestricted,readonly) BOOL multiplayerGamingRestricted;
 @property(getter=isAppInstallationRestricted,readonly) BOOL appInstallationRestricted;
+@property(getter=isAccountModificationRestricted,readonly) BOOL accountModificationRestricted;
 @property double terminationInterval;
 @property double garbageCollectionInterval;
 @property double minimumCacheTTL;
@@ -52,6 +53,7 @@
 + (BOOL)isSystemWideNotificationsEnabled;
 + (id)sharedPreferences;
 
+- (id)init;
 - (BOOL)HTTPShouldUsePipelining;
 - (void)setMinimumCacheTTL:(double)arg1;
 - (double)minimumCacheTTL;
@@ -111,6 +113,7 @@
 - (void)setMaxDefaultPlayersP2P:(unsigned int)arg1;
 - (BOOL)useTestProtocols;
 - (BOOL)isStoreDemoModeEnabled;
+- (BOOL)isAccountModificationRestricted;
 - (unsigned long)logFilter;
 - (BOOL)forceRelay;
 - (BOOL)preemptiveRelay;
@@ -118,6 +121,5 @@
 - (unsigned int)maxPlayersTurnBased;
 - (unsigned int)maxPlayersP2P;
 - (unsigned int)maxPlayersHosted;
-- (id)init;
 
 @end

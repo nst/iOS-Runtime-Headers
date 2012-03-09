@@ -17,26 +17,26 @@
     id realObject;
 }
 
-+ (void)forwardInvocation:(id)arg1;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)forwardInvocation:(id)arg1;
 + (/* Warning: Unrecognized filer type: '' using 'void*' */ void*)initialize;
      /* Encoded args for previous method:  */
 
 
 - (void)reallyDealloc;
 - (id)initDir:(id)arg1 file:(id)arg2 docInfo:(id)arg3;
+- (BOOL)isProxy;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)copy;
+- (void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (void)dealloc;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (BOOL)isProxy;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (void)release;
-- (void)dealloc;
-- (id)copy;
 
 @end

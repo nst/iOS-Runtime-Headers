@@ -66,6 +66,9 @@
 @property(readonly) BookmarkDAVSyncData * topLevelSyncData;
 
 
+- (void)dealloc;
+- (void)setPushTransport:(id)arg1;
+- (id)pushTransport;
 - (id)homeURL;
 - (void)recursiveContainerSyncTask:(id)arg1 receivedAddedOrModifiedFolder:(id)arg2;
 - (BOOL)setLocalETag:(id)arg1 forItemWithURL:(id)arg2;
@@ -101,6 +104,7 @@
 - (void)_handleAddsOrModifies:(id)arg1 removes:(id)arg2;
 - (void)_makeBookmarkFromDAVNode:(id)arg1;
 - (void)_makeFolderFromContainer:(id)arg1;
+- (int)_clientOrderOfItemPrecedingItemAtServerOrder:(int)arg1 inParentWithURL:(id)arg2;
 - (void)_saveDB;
 - (id)_copyDAVFolderFromFolderRef:(void*)arg1;
 - (int)_serverOrderForChange:(void*)arg1;
@@ -115,8 +119,5 @@
 - (void)setHomeURL:(id)arg1;
 - (id)topLevelSyncData;
 - (void)_invokeAndNilGetAccountPropertiesHandlerWithSuccess:(BOOL)arg1 error:(id)arg2;
-- (void)dealloc;
-- (void)setPushTransport:(id)arg1;
-- (id)pushTransport;
 
 @end

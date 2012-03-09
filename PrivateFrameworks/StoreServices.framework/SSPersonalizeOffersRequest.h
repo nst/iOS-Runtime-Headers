@@ -12,6 +12,9 @@
 @property <SSPersonalizeOffersDelegate> * delegate;
 
 
+- (void)dealloc;
+- (id)initWithItems:(id)arg1;
+- (id)items;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
 - (void)_sendResponseToDelegate:(id)arg1;
@@ -19,8 +22,5 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithItems:(id)arg1;
-- (id)items;
-- (void)dealloc;
 
 @end

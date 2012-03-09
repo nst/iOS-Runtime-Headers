@@ -34,6 +34,8 @@
 @property(retain) NSMutableArray * opponentIDs;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)opponentIDs;
 - (id)inviteDelegate;
 - (void)setReinvitedPlayers:(id)arg1;
@@ -75,9 +77,11 @@
 - (id)packet:(unsigned char)arg1 data:(id)arg2;
 - (void)setPacketSequenceNumber:(unsigned int)arg1;
 - (unsigned int)packetSequenceNumber;
+- (id)session;
 - (id)selfBlob;
 - (void)sendVersionData:(unsigned char)arg1;
 - (void)setSelfBlob:(id)arg1;
+- (void)setSession:(id)arg1;
 - (void)relayPushNotification:(id)arg1;
 - (void)setOpponentIDs:(id)arg1;
 - (void)setPlayerPushTokens:(id)arg1;
@@ -97,16 +101,12 @@
 - (void)connectToPeersWithDictionaries:(id)arg1 version:(unsigned char)arg2 sessionToken:(id)arg3 cdxTicket:(id)arg4;
 - (BOOL)sendInviteData:(id)arg1 error:(id*)arg2;
 - (id)playerIDs;
+- (void)setConnection:(id)arg1;
+- (id)connection;
+- (unsigned char)version;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (void)disconnect;
 - (void)setVersion:(unsigned char)arg1;
-- (unsigned char)version;
-- (id)delegate;
-- (id)session;
-- (void)setSession:(id)arg1;
-- (void)setConnection:(id)arg1;
-- (id)connection;
-- (id)init;
-- (void)dealloc;
 
 @end

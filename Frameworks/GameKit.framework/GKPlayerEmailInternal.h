@@ -16,12 +16,12 @@
 
 + (id)codedPropertyKeys;
 
+- (void)dealloc;
 - (void)setVerified:(BOOL)arg1;
 - (BOOL)isVerified;
 - (void)setPrimary:(BOOL)arg1;
 - (BOOL)isPrimary;
 - (void)setAddress:(id)arg1;
 - (id)address;
-- (void)dealloc;
 
 @end

@@ -15,6 +15,7 @@
 + (id)protocolVersion;
 + (Class)responseClass;
 
+- (void)dealloc;
 - (BOOL)flushCache;
 - (id)urlCredential;
 - (id)initWithURLString:(id)arg1;
@@ -23,6 +24,5 @@
 - (void)performRequestWithHandler:(id)arg1;
 - (void)setFlushCache:(BOOL)arg1;
 - (id)urlString;
-- (void)dealloc;
 
 @end

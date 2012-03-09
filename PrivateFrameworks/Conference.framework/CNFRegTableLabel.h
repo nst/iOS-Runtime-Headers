@@ -20,10 +20,8 @@
 @property UITableView * cnfreg_tableView;
 
 
-- (float)preferredHeightForWidth:(float)arg1;
-- (id)initWithSpecifier:(id)arg1;
-- (void)layoutSubviews;
 - (void)dealloc;
+- (float)preferredHeightForWidth:(float)arg1;
 - (id)URLTarget;
 - (id)URLText;
 - (id)cnfreg_tableView;
@@ -41,5 +39,7 @@
 - (void)updateLabelText;
 - (void)setCnfreg_tableView:(id)arg1;
 - (void)setIsTopmostHeader:(BOOL)arg1;
+- (id)initWithSpecifier:(id)arg1;
+- (void)layoutSubviews;
 
 @end

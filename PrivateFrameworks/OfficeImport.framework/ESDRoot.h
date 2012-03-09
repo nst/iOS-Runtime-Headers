@@ -14,6 +14,9 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (unsigned int)childCount;
 - (id)initFromReader:(struct OcReader { int (**x1)(); struct EshObjectFactory {} *x2; }*)arg1;
 - (id)pbInitWithState:(id)arg1;
 - (id)pbReferenceWithID:(unsigned long)arg1;
@@ -21,8 +24,5 @@
 - (id)initWithEshObject:(struct EshObject { int (**x1)(); unsigned short x2; }*)arg1;
 - (void)addChild:(id)arg1;
 - (id)childAt:(unsigned int)arg1;
-- (unsigned int)childCount;
-- (id)init;
-- (void)dealloc;
 
 @end

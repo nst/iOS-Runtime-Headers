@@ -14,12 +14,12 @@
 
 
 - (id)accountID;
-- (id)initWithAccountID:(id)arg1 andDataclass:(int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)initWithAccountID:(id)arg1 andDataclass:(int)arg2;
 - (int)dataclass;
 
 @end

@@ -40,6 +40,14 @@
 }
 
 
+- (void)dealloc;
+- (unsigned int)key;
+- (void)setOrientation:(int)arg1;
+- (id)title;
+- (id)font;
+- (int)orientation;
+- (void)setFont:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (int)tickLabelColorIndex;
 - (id)tickLabelColor;
 - (int)axisId;
@@ -104,13 +112,5 @@
 - (void)setContentFormat:(id)arg1;
 - (id)initWithResources:(id)arg1;
 - (bool)isDeleted;
-- (unsigned int)key;
-- (void)setOrientation:(int)arg1;
-- (id)title;
-- (id)font;
-- (int)orientation;
-- (void)setFont:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (void)dealloc;
 
 @end

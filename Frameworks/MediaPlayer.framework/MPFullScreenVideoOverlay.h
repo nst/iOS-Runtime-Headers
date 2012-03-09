@@ -46,6 +46,7 @@
 @property <MPVideoOverlayDelegate> * delegate;
 
 
+- (void)dealloc;
 - (id)_newStreamingTitleViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)videoViewController;
 - (int)nowPlayingItemQueueInfoButton:(id)arg1 willDisplayInfoType:(int)arg2;
@@ -96,15 +97,14 @@
 - (void)_tickNotification:(id)arg1;
 - (void)_validityChangedNotification:(id)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;
-- (BOOL)TVOutEnabled;
 - (BOOL)allowsWirelessPlayback;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setVisibleParts:(unsigned int)arg1;
 - (unsigned int)visibleParts;
 - (void)_timeDidJumpNotification:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
+- (id)player;
 - (void)setPlayer:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)item;
 - (void)setInterfaceOrientation:(int)arg1;
 - (id)navigationBar;
@@ -116,9 +116,9 @@
 - (void)didMoveToWindow;
 - (void)setAlpha:(float)arg1;
 - (void)setHidden:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)player;
-- (void)dealloc;
+- (BOOL)TVOutEnabled;
 - (void)setItem:(id)arg1;
 
 @end

@@ -54,6 +54,8 @@
 + (id)unionOldScoreArray:(id)arg1 withScoreArray:(id)arg2;
 + (struct _NSRange { unsigned int x1; unsigned int x2; })rangeForScoreArray:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })oldRange;
 - (void)setDisplayedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })availableRange;
@@ -81,14 +83,12 @@
 - (id)showcasedScoreAtShowcaseIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })displayedRange;
 - (id)comparePlayerScore;
+- (id)player;
 - (void)setError:(id)arg1;
 - (id)initWithGame:(id)arg1;
 - (id)game;
-- (void)setGame:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (id)error;
-- (id)player;
-- (id)description;
-- (void)dealloc;
+- (void)setGame:(id)arg1;
 
 @end

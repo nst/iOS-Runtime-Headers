@@ -19,6 +19,8 @@
 @property UITableViewUpdateGap * gap;
 
 
+- (int)action;
+- (void)dealloc;
 - (id)gap;
 - (id)_actionDescription;
 - (void)setAnimation:(int)arg1;
@@ -31,7 +33,5 @@
 - (void)setOffset:(float)arg1;
 - (float)offset;
 - (int)animation;
-- (int)action;
-- (void)dealloc;
 
 @end

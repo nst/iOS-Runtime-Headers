@@ -7,9 +7,9 @@
 }
 
 
-- (void)finalize;
-- (id)initWithAllocatedMemory:(void*)arg1;
-- (void)dispose;
 - (void)dealloc;
+- (id)initWithAllocatedMemory:(void*)arg1;
+- (void)finalize;
+- (void)dispose;
 
 @end

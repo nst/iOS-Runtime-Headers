@@ -34,14 +34,16 @@
 @property BOOL _wantsHistoryReload;
 @property(retain) NSString * _historyModificationStamp;
 
++ (id)sharedInstance;
 + (void)setChatClass:(Class)arg1;
 + (void)setChatRegistryClass:(Class)arg1;
 + (Class)chatClass;
 + (Class)chatRegistryClass;
-+ (id)sharedInstance;
 + (Class)messageClass;
 + (void)setMessageClass:(Class)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)set_wantsHistoryReload:(BOOL)arg1;
 - (BOOL)_wantsHistoryReload;
 - (void)set_waitingForQueries:(id)arg1;
@@ -128,8 +130,6 @@
 - (id)allExistingChats;
 - (id)existingChatWithPersistentID:(id)arg1;
 - (void)_setDefaultNumberOfMessagesToLoad:(unsigned int)arg1;
-- (id)init;
-- (void)dealloc;
 - (BOOL)_isLoading;
 - (void)setupComplete;
 

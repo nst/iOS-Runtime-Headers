@@ -20,22 +20,22 @@
 - (void)_expandInverted;
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;
 - (id)initWithSet:(id)arg1 options:(unsigned int)arg2;
-- (id)replacementObjectForCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)retainCount;
+- (BOOL)characterIsMember:(unsigned short)arg1;
+- (id)retain;
+- (oneway void)release;
+- (id)autorelease;
+- (void)dealloc;
+- (BOOL)hasMemberInPlane:(unsigned char)arg1;
+- (BOOL)isSupersetOfSet:(id)arg1;
+- (id)bitmapRepresentation;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (id)invertedSet;
 - (BOOL)longCharacterIsMember:(unsigned long)arg1;
 - (BOOL)isEmpty;
-- (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (BOOL)isSupersetOfSet:(id)arg1;
-- (id)bitmapRepresentation;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)retainCount;
-- (BOOL)characterIsMember:(unsigned short)arg1;
-- (id)retain;
-- (id)autorelease;
-- (oneway void)release;
-- (void)dealloc;
+- (id)replacementObjectForCoder:(id)arg1;
 
 @end

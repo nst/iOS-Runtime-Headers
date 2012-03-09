@@ -19,18 +19,21 @@
 + (id)imageAtlasWithName:(id)arg1;
 + (id)imageAtlasWithName:(id)arg1 inBundle:(id)arg2;
 
+- (void)dealloc;
 - (id)imageLookup;
+- (struct GKImageAtlasImageInfo { unsigned int x1; long long x2; unsigned int x3; unsigned int x4; float x5; unsigned char x6; BOOL x7; })infoForImageNamed:(id)arg1;
+- (id)imageNames;
 - (id)imageCache;
 - (void)setImageLookup:(id)arg1;
 - (void)setImageCache:(id)arg1;
+- (id)initWithPath:(id)arg1 inBundle:(id)arg2;
 - (void)processHeader;
 - (id)initWithName:(id)arg1 inBundle:(id)arg2;
 - (void)clearCache;
-- (id)data;
-- (void)setData:(id)arg1;
 - (void)setBundle:(id)arg1;
 - (id)bundle;
+- (id)data;
 - (id)imageNamed:(id)arg1;
-- (void)dealloc;
+- (void)setData:(id)arg1;
 
 @end

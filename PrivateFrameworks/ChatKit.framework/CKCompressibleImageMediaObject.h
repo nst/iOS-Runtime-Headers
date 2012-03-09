@@ -12,7 +12,7 @@
 + (struct CGSize { float x1; float x2; })transcodeMaxSize;
 + (id)mimeTypesToFileExtensions;
 
-- (id)imageData;
+- (void)dealloc;
 - (id)_newTranscodedMediaObjectWithMaxByteLength:(int)arg1 forceJPEG:(BOOL)arg2;
 - (id)_newTranscodedMediaObjectWithMaxByteLength:(int)arg1;
 - (id)_orientationStringForImageOrientation:(int)arg1;
@@ -25,7 +25,7 @@
 - (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
 - (void)copyToPasteboard:(id)arg1;
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
+- (id)imageData;
 - (int)mediaType;
-- (void)dealloc;
 
 @end

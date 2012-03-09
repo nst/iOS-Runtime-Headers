@@ -17,6 +17,8 @@
 @property int feederMode;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setCurrentItemIndex:(unsigned int)arg1;
 - (unsigned int)currentItemIndex;
 - (id)initWithStateOfAVController:(id)arg1;
@@ -24,9 +26,7 @@
 - (void)setFeederMode:(int)arg1;
 - (void)setFeeder:(id)arg1;
 - (id)feeder;
-- (double)currentTime;
 - (void)setCurrentTime:(double)arg1;
-- (id)description;
-- (void)dealloc;
+- (double)currentTime;
 
 @end

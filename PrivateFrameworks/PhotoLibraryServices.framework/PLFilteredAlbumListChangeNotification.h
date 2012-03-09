@@ -18,21 +18,21 @@
 
 + (id)notificationForFilteredAlbumList:(id)arg1 fromAlbumListChangeNotification:(id)arg2;
 
-- (id)object;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)initWithFilteredAlbumList:(id)arg1 albumListChangeNotification:(id)arg2;
 - (void)setFilteredIndexes:(id)arg1;
+- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (BOOL)countDidChange;
 - (id)updatedFilteredIndexes;
 - (id)_changedObjects;
 - (id)_diffDescription;
-- (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
 - (id)indexMapper;
+- (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
 - (id)filteredIndexes;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (id)object;
 - (BOOL)shouldReload;
 - (id)albumList;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

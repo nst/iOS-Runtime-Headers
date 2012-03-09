@@ -19,7 +19,8 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (id)password;
+- (id)description;
+- (void)dealloc;
 - (id)certificateData;
 - (int)dataEncoding;
 - (id)certificateFileName;
@@ -29,7 +30,6 @@
 - (BOOL)isSigned;
 - (id)installationWarnings;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (id)description;
-- (void)dealloc;
+- (id)password;
 
 @end

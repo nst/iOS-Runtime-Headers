@@ -20,6 +20,8 @@
 @property(readonly) BOOL isActive;
 
 
+- (void)dealloc;
+- (BOOL)isActive;
 - (void)setConnectionBehavior:(int)arg1;
 - (void)_itemCompleted:(id)arg1;
 - (void)_getItemCompleted:(id)arg1 path:(id)arg2 error:(id)arg3;
@@ -41,7 +43,5 @@
 - (struct __MMCSEngine { }*)_engine;
 - (id)_registeredTransferForGUID:(id)arg1;
 - (int)connectionBehavior;
-- (BOOL)isActive;
-- (void)dealloc;
 
 @end

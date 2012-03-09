@@ -10,13 +10,13 @@
 }
 
 
-- (id)initWithColor:(id)arg1 position:(float)arg2;
-- (void)setStyleColor:(id)arg1;
-- (id)color;
-- (float)position;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)color;
+- (float)position;
+- (id)initWithColor:(id)arg1 position:(float)arg2;
+- (void)setStyleColor:(id)arg1;
 
 @end

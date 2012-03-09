@@ -12,9 +12,9 @@
 @property struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int dwIPv4; unsigned char abIPv6[16]; } x3; unsigned short x4; }* ipport;
 
 
-- (void)setIpport:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
-- (struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)ipport;
 - (id)init;
 - (void)dealloc;
+- (void)setIpport:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
+- (struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)ipport;
 
 @end

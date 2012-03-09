@@ -11,7 +11,7 @@
 + (id)_rootAppearancesNode;
 + (id)_appearanceForClass:(Class)arg1 withContainerList:(id)arg2;
 
-- (void)forwardInvocation:(id)arg1;
 - (void)dealloc;
+- (void)forwardInvocation:(id)arg1;
 
 @end

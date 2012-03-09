@@ -45,9 +45,17 @@
 
 + (id)objectModelForXMLNamed:(id)arg1;
 
+- (void)setName:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)clientInfo;
 - (void)setAlert:(id)arg1;
 - (id)alert;
-- (void)setClientInfo:(id)arg1;
+- (void)setServerInfo:(id)arg1;
+- (id)serverInfo;
+- (BOOL)goBack;
+- (id)name;
 - (void)setDelegate:(id)arg1;
 - (void)runScript;
 - (void)presentInParentViewController:(id)arg1 animated:(BOOL)arg2;
@@ -95,14 +103,6 @@
 - (BOOL)RUIPage:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
 - (void)setSourceURL:(id)arg1;
 - (id)sourceURL;
-- (id)serverInfo;
-- (BOOL)goBack;
-- (id)name;
-- (id)clientInfo;
-- (void)setServerInfo:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)setClientInfo:(id)arg1;
 
 @end

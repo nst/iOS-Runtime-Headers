@@ -18,6 +18,10 @@
 
 + (id)sharedAuthenticator;
 
+- (BOOL)isAuthenticating;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)invalidateToken;
 - (void)_copyCertificateData:(id*)arg1 privateKey:(struct __SecKey {}**)arg2;
 - (void)_loadStatusChanged;
@@ -28,11 +32,7 @@
 - (void)_connectionDidEnd;
 - (BOOL)_authenticate2;
 - (void)_succeeded;
-- (BOOL)isAuthenticating;
 - (void)_failWithErrorCode:(int)arg1;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (id)token;
 
 @end

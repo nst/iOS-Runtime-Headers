@@ -11,15 +11,10 @@
     BOOL _roaming;
 }
 
-+ (id)sharedInstance;
 + (BOOL)holdsWiFiAssertion;
 + (void)setHoldsWiFiAssertion:(BOOL)arg1;
++ (id)sharedInstance;
 
-- (int)currentNetworkType;
-- (void)addObserver:(id)arg1;
-- (void)removeObserver:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)_operatorBundleChanged;
 - (void)_carrierBundleChanged;
 - (void)setCellularRoaming:(BOOL)arg1;
@@ -30,5 +25,10 @@
 - (void)_initNetworkObservation;
 - (BOOL)_isCurrentlyRoaming;
 - (BOOL)isCellularRoaming;
+- (void)removeObserver:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)addObserver:(id)arg1;
+- (int)currentNetworkType;
 
 @end

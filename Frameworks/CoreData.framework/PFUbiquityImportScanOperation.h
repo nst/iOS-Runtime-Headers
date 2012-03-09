@@ -2,38 +2,37 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString, NSSet, PFUbiquityLocation, <PFUbiquityImportScanOperationDelegate>;
+@class NSString, NSObject<PFUbiquityImportScanOperationDelegate>, NSSet, PFUbiquityLocation;
 
-@interface PFUbiquityImportScanOperation : NSOperation  {
+@interface PFUbiquityImportScanOperation : PFUbiquityImportOperation  {
     PFUbiquityLocation *_rootLocationToScan;
     NSString *_localPeerID;
     NSSet *_activeStoreNames;
     BOOL _includeLocalPeerLogs;
     BOOL _isFirstImport;
-    <PFUbiquityImportScanOperationDelegate> *_delegate;
 }
 
+@property NSObject<PFUbiquityImportScanOperationDelegate> * delegate;
 @property BOOL isFirstImport;
 @property(readonly) BOOL includeLocalPeerLogs;
 @property(readonly) NSSet * activeStoreNames;
-@property <PFUbiquityImportScanOperationDelegate> * delegate;
 @property(readonly) NSString * localPeerID;
 @property(readonly) PFUbiquityLocation * rootLocationToScan;
 
 
+- (BOOL)isEqual:(id)arg1;
+- (void)main;
+- (id)init;
+- (void)dealloc;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (id)rootLocationToScan;
 - (id)activeStoreNames;
 - (BOOL)includeLocalPeerLogs;
+- (BOOL)batchDownloadTransactionLogsAtLocations:(id)arg1 error:(id*)arg2;
 - (id)initWithLocalPeerID:(id)arg1 ubiquityRootLocation:(id)arg2 activeStoreNames:(id)arg3 includingLocalPeerLogs:(BOOL)arg4;
 - (void)setIsFirstImport:(BOOL)arg1;
 - (BOOL)isFirstImport;
 - (id)localPeerID;
-- (id)delegate;
-- (BOOL)isEqual:(id)arg1;
-- (void)main;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
 
 @end

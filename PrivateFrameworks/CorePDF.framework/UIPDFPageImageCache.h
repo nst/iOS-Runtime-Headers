@@ -21,6 +21,7 @@
 @property(readonly) UIPDFDocument * document;
 
 
+- (void)dealloc;
 - (void)cancelPendingRenderOperations;
 - (void)cancelPendingRenderOperationsForTarget:(id)arg1;
 - (void)addRenderJob:(id)arg1;
@@ -32,6 +33,5 @@
 - (id)document;
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (unsigned int)pageCount;
-- (void)dealloc;
 
 @end

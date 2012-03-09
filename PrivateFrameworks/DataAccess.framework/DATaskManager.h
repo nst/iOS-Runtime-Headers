@@ -32,6 +32,8 @@
 - (id)initWithAccount:(id)arg1;
 - (id)accountID;
 - (id)account;
+- (id)init;
+- (void)dealloc;
 - (id)userAgent;
 - (id)queuedTasks;
 - (id)activeQueuedTask;
@@ -57,14 +59,13 @@
 - (void)_makeStateTransition;
 - (void)_schedulePerformTask:(id)arg1;
 - (id)_getQueuedExclusiveTasks;
+- (id)deviceID;
 - (int)port;
 - (id)user;
 - (id)password;
 - (id)scheme;
 - (id)server;
-- (id)deviceID;
-- (id)init;
-- (void)dealloc;
+- (id)deviceType;
 - (void)taskManagerWillRemoveTask:(id)arg1;
 - (void)taskManagerDidAddTask:(id)arg1;
 - (id)_version;
@@ -84,7 +85,6 @@
 - (void)submitQueuedTask:(id)arg1;
 - (id)stateString;
 - (void)submitExclusiveTask:(id)arg1 toFrontOfQueue:(BOOL)arg2;
-- (id)deviceType;
 - (BOOL)useSSL;
 
 @end

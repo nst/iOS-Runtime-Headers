@@ -14,11 +14,11 @@
 @property(readonly) SUScriptViewController * topViewController;
 @property(retain) id viewControllers;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
+- (void)dealloc;
 - (void)popToRootViewControllerAnimated:(BOOL)arg1;
 - (void)setToolbarHidden:(id)arg1;
 - (void)setNavigationBarHidden:(BOOL)arg1;
@@ -32,7 +32,7 @@
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setNavigationBar:(id)arg1;
 - (id)navigationBar;
-- (void)dealloc;
+- (id)attributeKeys;
 - (id)toolbarHidden;
 - (void)setTopViewController:(id)arg1;
 - (BOOL)navigationBarHidden;

@@ -8,12 +8,12 @@
 }
 
 
+- (id)init;
+- (void)reset;
 - (id)initWithListId:(int)arg1;
 - (void)setCounterTo:(int)arg1 atLevel:(int)arg2;
 - (void)increaseCounterAtLevel:(int)arg1;
 - (int)counterAtLevel:(int)arg1;
 - (int)listId;
-- (void)reset;
-- (id)init;
 
 @end

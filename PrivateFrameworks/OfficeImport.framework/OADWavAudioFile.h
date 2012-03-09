@@ -11,9 +11,9 @@
 @property float duration;
 
 
-- (void)setHasDuration:(BOOL)arg1;
-- (BOOL)hasDuration;
 - (float)duration;
 - (void)setDuration:(float)arg1;
+- (void)setHasDuration:(BOOL)arg1;
+- (BOOL)hasDuration;
 
 @end

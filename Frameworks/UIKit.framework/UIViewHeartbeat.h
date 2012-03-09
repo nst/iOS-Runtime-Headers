@@ -13,7 +13,7 @@
 + (void)stopHeartbeatWithView:(id)arg1 selector:(SEL)arg2;
 + (void)startHeartbeatWithView:(id)arg1 selector:(SEL)arg2 inRunLoopMode:(id)arg3;
 
-- (void)_updateDisplayLink:(id)arg1;
 - (void)dealloc;
+- (void)_updateDisplayLink:(id)arg1;
 
 @end

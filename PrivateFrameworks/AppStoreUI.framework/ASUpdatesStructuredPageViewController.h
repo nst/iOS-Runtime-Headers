@@ -7,6 +7,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (float)marginForTableView:(id)arg1;
 - (void)reloadData;
 - (void)_updateAll:(id)arg1;
@@ -15,8 +17,6 @@
 - (void)_updateTabBarItemsAnimated:(BOOL)arg1;
 - (BOOL)_purchaseItems:(id)arg1;
 - (void)_purchasesChangedNotification:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (BOOL)purchaseItemAtIndexPath:(id)arg1;
 - (id)newTermsAndConditionsFooter;
 - (id)newNoItemsOverlayLabel;

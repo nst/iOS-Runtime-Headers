@@ -7,9 +7,9 @@
 }
 
 
-- (id)initWithPercent:(float)arg1;
-- (float)percent;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (id)initWithPercent:(float)arg1;
+- (float)percent;
 
 @end

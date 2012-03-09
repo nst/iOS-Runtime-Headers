@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, PFUbiquitySaveSnapshot, NSString, PFUbiquityLocation, NSMutableDictionary;
+@class NSNumber, PFUbiquityKnowledgeVector, NSString, PFUbiquitySaveSnapshot, PFUbiquityLocation, NSMutableDictionary;
 
 @interface PFUbiquityTransactionLog : NSObject  {
     NSMutableDictionary *_contents;
@@ -16,6 +16,7 @@
     BOOL _inTemporaryLocation;
     BOOL _inStagingLocation;
     BOOL _inPermanentLocation;
+    PFUbiquityKnowledgeVector *_knowledgeVector;
     PFUbiquitySaveSnapshot *_saveSnapshot;
 }
 
@@ -24,6 +25,7 @@
 @property(readonly) NSString * modelVersionHash;
 @property(readonly) NSString * transactionLogFilename;
 @property(readonly) PFUbiquityLocation * currentLocation;
+@property(readonly) PFUbiquityKnowledgeVector * knowledgeVector;
 @property(readonly) int transactionLogType;
 @property(readonly) PFUbiquityLocation * temporaryTransactionLogLocation;
 @property(readonly) PFUbiquityLocation * stagingTransactionLogLocation;
@@ -36,6 +38,7 @@
 @property(readonly) BOOL inTemporaryLocation;
 @property BOOL useTemporaryLogLocation;
 
++ (void)pruneStagingDirectoryForLocalPeerID:(id)arg1 andStoreName:(id)arg2 andModelVersionHash:(id)arg3 withStack:(id)arg4 andStoreTransactionNumber:(id)arg5;
 + (void)truncateLogFilesBeforeBaselineMetadata:(id)arg1 withLocalPeerID:(id)arg2 andUbiquityRootLocation:(id)arg3;
 + (id)generateTransactionLogFilename;
 + (int)transactionLogTypeFromLocation:(id)arg1;
@@ -43,8 +46,11 @@
 + (id)loadPlistAtLocation:(id)arg1 withError:(id*)arg2;
 + (void)updateModificationTimesForLocation:(id)arg1;
 + (id)transactionLogFilenameUUID;
-+ (void)pruneStagingDirectoryForLocalPeerID:(id)arg1 andStoreName:(id)arg2 andModelVersionHash:(id)arg3 withStack:(id)arg4 andStoreTransactionNumber:(id)arg5;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)currentLocation;
 - (id)initWithTransactionLogURL:(id)arg1 andUbiquityRootLocation:(id)arg2;
 - (id)fileProtectionOption;
 - (id)temporaryTransactionLogLocation;
@@ -57,7 +63,7 @@
 - (BOOL)deleteLogFileWithError:(id*)arg1;
 - (void)cleanupExternalDataReferences;
 - (int)transactionLogType;
-- (id)modelVersionHash;
+- (id)transactionLogFilename;
 - (BOOL)moveFileToPermanentLocationWithError:(id*)arg1;
 - (id)initWithStoreName:(id)arg1 andSaveSnapshot:(id)arg2;
 - (void)setUseTemporaryLogLocation:(BOOL)arg1;
@@ -73,10 +79,8 @@
 - (id)transactionLogLocation;
 - (id)exportingPeerID;
 - (id)saveSnapshot;
-- (id)transactionLogFilename;
 - (id)transactionNumber;
-- (id)currentLocation;
-- (id)description;
-- (void)dealloc;
+- (id)knowledgeVector;
+- (id)modelVersionHash;
 
 @end

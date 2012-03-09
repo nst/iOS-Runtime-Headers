@@ -10,6 +10,7 @@
 
 + (void)initialize;
 
+- (void)dealloc;
 - (id)initWithStore:(id)arg1 fromArchivedData:(id)arg2;
 - (id)_theDictionary;
 - (void)updateObject:(id)arg1 objectIDMap:(id)arg2;
@@ -23,6 +24,5 @@
 - (id)initWithStore:(id)arg1 fromPath:(id)arg2;
 - (id)initWithStore:(id)arg1;
 - (void)saveToPath:(id)arg1;
-- (void)dealloc;
 
 @end

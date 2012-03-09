@@ -10,6 +10,8 @@
 
 + (id)sharedInstance;
 
+- (id)init;
+- (void)dealloc;
 - (void)_dumpOutAllIMHandles;
 - (void)imHandleInfoChanged:(id)arg1;
 - (void)setNameStyle:(int)arg1;
@@ -36,7 +38,5 @@
 - (void)_dumpOutAllIMHandlesForAccount:(id)arg1;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
-- (id)init;
-- (void)dealloc;
 
 @end

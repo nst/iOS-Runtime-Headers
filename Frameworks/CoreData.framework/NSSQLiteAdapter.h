@@ -9,6 +9,8 @@
 }
 
 
+- (void)dealloc;
+- (id)type;
 - (id)pathnameForDatabase;
 - (id)sqliteVersion;
 - (id)initWithSQLCore:(id)arg1;
@@ -17,7 +19,5 @@
 - (id)typeStringForColumn:(id)arg1;
 - (id)typeStringForSQLType:(unsigned int)arg1;
 - (BOOL)supportsCorrelatedSubqueries;
-- (id)type;
-- (void)dealloc;
 
 @end

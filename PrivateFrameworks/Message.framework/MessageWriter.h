@@ -44,8 +44,8 @@
 - (void)setAllowsQuotedPrintable:(BOOL)arg1;
 - (unsigned long)preferredEncoding;
 - (void)setPreferredEncoding:(unsigned long)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

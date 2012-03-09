@@ -24,6 +24,9 @@
 @property(readonly) int loadedMatchCount;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setFinishedSection:(id)arg1;
 - (id)finishedSection;
 - (void)setOtherTurnSection:(id)arg1;
@@ -46,8 +49,5 @@
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
 - (void)setPlayers:(id)arg1;
 - (id)players;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

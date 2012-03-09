@@ -68,6 +68,12 @@
 
 - (id)criteria;
 - (void)setCriteria:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setFilterPropertyPredicate:(id)arg1;
 - (void)setFilterPredicate:(id)arg1 forProperty:(id)arg2;
 - (void)removePredicatesForProperty:(id)arg1;
@@ -94,6 +100,7 @@
 - (id)itemSectionInfo;
 - (unsigned int)groupingThreshold;
 - (BOOL)specifiesPlaylistItems;
+- (id)_itemsImmediately:(BOOL)arg1;
 - (id)initWithFilterPredicatesInternal:(id)arg1;
 - (id)initWithCriteria:(id)arg1 library:(id)arg2;
 - (id)initWithFilterPredicates:(id)arg1;
@@ -102,13 +109,6 @@
 - (id)items;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)_enumerateItemsUsingBlock:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)setGroupingType:(int)arg1;
 - (void)setFilterPredicates:(id)arg1;
 - (int)groupingType;
@@ -116,10 +116,11 @@
 - (id)collections;
 - (void)setMediaLibrary:(id)arg1;
 - (id)mediaLibrary;
-- (void)setItemPropertiesToFetch:(id)arg1;
+- (void)_enumerateItemsUsingBlock:(id)arg1;
 - (void)setSortItems:(BOOL)arg1;
 - (void)removeFilterPredicate:(id)arg1;
 - (void)addFilterPredicate:(id)arg1;
+- (void)setItemPropertiesToFetch:(id)arg1;
 - (unsigned int)groupingThreshold;
 - (id)entities;
 - (id)displayableStringByStrippingCommonPrefixOffString:(id)arg1 property:(id)arg2;

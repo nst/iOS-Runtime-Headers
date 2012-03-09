@@ -11,11 +11,11 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (id)title;
+- (id)description;
+- (void)dealloc;
 - (id)subtitle1Label;
 - (id)subtitle1Description;
 - (id)initWithURLString:(id)arg1 profile:(id)arg2;
-- (id)description;
-- (void)dealloc;
+- (id)title;
 
 @end

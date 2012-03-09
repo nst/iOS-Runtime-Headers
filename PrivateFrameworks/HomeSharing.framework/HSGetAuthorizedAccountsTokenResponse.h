@@ -11,8 +11,8 @@
 @property(copy) NSData * tokenData;
 
 
-- (void)setTokenData:(id)arg1;
-- (id)tokenData;
 - (void)dealloc;
+- (id)tokenData;
+- (void)setTokenData:(id)arg1;
 
 @end

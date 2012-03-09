@@ -7,7 +7,7 @@
 }
 
 
-- (void)message;
 - (void)setTarget:(id)arg1;
+- (void)message;
 
 @end

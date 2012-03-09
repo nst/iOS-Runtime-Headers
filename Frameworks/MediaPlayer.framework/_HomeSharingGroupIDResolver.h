@@ -21,11 +21,11 @@
 }
 
 
+- (void)dealloc;
 - (void)urlConnectionRequest:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)initWithAppleID:(id)arg1 password:(id)arg2 completionHandler:(id)arg3;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)start;
-- (void)dealloc;
 
 @end

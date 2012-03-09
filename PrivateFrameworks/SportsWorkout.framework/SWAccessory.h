@@ -19,6 +19,9 @@
 @property(retain) SWVicFileLogger * vicFileLogger;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)deactivate;
 - (void)setVicFileLogger:(id)arg1;
 - (id)vicFileLogger;
 - (id)searchState;
@@ -30,8 +33,5 @@
 - (void)cancelLinking;
 - (void)beginLinking;
 - (id)linkState;
-- (void)deactivate;
-- (id)init;
-- (void)dealloc;
 
 @end

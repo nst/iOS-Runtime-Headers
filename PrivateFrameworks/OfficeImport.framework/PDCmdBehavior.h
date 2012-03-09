@@ -10,9 +10,9 @@
 }
 
 
-- (id)cmd;
-- (void)setCmd:(id)arg1;
 - (int)type;
 - (void)setType:(int)arg1;
+- (id)cmd;
+- (void)setCmd:(id)arg1;
 
 @end

@@ -21,11 +21,8 @@
 @property(retain) NSMutableArray * icons;
 
 
-- (void)setRequestTimezoneOffset:(int)arg1;
-- (void)setRequestTimestamp:(double)arg1;
-- (void)setRequestTimestampType:(int)arg1;
-- (int)iconVersion;
-- (void)setIconVersion:(int)arg1;
+- (id)description;
+- (void)dealloc;
 - (int)requestTimestampType;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)icons;
@@ -35,8 +32,11 @@
 - (void)setType:(int)arg1;
 - (int)requestTimezoneOffset;
 - (double)requestTimestamp;
-- (id)description;
-- (void)dealloc;
+- (void)setRequestTimezoneOffset:(int)arg1;
+- (void)setRequestTimestamp:(double)arg1;
+- (void)setRequestTimestampType:(int)arg1;
+- (int)iconVersion;
+- (void)setIconVersion:(int)arg1;
 - (id)requestCalendarDate;
 
 @end

@@ -11,10 +11,10 @@
 @property(readonly) NSArray * calendars;
 
 
+- (void)dealloc;
 - (id)initWithCalendars:(id)arg1;
 - (id)calendars;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

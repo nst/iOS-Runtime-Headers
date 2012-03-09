@@ -41,7 +41,7 @@
 @property(retain) UIView * leftView;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)segmentedControl;
 - (void)setAccessoryView:(id)arg1;
 - (BOOL)editable;
@@ -55,7 +55,6 @@
 - (void)setViewControllers:(id)arg1;
 - (id)viewControllers;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
-- (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)_canReloadView;
 - (void)loadView;
 - (void)viewDidLoad;
@@ -65,6 +64,7 @@
 - (void)setNavigationBar:(id)arg1;
 - (id)navigationBar;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (struct CGSize { float x1; float x2; })accessoryViewOffset;
 - (int)segmentedControlAlignment;
 - (void)_popTopViewController:(id)arg1;
@@ -90,6 +90,5 @@
 - (void)setAutoHidesSegmentedControl:(BOOL)arg1;
 - (void)setSegmentedControlAlignment:(int)arg1;
 - (void)cancelEditing;
-- (void)dealloc;
 
 @end

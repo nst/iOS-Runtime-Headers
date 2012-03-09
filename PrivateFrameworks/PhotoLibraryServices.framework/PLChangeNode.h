@@ -15,13 +15,15 @@
 + (id)_descriptionForEvent:(void*)arg1;
 + (id)sharedNode;
 
+- (id)init;
+- (void)dealloc;
+- (void)distributeLocalEvent:(void*)arg1;
+- (void)distributeRemoteChangeHubEvent:(void*)arg1 withGroup:(struct dispatch_group_s { }*)arg2;
 - (BOOL)isEventOriginatingFromHere:(void*)arg1;
 - (void)processRemoteEvents:(void*)arg1;
 - (void)forceUserInterfaceReload;
 - (void)fetchNewEventsFromChangeHub;
 - (void)handleRemoteChangeHubRequest:(const void*)arg1;
-- (void)distributeLocalEvent:(void*)arg1;
-- (void)distributeRemoteChangeHubEvent:(void*)arg1 withGroup:(struct dispatch_group_s { }*)arg2;
 - (void*)createXPCObjectFromDidSaveNotification:(id)arg1;
 - (void)sendChangeHubEventForDidSaveNotification:(id)arg1;
 - (void)sendEventToChangeHub:(void*)arg1;
@@ -30,7 +32,5 @@
 - (void)setupHubConnection;
 - (void)disconnectManagedObjectContext:(id)arg1;
 - (void)connectManagedObjectContext:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

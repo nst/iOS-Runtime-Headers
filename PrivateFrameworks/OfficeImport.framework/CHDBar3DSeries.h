@@ -7,9 +7,9 @@
 }
 
 
+- (id)init;
 - (int)shapeType;
 - (id)shallowCopy;
 - (void)setShapeType:(int)arg1;
-- (id)init;
 
 @end

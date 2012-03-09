@@ -66,14 +66,14 @@
 + (id)_defaultNormalTitleColor;
 + (id)buttonWithTitle:(id)arg1 theme:(id)arg2;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isAccessibilityElementByDefault;
 - (unsigned long long)defaultAccessibilityTraits;
 - (void)crossfadeToImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)_setShouldHandleScrollerMouseEvent:(BOOL)arg1;
 - (void)crossfadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)_setBackground:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_setImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_setTitle:(id)arg1 forStates:(unsigned int)arg2;
 - (void)setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1;
@@ -106,7 +106,6 @@
 - (id)titleShadowColorForState:(unsigned int)arg1;
 - (void)_setShadowColor:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_setTitleColor:(id)arg1 forStates:(unsigned int)arg2;
-- (void)_setBackground:(id)arg1 forStates:(unsigned int)arg2;
 - (int)buttonType;
 - (int)_buttonType;
 - (void)setTitleColor:(id)arg1 forStates:(unsigned int)arg2;
@@ -168,12 +167,13 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTitle:(id)arg1;
 - (id)titleLabel;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (void)ab_addConferenceIcon;
 - (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 - (void)configureFromScriptButton:(id)arg1;

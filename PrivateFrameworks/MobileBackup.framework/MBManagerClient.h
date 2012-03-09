@@ -9,8 +9,13 @@
 }
 
 
-- (void)connectionDidDisconnect:(id)arg1;
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
+- (id)initWithDelegate:(id)arg1;
 - (void)setLogLevel:(int)arg1;
+- (void)connectionDidDisconnect:(id)arg1;
+- (id)restoreState;
 - (void)wakeUp;
 - (void)accountChanged;
 - (void)keyBagIsLocking;
@@ -46,14 +51,10 @@
 - (BOOL)removeDomainName:(id)arg1 error:(id*)arg2;
 - (BOOL)isBackupEnabledForDomainName:(id)arg1;
 - (void)setBackupEnabled:(BOOL)arg1 forDomainName:(id)arg2;
+- (id)restoreInfo;
 - (int)getLogLevel;
 - (void)setAllowiTunesBackup:(BOOL)arg1;
 - (BOOL)allowiTunesBackup;
 - (void)rebootDevice;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
-- (id)initWithDelegate:(id)arg1;
-- (id)restoreState;
 
 @end

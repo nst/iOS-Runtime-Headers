@@ -14,6 +14,10 @@
 }
 
 
+- (void)setEntity:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)initWithEntity:(id)arg1;
 - (id)createTableStatement;
 - (void)setPropertyMappings:(id)arg1;
@@ -33,9 +37,5 @@
 - (id)attributeMappings;
 - (id)relationshipMappings;
 - (id)entity;
-- (void)setEntity:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

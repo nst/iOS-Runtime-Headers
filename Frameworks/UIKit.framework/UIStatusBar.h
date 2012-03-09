@@ -38,6 +38,7 @@
         unsigned int bluetoothConnected : 1; 
         unsigned int displayRawGSMSignal : 1; 
         unsigned int displayRawWifiSignal : 1; 
+        unsigned int locationIconType : 1; 
     } _currentRawData;
     UIStatusBarBackgroundView *_newStyleBackgroundView;
     UIStatusBarForegroundView *_newStyleForegroundView;
@@ -60,13 +61,14 @@
 + (int)lowBatteryLevel;
 + (int)cornerStyleForRequestedStyle:(int)arg1 effectiveStyle:(int)arg2 alignment:(int)arg3;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForStyle:(int)arg1 orientation:(int)arg2;
-+ (struct { BOOL x1[23]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[3][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; })dataForRequestedData:(struct { BOOL x1[23]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[3][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; })arg1 overrides:(struct { BOOL x1[23]; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 3; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; struct { BOOL x_21_1_1[23]; BOOL x_21_1_2[64]; int x_21_1_3; int x_21_1_4; BOOL x_21_1_5[100]; BOOL x_21_1_6[100]; BOOL x_21_1_7[3][100]; BOOL x_21_1_8[1024]; unsigned int x_21_1_9; int x_21_1_10; int x_21_1_11; unsigned int x_21_1_12; int x_21_1_13; unsigned int x_21_1_14; BOOL x_21_1_15[150]; int x_21_1_16; int x_21_1_17; unsigned int x_21_1_18 : 1; unsigned int x_21_1_19 : 1; unsigned int x_21_1_20 : 1; BOOL x_21_1_21[256]; unsigned int x_21_1_22 : 1; unsigned int x_21_1_23 : 1; unsigned int x_21_1_24 : 1; } x21; })arg2;
++ (struct { BOOL x1[23]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[3][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; })dataForRequestedData:(struct { BOOL x1[23]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[3][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; })arg1 overrides:(struct { BOOL x1[23]; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 3; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; struct { BOOL x_22_1_1[23]; BOOL x_22_1_2[64]; int x_22_1_3; int x_22_1_4; BOOL x_22_1_5[100]; BOOL x_22_1_6[100]; BOOL x_22_1_7[3][100]; BOOL x_22_1_8[1024]; unsigned int x_22_1_9; int x_22_1_10; int x_22_1_11; unsigned int x_22_1_12; int x_22_1_13; unsigned int x_22_1_14; BOOL x_22_1_15[150]; int x_22_1_16; int x_22_1_17; unsigned int x_22_1_18 : 1; unsigned int x_22_1_19 : 1; unsigned int x_22_1_20 : 1; BOOL x_22_1_21[256]; unsigned int x_22_1_22 : 1; unsigned int x_22_1_23 : 1; unsigned int x_22_1_24 : 1; unsigned int x_22_1_25 : 1; } x22; })arg2;
 + (double)defaultGlowAnimationDurationForStyle:(int)arg1;
 + (float)heightForStyle:(int)arg1 orientation:(int)arg2;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForStyle:(int)arg1 orientation:(int)arg2 inWindowOfSize:(struct CGSize { float x1; float x2; })arg3;
 + (int)defaultStyleForRequestedStyle:(int)arg1 styleOverrides:(int)arg2;
 + (int)defaultStatusBarStyle;
 
+- (void)dealloc;
 - (id)styleDelegate;
 - (BOOL)_shouldSeekHigherPriorityTouchTarget;
 - (id)currentDoubleHeightLabelText;
@@ -108,7 +110,7 @@
 - (void)statusBarServer:(id)arg1 didReceiveDoubleHeightStatusString:(id)arg2 forStyle:(int)arg3;
 - (void)statusBarServer:(id)arg1 didReceiveGlowAnimationState:(BOOL)arg2 forStyle:(int)arg3;
 - (void)statusBarServer:(id)arg1 didReceiveStyleOverrides:(int)arg2;
-- (void)statusBarServer:(id)arg1 didReceiveStatusBarData:(struct { BOOL x1[23]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[3][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; }*)arg2 withActions:(int)arg3;
+- (void)statusBarServer:(id)arg1 didReceiveStatusBarData:(struct { BOOL x1[23]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[3][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; }*)arg2 withActions:(int)arg3;
 - (void)setSuppressesGlow:(BOOL)arg1;
 - (void)setOrientation:(int)arg1;
 - (void)_styleAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
@@ -126,6 +128,5 @@
 - (void)setHidden:(BOOL)arg1;
 - (BOOL)isHidden;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

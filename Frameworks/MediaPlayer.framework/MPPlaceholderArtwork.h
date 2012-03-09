@@ -6,17 +6,18 @@
 }
 
 + (id)noArtPlaceholderImageForMediaType:(int)arg1 withFormat:(unsigned int)arg2;
-+ (id)noArtPlaceholderImageForMediaType:(int)arg1;
++ (id)noArtPlaceholderImageForMediaType:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)scaledNoArtPlaceholderMusicImageWithFormat:(unsigned int)arg1;
 + (id)scaledNoArtPlaceholderVideoImageWithFormat:(unsigned int)arg1;
 + (id)scaledNoArtPlaceholderAudioBookImageWithFormat:(unsigned int)arg1;
 + (id)scaledNoArtPlaceholderPodcastImageWithFormat:(unsigned int)arg1;
 + (struct CGSize { float x1; float x2; })unscaledArtworkSizeForFormatID:(unsigned int)arg1;
-+ (id)wildcatNoArtPlaceholderMusicImage;
-+ (id)wildcatNoArtPlaceholderVideoImage;
-+ (id)wildcatNoArtPlaceholderAudioBookImage;
-+ (id)wildcatNoArtPlaceholderPodcastImage;
-+ (id)wildcatNoArtPlaceholderImageForMediaType:(int)arg1;
++ (id)padNoArtPlaceholderMusicImageForSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)padNoArtPlaceholderVideoImageForSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)padNoArtPlaceholderAudioBookImageForSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)padNoArtPlaceholderPodcastImageForSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)noArtPlaceholderImageForMediaType:(int)arg1;
++ (id)padNoArtPlaceholderImageForMediaType:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)noArtPlaceholderVideoImage;
 + (id)noArtPlaceholderAudioBookImage;
 + (id)noArtPlaceholderPodcastImage;

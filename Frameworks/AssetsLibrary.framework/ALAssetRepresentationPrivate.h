@@ -13,36 +13,36 @@
     PLPhotoLibrary *_photoLibrary;
 }
 
+@property(retain) PLSidecarFile * sidecar;
 @property(copy) NSString * extension;
 @property ALAssetsLibrary * library;
 @property BOOL isValid;
 @property(retain) PLManagedAsset * photo;
-@property(retain) PLSidecarFile * sidecar;
 @property(retain) PLPhotoLibrary * _photoLibrary;
 
 + (void)_setupFileDescriptorQueue;
 + (void)_clearFileDescriptorQueue;
-+ (void)_setFileDescriptor:(int)arg1 forPersistentURL:(id)arg2;
++ (int)_updateFileDescriptor:(int)arg1 forPersistentURL:(id)arg2;
 + (int)_fileDescriptorForPersistentURL:(id)arg1;
 
 - (id)library;
 - (void)setLibrary:(id)arg1;
+- (void)dealloc;
+- (void)_performBlockAndWait:(id)arg1;
 - (void)setPhoto:(id)arg1;
 - (BOOL)isValid;
 - (void)set_photoLibrary:(id)arg1;
 - (void)setExtension:(id)arg1;
 - (void)setSidecar:(id)arg1;
-- (id)sidecar;
 - (void)libraryDidChange;
 - (void)libraryWillDisappear;
 - (id)_photoLibrary;
 - (void)setIsValid:(BOOL)arg1;
 - (BOOL)_isVideo;
 - (BOOL)_isImage;
+- (id)sidecar;
 - (id)extension;
 - (id)initWithManagedAsset:(id)arg1 sidecar:(id)arg2 extension:(id)arg3 library:(id)arg4;
-- (void)_performBlockAndWait:(id)arg1;
 - (id)photo;
-- (void)dealloc;
 
 @end

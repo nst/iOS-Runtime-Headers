@@ -9,8 +9,8 @@
 }
 
 
+- (void)dealloc;
 - (id)shapeStyle;
 - (void)setShapeStyle:(id)arg1;
-- (void)dealloc;
 
 @end

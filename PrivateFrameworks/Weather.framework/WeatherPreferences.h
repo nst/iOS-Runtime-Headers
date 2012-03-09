@@ -17,24 +17,20 @@
     NSArray *_lastUbiquitousWrittenDefaults;
     <ServiceLogoControllerDelegate> *_serviceLogoDelegate;
     <SynchronizedDefaultsDelegate> *_syncDelegate;
+    NSString *yahooWeatherURLString;
     NSString *twcURLString;
 }
 
 @property(copy) NSString * twcURLString;
+@property(copy) NSString * yahooWeatherURLString;
 @property <SynchronizedDefaultsDelegate> * syncDelegate;
 @property <ServiceLogoControllerDelegate> * serviceLogoDelegate;
 
 + (id)sharedPreferences;
 + (id)serviceDebuggingPath;
 
+- (void)dealloc;
 - (id)_cacheDirectoryPath;
-- (id)UUID;
-- (void)loadFromDisk;
-- (void)setSyncDelegate:(id)arg1;
-- (id)syncDelegate;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)registerDefaultPreferences;
 - (BOOL)isCelsius;
 - (id)localWeatherCity;
@@ -42,14 +38,18 @@
 - (void)synchronizeStateToDisk;
 - (id)serviceHost;
 - (id)secondaryServiceHost;
-- (id)logoURL;
+- (id)twcLogoURL;
+- (id)yahooLogoURL;
 - (id)secondaryServiceLogoURL;
+- (id)primaryBacksideLogoImage;
+- (id)secondBacksideLogoImage;
 - (void)writeDefaultValue:(id)arg1 forKey:(id)arg2;
 - (id)readDefaultValueForKey:(id)arg1;
 - (id)secondaryServiceBacksideImage;
 - (void)setLocalWeatherEnabled:(BOOL)arg1;
 - (void)saveToUbiquitousStore;
 - (void)setTwcURLString:(id)arg1;
+- (void)setYahooWeatherURLString:(id)arg1;
 - (id)serviceLogoDelegate;
 - (void)setServiceLogoDelegate:(id)arg1;
 - (BOOL)loadUnits;
@@ -67,6 +67,7 @@
 - (int)loadActiveCity;
 - (void)setActiveCity:(int)arg1;
 - (id)twcURLString;
+- (id)yahooWeatherURLString;
 - (BOOL)_areDefaultCities:(id)arg1;
 - (id)loadSavedCities;
 - (id)combineCloudCities:(id)arg1 withExisting:(id)arg2 byAppending:(BOOL)arg3;
@@ -76,9 +77,14 @@
 - (void)_syncToCloudIfNotDefaultCities:(id)arg1;
 - (void)_saveUbiquitousDefaults:(id)arg1;
 - (id)logoButtonImage;
-- (id)logoBacksideImage;
 - (BOOL)serviceDebugging;
 - (void)resetLocale;
-- (void)dealloc;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)loadFromDisk;
+- (id)UUID;
+- (void)setSyncDelegate:(id)arg1;
+- (id)syncDelegate;
 
 @end

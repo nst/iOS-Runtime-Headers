@@ -18,6 +18,7 @@
 @property(retain) UIImage * highlightedTableIcon;
 
 
+- (void)dealloc;
 - (id)selectionMark;
 - (void)setupTextAttributes;
 - (void)setSelectionMark:(id)arg1;
@@ -31,6 +32,5 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

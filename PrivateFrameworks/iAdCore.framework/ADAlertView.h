@@ -11,10 +11,7 @@
 @property <UIAlertViewDelegate> * chainedDelegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)setChainedDelegate:(id)arg1;
-- (id)chainedDelegate;
-- (void)alertViewsShouldCancelNotification:(id)arg1;
+- (void)dealloc;
 - (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (void)willPresentAlertView:(id)arg1;
 - (void)didPresentAlertView:(id)arg1;
@@ -24,6 +21,9 @@
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 - (void)show;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)setChainedDelegate:(id)arg1;
+- (id)chainedDelegate;
+- (void)alertViewsShouldCancelNotification:(id)arg1;
 
 @end

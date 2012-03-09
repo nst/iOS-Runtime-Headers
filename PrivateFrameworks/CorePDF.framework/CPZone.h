@@ -28,6 +28,9 @@
 }
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)graphicsInZone;
 - (void)setZoneBorders:(id)arg1;
 - (void)removeUnfilledNeighborShapes;
@@ -73,11 +76,8 @@
 - (struct CGPoint { float x1; float x2; }*)outerVertices;
 - (void)accept:(id)arg1;
 - (id)textLinesInZone;
+- (unsigned int)vertexCount;
 - (BOOL)contains:(id)arg1;
 - (BOOL)isRectangular;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (unsigned int)vertexCount;
 
 @end

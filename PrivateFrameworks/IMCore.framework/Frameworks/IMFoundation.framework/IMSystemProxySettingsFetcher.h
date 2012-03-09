@@ -25,7 +25,7 @@
 @property(copy) NSString * _proxyPassword;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)set_proxyPassword:(id)arg1;
 - (id)_proxyPassword;
 - (void)set_proxyAccount:(id)arg1;
@@ -49,6 +49,6 @@
 - (void)_getProxyAccountAndPasswordFromKeychain;
 - (void)_callAccountSettingsDelegateMethod;
 - (id)delegate;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

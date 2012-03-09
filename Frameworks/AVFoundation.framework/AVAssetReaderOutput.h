@@ -18,30 +18,30 @@
 
 + (void)initialize;
 
-- (void)finalize;
-- (void)setAlwaysCopiesSampleData:(BOOL)arg1;
-- (void)_figAssetReaderSampleBufferDidBecomeAvailableForExtractionID:(int)arg1;
-- (void)_figAssetReaderDecodeError;
+- (id)init;
+- (void)dealloc;
 - (void)_figAssetReaderFailed;
-- (void)_setFigAssetReader:(struct OpaqueFigAssetReader { }*)arg1;
-- (id)_weakReferenceToAssetReader;
-- (BOOL)_trimsSampleDurations;
-- (BOOL)alwaysCopiesSampleData;
-- (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
-- (int)_extractionID;
-- (void)_markAsFinished;
+- (void)_figAssetReaderDecodeError;
+- (void)_figAssetReaderSampleBufferDidBecomeAvailableForExtractionID:(int)arg1;
 - (id)_figAssetReaderExtractionOptions;
 - (void)_setExtractionID:(int)arg1;
+- (void)setAlwaysCopiesSampleData:(BOOL)arg1;
+- (void)_markAsFinished;
+- (int)_extractionID;
+- (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
+- (BOOL)_trimsSampleDurations;
+- (id)_weakReferenceToAssetReader;
+- (void)_setFigAssetReader:(struct OpaqueFigAssetReader { }*)arg1;
+- (BOOL)alwaysCopiesSampleData;
 - (struct OpaqueFigAssetReader { }*)_figAssetReader;
-- (void)_attachToWeakReferenceToAssetReader:(id)arg1;
-- (BOOL)_isFinished;
-- (BOOL)_prepareForReadingReturningError:(id*)arg1;
 - (void)_cancelReading;
+- (BOOL)_prepareForReadingReturningError:(id*)arg1;
+- (BOOL)_isFinished;
+- (void)_attachToWeakReferenceToAssetReader:(id)arg1;
 - (int)_status;
 - (struct opaqueCMSampleBuffer { }*)copyNextSampleBuffer;
 - (id)_asset;
+- (void)finalize;
 - (id)mediaType;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -18,15 +18,15 @@
 + (id)animationStyleDefault;
 + (id)animationStyleAnimated:(BOOL)arg1 duration:(double)arg2 outDirection:(int)arg3;
 
-- (double)duration;
-- (void)setDuration:(double)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
 - (BOOL)force;
 - (void)setOutDirection:(int)arg1;
 - (int)outDirection;
 - (void)setForce:(BOOL)arg1;
 - (BOOL)animated;
 - (void)setAnimated:(BOOL)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 
 @end

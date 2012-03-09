@@ -70,6 +70,10 @@
 + (void)__releaseWorkoutInProgressFileLock;
 + (BOOL)__takeWorkoutInProgressFileLock;
 
+- (void)dealloc;
+- (id)preset;
+- (void)setPreset:(id)arg1;
+- (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (id)dataController;
 - (BOOL)hasEverStarted;
 - (id)workoutState;
@@ -115,9 +119,5 @@
 - (void)resetCalibration;
 - (BOOL)canBeUsedForRunCalibration;
 - (BOOL)canBeUsedForWalkCalibration;
-- (id)preset;
-- (void)setPreset:(id)arg1;
-- (void)dealloc;
-- (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
 
 @end

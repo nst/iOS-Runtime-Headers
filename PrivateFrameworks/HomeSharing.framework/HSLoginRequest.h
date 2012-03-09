@@ -6,7 +6,7 @@
 }
 
 
-- (id)canonicalResponseForResponse:(id)arg1;
 - (id)init;
+- (id)canonicalResponseForResponse:(id)arg1;
 
 @end

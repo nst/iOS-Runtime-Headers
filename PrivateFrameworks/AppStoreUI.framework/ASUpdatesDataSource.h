@@ -17,6 +17,7 @@
 @property(readonly) UIColor * topExtensionColor;
 
 
+- (void)dealloc;
 - (void)setLoading:(BOOL)arg1;
 - (int)tableViewStyle;
 - (BOOL)isLoading;
@@ -26,7 +27,6 @@
 - (void)setUpdatesFromUpdateResponse:(id)arg1;
 - (void)configureColoringForCell:(id)arg1 indexPath:(id)arg2;
 - (int)updatesStyle;
-- (void)dealloc;
 - (float)tableMargin;
 - (BOOL)canShowItemOfferButtonForItem:(id)arg1;
 - (id)newHeaderViewForSection:(int)arg1;

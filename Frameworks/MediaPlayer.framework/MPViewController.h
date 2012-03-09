@@ -36,6 +36,8 @@
 @property(retain) MPAVController * player;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setAppearing:(BOOL)arg1;
 - (BOOL)idleTimerDisabled;
 - (BOOL)observesApplicationSuspendResumeEventsOnly;
@@ -64,8 +66,8 @@
 - (void)beginIgnoringChangeTypes:(unsigned int)arg1;
 - (void)endIgnoringChangeTypes:(unsigned int)arg1;
 - (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
+- (id)player;
 - (void)setPlayer:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setOrientation:(int)arg1;
 - (id)item;
 - (id)popViewControllerAnimated:(BOOL)arg1;
@@ -80,9 +82,7 @@
 - (void)setView:(id)arg1;
 - (int)orientation;
 - (id)delegate;
-- (id)player;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)clearWeakReferencesToObject:(id)arg1;
 

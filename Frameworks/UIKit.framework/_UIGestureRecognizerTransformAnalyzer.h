@@ -18,6 +18,7 @@
 @property float rotationWeight;
 
 
+- (id)init;
 - (int)dominantComponent;
 - (void)setRotationWeight:(float)arg1;
 - (float)rotationWeight;
@@ -27,6 +28,5 @@
 - (float)translationWeight;
 - (void)analyzeTouches:(id)arg1;
 - (void)reset;
-- (id)init;
 
 @end

@@ -11,10 +11,10 @@
 
 + (id)sharedCollector;
 
+- (id)init;
+- (void)dealloc;
 - (void)submitDirectionsQuery:(id)arg1;
 - (void)submitSearchQuery:(id)arg1;
 - (void)cancelAllSubmissions;
-- (id)init;
-- (void)dealloc;
 
 @end

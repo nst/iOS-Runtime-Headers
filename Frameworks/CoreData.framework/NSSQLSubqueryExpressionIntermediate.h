@@ -25,6 +25,7 @@
 }
 
 
+- (void)dealloc;
 - (BOOL)_isKeypathScopedToSubquery:(id)arg1;
 - (void)_setVariableColumn:(id)arg1;
 - (void)_createCollectionJoinsForFetchInContext:(id)arg1;
@@ -39,6 +40,5 @@
 - (BOOL)keypathExpressionIsSafeLHSForIn:(id)arg1;
 - (id)governingEntityForKeypathExpression:(id)arg1;
 - (id)generateSQLStringInContext:(id)arg1;
-- (void)dealloc;
 
 @end

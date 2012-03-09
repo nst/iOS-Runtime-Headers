@@ -13,13 +13,13 @@
 @property(readonly) NSSet * directoryGatewayURLs;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)directoryGatewayURLs;
 - (id)addressBookHomes;
 - (id)directoryGatewayURL;
 - (id)homeSet;
 - (void)_setPropertiesFromParsedResponses:(id)arg1;
 - (id)_copyAccountPropertiesPropFindElements;
-- (id)description;
-- (void)dealloc;
 
 @end

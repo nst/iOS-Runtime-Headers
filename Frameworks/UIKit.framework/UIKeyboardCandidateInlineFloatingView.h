@@ -53,8 +53,9 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previousCollapsedFrame;
 
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPosition:(int)arg1;
+- (unsigned int)count;
+- (id)candidates;
+- (void)dealloc;
 - (void)padInlineFloatingViewExpand:(id)arg1;
 - (BOOL)padInlineFloatingViewIsExpanded:(id)arg1;
 - (void)sortSelectionBarAction;
@@ -107,9 +108,8 @@
 - (void)showNextCandidate;
 - (void)layout;
 - (int)position;
+- (void)setPosition:(int)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (unsigned int)count;
-- (id)candidates;
-- (void)dealloc;
 
 @end

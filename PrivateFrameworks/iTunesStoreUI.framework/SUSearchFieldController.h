@@ -21,8 +21,8 @@
 @property int searchFieldStyle;
 
 
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
-- (void)operationDidFinish:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
@@ -33,8 +33,6 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)init;
-- (void)dealloc;
 - (int)searchFieldStyle;
 - (id)_cancelButtonView;
 - (id)_newTransientViewController;
@@ -63,5 +61,7 @@
 - (void)handleSearchURL:(id)arg1;
 - (id)searchFieldConfiguration;
 - (void)setSearchFieldConfiguration:(id)arg1;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
+- (void)operationDidFinish:(id)arg1;
 
 @end

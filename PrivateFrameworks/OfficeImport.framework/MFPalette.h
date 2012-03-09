@@ -10,12 +10,12 @@
 
 + (id)paletteWithColours:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (id)initWithColours:(id)arg1;
 - (BOOL)setEntries:(int)arg1 :(id)arg2;
 - (BOOL)resize:(int)arg1;
 - (int)selectInto:(id)arg1;
 - (id)getColour:(int)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

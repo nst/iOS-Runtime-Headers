@@ -30,6 +30,14 @@
 - (BOOL)_shouldUseParensWithDescription;
 - (id)expressionBlock;
 - (id)subexpression;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)variable;
+- (SEL)selector;
+- (id)keyPath;
+- (id)arguments;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)trueExpression;
 - (id)falseExpression;
 - (id)function;
@@ -45,14 +53,6 @@
 - (id)operand;
 - (id)collection;
 - (id)predicate;
-- (id)variable;
-- (SEL)selector;
-- (id)keyPath;
-- (id)arguments;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)minimalFormInContext:(id)arg1;
 
 @end

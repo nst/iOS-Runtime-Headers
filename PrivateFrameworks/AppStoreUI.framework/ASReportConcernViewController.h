@@ -16,7 +16,6 @@
 @property(readonly) unsigned long long itemIdentifier;
 
 
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)_fetchConcerns;
@@ -30,5 +29,6 @@
 - (unsigned long long)itemIdentifier;
 - (void)keyboardWillShowWithInfo:(id)arg1;
 - (void)keyboardWillHideWithInfo:(id)arg1;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

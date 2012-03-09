@@ -41,8 +41,9 @@
 @property(retain) GEOTileKeyList * satisfiedList;
 
 
-- (void)setFinished:(id)arg1;
-- (void)setError:(id)arg1;
+- (id)finished;
+- (id)init;
+- (void)dealloc;
 - (id)satisfiedList;
 - (void)finishDecodingAndSendError:(id)arg1;
 - (void)endDecode;
@@ -56,11 +57,10 @@
 - (void)setOriginalList:(id)arg1;
 - (id)originalList;
 - (id)networkLoadList;
+- (void)setError:(id)arg1;
+- (id)error;
 - (id)progress;
 - (void)setProgress:(id)arg1;
-- (id)error;
-- (id)finished;
-- (id)init;
-- (void)dealloc;
+- (void)setFinished:(id)arg1;
 
 @end

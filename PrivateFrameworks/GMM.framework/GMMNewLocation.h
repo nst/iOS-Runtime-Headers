@@ -26,8 +26,14 @@
 @property int waypointType;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (id)description;
+- (void)dealloc;
 - (void)setQuery:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)query;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)initWithGEOPlaceSearchRequest:(id)arg1 placeToken:(id)arg2;
 - (void)setHasWaypointType:(BOOL)arg1;
 - (BOOL)hasWaypointType;
@@ -44,11 +50,5 @@
 - (id)geocode;
 - (BOOL)hasGeocode;
 - (BOOL)hasQuery;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)query;
-- (id)description;
-- (id)description;
-- (void)dealloc;
 
 @end

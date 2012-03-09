@@ -23,13 +23,16 @@
 @property(retain) MPMediaItem * mediaItem;
 
 
-- (BOOL)isDownloading;
+- (void)dealloc;
+- (float)downloadProgress;
 - (id)mediaItem;
+- (BOOL)isDownloading;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isDownloadable;
 - (BOOL)canCancelDownload;
 - (BOOL)isPlayButtonEnabled;
 - (id)_copyrightFormattedString;
@@ -41,8 +44,5 @@
 - (void)_playMovie:(id)arg1;
 - (void)setMediaItem:(id)arg1;
 - (void)setDownloadable:(BOOL)arg1;
-- (void)dealloc;
-- (float)downloadProgress;
-- (BOOL)isDownloadable;
 
 @end

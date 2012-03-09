@@ -18,22 +18,22 @@
 @property(readonly) unsigned int dateFormatterNoStyle;
 @property(readonly) unsigned int dateFormatterShortStyle;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
 - (unsigned int)timeStyle;
 - (unsigned int)dateStyle;
 - (id)dateFormat;
-- (id)attributeKeys;
+- (id)init;
+- (void)dealloc;
 - (void)setTimeStyle:(unsigned int)arg1;
 - (void)setDateStyle:(unsigned int)arg1;
 - (id)localeIdentifier;
 - (double)dateFromString:(id)arg1;
 - (id)stringFromDate:(id)arg1;
 - (void)setDateFormat:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)attributeKeys;
 - (unsigned int)dateFormatterShortStyle;
 - (unsigned int)dateFormatterNoStyle;
 - (unsigned int)dateFormatterMediumStyle;

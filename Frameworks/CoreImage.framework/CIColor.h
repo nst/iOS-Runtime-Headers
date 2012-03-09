@@ -7,18 +7,22 @@
     void *_pad[3];
 }
 
-+ (id)colorWithString:(id)arg1;
-+ (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 + (id)colorWithCGColor:(struct CGColor { }*)arg1;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
++ (id)colorWithString:(id)arg1;
++ (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 
-- (struct CGColorSpace { }*)colorSpace;
-- (void)finalize;
 - (const float*)components;
-- (id)stringRepresentation;
+- (id)initWithString:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (float)blue;
 - (float)green;
 - (float)red;
+- (void)finalize;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (struct CGColor { }*)cgColor;
 - (struct CGColor { }*)CGColor;
@@ -27,12 +31,8 @@
 - (float)alpha;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)stringRepresentation;
+- (struct CGColorSpace { }*)colorSpace;
 - (id)initWithColor:(id)arg1;
 
 @end

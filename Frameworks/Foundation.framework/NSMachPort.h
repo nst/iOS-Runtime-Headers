@@ -16,30 +16,30 @@
 + (id)portWithMachPort:(unsigned int)arg1;
 + (id)port;
 
-- (void)invalidate;
-- (void)setDelegate:(id)arg1;
-- (void)finalize;
 - (BOOL)sendBeforeTime:(double)arg1 streamData:(void*)arg2 components:(id)arg3 from:(id)arg4 msgid:(unsigned int)arg5;
 - (id)initWithMachPort:(unsigned int)arg1 options:(unsigned int)arg2;
 - (BOOL)sendBeforeDate:(id)arg1 msgid:(unsigned int)arg2 components:(id)arg3 from:(id)arg4 reserved:(unsigned int)arg5;
 - (unsigned int)machPort;
 - (BOOL)sendBeforeDate:(id)arg1 components:(id)arg2 from:(id)arg3 reserved:(unsigned int)arg4;
 - (id)initWithMachPort:(unsigned int)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (BOOL)isValid;
-- (id)delegate;
-- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (unsigned long)_cfTypeID;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (BOOL)isKindOfClass:(Class)arg1;
 - (BOOL)isMemberOfClass:(Class)arg1;
 - (unsigned int)retainCount;
 - (id)retain;
-- (id)init;
 - (oneway void)release;
+- (id)init;
 - (void)dealloc;
+- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (unsigned long)_cfTypeID;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)finalize;
+- (BOOL)isValid;
+- (void)invalidate;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

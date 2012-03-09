@@ -11,8 +11,8 @@
 
 
 - (id)messageID;
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
+- (void)finishWithError:(id)arg1;
 - (int)handleStreamOperation:(int)arg1 forCodePage:(int)arg2 tag:(int)arg3 withParentItem:(id)arg4 withData:(char *)arg5 dataLength:(int)arg6;
 - (id)initForMessageServerID:(id)arg1 andAttachmentName:(id)arg2;
 - (BOOL)processContext:(id)arg1;

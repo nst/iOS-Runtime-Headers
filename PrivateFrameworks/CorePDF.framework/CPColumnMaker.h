@@ -28,6 +28,8 @@
 @property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } pageBounds;
 
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)intervalOverlapLeft:(float)arg1 right:(float)arg2 paragraphs:(id)arg3;
 - (BOOL)cuttingShapeBetween:(id)arg1 and:(id)arg2;
 - (BOOL)paragraph:(id)arg1 notOnSameShapeAs:(id)arg2;
@@ -50,7 +52,5 @@
 - (void)makeColumnsFrom:(id)arg1 zone:(id)arg2;
 - (void)setPageBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)columns;
-- (id)init;
-- (void)dealloc;
 
 @end

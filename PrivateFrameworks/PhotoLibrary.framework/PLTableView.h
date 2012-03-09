@@ -23,6 +23,7 @@
 @property(copy) id scrollingEndedCompletion;
 
 
+- (void)dealloc;
 - (BOOL)isScrolling;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
@@ -33,6 +34,5 @@
 - (void)setBlurFilterEnabled:(BOOL)arg1;
 - (void)setScrollingEndedCompletion:(id)arg1;
 - (id)scrollingEndedCompletion;
-- (void)dealloc;
 
 @end

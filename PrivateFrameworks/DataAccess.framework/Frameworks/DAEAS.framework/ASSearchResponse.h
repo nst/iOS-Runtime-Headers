@@ -20,11 +20,11 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setStatus:(id)arg1;
-- (id)stores;
-- (id)status;
 - (id)description;
 - (void)dealloc;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (id)stores;
 - (void)setExpectedResultType:(int)arg1;
 - (int)expectedResultType;
 - (id)asParseRules;

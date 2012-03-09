@@ -15,9 +15,9 @@
 @property(readonly) CBCharacteristic * characteristic;
 
 
-- (id)UUID;
+- (id)characteristic;
 - (id)value;
 - (void)setValue:(id)arg1;
-- (id)characteristic;
+- (id)UUID;
 
 @end

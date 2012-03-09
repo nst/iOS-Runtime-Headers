@@ -13,6 +13,7 @@
 @property BOOL isInTransaction;
 
 
+- (void)dealloc;
 - (void)popDB;
 - (void)pushDB:(struct sqlite3 { }*)arg1;
 - (struct sqlite3_stmt { }*)statementForSQL:(id)arg1;
@@ -21,6 +22,5 @@
 - (struct sqlite3 { }*)db;
 - (void)setIsInTransaction:(BOOL)arg1;
 - (BOOL)isInTransaction;
-- (void)dealloc;
 
 @end

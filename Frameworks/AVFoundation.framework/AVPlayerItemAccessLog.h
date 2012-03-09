@@ -11,15 +11,15 @@
 @property(readonly) NSArray * events;
 
 
-- (void)finalize;
-- (id)events;
-- (id)_accessLogArray;
-- (id)extendedLogData;
-- (unsigned int)extendedLogDataStringEncoding;
-- (id)initWithLogArray:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)_accessLogArray;
+- (unsigned int)extendedLogDataStringEncoding;
+- (id)extendedLogData;
+- (id)initWithLogArray:(id)arg1;
+- (id)events;
+- (void)finalize;
 
 @end

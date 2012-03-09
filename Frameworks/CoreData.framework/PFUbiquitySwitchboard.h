@@ -10,18 +10,18 @@
     NSRecursiveLock *_registrationLock;
 }
 
++ (void)initialize;
 + (id)urlForUbiquitousExternalReferenceLocation:(id)arg1;
 + (id)ubiquitousExternalReferenceLocationForUUID:(id)arg1 inStore:(id)arg2;
 + (id)sharedSwitchboard;
-+ (void)initialize;
 
-- (void)releaseAllEntriesForRootLocation:(id)arg1 andPeer:(id)arg2;
-- (id)createSetOfCoordinatorsForPersistentStoreName:(id)arg1 andLocalPeerID:(id)arg2 atUbiquityRootLocation:(id)arg3;
-- (void)unregisterCoordinator:(id)arg1;
-- (void)registerUbiquitizedPersistentStore:(id)arg1 forLocalPeerID:(id)arg2;
-- (id)entryForUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (void)registerUbiquitizedPersistentStore:(id)arg1 forLocalPeerID:(id)arg2;
+- (void)releaseAllEntriesForRootLocation:(id)arg1 andPeer:(id)arg2;
+- (id)entryForUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;
+- (id)createSetOfCoordinatorsForPersistentStoreName:(id)arg1 andLocalPeerID:(id)arg2 atUbiquityRootLocation:(id)arg3;
+- (void)unregisterCoordinator:(id)arg1;
 
 @end

@@ -22,7 +22,7 @@
 @property(readonly) int version;
 
 
-- (struct sqlite3 { }*)db;
+- (void)dealloc;
 - (id)imagePath;
 - (BOOL)findImageWithKey:(id)arg1 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg2;
 - (BOOL)saveImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
@@ -32,17 +32,18 @@
 - (void)createDbAt:(const char *)arg1;
 - (struct sqlite3_stmt { }*)beginStmt;
 - (struct sqlite3_stmt { }*)commitStmt;
-- (int)setVersion:(int)arg1;
+- (int)imageCount;
+- (id)dbPath;
 - (void)removeImagesInGroups:(id)arg1;
 - (id)allGroups;
 - (struct CGImage { }*)copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 draw:(id)arg6;
+- (void)storeImageForKey:(id)arg1 inGroup:(id)arg2 opaque:(BOOL)arg3 image:(struct CGImage { }*)arg4;
 - (struct CGImage { }*)copyImageForKey:(id)arg1;
 - (void)commitTxn;
 - (void)purge;
 - (id)initWithPath:(id)arg1 version:(int)arg2;
 - (int)version;
-- (int)imageCount;
-- (id)dbPath;
-- (void)dealloc;
+- (int)setVersion:(int)arg1;
+- (struct sqlite3 { }*)db;
 
 @end

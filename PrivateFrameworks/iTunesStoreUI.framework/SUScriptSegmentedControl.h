@@ -20,22 +20,21 @@
 @property(readonly) NSArray * rawSegments;
 @property(readonly) SUStorePageViewController * storePageViewController;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
+- (id)init;
+- (void)dealloc;
 - (void)_setStyle:(int)arg1;
 - (void)setSelectedIndex:(id)arg1;
 - (id)selectedIndex;
 - (id)style;
 - (void)setStyle:(id)arg1;
 - (int)_style;
-- (void)setSegments:(id)arg1;
-- (id)segments;
-- (id)init;
-- (void)dealloc;
+- (id)attributeKeys;
 - (id)rawSegments;
+- (void)setSegments:(id)arg1;
 - (void)setNoSegmentIndex:(id)arg1;
 - (id)noSegmentIndex;
 - (id)nativeSegmentedControl;
@@ -53,6 +52,7 @@
 - (id)_newSegmentsFromPageSectionGroup:(id)arg1;
 - (void)_setSelectedIndex:(int)arg1;
 - (int)_selectedIndex;
+- (id)segments;
 - (int)nativeSelectedIndex;
 - (id)newPageSectionGroup;
 - (id)initWithPageSectionGroup:(id)arg1;

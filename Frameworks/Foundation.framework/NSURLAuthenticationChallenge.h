@@ -17,13 +17,13 @@
 - (id)proposedCredential;
 - (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(int)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
 - (struct _CFURLAuthChallenge { }*)_createCFAuthChallenge;
+- (id)init;
+- (void)dealloc;
+- (id)error;
 - (id)sender;
 - (id)protectionSpace;
 - (int)previousFailureCount;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)error;
-- (id)init;
-- (void)dealloc;
 
 @end

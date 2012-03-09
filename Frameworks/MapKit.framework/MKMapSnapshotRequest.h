@@ -31,7 +31,6 @@
     } _renderOffset;
     BOOL _paused;
     NSMutableDictionary *_objects;
-    id _foregroundObserver;
 }
 
 @property(retain) id context;
@@ -44,27 +43,28 @@
 @property(readonly) UIImage * image;
 
 
-- (unsigned int)zoomLevel;
-- (void)setZoomLevel:(unsigned int)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)startLoading;
-- (struct { double x1; double x2; })coordinate;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)stopLoading;
 - (id)image;
 - (id)context;
 - (void)setContext:(id)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;
+- (void)_restartLoadingAfterPause:(id)arg1;
 - (void)tileRequesterFailedWithError:(id)arg1;
 - (void)tileRequesterCompleted;
 - (void)setAttributionString:(id)arg1;
 - (void)setRequester:(id)arg1;
 - (id)attributionString;
 - (id)requester;
+- (struct { double x1; double x2; })coordinate;
+- (unsigned int)zoomLevel;
+- (void)setZoomLevel:(unsigned int)arg1;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

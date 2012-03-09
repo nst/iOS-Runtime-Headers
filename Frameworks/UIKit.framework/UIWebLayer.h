@@ -7,7 +7,7 @@
 }
 
 
-- (void)setNeedsLayout;
 - (void)setLayoutsSuspended:(BOOL)arg1;
+- (void)setNeedsLayout;
 
 @end

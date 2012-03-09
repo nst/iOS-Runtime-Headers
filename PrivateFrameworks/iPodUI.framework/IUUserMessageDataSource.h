@@ -26,10 +26,14 @@
 @property(readonly) BOOL showStrings;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)image;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)setImage:(id)arg1;
+- (void)setMessageTitle:(id)arg1;
+- (id)messageTitle;
 - (BOOL)showStrings;
 - (id)findContentURL;
 - (id)messageSubtitle;
@@ -38,9 +42,5 @@
 - (id)initForVideo;
 - (void)setFindContentURL:(id)arg1;
 - (void)setMessageSubtitle:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setMessageTitle:(id)arg1;
-- (id)messageTitle;
 
 @end

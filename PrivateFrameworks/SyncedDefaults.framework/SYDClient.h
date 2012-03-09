@@ -12,6 +12,7 @@
 
 
 - (void)shutdown;
+- (void)dealloc;
 - (void)_resetConnection;
 - (void)finalize;
 - (id)initWithQueue:(struct dispatch_queue_s { }*)arg1 bundleIdentifier:(struct __CFString { }*)arg2;
@@ -23,6 +24,5 @@
 - (void)_sendMessageNoReply:(id)arg1;
 - (id)_sendMessageWithReplySync:(id)arg1;
 - (void)_sendMessage:(id)arg1 replyHandler:(id)arg2;
-- (void)dealloc;
 
 @end

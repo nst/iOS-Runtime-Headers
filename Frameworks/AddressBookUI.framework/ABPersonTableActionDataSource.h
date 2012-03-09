@@ -13,7 +13,6 @@
 }
 
 
-- (void)removeAction:(id)arg1;
 - (void)dealloc;
 - (int)actionCountForProperty:(int)arg1 withActionGrouping:(int)arg2;
 - (id)actionForProperty:(int)arg1 withActionGrouping:(int)arg2 atIndex:(int)arg3;
@@ -35,5 +34,6 @@
 - (BOOL)isActionHidden:(id)arg1;
 - (id)newActionsForProperty:(int)arg1;
 - (id)addActionWithTitle:(id)arg1 shortTitle:(id)arg2 detailText:(id)arg3 style:(int)arg4 target:(id)arg5 selector:(SEL)arg6 property:(int)arg7 actionGrouping:(int)arg8 ordering:(int)arg9;
+- (void)removeAction:(id)arg1;
 
 @end

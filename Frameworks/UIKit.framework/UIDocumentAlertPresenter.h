@@ -20,10 +20,10 @@
 
 + (id)_presentAlertWithError:(id)arg1 completionHandler:(id)arg2;
 
+- (void)dealloc;
 - (void)_forceFinishNow;
 - (id)initWithError:(id)arg1 completionHandler:(id)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)dealloc;
 
 @end

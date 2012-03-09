@@ -20,12 +20,12 @@
 @property(retain) CoreDAVItemWithHrefChildItem * recipientHREF;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setResponseDescription:(id)arg1;
 - (id)responseDescription;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (id)description;
-- (void)dealloc;
 - (id)recipientString;
 - (id)topLevelErrorItem;
 - (id)recipientHREF;

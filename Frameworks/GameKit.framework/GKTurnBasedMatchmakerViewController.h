@@ -13,6 +13,7 @@
 @property(retain) GKTurnBasedMatchesViewController * privateViewController;
 
 
+- (void)dealloc;
 - (void)setTurnBasedMatchmakerDelegate:(id)arg1;
 - (id)turnBasedMatchmakerDelegate;
 - (void)setShowExistingMatches:(BOOL)arg1;
@@ -22,6 +23,5 @@
 - (void)setPrivateViewController:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)dealloc;
 
 @end

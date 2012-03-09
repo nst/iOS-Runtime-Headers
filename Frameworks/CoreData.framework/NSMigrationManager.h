@@ -30,6 +30,10 @@
 + (int)migrationDebugLevel;
 + (void)setMigrationDebugLevel:(int)arg1;
 
+- (id)userInfo;
+- (void)dealloc;
+- (void)setUserInfo:(id)arg1;
+- (void)reset;
 - (id)fetchRequestForSourceEntityNamed:(id)arg1 predicateString:(id)arg2;
 - (id)sourceContext;
 - (id)destinationInstancesForEntityMappingNamed:(id)arg1 sourceInstances:(id)arg2;
@@ -60,9 +64,5 @@
 - (id)sourceInstancesForEntityMappingNamed:(id)arg1 destinationInstances:(id)arg2;
 - (id)destinationEntityForEntityMapping:(id)arg1;
 - (id)initWithSourceModel:(id)arg1 destinationModel:(id)arg2;
-- (void)setUserInfo:(id)arg1;
-- (void)reset;
-- (id)userInfo;
-- (void)dealloc;
 
 @end

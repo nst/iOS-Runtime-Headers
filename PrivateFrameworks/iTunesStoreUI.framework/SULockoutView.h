@@ -17,7 +17,7 @@
 @property(retain) NSString * title;
 
 
-- (void)setBody:(id)arg1;
+- (void)dealloc;
 - (id)_imageView;
 - (id)_titleLabel;
 - (id)body;
@@ -26,7 +26,7 @@
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
 - (void)setImage:(id)arg1;
-- (void)dealloc;
+- (void)setBody:(id)arg1;
 - (id)_bodyLabel;
 - (void)_layoutForSlowNetwork;
 - (int)layoutPreset;

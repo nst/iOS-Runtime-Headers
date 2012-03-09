@@ -20,12 +20,12 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setOrganizer:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (void)setOrganizer:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)cachedParentServerId;
 - (id)cachedParentFolderId;
 - (int)meetingClassType;

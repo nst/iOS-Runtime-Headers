@@ -17,15 +17,15 @@
 @property(readonly) int screenY;
 
 
+- (id)target;
+- (void)dealloc;
 - (void)finalize;
+- (unsigned int)identifier;
 - (int)pageX;
 - (int)pageY;
 - (int)screenX;
 - (int)screenY;
 - (int)clientX;
 - (int)clientY;
-- (unsigned int)identifier;
-- (id)target;
-- (void)dealloc;
 
 @end

@@ -33,14 +33,14 @@
 + (BOOL)isValidSplitTypeString:(id)arg1;
 + (BOOL)isValidSplitPositionValue:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)setLoading:(BOOL)arg1;
 - (BOOL)isLoaded;
 - (void)addChildViewController:(id)arg1;
 - (void)removeChildViewController:(id)arg1;
 - (void)loadView;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (id)init;
-- (void)dealloc;
 - (id)secondViewController;
 - (id)splitTypeString;
 - (id)splitPositionString;

@@ -18,12 +18,12 @@
 
 + (id)albumCreationAlertView;
 
+- (void)dealloc;
 - (void)showWithCompletionHandler:(id)arg1;
 - (BOOL)alertViewShouldEnableFirstOtherButton:(id)arg1;
 - (void)setCompletion:(id)arg1;
 - (id)completion;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)dealloc;
 
 @end

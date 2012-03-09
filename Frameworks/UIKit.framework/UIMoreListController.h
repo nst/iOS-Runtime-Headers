@@ -18,6 +18,8 @@
 @property BOOL moreViewControllersChanged;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)_updateEditButton;
 - (void)_layoutCells;
 - (BOOL)moreViewControllersChanged;
@@ -35,7 +37,5 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

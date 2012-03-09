@@ -12,12 +12,12 @@
 @property(retain) NSString * previousETag;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
 - (void)setPreviousETag:(id)arg1;
 - (id)additionalHeaderValues;
 - (id)previousETag;
-- (id)description;
-- (void)dealloc;
 - (id)httpMethod;
 
 @end

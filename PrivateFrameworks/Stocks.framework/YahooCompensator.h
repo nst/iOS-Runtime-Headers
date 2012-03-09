@@ -15,13 +15,13 @@
 + (id)sharedCompensator;
 + (BOOL)compensationRequired;
 
-- (void)reset;
+- (id)init;
+- (void)dealloc;
 - (void)compensateForStock:(id)arg1;
 - (void)symbolValidator:(id)arg1 didValidateSymbols:(id)arg2;
 - (void)symbolValidator:(id)arg1 didFailWithError:(id)arg2;
 - (void)_compensateForNextStock;
 - (void)compensateForAllStocks;
-- (id)init;
-- (void)dealloc;
+- (void)reset;
 
 @end

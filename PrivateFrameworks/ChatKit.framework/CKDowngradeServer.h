@@ -12,9 +12,8 @@
 
 + (id)sharedDowngradeServer;
 
-- (void)start;
-- (void)_timerFired;
-- (void)stop;
+- (id)init;
+- (void)dealloc;
 - (void)_setupTimerIfNecessary;
 - (void)_handleMessageSent:(id)arg1;
 - (void)_handleDaemonConnected:(id)arg1;
@@ -32,7 +31,8 @@
 - (BOOL)_shouldSendMessageAsSMS:(id)arg1;
 - (void)_sendMessageAsSMS:(id)arg1;
 - (void)_handleSendAsSMSSettingChanged:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)_timerFired;
+- (void)stop;
+- (void)start;
 
 @end

@@ -21,16 +21,16 @@
 @property(readonly) PFUbiquityLocation * ubiquityRootLocation;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)addTransactionEntryForGlobalIDString:(id)arg1 andLocalManagedObjectID:(id)arg2 andTransactionType:(int)arg3;
 - (id)initWithStoreName:(id)arg1 andUbiquityRootLocation:(id)arg2 forLocalPeerID:(id)arg3 withStack:(id)arg4;
 - (void)setStore:(id)arg1;
 - (id)localPeer;
+- (id)transactionEntries;
 - (id)stack;
 - (id)ubiquityRootLocation;
 - (id)storeMetadata;
-- (id)transactionEntries;
 - (id)store;
-- (id)description;
-- (void)dealloc;
 
 @end

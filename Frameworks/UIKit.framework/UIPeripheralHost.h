@@ -119,7 +119,7 @@
     UIInputViewTransition *_currentTransition;
     UIResponder *_selfHostingTrigger;
     BOOL _didFadeInputViews;
-    BOOL _blockedReloadInputViewsForMarsVoltaInsertion;
+    BOOL _blockedReloadInputViewsForDictation;
     BOOL _animateCornerRefresh;
     BOOL _showCorners;
 }
@@ -148,16 +148,21 @@
 @property(retain) UIInputViewSet * _inputViews;
 @property(retain) UIResponder * selfHostingTrigger;
 
++ (id)sharedInstance;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenBoundsInAppOrientation;
++ (float)gridViewRubberBandValueForValue:(float)arg1 target:(float)arg2 timeInterval:(float)arg3 velocity:(float*)arg4;
 + (void)_releaseSharedInstance;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visiblePeripheralFrame;
-+ (id)sharedInstance;
 
+- (id)retain;
+- (id)init;
+- (void)dealloc;
 - (void)updateInputAccessoryViewVisibility:(BOOL)arg1 withDuration:(float)arg2;
 - (void)updateCandidateHeight:(float)arg1 withDuration:(float)arg2;
 - (id)_currentInputView;
 - (void)implBoundsHeightChangeDoneForGeometry:(struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })arg1;
 - (BOOL)automaticAppearanceInternalEnabled;
+- (void)_clearPinningResponders;
 - (void)prepareForPinning;
 - (void)setInputViews:(id)arg1 animated:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })localDisplayRectForViewSet:(id)arg1 position:(int)arg2;
@@ -214,16 +219,15 @@
 - (id)computeTransitionForInputViews:(id)arg1 fromOrientation:(int)arg2 toOrientation:(int)arg3;
 - (BOOL)_somePartOfKeyboardIsOnScreen:(id)arg1;
 - (void)createHostViewIfNeeded;
-- (BOOL)hasDvorakKeyboard;
-- (void)undock;
+- (BOOL)hasDictationKeyboard;
 - (void)handleTranslateDetectedFinished:(id)arg1;
 - (float)minimumOffsetForBuffer:(float)arg1;
 - (void)_updateBounceAnimation:(id)arg1;
 - (void)bounceAnimationDidFinish;
 - (void)invalidateDisplayLink;
-- (void)showDropShadows:(BOOL)arg1;
 - (void)dock;
 - (void)postKeyboardFrameChangeNotification:(id)arg1 withInfo:(id)arg2;
+- (void)undock;
 - (void)disableInterfaceAutorotation:(BOOL)arg1;
 - (void)fadeInInputViews:(BOOL)arg1;
 - (void)postUndockingNotification;
@@ -264,6 +268,7 @@
 - (void)resetCurrentOrderOutAnimationDuration:(double)arg1;
 - (void)setAutomaticAppearanceInternalEnabled:(BOOL)arg1;
 - (void)finishSplitTransition:(id)arg1;
+- (void)showDropShadows:(BOOL)arg1;
 - (void)prepareForSplitTransition;
 - (BOOL)keyClicksEnabled;
 - (void)manualKeyboardWasOrderedOut:(id)arg1;
@@ -338,8 +343,5 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)layoutIfNeeded;
 - (id)view;
-- (id)retain;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -9,7 +9,6 @@
     EKReminderLocationPickerModel *_locationPickerModel;
     UILabel *_explanatoryLabel;
     UIView *_explanatoryLabelContainer;
-    BOOL _locationRestricted;
     BOOL _locationAlertsAvailable;
     UIAlertView *_wifiDisabledAlert;
     NSDate *_date;
@@ -28,25 +27,10 @@
 @property int alarmProximity;
 
 
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (void)setStructuredLocation:(id)arg1;
 - (id)structuredLocation;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidUnload;
-- (void)loadView;
-- (void)viewDidLoad;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)setDate:(id)arg1;
-- (id)date;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)showsLocation;
 - (void)locationPickerModel:(id)arg1 didEncounterError:(id)arg2;
 - (void)locationPickerModelDidChangeSelection:(id)arg1;
@@ -58,9 +42,9 @@
 - (void)_updateLocationText;
 - (void)_setStructuredLocation:(id)arg1 updateModel:(BOOL)arg2;
 - (void)_datePickerDateChanged:(id)arg1;
+- (void)_wifiStatusDidChange:(id)arg1;
 - (void)_showWifiAlertIfNecessary;
 - (void)_removeExistingWifiAlert;
-- (void)_updateLocationRestricted;
 - (void)_setDate:(id)arg1 updateDatePicker:(BOOL)arg2;
 - (id)_locationPickerModel;
 - (void)_updateDateText;
@@ -77,9 +61,22 @@
 - (void)setAlarmProximity:(int)arg1;
 - (void)setIsOnADay:(BOOL)arg1;
 - (void)_updateDatePickerDate;
-- (void)_wifiStatusDidChange:(id)arg1;
 - (void)_localeChanged;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (void)viewDidLoad;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)setDate:(id)arg1;
+- (id)date;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 
 @end

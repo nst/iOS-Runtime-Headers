@@ -9,10 +9,10 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)receivedWebSocketMessage:(id)arg1;
 - (void)clearChannel;
 - (void)sendWebSocketMessage:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

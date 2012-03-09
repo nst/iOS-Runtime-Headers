@@ -10,14 +10,14 @@
 }
 
 
-- (float)radius;
-- (void)setRadius:(float)arg1;
-- (id)color;
-- (void)setColor:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)color;
+- (void)setColor:(id)arg1;
+- (float)radius;
+- (void)setRadius:(float)arg1;
 
 @end

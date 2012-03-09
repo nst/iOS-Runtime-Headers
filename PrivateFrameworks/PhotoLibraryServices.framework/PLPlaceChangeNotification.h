@@ -13,13 +13,13 @@
 
 + (id)notificationForFromPlace:(id)arg1 toPlace:(id)arg2 changedObjects:(id)arg3 fromAlbumChangeNotification:(id)arg4;
 
-- (id)album;
-- (id)object;
-- (id)initWithFromPlace:(id)arg1 toPlace:(id)arg2 changedObjects:(id)arg3 fromAlbumChangeNotification:(id)arg4;
-- (id)_changedObjects;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
-- (BOOL)titleDidChange;
 - (id)init;
 - (void)dealloc;
+- (id)initWithFromPlace:(id)arg1 toPlace:(id)arg2 changedObjects:(id)arg3 fromAlbumChangeNotification:(id)arg4;
+- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (id)_changedObjects;
+- (id)album;
+- (id)object;
+- (BOOL)titleDidChange;
 
 @end

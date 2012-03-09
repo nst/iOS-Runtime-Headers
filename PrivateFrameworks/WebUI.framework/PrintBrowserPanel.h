@@ -10,13 +10,13 @@
 }
 
 
+- (void)dealloc;
+- (id)initWithWebFrame:(id)arg1;
 - (id)printControllerWithBrowserView:(id)arg1 URLString:(id)arg2 pageTitle:(id)arg3 printFooter:(BOOL)arg4;
 - (int)numberOfPagesForPrintInteractionController:(id)arg1;
 - (int)panelType;
 - (int)panelState;
 - (int)pausesPages;
 - (BOOL)ignoresPrivateBrowsingStyle;
-- (id)initWithWebFrame:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -11,9 +11,9 @@
 
 + (id)sharedInstance;
 
-- (void)_localeDidChange:(id)arg1;
-- (id)numberFormatter;
 - (id)init;
 - (void)dealloc;
+- (void)_localeDidChange:(id)arg1;
+- (id)numberFormatter;
 
 @end

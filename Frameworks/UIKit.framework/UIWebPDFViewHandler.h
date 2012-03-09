@@ -42,6 +42,8 @@
 @property BOOL hidePageViewsUntilReadyToRender;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)pdfHandlerDelegate;
 - (BOOL)showPageLabels;
 - (void)revealSearchResult:(id)arg1 andZoomIn:(BOOL)arg2;
@@ -114,7 +116,5 @@
 - (BOOL)scalesPageToFit;
 - (void)restoreStateFromHistoryItem:(id)arg1 forWebView:(id)arg2;
 - (void)saveStateToHistoryItem:(id)arg1 forWebView:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

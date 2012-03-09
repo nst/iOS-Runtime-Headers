@@ -55,13 +55,13 @@
 @property(readonly) NSString * queryPresetTVShows;
 @property(readonly) NSString * queryPresetVideoPodcasts;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
 - (id)init;
 - (void)dealloc;
+- (id)attributeKeys;
 - (id)playerTypeIPod;
 - (id)playerTypeApplication;
 - (id)mediaTypeVideoPodcast;

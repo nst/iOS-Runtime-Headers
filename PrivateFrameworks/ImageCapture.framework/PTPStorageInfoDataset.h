@@ -19,6 +19,9 @@
 }
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (unsigned short)storageType;
 - (void)setStorageType:(unsigned short)arg1;
 - (unsigned short)filesystemType;
@@ -37,11 +40,8 @@
 - (void)updateContent;
 - (id)initWithMutableData:(id)arg1;
 - (unsigned short)accessCapability;
-- (void)setContent:(id)arg1;
 - (id)content;
 - (id)initWithData:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)setContent:(id)arg1;
 
 @end

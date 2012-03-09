@@ -11,13 +11,13 @@
 @property(retain) NSMutableSet * propStats;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (BOOL)hasPropertyError;
 - (void)setPropStats:(id)arg1;
 - (void)addPropStat:(id)arg1;
 - (id)propStats;
 - (id)copyParseRules;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

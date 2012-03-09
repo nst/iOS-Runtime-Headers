@@ -9,11 +9,11 @@
 }
 
 
-- (void)start;
-- (void)stop;
-- (BOOL)isEnabled;
+- (id)init;
 - (void)connectionReceived:(int)arg1;
 - (void)pushListing;
-- (id)init;
+- (void)stop;
+- (void)start;
+- (BOOL)isEnabled;
 
 @end

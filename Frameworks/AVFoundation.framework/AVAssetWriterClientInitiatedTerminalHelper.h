@@ -7,9 +7,9 @@
 }
 
 
-- (void)cancelWriting;
-- (id)initWithConfigurationState:(id)arg1;
 - (id)initWithConfigurationState:(id)arg1 terminalStatus:(int)arg2;
+- (id)initWithConfigurationState:(id)arg1;
+- (void)cancelWriting;
 - (int)status;
 
 @end

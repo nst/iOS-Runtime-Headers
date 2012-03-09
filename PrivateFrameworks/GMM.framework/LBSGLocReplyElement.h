@@ -16,20 +16,20 @@
 @property(retain) NSMutableArray * deviceLocations;
 
 
+- (id)description;
+- (void)dealloc;
+- (BOOL)hasLocation;
 - (void)setStatus:(int)arg1;
+- (int)status;
+- (id)dictionaryRepresentation;
+- (id)location;
+- (void)setLocation:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)deviceLocations;
 - (id)deviceLocationAtIndex:(unsigned int)arg1;
 - (unsigned int)deviceLocationsCount;
 - (void)addDeviceLocation:(id)arg1;
 - (void)setDeviceLocations:(id)arg1;
-- (BOOL)hasLocation;
-- (void)writeTo:(id)arg1;
-- (void)setLocation:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)location;
-- (int)status;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -13,14 +13,14 @@
     WebScriptWorldPrivate *_private;
 }
 
-+ (id)standardWorld;
 + (id)world;
 + (id)scriptWorldForGlobalContext:(struct OpaqueJSContext { }*)arg1;
 + (id)findOrCreateWorld:(struct DOMWrapperWorld { int x1; struct HashMap<void*,JSC::Weak<WebCore::JSDOMWrapper>,WTF::PtrHash<void*>,WTF::HashTraits<void*>,WTF::HashTraits<JSC::Weak<WebCore::JSDOMWrapper> > > { struct HashTable<void*,std::pair<void*, JSC::Weak<WebCore::JSDOMWrapper> >,WTF::PairFirstExtractor<std::pair<void*, JSC::Weak<WebCore::JSDOMWrapper> > >,WTF::PtrHash<void*>,WTF::PairHashTraits<WTF::HashTraits<void*>, WTF::HashTraits<JSC::Weak<WebCore::JSDOMWrapper> > >,WTF::HashTraits<void*> > { struct pair<void*,JSC::Weak<WebCore::JSDOMWrapper> > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_2_1_1; } x2; struct HashMap<WTF::StringImpl*,JSC::Weak<JSC::JSString>,WTF::StringHash,WTF::HashTraits<WTF::StringImpl*>,WTF::HashTraits<JSC::Weak<JSC::JSString> > > { struct HashTable<WTF::StringImpl*,std::pair<WTF::StringImpl*, JSC::Weak<JSC::JSString> >,WTF::PairFirstExtractor<std::pair<WTF::StringImpl*, JSC::Weak<JSC::JSString> > >,WTF::StringHash,WTF::PairHashTraits<WTF::HashTraits<WTF::StringImpl*>, WTF::HashTraits<JSC::Weak<JSC::JSString> > >,WTF::HashTraits<WTF::StringImpl*> > { struct pair<WTF::StringImpl*,JSC::Weak<JSC::JSString> > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_3_1_1; } x3; struct HashMap<WebCore::CSSValue*,void*,WTF::PtrHash<WebCore::CSSValue*>,WTF::HashTraits<WebCore::CSSValue*>,WTF::HashTraits<void*> > { struct HashTable<WebCore::CSSValue*,std::pair<WebCore::CSSValue*, void*>,WTF::PairFirstExtractor<std::pair<WebCore::CSSValue*, void*> >,WTF::PtrHash<WebCore::CSSValue*>,WTF::PairHashTraits<WTF::HashTraits<WebCore::CSSValue*>, WTF::HashTraits<void*> >,WTF::HashTraits<WebCore::CSSValue*> > { struct pair<WebCore::CSSValue*,void*> {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_4_1_1; } x4; struct JSGlobalData {} *x5; struct HashSet<WebCore::ScriptController*,WTF::PtrHash<WebCore::ScriptController*>,WTF::HashTraits<WebCore::ScriptController*> > { struct HashTable<WebCore::ScriptController*,WebCore::ScriptController*,WTF::IdentityExtractor<WebCore::ScriptController*>,WTF::PtrHash<WebCore::ScriptController*>,WTF::HashTraits<WebCore::ScriptController*>,WTF::HashTraits<WebCore::ScriptController*> > { struct ScriptController {} **x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_6_1_1; } x6; boolx7; struct JSDOMWrapperOwner { int (**x_8_1_1)(); struct DOMWrapperWorld {} *x_8_1_2; } x8; struct JSStringOwner { int (**x_9_1_1)(); struct DOMWrapperWorld {} *x_9_1_2; } x9; }*)arg1;
++ (id)standardWorld;
 
-- (void)unregisterWorld;
-- (id)initWithWorld:(struct PassRefPtr<WebCore::DOMWrapperWorld> { struct DOMWrapperWorld {} *x1; })arg1;
 - (id)init;
 - (void)dealloc;
+- (void)unregisterWorld;
+- (id)initWithWorld:(struct PassRefPtr<WebCore::DOMWrapperWorld> { struct DOMWrapperWorld {} *x1; })arg1;
 
 @end

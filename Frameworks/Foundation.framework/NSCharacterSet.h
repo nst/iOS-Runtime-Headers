@@ -5,7 +5,6 @@
 @interface NSCharacterSet : NSObject <NSCopying, NSMutableCopying, NSCoding> {
 }
 
-+ (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)characterSetWithBitmapRepresentation:(id)arg1;
 + (id)illegalCharacterSet;
 + (id)capitalizedLetterCharacterSet;
@@ -13,6 +12,11 @@
 + (id)nonBaseCharacterSet;
 + (id)controlCharacterSet;
 + (id)letterCharacterSet;
++ (id)whitespaceCharacterSet;
++ (id)characterSetWithContentsOfFile:(id)arg1;
++ (id)lowercaseLetterCharacterSet;
++ (id)uppercaseLetterCharacterSet;
++ (id)whitespaceAndNewlineCharacterSet;
 + (id)newlineCharacterSet;
 + (id)symbolCharacterSet;
 + (id)punctuationCharacterSet;
@@ -20,11 +24,7 @@
 + (id)characterSetWithCharactersInString:(id)arg1;
 + (id)decimalDigitCharacterSet;
 + (void)initialize;
-+ (id)whitespaceCharacterSet;
-+ (id)characterSetWithContentsOfFile:(id)arg1;
-+ (id)lowercaseLetterCharacterSet;
-+ (id)uppercaseLetterCharacterSet;
-+ (id)whitespaceAndNewlineCharacterSet;
++ (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)CJKCharacterSet;
 + (id)wordBreakCharacterSet;
 + (id)whitespaceNewlineAndSpecialCharacterSet;
@@ -33,21 +33,21 @@
 - (void)makeImmutable;
 - (BOOL)isMutable;
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)invertedSet;
-- (BOOL)longCharacterIsMember:(unsigned long)arg1;
-- (BOOL)isEmpty;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (BOOL)isSupersetOfSet:(id)arg1;
-- (id)bitmapRepresentation;
-- (unsigned long)_cfTypeID;
 - (unsigned int)count;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (BOOL)characterIsMember:(unsigned short)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
+- (BOOL)hasMemberInPlane:(unsigned char)arg1;
+- (BOOL)isSupersetOfSet:(id)arg1;
+- (id)bitmapRepresentation;
+- (unsigned long)_cfTypeID;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)invertedSet;
+- (BOOL)longCharacterIsMember:(unsigned long)arg1;
+- (BOOL)isEmpty;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

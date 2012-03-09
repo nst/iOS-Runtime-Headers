@@ -16,12 +16,12 @@
 @property(getter=_weakReference,readonly) AVWeakReference * weakReference;
 
 
-- (void)invalidate;
-- (void)finalize;
+- (void)dealloc;
 - (void)itemTimeJumped;
 - (id)initWithPlayer:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
 - (id)_weakReference;
 - (id)player;
-- (void)dealloc;
+- (void)finalize;
+- (void)invalidate;
 
 @end

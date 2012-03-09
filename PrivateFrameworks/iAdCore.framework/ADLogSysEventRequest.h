@@ -24,7 +24,10 @@
 
 + (void)initialize;
 
+- (id)description;
+- (void)dealloc;
 - (Class)responseClass;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasActionableDuration:(BOOL)arg1;
 - (void)setHasEventType:(BOOL)arg1;
@@ -34,6 +37,7 @@
 - (void)setClickLocation:(id)arg1;
 - (BOOL)hasMetaData;
 - (void)setMetaData:(id)arg1;
+- (void)copyTo:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (float)actionableDuration;
@@ -42,8 +46,5 @@
 - (BOOL)hasClickLocation;
 - (int)eventType;
 - (id)metaData;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

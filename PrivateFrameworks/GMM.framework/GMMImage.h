@@ -17,18 +17,18 @@
 @property(retain) NSData * imageData;
 
 
-- (id)imageData;
-- (BOOL)readFrom:(id)arg1;
-- (void)setImageData:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (BOOL)hasKey;
 - (void)setKey:(id)arg1;
 - (id)key;
 - (id)dictionaryRepresentation;
 - (int)type;
 - (void)setType:(int)arg1;
-- (id)description;
-- (void)dealloc;
+- (id)imageData;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)hasImageData;
+- (void)setImageData:(id)arg1;
 
 @end

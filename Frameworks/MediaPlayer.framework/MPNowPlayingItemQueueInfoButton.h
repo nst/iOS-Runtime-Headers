@@ -23,6 +23,8 @@
 @property <MPNowPlayingItemQueueInfoButtonDelegate> * delegate;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)updateForItemCrossedTimeMarkerNotification:(id)arg1 currentTime:(double)arg2;
 - (void)configureForItem:(id)arg1;
 - (BOOL)_shouldDisplaysInfoCircleImage;
@@ -35,15 +37,13 @@
 - (int)infoDisplayType;
 - (BOOL)configureForItem:(id)arg1 atTime:(double)arg2;
 - (void)setAllowedDisplayTypes:(unsigned int)arg1;
-- (void)setDelegate:(id)arg1;
 - (int)buttonType;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)delegate;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (id)infoURL;
 - (void)setInfoURL:(id)arg1;
 - (void)clearWeakReferencesToObject:(id)arg1;

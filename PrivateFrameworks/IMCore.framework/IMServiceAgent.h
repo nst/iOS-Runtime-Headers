@@ -23,6 +23,7 @@
 + (id)imageNameForStatus:(unsigned int)arg1;
 + (void)forgetStatusImageAppearance;
 
+- (void)dealloc;
 - (unsigned int)requestVideoStillForPerson:(id)arg1;
 - (unsigned int)requestAudioReflectorStop;
 - (unsigned int)requestAudioReflectorStart;
@@ -37,7 +38,6 @@
 - (id)serviceWithNameNonBlocking:(id)arg1;
 - (id)notificationCenter;
 - (id)serviceWithName:(id)arg1;
-- (void)dealloc;
 - (id)currentAVChatInfo;
 
 @end

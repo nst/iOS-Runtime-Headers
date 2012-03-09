@@ -10,10 +10,10 @@
 
 
 - (id)initWithEmailAddresses:(id)arg1;
-- (id)emailAddresses;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (void)dealloc;
+- (id)emailAddresses;
 
 @end

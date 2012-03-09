@@ -21,6 +21,8 @@
 @property(retain) NSArray * leaderboardSectionLocations;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)leaderboardSectionLocations;
 - (id)leaderboardBorderStyles;
 - (int)bottomEdgeStyle;
@@ -38,7 +40,5 @@
 - (void)configureBackgroundView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
 - (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
-- (id)description;
-- (void)dealloc;
 
 @end

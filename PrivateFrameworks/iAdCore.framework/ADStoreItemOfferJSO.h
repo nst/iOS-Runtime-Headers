@@ -18,15 +18,15 @@
 
 + (id)scriptingKeys;
 
+- (id)action;
+- (void)dealloc;
+- (id)identifier;
+- (void)setIdentifier:(id)arg1;
+- (void)setAction:(id)arg1;
 - (BOOL)preorder;
 - (void)setPreorder:(BOOL)arg1;
 - (void)setPrice:(id)arg1;
 - (id)price;
 - (id)initWithSSItemOffer:(id)arg1;
-- (id)identifier;
-- (void)setIdentifier:(id)arg1;
-- (void)setAction:(id)arg1;
-- (id)action;
-- (void)dealloc;
 
 @end

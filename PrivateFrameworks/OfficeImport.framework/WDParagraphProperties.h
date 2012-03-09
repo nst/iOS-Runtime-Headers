@@ -32,6 +32,20 @@
 }
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)setHeight:(long)arg1;
+- (long)height;
+- (id)list;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
+- (void)setWidth:(long)arg1;
+- (long)width;
+- (void)setLineSpacing:(short)arg1;
+- (short)lineSpacing;
+- (BOOL)wrap;
+- (void)setWrap:(BOOL)arg1;
+- (void)setPageBreakBefore:(BOOL)arg1;
 - (BOOL)isCharacterPropertiesOverridden;
 - (void)clearChararacterProperties;
 - (BOOL)isTableStyleOverridden;
@@ -175,19 +189,5 @@
 - (id)rightBorder;
 - (id)topBorder;
 - (id)bottomBorder;
-- (BOOL)wrap;
-- (void)setWrap:(BOOL)arg1;
-- (void)setPageBreakBefore:(BOOL)arg1;
-- (void)setHeight:(long)arg1;
-- (long)height;
-- (id)list;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
-- (void)setWidth:(long)arg1;
-- (long)width;
-- (void)setLineSpacing:(short)arg1;
-- (short)lineSpacing;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

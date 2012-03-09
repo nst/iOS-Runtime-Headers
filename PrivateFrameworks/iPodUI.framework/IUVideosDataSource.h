@@ -9,6 +9,8 @@
 + (Class)cellConfigurationClassForSongs;
 + (int)mediaEntityType;
 
+- (id)init;
+- (void)dealloc;
 - (id)copyGetMoreFromITunesStoreActionRow;
 - (BOOL)shouldDisplayWhenEmpty;
 - (void)_rentalInfoChangedNotification:(id)arg1;
@@ -17,7 +19,5 @@
 - (BOOL)allowsDeletion;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (void)reloadActionRows;
-- (id)init;
-- (void)dealloc;
 
 @end

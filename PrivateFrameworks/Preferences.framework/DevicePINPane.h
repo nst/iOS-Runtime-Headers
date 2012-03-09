@@ -49,24 +49,7 @@
 @property int autocapitalizationType;
 
 
-- (void)clearPassword;
-- (void)_setPlaysKeyboardClicks:(BOOL)arg1;
-- (void)_setKeypadState:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)activateKeypadView;
-- (void)pinView:(id)arg1 pinEntered:(id)arg2;
-- (void)deactivateKeypadView;
-- (void)dismissKeypad;
-- (void)showFailedAttempts:(int)arg1;
-- (void)showError:(id)arg1 error:(id)arg2 isBlocked:(BOOL)arg3 animate:(BOOL)arg4;
-- (void)hideFailedAttempts;
-- (void)hideError;
-- (void)setPINPolicyString:(id)arg1 visible:(BOOL)arg2;
-- (BOOL)simplePIN;
-- (void)okButtonPressed;
-- (void)slideToNewPasscodeField:(BOOL)arg1 withKeyboard:(BOOL)arg2;
-- (void)setSimplePIN:(BOOL)arg1 requiresKeyboard:(BOOL)arg2;
-- (id)specifierLabel;
-- (BOOL)requiresKeyboard;
+- (void)dealloc;
 - (id)password;
 - (BOOL)hasText;
 - (void)insertText:(id)arg1;
@@ -89,6 +72,23 @@
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
+- (void)clearPassword;
+- (void)_setPlaysKeyboardClicks:(BOOL)arg1;
+- (void)_setKeypadState:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)activateKeypadView;
+- (void)pinView:(id)arg1 pinEntered:(id)arg2;
+- (void)deactivateKeypadView;
+- (void)dismissKeypad;
+- (void)showFailedAttempts:(int)arg1;
+- (void)showError:(id)arg1 error:(id)arg2 isBlocked:(BOOL)arg3 animate:(BOOL)arg4;
+- (void)hideFailedAttempts;
+- (void)hideError;
+- (void)setPINPolicyString:(id)arg1 visible:(BOOL)arg2;
+- (BOOL)simplePIN;
+- (void)okButtonPressed;
+- (void)slideToNewPasscodeField:(BOOL)arg1 withKeyboard:(BOOL)arg2;
+- (void)setSimplePIN:(BOOL)arg1 requiresKeyboard:(BOOL)arg2;
+- (id)specifierLabel;
+- (BOOL)requiresKeyboard;
 
 @end

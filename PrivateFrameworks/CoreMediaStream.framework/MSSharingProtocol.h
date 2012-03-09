@@ -47,6 +47,7 @@
 @property <MSSharingProtocolDelegate> * delegate;
 @property(readonly) NSString * personID;
 
++ (id)_invalidFieldErrorWithFieldName:(id)arg1;
 + (id)_sharesFromShareDictsArray:(id)arg1;
 + (id)_shareDictsArrayFromShares:(id)arg1;
 + (id)_shareDictFromShare:(id)arg1;
@@ -55,10 +56,9 @@
 + (int)_shareStateFromShareDictShareState:(id)arg1;
 + (id)shareStateFromProtocol:(id)arg1;
 + (id)shareFromPushUserInfo:(id)arg1 outSourcePersonID:(id*)arg2 outTargetPersonID:(id*)arg3 outError:(id*)arg4;
-+ (id)_invalidFieldErrorWithFieldName:(id)arg1;
 
-- (void)abort;
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (id)personID;
 - (void)_didFailAuthenticationWithError:(id)arg1;
 - (void)_didFinishTransactionWithResponseObject:(id)arg1 error:(id)arg2;
 - (void)_didFindShareState:(id)arg1;
@@ -71,7 +71,7 @@
 - (void)_didFindServerSideConfigurationVersion:(id)arg1;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
 - (id)delegate;
-- (id)personID;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)abort;
 
 @end

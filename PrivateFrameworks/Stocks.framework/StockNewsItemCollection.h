@@ -13,11 +13,11 @@
 @property(retain) NSArray * newsItems;
 
 
+- (void)dealloc;
 - (id)initWithArchiveArray:(id)arg1;
 - (id)newsItems;
 - (id)archiveArray;
 - (void)setNewsItems:(id)arg1;
-- (void)dealloc;
 - (double)expirationTime;
 - (void)setExpirationTime:(double)arg1;
 

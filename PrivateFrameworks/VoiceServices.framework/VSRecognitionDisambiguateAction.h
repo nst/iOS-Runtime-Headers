@@ -20,7 +20,7 @@
 }
 
 
-- (void)setKeywords:(id)arg1;
+- (void)dealloc;
 - (void)setRepeatedSpokenFeedbackString:(id)arg1;
 - (id)repeatedSpokenFeedbackString;
 - (id)sequenceTag;
@@ -37,6 +37,6 @@
 - (struct __VSRecognitionDisambiguationContext { }*)_disambiguationContext;
 - (int)completionType;
 - (BOOL)_keywordIndexChanged;
-- (void)dealloc;
+- (void)setKeywords:(id)arg1;
 
 @end

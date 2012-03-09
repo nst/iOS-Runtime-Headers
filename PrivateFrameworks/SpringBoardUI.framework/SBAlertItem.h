@@ -22,6 +22,9 @@
 + (id)_alertItemsController;
 + (void)activateAlertItem:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
+- (BOOL)dismissOnLock;
 - (id)alertSheet;
 - (BOOL)allowMenuButtonDismissal;
 - (BOOL)allowAutoUnlock;
@@ -46,6 +49,7 @@
 - (void)didActivate;
 - (void)willRelockForButtonPress:(BOOL)arg1;
 - (void)screenWillUndim;
+- (void)didFailToActivate;
 - (void)willDeactivateForReason:(int)arg1;
 - (void)didDeactivateForReason:(int)arg1;
 - (void)noteVolumeOrLockPressed;
@@ -68,9 +72,6 @@
 - (void)buttonDismissed;
 - (void)dismiss;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (BOOL)dismissOnLock;
-- (id)init;
-- (void)dealloc;
 - (void)dismiss:(int)arg1;
 
 @end

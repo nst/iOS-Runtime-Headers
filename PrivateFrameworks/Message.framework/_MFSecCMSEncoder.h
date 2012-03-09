@@ -18,9 +18,9 @@
 - (int)lastSecCMSError;
 - (id)initForSigningWithSender:(id)arg1 compositionSpecification:(id)arg2 error:(id*)arg3;
 - (id)initForEncryptionWithCompositionSpecification:(id)arg1 error:(id*)arg2;
-- (id)data;
+- (void)dealloc;
 - (int)appendData:(id)arg1;
 - (void)done;
-- (void)dealloc;
+- (id)data;
 
 @end

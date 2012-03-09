@@ -13,11 +13,11 @@
 @property(retain) UIView * oldSuperview;
 
 
+- (void)dealloc;
 - (void)setOldSuperview:(id)arg1;
 - (id)oldSuperview;
 - (id)scrollView;
 - (id)initWithScrollView:(id)arg1;
 - (void)setScrollView:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -34,10 +34,7 @@
 @property struct __CFSocket { }* hostSocket;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)finalize;
-- (void)setServiceType:(id)arg1;
-- (id)serviceType;
+- (void)dealloc;
 - (int)hostSecurityLevel;
 - (struct __CFNetService { }*)publishedService;
 - (void)setClients:(id)arg1;
@@ -58,7 +55,10 @@
 - (int)clientsSpinLock;
 - (void)setHostName:(id)arg1;
 - (id)hostName;
+- (void)finalize;
 - (id)delegate;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)setServiceType:(id)arg1;
+- (id)serviceType;
 
 @end

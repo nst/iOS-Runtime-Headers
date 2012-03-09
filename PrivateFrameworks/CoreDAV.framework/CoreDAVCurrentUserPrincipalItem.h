@@ -13,13 +13,13 @@
 @property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setUnauthenticated:(id)arg1;
 - (id)copyParseRules;
 - (id)unauthenticated;
 - (void)setHref:(id)arg1;
 - (id)href;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

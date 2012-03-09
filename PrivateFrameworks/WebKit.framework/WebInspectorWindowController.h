@@ -54,16 +54,16 @@
 @property(readonly) WebView * webView;
 
 
-- (id)webView;
-- (id)title;
-- (void)setTitle:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)initWithInspectedWebView:(id)arg1;
 - (void)setInspectorClient:(struct WebInspectorClient { int (**x1)(); id x2; struct RetainPtr<WebNodeHighlighter> { id x_3_1_1; } x3; struct Page {} *x4; struct RetainPtr<WebInspectorWindowController> { id x_5_1_1; } x5; struct HashMap<WTF::String,WTF::String,WTF::StringHash,WTF::HashTraits<WTF::String>,WTF::HashTraits<WTF::String> > { struct HashTable<WTF::String,std::pair<WTF::String, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::String, WTF::String> >,WTF::StringHash,WTF::PairHashTraits<WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::String> > { struct pair<WTF::String,WTF::String> {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_6_1_1; } x6; int x7; id x8; }*)arg1;
 - (void)setFrontendClient:(struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { struct InspectorFrontendHost {} *x_5_1_1; } x5; struct OwnPtr<WebCore::InspectorFrontendClientLocal::Settings> { struct Settings {} *x_6_1_1; } x6; id x7; struct RetainPtr<WebInspectorWindowController> { id x_8_1_1; } x8; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_9_1_1; } x9; }*)arg1;
 - (void)destroyInspectorView:(bool)arg1;
 - (struct WebInspectorClient { int (**x1)(); id x2; struct RetainPtr<WebNodeHighlighter> { id x_3_1_1; } x3; struct Page {} *x4; struct RetainPtr<WebInspectorWindowController> { id x_5_1_1; } x5; struct HashMap<WTF::String,WTF::String,WTF::StringHash,WTF::HashTraits<WTF::String>,WTF::HashTraits<WTF::String> > { struct HashTable<WTF::String,std::pair<WTF::String, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::String, WTF::String> >,WTF::StringHash,WTF::PairHashTraits<WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::String> > { struct pair<WTF::String,WTF::String> {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_6_1_1; } x6; int x7; id x8; }*)inspectorClient;
 - (void)showWindow:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)webView;
+- (id)title;
+- (void)setTitle:(id)arg1;
 
 @end

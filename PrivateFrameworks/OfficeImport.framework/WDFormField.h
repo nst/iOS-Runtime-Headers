@@ -15,12 +15,16 @@
 }
 
 
+- (void)dealloc;
+- (unsigned long)position;
+- (void)setPosition:(unsigned long)arg1;
 - (BOOL)linkAbsolute;
 - (void)setLinkAbsolute:(BOOL)arg1;
 - (BOOL)linkSpecifyingNamedLocation;
 - (void)setLinkSpecifyingNamedLocation:(BOOL)arg1;
 - (id)namedLocation;
 - (void)setNamedLocation:(id)arg1;
+- (id)URI;
 - (void)setURI:(id)arg1;
 - (id)macName;
 - (void)setMacName:(id)arg1;
@@ -28,9 +32,5 @@
 - (void)setDosName:(id)arg1;
 - (id)initWithParagraph:(id)arg1;
 - (int)runType;
-- (void)setPosition:(unsigned long)arg1;
-- (unsigned long)position;
-- (id)URI;
-- (void)dealloc;
 
 @end

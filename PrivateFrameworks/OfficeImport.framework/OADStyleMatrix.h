@@ -12,6 +12,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)addFill:(id)arg1;
 - (unsigned int)fillCount;
 - (id)fillAtIndex:(unsigned int)arg1 color:(id)arg2;
@@ -27,7 +29,5 @@
 - (id)fillAtIndex:(unsigned int)arg1;
 - (id)effectsAtIndex:(unsigned int)arg1;
 - (id)strokeAtIndex:(unsigned int)arg1 color:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

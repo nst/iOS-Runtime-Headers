@@ -28,6 +28,11 @@
 @property BOOL forceSynchronousQueueFilling;
 
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)init;
+- (void)dealloc;
 - (void)queuePlayerFeederFailedToQueueAnyItems:(id)arg1;
 - (void)queuePlayerFeederDidUpdateQueue:(id)arg1 queuedItems:(id)arg2 dequeuedItems:(id)arg3;
 - (BOOL)queuePlayerFeeder:(id)arg1 willInsertItem:(id)arg2;
@@ -38,6 +43,8 @@
 - (void)contentInvalidatedWithNewIndex:(unsigned int)arg1;
 - (BOOL)canChangePlaylistFeeder;
 - (int)_prepareToQueuePlaybackIndex:(int)arg1 selectionDirection:(int)arg2;
+- (id)_feederItemForIndex:(int)arg1;
+- (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_reloadQueuedItemsIfPathBecameAvailable;
 - (BOOL)forceSynchronousQueueFilling;
 - (BOOL)isChangingPlaylistFeeder;
@@ -47,21 +54,17 @@
 - (int)lastSelectionDirection;
 - (void)setCurrentIndex:(int)arg1 selectionDirection:(int)arg2;
 - (BOOL)setPlaylistFeeder:(id)arg1 startIndex:(int)arg2;
+- (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
+- (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)_feeder;
 - (void)setForceSynchronousQueueFilling:(BOOL)arg1;
+- (id)player;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (id)currentItem;
 - (int)currentIndex;
-- (id)player;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
 - (void)setRepeatMode:(int)arg1;
 - (int)repeatMode;
-- (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
 
 @end

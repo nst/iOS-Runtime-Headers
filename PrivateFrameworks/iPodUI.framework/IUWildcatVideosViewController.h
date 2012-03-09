@@ -26,6 +26,8 @@
 @property(readonly) IUVideoPlaybackViewController * playbackViewController;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)detailViewController;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
 - (id)topViewController;
@@ -35,6 +37,7 @@
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)loadView;
+- (void)_backgroundAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)doorSwingTransitionView:(id)arg1 didFinishTransition:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_albumFrameForBrowserControllerTransition:(id)arg1;
 - (void)foldingTransitionDidStop:(id)arg1 finished:(BOOL)arg2;
@@ -72,8 +75,5 @@
 - (id)copyArchivableContexts;
 - (id)playbackViewController;
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)_backgroundAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 
 @end

@@ -17,7 +17,7 @@
 @property(copy) id locationInformationChangedBlock;
 
 
-- (void)setClientInfo:(id)arg1;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (id)init;
 - (void)dealloc;
 - (void)setConnectionResetBlock:(id)arg1;
@@ -38,7 +38,6 @@
 - (void)fetchProfileImageDataForScreenName:(id)arg1 completion:(id)arg2;
 - (void)fetchRecordForScreenName:(id)arg1 completion:(id)arg2;
 - (void)fetchSessionInfo:(id)arg1;
-- (void)setActiveAccountIdentifier:(id)arg1;
 - (void)fetchPermissionForBundleIdentifier:(id)arg1 completion:(id)arg2;
 - (void)fetchKnownBundleIdentifiers:(id)arg1;
 - (void)recordAndIssueCallInfo:(id)arg1;
@@ -49,6 +48,7 @@
 - (void)buildTwitterdSession;
 - (void)noteTwitterdSessionProxyInterrupted;
 - (void)tearDownTwitterdSession;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)setActiveAccountIdentifier:(id)arg1;
+- (void)setClientInfo:(id)arg1;
 
 @end

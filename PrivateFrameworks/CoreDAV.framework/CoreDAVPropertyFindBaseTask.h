@@ -13,6 +13,8 @@
 @property(retain) NSSet * propertiesToFind;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setPropertiesToFind:(id)arg1;
 - (void)setMultiStatus:(id)arg1;
 - (id)parseHints;
@@ -24,7 +26,5 @@
 - (id)multiStatus;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

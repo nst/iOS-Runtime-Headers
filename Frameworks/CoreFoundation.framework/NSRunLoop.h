@@ -12,8 +12,8 @@
 }
 
 + (id)_new:(id)arg1;
-+ (id)currentRunLoop;
 + (id)mainRunLoop;
++ (id)currentRunLoop;
 + (void)set_mapkit_networkIORunLoop:(id)arg1;
 + (id)_mapkit_networkIORunLoop;
 
@@ -40,14 +40,14 @@
 - (BOOL)_containsPort:(id)arg1 forMode:(id)arg2;
 - (void)_portInvalidated:(id)arg1;
 - (void)_enumerateInfoPairsWithBlock:(id)arg1;
-- (void)run;
-- (id)currentMode;
-- (void)addTimer:(id)arg1 forMode:(id)arg2;
-- (struct __CFRunLoop { }*)getCFRunLoop;
 - (id)description;
 - (void)cancelPerformSelectorsWithTarget:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (struct __CFRunLoop { }*)getCFRunLoop;
+- (void)run;
+- (id)currentMode;
+- (void)addTimer:(id)arg1 forMode:(id)arg2;
 
 @end

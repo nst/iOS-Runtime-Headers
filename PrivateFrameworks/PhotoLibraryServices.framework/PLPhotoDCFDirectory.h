@@ -19,6 +19,7 @@
 + (void)initializeFileGroupPrefixAndExtensions;
 
 - (id)fullPath;
+- (void)dealloc;
 - (void)setConsiderInvalidFileGroups:(BOOL)arg1;
 - (void)setWriteIsPending:(BOOL)arg1;
 - (void)removeFileGroup:(id)arg1;
@@ -38,6 +39,5 @@
 - (unsigned int)_calculateBaseDirectoryValue;
 - (id)_lastUsedFileGroupUserInfoKey;
 - (id)dcimDirectory;
-- (void)dealloc;
 
 @end

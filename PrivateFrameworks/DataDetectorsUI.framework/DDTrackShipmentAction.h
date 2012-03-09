@@ -6,7 +6,7 @@
 }
 
 
-- (id)localizedName;
 - (void)perform;
+- (id)localizedName;
 
 @end

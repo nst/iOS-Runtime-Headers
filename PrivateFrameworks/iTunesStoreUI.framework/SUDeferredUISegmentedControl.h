@@ -27,8 +27,7 @@
 @property(getter=isDeferringInterfaceUpdates) BOOL deferringInterfaceUpdates;
 
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (int)selectedSegmentIndex;
 - (unsigned int)numberOfSegments;
 - (id)imageForSegmentAtIndex:(unsigned int)arg1;
@@ -43,7 +42,8 @@
 - (void)setSelectedSegmentIndex:(int)arg1;
 - (void)setSegmentedControlStyle:(int)arg1;
 - (void)sizeToFit;
-- (void)dealloc;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (void)_saveSegmentsAsDeferred;
 - (void)_insertSegmentWithValue:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_commitDeferredInterfaceUpdates;

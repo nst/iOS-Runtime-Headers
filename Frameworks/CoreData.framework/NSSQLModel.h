@@ -15,7 +15,10 @@
 }
 
 
+- (id)managedObjectModel;
+- (void)dealloc;
 - (void)finalize;
+- (id)entities;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2;
 - (id)_sqlEntityWithRenamingIdentifier:(id)arg1;
 - (unsigned long)entityIDForName:(id)arg1;
@@ -34,8 +37,5 @@
 - (id)entityNamed:(id)arg1;
 - (id)configurationName;
 - (id)entitiesByName;
-- (id)entities;
-- (id)managedObjectModel;
-- (void)dealloc;
 
 @end

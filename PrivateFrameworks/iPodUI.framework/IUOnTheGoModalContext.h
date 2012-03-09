@@ -13,6 +13,7 @@
 @property(retain) MPMediaPlaylist * playlist;
 
 
+- (void)dealloc;
 - (void)_doneAction:(id)arg1;
 - (id)playlist;
 - (void)setPlaylist:(id)arg1;
@@ -28,6 +29,5 @@
 - (void)configureDataSource:(id)arg1;
 - (BOOL)canHandleSelectionForIndex:(unsigned int)arg1 dataSource:(id)arg2;
 - (id)copyQueryForQuery:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -22,6 +22,7 @@
 @property int draggingSourceOperationMask;
 
 
+- (void)dealloc;
 - (void)reset;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
@@ -32,6 +33,5 @@
 - (id)_touchedView;
 - (id)destinationView;
 - (void)setDestinationView:(id)arg1;
-- (void)dealloc;
 
 @end

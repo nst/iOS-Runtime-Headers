@@ -10,6 +10,7 @@
 }
 
 
+- (id)description;
 - (id)initWithEventCode:(unsigned short)arg1 transactionID:(unsigned long)arg2;
 - (id)initWithEventCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4;
 - (id)initWithEventCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4 parameter3:(unsigned long)arg5;
@@ -29,6 +30,5 @@
 - (id)contentForTCP;
 - (unsigned long)transactionID;
 - (id)initWithTCPBuffer:(void*)arg1;
-- (id)description;
 
 @end

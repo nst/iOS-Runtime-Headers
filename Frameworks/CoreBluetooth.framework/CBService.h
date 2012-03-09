@@ -17,11 +17,11 @@
 @property(readonly) CBPeripheral * peripheral;
 
 
-- (id)UUID;
 - (id)characteristics;
 - (id)includedServices;
 - (id)peripheral;
 - (void)setIncludedServices:(id)arg1;
 - (void)setCharacteristics:(id)arg1;
+- (id)UUID;
 
 @end

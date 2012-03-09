@@ -6,10 +6,10 @@
 }
 
 
-- (id)responseWithError:(id)arg1;
+- (void)dealloc;
 - (id)_commandDisconnect:(id)arg1;
 - (id)responseWithStatus:(id)arg1;
 - (id)processRequest:(id)arg1;
-- (void)dealloc;
+- (id)responseWithError:(id)arg1;
 
 @end

@@ -10,7 +10,7 @@
 @property(copy) NSString * clear;
 
 
-- (void)setClear:(id)arg1;
 - (id)clear;
+- (void)setClear:(id)arg1;
 
 @end

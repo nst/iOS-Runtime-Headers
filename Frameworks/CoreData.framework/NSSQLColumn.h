@@ -15,6 +15,10 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setScale:(int)arg1;
+- (int)scale;
 - (void)setPrecision:(unsigned int)arg1;
 - (unsigned int)roughSizeEstimate;
 - (unsigned int)fetchIndex;
@@ -33,9 +37,5 @@
 - (id)columnName;
 - (unsigned int)sqlType;
 - (unsigned int)slot;
-- (void)setScale:(int)arg1;
-- (int)scale;
-- (id)description;
-- (void)dealloc;
 
 @end

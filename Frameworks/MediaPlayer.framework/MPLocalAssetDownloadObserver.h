@@ -11,9 +11,9 @@
 
 + (void)beginDownloadForMediaItem:(id)arg1;
 
+- (void)dealloc;
 - (id)initWithItemPersistentID:(long long)arg1;
 - (BOOL)canCancel;
-- (void)dealloc;
 - (double)downloadProgress;
 - (void)_updateProgress:(id)arg1;
 

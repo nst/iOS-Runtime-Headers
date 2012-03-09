@@ -29,6 +29,8 @@
 
 + (id)browserWithDelegate:(id)arg1;
 
+- (void)dealloc;
+- (id)initWithDelegate:(id)arg1;
 - (void)setPrinters:(id)arg1;
 - (void)setPrintersByUUID:(id)arg1;
 - (void)handleNotification:(id)arg1;
@@ -45,11 +47,9 @@
 - (void)browseCallback:(unsigned int)arg1 interface:(unsigned int)arg2 name:(const char *)arg3 regType:(const char *)arg4 domain:(const char *)arg5;
 - (void)browseLocalCallback:(unsigned int)arg1 interface:(unsigned int)arg2 name:(const char *)arg3 regType:(const char *)arg4 domain:(const char *)arg5;
 - (void)queryCallback:(int)arg1 flags:(unsigned int)arg2 fullName:(const char *)arg3 rdlen:(unsigned short)arg4 rdata:(const void*)arg5;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (void)setHandle:(id)arg1;
 - (id)handle;
-- (void)dealloc;
-- (id)initWithDelegate:(id)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

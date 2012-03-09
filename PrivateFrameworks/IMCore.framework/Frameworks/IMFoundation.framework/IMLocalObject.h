@@ -20,8 +20,11 @@
 + (id)_registeredIMLocalObjectForPort:(unsigned int)arg1;
 + (void)initialize;
 
-- (void)invalidate;
 - (id)initWithTarget:(id)arg1 protocol:(id)arg2;
+- (void)setTarget:(id)arg1;
+- (id)description;
+- (id)target;
+- (void)dealloc;
 - (void)setPortName:(id)arg1;
 - (void)_systemShutdown:(id)arg1;
 - (id)initWithTarget:(id)arg1 portName:(id)arg2 protocol:(id)arg3;
@@ -43,13 +46,10 @@
 - (void)handleHeaderData:(unsigned long long*)arg1 headerLength:(unsigned int)arg2 data:(char *)arg3 dataLength:(unsigned int)arg4 fromPid:(int)arg5;
 - (unsigned int)mach_port;
 - (unsigned int)_port;
-- (id)port;
-- (BOOL)isValid;
 - (int)pid;
 - (void)setPid:(int)arg1;
-- (void)setTarget:(id)arg1;
-- (id)description;
-- (id)target;
-- (void)dealloc;
+- (id)port;
+- (BOOL)isValid;
+- (void)invalidate;
 
 @end

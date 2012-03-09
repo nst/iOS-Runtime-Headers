@@ -15,16 +15,16 @@
 @property(retain) NSString * authToken;
 
 
-- (void)setAuthToken:(id)arg1;
-- (id)authToken;
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasAuthToken;
-- (BOOL)hasUserName;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (void)setUserName:(id)arg1;
-- (id)userName;
 - (id)description;
 - (void)dealloc;
+- (void)setUserName:(id)arg1;
+- (void)setAuthToken:(id)arg1;
+- (id)authToken;
+- (id)userName;
+- (id)dictionaryRepresentation;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (BOOL)hasAuthToken;
+- (BOOL)hasUserName;
 
 @end

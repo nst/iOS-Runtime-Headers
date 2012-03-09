@@ -13,6 +13,7 @@
 @property(retain) GKGameDetailHeaderView * headerView;
 
 
+- (void)dealloc;
 - (Class)contentViewClass;
 - (id)sectionHeaderViewInTableView:(id)arg1;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
@@ -25,6 +26,5 @@
 - (void)setHeaderView:(id)arg1;
 - (id)headerView;
 - (BOOL)allowsSelection;
-- (void)dealloc;
 
 @end

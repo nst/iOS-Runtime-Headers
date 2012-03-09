@@ -10,8 +10,8 @@
 }
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
+- (void)finishWithError:(id)arg1;
 - (id)initWithPreviousSyncKey:(id)arg1;
 - (int)numDownloadedElements;
 - (BOOL)processContext:(id)arg1;

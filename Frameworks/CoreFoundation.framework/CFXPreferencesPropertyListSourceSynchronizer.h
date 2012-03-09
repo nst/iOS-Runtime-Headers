@@ -26,14 +26,14 @@
 }
 
 
-- (unsigned char)synchronize;
-- (void)finalize;
-- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
+- (void)dealloc;
 - (unsigned char)synchronizeAlreadyFlocked;
 - (unsigned char)writePlistToDisk;
 - (void*)createPlistFromDisk;
 - (unsigned char)_backingPlistChangedSinceLastSync;
 - (id)initWithPropertyListSource:(id)arg1 forLockedSynchronize:(BOOL)arg2;
-- (void)dealloc;
+- (void)finalize;
+- (unsigned char)synchronize;
+- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 
 @end

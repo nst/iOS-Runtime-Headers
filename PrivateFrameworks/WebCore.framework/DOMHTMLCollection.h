@@ -8,11 +8,11 @@
 @property(readonly) unsigned int length;
 
 
+- (unsigned int)length;
+- (void)dealloc;
+- (id)item:(unsigned int)arg1;
 - (void)finalize;
 - (id)namedItem:(id)arg1;
 - (id)tags:(id)arg1;
-- (id)item:(unsigned int)arg1;
-- (unsigned int)length;
-- (void)dealloc;
 
 @end

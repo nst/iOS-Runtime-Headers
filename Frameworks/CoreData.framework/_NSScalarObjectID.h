@@ -6,10 +6,10 @@
 }
 
 
+- (void)dealloc;
 - (int)_getURIBytes:(char *)arg1 length:(int)arg2;
 - (id)_retainedURIString;
 - (id)initWithPK64:(long long)arg1;
 - (long long)_referenceData64;
-- (void)dealloc;
 
 @end

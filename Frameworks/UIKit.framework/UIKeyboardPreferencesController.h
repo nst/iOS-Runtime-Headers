@@ -10,12 +10,13 @@
 }
 
 @property BOOL dontSynchronizePreferences;
+@property(readonly) BOOL isInternalInstall;
 
 + (void)preferencesChangedCallback:(id)arg1;
 + (id)sharedPreferencesController;
 
-- (id)valueForKey:(int)arg1;
-- (void)setValue:(id)arg1 forKey:(int)arg2;
+- (id)init;
+- (void)dealloc;
 - (BOOL)costlyCapture;
 - (void)touchSynchronizePreferencesTimer;
 - (void)synchronizePreferences;
@@ -23,6 +24,7 @@
 - (void)clearSynchronizePreferencesTimer;
 - (void)setDontSynchronizePreferences:(BOOL)arg1;
 - (id)defaultForKey:(int)arg1;
+- (BOOL)isInternalInstall;
 - (struct { id x1; id x2; BOOL x3; BOOL x4; unsigned long long x5; }*)domainForType:(int)arg1;
 - (struct { id x1; id x2; BOOL x3; BOOL x4; unsigned long long x5; }*)domains;
 - (BOOL)dontSynchronizePreferences;
@@ -30,8 +32,8 @@
 - (BOOL)typologyEnabled;
 - (void)setInputModeLastUsed:(id)arg1;
 - (void)saveInputModes:(id)arg1;
+- (id)valueForKey:(int)arg1;
+- (void)setValue:(id)arg1 forKey:(int)arg2;
 - (BOOL)boolForKey:(int)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

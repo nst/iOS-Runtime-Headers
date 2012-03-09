@@ -11,11 +11,14 @@
 + (id)sharedTextEffectsWindowAboveStatusBar;
 + (id)sharedTextEffectsWindow;
 
+- (void)dealloc;
 - (void)updateSubviewOrdering;
+- (void)resetTransform;
+- (void)updateForOrientation:(int)arg1 forceResetTransform:(BOOL)arg2;
+- (void)updateForOrientation:(int)arg1;
 - (void)sortSubviews;
 - (void)delayHideWindow;
 - (void)matchDeviceOrientation;
-- (void)updateForOrientation:(int)arg1;
 - (void)_didRemoveSubview:(id)arg1;
 - (void)didAddSubview:(id)arg1;
 - (BOOL)_disableViewScaling;
@@ -23,6 +26,5 @@
 - (void)bringSubviewToFront:(id)arg1;
 - (void)sendSubviewToBack:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

@@ -11,11 +11,13 @@
     NSMutableDictionary *_peopleByOrganization;
 }
 
++ (void)log:(id)arg1;
 + (BOOL)shouldLog;
 + (BOOL)isLinkDataValidForAddressBook:(void*)arg1;
 + (void)startAutoLinkingNewPeopleInAddressBook:(void*)arg1 inProcess:(BOOL)arg2;
-+ (void)log:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (id)initWithAddressBook:(void*)arg1;
 - (id)suggestedPeopleToLinkWithPerson:(void*)arg1 isInitialLinking:(BOOL)arg2;
 - (void)linkNewlyAddedPerson:(void*)arg1;
@@ -31,7 +33,5 @@
 - (id)copyArrayOfAllPeopleWithROWIDGreatThan:(int)arg1 withLimit:(int)arg2;
 - (BOOL)linkRecentlyAddedPeopleWithLimit:(int)arg1;
 - (void)makeInitialLinks;
-- (id)init;
-- (void)dealloc;
 
 @end

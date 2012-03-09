@@ -13,6 +13,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (struct CsRect<long int> { long x1[4]; })geometryCoordSpace;
 - (void)setGeometryCoordSpace:(struct CsRect<long int> { long x1[4]; })arg1;
 - (struct CsPoint<long int> { long x1[2]; })limo;
@@ -22,11 +24,9 @@
 - (id)textBodyRectAtIndex:(unsigned int)arg1;
 - (void)addTextBodyRect:(id)arg1;
 - (unsigned int)pathCount;
+- (id)pathAtIndex:(unsigned int)arg1;
 - (void)addPath:(id)arg1;
 - (id)formulaAtIndex:(unsigned int)arg1;
 - (unsigned int)formulaCount;
-- (id)init;
-- (void)dealloc;
-- (id)pathAtIndex:(unsigned int)arg1;
 
 @end

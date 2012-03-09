@@ -43,9 +43,31 @@
 @property double course;
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setHasCourse:(BOOL)arg1;
+- (BOOL)hasCourse;
+- (void)setHasSpeed:(BOOL)arg1;
+- (id)dictionaryRepresentation;
+- (int)type;
+- (double)timestamp;
+- (double)speed;
+- (void)setType:(int)arg1;
+- (void)setTimestamp:(double)arg1;
+- (id)initWithGEOCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setSpeed:(double)arg1;
+- (int)altitude;
+- (double)verticalAccuracy;
+- (double)course;
+- (double)horizontalAccuracy;
+- (double)heading;
 - (BOOL)readFrom:(id)arg1;
 - (BOOL)hasSpeed;
 - (BOOL)hasType;
+- (void)setHasHorizontalAccuracy:(BOOL)arg1;
+- (BOOL)hasHorizontalAccuracy;
+- (void)writeTo:(id)arg1;
+- (void)setHorizontalAccuracy:(double)arg1;
 - (void)setHasType:(BOOL)arg1;
 - (void)setHasHeading:(BOOL)arg1;
 - (BOOL)hasHeading;
@@ -56,33 +78,11 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (id)latLng;
-- (void)setHasCourse:(BOOL)arg1;
-- (BOOL)hasCourse;
-- (void)setHasSpeed:(BOOL)arg1;
-- (double)speed;
-- (void)setSpeed:(double)arg1;
-- (void)setHasHorizontalAccuracy:(BOOL)arg1;
-- (BOOL)hasHorizontalAccuracy;
-- (void)writeTo:(id)arg1;
-- (void)setHorizontalAccuracy:(double)arg1;
-- (int)altitude;
-- (double)verticalAccuracy;
-- (double)course;
-- (double)horizontalAccuracy;
-- (double)heading;
-- (id)dictionaryRepresentation;
-- (int)type;
-- (double)timestamp;
-- (void)setType:(int)arg1;
-- (void)setTimestamp:(double)arg1;
-- (id)initWithGEOCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setCourse:(double)arg1;
 - (void)setVerticalAccuracy:(double)arg1;
 - (void)setAltitude:(int)arg1;
 - (void)setLatLng:(id)arg1;
 - (void)setHeading:(double)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)_initWithCLClientLocation:(const struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; }*)arg1;
 
 @end

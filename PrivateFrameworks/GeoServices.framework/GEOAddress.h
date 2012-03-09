@@ -14,7 +14,11 @@
 @property(retain) GEOStructuredAddress * structuredAddress;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)initWithAddressString:(id)arg1;
 - (id)formattedAddressLineAtIndex:(unsigned int)arg1;
 - (unsigned int)formattedAddressLinesCount;
@@ -22,13 +26,9 @@
 - (void)setFormattedAddressLines:(id)arg1;
 - (BOOL)hasStructuredAddress;
 - (void)setStructuredAddress:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
 - (id)formattedAddressLines;
 - (id)structuredAddress;
 - (id)addressDictionary;
-- (id)description;
-- (void)dealloc;
 - (id)initWithGMMSearchResult:(id)arg1;
 - (id)singleLineAddress;
 

@@ -26,22 +26,11 @@
 
 + (id)copyUserAgent;
 
-- (void)_sendResponseToDelegate:(id)arg1;
-- (void)setRequest:(id)arg1;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
-- (void)setResponse:(id)arg1;
-- (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
-- (void)handleResponse:(id)arg1;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (id)request;
-- (id)response;
-- (void)run;
-- (void)_run;
-- (void)_updateProgress;
+- (id)init;
+- (void)dealloc;
 - (void)_setShouldSetCookies:(BOOL)arg1;
+- (void)_stopIfCancelled;
 - (id)_copyConnectionProperties;
 - (BOOL)_runRequestWithURL:(id)arg1;
 - (void)_logRequest:(id)arg1;
@@ -49,7 +38,7 @@
 - (BOOL)_validateContentLength:(long long)arg1 error:(id*)arg2;
 - (void)_sendContentLengthToDelegate:(long long)arg1;
 - (void)_retry;
-- (BOOL)handleRedirectFromDataProvider:(id)arg1;
+- (BOOL)handleRedirectFromDataProvider:(id)arg1 error:(id*)arg2;
 - (id)_errorWithDomain:(id)arg1 code:(int)arg2;
 - (void)_sendOutputToDelegate:(id)arg1;
 - (void)_logResponseBody:(id)arg1;
@@ -71,13 +60,25 @@
 - (id)_sanitizedURLForURL:(id)arg1;
 - (id)_activeURL;
 - (id)_copyAuthenticationContext;
-- (id)init;
-- (void)dealloc;
+- (void)_updateProgress;
+- (void)setRequest:(id)arg1;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (id)request;
+- (id)response;
+- (void)run;
+- (void)_run;
+- (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
+- (void)setResponse:(id)arg1;
 - (id)dataProvider;
 - (id)requestProperties;
 - (void)setDataProvider:(id)arg1;
 - (void)setRequestProperties:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
+- (void)_sendResponseToDelegate:(id)arg1;
+- (void)handleResponse:(id)arg1;
 
 @end

@@ -19,6 +19,7 @@
 @property BOOL authenticateFinished;
 
 
+- (void)dealloc;
 - (void)setAuthenticateFinished:(BOOL)arg1;
 - (BOOL)authenticateFinished;
 - (void)setAlias:(id)arg1;
@@ -35,6 +36,5 @@
 - (void)setPlayerID:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

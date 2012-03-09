@@ -11,11 +11,11 @@
 @property(retain) NSDictionary * cancelRelayRequest;
 
 
+- (void)dealloc;
 - (void)setCancelRelayRequest:(id)arg1;
 - (id)cancelRelayRequest;
 - (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

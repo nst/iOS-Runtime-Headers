@@ -18,20 +18,20 @@
 @property(retain) NSNumber * rating;
 @property(retain) NSString * title;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
+- (id)init;
+- (void)dealloc;
 - (void)setRating:(id)arg1;
 - (id)rating;
 - (id)adamID;
-- (id)attributeKeys;
-- (void)setBody:(id)arg1;
 - (id)body;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)attributeKeys;
+- (void)setBody:(id)arg1;
 - (void)setItemType:(id)arg1;
 - (void)setNicknameIsConfirmed:(id)arg1;
 - (id)hasSavedDraft;

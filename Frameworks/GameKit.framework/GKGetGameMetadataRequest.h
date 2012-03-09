@@ -11,10 +11,10 @@
 @property(retain) NSArray * games;
 
 
+- (void)dealloc;
 - (id)games;
 - (void)setGames:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

@@ -69,9 +69,13 @@
 + (double)systemDomainsMinSupportedVersion;
 + (double)systemDomainsMaxSupportedVersion;
 
-- (id)bundleID;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (int)compare:(id)arg1;
 - (id)name;
+- (id)bundleID;
 - (id)relativePathsToBackup;
 - (id)relativePathsToRestore;
 - (BOOL)isPlaceholderAppDomain;
@@ -111,9 +115,5 @@
 - (id)initWithName:(id)arg1 rootPath:(id)arg2;
 - (BOOL)isEqualToDomain:(id)arg1;
 - (BOOL)isAppDomain;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 
 @end

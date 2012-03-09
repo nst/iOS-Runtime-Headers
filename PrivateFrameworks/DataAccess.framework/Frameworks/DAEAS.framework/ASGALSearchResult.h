@@ -43,6 +43,8 @@
 
 - (id)longID;
 - (id)emailAddress;
+- (id)description;
+- (void)dealloc;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setAlias:(id)arg1;
@@ -52,8 +54,6 @@
 - (void)setEmailAddress:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)convertToDAContactSearchResultElement;
 - (id)applicationData;
 - (id)mobilePhone;

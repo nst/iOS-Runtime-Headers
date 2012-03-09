@@ -21,7 +21,7 @@
 }
 
 
-- (void)reset;
+- (void)dealloc;
 - (BOOL)editItemViewControllerCommit:(id)arg1 notify:(BOOL)arg2;
 - (BOOL)validateRecurrenceType:(id)arg1;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })minRecurrenceEndDateGr;
@@ -35,6 +35,6 @@
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
 - (id)cellForSubitemAtIndex:(int)arg1;
 - (void)shortenCell:(id)arg1;
-- (void)dealloc;
+- (void)reset;
 
 @end

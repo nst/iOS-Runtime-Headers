@@ -29,6 +29,11 @@
 @property(retain) NSString * searchString;
 
 
+- (void)cancel;
+- (id)results;
+- (void)setResults:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)resume;
 - (void)pause;
 - (BOOL)searching;
@@ -54,10 +59,5 @@
 - (void)setDocumentScale:(float)arg1;
 - (void)setDocumentToSearch:(id)arg1;
 - (float)documentScale;
-- (void)cancel;
-- (id)results;
-- (void)setResults:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

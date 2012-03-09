@@ -19,6 +19,7 @@
 @property(retain) NSObject * object;
 
 
+- (void)dealloc;
 - (void)setObject:(id)arg1;
 - (void)setIsAccessibilityConfigurationElement:(id)arg1;
 - (id)isAccessibilityConfigurationElement;
@@ -29,10 +30,9 @@
 - (void)setAccessibilityConfigurationHint:(id)arg1;
 - (id)accessibilityConfigurationHint;
 - (id)initWithObject:(id)arg1 label:(id)arg2 hint:(id)arg3 traits:(id)arg4 andIsAccessibilityElement:(id)arg5;
-- (id)object;
 - (void)applyConfiguration;
+- (id)object;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

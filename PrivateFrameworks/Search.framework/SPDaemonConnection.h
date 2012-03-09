@@ -13,11 +13,13 @@
 
 + (id)sharedConnection;
 
-- (unsigned int)serverPort;
-- (void)preheat;
+- (id)init;
+- (void)dealloc;
+- (void)unregisterApplication:(id)arg1;
 - (void)cancelQuery:(id)arg1;
 - (id)startQuery:(id)arg1;
-- (void)unregisterApplication:(id)arg1;
+- (unsigned int)serverPort;
+- (void)preheat;
 - (void)searchResultWasSelected:(id)arg1 inDomain:(unsigned int)arg2 queryString:(id)arg3;
 - (void)registerApplication:(id)arg1 withCategories:(id)arg2;
 - (BOOL)indexUpdatedContent:(id)arg1 moreComing:(BOOL)arg2;
@@ -30,7 +32,5 @@
 - (void)_handleSendFailure:(int)arg1 inCodeNamed:(const char *)arg2;
 - (void)invalidateServerPort;
 - (unsigned int)publicPort;
-- (id)init;
-- (void)dealloc;
 
 @end

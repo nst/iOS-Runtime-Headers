@@ -11,6 +11,10 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (void)setGeometry:(id)arg1;
+- (id)geometry;
 - (id)movie;
 - (void)setMovie:(id)arg1;
 - (id)createImageFill;
@@ -20,9 +24,5 @@
 - (id)initWithBlipRef:(id)arg1;
 - (void)setOle:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;
-- (void)setGeometry:(id)arg1;
-- (id)geometry;
-- (id)init;
-- (void)dealloc;
 
 @end

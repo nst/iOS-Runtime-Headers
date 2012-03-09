@@ -21,6 +21,10 @@
 + (BOOL)isCLSIDSupported:(id)arg1;
 + (BOOL)isProgIDSupported:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
+- (void)setObject:(id)arg1;
+- (id)object;
 - (BOOL)iconic;
 - (id)CLSID;
 - (void)setCLSID:(id)arg1;
@@ -41,9 +45,5 @@
 - (id)unicodeProgID;
 - (void)setUnicodeProgID:(id)arg1;
 - (void)setIconic:(BOOL)arg1;
-- (void)setObject:(id)arg1;
-- (id)object;
-- (id)init;
-- (void)dealloc;
 
 @end

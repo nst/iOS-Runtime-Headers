@@ -59,8 +59,7 @@
 @property(getter=_snapshotRect,setter=_setSnapshotRect:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotRect;
 
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (id)edgePaddingColor;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgePadding;
 - (void)_setSnapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -74,10 +73,10 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgePadding;
 - (void)_positionImageView;
 - (void)setEdgeAntialiasingEnabled:(BOOL)arg1;
-- (void)captureSnapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromView:(id)arg2 withSnapshotType:(int)arg3;
 - (void)setVerticalStretchEnabled:(BOOL)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)captureSnapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromView:(id)arg2 withSnapshotType:(int)arg3;
 - (void)setEdgePaddingColor:(id)arg1;
 - (void)setEdgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)captureSnapshotOfView:(id)arg1 withSnapshotType:(int)arg2;
@@ -86,8 +85,9 @@
 - (struct CGSize { float x1; float x2; })_contentSize;
 - (void)setContentStretch:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

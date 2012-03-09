@@ -7,12 +7,6 @@
 
 + (id)sharedUIDelegate;
 
-- (id)webView:(id)arg1 runJavaScriptTextInputPanelWithPrompt:(id)arg2 defaultText:(id)arg3 initiatedByFrame:(id)arg4;
-- (BOOL)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
-- (void)webView:(id)arg1 runJavaScriptAlertPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
-- (void)webViewClose:(id)arg1;
-- (void)webView:(id)arg1 printFrameView:(id)arg2;
-- (void)webView:(id)arg1 exceededApplicationCacheOriginQuotaForSecurityOrigin:(id)arg2 totalSpaceNeeded:(unsigned int)arg3;
 - (id)webView:(id)arg1 createWebViewWithRequest:(id)arg2 userGesture:(BOOL)arg3;
 - (id)webViewStatusText:(id)arg1;
 - (void)webView:(id)arg1 mouseDidMoveOverElement:(id)arg2 modifierFlags:(unsigned int)arg3;
@@ -36,5 +30,11 @@
 - (void)webView:(id)arg1 makeFirstResponder:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldReplaceUploadFile:(id)arg2 usingGeneratedFilename:(id*)arg3;
 - (id)webView:(id)arg1 generateReplacementFile:(id)arg2;
+- (id)webView:(id)arg1 runJavaScriptTextInputPanelWithPrompt:(id)arg2 defaultText:(id)arg3 initiatedByFrame:(id)arg4;
+- (BOOL)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
+- (void)webView:(id)arg1 runJavaScriptAlertPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
+- (void)webViewClose:(id)arg1;
+- (void)webView:(id)arg1 printFrameView:(id)arg2;
+- (void)webView:(id)arg1 exceededApplicationCacheOriginQuotaForSecurityOrigin:(id)arg2 totalSpaceNeeded:(unsigned int)arg3;
 
 @end

@@ -26,6 +26,8 @@
 
 + (id)launchOptionsWithDictionary:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (id)searchString;
 - (void)setSearchString:(id)arg1;
 - (id)dictionaryRepresentation;
@@ -40,7 +42,5 @@
 - (void)setShowTraffic:(BOOL)arg1;
 - (void)setDirectionsType:(int)arg1;
 - (void)setShowDirections:(BOOL)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

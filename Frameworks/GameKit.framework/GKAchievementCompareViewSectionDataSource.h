@@ -15,6 +15,7 @@
 @property(retain) UIImage * compositeCheckMark;
 
 
+- (void)dealloc;
 - (int)sectionContentRowCountInTableView:(id)arg1;
 - (int)columnCountInTableView:(id)arg1;
 - (void)setCompositeCheckMark:(id)arg1;
@@ -32,6 +33,5 @@
 - (id)tableView:(id)arg1 itemAtIndex:(int)arg2;
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
 - (id)title;
-- (void)dealloc;
 
 @end

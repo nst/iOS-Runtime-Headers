@@ -7,7 +7,7 @@
 }
 
 
-- (struct __CFArray { }*)children;
 - (void)dealloc;
+- (struct __CFArray { }*)children;
 
 @end

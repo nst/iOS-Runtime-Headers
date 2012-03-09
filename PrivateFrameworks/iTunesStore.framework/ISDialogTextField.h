@@ -18,6 +18,7 @@
 
 + (id)textFieldWithTitle:(id)arg1;
 
+- (void)dealloc;
 - (void)setSecure:(BOOL)arg1;
 - (BOOL)isSecure;
 - (id)value;
@@ -26,6 +27,5 @@
 - (void)setKeyboardType:(int)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (void)dealloc;
 
 @end

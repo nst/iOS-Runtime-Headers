@@ -19,6 +19,8 @@
 
 + (unsigned int)maxNumberOfRecipients;
 
+- (id)init;
+- (void)dealloc;
 - (void)setRecipientCount:(unsigned int)arg1;
 - (unsigned int)recipientCount;
 - (void)setComposeController:(id)arg1;
@@ -45,7 +47,5 @@
 - (void)viewDidLoad;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)didReceiveMemoryWarning;
-- (id)init;
-- (void)dealloc;
 
 @end

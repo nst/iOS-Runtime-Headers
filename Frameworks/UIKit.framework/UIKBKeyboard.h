@@ -23,6 +23,11 @@
 
 + (id)keyboard;
 
+- (void)setName:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setKeysetCache:(id)arg1;
 - (id)keysetCache;
 - (void)setKeyCache:(id)arg1;
@@ -44,10 +49,5 @@
 - (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

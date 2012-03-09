@@ -25,6 +25,8 @@
 @property(copy) id completion;
 
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
 - (BOOL)animated;
 - (id)viewController;
 - (id)initWithViewController:(id)arg1 name:(id)arg2 animated:(BOOL)arg3;
@@ -33,7 +35,5 @@
 - (void)setCompletion:(id)arg1;
 - (id)completion;
 - (id)name;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

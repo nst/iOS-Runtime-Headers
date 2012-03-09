@@ -9,23 +9,23 @@
 }
 
 @property(readonly) NSArray * tracks;
-@property(readonly) struct CGSize { float width; float height; } naturalSize;
+@property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 
 + (void)initialize;
 
-- (void)finalize;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (struct OpaqueFigMutableComposition { }*)_mutableComposition;
-- (id)_initWithComposition:(id)arg1;
-- (id)_newTrackForIndex:(long)arg1;
-- (id)_mutableTracks;
-- (long)_createEmptyMutableCompositionIfNeeded;
-- (void)_setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)_assetInspector;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (id)tracks;
-- (struct OpaqueFigFormatReader { }*)_formatReader;
 - (id)init;
 - (void)dealloc;
+- (void)_setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
+- (long)_createEmptyMutableCompositionIfNeeded;
+- (id)_mutableTracks;
+- (id)_newTrackForIndex:(long)arg1;
+- (id)_initWithComposition:(id)arg1;
+- (struct OpaqueFigMutableComposition { }*)_mutableComposition;
+- (struct OpaqueFigFormatReader { }*)_formatReader;
+- (id)tracks;
+- (id)_assetInspector;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (void)finalize;
+- (struct CGSize { float x1; float x2; })naturalSize;
 
 @end

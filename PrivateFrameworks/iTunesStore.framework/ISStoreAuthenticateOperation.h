@@ -12,15 +12,15 @@
 @property(readonly) SSAuthenticationContext * authenticationContext;
 
 
+- (void)dealloc;
 - (id)uniqueKey;
-- (void)authenticateRequest:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
-- (void)run;
 - (void)_setAuthenticatedDSID:(id)arg1;
 - (id)_authenticatedDSID;
-- (void)dealloc;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (void)run;
 - (id)initWithAuthenticationContext:(id)arg1;
 - (id)authenticatedAccountDSID;
 - (id)authenticationContext;
+- (void)authenticateRequest:(id)arg1 didReceiveResponse:(id)arg2;
 
 @end

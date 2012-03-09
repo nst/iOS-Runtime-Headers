@@ -11,11 +11,11 @@
 @property(retain) NSArray * recentlyShownGames;
 
 
+- (void)dealloc;
 - (void)setRecentlyShownGames:(id)arg1;
 - (id)recentlyShownGames;
 - (void)send;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

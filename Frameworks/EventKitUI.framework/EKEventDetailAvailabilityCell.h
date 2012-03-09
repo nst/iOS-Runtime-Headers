@@ -10,12 +10,12 @@
 }
 
 
+- (void)dealloc;
 - (void)setAvailability:(int)arg1;
-- (BOOL)update;
 - (id)_availabilityTitleView;
 - (BOOL)isEditableForEvent;
 - (id)_availabilityView;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
-- (void)dealloc;
+- (BOOL)update;
 
 @end

@@ -15,12 +15,12 @@
 
 + (double)defaultExpirationTime;
 
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; unsigned int x2; unsigned int x3; boolx4; boolx5; }*)arg1 tilePath:(const struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg2;
-- (id)getRoadsAtSpeed:(int)arg1;
-- (void)invalidate;
-- (BOOL)isEmpty;
 - (id)init;
 - (void)dealloc;
+- (BOOL)isEmpty;
+- (void)invalidate;
 - (double)expirationTime;
+- (BOOL)readFromStream:(struct InputDataStream { char *x1; unsigned int x2; unsigned int x3; boolx4; boolx5; }*)arg1 tilePath:(const struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg2;
+- (id)getRoadsAtSpeed:(int)arg1;
 
 @end

@@ -16,20 +16,20 @@
     unsigned int _tilesLoaded;
 }
 
-+ (unsigned char)tileProviderIdentifier;
 + (id)hostname;
++ (unsigned char)tileProviderIdentifier;
 
-- (void)_tryReadTiles;
-- (void)_tryReadPreamble;
-- (void)_cancelWithErrorCode:(int)arg1;
-- (void)_failWithErrorCode:(int)arg1;
-- (void)start;
-- (void)_failWithError:(id)arg1;
+- (void)cancel;
+- (void)_cleanup;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)_cleanup;
-- (void)cancel;
+- (void)start;
+- (void)_failWithError:(id)arg1;
+- (void)_tryReadTiles;
+- (void)_tryReadPreamble;
+- (void)_cancelWithErrorCode:(int)arg1;
+- (void)_failWithErrorCode:(int)arg1;
 
 @end

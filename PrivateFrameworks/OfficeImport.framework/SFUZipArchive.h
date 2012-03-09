@@ -15,6 +15,7 @@
 
 + (BOOL)isZipArchiveAtPath:(id)arg1;
 
+- (void)dealloc;
 - (id)entryWithName:(id)arg1 dataLength:(long long)arg2;
 - (id)passphraseVerifier;
 - (id)passphraseHint;
@@ -33,6 +34,5 @@
 - (id)initWithPath:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
 - (id)initWithData:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
 - (id)entryWithName:(id)arg1;
-- (void)dealloc;
 
 @end

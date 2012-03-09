@@ -13,9 +13,11 @@
     MPMediaItemCollection *_musicCollection;
 }
 
-+ (int)randomTransition;
 + (id)sharedInstance;
++ (int)randomTransition;
 
+- (id)init;
+- (void)dealloc;
 - (int)transition;
 - (void)setTransition:(int)arg1;
 - (id)musicCollection;
@@ -27,7 +29,5 @@
 - (BOOL)shouldShuffle;
 - (BOOL)shouldPlayMusic;
 - (int)secondsPerSlide;
-- (id)init;
-- (void)dealloc;
 
 @end

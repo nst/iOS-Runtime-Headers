@@ -12,13 +12,12 @@
 }
 
 
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
+- (id)init;
+- (void)dealloc;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)init;
-- (void)dealloc;
 - (void)_setReviewByMergingWithReview:(id)arg1;
 - (void)_fetchReviewInfo;
 - (void)_submit;
@@ -29,5 +28,6 @@
 - (id)copyScriptViewController;
 - (void)operationFinished:(id)arg1;
 - (void)applicationDidEnterBackground;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

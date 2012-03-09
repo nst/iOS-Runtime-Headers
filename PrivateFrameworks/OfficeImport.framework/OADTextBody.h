@@ -11,6 +11,11 @@
 }
 
 
+- (void)setProperties:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)properties;
+- (BOOL)isEmpty;
 - (void)addParagraphsFromTextBody:(id)arg1;
 - (void)removeAllParagraphs;
 - (void)applyTextListStyle:(id)arg1;
@@ -25,10 +30,5 @@
 - (id)findFirstTextRunOfClass:(Class)arg1;
 - (void)setParentTextListStyle:(id)arg1;
 - (id)textListStyle;
-- (id)properties;
-- (BOOL)isEmpty;
-- (void)setProperties:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

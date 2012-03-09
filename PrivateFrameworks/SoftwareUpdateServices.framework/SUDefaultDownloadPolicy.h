@@ -17,9 +17,6 @@
 @property(retain) SUDescriptor * descriptor;
 
 
-- (id)description;
-- (void)dealloc;
-- (BOOL)isDownloadable;
 - (void)setCellularCapable:(BOOL)arg1;
 - (BOOL)isCellularCapable;
 - (void)setCarrierPolicy:(id)arg1;
@@ -40,5 +37,8 @@
 - (BOOL)isPowerRequired;
 - (id)descriptor;
 - (id)initWithDescriptor:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (BOOL)isDownloadable;
 
 @end

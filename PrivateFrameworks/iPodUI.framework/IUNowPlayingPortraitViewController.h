@@ -27,6 +27,8 @@
 @property BOOL inhibitOverlay;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)_crossedTimeMarkerNotification:(id)arg1;
 - (int)displayableInterfaceOrientationForInterfaceOrientation:(int)arg1;
 - (void)videoController:(id)arg1 scaleModeDidChange:(unsigned int)arg2;
@@ -54,6 +56,9 @@
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (int)statusBarStyle;
 - (BOOL)isStatusBarHidden;
+- (id)_flipTransition;
+- (void)flip:(id)arg1;
+- (void)setItem:(id)arg1;
 - (BOOL)showFlipperHint;
 - (void)_configureViewController:(id)arg1;
 - (Class)_viewControllerClassForItem:(id)arg1;
@@ -79,10 +84,5 @@
 - (void)coverFlowDidTransitionIn:(BOOL)arg1;
 - (void)coverFlowWillTransitionOut:(BOOL)arg1;
 - (id)coverViewFlipView;
-- (id)init;
-- (void)dealloc;
-- (id)_flipTransition;
-- (void)flip:(id)arg1;
-- (void)setItem:(id)arg1;
 
 @end

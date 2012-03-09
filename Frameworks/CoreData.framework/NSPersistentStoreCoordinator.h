@@ -17,6 +17,7 @@
     NSMutableArray *_persistentStores;
 }
 
++ (void)initialize;
 + (void)registerStoreClass:(Class)arg1 forStoreType:(id)arg2;
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreOfType:(id)arg2 URL:(id)arg3 error:(id*)arg4;
 + (void)_registerDefaultStoreClassesAndTypes;
@@ -28,10 +29,19 @@
 + (id)registeredStoreTypes;
 + (void)__Multithreading_Violation_AllThatIsLeftToUsIsHonor__;
 + (BOOL)accessInstanceVariablesDirectly;
-+ (void)initialize;
 
+- (id)initWithManagedObjectModel:(id)arg1;
+- (id)addPersistentStoreWithType:(id)arg1 configuration:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id*)arg5;
+- (id)managedObjectModel;
+- (id)persistentStoreCoordinator;
+- (void)dealloc;
+- (BOOL)removePersistentStore:(id)arg1 error:(id*)arg2;
+- (id)persistentStoreForURL:(id)arg1;
 - (void)finalize;
+- (void)unlock;
+- (void)lock;
 - (void)_assignObject:(id)arg1 toPersistentStore:(id)arg2;
+- (void)_setIsRegisteredWithUbiquity:(BOOL)arg1;
 - (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 storeType:(id)arg5 error:(id*)arg6;
 - (BOOL)_destroyPersistentStoreAtURL:(id)arg1 withType:(id)arg2 error:(id*)arg3;
 - (void)setMetadata:(id)arg1 forPersistentStore:(id)arg2;
@@ -43,7 +53,6 @@
 - (id)_realStoreTypeForStoreWithType:(id)arg1 URL:(id)arg2 error:(id*)arg3;
 - (void)_addPersistentStore:(id)arg1 identifier:(id)arg2;
 - (void)_postStoresChangedNotificationsForStores:(id)arg1 changeKey:(id)arg2 options:(id)arg3;
-- (void)_setIsRegisteredWithUbiquity:(BOOL)arg1;
 - (BOOL)_removePersistentStore:(id)arg1;
 - (id)_retainedAllMigratedObjectsInStore:(id)arg1 toStore:(id)arg2;
 - (id)_checkRequestForStore:(id)arg1 originalRequest:(id)arg2 andOptimisticLocking:(id)arg3;
@@ -72,14 +81,5 @@
 - (BOOL)tryLock;
 - (id)persistentStoreForIdentifier:(id)arg1;
 - (BOOL)setURL:(id)arg1 forPersistentStore:(id)arg2;
-- (BOOL)removePersistentStore:(id)arg1 error:(id*)arg2;
-- (id)persistentStoreForURL:(id)arg1;
-- (void)unlock;
-- (void)lock;
-- (id)initWithManagedObjectModel:(id)arg1;
-- (id)addPersistentStoreWithType:(id)arg1 configuration:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id*)arg5;
-- (id)managedObjectModel;
-- (id)persistentStoreCoordinator;
-- (void)dealloc;
 
 @end

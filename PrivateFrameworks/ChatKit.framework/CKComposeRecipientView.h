@@ -19,6 +19,7 @@
 @property(retain) CKService * preferredService;
 
 
+- (void)dealloc;
 - (id)actionSheet;
 - (void)setActionSheet:(id)arg1;
 - (void)removeAddresses;
@@ -29,10 +30,6 @@
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)addRecipient:(id)arg1;
 - (void)reflow;
-- (void)reset;
-- (id)customOverlayContainer;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)atomStyleForRecipient:(id)arg1;
 - (BOOL)canSend;
 - (void)handleMadridServiceActiveAccountsChangedNotification:(id)arg1;
@@ -61,6 +58,9 @@
 - (id)preferredService;
 - (void)updateRecipientLimit;
 - (void)stopCheckingRecipientAvailability;
-- (void)dealloc;
+- (void)reset;
+- (id)customOverlayContainer;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

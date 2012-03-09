@@ -9,9 +9,9 @@
 }
 
 
-- (void)_cancelSubmissionOnThread;
-- (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
-- (void)_applicationDidEnterBackground:(id)arg1;
 - (void)dealloc;
+- (void)_cancelSubmissionOnThread;
+- (void)_applicationDidEnterBackground:(id)arg1;
+- (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
 
 @end

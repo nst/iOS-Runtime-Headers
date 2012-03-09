@@ -16,6 +16,9 @@
 @property BOOL shouldAnimateIn;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)requestActivationAnimated:(BOOL)arg1 animateCurrentDisplayOut:(BOOL)arg2 withDelay:(BOOL)arg3;
 - (void)requestDeactivationAnimated:(BOOL)arg1 animateOldDisplayInWithStyle:(int)arg2;
 - (BOOL)allowSuspension;
@@ -45,8 +48,5 @@
 - (void)viewDidLoad;
 - (void)setAnimationStartTime:(id)arg1;
 - (void)didReceiveMemoryWarning;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

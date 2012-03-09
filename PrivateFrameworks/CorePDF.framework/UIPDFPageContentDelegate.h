@@ -48,11 +48,7 @@
 @property CALayer * owner;
 
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })box;
-- (struct CGColor { }*)highlightColor;
-- (id)owner;
-- (void)setHighlightColor:(struct CGColor { }*)arg1;
-- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
+- (void)dealloc;
 - (void)drawSelectionLayerBlockMode:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)addRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toPath:(struct CGPath { }*)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg3 view:(id)arg4 owner:(id)arg5;
 - (void)setBox:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -60,10 +56,14 @@
 - (void)drawSelectionLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (unsigned int)pageRotation;
 - (void)setPageRotation:(unsigned int)arg1;
-- (void)setOwner:(id)arg1;
+- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (void)setView:(id)arg1;
 - (id)view;
-- (void)dealloc;
+- (void)setOwner:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })box;
+- (struct CGColor { }*)highlightColor;
+- (id)owner;
+- (void)setHighlightColor:(struct CGColor { }*)arg1;
 
 @end

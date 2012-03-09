@@ -21,13 +21,6 @@
 @property BOOL hidesSearchableSources;
 
 
-- (int)numberOfAccounts;
-- (id)model;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)reloadData;
 - (id)init;
 - (void)dealloc;
 - (int)numberOfGroupsForAccountIdentifier:(id)arg1;
@@ -52,5 +45,12 @@
 - (void)setHidesSearchableSources:(BOOL)arg1;
 - (void)setHidesGlobalGroupWrapper:(BOOL)arg1;
 - (void)setModel:(id)arg1;
+- (int)numberOfAccounts;
+- (id)model;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)reloadData;
 
 @end

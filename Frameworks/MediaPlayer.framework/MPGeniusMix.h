@@ -2,38 +2,51 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaPlaylist, NSArray, NSString, MPMediaQuery, NSMutableArray;
+@class MPMediaPlaylist, NSArray, NSString, MPMediaQuery;
 
-@interface MPGeniusMix : NSObject <NSCoding> {
+@interface MPGeniusMix : NSObject <SSDownloadManagerObserver, NSCoding, NSCopying> {
     MPMediaPlaylist *_playlist;
     MPMediaQuery *_seedTracksQuery;
     NSArray *_representativeArtists;
-    NSMutableArray *_representativeImageItems;
+    NSArray *_representativeImageItems;
 }
 
+@property(readonly) float downloadProgress;
+@property(readonly) BOOL isCloudMix;
+@property(readonly) BOOL isDownloading;
 @property(readonly) NSString * name;
-@property(readonly) MPMediaQuery * seedTracksQuery;
 @property(readonly) MPMediaPlaylist * playlist;
 @property(readonly) NSArray * representativeArtists;
+@property(readonly) MPMediaQuery * seedTracksQuery;
 
 + (id)artworkCacheDirectoryPath;
 + (id)artworkImageForMediaItem:(id)arg1;
 
-- (id)playlist;
-- (id)representativeArtists;
-- (id)_cacheDirectoryPath;
-- (unsigned int)countOfRepresentativeImagesWithMaxCount:(unsigned int)arg1;
-- (id)_cachedRepresentativeImagePath;
-- (struct CGImage { }*)representativeImageWithSize:(struct CGSize { float x1; float x2; })arg1 count:(unsigned int)arg2 cacheOnly:(BOOL)arg3;
-- (id)seedTracksQuery;
-- (struct CGImage { }*)representativeImageWithSize:(struct CGSize { float x1; float x2; })arg1 count:(unsigned int)arg2;
-- (id)initWithMPMediaPlaylist:(id)arg1;
-- (id)name;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)playlist;
+- (id)representativeArtists;
+- (float)downloadProgress;
+- (void)downloadMixWithCompletionHandler:(id)arg1;
+- (unsigned int)countOfRepresentativeImagesWithMaxCount:(unsigned int)arg1;
+- (BOOL)canPlayUsingNetworkType:(int)arg1;
+- (void)cancelDownload;
+- (id)_cacheDirectoryPath;
+- (unsigned long long)_entityArtworkCacheHashForRepresentativeItems:(id)arg1;
+- (id)_cachedRepresentativeImagePath;
+- (struct CGImage { }*)representativeImageWithSize:(struct CGSize { float x1; float x2; })arg1 count:(unsigned int)arg2 cacheOnly:(BOOL)arg3;
+- (id)_representativeImageItemsWithMaxCount:(unsigned int)arg1;
+- (id)seedTracksQuery;
+- (BOOL)isCloudMix;
+- (struct CGImage { }*)representativeImageWithSize:(struct CGSize { float x1; float x2; })arg1 count:(unsigned int)arg2;
+- (id)initWithMPMediaPlaylist:(id)arg1;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
+- (BOOL)isDownloading;
+- (id)name;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

@@ -11,11 +11,11 @@
 @property(copy) NSString * status;
 
 
+- (void)dealloc;
 - (void)setStatus:(id)arg1;
+- (id)status;
 - (void)send;
 - (id)key;
 - (id)request;
-- (id)status;
-- (void)dealloc;
 
 @end

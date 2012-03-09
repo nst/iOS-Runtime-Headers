@@ -19,6 +19,7 @@
 
 + (void)initialize;
 
+- (void)dealloc;
 - (id)initWithStyleType:(int)arg1;
 - (int)beginReadingFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 - (int)doneReading:(id)arg1;
@@ -30,6 +31,5 @@
 - (void)handleFloatValue:(float)arg1;
 - (void)handleDoubleValue:(double)arg1;
 - (id)createStyle;
-- (void)dealloc;
 
 @end

@@ -17,6 +17,9 @@
 + (id)fallbackGeniusDatabaseFilePath;
 + (id)geniusDatabaseFilePath;
 
+- (id)init;
+- (BOOL)hasGeniusFeatureEnabled;
+- (id)database;
 - (void)setIsInTransaction:(BOOL)arg1;
 - (BOOL)isInTransaction;
 - (BOOL)getGeniusSimilaritiesDataAndBytesForGlobalID:(unsigned long long)arg1 intoData:(id)arg2;
@@ -28,7 +31,6 @@
 - (id)copyGeniusConfigrationDataAndBytes;
 - (unsigned int)defaultTrackCount;
 - (unsigned int)defaultMinTrackCount;
-- (BOOL)hasGeniusFeatureEnabled;
 - (BOOL)hasGeniusDataAvailable;
 - (BOOL)hasDatabase;
 - (unsigned long long)_getInt64ValueInTable:(id)arg1 column:(id)arg2 where:(id)arg3 limit:(unsigned int)arg4;
@@ -41,7 +43,5 @@
 - (BOOL)_copyBlobData:(id*)arg1 blobAllocType:(int)arg2 table:(id)arg3 blobColumn:(id)arg4 where:(id)arg5;
 - (void)_connect;
 - (void)_loadDatabaseAtPath:(id)arg1;
-- (id)database;
-- (id)init;
 
 @end

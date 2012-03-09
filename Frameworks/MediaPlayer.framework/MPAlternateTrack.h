@@ -13,14 +13,14 @@
 + (id)threeCharCodesForEncodedISO639_2_T:(id)arg1;
 + (id)copyOffTrack;
 
-- (id)initWithTrackID:(id)arg1 languageCode:(id)arg2 name:(id)arg3;
-- (id)humanReadableLanguage;
-- (int)compare:(id)arg1;
-- (id)name;
-- (id)languageCode;
-- (int)trackID;
 - (void)setName:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)initWithTrackID:(id)arg1 languageCode:(id)arg2 name:(id)arg3;
+- (id)humanReadableLanguage;
+- (id)languageCode;
+- (int)trackID;
+- (int)compare:(id)arg1;
+- (id)name;
 
 @end

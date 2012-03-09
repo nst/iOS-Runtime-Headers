@@ -32,6 +32,14 @@
 @property(retain) NSURL * baseURL;
 
 
+- (void)parserDidEndDocument:(id)arg1;
+- (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
+- (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
+- (void)parser:(id)arg1 foundCharacters:(id)arg2;
+- (void)parser:(id)arg1 foundCDATA:(id)arg2;
+- (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
+- (id)description;
+- (void)dealloc;
 - (void)setBaseURL:(id)arg1;
 - (void)setParentGenerator:(id)arg1;
 - (void)setParentElementSetter:(SEL)arg1;
@@ -56,19 +64,11 @@
 - (BOOL)tracksRootElement;
 - (id)parentGenerator;
 - (id)initWithParser:(id)arg1 parentGenerator:(id)arg2 parentElementSetter:(SEL)arg3 element:(id)arg4;
-- (void)parserDidEndDocument:(id)arg1;
-- (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
-- (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
-- (void)parser:(id)arg1 foundCharacters:(id)arg2;
-- (void)parser:(id)arg1 foundCDATA:(id)arg2;
-- (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
-- (id)characters;
-- (void)parser:(id)arg1 validationErrorOccurred:(id)arg2;
 - (id)baseURL;
-- (id)description;
-- (void)dealloc;
-- (int)parsingState;
+- (id)characters;
 - (id)element;
 - (void)setElement:(id)arg1;
+- (int)parsingState;
+- (void)parser:(id)arg1 validationErrorOccurred:(id)arg2;
 
 @end

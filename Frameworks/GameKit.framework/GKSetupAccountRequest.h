@@ -11,12 +11,12 @@
 @property(retain) NSDictionary * parameters;
 
 
+- (void)dealloc;
 - (void)setParameters:(id)arg1;
 - (id)parameters;
 - (BOOL)authenticationRequired;
 - (BOOL)shouldProcessInBackground;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

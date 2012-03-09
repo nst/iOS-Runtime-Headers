@@ -10,8 +10,8 @@
 }
 
 
+- (void)main;
 - (void)didTimeOut:(id)arg1;
 - (void)addAssertion:(id)arg1;
-- (void)main;
 
 @end

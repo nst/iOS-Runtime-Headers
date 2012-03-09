@@ -19,7 +19,6 @@
 @property(retain) NSArray * preEnabledDataclasses;
 
 
-- (id)plugins;
 - (id)init;
 - (void)dealloc;
 - (id)specifierForAccountType:(id)arg1;
@@ -34,6 +33,7 @@
 - (int)numAddControllersInStack;
 - (id)specifiers;
 - (void)handleURL:(id)arg1;
+- (id)plugins;
 - (void)finishedAccountSetup;
 
 @end

@@ -15,8 +15,6 @@
 + (struct __CFArray { }*)_ns2cfCookies:(id)arg1;
 + (id)cookieWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;
 
-- (id)comment;
-- (id)path;
 - (BOOL)_isExpired;
 - (int)_compareForHeaderOrder:(id)arg1;
 - (id)MaxAge;
@@ -40,19 +38,21 @@
 - (BOOL)isSessionOnly;
 - (id)initWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;
 - (id)_key;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)domain;
 - (id)properties;
 - (id)initWithProperties:(id)arg1;
 - (unsigned int)version;
 - (BOOL)isSecure;
 - (id)value;
+- (id)path;
 - (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)comment;
 
 @end

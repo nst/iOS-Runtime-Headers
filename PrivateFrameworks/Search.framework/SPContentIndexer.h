@@ -20,6 +20,7 @@
 + (void)initialize;
 + (id)indexerForDisplayIdentifier:(id)arg1 category:(id)arg2;
 
+- (void)dealloc;
 - (void)cancelSearch;
 - (void*)copyResultForIdentifier:(id)arg1;
 - (BOOL)nextSearchResults:(id*)arg1;
@@ -34,6 +35,5 @@
 - (BOOL)_openOrCreateStore;
 - (id)_indexPath;
 - (id)_storePath;
-- (void)dealloc;
 
 @end

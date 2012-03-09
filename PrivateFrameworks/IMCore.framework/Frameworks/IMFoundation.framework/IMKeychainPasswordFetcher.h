@@ -15,7 +15,7 @@
 @property(retain) NSString * _password;
 
 
-- (id)initWithUsername:(id)arg1 service:(id)arg2;
+- (void)dealloc;
 - (void)set_password:(id)arg1;
 - (id)_password;
 - (void)set_username:(id)arg1;
@@ -24,6 +24,6 @@
 - (id)_service;
 - (void)_workerThreadFinished;
 - (void)_workerThread;
-- (void)dealloc;
+- (id)initWithUsername:(id)arg1 service:(id)arg2;
 
 @end

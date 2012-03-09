@@ -24,25 +24,8 @@
 @property(readonly) NSMutableArray * sections;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)_setBottomInset:(float)arg1;
-- (void)textFieldStartedEditing:(id)arg1;
-- (id)sourceURLForRUITableViewRow;
-- (void)rowIsFirstResponder:(id)arg1;
-- (void)rowDidChange:(id)arg1;
-- (void)rowDidEndEditing:(id)arg1;
-- (void)automaticKeyboardDidHide:(id)arg1;
-- (void)setDefaultFirstResponderRow:(id)arg1;
-- (void)_registerForNotifications:(BOOL)arg1;
-- (id)indexPathForRow:(id)arg1;
-- (void)activateRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
-- (id)defaultFirstResponderRow;
-- (void)_clearPickers;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectPickerFrame;
-- (id)objectModelRowForIndexPath:(id)arg1;
-- (BOOL)isShowingPicker;
-- (void)populatePostbackDictionary:(id)arg1;
-- (void)viewDidLayout;
+- (id)init;
+- (void)dealloc;
 - (id)sections;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (id)tableView;
@@ -62,9 +45,26 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)automaticKeyboardDidShow:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (void)_textChanged:(id)arg1;
+- (void)_setBottomInset:(float)arg1;
+- (void)textFieldStartedEditing:(id)arg1;
+- (id)sourceURLForRUITableViewRow;
+- (void)rowIsFirstResponder:(id)arg1;
+- (void)rowDidChange:(id)arg1;
+- (void)rowDidEndEditing:(id)arg1;
+- (void)automaticKeyboardDidHide:(id)arg1;
+- (void)setDefaultFirstResponderRow:(id)arg1;
+- (void)_registerForNotifications:(BOOL)arg1;
+- (id)indexPathForRow:(id)arg1;
+- (void)activateRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
+- (id)defaultFirstResponderRow;
+- (void)_clearPickers;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectPickerFrame;
+- (id)objectModelRowForIndexPath:(id)arg1;
+- (BOOL)isShowingPicker;
+- (void)populatePostbackDictionary:(id)arg1;
+- (void)viewDidLayout;
+- (void)automaticKeyboardDidShow:(id)arg1;
 
 @end

@@ -29,6 +29,9 @@
 
 + (id)syntheticTouchWithPoint:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 window:(id)arg3;
 
+- (unsigned char)_pathIndex;
+- (unsigned char)_pathIdentity;
+- (float)_pathMajorRadius;
 - (void)set_pathMajorRadius:(float)arg1;
 - (struct CGPoint { float x1; float x2; })locationInWindow;
 - (void)setLocationInWindow:(struct CGPoint { float x1; float x2; })arg1;
@@ -44,8 +47,5 @@
 - (int)phase;
 - (void)setWindow:(id)arg1;
 - (id)window;
-- (unsigned char)_pathIndex;
-- (unsigned char)_pathIdentity;
-- (float)_pathMajorRadius;
 
 @end

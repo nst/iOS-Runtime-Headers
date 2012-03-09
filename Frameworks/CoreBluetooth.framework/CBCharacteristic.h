@@ -23,14 +23,14 @@
 @property(readonly) CBService * service;
 
 
-- (id)UUID;
-- (unsigned int)properties;
-- (id)value;
-- (void)setValue:(id)arg1;
 - (id)service;
 - (BOOL)isNotifying;
 - (BOOL)isBroadcasted;
 - (id)descriptors;
 - (void)setDescriptors:(id)arg1;
+- (unsigned int)properties;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (id)UUID;
 
 @end

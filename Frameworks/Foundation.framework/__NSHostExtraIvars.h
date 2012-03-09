@@ -21,7 +21,6 @@
 @property BOOL startedResolving;
 
 
-- (void)finalize;
 - (void)setStartedResolving:(BOOL)arg1;
 - (BOOL)startedResolving;
 - (struct dispatch_queue_s { }*)callbackQueue;
@@ -31,8 +30,9 @@
 - (id)thingToResolve;
 - (void)setResolveType:(int)arg1;
 - (int)resolveType;
-- (void)cleanup;
 - (id)init;
 - (void)dealloc;
+- (void)cleanup;
+- (void)finalize;
 
 @end

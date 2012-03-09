@@ -26,10 +26,11 @@
 + (id)_pinsWithType:(int)arg1;
 + (struct CGSize { float x1; float x2; })_perceivedSize;
 
+- (id)description;
+- (void)dealloc;
+- (id)_image;
 - (id)_internal;
 - (int)_state;
-- (void)_setDelegate:(id)arg1;
-- (id)_delegate;
 - (void)setAnnotation:(id)arg1;
 - (void)_reset;
 - (BOOL)isHighlighted;
@@ -64,10 +65,9 @@
 - (void)_setRotationRadians:(float)arg1 withAnimation:(id)arg2;
 - (void)_setMapType:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
-- (id)_image;
 - (void)_removeAllAnimations;
+- (void)_setDelegate:(id)arg1;
+- (id)_delegate;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
-- (id)description;
-- (void)dealloc;
 
 @end

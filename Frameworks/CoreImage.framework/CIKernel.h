@@ -7,11 +7,11 @@
 }
 
 
+- (id)description;
+- (id)init;
 - (BOOL)_validOptions:(id)arg1;
 - (int)_argumentTypeAtIndex:(unsigned long)arg1;
 - (void*)_internalRepresentation;
 - (id)_initWithInternalRepresentation:(void*)arg1;
-- (id)description;
-- (id)init;
 
 @end

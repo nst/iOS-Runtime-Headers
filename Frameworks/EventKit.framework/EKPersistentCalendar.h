@@ -30,8 +30,8 @@
 
 - (void)setExternalID:(id)arg1;
 - (id)externalID;
-- (id)colorString;
-- (id)UUID;
+- (id)description;
+- (id)init;
 - (void)setSharedOwnerAddress:(id)arg1;
 - (void)setSharedOwnerName:(id)arg1;
 - (void)setSharingStatus:(int)arg1;
@@ -62,7 +62,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (BOOL)isHidden;
-- (id)description;
-- (id)init;
+- (id)colorString;
+- (id)UUID;
 
 @end

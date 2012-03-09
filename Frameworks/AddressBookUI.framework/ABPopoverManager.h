@@ -43,14 +43,6 @@
 + (void)popoverController:(id)arg1 presentPopoverFromView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4 representDelegate:(id)arg5;
 + (void)stopAutorotatePresenter:(id)arg1;
 
-- (void)windowWillRotate:(id)arg1;
-- (void)windowDidRotate:(id)arg1;
-- (void)keyboardDidShow:(id)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)forwardInvocation:(id)arg1;
-- (BOOL)autorotates;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)init;
 - (void)dealloc;
@@ -80,5 +72,13 @@
 - (void)startAutorotateActionSheet:(id)arg1 fromView:(id)arg2;
 - (void)startAutorotateActionSheet:(id)arg1 fromBarButtonItem:(id)arg2;
 - (void)startAutorotatePopoverController:(id)arg1 showFromView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 representDelegate:(id)arg4;
+- (void)windowWillRotate:(id)arg1;
+- (void)windowDidRotate:(id)arg1;
+- (void)keyboardDidShow:(id)arg1;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)forwardInvocation:(id)arg1;
+- (BOOL)autorotates;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (id)methodSignatureForSelector:(SEL)arg1;
 
 @end

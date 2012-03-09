@@ -19,6 +19,15 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (void)release;
+- (void)dealloc;
+- (unsigned int)options;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (double)timestamp;
+- (void)setTimestamp:(double)arg1;
 - (void)incrementRefCount;
 - (int)decrementRefCount;
 - (int)externalReferenceCount;
@@ -30,14 +39,5 @@
 - (id)relationshipCaches;
 - (id)initWithOptions:(unsigned int)arg1 andTimestamp:(double)arg2;
 - (void)setRelationshipCaches:(id)arg1;
-- (unsigned int)options;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (double)timestamp;
-- (void)setTimestamp:(double)arg1;
-- (unsigned int)retainCount;
-- (id)retain;
-- (void)release;
-- (void)dealloc;
 
 @end

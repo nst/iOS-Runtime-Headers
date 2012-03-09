@@ -17,15 +17,15 @@
 
 + (id)checkWithRequest:(id)arg1 target:(id)arg2 resultObject:(id)arg3 selector:(SEL)arg4 controller:(id)arg5 contextInfo:(id)arg6;
 
-- (void)start;
-- (void)finalize;
+- (void)cancel;
+- (void)dealloc;
 - (id)initWithRequest:(id)arg1 target:(id)arg2 resultObject:(id)arg3 selector:(SEL)arg4 controller:(id)arg5 contextInfo:(id)arg6;
 - (void)_continueWithPolicy:(int)arg1;
 - (id)_actionInformationWithURL:(id)arg1;
 - (BOOL)_isForbiddenFileLoad;
 - (void)_askPolicyDelegate;
-- (void)cancel;
-- (void)dealloc;
+- (void)finalize;
+- (void)start;
 - (id)contextInfo;
 
 @end

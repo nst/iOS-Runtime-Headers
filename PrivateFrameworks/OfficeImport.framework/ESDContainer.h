@@ -16,6 +16,9 @@
 + (void)readChildrenOfObject:(struct EshObject { int (**x1)(); unsigned short x2; }*)arg1 reader:(struct OcReader { }*)arg2 toArray:(id)arg3;
 + (void)pbReadChildrenOfObject:(struct EshObject { int (**x1)(); unsigned short x2; }*)arg1 toArray:(id)arg2 state:(id)arg3;
 
+- (void)dealloc;
+- (void)removeChild:(id)arg1;
+- (unsigned int)childCount;
 - (id)addContainerChildOfType:(unsigned short)arg1;
 - (struct EshObject { int (**x1)(); unsigned short x2; }*)addAtomChildOfType:(unsigned short)arg1;
 - (id)insertEshChild:(struct EshObject { int (**x1)(); unsigned short x2; }*)arg1 at:(unsigned int)arg2;
@@ -41,8 +44,5 @@
 - (void)insertChild:(id)arg1 at:(unsigned int)arg2;
 - (id)firstChildOfType:(unsigned short)arg1;
 - (id)childAt:(unsigned int)arg1;
-- (void)removeChild:(id)arg1;
-- (unsigned int)childCount;
-- (void)dealloc;
 
 @end

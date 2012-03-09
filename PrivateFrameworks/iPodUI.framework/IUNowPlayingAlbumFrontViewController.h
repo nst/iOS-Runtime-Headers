@@ -13,6 +13,9 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (void)_displayValuesDidChangeNotification:(id)arg1;
 - (void)infoOverlayDidFinishHiding:(id)arg1;
 - (void)_crossedTimeMarkerNotification:(id)arg1;
 - (id)copyOverlayViewForTransitionToItem:(id)arg1;
@@ -29,6 +32,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (int)statusBarStyle;
+- (void)setItem:(id)arg1;
 - (void)artworkDidZoomOut;
 - (void)artworkWillZoomOut;
 - (void)artworkDidZoomIn;
@@ -39,8 +43,5 @@
 - (void)coverFlowDidTransitionOut:(BOOL)arg1;
 - (void)coverFlowWillTransitionOut:(BOOL)arg1;
 - (void)_handleDoubleTap:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setItem:(id)arg1;
 
 @end

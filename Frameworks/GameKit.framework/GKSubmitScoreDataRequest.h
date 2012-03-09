@@ -11,10 +11,10 @@
 @property(retain) GKScore * score;
 
 
+- (void)dealloc;
 - (void)setScore:(id)arg1;
 - (id)score;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

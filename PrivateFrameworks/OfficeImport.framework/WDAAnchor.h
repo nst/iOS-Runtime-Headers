@@ -36,6 +36,11 @@
 @property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
 
 
+- (id)init;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (int)zIndex;
+- (void)setZIndex:(int)arg1;
 - (double)wrapDistanceLeft;
 - (double)wrapDistanceTop;
 - (double)wrapDistanceRight;
@@ -62,10 +67,5 @@
 - (void)setTextWrappingMode:(int)arg1;
 - (void)setTextWrappingModeType:(int)arg1;
 - (BOOL)isBehindText;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)zIndex;
-- (void)setZIndex:(int)arg1;
-- (id)init;
 
 @end

@@ -35,6 +35,8 @@
 @property(retain) NSMutableDictionary * selectedAssetsByAlbumID;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setBannerButtonAction:(id)arg1;
 - (id)bannerButtonAction;
 - (void)setBannerButtonType:(int)arg1;
@@ -52,7 +54,5 @@
 - (void)setDestinationAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)handleDoneButton:(id)arg1;
 - (struct NSObject { Class x1; }*)destinationAlbum;
-- (id)init;
-- (void)dealloc;
 
 @end

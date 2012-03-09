@@ -11,12 +11,12 @@
 @property <GEOSupportedTileSetsServerProxyDelegate> * delegate;
 
 
-- (void)loadAttributionBadgeDataHiDPI:(BOOL)arg1 isIPad:(BOOL)arg2 handler:(id)arg3;
 - (void)_updateDidFail;
 - (id)documentDataFromDisk;
 - (void)updateAttributionBadgeDataHiDPI:(BOOL)arg1 isIPad:(BOOL)arg2 handler:(id)arg3;
 - (void)updateDocument;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)loadAttributionBadgeDataHiDPI:(BOOL)arg1 isIPad:(BOOL)arg2 handler:(id)arg3;
 
 @end

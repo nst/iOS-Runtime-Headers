@@ -9,10 +9,10 @@
 }
 
 
+- (void)dealloc;
 - (struct __CFArray { }*)dayIndexes;
 - (struct __CFArray { }*)days;
 - (id)initWithOccurrences:(struct __CFArray { }*)arg1 days:(struct __CFArray { }*)arg2 dayIndexes:(struct __CFArray { }*)arg3;
-- (void)dealloc;
 - (struct __CFArray { }*)occurrences;
 
 @end

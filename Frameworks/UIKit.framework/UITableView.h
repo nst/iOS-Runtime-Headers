@@ -218,15 +218,12 @@
 @property(retain) UIColor * separatorColor;
 @property(retain) UIView * tableHeaderView;
 @property(retain) UIView * tableFooterView;
-@property(retain) id scrollTestParameters;
 @property(getter=_sectionContentInset,setter=_setSectionContentInset:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionContentInset;
 
 + (void)_endIgnoringResponderChanges;
 + (void)_beginIgnoringResponderChanges;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)_setKeepsFirstResponderVisibleOnBoundsChange:(BOOL)arg1;
 - (BOOL)_keepsFirstResponderVisibleOnBoundsChange;
@@ -438,8 +435,6 @@
 - (void)_setDisplaysCellContentStringsOnTapAndHold:(BOOL)arg1;
 - (BOOL)_displaysCellContentStringsOnTapAndHold;
 - (void)_updateTableViewGestureRecognizersForEditing;
-- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
-- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3;
 - (void)_scrollToTopHidingTableHeader:(BOOL)arg1;
 - (void)_endDisplayingCellContentStringCallout;
 - (void)_sendWillBeginEditingForIndexPath:(id)arg1;
@@ -519,11 +514,9 @@
 - (void)longPress:(id)arg1;
 - (void)handleSwipe:(id)arg1;
 - (int)numberOfSections;
-- (void)_scroll;
-- (id)scrollTestParameters;
-- (void)setScrollTestParameters:(id)arg1;
 - (unsigned int)_countStringRowCount;
 - (int)style;
+- (id)_scrollTestExtraResults;
 - (void)_adjustForAutomaticKeyboardInfo:(id)arg1 animated:(BOOL)arg2 lastAdjustment:(float*)arg3;
 - (BOOL)_scrollsToMakeFirstResponderVisible;
 - (void)_addContentSubview:(id)arg1 atBack:(BOOL)arg2;
@@ -563,8 +556,10 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)dequeueReusableCellWithIdentifier:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleGlobalRows;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)endUpdates;
 - (void)beginUpdates;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setAllowsMultipleSelection:(BOOL)arg1;
 - (id)cellForRowAtIndexPath:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRowAtIndexPath:(id)arg1;
@@ -575,13 +570,13 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)reloadData;
 - (void)didMoveToWindow;
+- (void)setDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (void)ab_scrollToRowAtIndexPathRespectingCaretOfActiveTextView:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
 - (void)ab_delayedScrollRespectingCaretOfActiveTextViewToCell:(id)arg1 atIndexPath:(id)arg2 atScrollPosition:(int)arg3 animated:(BOOL)arg4;
 - (void)ab_internalScrollToRowAtIndexPathRespectingCaretOfActiveTextView:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;

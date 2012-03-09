@@ -68,9 +68,8 @@
 + (void)refreshLoggingParameters;
 + (unsigned int)doBlockingConnectionCheck;
 
-- (void)setDelegate:(id)arg1;
-- (BOOL)setActive:(BOOL)arg1;
-- (id)delegate;
+- (id)init;
+- (void)dealloc;
 - (void)processApplicationQuery:(id)arg1 responseDict:(id*)arg2;
 - (void)setRemoteVideoLayerContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 camera:(int)arg2;
 - (void)receivedConnectionBlob:(id)arg1 forTransactionID:(id)arg2 callID:(id)arg3 error:(id)arg4;
@@ -174,7 +173,8 @@
 - (void)processRelayUpdate:(int)arg1 updateDict:(id)arg2 didOriginateRequest:(BOOL)arg3;
 - (void)asyncConnectionBlobRequestForParticipantID:(id)arg1 transactionID:(id)arg2;
 - (void)processServerSideApplicationQuery:(id)arg1 responseDict:(id*)arg2;
-- (id)init;
-- (void)dealloc;
+- (BOOL)setActive:(BOOL)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

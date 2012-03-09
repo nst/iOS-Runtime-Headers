@@ -12,6 +12,7 @@
     NSData *_thumbnailData;
     NSMutableArray *_thumbnailImages;
     NSMutableDictionary *_options;
+    NSData *_optionsData;
     BOOL _optionsAccessed;
     BOOL _missingHeader;
     struct CGSize { 
@@ -22,6 +23,7 @@
 
 @property(readonly) int format;
 @property(readonly) NSMutableDictionary * options;
+@property(readonly) NSData * optionsData;
 @property(readonly) struct CGSize { float x1; float x2; } size;
 @property(readonly) int bitsPerComponent;
 @property(readonly) int bytesPerPixel;
@@ -31,11 +33,9 @@
 + (BOOL)saveBakedThumbnailsOfImages:(id)arg1 toFile:(id)arg2 format:(int)arg3 orientation:(int*)arg4 options:(id)arg5 delegate:(id)arg6;
 + (id)thumbnailsWithContentsOfFile:(id)arg1 format:(int)arg2;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRect;
-- (int)format;
-- (id)options;
-- (int)bitsPerComponent;
-- (struct CGSize { float x1; float x2; })size;
+- (int)count;
+- (id)description;
+- (void)dealloc;
 - (unsigned long)thumbnailLength;
 - (id)initWithContentsOfFile:(id)arg1 format:(int)arg2;
 - (id)initWithData:(id)arg1 format:(int)arg2;
@@ -47,12 +47,15 @@
 - (id)initWithData:(id)arg1 format:(int)arg2 readOnly:(BOOL)arg3;
 - (int)bytesPerPixel;
 - (id)thumbnailDataAtIndex:(int)arg1;
+- (id)optionsData;
 - (id)initWithContentsOfFile:(id)arg1 format:(int)arg2 readOnly:(BOOL)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRect;
+- (id)options;
+- (int)bitsPerComponent;
+- (struct CGSize { float x1; float x2; })size;
+- (int)format;
 - (struct CGImage { }*)thumbnailImageAtIndex:(int)arg1;
 - (BOOL)saveToFile:(id)arg1;
 - (id)initWithImages:(id)arg1 format:(int)arg2 orientation:(int*)arg3 options:(id)arg4 delegate:(id)arg5;
-- (int)count;
-- (id)description;
-- (void)dealloc;
 
 @end

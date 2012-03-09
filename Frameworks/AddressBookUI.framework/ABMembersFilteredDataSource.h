@@ -17,20 +17,20 @@
 @property <ABMembersDataSourceDelegate> * delegate;
 
 
+- (void)dealloc;
+- (void)setStyleProvider:(id)arg1;
+- (id)styleProvider;
+- (void)removeAllRecords;
+- (void)addRecords:(id)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void*)addressBook;
-- (id)records;
-- (void)setDelegate:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)delegate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
-- (void)removeAllRecords;
-- (void)addRecords:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)records;
 
 @end

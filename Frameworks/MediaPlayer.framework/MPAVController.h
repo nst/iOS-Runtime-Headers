@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSTimer, MPQueuePlayer, MPQueueFeeder, MPAVItem, NSNotification, MPAudioDeviceController, MPVideoView, MPAVErrorResolver, MPAVControllerToAggregateDCommunicator, MPAVDestinationBrowser, NSDictionary, NSArray, MPAVPlaylistManager, NSString, NSMutableArray, CALayer;
+@class NSTimer, MPQueuePlayer, MPQueueFeeder, MPAVItem, NSNotification, MPAudioDeviceController, MPVideoView, MPAVErrorResolver, MPAVControllerToAggregateDCommunicator, MPAVDestinationBrowser, NSDictionary, NSArray, AVAudioSessionMediaPlayerOnly, MPAVPlaylistManager, NSString, NSMutableArray, CALayer;
 
 @interface MPAVController : NSObject <AVAudioSessionDelegateMediaPlayerOnly, MPAVErrorResolverDelegate> {
     MPAVPlaylistManager *_avPlaylistManager;
-    double _connectionFailTime;
     BOOL _forceSynchronousQueueFilling;
     unsigned int _valid : 1;
     int _playbackMode;
@@ -73,6 +72,7 @@
     unsigned int _displayOverridePlaybackState;
     unsigned int _bufferingState;
     NSNotification *_delayedPlaybackStateNotification;
+    struct dispatch_source_s { } *_stallTimerSource;
     NSMutableArray *_queueFeederStateStack;
     int _feederMode;
     MPAVControllerToAggregateDCommunicator *_aggregateDCommunicator;
@@ -134,15 +134,18 @@
 @property(readonly) BOOL currentItemIsRental;
 @property(readonly) BOOL isInExtendedMode;
 @property BOOL forceSynchronousQueueFilling;
+@property(readonly) AVAudioSessionMediaPlayerOnly * _playerAVAudioSession;
 
++ (id)sharedInstance;
 + (id)_playerKeysToObserve;
 + (id)_controllerKeysToObserve;
 + (id)_itemKeysToObserve;
++ (BOOL)isNetworkSupportedPath:(id)arg1;
 + (BOOL)outputSupportsAC3;
 + (void)initialize;
-+ (id)sharedInstance;
-+ (BOOL)isNetworkSupportedPath:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (double)nextFadeOutDuration;
 - (BOOL)forceSynchronousQueueFilling;
 - (id)destinationBrowser;
@@ -163,6 +166,7 @@
 - (BOOL)isFullScreenVideoMode;
 - (id)routeNameForVolumeControl;
 - (BOOL)hasVolumeControl;
+- (void)setEQPreset:(int)arg1;
 - (void)setDisableAirPlayMirroringDuringPlayback:(BOOL)arg1;
 - (BOOL)disableAirPlayMirroringDuringPlayback;
 - (void)setAlwaysPlayWheneverPossible:(BOOL)arg1;
@@ -207,6 +211,7 @@
 - (void)_resumeTickTimer;
 - (void)_pauseBookkeepingTimer;
 - (void)_pauseTickTimer;
+- (BOOL)_isVideoLayerAttachedToPlayer;
 - (BOOL)destinationIsTVOut;
 - (BOOL)isInExtendedMode;
 - (void)_firstVideoFrameDisplayed:(id)arg1;
@@ -273,6 +278,7 @@
 - (void)_updateCurrentTimeToNextStartTimeForQueueFeeder:(id)arg1 withItemIndex:(int)arg2;
 - (id)_avPlaylistManager;
 - (void)_updateScanningRate;
+- (id)_playerAVAudioSession;
 - (BOOL)currentItemIsRental;
 - (void)_setState:(unsigned int)arg1;
 - (void)_unregisterForAVPlaylistManagerObservation:(id)arg1;
@@ -280,6 +286,7 @@
 - (void)_setVideoLayerOnAVController:(id)arg1 force:(BOOL)arg2;
 - (void)_clearVideoLayer;
 - (void)_cancelUpdateCurrentItemBookkeepingTimer;
+- (void)_cancelStallTimer;
 - (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
 - (void)_closedCaptioningStatusDidChangeNotification:(id)arg1;
 - (void)_itemTimeMarkersAvailableNotification:(id)arg1;
@@ -290,12 +297,15 @@
 - (void)setShuffleType:(unsigned int)arg1;
 - (void)setRepeatType:(unsigned int)arg1;
 - (void)ensureFeederIsClass:(Class)arg1;
+- (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
+- (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)shuffleType;
 - (unsigned int)repeatType;
 - (void)reloadFeederWithStartQueueIndex:(unsigned int)arg1;
 - (void)feederChangedContents:(id)arg1;
 - (void)setAutoclearingDisplayOverridePlaybackState:(unsigned int)arg1;
 - (void)setUbiquitousBookkeepingEnabled:(BOOL)arg1;
+- (BOOL)isCurrentItemReady;
 - (void)setSubtitlesEnabled:(BOOL)arg1;
 - (BOOL)subtitlesEnabled;
 - (BOOL)videoFrameDisplayOnResumeDisabled;
@@ -305,6 +315,7 @@
 - (void)togglePlayback;
 - (void)disableAutoplayForCurrentItem;
 - (void)setVideoFrameDisplayOnResumeDisabled:(BOOL)arg1;
+- (BOOL)muted;
 - (BOOL)stopAtEnd;
 - (double)timeOfSeekableEnd;
 - (double)timeOfSeekableStart;
@@ -337,15 +348,22 @@
 - (unsigned int)bufferingState;
 - (void)_itemPlaybackDidEndNotification:(id)arg1;
 - (void)setStopAtEnd:(BOOL)arg1;
-- (void)setUseApplicationAudioSession:(BOOL)arg1;
 - (BOOL)useApplicationAudioSession;
+- (void)setCurrentTime:(double)arg1 options:(int)arg2;
 - (unsigned int)activeShuffleType;
 - (unsigned int)activeRepeatType;
 - (id)feeder;
 - (id)videoView;
-- (void)play;
-- (float)volume;
-- (void)setVolume:(float)arg1;
+- (void)endInterruptionFromInterruptor:(id)arg1 category:(id)arg2 flags:(unsigned int)arg3;
+- (BOOL)isAirPlayVideoActive;
+- (BOOL)allowsAirPlayVideo;
+- (void)setAllowsAirPlayVideo:(BOOL)arg1;
+- (void)setCurrentTime:(double)arg1;
+- (double)currentTime;
+- (float)rate;
+- (BOOL)setRate:(float)arg1;
+- (BOOL)isPlaying;
+- (void)beginInterruption;
 - (void)pause;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
@@ -356,28 +374,15 @@
 - (unsigned int)state;
 - (BOOL)isValid;
 - (void)applicationWillTerminate;
-- (void)endInterruptionFromInterruptor:(id)arg1 category:(id)arg2 flags:(unsigned int)arg3;
-- (BOOL)allowsAirPlayVideo;
-- (BOOL)isAirPlayVideoActive;
-- (void)setAllowsAirPlayVideo:(BOOL)arg1;
-- (BOOL)isPlaying;
-- (BOOL)setRate:(float)arg1;
-- (float)rate;
-- (double)currentTime;
-- (void)setCurrentTime:(double)arg1;
-- (void)beginInterruption;
-- (id)init;
-- (void)dealloc;
-- (BOOL)isCurrentItemReady;
-- (void)setCurrentTime:(double)arg1 options:(int)arg2;
-- (BOOL)muted;
-- (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
-- (void)setEQPreset:(int)arg1;
+- (void)play;
+- (float)volume;
+- (void)setVolume:(float)arg1;
+- (void)setUseApplicationAudioSession:(BOOL)arg1;
 - (void)_updateProgress:(struct __CFRunLoopTimer { }*)arg1;
 - (BOOL)reloadWithDataSource:(id)arg1;
 - (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
 - (void)switchToContextForQuery:(id)arg1 behindTopController:(BOOL)arg2;
+- (void)switchToContextForQuery:(id)arg1 behindTopController:(BOOL)arg2 withPlaybackDataSource:(id)arg3;
 - (void)_updateFeederModeFromCurrentItem;
 - (id)currentMediaQuery;
 - (id)currentMediaItem;

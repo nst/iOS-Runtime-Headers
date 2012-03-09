@@ -6,7 +6,7 @@
 }
 
 
-- (id)currentPingIntervalForSpecifier:(id)arg1;
 - (id)specifiers;
+- (id)currentPingIntervalForSpecifier:(id)arg1;
 
 @end

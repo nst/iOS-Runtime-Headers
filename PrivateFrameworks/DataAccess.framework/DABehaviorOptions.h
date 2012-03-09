@@ -6,6 +6,7 @@
 }
 
 + (BOOL)isCustomerInstall;
++ (void)_startListeningForNotifications;
 + (BOOL)isAppleInternalInstall;
 + (BOOL)isInHoldingPattern;
 + (BOOL)sendMeCardEverywhere;
@@ -13,10 +14,9 @@
 + (BOOL)allIMAPServersSupportNotesSearch;
 + (id)mobileMeServerURL;
 + (id)APSEnv;
++ (BOOL)compressRequests;
 + (BOOL)calDAVRemindersForAll;
-+ (BOOL)icalserverHack;
-+ (BOOL)googleHack;
-+ (int)calDAVTimeout;
++ (double)defaultDAVProbeTimeout;
 + (BOOL)ignoreBadLDAPCerts;
 + (int)refreshThrottleTime;
 + (BOOL)_shouldForceCookies:(BOOL*)arg1;
@@ -27,7 +27,6 @@
 + (double)defaultEASTaskTimeoutOutWasFound:(BOOL*)arg1;
 + (BOOL)writeOutBrokenCancelationRequests;
 + (BOOL)ignoreSupportedCommands;
-+ (void)_startListeningForNotifications;
 
 
 @end

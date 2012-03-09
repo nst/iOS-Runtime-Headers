@@ -16,6 +16,8 @@
 
 + (id)sharedDataController;
 
+- (id)init;
+- (void)dealloc;
 - (id)achievements;
 - (void)performMigrationIfNecessary;
 - (void)clearAchievementForName:(id)arg1;
@@ -61,7 +63,5 @@
 - (id)allWorkouts;
 - (void)setCalibrationData:(id)arg1 forSensorSerialNumber:(id)arg2 date:(id)arg3 isWalk:(BOOL)arg4;
 - (id)calibrationDataForSensorSerialNumber:(id)arg1 walkCalibrationDate:(id*)arg2 runCalibrationDate:(id*)arg3;
-- (id)init;
-- (void)dealloc;
 
 @end

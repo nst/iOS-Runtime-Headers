@@ -13,6 +13,8 @@
 @property(readonly) NSArray * payloads;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)payloadWithUUID:(id)arg1;
 - (BOOL)isManagedByProfileService;
 - (id)localizedPayloadSummaryByType;
@@ -25,7 +27,5 @@
 - (void)_sortPayloads;
 - (id)installationWarnings;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
 
 @end

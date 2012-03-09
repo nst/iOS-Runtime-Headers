@@ -11,16 +11,16 @@
 }
 
 
-- (void)setNormal:(id)arg1;
-- (void)setUp:(id)arg1;
-- (id)normal;
-- (id)up;
-- (void)setAnchor:(id)arg1;
-- (id)anchor;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)setAnchor:(id)arg1;
+- (id)anchor;
+- (void)setNormal:(id)arg1;
+- (void)setUp:(id)arg1;
+- (id)normal;
+- (id)up;
 
 @end

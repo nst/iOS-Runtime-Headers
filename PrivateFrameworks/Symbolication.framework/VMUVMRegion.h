@@ -33,14 +33,14 @@
 }
 
 
-- (unsigned int)protection;
-- (id)type;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
-- (BOOL)isSubmap;
-- (id)descriptionWithOptions:(unsigned int)arg1 maximumLength:(unsigned int)arg2;
-- (id)breakAtLength:(unsigned long)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (BOOL)isSubmap;
+- (id)descriptionWithOptions:(unsigned int)arg1 maximumLength:(unsigned int)arg2;
+- (id)breakAtLength:(unsigned long)arg1;
+- (id)type;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
+- (unsigned int)protection;
 
 @end

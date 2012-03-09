@@ -31,9 +31,11 @@
 @property ABSwellTextView * parent;
 
 
-- (id)parent;
-- (void)setParent:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
+- (BOOL)disallowsSetContentOffset;
+- (void)_updateStylesheet;
+- (void)_secretSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDisallowsSetContentOffset:(BOOL)arg1;
 - (void)setHighlightedTextColor:(id)arg1;
 - (id)highlightedTextColor;
 - (void)_endPinningInputViews;
@@ -48,11 +50,9 @@
 - (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShadowColor:(id)arg1;
 - (id)shadowColor;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
-- (BOOL)disallowsSetContentOffset;
-- (void)_updateStylesheet;
-- (void)_secretSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDisallowsSetContentOffset:(BOOL)arg1;
+- (id)parent;
+- (void)setParent:(id)arg1;
 
 @end

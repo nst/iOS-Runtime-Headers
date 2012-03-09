@@ -25,6 +25,8 @@
 @property int shakeState;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 - (float)_lowPass:(float)arg1;
 - (float)_highPass:(float)arg1;
@@ -43,7 +45,5 @@
 - (void)setShakeState:(int)arg1;
 - (void)_setSubtype:(int)arg1;
 - (id)_init;
-- (id)description;
-- (void)dealloc;
 
 @end

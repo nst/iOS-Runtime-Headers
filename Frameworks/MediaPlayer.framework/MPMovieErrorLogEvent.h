@@ -20,17 +20,17 @@
 @property struct MPMovieErrorLogEventInternal { id x1; } _internal;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)_initWithAVItemErrorLogEvent:(id)arg1;
 - (void)set_internal:(struct MPMovieErrorLogEventInternal { id x1; })arg1;
 - (struct MPMovieErrorLogEventInternal { id x1; })_internal;
-- (id)date;
-- (int)errorStatusCode;
-- (id)errorDomain;
 - (id)errorComment;
-- (id)URI;
-- (id)serverAddress;
+- (id)errorDomain;
+- (int)errorStatusCode;
 - (id)playbackSessionID;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)serverAddress;
+- (id)date;
+- (id)URI;
 
 @end

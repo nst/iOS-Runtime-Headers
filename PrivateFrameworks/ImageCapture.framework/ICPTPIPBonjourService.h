@@ -7,7 +7,9 @@
 }
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (void)removeClient:(id)arg1;
+- (void)addClient:(id)arg1;
 - (id)initWithHostPort:(unsigned long)arg1 hostName:(id)arg2 hostGUID:(id)arg3 bonjourServiceType:(id)arg4 bonjourTXTRecords:(id)arg5;
 - (BOOL)startService;
 - (int)destroyPTPDIPInstance:(id)arg1;
@@ -27,8 +29,6 @@
 - (int)createPTPDIPInstanceWithAddress:(struct __CFData { }*)arg1 fileDescriptor:(int)arg2;
 - (id)clientForPID:(unsigned long)arg1;
 - (id)delegate;
-- (void)dealloc;
-- (void)addClient:(id)arg1;
-- (void)removeClient:(id)arg1;
+- (void)setDelegate:(id)arg1;
 
 @end

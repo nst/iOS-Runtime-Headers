@@ -50,17 +50,15 @@
     BOOL _invalidResponse;
 }
 
++ (unsigned int)uniqueQueryID;
 + (BOOL)anyRequestLoading;
 + (id)serviceUnavailableError;
-+ (unsigned int)uniqueQueryID;
 
-- (void)_startedLoading;
-- (void)willParseData;
-- (void)loadStatusChanged;
-- (BOOL)receivedValidResponse:(id)arg1;
-- (void)didParseData;
-- (void)failWithError:(id)arg1;
 - (int)parseData:(id)arg1;
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
+- (void)_finishedLoading;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -68,9 +66,11 @@
 - (BOOL)isLoading;
 - (id)request;
 - (void)loadRequest:(id)arg1;
-- (void)_finishedLoading;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
+- (void)_startedLoading;
+- (void)willParseData;
+- (void)loadStatusChanged;
+- (BOOL)receivedValidResponse:(id)arg1;
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
 
 @end

@@ -23,6 +23,7 @@
 
 - (void)systemDidWake;
 - (void)systemWillSleep;
+- (void)dealloc;
 - (void)set_isSleeping:(BOOL)arg1;
 - (BOOL)_isSleeping;
 - (void)set_isConnected:(BOOL)arg1;
@@ -46,6 +47,5 @@
 - (void)reachabilityDidChange:(id)arg1;
 - (BOOL)isImmediatelyReachable;
 - (void)clear;
-- (void)dealloc;
 
 @end

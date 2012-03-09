@@ -13,13 +13,13 @@
 }
 
 
+- (void)dealloc;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)isModalTransitioning;
-- (void)controllerWasOrderedOut:(id)arg1;
 - (id)initWithPhoto:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2;
 - (void)_emailComposeSheetIsReady;
 - (BOOL)_isPerformingModalTransitionFromCamera;
@@ -28,6 +28,5 @@
 - (void)_updateNavigationBar;
 - (void)didMoveToPhotoAtIndex:(unsigned int)arg1;
 - (BOOL)_isAirPlayEnabled;
-- (void)dealloc;
 
 @end

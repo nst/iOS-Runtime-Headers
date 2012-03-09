@@ -12,6 +12,7 @@
     ML3MusicLibrary *_library3;
 }
 
++ (BOOL)flush;
 + (id)mediaFolderRelativePath:(id)arg1;
 + (void)commitAllDeferredWork;
 + (BOOL)isFlushEnabled;
@@ -38,15 +39,14 @@
 + (void)disableFlush;
 + (id)pathForResourceFileOrFolder:(int)arg1;
 + (id)mediaFolderPath;
-+ (BOOL)flush;
 
+- (void)dealloc;
+- (BOOL)flush;
 - (void)commitAllDeferredWork;
 - (void)scheduleFlushDatabase;
 - (void)mainThread_scheduleFlushDatabase;
 - (void)_autoflush;
 - (id)initWithBasePath:(id)arg1;
 - (void)_cancelAutoflush;
-- (BOOL)flush;
-- (void)dealloc;
 
 @end

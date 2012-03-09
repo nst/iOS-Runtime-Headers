@@ -121,6 +121,9 @@
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageRef:(struct CGImage { }*)arg2 imageOrientation:(int)arg3 allowZoomToFill:(BOOL)arg4 mode:(int)arg5;
 + (struct CGSize { float x1; float x2; })tvOutTileSize;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setVideoView:(id)arg1;
 - (id)videoView;
 - (id)thumbnailImage;
@@ -163,8 +166,9 @@
 - (id)expandableImageView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tileFrame;
 - (id)initForPageController;
-- (void)_adjustScrollViewVerticalContentOffset;
+- (void)_adjustZoomForEnteringMode:(BOOL)arg1;
 - (BOOL)isZoomedOut;
+- (void)_adjustScrollViewContentOffsetForInsets;
 - (void)_updateZoomScalesForView:(id)arg1;
 - (float)minZoomScale;
 - (float)zoomToFillScale;
@@ -176,9 +180,7 @@
 - (float)minRotatedScale;
 - (void)_requestFullSizeImage;
 - (void)_performDidEndZoomBlock;
-- (void)_adjustScrollViewContentInsetWithContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)tileIsOnScreen;
-- (void)_centerImageInScrollView;
 - (void)_setDefaultZoomScale;
 - (void)updateZoomScales;
 - (void)_updateModelPhotoWithImage:(id)arg1;
@@ -186,8 +188,9 @@
 - (BOOL)_clientIsWallpaper;
 - (void)_showHDRBadgeIfAppropriate;
 - (void)_repositionHDRBadge;
-- (void)_adjustZoomForEnteringMode:(BOOL)arg1;
 - (void)_updateGradientImageForOrientation:(int)arg1;
+- (void)_centerImageInScrollView;
+- (void)_updateContentInset;
 - (id)initWithPhoto:(id)arg1 image:(id)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 isThumbnail:(BOOL)arg4 imageOrientation:(int)arg5 allowZoomToFill:(BOOL)arg6 mode:(int)arg7;
 - (void)_configureViews;
 - (void)_setPhoto:(id)arg1;
@@ -216,7 +219,6 @@
 - (void)contentViewFrameChanged;
 - (void)ensureFullSizeImageLoaded;
 - (void)updateAfterCollapse;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForImageAtDefaultScale;
 - (void)setZoomingGesturesEnabled:(BOOL)arg1;
 - (void)forceZoomingGesturesEnabled;
 - (void)refreshTileWithFullScreenImage:(id)arg1;
@@ -226,8 +228,5 @@
 - (void)setTileDelegate:(id)arg1;
 - (void)setTVOut:(BOOL)arg1;
 - (id)initWithPhoto:(id)arg1 thumbnailImage:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

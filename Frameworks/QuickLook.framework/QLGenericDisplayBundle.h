@@ -16,12 +16,12 @@
 
 
 - (void)setError:(id)arg1;
+- (id)error;
+- (void)loadView;
 - (void)_loadPreviewItemInfos;
 - (void)_showLoadingProgress:(BOOL)arg1;
 - (void)loadWithHints:(id)arg1;
 - (void)prepareForSlidingIn:(id)arg1;
 - (void)_relayout;
-- (void)loadView;
-- (id)error;
 
 @end

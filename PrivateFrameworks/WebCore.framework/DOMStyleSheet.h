@@ -16,15 +16,15 @@
 @property(retain,readonly) DOMMediaList * media;
 
 
+- (void)dealloc;
+- (void)setDisabled:(BOOL)arg1;
+- (BOOL)disabled;
 - (void)finalize;
+- (id)type;
+- (id)title;
 - (id)ownerNode;
 - (id)parentStyleSheet;
 - (id)href;
 - (id)media;
-- (void)setDisabled:(BOOL)arg1;
-- (BOOL)disabled;
-- (id)type;
-- (id)title;
-- (void)dealloc;
 
 @end

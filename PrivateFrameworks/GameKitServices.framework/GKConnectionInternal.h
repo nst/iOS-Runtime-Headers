@@ -59,25 +59,35 @@
     NSMutableDictionary *_pidToRelayUpdateInfoMap;
     NSMutableDictionary *_initRelayQueue;
     NSMutableDictionary *_updateRelayQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _awdMetricsCallback;
+
     int _fPreReleased;
 }
 
 @property(retain) NSMutableDictionary * cdxSessions;
 @property(retain) CDXClient * cdxClient;
+@property id awdMetricsCallback;
 @property(retain) NSMutableDictionary * pidToConnectTimeoutSource;
 
 
+- (void)dealloc;
 - (void)updateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 - (void)initiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 - (void)connectParticipantsWithConnectionData:(id)arg1 withSessionInfo:(id)arg2;
-- (id)initWithParticipantID:(id)arg1;
+- (id)initWithParticipantID:(id)arg1 withOptions:(id)arg2;
 - (BOOL)convertPeerID:(id)arg1 toParticipantID:(id*)arg2;
 - (BOOL)convertParticipantID:(id)arg1 toPeerID:(id*)arg2;
 - (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
+- (id)initWithParticipantID:(id)arg1;
 - (void)preRelease;
 - (struct OpaqueGCKSession { }*)gckSession;
 - (void)setEventDelegate:(id)arg1;
 - (id)eventDelegate;
+- (void)setAwdMetricsCallback:(id)arg1;
+- (id)awdMetricsCallback;
 - (unsigned int)gckPID;
 - (id)networkStatisticsDictionaryForGCKStats:(void*)arg1;
 - (void)addEvent:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1 remotePeer:(unsigned int)arg2;
@@ -105,6 +115,5 @@
 - (void)CDXClientSession:(id)arg1 receivedData:(id)arg2 from:(int)arg3;
 - (void)CDXClient:(id)arg1 error:(id)arg2;
 - (void)CDXClient:(id)arg1 preblob:(id)arg2;
-- (void)dealloc;
 
 @end

@@ -12,6 +12,9 @@
 
 + (id)backChannelCommandName;
 
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
 - (BOOL)_callMessageUIServicesMethod:(id)arg1 userInfo:(id)arg2 reply:(id*)arg3 error:(id*)arg4 responseSelector:(SEL)arg5;
 - (void)_setServer:(id)arg1;
 - (void)_messageUIServiceDidTerminate:(id)arg1;
@@ -19,8 +22,5 @@
 - (id)_copyBackChannel;
 - (void)_notifyClientDidFinishWithError:(id)arg1;
 - (void)_setBackChannel:(id)arg1 responseSelector:(SEL)arg2;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
 
 @end

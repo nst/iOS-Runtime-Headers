@@ -19,6 +19,8 @@
 @property int orientation;
 
 
+- (void)setShift:(BOOL)arg1;
+- (void)dealloc;
 - (id)swipeTouch;
 - (id)shiftKeyTouch;
 - (float)flickDistance;
@@ -69,19 +71,17 @@
 - (id)candidateList;
 - (BOOL)performReturnAction;
 - (BOOL)doesKeyCharging;
-- (void)clearUnusedObjects;
 - (id)activationIndicatorView;
 - (BOOL)shouldShowIndicator;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
 - (void)deactivateActiveKeys;
 - (void)clearAllKeyDelegates;
+- (void)clearUnusedObjects;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (int)orientation;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setShift:(BOOL)arg1;
-- (void)dealloc;
 
 @end

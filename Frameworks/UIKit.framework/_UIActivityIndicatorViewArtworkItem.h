@@ -17,6 +17,8 @@
 @property(retain) NSArray * images;
 
 
+- (unsigned int)hash;
+- (void)dealloc;
 - (id)artKey;
 - (id)initWithArtKey:(id)arg1;
 - (void)setImages:(id)arg1;
@@ -25,7 +27,5 @@
 - (void)endContentAccess;
 - (BOOL)beginContentAccess;
 - (id)images;
-- (unsigned int)hash;
-- (void)dealloc;
 
 @end

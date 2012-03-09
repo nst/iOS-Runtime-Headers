@@ -6,21 +6,21 @@
 
 @interface CoreDAVRequestLogger : NSObject  {
     <CoreDAVAccountInfoProvider> *_provider;
-    NSArray *_responseHeadersSortDescriptors;
+    NSArray *_headerSortDescriptors;
     int _snippetsLogged;
 }
 
-@property(retain) NSArray * responseHeadersSortDescriptors;
+@property(retain) NSArray * headerSortDescriptors;
 
 
-- (id)responseHeadersSortDescriptors;
+- (void)dealloc;
+- (id)headerSortDescriptors;
 - (id)_inflateRequestBody:(id)arg1;
-- (void)setResponseHeadersSortDescriptors:(id)arg1;
+- (void)setHeaderSortDescriptors:(id)arg1;
 - (void)logCoreDAVResponseHeaders:(id)arg1 andStatusCode:(int)arg2;
 - (void)logCoreDAVResponseSnippet:(id)arg1;
 - (void)finishCoreDAVResponse;
 - (void)logCoreDAVRequest:(id)arg1;
 - (id)initWithProvider:(id)arg1;
-- (void)dealloc;
 
 @end

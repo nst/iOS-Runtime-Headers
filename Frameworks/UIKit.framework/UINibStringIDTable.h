@@ -10,9 +10,9 @@
 }
 
 
-- (id)initWithKeysTransferingOwnership:(id*)arg1 count:(unsigned int)arg2;
-- (BOOL)lookupKey:(id)arg1 identifier:(int*)arg2;
 - (int)count;
 - (void)dealloc;
+- (id)initWithKeysTransferingOwnership:(id*)arg1 count:(unsigned int)arg2;
+- (BOOL)lookupKey:(id)arg1 identifier:(int*)arg2;
 
 @end

@@ -11,6 +11,7 @@
 @property(retain) UIWindow * rotationDecider;
 
 
+- (void)dealloc;
 - (id)rotationDecider;
 - (void)setRotationDecider:(id)arg1;
 - (void)viewDidUnload;
@@ -19,6 +20,5 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)_presentViewController:(id)arg1 sendingView:(id)arg2 animated:(BOOL)arg3;
 - (void)didReceiveMemoryWarning;
-- (void)dealloc;
 
 @end

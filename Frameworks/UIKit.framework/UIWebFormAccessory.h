@@ -20,7 +20,8 @@
 @property(getter=isPreviousEnabled) BOOL previousEnabled;
 
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)_autofill;
 - (id)_tab;
 - (BOOL)isPreviousEnabled;
@@ -42,7 +43,6 @@
 - (void)clear:(id)arg1;
 - (id)_clearButton;
 - (id)delegate;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

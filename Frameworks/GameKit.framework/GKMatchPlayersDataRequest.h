@@ -29,6 +29,7 @@
 @property unsigned char matchVersion;
 
 
+- (void)dealloc;
 - (unsigned char)matchVersion;
 - (void)setCdxTicket:(id)arg1;
 - (void)setRelayPushes:(id)arg1;
@@ -50,10 +51,9 @@
 - (id)matches;
 - (void)setServerHosted:(BOOL)arg1;
 - (void)setMatchRequest:(id)arg1;
-- (id)key;
-- (id)request;
 - (id)connectionData;
 - (void)setConnectionData:(id)arg1;
-- (void)dealloc;
+- (id)key;
+- (id)request;
 
 @end

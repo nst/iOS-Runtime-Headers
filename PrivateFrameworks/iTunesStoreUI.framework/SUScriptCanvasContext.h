@@ -34,18 +34,17 @@
 @property float shadowOffsetX;
 @property float shadowOffsetY;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
+- (void)dealloc;
 - (void)saveState;
-- (float)shadowOffsetX;
-- (float)shadowOffsetY;
-- (void)beginPath;
 - (void)setLineJoin:(id)arg1;
 - (void)setLineCap:(id)arg1;
-- (id)attributeKeys;
 - (float)height;
+- (void)setShadowBlur:(float)arg1;
+- (float)shadowBlur;
 - (float)width;
 - (void)setMiterLimit:(float)arg1;
 - (float)miterLimit;
@@ -57,13 +56,14 @@
 - (void)closePath;
 - (void)setShadowColor:(id)arg1;
 - (id)shadowColor;
-- (void)dealloc;
+- (id)attributeKeys;
+- (float)shadowOffsetX;
+- (float)shadowOffsetY;
+- (void)beginPath;
 - (id)strokeStyle;
-- (float)shadowBlur;
 - (void)setStrokeStyle:(id)arg1;
 - (void)setShadowOffsetY:(float)arg1;
 - (void)setShadowOffsetX:(float)arg1;
-- (void)setShadowBlur:(float)arg1;
 - (void)setGlobalCompositeOperation:(id)arg1;
 - (void)setGlobalAlpha:(float)arg1;
 - (void)setFillStyle:(id)arg1;

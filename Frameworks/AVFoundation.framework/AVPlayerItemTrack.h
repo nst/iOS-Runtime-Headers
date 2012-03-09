@@ -13,22 +13,22 @@
 
 + (id)playerItemTrackWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;
 
-- (void)finalize;
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)isEnabled;
-- (id)fallbackTrack;
-- (id)_audioVolumeCurve;
-- (id)_initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;
-- (id)_playerItem;
-- (void)_setAudioVolumeCurve:(id)arg1;
-- (struct OpaqueFigPlaybackItem { }*)_figPlaybackItem;
-- (id)assetTrack;
-- (int)trackID;
-- (void)_addLayer:(id)arg1;
-- (void)_removeLayer:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (void)dealloc;
+- (id)_audioVolumeCurve;
+- (id)fallbackTrack;
+- (id)_initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;
+- (id)_playerItem;
+- (void)_setAudioVolumeCurve:(id)arg1;
+- (id)assetTrack;
+- (struct OpaqueFigPlaybackItem { }*)_figPlaybackItem;
+- (int)trackID;
+- (void)_removeLayer:(id)arg1;
+- (void)_addLayer:(id)arg1;
+- (void)finalize;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)isEnabled;
 
 @end

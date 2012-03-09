@@ -93,9 +93,23 @@
 @property BOOL addLabelToClosedListings;
 
 
-- (Class)responseClass;
-- (BOOL)readFrom:(id)arg1;
+- (id)capabilities;
+- (id)description;
+- (void)dealloc;
 - (void)setQuery:(id)arg1;
+- (Class)responseClass;
+- (void)setCapabilities:(id)arg1;
+- (int)tileSize;
+- (id)dictionaryRepresentation;
+- (void)setSourceType:(int)arg1;
+- (int)sourceType;
+- (int)type;
+- (void)setTileSize:(int)arg1;
+- (void)setType:(int)arg1;
+- (id)query;
+- (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (void)writeTo:(id)arg1;
 - (void)setHasAddLabelToClosedListings:(BOOL)arg1;
 - (BOOL)hasAddLabelToClosedListings;
 - (void)setHasAdjustViewport:(BOOL)arg1;
@@ -168,21 +182,7 @@
 - (void)setGaiaSid:(id)arg1;
 - (void)setKmlDocument:(id)arg1;
 - (void)setMapInfo:(id)arg1;
-- (unsigned int)requestTypeCode;
-- (void)writeTo:(id)arg1;
-- (int)tileSize;
-- (id)dictionaryRepresentation;
-- (void)setSourceType:(int)arg1;
-- (int)sourceType;
-- (int)type;
-- (void)setTileSize:(int)arg1;
-- (void)setType:(int)arg1;
-- (id)query;
-- (void)setCapabilities:(id)arg1;
-- (void)setMaxResults:(int)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)capabilities;
 - (int)maxResults;
+- (void)setMaxResults:(int)arg1;
 
 @end

@@ -15,11 +15,11 @@
 @property(readonly) NSDictionary * expansions;
 
 
-- (id)signature;
 - (id)description;
 - (void)dealloc;
 - (id)expansions;
 - (id)delimiter;
 - (id)initFromPlist:(id)arg1;
+- (id)signature;
 
 @end

@@ -54,19 +54,10 @@
 @property(retain) NSMutableArray * starRatings;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)setMapsURL:(id)arg1;
-- (void)setIsClosed:(BOOL)arg1;
-- (void)setIsUnverified:(BOOL)arg1;
-- (void)setTelephone:(id)arg1;
-- (id)notice;
-- (BOOL)hasNotice;
-- (void)setNotice:(id)arg1;
-- (id)categorys;
-- (id)categoryAtIndex:(unsigned int)arg1;
-- (unsigned int)categorysCount;
-- (void)addCategory:(id)arg1;
-- (void)setCategorys:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (void)addSource:(id)arg1;
 - (id)starRatings;
 - (id)ratings;
 - (BOOL)isClosed;
@@ -103,19 +94,28 @@
 - (void)setPhoneticName:(id)arg1;
 - (BOOL)hasName;
 - (id)sources;
-- (id)uRL;
-- (BOOL)hasURL;
-- (void)writeTo:(id)arg1;
-- (void)setVersion:(int)arg1;
 - (int)version;
 - (void)setURL:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)mapsURL;
 - (id)name;
-- (void)addSource:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (void)setVersion:(int)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (id)uRL;
+- (BOOL)hasURL;
+- (void)writeTo:(id)arg1;
+- (void)setMapsURL:(id)arg1;
+- (void)setIsClosed:(BOOL)arg1;
+- (void)setIsUnverified:(BOOL)arg1;
+- (void)setTelephone:(id)arg1;
+- (id)notice;
+- (BOOL)hasNotice;
+- (void)setNotice:(id)arg1;
+- (id)categorys;
+- (id)categoryAtIndex:(unsigned int)arg1;
+- (unsigned int)categorysCount;
+- (void)addCategory:(id)arg1;
+- (void)setCategorys:(id)arg1;
 - (id)initWithGMMSearchResult:(id)arg1;
 
 @end

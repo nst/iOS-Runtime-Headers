@@ -17,13 +17,13 @@
 @property(readonly) unsigned long long itemID;
 
 
+- (void)dealloc;
 - (unsigned long long)itemID;
 - (BOOL)_errorIsFairPlayError:(id)arg1;
 - (id)initWithItemID:(unsigned long long)arg1 rentalID:(unsigned long long)arg2 accountID:(unsigned long long)arg3;
 - (void)resolveError:(id)arg1;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
-- (void)dealloc;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (id)dataProvider;
 - (void)setDataProvider:(id)arg1;
 

@@ -20,6 +20,10 @@
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2 comparisonType:(int)arg3;
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (id)_ML3PredicateForML3EntityProperty:(id)arg1;
 - (id)ML3PredicateForContainer;
 - (id)ML3PredicateForTrack;
@@ -27,16 +31,12 @@
 - (id)descriptionOfValue:(id)arg1 forProperty:(id)arg2;
 - (void)set_internal:(struct MPMediaPropertyPredicateInternal { id x1; id x2; int x3; })arg1;
 - (struct MPMediaPropertyPredicateInternal { id x1; id x2; int x3; })_internal;
-- (void)setProperty:(id)arg1;
-- (id)property;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 - (int)comparisonType;
+- (void)setProperty:(id)arg1;
+- (id)property;
 
 @end

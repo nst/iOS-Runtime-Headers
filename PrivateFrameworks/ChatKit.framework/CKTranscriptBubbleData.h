@@ -18,6 +18,8 @@
 + (Class)balloonClassForMessage:(id)arg1;
 + (BOOL)messagePartRequiresURLification:(id)arg1;
 
+- (int)count;
+- (void)dealloc;
 - (int)indexForPart:(id)arg1;
 - (BOOL)bubbleData:(id)arg1 isEqualToIndex:(int)arg2;
 - (void)clearBubbleData;
@@ -72,7 +74,5 @@
 - (id)messageStatusTimestampAtIndex:(int)arg1;
 - (BOOL)textNeedsURLificationAtIndex:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeAtIndex:(int)arg1;
-- (int)count;
-- (void)dealloc;
 
 @end

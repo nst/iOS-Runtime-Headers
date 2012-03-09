@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
+@class NSMutableDictionary;
+
 @interface SSNetworkConstraints : NSObject <SSCoding, SSXPCCoding, NSCopying> {
     struct dispatch_queue_s { } *_dispatchQueue;
-    long long _sizeLimit2G;
-    long long _sizeLimit3G;
-    long long _sizeLimitWiFi;
+    NSMutableDictionary *_sizeLimits;
 }
 
 @property(getter=isAnyNetworkTypeEnabled,readonly) BOOL anyNetworkTypeEnabled;
@@ -16,20 +16,24 @@
 + (id)_newLegacyNetworkConstraintsWithDictionary:(id)arg1;
 + (id)_newModernNetworkConstraintsWithArray:(id)arg1;
 
-- (long long)sizeLimitForNetworkType:(int)arg1;
-- (void)setSizeLimitsWithStoreConstraintDictionary:(id)arg1;
-- (void)setAllNetworkTypesDisabled;
-- (void)setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
-- (void)_setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (long long)sizeLimitForNetworkType:(int)arg1;
 - (BOOL)isAnyNetworkTypeEnabled;
+- (void)disableCellularNetworkTypes;
+- (void)setSizeLimitsWithStoreConstraintDictionary:(id)arg1;
+- (void)setAllNetworkTypesDisabled;
+- (void)setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
+- (id)_copySizeLimits;
+- (void)_setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
+- (void)_disableAllNetworkTypes;
+- (long long)_sizeLimitForNetworkType:(int)arg1;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
+- (id)copyPropertyListEncoding;
+- (id)initWithPropertyListEncoding:(id)arg1;
 
 @end

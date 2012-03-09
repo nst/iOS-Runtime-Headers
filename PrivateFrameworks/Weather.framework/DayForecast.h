@@ -13,18 +13,18 @@
 }
 
 
+- (unsigned int)dayOfWeek;
+- (id)description;
+- (void)dealloc;
 - (void)setHigh:(id)arg1;
 - (void)setLow:(id)arg1;
-- (unsigned int)dayOfWeek;
-- (unsigned int)icon;
-- (void)setIcon:(unsigned int)arg1;
 - (void)setDayNumber:(unsigned int)arg1;
 - (unsigned int)dayNumber;
 - (int)compareDayNumberToDayForecast:(id)arg1;
+- (unsigned int)icon;
+- (void)setIcon:(unsigned int)arg1;
 - (id)high;
 - (id)low;
-- (id)description;
-- (void)dealloc;
 - (void)setDayOfWeek:(unsigned int)arg1;
 
 @end

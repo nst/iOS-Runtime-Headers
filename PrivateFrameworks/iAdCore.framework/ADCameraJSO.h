@@ -18,6 +18,12 @@
 + (id)scriptingKeys;
 + (id)scriptSelectors;
 
+- (id)init;
+- (void)dealloc;
+- (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
+- (void)imagePickerControllerDidCancel:(id)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (void)setInternalPictureURI:(id)arg1;
 - (id)internalPictureURI;
@@ -27,11 +33,5 @@
 - (void)_presentCamera;
 - (void)_finishWithSuccess:(BOOL)arg1;
 - (void)present:(id)arg1;
-- (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
-- (void)imagePickerControllerDidCancel:(id)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)delegate;
-- (id)init;
-- (void)dealloc;
 
 @end

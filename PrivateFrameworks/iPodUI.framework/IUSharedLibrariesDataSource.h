@@ -15,6 +15,9 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
+- (unsigned int)count;
+- (id)init;
+- (void)dealloc;
 - (id)connectingMediaLibrary;
 - (void)setConnectingMediaLibrary:(id)arg1;
 - (BOOL)shouldShowGlobalSectionHeader;
@@ -27,8 +30,5 @@
 - (void)configureMoreListTableCell:(id)arg1;
 - (id)sharedMediaLibraries;
 - (void)_mediaLibrariesDidChangeNotification:(id)arg1;
-- (unsigned int)count;
-- (id)init;
-- (void)dealloc;
 
 @end

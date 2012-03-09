@@ -9,10 +9,10 @@
 @property float labelColumnWidth;
 
 
+- (id)init;
 - (void)setLabelColumnWidth:(float)arg1;
 - (void)setString:(id)arg1 forLabelAtIndex:(int)arg2;
 - (float)labelColumnWidth;
-- (id)init;
 - (void)reloadLayoutInformation;
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;

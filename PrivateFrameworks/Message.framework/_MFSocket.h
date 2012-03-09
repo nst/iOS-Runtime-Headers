@@ -41,10 +41,10 @@
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (BOOL)allowsTrustPrompt;
 - (void)setAllowsTrustPrompt:(BOOL)arg1;
-- (void)abort;
-- (BOOL)isValid;
-- (BOOL)isReadable;
 - (id)init;
 - (void)dealloc;
+- (BOOL)isValid;
+- (BOOL)isReadable;
+- (void)abort;
 
 @end

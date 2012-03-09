@@ -18,6 +18,9 @@
 }
 
 
+- (void)dealloc;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
 - (int)styleCount;
 - (id)styleIdFromStyleName:(id)arg1;
 - (id)paragraphStyleWithStartingName:(id)arg1;
@@ -43,8 +46,5 @@
 - (id)styles;
 - (id)defaultTableStyle;
 - (void)setDefaultTableStyle:(id)arg1;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
-- (void)dealloc;
 
 @end

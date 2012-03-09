@@ -20,13 +20,13 @@
 - (BOOL)_hasExceptionsForSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
 - (int)actionForSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
 - (id)initWithAccessGroup:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)clearSavedTrustSettingsForTrust:(struct __SecTrust { }*)arg1 host:(id)arg2 service:(id)arg3;
 - (void)removeAllTrusts;
 - (void)removeSSLTrust:(struct __SecTrust { }*)arg1 hostname:(id)arg2 service:(id)arg3;
 - (void)addSSLTrust:(struct __SecTrust { }*)arg1 hostname:(id)arg2 service:(id)arg3;
 - (int)actionForSSLTrust:(struct __SecTrust { }*)arg1 hostname:(id)arg2 service:(id)arg3;
 - (int)_actionForTrust:(struct __SecTrust { }*)arg1 exceptions:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

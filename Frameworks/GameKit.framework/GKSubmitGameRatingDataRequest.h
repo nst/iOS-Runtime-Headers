@@ -13,12 +13,12 @@
 @property float rating;
 
 
+- (void)dealloc;
 - (void)setRating:(float)arg1;
 - (float)rating;
 - (id)game;
 - (void)setGame:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

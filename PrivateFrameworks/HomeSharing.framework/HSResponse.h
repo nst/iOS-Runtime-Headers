@@ -21,14 +21,14 @@
 + (id)responseWithResponse:(id)arg1;
 + (id)responseWithCode:(unsigned int)arg1 headerFields:(id)arg2 data:(id)arg3 error:(id)arg4;
 
+- (id)description;
+- (void)dealloc;
+- (id)responseData;
+- (unsigned int)responseCode;
+- (id)error;
 - (struct __CFHTTPMessage { }*)CFHTTPMessage;
 - (id)responseHeaderFields;
 - (id)initWithCode:(unsigned int)arg1 headerFields:(id)arg2 data:(id)arg3 error:(id)arg4;
 - (void)setCFHTTPMessage:(struct __CFHTTPMessage { }*)arg1;
-- (id)responseData;
-- (unsigned int)responseCode;
-- (id)error;
-- (id)description;
-- (void)dealloc;
 
 @end

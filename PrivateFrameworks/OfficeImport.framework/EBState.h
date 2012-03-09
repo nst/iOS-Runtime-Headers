@@ -62,6 +62,8 @@
 @property(readonly) <OCCancelDelegate> * cancelDelegate;
 
 
+- (BOOL)isCancelled;
+- (void)dealloc;
 - (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
 - (struct XlLinkTable { int (**x1)(); struct XlLinkLookupTable { int (**x_2_1_1)(); boolx_2_1_2; struct ChVector<XlXti*> { struct XlXti {} **x_3_2_1; struct XlXti {} **x_3_2_2; unsigned int x_3_2_3; unsigned int x_3_2_4; unsigned int x_3_2_5; } x_2_1_3; } x2; struct ChVector<XlLink*> { struct XlLink {} **x_3_1_1; struct XlLink {} **x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; } x3; }*)xlLinkTable;
 - (struct XlNameTable { int (**x1)(); struct CsSimpleHeapVector<XlRecord> { struct ChVector<XlRecord*> { struct XlRecord {} **x_1_2_1; struct XlRecord {} **x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_2_1_1; } x2; struct OcText { int (**x_3_1_1)(); int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; char *x_3_1_6; char *x_3_1_7; boolx_3_1_8; } x3[14]; }*)xlNameTable;
@@ -73,7 +75,5 @@
 - (id)workbook;
 - (id)resources;
 - (id)cancelDelegate;
-- (BOOL)isCancelled;
-- (void)dealloc;
 
 @end

@@ -13,12 +13,12 @@
 @property unsigned int profilePieces;
 
 
+- (void)dealloc;
 - (unsigned int)profilePieces;
 - (void)setProfilePieces:(unsigned int)arg1;
 - (id)playerIDs;
 - (void)setPlayerIDs:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

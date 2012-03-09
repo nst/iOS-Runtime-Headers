@@ -20,6 +20,8 @@
 }
 
 
+- (id)init;
+- (id).cxx_construct;
 - (BOOL)isRelative;
 - (void)setRelative:(BOOL)arg1;
 - (int)editAs;
@@ -28,7 +30,5 @@
 - (void)setTo:(struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })arg1;
 - (struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })from;
 - (void)setFrom:(struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })arg1;
-- (id).cxx_construct;
-- (id)init;
 
 @end

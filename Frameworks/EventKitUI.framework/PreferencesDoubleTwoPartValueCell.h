@@ -13,11 +13,11 @@
 @property(readonly) TwoPartTextLabel * twoPartTextLabel2;
 
 
+- (void)dealloc;
 - (id)twoPartTextLabel2;
 - (id)textLabel2;
 - (void)checkValueWidths;
 - (void)_layoutSubviewsCore;
 - (void)layoutText:(id)arg1 andValue:(id)arg2;
-- (void)dealloc;
 
 @end

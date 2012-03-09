@@ -29,6 +29,7 @@
 @property float value;
 
 
+- (void)dealloc;
 - (float)value;
 - (void)setValue:(float)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -40,7 +41,6 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)canHandleSwipes;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (void)setStarWidth:(float)arg1;
 - (void)setExplanationText:(id)arg1;
 - (void)setHitPadding:(struct CGSize { float x1; float x2; })arg1;

@@ -48,6 +48,12 @@
 @property(retain) NSString * title;
 
 
+- (void)setExtraAttributes:(id)arg1;
+- (id)extraAttributes;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)iconData;
 - (void)setPreviewText:(id)arg1;
 - (id)dateAdded;
 - (void)setDateAdded:(id)arg1;
@@ -85,20 +91,14 @@
 - (void)setAddress:(id)arg1;
 - (id)address;
 - (id)localizedTitle;
-- (id)UUID;
-- (BOOL)isInserted;
+- (id)previewText;
 - (BOOL)isEditable;
 - (unsigned int)identifier;
 - (id)title;
 - (void)setTitle:(id)arg1;
 - (BOOL)isHidden;
-- (id)previewText;
-- (void)setExtraAttributes:(id)arg1;
-- (id)extraAttributes;
-- (id)iconData;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)UUID;
+- (BOOL)isInserted;
 - (id)syncKey;
 - (void)setSyncKey:(id)arg1;
 - (id)serverID;

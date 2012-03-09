@@ -17,6 +17,7 @@
 @property unsigned char inviteVersion;
 
 
+- (void)dealloc;
 - (void)setInviteVersion:(unsigned char)arg1;
 - (id)acceptGameInviteResponse;
 - (void)setInvite:(id)arg1;
@@ -25,10 +26,9 @@
 - (unsigned char)inviteVersion;
 - (id)header;
 - (void)handleResponseFromServer:(id)arg1;
-- (id)key;
-- (id)request;
 - (id)connectionData;
 - (void)setConnectionData:(id)arg1;
-- (void)dealloc;
+- (id)key;
+- (id)request;
 
 @end

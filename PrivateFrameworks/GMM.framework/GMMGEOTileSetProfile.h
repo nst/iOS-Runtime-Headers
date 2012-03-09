@@ -18,6 +18,9 @@
 
 + (id)sharedProfile;
 
+- (int)style;
+- (int)scale;
+- (int)size;
 - (unsigned int)operatingEdition;
 - (id)multiTileURL;
 - (id)baseURLString;
@@ -30,8 +33,5 @@
 - (BOOL)isChina;
 - (int)maxChinaZoomLevel;
 - (void)setIsChina:(BOOL)arg1;
-- (int)style;
-- (int)scale;
-- (int)size;
 
 @end

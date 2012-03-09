@@ -13,6 +13,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithWorkbook:(id)arg1 worksheet:(id)arg2 rowNumber:(int)arg3 columnNumber:(int)arg4;
 - (id)workbook;
 - (unsigned int)resolveName:(id)arg1;
@@ -28,6 +29,5 @@
 - (int)columnNumber;
 - (unsigned int)createIndexWithType:(int)arg1 firstSheetIndex:(unsigned int)arg2 lastSheetIndex:(unsigned int)arg3;
 - (unsigned int)resolveSheet:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -37,7 +37,9 @@
 
 
 - (BOOL)sendData:(id)arg1;
+- (void)dealloc;
 - (void)invalidate;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (void)setTicket:(id)arg1;
 - (id)inboundHandler;
@@ -55,7 +57,5 @@
 - (id)decrypt:(id)arg1 ticket:(id)arg2;
 - (void)recvRaw:(id)arg1 ticket:(id)arg2;
 - (id)initWithCDXClient:(id)arg1 ticket:(id)arg2 sessionKey:(id)arg3;
-- (id)delegate;
-- (void)dealloc;
 
 @end

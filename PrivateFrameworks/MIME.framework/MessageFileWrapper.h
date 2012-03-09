@@ -16,7 +16,6 @@
 }
 
 
-- (void)setCreator:(unsigned long)arg1;
 - (id)messageID;
 - (id)meetingStorePersistentID;
 - (void)setContentID:(id)arg1;
@@ -24,8 +23,6 @@
 - (id)symbolicLinkDestination;
 - (id)contentID;
 - (BOOL)isPlaceholder;
-- (unsigned long)creator;
-- (id)path;
 - (void)setFileAttributes:(id)arg1;
 - (BOOL)isSymbolicLink;
 - (id)fileWrappers;
@@ -34,9 +31,9 @@
 - (id)initRegularFileWithContents:(id)arg1;
 - (id)fileAttributes;
 - (BOOL)isDirectory;
+- (id)description;
+- (void)dealloc;
 - (void)setMessageID:(id)arg1;
-- (void)setFilename:(id)arg1;
-- (id)filename;
 - (void)setFinderFlags:(unsigned short)arg1;
 - (unsigned short)finderFlags;
 - (id)inferredMimeType;
@@ -44,6 +41,9 @@
 - (BOOL)isPDFFile;
 - (id)initSymbolicLinkWithDestination:(id)arg1;
 - (void)_isImage:(BOOL*)arg1 orPDFFile:(BOOL*)arg2;
+- (void)setMimeType:(id)arg1;
+- (void)setEventUniqueID:(id)arg1;
+- (void)setMeetingStorePersistentID:(id)arg1;
 - (id)regularFileContents;
 - (BOOL)isRegularFile;
 - (id)initWithPath:(id)arg1;
@@ -52,12 +52,12 @@
 - (id)mimeType;
 - (unsigned long)type;
 - (id)URL;
+- (id)path;
 - (void)setType:(unsigned long)arg1;
-- (void)setMimeType:(id)arg1;
-- (void)setEventUniqueID:(id)arg1;
-- (void)setMeetingStorePersistentID:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (unsigned long)creator;
+- (void)setFilename:(id)arg1;
+- (id)filename;
+- (void)setCreator:(unsigned long)arg1;
 - (BOOL)isDisplayableByWebKit;
 - (float)minimumZoomFontSize;
 - (id)preferredFilenameStrippingZipIfNeededUseApplications:(BOOL)arg1;

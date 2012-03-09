@@ -22,16 +22,16 @@
 @property(copy) id successHandler;
 @property(copy) id errorHandler;
 
-+ (id)providerName;
 + (unsigned short)provider;
++ (id)providerName;
 
+- (id)errorHandler;
+- (void)setErrorHandler:(id)arg1;
+- (void)cancel;
+- (void)dealloc;
 - (void)reverseGeocode:(id)arg1 success:(id)arg2 error:(id)arg3;
 - (id)successHandler;
 - (void)setSuccessHandler:(id)arg1;
-- (id)errorHandler;
-- (void)setErrorHandler:(id)arg1;
 - (void)forwardGeocode:(id)arg1 success:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
-- (void)cancel;
-- (void)dealloc;
 
 @end

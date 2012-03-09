@@ -26,7 +26,16 @@
 + (void)clearCachedDatabaseData;
 + (id)sharedMusicController;
 
+- (id)init;
+- (void)dealloc;
+- (void)pause;
+- (id)_init;
 - (void)play;
+- (void)endSeeking;
+- (void)beginSeekingForward;
+- (void)beginSeekingBackward;
+- (void)_nowPlayingItemChanged:(id)arg1;
+- (BOOL)isNowPlaying;
 - (id)latestSelectedPlaylistName;
 - (unsigned long long)persistentUIDForWorkoutMixIndex:(unsigned int)arg1;
 - (unsigned long long)persistentUIDForPlaylistIndex:(unsigned int)arg1;
@@ -59,14 +68,5 @@
 - (void)selectPreviousSong;
 - (void)selectNextSong;
 - (BOOL)shouldControlMusic;
-- (void)pause;
-- (id)_init;
-- (void)_nowPlayingItemChanged:(id)arg1;
-- (BOOL)isNowPlaying;
-- (id)init;
-- (void)dealloc;
-- (void)endSeeking;
-- (void)beginSeekingForward;
-- (void)beginSeekingBackward;
 
 @end

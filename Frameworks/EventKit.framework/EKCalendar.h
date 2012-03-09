@@ -27,7 +27,10 @@
 + (id)typeDescription:(int)arg1;
 
 - (id)externalID;
-- (id)colorString;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)calendarIdentifier;
 - (void)setIsMainCalendarForSource:(BOOL)arg1;
 - (BOOL)isMainCalendarForSource;
 - (void)setLoadFlags:(unsigned long)arg1;
@@ -60,7 +63,6 @@
 - (int)allowedEntityTypes;
 - (BOOL)commit:(id*)arg1;
 - (BOOL)refresh;
-- (BOOL)remove:(id*)arg1;
 - (void)reset;
 - (void)setSource:(id)arg1;
 - (id)source;
@@ -71,10 +73,8 @@
 - (struct CGColor { }*)CGColor;
 - (void)setTitle:(id)arg1;
 - (BOOL)isHidden;
-- (id)calendarIdentifier;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (BOOL)remove:(id*)arg1;
+- (id)colorString;
 - (id)uiColor;
 
 @end

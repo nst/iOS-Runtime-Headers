@@ -8,13 +8,13 @@
     NSString *_mode;
 }
 
-@property(retain,readonly) NSArray * capabilities;
+@property(readonly) NSArray * capabilities;
 @property(retain) NSString * mode;
 
 
+- (id)capabilities;
+- (void)dealloc;
 - (id)mode;
 - (void)setMode:(id)arg1;
-- (void)dealloc;
-- (id)capabilities;
 
 @end

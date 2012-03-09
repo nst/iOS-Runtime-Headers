@@ -39,6 +39,8 @@
 + (id)AudioOnlyVCCapabilities;
 + (id)VideoOnlyVCCapabilities;
 
+- (id)description;
+- (id)init;
 - (void)setPreferredAudioCodec:(unsigned int)arg1;
 - (void)setActualAudioCodec:(unsigned int)arg1;
 - (void)setPreferredVideoCodec:(unsigned int)arg1;
@@ -69,7 +71,5 @@
 - (void)setRequiresWifi:(BOOL)arg1;
 - (void)setIsAudioEnabled:(BOOL)arg1;
 - (void)setIsVideoEnabled:(BOOL)arg1;
-- (id)description;
-- (id)init;
 
 @end

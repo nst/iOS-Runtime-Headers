@@ -11,6 +11,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)handleJobListDidChange;
 - (void)pushSingleJobAnimated:(BOOL)arg1;
 - (void)updateJobInfo:(id)arg1;
@@ -28,7 +30,5 @@
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -11,6 +11,10 @@
 @property(getter=isGeocoding,readonly) BOOL geocoding;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)_notifyPartialResult:(id)arg1;
+- (id)_placemarkWithLocation:(id)arg1;
 - (void)cancelGeocode;
 - (void)geocodeAddressString:(id)arg1 completionHandler:(id)arg2;
 - (void)geocodeAddressDictionary:(id)arg1 completionHandler:(id)arg2;
@@ -18,8 +22,6 @@
 - (void)reverseGeocodeLocation:(id)arg1 localResultsOnly:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)_notifyResult:(id)arg1 error:(id)arg2;
 - (void)_notifyError:(id)arg1;
-- (void)_notifyPartialResult:(id)arg1;
-- (id)_placemarkWithLocation:(id)arg1;
 - (void)_notifyResult:(id)arg1;
 - (id)_placemarkWithPlace:(id)arg1;
 - (void)_notifyCancel;
@@ -33,7 +35,5 @@
 - (BOOL)isGeocoding;
 - (void)reverseGeocodeLocation:(id)arg1 heading:(double)arg2 completionHandler:(id)arg3;
 - (void)reverseGeocodeLocation:(id)arg1 heading:(double)arg2 localResultsOnly:(BOOL)arg3 completionHandler:(id)arg4;
-- (id)init;
-- (void)dealloc;
 
 @end

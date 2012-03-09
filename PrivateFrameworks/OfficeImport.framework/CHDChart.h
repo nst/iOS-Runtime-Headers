@@ -38,6 +38,15 @@
 
 + (id)binaryEffects:(BOOL)arg1;
 
+- (id)init;
+- (void)dealloc;
+- (int)direction;
+- (unsigned int)childCount;
+- (void)setDirection:(int)arg1;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (id)sheet;
+- (id)children;
 - (int)styleId;
 - (bool)isAutoTitleDeleted;
 - (bool)isPlotVisibleCellsOnly;
@@ -90,14 +99,5 @@
 - (void)addChild:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;
 - (id)styleMatrix;
-- (id)sheet;
-- (id)children;
-- (int)direction;
-- (unsigned int)childCount;
-- (void)setDirection:(int)arg1;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

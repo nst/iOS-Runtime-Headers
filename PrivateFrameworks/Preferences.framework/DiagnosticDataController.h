@@ -6,8 +6,8 @@
 }
 
 
-- (void)viewDidLoad;
 - (id)init;
 - (id)specifiers;
+- (void)viewDidLoad;
 
 @end

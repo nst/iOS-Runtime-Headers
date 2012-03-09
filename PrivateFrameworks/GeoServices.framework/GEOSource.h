@@ -16,7 +16,8 @@
 @property(retain) NSString * sourceVersion;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)sourceVersion;
 - (id)sourceId;
 - (id)sourceName;
@@ -24,9 +25,8 @@
 - (void)setSourceVersion:(id)arg1;
 - (void)setSourceId:(id)arg1;
 - (void)setSourceName:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

@@ -6,8 +6,8 @@
     Class isa;
 }
 
-+ (id)initialize;
 + (id)class;
++ (id)initialize;
 
 
 @end

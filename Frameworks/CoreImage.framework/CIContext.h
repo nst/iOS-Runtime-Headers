@@ -2,22 +2,29 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface CIContext : NSObject  {
-    void *_priv;
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    } _mutex;
+    struct CIContextInternal { struct Context {} *x1; struct _opaque_pthread_mutex_t { long x_2_1_1; BOOL x_2_1_2[40]; } x2; boolx3; id x4; } *_priv;
 }
 
++ (id)context;
++ (id)contextWithOptions:(id)arg1;
++ (struct Context { int (**x1)(); unsigned int x2; struct CGColorSpace {} *x3; struct CGColorSpace {} *x4; }*)glesInternalContextOptions:(id)arg1;
 + (id)contextWithEAGLContext:(id)arg1 options:(id)arg2;
 + (id)contextWithEAGLContext:(id)arg1;
 + (id)_singletonContext;
 + (id)glesContextOptions:(id)arg1;
 + (id)clContextOptions:(id)arg1;
-+ (id)contextWithOptions:(id)arg1;
-+ (id)context;
 
+- (id)init;
+- (void)dealloc;
+- (void)unlock;
+- (void)lock;
+- (struct CGImage { }*)createCGImage:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGSize { float x1; float x2; })outputImageMaximumSize;
 - (struct CGSize { float x1; float x2; })inputImageMaximumSize;
 - (struct CGImage { }*)createCGImage:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 format:(int)arg3;
@@ -31,18 +38,12 @@
 - (void)render:(id)arg1 toCVPixelBuffer:(struct __CVBuffer { }*)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 colorSpace:(struct CGColorSpace { }*)arg4;
 - (struct CGColorSpace { }*)_colorspace;
 - (struct CGImage { }*)createCGImage:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 format:(int)arg3 colorSpace:(struct CGColorSpace { }*)arg4;
-- (void*)_internalRepresentation;
+- (void)_gpuContextCheck;
 - (id)_initWithInternalRepresentation:(void*)arg1;
 - (id)initWithEAGLContext:(id)arg1 options:(id)arg2;
 - (id)initWithEAGLContext:(id)arg1;
-- (id).cxx_construct;
-- (void)unlock;
-- (void)lock;
-- (struct CGImage { }*)createCGImage:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct __IOSurface { }*)createIOSurface:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (unsigned long)maximumOutputImageSize;
 - (unsigned long)maximumInputImageSize;
-- (id)init;
-- (void)dealloc;
 
 @end

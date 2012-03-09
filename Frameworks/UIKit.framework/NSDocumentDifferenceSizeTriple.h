@@ -15,11 +15,11 @@
 @property(readonly) NSDocumentDifferenceSize * betweenPreviousSavingAndSaving;
 
 
-- (id)betweenPreviousSavingAndSaving;
-- (id)betweenPreservingPreviousVersionAndSaving;
-- (id)dueToRecentChangesBeforeSaving;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)betweenPreviousSavingAndSaving;
+- (id)betweenPreservingPreviousVersionAndSaving;
+- (id)dueToRecentChangesBeforeSaving;
 
 @end

@@ -57,11 +57,11 @@
 - (BOOL)supportsOutboxCopy;
 - (unsigned long long)maximumMessageBytes;
 - (BOOL)authenticateUsingAccount:(id)arg1;
-- (int)quit;
-- (void)abort;
-- (void)setDelegate:(id)arg1;
-- (int)state;
 - (id)init;
 - (void)dealloc;
+- (int)state;
+- (void)setDelegate:(id)arg1;
+- (int)quit;
+- (void)abort;
 
 @end

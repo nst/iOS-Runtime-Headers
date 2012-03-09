@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class <NSObject><NSCopying>, NSMutableOrderedSet, NSIndexSet, PLIndexMapper, NSMutableIndexSet, PLManagedAlbumList, PLPhotoLibrary, NSString, NSPredicate;
+@class <NSObject><NSCopying>, NSMutableOrderedSet, PLIndexMapper, NSIndexSet, NSMutableIndexSet, PLManagedAlbumList, PLPhotoLibrary, NSString, NSPredicate;
 
-@interface PLFilteredAlbumList : NSObject <PLIndexMapperDataSource, PLIndexMappingCache, PLAlbumContainer> {
+@interface PLFilteredAlbumList : NSObject <PLAlbumContainer, PLIndexMapperDataSource, PLIndexMappingCache> {
     PLIndexMapper *_indexMapper;
     NSMutableIndexSet *_filteredIndexes;
     PLManagedAlbumList *backingAlbumList;
@@ -13,28 +13,25 @@
     NSMutableOrderedSet *_albums;
 }
 
-@property(readonly) PLIndexMapper * indexMapper;
-@property(readonly) NSIndexSet * filteredIndexes;
-@property(readonly) <NSObject><NSCopying> * cachedIndexMapState;
 @property(readonly) int albumListType;
 @property int filter;
 @property(readonly) NSMutableOrderedSet * albums;
 @property(readonly) BOOL canEditAlbums;
 @property(readonly) PLPhotoLibrary * photoLibrary;
+@property(readonly) PLIndexMapper * indexMapper;
 @property(retain) PLManagedAlbumList * backingAlbumList;
 @property(retain) NSPredicate * predicate;
 @property(retain) NSMutableOrderedSet * _albums;
 @property(readonly) NSString * _prettyDescription;
 @property(readonly) NSString * _typeDescription;
+@property(readonly) NSIndexSet * filteredIndexes;
+@property(readonly) <NSObject><NSCopying> * cachedIndexMapState;
 
 + (id)filteredAlbumList:(id)arg1 filter:(int)arg2;
 
-- (void)setPredicate:(id)arg1;
-- (id)predicate;
-- (int)filter;
-- (id)_typeDescription;
-- (id)identifier;
-- (void)setFilter:(int)arg1;
+- (id)managedObjectContext;
+- (id)description;
+- (void)dealloc;
 - (void)replaceFilteredAlbumsAtIndexes:(id)arg1 withFilteredValues:(id)arg2;
 - (void)replaceObjectInFilteredAlbumsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)removeFilteredAlbumsAtIndexes:(id)arg1;
@@ -53,20 +50,23 @@
 - (id)backingAlbumList;
 - (void)setBackingAlbumList:(id)arg1;
 - (id)initWithBackingAlbumList:(id)arg1 filter:(int)arg2;
+- (id)indexMapper;
+- (id)cachedIndexMapState;
 - (void)mappedDataSourceChanged:(id)arg1;
 - (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
-- (id)cachedIndexMapState;
-- (id)indexMapper;
 - (id)filteredIndexes;
-- (int)albumListType;
+- (id)_typeDescription;
+- (id)identifier;
+- (void)setFilter:(int)arg1;
+- (int)filter;
+- (void)setPredicate:(id)arg1;
+- (id)predicate;
 - (id)_prettyDescription;
+- (int)albumListType;
 - (BOOL)hasAtLeastOneAlbum;
 - (BOOL)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
 - (BOOL)canEditAlbums;
 - (id)photoLibrary;
 - (id)albums;
-- (id)managedObjectContext;
-- (id)description;
-- (void)dealloc;
 
 @end

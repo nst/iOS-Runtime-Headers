@@ -22,9 +22,17 @@
 @property(readonly) long long handlerIdentifier;
 
 
+- (void)setDownloadPhasesToIgnore:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (long long)handlerIdentifier;
 - (void)setSessionsShouldBlockOtherDownloads:(BOOL)arg1;
 - (void)setSessionsNeedPowerAssertion:(BOOL)arg1;
+- (void)_connectToDaemon;
+- (void)_setValue:(void*)arg1 forProperty:(const char *)arg2;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (BOOL)sessionsShouldBlockOtherDownloads;
 - (BOOL)sessionsNeedPowerAssertion;
 - (void)resetDisavowedSessions;
@@ -37,13 +45,5 @@
 - (BOOL)_sendAuthenticationSessionWithMessage:(void*)arg1;
 - (void)_sendDisconnectMessage;
 - (void)_handleMessage:(void*)arg1 fromServerConnection:(struct _xpc_connection_s { }*)arg2;
-- (void)setDelegate:(id)arg1;
-- (void)setDownloadPhasesToIgnore:(id)arg1;
-- (void)_setValue:(void*)arg1 forProperty:(const char *)arg2;
-- (id)delegate;
-- (void)_connectToDaemon;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

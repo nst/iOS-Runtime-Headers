@@ -16,6 +16,8 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })windowBounds:(id)arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInPoints:(id)arg1;
 
+- (void)dealloc;
+- (void)done;
 - (long)records;
 - (int)playSetROP2:(unsigned int)arg1 :(const char *)arg2;
 - (int)playSetTextCharExtra:(unsigned int)arg1 :(const char *)arg2;
@@ -81,7 +83,5 @@
 - (int)playBitBlt:(unsigned int)arg1 :(const char *)arg2;
 - (int)playSetTextJustification:(unsigned int)arg1 :(const char *)arg2;
 - (int)playUnknown:(unsigned int)arg1 :(unsigned int)arg2 :(const char *)arg3;
-- (void)done;
-- (void)dealloc;
 
 @end

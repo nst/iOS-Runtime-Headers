@@ -6,7 +6,7 @@
 
 @interface AVMetadataItemInternal : NSObject  {
     struct OpaqueFigMetadataReader { } *reader;
-    int itemIndex;
+    long itemIndex;
     NSString *keySpace;
     id key;
     NSString *commonKey;

@@ -12,11 +12,11 @@
 
 + (id)sharedSearchRequester;
 
+- (id)init;
+- (void)dealloc;
+- (id)hostnameForProviderID:(unsigned short)arg1;
 - (void)cancelSearch:(id)arg1;
 - (void)search:(id)arg1 finished:(id)arg2 spellingSuggestion:(id)arg3 refinement:(id)arg4 networkActivity:(id)arg5 error:(id)arg6;
 - (void)registerProvider:(Class)arg1;
-- (id)hostnameForProviderID:(unsigned short)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

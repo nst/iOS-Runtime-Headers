@@ -58,6 +58,11 @@
 
 + (id)_createTouchesWithGSEvent:(struct __GSEvent { }*)arg1 phase:(int)arg2 view:(id)arg3;
 
+- (id)description;
+- (unsigned char)_pathIndex;
+- (unsigned char)_pathIdentity;
+- (float)_pathMajorRadius;
+- (void)dealloc;
 - (float)_distanceFrom:(id)arg1 inView:(id)arg2;
 - (int)_compareIndex:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_previousLocationInWindow:(id)arg1;
@@ -104,10 +109,5 @@
 - (void)setIsTap:(BOOL)arg1;
 - (void)setWindow:(id)arg1;
 - (id)window;
-- (id)description;
-- (unsigned char)_pathIndex;
-- (unsigned char)_pathIdentity;
-- (float)_pathMajorRadius;
-- (void)dealloc;
 
 @end

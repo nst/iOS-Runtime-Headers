@@ -11,11 +11,11 @@
 @property(retain) NSArray * columnCells;
 
 
+- (void)dealloc;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)removeFromSuperview;
 - (void)setBackgroundColor:(id)arg1;
-- (void)dealloc;
 - (void)setColumnCells:(id)arg1;
 - (id)columnCells;
 

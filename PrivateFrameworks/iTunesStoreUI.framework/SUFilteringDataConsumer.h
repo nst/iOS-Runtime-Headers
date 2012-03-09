@@ -15,9 +15,9 @@
 
 - (id)dataConsumer;
 - (void)setDataConsumer:(id)arg1;
-- (void)finish;
 - (id)init;
 - (void)dealloc;
+- (void)finish;
 - (unsigned int)minimumConsumeLength;
 - (id)initWithDataConsumer:(id)arg1;
 - (int)consumeData:(id)arg1;

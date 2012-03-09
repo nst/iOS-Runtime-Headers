@@ -18,6 +18,7 @@
 
 + (id)backgroundColorForIndex:(unsigned int)arg1;
 
+- (void)dealloc;
 - (id)label;
 - (id)value;
 - (void)setValue:(id)arg1;
@@ -35,6 +36,5 @@
 - (id)itemLink;
 - (void)setLabelColumnWidth:(float)arg1;
 - (float)labelColumnWidth;
-- (void)dealloc;
 
 @end

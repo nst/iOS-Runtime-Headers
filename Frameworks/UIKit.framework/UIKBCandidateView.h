@@ -33,6 +33,8 @@
 }
 
 
+- (unsigned int)count;
+- (void)dealloc;
 - (void)jumpToCompositions;
 - (id).cxx_construct;
 - (void)updateForKeyboard:(id)arg1 key:(id)arg2;
@@ -55,7 +57,5 @@
 - (void)showNextCandidate;
 - (void)layout;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (unsigned int)count;
-- (void)dealloc;
 
 @end

@@ -14,10 +14,10 @@
 + (void)addMappings:(id)arg1 forCoder:(id)arg2;
 + (void)addMappingFromIdentifier:(id)arg1 toObject:(id)arg2 forCoder:(id)arg3;
 
+- (void)dealloc;
 - (void)setProxiedObjectIdentifier:(id)arg1;
 - (id)proxiedObjectIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

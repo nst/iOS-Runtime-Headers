@@ -21,6 +21,7 @@
 @property float progress;
 
 
+- (void)dealloc;
 - (float)progress;
 - (id)highlightedColor;
 - (id)color;
@@ -37,6 +38,5 @@
 - (void)setEtchColor:(id)arg1;
 - (void)_drawInterior:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_drawOutline:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

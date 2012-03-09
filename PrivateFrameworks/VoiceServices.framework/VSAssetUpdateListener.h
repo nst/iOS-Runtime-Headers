@@ -11,6 +11,8 @@
 
 + (id)sharedListener;
 
+- (id)init;
+- (void)dealloc;
 - (void)_cleanupAssets;
 - (void)_scheduleNextCleanupForDate:(id)arg1;
 - (void)_rescheduleAssetCleanup;
@@ -21,7 +23,5 @@
 - (void)_spokenLanguageChanged:(id)arg1;
 - (void)stopListening;
 - (void)startListening;
-- (id)init;
-- (void)dealloc;
 
 @end

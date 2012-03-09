@@ -14,6 +14,7 @@
 
 @property(readonly) NSString * path;
 
++ (BOOL)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
 + (BOOL)migrateToCurrentUserVersionUsingHandle:(struct sqlite3 { }*)arg1;
 + (BOOL)migrateFromVersion:(int)arg1 outUserVersion:(int*)arg2 usingHandle:(struct sqlite3 { }*)arg3;
 + (int)userVersionUsingHandle:(struct sqlite3 { }*)arg1;
@@ -32,8 +33,12 @@
 + (BOOL)executeSQL:(id)arg1 usingHandle:(struct sqlite3 { }*)arg2;
 + (void)closeDatabaseHandle:(struct sqlite3 { }*)arg1;
 + (BOOL)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1;
-+ (BOOL)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
 
+- (void)dealloc;
+- (id)initWithPath:(id)arg1 enableWrites:(BOOL)arg2;
+- (void)prepareStatementForSQL:(id)arg1 usingBlock:(id)arg2;
+- (void)performTransactionWithBlock:(id)arg1;
+- (id)path;
 - (BOOL)coerceValidDatabase;
 - (BOOL)buildDatabaseTables;
 - (void)performOperationInBackground:(id)arg1;
@@ -52,12 +57,7 @@
 - (struct sqlite3 { }*)openedDatabaseHandle;
 - (void)reconnectToDatabase;
 - (BOOL)executeSQL:(id)arg1;
-- (void)performTransactionWithBlock:(id)arg1;
 - (void)accessDatabaseUsingBlock:(id)arg1;
-- (void)prepareStatementForSQL:(id)arg1 usingBlock:(id)arg2;
-- (id)initWithPath:(id)arg1 enableWrites:(BOOL)arg2;
 - (BOOL)requiresPostProcessing;
-- (id)path;
-- (void)dealloc;
 
 @end

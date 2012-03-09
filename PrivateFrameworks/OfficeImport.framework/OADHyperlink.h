@@ -21,6 +21,12 @@
 @property BOOL doEndSound;
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)action;
+- (id)init;
+- (void)dealloc;
+- (void)setAction:(id)arg1;
 - (id)targetFrame;
 - (id)invalidUrl;
 - (BOOL)doAddToHistory;
@@ -37,11 +43,5 @@
 - (void)setIsVisited:(BOOL)arg1;
 - (void)setDoAddToHistory:(BOOL)arg1;
 - (id)targetLocation;
-- (void)setAction:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)action;
-- (id)init;
-- (void)dealloc;
 
 @end

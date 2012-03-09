@@ -16,6 +16,7 @@
 }
 
 
+- (void)dealloc;
 - (id)tokenName:(int)arg1;
 - (int)errorCount;
 - (id)nextArraySeperatedByToken:(int)arg1 stoppingAt:(int)arg2 inEncoding:(unsigned int)arg3;
@@ -46,9 +47,8 @@
 - (BOOL)advanceToEOLSingle;
 - (BOOL)advancePastEOLUnicode;
 - (BOOL)advancePastEOLSingle;
-- (void)finalize;
 - (unsigned int)cursor;
+- (void)finalize;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
 
 @end

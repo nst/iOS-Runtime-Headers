@@ -14,6 +14,7 @@
     NSURL *_serverAddFriendsURL;
     BOOL _messageWasSetExternally;
     NSMutableSet *_playerFriendRequestsSent;
+    NSString *_defaultMessage;
 }
 
 @property <GKComposeControllerDelegate> * delegate;
@@ -23,6 +24,7 @@
 @property(retain) NSMutableSet * playerFriendRequestsSent;
 
 
+- (void)dealloc;
 - (id)serverAddFriendsURL;
 - (void)addPlayerRecipients:(id)arg1;
 - (void)showAlertForFailures:(id)arg1 allFailed:(BOOL)arg2;
@@ -40,13 +42,12 @@
 - (void)updateTitle;
 - (id)defaultMessage;
 - (void)setDefaultMessage:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)dismiss;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)delegate;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

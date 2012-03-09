@@ -29,6 +29,8 @@
 @property unsigned int sequenceNumber;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setHasUpdateRelayInfo:(BOOL)arg1;
 - (BOOL)hasUpdateRelayInfo;
 - (void)setHasInitRelayInfo:(BOOL)arg1;
@@ -40,6 +42,7 @@
 - (void)setOkToSend:(BOOL)arg1;
 - (BOOL)okToSend;
 - (void)setEvents:(id)arg1;
+- (id)events;
 - (void)setDeferedPlayerState:(int)arg1;
 - (int)deferedPlayerState;
 - (void)setCounted:(BOOL)arg1;
@@ -48,8 +51,5 @@
 - (int)playerState;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (unsigned int)sequenceNumber;
-- (id)events;
-- (id)init;
-- (void)dealloc;
 
 @end

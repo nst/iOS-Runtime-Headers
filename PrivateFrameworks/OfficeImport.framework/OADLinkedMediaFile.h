@@ -11,8 +11,8 @@
 @property(retain) NSURL * url;
 
 
+- (void)dealloc;
 - (void)setUrl:(id)arg1;
 - (id)url;
-- (void)dealloc;
 
 @end

@@ -24,6 +24,7 @@
 @property float backgroundAlpha;
 
 
+- (void)dealloc;
 - (void)setBackgroundAlpha:(float)arg1;
 - (id)image;
 - (void)sizeToFit;
@@ -40,6 +41,5 @@
 - (float)backgroundAlpha;
 - (void)_reloadLabelContents;
 - (void)updateLabelContents;
-- (void)dealloc;
 
 @end

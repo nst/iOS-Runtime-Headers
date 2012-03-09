@@ -16,15 +16,15 @@
 @property(readonly) NSString * socialActionType;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
-- (id)socialActionType;
-- (id)initWithSocialActionType:(id)arg1 itemIdentifier:(unsigned long long)arg2;
-- (id)init;
-- (void)dealloc;
 - (void)storePage:(id)arg1 finishedWithSuccess:(BOOL)arg2;
 - (unsigned long long)itemIdentifier;
 - (id)viewControllerFactory;
+- (id)socialActionType;
+- (id)initWithSocialActionType:(id)arg1 itemIdentifier:(unsigned long long)arg2;
 
 @end

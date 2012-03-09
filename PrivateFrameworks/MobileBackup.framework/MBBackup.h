@@ -23,19 +23,19 @@
 @property(readonly) NSString * backupUDID;
 
 
-- (id)snapshots;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)hardwareModel;
-- (BOOL)canRestoreSystemFiles;
-- (id)marketingName;
-- (id)deviceClass;
-- (id)initWithBackupUDID:(id)arg1 deviceClass:(id)arg2 productType:(id)arg3 hardwareModel:(id)arg4 marketingName:(id)arg5 snapshots:(id)arg6 restoreSystemFiles:(BOOL)arg7;
-- (id)backupUDID;
-- (id)productType;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)productType;
+- (id)snapshots;
+- (BOOL)canRestoreSystemFiles;
+- (id)marketingName;
+- (id)hardwareModel;
+- (id)deviceClass;
+- (id)initWithBackupUDID:(id)arg1 deviceClass:(id)arg2 productType:(id)arg3 hardwareModel:(id)arg4 marketingName:(id)arg5 snapshots:(id)arg6 restoreSystemFiles:(BOOL)arg7;
+- (id)backupUDID;
 
 @end

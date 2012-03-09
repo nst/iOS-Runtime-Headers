@@ -11,10 +11,10 @@
 + (id)typingIndicatorImage;
 + (float)defaultTypingIndicatorHeight;
 
+- (void)dealloc;
+- (void)setContactImage:(id)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)setContactImage:(id)arg1;
-- (void)dealloc;
 
 @end

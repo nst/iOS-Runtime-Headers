@@ -11,13 +11,13 @@
 }
 
 
-- (BOOL)isFinished;
-- (BOOL)isConcurrent;
-- (void)start;
-- (BOOL)isExecuting;
-- (id)initWithJob:(id)arg1;
-- (void)completeOperation;
 - (void)main;
 - (void)dealloc;
+- (void)completeOperation;
+- (BOOL)isFinished;
+- (BOOL)isConcurrent;
+- (id)initWithJob:(id)arg1;
+- (void)start;
+- (BOOL)isExecuting;
 
 @end

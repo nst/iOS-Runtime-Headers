@@ -25,18 +25,18 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
+- (void)setName:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setEmail:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (id)email;
+- (int)status;
 - (void)setRole:(int)arg1;
 - (int)role;
 - (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)status;
-- (void)setName:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)setLocalId:(int)arg1;
 - (int)localId;
 - (id)icsUserAddress;

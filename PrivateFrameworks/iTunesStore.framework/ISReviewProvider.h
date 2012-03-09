@@ -9,9 +9,9 @@
 @property(getter=isBackgroundReview) BOOL backgroundReview;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setBackgroundReview:(BOOL)arg1;
 - (BOOL)isBackgroundReview;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 
 @end

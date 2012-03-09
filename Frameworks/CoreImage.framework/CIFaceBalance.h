@@ -20,6 +20,8 @@
 
 + (id)customAttributes;
 
+- (id)_initFromProperties:(id)arg1;
+- (id)_outputProperties;
 - (id)inputWarmth;
 - (id)inputStrength;
 - (id)inputOrigQ;
@@ -34,7 +36,5 @@
 - (id)outputImage;
 - (BOOL)_isIdentity;
 - (void)setDefaults;
-- (id)_initFromProperties:(id)arg1;
-- (id)_outputProperties;
 
 @end

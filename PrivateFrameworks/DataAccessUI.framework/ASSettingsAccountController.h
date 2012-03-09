@@ -10,6 +10,8 @@
 }
 
 
+- (void)dealloc;
+- (id)accountSpecifiers;
 - (void)_tryUpdatingCompositeValueWithId:(id)arg1 fromValue:(id)arg2 forKey:(id)arg3;
 - (BOOL)_isHotmailAccount;
 - (id)localizedDisablingAccountString;
@@ -27,10 +29,8 @@
 - (id)newDefaultAccount;
 - (id)accountFromSpecifier;
 - (void)reloadAccount;
-- (void)dealloc;
 - (void)account:(id)arg1 wasAutoDiscovered:(BOOL)arg2 error:(id)arg3;
 - (void)account:(id)arg1 isValid:(BOOL)arg2 validationError:(id)arg3;
-- (id)accountSpecifiers;
 - (void)finishedAccountSetup;
 - (BOOL)validateAccount;
 - (BOOL)haveEnoughValues;

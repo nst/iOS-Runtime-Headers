@@ -29,13 +29,13 @@
 + (id)_dialogActionWithDialog:(id)arg1;
 
 - (id)account;
-- (id)footerSection;
-- (id)URL;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)URL;
 - (id)actionType;
 - (id)creditsString;
 - (id)dialog;
+- (id)footerSection;
 
 @end

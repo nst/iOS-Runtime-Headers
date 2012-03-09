@@ -22,8 +22,8 @@
 
 - (void)setGroupIdentifier:(id)arg1;
 - (id)groupIdentifier;
+- (void)dealloc;
 - (void)setHandler:(id)arg1;
 - (id)handler;
-- (void)dealloc;
 
 @end

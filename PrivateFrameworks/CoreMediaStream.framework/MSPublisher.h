@@ -10,6 +10,7 @@
     int _state;
     MSObjectQueue *_uploadQueue;
     NSMutableArray *_requestAuthQueue;
+    unsigned int _sendingQueueCount;
     NSMutableArray *_sendingQueue;
     NSMutableDictionary *_fileHashToAssetMap;
     MSPublishStreamsProtocol *_protocol;
@@ -28,6 +29,7 @@
 @property int publishBatchSize;
 @property <MSPublisherDelegate> * delegate;
 
++ (void)forgetPersonID:(id)arg1;
 + (id)nextActivityDateForPersonID:(id)arg1;
 + (void)_setMasterNextActivityDate:(id)arg1 forPersonID:(id)arg2;
 + (id)_clearInstantiatedPublishersByPersonID;
@@ -37,10 +39,9 @@
 + (BOOL)isInRetryState;
 + (id)personIDsWithOutstandingActivities;
 + (id)nextActivityDate;
-+ (void)forgetPersonID:(id)arg1;
 
-- (void)abort;
-- (void)setDelegate:(id)arg1;
+- (void)publish;
+- (void)dealloc;
 - (void)setPublishTargetByteCount:(long long)arg1;
 - (long long)publishTargetByteCount;
 - (id)storageProtocolURL;
@@ -59,7 +60,7 @@
 - (void)submitAssetCollectionsForPublication:(id)arg1;
 - (void)_abort;
 - (id)_abortedError;
-- (void)_categorizeError:(id)arg1 setOutIsIgnorable:(BOOL*)arg2 setOutIsCounted:(BOOL*)arg3 setOutNeedsBackoff:(BOOL*)arg4 setOutIsTemporary:(BOOL*)arg5 setOutIsTokenAuth:(BOOL*)arg6;
+- (void)_categorizeError:(id)arg1 setOutIsIgnorable:(BOOL*)arg2 setOutIsCounted:(BOOL*)arg3 setOutIsFatal:(BOOL*)arg4 setOutNeedsBackoff:(BOOL*)arg5 setOutIsTemporary:(BOOL*)arg6 setOutIsTokenAuth:(BOOL*)arg7 setOutIsAuthError:(BOOL*)arg8;
 - (void)setStorageProtocolURL:(id)arg1;
 - (id)_invalidStreamsResponseErrorUnderlyingError:(id)arg1;
 - (void)_addAssetToFileHashMap:(id)arg1;
@@ -79,11 +80,11 @@
 - (void)computeHashForAsset:(id)arg1;
 - (BOOL)enqueueAssetCollections:(id)arg1 outError:(id*)arg2;
 - (void)setDaemon:(id)arg1;
-- (void)publish;
 - (void)stop;
 - (void)deactivate;
 - (id)delegate;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)abort;
 - (int)_stop;
 
 @end

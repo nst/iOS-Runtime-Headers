@@ -5,6 +5,7 @@
 @interface _PFRoutines : NSObject  {
 }
 
++ (void)initialize;
 + (BOOL)_generateObjectIDMaptableForArray:(id)arg1 withMapping:(id*)arg2 andEntries:(id*)arg3;
 + (id)_newObjectIDsArrayWithMapping:(id)arg1 andEntries:(id)arg2 andCoordinator:(id)arg3;
 + (id)_getPFBundleVersionNumber;
@@ -44,7 +45,6 @@
 + (id)newOrderedSetFromCollection:(id)arg1 byRemovingItems:(id)arg2;
 + (id)newMutableOrderedSetFromCollection:(id)arg1;
 + (id)newOrderedSetFromCollection:(id)arg1 byAddingItems:(id)arg2;
-+ (void)initialize;
 
 
 @end

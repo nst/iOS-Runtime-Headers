@@ -17,6 +17,8 @@
 @property(readonly) unsigned int count;
 
 
+- (unsigned int)count;
+- (void)dealloc;
 - (BOOL)addPeopleFromArray:(id)arg1;
 - (BOOL)removePeopleFromArray:(id)arg1;
 - (BOOL)containsIMHandle:(id)arg1;
@@ -34,8 +36,6 @@
 - (void)imHandle:(id)arg1 buddyStatusChanged:(BOOL)arg2;
 - (void)beginCoalescedChanges;
 - (void)setShouldHidePeople:(BOOL)arg1;
-- (unsigned int)count;
-- (void)dealloc;
 - (id)people;
 - (id)groups;
 

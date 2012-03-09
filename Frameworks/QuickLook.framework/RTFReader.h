@@ -77,6 +77,9 @@
 
 
 - (void)read;
+- (void)dealloc;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setReadOnly:(int)arg1;
 - (id)initWithData:(id)arg1 archiver:(id)arg2;
 - (id)initWithZippedRTFD:(id)arg1 archiver:(id)arg2;
 - (id)initWithPackageURL:(id)arg1 archiver:(id)arg2;
@@ -90,8 +93,5 @@
 - (void)setCocoaSubVersion:(int)arg1;
 - (float)floatCocoaVersion;
 - (void)_insertAttachmentNamed:(id)arg1;
-- (void)setReadOnly:(int)arg1;
-- (void)setBackgroundColor:(id)arg1;
-- (void)dealloc;
 
 @end

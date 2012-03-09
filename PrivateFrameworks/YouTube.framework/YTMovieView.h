@@ -25,6 +25,39 @@
 }
 
 
+- (void)dealloc;
+- (BOOL)canContinuePlayingWhenLocked;
+- (BOOL)moviePlayer:(id)arg1 validateAction:(SEL)arg2;
+- (BOOL)moviePlayerExitRequest:(id)arg1 exitReason:(int)arg2;
+- (void)moviePlayerPlaybackDidEnd:(id)arg1;
+- (void)moviePlayerPlaybackStateDidChange:(id)arg1 fromPlaybackState:(unsigned int)arg2;
+- (void)moviePlayerBufferingStateDidChange:(id)arg1;
+- (BOOL)moviePlayerHeadsetPreviousTrackPressed:(id)arg1;
+- (BOOL)moviePlayerHeadsetNextTrackPressed:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })moviePlayerFrameAfterFullscreenExit:(id)arg1;
+- (void)moviePlayerDidHideOverlay:(id)arg1;
+- (void)moviePlayerWillHideOverlay:(id)arg1;
+- (void)moviePlayerDidShowOverlay:(id)arg1;
+- (void)moviePlayerWillShowOverlay:(id)arg1;
+- (void)moviePlayerDidExitFullscreen:(id)arg1;
+- (void)moviePlayerWillExitFullscreen:(id)arg1;
+- (void)moviePlayerDidEnterFullscreen:(id)arg1;
+- (void)moviePlayerWillEnterFullscreen:(id)arg1;
+- (BOOL)moviePlayerForwardButtonPressed:(id)arg1;
+- (BOOL)moviePlayerEmailButtonPressed:(id)arg1;
+- (BOOL)moviePlayerBackwardButtonPressed:(id)arg1;
+- (BOOL)moviePlayerAddBookmarkButtonPressed:(id)arg1;
+- (id)fullscreenView;
+- (void)setFullscreen:(BOOL)arg1;
+- (BOOL)isPlaying;
+- (void)pause;
+- (int)orientation;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDelegate:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)play;
+- (id)video;
+- (id)moviePlayer;
 - (void)setSeekTime:(double)arg1;
 - (void)willShowForVideo:(id)arg1 inList:(id)arg2 orVideoID:(id)arg3;
 - (void)didShow;
@@ -51,37 +84,5 @@
 - (void)_hideOverlay;
 - (void)_hideBug;
 - (void)_presentAlertForError:(id)arg1 reasonCode:(id)arg2;
-- (id)video;
-- (id)moviePlayer;
-- (BOOL)canContinuePlayingWhenLocked;
-- (BOOL)moviePlayer:(id)arg1 validateAction:(SEL)arg2;
-- (BOOL)moviePlayerExitRequest:(id)arg1 exitReason:(int)arg2;
-- (void)moviePlayerPlaybackDidEnd:(id)arg1;
-- (void)moviePlayerPlaybackStateDidChange:(id)arg1 fromPlaybackState:(unsigned int)arg2;
-- (void)moviePlayerBufferingStateDidChange:(id)arg1;
-- (BOOL)moviePlayerHeadsetPreviousTrackPressed:(id)arg1;
-- (BOOL)moviePlayerHeadsetNextTrackPressed:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })moviePlayerFrameAfterFullscreenExit:(id)arg1;
-- (void)moviePlayerDidHideOverlay:(id)arg1;
-- (void)moviePlayerWillHideOverlay:(id)arg1;
-- (void)moviePlayerDidShowOverlay:(id)arg1;
-- (void)moviePlayerWillShowOverlay:(id)arg1;
-- (void)moviePlayerDidExitFullscreen:(id)arg1;
-- (void)moviePlayerWillExitFullscreen:(id)arg1;
-- (void)moviePlayerWillEnterFullscreen:(id)arg1;
-- (BOOL)moviePlayerForwardButtonPressed:(id)arg1;
-- (BOOL)moviePlayerEmailButtonPressed:(id)arg1;
-- (BOOL)moviePlayerBackwardButtonPressed:(id)arg1;
-- (BOOL)moviePlayerAddBookmarkButtonPressed:(id)arg1;
-- (id)fullscreenView;
-- (void)setFullscreen:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (void)play;
-- (void)pause;
-- (int)orientation;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isPlaying;
-- (void)dealloc;
 
 @end

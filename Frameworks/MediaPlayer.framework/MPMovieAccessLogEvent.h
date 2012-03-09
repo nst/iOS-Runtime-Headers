@@ -27,24 +27,24 @@
 @property struct MPMovieAccessLogEventInternal { id x1; } _internal;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)set_internal:(struct MPMovieAccessLogEventInternal { id x1; })arg1;
 - (id)_initWithAVItemAccessLogEvent:(id)arg1;
 - (struct MPMovieAccessLogEventInternal { id x1; })_internal;
-- (unsigned int)numberOfSegmentsDownloaded;
-- (id)playbackStartDate;
-- (id)URI;
-- (id)serverAddress;
-- (unsigned int)numberOfServerAddressChanges;
-- (id)playbackSessionID;
-- (double)playbackStartOffset;
-- (double)segmentsDownloadedDuration;
-- (double)durationWatched;
-- (int)numberOfStalls;
-- (long long)numberOfBytesTransferred;
-- (double)observedBitrate;
-- (double)indicatedBitrate;
 - (int)numberOfDroppedVideoFrames;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (double)indicatedBitrate;
+- (double)observedBitrate;
+- (long long)numberOfBytesTransferred;
+- (int)numberOfStalls;
+- (double)durationWatched;
+- (double)segmentsDownloadedDuration;
+- (double)playbackStartOffset;
+- (id)playbackSessionID;
+- (unsigned int)numberOfServerAddressChanges;
+- (id)serverAddress;
+- (id)playbackStartDate;
+- (unsigned int)numberOfSegmentsDownloaded;
+- (id)URI;
 
 @end

@@ -15,6 +15,7 @@
 @property(retain) NSData * pushToken;
 
 
+- (void)dealloc;
 - (void)setPushToken:(id)arg1;
 - (id)pushToken;
 - (void)setSessionToken:(id)arg1;
@@ -23,6 +24,5 @@
 - (void)setPlayerID:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

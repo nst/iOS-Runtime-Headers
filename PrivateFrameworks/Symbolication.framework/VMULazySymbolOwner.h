@@ -13,10 +13,10 @@
 
 + (id)lazySymbolOwnerWithName:(id)arg1 signature:(id)arg2 regions:(id)arg3 flags:(unsigned int)arg4;
 
-- (id)signature;
-- (id)path;
-- (unsigned int)flags;
-- (id)name;
+- (id)description;
+- (void)dealloc;
+- (id)regions;
+- (BOOL)validate;
 - (id)initWithName:(id)arg1 signature:(id)arg2 regions:(id)arg3 flags:(unsigned int)arg4;
 - (BOOL)containsAddress:(unsigned long long)arg1;
 - (void)slideToSegmentAddresses:(id)arg1;
@@ -25,9 +25,9 @@
 - (BOOL)hasRegionsForName:(id)arg1;
 - (BOOL)isProtected;
 - (id)architecture;
-- (id)description;
-- (void)dealloc;
-- (BOOL)validate;
-- (id)regions;
+- (unsigned int)flags;
+- (id)path;
+- (id)name;
+- (id)signature;
 
 @end

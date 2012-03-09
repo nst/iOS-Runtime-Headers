@@ -26,7 +26,14 @@
 @property(retain) GMMEfficientMapPoint * efficientMapPoint;
 
 
+- (id)description;
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
+- (int)type;
+- (void)setType:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setEfficientMapPoint:(id)arg1;
 - (void)setPolygon:(id)arg1;
@@ -44,12 +51,5 @@
 - (BOOL)hasPolyLine;
 - (id)mapPoint;
 - (BOOL)hasMapPoint;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (int)type;
-- (void)setType:(int)arg1;
-- (id)description;
-- (id)description;
-- (void)dealloc;
 
 @end

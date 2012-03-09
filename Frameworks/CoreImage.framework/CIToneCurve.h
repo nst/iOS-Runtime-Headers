@@ -11,6 +11,7 @@
     CIVector *inputPoint2;
     CIVector *inputPoint3;
     CIVector *inputPoint4;
+    CIImage *_curveImage;
 }
 
 @property(retain) CIImage * inputImage;
@@ -25,6 +26,9 @@
 + (id)curveImageFromPoints:(const struct CGPoint { float x1; float x2; }*)arg1;
 + (id)customAttributes;
 
+- (void)dealloc;
+- (id)_initFromProperties:(id)arg1;
+- (id)_outputProperties;
 - (id)inputPoint4;
 - (id)inputPoint3;
 - (id)inputPoint2;
@@ -42,7 +46,5 @@
 - (id)outputImage;
 - (BOOL)_isIdentity;
 - (void)setDefaults;
-- (id)_initFromProperties:(id)arg1;
-- (id)_outputProperties;
 
 @end

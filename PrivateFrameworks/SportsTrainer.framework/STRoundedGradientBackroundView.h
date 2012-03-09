@@ -16,16 +16,16 @@
 @property(retain) UIColor * borderColor;
 
 
-- (id)borderColor;
-- (void)setBorderColor:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (id)bottomColor;
 - (id)topColor;
 - (void)_invalidateGradient;
 - (void)setBottomColor:(id)arg1;
 - (void)setTopColor:(id)arg1;
 - (id)_gradient;
-- (void)dealloc;
+- (void)setBorderColor:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)borderColor;
 
 @end

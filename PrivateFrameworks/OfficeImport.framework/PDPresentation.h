@@ -26,6 +26,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (unsigned int)slideMasterCount;
 - (id)slideMasterAtIndex:(unsigned int)arg1;
 - (void)addSlideMaster:(id)arg1;
@@ -56,7 +58,5 @@
 - (void)flushUnusedMastersAndLayouts;
 - (unsigned int)slideCount;
 - (id)slideAtIndex:(unsigned int)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

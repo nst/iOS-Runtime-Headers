@@ -11,27 +11,27 @@
     int _isBeingModifiedCount;
 }
 
-+ (id)avQueue;
 + (id)queueWithArray:(id)arg1 error:(id*)arg2;
++ (id)avQueue;
 
-- (BOOL)removeItem:(id)arg1;
 - (void)removeAllItems;
+- (BOOL)removeItem:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (unsigned int)indexOfItem:(id)arg1;
-- (id)itemAfterItem:(id)arg1;
-- (BOOL)insertItem:(id)arg1 afterItem:(id)arg2 error:(id*)arg3;
-- (void)removeItemsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)isBeingModified;
-- (id)initWithArray:(id)arg1 error:(id*)arg2;
-- (BOOL)appendItemsFromArray:(id)arg1 error:(id*)arg2;
-- (id)itemAtIndex:(unsigned int)arg1;
-- (BOOL)appendItem:(id)arg1 error:(id*)arg2;
-- (unsigned int)itemCount;
-- (BOOL)insertItem:(id)arg1 atIndex:(unsigned int)arg2 error:(id*)arg3;
-- (void)itemWasAdded:(id)arg1 atIndex:(int)arg2;
-- (void)itemWillBeRemoved:(id)arg1 atIndex:(int)arg2;
 - (BOOL)removeItemAtIndex:(unsigned int)arg1;
+- (unsigned int)itemCount;
+- (id)itemAtIndex:(unsigned int)arg1;
+- (id)initWithArray:(id)arg1 error:(id*)arg2;
+- (BOOL)isBeingModified;
+- (void)removeItemsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)insertItem:(id)arg1 afterItem:(id)arg2 error:(id*)arg3;
+- (id)itemAfterItem:(id)arg1;
+- (unsigned int)indexOfItem:(id)arg1;
+- (void)itemWillBeRemoved:(id)arg1 atIndex:(int)arg2;
+- (void)itemWasAdded:(id)arg1 atIndex:(int)arg2;
+- (BOOL)insertItem:(id)arg1 atIndex:(unsigned int)arg2 error:(id*)arg3;
+- (BOOL)appendItem:(id)arg1 error:(id*)arg2;
+- (BOOL)appendItemsFromArray:(id)arg1 error:(id*)arg2;
 - (int)_instantiateItem;
 - (id)initWithError:(id*)arg1;
 

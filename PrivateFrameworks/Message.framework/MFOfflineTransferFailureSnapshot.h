@@ -19,9 +19,9 @@
 - (unsigned long long)originalMessageFlags;
 - (id)originalRemoteID;
 - (id)originalMailboxID;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

@@ -10,6 +10,7 @@
     UISearchDisplayController *_searchController;
     UISearchBar *_searchBar;
     NSArray *_searchTableSections;
+    BOOL _searchBarHidden;
 }
 
 @property(readonly) GKTableView * tableView;
@@ -17,10 +18,14 @@
 @property GKTableViewControllerV2 * tableController;
 @property(retain) NSArray * searchTableSections;
 @property(retain) UISearchBar * searchBar;
+@property BOOL searchBarHidden;
 
 + (id)playerNamePredicateForSearchText:(id)arg1;
 + (id)searchControllerForTableView:(id)arg1 withController:(id)arg2;
 
+- (void)dealloc;
+- (void)setSearchBarHidden:(BOOL)arg1;
+- (BOOL)searchBarHidden;
 - (void)didTouchOverlayView;
 - (void)cancelSearchAndDismiss;
 - (id)searchTableSections;
@@ -42,6 +47,5 @@
 - (id)searchBar;
 - (id)searchDisplayController;
 - (void)setSearchDisplayController:(id)arg1;
-- (void)dealloc;
 
 @end

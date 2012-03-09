@@ -13,8 +13,8 @@
 }
 
 
-- (void)reloadData;
 - (void)dealloc;
+- (void)reloadData;
 - (id)_accessibilityStringsArrayPointer;
 - (id)initWithStringCount:(unsigned int)arg1 imageCount:(unsigned int)arg2;
 - (void)reloadLayoutInformation;

@@ -26,12 +26,12 @@
 @property(readonly) NSString * modalPresentationStyleNameFormSheet;
 @property(readonly) NSString * modalPresentationStyleNameFullScreen;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
+- (void)dealloc;
 - (void)setNavigationItem:(id)arg1;
-- (id)attributeKeys;
 - (void)setTransientViewController:(id)arg1;
 - (id)transientViewController;
 - (void)setToolbarItems:(id)arg1;
@@ -52,7 +52,7 @@
 - (id)backgroundColor;
 - (id)wantsFullScreenLayout;
 - (void)setBackgroundColor:(id)arg1;
-- (void)dealloc;
+- (id)attributeKeys;
 - (id)volumeViewController;
 - (void)setVolumeViewController:(id)arg1;
 - (id)_parentViewControllerForVolumeViewController;

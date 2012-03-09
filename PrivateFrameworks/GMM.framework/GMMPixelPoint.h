@@ -13,16 +13,16 @@
 @property int zoomLevel;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)pixelY;
 - (int)pixelX;
 - (int)zoomLevel;
 - (void)setZoomLevel:(int)arg1;
 - (void)setPixelY:(int)arg1;
 - (void)setPixelX:(int)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

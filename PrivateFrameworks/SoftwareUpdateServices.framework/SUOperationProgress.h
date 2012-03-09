@@ -17,18 +17,18 @@
 @property double timeRemaining;
 
 
-- (void)setPercentComplete:(float)arg1;
-- (float)percentComplete;
-- (double)timeRemaining;
-- (void)setPhase:(id)arg1;
-- (id)phase;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (BOOL)isDone;
 - (float)normalizedPercentComplete;
 - (void)setTimeRemaining:(double)arg1;
 - (void)setNormalizedPercentComplete:(float)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)setPercentComplete:(float)arg1;
+- (float)percentComplete;
+- (void)setPhase:(id)arg1;
+- (id)phase;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (double)timeRemaining;
 
 @end

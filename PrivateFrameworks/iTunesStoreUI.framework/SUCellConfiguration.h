@@ -29,6 +29,7 @@
 + (id)copyDefaultContext;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
+- (void)dealloc;
 - (id)representedObject;
 - (void)setRepresentedObject:(id)arg1;
 - (struct CGSize { float x1; float x2; })layoutSize;
@@ -39,7 +40,6 @@
 - (void)setView:(id)arg1;
 - (id)view;
 - (void)reloadData;
-- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForAccessoryViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIsDeleteConfirmationVisible:(BOOL)arg1;
 - (BOOL)isDeleteConfirmationVisible;

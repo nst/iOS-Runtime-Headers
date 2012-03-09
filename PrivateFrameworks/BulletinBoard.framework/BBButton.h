@@ -14,13 +14,13 @@
 
 + (id)buttonWithTitle:(id)arg1 action:(id)arg2;
 
+- (id)action;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)title;
 - (void)setAction:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)action;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

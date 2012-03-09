@@ -19,6 +19,7 @@
 @property struct __CFDictionary { }* _wildcatStackThumbIDsForAssets;
 
 
+- (void)dealloc;
 - (void)set_wildcatStackThumbIDsForAssets:(struct __CFDictionary { }*)arg1;
 - (struct __CFDictionary { }*)_wildcatStackThumbIDsForAssets;
 - (void)set_wildcatIndexThumbIDsForAssets:(struct __CFDictionary { }*)arg1;
@@ -28,11 +29,10 @@
 - (void)set_indexSheetThumbIDsForAssets:(struct __CFDictionary { }*)arg1;
 - (struct __CFDictionary { }*)_indexSheetThumbIDsForAssets;
 - (void)set_thumbnailManager:(id)arg1;
-- (void)_clearThumbIndexToAssetsTables;
 - (void)resetThumbnailTables;
 - (BOOL)allThumbnailsAreAvailableForAsset:(id)arg1 index:(unsigned int*)arg2;
+- (void)_clearThumbIndexToAssetsTables;
 - (id)initWithThumbnailManager:(id)arg1;
 - (id)_thumbnailManager;
-- (void)dealloc;
 
 @end

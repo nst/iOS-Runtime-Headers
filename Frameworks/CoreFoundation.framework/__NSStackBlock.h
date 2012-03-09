@@ -8,7 +8,7 @@
 
 - (unsigned int)retainCount;
 - (id)retain;
-- (id)autorelease;
 - (oneway void)release;
+- (id)autorelease;
 
 @end

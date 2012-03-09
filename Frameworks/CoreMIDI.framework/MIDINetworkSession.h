@@ -26,14 +26,6 @@
 
 + (id)defaultSession;
 
-- (id)networkName;
-- (id)connections;
-- (id)contacts;
-- (id)localName;
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)isEnabled;
-- (BOOL)addConnection:(id)arg1;
-- (BOOL)removeConnection:(id)arg1;
 - (unsigned int)networkPort;
 - (unsigned int)connectionPolicy;
 - (void)setConnectionPolicy:(unsigned int)arg1;
@@ -49,5 +41,13 @@
 - (BOOL)addOrRemoveConnection:(id)arg1 add:(BOOL)arg2;
 - (id)init;
 - (void)dealloc;
+- (BOOL)addConnection:(id)arg1;
+- (BOOL)removeConnection:(id)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)isEnabled;
+- (id)localName;
+- (id)contacts;
+- (id)networkName;
+- (id)connections;
 
 @end

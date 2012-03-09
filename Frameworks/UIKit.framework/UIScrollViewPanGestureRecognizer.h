@@ -24,7 +24,6 @@
 @property(getter=isDirectionalLockEnabled) BOOL directionalLockEnabled;
 
 
-- (void)setDelegate:(id)arg1;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
 - (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
 - (struct CGPoint { float x1; float x2; })_adjustScreenLocation:(struct CGPoint { float x1; float x2; })arg1;
@@ -43,5 +42,6 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)setDelegate:(id)arg1;
 
 @end

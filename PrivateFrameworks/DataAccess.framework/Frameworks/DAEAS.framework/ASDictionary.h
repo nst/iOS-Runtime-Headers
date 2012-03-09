@@ -18,12 +18,12 @@
 
 - (id)description;
 - (void)dealloc;
+- (void)_setItems:(id)arg1;
 - (id)asParseRules;
 - (id)commonValue;
 - (id)initWithSubclassRuleSet:(id)arg1;
 - (void)setObject:(id)arg1 forDCCPT:(int)arg2;
 - (void)clearPlaceHolder;
 - (void)applyPlaceHolder;
-- (void)_setItems:(id)arg1;
 
 @end

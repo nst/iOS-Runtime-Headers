@@ -41,17 +41,19 @@
 @property(retain) CAMediaTimingFunction * timingFunction;
 
 
-- (float)duration;
-- (void)setDuration:(float)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)timingFunction;
+- (void)dealloc;
 - (id)backView;
 - (id)frontView;
 - (void)setTimingFunction:(id)arg1;
 - (void)setSubtype:(id)arg1;
 - (id)subtype;
+- (float)duration;
+- (void)setDuration:(float)arg1;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)timingFunction;
+- (void)performFlip;
 - (void)setFrontView:(id)arg1;
 - (void)setEdgeConstraints:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDidStopSelector:(SEL)arg1;
@@ -62,7 +64,5 @@
 - (void)_prepareForInitialFlip;
 - (void)_tick;
 - (struct CGSize { float x1; float x2; })edgeConstraints;
-- (void)dealloc;
-- (void)performFlip;
 
 @end

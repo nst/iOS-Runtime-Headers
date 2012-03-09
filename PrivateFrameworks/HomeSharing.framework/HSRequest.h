@@ -20,6 +20,13 @@
 + (id)request;
 
 - (id)bodyData;
+- (id)description;
+- (id)action;
+- (void)dealloc;
+- (id)requestURLForConnection:(id)arg1;
+- (void)setValue:(id)arg1 forArgument:(id)arg2;
+- (void)setValue:(id)arg1 forHeaderField:(id)arg2;
+- (void)setBodyData:(id)arg1;
 - (id)initWithAction:(id)arg1;
 - (BOOL)acceptsGzipEncoding;
 - (id)_methodStringForMethod:(int)arg1;
@@ -27,14 +34,7 @@
 - (id)requestURLForBaseURL:(id)arg1 sessionID:(unsigned int)arg2;
 - (id)canonicalResponseForResponse:(id)arg1;
 - (struct __CFHTTPMessage { }*)CFHTTPMessageForBaseURL:(id)arg1 sessionID:(unsigned int)arg2;
-- (id)requestURLForConnection:(id)arg1;
-- (void)setValue:(id)arg1 forArgument:(id)arg2;
-- (void)setValue:(id)arg1 forHeaderField:(id)arg2;
-- (void)setBodyData:(id)arg1;
-- (void)setMethod:(int)arg1;
 - (int)method;
-- (id)description;
-- (id)action;
-- (void)dealloc;
+- (void)setMethod:(int)arg1;
 
 @end

@@ -13,6 +13,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)_hideOverlayWithAnimation:(BOOL)arg1;
 - (BOOL)transportControls:(id)arg1 releasedHeldButtonPart:(unsigned int)arg2;
 - (BOOL)transportControls:(id)arg1 heldButtonPart:(unsigned int)arg2;
@@ -59,8 +61,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (int)statusBarStyle;
-- (id)init;
-- (void)dealloc;
 - (void)setItem:(id)arg1;
 
 @end

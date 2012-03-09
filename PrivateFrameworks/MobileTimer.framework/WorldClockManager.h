@@ -15,6 +15,8 @@
 
 + (id)sharedManager;
 
+- (void)dealloc;
+- (void)removeAllCities;
 - (void)loadCities;
 - (BOOL)checkIfCitiesModified;
 - (id)cityWithIdUrl:(id)arg1;
@@ -27,7 +29,5 @@
 - (BOOL)canAddCity;
 - (void)setLastModified:(id)arg1;
 - (id)lastModified;
-- (void)removeAllCities;
-- (void)dealloc;
 
 @end

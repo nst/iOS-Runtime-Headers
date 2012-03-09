@@ -29,10 +29,10 @@
 
 + (id)sharedInstance;
 
+- (id)init;
+- (void)dealloc;
 - (id)actionSheet;
 - (void)setActionSheet:(id)arg1;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)setHandler:(id)arg1;
 - (void)setPresenter:(id)arg1;
 - (id)presenter;
@@ -41,7 +41,7 @@
 - (void)willStartRotating;
 - (void)didFinishRotating;
 - (void)showActionSheet:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
-- (id)init;
-- (void)dealloc;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
 @end

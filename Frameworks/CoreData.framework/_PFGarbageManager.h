@@ -8,20 +8,20 @@
     NSMutableArray *_urlsToCleanUp;
 }
 
-+ (id)defaultInstance;
-+ (void)initialize;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
++ (id)defaultInstance;
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (void)release;
+- (id)autorelease;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)registerURLForCleanup:(id)arg1;
 - (id)temporaryLinksDirectoryForStore:(id)arg1;
 - (void)doCleanupForURL:(id)arg1;
 - (id)_init__;
 - (void)removeDirectory:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)autorelease;
-- (void)release;
 
 @end

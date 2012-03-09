@@ -9,12 +9,12 @@
 @property int mode;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)dictionaryRepresentation;
 - (int)mode;
 - (void)setMode:(int)arg1;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

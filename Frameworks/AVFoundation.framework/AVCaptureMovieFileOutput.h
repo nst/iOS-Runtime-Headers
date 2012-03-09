@@ -8,37 +8,37 @@
     AVCaptureMovieFileOutputInternal *_internal;
 }
 
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } movieFragmentInterval;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
 @property(copy) NSArray * metadata;
 
-+ (void)initialize;
-+ (id)recorderCommonMetadataForAVMetadataItemArray:(id)arg1;
-+ (BOOL)consolidateMovieFragmentsInFile:(id)arg1 error:(id*)arg2;
 + (BOOL)updateMovieMetadataInFile:(id)arg1 withMetadata:(id)arg2 error:(id*)arg3;
++ (BOOL)consolidateMovieFragmentsInFile:(id)arg1 error:(id*)arg2;
++ (id)recorderCommonMetadataForAVMetadataItemArray:(id)arg1;
++ (void)initialize;
 
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
-- (void)stopRecording;
-- (void)setSendsLastVideoPreviewFrame:(BOOL)arg1;
-- (BOOL)sendsLastVideoPreviewFrame;
-- (BOOL)getRecorderBoolForKey:(id)arg1 withDefault:(BOOL)arg2;
-- (long)_startRecording:(id)arg1;
-- (void)_handleStartRecordingErrorWithDomain:(id)arg1 code:(long)arg2 info:(id)arg3;
-- (long)_avErrorForDidStopRecordingReason:(id)arg1;
-- (void)startRecordingToOutputFileURL:(id)arg1 recordingDelegate:(id)arg2;
-- (BOOL)isRecordingPaused;
-- (void)pauseRecording;
-- (void)resumeRecording;
-- (id)outputFileURL;
-- (void)handleNotification:(id)arg1 payload:(id)arg2;
-- (id)connectionMediaTypes;
-- (void)handleEnabledChangedForConnection:(id)arg1;
-- (void)didStopForSession:(id)arg1 error:(id)arg2;
-- (long)_stopRecording;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
-- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (BOOL)isRecording;
 - (id)init;
 - (void)dealloc;
+- (BOOL)sendsLastVideoPreviewFrame;
+- (void)setSendsLastVideoPreviewFrame:(BOOL)arg1;
+- (long)_avErrorForDidStopRecordingReason:(id)arg1;
+- (void)_handleStartRecordingErrorWithDomain:(id)arg1 code:(long)arg2 info:(id)arg3;
+- (long)_startRecording:(id)arg1;
+- (BOOL)getRecorderBoolForKey:(id)arg1 withDefault:(BOOL)arg2;
+- (void)resumeRecording;
+- (void)pauseRecording;
+- (BOOL)isRecordingPaused;
+- (void)startRecordingToOutputFileURL:(id)arg1 recordingDelegate:(id)arg2;
+- (id)outputFileURL;
+- (void)handleNotification:(id)arg1 payload:(id)arg2;
+- (void)didStopForSession:(id)arg1 error:(id)arg2;
+- (void)handleEnabledChangedForConnection:(id)arg1;
+- (id)connectionMediaTypes;
+- (long)_stopRecording;
+- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
+- (BOOL)isRecording;
+- (void)stopRecording;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 
 @end

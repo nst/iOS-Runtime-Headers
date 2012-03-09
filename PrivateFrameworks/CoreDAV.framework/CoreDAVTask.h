@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, <CoreDAVTaskManager>, NSHTTPURLResponse, NSURLRequest, NSMutableArray, NSError, NSDate, NSDictionary, CoreDAVRequestLogger, <CoreDAVAccountInfoProvider>, <CoreDAVResponseBodyParser>, <CoreDAVTaskDelegate>, NSURLConnection, NSURL;
+@class NSMutableDictionary, <CoreDAVTaskManager>, NSHTTPURLResponse, NSURLRequest, NSMutableArray, NSData, NSError, NSDate, NSDictionary, CoreDAVRequestLogger, <CoreDAVAccountInfoProvider>, <CoreDAVResponseBodyParser>, <CoreDAVTaskDelegate>, NSURLConnection, NSURL;
 
 @interface CoreDAVTask : NSObject  {
     <CoreDAVTaskManager> *_taskManager;
@@ -28,7 +28,8 @@
     BOOL _finished;
     void *_context;
     BOOL _receivedBadPasswordResponse;
-    BOOL _triedTokenAuth;
+    BOOL _justTriedTokenAuth;
+    BOOL _everTriedTokenAuth;
     BOOL _requestIsCompressed;
     BOOL _compressedRequestFailed;
     NSError *_passwordNotificationError;
@@ -56,6 +57,9 @@
     unsigned int _totalBytesReceived;
     NSMutableDictionary *_overriddenHeaders;
     NSMutableArray *_redirectHistory;
+    NSDictionary *_requestProperties;
+    NSData *_fakeResponseData;
+    BOOL _haveParsedFakeResponseData;
 }
 
 @property(copy) id requestProgressBlock;
@@ -74,15 +78,24 @@
 @property(readonly) NSDictionary * responseHeaders;
 @property int responseStatusCode;
 @property(readonly) NSURL * url;
+@property(retain) NSDictionary * requestProperties;
 @property unsigned int totalBytesReceived;
 
 + (unsigned int)uniqueQueryID;
 
+- (void)setTimeoutInterval:(double)arg1;
+- (double)timeoutInterval;
+- (unsigned int)cachePolicy;
+- (id)connection:(id)arg1 needNewBodyStream:(id)arg2;
+- (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
+- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
+- (id)description;
+- (void)dealloc;
+- (BOOL)markAsFinished;
 - (void)setError:(id)arg1;
 - (id)completionBlock;
 - (BOOL)isFinished;
-- (int)depth;
-- (void)setDepth:(int)arg1;
+- (id)error;
 - (void)overrideRequestHeader:(id)arg1 withValue:(id)arg2;
 - (void)setResponseStatusCode:(int)arg1;
 - (BOOL)allowAutomaticRedirects;
@@ -110,21 +123,10 @@
 - (id)responseBodyParser;
 - (id)accountInfoProvider;
 - (void)setAccountInfoProvider:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setTimeoutInterval:(double)arg1;
-- (double)timeoutInterval;
-- (unsigned int)cachePolicy;
-- (id)connection:(id)arg1 needNewBodyStream:(id)arg2;
-- (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (BOOL)validate:(id*)arg1;
-- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
-- (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
-- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (id)initWithURL:(id)arg1;
-- (void)setCompletionBlock:(id)arg1;
 - (void)reset;
+- (void)setCompletionBlock:(id)arg1;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -134,10 +136,15 @@
 - (void*)context;
 - (void)setContext:(void*)arg1;
 - (id)delegate;
-- (BOOL)markAsFinished;
-- (id)error;
-- (id)description;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
+- (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
+- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
+- (int)depth;
+- (void)setDepth:(int)arg1;
+- (id)requestProperties;
+- (void)setRequestProperties:(id)arg1;
 - (id)_applyAuthenticationChain:(struct __CFArray { }*)arg1 toRequest:(id)arg2;
 - (id)_createBodyData;
 - (void)_failImmediately;

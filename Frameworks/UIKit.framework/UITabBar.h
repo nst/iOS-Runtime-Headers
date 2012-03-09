@@ -24,6 +24,7 @@
     id _appearanceStorage;
 }
 
+@property(setter=_setBackgroundView:,retain) UIView * _backgroundView;
 @property <UITabBarDelegate> * delegate;
 @property(copy) NSArray * items;
 @property UITabBarItem * selectedItem;
@@ -35,10 +36,7 @@
 + (float)_buttonGap;
 + (float)defaultHeightForBarSize:(int)arg1;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)_customizeDoneButtonAction:(id)arg1;
 - (void)_finishCustomizeAnimation:(id)arg1;
@@ -86,6 +84,7 @@
 - (id)items;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)_updateBackgroundImage;
+- (void)_setBackgroundView:(id)arg1;
 - (id)_appearanceStorage;
 - (void)setBackgroundImage:(id)arg1;
 - (id)backgroundImage;
@@ -99,14 +98,18 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)isLocked;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (id)_backgroundView;
 - (id)delegate;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAutoresizingMask:(unsigned int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

@@ -16,12 +16,12 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)invalidate;
 - (void)setDelegate:(id)arg1;
 - (void)_handleRequests;
 - (void)_notifyRequestHandled:(id)arg1;
 - (void)handleResults:(id)arg1 withHandler:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

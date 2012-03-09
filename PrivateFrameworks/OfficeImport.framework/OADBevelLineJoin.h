@@ -7,7 +7,7 @@
 
 + (id)defaultProperties;
 
-- (id)initWithDefaults;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithDefaults;
 
 @end

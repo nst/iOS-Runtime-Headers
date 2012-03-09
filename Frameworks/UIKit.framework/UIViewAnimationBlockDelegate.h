@@ -26,10 +26,10 @@
 
 + (void)setAnimationBlockDelegateWithDuration:(double)arg1 options:(unsigned int)arg2 start:(id)arg3 completion:(id)arg4;
 
+- (void)dealloc;
 - (void)_sendDeferredCompletion:(id)arg1;
 - (void)_didEndBlockAnimation:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_willBeginBlockAnimation:(id)arg1 context:(void*)arg2;
 - (BOOL)_allowsUserInteraction;
-- (void)dealloc;
 
 @end

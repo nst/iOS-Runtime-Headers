@@ -12,6 +12,7 @@
 }
 
 
+- (void)dealloc;
 - (void)readEntries;
 - (void)collapseCommonRootDirectory;
 - (id)readFilenameFromBuffer:(const char *)arg1 size:(unsigned long)arg2;
@@ -20,12 +21,11 @@
 - (id)initWithPath:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
 - (id)initWithData:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
 - (id)entryWithName:(id)arg1;
-- (id)entryNames;
-- (id)filename;
 - (struct GQZEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readEndOfCentralDirectory;
 - (const char *)searchForEndOfCentralDirectoryOffset:(long long*)arg1;
 - (struct GQZEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryWithEocdOffset:(long long)arg1;
 - (struct GQZEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryFromOffset:(long long)arg1;
-- (void)dealloc;
+- (id)entryNames;
+- (id)filename;
 
 @end

@@ -15,13 +15,13 @@
 @property(readonly) NSArray * updateItems;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)error;
+- (id)updateItems;
+- (id)initWithError:(id)arg1;
 - (id)copyUpdateItemDictionaries;
 - (id)initWithDictionaryResponse:(id)arg1;
 - (BOOL)isFailed;
-- (id)updateItems;
-- (id)error;
-- (id)description;
-- (void)dealloc;
-- (id)initWithError:(id)arg1;
 
 @end

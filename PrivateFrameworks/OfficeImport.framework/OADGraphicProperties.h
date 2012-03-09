@@ -15,6 +15,11 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
+- (id)stroke;
+- (id)fill;
 - (void)setScene3D:(id)arg1;
 - (void)setShape3D:(id)arg1;
 - (void)setIsBehindText:(BOOL)arg1;
@@ -34,10 +39,5 @@
 - (void)setFill:(id)arg1;
 - (void)setParent:(id)arg1;
 - (id)initWithDefaults;
-- (id)stroke;
-- (id)fill;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 
 @end

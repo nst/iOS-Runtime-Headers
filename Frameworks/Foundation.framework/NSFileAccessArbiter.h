@@ -16,7 +16,6 @@
 }
 
 
-- (void)finalize;
 - (void)stopArbitrating;
 - (id)initWithQueue:(struct dispatch_queue_s { }*)arg1 isSubarbiter:(BOOL)arg2 listener:(struct _xpc_connection_s { }*)arg3;
 - (void)tiePresenterForID:(id)arg1 toItemAtURL:(id)arg2;
@@ -46,5 +45,6 @@
 - (void)_handleCanceledClient:(struct _xpc_connection_s { }*)arg1;
 - (void)_handleMessage:(void*)arg1 fromClient:(struct _xpc_connection_s { }*)arg2;
 - (void)dealloc;
+- (void)finalize;
 
 @end

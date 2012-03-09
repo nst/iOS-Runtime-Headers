@@ -28,6 +28,7 @@
 + (id)_textureWithTexture:(id)arg1 error:(id*)arg2;
 + (id)lockAndSwitchContext:(id)arg1 eaglContext:(id)arg2;
 
+- (void)dealloc;
 - (void)cubeMapWithContentsOfFile:(id)arg1 options:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 completionHandler:(id)arg4;
 - (void)cubeMapWithContentsOfFiles:(id)arg1 options:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 completionHandler:(id)arg4;
 - (void)textureWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 completionHandler:(id)arg4;
@@ -40,6 +41,5 @@
 - (void)setNsLock:(id)arg1;
 - (id)eaglContext;
 - (void)setEaglContext:(id)arg1;
-- (void)dealloc;
 
 @end

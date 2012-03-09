@@ -14,9 +14,15 @@
 @property(retain) NSMutableArray * failedRequests;
 @property int throttleCount;
 
-+ (id)sharedCenter;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)sharedCenter;
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
 - (void)setThrottleCount:(int)arg1;
 - (int)throttleCount;
 - (void)setFailedRequests:(id)arg1;
@@ -36,11 +42,5 @@
 - (id)_sendRequests:(id)arg1 toURL:(id)arg2 additionalHeaders:(id)arg3;
 - (id)_assertionForRequest:(id)arg1;
 - (id)_failedRequestURL;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (id)init;
-- (oneway void)release;
 
 @end

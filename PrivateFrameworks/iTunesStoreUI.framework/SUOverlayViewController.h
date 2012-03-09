@@ -38,6 +38,8 @@
 
 + (struct CGSize { float x1; float x2; })defaultOverlaySize;
 
+- (id)init;
+- (void)dealloc;
 - (void)setShadowOpacity:(float)arg1;
 - (void)setShadowRadius:(float)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
@@ -46,8 +48,6 @@
 - (void)loadView;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (id)init;
-- (void)dealloc;
 - (id)activeViewController;
 - (void)_performFlipAction:(id)arg1;
 - (BOOL)_isControllerLoaded:(id)arg1;

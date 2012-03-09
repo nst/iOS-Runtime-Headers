@@ -8,11 +8,11 @@
 }
 
 
-- (id)observer;
-- (id)initWithObserver:(id)arg1 andElement:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)observer;
 - (id)element;
+- (id)initWithObserver:(id)arg1 andElement:(id)arg2;
 
 @end

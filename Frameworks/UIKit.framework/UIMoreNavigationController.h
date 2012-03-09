@@ -16,6 +16,8 @@
 @property BOOL moreViewControllersChanged;
 
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)moreViewControllersChanged;
 - (BOOL)allowsCustomizing;
 - (id)_preparedViewController:(id)arg1;
@@ -28,7 +30,5 @@
 - (void)setMoreViewControllers:(id)arg1;
 - (void)didShowViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

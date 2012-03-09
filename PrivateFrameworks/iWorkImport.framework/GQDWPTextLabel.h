@@ -9,10 +9,10 @@
 }
 
 
+- (void)dealloc;
 - (struct __CFString { }*)format;
 - (int)first;
 - (int)labelType;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
-- (void)dealloc;
 
 @end

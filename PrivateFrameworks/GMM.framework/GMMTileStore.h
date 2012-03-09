@@ -9,6 +9,7 @@
 @property int tileEdition;
 
 
+- (id)initWithPath:(id)arg1;
 - (void)evict;
 - (BOOL)selectData:(char **)arg1 length:(unsigned int*)arg2 forTilePath:(const struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg3;
 - (BOOL)hasDataForTilePath:(const struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg1;
@@ -18,6 +19,5 @@
 - (void)openDatabase:(BOOL)arg1;
 - (void)setTileEdition:(int)arg1;
 - (int)tileEdition;
-- (id)initWithPath:(id)arg1;
 
 @end

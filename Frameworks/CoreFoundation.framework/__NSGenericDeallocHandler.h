@@ -17,9 +17,9 @@
 
 + (void)initialize;
 
-- (void)finalize;
 - (unsigned int)retainCount;
 - (id)retain;
 - (void)release;
+- (void)finalize;
 
 @end

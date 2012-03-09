@@ -27,12 +27,23 @@
 + (BOOL)_releaseReservedMapFileDescriptor;
 + (BOOL)_reserveMapFileDescriptor;
 
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copy;
+- (unsigned int)length;
+- (void)dealloc;
+- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (BOOL)isEqualToData:(id)arg1;
 - (void)finalize;
+- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
+- (const void*)bytes;
+- (id)mutableCopy;
 - (id)initForUbiquityDictionary:(id)arg1 store:(id)arg2;
 - (void)_setBytesForExternalReference:(const void*)arg1;
 - (id)_externalReferenceLocationString;
 - (id)filename;
 - (id)ubiquitousLocation;
+- (id)constructSafeguardStringFromString:(id)arg1;
 - (void)_doCleanup;
 - (const void*)_bytesPtrForExternalReference;
 - (BOOL)_attemptToMapData:(id*)arg1;
@@ -41,7 +52,7 @@
 - (BOOL)_isEqualHelper:(id)arg1;
 - (const void*)_bytesPtrForStore;
 - (unsigned int)_bytesLengthForStore;
-- (id)initWithStoreBytes:(const void*)arg1 length:(unsigned int)arg2 externalLocation:(id)arg3 safeguardLocation:(id)arg4 hardlink:(BOOL)arg5 protectionLevel:(int)arg6;
+- (id)initWithStoreBytes:(const void*)arg1 length:(unsigned int)arg2 externalLocation:(id)arg3 safeguardLocation:(id)arg4 protectionLevel:(int)arg5;
 - (void)setUbiquitousLocation:(id)arg1;
 - (id)initForExternalLocation:(id)arg1 safeguardLocation:(id)arg2 data:(id)arg3 protectionLevel:(int)arg4;
 - (id)UUID;
@@ -60,15 +71,5 @@
 - (id)_safeguardLocationString;
 - (id)externalReferenceLocationString;
 - (Class)classForCoder:(id)arg1;
-- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (BOOL)isEqualToData:(id)arg1;
-- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
-- (const void*)bytes;
-- (id)mutableCopy;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (unsigned int)length;
-- (void)dealloc;
-- (id)copy;
 
 @end

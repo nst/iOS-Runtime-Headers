@@ -16,8 +16,8 @@
 + (id)messageNotificationFallbackTimeout;
 + (id)retryIntervals;
 
+- (void)dealloc;
 - (id)initForService:(id)arg1;
 - (id)parameterValueForKey:(id)arg1;
-- (void)dealloc;
 
 @end

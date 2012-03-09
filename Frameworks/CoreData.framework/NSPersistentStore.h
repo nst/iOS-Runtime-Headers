@@ -22,16 +22,29 @@
     void *_reserved3;
 }
 
++ (void)initialize;
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
++ (id)_figureOutWhereExternalReferencesEndedUpRelativeTo:(id)arg1;
 + (Class)migrationManagerClass;
 + (BOOL)doURLStuff:(id)arg1 createdStubFile:(BOOL*)arg2 readOnly:(BOOL*)arg3 error:(id*)arg4 options:(id)arg5;
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 + (BOOL)accessInstanceVariablesDirectly;
-+ (void)initialize;
 
+- (void)setPersistentStoreCoordinator:(id)arg1;
+- (id)persistentStoreCoordinator;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)options;
+- (void)setURL:(id)arg1;
 - (void)finalize;
+- (id)type;
+- (id)URL;
+- (id)identifier;
+- (void)setIdentifier:(id)arg1;
+- (void)setReadOnly:(BOOL)arg1;
 - (Class)objectIDClassForEntity:(id)arg1;
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)_defaultMetadata;
@@ -64,17 +77,5 @@
 - (void)_setMetadataDirty:(BOOL)arg1;
 - (id)metadata;
 - (id)objectIDFactoryForEntity:(id)arg1;
-- (void)setReadOnly:(BOOL)arg1;
-- (id)options;
-- (void)setURL:(id)arg1;
-- (id)type;
-- (id)URL;
-- (id)identifier;
-- (void)setIdentifier:(id)arg1;
-- (void)setPersistentStoreCoordinator:(id)arg1;
-- (id)persistentStoreCoordinator;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

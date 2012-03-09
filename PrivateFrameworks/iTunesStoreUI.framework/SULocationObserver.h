@@ -16,10 +16,9 @@
 @property(getter=isObservingLocation,readonly) BOOL observingLocation;
 
 
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 - (id)init;
 - (void)dealloc;
+- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 - (BOOL)isObservingLocation;
 - (void)endObserveringLocation;
 - (void)beginObservingLocation;
@@ -35,5 +34,6 @@
 - (void)_unregisterForLocationCallbacks;
 - (void)operationFinished:(id)arg1;
 - (id)locationSections;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

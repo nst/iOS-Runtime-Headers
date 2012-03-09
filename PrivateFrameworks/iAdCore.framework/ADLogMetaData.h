@@ -35,15 +35,23 @@
 @property BOOL hasConnectionType;
 @property int connectionType;
 
-+ (id)metadataForAd:(id)arg1 impressionSequence:(unsigned int)arg2 overclickCount:(unsigned int)arg3;
 + (void)initialize;
++ (id)metadataForAd:(id)arg1 impressionSequence:(unsigned int)arg2 overclickCount:(unsigned int)arg3;
 
+- (id)description;
+- (void)dealloc;
+- (int)connectionType;
+- (id)dictionaryRepresentation;
+- (void)setOrientation:(int)arg1;
+- (int)orientation;
+- (id)timeStamp;
 - (void)setTimeStamp:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasOverclickCount:(BOOL)arg1;
 - (void)setHasImpressionSequence:(BOOL)arg1;
 - (void)setHasMessageSequence:(BOOL)arg1;
 - (void)setHasConnectionType:(BOOL)arg1;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)hasConnectionType;
 - (BOOL)hasTimeStamp;
@@ -63,12 +71,5 @@
 - (void)setMessageSequence:(int)arg1;
 - (void)setBatchId:(id)arg1;
 - (id)batchId;
-- (id)timeStamp;
-- (id)dictionaryRepresentation;
-- (void)setOrientation:(int)arg1;
-- (int)orientation;
-- (int)connectionType;
-- (id)description;
-- (void)dealloc;
 
 @end

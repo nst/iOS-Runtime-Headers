@@ -12,6 +12,7 @@
 }
 
 
+- (void)dealloc;
 - (long)getCameraType:(int*)arg1;
 - (long)setCameraType:(int)arg1;
 - (long)setWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
@@ -22,6 +23,5 @@
 - (BOOL)isPreviewRunning;
 - (id)initWithOptions:(void*)arg1 callback:(int (*)())arg2 width:(int)arg3 height:(int)arg4 frameRate:(int)arg5 cameraType:(int)arg6 withError:(int*)arg7;
 - (long)setFrameRatePercentage:(double)arg1;
-- (void)dealloc;
 
 @end

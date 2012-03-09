@@ -12,14 +12,14 @@
 
 + (id)predicateWithSearchTerm:(id)arg1;
 
-- (id)predicateFormat;
-- (BOOL)evaluateWithObject:(id)arg1;
+- (void)dealloc;
 - (id)initWithSearchTerm:(id)arg1;
 - (id)querySearchTerm;
 - (BOOL)queryLimitToCompletedOrIncomplete;
 - (id)searchTerm;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
+- (id)predicateFormat;
+- (BOOL)evaluateWithObject:(id)arg1;
 
 @end

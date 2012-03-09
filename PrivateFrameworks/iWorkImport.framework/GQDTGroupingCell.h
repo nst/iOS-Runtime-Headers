@@ -16,9 +16,10 @@
 
 + (struct __CFString { }*)displayTypeString:(int)arg1;
 
-- (unsigned short)rowCount;
+- (void)dealloc;
 - (id)value;
 - (unsigned short)level;
+- (unsigned short)rowCount;
 - (unsigned short)rowIdx;
 - (BOOL)isCollapsed;
 - (int)readValue:(struct _xmlTextReader { }*)arg1;
@@ -28,6 +29,5 @@
 - (struct __CFString { }*)createFormattedValue;
 - (BOOL)hasFormulaValue;
 - (void)setProcessorBundle:(struct __CFBundle { }*)arg1;
-- (void)dealloc;
 
 @end

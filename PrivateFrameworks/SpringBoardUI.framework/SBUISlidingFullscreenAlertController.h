@@ -15,6 +15,8 @@
 @property(readonly) UIView * topBar;
 
 
+- (void)dealloc;
+- (id)topBar;
 - (id)newTopBar;
 - (id)newBottomBar;
 - (BOOL)shouldShowBottomBar;
@@ -37,7 +39,5 @@
 - (id)backgroundView;
 - (id)bottomBar;
 - (void)_fadeOutCompleted:(id)arg1;
-- (void)dealloc;
-- (id)topBar;
 
 @end

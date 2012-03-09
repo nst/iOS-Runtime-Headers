@@ -16,6 +16,8 @@
 
 + (id)customAttributes;
 
+- (id)_initFromProperties:(id)arg1;
+- (id)_outputProperties;
 - (id)inputHighlightAmount;
 - (id)inputShadowAmount;
 - (id)_kernelSH;
@@ -28,7 +30,5 @@
 - (id)outputImage;
 - (BOOL)_isIdentity;
 - (void)setDefaults;
-- (id)_initFromProperties:(id)arg1;
-- (id)_outputProperties;
 
 @end

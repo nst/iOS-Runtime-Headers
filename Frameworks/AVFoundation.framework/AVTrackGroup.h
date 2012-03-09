@@ -11,10 +11,10 @@
 @property(readonly) NSArray * trackIDs;
 
 
-- (id)trackIDs;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
+- (id)trackIDs;
 
 @end

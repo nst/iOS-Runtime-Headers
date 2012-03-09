@@ -15,12 +15,12 @@
 @property BOOL shouldUseCapture;
 
 
-- (id)name;
-- (id)callback;
 - (void)setName:(id)arg1;
 - (void)dealloc;
+- (id)name;
 - (BOOL)shouldUseCapture;
 - (void)setShouldUseCapture:(BOOL)arg1;
 - (void)setCallback:(id)arg1;
+- (id)callback;
 
 @end

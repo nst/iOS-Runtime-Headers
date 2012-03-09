@@ -12,10 +12,10 @@
 + (id)applyRGBTransform:(id)arg1 toColor:(id)arg2;
 + (id)applyTransforms:(id)arg1 toColor:(id)arg2;
 
-- (int)type;
-- (id)initWithType:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (int)type;
+- (id)initWithType:(int)arg1;
 
 @end

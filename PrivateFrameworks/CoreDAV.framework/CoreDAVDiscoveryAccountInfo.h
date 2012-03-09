@@ -45,8 +45,13 @@
 
 - (void)setHost:(id)arg1;
 - (id)accountID;
+- (void)setPort:(int)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)principalURL;
 - (void)setError:(id)arg1;
 - (void)setPassword:(id)arg1;
+- (id)error;
 - (void)setServerComplianceClasses:(id)arg1;
 - (void)setServerHeaders:(id)arg1;
 - (void)setStarted:(BOOL)arg1;
@@ -57,6 +62,7 @@
 - (id)initWithAccountInfoProvider:(id)arg1;
 - (BOOL)shouldTurnModalOnBadPassword;
 - (void)promptUserForNewCoreDAVPasswordWithCompletionBlock:(id)arg1;
+- (BOOL)shouldUseOpportunisticSockets;
 - (BOOL)shouldSendClientInfoHeaderForURL:(id)arg1;
 - (BOOL)shouldHandleHTTPCookiesForURL:(id)arg1;
 - (BOOL)handleShouldUseCredentialStorage;
@@ -75,25 +81,19 @@
 - (void)setServerRoot:(id)arg1;
 - (id)serverRoot;
 - (id)additionalHeaderValues;
-- (void)setPort:(int)arg1;
-- (void)setScheme:(id)arg1;
 - (int)port;
 - (id)user;
 - (id)password;
 - (id)url;
 - (id)host;
 - (id)scheme;
-- (id)error;
-- (id)principalURL;
-- (id)description;
-- (void)dealloc;
+- (void)setScheme:(id)arg1;
+- (BOOL)success;
+- (void)setSuccess:(BOOL)arg1;
 - (BOOL)handleTrustChallenge:(id)arg1;
 - (BOOL)shouldFailAllTasks;
-- (BOOL)shouldUseOpportunisticSockets;
 - (struct __CFURLStorageSession { }*)copyStorageSession;
 - (id)identityPersist;
 - (void)setShouldFailAllTasks:(BOOL)arg1;
-- (BOOL)success;
-- (void)setSuccess:(BOOL)arg1;
 
 @end

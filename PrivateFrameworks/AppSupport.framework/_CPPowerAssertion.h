@@ -16,8 +16,8 @@
 
 - (void)setTimeout:(double)arg1;
 - (double)timeout;
+- (void)dealloc;
 - (void)timedout;
 - (id)initWithIdentifier:(id)arg1 timeout:(double)arg2;
-- (void)dealloc;
 
 @end

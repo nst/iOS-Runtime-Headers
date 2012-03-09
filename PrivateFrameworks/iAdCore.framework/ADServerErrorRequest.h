@@ -21,27 +21,29 @@
 @property(retain) NSMutableArray * urlWithErrors;
 
 
+- (id)description;
+- (void)dealloc;
 - (Class)responseClass;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
 - (id)urlWithErrors;
-- (id)badResponse;
-- (int)errorCode;
 - (void)setHasErrorCode:(BOOL)arg1;
-- (BOOL)hasErrorCode;
 - (id)urlWithErrorAtIndex:(unsigned int)arg1;
+- (void)clearUrlWithErrors;
 - (unsigned int)urlWithErrorsCount;
+- (id)badResponse;
 - (BOOL)hasBadResponse;
+- (int)errorCode;
+- (BOOL)hasErrorCode;
 - (void)addUrlWithError:(id)arg1;
 - (void)setErrorCode:(int)arg1;
 - (void)setUrlWithErrors:(id)arg1;
 - (void)setBadResponse:(id)arg1;
 - (BOOL)hasMetaData;
 - (void)setMetaData:(id)arg1;
+- (void)copyTo:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (id)metaData;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

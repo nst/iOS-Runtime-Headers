@@ -13,6 +13,8 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setBindVariables:(id)arg1;
 - (void)cacheFakeEntityForFetch:(id)arg1;
 - (id)fakeEntityForFetch;
@@ -28,7 +30,5 @@
 - (unsigned int)addBindVariable:(id)arg1;
 - (void)setImpossibleCondition:(BOOL)arg1;
 - (id)entity;
-- (id)description;
-- (void)dealloc;
 
 @end

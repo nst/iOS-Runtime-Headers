@@ -51,12 +51,8 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (void)setPassword:(id)arg1;
-- (void)setUsername:(id)arg1;
-- (id)username;
-- (int)proxyType;
-- (id)password;
-- (BOOL)isHidden;
+- (id)description;
+- (void)dealloc;
 - (id)credentialUUID;
 - (void)setCredentialUUID:(id)arg1;
 - (id)proxyPACURLString;
@@ -84,7 +80,11 @@
 - (id)subtitle1Description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
+- (void)setPassword:(id)arg1;
+- (void)setUsername:(id)arg1;
+- (id)username;
+- (int)proxyType;
+- (id)password;
+- (BOOL)isHidden;
 
 @end

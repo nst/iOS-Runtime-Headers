@@ -12,16 +12,16 @@
 @property(copy) NSNumber * ITunesStoreIdentifier;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)artistName;
 - (id)ITunesStoreIdentifier;
+- (void)setArtistName:(id)arg1;
 - (id)copyMovieArtistDictionary;
 - (void)setITunesStoreIdentifier:(id)arg1;
 - (id)initWithMovieArtistDictionary:(id)arg1;
 - (void)_setValue:(id)arg1 forKey:(id)arg2;
 - (void)_setValueCopy:(id)arg1 forKey:(id)arg2;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setArtistName:(id)arg1;
 
 @end

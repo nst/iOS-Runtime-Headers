@@ -6,6 +6,7 @@
 }
 
 
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1 withHandler:(id)arg2;
 - (void)permissionForAccountType:(id)arg1 withHandler:(id)arg2;
 - (void)clearPermissionGrantedForBundleID:(id)arg1 onAccountType:(id)arg2 withHandler:(id)arg3;
@@ -29,6 +30,5 @@
 - (void)accountsWithHandler:(id)arg1;
 - (void)accountTypeWithIdentifier:(id)arg1 handler:(id)arg2;
 - (void)accountWithIdentifier:(id)arg1 handler:(id)arg2;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 
 @end

@@ -13,10 +13,10 @@
 @property(retain) NSString * label;
 
 
+- (void)dealloc;
 - (id)label;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)dealloc;
 
 @end

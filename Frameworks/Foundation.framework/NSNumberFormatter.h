@@ -21,10 +21,6 @@
 + (id)gkRankFormatter;
 + (id)gk_formatInteger:(int)arg1 withGrouping:(BOOL)arg2;
 
-- (void)setUsesGroupingSeparator:(BOOL)arg1;
-- (void)setGroupingSize:(unsigned int)arg1;
-- (id)currencyCode;
-- (void)finalize;
 - (void)setPartialStringValidationEnabled:(BOOL)arg1;
 - (BOOL)isPartialStringValidationEnabled;
 - (void)setMaximumSignificantDigits:(unsigned int)arg1;
@@ -134,19 +130,23 @@
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
 - (unsigned int)roundingMode;
-- (id)numberFromString:(id)arg1;
-- (void)setMaximumFractionDigits:(unsigned int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)setUsesGroupingSeparator:(BOOL)arg1;
+- (void)setGroupingSize:(unsigned int)arg1;
 - (void)setNumberStyle:(unsigned int)arg1;
 - (void)setFormatterBehavior:(unsigned int)arg1;
 - (id)stringFromNumber:(id)arg1;
 - (id)stringForObjectValue:(id)arg1;
 - (void)_reset;
 - (id)locale;
+- (void)finalize;
 - (void)setLocale:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)numberFromString:(id)arg1;
+- (void)setMaximumFractionDigits:(unsigned int)arg1;
+- (id)currencyCode;
 
 @end

@@ -2,30 +2,22 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSDictionary, NSData, NSString;
+@class NSData, NSString;
 
 @interface FTProfileMessage : FTMessage <NSCopying> {
     NSData *_pushToken;
     NSString *_authToken;
     NSString *_profileID;
-    NSDictionary *_responseAlert;
 }
 
 @property(copy) NSString * profileID;
 @property(copy) NSString * authToken;
 @property(copy) NSData * pushToken;
-@property(copy) NSDictionary * responseAlertInfo;
 
 
-- (int)command;
-- (void)setAuthToken:(id)arg1;
-- (id)authToken;
-- (void)setPushToken:(id)arg1;
-- (id)pushToken;
-- (id)responseAlertInfo;
-- (void)setProfileID:(id)arg1;
-- (id)profileID;
-- (void)setResponseAlertInfo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)additionalMessageHeadersForOutgoingPush;
 - (id)additionalMessageHeaders;
@@ -35,8 +27,12 @@
 - (BOOL)wantsHTTPHeaders;
 - (BOOL)wantsCompressedBody;
 - (BOOL)wantsBinaryPush;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (int)command;
+- (void)setAuthToken:(id)arg1;
+- (id)authToken;
+- (void)setPushToken:(id)arg1;
+- (id)pushToken;
+- (void)setProfileID:(id)arg1;
+- (id)profileID;
 
 @end

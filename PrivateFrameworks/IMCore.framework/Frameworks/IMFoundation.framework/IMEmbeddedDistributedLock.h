@@ -9,11 +9,11 @@
 }
 
 
-- (BOOL)tryLock;
+- (void)dealloc;
+- (id)initWithName:(id)arg1;
 - (void)unlock;
 - (void)lock;
 - (id)name;
-- (id)initWithName:(id)arg1;
-- (void)dealloc;
+- (BOOL)tryLock;
 
 @end

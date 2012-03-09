@@ -16,16 +16,16 @@
 @property(retain) SUScriptButton * rightButton;
 @property(retain) <SUScriptNavigationItem> * rightItem;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
+- (id)init;
 - (void)setNavigationItems:(id)arg1;
 - (id)navigationItems;
 - (void)setPrompt:(id)arg1;
 - (id)prompt;
-- (id)init;
+- (id)attributeKeys;
 - (void)setRightButton:(id)arg1;
 - (void)setLeftButton:(id)arg1;
 - (id)rightButton;

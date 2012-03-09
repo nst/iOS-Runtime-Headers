@@ -12,12 +12,12 @@
 
 + (id)pivotItem;
 
+- (id)init;
+- (void)dealloc;
+- (int)type;
+- (void)setType:(int)arg1;
 - (void)setRepeatedItemCounts:(unsigned int)arg1;
 - (unsigned int)repeatedItemCounts;
 - (id)itemIndexes;
-- (int)type;
-- (void)setType:(int)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

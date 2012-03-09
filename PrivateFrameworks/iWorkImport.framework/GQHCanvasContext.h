@@ -13,6 +13,7 @@
 }
 
 
+- (void)dealloc;
 - (void)translate:(struct CGSize { float x1; float x2; })arg1 state:(id)arg2;
 - (float)strokeWidthWithGraphicStyle:(id)arg1;
 - (struct GQHPathEndPointInfo { BOOL x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGPoint { float x_5_1_1; float x_5_1_2; } x5; int x6; })endPointInfoForPath:(struct CGPath { }*)arg1;
@@ -35,6 +36,5 @@
 - (void)setBezierPath:(char *)arg1 state:(id)arg2;
 - (void)addScriptTagToHtml:(id)arg1 state:(id)arg2;
 - (void)createMaskedImageWithId:(struct __CFString { }*)arg1 path:(id)arg2 geometry:(id)arg3 cropGeometry:(id)arg4 imageBinary:(id)arg5 graphicStyle:(id)arg6 isFloating:(BOOL)arg7 state:(id)arg8;
-- (void)dealloc;
 
 @end

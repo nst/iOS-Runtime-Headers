@@ -17,6 +17,7 @@
 @property(retain) CoreDAVPropFindTask * fetchTask;
 
 
+- (void)dealloc;
 - (void)setAceItems:(id)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 aceItems:(id)arg2 url:(id)arg3 taskManager:(id)arg4;
 - (void)_startSetACLWithAccessControlEntities:(id)arg1;
@@ -32,6 +33,5 @@
 - (id)url;
 - (void)setState:(int)arg1;
 - (int)state;
-- (void)dealloc;
 
 @end

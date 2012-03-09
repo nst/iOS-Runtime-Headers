@@ -15,25 +15,25 @@
 @property BOOL registered;
 @property(readonly) int connectionStatus;
 
-+ (id)alloc;
 + (id)sharedInstance;
++ (id)alloc;
 
-- (id)pushToken;
-- (void)setRegistered:(BOOL)arg1;
-- (void)setTopics:(id)arg1;
-- (BOOL)registered;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
-- (void)addListener:(id)arg1;
-- (void)removeListener:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)removeTopic:(id)arg1;
 - (void)addTopic:(id)arg1;
 - (void)requestKeepAlive;
 - (void)updateTopics;
 - (id)topics;
 - (int)connectionStatus;
-- (id)init;
-- (void)dealloc;
+- (BOOL)registered;
+- (id)pushToken;
 - (id)initWithTopics:(id)arg1;
+- (void)addListener:(id)arg1;
+- (void)removeListener:(id)arg1;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (void)setRegistered:(BOOL)arg1;
+- (void)setTopics:(id)arg1;
 
 @end

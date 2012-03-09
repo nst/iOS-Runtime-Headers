@@ -23,6 +23,10 @@
 @property BOOL attemptedConnection;
 
 
+- (id)userInfo;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)downloadWithDelegate:(id)arg1;
 - (void)setAttemptedConnection:(BOOL)arg1;
 - (void)_connectionBackgroundDownloadPostCompleted:(id)arg1;
@@ -37,18 +41,14 @@
 - (void)_issueWasRemovedFromLibrary;
 - (BOOL)_isDecodingValid;
 - (BOOL)_attemptedConnection;
+- (void)setConnection:(id)arg1;
+- (id)connection;
 - (id)_connection;
 - (void)setUserInfo:(id)arg1;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setConnection:(id)arg1;
-- (id)connection;
-- (id)userInfo;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (void)_cancel;
 - (id)URLRequest;
 - (void)setURLRequest:(id)arg1;

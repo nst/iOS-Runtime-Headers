@@ -31,6 +31,10 @@
 @property BOOL canBeNowPlayingApp;
 
 
+- (id)init;
+- (void)dealloc;
+- (id)nowPlayingInfo;
+- (void)setNowPlayingInfo:(id)arg1;
 - (BOOL)includeVideoRoutes;
 - (void)setCanBeNowPlayingApp:(BOOL)arg1;
 - (void)setCommandHandlerBlock:(id)arg1;
@@ -44,9 +48,5 @@
 - (id)commandHandlerBlock;
 - (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
 - (BOOL)canBeNowPlayingApp;
-- (id)nowPlayingInfo;
-- (void)setNowPlayingInfo:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

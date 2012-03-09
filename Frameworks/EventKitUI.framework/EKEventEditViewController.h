@@ -21,14 +21,8 @@
 
 + (void)setDefaultDatesForEvent:(id)arg1;
 
+- (void)dealloc;
 - (id)eventStore;
-- (void)setEditViewDelegate:(id)arg1;
-- (void)setEventStore:(id)arg1;
-- (id)event;
-- (void)setEvent:(id)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)setEditor:(id)arg1;
 - (id)editor;
 - (id)editViewDelegate;
@@ -45,6 +39,12 @@
 - (BOOL)showsTimeZone;
 - (void)setShowAttachments:(BOOL)arg1;
 - (void)_storeChanged:(id)arg1;
-- (void)dealloc;
+- (id)event;
+- (void)setEvent:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)setEditViewDelegate:(id)arg1;
+- (void)setEventStore:(id)arg1;
 
 @end

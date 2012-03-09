@@ -30,6 +30,8 @@
 
 + (float)bestWarmthForI:(float)arg1 q:(float)arg2 percentChange:(float*)arg3;
 
+- (id)init;
+- (void)dealloc;
 - (id)shadow;
 - (id)borderHist;
 - (id)satHist;
@@ -56,7 +58,5 @@
 - (struct { float x1; float x2; })originalFaceColor;
 - (id)faceBalanceStrength;
 - (id)faceBalanceWarmth;
-- (id)init;
-- (void)dealloc;
 
 @end

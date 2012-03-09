@@ -24,15 +24,10 @@
 @property(readonly) int searchPartID;
 @property(readonly) int searchMessageID;
 
-+ (id)identifier;
 + (float)cellHeight;
++ (id)identifier;
 
-- (void)willTransitionToState:(unsigned int)arg1;
-- (void)didTransitionToState:(unsigned int)arg1;
-- (void)clearText;
-- (void)prepareForReuse;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)layoutSubviews;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 conversation:(id)arg2;
 - (void)updateWithSearchResult:(struct _CKSpotlightSearchResult { id x1; int x2; int x3; id x4; id x5; }*)arg1;
 - (int)searchPartID;
@@ -43,6 +38,11 @@
 - (id)conversation;
 - (void)setConversation:(id)arg1;
 - (void)updateFontSize;
-- (void)dealloc;
+- (void)willTransitionToState:(unsigned int)arg1;
+- (void)didTransitionToState:(unsigned int)arg1;
+- (void)clearText;
+- (void)prepareForReuse;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)layoutSubviews;
 
 @end

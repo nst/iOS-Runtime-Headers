@@ -13,8 +13,8 @@
 @property unsigned int fontSmoothingStyle;
 
 + (id)defaultValueForKey:(id)arg1;
-+ (BOOL)needsDisplayForKey:(id)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
++ (BOOL)needsDisplayForKey:(id)arg1;
 
 - (void)didChangeValueForKey:(id)arg1;
 - (void)setFontSmoothingStyle:(unsigned int)arg1;

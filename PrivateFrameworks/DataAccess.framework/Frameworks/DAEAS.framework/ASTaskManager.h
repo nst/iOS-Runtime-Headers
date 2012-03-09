@@ -16,8 +16,8 @@
 
 - (void)cancelTaskWithID:(int)arg1;
 - (void)shutdown;
-- (id)protocol;
 - (void)dealloc;
+- (id)protocol;
 - (void)taskManagerWillRemoveTask:(id)arg1;
 - (void)taskManagerDidAddTask:(id)arg1;
 - (id)_version;

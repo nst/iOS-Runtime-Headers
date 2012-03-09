@@ -14,6 +14,11 @@
 
 + (void)initialize;
 
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)key;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)_relatedNodes;
 - (void)setDestinations:(id)arg1 forRelationship:(id)arg2;
 - (id)destinationsForRelationship:(id)arg1;
@@ -26,10 +31,5 @@
 - (void)_setVersionNumber:(unsigned int)arg1;
 - (id)entity;
 - (id)objectID;
-- (id)key;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end

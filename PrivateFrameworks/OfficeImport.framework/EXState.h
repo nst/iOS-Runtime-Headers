@@ -36,6 +36,8 @@
 @property(readonly) <OCCancelDelegate> * cancelDelegate;
 
 
+- (BOOL)isCancelled;
+- (void)dealloc;
 - (double)defaultColumnWidth;
 - (void)setDefaultColumnWidth:(double)arg1;
 - (double)defaultRowHeight;
@@ -79,7 +81,5 @@
 - (id)cancelDelegate;
 - (id)oavState;
 - (id)officeArtState;
-- (BOOL)isCancelled;
-- (void)dealloc;
 
 @end

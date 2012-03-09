@@ -15,14 +15,14 @@
 @property Class parseClass;
 
 
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (Class)parseClass;
 - (void)setParseClass:(Class)arg1;
 - (void)setNameSpace:(id)arg1;
 - (id)initWithNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3;
 - (id)nameSpace;
 - (id)name;
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

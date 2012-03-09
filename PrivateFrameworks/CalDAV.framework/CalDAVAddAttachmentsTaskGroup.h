@@ -31,6 +31,7 @@
 + (id)dropboxACEItemsForPrincipalURLs:(id)arg1 baseURL:(id)arg2 writable:(BOOL)arg3;
 
 - (id)attachments;
+- (void)dealloc;
 - (void)setAceItems:(id)arg1;
 - (id)aceItems;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
@@ -40,7 +41,6 @@
 - (void)setAttachments:(id)arg1;
 - (void)setState:(int)arg1;
 - (int)state;
-- (void)dealloc;
 - (id)initWithAccountInfoProvider:(id)arg1 dropboxURL:(id)arg2 attachments:(id)arg3 contentTypes:(id)arg4 attendeePrincipalURLs:(id)arg5 attendeesCanManageDropBox:(BOOL)arg6 taskManager:(id)arg7;
 - (id)etags;
 - (id)putFailureSizes;

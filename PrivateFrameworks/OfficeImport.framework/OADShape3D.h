@@ -17,6 +17,11 @@
 
 + (id)nullShape3D;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setTopBevel:(id)arg1;
 - (void)setBottomBevel:(id)arg1;
 - (void)setExtrusionColor:(id)arg1;
@@ -33,10 +38,5 @@
 - (float)contourWidth;
 - (float)shapeDepth;
 - (int)material;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

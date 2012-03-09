@@ -22,6 +22,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithEntity:(id)arg1 alias:(id)arg2 inScope:(id)arg3;
 - (id)fetchIntermediate;
 - (BOOL)isDictionaryCountFetch;
@@ -58,6 +59,5 @@
 - (id)initWithScope:(id)arg1;
 - (id)governingEntityForKeypathExpression:(id)arg1;
 - (id)generateSQLStringInContext:(id)arg1;
-- (void)dealloc;
 
 @end

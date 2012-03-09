@@ -19,6 +19,9 @@
 @property(retain) CoreDAVHrefItem * href;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setInviteStatus:(id)arg1;
 - (id)inviteStatus;
 - (id)copyParseRules;
@@ -27,9 +30,6 @@
 - (void)setSummary:(id)arg1;
 - (void)setHref:(id)arg1;
 - (id)href;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (id)initWithHREF:(id)arg1 commonName:(id)arg2 inviteStatus:(int)arg3 access:(int)arg4;
 - (void)setCommonName:(id)arg1;
 - (void)setAccess:(id)arg1;

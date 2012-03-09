@@ -74,7 +74,7 @@
 @property(copy) id receiveHandler;
 
 
-- (void)finalize;
+- (void)dealloc;
 - (id)initWithRelayRequestDictionary:(id)arg1 withCallID:(int)arg2 relayType:(unsigned char)arg3 errorCode:(int*)arg4;
 - (unsigned int)connectionType;
 - (BOOL)sendAllocateMsg:(id*)arg1;
@@ -107,6 +107,6 @@
 - (void)processSocketRead;
 - (void)processSocketReadSSL;
 - (void)resetConnection;
-- (void)dealloc;
+- (void)finalize;
 
 @end

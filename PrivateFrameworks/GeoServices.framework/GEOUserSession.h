@@ -13,9 +13,9 @@
 
 + (id)sharedInstance;
 
-- (void)_updateSessionIDIfNeeded;
-- (id)sessionID;
 - (id)init;
 - (void)dealloc;
+- (void)_updateSessionIDIfNeeded;
+- (id)sessionID;
 
 @end

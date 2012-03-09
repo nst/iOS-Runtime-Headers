@@ -5,18 +5,18 @@
 @interface NSNull : NSObject <NSCopying, NSCoding> {
 }
 
-+ (id)null;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)null;
 
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (unsigned long)_cfTypeID;
 - (unsigned int)retainCount;
 - (id)description;
 - (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (unsigned long)_cfTypeID;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -17,6 +17,11 @@
 @property(readonly) SSOperationProgress * operationProgress;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (long long)progressValue;
+- (double)estimatedSecondsRemaining;
 - (long long)totalProgressValue;
 - (float)progressChangeRate;
 - (int)progressUnits;
@@ -27,10 +32,5 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (long long)progressValue;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (double)estimatedSecondsRemaining;
 
 @end

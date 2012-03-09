@@ -10,7 +10,7 @@
         float width; 
         float height; 
     } previewImageSize;
-    unsigned int imageDataFormatType;
+    unsigned long imageDataFormatType;
     long long imageMaxDataSize;
     BOOL HDRCaptureEnabled;
     BOOL EV0CaptureEnabled;

@@ -14,15 +14,15 @@
 @property(readonly) NSArray * downloads;
 @property(readonly) NSString * queueType;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
+- (void)dealloc;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (id)downloads;
 - (void)finalizeForWebScript;
 - (id)attributeKeys;
-- (void)dealloc;
 - (id)queueType;
 - (id)initWithQueueType:(id)arg1;
 - (void)preorderManagerPreordersDidChange:(id)arg1;

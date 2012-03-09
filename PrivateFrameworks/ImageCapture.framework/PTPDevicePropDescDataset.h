@@ -22,7 +22,11 @@
 }
 
 
-- (id)currentValue;
+- (void)setStepSize:(id)arg1;
+- (id)stepSize;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (unsigned short)devicePropertyCode;
 - (void)setDevicePropertyCode:(unsigned short)arg1;
 - (unsigned short)dataTypeCode;
@@ -39,18 +43,14 @@
 - (void)setSupportedValues:(id)arg1;
 - (void)updateContent;
 - (id)initWithMutableData:(id)arg1;
-- (void)setContent:(id)arg1;
 - (void)setMaximumValue:(id)arg1;
 - (void)setMinimumValue:(id)arg1;
 - (id)maximumValue;
 - (id)minimumValue;
 - (id)content;
 - (id)initWithData:(id)arg1;
-- (void)setStepSize:(id)arg1;
-- (id)stepSize;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)setContent:(id)arg1;
 - (void)setCurrentValue:(id)arg1;
+- (id)currentValue;
 
 @end

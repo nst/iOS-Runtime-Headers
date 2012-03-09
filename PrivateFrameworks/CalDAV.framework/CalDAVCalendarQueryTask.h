@@ -27,8 +27,6 @@
 - (id)todoFilterStartDate;
 - (id)eventFilterEndDate;
 - (id)eventFilterStartDate;
-- (id)httpMethod;
-- (id)requestBody;
 - (id)_icsDateStringForNSDateComponents:(id)arg1;
 - (void)_appendTimeRangeFilterToXMLData:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (void)_appendComponentFiltersToXMLData:(id)arg1;
@@ -40,5 +38,7 @@
 - (void)setEventFilterEndDate:(id)arg1;
 - (void)setTodoFilterStartDate:(id)arg1;
 - (void)setTodoFilterEndDate:(id)arg1;
+- (id)httpMethod;
+- (id)requestBody;
 
 @end

@@ -16,13 +16,13 @@
 + (id)migrantDispatchQueue;
 + (id)newThreadRunLoopDispatchQueue;
 
+- (id)init;
+- (void)dealloc;
+- (union qed_queue_u { }*)queue;
+- (void)stop;
 - (void)start;
 - (void)_afterStartedAddRunLoopSourceTo:(id)arg1;
 - (void)runThreadDispatchQueue:(id)arg1;
 - (void)switchToState:(id)arg1;
-- (void)stop;
-- (id)init;
-- (void)dealloc;
-- (union qed_queue_u { }*)queue;
 
 @end

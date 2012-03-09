@@ -21,6 +21,7 @@
 
 + (id)sharedClassicController;
 
+- (void)dealloc;
 - (void)setDrawsStatusBarFiller:(BOOL)arg1;
 - (BOOL)drawsStatusBarFiller;
 - (void)setMasksToWindowBounds:(BOOL)arg1;
@@ -44,6 +45,5 @@
 - (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarStyle:(int)arg1 animationParameters:(id)arg2;
 - (void)_initializeStatusBarOrientation;
-- (void)dealloc;
 
 @end

@@ -36,10 +36,31 @@
 @property(getter=isActiveLockerAccount) BOOL activeLockerAccount;
 
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)storeFrontIdentifier;
 - (void)setAccountName:(id)arg1;
 - (id)accountName;
 - (BOOL)isAuthenticated;
+- (void)setUniqueIdentifier:(id)arg1;
+- (id)uniqueIdentifier;
+- (BOOL)isActive;
+- (void)setActive:(BOOL)arg1;
+- (void)setSocialEnabled:(BOOL)arg1;
+- (void)removeEnabledServiceTypes:(int)arg1;
+- (void)addEnabledServiceTypes:(int)arg1;
+- (void)setAccountKind:(int)arg1;
+- (void)setCreditsString:(id)arg1;
+- (int)enabledServiceTypes;
+- (int)accountKind;
+- (BOOL)isActiveLockerAccount;
+- (void)setSecureToken:(id)arg1;
+- (id)secureToken;
+- (void)setActiveLockerAccount:(BOOL)arg1;
+- (int)accountScope;
+- (id)creditsString;
 - (void)setDemoAccount:(BOOL)arg1;
 - (void)resetTransientData;
 - (void)removeAvailableServiceTypes:(int)arg1;
@@ -57,27 +78,6 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (void)setUniqueIdentifier:(id)arg1;
-- (id)uniqueIdentifier;
-- (BOOL)isActive;
-- (void)setActive:(BOOL)arg1;
 - (BOOL)isSocialEnabled;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setSocialEnabled:(BOOL)arg1;
-- (void)removeEnabledServiceTypes:(int)arg1;
-- (void)addEnabledServiceTypes:(int)arg1;
-- (void)setAccountKind:(int)arg1;
-- (void)setCreditsString:(id)arg1;
-- (int)enabledServiceTypes;
-- (int)accountKind;
-- (BOOL)isActiveLockerAccount;
-- (void)setSecureToken:(id)arg1;
-- (id)secureToken;
-- (void)setActiveLockerAccount:(BOOL)arg1;
-- (int)accountScope;
-- (id)creditsString;
 
 @end

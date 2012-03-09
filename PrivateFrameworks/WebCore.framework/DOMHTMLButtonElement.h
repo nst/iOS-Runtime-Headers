@@ -17,6 +17,15 @@
 @property(readonly) BOOL willValidate;
 
 
+- (void)setName:(id)arg1;
+- (void)setDisabled:(BOOL)arg1;
+- (int)structuralComplexityContribution;
+- (BOOL)disabled;
+- (id)form;
+- (id)type;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (id)name;
 - (id)formAction;
 - (void)setFormAction:(id)arg1;
 - (id)formEnctype;
@@ -38,14 +47,5 @@
 - (void)click;
 - (id)accessKey;
 - (void)setAccessKey:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
-- (int)structuralComplexityContribution;
-- (BOOL)disabled;
-- (id)form;
-- (id)type;
-- (id)value;
-- (void)setValue:(id)arg1;
-- (id)name;
-- (void)setName:(id)arg1;
 
 @end

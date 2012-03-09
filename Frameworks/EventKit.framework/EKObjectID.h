@@ -13,19 +13,19 @@
 + (id)temporaryObjectIDWithEntityType:(int)arg1;
 + (id)objectIDWithCADObjectID:(struct { int x1; int x2; })arg1;
 
-- (id)entityName;
-- (id)URIRepresentation;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithEntityType:(int)arg1 rowID:(int)arg2 temporary:(BOOL)arg3;
 - (int)entityType;
 - (int)rowID;
 - (struct { int x1; int x2; })CADObjectID;
 - (BOOL)isTemporary;
-- (id)stringRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)stringRepresentation;
+- (id)entityName;
+- (id)URIRepresentation;
 
 @end

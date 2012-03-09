@@ -13,12 +13,12 @@
 @property BOOL findCommonFriends;
 
 
+- (void)dealloc;
 - (BOOL)findCommonFriends;
 - (void)setFindCommonFriends:(BOOL)arg1;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

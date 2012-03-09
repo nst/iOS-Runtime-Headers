@@ -24,6 +24,8 @@
 }
 
 
+- (void)setProperties:(id)arg1;
+- (void)dealloc;
 - (void)parentDidClose;
 - (void)parentWillClose;
 - (void)removeAddresses;
@@ -56,23 +58,6 @@
 - (void)reflow;
 - (void)setAddresses:(id)arg1;
 - (id)recipients;
-- (void)setProperty:(int)arg1;
-- (BOOL)editable;
-- (id)textField;
-- (void)setEditable:(BOOL)arg1;
-- (void)setLabel:(id)arg1;
-- (void)clearText;
-- (void)textChanged:(id)arg1;
-- (void)keyboardInputChangedSelection:(id)arg1;
-- (BOOL)keyboardInputShouldDelete:(id)arg1;
-- (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (BOOL)hasContent;
-- (void)textFieldDidResignFirstResponder:(id)arg1;
-- (void)textFieldDidBecomeFirstResponder:(id)arg1;
-- (BOOL)becomeFirstResponder;
-- (id)text;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)atomStyleForRecipient:(id)arg1;
 - (void)_reallySelectComposeRecipientAtom:(id)arg1;
 - (void)_hideAddButton;
@@ -91,8 +76,23 @@
 - (void)setInputDelay:(double)arg1;
 - (void)deselectComposeRecipientAtom:(id)arg1;
 - (void)composeRecipientAtomShowPersonCard:(id)arg1;
-- (void)setProperties:(id)arg1;
-- (void)dealloc;
+- (BOOL)editable;
+- (id)textField;
+- (void)setEditable:(BOOL)arg1;
+- (void)setLabel:(id)arg1;
+- (void)clearText;
+- (void)textChanged:(id)arg1;
+- (void)keyboardInputChangedSelection:(id)arg1;
+- (BOOL)keyboardInputShouldDelete:(id)arg1;
+- (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (BOOL)hasContent;
+- (void)textFieldDidResignFirstResponder:(id)arg1;
+- (void)textFieldDidBecomeFirstResponder:(id)arg1;
+- (BOOL)becomeFirstResponder;
+- (id)text;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setProperty:(int)arg1;
 - (id)addButton;
 
 @end

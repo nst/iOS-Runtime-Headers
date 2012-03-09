@@ -24,20 +24,13 @@
 @property(readonly) int maxMessageSize;
 @property unsigned int maxConcurrentMessages;
 
-+ (Class)HTTPMessageDeliveryClass;
++ (id)alloc;
 + (Class)APNSMessageDeliveryClass;
 + (id)_errorForTDMessageDeliveryStatus:(int)arg1 userInfo:(id)arg2;
-+ (id)alloc;
++ (Class)HTTPMessageDeliveryClass;
 
-- (id)userAgent;
-- (void)setProtocolVersion:(id)arg1;
-- (id)protocolVersion;
-- (id)queuedMessages;
-- (id)currentMessage;
-- (void)setRetryInAirplaneMode:(BOOL)arg1;
-- (void)invalidate;
-- (void)cancelMessage:(id)arg1;
-- (BOOL)sendMessage:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)retryInAirplaneMode;
 - (void)setMaxConcurrentMessages:(unsigned int)arg1;
 - (unsigned int)maxConcurrentMessages;
@@ -50,9 +43,16 @@
 - (void)_retryTimerHit:(id)arg1;
 - (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
 - (void)_clearRetryTimer;
-- (id)init;
-- (void)dealloc;
+- (id)userAgent;
+- (void)setProtocolVersion:(id)arg1;
+- (id)protocolVersion;
+- (void)cancelMessage:(id)arg1;
+- (BOOL)sendMessage:(id)arg1;
+- (void)invalidate;
 - (void)setUserAgent:(id)arg1;
+- (id)queuedMessages;
+- (id)currentMessage;
+- (void)setRetryInAirplaneMode:(BOOL)arg1;
 - (id)_queue;
 
 @end

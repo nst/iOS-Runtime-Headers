@@ -18,6 +18,9 @@
 @property(readonly) UIColor * tintColor;
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 - (id)tintedImage;
 - (id)initWithPressed:(BOOL)arg1 tintColor:(id)arg2;
 - (BOOL)isContentDiscarded;
@@ -26,8 +29,5 @@
 - (BOOL)beginContentAccess;
 - (id)_tintedDisclosureImage:(BOOL)arg1;
 - (id)tintColor;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 
 @end

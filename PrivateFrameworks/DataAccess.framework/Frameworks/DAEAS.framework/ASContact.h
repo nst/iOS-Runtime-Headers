@@ -146,6 +146,8 @@
 
 - (int)bodySize;
 - (void)setChildren:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setCategories:(id)arg1;
 - (id)categories;
 - (void)setLastName:(id)arg1;
@@ -154,17 +156,15 @@
 - (id)accountName;
 - (id)lastName;
 - (id)firstName;
-- (id)suffix;
-- (void)setSuffix:(id)arg1;
-- (id)children;
-- (void)setBody:(id)arg1;
 - (id)body;
 - (id)title;
 - (void)setTitle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (id)children;
+- (void)setBody:(id)arg1;
+- (id)suffix;
+- (void)setSuffix:(id)arg1;
 - (void)setBodyTruncatedNumber:(id)arg1;
 - (void)setBodySizeNumber:(id)arg1;
 - (BOOL)deleteFromAddressBook;

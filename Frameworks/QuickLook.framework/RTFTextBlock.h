@@ -13,6 +13,13 @@
 }
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)setBorderColor:(id)arg1;
+- (float)contentWidth;
+- (id)backgroundColor;
+- (void)setBackgroundColor:(id)arg1;
 - (unsigned int)verticalAlignment;
 - (void)setVerticalAlignment:(unsigned int)arg1;
 - (void)setContentWidth:(float)arg1 type:(unsigned int)arg2;
@@ -33,12 +40,5 @@
 - (float)widthForLayer:(int)arg1 edge:(unsigned int)arg2;
 - (unsigned int)widthValueTypeForLayer:(int)arg1 edge:(unsigned int)arg2;
 - (id)borderColorForEdge:(unsigned int)arg1;
-- (void)setBorderColor:(id)arg1;
-- (float)contentWidth;
-- (id)backgroundColor;
-- (void)setBackgroundColor:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -14,12 +14,12 @@
 
 
 - (id)account;
+- (void)dealloc;
 - (void)resetIMPerson;
 - (void)setPerson:(id)arg1;
 - (id)chat;
 - (id)initWithRecordID:(int)arg1;
 - (id)person;
 - (void)markAsRead;
-- (void)dealloc;
 
 @end

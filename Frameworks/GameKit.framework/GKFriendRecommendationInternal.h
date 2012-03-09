@@ -20,6 +20,7 @@
 
 + (id)codedPropertyKeys;
 
+- (void)dealloc;
 - (void)setReason2:(id)arg1;
 - (id)reason2;
 - (void)setReasonID:(id)arg1;
@@ -30,6 +31,5 @@
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
 - (id)reason;
-- (void)dealloc;
 
 @end

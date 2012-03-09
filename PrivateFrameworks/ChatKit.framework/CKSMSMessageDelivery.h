@@ -15,9 +15,8 @@
 @property CKSMSMessage * message;
 
 
-- (id)message;
-- (void)setMessage:(id)arg1;
-- (float)progress;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isSending;
 - (void)_sentMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
 - (void)_errorSendingMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
@@ -28,7 +27,8 @@
 - (void)_fakeSendMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 afterDelay:(double)arg2;
 - (void)redeliverPartiallyFailedMessage;
 - (void)sendMessage;
-- (id)init;
-- (void)dealloc;
+- (id)message;
+- (void)setMessage:(id)arg1;
+- (float)progress;
 
 @end

@@ -21,6 +21,11 @@
 
 + (unsigned long)approximateBytesForEntryHeaderWithName:(id)arg1;
 
+- (void)dealloc;
+- (void)reset;
+- (id)initWithPath:(id)arg1;
+- (void)close;
+- (void)flush;
 - (id)beginUncompressedUnknownSizeEntryWithName:(id)arg1;
 - (void)setCrc32ForCurrentEntry:(unsigned int)arg1;
 - (BOOL)canRemoveEntryWithName:(id)arg1;
@@ -42,11 +47,6 @@
 - (void)writeZip64EndOfCentralDirectoryLocatorWithOffset:(long long)arg1;
 - (void)moveToPath:(id)arg1;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
-- (void)flush;
 - (id)entryNames;
-- (void)reset;
-- (id)initWithPath:(id)arg1;
-- (void)close;
-- (void)dealloc;
 
 @end

@@ -7,11 +7,11 @@
 }
 
 
-- (void)setDelegate:(id)arg1;
+- (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
+- (void)dealloc;
 - (void)finalize;
 - (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
 - (id)delegate;
-- (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

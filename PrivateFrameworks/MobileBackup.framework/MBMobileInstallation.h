@@ -12,6 +12,7 @@
 @property(readonly) NSString * safeHarborDir;
 
 
+- (void)dealloc;
 - (id)initWithSafeHarborDir:(id)arg1;
 - (BOOL)installPlaceholderAppAtPath:(id)arg1 error:(id*)arg2;
 - (BOOL)uninstallAppWithBundleID:(id)arg1 error:(id*)arg2;
@@ -22,6 +23,5 @@
 - (BOOL)registerSafeHarborWithIdentifier:(id)arg1 path:(id)arg2 error:(id*)arg3;
 - (id)safeHarborDir;
 - (BOOL)processRestoredContainerAtPath:(id)arg1 error:(id*)arg2;
-- (void)dealloc;
 
 @end

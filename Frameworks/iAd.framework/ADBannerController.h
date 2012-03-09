@@ -33,7 +33,9 @@
 @property BOOL storyboardSupportsLandscapeRight;
 
 
-- (void)setDelegate:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setStoryboardSupportsLandscapeRight:(BOOL)arg1;
 - (BOOL)storyboardSupportsLandscapeRight;
 - (void)setStoryboardSupportsLandscapeLeft:(BOOL)arg1;
@@ -66,7 +68,14 @@
 - (void)dismissHostWindowController;
 - (void)_adSheetConnectionLost;
 - (void)setRemoteSession:(id)arg1;
-- (BOOL)isOpen;
+- (void)close;
+- (id)identifier;
+- (void)applicationWillEnterForeground:(id)arg1;
+- (void)applicationDidEnterBackground:(id)arg1;
+- (void)applicationDidBecomeActive:(id)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)open;
 - (void)setCreatedAt:(double)arg1;
 - (double)createdAt;
 - (void)setRemoteBannerController:(id)arg1;
@@ -85,16 +94,7 @@
 - (void)_remote_storyboardWillTransitionIn:(id)arg1;
 - (void)_remote_bannerControllerDidOpen:(id)arg1;
 - (void)setAuthenticationUserName:(id)arg1;
-- (void)open;
-- (void)close;
-- (id)identifier;
-- (void)applicationWillEnterForeground:(id)arg1;
-- (void)applicationDidEnterBackground:(id)arg1;
-- (void)applicationDidBecomeActive:(id)arg1;
-- (id)delegate;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (void)_close;
+- (BOOL)isOpen;
 
 @end

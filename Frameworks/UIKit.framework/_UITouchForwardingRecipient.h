@@ -17,6 +17,7 @@
 @property int autocompletedPhase;
 
 
+- (id)description;
 - (void)setFromResponder:(id)arg1;
 - (id)fromResponder;
 - (id)initWithResponder:(id)arg1 fromResponder:(id)arg2;
@@ -26,6 +27,5 @@
 - (int)recordedPhase;
 - (void)setResponder:(id)arg1;
 - (id)responder;
-- (id)description;
 
 @end

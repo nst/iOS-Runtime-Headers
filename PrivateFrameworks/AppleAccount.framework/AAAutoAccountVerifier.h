@@ -24,17 +24,17 @@
 @property(retain) AAAccount * account;
 
 
+- (void)setAccount:(id)arg1;
+- (id)initWithAccount:(id)arg1;
+- (id)account;
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
 - (void)verifyWithHandler:(id)arg1;
 - (void)sendVerificationEmail;
 - (void)_validateToken:(id)arg1;
 - (void)_verify;
-- (void)setAccount:(id)arg1;
-- (id)initWithAccount:(id)arg1;
-- (id)account;
 - (void)search:(id)arg1 didFinishWithError:(id)arg2;
 - (BOOL)search:(id)arg1 didFindResults:(id)arg2;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
 
 @end

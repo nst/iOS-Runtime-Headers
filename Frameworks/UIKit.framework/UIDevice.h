@@ -36,10 +36,11 @@
 @property(readonly) int userInterfaceIdiom;
 @property(setter=_setBacklightLevel:) float _backlightLevel;
 
++ (id)currentDevice;
 + (id)modelSpecificLocalizedStringKeyForKey:(id)arg1;
 + (int)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
-+ (id)currentDevice;
 
+- (BOOL)isWildcat;
 - (BOOL)_isTTYEnabled;
 - (void)_setBatteryLevel:(float)arg1;
 - (void)_setBatteryState:(int)arg1;
@@ -78,7 +79,6 @@
 - (void)_registerForSystemSounds:(id)arg1;
 - (void)_unregisterForSystemSounds:(id)arg1;
 - (int)userInterfaceIdiom;
-- (BOOL)isWildcat;
 - (void)setIsMediaPicker:(BOOL)arg1;
 - (BOOL)isMediaPicker;
 

@@ -25,6 +25,9 @@
 @property(readonly) int waiterNum;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (int)waiterNum;
 - (void)setDataclasses:(int)arg1;
 - (int)dataclasses;
@@ -32,8 +35,5 @@
 - (id)waiter;
 - (void)setCompletionHandler:(id)arg1;
 - (id)completionHandler;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

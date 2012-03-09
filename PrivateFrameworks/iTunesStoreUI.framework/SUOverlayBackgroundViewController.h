@@ -30,7 +30,8 @@
 @property(readonly) NSArray * viewControllers;
 
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)dismissAnimated:(BOOL)arg1;
 - (id)selectedViewController;
 - (id)viewControllers;
@@ -39,8 +40,7 @@
 - (void)loadView;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)delegate;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (void)overlayPageViewTapped:(id)arg1;
 - (void)_performPresentAction:(id)arg1;
 - (void)_performDismissEverythingAction:(id)arg1;

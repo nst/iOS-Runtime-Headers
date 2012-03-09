@@ -7,6 +7,8 @@
 }
 
 
+- (id)description;
+- (id)init;
 - (BOOL)isSimilarTo:(id)arg1;
 - (BOOL)isFirstLayout;
 - (void)setIsFirstLayout:(BOOL)arg1;
@@ -21,7 +23,5 @@
 - (float)selectionBottom;
 - (void)accept:(id)arg1;
 - (id)properties;
-- (id)description;
-- (id)init;
 
 @end

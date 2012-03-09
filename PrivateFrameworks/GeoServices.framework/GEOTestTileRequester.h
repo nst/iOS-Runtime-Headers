@@ -10,8 +10,8 @@
 
 + (unsigned char)tileProviderIdentifier;
 
+- (void)dealloc;
 - (void)_sendResults:(id)arg1;
 - (void)start;
-- (void)dealloc;
 
 @end

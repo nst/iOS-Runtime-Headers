@@ -25,6 +25,8 @@
 @property(retain) UIImage * optionsBackgroundImage;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setOptionsBackgroundImage:(id)arg1;
 - (id)optionsBackgroundImage;
 - (void)setIsTiled:(BOOL)arg1 leftCapWidth:(unsigned int)arg2 rightCapWidth:(unsigned int)arg3;
@@ -47,7 +49,5 @@
 - (id)textAttributesForState:(unsigned int)arg1;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 isMini:(BOOL)arg3;
 - (id)backgroundImageForState:(unsigned int)arg1 isMini:(BOOL)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

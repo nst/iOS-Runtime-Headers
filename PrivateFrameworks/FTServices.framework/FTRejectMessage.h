@@ -18,17 +18,17 @@
 
 
 - (id)messageBody;
-- (void)setReason:(id)arg1;
-- (void)setPeerID:(id)arg1;
-- (id)peerID;
-- (id)reason;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setPeerPushToken:(id)arg1;
 - (id)peerPushToken;
 - (void)setSelfPushToken:(id)arg1;
 - (id)selfPushToken;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)setReason:(id)arg1;
 - (id)bagKey;
+- (id)reason;
+- (void)setPeerID:(id)arg1;
+- (id)peerID;
 
 @end

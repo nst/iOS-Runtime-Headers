@@ -26,12 +26,12 @@
 + (id)polygonEnclosingMapPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 + (id)polygonWithPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 
-- (struct { double x1; double x2; })coordinate;
+- (void)dealloc;
 - (id)interiorPolygons;
 - (BOOL)_isDefinitelyConvex;
 - (void)set_isDefinitelyConvex:(BOOL)arg1;
 - (BOOL)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
-- (void)dealloc;
+- (struct { double x1; double x2; })coordinate;
 
 @end

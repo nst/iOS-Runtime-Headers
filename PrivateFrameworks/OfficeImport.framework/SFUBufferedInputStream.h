@@ -14,6 +14,9 @@
 }
 
 
+- (void)dealloc;
+- (void)close;
+- (long long)offset;
 - (id)initWithSFUStream:(id)arg1;
 - (id)initWithStream:(id)arg1;
 - (id)initWithStream:(id)arg1 dataLength:(long long)arg2;
@@ -26,8 +29,5 @@
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
-- (void)close;
-- (long long)offset;
-- (void)dealloc;
 
 @end

@@ -21,12 +21,15 @@
 + (void)enableDownloadSessions;
 + (id)downloadSessionController;
 
+- (void)downloadHandler:(id)arg1 cancelSession:(id)arg2;
+- (void)downloadHandler:(id)arg1 handleSession:(id)arg2;
+- (id)init;
+- (void)dealloc;
 - (void)_closeSessionForAsset:(id)arg1;
 - (BOOL)showNetworkConstraintDialogForMediaItem:(id)arg1;
 - (id)openSessionWithMediaItem:(id)arg1;
 - (BOOL)isDownloadInProgressForMediaItem:(id)arg1 isPlaybackDownload:(BOOL*)arg2;
 - (id)downloadPropertiesForDownloadIdentifier:(id)arg1;
-- (void)downloadAssetsForMediaItems:(id)arg1 completionHandler:(id)arg2;
 - (void)downloadAssetForMediaItem:(id)arg1 completionHandler:(id)arg2;
 - (BOOL)canOpenSessionWithMediaItem:(id)arg1;
 - (void)_snapshotSessionProgress;
@@ -37,24 +40,21 @@
 - (BOOL)_showNoNetworkDialogForMediaItem:(id)arg1;
 - (id)_openSessionWithProperties:(id)arg1 style:(int*)arg2;
 - (id)openSessionWithProperties:(id)arg1;
-- (BOOL)_networkIsSufficientForPlayback;
 - (id)_downloadSessionWithID:(id)arg1;
 - (void)_downloadAssetsForMediaItems:(id)arg1 completionHandler:(id)arg2;
 - (void)_downloadAssetForMediaItem:(id)arg1 forPlayback:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)_setMediaItem:(id)arg1 isTemporaryDownload:(BOOL)arg2;
+- (BOOL)_networkIsSufficientForPlayback;
 - (BOOL)isSessionRequiredToPlayMediaItem:(id)arg1;
 - (void)_cellularRestrictionsChangedNotification:(id)arg1;
 - (void)_downloadFailedNotification:(id)arg1;
 - (void)_downloadCompleteNotification:(id)arg1;
-- (void)cancelDownloadForMediaItemWithPersistentID:(id)arg1;
 - (BOOL)isDownloadInProgressForMediaItemWithPersistentID:(id)arg1 isPlaybackDownload:(BOOL*)arg2;
 - (BOOL)prioritizeSessionForAVItem:(id)arg1;
 - (void)unregisterAVItem:(id)arg1;
 - (void)registerAVItem:(id)arg1;
-- (void)downloadHandler:(id)arg1 cancelSession:(id)arg2;
-- (void)downloadHandler:(id)arg1 handleSession:(id)arg2;
+- (void)downloadAssetsForMediaItems:(id)arg1 completionHandler:(id)arg2;
+- (void)cancelDownloadForMediaItemWithPersistentID:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

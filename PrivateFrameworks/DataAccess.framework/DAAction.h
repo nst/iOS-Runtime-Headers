@@ -19,6 +19,10 @@
 
 - (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 serverId:(id)arg3;
 - (int)itemChangeType;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (struct ASToDo { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; int x9; id x10; int x11; id x12; id x13; id x14; BOOL x15; BOOL x16; id x17; void *x18; id x19; id x20; id x21; id x22; id x23; id x24; id x25; id x26; id x27; id x28; id x29; id x30; id x31; id x32; id x33; }*)toDo;
 - (id)deletedToDoID;
 - (void)setChangeId:(int)arg1;
@@ -33,10 +37,6 @@
 - (struct ASEvent { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; int x9; id x10; int x11; id x12; id x13; id x14; BOOL x15; BOOL x16; id x17; void *x18; id x19; id x20; id x21; id x22; id x23; id x24; id x25; id x26; id x27; id x28; id x29; id x30; id x31; id x32; id x33; id x34; id x35; id x36; id x37; id x38; id x39; id x40; int x41; BOOL x42; BOOL x43; BOOL x44; BOOL x45; BOOL x46; BOOL x47; id x48; }*)event;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 - (id)serverId;
 - (void)appendApplicationDataForTask:(id)arg1 toWBXMLData:(id)arg2;
 - (id)clientID;

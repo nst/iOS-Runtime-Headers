@@ -14,6 +14,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (unsigned long)mainPbRef;
 - (unsigned long)titlePbRef;
 - (id)slideLayoutForSlideHolder:(id)arg1;
@@ -25,7 +27,5 @@
 - (void)cacheSlideLayouts;
 - (void)setSlideMaster:(id)arg1;
 - (id)slideMaster;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -35,6 +35,7 @@
 @property(retain) GKLeaderboardCategory * aggregateCategory;
 
 
+- (void)dealloc;
 - (void)setIsInPopover:(BOOL)arg1;
 - (void)updateNavbarButtons;
 - (int)navbarStyle;
@@ -56,6 +57,7 @@
 - (void)playTapped;
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (void)_gkResetContents;
+- (id)player;
 - (void)setControllerForDelegate:(id)arg1;
 - (void)setLeaderboardDelegate:(id)arg1;
 - (id)leaderboardDelegate;
@@ -63,9 +65,8 @@
 - (id)initWithGame:(id)arg1 player:(id)arg2;
 - (void)setNavbarStyle:(int)arg1;
 - (id)game;
-- (void)setGame:(id)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (void)setGame:(id)arg1;
 - (void)updateSelection;
 - (void)viewDidLoad;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
@@ -75,7 +76,6 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)player;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

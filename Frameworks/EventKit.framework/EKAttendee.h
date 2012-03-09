@@ -8,7 +8,11 @@
 + (id)attendeeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)attendeeWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
 
-- (id)owner;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (id)_persistentAttendee;
 - (void)setParticipantType:(int)arg1;
 - (void)setPendingStatus:(int)arg1;
@@ -21,10 +25,6 @@
 - (void)setParticipantStatus:(int)arg1;
 - (int)participantStatus;
 - (id)lazyLoadRelationForKey:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
+- (id)owner;
 
 @end

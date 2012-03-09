@@ -11,9 +11,9 @@
 @property NSObject<CKWebDocumentViewDelegate> * webDocumentViewDelegate;
 
 
-- (BOOL)canBecomeFirstResponder;
 - (void)actionDidFinish;
 - (id)webDocumentViewDelegate;
 - (void)setWebDocumentViewDelegate:(id)arg1;
+- (BOOL)canBecomeFirstResponder;
 
 @end

@@ -15,13 +15,13 @@
 @property(retain) NSString * message;
 
 
-- (id)message;
-- (void)setMessage:(id)arg1;
-- (void)setMessageType:(int)arg1;
-- (int)messageType;
-- (id)description;
-- (void)dealloc;
 - (void)setAlive:(BOOL)arg1;
 - (BOOL)isAlive;
+- (id)description;
+- (void)dealloc;
+- (void)setMessageType:(int)arg1;
+- (int)messageType;
+- (id)message;
+- (void)setMessage:(id)arg1;
 
 @end

@@ -9,6 +9,7 @@
 }
 
 
+- (id)init;
 - (void)_removeSqliteFiles;
 - (id)_urlForPersistentStore;
 - (id)_managedObjectModel;
@@ -24,6 +25,5 @@
 - (void)deleteAllAlarms;
 - (id)settingForKey:(id)arg1;
 - (id)initWithPath:(id)arg1;
-- (id)init;
 
 @end

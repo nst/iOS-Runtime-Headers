@@ -37,6 +37,7 @@
 + (id)currentJob;
 + (id)jobs;
 
+- (int)cancel;
 - (int)mediaProgress;
 - (void)setMediaProgress:(int)arg1;
 - (void)setMediaSheets:(int)arg1;
@@ -64,7 +65,6 @@
 - (void)setState:(int)arg1;
 - (int)state;
 - (void)setThumbnailImage:(id)arg1;
-- (int)cancel;
 - (BOOL)isEqual:(id)arg1;
 
 @end

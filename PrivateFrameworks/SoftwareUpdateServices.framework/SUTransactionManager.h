@@ -10,11 +10,11 @@
 
 + (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
 - (id)openTransactions;
 - (BOOL)hasOpenTransactionForName:(id)arg1;
 - (void)endTransaction:(id)arg1;
 - (void)beginTransaction:(id)arg1;
+- (id)init;
+- (void)dealloc;
 
 @end

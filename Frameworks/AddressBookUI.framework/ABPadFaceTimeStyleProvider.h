@@ -44,6 +44,8 @@
 - (struct CGSize { float x1; float x2; })personHeaderShadowOffset;
 - (id)personHeaderShadowColor;
 - (void)setIndicatesFaceTimeHistory:(BOOL)arg1 onActionButton:(id)arg2;
+- (id)cardDeleteButtonImage;
+- (id)cardDeleteButtonImagePressed;
 - (float)cardTableViewSectionHeaderHeightWhenEditing:(BOOL)arg1;
 - (float)cardTableViewSectionFooterHeightWhenEditing:(BOOL)arg1;
 - (float)cardTableViewLinkingHeaderTopPaddingWhenEditing:(BOOL)arg1;

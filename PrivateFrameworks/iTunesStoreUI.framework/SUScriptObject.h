@@ -24,21 +24,21 @@
 @property(readonly) NSMutableArray * scriptAttributeKeys;
 @property(getter=_className,readonly) NSString * className;
 
++ (void)initialize;
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)stringRepresentation;
-- (void)finalizeForWebScript;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isVisible;
 - (void)setVisible:(BOOL)arg1;
 - (void)unlock;
 - (void)lock;
 - (id)parentViewController;
-- (id)init;
-- (void)dealloc;
+- (id)stringRepresentation;
+- (void)finalizeForWebScript;
 - (void)willPerformBatchedInvocations;
 - (void)didPerformBatchedInvocations;
 - (id)invocationBatch:(BOOL)arg1;

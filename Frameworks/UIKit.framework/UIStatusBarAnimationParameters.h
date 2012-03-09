@@ -13,13 +13,13 @@
 @property int curve;
 
 
-- (double)duration;
-- (void)setDuration:(double)arg1;
+- (id)init;
 - (double)startTime;
 - (int)curve;
+- (double)duration;
 - (void)setCurve:(int)arg1;
+- (void)setDuration:(double)arg1;
 - (void)setStartTime:(double)arg1;
 - (id)initWithDefaultParameters;
-- (id)init;
 
 @end

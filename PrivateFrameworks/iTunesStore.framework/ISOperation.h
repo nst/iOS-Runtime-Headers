@@ -36,20 +36,17 @@
 @property(retain) ISOperation * subOperation;
 
 
-- (void)setError:(id)arg1;
+- (void)main;
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
 - (void)_sendErrorToDelegate:(id)arg1;
 - (id)uniqueKey;
-- (void)setDelegate:(id)arg1;
-- (id)progress;
-- (void)run;
-- (void)unlock;
-- (void)lock;
-- (id)delegate;
-- (id)error;
 - (BOOL)loadSoftwareMapReturningError:(id*)arg1;
 - (BOOL)copyAccountID:(id*)arg1 byAuthenticatingWithContext:(id)arg2 returningError:(id*)arg3;
 - (void)setShouldRunWithBackgroundPriority:(BOOL)arg1;
 - (void)setSerializationLockIdentifiers:(id)arg1;
+- (void)sendDidTakeSerializationLocks;
 - (id)copySerializationLocks;
 - (BOOL)shouldMessageMainThread;
 - (BOOL)runSubOperation:(id)arg1 onQueue:(id)arg2 error:(id*)arg3;
@@ -71,10 +68,14 @@
 - (void)setPowerAssertionIdentifier:(id)arg1;
 - (void)setParentOperation:(id)arg1;
 - (void)setOperationRunLoop:(id)arg1;
-- (void)main;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
+- (void)setError:(id)arg1;
+- (id)error;
+- (id)progress;
+- (void)run;
+- (void)unlock;
+- (void)lock;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)sendProgressToDelegate;
 - (long)runRunLoopUntilStopped;
 - (void)stopRunLoop;

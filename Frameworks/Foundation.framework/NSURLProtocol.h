@@ -31,9 +31,9 @@
 - (void)_suspendLoading;
 - (id)initWithRequest:(id)arg1 cachedResponse:(id)arg2 client:(id)arg3;
 - (void)startLoading;
-- (id)client;
+- (void)dealloc;
 - (void)stopLoading;
 - (id)request;
-- (void)dealloc;
+- (id)client;
 
 @end

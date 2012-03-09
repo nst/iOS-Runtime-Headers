@@ -43,6 +43,7 @@
 + (id)_backgroundColor;
 + (void)initialize;
 
+- (void)dealloc;
 - (id)_rotationDecider;
 - (void)setDefinitionHTML:(id)arg1;
 - (id)definitionHTML;
@@ -65,6 +66,5 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)_dismissModalReferenceView:(id)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)dealloc;
 
 @end

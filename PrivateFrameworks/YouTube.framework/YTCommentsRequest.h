@@ -17,6 +17,10 @@
 
 + (unsigned int)commentsPerRequest;
 
+- (int)parseData:(id)arg1;
+- (void)dealloc;
+- (BOOL)isLoading;
+- (void)loadRequest:(id)arg1;
 - (void)requestMoreComments;
 - (id)initRequestingCommentsForVideo:(id)arg1 withDelegate:(id)arg2;
 - (void)_requestCommentsFromURL:(id)arg1;
@@ -25,9 +29,5 @@
 - (void)_listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
-- (int)parseData:(id)arg1;
-- (BOOL)isLoading;
-- (void)loadRequest:(id)arg1;
-- (void)dealloc;
 
 @end

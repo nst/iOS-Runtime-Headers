@@ -8,6 +8,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWitMaxPaletteSize:(unsigned int)arg1;
 - (id)initWitDefaultPaletteSize;
 - (bool)addNSColor:(id)arg1;
@@ -28,6 +29,5 @@
 - (int)createNodeOctree:(struct _tagOctreeNode {}**)arg1 parent:(struct _tagOctreeNode { struct _tagOctreeNode {} *x1; struct _tagOctreeNode {} *x2[8]; unsigned int x3; struct _tagFPRgbTriple { unsigned int x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; unsigned short x5; }*)arg2;
 - (int)deleteNodeOctree:(struct _tagOctreeNode { struct _tagOctreeNode {} *x1; struct _tagOctreeNode {} *x2[8]; unsigned int x3; struct _tagFPRgbTriple { unsigned int x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; unsigned short x5; }*)arg1;
 - (int)deleteListOctree:(struct _tagLevelItem { struct _tagLevelItem {} *x1; struct _tagOctreeNode {} *x2; }*)arg1;
-- (void)dealloc;
 
 @end

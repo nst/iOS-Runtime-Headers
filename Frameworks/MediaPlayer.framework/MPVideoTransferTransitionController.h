@@ -19,6 +19,8 @@
 @property BOOL showOverlayAfterTransition;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setTransitionBehindView:(id)arg1;
 - (id)transitionBehindView;
 - (BOOL)showOverlayAfterTransition;
@@ -32,7 +34,5 @@
 - (void)setShowOverlayAfterTransition:(BOOL)arg1;
 - (void)setInflightBackstopViewController:(id)arg1;
 - (void)setPortraitNavigationBar:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

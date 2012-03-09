@@ -19,8 +19,12 @@
 @property(readonly) NSDictionary * rentalInformation;
 
 
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (void)main;
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
 - (void)requestDidFinish:(id)arg1;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (id)rentalInformation;
 - (id)rentalData;
 - (int)loadReason;
@@ -40,9 +44,5 @@
 - (id)_rentalInformationFromMedia;
 - (void)_stopRunLoop;
 - (id)initWithRentalData:(id)arg1 checkoutRequest:(id)arg2 reason:(int)arg3;
-- (void)main;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
 
 @end

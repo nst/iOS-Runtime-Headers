@@ -10,22 +10,13 @@
 
 @property <MFMailComposeViewControllerDelegate> * mailComposeDelegate;
 
-+ (BOOL)canSendMail;
-+ (void)removeAutosavedMessageWithIdentifier:(id)arg1;
 + (BOOL)hasAutosavedMessageWithIdentifier:(id)arg1;
++ (void)removeAutosavedMessageWithIdentifier:(id)arg1;
++ (BOOL)canSendMail;
 
 - (void)setSubject:(id)arg1;
+- (void)dealloc;
 - (BOOL)isDirty;
-- (void)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
-- (void)setToRecipients:(id)arg1;
-- (void)setContentVisible:(BOOL)arg1;
-- (id)initWithURL:(id)arg1;
-- (void)setKeyboardVisible:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)view;
 - (id)mailComposeDelegate;
 - (id)_mailComposeController;
 - (void)_setCompositionContext:(id)arg1;
@@ -38,14 +29,23 @@
 - (void)setBccRecipients:(id)arg1;
 - (int)resolution;
 - (void)scrollToTopAnimated:(BOOL)arg1;
-- (id)performAutosaveImmediately;
-- (void)setAutorotationDelegate:(id)arg1;
-- (id)initWithComposition:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForAttachmentWithIdentifier:(id)arg1;
-- (void)dealloc;
+- (id)initWithURL:(id)arg1;
+- (void)setKeyboardVisible:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)view;
+- (void)setToRecipients:(id)arg1;
 - (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
 - (void)recoverAutosavedMessageWithIdentifier:(id)arg1;
 - (void)setMailComposeDelegate:(id)arg1;
 - (void)autosaveWithHandler:(id)arg1;
+- (id)performAutosaveImmediately;
+- (void)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+- (void)setAutorotationDelegate:(id)arg1;
+- (id)initWithComposition:(id)arg1;
+- (void)setContentVisible:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForAttachmentWithIdentifier:(id)arg1;
 
 @end

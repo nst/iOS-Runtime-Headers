@@ -20,6 +20,10 @@
 @property BOOL cloneForSecondDelivery;
 
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setCloneForSecondDelivery:(BOOL)arg1;
 - (id)event;
 - (void)setStateWhenDelivered:(id)arg1;
@@ -36,9 +40,5 @@
 - (void)setEvent:(id)arg1;
 - (void)setTouch:(id)arg1;
 - (id)touch;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

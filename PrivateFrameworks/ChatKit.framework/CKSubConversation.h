@@ -20,7 +20,8 @@
 - (void)setUnreadCount:(int)arg1;
 - (BOOL)isPlaceholder;
 - (int)unreadCount;
-- (id)date;
+- (void)dealloc;
+- (BOOL)containsMessage:(id)arg1;
 - (void)_recalculateUnreadCounts;
 - (void)_setPlaceholderMessage:(id)arg1;
 - (void)_deleteAllMessagesAndRemoveGroup:(BOOL)arg1;
@@ -36,7 +37,6 @@
 - (void)beginGroupAdd;
 - (int)endGroupAddIncrementingUnreadCount:(BOOL)arg1;
 - (void)postDowngradeStateChanged;
-- (BOOL)containsMessage:(id)arg1;
 - (id)latestIncomingMessage;
 - (void)setLoadedMessages:(id)arg1;
 - (void)removeMessage:(id)arg1 postUpdate:(BOOL)arg2;
@@ -55,6 +55,6 @@
 - (void)removeMessage:(id)arg1;
 - (void)updateMessage:(id)arg1;
 - (void)deleteAllMessages;
-- (void)dealloc;
+- (id)date;
 
 @end

@@ -13,17 +13,17 @@
     } _flags;
 }
 
++ (id)sharedInstance;
 + (long long)freeDiskSpaceThreshold;
 + (long long)diskSpaceAvailableForUse;
-+ (id)sharedInstance;
 
+- (id)init;
+- (void)dealloc;
 - (void)_diskSpaceDidBecomeLow;
 - (void)_updateCookie;
 - (void)_actuallyUpdateCookie;
 - (long long)bytesToAutomaticallyClear;
 - (void)updateAvailableDiskSpace;
 - (BOOL)hasEnoughDiskToTakePicture;
-- (id)init;
-- (void)dealloc;
 
 @end

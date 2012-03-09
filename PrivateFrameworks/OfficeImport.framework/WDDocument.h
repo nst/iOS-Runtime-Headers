@@ -57,8 +57,15 @@
 
 + (int)thumbnailCutOff;
 
+- (id)init;
+- (void)dealloc;
 - (void)setCreationDate:(id)arg1;
+- (id)creationDate;
 - (id)theme;
+- (id)sections;
+- (id)version;
+- (void)setVersion:(id)arg1;
+- (id)styleSheet;
 - (int)sectionCount;
 - (id)sectionAt:(int)arg1;
 - (BOOL)mirrorMargins;
@@ -170,12 +177,5 @@
 - (void)setBookFold:(BOOL)arg1;
 - (void)setZoomPercentage:(short)arg1;
 - (void)setShowOutline:(BOOL)arg1;
-- (void)setVersion:(id)arg1;
-- (id)styleSheet;
-- (id)sections;
-- (id)version;
-- (id)creationDate;
-- (id)init;
-- (void)dealloc;
 
 @end

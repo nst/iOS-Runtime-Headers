@@ -14,13 +14,13 @@
 
 + (void)initialize;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)query;
 - (id)initWithUbiquityRootURL:(id)arg1;
 - (void)startMonitoringQuery;
 - (void)pollForNewFiles:(id)arg1;
 - (id)ubiquityRootURL;
-- (id)query;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

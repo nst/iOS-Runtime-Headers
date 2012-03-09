@@ -17,6 +17,7 @@
 @property(copy) NSArray * rects;
 
 
+- (void)dealloc;
 - (id)rectViewAtIndex:(int)arg1;
 - (void)updateDragDots;
 - (struct CGPoint { float x1; float x2; })startCorner;
@@ -35,6 +36,5 @@
 - (void)setRects:(id)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)removeFromSuperview;
-- (void)dealloc;
 
 @end

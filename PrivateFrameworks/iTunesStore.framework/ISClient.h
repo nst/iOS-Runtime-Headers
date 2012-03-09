@@ -21,15 +21,15 @@
 
 + (id)currentClient;
 
-- (id)userAgent;
-- (id)identifier;
-- (void)setIdentifier:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)localStoreFrontID;
 - (void)_softwareMapInvalidatedNotification:(id)arg1;
 - (void)setPartnerHeader:(id)arg1;
 - (id)appleClientVersions;
-- (id)init;
-- (void)dealloc;
+- (id)userAgent;
+- (id)identifier;
+- (void)setIdentifier:(id)arg1;
 - (void)setUserAgent:(id)arg1;
 - (id)appleClientApplication;
 - (void)setAppleClientApplication:(id)arg1;

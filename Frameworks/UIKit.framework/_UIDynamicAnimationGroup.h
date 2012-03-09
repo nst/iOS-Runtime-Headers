@@ -21,6 +21,7 @@
 @property(copy) NSArray * animations;
 
 
+- (void)dealloc;
 - (id)animations;
 - (void)removeAnimation:(id)arg1;
 - (void)addAnimation:(id)arg1;
@@ -31,6 +32,5 @@
 - (void)_appendSubclassDescription:(id)arg1 atLevel:(int)arg2;
 - (BOOL)_animateForInterval:(double)arg1;
 - (void)_stopAnimation;
-- (void)dealloc;
 
 @end

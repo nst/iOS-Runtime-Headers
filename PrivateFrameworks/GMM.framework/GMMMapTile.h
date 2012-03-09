@@ -19,7 +19,13 @@
 @property int textSize;
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setTextSize:(int)arg1;
+- (id)dictionaryRepresentation;
+- (int)textSize;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasTextSize:(BOOL)arg1;
 - (BOOL)hasTextSize;
 - (int)tileIndexY;
@@ -30,11 +36,5 @@
 - (void)setTileType:(int)arg1;
 - (int)zoomLevel;
 - (void)setZoomLevel:(int)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setTextSize:(int)arg1;
-- (id)dictionaryRepresentation;
-- (int)textSize;
-- (id)description;
-- (void)dealloc;
 
 @end

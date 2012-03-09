@@ -23,9 +23,8 @@
 @property(readonly) BOOL usingWifi;
 
 
-- (int)start;
-- (float)max;
-- (float)min;
+- (id)description;
+- (void)dealloc;
 - (id)initWithIPAsString:(id)arg1 usingWifi:(BOOL)arg2;
 - (float)stddev;
 - (float)avg;
@@ -36,7 +35,8 @@
 - (BOOL)parsePingLineForPLR:(char *)arg1;
 - (BOOL)parsePingLineForLatencyStats:(char *)arg1;
 - (float)packetLossRate;
-- (id)description;
-- (void)dealloc;
+- (int)start;
+- (float)max;
+- (float)min;
 
 @end

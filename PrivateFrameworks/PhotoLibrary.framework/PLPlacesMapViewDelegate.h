@@ -26,6 +26,7 @@
 }
 
 
+- (void)dealloc;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)updateMapView:(id)arg1 WithAddedAssets:(id)arg2 deletedAssets:(id)arg3 updatedAssets:(id)arg4;
 - (void)fullResetOfMapView:(id)arg1;
@@ -46,6 +47,5 @@
 - (void)_setupMapViewCenteredOnAllPlaces:(id)arg1;
 - (void)_flushAnnotation:(id)arg1 fromMap:(id)arg2;
 - (id)initWithPlaces:(id)arg1;
-- (void)dealloc;
 
 @end

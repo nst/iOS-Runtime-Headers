@@ -12,12 +12,12 @@
 
 - (id)_internalInit;
 - (void)setCredential:(id)arg1 forProtectionSpace:(id)arg2;
+- (id)init;
+- (void)dealloc;
 - (id)allCredentials;
 - (void)removeCredential:(id)arg1 forProtectionSpace:(id)arg2;
 - (void)setDefaultCredential:(id)arg1 forProtectionSpace:(id)arg2;
 - (id)credentialsForProtectionSpace:(id)arg1;
 - (id)defaultCredentialForProtectionSpace:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

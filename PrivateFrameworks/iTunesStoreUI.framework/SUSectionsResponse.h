@@ -28,9 +28,9 @@
 + (id)sectionsCacheDirectory;
 
 - (id)versionString;
-- (id)sections;
 - (id)init;
 - (void)dealloc;
+- (id)sections;
 - (id)rawResponseDictionary;
 - (void)_applyDefaultSearchFieldConfigurationsToSections:(id)arg1;
 - (id)_newImageForIdentifier:(id)arg1 variant:(id)arg2 cacheDirectory:(id)arg3;

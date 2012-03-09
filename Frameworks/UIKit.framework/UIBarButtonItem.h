@@ -68,6 +68,11 @@
 + (Class)classForNavigationButton;
 + (id)_appearanceProxyViewClasses;
 
+- (void)setTarget:(id)arg1;
+- (SEL)action;
+- (id)target;
+- (id)init;
+- (void)dealloc;
 - (void)_setWidth:(float)arg1;
 - (void)_setImageHasEffects:(BOOL)arg1;
 - (id)_toolbarButton;
@@ -152,11 +157,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setTarget:(id)arg1;
-- (SEL)action;
-- (id)target;
-- (id)init;
-- (void)dealloc;
 - (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 - (void)configureFromScriptButton:(id)arg1;
 

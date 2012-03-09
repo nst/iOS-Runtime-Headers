@@ -81,15 +81,15 @@
 - (void)setMessageFlags:(unsigned long long)arg1;
 - (void)setPreferredEncoding:(unsigned long)arg1;
 - (unsigned int)messageSize;
-- (id)path;
-- (void)commit;
-- (void)setSummary:(id)arg1;
-- (unsigned long)uid;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (BOOL)isPartial;
 - (oneway void)release;
 - (void)dealloc;
+- (unsigned long)uid;
+- (id)path;
+- (void)commit;
+- (void)setSummary:(id)arg1;
 
 @end

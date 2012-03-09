@@ -15,9 +15,9 @@
 - (id)resultAtIndex:(unsigned int)arg1;
 - (void)_addResult:(unsigned int)arg1;
 - (unsigned int)resultCount;
-- (id)attribute;
-- (id)value;
 - (id)results;
 - (void)dealloc;
+- (id)value;
+- (id)attribute;
 
 @end

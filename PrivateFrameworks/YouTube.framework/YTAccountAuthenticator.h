@@ -24,6 +24,16 @@
 
 + (id)sharedAuthenticator;
 
+- (void)setAccount:(id)arg1;
+- (id)account;
+- (id)init;
+- (void)dealloc;
+- (void)setPassword:(id)arg1;
+- (id)password;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (BOOL)cachedCredentialsValid;
 - (BOOL)loadStoredCredentials;
 - (BOOL)readyToRequestToken;
@@ -47,15 +57,5 @@
 - (void)_postAccountTokenGenerationFailedWithError:(id)arg1;
 - (void)_postNewAccountTokenAvailable;
 - (id)accountYouTubeName;
-- (void)setAccount:(id)arg1;
-- (id)account;
-- (void)setPassword:(id)arg1;
-- (id)password;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

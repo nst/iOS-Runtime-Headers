@@ -15,6 +15,7 @@
 + (int)_cacheIndexForType:(int)arg1 nested:(BOOL)arg2;
 + (int)_mailboxUidTypeForASFolderType:(int)arg1;
 
+- (void)dealloc;
 - (void)setMailFolder:(id)arg1 withIndent:(unsigned int)arg2;
 - (void)_setupMailFolderIconForImage:(id)arg1;
 - (BOOL)isChecked;
@@ -22,6 +23,5 @@
 - (void)setChecked:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

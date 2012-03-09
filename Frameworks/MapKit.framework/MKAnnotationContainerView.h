@@ -16,8 +16,7 @@
 @property(retain) MKAnnotationView * bubbleAnnotationView;
 
 
-- (void)addAnnotation:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (BOOL)hasPendingAnimations;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)calloutView:(id)arg1 didMoveToAnchorPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3;
@@ -25,6 +24,7 @@
 - (void)setAnimationsEnabled:(BOOL)arg1;
 - (id)delegate;
 - (void)addSubview:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_removeAnnotationViewsExcludingAnnotation:(id)arg1 ofClassType:(Class)arg2;
 - (void)_setRegisteredForAddressBookChanges:(BOOL)arg1;
@@ -114,8 +114,8 @@
 - (BOOL)freezeUserLocationView;
 - (struct { double x1; double x2; })coordinateForAnnotationView:(id)arg1;
 - (void)showBubbleAfterScroll;
+- (void)removeAnnotationViewsRotationAnimations;
 - (void)showAnnotationsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (void)updateAnnotationLocationsDuringAnimation:(BOOL)arg1;
 - (id)userLocationView;
 - (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -135,6 +135,8 @@
 - (unsigned int)mapType;
 - (void)setMapType:(unsigned int)arg1;
 - (void)set_mapTileView:(id)arg1;
+- (void)addAnnotation:(id)arg1;
+- (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (id)viewForAnnotation:(id)arg1;
 - (id)dequeueReusableAnnotationViewWithIdentifier:(id)arg1;
 - (void)deselectAnnotation:(id)arg1 animated:(BOOL)arg2;
@@ -143,6 +145,5 @@
 - (void)addAnnotations:(id)arg1;
 - (void)removeAnnotation:(id)arg1;
 - (id)annotations;
-- (void)dealloc;
 
 @end

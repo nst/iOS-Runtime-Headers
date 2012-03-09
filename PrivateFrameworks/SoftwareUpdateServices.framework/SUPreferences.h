@@ -12,13 +12,13 @@
 
 + (id)sharedInstance;
 
-- (int)logLevel;
-- (id)init;
-- (void)dealloc;
 - (BOOL)_getBooleanPreferenceForKey:(id)arg1 withDefaultValue:(BOOL)arg2;
 - (void*)_copyPreferenceForKey:(struct __CFString { }*)arg1 ofType:(unsigned long)arg2;
 - (int)_defaultLogLevel;
 - (void)_loadPreferences;
 - (BOOL)disableUserWiFiOnlyPeriod;
+- (id)init;
+- (void)dealloc;
+- (int)logLevel;
 
 @end

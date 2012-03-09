@@ -12,13 +12,13 @@
 @property(retain) GEOPixelPoint * shiftedPixel;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (struct { double x1; double x2; })shiftedCoordinate;
 - (id)shiftedPixel;
 - (void)setShiftedPixel:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

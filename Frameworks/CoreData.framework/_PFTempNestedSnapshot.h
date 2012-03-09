@@ -10,11 +10,11 @@
 }
 
 
+- (void)dealloc;
 - (id)valueForKey:(id)arg1;
 - (id)initWithOwnedKKsD:(id)arg1 andVersion:(unsigned long)arg2;
 - (const id*)knownKeyValuesPointer;
 - (id)_snapshot_;
 - (unsigned int)_versionNumber;
-- (void)dealloc;
 
 @end

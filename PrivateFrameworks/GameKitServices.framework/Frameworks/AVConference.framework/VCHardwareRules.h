@@ -22,6 +22,8 @@
 
 + (id)VCHardwareRulesSingleton;
 
+- (id)init;
+- (void)dealloc;
 - (void)deleteRuleFromDictionaryForScore:(int)arg1;
 - (float)getBestEncodingFrameRateForFrameWidth:(int)arg1 frameHeight:(int)arg2;
 - (float)getBestDecodingFrameRateForFrameWidth:(int)arg1 frameHeight:(int)arg2;
@@ -51,7 +53,5 @@
 - (id)getSupportedEncodingSizesFromDictionary;
 - (id)getSupportedDecodingSizesFromDictionary;
 - (int)getEncodingRuleFromDictionaryFrameWidth:(int*)arg1 frameHeight:(int*)arg2 frameRate:(float*)arg3;
-- (id)init;
-- (void)dealloc;
 
 @end

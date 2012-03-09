@@ -13,11 +13,11 @@
 @property(retain) UIView * headerView;
 
 
+- (void)dealloc;
 - (void)setHeaderView:(id)arg1;
 - (id)headerView;
 - (void)setContentView:(id)arg1;
 - (id)contentView;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

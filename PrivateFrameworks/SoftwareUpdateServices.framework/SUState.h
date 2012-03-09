@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class SUDownload, SUDescriptor, NSString, NSDate;
+@class SUDownload, SUDescriptor, NSString, SUDownloadInterfaceReport, NSDate;
 
 @interface SUState : NSObject  {
     SUDownload *_lastDownload;
     SUDescriptor *_lastScannedDescriptor;
+    SUDownloadInterfaceReport *_downloadInterfaceReport;
     NSDate *_lastScannedDescriptorTime;
     NSDate *_scheduledManualDownloadWifiPeriodEndTime;
     NSDate *_scheduledAutodownloadWifiPeriodEndTime;
@@ -18,6 +19,7 @@
     NSString *_lastReleaseType;
 }
 
+@property(retain) SUDownloadInterfaceReport * downloadInterfaceReport;
 @property(copy) SUDownload * lastDownload;
 @property(copy) SUDescriptor * lastScannedDescriptor;
 @property(retain) NSDate * lastScannedDescriptorTime;
@@ -30,14 +32,10 @@
 @property(retain) NSString * lastProductType;
 @property(retain) NSString * lastReleaseType;
 
-+ (id)currentState;
 + (id)statePath;
++ (id)currentState;
 
-- (void)load;
-- (void)save;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)downloadInterfaceReport;
 - (void)resetAllHistory;
 - (id)lastReleaseType;
 - (id)lastProductType;
@@ -56,6 +54,7 @@
 - (void)setLastProductBuild:(id)arg1;
 - (void)setLastProductVersion:(id)arg1;
 - (void)resetDownloadAndScanHistory;
+- (void)setDownloadInterfaceReport:(id)arg1;
 - (void)setLastDownload:(id)arg1;
 - (void)setAutodownloadNeedsOneTimeRetry:(BOOL)arg1;
 - (void)setScheduledAutodownloadPolicyChangeTime:(id)arg1;
@@ -63,5 +62,10 @@
 - (void)setScheduledManualDownloadWifiPeriodEndTime:(id)arg1;
 - (void)setLastScannedDescriptorTime:(id)arg1;
 - (void)setLastScannedDescriptor:(id)arg1;
+- (void)save;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (void)load;
 
 @end

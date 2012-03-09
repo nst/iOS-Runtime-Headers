@@ -12,11 +12,11 @@
 @property(retain) NSMutableSet * comps;
 
 
-- (id)childrenToWrite;
-- (id)copyParseRules;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)childrenToWrite;
+- (id)copyParseRules;
 - (void)addComp:(id)arg1;
 - (void)setComps:(id)arg1;
 - (id)componentsAsString;

@@ -13,14 +13,14 @@
 @property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setEmailAddresses:(id)arg1;
 - (id)emailAddresses;
 - (void)addEmailAddress:(id)arg1;
 - (void)setUnauthenticated:(id)arg1;
 - (id)copyParseRules;
 - (id)unauthenticated;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

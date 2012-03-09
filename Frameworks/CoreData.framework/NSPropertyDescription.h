@@ -31,6 +31,21 @@
 
 + (void)initialize;
 
+- (void)setName:(id)arg1;
+- (void)setOptional:(BOOL)arg1;
+- (void)setIndexed:(BOOL)arg1;
+- (id)userInfo;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)setUserInfo:(id)arg1;
+- (id)name;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setReadOnly:(BOOL)arg1;
 - (void)_setOrdered:(BOOL)arg1;
 - (BOOL)isSpotlightIndexed;
 - (void)setSpotlightIndexed:(BOOL)arg1;
@@ -82,20 +97,5 @@
 - (BOOL)_isRelationship;
 - (long)_entitysReferenceID;
 - (id)entity;
-- (void)setReadOnly:(BOOL)arg1;
-- (void)setUserInfo:(id)arg1;
-- (id)name;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setName:(id)arg1;
-- (void)setOptional:(BOOL)arg1;
-- (void)setIndexed:(BOOL)arg1;
-- (id)userInfo;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

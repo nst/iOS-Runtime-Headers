@@ -14,6 +14,7 @@
 + (id)labelColor;
 + (id)valueColor;
 
+- (void)dealloc;
 - (void)reloadView;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)widestLabel;
@@ -23,7 +24,6 @@
 - (float)_addSeparatorItemToArray:(id)arg1;
 - (id)_addItemWithLabel:(id)arg1 values:(id)arg2 toArray:(id)arg3 forWidth:(float)arg4;
 - (void)_drawItem:(id)arg1 atPosition:(float)arg2;
-- (void)dealloc;
 - (void)setItem:(id)arg1;
 
 @end

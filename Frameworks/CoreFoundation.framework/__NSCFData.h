@@ -12,18 +12,18 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (void)finalize;
-- (void)setLength:(unsigned int)arg1;
-- (void*)mutableBytes;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (const void*)bytes;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (unsigned int)retainCount;
 - (id)retain;
 - (unsigned int)length;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void*)mutableBytes;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)finalize;
+- (const void*)bytes;
+- (void)setLength:(unsigned int)arg1;
 
 @end

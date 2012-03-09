@@ -42,9 +42,9 @@
 @property(readonly) struct CGPath { }* hitTestPath;
 
 
-- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (void)layoutSublayers;
-- (void)setNeedsDisplay;
+- (id)debugDescription;
+- (id)init;
+- (void)dealloc;
 - (struct CGPath { }*)hitTestPath;
 - (unsigned int)connectionMediumFallback;
 - (void)setSiblingMergePoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -69,8 +69,8 @@
 - (id)describeOne:(id)arg1 uiLayer:(id)arg2 indent:(unsigned int)arg3;
 - (void)setSelected:(BOOL)arg1;
 - (BOOL)isSelected;
-- (id)debugDescription;
-- (id)init;
-- (void)dealloc;
+- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
+- (void)setNeedsDisplay;
+- (void)layoutSublayers;
 
 @end

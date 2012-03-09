@@ -15,7 +15,7 @@
 + (id)_cellFont;
 + (id)_shadowImage;
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)setTopStrokeColor:(id)arg1;
 - (id)_completionForRow:(int)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -29,7 +29,7 @@
 - (id)dequeueReusableCellWithIdentifier:(id)arg1;
 - (void)layoutSubviews;
 - (void)reloadData;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

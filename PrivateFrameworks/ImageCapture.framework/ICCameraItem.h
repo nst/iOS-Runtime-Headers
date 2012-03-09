@@ -23,33 +23,33 @@
 @property(readonly) NSString * fileSystemPath;
 
 
-- (void)setCreationDate:(id)arg1;
-- (BOOL)hasMetadata;
-- (void)finalize;
 - (id)modificationDate;
-- (id)metadata;
+- (id)description;
+- (void)dealloc;
+- (BOOL)hasThumbnail;
+- (void)setCreationDate:(id)arg1;
+- (id)creationDate;
 - (id)fileSystemPath;
 - (void)appendToPath:(id)arg1;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
-- (id)valueForUndefinedKey:(id)arg1;
 - (void)setUTI:(id)arg1;
 - (id)UTI;
 - (id)userData;
+- (void)finalize;
 - (void)setLocked:(BOOL)arg1;
 - (id)name;
 - (BOOL)isLocked;
+- (id)valueForUndefinedKey:(id)arg1;
+- (struct CGImage { }*)thumbnail;
 - (id)device;
-- (id)creationDate;
-- (BOOL)hasThumbnail;
+- (id)metadata;
+- (BOOL)hasMetadata;
 - (void)setModificationDate:(id)arg1;
 - (void)flushThumbnailCache;
 - (void)flushMetadataCache;
 - (id)parentFolder;
 - (void)requestThumbnail;
 - (void)requestMetadata;
-- (id)description;
-- (void)dealloc;
-- (struct CGImage { }*)thumbnail;
 - (BOOL)isCameraFile;
 
 @end

@@ -10,6 +10,9 @@
 }
 
 
+- (void)dealloc;
+- (void)close;
+- (long long)offset;
 - (id)initWithInputStream:(id)arg1;
 - (id)initWithInputStream:(id)arg1 initialOffset:(long long)arg2;
 - (id)closeLocalStream;
@@ -18,8 +21,5 @@
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
-- (void)close;
-- (long long)offset;
-- (void)dealloc;
 
 @end

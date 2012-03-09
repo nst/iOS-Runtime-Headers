@@ -23,6 +23,8 @@
 @property(readonly) BOOL isHorizontal;
 
 
+- (int)y;
+- (int)x;
 - (int)wheelDelta;
 - (int)wheelDeltaX;
 - (int)wheelDeltaY;
@@ -38,7 +40,5 @@
 - (BOOL)shiftKey;
 - (BOOL)altKey;
 - (BOOL)metaKey;
-- (int)y;
-- (int)x;
 
 @end

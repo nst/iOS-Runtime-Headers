@@ -18,11 +18,11 @@
 
 
 - (id)account;
-- (void)invalidate;
-- (void)setDelegate:(id)arg1;
-- (void)_invalidate;
-- (id)delegate;
 - (void)dealloc;
+- (void)_invalidate;
+- (void)invalidate;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)cancelPendingPreflightRequest;
 - (void)acknowledgeIntentionToRemoteWipe;
 - (void)acknowledgePolicyCompliance;

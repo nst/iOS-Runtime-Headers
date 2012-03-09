@@ -16,6 +16,9 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (BOOL)isEmpty;
 - (id)initWithDIBitmap:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(int)arg4;
 - (id)initWithDIBitmap:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(const char *)arg4 :(unsigned int)arg5 :(int)arg6;
 - (id)initWithBitmap:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(const char *)arg6 :(unsigned int)arg7;
@@ -27,8 +30,5 @@
 - (BOOL)processDIBHeader:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(int)arg4;
 - (void)writeFileHeader;
 - (void)writeInfoHeader;
-- (BOOL)isEmpty;
-- (id)init;
-- (void)dealloc;
 
 @end

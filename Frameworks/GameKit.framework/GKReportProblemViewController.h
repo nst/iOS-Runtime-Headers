@@ -14,15 +14,15 @@
 @property(retain) NSString * baseURL;
 
 
+- (void)dealloc;
 - (void)setBaseURL:(id)arg1;
 - (void)processGameKitURLComponents:(id)arg1;
 - (id)initWithPlayer:(id)arg1;
+- (id)player;
 - (void)setPlayer:(id)arg1;
 - (id)baseURL;
 - (id)url;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)player;
-- (void)dealloc;
 
 @end

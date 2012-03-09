@@ -18,12 +18,9 @@
 
 
 - (id)messageBody;
-- (int)command;
-- (void)setPushToken:(id)arg1;
-- (id)pushToken;
-- (void)setSessionInfoRequest:(id)arg1;
-- (id)responseTTL;
-- (id)responseSessionInfo;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setResponseTTL:(id)arg1;
 - (void)setResponseSessionInfo:(id)arg1;
 - (id)sessionInfoRequest;
@@ -35,9 +32,12 @@
 - (BOOL)wantsCompressedBody;
 - (id)requiredKeys;
 - (BOOL)wantsBinaryPush;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (int)command;
+- (void)setPushToken:(id)arg1;
+- (id)pushToken;
 - (id)bagKey;
+- (void)setSessionInfoRequest:(id)arg1;
+- (id)responseTTL;
+- (id)responseSessionInfo;
 
 @end

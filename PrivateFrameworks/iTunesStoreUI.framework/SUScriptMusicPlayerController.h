@@ -30,11 +30,14 @@
 @property(readonly) NSString * shuffleModeOff;
 @property(readonly) NSString * shuffleModeSongs;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 + (id)scriptPlaybackStateForNativePlaybackState:(int)arg1;
 
+- (void)dealloc;
+- (void)pause;
+- (void)stop;
 - (id)attributeKeys;
 - (void)_play;
 - (void)_pause;
@@ -42,11 +45,6 @@
 - (void)play;
 - (id)volume;
 - (void)setVolume:(id)arg1;
-- (void)pause;
-- (void)stop;
-- (void)dealloc;
-- (void)setRepeatMode:(id)arg1;
-- (id)repeatMode;
 - (id)playbackStateStopped;
 - (id)playbackStateSeekingForward;
 - (id)playbackStateSeekingBackward;
@@ -57,11 +55,13 @@
 - (void)skipToNextItem;
 - (void)skipToBeginning;
 - (void)setShuffleMode:(id)arg1;
+- (void)setRepeatMode:(id)arg1;
 - (void)setQueueWithQuery:(id)arg1;
 - (void)setQueueWithItemCollection:(id)arg1;
 - (double)currentPlaybackTime;
 - (void)endSeeking;
 - (id)shuffleMode;
+- (id)repeatMode;
 - (id)playbackState;
 - (id)nowPlayingItem;
 - (void)beginSeekingForward;

@@ -15,6 +15,7 @@
 @property(retain) UILabel * justTextLabel;
 
 
+- (void)dealloc;
 - (void)setupTable;
 - (void)initUI;
 - (void)handleSelectorChoiceWithTag:(unsigned int)arg1;
@@ -28,6 +29,5 @@
 - (id)tableHeaderContainerView;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)dealloc;
 
 @end

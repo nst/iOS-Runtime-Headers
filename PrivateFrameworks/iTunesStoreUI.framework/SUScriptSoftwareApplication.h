@@ -19,19 +19,19 @@
 @property(readonly) NSNumber * versionID;
 @property(readonly) NSString * softwareTypeNewsstand;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (void)initialize;
++ (id)webScriptNameForKey:(const char *)arg1;
 
+- (void)dealloc;
 - (id)bundleVersion;
 - (id)adamID;
-- (id)bundleID;
 - (id)attributeKeys;
-- (void)dealloc;
 - (id)softwareTypeNewsstand;
 - (id)versionID;
 - (id)storeFrontID;
 - (id)ratingRank;
 - (id)dsID;
+- (id)bundleID;
 - (id)initWithApplication:(id)arg1;
 - (id)softwareType;
 - (id)ratingSystem;

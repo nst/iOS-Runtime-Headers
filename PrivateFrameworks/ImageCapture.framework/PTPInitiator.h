@@ -44,9 +44,8 @@
 }
 
 
-- (BOOL)start;
-- (double)timeOffset;
-- (void)setDelegate:(id)arg1;
+- (void)cancel;
+- (void)dealloc;
 - (id)deviceSerialNumberString;
 - (BOOL)appleDeviceHasNewFW;
 - (BOOL)deviceIsPairedWithThisHost;
@@ -115,12 +114,13 @@
 - (void)transportActivated;
 - (void)transportDeactivated;
 - (void)handleStartData:(id)arg1;
-- (void)handleResponse:(id)arg1;
 - (void)stop;
+- (BOOL)start;
 - (void)handleEvent:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (double)timeOffset;
 - (id)UUIDString;
 - (unsigned long)contentCatalogPercentCompleted;
-- (void)cancel;
-- (void)dealloc;
+- (void)handleResponse:(id)arg1;
 
 @end

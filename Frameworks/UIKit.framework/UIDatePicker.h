@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPickerView, NSLocale, NSCalendar, NSDate, NSTimeZone;
+@class NSTimeZone, NSLocale, NSCalendar, NSDate, UIPickerView;
 
 @interface UIDatePicker : UIControl <NSCoding> {
     UIPickerView *_pickerView;
 }
 
 @property(getter=_usesBlackChrome,setter=_setUsesBlackChrome:) BOOL usesBlackChrome;
+@property(getter=_dateUnderSelectionBar,readonly) NSDate * dateUnderSelectionBar;
 @property int datePickerMode;
 @property(retain) NSLocale * locale;
 @property(retain) NSTimeZone * timeZone;
@@ -20,8 +21,7 @@
 @property int minuteInterval;
 
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
+- (id)_dateUnderSelectionBar;
 - (void)_setHighlightsToday:(BOOL)arg1;
 - (BOOL)_usesBlackChrome;
 - (void)_setUsesBlackChrome:(BOOL)arg1;
@@ -61,6 +61,8 @@
 - (void)setDate:(id)arg1;
 - (id)date;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;

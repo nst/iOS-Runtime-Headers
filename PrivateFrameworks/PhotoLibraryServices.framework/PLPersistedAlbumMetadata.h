@@ -21,9 +21,9 @@
 @property(retain) NSURL * metadataURL;
 
 
-- (id)kind;
-- (id)title;
-- (void)setTitle:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (BOOL)containsAsset:(id)arg1;
 - (id)managedAlbum;
 - (id)metadataURL;
@@ -32,17 +32,17 @@
 - (void)setMetadataURL:(id)arg1;
 - (void)setManagedAlbum:(id)arg1;
 - (void)setAssetUUIDs:(id)arg1;
-- (id)assetUUIDs;
-- (id)albumFromDataInManagedObjectContext:(id)arg1;
-- (id)initWithPersistedDataAtPath:(id)arg1;
 - (void)removePersistedAlbumData;
 - (void)persistAlbumData;
 - (id)initWithPLGenericAlbum:(id)arg1;
 - (void)setUuid:(id)arg1;
-- (id)uuid;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)assetUUIDs;
+- (id)albumFromDataInManagedObjectContext:(id)arg1;
+- (id)initWithPersistedDataAtPath:(id)arg1;
+- (id)kind;
+- (id)title;
+- (void)setTitle:(id)arg1;
 - (void)setKind:(id)arg1;
+- (id)uuid;
 
 @end

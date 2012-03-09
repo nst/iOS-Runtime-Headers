@@ -20,13 +20,13 @@
 @property <CoreDAVTaskGroupDelegate> * delegate;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (id)summary;
 - (void)setSummary:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (void)setCalendarURL:(id)arg1;
 - (id)calendarURL;
 - (id)initWithShareesToSet:(id)arg1 shareesToRemove:(id)arg2 summary:(id)arg3 atCalendarURL:(id)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6;

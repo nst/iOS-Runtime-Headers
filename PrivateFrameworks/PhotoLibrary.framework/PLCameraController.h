@@ -31,6 +31,16 @@
     AVCaptureDeviceInput *_currentInput;
     AVCaptureOutput *_currentOutput;
     AVCaptureVideoPreviewLayer *_previewLayer;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _cleanAperture;
     BOOL _shouldBeStopped;
     int _cameraMode;
     int _cameraDevice;
@@ -95,7 +105,7 @@
         unsigned int delegateSessionWasInterrupted : 1; 
         unsigned int delegateSessionInterruptionEnded : 1; 
         unsigned int delegateServerDied : 1; 
-        unsigned int delegateInputPortFormatDescriptionDidChange : 1; 
+        unsigned int delegateCleanApertureDidChange : 1; 
         unsigned int delegateModeWillChange : 1; 
         unsigned int delegateModeDidChange : 1; 
         unsigned int delegateWillTakePhoto : 1; 
@@ -113,6 +123,7 @@
         unsigned int delegateWillStartAutofocus : 1; 
         unsigned int delegateFocusDidStart : 1; 
         unsigned int delegateFocusDidEnd : 1; 
+        unsigned int delegateFaceMetadataDidChange : 1; 
         unsigned int delegateTorchAvailabilityChanged : 1; 
     } _cameraFlags;
 
@@ -139,18 +150,28 @@
 @property(readonly) BOOL supportsHDR;
 @property(getter=isHDREnabled) BOOL HDREnabled;
 @property float zoomFactor;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cleanAperture;
 @property(copy) id postSessionSetupBlock;
 @property(readonly) int cameraOrientation;
 
 + (id)sharedInstance;
 
-- (id)currentSession;
+- (BOOL)isReady;
+- (id)currentDevice;
+- (id)init;
+- (void)dealloc;
 - (void)_serverDied:(id)arg1;
 - (void)_applicationSuspended:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (BOOL)isReady;
-- (void)lockFocus;
-- (void)autofocus;
+- (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
+- (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3 error:(id)arg4;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceRectangle;
+- (void)setFlashMode:(int)arg1;
+- (int)flashMode;
+- (BOOL)hasFlash;
+- (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;
+- (id)currentSession;
+- (void)startPreview;
+- (void)stopPreview;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)setCameraDevice:(int)arg1;
 - (int)cameraDevice;
@@ -159,21 +180,18 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 - (id)delegate;
-- (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3 error:(id)arg4;
-- (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceRectangle;
-- (BOOL)hasFlash;
-- (int)flashMode;
-- (void)setFlashMode:(int)arg1;
-- (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;
-- (void)startPreview;
-- (void)stopPreview;
+- (void)setDelegate:(id)arg1;
+- (void)lockFocus;
+- (void)autofocus;
 - (void)setCaptureOrientation:(int)arg1;
 - (float)zoomFactor;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cleanAperture;
 - (struct CGSize { float x1; float x2; })panoramaPreviewSize;
 - (float)panoramaPreviewScale;
 - (id)imageOutput;
 - (void)setCurrentDevice:(id)arg1;
+- (void)_setCameraOrientation:(int)arg1;
+- (int)cameraOrientation;
 - (BOOL)supportsHDR;
 - (void)setHDREnabled:(BOOL)arg1;
 - (BOOL)isTorchDisabled;
@@ -198,9 +216,13 @@
 - (void)setVideoCaptureMaximumDuration:(double)arg1;
 - (void)setVideoCaptureQuality:(int)arg1;
 - (id)videoCapturePath;
+- (void)capturePhoto;
+- (BOOL)imageWriterQueueIsAvailable;
 - (BOOL)canCapturePhoto;
+- (void)_clearPreviewLayer;
 - (void)_startPreviewWithCameraDevice:(int)arg1 cameraMode:(int)arg2;
 - (BOOL)_didSendPreviewStartedCallbackToEmptyDelegate;
+- (void)tearDownCaptureSession;
 - (BOOL)supportsZoom;
 - (void)setZoomFactor:(float)arg1;
 - (float)maximumZoomFactor;
@@ -213,6 +235,7 @@
 - (int)cameraMode;
 - (BOOL)supportsVideoCapture;
 - (BOOL)inCall;
+- (void)accelerometer:(id)arg1 didChangeDeviceOrientation:(int)arg2;
 - (void)_didTakePhoto;
 - (void)_willTakePhoto;
 - (void)_faceRectangleChanged;
@@ -242,6 +265,7 @@
 - (id)_videoMetadataArrayIncludingSensitiveProperties:(BOOL)arg1;
 - (void)_setVideoCapturePath:(id)arg1;
 - (BOOL)canCaptureVideo;
+- (void)_verifyVideoConsolidationForVideoAtPath:(id)arg1 outUserInfo:(id*)arg2;
 - (void)_removeVideoCaptureFileAndDirectoryAtPath:(id)arg1;
 - (void)_capturedPhotoWithDictionary:(id)arg1 error:(id)arg2;
 - (BOOL)isHDREnabled;
@@ -285,6 +309,7 @@
 - (void)_configureSessionWithCameraMode:(int)arg1 cameraDevice:(int)arg2;
 - (void)setCurrentInput:(id)arg1;
 - (void)setCurrentOutput:(id)arg1;
+- (void)_faceMetadataDidChange:(id)arg1;
 - (id)_currentVideoConnection;
 - (id)currentOutput;
 - (void)_sanityCheckCameraMode:(int*)arg1 cameraDevice:(int*)arg2;
@@ -302,12 +327,5 @@
 - (void)_synchronizeHDRSettings;
 - (void)setIsCameraApp:(BOOL)arg1;
 - (BOOL)isCameraApp;
-- (id)currentDevice;
-- (id)init;
-- (void)dealloc;
-- (void)accelerometer:(id)arg1 didChangeDeviceOrientation:(int)arg2;
-- (void)capturePhoto;
-- (int)cameraOrientation;
-- (void)_setCameraOrientation:(int)arg1;
 
 @end

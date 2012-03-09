@@ -10,9 +10,9 @@
 }
 
 
-- (id)initWithInvocation:(id)arg1 protocol:(id)arg2;
+- (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)dealloc;
+- (id)initWithInvocation:(id)arg1 protocol:(id)arg2;
 
 @end

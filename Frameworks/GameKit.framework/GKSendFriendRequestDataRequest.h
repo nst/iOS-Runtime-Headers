@@ -19,6 +19,9 @@
 @property(retain) id results;
 
 
+- (id)results;
+- (void)setResults:(id)arg1;
+- (void)dealloc;
 - (id)errorForResponse:(id)arg1;
 - (void)processResults:(id)arg1 errorDict:(id)arg2 forKey:(id)arg3 recipients:(id)arg4;
 - (id)recipients;
@@ -32,8 +35,5 @@
 - (void)setMessage:(id)arg1;
 - (id)key;
 - (id)request;
-- (id)results;
-- (void)setResults:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -40,6 +40,11 @@
 @property int selectionStyle;
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setRightPhase:(float)arg1;
 - (float)rightPhase;
 - (void)setLeftPhase:(float)arg1;
@@ -68,10 +73,5 @@
 - (void)setBackgroundColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;
 - (void)setOpaque:(BOOL)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

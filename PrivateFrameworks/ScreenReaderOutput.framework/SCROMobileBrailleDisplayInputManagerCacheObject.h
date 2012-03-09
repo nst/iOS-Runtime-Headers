@@ -13,26 +13,26 @@
     NSBundle *_bundle;
 }
 
-@property(retain) NSBundle * bundle;
-@property(retain) NSMutableArray * orderedIdentifiers;
-@property(retain) NSMutableDictionary * commandDictionary;
-@property(retain) NSString * driverIdentifier;
-@property int brailleInputMode;
 @property(retain) NSString * modelIdentifier;
+@property int brailleInputMode;
+@property(retain) NSString * driverIdentifier;
+@property(retain) NSMutableDictionary * commandDictionary;
+@property(retain) NSMutableArray * orderedIdentifiers;
+@property(retain) NSBundle * bundle;
 
 
+- (void)dealloc;
 - (void)setOrderedIdentifiers:(id)arg1;
-- (int)brailleInputMode;
-- (void)setDriverIdentifier:(id)arg1;
-- (void)setModelIdentifier:(id)arg1;
-- (void)setCommandDictionary:(id)arg1;
-- (void)setBrailleInputMode:(int)arg1;
-- (id)driverIdentifier;
-- (id)modelIdentifier;
-- (id)commandDictionary;
 - (id)orderedIdentifiers;
+- (void)setCommandDictionary:(id)arg1;
+- (id)commandDictionary;
+- (void)setDriverIdentifier:(id)arg1;
+- (id)driverIdentifier;
+- (void)setBrailleInputMode:(int)arg1;
+- (int)brailleInputMode;
+- (void)setModelIdentifier:(id)arg1;
+- (id)modelIdentifier;
 - (void)setBundle:(id)arg1;
 - (id)bundle;
-- (void)dealloc;
 
 @end

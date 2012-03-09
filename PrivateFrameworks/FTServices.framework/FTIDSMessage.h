@@ -30,18 +30,11 @@
 
 
 - (id)messageBody;
-- (int)command;
-- (void)setPushToken:(id)arg1;
-- (id)pushToken;
-- (struct __SecKey { }*)identityPublicKey;
-- (void)setProvisionCertificate:(id)arg1;
-- (void)setProvisionPrivateKey:(struct __SecKey { }*)arg1;
-- (void)setPushCertificate:(id)arg1;
-- (void)setPushPrivateKey:(struct __SecKey { }*)arg1;
-- (struct __SecKey { }*)identityPrivateKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (struct __SecKey { }*)provisionPublicKey;
 - (struct __SecKey { }*)provisionPrivateKey;
-- (id)IDCertificate;
 - (struct __SecKey { }*)pushPublicKey;
 - (struct __SecKey { }*)pushPrivateKey;
 - (void)setProvisionPublicKey:(struct __SecKey { }*)arg1;
@@ -49,6 +42,7 @@
 - (void)setIdentityPrivateKey:(struct __SecKey { }*)arg1;
 - (void)setIDCertificate:(id)arg1;
 - (void)setPushPublicKey:(struct __SecKey { }*)arg1;
+- (id)IDCertificate;
 - (id)provisionCertificate;
 - (id)pushCertificate;
 - (id)nonStandardMessageHeadersForOutgoingPush;
@@ -58,8 +52,14 @@
 - (BOOL)wantsHTTPHeaders;
 - (BOOL)wantsCompressedBody;
 - (BOOL)wantsBinaryPush;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (int)command;
+- (void)setPushToken:(id)arg1;
+- (id)pushToken;
+- (struct __SecKey { }*)identityPublicKey;
+- (void)setProvisionCertificate:(id)arg1;
+- (void)setProvisionPrivateKey:(struct __SecKey { }*)arg1;
+- (void)setPushCertificate:(id)arg1;
+- (void)setPushPrivateKey:(struct __SecKey { }*)arg1;
+- (struct __SecKey { }*)identityPrivateKey;
 
 @end

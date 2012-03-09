@@ -12,21 +12,21 @@
     id _params;
 }
 
-@property SEL mainThreadAction;
-@property SEL action;
 @property id target;
+@property SEL action;
+@property SEL mainThreadAction;
 
 
-- (void)setAction:(SEL)arg1;
 - (void)setTarget:(id)arg1;
 - (SEL)action;
 - (id)target;
 - (id)init;
 - (void)dealloc;
-- (SEL)mainThreadAction;
-- (BOOL)hasParams;
-- (void)setCallbackParams:(id)arg1;
-- (id)waitForCallbackParams;
 - (void)setMainThreadAction:(SEL)arg1;
+- (BOOL)hasParams;
+- (id)waitForCallbackParams;
+- (void)setCallbackParams:(id)arg1;
+- (SEL)mainThreadAction;
+- (void)setAction:(SEL)arg1;
 
 @end

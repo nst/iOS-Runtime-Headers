@@ -12,8 +12,6 @@
 + (id)currentTaskDictionary;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)setEnvironment:(id)arg1;
-- (id)environment;
 - (id)standardError;
 - (id)standardOutput;
 - (id)standardInput;
@@ -32,12 +30,14 @@
 - (int)processIdentifier;
 - (void)setArguments:(id)arg1;
 - (id)currentDirectoryPath;
+- (id)init;
+- (void)setEnvironment:(id)arg1;
+- (id)environment;
+- (void)setTerminationHandler:(id)arg1;
+- (id)terminationHandler;
 - (BOOL)resume;
 - (BOOL)isRunning;
 - (id)arguments;
 - (BOOL)suspend;
-- (void)setTerminationHandler:(id)arg1;
-- (id)terminationHandler;
-- (id)init;
 
 @end

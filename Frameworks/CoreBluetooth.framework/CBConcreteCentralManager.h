@@ -12,7 +12,6 @@
 
 - (oneway void)release;
 - (void)dealloc;
-- (void)checkIn:(BOOL)arg1;
 - (void)retainPeripheral:(id)arg1;
 - (void)releasePeripheral:(id)arg1;
 - (void*)createXpcArrayWithNSArray:(id)arg1;
@@ -42,5 +41,6 @@
 - (void)stopScan;
 - (void)connectPeripheral:(id)arg1 options:(id)arg2;
 - (void)cancelPeripheralConnection:(id)arg1;
+- (void)checkIn:(BOOL)arg1;
 
 @end

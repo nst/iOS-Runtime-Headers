@@ -21,8 +21,12 @@
 @property(retain) id filter;
 
 
-- (void)setOptions:(id)arg1;
-- (id)filter;
+- (void)setStartProgress:(float)arg1;
+- (void)setEndProgress:(float)arg1;
+- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)_copyRenderAnimationForLayer:(id)arg1;
+- (float)startProgress;
+- (unsigned int)transitionFlags;
+- (unsigned int)_propertyFlagsForLayer:(id)arg1;
 - (float)endProgress;
 - (id)options;
 - (id)type;
@@ -31,11 +35,7 @@
 - (void)setSubtype:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)subtype;
-- (void)setStartProgress:(float)arg1;
-- (void)setEndProgress:(float)arg1;
-- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)_copyRenderAnimationForLayer:(id)arg1;
-- (float)startProgress;
-- (unsigned int)transitionFlags;
-- (unsigned int)_propertyFlagsForLayer:(id)arg1;
+- (id)filter;
+- (void)setOptions:(id)arg1;
 
 @end

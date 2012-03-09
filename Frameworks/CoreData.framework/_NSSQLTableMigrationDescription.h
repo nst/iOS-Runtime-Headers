@@ -24,6 +24,7 @@
 @property(readonly) int migrationType;
 
 
+- (void)dealloc;
 - (id)initWithRootEntity:(id)arg1 migrationType:(int)arg2;
 - (void)addEntityMigrationDescription:(id)arg1;
 - (void)appendStatementsToPrepareForMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
@@ -42,6 +43,5 @@
 - (id)_addedManyToManys;
 - (int)migrationType;
 - (id)rootEntity;
-- (void)dealloc;
 
 @end

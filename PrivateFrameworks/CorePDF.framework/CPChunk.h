@@ -22,9 +22,8 @@
 + (float)chooseReferenceFontSizeFrom:(float)arg1 and:(float)arg2;
 
 - (void)setChildren:(id)arg1;
-- (float)rotationAngle;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)accept:(id)arg1;
 - (float)opticalLeading;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustToPointBoundary:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -71,19 +70,20 @@
 - (long)insertionOrder;
 - (unsigned int)chunkPosition;
 - (int)compareTopDescending:(id)arg1;
-- (void)add:(id)arg1;
-- (void)remove:(id)arg1;
-- (float)bottom;
-- (float)left;
-- (float)right;
-- (float)top;
 - (void)setAnchor:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })anchor;
 - (void)removeAll;
 - (float)fontSize;
 - (void)sortUsingSelector:(SEL)arg1;
 - (float)center;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (void)add:(id)arg1;
+- (void)remove:(id)arg1;
+- (float)bottom;
+- (float)left;
+- (float)right;
+- (float)top;
+- (float)rotationAngle;
 
 @end

@@ -13,6 +13,10 @@
 
 - (void)_proxyNonGCFinalize;
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
+- (void)addObjectsFromArray:(id)arg1;
+- (unsigned int)count;
+- (void)addObject:(id)arg1;
+- (void)setSet:(id)arg1;
 - (id)member:(id)arg1;
 - (void)unionSet:(id)arg1;
 - (id)objectEnumerator;
@@ -20,9 +24,5 @@
 - (void)intersectSet:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
-- (void)setSet:(id)arg1;
-- (void)addObjectsFromArray:(id)arg1;
-- (unsigned int)count;
-- (void)addObject:(id)arg1;
 
 @end

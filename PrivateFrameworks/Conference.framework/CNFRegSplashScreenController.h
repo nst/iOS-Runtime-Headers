@@ -18,11 +18,6 @@
 @property <CNFRegFirstRunDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)delegate;
 - (id)init;
 - (void)dealloc;
 - (float)_startingYOffset;
@@ -40,5 +35,10 @@
 - (void)setRegController:(id)arg1;
 - (void)willBecomeActive;
 - (id)regController;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

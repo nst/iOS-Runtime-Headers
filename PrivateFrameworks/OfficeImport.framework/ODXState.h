@@ -9,8 +9,8 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithOfficeArtState:(id)arg1;
 - (id)officeArtState;
-- (void)dealloc;
 
 @end

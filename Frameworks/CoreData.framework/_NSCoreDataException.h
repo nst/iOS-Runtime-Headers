@@ -11,11 +11,11 @@
 
 + (id)exceptionWithName:(id)arg1 code:(long)arg2 reason:(id)arg3 userInfo:(id)arg4;
 
+- (void)dealloc;
+- (id)initWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
 - (long)code;
+- (id)domain;
 - (void)_setDomain:(id)arg1;
 - (id)initWithName:(id)arg1 code:(long)arg2 reason:(id)arg3 userInfo:(id)arg4;
-- (id)domain;
-- (id)initWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
-- (void)dealloc;
 
 @end

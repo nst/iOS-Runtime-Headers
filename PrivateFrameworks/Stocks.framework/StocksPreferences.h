@@ -10,9 +10,9 @@
 
 + (id)sharedPreferences;
 
-- (BOOL)isChangeColorSwapped;
-- (void)resetLocale;
 - (id)init;
 - (void)dealloc;
+- (BOOL)isChangeColorSwapped;
+- (void)resetLocale;
 
 @end

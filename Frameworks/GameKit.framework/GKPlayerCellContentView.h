@@ -18,6 +18,7 @@
 
 + (id)playerContentView;
 
+- (void)dealloc;
 - (id)imageSourceForPhotoSize:(int)arg1;
 - (int)photoSize;
 - (id)lastPlayedGameStringForDate:(id)arg1 withGame:(id)arg2;
@@ -30,10 +31,9 @@
 - (void)refreshExpensiveContent;
 - (void)updateLines;
 - (void)setShouldShowPhoto:(BOOL)arg1;
+- (id)player;
 - (void)setPlayer:(id)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
-- (id)player;
-- (void)dealloc;
 
 @end

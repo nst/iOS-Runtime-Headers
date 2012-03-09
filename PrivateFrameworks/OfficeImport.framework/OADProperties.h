@@ -12,6 +12,10 @@
 
 + (id)defaultProperties;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)init;
+- (void)dealloc;
 - (void)flatten;
 - (BOOL)isMerged;
 - (void)setMerged:(BOOL)arg1;
@@ -24,9 +28,5 @@
 - (void)setParent:(id)arg1;
 - (void)setParent:(id)arg1 myRestrictedClass:(Class)arg2;
 - (id)initWithDefaults;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)init;
-- (void)dealloc;
 
 @end

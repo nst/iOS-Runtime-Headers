@@ -56,20 +56,20 @@
 
 + (id)copyPropertyMappingsForParser;
 
+- (id)description;
+- (void)dealloc;
 - (void)setXmppURI:(id)arg1;
 - (void)setXmppServer:(id)arg1;
 - (id)xmppURI;
 - (id)xmppServer;
 - (void)applyParsedProperties:(id)arg1;
 - (BOOL)isSubscribed;
+- (id)calendarOrder;
+- (BOOL)isShared;
 - (void)setSource:(id)arg1;
 - (id)source;
 - (id)timeZone;
 - (void)setTimeZone:(id)arg1;
-- (id)calendarOrder;
-- (BOOL)isShared;
-- (id)description;
-- (void)dealloc;
 - (void)setCtag:(id)arg1;
 - (void)setCanBePublished:(BOOL)arg1;
 - (BOOL)canBePublished;

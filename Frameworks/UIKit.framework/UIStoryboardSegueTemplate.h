@@ -15,6 +15,7 @@
 @property UIViewController * viewController;
 
 
+- (void)dealloc;
 - (id)segueWithDestinationViewController:(id)arg1;
 - (Class)effectiveSegueClass;
 - (id)defaultSegueClassName;
@@ -24,6 +25,5 @@
 - (void)perform:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

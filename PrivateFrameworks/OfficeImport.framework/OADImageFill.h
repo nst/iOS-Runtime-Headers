@@ -19,6 +19,11 @@
 
 + (id)defaultProperties;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)color;
 - (void)setRotateWithShape:(BOOL)arg1;
 - (BOOL)isRotateWithShapeOverridden;
 - (BOOL)rotateWithShape;
@@ -37,10 +42,5 @@
 - (id)blipRef;
 - (void)setParent:(id)arg1;
 - (id)initWithDefaults;
-- (id)color;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

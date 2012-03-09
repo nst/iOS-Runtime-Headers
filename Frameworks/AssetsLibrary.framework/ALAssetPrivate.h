@@ -19,6 +19,8 @@
 
 - (id)library;
 - (void)setLibrary:(id)arg1;
+- (void)dealloc;
+- (void)_performBlockAndWait:(id)arg1;
 - (void)setPhoto:(id)arg1;
 - (BOOL)isValid;
 - (void)set_photoLibrary:(id)arg1;
@@ -27,8 +29,6 @@
 - (id)_photoLibrary;
 - (void)setIsValid:(BOOL)arg1;
 - (id)initWithManagedAsset:(id)arg1 library:(id)arg2;
-- (void)_performBlockAndWait:(id)arg1;
 - (id)photo;
-- (void)dealloc;
 
 @end

@@ -11,11 +11,11 @@
 @property(retain) NSMutableSet * changedProperties;
 
 
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)addChangedProperty:(id)arg1;
 - (id)changedProperties;
 - (void)setChangedProperties:(id)arg1;

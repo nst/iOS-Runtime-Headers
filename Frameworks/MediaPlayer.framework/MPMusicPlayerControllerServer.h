@@ -10,16 +10,16 @@
 
 @property(readonly) MPAVController * player;
 
++ (id)sharedInstance;
 + (BOOL)isMusicPlayerControllerServerRunning;
 + (void)startMusicPlayerControllerServerWithDelegate:(id)arg1;
 + (void)initialize;
-+ (id)sharedInstance;
 
+- (void)dealloc;
 - (void)_runMigServer;
+- (id)initWithDelegate:(id)arg1;
+- (id)player;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)player;
-- (void)dealloc;
-- (id)initWithDelegate:(id)arg1;
 
 @end

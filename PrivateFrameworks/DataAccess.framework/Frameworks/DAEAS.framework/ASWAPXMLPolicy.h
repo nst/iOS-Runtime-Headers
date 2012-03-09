@@ -14,8 +14,8 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (id)data;
 - (void)dealloc;
+- (id)data;
 - (id)perDomainDictsForPolicy;
 - (id)_wbxmlPolicyDict;
 - (id)_policyForWAPProvisioningXMLData;

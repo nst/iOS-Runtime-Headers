@@ -14,13 +14,16 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)dataclassIsEmpty:(id)arg1;
 - (void)removeCompletedStoreAsset:(id)arg1;
 - (void)removeInstallOnlyAssetsForDataclass:(id)arg1;
 - (id)assetManifestForDataclasses:(id)arg1;
 - (void)dequeueAsset:(id)arg1;
 - (id)uploadAssetsForDataclass:(id)arg1;
-- (id)syncAssetsForDataclasses:(id)arg1;
+- (unsigned int)countOfSyncAssetsForDataclasses:(id)arg1;
+- (id)assetsForDataclasses:(id)arg1;
 - (id)bypassedRestoresForDataclass:(id)arg1;
 - (id)restoreAssetsForDataclass:(id)arg1;
 - (id)storeAssetsForDataclass:(id)arg1;
@@ -32,13 +35,10 @@
 - (unsigned int)awaitingStoreCompletion;
 - (unsigned int)totalAssetCount;
 - (void)_installSignalHandler;
-- (id)assetsForDataclasses:(id)arg1;
 - (void)enqueueAssets:(id)arg1;
 - (void)reset;
 - (BOOL)isEmpty;
 - (id)assets;
 - (unsigned int)currentAsset;
-- (id)init;
-- (void)dealloc;
 
 @end

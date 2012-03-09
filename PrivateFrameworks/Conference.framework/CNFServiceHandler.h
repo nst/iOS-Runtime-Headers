@@ -5,13 +5,8 @@
 @interface CNFServiceHandler : NSObject  {
 }
 
-+ (BOOL)disconnect;
-+ (BOOL)connect;
-+ (id)services;
-+ (void)setCapabilities:(unsigned long long)arg1;
-+ (void)_daemonConnectedNotification:(id)arg1;
-+ (BOOL)isConnected;
 + (unsigned long long)capabilities;
++ (BOOL)isConnected;
 + (BOOL)conferencingHasValidatedAliasForAccount:(id)arg1;
 + (BOOL)_isValidProcess;
 + (BOOL)conferencingIsRegisteredForAccount:(id)arg1;
@@ -28,6 +23,11 @@
 + (int)activationState;
 + (BOOL)connect:(BOOL)arg1;
 + (id)faceTimeSourceAccount;
++ (id)services;
++ (void)setCapabilities:(unsigned long long)arg1;
++ (void)_daemonConnectedNotification:(id)arg1;
++ (BOOL)connect;
++ (BOOL)disconnect;
 
 
 @end

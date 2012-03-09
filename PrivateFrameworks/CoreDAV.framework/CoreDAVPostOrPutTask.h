@@ -2,26 +2,29 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString, NSData;
+@class NSURL, NSString, NSData;
 
-@interface CoreDAVPostOrPutTask : CoreDAVTask  {
+@interface CoreDAVPostOrPutTask : CoreDAVActionBackedTask  {
     BOOL _forceToServer;
     NSString *_previousETag;
     NSString *_requestDataContentType;
     NSData *_requestDataPayload;
     BOOL _sendOrder;
-    int _order;
+    int _absoluteOrder;
+    NSURL *_priorOrderedURL;
 }
 
 @property BOOL forceToServer;
-@property int order;
+@property(retain) NSURL * priorOrderedURL;
+@property int absoluteOrder;
 @property(retain) NSString * previousETag;
 @property(retain) NSData * requestDataPayload;
 @property(retain) NSString * requestDataContentType;
 
 
-- (void)setOrder:(int)arg1;
-- (int)order;
+- (id)description;
+- (void)dealloc;
+- (id)priorOrderedURL;
 - (void)setRequestDataPayload:(id)arg1;
 - (void)setRequestDataContentType:(id)arg1;
 - (void)setForceToServer:(BOOL)arg1;
@@ -31,11 +34,11 @@
 - (void)setPreviousETag:(id)arg1;
 - (id)additionalHeaderValues;
 - (id)previousETag;
+- (void)setPriorOrderedURL:(id)arg1;
+- (void)setAbsoluteOrder:(int)arg1;
 - (id)initWithDataPayload:(id)arg1 dataContentType:(id)arg2 atURL:(id)arg3 previousETag:(id)arg4;
-- (id)copyDefaultParserForContentType:(id)arg1;
+- (int)absoluteOrder;
 - (id)initWithURL:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)requestBody;
 
 @end

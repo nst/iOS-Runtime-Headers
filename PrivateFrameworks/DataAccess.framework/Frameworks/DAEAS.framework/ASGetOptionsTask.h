@@ -11,8 +11,8 @@
 
 + (void)__setUsePort:(BOOL)arg1;
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
+- (void)finishWithError:(id)arg1;
 - (id)httpMethod;
 - (id)versionArray;
 - (id)commandArray;

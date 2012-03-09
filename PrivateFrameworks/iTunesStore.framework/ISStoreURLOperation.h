@@ -22,19 +22,18 @@
 @property(retain) NSNumber * authenticatedDSID;
 
 + (id)propertyListOperationWithURLBagKey:(id)arg1;
-+ (id)itemPingOperationWithIdentifier:(unsigned long long)arg1 urlBagKey:(id)arg2;
 + (id)_restrictionsHeaderValue;
 + (void)_addITunesStoreHeadersToRequest:(id)arg1 withBagContext:(id)arg2;
++ (id)itemPingOperationWithIdentifier:(unsigned long long)arg1 urlBagKey:(id)arg2;
 + (void)addITunesStoreHeadersToRequest:(id)arg1;
 + (void)handleITunesStoreResponseHeaders:(id)arg1;
 + (id)pingOperationWithUrl:(id)arg1;
 
-- (void)handleResponse:(id)arg1;
-- (void)run;
+- (id)init;
+- (void)dealloc;
 - (void)setUseUserSpecificURLBag:(BOOL)arg1;
 - (void)setCanSendGUIDParameter:(BOOL)arg1;
 - (void)_addStandardQueryParametersForURL:(id)arg1;
-- (BOOL)_canSendTokenToURL:(id)arg1;
 - (id)_urlFromURLBagForRequestProperties:(id)arg1 inBagContext:(id)arg2;
 - (BOOL)needsURLBag;
 - (BOOL)useUserSpecificURLBag;
@@ -45,18 +44,19 @@
 - (id)_storeFrontIdentifier;
 - (id)_account;
 - (id)_copyURLBagContext;
+- (BOOL)_canSendTokenToURL:(id)arg1;
 - (void)setUrlKnownToBeTrusted:(BOOL)arg1;
 - (void)setNeedsURLBag:(BOOL)arg1;
-- (BOOL)handleRedirectFromDataProvider:(id)arg1;
+- (BOOL)handleRedirectFromDataProvider:(id)arg1 error:(id*)arg2;
 - (BOOL)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
 - (id)newRequestWithURL:(id)arg1;
 - (id)_copyAuthenticationContext;
-- (id)init;
-- (void)dealloc;
+- (void)run;
 - (void)setAuthenticatedDSID:(id)arg1;
 - (id)authenticatedDSID;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (BOOL)needsAuthentication;
 - (id)authenticatedAccountDSID;
+- (void)handleResponse:(id)arg1;
 
 @end

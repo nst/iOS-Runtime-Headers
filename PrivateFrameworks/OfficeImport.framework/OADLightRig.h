@@ -11,16 +11,16 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setRotation:(id)arg1;
 - (id)rotation;
 - (int)type;
 - (int)direction;
 - (void)setDirection:(int)arg1;
 - (void)setType:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

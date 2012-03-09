@@ -34,8 +34,7 @@
 @property(retain) NSString * expirationText;
 
 
-- (id)summary;
-- (void)setSummary:(id)arg1;
+- (void)dealloc;
 - (void)setExpanded:(BOOL)arg1;
 - (BOOL)expanded;
 - (id)title;
@@ -44,6 +43,8 @@
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)summary;
+- (void)setSummary:(id)arg1;
 - (int)unplayedState;
 - (id)expirationText;
 - (void)setExpiresSoon:(BOOL)arg1;
@@ -61,6 +62,5 @@
 - (void)setMoreButtonTarget:(id)arg1;
 - (void)setMoreButtonAction:(SEL)arg1;
 - (void)_moreButtonSelected:(id)arg1;
-- (void)dealloc;
 
 @end

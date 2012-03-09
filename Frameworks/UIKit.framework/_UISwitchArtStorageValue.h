@@ -19,6 +19,8 @@
 @property(retain) UIImage * backgroundColorImage;
 
 
+- (int)count;
+- (void)dealloc;
 - (void)setBackgroundColorImage:(id)arg1;
 - (id)backgroundColorImage;
 - (void)setLabelImage:(id)arg1;
@@ -28,7 +30,5 @@
 - (void)setOnImage:(id)arg1;
 - (id)onImage;
 - (void)setCount:(int)arg1;
-- (int)count;
-- (void)dealloc;
 
 @end

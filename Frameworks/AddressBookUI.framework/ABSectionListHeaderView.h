@@ -11,9 +11,9 @@
 @property(retain) <ABStyleProvider> * styleProvider;
 
 
-- (void)_updateBackgroundImage;
 - (void)dealloc;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
+- (void)_updateBackgroundImage;
 
 @end

@@ -81,15 +81,15 @@
 - (void)setCriterionIdentifier:(id)arg1;
 - (BOOL)allCriteriaMustBeSatisfied;
 - (int)criterionType;
-- (void)setExpression:(id)arg1;
-- (id)expression;
-- (id)dictionaryRepresentation;
-- (id)initWithDictionary:(id)arg1;
-- (id)name;
 - (void)setName:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)dictionaryRepresentation;
+- (id)initWithDictionary:(id)arg1;
+- (id)name;
+- (void)setExpression:(id)arg1;
+- (id)expression;
 
 @end

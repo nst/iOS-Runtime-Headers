@@ -20,6 +20,11 @@
 @property(retain) UIBarButtonItem * doneItem;
 
 
+- (void)dealloc;
+- (void)_updateToolbar:(BOOL)arg1;
+- (id)initWithItems:(id)arg1 startingIndex:(int)arg2;
+- (unsigned int)visibleItemIndex;
+- (id)itemAtIndex:(unsigned int)arg1;
 - (id)initWithItems:(id)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -31,9 +36,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)navigationItem;
 - (void)willPresentActionSheet:(id)arg1;
-- (void)_updateToolbar:(BOOL)arg1;
-- (id)initWithItems:(id)arg1 startingIndex:(int)arg2;
-- (unsigned int)visibleItemIndex;
 - (id)doneItem;
 - (void)setDoneItem:(id)arg1;
 - (BOOL)dontChangeStatusBar;
@@ -54,7 +56,5 @@
 - (void)updateNavigationItemTitle;
 - (void)didMoveToPhotoAtIndex:(unsigned int)arg1;
 - (id)remakerContainerView;
-- (void)dealloc;
-- (id)itemAtIndex:(unsigned int)arg1;
 
 @end

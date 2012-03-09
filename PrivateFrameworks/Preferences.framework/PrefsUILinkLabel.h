@@ -17,8 +17,10 @@
 @property(retain) NSURL * URL;
 
 
-- (void)tappedLink:(id)arg1;
-- (id)color:(id)arg1 byMultiplyingSubComponentsBy:(float)arg2;
+- (void)setTarget:(id)arg1;
+- (SEL)action;
+- (id)target;
+- (void)dealloc;
 - (void)setURL:(id)arg1;
 - (id)URL;
 - (void)setAction:(SEL)arg1;
@@ -28,9 +30,7 @@
 - (void)openURL:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTarget:(id)arg1;
-- (SEL)action;
-- (id)target;
-- (void)dealloc;
+- (void)tappedLink:(id)arg1;
+- (id)color:(id)arg1 byMultiplyingSubComponentsBy:(float)arg2;
 
 @end

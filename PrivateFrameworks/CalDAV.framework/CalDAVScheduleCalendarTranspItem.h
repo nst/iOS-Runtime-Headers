@@ -12,9 +12,9 @@
 @property(retain) CoreDAVItemWithNoChildren * transparent;
 
 
+- (void)dealloc;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (void)dealloc;
 - (void)setTransparent:(id)arg1;
 - (id)transparent;
 - (BOOL)isScheduleTransparent;

@@ -11,6 +11,7 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
 - (void)sync;
 - (void)moveGlyphsFromRange:(struct { int x1; int x2; })arg1 toIndex:(long)arg2;
 - (void)swapGlyphsAtIndex:(long)arg1 withIndex:(long)arg2;
@@ -29,6 +30,5 @@
 - (void)disposeGlyphStack;
 - (void)setProps:(unsigned int)arg1 atIndex:(long)arg2;
 - (id)initWithCount:(long)arg1;
-- (BOOL)isEqual:(id)arg1;
 
 @end

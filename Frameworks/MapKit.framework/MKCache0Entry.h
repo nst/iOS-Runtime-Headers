@@ -14,6 +14,8 @@
 @property unsigned int _mapkit_cache_accessTime;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setObject:(id)arg1;
 - (id)key;
 - (id)object;
@@ -21,7 +23,5 @@
 - (void)set_mapkit_cache_accessTime:(unsigned int)arg1;
 - (unsigned int)_mapkit_cache_accessTime;
 - (id)_mapkit_cache_key;
-- (id)description;
-- (void)dealloc;
 
 @end

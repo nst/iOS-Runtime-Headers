@@ -36,6 +36,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (BOOL)_displaysFullScreen;
 - (id)initWithUIImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -91,6 +92,5 @@
 - (id)initWithPhoto:(id)arg1;
 - (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
 - (void)photoTileViewControllerCancelImageRequests:(id)arg1;
-- (void)dealloc;
 
 @end

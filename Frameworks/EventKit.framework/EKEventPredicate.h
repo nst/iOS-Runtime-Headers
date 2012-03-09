@@ -19,8 +19,9 @@
 + (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 eventUUID:(id)arg4 calendars:(id)arg5;
 + (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4;
 
-- (id)predicateFormat;
-- (BOOL)evaluateWithObject:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)eventUUID;
 - (id)endDate;
 - (id)startDate;
@@ -29,8 +30,7 @@
 - (id)timeZone;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)predicateFormat;
+- (BOOL)evaluateWithObject:(id)arg1;
 
 @end

@@ -11,10 +11,10 @@
 @property BOOL inUse;
 
 
+- (void)dealloc;
 - (void)setInUse:(BOOL)arg1;
 - (BOOL)inUse;
 - (struct sqlite3_stmt { }*)sqliteStatement;
 - (id)initWithSqliteStatement:(struct sqlite3_stmt { }*)arg1;
-- (void)dealloc;
 
 @end

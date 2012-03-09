@@ -36,6 +36,8 @@
 
 + (id)codedPropertyKeys;
 
+- (id)description;
+- (void)dealloc;
 - (void)setMaxFriendRank:(unsigned int)arg1;
 - (unsigned int)maxFriendRank;
 - (void)setFriendRank:(unsigned int)arg1;
@@ -62,7 +64,5 @@
 - (void)setGame:(id)arg1;
 - (id)categoryID;
 - (BOOL)isValid;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -11,9 +11,9 @@
 @property(retain,readonly) UILabel * valueLabel;
 
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)setBackgroundColor:(id)arg1;
 - (void)dealloc;
 - (id)valueLabel;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)setBackgroundColor:(id)arg1;
 
 @end

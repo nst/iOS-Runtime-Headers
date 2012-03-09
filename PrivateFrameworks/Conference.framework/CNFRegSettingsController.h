@@ -39,17 +39,6 @@
 @property(copy) id alertHandler;
 
 
-- (id)bundle;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)setAlertHandler:(id)arg1;
-- (id)alertHandler;
 - (void)dealloc;
 - (BOOL)shouldReloadSpecifiersOnResume;
 - (id)getFaceTimeEnabledForSpecifier:(id)arg1;
@@ -62,6 +51,9 @@
 - (void)textFieldEmptyStateChanged:(id)arg1 forSpecifier:(id)arg2;
 - (id)pendingAddressForSpecifier:(id)arg1;
 - (void)setPendingAddress:(id)arg1 forSpecifier:(id)arg2;
+- (id)aliasWithIdentifier:(id)arg1;
+- (id)currentCallerIdValue;
+- (void)setCurrentCallerIdValue:(id)arg1;
 - (int)groupIdForSpecifierId:(id)arg1;
 - (void)_handleConferenceConnected;
 - (void)_handleFaceTimeConferenceStateChanged;
@@ -130,10 +122,6 @@
 - (id)possibleCallerIdValues;
 - (id)possibleCallerIdTitles;
 - (void)reloadCallerIdValues;
-- (void)setCurrentCallerIdValue:(id)arg1;
-- (id)currentCallerIdValue;
-- (id)aliasWithIdentifier:(id)arg1;
-- (void)setCallerId:(id)arg1 animated:(BOOL)arg2;
 - (int)groupIdForSpecifier:(id)arg1;
 - (BOOL)_shouldUseDisabledHandlers;
 - (void)_setupAccountHandlersForNormalOperation;
@@ -157,5 +145,16 @@
 - (void)willResignActive;
 - (void)willBecomeActive;
 - (id)logName;
+- (void)setAlertHandler:(id)arg1;
+- (id)alertHandler;
+- (id)bundle;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 
 @end

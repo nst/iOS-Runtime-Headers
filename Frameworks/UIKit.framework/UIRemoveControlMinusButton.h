@@ -15,6 +15,7 @@
 + (float)defaultWidth;
 + (id)minusImage;
 
+- (void)dealloc;
 - (BOOL)isRotated;
 - (void)toggleRotate:(BOOL)arg1;
 - (BOOL)isHiding;
@@ -24,6 +25,5 @@
 - (void)animator:(id)arg1 stopAnimation:(id)arg2;
 - (BOOL)isRotating;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

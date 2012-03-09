@@ -24,6 +24,7 @@
 @property int stage;
 
 
+- (void)dealloc;
 - (void)setStage:(int)arg1;
 - (int)stage;
 - (void)setInitialPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -36,6 +37,5 @@
 - (void)setTouch:(id)arg1;
 - (id)key;
 - (id)touch;
-- (void)dealloc;
 
 @end

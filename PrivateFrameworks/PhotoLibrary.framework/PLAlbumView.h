@@ -72,10 +72,9 @@
 @property(retain) PLPhotosPickerSession * currentPickerSession;
 
 
-- (void)setBottomInset:(float)arg1;
-- (float)bottomInset;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (void)setCanShowCopyCallout:(BOOL)arg1;
+- (void)scrollToBottom:(BOOL)arg1;
 - (void)setAllowsReordering:(BOOL)arg1;
 - (id)tableView;
 - (void)clearSelection;
@@ -92,11 +91,13 @@
 - (void)beginUpdates;
 - (void)reloadData;
 - (void)didMoveToWindow;
+- (void)setDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCanShowCopyCallout:(BOOL)arg1;
-- (void)scrollToBottom:(BOOL)arg1;
+- (void)setBottomInset:(float)arg1;
+- (float)bottomInset;
+- (void)_updateFooterView;
 - (unsigned int)calloutPhotoIndex;
 - (void)setDisplaysTextBadges:(BOOL)arg1;
 - (BOOL)usesViewBasedCells;
@@ -114,13 +115,11 @@
 - (void)removePhotoAtIndex:(unsigned int)arg1;
 - (void)insertPhotoAtIndex:(unsigned int)arg1;
 - (void)toggleSelectAll:(id)arg1;
-- (void)menuDidHideNotification:(id)arg1;
 - (void)_updateTableCell:(id)arg1 photoStartIndex:(unsigned int)arg2;
 - (void)setUsesViewBasedCells:(BOOL)arg1;
 - (unsigned int)selectedPhotoIndex;
 - (void)_selectAfterDelay;
 - (void)_tapFailedGesture:(id)arg1;
-- (void)_longPressGesture:(id)arg1;
 - (void)_tapGesture:(id)arg1;
 - (void)deselectPhotoAtIndex:(unsigned int)arg1;
 - (void)_changeActivityStateOfPhotoAtIndex:(unsigned int)arg1;
@@ -135,14 +134,14 @@
 - (unsigned int)_cellPhotoIndexForPhotoIndex:(unsigned int)arg1;
 - (unsigned int)_tableRowForPhotoIndex:(unsigned int)arg1;
 - (void)_processPendingUpdates;
-- (void)_setupTableView;
+- (void)_preheatImageDataForDownwardScroll:(BOOL)arg1;
 - (void)_updatePhotoCount;
-- (void)_updateColumnsPerRow;
+- (void)_menuDidHideNotification:(id)arg1;
 - (BOOL)displaysTextBadges;
 - (unsigned int)_leftPaddingForCellWidth:(float)arg1;
 - (int)_firstPhotoIndexForRowIndexPath:(id)arg1;
 - (struct CGSize { float x1; float x2; })_cellSize;
-- (void)_updateTableViewRowCount;
+- (void)_updateRowAndColumnCount;
 - (void)reloadPhotoAtIndex:(unsigned int)arg1;
 - (void)insertPhotosAtIndexes:(id)arg1;
 - (void)removePhotosAtIndexes:(id)arg1;
@@ -150,7 +149,6 @@
 - (void)rotationDidStart;
 - (void)rotationWillStart;
 - (void)setAllowsSelectionGestures:(BOOL)arg1;
-- (void)_preheatImageDataForDownwardScroll:(BOOL)arg1;
 - (BOOL)allowsSelectionGestures;
 - (BOOL)_dragMove:(id)arg1;
 - (BOOL)allowsReordering;
@@ -160,8 +158,7 @@
 - (void)setPhotoSelectionStyle:(int)arg1;
 - (void)setCurrentPickerSession:(id)arg1;
 - (id)currentPickerSession;
+- (void)_longPressGesture:(id)arg1;
 - (BOOL)canShowCopyCallout;
-- (void)dealloc;
-- (void)_updateFooterView;
 
 @end

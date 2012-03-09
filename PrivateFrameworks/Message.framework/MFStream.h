@@ -38,15 +38,15 @@
 - (id)_copyPropertyForKey:(id)arg1;
 - (void)_readBytesFromStream;
 - (void)openToHostName:(id)arg1 port:(int)arg2;
-- (BOOL)isOpen;
-- (void)close;
+- (id)init;
+- (void)dealloc;
 - (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (id)streamError;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)close;
+- (BOOL)isOpen;
 
 @end

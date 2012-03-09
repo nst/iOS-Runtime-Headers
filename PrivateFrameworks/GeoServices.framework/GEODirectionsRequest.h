@@ -55,14 +55,8 @@
 @property int pageOffset;
 
 
-- (Class)responseClass;
-- (int)pageOffset;
-- (BOOL)readFrom:(id)arg1;
-- (int)timestampType;
-- (id)currentMapRegion;
-- (id)placeSearchs;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (BOOL)hasTimestamp;
+- (id)description;
+- (void)dealloc;
 - (void)setHasPageOffset:(BOOL)arg1;
 - (BOOL)hasPageOffset;
 - (BOOL)includeRouteSegments;
@@ -102,14 +96,20 @@
 - (void)setPlaceSearchs:(id)arg1;
 - (id)placeSearchAtIndex:(unsigned int)arg1;
 - (unsigned int)placeSearchsCount;
-- (unsigned int)requestTypeCode;
-- (void)writeTo:(id)arg1;
+- (Class)responseClass;
 - (id)dictionaryRepresentation;
 - (int)type;
 - (double)timestamp;
 - (void)setType:(int)arg1;
 - (void)setTimestamp:(double)arg1;
-- (id)description;
-- (void)dealloc;
+- (int)pageOffset;
+- (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (void)writeTo:(id)arg1;
+- (int)timestampType;
+- (id)currentMapRegion;
+- (id)placeSearchs;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (BOOL)hasTimestamp;
 
 @end

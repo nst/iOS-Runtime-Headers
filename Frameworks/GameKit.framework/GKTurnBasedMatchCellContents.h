@@ -16,6 +16,7 @@
 
 + (id)turnBasedMatchCellContentWithTheme:(id)arg1;
 
+- (void)dealloc;
 - (void)setSectionStyle:(int)arg1;
 - (int)sectionStyle;
 - (void)updateLines;
@@ -24,6 +25,5 @@
 - (void)setPlayers:(id)arg1;
 - (id)players;
 - (void)prepareForReuse;
-- (void)dealloc;
 
 @end

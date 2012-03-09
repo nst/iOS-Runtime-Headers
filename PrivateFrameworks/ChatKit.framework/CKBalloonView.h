@@ -34,7 +34,6 @@
 @property id delegate;
 @property(copy) NSString * subject;
 
-+ (struct CGSize { float x1; float x2; })defaultSize;
 + (float)fixedHeight;
 + (float)heightForText:(id)arg1 width:(float)arg2 subject:(id)arg3;
 + (struct CGSize { float x1; float x2; })sizeForMessagePart:(id)arg1 width:(float)arg2 withSubject:(BOOL)arg3;
@@ -49,33 +48,12 @@
 + (float)heightForText:(id)arg1 width:(float)arg2 includeBuffers:(BOOL)arg3;
 + (BOOL)showsSubject;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsetsForBalloonOrientation:(int)arg1;
++ (struct CGSize { float x1; float x2; })defaultSize;
 
 - (id)subject;
 - (void)setSubject:(id)arg1;
+- (void)dealloc;
 - (void)updateTextColor;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (void)hideCopyCallout;
-- (void)oneFingerDoubleTap:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)copy:(id)arg1;
-- (BOOL)canResignFirstResponder;
-- (void)prepareForReuse;
-- (BOOL)isEditing;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)becomeFirstResponder;
-- (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (BOOL)_becomeFirstResponderWhenPossible;
-- (void)_windowBecameKey;
-- (void)_windowResignedKey;
-- (BOOL)resignFirstResponder;
-- (int)orientation;
-- (id)text;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
-- (id)delegate;
-- (void)setText:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIsEditing:(BOOL)arg1;
 - (void)setPreview:(BOOL)arg1;
 - (BOOL)isPreview;
@@ -121,7 +99,29 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
 - (void)updateTextShadowColor;
 - (void)setMessagePart:(id)arg1;
-- (void)dealloc;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (void)hideCopyCallout;
+- (void)oneFingerDoubleTap:(id)arg1;
+- (void)setOrientation:(int)arg1;
+- (void)copy:(id)arg1;
+- (BOOL)canResignFirstResponder;
+- (void)prepareForReuse;
+- (BOOL)isEditing;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)becomeFirstResponder;
+- (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (BOOL)_becomeFirstResponderWhenPossible;
+- (void)_windowBecameKey;
+- (void)_windowResignedKey;
+- (BOOL)resignFirstResponder;
+- (int)orientation;
+- (id)text;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
+- (id)delegate;
+- (void)setText:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDelegate:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)textShadowColor;
 
 @end

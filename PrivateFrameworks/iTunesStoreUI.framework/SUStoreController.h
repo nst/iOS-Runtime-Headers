@@ -33,14 +33,14 @@
 + (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
 
+- (void)cancelAllOperations;
+- (id)init;
+- (void)dealloc;
 - (void)connect;
 - (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
 - (id)tabBarController;
 - (double)defaultImageSnapshotExpiration;
 - (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
-- (void)cancelAllOperations;
-- (id)init;
-- (void)dealloc;
 - (id)storeContentLanguage;
 - (BOOL)showDialogForCapabilities:(id)arg1 mismatches:(id)arg2;
 - (void)prepareForSuspend;

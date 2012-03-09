@@ -69,9 +69,15 @@
 @property int altTripsMaxPoints;
 
 
+- (id)description;
+- (void)dealloc;
 - (Class)responseClass;
+- (id)options;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
 - (void)setOptions:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (void)writeTo:(id)arg1;
 - (int)altTripsMaxPoints;
 - (void)setHasAltTripsMaxPoints:(BOOL)arg1;
 - (BOOL)hasAltTripsMaxPoints;
@@ -135,11 +141,5 @@
 - (BOOL)includeStreetViewPanoId;
 - (void)setIncludeStreetViewPanoId:(BOOL)arg1;
 - (id)waypoints;
-- (unsigned int)requestTypeCode;
-- (void)writeTo:(id)arg1;
-- (id)options;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

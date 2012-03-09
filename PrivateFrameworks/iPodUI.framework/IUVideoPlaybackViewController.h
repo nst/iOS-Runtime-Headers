@@ -22,11 +22,14 @@
 @property(readonly) UIImage * videoSnapshot;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)_endPlayback;
 - (void)videoController:(id)arg1 scaleModeDidChange:(unsigned int)arg2;
 - (void)viewControllerRequestsExit:(id)arg1;
 - (id)createViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
 - (BOOL)videoController:(id)arg1 tappedButtonPart:(unsigned int)arg2;
+- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -35,6 +38,7 @@
 - (void)loadView;
 - (id)title;
 - (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (double)restoredTimeOnAppear;
 - (double)currentTimeOnAppear;
 - (id)fillerImage;
@@ -61,8 +65,5 @@
 - (BOOL)restoreArchivedContexts:(id)arg1;
 - (id)copyArchivableContexts;
 - (void)exitPlayerAnimated:(BOOL)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 
 @end

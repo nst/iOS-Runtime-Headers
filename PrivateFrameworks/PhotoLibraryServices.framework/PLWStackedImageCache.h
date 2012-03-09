@@ -10,21 +10,23 @@
     NSLock *_lock;
 }
 
-+ (id)absolutePathToCachedStackedImagesDirectory;
-+ (id)absolutePathToCachesDirectory;
 + (id)sharedInstance;
++ (id)_bakedStackedImageFilenameForWithKey:(id)arg1;
++ (void)preheatStackedImageWithKey:(id)arg1;
++ (id)absolutePathToCachedStackedImagesDirectory;
++ (id)_pathToBakedCachedStackedImageWithKey:(id)arg1;
++ (id)absolutePathToCachesDirectory;
 
-- (void)removeEntryForKey:(id)arg1;
-- (id)_bakedStackedImageFilenameForWithKey:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)KVOChange:(id)arg1 affectsStackedImageForAlbum:(struct NSObject { Class x1; }*)arg2;
 - (void)invalidateAll;
-- (void)prefetchStackedImagesWithKey1:(id)arg1 key2:(id)arg2 key3:(id)arg3 key4:(id)arg4;
+- (void)prefetchStackedImagesWithKeys:(id)arg1;
+- (void)setInMemoryStackedImage:(id)arg1 forKey:(id)arg2 options:(id)arg3;
 - (BOOL)_createBaseDirectoryForStackedImagesCache;
-- (id)_pathToBakedCachedStackedImageWithKey:(id)arg1;
+- (void)removeEntryForKey:(id)arg1;
 - (void)setStackedImage:(id)arg1 forKey:(id)arg2 options:(id)arg3;
 - (id)stackedImageWithKey:(id)arg1 options:(id*)arg2;
 - (void)invalidateEntryForKey:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

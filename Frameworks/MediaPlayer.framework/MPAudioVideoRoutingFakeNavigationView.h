@@ -10,8 +10,8 @@
 }
 
 
+- (void)dealloc;
 - (id)_initWithNavigationItem:(id)arg1 contentView:(id)arg2;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

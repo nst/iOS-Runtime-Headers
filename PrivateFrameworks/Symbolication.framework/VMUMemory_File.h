@@ -26,10 +26,8 @@
 + (id)memoryWithPath:(id)arg1;
 + (id)headerWithPath:(id)arg1;
 
-- (BOOL)map;
-- (id)path;
-- (void)finalize;
-- (id)view;
+- (id)description;
+- (void)dealloc;
 - (id)lastModifiedTimestamp;
 - (id)initWithPath:(id)arg1 fileRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2 mapToAddress:(unsigned long long)arg3 architecture:(id)arg4;
 - (void)buildSharedCacheMap;
@@ -40,7 +38,9 @@
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
 - (id)architecture;
 - (id)memoryFromSubRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 mapToAddress:(unsigned long long)arg2 architecture:(id)arg3;
-- (id)description;
-- (void)dealloc;
+- (void)finalize;
+- (id)path;
+- (id)view;
+- (BOOL)map;
 
 @end

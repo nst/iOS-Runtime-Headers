@@ -11,11 +11,11 @@
 }
 
 
-- (void)finalize;
+- (id)init;
+- (void)dealloc;
 - (void)monitorBufferPool;
 - (char *)getBufferFromPool:(int)arg1;
 - (void)returnBufferToPool:(char *)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)finalize;
 
 @end

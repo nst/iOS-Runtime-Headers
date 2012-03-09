@@ -13,10 +13,10 @@
 }
 
 
-- (void*)bytes;
-- (id)initWithImageTable:(id)arg1 offset:(long long)arg2 length:(unsigned long)arg3;
-- (id)initWithImageTable:(id)arg1 index:(unsigned long)arg2 length:(unsigned long)arg3 idealAddress:(void*)arg4;
 - (oneway void)release;
 - (void)dealloc;
+- (id)initWithImageTable:(id)arg1 offset:(long long)arg2 length:(unsigned long)arg3;
+- (id)initWithImageTable:(id)arg1 index:(unsigned long)arg2 length:(unsigned long)arg3 idealAddress:(void*)arg4;
+- (void*)bytes;
 
 @end

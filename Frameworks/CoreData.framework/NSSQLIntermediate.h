@@ -11,6 +11,7 @@
 + (BOOL)expressionIsBasicKeypath:(id)arg1;
 + (BOOL)isSimpleKeypath:(id)arg1;
 
+- (id)scope;
 - (BOOL)expressionIsBasicKeypath:(id)arg1;
 - (id)_generateSQLForVariableExpression:(id)arg1 inContext:(id)arg2;
 - (void)_promoteJoinsForSubqueryScopedKeypath:(id)arg1;
@@ -46,6 +47,5 @@
 - (BOOL)isVariableBasedKeypathScopedBySubquery:(id)arg1;
 - (id)generateSQLStringInContext:(id)arg1;
 - (BOOL)isOrScoped;
-- (id)scope;
 
 @end

@@ -12,9 +12,9 @@
 @property(readonly) DASearchQuery * query;
 
 
-- (id)query;
 - (id)description;
 - (void)dealloc;
+- (id)query;
 - (id)initWithQuery:(id)arg1;
 - (int)commandCode;
 - (int)taskStatusForExchangeStatus:(int)arg1;

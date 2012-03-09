@@ -21,16 +21,8 @@
 @property(retain) NSMutableArray * transitAgents;
 
 
-- (void)setStatus:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setTransitAgents:(id)arg1;
-- (void)setLocationResponses:(id)arg1;
-- (void)setLocalDistanceUnits:(int)arg1;
-- (id)routeAtIndex:(unsigned int)arg1;
-- (unsigned int)routesCount;
-- (void)addRoute:(id)arg1;
-- (void)setRoutes:(id)arg1;
-- (id)routes;
+- (id)description;
+- (void)dealloc;
 - (id)transitAgents;
 - (void)setHasLocalDistanceUnits:(BOOL)arg1;
 - (BOOL)hasLocalDistanceUnits;
@@ -40,12 +32,20 @@
 - (unsigned int)locationResponsesCount;
 - (void)addTransitAgent:(id)arg1;
 - (void)addLocationResponse:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
+- (void)setStatus:(int)arg1;
 - (int)status;
+- (id)dictionaryRepresentation;
 - (int)localDistanceUnits;
 - (id)transitAgentAtIndex:(unsigned int)arg1;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (void)setTransitAgents:(id)arg1;
+- (void)setLocationResponses:(id)arg1;
+- (void)setLocalDistanceUnits:(int)arg1;
+- (id)routeAtIndex:(unsigned int)arg1;
+- (unsigned int)routesCount;
+- (void)addRoute:(id)arg1;
+- (void)setRoutes:(id)arg1;
+- (id)routes;
 
 @end

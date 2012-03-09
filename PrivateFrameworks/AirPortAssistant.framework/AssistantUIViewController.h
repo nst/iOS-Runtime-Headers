@@ -73,6 +73,7 @@
 
 + (void)readjustSubviewsInContainer:(id)arg1;
 
+- (void)dealloc;
 - (void)keyboardReturnKeySetEnabled:(BOOL)arg1;
 - (id)radioNameFromBaseStation:(id)arg1;
 - (void)skipWANPort;
@@ -173,6 +174,5 @@
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)didReceiveMemoryWarning;
-- (void)dealloc;
 
 @end

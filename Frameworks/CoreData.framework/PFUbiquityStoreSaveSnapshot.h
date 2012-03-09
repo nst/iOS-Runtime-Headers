@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSArray, NSDictionary, NSNumber, NSMutableArray;
+@class NSMutableDictionary, NSArray, NSString, NSDictionary, NSNumber, NSMutableArray;
 
 @interface PFUbiquityStoreSaveSnapshot : NSObject  {
     NSMutableArray *_entityNames;
@@ -20,6 +20,7 @@
     NSMutableDictionary *_deletedObjects;
     NSMutableDictionary *_peerStates;
     NSNumber *_transactionNumber;
+    NSString *_localPeerID;
     NSDictionary *_storeOptions;
     NSMutableArray *_filesInsertedInTransaction;
     NSArray *_filesDeletedInTransaction;
@@ -32,6 +33,7 @@
 @property(readonly) NSDictionary * entityNameToIndex;
 @property(readonly) NSDictionary * managedObjectIDToGlobalObjectID;
 @property(readonly) NSDictionary * storeOptions;
+@property(retain) NSString * localPeerID;
 @property(readonly) NSNumber * transactionNumber;
 @property(readonly) NSDictionary * peerStates;
 @property(readonly) NSDictionary * deletedObjects;
@@ -43,41 +45,45 @@
 @property(readonly) NSArray * entityNames;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)filesDeletedInTransaction;
+- (id)createKnowledgeVectorFromPeerStates;
 - (void)setTransactionNumber:(id)arg1 peerStates:(id)arg2 andPeerIDs:(id)arg3;
 - (void)setEntityNames:(id)arg1 globalObjectIDs:(id)arg2 primaryKeys:(id)arg3 forStoreWithName:(id)arg4;
 - (void)setInsertedObjects:(id)arg1;
 - (void)setUpdatedObjects:(id)arg1;
 - (id)globalObjectIDToPermanentManagedObjectID;
 - (id)globalObjectIDToIndex;
+- (void)setLocalPeerID:(id)arg1;
+- (id)entityNames;
 - (id)managedObjectIDToGlobalObjectID;
 - (id)entityNameToIndex;
 - (id)primaryKeyToIndex;
 - (id)checkIndex:(id)arg1 forValue:(id)arg2 fromArrayOfValues:(id)arg3;
 - (id)globalObjectIDForManagedObject:(id)arg1 withStoreExportContext:(id)arg2;
 - (id)createUbiquityDictionary:(id)arg1 withStoreExportContext:(id)arg2 error:(id*)arg3;
-- (id)initWithPersistentStoreOptions:(id)arg1;
+- (id)initWithPersistentStoreOptions:(id)arg1 andLocalPeerID:(id)arg2;
 - (id)compressedGlobalObjectIDFromGlobalObjectID:(id)arg1;
 - (id)storeOptions;
 - (id)peerIDToIndex;
-- (id)entityNames;
+- (id)initWithLocalPeerID:(id)arg1;
 - (void)_setFilesDeletedInTransaction:(id)arg1;
 - (void)reserveTransactionNumberWithStoreExportContext:(id)arg1;
 - (void)generatePeerStatesWithStoreExportContext:(id)arg1;
 - (id)addManagedObject:(id)arg1 withTransactionType:(int)arg2 andStoreExportContext:(id)arg3 withError:(id*)arg4;
 - (id)filesInsertedInTransaction;
+- (id)localPeerID;
 - (id)globalObjectIDs;
-- (id)peerIDs;
-- (id)globalObjectIDFromCompressedObjectID:(id)arg1;
 - (id)peerStates;
+- (id)peerIDs;
 - (id)transactionNumber;
+- (id)globalObjectIDFromCompressedObjectID:(id)arg1;
 - (void)setDeletedObjects:(id)arg1;
 - (id)primaryKeys;
 - (id)insertedObjects;
 - (id)deletedObjects;
 - (id)updatedObjects;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

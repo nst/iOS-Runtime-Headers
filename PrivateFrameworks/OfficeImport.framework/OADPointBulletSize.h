@@ -7,9 +7,9 @@
 }
 
 
-- (int)points;
-- (id)initWithPoints:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (int)points;
+- (id)initWithPoints:(int)arg1;
 
 @end

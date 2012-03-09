@@ -20,6 +20,17 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)setStartPosition:(float)arg1;
+- (float)endPosition;
+- (float)direction;
+- (float)startPosition;
+- (void)setDirection:(float)arg1;
+- (void)setAlignment:(int)arg1;
+- (int)alignment;
 - (void)setStartOpacity:(float)arg1;
 - (void)setEndOpacity:(float)arg1;
 - (void)setEndPosition:(float)arg1;
@@ -42,16 +53,5 @@
 - (void)setStyleColor:(id)arg1;
 - (void)setDistance:(float)arg1;
 - (void)setBlurRadius:(float)arg1;
-- (void)setStartPosition:(float)arg1;
-- (float)endPosition;
-- (float)direction;
-- (float)startPosition;
-- (void)setDirection:(float)arg1;
-- (void)setAlignment:(int)arg1;
-- (int)alignment;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 
 @end

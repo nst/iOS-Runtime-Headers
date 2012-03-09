@@ -17,6 +17,12 @@
 @property BOOL explicitlySpecified;
 
 
+- (void)setName:(id)arg1;
+- (unsigned int)count;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)explicitlySpecified;
 - (id)arrayValueForName:(id)arg1;
 - (int)intValueForName:(id)arg1;
@@ -34,11 +40,5 @@
 - (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setName:(id)arg1;
-- (unsigned int)count;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

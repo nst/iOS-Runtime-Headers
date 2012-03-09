@@ -14,10 +14,10 @@
 
 + (id)mappingInfoWithSheetName:(id)arg1;
 
+- (void)dealloc;
 - (int)rowOffset;
 - (int)columnOffset;
 - (id)initWithSheetName:(id)arg1;
 - (id)sheetName;
-- (void)dealloc;
 
 @end

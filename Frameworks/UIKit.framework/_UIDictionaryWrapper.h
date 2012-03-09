@@ -21,6 +21,10 @@
 
 + (id)dictionariesWithDictionary:(struct __DCSDictionary { }*)arg1;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (id)markupForString:(id)arg1;
 - (unsigned int)definitionLanguageDirection;
 - (id)initWithDictionary:(struct __DCSDictionary { }*)arg1 language:(id)arg2;
@@ -31,9 +35,5 @@
 - (int)type;
 - (BOOL)hasMarkupForString:(id)arg1;
 - (struct __DCSDictionary { }*)dictionary;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 
 @end

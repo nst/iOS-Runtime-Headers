@@ -20,7 +20,8 @@
 + (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
 
-- (void)_registerForNotifications;
+- (id)init;
+- (void)dealloc;
 - (void)_handleServerInvalidated;
 - (void)_handleNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;
 - (void)_handleMessage:(void*)arg1 withSize:(long)arg2;
@@ -28,8 +29,7 @@
 - (void)_invalidateServerConnection;
 - (id)dataStatusIndicator;
 - (id)operatorName;
-- (id)init;
-- (void)dealloc;
+- (void)_registerForNotifications;
 - (BOOL)beginObservingOnRunLoop:(struct __CFRunLoop { }*)arg1;
 
 @end

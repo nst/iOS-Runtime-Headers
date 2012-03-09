@@ -12,10 +12,13 @@
     YTCaptionTrackRequest *_captionTrackRequest;
 }
 
-+ (BOOL)closedCaptionsEnabled;
-+ (id)sharedManager;
 + (void)initialize;
++ (id)sharedManager;
++ (BOOL)closedCaptionsEnabled;
 
+- (void)_processQueue;
+- (id)init;
+- (void)dealloc;
 - (void)_processCaptionTrackQueue;
 - (void)captionTrack:(id)arg1 receivedTrackData:(id)arg2;
 - (void)captionTrack:(id)arg1 didFailWithError:(id)arg2;
@@ -23,8 +26,5 @@
 - (void)captionsRequest:(id)arg1 receivedCaptions:(id)arg2;
 - (void)loadCaptionsForVideo:(id)arg1;
 - (id)captionsForVideo:(id)arg1;
-- (void)_processQueue;
-- (id)init;
-- (void)dealloc;
 
 @end

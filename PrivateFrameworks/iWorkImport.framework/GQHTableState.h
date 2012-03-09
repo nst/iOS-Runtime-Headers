@@ -22,6 +22,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (id)table;
 - (bool)splitTable;
 - (double)currentTablePosition;
@@ -40,7 +42,5 @@
 - (double)lastAttachmentPosition;
 - (long)nextSplitTableIndex;
 - (double)originalTableHeight;
-- (id)init;
-- (void)dealloc;
 
 @end

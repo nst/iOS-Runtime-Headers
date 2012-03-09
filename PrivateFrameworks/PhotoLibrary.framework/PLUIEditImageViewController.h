@@ -10,8 +10,9 @@
 @property id delegate;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (int)saveOptions;
 - (void)cropOverlay:(id)arg1 didFinishSaving:(id)arg2;
 - (int)imageFormat;
@@ -23,6 +24,5 @@
 - (void)setImageSavingOptions:(int)arg1;
 - (id)initWithPhoto:(id)arg1;
 - (id)photo;
-- (void)dealloc;
 
 @end

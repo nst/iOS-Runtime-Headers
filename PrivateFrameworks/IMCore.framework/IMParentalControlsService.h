@@ -17,6 +17,8 @@
 @property(retain) NSString * name;
 
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
 - (id)whitelist;
 - (void)setForceWhiteList:(BOOL)arg1;
 - (BOOL)forceWhiteList;
@@ -24,7 +26,5 @@
 - (BOOL)disableService;
 - (void)setWhitelist:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

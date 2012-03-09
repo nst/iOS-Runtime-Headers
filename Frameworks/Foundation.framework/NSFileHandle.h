@@ -11,12 +11,12 @@
 + (id)fileHandleWithStandardOutput;
 + (id)fileHandleWithStandardInput;
 + (id)fileHandleWithNullDevice;
-+ (id)fileHandleForUpdatingAtPath:(id)arg1;
-+ (id)fileHandleForReadingAtPath:(id)arg1;
-+ (id)fileHandleForWritingAtPath:(id)arg1;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)fileHandleForReadingFromURL:(id)arg1 error:(id*)arg2;
 + (void)initialize;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)fileHandleForWritingAtPath:(id)arg1;
++ (id)fileHandleForUpdatingAtPath:(id)arg1;
++ (id)fileHandleForReadingAtPath:(id)arg1;
 
 - (void)setReadabilityHandler:(id)arg1;
 - (id)readabilityHandler;
@@ -31,9 +31,9 @@
 - (id)availableData;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
-- (void)seekToFileOffset:(unsigned long long)arg1;
+- (id)readDataOfLength:(unsigned int)arg1;
 - (void)writeData:(id)arg1;
 - (void)closeFile;
-- (id)readDataOfLength:(unsigned int)arg1;
+- (void)seekToFileOffset:(unsigned long long)arg1;
 
 @end

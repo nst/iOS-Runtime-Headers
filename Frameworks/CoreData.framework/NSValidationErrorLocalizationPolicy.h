@@ -13,6 +13,9 @@
 }
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)initWithURL:(id)arg1;
 - (void)_ensureLocalizationDictionaryIsInitialized;
 - (id)_localizedStringForKey:(id)arg1 value:(void*)arg2;
 - (id)_cachedObjectForKey:(id)arg1 value:(void*)arg2;
@@ -23,8 +26,5 @@
 - (id)localizedEntityNameForEntity:(id)arg1;
 - (id)localizedPropertyNameForProperty:(id)arg1;
 - (id)localizedModelStringForKey:(id)arg1;
-- (id)initWithURL:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

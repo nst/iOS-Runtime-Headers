@@ -13,14 +13,14 @@
 + (id)defaultProperties;
 + (id)blackFill;
 
-- (void)setStyleColor:(id)arg1;
-- (BOOL)isColorOverridden;
-- (id)initWithDefaults;
-- (id)color;
-- (void)setColor:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)color;
+- (void)setColor:(id)arg1;
+- (void)setStyleColor:(id)arg1;
+- (BOOL)isColorOverridden;
+- (id)initWithDefaults;
 
 @end

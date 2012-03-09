@@ -16,18 +16,18 @@
 @property <CoreDAVTaskGroupDelegate> * delegate;
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setInvitation:(id)arg1;
+- (id)invitation;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
-- (void)setInvitation:(id)arg1;
-- (id)invitation;
-- (id)description;
-- (void)dealloc;
 - (id)calendarHomeURL;
 - (void)setCalendarHomeURL:(id)arg1;
-- (BOOL)acceptInvitation;
 - (id)initWithInvitation:(id)arg1 acceptInvitation:(BOOL)arg2 atCalendarHomeURL:(id)arg3 accountInfoProvider:(id)arg4 taskManager:(id)arg5;
 - (void)setAcceptInvitation:(BOOL)arg1;
 - (id)generateReply;
+- (BOOL)acceptInvitation;
 
 @end

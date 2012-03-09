@@ -28,10 +28,9 @@
 
 
 - (id)messageBody;
-- (id)selfBlob;
-- (void)setSelfBlob:(id)arg1;
-- (id)peers;
-- (void)setPeers:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setRegionInformation:(id)arg1;
 - (id)canonicalizedPeers;
 - (void)setAliasSignature:(id)arg1;
@@ -50,9 +49,10 @@
 - (id)additionalMessageHeadersForOutgoingPush;
 - (id)additionalMessageHeaders;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)selfBlob;
+- (void)setSelfBlob:(id)arg1;
+- (id)peers;
+- (void)setPeers:(id)arg1;
 - (id)bagKey;
 
 @end

@@ -15,10 +15,7 @@
 @property int popOverState;
 
 
-- (void)setPopOverState:(int)arg1;
-- (int)popOverState;
-- (void)presentPrintMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (id)initWithDocumentInteractionController:(id)arg1 delegate:(id)arg2;
+- (void)dealloc;
 - (void)printInteractionControllerDidDismissPrinterOptions:(id)arg1;
 - (void)printInteractionControllerWillPresentPrinterOptions:(id)arg1;
 - (void)presentOptionsMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
@@ -33,6 +30,9 @@
 - (void)presentOpenInMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)didRotate;
 - (void)willRotate;
-- (void)dealloc;
+- (void)setPopOverState:(int)arg1;
+- (int)popOverState;
+- (void)presentPrintMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
+- (id)initWithDocumentInteractionController:(id)arg1 delegate:(id)arg2;
 
 @end

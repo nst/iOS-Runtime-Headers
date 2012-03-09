@@ -13,10 +13,10 @@
 + (id)nativeSharedCachePath;
 + (id)nativeSharedCacheTimestamp;
 
-- (id)name;
+- (void)dealloc;
 - (id)machOHeaders;
 - (id)initWithMachOHeader:(id)arg1 memory:(id)arg2;
 - (id)findMachOHeadersInMemory:(id)arg1;
-- (void)dealloc;
+- (id)name;
 
 @end

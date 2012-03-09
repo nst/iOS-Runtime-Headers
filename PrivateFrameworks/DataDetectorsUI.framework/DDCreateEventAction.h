@@ -6,9 +6,9 @@
 }
 
 
-- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (int)interactionType;
 - (id)localizedName;
 - (id)viewController;
+- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 
 @end

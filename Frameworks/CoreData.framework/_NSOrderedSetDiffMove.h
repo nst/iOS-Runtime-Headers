@@ -6,7 +6,7 @@
 }
 
 
-- (void)applyToSet:(id)arg1;
 - (id)description;
+- (void)applyToSet:(id)arg1;
 
 @end

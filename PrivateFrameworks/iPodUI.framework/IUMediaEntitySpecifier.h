@@ -42,6 +42,10 @@
 + (id)mediaQueryWithEntitiesOfType:(int)arg1 givenSpecifier:(id)arg2;
 + (id)mediaEntitySpecifierForAudibleAudioBooks;
 
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)hasAlbumSpecifier;
@@ -52,9 +56,5 @@
 - (void)_lookupPlaylistNameIfNecessary;
 - (id)titleForDerivatives;
 - (unsigned long long)specifiedPlaylistPersistentUID;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

@@ -14,16 +14,16 @@
 + (id)_ubiquityKeyComponentsMediaItem:(id)arg1;
 + (id)ubiquitousTrackKeyForMediaItem:(id)arg1;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)initWithKeyComponents:(id)arg1;
 - (id)keyComponents;
 - (id)mediaItemLocatorQuery;
 - (id)databaseUbiquitousKey;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

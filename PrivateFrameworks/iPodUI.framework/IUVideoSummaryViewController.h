@@ -15,12 +15,15 @@
 + (Class)backstopViewClass;
 + (BOOL)supportsViewControllerStyle:(int)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)title;
 - (void)reloadData;
+- (void)_networkTypeChangedNotification:(id)arg1;
 - (id)mediaItemForVideoSummaryView:(id)arg1;
 - (id)footerViewForVideoSummaryView:(id)arg1;
 - (id)_newURLRequestPropertiesForMediaItem:(id)arg1;
@@ -28,8 +31,5 @@
 - (void)_removeCrossMerchandising:(BOOL)arg1;
 - (void)_layoutViewsForOrientation:(int)arg1;
 - (id)firstMediaItem;
-- (id)init;
-- (void)dealloc;
-- (void)_networkTypeChangedNotification:(id)arg1;
 
 @end

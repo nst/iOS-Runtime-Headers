@@ -65,6 +65,12 @@
     UITextFieldAtomBackgroundView *_atomBackgroundView;
     UIPopoverController *_definitionPopoverController;
     UIViewController *_definitionModalViewController;
+    UIColor *_shadowColor;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _shadowOffset;
+    float _shadowBlur;
     struct { 
         unsigned int secureTextChanged : 1; 
         unsigned int guard : 1; 
@@ -133,9 +139,8 @@
 @property(readonly) UIResponder<UITextSelection> * textDocument;
 
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (void)dealloc;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isAccessibilityElementByDefault;
 - (id)inputView;
@@ -249,10 +254,11 @@
 - (void)setSelectedTextRange:(id)arg1;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (BOOL)hasText;
-- (id)metadataDictionariesForMarsVoltas;
-- (void)removeYakushimasPlaceholder:(id)arg1 willInsertText:(BOOL)arg2;
-- (id)insertYakushimasPlaceholder:(struct CGSize { float x1; float x2; })arg1;
-- (void)insertMarsVoltas:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (id)metadataDictionariesForDictationResults;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
+- (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
+- (id)insertDictationResultPlaceholder;
+- (void)insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
 - (void)insertText:(id)arg1;
 - (void)deleteBackward;
 - (void)_define:(id)arg1;
@@ -293,7 +299,7 @@
 - (void)drawBorder:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clearButtonRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setClearButtonMode:(int)arg1;
-- (id)interpretationsForMarsVoltas;
+- (id)_dictationInterpretations;
 - (void)selectAll;
 - (BOOL)_shouldSendContentChangedNotificationsIfOnlyMarkedTextChanged;
 - (id)customOverlayContainer;
@@ -312,6 +318,7 @@
 - (id)textColor;
 - (id)_placeholderColor;
 - (Class)_systemBackgroundViewClass;
+- (void)setShadowBlur:(float)arg1;
 - (void)_updateTextColor;
 - (BOOL)drawsAsAtom;
 - (BOOL)hasMarkedText;
@@ -333,6 +340,7 @@
 - (int)borderStyle;
 - (BOOL)_isShowingPrefix;
 - (BOOL)_isShowingPlaceholder;
+- (float)shadowBlur;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })iconRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textRectExcludingButtonsForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)rightViewMode;
@@ -388,6 +396,7 @@
 - (int)atomStyle;
 - (void)_drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forLabel:(id)arg2;
 - (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })shadowOffset;
 - (void)setIcon:(id)arg1;
 - (void)setTextAlignment:(int)arg1;
 - (BOOL)isEditing;
@@ -414,18 +423,22 @@
 - (void)setTextColor:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShadowColor:(id)arg1;
+- (id)shadowColor;
 - (id)delegate;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (void)dealloc;
 - (BOOL)isReallyFirstResponder;
 - (void)configureFromScriptTextField:(id)arg1;
 

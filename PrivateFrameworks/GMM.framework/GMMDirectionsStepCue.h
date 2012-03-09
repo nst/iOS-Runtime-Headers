@@ -22,8 +22,17 @@
 @property(retain) NSString * iconText;
 
 
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (BOOL)hasName;
+- (id)dictionaryRepresentation;
+- (int)type;
+- (id)name;
+- (void)setType:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (BOOL)hasType;
+- (void)writeTo:(id)arg1;
 - (id)iconText;
 - (id)iconUrl;
 - (void)setHasType:(BOOL)arg1;
@@ -31,14 +40,5 @@
 - (BOOL)hasIconUrl;
 - (void)setIconText:(id)arg1;
 - (void)setIconUrl:(id)arg1;
-- (BOOL)hasName;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (int)type;
-- (id)name;
-- (void)setType:(int)arg1;
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

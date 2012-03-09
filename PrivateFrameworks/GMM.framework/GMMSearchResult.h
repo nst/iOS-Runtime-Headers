@@ -91,13 +91,28 @@
 @property BOOL closedListing;
 
 
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (BOOL)hasName;
 - (void)setRating:(id)arg1;
 - (id)rating;
+- (id)references;
+- (void)setGeometry:(id)arg1;
+- (id)geometry;
+- (void)setImages:(id)arg1;
+- (id)dictionaryRepresentation;
+- (int)type;
+- (void)addImage:(id)arg1;
+- (id)name;
+- (void)setType:(int)arg1;
+- (id)images;
 - (void)setReferences:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)referencesCount;
 - (void)addReference:(id)arg1;
 - (id)referenceAtIndex:(unsigned int)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasClosedListing:(BOOL)arg1;
 - (BOOL)hasClosedListing;
 - (id)directionsPlacemarkToken;
@@ -169,23 +184,8 @@
 - (id)attributionUrl;
 - (BOOL)hasAttributionUrl;
 - (void)setAttributionUrl:(id)arg1;
-- (BOOL)hasName;
-- (void)writeTo:(id)arg1;
-- (id)references;
-- (void)setGeometry:(id)arg1;
-- (id)geometry;
-- (void)setImages:(id)arg1;
-- (id)dictionaryRepresentation;
-- (int)type;
-- (void)addImage:(id)arg1;
-- (id)name;
-- (void)setType:(int)arg1;
-- (id)images;
-- (id)structuredAddress;
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)phone;
 - (void)setPhone:(id)arg1;
+- (id)structuredAddress;
 
 @end

@@ -19,10 +19,10 @@
 }
 
 
+- (int)width;
 - (id)initWithChartSheet:(id)arg1 parent:(id)arg2;
 - (int)preprocessWidthWithState:(id)arg1;
 - (int)preprocessHeightWithState:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (int)width;
 
 @end

@@ -26,6 +26,9 @@
 @property(readonly) BOOL authenticationSupported;
 
 
+- (id)supportedDataclasses;
+- (id)description;
+- (void)dealloc;
 - (id)accountStore;
 - (BOOL)authenticationSupported;
 - (BOOL)accessGranted;
@@ -38,17 +41,14 @@
 - (int)credentialAvailability;
 - (id)accountTypeDescription;
 - (void)setAccountStore:(id)arg1;
-- (id)supportedDataclasses;
-- (void)setObjectID:(id)arg1;
-- (id)objectID;
-- (int)visibility;
-- (void)setVisibility:(int)arg1;
+- (id)credentialType;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)credentialType;
+- (int)visibility;
+- (void)setVisibility:(int)arg1;
+- (void)setObjectID:(id)arg1;
+- (id)objectID;
 
 @end

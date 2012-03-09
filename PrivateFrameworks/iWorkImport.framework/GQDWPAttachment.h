@@ -9,7 +9,7 @@
 }
 
 
-- (id)drawable;
 - (void)dealloc;
+- (id)drawable;
 
 @end

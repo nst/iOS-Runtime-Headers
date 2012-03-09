@@ -17,20 +17,20 @@
 
 + (id)itemsWithURLsAndData:(id)arg1;
 
-- (id)imageData;
+- (void)dealloc;
 - (id)_videoView;
 - (id)videoView;
-- (id)URL;
 - (id)previewImage;
 - (id)asset;
 - (void)setAsset:(id)arg1;
+- (id)URL;
+- (id)imageData;
+- (int)itemType;
 - (void)setPreviewImage:(id)arg1;
 - (BOOL)isTemporaryAsset;
 - (id)_initWithURL:(id)arg1 type:(id)arg2;
 - (void)setIsTemporaryAsset:(BOOL)arg1;
 - (id)initWithURL:(id)arg1 type:(id)arg2;
 - (id)imageWithFormat:(int)arg1;
-- (void)dealloc;
-- (int)itemType;
 
 @end

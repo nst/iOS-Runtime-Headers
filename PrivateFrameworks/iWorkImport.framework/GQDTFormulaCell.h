@@ -9,8 +9,8 @@
 }
 
 
+- (void)dealloc;
 - (id)resultCell;
 - (void)setResultCell:(id)arg1;
-- (void)dealloc;
 
 @end

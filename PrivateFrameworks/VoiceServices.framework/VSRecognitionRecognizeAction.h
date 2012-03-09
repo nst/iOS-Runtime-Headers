@@ -27,7 +27,11 @@
 }
 
 
+- (id)cancel;
+- (id)perform;
+- (void)dealloc;
 - (id)modelIdentifier;
+- (void)_reset;
 - (BOOL)_setDebugDumpEnabled:(BOOL)arg1 dumpPath:(id)arg2;
 - (void)_configureNewRecognitionInstance;
 - (void)_setResults:(id)arg1;
@@ -57,9 +61,5 @@
 - (id)_keywordAtIndex:(int)arg1;
 - (int)_keywordCount;
 - (BOOL)_keywordIndexChanged;
-- (void)_reset;
-- (id)cancel;
-- (id)perform;
-- (void)dealloc;
 
 @end

@@ -16,6 +16,7 @@
 }
 
 
+- (void)dealloc;
 - (void)finalize;
 - (id)initWithWeaksReferences:(BOOL)arg1;
 - (void)setForUseWithModel:(id)arg1;
@@ -23,6 +24,5 @@
 - (void)setCapacityHint:(unsigned int)arg1 forSlot:(unsigned int)arg2;
 - (void)clearTemporaryIDs;
 - (void)_dispose;
-- (void)dealloc;
 
 @end

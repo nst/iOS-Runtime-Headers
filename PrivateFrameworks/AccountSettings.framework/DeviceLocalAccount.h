@@ -7,12 +7,12 @@
 
 + (id)accountWithBasicAccount:(id)arg1;
 + (id)basicAccountProperties;
++ (id)localizedSyncSourceStringForDataClass:(id)arg1 forBeginningOfSentence:(BOOL)arg2;
 + (id)localizedReferenceToSyncSourceStringForDataClass:(id)arg1;
 + (BOOL)isTetheredSyncingDataclass:(id)arg1;
 + (id)tetheredSourceForDataClass:(id)arg1;
 + (id)_identifier;
 + (id)typeString;
-+ (id)localizedSyncSourceStringForDataClass:(id)arg1 forBeginningOfSentence:(BOOL)arg2;
 + (id)displayedAccountTypeString;
 + (id)displayedShortAccountTypeString;
 + (void*)createSyncDataSourceForDataclass:(id)arg1 options:(id)arg2;
@@ -29,7 +29,7 @@
 - (void)deleteLocalDataSourceForDataclass:(id)arg1;
 - (void)hideLocalStoreForDataclass:(id)arg1;
 - (void)showLocalStoreIfAppropriateForDataclass:(id)arg1;
-- (BOOL)otherAccountEnabledForDataclass:(id)arg1;
 - (BOOL)supportsPush;
+- (BOOL)otherAccountEnabledForDataclass:(id)arg1;
 
 @end

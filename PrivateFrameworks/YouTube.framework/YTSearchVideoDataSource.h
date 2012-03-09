@@ -9,9 +9,9 @@
 }
 
 
+- (id)init;
 - (id)searchString;
 - (void)setSearchString:(id)arg1;
 - (void)reloadData;
-- (id)init;
 
 @end

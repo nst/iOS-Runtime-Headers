@@ -62,10 +62,20 @@
 + (id)scriptingKeys;
 + (id)scriptSelectors;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;
+- (struct dispatch_queue_s { }*)dispatchQueue;
 - (void)orientationChanged:(id)arg1;
 - (BOOL)isBusy;
+- (id)listener;
+- (id)camera;
+- (id)calendar;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)volumeChanged:(id)arg1;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
-- (id)store;
 - (id)adResponse;
 - (void)setIsCoalescingShakeEvents:(BOOL)arg1;
 - (BOOL)isCoalescingShakeEvents;
@@ -81,8 +91,6 @@
 - (id)networkTypeListener;
 - (id)deviceOrientationListener;
 - (id)shakeEventsListener;
-- (void)wallpaperImageViewControllerDidCancel:(id)arg1;
-- (void)wallpaperImageViewControllerDidFinishSaving:(id)arg1;
 - (void)setNetworkTypeListener:(id)arg1;
 - (void)setDeviceVolumeListener:(id)arg1;
 - (id)currentDeviceVolume;
@@ -122,17 +130,9 @@
 - (void)fireTestProbe:(id)arg1 withOptions:(id)arg2;
 - (void)setAdManagesPurchaseFlow:(BOOL)arg1;
 - (BOOL)adManagesPurchaseFlow;
-- (id)calendar;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)volumeChanged:(id)arg1;
-- (id)delegate;
-- (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;
-- (struct dispatch_queue_s { }*)dispatchQueue;
-- (id)listener;
-- (id)camera;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (int)networkType;
+- (id)store;
+- (void)wallpaperImageViewControllerDidCancel:(id)arg1;
+- (void)wallpaperImageViewControllerDidFinishSaving:(id)arg1;
 
 @end

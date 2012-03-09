@@ -13,12 +13,12 @@
 
 
 - (BOOL)isLastCharacterNewLine;
-- (id)data;
-- (id)rawData;
-- (int)appendData:(id)arg1;
-- (void)done;
 - (unsigned long)count;
 - (id)init;
 - (void)dealloc;
+- (id)rawData;
+- (int)appendData:(id)arg1;
+- (void)done;
+- (id)data;
 
 @end

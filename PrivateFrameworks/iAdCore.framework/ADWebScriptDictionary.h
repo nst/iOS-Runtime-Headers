@@ -15,14 +15,14 @@
 + (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)valueForKey:(id)arg1;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)setStorage:(id)arg1;
-- (id)storage;
-- (id)attributeKeys;
-- (id)keys;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)keys;
+- (id)valueForKey:(id)arg1;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (id)attributeKeys;
+- (void)setStorage:(id)arg1;
+- (id)storage;
 
 @end

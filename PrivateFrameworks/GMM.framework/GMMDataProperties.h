@@ -62,9 +62,24 @@
 @property int scene;
 
 
+- (id)description;
+- (void)dealloc;
+- (int)imageHeight;
+- (int)imageWidth;
+- (void)setImageHeight:(int)arg1;
+- (void)setImageWidth:(int)arg1;
+- (void)setDisabled:(BOOL)arg1;
+- (BOOL)disabled;
+- (id)dictionaryRepresentation;
+- (BOOL)hasText;
+- (id)text;
+- (void)setText:(id)arg1;
 - (int)radius;
 - (void)setRadius:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (void)setCopyright:(id)arg1;
+- (id)copyright;
 - (void)setHasScene:(BOOL)arg1;
 - (BOOL)hasScene;
 - (void)setHasImageSource:(BOOL)arg1;
@@ -105,20 +120,5 @@
 - (void)setStreetRange:(id)arg1;
 - (void)setLatLon:(id)arg1;
 - (void)setPanoId:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
-- (BOOL)disabled;
-- (id)dictionaryRepresentation;
-- (BOOL)hasText;
-- (id)text;
-- (void)setText:(id)arg1;
-- (int)imageHeight;
-- (int)imageWidth;
-- (void)setImageHeight:(int)arg1;
-- (void)setImageWidth:(int)arg1;
-- (id)description;
-- (void)dealloc;
-- (void)setCopyright:(id)arg1;
-- (id)copyright;
 
 @end

@@ -39,7 +39,12 @@
 
 + (id)deviceContextWithDriver:(id)arg1;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setBrush:(id)arg1;
+- (void)setPath:(id)arg1;
+- (void)setMiterLimit:(double)arg1;
+- (void)setFont:(id)arg1;
 - (id)initWithDriver:(id)arg1;
 - (bool)getTextUpdateCP;
 - (void)setTextUpdateCP:(bool)arg1;
@@ -82,10 +87,5 @@
 - (void)setArcDirection:(int)arg1;
 - (void)setPolyFillMode:(int)arg1;
 - (void)setRop2:(int)arg1;
-- (void)setPath:(id)arg1;
-- (void)setMiterLimit:(double)arg1;
-- (void)setFont:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

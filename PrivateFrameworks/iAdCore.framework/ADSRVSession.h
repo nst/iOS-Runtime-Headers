@@ -35,8 +35,16 @@
 
 
 - (void)setChildren:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setBundleIdentifier:(id)arg1;
-- (BOOL)isOpen;
+- (void)setConnection:(id)arg1;
+- (id)connection;
+- (void)close;
+- (id)bundleIdentifier;
+- (id)children;
+- (void)open;
 - (void)setClientStatusBarOrientation:(int)arg1;
 - (void)setActiveProfilingSessions:(id)arg1;
 - (id)activeProfilingSessions;
@@ -83,14 +91,6 @@
 - (id)bundleId;
 - (void)setServerURL:(id)arg1;
 - (id)serverURL;
-- (id)children;
-- (void)open;
-- (void)close;
-- (id)bundleIdentifier;
-- (void)setConnection:(id)arg1;
-- (id)connection;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (BOOL)isOpen;
 
 @end

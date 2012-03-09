@@ -20,6 +20,7 @@
 
 + (id)storyboardWithName:(id)arg1 bundle:(id)arg2;
 
+- (void)dealloc;
 - (id)identifierToUINibMap;
 - (id)instantiateViewControllerWithIdentifier:(id)arg1;
 - (id)designatedEntryPointIdentifier;
@@ -31,6 +32,5 @@
 - (id)nibForStoryboardNibNamed:(id)arg1;
 - (BOOL)containsNibNamed:(id)arg1;
 - (id)instantiateInitialViewController;
-- (void)dealloc;
 
 @end

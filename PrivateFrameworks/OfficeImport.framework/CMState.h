@@ -18,6 +18,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (id)componentByName:(id)arg1;
 - (void)setComponentWithName:(id)arg1 value:(id)arg2;
 - (void)setResourceUrlPrefix:(id)arg1;
@@ -41,7 +43,5 @@
 - (void)setColorMap:(id)arg1;
 - (id)colorMap;
 - (id)colorScheme;
-- (id)init;
-- (void)dealloc;
 
 @end

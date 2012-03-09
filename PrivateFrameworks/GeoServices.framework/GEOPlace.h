@@ -49,15 +49,9 @@
 @property long long geoId;
 
 
-- (void)setAddress:(id)arg1;
-- (id)address;
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasType;
-- (void)setBusiness:(id)arg1;
-- (void)setAddressGeocodeAccuracy:(int)arg1;
-- (void)setHasType:(BOOL)arg1;
-- (BOOL)hasAddress;
-- (BOOL)hasCenter;
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (long long)geoId;
 - (void)setHasGeoId:(BOOL)arg1;
 - (BOOL)hasGeoId;
@@ -83,8 +77,8 @@
 - (void)setPhoneticName:(id)arg1;
 - (BOOL)hasMapRegion;
 - (BOOL)hasName;
-- (void)writeTo:(id)arg1;
-- (void)setVersion:(int)arg1;
+- (void)setAddress:(id)arg1;
+- (id)address;
 - (int)version;
 - (id)dictionaryRepresentation;
 - (int)type;
@@ -92,12 +86,18 @@
 - (void)setType:(int)arg1;
 - (void)setCenter:(id)arg1;
 - (id)center;
+- (void)setVersion:(int)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (BOOL)hasType;
+- (void)writeTo:(id)arg1;
+- (void)setBusiness:(id)arg1;
+- (void)setAddressGeocodeAccuracy:(int)arg1;
+- (void)setHasType:(BOOL)arg1;
+- (BOOL)hasAddress;
+- (BOOL)hasCenter;
 - (id)addressDictionary;
 - (id)mapRegion;
 - (void)setMapRegion:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)initWithGMMSearchResult:(id)arg1;
 - (id)initWithAddressString:(id)arg1;
 - (id)initWithGMMNewLocation:(id)arg1;

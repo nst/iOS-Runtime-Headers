@@ -15,12 +15,12 @@
 
 + (void)initialize;
 
-- (void).cxx_destruct;
-- (id).cxx_construct;
+- (id)init;
+- (void)dealloc;
 - (struct LegacyWebArchive { int x1; struct RefPtr<WebCore::ArchiveResource> { struct ArchiveResource {} *x_2_1_1; } x2; struct Vector<WTF::RefPtr<WebCore::ArchiveResource>,0ul> { unsigned int x_3_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::ArchiveResource>,0ul> { struct RefPtr<WebCore::ArchiveResource> {} *x_2_2_1; unsigned int x_2_2_2; } x_3_1_2; } x3; struct Vector<WTF::RefPtr<WebCore::Archive>,0ul> { unsigned int x_4_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::Archive>,0ul> { struct RefPtr<WebCore::Archive> {} *x_2_2_1; unsigned int x_2_2_2; } x_4_1_2; } x4; }*)coreArchive;
 - (void)setCoreArchive:(struct PassRefPtr<WebCore::LegacyWebArchive> { struct LegacyWebArchive {} *x1; })arg1;
 - (id)initWithCoreArchive:(struct PassRefPtr<WebCore::LegacyWebArchive> { struct LegacyWebArchive {} *x1; })arg1;
-- (id)init;
-- (void)dealloc;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 
 @end

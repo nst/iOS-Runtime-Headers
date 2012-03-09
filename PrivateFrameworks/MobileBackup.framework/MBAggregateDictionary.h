@@ -15,11 +15,11 @@
 + (void)pushValue:(double)arg1 forDistributionKey:(id)arg2;
 + (void)addValue:(long long)arg1 forScalarKey:(id)arg2;
 
-- (id)scalars;
-- (void)addCountAndSizeOfFile:(id)arg1;
-- (void)_addScalarValue:(unsigned long long)arg1 forKey:(id)arg2;
 - (void)save;
 - (id)init;
 - (void)dealloc;
+- (id)scalars;
+- (void)addCountAndSizeOfFile:(id)arg1;
+- (void)_addScalarValue:(unsigned long long)arg1 forKey:(id)arg2;
 
 @end

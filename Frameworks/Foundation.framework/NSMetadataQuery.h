@@ -12,8 +12,6 @@
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (void)setDelegate:(id)arg1;
-- (void)finalize;
 - (id)groupedResults;
 - (id)valueLists;
 - (unsigned int)indexOfResult:(id)arg1;
@@ -44,18 +42,20 @@
 - (id)groupingAttributes;
 - (id)valueListAttributes;
 - (void)_recreateQuery;
+- (id)sortDescriptors;
+- (void)setSortDescriptors:(id)arg1;
+- (id)results;
+- (id)init;
+- (void)dealloc;
+- (BOOL)isStarted;
+- (void)finalize;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)setSearchScopes:(id)arg1;
 - (void)disableUpdates;
 - (BOOL)startQuery;
 - (void)enableUpdates;
 - (void)setPredicate:(id)arg1;
 - (id)predicate;
-- (id)delegate;
-- (BOOL)isStarted;
-- (id)sortDescriptors;
-- (void)setSortDescriptors:(id)arg1;
-- (id)results;
-- (id)init;
-- (void)dealloc;
 
 @end

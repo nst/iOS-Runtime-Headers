@@ -12,12 +12,12 @@
 @property(copy) NSString * placeholder;
 
 
+- (void)dealloc;
+- (float)heightNeeded;
 - (id)textView;
 - (void)setPlaceholder:(id)arg1;
 - (id)placeholder;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (float)heightNeeded;
-- (void)dealloc;
 
 @end

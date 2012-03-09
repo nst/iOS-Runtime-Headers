@@ -11,17 +11,6 @@
 }
 
 
-- (void)setParentController:(id)arg1;
-- (id)parentController;
-- (void)setSpecifier:(id)arg1;
-- (id)specifier;
-- (void)popupViewDidDisappear;
-- (void)popupViewWillDisappear;
-- (void)didWake;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)forwardInvocation:(id)arg1;
-- (void)suspend;
-- (id)methodSignatureForSelector:(SEL)arg1;
 - (void)dealloc;
 - (void)formSheetViewWillDisappear;
 - (void)formSheetViewDidDisappear;
@@ -38,5 +27,16 @@
 - (void)handleURL:(id)arg1;
 - (void)willResignActive;
 - (void)willBecomeActive;
+- (void)setSpecifier:(id)arg1;
+- (id)specifier;
+- (void)setParentController:(id)arg1;
+- (id)parentController;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)forwardInvocation:(id)arg1;
+- (void)suspend;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (void)didWake;
+- (void)popupViewDidDisappear;
+- (void)popupViewWillDisappear;
 
 @end

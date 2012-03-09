@@ -10,12 +10,12 @@
 
 + (id)actionsController;
 
+- (void)dealloc;
 - (void)removeHandler:(id)arg1;
 - (id)performActionsForEvent:(int)arg1 withIMHandle:(id)arg2 withObject:(id)arg3;
 - (id)performActionsForEvent:(int)arg1 withIMHandle:(id)arg2;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
-- (void)dealloc;
 - (id)performActionsForEvent:(int)arg1 withIMHandle:(id)arg2 withObject:(id)arg3 withChat:(id)arg4 silent:(BOOL)arg5;
 - (void)addHandler:(id)arg1;
 

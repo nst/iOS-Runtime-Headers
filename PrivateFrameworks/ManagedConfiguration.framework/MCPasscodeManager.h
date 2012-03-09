@@ -5,7 +5,6 @@
 @interface MCPasscodeManager : NSObject  {
 }
 
-+ (id)sharedManager;
 + (BOOL)sendPasscodeRestrictionChangeNotificationIfNeededWithOldRestrictions:(id)arg1 newRestrictions:(id)arg2;
 + (id)characteristicsDictionaryFromPasscode:(id)arg1;
 + (int)unlockScreenTypeForPasscodeCharacteristics:(id)arg1;
@@ -15,8 +14,8 @@
 + (id)localizedDescriptionOfPasscodePolicyFromRestrictions:(id)arg1;
 + (BOOL)passcode:(id)arg1 compliesWithPolicyFromRestrictions:(id)arg2 checkHistory:(BOOL)arg3 outError:(id*)arg4;
 + (BOOL)_passcodeCharacteristics:(id)arg1 compliesWithPolicyFromRestrictions:(id)arg2 outError:(id*)arg3;
++ (id)sharedManager;
 
-- (id)_init;
 - (void)lockDevice;
 - (BOOL)isDeviceLocked;
 - (BOOL)changePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id*)arg3;
@@ -37,5 +36,6 @@
 - (BOOL)_checkPasscode:(id)arg1 againstHistoryWithRestrictions:(id)arg2 outError:(id*)arg3;
 - (BOOL)currentPasscodeCompliesWithPolicyFromRestrictions:(id)arg1 outError:(id*)arg2;
 - (BOOL)isPasscodeSet;
+- (id)_init;
 
 @end

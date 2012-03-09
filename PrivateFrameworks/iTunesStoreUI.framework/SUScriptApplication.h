@@ -12,13 +12,13 @@
 @property(readonly) id screenWidth;
 @property(getter=wasLaunchedFromLibrary,readonly) id launchedFromLibrary;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
-- (id)isRunningInStoreDemoMode;
 - (id)init;
+- (id)isRunningInStoreDemoMode;
+- (id)attributeKeys;
 - (void)setIconBadgeNumber:(id)arg1;
 - (id)screenWidth;
 - (id)screenHeight;

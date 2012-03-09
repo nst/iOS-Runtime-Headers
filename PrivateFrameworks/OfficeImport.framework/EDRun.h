@@ -14,6 +14,10 @@
 + (id)runWithResources:(id)arg1;
 + (id)runWithCharIndex:(unsigned int)arg1 font:(id)arg2 resources:(id)arg3;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)key;
+- (id)font;
+- (void)setFont:(id)arg1;
 - (id)initWithCharIndex:(unsigned int)arg1 font:(id)arg2 resources:(id)arg3;
 - (BOOL)isEqualToRun:(id)arg1;
 - (id)initWithCharIndex:(unsigned int)arg1 fontIndex:(unsigned int)arg2 resources:(id)arg3;
@@ -22,9 +26,5 @@
 - (unsigned int)fontIndex;
 - (void)setFontIndex:(unsigned int)arg1;
 - (id)initWithResources:(id)arg1;
-- (unsigned int)key;
-- (id)font;
-- (void)setFont:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
 
 @end

@@ -9,8 +9,8 @@
 }
 
 
+- (void)dealloc;
 - (id)address;
 - (id)initWithAddress:(id)arg1;
-- (void)dealloc;
 
 @end

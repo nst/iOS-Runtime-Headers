@@ -56,6 +56,7 @@
 @property(retain) NSTimer * invitationWaitTimer;
 
 
+- (void)dealloc;
 - (void)setBluetoothStatus:(int)arg1;
 - (id)searchingForServicesString;
 - (void)session:(id)arg1 didFailWithError:(id)arg2;
@@ -129,7 +130,6 @@
 - (void)setSearchingForServicesString:(id)arg1;
 - (unsigned int)connectionTypesMask;
 - (void)setConnectionTypesMask:(unsigned int)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)didPresentAlertView:(id)arg1;
 - (void)dismiss;
 - (BOOL)isVisible;
@@ -150,6 +150,6 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

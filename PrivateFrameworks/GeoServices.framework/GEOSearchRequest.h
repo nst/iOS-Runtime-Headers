@@ -13,13 +13,13 @@
 @property unsigned short provider;
 
 
-- (Class)responseClass;
-- (int)zoomLevel;
-- (void)setZoomLevel:(int)arg1;
 - (void)setProvider:(unsigned short)arg1;
+- (id)init;
+- (Class)responseClass;
 - (int)type;
 - (void)setType:(int)arg1;
-- (id)init;
 - (unsigned short)provider;
+- (int)zoomLevel;
+- (void)setZoomLevel:(int)arg1;
 
 @end

@@ -11,11 +11,11 @@
 }
 
 
-- (void)invalidateThreadsWithWeakLinks;
 - (unsigned int)retainCount;
 - (id)retain;
-- (id)init;
 - (oneway void)release;
+- (id)init;
 - (void)dealloc;
+- (void)invalidateThreadsWithWeakLinks;
 
 @end

@@ -13,6 +13,9 @@
 
 + (id)defaultDebugContext;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)valueForName:(id)arg1;
 - (void)setValue:(id)arg1 forName:(id)arg2;
 - (long)time;
@@ -29,8 +32,5 @@
 - (BOOL)eval:(id)arg1;
 - (id)simulatedDate;
 - (void)removeValueForName:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

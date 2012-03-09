@@ -26,7 +26,8 @@
 + (void)hideAllRemoveConfirmationsInView:(id)arg1;
 + (float)removeButtonWidth;
 
-- (void)setDelegate:(id)arg1;
+- (void)setTarget:(id)arg1;
+- (void)dealloc;
 - (void)_setTableViewCellEditingStyle:(int)arg1;
 - (void)_shouldRemoveTarget;
 - (void)setRemoveConfirmationVisible:(BOOL)arg1;
@@ -76,7 +77,6 @@
 - (void)removeFromSuperview;
 - (void)layoutSubviews;
 - (void)setAlpha:(float)arg1;
-- (void)setTarget:(id)arg1;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

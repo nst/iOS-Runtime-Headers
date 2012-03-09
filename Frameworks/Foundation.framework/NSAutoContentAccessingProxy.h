@@ -8,7 +8,7 @@
 
 + (id)proxyWithTarget:(id)arg1;
 
-- (void)finalize;
 - (void)dealloc;
+- (void)finalize;
 
 @end

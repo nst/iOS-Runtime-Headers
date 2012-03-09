@@ -9,7 +9,7 @@
 @property(readonly) int tag;
 
 
-- (int)tag;
 - (id)init;
+- (int)tag;
 
 @end

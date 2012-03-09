@@ -15,6 +15,9 @@
 @property(readonly) NSString * clientIdentifierHeader;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)isForced;
 - (id)softwareTypes;
 - (id)clientIdentifierHeader;
@@ -22,8 +25,5 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

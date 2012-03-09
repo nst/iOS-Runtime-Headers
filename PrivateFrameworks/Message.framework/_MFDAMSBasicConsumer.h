@@ -20,8 +20,8 @@
 - (void)setMonitor:(id)arg1;
 - (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 - (id)monitor;
+- (void)dealloc;
 - (void)setError:(id)arg1;
 - (id)error;
-- (void)dealloc;
 
 @end

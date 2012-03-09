@@ -37,8 +37,8 @@
 @property id delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)finalize;
+- (void)setName:(id)arg1;
+- (void)dealloc;
 - (void)setProductKind:(id)arg1;
 - (void)setTransportType:(id)arg1;
 - (void)setUUIDString:(id)arg1;
@@ -58,14 +58,14 @@
 - (void)setAutoOpenSession:(BOOL)arg1;
 - (void)setOpenSessionPending:(BOOL)arg1;
 - (void)setCloseSessionPending:(BOOL)arg1;
-- (id)transportType;
+- (void)finalize;
 - (struct CGImage { }*)icon;
 - (void)setIcon:(struct CGImage { }*)arg1;
 - (id)name;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (id)UUIDString;
 - (id)productKind;
-- (void)setName:(id)arg1;
-- (void)dealloc;
+- (id)transportType;
 
 @end

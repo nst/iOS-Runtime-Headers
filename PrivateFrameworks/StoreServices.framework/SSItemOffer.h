@@ -30,20 +30,15 @@
 
 + (id)_preferredOfferIdentifiers;
 
-- (id)priceDisplay;
-- (id)_offerItem;
-- (long long)estimatedDiskSpaceNeeded;
-- (id)accountIdentifiers;
-- (id)supportedDevices;
-- (void)_setOfferItem:(id)arg1;
-- (id)successDialog;
-- (id)confirmationDialog;
-- (BOOL)isPreorder;
-- (id)valueForProperty:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)priceDisplay;
+- (id)valueForProperty:(id)arg1;
+- (id)successDialog;
+- (id)confirmationDialog;
+- (BOOL)isPreorder;
 - (BOOL)isOneTapOffer;
 - (id)actionDisplayName;
 - (BOOL)shouldShowPlusIcon;
@@ -62,5 +57,10 @@
 - (void)setActionDisplayName:(id)arg1;
 - (void)setPriceDisplay:(id)arg1;
 - (void)setBuyParameters:(id)arg1;
+- (id)_offerItem;
+- (long long)estimatedDiskSpaceNeeded;
+- (id)accountIdentifiers;
+- (id)supportedDevices;
+- (void)_setOfferItem:(id)arg1;
 
 @end

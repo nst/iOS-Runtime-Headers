@@ -22,6 +22,7 @@
 }
 
 
+- (void)dealloc;
 - (void)_deviceOrientationChanged:(id)arg1;
 - (id)initWithDefaultSize;
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
@@ -41,6 +42,5 @@
 - (void)setIsCapturing:(BOOL)arg1;
 - (void)_stopWatchingDeviceOrientationChanges;
 - (void)_setIcon:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -9,16 +9,16 @@
 
 @property BOOL _mapkit_enabledMapTilePathDrawing;
 
-+ (id)standardUserDefaults;
 + (void)resetStandardUserDefaults;
 + (void)setStandardUserDefaults:(id)arg1;
++ (id)standardUserDefaults;
 + (id)_web_preferredLanguageCode;
 + (void)_web_defaultsDidChange;
 + (void)_web_addDefaultsChangeObserver;
 + (void)_ensureAndLockPreferredLanguageLock;
 + (id)_webkit_preferredLanguageCode;
-+ (id)_IMAgentObjectForKey:(id)arg1;
 + (id)_IMAppObjectForKey:(id)arg1;
++ (id)_IMAgentObjectForKey:(id)arg1;
 + (void)_IMSetObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 + (id)_IMObjectForKey:(id)arg1 inDomain:(id)arg2;
 + (void)setShouldShowCNFRegistrationSettingsUI:(BOOL)arg1;
@@ -38,12 +38,6 @@
 
 - (id)valueForKey:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)setInteger:(int)arg1 forKey:(id)arg2;
-- (void)addSuiteNamed:(id)arg1;
-- (id)stringForKey:(id)arg1;
-- (id)persistentDomainForName:(id)arg1;
-- (void)removeObjectForKey:(id)arg1;
-- (BOOL)synchronize;
 - (BOOL)objectIsForcedForKey:(id)arg1 inDomain:(id)arg2;
 - (BOOL)objectIsForcedForKey:(id)arg1;
 - (void)removePersistentDomainForName:(id)arg1;
@@ -70,17 +64,23 @@
 - (void)setPersistentDomain:(id)arg1 forName:(id)arg2;
 - (id)initWithUser:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
-- (id)dataForKey:(id)arg1;
-- (id)arrayForKey:(id)arg1;
-- (id)stringArrayForKey:(id)arg1;
-- (id)dictionaryRepresentation;
-- (float)floatForKey:(id)arg1;
-- (int)integerForKey:(id)arg1;
-- (BOOL)boolForKey:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (id)init;
 - (oneway void)release;
+- (id)init;
+- (void)setInteger:(int)arg1 forKey:(id)arg2;
+- (void)addSuiteNamed:(id)arg1;
+- (id)dictionaryRepresentation;
+- (int)integerForKey:(id)arg1;
+- (id)persistentDomainForName:(id)arg1;
+- (BOOL)synchronize;
+- (float)floatForKey:(id)arg1;
+- (void)removeObjectForKey:(id)arg1;
+- (BOOL)boolForKey:(id)arg1;
+- (id)arrayForKey:(id)arg1;
+- (id)stringArrayForKey:(id)arg1;
+- (id)stringForKey:(id)arg1;
+- (id)dataForKey:(id)arg1;
 - (void)_mapkit_setTrackingAnimationDuration:(double)arg1;
 - (double)_mapkit_trackingAnimationDuration;
 - (void)set_mapkit_enabledMapTilePathDrawing:(BOOL)arg1;

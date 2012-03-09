@@ -68,7 +68,7 @@
 }
 
 
-- (void)finalize;
+- (void)dealloc;
 - (void)initializeSegmentations;
 - (void)initializeJunctions;
 - (void)assessQuality;
@@ -77,7 +77,7 @@
 - (void)findSpacers;
 - (void)splitTextLines;
 - (id)spacers;
+- (void)finalize;
 - (void)dispose;
-- (void)dealloc;
 
 @end

@@ -32,25 +32,27 @@
 + (Class)layerClass;
 
 - (void)_reachabilityChanged:(id)arg1;
-- (float)zoomLevel;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)flush;
-- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (void)setDelegate:(id)arg1;
-- (void)display;
+- (id)init;
+- (void)dealloc;
+- (BOOL)isDrawingEnabled;
+- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(int)arg3;
 - (struct CGSize { float x1; float x2; })tileSize;
 - (void)setDrawingEnabled:(BOOL)arg1;
 - (BOOL)isLoading;
 - (void)setTileSize:(struct CGSize { float x1; float x2; })arg1;
 - (float)zoomScale;
+- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (float)contentScaleFactor;
 - (BOOL)_canDrawContent;
 - (void)setContentScaleFactor:(float)arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)awakeFromNib;
 - (void)_commonInit;
+- (void)flush;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (id)delegate;
 - (void)didMoveToWindow;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)displayBaseTilesOfLayer:(id)arg1;
 - (void)renderLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
@@ -89,12 +91,10 @@
 - (BOOL)shouldDisplayEffects;
 - (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })convertMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 toDoubleRectToView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toDoublePointToView:(id)arg2;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toRegionFromView:(id)arg2;
 - (struct { double x1; double x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toCoordinateFromView:(id)arg2;
 - (void)addTilesToList:(id)arg1 surroundingCoordinate:(struct { double x1; double x2; })arg2 zoomLevel:(int)arg3 forVisibleSize:(struct CGSize { float x1; float x2; })arg4;
 - (struct { double x1; double x2; })convertDoublePoint:(struct CADoublePoint { double x1; double x2; })arg1 toMapPointFromView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })convertMapPoint:(struct { double x1; double x2; })arg1 toDoublePointToView:(id)arg2;
-- (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (void)setCanDisplayTraffic:(BOOL)arg1;
 - (int)displayZoomLevel;
 - (void)setShouldDisplayTraffic:(BOOL)arg1;
@@ -109,14 +109,15 @@
 - (void)setCanDrawOnMainThread:(BOOL)arg1;
 - (BOOL)canDrawOnMainThread;
 - (void)reloadTilesAfterResume;
+- (void)invalidateAllTimers;
 - (void)stopTileLoading;
 - (unsigned int)mapType;
 - (void)setMapType:(unsigned int)arg1;
 - (void)setLoadingEnabled:(BOOL)arg1;
+- (void)display;
+- (float)zoomLevel;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toRegionFromView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRectToView:(id)arg2;
-- (id)init;
-- (void)dealloc;
-- (BOOL)isDrawingEnabled;
-- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(int)arg3;
 
 @end

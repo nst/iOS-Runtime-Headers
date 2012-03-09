@@ -10,10 +10,10 @@
 }
 
 
-- (id)referencedObject;
-- (id)initWithReferencedObject:(id)arg1;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)referencedObject;
+- (id)initWithReferencedObject:(id)arg1;
 
 @end

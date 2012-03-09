@@ -7,21 +7,14 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (BOOL)boolValue;
-- (void)finalize;
-- (unsigned long long)unsignedLongLongValue;
-- (unsigned int)unsignedIntegerValue;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (int)compare:(id)arg1;
-- (int)integerValue;
-- (id)stringValue;
-- (long long)longLongValue;
-- (BOOL)isEqualToNumber:(id)arg1;
-- (unsigned int)unsignedIntValue;
-- (double)doubleValue;
-- (float)floatValue;
-- (void)getValue:(void*)arg1;
+- (int)intValue;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
+- (id)description;
+- (id)retain;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)_reverseCompare:(id)arg1;
 - (unsigned char)_getValue:(void*)arg1 forType:(long)arg2;
 - (long)_cfNumberType;
@@ -34,13 +27,20 @@
 - (id)descriptionWithLocale:(id)arg1;
 - (unsigned char)unsignedCharValue;
 - (unsigned long)unsignedLongValue;
-- (int)intValue;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (unsigned int)retainCount;
-- (id)description;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (oneway void)release;
+- (unsigned long long)unsignedLongLongValue;
+- (unsigned int)unsignedIntegerValue;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (int)compare:(id)arg1;
+- (int)integerValue;
+- (void)finalize;
+- (id)stringValue;
+- (long long)longLongValue;
+- (BOOL)isEqualToNumber:(id)arg1;
+- (unsigned int)unsignedIntValue;
+- (double)doubleValue;
+- (float)floatValue;
+- (void)getValue:(void*)arg1;
+- (BOOL)boolValue;
 
 @end

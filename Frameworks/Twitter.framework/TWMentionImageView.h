@@ -12,8 +12,8 @@
 @property(retain) UIImage * image;
 
 
+- (void)setupViews;
 - (id)image;
 - (void)setImage:(id)arg1;
-- (void)setupViews;
 
 @end

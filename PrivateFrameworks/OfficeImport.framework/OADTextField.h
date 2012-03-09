@@ -11,14 +11,14 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (BOOL)isEmpty;
+- (id)text;
+- (void)setText:(id)arg1;
 - (id)paragraphProperties;
 - (void)removeUnnecessaryOverrides;
 - (id)id;
 - (void)setId:(id)arg1;
-- (BOOL)isEmpty;
-- (id)text;
-- (void)setText:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

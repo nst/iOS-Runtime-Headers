@@ -13,6 +13,7 @@
     UIView *_videoOverlayBackgroundView;
     PLVideoEditingOverlayView *_trimMessageView;
     UIImage *_posterFrameImage;
+    UIImage *_snapshotImage;
     float _scrubberWidth;
     unsigned int _scaleMode;
     UIImageView *_scrubberBackgroundView;
@@ -71,7 +72,6 @@
     unsigned int _isMoviePlayerDelegate : 1;
     unsigned int _moviePlayerIsReady : 1;
     unsigned int _moviePlayerDidBuffer : 1;
-    unsigned int _hidePosterImage : 1;
     unsigned int _showingOverlay : 1;
     unsigned int _showingScrubber : 1;
     unsigned int _showScrubberWhenMovieIsReady : 1;
@@ -127,22 +127,25 @@
 
 + (id)videoViewForVideoFileAtURL:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (void)_screenDidDisconnect:(id)arg1;
 - (void)_screenDidConnect:(id)arg1;
 - (BOOL)moviePlayerExitRequest:(id)arg1 exitReason:(int)arg2;
 - (void)moviePlayerPlaybackDidEnd:(id)arg1;
 - (void)moviePlayerDurationAvailable:(id)arg1;
 - (void)moviePlayerPlaybackRateDidChange:(id)arg1;
+- (void)moviePlayerPlaybackStateDidChange:(id)arg1 fromPlaybackState:(unsigned int)arg2;
 - (void)moviePlayerReadyToPlay:(id)arg1;
 - (void)moviePlayerBufferingStateDidChange:(id)arg1;
 - (BOOL)moviePlayerHeadsetPreviousTrackPressed:(id)arg1;
 - (BOOL)moviePlayerHeadsetNextTrackPressed:(id)arg1;
 - (BOOL)moviePlayerHeadsetPlayPausePressed:(id)arg1;
 - (void)toggleScaleMode:(float)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (double)duration;
-- (void)setDelegate:(id)arg1;
-- (void)play;
+- (void)setCurrentTime:(double)arg1;
+- (double)currentTime;
+- (BOOL)isPlaying;
+- (id)videoScrubber;
 - (void)pause;
 - (void)stop;
 - (double)startTime;
@@ -176,12 +179,13 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (int)interfaceOrientation;
+- (double)duration;
 - (id)delegate;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (id)videoScrubber;
-- (BOOL)isPlaying;
-- (double)currentTime;
-- (void)setCurrentTime:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)play;
+- (double)endTime;
 - (id)posterFrameView;
 - (void)setScrubberWidth:(float)arg1;
 - (id)_moviePlayer;
@@ -191,6 +195,7 @@
 - (id)posterFrameImage;
 - (void)setPosterFrameImage:(id)arg1;
 - (BOOL)showsPosterFrame;
+- (void)setShowsPosterFrame:(BOOL)arg1;
 - (void)viewDidDisappear;
 - (void)handleDoubleTap;
 - (id)currentFrameImage;
@@ -203,6 +208,7 @@
 - (BOOL)scrubberIsSubview;
 - (void)_handleScreenConnectionChange:(BOOL)arg1;
 - (BOOL)_mediaIsVideo;
+- (id)_videoSnapshot;
 - (BOOL)loadMediaImmediately;
 - (void)_airTunesServiceChanged;
 - (void)_showVideoOverlay;
@@ -212,7 +218,7 @@
 - (void)_removeAirPlayBackgroundView;
 - (void)_resetScrubberUpdateTimer;
 - (void)playToAirTunes;
-- (void)_delayedHidePosterFrame;
+- (void)_delayedAddAirPlayBackground;
 - (void)_addAirPlayBackgroundView;
 - (void)_resetTrimProgressTimer;
 - (BOOL)_canEditDuration:(double)arg1;
@@ -232,7 +238,7 @@
 - (void)_setPlaying:(BOOL)arg1;
 - (void)_destroyGenerators;
 - (void)_didScrubToValue:(double)arg1 withHandle:(int)arg2;
-- (void)_updatePosterFrameVisibility;
+- (void)_invalidateSnapshotImage;
 - (void)_hideVideoOverlay:(BOOL)arg1;
 - (BOOL)playingToAirTunes;
 - (void)_removeScrubberUpdateTimer;
@@ -241,14 +247,14 @@
 - (id)_pathForPrebakedPortraitScrubberThumbnails;
 - (id)_pathForPrebakedLandscapeScrubberThumbnails;
 - (void)_scrubToTime:(double)arg1;
-- (void)moviePlayerPlaybackStateDidChange:(id)arg1;
 - (id)_mediaTitle;
 - (id)_pathForOriginalFile;
 - (BOOL)_didSetPhotoData;
+- (void)_updatePosterFrameVisibility;
 - (void)_updateScrubberVisibilityWithDuration:(double)arg1;
 - (void)_setNeedsReloadScrubberThumbnails:(BOOL)arg1;
 - (void)_requestPreviewPosterFrameForVideoSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_setScaleModeForSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_updateScaleModeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_pathForVideoPreviewFile;
 - (void)_addThumbnailRequestForTimestamp:(id)arg1 isPreviewThumbnail:(BOOL)arg2;
 - (void)_serviceImageGenerationRequest;
@@ -257,6 +263,7 @@
 - (void)_removeThumbnailRequestForRequestID:(id)arg1;
 - (void)_savePreviewPosterFrameImage:(struct CGImage { }*)arg1;
 - (void)_didBeginPlayback;
+- (void)_updateSnapshotImage;
 - (void)_verifyPlaybackHasBegun;
 - (void)_playbackFinished;
 - (void)_updateScrubberFrame;
@@ -274,8 +281,6 @@
 - (void)showTrimMessage:(id)arg1 withBottomY:(float)arg2;
 - (void)hideTrimMessage;
 - (void)setImageTile:(id)arg1;
-- (void)setShowsPosterFrame:(BOOL)arg1;
-- (void)setLoadMediaImmediately:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 videoCameraImage:(id)arg2 orientation:(int)arg3;
 - (BOOL)playingToVideoOut;
 - (BOOL)shouldShowCopyCalloutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -293,11 +298,9 @@
 - (void)viewDidAppear;
 - (void)removeVideoOverlay;
 - (BOOL)isTrimming;
+- (void)setLoadMediaImmediately:(BOOL)arg1;
 - (void)setShowsPlayOverlay:(BOOL)arg1;
 - (void)setCanEdit:(BOOL)arg1;
 - (void)setVideoOverlayBackgroundView:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (double)endTime;
 
 @end

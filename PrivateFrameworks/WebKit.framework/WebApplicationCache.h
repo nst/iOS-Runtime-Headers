@@ -5,8 +5,8 @@
 @interface WebApplicationCache : NSObject  {
 }
 
-+ (void)setMaximumSize:(long long)arg1;
 + (long long)maximumSize;
++ (void)setMaximumSize:(long long)arg1;
 + (void)initializeWithBundleIdentifier:(id)arg1;
 + (long long)defaultOriginQuota;
 + (void)setDefaultOriginQuota:(long long)arg1;

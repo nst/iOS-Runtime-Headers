@@ -15,10 +15,10 @@
 
 - (void)removeReferenceObserver:(id)arg1;
 - (id)retainedReference;
+- (id)init;
+- (void)dealloc;
 - (void)_override_release;
 - (id)_initWithObject:(id)arg1;
 - (void)_addObserver:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

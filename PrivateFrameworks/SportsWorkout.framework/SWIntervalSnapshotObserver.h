@@ -17,6 +17,8 @@
 @property(readonly) NSArray * snapshots;
 
 
+- (void)dealloc;
+- (id)_init;
 - (id)initWithCalorieInterval:(float)arg1;
 - (void)observeRunWorkoutUserEvent:(id)arg1 userEvent:(id)arg2;
 - (void)observeRunWorkoutStateChange:(id)arg1 oldState:(id)arg2 newState:(id)arg3;
@@ -25,7 +27,5 @@
 - (id)snapshots;
 - (id)initWithTimeIntervalInSeconds:(unsigned int)arg1;
 - (id)initWithDistanceIntervalInMiles:(float)arg1;
-- (id)_init;
-- (void)dealloc;
 
 @end

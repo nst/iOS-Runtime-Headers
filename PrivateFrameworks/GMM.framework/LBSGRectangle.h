@@ -13,14 +13,14 @@
 @property(retain) LBSGLatLng * upperRight;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)upperRight;
 - (id)lowerLeft;
 - (void)setUpperRight:(id)arg1;
 - (void)setLowerLeft:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

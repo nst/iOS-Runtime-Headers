@@ -28,10 +28,9 @@
 
 + (id)defaultSectionInfoForType:(unsigned int)arg1;
 
-- (BOOL)enabled;
-- (void)setEnabled:(BOOL)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)pathToWeeAppPluginBundle;
 - (unsigned int)sectionType;
 - (unsigned int)notificationCenterLimit;
@@ -52,8 +51,9 @@
 - (unsigned int)bulletinCount;
 - (void)setSectionID:(id)arg1;
 - (id)sectionID;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (BOOL)enabled;
+- (void)setEnabled:(BOOL)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

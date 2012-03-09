@@ -11,13 +11,13 @@
 @property(retain) NSMutableSet * privileges;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)addPrivilege:(id)arg1;
 - (id)copyParseRules;
 - (void)setPrivileges:(id)arg1;
 - (id)privileges;
 - (void)write:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

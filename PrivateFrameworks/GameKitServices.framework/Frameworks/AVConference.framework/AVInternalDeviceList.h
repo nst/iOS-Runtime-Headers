@@ -26,10 +26,10 @@
 + (id)defaultDeviceOfType:(unsigned long)arg1;
 + (id)newDeviceList;
 
+- (id)init;
+- (void)dealloc;
 - (void)setChangeListener:(id)arg1;
 - (id)changeListener;
 - (id)deviceList;
-- (id)init;
-- (void)dealloc;
 
 @end

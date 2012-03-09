@@ -26,6 +26,9 @@
 
 + (id)inviteWithDictionary:(id)arg1;
 
+- (id)description;
+- (BOOL)isCancelled;
+- (void)dealloc;
 - (BOOL)isHosted;
 - (id)inviteDictionary;
 - (void)setSessionToken:(id)arg1;
@@ -41,8 +44,5 @@
 - (id)message;
 - (void)setMessage:(id)arg1;
 - (void)setCancelled:(BOOL)arg1;
-- (id)description;
-- (BOOL)isCancelled;
-- (void)dealloc;
 
 @end

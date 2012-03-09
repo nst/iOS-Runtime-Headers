@@ -14,6 +14,8 @@
 + (id)iPodMusicPlayer;
 + (id)applicationMusicPlayer;
 
+- (id)init;
+- (void)dealloc;
 - (void)_musicPlayerDidLaunch;
 - (void)setUseCachedPlaybackState:(BOOL)arg1;
 - (void)_itemPlaybackDidEnd:(unsigned long long)arg1;
@@ -46,22 +48,20 @@
 - (void)_setUseApplicationSpecificQueue:(BOOL)arg1;
 - (void)_systemVolumeDidChange:(id)arg1;
 - (void)setCurrentPlaybackTime:(double)arg1;
-- (float)volume;
-- (void)setVolume:(float)arg1;
 - (unsigned int)numberOfItems;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setRepeatMode:(int)arg1;
-- (int)repeatMode;
+- (float)volume;
+- (void)setVolume:(float)arg1;
 - (void)beginGeneratingPlaybackNotifications;
 - (void)endGeneratingPlaybackNotifications;
 - (void)setShuffleMode:(int)arg1;
+- (void)setRepeatMode:(int)arg1;
 - (void)setQueueWithQuery:(id)arg1;
 - (void)setQueueWithItemCollection:(id)arg1;
 - (double)currentPlaybackTime;
 - (int)shuffleMode;
+- (int)repeatMode;
 - (int)playbackState;
 - (id)nowPlayingItem;
 

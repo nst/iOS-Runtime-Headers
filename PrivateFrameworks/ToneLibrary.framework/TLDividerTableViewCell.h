@@ -9,8 +9,8 @@
 }
 
 
+- (void)dealloc;
 - (void)setSeparatorStyle:(int)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)dealloc;
 
 @end

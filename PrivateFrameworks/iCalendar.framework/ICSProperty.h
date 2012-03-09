@@ -11,6 +11,8 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setParameters:(id)arg1;
 - (id)parameters;
 - (void)_setParsedValues:(id)arg1 type:(unsigned int)arg2;
@@ -32,8 +34,6 @@
 - (id)value;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)ICSStringWithOptions:(unsigned int)arg1;
 
 @end

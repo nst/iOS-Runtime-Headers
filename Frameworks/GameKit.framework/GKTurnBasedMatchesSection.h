@@ -20,6 +20,9 @@
 @property(getter=isLoading) BOOL loading;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setDeleteConfirmTitle:(id)arg1;
 - (id)deleteConfirmTitle;
 - (void)setSectionStyle:(int)arg1;
@@ -39,8 +42,5 @@
 - (void)setSectionTitle:(id)arg1;
 - (id)matches;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

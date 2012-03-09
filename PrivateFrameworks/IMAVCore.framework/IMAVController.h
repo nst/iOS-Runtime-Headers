@@ -37,9 +37,9 @@
 @property(readonly) BOOL canUseSmallDataBlobs;
 @property(readonly) BOOL _ready;
 
-+ (void)setDelegate:(id)arg1;
-+ (id)delegate;
 + (id)sharedInstance;
++ (id)delegate;
++ (void)setDelegate:(id)arg1;
 + (void)requestPendingVCInvitations;
 + (void)setBlockARDCapable:(BOOL)arg1;
 + (BOOL)blockARDCapable;
@@ -68,11 +68,11 @@
 + (BOOL)cameraCapable;
 + (BOOL)blockAudioOnlyCalls;
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
 - (id)delegate;
-- (id)init;
+- (void)setDelegate:(id)arg1;
 - (void)setBlockMultipleIncomingInvitations:(BOOL)arg1;
 - (void)requestPendingVCInvitations;
 - (void)currentAVChatInfoChanged:(id)arg1;

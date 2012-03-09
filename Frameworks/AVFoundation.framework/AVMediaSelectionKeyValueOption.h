@@ -12,25 +12,25 @@
 }
 
 
-- (id)locale;
-- (id)group;
-- (id)dictionary;
 - (id)propertyList;
-- (BOOL)_isDesignatedDefault;
-- (id)initWithDictionary:(id)arg1 group:(id)arg2;
-- (id)_ancillaryDescription;
-- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
-- (id)mediaSubTypes;
-- (id)groupID;
-- (id)optionID;
-- (id)mediaType;
-- (BOOL)hasMediaCharacteristic:(id)arg1;
-- (id)commonMetadata;
-- (id)availableMetadataFormats;
-- (id)metadataForFormat:(id)arg1;
-- (BOOL)isPlayable;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
+- (id)groupID;
+- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
+- (id)mediaSubTypes;
+- (id)_ancillaryDescription;
+- (id)initWithDictionary:(id)arg1 group:(id)arg2;
+- (BOOL)_isDesignatedDefault;
+- (id)optionID;
+- (BOOL)isPlayable;
+- (id)metadataForFormat:(id)arg1;
+- (id)availableMetadataFormats;
+- (id)commonMetadata;
+- (BOOL)hasMediaCharacteristic:(id)arg1;
+- (id)locale;
+- (id)group;
+- (id)dictionary;
+- (id)mediaType;
 
 @end

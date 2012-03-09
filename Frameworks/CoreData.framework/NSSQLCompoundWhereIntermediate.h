@@ -9,10 +9,10 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithPredicate:(id)arg1 inScope:(id)arg2 inContext:(id)arg3;
 - (id)generateSQLStringInContext:(id)arg1;
 - (id)_generateMulticlauseStringInContext:(id)arg1;
 - (BOOL)isOrScoped;
-- (void)dealloc;
 
 @end

@@ -20,8 +20,9 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
 - (int)setRange:(struct _PTPRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (id)data;
 - (id)filepath;
 - (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 andFilepath:(id)arg3;
 - (id)initWithUSBBuffer:(void*)arg1;
@@ -43,9 +44,8 @@
 - (long long)copyToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
 - (void)setBytesTransferred:(long long)arg1;
 - (id)initWithTCPBuffer:(void*)arg1;
-- (void)setData:(id)arg1;
 - (struct _PTPRange { unsigned long long x1; unsigned long long x2; })range;
-- (id)description;
-- (void)dealloc;
+- (id)data;
+- (void)setData:(id)arg1;
 
 @end

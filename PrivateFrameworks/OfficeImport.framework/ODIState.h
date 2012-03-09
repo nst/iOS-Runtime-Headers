@@ -28,6 +28,10 @@
 }
 
 
+- (void)dealloc;
+- (void)setGroup:(id)arg1;
+- (id)group;
+- (float)scale;
 - (void)setDefaultStyleLabelName:(id)arg1 forPointType:(int)arg2;
 - (id)presentationNameForPointType:(int)arg1;
 - (int)pointCount;
@@ -45,9 +49,5 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logicalBounds;
 - (void)setLogicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)drawingTheme;
-- (id)group;
-- (float)scale;
-- (void)setGroup:(id)arg1;
-- (void)dealloc;
 
 @end

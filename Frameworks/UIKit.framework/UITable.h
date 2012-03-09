@@ -69,8 +69,7 @@
 }
 
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)insertRows:(id)arg1 deleteRows:(id)arg2 reloadRows:(id)arg3;
 - (void)deleteRows:(id)arg1 viaEdge:(int)arg2 animated:(BOOL)arg3;
 - (void)setAccessoryView:(id)arg1;
@@ -226,12 +225,13 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)dataSource;
 - (int)numberOfColumns;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
 - (void)layoutSubviews;
 - (void)setRowHeight:(float)arg1;
 - (void)reloadData;
+- (void)setDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

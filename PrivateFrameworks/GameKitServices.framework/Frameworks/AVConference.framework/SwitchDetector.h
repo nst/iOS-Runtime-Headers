@@ -7,7 +7,7 @@
 }
 
 
-- (id)initWithCallID:(int)arg1;
 - (void)dealloc;
+- (id)initWithCallID:(int)arg1;
 
 @end

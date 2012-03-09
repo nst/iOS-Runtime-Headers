@@ -30,7 +30,14 @@
 @property int zoomLevel;
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setSearchTerm:(id)arg1;
+- (id)searchTerm;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (int)requestType;
 - (int)searchType;
 - (void)setHasSearchType:(BOOL)arg1;
 - (BOOL)hasSearchType;
@@ -49,12 +56,5 @@
 - (void)setHasZoomLevel:(BOOL)arg1;
 - (BOOL)hasZoomLevel;
 - (void)setZoomLevel:(int)arg1;
-- (int)requestType;
-- (void)setSearchTerm:(id)arg1;
-- (id)searchTerm;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

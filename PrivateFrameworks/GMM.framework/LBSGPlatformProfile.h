@@ -29,8 +29,18 @@
 @property(retain) NSString * userAgent;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)userAgent;
+- (id)ip;
+- (id)version;
+- (id)dictionaryRepresentation;
+- (id)locale;
+- (void)setLocale:(id)arg1;
+- (void)setVersion:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (void)setUserAgent:(id)arg1;
 - (id)distributionChannel;
 - (id)platformKey;
 - (id)platform;
@@ -44,15 +54,5 @@
 - (void)setPlatformKey:(id)arg1;
 - (void)setPlatform:(id)arg1;
 - (BOOL)hasLocale;
-- (void)writeTo:(id)arg1;
-- (void)setVersion:(id)arg1;
-- (id)version;
-- (id)dictionaryRepresentation;
-- (id)locale;
-- (void)setLocale:(id)arg1;
-- (id)ip;
-- (id)description;
-- (void)dealloc;
-- (void)setUserAgent:(id)arg1;
 
 @end

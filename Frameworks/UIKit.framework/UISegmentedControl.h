@@ -48,8 +48,7 @@
 + (float)defaultHeightForStyle:(int)arg1 size:(int)arg2;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (int)selectedSegment;
 - (BOOL)isEnabledForSegment:(unsigned int)arg1;
 - (void)setEnabled:(BOOL)arg1 forSegment:(unsigned int)arg2;
@@ -118,7 +117,7 @@
 - (void)_resetForAppearanceChange;
 - (void)_updateOptionsBackground;
 - (void)removeAllSegments;
-- (void)_setEnabled:(BOOL)arg1 forced:(BOOL)arg2;
+- (void)_setEnabled:(BOOL)arg1 forcePropagateToSegments:(BOOL)arg2;
 - (void)setSelectedSegmentIndex:(int)arg1;
 - (void)setSegmentedControlStyle:(int)arg1;
 - (void)_createSegmentAtIndex:(int)arg1 position:(unsigned int)arg2 withInfo:(id)arg3;
@@ -158,13 +157,14 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)scriptingInfoWithChildren;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setAlpha:(float)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (void)_gkApplyTheme:(id)arg1;
 - (void)sizeToFitWithMinimumSegmentWidth:(float)arg1 maximumTotalWidth:(float)arg2;
 

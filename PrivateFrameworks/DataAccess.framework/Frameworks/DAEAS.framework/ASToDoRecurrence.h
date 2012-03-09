@@ -21,11 +21,11 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
+- (void)dealloc;
 - (id)startTime;
 - (void)setStartTime:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)_transformedUntilDateForActiveSync:(id)arg1;
 - (id)_untilDateForCalFrameworkWithParentStartDate:(id)arg1;
 - (BOOL)_requiresParentEvent;

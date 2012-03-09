@@ -46,18 +46,16 @@
 @property(readonly) NSNumber * orientation;
 @property(readonly) id screenReaderRunning;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
 - (id)accounts;
+- (void)log:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)addressBook;
 - (id)accountName;
-- (void)setDelegate:(id)arg1;
-- (void)log:(id)arg1;
-- (id)attributeKeys;
-- (id)cookie;
-- (void)setCookie:(id)arg1;
 - (id)protocol;
 - (id)systemVersion;
 - (void)goBack;
@@ -76,12 +74,14 @@
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 - (id)delegate;
 - (id)window;
-- (void)setDevice:(id)arg1;
-- (id)device;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (id)attributeKeys;
+- (id)cookie;
+- (void)setCookie:(id)arg1;
+- (void)_showMediaPlayerForMediaItem:(id)arg1;
 - (id)purchaseManager;
 - (id)actionTypeReturnToLibrary;
+- (void)setDevice:(id)arg1;
 - (id)application;
 - (void)addPurchaseWithInfo:(id)arg1;
 - (void)addExternalDownloads:(id)arg1;
@@ -141,6 +141,7 @@
 - (void)signOutPrimaryAccount;
 - (id)showPromptWithMessage:(id)arg1 initialValue:(id)arg2 title:(id)arg3 okButtonTitle:(id)arg4 cancelButtonTitle:(id)arg5;
 - (void)showMediaPreviewWithURLString:(id)arg1;
+- (void)showMediaPreviewWithURLString:(id)arg1;
 - (void)showMediaPlayerWithURLString:(id)arg1 orientation:(id)arg2 title:(id)arg3 subtitle:(id)arg4 bookmarkID:(id)arg5 duration:(id)arg6 type:(id)arg7 imageURL:(id)arg8;
 - (BOOL)showConfirmWithMessage:(id)arg1 title:(id)arg2 okButtonTitle:(id)arg3 cancelButtonTitle:(id)arg4;
 - (void)showAlertWithMessage:(id)arg1 title:(id)arg2 buttonTitle:(id)arg3;
@@ -174,6 +175,8 @@
 - (id)makeMessageEntryViewController;
 - (id)makeMessage;
 - (id)makeMenuViewController;
+- (id)makeMediaPlayerViewControllerWithMediaPlayerItem:(id)arg1;
+- (id)makeMediaPlayerItemWithProperties:(id)arg1;
 - (id)makeLinearGradientWithX0:(float)arg1 y0:(float)arg2 x1:(float)arg3 y1:(float)arg4;
 - (id)makeDocumentInteractionController;
 - (id)makeDialog;
@@ -216,6 +219,7 @@
 - (id)diskSpaceAvailable;
 - (id)activeNetworkType;
 - (BOOL)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(BOOL)arg2;
+- (id)device;
 - (id)accountDSID;
 - (id)_copyOrientation;
 - (id)_copyGlobalRootObject;

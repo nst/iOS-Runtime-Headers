@@ -10,8 +10,8 @@
 }
 
 
+- (id)initWithHighlightView:(id)arg1 webView:(id)arg2;
 - (id)actionForKey:(id)arg1;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (id)initWithHighlightView:(id)arg1 webView:(id)arg2;
 
 @end

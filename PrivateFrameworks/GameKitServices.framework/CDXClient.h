@@ -52,9 +52,13 @@
 @property(readonly) struct dispatch_queue_s { }* queue;
 
 
+- (void)dealloc;
+- (struct dispatch_queue_s { }*)queue;
 - (void)setError:(id)arg1;
+- (id)error;
 - (void)start;
 - (void)invalidate;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (id)initWithOptions:(id)arg1 delegate:(id)arg2;
 - (id)createSessionWithTicket:(id)arg1 sessionKey:(id)arg2;
@@ -72,9 +76,5 @@
 - (void)startListeningOnSockets;
 - (BOOL)handleHolePunchEvent;
 - (void)stopListeningOnSockets;
-- (id)delegate;
-- (id)error;
-- (void)dealloc;
-- (struct dispatch_queue_s { }*)queue;
 
 @end

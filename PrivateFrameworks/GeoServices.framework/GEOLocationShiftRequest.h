@@ -11,14 +11,14 @@
 @property(retain) GEOPixelPoint * pixel;
 
 
-- (Class)responseClass;
-- (BOOL)readFrom:(id)arg1;
-- (id)pixel;
-- (void)setPixel:(id)arg1;
-- (unsigned int)requestTypeCode;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
 - (id)description;
 - (void)dealloc;
+- (id)pixel;
+- (void)setPixel:(id)arg1;
+- (Class)responseClass;
+- (id)dictionaryRepresentation;
+- (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (void)writeTo:(id)arg1;
 
 @end

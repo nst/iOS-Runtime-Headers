@@ -12,6 +12,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)addDefaults;
 - (id)lineDefaults;
 - (id)addShapeDefaults;
@@ -20,7 +22,5 @@
 - (id)shapeDefaults;
 - (id)textDefaults;
 - (id)baseStyles;
-- (id)init;
-- (void)dealloc;
 
 @end

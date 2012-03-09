@@ -13,6 +13,7 @@
 @property SEL didShowMoreAction;
 
 
+- (id)init;
 - (BOOL)tableView:(id)arg1 isContentRow:(int)arg2;
 - (float)tableView:(id)arg1 heightForFooterRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderRowAtIndexPath:(id)arg2;
@@ -45,6 +46,5 @@
 - (void)setShowMoreItemCount:(int)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)init;
 
 @end

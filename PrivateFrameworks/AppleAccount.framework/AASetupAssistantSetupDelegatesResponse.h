@@ -12,9 +12,9 @@
 @property(readonly) NSDictionary * responseParameters;
 
 
-- (id)responseParametersForServiceIdentifier:(id)arg1;
-- (id)responseParameters;
 - (id)statusMessage;
 - (id)status;
+- (id)responseParametersForServiceIdentifier:(id)arg1;
+- (id)responseParameters;
 
 @end

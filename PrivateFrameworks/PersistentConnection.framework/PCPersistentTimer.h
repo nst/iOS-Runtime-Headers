@@ -34,10 +34,15 @@
 + (double)currentMachTimeInterval;
 + (id)lastSystemWakeDate;
 
-- (void)invalidate;
+- (id)userInfo;
+- (id)debugDescription;
+- (void)dealloc;
+- (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (void)scheduleInRunLoop:(id)arg1;
 - (void)setMinimumEarlyFireProportion:(double)arg1;
 - (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
+- (BOOL)isValid;
+- (void)invalidate;
 - (BOOL)disableSystemWaking;
 - (double)minimumEarlyFireProportion;
 - (id)_initWithAbsoluteTime:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 triggerOnGMTChange:(BOOL)arg6;
@@ -55,10 +60,5 @@
 - (void)interfaceManagerWWANInterfaceStatusChanged:(id)arg1;
 - (void)interfaceManagerInternetReachabilityChanged:(id)arg1;
 - (void)setDisableSystemWaking:(BOOL)arg1;
-- (BOOL)isValid;
-- (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
-- (id)userInfo;
-- (id)debugDescription;
-- (void)dealloc;
 
 @end

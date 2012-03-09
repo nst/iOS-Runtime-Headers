@@ -185,18 +185,12 @@
 + (id)avChatWaitingForReplyFromIMHandle:(id)arg1 orConferenceID:(id)arg2;
 
 - (id)account;
-- (id)participants;
-- (unsigned int)cameraType;
-- (void)setDelegate:(id)arg1;
-- (id)conferenceID;
-- (void)_reportError:(id)arg1;
-- (void)setPaused:(BOOL)arg1;
-- (BOOL)isActive;
-- (unsigned int)state;
-- (id)delegate;
-- (void)systemApplicationWillEnterForeground;
+- (id)description;
+- (void)dealloc;
 - (BOOL)isPaused;
+- (id)participants;
 - (id)error;
+- (void)systemApplicationWillEnterForeground;
 - (void)setCameraType:(unsigned int)arg1;
 - (unsigned int)sessionID;
 - (BOOL)isCaller;
@@ -208,8 +202,13 @@
 - (void*)localVideoLayer;
 - (void)setLocalVideoLayer:(void*)arg1;
 - (BOOL)stopPreview;
-- (id)description;
-- (void)dealloc;
+- (void)_reportError:(id)arg1;
+- (void)setPaused:(BOOL)arg1;
+- (BOOL)isActive;
+- (unsigned int)state;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (unsigned int)cameraType;
 - (void)finalizeOrderWithVideoFrom:(id)arg1;
 - (id)orderedRemotePartyIDs;
 - (void)removeParticipantWithID:(id)arg1;
@@ -299,7 +298,6 @@
 - (unsigned int)addStatusForIMHandle:(id)arg1 asVideo:(BOOL)arg2 ardRole:(int)arg3;
 - (BOOL)closeCamera;
 - (void)setCameraOrientation:(unsigned int)arg1;
-- (unsigned int)cameraOrientation;
 - (struct CGSize { float x1; float x2; })localAspectRatioForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
 - (void)_setBreakBeforeMakeTimer;
 - (void)participant:(id)arg1 changedFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
@@ -437,6 +435,8 @@
 - (id)callerProperties;
 - (void)_endChatWithReason:(unsigned int)arg1 andError:(int)arg2;
 - (id)inviteesInfoAsPlist:(BOOL)arg1 account:(id)arg2;
+- (unsigned int)cameraOrientation;
 - (BOOL)isVideo;
+- (id)conferenceID;
 
 @end

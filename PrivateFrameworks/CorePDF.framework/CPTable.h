@@ -34,9 +34,7 @@
 @property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } tableBounds;
 
 
-- (unsigned int)rowCount;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)finalize;
+- (void)dealloc;
 - (void)setRowCount:(unsigned int)arg1;
 - (void)setBackgroundGraphics:(id)arg1;
 - (id)backgroundGraphicAtIndex:(unsigned int)arg1;
@@ -46,10 +44,12 @@
 - (unsigned int)usedGraphicCount;
 - (void)incrementUsedGraphicCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableBounds;
-- (void)dispose;
 - (void)setColumnCount:(unsigned int)arg1;
 - (unsigned int)columnCount;
+- (void)finalize;
 - (struct CGColor { }*)backgroundColor;
-- (void)dealloc;
+- (unsigned int)rowCount;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dispose;
 
 @end

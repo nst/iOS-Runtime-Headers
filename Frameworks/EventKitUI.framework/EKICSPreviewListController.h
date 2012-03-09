@@ -17,13 +17,8 @@
 @property <EKICSPreviewListDelegate> * listDelegate;
 
 
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)viewDidLoad;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)dealloc;
+- (id)initWithModel:(id)arg1;
 - (id)listDelegate;
 - (void)importAllPressed:(id)arg1;
 - (void)updateImportButton;
@@ -33,7 +28,12 @@
 - (void)setListDelegate:(id)arg1;
 - (BOOL)allowsSubitems;
 - (void)setAllowsSubitems:(BOOL)arg1;
-- (void)dealloc;
-- (id)initWithModel:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)viewDidLoad;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 
 @end

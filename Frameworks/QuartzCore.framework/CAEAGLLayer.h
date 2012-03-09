@@ -41,13 +41,13 @@
 + (id)defaultValueForKey:(id)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 
-- (void)setDrawableProperties:(id)arg1;
-- (id)drawableProperties;
-- (void)layerDidBecomeVisible:(BOOL)arg1;
-- (void)_display;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)dealloc;
+- (void)layerDidBecomeVisible:(BOOL)arg1;
 - (struct _EAGLNativeWindowObject { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); }*)nativeWindow;
 - (BOOL)shouldArchiveValueForKey:(id)arg1;
+- (void)_display;
+- (void)setDrawableProperties:(id)arg1;
+- (id)drawableProperties;
 
 @end

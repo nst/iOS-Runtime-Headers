@@ -27,8 +27,7 @@
 @property(getter=isDeferringInterfaceUpdates) BOOL deferringInterfaceUpdates;
 
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (void)setPaddingTop:(float)arg1 paddingLeft:(float)arg2;
 - (void)setPlaceholder:(id)arg1;
 - (float)paddingTop;
@@ -40,7 +39,8 @@
 - (id)text;
 - (void)setFont:(id)arg1;
 - (void)setText:(id)arg1;
-- (void)dealloc;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (void)_commitDeferredInterfaceUpdates;
 - (void)_saveCurrentStateAsDeferred;
 - (void)setDeferringInterfaceUpdates:(BOOL)arg1;

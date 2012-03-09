@@ -15,13 +15,13 @@
 @property(copy) PLLoadRequestKey * cacheKey;
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setCacheKey:(id)arg1;
+- (id)cacheKey;
 - (int)format;
 - (void)setFormat:(int)arg1;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
-- (id)cacheKey;
-- (void)setCacheKey:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

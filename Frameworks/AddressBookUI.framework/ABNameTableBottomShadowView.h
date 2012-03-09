@@ -6,9 +6,9 @@
 }
 
 
-- (id)shadowColor;
 - (struct CGGradient { }*)newLeftGradient;
 - (struct CGGradient { }*)newRightGradient;
 - (struct CGGradient { }*)_newGradientForLeft:(BOOL)arg1;
+- (id)shadowColor;
 
 @end

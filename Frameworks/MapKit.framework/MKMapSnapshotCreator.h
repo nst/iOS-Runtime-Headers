@@ -15,6 +15,8 @@
 @property(retain) MKMapSnapshotRequest * servingRequest;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)createSnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 handler:(id)arg4;
 - (void)flushRequestQueue;
 - (void)didDisplaySnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
@@ -25,7 +27,5 @@
 - (void)_respondWithSnapshot;
 - (void)setServingRequest:(id)arg1;
 - (id)servingRequest;
-- (id)init;
-- (void)dealloc;
 
 @end

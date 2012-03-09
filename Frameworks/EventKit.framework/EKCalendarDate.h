@@ -26,6 +26,11 @@
 - (id)components;
 - (unsigned int)dayOfYear;
 - (unsigned int)dayOfWeek;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (int)secondsFromGMT;
 - (id)calendarDateForYear;
 - (id)calendarDateForEndOfMonth;
 - (id)calendarDateForMonth;
@@ -67,10 +72,5 @@
 - (int)compare:(id)arg1;
 - (id)timeZone;
 - (id)date;
-- (int)secondsFromGMT;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

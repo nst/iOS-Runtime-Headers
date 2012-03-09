@@ -18,8 +18,15 @@
 @property(readonly) unsigned int maxCapacity;
 
 
+- (unsigned int)count;
+- (id)description;
+- (id)objectForKey:(id)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
+- (id)init;
+- (void)dealloc;
+- (void)removeObjectsForKeys:(id)arg1;
 - (unsigned int)maxCapacity;
-- (void)compact;
 - (id)keyEnumerator;
 - (id)objectEnumerator;
 - (id)allObjects;
@@ -32,13 +39,6 @@
 - (void)evictObject:(id)arg1;
 - (id)orderedObjects;
 - (id)initWithCapacity:(unsigned int)arg1 maxCapacity:(unsigned int)arg2;
-- (void)removeObjectsForKeys:(id)arg1;
-- (unsigned int)count;
-- (id)description;
-- (id)objectForKey:(id)arg1;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2;
-- (id)init;
-- (void)dealloc;
+- (void)compact;
 
 @end

@@ -14,6 +14,11 @@
 
 + (int)accountsWithAccountTypeIdentifierExist:(id)arg1;
 
+- (id)accounts;
+- (id)accountWithIdentifier:(id)arg1;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (id)init;
+- (void)dealloc;
 - (BOOL)permissionForAccountType:(id)arg1;
 - (void)clearPermissionGrantedForBundleID:(id)arg1 onAccountType:(id)arg2;
 - (void)setPermissionGranted:(BOOL)arg1 forBundleID:(id)arg2 onAccountType:(id)arg3;
@@ -35,15 +40,10 @@
 - (void)establishAccountStoreConnection;
 - (void)_noteAccountStoreConnectionInterrupted;
 - (void)tearDownAccountStoreConnection;
-- (id)accounts;
-- (id)accountWithIdentifier:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)addAccount:(id)arg1;
 - (void)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1;
 - (id)accountsWithAccountType:(id)arg1;
 - (id)accountTypeWithAccountTypeIdentifier:(id)arg1;
 - (void)saveAccount:(id)arg1 forPID:(id)arg2 withCompletionHandler:(id)arg3;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)addAccount:(id)arg1;
 
 @end

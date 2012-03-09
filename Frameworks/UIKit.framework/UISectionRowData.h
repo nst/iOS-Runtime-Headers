@@ -23,7 +23,8 @@
 }
 
 
-- (void)invalidate;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (int)rowForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (int)sectionLocationForReorderedRow:(int)arg1;
 - (int)sectionLocationForRow:(int)arg1;
@@ -37,7 +38,6 @@
 - (float)_defaultSectionHeaderHeightForSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
 - (float)_headerOrFooterSizeForTable:(id)arg1 title:(id)arg2 detailText:(id)arg3 isHeader:(BOOL)arg4;
 - (void)invalidateSectionOffset;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)invalidate;
 
 @end

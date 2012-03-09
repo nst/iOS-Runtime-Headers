@@ -24,19 +24,9 @@
 @property(copy) NSString * alignmentMode;
 
 + (id)defaultValueForKey:(id)arg1;
-+ (BOOL)needsDisplayForKey:(id)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
++ (BOOL)needsDisplayForKey:(id)arg1;
 
-- (void)setForegroundColor:(struct CGColor { }*)arg1;
-- (id)initWithLayer:(id)arg1;
-- (void)setAlignmentMode:(id)arg1;
-- (struct CGColor { }*)foregroundColor;
-- (void)drawInContext:(struct CGContext { }*)arg1;
-- (float)fontSize;
-- (void)setFontSize:(float)arg1;
-- (id)implicitAnimationForKeyPath:(id)arg1;
-- (void*)font;
-- (void)setFont:(void*)arg1;
 - (void)didChangeValueForKey:(id)arg1;
 - (id)string;
 - (void)setString:(id)arg1;
@@ -59,5 +49,15 @@
 - (BOOL)allowsFontSubpixelQuantization;
 - (void)_prepareContext:(struct CGContext { }*)arg1;
 - (struct CGSize { float x1; float x2; })_preferredSize;
+- (void)setAlignmentMode:(id)arg1;
+- (struct CGColor { }*)foregroundColor;
+- (id)initWithLayer:(id)arg1;
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (float)fontSize;
+- (void)setFontSize:(float)arg1;
+- (id)implicitAnimationForKeyPath:(id)arg1;
+- (void*)font;
+- (void)setFont:(void*)arg1;
+- (void)setForegroundColor:(struct CGColor { }*)arg1;
 
 @end

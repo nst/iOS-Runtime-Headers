@@ -7,8 +7,8 @@
 
 + (id)inputStreamWithURL:(id)arg1;
 + (id)inputStreamWithFileAtPath:(id)arg1;
-+ (id)inputStreamWithData:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)inputStreamWithData:(id)arg1;
 
 - (BOOL)hasBytesAvailable;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;

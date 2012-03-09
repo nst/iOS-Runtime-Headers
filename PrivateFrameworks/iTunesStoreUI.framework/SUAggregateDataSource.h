@@ -14,13 +14,13 @@
 @property(readonly) NSArray * sources;
 
 
+- (void)dealloc;
 - (id)sources;
 - (int)tableViewStyle;
 - (void)setTableViewStyle:(int)arg1;
 - (int)numberOfSections;
 - (int)numberOfRowsInSection:(int)arg1;
 - (void)reloadData;
-- (void)dealloc;
 - (id)indexPathForRowIndex:(unsigned int)arg1 inSectionIndex:(unsigned int)arg2;
 - (void)addDataSource:(id)arg1 withHeaderView:(id)arg2;
 - (id)dataSourceForIndexPath:(id)arg1;

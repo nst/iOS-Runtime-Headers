@@ -2,12 +2,10 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSMutableArray, UIResponder, NSNumber, GKRecipientGenerator, GKImageBackgroundView, UITextView, GKUITheme, GKRecipientSelectionView, ABPeoplePickerNavigationController, UIView, NSDictionary, UIPopoverController, NSString, UIImageView, UINavigationItem;
+@class NSMutableArray, NSNumber, GKRecipientGenerator, GKComposeMessageView, GKUITheme, GKRecipientSelectionView, GKComposeControllerBackgroundView, ABPeoplePickerNavigationController, UIView, NSDictionary, UIPopoverController, NSString, UIResponder, UINavigationItem;
 
 @interface GKAbstractComposeController : GKViewController <UIActionSheetDelegate, UIModalViewDelegate, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, UITextViewDelegate, UIPopoverControllerDelegate> {
     UINavigationItem *_navItem;
-    GKImageBackgroundView *_backgroundView;
-    UIImageView *_messageView;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -21,8 +19,8 @@
     NSDictionary *_abPropertiesCache;
     GKUITheme *_theme;
     GKRecipientSelectionView *_recipientSelectionView;
-    UIView *_beneathMessageView;
-    UITextView *_messageEntryView;
+    GKComposeControllerBackgroundView *_backgroundView;
+    GKComposeMessageView *_messageView;
     ABPeoplePickerNavigationController *_peoplePickerController;
     UIPopoverController *_composePopoverController;
     UIResponder *_savedFirstResponder;
@@ -55,8 +53,8 @@
 @property(retain) NSNumber * rid;
 @property(readonly) NSMutableArray * recipients;
 @property(readonly) GKRecipientSelectionView * recipientSelectionView;
-@property(readonly) UIView * beneathMessageView;
-@property(readonly) UITextView * messageEntryView;
+@property(retain) GKComposeControllerBackgroundView * backgroundView;
+@property(retain) GKComposeMessageView * messageView;
 @property(readonly) ABPeoplePickerNavigationController * peoplePickerController;
 @property(retain) UIPopoverController * composePopoverController;
 @property(retain) UIResponder * savedFirstResponder;
@@ -67,6 +65,8 @@
 @property BOOL isPopoverHidden;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setSending:(BOOL)arg1;
 - (BOOL)sending;
 - (void)setMightHaveAccessoryView:(BOOL)arg1;
@@ -78,6 +78,7 @@
 - (id)peoplePickerController;
 - (void)setComposeDelegate:(id)arg1;
 - (id)composeDelegate;
+- (id)fadeTransition;
 - (void)makeRecipientEntryViewInactive;
 - (id)recipientSelectionView:(id)arg1 recipientsForText:(id)arg2;
 - (id)recipientSelectionView:(id)arg1 recipientForRecord:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
@@ -105,7 +106,6 @@
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)setLastMessage:(id)arg1;
 - (id)lastMessage;
-- (id)fadeTransition;
 - (void)showPeoplePickerWithDelegate:(id)arg1;
 - (void)_resetEntryViewSize;
 - (void)addRecipient:(void*)arg1 property:(int)arg2 identifier:(int)arg3 address:(id)arg4 makingContentEntryViewActive:(BOOL)arg5;
@@ -131,15 +131,15 @@
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
 - (void)_setupRecipientSelectionView;
+- (void)setMessageView:(id)arg1;
 - (void)layoutSubviewsForOrientation:(int)arg1;
 - (void)updateViewVisibility;
-- (id)beneathMessageView;
 - (BOOL)composeFieldsHidden;
 - (void)_localeChanged:(id)arg1;
 - (void)makeContentEntryViewInactive;
 - (void)makeContentEntryViewActive;
 - (id)recipientSelectionView;
-- (id)messageEntryView;
+- (id)messageView;
 - (id)_gkBackgroundView;
 - (id)theme;
 - (void)setTheme:(id)arg1;
@@ -162,10 +162,10 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)accessoryView;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (id)backgroundView;
+- (void)setBackgroundView:(id)arg1;
 - (id)navigationItem;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (id)init;
-- (void)dealloc;
 
 @end

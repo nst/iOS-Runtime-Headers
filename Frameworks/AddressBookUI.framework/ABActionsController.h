@@ -19,15 +19,6 @@
 + (int)defaultActionForProperty:(int)arg1;
 + (id)newActionsControllerForProperty:(int)arg1;
 
-- (id)initWithProperty:(int)arg1;
-- (void)setStringValue:(id)arg1;
-- (id)stringValue;
-- (id)value;
-- (void)setValue:(id)arg1;
-- (void*)context;
-- (void)setContext:(void*)arg1;
-- (void)setPerson:(void*)arg1;
-- (void*)person;
 - (id)init;
 - (void)dealloc;
 - (int)actionsCountForProperty:(int)arg1;
@@ -44,5 +35,14 @@
 - (id)urlForAction:(int)arg1 forProperty:(int)arg2;
 - (void)setRecordID:(int)arg1;
 - (void)setMultiValueIdentifier:(int)arg1;
+- (void)setPerson:(void*)arg1;
+- (void*)person;
+- (void)setStringValue:(id)arg1;
+- (id)stringValue;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (void*)context;
+- (void)setContext:(void*)arg1;
+- (id)initWithProperty:(int)arg1;
 
 @end

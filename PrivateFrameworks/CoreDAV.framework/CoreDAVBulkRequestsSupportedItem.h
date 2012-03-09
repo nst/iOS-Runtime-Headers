@@ -11,11 +11,11 @@
 @property(retain) CoreDAVItem * supported;
 
 
-- (id)supported;
-- (void)setSupported:(id)arg1;
-- (id)copyParseRules;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)supported;
+- (void)setSupported:(id)arg1;
+- (id)copyParseRules;
 
 @end

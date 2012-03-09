@@ -12,6 +12,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)showMasterPlaceholderAnimations;
 - (void)setShowMasterPlaceholderAnimations:(BOOL)arg1;
 - (BOOL)showMasterShapes;
@@ -25,7 +27,5 @@
 - (id)fontScheme;
 - (id)styleMatrix;
 - (void)doneWithContent;
-- (id)init;
-- (void)dealloc;
 
 @end

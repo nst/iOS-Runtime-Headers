@@ -7,7 +7,7 @@
 
 + (id)predicate;
 
-- (BOOL)evaluateWithObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)evaluateWithObject:(id)arg1;
 
 @end

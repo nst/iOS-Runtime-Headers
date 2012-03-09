@@ -55,9 +55,9 @@
 - (void)setSizeFunction:(int (*)())arg1;
 - (void)setIsEqualFunction:(int (*)())arg1;
 - (void)setHashFunction:(int (*)())arg1;
-- (id)initWithOptions:(unsigned int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithOptions:(unsigned int)arg1;
 
 @end

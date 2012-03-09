@@ -19,6 +19,11 @@
 
 + (id)sharedImageCache;
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)init;
+- (void)dealloc;
 - (unsigned int)cacheSize;
 - (id)imageForRequest:(id)arg1 fetchIfNecessary:(BOOL)arg2;
 - (BOOL)imageRequestsSuspended;
@@ -38,15 +43,10 @@
 - (void)cancelAllImageRequests;
 - (void)loadImageForRequest:(id)arg1 asynchronously:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)_didEnterBackgroundNotification:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)_cachedImageForKey:(id)arg1;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (id)delegate;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

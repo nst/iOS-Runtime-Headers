@@ -13,8 +13,8 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id)nextObject;
-- (id)initWithObject:(id)arg1;
 - (void)dealloc;
+- (id)initWithObject:(id)arg1;
+- (id)nextObject;
 
 @end

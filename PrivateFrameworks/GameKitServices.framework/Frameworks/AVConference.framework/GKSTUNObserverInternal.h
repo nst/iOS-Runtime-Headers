@@ -9,12 +9,12 @@
 }
 
 
-- (void)cleanUp;
-- (BOOL)initialize;
+- (id)init;
+- (void)dealloc;
 - (void)trySTUNDiscovery;
 - (void)deregisterForNetworkChanges;
 - (void)registerForNetworkChanges;
-- (id)init;
-- (void)dealloc;
+- (void)cleanUp;
+- (BOOL)initialize;
 
 @end

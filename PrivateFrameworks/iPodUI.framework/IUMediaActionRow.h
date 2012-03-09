@@ -31,6 +31,9 @@
 + (id)actionRowWithPreset:(int)arg1 action:(SEL)arg2;
 + (id)hyperlinkActionRowWithTitle:(id)arg1;
 
+- (id)description;
+- (SEL)action;
+- (void)dealloc;
 - (void)setSelectable:(BOOL)arg1;
 - (void)setCell:(id)arg1;
 - (BOOL)selectable;
@@ -41,6 +44,8 @@
 - (void)setAction:(SEL)arg1;
 - (int)tag;
 - (void)setTag:(int)arg1;
+- (id)configuration;
+- (void)setConfiguration:(id)arg1;
 - (BOOL)showPlusButton;
 - (void)setSimpleConfigurationPreset:(int)arg1;
 - (BOOL)includeInDisplayedRowCount;
@@ -51,10 +56,5 @@
 - (BOOL)showCheckmark;
 - (void)setShowCheckmark:(BOOL)arg1;
 - (id)initWithTag:(int)arg1 action:(SEL)arg2;
-- (id)description;
-- (SEL)action;
-- (void)dealloc;
-- (id)configuration;
-- (void)setConfiguration:(id)arg1;
 
 @end

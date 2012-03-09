@@ -31,10 +31,10 @@
 + (BOOL)canConvertDocumentType:(id)arg1;
 + (BOOL)isSafeURL:(id)arg1;
 
-- (id)initWithURL:(id)arg1 uti:(id)arg2 options:(id)arg3;
-- (void)_register;
-- (id)previewParts;
-- (BOOL)isComputed;
+- (void)cancel;
+- (BOOL)isCancelled;
+- (void)dealloc;
+- (void)appendData:(id)arg1;
 - (id)previewUTI;
 - (id)initWithData:(id)arg1 name:(id)arg2 uti:(id)arg3 options:(id)arg4;
 - (id)previewRequest;
@@ -45,9 +45,9 @@
 - (void)appendDataArray:(id)arg1;
 - (void)finishedAppendingData;
 - (void)finishConverting;
-- (void)appendData:(id)arg1;
-- (void)cancel;
-- (BOOL)isCancelled;
-- (void)dealloc;
+- (id)initWithURL:(id)arg1 uti:(id)arg2 options:(id)arg3;
+- (void)_register;
+- (id)previewParts;
+- (BOOL)isComputed;
 
 @end

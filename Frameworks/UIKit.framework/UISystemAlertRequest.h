@@ -12,8 +12,8 @@
 }
 
 
+- (void)dealloc;
 - (void)alertSheet:(id)arg1 buttonClicked:(int)arg2;
 - (id)initWithAlertID:(int)arg1 sheet:(id)arg2 target:(id)arg3 action:(SEL)arg4;
-- (void)dealloc;
 
 @end

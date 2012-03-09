@@ -10,7 +10,11 @@
 
 + (id)sharedInstance;
 
-- (struct CGSize { float x1; float x2; })screenSize;
+- (unsigned int)retainCount;
+- (oneway void)release;
+- (id)init;
+- (void)dealloc;
+- (BOOL)hasTelephonyCapability;
 - (float)screenScale;
 - (BOOL)isMultitaskingSupported;
 - (int)userInterfaceIdiom;
@@ -26,10 +30,6 @@
 - (void)popBackgroundTask;
 - (void)pushBackgroundTaskWithHandler:(id)arg1;
 - (BOOL)isWifiEnabled;
-- (unsigned int)retainCount;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
-- (BOOL)hasTelephonyCapability;
+- (struct CGSize { float x1; float x2; })screenSize;
 
 @end

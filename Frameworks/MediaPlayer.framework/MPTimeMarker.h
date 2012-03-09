@@ -26,25 +26,25 @@
 @property(readonly) int markerType;
 
 
-- (int)markerType;
+- (id)description;
+- (void)dealloc;
 - (BOOL)hasArtworkAtPlaybackTime;
 - (double)maxTime;
 - (double)comparableTime;
-- (id)initWithMarkerType:(int)arg1;
 - (id)urlTitleTrimmingCharacterSet;
-- (double)duration;
-- (void)setDuration:(double)arg1;
-- (void)setIndex:(unsigned int)arg1;
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
+- (id)initWithMarkerType:(int)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (unsigned int)index;
 - (double)time;
 - (void)setTime:(double)arg1;
 - (id)title;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 - (void)setTitle:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (int)markerType;
+- (void)setIndex:(unsigned int)arg1;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 
 @end

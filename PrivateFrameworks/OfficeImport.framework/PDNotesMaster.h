@@ -11,6 +11,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (id)theme;
 - (id)parentSlideBase;
 - (id)colorMap;
@@ -26,7 +28,5 @@
 - (id)styleMatrix;
 - (id)notesTextStyle;
 - (void)doneWithContent;
-- (id)init;
-- (void)dealloc;
 
 @end

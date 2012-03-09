@@ -15,26 +15,26 @@
 @property(readonly) NSArray * commonMetadata;
 @property(readonly) NSArray * availableMetadataFormats;
 
-+ (id)mediaSelectionOptionWithAssetTrack:(id)arg1 group:(id)arg2 displaysNonForcedSubtitles:(BOOL)arg3;
-+ (id)mediaSelectionOptionWithAssetTrack:(id)arg1 group:(id)arg2;
 + (id)mediaSelectionOptionWithDictionary:(id)arg1 group:(id)arg2;
++ (id)mediaSelectionOptionWithAssetTrack:(id)arg1 group:(id)arg2;
++ (id)mediaSelectionOptionWithAssetTrack:(id)arg1 group:(id)arg2 displaysNonForcedSubtitles:(BOOL)arg3;
 
-- (id)locale;
-- (id)_title;
 - (id)propertyList;
-- (BOOL)_isDesignatedDefault;
-- (id)_ancillaryDescription;
-- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
-- (id)mediaSubTypes;
-- (id)mediaType;
-- (BOOL)hasMediaCharacteristic:(id)arg1;
-- (id)commonMetadata;
-- (id)availableMetadataFormats;
-- (id)metadataForFormat:(id)arg1;
-- (BOOL)isPlayable;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
+- (id)mediaSubTypes;
+- (id)_ancillaryDescription;
+- (BOOL)_isDesignatedDefault;
+- (BOOL)isPlayable;
+- (id)metadataForFormat:(id)arg1;
+- (id)availableMetadataFormats;
+- (id)commonMetadata;
+- (BOOL)hasMediaCharacteristic:(id)arg1;
+- (id)locale;
+- (id)_title;
+- (id)mediaType;
 
 @end

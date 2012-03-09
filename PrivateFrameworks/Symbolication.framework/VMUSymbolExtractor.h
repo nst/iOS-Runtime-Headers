@@ -14,9 +14,9 @@
 + (id)expandSourceInfos:(id)arg1 usingSymbols:(id)arg2;
 + (id)extractSymbolOwnerFromHeader:(id)arg1;
 
-- (id)symbols;
-- (id)sourceInfos;
 - (id)init;
 - (void)dealloc;
+- (id)sourceInfos;
+- (id)symbols;
 
 @end

@@ -13,12 +13,12 @@
 @property(retain) UIViewController * disappearingViewController;
 
 
+- (void)dealloc;
 - (void)setDisappearingViewController:(id)arg1;
 - (id)initWithInterfaceOrientation:(int)arg1;
 - (id)disappearingViewController;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)dealloc;
 
 @end

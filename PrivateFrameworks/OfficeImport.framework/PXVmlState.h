@@ -10,10 +10,10 @@
 }
 
 
+- (void)dealloc;
 - (id)legacyTextGlobals;
 - (void)setLegacyTextGlobals:(id)arg1;
 - (id)legacyPresentationState;
 - (void)setLegacyPresentationState:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -30,6 +30,10 @@
 @property float documentScale;
 
 
+- (void)main;
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
 - (void)setNumberOfResultsToSkip:(unsigned int)arg1;
 - (unsigned int)numberOfResultsToSkip;
 - (id)searchDelegate;
@@ -51,9 +55,5 @@
 - (void)setDocumentScale:(float)arg1;
 - (void)setDocumentToSearch:(id)arg1;
 - (float)documentScale;
-- (void)main;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
 
 @end

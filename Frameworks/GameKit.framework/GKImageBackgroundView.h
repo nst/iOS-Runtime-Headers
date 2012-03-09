@@ -13,12 +13,12 @@
 @property(retain) NSArray * backgroundTiles;
 
 
+- (void)dealloc;
 - (id)backgroundTiles;
 - (id)backgroundImageForCurrentWidth;
 - (void)setBackgroundTiles:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (id)backgroundImage;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

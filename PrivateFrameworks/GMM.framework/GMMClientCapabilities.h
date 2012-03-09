@@ -34,7 +34,11 @@
 @property BOOL embedImages;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasEmbedImages:(BOOL)arg1;
 - (BOOL)hasEmbedImages;
 - (void)setHasHtmlBodyOnly:(BOOL)arg1;
@@ -61,9 +65,5 @@
 - (void)setAvailableImageMemory:(int)arg1;
 - (void)setMaxImageHeight:(int)arg1;
 - (void)setMaxImageWidth:(int)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

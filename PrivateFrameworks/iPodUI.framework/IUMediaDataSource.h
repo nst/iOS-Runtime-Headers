@@ -33,14 +33,15 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
-- (void)invalidate;
+- (void)dealloc;
+- (void)setIsEditing:(BOOL)arg1;
 - (BOOL)isEditing;
 - (void)setBackButtonTitle:(id)arg1;
 - (id)backButtonTitle;
 - (id)title;
+- (void)invalidate;
 - (void)setTitle:(id)arg1;
 - (void)reloadData;
-- (void)setIsEditing:(BOOL)arg1;
 - (BOOL)shouldHideContainerNavigationBar;
 - (void)setIgnoresInvalidation:(BOOL)arg1;
 - (BOOL)ignoresInvalidation;
@@ -65,6 +66,5 @@
 - (id)viewControllerContextForMediaQuery:(id)arg1;
 - (id)modalContext;
 - (void)configureMoreListTableCell:(id)arg1;
-- (void)dealloc;
 
 @end

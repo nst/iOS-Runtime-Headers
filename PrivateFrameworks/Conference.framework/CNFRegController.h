@@ -138,20 +138,9 @@
 
 - (id)accounts;
 - (id)activeAccounts;
-- (void)setServiceType:(int)arg1;
-- (int)serviceType;
-- (void)clearAllCaches;
-- (void)connect;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)openURL:(id)arg1;
-- (id)services;
-- (id)accountsWithFilter:(int)arg1;
-- (id)displayAccount;
-- (void)setAlertHandler:(id)arg1;
-- (id)alertHandler;
-- (BOOL)isConnected;
 - (id)init;
 - (void)dealloc;
+- (BOOL)isConnected;
 - (id)failedAccounts;
 - (id)_predicatesWithFilter:(int)arg1;
 - (id)_accountsPassingTests:(id)arg1 message:(id)arg2;
@@ -285,6 +274,7 @@
 - (id)createAccountWithLogin:(id)arg1 authID:(id)arg2 authToken:(id)arg3;
 - (id)createAccountWithLogin:(id)arg1 password:(id)arg2;
 - (unsigned int)accountState;
+- (BOOL)shouldShowAlertForError:(id)arg1;
 - (void)startRequiringWifi;
 - (void)stopRequiringWifi;
 - (BOOL)removeAlias:(id)arg1;
@@ -296,5 +286,16 @@
 - (void)setAliasStatusChangedBlock:(id)arg1;
 - (id)aliases;
 - (void)connect:(BOOL)arg1;
+- (id)services;
+- (id)accountsWithFilter:(int)arg1;
+- (id)displayAccount;
+- (void)setAlertHandler:(id)arg1;
+- (id)alertHandler;
+- (void)connect;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)openURL:(id)arg1;
+- (void)clearAllCaches;
+- (void)setServiceType:(int)arg1;
+- (int)serviceType;
 
 @end

@@ -18,12 +18,8 @@
 
 
 - (id)messageBody;
-- (void)setPassword:(id)arg1;
-- (void)setUsername:(id)arg1;
-- (id)username;
-- (id)responseAuthorizationToken;
-- (id)responseProfileID;
-- (id)password;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setResponseAuthorizationToken:(id)arg1;
 - (void)setResponseProfileID:(id)arg1;
 - (void)handleResponseDictionary:(id)arg1;
@@ -32,8 +28,12 @@
 - (BOOL)hasRequiredKeys:(id*)arg1;
 - (BOOL)payloadCanBeLogged;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)setPassword:(id)arg1;
+- (void)setUsername:(id)arg1;
+- (id)username;
 - (id)bagKey;
+- (id)password;
+- (id)responseAuthorizationToken;
+- (id)responseProfileID;
 
 @end

@@ -9,7 +9,7 @@
 @interface PBRuntimeWrapper : NSObject  {
     void **argList;
     unsigned int *argSizeList;
-    unsigned int argIndex;
+    unsigned long argIndex;
     struct __CFArray { } *extraArgsList;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -22,36 +22,36 @@
     } imageDims;
 }
 
-@property struct CGSize { float width; float height; } imageDims;
+@property void** argList;
+@property unsigned int* argSizeList;
+@property unsigned long argIndex;
 @property struct __CFArray { }* extraArgsList;
 @property id* cleanupHandler;
-@property unsigned int argIndex;
-@property unsigned int* argSizeList;
-@property void** argList;
+@property struct CGSize { float x1; float x2; } imageDims;
 
 
-- (struct __IOSurface { }*)createIOSurfaceForWidth:(unsigned long)arg1 height:(unsigned long)arg2 pixelFormat:(unsigned int)arg3 workOnRawData:(id)arg4;
-- (void)setKernelCleanupHandler:(id*)arg1;
-- (void)setImageDims:(struct CGSize { float x1; float x2; })arg1;
-- (id*)cleanupHandler;
-- (unsigned long)argIndex;
-- (void)setArgIndex:(unsigned long)arg1;
-- (unsigned int*)argSizeList;
-- (void)setArgSizeList:(unsigned int*)arg1;
-- (void**)argList;
-- (void)setArgList:(void**)arg1;
-- (void)setCleanupHandler:(id*)arg1;
-- (void)setExtraArgsList:(struct __CFArray { }*)arg1;
-- (struct __CFArray { }*)extraArgsList;
-- (void)_applyFilter:(id)arg1 onInputSurface:(struct __IOSurface { }*)arg2 mirrored:(BOOL)arg3 withResultHandler:(id)arg4;
-- (void)_setKernelArg:(void*)arg1 withSize:(unsigned long)arg2;
-- (void)_setKernelArgAsBuffer:(void*)arg1 withSize:(unsigned long)arg2;
-- (void)_setKernelCleanupHandler:(id*)arg1;
-- (void)applyFilter:(id)arg1 onInputSurface:(struct __IOSurface { }*)arg2 mirrored:(BOOL)arg3 withResultHandler:(id)arg4;
-- (struct CGSize { float x1; float x2; })imageDims;
-- (void)setKernelArg:(void*)arg1 withSize:(unsigned long)arg2;
-- (void)setKernelArgAsBuffer:(void*)arg1 withSize:(unsigned long)arg2;
 - (id)init;
 - (void)dealloc;
+- (struct __IOSurface { }*)createIOSurfaceForWidth:(unsigned long)arg1 height:(unsigned long)arg2 pixelFormat:(unsigned int)arg3 workOnRawData:(id)arg4;
+- (void)setImageDims:(struct CGSize { float x1; float x2; })arg1;
+- (id*)cleanupHandler;
+- (void)setArgIndex:(unsigned long)arg1;
+- (unsigned long)argIndex;
+- (void)setArgSizeList:(unsigned int*)arg1;
+- (unsigned int*)argSizeList;
+- (void)setArgList:(void**)arg1;
+- (void**)argList;
+- (void)setKernelCleanupHandler:(id*)arg1;
+- (void)_setKernelCleanupHandler:(id*)arg1;
+- (void)_setKernelArgAsBuffer:(void*)arg1 withSize:(unsigned long)arg2;
+- (void)_setKernelArg:(void*)arg1 withSize:(unsigned long)arg2;
+- (void)_applyFilter:(id)arg1 onInputSurface:(struct __IOSurface { }*)arg2 mirrored:(BOOL)arg3 withResultHandler:(id)arg4;
+- (struct __CFArray { }*)extraArgsList;
+- (void)setExtraArgsList:(struct __CFArray { }*)arg1;
+- (void)setCleanupHandler:(id*)arg1;
+- (void)applyFilter:(id)arg1 onInputSurface:(struct __IOSurface { }*)arg2 mirrored:(BOOL)arg3 withResultHandler:(id)arg4;
+- (struct CGSize { float x1; float x2; })imageDims;
+- (void)setKernelArgAsBuffer:(void*)arg1 withSize:(unsigned long)arg2;
+- (void)setKernelArg:(void*)arg1 withSize:(unsigned long)arg2;
 
 @end

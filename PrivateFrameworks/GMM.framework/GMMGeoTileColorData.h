@@ -10,8 +10,8 @@
 
 + (id)createWithData:(id)arg1;
 
+- (void)dealloc;
 - (id)initWithColor:(struct CGColor { }*)arg1;
 - (struct CGColor { }*)color;
-- (void)dealloc;
 
 @end

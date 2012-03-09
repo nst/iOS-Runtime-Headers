@@ -2,32 +2,25 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface AVExternalAudio : NSObject  {
-
-  /* Error parsing encoded ivar type info: ^{AVExternalAudioPrivate=c^{OpaqueFigPlayer}@"AVExternalAudioDelegate"c} */
-    struct AVExternalAudioPrivate { BOOL x1; struct OpaqueFigPlayer {} *x2; id x3; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x4; void*x5; oneway void*x6; void*x7; void*x8; void*x9; const in void*x10; long x11; void*x12; void*x13; double x14; int x15; out void*x16; void*x17; long x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; BOOL x25; } *_priv;
-
+    struct AVExternalAudioPrivate { BOOL x1; struct OpaqueFigPlayer {} *x2; id x3; BOOL x4; } *_priv;
 }
 
 + (id)avExternalAudio:(id)arg1;
 
-- (float)volume;
-- (BOOL)isActive;
-- (id)attributeForKey:(id)arg1;
 - (void)dealloc;
-- (void)fmpServerConnectionDied;
-- (void)fmpUserVolumeDidChange;
-- (void)fmpChangeConnectionActive:(BOOL)arg1;
 - (id)initWithDelegate:(id)arg1;
-- (void)postServerConnectionDiedNotification:(id)arg1;
-- (void)postUserVolumeChangedNotification:(id)arg1;
-- (BOOL)activate:(id*)arg1;
-- (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
-- (BOOL)okToNotifyFromThisThread;
 - (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (id)attributeForKey:(id)arg1;
+- (void)fmpChangeConnectionActive:(BOOL)arg1;
+- (void)fmpUserVolumeDidChange;
+- (void)fmpServerConnectionDied;
+- (void)postUserVolumeChangedNotification:(id)arg1;
+- (void)postServerConnectionDiedNotification:(id)arg1;
+- (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
+- (BOOL)activate:(id*)arg1;
+- (BOOL)okToNotifyFromThisThread;
+- (BOOL)isActive;
+- (float)volume;
 
 @end

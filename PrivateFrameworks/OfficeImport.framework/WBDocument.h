@@ -20,7 +20,7 @@
 + (id)imageBulletParagraph:(id)arg1;
 + (id)readFrom:(id)arg1;
 
-- (id)applicationName;
 - (id)init;
+- (id)applicationName;
 
 @end

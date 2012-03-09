@@ -45,25 +45,6 @@
 + (id)defaultValueForKey:(id)arg1;
 + (id)spring;
 
-- (id)valueForKey:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
-- (id)function;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)valueForKeyPath:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (id)name;
-- (BOOL)isEnabled;
-- (void)setValue:(id)arg1 forKeyPath:(id)arg2;
-- (id)delegate;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setAttachmentPointA:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setLayerA:(id)arg1;
-- (void)setAttachmentPointB:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setLayerB:(id)arg1;
-- (void)setDamping:(float)arg1;
-- (void)setStiffness:(float)arg1;
 - (void)setName:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
@@ -77,6 +58,25 @@
 - (float)restLength;
 - (void)setRestLength:(float)arg1;
 - (void)setFunction:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)valueForKeyPath:(id)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (id)name;
+- (BOOL)isEnabled;
+- (void)setValue:(id)arg1 forKeyPath:(id)arg2;
+- (id)valueForKey:(id)arg1;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (id)function;
+- (void)setAttachmentPointA:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setLayerA:(id)arg1;
+- (void)setAttachmentPointB:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setLayerB:(id)arg1;
+- (void)setDamping:(float)arg1;
+- (void)setStiffness:(float)arg1;
 
 @end

@@ -15,20 +15,22 @@
 
 + (void)initialize;
 
+- (id)description;
+- (void)dealloc;
 - (void)setEvents:(id)arg1;
+- (id)events;
 - (Class)responseClass;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
 - (id)eventAtIndex:(unsigned int)arg1;
+- (void)clearEvents;
 - (BOOL)hasMetaData;
 - (void)addEvent:(id)arg1;
 - (void)setMetaData:(id)arg1;
+- (void)copyTo:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (unsigned int)eventsCount;
 - (id)metaData;
-- (id)dictionaryRepresentation;
-- (id)events;
-- (id)description;
-- (void)dealloc;
 
 @end

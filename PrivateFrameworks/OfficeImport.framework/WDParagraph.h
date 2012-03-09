@@ -10,6 +10,10 @@
 }
 
 
+- (void)dealloc;
+- (id)properties;
+- (id)initWithText:(id)arg1;
+- (BOOL)isEmpty;
 - (BOOL)isContinuationOf:(id)arg1;
 - (BOOL)isTextFrame;
 - (id)initWithText:(id)arg1 string:(id)arg2;
@@ -37,9 +41,5 @@
 - (void)addRun:(id)arg1;
 - (id)addBookmark:(id)arg1 type:(int)arg2;
 - (id)runs;
-- (id)properties;
-- (id)initWithText:(id)arg1;
-- (BOOL)isEmpty;
-- (void)dealloc;
 
 @end

@@ -12,13 +12,13 @@
 
 + (id)pathExtensionForBlipType:(int)arg1;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 - (void)setAltSubBlip:(id)arg1;
 - (unsigned int*)referenceCount;
 - (id)mainSubBlip;
 - (id)altSubBlip;
 - (void)setMainSubBlip:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 
 @end

@@ -21,6 +21,8 @@
 
 - (void)setAccount:(struct AOSAccount { }*)arg1;
 - (struct AOSAccount { }*)account;
+- (id)init;
+- (void)dealloc;
 - (BOOL)scheduleCallback;
 - (void)setTransaction:(struct AOSTransaction { }*)arg1;
 - (struct AOSTransaction { }*)transaction;
@@ -28,7 +30,5 @@
 - (void)_performCallback;
 - (id)info;
 - (void)setInfo:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

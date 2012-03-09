@@ -16,13 +16,13 @@
 
 + (id)codedPropertyKeys;
 
+- (id)description;
+- (void)dealloc;
 - (id)lastReportedDate;
 - (void)setLastReportedDate:(id)arg1;
 - (void)setPercentComplete:(double)arg1;
 - (double)percentComplete;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

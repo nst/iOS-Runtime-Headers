@@ -14,15 +14,15 @@
 @property(retain) NSData * image;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (long long)iconId;
-- (BOOL)hasImage;
-- (void)setIconId:(long long)arg1;
-- (void)writeTo:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)dictionaryRepresentation;
 - (id)image;
 - (void)setImage:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (long long)iconId;
+- (BOOL)hasImage;
+- (void)setIconId:(long long)arg1;
 
 @end

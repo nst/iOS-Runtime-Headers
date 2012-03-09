@@ -12,10 +12,13 @@
     NSMutableDictionary *_rentalDataByPID;
 }
 
-+ (id)existingInstance;
 + (id)sharedInstance;
++ (id)existingInstance;
 
+- (id)init;
+- (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)_enqueueOperation:(id)arg1;
 - (void)_resetLocalNotifications;
 - (void)resetRentalDataForMediaItem:(id)arg1 reason:(unsigned int)arg2;
 - (void)resetAllDataForReason:(unsigned int)arg1;
@@ -31,8 +34,5 @@
 - (void)_libraryDidChangeNotification:(id)arg1;
 - (void)_connectToActiveRequests;
 - (id)rentalDataForMediaItem:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)_enqueueOperation:(id)arg1;
 
 @end

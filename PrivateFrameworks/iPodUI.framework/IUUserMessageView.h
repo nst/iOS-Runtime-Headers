@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIImageView, IUUserMessageDataSource, UIActivityIndicatorView, UILabel, MPButton;
+@class UIProgressView, UIImageView, NSTimer, IUUserMessageDataSource, UILabel, MPButton;
 
 @interface IUUserMessageView : UIView  {
-    UIActivityIndicatorView *_cloudActivityIndicator;
     UIImageView *_cloudImageView;
+    NSTimer *_cloudProgressTimer;
+    UIProgressView *_cloudProgressView;
     IUUserMessageDataSource *_dataSource;
     MPButton *_findContentButton;
     UIImageView *_imageView;
@@ -17,18 +18,20 @@
 @property(retain) IUUserMessageDataSource * dataSource;
 
 
+- (void)dealloc;
+- (void)didMoveToSuperview;
 - (id)dataSource;
 - (void)layoutSubviews;
 - (void)setDataSource:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_reloadView;
 - (id)_newFindContentButton;
 - (id)_newTitleLabel;
 - (void)_sizeLabelToFit:(id)arg1;
 - (id)_newSubtitleLabel;
 - (void)_findContentButton:(id)arg1;
 - (id)_newLabel;
+- (void)_updateProgressTimer:(id)arg1;
 - (void)_isCloudUpdateInProgressDidChangeNotification:(id)arg1;
-- (void)dealloc;
-- (void)_reloadView;
 
 @end

@@ -13,6 +13,9 @@
 
 + (id)reminderWithEventStore:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
+- (BOOL)isCompleted;
 - (void)clearParentUUID;
 - (void)setCompleted:(BOOL)arg1;
 - (int)compareDueDateWithReminder:(id)arg1;
@@ -30,8 +33,5 @@
 - (BOOL)validate:(id*)arg1;
 - (BOOL)commit:(id*)arg1;
 - (id)initWithPersistentObject:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (BOOL)isCompleted;
 
 @end

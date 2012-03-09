@@ -23,6 +23,17 @@
 @property BOOL shouldCancelAfterTaskExpiration;
 
 
+- (void)sendDidFinish;
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
+- (int)requestState;
+- (BOOL)start;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)disconnect;
+- (void)_failWithError:(id)arg1;
+- (void)_daemonExited:(id)arg1;
 - (void)setShouldCancelAfterTaskExpiration:(BOOL)arg1;
 - (id)requestGroupIdentifier;
 - (id)requestGroup;
@@ -50,19 +61,8 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (BOOL)start;
-- (void)setDelegate:(id)arg1;
-- (void)sendDidFinish;
-- (void)_failWithError:(id)arg1;
-- (void)disconnect;
-- (int)requestState;
-- (id)delegate;
 - (id)requestIdentifier;
 - (void)setRequestIdentifier:(id)arg1;
 - (void)setRequestGroupIdentifier:(id)arg1;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
-- (void)_daemonExited:(id)arg1;
 
 @end

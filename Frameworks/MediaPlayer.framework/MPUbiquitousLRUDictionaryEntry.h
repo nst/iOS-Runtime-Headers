@@ -15,16 +15,16 @@
 @property(readonly) double timestamp;
 
 
-- (id)initWithKey:(id)arg1 value:(id)arg2 timestamp:(double)arg3;
 - (id)initWithKey:(id)arg1 value:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
+- (id)initWithKey:(id)arg1 value:(id)arg2 timestamp:(double)arg3;
 - (id)key;
 - (id)value;
 - (double)timestamp;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 
 @end

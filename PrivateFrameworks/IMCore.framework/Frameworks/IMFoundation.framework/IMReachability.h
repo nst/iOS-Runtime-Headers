@@ -20,15 +20,15 @@
 @property(retain) NSString * reachabilityDescription;
 @property BOOL gettingFlags;
 
++ (id)reachabilityWithLocalAddress:(id)arg1 remoteAddress:(id)arg2;
++ (id)reachabilityWithRemoteAddress:(id)arg1;
 + (id)reachabilityForLocalWiFi;
 + (id)reachabilityForInternetConnection;
 + (id)reachabilityWithHostName:(id)arg1;
-+ (id)reachabilityWithLocalAddress:(id)arg1 remoteAddress:(id)arg2;
-+ (id)reachabilityWithRemoteAddress:(id)arg1;
 
 - (void)setFlags:(unsigned int)arg1;
-- (BOOL)connectionRequired;
-- (void)setDelegate:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setReachabilityRef:(void*)arg1;
 - (void*)reachabilityRef;
 - (void)setReachabilityDescription:(id)arg1;
@@ -40,10 +40,10 @@
 - (void)_handleCallbackForSCNetworkReachability:(struct __SCNetworkReachability { }*)arg1;
 - (id)initWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2 delegate:(id)arg3;
 - (id)initWithRemoteHost:(id)arg1 delegate:(id)arg2;
+- (BOOL)connectionRequired;
+- (unsigned int)status;
 - (unsigned int)flags;
 - (id)delegate;
-- (unsigned int)status;
-- (id)description;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

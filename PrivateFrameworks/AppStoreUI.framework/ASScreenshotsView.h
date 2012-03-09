@@ -18,7 +18,8 @@
 
 + (struct CGSize { float x1; float x2; })imageSize;
 
-- (id)imageAtIndex:(int)arg1;
+- (id)init;
+- (void)dealloc;
 - (int)currentIndex;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -32,7 +33,6 @@
 - (int)numberOfScreenshots;
 - (void)setImage:(id)arg1 forIndex:(int)arg2;
 - (id)initWithScreenshotCount:(int)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)imageAtIndex:(int)arg1;
 
 @end

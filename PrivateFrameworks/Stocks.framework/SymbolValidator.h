@@ -13,14 +13,14 @@
 @property id delegate;
 
 
-- (void)didParseData;
-- (void)failWithError:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (int)parseData:(id)arg1;
-- (id)delegate;
-- (void)setUsesGTServer:(BOOL)arg1;
-- (void)validateSymbol:(id)arg1 withMaxResults:(int)arg2;
 - (void)cancel;
 - (id)initWithDelegate:(id)arg1;
+- (void)setUsesGTServer:(BOOL)arg1;
+- (void)validateSymbol:(id)arg1 withMaxResults:(int)arg2;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
 
 @end

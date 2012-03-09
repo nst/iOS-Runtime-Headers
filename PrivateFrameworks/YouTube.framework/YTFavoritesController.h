@@ -19,6 +19,7 @@
 
 + (id)sharedFavoritesController;
 
+- (void)dealloc;
 - (void)setUsingAccountFavorites:(BOOL)arg1;
 - (BOOL)shouldOfferMergeOfLocalBookmarks;
 - (void)mergeLocalBookmarksToAccountFavoritesWithDelegate:(id)arg1;
@@ -41,6 +42,5 @@
 - (void)setBatchURL:(id)arg1;
 - (BOOL)usingAccountFavorites;
 - (id)bookmarkedShortIDs;
-- (void)dealloc;
 
 @end

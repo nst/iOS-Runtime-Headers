@@ -25,13 +25,13 @@
 - (id)folderName;
 - (id)parentFolderID;
 - (id)mailboxID;
-- (void)setHasRemoteChanges:(BOOL)arg1;
-- (BOOL)hasRemoteChanges;
-- (id)parentMailboxID;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (void)dealloc;
+- (void)setHasRemoteChanges:(BOOL)arg1;
+- (BOOL)hasRemoteChanges;
+- (id)parentMailboxID;
 - (BOOL)isDefault;
 - (void)setIsDefault:(BOOL)arg1;
 - (void)setParentFolderID:(id)arg1;

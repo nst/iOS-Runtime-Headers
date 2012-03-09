@@ -19,20 +19,21 @@
 @property(retain) NSString * section;
 
 
+- (id)description;
+- (void)dealloc;
+- (int)sizeAtIndex:(unsigned int)arg1;
+- (id)dictionaryRepresentation;
+- (id)section;
 - (BOOL)readFrom:(id)arg1;
 - (void)setSizes:(int*)arg1 count:(unsigned int)arg2;
 - (void)addSize:(int)arg1;
 - (void)clearSizes;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)_uniqueIdentifier;
 - (BOOL)hasSection;
 - (unsigned int)sizesCount;
 - (int*)sizes;
-- (id)dictionaryRepresentation;
-- (id)section;
-- (int)sizeAtIndex:(unsigned int)arg1;
-- (id)description;
-- (void)dealloc;
 - (void)setSection:(id)arg1;
 
 @end

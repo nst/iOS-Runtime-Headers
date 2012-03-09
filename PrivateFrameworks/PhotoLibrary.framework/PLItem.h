@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSURL, NSString, NSData;
+@class PLManagedAsset, NSString, NSData, NSURL;
 
 @interface PLItem : NSObject  {
     NSString *_title;
@@ -14,21 +14,24 @@
 @property(readonly) BOOL allowsRotation;
 @property(readonly) NSData * imageData;
 @property(readonly) int itemType;
+@property(readonly) PLManagedAsset * asset;
 
 + (id)itemsWithURLsAndData:(id)arg1;
 + (id)writeTemporaryFileWithItemData:(id)arg1 pathExtension:(id)arg2 type:(id*)arg3;
 + (id)typeFromPathExtension:(id)arg1 typeHint:(id)arg2;
 + (struct __CFString { }*)baseType;
 
-- (id)imageData;
-- (id)initWithData:(id)arg1 type:(id)arg2;
+- (void)dealloc;
 - (id)videoView;
+- (id)asset;
 - (id)initWithURL:(id)arg1;
 - (id)URL;
 - (id)title;
 - (id)initWithData:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (id)asset;
+- (id)imageData;
+- (id)initWithData:(id)arg1 type:(id)arg2;
+- (int)itemType;
 - (id)initVideoWithURL:(id)arg1;
 - (id)initImageWithData:(id)arg1;
 - (id)initWithData:(id)arg1 pathExtension:(id)arg2;
@@ -37,7 +40,5 @@
 - (id)initWithURL:(id)arg1 typeHint:(id)arg2;
 - (id)imageWithFormat:(int)arg1;
 - (BOOL)allowsRotation;
-- (void)dealloc;
-- (int)itemType;
 
 @end

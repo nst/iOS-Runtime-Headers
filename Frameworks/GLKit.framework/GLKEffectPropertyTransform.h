@@ -121,6 +121,10 @@
 
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (void)bind;
 - (void)setInvModelviewMatrixLoc:(int)arg1;
 - (int)invModelviewMatrixLoc;
 - (void)setNormalMatrixLoc:(int)arg1;
@@ -144,9 +148,5 @@
 - (union _GLKMatrix3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; })normalMatrix;
 - (void)setShaderBindings;
 - (void)dirtyAllUniforms;
-- (void)bind;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

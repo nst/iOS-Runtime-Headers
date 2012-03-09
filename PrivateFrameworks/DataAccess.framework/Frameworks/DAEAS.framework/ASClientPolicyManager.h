@@ -10,8 +10,8 @@
 
 
 - (id)initWithAccount:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (void)requestPolicyUpdate;
 - (void)policyKeyChanged:(id)arg1;
 

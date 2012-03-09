@@ -17,6 +17,8 @@
     NSMutableDictionary *_hrefToETag;
     NSMutableDictionary *_uuidToErrorItems;
     NSMutableDictionary *_hrefToErrorItems;
+    NSMutableDictionary *_uuidToStatus;
+    NSMutableDictionary *_hrefToStatus;
 }
 
 @property unsigned int multiPutBatchMaxNumResources;
@@ -27,16 +29,22 @@
 @property(retain) NSString * nextCTag;
 @property(readonly) NSDictionary * uuidToHREF;
 @property(readonly) NSDictionary * hrefToETag;
+@property(readonly) NSDictionary * uuidToStatus;
+@property(readonly) NSDictionary * hrefToStatus;
 @property(readonly) NSDictionary * uuidToErrorItems;
 @property(readonly) NSDictionary * hrefToErrorItems;
 
 
+- (id)description;
+- (void)dealloc;
 - (BOOL)validCTag;
 - (void)setMultiPutBatchMaxSize:(unsigned int)arg1;
 - (unsigned int)multiPutBatchMaxSize;
 - (void)setMultiPutBatchMaxNumResources:(unsigned int)arg1;
 - (unsigned int)multiPutBatchMaxNumResources;
 - (id)initWithFolderURL:(id)arg1 checkCTag:(id)arg2 uuidsToAddActions:(id)arg3 hrefsToModDeleteActions:(id)arg4 context:(void*)arg5 accountInfoProvider:(id)arg6 taskManager:(id)arg7;
+- (id)hrefToStatus;
+- (id)uuidToStatus;
 - (id)hrefToErrorItems;
 - (id)uuidToErrorItems;
 - (id)hrefToETag;
@@ -51,7 +59,5 @@
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void*)context;
-- (id)description;
-- (void)dealloc;
 
 @end

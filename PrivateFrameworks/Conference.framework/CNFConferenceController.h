@@ -19,10 +19,8 @@
 @property(readonly) int type;
 @property(retain,readonly) IMAVChat * avChat;
 
-+ (BOOL)disconnect;
-+ (BOOL)connect;
-+ (BOOL)isConnected;
 + (id)sharedInstance;
++ (BOOL)isConnected;
 + (int)conferenceControllerType;
 + (BOOL)conferencingRegistrationIsSupported;
 + (BOOL)conferencingIsEnabled;
@@ -31,20 +29,11 @@
 + (struct __CFPhoneNumber { }*)phoneNumberRefCopyForDestinationId:(id)arg1 useNetworkCountryCode:(BOOL)arg2;
 + (BOOL)conferencingIsSupported;
 + (BOOL)conferencingIsRestricted;
++ (BOOL)connect;
++ (BOOL)disconnect;
 
-- (int)cameraType;
-- (id)_initWithType:(int)arg1;
-- (int)type;
-- (id)faceTimeURLForDestinationID:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)avChatStateChangedFrom:(unsigned int)arg1 to:(unsigned int)arg2 reason:(unsigned int)arg3;
-- (void)conference:(id)arg1 receivedCancelledInvitationFromIMHandle:(id)arg2;
-- (void)conference:(id)arg1 handleMissedInvitationFromIMHandle:(id)arg2;
-- (void)conference:(id)arg1 receivedInvitationFromIMHandle:(id)arg2;
-- (void)inviteFailedFromIMHandle:(id)arg1 reason:(int)arg2;
-- (void)invitedToIMAVChat:(id)arg1;
-- (id)avChat;
 - (BOOL)accountsAreLoggedIn;
 - (void)setNeedsPushReliability:(BOOL)arg1;
 - (BOOL)isFullConferenceCapable;
@@ -102,5 +91,16 @@
 - (BOOL)faceTimeInvitationExists;
 - (id)currentCallRemoteUserId;
 - (BOOL)_chat:(id)arg1 isCrossInvitationWithChat:(id)arg2;
+- (id)faceTimeURLForDestinationID:(id)arg1;
+- (int)type;
+- (int)cameraType;
+- (id)_initWithType:(int)arg1;
+- (void)avChatStateChangedFrom:(unsigned int)arg1 to:(unsigned int)arg2 reason:(unsigned int)arg3;
+- (void)conference:(id)arg1 receivedCancelledInvitationFromIMHandle:(id)arg2;
+- (void)conference:(id)arg1 handleMissedInvitationFromIMHandle:(id)arg2;
+- (void)conference:(id)arg1 receivedInvitationFromIMHandle:(id)arg2;
+- (void)inviteFailedFromIMHandle:(id)arg1 reason:(int)arg2;
+- (void)invitedToIMAVChat:(id)arg1;
+- (id)avChat;
 
 @end

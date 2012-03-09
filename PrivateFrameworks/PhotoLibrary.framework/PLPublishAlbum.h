@@ -11,9 +11,9 @@
 @property(retain) NSString * title;
 
 
+- (void)dealloc;
 - (int)compare:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (void)dealloc;
 
 @end

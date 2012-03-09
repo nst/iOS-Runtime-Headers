@@ -10,9 +10,8 @@
 }
 
 
+- (void)dealloc;
 - (void)applicationWillEnterForeground;
-- (void)updateQueueRequest:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
@@ -23,7 +22,6 @@
 - (void)_cancelBackgroundRequest;
 - (void)_startBackgroundRequest;
 - (BOOL)_includesSoftwareUpdates;
-- (void)dealloc;
 - (void)enqueueFetchOperation;
 - (void)enqueueFetchOperationForPageSection:(id)arg1;
 - (BOOL)shouldDisplaySectionsInNavigationBar:(id)arg1;
@@ -32,5 +30,7 @@
 - (void)operationFinished:(id)arg1;
 - (BOOL)shouldExcludeFromNavigationHistory;
 - (id)initWithSection:(id)arg1;
+- (void)updateQueueRequest:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

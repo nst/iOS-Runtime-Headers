@@ -17,9 +17,9 @@
 - (unsigned long long)offsetInFile;
 - (id)readDataToEndOfFile;
 - (id)availableData;
-- (void)seekToFileOffset:(unsigned long long)arg1;
+- (id)readDataOfLength:(unsigned int)arg1;
 - (void)writeData:(id)arg1;
 - (void)closeFile;
-- (id)readDataOfLength:(unsigned int)arg1;
+- (void)seekToFileOffset:(unsigned long long)arg1;
 
 @end

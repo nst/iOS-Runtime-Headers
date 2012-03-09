@@ -13,13 +13,13 @@
 @property float value;
 
 
+- (void)dealloc;
 - (id)initWithStyle:(int)arg1;
 - (float)value;
 - (void)setValue:(float)arg1;
 - (int)style;
 - (void)sizeToFit;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (id)_newSliderForTable;
 - (id)_newSliderForGrid;
 - (id)_newSliderWithEmptyImage:(id)arg1 fullImage:(id)arg2;

@@ -12,7 +12,7 @@
 }
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)backAlertClickedButtonAtIndex:(int)arg1;
 - (void)frontAlertClickedButtonAtIndex:(int)arg1;
 - (void)flip;
@@ -25,6 +25,6 @@
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (void)show;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

@@ -32,7 +32,11 @@
 
 
 - (void)setUid:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setStatus:(id)arg1;
+- (id)status;
 - (id)copyParseRules;
 - (void)setImageError:(id)arg1;
 - (void)setInvalidImageType:(id)arg1;
@@ -51,10 +55,6 @@
 - (void)setMaxResourceSize:(id)arg1;
 - (id)maxResourceSize;
 - (id)uid;
-- (id)status;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (id)maxImageSize;
 - (void)setMaxImageSize:(id)arg1;
 

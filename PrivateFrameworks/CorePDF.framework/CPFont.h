@@ -44,7 +44,7 @@
 }
 
 
-- (void)finalize;
+- (void)dealloc;
 - (id)initWith:(struct CGPDFDictionary { }*)arg1;
 - (BOOL)isSameFontAs:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fontBBox;
@@ -67,15 +67,15 @@
 - (struct CGFont { }*)cgFont;
 - (void)uniCharsFor:(unsigned long)arg1 count:(unsigned int*)arg2 toArray:(unsigned short*)arg3 maxChars:(unsigned int)arg4;
 - (struct CGPDFFont { }*)cgPDFFont;
-- (void)dispose;
-- (float)fontStretch;
-- (float)maxWidth;
+- (void)finalize;
 - (float)xHeight;
 - (unsigned int)flags;
 - (float)fontWeight;
 - (id)fontName;
 - (float)leading;
 - (float)capHeight;
-- (void)dealloc;
+- (float)fontStretch;
+- (float)maxWidth;
+- (void)dispose;
 
 @end

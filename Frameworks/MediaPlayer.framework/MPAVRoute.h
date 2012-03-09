@@ -32,6 +32,9 @@
 + (id)availableRoutesForType:(unsigned int)arg1;
 
 - (BOOL)requiresPassword;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 - (int)displayRouteType;
 - (BOOL)displayIsPicked;
 - (void)setDisplayRouteType:(int)arg1;
@@ -43,8 +46,5 @@
 - (int)routeType;
 - (BOOL)isPicked;
 - (id)name;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 
 @end

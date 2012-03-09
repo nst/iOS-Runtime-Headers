@@ -30,7 +30,8 @@
 
 
 - (void)addItem:(id)arg1;
-- (void)finalize;
+- (id)init;
+- (void)dealloc;
 - (BOOL)containsParagraph:(id)arg1;
 - (BOOL)isMultilevel;
 - (void)setParentItem:(id)arg1;
@@ -41,12 +42,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })spacer;
 - (void)setSpacer:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)parentItem;
-- (void)dispose;
+- (unsigned int)itemCount;
+- (id)itemAtIndex:(unsigned int)arg1;
+- (void)finalize;
 - (int)type;
 - (void)setType:(int)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)itemAtIndex:(unsigned int)arg1;
-- (unsigned int)itemCount;
+- (void)dispose;
 
 @end

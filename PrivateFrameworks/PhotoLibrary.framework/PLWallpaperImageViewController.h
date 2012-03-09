@@ -20,9 +20,8 @@
 + (void)setWallpaperFromArgs:(id)arg1;
 + (id)argsForSavingWallpaperFromTile:(id)arg1 mode:(int)arg2;
 
-- (void)setWallpaperTitle:(id)arg1;
-- (void)setSaveWallpaperData:(BOOL)arg1;
-- (id)initWithUIImage:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
@@ -31,7 +30,10 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)navigationItem;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)setWallpaperTitle:(id)arg1;
+- (void)setSaveWallpaperData:(BOOL)arg1;
 - (void)_adjustScrollViewGeometry;
+- (id)initWithUIImage:(id)arg1;
 - (void)_savePhoto;
 - (BOOL)saveWallpaperData;
 - (void)_cropWallpaperFinished:(id)arg1;
@@ -52,7 +54,5 @@
 - (void)_setImageAsHomeScreenClicked:(id)arg1;
 - (void)_setImageAsLockScreenClicked:(id)arg1;
 - (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -6,12 +6,6 @@
     Class isa;
 }
 
-+ (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-+ (void)initialize;
-+ (BOOL)isSubclassOfClass:(Class)arg1;
-+ (id)_copyDescription;
-+ (BOOL)isFault;
-+ (BOOL)isAncestorOfObject:(id)arg1;
 + (Class)superclass;
 + (Class)class;
 + (id)self;
@@ -25,23 +19,18 @@
 + (id)retain;
 + (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 + (id)alloc;
++ (oneway void)release;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
 + (id)autorelease;
-+ (oneway void)release;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)_copyDescription;
++ (BOOL)isFault;
++ (BOOL)isAncestorOfObject:(id)arg1;
++ (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
++ (BOOL)isSubclassOfClass:(Class)arg1;
 
-- (void)finalize;
 - (long long)forward:(SEL)arg1 :(void*)arg2;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
-- (id)_copyDescription;
-- (BOOL)isFault;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (void)doesNotRecognizeSelector:(SEL)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (Class)superclass;
@@ -60,8 +49,19 @@
 - (id)debugDescription;
 - (id)retain;
 - (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
-- (id)autorelease;
 - (oneway void)release;
+- (id)autorelease;
 - (void)dealloc;
+- (id)_copyDescription;
+- (BOOL)isFault;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (void)doesNotRecognizeSelector:(SEL)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (void)finalize;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
 
 @end

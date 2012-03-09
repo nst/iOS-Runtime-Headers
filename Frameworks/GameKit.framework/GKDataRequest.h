@@ -37,9 +37,14 @@
 + (void)_resetRequestPort;
 + (struct dispatch_queue_s { }*)responseQueue;
 + (unsigned int)bootstrapPort;
-+ (BOOL)useTestProtocol;
 + (id)requestQueue;
++ (BOOL)useTestProtocol;
 
+- (id)description;
+- (void)cancel;
+- (BOOL)isCancelled;
+- (id)init;
+- (void)dealloc;
 - (id)completionBlock;
 - (BOOL)isFinished;
 - (BOOL)isConcurrent;
@@ -57,18 +62,13 @@
 - (void)handleResponseFromServer:(id)arg1;
 - (id)demarshalResponseData:(id)arg1;
 - (int)sequenceNumber;
-- (void)start;
-- (BOOL)isExecuting;
 - (double)startTime;
 - (void)send;
 - (void)setCompletionBlock:(id)arg1;
 - (id)key;
 - (id)request;
+- (void)start;
 - (void)setStartTime:(double)arg1;
-- (id)description;
-- (void)cancel;
-- (BOOL)isCancelled;
-- (id)init;
-- (void)dealloc;
+- (BOOL)isExecuting;
 
 @end

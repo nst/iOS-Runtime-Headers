@@ -32,8 +32,13 @@
 @property(readonly) UISearchDisplayController * searchController;
 
 
+- (void)dealloc;
+- (id)initWithDelegate:(id)arg1;
 - (BOOL)isShowingSearchResults;
-- (void)setDelegate:(id)arg1;
+- (void)searchDaemonQuery:(id)arg1 addedResults:(id)arg2;
+- (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
+- (void)searchDaemonQueryCompleted:(id)arg1;
+- (void)_processSearchResults;
 - (id)searchController;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;
@@ -53,12 +58,7 @@
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)searchDaemonQuery:(id)arg1 addedResults:(id)arg2;
-- (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
-- (void)searchDaemonQueryCompleted:(id)arg1;
-- (void)_processSearchResults;
-- (void)dealloc;
-- (id)initWithDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)_cancel;
 
 @end

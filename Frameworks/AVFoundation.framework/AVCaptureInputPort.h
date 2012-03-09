@@ -15,16 +15,16 @@
 
 + (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(BOOL)arg4;
 
-- (void)setOwner:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)isEnabled;
-- (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(BOOL)arg4;
-- (void)_setFormatDescription:(struct opaqueCMFormatDescription { }*)arg1;
-- (struct opaqueCMFormatDescription { }*)formatDescription;
-- (id)mediaType;
 - (id)description;
 - (id)input;
 - (id)init;
 - (void)dealloc;
+- (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(BOOL)arg4;
+- (void)_setFormatDescription:(struct opaqueCMFormatDescription { }*)arg1;
+- (struct opaqueCMFormatDescription { }*)formatDescription;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)isEnabled;
+- (void)setOwner:(id)arg1;
+- (id)mediaType;
 
 @end

@@ -33,9 +33,9 @@
 @property int numberOfReviews;
 
 
-- (void)setScore:(double)arg1;
-- (double)score;
-- (BOOL)readFrom:(id)arg1;
+- (void)setProvider:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (int)numberOfReviews;
 - (void)setHasNumberOfReviews:(BOOL)arg1;
 - (BOOL)hasNumberOfReviews;
@@ -56,14 +56,14 @@
 - (void)setNumberOfRatings:(int)arg1;
 - (void)setMaxScore:(double)arg1;
 - (void)setReviews:(id)arg1;
-- (void)setProvider:(id)arg1;
+- (void)setScore:(double)arg1;
+- (double)score;
+- (void)setURL:(id)arg1;
+- (id)dictionaryRepresentation;
+- (BOOL)readFrom:(id)arg1;
 - (id)uRL;
 - (BOOL)hasURL;
 - (void)writeTo:(id)arg1;
-- (void)setURL:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 - (id)provider;
 
 @end

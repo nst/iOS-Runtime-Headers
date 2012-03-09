@@ -54,9 +54,11 @@
 + (id)sharedInstance;
 
 - (void)handleMachMessage:(void*)arg1;
+- (id)init;
 - (void)_adjustWiFiAutoAssociationLocked;
 - (void)_adjustWiFiAutoAssociation;
 - (void)_createWiFiManager;
+- (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 callbackRunLoop:(id)arg2;
 - (BOOL)isPowerStateDetectionSupported;
 - (BOOL)isWWANInterfaceInProlongedHighPowerState;
@@ -101,8 +103,6 @@
 - (id)WiFiInterfaceName;
 - (void)bindSocket:(int)arg1 toWWANInterface:(BOOL)arg2;
 - (void)bindCFStream:(struct __CFReadStream { }*)arg1 toWWANInterface:(BOOL)arg2;
-- (void)removeDelegate:(id)arg1;
-- (id)init;
 - (id)urlConnectionBoundToWWANInterface:(BOOL)arg1 withRequest:(id)arg2 delegate:(id)arg3 usesCache:(BOOL)arg4 maxContentLength:(long long)arg5 startImmediately:(BOOL)arg6 connectionProperties:(id)arg7;
 - (BOOL)isWWANInterfaceUp;
 

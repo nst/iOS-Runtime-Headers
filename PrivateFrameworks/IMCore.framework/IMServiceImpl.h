@@ -65,6 +65,9 @@
 + (Class)serviceClass;
 + (id)serviceWithInternalName:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
+- (id)initWithName:(id)arg1;
 - (id)shortName;
 - (id)emailDomains;
 - (id)addressBookProperties;
@@ -121,15 +124,12 @@
 - (BOOL)initialSyncPerformed;
 - (id)infoForScreenName:(id)arg1;
 - (id)screenNamesForIMPerson:(id)arg1;
-- (void)disconnect;
+- (unsigned int)status;
 - (BOOL)isPersistent;
 - (id)localizedName;
 - (id)name;
 - (BOOL)isEnabled;
-- (id)initWithName:(id)arg1;
-- (unsigned int)status;
-- (id)description;
-- (void)dealloc;
+- (void)disconnect;
 - (Class)accountClass;
 - (id)internalName;
 - (id)serviceProperties;

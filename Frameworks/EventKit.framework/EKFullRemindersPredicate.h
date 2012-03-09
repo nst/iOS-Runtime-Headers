@@ -18,6 +18,7 @@
 
 + (id)predicateWithTitle:(id)arg1 listTitle:(id)arg2 limitToCompletedOrIncomplete:(BOOL)arg3 completed:(BOOL)arg4 dueAfter:(id)arg5 dueBefore:(id)arg6 useDueDateAsCompletionDate:(BOOL)arg7 searchTerm:(id)arg8 sortOrder:(int)arg9 calendars:(id)arg10;
 
+- (void)dealloc;
 - (id)initWithTitle:(id)arg1 listTitle:(id)arg2 limitToCompletedOrIncomplete:(BOOL)arg3 completed:(BOOL)arg4 dueAfter:(id)arg5 dueBefore:(id)arg6 useDueDateAsCompletionDate:(BOOL)arg7 searchTerm:(id)arg8 sortOrder:(int)arg9 calendars:(id)arg10;
 - (BOOL)queryUseDueDateAsCompletionDate;
 - (id)queryListTitle;
@@ -30,6 +31,5 @@
 - (id)queryTitle;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

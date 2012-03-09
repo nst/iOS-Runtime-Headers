@@ -28,11 +28,15 @@
 + (void)_addCalendarWithUID:(id)arg1 toSet:(id)arg2 database:(struct CalDatabase { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; struct CPRecordStore {} *x3; struct CalEventOccurrenceCache {} *x4; struct __CFDictionary {} *x5; struct __CFDictionary {} *x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; boolx8; boolx9; unsigned int x10; unsigned int x11; struct __CFString {} *x12; int x13; int x14; struct __CFString {} *x15; int x16; }*)arg3;
 
 - (id)persistentIdentifier;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setSearchTerm:(id)arg1;
 - (id)searchTerm;
 - (id)calendarIDClauseForQueryWithVariableName:(id)arg1;
 - (id)filterQueryForKey:(id)arg1 prefix:(id)arg2 whereClause:(id)arg3 creator:(int (*)())arg4 userInfo:(void*)arg5;
 - (id)filterQueryForQueryString:(id)arg1 creator:(int (*)())arg2 userInfo:(void*)arg3;
+- (void)validate;
 - (void)removeCalendarWithUID:(id)arg1;
 - (BOOL)isCalendarUIDVisible:(id)arg1;
 - (int)visibleCalendarCountWithOptions:(int)arg1;
@@ -59,9 +63,5 @@
 - (id)_generateUIDSetToFilterAllCalendars;
 - (id)_calendarUIDsFromPersistentIdentifier:(id)arg1;
 - (id)initWithDatabase:(struct CalDatabase { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; struct CPRecordStore {} *x3; struct CalEventOccurrenceCache {} *x4; struct __CFDictionary {} *x5; struct __CFDictionary {} *x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; boolx8; boolx9; unsigned int x10; unsigned int x11; struct __CFString {} *x12; int x13; int x14; struct __CFString {} *x15; int x16; }*)arg1 entityType:(int)arg2 calendarUIDs:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)validate;
 
 @end

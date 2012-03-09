@@ -23,6 +23,8 @@
 + (long)updateKeychainNetworkPassword:(id)arg1 forNetworkNamed:(id)arg2;
 + (id)keychainPasswordForBaseMACAddress:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (long)assistantCallback:(struct AssistantCallbackContext { struct AssistantContext {} *x1; int x2; struct __CFDictionary {} *x3; int x4; struct dispatch_semaphore_s {} *x5; struct dispatch_source_s {} *x6; void *x7; }*)arg1 withSelector:(int)arg2;
 - (void)scanForNetworksDone:(id)arg1;
 - (void)directedScanDone:(id)arg1;
@@ -39,7 +41,5 @@
 - (void)userResponseToWarning:(long)arg1;
 - (void)userResponseToJoinNetwork:(long)arg1;
 - (int (*)())assistantCallback;
-- (id)init;
-- (void)dealloc;
 
 @end

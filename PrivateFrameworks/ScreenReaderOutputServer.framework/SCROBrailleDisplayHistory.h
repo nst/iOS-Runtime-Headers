@@ -5,23 +5,23 @@
 @interface SCROBrailleDisplayHistory : NSObject  {
     struct __CFArray { } *_announcements;
     struct __CFArray { } *_unreadSnapshot;
-    int _currentIndex;
-    int _unreadCount;
+    long _currentIndex;
+    long _unreadCount;
 }
 
 + (void)initialize;
 
-- (void)addString:(id)arg1;
-- (void)snapshotUnread;
-- (void)markSnapshotAsRead;
-- (BOOL)hasUnread;
-- (id)currentString;
-- (BOOL)moveToNext;
-- (BOOL)moveToPrevious;
-- (BOOL)isOnMostRecent;
-- (void)moveToMostRecent;
-- (BOOL)_moveIndexBy:(long)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)moveToMostRecent;
+- (BOOL)isOnMostRecent;
+- (BOOL)moveToPrevious;
+- (BOOL)moveToNext;
+- (id)currentString;
+- (BOOL)hasUnread;
+- (void)markSnapshotAsRead;
+- (void)snapshotUnread;
+- (void)addString:(id)arg1;
+- (BOOL)_moveIndexBy:(long)arg1;
 
 @end

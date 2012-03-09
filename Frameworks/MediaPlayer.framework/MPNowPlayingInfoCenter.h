@@ -15,11 +15,11 @@
 
 + (id)defaultCenter;
 
+- (id)init;
 - (id)nowPlayingInfo;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)set_internal:(struct MPNowPlayingInfoCenterInternal { id x1; })arg1;
 - (struct MPNowPlayingInfoCenterInternal { id x1; })_internal;
 - (id)_init;
-- (id)init;
 
 @end

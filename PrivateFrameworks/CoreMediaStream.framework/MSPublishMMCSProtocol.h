@@ -17,7 +17,7 @@
 @property <MSPublishStorageProtocolDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)_putItemsFailure;
 - (void)_closeFDForAsset:(id)arg1;
 - (void)_requestCompleted;
@@ -29,6 +29,6 @@
 - (void)computeHashForAsset:(id)arg1;
 - (void)deactivate;
 - (id)delegate;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

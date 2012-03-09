@@ -14,6 +14,9 @@
 
 + (unsigned long long)encodedLengthForDataLength:(unsigned long long)arg1 key:(id)arg2;
 
+- (void)dealloc;
+- (void)close;
+- (long long)offset;
 - (id)initForEncryptionWithOutputStream:(id)arg1 key:(id)arg2;
 - (unsigned int)crc32;
 - (void)seekToOffset:(long long)arg1 whence:(int)arg2;
@@ -23,8 +26,5 @@
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 - (id)closeLocalStream;
 - (BOOL)canSeek;
-- (void)close;
-- (long long)offset;
-- (void)dealloc;
 
 @end

@@ -15,18 +15,18 @@
 
 + (id)sharedInstance;
 
-- (void)synchronize;
-- (void)setValue:(void*)arg1 forKey:(id)arg2;
-- (void)refresh;
+- (id)init;
+- (void)dealloc;
+- (void*)getValueForKey:(id)arg1;
 - (void)notifyTarget:(unsigned int)arg1;
 - (void)initializeSCPrefs:(id)arg1;
 - (void)setCallback:(int (*)())arg1 withContext:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
-- (void)tearDown;
-- (void*)getValueForKey:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)refresh;
 - (void)setTweetSheetPermissionCacheState:(int)arg1;
 - (void)keepAlive;
 - (int)tweetSheetPermissionCacheState;
+- (void)tearDown;
+- (void)synchronize;
+- (void)setValue:(void*)arg1 forKey:(id)arg2;
 
 @end

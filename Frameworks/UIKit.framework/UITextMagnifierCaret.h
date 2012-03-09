@@ -33,8 +33,9 @@
 
 + (id)sharedCaretMagnifier;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setNeedsDisplay;
+- (void)setTarget:(id)arg1;
+- (id)target;
+- (void)dealloc;
 - (void)setYOffset:(float)arg1;
 - (struct CGPoint { float x1; float x2; })animationPoint;
 - (void)zoomDownAnimation;
@@ -64,8 +65,7 @@
 - (struct CGPoint { float x1; float x2; })offset;
 - (id)text;
 - (void)setText:(id)arg1;
-- (void)setTarget:(id)arg1;
-- (id)target;
-- (void)dealloc;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplay;
 
 @end

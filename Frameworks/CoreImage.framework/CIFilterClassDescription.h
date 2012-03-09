@@ -12,9 +12,9 @@
 
 + (id)classDescriptionForClass:(Class)arg1;
 
+- (id)attributes;
 - (id)initWithClass:(Class)arg1;
 - (id)outputKeys;
 - (id)inputKeys;
-- (id)attributes;
 
 @end

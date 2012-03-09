@@ -14,15 +14,15 @@
 
 
 - (id)messageBody;
-- (void)setProtocolVersion:(id)arg1;
-- (id)protocolVersion;
-- (void)setValidationData:(id)arg1;
-- (id)validationData;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)additionalMessageHeaders;
 - (BOOL)hasRequiredKeys:(id*)arg1;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)setProtocolVersion:(id)arg1;
+- (id)protocolVersion;
 - (id)bagKey;
+- (void)setValidationData:(id)arg1;
+- (id)validationData;
 
 @end

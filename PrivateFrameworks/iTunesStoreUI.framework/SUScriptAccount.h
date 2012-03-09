@@ -18,18 +18,18 @@
 @property(retain) id purchaseHistoryEnabled;
 @property(retain) id socialEnabled;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
 - (void)setAccount:(id)arg1;
 - (id)account;
-- (id)attributeKeys;
+- (id)init;
+- (void)dealloc;
 - (id)kind;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)attributeKeys;
 - (id)socialEnabled;
 - (void)setSocialEnabled:(id)arg1;
 - (void)setPurchaseHistoryEnabled:(id)arg1;

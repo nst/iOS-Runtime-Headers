@@ -71,6 +71,7 @@
 
 + (float)defaultRowHeight;
 
+- (void)dealloc;
 - (void)setCurrentInfoTextWidth:(float)arg1;
 - (float)currentInfoTextWidth;
 - (void)setStatusInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -108,6 +109,7 @@
 - (void)setTheme:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)setStatus:(id)arg1;
+- (id)status;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setImageView:(id)arg1;
@@ -120,7 +122,5 @@
 - (void)layoutSubviews;
 - (void)setImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)status;
-- (void)dealloc;
 
 @end

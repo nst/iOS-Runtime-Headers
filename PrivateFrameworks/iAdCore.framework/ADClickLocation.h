@@ -23,16 +23,8 @@
 @property int h;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasH:(BOOL)arg1;
-- (BOOL)hasH;
-- (void)setHasW:(BOOL)arg1;
-- (BOOL)hasW;
-- (void)setHasY:(BOOL)arg1;
-- (BOOL)hasY;
-- (void)setHasX:(BOOL)arg1;
-- (BOOL)hasX;
-- (void)writeTo:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (int)h;
 - (int)w;
 - (void)setH:(int)arg1;
@@ -42,7 +34,16 @@
 - (int)y;
 - (void)setX:(int)arg1;
 - (int)x;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasH:(BOOL)arg1;
+- (void)setHasW:(BOOL)arg1;
+- (void)setHasY:(BOOL)arg1;
+- (void)setHasX:(BOOL)arg1;
+- (BOOL)hasH;
+- (BOOL)hasW;
+- (BOOL)hasY;
+- (BOOL)hasX;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

@@ -54,6 +54,30 @@
 @property(readonly) NSArray * URLs;
 
 
+- (id)initWithURLRequest:(id)arg1;
+- (long long)expectedContentLength;
+- (id)HTTPBodyStream;
+- (id)HTTPBody;
+- (id)HTTPMethod;
+- (double)timeoutInterval;
+- (unsigned int)cachePolicy;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)initWithURL:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)URLs;
+- (id)URL;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)_initCommon;
+- (id)HTTPHeaders;
+- (id)clientIdentifier;
+- (id)URLBagKey;
+- (id)requestParameters;
+- (BOOL)canBeResolved;
 - (id)URLBagURLBlock;
 - (BOOL)shouldProcessProtocol;
 - (BOOL)isITunesStoreRequest;
@@ -65,29 +89,5 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithURLRequest:(id)arg1;
-- (long long)expectedContentLength;
-- (id)HTTPBodyStream;
-- (id)HTTPBody;
-- (id)HTTPMethod;
-- (double)timeoutInterval;
-- (unsigned int)cachePolicy;
-- (id)initWithURL:(id)arg1;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)URLs;
-- (id)URL;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)_initCommon;
-- (id)HTTPHeaders;
-- (id)clientIdentifier;
-- (id)URLBagKey;
-- (id)requestParameters;
-- (BOOL)canBeResolved;
 
 @end

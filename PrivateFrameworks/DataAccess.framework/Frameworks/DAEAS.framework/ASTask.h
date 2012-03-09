@@ -57,17 +57,16 @@
 + (void)_restoreDefaultTaskTimeout;
 + (void)_setDefaultTaskTimeout:(double)arg1;
 
-- (id)command;
-- (void)finishWithError:(id)arg1;
-- (double)percentComplete;
-- (id)contentType;
-- (void)setDelegate:(id)arg1;
 - (double)timeoutInterval;
 - (id)connection:(id)arg1 needNewBodyStream:(id)arg2;
 - (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
-- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)command;
+- (void)finishWithError:(id)arg1;
+- (double)percentComplete;
 - (BOOL)isExclusive;
 - (void)reset;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
@@ -78,9 +77,10 @@
 - (void*)context;
 - (void)setContext:(void*)arg1;
 - (id)delegate;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
+- (id)contentType;
 - (id)timeoutEnforcer;
 - (id)lastKnownPassword;
 - (void)setAskedToCancelWhileModal:(BOOL)arg1;

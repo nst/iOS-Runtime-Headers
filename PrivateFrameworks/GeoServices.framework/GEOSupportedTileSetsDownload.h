@@ -13,14 +13,14 @@
 @property(retain) GEODownloadMetadata * metadata;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (id)tileSets;
-- (void)setTileSets:(id)arg1;
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
 - (id)description;
 - (void)dealloc;
+- (id)tileSets;
+- (void)setTileSets:(id)arg1;
+- (id)dictionaryRepresentation;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 
 @end

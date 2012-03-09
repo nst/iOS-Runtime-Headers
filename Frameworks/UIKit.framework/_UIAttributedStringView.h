@@ -10,12 +10,12 @@
 
 + (Class)layerClass;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setString:(id)arg1;
+- (void)dealloc;
 - (void)setTextRotationAngle:(float)arg1;
 - (void)_updateContentsScale:(id)arg1;
 - (void)didMoveToSuperview;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setString:(id)arg1;
-- (void)dealloc;
 
 @end

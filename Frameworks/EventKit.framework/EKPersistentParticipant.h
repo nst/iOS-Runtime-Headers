@@ -17,13 +17,13 @@
 - (id)emailAddress;
 - (void)setExternalID:(id)arg1;
 - (id)externalID;
-- (id)owner;
-- (id)UUID;
-- (void)setEmailAddress:(id)arg1;
-- (id)name;
 - (void)setName:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
+- (void)setEmailAddress:(id)arg1;
+- (id)name;
+- (id)owner;
+- (id)UUID;
 
 @end

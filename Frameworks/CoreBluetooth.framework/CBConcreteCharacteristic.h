@@ -14,8 +14,8 @@
 @property(readonly) NSNumber * handle;
 
 
-- (id)handle;
 - (void)dealloc;
+- (id)handle;
 - (id)initWithService:(id)arg1 UUID:(id)arg2 properties:(unsigned int)arg3 peripheral:(id)arg4 handle:(id)arg5 valueHandle:(id)arg6;
 - (id)handleValueUpdated:(id)arg1;
 - (id)handleValueWritten:(id)arg1;

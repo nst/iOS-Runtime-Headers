@@ -26,6 +26,7 @@
 @property(retain) GKAchievementSectionDataSource * achievementViewSection;
 
 
+- (void)dealloc;
 - (void)setShowRatingControl:(BOOL)arg1;
 - (void)setDetailHeaderCell:(id)arg1;
 - (id)detailHeaderCell;
@@ -53,6 +54,5 @@
 - (void)loadView;
 - (float)marginForTableView:(id)arg1;
 - (id)title;
-- (void)dealloc;
 
 @end

@@ -13,7 +13,11 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
+- (void)reloadFromServer;
 - (BOOL)hasPerformedActionWithActionType:(id)arg1 itemIdentifier:(unsigned long long)arg2;
 - (void)addChangeOperation:(id)arg1;
 - (void)_reloadFromServerIfExpired;
@@ -28,10 +32,6 @@
 - (void)_removeOperationFromLocalChanges:(id)arg1;
 - (void)_cancelExpirationTimer;
 - (void)_urlBagDidLoadNotification:(id)arg1;
-- (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_accountStoreChangedNotification:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)reloadFromServer;
 
 @end

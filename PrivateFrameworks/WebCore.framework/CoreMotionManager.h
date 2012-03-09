@@ -37,6 +37,10 @@
 
 + (id)sharedManager;
 
+- (id)init;
+- (void)dealloc;
+- (id).cxx_construct;
+- (void)update;
 - (void)addMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
 - (void)removeMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
 - (void)addOrientationClient:(struct DeviceOrientationClientIPhone { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; boolx5; }*)arg1;
@@ -48,9 +52,5 @@
 - (BOOL)headingAvailable;
 - (void)sendMotionData:(id)arg1 withHeading:(id)arg2;
 - (void)sendAccelerometerData:(id)arg1;
-- (id).cxx_construct;
-- (void)update;
-- (id)init;
-- (void)dealloc;
 
 @end

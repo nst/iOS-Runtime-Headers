@@ -11,9 +11,9 @@
 @property(copy) NSString * type;
 
 
-- (BOOL)compact;
-- (void)setCompact:(BOOL)arg1;
 - (id)type;
 - (void)setType:(id)arg1;
+- (BOOL)compact;
+- (void)setCompact:(BOOL)arg1;
 
 @end

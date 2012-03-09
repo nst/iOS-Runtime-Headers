@@ -11,9 +11,6 @@
 + (id)dataFromTXTRecordDictionary:(id)arg1;
 + (id)dictionaryFromTXTRecordData:(id)arg1;
 
-- (id)addresses;
-- (void)setDelegate:(id)arg1;
-- (void)finalize;
 - (id)TXTRecordData;
 - (BOOL)setTXTRecordData:(id)arg1;
 - (void)stopMonitoring;
@@ -30,18 +27,21 @@
 - (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3 port:(int)arg4;
 - (void)_scheduleInDefaultRunLoopForMode:(id)arg1;
 - (struct __CFNetService { }*)_internalNetService;
-- (void)stop;
-- (id)domain;
-- (id)hostName;
-- (int)port;
-- (id)type;
-- (id)name;
-- (id)delegate;
-- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (void)dealloc;
+- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (id)addresses;
+- (void)stop;
+- (id)domain;
+- (id)hostName;
+- (int)port;
+- (void)finalize;
+- (id)type;
+- (id)name;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

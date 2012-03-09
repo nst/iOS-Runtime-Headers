@@ -19,9 +19,9 @@
 - (Class)authenticatorClass;
 - (BOOL)requiresPassword;
 - (Class)connectionClassForAccountClass:(Class)arg1;
-- (id)name;
 - (unsigned int)retainCount;
 - (id)retain;
 - (oneway void)release;
+- (id)name;
 
 @end

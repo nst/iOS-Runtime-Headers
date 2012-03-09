@@ -7,7 +7,7 @@
 @interface AVCaptureVideoDataOutputInternal : NSObject  {
     <AVCaptureVideoDataOutputSampleBufferDelegate> *delegate;
     struct dispatch_queue_s { } *clientQueue;
-    unsigned int pixelFormatType;
+    unsigned long pixelFormatType;
     NSDictionary *videoSettings;
     struct { 
         long long value; 

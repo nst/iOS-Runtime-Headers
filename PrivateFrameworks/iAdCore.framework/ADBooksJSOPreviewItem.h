@@ -13,9 +13,9 @@
 @property(readonly) NSString * previewItemTitle;
 
 
-- (id)initWithURL:(id)arg1 andTitle:(id)arg2;
+- (void)dealloc;
 - (id)previewItemTitle;
 - (id)previewItemURL;
-- (void)dealloc;
+- (id)initWithURL:(id)arg1 andTitle:(id)arg2;
 
 @end

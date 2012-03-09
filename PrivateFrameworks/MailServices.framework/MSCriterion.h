@@ -14,13 +14,13 @@
 - (id)qualifier;
 - (id)criteria;
 - (id)initWithType:(id)arg1 qualifier:(id)arg2 expression:(id)arg3;
-- (id)initWithCriteria:(id)arg1 allRequired:(BOOL)arg2;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)_initWithType:(id)arg1 qualifier:(id)arg2 criteria:(id)arg3;
 - (id)type;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)initWithCriteria:(id)arg1 allRequired:(BOOL)arg2;
 
 @end

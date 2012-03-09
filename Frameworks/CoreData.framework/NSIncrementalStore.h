@@ -15,6 +15,7 @@
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 
+- (void)dealloc;
 - (id)newObjectIDForEntity:(id)arg1 referenceObject:(id)arg2;
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (BOOL)loadMetadata:(id*)arg1;

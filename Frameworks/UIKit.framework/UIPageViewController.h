@@ -66,7 +66,7 @@
 + (BOOL)_isNavigationOrientation:(int)arg1 supportedForTransitionStyle:(int)arg2;
 + (BOOL)_isSupportedTransitionStyle:(int)arg1;
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)_viewControllersStashedForRotation;
 - (void)setViewControllers:(id)arg1 direction:(int)arg2 animated:(BOOL)arg3 completion:(id)arg4;
 - (void)_setTapRegionBreadths:(struct CGSize { float x1; float x2; })arg1;
@@ -120,9 +120,9 @@
 - (id)gestureRecognizers;
 - (id)delegate;
 - (id)dataSource;
+- (void)setDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

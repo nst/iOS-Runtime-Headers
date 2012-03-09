@@ -61,6 +61,9 @@
 + (id)_fileModificationDateForURL:(id)arg1;
 + (void)initialize;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (struct dispatch_queue_s { }*)_fileOpeningQueue;
 - (void)userInteractionNoLongerPermittedForError:(id)arg1;
 - (void)closeWithCompletionHandler:(id)arg1;
@@ -151,8 +154,5 @@
 - (id)fileModificationDate;
 - (id)localizedName;
 - (id)undoManager;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

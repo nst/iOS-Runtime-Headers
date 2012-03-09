@@ -17,7 +17,7 @@
 + (struct CGPoint { float x1; float x2; })entryFieldBalloonOffset;
 + (float)entryFieldBalloonAdditionalHeight;
 
-- (void)setText:(id)arg1;
+- (void)dealloc;
 - (void)setImage:(id)arg1 mimeType:(id)arg2;
 - (void)setImageWithFilename:(id)arg1;
 - (void)setStillImage:(id)arg1;
@@ -31,6 +31,6 @@
 - (void)tighten;
 - (float)tightenedWidth;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
-- (void)dealloc;
+- (void)setText:(id)arg1;
 
 @end

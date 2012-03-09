@@ -11,8 +11,8 @@
 
 + (id)classDescriptionForClass:(Class)arg1;
 
+- (id)attributes;
 - (id)initWithClass:(Class)arg1;
 - (id)inputKeys;
-- (id)attributes;
 
 @end

@@ -19,7 +19,8 @@
 @property BOOL shouldTriggerDownloads;
 
 
-- (BOOL)shouldProcessProtocol;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)setShouldTriggerDownloads:(BOOL)arg1;
 - (void)setShouldProcessAuthenticationDialogs:(BOOL)arg1;
 - (void)setShouldProcessAccount:(BOOL)arg1;
@@ -35,11 +36,10 @@
 - (BOOL)shouldProcessAuthenticationDialogs;
 - (BOOL)shouldProcessAccount;
 - (BOOL)shouldPostFooterSectionChanged;
-- (void)setShouldProcessDialogs:(BOOL)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)setShouldProcessProtocol:(BOOL)arg1;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 - (void)setShouldPostFooterSectionChanged:(BOOL)arg1;
+- (BOOL)shouldProcessProtocol;
+- (void)setShouldProcessDialogs:(BOOL)arg1;
 
 @end

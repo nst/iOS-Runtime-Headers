@@ -12,8 +12,8 @@
 
 + (id)stateWithResponder:(id)arg1;
 
+- (void)dealloc;
 - (id)responderToReload;
 - (void)setResponderToReload:(id)arg1;
-- (void)dealloc;
 
 @end

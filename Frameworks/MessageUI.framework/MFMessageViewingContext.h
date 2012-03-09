@@ -52,15 +52,10 @@
 - (void)_setSigners:(id)arg1;
 - (id)attachments;
 - (id)messageBody;
-- (id)initWithMessage:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)unload;
-- (id)message;
-- (void)_setContentOffset:(unsigned int)arg1;
-- (void)load;
-- (id)content;
-- (unsigned int)contentOffset;
-- (id)delegate;
+- (BOOL)isPartial;
+- (void)dealloc;
+- (id)initWithMessage:(id)arg1;
 - (id)uniqueID;
 - (BOOL)hasNoContent;
 - (BOOL)isMessageSigned;
@@ -95,8 +90,13 @@
 - (void)loadWithPriority:(int)arg1;
 - (BOOL)hasLoaded;
 - (void)loadMore;
-- (BOOL)isPartial;
-- (void)dealloc;
+- (id)message;
+- (void)_setContentOffset:(unsigned int)arg1;
+- (void)load;
+- (id)content;
+- (unsigned int)contentOffset;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)_updateProgress:(id)arg1;
 
 @end

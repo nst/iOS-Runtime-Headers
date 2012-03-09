@@ -12,6 +12,7 @@
 @property <SSSoftwareUpdatesRequestDelegate> * delegate;
 
 
+- (void)dealloc;
 - (id)updateQueueContext;
 - (id)initWithUpdateQueueContext:(id)arg1;
 - (id)handleFailureResponse:(id)arg1;
@@ -20,6 +21,5 @@
 - (void)_sendResponseToDelegate:(id)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (void)dealloc;
 
 @end

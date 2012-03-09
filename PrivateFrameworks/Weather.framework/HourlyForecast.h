@@ -17,15 +17,15 @@
 @property(copy) NSString * time24Hour;
 
 
-- (float)percentPrecipitation;
-- (void)setPercentPrecipitation:(float)arg1;
-- (int)conditionCode;
-- (void)setConditionCode:(int)arg1;
-- (id)time24Hour;
-- (void)setTime24Hour:(id)arg1;
-- (void)setTemperature:(id)arg1;
-- (id)temperature;
 - (id)description;
 - (void)dealloc;
+- (float)percentPrecipitation;
+- (void)setPercentPrecipitation:(float)arg1;
+- (id)time24Hour;
+- (void)setTime24Hour:(id)arg1;
+- (id)temperature;
+- (void)setTemperature:(id)arg1;
+- (int)conditionCode;
+- (void)setConditionCode:(int)arg1;
 
 @end

@@ -16,6 +16,7 @@
 + (id)_currentMoviePlayerController;
 + (id)_playerKeysToObserve;
 
+- (void)dealloc;
 - (int)movieControlMode;
 - (void)_preloadingComplete;
 - (void)_delayedHideOverlay;
@@ -50,19 +51,18 @@
 - (void)_simpleRemoteNotification:(id)arg1;
 - (void)_willTerminateNotification:(id)arg1;
 - (double)initialPlaybackTime;
-- (void)setInitialPlaybackTime:(double)arg1;
 - (void)setScalingMode:(int)arg1;
 - (int)scalingMode;
 - (id)contentURL;
 - (id)initWithContentURL:(id)arg1;
 - (void)_setMoviePlayer:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
-- (void)_play;
-- (void)play;
 - (void)stop;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)backgroundColor;
 - (void)setBackgroundColor:(id)arg1;
-- (void)dealloc;
+- (void)_play;
+- (void)play;
+- (void)setInitialPlaybackTime:(double)arg1;
 
 @end

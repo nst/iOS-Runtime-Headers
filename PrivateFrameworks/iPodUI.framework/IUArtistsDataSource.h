@@ -11,8 +11,10 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
+- (id)init;
 - (void)appDefaultsChanged;
 - (void)setQueries:(id)arg1;
+- (void)_updateGroupingPropertyForQueries:(id)arg1;
 - (unsigned int)requiredEntityCountForSections;
 - (Class)cellConfigurationClassForEntity:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
@@ -20,6 +22,5 @@
 - (BOOL)allowsDeletion;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (id)viewControllerContextForMediaQuery:(id)arg1;
-- (id)init;
 
 @end

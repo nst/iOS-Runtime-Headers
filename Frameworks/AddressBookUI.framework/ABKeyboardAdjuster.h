@@ -13,11 +13,6 @@
 
 + (id)sharedAdjuster;
 
-- (void)_adjustTableForKeyboardInfo:(id)arg1;
-- (BOOL)active;
-- (void)_keyboardWillHide:(id)arg1;
-- (void)_keyboardWillShow:(id)arg1;
-- (void)setActive:(BOOL)arg1;
 - (id)init;
 - (void)dealloc;
 - (void)cancelDelayedAdjustmentsForView:(id)arg1;
@@ -34,5 +29,10 @@
 - (void)textViewTextDidEndEditingNotification:(id)arg1;
 - (void)dateFieldDateDidBeginEditingNotification:(id)arg1;
 - (void)dateFieldDateDidEndEditingNotification:(id)arg1;
+- (void)_adjustTableForKeyboardInfo:(id)arg1;
+- (BOOL)active;
+- (void)_keyboardWillHide:(id)arg1;
+- (void)_keyboardWillShow:(id)arg1;
+- (void)setActive:(BOOL)arg1;
 
 @end

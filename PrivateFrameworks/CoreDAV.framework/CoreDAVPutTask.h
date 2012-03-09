@@ -12,11 +12,11 @@
 @property(retain) NSString * nextETag;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setNextETag:(id)arg1;
 - (id)nextETag;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)httpMethod;
 
 @end

@@ -15,14 +15,10 @@
 @property <EKReminderEditorDelegate> * reminderEditorDelegate;
 
 
-- (void)viewDidUnload;
-- (void)loadView;
-- (void)viewDidLoad;
-- (float)marginForTableView:(id)arg1;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (void)applicationDidResume;
+- (void)dealloc;
+- (void)setStyleProvider:(id)arg1;
+- (id)styleProvider;
 - (id)reminderEditorDelegate;
-- (void)_wifiStatusDidChange:(id)arg1;
 - (id)reminder;
 - (void)setReminder:(id)arg1;
 - (void)setReminderEditorDelegate:(id)arg1;
@@ -41,8 +37,8 @@
 - (id)preferredTitle;
 - (id)_editItems;
 - (BOOL)_canDetachSingleOccurrence;
-- (void)dealloc;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
+- (void)loadView;
+- (float)marginForTableView:(id)arg1;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 
 @end

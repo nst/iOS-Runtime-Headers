@@ -19,23 +19,6 @@
 @property(readonly) BOOL shouldShowGroups;
 
 
-- (void)setAddressBook:(void*)arg1;
-- (void)loadState;
-- (id)model;
-- (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
-- (id)defaultPNGName;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)applicationDidResume;
-- (void)didReceiveMemoryWarning;
-- (void)applicationWillSuspend;
-- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
-- (void)cancel:(id)arg1;
 - (void)dealloc;
 - (BOOL)isNavigationButtonEnabled:(int)arg1;
 - (BOOL)newContactViewControllerCompleted:(id)arg1 withNewPerson:(void*)arg2;
@@ -83,5 +66,22 @@
 - (void)personWasSelected:(void*)arg1;
 - (BOOL)membersController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (void)modelDatabaseChange:(id)arg1;
+- (void)loadState;
+- (void)setAddressBook:(void*)arg1;
+- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
+- (id)model;
+- (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
+- (id)defaultPNGName;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)applicationDidResume;
+- (void)didReceiveMemoryWarning;
+- (void)applicationWillSuspend;
+- (void)cancel:(id)arg1;
 
 @end

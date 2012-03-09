@@ -24,12 +24,12 @@
 - (id)remoteID;
 - (id)subject;
 - (id)attachments;
-- (id)to;
-- (id)from;
 - (id)body;
 - (id)date;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)to;
+- (id)from;
 - (id)conversationIndex;
 - (id)threadTopic;
 - (id)messageClass;

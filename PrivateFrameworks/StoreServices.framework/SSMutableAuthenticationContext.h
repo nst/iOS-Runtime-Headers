@@ -25,7 +25,15 @@
 @property int tokenType;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setAccountName:(id)arg1;
+- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (void)setRequiredUniqueIdentifier:(id)arg1;
+- (void)setHTTPHeaders:(id)arg1;
+- (void)setRequestParameters:(id)arg1;
+- (void)setPromptStyle:(int)arg1;
+- (void)setShouldFollowAccountButtons:(BOOL)arg1;
 - (void)setTokenType:(int)arg1;
 - (void)setClientIdentifierHeader:(id)arg1;
 - (void)setUserAgentComponents:(id)arg1;
@@ -36,13 +44,5 @@
 - (void)setAccountNameEditable:(BOOL)arg1;
 - (void)setDemoAccount:(BOOL)arg1;
 - (void)setAccountScope:(int)arg1;
-- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setRequiredUniqueIdentifier:(id)arg1;
-- (void)setHTTPHeaders:(id)arg1;
-- (void)setRequestParameters:(id)arg1;
-- (void)setPromptStyle:(int)arg1;
-- (void)setShouldFollowAccountButtons:(BOOL)arg1;
 
 @end

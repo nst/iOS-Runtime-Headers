@@ -42,16 +42,6 @@
 @property <ABPersonTableActionDelegate> * delegate;
 
 
-- (int)grouping;
-- (void)setGrouping:(int)arg1;
-- (void)setDelegate:(id)arg1;
-- (int)property;
-- (struct __CFArray { }*)properties;
-- (id)button;
-- (SEL)selector;
-- (int)style;
-- (id)title;
-- (id)delegate;
 - (void)setProperties:(struct __CFArray { }*)arg1;
 - (id)description;
 - (id)target;
@@ -79,5 +69,15 @@
 - (void)setDifferentiationSheetTitle:(id)arg1;
 - (void)setIndicatesFaceTimeHistory:(BOOL)arg1;
 - (id)styleProvider;
+- (struct __CFArray { }*)properties;
+- (id)button;
+- (SEL)selector;
+- (int)style;
+- (id)title;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (int)grouping;
+- (void)setGrouping:(int)arg1;
+- (int)property;
 
 @end

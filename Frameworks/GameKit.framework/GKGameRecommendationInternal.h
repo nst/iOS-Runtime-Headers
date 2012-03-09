@@ -16,12 +16,12 @@
 
 + (id)codedPropertyKeys;
 
+- (void)dealloc;
 - (void)setEngineID:(id)arg1;
 - (void)setReason:(id)arg1;
 - (id)engineID;
 - (id)game;
 - (void)setGame:(id)arg1;
 - (id)reason;
-- (void)dealloc;
 
 @end

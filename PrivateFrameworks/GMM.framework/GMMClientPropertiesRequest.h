@@ -49,9 +49,17 @@
 @property int mapTileCacheType;
 
 
+- (id)description;
+- (void)dealloc;
 - (Class)responseClass;
+- (void)setMobileCountryCode:(int)arg1;
+- (int)mobileCountryCode;
+- (void)setApplicationName:(id)arg1;
+- (id)dictionaryRepresentation;
 - (id)applicationName;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (void)writeTo:(id)arg1;
 - (int)mapTileCacheType;
 - (void)setHasMapTileCacheType:(BOOL)arg1;
 - (BOOL)hasMapTileCacheType;
@@ -87,13 +95,5 @@
 - (void)setHasLocationFix:(BOOL)arg1;
 - (void)setScreenPixelDensity:(int)arg1;
 - (void)setCohort:(id)arg1;
-- (unsigned int)requestTypeCode;
-- (void)writeTo:(id)arg1;
-- (int)mobileCountryCode;
-- (void)setApplicationName:(id)arg1;
-- (id)dictionaryRepresentation;
-- (void)setMobileCountryCode:(int)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

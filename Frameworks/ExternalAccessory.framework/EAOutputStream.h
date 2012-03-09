@@ -22,16 +22,7 @@
 }
 
 
-- (void)setDelegate:(id)arg1;
-- (void)open;
-- (void)endStream;
-- (id)initWithAccessory:(id)arg1 forSession:(id)arg2;
-- (void)_performAtEndOfStreamValidation;
-- (void)openCompleted;
-- (void)_writeAvailableThread;
-- (void)_accessoryDidDisconnect:(id)arg1;
-- (void)close;
-- (id)delegate;
+- (void)dealloc;
 - (BOOL)hasSpaceAvailable;
 - (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 - (id)streamError;
@@ -40,8 +31,17 @@
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
-- (void)_streamEventTrigger;
-- (void)dealloc;
+- (void)endStream;
+- (id)initWithAccessory:(id)arg1 forSession:(id)arg2;
+- (void)_performAtEndOfStreamValidation;
+- (void)openCompleted;
+- (void)_writeAvailableThread;
+- (void)_accessoryDidDisconnect:(id)arg1;
+- (void)close;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)open;
 - (void)_scheduleCallback;
+- (void)_streamEventTrigger;
 
 @end

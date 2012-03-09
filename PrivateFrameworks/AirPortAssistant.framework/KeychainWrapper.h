@@ -16,6 +16,9 @@
 + (id)keychainWrapperWithAccountName:(id)arg1 serverName:(id)arg2 dnsName:(id)arg3;
 + (id)keychainWrapperWithAccountName:(id)arg1 serviceName:(id)arg2;
 
+- (void)dealloc;
+- (void)setServiceName:(id)arg1;
+- (id)serviceName;
 - (void)setAccountName:(id)arg1;
 - (id)accountName;
 - (id)getAirDiskServerDescs;
@@ -32,8 +35,5 @@
 - (id)genericPassword;
 - (void)removeGenericPassword;
 - (long)addGenericPasswordWithAttributes:(id)arg1 data:(id)arg2;
-- (void)setServiceName:(id)arg1;
-- (id)serviceName;
-- (void)dealloc;
 
 @end

@@ -15,13 +15,14 @@
     unsigned int _nextID;
     struct dispatch_source_s { } *_replySource;
     struct dispatch_queue_s { } *_replyHandlerLock;
+    BOOL _registeredForStartNote;
 }
 
 @property(readonly) unsigned int port;
 @property id delegate;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)_daemonRestarted;
 - (void)_processReplyWithID:(unsigned int)arg1 data:(id)arg2;
 - (void)_finishAllRepliesOnServerDeath;
@@ -29,9 +30,9 @@
 - (void)removeReplyHandler:(id)arg1;
 - (id)addReplyHandler:(id)arg1;
 - (id)initWithOptions:(unsigned long)arg1 path:(id)arg2;
-- (void)disconnect;
 - (unsigned int)port;
 - (id)delegate;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)disconnect;
 
 @end

@@ -13,7 +13,7 @@
 }
 
 
-- (void)setOwner:(struct PlatformCALayer { int x1; struct PlatformCALayerClient {} *x2; int x3; struct RetainPtr<CALayer> { id x_4_1_1; } x4; struct RetainPtr<NSObject> { id x_5_1_1; } x5; }*)arg1;
 - (void)animationDidStart:(id)arg1;
+- (void)setOwner:(struct PlatformCALayer { int x1; struct PlatformCALayerClient {} *x2; int x3; struct RetainPtr<CALayer> { id x_4_1_1; } x4; struct RetainPtr<NSObject> { id x_5_1_1; } x5; }*)arg1;
 
 @end

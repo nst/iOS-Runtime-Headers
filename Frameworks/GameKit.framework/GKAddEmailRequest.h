@@ -11,10 +11,10 @@
 @property(retain) NSString * email;
 
 
+- (void)dealloc;
 - (void)setEmail:(id)arg1;
 - (id)email;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

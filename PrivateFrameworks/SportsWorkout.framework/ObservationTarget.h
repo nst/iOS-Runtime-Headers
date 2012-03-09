@@ -11,10 +11,10 @@
 @property SEL selector;
 
 
+- (id)description;
 - (BOOL)isActive;
 - (void)setIsActive:(BOOL)arg1;
 - (SEL)selector;
 - (void)setSelector:(SEL)arg1;
-- (id)description;
 
 @end

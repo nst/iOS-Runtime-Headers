@@ -2,15 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class SSDownload;
-
 @interface MPStoreMediaDownloadObserver : MPMediaDownloadObserver <SSDownloadManagerObserver> {
-    SSDownload *_download;
+    long long _downloadID;
     BOOL _isRestoreDownload;
 }
 
 
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (BOOL)isCurrentlyPlayable;
 - (void)_onQueue_invalidate;
 - (id)initWithDownloadIdentifier:(long long)arg1;
@@ -18,5 +15,7 @@
 - (BOOL)isRestoreDownload;
 - (double)downloadProgress;
 - (void)cancelDownload;
+- (id)_download;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 
 @end

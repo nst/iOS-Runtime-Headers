@@ -32,6 +32,7 @@
     NSDictionary *_cachedBody;
     BOOL _wantsBinaryPush;
     BOOL _wantsIntegerUniqueIDs;
+    NSDictionary *_responseAlert;
 }
 
 @property(readonly) BOOL isValidMessage;
@@ -60,6 +61,7 @@
 @property(readonly) BOOL wantsCustomRetryInterval;
 @property(readonly) double customRetryInterval;
 @property(readonly) NSArray * requiredKeys;
+@property(copy) NSDictionary * responseAlertInfo;
 @property(readonly) NSDictionary * messageBody;
 @property(readonly) NSDictionary * messageBodyUsingCache;
 @property(readonly) NSDictionary * additionalMessageHeaders;
@@ -79,15 +81,10 @@
 - (void)setTimeout:(double)arg1;
 - (double)timeout;
 - (id)messageBody;
-- (void)setCreationDate:(id)arg1;
-- (int)command;
-- (id)completionBlock;
-- (void)setClientInfo:(id)arg1;
-- (void)setUniqueID:(unsigned int)arg1;
-- (void)setUserInfo:(id)arg1;
-- (void)setCompletionBlock:(id)arg1;
-- (id)context;
-- (void)setContext:(id)arg1;
+- (id)userInfo;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)deliveryAcknowledgementBlock;
 - (void)_setUsingOutgoingPush:(BOOL)arg1;
 - (BOOL)_usingOutgoingPush;
@@ -126,17 +123,24 @@
 - (BOOL)wantsResponse;
 - (id)clientInfo;
 - (id)serviceData;
+- (void)setResponseAlertInfo:(id)arg1;
 - (void)_setCachedBody:(id)arg1;
 - (void)setDeliveryAcknowledgementBlock:(id)arg1;
 - (void)setServiceData:(id)arg1;
 - (void)setTopic:(id)arg1;
-- (unsigned int)uniqueID;
-- (id)creationDate;
 - (id)topic;
-- (id)userInfo;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setCreationDate:(id)arg1;
+- (id)creationDate;
+- (int)command;
+- (id)completionBlock;
 - (id)bagKey;
+- (void)setUniqueID:(unsigned int)arg1;
+- (unsigned int)uniqueID;
+- (void)setUserInfo:(id)arg1;
+- (void)setCompletionBlock:(id)arg1;
+- (id)context;
+- (void)setContext:(id)arg1;
+- (void)setClientInfo:(id)arg1;
+- (id)responseAlertInfo;
 
 @end

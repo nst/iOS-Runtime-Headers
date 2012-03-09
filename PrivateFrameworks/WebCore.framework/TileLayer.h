@@ -37,12 +37,12 @@
 @property unsigned int paintCount;
 
 
+- (id)actionForKey:(id)arg1;
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSublayers;
 - (void)setTileGrid:(struct TileGrid { struct TileCache {} *x1; struct RetainPtr<CALayer> { id x_2_1_1; } x2; struct IntPoint { int x_3_1_1; int x_3_1_2; } x3; struct IntSize { int x_4_1_1; int x_4_1_2; } x4; float x5; struct HashMap<WebCore::IntPoint,WTF::RefPtr<WebCore::TileGridTile>,WTF::IntPointHash,WTF::HashTraits<WebCore::IntPoint>,WTF::HashTraits<WTF::RefPtr<WebCore::TileGridTile> > > { struct HashTable<WebCore::IntPoint,std::pair<WebCore::IntPoint, WTF::RefPtr<WebCore::TileGridTile> >,WTF::PairFirstExtractor<std::pair<WebCore::IntPoint, WTF::RefPtr<WebCore::TileGridTile> > >,WTF::IntPointHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::IntPoint>, WTF::HashTraits<WTF::RefPtr<WebCore::TileGridTile> > >,WTF::HashTraits<WebCore::IntPoint> > { struct pair<WebCore::IntPoint,WTF::RefPtr<WebCore::TileGridTile> > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_6_1_1; } x6; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_7_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_7_1_2; } x7; }*)arg1;
 - (unsigned int)paintCount;
 - (void)setPaintCount:(unsigned int)arg1;
-- (id)actionForKey:(id)arg1;
-- (void)drawInContext:(struct CGContext { }*)arg1;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

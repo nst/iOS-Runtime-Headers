@@ -13,6 +13,7 @@
 + (id)registerNotificationObserver:(id)arg1 forAccounts:(id)arg2 shouldLaunchMobileMail:(BOOL)arg3;
 + (id)smi_serverCommandName;
 
+- (void)dealloc;
 - (id)accountIDs;
 - (void)_validateMessageReferences:(id)arg1;
 - (void)_requestInitialMessageStateForAccountIDs:(id)arg1;
@@ -21,6 +22,5 @@
 - (void)setAccountIDs:(id)arg1;
 - (void)_smi_notifyClientDidFinishWithError:(id)arg1;
 - (id)_initWithDelegate:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -19,6 +19,8 @@
 + (id)sharedConversationList;
 
 - (int)unreadCount;
+- (id)init;
+- (void)dealloc;
 - (id)conversationForGroupID:(id)arg1 service:(id)arg2;
 - (id)conversationForGroupID:(id)arg1 create:(BOOL)arg2 service:(id)arg3;
 - (id)existingConversationForGroupID:(id)arg1;
@@ -57,8 +59,6 @@
 - (void)unpendConversation;
 - (id)aggregateConversationForRecipients:(id)arg1 create:(BOOL)arg2;
 - (id)aggregateConversationForRecipients:(id)arg1 create:(BOOL)arg2 service:(id)arg3;
-- (id)init;
-- (void)dealloc;
 - (void)resetCaches;
 
 @end

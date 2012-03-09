@@ -12,11 +12,11 @@
 
 + (id)sharedRequester;
 
-- (void)registerProvider:(Class)arg1;
-- (Class)classForProviderID:(short)arg1;
-- (void)cancelRequest:(id)arg1;
-- (void)startRequest:(id)arg1 finished:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
 - (id)init;
 - (void)dealloc;
+- (Class)classForProviderID:(short)arg1;
+- (void)startRequest:(id)arg1 finished:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
+- (void)cancelRequest:(id)arg1;
+- (void)registerProvider:(Class)arg1;
 
 @end

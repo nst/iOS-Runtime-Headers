@@ -11,13 +11,13 @@
 }
 
 
-- (id)identifier;
+- (void)dealloc;
 - (id)initWithServer:(id)arg1 destination:(id)arg2 identifier:(id)arg3;
 - (BOOL)setupChannel;
 - (void)receivedData:(id)arg1;
 - (void)receivedDidClose:(id)arg1;
 - (void)clearChannel;
 - (void)sendWebSocketMessage:(id)arg1;
-- (void)dealloc;
+- (id)identifier;
 
 @end

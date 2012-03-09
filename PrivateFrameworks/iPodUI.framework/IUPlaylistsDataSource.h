@@ -9,7 +9,7 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
-- (void)invalidate;
+- (int)initialSelectedIndex;
 - (id)_otgActionRow;
 - (id)_newOnTheGoViewControllerContext;
 - (id)_newActiveGeniusViewControllerContext;
@@ -26,6 +26,5 @@
 - (int)mediaDisclosureStyleForIndex:(unsigned int)arg1;
 - (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
 - (id)prefixActionRows;
-- (int)initialSelectedIndex;
 
 @end

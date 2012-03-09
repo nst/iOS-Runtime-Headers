@@ -9,6 +9,7 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
 - (id)attribute;
 - (id)columnDefinition;
 - (id)initWithProperty:(id)arg1;
@@ -19,6 +20,5 @@
 - (unsigned int)externalPrecision;
 - (int)externalScale;
 - (id)sqlType;
-- (BOOL)isEqual:(id)arg1;
 
 @end

@@ -11,13 +11,13 @@
 
 + (id)sharedInstance;
 
-- (void)start;
-- (void)stop;
+- (id)init;
+- (void)dealloc;
 - (void)_sendClientComposedMessage:(id)arg1 markup:(id)arg2 subject:(id)arg3 recipients:(id)arg4 attachmentPaths:(id)arg5 exportedFileNames:(id)arg6 composeOptions:(id)arg7;
 - (void)_stopListeningForClientComposeNotifications;
 - (void)_startListeningForClientComposeNotifications;
 - (void)_finishSendingClientComposedMessage:(id)arg1 markup:(id)arg2 subject:(id)arg3 recipients:(id)arg4 attachmentPaths:(id)arg5 exportedFileNames:(id)arg6 composeOptions:(id)arg7;
-- (id)init;
-- (void)dealloc;
+- (void)stop;
+- (void)start;
 
 @end

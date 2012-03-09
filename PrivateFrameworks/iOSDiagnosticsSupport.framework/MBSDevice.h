@@ -15,7 +15,7 @@
 @property(retain) NSMutableDictionary * deviceInfoDictionary;
 
 
-- (id)deviceInfoDictionary;
+- (void)dealloc;
 - (BOOL)collectAllDeviceInformation;
 - (BOOL)collectLogs;
 - (id)logData;
@@ -29,6 +29,6 @@
 - (void)setLogFileName:(id)arg1;
 - (void)setLogData:(id)arg1;
 - (id)logFileName;
-- (void)dealloc;
+- (id)deviceInfoDictionary;
 
 @end

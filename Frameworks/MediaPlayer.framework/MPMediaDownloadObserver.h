@@ -15,6 +15,7 @@
     struct dispatch_queue_s { } *_queue;
     BOOL _hasPendingProgressHandlerExecution;
     BOOL _invalidated;
+    int _retainCount;
 }
 
 @property(readonly) double downloadProgress;
@@ -23,11 +24,16 @@
 @property(readonly) BOOL canCancel;
 @property(getter=isRestoreDownload,readonly) BOOL restoreDownload;
 
-+ (id)sharedITunesStoreDownloadManager;
 + (id)newObserverForMediaItem:(id)arg1;
 + (id)newObserverForDownloadIdentifier:(id)arg1 downloadStatus:(int)arg2 itemPersistentID:(long long)arg3;
 + (id)newObserverForDownloadIdentifier:(id)arg1 downloadPersistentID:(long long)arg2;
++ (id)sharedITunesStoreDownloadManager;
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)init;
+- (void)dealloc;
 - (void)setProgressHandler:(id)arg1;
 - (id)progressHandler;
 - (BOOL)isCurrentlyPlayable;
@@ -35,10 +41,10 @@
 - (void)_onQueue_invalidate;
 - (BOOL)canCancel;
 - (BOOL)isRestoreDownload;
-- (void)invalidate;
-- (id)init;
-- (void)dealloc;
 - (double)downloadProgress;
 - (void)cancelDownload;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)invalidate;
 
 @end

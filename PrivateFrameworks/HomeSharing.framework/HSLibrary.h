@@ -23,14 +23,14 @@
 
 
 - (BOOL)requiresPassword;
+- (void)dealloc;
 - (id)initWithBaseURL:(id)arg1 forAccount:(id)arg2;
 - (id)initWithName:(id)arg1 uniqueIdentifier:(id)arg2 version:(unsigned int)arg3 baseURL:(id)arg4;
+- (id)connection;
 - (unsigned int)version;
 - (id)uniqueIdentifier;
 - (id)context;
 - (void)setContext:(id)arg1;
 - (id)name;
-- (id)connection;
-- (void)dealloc;
 
 @end

@@ -21,7 +21,8 @@
 + (id)userNotificationWithIdentifier:(id)arg1 title:(id)arg2 message:(id)arg3 defaultButton:(id)arg4 alternateButton:(id)arg5 otherButton:(id)arg6;
 
 - (double)timeout;
-- (id)responseInformation;
+- (id)userInfo;
+- (void)dealloc;
 - (void)_setResponseFlags:(unsigned int)arg1 responseInformation:(id)arg2;
 - (id)displayInformation;
 - (unsigned int)displayFlags;
@@ -30,7 +31,6 @@
 - (void)setUserInfo:(id)arg1;
 - (unsigned int)response;
 - (id)identifier;
-- (id)userInfo;
-- (void)dealloc;
+- (id)responseInformation;
 
 @end

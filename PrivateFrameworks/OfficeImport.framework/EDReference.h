@@ -15,6 +15,10 @@
 + (id)reference;
 + (id)referenceWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)setFirstRow:(int)arg1;
 - (void)setFirstColumn:(int)arg1;
 - (void)setLastRow:(int)arg1;
@@ -38,9 +42,5 @@
 - (int)lastColumn;
 - (bool)isRowReference;
 - (bool)isColumnReference;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 
 @end

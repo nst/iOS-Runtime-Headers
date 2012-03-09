@@ -26,7 +26,15 @@
 @property(retain) NSMutableArray * innerBoundarys;
 
 
+- (id)description;
+- (void)dealloc;
+- (int)fillColor;
+- (void)setFillColor:(int)arg1;
+- (id)dictionaryRepresentation;
+- (void)setLineWidth:(int)arg1;
+- (int)lineWidth;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)innerBoundarys;
 - (void)setHasFillColor:(BOOL)arg1;
 - (BOOL)hasFillColor;
@@ -43,13 +51,5 @@
 - (void)setLineColor:(int)arg1;
 - (void)setInnerBoundarys:(id)arg1;
 - (void)setLine:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (int)fillColor;
-- (void)setFillColor:(int)arg1;
-- (id)dictionaryRepresentation;
-- (void)setLineWidth:(int)arg1;
-- (int)lineWidth;
-- (id)description;
-- (void)dealloc;
 
 @end

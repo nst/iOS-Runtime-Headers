@@ -11,10 +11,10 @@
 @property(retain) NSString * sessionID;
 
 
-- (id)key;
-- (id)request;
+- (void)dealloc;
 - (id)sessionID;
 - (void)setSessionID:(id)arg1;
-- (void)dealloc;
+- (id)key;
+- (id)request;
 
 @end

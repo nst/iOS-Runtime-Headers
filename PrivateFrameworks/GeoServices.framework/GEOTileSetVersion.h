@@ -13,17 +13,17 @@
 @property(retain) NSMutableArray * availableTiles;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)availableTiles;
 - (id)availableTilesAtIndex:(unsigned int)arg1;
 - (unsigned int)availableTilesCount;
 - (void)addAvailableTiles:(id)arg1;
 - (void)setAvailableTiles:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (unsigned int)identifier;
 - (void)setIdentifier:(unsigned int)arg1;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

@@ -10,8 +10,8 @@
 
 + (id)sharedInstance;
 
-- (void)_preprocessWithContext:(id)arg1 string:(id*)arg2;
 - (void)parseContext:(id)arg1;
+- (void)_preprocessWithContext:(id)arg1 string:(id*)arg2;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
 

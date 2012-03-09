@@ -13,6 +13,8 @@
 
 + (id)pane;
 
+- (id)init;
+- (void)dealloc;
 - (double)xSplitPosition;
 - (void)setXSplitPosition:(double)arg1;
 - (double)ySplitPosition;
@@ -21,7 +23,5 @@
 - (void)setTopLeftCell:(id)arg1;
 - (int)activePane;
 - (void)setActivePane:(int)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

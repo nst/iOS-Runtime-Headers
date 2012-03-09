@@ -10,14 +10,30 @@
     struct __CFDictionary { } *_objects;
 }
 
++ (id)setWithObjects:(id*)arg1 count:(unsigned int)arg2;
 + (id)setWithCapacity:(unsigned int)arg1;
 + (id)setWithArray:(id)arg1;
 + (id)setWithObjects:(id)arg1;
 + (id)set;
 + (id)setWithObject:(id)arg1;
 + (id)setWithSet:(id)arg1;
-+ (id)setWithObjects:(id*)arg1 count:(unsigned int)arg2;
 
+- (void)addObjectsFromArray:(id)arg1;
+- (unsigned int)count;
+- (id)description;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (void)addObject:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)setByAddingObject:(id)arg1;
+- (BOOL)isSubsetOfSet:(id)arg1;
+- (void)setSet:(id)arg1;
+- (id)initWithSet:(id)arg1;
+- (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
+- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (id)descriptionWithLocale:(id)arg1;
 - (id)_copyAllItems;
 - (id)setByAddingObjectsFromArray:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
@@ -44,21 +60,5 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)removeObject:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)setByAddingObject:(id)arg1;
-- (BOOL)isSubsetOfSet:(id)arg1;
-- (void)setSet:(id)arg1;
-- (id)initWithSet:(id)arg1;
-- (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
-- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)descriptionWithLocale:(id)arg1;
-- (void)addObjectsFromArray:(id)arg1;
-- (unsigned int)count;
-- (id)description;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (void)addObject:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

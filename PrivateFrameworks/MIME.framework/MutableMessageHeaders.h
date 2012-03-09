@@ -18,7 +18,8 @@
 - (id)encodedHeaders;
 - (void)setHeader:(id)arg1 forKey:(id)arg2;
 - (id)firstHeaderForKey:(id)arg1;
-- (void)setReferences:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)mergeHeaders:(id)arg1;
 - (void)_appendHeaderKey:(id)arg1 value:(id)arg2 toData:(id)arg3;
 - (void)_appendAddedHeaderKey:(id)arg1 value:(id)arg2 toData:(id)arg3;
@@ -27,10 +28,9 @@
 - (BOOL)hasHeaderForKey:(id)arg1;
 - (id)_copyHeaderValueForKey:(id)arg1 offset:(unsigned int*)arg2 decoded:(BOOL)arg3;
 - (id)_copyHeaderValueForKey:(id)arg1;
-- (id)mutableCopy;
 - (void)setAddressListForBcc:(id)arg1;
 - (id)allHeaderKeys;
-- (id)description;
-- (void)dealloc;
+- (id)mutableCopy;
+- (void)setReferences:(id)arg1;
 
 @end

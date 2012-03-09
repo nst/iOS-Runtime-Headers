@@ -14,11 +14,11 @@
 @property(copy) NSString * html;
 
 
+- (void)dealloc;
 - (void)setBaseURL:(id)arg1;
-- (void)setHtml:(id)arg1;
+- (id)html;
 - (id)baseURL;
 - (id)webView;
-- (id)html;
-- (void)dealloc;
+- (void)setHtml:(id)arg1;
 
 @end

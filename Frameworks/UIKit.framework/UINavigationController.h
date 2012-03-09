@@ -72,7 +72,7 @@
 @property(setter=_setToolbarClass:) Class _toolbarClass;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)setIsExpanded:(BOOL)arg1;
 - (BOOL)isExpanded;
 - (id)detailViewController;
@@ -237,9 +237,9 @@
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (id)defaultFirstResponder;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (BOOL)_gkHasFormSheetImages;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_gkFormSheetContentInsets;
 - (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
@@ -251,21 +251,21 @@
 - (void)_gkSaveStatusBarStyle:(BOOL)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_gkAddFormSheetFrameImages;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
-- (void)invalidate;
 - (unsigned int)indexOfViewController:(id)arg1;
+- (void)invalidate;
 - (void)populateNavigationHistoryWithItems:(id)arg1;
 - (id)firstViewController;
 - (id)signInControllerInHierarchy;
 - (void)popToSigninControllerAnimated:(BOOL)arg1;
 - (BOOL)ckCanDismissWhenSuspending;
 - (int)localizedCompare:(id)arg1;
+- (id)firstViewController;
 - (void)swapInPreviouslySkippedViewControllers;
 - (void)swapTopViewControllerWithContext:(id)arg1;
 - (id)viewControllersForTopContext:(id)arg1;
 - (void)pushControllerForContext:(id)arg1 animated:(BOOL)arg2;
 - (void)restoreArchivedContexts:(id)arg1;
 - (id)copyArchivableContexts;
-- (id)firstViewController;
 - (BOOL)isTransitionInProgress;
 - (id)_rootControllerIfRespondsToSelector:(SEL)arg1;
 - (BOOL)shouldDisableWhileDownloading;

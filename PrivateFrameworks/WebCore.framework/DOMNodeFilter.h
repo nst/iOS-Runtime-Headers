@@ -6,8 +6,8 @@
 }
 
 
+- (void)dealloc;
 - (void)finalize;
 - (short)acceptNode:(id)arg1;
-- (void)dealloc;
 
 @end

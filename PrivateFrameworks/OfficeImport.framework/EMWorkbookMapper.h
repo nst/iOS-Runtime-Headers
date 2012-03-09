@@ -38,6 +38,8 @@
 + (id)borderStyleCache;
 + (id)borderWidthCache;
 
+- (void)dealloc;
+- (id)fileName;
 - (bool)isMultiPage;
 - (BOOL)hasMultipleSheets;
 - (void)mapBodyStyleAt:(id)arg1;
@@ -57,7 +59,5 @@
 - (id)blipAtIndex:(unsigned int)arg1;
 - (id)workbook;
 - (id)styleMatrix;
-- (id)fileName;
-- (void)dealloc;
 
 @end

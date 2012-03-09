@@ -5,8 +5,8 @@
 @interface ML3ITImageLibrary : NSObject  {
 }
 
-+ (unsigned int)readableArtworkFormatIDForUnreadablreFormatID:(unsigned int)arg1;
 + (struct MLArtworkFormatSpec { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; int x6; })artworkFormatSpecForArtworkFormatID:(unsigned int)arg1;
++ (unsigned int)readableArtworkFormatIDForUnreadablreFormatID:(unsigned int)arg1;
 
 
 @end

@@ -25,21 +25,21 @@
 + (void)loadAchievementDescriptionsForGame:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)loadAchievementDescriptionWithIdentifier:(id)arg1 forGame:(id)arg2 withCompletionHandler:(id)arg3;
 
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)loadImageWithCompletionHandler:(id)arg1;
 - (id)imageURL;
 - (id)internal;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (void)setInternal:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (id)valueForUndefinedKey:(id)arg1;
 - (id)image;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setImage:(id)arg1;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

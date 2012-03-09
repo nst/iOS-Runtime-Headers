@@ -7,11 +7,11 @@
 }
 
 
+- (id)description;
 - (void)setTransactionID:(unsigned long)arg1;
 - (id)initWithTransactionID:(unsigned long)arg1;
 - (id)contentForTCP;
 - (unsigned long)transactionID;
 - (id)initWithTCPBuffer:(void*)arg1;
-- (id)description;
 
 @end

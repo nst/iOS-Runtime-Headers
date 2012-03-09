@@ -24,10 +24,14 @@
 
 + (id)resourceCacheNodeWithDictionary:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)isExpired;
+- (void)setURL:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)URL;
 - (id)data;
-- (void)setFilename:(id)arg1;
-- (id)filename;
+- (void)setData:(id)arg1;
 - (id)expiration;
 - (void)setHasDiskRepresentation:(BOOL)arg1;
 - (BOOL)loadFromDisk;
@@ -40,11 +44,7 @@
 - (void)removeFromMemory;
 - (BOOL)inMemory;
 - (BOOL)destroy;
-- (void)setData:(id)arg1;
-- (void)setURL:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)URL;
-- (id)init;
-- (void)dealloc;
+- (void)setFilename:(id)arg1;
+- (id)filename;
 
 @end

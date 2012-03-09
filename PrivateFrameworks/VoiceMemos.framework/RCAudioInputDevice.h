@@ -45,8 +45,9 @@
 + (id)savedRecordingsDirectory;
 + (id)sharedInputDevice;
 
+- (id)init;
+- (void)dealloc;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
-- (void)_applicationWillTerminate:(id)arg1;
 - (void)getAverageAudioLevel:(float*)arg1 peakAudioLevel:(float*)arg2;
 - (double)elapsedRecordingTime;
 - (BOOL)shouldSuspend;
@@ -75,17 +76,16 @@
 - (void)_remakingCompleted:(id)arg1;
 - (void)remakeRecording:(id)arg1;
 - (id)recordingBeingRemade;
-- (id)_init;
 - (BOOL)isPaused;
-- (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3 error:(id)arg4;
-- (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
-- (void)captureOutput:(id)arg1 didPauseRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (void)captureOutput:(id)arg1 didResumeRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
-- (void)pauseRecording;
+- (void)captureOutput:(id)arg1 didPauseRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
+- (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
+- (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3 error:(id)arg4;
 - (void)resumeRecording;
+- (void)pauseRecording;
 - (BOOL)isRecording;
-- (id)init;
-- (void)dealloc;
+- (void)_applicationWillTerminate:(id)arg1;
+- (id)_init;
 - (void)becomeActive;
 - (void)resignActive;
 

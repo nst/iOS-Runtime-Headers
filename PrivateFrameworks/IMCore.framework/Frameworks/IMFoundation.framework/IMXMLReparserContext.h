@@ -19,6 +19,7 @@
 @property(readonly) NSString * _inContent;
 
 
+- (void)dealloc;
 - (id)outContent;
 - (id)initWithContent:(id)arg1 attributesToPreserve:(id)arg2 attributesToMerge:(id)arg3;
 - (id)attributesToMerge;
@@ -26,6 +27,5 @@
 - (void)_setOutContent:(id)arg1 error:(id)arg2;
 - (id)_inContent;
 - (id)error;
-- (void)dealloc;
 
 @end

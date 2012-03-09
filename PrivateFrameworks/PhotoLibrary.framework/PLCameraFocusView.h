@@ -13,17 +13,20 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)_fadeOut;
 - (void)startAnimating;
 - (void)stopAnimating;
 - (void)focusDidEnd;
 - (void)scaleFrame:(float)arg1 reposition:(BOOL)arg2;
 - (void)_fadeOutDidFinish;
+- (double)fadeOutDuration;
+- (double)fadeInDuration;
 - (id)_createBoundsAnimation;
 - (id)_createContentsAnimation;
 - (id)nameForDarkImage;
 - (id)nameForLightImage;
-- (id)init;
-- (void)dealloc;
+- (void)_loadImagesWithImageSize:(struct CGSize { float x1; float x2; }*)arg1;
 
 @end

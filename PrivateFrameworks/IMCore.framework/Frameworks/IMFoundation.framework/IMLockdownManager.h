@@ -34,7 +34,8 @@
 
 + (id)sharedInstance;
 
-- (int)lockdownState;
+- (id)init;
+- (void)dealloc;
 - (void)set_inverseDeviceIdentifier:(id)arg1;
 - (id)_inverseDeviceIdentifier;
 - (void)set_unqiueDeviceIdentifier:(id)arg1;
@@ -58,18 +59,17 @@
 - (id)uniqueDeviceIdentifier;
 - (BOOL)isCarrierInstall;
 - (BOOL)brickedDevice;
-- (void)_resetActivationState;
 - (void)_activationFailed;
 - (BOOL)_hasEverRegistered;
 - (void)_setupActivationState;
 - (void)_setHasEverRegistered:(BOOL)arg1;
+- (void)_resetActivationState;
 - (BOOL)clientCanAcccessPath:(id)arg1;
 - (BOOL)clientCanAcccessPreferenceDomain:(id)arg1;
+- (struct __SecIdentity { }*)copyIdentity;
+- (BOOL)isInternalInstall;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
-- (BOOL)isInternalInstall;
-- (struct __SecIdentity { }*)copyIdentity;
-- (id)init;
-- (void)dealloc;
+- (int)lockdownState;
 
 @end

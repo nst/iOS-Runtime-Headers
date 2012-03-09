@@ -80,6 +80,8 @@
 @property(readonly) NSString * itemTypeString;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)bundleVersion;
 - (void)setSecondaryTitle:(id)arg1;
 - (id)secondaryTitle;
@@ -93,8 +95,6 @@
 - (id)title;
 - (id)bundleIdentifier;
 - (void)setTitle:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setVersionOrdering:(id)arg1;
 - (void)setVersionIdentifier:(id)arg1;
 - (void)setUnmodifiedTitle:(id)arg1;

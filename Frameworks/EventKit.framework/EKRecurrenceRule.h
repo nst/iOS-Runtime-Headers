@@ -26,8 +26,11 @@
 + (id)iCalendarValueFromDate:(id)arg1 isDateOnly:(BOOL)arg2 isFloating:(BOOL)arg3;
 + (id)iCalendarValueFromRecurrenceType:(int)arg1;
 
-- (id)owner;
-- (id)UUID;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)calendarIdentifier;
 - (int)firstDayOfTheWeek;
 - (id)cachedEndDate;
 - (BOOL)shouldPinMonthDays;
@@ -60,10 +63,7 @@
 - (int)interval;
 - (void)setInterval:(int)arg1;
 - (void)reset;
-- (id)calendarIdentifier;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)owner;
+- (id)UUID;
 
 @end

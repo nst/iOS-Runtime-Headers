@@ -12,10 +12,10 @@
 
 + (id)currentDevice;
 
+- (id)init;
 - (BOOL)supportsFileLevelEncryption;
 - (BOOL)supportsBlockLevelEncryption;
 - (BOOL)_mediaDiskIsEncrypted;
 - (BOOL)validateCapabilitiesRequiredByRestrictions:(id)arg1 localizedIncompatibilityMessage:(id)arg2 outError:(id*)arg3;
-- (id)init;
 
 @end

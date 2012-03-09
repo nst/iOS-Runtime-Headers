@@ -35,6 +35,8 @@
 + (void)setAllowInBackground:(BOOL)arg1;
 + (unsigned int)availableAttitudeReferenceFrames;
 
+- (id)init;
+- (void)dealloc;
 - (void)stopDeviceMotionUpdates;
 - (void)stopAccelerometerUpdates;
 - (void)setDeviceMotionUpdateInterval:(double)arg1;
@@ -44,9 +46,8 @@
 - (void)startAccelerometerUpdates;
 - (id)deviceMotion;
 - (id)accelerometerData;
-- (id)init;
-- (void)dealloc;
 - (void)setDeviceMotionCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3 fsync:(BOOL)arg4 bandwidth:(int)arg5;
+- (id)initUsing6AxisSensorFusion:(BOOL)arg1;
 - (void)setShowsDeviceMovementDisplay:(BOOL)arg1;
 - (void)stopMagnetometerUpdates;
 - (void)startMagnetometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
@@ -73,6 +74,9 @@
 - (void)willResignActivePrivate:(id)arg1;
 - (void)showDeviceMovementDisplay;
 - (BOOL)showsDeviceMovementDisplay;
+- (void)setDeviceMotionCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3 fsync:(BOOL)arg4 bandwidth:(int)arg5 useAccelerometer:(bool)arg6;
+- (void)setGyroDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
+- (void)setAccelerometerDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setShowsDeviceMovementDisplayPrivate:(BOOL)arg1;
 - (BOOL)isMagnetometerAvailable;
 - (void)stopMagnetometerUpdatesPrivate;
@@ -102,9 +106,5 @@
 - (void)onMagnetometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
 - (void)onGyro:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; boolx3; }*)arg1;
 - (void)onAccelerometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
-- (id)initUsing6AxisSensorFusion:(BOOL)arg1;
-- (void)setAccelerometerDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
-- (void)setDeviceMotionCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3 fsync:(BOOL)arg4 bandwidth:(int)arg5 useAccelerometer:(bool)arg6;
-- (void)setGyroDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
 
 @end

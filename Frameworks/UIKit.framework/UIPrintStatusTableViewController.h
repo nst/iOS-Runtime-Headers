@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithJob:(id)arg1;
 - (void)updateJobInfo;
 - (void)popToJobsView;
@@ -24,6 +25,5 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
 
 @end

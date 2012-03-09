@@ -15,7 +15,8 @@
 + (id)_imageCache;
 
 - (unsigned long long)persistentID;
-- (void)setRating:(float)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)initWithMediaItem:(id)arg1;
 - (id)mediaItem;
 - (BOOL)wantsSubtitles;
@@ -26,6 +27,8 @@
 - (BOOL)hasAlternatesForTypes:(unsigned int)arg1;
 - (BOOL)isAssetURLValid;
 - (BOOL)isPlaceholderForItem:(id)arg1;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
+- (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
 - (id)albumArtist;
 - (void)updateAttributesForDefaultsChange:(id)arg1;
 - (void)setupPlaybackInfo;
@@ -58,16 +61,15 @@
 - (id)composer;
 - (id)artist;
 - (id)album;
+- (void)setRating:(float)arg1;
 - (unsigned int)type;
+- (id)mainTitle;
+- (float)userRating;
 - (void)_updateBookmarkTimeIfNecessary:(double)arg1;
 - (void)_handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
 - (void)pushBookmarkingTimesToCloud;
 - (void)_updateRentalsPlistForFinish;
 - (id)_chapterTitleForTime:(double)arg1;
 - (id)_newTimeMarkersForChapterType:(int)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)mainTitle;
-- (float)userRating;
 
 @end

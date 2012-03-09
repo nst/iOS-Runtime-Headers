@@ -11,11 +11,11 @@
 @property(retain) NSFileHandle * destinationFile;
 
 
+- (void)dealloc;
 - (void)setDestinationFile:(id)arg1;
 - (id)initWithURL:(id)arg1 destinationFile:(id)arg2;
 - (id)destinationFile;
 - (BOOL)shouldLogResponseBody;
 - (id)copyDefaultParserForContentType:(id)arg1;
-- (void)dealloc;
 
 @end

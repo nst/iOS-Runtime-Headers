@@ -28,8 +28,9 @@
 }
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (void)release;
+- (id)init;
+- (void)dealloc;
 - (void)clearRetries;
 - (void)tryNATCheckWithDelay:(double)arg1;
 - (id)initWithOptions:(id)arg1;
@@ -45,8 +46,7 @@
 - (void)HTTPCheckWithIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1 useCache:(BOOL)arg2;
 - (void)HTTPSCheckWithIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1 useCache:(BOOL)arg2;
 - (int)natType;
-- (id)init;
-- (void)release;
-- (void)dealloc;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

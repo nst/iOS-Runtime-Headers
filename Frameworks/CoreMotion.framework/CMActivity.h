@@ -13,12 +13,12 @@
 @property(readonly) BOOL isDriving;
 
 
-- (BOOL)isRunning;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (BOOL)isRunning;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isDriving;
 - (BOOL)isWalking;
 - (BOOL)isMoving;

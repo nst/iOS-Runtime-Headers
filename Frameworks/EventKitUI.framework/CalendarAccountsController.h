@@ -11,9 +11,11 @@
     AccountsManager *_accountsManager;
 }
 
-+ (void)invalidate;
 + (id)sharedInstance;
++ (void)invalidate;
 
+- (void)dealloc;
+- (id)accountManager;
 - (void)refreshListingForSource:(id)arg1 isUserRequested:(BOOL)arg2;
 - (void)refreshSource:(id)arg1 isUserRequested:(BOOL)arg2;
 - (BOOL)sourceListingNeedsRefresh:(id)arg1;
@@ -27,7 +29,5 @@
 - (void)_refreshSubscribedSource:(id)arg1 isUserRequested:(BOOL)arg2;
 - (void)refreshCalendar:(id)arg1 isUserRequested:(BOOL)arg2;
 - (id)accountTypeTitleForSourceWithExternalId:(id)arg1;
-- (void)dealloc;
-- (id)accountManager;
 
 @end

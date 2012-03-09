@@ -14,10 +14,10 @@
 
 + (id)sharedInstance;
 
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
 - (id)init;
 - (void)dealloc;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 - (id)currentCamera;
 - (void)_loadSavedCamera;
 - (void)_rebuildCameraList;

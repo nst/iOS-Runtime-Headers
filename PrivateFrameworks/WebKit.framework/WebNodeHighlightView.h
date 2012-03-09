@@ -9,11 +9,11 @@
 }
 
 
-- (void)drawInContext:(struct CGContext { }*)arg1;
-- (BOOL)isFlipped;
+- (void)dealloc;
 - (id)webNodeHighlight;
 - (id)initWithWebNodeHighlight:(id)arg1;
 - (void)detachFromWebNodeHighlight;
-- (void)dealloc;
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (BOOL)isFlipped;
 
 @end

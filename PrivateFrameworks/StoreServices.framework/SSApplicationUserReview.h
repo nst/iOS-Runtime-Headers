@@ -16,14 +16,14 @@
 @property(getter=isValidReview,readonly) BOOL validReview;
 
 
+- (id)init;
+- (void)dealloc;
+- (float)userRating;
+- (void)setUserRating:(float)arg1;
 - (id)applicationPath;
 - (BOOL)scheduleReview;
 - (BOOL)isValidReview;
 - (void)_loadApplicationMetadata;
 - (id)initForApplicationWithPath:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (float)userRating;
-- (void)setUserRating:(float)arg1;
 
 @end

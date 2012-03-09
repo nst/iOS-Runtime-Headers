@@ -20,6 +20,7 @@
 + (id)_appearanceForClass:(Class)arg1 withContainerList:(id)arg2;
 + (void)_setInvalidatesViewsOnAppearanceChange:(BOOL)arg1;
 
+- (void)dealloc;
 - (void)_setResettableInvocations:(id)arg1;
 - (id)_resettableInvocations;
 - (Class)_CustomizableClass;
@@ -28,6 +29,5 @@
 - (id)_resettableInvocationsCreateIfNecessary;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)dealloc;
 
 @end

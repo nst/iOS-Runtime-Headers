@@ -22,6 +22,7 @@
 @property(readonly) NSArray * allEvents;
 
 
+- (void)dealloc;
 - (id)eventStore;
 - (id)allEvents;
 - (int)importedEventCount;
@@ -32,6 +33,5 @@
 - (int)unimportedEventCount;
 - (int)totalEventCount;
 - (id)initWithICSData:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
-- (void)dealloc;
 
 @end

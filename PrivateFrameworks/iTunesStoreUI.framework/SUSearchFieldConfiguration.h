@@ -24,13 +24,13 @@
 
 + (id)defaultConfiguration;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)placeholderString;
 - (int)location;
 - (id)initWithDictionary:(id)arg1;
 - (float)width;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)userDefaultsKey;
 - (id)cancelString;
 - (id)hintsURLRequestPropertiesForNetworkType:(int)arg1;

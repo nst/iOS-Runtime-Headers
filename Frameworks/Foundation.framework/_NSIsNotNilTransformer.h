@@ -7,7 +7,7 @@
 
 + (BOOL)supportsReverseTransformation;
 
-- (id)transformedValue:(id)arg1;
 - (id)description;
+- (id)transformedValue:(id)arg1;
 
 @end

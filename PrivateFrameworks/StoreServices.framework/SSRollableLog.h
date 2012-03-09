@@ -15,6 +15,9 @@
 @property(readonly) SSLogFileOptions * logOptions;
 
 
+- (void)dealloc;
+- (void)_openLogFile;
+- (void)_closeLogFile;
 - (id)logOptions;
 - (void)_rollLogFiles;
 - (id)_activeLogFilePath;
@@ -22,8 +25,5 @@
 - (void)_checkLogFileSize;
 - (id)initWithLogOptions:(id)arg1;
 - (void)writeString:(id)arg1;
-- (void)_openLogFile;
-- (void)_closeLogFile;
-- (void)dealloc;
 
 @end

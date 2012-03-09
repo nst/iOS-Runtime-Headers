@@ -13,6 +13,7 @@
 }
 
 
+- (void)dealloc;
 - (id)parent;
 - (id)initWithRoot:(id)arg1;
 - (void)addStyle:(id)arg1 withOwnedIdentifier:(char *)arg2;
@@ -22,6 +23,5 @@
 - (struct __CFArray { }*)retainedArrayOfIdentifiedStyles;
 - (id)styleWithIdentifier:(const char *)arg1;
 - (BOOL)addStyle:(id)arg1 withOwnedXmlUid:(char *)arg2;
-- (void)dealloc;
 
 @end

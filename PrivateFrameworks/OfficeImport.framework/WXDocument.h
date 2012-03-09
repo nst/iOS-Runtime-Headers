@@ -5,6 +5,7 @@
 @interface WXDocument : NSObject  {
 }
 
++ (void)initialize;
 + (id)readFromArchive:(id)arg1 cancel:(id)arg2 asThumbnail:(BOOL)arg3;
 + (id)readFromData:(id)arg1 cancel:(id)arg2 asThumbnail:(BOOL)arg3;
 + (id)documentFrom:(id)arg1 reader:(id)arg2 cancel:(id)arg3 asThumbnail:(BOOL)arg4;
@@ -13,7 +14,6 @@
 + (void)mapLists:(id)arg1 to:(id)arg2 state:(id)arg3;
 + (void)readDocumentSettings:(id)arg1 to:(id)arg2 state:(id)arg3;
 + (void)mapDocument:(id)arg1 to:(id)arg2 state:(id)arg3;
-+ (void)initialize;
 
 
 @end

@@ -16,12 +16,12 @@
 @property(readonly) NSArray * sectionIndexTitles;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)sectionIndexTitles;
 - (int)numberOfItems;
 - (int)numberOfSections;
 - (void)setItems:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (BOOL)ignoresEmptySections;
 - (id)hintTextForKey:(id)arg1;
 - (void)_removeHiddenItemsFromArray:(id)arg1;

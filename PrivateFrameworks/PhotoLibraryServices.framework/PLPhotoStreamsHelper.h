@@ -6,14 +6,16 @@
     BOOL _appHasPolledOnceThisForegroundSession;
 }
 
++ (BOOL)canInitiateDistributedPhotoStreamDeletionForAssetUUID:(id)arg1;
 + (BOOL)writeBreadcrumbContent:(id)arg1 forHashString:(id)arg2;
 + (id)publishBreadcrumbsPath;
 + (id)photoStreamAccount;
 + (BOOL)photoStreamsEnabled;
 + (id)sharedPhotoStreamsHelper;
 
+- (id)init;
+- (void)dealloc;
 - (void)resetServerState;
-- (void)assetsWithNames:(id)arg1 willBeDeletedForStreamID:(id)arg2;
 - (id)derivedAssetForMasterAsset:(id)arg1;
 - (int)friendsLimit;
 - (int)imageLimitForFriendStream;
@@ -35,16 +37,16 @@
 - (id)imageLimitsByAssetType;
 - (void)_appDidEnterBackground:(id)arg1;
 - (BOOL)shouldUploadVideos;
+- (void)cleanupPhotoStreamMetadataForAssetsWithUUIDs:(id)arg1 forStreamID:(id)arg2;
 - (void)resetMstreamdStateForPersonID:(id)arg1;
-- (void)assetWithFileHash:(id)arg1 metadata:(id)arg2 wasSavedToPath:(id)arg3;
-- (BOOL)shouldPublishScreenShots;
+- (void)savePhotoStreamMetadata:(id)arg1 forAsset:(id)arg2;
 - (void)pollForNewSubscriptionContent;
 - (id)photoStreamsPublishStreamID;
+- (BOOL)shouldPublishScreenShots;
 - (void)pollForNewSubscriptionContentOncePerAppForegroundSession;
 - (void)resume_mstreamd:(id)arg1;
 - (id)pause_mstreamd;
-- (BOOL)enqueueAssetForPSPublishing:(id)arg1 assetHash:(id)arg2 fullPath:(id)arg3 fileSize:(id)arg4 type:(id)arg5;
-- (id)init;
-- (void)dealloc;
+- (BOOL)enqueueAssetForPSPublishing:(id)arg1 assetHash:(id)arg2 fullPath:(id)arg3 fileSize:(id)arg4 type:(id)arg5 reenqueueCount:(id)arg6;
+- (void)initiateDeletionOfPhotoStreamAssets:(id)arg1;
 
 @end

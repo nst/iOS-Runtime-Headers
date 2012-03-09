@@ -19,6 +19,7 @@
 @property(retain) NSString * localIDStr;
 @property(retain) NSNumber * transactionTypeNum;
 
++ (id)createTransactionEntriesForCompressedObjectIDs:(id)arg1 withTransactionType:(int)arg2 withImportContext:(id)arg3;
 + (id)createKnowledgeVectorByAddingKnowledgeVector:(id)arg1 toKnowledgeVector:(id)arg2;
 + (id)createSumForKnowlegeVectorString:(id)arg1;
 + (BOOL)canMergeKnowledgeVector:(id)arg1 withKnowledgeVector:(id)arg2;
@@ -31,6 +32,7 @@
 + (id)createKnowledgeVectorStringFromPeerDictionary:(id)arg1;
 + (id)transactionEntriesAfterPeerState:(id)arg1 forStoreName:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)transactionEntriesForGlobalIDStrings:(id)arg1 beforePeerState:(id)arg2 inManagedObjectContext:(id)arg3;
++ (id)newTransactionEntryForObjectWithCompressedGlobalID:(id)arg1 withTransactionType:(int)arg2 importContext:(id)arg3;
 
 - (int)transactionType;
 - (id)transactionLogURL;

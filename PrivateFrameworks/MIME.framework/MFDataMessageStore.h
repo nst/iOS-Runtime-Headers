@@ -18,10 +18,10 @@
 - (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(BOOL)arg2;
 - (id)account;
 - (id)mailboxUid;
+- (void)dealloc;
 - (id)storePath;
 - (id)message;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
 - (void)setMessageClass:(Class)arg1;
 
 @end

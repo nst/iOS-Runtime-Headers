@@ -15,18 +15,18 @@
 @property int face;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
+- (int)face;
+- (void)setFace:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasFace:(BOOL)arg1;
 - (BOOL)hasFace;
 - (int)tileYIndex;
 - (int)tileXIndex;
 - (void)setTileYIndex:(int)arg1;
 - (void)setTileXIndex:(int)arg1;
-- (void)writeTo:(id)arg1;
-- (int)face;
-- (void)setFace:(int)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

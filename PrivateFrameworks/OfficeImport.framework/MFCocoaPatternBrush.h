@@ -11,8 +11,8 @@
 
 + (id)patternBrushWithBitmap:(id)arg1 usePaletteForBilevel:(BOOL)arg2;
 
+- (void)dealloc;
 - (id)initWithBitmap:(id)arg1 usePaletteForBilevel:(BOOL)arg2;
 - (void)fillPath:(id)arg1 :(id)arg2;
-- (void)dealloc;
 
 @end

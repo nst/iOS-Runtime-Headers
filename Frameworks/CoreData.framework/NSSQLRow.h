@@ -8,11 +8,15 @@
     _CDSnapshot *_snapshot;
 }
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
 + (unsigned int)newBatchRowAllocation:(id*)arg1 count:(unsigned int)arg2 forSQLEntity:(id)arg3 withOwnedObjectIDs:(struct _NSScalarObjectID {}**)arg4 andTimestamp:(double)arg5;
 + (id)allocForSQLEntity:(id)arg1;
-+ (void)initialize;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copy;
+- (void)dealloc;
 - (id)valueForKey:(id)arg1;
 - (void)setForeignEntityKeySlot:(unsigned int)arg1 unsigned:(unsigned int)arg2;
 - (void)setForeignKeySlot:(unsigned int)arg1 int64:(long long)arg2;
@@ -36,9 +40,5 @@
 - (struct __CFBitVector { }*)newCalculatedDeltaMaskFrom:(id)arg1;
 - (id)entity;
 - (struct _NSScalarObjectID { Class x1; }*)objectID;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)copy;
 
 @end

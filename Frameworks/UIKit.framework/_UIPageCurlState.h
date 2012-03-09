@@ -53,6 +53,7 @@
 @property(readonly) NSDate * beginDate;
 
 
+- (void)dealloc;
 - (id)beginDate;
 - (id)previousState;
 - (int)curlState;
@@ -78,6 +79,5 @@
 - (id)pageCurl;
 - (void)_detach;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)dealloc;
 
 @end

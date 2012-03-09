@@ -23,8 +23,15 @@
 @property(retain) LBSAddressRange * range;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setRange:(id)arg1;
+- (id)dictionaryRepresentation;
+- (int)type;
+- (id)range;
+- (void)setType:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)featureId;
 - (int)featureType;
 - (void)setHasFeatureType:(BOOL)arg1;
@@ -38,12 +45,5 @@
 - (void)addParsedName:(id)arg1;
 - (void)setFeatureId:(id)arg1;
 - (void)setParsedNames:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (int)type;
-- (id)range;
-- (void)setType:(int)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

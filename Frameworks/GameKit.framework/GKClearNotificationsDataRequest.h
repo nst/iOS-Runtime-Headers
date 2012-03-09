@@ -13,12 +13,12 @@
 @property(retain) NSArray * playerIDs;
 
 
+- (void)dealloc;
 - (id)playerIDs;
 - (void)setPlayerIDs:(id)arg1;
 - (id)key;
 - (id)request;
 - (int)type;
 - (void)setType:(int)arg1;
-- (void)dealloc;
 
 @end

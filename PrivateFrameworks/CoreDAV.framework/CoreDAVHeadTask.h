@@ -6,8 +6,8 @@
 }
 
 
-- (void)finishCoreDAVTaskWithError:(id)arg1;
 - (unsigned int)cachePolicy;
+- (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
 - (id)requestBody;
 

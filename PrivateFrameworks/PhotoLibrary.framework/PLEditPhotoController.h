@@ -74,11 +74,13 @@
   /* Error parsing encoded ivar type info: @? */
     id _actionCompletionBlock;
 
+    unsigned int _redEyeCycleCount;
     unsigned int _didInitializeNavigationItem : 1;
     unsigned int _toolbarWasHidden : 1;
     unsigned int _isUserAction : 1;
     unsigned int _isCroppingImage : 1;
     unsigned int _didTapForRedEyeCorrection : 1;
+    unsigned int _isCanceling : 1;
     unsigned int _isOrderedOut : 1;
     unsigned int _autoAdjustmentEnabled : 1;
     unsigned int _preloadingEnhancementFilters : 1;
@@ -102,9 +104,9 @@
 
 + (void)initialize;
 
-- (float)rotationAngle;
-- (void)setRotationAngle:(float)arg1;
-- (void)_setUndoManager:(id)arg1;
+- (void)save:(id)arg1;
+- (void)dealloc;
+- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (void)willPresentAlertView:(id)arg1;
 - (id)scrollView;
 - (void)setToolbar:(id)arg1;
@@ -131,11 +133,13 @@
 - (void)orderOut:(BOOL)arg1;
 - (void)undo:(id)arg1;
 - (void)motionEnded:(int)arg1 withEvent:(id)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)willPresentActionSheet:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)applicationDidEnterBackground:(id)arg1;
+- (float)rotationAngle;
+- (void)setRotationAngle:(float)arg1;
+- (void)_setUndoManager:(id)arg1;
 - (id)actionCompletionBlock;
 - (id)redEyePoints;
 - (id)_autoAdjustmentFilters;
@@ -241,7 +245,5 @@
 - (void)cancel:(id)arg1;
 - (id)pendingPhoto;
 - (id)editedPhoto;
-- (void)save:(id)arg1;
-- (void)dealloc;
 
 @end

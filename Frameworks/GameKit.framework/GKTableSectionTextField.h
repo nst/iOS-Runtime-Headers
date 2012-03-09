@@ -21,6 +21,8 @@
 @property(getter=isLoading) BOOL loading;
 
 
+- (id)init;
+- (void)dealloc;
 - (int)tableView:(id)arg1 numberOfColumnsForRow:(int)arg2;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
@@ -33,7 +35,5 @@
 - (float)headerHeight;
 - (id)textField;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

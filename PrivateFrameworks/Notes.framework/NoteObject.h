@@ -35,23 +35,23 @@
 @property(retain) NSString * externalContentRef;
 
 
-- (id)noteId;
-- (void)setExternalContentRef:(id)arg1;
-- (id)externalContentRef;
-- (id)contentAsPlainTextPreservingNewlines;
-- (id)contentAsPlainText;
-- (void)markForDeletion;
 - (void)setFlags:(unsigned long long)arg1;
+- (unsigned long long)flags;
+- (id)content;
 - (BOOL)isPlainText;
 - (void)setIsPlainText:(BOOL)arg1;
 - (void)setContent:(id)arg1;
-- (unsigned long long)flags;
-- (id)content;
 - (id)externalRepresentation;
 - (BOOL)isMarkedForDeletion;
 - (void)setExternalRepresentation:(id)arg1;
 - (void)setServerIntId:(long long)arg1;
 - (long long)serverIntId;
 - (BOOL)hasValidServerIntId;
+- (id)noteId;
+- (void)setExternalContentRef:(id)arg1;
+- (id)externalContentRef;
+- (id)contentAsPlainTextPreservingNewlines;
+- (id)contentAsPlainText;
+- (void)markForDeletion;
 
 @end

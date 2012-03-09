@@ -4,7 +4,7 @@
 
 @class UIKBTree;
 
-@interface UIKBKeyView : UIView  {
+@interface UIKBKeyView : UIView <UIKBCacheableView> {
     UIKBTree *m_keyboard;
     UIKBTree *m_key;
     int m_state;
@@ -19,13 +19,16 @@
 @property(readonly) UIKBTree * key;
 @property(readonly) int state;
 @property struct CGPoint { float x1; float x2; } drawOrigin;
+@property(readonly) BOOL cacheDeferable;
 
 
+- (void)dealloc;
 - (struct CGPoint { float x1; float x2; })drawOrigin;
 - (BOOL)shouldCache;
 - (void)updateForKeyboard:(id)arg1 key:(id)arg2;
 - (void)setDrawOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 key:(id)arg3 state:(int)arg4;
+- (BOOL)cacheDeferable;
 - (id)cacheKey;
 - (id)key;
 - (int)textEffectsVisibilityLevel;
@@ -33,6 +36,5 @@
 - (id)keyboard;
 - (int)state;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

@@ -11,10 +11,10 @@
 @property(retain) NSArray * scriptButtons;
 
 
-- (void)loadView;
-- (void)reloadData;
 - (id)init;
 - (void)dealloc;
+- (void)loadView;
+- (void)reloadData;
 - (void)_updateFooterView;
 - (void)startPreOrderDownloadAction:(id)arg1;
 - (id)_downloadsViewController;

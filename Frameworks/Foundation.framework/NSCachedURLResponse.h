@@ -9,7 +9,6 @@
 }
 
 
-- (id)data;
 - (void)_reestablishInternalCFCachedURLResponse:(struct _CFCachedURLResponse { }*)arg1;
 - (void)_deallocInternalCFCachedURLResponse;
 - (id)dataArray;
@@ -17,14 +16,15 @@
 - (id)initWithResponse:(id)arg1 data:(id)arg2;
 - (id)initWithResponse:(id)arg1 data:(id)arg2 userInfo:(id)arg3 storagePolicy:(unsigned int)arg4;
 - (unsigned int)storagePolicy;
-- (id)_initWithCFCachedURLResponse:(struct _CFCachedURLResponse { }*)arg1;
-- (struct _CFCachedURLResponse { }*)_CFCachedURLResponse;
-- (id)response;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)userInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)response;
+- (id)data;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)_initWithCFCachedURLResponse:(struct _CFCachedURLResponse { }*)arg1;
+- (struct _CFCachedURLResponse { }*)_CFCachedURLResponse;
 - (id)_cacheTime;
 
 @end

@@ -11,7 +11,10 @@
 @property <SSItemLookupRequestDelegate> * delegate;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setValue:(id)arg1 forParameter:(id)arg2;
+- (id)valueForParameter:(id)arg1;
 - (id)_copyStringParameters;
 - (void)_sendItemsToDelegate:(id)arg1;
 - (id)_copyItemsFromResponse:(id)arg1 userInfo:(id)arg2;
@@ -19,8 +22,5 @@
 - (id)_convertedValueForValue:(id)arg1;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
-- (id)valueForParameter:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

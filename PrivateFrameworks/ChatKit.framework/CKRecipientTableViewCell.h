@@ -15,9 +15,9 @@
 + (id)highlightedAvailableImage;
 + (id)availableImage;
 
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)dealloc;
 - (BOOL)isRecipientAvailable;
 - (void)setRecipientAvailable:(BOOL)arg1;
-- (void)dealloc;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

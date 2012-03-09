@@ -15,6 +15,8 @@
 
 + (id)messageWithInfo:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (void)sendReply;
 - (id)replyInfo;
 - (void)setReplyInfo:(id)arg1;
@@ -22,7 +24,5 @@
 - (void*)_xpcObject;
 - (id)initWithMessageInfo:(id)arg1;
 - (id)messageInfo;
-- (id)description;
-- (void)dealloc;
 
 @end

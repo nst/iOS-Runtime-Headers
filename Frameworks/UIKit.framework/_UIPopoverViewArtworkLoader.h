@@ -11,6 +11,7 @@
 
 + (id)backgroundSelectorForBackgroundStyle:(int)arg1;
 
+- (void)dealloc;
 - (id)shortBottomArrowRightEndCapView;
 - (id)shortBottomArrowPinnedView;
 - (id)shortBottomArrowView;
@@ -38,6 +39,5 @@
 - (id)topArrowPinnedView;
 - (id)topArrowLeftEndCapView;
 - (id)initWithBackgroundStyle:(int)arg1;
-- (void)dealloc;
 
 @end

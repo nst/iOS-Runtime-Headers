@@ -15,6 +15,14 @@
 @property(retain) NSString * headerTitle;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)itemAtIndex:(int)arg1;
+- (BOOL)hasSubitemForIndexPathRow:(unsigned int)arg1;
+- (id)itemAtIndex:(int)arg1 subitemIndex:(int*)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (id)cellForSubitemAtIndex:(int)arg1;
+- (id)initWithTag:(int)arg1 headerTitle:(id)arg2;
 - (void)setHeaderTitle:(id)arg1;
 - (id)headerTitle;
 - (int)numberOfRows;
@@ -22,13 +30,5 @@
 - (id)items;
 - (int)tag;
 - (void)setTag:(int)arg1;
-- (BOOL)hasSubitemForIndexPathRow:(unsigned int)arg1;
-- (id)itemAtIndex:(int)arg1 subitemIndex:(int*)arg2;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
-- (id)cellForSubitemAtIndex:(int)arg1;
-- (id)initWithTag:(int)arg1 headerTitle:(id)arg2;
-- (id)description;
-- (void)dealloc;
-- (id)itemAtIndex:(int)arg1;
 
 @end

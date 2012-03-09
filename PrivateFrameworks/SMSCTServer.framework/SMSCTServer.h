@@ -12,6 +12,11 @@
 
 + (id)sharedServer;
 
+- (void)dealloc;
+- (void)_registerForCTNotifications;
+- (void)_significantTimeChanged;
+- (void)stop;
+- (void)start;
 - (void)_clearPendingIncomingMessageQueue;
 - (void)updateMMSCapability;
 - (void)_checkAddressBook:(void*)arg1;
@@ -30,10 +35,5 @@
 - (void)_removeAssociationSetForRecord:(int)arg1;
 - (void)_checkAddressBookAfterQuiescence;
 - (void)_reallySendSMSRequest:(struct __CFDictionary { }*)arg1 withProcessedParts:(struct __CFArray { }*)arg2 recordID:(unsigned int)arg3;
-- (void)start;
-- (void)stop;
-- (void)_registerForCTNotifications;
-- (void)_significantTimeChanged;
-- (void)dealloc;
 
 @end

@@ -15,8 +15,8 @@
 @property(retain) NSMutableDictionary * clientSideComposedImageInfos;
 
 
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setClientSideComposedImageInfos:(id)arg1;
 - (id)clientSideComposedImageInfos;
 - (void)setAdditionalAttachments:(id)arg1;
@@ -27,7 +27,7 @@
 - (unsigned int)numberOfAdditionalAttachmentsOfType:(int)arg1;
 - (unsigned int)numberOfAdditionalAttachments;
 - (int)primaryType;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

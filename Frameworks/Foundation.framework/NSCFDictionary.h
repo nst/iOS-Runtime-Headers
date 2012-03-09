@@ -7,16 +7,6 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (void)removeObjectForKey:(id)arg1;
-- (void)finalize;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (id)keyEnumerator;
-- (Class)classForCoder;
-- (void)removeAllObjects;
-- (void)setObservationInfo:(void*)arg1;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (unsigned int)count;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
@@ -25,7 +15,17 @@
 - (id)objectForKey:(id)arg1;
 - (id)retain;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setObservationInfo:(void*)arg1;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (id)keyEnumerator;
+- (void)finalize;
+- (Class)classForCoder;
+- (void)removeObjectForKey:(id)arg1;
+- (void)removeAllObjects;
 
 @end

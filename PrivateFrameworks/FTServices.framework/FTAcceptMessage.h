@@ -44,10 +44,8 @@
 
 
 - (id)messageBody;
-- (id)selfBlob;
-- (void)setSelfBlob:(id)arg1;
-- (void)setPeerID:(id)arg1;
-- (id)peerID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)peerRelayPort;
 - (id)peerRelayIP;
 - (id)selfRelayPort;
@@ -80,8 +78,10 @@
 - (id)selfPushToken;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)selfBlob;
+- (void)setSelfBlob:(id)arg1;
 - (id)bagKey;
+- (void)setPeerID:(id)arg1;
+- (id)peerID;
 
 @end

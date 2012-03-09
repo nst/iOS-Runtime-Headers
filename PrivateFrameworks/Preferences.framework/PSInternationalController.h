@@ -13,10 +13,16 @@
 }
 
 + (void)setLanguage:(id)arg1;
++ (void)setLocale:(id)arg1;
 + (id)voiceControlLanguageData;
 + (id)capitalizeFirstPartOfCountry:(id)arg1;
-+ (void)setLocale:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
+- (id)specifiers;
+- (void)reloadSpecifiers;
+- (void)viewWillAppear:(BOOL)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)showLanguageSheet:(id)arg1;
 - (id)localizedLanguage:(id)arg1;
 - (void)setVoiceControlLanguage:(id)arg1 specifier:(id)arg2;
@@ -39,11 +45,5 @@
 - (id)locale:(id)arg1;
 - (void)setLanguage:(id)arg1 specifier:(id)arg2;
 - (id)language:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)init;
-- (void)dealloc;
-- (id)specifiers;
-- (void)reloadSpecifiers;
 
 @end

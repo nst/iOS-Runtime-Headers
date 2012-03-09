@@ -10,6 +10,9 @@
 }
 
 
+- (void)rollback;
+- (id)description;
+- (void)dealloc;
 - (void)_setRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (void)_unload;
 - (void)_removeRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
@@ -25,8 +28,5 @@
 - (void)didCommit;
 - (void)refresh;
 - (void)reset;
-- (void)rollback;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -22,6 +22,13 @@
 }
 
 
+- (void)dealloc;
+- (id)names;
+- (id)colors;
+- (void)setColors:(id)arg1;
+- (id)strings;
+- (id)links;
+- (id)border;
 - (void)setThemes:(id)arg1;
 - (id)initWithStringOptimization:(bool)arg1;
 - (id)contentFormats;
@@ -33,12 +40,5 @@
 - (id)themes;
 - (id)borders;
 - (id)styles;
-- (id)border;
-- (id)names;
-- (id)colors;
-- (void)setColors:(id)arg1;
-- (id)strings;
-- (id)links;
-- (void)dealloc;
 
 @end

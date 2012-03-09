@@ -26,6 +26,7 @@
 
 + (id)copyPropertyMappingsForParser;
 
+- (void)dealloc;
 - (id)copyPropPatchTask;
 - (id)copyMkcolTask;
 - (id)childrenOrder;
@@ -48,7 +49,6 @@
 - (void)setBulkUploadErrorItem:(id)arg1;
 - (id)bulkUploadErrorItem;
 - (id)appleAttributes;
-- (void)dealloc;
 - (id)syncKey;
 - (id)serverID;
 - (void)setServerID:(id)arg1;

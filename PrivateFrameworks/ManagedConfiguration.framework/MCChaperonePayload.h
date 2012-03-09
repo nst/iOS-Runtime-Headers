@@ -15,6 +15,8 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (BOOL)nonChaperonePairingAllowed;
 - (id)pairingCertificateData;
 - (id)subtitle1Label;
@@ -23,7 +25,5 @@
 - (id)subtitle1Description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
 
 @end

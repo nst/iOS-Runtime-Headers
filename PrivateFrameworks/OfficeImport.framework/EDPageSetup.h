@@ -21,8 +21,14 @@
 
 + (id)pageSetup;
 
+- (id)init;
 - (void)setOrder:(int)arg1;
 - (int)order;
+- (void)setOrientation:(int)arg1;
+- (void)setRightMargin:(float)arg1;
+- (void)setScale:(unsigned int)arg1;
+- (unsigned int)scale;
+- (int)orientation;
 - (bool)customFirstPageNumber;
 - (void)setCustomFirstPageNumber:(bool)arg1;
 - (unsigned int)firstPageNumber;
@@ -42,11 +48,5 @@
 - (void)setFooterMargin:(float)arg1;
 - (float)leftMargin;
 - (void)setLeftMargin:(float)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)setRightMargin:(float)arg1;
-- (void)setScale:(unsigned int)arg1;
-- (unsigned int)scale;
-- (int)orientation;
-- (id)init;
 
 @end

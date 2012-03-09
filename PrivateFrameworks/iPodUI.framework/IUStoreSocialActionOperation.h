@@ -17,16 +17,16 @@
 @property(readonly) NSHTTPURLResponse * URLResponse;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)run;
+- (void)_setResponseDictionary:(id)arg1;
+- (id)responseDictionary;
+- (unsigned long long)itemIdentifier;
 - (id)URLResponse;
 - (id)socialActionType;
 - (void)_setURLResponse:(id)arg1;
 - (BOOL)_runWithActionURL:(id)arg1 error:(id*)arg2;
 - (id)initWithSocialActionType:(id)arg1 itemIdentifier:(unsigned long long)arg2;
-- (id)init;
-- (void)dealloc;
-- (void)_setResponseDictionary:(id)arg1;
-- (id)responseDictionary;
-- (unsigned long long)itemIdentifier;
 
 @end

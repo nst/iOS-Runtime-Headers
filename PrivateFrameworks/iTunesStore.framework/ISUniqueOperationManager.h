@@ -14,6 +14,8 @@
 + (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)uniqueOperationFinished:(id)arg1 forKey:(id)arg2;
 - (void)setPredecessorIfNeeded:(id)arg1 forKey:(id)arg2;
 - (id)predecessorForKey:(id)arg1 operation:(id)arg2;
@@ -22,7 +24,5 @@
 - (id)lockWithIdentifier:(id)arg1;
 - (void)checkOutOperation:(id)arg1;
 - (void)checkInOperation:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

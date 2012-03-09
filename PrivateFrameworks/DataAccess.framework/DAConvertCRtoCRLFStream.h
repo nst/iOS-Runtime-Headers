@@ -32,11 +32,7 @@
 }
 
 
-- (void)setDelegate:(id)arg1;
-- (void)open;
-- (void)close;
-- (id)initWithData:(id)arg1;
-- (id)delegate;
+- (void)dealloc;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
@@ -46,9 +42,13 @@
 - (unsigned int)streamStatus;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)_streamEventTrigger;
-- (void)dealloc;
-- (id)initWithMIMEData:(id)arg1 preflightData:(id)arg2 postflightData:(id)arg3 intendToStream:(BOOL)arg4;
+- (void)close;
+- (id)initWithData:(id)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)open;
 - (void)_scheduleCallback;
+- (id)initWithMIMEData:(id)arg1 preflightData:(id)arg2 postflightData:(id)arg3 intendToStream:(BOOL)arg4;
+- (void)_streamEventTrigger;
 
 @end

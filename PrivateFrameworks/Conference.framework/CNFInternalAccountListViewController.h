@@ -13,10 +13,6 @@
 
 
 - (void)setService:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)_handleDaemonConnected:(id)arg1;
-- (id)service;
 - (void)dealloc;
 - (id)accountNameForSpecifier:(id)arg1;
 - (void)_handleDaemonDisconnected:(id)arg1;
@@ -27,5 +23,9 @@
 - (void)accountTappedWithSpecifier:(id)arg1;
 - (id)specifiers;
 - (BOOL)canBeShownFromSuspendedState;
+- (void)_handleDaemonConnected:(id)arg1;
+- (id)service;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 
 @end

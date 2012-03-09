@@ -11,6 +11,7 @@
 + (id)sharedLoopbackService;
 
 - (int)unreadCount;
+- (void)dealloc;
 - (id)conversationSummaries:(id)arg1 groupIDs:(id)arg2;
 - (void)_reallySendMessage:(id)arg1;
 - (void)addMessageToStore:(id)arg1 incrementUnreadCount:(BOOL)arg2;
@@ -25,6 +26,5 @@
 - (int)unreadConversationCount;
 - (id)newMessageWithComposition:(id)arg1 forConversation:(id)arg2;
 - (void)sendMessage:(id)arg1;
-- (void)dealloc;
 
 @end

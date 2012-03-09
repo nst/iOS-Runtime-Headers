@@ -17,11 +17,11 @@
 @property(copy) id completion;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)showWithCompletionHandler:(id)arg1;
 - (void)setCompletion:(id)arg1;
 - (id)completion;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

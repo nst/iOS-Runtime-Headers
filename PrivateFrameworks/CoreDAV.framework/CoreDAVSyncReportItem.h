@@ -11,10 +11,10 @@
 @property(readonly) NSString * syncToken;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)_setSyncTokenItem:(id)arg1;
 - (id)copyParseRules;
 - (id)syncToken;
-- (id)description;
-- (void)dealloc;
 
 @end

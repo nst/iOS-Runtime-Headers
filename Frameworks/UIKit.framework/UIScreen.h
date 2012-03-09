@@ -55,7 +55,8 @@
 + (void)_prepareScreensForAppResume;
 + (id)mainScreen;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (id)description;
+- (void)dealloc;
 - (void)setWantsSoftwareDimming:(BOOL)arg1;
 - (BOOL)wantsSoftwareDimming;
 - (float)brightness;
@@ -94,18 +95,18 @@
 - (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
 - (int)_imageOrientation;
 - (void)_prepareForWindow;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationFrame;
 - (id)_name;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_realDisplayBounds;
 - (float)_horizontalPixelScale;
 - (BOOL)_isMainScreen;
 - (int)bitsPerComponent;
+- (float)_scale;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsInPixels;
 - (float)_rotation;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationFrame;
 - (void)_setScale:(float)arg1;
 - (void)_computeMetrics;
 - (float)scale;
-- (id)description;
-- (void)dealloc;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 
 @end

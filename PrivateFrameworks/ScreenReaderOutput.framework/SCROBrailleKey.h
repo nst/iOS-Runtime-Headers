@@ -7,26 +7,26 @@
 @interface SCROBrailleKey : NSObject <NSCoding> {
     NSMutableArray *_maskArray;
     NSString *_identifier;
-    int _routerIndex;
+    long _routerIndex;
     int _routerToken;
-    int _routerLocation;
+    long _routerLocation;
     BOOL _hasRouterInfo;
     id _appToken;
-    int _displayToken;
+    long _displayToken;
 }
 
 
-- (void)setDisplayToken:(long)arg1;
-- (long)displayToken;
-- (void)addKeyMask:(unsigned long)arg1;
-- (id)keyMasks;
-- (void)setRouterIndex:(long)arg1 token:(int)arg2 location:(long)arg3 appToken:(id)arg4;
-- (BOOL)getRouterIndex:(int*)arg1 token:(int*)arg2 location:(int*)arg3 appToken:(id*)arg4;
-- (id)identifier;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (BOOL)getRouterIndex:(int*)arg1 token:(int*)arg2 location:(int*)arg3 appToken:(id*)arg4;
+- (void)setRouterIndex:(long)arg1 token:(int)arg2 location:(long)arg3 appToken:(id)arg4;
+- (id)keyMasks;
+- (void)addKeyMask:(unsigned long)arg1;
+- (long)displayToken;
+- (void)setDisplayToken:(long)arg1;
+- (id)identifier;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

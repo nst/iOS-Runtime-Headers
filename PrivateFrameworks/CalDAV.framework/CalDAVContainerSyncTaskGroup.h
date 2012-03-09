@@ -28,6 +28,7 @@
 @property BOOL getScheduleTags;
 
 
+- (void)dealloc;
 - (BOOL)shouldFetchMoreETags;
 - (BOOL)shouldFetchResourceWithEtag:(id)arg1 propertiesToValues:(id)arg2;
 - (void)applyAdditionalPropertiesFromPostTask:(id)arg1;
@@ -38,7 +39,6 @@
 - (id)copyAdditionalResourcePropertiesToFetch;
 - (id)copyPutTaskWithPayloadItem:(id)arg1 forAction:(id)arg2;
 - (id)dataContentType;
-- (void)dealloc;
 - (id)todoFilterEndDate;
 - (id)todoFilterStartDate;
 - (id)eventFilterEndDate;

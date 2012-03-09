@@ -25,6 +25,7 @@
 @property(readonly) OADDefaultProperties * shapeDefaults;
 
 
+- (void)dealloc;
 - (id)colorPalette;
 - (id)lineDefaults;
 - (void)setColorPalette:(id)arg1;
@@ -36,6 +37,5 @@
 - (id)fontScheme;
 - (id)styleMatrix;
 - (id)initWithTheme:(id)arg1 colorMap:(id)arg2 colorPalette:(id)arg3;
-- (void)dealloc;
 
 @end

@@ -16,6 +16,11 @@
 @property int manifestFormat;
 
 
+- (id)initWithURLRequest:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)setManifestFormat:(int)arg1;
+- (id)URLRequest;
 - (void)setShouldHideUserPrompts:(BOOL)arg1;
 - (BOOL)shouldHideUserPrompts;
 - (int)manifestFormat;
@@ -26,10 +31,5 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithURLRequest:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setManifestFormat:(int)arg1;
-- (id)URLRequest;
 
 @end

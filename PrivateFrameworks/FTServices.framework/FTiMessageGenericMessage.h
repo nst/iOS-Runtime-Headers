@@ -12,11 +12,11 @@
 
 
 - (id)messageBody;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)requiredKeys;
 - (int)command;
 - (id)data;
 - (void)setData:(id)arg1;
-- (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

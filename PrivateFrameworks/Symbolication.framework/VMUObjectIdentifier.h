@@ -32,6 +32,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithTask:(unsigned int)arg1 symbolicator:(id)arg2;
 - (unsigned int)CFTypeCount;
 - (unsigned int)ObjCclassCount;
@@ -49,6 +50,5 @@
 - (id)classInfoForIsaPointer:(unsigned int)arg1;
 - (id)classInfoForCFType:(struct __CFRuntimeBase { unsigned int x1; unsigned char x2[4]; }*)arg1;
 - (id)initWithTask:(unsigned int)arg1;
-- (void)dealloc;
 
 @end

@@ -21,10 +21,13 @@
 
 + (Class)layerClass;
 
-- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
+- (id)init;
+- (void)dealloc;
+- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(int)arg3;
 - (id).cxx_construct;
 - (void)setDrawingEnabled:(BOOL)arg1;
 - (BOOL)drawingEnabled;
+- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)willRemoveSubview:(id)arg1;
 - (void)didAddSubview:(id)arg1;
 - (BOOL)_canDrawContent;
@@ -35,8 +38,5 @@
 - (void)renderLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (BOOL)levelCrossFade;
 - (void)setLevelCrossFade:(BOOL)arg1;
-- (id)init;
-- (void)dealloc;
-- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(int)arg3;
 
 @end

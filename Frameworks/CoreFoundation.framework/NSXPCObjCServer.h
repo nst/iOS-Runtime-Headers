@@ -20,8 +20,8 @@
 @property(retain) Class clientClass;
 
 
-- (void)start;
-- (void)invalidate;
+- (id)init;
+- (void)dealloc;
 - (void)setClientClass:(Class)arg1;
 - (void)setClientProtocol:(id)arg1;
 - (id)clientProtocol;
@@ -30,7 +30,7 @@
 - (id)serviceName;
 - (void)addInvalidationHandler:(id)arg1;
 - (void)__invalidate;
-- (id)init;
-- (void)dealloc;
+- (void)start;
+- (void)invalidate;
 
 @end

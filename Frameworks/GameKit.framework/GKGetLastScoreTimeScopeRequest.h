@@ -15,14 +15,14 @@
 @property(readonly) int timeScope;
 
 
+- (void)dealloc;
+- (id)player;
 - (void)handleResponseFromServer:(id)arg1;
 - (id)game;
+- (void)setPlayer:(id)arg1;
 - (void)setGame:(id)arg1;
 - (int)timeScope;
-- (void)setPlayer:(id)arg1;
 - (id)key;
 - (id)request;
-- (id)player;
-- (void)dealloc;
 
 @end

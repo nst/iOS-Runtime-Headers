@@ -99,17 +99,10 @@
 + (id)_nameForMode:(int)arg1;
 
 - (BOOL)isComplete;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (struct { double x1; double x2; }*)points;
-- (unsigned int)pointCount;
-- (BOOL)hasTraffic;
-- (id)viaWaypoints;
-- (void)setViaWaypoints:(id)arg1;
-- (id)steps;
-- (id)cost;
-- (int)durationSeconds;
-- (struct { double x1; double x2; })coordinate;
-- (id)step;
-- (void)setStep:(id)arg1;
 - (id)key;
 - (id)dictionaryRepresentation;
 - (void)setOrientation:(int)arg1;
@@ -162,9 +155,16 @@
 - (void)_createSteps;
 - (BOOL)_createTransitStepsWithEndInstructions:(id)arg1 forResponse:(id)arg2;
 - (id)GEORoute;
+- (struct { double x1; double x2; })coordinate;
+- (id)step;
+- (void)setStep:(id)arg1;
+- (unsigned int)pointCount;
+- (BOOL)hasTraffic;
+- (id)viaWaypoints;
+- (void)setViaWaypoints:(id)arg1;
+- (id)steps;
+- (id)cost;
+- (int)durationSeconds;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

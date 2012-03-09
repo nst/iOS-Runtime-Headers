@@ -148,8 +148,19 @@
 }
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setDeletionDate:(id)arg1;
 - (id)deletionDate;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
+- (void)setWidth:(long)arg1;
+- (long)width;
+- (void)setAlignment:(int)arg1;
+- (int)alignment;
+- (short)cellSpacing;
+- (void)setCellSpacing:(short)arg1;
 - (void)clearTopBorder;
 - (void)clearLeftBorder;
 - (void)clearBottomBorder;
@@ -252,16 +263,5 @@
 - (id)topBorder;
 - (id)bottomBorder;
 - (void)setIndent:(short)arg1;
-- (short)cellSpacing;
-- (void)setCellSpacing:(short)arg1;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
-- (void)setWidth:(long)arg1;
-- (long)width;
-- (void)setAlignment:(int)arg1;
-- (int)alignment;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

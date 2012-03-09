@@ -11,9 +11,9 @@
 @property(retain) UIPickerView * pickerView;
 
 
+- (void)dealloc;
 - (id)pickerView;
 - (void)viewDidLoad;
 - (void)setPickerView:(id)arg1;
-- (void)dealloc;
 
 @end

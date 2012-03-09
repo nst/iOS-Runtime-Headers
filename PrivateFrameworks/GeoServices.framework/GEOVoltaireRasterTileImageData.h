@@ -10,8 +10,8 @@
 
 + (id)createWithData:(id)arg1;
 
-- (struct CGImage { }*)newImage;
-- (id)initWithData:(id)arg1;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (struct CGImage { }*)newImage;
 
 @end

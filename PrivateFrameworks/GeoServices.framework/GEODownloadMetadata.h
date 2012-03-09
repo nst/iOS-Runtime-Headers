@@ -14,15 +14,15 @@
 @property(retain) NSString * etag;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)etag;
 - (BOOL)hasEtag;
 - (void)setEtag:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (double)timestamp;
 - (void)setTimestamp:(double)arg1;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

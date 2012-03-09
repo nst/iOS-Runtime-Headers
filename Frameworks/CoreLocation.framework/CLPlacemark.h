@@ -26,11 +26,15 @@
 @property(readonly) NSArray * areasOfInterest;
 
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)country;
 - (id)location;
 - (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)region;
 - (id)ocean;
 - (id)inlandWater;
 - (id)fullThoroughfare;
@@ -47,9 +51,5 @@
 - (id)areasOfInterest;
 - (id)initWithLocation:(id)arg1 addressDictionary:(id)arg2 region:(id)arg3 areasOfInterest:(id)arg4;
 - (id)addressDictionary;
-- (id)region;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

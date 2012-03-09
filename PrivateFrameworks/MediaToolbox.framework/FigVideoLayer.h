@@ -9,13 +9,13 @@
 }
 
 
-- (id)initWithLayer:(id)arg1;
-- (void)_sendVideoLayerIsBeingServicedNotification;
-- (void)layerDidBecomeVisible:(BOOL)arg1;
-- (void)notificationBarrier;
-- (BOOL)isVideoLayerBeingServiced;
-- (void)finalize;
 - (id)init;
 - (void)dealloc;
+- (void)layerDidBecomeVisible:(BOOL)arg1;
+- (void)_sendVideoLayerIsBeingServicedNotification;
+- (BOOL)isVideoLayerBeingServiced;
+- (void)notificationBarrier;
+- (id)initWithLayer:(id)arg1;
+- (void)finalize;
 
 @end

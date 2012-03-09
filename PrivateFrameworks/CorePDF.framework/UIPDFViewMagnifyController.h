@@ -30,6 +30,7 @@
 @property UIPDFPageView * pageView;
 
 
+- (id)init;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1 viewPoint:(struct CGPoint { float x1; float x2; })arg2 loupe:(BOOL)arg3;
 - (void)showLoupe;
 - (void)showMagnifier;
@@ -45,6 +46,5 @@
 - (id)pageView;
 - (void)setPageView:(id)arg1;
 - (void)hide;
-- (id)init;
 
 @end

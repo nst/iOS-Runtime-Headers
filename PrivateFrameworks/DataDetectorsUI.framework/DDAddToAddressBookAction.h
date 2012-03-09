@@ -6,11 +6,11 @@
 }
 
 
+- (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
 - (int)interactionType;
 - (id)localizedName;
 - (id)viewController;
-- (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
 - (void)cancelPressed:(id)arg1;
 - (void)_augmentRecordWithResults:(void*)arg1;
 

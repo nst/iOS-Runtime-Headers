@@ -12,6 +12,9 @@
 }
 
 
+- (int)parseData:(id)arg1;
+- (void)dealloc;
+- (void)loadRequest:(id)arg1;
 - (id)initCaptionTrackDataRequest:(id)arg1 withDelegate:(id)arg2;
 - (id)captionTrack;
 - (void)_requestCaptionTrackDataWithURL:(id)arg1;
@@ -19,8 +22,5 @@
 - (void)_failedToAuthenticate:(id)arg1;
 - (void)_listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)failWithError:(id)arg1;
-- (int)parseData:(id)arg1;
-- (void)loadRequest:(id)arg1;
-- (void)dealloc;
 
 @end

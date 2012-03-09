@@ -14,10 +14,10 @@
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)attributeKeys;
-- (id)initWithOptions:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)initWithOptions:(id)arg1;
+- (id)attributeKeys;
 - (int)numberOfResults;
 - (void)resetResults;
 - (id)searchForText:(id)arg1;

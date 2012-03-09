@@ -9,11 +9,11 @@
 }
 
 
-- (id)currentItem;
-- (void)dequeueImportItem;
-- (void)enqueueImportItem:(id)arg1;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)currentItem;
+- (void)dequeueImportItem;
+- (void)enqueueImportItem:(id)arg1;
 
 @end

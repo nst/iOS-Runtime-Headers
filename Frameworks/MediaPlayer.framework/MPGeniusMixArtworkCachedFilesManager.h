@@ -8,9 +8,8 @@
 
 + (id)sharedInstance;
 
-- (void)onQueueSetCurrentSyncGeneration:(unsigned long long)arg1;
-- (void)cleanupIfNecessaryWithCompletionBlock:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)cleanupIfNecessaryWithCompletionHandler:(id)arg1;
 
 @end

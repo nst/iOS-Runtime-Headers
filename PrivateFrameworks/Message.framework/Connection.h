@@ -54,6 +54,7 @@
 - (double)lastUsedTime;
 - (void)_setupNetworkLogging;
 - (BOOL)connectUsingSettings:(id)arg1;
+- (id)capabilities;
 - (BOOL)isForcedConnection;
 - (void)setAllowsFallbacks:(BOOL)arg1;
 - (id)authenticationMechanisms;
@@ -66,13 +67,12 @@
 - (BOOL)isFetching;
 - (BOOL)connectUsingFallbacksForAccount:(id)arg1;
 - (BOOL)authenticateUsingAccount:(id)arg1;
-- (BOOL)loginDisabled;
-- (BOOL)writeData:(id)arg1;
-- (void)disconnect;
-- (BOOL)isValid;
-- (BOOL)hasBytesAvailable;
 - (id)description;
 - (void)dealloc;
-- (id)capabilities;
+- (BOOL)hasBytesAvailable;
+- (BOOL)loginDisabled;
+- (BOOL)isValid;
+- (BOOL)writeData:(id)arg1;
+- (void)disconnect;
 
 @end

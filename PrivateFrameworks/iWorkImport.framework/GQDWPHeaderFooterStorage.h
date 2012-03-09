@@ -7,8 +7,8 @@
 }
 
 
-- (struct __CFString { }*)name;
-- (id)initWithName:(struct __CFString { }*)arg1;
 - (void)dealloc;
+- (id)initWithName:(struct __CFString { }*)arg1;
+- (struct __CFString { }*)name;
 
 @end

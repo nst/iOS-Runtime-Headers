@@ -27,20 +27,22 @@
 @property double eastLng;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (double)spanLng;
-- (double)spanLat;
-- (double)centerLng;
-- (double)centerLat;
-- (id)initWithSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setHasEastLng:(BOOL)arg1;
 - (void)setHasNorthLat:(BOOL)arg1;
 - (void)setHasWestLng:(BOOL)arg1;
 - (void)setHasSouthLat:(BOOL)arg1;
 - (void)setSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (double)spanLng;
+- (double)spanLat;
+- (double)centerLng;
+- (double)centerLat;
+- (id)initWithSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
 - (double)westLng;
 - (double)eastLng;
 - (double)southLat;
@@ -54,8 +56,6 @@
 - (void)setWestLng:(double)arg1;
 - (void)setSouthLat:(double)arg1;
 - (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
-- (id)description;
-- (void)dealloc;
 - (id)initWithGMMGeometry:(id)arg1;
 - (id)initWithGMMMapInfo:(id)arg1;
 

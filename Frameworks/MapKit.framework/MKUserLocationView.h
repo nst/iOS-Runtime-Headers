@@ -32,20 +32,19 @@
 + (unsigned int)_selectedZIndex;
 + (unsigned int)_zIndex;
 
-- (float)accuracy;
-- (void)setAccuracy:(float)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1;
-- (double)headingAccuracy;
+- (id)description;
+- (void)dealloc;
+- (BOOL)isStale;
 - (void)bounce;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)willMoveToWindow:(id)arg1;
 - (struct CADoublePoint { double x1; double x2; })position;
+- (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1;
 - (id)delegate;
 - (void)didMoveToWindow;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isStale;
 - (BOOL)shouldDisplayAccuracy:(double*)arg1 diameter:(id*)arg2;
 - (void)setAccuracy:(float)arg1 duration:(double)arg2;
 - (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1 duration:(double)arg2;
@@ -79,7 +78,8 @@
 - (void)setEffectsVisible:(BOOL)arg1;
 - (void)setZoomDirection:(int)arg1;
 - (void)setShouldDisplayEffects:(BOOL)arg1;
-- (id)description;
-- (void)dealloc;
+- (double)headingAccuracy;
+- (float)accuracy;
+- (void)setAccuracy:(float)arg1;
 
 @end

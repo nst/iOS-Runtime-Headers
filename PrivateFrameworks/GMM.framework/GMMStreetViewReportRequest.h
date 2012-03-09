@@ -13,8 +13,13 @@
 @property(retain) NSMutableArray * viewpoints;
 
 
+- (id)description;
+- (void)dealloc;
 - (Class)responseClass;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (void)writeTo:(id)arg1;
 - (id)viewpoints;
 - (id)panoramaVisiteds;
 - (id)viewpointAtIndex:(unsigned int)arg1;
@@ -25,10 +30,5 @@
 - (void)addPanoramaVisited:(id)arg1;
 - (void)setViewpoints:(id)arg1;
 - (void)setPanoramaVisiteds:(id)arg1;
-- (unsigned int)requestTypeCode;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

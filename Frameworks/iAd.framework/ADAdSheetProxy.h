@@ -14,10 +14,15 @@
 @property double lastTermination;
 @property(retain) ADXPCConnection * adSheetConnection;
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedInstance;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (BOOL)doesServerExist;
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
 - (id)adSheetConnection;
 - (double)lastTermination;
 - (void)setBootstrapState:(int)arg1;
@@ -31,11 +36,6 @@
 - (id)remoteObjectForMessageName:(id)arg1 senderId:(id)arg2;
 - (void)xpcConnectionFailed:(id)arg1;
 - (void)xpcConnection:(id)arg1 receivedMessage:(id)arg2 userInfo:(id)arg3;
-- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (oneway void)release;
+- (BOOL)doesServerExist;
 
 @end

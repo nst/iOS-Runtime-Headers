@@ -19,7 +19,6 @@
 
 + (id)newMediaObjectWithImagePickerInfo:(id)arg1;
 
-- (id)mediaType;
 - (id)init;
 - (void)dealloc;
 - (id)newComposeImageWithMaximumSize:(float)arg1;
@@ -32,6 +31,7 @@
 - (id)initWithImagePickerInfo:(id)arg1;
 - (id)mediaURL;
 - (unsigned int)imagePickerQualityType;
+- (id)mediaType;
 - (id)imagePickerInfo;
 - (id)newThumbnailImageWithMaximumSize:(float)arg1;
 - (void)saveToLibraryWithCompletionBlock:(id)arg1;

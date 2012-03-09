@@ -12,6 +12,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setSchemeMapping:(id)arg1;
 - (void)setPathPatternStrings:(id)arg1;
 - (void)setHostSuffixWhiteList:(id)arg1;
@@ -21,6 +22,5 @@
 - (BOOL)_string:(id)arg1 matchesPatterns:(id)arg2;
 - (BOOL)_URLMatchesPatterns:(id)arg1;
 - (BOOL)_URLMatchesHostSuffixWhiteList:(id)arg1;
-- (void)dealloc;
 
 @end

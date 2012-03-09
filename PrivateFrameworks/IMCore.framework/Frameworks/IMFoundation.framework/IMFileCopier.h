@@ -25,8 +25,9 @@
 @property unsigned int operation;
 
 
-- (void)start;
-- (void)setDelegate:(id)arg1;
+- (void)cancel;
+- (void)dealloc;
+- (id)outputURL;
 - (void)setOperation:(unsigned int)arg1;
 - (void)setInProgress:(BOOL)arg1;
 - (BOOL)didErrorOccur;
@@ -39,11 +40,10 @@
 - (void)_fillOutputURLFromInputURL;
 - (BOOL)inProgress;
 - (void)cleanup;
+- (void)start;
 - (id)identifier;
 - (id)delegate;
-- (id)outputURL;
-- (void)cancel;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (unsigned int)operation;
 
 @end

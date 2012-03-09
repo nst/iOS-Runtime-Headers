@@ -26,13 +26,12 @@
 + (id)unarchiveObjectWithData:(id)arg1;
 + (void)initialize;
 
-- (BOOL)isAtEnd;
-- (id)data;
-- (void)finalize;
 - (struct _NSZone { }*)objectZone;
 - (void)setObjectZone:(struct _NSZone { }*)arg1;
 - (id)classNameDecodedForArchiveClassName:(id)arg1;
 - (void)decodeClassName:(id)arg1 asClassName:(id)arg2;
+- (void)dealloc;
+- (void)_setAllowedClasses:(id)arg1;
 - (int)versionForClassName:(id)arg1;
 - (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
 - (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
@@ -43,7 +42,8 @@
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
 - (id)initForReadingWithData:(id)arg1;
 - (unsigned int)systemVersion;
-- (void)_setAllowedClasses:(id)arg1;
-- (void)dealloc;
+- (void)finalize;
+- (id)data;
+- (BOOL)isAtEnd;
 
 @end

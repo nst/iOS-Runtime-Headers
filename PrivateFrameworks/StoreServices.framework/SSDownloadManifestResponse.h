@@ -11,14 +11,14 @@
 @property(retain) NSArray * validDownloads;
 
 
+- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setValidDownloads:(id)arg1;
 - (id)validDownloads;
 - (void*)copyXPCEncoding;
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

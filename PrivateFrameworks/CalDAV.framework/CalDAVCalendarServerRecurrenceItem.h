@@ -16,17 +16,17 @@
 @property(retain) CoreDAVItemWithNoChildren * master;
 
 
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (id)changes;
-- (BOOL)isMaster;
-- (id)master;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)changes;
 - (id)recurrenceID;
 - (void)setRecurrenceID:(id)arg1;
 - (void)setMaster:(id)arg1;
 - (void)setChanges:(id)arg1;
+- (id)master;
+- (BOOL)isMaster;
 
 @end

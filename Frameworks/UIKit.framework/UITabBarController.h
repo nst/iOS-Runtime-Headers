@@ -38,7 +38,7 @@
 
 + (Class)_moreNavigationControllerClass;
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)setMoreChildViewControllers:(id)arg1;
 - (id)moreChildViewControllers;
 - (void)_setMaximumNumberOfItems:(unsigned int)arg1;
@@ -120,16 +120,16 @@
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)defaultFirstResponder;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (void)_gkSetContentsNeedUpdateWithHandler:(id)arg1;
 - (void)_gkResetContents;
 - (void)_gkForceNextContentUpdate;
 - (id)selectedNavigationController;
-- (id)activeNavigationController;
 - (id)selectedNavigationController;
+- (id)activeNavigationController;
 
 @end

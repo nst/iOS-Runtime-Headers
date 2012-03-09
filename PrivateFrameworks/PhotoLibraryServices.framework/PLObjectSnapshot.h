@@ -15,6 +15,9 @@
 + (struct __CFDictionary { }*)_createIndexMapsSnapshotForManagedObject:(id)arg1 changeNotificationCenter:(id)arg2;
 + (id)snapshotForManagedObject:(id)arg1 changeNotificationCenter:(id)arg2 useCommitedValues:(BOOL)arg3;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)filteredIndexesForFilter:(id)arg1;
 - (id)snapshotValueForProperty:(id)arg1;
 - (id)_snapshotValueForProperty:(id)arg1;
@@ -23,8 +26,5 @@
 - (id)managedObject;
 - (BOOL)hasSnapshotValueForProperty:(id)arg1;
 - (void)setAssetsSnapshot:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

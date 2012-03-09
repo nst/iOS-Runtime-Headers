@@ -22,17 +22,17 @@
 
 + (id)localAdWithURL:(id)arg1;
 
-- (id)path;
-- (void)setSelectedCreativeName:(id)arg1;
-- (id)selectedCreativeName;
-- (id)creatives;
-- (id)sizes;
-- (id)properties;
-- (void)setPath:(id)arg1;
-- (id)name;
 - (void)setName:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1 error:(id*)arg2;
+- (void)setSelectedCreativeName:(id)arg1;
+- (id)selectedCreativeName;
+- (id)properties;
+- (void)setPath:(id)arg1;
+- (id)path;
+- (id)name;
+- (id)creatives;
+- (id)sizes;
 
 @end

@@ -11,9 +11,10 @@
 
 - (int)supportsMailboxSearch;
 - (int)supportsEmailFlagging;
-- (id)protocolVersion;
 - (id)init;
 - (void)dealloc;
+- (id)protocolVersion;
+- (BOOL)allowsReminderOnCompletedTasks;
 - (BOOL)serverCreatesEventChangesForInvitations;
 - (BOOL)sendCalendarInfoInRecurrence;
 - (BOOL)allAttachmentsAreBase64ed;

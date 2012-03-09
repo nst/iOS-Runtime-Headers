@@ -45,7 +45,9 @@
 + (id)sharedPrintController;
 + (BOOL)isPrintingAvailable;
 
-- (void)setDelegate:(id)arg1;
+- (oneway void)release;
+- (id)init;
+- (void)dealloc;
 - (void)setPrintingItems:(id)arg1;
 - (id)printingItems;
 - (id)printingItem;
@@ -92,8 +94,6 @@
 - (int)pageCount;
 - (id)_init;
 - (id)delegate;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

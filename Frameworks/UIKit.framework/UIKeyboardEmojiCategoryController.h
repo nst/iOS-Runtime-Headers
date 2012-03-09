@@ -13,12 +13,12 @@
 @property(retain) NSDictionary * defaultsData;
 
 
+- (void)dealloc;
 - (id)categoryForKey:(id)arg1;
 - (void)updateRecents;
 - (id)defaultsData;
 - (void)releaseCategories;
 - (void)setDefaultsData:(id)arg1;
 - (id)initWithController:(id)arg1;
-- (void)dealloc;
 
 @end

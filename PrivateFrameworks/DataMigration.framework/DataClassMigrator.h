@@ -16,6 +16,9 @@
 @property(retain) NSDictionary * context;
 
 
+- (void)dealloc;
+- (id)context;
+- (void)setContext:(id)arg1;
 - (BOOL)didRestoreFromBackup;
 - (BOOL)didMigrateBackupFromDifferentDevice;
 - (BOOL)didRestoreFromCloudBackup;
@@ -25,8 +28,5 @@
 - (BOOL)performMigration;
 - (float)estimatedDuration;
 - (float)migrationProgress;
-- (id)context;
-- (void)setContext:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -16,10 +16,10 @@
 + (BOOL)_isXPathType:(id)arg1;
 + (id)printPageRendererWithBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
 
+- (void)dealloc;
 - (id)initWithWebBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
 - (void)_waitForPreview;
 - (id)previewConverter;
 - (void)setPreviewConverter:(id)arg1;
-- (void)dealloc;
 
 @end

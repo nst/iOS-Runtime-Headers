@@ -13,19 +13,11 @@
 }
 
 
+- (void)dealloc;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 withLinkedPeople:(struct __CFArray { }*)arg3;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (float)marginForTableView:(id)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)locationPickerModelDidEndOperation:(id)arg1;
 - (void)locationPickerModelDidBeginOperation:(id)arg1;
 - (void)_presentPersonPicker;
@@ -38,8 +30,16 @@
 - (void)locationPickerModelDidChangeSelection:(id)arg1;
 - (void)locationPickerModel:(id)arg1 didUpdateLocationItemAtIndex:(int)arg2;
 - (id)initWithModel:(id)arg1 styleProvider:(id)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLoad;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (float)marginForTableView:(id)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)_setCell:(id)arg1 checked:(BOOL)arg2;
-- (void)dealloc;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 withLinkedPeople:(struct __CFArray { }*)arg3;
 
 @end

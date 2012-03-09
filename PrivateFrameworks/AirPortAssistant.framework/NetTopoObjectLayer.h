@@ -104,15 +104,11 @@
 
 - (unsigned int)numberOfChildren;
 - (void)setChildren:(id)arg1;
+- (id)debugDescription;
+- (void)setShift:(float)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isSelectable;
-- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setRow:(unsigned int)arg1;
-- (id)childAtIndex:(unsigned int)arg1;
-- (void)setColumn:(unsigned int)arg1;
-- (id)parent;
-- (void)addChild:(id)arg1;
-- (void)setParent:(id)arg1;
-- (void)layoutSublayers;
 - (void)setSelectable:(BOOL)arg1;
 - (void)setSelectionSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })selectionSize;
@@ -155,7 +151,6 @@
 - (BOOL)smallSize;
 - (void)deallocStatusImages;
 - (struct CGSize { float x1; float x2; })boundsSizeConstraint;
-- (id)children;
 - (unsigned int)number;
 - (float)shift;
 - (void)setExpanded:(BOOL)arg1;
@@ -167,9 +162,14 @@
 - (id)firstChild;
 - (void)setLabel:(id)arg1;
 - (unsigned int)row;
-- (id)debugDescription;
-- (void)setShift:(float)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)layoutSublayers;
+- (id)children;
+- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setRow:(unsigned int)arg1;
+- (id)childAtIndex:(unsigned int)arg1;
+- (void)setColumn:(unsigned int)arg1;
+- (id)parent;
+- (void)addChild:(id)arg1;
+- (void)setParent:(id)arg1;
 
 @end

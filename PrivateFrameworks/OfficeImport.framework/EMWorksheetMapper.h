@@ -17,8 +17,13 @@
 }
 
 
+- (void)dealloc;
 - (double)defaultColumnWidth;
 - (double)defaultRowHeight;
+- (int)height;
+- (int)columnCount;
+- (BOOL)isVisible;
+- (int)width;
 - (void)countRowsAndColumnsWithState:(id)arg1;
 - (void)setRowGrid;
 - (double)xlColumnWidthToPoints:(double)arg1;
@@ -38,10 +43,5 @@
 - (int)preprocessHeightWithState:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (id)columnWidthConvertor;
-- (int)height;
-- (int)columnCount;
-- (BOOL)isVisible;
-- (int)width;
-- (void)dealloc;
 
 @end

@@ -17,13 +17,13 @@
 @property(readonly) BOOL timedOccurrencesExtendPastRange;
 
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (BOOL)timedOccurrencesExtendPastRange;
 - (id)timedOccurrences;
 - (id)allDayOccurrences;
 - (id)initWithOccurrences:(id)arg1 timedOccurrences:(id)arg2 allDayOccurrences:(id)arg3 timedOccurrencesExtendPastRange:(BOOL)arg4;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)occurrences;
 
 @end

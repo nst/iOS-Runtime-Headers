@@ -10,9 +10,9 @@
 
 - (id)initRequestForBodyFormat:(int)arg1 withBodySizeLimit:(int)arg2;
 - (int)bodyFormat;
-- (int)maxSize;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
+- (int)maxSize;
 
 @end

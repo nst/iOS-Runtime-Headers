@@ -18,18 +18,18 @@
 @property(readonly) BOOL available;
 
 
-- (id)messageName;
+- (void)dealloc;
+- (void)sendMessage:(id)arg1;
+- (void)setConnection:(id)arg1;
+- (id)connection;
 - (id)connectionDelegate;
 - (void)setConnectionDelegate:(id)arg1;
-- (BOOL)available;
-- (void)setMessageName:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)sendMessage:(id)arg1;
-- (void)setConnection:(id)arg1;
-- (id)connection;
-- (void)dealloc;
+- (void)setMessageName:(id)arg1;
+- (id)messageName;
+- (BOOL)available;
 
 @end

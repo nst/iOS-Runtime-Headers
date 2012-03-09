@@ -20,6 +20,7 @@
 
 + (id)sectionWithRows:(id)arg1;
 
+- (void)dealloc;
 - (void)setFooterView:(id)arg1;
 - (id)footerView;
 - (void)setFooterTitle:(id)arg1;
@@ -32,6 +33,5 @@
 - (id)rows;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

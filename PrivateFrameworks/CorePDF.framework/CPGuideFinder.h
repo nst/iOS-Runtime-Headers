@@ -24,7 +24,7 @@
 + (void)reclusterPreservingAlignment:(id)arg1;
 + (void)reclusterBetweenGuides:(id)arg1;
 
-- (void)finalize;
+- (void)dealloc;
 - (float)medianFontSizeOfFirstCharacter;
 - (float)medianFontSizeOfLastCharacter;
 - (BOOL)addStripTo:(id)arg1 bottom:(float)arg2 left:(float)arg3 top:(float)arg4 right:(float)arg5;
@@ -48,7 +48,7 @@
 - (id)leftGuides;
 - (id)rightGuides;
 - (id)gutters;
+- (void)finalize;
 - (void)dispose;
-- (void)dealloc;
 
 @end

@@ -26,6 +26,8 @@
 - (void)setMemoryCapacity:(unsigned int)arg1;
 - (unsigned int)diskCapacity;
 - (unsigned int)memoryCapacity;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setURLPatterns:(id)arg1;
 - (void)setPersistentIdentifier:(id)arg1;
 - (void)setFileExtensions:(id)arg1;
@@ -35,9 +37,7 @@
 - (void)_setClientIdentifiersFromPropertyList:(id)arg1;
 - (id)clientIdentifiers;
 - (id)URLPatterns;
-- (id)fileExtensions;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithPropertyList:(id)arg1;
+- (id)fileExtensions;
 
 @end

@@ -13,20 +13,20 @@
 @property(retain) NSString * x_apple_ews_attachmentid;
 
 
-- (BOOL)isBinary;
 - (void)setX_apple_ews_attachmentid:(id)arg1;
 - (id)x_apple_ews_attachmentid;
 - (void)setX_apple_autoarchived:(BOOL)arg1;
 - (BOOL)x_apple_autoarchived;
 - (id)x_apple_filename;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (id)filename;
 - (void)setX_apple_filename:(id)arg1;
 - (void)setFmtype:(id)arg1;
 - (id)fmtype;
-- (void)setData:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)setURL:(id)arg1;
 - (id)initWithData:(id)arg1;
+- (void)setData:(id)arg1;
+- (BOOL)isBinary;
+- (id)filename;
 
 @end

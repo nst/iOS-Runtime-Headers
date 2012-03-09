@@ -10,6 +10,9 @@
 }
 
 
+- (void)dealloc;
+- (id)properties;
+- (id)initWithText:(id)arg1;
 - (void)clearRows;
 - (id)rowIterator;
 - (id)newRowIterator;
@@ -23,8 +26,5 @@
 - (id)addRow;
 - (int)blockType;
 - (int)rowCount;
-- (id)properties;
-- (id)initWithText:(id)arg1;
-- (void)dealloc;
 
 @end

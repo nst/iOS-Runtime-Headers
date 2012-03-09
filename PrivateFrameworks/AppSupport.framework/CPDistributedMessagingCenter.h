@@ -21,12 +21,14 @@
 
 + (id)centerNamed:(id)arg1;
 
+- (void)dealloc;
 - (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2 error:(id*)arg3;
 - (BOOL)sendNonBlockingMessageName:(id)arg1 userInfo:(id)arg2;
 - (void)registerForMessageName:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)runServerOnCurrentThread;
-- (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2;
-- (BOOL)doesServerExist;
+- (void)stopServer;
+- (void)sendDelayedReply:(id)arg1 dictionary:(id)arg2;
+- (id)delayReply;
 - (void)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2 toTarget:(id)arg3 selector:(SEL)arg4 context:(void*)arg5;
 - (void)_setSendPort:(unsigned int)arg1;
 - (void)_setupInvalidationSource;
@@ -42,13 +44,11 @@
 - (id)_initClientWithPort:(unsigned int)arg1;
 - (void)_dispatchMessageNamed:(id)arg1 userInfo:(id)arg2 reply:(id*)arg3 auditToken:(struct { unsigned int x1[8]; }*)arg4;
 - (id)_initWithServerName:(id)arg1;
+- (void)unregisterForMessageName:(id)arg1;
 - (unsigned int)_serverPort;
 - (BOOL)sendMessageName:(id)arg1 userInfo:(id)arg2;
 - (id)name;
-- (void)stopServer;
-- (void)sendDelayedReply:(id)arg1 dictionary:(id)arg2;
-- (id)delayReply;
-- (void)unregisterForMessageName:(id)arg1;
-- (void)dealloc;
+- (BOOL)doesServerExist;
+- (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2;
 
 @end

@@ -9,8 +9,8 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithView:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)dealloc;
 
 @end

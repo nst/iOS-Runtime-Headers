@@ -22,17 +22,20 @@
 + (Class)contentViewClass;
 + (struct CGSize { float x1; float x2; })videoImageSize;
 
-- (id)imageCache;
-- (void)setImageCache:(id)arg1;
+- (void)dealloc;
 - (void)imageRequest:(id)arg1 loadedImage:(id)arg2;
 - (void)imageRequest:(id)arg1 failedWithError:(id)arg2;
+- (id)imageCache;
+- (void)setImageCache:(id)arg1;
+- (id)videoImage;
 - (void)prepareForReuse;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)setAlpha:(float)arg1;
 - (float)alpha;
-- (id)videoImage;
+- (void)setDrawAsDisabled:(BOOL)arg1;
+- (BOOL)drawAsDisabled;
 - (void)setVideoImage:(id)arg1;
 - (id)_imageForImageRequest:(id)arg1;
 - (void)_createVideoImageView;
@@ -40,8 +43,5 @@
 - (id)videoImageRequest;
 - (id)videoChapterContentView;
 - (void)updateContentView;
-- (void)dealloc;
-- (void)setDrawAsDisabled:(BOOL)arg1;
-- (BOOL)drawAsDisabled;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSString, NSData, NSDate, NSMutableArray, NSDictionary;
+@class NSArray, NSString, NSData, NSDate, NSDictionary;
 
 @interface MCProfile : NSObject  {
     NSString *_displayName;
@@ -25,7 +25,7 @@
     BOOL _trustHasBeenEvaluated;
     struct dispatch_queue_s { } *_trustEvaluationQueue;
     NSString *_signerSummary;
-    NSMutableArray *_signerCertificates;
+    NSArray *_signerCertificates;
     BOOL _signerHasBeenEvaluated;
     struct dispatch_queue_s { } *_signerEvaluationQueue;
     NSDictionary *_context;
@@ -84,16 +84,8 @@
 + (id)removeOptionalNonZeroLengthStringInDictionary:(id)arg1 key:(id)arg2 errorDomain:(id)arg3 invalidDataCode:(int)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
 + (id)profileWithData:(id)arg1 outError:(id*)arg2;
 
-- (void)setDisplayName:(id)arg1;
-- (BOOL)isEncrypted;
-- (id)UUID;
-- (id)displayName;
-- (int)version;
-- (id)identifier;
-- (void)setLocked:(BOOL)arg1;
-- (id)context;
-- (void)setContext:(id)arg1;
-- (BOOL)isLocked;
+- (id)description;
+- (void)dealloc;
 - (id)profileIDHashFileName;
 - (id)UUIDHashFileName;
 - (BOOL)writeStubToDirectory:(id)arg1;
@@ -133,8 +125,16 @@
 - (id)removalPasscode;
 - (void)setRemovalPasscode:(id)arg1;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
+- (void)setDisplayName:(id)arg1;
+- (id)displayName;
+- (int)version;
+- (id)identifier;
+- (void)setLocked:(BOOL)arg1;
+- (id)context;
+- (void)setContext:(id)arg1;
+- (BOOL)isLocked;
+- (BOOL)isEncrypted;
 - (id)productVersion;
+- (id)UUID;
 
 @end

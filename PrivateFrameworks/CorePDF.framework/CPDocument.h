@@ -9,8 +9,8 @@
 }
 
 
-- (void)addPage:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)addPage:(id)arg1;
 
 @end

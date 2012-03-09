@@ -15,6 +15,11 @@
 
 + (id)differentialStyle;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)font;
+- (id)fill;
+- (void)setFont:(id)arg1;
 - (void)setAlignmentInfo:(id)arg1;
 - (id)protection;
 - (void)setProtection:(id)arg1;
@@ -24,10 +29,5 @@
 - (id)borders;
 - (void)setBorders:(id)arg1;
 - (void)setFill:(id)arg1;
-- (id)font;
-- (id)fill;
-- (void)setFont:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

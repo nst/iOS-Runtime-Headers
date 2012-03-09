@@ -36,22 +36,22 @@
 
 
 - (id)URLString;
-- (BOOL)printFooter;
-- (void)setNumberFormatter:(id)arg1;
-- (id)browserView;
-- (void)setBrowserView:(id)arg1;
-- (void)setPrintFooter:(BOOL)arg1;
-- (id)paginationInfo;
-- (void)setURLString:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)numberFormatter;
+- (void)setWebFrame:(id)arg1;
 - (void)drawFooterForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)drawContentForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)printInteractionControllerDidFinishJob:(id)arg1;
 - (void)printInteractionControllerWillStartJob:(id)arg1;
 - (int)numberOfPages;
 - (id)webFrame;
-- (id)numberFormatter;
-- (void)setWebFrame:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setURLString:(id)arg1;
+- (BOOL)printFooter;
+- (void)setNumberFormatter:(id)arg1;
+- (id)browserView;
+- (void)setBrowserView:(id)arg1;
+- (void)setPrintFooter:(BOOL)arg1;
+- (id)paginationInfo;
 
 @end

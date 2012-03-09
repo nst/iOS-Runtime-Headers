@@ -13,6 +13,8 @@
 
 + (void)initialize;
 
+- (void)dealloc;
+- (unsigned long long)version;
 - (id)initWithObjectID:(id)arg1 withValues:(id)arg2 version:(unsigned long long)arg3;
 - (void)updateWithValues:(id)arg1 version:(unsigned long long)arg2;
 - (id)valueForPropertyDescription:(id)arg1;
@@ -20,7 +22,5 @@
 - (id)_snapshot_;
 - (unsigned int)_versionNumber;
 - (id)objectID;
-- (unsigned long long)version;
-- (void)dealloc;
 
 @end

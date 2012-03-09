@@ -19,19 +19,19 @@
 @property(retain) NSData * pushToken;
 
 
+- (void)dealloc;
+- (id)player;
 - (id)header;
 - (void)setPushToken:(id)arg1;
 - (id)pushToken;
 - (void)setSessionToken:(id)arg1;
 - (id)sessionToken;
 - (void)setPlayer:(id)arg1;
+- (id)connectionData;
+- (void)setConnectionData:(id)arg1;
 - (id)message;
 - (void)setMessage:(id)arg1;
 - (id)key;
 - (id)request;
-- (id)player;
-- (id)connectionData;
-- (void)setConnectionData:(id)arg1;
-- (void)dealloc;
 
 @end

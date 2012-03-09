@@ -29,17 +29,7 @@
 @property(retain) <EKScrubberDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (unsigned int)selectedSection;
-- (void)setBackgroundImage:(id)arg1;
-- (void)setTextColor:(id)arg1;
-- (id)delegate;
-- (id)dataSource;
-- (void)layoutSubviews;
-- (void)setDataSource:(id)arg1;
+- (void)dealloc;
 - (id)closestViewForXCoordinate:(float)arg1;
 - (void)setRightArrowImage:(id)arg1;
 - (void)setLeftArrowImage:(id)arg1;
@@ -69,6 +59,16 @@
 - (void)jumpToSection:(int)arg1;
 - (void)generateSections;
 - (void)cancelTimers;
-- (void)dealloc;
+- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (unsigned int)selectedSection;
+- (void)setBackgroundImage:(id)arg1;
+- (void)setTextColor:(id)arg1;
+- (id)delegate;
+- (id)dataSource;
+- (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
+- (void)setDataSource:(id)arg1;
 
 @end

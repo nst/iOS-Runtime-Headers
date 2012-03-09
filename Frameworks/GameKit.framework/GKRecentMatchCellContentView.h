@@ -14,11 +14,11 @@
 
 + (id)recentMatchContentView;
 
+- (void)dealloc;
 - (void)setMatched:(BOOL)arg1;
 - (BOOL)matched;
 - (void)updateLines;
 - (id)match;
 - (void)setMatch:(id)arg1;
-- (void)dealloc;
 
 @end

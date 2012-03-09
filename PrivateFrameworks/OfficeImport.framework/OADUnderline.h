@@ -13,6 +13,13 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
+- (int)type;
+- (void)setType:(int)arg1;
+- (id)stroke;
+- (id)fill;
 - (BOOL)isUsingTextFill;
 - (BOOL)isUsingTextStroke;
 - (id)initWithStroke:(id)arg1 fill:(id)arg2 type:(int)arg3;
@@ -20,12 +27,5 @@
 - (void)setIsUsingTextFill:(BOOL)arg1;
 - (void)setIsUsingTextStroke:(BOOL)arg1;
 - (void)setFill:(id)arg1;
-- (int)type;
-- (void)setType:(int)arg1;
-- (id)stroke;
-- (id)fill;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 
 @end

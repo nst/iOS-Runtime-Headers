@@ -26,11 +26,6 @@
 + (id)hostWithName:(id)arg1 netServiceName:(id)arg2 netServiceDomain:(id)arg3;
 + (id)hostWithName:(id)arg1 address:(id)arg2 port:(unsigned int)arg3;
 
-- (id)address;
-- (id)displayName;
-- (unsigned int)port;
-- (id)host;
-- (id)name;
 - (BOOL)hasSameAddressAs:(id)arg1;
 - (id)addressAsText;
 - (id)netServiceName;
@@ -39,5 +34,10 @@
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)address;
+- (id)displayName;
+- (unsigned int)port;
+- (id)host;
+- (id)name;
 
 @end

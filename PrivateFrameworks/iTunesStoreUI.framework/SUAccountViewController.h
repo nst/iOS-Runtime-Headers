@@ -10,10 +10,10 @@
 @property int style;
 
 
+- (id)init;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (int)style;
 - (void)setStyle:(int)arg1;
-- (id)init;
 - (id)_authenticationQueryParametersForStyle:(int)arg1;
 - (id)_bagKeyForStyle:(int)arg1;
 - (void)handleFailureWithError:(id)arg1;

@@ -18,11 +18,7 @@
 @property(getter=_isDisplayingRemovableTextField,readonly) BOOL _displayingRemovableTextField;
 
 
-- (void)_layoutRemovableTextField;
-- (BOOL)_isDisplayingRemovableTextField;
-- (void)_makeRemovableTextFieldEditable:(BOOL)arg1;
-- (void)makeTextFieldResignFirstResponderIfNeeded;
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)willTransitionToState:(unsigned int)arg1;
 - (void)didTransitionToState:(unsigned int)arg1;
@@ -40,6 +36,10 @@
 - (void)setChecked:(BOOL)arg1;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)_layoutRemovableTextField;
+- (BOOL)_isDisplayingRemovableTextField;
+- (void)_makeRemovableTextFieldEditable:(BOOL)arg1;
+- (void)makeTextFieldResignFirstResponderIfNeeded;
 
 @end

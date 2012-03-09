@@ -11,14 +11,14 @@
 @property int longitude;
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setLongitude:(int)arg1;
+- (void)setLatitude:(int)arg1;
+- (id)dictionaryRepresentation;
 - (int)latitude;
 - (int)longitude;
 - (BOOL)readFrom:(id)arg1;
-- (void)setLongitude:(int)arg1;
-- (void)setLatitude:(int)arg1;
 - (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

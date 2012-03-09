@@ -12,6 +12,9 @@
 @property BOOL shouldSwitchViewControllerContexts;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)_cancelAction:(id)arg1;
 - (BOOL)shouldSetEditing:(BOOL)arg1;
 - (void)handleSelectionForIndex:(unsigned int)arg1 dataSource:(id)arg2;
 - (id)newTabBarController;
@@ -26,8 +29,5 @@
 - (BOOL)canHandleSelectionForIndex:(unsigned int)arg1 dataSource:(id)arg2;
 - (id)copyQueryForQuery:(id)arg1;
 - (int)allowedMediaTypesForMediaTypes:(int)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)_cancelAction:(id)arg1;
 
 @end

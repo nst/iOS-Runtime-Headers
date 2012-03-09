@@ -10,9 +10,15 @@
 
 @property(retain) NSMutableDictionary * adCaches;
 
-+ (id)sharedCacheManager;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)sharedCacheManager;
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
 - (void)setAdCaches:(id)arg1;
 - (id)adCaches;
 - (void)clearAllCaches;
@@ -24,11 +30,5 @@
 - (void)setCache:(id)arg1 forBundleIdentifier:(id)arg2 specificationIdentifier:(id)arg3;
 - (id)cacheForBundleIdentifier:(id)arg1 specificationIdentifier:(id)arg2;
 - (void)removeCache:(id)arg1 forBundleIdentifier:(id)arg2 specificationIdentifier:(id)arg3;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (id)init;
-- (oneway void)release;
 
 @end

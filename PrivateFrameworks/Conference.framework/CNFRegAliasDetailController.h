@@ -14,15 +14,9 @@
 @property(retain) CNFRegAlias * alias;
 
 
+- (void)dealloc;
 - (void)setAlias:(id)arg1;
 - (id)alias;
-- (id)bundle;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (void)dealloc;
 - (void)forgetAliasTapped:(id)arg1;
 - (void)resendValidationEmailTapped:(id)arg1;
 - (void)_updateUIAnimated:(BOOL)arg1;
@@ -37,5 +31,11 @@
 - (void)willResignActive;
 - (void)willBecomeActive;
 - (void)_setupEventHandlers;
+- (id)bundle;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
 
 @end

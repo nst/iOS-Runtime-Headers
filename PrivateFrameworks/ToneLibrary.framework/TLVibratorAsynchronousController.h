@@ -13,6 +13,9 @@
 @property(setter=_setVibrationPattern:,retain) NSDictionary * _vibrationPattern;
 
 
+- (void)dealloc;
+- (void)setAVController:(id)arg1;
+- (id)avController;
 - (id)_vibrationPattern;
 - (void)_processNextIteration;
 - (void)_scheduleNextIterationIfNeeded;
@@ -21,8 +24,5 @@
 - (void)turnOff;
 - (void)turnOnWithVibrationPattern:(id)arg1;
 - (id)initWithAVController:(id)arg1;
-- (void)setAVController:(id)arg1;
-- (void)dealloc;
-- (id)avController;
 
 @end

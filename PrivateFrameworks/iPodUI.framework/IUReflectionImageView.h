@@ -19,16 +19,16 @@
 @property(retain) UIColor * imageBackgroundColor;
 
 
-- (void)setImage:(id)arg1;
-- (id)imageBackgroundColor;
-- (void)setImageBackgroundColor:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)setImage:(id)arg1;
 - (void)setUseImageSize:(BOOL)arg1;
 - (void)setReflectionVisible:(BOOL)arg1;
 - (void)setReflectionAlphaWhenVisible:(float)arg1;
 - (void)setNonSquareImage:(BOOL)arg1;
 - (BOOL)nonSquareImage;
 - (id)initWithReflectionHeight:(float)arg1 spacing:(float)arg2;
+- (id)imageBackgroundColor;
+- (void)setImageBackgroundColor:(id)arg1;
 
 @end

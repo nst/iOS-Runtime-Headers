@@ -19,6 +19,8 @@
 @property(readonly) BOOL isShowingCoverFlow;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)createTransitionControllerForChangeToInterfaceOrientation:(int)arg1 fromInterfaceOrientation:(int)arg2;
 - (id)createViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
 - (void)setItem:(id)arg1 animated:(BOOL)arg2;
@@ -34,7 +36,6 @@
 - (BOOL)_willStartPlaybackWhenViewAppears;
 - (void)_setFakeItemForDataSource:(id)arg1;
 - (void)_reloadTVOutForQuery:(id)arg1;
-- (void)_delayedTearDown:(id)arg1;
 - (void)_updateAnimateForResumeEventsOnly;
 - (void)exitPlayerForAccessorySplash;
 - (void)_exitToAlbumContext:(id)arg1 animated:(BOOL)arg2;
@@ -48,7 +49,5 @@
 - (void)setNextPushWillZoomArtwork:(BOOL)arg1;
 - (unsigned int)transitionEffectForViewController:(id)arg1;
 - (void)exitPlayerAnimated:(BOOL)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

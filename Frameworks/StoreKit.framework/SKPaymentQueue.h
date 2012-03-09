@@ -13,7 +13,8 @@
 + (BOOL)canMakePayments;
 + (id)defaultQueue;
 
-- (void)_mainThreadDaemonExited:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)_daemonLaunchedNotification;
 - (id)transactions;
 - (void)restoreCompletedTransactions;
@@ -40,8 +41,7 @@
 - (void)_applicationBecameActiveNotification:(id)arg1;
 - (void)_unregisterForNotifications;
 - (void)_registerForNotifications;
-- (id)init;
-- (void)dealloc;
 - (void)_daemonExited:(id)arg1;
+- (void)_mainThreadDaemonExited:(id)arg1;
 
 @end

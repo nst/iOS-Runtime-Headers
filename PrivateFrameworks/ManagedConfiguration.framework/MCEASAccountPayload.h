@@ -41,13 +41,8 @@
 - (id)accountDescription;
 - (id)emailAddress;
 - (id)mailNumberOfPastDaysToSync;
-- (void)setPassword:(id)arg1;
-- (void)setUsername:(id)arg1;
-- (id)username;
-- (void)setEmailAddress:(id)arg1;
-- (id)hostname;
-- (id)password;
-- (id)title;
+- (id)description;
+- (void)dealloc;
 - (BOOL)hasCertificate;
 - (id)embeddedCertificatePassword;
 - (void)setEmbeddedCertificatePassword:(id)arg1;
@@ -63,8 +58,13 @@
 - (id)subtitle1Description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
+- (void)setPassword:(id)arg1;
+- (void)setUsername:(id)arg1;
+- (id)username;
+- (void)setEmailAddress:(id)arg1;
+- (id)password;
+- (id)title;
+- (id)hostname;
 - (id)accountPersistentUUID;
 - (BOOL)useSSL;
 

@@ -22,11 +22,11 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setRecipientCount:(id)arg1;
-- (id)recipientCount;
 - (id)certificates;
 - (id)description;
 - (void)dealloc;
+- (void)setRecipientCount:(id)arg1;
+- (id)recipientCount;
 - (void)addCertificateString:(id)arg1;
 - (void)setEASStatus:(id)arg1;
 - (void)setCertCount:(id)arg1;

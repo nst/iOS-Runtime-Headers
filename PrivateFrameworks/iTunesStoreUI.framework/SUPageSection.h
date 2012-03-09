@@ -24,6 +24,10 @@
 @property(retain) id userInfo;
 
 
+- (id)userInfo;
+- (BOOL)isEqual:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setUserInfo:(id)arg1;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
@@ -31,13 +35,9 @@
 - (id)title;
 - (void)setTitle:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)_setURL:(id)arg1;
-- (id)userInfo;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (int)structuredPageType;
 - (id)segmentedControlItem;
+- (void)_setURL:(id)arg1;
 - (void)_setURLBagKey:(id)arg1;
 - (void)setStructuredPageType:(int)arg1;
 - (double)expirationTime;

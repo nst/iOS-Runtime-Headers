@@ -19,14 +19,12 @@
 @property(readonly) struct CGSize { float x1; float x2; } imageSize;
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (BOOL)isPrerendered;
-- (void)_setValue:(id)arg1 forKey:(id)arg2;
-- (void)setImageKindWithTypeName:(id)arg1 variantName:(id)arg2;
-- (void)setImageKind:(id)arg1;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
 - (int)height;
 - (void)setURL:(id)arg1;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
@@ -35,13 +33,15 @@
 - (struct CGSize { float x1; float x2; })imageSize;
 - (int)width;
 - (int)imageOrientation;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithArtworkDictionary:(id)arg1;
 - (id)imageKind;
 - (float)imageScale;
+- (void)setImageKindWithTypeName:(id)arg1 variantName:(id)arg2;
+- (void)setImageKind:(id)arg1;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
+- (id)copyPropertyListEncoding;
+- (id)initWithPropertyListEncoding:(id)arg1;
+- (void)_setValue:(id)arg1 forKey:(id)arg2;
 
 @end

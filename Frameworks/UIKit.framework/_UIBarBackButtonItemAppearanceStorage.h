@@ -19,6 +19,7 @@
 @property(retain) NSNumber * miniBackgroundVerticalAdjustment;
 
 
+- (void)dealloc;
 - (id)anyBackgroundImage;
 - (void)setTitlePositionOffset:(id)arg1;
 - (void)setMiniTitlePositionOffset:(id)arg1;
@@ -30,6 +31,5 @@
 - (id)miniTitlePositionOffset;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 isMini:(BOOL)arg3;
 - (id)backgroundImageForState:(unsigned int)arg1 isMini:(BOOL)arg2;
-- (void)dealloc;
 
 @end

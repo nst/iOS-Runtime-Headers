@@ -10,10 +10,10 @@
 }
 
 
-- (id)commonTimeNodeData;
 - (void)setTarget:(id)arg1;
 - (id)target;
 - (id)init;
 - (void)dealloc;
+- (id)commonTimeNodeData;
 
 @end

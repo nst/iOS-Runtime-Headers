@@ -18,10 +18,9 @@
 + (id)availableServices;
 
 - (int)unreadCount;
-- (BOOL)isAvailable;
+- (void)dealloc;
 - (Class)entityClass;
-- (id)displayName;
-- (void)applicationDidResume;
+- (BOOL)isAvailable;
 - (id)initWithServiceID:(id)arg1;
 - (int)unreadCountForConversation:(id)arg1;
 - (void)markAllMessagesInConversationAsRead:(id)arg1;
@@ -79,7 +78,8 @@
 - (BOOL)isValidAddress:(id)arg1;
 - (void)sendDowngradePingForMessage:(id)arg1 inConversation:(id)arg2 manualDowngrade:(BOOL)arg3;
 - (BOOL)restrictsMediaObjects;
-- (void)dealloc;
+- (id)displayName;
+- (void)applicationDidResume;
 - (void)prepareForSuspend;
 
 @end

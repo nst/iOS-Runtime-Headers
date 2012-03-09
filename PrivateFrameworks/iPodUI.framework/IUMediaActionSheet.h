@@ -6,10 +6,10 @@
 }
 
 
+- (void)dealloc;
 - (void)showFromTabBar:(id)arg1;
 - (void)showFromToolbar:(id)arg1;
 - (void)showInView:(id)arg1;
 - (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
-- (void)dealloc;
 
 @end

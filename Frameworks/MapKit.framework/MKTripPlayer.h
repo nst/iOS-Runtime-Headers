@@ -32,18 +32,17 @@
 @property(retain) MKTripPoint * tripPoint;
 
 
-- (BOOL)hasSpeed;
-- (BOOL)hasHeading;
-- (void)start;
+- (void)dealloc;
+- (BOOL)locationServicesApproved;
+- (void)setHeadingFilter:(double)arg1;
+- (BOOL)isPlaying;
+- (id)filePath;
+- (void)setFilePath:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)startDate;
-- (void)startUpdatingLocation;
-- (void)stopUpdatingLocation;
-- (void)stopUpdatingHeading;
-- (void)startUpdatingHeading;
 - (void)stop;
 - (void)reset;
-- (BOOL)isPlaying;
+- (void)start;
 - (void)playNextHeading;
 - (BOOL)parseMKString:(id)arg1 tripPoint:(id*)arg2 timeElapsed:(double*)arg3;
 - (BOOL)parseCLString:(id)arg1 tripPoint:(id*)arg2 timeElapsed:(double*)arg3;
@@ -61,13 +60,14 @@
 - (id)tripPoint;
 - (id)timer;
 - (id)initWithFilePath:(id)arg1;
-- (BOOL)locationServicesApproved;
-- (void)setHeadingFilter:(double)arg1;
+- (void)startUpdatingLocation;
+- (void)stopUpdatingLocation;
+- (void)stopUpdatingHeading;
+- (void)startUpdatingHeading;
+- (BOOL)hasSpeed;
+- (void)setIsPlaying:(BOOL)arg1;
+- (BOOL)hasHeading;
 - (double)bestAccuracy;
 - (void)setSupportInfo:(BOOL)arg1;
-- (void)setIsPlaying:(BOOL)arg1;
-- (void)dealloc;
-- (void)setFilePath:(id)arg1;
-- (id)filePath;
 
 @end

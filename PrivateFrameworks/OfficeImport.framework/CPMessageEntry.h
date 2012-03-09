@@ -17,6 +17,12 @@
 
 + (void)initialize;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
+- (id)getParameter:(unsigned int)arg1;
+- (int)timeStamp;
 - (int)getMessageTag;
 - (int)getParameterCount;
 - (void)logWithCat:(id)arg1;
@@ -28,11 +34,5 @@
 - (id)getMessageText;
 - (int)getCount;
 - (void)setTimeStamp:(int)arg1;
-- (id)getParameter:(unsigned int)arg1;
-- (int)timeStamp;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 
 @end

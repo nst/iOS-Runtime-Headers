@@ -14,9 +14,9 @@
 + (void)registerObserver:(id)arg1 forAssetID:(id)arg2;
 + (void)initialize;
 
+- (void)dealloc;
 - (void)_onQueue_invalidate;
 - (id)initWithAssetIdentifier:(id)arg1;
-- (void)dealloc;
 - (double)downloadProgress;
 
 @end

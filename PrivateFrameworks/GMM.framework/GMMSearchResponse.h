@@ -54,8 +54,17 @@
 @property(retain) NSString * splitQueryLocationPart;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setStatus:(int)arg1;
+- (int)status;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (id)errorMessage;
+- (BOOL)hasErrorMessage;
+- (void)setErrorMessage:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)searchResults;
 - (id)splitQueryLocationPart;
 - (id)splitQuerySearchPart;
 - (void)setHasTotalResults:(BOOL)arg1;
@@ -104,14 +113,5 @@
 - (void)setPayloadType:(int)arg1;
 - (void)setResultOffset:(int)arg1;
 - (void)setMapInfo:(id)arg1;
-- (id)errorMessage;
-- (BOOL)hasErrorMessage;
-- (void)setErrorMessage:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (int)status;
-- (id)description;
-- (void)dealloc;
-- (id)searchResults;
 
 @end

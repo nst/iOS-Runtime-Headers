@@ -15,10 +15,9 @@
 
 + (id)relations;
 
-- (id)radius;
-- (void)setRadius:(id)arg1;
-- (id)latitude;
-- (id)longitude;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (id)alarmOwner;
 - (void)setAlarmOwner:(id)arg1;
 - (id)calendarItemOwner;
@@ -30,8 +29,9 @@
 - (int)entityType;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
+- (id)radius;
+- (void)setRadius:(id)arg1;
+- (id)latitude;
+- (id)longitude;
 
 @end

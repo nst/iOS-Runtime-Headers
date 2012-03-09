@@ -60,7 +60,8 @@
 + (id)restoreRecommendationDictionaryFromCompletionDict:(id)arg1;
 + (id)shortProductNameFromBaseStationDictionary:(id)arg1;
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)createCompletionDictFromAutoGuessResults:(id)arg1;
 - (void)autoGuessEngineComplete;
 - (BOOL)okToSwitchToShortBonjourTimeout:(id)arg1;
@@ -111,7 +112,6 @@
 - (void)setWiFiScanStatus:(int)arg1;
 - (void)set_browsedBases:(id)arg1;
 - (id)delegate;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

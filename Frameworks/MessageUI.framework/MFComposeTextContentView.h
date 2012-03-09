@@ -12,6 +12,9 @@
 }
 
 
+- (id)enclosingScrollView;
+- (void)increaseQuoteLevel;
+- (void)decreaseQuoteLevel;
 - (void)quoteLevelMenu;
 - (void)ensureSelection;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
@@ -19,8 +22,5 @@
 - (BOOL)becomeFirstResponder;
 - (BOOL)resignFirstResponder;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (id)enclosingScrollView;
-- (void)increaseQuoteLevel;
-- (void)decreaseQuoteLevel;
 
 @end

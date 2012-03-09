@@ -35,7 +35,11 @@
 @property int primaryScramblingCode;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)primaryScramblingCode;
 - (void)setHasPrimaryScramblingCode:(BOOL)arg1;
 - (BOOL)hasPrimaryScramblingCode;
@@ -63,10 +67,6 @@
 - (void)setMnc:(int)arg1;
 - (void)setCellid:(int)arg1;
 - (void)setLac:(int)arg1;
-- (void)writeTo:(id)arg1;
 - (int)rssi;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -27,6 +27,10 @@
 
 + (id)newMessageHandler;
 
+- (id)init;
+- (BOOL)isActive;
+- (void)activate;
+- (void)deactivate;
 - (BOOL)rssi;
 - (void)requestRSSI;
 - (void)_handleScanDidEnd;
@@ -90,9 +94,5 @@
 - (void)_bluetoothSessionDidTerminate:(struct BTSessionImpl { }*)arg1 withResult:(int)arg2;
 - (void)_bluetoothSessionDidDetach:(struct BTSessionImpl { }*)arg1 withResult:(int)arg2;
 - (void)_bluetoothSessionDidAttach:(struct BTSessionImpl { }*)arg1 withResult:(int)arg2;
-- (BOOL)isActive;
-- (void)activate;
-- (void)deactivate;
-- (id)init;
 
 @end

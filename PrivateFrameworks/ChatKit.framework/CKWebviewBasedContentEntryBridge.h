@@ -12,8 +12,8 @@
 
 
 - (id)attachments;
-- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
-- (BOOL)hasContent;
+- (id)init;
+- (void)dealloc;
 - (void)richContentView:(id)arg1 didRemoveImage:(id)arg2;
 - (void)richContentView:(id)arg1 didInsertImage:(id)arg2;
 - (void)_resetResourcePool;
@@ -27,8 +27,8 @@
 - (id)messageComposition;
 - (id)messageCompositionIfTextOnly;
 - (void)setMessageComposition:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
+- (BOOL)hasContent;
 - (void)setMessageParts:(id)arg1;
 - (id)messageParts;
 - (void)insertMessagePart:(id)arg1;

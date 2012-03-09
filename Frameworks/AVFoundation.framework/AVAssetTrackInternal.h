@@ -7,7 +7,7 @@
 @interface AVAssetTrackInternal : NSObject  {
     AVAssetTrackInspector *trackInspector;
     AVWeakReference *assetWeakReference;
-    int getTaggedCharacteristicsOncePerTrack;
+    long getTaggedCharacteristicsOncePerTrack;
     NSArray *taggedCharacteristics;
 }
 

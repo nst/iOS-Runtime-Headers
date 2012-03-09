@@ -13,9 +13,9 @@
 @property(retain) NSDictionary * setters;
 
 
-- (void)finishWithError:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)finishWithError:(id)arg1;
 - (id)setters;
 - (id)getters;
 - (void)setGetters:(id)arg1;

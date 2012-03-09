@@ -24,10 +24,10 @@
 + (id)searchWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3 callback:(id)arg4;
 
 - (void)terminate;
+- (void)dealloc;
 - (BOOL)_receivedData:(struct { struct { int x_1_1_1; int x_1_1_2; } x1; double x2; }[50])arg1 count:(int)arg2;
 - (id)initWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3 callback:(id)arg4;
 - (id)startWithCompletion:(id)arg1;
 - (void)run;
-- (void)dealloc;
 
 @end

@@ -9,8 +9,8 @@
 }
 
 
-- (void)layoutSubviews;
 - (void)dealloc;
+- (void)layoutSubviews;
 - (void)_takeCGSnapshotOfView:(id)arg1;
 - (void)_takeIOSurfaceSnapshotOfView:(id)arg1;
 - (void)snapshotView:(id)arg1 usingIOSurface:(BOOL)arg2;

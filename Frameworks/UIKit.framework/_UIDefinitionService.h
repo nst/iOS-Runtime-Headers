@@ -18,7 +18,8 @@
 + (id)foregroundColor;
 + (id)backgroundColor;
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)stylesheetURL;
 - (unsigned int)languageDirectionForString:(id)arg1;
 - (id)_dictionaryForString:(id)arg1;
@@ -26,8 +27,7 @@
 - (BOOL)hasMarkupForString:(id)arg1;
 - (id)backgroundColor;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

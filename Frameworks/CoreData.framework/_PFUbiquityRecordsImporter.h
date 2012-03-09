@@ -4,7 +4,7 @@
 
 @class NSOperationQueue, NSRecursiveLock, PFUbiquityMetadataQueryMonitor, NSString, PFUbiquityLocation, NSMutableDictionary, NSDictionary;
 
-@interface _PFUbiquityRecordsImporter : NSObject <_PFUbiquityRecordImportOperationDelegate, NSManagedObjectContextFaultingDelegate, PFUbiquityImportScanOperationDelegate> {
+@interface _PFUbiquityRecordsImporter : NSObject <_PFUbiquityRecordImportOperationDelegate, NSManagedObjectContextFaultingDelegate, PFUbiquityImportScanOperationDelegate, PFUbiquityBaselineRollOperationDelegate, PFUbiquityBaselineRecoveryOperationDelegate, PFUbiquityBaselineRollResponseOperationDelegate> {
     NSOperationQueue *_importQueue;
     NSMutableDictionary *_ubiquityLocationToMonitoringDictionary;
     BOOL _isMonitoring;
@@ -15,8 +15,12 @@
     PFUbiquityMetadataQueryMonitor *_queryMonitor;
     BOOL _importOnlyActiveStores;
     BOOL _throttleNotifications;
+    unsigned int _numPendingNotifications;
+    NSMutableDictionary *_pendingNotificationUserInfo;
+    BOOL _allowBaselineRoll;
 }
 
+@property BOOL allowBaselineRoll;
 @property BOOL importOnlyActiveStores;
 @property(readonly) PFUbiquityMetadataQueryMonitor * queryMonitor;
 @property(readonly) NSDictionary * ubiquityLocationToMonitoringDictionary;
@@ -28,45 +32,62 @@
 @property(readonly) NSString * localPeerID;
 @property(readonly) NSOperationQueue * importQueue;
 
-+ (BOOL)canProcessContentsOfUbiquityRootPath:(id)arg1;
 + (void)initialize;
++ (BOOL)canProcessContentsOfUbiquityRootPath:(id)arg1;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (void)awakeFromLaunch:(BOOL)arg1;
+- (BOOL)startMonitor:(id*)arg1;
 - (void)stopMonitoringURLsForStoreName:(id)arg1;
 - (int)compareScoreDictionary:(id)arg1 withScoreDictionary:(id)arg2;
+- (void)setAllowBaselineRoll:(BOOL)arg1;
 - (void)setImportOnlyActiveStores:(BOOL)arg1;
 - (id)queryMonitor;
+- (BOOL)throttleNotifications;
 - (void)setThrottleNotifications:(BOOL)arg1;
-- (id)schedulingLock;
+- (void)rollResponseOperation:(id)arg1 successfullyAdoptedBaseline:(id)arg2;
+- (void)rollResponseOperation:(id)arg1 encounteredAnError:(id)arg2 whileTryingToAdoptBaseline:(id)arg3;
+- (void)recoveryOperation:(id)arg1 didReplaceLocalStoreFileWithBaseline:(id)arg2;
+- (void)recoveryOperation:(id)arg1 encounteredAnError:(id)arg2 duringRecoveryOfBaseline:(id)arg3;
+- (void)baselineRollOperationEncounteredAnInconsistentBaselineState:(id)arg1;
 - (void)scanOperationFinished:(id)arg1 withDiscoveredLogLocation:(id)arg2;
 - (void)scanOperation:(id)arg1 discoveredPeerStoreVersionLocations:(id)arg2;
+- (void)scanOperation:(id)arg1 failedWithError:(id)arg2;
 - (id)importQueue;
 - (void)stopMonitor;
+- (id)createPeerStatesDictionaryFromTransactionLog:(id)arg1 andAddLocalPeerStatesToDictionary:(id)arg2 withStack:(id)arg3;
 - (id)createScoresForPeerStates:(id)arg1 andLocalPeerStates:(id)arg2;
 - (BOOL)canProcessTransactionLogWithScore:(id)arg1 afterLogWithScore:(id)arg2;
 - (BOOL)importOnlyActiveStores;
 - (void)stopMonitoringDictionary:(id)arg1;
+- (void)scheduleBaselineRollResponseOperationForBaselineAtLocation:(id)arg1;
 - (struct dispatch_source_s { }*)createDispatchSourceForFileDescriptor:(int)arg1 forLocation:(id)arg2;
 - (id)createMonitoringDictionaryForUbiquityLocation:(id)arg1;
 - (id)ubiquityLocationToMonitoringDictionary;
 - (void)updateMonitoredPeerURLs;
-- (BOOL)throttleNotifications;
+- (void)_applicationResumed:(id)arg1;
+- (BOOL)isMonitoring;
+- (BOOL)shouldThrottleNotificationsWithOperation:(id)arg1;
+- (void)postImportNotificationForStoreName:(id)arg1 andLocalPeerID:(id)arg2 withUserInfo:(id)arg3;
+- (void)scheduleRecoveryTimer;
 - (void)setLogRestartTimer:(struct dispatch_source_s { }*)arg1;
 - (struct dispatch_source_s { }*)logRestartTimer;
+- (id)createDictionaryOfStoreNameToLocations:(id)arg1;
 - (id)createSortedOperationsArrayForLogLocations:(id)arg1;
 - (void)scheduleTransactionLogOperations:(id)arg1 synchronous:(BOOL)arg2;
+- (id)schedulingLock;
+- (BOOL)allowBaselineRoll;
+- (void)scheduleBaselineRecoveryOperationWithActiveBaselineOperation:(id)arg1;
+- (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
+- (void)scheduleUbiquityRootScan:(BOOL)arg1 withLocalPeerLogs:(BOOL)arg2;
 - (id)localPeerID;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operationDidFinish:(id)arg1;
+- (void)requestBaselineRollForStore:(id)arg1;
 - (void)operationWasInterruptedDuringImport:(id)arg1;
 - (id)ubiquityRootLocation;
-- (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
-- (BOOL)isMonitoring;
-- (BOOL)startMonitor:(id*)arg1;
-- (void)scheduleUbiquityRootScan:(BOOL)arg1 withLocalPeerLogs:(BOOL)arg2;
-- (void)awakeFromLaunch:(BOOL)arg1;
 - (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -15,10 +15,10 @@
 @property(readonly) NSString * filePath;
 
 
+- (void)dealloc;
+- (id)filePath;
 - (unsigned long)actualSound;
 - (unsigned long)previewSound;
 - (id)initWithPreviewSound:(unsigned long)arg1 actualSound:(unsigned long)arg2 filePath:(id)arg3;
-- (void)dealloc;
-- (id)filePath;
 
 @end

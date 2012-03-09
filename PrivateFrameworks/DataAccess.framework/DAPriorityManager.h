@@ -9,10 +9,14 @@
 }
 
 @property(readonly) struct __CFDictionary { }* clientsToPriorityRequests;
+@property(readonly) int currentPriority;
 
 + (void)vendPriorityManagers;
 + (id)sharedManager;
 
+- (id)init;
+- (void)dealloc;
+- (int)currentPriority;
 - (void)_setForegroundDataclasses:(int)arg1;
 - (int)_recalculatePriority;
 - (struct __CFDictionary { }*)clientsToPriorityRequests;
@@ -21,8 +25,6 @@
 - (id)_appIDsToDataclasses;
 - (void)requestPriority:(int)arg1 forClient:(id)arg2 dataclasses:(int)arg3;
 - (void)bumpDataclassesToUIPriority:(int)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)stateString;
 
 @end

@@ -13,6 +13,7 @@
 @property(retain) NSString * placeholder;
 
 
+- (void)dealloc;
 - (id)textField;
 - (void)setPlaceholder:(id)arg1;
 - (id)placeholder;
@@ -21,6 +22,5 @@
 - (void)setText:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

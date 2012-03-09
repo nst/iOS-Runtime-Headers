@@ -6,6 +6,10 @@
     struct CGColor { } *cgColor;
 }
 
++ (id)colorWithPatternImage:(struct CGImage { }*)arg1;
++ (id)clearColor;
++ (id)whiteColor;
++ (id)blackColor;
 + (id)colorWithBinaryRed:(int)arg1 green:(int)arg2 blue:(int)arg3;
 + (id)colorWithBinaryRed:(int)arg1 green:(int)arg2 blue:(int)arg3 alpha:(int)arg4;
 + (id)colorWithBGR:(unsigned long)arg1;
@@ -22,11 +26,16 @@
 + (id)colorWithBGRValue:(long)arg1;
 + (id)colorWithRGBValue:(long)arg1;
 + (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-+ (id)colorWithPatternImage:(struct CGImage { }*)arg1;
-+ (id)clearColor;
-+ (id)whiteColor;
-+ (id)blackColor;
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (float)alphaComponent;
+- (id)colorSpaceName;
+- (id)colorWithAlphaComponent:(float)arg1;
+- (void)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
+- (void)set;
 - (id)colorUsingColorSpaceName:(id)arg1;
 - (struct CGColor { }*)cgColorRef;
 - (BOOL)isEqualToColor:(id)arg1;
@@ -48,14 +57,5 @@
 - (struct CsColour { unsigned short x1; unsigned short x2; unsigned short x3; unsigned short x4; })csColour;
 - (id)colorWithShadeValue:(double)arg1;
 - (id)colorWithTintValue:(double)arg1;
-- (float)alphaComponent;
-- (id)colorSpaceName;
-- (id)colorWithAlphaComponent:(float)arg1;
-- (void)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
-- (void)set;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

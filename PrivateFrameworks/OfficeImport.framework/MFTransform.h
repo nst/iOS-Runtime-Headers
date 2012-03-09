@@ -28,6 +28,8 @@
 }
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (BOOL)isUpsideDown;
 - (struct CGPoint { float x1; float x2; })DPtoLP:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })LPtoDP:(struct CGPoint { float x1; float x2; })arg1;
@@ -57,7 +59,5 @@
 - (int)setViewportOrg:(int)arg1 :(int)arg2;
 - (int)scaleViewportExt:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4;
 - (int)setMapMode:(int)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

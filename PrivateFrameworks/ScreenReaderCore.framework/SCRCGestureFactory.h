@@ -198,6 +198,15 @@
 @property BOOL thumbRejectionEnabled;
 
 
+- (void)dealloc;
+- (struct CGPoint { float x1; float x2; })startLocation;
+- (void)reset;
+- (float)velocity;
+- (void)setOrientation:(int)arg1;
+- (int)direction;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mainFrame;
+- (unsigned int)tapCount;
+- (int)orientation;
 - (float)distance;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 delegate:(id)arg2;
 - (void)setFlickSpeed:(float)arg1;
@@ -235,14 +244,5 @@
 - (struct CGPoint { float x1; float x2; })rawLocation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tapFrame;
 - (unsigned int)fingerCount;
-- (struct CGPoint { float x1; float x2; })startLocation;
-- (void)reset;
-- (float)velocity;
-- (void)setOrientation:(int)arg1;
-- (int)direction;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mainFrame;
-- (unsigned int)tapCount;
-- (int)orientation;
-- (void)dealloc;
 
 @end

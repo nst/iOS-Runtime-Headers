@@ -10,11 +10,11 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)fill;
 - (id)effects;
 - (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
-- (id)fill;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end

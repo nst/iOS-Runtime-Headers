@@ -13,6 +13,8 @@
 @property BOOL addsContentToExistingCollection;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setAddsContentToExistingCollection:(BOOL)arg1;
 - (BOOL)addsContentToExistingCollection;
 - (void)setRuntimeCollectionClassName:(id)arg1;
@@ -22,7 +24,5 @@
 - (void)connectForSimulator;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

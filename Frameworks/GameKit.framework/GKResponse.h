@@ -18,13 +18,13 @@
 + (id)responseWithError:(id)arg1;
 + (id)response;
 
+- (id)description;
+- (void)dealloc;
 - (void)setTimeToLive:(double)arg1;
 - (double)timeToLive;
 - (void)setError:(id)arg1;
 - (id)error;
 - (id)result;
 - (void)setResult:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

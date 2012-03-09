@@ -57,6 +57,8 @@
 @property(retain) NSObject<GKTextLayout> * textLayout;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setHasTruncationClusters:(BOOL)arg1;
 - (BOOL)hasTruncationClusters;
 - (struct __CTRun { }*)truncateLine:(struct __CTLine { }*)arg1 removingStringRange:(struct { int x1; int x2; })arg2 runAttributes:(struct __CFDictionary { }*)arg3 truncationSymbol:(id)arg4;
@@ -89,8 +91,6 @@
 - (void)setShouldDrawEmoji:(BOOL)arg1;
 - (id)attributedText;
 - (void)setAttributedText:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNumberOfLines:(int)arg1;
 - (int)numberOfLines;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(int)arg2;
@@ -108,7 +108,7 @@
 - (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShadowColor:(id)arg1;
 - (id)shadowColor;
-- (id)init;
-- (void)dealloc;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 
 @end

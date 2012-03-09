@@ -20,6 +20,9 @@
 @property(readonly) BOOL isEmpty;
 
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)background;
 - (void)setBackground:(id)arg1;
 - (id)titleColor;
@@ -33,8 +36,5 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setImage:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

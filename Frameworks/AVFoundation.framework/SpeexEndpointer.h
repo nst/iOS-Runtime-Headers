@@ -7,30 +7,30 @@
     double mInterspeechWaitTime;
     double mEndWaitTime;
     int mEndpointMode;
-    unsigned int mFrameRate;
+    unsigned long mFrameRate;
     int mLastStatus;
     void *_impl;
 }
 
-@property double endWaitTime;
-@property double interspeechWaitTime;
-@property double startWaitTime;
 @property int endpointMode;
+@property double startWaitTime;
+@property double interspeechWaitTime;
+@property double endWaitTime;
 
 
-- (void)reset;
+- (id)init;
+- (void)dealloc;
 - (double)endWaitTime;
 - (double)interspeechWaitTime;
 - (double)startWaitTime;
 - (int)endpointMode;
-- (BOOL)configureWithSampleRate:(double)arg1 andFrameRate:(unsigned long)arg2;
-- (void)setEndpointMode:(int)arg1;
-- (void)setStartWaitTime:(double)arg1;
-- (void)setInterspeechWaitTime:(double)arg1;
-- (void)setEndWaitTime:(double)arg1;
-- (int)getStatus:(float*)arg1 count:(unsigned long)arg2;
 - (int)getStatus:(struct AudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (BOOL)configureWithSampleRate:(double)arg1 andFrameRate:(unsigned long)arg2;
+- (void)setEndWaitTime:(double)arg1;
+- (void)setInterspeechWaitTime:(double)arg1;
+- (void)setStartWaitTime:(double)arg1;
+- (void)setEndpointMode:(int)arg1;
+- (int)getStatus:(float*)arg1 count:(unsigned long)arg2;
+- (void)reset;
 
 @end

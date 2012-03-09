@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UIImage, NSString, UILabel;
+@class UIImageView, UIImage, NSString, UILabel, UILongPressGestureRecognizer, NSObject<PLAssetContainer>;
 
 @interface PLEmptyAlbumView : UIView  {
     UIImage *_image;
@@ -13,6 +13,7 @@
     UIImageView *_imageView;
     UILabel *_titleLabel;
     UILabel *_messageLabel;
+    UILongPressGestureRecognizer *_longPressRecognizer;
     int _filter;
     BOOL _isCameraAlbum;
     BOOL _useLargeImages;
@@ -26,19 +27,26 @@
     } _edgeInsets;
 }
 
+@property(retain) NSObject<PLAssetContainer> * album;
 @property int filter;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 
 
-- (int)filter;
+- (void)dealloc;
+- (struct NSObject { Class x1; }*)album;
 - (void)setMessage:(id)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)paste:(id)arg1;
+- (BOOL)canBecomeFirstResponder;
 - (void)setFilter:(int)arg1;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
 - (void)setImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)filter;
 - (void)setIsCameraAlbum:(BOOL)arg1;
 - (void)setPortraitImage:(id)arg1 landscapeImage:(id)arg2;
 - (id)_emptyRollImageForAlbum:(struct NSObject { Class x1; }*)arg1 interfaceOrientation:(int)arg2;
@@ -48,7 +56,7 @@
 - (id)_newLabelWithText:(id)arg1;
 - (id)_titleForAlbum:(struct NSObject { Class x1; }*)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 useLargeImages:(BOOL)arg2;
+- (void)_longPressGesture:(id)arg1;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)dealloc;
 
 @end

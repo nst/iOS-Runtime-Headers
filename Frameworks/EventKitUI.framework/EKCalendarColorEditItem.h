@@ -10,14 +10,14 @@
 }
 
 
-- (id)headerTitle;
-- (void)reset;
+- (void)dealloc;
 - (id)_cellForColor:(id)arg1;
 - (void)calendarEditor:(id)arg1 didSelectSubitem:(int)arg2;
 - (BOOL)saveStateToCalendar:(id)arg1;
 - (void)setCalendar:(id)arg1 store:(id)arg2;
 - (int)numberOfSubitems;
 - (id)cellForSubitemAtIndex:(int)arg1;
-- (void)dealloc;
+- (id)headerTitle;
+- (void)reset;
 
 @end

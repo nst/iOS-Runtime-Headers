@@ -21,7 +21,7 @@
 }
 
 
-- (void)setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)dealloc;
+- (void)setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
 
 @end

@@ -11,6 +11,7 @@
 }
 
 
+- (id)init;
 - (void)addFontStyle:(id)arg1;
 - (void)addBordersStyle:(id)arg1;
 - (void)addFillStyle:(id)arg1;
@@ -19,6 +20,5 @@
 - (id)initWithEDStyle:(id)arg1;
 - (void)changeWithContentWidth:(double)arg1 columnWidth:(double)arg2;
 - (void)changeWithContentFormatType:(int)arg1;
-- (id)init;
 
 @end

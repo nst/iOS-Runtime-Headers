@@ -21,6 +21,7 @@
 @property(retain) NSData * sessionToken;
 
 
+- (void)dealloc;
 - (void)setPlayers:(id)arg1;
 - (id)players;
 - (BOOL)hosted;
@@ -31,12 +32,11 @@
 - (void)setHosted:(BOOL)arg1;
 - (void)handleResponseFromServer:(id)arg1;
 - (id)sessionToken;
+- (id)connectionData;
+- (void)setConnectionData:(id)arg1;
 - (id)message;
 - (void)setMessage:(id)arg1;
 - (id)key;
 - (id)request;
-- (id)connectionData;
-- (void)setConnectionData:(id)arg1;
-- (void)dealloc;
 
 @end

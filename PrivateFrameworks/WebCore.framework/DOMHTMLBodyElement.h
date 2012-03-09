@@ -15,6 +15,11 @@
 @property(copy) NSString * vLink;
 
 
+- (int)structuralComplexityContribution;
+- (id)background;
+- (void)setBackground:(id)arg1;
+- (id)text;
+- (void)setText:(id)arg1;
 - (id)aLink;
 - (void)setALink:(id)arg1;
 - (id)bgColor;
@@ -23,10 +28,5 @@
 - (void)setLink:(id)arg1;
 - (id)vLink;
 - (void)setVLink:(id)arg1;
-- (int)structuralComplexityContribution;
-- (id)background;
-- (void)setBackground:(id)arg1;
-- (id)text;
-- (void)setText:(id)arg1;
 
 @end

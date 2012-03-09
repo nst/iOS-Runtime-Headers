@@ -22,7 +22,8 @@
 @property id delegate;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
 - (void)displayTick;
 - (int)indexOfSelectedCover;
 - (void)flipSelectedCover;
@@ -42,7 +43,7 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
+- (void)setDelegate:(id)arg1;
 - (BOOL)isIdle;
 - (int)displayedDeviceOrientation;
 - (void)setDisplayedDeviceOrientation:(int)arg1 animate:(BOOL)arg2;
@@ -58,6 +59,5 @@
 - (void)_positionAdornmentView:(id)arg1 normalPosition:(int)arg2;
 - (BOOL)_displayIsFlipped;
 - (void)forceCurrentTransitionToEnd;
-- (void)dealloc;
 
 @end

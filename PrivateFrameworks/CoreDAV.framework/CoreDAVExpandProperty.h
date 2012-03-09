@@ -15,6 +15,7 @@
 @property(retain) NSString * expandedNameSpace;
 
 
+- (void)dealloc;
 - (void)setExpandedNameSpace:(id)arg1;
 - (id)expandedNameSpace;
 - (void)setExpandedName:(id)arg1;
@@ -22,6 +23,5 @@
 - (id)initWithPropertiesToFind:(id)arg1 expandedName:(id)arg2 expandedNameSpace:(id)arg3;
 - (void)setPropertiesToFind:(id)arg1;
 - (id)propertiesToFind;
-- (void)dealloc;
 
 @end

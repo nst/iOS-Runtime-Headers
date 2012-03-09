@@ -9,15 +9,15 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)setHeight:(float)arg1;
 - (float)height;
 - (int)type;
 - (void)setWidth:(float)arg1;
 - (float)width;
 - (void)setType:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 
 @end

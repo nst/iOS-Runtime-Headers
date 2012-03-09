@@ -17,10 +17,10 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (id)status;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)status;
 - (BOOL)remoteWipe;
 - (id)policies;
 - (void)setPolicyType:(id)arg1;

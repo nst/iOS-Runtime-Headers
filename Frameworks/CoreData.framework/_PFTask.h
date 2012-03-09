@@ -26,13 +26,13 @@
 + (double)getProcessorSpeed;
 + (unsigned long long)getPhysicalMemory;
 
-- (void)finalize;
-- (id)initWithFunction:(int (*)())arg1 withArgument:(void*)arg2 andPriority:(int)arg3;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (unsigned int)retainCount;
 - (id)retain;
 - (void)release;
 - (void)dealloc;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)finalize;
+- (id)initWithFunction:(int (*)())arg1 withArgument:(void*)arg2 andPriority:(int)arg3;
 
 @end

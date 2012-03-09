@@ -69,7 +69,7 @@
 + (id)pathForWebClipWithIdentifier:(id)arg1;
 + (id)urlForWebClipWithIdentifier:(id)arg1;
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (BOOL)iconIsPrerendered;
 - (BOOL)iconIsScreenShotBased;
 - (BOOL)removalDisallowed;
@@ -134,6 +134,6 @@
 - (float)scale;
 - (id)delegate;
 - (void)setTitle:(id)arg1;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

@@ -12,17 +12,17 @@
 }
 
 
-- (BOOL)hideLastTransition;
-- (void)setHideLastTransition:(BOOL)arg1;
-- (int)pointType;
-- (void)setPointType:(int)arg1;
+- (unsigned int)count;
+- (void)setStart:(int)arg1;
 - (int)start;
+- (void)setCount:(unsigned int)arg1;
 - (int)axis;
 - (void)setAxis:(int)arg1;
 - (int)step;
 - (void)setStep:(int)arg1;
-- (void)setStart:(int)arg1;
-- (void)setCount:(unsigned int)arg1;
-- (unsigned int)count;
+- (BOOL)hideLastTransition;
+- (void)setHideLastTransition:(BOOL)arg1;
+- (int)pointType;
+- (void)setPointType:(int)arg1;
 
 @end

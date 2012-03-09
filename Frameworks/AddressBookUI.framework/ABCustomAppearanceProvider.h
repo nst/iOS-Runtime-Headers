@@ -9,8 +9,6 @@
 }
 
 
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
 - (id)init;
 - (void)dealloc;
 - (Class)propertyCellClass;
@@ -30,5 +28,7 @@
 - (id)newCustomCardTableScrollingBackgroundView;
 - (BOOL)shouldPropagateStylesThroughUnknownPersonActions;
 - (int)unknownModalPresentationStyle;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
 
 @end

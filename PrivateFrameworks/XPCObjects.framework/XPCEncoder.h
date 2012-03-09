@@ -14,8 +14,12 @@
 + (void*)newEncodingForRootObject:(id)arg1;
 
 - (void)encodeRootObject:(id)arg1;
-- (void)encodeInt32:(int)arg1 forKey:(id)arg2;
-- (void*)encoding;
+- (id)init;
+- (void)dealloc;
+- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
+- (void)_fixUpConditionalObjects;
+- (id)_replacementObjectForObject:(id)arg1;
+- (void)_verifyCurrentObject;
 - (int)versionForClassName:(id)arg1;
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeConditionalObject:(id)arg1 forKey:(id)arg2;
@@ -26,11 +30,7 @@
 - (BOOL)allowsKeyedCoding;
 - (void)encodeBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
-- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
-- (id)init;
-- (void)dealloc;
-- (void)_fixUpConditionalObjects;
-- (id)_replacementObjectForObject:(id)arg1;
-- (void)_verifyCurrentObject;
+- (void*)encoding;
+- (void)encodeInt32:(int)arg1 forKey:(id)arg2;
 
 @end

@@ -25,9 +25,14 @@
 @property(readonly) double localBandwidthBytes;
 @property(retain) NSTimer * aggdCommitTimer;
 
-+ (id)sharedNetworkController;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)sharedNetworkController;
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
 - (void)start;
 - (id)aggdCommitTimer;
 - (double)localBandwidthBytes;
@@ -45,11 +50,6 @@
 - (void)_commitNetworkData:(id)arg1;
 - (void)setAggdCommitTimer:(id)arg1;
 - (void)_checkForNetworkAndNotify;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (oneway void)release;
 - (int)networkType;
 
 @end

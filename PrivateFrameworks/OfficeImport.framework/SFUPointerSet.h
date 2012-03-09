@@ -5,10 +5,10 @@
 @interface SFUPointerSet : NSSet  {
 }
 
-+ (void)initialize;
 + (Class)class;
++ (void)initialize;
 
-- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
 - (id)init;
+- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
 
 @end

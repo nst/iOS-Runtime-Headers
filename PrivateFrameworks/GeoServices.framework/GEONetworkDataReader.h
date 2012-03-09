@@ -13,14 +13,14 @@
 }
 
 
+- (void)dealloc;
 - (BOOL)hasUnreadData;
 - (void)seekToMarkedOffset;
 - (void)markOffset;
 - (id)readData:(unsigned short)arg1;
 - (void)appendNetworkData:(id)arg1;
 - (unsigned short)readUnsignedShort;
-- (id)readString;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
+- (id)readString;
 
 @end

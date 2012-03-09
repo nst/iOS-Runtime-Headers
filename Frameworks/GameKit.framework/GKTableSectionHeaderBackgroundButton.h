@@ -17,6 +17,8 @@
 @property(getter=isLoading) BOOL loading;
 
 
+- (SEL)action;
+- (void)dealloc;
 - (void)setStatusText:(id)arg1;
 - (void)setContentViewClass:(Class)arg1;
 - (id)statusText;
@@ -33,7 +35,5 @@
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)setAction:(SEL)arg1;
 - (BOOL)isHidden;
-- (SEL)action;
-- (void)dealloc;
 
 @end

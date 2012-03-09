@@ -72,11 +72,9 @@
 
 - (id)persistentID;
 - (id)account;
-- (id)participants;
-- (void)setRecipient:(id)arg1;
-- (id)recipient;
-- (id)lastMessage;
-- (void)join;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)_typingIndicatorTimedOut:(id)arg1;
 - (void)_clearTypingIndicatorTimeout;
 - (void)_setTypingIndicatorTimeout;
@@ -191,7 +189,10 @@
 - (void)_updateFailedCount;
 - (void)_recomputeOverallChatStatusQuietly:(BOOL)arg1;
 - (void)_buildInitialChatItems:(id)arg1;
-- (void)clear;
+- (id)participants;
+- (void)setRecipient:(id)arg1;
+- (id)recipient;
+- (id)lastMessage;
 - (unsigned char)chatStyle;
 - (void)markMessageAsRead:(id)arg1;
 - (void)setNumberOfMessagesToKeepLoaded:(unsigned int)arg1;
@@ -215,9 +216,8 @@
 - (void)sendMessage:(id)arg1;
 - (id)guid;
 - (void)updateMessage:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)clear;
+- (void)join;
 - (id)dateCreated;
 - (void)declineInvitation;
 - (void)acceptInvitation;

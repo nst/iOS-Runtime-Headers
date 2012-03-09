@@ -15,8 +15,8 @@
 @property float webViewWidth;
 
 
-- (id)stylesheet;
 - (void)dealloc;
+- (id)stylesheet;
 - (void)setWebViewWidth:(float)arg1;
 - (float)webViewWidth;
 - (id)webViewForMarkup:(id)arg1;

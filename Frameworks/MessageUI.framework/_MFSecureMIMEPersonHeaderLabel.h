@@ -12,11 +12,11 @@
 @property(copy) NSString * text;
 
 
+- (void)dealloc;
+- (id)initWithImage:(id)arg1 text:(id)arg2 textColor:(id)arg3;
 - (id)text;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (id)initWithImage:(id)arg1 text:(id)arg2 textColor:(id)arg3;
-- (void)dealloc;
 
 @end

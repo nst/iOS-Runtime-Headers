@@ -20,6 +20,11 @@
 }
 
 
+- (void)dealloc;
+- (double)angle;
+- (void)setPath:(id)arg1;
+- (void)setAngle:(double)arg1;
+- (id)path;
 - (BOOL)hasPath;
 - (BOOL)hasAngle;
 - (BOOL)hasPointType;
@@ -31,10 +36,5 @@
 - (BOOL)hasRotationCenter;
 - (struct CGPoint { float x1; float x2; })rotationCenter;
 - (void)setRotationCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (id)path;
-- (double)angle;
-- (void)setPath:(id)arg1;
-- (void)setAngle:(double)arg1;
-- (void)dealloc;
 
 @end

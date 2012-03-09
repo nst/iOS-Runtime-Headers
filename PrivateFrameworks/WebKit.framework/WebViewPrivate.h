@@ -184,10 +184,10 @@
 
 + (void)initialize;
 
-- (void)finalize;
-- (void).cxx_destruct;
-- (id).cxx_construct;
 - (id)init;
 - (void)dealloc;
+- (id).cxx_construct;
+- (void)finalize;
+- (void).cxx_destruct;
 
 @end

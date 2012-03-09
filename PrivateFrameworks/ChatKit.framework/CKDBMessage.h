@@ -35,6 +35,7 @@
             unsigned char _cfinfo[4]; 
         } x1; int x2; int x3; } *_madridChatRecord;
     NSAttributedString *_madridAttributedBody;
+    NSString *_voicemailString;
 }
 
 @property(readonly) BOOL isMessageFullyLoaded;
@@ -67,13 +68,12 @@
 
 
 - (id)subject;
+- (id)description;
+- (void)dealloc;
+- (id)groupID;
+- (struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)record;
 - (id)recipients;
 - (id)address;
-- (BOOL)hasAttachments;
-- (int)identifier;
-- (void)setIdentifier:(int)arg1;
-- (id)date;
-- (id)text;
 - (id)formattedAddress;
 - (struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)madridChatRecord;
 - (BOOL)isMessageFullyLoaded;
@@ -103,6 +103,7 @@
 - (void)_loadSMSMessageParts;
 - (id)madridRoomname;
 - (id)_madridChatIdentifier;
+- (id)voicemailString;
 - (id)initWithMadridMessageGUID:(id)arg1;
 - (id)attachmentText;
 - (id)initWithRecordID:(int)arg1;
@@ -113,10 +114,11 @@
 - (id)attachmentText:(BOOL)arg1;
 - (id)guid;
 - (BOOL)isOutgoing;
-- (id)groupID;
-- (struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)record;
-- (id)description;
-- (void)dealloc;
+- (BOOL)hasAttachments;
+- (int)identifier;
+- (void)setIdentifier:(int)arg1;
+- (id)date;
+- (id)text;
 - (id)messageParts;
 
 @end

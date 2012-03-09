@@ -68,6 +68,21 @@
 }
 
 
+- (void)dealloc;
+- (id)initWithDelegate:(id)arg1;
+- (id)attributeForKey:(id)arg1;
+- (int)baseWritingDirection;
+- (void)setAttribute:(id)arg1 forKey:(id)arg2;
+- (struct CGSize { float x1; float x2; })paperSize;
+- (float)fontSize;
+- (void)setFontSize:(float)arg1;
+- (void)setBaseWritingDirection:(int)arg1;
+- (void)setTextAlignment:(int)arg1;
+- (void)setRightMargin:(float)arg1;
+- (unsigned int)level;
+- (id)font;
+- (void)setFont:(id)arg1;
+- (void)pushState;
 - (BOOL)bold;
 - (BOOL)italic;
 - (id)defaultParagraphStyle;
@@ -151,20 +166,5 @@
 - (void)setPaperSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)currentTable;
 - (BOOL)isLastTableRow;
-- (int)baseWritingDirection;
-- (struct CGSize { float x1; float x2; })paperSize;
-- (float)fontSize;
-- (void)setFontSize:(float)arg1;
-- (void)setBaseWritingDirection:(int)arg1;
-- (void)setTextAlignment:(int)arg1;
-- (void)setRightMargin:(float)arg1;
-- (unsigned int)level;
-- (id)font;
-- (void)setFont:(id)arg1;
-- (id)attributeForKey:(id)arg1;
-- (void)dealloc;
-- (void)pushState;
-- (id)initWithDelegate:(id)arg1;
-- (void)setAttribute:(id)arg1 forKey:(id)arg2;
 
 @end

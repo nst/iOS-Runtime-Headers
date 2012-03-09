@@ -29,6 +29,7 @@
 }
 
 
+- (void)dealloc;
 - (const char *)uid;
 - (id)geometry;
 - (struct __CFURL { }*)url;
@@ -42,6 +43,5 @@
 - (BOOL)hasPagesOrder;
 - (int)pagesOrder;
 - (struct CGPath { }*)createBezierPath;
-- (void)dealloc;
 
 @end

@@ -23,8 +23,11 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (id)theme;
 - (void)setTheme:(id)arg1;
+- (id)fileName;
 - (void)removeWorksheetAtIndex:(unsigned int)arg1;
 - (id)escherDrawingGroup;
 - (void)setEscherDrawingGroup:(id)arg1;
@@ -58,8 +61,5 @@
 - (unsigned int)sheetCount;
 - (id)sheetAtIndex:(unsigned int)arg1 loadIfNeeded:(bool)arg2;
 - (id)processors;
-- (id)fileName;
-- (id)init;
-- (void)dealloc;
 
 @end

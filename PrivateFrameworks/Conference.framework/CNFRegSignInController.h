@@ -35,20 +35,6 @@
 @property(copy) NSString * pendingUsername;
 
 
-- (void)setSpecifier:(id)arg1;
-- (id)bundle;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)viewDidLoad;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)_updateUI;
-- (void)setAlertHandler:(id)arg1;
-- (id)alertHandler;
 - (id)init;
 - (void)dealloc;
 - (void)handleURL:(id)arg1;
@@ -110,5 +96,19 @@
 - (void)_setupEventHandlers;
 - (id)logName;
 - (void)createAccountControllerDidFinish:(id)arg1 withAppleId:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
+- (void)_updateUI;
+- (void)setAlertHandler:(id)arg1;
+- (id)alertHandler;
+- (void)setSpecifier:(id)arg1;
+- (id)bundle;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)viewDidLoad;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 
 @end

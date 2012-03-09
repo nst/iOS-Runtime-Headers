@@ -7,9 +7,11 @@
     int _extendedModeNotifyToken;
 }
 
-+ (id)sharedIPCAppInstance;
 + (id)sharedInstance;
++ (id)sharedIPCAppInstance;
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)isInExtendedMode;
 - (void)_itemWillChange:(id)arg1;
 - (void)airPlayVideoEnded;
@@ -21,7 +23,5 @@
 - (void)_movieExpirationCheckCallback;
 - (void)_appDefaultsChangedNotification:(id)arg1;
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

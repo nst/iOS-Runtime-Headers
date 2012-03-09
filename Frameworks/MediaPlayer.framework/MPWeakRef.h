@@ -9,9 +9,9 @@
 
 + (id)weakRefWithObject:(id)arg1;
 
-- (id)object;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
+- (id)object;
 
 @end

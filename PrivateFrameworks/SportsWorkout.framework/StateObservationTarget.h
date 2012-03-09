@@ -14,11 +14,11 @@
 
 + (id)targetWithOldState:(id)arg1 newState:(id)arg2 selector:(SEL)arg3;
 
-- (id)oldState;
-- (void)setOldState:(id)arg1;
-- (void)setCurrentState:(id)arg1;
-- (id)currentState;
 - (id)description;
 - (void)dealloc;
+- (void)setCurrentState:(id)arg1;
+- (id)currentState;
+- (id)oldState;
+- (void)setOldState:(id)arg1;
 
 @end

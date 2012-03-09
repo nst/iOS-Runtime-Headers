@@ -16,8 +16,6 @@
 
 - (void)setAccount:(id)arg1;
 - (id)account;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
 - (void)dealloc;
 - (void)_showRequestPasswordAlert;
 - (void)_showForgotPasswordAlert;
@@ -32,5 +30,7 @@
 - (void)_launchForgotPasswordUrl;
 - (void)_showRegistrationFailureWithError:(id)arg1;
 - (void)_handleTimeout;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 
 @end

@@ -11,8 +11,8 @@
 
 + (id)hatchBrushWithColour:(id)arg1 :(int)arg2;
 
+- (void)dealloc;
 - (id)initWithColour:(id)arg1 :(int)arg2;
 - (void)fillPath:(id)arg1 :(id)arg2;
-- (void)dealloc;
 
 @end

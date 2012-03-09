@@ -17,6 +17,7 @@
 @property(retain) NSString * accountName;
 
 
+- (void)dealloc;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setAlias:(id)arg1;
@@ -28,6 +29,5 @@
 - (id)alias;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

@@ -10,12 +10,12 @@
 }
 
 
-- (id)objectWithKey:(id)arg1;
-- (void)invalidate;
+- (void)dealloc;
 - (void)_freeMemory:(id)arg1;
 - (void)removeObjectWithKey:(id)arg1;
 - (void)addObject:(id)arg1 withKey:(id)arg2;
 - (id)initForCacheSize:(unsigned int)arg1;
-- (void)dealloc;
+- (void)invalidate;
+- (id)objectWithKey:(id)arg1;
 
 @end

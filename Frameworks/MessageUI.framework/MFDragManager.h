@@ -41,12 +41,12 @@
 
 @property MFMailComposeView * currentlyDisplayedComposeView;
 
-+ (void)initialize;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedInstance;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
 
-- (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)addDragDestination:(id)arg1;
 - (void)removeDragDestination:(id)arg1;
 - (void)addDragSource:(id)arg1;
@@ -58,7 +58,7 @@
 - (void)cancelCurrentDragOperation;
 - (void)setCurrentlyDisplayedComposeView:(id)arg1;
 - (id)currentlyDisplayedComposeView;
-- (id)init;
-- (void)dealloc;
+- (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 
 @end

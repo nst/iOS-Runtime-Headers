@@ -10,13 +10,13 @@
 
 @property(retain) NSRegularExpression * regularExpression;
 
++ (id)dateFromString:(id)arg1;
 + (id)normalizers;
 + (id)formatter;
-+ (id)dateFromString:(id)arg1;
 
 - (id)regularExpression;
+- (void)dealloc;
 - (id)normalize:(id)arg1;
 - (void)setRegularExpression:(id)arg1;
-- (void)dealloc;
 
 @end

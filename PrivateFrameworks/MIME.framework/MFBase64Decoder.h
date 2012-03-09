@@ -19,6 +19,7 @@
 
 + (BOOL)isValidBase64:(id)arg1;
 
+- (void)dealloc;
 - (BOOL)isBound;
 - (BOOL)convertCommas;
 - (unsigned long)_decodeBytes:(const char *)arg1 end:(const char *)arg2 into:(char *)arg3 length:(unsigned long)arg4 startingAt:(unsigned long)arg5 outEncodedOffset:(unsigned int*)arg6;
@@ -28,6 +29,5 @@
 - (unsigned long)unconverted;
 - (int)appendData:(id)arg1;
 - (void)done;
-- (void)dealloc;
 
 @end

@@ -32,6 +32,8 @@
 - (BOOL)isNetworkUp;
 - (void)systemDidWake;
 - (void)systemWillSleep;
+- (id)init;
+- (void)dealloc;
 - (void)setLastPostedNetworkUp:(BOOL)arg1;
 - (BOOL)lastPostedNetworkUp;
 - (void)setConnectionMonitor:(id)arg1;
@@ -51,8 +53,6 @@
 - (void)_clearIPCache;
 - (void)setStore:(struct __SCDynamicStore { }*)arg1;
 - (struct __SCDynamicStore { }*)store;
-- (id)init;
-- (void)dealloc;
 - (id)myIPAddress;
 
 @end

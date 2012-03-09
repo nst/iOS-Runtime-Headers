@@ -28,6 +28,14 @@
 + (id)providerHostname;
 + (unsigned short)providerID;
 
+- (id)errorHandler;
+- (void)setErrorHandler:(id)arg1;
+- (void)dealloc;
+- (void)requestCompleted;
+- (id)finishedHandler;
+- (void)setFinishedHandler:(id)arg1;
+- (void)setIsLoading:(BOOL)arg1;
+- (BOOL)isLoading;
 - (void)cancelRequest;
 - (void)startRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 - (void)cancelProviderRequest;
@@ -35,13 +43,5 @@
 - (void)providerDidCancel;
 - (void)providerReceivedResponse:(id)arg1;
 - (void)providerReceivedErrorCode:(int)arg1;
-- (void)requestCompleted;
-- (id)finishedHandler;
-- (void)setFinishedHandler:(id)arg1;
-- (void)setIsLoading:(BOOL)arg1;
-- (id)errorHandler;
-- (void)setErrorHandler:(id)arg1;
-- (BOOL)isLoading;
-- (void)dealloc;
 
 @end

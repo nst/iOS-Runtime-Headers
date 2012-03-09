@@ -17,6 +17,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setAttribute:(const char *)arg1 value:(const char *)arg2;
 - (void)pushElementName:(const char *)arg1;
 - (char *)popElementName;
@@ -31,6 +32,5 @@
 - (void)endElementWithExpectedName:(const char *)arg1;
 - (void)startElement:(const char *)arg1;
 - (void)endElement;
-- (void)dealloc;
 
 @end

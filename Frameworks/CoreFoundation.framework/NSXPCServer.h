@@ -30,8 +30,8 @@
 @property struct dispatch_queue_s { }* dispatchQueue;
 
 
-- (void)start;
-- (void)invalidate;
+- (id)init;
+- (void)dealloc;
 - (void*)encodeToNewXPCObject;
 - (id)allClients;
 - (void)setPrivileged:(BOOL)arg1;
@@ -43,7 +43,7 @@
 - (id)serviceName;
 - (void)addInvalidationHandler:(id)arg1;
 - (void)__invalidate;
-- (id)init;
-- (void)dealloc;
+- (void)start;
+- (void)invalidate;
 
 @end

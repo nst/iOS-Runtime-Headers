@@ -22,10 +22,9 @@
 
 + (void)_setAnnotationClass:(Class)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)setUpdating:(BOOL)arg1;
-- (struct { double x1; double x2; })coordinate;
-- (void)setLocation:(id)arg1;
-- (id)heading;
 - (id)annotation;
 - (void)reset;
 - (id)shortDescription;
@@ -45,9 +44,10 @@
 - (id)predictedLocation;
 - (BOOL)isUpdating;
 - (void)setFixedLocation:(id)arg1;
-- (void)setHeading:(id)arg1;
+- (struct { double x1; double x2; })coordinate;
+- (void)setLocation:(id)arg1;
+- (id)heading;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setHeading:(id)arg1;
 
 @end

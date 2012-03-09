@@ -15,10 +15,10 @@
 @property(readonly) int updateDistance;
 
 
-- (void)setLocation:(id)arg1;
+- (void)dealloc;
 - (id)location;
 - (void)run;
-- (void)dealloc;
+- (void)setLocation:(id)arg1;
 - (void)_setUpdateDistance:(int)arg1;
 - (id)_copyBaseOperation;
 - (int)updateDistance;

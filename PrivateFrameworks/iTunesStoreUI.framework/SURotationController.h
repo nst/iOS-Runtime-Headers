@@ -13,10 +13,10 @@
 @property(copy) NSString * rotationStyle;
 
 
-- (id)viewController;
-- (void)setViewController:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)viewController;
+- (void)setViewController:(id)arg1;
 - (BOOL)_orientationAffectsViewFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })viewFrameForInterfaceOrientation:(int)arg1;
 - (id)rotationStyle;

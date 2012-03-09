@@ -84,9 +84,10 @@
 + (id)reversedNikeRunLandscapeBackgroundImage;
 + (id)nikeRunLandscapeBackgroundImage;
 + (id)nikeBackgroundImage;
-+ (id)_iAd_imageNamed:(id)arg1;
++ (id)_iAdCore_imageNamed:(id)arg1;
 
-- (double)duration;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)_unselectedTabBarItemImageWithTintColor:(id)arg1;
 - (id)_selectedTabBarItemImageWithTintColor:(id)arg1;
 - (id)_subimageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -154,14 +155,13 @@
 - (struct CGImage { }*)CGImage;
 - (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)scale;
+- (double)duration;
 - (id)patternColor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)draw1PartImageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fraction:(float)arg2 operation:(int)arg3;
 - (void)draw3PartImageWithSliceRects:(struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 operation:(int)arg3 fraction:(float)arg4;
 - (struct CGSize { float x1; float x2; })size;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)cacheNameKey;
 - (void)setCacheNameKey:(id)arg1;
 - (id)cacheSizeKey;
@@ -171,16 +171,14 @@
 - (void)downsampleWithMaxSize:(unsigned int)arg1 resultsHandler:(id)arg2;
 - (id)downsampledImageWithMaxSize:(unsigned int)arg1;
 - (id)subImageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectFromBitmapRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bitmapRectFromImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)imageWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isCoverflowPlaceholder;
 - (BOOL)isPlaceholder;
-- (void)setIsPlaceholder:(BOOL)arg1;
 - (void)setMediaImageTime:(double)arg1;
 - (void)setMediaImageSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (double)mediaImageTime;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediaImageSubRect;
+- (void)setIsPlaceholder:(BOOL)arg1;
 - (id)newImageRotatedByDegrees:(float)arg1;
 - (id)newImageWithOrientation:(int)arg1;
 - (void*)PL_imageContents;
@@ -193,7 +191,7 @@
 - (id)_gkImageByScalingToSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)_gkImageByScalingAndCroppingToSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)stretchableImageWithLeftCapWidth:(int)arg1 rightCapWidth:(int)arg2;
+- (id)imageScaledToSize:(struct CGSize { float x1; float x2; })arg1 cornerRadius:(float)arg2;
 - (id)newBalloonImageWithTail:(BOOL)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (id)imageScaledToSize:(struct CGSize { float x1; float x2; })arg1 interpolationQuality:(int)arg2;
 
 @end

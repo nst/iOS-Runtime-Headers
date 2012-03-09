@@ -36,10 +36,10 @@
 @property(readonly) SUViewControllerFactory * viewControllerFactory;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)applicationWillEnterForeground;
 - (void)setLoading:(BOOL)arg1;
-- (void)invalidate;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (BOOL)isLoading;
 - (BOOL)isVisible;
 - (id)moreListSelectedImage;
@@ -70,10 +70,9 @@
 - (void)applicationDidResume;
 - (int)interfaceOrientation;
 - (void)applicationWillSuspend;
+- (void)invalidate;
 - (void)reload;
 - (void)setTitle:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)setShouldInvalidateForMemoryPurge:(BOOL)arg1;
 - (id)inputAccessoryViewController;
 - (id)footerViewController;
@@ -121,5 +120,6 @@
 - (id)viewControllerFactory;
 - (void)setSection:(id)arg1;
 - (id)copyArchivableContext;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

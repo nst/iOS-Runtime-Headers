@@ -11,10 +11,10 @@
 @property(retain) GKPlayer * player;
 
 
+- (void)dealloc;
+- (id)player;
 - (void)setPlayer:(id)arg1;
 - (id)key;
 - (id)request;
-- (id)player;
-- (void)dealloc;
 
 @end

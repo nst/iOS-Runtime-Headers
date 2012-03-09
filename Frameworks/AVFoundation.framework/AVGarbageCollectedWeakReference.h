@@ -10,9 +10,9 @@
 }
 
 
-- (id)referencedObject;
-- (id)initWithReferencedObject:(id)arg1;
 - (id)description;
 - (id)init;
+- (id)referencedObject;
+- (id)initWithReferencedObject:(id)arg1;
 
 @end

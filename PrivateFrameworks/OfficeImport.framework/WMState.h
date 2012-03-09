@@ -24,6 +24,10 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (unsigned int)currentPage;
+- (void)setCurrentPage:(unsigned int)arg1;
 - (void)clearCurrentListState;
 - (BOOL)isCurrentListStateOverridden;
 - (void)setLastHeader:(id)arg1;
@@ -57,9 +61,5 @@
 - (void)setTopMargin:(float)arg1;
 - (float)leftMargin;
 - (void)setLeftMargin:(float)arg1;
-- (unsigned int)currentPage;
-- (void)setCurrentPage:(unsigned int)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

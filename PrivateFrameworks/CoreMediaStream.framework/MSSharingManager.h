@@ -26,14 +26,14 @@
 @property(readonly) NSString * personID;
 @property(retain) NSArray * shares;
 
++ (void)forgetPersonID:(id)arg1;
 + (id)_clearInstantiatedSharingManagersByPersonID;
 + (void)abortAllActivities;
 + (id)existingSharingManagerForPersonID:(id)arg1;
 + (id)sharingManagerForPersonID:(id)arg1;
-+ (void)forgetPersonID:(id)arg1;
 
-- (void)abort;
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (id)personID;
 - (void)sharingProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
 - (void)sharingProtocol:(id)arg1 didFailToSendInvitations:(id)arg2;
 - (void)sharingProtocol:(id)arg1 didCompleteTransactionWithError:(id)arg2;
@@ -57,7 +57,7 @@
 - (id)shares;
 - (void)setDaemon:(id)arg1;
 - (id)delegate;
-- (id)personID;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)abort;
 
 @end

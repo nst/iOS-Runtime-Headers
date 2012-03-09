@@ -14,13 +14,13 @@
 
 + (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2;
 
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2;
 - (id)endDate;
 - (id)startDate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

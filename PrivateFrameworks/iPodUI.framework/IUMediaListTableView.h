@@ -9,7 +9,7 @@
 }
 
 
-- (void)layoutSubviews;
 - (void)dealloc;
+- (void)layoutSubviews;
 
 @end

@@ -13,10 +13,10 @@
 @property id target;
 
 
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
 - (id)invocationBatch;
 - (void)setInvocationBatch:(id)arg1;
 

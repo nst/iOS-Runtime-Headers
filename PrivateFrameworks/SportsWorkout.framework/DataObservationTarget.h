@@ -16,13 +16,13 @@
 
 + (id)targetWithValue:(id)arg1 repeatInterval:(id)arg2 selector:(SEL)arg3 distanceUnits:(id)arg4;
 
-- (id)distanceUnits;
-- (void)setDistanceUnits:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)repeatInterval;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)setRepeatInterval:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (id)distanceUnits;
+- (void)setDistanceUnits:(id)arg1;
 
 @end

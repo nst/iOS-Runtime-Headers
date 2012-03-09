@@ -58,6 +58,8 @@
 @property(copy) NSString * playbackErrorDescription;
 
 
+- (id)init;
+- (void)dealloc;
 - (int)videoOverlayStyle;
 - (int)audioOverlayStyle;
 - (void)_transitionFromFullscreenDidEnd;
@@ -127,8 +129,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)backgroundView;
-- (id)init;
-- (void)dealloc;
 - (void)setItem:(id)arg1;
 
 @end

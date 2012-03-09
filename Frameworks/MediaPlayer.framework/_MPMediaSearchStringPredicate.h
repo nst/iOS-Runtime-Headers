@@ -14,6 +14,11 @@
 
 + (id)predicateWithSearchString:(id)arg1 forProperties:(id)arg2;
 
+- (void)setProperties:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (id)_ML3PredicateForEntityClass:(Class)arg1;
 - (id)ML3PredicateForContainer;
 - (id)ML3PredicateForTrack;
@@ -22,10 +27,5 @@
 - (id)properties;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setProperties:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 
 @end

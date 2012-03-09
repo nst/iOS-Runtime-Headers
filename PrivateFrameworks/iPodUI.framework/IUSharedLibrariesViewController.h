@@ -15,6 +15,8 @@
 @property BOOL showsSectionHeader;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -35,7 +37,5 @@
 - (void)_mediaLibraryConnectionProgressDidChangeNotification:(id)arg1;
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
 - (void)_cancelAndDismiss:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -10,6 +10,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithSlideMaster:(id)arg1;
 - (int)slideLayoutType;
 - (void)setSlideLayoutType:(int)arg1;
@@ -23,6 +24,5 @@
 - (id)parentSlideBase;
 - (id)parentTextStyleForTables;
 - (void)doneWithContent;
-- (void)dealloc;
 
 @end

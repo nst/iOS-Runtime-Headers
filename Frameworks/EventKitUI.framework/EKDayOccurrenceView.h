@@ -47,7 +47,6 @@
 @property(getter=isAllDay) BOOL allDay;
 @property(getter=isBirthday) BOOL birthday;
 
-+ (void)clearCaches;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentStretchRectForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (float)minimumHeightForOrientation:(int)arg1;
 + (id)_cachedImageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2;
@@ -57,32 +56,15 @@
 + (id)occurrenceViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (void)_clearViewCache;
 + (id)_viewCache;
++ (void)clearCaches;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
+- (BOOL)isCancelled;
+- (void)dealloc;
+- (void)setDimmed:(BOOL)arg1;
 - (id)occurrence;
 - (BOOL)isTentative;
 - (void)setAllDay:(BOOL)arg1;
 - (BOOL)isAllDay;
-- (void)setLocation:(id)arg1;
-- (id)location;
-- (id)color;
-- (void)setCancelled:(BOOL)arg1;
-- (void)setColor:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)prepareForReuse;
-- (id)title;
-- (void)didMoveToSuperview;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (id)delegate;
-- (void)setTitle:(id)arg1;
-- (void)removeFromSuperview;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDimmed:(BOOL)arg1;
 - (BOOL)dragging;
 - (BOOL)borderless;
 - (BOOL)usesSmallText;
@@ -112,8 +94,26 @@
 - (void)setUsesSmallText:(BOOL)arg1;
 - (void)setDarkensSelection:(BOOL)arg1;
 - (void)setTentative:(BOOL)arg1;
-- (BOOL)isCancelled;
-- (void)dealloc;
+- (id)location;
+- (id)color;
+- (void)setCancelled:(BOOL)arg1;
+- (void)setColor:(id)arg1;
+- (void)setSelected:(BOOL)arg1;
+- (void)prepareForReuse;
+- (id)title;
+- (void)didMoveToSuperview;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (id)delegate;
+- (void)setTitle:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)removeFromSuperview;
+- (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLocation:(id)arg1;
 - (void)setBirthday:(BOOL)arg1;
 
 @end

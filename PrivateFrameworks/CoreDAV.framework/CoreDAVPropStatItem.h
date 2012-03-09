@@ -17,7 +17,11 @@
 @property(retain) CoreDAVLeafItem * responseDescription;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setStatus:(id)arg1;
+- (id)status;
 - (void)setProp:(id)arg1;
 - (id)prop;
 - (void)setResponseDescription:(id)arg1;
@@ -25,9 +29,5 @@
 - (id)responseDescription;
 - (id)copyParseRules;
 - (id)errorItem;
-- (id)status;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

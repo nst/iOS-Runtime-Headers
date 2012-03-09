@@ -27,8 +27,10 @@
 + (void)refreshTextFieldCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
 + (id)cellWithSpecifier:(id)arg1;
 
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (void)_updateEtchState:(BOOL)arg1;
+- (void)dealloc;
+- (BOOL)canReload;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
 - (void)setIcon:(id)arg1;
 - (id)_contentString;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
@@ -37,9 +39,7 @@
 - (id)_automationID;
 - (id)titleTextLabel;
 - (void)layoutSubviews;
-- (void)dealloc;
-- (BOOL)canReload;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)_updateEtchState:(BOOL)arg1;
 
 @end

@@ -27,16 +27,15 @@
 }
 
 
-- (struct CGColorSpace { }*)colorSpace;
-- (void)invalidate;
-- (void)setColorSpace:(struct CGColorSpace { }*)arg1;
-- (BOOL)valid;
+- (void)dealloc;
+- (void)deleteSlot:(unsigned int)arg1;
 - (unsigned int)createSlot;
 - (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
-- (void)deleteSlot:(unsigned int)arg1;
-- (id)layer;
-- (void)setLayer:(id)arg1;
-- (unsigned int)contextId;
+- (void)orderBelow:(unsigned int)arg1;
+- (struct Context { }*)renderContext;
+- (id)initWithOptions:(id)arg1 localContext:(bool)arg2;
+- (id)initRemoteWithOptions:(id)arg1;
+- (BOOL)valid;
 - (id)options;
 - (unsigned int)createFencePort;
 - (float)level;
@@ -44,10 +43,11 @@
 - (void)setFencePort:(unsigned int)arg1;
 - (void)orderAbove:(unsigned int)arg1;
 - (void)setLevel:(float)arg1;
-- (void)dealloc;
-- (void)orderBelow:(unsigned int)arg1;
-- (struct Context { }*)renderContext;
-- (id)initWithOptions:(id)arg1 localContext:(bool)arg2;
-- (id)initRemoteWithOptions:(id)arg1;
+- (void)setLayer:(id)arg1;
+- (id)layer;
+- (unsigned int)contextId;
+- (void)invalidate;
+- (struct CGColorSpace { }*)colorSpace;
+- (void)setColorSpace:(struct CGColorSpace { }*)arg1;
 
 @end

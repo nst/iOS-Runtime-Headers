@@ -16,15 +16,15 @@
 + (id)nsColorWithOADColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3 colorPalette:(id)arg4;
 + (id)nsColorWithOADColor:(id)arg1;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)addTransformOfType:(int)arg1;
 - (id)transforms;
 - (void)setTransforms:(id)arg1;
 - (id)colorForStyleColor:(id)arg1;
 - (void)addTransformOfType:(int)arg1 value:(float)arg2;
 - (void)addTransform:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

@@ -8,58 +8,40 @@
     unsigned int _daemonLaunchCount;
     struct dispatch_queue_s { } *_dispatchQueue;
     NSString *_guid;
-    NSString *_hardwareModel;
     BOOL _pluggedIn;
     int _pluggedInToken;
-    NSString *_productVersion;
-    int _type;
 }
 
 @property(getter=isPluggedIn,readonly) BOOL pluggedIn;
 @property(readonly) NSString * deviceName;
 @property(readonly) NSString * guid;
-@property(readonly) NSString * hardwareModel;
 @property(readonly) NSString * hardwareName;
-@property(readonly) NSString * productVersion;
 @property(readonly) NSString * serialNumber;
 @property(readonly) NSString * systemName;
-@property(readonly) int type;
 
 + (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
 
-- (BOOL)releasePowerAssertion:(id)arg1;
-- (id)serialNumber;
-- (id)systemName;
-- (int)type;
-- (id)guid;
+- (id)init;
+- (void)dealloc;
 - (id)supportedOfferDeviceForDevices:(id)arg1;
 - (void)daemonWillExitCleanly;
 - (void)daemonDidLaunch;
 - (unsigned int)daemonLaunchCount;
 - (BOOL)isPluggedIn;
 - (id)hardwareName;
-- (id)hardwareModel;
 - (BOOL)takePowerAssertion:(id)arg1;
-- (int)_deviceTypeForModelString:(id)arg1;
 - (BOOL)_releasePowerAssertion:(id)arg1;
 - (void)_setPluggedIn:(BOOL)arg1;
-- (id)_copyCapabilityValueForKey:(struct __CFString { }*)arg1;
-- (BOOL)_isPodcastCapable;
-- (BOOL)_isHDVideoCapable;
-- (void)_initDeviceType;
-- (BOOL)isAnyIPhone;
-- (BOOL)isAnyIPod;
 - (void)_cancelScheduledPowerAssertionRelease:(id)arg1;
 - (void)_schedulePowerAssertionRelease:(id)arg1;
+- (BOOL)releasePowerAssertion:(id)arg1;
+- (id)guid;
 - (id)deviceName;
-- (id)init;
-- (void)dealloc;
+- (id)systemName;
 - (id)copyPurchaseValidationContext;
 - (id)copyProtocolConditionalContext;
 - (BOOL)checkCapabilities:(id)arg1 withMismatches:(id*)arg2;
-- (BOOL)hasCapability:(int)arg1;
-- (id)productVersion;
-- (BOOL)isAnyWildcat;
+- (id)serialNumber;
 
 @end

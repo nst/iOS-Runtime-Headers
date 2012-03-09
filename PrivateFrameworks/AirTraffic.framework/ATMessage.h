@@ -23,18 +23,18 @@
 + (unsigned int)nextSessionNumber;
 + (id)messageFromDictionary:(id)arg1;
 
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setParameters:(id)arg1;
 - (id)parameters;
 - (id)sig;
 - (unsigned int)sessionNumber;
 - (id)parameterForKey:(id)arg1;
 - (void)setSig:(id)arg1;
-- (id)data;
 - (id)initWithDictionary:(id)arg1;
 - (id)name;
+- (id)data;
 - (id)dictionary;
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

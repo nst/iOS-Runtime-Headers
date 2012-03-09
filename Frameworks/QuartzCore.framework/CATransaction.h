@@ -5,25 +5,25 @@
 @interface CATransaction : NSObject  {
 }
 
++ (BOOL)disableActions;
 + (id)completionBlock;
-+ (void)setDisableActions:(BOOL)arg1;
-+ (id)valueForKey:(id)arg1;
-+ (void)synchronize;
-+ (void)flush;
-+ (void)begin;
-+ (void)setValue:(id)arg1 forKey:(id)arg2;
-+ (void)commit;
-+ (void)setCompletionBlock:(id)arg1;
++ (BOOL)beginWithoutBlocking;
++ (id)animationTimingFunction;
 + (void)setAnimationTimingFunction:(id)arg1;
++ (void)setDisableActions:(BOOL)arg1;
++ (void)setCompletionBlock:(id)arg1;
 + (double)animationDuration;
 + (unsigned int)currentState;
 + (void)activate;
 + (void)unlock;
 + (void)lock;
++ (void)commit;
++ (void)begin;
 + (void)setAnimationDuration:(double)arg1;
-+ (BOOL)disableActions;
-+ (BOOL)beginWithoutBlocking;
-+ (id)animationTimingFunction;
++ (id)valueForKey:(id)arg1;
++ (void)synchronize;
++ (void)flush;
++ (void)setValue:(id)arg1 forKey:(id)arg2;
 
 - (void)_addTimer:(struct __CFRunLoopTimer { }*)arg1;
 

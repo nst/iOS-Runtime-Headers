@@ -11,9 +11,9 @@
 
 + (id)sharedInstance;
 
-- (void)threadMain;
-- (void)performRenderOperation:(id)arg1;
 - (void)cancelAllOperations;
 - (void)dealloc;
+- (void)threadMain;
+- (void)performRenderOperation:(id)arg1;
 
 @end

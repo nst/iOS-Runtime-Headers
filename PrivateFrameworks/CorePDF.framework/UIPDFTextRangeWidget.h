@@ -29,6 +29,8 @@
 @property UIPDFPageView * pageView;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)layoutLeftSelectionGrabber:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 width:(float)arg3 extraHeight:(float)arg4 unitSize:(struct CGSize { float x1; float x2; })arg5;
 - (void)layoutRightSelectionGrabber:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 width:(float)arg3 extraHeight:(float)arg4 unitSize:(struct CGSize { float x1; float x2; })arg5;
 - (void)layoutWidget;
@@ -47,7 +49,5 @@
 - (void)hide;
 - (void)layout;
 - (void)setSelection:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

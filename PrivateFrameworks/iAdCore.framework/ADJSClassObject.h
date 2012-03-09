@@ -16,20 +16,20 @@
 @property struct OpaqueJSContext { }* context;
 @property(copy) NSString * name;
 
-+ (id)classWithName:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 + (void)initialize;
++ (id)classWithName:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
+- (struct OpaqueJSContext { }*)context;
+- (void)setContext:(struct OpaqueJSContext { }*)arg1;
+- (id)name;
 - (struct OpaqueJSValue { }*)objectClassObject;
 - (void)_addConstant:(id)arg1 withValue:(struct OpaqueJSValue { }*)arg2;
 - (void)setObjectClassObject:(struct OpaqueJSValue { }*)arg1;
 - (void)setObjectClass:(struct OpaqueJSClass { }*)arg1;
 - (void)addStringConstant:(id)arg1 withValue:(id)arg2;
 - (void)addNumericConstant:(id)arg1 withValue:(double)arg2;
-- (struct OpaqueJSContext { }*)context;
-- (void)setContext:(struct OpaqueJSContext { }*)arg1;
-- (id)name;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 - (struct OpaqueJSClass { }*)objectClass;
 
 @end

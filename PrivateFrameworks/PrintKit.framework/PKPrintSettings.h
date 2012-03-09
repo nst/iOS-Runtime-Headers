@@ -16,15 +16,15 @@
 + (id)default;
 + (id)photo;
 
-- (id)settingsDict;
-- (void)setDict:(id)arg1;
-- (void)removeObjectForKey:(id)arg1;
-- (void)setPaper:(id)arg1;
-- (id)paper;
-- (id)dict;
 - (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
 - (void)dealloc;
+- (id)settingsDict;
+- (void)setDict:(id)arg1;
+- (void)setPaper:(id)arg1;
+- (id)paper;
+- (id)dict;
+- (void)removeObjectForKey:(id)arg1;
 
 @end

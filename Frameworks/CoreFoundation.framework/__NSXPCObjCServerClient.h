@@ -15,10 +15,10 @@
 
 + (id)clientWithXPCConnection:(struct _xpc_connection_s { }*)arg1 protocol:(id)arg2 instance:(id)arg3;
 
-- (void)start;
-- (void)invalidate;
+- (void)dealloc;
 - (void)addInvalidationHandler:(id)arg1;
 - (void)__invalidate;
-- (void)dealloc;
+- (void)start;
+- (void)invalidate;
 
 @end

@@ -13,15 +13,15 @@
 @property(retain,readonly) TPButton * rightButton;
 
 
+- (void)dealloc;
+- (id)initWithDefaultSizeForOrientation:(int)arg1;
+- (id)rightButton;
+- (id)leftButton;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rightWellFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_leftWellFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fullSizedContentViewFrame;
-- (id)initWithDefaultSizeForOrientation:(int)arg1;
 - (BOOL)shouldCenterContentView;
 - (BOOL)showImageViewOnLeftSide;
 - (BOOL)shouldCenterText;
-- (void)dealloc;
-- (id)rightButton;
-- (id)leftButton;
 
 @end

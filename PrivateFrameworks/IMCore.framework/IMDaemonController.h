@@ -49,8 +49,10 @@
 + (void)_blockUntilSendQueueIsEmpty;
 + (id)sharedController;
 
+- (unsigned int)capabilities;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isConnecting;
-- (void)setDelegate:(id)arg1;
 - (void)_setServicesToDeny:(id)arg1;
 - (void)_setServicesToAllow:(id)arg1;
 - (void)setDaemonLogsOutWithoutStatusListeners:(BOOL)arg1;
@@ -62,7 +64,6 @@
 - (id)_remoteObject;
 - (void)_handleDaemonException:(id)arg1;
 - (void)_agentDidLaunchNotification:(id)arg1;
-- (BOOL)_blocksConnectionAtResume;
 - (void)_remoteObjectDiedNotification:(id)arg1;
 - (void)_localObjectDiedNotification:(id)arg1;
 - (BOOL)_autoReconnect;
@@ -77,6 +78,7 @@
 - (struct dispatch_queue_s { }*)_remoteMessageQueue;
 - (void)localObjectDiedNotification:(id)arg1;
 - (void)remoteObjectDiedNotification:(id)arg1;
+- (BOOL)_blocksConnectionAtResume;
 - (void)listener:(id)arg1 setListenerCapabilities:(unsigned int)arg2;
 - (void)listener:(id)arg1 setValue:(id)arg2 ofPersistentProperty:(id)arg3;
 - (void)listener:(id)arg1 setValue:(id)arg2 ofProperty:(id)arg3;
@@ -90,11 +92,8 @@
 - (unsigned int)_capabilities;
 - (void)_setCapabilities:(unsigned int)arg1;
 - (BOOL)connectToDaemonWithLaunch:(BOOL)arg1;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
-- (id)delegate;
+- (BOOL)isConnected;
+- (void)_setListenerID:(id)arg1;
 - (BOOL)connectToDaemon;
 - (id)_listenerID;
 - (BOOL)setCapabilities:(unsigned int)arg1 forListenerID:(id)arg2;
@@ -104,17 +103,18 @@
 - (void)blockUntilConnected;
 - (BOOL)removeListenerID:(id)arg1;
 - (void)systemApplicationWillEnterForeground;
-- (BOOL)isConnected;
 - (id)listener;
-- (id)init;
-- (void)dealloc;
-- (unsigned int)capabilities;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)setValue:(id)arg1 ofPersistentProperty:(id)arg2;
 - (void)setVCCapabilities:(unsigned long long)arg1;
 - (void)setValue:(id)arg1 ofProperty:(id)arg2;
 - (void)systemApplicationDidResume;
 - (void)systemApplicationDidSuspend;
 - (void)systemApplicationDidEnterBackground;
-- (void)_setListenerID:(id)arg1;
 
 @end

@@ -7,10 +7,10 @@
 }
 
 
+- (void)dealloc;
 - (id)format;
 - (BOOL)isDurationFormat;
 - (BOOL)isNumberFormat;
 - (BOOL)isDateFormat;
-- (void)dealloc;
 
 @end

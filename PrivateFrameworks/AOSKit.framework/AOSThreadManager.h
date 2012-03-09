@@ -7,7 +7,7 @@
 
 + (id)sharedManager;
 
-- (void)runAuthThreadWithContext:(id)arg1;
 - (void)dealloc;
+- (void)runAuthThreadWithContext:(id)arg1;
 
 @end

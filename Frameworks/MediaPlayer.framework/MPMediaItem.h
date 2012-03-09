@@ -56,10 +56,8 @@
 + (void)_createFilterableDictionary;
 + (BOOL)canFilterByProperty:(id)arg1;
 
-- (void)setLastPlayedDate:(id)arg1;
-- (id)lastPlayedDate;
-- (void)setRating:(unsigned int)arg1;
-- (unsigned int)rating;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (BOOL)_isDownloadable;
 - (BOOL)_hasDownloadProgress;
 - (void)gaplessHeuristicInfo:(unsigned int*)arg1 duration:(unsigned int*)arg2 lastPacketsResync:(unsigned int*)arg3 encodingDelay:(unsigned int*)arg4 encodingDrain:(unsigned int*)arg5;
@@ -83,8 +81,10 @@
 - (id)podcastTitle;
 - (double)effectiveStopTime;
 - (BOOL)isRental;
+- (void)setBookmarkTime:(double)arg1;
 - (id)albumTitle;
 - (id)effectiveAlbumArtist;
+- (id)chapters;
 - (id)_bestStoreURL;
 - (id)_libraryLinkPlaylistName;
 - (id)_libraryLinkArtist;
@@ -93,6 +93,7 @@
 - (double)playbackDuration;
 - (id)_libraryLinkURL;
 - (id)_directStoreURL;
+- (BOOL)existsInLibrary;
 - (id)initWithPersistentID:(unsigned long long)arg1;
 - (id)artwork;
 - (BOOL)isITunesU;
@@ -102,8 +103,10 @@
 - (id)genre;
 - (id)composer;
 - (id)artist;
-- (id)chapters;
-- (BOOL)existsInLibrary;
+- (void)setLastPlayedDate:(id)arg1;
+- (id)lastPlayedDate;
+- (void)setRating:(unsigned int)arg1;
+- (unsigned int)rating;
 - (double)startTime;
 - (unsigned int)year;
 - (id)valueForProperty:(id)arg1;
@@ -111,9 +114,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (int)mediaType;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)setBookmarkTime:(double)arg1;
 - (id)releaseDate;
 - (id)representativeItem;
 - (id)_libraryLinkPlaylistName;

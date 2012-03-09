@@ -13,6 +13,7 @@
 @property(retain) NSNumber * command;
 
 
+- (void)dealloc;
 - (void)setCommand:(id)arg1;
 - (void)setMatchID:(id)arg1;
 - (id)command;
@@ -20,6 +21,5 @@
 - (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

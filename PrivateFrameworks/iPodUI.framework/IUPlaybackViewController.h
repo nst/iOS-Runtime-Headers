@@ -27,6 +27,8 @@
 @property BOOL wantsVideoLayer;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (void)_crossedTimeMarkerNotification:(id)arg1;
 - (void)_backButtonAction:(id)arg1;
@@ -46,6 +48,7 @@
 - (void)setItem:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)_noteStoppedIgnoringChangeType:(unsigned int)arg1;
 - (void)_itemChangedNotification:(id)arg1;
+- (id)player;
 - (void)setOrientation:(int)arg1;
 - (id)item;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
@@ -58,15 +61,15 @@
 - (int)orientation;
 - (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)reloadData;
-- (id)player;
+- (void)setItem:(id)arg1;
 - (BOOL)wantsVideoLayer;
 - (void)updateArtworkToImageAtTimeMarker:(id)arg1;
 - (void)_reloadForTransitionFromItem:(id)arg1 toItem:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)shouldIgnoreChangeType:(unsigned int)arg1;
 - (BOOL)_reloadFeederForDataSource:(id)arg1;
 - (void)setUsingVideoOut:(BOOL)arg1;
-- (void)setWantsVideoLayer:(BOOL)arg1;
 - (void)setWantsVideoLayer:(BOOL)arg1 item:(id)arg2;
+- (void)setWantsVideoLayer:(BOOL)arg1;
 - (void)exitPlayerForAccessorySplash;
 - (BOOL)usingVideoOut;
 - (id)createTransitionControllerForChangeToItem:(id)arg1 fromItem:(id)arg2;
@@ -74,8 +77,5 @@
 - (void)deviceOrientationChanged:(int)arg1;
 - (BOOL)shouldShowNowPlayingButton;
 - (void)exitPlayerAnimated:(BOOL)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setItem:(id)arg1;
 
 @end

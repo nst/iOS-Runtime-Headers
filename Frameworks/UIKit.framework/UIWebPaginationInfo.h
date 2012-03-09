@@ -20,6 +20,7 @@
 @property(retain) UIWebDocumentView * webDocumentView;
 
 
+- (void)dealloc;
 - (id)webDocumentView;
 - (struct CGSize { float x1; float x2; })sizeForPageAtIndex:(int)arg1;
 - (float)lastPageHeight;
@@ -30,6 +31,5 @@
 - (void)setWebDocumentView:(id)arg1;
 - (id)initWithDocumentView:(id)arg1 scaleFactor:(float)arg2 layoutSize:(struct CGSize { float x1; float x2; })arg3 pageRects:(id)arg4;
 - (id)documentView;
-- (void)dealloc;
 
 @end

@@ -13,6 +13,7 @@
 }
 
 
+- (void)dealloc;
 - (int)domain;
 - (unsigned long long)identifier;
 - (id)initWithContent:(void*)arg1 inDomain:(unsigned int)arg2 withResultDomain:(unsigned int)arg3 resultDisplayIdentifier:(id)arg4 query:(id)arg5;
@@ -25,6 +26,5 @@
 - (const char *)titleUTF8String;
 - (const char *)resultDisplayIdentifierUTF8String;
 - (int)resultDomain;
-- (void)dealloc;
 
 @end

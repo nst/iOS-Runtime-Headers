@@ -18,12 +18,8 @@
 @property BOOL usesBlackDatePicker;
 
 
-- (id)tableView;
-- (id)inputView;
-- (BOOL)canBecomeFirstResponder;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
+- (id)datePicker;
 - (BOOL)usesKeyboard;
 - (BOOL)showsDatePicker;
 - (void)setShowsDatePicker:(BOOL)arg1;
@@ -34,7 +30,11 @@
 - (void)setUsesBlackDatePicker:(BOOL)arg1;
 - (BOOL)usesBlackDatePicker;
 - (void)setUsesKeyboard:(BOOL)arg1;
-- (void)dealloc;
-- (id)datePicker;
+- (id)tableView;
+- (id)inputView;
+- (BOOL)canBecomeFirstResponder;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

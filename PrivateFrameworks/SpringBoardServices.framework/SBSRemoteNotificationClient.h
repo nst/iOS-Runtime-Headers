@@ -5,6 +5,7 @@
 @interface SBSRemoteNotificationClient : NSObject  {
 }
 
++ (void)getSupportedTypes:(id*)arg1 enabledTypes:(id*)arg2;
 + (BOOL)isSystemwideEnabled;
 + (void)setSystemwideEnabled:(BOOL)arg1;
 + (BOOL)hasRegisteredBundleIdentifiers;
@@ -13,7 +14,6 @@
 + (void)registerForRemoteNotificationTypes:(int)arg1;
 + (int)enabledRemoteNotificationTypes;
 + (id)getPendingNotificationUserInfo;
-+ (void)getSupportedTypes:(id*)arg1 enabledTypes:(id*)arg2;
 
 
 @end

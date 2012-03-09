@@ -37,15 +37,8 @@
 @property(retain) NSString * supplementalInstructions;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)setTransitCost:(id)arg1;
-- (void)setSupplementalInstructions:(id)arg1;
-- (void)setAgentIndex:(int)arg1;
-- (void)setIconName:(id)arg1;
-- (int)timezoneOffset;
-- (void)setPlace:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (BOOL)hasTimestamp;
+- (id)description;
+- (void)dealloc;
 - (void)setHasAgentIndex:(BOOL)arg1;
 - (void)setHasDepartureInterval:(BOOL)arg1;
 - (BOOL)hasDepartureInterval;
@@ -57,7 +50,6 @@
 - (void)setDepartureInterval:(int)arg1;
 - (void)setTimezoneOffset:(int)arg1;
 - (BOOL)hasTransitCost;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (double)timestamp;
 - (void)setTimestamp:(double)arg1;
@@ -67,9 +59,17 @@
 - (int)agentIndex;
 - (BOOL)hasAgentIndex;
 - (id)iconName;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (void)setTransitCost:(id)arg1;
+- (void)setSupplementalInstructions:(id)arg1;
+- (void)setAgentIndex:(int)arg1;
+- (void)setIconName:(id)arg1;
+- (int)timezoneOffset;
+- (void)setPlace:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (BOOL)hasTimestamp;
 - (id)place;
-- (id)description;
-- (void)dealloc;
 - (id)calendarDate;
 
 @end

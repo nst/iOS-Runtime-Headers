@@ -11,8 +11,8 @@
 @property(readonly) NSData * consumedData;
 
 
-- (void)finish;
 - (id)init;
+- (void)finish;
 - (int)consumeData:(id)arg1;
 - (id)consumedData;
 

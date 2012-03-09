@@ -40,8 +40,16 @@
 + (id)scriptingKeys;
 + (id)scriptSelectors;
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)eventStore;
+- (id)listener;
+- (id)event;
+- (void)setEvent:(id)arg1;
+- (void)setRect:(id)arg1;
+- (id)rect;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)setPresentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })presentRect;
 - (id)presentListener;
@@ -58,13 +66,5 @@
 - (void)setListener:(id)arg1;
 - (BOOL)isPrivilegedClient;
 - (void)setPrivilegedClient:(BOOL)arg1;
-- (id)event;
-- (void)setEvent:(id)arg1;
-- (void)setRect:(id)arg1;
-- (id)rect;
-- (id)delegate;
-- (id)listener;
-- (id)init;
-- (void)dealloc;
 
 @end

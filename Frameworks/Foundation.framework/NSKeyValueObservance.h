@@ -18,9 +18,6 @@
 
 
 - (id)_initWithObserver:(id)arg1 property:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4 originalObservable:(id)arg5;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (unsigned int)retainCount;
@@ -28,5 +25,8 @@
 - (id)retain;
 - (oneway void)release;
 - (void)dealloc;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 
 @end

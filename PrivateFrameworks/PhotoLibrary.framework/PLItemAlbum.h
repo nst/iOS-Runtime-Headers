@@ -38,8 +38,10 @@
 @property unsigned int pendingItemsType;
 
 
-- (id)localizedTitle;
+- (unsigned int)count;
+- (void)dealloc;
 - (id)posterImage;
+- (id)localizedTitle;
 - (id)kind;
 - (id)initWithItems:(id)arg1;
 - (void)setItems:(id)arg1;
@@ -56,24 +58,23 @@
 - (void)setImportSessionID:(id)arg1;
 - (id)importSessionID;
 - (BOOL)shouldDeleteWhenEmpty;
+- (BOOL)isPhotoStreamAlbum;
+- (BOOL)isCameraAlbum;
 - (BOOL)isLibrary;
 - (void)setKeyAsset:(id)arg1;
 - (id)keyAsset;
+- (unsigned int)videosCount;
+- (unsigned int)photosCount;
+- (id)mutableAssets;
+- (int)kindValue;
+- (void)batchFetchAssets:(id)arg1;
 - (void)updateStackedImage;
 - (void)reducePendingItemsCountBy:(unsigned int)arg1;
 - (id)displayableIndexesForCount:(unsigned int)arg1;
-- (unsigned int)videosCount;
-- (unsigned int)photosCount;
-- (int)kindValue;
-- (BOOL)isPhotoStreamAlbum;
-- (BOOL)isCameraAlbum;
-- (id)mutableAssets;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (void)setSlideshowSettings:(id)arg1;
 - (id)slideshowSettings;
 - (id)uuid;
 - (id)assets;
-- (unsigned int)count;
-- (void)dealloc;
 
 @end

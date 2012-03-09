@@ -8,18 +8,18 @@
     NSURLRequestInternal *_internal;
 }
 
+@property(readonly) BOOL HS_isCancelled;
+
 + (void)setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 + (void)setAllowsAnyHTTPSCertificate:(BOOL)arg1 forHost:(id)arg2;
 + (double)defaultTimeoutInterval;
 + (void)setDefaultTimeoutInterval:(double)arg1;
 + (void)checkForSharedCookieStoreNeed:(struct _CFURLRequest { }*)arg1;
-+ (id)allowsSpecificHTTPSCertificateForHost:(id)arg1;
-+ (BOOL)allowsAnyHTTPSCertificateForHost:(id)arg1;
 + (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 + (id)requestWithURL:(id)arg1;
++ (id)allowsSpecificHTTPSCertificateForHost:(id)arg1;
++ (BOOL)allowsAnyHTTPSCertificateForHost:(id)arg1;
 
-- (id)valueForHTTPHeaderField:(id)arg1;
-- (BOOL)HTTPShouldUsePipelining;
 - (id)contentDispositionEncodingFallbackArray;
 - (id)HTTPUserAgent;
 - (id)HTTPReferrer;
@@ -41,19 +41,21 @@
 - (id)_propertyForKey:(id)arg1;
 - (BOOL)_URLHasScheme:(id)arg1;
 - (id)initWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
-- (struct _CFURLRequest { }*)_CFURLRequest;
-- (id)_initWithCFURLRequest:(struct _CFURLRequest { }*)arg1;
-- (id)initWithURL:(id)arg1;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)URL;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)valueForHTTPHeaderField:(id)arg1;
+- (BOOL)HTTPShouldUsePipelining;
+- (id)initWithURL:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)URL;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (struct _CFURLRequest { }*)_CFURLRequest;
+- (id)_initWithCFURLRequest:(struct _CFURLRequest { }*)arg1;
 - (id)_web_HTTPReferrer;
 - (id)_web_HTTPContentType;
 - (BOOL)_web_isConditionalRequest;
@@ -61,6 +63,8 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (void)HS_cancel;
+- (BOOL)HS_isCancelled;
 - (id)DARequestByApplyingStorageSession:(struct __CFURLStorageSession { }*)arg1;
 
 @end

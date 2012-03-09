@@ -37,6 +37,7 @@
 @property struct CGImage { }* image;
 
 
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 loupe:(BOOL)arg2;
 - (void)setTouchPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setGrabbersAt:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 and:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -47,6 +48,5 @@
 - (void)setSelection:(struct CGPath { }*)arg1;
 - (struct CGImage { }*)image;
 - (void)setImage:(struct CGImage { }*)arg1;
-- (void)dealloc;
 
 @end

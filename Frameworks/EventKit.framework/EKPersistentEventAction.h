@@ -18,9 +18,6 @@
 
 - (void)setExternalID:(id)arg1;
 - (id)externalID;
-- (id)owner;
-- (id)externalData;
-- (void)setExternalData:(id)arg1;
 - (id)externalModTag;
 - (void)setExternalScheduleID:(id)arg1;
 - (id)externalScheduleID;
@@ -29,5 +26,8 @@
 - (void)setExternalModTag:(id)arg1;
 - (int)entityType;
 - (void)setOwner:(id)arg1;
+- (id)owner;
+- (id)externalData;
+- (void)setExternalData:(id)arg1;
 
 @end

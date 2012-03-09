@@ -5,22 +5,22 @@
 @interface __NSPlaceholderSet : NSMutableSet  {
 }
 
-+ (void)initialize;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)mutablePlaceholder;
 + (id)immutablePlaceholder;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
 
-- (id)member:(id)arg1;
-- (id)objectEnumerator;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
-- (void)removeObject:(id)arg1;
 - (unsigned int)count;
 - (unsigned int)retainCount;
 - (id)retain;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (void)addObject:(id)arg1;
-- (id)init;
 - (oneway void)release;
+- (id)init;
 - (void)dealloc;
+- (id)member:(id)arg1;
+- (id)objectEnumerator;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (void)removeObject:(id)arg1;
 
 @end

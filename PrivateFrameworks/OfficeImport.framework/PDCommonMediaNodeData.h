@@ -13,17 +13,17 @@
 }
 
 
+- (void)setTarget:(id)arg1;
+- (id)target;
+- (id)init;
+- (void)dealloc;
+- (long)volume;
+- (void)setVolume:(long)arg1;
 - (BOOL)isMuted;
 - (void)setIsMuted:(BOOL)arg1;
 - (BOOL)isShowWhenStopped;
 - (void)setIsShowWhenStopped:(BOOL)arg1;
 - (long)numberOfSlides;
 - (void)setNumberOfSlides:(long)arg1;
-- (long)volume;
-- (void)setVolume:(long)arg1;
-- (void)setTarget:(id)arg1;
-- (id)target;
-- (id)init;
-- (void)dealloc;
 
 @end

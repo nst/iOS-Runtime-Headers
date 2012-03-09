@@ -23,11 +23,11 @@
 @property(retain) SUDOMElement * element;
 
 
+- (void)dealloc;
 - (void)setCompletionHandler:(id)arg1;
 - (id)completionHandler;
 - (BOOL)animated;
 - (void)setAnimated:(BOOL)arg1;
-- (void)dealloc;
 - (id)element;
 - (void)setElement:(id)arg1;
 

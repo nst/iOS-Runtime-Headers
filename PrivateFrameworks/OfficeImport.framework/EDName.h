@@ -12,6 +12,11 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqualToString:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setNameString:(id)arg1;
 - (void)setFormula:(id)arg1 workbook:(id)arg2;
 - (void)setSheetIndex:(unsigned int)arg1;
@@ -21,10 +26,5 @@
 - (id)nameString;
 - (id)formula;
 - (unsigned int)sheetIndex;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqualToString:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

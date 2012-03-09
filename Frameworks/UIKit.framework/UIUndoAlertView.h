@@ -15,11 +15,11 @@
 @property(readonly) NSUndoManager * undoManager;
 
 
+- (void)dealloc;
 - (id)undoManager;
 - (int)redoButtonIndex;
 - (int)undoButtonIndex;
 - (void)show;
 - (id)initWithDelegate:(id)arg1 undoManager:(id)arg2;
-- (void)dealloc;
 
 @end

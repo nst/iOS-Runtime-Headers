@@ -10,10 +10,10 @@
 
 + (id)responseSubdataFromReader:(id)arg1;
 
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasTraffic:(BOOL)arg1;
 - (BOOL)hasTraffic;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
 
 @end

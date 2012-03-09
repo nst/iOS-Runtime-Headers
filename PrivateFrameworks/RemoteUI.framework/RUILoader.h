@@ -10,15 +10,15 @@
 }
 
 
-- (void)didParseData;
-- (void)failWithError:(id)arg1;
 - (void)parseData:(id)arg1;
+- (void)cancel;
+- (id)URL;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)loadXMLUIWithURL:(id)arg1;
 - (void)loadXMLUIWithRequest:(id)arg1;
 - (void)loadXMLUIWithData:(id)arg1 baseURL:(id)arg2;
 - (void)_finishLoad;
-- (id)URL;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)cancel;
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
 
 @end

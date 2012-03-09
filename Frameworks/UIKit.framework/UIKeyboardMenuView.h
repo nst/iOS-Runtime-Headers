@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSTimer, UITableView;
+@class UIDimmingView, UIView, UITableView, NSTimer, UIInputSwitcherShadowView;
 
-@interface UIKeyboardMenuView : UIView <UITableViewDataSource, UITableViewDelegate> {
+@interface UIKeyboardMenuView : UIView <UITableViewDataSource, UITableViewDelegate, UIDimmingViewDelegate> {
     UITableView *m_table;
-    UIView *m_shadowView;
+    UIInputSwitcherShadowView *m_shadowView;
     UIView *m_selExtraView;
     struct CGRect { 
         struct CGPoint { 
@@ -33,14 +33,17 @@
     int m_firstVisibleRow;
     int m_mode;
     double dismissDelay;
+    UIDimmingView *m_dimmingView;
     double _dismissDelay;
 }
 
-@property(readonly) int mode;
+@property int mode;
 @property double dismissDelay;
+@property(readonly) BOOL usesTable;
 
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
+- (BOOL)centerPopUpOverKey;
 - (id)titleForItemAtIndex:(int)arg1;
 - (int)indexForIndexPath:(id)arg1;
 - (void)didSelectItemAtIndex:(int)arg1;
@@ -49,13 +52,17 @@
 - (double)dismissDelay;
 - (void)_delayedFade;
 - (void)fadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)performShowAnimation;
 - (void)setNeedsDisplayForTopBottomCells;
 - (int)defaultSelectedIndex;
+- (id)dimmingView;
 - (struct CGSize { float x1; float x2; })preferredSize;
 - (void)setDismissDelay:(double)arg1;
+- (BOOL)usesTable;
 - (void)showAsHUD;
 - (void)autoscrollTimerFired:(id)arg1;
 - (void)stopAnyAutoscrolling;
+- (void)dimmingViewWasTapped:(id)arg1;
 - (void)selectItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)fade;
 - (void)fadeWithDelay:(double)arg1;
@@ -66,6 +73,7 @@
 - (BOOL)isVisible;
 - (void)hide;
 - (int)mode;
+- (void)setMode:(int)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
@@ -77,8 +85,8 @@
 - (void)show;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

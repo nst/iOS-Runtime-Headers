@@ -11,11 +11,11 @@
 @property(readonly) UITextField * textField;
 
 
+- (void)dealloc;
 - (id)textField;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (void)dealloc;
 - (void)_textDidEndEditingOnExit:(id)arg1;
 - (void)_textDidChange:(id)arg1;
 - (void)setupNativeObject;

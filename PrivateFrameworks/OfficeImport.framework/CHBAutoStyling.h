@@ -6,6 +6,7 @@
 }
 
 
+- (id)autoFill;
 - (void)resolveGraphicPropertiesOfSeries:(id)arg1 forSeriesIndex:(int)arg2;
 - (void)resolveGraphicPropertiesOfTrendline:(id)arg1 forSeriesIndex:(int)arg2;
 - (void)resolveGraphicPropertiesOfErrorBar:(id)arg1 forSeriesIndex:(int)arg2;
@@ -27,6 +28,5 @@
 - (id)autoSeriesFill:(int)arg1;
 - (id)autoStrokeForSeriesIndex:(int)arg1;
 - (id)autoSeriesBorderStroke;
-- (id)autoFill;
 
 @end

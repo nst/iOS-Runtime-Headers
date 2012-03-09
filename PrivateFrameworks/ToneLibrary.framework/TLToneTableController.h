@@ -38,6 +38,28 @@
 @property(setter=setDefaultIdentifier:,retain) id defaultIdentifier;
 
 
+- (id)init;
+- (void)dealloc;
+- (id)selectedVibrationIdentifier;
+- (void)setShowsNone:(BOOL)arg1;
+- (void)setNoneAtTop:(BOOL)arg1;
+- (void)setShowsDefault:(BOOL)arg1;
+- (void)setShowsVibrations:(BOOL)arg1;
+- (id)selectedRingtoneIdentifier;
+- (void)setSelectedRingtoneIdentifier:(id)arg1;
+- (void)setShowsNothingSelected:(BOOL)arg1;
+- (void)setSelectedVibrationIdentifier:(id)arg1;
+- (void)setAVController:(id)arg1;
+- (void)stopPlaying;
+- (id)avController;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)setTableView:(id)arg1;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setDelegate:(id)arg1;
 - (id)defaultIdentifier;
 - (void)_setRingtoneManager:(id)arg1;
 - (int)compareRingtoneWithIdentifier:(id)arg1 toRingtoneWithIdentifier:(id)arg2;
@@ -89,27 +111,5 @@
 - (void)setShowsRingtonesStore:(BOOL)arg1;
 - (id)indexPathForSelectedRingtone;
 - (id)ringtoneManager;
-- (void)setAVController:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)setTableView:(id)arg1;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)stopPlaying;
-- (id)init;
-- (void)dealloc;
-- (id)avController;
-- (id)selectedVibrationIdentifier;
-- (void)setShowsNone:(BOOL)arg1;
-- (void)setNoneAtTop:(BOOL)arg1;
-- (void)setShowsDefault:(BOOL)arg1;
-- (void)setShowsVibrations:(BOOL)arg1;
-- (id)selectedRingtoneIdentifier;
-- (void)setSelectedRingtoneIdentifier:(id)arg1;
-- (void)setShowsNothingSelected:(BOOL)arg1;
-- (void)setSelectedVibrationIdentifier:(id)arg1;
 
 @end

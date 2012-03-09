@@ -17,6 +17,7 @@
 @property int bannerCount;
 
 
+- (void)dealloc;
 - (void)setBannerCount:(int)arg1;
 - (int)bannerCount;
 - (void)setDisconnectTime:(double)arg1;
@@ -25,6 +26,5 @@
 - (double)connectTime;
 - (void)setBundleId:(id)arg1;
 - (id)bundleId;
-- (void)dealloc;
 
 @end

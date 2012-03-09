@@ -15,7 +15,7 @@
 - (void)_proxyNonGCFinalize;
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
 - (struct { id x1; id x2; })_proxyLocator;
-- (void)setArray:(id)arg1;
 - (void)dealloc;
+- (void)setArray:(id)arg1;
 
 @end

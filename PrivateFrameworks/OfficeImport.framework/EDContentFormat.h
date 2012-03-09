@@ -15,6 +15,12 @@
 + (id)contentFormatWithFormatString:(id)arg1 formatId:(unsigned int)arg2;
 + (id)contentFormatWithFormatString:(id)arg1;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (unsigned int)key;
 - (void)setFormatId:(unsigned int)arg1;
 - (void)setReferenced:(bool)arg1;
 - (id)formatString;
@@ -22,11 +28,5 @@
 - (bool)builtIn;
 - (bool)referenced;
 - (BOOL)isEqualToContentFormat:(id)arg1;
-- (unsigned int)key;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -12,6 +12,8 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
 - (id)_touchesForGesture:(id)arg1 withPhase:(int)arg2;
 - (void)_removeTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
 - (id)_allTouches;
@@ -42,7 +44,5 @@
 - (id)touchesForGestureRecognizer:(id)arg1;
 - (void)_addTouch:(id)arg1 forDelayedDelivery:(BOOL)arg2;
 - (id)_init;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -6,8 +6,6 @@
 }
 
 
-- (id)tableBackgroundColor;
-- (int)modalPresentationStyle;
 - (id)_buttonImageNamed:(id)arg1;
 - (id)tableCellEditableInsertionPointColor;
 - (BOOL)actionSheetsUsePopoverStyle;
@@ -51,5 +49,7 @@
 - (BOOL)webViewDrawsShadows;
 - (int)navigationBarStyle;
 - (BOOL)navigationBarIsTranslucent;
+- (id)tableBackgroundColor;
+- (int)modalPresentationStyle;
 
 @end

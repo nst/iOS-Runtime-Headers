@@ -62,10 +62,11 @@
 
 + (void)initialize;
 
-- (id)archive;
+- (void)dealloc;
 - (id)documentState;
 - (void)setBundle:(struct __CFBundle { }*)arg1;
 - (struct __CFBundle { }*)bundle;
+- (id)archive;
 - (void)setProgressiveMode:(unsigned char)arg1;
 - (BOOL)isWrongFormat;
 - (struct stack<std::pair<const Action*, int>,std::deque<std::pair<const Action*, int>, std::allocator<std::pair<const Action*, int> > > > { struct deque<std::pair<const Action*, int>,std::allocator<std::pair<const Action*, int> > > { struct _Deque_impl { struct pair<const Action*,int> {} **x_1_2_1; unsigned int x_1_2_2; struct _Deque_iterator<std::pair<const Action*, int>,std::pair<const Action*, int>&,std::pair<const Action*, int>*> { struct pair<const Action*,int> {} *x_3_3_1; struct pair<const Action*,int> {} *x_3_3_2; struct pair<const Action*,int> {} *x_3_3_3; struct pair<const Action*,int> {} **x_3_3_4; } x_1_2_3; struct _Deque_iterator<std::pair<const Action*, int>,std::pair<const Action*, int>&,std::pair<const Action*, int>*> { struct pair<const Action*,int> {} *x_4_3_1; struct pair<const Action*,int> {} *x_4_3_2; struct pair<const Action*,int> {} *x_4_3_3; struct pair<const Action*,int> {} **x_4_3_4; } x_1_2_4; } x_1_1_1; } x1; }*)actionStack;
@@ -77,6 +78,5 @@
 - (BOOL)go;
 - (void)setThumbnailSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })thumbnailSize;
-- (void)dealloc;
 
 @end

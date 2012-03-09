@@ -6,7 +6,7 @@
 }
 
 
-- (void)setBackgroundColor:(id)arg1;
 - (id)init;
+- (void)setBackgroundColor:(id)arg1;
 
 @end

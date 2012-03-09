@@ -13,6 +13,7 @@
 
 + (float)rowHeightForGlobalContext:(id)arg1;
 
+- (id)init;
 - (id)artwork;
 - (void)setArtwork:(id)arg1;
 - (id)subtitle;
@@ -20,7 +21,6 @@
 - (id)title;
 - (void)setTitle:(id)arg1;
 - (void)reloadData;
-- (id)init;
 - (void)reloadLayoutInformation;
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;

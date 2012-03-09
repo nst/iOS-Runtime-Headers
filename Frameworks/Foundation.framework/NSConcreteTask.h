@@ -27,9 +27,6 @@
 }
 
 
-- (void)setEnvironment:(id)arg1;
-- (id)environment;
-- (void)finalize;
 - (void)setStartsNewProcessGroup:(BOOL)arg1;
 - (int)_procid;
 - (void)terminateTask;
@@ -58,13 +55,16 @@
 - (int)processIdentifier;
 - (void)setArguments:(id)arg1;
 - (id)currentDirectoryPath;
-- (BOOL)resume;
-- (BOOL)isRunning;
-- (id)arguments;
-- (BOOL)suspend;
-- (void)setTerminationHandler:(id)arg1;
-- (id)terminationHandler;
 - (id)init;
 - (void)dealloc;
+- (void)setEnvironment:(id)arg1;
+- (id)environment;
+- (void)setTerminationHandler:(id)arg1;
+- (id)terminationHandler;
+- (BOOL)resume;
+- (BOOL)isRunning;
+- (void)finalize;
+- (id)arguments;
+- (BOOL)suspend;
 
 @end

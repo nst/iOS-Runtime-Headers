@@ -13,6 +13,7 @@
 @property(retain) GKLeaderboard * leaderboard;
 
 
+- (void)dealloc;
 - (id)leaderboard;
 - (id)_playerScope:(int)arg1;
 - (id)_timeScope:(int)arg1;
@@ -22,6 +23,5 @@
 - (void)setGame:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

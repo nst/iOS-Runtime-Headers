@@ -27,13 +27,7 @@
 @property(retain) UIView * tappedView;
 
 
-- (void)setTapLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })tapLocation;
-- (BOOL)_scrollsToMakeFirstResponderVisible;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
-- (void)willRemoveSubview:(id)arg1;
-- (void)didAddSubview:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (void)singleTap:(id)arg1;
 - (BOOL)catchesSingleTap;
 - (void)performDelayedTap:(BOOL)arg1;
@@ -46,6 +40,12 @@
 - (void)beginBlockingScroll;
 - (void)endBlockingScroll;
 - (void)setShouldScrollToFirstResponder:(BOOL)arg1;
-- (void)dealloc;
+- (BOOL)_scrollsToMakeFirstResponderVisible;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
+- (void)willRemoveSubview:(id)arg1;
+- (void)didAddSubview:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setTapLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })tapLocation;
 
 @end

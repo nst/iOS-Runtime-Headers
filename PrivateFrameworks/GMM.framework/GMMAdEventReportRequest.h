@@ -20,21 +20,21 @@
 
 
 - (id)uniqueId;
+- (id)description;
+- (void)dealloc;
 - (Class)responseClass;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
-- (id)eventTime;
-- (BOOL)hasEventTime;
-- (BOOL)hasUniqueId;
-- (void)setEventTime:(id)arg1;
-- (void)setUniqueId:(id)arg1;
 - (void)setHasEventType:(BOOL)arg1;
 - (BOOL)hasEventType;
 - (void)setEventType:(int)arg1;
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (int)eventType;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
+- (id)eventTime;
+- (BOOL)hasEventTime;
+- (BOOL)hasUniqueId;
+- (void)setEventTime:(id)arg1;
+- (void)setUniqueId:(id)arg1;
 
 @end

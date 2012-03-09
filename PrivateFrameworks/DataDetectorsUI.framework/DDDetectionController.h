@@ -18,6 +18,10 @@
 + (id)tapAndHoldSchemes;
 + (id)sharedController;
 
+- (id)init;
+- (void)dealloc;
+- (void)setResults:(struct __CFArray { }*)arg1 forFrame:(id)arg2;
+- (void)setContext:(id)arg1 forFrame:(id)arg2;
 - (void)startURLificationForFrame:(id)arg1 detectedTypes:(unsigned int)arg2 options:(int)arg3;
 - (id)defaultActionForDOMNode:(id)arg1 forFrame:(id)arg2;
 - (BOOL)shouldImmediatelyShowActionSheetForURL:(id)arg1 forFrame:(id)arg2;
@@ -43,9 +47,5 @@
 - (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct __DDQueryOffset { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; void *x9; }*)_resultForAnchor:(id)arg1 forFrame:(id)arg2 context:(id*)arg3;
 - (void)_reallyStartURLificationForOperation:(id)arg1;
 - (id)_newOperationForFrame:(id)arg1;
-- (void)setResults:(struct __CFArray { }*)arg1 forFrame:(id)arg2;
-- (void)setContext:(id)arg1 forFrame:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

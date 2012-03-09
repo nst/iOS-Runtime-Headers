@@ -11,14 +11,6 @@
 
 + (id)sharedInstance;
 
-- (void)cancelDownload:(id)arg1;
-- (void)downloadDidFinish:(id)arg1;
-- (id)clients;
-- (id)init;
-- (void)dealloc;
-- (id)manager;
-- (void)addClient:(id)arg1;
-- (void)removeClient:(id)arg1;
 - (void)downloadInvalidatedForNewUpdateAvailable:(id)arg1;
 - (void)_sendLatestStatusForClient:(id)arg1;
 - (void)_clientForegroundnessDidChange:(id)arg1;
@@ -46,5 +38,13 @@
 - (void)scanRequestDidFinishForOptions:(id)arg1 update:(id)arg2 error:(id)arg3;
 - (void)scanRequestDidStartForOptions:(id)arg1;
 - (void)automaticDownloadDidFailToStartForNewUpdateAvailable:(id)arg1 withError:(id)arg2;
+- (void)downloadDidFinish:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)removeClient:(id)arg1;
+- (void)addClient:(id)arg1;
+- (id)clients;
+- (id)manager;
+- (void)cancelDownload:(id)arg1;
 
 @end

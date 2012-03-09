@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class NSCalendarDate, NSString, NSMutableArray;
+@class NSDate, NSString, NSMutableArray;
 
 @interface City : NSObject  {
     id _delegate;
@@ -23,7 +23,7 @@
     BOOL _autoUpdate;
     BOOL _isUpdating;
     NSString *_updateTimeString;
-    NSCalendarDate *_updateTime;
+    NSDate *_updateTime;
     int _lastUpdateStatus;
     int _lastUpdateDetail;
     BOOL _fromSecondaryService;
@@ -58,16 +58,10 @@
 @property BOOL isHourlyDataCelsius;
 
 
-- (id)locationID;
-- (id)link;
-- (void)setLink:(id)arg1;
-- (float)visibility;
-- (void)setVisibility:(float)arg1;
-- (id)displayName;
-- (void)update;
-- (id)name;
-- (void)setState:(id)arg1;
-- (id)state;
+- (void)setName:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)associateWithDelegate:(id)arg1;
 - (void)disassociateWithDelegate:(id)arg1;
 - (void)setAutoUpdate:(BOOL)arg1;
@@ -85,58 +79,64 @@
 - (id)cityAndState;
 - (BOOL)populateWithDataFromCity:(id)arg1;
 - (void)setIsLocalWeatherCity:(BOOL)arg1;
-- (float)heatIndex;
-- (void)setHeatIndex:(float)arg1;
-- (float)feelsLike;
-- (void)setFeelsLike:(float)arg1;
-- (float)dewPoint;
-- (void)setDewPoint:(float)arg1;
 - (int)pressureRising;
 - (void)setPressureRising:(int)arg1;
 - (float)pressure;
 - (void)setPressure:(float)arg1;
 - (unsigned int)humidity;
 - (void)setHumidity:(unsigned int)arg1;
-- (unsigned int)windSpeed;
-- (void)setWindSpeed:(unsigned int)arg1;
-- (unsigned int)windDirection;
-- (void)setWindDirection:(unsigned int)arg1;
-- (id)windChill;
 - (BOOL)isHourlyDataCelsius;
 - (void)setIsHourlyDataCelsius:(BOOL)arg1;
-- (void)setTemperature:(id)arg1;
 - (void)setWoeid:(id)arg1;
-- (void)setWindChill:(id)arg1;
 - (id)windDirectionAsString:(int)arg1;
 - (BOOL)isLocalWeatherCity;
 - (int)weatherDataAge;
 - (void)setUpdateTime:(id)arg1;
 - (BOOL)_isUpdating;
 - (void)setLocationID:(id)arg1;
-- (id)temperature;
 - (unsigned int)bigIcon;
 - (void)setBigIcon:(unsigned int)arg1;
 - (id)dayForecasts;
 - (void)setDayForecasts:(id)arg1;
-- (id)hourlyForecasts;
-- (void)setHourlyForecasts:(id)arg1;
 - (unsigned int)observationTime;
 - (void)setObservationTime:(unsigned int)arg1;
 - (unsigned int)sunsetTime;
 - (void)setSunsetTime:(unsigned int)arg1;
 - (unsigned int)sunriseTime;
 - (void)setSunriseTime:(unsigned int)arg1;
-- (unsigned int)moonPhase;
-- (void)setMoonPhase:(unsigned int)arg1;
 - (BOOL)isDataCelsius;
 - (void)setDataCelsius:(BOOL)arg1;
 - (id)updateTime;
 - (int)lastUpdateStatus;
 - (void)setLastUpdateStatus:(int)arg1;
 - (id)woeid;
-- (void)setName:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)locationID;
+- (id)displayName;
+- (void)update;
+- (id)name;
+- (void)setState:(id)arg1;
+- (id)state;
+- (id)link;
+- (void)setLink:(id)arg1;
+- (float)visibility;
+- (void)setVisibility:(float)arg1;
+- (unsigned int)windDirection;
+- (void)setWindDirection:(unsigned int)arg1;
+- (id)hourlyForecasts;
+- (void)setHourlyForecasts:(id)arg1;
+- (float)dewPoint;
+- (void)setDewPoint:(float)arg1;
+- (float)feelsLike;
+- (void)setFeelsLike:(float)arg1;
+- (float)heatIndex;
+- (void)setHeatIndex:(float)arg1;
+- (unsigned int)moonPhase;
+- (void)setMoonPhase:(unsigned int)arg1;
+- (id)temperature;
+- (void)setTemperature:(id)arg1;
+- (id)windChill;
+- (void)setWindChill:(id)arg1;
+- (unsigned int)windSpeed;
+- (void)setWindSpeed:(unsigned int)arg1;
 
 @end

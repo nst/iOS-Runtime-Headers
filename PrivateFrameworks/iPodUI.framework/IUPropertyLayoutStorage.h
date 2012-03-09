@@ -10,14 +10,14 @@
 }
 
 
-- (id)valueAtIndex:(unsigned int)arg1;
-- (void)setValue:(id)arg1 atIndex:(unsigned int)arg2;
+- (unsigned int)count;
+- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameAtIndex:(unsigned int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atIndex:(unsigned int)arg2;
 - (id)selectedValueAtIndex:(unsigned int)arg1;
 - (void)setSelectedValue:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)initWithCount:(unsigned int)arg1;
-- (unsigned int)count;
-- (void)dealloc;
+- (id)valueAtIndex:(unsigned int)arg1;
+- (void)setValue:(id)arg1 atIndex:(unsigned int)arg2;
 
 @end

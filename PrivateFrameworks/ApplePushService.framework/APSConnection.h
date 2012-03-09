@@ -26,11 +26,20 @@
 @property <APSConnectionDelegate> * delegate;
 @property(readonly) int serverPID;
 
++ (struct __SecIdentity { }*)copyIdentity;
 + (double)keepAliveIntervalForEnvironmentName:(id)arg1;
 + (id)connectionsDebuggingState;
-+ (struct __SecIdentity { }*)copyIdentity;
 
 - (unsigned int)messageSize;
+- (void)dealloc;
+- (void)sendOutgoingMessage:(id)arg1;
+- (void)cancelOutgoingMessage:(id)arg1;
+- (BOOL)isConnected;
+- (void)scheduleInRunLoop:(id)arg1;
+- (void)setIgnoredTopics:(id)arg1;
+- (void)setSubtopic:(id)arg1 forEnabledTopic:(id)arg2;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (BOOL)hasIdentity;
 - (void)sendFakeMessage:(id)arg1;
 - (id)initWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2;
@@ -45,21 +54,12 @@
 - (void)_deliverMessageForTopic:(id)arg1 userInfo:(id)arg2;
 - (void)_deliverOutgoingMessageResultWithID:(unsigned int)arg1 error:(id)arg2;
 - (void)_deliverConnectionStatusChange:(BOOL)arg1;
-- (void)_connect;
-- (void)setDelegate:(id)arg1;
-- (void)setIgnoredTopics:(id)arg1;
-- (void)setSubtopic:(id)arg1 forEnabledTopic:(id)arg2;
-- (void)scheduleInRunLoop:(id)arg1;
 - (void)_disconnect;
-- (id)delegate;
-- (void)sendOutgoingMessage:(id)arg1;
-- (void)cancelOutgoingMessage:(id)arg1;
-- (void)setEnabledTopics:(id)arg1;
-- (void)removeFromRunLoop;
 - (id)publicToken;
+- (void)setEnabledTopics:(id)arg1;
 - (id)initWithEnvironmentName:(id)arg1;
-- (BOOL)isConnected;
-- (void)dealloc;
+- (void)removeFromRunLoop;
+- (void)_connect;
 - (void)setEnableCriticalReliability:(BOOL)arg1;
 
 @end

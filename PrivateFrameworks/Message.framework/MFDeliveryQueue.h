@@ -42,9 +42,9 @@
 - (int)append:(id)arg1;
 - (void)setPercentDone:(double)arg1;
 - (BOOL)isReady;
-- (void)suspend;
-- (BOOL)isSuspended;
 - (id)init;
 - (void)dealloc;
+- (void)suspend;
+- (BOOL)isSuspended;
 
 @end

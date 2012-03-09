@@ -9,11 +9,12 @@
     NSArray *_likelyValidUsernames;
 }
 
++ (id)sharedInstance;
 + (id)serviceName;
 + (id)userAgentString;
 + (id)preferredUsername;
-+ (id)sharedInstance;
 
+- (void)dealloc;
 - (void)invalidateUserAccounts;
 - (BOOL)hasValidMobileMeAccounts;
 - (BOOL)hasMobileMeAccounts;
@@ -21,6 +22,5 @@
 - (id)_validUsernames;
 - (id)_usernames;
 - (id)_passwordForUsername:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -20,14 +20,14 @@
 
 - (id)expressionBlock;
 - (id)initWithType:(unsigned int)arg1 block:(id)arg2 arguments:(id)arg3;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)arguments;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)predicateFormat;
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
-- (id)arguments;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

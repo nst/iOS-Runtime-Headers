@@ -17,6 +17,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setEDSheet:(id)arg1;
 - (unsigned int)sharedFormulaIndexForRowCol:(int)arg1;
 - (void)setSharedFormulaIndex:(unsigned int)arg1 forRowCol:(int)arg2;
@@ -28,6 +29,5 @@
 - (void)reportWorksheetWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 - (id)workbook;
 - (id)resources;
-- (void)dealloc;
 
 @end

@@ -12,10 +12,10 @@
 
 + (id)sharedFenceController;
 
+- (id)init;
 - (void)fenceAllApplicationWindows;
 - (unsigned int)_fenceWindows:(id)arg1 additionalWindows:(int)arg2;
 - (id)_fenceableWindows;
 - (void)_fenceCompleted;
-- (id)init;
 
 @end

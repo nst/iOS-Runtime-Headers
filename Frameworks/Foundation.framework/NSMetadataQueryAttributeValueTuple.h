@@ -11,9 +11,9 @@
 
 
 - (id)_init:(id)arg1 :(id)arg2 :(id)arg3 :(unsigned int)arg4;
-- (id)attribute;
-- (id)value;
 - (unsigned int)count;
 - (void)dealloc;
+- (id)value;
+- (id)attribute;
 
 @end

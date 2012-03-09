@@ -18,6 +18,7 @@
 
 + (id)customAttributes;
 
+- (void)setInputPoint:(id)arg1;
 - (id)inputMirroredStatus;
 - (id)inputOrientation;
 - (id)inputPoint;
@@ -28,6 +29,5 @@
 - (id)inputImage;
 - (id)outputImage;
 - (void)setDefaults;
-- (void)setInputPoint:(id)arg1;
 
 @end

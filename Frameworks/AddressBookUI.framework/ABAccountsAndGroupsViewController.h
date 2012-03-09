@@ -18,23 +18,6 @@
 @property(readonly) ABAccountsAndGroupDataSource * dataSource;
 
 
-- (void)updateNavigationButtons;
-- (id)tableView;
-- (id)model;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)accessibilityLargeTextDidChange;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)applicationDidResume;
-- (id)dataSource;
-- (id)dataSource;
-- (void)reloadData;
-- (void)cancel:(id)arg1;
 - (void)dealloc;
 - (void)showMembersOfGroup:(void*)arg1 animate:(BOOL)arg2;
 - (void)_applyAccessibilityFontChanges;
@@ -57,5 +40,22 @@
 - (void)setStyleProvider:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)modelDatabaseChange:(id)arg1;
+- (void)updateNavigationButtons;
+- (id)tableView;
+- (id)model;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)accessibilityLargeTextDidChange;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)applicationDidResume;
+- (id)dataSource;
+- (id)dataSource;
+- (void)reloadData;
+- (void)cancel:(id)arg1;
 
 @end

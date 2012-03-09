@@ -12,7 +12,9 @@
 }
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (id)initWithNavigationController:(id)arg1;
+- (void)setLinkProperties:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidUnload;
@@ -22,8 +24,6 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)initWithNavigationController:(id)arg1;
-- (void)setLinkProperties:(id)arg1;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

@@ -11,21 +11,21 @@
 @property long long maxSize;
 @property long long maxEntrySize;
 @property(readonly) long long currentSize;
-@property(copy,readonly) NSURL * URL;
+@property(readonly) NSURL * URL;
 
 + (id)assetCacheWithURL:(id)arg1;
 
-- (void)finalize;
+- (void)dealloc;
+- (long long)sizeOfEntryForKey:(id)arg1;
+- (void)removeEntryForKey:(id)arg1;
+- (long long)currentSize;
+- (void)setMaxEntrySize:(long long)arg1;
+- (long long)maxEntrySize;
+- (void)setMaxSize:(long long)arg1;
 - (id)initWithURL:(id)arg1;
+- (void)finalize;
 - (id)URL;
 - (id)allKeys;
 - (long long)maxSize;
-- (void)setMaxSize:(long long)arg1;
-- (long long)maxEntrySize;
-- (void)setMaxEntrySize:(long long)arg1;
-- (long long)currentSize;
-- (void)removeEntryForKey:(id)arg1;
-- (long long)sizeOfEntryForKey:(id)arg1;
-- (void)dealloc;
 
 @end

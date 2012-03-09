@@ -14,10 +14,10 @@
 @property(retain,readonly) id target;
 
 
+- (id)target;
+- (void)dealloc;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 - (BOOL)returnsVoid;
 - (SEL)selector;
-- (id)target;
-- (void)dealloc;
 
 @end

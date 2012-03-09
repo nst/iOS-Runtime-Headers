@@ -9,15 +9,15 @@
 }
 
 
-- (void)wait;
-- (BOOL)waitUntilDate:(id)arg1;
-- (void)broadcast;
-- (BOOL)_waitInMode:(id)arg1 untilDate:(id)arg2;
-- (void)_signalRunLoopWithState:(id)arg1;
-- (BOOL)waitUntilDate:(id)arg1 inMode:(id)arg2;
-- (void)waitInMode:(id)arg1;
-- (void)signal;
 - (id)init;
 - (void)dealloc;
+- (void)_signalRunLoopWithState:(id)arg1;
+- (BOOL)_waitInMode:(id)arg1 untilDate:(id)arg2;
+- (BOOL)waitUntilDate:(id)arg1 inMode:(id)arg2;
+- (void)waitInMode:(id)arg1;
+- (BOOL)waitUntilDate:(id)arg1;
+- (void)signal;
+- (void)broadcast;
+- (void)wait;
 
 @end

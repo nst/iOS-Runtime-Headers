@@ -22,6 +22,11 @@
 + (struct __CFSet { }*)createDictHashTable:(BOOL)arg1;
 + (int)uniqueSpellDocumentTag;
 
+- (id)_initWithAsynchronousLoading:(BOOL)arg1;
+- (BOOL)_doneLoading;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })checkSpellingOfString:(id)arg1 startingAt:(int)arg2 language:(id)arg3 wrap:(BOOL)arg4 correction:(id*)arg5;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isWordInUserDictionaries:(id)arg1 caseSensitive:(BOOL)arg2;
 - (id)ignoredWords;
 - (void)ignoreWord:(id)arg1;
@@ -45,10 +50,5 @@
 - (id)_nameOfDictionaryForDocumentTag:(int)arg1;
 - (id)guessesForWordRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inString:(id)arg2 language:(id)arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfMisspelledWordInString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 startingAt:(int)arg3 wrap:(BOOL)arg4 language:(id)arg5;
-- (id)_initWithAsynchronousLoading:(BOOL)arg1;
-- (BOOL)_doneLoading;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })checkSpellingOfString:(id)arg1 startingAt:(int)arg2 language:(id)arg3 wrap:(BOOL)arg4 correction:(id*)arg5;
-- (id)init;
-- (void)dealloc;
 
 @end

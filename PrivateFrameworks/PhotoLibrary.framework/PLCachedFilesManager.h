@@ -24,6 +24,7 @@
 
 + (BOOL)instanceIsRecreatingCaches;
 
+- (void)dealloc;
 - (void)setDelegate:(id)arg1;
 - (void)recreateCachedFilesAfterSyncWithDelay:(id)arg1;
 - (BOOL)cachesNeedToBeRecreated;
@@ -38,6 +39,5 @@
 - (BOOL)_photosDatabaseHasChangedSinceLastCheck;
 - (BOOL)_dcimDirectoryHasChanged;
 - (void)_cancelRecreatingCachedFiles;
-- (void)dealloc;
 
 @end

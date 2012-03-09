@@ -14,6 +14,7 @@
 }
 
 
+- (void)dealloc;
 - (bool)isCategoryAxesReversed:(bool)arg1;
 - (bool)hasSecondaryYAxisDeleted;
 - (void)markSecondaryAxes;
@@ -25,6 +26,5 @@
 - (void)setGraphicProperties:(id)arg1;
 - (id)graphicProperties;
 - (id)initWithChart:(id)arg1;
-- (void)dealloc;
 
 @end

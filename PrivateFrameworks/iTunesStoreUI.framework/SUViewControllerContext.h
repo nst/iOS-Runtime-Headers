@@ -14,14 +14,14 @@
 @property int type;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setSectionIdentifier:(id)arg1;
 - (id)sectionIdentifier;
 - (int)type;
 - (void)setType:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)_typeStringForType:(int)arg1;
 - (int)_typeForTypeString:(id)arg1;
 - (id)valueForMetadataKey:(id)arg1;

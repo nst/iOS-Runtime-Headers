@@ -116,6 +116,8 @@
 
 + (id)defaultVoiceChatService;
 
+- (id)init;
+- (void)dealloc;
 - (void)setRemoteParticipantVolume:(float)arg1;
 - (float)remoteParticipantVolume;
 - (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
@@ -125,28 +127,6 @@
 - (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
 - (void)setClient:(id)arg1;
 - (void)setWrapperService:(id)arg1;
-- (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 hResult:(long)arg4;
-- (id)wrapperService;
-- (int)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2;
-- (void)informClientVoiceChatDidStartMainSelector:(id)arg1;
-- (void)informClientVoiceChatDidNotStartMainSelector:(id)arg1;
-- (BOOL)inviteIsValid:(id)arg1;
-- (void)stopVoiceChatProc:(id)arg1;
-- (id)localDisplayNameForCallID:(int)arg1;
-- (id)remoteDisplayNameForCallID:(int)arg1;
-- (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 reason:(id)arg4;
-- (id)createInvite:(id*)arg1 toParticipant:(id)arg2 callID:(int*)arg3;
-- (id)createReplyUsingDictionary:(id)arg1 replyCode:(unsigned int)arg2 error:(id*)arg3;
-- (int)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2 withCallID:(int)arg3;
-- (void)informClientVoiceChatDidNotStart:(id)arg1;
-- (void)informClientOfInviteFromParticipant:(id)arg1;
-- (void)informClientVoiceChatDidStart:(id)arg1;
-- (void)informClientVoiceChatDidStop:(id)arg1;
-- (void)setFocus:(BOOL)arg1;
-- (id)client;
-- (void)cleanup;
-- (void)setState:(int)arg1;
-- (int)state;
 - (void)setChatMode:(int)arg1;
 - (void)forceNoICE:(BOOL)arg1;
 - (BOOL)isFocus;
@@ -172,7 +152,27 @@
 - (double)getLocalBitrate;
 - (double)getRemoteFramerate;
 - (double)getRemoteBitrate;
-- (id)init;
-- (void)dealloc;
+- (void)cleanup;
+- (void)setState:(int)arg1;
+- (int)state;
+- (id)client;
+- (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 hResult:(long)arg4;
+- (id)wrapperService;
+- (int)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2;
+- (void)informClientVoiceChatDidStartMainSelector:(id)arg1;
+- (void)informClientVoiceChatDidNotStartMainSelector:(id)arg1;
+- (BOOL)inviteIsValid:(id)arg1;
+- (void)stopVoiceChatProc:(id)arg1;
+- (id)localDisplayNameForCallID:(int)arg1;
+- (id)remoteDisplayNameForCallID:(int)arg1;
+- (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 reason:(id)arg4;
+- (id)createInvite:(id*)arg1 toParticipant:(id)arg2 callID:(int*)arg3;
+- (id)createReplyUsingDictionary:(id)arg1 replyCode:(unsigned int)arg2 error:(id*)arg3;
+- (int)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2 withCallID:(int)arg3;
+- (void)informClientVoiceChatDidNotStart:(id)arg1;
+- (void)informClientOfInviteFromParticipant:(id)arg1;
+- (void)informClientVoiceChatDidStart:(id)arg1;
+- (void)informClientVoiceChatDidStop:(id)arg1;
+- (void)setFocus:(BOOL)arg1;
 
 @end

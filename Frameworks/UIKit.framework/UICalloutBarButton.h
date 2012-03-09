@@ -40,6 +40,8 @@
 + (id)buttonWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 maxWidth:(float)arg3 action:(SEL)arg4 type:(int)arg5 inView:(id)arg6;
 
+- (SEL)action;
+- (void)dealloc;
 - (BOOL)dontDismiss;
 - (void)setImageVerticalAdjust:(float)arg1;
 - (float)imageVerticalAdjust;
@@ -75,7 +77,5 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)removeFromSuperview;
 - (void)layoutSubviews;
-- (SEL)action;
-- (void)dealloc;
 
 @end

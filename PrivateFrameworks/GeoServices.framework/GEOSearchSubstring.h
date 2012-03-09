@@ -13,16 +13,16 @@
 @property int endIndex;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (int)endIndex;
 - (int)beginIndex;
 - (int)stringType;
 - (void)setEndIndex:(int)arg1;
 - (void)setBeginIndex:(int)arg1;
 - (void)setStringType:(int)arg1;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

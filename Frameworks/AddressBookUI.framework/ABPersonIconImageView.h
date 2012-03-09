@@ -30,13 +30,6 @@
 + (id)_placeholderPersonImageForType:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)_placeholderCompanyImageForType:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 
-- (id)overlayImage;
-- (id)maskImage;
-- (void)setOverlayImage:(id)arg1;
-- (void)setMaskImage:(id)arg1;
-- (void)_updateImages;
-- (int)imageType;
-- (void)setDisplayedPerson:(void*)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)initWithIconSize:(struct CGSize { float x1; float x2; })arg1 imageType:(int)arg2;
@@ -54,5 +47,12 @@
 - (void)setBackgroundLoadingQueue:(id)arg1 addressBook:(void*)arg2 cache:(id)arg3;
 - (void*)displayedPerson;
 - (void)setNeedsReload;
+- (id)overlayImage;
+- (id)maskImage;
+- (void)setOverlayImage:(id)arg1;
+- (void)setMaskImage:(id)arg1;
+- (int)imageType;
+- (void)setDisplayedPerson:(void*)arg1;
+- (void)_updateImages;
 
 @end

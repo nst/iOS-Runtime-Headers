@@ -11,10 +11,10 @@
 @property int splitViewControllerIndex;
 
 
+- (void)perform;
 - (void)setSplitViewControllerIndex:(int)arg1;
 - (void)setDestinationContainmentContext:(int)arg1;
 - (int)splitViewControllerIndex;
 - (int)destinationContainmentContext;
-- (void)perform;
 
 @end

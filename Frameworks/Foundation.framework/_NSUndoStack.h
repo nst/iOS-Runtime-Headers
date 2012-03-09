@@ -12,8 +12,6 @@
 }
 
 
-- (void)push:(id)arg1;
-- (unsigned int)nestingLevel;
 - (id)_beginMark;
 - (void)_removeBottom;
 - (void)removeAllObjectsWithTarget:(id)arg1;
@@ -26,13 +24,15 @@
 - (BOOL)isDiscardable;
 - (void)markBegin;
 - (id)topUndoObject;
-- (unsigned int)max;
-- (void)setMax:(unsigned int)arg1;
-- (void)removeAllObjects;
-- (void)removeObject:(id)arg1;
 - (unsigned int)count;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (void)removeAllObjects;
+- (void)removeObject:(id)arg1;
+- (unsigned int)max;
+- (void)setMax:(unsigned int)arg1;
+- (void)push:(id)arg1;
+- (unsigned int)nestingLevel;
 
 @end

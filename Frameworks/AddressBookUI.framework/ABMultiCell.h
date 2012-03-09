@@ -13,13 +13,6 @@
 @property(getter=isEditingDisabled) BOOL editingDisabled;
 
 
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
 - (void)dealloc;
 - (BOOL)isEditingDisabled;
 - (void)_addMultiCellContentViewIfNeeded;
@@ -28,5 +21,12 @@
 - (void)setMultiCellContentView:(id)arg1;
 - (void)setAbCellStyle:(int)arg1;
 - (id)multiCellContentView;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 
 @end

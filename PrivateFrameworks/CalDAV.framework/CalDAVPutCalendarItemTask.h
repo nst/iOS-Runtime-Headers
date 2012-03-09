@@ -4,7 +4,7 @@
 
 @class NSString, <CalDAVPutCalendarItemTaskDelegate>;
 
-@interface CalDAVPutCalendarItemTask : CoreDAVSyncPutTask  {
+@interface CalDAVPutCalendarItemTask : CoreDAVPutTask  {
     NSString *_previousScheduleTag;
 }
 
@@ -12,10 +12,10 @@
 @property(retain) NSString * previousScheduleTag;
 
 
-- (id)additionalHeaderValues;
-- (id)initWithDataPayload:(id)arg1 dataContentType:(id)arg2 atURL:(id)arg3 previousETag:(id)arg4;
 - (id)description;
 - (void)dealloc;
+- (id)additionalHeaderValues;
+- (id)initWithDataPayload:(id)arg1 dataContentType:(id)arg2 atURL:(id)arg3 previousETag:(id)arg4;
 - (id)previousScheduleTag;
 - (void)setPreviousScheduleTag:(id)arg1;
 

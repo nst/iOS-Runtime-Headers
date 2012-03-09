@@ -11,6 +11,11 @@
 @property BOOL scansForDestinationsWhenEnteringForeground;
 
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)init;
+- (void)dealloc;
 - (BOOL)scansForDestinationsWhenEnteringForeground;
 - (void)beginScanningForDestinations;
 - (void)endScanningForDestinations;
@@ -19,10 +24,5 @@
 - (void)_beginScanningForDestinationsNotification:(id)arg1;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
 
 @end

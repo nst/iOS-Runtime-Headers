@@ -17,6 +17,13 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (id)options;
+- (int)type;
+- (int)speed;
+- (void)setType:(int)arg1;
+- (void)setSpeed:(int)arg1;
 - (BOOL)isAdvanceOnClick;
 - (int)advanceAfterTime;
 - (BOOL)hasIsAdvanceOnClick;
@@ -27,12 +34,5 @@
 - (void)setAdvanceAfterTime:(int)arg1;
 - (void)setOptions:(id)arg1;
 - (BOOL)hasType;
-- (int)speed;
-- (void)setSpeed:(int)arg1;
-- (id)options;
-- (int)type;
-- (void)setType:(int)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

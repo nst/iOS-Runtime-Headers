@@ -24,6 +24,8 @@
 
 + (id)currentDevice;
 
+- (id)init;
+- (void)dealloc;
 - (id)storeUserAgent;
 - (id)userAgent;
 - (id)gameKitVersion;
@@ -34,10 +36,8 @@
 - (id)udid;
 - (id)screenCapabilities;
 - (BOOL)isGameCenterSupported;
-- (id)buildVersion;
 - (id)deviceName;
 - (id)osVersion;
-- (id)init;
-- (void)dealloc;
+- (id)buildVersion;
 
 @end

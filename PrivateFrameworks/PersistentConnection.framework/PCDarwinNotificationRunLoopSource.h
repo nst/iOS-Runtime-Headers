@@ -12,11 +12,11 @@
 }
 
 
-- (void)invalidate;
 - (void)handleMachMessage:(void*)arg1;
-- (id)initWithDarwinNotificationName:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
+- (void)dealloc;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)dealloc;
+- (void)invalidate;
+- (id)initWithDarwinNotificationName:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 
 @end

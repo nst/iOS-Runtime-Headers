@@ -63,6 +63,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setSendActionDuringAnimation:(BOOL)arg1;
 - (float)_validatedValueForPoint:(struct CGPoint { float x1; float x2; })arg1 includeTickMarks:(BOOL)arg2;
 - (void)setMaxValueImage:(id)arg1;
@@ -116,7 +118,5 @@
 - (BOOL)cancelTouchTracking;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

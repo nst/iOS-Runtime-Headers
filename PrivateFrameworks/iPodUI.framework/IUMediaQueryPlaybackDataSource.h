@@ -22,6 +22,8 @@
 + (Class)queueFeederClass;
 + (id)newDataSourceWithQuery:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)setQuery:(id)arg1;
 - (id)query;
 - (BOOL)isFocusedMediaItem;
@@ -33,7 +35,5 @@
 - (void)setPrefixMediaItems:(id)arg1;
 - (void)setEntityIndex:(unsigned int)arg1;
 - (void)setFocusedMediaItem:(BOOL)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

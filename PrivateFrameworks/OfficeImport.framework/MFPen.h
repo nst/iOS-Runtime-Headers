@@ -14,12 +14,12 @@
 + (id)penWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
 + (id)pen;
 
+- (id)init;
+- (void)dealloc;
 - (long)getWidth;
 - (id)initWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
 - (int)getStyle;
 - (id)getColor;
 - (int)selectInto:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

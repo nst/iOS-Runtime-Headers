@@ -26,6 +26,9 @@
 @property(copy) id messageBlock;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)sendMessage:(void*)arg1;
 - (void)setReplyQueue:(struct dispatch_queue_s { }*)arg1;
 - (struct dispatch_queue_s { }*)copyReplyQueue;
 - (id)disconnectBlock;
@@ -38,8 +41,5 @@
 - (void)setDisconnectBlock:(id)arg1;
 - (void)sendMessage:(void*)arg1 withReply:(id)arg2;
 - (id)initWithServiceName:(id)arg1;
-- (void)sendMessage:(void*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -14,9 +14,9 @@
 
 - (void)_reachabilityChanged:(id)arg1;
 - (void)startLoading;
+- (void)dealloc;
 - (void)stopLoading;
 - (id)initWithTiles:(id)arg1;
 - (void)_resetLoading;
-- (void)dealloc;
 
 @end

@@ -13,6 +13,8 @@
 @property(retain) NSIndexPath * expandedIndexPath;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)title;
@@ -36,7 +38,5 @@
 - (Class)tableViewCellClass;
 - (id)indexPathForMediaItem:(id)arg1 atTime:(double)arg2;
 - (void)_rentalDataDidLoadNotification:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

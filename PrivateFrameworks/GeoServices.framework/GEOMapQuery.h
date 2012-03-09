@@ -68,12 +68,9 @@
 @property(retain) GEOPlaceSearchRequest * placeSearchRequest;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setQuery:(id)arg1;
-- (void)setHasRequestType:(BOOL)arg1;
-- (BOOL)hasRequestType;
-- (void)setRequestType:(int)arg1;
-- (BOOL)hasQuery;
 - (id)placeSearchRequest;
 - (int)clientImgMaxHeight;
 - (void)setHasClientImgMaxHeight:(BOOL)arg1;
@@ -120,17 +117,20 @@
 - (void)setMapCenterX:(int)arg1;
 - (void)setPlaceSearchRequest:(id)arg1;
 - (void)setUserLocation:(id)arg1;
-- (int)requestType;
-- (void)writeTo:(id)arg1;
+- (id)sessionID;
+- (void)setSessionID:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)query;
 - (id)userLocation;
 - (BOOL)hasUserLocation;
-- (id)sessionID;
-- (void)setSessionID:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (int)requestType;
+- (void)setHasRequestType:(BOOL)arg1;
+- (BOOL)hasRequestType;
+- (void)setRequestType:(int)arg1;
+- (BOOL)hasQuery;
 - (id)mapRegion;
 - (void)setMapRegion:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

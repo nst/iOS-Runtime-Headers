@@ -13,6 +13,7 @@
 }
 
 
+- (void)setCurrentPage:(unsigned int)arg1;
 - (id)initWithWdOfficeArt:(id)arg1 parent:(id)arg2;
 - (BOOL)isInsideGroup;
 - (id)initWithOadDrawable:(id)arg1 asFloating:(BOOL)arg2 origin:(struct CGPoint { float x1; float x2; })arg3 parent:(id)arg4;
@@ -28,6 +29,5 @@
 - (void)setIsInsideGroup:(BOOL)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (id)blipAtIndex:(unsigned int)arg1;
-- (void)setCurrentPage:(unsigned int)arg1;
 
 @end

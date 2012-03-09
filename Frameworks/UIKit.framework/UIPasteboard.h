@@ -29,6 +29,10 @@
 + (id)_findPasteboard;
 + (id)generalPasteboard;
 
+- (id)string;
+- (void)setString:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)colors;
 - (void)setColors:(id)arg1;
 - (id)URLs;
@@ -64,13 +68,9 @@
 - (id)name;
 - (id)images;
 - (void)setImage:(id)arg1;
-- (id)string;
-- (void)setString:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (BOOL)pl_containsAssets;
-- (id)pl_assetsInPhotoLibrary:(id)arg1;
 - (void)pl_setAssets:(id)arg1;
+- (id)pl_assetsInPhotoLibrary:(id)arg1;
+- (BOOL)pl_containsAssets;
 - (void)pl_setAsset:(id)arg1;
 
 @end

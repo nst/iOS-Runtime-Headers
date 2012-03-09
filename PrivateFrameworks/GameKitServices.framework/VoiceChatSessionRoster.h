@@ -26,6 +26,9 @@
 }
 
 
+- (void)dealloc;
+- (void)cleanup;
+- (BOOL)hasFocus;
 - (id)initWithGKSession:(id)arg1 peerID:(id)arg2 voiceChatSession:(id)arg3 sendQueue:(struct dispatch_queue_s { }*)arg4;
 - (void)startBeaconWrapper:(id)arg1;
 - (unsigned int)focusID;
@@ -42,8 +45,5 @@
 - (void)sendBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 ToPeer:(id)arg2;
 - (void)processSubscribeBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 beaconState:(id)arg2 fromPeer:(id)arg3;
 - (void)processUnsubscribeBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 beaconState:(id)arg2 fromPeer:(id)arg3;
-- (BOOL)hasFocus;
-- (void)cleanup;
-- (void)dealloc;
 
 @end

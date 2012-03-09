@@ -11,10 +11,10 @@
 @property(retain) NSArray * recommendations;
 
 
+- (void)dealloc;
 - (void)setRecommendations:(id)arg1;
 - (id)recommendations;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

@@ -10,6 +10,7 @@
     NSMutableArray *_workItems;
 }
 
++ (id)sharedInstance;
 + (void)persistMetadata:(id)arg1 fileURL:(id)arg2;
 + (void)persistData:(id)arg1 forKey:(id)arg2 fileURL:(id)arg3 completion:(id)arg4;
 + (void)persistUInt16:(unsigned short)arg1 forKey:(id)arg2 fileURL:(id)arg3;
@@ -17,12 +18,11 @@
 + (void)persistString:(id)arg1 forKey:(id)arg2 fileURL:(id)arg3 completion:(id)arg4;
 + (id)persistedAttributesForFileAtURL:(id)arg1;
 + (void)persistString:(id)arg1 forKey:(id)arg2 fileURL:(id)arg3;
-+ (id)sharedInstance;
 
+- (id)init;
+- (void)dealloc;
 - (void)backgroundWriteData:(id)arg1 toFileAtURL:(id)arg2;
 - (void)persistForTime:(double)arg1;
 - (void)persistData:(id)arg1 forKey:(id)arg2 fileURL:(id)arg3 completion:(id)arg4;
-- (id)init;
-- (void)dealloc;
 
 @end

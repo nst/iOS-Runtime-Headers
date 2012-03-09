@@ -29,8 +29,13 @@
 @property int cacheSquareLength;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setStatus:(int)arg1;
+- (int)status;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)cacheSquareLength;
 - (void)setHasCacheSquareLength:(BOOL)arg1;
 - (BOOL)hasCacheSquareLength;
@@ -48,10 +53,5 @@
 - (void)setValidSquareLength:(int)arg1;
 - (id)originalPoint;
 - (void)setOriginalPoint:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (int)status;
-- (id)description;
-- (void)dealloc;
 
 @end

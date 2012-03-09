@@ -13,15 +13,15 @@
 + (id)providerHostname;
 + (unsigned short)providerID;
 
+- (void)dealloc;
+- (void)requester:(id)arg1 didFailWithError:(id)arg2;
+- (void)requesterDidCancel:(id)arg1;
+- (void)requesterDidFinish:(id)arg1;
 - (void)cancelProviderRequest;
 - (void)startProviderWithRequest:(id)arg1;
 - (void)_cleanupRequester;
 - (id)gmmRequester;
 - (void)_sendGMMDirectionsRequest:(id)arg1;
 - (void)setGmmRequester:(id)arg1;
-- (void)requester:(id)arg1 didFailWithError:(id)arg2;
-- (void)requesterDidCancel:(id)arg1;
-- (void)requesterDidFinish:(id)arg1;
-- (void)dealloc;
 
 @end

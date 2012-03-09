@@ -47,12 +47,10 @@
 @property(copy) NSString * authenticationUserName;
 
 
+- (void)dealloc;
 - (void)setRecipient:(id)arg1;
 - (id)recipient;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)hasLoaded;
 - (void)setShouldSkipLoadedExceptionCheck:(BOOL)arg1;
 - (BOOL)shouldSkipLoadedExceptionCheck;
 - (void)setHasLoaded:(BOOL)arg1;
@@ -98,11 +96,6 @@
 - (BOOL)isVisible:(BOOL)arg1;
 - (void)controller:(id)arg1 didFailWithError:(id)arg2;
 - (void)controllerDidClose:(id)arg1;
-- (id)localAd;
-- (int)creativeType;
-- (void)setLocalAd:(id)arg1;
-- (void)setAuthenticationUserName:(id)arg1;
-- (id)authenticationUserName;
 - (id)remoteView;
 - (void)setRemoteView:(id)arg1;
 - (BOOL)isLoaded;
@@ -115,16 +108,23 @@
 - (void)insertSubview:(id)arg1 belowSubview:(id)arg2;
 - (void)exchangeSubviewAtIndex:(int)arg1 withSubviewAtIndex:(int)arg2;
 - (void)insertSubview:(id)arg1 atIndex:(int)arg2;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (id)delegate;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)addSubview:(id)arg1;
 - (void)removeFromSuperview;
 - (void)didMoveToWindow;
 - (void)setAlpha:(float)arg1;
 - (void)setHidden:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)hasLoaded;
-- (void)dealloc;
+- (id)localAd;
+- (int)creativeType;
+- (void)setLocalAd:(id)arg1;
+- (void)setAuthenticationUserName:(id)arg1;
+- (id)authenticationUserName;
 - (void)setSection:(id)arg1;
 
 @end

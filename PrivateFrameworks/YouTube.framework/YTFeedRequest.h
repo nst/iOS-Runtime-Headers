@@ -19,17 +19,17 @@
 
 + (int)partialFeedType;
 
+- (int)parseData:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (BOOL)isLoading;
+- (void)loadRequest:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)_didAuthenticate:(id)arg1;
 - (void)_failedToAuthenticate:(id)arg1;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
 - (void)loadRequest:(id)arg1 withDelegate:(id)arg2 accountAuthRequired:(BOOL)arg3;
-- (void)setDelegate:(id)arg1;
-- (int)parseData:(id)arg1;
-- (BOOL)isLoading;
-- (void)loadRequest:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

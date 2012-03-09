@@ -17,6 +17,7 @@
 - (id)fromEmailAddresses;
 - (id)fullUserName;
 - (id)firstEmailAddress;
+- (void)dealloc;
 - (id)username;
 - (id)emailAddresses;
 - (id)uniqueID;
@@ -28,7 +29,6 @@
 - (BOOL)supportsEmoji;
 - (BOOL)restrictsRepliesAndForwards;
 - (id)mailAccount;
-- (void)dealloc;
 - (BOOL)_isRestricted;
 
 @end

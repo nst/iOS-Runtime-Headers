@@ -12,9 +12,11 @@
 @property(retain) ALAssetsGroupPrivate * internal;
 
 
+- (id)description;
+- (void)dealloc;
+- (struct CGImage { }*)posterImage;
 - (id)internal;
 - (void)setInternal:(id)arg1;
-- (struct CGImage { }*)posterImage;
 - (id)valueForProperty:(id)arg1;
 - (BOOL)isEditable;
 - (BOOL)isValid;
@@ -28,7 +30,5 @@
 - (id)_typeAsString;
 - (BOOL)addAsset:(id)arg1;
 - (id)_uuid;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -47,15 +47,15 @@
 + (id)versionWithPropertyValue:(id)arg1;
 + (id)_prototypeMatchingServerHeaders:(id)arg1;
 
-- (void)setVersion:(double)arg1;
-- (double)version;
-- (id)type;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (double)version;
+- (id)type;
+- (void)setVersion:(double)arg1;
 - (BOOL)supportsRequestCompression;
 - (BOOL)supportsExtendedCalendarQuery;
 - (BOOL)supportsPrivateComments;

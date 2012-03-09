@@ -19,31 +19,12 @@
 
 + (id)defaultVoiceChatService;
 
+- (id)init;
+- (void)dealloc;
 - (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
 - (void)denyCallID:(int)arg1;
 - (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
 - (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
-- (void)remoteCancelled:(id)arg1;
-- (void)stopVoiceChatProc:(id)arg1;
-- (void)sendFocusChange:(BOOL)arg1;
-- (id)localDisplayNameForCallID:(int)arg1;
-- (id)remoteDisplayNameForCallID:(int)arg1;
-- (BOOL)isAudioPausedToParticipantID:(id)arg1;
-- (void)pauseAudio:(BOOL)arg1 toParticipantID:(id)arg2;
-- (void)remoteCancelledProc:(id)arg1;
-- (void)stopVoiceChatProc:(id)arg1 participantDidCancel:(BOOL)arg2;
-- (id)openOutgoingDictionaryForParticipantID:(id)arg1;
-- (id)dictionaryForCallID:(int)arg1 isIncomingDictonary:(BOOL)arg2;
-- (BOOL)processInviteDictionary:(id)arg1 fromParticipantID:(id)arg2;
-- (BOOL)processReplyDict:(id)arg1;
-- (BOOL)processCancelDict:(id)arg1;
-- (BOOL)processFocusDict:(id)arg1 fromParticipantID:(id)arg2;
-- (BOOL)processInviteDictionaryForTie:(id)arg1 fromParticipantID:(id)arg2;
-- (id)dictionaryForParticipantID:(id)arg1 isIncomingDictonary:(BOOL)arg2;
-- (id)dictionaryForNonce:(int)arg1 participantID:(id)arg2 isIncomingDictonary:(BOOL)arg3;
-- (id)incomingDictionaryMatchingOriginalCallID:(int)arg1 participantID:(id)arg2;
-- (BOOL)processFocusChange:(id)arg1 fromParticipantID:(id)arg2;
-- (void)setFocus:(BOOL)arg1;
 - (void)setChatMode:(int)arg1;
 - (void)setCurrentFocus:(id)arg1;
 - (void)updatedMutedPeers:(id)arg1 forParticipantID:(id)arg2;
@@ -68,7 +49,26 @@
 - (double)getLocalBitrate;
 - (double)getRemoteFramerate;
 - (double)getRemoteBitrate;
-- (id)init;
-- (void)dealloc;
+- (void)remoteCancelled:(id)arg1;
+- (void)stopVoiceChatProc:(id)arg1;
+- (void)sendFocusChange:(BOOL)arg1;
+- (id)localDisplayNameForCallID:(int)arg1;
+- (id)remoteDisplayNameForCallID:(int)arg1;
+- (BOOL)isAudioPausedToParticipantID:(id)arg1;
+- (void)pauseAudio:(BOOL)arg1 toParticipantID:(id)arg2;
+- (void)remoteCancelledProc:(id)arg1;
+- (void)stopVoiceChatProc:(id)arg1 participantDidCancel:(BOOL)arg2;
+- (id)openOutgoingDictionaryForParticipantID:(id)arg1;
+- (id)dictionaryForCallID:(int)arg1 isIncomingDictonary:(BOOL)arg2;
+- (BOOL)processInviteDictionary:(id)arg1 fromParticipantID:(id)arg2;
+- (BOOL)processReplyDict:(id)arg1;
+- (BOOL)processCancelDict:(id)arg1;
+- (BOOL)processFocusDict:(id)arg1 fromParticipantID:(id)arg2;
+- (BOOL)processInviteDictionaryForTie:(id)arg1 fromParticipantID:(id)arg2;
+- (id)dictionaryForParticipantID:(id)arg1 isIncomingDictonary:(BOOL)arg2;
+- (id)dictionaryForNonce:(int)arg1 participantID:(id)arg2 isIncomingDictonary:(BOOL)arg3;
+- (id)incomingDictionaryMatchingOriginalCallID:(int)arg1 participantID:(id)arg2;
+- (BOOL)processFocusChange:(id)arg1 fromParticipantID:(id)arg2;
+- (void)setFocus:(BOOL)arg1;
 
 @end

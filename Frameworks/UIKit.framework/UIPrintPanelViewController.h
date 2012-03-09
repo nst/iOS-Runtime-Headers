@@ -30,6 +30,7 @@
 @property(readonly) BOOL showPaper;
 
 
+- (void)dealloc;
 - (id)printer;
 - (BOOL)showPaper;
 - (BOOL)showDuplex;
@@ -59,6 +60,5 @@
 - (int)pageCount;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)dealloc;
 
 @end

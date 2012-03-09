@@ -9,16 +9,6 @@
 }
 
 
-- (id)option;
-- (BOOL)process;
-- (id)argumentDescription;
-- (void)setOption:(id)arg1;
-- (void)setArgument:(id)arg1;
-- (void)setArgumentDescription:(id)arg1;
-- (void)setIsRequired:(BOOL)arg1;
-- (int)compare:(id)arg1;
-- (void)setAction:(SEL)arg1;
-- (id)argument;
 - (void)setTarget:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
@@ -26,6 +16,16 @@
 - (id)target;
 - (id)init;
 - (void)dealloc;
+- (id)option;
+- (id)argument;
+- (int)compare:(id)arg1;
+- (void)setAction:(SEL)arg1;
 - (BOOL)isRequired;
+- (BOOL)process;
+- (id)argumentDescription;
+- (void)setOption:(id)arg1;
+- (void)setArgument:(id)arg1;
+- (void)setArgumentDescription:(id)arg1;
+- (void)setIsRequired:(BOOL)arg1;
 
 @end

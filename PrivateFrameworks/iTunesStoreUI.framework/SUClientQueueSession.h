@@ -19,10 +19,10 @@
 
 - (void)setDownloadKinds:(id)arg1;
 - (id)initWithQueue:(id)arg1;
-- (void)setCount:(int)arg1;
 - (int)count;
 - (void)dealloc;
 - (id)queue;
+- (void)setCount:(int)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setManagerOptions:(id)arg1;
 - (id)downloadKinds;

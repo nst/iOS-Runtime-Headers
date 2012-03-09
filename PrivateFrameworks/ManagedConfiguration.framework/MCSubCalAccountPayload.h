@@ -24,10 +24,8 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
 - (id)accountDescription;
-- (id)username;
-- (id)hostname;
-- (id)password;
-- (id)title;
+- (id)description;
+- (void)dealloc;
 - (void)setAccountPersistentUUID:(id)arg1;
 - (id)subtitle1Label;
 - (id)subtitle2Label;
@@ -35,8 +33,10 @@
 - (id)subtitle1Description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
+- (id)username;
+- (id)password;
+- (id)title;
+- (id)hostname;
 - (id)accountPersistentUUID;
 - (BOOL)useSSL;
 

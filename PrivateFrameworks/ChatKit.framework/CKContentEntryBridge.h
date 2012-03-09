@@ -15,8 +15,7 @@
 + (id)newContentEntryBridge;
 
 - (id)attachments;
-- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
-- (BOOL)hasContent;
+- (void)dealloc;
 - (id)contentEntryView;
 - (void)updateComposition;
 - (void)setContentEntryView:(id)arg1;
@@ -26,7 +25,8 @@
 - (id)messageComposition;
 - (id)messageCompositionIfTextOnly;
 - (void)setMessageComposition:(id)arg1;
-- (void)dealloc;
+- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
+- (BOOL)hasContent;
 - (void)setMessageParts:(id)arg1;
 - (id)messageParts;
 - (void)insertMessagePart:(id)arg1;

@@ -10,9 +10,6 @@
 
 + (void)initialize;
 
-- (id)initWithDataRepresentation:(id)arg1;
-- (id)addLink:(id)arg1;
-- (void)removeObjectForKey:(id)arg1;
 - (BOOL)_isLink:(id)arg1;
 - (id)pasteboardDataRepresentation;
 - (id)initFromSerialized:(id)arg1;
@@ -52,19 +49,22 @@
 - (id)getDirInfo:(BOOL)arg1;
 - (id)_getDocInfoForKey:(id)arg1;
 - (BOOL)isPackage;
-- (id)dataRepresentation;
-- (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
-- (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(unsigned int)arg3;
-- (id)keyEnumerator;
-- (id)initWithDictionary:(id)arg1;
-- (id)initWithContentsOfFile:(id)arg1;
 - (unsigned int)count;
 - (id)objectForKey:(id)arg1;
+- (id)copy;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)copy;
+- (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
+- (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(unsigned int)arg3;
+- (id)keyEnumerator;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithContentsOfFile:(id)arg1;
+- (void)removeObjectForKey:(id)arg1;
+- (id)dataRepresentation;
+- (id)initWithDataRepresentation:(id)arg1;
+- (id)addLink:(id)arg1;
 
 @end

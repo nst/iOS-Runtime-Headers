@@ -15,14 +15,14 @@
 @property <CBPairingAlertDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (id)initWithDeviceName:(id)arg1 pairingType:(id)arg2 passkey:(id)arg3;
 - (void)dismiss;
 - (void)textDidChange:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)show;
 - (id)delegate;
-- (void)dealloc;
-- (id)initWithPairingType:(id)arg1 andPasskey:(id)arg2;
+- (void)setDelegate:(id)arg1;
 
 @end

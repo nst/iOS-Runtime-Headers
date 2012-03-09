@@ -4,7 +4,7 @@
 
 @class <CoreDAVTaskDelegate>, NSString;
 
-@interface CoreDAVDeleteTask : CoreDAVTask  {
+@interface CoreDAVDeleteTask : CoreDAVActionBackedTask  {
     NSString *_previousETag;
 }
 
@@ -12,12 +12,12 @@
 @property(retain) NSString * previousETag;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setPreviousETag:(id)arg1;
 - (id)additionalHeaderValues;
 - (id)previousETag;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)httpMethod;
 - (id)requestBody;
 

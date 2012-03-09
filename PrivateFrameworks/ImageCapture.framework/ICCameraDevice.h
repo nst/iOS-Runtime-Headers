@@ -25,8 +25,10 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (double)timeOffset;
-- (void)finalize;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (void)cancelDownload;
 - (void)notifyDelegateOfAddedItem:(id)arg1;
 - (void)pendNotifyingDelegateOfAddedItem:(id)arg1;
 - (id)filesOfType:(id)arg1;
@@ -62,9 +64,11 @@
 - (void)handleCommandCompletionNotification:(id)arg1;
 - (void)handleImageCaptureEventNotification:(id)arg1;
 - (unsigned int)batteryLevel;
+- (void)finalize;
 - (void)setLocked:(BOOL)arg1;
 - (id)contents;
 - (BOOL)isLocked;
+- (double)timeOffset;
 - (id)mediaFiles;
 - (void)requestDeleteFiles:(id)arg1;
 - (void)requestDownloadFile:(id)arg1 options:(id)arg2 downloadDelegate:(id)arg3 didDownloadSelector:(SEL)arg4 contextInfo:(void*)arg5;
@@ -72,9 +76,5 @@
 - (unsigned int)contentCatalogPercentCompleted;
 - (unsigned int)estimatedNumberOfDownloadableItems;
 - (void)requestEject;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (void)cancelDownload;
 
 @end

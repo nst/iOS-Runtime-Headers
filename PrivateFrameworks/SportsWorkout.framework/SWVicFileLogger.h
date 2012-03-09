@@ -11,8 +11,8 @@
 }
 
 
-- (void)logPacket:(id)arg1 rssi:(BOOL)arg2;
 - (id)init;
 - (void)dealloc;
+- (void)logPacket:(id)arg1 rssi:(BOOL)arg2;
 
 @end

@@ -13,10 +13,10 @@
 @property(readonly) UILabel * detailLabel3;
 
 
+- (void)dealloc;
 - (id)detailLabel3;
 - (id)textLabel3;
 - (void)_layoutSubviewsCore;
 - (void)layoutText:(id)arg1 andValue:(id)arg2;
-- (void)dealloc;
 
 @end

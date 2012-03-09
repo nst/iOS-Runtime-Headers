@@ -20,8 +20,8 @@
 }
 
 
-- (int)compareByOffset:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (int)compareByOffset:(id)arg1;
 
 @end

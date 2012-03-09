@@ -11,14 +11,13 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (void)pushController:(id)arg1;
+- (void)handleURL:(id)arg1;
 - (void)setupController;
 - (void)setParentController:(id)arg1;
 - (id)parentController;
-- (void)pushControllerOnParentWithSpecifier:(id)arg1;
-- (void)popControllerOnParent;
-- (void)statusBarWillChangeHeight:(id)arg1;
-- (BOOL)usePopupStyle;
-- (BOOL)popupStyleIsModal;
 - (void)dismissAnimated:(BOOL)arg1;
 - (id)controller;
 - (void)dismiss;
@@ -26,9 +25,10 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)pushController:(id)arg1;
-- (void)handleURL:(id)arg1;
+- (void)pushControllerOnParentWithSpecifier:(id)arg1;
+- (void)popControllerOnParent;
+- (void)statusBarWillChangeHeight:(id)arg1;
+- (BOOL)usePopupStyle;
+- (BOOL)popupStyleIsModal;
 
 @end

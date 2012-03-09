@@ -38,8 +38,10 @@
 
 + (id)contextWithDataSource:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (void)setQuery:(id)arg1;
-- (id)sourceContext;
+- (void)setRootController:(BOOL)arg1;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
 - (id)defaultPNGName;
@@ -76,8 +78,6 @@
 - (void)unloadReloadableData;
 - (void)setDataSourceFromMediaSpecifier:(id)arg1;
 - (unsigned long long)persistentPlaylistUID;
-- (id)description;
-- (void)dealloc;
-- (void)setRootController:(BOOL)arg1;
+- (id)sourceContext;
 
 @end

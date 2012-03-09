@@ -101,17 +101,17 @@
 @property(readonly) int sourceTypeLocal;
 @property(readonly) int sourceTypeMobileMe;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 + (id)newScriptValueForNativeValue:(void*)arg1 propertyType:(unsigned int)arg2;
 + (id)newScriptRecordsForNativeRecords:(struct __CFArray { }*)arg1;
 + (void*)threadAddressBook;
 
-- (id)sources;
-- (id)attributeKeys;
 - (id)init;
 - (void)dealloc;
+- (id)sources;
+- (id)attributeKeys;
 - (int)sourceTypeMobileMe;
 - (int)sourceTypeLocal;
 - (int)sourceTypeLDAP;

@@ -71,9 +71,17 @@
 @property int clientViewControllerOrientation;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isBusy;
+- (id)uniqueIdentifier;
+- (void)close;
+- (BOOL)isVisible;
+- (id)storyboard;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
-- (BOOL)isOpen;
+- (void)open;
 - (void)setClientViewControllerOrientation:(int)arg1;
 - (int)clientViewControllerOrientation;
 - (void)setFsExtensionToken:(id)arg1;
@@ -176,14 +184,6 @@
 - (id)authenticationUserName;
 - (void)setClickLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })clickLocation;
-- (void)open;
-- (id)uniqueIdentifier;
-- (void)close;
-- (BOOL)isVisible;
-- (id)storyboard;
-- (id)delegate;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (BOOL)isOpen;
 
 @end

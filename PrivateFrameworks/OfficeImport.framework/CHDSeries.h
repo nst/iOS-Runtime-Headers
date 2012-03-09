@@ -25,8 +25,14 @@
 
 + (id)seriesWithChart:(id)arg1;
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
 - (void)setOrder:(int)arg1;
 - (int)order;
+- (unsigned int)key;
+- (id)name;
+- (bool)isEmpty;
+- (bool)isHidden;
 - (void)clearBackPointers;
 - (id)chartType;
 - (void)setDataValuePropertiesCollection:(id)arg1;
@@ -58,11 +64,5 @@
 - (id)chart;
 - (void)setStyleIndex:(int)arg1;
 - (int)styleIndex;
-- (unsigned int)key;
-- (id)name;
-- (bool)isEmpty;
-- (bool)isHidden;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

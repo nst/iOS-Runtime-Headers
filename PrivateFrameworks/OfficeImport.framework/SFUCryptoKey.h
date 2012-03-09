@@ -7,9 +7,9 @@
 }
 
 
+- (unsigned int)iterationCount;
 - (int)keyType;
 - (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(unsigned int)arg2;
 - (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(unsigned int)arg2 iterationCount:(unsigned int)arg3;
-- (unsigned int)iterationCount;
 
 @end

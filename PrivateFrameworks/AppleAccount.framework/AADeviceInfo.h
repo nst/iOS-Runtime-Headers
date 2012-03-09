@@ -12,15 +12,19 @@
     struct dispatch_semaphore_s { } *_tokenSema;
 }
 
++ (id)udid;
++ (id)osVersion;
 + (id)signatureWithDictionary:(id)arg1;
 + (id)apnsToken;
 + (id)clientInfoHeader;
-+ (id)udid;
-+ (id)serialNumber;
 + (id)infoDictionary;
-+ (id)osVersion;
 + (id)productVersion;
++ (id)serialNumber;
 
+- (id)init;
+- (void)dealloc;
+- (id)udid;
+- (id)osVersion;
 - (id)wifiMacAddress;
 - (id)lockDownValueForKey:(struct __CFString { }*)arg1;
 - (id)regionCode;
@@ -28,13 +32,9 @@
 - (id)osName;
 - (id)apnsToken;
 - (id)deviceInfoDictionary;
-- (id)udid;
-- (id)serialNumber;
 - (id)buildVersion;
-- (id)osVersion;
-- (id)productType;
-- (id)init;
-- (void)dealloc;
 - (id)productVersion;
+- (id)productType;
+- (id)serialNumber;
 
 @end

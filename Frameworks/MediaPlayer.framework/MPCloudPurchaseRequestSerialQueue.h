@@ -12,11 +12,11 @@
 
 + (id)mainQueue;
 
+- (id)init;
+- (void)dealloc;
 - (void)serviceOne;
 - (void)prioritizeRequests:(id)arg1 beforeRequest:(id)arg2;
 - (void)enqueueRequests:(id)arg1 runBlock:(id)arg2;
 - (void)dequeueRequests:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

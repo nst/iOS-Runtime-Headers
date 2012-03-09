@@ -6,6 +6,9 @@
     void *_priv;
 }
 
++ (id)imageWithData:(id)arg1;
++ (id)imageWithContentsOfFile:(id)arg1;
++ (id)imageWithCGImage:(struct CGImage { }*)arg1;
 + (id)imageWithInternalRepresentation:(void*)arg1;
 + (id)imageWithContentsOfURL:(id)arg1;
 + (id)imageWithData:(id)arg1 options:(id)arg2;
@@ -20,10 +23,22 @@
 + (id)imageWithCVPixelBuffer:(struct __CVBuffer { }*)arg1 options:(id)arg2;
 + (id)imageWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2;
 + (id)imageWithIOSurface:(struct __IOSurface { }*)arg1 options:(id)arg2;
-+ (id)imageWithData:(id)arg1;
-+ (id)imageWithContentsOfFile:(id)arg1;
-+ (id)imageWithCGImage:(struct CGImage { }*)arg1;
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)imageByApplyingOrientation:(int)arg1;
+- (id)initWithContentsOfURL:(id)arg1;
+- (id)properties;
+- (id)initWithColor:(id)arg1;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2;
+- (id)initWithIOSurface:(struct __IOSurface { }*)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })extent;
+- (id)initWithCGImage:(struct CGImage { }*)arg1;
+- (id)initWithData:(id)arg1;
+- (id)initWithContentsOfFile:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)autoRedEyeFilterWithFeatures:(id)arg1 options:(id)arg2;
 - (id)autoRedEyeFilterWithFeatures:(id)arg1 imageProperties:(id)arg2 options:(id)arg3;
 - (id)autoAdjustmentFilters;
@@ -49,24 +64,9 @@
 - (id)_initWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2;
 - (void*)_internalRepresentation;
 - (id)_initWithInternalRepresentation:(void*)arg1;
-- (id)initWithContentsOfURL:(id)arg1;
-- (id)properties;
-- (id)initWithColor:(id)arg1;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2;
-- (id)initWithIOSurface:(struct __IOSurface { }*)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })extent;
-- (id)initWithCGImage:(struct CGImage { }*)arg1;
-- (id)initWithData:(id)arg1;
-- (id)initWithContentsOfFile:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)imageByApplyingOrientation:(int)arg1;
 - (id)initWithIOSurface:(struct __IOSurface { }*)arg1 options:(id)arg2;
 - (id)autoAdjustmentFiltersWithOptions:(id)arg1;
 - (id)imageByApplyingTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithImage:(id)arg1 options:(id)arg2;
 - (id)initWithImage:(id)arg1;
 

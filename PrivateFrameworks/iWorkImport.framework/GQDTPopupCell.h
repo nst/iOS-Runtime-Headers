@@ -9,7 +9,7 @@
 }
 
 
-- (id)resultCell;
 - (void)dealloc;
+- (id)resultCell;
 
 @end

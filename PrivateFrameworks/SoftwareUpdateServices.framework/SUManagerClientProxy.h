@@ -23,13 +23,6 @@
 
 
 - (BOOL)isForeground;
-- (int)type;
-- (id)identifier;
-- (void)setType:(int)arg1;
-- (int)pid;
-- (void)_applicationStateChanged:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (BOOL)isApplication;
 - (void)wakeupIfNecessary;
 - (void)_evaluateMessagability;
@@ -38,5 +31,12 @@
 - (void)_evaluateForegroundness;
 - (BOOL)_isStateMessagable:(unsigned int)arg1;
 - (id)initWithConnection:(struct _xpc_connection_s { }*)arg1 queue:(struct dispatch_queue_s { }*)arg2 target:(id)arg3;
+- (id)description;
+- (void)dealloc;
+- (void)_applicationStateChanged:(id)arg1;
+- (int)pid;
+- (int)type;
+- (id)identifier;
+- (void)setType:(int)arg1;
 
 @end

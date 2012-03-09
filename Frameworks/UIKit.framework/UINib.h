@@ -9,6 +9,7 @@
 + (id)nibWithData:(id)arg1 bundle:(id)arg2;
 + (id)nibWithNibName:(id)arg1 bundle:(id)arg2;
 
+- (void)dealloc;
 - (id)unarchiverForInstantiatingReturningError:(id*)arg1;
 - (id)lazyArchiveData;
 - (id)effectiveBundle;
@@ -25,6 +26,5 @@
 - (id)initWithContentsOfFile:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

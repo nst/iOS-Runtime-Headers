@@ -22,15 +22,15 @@
 + (id)textureWithContentsOfURL:(id)arg1;
 + (id)textureWithContentsOfFile:(id)arg1;
 
-- (BOOL)hasAlpha;
-- (unsigned int)internalFormat;
-- (BOOL)createGLTexture;
-- (BOOL)unpackPVRData:(id)arg1;
+- (void)dealloc;
 - (id)initWithContentsOfURL:(id)arg1;
 - (unsigned int)height;
 - (unsigned int)width;
 - (unsigned int)name;
 - (id)initWithContentsOfFile:(id)arg1;
-- (void)dealloc;
+- (BOOL)hasAlpha;
+- (unsigned int)internalFormat;
+- (BOOL)createGLTexture;
+- (BOOL)unpackPVRData:(id)arg1;
 
 @end

@@ -22,11 +22,11 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setStatus:(id)arg1;
-- (id)collection;
-- (id)status;
 - (id)description;
 - (void)dealloc;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (id)collection;
 - (id)initWithDataclass:(int)arg1;
 - (void)_processMeetingRequestDatasForAccount:(id)arg1;
 - (void)setCollections:(id)arg1;

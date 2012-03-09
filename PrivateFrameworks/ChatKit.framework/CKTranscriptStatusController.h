@@ -25,15 +25,7 @@
 @property(retain) CKAggregateConversation * conversation;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)refresh;
-- (void)resume;
-- (void)reset;
-- (id)_title;
-- (id)title;
-- (void)suspend;
-- (id)delegate;
-- (void)setTitle:(id)arg1;
+- (void)dealloc;
 - (void)_updateTitle:(BOOL)arg1;
 - (void)_hideName;
 - (void)_updateCurrentMessages;
@@ -52,6 +44,14 @@
 - (void)resetProgress;
 - (id)conversation;
 - (void)setConversation:(id)arg1;
-- (void)dealloc;
+- (void)refresh;
+- (void)resume;
+- (void)reset;
+- (id)_title;
+- (id)title;
+- (void)suspend;
+- (id)delegate;
+- (void)setTitle:(id)arg1;
+- (void)setDelegate:(id)arg1;
 
 @end

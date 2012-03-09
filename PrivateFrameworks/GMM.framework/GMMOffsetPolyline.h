@@ -14,15 +14,15 @@
 @property(retain) NSData * relativePoints;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)relativePoints;
 - (id)absolutePoint;
 - (BOOL)hasRelativePoints;
 - (void)setRelativePoints:(id)arg1;
 - (void)setAbsolutePoint:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

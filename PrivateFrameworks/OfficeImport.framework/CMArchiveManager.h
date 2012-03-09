@@ -21,6 +21,11 @@
 + (id)resourceTypeToMIME:(int)arg1;
 + (id)resourceTypeToExtension:(int)arg1;
 
+- (BOOL)isCancelled;
+- (id)init;
+- (void)dealloc;
+- (void)setPageCount:(unsigned int)arg1;
+- (unsigned int)pageCount;
 - (void)setCommitInterval:(float)arg1;
 - (void)setAutoCommit:(BOOL)arg1;
 - (id)_validateData:(id)arg1 withType:(int*)arg2;
@@ -52,10 +57,5 @@
 - (BOOL)isOnPhone;
 - (BOOL)isThumbnail;
 - (void)setIsThumbnail:(BOOL)arg1;
-- (void)setPageCount:(unsigned int)arg1;
-- (unsigned int)pageCount;
-- (BOOL)isCancelled;
-- (id)init;
-- (void)dealloc;
 
 @end

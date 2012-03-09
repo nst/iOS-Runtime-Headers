@@ -20,6 +20,7 @@
 
 - (id)inputRotation;
 - (void)setInputRotation:(id)arg1;
+- (void)setInputPoint:(id)arg1;
 - (id)inputPoint;
 - (id)inputAmount;
 - (void)setInputAmount:(id)arg1;
@@ -28,6 +29,5 @@
 - (id)inputImage;
 - (id)outputImage;
 - (void)setDefaults;
-- (void)setInputPoint:(id)arg1;
 
 @end

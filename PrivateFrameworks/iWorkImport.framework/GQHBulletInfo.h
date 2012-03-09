@@ -16,14 +16,15 @@
 }
 
 
+- (void)dealloc;
 - (void)setNumber:(int)arg1;
-- (int)textIndent;
-- (void)setTextIndent:(int)arg1;
 - (int)number;
 - (int)type;
 - (id)style;
 - (void)setStyle:(id)arg1;
 - (void)setType:(int)arg1;
+- (int)textIndent;
+- (void)setTextIndent:(int)arg1;
 - (void)setBulletIndent:(int)arg1;
 - (void)setHasNumber:(BOOL)arg1;
 - (BOOL)hasNumber;
@@ -33,6 +34,5 @@
 - (int)bulletIndent;
 - (struct __CFString { }*)createTierStringNumber;
 - (int)labelType;
-- (void)dealloc;
 
 @end

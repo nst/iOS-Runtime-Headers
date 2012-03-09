@@ -15,6 +15,9 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 - (BOOL)hasAspectRatioLocked;
 - (BOOL)isAspectRatioLocked;
 - (void)setAspectRatioLocked:(BOOL)arg1;
@@ -32,8 +35,5 @@
 - (void)removeUnnecessaryOverrides;
 - (id)orientedBounds;
 - (id)initWithDefaults;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 
 @end

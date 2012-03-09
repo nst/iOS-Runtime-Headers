@@ -15,12 +15,12 @@
 @property(getter=isFooterVisible) BOOL footerVisible;
 
 
+- (void)dealloc;
 - (void)setFooterView:(id)arg1;
 - (id)footerView;
 - (void)setContentView:(id)arg1;
 - (id)contentView;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (BOOL)isFooterVisible;
 - (void)setFooterVisible:(BOOL)arg1;
 

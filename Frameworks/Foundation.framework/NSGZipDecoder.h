@@ -38,7 +38,6 @@
 + (BOOL)decodeDownloadHeader:(id)arg1 headerLength:(int*)arg2 modificationTime:(unsigned int*)arg3 filename:(id*)arg4;
 + (id)MIMEType;
 
-- (void)finalize;
 - (id)filenameWithOriginalFilename:(id)arg1;
 - (BOOL)finishDownloadDecoding;
 - (BOOL)decodeDownloadData:(id)arg1 dataForkData:(id*)arg2 resourceForkData:(id*)arg3;
@@ -47,5 +46,6 @@
 - (id)fileAttributes;
 - (id)init;
 - (void)dealloc;
+- (void)finalize;
 
 @end

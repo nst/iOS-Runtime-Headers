@@ -15,9 +15,9 @@
 @property(readonly) NSString * MIMEType;
 
 
-- (id)MIMEType;
 - (id)init;
 - (void)dealloc;
+- (id)MIMEType;
 - (void)setContentEncoding:(id)arg1;
 - (id)copyBodyInputSource;
 - (id)contentEncoding;

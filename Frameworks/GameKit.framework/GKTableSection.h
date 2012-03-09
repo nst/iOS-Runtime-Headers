@@ -21,6 +21,8 @@
 @property int loadingState;
 
 
+- (id)init;
+- (void)dealloc;
 - (int)loadingState;
 - (void)setUsesTopCapTitle:(BOOL)arg1;
 - (void)setAbbreviatedTitle:(id)arg1;
@@ -40,7 +42,5 @@
 - (void)setVisibleItems:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -5,8 +5,8 @@
 @interface PFUbiquityLogging : NSObject  {
 }
 
-+ (BOOL)canLogMessageAtLevel:(int)arg1;
 + (void)initialize;
++ (BOOL)canLogMessageAtLevel:(int)arg1;
 
 - (id)init;
 - (void)dealloc;

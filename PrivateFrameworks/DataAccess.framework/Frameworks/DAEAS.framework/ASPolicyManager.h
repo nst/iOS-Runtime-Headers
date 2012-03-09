@@ -13,8 +13,8 @@
 
 
 - (id)initWithAccount:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (id)currentPolicyKey;
 - (void)requestPolicyUpdate;
 - (BOOL)updatingPolicy;

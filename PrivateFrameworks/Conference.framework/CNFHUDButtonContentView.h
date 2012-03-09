@@ -15,7 +15,9 @@
 @property(retain) UIImageView * imageView;
 
 
+- (void)dealloc;
 - (void)setTitleLabel:(id)arg1;
+- (id)initWithTitle:(id)arg1 image:(id)arg2;
 - (void)setImageView:(id)arg1;
 - (void)setOrientation:(int)arg1;
 - (id)imageView;
@@ -23,7 +25,5 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)titleLabel;
 - (void)layoutSubviews;
-- (void)dealloc;
-- (id)initWithTitle:(id)arg1 image:(id)arg2;
 
 @end

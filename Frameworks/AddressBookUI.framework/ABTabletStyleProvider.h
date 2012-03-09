@@ -6,7 +6,6 @@
 }
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)serverSearchNavigationBarHidingEnabled;
 - (BOOL)searchControllerForceKeyboardDisplayEnabled;
 - (float)personValueFontMinSize;
@@ -37,5 +36,6 @@
 - (id)membersHeaderBackgroundColor;
 - (BOOL)membersSearchBarScrolls;
 - (BOOL)searchIsAlwaysActive;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

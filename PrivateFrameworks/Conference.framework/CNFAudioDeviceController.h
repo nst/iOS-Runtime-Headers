@@ -15,6 +15,7 @@
 @property(retain) NSString * currentAudioRoute;
 
 
+- (void)dealloc;
 - (void)pickRouteAtIndex:(unsigned int)arg1;
 - (void)restorePickedRoute;
 - (BOOL)pickHandsetRoute;
@@ -35,8 +36,6 @@
 - (void)_registerForAVControllerNotifications;
 - (BOOL)routeOtherThanHandsetIsAvailable;
 - (void)setAVController:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)dealloc;
 - (BOOL)pickRouteWithUID:(id)arg1;
 - (BOOL)isAirPlayMirroring;
 - (BOOL)audioCategoryIsTTY;
@@ -46,5 +45,6 @@
 - (void)invalidateAVController;
 - (void)_pickableRoutesChanged;
 - (BOOL)auxiliaryAudioRoutesAvailable;
+- (void)setDelegate:(id)arg1;
 
 @end

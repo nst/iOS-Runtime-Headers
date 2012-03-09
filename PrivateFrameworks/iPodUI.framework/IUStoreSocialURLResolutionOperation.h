@@ -13,12 +13,12 @@
 @property(readonly) NSURL * outputURL;
 
 
-- (void)run;
+- (id)init;
+- (void)dealloc;
 - (id)outputURL;
+- (void)run;
 - (void)_setOutputURL:(id)arg1;
 - (id)socialActionType;
 - (id)initWithSocialActionType:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

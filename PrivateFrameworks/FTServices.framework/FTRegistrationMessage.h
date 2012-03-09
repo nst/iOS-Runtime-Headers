@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSString, NSData, NSArray;
+@class NSArray, NSString, NSData, NSNumber;
 
 @interface FTRegistrationMessage : FTIDSMessage <NSCopying> {
     NSData *_validationData;
@@ -12,6 +12,7 @@
     NSArray *_capabilities;
     NSString *_softwareVersion;
     NSString *_protocolVersion;
+    NSNumber *_responseNextHBI;
 }
 
 @property(copy) NSData * validationData;
@@ -21,16 +22,14 @@
 @property(copy) NSString * protocolVersion;
 @property(copy) NSArray * capabilities;
 @property(copy) NSArray * responseBindings;
+@property(copy) NSNumber * responseNextHBI;
 
 
+- (id)capabilities;
 - (id)messageBody;
-- (void)setProtocolVersion:(id)arg1;
-- (id)protocolVersion;
-- (id)responseBindings;
-- (void)setSoftwareVersion:(id)arg1;
-- (void)setValidationData:(id)arg1;
-- (id)validationData;
-- (void)setCapabilities:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)setResponseNextHBI:(id)arg1;
 - (void)setResponseBindings:(id)arg1;
 - (id)softwareVersion;
 - (void)handleResponseDictionary:(id)arg1;
@@ -38,13 +37,18 @@
 - (id)additionalMessageHeaders;
 - (BOOL)hasRequiredKeys:(id*)arg1;
 - (id)requiredKeys;
+- (void)setProtocolVersion:(id)arg1;
+- (id)protocolVersion;
+- (id)bagKey;
+- (void)setCapabilities:(id)arg1;
 - (id)hardwareVersion;
 - (id)osVersion;
 - (void)setOsVersion:(id)arg1;
 - (void)setHardwareVersion:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)capabilities;
-- (id)bagKey;
+- (id)responseNextHBI;
+- (id)responseBindings;
+- (void)setSoftwareVersion:(id)arg1;
+- (void)setValidationData:(id)arg1;
+- (id)validationData;
 
 @end

@@ -14,6 +14,8 @@
 
 + (struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)appNamespace;
 
+- (id)init;
+- (void)dealloc;
 - (Class)classForName:(const char *)arg1;
 - (BOOL)includeStyleWithIdentifier:(const char *)arg1 parentIdentifier:(const char *)arg2 uid:(const char *)arg3;
 - (BOOL)readDocumentVersion:(struct _xmlTextReader { }*)arg1;
@@ -27,10 +29,9 @@
 - (struct __CFURL { }*)appBundleResourcesUrl;
 - (BOOL)appBundleCanProcessCurrentDocVersion;
 - (BOOL)addObject:(id)arg1 withOwnedXmlUid:(const char *)arg2;
-- (void)forgetAboutObjectWithXmlUid:(const char *)arg1;
+- (void)forgetAboutObject:(id)arg1 withXmlUid:(const char *)arg2;
 - (const char *)addIdentifiedObject:(id)arg1 fromCurrentNode:(struct _xmlTextReader { }*)arg2;
 - (id)objectWithXmlUid:(const char *)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)uuid;
 
 @end

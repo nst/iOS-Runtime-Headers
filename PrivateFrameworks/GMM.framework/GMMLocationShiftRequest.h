@@ -11,14 +11,14 @@
 @property(retain) GMMMapPoint * originalPoint;
 
 
-- (Class)responseClass;
-- (BOOL)readFrom:(id)arg1;
-- (id)originalPoint;
-- (void)setOriginalPoint:(id)arg1;
-- (unsigned int)requestTypeCode;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
 - (id)description;
 - (void)dealloc;
+- (Class)responseClass;
+- (id)dictionaryRepresentation;
+- (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (void)writeTo:(id)arg1;
+- (id)originalPoint;
+- (void)setOriginalPoint:(id)arg1;
 
 @end

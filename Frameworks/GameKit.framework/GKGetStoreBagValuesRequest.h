@@ -11,6 +11,7 @@
 @property(retain) NSArray * keys;
 
 
+- (void)dealloc;
 - (BOOL)authenticationRequired;
 - (Class)responseClass;
 - (id)header;
@@ -19,6 +20,5 @@
 - (id)keys;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

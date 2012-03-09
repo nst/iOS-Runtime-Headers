@@ -20,19 +20,19 @@
 @property(retain) GKLeaderboardCategoryInternal * internal;
 
 
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)loadImageWithCompletionHandler:(id)arg1;
 - (id)imageURL;
 - (id)internal;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (void)setInternal:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (id)valueForUndefinedKey:(id)arg1;
 - (id)image;
 - (void)setImage:(id)arg1;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

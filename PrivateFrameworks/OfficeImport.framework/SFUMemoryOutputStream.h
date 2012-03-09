@@ -9,15 +9,15 @@
 }
 
 
+- (void)dealloc;
+- (void)close;
+- (long long)offset;
+- (id)initWithData:(id)arg1;
 - (void)seekToOffset:(long long)arg1 whence:(int)arg2;
 - (BOOL)canCreateInputStream;
 - (id)inputStream;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 - (id)closeLocalStream;
 - (BOOL)canSeek;
-- (void)close;
-- (long long)offset;
-- (id)initWithData:(id)arg1;
-- (void)dealloc;
 
 @end

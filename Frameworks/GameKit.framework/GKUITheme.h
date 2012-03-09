@@ -89,7 +89,6 @@
 @property(readonly) UIImage * ratingStarsForegroundOnHeaderImage;
 @property(readonly) UIImage * ratingStarsLargeBackgroundOnHeaderImage;
 @property(readonly) UIImage * ratingStarsLargeForegroundOnHeaderImage;
-@property(readonly) UIImage * multiplayerBadgeImage;
 @property(readonly) UIImage * interactiveRatingStarsForeground;
 @property(readonly) UIImage * interactiveRatingStarsBackground;
 @property(readonly) UIImage * inviteButtonImage;
@@ -105,6 +104,8 @@
 + (id)themeForGame:(id)arg1;
 + (id)sharedTheme;
 
+- (id)init;
+- (void)dealloc;
 - (id)matchmakerAppOutline;
 - (id)welcomeScreenRightSquare;
 - (id)welcomeScreenLeftSquare;
@@ -130,6 +131,7 @@
 - (id)tabbarIconMeActive:(BOOL)arg1;
 - (id)tabbarIconGamesActive:(BOOL)arg1;
 - (id)tabbarIconFriendsActive:(BOOL)arg1;
+- (id)tabbarCornerImage;
 - (id)tabbarShadowImage;
 - (id)tabbarLandscapeImage;
 - (id)navbarFocusButtonForControlState:(unsigned int)arg1 barMetrics:(int)arg2;
@@ -139,6 +141,8 @@
 - (id)achievementsCompareCheckMark;
 - (id)achievementsCompareCellShortSeparator;
 - (id)achievementsCompareCellSeparator;
+- (id)navbarSplitCornerImage;
+- (id)navbarCornerImage;
 - (id)navbarShadowImage;
 - (id)eventIconImage;
 - (id)gameDetailSectionTitleBackgroundImage;
@@ -183,7 +187,6 @@
 - (id)removeButtonImage;
 - (id)inviteButtonPressedImage;
 - (id)inviteButtonImage;
-- (id)multiplayerBadgeImage;
 - (id)ratingStarsLargeForegroundOnHeaderImage;
 - (id)ratingStarsLargeBackgroundOnHeaderImage;
 - (id)ratingStarsForegroundOnHeaderImage;
@@ -339,7 +342,5 @@
 - (id)backgroundImage;
 - (id)imageNamed:(id)arg1;
 - (id)shadowColor;
-- (id)init;
-- (void)dealloc;
 
 @end

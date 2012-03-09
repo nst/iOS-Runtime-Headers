@@ -14,6 +14,8 @@
 }
 
 
+- (id)initWithString:(id)arg1;
+- (void)dealloc;
 - (void)skipWhitespace;
 - (id)parseObject;
 - (id)parseArray;
@@ -27,7 +29,5 @@
 - (id)parseTrue;
 - (id)parseFalse;
 - (id)parseNumber;
-- (id)initWithString:(id)arg1;
-- (void)dealloc;
 
 @end

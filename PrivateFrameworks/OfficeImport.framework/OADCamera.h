@@ -12,18 +12,18 @@
 }
 
 
-- (void)setFieldOfView:(float)arg1;
-- (void)setZoom:(float)arg1;
-- (int)cameraType;
-- (float)fieldOfView;
-- (float)zoom;
-- (void)setRotation:(id)arg1;
-- (id)rotation;
-- (void)setCameraType:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)setCameraType:(int)arg1;
+- (void)setRotation:(id)arg1;
+- (id)rotation;
+- (void)setFieldOfView:(float)arg1;
+- (void)setZoom:(float)arg1;
+- (int)cameraType;
+- (float)fieldOfView;
+- (float)zoom;
 
 @end

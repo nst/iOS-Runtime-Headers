@@ -6,8 +6,8 @@
 }
 
 
+- (id)init;
 - (Class)responseClass;
 - (void)handleResponseFromServer:(id)arg1;
-- (id)init;
 
 @end

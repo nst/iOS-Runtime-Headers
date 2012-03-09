@@ -22,12 +22,12 @@
 + (id)defaultInputDevice;
 + (id)defaultOutputDevice;
 
+- (id)init;
+- (void)dealloc;
 - (id)devices;
 - (id)inputDevices;
 - (id)outputDevices;
 - (void)setChangeListener:(id)arg1;
 - (id)changeListener;
-- (id)init;
-- (void)dealloc;
 
 @end

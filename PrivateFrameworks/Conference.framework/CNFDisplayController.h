@@ -99,30 +99,11 @@
 + (void)preinitialize;
 + (void)loadImages;
 
-- (void)_applicationSuspended:(id)arg1;
-- (void)setManagesStatusBar:(BOOL)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)_bounceValueForFraction:(float)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidUnload;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)didReceiveMemoryWarning;
-- (id)delegate;
-- (void)setContactImage:(id)arg1;
-- (void)startPreview;
-- (void)stopPreview;
-- (id)bottomBar;
 - (id)init;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
+- (void)_applicationSuspended:(id)arg1;
+- (void)setManagesStatusBar:(BOOL)arg1;
 - (void)_deviceOrientationDidChange:(id)arg1;
 - (struct CGSize { float x1; float x2; })_normalizedScreenSizeForOrientation:(int)arg1;
 - (int)_deviceOrientationForIMAVCameraOrientation:(unsigned int)arg1;
@@ -189,7 +170,6 @@
 - (void)_avFirstRemoteFrameArrived:(id)arg1;
 - (void)_avRemoteVideoDidChange:(id)arg1;
 - (void)_avRemotePauseDidChange:(id)arg1;
-- (void)_applicationResumed:(id)arg1;
 - (BOOL)_isValidFaceTimeOrientation:(int)arg1;
 - (BOOL)supportsAutoRotation;
 - (id)initWithDelegate:(id)arg1 options:(unsigned int)arg2;
@@ -336,5 +316,25 @@
 - (BOOL)isShowingLock;
 - (void)_flipRemoteCameraViewAnimated:(BOOL)arg1 withCompletion:(id)arg2;
 - (void)showRemoteViewAsPaused:(BOOL)arg1;
+- (void)setContactImage:(id)arg1;
+- (void)startPreview;
+- (void)stopPreview;
+- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (float)_bounceValueForFraction:(float)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)didReceiveMemoryWarning;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)_applicationResumed:(id)arg1;
+- (id)bottomBar;
 
 @end

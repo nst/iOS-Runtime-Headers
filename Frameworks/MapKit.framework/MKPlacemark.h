@@ -14,9 +14,9 @@
 
 
 - (id)countryCode;
-- (struct { double x1; double x2; })coordinate;
 - (id)title;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 addressDictionary:(id)arg2;
+- (struct { double x1; double x2; })coordinate;
 - (id)thoroughfare;
 
 @end

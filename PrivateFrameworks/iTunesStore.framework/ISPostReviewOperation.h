@@ -13,11 +13,11 @@
 @property(retain) ISReview * review;
 
 
-- (void)run;
+- (void)dealloc;
 - (id)_httpBody;
 - (void)setBackgroundReview:(BOOL)arg1;
 - (BOOL)isBackgroundReview;
-- (void)dealloc;
+- (void)run;
 - (id)review;
 - (void)setReview:(id)arg1;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;

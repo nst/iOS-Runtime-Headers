@@ -20,15 +20,29 @@
     } _managedObjectModelFlags;
 }
 
++ (id)mergedModelFromBundles:(id)arg1;
++ (void)initialize;
 + (id)mergedModelFromBundles:(id)arg1 forStoreMetadata:(id)arg2;
 + (id)_modelPathsFromBundles:(id)arg1;
 + (id)modelByMergingModels:(id)arg1;
 + (void)_deepCollectEntitiesInArray:(id)arg1 entity:(id)arg2;
 + (id)modelByMergingModels:(id)arg1 forStoreMetadata:(id)arg2;
 + (id)_newModelFromOptimizedEncoding:(id)arg1 error:(id*)arg2;
-+ (id)mergedModelFromBundles:(id)arg1;
-+ (void)initialize;
 
+- (void)setEntities:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)initWithContentsOfURL:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)isEditable;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)entities;
 - (id)initWithContentsOfURL:(id)arg1 forStoreMetadata:(id)arg2;
 - (id)_precomputedKeysForEntity:(id)arg1;
 - (id)_configurationsByName;
@@ -72,19 +86,5 @@
 - (id)entitiesForConfiguration:(id)arg1;
 - (id)entitiesByName;
 - (id)versionHash;
-- (id)entities;
-- (id)initWithContentsOfURL:(id)arg1;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isEditable;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setEntities:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

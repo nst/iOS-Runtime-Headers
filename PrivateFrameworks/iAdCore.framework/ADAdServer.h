@@ -16,9 +16,15 @@
 @property(retain) NSMapTable * bannersToRequesters;
 @property(retain) NSTimer * requiredPropertiesAcquisitionTimeout;
 
-+ (id)sharedAdServer;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)sharedAdServer;
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
 - (id)requiredPropertiesAcquisitionTimeout;
 - (void)setBannersToRequesters:(id)arg1;
 - (id)bannersToRequesters;
@@ -36,11 +42,5 @@
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidFinish:(id)arg1;
 - (void)requester:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (id)init;
-- (oneway void)release;
 
 @end

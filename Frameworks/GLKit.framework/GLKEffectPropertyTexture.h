@@ -44,6 +44,17 @@
 
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
+- (void)setName:(unsigned int)arg1;
+- (void)setTarget:(int)arg1;
+- (id)description;
+- (int)target;
+- (id)init;
+- (void)dealloc;
+- (void)bind;
+- (id)filePath;
+- (unsigned char)enabled;
+- (void)setEnabled:(unsigned char)arg1;
+- (unsigned int)name;
 - (id)texGenArray;
 - (void)setUnitCubeLoc:(int)arg1;
 - (int)unitCubeLoc;
@@ -79,16 +90,5 @@
 - (unsigned char)normalizedNormalsMask;
 - (unsigned char)useTexCoordAttribMask;
 - (void)dirtyAllUniforms;
-- (unsigned char)enabled;
-- (void)setEnabled:(unsigned char)arg1;
-- (unsigned int)name;
-- (void)bind;
-- (void)setName:(unsigned int)arg1;
-- (void)setTarget:(int)arg1;
-- (id)description;
-- (int)target;
-- (id)init;
-- (void)dealloc;
-- (id)filePath;
 
 @end

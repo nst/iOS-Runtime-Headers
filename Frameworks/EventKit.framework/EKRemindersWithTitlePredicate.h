@@ -12,13 +12,13 @@
 
 + (id)predicateWithTitle:(id)arg1 calendars:(id)arg2;
 
-- (id)predicateFormat;
-- (BOOL)evaluateWithObject:(id)arg1;
+- (void)dealloc;
 - (id)initWithTitle:(id)arg1 calendars:(id)arg2;
 - (id)queryTitle;
 - (id)title;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
+- (id)predicateFormat;
+- (BOOL)evaluateWithObject:(id)arg1;
 
 @end

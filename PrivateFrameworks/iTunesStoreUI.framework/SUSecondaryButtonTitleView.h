@@ -18,6 +18,8 @@
 @property(retain) UIView * titleView;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setNavigationItem:(id)arg1;
 - (id)navigationItem;
 - (void)setCustomTitleView:(BOOL)arg1;
@@ -26,8 +28,6 @@
 - (id)titleView;
 - (void)sizeToFit;
 - (void)layoutSubviews;
-- (id)init;
-- (void)dealloc;
 - (void)setButtonItem:(id)arg1;
 - (BOOL)isCustomTitleView;
 - (id)buttonItem;

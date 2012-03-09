@@ -35,7 +35,7 @@
 
 + (void)addLongPressGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 minimumPressDuration:(double)arg4 touchCount:(int)arg5;
 
-- (void)invalidate;
+- (void)dealloc;
 - (float)allowableMovement;
 - (void)tapRecognizerFailedToRecognizeTap:(id)arg1;
 - (void)tapRecognizerRecognizedTap:(id)arg1;
@@ -72,8 +72,8 @@
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (void)setView:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)invalidate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -17,8 +17,8 @@
 + (void)_registerIMRemoteObject:(id)arg1;
 + (void)initialize;
 
-- (void)invalidate;
-- (void)finalize;
+- (id)description;
+- (void)dealloc;
 - (void)_informClientOfDisconnect;
 - (id)initWithPortName:(id)arg1 protocol:(id)arg2;
 - (unsigned int)forwardComponentArray:(id)arg1;
@@ -30,11 +30,11 @@
 - (id)portName;
 - (void)_portDidBecomeInvalid;
 - (id)initWithPort:(unsigned int)arg1 protocol:(id)arg2;
+- (void)finalize;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)isValid;
-- (id)description;
-- (void)dealloc;
+- (void)invalidate;
 - (struct dispatch_queue_s { }*)_queue;
 
 @end

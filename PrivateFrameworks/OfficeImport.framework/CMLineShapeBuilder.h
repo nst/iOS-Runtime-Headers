@@ -9,6 +9,7 @@
 }
 
 
+- (void)dealloc;
 - (void)_renderBentConnector2InPath:(struct CGPath { }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 andOrientedBounds:(id)arg3 headSrc:(struct CGPoint { float x1; float x2; }*)arg4 headDst:(struct CGPoint { float x1; float x2; }*)arg5 tailSrc:(struct CGPoint { float x1; float x2; }*)arg6 tailDst:(struct CGPoint { float x1; float x2; }*)arg7;
 - (void)_renderBentConnector3InPath:(struct CGPath { }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 andOrientedBounds:(id)arg3 headSrc:(struct CGPoint { float x1; float x2; }*)arg4 headDst:(struct CGPoint { float x1; float x2; }*)arg5 tailSrc:(struct CGPoint { float x1; float x2; }*)arg6 tailDst:(struct CGPoint { float x1; float x2; }*)arg7;
 - (void)_renderStraightConnector1InPath:(struct CGPath { }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 andOrientedBounds:(id)arg3 headSrc:(struct CGPoint { float x1; float x2; }*)arg4 headDst:(struct CGPoint { float x1; float x2; }*)arg5 tailSrc:(struct CGPoint { float x1; float x2; }*)arg6 tailDst:(struct CGPoint { float x1; float x2; }*)arg7;
@@ -18,6 +19,5 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundingBoxForLineEnd:(id)arg1;
 - (struct CGPath { }*)createShapeWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setStroke:(id)arg1;
-- (void)dealloc;
 
 @end

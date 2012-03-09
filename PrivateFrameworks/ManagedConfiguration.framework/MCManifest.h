@@ -14,7 +14,8 @@
 + (id)installedProfileWithIdentifier:(id)arg1;
 + (id)sharedManifest;
 
-- (id)manifest;
+- (id)init;
+- (void)dealloc;
 - (id)allInstalledProfileIdentifiers;
 - (void)addIdentifierToManifest:(id)arg1 flag:(int)arg2;
 - (void)removeIdentifierFromManifest:(id)arg1;
@@ -22,7 +23,6 @@
 - (id)identifiersOfProfilesWithFilterFlags:(int)arg1;
 - (void)_setManifest:(id)arg1;
 - (void)invalidateCache;
-- (id)init;
-- (void)dealloc;
+- (id)manifest;
 
 @end

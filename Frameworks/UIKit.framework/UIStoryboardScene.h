@@ -11,8 +11,8 @@
 @property(retain) UIViewController * sceneViewController;
 
 
+- (void)dealloc;
 - (void)setSceneViewController:(id)arg1;
 - (id)sceneViewController;
-- (void)dealloc;
 
 @end

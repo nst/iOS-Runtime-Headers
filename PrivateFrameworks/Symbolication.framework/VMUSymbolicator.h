@@ -25,9 +25,9 @@
 + (id)symbolicatorForPath:(id)arg1 architecture:(id)arg2;
 + (BOOL)isIgnoreFunctionSymbols;
 
-- (id)signature;
-- (id)path;
-- (id)symbols;
+- (id)description;
+- (void)dealloc;
+- (id)regions;
 - (int)pid;
 - (id)initWithSymbolOwners:(id)arg1 path:(id)arg2 machTaskContainer:(id)arg3;
 - (id)programTextForAddress:(unsigned long long)arg1;
@@ -56,8 +56,8 @@
 - (id)symbolsForMangledName:(id)arg1;
 - (id)sourceInfosInAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)architecture;
-- (id)description;
-- (void)dealloc;
-- (id)regions;
+- (id)symbols;
+- (id)path;
+- (id)signature;
 
 @end

@@ -14,23 +14,24 @@
 @property(retain) <IUGeniusMixQueueFeederDataSource> * dataSource;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
 - (unsigned int)realRepeatType;
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
+- (BOOL)shouldReloadForChangeFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;
 - (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
 - (id)localizedPositionInPlaylistString:(id)arg1;
+- (unsigned int)numberOfPaths;
+- (unsigned int)itemCount;
 - (id)query;
 - (id)dataSource;
 - (void)setDataSource:(id)arg1;
+- (id)pathAtIndex:(unsigned int)arg1;
 - (unsigned int)indexOfMediaItem:(id)arg1;
 - (BOOL)_configureWithMix:(id)arg1 dataSource:(id)arg2 startEntityIndex:(unsigned int)arg3 startPlayback:(BOOL)arg4;
 - (id)mediaItemAtIndex:(unsigned int)arg1;
 - (void)_appDefaultChangedNotification:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (unsigned int)numberOfPaths;
-- (id)pathAtIndex:(unsigned int)arg1;
-- (unsigned int)itemCount;
 
 @end

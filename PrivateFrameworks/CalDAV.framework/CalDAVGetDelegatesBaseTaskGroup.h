@@ -23,11 +23,11 @@
 @property BOOL serverSupportsExpandPropertyReport;
 
 
+- (void)dealloc;
+- (id)principalURL;
 - (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
 - (void)setPrincipalURL:(id)arg1;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
-- (id)principalURL;
-- (void)dealloc;
 - (id)readOnlyPrincipalDetails;
 - (id)readWritePrincipalDetails;
 - (void)setServerSupportsExpandPropertyReport:(BOOL)arg1;

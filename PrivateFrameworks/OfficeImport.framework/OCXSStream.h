@@ -9,12 +9,12 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)hasLevels;
 - (int)currentContextDepth;
 - (BOOL)popLevel;
 - (int)currentContextChildDepth;
 - (void)pushLevel:(int)arg1 name:(const char *)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

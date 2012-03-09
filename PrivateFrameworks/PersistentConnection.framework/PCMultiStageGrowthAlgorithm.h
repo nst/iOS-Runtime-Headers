@@ -26,6 +26,11 @@
 + (void)_loadDefaults;
 + (void)_loadDefaultValue:(double*)arg1 forKey:(struct __CFString { }*)arg2;
 
+- (id)description;
+- (void)dealloc;
+- (double)currentKeepAliveInterval;
+- (void)setMaximumKeepAliveInterval:(double)arg1;
+- (void)setMinimumKeepAliveInterval:(double)arg1;
 - (id)initWithKeepAliveInterval:(double)arg1 loggingIdentifier:(id)arg2 algorithmName:(id)arg3;
 - (id)loggingIdentifier;
 - (void)_resetAlgorithmToInterval:(double)arg1;
@@ -40,10 +45,5 @@
 - (void)_processBackoffAction:(int)arg1;
 - (void)processNextAction:(int)arg1;
 - (double)_steadyStateTimeout;
-- (double)currentKeepAliveInterval;
-- (void)setMaximumKeepAliveInterval:(double)arg1;
-- (void)setMinimumKeepAliveInterval:(double)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

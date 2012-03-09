@@ -13,7 +13,7 @@
 @property int iWidth;
 
 
-- (int)compare:(id)arg1;
+- (id)description;
 - (void)setIWidth:(int)arg1;
 - (void)setIHeight:(int)arg1;
 - (void)setFRate:(float)arg1;
@@ -21,6 +21,6 @@
 - (int)iHeight;
 - (float)fRate;
 - (id)initWithFrameWidth:(int)arg1 frameHeight:(int)arg2 frameRate:(float)arg3;
-- (id)description;
+- (int)compare:(id)arg1;
 
 @end

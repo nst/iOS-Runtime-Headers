@@ -7,14 +7,6 @@
 
 + (id)sharedEditingDelegate;
 
-- (id)undoManagerForWebView:(id)arg1;
-- (id)undoNameForMarsVoltaInsertion;
-- (BOOL)webView:(id)arg1 shouldDeleteDOMRange:(id)arg2;
-- (BOOL)webView:(id)arg1 shouldInsertText:(id)arg2 replacingDOMRange:(id)arg3 givenAction:(int)arg4;
-- (BOOL)webView:(id)arg1 shouldChangeSelectedDOMRange:(id)arg2 toDOMRange:(id)arg3 affinity:(int)arg4 stillSelecting:(BOOL)arg5;
-- (void)webViewDidChange:(id)arg1;
-- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1;
-- (id)supportedPasteboardTypesForCurrentSelection;
 - (BOOL)webView:(id)arg1 shouldShowDeleteInterfaceForElement:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldBeginEditingInDOMRange:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldEndEditingInDOMRange:(id)arg2;
@@ -27,5 +19,12 @@
 - (void)webViewDidEndEditing:(id)arg1;
 - (void)webViewDidChangeTypingStyle:(id)arg1;
 - (void)webViewDidChangeSelection:(id)arg1;
+- (id)undoManagerForWebView:(id)arg1;
+- (BOOL)webView:(id)arg1 shouldDeleteDOMRange:(id)arg2;
+- (BOOL)webView:(id)arg1 shouldInsertText:(id)arg2 replacingDOMRange:(id)arg3 givenAction:(int)arg4;
+- (BOOL)webView:(id)arg1 shouldChangeSelectedDOMRange:(id)arg2 toDOMRange:(id)arg3 affinity:(int)arg4 stillSelecting:(BOOL)arg5;
+- (void)webViewDidChange:(id)arg1;
+- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1;
+- (id)supportedPasteboardTypesForCurrentSelection;
 
 @end

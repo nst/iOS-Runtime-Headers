@@ -21,9 +21,14 @@
 + (id)appWithPropertyList:(id)arg1;
 
 - (BOOL)isPlaceholder;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)bundleVersion;
-- (id)bundleID;
 - (id)domain;
+- (id)bundleID;
+- (id)initWithPropertyList:(id)arg1;
 - (id)placeholderDomainWithCache:(id)arg1;
 - (id)infoPlist;
 - (BOOL)isEqualToApp:(id)arg1;
@@ -36,10 +41,5 @@
 - (id)safeHarborDir;
 - (id)containerDir;
 - (id)propertyListForBackupProperties;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)initWithPropertyList:(id)arg1;
 
 @end

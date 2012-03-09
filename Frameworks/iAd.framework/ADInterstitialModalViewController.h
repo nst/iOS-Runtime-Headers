@@ -17,7 +17,7 @@
 @property ADHostWindowController * owner;
 
 
-- (id)owner;
+- (void)dealloc;
 - (void)setInterstitialDelegate:(id)arg1;
 - (id)interstitialDelegate;
 - (id)interstitialView;
@@ -28,12 +28,12 @@
 - (void)interstitialViewActionDidFinish:(id)arg1;
 - (BOOL)interstitialViewActionShouldBegin:(id)arg1 willLeaveApplication:(BOOL)arg2;
 - (void)interstitialViewDidUnloadAd:(id)arg1;
-- (void)setHasAppeared:(BOOL)arg1;
-- (BOOL)hasAppeared;
-- (void)setOwner:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)dealloc;
+- (void)setOwner:(id)arg1;
+- (id)owner;
+- (void)setHasAppeared:(BOOL)arg1;
+- (BOOL)hasAppeared;
 
 @end

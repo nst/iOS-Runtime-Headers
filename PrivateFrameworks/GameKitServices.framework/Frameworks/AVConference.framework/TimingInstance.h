@@ -12,10 +12,10 @@
 
 + (id)createTimingInstanceWithStartTime:(float)arg1;
 
+- (id)description;
 - (void)setStartTiming:(float)arg1;
 - (void)setStopTiming:(float)arg1;
 - (float)stopTiming;
 - (float)startTiming;
-- (id)description;
 
 @end

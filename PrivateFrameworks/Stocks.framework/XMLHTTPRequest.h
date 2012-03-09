@@ -53,18 +53,18 @@
 + (void)appendDebugString:(id)arg1;
 + (id)uniqueQueryIDString;
 
-- (void)willParseData;
-- (void)didParseData;
-- (void)failWithError:(id)arg1;
 - (int)parseData:(id)arg1;
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
+- (id)connectionForRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (BOOL)isLoading;
 - (void)loadRequest:(id)arg1;
-- (id)connectionForRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
+- (void)willParseData;
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
 
 @end

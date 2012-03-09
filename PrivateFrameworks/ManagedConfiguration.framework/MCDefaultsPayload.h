@@ -12,13 +12,13 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (id)domains;
+- (id)description;
+- (void)dealloc;
 - (id)subtitle1Description;
 - (BOOL)_checkForValidDefaults:(id)arg1 outError:(id*)arg2;
 - (id)defaultsForDomain:(id)arg1;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
+- (id)domains;
 
 @end

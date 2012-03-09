@@ -29,6 +29,17 @@
 @property BOOL protected;
 
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
+- (id)pid;
+- (void)setPid:(id)arg1;
+- (void)setPath:(id)arg1;
+- (id)path;
+- (id)identifier;
+- (void)setIdentifier:(id)arg1;
+- (id)name;
+- (unsigned int)duration;
+- (void)setDuration:(unsigned int)arg1;
 - (id)artworkFile;
 - (void)setRingtone:(BOOL)arg1;
 - (void)setArtworkFile:(id)arg1;
@@ -39,17 +50,6 @@
 - (BOOL)isRingtone;
 - (BOOL)isPurchased;
 - (id)playbackProperties;
-- (id)path;
-- (unsigned int)duration;
-- (void)setDuration:(unsigned int)arg1;
-- (void)setPath:(id)arg1;
-- (id)identifier;
-- (void)setIdentifier:(id)arg1;
-- (id)name;
-- (id)pid;
-- (void)setPid:(id)arg1;
 - (void)setProtected:(BOOL)arg1;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

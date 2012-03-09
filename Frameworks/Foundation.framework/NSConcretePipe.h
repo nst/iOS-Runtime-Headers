@@ -10,11 +10,11 @@
 }
 
 
-- (void)finalize;
 - (id)fileHandleForWriting;
 - (id)fileHandleForReading;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)finalize;
 
 @end

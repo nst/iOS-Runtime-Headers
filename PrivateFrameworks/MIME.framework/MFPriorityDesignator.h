@@ -8,7 +8,7 @@
 
 + (id)currentDesignator;
 
-- (void)setPriority:(int)arg1;
 - (int)priority;
+- (void)setPriority:(int)arg1;
 
 @end

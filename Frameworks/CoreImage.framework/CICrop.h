@@ -14,13 +14,13 @@
 
 + (id)customAttributes;
 
+- (id)_initFromProperties:(id)arg1;
+- (id)_outputProperties;
 - (id)inputRectangle;
 - (void)setInputRectangle:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
 - (id)outputImage;
 - (void)setDefaults;
-- (id)_initFromProperties:(id)arg1;
-- (id)_outputProperties;
 
 @end

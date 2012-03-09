@@ -26,6 +26,13 @@
 - (id)initWithPredicateOperator:(id)arg1 leftKeyPath:(id)arg2 rightValue:(id)arg3;
 - (id)initWithLeftExpression:(id)arg1 rightExpression:(id)arg2 customSelector:(SEL)arg3;
 - (id)generateMetadataDescription;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (unsigned int)options;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)predicateFormat;
 - (id)predicateWithSubstitutionVariables:(id)arg1;
 - (id)initWithLeftExpression:(id)arg1 rightExpression:(id)arg2 modifier:(unsigned int)arg3 type:(unsigned int)arg4 options:(unsigned int)arg5;
@@ -37,13 +44,6 @@
 - (unsigned int)predicateOperatorType;
 - (id)predicateOperator;
 - (id)initWithPredicateOperator:(id)arg1 leftExpression:(id)arg2 rightExpression:(id)arg3;
-- (unsigned int)options;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)minimalFormInContext:(id)arg1;
 - (BOOL)_isForeignObjectExpression:(id)arg1 givenContext:(id)arg2;
 

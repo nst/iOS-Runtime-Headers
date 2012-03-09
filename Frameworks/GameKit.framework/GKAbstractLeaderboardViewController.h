@@ -45,6 +45,7 @@
 @property(retain) UISegmentedControl * landscapeScopeControl;
 
 
+- (void)dealloc;
 - (void)setLandscapeScopeControl:(id)arg1;
 - (id)landscapeScopeControl;
 - (void)setPortraitScopeControl:(id)arg1;
@@ -79,6 +80,7 @@
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (void)_gkResetContents;
 - (id)theme;
+- (id)player;
 - (void)authenticatedStatusChanged;
 - (void)setControllerForDelegate:(id)arg1;
 - (void)setLeaderboardDelegate:(id)arg1;
@@ -87,14 +89,13 @@
 - (id)initWithGame:(id)arg1;
 - (id)game;
 - (void)setCategoryID:(id)arg1;
+- (void)setPlayer:(id)arg1;
 - (void)leaderboardDidFinishLoading:(id)arg1;
 - (void)setGame:(id)arg1;
 - (void)leaderboardDidBeginLoading:(id)arg1;
 - (int)timeScope;
 - (void)setTimeScope:(int)arg1;
 - (id)categoryID;
-- (void)setPlayer:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
@@ -103,7 +104,6 @@
 - (void)viewDidLoad;
 - (float)marginForTableView:(id)arg1;
 - (id)delegate;
-- (id)player;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

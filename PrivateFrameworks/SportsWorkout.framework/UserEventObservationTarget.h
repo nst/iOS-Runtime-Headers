@@ -12,9 +12,9 @@
 
 + (id)targetWithEvent:(id)arg1 selector:(SEL)arg2;
 
-- (id)event;
-- (void)setEvent:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)event;
+- (void)setEvent:(id)arg1;
 
 @end

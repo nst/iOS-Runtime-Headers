@@ -22,20 +22,20 @@
 @property(readonly) double cancellationTime;
 
 
-- (id)searchDomains;
 - (id)initWithSearchString:(id)arg1;
-- (id)searchString;
-- (BOOL)cancelled;
-- (id)initWithSearchString:(id)arg1 forSearchDomains:(id)arg2;
-- (double)cancellationTime;
-- (double)creationTime;
-- (int)domainsVectorCount;
-- (char *)domainsVector;
-- (id)initWithSearchString:(id)arg1 andDomainsVector:(char *)arg2 vectorCount:(int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)cancel;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)initWithSearchString:(id)arg1 forSearchDomains:(id)arg2;
+- (id)searchString;
+- (BOOL)cancelled;
+- (double)cancellationTime;
+- (double)creationTime;
+- (int)domainsVectorCount;
+- (char *)domainsVector;
+- (id)initWithSearchString:(id)arg1 andDomainsVector:(char *)arg2 vectorCount:(int)arg3;
+- (id)searchDomains;
 
 @end

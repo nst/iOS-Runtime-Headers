@@ -5,6 +5,9 @@
 @interface ML3Artist : ML3Collection  {
 }
 
++ (id)defaultOrderingProperties;
++ (int)revisionTrackingCode;
++ (void)initialize;
 + (id)trackForeignPersistentID;
 + (id)propertiesForGroupingKey;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
@@ -12,9 +15,6 @@
 + (id)allProperties;
 + (id)databaseTable;
 + (id)joinClauseForProperty:(id)arg1;
-+ (int)revisionTrackingCode;
-+ (id)defaultOrderingProperties;
-+ (void)initialize;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
 
 - (void)updateTrackValues:(id)arg1;

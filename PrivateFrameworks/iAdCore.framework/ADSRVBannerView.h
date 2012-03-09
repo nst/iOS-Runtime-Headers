@@ -103,7 +103,20 @@
 
 + (id)bannerViewWithDefaultValues;
 
+- (void)dealloc;
+- (BOOL)paused;
+- (double)startTime;
+- (void)uiWebView:(id)arg1 resource:(id)arg2 didReceiveAuthenticationChallenge:(id)arg3 fromDataSource:(id)arg4;
+- (void)webViewDidFinishLoad:(id)arg1;
+- (void)uiWebView:(id)arg1 didClearWindowObject:(id)arg2 forFrame:(id)arg3;
+- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
+- (void)setPaused:(BOOL)arg1;
+- (void)setStartTime:(double)arg1;
+- (id)delegate;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHasSentVisibleNoContentError:(BOOL)arg1;
 - (BOOL)hasSentVisibleNoContentError;
 - (BOOL)interstitialPresentedInView;
@@ -194,7 +207,6 @@
 - (void)cacheLoadedBannerData:(id)arg1;
 - (void)cacheFailedToLoadBanner:(id)arg1 withError:(id)arg2;
 - (BOOL)contentVisible;
-- (void)setContentVisible:(BOOL)arg1;
 - (double)timeRemaining;
 - (void)setAuthenticationUserName:(id)arg1;
 - (id)authenticationUserName;
@@ -202,18 +214,6 @@
 - (void)setSpecification:(id)arg1;
 - (unsigned int)overclickCount;
 - (unsigned int)impressionSequence;
-- (BOOL)paused;
-- (double)startTime;
-- (void)uiWebView:(id)arg1 resource:(id)arg2 didReceiveAuthenticationChallenge:(id)arg3 fromDataSource:(id)arg4;
-- (void)webViewDidFinishLoad:(id)arg1;
-- (void)uiWebView:(id)arg1 didClearWindowObject:(id)arg2 forFrame:(id)arg3;
-- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (void)setPaused:(BOOL)arg1;
-- (void)setStartTime:(double)arg1;
-- (id)delegate;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
+- (void)setContentVisible:(BOOL)arg1;
 
 @end

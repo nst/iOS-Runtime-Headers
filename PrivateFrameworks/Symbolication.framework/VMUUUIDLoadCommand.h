@@ -9,9 +9,9 @@
 }
 
 
+- (void)dealloc;
 - (BOOL)isUUID;
 - (id)initWithMemory:(id)arg1;
 - (id)uuid;
-- (void)dealloc;
 
 @end

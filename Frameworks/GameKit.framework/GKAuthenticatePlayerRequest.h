@@ -19,6 +19,7 @@
 @property BOOL loginDisabled;
 
 
+- (void)dealloc;
 - (void)setAlertDictionary:(id)arg1;
 - (BOOL)validatePasswordOnly;
 - (BOOL)authenticationRequired;
@@ -35,6 +36,5 @@
 - (id)password;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

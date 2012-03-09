@@ -22,12 +22,16 @@
 @property(retain) NSString * title;
 @property(retain) WebScriptObject * target;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (void)initialize;
++ (id)webScriptNameForKey:(const char *)arg1;
 
+- (void)setTarget:(id)arg1;
+- (id)action;
+- (id)target;
+- (id)init;
+- (void)dealloc;
 - (BOOL)loading;
 - (void)setLoading:(BOOL)arg1;
-- (id)attributeKeys;
 - (void)_setStyle:(id)arg1;
 - (BOOL)enabled;
 - (void)_setEnabled:(BOOL)arg1;
@@ -42,11 +46,7 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setTarget:(id)arg1;
-- (id)action;
-- (id)target;
-- (id)init;
-- (void)dealloc;
+- (id)attributeKeys;
 - (void)setShouldPerformDefaultAction:(BOOL)arg1;
 - (BOOL)shouldPerformDefaultAction;
 - (id)_systemItemString;

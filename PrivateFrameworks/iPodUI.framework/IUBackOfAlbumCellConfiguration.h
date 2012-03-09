@@ -24,26 +24,26 @@
 + (float)widthForDuration:(double)arg1;
 + (float)rowHeightForGlobalContext:(id)arg1;
 
+- (id)init;
 - (id)artist;
-- (double)duration;
-- (void)setDuration:(double)arg1;
-- (void)setIndex:(unsigned int)arg1;
-- (unsigned int)cellIndex;
+- (BOOL)isPlaying;
 - (unsigned int)index;
 - (id)title;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (void)reloadData;
-- (BOOL)isPlaying;
+- (unsigned int)cellIndex;
+- (void)reloadLayoutInformation;
+- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (id)fontForLabelAtIndex:(unsigned int)arg1;
+- (void)drawWithModifiers:(unsigned int)arg1;
 - (void)setArtist:(id)arg1;
 - (void)setCellIndex:(unsigned int)arg1;
 - (id)untruncationCalloutString;
 - (void)setIsItemChapterData:(BOOL)arg1;
 - (BOOL)isItemChapterData;
 - (void)setPlaying:(BOOL)arg1;
-- (id)init;
-- (void)reloadLayoutInformation;
-- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
-- (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (void)drawWithModifiers:(unsigned int)arg1;
+- (void)setIndex:(unsigned int)arg1;
 
 @end

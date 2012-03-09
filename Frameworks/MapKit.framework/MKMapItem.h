@@ -32,6 +32,8 @@
 + (id)urlForMapItem:(id)arg1 options:(id)arg2;
 + (id)mapItemWithDictionary:(id)arg1;
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
@@ -50,7 +52,5 @@
 - (void)setPlacemark:(id)arg1;
 - (id)placemark;
 - (id)initWithPlacemark:(id)arg1;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

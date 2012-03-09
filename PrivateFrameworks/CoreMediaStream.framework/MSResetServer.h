@@ -15,13 +15,13 @@
 
 + (id)resetServerObjectWithPersonID:(id)arg1 baseURL:(id)arg2;
 
+- (void)dealloc;
+- (id)personID;
 - (void)resetServer;
 - (void)resetServerProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
 - (void)resetServerProtocol:(id)arg1 didFinishWithError:(id)arg2;
 - (id)daemon;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
 - (void)setDaemon:(id)arg1;
-- (id)personID;
-- (void)dealloc;
 
 @end

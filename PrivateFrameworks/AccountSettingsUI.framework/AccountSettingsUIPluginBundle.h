@@ -18,11 +18,11 @@
 @property(readonly) NSString * path;
 
 
-- (id)path;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1 parentController:(id)arg2 commonSpecifierMode:(int)arg3 accountTypes:(id)arg4;
 - (id)plugin;
 - (id)accountTypes;
 - (int)commonSpecifierMode;
+- (id)path;
 
 @end

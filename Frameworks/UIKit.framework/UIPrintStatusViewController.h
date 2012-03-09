@@ -12,6 +12,7 @@
 @property <UIPrintStatusDelegate> * printStatusDelegate;
 
 
+- (void)dealloc;
 - (void)setPrintStatusDelegate:(id)arg1;
 - (id)printStatusDelegate;
 - (void)jobDidCancel;
@@ -22,6 +23,5 @@
 - (void)viewDidLoad;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)dealloc;
 
 @end

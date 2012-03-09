@@ -21,6 +21,7 @@
 
 + (id)objectWithDefaultButtonForScriptButton:(id)arg1;
 
+- (void)dealloc;
 - (void)setLoading:(BOOL)arg1;
 - (void)buttonAction:(id)arg1;
 - (int)buttonType;
@@ -28,7 +29,6 @@
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (id)styleString;
-- (void)dealloc;
 - (id)systemItemString;
 - (void)setStyleFromString:(id)arg1;
 - (id)initWithSystemItemString:(id)arg1;

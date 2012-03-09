@@ -9,8 +9,8 @@
 }
 
 
-- (id)iteratorSpecification;
 - (id)init;
 - (void)dealloc;
+- (id)iteratorSpecification;
 
 @end

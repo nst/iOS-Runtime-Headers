@@ -14,10 +14,10 @@
 @property(readonly) long error;
 
 
+- (void)dealloc;
+- (long)error;
+- (id)signatureForData:(id)arg1;
 - (void)establishSession;
 - (id)initWithCertURL:(id)arg1 sessionURL:(id)arg2;
-- (id)signatureForData:(id)arg1;
-- (long)error;
-- (void)dealloc;
 
 @end

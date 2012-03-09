@@ -13,9 +13,9 @@
 @property(readonly) NSString * title;
 
 
-- (id)title;
 - (id)init;
 - (void)dealloc;
+- (id)title;
 - (id)completionItems;
 - (id)initWithPropertyList:(id)arg1;
 

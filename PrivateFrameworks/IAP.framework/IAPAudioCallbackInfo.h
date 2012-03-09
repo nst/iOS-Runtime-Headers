@@ -25,6 +25,8 @@
 
 + (id)sharedInstance;
 
+- (id)init;
+- (void)dealloc;
 - (void)clearVolumeControlSupportChangedCallback;
 - (void)setupVolumeControlSupportChangedCallback:(int (*)())arg1 withContext:(void*)arg2 andRunLoop:(struct __CFRunLoop { }*)arg3;
 - (void)clearPauseOnHeadphoneDisconnectChangedCallback;
@@ -38,7 +40,5 @@
 - (void)_volumeChanged:(id)arg1;
 - (void)_deviceStateChanged:(id)arg1;
 - (void)startNotificationCenterOnRunLoop:(struct __CFRunLoop { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

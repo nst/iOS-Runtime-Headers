@@ -16,7 +16,7 @@
 @property(copy) NSArray * composeImages;
 
 
-- (int)type;
+- (void)dealloc;
 - (void)setComposeData:(id)arg1;
 - (id)composeImages;
 - (void)setPreviewData:(id)arg1;
@@ -28,7 +28,7 @@
 - (void)copyToPasteboard;
 - (id)highlightData;
 - (id)previewData;
-- (void)dealloc;
+- (int)type;
 - (id)mediaObject;
 - (id)initWithMediaObject:(id)arg1;
 - (BOOL)isDisplayable;

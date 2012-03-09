@@ -45,23 +45,14 @@
 @property(setter=_setTrustStatus:) int _trustStatus;
 @property(retain) NSData * _certData;
 
-+ (id)sharedInstanceForBagType:(int)arg1;
++ (id)sharedInstance;
 + (id)_sharedInstance;
 + (id)_sharedInstanceForClass:(Class)arg1;
 + (id)_bagCreationLock;
-+ (id)sharedInstance;
++ (id)sharedInstanceForBagType:(int)arg1;
 
-- (id)bagURL;
-- (id)apsEnvironmentName;
-- (void)connectionMonitorDidUpdate:(id)arg1;
-- (void)_invalidate;
-- (BOOL)isLoaded;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (BOOL)isLoading;
-- (id)_loadDate;
+- (id)objectForKey:(id)arg1;
+- (void)dealloc;
 - (void)setAllowUnsignedBags:(BOOL)arg1;
 - (BOOL)allowUnsignedBags;
 - (void)setAllowSelfSignedCertificates:(BOOL)arg1;
@@ -108,9 +99,18 @@
 - (id)_bag;
 - (id)_bagDefaultsDomain;
 - (id)_cacheTime;
-- (id)objectForKey:(id)arg1;
-- (void)dealloc;
+- (void)connectionMonitorDidUpdate:(id)arg1;
 - (void)startBagLoad;
 - (id)urlWithKey:(id)arg1;
+- (id)_loadDate;
+- (void)_invalidate;
+- (BOOL)isLoaded;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (BOOL)isLoading;
+- (id)bagURL;
+- (id)apsEnvironmentName;
 
 @end

@@ -27,7 +27,7 @@
     NSMutableSet *_missingObjectGIDs;
     NSMutableDictionary *_storeMetadata;
     NSMutableArray *_externalDataReferencesToSave;
-    NSMutableArray *_externalDataReferencesToDelete;
+    NSMutableSet *_externalDataReferencesToDelete;
     NSString *_externalDataReferencesDirectory;
     NSString *_externalDataLinksDirectory;
     int _transactionInMemorySequence;
@@ -45,6 +45,7 @@
     } _sqlCoreFlags;
 }
 
++ (void)initialize;
 + (void)setDebugDefault:(int)arg1;
 + (void)setColoredLoggingDefault:(BOOL)arg1;
 + (void)setSQLGenerationV1Default:(BOOL)arg1;
@@ -54,13 +55,21 @@
 + (BOOL)SQLGenerationV1Default;
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
++ (id)_figureOutWhereExternalReferencesEndedUpRelativeTo:(id)arg1;
 + (Class)migrationManagerClass;
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
-+ (void)initialize;
 
-- (id)currentContext;
+- (void)dealloc;
+- (id)connection;
+- (void)setURL:(id)arg1;
+- (void)commitTransaction;
+- (id)type;
+- (id)model;
+- (id)identifier;
+- (void)_disconnect;
 - (void)setCurrentContext:(id)arg1;
+- (id)currentContext;
 - (struct _NSScalarObjectID { Class x1; }*)newForeignKeyID:(long long)arg1 entity:(id)arg2;
 - (id)newAdapterForModel:(id)arg1;
 - (void)unregisterChannel:(id)arg1;
@@ -203,13 +212,5 @@
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (id)objectIDFactoryForEntity:(id)arg1;
-- (void)_disconnect;
-- (void)setURL:(id)arg1;
-- (void)commitTransaction;
-- (id)type;
-- (id)model;
-- (id)identifier;
-- (id)connection;
-- (void)dealloc;
 
 @end

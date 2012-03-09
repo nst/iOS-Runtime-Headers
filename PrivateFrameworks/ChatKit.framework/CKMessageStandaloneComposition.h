@@ -23,15 +23,15 @@
 - (id)markupString;
 - (id)subject;
 - (void)setSubject:(id)arg1;
-- (void)setResources:(id)arg1;
-- (id)resources;
-- (BOOL)isTextOnly;
+- (void)dealloc;
 - (void)_clearMessageParts;
 - (void)setIsTextOnly:(BOOL)arg1;
 - (void)setMarkupString:(id)arg1;
 - (void)setTextString:(id)arg1;
 - (id)textString;
-- (void)dealloc;
+- (BOOL)isTextOnly;
+- (void)setResources:(id)arg1;
+- (id)resources;
 - (id)messageParts;
 
 @end

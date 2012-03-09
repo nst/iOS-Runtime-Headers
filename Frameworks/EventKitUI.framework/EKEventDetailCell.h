@@ -12,11 +12,11 @@
 @property(readonly) BOOL isEditable;
 
 
-- (void)setEvent:(id)arg1;
-- (BOOL)update;
-- (BOOL)isEditable;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 style:(int)arg3;
+- (void)setEvent:(id)arg1;
+- (BOOL)update;
+- (BOOL)isEditable;
 
 @end

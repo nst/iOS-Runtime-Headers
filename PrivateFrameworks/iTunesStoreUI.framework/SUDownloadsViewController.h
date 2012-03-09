@@ -11,16 +11,16 @@
 }
 
 
+- (id)initWithManagerOptions:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)applicationWillEnterForeground;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
-- (id)initWithManagerOptions:(id)arg1;
 - (void)loadView;
 - (void)reload;
 - (void)reloadData;
-- (id)init;
-- (void)dealloc;
 - (id)_headerViewWithTitle:(id)arg1 subtitle:(id)arg2;
 - (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
 - (id)_newPurchasedPlaylistButton;

@@ -58,17 +58,24 @@
 
 + (id)publishingAgentForBundleNamed:(id)arg1 toPublishMedia:(id)arg2;
 
-- (float)percentComplete;
-- (id)mediaData;
-- (void)setMediaData:(id)arg1;
-- (void)snapshot;
-- (void)setDelegate:(id)arg1;
 - (void)publish;
+- (id)userInfo;
+- (void)dealloc;
+- (id)serviceName;
+- (void)snapshot;
+- (float)percentComplete;
 - (void)setUserInfo:(id)arg1;
 - (void)dismiss;
 - (id)navigationController;
 - (id)delegate;
-- (id)serviceName;
+- (void)setDelegate:(id)arg1;
+- (id)mediaData;
+- (void)setMediaData:(id)arg1;
+- (int)remakerMode;
+- (id)mediaURL;
+- (void)setRemakerMode:(int)arg1;
+- (id)tellAFriendSubject;
+- (id)tellAFriendBody;
 - (void)setShouldCancelPublish:(BOOL)arg1;
 - (BOOL)shouldCancelPublish;
 - (float)progressMultiplier;
@@ -127,12 +134,5 @@
 - (void)setOwnerIsCamera:(BOOL)arg1;
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (void)presentModalSheetInViewController:(id)arg1;
-- (id)userInfo;
-- (void)dealloc;
-- (int)remakerMode;
-- (id)mediaURL;
-- (void)setRemakerMode:(int)arg1;
-- (id)tellAFriendSubject;
-- (id)tellAFriendBody;
 
 @end

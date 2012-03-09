@@ -27,9 +27,9 @@
 @property(readonly) BOOL allowsEditingAlbums;
 @property(retain) PLPhotosPickerSession * currentPickerSession;
 
-+ (void)initialize;
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)_keyboardDidHide:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)tableView;
@@ -48,13 +48,13 @@
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)applicationDidResume;
 - (id)delegate;
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (BOOL)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setDelegate:(id)arg1;
 - (void)navigateToRevealAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2;
 - (void)setSyncProgressVisible:(BOOL)arg1;
 - (id)syncProgressView;
@@ -70,7 +70,6 @@
 - (id)tableOffsetKey;
 - (BOOL)_shouldShowAlbumList;
 - (BOOL)allowsEditingAlbums;
-- (void)_logDebuggingStateInfoForChange:(id)arg1;
 - (void)updateNavigationItemButtons;
 - (void)_presentActionSheet:(id)arg1;
 - (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id)arg3;
@@ -79,7 +78,5 @@
 - (void)storeCurrentConfiguration:(id)arg1;
 - (void)tableViewCell:(id)arg1 didChangeTextToText:(id)arg2;
 - (void)tableViewCellDidBeginEditingText:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

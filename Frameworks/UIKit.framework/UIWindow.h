@@ -86,12 +86,12 @@
 + (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2;
 + (struct __IOSurface { }*)newCreatedScreenIOSurface;
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)_matchDeviceBounds;
 - (BOOL)_isTextEffectsWindow;
 - (void)matchDeviceOrientation;
-- (void)updateForOrientation:(int)arg1;
+- (void)setupForOrientation:(int)arg1;
 - (id)_subtreeMonitorsForView:(id)arg1;
 - (void)_unregisterViewForSubtreeMonitoring:(id)arg1;
 - (void)_registerViewForSubtreeMonitoring:(id)arg1;
@@ -182,13 +182,12 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toWindow:(id)arg2;
 - (BOOL)_isScrollingEnabledForView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toWindow:(id)arg2;
-- (void)_updateToInterfaceOrientation:(int)arg1 duration:(double)arg2 force:(BOOL)arg3;
 - (void)makeKeyWindow;
 - (void)_setHidden:(BOOL)arg1 forced:(BOOL)arg2;
+- (void)_updateToInterfaceOrientation:(int)arg1 duration:(double)arg2 force:(BOOL)arg3;
 - (void)addRootViewControllerViewIfPossible;
 - (void)_destroyContext;
 - (void)setLevel:(float)arg1;
-- (BOOL)_disableEdgeAntialiasing;
 - (BOOL)_disableGroupOpacity;
 - (BOOL)_ignoresHitTest;
 - (int)windowOutput;
@@ -235,10 +234,10 @@
 - (id)delegate;
 - (void)removeFromSuperview;
 - (void)setHidden:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (id)copyIOSurfaceSnapshotView:(int)arg1;
 - (struct __IOSurface { }*)newCreatedIOSurface;
 - (id)removeTouchCaptureViewWithTag:(int)arg1;

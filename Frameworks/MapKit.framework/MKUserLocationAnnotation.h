@@ -18,9 +18,9 @@
 @property(readonly) NSString * subtitle;
 
 
+- (struct { double x1; double x2; })coordinate;
 - (double)accuracy;
 - (void)setAccuracy:(double)arg1;
-- (struct { double x1; double x2; })coordinate;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 
 @end

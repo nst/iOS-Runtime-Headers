@@ -9,6 +9,7 @@
     MSAsset *_masterAsset;
     NSArray *_derivedAssets;
     NSString *_fileName;
+    BOOL _wasDeleted;
 }
 
 @property(retain) NSString * assetCollectionID;
@@ -16,24 +17,27 @@
 @property(readonly) NSData * masterAssetHash;
 @property(retain) NSArray * derivedAssets;
 @property(retain) NSString * fileName;
+@property BOOL wasDeleted;
 
-+ (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2;
++ (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 
-- (void)setFileName:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)initWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
+- (void)setWasDeleted:(BOOL)arg1;
 - (void)setMasterAsset:(id)arg1;
 - (void)setDerivedAssets:(id)arg1;
+- (BOOL)wasDeleted;
 - (id)derivedAssets;
 - (id)masterAsset;
 - (id)masterAssetHash;
 - (void)setAssetCollectionID:(id)arg1;
 - (id)assetCollectionID;
-- (id)fileName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (id)fileName;
+- (void)setFileName:(id)arg1;
 
 @end

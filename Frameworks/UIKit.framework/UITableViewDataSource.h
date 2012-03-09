@@ -12,6 +12,7 @@
 
 + (id)staticDataSourceWithSections:(id)arg1;
 
+- (void)dealloc;
 - (id)sections;
 - (void)setSections:(id)arg1;
 - (int)tableView:(id)arg1 indentationLevelForRowAtIndexPath:(id)arg2;
@@ -30,6 +31,5 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

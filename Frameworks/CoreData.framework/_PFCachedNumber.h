@@ -5,16 +5,30 @@
 @interface _PFCachedNumber : NSNumber  {
 }
 
-+ (id)value:(const void*)arg1 withObjCType:(const char *)arg2;
-+ (id)valueWithBytes:(const void*)arg1 objCType:(const char *)arg2;
-+ (id)new;
 + (id)alloc;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)valueWithBytes:(const void*)arg1 objCType:(const char *)arg2;
++ (id)new;
++ (id)value:(const void*)arg1 withObjCType:(const char *)arg2;
 
-- (BOOL)boolValue;
-- (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
-- (id)objectID;
+- (int)intValue;
+- (unsigned int)retainCount;
+- (id)description;
+- (id)retain;
+- (id)copy;
+- (oneway void)release;
+- (id)autorelease;
+- (id)init;
+- (void)dealloc;
+- (unsigned short)unsignedShortValue;
+- (short)shortValue;
+- (BOOL)charValue;
+- (const char *)objCType;
+- (long)longValue;
+- (id)descriptionWithLocale:(id)arg1;
+- (unsigned char)unsignedCharValue;
+- (unsigned long)unsignedLongValue;
 - (unsigned long long)unsignedLongLongValue;
 - (unsigned int)unsignedIntegerValue;
 - (BOOL)_isDeallocating;
@@ -26,22 +40,8 @@
 - (double)doubleValue;
 - (float)floatValue;
 - (void)getValue:(void*)arg1;
-- (unsigned short)unsignedShortValue;
-- (short)shortValue;
-- (BOOL)charValue;
-- (const char *)objCType;
-- (long)longValue;
-- (id)descriptionWithLocale:(id)arg1;
-- (unsigned char)unsignedCharValue;
-- (unsigned long)unsignedLongValue;
-- (int)intValue;
-- (unsigned int)retainCount;
-- (id)description;
-- (id)retain;
-- (id)autorelease;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
-- (id)copy;
+- (BOOL)boolValue;
+- (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
+- (id)objectID;
 
 @end

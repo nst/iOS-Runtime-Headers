@@ -12,8 +12,8 @@
 @property struct CGSize { float x1; float x2; } contentSize;
 
 
+- (id)init;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })contentSize;
-- (id)init;
 
 @end

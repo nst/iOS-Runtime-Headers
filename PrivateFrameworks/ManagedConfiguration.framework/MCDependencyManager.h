@@ -9,10 +9,11 @@
     NSMutableDictionary *_orphansDict;
 }
 
-+ (id)sharedManager;
 + (void)_setDependencyFilePath:(id)arg1;
++ (id)sharedManager;
 
-- (id)_init;
+- (id)init;
+- (void)dealloc;
 - (void)commitChanges;
 - (id)orphanedParentsForDomain:(id)arg1;
 - (void)addDependent:(id)arg1 ofParent:(id)arg2 inDomain:(id)arg3 reciprocalDomain:(id)arg4;
@@ -26,7 +27,6 @@
 - (void)_addOrphanParent:(id)arg1 forDomain:(id)arg2;
 - (void)addDependent:(id)arg1 ofParent:(id)arg2 inDomain:(id)arg3;
 - (void)removeDependent:(id)arg1 fromParent:(id)arg2 inDomain:(id)arg3;
-- (id)init;
-- (void)dealloc;
+- (id)_init;
 
 @end

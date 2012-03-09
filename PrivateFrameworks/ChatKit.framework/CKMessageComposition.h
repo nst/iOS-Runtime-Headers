@@ -23,15 +23,15 @@
 - (id)markupString;
 - (id)subject;
 - (void)setSubject:(id)arg1;
-- (void)setResources:(id)arg1;
-- (id)resources;
-- (BOOL)isTextOnly;
-- (BOOL)hasContent;
 - (void)writeToFileWithPrefix:(id)arg1 path:(id)arg2;
 - (void)setIsTextOnly:(BOOL)arg1;
 - (void)setMarkupString:(id)arg1;
 - (void)setTextString:(id)arg1;
 - (id)textString;
+- (BOOL)isTextOnly;
+- (BOOL)hasContent;
+- (void)setResources:(id)arg1;
+- (id)resources;
 - (id)messageParts;
 
 @end

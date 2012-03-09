@@ -13,18 +13,8 @@
 + (id)supportedNonImageMIMETypes;
 + (id)supportedImageMIMETypes;
 
-- (void)finalize;
-- (id)controlsInForm:(id)arg1;
-- (id)searchForLabels:(id)arg1 beforeElement:(id)arg2;
-- (id)matchLabels:(id)arg1 againstElement:(id)arg2;
-- (id)formForElement:(id)arg1;
-- (id)currentForm;
-- (BOOL)elementIsPassword:(id)arg1;
-- (BOOL)elementDoesAutoComplete:(id)arg1;
-- (id)elementWithName:(id)arg1 inForm:(id)arg2;
-- (id)DOMDocument;
-- (id)title;
-- (void)setDataSource:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)canSaveAsWebArchive;
 - (BOOL)canProvideDocumentSource;
 - (id)documentSource;
@@ -34,8 +24,18 @@
 - (void)finishedLoadingWithDataSource:(id)arg1;
 - (void)receivedData:(id)arg1 withDataSource:(id)arg2;
 - (void)receivedError:(id)arg1 withDataSource:(id)arg2;
-- (id)init;
-- (void)dealloc;
+- (id)controlsInForm:(id)arg1;
+- (id)searchForLabels:(id)arg1 beforeElement:(id)arg2;
+- (id)matchLabels:(id)arg1 againstElement:(id)arg2;
+- (id)formForElement:(id)arg1;
+- (id)currentForm;
+- (BOOL)elementIsPassword:(id)arg1;
+- (BOOL)elementDoesAutoComplete:(id)arg1;
+- (id)elementWithName:(id)arg1 inForm:(id)arg2;
+- (void)finalize;
+- (id)DOMDocument;
+- (id)title;
+- (void)setDataSource:(id)arg1;
 - (BOOL)formElementLooksLikeCreditCardNumberField:(id)arg1;
 - (BOOL)formElementLooksLikeSecurityCodeField:(id)arg1;
 

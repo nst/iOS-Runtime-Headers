@@ -28,11 +28,15 @@
 
 + (id)scriptingKeys;
 
+- (void)dealloc;
 - (void)setExpirationDate:(id)arg1;
 - (void)setError:(int)arg1;
 - (void)setStoreItem:(id)arg1;
 - (id)expirationDate;
 - (id)storeItem;
+- (int)error;
+- (id)title;
+- (void)setTitle:(id)arg1;
 - (id)previews;
 - (id)adamId;
 - (void)setJsListener:(id)arg1;
@@ -43,10 +47,6 @@
 - (id)initWithAdamId:(id)arg1;
 - (BOOL)isPrivilegedClient;
 - (void)setPrivilegedClient:(BOOL)arg1;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (int)error;
-- (void)dealloc;
 - (id)offers;
 
 @end

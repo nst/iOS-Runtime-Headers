@@ -12,12 +12,12 @@
 
 
 - (id)messageBody;
-- (id)responseEmailAddresses;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setResponseEmailAddresses:(id)arg1;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)bagKey;
+- (id)responseEmailAddresses;
 
 @end

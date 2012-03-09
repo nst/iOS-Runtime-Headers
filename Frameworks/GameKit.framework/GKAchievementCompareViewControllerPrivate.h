@@ -22,6 +22,7 @@
 @property(retain) GKAchievementCompareHeaderDataSourceSection * achievementCompareFriendHeaderViewSection;
 
 
+- (void)dealloc;
 - (void)setCompositeCheckMark:(id)arg1;
 - (id)compositeCheckMark;
 - (id)initWithGameRecord:(id)arg1 friendRecord:(id)arg2;
@@ -44,6 +45,5 @@
 - (void)viewDidLoad;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (id)title;
-- (void)dealloc;
 
 @end

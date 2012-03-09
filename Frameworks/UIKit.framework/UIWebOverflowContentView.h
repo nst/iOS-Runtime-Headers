@@ -6,9 +6,9 @@
 }
 
 
-- (id)initWithLayer:(id)arg1;
 - (void)_setCachedSubviews:(id)arg1;
 - (void)_replaceLayer:(id)arg1;
+- (id)initWithLayer:(id)arg1;
 - (void)fixUpViewAfterInsertion;
 - (id)superview;
 

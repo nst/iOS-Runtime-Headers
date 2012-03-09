@@ -14,11 +14,11 @@
 @property(retain) UIView * separatorView;
 
 
+- (void)dealloc;
 - (void)setSeparatorView:(id)arg1;
 - (id)separatorView;
 - (void)setReorderControl:(id)arg1;
 - (id)reorderControl;
 - (BOOL)dataRequired;
-- (void)dealloc;
 
 @end

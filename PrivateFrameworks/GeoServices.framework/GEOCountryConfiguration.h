@@ -18,22 +18,22 @@
 
 + (id)sharedConfiguration;
 
+- (void)_checkCountryCode;
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
 - (void)_reachabilityChanged:(id)arg1;
+- (id)connection:(id)arg1 willCacheResponse:(id)arg2;
+- (void)dealloc;
 - (void)_registerNetworkDefaults;
 - (void)_checkCountryProviders;
-- (void)_checkCountryCode;
 - (void)_useCountryCodeProvider:(id)arg1;
 - (id)countryDefaultForKey:(id)arg1;
-- (id)connection:(id)arg1 willCacheResponse:(id)arg2;
-- (id)countryCode;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)setCountryCode:(id)arg1;
 - (void)toggleCountry;
 - (void)updateProvidersForCurrentCountry;
 - (id)defaultForKey:(id)arg1 defaultValue:(id)arg2;
-- (void)dealloc;
 
 @end

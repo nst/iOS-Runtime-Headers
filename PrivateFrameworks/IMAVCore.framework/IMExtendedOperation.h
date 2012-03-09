@@ -20,17 +20,17 @@
 
 - (void)setTimeout:(double)arg1;
 - (double)timeout;
-- (BOOL)isFinished;
-- (BOOL)isConcurrent;
-- (void)_setState:(unsigned int)arg1;
-- (void)start;
-- (BOOL)isExecuting;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id)name;
-- (unsigned int)state;
 - (void)setName:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
+- (void)_setState:(unsigned int)arg1;
+- (BOOL)isFinished;
+- (BOOL)isConcurrent;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)start;
+- (id)name;
+- (unsigned int)state;
+- (BOOL)isExecuting;
 - (void)_stopWithState:(unsigned int)arg1;
 - (unsigned int)_minChildOperationState;
 - (void)_startThread;

@@ -10,17 +10,17 @@
 + (id)durationFromICSString:(id)arg1;
 + (id)durationFromICSString:(id)arg1;
 
-- (BOOL)isNegative;
 - (int)seconds;
 - (int)minutes;
 - (int)hours;
 - (int)weeks;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)initWithWeeks:(int)arg1 days:(int)arg2 hours:(int)arg3 minutes:(int)arg4 seconds:(int)arg5;
+- (int)days;
 - (double)timeInterval;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)days;
 - (id)ICSStringWithOptions:(unsigned int)arg1;
+- (BOOL)isNegative;
 
 @end

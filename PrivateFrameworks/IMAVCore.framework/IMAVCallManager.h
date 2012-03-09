@@ -21,11 +21,11 @@
 
 + (id)sharedInstance;
 
+- (id)init;
+- (unsigned int)callState;
 - (BOOL)hasActiveCall;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
-- (unsigned int)callState;
-- (id)init;
 - (BOOL)_hasActiveFaceTimeCall;
 - (BOOL)_hasActiveTelephonyCall;
 - (id)calls;

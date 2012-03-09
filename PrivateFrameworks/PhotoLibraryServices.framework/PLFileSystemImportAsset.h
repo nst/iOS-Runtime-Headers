@@ -17,16 +17,17 @@
 @property int assetKind;
 
 
-- (int)compare:(id)arg1;
+- (void)dealloc;
 - (void)setUrls:(id)arg1;
+- (BOOL)isCameraKit;
 - (id)urls;
 - (id)initWithURLs:(id)arg1 creationDate:(id)arg2 destinationAlbum:(struct NSObject { Class x1; }*)arg3 isPhotoStream:(BOOL)arg4 isSavedPhotos:(BOOL)arg5 isCameraKit:(BOOL)arg6;
 - (void)setAssetKind:(int)arg1;
 - (void)setDateCreated:(id)arg1;
+- (int)compare:(id)arg1;
+- (id)dateCreated;
 - (void)setDestinationAlbum:(struct NSObject { Class x1; }*)arg1;
 - (struct NSObject { Class x1; }*)destinationAlbum;
 - (int)assetKind;
-- (void)dealloc;
-- (id)dateCreated;
 
 @end

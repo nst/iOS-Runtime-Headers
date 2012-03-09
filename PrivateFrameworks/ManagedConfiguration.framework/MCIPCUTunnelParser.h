@@ -10,6 +10,7 @@
 }
 
 
+- (void)dealloc;
 - (id)_commandGetEncryptionKey:(id)arg1;
 - (id)_commandSetCertificate:(id)arg1;
 - (id)_commandHello:(id)arg1;
@@ -17,6 +18,5 @@
 - (id)_commandInstallProfile:(id)arg1;
 - (id)_commandRemoveProfile:(id)arg1;
 - (id)processRequest:(id)arg1;
-- (void)dealloc;
 
 @end

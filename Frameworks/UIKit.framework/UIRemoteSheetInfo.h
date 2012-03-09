@@ -21,7 +21,7 @@
 @property int returnCode;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (int)returnCode;
 - (id)remoteView;
 - (void)setReturnCode:(int)arg1;
@@ -33,6 +33,6 @@
 - (void)setContext:(void*)arg1;
 - (void)setSelector:(SEL)arg1;
 - (id)delegate;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

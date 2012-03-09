@@ -25,6 +25,8 @@
 @property(readonly) BOOL preventMove;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)SMIMEEncryptionIdentityPersistentID;
 - (void)setSMIMEEncryptionIdentityPersistentID:(id)arg1;
 - (id)SMIMESigningIdentityPersistentID;
@@ -37,7 +39,5 @@
 - (BOOL)preventMove;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
 
 @end

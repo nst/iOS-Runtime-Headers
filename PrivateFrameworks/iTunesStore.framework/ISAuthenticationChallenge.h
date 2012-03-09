@@ -20,19 +20,19 @@
 @property(readonly) <NSURLAuthenticationChallengeSender> * sender;
 
 
-- (void)setLocalizedTitle:(id)arg1;
-- (void)cancelAuthentication;
-- (id)localizedTitle;
-- (id)localizedMessage;
 - (BOOL)hasPassword;
-- (id)user;
-- (id)password;
-- (id)sender;
+- (void)dealloc;
 - (BOOL)userNameIsEmail;
 - (BOOL)userNameIsEditable;
 - (int)failureCount;
 - (void)setLocalizedMessage:(id)arg1;
 - (void)useCredential:(id)arg1;
-- (void)dealloc;
+- (void)setLocalizedTitle:(id)arg1;
+- (void)cancelAuthentication;
+- (id)localizedTitle;
+- (id)user;
+- (id)password;
+- (id)sender;
+- (id)localizedMessage;
 
 @end

@@ -21,6 +21,7 @@
 + (void)releaseFormatterCache;
 + (id)formatterForFormat:(id)arg1;
 
+- (void)dealloc;
 - (id)icuFormatString;
 - (id)initWithExcelFormatString:(id)arg1;
 - (id)initWithDefaultFormatString;
@@ -44,6 +45,5 @@
 - (id)formatPercent:(double)arg1;
 - (id)formatDoubleValue:(double)arg1;
 - (int)formatType;
-- (void)dealloc;
 
 @end

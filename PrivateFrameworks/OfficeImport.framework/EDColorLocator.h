@@ -11,13 +11,13 @@
 }
 
 
-- (id)initWith:(id)arg1 index:(int)arg2 offset:(unsigned int)arg3;
-- (int)colorIndex;
-- (void)setColorIndex:(int)arg1;
+- (void)dealloc;
 - (id)color;
 - (void)setColor:(id)arg1;
 - (void)setOffset:(unsigned int)arg1;
 - (unsigned int)offset;
-- (void)dealloc;
+- (id)initWith:(id)arg1 index:(int)arg2 offset:(unsigned int)arg3;
+- (int)colorIndex;
+- (void)setColorIndex:(int)arg1;
 
 @end

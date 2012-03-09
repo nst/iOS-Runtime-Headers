@@ -16,17 +16,17 @@
 }
 
 
-- (unsigned int)authorId;
-- (void)setAuthorId:(unsigned int)arg1;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setIndex:(unsigned int)arg1;
+- (id)init;
+- (void)dealloc;
 - (unsigned int)index;
 - (struct CGPoint { float x1; float x2; })position;
+- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDate:(id)arg1;
 - (id)date;
 - (id)text;
 - (void)setText:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (unsigned int)authorId;
+- (void)setAuthorId:(unsigned int)arg1;
+- (void)setIndex:(unsigned int)arg1;
 
 @end

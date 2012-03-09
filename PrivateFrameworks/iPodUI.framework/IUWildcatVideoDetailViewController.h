@@ -33,8 +33,9 @@
 
 + (Class)backstopViewClass;
 
+- (id)init;
+- (void)dealloc;
 - (void)_backButtonAction:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -45,6 +46,7 @@
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)delegate;
 - (void)reloadData;
+- (void)setDelegate:(id)arg1;
 - (void)foldingTransitionViewDidTakeSnapshot;
 - (void)foldingTransitionViewWillTakeSnapshot;
 - (BOOL)shouldShowReflection;
@@ -85,6 +87,7 @@
 - (void)_destroyTemporaryAnimationViews;
 - (void)_cancelImageRequest:(id*)arg1;
 - (void)_removeDownloadObserver;
+- (void)_databaseDynamicContentsDidChangeNotification:(id)arg1;
 - (void)_screensChanged:(id)arg1;
 - (void)flashItemForMediaItem:(id)arg1 atTime:(double)arg2;
 - (void)_destroyRentalAlertView;
@@ -98,7 +101,5 @@
 - (id)copyArchivableContexts;
 - (void)_rentalInfoChangedNotification:(id)arg1;
 - (void)playMovie;
-- (id)init;
-- (void)dealloc;
 
 @end

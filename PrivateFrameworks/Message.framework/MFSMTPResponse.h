@@ -25,9 +25,9 @@
 - (id)errorMessageWithAddress:(id)arg1 defaultMessage:(id)arg2;
 - (id)initWithStatus:(int)arg1;
 - (void)setLastResponseLine:(id)arg1;
-- (void)setStatus:(int)arg1;
-- (int)status;
 - (id)description;
 - (void)dealloc;
+- (void)setStatus:(int)arg1;
+- (int)status;
 
 @end

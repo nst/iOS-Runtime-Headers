@@ -11,14 +11,14 @@
 @property(readonly) id target;
 
 
+- (id)description;
+- (SEL)action;
+- (id)target;
 - (void)setEventMask:(unsigned int)arg1;
 - (unsigned int)eventMask;
 - (void)connect;
 - (void)connectForSimulator;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (SEL)action;
-- (id)target;
 
 @end

@@ -10,6 +10,7 @@
 }
 
 
+- (void)dealloc;
 - (void)wakeTimerFired;
 - (void)backgroundContinuationEnabledDidChange:(BOOL)arg1;
 - (void)localNotificationDidSnooze:(id)arg1;
@@ -25,6 +26,5 @@
 - (id)initWithBundleIdentifier:(id)arg1;
 - (void)updatePort;
 - (id)initWithMachServiceName:(id)arg1;
-- (void)dealloc;
 
 @end

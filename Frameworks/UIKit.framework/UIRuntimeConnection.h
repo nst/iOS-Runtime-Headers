@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setDestination:(id)arg1;
 - (id)destination;
 - (void)setSource:(id)arg1;
@@ -21,6 +22,5 @@
 - (void)setLabel:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

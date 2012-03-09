@@ -15,10 +15,10 @@
 
 + (id)sharedInstance;
 
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
 - (id)init;
 - (void)dealloc;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 - (id)currentMicrophone;
 - (void)_loadSavedMicrophone;
 - (void)_rebuildMicrophoneList;

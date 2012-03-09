@@ -23,6 +23,21 @@
 @property(copy,readonly) NSString * titleDisplayString;
 
 
+- (BOOL)hidden;
+- (int)structuralComplexityContribution;
+- (id)className;
+- (BOOL)isContentEditable;
+- (id)innerHTML;
+- (void)setInnerHTML:(id)arg1;
+- (void)setContentEditable:(id)arg1;
+- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForPurpleCaret:(BOOL)arg3;
+- (id)innerText;
+- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;
+- (int)scrollYOffset;
+- (int)scrollXOffset;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)setHidden:(BOOL)arg1;
 - (id)idName;
 - (void)setIdName:(id)arg1;
 - (id)lang;
@@ -49,23 +64,8 @@
 - (id)dir;
 - (void)setDir:(id)arg1;
 - (void)absolutePosition:(int*)arg1 :(int*)arg2 :(int*)arg3 :(int*)arg4;
-- (BOOL)hidden;
-- (int)structuralComplexityContribution;
-- (id)className;
-- (BOOL)isContentEditable;
-- (id)innerHTML;
-- (void)setInnerHTML:(id)arg1;
-- (void)setContentEditable:(id)arg1;
-- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForPurpleCaret:(BOOL)arg3;
-- (id)innerText;
-- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;
-- (int)scrollYOffset;
-- (int)scrollXOffset;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)setTextShadowColor:(id)arg1 offset:(struct CGSize { float x1; float x2; })arg2;
 - (void)setLineHeight:(float)arg1;
 - (void)setFontSize:(float)arg1;
-- (void)setTextShadowColor:(id)arg1 offset:(struct CGSize { float x1; float x2; })arg2;
 
 @end

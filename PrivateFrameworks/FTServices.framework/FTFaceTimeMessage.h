@@ -12,12 +12,12 @@
 
 
 - (id)messageBody;
-- (void)setSessionToken:(id)arg1;
-- (id)sessionToken;
-- (BOOL)isValidMessage;
-- (id)requiredKeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (BOOL)isValidMessage;
+- (id)requiredKeys;
+- (void)setSessionToken:(id)arg1;
+- (id)sessionToken;
 
 @end

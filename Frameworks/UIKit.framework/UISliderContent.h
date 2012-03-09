@@ -16,6 +16,7 @@
 @property(readonly) BOOL isEmpty;
 
 
+- (void)dealloc;
 - (void)setMaxTrack:(id)arg1;
 - (id)maxTrack;
 - (void)setMinTrack:(id)arg1;
@@ -23,6 +24,5 @@
 - (void)setThumb:(id)arg1;
 - (id)thumb;
 - (BOOL)isEmpty;
-- (void)dealloc;
 
 @end

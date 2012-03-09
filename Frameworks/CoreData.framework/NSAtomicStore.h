@@ -13,9 +13,12 @@
     void *_reserved5;
 }
 
-+ (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 + (void)initialize;
++ (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 
+- (BOOL)save:(id*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)newValuesForObjectWithID:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)newValueForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
@@ -56,8 +59,5 @@
 - (void)_deleteNodeFromMainCache:(id)arg1;
 - (void)_deleteNodeFromEntityCache:(id)arg1;
 - (void)updateCacheNode:(id)arg1 fromManagedObject:(id)arg2;
-- (BOOL)save:(id*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -14,8 +14,6 @@
 
 + (id)sharedManager;
 
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
 - (id)init;
 - (void)dealloc;
 - (id)emailAddressHistory;
@@ -28,5 +26,7 @@
 - (void)_writeConferenceHistory;
 - (void)setHavePreviouslyConferenced:(BOOL)arg1 withID:(id)arg2;
 - (BOOL)havePreviouslyConferencedWithID:(id)arg1;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 
 @end

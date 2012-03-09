@@ -17,6 +17,8 @@
 + (id)sharedInstance;
 + (id)sharedStorage;
 
+- (id)init;
+- (void)dealloc;
 - (void)synchronizeCookies;
 - (id)storageLocation;
 - (void)removeCookiesWithProperties:(id)arg1;
@@ -30,8 +32,6 @@
 - (struct __CFSet { }*)_copyPrivateCookiesForURL:(id)arg1 userIdentifier:(id)arg2;
 - (BOOL)_setupCookieDatabase:(id)arg1;
 - (id)initWithStorageLocation:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)setCookiesForHTTPResponse:(id)arg1 userIdentifier:(id)arg2;
 - (void)setCookies:(id)arg1 forUserIdentifier:(id)arg2;
 - (id)cookieHeadersForURL:(id)arg1 userIdentifier:(id)arg2;

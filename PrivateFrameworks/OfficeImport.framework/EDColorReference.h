@@ -18,17 +18,17 @@
 + (id)colorReferenceWithResources:(id)arg1;
 + (id)colorReferenceWithSystemColorID:(int)arg1 resources:(id)arg2;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (double)tint;
+- (id)color;
+- (bool)isValid;
 - (int)systemColorID;
 - (BOOL)isEqualToColorReference:(id)arg1;
 - (id)initWithColor:(id)arg1 resources:(id)arg2;
 - (id)initWithResources:(id)arg1;
 - (unsigned int)themeIndex;
 - (unsigned int)colorIndex;
-- (double)tint;
-- (id)color;
-- (bool)isValid;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

@@ -24,16 +24,16 @@
 }
 
 
+- (void)dealloc;
+- (id)initWithPath:(id)arg1;
+- (void)close;
+- (id)path;
+- (long long)offset;
 - (void)seekToOffset:(long long)arg1 whence:(int)arg2;
 - (BOOL)canCreateInputStream;
 - (id)inputStream;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 - (id)closeLocalStream;
 - (BOOL)canSeek;
-- (id)path;
-- (id)initWithPath:(id)arg1;
-- (void)close;
-- (long long)offset;
-- (void)dealloc;
 
 @end

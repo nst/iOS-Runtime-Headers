@@ -32,8 +32,10 @@
 
 - (BOOL)isMostDefinitelyBase64ed;
 - (id)contentLocation;
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setDisplayName:(id)arg1;
-- (void)setMethod:(id)arg1;
 - (id)displayName;
 - (id)method;
 - (id)name;
@@ -41,9 +43,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)size;
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (void)setMethod:(id)arg1;
 - (void)setHasBase64Transfer:(id)arg1;
 - (id)hasBase64Transfer;
 - (id)isInline;

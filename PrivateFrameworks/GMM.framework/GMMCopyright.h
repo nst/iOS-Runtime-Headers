@@ -17,7 +17,11 @@
 @property int copyrightYear;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)copyrightYear;
 - (void)setHasCopyrightYear:(BOOL)arg1;
 - (BOOL)hasCopyrightYear;
@@ -32,9 +36,5 @@
 - (void)addMapDataCopyright:(id)arg1;
 - (void)setImageryCopyrights:(id)arg1;
 - (void)setMapDataCopyrights:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

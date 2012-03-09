@@ -22,8 +22,8 @@
 + (Class)backstopViewClass;
 + (BOOL)supportsViewControllerStyle:(int)arg1;
 
+- (void)dealloc;
 - (void)imageCache:(id)arg1 loadedImage:(id)arg2 forRequest:(id)arg3;
-- (void)setDelegate:(id)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
@@ -38,6 +38,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)reloadData;
+- (void)setDelegate:(id)arg1;
 - (void)setScrollToContentPositionOnNextAppear;
 - (void)flashItemForMediaItem:(id)arg1 atTime:(double)arg2;
 - (void)resumeImageLoading;
@@ -58,6 +59,5 @@
 - (void)pushPlaybackViewControllerForPlaybackIndex:(unsigned int)arg1 fillerImage:(id)arg2 startTime:(double)arg3;
 - (id)indexPathForMediaItem:(id)arg1 atTime:(double)arg2;
 - (id)firstMediaItem;
-- (void)dealloc;
 
 @end

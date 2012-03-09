@@ -11,9 +11,9 @@
 + (id)urlCacheChangedNotificationName;
 + (id)urlCacheName;
 
+- (void)dealloc;
 - (id)_newURLConverterWithHostPatterns:(id)arg1 hostWhiteList:(id)arg2 pathPatterns:(id)arg3;
 - (id)convertedURLForURL:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (void)dealloc;
 
 @end

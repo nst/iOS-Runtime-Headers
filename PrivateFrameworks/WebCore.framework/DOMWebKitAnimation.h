@@ -18,19 +18,19 @@
 @property(readonly) unsigned short fillMode;
 
 
-- (double)duration;
+- (void)dealloc;
+- (void)pause;
+- (BOOL)paused;
 - (void)finalize;
+- (unsigned short)direction;
+- (double)delay;
+- (id)name;
+- (double)duration;
 - (double)elapsedTime;
 - (void)setElapsedTime:(double)arg1;
 - (int)iterationCount;
 - (BOOL)ended;
 - (unsigned short)fillMode;
 - (void)play;
-- (void)pause;
-- (BOOL)paused;
-- (unsigned short)direction;
-- (double)delay;
-- (id)name;
-- (void)dealloc;
 
 @end

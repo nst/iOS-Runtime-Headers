@@ -19,6 +19,9 @@
 }
 
 
+- (void)dealloc;
+- (id)properties;
+- (void)setLocked:(BOOL)arg1;
 - (long)fieldPosition;
 - (unsigned char)fieldType;
 - (BOOL)zombieEmbed;
@@ -41,8 +44,5 @@
 - (void)setFieldMarkerType:(int)arg1;
 - (void)setFieldType:(unsigned char)arg1;
 - (int)runType;
-- (id)properties;
-- (void)setLocked:(BOOL)arg1;
-- (void)dealloc;
 
 @end

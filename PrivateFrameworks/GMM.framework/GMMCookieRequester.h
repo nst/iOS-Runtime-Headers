@@ -9,8 +9,8 @@
 @property(readonly) unsigned long long cookie;
 
 
+- (unsigned long long)cookie;
 - (BOOL)readResponsePreamble:(id)arg1;
 - (id)requestPreamble;
-- (unsigned long long)cookie;
 
 @end

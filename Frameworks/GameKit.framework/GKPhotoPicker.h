@@ -47,6 +47,8 @@
 @property BOOL cancelled;
 
 
+- (void)cancel;
+- (void)dealloc;
 - (id)imagePicker;
 - (id)photoPopover;
 - (id)actionSheet;
@@ -59,6 +61,7 @@
 - (void)showPopover;
 - (void)setPhotoPopover:(id)arg1;
 - (void)setImagePicker:(id)arg1;
+- (void)takePhoto;
 - (void)_pick;
 - (void)choosePhoto;
 - (void)showActionSheet;
@@ -87,8 +90,5 @@
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)setView:(id)arg1;
 - (id)view;
-- (void)cancel;
-- (void)dealloc;
-- (void)takePhoto;
 
 @end

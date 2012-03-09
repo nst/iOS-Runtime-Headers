@@ -71,8 +71,6 @@
         unsigned int isHeadsetButtonDown : 1; 
         unsigned int isFastForwardActive : 1; 
         unsigned int isRewindActive : 1; 
-        unsigned int disableViewGroupOpacity : 1; 
-        unsigned int disableViewEdgeAntialiasing : 1; 
         unsigned int shakeToEdit : 1; 
         unsigned int isClassic : 1; 
         unsigned int zoomInClassicMode : 1; 
@@ -88,6 +86,7 @@
         unsigned int delegateWantsNextResponder : 1; 
         unsigned int isRunningInApplicationSwitcher : 1; 
         unsigned int isSendingEventForProgrammaticTouchCancellation : 1; 
+        unsigned int calledInitializationDelegates : 1; 
     } _applicationFlags;
 }
 
@@ -130,7 +129,10 @@
 + (BOOL)rendersLocally;
 + (BOOL)registerForSystemEvents;
 
-- (void)setDelegate:(id)arg1;
+- (unsigned int)beginBackgroundTaskWithExpirationHandler:(id)arg1;
+- (void)endBackgroundTask:(unsigned int)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)_alertSheetStackChanged;
 - (void)endRemoteSheet:(id)arg1;
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4;
@@ -152,6 +154,8 @@
 - (void)_sheetWithRemoteIdentifierDidDismiss:(id)arg1;
 - (BOOL)rotateIfNeeded:(int)arg1;
 - (void)testPrep:(id)arg1 options:(id)arg2;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2 withTeardownBlock:(id)arg3;
 - (void)finishedTest:(id)arg1;
 - (void)finishedSubTest:(id)arg1 forTest:(id)arg2;
 - (void)startedSubTest:(id)arg1 forTest:(id)arg2;
@@ -162,6 +166,7 @@
 - (void)_leak;
 - (BOOL)runTest:(id)arg1 options:(id)arg2;
 - (void)failedTest:(id)arg1 withResults:(id)arg2;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3 withTeardownBlock:(id)arg4;
 - (void)stopCHUDRecording;
 - (void)_reportResults:(id)arg1;
 - (struct __CFMessagePort { }*)_purplePPTServerPort;
@@ -199,8 +204,6 @@
 - (BOOL)_taskSuspendingUnsupported;
 - (BOOL)_requiresHighResolution;
 - (BOOL)_isViewContentScalingDisabled;
-- (BOOL)_isViewEdgeAntialiasingDisabled;
-- (BOOL)_isViewGroupOpacityDisabled;
 - (void)presentLocalNotificationNow:(id)arg1;
 - (void)unregisterForRemoteNotifications;
 - (BOOL)_supportsShakesWhenNotActive;
@@ -247,6 +250,7 @@
 - (unsigned int)blockInteractionEventsCount;
 - (BOOL)ignoresInteractionEvents;
 - (void)setIgnoresInteractionEvents:(BOOL)arg1;
+- (void)updateTouchDiagnostics;
 - (BOOL)_usesEmoji;
 - (void)setStatusBarShowsProgress:(BOOL)arg1;
 - (double)windowRotationDuration;
@@ -442,7 +446,6 @@
 - (BOOL)_isTouchEvent:(struct __GSEvent { }*)arg1;
 - (id)pathToDefaultImageNamed:(id)arg1;
 - (void)removeDefaultImage:(id)arg1;
-- (id)displayIdentifier;
 - (struct CGImage { }*)_createDefaultImageSnapshot;
 - (void)prepareForDefaultImageSnapshot;
 - (BOOL)_shouldZoom;
@@ -508,8 +511,6 @@
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2 from:(id)arg3 forEvent:(id)arg4;
 - (id)_targetInChainForAction:(SEL)arg1 sender:(id)arg2;
 - (id)nextResponder;
-- (void)endBackgroundTask:(unsigned int)arg1;
-- (unsigned int)beginBackgroundTaskWithExpirationHandler:(id)arg1;
 - (void)_run;
 - (void)_setDelegate:(id)arg1 assumeOwnership:(BOOL)arg2;
 - (int)_loadMainNibFileNamed:(id)arg1 bundle:(id)arg2;
@@ -530,6 +531,9 @@
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 - (id)_currentTests;
 - (id)_extendLaunchTest;
+- (void)_createHangTracerTimerWithDuration:(double)arg1;
+- (struct _xpc_connection_s { }*)_getHangTracerConnection;
+- (id)displayIdentifier;
 - (void)_runWithURL:(id)arg1 payload:(id)arg2 launchOrientation:(int)arg3 statusBarStyle:(int)arg4 statusBarHidden:(BOOL)arg5;
 - (void)_installAutoreleasePoolsIfNecessaryForMode:(struct __CFString { }*)arg1;
 - (void)_registerForKeyBagLockStatusNotification;
@@ -545,14 +549,15 @@
 - (void)_setHandlingURL:(BOOL)arg1 url:(id)arg2;
 - (id)_mainStoryboardName;
 - (BOOL)isSuspended;
+- (void)_startHangTracer;
+- (void)_stopHangTracer;
 - (void)_fetchInfoPlistFlags;
 - (void)_deactivateForReason:(int)arg1 notify:(BOOL)arg2;
 - (void)setApplicationSupportsShakeToEdit:(BOOL)arg1;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (int)alertOrientation;
 - (int)statusBarOrientation;
-- (id)init;
-- (void)dealloc;
 - (void)_mapkit_refreshSharedAddressBookIfNeeded;
 - (void)_mapkit_resetSharedAddressBookNeedsRefresh;
 - (void*)_mapkit_sharedAddressBook;

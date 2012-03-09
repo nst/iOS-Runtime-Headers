@@ -25,6 +25,9 @@
 @property(retain,readonly) DOMNode * toElement;
 
 
+- (int)y;
+- (int)x;
+- (unsigned short)button;
 - (int)screenX;
 - (int)screenY;
 - (int)clientX;
@@ -40,8 +43,5 @@
 - (BOOL)shiftKey;
 - (BOOL)altKey;
 - (BOOL)metaKey;
-- (int)y;
-- (int)x;
-- (unsigned short)button;
 
 @end

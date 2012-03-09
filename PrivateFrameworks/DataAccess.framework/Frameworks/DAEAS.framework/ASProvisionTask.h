@@ -11,9 +11,9 @@
 }
 
 
+- (void)dealloc;
 - (void)finishWithError:(id)arg1;
 - (int)type;
-- (void)dealloc;
 - (id)_policyID;
 - (id)_provisioningType;
 - (id)_initWithType:(int)arg1 policy:(id)arg2 key:(id)arg3;

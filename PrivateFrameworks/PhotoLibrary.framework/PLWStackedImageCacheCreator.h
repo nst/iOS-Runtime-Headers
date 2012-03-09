@@ -9,6 +9,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)createStackedImageForAlbum:(id)arg1;
 - (struct NSObject { Class x1; }*)_albumForStack:(id)arg1;
 - (id)stackView:(id)arg1 collapsedIndexesForCount:(unsigned int)arg2;
@@ -19,7 +21,5 @@
 - (int)stackViewPosterItemIndex:(id)arg1;
 - (int)stackViewItemCount:(id)arg1;
 - (void)stackView:(id)arg1 invalidateCachedImagesForIndex:(int)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

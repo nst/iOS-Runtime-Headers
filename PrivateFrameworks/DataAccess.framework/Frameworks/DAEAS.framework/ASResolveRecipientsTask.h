@@ -10,8 +10,8 @@
 
 
 - (id)initWithEmailAddresses:(id)arg1;
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
+- (void)finishWithError:(id)arg1;
 - (int)certStatusForExchangeStatus:(int)arg1;
 - (int)responseStatusForExchangeStatus:(int)arg1;
 - (BOOL)processContext:(id)arg1;

@@ -8,8 +8,8 @@
 }
 
 
-- (id)nextObject;
-- (id)initWithObject:(id)arg1;
 - (void)dealloc;
+- (id)initWithObject:(id)arg1;
+- (id)nextObject;
 
 @end

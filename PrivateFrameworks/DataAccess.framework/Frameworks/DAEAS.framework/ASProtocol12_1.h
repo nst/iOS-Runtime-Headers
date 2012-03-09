@@ -7,6 +7,7 @@
 
 
 - (id)protocolVersion;
+- (BOOL)allowsReminderOnCompletedTasks;
 - (BOOL)serverCreatesEventChangesForInvitations;
 - (BOOL)useBooleanFolderItemsSyncDeletesAsMoves;
 - (BOOL)requiresExplicitlyFalseGetChanges;

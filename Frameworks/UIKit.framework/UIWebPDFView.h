@@ -73,6 +73,7 @@
 
 + (void)setAsPDFDocRepAndView;
 
+- (void)dealloc;
 - (void)setHideActivityIndicatorForUnRenderedContent:(BOOL)arg1;
 - (BOOL)hideActivityIndicatorForUnRenderedContent;
 - (id)backgroundColorForUnRenderedContent;
@@ -145,6 +146,5 @@
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_didScroll;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)dealloc;
 
 @end

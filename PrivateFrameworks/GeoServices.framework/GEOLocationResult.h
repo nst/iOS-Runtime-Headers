@@ -12,13 +12,13 @@
 @property(retain) GEOPlaceResult * placeResult;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)setPlaceResult:(id)arg1;
-- (id)placeResult;
-- (BOOL)hasPlaceResult;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
 - (id)description;
 - (void)dealloc;
+- (id)placeResult;
+- (BOOL)hasPlaceResult;
+- (id)dictionaryRepresentation;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (void)setPlaceResult:(id)arg1;
 
 @end

@@ -19,14 +19,14 @@
 
 + (id)rotationAnimation;
 
-- (id)heading;
+- (id)description;
+- (void)dealloc;
 - (BOOL)animated;
 - (id)initWithHeading:(id)arg1 animated:(BOOL)arg2;
 - (void)setRotationDirection:(int)arg1;
 - (BOOL)hasRotationDirection;
 - (int)rotationDirection;
 - (id)rotationAnimation;
-- (id)description;
-- (void)dealloc;
+- (id)heading;
 
 @end

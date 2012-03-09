@@ -24,6 +24,9 @@
 + (id)wrappedBytesWithBytes:(void*)arg1 capacity64:(unsigned long long)arg2;
 + (id)wrappedBytesWithCapacity64:(unsigned long long)arg1;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setProgressNotifierCallback:(int (*)())arg1 context:(void*)arg2;
 - (unsigned long long)setCapacity64:(unsigned long long)arg1;
 - (unsigned long long)excessDataLength;
@@ -40,8 +43,5 @@
 - (unsigned long long)appendData:(id)arg1;
 - (unsigned long long)offset;
 - (const void*)bytes;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

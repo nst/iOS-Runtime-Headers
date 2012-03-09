@@ -54,6 +54,8 @@
 @property UIPDFPageView * pageView;
 
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)hitTest:(struct CGPoint { float x1; float x2; })arg1 fixedPoint:(struct CGPoint { float x1; float x2; }*)arg2 preceeds:(BOOL*)arg3;
 - (struct CGPoint { float x1; float x2; })selectedPointFor:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })viewOffset;
@@ -72,7 +74,5 @@
 - (void)hide;
 - (void)layout;
 - (void)setSelection:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

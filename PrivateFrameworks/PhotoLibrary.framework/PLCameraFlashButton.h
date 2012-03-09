@@ -29,14 +29,15 @@
 @property(getter=isExpanded,readonly) BOOL expanded;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (void)setFlashMode:(int)arg1;
+- (int)flashMode;
 - (void)collapse;
 - (BOOL)isExpanded;
 - (id)delegate;
 - (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)flashMode;
-- (void)setFlashMode:(int)arg1;
 - (void)_collapseAnimated;
 - (void)_expandAnimated:(BOOL)arg1;
 - (void)_collapseAndSetMode:(int)arg1 animated:(BOOL)arg2;
@@ -51,6 +52,5 @@
 - (void)setFlashMode:(int)arg1 notifyDelegate:(BOOL)arg2;
 - (void)setShowWarningIndicator:(BOOL)arg1;
 - (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
-- (void)dealloc;
 
 @end

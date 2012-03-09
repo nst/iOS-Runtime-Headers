@@ -14,6 +14,8 @@
 + (id)ubiquitousEnabledMediaPropertiesForMediaProperties:(id)arg1;
 + (void)insertDAAPValueIntoDictionary:(id)arg1 mediaItem:(id)arg2 mediaProperty:(id)arg3;
 
+- (id)init;
+- (void)dealloc;
 - (void)pushBookmarkingPropertiesForMediaItem:(id)arg1;
 - (void)_onQueue_scheduleApplyUbiquitousLRUStorageValuesForEntries:(id)arg1;
 - (void)_onQueue_applyUbiquitousLRUStorageValuesForEntries:(id)arg1;
@@ -29,7 +31,5 @@
 - (void)ubiquitousLRUStorageDidCommitLocalChanges:(id)arg1;
 - (void)ubiquitousLRUStorageWillCommitLocalChanges:(id)arg1;
 - (void)ubiquitousLRUStorageDidChangeExternally:(id)arg1 changedEntries:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

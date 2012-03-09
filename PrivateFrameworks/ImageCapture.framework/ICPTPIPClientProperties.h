@@ -19,8 +19,9 @@
 @property int pid;
 
 
-- (void)setRegistered:(BOOL)arg1;
-- (void)finalize;
+- (void)dealloc;
+- (int)pid;
+- (void)setPid:(int)arg1;
 - (void)setFdref:(struct __CFFileDescriptor { }*)arg1;
 - (void)setRemotePort:(struct __CFMessagePort { }*)arg1;
 - (BOOL)didRegister;
@@ -30,8 +31,7 @@
 - (void)setRemoteAddress:(int)arg1;
 - (int)serverFD;
 - (void)setServerFD:(int)arg1;
-- (int)pid;
-- (void)setPid:(int)arg1;
-- (void)dealloc;
+- (void)finalize;
+- (void)setRegistered:(BOOL)arg1;
 
 @end

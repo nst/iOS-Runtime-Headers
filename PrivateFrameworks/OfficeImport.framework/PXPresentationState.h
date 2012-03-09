@@ -17,6 +17,9 @@
 @property(retain) <OCCancelDelegate> * cancelDelegate;
 
 
+- (BOOL)isCancelled;
+- (id)init;
+- (void)dealloc;
 - (id)tgtPresentation;
 - (void)setCancelDelegate:(id)arg1;
 - (void)setTgtPresentation:(id)arg1;
@@ -29,8 +32,5 @@
 - (id)modelObjectForLocation:(id)arg1;
 - (id)officeArtState;
 - (void)setModelObject:(id)arg1 forLocation:(id)arg2;
-- (BOOL)isCancelled;
-- (id)init;
-- (void)dealloc;
 
 @end

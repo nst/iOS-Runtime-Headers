@@ -11,10 +11,10 @@
 @property(retain) GKGame * game;
 
 
+- (void)dealloc;
 - (id)game;
 - (void)setGame:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

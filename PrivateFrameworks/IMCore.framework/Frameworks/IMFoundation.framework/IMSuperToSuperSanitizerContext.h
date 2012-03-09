@@ -20,6 +20,7 @@
 
 
 - (id)attachments;
+- (void)dealloc;
 - (id)sanitizedContent;
 - (id)initWithAttributedString:(id)arg1 extractAttachments:(BOOL)arg2;
 - (void)parser:(id)arg1 foundAttributes:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 characters:(id)arg4;
@@ -28,6 +29,5 @@
 - (void)parserDidEnd:(id)arg1;
 - (id)resultsForLogging;
 - (id)name;
-- (void)dealloc;
 
 @end

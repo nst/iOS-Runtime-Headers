@@ -13,6 +13,7 @@
 }
 
 
+- (id)init;
 - (int)rotationY;
 - (int)rotationX;
 - (int)depthPercent;
@@ -27,6 +28,5 @@
 - (void)setDepthPercent:(int)arg1;
 - (void)setHeightPercent:(int)arg1;
 - (void)setCluster:(bool)arg1;
-- (id)init;
 
 @end

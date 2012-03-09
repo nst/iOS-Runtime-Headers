@@ -6,16 +6,16 @@
 }
 
 
-- (void)finalize;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)copy;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (void)dealloc;
 - (void)_forceDealloc;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (oneway void)release;
-- (void)dealloc;
-- (id)copy;
+- (void)finalize;
 
 @end

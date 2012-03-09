@@ -23,6 +23,7 @@
 
 
 - (void)_addResult:(id)arg1;
+- (void)dealloc;
 - (void)calSearch:(id)arg1 showResultsStartingOnDate:(double)arg2;
 - (void)calSearch:(id)arg1 foundOccurrences:(struct __CFArray { }*)arg2 cachedDays:(struct __CFArray { }*)arg3 cachedDaysIndexes:(struct __CFArray { }*)arg4;
 - (void)calSearchComplete:(id)arg1;
@@ -51,6 +52,5 @@
 - (void)invalidateCachedDays;
 - (void)invalidateCachedDayIndexes;
 - (void)invalidateCachedOccurrences;
-- (void)dealloc;
 
 @end

@@ -17,12 +17,12 @@
 }
 
 
+- (id).cxx_construct;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })size;
 - (BOOL)isRelative;
 - (void)setRelative:(BOOL)arg1;
 - (struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })from;
 - (void)setFrom:(struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })arg1;
-- (id).cxx_construct;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
 
 @end

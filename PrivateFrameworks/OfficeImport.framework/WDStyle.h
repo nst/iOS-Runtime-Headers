@@ -21,6 +21,14 @@
 
 + (id)newIDFromName:(id)arg1;
 
+- (void)setName:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (BOOL)hidden;
+- (int)type;
+- (id)name;
+- (void)setHidden:(BOOL)arg1;
+- (id)styleSheet;
 - (id)initWithStyleSheet:(id)arg1 id:(id)arg2 type:(int)arg3;
 - (id)nextStyle;
 - (id)tableProperties;
@@ -34,13 +42,5 @@
 - (void)setBaseStyle:(id)arg1;
 - (BOOL)isAnythingOverridden;
 - (id)id;
-- (id)styleSheet;
-- (BOOL)hidden;
-- (int)type;
-- (id)name;
-- (void)setHidden:(BOOL)arg1;
-- (void)setName:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

@@ -11,10 +11,10 @@
 
 + (id)alloc;
 
-- (BOOL)tryLock;
+- (id)initWithName:(id)arg1;
 - (void)unlock;
 - (void)lock;
 - (id)name;
-- (id)initWithName:(id)arg1;
+- (BOOL)tryLock;
 
 @end

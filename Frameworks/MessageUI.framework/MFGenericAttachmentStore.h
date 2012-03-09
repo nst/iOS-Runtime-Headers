@@ -21,6 +21,8 @@
 - (void)removeAttachmentForURL:(id)arg1;
 - (id)attachments;
 - (BOOL)setAttachment:(id)arg1 forURL:(id)arg2;
+- (id)description;
+- (void)dealloc;
 - (BOOL)addAttachment:(id)arg1;
 - (unsigned long)sizeForScale:(int)arg1 imagesOnly:(BOOL)arg2;
 - (id)initOutgoing;
@@ -31,7 +33,5 @@
 - (void)setScalingThrottled:(BOOL)arg1;
 - (void)_enqueueScaleAttachment:(id)arg1 withFlags:(unsigned int)arg2 originalSize:(unsigned int)arg3;
 - (BOOL)addAttachment:(id)arg1 allowingOverride:(id)arg2;
-- (id)description;
-- (void)dealloc;
 
 @end

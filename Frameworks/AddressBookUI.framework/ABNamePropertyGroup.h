@@ -16,11 +16,6 @@
 @property <ABPrimaryValueDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (int)property;
-- (void)_setValue:(id)arg1 forProperty:(int)arg2;
-- (id)valueForProperty:(int)arg1;
-- (id)delegate;
 - (id)init;
 - (void)dealloc;
 - (id)_labelAtIndex:(int)arg1;
@@ -57,5 +52,10 @@
 - (BOOL)canSave;
 - (void)reloadFromModel;
 - (void)_clearAllCachedInfo;
+- (void)_setValue:(id)arg1 forProperty:(int)arg2;
+- (id)valueForProperty:(int)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (int)property;
 
 @end

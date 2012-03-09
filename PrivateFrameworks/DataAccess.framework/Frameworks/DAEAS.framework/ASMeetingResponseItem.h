@@ -23,12 +23,12 @@
 @property(retain) id context;
 
 
-- (void)setStatus:(int)arg1;
-- (id)context;
-- (void)setContext:(id)arg1;
-- (int)status;
 - (id)description;
 - (void)dealloc;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (id)context;
+- (void)setContext:(id)arg1;
 - (void)setCalEventServerId:(id)arg1;
 - (id)calEventServerId;
 - (id)eventUID;

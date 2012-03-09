@@ -13,14 +13,15 @@
 
 @property(readonly) MPGeniusMix * mix;
 @property(retain) MPMediaItem * requiredInitialMediaItem;
+@property(readonly) MPMediaItem * initialMediaItem;
 
 + (Class)queueFeederClass;
 
+- (void)dealloc;
 - (id)query;
 - (id)requiredInitialMediaItem;
-- (BOOL)geniusMixQueueFeeder:(id)arg1 reevaluateQueryTrackingCurrentItemIndex:(unsigned int*)arg2;
+- (id)initialMediaItem;
 - (id)_generateNewPlaylistQuery:(id*)arg1 index:(unsigned int)arg2;
-- (id)_reevaluatedQuery:(id)arg1 trackingCurrentItemIndex:(unsigned int*)arg2;
 - (id)_queryForMediaItemAtIndex:(unsigned int)arg1;
 - (void)setRequiredInitialMediaItem:(id)arg1;
 - (id)geniusMixQueueFeeder:(id)arg1 mediaItemAtIndex:(unsigned int)arg2;
@@ -29,6 +30,5 @@
 - (id)mix;
 - (unsigned int)geniusMixQueueFeederMediaItemCount:(id)arg1;
 - (id)initWithGeniusMix:(id)arg1 requiredInitialMediaItem:(id)arg2 error:(id*)arg3;
-- (void)dealloc;
 
 @end

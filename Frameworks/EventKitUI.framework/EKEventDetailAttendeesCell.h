@@ -9,12 +9,12 @@
 }
 
 
+- (void)dealloc;
 - (void)setAttendees:(id)arg1;
-- (BOOL)update;
 - (id)viewControllerForCell;
 - (id)_attendeesListView;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (void)dealloc;
+- (BOOL)update;
 
 @end

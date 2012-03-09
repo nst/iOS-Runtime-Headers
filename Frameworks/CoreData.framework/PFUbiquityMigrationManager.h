@@ -17,12 +17,12 @@
 @property(readonly) PFUbiquityLocation * rootLocation;
 
 
-- (id)rootLocation;
-- (id)storeMetadata;
+- (void)dealloc;
 - (id)initWithDestinationModel:(id)arg1 storeMetadata:(id)arg2 ubiquityRootLocation:(id)arg3;
 - (BOOL)migrateUbiquitousContentForStoreName:(id)arg1 peerID:(id)arg2 error:(id*)arg3;
+- (id)rootLocation;
+- (id)storeMetadata;
 - (id)sourceModel;
 - (id)destinationModel;
-- (void)dealloc;
 
 @end

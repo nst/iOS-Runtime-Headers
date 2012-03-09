@@ -15,6 +15,7 @@
 @property(retain) UIImage * applicationImage;
 
 
+- (void)dealloc;
 - (void)reloadView;
 - (void)flashScrollIndicators;
 - (void)setBackgroundColor:(id)arg1;
@@ -22,7 +23,6 @@
 - (id)applicationImage;
 - (void)setApplicationImage:(id)arg1;
 - (void)_reloadDescriptionView;
-- (void)dealloc;
 - (void)_restrictionsChangedNotification:(id)arg1;
 - (void)_reloadHeaderView;
 - (void)setItem:(id)arg1;

@@ -43,21 +43,28 @@
 }
 
 @property(readonly) NSNotificationCenter * backingCenter;
+@property(readonly) BOOL _shouldForceFetchingAlbumsToReload;
 
-+ (void)distributeThumbnailUpdatedAtIndex:(unsigned int)arg1;
-+ (void)distributeThumbnailUpdatedAtIndexes:(id)arg1;
-+ (id)allManagedObjectKeysStrategy;
-+ (void)getInsertedAssetCount:(unsigned int*)arg1 deletedAssetCount:(unsigned int*)arg2 fromContextDidChangeNotification:(id)arg3;
-+ (void)getInsertedAssets:(id)arg1 deletedAssets:(id)arg2 changedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
-+ (void)processChangeHubEvent:(void*)arg1;
-+ (void)distributeStackViewImageUpdatedForAlbumID:(id)arg1;
 + (id)defaultCenter;
++ (void)forceFetchingAlbumReload;
++ (void)distributeThumbnailUpdatedAtIndex:(unsigned int)arg1;
++ (id)allManagedObjectKeysStrategy;
++ (void)distributeThumbnailUpdatedAtIndexes:(id)arg1;
++ (void)processChangeHubEvent:(void*)arg1 withGroup:(struct dispatch_group_s { }*)arg2;
++ (void)getInsertedAssetCount:(unsigned int*)arg1 deletedAssetCount:(unsigned int*)arg2 updatedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
++ (void)getInsertedAssets:(id)arg1 deletedAssets:(id)arg2 changedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
++ (void)distributeStackViewImageUpdatedForAlbumID:(id)arg1;
 
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id)addObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id)arg4;
-- (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
+- (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
+- (void)removeObserver:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)removeStackViewImageChangeObserver:(id)arg1;
 - (void)addStackViewImageChangeObserver:(id)arg1;
+- (void)enumerateIndexMappingCachesForObject:(id)arg1 withBlock:(id)arg2;
+- (id)_toOneRelationshipsOfInterestForObject:(id)arg1;
+- (id)_attributesOfInterestForObject:(id)arg1;
+- (id)_orderedRelationshipsOfInterestForObject:(id)arg1;
 - (void)_unregisterForStackViewImageChanges;
 - (void)_registerForStackViewImageChanges;
 - (void)_unregisterForCameraPreviewWellChanges;
@@ -66,6 +73,7 @@
 - (id)_takeSnapshotOfObject:(id)arg1 useCommitedValues:(BOOL)arg2;
 - (id)_keysOfInterestForObject:(id)arg1;
 - (void)_evaluateContainersWithUpdatedContent;
+- (BOOL)_shouldForceFetchingAlbumsToReload;
 - (id)_takeSnapshotFromCommittedValuesOfObject:(id)arg1;
 - (BOOL)_isInterestedInUpdatesOfObject:(id)arg1;
 - (void)_enqueueAlbumChangeNotification:(id)arg1;
@@ -81,21 +89,20 @@
 - (void)_enqueuePhotoLibraryNotifications;
 - (void)_enqueueAssetsLibraryNotification;
 - (id)descriptionOfSplitChanges;
-- (void)_processStackViewAlbumUpdatedEvent:(void*)arg1;
+- (void)_processStackViewAlbumUpdatedEvent:(void*)arg1 withGroup:(struct dispatch_group_s { }*)arg2;
 - (void)_processThumbnailsUpdatedEvent:(void*)arg1;
-- (void)enumerateIndexMappingCachesForObject:(id)arg1 withBlock:(id)arg2;
-- (id)_toOneRelationshipsOfInterestForObject:(id)arg1;
-- (id)_attributesOfInterestForObject:(id)arg1;
-- (id)_orderedRelationshipsOfInterestForObject:(id)arg1;
 - (id)_takeSnapshotOfObject:(id)arg1;
 - (void)_sendNotificationsForSplitChanges;
 - (void)_splitContextDidChangeNotification:(id)arg1;
 - (id)backingCenter;
+- (void)postShouldReloadNotification;
+- (void)processChangeHubEvent:(void*)arg1 withGroup:(struct dispatch_group_s { }*)arg2;
 - (void)managedObjectContext:(id)arg1 didProcessRemoteContextSave:(id)arg2 usingObjectIDs:(BOOL)arg3;
 - (void)managedObjectContext:(id)arg1 willProcessRemoteContextSave:(id)arg2 usingObjectIDs:(BOOL)arg3;
 - (void)processContextDidChangeNotification:(id)arg1;
-- (void)postShouldReloadNotification;
-- (void)processChangeHubEvent:(void*)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)addObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id)arg4;
+- (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
 - (void)enqueueNotification:(id)arg1;
 - (void)setPostProcessingHandlerForIdentifier:(id)arg1 block:(id)arg2;
 - (void)removeShouldReloadObserver:(id)arg1;
@@ -106,9 +113,5 @@
 - (void)removeAlbumListChangeObserver:(id)arg1 albumList:(struct NSObject { Class x1; }*)arg2;
 - (void)addAlbumChangeObserver:(id)arg1 album:(struct NSObject { Class x1; }*)arg2;
 - (void)removeAlbumChangeObserver:(id)arg1 album:(struct NSObject { Class x1; }*)arg2;
-- (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
-- (void)removeObserver:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

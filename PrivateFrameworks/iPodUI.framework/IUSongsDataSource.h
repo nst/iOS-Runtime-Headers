@@ -2,16 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class NSString, ATConnection;
+@class NSString;
 
-@interface IUSongsDataSource : IUMediaQueriesDataSource <ATConnectionDelegate> {
+@interface IUSongsDataSource : IUMediaQueriesDataSource  {
     BOOL _showAlbumConfigured;
     BOOL _showAlbum;
     BOOL _showDurationConfigured;
     BOOL _showDuration;
     int _interfaceOrientation;
-    ATConnection *_airTrafficConnection;
     NSString *_syncProgressString;
+    int _syncAssetTotalToken;
+    BOOL _syncAssetTotalTokenIsValid;
+    int _syncCurrentAssetNumberToken;
+    BOOL _syncCurrentAssetNumberTokenIsValid;
+    unsigned int _syncAssetTotal;
+    unsigned int _syncCurrentAssetNumber;
 }
 
 @property BOOL showAlbum;
@@ -24,26 +29,25 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
-- (void)connection:(id)arg1 updatedProgress:(id)arg2;
+- (id)init;
+- (void)dealloc;
 - (void)setShowDuration:(BOOL)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
 - (int)interfaceOrientation;
-- (void)connectionWasInterrupted:(id)arg1;
+- (Class)cellConfigurationClass;
+- (void)_updateSyncProgressString;
 - (Class)songCellConfigurationGlobalContextClass;
 - (int)_containingParentEntityType;
 - (id)countStringFormat;
-- (BOOL)allowsDownloadingAllEntities;
 - (void)createGlobalContexts;
 - (unsigned int)requiredEntityCountForSections;
 - (Class)cellConfigurationClassForEntity:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
+- (BOOL)allowsDownloadingAllEntities;
 - (BOOL)allowsDeletion;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (BOOL)showDuration;
 - (void)setShowAlbum:(BOOL)arg1;
 - (BOOL)showAlbum;
-- (id)init;
-- (void)dealloc;
-- (Class)cellConfigurationClass;
 
 @end

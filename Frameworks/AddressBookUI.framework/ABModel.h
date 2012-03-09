@@ -37,10 +37,6 @@
 + (unsigned int)sortOrdering;
 + (void)initialize;
 
-- (id)initWithAddressBook:(void*)arg1;
-- (void)setAddressBook:(void*)arg1;
-- (void*)addressBook;
-- (void)setSortOrdering:(unsigned int)arg1;
 - (void)dealloc;
 - (void)setDisplayNameOrdering:(unsigned int)arg1;
 - (void)resetSortKeyToHeaderStringDictionary;
@@ -88,5 +84,9 @@
 - (void)_notifyDelegatesOfExternalDatabaseChangeWithDeletedGroup:(BOOL)arg1 deletedPerson:(BOOL)arg2;
 - (void)_modelDatabaseChangedLocally:(struct __CFDictionary { }*)arg1;
 - (void)_modelDatabaseChangedExternally:(struct __CFDictionary { }*)arg1;
+- (id)initWithAddressBook:(void*)arg1;
+- (void)setAddressBook:(void*)arg1;
+- (void*)addressBook;
+- (void)setSortOrdering:(unsigned int)arg1;
 
 @end

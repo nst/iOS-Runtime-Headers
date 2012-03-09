@@ -17,6 +17,11 @@
 + (id)productionLandingPageHost;
 + (id)productionSyncHost;
 
+- (void)dealloc;
+- (id)hostName;
+- (void)setSecure:(BOOL)arg1;
+- (BOOL)isSecure;
+- (id)scheme;
 - (id)syncServiceURL;
 - (id)syncCompleteServiceURL;
 - (id)generateTokenServiceURL;
@@ -24,10 +29,5 @@
 - (id)generatePINServiceURL;
 - (id)loginURLForToken:(id)arg1;
 - (id)initWithHostName:(id)arg1 secure:(BOOL)arg2;
-- (id)hostName;
-- (void)setSecure:(BOOL)arg1;
-- (BOOL)isSecure;
-- (id)scheme;
-- (void)dealloc;
 
 @end

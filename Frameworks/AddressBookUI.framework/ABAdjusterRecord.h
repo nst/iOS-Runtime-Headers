@@ -18,9 +18,6 @@
 
 + (id)recordWithScrollView:(id)arg1;
 
-- (void)_adjustTableForKeyboardInfo:(id)arg1;
-- (id)scrollView;
-- (void)setScrollView:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
@@ -31,5 +28,8 @@
 - (float)adjustment;
 - (void)cancelDelayedAdjustments;
 - (BOOL)manuallyAdjusted;
+- (void)_adjustTableForKeyboardInfo:(id)arg1;
+- (id)scrollView;
+- (void)setScrollView:(id)arg1;
 
 @end

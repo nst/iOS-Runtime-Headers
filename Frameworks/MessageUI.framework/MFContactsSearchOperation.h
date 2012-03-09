@@ -20,12 +20,12 @@
 
 + (id)operationWithAddressBook:(void*)arg1 owner:(id)arg2 text:(id)arg3 taskID:(id)arg4 properties:(id)arg5;
 
+- (void)dealloc;
 - (void*)addressBook;
-- (id)owner;
 - (id)properties;
 - (int)type;
 - (id)text;
-- (void)dealloc;
+- (id)owner;
 - (id)taskID;
 
 @end

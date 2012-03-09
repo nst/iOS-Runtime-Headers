@@ -13,7 +13,6 @@
 @property int abCellStyle;
 
 
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 - (void)dealloc;
 - (void)_updateBackgroundViewsForCellStyleAndLocation;
 - (void)_updateTextStylesForCellStyle;
@@ -21,5 +20,6 @@
 - (void)setAbCellStyle:(int)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
+- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 
 @end

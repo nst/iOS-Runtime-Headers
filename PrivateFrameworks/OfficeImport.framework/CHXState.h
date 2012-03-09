@@ -17,6 +17,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setCurrentSeries:(id)arg1;
 - (id)initWithDrawingState:(id)arg1;
 - (void)setChartPart:(id)arg1;
@@ -36,6 +37,5 @@
 - (id)exState;
 - (void)setResources:(id)arg1;
 - (id)resources;
-- (void)dealloc;
 
 @end

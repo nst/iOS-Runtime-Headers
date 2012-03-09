@@ -16,6 +16,7 @@
 @property(readonly) BOOL throttleLogs;
 
 
+- (void)dealloc;
 - (id)initWithSourceModel:(id)arg1 destinationModel:(id)arg2 mappingModel:(id)arg3;
 - (BOOL)migrateTransactionLogsForStoreName:(id)arg1 andLocalPeerID:(id)arg2 atUbiquityRootLocation:(id)arg3 error:(id*)arg4;
 - (void)populateMappingsByEntityName;
@@ -25,6 +26,5 @@
 - (BOOL)throttleLogs;
 - (id)createDestinationGlobalObjectIDFromSourceGlobalObjectID:(id)arg1;
 - (id)createDestinationObjectContentFromSourceObjectContent:(id)arg1 withEntityMapping:(id)arg2 migrationContext:(id)arg3;
-- (void)dealloc;
 
 @end

@@ -95,6 +95,8 @@
 @property(retain) NSDictionary * pushTokens;
 
 
+- (void)cancel;
+- (void)dealloc;
 - (id)audioPlayer;
 - (id)defaultInvitationMessage;
 - (int)automatchActivity;
@@ -236,8 +238,6 @@
 - (void)setAcceptedInvite:(id)arg1;
 - (id)playersToInvite;
 - (void)setPlayersToInvite:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)play;
 - (void)setHeaderView:(id)arg1;
 - (id)headerView;
 - (id)initWithStyle:(int)arg1;
@@ -257,7 +257,7 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)cancel;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)play;
 
 @end

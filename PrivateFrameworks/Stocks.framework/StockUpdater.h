@@ -17,8 +17,7 @@
 @property BOOL isComprehensive;
 @property(retain) NSArray * requestStocks;
 
-+ (void)failWithError:(id)arg1;
-+ (BOOL)isLoading;
++ (void)cancel;
 + (void)resetUpdaters;
 + (void)updateStockComprehensive:(id)arg1;
 + (void)updateAllStocksBasic;
@@ -27,12 +26,12 @@
 + (id)_listUpdaterAlternate:(BOOL)arg1;
 + (id)_comprehensiveUpdaterAlternate:(BOOL)arg1;
 + (void)updateAllStocksComprehensive;
-+ (void)cancel;
++ (BOOL)isLoading;
++ (void)failWithError:(id)arg1;
 
-- (void)_setLastError:(id)arg1;
-- (void)didParseData;
-- (void)failWithError:(id)arg1;
 - (int)parseData:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)useAlternateDataSource;
 - (BOOL)isComprehensive;
 - (id)requestStocks;
@@ -43,7 +42,8 @@
 - (id)_symbolTagsForRequestStocks;
 - (void)_updateWithPostBody:(id)arg1;
 - (void)_updateWithPartsTag:(id)arg1 forStocks:(id)arg2;
-- (id)init;
-- (void)dealloc;
+- (void)_setLastError:(id)arg1;
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
 
 @end

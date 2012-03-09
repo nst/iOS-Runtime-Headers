@@ -19,16 +19,16 @@
 
 }
 
-@property(copy) id animationDidStopBlock;
 @property(copy) id animationDidStartBlock;
+@property(copy) id animationDidStopBlock;
 
 
-- (id)animationDidStartBlock;
-- (void)setAnimationDidStartBlock:(id)arg1;
-- (id)animationDidStopBlock;
+- (void)dealloc;
 - (void)setAnimationDidStopBlock:(id)arg1;
+- (id)animationDidStopBlock;
+- (void)setAnimationDidStartBlock:(id)arg1;
+- (id)animationDidStartBlock;
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)dealloc;
 
 @end

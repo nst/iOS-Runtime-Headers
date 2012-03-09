@@ -53,7 +53,9 @@
 
 + (BOOL)_touchesBeganWasDelayedForTouch:(id)arg1;
 
-- (void)setDelegate:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)_detach;
 - (void)_invalidate;
 - (id)_briefDescription;
@@ -132,10 +134,8 @@
 - (int)state;
 - (BOOL)_isDirty;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -13,11 +13,11 @@
 @property float titleOffset;
 
 
+- (void)dealloc;
 - (id)typeLabel;
 - (float)titleOffset;
 - (void)setTitleOffset:(float)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

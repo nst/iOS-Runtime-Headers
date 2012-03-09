@@ -12,8 +12,8 @@
 @property(readonly) CIColor * CIColor;
 @property(getter=_systemColorName,setter=_setSystemColorName:,retain) NSString * systemColorName;
 
-+ (id)whitePaperTextureColor;
-+ (id)translucentPaperTextureColor;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)_translucentPaperTextureColor;
 + (id)noContentDarkGradientBackgroundColor;
 + (id)noContentLightGradientBackgroundColor;
 + (id)scrollViewTexturedBackgroundColor;
@@ -72,7 +72,6 @@
 + (id)grayColor;
 + (id)whiteColor;
 + (id)blackColor;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)padFaceTimeShadowedGroupBackgroundColor;
 + (id)padFaceTimeSectionOutlineColor;
 + (id)padFaceTimeDarkSeparatorColor;
@@ -102,6 +101,9 @@
 + (id)_iAd_colorWithRGBA:(unsigned int)arg1;
 + (id)disabledTextColor;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 - (void)_setSystemColorName:(id)arg1;
 - (id)initWithPatternImage:(id)arg1;
 - (id)CIColor;
@@ -126,13 +128,6 @@
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
-- (float)luminance;
-- (float)redComponent;
-- (float)greenComponent;
-- (float)blueComponent;
 - (id)burnWithColor:(id)arg1;
 - (float)brightnessComponent;
 - (float)saturationComponent;
@@ -141,6 +136,10 @@
 - (id)overlayWithColor:(id)arg1;
 - (BOOL)isGreenOrYellow;
 - (id)soverWithColor:(id)arg1;
+- (float)luminance;
+- (float)redComponent;
+- (float)greenComponent;
+- (float)blueComponent;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithStyleString:(id)arg1;
 - (id)styleString;

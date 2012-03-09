@@ -286,6 +286,7 @@
 - (void)releaseAllForcedConnections;
 - (void)releaseAllConnections;
 - (void)_setAccountProperties:(id)arg1;
+- (void)_invalidateCachedMailboxen;
 - (void)setHostname:(id)arg1;
 - (void)setPortNumber:(unsigned int)arg1;
 - (int)libraryID;
@@ -303,22 +304,22 @@
 - (BOOL)deleteInPlaceForMailbox:(id)arg1;
 - (BOOL)canArchiveForMailbox:(id)arg1;
 - (int)archiveDestinationForMailbox:(id)arg1;
+- (void)setCachePolicy:(int)arg1;
+- (int)cachePolicy;
+- (id)description;
+- (void)dealloc;
 - (void)setEmailAddresses:(id)arg1;
 - (void)saveState;
 - (void)setUsername:(id)arg1;
 - (id)emailAddresses;
-- (id)path;
-- (void)invalidate;
-- (void)setCachePolicy:(int)arg1;
-- (int)cachePolicy;
+- (void)stopListeningForNotifications;
 - (id)displayName;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithPath:(id)arg1;
 - (void)setPath:(id)arg1;
 - (BOOL)isActive;
+- (id)path;
 - (void)setIsActive:(BOOL)arg1;
-- (void)stopListeningForNotifications;
-- (id)description;
-- (void)dealloc;
+- (void)invalidate;
 
 @end

@@ -12,10 +12,10 @@
 
 + (void)executeWithTimeout:(double)arg1 identifier:(id)arg2 block:(id)arg3;
 
-- (void)start;
-- (void)invalidate;
+- (void)dealloc;
 - (id)initWithTimeout:(double)arg1 identifier:(id)arg2 block:(id)arg3;
 - (id)initWithTimeout:(double)arg1 identifier:(id)arg2;
-- (void)dealloc;
+- (void)start;
+- (void)invalidate;
 
 @end

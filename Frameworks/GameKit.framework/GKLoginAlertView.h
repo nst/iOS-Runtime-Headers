@@ -13,6 +13,7 @@
 @property(copy) NSString * password;
 
 
+- (void)dealloc;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
@@ -20,6 +21,5 @@
 - (void)_updateFrameForDisplay;
 - (id)password;
 - (BOOL)textFieldShouldReturn:(id)arg1;
-- (void)dealloc;
 
 @end

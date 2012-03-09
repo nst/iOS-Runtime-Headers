@@ -15,12 +15,6 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })zerothHorizontalDividerFrameForValueViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (BOOL)textFieldShouldEndEditing:(id)arg1;
-- (void)textFieldDidEndEditing:(id)arg1;
-- (void)textFieldDidBeginEditing:(id)arg1;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (void)reload;
 - (void)dealloc;
 - (void)reloadIncludingRows:(BOOL)arg1;
 - (id)keyboardSettingsForKey:(id)arg1;
@@ -38,5 +32,11 @@
 - (id)viewForFirstResponder;
 - (void)setAbCellStyle:(int)arg1;
 - (void)reloadFromModel;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (BOOL)textFieldShouldEndEditing:(id)arg1;
+- (void)textFieldDidEndEditing:(id)arg1;
+- (void)textFieldDidBeginEditing:(id)arg1;
+- (BOOL)textFieldShouldBeginEditing:(id)arg1;
+- (void)reload;
 
 @end

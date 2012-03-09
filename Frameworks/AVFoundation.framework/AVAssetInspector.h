@@ -7,14 +7,14 @@
 @interface AVAssetInspector : AVFigObjectInspector <NSCopying> {
 }
 
-@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } duration;
+@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property(readonly) float preferredRate;
 @property(readonly) float preferredVolume;
-@property(readonly) struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } preferredTransform;
-@property(readonly) struct CGSize { float width; float height; } naturalSize;
+@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
+@property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property(readonly) int naturalTimeScale;
 @property(readonly) BOOL providesPreciseDurationAndTiming;
-@property(readonly) int trackCount;
+@property(readonly) long trackCount;
 @property(readonly) NSArray * trackIDs;
 @property(readonly) NSArray * alternateTrackGroups;
 @property(readonly) NSDictionary * trackReferences;
@@ -28,27 +28,27 @@
 @property(getter=isComposable,readonly) BOOL composable;
 
 
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (float)preferredRate;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (long)trackCount;
+- (BOOL)isComposable;
+- (BOOL)isExportable;
+- (BOOL)hasProtectedContent;
+- (id)metadataForFormat:(id)arg1;
+- (id)availableMetadataFormats;
+- (id)commonMetadata;
+- (id)lyrics;
+- (id)trackReferences;
+- (id)mediaSelectionGroups;
+- (id)trackIDs;
+- (id)alternateTrackGroups;
+- (BOOL)providesPreciseDurationAndTiming;
+- (int)naturalTimeScale;
 - (float)preferredVolume;
+- (float)preferredRate;
+- (id)creationDate;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (BOOL)isReadable;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (struct CGSize { float x1; float x2; })naturalSize;
-- (int)naturalTimeScale;
-- (BOOL)providesPreciseDurationAndTiming;
-- (id)alternateTrackGroups;
-- (id)trackIDs;
-- (id)mediaSelectionGroups;
-- (id)trackReferences;
-- (id)creationDate;
-- (id)lyrics;
-- (id)commonMetadata;
-- (id)availableMetadataFormats;
-- (id)metadataForFormat:(id)arg1;
-- (BOOL)hasProtectedContent;
-- (BOOL)isExportable;
-- (BOOL)isReadable;
-- (BOOL)isComposable;
-- (long)trackCount;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

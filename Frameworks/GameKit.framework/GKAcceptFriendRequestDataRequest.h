@@ -13,12 +13,12 @@
 @property(retain) NSString * handle;
 
 
-- (void)setPlayer:(id)arg1;
-- (id)key;
-- (id)request;
+- (void)dealloc;
 - (id)player;
+- (void)setPlayer:(id)arg1;
 - (void)setHandle:(id)arg1;
 - (id)handle;
-- (void)dealloc;
+- (id)key;
+- (id)request;
 
 @end

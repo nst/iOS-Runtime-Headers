@@ -28,6 +28,7 @@
 @property int highlightedColumn;
 
 
+- (void)dealloc;
 - (BOOL)multiCellEnabled;
 - (void)setColumnSeparatorWidth:(float)arg1;
 - (void)setHighlightedColumn:(int)arg1;
@@ -53,7 +54,6 @@
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
 - (int)selectedColumn;
 - (void)setSelectedColumn:(int)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setColumnCount:(unsigned int)arg1;
 - (unsigned int)columnCount;
 - (void)_updateHighlightColorsForView:(id)arg1 highlighted:(BOOL)arg2;
@@ -61,6 +61,5 @@
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

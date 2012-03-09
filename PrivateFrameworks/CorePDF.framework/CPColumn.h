@@ -16,6 +16,10 @@
 
 
 - (void)setComplete:(BOOL)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (int)outOrder;
 - (int)inOrder;
 - (void)setHasColumnBreak:(BOOL)arg1;
@@ -39,9 +43,5 @@
 - (float)selectionBottom;
 - (void)accept:(id)arg1;
 - (BOOL)complete;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

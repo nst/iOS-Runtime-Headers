@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (id)_generateSQLForWildSubStringForGlob:(id)arg1 wildStart:(BOOL)arg2 wildEnd:(BOOL)arg3;
 - (BOOL)_isNilExpression:(id)arg1;
 - (id)_generateSQLType3InContext:(id)arg1;
@@ -32,6 +33,5 @@
 - (id)_lastScopedItem;
 - (id)initWithPredicate:(id)arg1 inScope:(id)arg2;
 - (id)generateSQLStringInContext:(id)arg1;
-- (void)dealloc;
 
 @end

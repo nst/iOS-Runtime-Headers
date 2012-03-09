@@ -19,12 +19,6 @@
 
 + (id)animationWithKeyPath:(id)arg1;
 
-- (BOOL)isAdditive;
-- (void)setAdditive:(BOOL)arg1;
-- (id)valueFunction;
-- (void)setValueFunction:(id)arg1;
-- (void)setKeyPath:(id)arg1;
-- (id)keyPath;
 - (void)setCumulative:(BOOL)arg1;
 - (BOOL)additive;
 - (BOOL)cumulative;
@@ -32,5 +26,11 @@
 - (BOOL)isCumulative;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (unsigned int)_propertyFlagsForLayer:(id)arg1;
+- (void)setKeyPath:(id)arg1;
+- (id)keyPath;
+- (void)setValueFunction:(id)arg1;
+- (BOOL)isAdditive;
+- (void)setAdditive:(BOOL)arg1;
+- (id)valueFunction;
 
 @end

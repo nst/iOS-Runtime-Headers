@@ -12,8 +12,8 @@
 + (id)urlCacheChangedNotificationName;
 + (id)urlCacheName;
 
+- (void)dealloc;
 - (BOOL)isGameCenterURL:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (void)dealloc;
 
 @end

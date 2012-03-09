@@ -15,6 +15,8 @@
 @property(readonly) NSSet * availableAirTunesServices;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)_invalidate;
 - (void)_refresh;
 - (BOOL)searchForAirTunesServers;
@@ -23,7 +25,5 @@
 - (void)_netServiceResolutionDidChange:(id)arg1;
 - (id)availableAirTunesServices;
 - (void)setSearchForAirTunesServers:(BOOL)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

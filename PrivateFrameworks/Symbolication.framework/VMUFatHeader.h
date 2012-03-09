@@ -12,12 +12,12 @@
 
 + (id)fatHeaderWithMemory:(id)arg1 path:(id)arg2 timestamp:(id)arg3;
 
-- (id)path;
-- (id)timestamp;
+- (void)dealloc;
 - (BOOL)isFat;
 - (id)fatArchs;
 - (id)fatArchMatchingArchitecture:(id)arg1;
 - (id)initWithMemory:(id)arg1 path:(id)arg2 timestamp:(id)arg3;
-- (void)dealloc;
+- (id)path;
+- (id)timestamp;
 
 @end

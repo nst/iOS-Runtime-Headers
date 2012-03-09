@@ -24,7 +24,13 @@
 @property(copy) NSString * directory;
 
 
+- (void)setName:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)directory;
 - (id)contentURL;
+- (int)status;
 - (void)_assetChanged:(id)arg1;
 - (void)_cleanupAsset:(id)arg1;
 - (void)_markAssetAsResolved:(id)arg1;
@@ -42,12 +48,6 @@
 - (id)date;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)status;
-- (id)directory;
 - (void)setDirectory:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

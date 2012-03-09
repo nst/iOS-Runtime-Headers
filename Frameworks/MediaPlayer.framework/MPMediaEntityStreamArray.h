@@ -23,6 +23,7 @@
     unsigned int _hasIsEmpty : 1;
     unsigned int _hasStartedLoadingIsEmpty : 1;
     unsigned int _hasStartedLoadingEntities : 1;
+    unsigned int _isImmediate : 1;
 }
 
 @property int containedMediaTypes;
@@ -32,6 +33,11 @@
 
 
 - (id)library;
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)queryCriteria;
 - (void)setContainedMediaTypes:(int)arg1;
 - (int)containedMediaTypes;
@@ -44,14 +50,10 @@
 - (void)_onQueueStartLoadingIsEmpty;
 - (void)_commonInitMPMediaEntityStreamArray;
 - (id)initWithEntityType:(int)arg1 queryCriteria:(id)arg2 library:(id)arg3;
+- (id)initWithEntityType:(int)arg1 queryCriteria:(id)arg2 library:(id)arg3 immediate:(BOOL)arg4;
 - (BOOL)MPIsEmpty;
 - (id)sectionInfo;
-- (id)propertiesToFetch;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)count;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)propertiesToFetch;
 
 @end

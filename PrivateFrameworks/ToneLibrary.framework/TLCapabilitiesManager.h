@@ -13,9 +13,6 @@
 + (void)_setDefaultCapabilitiesManager:(id)arg1;
 + (id)defaultCapabilitiesManager;
 
-- (BOOL)isToneStoreAvailable;
-- (BOOL)areCustomVibrationsAllowed;
-- (void)setIsToneStoreAvailable:(BOOL)arg1;
 - (id)init;
 - (void)dealloc;
 - (BOOL)isSensitiveUIAllowed;
@@ -25,5 +22,8 @@
 - (void)setIsRingtoneStoreAvailable:(BOOL)arg1;
 - (BOOL)hasVibratorCapability;
 - (BOOL)hasTelephonyCapability;
+- (BOOL)isToneStoreAvailable;
+- (BOOL)areCustomVibrationsAllowed;
+- (void)setIsToneStoreAvailable:(BOOL)arg1;
 
 @end

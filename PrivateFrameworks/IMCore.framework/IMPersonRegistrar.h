@@ -12,6 +12,7 @@
 
 + (id)sharedInstance;
 
+- (void)dealloc;
 - (void)set_personMap:(id)arg1;
 - (id)_personMap;
 - (void)_dumpAllPersons;
@@ -20,6 +21,5 @@
 - (void)registerPerson:(id)arg1;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
-- (void)dealloc;
 
 @end

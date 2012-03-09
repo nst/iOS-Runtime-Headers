@@ -17,9 +17,8 @@
 }
 
 
-- (id)sections;
-- (unsigned int)flags;
-- (id)name;
+- (id)description;
+- (void)dealloc;
 - (unsigned long long)filesize;
 - (int)maxprot;
 - (int)initprot;
@@ -28,7 +27,8 @@
 - (unsigned long long)fileoff;
 - (BOOL)isSegment;
 - (id)sectionNamed:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (id)sections;
+- (unsigned int)flags;
+- (id)name;
 
 @end

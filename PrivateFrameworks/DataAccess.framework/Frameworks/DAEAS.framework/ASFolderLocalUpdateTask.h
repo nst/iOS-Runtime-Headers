@@ -22,8 +22,8 @@
 
 + (id)taskWithFolder:(id)arg1 previousSyncKey:(id)arg2 completionBlock:(id)arg3;
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
+- (void)finishWithError:(id)arg1;
 - (void)_appendRequestBodyFolderDataToWBXMLData:(id)arg1;
 - (id)initWithFolder:(id)arg1 previousSyncKey:(id)arg2 completionBlock:(id)arg3;
 - (BOOL)processContext:(id)arg1;

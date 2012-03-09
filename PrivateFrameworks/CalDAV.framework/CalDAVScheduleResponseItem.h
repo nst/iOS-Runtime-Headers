@@ -15,16 +15,16 @@
 @property(retain) NSMutableSet * responses;
 
 
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)description;
 - (void)dealloc;
-- (void)setResponses:(id)arg1;
-- (id)responses;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setSuccessfulICS:(id)arg1;
 - (void)setFailedResponseItems:(id)arg1;
 - (void)addNewTopLevelItem:(id)arg1;
 - (id)successfulICS;
 - (id)failedResponseItems;
+- (void)setResponses:(id)arg1;
+- (id)responses;
 
 @end

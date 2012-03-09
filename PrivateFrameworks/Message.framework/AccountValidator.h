@@ -37,10 +37,10 @@
 - (BOOL)_outgoingServerValid;
 - (BOOL)_incomingServerValid;
 - (id)account;
-- (void)setDelegate:(id)arg1;
-- (void)stop;
-- (id)error;
 - (id)init;
 - (void)dealloc;
+- (id)error;
+- (void)stop;
+- (void)setDelegate:(id)arg1;
 
 @end

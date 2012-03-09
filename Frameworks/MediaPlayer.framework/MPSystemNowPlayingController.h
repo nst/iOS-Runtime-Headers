@@ -13,14 +13,14 @@
 @property MPAVController * player;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)postProgressUpdateForItem:(id)arg1;
 - (void)postNowPlayingInfoForItem:(id)arg1;
 - (unsigned int)_chapterIndexForItem:(id)arg1 atTime:(double)arg2;
 - (int)_MRShuffleModeForMPShuffleType:(unsigned int)arg1;
 - (int)_MRRepeatModeForMPRepeatType:(unsigned int)arg1;
-- (void)setPlayer:(id)arg1;
 - (id)player;
-- (id)init;
-- (void)dealloc;
+- (void)setPlayer:(id)arg1;
 
 @end

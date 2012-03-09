@@ -14,10 +14,9 @@
 
 
 - (id)messageBody;
-- (int)command;
-- (void)setPushToken:(id)arg1;
-- (id)pushToken;
-- (id)responseCertificateData;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setResponseCertificateData:(id)arg1;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)additionalMessageHeaders;
@@ -28,9 +27,10 @@
 - (BOOL)wantsCompressedBody;
 - (id)requiredKeys;
 - (BOOL)wantsBinaryPush;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (int)command;
+- (void)setPushToken:(id)arg1;
+- (id)pushToken;
 - (id)bagKey;
+- (id)responseCertificateData;
 
 @end

@@ -21,13 +21,13 @@
 + (void)startObservingNotifications;
 + (id)loadedMap;
 
+- (id)init;
+- (void)dealloc;
 - (id)copySoftwareUpdatesPropertyList;
 - (id)_newSoftwareUpdateDictionaryForApplication:(id)arg1;
 - (id)_softwareUpdatesAccountsStringForApplications:(id)arg1;
 - (id)copySoftwareUpdatesPropertyListWithUpdatesContext:(id)arg1;
 - (void)_loadFromMobileInstallation;
-- (id)init;
-- (void)dealloc;
 - (id)applicationForBundleIdentifier:(id)arg1;
 - (id)applications;
 - (id)applicationForItemIdentifier:(id)arg1;

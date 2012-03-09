@@ -12,8 +12,8 @@
 
 + (id)titleForURL:(id)arg1;
 
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)dealloc;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)_copyResponseByRunningModal;
 - (id)copyResponseByRunningModal;
 - (id)initWithDialog:(id)arg1;

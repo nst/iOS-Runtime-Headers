@@ -20,6 +20,7 @@
 
 - (void)setCurrentCount:(unsigned int)arg1;
 - (unsigned int)totalCount;
+- (void)dealloc;
 - (void)layoutSubviews;
 - (int)progressType;
 - (void)setTotalCount:(unsigned int)arg1;
@@ -27,6 +28,5 @@
 - (unsigned int)currentCount;
 - (id)_progressDescription;
 - (void)setProgressType:(int)arg1;
-- (void)dealloc;
 
 @end

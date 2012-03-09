@@ -27,14 +27,14 @@
 - (unsigned int)currentMemoryUsage;
 - (unsigned int)diskCapacity;
 - (unsigned int)memoryCapacity;
+- (id)init;
+- (void)dealloc;
 - (BOOL)_urlStringMatchesURLPatterns:(id)arg1;
 - (BOOL)_urlStringMatchesFileExtensions:(id)arg1;
 - (BOOL)criteriaMatchesRequest:(id)arg1;
 - (BOOL)isUsableByClientWithIdentifier:(id)arg1;
 - (void)reloadWithCacheConfiguration:(id)arg1;
 - (id)initWithCacheConfiguration:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)saveMemoryCacheToDisk;
 - (void)purgeMemoryCache;
 

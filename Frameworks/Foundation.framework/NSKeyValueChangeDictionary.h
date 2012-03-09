@@ -22,9 +22,9 @@
 - (id)initWithDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; id x5; })arg1 originalObservable:(id)arg2 isPriorNotification:(BOOL)arg3;
 - (void)setDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; id x5; })arg1 originalObservable:(id)arg2;
 - (void)setOriginalObservable:(id)arg1;
-- (id)keyEnumerator;
 - (unsigned int)count;
 - (id)objectForKey:(id)arg1;
 - (void)dealloc;
+- (id)keyEnumerator;
 
 @end

@@ -11,10 +11,10 @@
 @property int changeCount;
 
 
+- (id)description;
 - (void)setChangeCount:(int)arg1;
 - (void)setGenerationCount:(int)arg1;
 - (int)generationCount;
 - (int)changeCount;
-- (id)description;
 
 @end

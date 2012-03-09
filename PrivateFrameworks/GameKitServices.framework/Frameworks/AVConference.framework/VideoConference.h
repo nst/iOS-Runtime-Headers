@@ -213,10 +213,8 @@
 @property NSObject<VideoConferenceDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (BOOL)setActive:(BOOL)arg1;
-- (void)unlock;
-- (id)delegate;
+- (id)init;
+- (void)dealloc;
 - (float)powerIntToFloat:(unsigned char)arg1;
 - (bool)onCaptureSound:(char *)arg1 numBytes:(int)arg2 numSamples:(int)arg3 timeStamp:(unsigned int)arg4 timeStampDelta:(int)arg5 hostTime:(double)arg6 averagePower:(float)arg7 voiceActivity:(unsigned long)arg8;
 - (bool)onPlaySound:(char *)arg1 numBytes:(int)arg2 numSamples:(int)arg3 timeStamp:(unsigned int)arg4 averagePower:(float)arg5;
@@ -416,7 +414,9 @@
 - (void)processRelayRequestResponse:(int)arg1 responseDict:(id)arg2 didOriginateRequest:(BOOL)arg3;
 - (void)processRelayUpdate:(int)arg1 updateDict:(id)arg2 didOriginateRequest:(BOOL)arg3;
 - (void)getNSError:(id*)arg1 code:(int)arg2 detailedCode:(int)arg3 filePath:(id)arg4 description:(id)arg5 reason:(id)arg6;
-- (id)init;
-- (void)dealloc;
+- (BOOL)setActive:(BOOL)arg1;
+- (void)unlock;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

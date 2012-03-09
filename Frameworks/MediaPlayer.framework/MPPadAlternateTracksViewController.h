@@ -9,6 +9,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (id)initWithPlayer:(id)arg1;
 - (void)viewDidUnload;
 - (void)loadView;
@@ -18,7 +20,5 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)reloadData;
-- (id)init;
-- (void)dealloc;
 
 @end

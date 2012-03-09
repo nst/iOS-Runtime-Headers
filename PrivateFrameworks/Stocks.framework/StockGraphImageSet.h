@@ -15,12 +15,12 @@
 @property(retain) UIImage * lineGraphImage;
 
 
+- (void)dealloc;
 - (id)volumeGraphImage;
 - (void)setVolumeGraphImage:(id)arg1;
 - (id)plainLineImage;
 - (void)setPlainLineImage:(id)arg1;
 - (id)lineGraphImage;
 - (void)setLineGraphImage:(id)arg1;
-- (void)dealloc;
 
 @end

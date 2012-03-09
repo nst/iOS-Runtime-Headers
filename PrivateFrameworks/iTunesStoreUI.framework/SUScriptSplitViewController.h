@@ -18,12 +18,12 @@
 @property(retain) NSString * title;
 @property BOOL usesSharedPlaceholder;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (void)initialize;
++ (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)attributeKeys;
 - (id)title;
 - (void)setTitle:(id)arg1;
+- (id)attributeKeys;
 - (id)splitType;
 - (id)splitShadowRadius;
 - (id)splitShadowOpacity;

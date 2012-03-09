@@ -27,6 +27,7 @@
 + (id)urlConfiguration;
 + (void)reset;
 
+- (void)dealloc;
 - (id)validateURL;
 - (id)registerURL;
 - (id)updateAccountURL;
@@ -43,6 +44,5 @@
 - (id)signingSessionURL;
 - (id)signingSessionCertURL;
 - (id)initWithDictionary:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -11,10 +11,10 @@
 @property(retain) NSData * image;
 
 
+- (void)dealloc;
 - (id)key;
 - (id)request;
 - (id)image;
 - (void)setImage:(id)arg1;
-- (void)dealloc;
 
 @end

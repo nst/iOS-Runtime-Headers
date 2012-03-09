@@ -13,18 +13,18 @@
 
 + (void)initialize;
 
-- (void)setSampleBufferDelegate:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
-- (id)connectionMediaTypes;
-- (void)handleEnabledChangedForConnection:(id)arg1;
-- (void)didStopForSession:(id)arg1 error:(id)arg2;
-- (void)didStartForSession:(id)arg1;
-- (BOOL)isTheOnlyDataOutput;
-- (void)setSession:(id)arg1;
-- (id)_applyOverridesToCaptureOptions:(id)arg1;
-- (id)sampleBufferDelegate;
-- (struct dispatch_queue_s { }*)sampleBufferCallbackQueue;
-- (void)_AVCaptureAudioDataOutput_AudioDataBecameReady;
 - (id)init;
 - (void)dealloc;
+- (void)_AVCaptureAudioDataOutput_AudioDataBecameReady;
+- (void)didStartForSession:(id)arg1;
+- (void)didStopForSession:(id)arg1 error:(id)arg2;
+- (void)handleEnabledChangedForConnection:(id)arg1;
+- (id)connectionMediaTypes;
+- (void)setSampleBufferDelegate:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
+- (struct dispatch_queue_s { }*)sampleBufferCallbackQueue;
+- (id)sampleBufferDelegate;
+- (id)_applyOverridesToCaptureOptions:(id)arg1;
+- (BOOL)isTheOnlyDataOutput;
+- (void)setSession:(id)arg1;
 
 @end

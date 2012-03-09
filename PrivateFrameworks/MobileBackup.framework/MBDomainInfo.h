@@ -27,12 +27,16 @@
 
 - (id)domainName;
 - (void)setDomainName:(id)arg1;
-- (id)bundleID;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)size;
+- (id)bundleID;
+- (BOOL)isRestricted;
 - (BOOL)isCameraRollDomain;
 - (void)setRestricted:(BOOL)arg1;
 - (unsigned long long)localSize;
@@ -41,9 +45,5 @@
 - (void)setRemoteSize:(unsigned long long)arg1;
 - (id)initWithDomainName:(id)arg1 remoteSize:(unsigned long long)arg2 localSize:(unsigned long long)arg3 enabled:(BOOL)arg4 restricted:(BOOL)arg5;
 - (BOOL)isAppDomain;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (BOOL)isRestricted;
 
 @end

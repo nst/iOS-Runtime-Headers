@@ -37,10 +37,18 @@
 @property(retain) NSString * suffix;
 
 
+- (id)description;
+- (void)dealloc;
 - (float*)parameters;
+- (id)dictionaryRepresentation;
+- (id)prefix;
+- (void)setPrefix:(id)arg1;
 - (id)suffix;
 - (void)setSuffix:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)clearParameters;
+- (unsigned int)parametersCount;
+- (void)writeTo:(id)arg1;
 - (void)setHasSameParity:(BOOL)arg1;
 - (BOOL)hasSameParity;
 - (void)setHasParameterIsSynthesized:(BOOL)arg1;
@@ -52,7 +60,6 @@
 - (void)setParameters:(float*)arg1 count:(unsigned int)arg2;
 - (float)parameterAtIndex:(unsigned int)arg1;
 - (void)addParameter:(float)arg1;
-- (void)clearParameters;
 - (void)setNumbers:(int*)arg1 count:(unsigned int)arg2;
 - (int)numberAtIndex:(unsigned int)arg1;
 - (void)addNumber:(int)arg1;
@@ -61,12 +68,5 @@
 - (unsigned int)numbersCount;
 - (void)setParameterIsSynthesized:(BOOL)arg1;
 - (void)setSameParity:(BOOL)arg1;
-- (unsigned int)parametersCount;
-- (void)writeTo:(id)arg1;
-- (id)prefix;
-- (void)setPrefix:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

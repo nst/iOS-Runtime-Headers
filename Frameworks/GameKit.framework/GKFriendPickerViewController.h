@@ -40,6 +40,7 @@
 @property int numSelected;
 
 
+- (void)dealloc;
 - (id)inviteMessage;
 - (void)didSelectPlayer:(id)arg1;
 - (id)predicateForSearchText:(id)arg1;
@@ -77,7 +78,6 @@
 - (void)setTheme:(id)arg1;
 - (int)maxPlayers;
 - (void)setMaxPlayers:(int)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)searchController;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)done;
@@ -87,6 +87,6 @@
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)delegate;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

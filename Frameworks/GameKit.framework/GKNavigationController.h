@@ -2,20 +2,35 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSMutableArray, UIView;
+@class UIView, NSMutableArray, UIImageView;
 
 @interface GKNavigationController : UINavigationController  {
+    unsigned int _roundedCorners;
     NSMutableArray *_deferredTransitions;
+    UIImageView *_leftCornerView;
+    UIImageView *_rightCornerView;
 }
 
 @property(readonly) UIView * topShadowView;
+@property unsigned int roundedBarCorners;
 @property(retain) NSMutableArray * deferredTransitions;
+@property(retain) UIImageView * leftCornerView;
+@property(retain) UIImageView * rightCornerView;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)setRightCornerView:(id)arg1;
+- (id)rightCornerView;
+- (void)setLeftCornerView:(id)arg1;
+- (id)leftCornerView;
+- (unsigned int)roundedBarCorners;
 - (void)_deferTransitionOfType:(int)arg1 withViewController:(id)arg2 animated:(BOOL)arg3;
 - (id)deferredTransitions;
 - (void)_performDeferredTransition;
+- (void)setRoundedBarCorners:(unsigned int)arg1;
 - (void)setDeferredTransitions:(id)arg1;
+- (void)setupGKNavigationController;
 - (id)topShadowView;
 - (id)popToRootViewControllerAnimated:(BOOL)arg1;
 - (id)initWithRootViewController:(id)arg1;
@@ -23,7 +38,7 @@
 - (id)popViewControllerAnimated:(BOOL)arg1;
 - (void)didShowViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)dealloc;
 
 @end

@@ -33,6 +33,16 @@
 + (id)lassoNameForFontName:(id)arg1 bold:(bool)arg2 italic:(bool)arg3;
 + (id)fontNameWithFamilyName:(id)arg1 bold:(bool)arg2 italic:(bool)arg3;
 
+- (void)setName:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)setHeight:(double)arg1;
+- (double)height;
+- (id)color;
+- (void)setColor:(id)arg1;
+- (id)name;
+- (void)setOutline:(bool)arg1;
 - (void)setColorReference:(id)arg1;
 - (id)filteredName;
 - (id)lassoName;
@@ -65,15 +75,5 @@
 - (int)family;
 - (int)charSet;
 - (void)setUnderline:(int)arg1;
-- (void)setOutline:(bool)arg1;
-- (void)setHeight:(double)arg1;
-- (double)height;
-- (id)color;
-- (void)setColor:(id)arg1;
-- (id)name;
-- (void)setName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

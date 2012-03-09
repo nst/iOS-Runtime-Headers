@@ -13,10 +13,10 @@
 @property unsigned int displayedIndex;
 
 
+- (id)init;
 - (id)image;
 - (void)setImage:(id)arg1;
 - (void)setDisplayedIndex:(unsigned int)arg1;
 - (unsigned int)displayedIndex;
-- (id)init;
 
 @end

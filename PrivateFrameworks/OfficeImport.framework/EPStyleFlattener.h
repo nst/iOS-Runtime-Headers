@@ -22,6 +22,7 @@
 }
 
 
+- (void)dealloc;
 - (void)clearCache;
 - (id)wrapDifferentialStyleInATableStyleElement:(id)arg1 type:(int)arg2;
 - (void)processObject:(id)arg1;
@@ -43,6 +44,5 @@
 - (void)cacheRange:(id)arg1;
 - (void)cacheSizes:(id)arg1 inObject:(id)arg2;
 - (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;
-- (void)dealloc;
 
 @end

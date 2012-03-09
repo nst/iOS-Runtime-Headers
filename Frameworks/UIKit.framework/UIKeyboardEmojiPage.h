@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, <UIKeyboardEmojiController>, UITouch, NSMutableArray, UIKeyboardEmojiView;
+@class NSArray, <UIKeyboardEmojiController>, NSString, UITouch, UIKeyboardEmojiView;
 
-@interface UIKeyboardEmojiPage : UIControl  {
+@interface UIKeyboardEmojiPage : UIView  {
     NSArray *_emoji;
-    NSMutableArray *_emojiViews;
     int _numRows;
     int _numCols;
     int _numPages;
@@ -36,6 +35,7 @@
     <UIKeyboardEmojiController> *_controller;
     UITouch *_activeTouch;
     BOOL _needsLayout;
+    BOOL _needsEmojiRendering;
     UIKeyboardEmojiView *_touched;
     UIKeyboardEmojiView *_pendingDisplay;
     UIKeyboardEmojiView *_onDisplay;
@@ -50,9 +50,8 @@
 @property(retain) UIKeyboardEmojiView * pendingDisplay;
 @property(retain) UIKeyboardEmojiView * onDisplay;
 
-+ (struct CGSize { float x1; float x2; })emojiSize:(BOOL)arg1;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (void)setKeyActivationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })keyActivationRect;
 - (id)optionalText;
@@ -67,13 +66,10 @@
 - (id)closestForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)touchEnded:(id)arg1;
 - (void)checkForStalePopup:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })emojiRectForPoint:(struct CGPoint { float x1; float x2; })arg1 index:(unsigned int*)arg2;
 - (id)pendingDisplay;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRow:(int)arg1 Col:(int)arg2;
 - (void)clearSubviews;
-- (struct CGPoint { float x1; float x2; })margin:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })padding:(BOOL)arg1;
-- (unsigned char)colCount:(BOOL)arg1;
-- (unsigned char)rowCount:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRow:(int)arg1 Col:(int)arg2;
 - (void)setTouched:(id)arg1;
 - (void)setOnDisplay:(id)arg1;
 - (void)setPendingDisplay:(id)arg1;
@@ -93,7 +89,8 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

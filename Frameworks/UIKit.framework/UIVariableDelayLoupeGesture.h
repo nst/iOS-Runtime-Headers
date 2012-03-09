@@ -11,10 +11,10 @@
 @property UIView<UITextSelectingContainer> * textView;
 
 
-- (void)invalidate;
 - (BOOL)isCloseToCaret;
 - (id)textView;
 - (void)startTimer;
 - (void)setTextView:(id)arg1;
+- (void)invalidate;
 
 @end

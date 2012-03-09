@@ -32,11 +32,11 @@
 - (void)setTruncationSize:(long long)arg1;
 - (void)setPriorToDate:(id)arg1;
 - (void)setDeepTraversal:(BOOL)arg1;
+- (void)dealloc;
 - (void)setRebuildResults:(BOOL)arg1;
 - (void)setAllOrNone:(BOOL)arg1;
 - (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
 - (id)dictionaryRepresentation;
-- (void)dealloc;
 - (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
 - (BOOL)rebuildResults;
 - (BOOL)deepTraversal;

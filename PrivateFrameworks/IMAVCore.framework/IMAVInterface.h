@@ -41,15 +41,11 @@
 @property(readonly) unsigned long long capabilitiesOfCPU;
 @property(readonly) id _controller;
 
-+ (id)alloc;
 + (id)sharedInstance;
++ (id)alloc;
 
-- (unsigned int)cameraType;
-- (void)setDelegate:(id)arg1;
-- (id)controller;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
-- (id)delegate;
+- (unsigned long long)capabilities;
+- (void)dealloc;
 - (void)setCameraType:(unsigned int)arg1;
 - (void*)localVideoBackLayer;
 - (void)setLocalVideoBackLayer:(void*)arg1;
@@ -61,8 +57,12 @@
 - (void)setRemoteVideoLayer:(void*)arg1;
 - (void)setRemoteVideoBackLayer:(void*)arg1;
 - (BOOL)stopPreview;
-- (void)dealloc;
-- (unsigned long long)capabilities;
+- (id)controller;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (unsigned int)cameraType;
 - (void)setShouldKeepCameraRunning:(BOOL)arg1;
 - (BOOL)shouldKeepCameraRunning;
 - (BOOL)_previewStarted;
@@ -123,7 +123,6 @@
 - (unsigned int)cameraOrientationForAVChat:(id)arg1;
 - (unsigned int)cameraTypeForAVChat:(id)arg1;
 - (void)avChat:(id)arg1 setCameraType:(unsigned int)arg2;
-- (unsigned int)cameraOrientation;
 - (id)avChat:(id)arg1 localICEDataForHandle:(id)arg2 usingRelay:(BOOL)arg3;
 - (void)avChat:(id)arg1 prepareConnectionWithRemoteConnectionData:(id)arg2 localConnectionData:(id)arg3;
 - (void)initAVInterface;
@@ -150,5 +149,6 @@
 - (id)externalIPAddress;
 - (id)natTypeForAVChat:(id)arg1;
 - (id)getNatIPFromICEData:(id)arg1;
+- (unsigned int)cameraOrientation;
 
 @end

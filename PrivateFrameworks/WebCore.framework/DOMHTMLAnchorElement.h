@@ -29,6 +29,19 @@
 @property(copy,readonly) NSURL * absoluteLinkURL;
 
 
+- (void)setName:(id)arg1;
+- (void)setTarget:(id)arg1;
+- (id)target;
+- (id)protocol;
+- (id)port;
+- (void)setShape:(id)arg1;
+- (id)shape;
+- (id)absoluteLinkURL;
+- (id)host;
+- (id)type;
+- (id)name;
+- (void)setType:(id)arg1;
+- (id)text;
 - (id)accessKey;
 - (void)setAccessKey:(id)arg1;
 - (id)coords;
@@ -50,18 +63,5 @@
 - (id)charset;
 - (void)setCharset:(id)arg1;
 - (id)href;
-- (id)protocol;
-- (id)port;
-- (void)setShape:(id)arg1;
-- (id)shape;
-- (id)absoluteLinkURL;
-- (id)host;
-- (id)type;
-- (id)name;
-- (void)setType:(id)arg1;
-- (id)text;
-- (void)setName:(id)arg1;
-- (void)setTarget:(id)arg1;
-- (id)target;
 
 @end

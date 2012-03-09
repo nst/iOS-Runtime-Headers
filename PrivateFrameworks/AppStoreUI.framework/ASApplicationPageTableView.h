@@ -15,6 +15,7 @@
 @property float snapToBottomY;
 
 
+- (void)dealloc;
 - (void)_scrollViewAnimationEnded;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
@@ -26,6 +27,5 @@
 - (void)setScreenshotsView:(id)arg1;
 - (void)screenshotsViewBeganScroll:(id)arg1;
 - (id)screenshotsView;
-- (void)dealloc;
 
 @end

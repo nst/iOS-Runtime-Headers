@@ -16,10 +16,6 @@
 @property(copy) NSString * pendingAlias;
 
 
-- (id)bundle;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)_updateUI;
 - (void)dealloc;
 - (id)specifierList;
 - (id)_rightButtonItem;
@@ -53,5 +49,9 @@
 - (void)_setupEventHandlers;
 - (void)_failValidationWithError:(id)arg1;
 - (id)logName;
+- (void)_updateUI;
+- (id)bundle;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -22,6 +22,7 @@
 @property float minimumVerticalMovement;
 
 
+- (void)dealloc;
 - (float)minimumVerticalMovement;
 - (void)setNumberOfFingers:(int)arg1;
 - (int)overallState;
@@ -45,6 +46,5 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)setState:(int)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 
 @end

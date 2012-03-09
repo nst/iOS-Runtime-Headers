@@ -22,18 +22,18 @@
 - (long long)expectedContentLength;
 - (id)textEncodingName;
 - (id)_initWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
-- (id)initWithURL:(id)arg1 MIMEType:(id)arg2 expectedContentLength:(int)arg3 textEncodingName:(id)arg4;
-- (struct _CFURLResponse { }*)_CFURLResponse;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)MIMEType;
 - (id)URL;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)initWithURL:(id)arg1 MIMEType:(id)arg2 expectedContentLength:(int)arg3 textEncodingName:(id)arg4;
+- (struct _CFURLResponse { }*)_CFURLResponse;
 - (id)_cacheTime;
+- (long long)maxExpectedContentLength;
 - (id)allHeaderFields;
 - (int)statusCode;
-- (long long)maxExpectedContentLength;
 
 @end

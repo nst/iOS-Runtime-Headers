@@ -65,7 +65,23 @@
 + (void)unregisterPreview:(id)arg1;
 + (BOOL)isSafeURL:(id)arg1;
 
+- (void)cancel;
+- (BOOL)isCancelled;
+- (void)dealloc;
 - (void)setError:(id)arg1;
+- (void)setConnection:(id)arg1;
+- (id)connection;
+- (void)setUrl:(id)arg1;
+- (id)url;
+- (int)pageCount;
+- (id)data;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (id)previewRequest;
+- (id)safeRequestForRequest:(id)arg1;
+- (id)previewResponse;
+- (id)fileName;
+- (void)setData:(id)arg1;
 - (void)setFileName:(id)arg1;
 - (float)pageWidth;
 - (float)pageHeight;
@@ -92,21 +108,5 @@
 - (BOOL)isComputed;
 - (id)uti;
 - (void)startComputingPreview;
-- (id)data;
-- (void)setDelegate:(id)arg1;
-- (id)previewRequest;
-- (id)safeRequestForRequest:(id)arg1;
-- (id)previewResponse;
-- (id)fileName;
-- (void)setData:(id)arg1;
-- (void)setUrl:(id)arg1;
-- (id)url;
-- (int)pageCount;
-- (id)delegate;
-- (void)setConnection:(id)arg1;
-- (id)connection;
-- (void)cancel;
-- (BOOL)isCancelled;
-- (void)dealloc;
 
 @end

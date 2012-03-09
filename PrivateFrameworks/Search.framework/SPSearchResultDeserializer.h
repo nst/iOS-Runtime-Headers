@@ -28,13 +28,14 @@
 @property(readonly) SPSearchResult * sortB;
 
 
-- (id)readBytes:(unsigned int)arg1;
 - (unsigned int)resultCount;
+- (void)dealloc;
+- (int)read:(const char *)arg1 maxLength:(unsigned int)arg2;
+- (id)category;
+- (BOOL)deserializeResultAtIndex:(unsigned int)arg1 toCursor:(id)arg2;
 - (unsigned int)domain;
 - (id)displayIdentifier;
-- (int)read:(const char *)arg1 maxLength:(unsigned int)arg2;
-- (BOOL)deserializeResultAtIndex:(unsigned int)arg1 toCursor:(id)arg2;
-- (id)category;
+- (id)readBytes:(unsigned int)arg1;
 - (id)sortB;
 - (id)initWithSerializer:(id)arg1;
 - (void)sortResultsUsingQueryString:(id)arg1;
@@ -45,6 +46,5 @@
 - (id)diacriticMatcher;
 - (id)matcher;
 - (BOOL)readResultIntoCursor:(id)arg1;
-- (void)dealloc;
 
 @end

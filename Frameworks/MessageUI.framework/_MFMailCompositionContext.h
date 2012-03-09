@@ -25,6 +25,7 @@
 @property(readonly) int composeType;
 
 
+- (void)dealloc;
 - (id)initRecoveredAutosavedMessageWithIdentifier:(id)arg1;
 - (id)initReplyToMessage:(id)arg1;
 - (id)initReplyAllToMessage:(id)arg1;
@@ -46,6 +47,5 @@
 - (BOOL)includeAttachments;
 - (id)autosaveIdentifier;
 - (id)initWithComposeType:(int)arg1;
-- (void)dealloc;
 
 @end

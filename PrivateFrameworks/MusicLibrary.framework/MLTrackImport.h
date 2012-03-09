@@ -27,12 +27,19 @@
 
 + (void)initialize;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)setChapters:(id)arg1;
+- (id)chapters;
+- (void)setMediaType:(unsigned long)arg1;
+- (unsigned long)mediaType;
+- (void)setContentRating:(id)arg1;
+- (id)contentRating;
 - (void)setShouldDeleteExistingArtwork:(BOOL)arg1;
 - (BOOL)shouldDeleteExistingArtwork;
 - (void)setShouldAddToPurchasedPlaylist:(BOOL)arg1;
 - (BOOL)shouldAddToPurchasedPlaylist;
-- (void)setChapters:(id)arg1;
-- (id)chapters;
 - (void)setAssignArtworkCacheIDFromAlbum:(BOOL)arg1;
 - (BOOL)assignArtworkCacheIDFromAlbum;
 - (void)setAssetFilePath:(id)arg1;
@@ -47,12 +54,5 @@
 - (id)valueForEntityProperty:(id)arg1;
 - (void)_addSortStrings;
 - (void)setValue:(id)arg1 forEntityProperty:(id)arg2;
-- (unsigned long)mediaType;
-- (void)setMediaType:(unsigned long)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setContentRating:(id)arg1;
-- (id)contentRating;
 
 @end

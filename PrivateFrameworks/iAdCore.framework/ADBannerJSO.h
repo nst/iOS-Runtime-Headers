@@ -33,21 +33,21 @@
 + (id)scriptingKeys;
 + (id)scriptSelectors;
 
+- (void)setWebView:(id)arg1;
+- (void)setVisible:(BOOL)arg1;
+- (id)webView;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (BOOL)contentVisible;
 - (void)setTapLocationBeforeTransition:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })tapLocationBeforeTransition;
 - (void)setScreenRectBeforeTransition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenRectBeforeTransition;
-- (void)setContentVisible:(BOOL)arg1;
 - (id)tapLocation;
 - (id)rectOnScreen;
 - (void)fireTestProbe:(id)arg1 withOptions:(id)arg2;
 - (void)transitionInComplete;
 - (void)readyForTransitionIn;
-- (void)setWebView:(id)arg1;
-- (void)setVisible:(BOOL)arg1;
-- (id)webView;
-- (id)delegate;
+- (void)setContentVisible:(BOOL)arg1;
 
 @end

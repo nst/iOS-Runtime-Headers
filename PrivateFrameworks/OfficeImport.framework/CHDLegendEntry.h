@@ -11,13 +11,13 @@
 }
 
 
+- (void)dealloc;
+- (id)font;
+- (void)setFont:(id)arg1;
 - (unsigned int)entryIndex;
 - (void)setEntryIndex:(unsigned int)arg1;
 - (unsigned int)fontIndex;
 - (void)setFontIndex:(unsigned int)arg1;
 - (id)initWithResources:(id)arg1;
-- (id)font;
-- (void)setFont:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -15,10 +15,10 @@
 @property SUScriptObject * thisObject;
 
 
-- (void)unlock;
-- (void)lock;
 - (id)init;
 - (void)dealloc;
+- (void)unlock;
+- (void)lock;
 - (id)thisObject;
 - (void)_sendResult:(id)arg1 toDelegate:(id)arg2;
 - (void)_callFunction:(id)arg1 withArguments:(id)arg2 delegate:(id)arg3;

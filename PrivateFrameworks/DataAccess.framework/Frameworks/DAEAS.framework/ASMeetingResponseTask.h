@@ -11,8 +11,8 @@
 @property(readonly) NSArray * responseItems;
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
+- (void)finishWithError:(id)arg1;
 - (id)responseItems;
 - (BOOL)processContext:(id)arg1;
 - (BOOL)getTopLevelToken:(char *)arg1 outStatusCodePage:(char *)arg2 outStatusToken:(char *)arg3;

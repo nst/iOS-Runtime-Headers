@@ -18,6 +18,7 @@
 
 + (id)codedPropertyKeys;
 
+- (void)dealloc;
 - (void)setEmail:(id)arg1;
 - (id)email;
 - (id)playerID;
@@ -26,6 +27,5 @@
 - (void)setMessage:(id)arg1;
 - (void)setDate:(id)arg1;
 - (id)date;
-- (void)dealloc;
 
 @end

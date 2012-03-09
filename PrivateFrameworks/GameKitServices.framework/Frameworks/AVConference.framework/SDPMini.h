@@ -10,8 +10,9 @@
 }
 
 
-- (id)toString;
-- (id)origin;
+- (id)initWithString:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)createVideoImageAttr:(id)arg1 attrFormat:(id)arg2;
 - (void)fillImageArray:(id)arg1 imageArray:(struct imageTag { int x1; int x2; int x3; int x4; int x5; int x6; int x7; }*)arg2;
 - (BOOL)videoDisplayAttribute:(int*)arg1 withHeight:(int*)arg2;
@@ -131,8 +132,7 @@
 - (id)payloadString:(int)arg1 isAudio:(BOOL)arg2;
 - (int)payload:(int)arg1 isAudio:(BOOL)arg2;
 - (id)initWithViceroyDefaultsUsingZeroes:(BOOL)arg1;
-- (id)initWithString:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)origin;
+- (id)toString;
 
 @end

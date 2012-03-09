@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2 width:(float)arg3;
@@ -18,6 +19,5 @@
 - (float)width;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (void)dealloc;
 
 @end

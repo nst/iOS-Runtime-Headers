@@ -7,7 +7,7 @@
 
 + (id)sharedWebUILocalStorageSupport;
 
-- (unsigned int)localStorageQuotaSize;
 - (id)localStoragePath;
+- (unsigned int)localStorageQuotaSize;
 
 @end

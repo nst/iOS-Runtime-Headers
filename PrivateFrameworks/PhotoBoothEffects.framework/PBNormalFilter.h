@@ -11,11 +11,11 @@
 }
 
 
-- (const char *)_fragmentShaderSource;
-- (id)_glesUniforms;
-- (void)renderWithContext:(id)arg1 inputSize:(struct CGSize { float x1; float x2; })arg2 outputRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 mirrored:(BOOL)arg4;
-- (int (*)())kernelWrapper;
-- (void)setupKernelArguments:(id)arg1 mirrored:(BOOL)arg2;
 - (unsigned long)kernelArgCount;
+- (void)setupKernelArguments:(id)arg1 mirrored:(BOOL)arg2;
+- (int (*)())kernelWrapper;
+- (void)renderWithContext:(id)arg1 inputSize:(struct CGSize { float x1; float x2; })arg2 outputRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 mirrored:(BOOL)arg4;
+- (id)_glesUniforms;
+- (const char *)_fragmentShaderSource;
 
 @end

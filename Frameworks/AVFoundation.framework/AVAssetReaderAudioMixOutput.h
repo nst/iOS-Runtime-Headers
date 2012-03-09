@@ -14,19 +14,19 @@
 
 + (id)assetReaderAudioMixOutputWithAudioTracks:(id)arg1 audioSettings:(id)arg2;
 
-- (void)finalize;
-- (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
-- (id)initWithAudioTracks:(id)arg1 audioSettings:(id)arg2;
-- (id)audioTracks;
-- (id)audioSettings;
-- (void)_setAudioVolumeCurve:(id)arg1 forTrack:(id)arg2;
-- (id)_audioVolumeCurveForTrack:(id)arg1;
-- (id)audioMix;
-- (void)setAudioMix:(id)arg1;
-- (id)_asset;
-- (id)mediaType;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)_audioVolumeCurveForTrack:(id)arg1;
+- (void)_setAudioVolumeCurve:(id)arg1 forTrack:(id)arg2;
+- (id)audioSettings;
+- (id)initWithAudioTracks:(id)arg1 audioSettings:(id)arg2;
+- (id)audioTracks;
+- (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
+- (void)setAudioMix:(id)arg1;
+- (id)audioMix;
+- (id)_asset;
+- (void)finalize;
+- (id)mediaType;
 
 @end

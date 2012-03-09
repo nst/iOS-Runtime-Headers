@@ -22,11 +22,13 @@
 @property(copy) id subscriberCellularProviderDidUpdateNotifier;
 
 
-- (id)subscriberCellularProvider;
+- (id)init;
+- (void)dealloc;
 - (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
 - (id)subscriberCellularProviderDidUpdateNotifier;
 - (void)reestablishServerConnectionIfNeeded;
 - (void)setSubscriberCellularProvider:(id)arg1;
+- (id)subscriberCellularProvider;
 - (BOOL)getAllowsVOIP:(BOOL*)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
 - (BOOL)getMobileNetworkCode:(id)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
 - (BOOL)getMobileCountryCode:(id)arg1 andIsoCountryCode:(id)arg2 withCTError:(struct { int x1; int x2; }*)arg3;
@@ -37,7 +39,5 @@
 - (void)cleanUpServerConnectionNoLock;
 - (BOOL)setUpServerConnection;
 - (void)setSubscriberCellularProviderDidUpdateNotifier:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

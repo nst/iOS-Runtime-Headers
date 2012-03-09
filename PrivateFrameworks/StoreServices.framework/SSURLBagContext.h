@@ -17,7 +17,14 @@
 
 + (id)contextWithBagType:(int)arg1;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)valueForHTTPHeaderField:(id)arg1;
+- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
+- (id)cacheKey;
 - (void)setAllHTTPHeaders:(id)arg1;
 - (id)allHTTPHeaders;
 - (int)bagType;
@@ -28,12 +35,5 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
-- (id)cacheKey;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

@@ -12,12 +12,12 @@
 
 + (id)sharedProgressController;
 
-- (void)suspend;
+- (id)init;
 - (void)userScrolled;
 - (void)setLoadingData:(BOOL)arg1;
 - (void)_setHideSpinnerTimer:(id)arg1;
 - (void)_showSpinner;
 - (void)_hideSpinner;
-- (id)init;
+- (void)suspend;
 
 @end

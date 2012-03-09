@@ -12,6 +12,7 @@
 @property(retain) UITouch * candidateEndpoint;
 
 
+- (void)dealloc;
 - (BOOL)segmentsLookLikeAWipe:(id)arg1;
 - (id)candidateEndpoint;
 - (void)setCandidateEndpoint:(id)arg1;
@@ -21,6 +22,5 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 
 @end

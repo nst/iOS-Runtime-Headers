@@ -37,11 +37,8 @@
 
 - (BOOL)isTranslated;
 - (id)processIdentifier;
-- (id)displayName;
-- (id)processName;
-- (id)executablePath;
-- (id)bundleIdentifier;
-- (id)date;
+- (id)description;
+- (void)dealloc;
 - (int)pid;
 - (id)_sanitizeVersion:(id)arg1;
 - (BOOL)isAppleApplication;
@@ -69,7 +66,10 @@
 - (id)binaryImagesDescription;
 - (unsigned int)task;
 - (int)cpuType;
-- (id)description;
-- (void)dealloc;
+- (id)displayName;
+- (id)processName;
+- (id)executablePath;
+- (id)bundleIdentifier;
+- (id)date;
 
 @end

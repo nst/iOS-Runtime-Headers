@@ -51,15 +51,15 @@
 - (void)setMailboxID:(unsigned int)arg1;
 - (void)setUidIsLibraryID:(BOOL)arg1;
 - (unsigned int)mailboxID;
-- (BOOL)deleted;
-- (void)setDeleted:(BOOL)arg1;
-- (unsigned int)uid;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (unsigned int)retainCount;
 - (id)description;
 - (id)retain;
-- (id)init;
 - (oneway void)release;
+- (id)init;
+- (unsigned int)uid;
+- (BOOL)deleted;
+- (void)setDeleted:(BOOL)arg1;
 
 @end

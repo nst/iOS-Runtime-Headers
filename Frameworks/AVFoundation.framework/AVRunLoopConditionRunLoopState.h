@@ -8,18 +8,18 @@
     BOOL _signaled;
 }
 
-@property BOOL signaled;
-@property struct __CFRunLoopSource { }* signalSource;
 @property(readonly) struct __CFRunLoop { }* runLoop;
+@property struct __CFRunLoopSource { }* signalSource;
+@property BOOL signaled;
 
 + (id)runLoopStateWithRunLoop:(struct __CFRunLoop { }*)arg1;
 
-- (id)initWithRunLoop:(struct __CFRunLoop { }*)arg1;
-- (void)setSignaled:(BOOL)arg1;
-- (void)setSignalSource:(struct __CFRunLoopSource { }*)arg1;
-- (BOOL)signaled;
-- (struct __CFRunLoopSource { }*)signalSource;
 - (struct __CFRunLoop { }*)runLoop;
 - (void)dealloc;
+- (void)setSignaled:(BOOL)arg1;
+- (BOOL)signaled;
+- (void)setSignalSource:(struct __CFRunLoopSource { }*)arg1;
+- (struct __CFRunLoopSource { }*)signalSource;
+- (id)initWithRunLoop:(struct __CFRunLoop { }*)arg1;
 
 @end

@@ -41,6 +41,9 @@
 + (id)sharedController;
 + (void)setSharedController:(id)arg1;
 
+- (void)cancelAllOperations;
+- (id)init;
+- (void)dealloc;
 - (id)imageCache;
 - (void)setImageCache:(id)arg1;
 - (id)userAgent;
@@ -48,10 +51,6 @@
 - (id)rootViewController;
 - (BOOL)openURL:(id)arg1;
 - (void)setRootViewController:(id)arg1;
-- (void)cancelAllOperations;
-- (id)init;
-- (void)dealloc;
-- (void)becomeActive;
 - (void)setImageOperationPool:(id)arg1;
 - (BOOL)storeFrontDidChangeSinceLastSuspend;
 - (BOOL)performActionForDialog:(id)arg1 button:(id)arg2;
@@ -114,6 +113,7 @@
 - (id)viewControllerFactory;
 - (id)overlayBackgroundViewController;
 - (BOOL)isStoreEnabled;
+- (void)becomeActive;
 - (void)resignActive;
 - (BOOL)openClientURL:(id)arg1;
 - (id)scriptExecutionContext;

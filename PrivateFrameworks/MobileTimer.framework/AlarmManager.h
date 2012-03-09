@@ -21,10 +21,14 @@
 + (BOOL)isAlarmNotification:(id)arg1;
 + (BOOL)upgrade;
 + (BOOL)discardOldVersion;
-+ (id)readAlarmsFromPreferencesCopy;
++ (id)copyReadAlarmsFromPreferences;
 + (void)writeAlarmsToPreferences:(id)arg1;
 + (id)sharedManager;
 
+- (id)init;
+- (void)dealloc;
+- (void)removeAlarm:(id)arg1;
+- (id)alarms;
 - (id)defaultSound;
 - (void)setDefaultSound:(id)arg1;
 - (void)loadAlarms;
@@ -48,10 +52,6 @@
 - (void)loadScheduledNotificationsWithCancelUnused:(BOOL)arg1;
 - (void)reloadScheduledNotificationsWithRefreshActive:(BOOL)arg1 cancelUnused:(BOOL)arg2;
 - (void)handleNotificationSnoozed:(id)arg1;
-- (void)removeAlarm:(id)arg1;
-- (id)alarms;
 - (id)lastModified;
-- (id)init;
-- (void)dealloc;
 
 @end

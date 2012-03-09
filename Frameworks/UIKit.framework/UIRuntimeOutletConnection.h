@@ -6,8 +6,8 @@
 }
 
 
+- (id)description;
 - (void)connect;
 - (void)connectForSimulator;
-- (id)description;
 
 @end

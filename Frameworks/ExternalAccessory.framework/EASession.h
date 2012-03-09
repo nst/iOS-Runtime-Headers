@@ -19,7 +19,9 @@
 @property(readonly) NSOutputStream * outputStream;
 
 
-- (id)inputStream;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)outputStream;
 - (id)accessory;
 - (void)setOpenCompleted:(BOOL)arg1;
@@ -30,8 +32,6 @@
 - (void)_streamClosed;
 - (unsigned int)_sessionID;
 - (id)protocolString;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)inputStream;
 
 @end

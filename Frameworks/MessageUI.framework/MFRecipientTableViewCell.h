@@ -13,9 +13,9 @@
 + (float)height;
 + (id)identifier;
 
+- (void)dealloc;
 - (void)setRecipient:(id)arg1;
 - (id)recipient;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)dealloc;
 
 @end

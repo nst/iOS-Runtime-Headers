@@ -33,6 +33,8 @@
 + (id)name;
 + (id)ICSStringFromMethod:(int)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)fixEntities;
 - (void)fixPropertiesInheritance;
 - (void)fixComponent;
@@ -58,21 +60,19 @@
 - (id)systemCalendarForDate:(id)arg1 options:(int)arg2;
 - (id)timeZoneForKey:(id)arg1;
 - (void)setCalscale:(id)arg1;
-- (void)addComponent:(id)arg1;
 - (void)setComponents:(id)arg1 options:(int)arg2;
 - (id)componentOccurrencesForKey:(id)arg1;
 - (id)componentForKey:(id)arg1;
 - (id)componentKeys;
-- (void)setVersion:(id)arg1;
-- (void)setMethod:(int)arg1;
 - (void)setComponents:(id)arg1;
 - (id)version;
 - (int)method;
 - (id)_init;
-- (id)init;
-- (void)dealloc;
+- (void)setVersion:(id)arg1;
+- (void)setMethod:(int)arg1;
 - (void)setProdid:(id)arg1;
 - (id)systemDateForDate:(id)arg1 options:(int)arg2;
 - (id)systemTimeZoneForDate:(id)arg1;
+- (void)addComponent:(id)arg1;
 
 @end

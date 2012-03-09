@@ -11,10 +11,10 @@
 @property <EKEditItemViewControllerDelegate> * editDelegate;
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)dealloc;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)setParticipant:(id)arg1;
-- (void)dealloc;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)initWithParticipant:(id)arg1;
 
 @end

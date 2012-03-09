@@ -22,7 +22,6 @@
 
 + (BOOL)validForJSON:(id)arg1 depth:(unsigned int)arg2 allowFragments:(BOOL)arg3;
 
-- (void)setError:(id)arg1;
 - (id)parseStream:(id)arg1 options:(unsigned int)arg2;
 - (id)parseData:(id)arg1 options:(unsigned int)arg2;
 - (id)parseUTF8JSONData:(id)arg1 skipBytes:(unsigned int)arg2;
@@ -36,8 +35,9 @@
 - (id)newJSONArray;
 - (unsigned short)parseJSONUnicodePointAtLocation:(unsigned int)arg1 end:(unsigned int)arg2;
 - (id)newJSONNumberAtPosition:(unsigned int)arg1;
-- (id)error;
 - (id)init;
 - (void)dealloc;
+- (void)setError:(id)arg1;
+- (id)error;
 
 @end

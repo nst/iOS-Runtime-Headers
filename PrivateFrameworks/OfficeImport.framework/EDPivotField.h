@@ -19,6 +19,12 @@
 
 + (id)pivotField;
 
+- (id)init;
+- (void)dealloc;
+- (int)axis;
+- (void)setAxis:(int)arg1;
+- (bool)compact;
+- (void)setCompact:(bool)arg1;
 - (bool)dataField;
 - (void)setDataField:(bool)arg1;
 - (bool)showDefaultSubTotal;
@@ -34,11 +40,5 @@
 - (id)pivotFieldItems;
 - (unsigned int)numFmtId;
 - (void)setNumFmtId:(unsigned int)arg1;
-- (int)axis;
-- (void)setAxis:(int)arg1;
-- (bool)compact;
-- (void)setCompact:(bool)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

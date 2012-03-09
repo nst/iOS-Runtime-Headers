@@ -38,6 +38,8 @@
 @property BOOL groupHighlightEnabled;
 
 
+- (id)description;
+- (void)dealloc;
 - (BOOL)groupHighlightEnabled;
 - (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setContentsInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -54,7 +56,6 @@
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
 - (id)theme;
 - (void)setTheme:(id)arg1;
-- (void)setContents:(id)arg1;
 - (int)backgroundStyle;
 - (void)setBackgroundStyle:(int)arg1;
 - (id)initWithReuseIdentifier:(id)arg1;
@@ -68,10 +69,9 @@
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setBackgroundView:(id)arg1;
+- (void)setContents:(id)arg1;
 - (id)contents;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (id)description;
-- (void)dealloc;
 
 @end

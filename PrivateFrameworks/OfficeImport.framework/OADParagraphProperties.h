@@ -45,6 +45,19 @@
 
 + (id)defaultProperties;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)init;
+- (void)dealloc;
+- (void)setRightMargin:(double)arg1;
+- (int)level;
+- (void)setLevel:(int)arg1;
+- (void)setLineSpacing:(id)arg1;
+- (id)lineSpacing;
+- (int)wrap;
+- (void)setWrap:(int)arg1;
+- (int)align;
+- (void)setAlign:(int)arg1;
 - (double)nonOveridenLeftMargin;
 - (void)setFontAlign:(int)arg1;
 - (void)setIsHangingPunctuation:(BOOL)arg1;
@@ -104,18 +117,5 @@
 - (void)setIndent:(double)arg1;
 - (void)setDefaultTab:(double)arg1;
 - (id)initWithDefaults;
-- (int)wrap;
-- (void)setWrap:(int)arg1;
-- (int)align;
-- (void)setAlign:(int)arg1;
-- (void)setRightMargin:(double)arg1;
-- (int)level;
-- (void)setLevel:(int)arg1;
-- (void)setLineSpacing:(id)arg1;
-- (id)lineSpacing;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)init;
-- (void)dealloc;
 
 @end

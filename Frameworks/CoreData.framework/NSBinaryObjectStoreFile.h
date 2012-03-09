@@ -13,6 +13,7 @@
 }
 
 
+- (void)dealloc;
 - (BOOL)readFromFile:(id)arg1 error:(id*)arg2;
 - (BOOL)writeToFile:(id)arg1 error:(id*)arg2;
 - (void)setDatabaseVersion:(int)arg1;
@@ -28,6 +29,5 @@
 - (id)fullMetadata;
 - (void)setFullMetadata:(id)arg1;
 - (BOOL)writeMetadataToFile:(id)arg1 error:(id*)arg2;
-- (void)dealloc;
 
 @end

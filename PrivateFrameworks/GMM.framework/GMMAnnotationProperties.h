@@ -19,10 +19,15 @@
 @property(retain) NSMutableArray * links;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
+- (id)links;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)linksCount;
 - (void)addLink:(id)arg1;
 - (id)linkAtIndex:(unsigned int)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasAnnotationHeightFractionE6:(BOOL)arg1;
 - (BOOL)hasAnnotationHeightFractionE6;
 - (void)setHasHorizonHeightFractionE6:(BOOL)arg1;
@@ -32,10 +37,5 @@
 - (void)setAnnotationHeightFractionE6:(int)arg1;
 - (void)setHorizonHeightFractionE6:(int)arg1;
 - (void)setLinks:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)links;
-- (id)description;
-- (void)dealloc;
 
 @end

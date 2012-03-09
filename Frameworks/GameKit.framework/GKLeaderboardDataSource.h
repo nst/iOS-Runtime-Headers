@@ -43,6 +43,10 @@
 @property(retain) NSArray * visibleItems;
 
 
+- (id)sortDescriptors;
+- (void)setSortDescriptors:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)showControlSection;
 - (Class)sectionClass;
 - (void)setFilterPredicate:(id)arg1;
@@ -71,21 +75,17 @@
 - (id)visibleItems;
 - (void)setVisibleItems:(id)arg1;
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
+- (id)player;
 - (void)setLeaderboardDelegate:(id)arg1;
 - (id)game;
 - (void)setCategoryID:(id)arg1;
+- (void)setPlayer:(id)arg1;
 - (void)setGame:(id)arg1;
 - (int)timeScope;
 - (void)setTimeScope:(int)arg1;
 - (id)categoryID;
-- (void)setPlayer:(id)arg1;
-- (BOOL)loaded;
 - (void)setItems:(id)arg1;
 - (id)items;
-- (id)player;
-- (id)sortDescriptors;
-- (void)setSortDescriptors:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (BOOL)loaded;
 
 @end

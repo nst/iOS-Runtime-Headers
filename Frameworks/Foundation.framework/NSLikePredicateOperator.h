@@ -7,7 +7,7 @@
 
 
 - (BOOL)_shouldEscapeForLike;
-- (id)symbol;
 - (SEL)selector;
+- (id)symbol;
 
 @end

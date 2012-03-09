@@ -9,7 +9,7 @@
 }
 
 
-- (void)reset;
+- (void)dealloc;
 - (id)owningEventForAttachmentCellController:(id)arg1;
 - (id)parentViewControllerForAttachmentCellController:(id)arg1;
 - (void)_cleanUpCellControllers;
@@ -20,6 +20,6 @@
 - (id)cellForSubitemAtIndex:(int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
 - (void)setEvent:(id)arg1 store:(id)arg2;
-- (void)dealloc;
+- (void)reset;
 
 @end

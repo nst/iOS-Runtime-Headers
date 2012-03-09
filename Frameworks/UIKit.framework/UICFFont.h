@@ -6,13 +6,13 @@
 }
 
 
-- (void)finalize;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (unsigned int)retainCount;
 - (id)retain;
 - (oneway void)release;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (void)finalize;
 
 @end

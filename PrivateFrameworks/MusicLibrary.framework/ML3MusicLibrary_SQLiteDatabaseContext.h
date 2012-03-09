@@ -26,6 +26,7 @@
 @property BOOL transactionHasDisplayValuesChanges;
 
 
+- (void)dealloc;
 - (void)setTransactionKind:(int)arg1;
 - (int)transactionKind;
 - (void)setNondurableWriteSet:(id)arg1;
@@ -42,6 +43,5 @@
 - (id)initWithDB:(struct sqlite3 { }*)arg1;
 - (BOOL)executeSQL:(id)arg1 waitIfBusy:(BOOL)arg2;
 - (struct sqlite3 { }*)db;
-- (void)dealloc;
 
 @end

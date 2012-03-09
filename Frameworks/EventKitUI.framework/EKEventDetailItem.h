@@ -18,11 +18,7 @@
 @property int cellPosition;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)reset;
-- (void)setAllowsEditing:(BOOL)arg1;
-- (BOOL)allowsEditing;
-- (id)delegate;
+- (void)dealloc;
 - (BOOL)hasDetailViewControllerAtIndex:(unsigned int)arg1;
 - (void)layoutCellsForWidth:(float)arg1 position:(int)arg2;
 - (int)cellPosition;
@@ -40,6 +36,10 @@
 - (void)setCellPosition:(int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
 - (void)setEvent:(id)arg1 store:(id)arg2;
-- (void)dealloc;
+- (void)reset;
+- (void)setAllowsEditing:(BOOL)arg1;
+- (BOOL)allowsEditing;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

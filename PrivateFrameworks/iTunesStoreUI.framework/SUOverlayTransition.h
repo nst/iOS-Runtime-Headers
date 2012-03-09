@@ -16,15 +16,15 @@
 
 + (int)transitionTypeFromString:(id)arg1;
 
-- (double)duration;
-- (void)setDuration:(double)arg1;
-- (int)type;
-- (void)setType:(int)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (int)type;
+- (void)setType:(int)arg1;
+- (double)duration;
+- (void)setDuration:(double)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setSourceElement:(id)arg1;
 - (id)sourceElement;
 

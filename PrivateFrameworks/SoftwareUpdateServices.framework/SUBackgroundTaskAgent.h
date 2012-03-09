@@ -10,9 +10,6 @@
 
 + (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
-- (void)cancelAllTasks;
 - (void)cancelAllAutoscanTasks;
 - (void)scheduleAnyTasksIfNecessary;
 - (void)_scheduleNewBackgroundAgentAutoScanForType:(int)arg1 jobName:(const char *)arg2 previousStartDate:(id)arg3 previousEndDate:(id)arg4;
@@ -34,5 +31,8 @@
 - (void)cancelAllAutodownloadTasks;
 - (void)scheduleAutodownloadRetryTaskFromDate:(id)arg1 toDate:(id)arg2 policy:(id)arg3;
 - (void)scheduleAutodownloadWifiPeriodEndTask;
+- (id)init;
+- (void)dealloc;
+- (void)cancelAllTasks;
 
 @end

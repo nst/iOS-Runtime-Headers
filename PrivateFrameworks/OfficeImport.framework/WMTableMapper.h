@@ -13,6 +13,7 @@
 
 + (BOOL)isTableDeleted:(id)arg1;
 
+- (void)dealloc;
 - (void)setInsideBorders:(id)arg1;
 - (id)createColumnInfo;
 - (id)createStopArrayForRow:(unsigned int)arg1;
@@ -20,6 +21,5 @@
 - (id)insideBorders;
 - (id)initWithWDTable:(id)arg1 parent:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (void)dealloc;
 
 @end

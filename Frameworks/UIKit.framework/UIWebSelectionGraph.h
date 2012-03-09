@@ -9,11 +9,11 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)exploreFromNode:(id)arg1;
 - (void)exploreFromNode:(id)arg1 outwards:(BOOL)arg2 maxDepth:(int)arg3;
 - (id)addNodeFromSelection:(id)arg1;
 - (void)clearNodes;
-- (id)init;
-- (void)dealloc;
 
 @end

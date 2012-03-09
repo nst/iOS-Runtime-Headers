@@ -23,9 +23,17 @@
 @property <ABMembersDataSourceDelegate> * delegate;
 
 
+- (void)dealloc;
+- (void)createAllDisplayableSectionIndexAndHeaderCaches;
+- (id)displayableSectionHeaderFromSectionHeader:(id)arg1;
+- (id)displayableSectionIndexFromSectionIndex:(id)arg1;
+- (id)sectionIndexFromDisplayableSectionIndex:(id)arg1;
+- (struct __CFDictionary { }*)sectionHeaderSortingIndices;
+- (void)setStyleProvider:(id)arg1;
+- (id)styleProvider;
+- (void)setModel:(id)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void*)addressBook;
-- (void)setDelegate:(id)arg1;
 - (id)model;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
@@ -39,15 +47,7 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (id)titleForHeaderInSection:(int)arg1;
-- (void)createAllDisplayableSectionIndexAndHeaderCaches;
-- (id)displayableSectionHeaderFromSectionHeader:(id)arg1;
-- (id)displayableSectionIndexFromSectionIndex:(id)arg1;
-- (id)sectionIndexFromDisplayableSectionIndex:(id)arg1;
-- (struct __CFDictionary { }*)sectionHeaderSortingIndices;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
-- (void)setModel:(id)arg1;
 
 @end

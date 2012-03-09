@@ -11,8 +11,8 @@
 @property(retain) NSValue * titleOffset;
 
 
+- (void)dealloc;
 - (id)titleOffset;
 - (void)setTitleOffset:(id)arg1;
-- (void)dealloc;
 
 @end

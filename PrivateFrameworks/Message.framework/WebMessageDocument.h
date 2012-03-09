@@ -38,8 +38,8 @@
 - (id)mimeBody;
 - (unsigned long)preferredEncoding;
 - (void)setPreferredEncoding:(unsigned long)arg1;
-- (id)baseURL;
 - (id)init;
 - (void)dealloc;
+- (id)baseURL;
 
 @end

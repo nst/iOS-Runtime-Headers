@@ -13,11 +13,11 @@
 @property(readonly) NSString * userName;
 
 
+- (void)dealloc;
+- (id)userName;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)challenge;
 - (void)showIfNeeded;
 - (id)initWithChallenge:(id)arg1 userName:(id)arg2;
-- (id)challenge;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)userName;
-- (void)dealloc;
 
 @end

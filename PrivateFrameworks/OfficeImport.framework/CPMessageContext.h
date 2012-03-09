@@ -11,6 +11,7 @@
     NSMutableDictionary *m_placeholderToObjectIdMap;
 }
 
++ (void)initialize;
 + (void)reportObject:(id)arg1 withWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg2;
 + (void)reportError:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 + (void)reportErrorException:(id)arg1;
@@ -34,7 +35,6 @@
 + (void)popCurrentObject;
 + (void)reportWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 + (void)reportWarningException:(id)arg1;
-+ (void)initialize;
 
 - (id)init;
 - (void)dealloc;

@@ -23,6 +23,14 @@
     id _cd_queueReference;
 }
 
++ (id)retain;
++ (id)alloc;
++ (void)release;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (BOOL)resolveInstanceMethod:(SEL)arg1;
++ (BOOL)resolveClassMethod:(SEL)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)initialize;
 + (id)batchAllocateWithEntity:(id)arg1 insertIntoManagedObjectContext:(id)arg2 count:(unsigned int)arg3;
 + (BOOL)_hasOverriddenAwake;
 + (BOOL)_isGeneratedClass_1;
@@ -43,18 +51,34 @@
 + (Class)classForEntity:(id)arg1;
 + (id)_retain_1;
 + (void)_release_1;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (void)initialize;
-+ (BOOL)resolveInstanceMethod:(SEL)arg1;
-+ (BOOL)resolveClassMethod:(SEL)arg1;
-+ (id)retain;
-+ (id)alloc;
-+ (void)release;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id)valueForKey:(id)arg1;
+- (void)willChangeValueForKey:(id)arg1;
+- (void)setPrimitiveValue:(id)arg1 forKey:(id)arg2;
+- (void)didChangeValueForKey:(id)arg1;
+- (id)managedObjectContext;
+- (BOOL)hasChanges;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (unsigned int)retainCount;
+- (id)description;
+- (id)retain;
+- (oneway void)release;
+- (id)init;
+- (void)dealloc;
+- (BOOL)isFault;
+- (void)setObservationInfo:(id)arg1;
+- (id)dictionaryWithValuesForKeys:(id)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)finalize;
+- (void)setValuesForKeysWithDictionary:(id)arg1;
+- (int (*)())methodForSelector:(SEL)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (id)valueForKey:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 - (BOOL)implementsSelector:(SEL)arg1;
 - (BOOL)_defaultValidation:(id*)arg1 error:(id*)arg2;
 - (void)willRefresh:(BOOL)arg1;
@@ -127,6 +151,7 @@
 - (id)mutableArrayValueForKey:(id)arg1;
 - (id)_genericMutableSetValueForKey:(id)arg1 withIndex:(long)arg2 flags:(long)arg3;
 - (id)_genericMutableOrderedSetValueForKey:(id)arg1 withIndex:(long)arg2 flags:(long)arg3;
+- (id)mutableOrderedSetValueForKey:(id)arg1;
 - (void)_updateToManyRelationship:(id)arg1 from:(id)arg2 to:(id)arg3 with:(id)arg4;
 - (id)_allProperties__;
 - (id)_originalSnapshot__;
@@ -145,7 +170,6 @@
 - (void)_includeObject:(id)arg1 intoPropertyWithKey:(id)arg2 andIndex:(unsigned int)arg3;
 - (void)_maintainInverseRelationship:(id)arg1 forProperty:(id)arg2 oldDestination:(id)arg3 newDestination:(id)arg4;
 - (void)_maintainInverseRelationship:(id)arg1 forProperty:(id)arg2 forChange:(unsigned int)arg3 onSet:(id)arg4;
-- (id)mutableOrderedSetValueForKey:(id)arg1;
 - (void)_propagateDelete:(BOOL)arg1;
 - (id)_generateErrorDetailForKey:(id)arg1 withValue:(id)arg2;
 - (id)_substituteEntityAndProperty:(id)arg1 inString:(id)arg2;
@@ -180,29 +204,5 @@
 - (void)_commitPhotoshoperyForRelationshipAtIndex:(unsigned int)arg1 newValue:(id)arg2;
 - (id)_faultHandler__;
 - (id)objectID;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (id)valueForUndefinedKey:(id)arg1;
-- (id)dictionaryWithValuesForKeys:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)setValuesForKeysWithDictionary:(id)arg1;
-- (int (*)())methodForSelector:(SEL)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
-- (BOOL)isFault;
-- (void)setObservationInfo:(id)arg1;
-- (void)willChangeValueForKey:(id)arg1;
-- (void)setPrimitiveValue:(id)arg1 forKey:(id)arg2;
-- (void)didChangeValueForKey:(id)arg1;
-- (id)managedObjectContext;
-- (BOOL)hasChanges;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (unsigned int)retainCount;
-- (id)description;
-- (id)retain;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
 
 @end

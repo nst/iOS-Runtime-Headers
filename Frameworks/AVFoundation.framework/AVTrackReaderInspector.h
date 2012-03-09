@@ -8,40 +8,40 @@
     struct OpaqueFigFormatReader { } *_formatReader;
     struct OpaqueFigTrackReader { } *_trackReader;
     int _trackID;
-    unsigned int _mediaType;
+    unsigned long _mediaType;
     AVWeakReference *_weakReferenceToAsset;
 }
 
 
-- (int)layer;
-- (void)finalize;
-- (BOOL)isEnabled;
-- (struct OpaqueFigTrackReader { }*)_trackReader;
-- (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
-- (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
-- (id)formatDescriptions;
-- (BOOL)isSelfContained;
-- (long long)totalSampleDataLength;
-- (BOOL)isExcludedFromAutoselectionInTrackGroup;
-- (float)estimatedDataRate;
-- (id)languageCode;
-- (id)extendedLanguageTag;
-- (float)nominalFrameRate;
-- (id)segments;
-- (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (id)asset;
-- (float)preferredVolume;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (int)naturalTimeScale;
-- (id)mediaType;
-- (int)trackID;
-- (id)commonMetadata;
-- (id)availableMetadataFormats;
-- (id)metadataForFormat:(id)arg1;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
+- (struct OpaqueFigTrackReader { }*)_trackReader;
+- (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
+- (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (float)nominalFrameRate;
+- (id)extendedLanguageTag;
+- (id)languageCode;
+- (float)estimatedDataRate;
+- (BOOL)isExcludedFromAutoselectionInTrackGroup;
+- (long long)totalSampleDataLength;
+- (BOOL)isSelfContained;
+- (id)formatDescriptions;
+- (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
+- (id)metadataForFormat:(id)arg1;
+- (id)availableMetadataFormats;
+- (id)commonMetadata;
+- (int)trackID;
+- (int)naturalTimeScale;
+- (float)preferredVolume;
+- (id)asset;
+- (void)finalize;
+- (BOOL)isEnabled;
+- (int)layer;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (id)mediaType;
+- (id)segments;
 
 @end

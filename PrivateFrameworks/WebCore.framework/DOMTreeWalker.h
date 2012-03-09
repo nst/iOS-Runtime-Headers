@@ -14,7 +14,14 @@
 @property(retain) DOMNode * currentNode;
 
 
+- (void)dealloc;
+- (id)nextNode;
+- (id)previousSibling;
+- (id)parentNode;
 - (void)finalize;
+- (id)lastChild;
+- (id)nextSibling;
+- (id)firstChild;
 - (id)currentNode;
 - (void)setCurrentNode:(id)arg1;
 - (id)root;
@@ -22,12 +29,5 @@
 - (id)filter;
 - (BOOL)expandEntityReferences;
 - (id)previousNode;
-- (id)nextNode;
-- (id)previousSibling;
-- (id)parentNode;
-- (id)lastChild;
-- (id)nextSibling;
-- (id)firstChild;
-- (void)dealloc;
 
 @end

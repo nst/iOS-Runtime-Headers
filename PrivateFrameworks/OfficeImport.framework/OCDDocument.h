@@ -12,6 +12,9 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (id)summary;
 - (bool)isFromBinaryFile;
 - (bool)isToBinaryFile;
 - (id)writer;
@@ -19,8 +22,5 @@
 - (id)reader;
 - (id)blips;
 - (void)setReader:(id)arg1;
-- (id)summary;
-- (id)init;
-- (void)dealloc;
 
 @end

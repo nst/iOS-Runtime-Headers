@@ -11,7 +11,7 @@
 }
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)textField;
 - (id)value;
 - (void)setValue:(id)arg1;
@@ -24,8 +24,8 @@
 - (void)setTitle:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
 - (void)setPlaceholderText:(id)arg1;
 - (void)setCellEnabled:(BOOL)arg1;
-- (void)dealloc;
 
 @end

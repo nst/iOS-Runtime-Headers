@@ -152,6 +152,14 @@
 + (id)programInfoLogForName:(unsigned int)arg1 effectLabel:(id)arg2 msg:(const char *)arg3;
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
+- (void)setProperties:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (void)bind;
+- (id)properties;
+- (id)label;
+- (void)setLabel:(id)arg1;
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })white;
 - (void)setPrevVshMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })prevVshMask;
@@ -247,13 +255,5 @@
 - (void)setLightModelTwoSided:(unsigned char)arg1;
 - (void)setColorMaterialEnabled:(unsigned char)arg1;
 - (void)setLightModelAmbientColor:(union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })arg1;
-- (id)properties;
-- (id)label;
-- (void)setLabel:(id)arg1;
-- (void)bind;
-- (void)setProperties:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

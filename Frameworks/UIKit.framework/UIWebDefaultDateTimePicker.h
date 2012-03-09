@@ -16,6 +16,7 @@
 @property(retain) UIDatePicker * _datePicker;
 
 
+- (void)dealloc;
 - (id)_datePicker;
 - (id)_inputElement;
 - (id)initWithDOMHTMLInputElement:(id)arg1 datePickerMode:(int)arg2;
@@ -29,6 +30,5 @@
 - (int)_timeZoneOffsetFromGMT:(id)arg1;
 - (void)controlBeginEditing;
 - (id)controlView;
-- (void)dealloc;
 
 @end

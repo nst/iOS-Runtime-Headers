@@ -10,10 +10,10 @@
 }
 
 
+- (void)dealloc;
 - (void)setSearching:(BOOL)arg1;
 - (id)initInView:(id)arg1;
 - (void)searchTimeout;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

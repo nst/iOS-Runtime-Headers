@@ -14,6 +14,7 @@
 
 + (id)createPeripheralWithDOMHTMLInputElement:(id)arg1;
 
+- (void)dealloc;
 - (id)initWithDOMHTMLInputElement:(id)arg1;
 - (void)set_control:(id)arg1;
 - (int)_datePickerModeForInputType:(id)arg1;
@@ -22,6 +23,5 @@
 - (id)assistantView;
 - (void)beginEditing;
 - (id)_control;
-- (void)dealloc;
 
 @end

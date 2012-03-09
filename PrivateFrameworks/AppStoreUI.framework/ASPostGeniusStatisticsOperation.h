@@ -13,6 +13,8 @@
 
 + (void)load;
 
+- (void)cancel;
+- (void)dealloc;
 - (void)run;
 - (BOOL)shouldIgnorePostInterval;
 - (id)_copyOperationForConfiguration:(id)arg1 bodyData:(id)arg2;
@@ -30,8 +32,6 @@
 - (BOOL)_shouldSendStatistics;
 - (id)_configuration;
 - (id)_activeDataStoreConsumer;
-- (void)cancel;
-- (void)dealloc;
 - (void)setScriptOptions:(id)arg1;
 
 @end

@@ -30,24 +30,30 @@
 @property(retain) NSMutableArray * functionNames;
 
 
+- (int)lineNumber;
+- (id)description;
+- (void)dealloc;
 - (void)setLines:(id)arg1;
 - (id)lines;
 - (Class)responseClass;
+- (void)setURL:(id)arg1;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
-- (int)lineNumber;
 - (id)functionNames;
-- (id)uRL;
 - (void)setHasLineNumber:(BOOL)arg1;
-- (BOOL)hasLineNumber;
-- (id)errorMessage;
 - (void)setHasErrorType:(BOOL)arg1;
-- (BOOL)hasErrorType;
 - (id)functionNamesAtIndex:(unsigned int)arg1;
+- (void)clearFunctionNames;
 - (unsigned int)functionNamesCount;
 - (id)linesAtIndex:(unsigned int)arg1;
+- (void)clearLines;
 - (unsigned int)linesCount;
+- (id)uRL;
 - (BOOL)hasURL;
+- (BOOL)hasLineNumber;
+- (id)errorMessage;
 - (BOOL)hasErrorMessage;
+- (BOOL)hasErrorType;
 - (void)setFunctionNames:(id)arg1;
 - (void)addFunctionNames:(id)arg1;
 - (void)addLines:(id)arg1;
@@ -57,12 +63,9 @@
 - (void)setErrorType:(int)arg1;
 - (BOOL)hasMetaData;
 - (void)setMetaData:(id)arg1;
+- (void)copyTo:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (id)metaData;
-- (void)setURL:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

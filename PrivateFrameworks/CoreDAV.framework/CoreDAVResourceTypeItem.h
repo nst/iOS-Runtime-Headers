@@ -25,6 +25,9 @@
 @property(readonly) NSSet * stringSet;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setAddressBook:(id)arg1;
 - (id)addressBook;
 - (void)setCollection:(id)arg1;
@@ -39,11 +42,8 @@
 - (id)searchAddressBook;
 - (id)stringSet;
 - (id)unauthenticated;
-- (id)collection;
 - (void)write:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)collection;
 - (void)setExtraChild:(id)arg1 forNameSpace:(id)arg2 name:(id)arg3;
 - (id)extraChildWithNameSpace:(id)arg1 name:(id)arg2;
 - (void)setBookmarkMenuFolder:(id)arg1;

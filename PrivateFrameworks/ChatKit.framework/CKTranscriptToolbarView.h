@@ -20,9 +20,7 @@
 @property <CKTranscriptButtonViewDelegate> * transcriptButtonDelegate;
 
 
-- (void)_buttonClicked:(id)arg1;
-- (void)sizeToFit;
-- (void)layoutSubviews;
+- (void)dealloc;
 - (BOOL)isCancelButtonVisible;
 - (BOOL)hasContact;
 - (id)transcriptButtonDelegate;
@@ -32,6 +30,8 @@
 - (void)setCancelButtonVisible:(BOOL)arg1;
 - (void)setHasContact:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForButton:(short)arg1;
-- (void)dealloc;
+- (void)_buttonClicked:(id)arg1;
+- (void)sizeToFit;
+- (void)layoutSubviews;
 
 @end

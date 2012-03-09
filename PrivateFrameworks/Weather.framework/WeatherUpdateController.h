@@ -36,10 +36,7 @@
 + (id)sharedWeatherUpdateController;
 
 - (void)didFailWithError:(id)arg1;
-- (void)setLocationManager:(id)arg1;
-- (id)locationManager;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)dealloc;
 - (void)searchForCitiesWithName:(id)arg1 withCompletionHandler:(id)arg2;
 - (int)activeCity;
 - (id)addCityToWeatherAppList:(id)arg1;
@@ -53,6 +50,9 @@
 - (id)searchCompletion;
 - (id)currentLocationCompletion;
 - (void)didValidateLocation:(id)arg1;
-- (void)dealloc;
+- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)setLocationManager:(id)arg1;
+- (id)locationManager;
 
 @end

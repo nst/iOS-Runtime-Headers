@@ -27,6 +27,9 @@
 
 + (id)serverAccessCoordinatorForURL:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
+- (void)reset;
 - (void)setLastReachabilityUpdateTime:(double)arg1;
 - (double)lastReachabilityUpdateTime;
 - (struct __SCNetworkReachability { }*)reachability;
@@ -48,8 +51,5 @@
 - (void)errorDidOccur:(int)arg1;
 - (void)connectionDidSucceed;
 - (BOOL)allowsRequests;
-- (void)reset;
-- (id)init;
-- (void)dealloc;
 
 @end

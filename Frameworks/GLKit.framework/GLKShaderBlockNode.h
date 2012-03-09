@@ -46,12 +46,25 @@
 + (void)setMasksWithRoot:(id)arg1 treeRoot:(id)arg2 mask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg3;
 
 - (void)setChildren:(id)arg1;
-- (id)next;
-- (id)parent;
-- (void)setParent:(id)arg1;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)setNext:(id)arg1;
+- (unsigned int)index;
+- (int)type;
+- (id)label;
+- (void)setMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setLabel:(id)arg1;
+- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })mask;
+- (void)setType:(int)arg1;
+- (id)children;
+- (id)next;
+- (id)parent;
+- (void)setParent:(id)arg1;
 - (void)setIndex:(unsigned int)arg1;
 - (void)setLoopVar:(id)arg1;
 - (void)setBlockText:(id)arg1;
@@ -63,18 +76,5 @@
 - (void)setPropertyClass:(int)arg1;
 - (int)propertyClass;
 - (int)unrollCt;
-- (id)children;
-- (unsigned int)index;
-- (int)type;
-- (id)label;
-- (void)setMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg1;
-- (void)setLabel:(id)arg1;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })mask;
-- (void)setType:(int)arg1;
-- (void)setNext:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -17,12 +17,12 @@
 @property(retain) NSURL * URL;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setURL:(id)arg1;
 - (id)URL;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setLinkType:(int)arg1;
 - (void)setLinkTarget:(int)arg1;
 - (int)linkTarget;

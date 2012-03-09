@@ -45,6 +45,11 @@
 
 + (id)_appearanceProxyViewClasses;
 
+- (void)setTarget:(id)arg1;
+- (SEL)action;
+- (id)target;
+- (id)init;
+- (void)dealloc;
 - (BOOL)animatedBadge;
 - (void)setAnimatedBadge:(BOOL)arg1;
 - (BOOL)viewIsCustom;
@@ -91,11 +96,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setTarget:(id)arg1;
-- (SEL)action;
-- (id)target;
-- (id)init;
-- (void)dealloc;
 - (void)setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 
 @end

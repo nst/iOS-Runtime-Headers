@@ -42,6 +42,13 @@
 @property <MPImageRequestDelegate> * delegate;
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)main;
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
 - (void)setUniqueKey:(id)arg1;
 - (void)setDecodeOnFetch:(BOOL)arg1;
 - (BOOL)canRequestSynchronously;
@@ -54,8 +61,6 @@
 - (id)copyRawImageReturningError:(id*)arg1;
 - (id)copyImageFromImage:(id)arg1;
 - (id)uniqueKey;
-- (void)setDelegate:(id)arg1;
-- (id)modifier;
 - (void)setCache:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
 - (id)completionHandler;
@@ -67,16 +72,11 @@
 - (void)setContentMode:(int)arg1;
 - (void)setTag:(long long)arg1;
 - (id)delegate;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)main;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (void)setFinalSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })finalSize;
 - (void)setModifier:(id)arg1;
 - (id)placeholderImage;
+- (id)modifier;
 
 @end

@@ -11,10 +11,10 @@
 
 
 - (id)messageID;
+- (void)dealloc;
 - (id)command;
 - (void)finishWithError:(id)arg1;
 - (id)contentType;
-- (void)dealloc;
 - (id)parameterData;
 - (int)connectionActionForResponse:(id)arg1;
 - (id)initForMessageServerID:(id)arg1 andAttachmentName:(id)arg2;

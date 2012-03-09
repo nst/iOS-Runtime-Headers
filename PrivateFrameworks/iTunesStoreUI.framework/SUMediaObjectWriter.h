@@ -22,10 +22,10 @@
 @property(copy) id completionBlock;
 
 
-- (id)completionBlock;
-- (void)setCompletionBlock:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)completionBlock;
+- (void)setCompletionBlock:(id)arg1;
 - (id)mediaObject;
 - (void)_beginTaskCompletion;
 - (void)_endTaskCompletion;

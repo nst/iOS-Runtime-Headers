@@ -40,12 +40,13 @@
 @property(readonly) UIFieldEditor * fieldEditor;
 
 
+- (void)dealloc;
 - (id)addSelectionTapRecognizer;
 - (BOOL)isChineseInputEnabled;
 - (void)setAutoscrollUntransformedExtentPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)tapOnLinkWithGesture:(id)arg1;
 - (void)scheduleReplacementsForRange:(id)arg1 withOptions:(unsigned int)arg2;
-- (void)scheduleGrammarReplacementsForAlternatives:(id)arg1 range:(id)arg2;
+- (void)scheduleDictationReplacementsForAlternatives:(id)arg1 range:(id)arg2;
 - (BOOL)containerIsTextField;
 - (void)selectWordWithoutShowingCommands;
 - (float)distanceBetweenPoint:(struct CGPoint { float x1; float x2; })arg1 andRange:(id)arg2;
@@ -122,6 +123,5 @@
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)view;
-- (void)dealloc;
 
 @end

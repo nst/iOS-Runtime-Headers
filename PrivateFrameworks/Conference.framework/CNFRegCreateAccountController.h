@@ -11,12 +11,12 @@
 @property <CNFRegCreateAccountControllerDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (void)dealloc;
 - (id)bagKey;
 - (id)logName;
 - (void)cancelTapped;
 - (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

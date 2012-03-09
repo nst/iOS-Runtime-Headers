@@ -15,11 +15,9 @@
 @property(copy) NSString * authID;
 
 
+- (void)dealloc;
 - (void)setAuthToken:(id)arg1;
 - (id)authToken;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 - (void)setAuthID:(id)arg1;
 - (id)authID;
 - (id)authIdHeaderValue;
@@ -29,5 +27,7 @@
 - (id)logName;
 - (void)cancelTapped;
 - (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

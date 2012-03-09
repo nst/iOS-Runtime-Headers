@@ -46,17 +46,19 @@
 + (id)_placeholderMusicImage;
 + (id)_placeholderAudioBookImage;
 
+- (void)dealloc;
+- (id)initWithDelegate:(id)arg1;
 - (void)_crossedTimeMarkerNotification:(id)arg1;
 - (void)_playbackStateChanged:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)flipSelectedCover;
-- (void)tearDown;
 - (BOOL)isTransitioning;
 - (BOOL)isEnabled;
 - (id)view;
 - (int)state;
+- (void)tearDown;
 - (id)query;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (BOOL)transitionIsPending;
 - (void)prepareForPendingTransition;
 - (id)transitionDelegate;
@@ -116,7 +118,5 @@
 - (BOOL)transitionToCoverFlow:(BOOL)arg1 rotating:(BOOL)arg2 deviceOrientation:(int)arg3 flipView:(id)arg4;
 - (void)setTransitionDelegate:(id)arg1;
 - (void)removeMeAsTransitionDelegate:(id)arg1;
-- (void)dealloc;
-- (id)initWithDelegate:(id)arg1;
 
 @end

@@ -21,6 +21,7 @@
 @property BOOL captureEnclosingNIBBundleOnDecode;
 
 
+- (void)dealloc;
 - (void)setCaptureEnclosingNIBBundleOnDecode:(BOOL)arg1;
 - (BOOL)captureEnclosingNIBBundleOnDecode;
 - (void)setInstantiatingForSimulator:(BOOL)arg1;
@@ -33,6 +34,5 @@
 - (void)setBundleResourceName:(id)arg1;
 - (id)bundleResourceName;
 - (id)bundle;
-- (void)dealloc;
 
 @end

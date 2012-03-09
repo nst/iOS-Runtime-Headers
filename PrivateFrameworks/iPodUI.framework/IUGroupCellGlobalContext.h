@@ -14,6 +14,7 @@
 @property BOOL showVideoInfo;
 
 
+- (void)dealloc;
 - (void)setShowVideoInfo:(BOOL)arg1;
 - (void)setShowUnplayedIndicator:(BOOL)arg1;
 - (id)_contextDataForEntity:(id)arg1;
@@ -22,6 +23,5 @@
 - (BOOL)showVideoInfo;
 - (BOOL)showUnplayedIndicator;
 - (void)invalidateDynamicTrackCaches;
-- (void)dealloc;
 
 @end

@@ -18,14 +18,13 @@
 @property(retain) id textFields;
 @property(retain) NSString * title;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
+- (void)dealloc;
 - (void)setButtons:(id)arg1;
 - (void)_show;
-- (id)attributeKeys;
-- (void)setBody:(id)arg1;
 - (id)buttons;
 - (void)setCancelButtonIndex:(id)arg1;
 - (void)dismiss;
@@ -34,7 +33,8 @@
 - (id)cancelButtonIndex;
 - (void)show;
 - (void)setTitle:(id)arg1;
-- (void)dealloc;
+- (id)attributeKeys;
+- (void)setBody:(id)arg1;
 - (void)showFromDOMElement:(id)arg1;
 - (void)showSheet;
 - (id)_nativeDialog;

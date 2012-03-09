@@ -10,9 +10,9 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithItem:(id)arg1 inTabBar:(id)arg2;
 - (id)item;
 - (id)view;
-- (void)dealloc;
 
 @end

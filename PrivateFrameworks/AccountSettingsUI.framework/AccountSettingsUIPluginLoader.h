@@ -13,7 +13,6 @@
 @property(readonly) NSArray * plugins;
 
 
-- (id)plugins;
 - (void)dealloc;
 - (id)pluginsForAccountTypes:(id)arg1;
 - (id)orderedPluginsForAdd;
@@ -24,5 +23,6 @@
 - (id)pluginsWithEagerlyLoadedCommonSpecifiers;
 - (id)pluginsWithLazilyLoadedCommonSpecifiers;
 - (id)initWithParentController:(id)arg1 includeNonAccountBundles:(BOOL)arg2;
+- (id)plugins;
 
 @end

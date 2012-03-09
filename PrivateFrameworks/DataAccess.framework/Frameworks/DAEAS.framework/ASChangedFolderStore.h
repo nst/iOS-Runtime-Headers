@@ -20,10 +20,10 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setStatus:(id)arg1;
-- (id)status;
 - (id)description;
 - (void)dealloc;
+- (void)setStatus:(id)arg1;
+- (id)status;
 - (id)updatedFolders;
 - (id)syncKey;
 - (void)setSyncKey:(id)arg1;

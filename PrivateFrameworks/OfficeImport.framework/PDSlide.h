@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setSlideLayout:(id)arg1;
 - (id)notesSlide;
 - (void)setNotesSlide:(id)arg1;
@@ -27,6 +28,5 @@
 - (id)parentSlideBase;
 - (id)parentTextStyleForTables;
 - (void)doneWithContent;
-- (void)dealloc;
 
 @end

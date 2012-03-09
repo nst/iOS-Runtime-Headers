@@ -16,6 +16,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setAlternateImage:(id)arg1;
 - (void)animateImage:(float)arg1 withTabBar:(id)arg2 withTag:(int)arg3;
 - (id)initWithImage:(id)arg1 alternateImage:(id)arg2;
@@ -23,6 +24,5 @@
 - (void)showAlternateImage:(BOOL)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)setImage:(id)arg1;
-- (void)dealloc;
 
 @end

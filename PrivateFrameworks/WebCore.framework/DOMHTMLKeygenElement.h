@@ -20,6 +20,12 @@
 @property(retain,readonly) DOMNodeList * labels;
 
 
+- (void)setName:(id)arg1;
+- (void)setDisabled:(BOOL)arg1;
+- (BOOL)disabled;
+- (id)form;
+- (id)type;
+- (id)name;
 - (id)challenge;
 - (void)setChallenge:(id)arg1;
 - (id)keytype;
@@ -32,11 +38,5 @@
 - (id)labels;
 - (BOOL)checkValidity;
 - (void)setCustomValidity:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
-- (BOOL)disabled;
-- (id)form;
-- (id)type;
-- (id)name;
-- (void)setName:(id)arg1;
 
 @end

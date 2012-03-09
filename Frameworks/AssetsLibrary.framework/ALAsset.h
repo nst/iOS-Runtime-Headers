@@ -13,6 +13,9 @@
 @property(retain) ALAssetPrivate * internal;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)originalAsset;
 - (id)internal;
 - (void)setInternal:(id)arg1;
 - (id)defaultRepresentation;
@@ -27,10 +30,7 @@
 - (id)representationForUTI:(id)arg1;
 - (id)_typeAsString;
 - (id)initWithManagedAsset:(id)arg1 library:(id)arg2;
-- (id)originalAsset;
-- (id)_uuid;
-- (id)description;
-- (void)dealloc;
 - (struct CGImage { }*)thumbnail;
+- (id)_uuid;
 
 @end

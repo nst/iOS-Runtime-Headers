@@ -12,8 +12,8 @@
 + (id)automaticFill;
 + (id)automaticEffects;
 
-- (id)initWithName:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)initWithName:(id)arg1;
 
 @end

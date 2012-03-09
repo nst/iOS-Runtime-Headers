@@ -20,7 +20,7 @@
 - (void)_downloadAttachment;
 - (void)_downloadedData:(id)arg1 mimeType:(id)arg2;
 - (void)startLoading;
-- (void)stopLoading;
 - (void)dealloc;
+- (void)stopLoading;
 
 @end

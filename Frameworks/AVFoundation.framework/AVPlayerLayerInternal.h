@@ -13,7 +13,6 @@
     BOOL shouldObservePlayer;
     BOOL isObservingPlayer;
     BOOL hasPlayerToObserve;
-    BOOL disableActions;
     BOOL isOverscanSubtitleSupportEnabled;
     struct dispatch_queue_s { } *serialQueue;
     BOOL isPresentationLayer;

@@ -12,10 +12,10 @@
 }
 
 
+- (void)dealloc;
 - (void)invalidateView:(id)arg1;
 - (id)initWithViewsToOrient:(id)arg1 relativeViews:(id)arg2 projectionView:(id)arg3;
 - (void)_computeRelativeViewFrame:(id)arg1;
 - (void)_computeRelativeViewFrames;
-- (void)dealloc;
 
 @end

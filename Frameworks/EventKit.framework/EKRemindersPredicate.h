@@ -18,6 +18,8 @@
 @property(readonly) int querySortOrder;
 
 
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)queryIncludeRemindersDueBefore;
 - (BOOL)queryUseDueDateAsCompletionDate;
 - (id)queryListTitle;
@@ -28,7 +30,5 @@
 - (BOOL)queryCompleted;
 - (BOOL)queryLimitToCompletedOrIncomplete;
 - (id)queryTitle;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

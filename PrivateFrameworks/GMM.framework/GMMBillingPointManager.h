@@ -8,8 +8,8 @@
 
 + (id)sharedManager;
 
-- (void)updateToMapRegion:(id)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2 centerPixelsX:(double)arg3 centerPixelsY:(double)arg4 zoomLevel:(unsigned int)arg5 isSatelliteMap:(BOOL)arg6 hasUserLocation:(BOOL)arg7 isShowingRoute:(BOOL)arg8;
 - (id)init;
 - (void)dealloc;
+- (void)updateToMapRegion:(id)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2 centerPixelsX:(double)arg3 centerPixelsY:(double)arg4 zoomLevel:(unsigned int)arg5 isSatelliteMap:(BOOL)arg6 hasUserLocation:(BOOL)arg7 isShowingRoute:(BOOL)arg8;
 
 @end

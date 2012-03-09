@@ -7,26 +7,9 @@
 
 + (id)orderedSetWithCapacity:(unsigned int)arg1;
 
-- (void)minusOrderedSet:(id)arg1;
-- (void)removeObjectsAtIndexes:(id)arg1;
-- (void)setObject:(id)arg1;
-- (void)unionSet:(id)arg1;
-- (void)sortWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
-- (void)setArray:(id)arg1;
-- (void)removeObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)exchangeObjectAtIndex:(unsigned int)arg1 withObjectAtIndex:(unsigned int)arg2;
-- (void)sortUsingComparator:(id)arg1;
-- (void)removeObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
-- (void)minusSet:(id)arg1;
-- (void)removeLastObject;
-- (void)intersectSet:(id)arg1;
-- (void)removeObjectsInArray:(id)arg1;
-- (void)removeAllObjects;
-- (void)removeObject:(id)arg1;
+- (void)addObjectsFromArray:(id)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (void)addObject:(id)arg1;
 - (void)unionOrderedSet:(id)arg1;
 - (void)intersectOrderedSet:(id)arg1;
 - (void)setSet:(id)arg1;
@@ -67,11 +50,30 @@
 - (void)insertObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 atIndex:(unsigned int)arg3;
 - (void)insertObjects:(const id*)arg1 count:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)_mutate;
-- (void)addObjectsFromArray:(id)arg1;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (void)addObject:(id)arg1;
+- (void)minusOrderedSet:(id)arg1;
+- (void)removeObjectsAtIndexes:(id)arg1;
+- (void)setObject:(id)arg1;
+- (void)unionSet:(id)arg1;
+- (void)sortWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
+- (void)setArray:(id)arg1;
+- (void)removeObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)exchangeObjectAtIndex:(unsigned int)arg1 withObjectAtIndex:(unsigned int)arg2;
+- (void)sortUsingComparator:(id)arg1;
+- (void)removeObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)minusSet:(id)arg1;
+- (void)removeLastObject;
+- (void)intersectSet:(id)arg1;
+- (void)removeObjectsInArray:(id)arg1;
+- (void)removeAllObjects;
+- (void)removeObject:(id)arg1;
 - (void)sortUsingDescriptors:(id)arg1;
 - (void)filterUsingPredicate:(id)arg1;
 - (BOOL)pl_replaceObjectsAtIndexes:(id)arg1 wihtObjectsIfDifferent:(id)arg2;
+- (void)pl_removeObjectsInArray:(id)arg1;
+- (void)pl_addObjectsFromArray:(id)arg1;
 
 @end

@@ -14,6 +14,7 @@
 @property(retain,readonly) DOMHTMLCollection * rows;
 
 
+- (id)rows;
 - (id)insertRow:(int)arg1;
 - (void)deleteRow:(int)arg1;
 - (id)ch;
@@ -24,6 +25,5 @@
 - (void)setVAlign:(id)arg1;
 - (id)align;
 - (void)setAlign:(id)arg1;
-- (id)rows;
 
 @end

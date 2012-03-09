@@ -15,8 +15,9 @@
 
 + (id)locationWithTitle:(id)arg1;
 
-- (id)radius;
-- (void)setRadius:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)setGeoLocation:(id)arg1;
 - (id)_persistentLocation;
 - (void)setAddressBookEntityID:(id)arg1;
@@ -26,9 +27,8 @@
 - (void)updatePersistentObject;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
+- (id)radius;
+- (void)setRadius:(id)arg1;
 - (id)humanReadableContactString;
 
 @end

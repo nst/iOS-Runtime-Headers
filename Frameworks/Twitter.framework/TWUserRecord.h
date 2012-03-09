@@ -20,11 +20,6 @@
 + (id)userRecordWithScreenName:(id)arg1;
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;
 
-- (void)setObjectID:(id)arg1;
-- (id)objectID;
-- (id)name;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)description;
 - (void)dealloc;
@@ -35,5 +30,10 @@
 - (void)setProfile_image_url:(id)arg1;
 - (void)setScreen_name:(id)arg1;
 - (void)setId_str:(id)arg1;
+- (id)name;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setObjectID:(id)arg1;
+- (id)objectID;
 
 @end

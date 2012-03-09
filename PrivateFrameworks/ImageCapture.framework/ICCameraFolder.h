@@ -11,23 +11,23 @@
 @property(readonly) NSArray * contents;
 
 
-- (void)finalize;
 - (void)addFile:(id)arg1;
-- (id)metadata;
+- (id)description;
+- (void)dealloc;
+- (BOOL)hasThumbnail;
 - (void)deleteFile:(id)arg1;
 - (void)deleteFolder:(id)arg1;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
 - (void)deleteItem:(id)arg1;
 - (void)addFolder:(id)arg1;
+- (void)finalize;
+- (id)contents;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)files;
-- (id)contents;
-- (BOOL)hasThumbnail;
+- (struct CGImage { }*)thumbnail;
+- (id)metadata;
+- (id)folders;
 - (void)requestThumbnail;
 - (void)requestMetadata;
-- (id)description;
-- (void)dealloc;
-- (id)folders;
-- (struct CGImage { }*)thumbnail;
 
 @end

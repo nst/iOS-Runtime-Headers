@@ -18,8 +18,6 @@
 + (void)_endTopLevelGroupings;
 + (void)_setEndsTopLevelGroupingsAfterRunLoopIterations:(BOOL)arg1;
 
-- (void)setActionName:(id)arg1;
-- (void)finalize;
 - (BOOL)redoActionIsDiscardable;
 - (BOOL)undoActionIsDiscardable;
 - (void)setActionIsDiscardable:(BOOL)arg1;
@@ -47,19 +45,16 @@
 - (id)_undoStack;
 - (void)_forwardTargetInvocation:(id)arg1;
 - (id)_methodSignatureForTargetSelector:(SEL)arg1;
-- (BOOL)isUndoRegistrationEnabled;
-- (void)registerUndoWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
-- (BOOL)isUndoing;
-- (BOOL)isRedoing;
-- (void)disableUndoRegistration;
-- (void)enableUndoRegistration;
-- (void)removeAllActionsWithTarget:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)setActionName:(id)arg1;
 - (int)groupingLevel;
 - (void)_processEndOfEventNotification:(id)arg1;
 - (void)endUndoGrouping;
 - (void)beginUndoGrouping;
 - (void)setGroupsByEvent:(BOOL)arg1;
 - (BOOL)groupsByEvent;
+- (void)finalize;
 - (void)removeAllActions;
 - (void)redo;
 - (void)undo;
@@ -67,7 +62,12 @@
 - (id)undoMenuItemTitle;
 - (BOOL)canRedo;
 - (BOOL)canUndo;
-- (id)init;
-- (void)dealloc;
+- (BOOL)isUndoRegistrationEnabled;
+- (void)registerUndoWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
+- (BOOL)isUndoing;
+- (BOOL)isRedoing;
+- (void)disableUndoRegistration;
+- (void)enableUndoRegistration;
+- (void)removeAllActionsWithTarget:(id)arg1;
 
 @end

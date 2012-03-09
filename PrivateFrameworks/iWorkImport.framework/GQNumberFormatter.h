@@ -43,6 +43,7 @@
 + (id)currentLocaleCurrencyCode;
 + (id)currencySymbolForCurrencyCode:(id)arg1;
 
+- (void)dealloc;
 - (BOOL)decimalFromString:(struct __CFString { }*)arg1 value:(double*)arg2 formatString:(const struct __CFString {}**)arg3;
 - (BOOL)currencyFromString:(struct __CFString { }*)arg1 additionalCurrencyCode:(struct __CFString { }*)arg2 value:(double*)arg3 formatString:(const struct __CFString {}**)arg4 currencyCode:(const struct __CFString {}**)arg5;
 - (BOOL)percentageFromString:(struct __CFString { }*)arg1 value:(double*)arg2 formatString:(const struct __CFString {}**)arg3;
@@ -59,6 +60,5 @@
 - (id)currentLocaleCurrencyCode;
 - (id)currencySymbolForCurrencyCode:(id)arg1;
 - (BOOL)findCurrencySymbolInString:(struct __CFString { }*)arg1 additionalCurrencyCode:(struct __CFString { }*)arg2 successfulString:(const struct __CFString {}**)arg3;
-- (void)dealloc;
 
 @end

@@ -19,6 +19,10 @@
 @property(retain) NSData * payload;
 
 
+- (void)setName:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setExtraChildItems:(id)arg1;
 - (id)generateXMLString;
 - (void)setPayloadAsString:(id)arg1;
@@ -34,16 +38,12 @@
 - (id)nameSpace;
 - (id)extraChildItems;
 - (id)payloadAsString;
-- (void)write:(id)arg1;
+- (BOOL)validate;
+- (id)payload;
+- (void)setPayload:(id)arg1;
 - (void)setAttributes:(id)arg1;
 - (id)attributes;
 - (id)name;
-- (id)payload;
-- (void)setPayload:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (BOOL)validate;
+- (void)write:(id)arg1;
 
 @end

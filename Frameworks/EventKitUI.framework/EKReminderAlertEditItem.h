@@ -2,11 +2,14 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
+@class NSString;
+
 @interface EKReminderAlertEditItem : EKReminderEditItem  {
+    NSString *_lastSeenFooterString;
 }
 
 
-- (id)footerView;
+- (void)dealloc;
 - (id)_footerString;
 - (BOOL)editItemViewControllerCommit:(id)arg1 notify:(BOOL)arg2;
 - (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(int)arg2;
@@ -15,5 +18,7 @@
 - (float)footerHeightForWidth:(float)arg1;
 - (BOOL)configureForCalendarConstraints:(id)arg1;
 - (id)cellForSubitemAtIndex:(int)arg1;
+- (id)footerView;
+- (BOOL)applicationDidResume;
 
 @end

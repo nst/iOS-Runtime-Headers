@@ -25,8 +25,10 @@
 @property <EAAccessoryDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)manufacturer;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (BOOL)isConnected;
 - (void)updateSystemProperty:(int)arg1 withValue:(id)arg2;
 - (BOOL)supportsAccessibility;
 - (BOOL)sendEphemeris:(id)arg1;
@@ -70,12 +72,10 @@
 - (unsigned int)connectionID;
 - (void)_setConnected:(BOOL)arg1;
 - (id)_initWithAccessory:(id)arg1;
-- (id)serialNumber;
+- (id)manufacturer;
 - (id)name;
 - (id)delegate;
-- (BOOL)isConnected;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (id)serialNumber;
 
 @end

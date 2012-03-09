@@ -11,9 +11,9 @@
 @property(retain) NSURL * redirectURL;
 
 
-- (id)initWithDictionary:(id)arg1;
-- (void)setRedirectURL:(id)arg1;
 - (void)dealloc;
+- (void)setRedirectURL:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
 - (id)redirectURL;
 
 @end

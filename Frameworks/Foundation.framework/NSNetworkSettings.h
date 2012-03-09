@@ -18,8 +18,8 @@
 - (void)_listenForProxySettingChanges;
 - (void)_updateProxySettings;
 - (id)proxyDictionary;
-- (id)_init;
 - (id)init;
 - (void)dealloc;
+- (id)_init;
 
 @end

@@ -20,8 +20,8 @@
 
 - (id)emailAddress;
 - (id)certificates;
-- (void)setEmailAddress:(id)arg1;
 - (id)description;
+- (void)setEmailAddress:(id)arg1;
 - (void)setCertificates:(id)arg1;
 - (id)asParseRules;
 

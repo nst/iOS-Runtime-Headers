@@ -23,35 +23,35 @@
     BOOL _expectsMediaDataInRealTime;
 }
 
-@property BOOL expectsMediaDataInRealTime;
-@property int mediaTimeScale;
-@property struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } transform;
-@property(copy) NSArray * metadataItems;
-@property BOOL attachedToPixelBufferAdaptor;
-@property(copy) NSDictionary * sourcePixelBufferAttributes;
-@property(retain) struct opaqueCMFormatDescription { }* sampleBufferFormatHint;
-@property(copy) AVOutputSettings * outputSettings;
 @property(copy) NSString * mediaType;
+@property(copy) AVOutputSettings * outputSettings;
+@property(retain) struct opaqueCMFormatDescription { }* sampleBufferFormatHint;
+@property(copy) NSDictionary * sourcePixelBufferAttributes;
+@property BOOL attachedToPixelBufferAdaptor;
+@property(copy) NSArray * metadataItems;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property int mediaTimeScale;
+@property BOOL expectsMediaDataInRealTime;
 
 
+- (void)dealloc;
+- (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
+- (void)setMediaTimeScale:(int)arg1;
+- (int)mediaTimeScale;
+- (void)setAttachedToPixelBufferAdaptor:(BOOL)arg1;
+- (BOOL)attachedToPixelBufferAdaptor;
+- (void)setSourcePixelBufferAttributes:(id)arg1;
+- (id)sourcePixelBufferAttributes;
+- (void)setSampleBufferFormatHint:(struct opaqueCMFormatDescription { }*)arg1;
+- (struct opaqueCMFormatDescription { }*)sampleBufferFormatHint;
+- (void)setOutputSettings:(id)arg1;
+- (BOOL)expectsMediaDataInRealTime;
+- (void)setMetadataItems:(id)arg1;
+- (id)metadataItems;
+- (id)outputSettings;
+- (void)setMediaType:(id)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
-- (BOOL)attachedToPixelBufferAdaptor;
-- (struct opaqueCMFormatDescription { }*)sampleBufferFormatHint;
-- (void)setSampleBufferFormatHint:(struct opaqueCMFormatDescription { }*)arg1;
-- (int)mediaTimeScale;
-- (void)setMediaTimeScale:(int)arg1;
-- (id)sourcePixelBufferAttributes;
-- (void)setSourcePixelBufferAttributes:(id)arg1;
-- (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
-- (void)setOutputSettings:(id)arg1;
-- (void)setAttachedToPixelBufferAdaptor:(BOOL)arg1;
-- (id)metadataItems;
-- (void)setMetadataItems:(id)arg1;
-- (BOOL)expectsMediaDataInRealTime;
-- (id)outputSettings;
 - (id)mediaType;
-- (void)setMediaType:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -12,12 +12,12 @@
 @property(readonly) SUMessage * message;
 
 
-- (id)initWithMessage:(id)arg1;
-- (id)message;
-- (void)run;
 - (void)cancel;
 - (id)init;
 - (void)dealloc;
+- (id)initWithMessage:(id)arg1;
+- (id)message;
+- (void)run;
 - (id)_copyResourcesForUploadOperation:(id)arg1;
 - (id)_copyResourcesForLocalPart:(id)arg1;
 - (id)_newUploadOperationForMessagePart:(id)arg1;

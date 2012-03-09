@@ -12,8 +12,6 @@
 @property BOOL showAttachments;
 
 
-- (id)event;
-- (void)setEvent:(id)arg1;
 - (BOOL)showAttachments;
 - (void)refreshStartAndEndDates;
 - (id)defaultTitleForCalendarItem;
@@ -28,5 +26,7 @@
 - (id)_editItems;
 - (BOOL)_canDetachSingleOccurrence;
 - (void)setShowAttachments:(BOOL)arg1;
+- (id)event;
+- (void)setEvent:(id)arg1;
 
 @end

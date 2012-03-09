@@ -12,11 +12,11 @@
 
 + (id)sharedObserver;
 
+- (id)init;
+- (void)dealloc;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (id)downloadManager;
 - (void)setDownloadManager:(id)arg1;
 - (BOOL)isDownloadingGame:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

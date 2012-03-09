@@ -13,12 +13,12 @@
 @property(readonly) struct CGPoint { float x1; float x2; } mouthPosition;
 
 
+- (id)type;
 - (struct CGPoint { float x1; float x2; })mouthPosition;
 - (BOOL)hasMouthPosition;
 - (struct CGPoint { float x1; float x2; })rightEyePosition;
 - (BOOL)hasRightEyePosition;
 - (struct CGPoint { float x1; float x2; })leftEyePosition;
 - (BOOL)hasLeftEyePosition;
-- (id)type;
 
 @end

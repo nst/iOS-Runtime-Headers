@@ -15,11 +15,11 @@
 
 - (void)setMonitor:(id)arg1;
 - (id)monitor;
+- (void)dealloc;
+- (id)initWithServiceType:(int)arg1;
+- (BOOL)removeListenerID:(id)arg1;
 - (id)listeners;
 - (BOOL)addListenerID:(id)arg1;
 - (BOOL)hasListenerID:(id)arg1;
-- (BOOL)removeListenerID:(id)arg1;
-- (void)dealloc;
-- (id)initWithServiceType:(int)arg1;
 
 @end

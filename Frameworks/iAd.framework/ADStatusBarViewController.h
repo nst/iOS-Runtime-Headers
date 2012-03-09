@@ -11,10 +11,10 @@
 @property ADHostWindowController * owner;
 
 
-- (id)owner;
-- (void)setOwner:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)setOwner:(id)arg1;
+- (id)owner;
 
 @end

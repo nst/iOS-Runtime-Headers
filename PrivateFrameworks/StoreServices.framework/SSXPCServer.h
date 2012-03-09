@@ -13,12 +13,12 @@
 
 + (id)mainServer;
 
+- (id)init;
+- (void)dealloc;
 - (void)removeObserver:(id)arg1 selector:(SEL)arg2 forMessage:(long long)arg3;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 forMessage:(long long)arg3;
 - (void)_dispatchMessage:(void*)arg1 connection:(struct _xpc_connection_s { }*)arg2;
 - (id)initWithServiceName:(id)arg1 entitlement:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3;
 - (id)initWithServiceName:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -33,6 +33,8 @@
 @property float tableSidePadding;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (float)tableBottomPadding;
 - (float)tableTopPadding;
 - (void)setTableSidePadding:(float)arg1;
@@ -97,7 +99,5 @@
 - (int)numberOfRows;
 - (int)numberOfSections;
 - (int)numberOfRowsInSection:(int)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

@@ -22,6 +22,11 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (id)documentState;
+- (id)initWithClient:(id)arg1;
+- (id)client;
 - (id)blipRefForURL:(id)arg1;
 - (id)bulletBlipRefForURL:(id)arg1;
 - (id)blipRefWithURL:(id)arg1 blipArray:(id)arg2 blipURLtoIndexMap:(id)arg3;
@@ -46,10 +51,5 @@
 - (id)colorScheme;
 - (id)fontScheme;
 - (id)styleMatrix;
-- (id)initWithClient:(id)arg1;
-- (id)client;
-- (id)documentState;
-- (id)init;
-- (void)dealloc;
 
 @end

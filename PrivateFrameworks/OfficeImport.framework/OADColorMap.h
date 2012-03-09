@@ -9,11 +9,11 @@
 }
 
 
-- (void)addMapping:(int)arg1 index:(int)arg2;
-- (int)mappingForIndex:(int)arg1;
-- (void)addDefaultMappings:(BOOL)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)addMapping:(int)arg1 index:(int)arg2;
+- (int)mappingForIndex:(int)arg1;
+- (void)addDefaultMappings:(BOOL)arg1;
 
 @end

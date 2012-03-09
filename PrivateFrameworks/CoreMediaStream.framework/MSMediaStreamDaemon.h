@@ -13,14 +13,15 @@
 @property <MSMediaStreamDaemonDelegate> * delegate;
 
 
-- (BOOL)isBusy;
-- (void)start;
-- (void)setDelegate:(id)arg1;
+- (void)forgetPersonID:(id)arg1;
+- (id)serverSideConfigurationForPersonID:(id)arg1;
+- (void)pollForSubscriptionUpdatesForPersonID:(id)arg1;
 - (void)didExceedPublishQuotaForPersonID:(id)arg1 retryDate:(id)arg2;
 - (void)didReceiveAuthenticationSuccessForPersonID:(id)arg1;
 - (void)didReceiveAuthenticationFailureForPersonID:(id)arg1;
 - (void)showInvitationFailureAlertForPersonID:(id)arg1 failures:(id)arg2;
 - (void)didReceiveNewShareState:(id)arg1 oldShareState:(id)arg2 forPersonID:(id)arg3;
+- (void)deleteAssetCollections:(id)arg1 forPersonID:(id)arg2;
 - (void)didReceiveNewServerSideConfigurationForPersonID:(id)arg1;
 - (void)didReceiveServerSideConfigurationVersion:(id)arg1 forPersonID:(id)arg2;
 - (id)notificationStringsForShareStateTransitionOldShares:(id)arg1 newShares:(id)arg2;
@@ -53,16 +54,17 @@
 - (id)_boundSharingManagerForPersonID:(id)arg1;
 - (void)stopAllActivities;
 - (void)releaseBusy;
+- (id)_boundDeleterForPersonID:(id)arg1;
 - (id)_boundSubscriberForPersonID:(id)arg1;
 - (id)_boundPublisherForPersonID:(id)arg1;
 - (void)retainBusy;
 - (BOOL)isInRetryState;
 - (id)nextActivityDate;
+- (BOOL)isBusy;
 - (void)stop;
+- (void)start;
 - (id)delegate;
-- (void)forgetPersonID:(id)arg1;
-- (id)serverSideConfigurationForPersonID:(id)arg1;
-- (void)pollForSubscriptionUpdatesForPersonID:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)retainPowerAssertion;
 - (void)releasePowerAssertion;
 

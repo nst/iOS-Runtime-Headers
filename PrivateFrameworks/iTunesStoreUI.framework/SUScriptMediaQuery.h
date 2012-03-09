@@ -27,14 +27,13 @@
 @property(readonly) NSString * groupingTypePodcastTitle;
 @property(readonly) NSString * groupingTypeTitle;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (void)_resetCaches;
-- (id)attributeKeys;
-- (id)items;
 - (void)dealloc;
+- (id)items;
+- (id)attributeKeys;
 - (id)groupingTypeTitle;
 - (id)groupingTypePodcastTitle;
 - (id)groupingTypePlaylist;
@@ -68,5 +67,6 @@
 - (id)_copyItems;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)_resetCaches;
 
 @end

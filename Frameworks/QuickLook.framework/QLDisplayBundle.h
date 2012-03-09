@@ -39,8 +39,24 @@
 + (id)copySwipeImageOperation;
 + (BOOL)canPreloadInThread;
 
+- (id)description;
+- (void)dealloc;
+- (id)displayView;
 - (void)setLoaded:(BOOL)arg1;
+- (void)cancelLoad;
+- (id)printPageRenderer;
+- (int)index;
+- (void)loadView;
+- (void)deactivate;
+- (int)modalPresentationStyle;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (id)previewRequest;
+- (void)setOwner:(id)arg1;
+- (BOOL)loaded;
 - (id)owner;
+- (void)tearDownUI;
+- (void)setIndex:(int)arg1;
 - (void)setPreviewRequest:(id)arg1;
 - (void)setDisplayView:(id)arg1;
 - (void)startLoadWithHints:(id)arg1;
@@ -79,21 +95,5 @@
 - (BOOL)hasCustomToolbar;
 - (BOOL)canPrint;
 - (id)pdfPreviewURL;
-- (void)setDelegate:(id)arg1;
-- (void)setIndex:(int)arg1;
-- (id)previewRequest;
-- (void)setOwner:(id)arg1;
-- (BOOL)loaded;
-- (id)printPageRenderer;
-- (int)index;
-- (void)loadView;
-- (void)deactivate;
-- (int)modalPresentationStyle;
-- (id)delegate;
-- (void)cancelLoad;
-- (id)description;
-- (void)dealloc;
-- (void)tearDownUI;
-- (id)displayView;
 
 @end

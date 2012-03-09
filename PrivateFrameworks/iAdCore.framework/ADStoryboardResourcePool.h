@@ -12,11 +12,11 @@
 
 + (id)sharedInstance;
 
+- (id)init;
+- (void)dealloc;
 - (void)setResource:(id)arg1;
 - (id)resource;
 - (void)checkin:(id)arg1;
 - (id)checkoutCopy;
-- (id)init;
-- (void)dealloc;
 
 @end

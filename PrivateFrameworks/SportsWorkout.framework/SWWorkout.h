@@ -15,12 +15,12 @@
 @property(readonly) NSDictionary * workoutData;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)workoutState;
 - (void)pauseWorkout;
 - (void)activateWorkout;
 - (id)workoutData;
 - (double)getElapsedTimeInSeconds;
-- (id)init;
-- (void)dealloc;
 
 @end

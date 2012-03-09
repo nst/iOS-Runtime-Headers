@@ -27,6 +27,8 @@
 @property(copy) id viewDidAppearCompletion;
 
 
+- (id)init;
+- (void)dealloc;
 - (struct NSObject { Class x1; }*)album;
 - (id)contentScrollView;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
@@ -55,7 +57,5 @@
 - (id)initWithAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)albumDidChange:(id)arg1;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

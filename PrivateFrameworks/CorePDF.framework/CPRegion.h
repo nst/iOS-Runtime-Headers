@@ -14,8 +14,8 @@
 }
 
 
-- (void)setOrder:(int)arg1;
-- (int)order;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (BOOL)isBodyZone;
 - (BOOL)isCompoundShape;
 - (void)setIsCompoundShape:(BOOL)arg1;
@@ -35,10 +35,10 @@
 - (BOOL)isShapeRegion;
 - (BOOL)isIndivisible;
 - (void)accept:(id)arg1;
+- (void)setOrder:(int)arg1;
+- (int)order;
+- (BOOL)isRotated;
 - (id)link;
 - (void)setLink:(id)arg1;
-- (BOOL)isRotated;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

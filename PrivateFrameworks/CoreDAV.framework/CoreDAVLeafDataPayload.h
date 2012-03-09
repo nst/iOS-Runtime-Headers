@@ -16,9 +16,9 @@
 @property(readonly) NSArray * childrenOrder;
 
 
+- (void)dealloc;
 - (id)dataPayload;
 - (id)initWithURL:(id)arg1 eTag:(id)arg2 dataPayload:(id)arg3 inContainerWithURL:(id)arg4 withAccountInfoProvider:(id)arg5;
-- (void)dealloc;
 - (id)syncKey;
 - (id)serverID;
 - (void)setServerID:(id)arg1;

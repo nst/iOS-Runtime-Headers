@@ -17,6 +17,7 @@
 }
 
 
+- (double)columnWidth;
 - (id)mapHyperlinkAt:(id)arg1;
 - (id)initWithEDCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2 parent:(id)arg3 state:(id)arg4;
 - (void)resetColumnSpan:(int)arg1;
@@ -35,6 +36,5 @@
 - (void)setLastColumn:(int)arg1;
 - (int)firstColumn;
 - (int)lastColumn;
-- (double)columnWidth;
 
 @end

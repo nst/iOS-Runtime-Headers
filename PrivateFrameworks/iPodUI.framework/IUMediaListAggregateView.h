@@ -17,16 +17,17 @@
 @property id delegate;
 
 
+- (void)dealloc;
 - (void)_reloadViews;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)layoutSubviews;
-- (void)_removeSubviewsForConfiguration:(BOOL)arg1;
-- (void)_reloadArtworkView;
-- (id)initWithConfiguration:(id)arg1;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (void)_reloadSubviewsForConfiguration;
 - (id)configuration;
 - (void)setConfiguration:(id)arg1;
+- (void)_reloadArtworkView;
+- (void)_removeSubviewsForConfiguration:(BOOL)arg1;
+- (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
+- (id)initWithConfiguration:(id)arg1;
 
 @end

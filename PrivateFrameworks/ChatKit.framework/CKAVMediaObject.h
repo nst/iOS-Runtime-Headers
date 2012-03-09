@@ -15,13 +15,12 @@
 
 @property BOOL remakeDidEnd;
 
-+ (void)initialize;
 + (id)transcodeOptionsWithMaxBytes:(int)arg1 forMediaType:(int)arg2;
 + (void)_dequeueNextTranscodeOnMainThread;
 + (double)maxMMSTrimDurationForMediaType:(int)arg1;
++ (void)initialize;
 
-- (double)duration;
-- (void)setDuration:(double)arg1;
+- (void)dealloc;
 - (void)_determineDurationOnMainThreadWithFile:(id)arg1;
 - (void)_enqueueTranscodeOnMainThreadWithOptions:(id)arg1;
 - (BOOL)remakeDidEnd;
@@ -45,6 +44,7 @@
 - (Class)balloonPreviewClassWithPreviewData:(id)arg1;
 - (void)copyToPasteboard:(id)arg1;
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
-- (void)dealloc;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 
 @end

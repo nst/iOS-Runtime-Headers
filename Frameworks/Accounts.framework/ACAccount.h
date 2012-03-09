@@ -45,6 +45,14 @@
 
 + (id)_createNewAccountUID;
 
+- (id)accountDescription;
+- (BOOL)isEnabledForDataclass:(struct NSString { Class x1; }*)arg1;
+- (void)setEnabled:(BOOL)arg1 forDataclass:(struct NSString { Class x1; }*)arg2;
+- (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
+- (id)accountPropertyForKey:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (void)setAccountDescription:(id)arg1;
 - (void)setProperties:(id)arg1 forDataclass:(struct NSString { Class x1; }*)arg2;
 - (void)setEnabledDataclasses:(id)arg1;
 - (void)setProvisionedDataclasses:(id)arg1;
@@ -57,24 +65,18 @@
 - (id)owningBundleID;
 - (id)accountProperties;
 - (void)setAccountStore:(id)arg1;
-- (id)accountDescription;
-- (BOOL)isEnabledForDataclass:(struct NSString { Class x1; }*)arg1;
-- (void)setEnabled:(BOOL)arg1 forDataclass:(struct NSString { Class x1; }*)arg2;
-- (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
-- (id)accountPropertyForKey:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (void)setAuthenticated:(BOOL)arg1;
 - (id)username;
+- (id)dataclassProperties;
+- (id)provisionedDataclasses;
+- (id)accountType;
 - (BOOL)authenticated;
-- (void)setAccountType:(id)arg1;
-- (void)setParentAccount:(id)arg1;
-- (void)setObjectID:(id)arg1;
-- (id)objectID;
-- (void)setAccountDescription:(id)arg1;
+- (id)credential;
+- (void)setCredential:(id)arg1;
 - (BOOL)isProvisionedForDataclass:(struct NSString { Class x1; }*)arg1;
 - (id)propertiesForDataclass:(struct NSString { Class x1; }*)arg1;
 - (id)parentAccount;
-- (id)provisionedDataclasses;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
 - (void)setDate:(id)arg1;
@@ -82,12 +84,10 @@
 - (void)reload;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)accountType;
-- (id)description;
-- (void)dealloc;
-- (id)dataclassProperties;
+- (void)setAccountType:(id)arg1;
+- (void)setParentAccount:(id)arg1;
+- (void)setObjectID:(id)arg1;
+- (id)objectID;
 - (id)enabledDataclasses;
-- (id)credential;
-- (void)setCredential:(id)arg1;
 
 @end

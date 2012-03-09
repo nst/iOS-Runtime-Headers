@@ -51,12 +51,12 @@
 - (void)setMIMESupport:(int)arg1;
 - (id)folderID;
 - (BOOL)moreAvailable;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)finishWithError:(id)arg1;
 - (double)percentComplete;
 - (void)setActions:(id)arg1;
 - (id)actions;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (BOOL)isResyncAfterConnectionFailed;
 - (BOOL)isInitialBootstrapSync;
 - (int)filterDays;

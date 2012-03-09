@@ -7,13 +7,13 @@
 }
 
 
+- (id)description;
+- (id)copy;
+- (void)dealloc;
 - (void)setIndex:(unsigned int)arg1 atPosition:(unsigned int)arg2;
 - (void)getIndexes:(unsigned int*)arg1;
 - (unsigned int)indexAtPosition:(unsigned int)arg1;
 - (id)initWithIndexes:(unsigned int*)arg1 length:(unsigned int)arg2;
 - (int)compare:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)copy;
 
 @end

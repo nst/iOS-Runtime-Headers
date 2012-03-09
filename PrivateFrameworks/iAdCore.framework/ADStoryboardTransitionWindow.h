@@ -27,8 +27,11 @@
 @property int authoredTransitionState;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)setContainerView:(id)arg1;
+- (id)containerView;
+- (id)storyboard;
+- (void)setDelegate:(id)arg1;
 - (void)setAuthoredTransitionState:(int)arg1;
 - (int)authoredTransitionState;
 - (struct CGImage { }*)screenBeforeTransitionIn;
@@ -63,8 +66,5 @@
 - (void)setBannerData:(id)arg1;
 - (void)authoredTransitionInComplete;
 - (void)readyForAuthoredTransitionIn;
-- (id)containerView;
-- (id)storyboard;
-- (void)dealloc;
 
 @end

@@ -13,13 +13,13 @@
 @property(retain) CoreDAVHrefItem * href;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setHref:(id)arg1;
 - (id)href;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (void)setCommonName:(id)arg1;
 - (id)commonName;
 

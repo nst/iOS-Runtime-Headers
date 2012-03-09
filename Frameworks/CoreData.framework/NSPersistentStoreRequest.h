@@ -10,10 +10,10 @@
 
 + (void)initialize;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)affectedStores;
 - (void)setAffectedStores:(id)arg1;
 - (unsigned int)requestType;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

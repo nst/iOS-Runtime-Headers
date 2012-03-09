@@ -25,6 +25,10 @@
 }
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (void)setModel:(id)arg1;
 - (void)setStandardVersion:(unsigned short)arg1;
 - (unsigned long)vendorExtensionID;
 - (void)setVendorExtensionID:(unsigned long)arg1;
@@ -53,14 +57,10 @@
 - (id)initWithMutableData:(id)arg1;
 - (id)devicePropertiesSupported;
 - (id)operationsSupported;
-- (void)setContent:(id)arg1;
-- (id)serialNumber;
 - (id)model;
 - (id)content;
 - (id)initWithData:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (void)setModel:(id)arg1;
+- (void)setContent:(id)arg1;
+- (id)serialNumber;
 
 @end

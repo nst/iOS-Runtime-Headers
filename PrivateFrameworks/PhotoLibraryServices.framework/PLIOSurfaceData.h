@@ -10,11 +10,11 @@
 
 + (id)dataWithIOSurface:(void*)arg1;
 
-- (id)initWithIOSurface:(void*)arg1;
-- (const void*)bytes;
-- (id)initWithIOSurface:(void*)arg1 length:(unsigned int)arg2;
 - (unsigned int)length;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)initWithIOSurface:(void*)arg1;
+- (const void*)bytes;
+- (id)initWithIOSurface:(void*)arg1 length:(unsigned int)arg2;
 
 @end

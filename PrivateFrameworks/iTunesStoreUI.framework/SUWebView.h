@@ -29,6 +29,7 @@
 @property(readonly) WebView * webView;
 
 
+- (void)dealloc;
 - (void)stopLoading;
 - (void)_setRichTextReaderViewportSettings;
 - (id)superviewForImageSheetForWebView:(id)arg1;
@@ -38,7 +39,6 @@
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)setScrollingEnabled:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
 - (void)reloadWindowScriptObject:(id)arg1;

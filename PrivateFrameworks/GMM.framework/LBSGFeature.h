@@ -21,22 +21,22 @@
 @property(retain) LBSGLatLng * center;
 
 
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setAddress:(id)arg1;
 - (id)address;
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasBounds;
-- (BOOL)hasCenter;
-- (int)featureType;
-- (void)setFeatureType:(int)arg1;
-- (id)bounds;
-- (void)setBounds:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)name;
 - (void)setCenter:(id)arg1;
 - (id)center;
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (void)setBounds:(id)arg1;
+- (id)bounds;
+- (BOOL)readFrom:(id)arg1;
+- (BOOL)hasBounds;
+- (void)writeTo:(id)arg1;
+- (BOOL)hasCenter;
+- (int)featureType;
+- (void)setFeatureType:(int)arg1;
 
 @end

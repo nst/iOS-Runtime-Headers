@@ -33,10 +33,7 @@
 - (id)attachments;
 - (id)messageBody;
 - (void)setSubject:(id)arg1;
-- (id)toRecipients;
-- (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
-- (void)setToRecipients:(id)arg1;
-- (id)initWithURL:(id)arg1;
+- (void)dealloc;
 - (id)initNewMessageWithURL:(id)arg1;
 - (id)bccRecipients;
 - (id)ccRecipients;
@@ -44,7 +41,10 @@
 - (void)setCcRecipients:(id)arg1;
 - (void)setBccRecipients:(id)arg1;
 - (void)setShowKeyboardImmediately:(BOOL)arg1;
-- (void)dealloc;
+- (id)initWithURL:(id)arg1;
+- (id)toRecipients;
+- (void)setToRecipients:(id)arg1;
 - (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
+- (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 
 @end

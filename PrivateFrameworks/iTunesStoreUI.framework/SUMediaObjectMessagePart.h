@@ -10,8 +10,8 @@
 }
 
 
-- (id)MIMEType;
 - (void)dealloc;
+- (id)MIMEType;
 - (id)_bubbleImageForImage:(id)arg1;
 - (id)newUnfilteredInputSource;
 - (id)copyPreparationOperations;

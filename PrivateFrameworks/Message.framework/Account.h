@@ -99,20 +99,20 @@
 - (id)promptUserIfNeededForPasswordWithMessage:(id)arg1;
 - (void)reportAuthenticationError:(id)arg1 authScheme:(id)arg2;
 - (id)uniqueId;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)serviceName;
 - (void)setDisplayName:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
-- (id)hostname;
 - (id)domain;
 - (id)displayName;
 - (id)initWithProperties:(id)arg1;
 - (id)password;
 - (BOOL)isActive;
 - (void)setIsActive:(BOOL)arg1;
-- (id)serviceName;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)hostname;
 
 @end

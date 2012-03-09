@@ -14,6 +14,7 @@
 @property float textStrokeWidth;
 
 
+- (void)dealloc;
 - (id)initWithText:(id)arg1;
 - (id)text;
 - (void)setText:(id)arg1;
@@ -21,6 +22,5 @@
 - (void)setTextStrokeWidth:(float)arg1;
 - (float)textStrokeWidth;
 - (id)initWithText:(id)arg1 textSize:(float)arg2;
-- (void)dealloc;
 
 @end

@@ -6,7 +6,7 @@
 }
 
 
-- (id)subtitle1Description;
 - (id)description;
+- (id)subtitle1Description;
 
 @end

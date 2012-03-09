@@ -17,17 +17,17 @@
 + (id)sharedNewsUpdater;
 + (id)_newsItemCollectionCache;
 
-- (void)didParseData;
-- (void)failWithError:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (int)parseData:(id)arg1;
-- (id)delegate;
+- (id)init;
 - (BOOL)shouldReloadOnResume;
 - (void)loadNewsCacheFromDiskForSymbol:(id)arg1;
 - (BOOL)fetchNewsForStock:(id)arg1;
 - (void)saveLastResponse;
 - (void)clearNewsCacheOnDisk;
 - (void)resetLocale;
-- (id)init;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
 
 @end

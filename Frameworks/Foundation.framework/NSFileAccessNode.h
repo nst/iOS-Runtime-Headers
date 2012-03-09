@@ -8,6 +8,8 @@
     NSFileAccessNode *_parent;
     NSString *_name;
     NSString *_normalizedName;
+    NSFileAccessNode *_symbolicLinkDestination;
+    unsigned int _symbolicLinkReferenceCount;
     NSMapTable *_childrenByNormalizedName;
     id _presenterOrPresenters;
     id _provider;
@@ -27,6 +29,7 @@
 - (void)addPresenter:(id)arg1;
 - (void)forEachReactorToItemOrContainedItemPerformProcedure:(id)arg1;
 - (void)assertLive;
+- (id)pathExceptPrivate;
 - (void)forEachAccessClaimOnItemPerformProcedure:(id)arg1;
 - (id)biggestFilePackageLocation;
 - (void)forEachDescendantPerformProcedure:(id)arg1;
@@ -52,12 +55,15 @@
 - (id)pathFromAncestor:(id)arg1;
 - (void)forEachPresenterOfItemOrContainedItemPerformProcedure:(id)arg1;
 - (void)setParent:(id)arg1 name:(id)arg2;
+- (void)forEachPresenterOfContainingItemPerformProcedure:(id)arg1;
 - (id)descendantAtPath:(id)arg1 componentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 create:(BOOL)arg3;
 - (id)pathToDescendantForFileURL:(id)arg1 componentRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
+- (void)setSymbolicLinkDestination:(id)arg1;
 - (id)descendantForFileURL:(id)arg1;
 - (id)initWithParent:(id)arg1 name:(id)arg2 normalizedName:(id)arg3;
-- (id)url;
 - (id)description;
 - (void)dealloc;
+- (id)standardizedURL;
+- (id)url;
 
 @end

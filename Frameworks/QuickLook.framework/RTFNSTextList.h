@@ -11,9 +11,16 @@
     void *_listSecondary;
 }
 
-+ (id)_standardMarkerAttributesForAttributes:(id)arg1;
 + (void)initialize;
++ (id)_standardMarkerAttributesForAttributes:(id)arg1;
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (unsigned int)options;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)_isOrdered;
 - (id)_markerTitle;
 - (id)_markerPrefix;
 - (id)_markerSpecifier;
@@ -28,12 +35,5 @@
 - (id)markerForItemNumber:(int)arg1;
 - (id)_unaffixedMarkerForItemNumber:(int)arg1;
 - (id)initWithMarkerFormat:(id)arg1 options:(unsigned int)arg2;
-- (BOOL)_isOrdered;
-- (unsigned int)options;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

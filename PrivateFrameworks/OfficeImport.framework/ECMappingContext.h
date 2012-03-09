@@ -13,6 +13,8 @@
 
 + (id)mappingContext;
 
+- (id)init;
+- (void)dealloc;
 - (void)associateMappingInfo:(id)arg1 withSheetName:(id)arg2 andSheetIndex:(unsigned int)arg3 andObject:(id)arg4;
 - (struct ChVector<OcText> { struct OcText {} *x1; struct OcText {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)mappedSheetNames;
 - (unsigned int)mappedSheetIndexForSheetIndex:(unsigned int)arg1;
@@ -20,7 +22,5 @@
 - (id)mappingInfoAtIndex:(unsigned int)arg1;
 - (unsigned int)mappingInfoCount;
 - (unsigned int)mappedSheetIndexForSheetName:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

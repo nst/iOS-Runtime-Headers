@@ -24,11 +24,6 @@
 
 - (void)send:(id)arg1;
 - (void)cancelButtonClicked:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (BOOL)mimeType;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (id)delegate;
 - (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (BOOL)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (void)setTextEntryContentsVisible:(BOOL)arg1;
@@ -40,5 +35,10 @@
 - (BOOL)ckCanDismissWhenSuspending;
 - (void)transitionFromNewMessageToConversation;
 - (BOOL)shouldDismissAfterSend;
+- (BOOL)mimeType;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

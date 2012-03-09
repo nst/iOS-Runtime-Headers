@@ -16,15 +16,15 @@
 
 
 - (id)messageBody;
-- (void)setReason:(id)arg1;
-- (id)peers;
-- (void)setPeers:(id)arg1;
-- (id)reason;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setSelfPushToken:(id)arg1;
 - (id)selfPushToken;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)setReason:(id)arg1;
+- (id)peers;
+- (void)setPeers:(id)arg1;
 - (id)bagKey;
+- (id)reason;
 
 @end

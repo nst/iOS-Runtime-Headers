@@ -22,9 +22,9 @@
 - (void)setPartial:(BOOL)arg1;
 - (id)partName;
 - (BOOL)isComplete;
-- (id)data;
-- (void)setData:(id)arg1;
 - (BOOL)isPartial;
 - (void)dealloc;
+- (id)data;
+- (void)setData:(id)arg1;
 
 @end

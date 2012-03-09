@@ -16,6 +16,8 @@
 @property(readonly) NSString * personID;
 
 
+- (void)dealloc;
+- (id)personID;
 - (void)set_userManifest:(id)arg1;
 - (void)_commitUserManifest;
 - (id)_userManifest;
@@ -33,7 +35,5 @@
 - (id)initWithPersonID:(id)arg1;
 - (void)forget;
 - (void)deactivate;
-- (id)personID;
-- (void)dealloc;
 
 @end

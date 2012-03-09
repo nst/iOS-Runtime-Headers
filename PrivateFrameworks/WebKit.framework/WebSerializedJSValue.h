@@ -9,10 +9,10 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithInternalRepresentation:(void*)arg1;
 - (void*)internalRepresentation;
 - (id)initWithValue:(struct OpaqueJSValue { }*)arg1 context:(struct OpaqueJSContext { }*)arg2 exception:(const struct OpaqueJSValue {}**)arg3;
 - (struct OpaqueJSValue { }*)deserialize:(struct OpaqueJSContext { }*)arg1;
-- (void)dealloc;
 
 @end

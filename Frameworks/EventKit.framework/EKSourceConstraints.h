@@ -10,6 +10,7 @@
         unsigned int maxRecurrencesAllowed : 1; 
         unsigned int supportsAlarmTriggerIntervals : 1; 
         unsigned int supportsAlarmTriggerDates : 1; 
+        unsigned int supportsAlarmsTriggeringAfterStartDate : 1; 
         unsigned int organizerCanSeeAttendeeStatuses : 1; 
         unsigned int inviteesCanSeeAttendeeStatuses : 1; 
         unsigned int statusesAreAccurate : 1; 
@@ -49,6 +50,7 @@
 @property int maxRecurrencesAllowed;
 @property BOOL supportsAlarmTriggerIntervals;
 @property BOOL supportsAlarmTriggerDates;
+@property BOOL supportsAlarmsTriggeringAfterStartDate;
 @property BOOL organizerCanSeeAttendeeStatuses;
 @property BOOL inviteesCanSeeAttendeeStatuses;
 @property BOOL statusesAreAccurate;
@@ -81,10 +83,11 @@
 @property BOOL allowsEvents;
 @property BOOL supportsURLField;
 @property BOOL supportsAllDayDueDates;
-@property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; } flags;
+@property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; } flags;
 
 
-- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; })arg1;
+- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; })arg1;
+- (id)init;
 - (void)setMaxRecurrencesAllowed:(int)arg1;
 - (void)setMaxAlarmsAllowed:(int)arg1;
 - (void)setSupportsAllDayDueDates:(BOOL)arg1;
@@ -126,10 +129,12 @@
 - (BOOL)inviteesCanSeeAttendeeStatuses;
 - (void)setOrganizerCanSeeAttendeeStatuses:(BOOL)arg1;
 - (BOOL)organizerCanSeeAttendeeStatuses;
+- (void)setSupportsAlarmsTriggeringAfterStartDate:(BOOL)arg1;
 - (void)setSupportsAlarmTriggerDates:(BOOL)arg1;
 - (void)setSupportsAlarmTriggerIntervals:(BOOL)arg1;
 - (id)initWithMaxAlarms:(int)arg1 maxRecurrences:(int)arg2 constraintFlags:(unsigned long long)arg3;
 - (int)maxRecurrencesAllowed;
+- (BOOL)supportsAlarmsTriggeringAfterStartDate;
 - (BOOL)declinedStatusChangeRequiresNoPendingStatus;
 - (BOOL)deliverySourceOrExternalIDRequiredForResponse;
 - (BOOL)proposedStatusRequiredForResponse;
@@ -138,10 +143,10 @@
 - (BOOL)supportsReminderLocations;
 - (BOOL)supportsStructuredLocations;
 - (BOOL)supportsOutgoingInvitations;
-- (BOOL)supportsInvitationModifications;
 - (int)maxAlarmsAllowed;
 - (BOOL)supportsAlarmTriggerDates;
 - (BOOL)supportsAlarmTriggerIntervals;
+- (BOOL)supportsInvitationModifications;
 - (BOOL)recurrencesShouldPinToMonthDays;
 - (BOOL)supportsAlarmProximity;
 - (BOOL)shouldCancelDeletedEvents;
@@ -158,7 +163,6 @@
 - (BOOL)allowsCalendarAddDeleteModify;
 - (BOOL)allowsTasks;
 - (BOOL)allowsEvents;
-- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; })flags;
-- (id)init;
+- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; })flags;
 
 @end

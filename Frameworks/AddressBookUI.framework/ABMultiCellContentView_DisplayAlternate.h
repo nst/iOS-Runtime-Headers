@@ -17,8 +17,6 @@
 + (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6 includeRows:(BOOL)arg7;
 + (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)reload;
 - (id)displayText;
 - (void)reloadDisplayText;
 - (void)reloadIncludingRows:(BOOL)arg1 includingDisplayView:(BOOL)arg2;
@@ -27,5 +25,7 @@
 - (void)setAbCellStyle:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })valueTextRect;
 - (void)reloadFromModel;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)reload;
 
 @end

@@ -13,6 +13,7 @@
 
 + (id)sharedLocationUpdater;
 
+- (void)dealloc;
 - (void)updateWeatherForLocation:(id)arg1 city:(id)arg2;
 - (void)setCurrentCity:(id)arg1;
 - (id)currentCity;
@@ -20,6 +21,5 @@
 - (void)_failed:(int)arg1;
 - (BOOL)isDataValid:(id)arg1;
 - (void)parsedResultCity:(id)arg1;
-- (void)dealloc;
 
 @end

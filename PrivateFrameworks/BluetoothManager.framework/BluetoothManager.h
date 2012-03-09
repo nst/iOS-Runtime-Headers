@@ -17,13 +17,14 @@
     struct BTAccessoryManagerImpl { } *_accessoryManager;
     NSMutableDictionary *_btAddrDict;
     NSMutableDictionary *_btDeviceDict;
-    NSMutableDictionary *_seekingInProgressDict;
 }
 
-+ (int)lastInitError;
 + (id)sharedInstance;
++ (int)lastInitError;
 
-- (void)_powerChanged;
+- (void)postNotificationName:(id)arg1 object:(id)arg2;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isAnyoneScanning;
 - (BOOL)wasDeviceDiscovered:(id)arg1;
 - (BOOL)deviceScanningEnabled;
@@ -39,8 +40,6 @@
 - (id)connectingDevices;
 - (id)connectedDevices;
 - (BOOL)audioConnected;
-- (void)sendContact:(id)arg1 toDevice:(id)arg2;
-- (void)sendAllContactsToDevice:(id)arg1;
 - (void)enableTestMode;
 - (BOOL)_attach:(id)arg1;
 - (BOOL)_setup:(struct BTSessionImpl { }*)arg1;
@@ -63,9 +62,7 @@
 - (void)_connectedStatusChanged;
 - (void)_connectabilityChanged;
 - (void)_discoveryStateChanged;
-- (void)_stopSeeking:(id)arg1 forDevice:(id)arg2;
 - (void)setAudioConnected:(BOOL)arg1;
-- (void)_sendSeekStart:(id)arg1 forDevice:(id)arg2;
 - (BOOL)isServiceSupported:(unsigned int)arg1;
 - (struct BTAccessoryManagerImpl { }*)_accessoryManager;
 - (void)connectDevice:(id)arg1;
@@ -76,16 +73,14 @@
 - (void)startVoiceCommand:(id)arg1;
 - (void)endVoiceCommand:(id)arg1;
 - (void)_postNotification:(id)arg1;
-- (BOOL)setPowered:(BOOL)arg1;
-- (BOOL)available;
-- (BOOL)powered;
 - (BOOL)connected;
 - (BOOL)enabled;
 - (void)postNotification:(id)arg1;
 - (BOOL)setEnabled:(BOOL)arg1;
-- (void)postNotificationName:(id)arg1 object:(id)arg2;
-- (id)init;
-- (void)dealloc;
+- (void)_powerChanged;
+- (BOOL)setPowered:(BOOL)arg1;
+- (BOOL)available;
+- (BOOL)powered;
 - (int)localDeviceSupportsService:(unsigned int)arg1;
 
 @end

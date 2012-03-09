@@ -13,15 +13,15 @@
 @property(readonly) NSString * foreignPersistentIDProperty;
 
 
+- (void)dealloc;
+- (Class)entityClass;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithUnitQuery:(id)arg1 aggregateEntityClass:(Class)arg2 foreignPersistentIDProperty:(id)arg3;
 - (id)foreignPersistentIDProperty;
 - (Class)aggregateEntityClass;
 - (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2;
 - (BOOL)distinctPersistentIDProperty;
 - (id)persistentIDProperty;
-- (Class)entityClass;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -3,31 +3,33 @@
  */
 
 @interface PBOpenGLContext : PBContext  {
-    void *_priv;
+    struct PBOpenGLContextPriv { struct _opaque_pthread_mutex_t { long x_1_1_1; BOOL x_1_1_2[40]; } x1; struct _opaque_pthread_mutex_t { long x_2_1_1; BOOL x_2_1_2[40]; } x2; id x3; id x4; id x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; struct __CVPixelBufferPool {} *x12; struct __CVPixelBufferPool {} *x13; struct _CAImageQueue {} *x14; id x15; id x16; id x17; id x18; } *_priv;
 }
 
 
-- (void)_debugDump;
-- (struct CGImage { }*)createCGImageForFilterViaGL:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2;
-- (BOOL)_registerFilter:(id)arg1;
-- (void)_createPixelBuffer:(struct __CVBuffer {}**)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)_compileFilter:(id)arg1;
-- (unsigned int)_compileShader:(const char *)arg1 type:(unsigned int)arg2;
-- (void)_createPixelBufferPools;
-- (unsigned int)_textureForLookupTableName:(id)arg1;
-- (void)preloadFilter:(id)arg1;
-- (void)renderFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2;
-- (void)renderFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
-- (void)renderNineUp:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2;
-- (void)renderNineUp:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
-- (struct _CAImageQueue { }*)outputImageQueue;
-- (void)setOutputImageQueue:(struct _CAImageQueue { }*)arg1;
-- (struct __CVPixelBufferPool { }*)largePool;
-- (void)setLargePool:(struct __CVPixelBufferPool { }*)arg1;
-- (struct __CVPixelBufferPool { }*)smallPool;
-- (void)setSmallPool:(struct __CVPixelBufferPool { }*)arg1;
-- (struct __CVBuffer { }*)createCVPixelBufferForFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
 - (id)init;
 - (void)dealloc;
+- (void)unlock;
+- (void)lock;
+- (void)_debugDump;
+- (void)_createPixelBufferPools;
+- (unsigned int)_compileShader:(const char *)arg1 type:(unsigned int)arg2;
+- (id)_compileFilter:(id)arg1;
+- (struct CGImage { }*)createCGImageForFilterViaGL:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2;
+- (void)_createPixelBuffer:(struct __CVBuffer {}**)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
+- (BOOL)_registerFilter:(id)arg1;
+- (unsigned int)_textureForLookupTableName:(id)arg1;
+- (void)setSmallPool:(struct __CVPixelBufferPool { }*)arg1;
+- (struct __CVPixelBufferPool { }*)smallPool;
+- (void)setLargePool:(struct __CVPixelBufferPool { }*)arg1;
+- (struct __CVPixelBufferPool { }*)largePool;
+- (void)setOutputImageQueue:(struct _CAImageQueue { }*)arg1;
+- (struct _CAImageQueue { }*)outputImageQueue;
+- (void)renderNineUp:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
+- (void)renderNineUp:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2;
+- (void)renderFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
+- (void)renderFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2;
+- (void)preloadFilter:(id)arg1;
+- (struct __CVBuffer { }*)createCVPixelBufferForFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
 
 @end

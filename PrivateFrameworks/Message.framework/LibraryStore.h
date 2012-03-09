@@ -26,8 +26,8 @@
 + (id)storeWithMailbox:(id)arg1;
 + (BOOL)createEmptyStoreForPath:(id)arg1;
 + (BOOL)storeAtPathIsWritable:(id)arg1;
-+ (void)initialize;
 + (id)sharedInstance;
++ (void)initialize;
 
 - (void)libraryFinishedSendingMessages;
 - (void)openAsynchronouslyWithOptions:(unsigned int)arg1;

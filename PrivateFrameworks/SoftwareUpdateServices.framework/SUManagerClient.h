@@ -16,14 +16,6 @@
 @property int clientType;
 
 
-- (void)cancelDownload:(id)arg1;
-- (void)invalidate;
-- (void)setDelegate:(id)arg1;
-- (void)downloadDidFinish:(id)arg1;
-- (id)delegate;
-- (id)init;
-- (void)dealloc;
-- (id)initWithDelegate:(id)arg1;
 - (int)clientType;
 - (void)noteServerExiting;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
@@ -53,5 +45,13 @@
 - (void)scanRequestDidFinishForOptions:(id)arg1 update:(id)arg2 error:(id)arg3;
 - (void)scanRequestDidStartForOptions:(id)arg1;
 - (void)automaticDownloadDidFailToStartForNewUpdateAvailable:(id)arg1 withError:(id)arg2;
+- (void)downloadDidFinish:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)initWithDelegate:(id)arg1;
+- (void)invalidate;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)cancelDownload:(id)arg1;
 
 @end

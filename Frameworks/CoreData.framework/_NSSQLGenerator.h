@@ -23,6 +23,7 @@
 
 + (void)initialize;
 
+- (void)dealloc;
 - (id)initWithStatement:(id)arg1 forAdapter:(id)arg2;
 - (id)sqlString;
 - (id)_retainedPrimaryKeyNumberForObject:(id)arg1;
@@ -88,6 +89,5 @@
 - (BOOL)foldComparisonPredicate:(id)arg1;
 - (void)prepareComparisonPredicate:(id)arg1;
 - (BOOL)_isForeignObjectExpression:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -24,24 +24,24 @@
 @property(readonly) int numberOfDroppedVideoFrames;
 
 
-- (void)finalize;
-- (id)initWithDictionary:(id)arg1;
-- (int)numberOfSegmentsDownloaded;
-- (id)playbackStartDate;
-- (id)URI;
-- (id)serverAddress;
-- (int)numberOfServerAddressChanges;
-- (id)playbackSessionID;
-- (double)playbackStartOffset;
-- (double)segmentsDownloadedDuration;
-- (double)durationWatched;
-- (int)numberOfStalls;
-- (long long)numberOfBytesTransferred;
-- (double)observedBitrate;
-- (double)indicatedBitrate;
-- (int)numberOfDroppedVideoFrames;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (int)numberOfDroppedVideoFrames;
+- (double)indicatedBitrate;
+- (double)observedBitrate;
+- (long long)numberOfBytesTransferred;
+- (int)numberOfStalls;
+- (double)durationWatched;
+- (double)segmentsDownloadedDuration;
+- (double)playbackStartOffset;
+- (id)playbackSessionID;
+- (int)numberOfServerAddressChanges;
+- (id)serverAddress;
+- (id)playbackStartDate;
+- (int)numberOfSegmentsDownloaded;
+- (void)finalize;
+- (id)initWithDictionary:(id)arg1;
+- (id)URI;
 
 @end

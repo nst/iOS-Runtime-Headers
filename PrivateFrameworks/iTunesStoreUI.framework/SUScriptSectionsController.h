@@ -10,15 +10,15 @@
 @property(readonly) id sections;
 @property(retain) SUScriptSection * selectedSection;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
-- (id)sections;
-- (id)selectedSection;
 - (id)init;
 - (void)dealloc;
+- (id)sections;
+- (id)selectedSection;
+- (id)attributeKeys;
 - (void)setSelectedSection:(id)arg1;
 - (void)setRootViewController:(id)arg1 forSection:(id)arg2;
 - (id)sectionWithIdentifier:(id)arg1;

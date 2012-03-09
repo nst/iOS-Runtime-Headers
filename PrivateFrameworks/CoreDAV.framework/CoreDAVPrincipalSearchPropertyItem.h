@@ -13,13 +13,13 @@
 @property(retain) CoreDAVLeafItem * descriptionItem;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setDescriptionItem:(id)arg1;
 - (void)setProp:(id)arg1;
 - (id)descriptionItem;
 - (id)prop;
 - (id)copyParseRules;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

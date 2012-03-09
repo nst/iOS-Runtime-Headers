@@ -15,6 +15,7 @@
 }
 
 
+- (void)dealloc;
 - (void)_setupPrintButtons;
 - (void)updatePageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)updateDuplex:(id)arg1;
@@ -35,6 +36,5 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
 
 @end

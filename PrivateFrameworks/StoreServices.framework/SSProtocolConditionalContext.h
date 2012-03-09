@@ -23,13 +23,13 @@
 @property(copy) NSString * systemVersion;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)systemVersion;
+- (void)setItemLookupBlock:(id)arg1;
 - (void)setPlatformName:(id)arg1;
 - (id)platformName;
 - (id)itemLookupBlock;
 - (void)setSystemVersion:(id)arg1;
-- (id)systemVersion;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setItemLookupBlock:(id)arg1;
 
 @end

@@ -43,6 +43,8 @@
 @property UIPDFPageView * pageView;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)extendSelectionToParagraph;
 - (BOOL)shouldTrackAt:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startTracking:(struct CGPoint { float x1; float x2; })arg1 showMagnifier:(BOOL*)arg2;
@@ -67,7 +69,5 @@
 - (void)hideWidget;
 - (void)clearSelection;
 - (BOOL)isTracking;
-- (id)init;
-- (void)dealloc;
 
 @end

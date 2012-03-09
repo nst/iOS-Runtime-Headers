@@ -14,11 +14,11 @@
 @property <SSEventMonitorDelegate> * delegate;
 
 
-- (void)_connectEventConnection;
-- (void)_handleMessage:(void*)arg1 fromServerConnection:(struct _xpc_connection_s { }*)arg2;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (id)init;
 - (void)dealloc;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)_connectEventConnection;
+- (void)_handleMessage:(void*)arg1 fromServerConnection:(struct _xpc_connection_s { }*)arg2;
 
 @end

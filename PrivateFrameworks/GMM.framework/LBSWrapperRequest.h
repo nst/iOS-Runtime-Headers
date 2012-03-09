@@ -16,19 +16,19 @@
 @property(retain) LBSGLocRequest * request;
 
 
+- (id)description;
+- (void)dealloc;
 - (Class)responseClass;
+- (void)setRequest:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)request;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (void)writeTo:(id)arg1;
+- (int)requestType;
 - (BOOL)hasRequest;
 - (void)setHasRequestType:(BOOL)arg1;
 - (BOOL)hasRequestType;
 - (void)setRequestType:(int)arg1;
-- (void)setRequest:(id)arg1;
-- (int)requestType;
-- (unsigned int)requestTypeCode;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)request;
-- (id)description;
-- (void)dealloc;
 
 @end

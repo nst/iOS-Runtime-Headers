@@ -11,7 +11,8 @@
 }
 
 
-- (id)data;
+- (id)description;
+- (void)dealloc;
 - (id)initWithUSBBuffer:(void*)arg1;
 - (id)contentForUSB;
 - (id)contentForUSBUsingBuffer:(void*)arg1 capacity:(unsigned long)arg2;
@@ -22,8 +23,7 @@
 - (id)contentForTCP;
 - (unsigned long)transactionID;
 - (id)initWithTCPBuffer:(void*)arg1;
+- (id)data;
 - (void)setData:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

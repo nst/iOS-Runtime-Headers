@@ -26,6 +26,8 @@
 @property(copy) NSArray * setPositions;
 
 
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setSpecifier:(id)arg1;
 - (id)initWithSpecifier:(id)arg1;
 - (id)_parseIndexList:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; struct { int x_4_1_1; int x_4_1_2; } x4; int x5; int x6; }*)arg1 range:(struct { int x1; int x2; })arg2;
@@ -50,7 +52,5 @@
 - (void)setDaysOfTheMonth:(id)arg1;
 - (void)setDaysOfTheWeek:(id)arg1;
 - (void)revert;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end

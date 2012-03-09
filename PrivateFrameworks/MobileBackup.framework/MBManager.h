@@ -11,10 +11,14 @@
 @property NSObject<MBManagerDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)cancel;
+- (id)init;
+- (id)initWithDelegate:(id)arg1;
 - (void)setLogLevel:(int)arg1;
 - (id)_init;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (id)restoreState;
 - (BOOL)setupBackupWithPasscode:(id)arg1 error:(id*)arg2;
 - (BOOL)isBackupEnabled;
 - (void)setBackupEnabled:(BOOL)arg1;
@@ -44,13 +48,10 @@
 - (BOOL)removeDomainName:(id)arg1 error:(id*)arg2;
 - (BOOL)isBackupEnabledForDomainName:(id)arg1;
 - (void)setBackupEnabled:(BOOL)arg1 forDomainName:(id)arg2;
+- (id)restoreInfo;
 - (int)getLogLevel;
 - (void)setAllowiTunesBackup:(BOOL)arg1;
 - (BOOL)allowiTunesBackup;
 - (void)rebootDevice;
-- (void)cancel;
-- (id)init;
-- (id)initWithDelegate:(id)arg1;
-- (id)restoreState;
 
 @end

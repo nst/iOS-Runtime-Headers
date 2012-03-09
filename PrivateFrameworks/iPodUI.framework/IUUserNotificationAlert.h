@@ -24,6 +24,9 @@
 @property(copy) id completionHandler;
 
 
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
 - (void)setCompletionHandler:(id)arg1;
 - (id)completionHandler;
 - (id)message;
@@ -37,8 +40,5 @@
 - (void)_setValue:(id)arg1 forUserNotificationKey:(struct __CFString { }*)arg2;
 - (void)_cancelUserNotification;
 - (void)setButtonTitle:(id)arg1 forKey:(struct __CFString { }*)arg2;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
 
 @end

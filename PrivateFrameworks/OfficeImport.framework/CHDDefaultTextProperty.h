@@ -18,6 +18,8 @@
 
 + (id)defaultTextPropertyWithResources:(id)arg1;
 
+- (void)dealloc;
+- (unsigned int)key;
 - (int)defaultTextType;
 - (bool)isShowCategoryLabel;
 - (bool)isShowValueLabel;
@@ -37,7 +39,5 @@
 - (id)contentFormat;
 - (void)setContentFormat:(id)arg1;
 - (id)initWithResources:(id)arg1;
-- (unsigned int)key;
-- (void)dealloc;
 
 @end

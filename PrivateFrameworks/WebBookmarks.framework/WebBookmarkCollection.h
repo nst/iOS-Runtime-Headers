@@ -18,9 +18,11 @@
 + (BOOL)lockSync;
 + (void)unlockSync;
 + (id)safariDirectoryPath;
++ (id)safariBookmarkCollectionCheckingIntegrity:(BOOL)arg1;
 + (void)_postBookmarksChangedSyncNotification;
 + (id)safariBookmarkCollection;
 
+- (void)dealloc;
 - (id)_mergeCandidateFolderWithTitle:(id)arg1 parent:(unsigned int)arg2;
 - (id)_mergeCandidateBookmarkWithAddress:(id)arg1 parent:(unsigned int)arg2;
 - (id)_serverIDForBookmarkID:(unsigned int)arg1;
@@ -29,9 +31,11 @@
 - (BOOL)_setSyncData:(id)arg1 forBookmark:(id)arg2;
 - (id)_syncKeysForServerIDs:(id)arg1;
 - (id)_serverIDsInFolderWithServerID:(id)arg1;
+- (id)_serverIDAtOrderIndex:(int)arg1 inFolderWithServerID:(id)arg2;
 - (BOOL)_orderChildrenWithServerIDs:(id)arg1 inFolderWithServerID:(id)arg2;
 - (id)_changeList;
-- (BOOL)_incrementDAVGeneration;
+- (BOOL)_clearChangeList;
+- (BOOL)_markBookmarkID:(unsigned int)arg1 added:(BOOL)arg2;
 - (void)_postDistributedBookmarksDidReloadNotificationIfChangesWereMade;
 - (void)_clearAndCreateBookmarksTables;
 - (void)_clearAndCreateAncestorTable;
@@ -50,6 +54,7 @@
 - (void)_migrateSchemaVersion16AndVersion17AndVersion18ToVersion19;
 - (void)_migrateSchemaVersion21ToVersion22;
 - (void)_migrateSchemaVersion22ToVersion23;
+- (void)_migrateSchemaVersion23ToVersion24;
 - (int)_userVersion;
 - (void)_migrateSchemaVersion0ToVersion1;
 - (void)_migrateSchemaVersion1And2ToVersion3;
@@ -73,6 +78,7 @@
 - (BOOL)_unsafeOrderChildrenWithServerIDs:(id)arg1 inFolderWithServerID:(id)arg2;
 - (BOOL)_clearTitleWordsForBookmarkID:(unsigned int)arg1;
 - (void)_collectChangesOfType:(int)arg1 withClause:(id)arg2 intoArray:(id)arg3;
+- (BOOL)_incrementDAVGeneration;
 - (void)_postDistributedBookmarksDidReloadNotification;
 - (BOOL)setSyncData:(id)arg1 forKey:(id)arg2;
 - (BOOL)_addChildrenOfID:(unsigned int)arg1 toCollection:(id)arg2 recursive:(BOOL)arg3 error:(id*)arg4;
@@ -87,6 +93,7 @@
 - (BOOL)_deleteSyncPropertyForKey:(id)arg1;
 - (BOOL)_syncPropertyExistsForKey:(id)arg1;
 - (id)syncDataForKey:(id)arg1;
+- (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3;
 - (BOOL)vacuum;
 - (void)localeSettingsChanged;
 - (id)bookmarkWithUUID:(id)arg1;
@@ -114,14 +121,16 @@
 - (unsigned int)indexOfReadingListBookmark:(id)arg1 countingOnlyUnread:(BOOL)arg2;
 - (BOOL)isMerging;
 - (void)setMerging:(BOOL)arg1;
-- (BOOL)_openDatabaseAtPath:(id)arg1 error:(id*)arg2;
+- (BOOL)_openDatabaseAtPath:(id)arg1 checkIntegrity:(BOOL)arg2 error:(id*)arg3;
 - (void)_registerForSyncBookmarksFileChangedNotification;
+- (id)initWithPath:(id)arg1 checkIntegrity:(BOOL)arg2;
 - (id)_errorForMostRecentSQLiteError;
 - (void)_createSchema;
+- (BOOL)_databaseIsCorrupt;
 - (void)_migrateToCurrentSchema;
 - (BOOL)_restoreMissingSpecialBookmarks;
 - (BOOL)_migrateBookmarksPlist:(id)arg1 syncAnchorPlist:(id)arg2;
-- (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3;
+- (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3 checkIntegrity:(BOOL)arg4;
 - (int)_executeSQLWithCString:(const char *)arg1;
 - (void)_clearAndCreateBookmarksTitleWordTable;
 - (BOOL)_indexAllTitleWords;
@@ -158,6 +167,7 @@
 - (id)_bookmarksFromStatementSelectingIDs:(const char *)arg1 withQuery:(id)arg2;
 - (id)_firstBookmarkWithURLMatchingString:(id)arg1 prefixMatch:(BOOL)arg2 inParent:(unsigned int)arg3;
 - (id)_bookmarksInListWhere:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
+- (id)initWithPath:(id)arg1;
 - (id)syncStringForKey:(id)arg1;
 - (id)bookmarksDictionary;
 - (unsigned int)generation;
@@ -166,7 +176,5 @@
 - (BOOL)mergeWithBookmarksDictionary:(id)arg1 clearHidden:(BOOL)arg2 error:(id*)arg3;
 - (void)rollbackSyncTransaction;
 - (void)commitSyncTransaction;
-- (id)initWithPath:(id)arg1;
-- (void)dealloc;
 
 @end

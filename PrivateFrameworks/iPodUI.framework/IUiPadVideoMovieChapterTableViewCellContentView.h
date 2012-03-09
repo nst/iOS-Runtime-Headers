@@ -15,6 +15,7 @@
 @property(retain) NSString * supertitle;
 
 
+- (void)dealloc;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (id)title;
@@ -23,6 +24,5 @@
 - (id)supertitle;
 - (void)_drawText;
 - (void)setSupertitle:(id)arg1;
-- (void)dealloc;
 
 @end

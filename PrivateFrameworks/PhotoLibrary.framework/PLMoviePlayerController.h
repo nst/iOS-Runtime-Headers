@@ -15,13 +15,13 @@
 + (void)setMovieWillBecomeReady:(BOOL)arg1;
 + (BOOL)movieWillBecomeReady;
 
+- (void)dealloc;
 - (void)setMovieWithPath:(id)arg1;
 - (id)initWithPlayerSize:(struct CGSize { float x1; float x2; })arg1 options:(unsigned int)arg2;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)_updateCurrentDelegate;
 - (void)removeNextDelegate:(id)arg1;
 - (void)addNextDelegate:(id)arg1;
-- (void)dealloc;
 
 @end

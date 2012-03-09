@@ -11,10 +11,10 @@
 @property(readonly) unsigned short cssValueType;
 
 
+- (void)dealloc;
 - (void)finalize;
-- (unsigned short)cssValueType;
 - (void)setCssText:(id)arg1;
 - (id)cssText;
-- (void)dealloc;
+- (unsigned short)cssValueType;
 
 @end

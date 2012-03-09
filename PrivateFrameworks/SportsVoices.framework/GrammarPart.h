@@ -16,13 +16,13 @@
 
 + (id)instanceFromPlist:(id)arg1;
 
-- (int)order;
-- (int)depth;
-- (id)name;
 - (id)description;
 - (void)dealloc;
 - (id)appliedTo:(id)arg1;
 - (int)orderComparedTo:(id)arg1;
 - (void)genericSetUpFromPlist:(id)arg1;
+- (int)order;
+- (id)name;
+- (int)depth;
 
 @end

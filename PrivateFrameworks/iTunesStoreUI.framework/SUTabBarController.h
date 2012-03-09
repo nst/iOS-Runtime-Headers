@@ -19,6 +19,8 @@
 
 + (Class)_moreNavigationControllerClass;
 
+- (id)init;
+- (void)dealloc;
 - (id)sections;
 - (void)setSections:(id)arg1;
 - (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
@@ -38,8 +40,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
-- (id)init;
-- (void)dealloc;
 - (id)moreListTitle;
 - (void)_fixupTabBarSelection;
 - (id)viewControllerForSectionType:(int)arg1;

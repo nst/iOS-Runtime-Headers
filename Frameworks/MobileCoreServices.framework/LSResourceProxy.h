@@ -24,10 +24,7 @@
 + (struct CGSize { float x1; float x2; })_applicationIconCanvasSize;
 + (int)_compareApplicationIconCanvasSize:(struct CGSize { float x1; float x2; })arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 
-- (id)iconDataForStyle:(id)arg1 width:(int)arg2 height:(int)arg3 options:(unsigned int)arg4;
-- (BOOL)boundIconIsBadge;
-- (id)localizedName;
-- (id)iconDataForVariant:(int)arg1;
+- (void)dealloc;
 - (id)iconsDictionary;
 - (void)setBoundApplicationIdentifier:(id)arg1;
 - (void)setBoundContainerURL:(id)arg1;
@@ -50,7 +47,10 @@
 - (id)boundIconFileNames;
 - (void)setLocalizedName:(id)arg1;
 - (id)_initWithLocalizedName:(id)arg1;
-- (void)dealloc;
+- (id)iconDataForStyle:(id)arg1 width:(int)arg2 height:(int)arg3 options:(unsigned int)arg4;
+- (BOOL)boundIconIsBadge;
+- (id)localizedName;
+- (id)iconDataForVariant:(int)arg1;
 - (id)_iconForStyle:(id)arg1;
 - (id)_iconForStyle:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;

@@ -24,6 +24,7 @@
 @property(readonly) float velocity;
 
 
+- (void)dealloc;
 - (void)setRotation:(float)arg1;
 - (float)rotation;
 - (void)_resetGestureRecognizer;
@@ -35,6 +36,5 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

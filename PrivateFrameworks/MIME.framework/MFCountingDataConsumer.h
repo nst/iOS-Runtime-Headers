@@ -9,7 +9,7 @@
 @property(readonly) unsigned int count;
 
 
-- (int)appendData:(id)arg1;
 - (unsigned int)count;
+- (int)appendData:(id)arg1;
 
 @end

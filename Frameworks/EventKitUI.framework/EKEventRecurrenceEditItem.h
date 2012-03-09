@@ -6,11 +6,11 @@
 }
 
 
-- (id)event;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })minRecurrenceEndDateGr;
 - (id)stringForGregorianDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 - (id)recurrenceTimeZone;
 - (id)recurrenceDate;
 - (void)setCalendarItem:(id)arg1 store:(id)arg2;
+- (id)event;
 
 @end

@@ -19,7 +19,16 @@
 @property int defaultValue;
 
 
+- (int)defaultValue;
+- (void)setDefaultValue:(int)arg1;
+- (id)description;
+- (void)dealloc;
+- (int)optionID;
+- (id)dictionaryRepresentation;
+- (int)type;
+- (void)setType:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)allowableValues;
 - (id)optionText;
 - (id)allowableValuesAtIndex:(unsigned int)arg1;
@@ -28,14 +37,5 @@
 - (void)setOptionID:(int)arg1;
 - (void)setAllowableValues:(id)arg1;
 - (void)setOptionText:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (int)type;
-- (void)setType:(int)arg1;
-- (int)optionID;
-- (int)defaultValue;
-- (void)setDefaultValue:(int)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

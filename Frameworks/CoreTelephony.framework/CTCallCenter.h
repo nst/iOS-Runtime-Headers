@@ -22,7 +22,9 @@
 @property(copy) id callEventHandler;
 
 
-- (id)currentCalls;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setCurrentCalls:(id)arg1;
 - (id)callEventHandler;
 - (BOOL)getCurrentCallSetFromServer:(id)arg1;
@@ -34,8 +36,6 @@
 - (void)cleanUpServerConnection;
 - (void)cleanUpServerConnectionNoLock;
 - (BOOL)setUpServerConnection;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)currentCalls;
 
 @end

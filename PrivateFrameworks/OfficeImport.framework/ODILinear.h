@@ -20,6 +20,7 @@
 + (void)mapUnknownWithState:(id)arg1;
 + (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;
 
+- (void)setPadding:(float)arg1;
 - (void)setWithConnectors:(BOOL)arg1;
 - (void)setPointHeight:(float)arg1;
 - (void)setIsHorizontal:(BOOL)arg1;
@@ -37,6 +38,5 @@
 - (void)setMaxPointCount:(unsigned int)arg1;
 - (void)map;
 - (id)initWithState:(id)arg1;
-- (void)setPadding:(float)arg1;
 
 @end

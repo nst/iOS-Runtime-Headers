@@ -21,9 +21,20 @@
 @property(retain) <EKStyleProvider> * styleProvider;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (void)setStyleProvider:(id)arg1;
+- (id)styleProvider;
 - (id)eventStore;
-- (void)setEventStore:(id)arg1;
+- (void)calendarItemStartedEditing:(id)arg1;
+- (void)_deleteCalendar;
+- (void)setupForCalendar;
+- (BOOL)_shouldShowDeleteButton;
+- (void)calendarChanged:(id)arg1;
+- (id)initWithSource:(id)arg1 eventStore:(id)arg2 allowedEntityTypes:(int)arg3;
+- (id)initWithCalendar:(id)arg1 eventStore:(id)arg2 allowedEntityTypes:(int)arg3;
+- (id)_editItems;
+- (void)_presentValidationAlert:(id)arg1;
+- (void)_deleteClicked:(id)arg1;
 - (void)done:(id)arg1;
 - (id)calendar;
 - (void)setCalendar:(id)arg1;
@@ -40,19 +51,8 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)calendarItemStartedEditing:(id)arg1;
-- (void)_deleteCalendar;
-- (void)setupForCalendar;
-- (BOOL)_shouldShowDeleteButton;
-- (void)calendarChanged:(id)arg1;
-- (id)initWithSource:(id)arg1 eventStore:(id)arg2 allowedEntityTypes:(int)arg3;
-- (id)initWithCalendar:(id)arg1 eventStore:(id)arg2 allowedEntityTypes:(int)arg3;
-- (id)_editItems;
-- (void)_presentValidationAlert:(id)arg1;
-- (void)_deleteClicked:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setEventStore:(id)arg1;
 - (void)cancel:(id)arg1;
-- (void)dealloc;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
 
 @end

@@ -9,6 +9,7 @@
 }
 
 
+- (id)init;
 - (int)buttonType;
 - (void)setHighlighted:(BOOL)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -19,6 +20,5 @@
 - (void)_endDisallowingHighlightChangesForEventAfterDelay;
 - (void)_endDisallowingHighlightChangesForEvent;
 - (void)_beginDisallowingHighlightChangesForEvent;
-- (id)init;
 
 @end

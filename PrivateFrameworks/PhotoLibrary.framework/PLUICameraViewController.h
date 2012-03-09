@@ -16,6 +16,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (BOOL)_displaysFullScreen;
 - (void)_setImagePickerMediaTypes:(id)arg1;
@@ -50,7 +52,5 @@
 - (void)setWantsImageData:(BOOL)arg1;
 - (void)_editabilityChanged:(id)arg1;
 - (id)_cameraView;
-- (id)init;
-- (void)dealloc;
 
 @end

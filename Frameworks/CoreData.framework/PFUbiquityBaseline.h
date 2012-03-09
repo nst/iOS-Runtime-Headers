@@ -2,60 +2,75 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class _PFZipFileArchive, NSString, PFUbiquityLocation;
+@class NSDictionary, PFUbiquityBaselineMetadata, PFUbiquityLocation, NSString, _PFZipFileArchive, NSMutableDictionary, NSManagedObjectModel;
 
 @interface PFUbiquityBaseline : NSObject  {
     PFUbiquityLocation *_ubiquityRootLocation;
     PFUbiquityLocation *_baselineArchiveLocation;
+    PFUbiquityLocation *_baselineStagingLocation;
+    PFUbiquityBaselineMetadata *_metadata;
+    NSMutableDictionary *_storeFilenameToData;
+    NSString *_storeFilename;
     NSString *_storeName;
     NSString *_modelVersionHash;
+    NSManagedObjectModel *_model;
     _PFZipFileArchive *_baselineArchive;
 }
 
 @property(readonly) _PFZipFileArchive * baselineArchive;
 @property(readonly) NSString * modelVersionHash;
 @property(readonly) NSString * storeName;
+@property(readonly) NSDictionary * storeFilenameToData;
+@property(readonly) NSString * storeFilename;
+@property(readonly) PFUbiquityBaselineMetadata * metadata;
+@property(readonly) PFUbiquityLocation * baselineStagingLocation;
 @property(readonly) PFUbiquityLocation * baselineArchiveLocation;
 @property(readonly) PFUbiquityLocation * ubiquityRootLocation;
 
-+ (BOOL)canRollBaselineForStoreMetadata:(id)arg1 withStack:(id)arg2;
++ (BOOL)canRollBaselineForStoreMetadata:(id)arg1 withStack:(id)arg2 andManagedObjectModel:(id)arg3 error:(id*)arg4;
 + (void)setNumRequiredTransactionsForBaselineRoll:(unsigned int)arg1;
 + (double)requiredFractionOfDiskSpaceUsedForLogs;
 + (void)setRequiredFractionOfDiskSpaceUsedForLogs:(double)arg1;
-+ (void)suspendBaselineQueue;
-+ (void)resumeBaselineQueue;
-+ (id)metadataFromCurrentBaselineForStoreWithName:(id)arg1 modelVersionHash:(id)arg2 andUbiquityRootLocation:(id)arg3;
++ (id)metadataFromCurrentBaselineForStoreWithName:(id)arg1 modelVersionHash:(id)arg2 andUbiquityRootLocation:(id)arg3 withError:(id*)arg4;
 + (unsigned int)numRequiredTransactionsForBaselineRoll;
-+ (BOOL)enoughTransactionsHavePassedToRollBaselineForStoreMetadata:(id)arg1 withStack:(id)arg2;
-+ (BOOL)logsConsumeEnoughDiskSpaceToRollBaselineForStoreMetadata:(id)arg1;
-+ (BOOL)checkRemotePeerStates:(id)arg1 forAgreementWithLocalPeerState:(id)arg2;
++ (BOOL)enoughTransactionsHavePassedToRollBaseline:(id)arg1 withLocalPeerID:(id)arg2 error:(id*)arg3;
++ (BOOL)logsConsumeEnoughDiskSpaceToRollBaseline:(id)arg1 withLocalPeerID:(id)arg2 andStoreURL:(id)arg3 error:(id*)arg4;
++ (BOOL)checkPeerReceiptsUnderRootLocation:(id)arg1 forAgreementWithLocalPeerID:(id)arg2 storeName:(id)arg3 modelVersionHash:(id)arg4 error:(id*)arg5;
 + (id)createBaselineGCModelForStoreName:(id)arg1 modelVersionHash:(id)arg2 andUbiquityRootLocation:(id)arg3;
 + (id)createBaselineOptimizedModelForStoreName:(id)arg1 modelVersionHash:(id)arg2 andUbiquityRootLocation:(id)arg3;
 + (id)createModelFromBaselineModelWithStoreMetadata:(id)arg1;
-+ (void)requestBaselineRollForStore:(id)arg1 andLocalPeerID:(id)arg2;
-+ (void)initialize;
 
-- (id)baselineArchiveLocation;
-- (BOOL)detectAndResolveBaselineConflictsWithError:(id*)arg1;
-- (id)loadBaselineMetadata;
-- (BOOL)makeCurrentBaselineWithError:(id*)arg1;
-- (id)storeData;
-- (id)initWithBaselinePath:(id)arg1;
-- (id)optimizedModelData;
-- (id)regularModelData;
-- (BOOL)writeArchiveWithBaselineMetadata:(id)arg1 withLocalPeerID:(id)arg2 andManagedObjectModel:(id)arg3 persistentStoreURL:(id)arg4 andError:(id*)arg5;
-- (id)baselineMetadataData;
-- (id)baselineArchive;
-- (id)modelVersionHash;
-- (id)storeName;
-- (id)ubiquityRootLocation;
-- (id)initWithUbiquityRootLocation:(id)arg1 forStoreWithName:(id)arg2 andModelVersionHash:(id)arg3;
-- (BOOL)existsInCloud;
-- (BOOL)initializeBaselineArchiveWithError:(id*)arg1;
-- (BOOL)loadBaselineWithLocalPeerID:(id)arg1 withStack:(id)arg2 andPersistentStoreCoordinator:(id)arg3 withError:(id*)arg4;
-- (BOOL)writeBaselineForStoreMetadata:(id)arg1 withLocalPeerID:(id)arg2 andManagedObjectModel:(id)arg3 andError:(id*)arg4;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)initWithBaselinePath:(id)arg1;
+- (BOOL)prepareForBaselineRollOfPersistentStore:(id)arg1 withStoreMetadata:(id)arg2 andLocalPeerID:(id)arg3 error:(id*)arg4;
+- (BOOL)gatherContentsFromMigratedBaseline:(id)arg1 withStoreFileURL:(id)arg2 error:(id*)arg3;
+- (BOOL)gatherContentsAndConstructArchiveWithError:(id*)arg1;
+- (BOOL)importBaselineWithLocalPeerID:(id)arg1 stack:(id)arg2 andPersistentStoreCoordinator:(id)arg3 error:(id*)arg4;
+- (BOOL)writeArchiveContentsToDiskWithError:(id*)arg1;
+- (BOOL)initializeBaselineArchiveWithError:(id*)arg1;
+- (id)baselineMetadataData;
+- (id)storeData;
+- (id)createManagedObjectModel;
+- (id)baselineArchiveLocation;
+- (id)baselineStagingLocation;
+- (BOOL)clearOutStagingLocationWithError:(id*)arg1;
+- (BOOL)constructBaselineArchive:(id*)arg1;
+- (id)storeFilenameToData;
+- (id)storeFilename;
+- (BOOL)unpackStoreFilesToStagingLocation:(id*)arg1;
+- (BOOL)existsInCloud;
+- (id)initWithUbiquityRootLocation:(id)arg1 forStoreWithName:(id)arg2 andManagedObjectModel:(id)arg3;
+- (BOOL)loadBaselineArchiveWithError:(id*)arg1;
+- (BOOL)makeCurrentBaselineWithError:(id*)arg1;
+- (BOOL)replaceLocalPersistentStoreDescribedByStoreMetadata:(id)arg1 usingPersistentStoreCoordinator:(id)arg2 error:(id*)arg3;
+- (id)optimizedModelData;
+- (id)regularModelData;
+- (id)baselineArchive;
+- (id)storeName;
+- (id)ubiquityRootLocation;
+- (id)modelVersionHash;
+- (id)metadata;
 
 @end

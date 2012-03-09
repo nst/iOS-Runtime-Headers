@@ -10,12 +10,12 @@
 }
 
 
+- (void)dealloc;
 - (float)preferredHeightForWidth:(float)arg1;
 - (id)initWithSpecifier:(id)arg1;
+- (void)layoutSubviews;
 - (id)_accessibilityLabels;
 - (void)setTextForRegionExample:(id)arg1;
 - (id)generateRegionSampleLabel;
-- (void)layoutSubviews;
-- (void)dealloc;
 
 @end

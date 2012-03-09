@@ -26,6 +26,8 @@
 
 
 - (void)sendData:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)initWithHostPort:(unsigned long)arg1 hostName:(id)arg2 hostGUID:(id)arg3 bonjourServiceType:(id)arg4 bonjourTXTRecords:(id)arg5 delegate:(id)arg6;
 - (id)initForAcceptedSocketWithDelegate:(id)arg1 andHostGUID:(id)arg2 andHostName:(id)arg3;
 - (id)initWithTargetAddress:(id)arg1 targetPort:(unsigned long)arg2 targetGUID:(id)arg3 targetName:(id)arg4 hostGUID:(id)arg5 hostName:(id)arg6 delegate:(id)arg7;
@@ -48,8 +50,6 @@
 - (void)didCloseConnection:(id)arg1 withError:(struct { int x1; int x2; })arg2;
 - (void)stop;
 - (BOOL)sendEvent:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (BOOL)sendResponse:(id)arg1;
 
 @end

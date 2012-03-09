@@ -17,6 +17,11 @@
 @property id context;
 
 
+- (void)setTarget:(id)arg1;
+- (id)description;
+- (id)target;
+- (id)init;
+- (void)dealloc;
 - (SEL)selector;
 - (id)context;
 - (void)setContext:(id)arg1;
@@ -27,10 +32,5 @@
 - (void)removeAllAnnotations;
 - (void)addAnnotations:(id)arg1;
 - (void)removeAnnotation:(id)arg1;
-- (void)setTarget:(id)arg1;
-- (id)description;
-- (id)target;
-- (id)init;
-- (void)dealloc;
 
 @end

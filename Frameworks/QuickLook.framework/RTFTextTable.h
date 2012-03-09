@@ -11,6 +11,10 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (void)setNumberOfColumns:(unsigned int)arg1;
+- (unsigned int)numberOfColumns;
 - (BOOL)collapsesBorders;
 - (BOOL)hidesEmptyCells;
 - (unsigned int)layoutAlgorithm;
@@ -20,9 +24,5 @@
 - (void)_setTableFlags:(unsigned int)arg1;
 - (void)setCollapsesBorders:(BOOL)arg1;
 - (void)setHidesEmptyCells:(BOOL)arg1;
-- (void)setNumberOfColumns:(unsigned int)arg1;
-- (unsigned int)numberOfColumns;
-- (id)init;
-- (void)dealloc;
 
 @end

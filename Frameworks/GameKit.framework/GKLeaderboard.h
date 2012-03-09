@@ -41,6 +41,9 @@
 + (void)loadCategoriesForGame:(id)arg1 withPlayer:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadCategoriesForGame:(id)arg1 withCompletionHandler:(id)arg2;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setLoadingCount:(int)arg1;
 - (int)loadingCount;
 - (id)localPlayerScore;
@@ -57,22 +60,19 @@
 - (id)playerIDs;
 - (void)incrementLoadingCountAtomically;
 - (void)loadScoresForGame:(id)arg1 withCompletionHandler:(id)arg2;
+- (id)category;
 - (int)playerScope;
 - (int)timeScope;
 - (void)setPlayerIDs:(id)arg1;
 - (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setPlayerScope:(int)arg1;
 - (void)setTimeScope:(int)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (BOOL)isLoading;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)title;
 - (id)delegate;
 - (void)setTitle:(id)arg1;
-- (id)category;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

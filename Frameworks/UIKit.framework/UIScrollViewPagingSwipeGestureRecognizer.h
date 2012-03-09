@@ -19,6 +19,7 @@
 }
 
 
+- (void)dealloc;
 - (void)_processNewLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)enoughTimeElapsed:(id)arg1;
 - (void)clearTimer;
@@ -27,6 +28,5 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 
 @end

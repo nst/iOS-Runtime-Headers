@@ -83,6 +83,8 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateArtworkImageViewFrameInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (BOOL)supportsFullscreenDisplay;
 
+- (id)init;
+- (void)dealloc;
 - (void)setBackstopColor:(id)arg1;
 - (void)setControlsOverlayVisible:(BOOL)arg1;
 - (void)chapterListDidDisappear:(id)arg1;
@@ -110,10 +112,10 @@
 - (void)_hideLoadingIndicator;
 - (void)_scheduleLoadingIndicatorIfNeeded;
 - (void)_updateAlwaysPlayWheneverPossible;
+- (void)enableAirPlayVideoRoutesIfNecessary;
 - (void)_updateProgressControlForItem:(id)arg1;
 - (void)_itemDurationDidChange:(id)arg1;
 - (void)setScaleMode:(unsigned int)arg1;
-- (void)enableAirPlayVideoRoutesIfNecessary;
 - (void)_fixupViewHierarchyIfNecessary;
 - (BOOL)_showDestinationPlaceholder;
 - (BOOL)_canEnableAirPlayVideoRoutes;
@@ -206,7 +208,6 @@
 - (id)backstopColor;
 - (BOOL)canShowControlsOverlay;
 - (void)setItemTypeOverride:(unsigned int)arg1;
-- (BOOL)TVOutEnabled;
 - (BOOL)allowsWirelessPlayback;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setVisibleParts:(unsigned int)arg1;
@@ -229,8 +230,7 @@
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (int)statusBarStyle;
 - (BOOL)isStatusBarHidden;
-- (id)init;
-- (void)dealloc;
+- (BOOL)TVOutEnabled;
 - (void)setItem:(id)arg1;
 
 @end

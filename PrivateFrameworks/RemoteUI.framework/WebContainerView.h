@@ -14,12 +14,12 @@
 @property(retain) UIWebView * webView;
 
 
-- (void)_setHighlightedNow;
+- (void)dealloc;
 - (void)setWebView:(id)arg1;
 - (id)webView;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
+- (void)_setHighlightedNow;
 
 @end

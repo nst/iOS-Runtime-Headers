@@ -11,6 +11,8 @@
 }
 
 
+- (void)dealloc;
+- (id)fileName;
 - (id)initWithWDom:(id)arg1 archiver:(id)arg2;
 - (void)setFileName:(id)arg1;
 - (id)archiver;
@@ -28,7 +30,5 @@
 - (float)headerMargin;
 - (float)leftMargin;
 - (id)styleMatrix;
-- (id)fileName;
-- (void)dealloc;
 
 @end

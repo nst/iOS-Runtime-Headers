@@ -29,8 +29,9 @@
 @property(retain) PLCameraImporter * importer;
 
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)isBusy;
-- (id)importer;
 - (id)contentScrollView;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
@@ -39,6 +40,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)didReceiveMemoryWarning;
+- (id)importer;
 - (void)handleImportCompleteAlertResponse:(struct __CFUserNotification { }*)arg1 flags:(unsigned long)arg2;
 - (void)setImportDevice:(id)arg1;
 - (id)importDevice;
@@ -78,12 +80,10 @@
 - (void)importer:(id)arg1 didImportItem:(id)arg2 error:(id)arg3;
 - (void)importer:(id)arg1 didCompleteImportForItems:(id)arg2;
 - (void)importer:(id)arg1 didCopyOriginalForItem:(id)arg2 error:(id)arg3;
-- (void)importer:(id)arg1 didRemoveImportItem:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)importer:(id)arg1 didRemoveImportItems:(id)arg2 atIndexes:(id)arg3;
 - (void)importer:(id)arg1 didChangeImportItem:(id)arg2 changeType:(int)arg3 error:(id)arg4;
 - (void)importer:(id)arg1 didAddImportItem:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)importerDidFinishReadingImportItems:(id)arg1 error:(id)arg2;
 - (void)albumViewSelectionDidChange:(id)arg1 added:(id)arg2 removed:(id)arg3;
-- (id)init;
-- (void)dealloc;
 
 @end

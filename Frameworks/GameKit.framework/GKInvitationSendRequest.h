@@ -17,6 +17,7 @@
 @property(retain) NSString * message;
 
 
+- (void)dealloc;
 - (void)setReason:(unsigned char)arg1;
 - (id)header;
 - (void)setSessionToken:(id)arg1;
@@ -29,6 +30,5 @@
 - (id)key;
 - (id)request;
 - (unsigned char)reason;
-- (void)dealloc;
 
 @end

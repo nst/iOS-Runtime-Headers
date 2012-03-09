@@ -18,12 +18,12 @@
 @property(retain) UIView * captiveSubview;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setCaptiveSubview:(id)arg1;
 - (id)captiveSubview;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)layoutSubviews;
-- (id)init;
-- (void)dealloc;
 
 @end

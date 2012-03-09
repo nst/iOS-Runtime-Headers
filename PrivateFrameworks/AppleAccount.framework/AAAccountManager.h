@@ -16,19 +16,19 @@
 + (void)showMobileMeOfferIfNecessary;
 + (id)sharedManager;
 
-- (id)accountWithPersonID:(id)arg1;
-- (void)downloadMobileMeOffer;
-- (void)_delayNextCheckByFourToFiveDays;
-- (void)presentMobileMeOfferWithTitle:(id)arg1 message:(id)arg2;
 - (void)reloadAccounts;
 - (id)accounts;
 - (id)accountWithIdentifier:(id)arg1;
 - (void)saveAllAccounts;
-- (void)removeAccount:(id)arg1;
-- (void)updateAccount:(id)arg1;
 - (void)dealloc;
+- (void)removeAccount:(id)arg1;
 - (id)accountWithUsername:(id)arg1;
 - (id)accountsEnabledForDataclass:(id)arg1;
+- (void)updateAccount:(id)arg1;
+- (id)accountWithPersonID:(id)arg1;
+- (void)downloadMobileMeOffer;
+- (void)_delayNextCheckByFourToFiveDays;
+- (void)presentMobileMeOfferWithTitle:(id)arg1 message:(id)arg2;
 - (id)primaryAccount;
 - (void)addAccount:(id)arg1;
 

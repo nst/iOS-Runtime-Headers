@@ -17,7 +17,9 @@
 @property(readonly) int transactionState;
 
 
-- (id)transactionIdentifier;
+- (id)init;
+- (void)dealloc;
+- (id)error;
 - (id)transactionReceipt;
 - (id)payment;
 - (id)originalTransaction;
@@ -27,10 +29,8 @@
 - (id)initWithPayment:(id)arg1;
 - (id)matchingIdentifier;
 - (int)transactionState;
-- (id)transactionDate;
 - (id)initWithDictionary:(id)arg1;
-- (id)error;
-- (id)init;
-- (void)dealloc;
+- (id)transactionIdentifier;
+- (id)transactionDate;
 
 @end

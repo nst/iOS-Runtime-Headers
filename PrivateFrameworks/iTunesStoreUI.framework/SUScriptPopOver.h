@@ -13,17 +13,17 @@
 @property float contentWidth;
 @property(retain) SUScriptViewController * viewController;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
+- (id)init;
+- (void)dealloc;
 - (void)dismissAnimated:(id)arg1;
 - (float)contentWidth;
 - (id)viewController;
 - (void)setViewController:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)attributeKeys;
 - (void)_setIgnoresDismiss:(BOOL)arg1;
 - (void)setContentWidth:(float)arg1;
 - (void)setContentHeight:(float)arg1;

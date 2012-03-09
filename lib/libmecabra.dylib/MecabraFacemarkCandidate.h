@@ -14,9 +14,9 @@
 
 + (id)copyFacemarkCandidatesForLocale:(id)arg1;
 
-- (id)initWithString:(id)arg1 category:(id)arg2;
-- (id)category;
 - (id)string;
 - (void)dealloc;
+- (id)category;
+- (id)initWithString:(id)arg1 category:(id)arg2;
 
 @end

@@ -15,10 +15,26 @@
     BOOL _hasAdditionalTextTones;
 }
 
++ (id)sharedRingtoneManager;
 + (BOOL)migrateLegacyToneSettings;
 + (BOOL)identifierIsTextTone:(id)arg1;
-+ (id)sharedRingtoneManager;
 
+- (id)init;
+- (void)dealloc;
+- (BOOL)hasAdditionalTextTones;
+- (BOOL)toneWithIdentifierIsValid:(id)arg1;
+- (id)copyNameOfRingtoneWithIdentifier:(id)arg1;
+- (unsigned long)soundIDForTextToneIdentifier:(id)arg1 isValid:(BOOL*)arg2;
+- (unsigned long)currentTextToneSoundID;
+- (id)rootDirectory;
+- (id)initWithChangeNotifications:(BOOL)arg1;
+- (id)currentNewMailToneIdentifier;
+- (unsigned long)currentNewMailToneSoundID;
+- (id)currentSentMailToneIdentifier;
+- (unsigned long)currentSentMailToneSoundID;
+- (void)setDelegate:(id)arg1;
+- (void)importTone:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
+- (BOOL)ensureDirectoryExists:(id)arg1;
 - (unsigned long)currentSentTweetToneSoundID;
 - (unsigned long)currentNewReminderAlertToneSoundID;
 - (unsigned long)currentNewCalendarAlertToneSoundID;
@@ -101,21 +117,5 @@
 - (void)loadTextToneInfo;
 - (void)loadITunesRingtoneInfoPlistAtPath:(id)arg1;
 - (id)initWithITunesRingtonePlistAtPath:(id)arg1 registerForChangeNotifications:(BOOL)arg2;
-- (void)setDelegate:(id)arg1;
-- (id)rootDirectory;
-- (void)importTone:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
-- (unsigned long)soundIDForTextToneIdentifier:(id)arg1 isValid:(BOOL*)arg2;
-- (unsigned long)currentTextToneSoundID;
-- (id)initWithChangeNotifications:(BOOL)arg1;
-- (id)currentNewMailToneIdentifier;
-- (unsigned long)currentNewMailToneSoundID;
-- (id)currentSentMailToneIdentifier;
-- (unsigned long)currentSentMailToneSoundID;
-- (id)init;
-- (void)dealloc;
-- (BOOL)ensureDirectoryExists:(id)arg1;
-- (BOOL)hasAdditionalTextTones;
-- (BOOL)toneWithIdentifierIsValid:(id)arg1;
-- (id)copyNameOfRingtoneWithIdentifier:(id)arg1;
 
 @end

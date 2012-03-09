@@ -15,6 +15,8 @@
 + (bool)is3DType;
 + (id)chartTypeWithChart:(id)arg1;
 
+- (void)dealloc;
+- (bool)isHorizontal;
 - (bool)isPlotedOnSecondaryAxis;
 - (id)axisForClass:(Class)arg1;
 - (void)setSeriesCollection:(id)arg1;
@@ -30,7 +32,5 @@
 - (id)initWithChart:(id)arg1;
 - (id)chart;
 - (id)contentFormat;
-- (bool)isHorizontal;
-- (void)dealloc;
 
 @end

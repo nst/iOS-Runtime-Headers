@@ -4,7 +4,7 @@
 
 @interface LKNSValueCodingProxy : CACodingProxy  {
     int _kind;
-    union $_623 { 
+    union $_624 { 
         struct CGPoint { 
             float x; 
             float y; 
@@ -68,9 +68,9 @@
 }
 
 
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithObject:(id)arg1;
 - (id)decodedObject;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

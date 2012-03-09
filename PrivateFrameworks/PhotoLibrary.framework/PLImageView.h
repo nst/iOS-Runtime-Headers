@@ -31,20 +31,22 @@
 + (BOOL)shouldDrawShadows;
 + (id)textBadgeForString:(id)arg1 photoSize:(struct CGSize { float x1; float x2; })arg2;
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
 - (void)setVideoView:(id)arg1;
 - (id)videoView;
+- (void)setDimmed:(BOOL)arg1;
+- (BOOL)isDimmed;
 - (void)setEdgeAntialiasingEnabled:(BOOL)arg1;
 - (id)name;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (void)setImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDimmed:(BOOL)arg1;
-- (BOOL)isDimmed;
+- (id)textBadgeString;
 - (void)setBorderWidthScale:(float)arg1 heightScale:(float)arg2;
 - (float)borderAlpha;
 - (void)parentDidLayout;
-- (id)textBadgeString;
 - (void)_setShadowEnabled:(BOOL)arg1 force:(BOOL)arg2;
 - (void)_updateShadowPath;
 - (void)renderSnapshotInContext:(struct CGContext { }*)arg1;
@@ -58,7 +60,5 @@
 - (void)setBorderAlpha:(float)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 allowRounding:(BOOL)arg2;
 - (void)setBorderVisible:(BOOL)arg1;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -17,9 +17,13 @@
 @property(retain) NSMutableArray * tiles;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (void)setZoom:(int)arg1;
 - (int)zoom;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)tiles;
 - (int)numVerticalTiles;
 - (int)numHorizontalTiles;
@@ -29,9 +33,5 @@
 - (void)setNumVerticalTiles:(int)arg1;
 - (void)setNumHorizontalTiles:(int)arg1;
 - (void)setTiles:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

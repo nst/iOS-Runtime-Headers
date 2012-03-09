@@ -18,6 +18,7 @@
 @property(retain) NSURL * urlBeingExamined;
 
 
+- (void)dealloc;
 - (void)setPrincipalURLs:(id)arg1;
 - (id)resultPrincipalURLs;
 - (id)initWithAccountInfoProvider:(id)arg1 urls:(id)arg2 taskManager:(id)arg3;
@@ -32,6 +33,5 @@
 - (void)cancelTaskGroup;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
-- (void)dealloc;
 
 @end

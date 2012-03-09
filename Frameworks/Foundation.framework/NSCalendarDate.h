@@ -12,14 +12,14 @@
     void *_reserved;
 }
 
-+ (id)dateWithYear:(int)arg1 month:(unsigned int)arg2 day:(unsigned int)arg3 hour:(unsigned int)arg4 minute:(unsigned int)arg5 second:(unsigned int)arg6 timeZone:(id)arg7;
 + (id)dateWithNaturalLanguageString:(id)arg1 date:(id)arg2 locale:(id)arg3;
 + (id)dateWithString:(id)arg1 calendarFormat:(id)arg2 locale:(id)arg3;
 + (id)dateWithString:(id)arg1 calendarFormat:(id)arg2;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)calendarDate;
 + (id)distantPast;
 + (id)distantFuture;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)dateWithYear:(int)arg1 month:(unsigned int)arg2 day:(unsigned int)arg3 hour:(unsigned int)arg4 minute:(unsigned int)arg5 second:(unsigned int)arg6 timeZone:(id)arg7;
 + (id)combinedDateWithYMDFrom:(id)arg1 HMSFrom:(id)arg2 componentDatesTimezone:(id)arg3;
 
 - (id)initWithString:(id)arg1 calendarFormat:(id)arg2;
@@ -41,6 +41,14 @@
 - (id)calendarFormat;
 - (id)initWithYear:(int)arg1 month:(unsigned int)arg2 day:(unsigned int)arg3 hour:(unsigned int)arg4 minute:(unsigned int)arg5 second:(unsigned int)arg6 timeZone:(id)arg7;
 - (void)setCalendarFormat:(id)arg1;
+- (id)initWithString:(id)arg1;
+- (id)description;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)addTimeInterval:(double)arg1;
+- (id)descriptionWithLocale:(id)arg1;
 - (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
 - (id)descriptionWithCalendarFormat:(id)arg1;
 - (Class)classForCoder;
@@ -49,14 +57,6 @@
 - (double)timeIntervalSinceReferenceDate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)addTimeInterval:(double)arg1;
-- (id)descriptionWithLocale:(id)arg1;
-- (id)initWithString:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
 - (id)ekmsuidStringForYearMonthDay;
 - (id)ekmsuidGMTDateToDateInTimeZone:(id)arg1;
 - (void)getGregorianDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg1;

@@ -39,6 +39,9 @@
 }
 
 
+- (void)dealloc;
+- (void)setRotation:(float)arg1;
+- (float)rotation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })box;
 - (void)mapImageBinaryData;
 - (id)convertMetafileToPdf;
@@ -56,8 +59,5 @@
 - (void)mapDrawingContext:(id)arg1 at:(id)arg2 relative:(BOOL)arg3 withState:(id)arg4;
 - (id)initWithParent:(id)arg1;
 - (id)blipAtIndex:(unsigned int)arg1;
-- (void)setRotation:(float)arg1;
-- (float)rotation;
-- (void)dealloc;
 
 @end

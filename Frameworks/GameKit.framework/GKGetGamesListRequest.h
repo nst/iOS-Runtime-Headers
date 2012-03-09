@@ -13,13 +13,13 @@
 @property BOOL includeInstalledGames;
 
 
+- (void)dealloc;
 - (BOOL)includeInstalledGames;
+- (id)player;
 - (id)header;
 - (void)setIncludeInstalledGames:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
 - (id)key;
 - (id)request;
-- (id)player;
-- (void)dealloc;
 
 @end

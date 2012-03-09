@@ -22,18 +22,19 @@
 + (id)sharedSMSService;
 
 - (int)unreadCount;
-- (BOOL)isAvailable;
+- (id)init;
+- (void)dealloc;
 - (Class)entityClass;
-- (id)displayName;
-- (void)applicationDidResume;
+- (BOOL)isAvailable;
 - (id)userFormattedAlphanumericStringForAddress:(id)arg1;
 - (void)_clearUnreadBadgeCountCache;
 - (int)_unreadCountForConversation:(id)arg1;
 - (void)_setCachedUnreadCount:(int)arg1 forConversation:(id)arg2;
 - (id)_newCKSMSMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
+- (void)_receivedMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 replace:(BOOL)arg2 replacedRecordIdentifier:(int)arg3 postInternalNotification:(BOOL)arg4;
 - (void)_receivedMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 replace:(BOOL)arg2 postInternalNotification:(BOOL)arg3;
 - (void)_sentMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 replace:(BOOL)arg2 postInternalNotification:(BOOL)arg3;
-- (void)_sendError:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
+- (void)_sendError:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 postInternalNotification:(BOOL)arg2;
 - (void)_receivedDeliveryReceiptForMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
 - (void)_clearUnreadCountCache;
 - (void)_registerForCTNotifications;
@@ -91,8 +92,8 @@
 - (BOOL)isValidAddress:(id)arg1;
 - (id)_newMMSMessageWithParts:(id)arg1 forConversation:(id)arg2 subject:(id)arg3;
 - (BOOL)restrictsMediaObjects;
-- (id)init;
-- (void)dealloc;
+- (id)displayName;
+- (void)applicationDidResume;
 - (void)prepareForSuspend;
 
 @end

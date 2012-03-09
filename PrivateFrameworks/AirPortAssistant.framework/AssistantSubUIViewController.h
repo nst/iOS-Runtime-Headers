@@ -17,6 +17,7 @@
 @property(readonly) NSDictionary * outResultsDict;
 
 
+- (void)dealloc;
 - (id)outResultsDict;
 - (void)setInParamDict:(id)arg1;
 - (void)setIPadIdiom:(BOOL)arg1;
@@ -30,6 +31,5 @@
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)dealloc;
 
 @end

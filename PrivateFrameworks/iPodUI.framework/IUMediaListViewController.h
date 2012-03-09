@@ -19,6 +19,8 @@
 
 + (Class)tableViewClass;
 
+- (id)init;
+- (void)dealloc;
 - (void)modalContextDidDismiss:(id)arg1 withSuccess:(BOOL)arg2;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
@@ -54,7 +56,5 @@
 - (BOOL)hasSearchBar;
 - (void)performDefaultActionForRow:(int)arg1;
 - (void)performActionForActionRow:(id)arg1 animated:(BOOL)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

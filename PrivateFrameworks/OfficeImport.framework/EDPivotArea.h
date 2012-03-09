@@ -15,18 +15,18 @@
 
 + (id)pivotArea;
 
-- (bool)grandRow;
-- (void)setGrandRow:(bool)arg1;
-- (bool)grandCol;
-- (void)setGrandCol:(bool)arg1;
-- (bool)outline;
-- (void)setOutline:(bool)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)references;
 - (int)type;
 - (void)setOffset:(id)arg1;
 - (id)offset;
 - (void)setType:(int)arg1;
-- (id)init;
-- (void)dealloc;
+- (bool)outline;
+- (void)setOutline:(bool)arg1;
+- (bool)grandRow;
+- (void)setGrandRow:(bool)arg1;
+- (bool)grandCol;
+- (void)setGrandCol:(bool)arg1;
 
 @end

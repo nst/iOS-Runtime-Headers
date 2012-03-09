@@ -54,8 +54,15 @@
 @property(readonly) int* renderers;
 
 
+- (id)description;
+- (void)dealloc;
 - (Class)responseClass;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (void)writeTo:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 - (int)cbkVersion;
 - (void)setHasCbkVersion:(BOOL)arg1;
 - (BOOL)hasCbkVersion;
@@ -98,12 +105,5 @@
 - (id)panoId;
 - (void)setLatLon:(id)arg1;
 - (void)setPanoId:(id)arg1;
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
-- (unsigned int)requestTypeCode;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

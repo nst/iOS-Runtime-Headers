@@ -21,21 +21,8 @@
 @property int size;
 
 
-- (void)add:(id)arg1 before:(id)arg2;
-- (void)add:(id)arg1 :(id)arg2;
-- (void)setMultiple:(BOOL)arg1;
-- (BOOL)required;
-- (void)setRequired:(BOOL)arg1;
-- (id)namedItem:(id)arg1;
-- (id)validity;
-- (BOOL)autofocus;
-- (void)setAutofocus:(BOOL)arg1;
-- (BOOL)willValidate;
-- (id)validationMessage;
-- (id)labels;
-- (BOOL)checkValidity;
-- (void)setCustomValidity:(id)arg1;
-- (void)remove:(int)arg1;
+- (void)setName:(id)arg1;
+- (int)length;
 - (void)setDisabled:(BOOL)arg1;
 - (int)structuralComplexityContribution;
 - (void)_activateItemAtIndex:(int)arg1;
@@ -55,8 +42,21 @@
 - (id)name;
 - (void)setSize:(int)arg1;
 - (int)size;
-- (void)setName:(id)arg1;
-- (int)length;
+- (void)add:(id)arg1 before:(id)arg2;
+- (void)add:(id)arg1 :(id)arg2;
+- (void)setMultiple:(BOOL)arg1;
+- (BOOL)required;
+- (void)setRequired:(BOOL)arg1;
+- (id)namedItem:(id)arg1;
+- (id)validity;
+- (BOOL)autofocus;
+- (void)setAutofocus:(BOOL)arg1;
+- (BOOL)willValidate;
+- (id)validationMessage;
+- (id)labels;
+- (BOOL)checkValidity;
+- (void)setCustomValidity:(id)arg1;
+- (void)remove:(int)arg1;
 - (id)createPeripheral;
 - (BOOL)nodeCanBecomeFirstResponder;
 - (BOOL)_supportsAutoFill;

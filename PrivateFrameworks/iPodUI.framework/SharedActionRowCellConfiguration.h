@@ -7,8 +7,8 @@
 
 + (float)rowHeightForGlobalContext:(id)arg1;
 
-- (void)reloadData;
 - (id)init;
+- (void)reloadData;
 - (void)reloadLayoutInformation;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 

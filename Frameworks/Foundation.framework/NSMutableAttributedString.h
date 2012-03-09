@@ -8,23 +8,23 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)addAttributesWeakly:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)mutableString;
-- (void)appendAttributedString:(id)arg1;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
+- (void)addAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)setAttributedString:(id)arg1;
+- (void)insertAttributedString:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)endEditing;
 - (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)removeAttribute:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)beginEditing;
 - (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)addAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)setAttributedString:(id)arg1;
-- (void)insertAttributedString:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
-- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
+- (id)mutableString;
+- (void)appendAttributedString:(id)arg1;
+- (void)replaceNewlinesWithSpaces;
 - (void)removeCharactersWithAttribute:(id)arg1;
 - (void)replaceAttribute:(id)arg1 value:(id)arg2 withValue:(id)arg3;
 - (void)trimWhitespace;
-- (void)replaceNewlinesWithSpaces;
 - (void)appendString:(id)arg1 withAttributes:(id)arg2;
 
 @end

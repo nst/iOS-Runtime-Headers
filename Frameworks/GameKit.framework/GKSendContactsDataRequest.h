@@ -19,6 +19,7 @@
 @property BOOL shouldReturnNetworkIDs;
 
 
+- (void)dealloc;
 - (void)setShouldReturnNetworkIDs:(BOOL)arg1;
 - (void)setShouldSaveForRecommendations:(BOOL)arg1;
 - (void)setNetworkIDs:(id)arg1;
@@ -33,6 +34,5 @@
 - (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

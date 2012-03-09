@@ -24,7 +24,13 @@
 @property(retain) NSMutableArray * crossStreets;
 
 
+- (id)components;
+- (id)description;
+- (void)dealloc;
+- (void)setComponents:(id)arg1;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)crossStreets;
 - (BOOL)isMailing;
 - (void)setHasIsMailing:(BOOL)arg1;
@@ -44,11 +50,5 @@
 - (void)addComponent:(id)arg1;
 - (void)setCrossStreets:(id)arg1;
 - (void)setRawText:(id)arg1;
-- (id)components;
-- (void)writeTo:(id)arg1;
-- (void)setComponents:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

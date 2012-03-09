@@ -19,7 +19,11 @@
 + (id)smi_serverCommandName;
 + (BOOL)shouldUseNewThreadingModel;
 
-- (void)setDelegate:(id)arg1;
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
+- (void)_setServer:(id)arg1;
+- (id)_copyServer;
 - (void)setShouldLaunchMobileMail:(BOOL)arg1;
 - (BOOL)shouldLaunchMobileMail;
 - (void)_setActiveAction:(id)arg1 responseSelector:(SEL)arg2;
@@ -31,10 +35,6 @@
 - (id)_activeAction;
 - (BOOL)_callMailServicesMethod:(id)arg1 arg:(id)arg2 reply:(id*)arg3 error:(id*)arg4 responseSelector:(SEL)arg5;
 - (id)delegate;
-- (void)_setServer:(id)arg1;
-- (id)_copyServer;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

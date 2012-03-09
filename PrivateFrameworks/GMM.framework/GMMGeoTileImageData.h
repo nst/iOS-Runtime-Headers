@@ -22,6 +22,7 @@
 
 + (id)createWithData:(id)arg1 runningOnIPad:(BOOL)arg2 idiomIPad:(BOOL)arg3;
 
+- (void)dealloc;
 - (struct CGImage { }*)newImage;
 - (id)dataCopyrights;
 - (int)dataCopyrightYear;
@@ -29,6 +30,5 @@
 - (int)imageCopyrightYear;
 - (void)_createCopyrightData;
 - (id)initWithData:(id)arg1 runningOnIPad:(BOOL)arg2 idiomIPad:(BOOL)arg3;
-- (void)dealloc;
 
 @end

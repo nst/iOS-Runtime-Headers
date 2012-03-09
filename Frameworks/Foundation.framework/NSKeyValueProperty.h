@@ -21,8 +21,8 @@
 - (Class)isaForAutonotifying;
 - (void)object:(id)arg1 didAddObservance:(id)arg2 recurse:(BOOL)arg3;
 - (id)dependentValueKeyOrKeysIsASet:(BOOL*)arg1;
-- (id)keyPath;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)keyPath;
 
 @end

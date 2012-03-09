@@ -10,6 +10,9 @@
 }
 
 
+- (void)dealloc;
+- (id)url;
+- (id)type;
 - (id)initWithSQLCore:(id)arg1;
 - (id)createConnection;
 - (id)connections;
@@ -49,8 +52,5 @@
 - (id)sqlCore;
 - (unsigned int)sqlTypeForExpressionConstantValue:(id)arg1;
 - (BOOL)supportsCorrelatedSubqueries;
-- (id)url;
-- (id)type;
-- (void)dealloc;
 
 @end

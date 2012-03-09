@@ -21,6 +21,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)_crossFadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_transitionToNextImage;
 - (void)_displayFirstImage;
@@ -40,7 +42,5 @@
 - (id)newSlideshowView;
 - (void)stopSlideshow;
 - (void)slideshowViewDidDisappear;
-- (id)init;
-- (void)dealloc;
 
 @end

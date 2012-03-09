@@ -43,29 +43,10 @@
 @property(retain) UIWebView * webView;
 
 
-- (void)setHeadersForRequest:(id)arg1;
-- (void)loadURL:(id)arg1;
-- (BOOL)isLoaded;
-- (void)webViewDidFinishLoad:(id)arg1;
-- (void)webViewDidStartLoad:(id)arg1;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
-- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (BOOL)isLoading;
-- (void)setWebView:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidUnload;
-- (void)loadView;
-- (void)viewDidLoad;
-- (id)webView;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)applicationWillSuspend;
-- (void)setAlertHandler:(id)arg1;
-- (id)alertHandler;
 - (id)init;
 - (void)dealloc;
+- (void)setHeadersForRequest:(id)arg1;
+- (void)loadURL:(id)arg1;
 - (id)initWithRegController:(id)arg1;
 - (void)setWantsWifi:(BOOL)arg1;
 - (BOOL)intForServerValue:(id)arg1 value:(int*)arg2 defaultValue:(int)arg3;
@@ -112,5 +93,24 @@
 - (void)_handleTimeout;
 - (id)logName;
 - (id)regController;
+- (void)setAlertHandler:(id)arg1;
+- (id)alertHandler;
+- (BOOL)isLoaded;
+- (void)webViewDidFinishLoad:(id)arg1;
+- (void)webViewDidStartLoad:(id)arg1;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
+- (BOOL)isLoading;
+- (void)setWebView:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (void)viewDidLoad;
+- (id)webView;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)applicationWillSuspend;
 
 @end

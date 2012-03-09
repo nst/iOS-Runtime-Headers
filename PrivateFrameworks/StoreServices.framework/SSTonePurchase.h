@@ -19,6 +19,15 @@
 @property BOOL shouldMakeDefaultTextTone;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setShouldMakeDefaultRingtone:(BOOL)arg1;
+- (void)setAssigneeIdentifier:(id)arg1;
+- (id)allowedToneStyles;
+- (id)initWithItem:(id)arg1 offer:(id)arg2;
+- (void)setAllowedToneStyles:(id)arg1;
 - (BOOL)shouldMakeDefaultTextTone;
 - (BOOL)shouldMakeDefaultRingtone;
 - (id)assigneeToneStyle;
@@ -29,14 +38,5 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (void)setShouldMakeDefaultRingtone:(BOOL)arg1;
-- (void)setAssigneeIdentifier:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)allowedToneStyles;
-- (id)initWithItem:(id)arg1 offer:(id)arg2;
-- (void)setAllowedToneStyles:(id)arg1;
 
 @end

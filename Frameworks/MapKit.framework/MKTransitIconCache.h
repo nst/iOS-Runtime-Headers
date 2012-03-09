@@ -22,8 +22,7 @@
 
 + (id)sharedTransitIconCache;
 
-- (int)iconVersion;
-- (void)setIconVersion:(int)arg1;
+- (void)dealloc;
 - (BOOL)isEnabled;
 - (void)setIconScale:(float)arg1;
 - (float)iconScale;
@@ -40,7 +39,8 @@
 - (id)_infoPath;
 - (void)_updateInfoPlist;
 - (id)initWithCapacity:(unsigned int)arg1 maxCapacity:(unsigned int)arg2;
-- (void)dealloc;
 - (void)setIsEnabled:(BOOL)arg1;
+- (int)iconVersion;
+- (void)setIconVersion:(int)arg1;
 
 @end

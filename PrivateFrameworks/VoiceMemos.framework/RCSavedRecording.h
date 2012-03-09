@@ -25,6 +25,7 @@
 
 + (id)localizedStringForRecordingLabel:(unsigned int)arg1;
 
+- (void)dealloc;
 - (void)setLabelPreset:(unsigned int)arg1;
 - (BOOL)isSynced;
 - (void)setSynced:(BOOL)arg1;
@@ -36,13 +37,12 @@
 - (unsigned int)labelPreset;
 - (long long)iTunesPersistentID;
 - (void)setITunesPersistentID:(long long)arg1;
+- (id)avItem;
+- (id)label;
 - (double)duration;
 - (void)setDuration:(double)arg1;
 - (void)awakeFromInsert;
 - (void)willSave;
 - (void)awakeFromFetch;
-- (id)label;
-- (void)dealloc;
-- (id)avItem;
 
 @end

@@ -31,7 +31,7 @@
 @property(readonly) UITableView * tableView;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)tableView;
 - (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
 - (id)visibleCells;
@@ -50,9 +50,9 @@
 - (id)dequeueReusableCellWithIdentifier:(id)arg1;
 - (void)layoutSubviews;
 - (void)reloadData;
+- (void)setDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (void)_reuseColumnCellsForCell:(id)arg1;
 - (void)_animateDeletionOfCell:(id)arg1;
 - (void)reloadCellsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;

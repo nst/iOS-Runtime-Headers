@@ -16,7 +16,9 @@
 @property(readonly) unsigned int snapshotLength;
 
 
+- (void)dealloc;
 - (void)finalize;
+- (id)stringValue;
 - (unsigned short)resultType;
 - (double)numberValue;
 - (BOOL)booleanValue;
@@ -25,7 +27,5 @@
 - (unsigned int)snapshotLength;
 - (id)iterateNext;
 - (id)snapshotItem:(unsigned int)arg1;
-- (id)stringValue;
-- (void)dealloc;
 
 @end

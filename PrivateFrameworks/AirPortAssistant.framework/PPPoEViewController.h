@@ -18,6 +18,7 @@
 @property(retain) PPPoEConnectionUIViewController * pppoeConnectionUIViewController;
 
 
+- (void)dealloc;
 - (id)pppoeConnectionUIViewController;
 - (void)setPppoeConnectionUIViewController:(id)arg1;
 - (void)setupInitialTableHeaderConfiguration;
@@ -26,6 +27,5 @@
 - (void)touchInCellAtIndexPath:(id)arg1;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)dealloc;
 
 @end

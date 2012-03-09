@@ -142,8 +142,20 @@
 }
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setDeletionDate:(id)arg1;
 - (id)deletionDate;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
+- (void)setRightMargin:(short)arg1;
+- (void)setWidth:(short)arg1;
+- (short)width;
+- (short)position;
+- (void)setPosition:(short)arg1;
+- (BOOL)noWrap;
+- (void)setNoWrap:(BOOL)arg1;
 - (void)originalToTracked;
 - (id)insideHorizontalBorder;
 - (BOOL)isInsideHorizontalBorderOverridden;
@@ -238,17 +250,5 @@
 - (id)bottomBorder;
 - (short)leftMargin;
 - (void)setLeftMargin:(short)arg1;
-- (void)setPosition:(short)arg1;
-- (BOOL)noWrap;
-- (void)setNoWrap:(BOOL)arg1;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
-- (void)setRightMargin:(short)arg1;
-- (void)setWidth:(short)arg1;
-- (short)width;
-- (short)position;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

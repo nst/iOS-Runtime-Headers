@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class NSMapTable, <ADWebViewDelegate><UIWebViewDelegate>, NSString, <UIWebViewDelegate><ADWebViewDelegate>, NSMutableDictionary;
+@class <UIWebViewDelegate><ADWebViewDelegate>, <ADWebViewDelegate><UIWebViewDelegate>, NSString, NSMutableDictionary;
 
 @interface ADWebView : UIWebView  {
     <ADWebViewDelegate><UIWebViewDelegate> *_delegate;
     NSMutableDictionary *_resourceLoadStartDates;
     BOOL _shouldReportResourceTiming;
     BOOL _shouldReportScriptErrors;
-    NSMapTable *_scriptSources;
     BOOL _webGLEnabled;
     BOOL _paused;
     NSString *_userAgent;
@@ -23,23 +22,25 @@
 @property(copy) NSString * userAgent;
 @property(readonly) struct OpaqueJSContext { }* javaScriptContextRef;
 @property(retain) NSMutableDictionary * resourceLoadStartDates;
-@property(retain) NSMapTable * scriptSources;
 
++ (void)initialize;
 + (void)_resetMemoryLogging:(id)arg1;
 + (void)clearContentStorage;
-+ (void)initialize;
 
+- (void)dealloc;
 - (id)userAgent;
+- (BOOL)paused;
+- (id)stringByEvaluatingJavaScriptFromString:(id)arg1;
+- (void)setPaused:(BOOL)arg1;
+- (void)sendOrientationEventForOrientation:(int)arg1;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)webGLEnabled;
-- (void)setScriptSources:(id)arg1;
-- (id)scriptSources;
 - (BOOL)shouldReportScriptErrors;
 - (BOOL)shouldReportResourceTiming;
 - (void)setResourceLoadStartDates:(id)arg1;
 - (id)resourceLoadStartDates;
-- (void)webView:(id)arg1 exceptionWasRaised:(id)arg2 hasHandler:(BOOL)arg3 sourceId:(long)arg4 line:(int)arg5 forWebFrame:(id)arg6;
-- (void)webView:(id)arg1 didParseSource:(id)arg2 baseLineNumber:(unsigned int)arg3 fromURL:(id)arg4 sourceId:(long)arg5 forWebFrame:(id)arg6;
 - (void)webThreadWebView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
 - (void)webThreadWebView:(id)arg1 resource:(id)arg2 didReceiveResponse:(id)arg3 fromDataSource:(id)arg4;
 - (id)webThreadWebView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
@@ -51,14 +52,6 @@
 - (void)setWebGLEnabled:(BOOL)arg1;
 - (struct OpaqueJSContext { }*)javaScriptContextRef;
 - (void)dispatchDOMEventWithName:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3;
-- (BOOL)paused;
-- (id)stringByEvaluatingJavaScriptFromString:(id)arg1;
-- (void)setPaused:(BOOL)arg1;
-- (void)sendOrientationEventForOrientation:(int)arg1;
-- (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (void)setUserAgent:(id)arg1;
-- (void)webView:(id)arg1 failedToParseSource:(id)arg2 baseLineNumber:(unsigned int)arg3 fromURL:(id)arg4 withError:(id)arg5 forWebFrame:(id)arg6;
 
 @end

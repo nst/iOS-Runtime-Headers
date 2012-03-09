@@ -26,7 +26,8 @@
 @property(retain,readonly) UIImage * image;
 
 
-- (void)setOperation:(id)arg1;
+- (void)cancel;
+- (void)dealloc;
 - (id)initWithPage:(id)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 queuePriority:(int)arg3;
 - (void)cancelOperation;
 - (void)cancelOperationForTarget:(id)arg1;
@@ -34,10 +35,9 @@
 - (void)renderImage;
 - (void)sendImage;
 - (void)sendImageTo:(id)arg1 callback:(SEL)arg2 userData:(id)arg3;
+- (void)setOperation:(id)arg1;
 - (unsigned int)pageIndex;
 - (id)image;
-- (void)cancel;
-- (void)dealloc;
 - (id)operation;
 
 @end

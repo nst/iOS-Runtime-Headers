@@ -16,12 +16,12 @@
 
 + (id)codedPropertyKeys;
 
+- (void)dealloc;
 - (id)game;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
 - (void)setGame:(id)arg1;
 - (void)setDate:(id)arg1;
 - (id)date;
-- (void)dealloc;
 
 @end

@@ -5,8 +5,8 @@
 @interface IMNetworkManager : NSObject  {
 }
 
-+ (id)alloc;
 + (id)sharedInstance;
++ (id)alloc;
 
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;

@@ -30,11 +30,7 @@
 @property(retain) NSString * actionKey;
 
 
-- (id)actionKey;
-- (void)setActionKey:(id)arg1;
-- (void)send;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 - (void)setSendBlock:(id)arg1;
 - (void)setLifeAssertion:(id)arg1;
 - (id)lifeAssertion;
@@ -45,6 +41,10 @@
 - (void)setDeliverToPublisher:(BOOL)arg1;
 - (void)setBulletinID:(id)arg1;
 - (id)sendBlock;
-- (void)dealloc;
+- (id)actionKey;
+- (void)setActionKey:(id)arg1;
+- (void)send;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

@@ -5,11 +5,11 @@
 @interface SFUMutableRetainedPointerSet : SFURetainedPointerSet  {
 }
 
-+ (void)initialize;
 + (Class)class;
++ (void)initialize;
 
-- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)init;
+- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
 
 @end

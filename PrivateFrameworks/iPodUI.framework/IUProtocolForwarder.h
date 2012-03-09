@@ -13,11 +13,11 @@
 
 
 - (id)initWithTarget:(id)arg1 protocol:(id)arg2;
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
-- (BOOL)_respondsToProtocolSelector:(SEL)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)target;
 - (void)dealloc;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (BOOL)_respondsToProtocolSelector:(SEL)arg1;
 
 @end

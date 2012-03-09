@@ -14,7 +14,8 @@
 @property int selectedIndex;
 
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setSelectedIndex:(int)arg1;
 - (int)selectedIndex;
 - (void)viewDidAppear:(BOOL)arg1;
@@ -24,8 +25,7 @@
 - (void)reload;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (BOOL)_sendDidCancel;
 - (BOOL)isMenuItemEnabledAtIndex:(int)arg1;
 - (id)titleOfMenuItemAtIndex:(int)arg1;

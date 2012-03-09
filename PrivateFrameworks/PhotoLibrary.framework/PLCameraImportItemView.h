@@ -22,6 +22,7 @@
 + (id)completedBadgeImage;
 + (float)importItemViewBorderWidth;
 
+- (void)dealloc;
 - (id)imageView;
 - (id)image;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
@@ -39,6 +40,5 @@
 - (void)setTransitionProgress:(float)arg1;
 - (BOOL)isShadowEnabled;
 - (void)setShadowEnabled:(BOOL)arg1;
-- (void)dealloc;
 
 @end

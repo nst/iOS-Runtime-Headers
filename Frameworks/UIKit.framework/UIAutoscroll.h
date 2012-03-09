@@ -27,7 +27,10 @@
 @property BOOL active;
 
 
-- (void)invalidate;
+- (void)setTarget:(id)arg1;
+- (int)count;
+- (id)target;
+- (void)dealloc;
 - (BOOL)active;
 - (void)setDirections:(int)arg1;
 - (void)setPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -41,9 +44,6 @@
 - (void)setActive:(BOOL)arg1;
 - (void)setCount:(int)arg1;
 - (void)setRepeatInterval:(double)arg1;
-- (void)setTarget:(id)arg1;
-- (int)count;
-- (id)target;
-- (void)dealloc;
+- (void)invalidate;
 
 @end

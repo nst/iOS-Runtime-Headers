@@ -12,12 +12,15 @@
 
 + (id)_library;
 
+- (id)init;
+- (void)dealloc;
+- (void)_performBlockAndWait:(id)arg1;
 - (void)writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
 - (id)internal;
 - (void)setInternal:(id)arg1;
+- (void)writeImageDataToSavedPhotosAlbum:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
 - (void)assetForURL:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
 - (BOOL)isValid;
-- (void)writeImageDataToSavedPhotosAlbum:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
 - (void)addAssetsGroupAlbumWithName:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
 - (void)groupForURL:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
 - (BOOL)videoAtPathIsCompatibleWithSavedPhotosAlbum:(id)arg1;
@@ -33,8 +36,5 @@
 - (void)_writeVideoAtPathToSavedPhotosAlbum:(id)arg1 internalProperties:(id)arg2 completionBlock:(id)arg3;
 - (void)_writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 orientation:(int)arg2 imageData:(id)arg3 metadata:(id)arg4 internalProperties:(id)arg5 completionBlock:(id)arg6;
 - (void)addAsset:(id)arg1;
-- (void)_performBlockAndWait:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

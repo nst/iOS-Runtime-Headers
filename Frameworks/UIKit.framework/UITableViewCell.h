@@ -87,7 +87,7 @@
     UIColor *_selectionTintColor;
     UIColor *_accessoryTintColor;
     UIImage *_reorderControlImage;
-    UILongPressGestureRecognizer *longPressGesture;
+    UILongPressGestureRecognizer *_menuGesture;
 }
 
 @property(readonly) SUGridView * gridView;
@@ -119,10 +119,12 @@
 @property float indentationWidth;
 @property(getter=isEditing) BOOL editing;
 @property(readonly) BOOL showingDeleteConfirmation;
-@property(retain) UILongPressGestureRecognizer * longPressGesture;
 
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setTarget:(id)arg1;
+- (id)target;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (SEL)returnAction;
 - (BOOL)_hasEditingAccessoryView;
@@ -147,7 +149,6 @@
 - (id)_defaultAccessoryView;
 - (id)_reorderControlImage;
 - (SEL)_accessoryAction;
-- (id)longPressGesture;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForState:(unsigned int)arg1;
 - (SEL)accessoryAction;
 - (void)setAccessoryAction:(SEL)arg1;
@@ -211,7 +212,6 @@
 - (void)_setupMenuGesture;
 - (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
 - (void)_setupTableViewCellCommon;
-- (void)setLongPressGesture:(id)arg1;
 - (void)setSelectionFadeDuration:(float)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
 - (void)_setDrawsTopSeparatorDuringReordering:(BOOL)arg1;
@@ -325,6 +325,7 @@
 - (void)_setDrawsTopSeparator:(BOOL)arg1;
 - (BOOL)_drawsTopSeparatorDuringReordering;
 - (void)setEditing:(BOOL)arg1;
+- (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (id)backgroundView;
 - (int)separatorStyle;
 - (void)_setMultiselecting:(BOOL)arg1;
@@ -350,7 +351,6 @@
 - (void)setSeparatorColor:(id)arg1;
 - (id)tableBackgroundColor;
 - (void)setBackgroundView:(id)arg1;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)sectionBorderColor;
 - (void)_removeInnerShadow;
 - (void)_removeFloatingSeparator;
@@ -390,6 +390,7 @@
 - (void)setFont:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
 - (void)layoutSubviews;
 - (void)encodeWithCoder:(id)arg1;
@@ -398,10 +399,6 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTarget:(id)arg1;
-- (id)target;
-- (id)init;
-- (void)dealloc;
 - (void)setContentAlpha:(float)arg1;
 - (void)setEditingBySwiping:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)gridView;

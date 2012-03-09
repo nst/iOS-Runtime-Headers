@@ -20,7 +20,8 @@
 + (struct CGSize { float x1; float x2; })scaledFullImageSizeForOriginalImageSize:(struct CGSize { float x1; float x2; })arg1 andCroppedSize:(struct CGSize { float x1; float x2; })arg2;
 + (void)convertStraightenAngle:(float)arg1 andCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg3 andCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
 
-- (int)adjustmentType;
+- (id)metadataProperties;
 - (void)setAdjustmentType:(int)arg1;
+- (int)adjustmentType;
 
 @end

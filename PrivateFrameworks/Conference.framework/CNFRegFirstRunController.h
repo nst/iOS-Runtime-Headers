@@ -34,15 +34,7 @@
 
 - (void)setAccount:(id)arg1;
 - (id)account;
-- (void)setDelegate:(id)arg1;
-- (void)setSpecifier:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (id)delegate;
-- (void)_updateUI;
 - (void)dealloc;
-- (BOOL)_hidesBackButton;
 - (BOOL)canBeShownFromSuspendedState;
 - (id)customTitle;
 - (void)_startActivityIndicatorWithTitle:(id)arg1 animated:(BOOL)arg2;
@@ -97,5 +89,13 @@
 - (BOOL)dismissWithState:(unsigned int)arg1;
 - (void)_refreshNavBarAnimated:(BOOL)arg1;
 - (void)_setupEventHandlers;
+- (void)_updateUI;
+- (void)setSpecifier:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (BOOL)_hidesBackButton;
 
 @end

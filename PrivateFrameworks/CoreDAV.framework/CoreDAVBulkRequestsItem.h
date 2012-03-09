@@ -21,6 +21,9 @@
 @property(readonly) BOOL supportsDelete;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)supportedItems;
 - (id)maxSizeItem;
 - (id)maxResourcesItem;
@@ -35,8 +38,5 @@
 - (id)copyParseRules;
 - (id)dictRepresentation;
 - (int)maxSize;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

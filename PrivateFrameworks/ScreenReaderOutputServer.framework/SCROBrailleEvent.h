@@ -9,14 +9,14 @@
     id _data3;
 }
 
-+ (id)eventWithType:(int)arg1 data:(id)arg2;
 + (id)eventWithType:(int)arg1 data:(id)arg2 data2:(id)arg3 data3:(id)arg4;
++ (id)eventWithType:(int)arg1 data:(id)arg2;
 
+- (void)dealloc;
+- (int)type;
+- (id)data;
 - (id)initWithType:(int)arg1 data:(id)arg2 data2:(id)arg3 data3:(id)arg4;
 - (id)data3;
 - (id)data2;
-- (id)data;
-- (int)type;
-- (void)dealloc;
 
 @end

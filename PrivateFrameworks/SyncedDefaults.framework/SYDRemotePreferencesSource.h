@@ -33,9 +33,6 @@
 + (void)noteAccountChanges:(id)arg1;
 + (void)resetAllApplicationsWithCompletionHandler:(id)arg1;
 
-- (unsigned char)synchronize;
-- (void)finalize;
-- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (long)maximumTotalDataLength;
 - (long)maximumDataLengthPerKey;
 - (long)maximumKeyLength;
@@ -49,15 +46,18 @@
 - (void)scheduleRemoteSynchronization;
 - (void)discardExternalChangesForChangeCount:(long long)arg1;
 - (id)initWithApplicationID:(struct __CFString { }*)arg1 shared:(BOOL)arg2;
-- (long)generationCount;
+- (void)dealloc;
 - (struct __CFDictionary { }*)copyDictionary;
 - (struct __CFArray { }*)copyKeyList;
 - (void*)getValueForKey:(struct __CFString { }*)arg1;
+- (long)generationCount;
+- (void)finalize;
+- (unsigned char)synchronize;
+- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (struct __CFDictionary { }*)copyConfigurationDictionary;
 - (long)configurationValueForKey:(struct __CFString { }*)arg1;
 - (void)_cachePlistFromDisk;
 - (void)_storeConfiguration:(struct __CFDictionary { }*)arg1;
-- (void)dealloc;
 - (unsigned char)isInitialSync;
 
 @end

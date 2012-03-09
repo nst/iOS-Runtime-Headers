@@ -33,13 +33,8 @@
 
 - (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2 ignoreThrottleTimer:(BOOL)arg3;
 - (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2;
-- (BOOL)performServerContactsSearch:(id)arg1 forAccountWithID:(id)arg2;
-- (void)cancelServerContactsSearch:(id)arg1;
-- (void)requestDaemonStopMonitoringAgents;
-- (void)requestDaemonStartMonitoringAgents;
-- (BOOL)registerForInterrogationWithBlock:(id)arg1;
-- (void)removeStoresForAccountWithID:(id)arg1;
-- (void)requestDaemonShutdown;
+- (id)init;
+- (void)dealloc;
 - (id)statusReports;
 - (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataclass:(int)arg2;
 - (BOOL)updateContentsOfFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 andDataclass:(int)arg3;
@@ -65,16 +60,22 @@
 - (void)_serverDiedWithReason:(void*)arg1;
 - (void)_reallyRegisterForInterrogation;
 - (void)_tearDownInFlightObjects;
-- (struct _xpc_connection_s { }*)_connection;
-- (id)_init;
+- (void)handleURL:(id)arg1;
+- (BOOL)registerForInterrogationWithBlock:(id)arg1;
+- (void)removeStoresForAccountWithID:(id)arg1;
+- (void)requestDaemonShutdown;
 - (id)beginDownloadingAttachmentWithUUID:(id)arg1 accountID:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 progressBlock:(id)arg4 completionBlock:(id)arg5;
 - (void)cancelDownloadingAttachmentWithDownloadID:(id)arg1 error:(id)arg2;
-- (id)init;
-- (void)dealloc;
+- (BOOL)performServerContactsSearch:(id)arg1 forAccountWithID:(id)arg2;
+- (void)cancelServerContactsSearch:(id)arg1;
+- (struct _xpc_connection_s { }*)_connection;
+- (id)_init;
 - (void*)_createReplyToRequest:(void*)arg1 withProperties:(id)arg2;
 - (void)_dispatchMessage:(void*)arg1;
 - (id)defaultContainerIdentifierForAccountID:(id)arg1 andDataclass:(int)arg2;
 - (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataclass:(int)arg2 isUserRequested:(BOOL)arg3;
+- (void)requestDaemonStopMonitoringAgents;
+- (void)requestDaemonStartMonitoringAgents;
 - (BOOL)requestPolicyUpdateForAccountID:(id)arg1;
 - (void)reportFolderItemsSyncSuccess:(BOOL)arg1 forFolderWithID:(id)arg2 andAccountWithID:(id)arg3;
 - (BOOL)processFolderChange:(id)arg1 forAccountWithID:(id)arg2;
@@ -86,6 +87,5 @@
 - (BOOL)watchFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (BOOL)resumeWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (void)_foldersUpdated:(void*)arg1;
-- (void)handleURL:(id)arg1;
 
 @end

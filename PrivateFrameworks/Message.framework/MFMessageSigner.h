@@ -23,9 +23,9 @@
 - (void)removeTrustException;
 - (BOOL)hasTrustException;
 - (id)certificates;
-- (id)sender;
-- (id)error;
 - (int)action;
 - (void)dealloc;
+- (id)error;
+- (id)sender;
 
 @end

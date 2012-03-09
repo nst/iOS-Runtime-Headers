@@ -12,8 +12,8 @@
 @property(retain) id cellContext;
 
 
-- (void)reset;
 - (void)dealloc;
+- (void)reset;
 - (id)initWithClass:(Class)arg1 tableHeight:(float)arg2;
 - (void)setCellContext:(id)arg1;
 - (id)cellContext;

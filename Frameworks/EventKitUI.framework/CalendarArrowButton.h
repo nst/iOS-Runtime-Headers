@@ -9,10 +9,7 @@
 }
 
 
-- (void)setDelegate:(id)arg1;
-- (void)_buttonDown:(id)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)_automationID;
+- (void)dealloc;
 - (id)initWithArrowType:(int)arg1;
 - (int)arrowType;
 - (void)_scheduleDownRepeat;
@@ -20,6 +17,9 @@
 - (void)_performDownRepeat;
 - (void)_repeatCancelled;
 - (void)_touchExitOrOutside;
-- (void)dealloc;
+- (void)_buttonDown:(id)arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)_automationID;
+- (void)setDelegate:(id)arg1;
 
 @end

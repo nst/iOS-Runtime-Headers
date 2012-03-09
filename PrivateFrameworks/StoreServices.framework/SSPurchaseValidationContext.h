@@ -27,6 +27,11 @@
 @property(copy) NSString * systemVersion;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)systemVersion;
+- (id)systemName;
+- (long long)diskSpaceAvailable;
 - (void)setSystemName:(id)arg1;
 - (void)setSizeLimitBlock:(id)arg1;
 - (void)setDiskSpaceAvailable:(long long)arg1;
@@ -37,10 +42,5 @@
 - (id)_supportedDeviceForOffer:(id)arg1;
 - (id)sizeLimitBlock;
 - (void)setSystemVersion:(id)arg1;
-- (id)systemVersion;
-- (id)systemName;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (long long)diskSpaceAvailable;
 
 @end

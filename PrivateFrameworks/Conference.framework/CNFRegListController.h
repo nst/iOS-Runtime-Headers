@@ -21,26 +21,13 @@
 }
 
 @property(readonly) int currentAppearanceStyle;
+@property(readonly) BOOL appeared;
 @property(retain) CNFRegController * regController;
 @property BOOL shouldRerootPreferences;
 @property BOOL showingChildController;
 @property(copy) id appearBlock;
 
 
-- (void)setSpecifier:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (void)applicationDidResume;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)_updateTitle;
 - (void)dealloc;
 - (BOOL)shouldSelectResponderOnAppearance;
 - (void)changePasswordControllerDidCancel:(id)arg1;
@@ -66,6 +53,7 @@
 - (BOOL)_showWiFiAlertIfNecessary;
 - (void)setShowingChildController:(BOOL)arg1;
 - (void)setAppearBlock:(id)arg1;
+- (BOOL)appeared;
 - (id)initWithRegController:(id)arg1;
 - (void)setRegController:(id)arg1;
 - (id)specifierList;
@@ -75,5 +63,19 @@
 - (void)_setFieldsEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)logName;
 - (id)regController;
+- (void)setSpecifier:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (void)applicationDidResume;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)_updateTitle;
 
 @end

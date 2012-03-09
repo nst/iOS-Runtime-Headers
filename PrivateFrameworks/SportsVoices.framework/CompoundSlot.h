@@ -12,11 +12,11 @@
 
 
 - (BOOL)matches:(id)arg1;
-- (id)initWithArray:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)slots;
 - (id)reversed;
 - (id)initFromPlist:(id)arg1;
+- (id)initWithArray:(id)arg1;
 
 @end

@@ -5,17 +5,17 @@
 @interface __NSPlaceholderFileSecurity : NSFileSecurity <NSCopying, NSCoding> {
 }
 
-+ (void)initialize;
 + (id)immutablePlaceholder;
++ (void)initialize;
 
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFileSec:(struct _filesec { }*)arg1;
 - (unsigned int)retainCount;
 - (id)retain;
+- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (oneway void)release;
 - (void)dealloc;
+- (id)initWithFileSec:(struct _filesec { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

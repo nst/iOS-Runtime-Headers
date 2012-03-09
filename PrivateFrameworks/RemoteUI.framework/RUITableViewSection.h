@@ -13,13 +13,14 @@
 @property(readonly) NSMutableArray * rows;
 
 
-- (Class)_customHeaderClass;
-- (BOOL)hasCustomHeader;
-- (void)populatePostbackDictionary:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setHeaderView:(id)arg1;
 - (id)headerView;
 - (id)rows;
-- (id)init;
-- (void)dealloc;
+- (void)setImage:(id)arg1;
+- (Class)_customHeaderClass;
+- (BOOL)hasCustomHeader;
+- (void)populatePostbackDictionary:(id)arg1;
 
 @end

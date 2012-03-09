@@ -17,14 +17,14 @@
 @property(retain) NSURL * URL;
 
 
-- (void)setResponseTime:(double)arg1;
-- (double)responseTime;
+- (void)dealloc;
 - (void)setRequestTime:(double)arg1;
 - (double)startTime;
 - (void)setURL:(id)arg1;
 - (double)requestTime;
 - (id)URL;
 - (void)setStartTime:(double)arg1;
-- (void)dealloc;
+- (void)setResponseTime:(double)arg1;
+- (double)responseTime;
 
 @end

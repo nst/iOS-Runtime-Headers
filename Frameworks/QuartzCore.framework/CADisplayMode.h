@@ -17,10 +17,6 @@
 
 + (id)_displayModeWithMode:(int)arg1 display:(id)arg2;
 
-- (unsigned long)height;
-- (id)_display;
-- (float)pixelAspectRatio;
-- (unsigned long)width;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
@@ -28,5 +24,9 @@
 - (void)_setWidth:(unsigned long)arg1 height:(unsigned long)arg2;
 - (int)_mode;
 - (id)_initWithMode:(int)arg1 display:(id)arg2;
+- (unsigned long)height;
+- (id)_display;
+- (float)pixelAspectRatio;
+- (unsigned long)width;
 
 @end

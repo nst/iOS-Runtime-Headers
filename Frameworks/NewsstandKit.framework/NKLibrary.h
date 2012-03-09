@@ -23,14 +23,20 @@
 @property(readonly) NSArray * downloadingAssets;
 @property(retain) NKIssue * currentlyReadingIssue;
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedLibrary;
 + (id)sharedLibraryCreatingIfNecessary:(BOOL)arg1;
 + (BOOL)_isNewsstandApp;
 + (id)sharedLibraryIfExists;
 + (void)load;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)_load;
+- (unsigned int)retainCount;
+- (id)description;
+- (id)retain;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
 - (void)_issueChanged:(id)arg1;
 - (BOOL)_canPerformBackgroundDownloads;
 - (id)_fileManager;
@@ -55,12 +61,6 @@
 - (void)_applicationWillTerminate:(id)arg1;
 - (void)_didFinishLaunchingWasCalled;
 - (void)_applicationDidEnterBackground:(id)arg1;
-- (unsigned int)retainCount;
-- (id)description;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (id)init;
-- (oneway void)release;
+- (void)_load;
 
 @end

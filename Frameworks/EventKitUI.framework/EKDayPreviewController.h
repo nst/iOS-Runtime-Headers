@@ -12,6 +12,8 @@
 @property <EKEditItemViewControllerDelegate> * editDelegate;
 
 
+- (void)dealloc;
+- (id)eventsForStartDate:(id)arg1 endDate:(id)arg2;
 - (id)event;
 - (void)setEvent:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
@@ -19,8 +21,6 @@
 - (void)viewDidLoad;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)eventsForStartDate:(id)arg1 endDate:(id)arg2;
 - (void)_updateTitle;
-- (void)dealloc;
 
 @end

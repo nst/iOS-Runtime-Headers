@@ -16,8 +16,9 @@
 
 
 - (id)messageBody;
-- (void)setVersion:(id)arg1;
-- (id)version;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setDeliveryStatusContext:(id)arg1;
 - (id)deliveryStatusContext;
 - (void)setWantsDeliveryStatus:(id)arg1;
@@ -26,8 +27,7 @@
 - (BOOL)wantsUserAgentInHeaders;
 - (BOOL)wantsAPSRetries;
 - (BOOL)wantsHTTPHeaders;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)version;
+- (void)setVersion:(id)arg1;
 
 @end

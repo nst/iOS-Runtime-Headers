@@ -17,15 +17,15 @@
 @property(copy) EKCalendarDate * endDate;
 
 
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setEndDate:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
 - (id)startDate;
-- (void)setView:(id)arg1;
-- (id)view;
 - (id)initWithEventIndex:(unsigned int)arg1;
 - (unsigned int)eventIndex;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
+- (void)setView:(id)arg1;
+- (id)view;
 
 @end

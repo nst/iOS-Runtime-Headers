@@ -15,12 +15,12 @@
 
 - (id)emailAddress;
 - (id)messageBody;
-- (void)setEmailAddress:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setOnlyCheck:(id)arg1;
 - (id)onlyCheck;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)bagKey;
+- (void)setEmailAddress:(id)arg1;
 
 @end

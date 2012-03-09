@@ -17,15 +17,15 @@
 @property(readonly) NSString * dialogKind;
 
 
-- (id)dialogKind;
+- (id)init;
+- (void)dealloc;
 - (id)message;
 - (id)defaultButton;
 - (id)buttons;
 - (id)valueForProperty:(id)arg1;
 - (id)title;
-- (id)init;
-- (void)dealloc;
 - (id)dialogDictionary;
 - (id)initWithDialogDictionary:(id)arg1;
+- (id)dialogKind;
 
 @end

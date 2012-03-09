@@ -18,6 +18,10 @@
 + (id)resourceTypeToExtension:(int)arg1;
 + (id)hashKeyFor:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
+- (void)setPageCount:(unsigned int)arg1;
+- (unsigned int)pageCount;
 - (id)addResource:(id)arg1 withName:(id)arg2;
 - (id)addResourceForDrawable:(id)arg1 withType:(int)arg2 drawable:(id)arg3;
 - (id)cachedPathForDrawable:(id)arg1;
@@ -44,9 +48,5 @@
 - (void)setIsThumbnail:(BOOL)arg1;
 - (id)newResourceWithName:(id)arg1;
 - (id)newResourceWithType:(int)arg1;
-- (void)setPageCount:(unsigned int)arg1;
-- (unsigned int)pageCount;
-- (id)init;
-- (void)dealloc;
 
 @end

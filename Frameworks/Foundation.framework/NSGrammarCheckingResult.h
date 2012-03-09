@@ -17,10 +17,10 @@
 - (id)grammarDetails;
 - (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (unsigned long long)resultType;
+- (void)dealloc;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
+- (unsigned long long)resultType;
 
 @end

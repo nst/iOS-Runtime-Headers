@@ -43,28 +43,20 @@
 @property(retain) MFPopoverController * popoverController;
 @property(retain) UIActionSheet * actionSheet;
 
-+ (void)initialize;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedInstance;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
 
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)autorelease;
+- (id)init;
+- (void)dealloc;
 - (id)actionSheet;
 - (void)setActionSheet:(id)arg1;
 - (id)currentView;
-- (id)popover;
-- (void)setPopoverController:(id)arg1;
-- (id)popoverController;
-- (void)didRotate;
-- (void)willRotate;
-- (id)popoverView;
-- (void)forwardInvocation:(id)arg1;
-- (void)dismissPopoverAnimated:(BOOL)arg1;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
-- (void)didPresentActionSheet:(id)arg1;
-- (void)willPresentActionSheet:(id)arg1;
-- (void)actionSheetCancel:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)methodSignatureForSelector:(SEL)arg1;
 - (void)presentPopover:(id)arg1 fromView:(id)arg2 animated:(BOOL)arg3;
 - (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 withDelegate:(id)arg3 animated:(BOOL)arg4;
 - (void)dismissPopoverAfterDelay:(double)arg1 animated:(BOOL)arg2;
@@ -102,12 +94,20 @@
 - (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 animated:(BOOL)arg3;
 - (void)presentPopover:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(unsigned int)arg4 allowInteractionWithViews:(id)arg5 withDelegate:(id)arg6 animated:(BOOL)arg7;
 - (BOOL)popoverBeingHiddenDuringRotation;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)autorelease;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
+- (void)setPopoverController:(id)arg1;
+- (id)popoverController;
+- (void)didRotate;
+- (void)willRotate;
+- (id)popoverView;
+- (void)forwardInvocation:(id)arg1;
+- (void)dismissPopoverAnimated:(BOOL)arg1;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (void)didPresentActionSheet:(id)arg1;
+- (void)willPresentActionSheet:(id)arg1;
+- (void)actionSheetCancel:(id)arg1;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (id)popover;
 
 @end

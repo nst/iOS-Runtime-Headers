@@ -15,17 +15,17 @@
 @property <MFMailPopoverManagerDelegate> * mailDelegate;
 
 
+- (void)dealloc;
+- (id)mailPopoverManager;
+- (void)setMailPopoverManager:(id)arg1;
+- (void)setMailDelegate:(id)arg1;
+- (id)mailDelegate;
+- (void)setIsRotating:(BOOL)arg1;
 - (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 - (id)initWithContentViewController:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
 - (void)dismissPopoverAnimated:(BOOL)arg1;
 - (BOOL)isRotating;
-- (id)mailPopoverManager;
-- (void)setMailPopoverManager:(id)arg1;
-- (void)setMailDelegate:(id)arg1;
-- (id)mailDelegate;
-- (void)setIsRotating:(BOOL)arg1;
-- (void)dealloc;
 
 @end

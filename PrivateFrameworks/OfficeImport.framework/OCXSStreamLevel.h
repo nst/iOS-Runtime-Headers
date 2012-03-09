@@ -11,9 +11,9 @@
 @property char * name;
 
 
+- (void)setName:(const char *)arg1;
+- (const char *)name;
 - (int)depth;
 - (void)setDepth:(int)arg1;
-- (const char *)name;
-- (void)setName:(const char *)arg1;
 
 @end

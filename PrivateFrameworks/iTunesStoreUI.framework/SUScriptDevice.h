@@ -16,6 +16,8 @@
 @property(readonly) NSString * capabilityNameEmail;
 @property(readonly) NSString * capabilityNameExplicitMedia;
 @property(readonly) NSString * capabilityNameHDVideo;
+@property(readonly) NSString * capabilityNameHDVideo1080p;
+@property(readonly) NSString * capabilityNameHDVideo720p;
 @property(readonly) NSString * capabilityNamePodcasts;
 @property(readonly) NSString * capabilityNameWiFi;
 @property(readonly) int freeSpaceEffortLevelDoNothing;
@@ -23,7 +25,11 @@
 @property(readonly) int freeSpaceEffortLevelManualSpaceManagement;
 @property(readonly) int freeSpaceEffortLevelPromptUser;
 @property(readonly) NSString * freeSpaceOptionEffortLevel;
+@property(readonly) int hardwareTypeIPadJ1;
+@property(readonly) int hardwareTypeIPadJ2;
+@property(readonly) int hardwareTypeIPadJ2a;
 @property(readonly) int hardwareTypeIPadK93;
+@property(readonly) int hardwareTypeIPadK93a;
 @property(readonly) int hardwareTypeIPadK94;
 @property(readonly) int hardwareTypeIPadK95;
 @property(readonly) int hardwareTypeIPhoneM68;
@@ -42,6 +48,12 @@
 @property(readonly) int networkTypeNone;
 @property(readonly) int networkType2G;
 @property(readonly) int networkType3G;
+@property(readonly) int networkType4G;
+@property(readonly) int networkType5G;
+@property(readonly) int networkType6G;
+@property(readonly) int networkType7G;
+@property(readonly) int networkType8G;
+@property(readonly) int networkType9G;
 @property(readonly) int networkTypeWiFi;
 @property(readonly) NSString * orientationStringLandscapeLeft;
 @property(readonly) NSString * orientationStringLandscapeRight;
@@ -71,13 +83,13 @@
 @property(readonly) NSString * UTIMovie;
 @property(readonly) NSString * UTIText;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
 - (id)init;
 - (void)dealloc;
+- (id)attributeKeys;
 - (id)UTIText;
 - (id)UTIMovie;
 - (id)UTIImage;
@@ -116,6 +128,8 @@
 - (int)boolValueForRestriction:(id)arg1;
 - (id)applicationsForUTI:(id)arg1;
 - (id)capabilityNameWiFi;
+- (id)capabilityNameHDVideo720p;
+- (id)capabilityNameHDVideo1080p;
 - (id)capabilityNameHDVideo;
 - (int)hardwareTypeUnknown;
 - (int)hardwareTypeWildcatK48;
@@ -132,11 +146,21 @@
 - (int)hardwareTypeIPhoneM68;
 - (int)hardwareTypeIPadK95;
 - (int)hardwareTypeIPadK94;
+- (int)hardwareTypeIPadK93a;
 - (int)hardwareTypeIPadK93;
+- (int)hardwareTypeIPadJ2a;
+- (int)hardwareTypeIPadJ2;
+- (int)hardwareTypeIPadJ1;
 - (int)networkTypeNone;
 - (int)networkTypeWiFi;
-- (int)networkType2G;
+- (int)networkType9G;
+- (int)networkType8G;
+- (int)networkType7G;
+- (int)networkType6G;
+- (int)networkType5G;
+- (int)networkType4G;
 - (int)networkType3G;
+- (int)networkType2G;
 - (id)restrictionTypeTelevision;
 - (id)restrictionTypeMovies;
 - (id)restrictionTypeApplications;

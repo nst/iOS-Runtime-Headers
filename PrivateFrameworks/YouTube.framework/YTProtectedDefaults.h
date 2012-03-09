@@ -12,12 +12,12 @@
 
 + (id)sharedInstance;
 
-- (void)_protectedDataAvailable;
-- (void)_protectedDataUnvailable;
-- (void)removeObjectForKey:(id)arg1;
-- (BOOL)synchronize;
 - (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
+- (BOOL)synchronize;
+- (void)removeObjectForKey:(id)arg1;
+- (void)_protectedDataAvailable;
+- (void)_protectedDataUnvailable;
 
 @end

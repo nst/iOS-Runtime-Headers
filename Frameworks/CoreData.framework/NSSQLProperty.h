@@ -12,6 +12,10 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)name;
 - (void)setPropertyDescription:(id)arg1;
 - (BOOL)isForeignKey;
 - (BOOL)isForeignEntityKey;
@@ -35,9 +39,5 @@
 - (BOOL)isAttribute;
 - (BOOL)isToMany;
 - (id)entity;
-- (id)name;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

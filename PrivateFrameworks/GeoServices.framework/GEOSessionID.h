@@ -11,14 +11,14 @@
 @property unsigned long long high;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setHigh:(unsigned long long)arg1;
 - (void)setLow:(unsigned long long)arg1;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (unsigned long long)high;
 - (unsigned long long)low;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

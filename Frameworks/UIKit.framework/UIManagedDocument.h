@@ -27,6 +27,9 @@
 + (BOOL)isPersistentStoreSynchronizedViaUbiquitousContentWithOptions:(id)arg1;
 + (void)initialize;
 
+- (id)managedObjectContext;
+- (id)managedObjectModel;
+- (void)dealloc;
 - (void)setModelConfiguration:(id)arg1;
 - (void)setPersistentStoreOptions:(id)arg1;
 - (id)additionalContentForURL:(id)arg1 error:(id*)arg2;
@@ -46,8 +49,5 @@
 - (id)contentsForType:(id)arg1 error:(id*)arg2;
 - (BOOL)writeContents:(id)arg1 toURL:(id)arg2 forSaveOperation:(int)arg3 originalContentsURL:(id)arg4 error:(id*)arg5;
 - (BOOL)readFromURL:(id)arg1 error:(id*)arg2;
-- (id)managedObjectContext;
-- (id)managedObjectModel;
-- (void)dealloc;
 
 @end

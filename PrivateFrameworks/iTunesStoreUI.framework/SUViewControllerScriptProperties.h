@@ -35,6 +35,8 @@
 @property(retain) UIColor * topExtensionColor;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setInputViewObeysDOMFocus:(BOOL)arg1;
 - (BOOL)inputViewObeysDOMFocus;
 - (BOOL)isDoubleTapEnabled;
@@ -43,8 +45,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setEmbedded:(BOOL)arg1;
 - (BOOL)shouldShowFormAccessory;
 - (BOOL)shouldLoadProgressively;

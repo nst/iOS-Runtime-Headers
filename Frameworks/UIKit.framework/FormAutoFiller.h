@@ -28,6 +28,8 @@
 + (BOOL)isContinuationField:(id)arg1 inFrame:(id)arg2 form:(id)arg3;
 + (id)abMatchInFrame:(id)arg1 form:(id)arg2 fieldName:(id)arg3;
 
+- (id)init;
+- (void)dealloc;
 - (int)_reflectAutoFillMatch:(id)arg1 inControls:(id)arg2 currIndex:(int)arg3 fieldName:(id)arg4;
 - (int)_itemInSelectElement:(id)arg1 forMatch:(id)arg2;
 - (int)_reflectMultiFieldMatch:(id)arg1 inControls:(id)arg2 currIndex:(unsigned int)arg3 fieldName:(id)arg4 isPhoneNumber:(BOOL)arg5;
@@ -45,7 +47,5 @@
 - (int)formType;
 - (id)passwordElement;
 - (id)usernameElement;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -18,6 +18,7 @@
 @property(retain) NSArray * transitionKeys;
 
 
+- (void)dealloc;
 - (void)viewDidUnload;
 - (void)loadView;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
@@ -33,6 +34,5 @@
 - (void)setTransitionKeys:(id)arg1 alternateLocalizations:(id)arg2;
 - (void)setSelectedTransition:(id)arg1;
 - (id)selectedTransition;
-- (void)dealloc;
 
 @end

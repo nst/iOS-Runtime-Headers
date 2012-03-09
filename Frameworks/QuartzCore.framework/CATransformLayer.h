@@ -6,7 +6,7 @@
 }
 
 
-- (id)initWithLayer:(id)arg1;
 - (id)init;
+- (id)initWithLayer:(id)arg1;
 
 @end

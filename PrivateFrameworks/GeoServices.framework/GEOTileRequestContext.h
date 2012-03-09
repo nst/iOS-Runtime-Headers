@@ -15,12 +15,12 @@
 @property(retain) GEOTileRequester * tileRequester;
 
 
+- (void)dealloc;
 - (id)tileRequester;
 - (void)setTileRequester:(id)arg1;
 - (void)setNetworkList:(id)arg1;
 - (void)setFullList:(id)arg1;
 - (id)networkList;
 - (id)fullList;
-- (void)dealloc;
 
 @end

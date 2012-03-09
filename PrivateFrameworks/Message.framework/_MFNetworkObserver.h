@@ -17,7 +17,7 @@
 
 
 - (id)initWithBlock:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
-- (void)execute;
 - (void)dealloc;
+- (void)execute;
 
 @end

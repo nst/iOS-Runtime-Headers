@@ -14,17 +14,18 @@
 @property(copy) NSString * name;
 @property(copy) NSString * type;
 
++ (id)multiPartWithName:(id)arg1 payload:(id)arg2 type:(id)arg3;
 + (id)multipartBoundary;
 
-- (id)type;
-- (id)name;
-- (void)setType:(id)arg1;
-- (id)payload;
-- (void)setPayload:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)dealloc;
+- (id)payload;
+- (void)setPayload:(id)arg1;
 - (id)formPartData;
 - (id)imagePartData;
 - (id)partData;
+- (id)type;
+- (id)name;
+- (void)setType:(id)arg1;
 
 @end

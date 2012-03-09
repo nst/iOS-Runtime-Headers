@@ -17,11 +17,11 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (id)isDeleted;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)isDeleted;
 - (id)originalEvent;
 - (void)_loadAttributesFromCalEvent:(void*)arg1 withKnownExceptionDate:(id)arg2 forAccount:(id)arg3;
 - (id)_transformedExceptionStartDateForActiveSync:(id)arg1;

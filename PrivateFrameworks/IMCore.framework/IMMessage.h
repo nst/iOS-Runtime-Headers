@@ -64,7 +64,11 @@
 
 - (long long)messageID;
 - (id)subject;
-- (BOOL)isFinished;
+- (BOOL)finished;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setIsInvitationMessage:(BOOL)arg1;
 - (void)_updateError:(id)arg1;
 - (void)_updateFlags:(unsigned long long)arg1;
@@ -89,13 +93,8 @@
 - (id)initWithSender:(id)arg1 time:(id)arg2 text:(id)arg3 fileTransferGUIDs:(id)arg4 flags:(unsigned long long)arg5 error:(id)arg6 guid:(id)arg7 subject:(id)arg8;
 - (id)_fzMessage;
 - (BOOL)isSystemMessage;
-- (id)sender;
-- (int)compare:(id)arg1;
-- (id)time;
-- (unsigned long long)flags;
-- (BOOL)isDelayed;
-- (BOOL)isEmpty;
-- (id)text;
+- (BOOL)isFinished;
+- (id)error;
 - (BOOL)hasDataDetectorResults;
 - (BOOL)hasInlineAttachments;
 - (int)compare:(id)arg1 comparisonType:(int)arg2;
@@ -111,11 +110,12 @@
 - (BOOL)isFromMe;
 - (BOOL)isRead;
 - (id)guid;
-- (id)error;
-- (BOOL)finished;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)sender;
+- (int)compare:(id)arg1;
+- (id)time;
+- (unsigned long long)flags;
+- (BOOL)isDelayed;
+- (BOOL)isEmpty;
+- (id)text;
 
 @end

@@ -17,7 +17,7 @@
 @property(retain) NSURL * redirectURL;
 
 
-- (void)run;
+- (void)dealloc;
 - (BOOL)_handleSelectedButton:(id)arg1;
 - (BOOL)_copyAccountIdentifier:(id*)arg1 returningError:(id*)arg2;
 - (BOOL)_shouldAuthenticateForButton:(id)arg1;
@@ -27,7 +27,7 @@
 - (void)setAuthenticatedAccountDSID:(id)arg1;
 - (id)_copyAuthenticationContext;
 - (void)setRedirectURL:(id)arg1;
-- (void)dealloc;
+- (void)run;
 - (id)dialog;
 - (id)redirectURL;
 - (id)authenticatedAccountDSID;

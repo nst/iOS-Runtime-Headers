@@ -8,9 +8,10 @@
     NSArray *_servicePrecedence;
 }
 
-+ (id)sharedPreferredServiceManager;
 + (id)alloc;
++ (id)sharedPreferredServiceManager;
 
+- (void)dealloc;
 - (void)refreshAvailabilityForAddressStrings:(id)arg1;
 - (id)validServicesForMFComposeRecipients:(id)arg1 checkWithServer:(BOOL)arg2;
 - (id)validServicesForEntities:(id)arg1 checkWithServer:(BOOL)arg2;
@@ -37,6 +38,5 @@
 - (id)preferredServiceForMFComposeRecipients:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 canSend:(BOOL*)arg4 error:(id*)arg5;
 - (id)preferredServiceForAggregateConversation:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 canSend:(BOOL*)arg4 error:(id*)arg5;
 - (void)refreshAvailabilityForMFComposeRecipients:(id)arg1;
-- (void)dealloc;
 
 @end

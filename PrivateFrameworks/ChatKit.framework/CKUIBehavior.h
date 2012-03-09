@@ -45,8 +45,9 @@
 @property(readonly) float entryFieldToSendButtonSpacing;
 @property(readonly) float sendButtonHorizontalPadding;
 @property(readonly) BOOL shouldShowContactPhotos;
-@property(readonly) float contactPhotoSize;
+@property(readonly) struct CGSize { float width; float height; } contactPhotoSize;
 @property(readonly) float contactPhotoBorderThickness;
+@property(readonly) float contactPhotoCornerRadius;
 @property(readonly) float contactPhotoOutsideMargin;
 @property(readonly) float contactPhotoInsideMargin;
 @property(readonly) UIColor * toolbarLabelsTextColor;
@@ -89,6 +90,7 @@
 - (float)maxImageBubbleWidthLandscape;
 - (float)videoBubbleWidth;
 - (float)videoBubbleHeight;
+- (float)contactPhotoCornerRadius;
 - (BOOL)usesPersistentConversationSelection;
 - (BOOL)isSupportedInterfaceOrientation:(int)arg1;
 - (BOOL)selectNewConversationOnDeletion;
@@ -113,7 +115,7 @@
 - (float)editingTransitionAnimationDuration;
 - (float)bubbleMarginTop;
 - (float)bubbleMarginBottom;
-- (float)contactPhotoSize;
+- (struct CGSize { float x1; float x2; })contactPhotoSize;
 - (float)contactPhotoBorderThickness;
 - (float)fadeInBubbleAnimationDuration;
 - (float)throwMessageAnimationDuration;

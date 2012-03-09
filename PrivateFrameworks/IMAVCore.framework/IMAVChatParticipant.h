@@ -127,20 +127,21 @@
 @property(readonly) BOOL isUsingICE;
 
 
-- (id)invitedBy;
-- (unsigned int)cameraType;
-- (void*)videoLayer;
 - (void)_setError:(int)arg1;
-- (id)properties;
-- (id)name;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
-- (int)error;
-- (BOOL)isRecording;
 - (void)setProperties:(id)arg1;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (void*)videoLayer;
+- (BOOL)isRecording;
+- (id)invitedBy;
+- (int)error;
+- (id)properties;
+- (id)name;
+- (void)setState:(unsigned int)arg1;
+- (unsigned int)state;
+- (unsigned int)cameraType;
+- (void)_enqueueOperation:(id)arg1;
 - (void)setVideoBackLayer:(void*)arg1;
 - (void*)videoBackLayer;
 - (void)setVideoLayer:(void*)arg1;
@@ -153,7 +154,6 @@
 - (void)sendRelayProposal;
 - (void)_connectTimeout:(id)arg1;
 - (void)resetWaitingToConnectTimer;
-- (void)_enqueueOperation:(id)arg1;
 - (void)_setRemoteLandscapeContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_remoteLandscapeContentRect;
 - (void)_setRemotePortraitContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -180,7 +180,6 @@
 - (id)_preemptiveRelayInitate;
 - (void)setARDRole:(int)arg1;
 - (void)_setChatError:(int)arg1;
-- (unsigned int)cameraOrientation;
 - (void)setRecording:(BOOL)arg1;
 - (void)setNetworkStalled:(BOOL)arg1;
 - (BOOL)isNetworkStalled;
@@ -206,7 +205,6 @@
 - (void)_setInviteDelivered:(BOOL)arg1;
 - (BOOL)_inviteDelivered;
 - (id)_initAs:(id)arg1 invitedBy:(id)arg2 sendingAudio:(BOOL)arg3 sendingVideo:(BOOL)arg4 usingICE:(BOOL)arg5 toChat:(id)arg6 inState:(unsigned int)arg7 withError:(int)arg8 andReason:(unsigned int)arg9 andVCPartyID:(id)arg10 account:(id)arg11;
-- (void)_setCameraOrientation:(unsigned int)arg1;
 - (void)_setCameraType:(unsigned int)arg1;
 - (void)setAVChat:(id)arg1;
 - (BOOL)isAOLInterop;
@@ -246,5 +244,7 @@
 - (BOOL)isUsingICE;
 - (id)getLocalICEData;
 - (id)avChat;
+- (void)_setCameraOrientation:(unsigned int)arg1;
+- (unsigned int)cameraOrientation;
 
 @end

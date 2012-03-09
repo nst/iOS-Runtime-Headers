@@ -32,8 +32,9 @@
 
 
 - (void)setDomain:(int)arg1;
-- (id)summary;
-- (void)setSummary:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 - (int)domain;
 - (void)setURL:(id)arg1;
 - (id)subtitle;
@@ -43,6 +44,8 @@
 - (void)setIdentifier:(unsigned long long)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
+- (id)summary;
+- (void)setSummary:(id)arg1;
 - (id)auxiliarySubtitle;
 - (id)auxiliaryTitle;
 - (id)badge;
@@ -61,8 +64,5 @@
 - (const char *)titleUTF8String;
 - (const char *)resultDisplayIdentifierUTF8String;
 - (int)resultDomain;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 
 @end

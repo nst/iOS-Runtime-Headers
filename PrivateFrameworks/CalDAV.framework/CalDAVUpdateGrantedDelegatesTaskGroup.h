@@ -21,13 +21,13 @@
 @property int state;
 
 
+- (void)dealloc;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
 - (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
 - (void)startTaskGroup;
 - (void)setState:(int)arg1;
 - (int)state;
-- (void)dealloc;
 - (id)initWithAccountInfoProvider:(id)arg1 addWriteURLs:(id)arg2 addReadURLs:(id)arg3 removeURLs:(id)arg4 taskManager:(id)arg5;
 - (void)setAddWriteURLs:(id)arg1;
 - (void)setAddReadURLs:(id)arg1;

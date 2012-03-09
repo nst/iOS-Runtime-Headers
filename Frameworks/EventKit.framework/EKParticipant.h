@@ -17,7 +17,8 @@
 - (id)emailAddress;
 - (void)setExternalID:(id)arg1;
 - (id)externalID;
-- (id)UUID;
+- (void)setName:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void*)ABRecordWithAddressBook:(void*)arg1;
 - (BOOL)isEqualToParticipant:(id)arg1;
 - (int)participantRole;
@@ -28,9 +29,8 @@
 - (int)participantStatus;
 - (id)URL;
 - (id)name;
-- (void)setName:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)displayName;
+- (id)UUID;
 - (id)displayNameWithDecomposedFirstName:(id*)arg1 lastName:(id*)arg2 department:(id*)arg3;
+- (id)displayName;
 
 @end

@@ -12,13 +12,13 @@
 @property(retain) NSString * replacementCohort;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)hasReplacementCohort;
 - (void)setReplacementCohort:(id)arg1;
 - (id)replacementCohort;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

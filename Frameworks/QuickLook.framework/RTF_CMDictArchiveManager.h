@@ -16,6 +16,8 @@
 }
 
 
+- (void)dealloc;
+- (id)name;
 - (id)initWithName:(id)arg1 resourcePathPrefix:(id)arg2;
 - (void)setIsFrameset;
 - (id)resourceUrlProtocol;
@@ -28,7 +30,5 @@
 - (void)pushCssToPath:(id)arg1;
 - (id)copyDictionaryWithSizeInfos:(BOOL)arg1;
 - (id)newResourceWithName:(id)arg1;
-- (id)name;
-- (void)dealloc;
 
 @end

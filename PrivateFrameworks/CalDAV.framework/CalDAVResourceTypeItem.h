@@ -21,15 +21,14 @@
 @property(retain) CoreDAVItemWithNoChildren * calendar;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setSubscribed:(id)arg1;
-- (void)write:(id)arg1;
 - (id)calendar;
 - (void)setCalendar:(id)arg1;
-- (id)notification;
-- (id)description;
-- (void)dealloc;
+- (void)write:(id)arg1;
 - (void)setScheduleInbox:(id)arg1;
 - (void)setScheduleOutbox:(id)arg1;
 - (void)setNotification:(id)arg1;
@@ -38,5 +37,6 @@
 - (id)scheduleOutbox;
 - (id)subscribed;
 - (id)sharedOwner;
+- (id)notification;
 
 @end

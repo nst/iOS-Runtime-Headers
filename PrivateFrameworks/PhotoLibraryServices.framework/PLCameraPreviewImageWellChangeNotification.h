@@ -14,14 +14,14 @@
 
 + (id)notification;
 
-- (id)object;
-- (id)image;
-- (id)name;
-- (id)_init;
-- (id)assetID;
 - (id)userInfo;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)image;
+- (id)object;
+- (id)name;
+- (id)_init;
+- (id)assetID;
 
 @end

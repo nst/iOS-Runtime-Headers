@@ -22,6 +22,18 @@
 + (BOOL)validateCancel:(id)arg1;
 + (BOOL)validateFocus:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
+- (BOOL)isFocus;
+- (id)connectionData;
+- (id)participantID;
+- (int)callID;
+- (void)setCallID:(int)arg1;
+- (id)version;
+- (unsigned int)response;
+- (unsigned int)type;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (int)originalCallID;
 - (id)replyDictionary:(unsigned int)arg1 connectionData:(id)arg2 callID:(int)arg3 focus:(BOOL)arg4;
 - (id)cancelDictionary;
@@ -42,17 +54,5 @@
 - (id)remoteVCPartyID;
 - (id)localVCPartyID;
 - (BOOL)matchesNonce:(int)arg1;
-- (id)version;
-- (unsigned int)response;
-- (unsigned int)type;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isFocus;
-- (id)connectionData;
-- (id)participantID;
-- (int)callID;
-- (void)setCallID:(int)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

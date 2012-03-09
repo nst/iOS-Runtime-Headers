@@ -33,14 +33,7 @@
 + (BOOL)supportsMIMEType:(id)arg1;
 + (id)fileExtensionForMIMEType:(id)arg1;
 
-- (unsigned long long)sizeInBytes;
-- (id)data;
-- (double)duration;
-- (void)setDuration:(double)arg1;
-- (id)filename;
-- (id)dataRepresentation;
-- (id)previewItemURL;
-- (id)mimeType;
+- (void)dealloc;
 - (void)cleanupAfterTranscode;
 - (id)displayFilename;
 - (BOOL)shouldTranscodeForMMS;
@@ -74,7 +67,14 @@
 - (id)dataForMedia;
 - (BOOL)canBeQuickLooked;
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
+- (id)previewItemURL;
+- (id)mimeType;
+- (id)data;
+- (double)duration;
+- (void)setDuration:(double)arg1;
+- (id)dataRepresentation;
+- (unsigned long long)sizeInBytes;
 - (int)mediaType;
-- (void)dealloc;
+- (id)filename;
 
 @end

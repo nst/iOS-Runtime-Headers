@@ -22,24 +22,24 @@
 @property(retain) NSProtocolChecker * protocolChecker;
 
 
+- (void)setTarget:(id)arg1;
+- (SEL)action;
+- (id)target;
+- (void)dealloc;
+- (void)setRemoteProtocol:(id)arg1;
 - (void)setProtocolChecker:(id)arg1;
 - (void)flushSendQueue;
 - (id)remoteProtocol;
 - (BOOL)forwardInBackground;
 - (void)setForwardInBackground:(BOOL)arg1;
 - (id)protocolChecker;
-- (void)setRemoteProtocol:(id)arg1;
+- (struct dispatch_queue_s { }*)queue;
 - (id)initWithIdentifier:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
 - (void)setAction:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)setTarget:(id)arg1;
-- (SEL)action;
-- (id)target;
-- (void)dealloc;
-- (struct dispatch_queue_s { }*)queue;
 - (void)setQueue:(struct dispatch_queue_s { }*)arg1;
 
 @end

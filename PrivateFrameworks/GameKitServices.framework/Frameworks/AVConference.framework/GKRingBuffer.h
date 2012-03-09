@@ -9,12 +9,12 @@
 }
 
 
+- (id)initWithCapacity:(unsigned long)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)store:(short*)arg1 numSamples:(unsigned long)arg2 timestamp:(unsigned long)arg3;
 - (long)needsNewNumSamples:(unsigned long)arg1 timestamp:(unsigned long)arg2;
 - (long)fetch:(short*)arg1 numSamples:(unsigned long)arg2 timestamp:(unsigned long)arg3;
 - (void)increaseCapacity:(unsigned long)arg1;
-- (id)initWithCapacity:(unsigned long)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -35,7 +35,8 @@
 @property int imageContentMode;
 @property(retain) MPImageCacheRequest * placeholderImageCacheRequest;
 @property(retain) UIImage * unmodifiedPlaceholderImage;
-@property(readonly) UIImage * placeholderImage;
+@property(retain) UIImage * placeholderImage;
+@property(readonly) BOOL hasPlaceholderImage;
 @property(retain) MPMediaQuery * query;
 @property int titleStyle;
 @property(retain) UIColor * titleColor;
@@ -48,16 +49,23 @@
 @property(retain) IUMediaDataSource * dataSource;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)setQuery:(id)arg1;
 - (id)imageCache;
 - (void)setImageCache:(id)arg1;
-- (void)setQuery:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (BOOL)hasPlaceholderImage;
 - (id)titleColor;
 - (void)setTitleColor:(id)arg1;
 - (id)query;
 - (id)delegate;
 - (id)dataSource;
+- (void)setDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
+- (id)subtitleColor;
+- (void)setSubtitleColor:(id)arg1;
+- (void)setPlaceholderImage:(id)arg1;
+- (id)placeholderImage;
 - (void)setUseUnmodifiedThumbnails:(BOOL)arg1;
 - (BOOL)useUnmodifiedThumbnails;
 - (BOOL)useTimedArtwork;
@@ -90,10 +98,5 @@
 - (struct CGSize { float x1; float x2; })_sizeForCountStringOfEntityAtIndex:(unsigned int)arg1 withFont:(id)arg2;
 - (struct CGSize { float x1; float x2; })_sizeForProperty:(int)arg1 ofEntityAtIndex:(unsigned int)arg2 withFont:(id)arg3;
 - (id)_countStringForEntityAtIndex:(unsigned int)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)subtitleColor;
-- (void)setSubtitleColor:(id)arg1;
-- (id)placeholderImage;
 
 @end

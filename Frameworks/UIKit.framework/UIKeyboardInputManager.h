@@ -5,6 +5,11 @@
 @interface UIKeyboardInputManager : NSObject  {
 }
 
++ (id)userDictionaryWordKeyPairsFilePath;
++ (id)keyboardUserDirectory;
++ (id)activeInstance;
++ (void)registerCentroid:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
++ (void)clearAllCentroids;
 + (void)endRegisteringKeyplane;
 + (void)beginRegisteringKeyplaneWithName:(id)arg1;
 + (id)dynamicDictionaryFilePathForInputMode:(id)arg1;
@@ -12,45 +17,7 @@
 + (void)removeAllDynamicDictionaries;
 + (id)sharedInstanceForInputMode:(id)arg1 inHardwareKeyboardMode:(BOOL)arg2;
 + (void)releaseSharedInstance;
-+ (id)userDictionaryWordKeyPairsFilePath;
-+ (id)keyboardUserDirectory;
-+ (id)activeInstance;
-+ (void)registerCentroid:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
-+ (void)clearAllCentroids;
 
-- (void)endRegisteringKeyplane;
-- (void)beginRegisteringKeyplaneWithName:(id)arg1;
-- (BOOL)isSentenceDelimiter:(unsigned short)arg1;
-- (BOOL)shouldSkipCandidateSelectionForPopupVariantString:(id)arg1;
-- (BOOL)canUseGeometryKeyTouch;
-- (unsigned int)maximumNumberOfColumnsForSortingMethod:(id)arg1 interfaceOrientation:(int)arg2 isInline:(BOOL)arg3 reducedWidth:(BOOL)arg4;
-- (void)groupedCandidatesFromCandidates:(id)arg1 usingSortingMethod:(id)arg2 completion:(id)arg3;
-- (id)groupedCandidatesFromCandidates:(id)arg1 usingSortingMethod:(id)arg2;
-- (id)titleForSortingMethod:(id)arg1;
-- (id)sortingMethods;
-- (void)configureKeyboard:(id)arg1 forAutocorrection:(id)arg2;
-- (id)addInputObject:(id)arg1;
-- (id)setInputObject:(id)arg1;
-- (void)configureKeyboard:(id)arg1 forCandidates:(id)arg2;
-- (id)remainingInput;
-- (void)candidateAccepted:(id)arg1;
-- (unsigned int)phraseBoundary;
-- (void)setPhraseBoundary:(unsigned int)arg1;
-- (BOOL)suppressesCandidateDisplay;
-- (id)stringForDoubleKey:(id)arg1;
-- (id)addInput:(id)arg1 flags:(unsigned int)arg2 point:(struct CGPoint { float x1; float x2; })arg3 deletePreceding:(unsigned int*)arg4 deleteFollowing:(unsigned int*)arg5 fromVariantKey:(BOOL)arg6;
-- (BOOL)stringEndsWord:(id)arg1;
-- (BOOL)acceptInputString:(id)arg1;
-- (BOOL)suppliesCompletions;
-- (BOOL)suppressCompletionsForFieldEditor;
-- (void)setUsesCandidateSelection:(BOOL)arg1;
-- (BOOL)shouldExtendPriorWord;
-- (BOOL)supportsSetPhraseBoundary;
-- (BOOL)supportsNumberKeySelection;
-- (BOOL)usesAutoDeleteWord;
-- (void)setLearnsCorrection:(BOOL)arg1;
-- (void)setInSplitKeyboardMode:(BOOL)arg1;
-- (id)searchStringForMarkedText;
 - (void)setKeyboardEventsLagging:(BOOL)arg1;
 - (void)setInHardwareKeyboardMode:(BOOL)arg1;
 - (void)configureInputModeSpecificFeatures:(id)arg1 withLayout:(id)arg2;
@@ -105,6 +72,39 @@
 - (unsigned int)inputIndex;
 - (id)inputString;
 - (void)setInput:(id)arg1;
+- (void)endRegisteringKeyplane;
+- (void)beginRegisteringKeyplaneWithName:(id)arg1;
+- (BOOL)isSentenceDelimiter:(unsigned short)arg1;
+- (BOOL)shouldSkipCandidateSelectionForPopupVariantString:(id)arg1;
+- (BOOL)canUseGeometryKeyTouch;
 - (id)accessibilityLabelForCandidate:(id)arg1;
+- (unsigned int)maximumNumberOfColumnsForSortingMethod:(id)arg1 interfaceOrientation:(int)arg2 isInline:(BOOL)arg3 reducedWidth:(BOOL)arg4;
+- (void)groupedCandidatesFromCandidates:(id)arg1 usingSortingMethod:(id)arg2 completion:(id)arg3;
+- (id)groupedCandidatesFromCandidates:(id)arg1 usingSortingMethod:(id)arg2;
+- (id)titleForSortingMethod:(id)arg1;
+- (id)sortingMethods;
+- (void)configureKeyboard:(id)arg1 forAutocorrection:(id)arg2;
+- (id)addInputObject:(id)arg1;
+- (id)setInputObject:(id)arg1;
+- (void)configureKeyboard:(id)arg1 forCandidates:(id)arg2;
+- (id)remainingInput;
+- (void)candidateAccepted:(id)arg1;
+- (unsigned int)phraseBoundary;
+- (void)setPhraseBoundary:(unsigned int)arg1;
+- (BOOL)suppressesCandidateDisplay;
+- (id)stringForDoubleKey:(id)arg1;
+- (id)addInput:(id)arg1 flags:(unsigned int)arg2 point:(struct CGPoint { float x1; float x2; })arg3 deletePreceding:(unsigned int*)arg4 deleteFollowing:(unsigned int*)arg5 fromVariantKey:(BOOL)arg6;
+- (BOOL)stringEndsWord:(id)arg1;
+- (BOOL)acceptInputString:(id)arg1;
+- (BOOL)suppliesCompletions;
+- (BOOL)suppressCompletionsForFieldEditor;
+- (void)setUsesCandidateSelection:(BOOL)arg1;
+- (BOOL)shouldExtendPriorWord;
+- (BOOL)supportsSetPhraseBoundary;
+- (BOOL)supportsNumberKeySelection;
+- (BOOL)usesAutoDeleteWord;
+- (void)setLearnsCorrection:(BOOL)arg1;
+- (void)setInSplitKeyboardMode:(BOOL)arg1;
+- (id)searchStringForMarkedText;
 
 @end

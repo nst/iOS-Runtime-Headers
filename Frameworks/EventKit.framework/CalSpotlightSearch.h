@@ -29,6 +29,7 @@
 
 + (struct __CFDictionary { }*)newQueryCache;
 
+- (void)dealloc;
 - (void)calculateSearchWindow:(struct CalEventSpotlightContext { boolx1; boolx2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool*x7; bool*x8; struct CalDatabase {} *x9; int (*x10)(); void *x11; int x12; int x13; int x14; struct __CFDictionary {} *x15; double x16; double x17; double x18; struct CalSpotlightMatchedEventContext { int x_19_1_1; char *x_19_1_2; char *x_19_1_3; char *x_19_1_4; double x_19_1_5; double x_19_1_6; int x_19_1_7; int x_19_1_8; char *x_19_1_9; char *x_19_1_10; char *x_19_1_11; int x_19_1_12; struct __CFArray {} *x_19_1_13; int x_19_1_14; } x19; }*)arg1;
 - (void)_deleteSpotlightEventsContext:(struct CalEventSpotlightContext { boolx1; boolx2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool*x7; bool*x8; struct CalDatabase {} *x9; int (*x10)(); void *x11; int x12; int x13; int x14; struct __CFDictionary {} *x15; double x16; double x17; double x18; struct CalSpotlightMatchedEventContext { int x_19_1_1; char *x_19_1_2; char *x_19_1_3; char *x_19_1_4; double x_19_1_5; double x_19_1_6; int x_19_1_7; int x_19_1_8; char *x_19_1_9; char *x_19_1_10; char *x_19_1_11; int x_19_1_12; struct __CFArray {} *x_19_1_13; int x_19_1_14; } x19; }*)arg1;
 - (void)_getSpotlightEvents:(struct CalEventSpotlightContext { boolx1; boolx2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool*x7; bool*x8; struct CalDatabase {} *x9; int (*x10)(); void *x11; int x12; int x13; int x14; struct __CFDictionary {} *x15; double x16; double x17; double x18; struct CalSpotlightMatchedEventContext { int x_19_1_1; char *x_19_1_2; char *x_19_1_3; char *x_19_1_4; double x_19_1_5; double x_19_1_6; int x_19_1_7; int x_19_1_8; char *x_19_1_9; char *x_19_1_10; char *x_19_1_11; int x_19_1_12; struct __CFArray {} *x_19_1_13; int x_19_1_14; } x19; }*)arg1 callback:(id)arg2;
@@ -48,6 +49,5 @@
 - (struct CalParticipantIdsSearchContext { struct __CFArray {} *x1; unsigned int x2; bool*x3; bool*x4; struct CalDatabase {} *x5; }*)_createParticipantIdsSearchContext;
 - (void)stopSearching;
 - (void)startSearching;
-- (void)dealloc;
 
 @end

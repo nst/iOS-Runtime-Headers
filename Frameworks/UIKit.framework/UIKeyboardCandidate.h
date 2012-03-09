@@ -6,6 +6,7 @@
 
 @interface UIKeyboardCandidate : NSObject <NSCopying> {
     NSString *_alternativeText;
+    NSString *_accessibilityLabel;
 }
 
 @property(readonly) NSString * candidate;
@@ -19,19 +20,19 @@
 @property(getter=isExtensionCandidate,readonly) BOOL extensionCandidate;
 
 
-- (void)setAlternativeText:(id)arg1;
-- (id)alternativeText;
-- (unsigned int)deleteCount;
-- (id)insertion;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (unsigned int)wordOriginFeedbackID;
 - (id)candidate;
 - (id)input;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)accessibilityLabel;
 - (BOOL)isExtensionCandidate;
 - (BOOL)isForShortcutConversion;
 - (void)dealloc;
+- (void)setAlternativeText:(id)arg1;
+- (id)alternativeText;
+- (unsigned int)deleteCount;
+- (id)insertion;
+- (id)accessibilityLabel;
 
 @end

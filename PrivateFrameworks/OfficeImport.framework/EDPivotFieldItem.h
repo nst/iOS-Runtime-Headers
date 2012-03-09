@@ -15,6 +15,13 @@
 
 + (id)pivotFieldItem;
 
+- (id)init;
+- (bool)hidden;
+- (void)setExpanded:(bool)arg1;
+- (bool)expanded;
+- (int)type;
+- (void)setType:(int)arg1;
+- (void)setHidden:(bool)arg1;
 - (bool)childItems;
 - (void)setChildItems:(bool)arg1;
 - (bool)calculatedMember;
@@ -25,12 +32,5 @@
 - (void)setDetailsHidden:(bool)arg1;
 - (unsigned int)itemIndex;
 - (void)setItemIndex:(unsigned int)arg1;
-- (bool)hidden;
-- (void)setExpanded:(bool)arg1;
-- (bool)expanded;
-- (int)type;
-- (void)setType:(int)arg1;
-- (void)setHidden:(bool)arg1;
-- (id)init;
 
 @end

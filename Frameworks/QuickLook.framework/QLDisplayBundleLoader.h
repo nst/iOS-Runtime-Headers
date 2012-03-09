@@ -10,10 +10,10 @@
 
 + (id)sharedLoader;
 
+- (id)init;
 - (id)copyDisplayBundleWithPreviewItem:(id)arg1 owner:(id)arg2;
 - (void)_lookForDisplayBundles;
 - (Class)loadDisplayBundle:(id)arg1;
 - (Class)displayBundleClassForDocumentType:(id)arg1;
-- (id)init;
 
 @end

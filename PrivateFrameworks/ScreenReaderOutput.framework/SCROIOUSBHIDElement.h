@@ -6,7 +6,7 @@
 }
 
 
-- (id)initWithIOObject:(unsigned int)arg1;
 - (int)transport;
+- (id)initWithIOObject:(unsigned int)arg1;
 
 @end

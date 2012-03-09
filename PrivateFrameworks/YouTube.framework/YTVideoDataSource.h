@@ -13,11 +13,19 @@
     NSError *_lastError;
 }
 
++ (id)sharedDataSource;
 + (void)saveDataSources;
 + (BOOL)shouldRemoveOldDefaults;
 + (void)setShouldRemoveOldDefaults;
-+ (id)sharedDataSource;
 
+- (void)_didChange;
+- (id)init;
+- (void)dealloc;
+- (BOOL)hasLoaded;
+- (void)loadMore;
+- (BOOL)isLoading;
+- (void)reloadData;
+- (void)loadFromDefaults;
 - (id)lastError;
 - (unsigned int)videosRemaining;
 - (unsigned int)maxVideosToSave;
@@ -33,13 +41,5 @@
 - (id)videos;
 - (void)searchRequest:(id)arg1 receivedVideos:(id)arg2 startIndex:(unsigned int)arg3 videosRemaining:(unsigned int)arg4;
 - (void)searchRequest:(id)arg1 didFailWithError:(id)arg2;
-- (void)_didChange;
-- (BOOL)isLoading;
-- (void)reloadData;
-- (BOOL)hasLoaded;
-- (void)loadMore;
-- (id)init;
-- (void)dealloc;
-- (void)loadFromDefaults;
 
 @end

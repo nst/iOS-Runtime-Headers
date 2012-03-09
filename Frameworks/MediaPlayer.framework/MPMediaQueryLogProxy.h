@@ -13,13 +13,13 @@
 
 
 - (void)flushLog;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)writeLog;
 - (void)createFilePath;
-- (id)replacementObjectForCoder:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithTarget:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)replacementObjectForCoder:(id)arg1;
 
 @end

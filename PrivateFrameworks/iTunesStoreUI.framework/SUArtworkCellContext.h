@@ -17,9 +17,9 @@
 @property(retain) UIImage * placeholderImage;
 
 
+- (void)dealloc;
 - (id)imageCache;
 - (void)setImageCache:(id)arg1;
-- (void)dealloc;
 - (void)setPlaceholderImage:(id)arg1;
 - (void)setImageProvider:(id)arg1;
 - (void)setImagePool:(id)arg1;

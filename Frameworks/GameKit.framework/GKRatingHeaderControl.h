@@ -11,11 +11,11 @@
 @property(retain) UILabel * labelView;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setLabelView:(id)arg1;
 - (id)labelView;
 - (void)layoutSubviewsInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRatingStarsWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

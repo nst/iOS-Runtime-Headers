@@ -10,6 +10,7 @@
 }
 
 
+- (void)dealloc;
 - (id)defaultPivotStyle;
 - (id)defaultTableStyleName;
 - (void)setDefaultTableStyleName:(id)arg1;
@@ -17,6 +18,5 @@
 - (id)defaultPivotStyleName;
 - (id)objectWithName:(id)arg1;
 - (id)defaultTableStyle;
-- (void)dealloc;
 
 @end

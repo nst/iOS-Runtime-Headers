@@ -11,10 +11,10 @@
 @property(readonly) UIView * view;
 
 
+- (void)dealloc;
 - (id)initWithView:(id)arg1;
 - (id)view;
 - (void)removeAnimationsForTransition:(id)arg1;
 - (void)addAnimationsForTransition:(id)arg1;
-- (void)dealloc;
 
 @end

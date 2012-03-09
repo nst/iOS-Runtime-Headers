@@ -9,9 +9,9 @@
 }
 
 
-- (void)layoutSubviews;
+- (void)dealloc;
 - (void)showSpinner:(BOOL)arg1;
 - (void)setAttachment:(id)arg1;
-- (void)dealloc;
+- (void)layoutSubviews;
 
 @end

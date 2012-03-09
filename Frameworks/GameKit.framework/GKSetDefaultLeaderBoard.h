@@ -11,10 +11,10 @@
 @property(retain) NSString * categoryID;
 
 
+- (void)dealloc;
 - (void)setCategoryID:(id)arg1;
 - (id)categoryID;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

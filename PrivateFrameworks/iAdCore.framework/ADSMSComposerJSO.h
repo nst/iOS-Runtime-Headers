@@ -22,19 +22,19 @@
 
 - (id)messageBody;
 - (void)setMessageBody:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)recipients;
 - (void)setRecipients:(id)arg1;
+- (id)listener;
+- (void)send;
+- (id)body;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (void)setBody:(id)arg1;
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(int)arg2;
 - (id)messageRecipients;
 - (void)setMessageRecipients:(id)arg1;
 - (void)setListener:(id)arg1;
-- (void)setBody:(id)arg1;
-- (void)send;
-- (id)body;
-- (id)delegate;
-- (id)listener;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -12,6 +12,7 @@
     BOOL _isAssetLoaded;
     MPQueueFeeder *_feeder;
     MPAVController *_player;
+    float _soundCheckVolumeNormalization;
     NSArray *_chapterTimeMarkers;
     NSArray *_artworkTimeMarkers;
     NSArray *_urlTimeMarkers;
@@ -86,6 +87,7 @@
 @property(readonly) BOOL requiresExternalProtection;
 @property(readonly) BOOL externalProtectionEnabled;
 @property(copy) NSString * videoID;
+@property float soundCheckVolumeNormalization;
 @property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } forwardPlaybackEndTime;
 @property(readonly) struct CGSize { float x1; float x2; } presentationSize;
@@ -95,10 +97,10 @@
 + (unsigned int)defaultScaleMode;
 
 - (unsigned long long)persistentID;
-- (void)setRating:(float)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)mediaItem;
 - (void)setIndexInQueueFeeder:(unsigned int)arg1;
-- (BOOL)isAssetLoaded;
 - (void)setFeeder:(id)arg1;
 - (id)alternateTracks;
 - (id)blockForDirectAVControllerNotificationReferencingItem:(id)arg1;
@@ -128,6 +130,8 @@
 - (double)currentTimeDisplayOverride;
 - (BOOL)isAssetURLValid;
 - (BOOL)isPlaceholderForItem:(id)arg1;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
+- (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
 - (id)albumArtist;
 - (void)postDurationDidChange;
 - (void)updateAttributesForDefaultsChange:(id)arg1;
@@ -161,6 +165,7 @@
 - (void)setChapterTimeMarkers:(id)arg1;
 - (id)artworkTimeMarkerForTime:(double)arg1;
 - (BOOL)useEmbeddedChapterData;
+- (BOOL)isAssetLoaded;
 - (float)defaultPlaybackRate;
 - (id)displayableText;
 - (void)_itemAttributeAvailableKey:(id)arg1;
@@ -179,7 +184,6 @@
 - (double)timeOfSeekableStart;
 - (void)setVideoID:(id)arg1;
 - (void)setDefaultPlaybackRate:(float)arg1;
-- (double)playableDuration;
 - (id)chapterTimeMarkerForTime:(double)arg1;
 - (id)chapterTimeMarkers;
 - (id)artworkMIMEType;
@@ -195,25 +199,27 @@
 - (unsigned int)indexInQueueFeeder;
 - (id)feeder;
 - (double)durationIfAvailable;
+- (id)playerItem;
+- (void)setSoundCheckVolumeNormalization:(float)arg1;
+- (void)setForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })forwardPlaybackEndTime;
+- (float)soundCheckVolumeNormalization;
+- (id)lyrics;
+- (struct CGSize { float x1; float x2; })presentationSize;
+- (void)setRating:(float)arg1;
+- (id)player;
+- (int)status;
 - (void)setPlayer:(id)arg1;
-- (id)path;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (id)asset;
 - (id)initWithURL:(id)arg1;
 - (id)url;
 - (unsigned int)type;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })forwardPlaybackEndTime;
-- (void)setForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (id)playerItem;
-- (id)asset;
-- (int)status;
+- (id)path;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (double)playableDuration;
 - (struct CGSize { float x1; float x2; })naturalSize;
-- (id)lyrics;
-- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)initWithAsset:(id)arg1;
-- (struct CGSize { float x1; float x2; })presentationSize;
-- (id)player;
-- (id)init;
-- (void)dealloc;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)mainTitle;
 - (float)userRating;
 

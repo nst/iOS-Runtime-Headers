@@ -50,6 +50,9 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (id)text;
 - (void)readTextBlock:(id)arg1;
 - (void)writeTextBlock:(id)arg1;
 - (int)textType;
@@ -65,8 +68,5 @@
 - (void)readString:(id)arg1;
 - (void)readStyles:(id)arg1;
 - (void)readMetaCharacterFieldsBookmarksAndHyperlinks:(id)arg1;
-- (id)text;
-- (id)init;
-- (void)dealloc;
 
 @end

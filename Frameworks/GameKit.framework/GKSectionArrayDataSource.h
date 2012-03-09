@@ -22,6 +22,7 @@
 @property(retain) NSDate * expirationDate;
 
 
+- (void)dealloc;
 - (void)setStatusSection:(id)arg1;
 - (void)setVisibleSections:(id)arg1;
 - (void)setFooterSections:(id)arg1;
@@ -40,6 +41,5 @@
 - (id)expirationDate;
 - (id)sections;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)dealloc;
 
 @end

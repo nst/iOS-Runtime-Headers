@@ -16,12 +16,12 @@
 @property <WifiListenerDelegate> * wifiListenerDelegate;
 
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)startChangeListener;
 - (void)setWifiListenerDelegate:(id)arg1;
 - (BOOL)hasWifiConnection;
 - (id)wifiListenerDelegate;
 - (BOOL)stopChangeListener;
-- (id)init;
-- (void)dealloc;
 
 @end

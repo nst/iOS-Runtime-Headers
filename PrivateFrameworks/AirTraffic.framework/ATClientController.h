@@ -9,15 +9,15 @@
     struct __CFDictionary { } *_queueMap;
 }
 
-+ (id)controllerForDataclasses:(id)arg1;
 + (id)sharedInstance;
++ (id)controllerForDataclasses:(id)arg1;
 
+- (void)dealloc;
+- (id)allClients;
 - (void)waitToDrain;
 - (id)clientForDataclass:(id)arg1;
 - (BOOL)_loadClientsForDataclasses:(id)arg1;
 - (void)resetQueues;
 - (struct dispatch_queue_s { }*)queueForClient:(id)arg1;
-- (id)allClients;
-- (void)dealloc;
 
 @end

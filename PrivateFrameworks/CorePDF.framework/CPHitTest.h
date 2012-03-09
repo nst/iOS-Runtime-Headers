@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (id)paragraphNear:(struct CGPoint { float x1; float x2; })arg1;
 - (id)layoutArea:(struct CGPoint { float x1; float x2; })arg1;
 - (unsigned int)columnsAt:(struct CGPoint { float x1; float x2; })arg1;
@@ -26,6 +27,5 @@
 - (id)findBestMatch:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (id)initWithPage:(id)arg1;
 - (id)page;
-- (void)dealloc;
 
 @end

@@ -70,6 +70,21 @@
 @property(copy) NSString * label;
 
 
+- (id)init;
+- (void)dealloc;
+- (unsigned int)bitsPerPixel;
+- (void)setBitsPerPixel:(unsigned int)arg1;
+- (void)setHeight:(unsigned int)arg1;
+- (unsigned int)height;
+- (unsigned int)index;
+- (void)setOrientation:(unsigned int)arg1;
+- (unsigned int)type;
+- (id)label;
+- (void)setLabel:(id)arg1;
+- (void)setWidth:(unsigned int)arg1;
+- (unsigned int)width;
+- (void)setType:(unsigned int)arg1;
+- (unsigned int)orientation;
 - (unsigned int)format;
 - (id)imageData;
 - (void)setFormat:(unsigned int)arg1;
@@ -127,20 +142,5 @@
 - (BOOL)loadWithData:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (BOOL)hasAlpha;
 - (unsigned int)internalFormat;
-- (unsigned int)bitsPerPixel;
-- (void)setBitsPerPixel:(unsigned int)arg1;
-- (void)setHeight:(unsigned int)arg1;
-- (unsigned int)height;
-- (unsigned int)index;
-- (void)setOrientation:(unsigned int)arg1;
-- (unsigned int)type;
-- (id)label;
-- (void)setLabel:(id)arg1;
-- (void)setWidth:(unsigned int)arg1;
-- (unsigned int)width;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)orientation;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -11,6 +11,7 @@
 @property(retain) NSURL * url;
 
 
+- (void)dealloc;
 - (BOOL)authenticationRequired;
 - (id)header;
 - (id)demarshalResponseData:(id)arg1;
@@ -18,6 +19,5 @@
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (id)request;
-- (void)dealloc;
 
 @end

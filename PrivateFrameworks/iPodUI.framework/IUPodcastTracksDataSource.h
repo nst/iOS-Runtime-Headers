@@ -12,6 +12,7 @@
 
 - (BOOL)shouldDisplayWhenEmpty;
 - (void)createGlobalContexts;
+- (id)viewControllerContextForActionRow:(id)arg1;
 - (Class)cellConfigurationClassForEntity:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (BOOL)allowsDeletion;

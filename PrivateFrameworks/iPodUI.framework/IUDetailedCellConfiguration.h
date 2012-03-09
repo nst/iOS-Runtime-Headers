@@ -15,16 +15,16 @@
 + (float)minimumRowHeight;
 + (float)rowHeightForGlobalContext:(id)arg1;
 
-- (int)_accessibilityUnplayedIndicatorStyle;
-- (void)setHideUnplayedIndicator:(BOOL)arg1;
-- (BOOL)reloadRentalPropertiesForStringIndex:(int)arg1;
-- (BOOL)hideUnplayedIndicator;
-- (id)backgroundColorForImageAtIndex:(unsigned int)arg1;
 - (id)init;
 - (void)dealloc;
 - (struct CGSize { float x1; float x2; })artworkSize;
 - (id)initWithStringCount:(unsigned int)arg1 imageCount:(unsigned int)arg2;
 - (void)reloadLayoutInformation;
 - (void)reloadImages;
+- (int)_accessibilityUnplayedIndicatorStyle;
+- (void)setHideUnplayedIndicator:(BOOL)arg1;
+- (BOOL)reloadRentalPropertiesForStringIndex:(int)arg1;
+- (BOOL)hideUnplayedIndicator;
+- (id)backgroundColorForImageAtIndex:(unsigned int)arg1;
 
 @end

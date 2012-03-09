@@ -19,25 +19,30 @@
         int num; 
     } _md5Context;
     long long _numberOfBytesToHash;
+    BOOL _shouldResumeFromLocalBytes;
     long long _totalBytesWritten;
     long long _validatedBytes;
 }
 
 @property(retain) NSString * localFilePath;
+@property BOOL shouldResumeFromLocalBytes;
 @property(retain) NSArray * hashes;
 @property long long numberOfBytesToHash;
 @property long long streamedBytes;
 @property long long validatedBytes;
 
 
-- (void)setup;
-- (long long)numberOfBytesToHash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)setShouldResumeFromLocalBytes:(BOOL)arg1;
 - (void)setNumberOfBytesToHash:(long long)arg1;
 - (BOOL)_checkHashForByteCount:(long long)arg1;
 - (void)setStreamedBytes:(long long)arg1;
 - (void)setValidatedBytes:(long long)arg1;
 - (long long)_verifiedBytesByInitializingHashForFileSize:(long long)arg1;
 - (long long)validatedBytes;
+- (BOOL)shouldResumeFromLocalBytes;
 - (BOOL)_truncateToSize:(long long)arg1;
 - (BOOL)_openFile;
 - (BOOL)_writeDataWithHashing:(id)arg1 returningError:(id*)arg2;
@@ -52,9 +57,8 @@
 - (void)closeStream;
 - (long long)streamedBytes;
 - (BOOL)isStream;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setup;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
+- (long long)numberOfBytesToHash;
 
 @end

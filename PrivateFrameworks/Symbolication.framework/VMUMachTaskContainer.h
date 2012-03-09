@@ -12,11 +12,11 @@
 + (id)machTaskContainerWithPid:(int)arg1 task:(unsigned int)arg2;
 + (id)machTaskContainer;
 
-- (void)finalize;
+- (id)description;
+- (void)dealloc;
 - (int)pid;
 - (id)initWithPid:(int)arg1 task:(unsigned int)arg2;
 - (unsigned int)task;
-- (id)description;
-- (void)dealloc;
+- (void)finalize;
 
 @end

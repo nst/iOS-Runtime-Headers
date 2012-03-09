@@ -11,6 +11,7 @@
 @property(retain) UIKeyboardCandidateInlineFloatingView * inlineView;
 
 
+- (void)dealloc;
 - (void)setInlineView:(id)arg1;
 - (id)inlineView;
 - (void)inlineShowPreviousCandidate;
@@ -20,6 +21,5 @@
 - (void)hideInlineView;
 - (BOOL)handleNumberKey:(unsigned int)arg1;
 - (BOOL)handleTabKeyWithShift:(BOOL)arg1;
-- (void)dealloc;
 
 @end

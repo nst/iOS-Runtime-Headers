@@ -6,6 +6,7 @@
 
 @interface IUSongCellGlobalContext : IUMediaItemCellGlobalContext  {
     NSMutableSet *_displayedStringProperties;
+    BOOL _hasIndexBar;
     unsigned int _showAlbum : 1;
     unsigned int _showAlbumSubtitle : 1;
     unsigned int _showArtistSubtitle : 1;
@@ -14,6 +15,7 @@
     id _aggregateProperties;
 }
 
+@property BOOL hasIndexBar;
 @property BOOL showAlbumSubtitle;
 @property BOOL showArtistSubtitle;
 @property BOOL showAlbum;
@@ -22,9 +24,13 @@
 @property int interfaceOrientation;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setShowDuration:(BOOL)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
 - (int)interfaceOrientation;
+- (void)setHasIndexBar:(BOOL)arg1;
+- (BOOL)hasIndexBar;
 - (void)setAggregateProperties:(id)arg1;
 - (id)aggregateProperties;
 - (BOOL)showDuration;
@@ -37,7 +43,5 @@
 - (BOOL)showsValueForProperty:(id)arg1;
 - (id)initWithPropertiesFromDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (void)setShowsValue:(BOOL)arg1 forProperty:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

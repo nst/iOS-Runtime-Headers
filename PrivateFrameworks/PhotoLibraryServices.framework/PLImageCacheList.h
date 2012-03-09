@@ -16,11 +16,11 @@
 
 + (id)newImageCacheList;
 
-- (id)_init;
+- (id)init;
+- (void)dealloc;
 - (void)setImage:(id)arg1 forKey:(id)arg2;
 - (id)imageForKey:(id)arg1;
 - (void)removeImageForKey:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)_init;
 
 @end

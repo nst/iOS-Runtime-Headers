@@ -7,16 +7,16 @@
     int _style;
 }
 
-+ (void)preloadImages;
-+ (float)defaultHeightForStyle:(int)arg1 orientation:(int)arg2;
++ (float)defaultHeightForOrientation:(int)arg1;
 + (id)_backgroundImage;
 + (float)defaultHeight;
 + (float)defaultHeightForStyle:(int)arg1;
 + (int)fullscreenStyle;
 + (int)overlayStyle;
-+ (float)defaultHeightForOrientation:(int)arg1;
++ (void)preloadImages;
++ (float)defaultHeightForStyle:(int)arg1 orientation:(int)arg2;
 
-- (void)setOrientation:(int)arg1 updateFrame:(BOOL)arg2;
+- (id)init;
 - (id)initWithDefaultSizeForOrientation:(int)arg1;
 - (id)initWithDefaultSize;
 - (void)setOrientation:(int)arg1;
@@ -24,6 +24,6 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)init;
+- (void)setOrientation:(int)arg1 updateFrame:(BOOL)arg2;
 
 @end

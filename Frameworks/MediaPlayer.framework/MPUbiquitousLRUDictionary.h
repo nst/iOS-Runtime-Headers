@@ -34,6 +34,8 @@
 @property(retain) NSArray * localEntries;
 
 
+- (void)removeObserver:(id)arg1;
+- (void)dealloc;
 - (void)setObservers:(id)arg1;
 - (id)observers;
 - (unsigned int)maxEntriesCount;
@@ -59,10 +61,8 @@
 - (void)_notifyExternalChange:(id)arg1;
 - (id)_mergeLocalWithU9Entries;
 - (id)ubiquitousStorageKey;
-- (void)beginTransaction;
-- (void)commitTransaction;
 - (void)addObserver:(id)arg1;
-- (void)removeObserver:(id)arg1;
-- (void)dealloc;
+- (void)commitTransaction;
+- (void)beginTransaction;
 
 @end

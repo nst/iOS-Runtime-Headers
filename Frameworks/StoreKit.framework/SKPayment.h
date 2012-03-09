@@ -15,13 +15,13 @@
 + (id)paymentWithProductIdentifier:(id)arg1;
 + (id)paymentWithProduct:(id)arg1;
 
-- (id)requestData;
-- (int)quantity;
-- (id)productIdentifier;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)requestData;
+- (int)quantity;
+- (id)productIdentifier;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 
 @end

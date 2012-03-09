@@ -13,13 +13,13 @@
 @property int state;
 
 
+- (void)dealloc;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
 - (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)setState:(int)arg1;
 - (int)state;
-- (void)dealloc;
 - (void)setNestedGroupPrincipalURLs:(id)arg1;
 - (void)_getGroupMembershipForURL:(id)arg1 state:(int)arg2;
 - (id)nestedGroupPrincipalURLs;

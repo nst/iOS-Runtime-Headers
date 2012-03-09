@@ -6,12 +6,12 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)_showSharedLibrariesController;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (void)performActionForActionRow:(id)arg1 animated:(BOOL)arg2;
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

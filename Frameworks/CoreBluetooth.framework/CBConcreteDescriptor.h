@@ -12,8 +12,8 @@
 @property(readonly) NSNumber * handle;
 
 
-- (id)handle;
 - (void)dealloc;
+- (id)handle;
 - (id)handleValueUpdated:(id)arg1;
 - (id)handleValueWritten:(id)arg1;
 - (void)handlePeripheralDisconnection;

@@ -16,6 +16,7 @@
 @property(retain) SUTableDataSource * dataSource;
 
 
+- (void)dealloc;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -25,7 +26,6 @@
 - (id)dataSource;
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
-- (void)dealloc;
 - (void)setTableMargin:(float)arg1;
 - (id)initWithTableViewStyle:(int)arg1;
 - (float)tableMargin;

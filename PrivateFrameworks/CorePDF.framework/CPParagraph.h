@@ -17,6 +17,9 @@
 @property(retain) CPListItem * listItem;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)flowProperties;
 - (void)setFlowProperties:(id)arg1;
 - (BOOL)isParagraphRegion;
@@ -45,8 +48,5 @@
 - (unsigned int)index;
 - (void)setAlignment:(unsigned int)arg1;
 - (unsigned int)alignment;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

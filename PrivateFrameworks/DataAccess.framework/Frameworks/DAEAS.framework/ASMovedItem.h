@@ -16,9 +16,9 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
+- (void)dealloc;
 - (void)setStatus:(id)arg1;
 - (id)status;
-- (void)dealloc;
 - (void)setSrcMsgId:(id)arg1;
 - (void)setDstMsgId:(id)arg1;
 - (id)dstMsgId;

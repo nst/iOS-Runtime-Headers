@@ -14,10 +14,10 @@
 
 + (Class)navigationBarClass;
 
+- (void)dealloc;
 - (id)topViewController;
 - (id)createNavigationBar;
 - (id)createSegmentedController;
 - (id)segmentedViewController;
-- (void)dealloc;
 
 @end

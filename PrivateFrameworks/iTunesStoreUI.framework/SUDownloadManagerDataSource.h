@@ -11,11 +11,12 @@
 @property(readonly) SUDownloadManager * downloadManager;
 
 
+- (id)initWithDownloadManager:(id)arg1;
+- (void)dealloc;
 - (id)downloadManager;
 - (int)numberOfSections;
 - (int)numberOfRowsInSection:(int)arg1;
 - (void)reloadData;
-- (void)dealloc;
 - (id)_headerViewForDownloadsSection;
 - (id)_headerViewForPreordersSection;
 - (id)_newPreorderAccessoryButton;
@@ -24,7 +25,6 @@
 - (BOOL)isDownloadsSection:(int)arg1;
 - (id)preorderForIndexPath:(id)arg1;
 - (id)_headerViewWithTitle:(id)arg1 subtitle:(id)arg2;
-- (id)initWithDownloadManager:(id)arg1;
 - (void)reloadCellContexts;
 - (BOOL)canSelectIndexPath:(id)arg1;
 - (id)headerViewForSection:(int)arg1;

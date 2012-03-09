@@ -59,7 +59,21 @@
 @property(retain) NSString * locationString;
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setVelocity:(int)arg1;
+- (void)setSource:(id)arg1;
+- (id)source;
+- (id)dictionaryRepresentation;
+- (int)velocity;
+- (long long)timestamp;
+- (void)setTimestamp:(long long)arg1;
+- (int)altitude;
+- (int)verticalAccuracy;
+- (int)heading;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (int)confidence;
 - (void)setHasHeading:(BOOL)arg1;
 - (BOOL)hasHeading;
 - (void)setHasVelocity:(BOOL)arg1;
@@ -96,26 +110,12 @@
 - (int)accuracy;
 - (void)setConfidence:(int)arg1;
 - (void)setAccuracy:(int)arg1;
-- (void)writeTo:(id)arg1;
-- (int)altitude;
-- (int)verticalAccuracy;
-- (int)heading;
-- (void)setVelocity:(int)arg1;
-- (void)setSource:(id)arg1;
-- (id)source;
-- (id)dictionaryRepresentation;
-- (int)velocity;
-- (long long)timestamp;
-- (void)setTimestamp:(long long)arg1;
+- (void)setFeatures:(id)arg1;
+- (id)features;
+- (id)locationString;
 - (void)setVerticalAccuracy:(int)arg1;
 - (void)setAltitude:(int)arg1;
 - (void)setLatLng:(id)arg1;
 - (void)setHeading:(int)arg1;
-- (void)setFeatures:(id)arg1;
-- (id)features;
-- (id)locationString;
-- (id)description;
-- (void)dealloc;
-- (int)confidence;
 
 @end

@@ -11,7 +11,7 @@
 - (void)setRenderTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)disableAnimations;
 - (void)enableAnimations;
-- (void)display;
 - (id)actionForKey:(id)arg1;
+- (void)display;
 
 @end

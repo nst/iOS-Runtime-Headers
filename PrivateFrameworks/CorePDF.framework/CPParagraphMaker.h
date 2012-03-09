@@ -16,6 +16,7 @@
 
 + (BOOL)line:(id)arg1 alignsWith:(id)arg2;
 
+- (void)dealloc;
 - (BOOL)line:(id)arg1 isDirectlyBelow:(id)arg2;
 - (BOOL)line:(id)arg1 isBelow:(id)arg2;
 - (int)indexOfUniqueLineBelow:(id)arg1 from:(int)arg2;
@@ -34,6 +35,5 @@
 - (void)addLinesTo:(id)arg1;
 - (void)makeParagraphsIn:(id)arg1;
 - (id)paragraphs;
-- (void)dealloc;
 
 @end

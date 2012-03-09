@@ -19,7 +19,7 @@
     int accessState;
     NSDictionary *printInfoSupported;
 
-  /* Error parsing encoded ivar type info: ^{_http_s=iiiiiiii{sockaddr_in="sin_len"C"sin_family"C"sin_port"S"sin_addr"{in_addr="s_addr"I}"sin_zero"[8c]}[256c][27[256c]]*iii[2048c]i{_cups_md5_state_s="count"[2I]"abcd"[4I]"buf"[64C]}[256c]i^{SSLContext}i^{fd_set}i*[256c][256c]iq^(_http_addr_u)^{http_addrlist_s}[2048c]i**^{__CFArray}^?^v{timeval="tv_sec"i"tv_usec"i}} */
+  /* Error parsing encoded ivar type info: ^{_http_s=iiiiiiii{sockaddr_in="sin_len"C"sin_family"C"sin_port"S"sin_addr"{in_addr="s_addr"I}"sin_zero"[8c]}[256c][27[256c]]*iii[2048c]i{_cups_md5_state_s="count"[2I]"abcd"[4I]"buf"[64C]}[256c]i^{SSLContext}i^{fd_set}i*[256c][256c]iq^(_http_addr_u)^{http_addrlist_s}[2048c]i**^{__CFArray}^?^vdi} */
     struct _http_s { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8; struct sockaddr_in { 
             unsigned char sin_len; 
             unsigned char sin_family; 
@@ -32,10 +32,7 @@
             unsigned int count[2]; 
             unsigned int abcd[4]; 
             unsigned char buf[64]; 
-        } x18; BOOL x19[256]; int x20; struct SSLContext {} *x21; int x22; struct fd_set {} *x23; int x24; char *x25; BOOL x26[256]; BOOL x27[256]; int x28; long long x29; union { /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_30_1_1; void*x_30_1_2; void*x_30_1_3; void*x_30_1_4; void*x_30_1_5; void*x_30_1_6; void*x_30_1_7; double x_30_1_8; double x_30_1_9; const void*x_30_1_10; void*x_30_1_11; } *x30; struct http_addrlist_s {} *x31; BOOL x32[2048]; int x33; char *x34; char *x35; struct __CFArray {} *x36; int (*x37)(); void *x38; struct timeval { 
-            int tv_sec; 
-            int tv_usec; 
-        } x39; } *job_http;
+        } x18; BOOL x19[256]; int x20; struct SSLContext {} *x21; int x22; struct fd_set {} *x23; int x24; char *x25; BOOL x26[256]; BOOL x27[256]; int x28; long long x29; union { /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_30_1_1; void*x_30_1_2; void*x_30_1_3; void*x_30_1_4; void*x_30_1_5; void*x_30_1_6; void*x_30_1_7; double x_30_1_8; double x_30_1_9; const void*x_30_1_10; void*x_30_1_11; } *x30; struct http_addrlist_s {} *x31; BOOL x32[2048]; int x33; char *x34; char *x35; struct __CFArray {} *x36; int (*x37)(); void *x38; double x39; int x40; } *job_http;
 
     NSMutableDictionary *privateData;
     NSMutableSet *mediaReady;
@@ -69,6 +66,11 @@
 + (BOOL)printerLookupWithName:(id)arg1 andTimeout:(double)arg2;
 
 - (void)setHostname:(id)arg1;
+- (void)resolve;
+- (BOOL)resolveWithTimeout:(int)arg1;
+- (void)setPort:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)initWithName:(id)arg1 TXTRecord:(id)arg2;
 - (void)identifySelf;
 - (void)checkOperations:(struct ipp_s { int x1; union ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct ipp_attribute_s {} *x3; struct ipp_attribute_s {} *x4; struct ipp_attribute_s {} *x5; int x6; struct ipp_attribute_s {} *x7; int x8; }*)arg1;
@@ -89,12 +91,6 @@
 - (id)initWithName:(id)arg1 TXT:(id)arg2;
 - (void)setIsLocal:(BOOL)arg1;
 - (BOOL)isIPPS;
-- (void)resolve;
-- (BOOL)resolveWithTimeout:(int)arg1;
-- (void)setPort:(id)arg1;
-- (BOOL)isLocal;
-- (id)localName;
-- (id)hostname;
 - (int)sendData:(const char *)arg1 ofLength:(int)arg2;
 - (int)printURL:(id)arg1 ofType:(id)arg2 printSettings:(id)arg3;
 - (int)abortJob;
@@ -116,9 +112,10 @@
 - (int)type;
 - (id)name;
 - (id)scheme;
+- (id)localName;
+- (id)hostname;
+- (BOOL)isLocal;
 - (id)uuid;
-- (id)description;
-- (void)dealloc;
 - (BOOL)isEqual:(id)arg1;
 
 @end

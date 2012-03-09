@@ -15,9 +15,11 @@
 }
 
 
+- (void)dealloc;
 - (long)column;
 - (id)table;
 - (long)row;
+- (BOOL)isStreaming;
 - (id)initWithStreaming:(BOOL)arg1 table:(id)arg2;
 - (BOOL)alwaysPutReadCellsInArray;
 - (void)setLastCellRead:(id)arg1;
@@ -29,7 +31,5 @@
 - (BOOL)isCounting;
 - (id)currentOverlapCell;
 - (void)setCurrentOverlapCell:(id)arg1;
-- (void)dealloc;
-- (BOOL)isStreaming;
 
 @end

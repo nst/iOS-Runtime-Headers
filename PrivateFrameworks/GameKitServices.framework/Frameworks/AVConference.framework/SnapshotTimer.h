@@ -10,10 +10,10 @@
 
 + (void)takeSnapshotForTask:(id)arg1;
 
+- (id)init;
 - (BOOL)taskIsComplete;
 - (void)setTaskIsComplete:(BOOL)arg1;
 - (void)checkinWithTimeout:(double)arg1 forTask:(id)arg2;
 - (void)checkout;
-- (id)init;
 
 @end

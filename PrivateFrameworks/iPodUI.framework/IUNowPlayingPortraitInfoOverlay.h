@@ -6,6 +6,7 @@
 }
 
 
+- (void)dealloc;
 - (BOOL)controlsOverlay:(id)arg1 shouldSelectSocialLikeButtonForItem:(id)arg2;
 - (BOOL)controlsOverlay:(id)arg1 shouldHideSocialPostButtonForItem:(id)arg2;
 - (BOOL)controlsOverlay:(id)arg1 shouldHideSocialLikeButtonForItem:(id)arg2;
@@ -27,13 +28,12 @@
 - (BOOL)playbackControls:(id)arg1 changedShuffleType:(unsigned int)arg2;
 - (BOOL)playbackControls:(id)arg1 changedRepeatType:(unsigned int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (void)controlsOverlay:(id)arg1 adjustShuffleAndRepeatTypeForItem:(id)arg2;
 - (unsigned int)repeatTypeForControlsOverlay:(id)arg1;
 - (void)_appDefaultsChanged;
 - (void)_delayedSeedGeniusForControls:(id)arg1;
 - (void)_buttonAvailabilityChanged:(id)arg1;
 - (void)_appDefaultsChanged:(id)arg1;
-- (void)dealloc;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 
 @end

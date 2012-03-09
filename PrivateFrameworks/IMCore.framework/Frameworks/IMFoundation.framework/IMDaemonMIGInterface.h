@@ -17,12 +17,12 @@
 
 + (id)sharedInstance;
 
-- (void)setDelegate:(id)arg1;
 - (void)denyIncomingGrantRequests;
 - (void)acceptIncomingGrantRequests;
 - (void)__setupServer;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

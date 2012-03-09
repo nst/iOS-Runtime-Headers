@@ -11,6 +11,9 @@
 @property(getter=isOpen,readonly) BOOL open;
 
 
+- (BOOL)perform;
+- (void)dealloc;
+- (void)close;
 - (void)clearBindings;
 - (void)bindPersistentID:(long long)arg1;
 - (void)bindDouble:(double)arg1 forProperty:(id)arg2;
@@ -19,8 +22,5 @@
 - (void)statementForProperty:(id)arg1 usingBlock:(id)arg2;
 - (id)initWithEntityClass:(Class)arg1 properties:(id)arg2 databaseHandle:(struct sqlite3 { }*)arg3;
 - (BOOL)isOpen;
-- (void)close;
-- (BOOL)perform;
-- (void)dealloc;
 
 @end

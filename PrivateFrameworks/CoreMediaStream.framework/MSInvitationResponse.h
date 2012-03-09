@@ -14,11 +14,11 @@
 
 + (id)responseWithInvitation:(id)arg1 accept:(BOOL)arg2;
 
+- (void)dealloc;
 - (void)setInvitation:(id)arg1;
 - (id)invitation;
 - (id)initWithInvitation:(id)arg1 accept:(BOOL)arg2;
 - (BOOL)accept;
 - (void)setAccept:(BOOL)arg1;
-- (void)dealloc;
 
 @end

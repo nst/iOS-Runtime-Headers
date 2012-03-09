@@ -14,11 +14,11 @@
 @property(retain) NSString * request;
 
 
+- (void)dealloc;
 - (id)initWithPlayer:(id)arg1;
+- (id)player;
 - (void)setRequest:(id)arg1;
 - (id)request;
 - (void)layout;
-- (id)player;
-- (void)dealloc;
 
 @end

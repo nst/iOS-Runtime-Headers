@@ -9,6 +9,7 @@
 }
 
 
+- (void)dealloc;
 - (void)adjustPopoverSize;
 - (id)initWithPrintPanelViewController:(id)arg1;
 - (void)loadView;
@@ -17,6 +18,5 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
 
 @end

@@ -24,12 +24,16 @@
     } _synthesizerFlags;
 }
 
++ (void)_localeDidChange;
 + (id)availableLanguageCodes;
 + (BOOL)isSystemSpeaking;
 + (id)availableVoicesForLanguageCode:(id)arg1;
 + (id)availableVoices;
-+ (void)_localeDidChange;
 
+- (id)init;
+- (void)dealloc;
+- (float)rate;
+- (id)setRate:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)startSpeakingString:(id)arg1;
 - (id)startSpeakingString:(id)arg1 toURL:(id)arg2;
@@ -63,9 +67,5 @@
 - (float)volume;
 - (id)setVolume:(float)arg1;
 - (float)pitch;
-- (id)setRate:(float)arg1;
-- (float)rate;
-- (id)init;
-- (void)dealloc;
 
 @end

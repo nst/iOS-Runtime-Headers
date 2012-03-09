@@ -34,7 +34,13 @@
 @property BOOL throttled;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 - (void)setHasThrottled:(BOOL)arg1;
 - (BOOL)hasThrottled;
 - (id)signature;
@@ -58,11 +64,5 @@
 - (BOOL)hasPanoId;
 - (id)panoId;
 - (void)setPanoId:(id)arg1;
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

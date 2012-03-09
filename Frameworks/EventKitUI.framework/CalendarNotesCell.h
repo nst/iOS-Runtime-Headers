@@ -15,6 +15,8 @@
 @property(retain) NSString * placeholder;
 
 
+- (void)dealloc;
+- (void)_updatePlaceholder;
 - (id)textView;
 - (void)setPlaceholder:(id)arg1;
 - (id)_placeholderLabel;
@@ -25,7 +27,5 @@
 - (void)setText:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)_updatePlaceholder;
-- (void)dealloc;
 
 @end

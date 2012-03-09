@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIImageView, UIView, UIColor, EKCurrentTimeMarkerView, NSTimer, NSMutableArray;
+@class EKCurrentTimeMarkerView, UIView, UIColor, NSTimer, NSMutableArray;
 
 @interface EKDayGridView : UIView  {
     float _timeInset;
@@ -15,7 +15,6 @@
     unsigned int _showsTimeLine : 1;
     int _selected;
     float _fixedDayWidth;
-    UIImageView *_background;
     int _orientation;
     struct CGRect { 
         struct CGPoint { 
@@ -32,6 +31,10 @@
     UIView *_leftBorderView;
     NSMutableArray *_middleBorderViews;
     UIView *_rightBorderView;
+    UIView *_topGrayView;
+    UIView *_bottomGrayView;
+    UIView *_topPattern;
+    UIView *_bottomPattern;
     unsigned int _daysToDisplay;
     EKCurrentTimeMarkerView *_timeMarker;
     NSTimer *_timeMarkerTimer;
@@ -58,15 +61,9 @@
 + (void)cacheBackgroundImage:(id)arg1 forKey:(id)arg2;
 + (id)cachedBackgroundImageForKey:(id)arg1;
 
+- (void)dealloc;
+- (float)bottomPadding;
 - (float)topPadding;
-- (void)setOrientation:(int)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (BOOL)isSelected;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)removeFromSuperview;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDrawsGrayOutsideExtents:(BOOL)arg1;
 - (BOOL)drawsGrayOutsideExtents;
 - (void)setHoursToPadBottom:(int)arg1;
 - (int)hoursToPadBottom;
@@ -78,6 +75,7 @@
 - (void)setFixedDayWidth:(float)arg1;
 - (int)secondAtPosition:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForStartSeconds:(int)arg1 endSeconds:(int)arg2;
+- (void)setDrawsGrayOutsideExtents:(BOOL)arg1;
 - (BOOL)showsRightBorder;
 - (void)setShowsRightBorder:(BOOL)arg1;
 - (BOOL)showsLeftBorder;
@@ -100,7 +98,12 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundColor:(id)arg2 opaque:(BOOL)arg3 numberOfDaysToDisplay:(unsigned int)arg4;
 - (void)setShowsLeftBorder:(BOOL)arg1;
 - (void)setDrawsContent:(BOOL)arg1;
-- (void)dealloc;
-- (float)bottomPadding;
+- (void)setOrientation:(int)arg1;
+- (void)setSelected:(BOOL)arg1;
+- (BOOL)isSelected;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)removeFromSuperview;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

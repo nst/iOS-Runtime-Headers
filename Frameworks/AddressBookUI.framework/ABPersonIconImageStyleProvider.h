@@ -11,7 +11,6 @@
 
 
 - (void)dealloc;
-- (void)clearWeakReferencesToObject:(id)arg1;
 - (id)initWithIconImageView:(id)arg1 imageView:(id)arg2;
 - (void)_clearAsStyleProvider;
 - (BOOL)cardPlaceholderImageShouldApplyMaskAndOverlay;
@@ -19,5 +18,6 @@
 - (id)cardPlaceholderCompanyImage;
 - (id)cardPhotoOverlayImage;
 - (id)cardPhotoMaskImage;
+- (void)clearWeakReferencesToObject:(id)arg1;
 
 @end

@@ -20,7 +20,15 @@
 @property(copy) NSString * width;
 
 
+- (void)setName:(id)arg1;
 - (id)code;
+- (void)setHeight:(id)arg1;
+- (id)height;
+- (void)setObject:(id)arg1;
+- (void)setWidth:(id)arg1;
+- (id)width;
+- (id)object;
+- (id)name;
 - (id)align;
 - (void)setAlign:(id)arg1;
 - (id)alt;
@@ -34,14 +42,6 @@
 - (void)setHspace:(int)arg1;
 - (int)vspace;
 - (void)setVspace:(int)arg1;
-- (void)setHeight:(id)arg1;
-- (id)height;
-- (void)setObject:(id)arg1;
-- (id)object;
-- (void)setWidth:(id)arg1;
-- (id)width;
-- (id)name;
-- (void)setName:(id)arg1;
 - (BOOL)showsTapHighlight;
 
 @end

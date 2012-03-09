@@ -17,14 +17,14 @@
 @property(retain) PSSpecifier * specifier;
 
 
-- (void)setSpecifier:(id)arg1;
-- (id)specifier;
-- (void)setDataclasses:(id)arg1;
-- (id)dataclasses;
 - (void)dealloc;
 - (BOOL)wantsToBeLast;
 - (id)otherDataclassHeader;
 - (void)setOtherDataclassHeader:(id)arg1;
+- (void)setDataclasses:(id)arg1;
+- (id)dataclasses;
+- (void)setSpecifier:(id)arg1;
+- (id)specifier;
 - (id)initWithSpecifier:(id)arg1 dataclasses:(id)arg2 otherDataclassHeader:(id)arg3;
 - (id)initWithSpecifier:(id)arg1 dataclasses:(id)arg2;
 - (void)setWantsToBeLast:(BOOL)arg1;

@@ -2,57 +2,57 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVURLAssetFailedURLRequestHandling>, NSString, AVURLAssetInternal, AVAssetCache, NSURL;
+@class <AVURLAssetFailedURLRequestHandling>, AVURLAssetInternal, NSString, AVAssetCache, NSURL;
 
 @interface AVURLAsset : AVAsset  {
     AVURLAssetInternal *_asset;
 }
 
+@property(setter=setFailedURLRequestDelegate:) <AVURLAssetFailedURLRequestHandling> * failedURLRequestDelegate;
 @property(readonly) AVAssetCache * assetCache;
 @property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
 @property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
 @property(readonly) NSString * cacheKey;
-@property(setter=setFailedURLRequestDelegate:) <AVURLAssetFailedURLRequestHandling> * failedURLRequestDelegate;
-@property(copy,readonly) NSURL * URL;
+@property(readonly) NSURL * URL;
 
-+ (void)initialize;
-+ (id)audiovisualTypes;
 + (BOOL)isPlayableExtendedMIMEType:(id)arg1;
-+ (id)URLAssetWithURL:(id)arg1 options:(id)arg2;
-+ (void)_ensureAudiovisualTypes;
-+ (id)audiovisualMIMETypes;
++ (id)audiovisualTypes;
 + (id)_avfValidationPlist;
++ (id)audiovisualMIMETypes;
++ (void)_ensureAudiovisualTypes;
++ (id)URLAssetWithURL:(id)arg1 options:(id)arg2;
++ (void)initialize;
 
-- (void)finalize;
-- (id)cacheKey;
-- (id)URL;
-- (id)availableChapterLocales;
-- (id)chapterMetadataGroupsWithTitleLocale:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
-- (void)setFailedURLRequestDelegate:(id)arg1;
-- (struct __CFURL { }*)_URL;
-- (void)_tracksDidChange;
-- (id)_assetInspectorLoader;
-- (id)_assetInspector;
-- (id)lyrics;
-- (id)tracks;
-- (id)initWithURL:(id)arg1 options:(id)arg2;
-- (void)_setAssetInspectorLoader:(id)arg1;
-- (id)_errorForFigNotificationPayload:(struct __CFDictionary { }*)arg1 key:(struct __CFString { }*)arg2;
-- (id)failedURLRequestDelegate;
-- (void)finishHandlingFailedURLRequestWithResponseProperties:(id)arg1;
-- (struct OpaqueFigFormatReader { }*)_formatReader;
-- (id)_chapterGroupInfo;
-- (unsigned int)_addChapterMetadataItem:(id)arg1 withDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3 toChapters:(id)arg4 fromIndex:(unsigned int)arg5;
-- (id)assetCache;
-- (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
-- (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
-- (id)resolvedURL;
-- (id)downloadDestinationURL;
-- (void)cancelLoading;
-- (void)_addFigAssetNotifications;
-- (void)_removeFigAssetNotifications;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (void)finishHandlingFailedURLRequestWithResponseProperties:(id)arg1;
+- (id)failedURLRequestDelegate;
+- (void)setFailedURLRequestDelegate:(id)arg1;
+- (id)downloadDestinationURL;
+- (id)resolvedURL;
+- (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
+- (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
+- (id)assetCache;
+- (unsigned int)_addChapterMetadataItem:(id)arg1 withDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3 toChapters:(id)arg4 fromIndex:(unsigned int)arg5;
+- (id)_chapterGroupInfo;
+- (id)_errorForFigNotificationPayload:(struct __CFDictionary { }*)arg1 key:(struct __CFString { }*)arg2;
+- (void)_setAssetInspectorLoader:(id)arg1;
+- (id)chapterMetadataGroupsWithTitleLocale:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
+- (id)availableChapterLocales;
+- (void)_tracksDidChange;
+- (struct __CFURL { }*)_URL;
+- (struct OpaqueFigFormatReader { }*)_formatReader;
+- (id)tracks;
+- (id)lyrics;
+- (id)_assetInspector;
+- (id)_assetInspectorLoader;
+- (void)_removeFigAssetNotifications;
+- (void)_addFigAssetNotifications;
+- (void)cancelLoading;
+- (id)cacheKey;
+- (void)finalize;
+- (id)URL;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
 
 @end

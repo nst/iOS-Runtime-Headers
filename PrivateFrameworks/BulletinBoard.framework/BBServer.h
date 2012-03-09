@@ -36,6 +36,9 @@
 
 + (void)initialize;
 
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (id)init;
+- (void)dealloc;
 - (void)_assignIDToBulletinRequest:(id)arg1 checkAgainstBulletins:(id)arg2;
 - (id)_bulletinRequestsForIDs:(id)arg1;
 - (id)_removalsForListSection:(id)arg1 addition:(id)arg2 keepAddition:(BOOL*)arg3;
@@ -146,8 +149,5 @@
 - (void)getSectionOrderRuleWithHandler:(id)arg1;
 - (void)observer:(id)arg1 setObserverFeed:(unsigned int)arg2;
 - (void)deliverResponse:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 
 @end

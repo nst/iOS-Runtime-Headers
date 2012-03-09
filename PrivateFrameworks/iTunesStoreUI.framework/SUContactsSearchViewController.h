@@ -21,7 +21,8 @@
 @property(readonly) NSArray * searchResults;
 
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
@@ -29,8 +30,7 @@
 - (id)delegate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (int)searchScope;
 - (id)searchProperties;
 - (void)endedNetworkActivity;

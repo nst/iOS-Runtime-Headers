@@ -31,8 +31,6 @@
 
 
 - (void)setUpdating:(BOOL)arg1;
-- (void)setLocation:(id)arg1;
-- (id)heading;
 - (id)annotation;
 - (void)setSource:(int)arg1;
 - (int)source;
@@ -48,6 +46,8 @@
 - (id)predictedLocation;
 - (BOOL)isUpdating;
 - (void)setFixedLocation:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (id)heading;
 - (void)setHeading:(id)arg1;
 
 @end

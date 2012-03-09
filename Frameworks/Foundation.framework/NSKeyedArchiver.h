@@ -28,9 +28,6 @@
 + (id)archivedDataWithRootObject:(id)arg1;
 + (void)initialize;
 
-- (void)encodeObject:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)finalize;
 - (void)setOutputFormat:(unsigned int)arg1;
 - (id)_blobForCurrentObject;
 - (void)_setBlobForCurrentObject:(id)arg1;
@@ -47,12 +44,15 @@
 - (void)encodeRootObject:(id)arg1;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
 - (void)encodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(const void*)arg3;
-- (void)encodeInt32:(int)arg1 forKey:(id)arg2;
-- (id)initForWritingWithMutableData:(id)arg1;
-- (void)finishEncoding;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (void)_encodePropertyList:(id)arg1 forKey:(id)arg2;
+- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
 - (int)versionForClassName:(id)arg1;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
 - (unsigned int)systemVersion;
+- (void)finalize;
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeConditionalObject:(id)arg1;
 - (void)encodeConditionalObject:(id)arg1 forKey:(id)arg2;
@@ -61,12 +61,12 @@
 - (void)encodeBytes:(const char *)arg1 length:(unsigned int)arg2 forKey:(id)arg3;
 - (BOOL)allowsKeyedCoding;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)encodeBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
-- (void)_encodePropertyList:(id)arg1 forKey:(id)arg2;
-- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)initForWritingWithMutableData:(id)arg1;
+- (void)finishEncoding;
+- (void)encodeObject:(id)arg1;
+- (void)encodeInt32:(int)arg1 forKey:(id)arg2;
 
 @end

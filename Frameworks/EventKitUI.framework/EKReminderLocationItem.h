@@ -17,16 +17,16 @@
 @property BOOL isLocationBeingDetermined;
 
 
-- (void)setLocation:(id)arg1;
-- (id)location;
-- (id)label;
-- (void)setLabel:(id)arg1;
-- (id)addressDictionary;
+- (id)description;
+- (void)dealloc;
 - (void)setIsLocationBeingDetermined:(BOOL)arg1;
 - (void)setAddressDictionary:(id)arg1;
 - (BOOL)isLocationBeingDetermined;
 - (id)stringForSubtitle;
-- (id)description;
-- (void)dealloc;
+- (id)location;
+- (id)label;
+- (void)setLabel:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (id)addressDictionary;
 
 @end

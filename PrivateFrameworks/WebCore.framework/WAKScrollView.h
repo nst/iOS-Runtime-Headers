@@ -14,7 +14,19 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setDocumentView:(id)arg1;
+- (BOOL)drawsBackground;
+- (void)scrollWheel:(id)arg1;
+- (id)documentView;
+- (void)setDrawsBackground:(BOOL)arg1;
+- (void)setContentView:(id)arg1;
+- (id)contentView;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHasVerticalScroller:(BOOL)arg1;
 - (BOOL)hasVerticalScroller;
 - (void)setHasHorizontalScroller:(BOOL)arg1;
@@ -37,17 +49,5 @@
 - (void)setScrollBarsSuppressed:(BOOL)arg1 repaintOnUnsuppress:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })scrollOrigin;
 - (void)setScrollOrigin:(struct CGPoint { float x1; float x2; })arg1 updatePositionAtAll:(BOOL)arg2 immediately:(BOOL)arg3;
-- (void)setDocumentView:(id)arg1;
-- (BOOL)drawsBackground;
-- (void)scrollWheel:(id)arg1;
-- (id)documentView;
-- (void)setDrawsBackground:(BOOL)arg1;
-- (void)setContentView:(id)arg1;
-- (id)contentView;
-- (id)delegate;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

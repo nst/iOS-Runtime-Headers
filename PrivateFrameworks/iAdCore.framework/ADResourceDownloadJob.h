@@ -57,9 +57,24 @@
 
 + (id)downloadJobWithRequest:(id)arg1 maximumSize:(unsigned int)arg2 successBlock:(id)arg3 failureBlock:(id)arg4;
 
-- (void)setStatus:(int)arg1;
+- (unsigned int)maximumSize;
+- (void)setMaximumSize:(unsigned int)arg1;
+- (void)dealloc;
 - (void)setRequest:(id)arg1;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (void)setMimeType:(id)arg1;
+- (void)setConnection:(id)arg1;
+- (id)connection;
+- (double)startTime;
+- (void)setUserData:(id)arg1;
+- (id)userData;
+- (id)mimeType;
+- (id)request;
+- (id)response;
 - (id)data;
+- (void)setStartTime:(double)arg1;
+- (void)setData:(id)arg1;
 - (void)setResponse:(id)arg1;
 - (void)setResponseTime:(double)arg1;
 - (double)responseTime;
@@ -74,20 +89,5 @@
 - (double)totalTime;
 - (void)setFailureBlock:(id)arg1;
 - (void)setSuccessBlock:(id)arg1;
-- (void)setData:(id)arg1;
-- (double)startTime;
-- (void)setUserData:(id)arg1;
-- (id)userData;
-- (id)mimeType;
-- (id)request;
-- (id)response;
-- (void)setStartTime:(double)arg1;
-- (void)setMimeType:(id)arg1;
-- (void)setMaximumSize:(unsigned int)arg1;
-- (unsigned int)maximumSize;
-- (int)status;
-- (void)setConnection:(id)arg1;
-- (id)connection;
-- (void)dealloc;
 
 @end

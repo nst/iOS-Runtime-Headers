@@ -20,16 +20,16 @@
 
 + (BOOL)attachmentTypeRepresentsAnImage:(int)arg1;
 
-- (int)type;
-- (void)setType:(int)arg1;
+- (void)dealloc;
 - (id)previewImage;
 - (id)payload;
 - (void)setPayload:(id)arg1;
-- (void)setPreviewImage:(id)arg1;
-- (void)dealloc;
 - (void)setDownsampleStatus:(int)arg1;
 - (int)downsampleStatus;
 - (void)setPreviewView:(id)arg1;
 - (id)previewView;
+- (int)type;
+- (void)setType:(int)arg1;
+- (void)setPreviewImage:(id)arg1;
 
 @end

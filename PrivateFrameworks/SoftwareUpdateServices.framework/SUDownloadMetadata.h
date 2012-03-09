@@ -23,14 +23,6 @@
 @property BOOL enforceWifiOnlyOverride;
 
 
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)_stringForBool:(BOOL)arg1;
 - (int)downloadFeeAgreementStatus;
 - (void)setDownloadFeeAgreementStatus:(int)arg1;
@@ -40,14 +32,23 @@
 - (void)setEnabledFor3G:(BOOL)arg1;
 - (void)setEnabledFor2G:(BOOL)arg1;
 - (BOOL)isEnabledOnBatteryPower;
-- (BOOL)isEnabledFor3G;
-- (BOOL)isEnabledFor2G;
-- (BOOL)isEnabledForWifi;
 - (BOOL)enforceWifiOnlyOverride;
+- (BOOL)isEnabledFor2G;
+- (BOOL)isEnabledFor3G;
+- (BOOL)isEnabledForWifi;
+- (BOOL)isEnabledForNetworkType:(int)arg1;
 - (void)applyDownloadPolicy:(id)arg1;
 - (void)setActiveDownloadPolicy:(int)arg1;
 - (void)setAutoDownload:(BOOL)arg1;
 - (int)activeDownloadPolicy;
 - (BOOL)isAutoDownload;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

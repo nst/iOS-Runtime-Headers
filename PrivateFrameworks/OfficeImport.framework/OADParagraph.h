@@ -11,6 +11,11 @@
 }
 
 
+- (void)setProperties:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)properties;
+- (BOOL)isEmpty;
 - (void)removeAllTextRuns;
 - (id)addGenericTextField;
 - (void)setParagraphEndCharacterProperties:(id)arg1;
@@ -29,10 +34,5 @@
 - (id)findFirstTextRunOfClass:(Class)arg1;
 - (id)addSlideNumberField;
 - (void)setParentTextListStyle:(id)arg1;
-- (id)properties;
-- (BOOL)isEmpty;
-- (void)setProperties:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

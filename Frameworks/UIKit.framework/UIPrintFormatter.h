@@ -27,6 +27,8 @@
 @property(readonly) int pageCount;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)setStartPage:(int)arg1;
 - (int)startPage;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
@@ -45,7 +47,5 @@
 - (int)_recalcPageCount;
 - (void)_setNeedsRecalc;
 - (int)pageCount;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 
 @end

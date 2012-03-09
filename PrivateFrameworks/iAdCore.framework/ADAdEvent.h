@@ -24,12 +24,20 @@
 @property int connectionType;
 
 
+- (id)description;
+- (void)dealloc;
+- (int)connectionType;
+- (id)dictionaryRepresentation;
+- (void)setDeviceOrientation:(int)arg1;
+- (id)context;
+- (void)setContext:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasConnectionType:(BOOL)arg1;
 - (void)setHasDeviceOrientation:(BOOL)arg1;
-- (BOOL)hasDeviceOrientation;
 - (void)setHasTimestampEvent:(BOOL)arg1;
+- (BOOL)hasDeviceOrientation;
 - (BOOL)hasContext;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (int)deviceOrientation;
 - (BOOL)hasConnectionType;
@@ -37,12 +45,5 @@
 - (BOOL)hasTimestampEvent;
 - (void)setConnectionType:(int)arg1;
 - (void)setTimestampEvent:(unsigned long long)arg1;
-- (id)dictionaryRepresentation;
-- (void)setDeviceOrientation:(int)arg1;
-- (id)context;
-- (void)setContext:(id)arg1;
-- (int)connectionType;
-- (id)description;
-- (void)dealloc;
 
 @end

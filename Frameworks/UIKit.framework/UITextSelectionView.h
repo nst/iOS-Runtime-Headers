@@ -16,7 +16,7 @@
     BOOL m_activated;
     BOOL m_wasShowingCommands;
     BOOL m_delayShowingCommands;
-    BOOL m_grammarReplacementsMode;
+    BOOL m_dictationReplacementsMode;
     int m_showingCommandsCounter;
     NSArray *m_replacements;
     BOOL m_deferSelectionCommands;
@@ -33,6 +33,7 @@
 @property(readonly) UITextRangeView * rangeView;
 
 
+- (void)dealloc;
 - (void)configureForReplacementMode;
 - (void)updateSelectionRectsIfNeeded;
 - (void)doneMagnifying;
@@ -72,7 +73,7 @@
 - (void)selectionDidScroll:(id)arg1;
 - (void)selectionWillScroll:(id)arg1;
 - (void)textSelectionViewActivated:(id)arg1;
-- (void)showReplacementsWithGenerator:(id)arg1 forGrammarChecking:(BOOL)arg2 afterDelay:(double)arg3;
+- (void)showReplacementsWithGenerator:(id)arg1 forDictation:(BOOL)arg2 afterDelay:(double)arg3;
 - (BOOL)selectionCommandsShowing;
 - (void)showSelectionCommandsAfterDelay:(double)arg1;
 - (void)updateSelectionDots;
@@ -105,6 +106,5 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)view;
 - (void)removeFromSuperview;
-- (void)dealloc;
 
 @end

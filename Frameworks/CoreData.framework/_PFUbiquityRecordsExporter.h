@@ -20,11 +20,16 @@
 
 + (void)initialize;
 
+- (void)managedObjectContextDidSave:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)onlyExportFromPersistentStoreCoordinator:(id)arg1;
 - (void)setTempMoveTimer:(id)arg1;
 - (void)setLastTransactionDate:(id)arg1;
 - (id)tempMoveTimer;
 - (id)lastTransactionDate;
+- (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
 - (void)cleanUpFromRolledbackPendingTransaction:(id)arg1 withNotification:(id)arg2;
 - (BOOL)shouldRespondToSaveNotification:(id)arg1;
 - (id)createSetOfStoresToExportForNotification:(id)arg1;
@@ -33,10 +38,5 @@
 - (void)timerMoveLogsFromTempDirectory:(id)arg1;
 - (id)localPeerID;
 - (id)ubiquityRootLocation;
-- (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
-- (void)managedObjectContextDidSave:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

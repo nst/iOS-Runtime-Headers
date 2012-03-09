@@ -5,9 +5,9 @@
 @interface NSMutableString : NSString  {
 }
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)stringWithCapacity:(unsigned int)arg1;
 + (void)initialize;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (unsigned int)_replaceOccurrencesOfRegularExpressionPattern:(id)arg1 withTemplate:(id)arg2 options:(unsigned int)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (void)_cfNormalize:(long)arg1;
@@ -21,16 +21,16 @@
 - (void)_trimWithCharacterSet:(id)arg1;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withCString:(const char *)arg2 length:(unsigned int)arg3;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withCharacters:(const unsigned short*)arg2 length:(unsigned int)arg3;
-- (Class)classForCoder;
-- (void)insertString:(id)arg1 atIndex:(unsigned int)arg2;
-- (unsigned int)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2 options:(unsigned int)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
-- (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)appendCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
 - (void)appendFormat:(id)arg1;
 - (void)appendString:(id)arg1;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (void)setString:(id)arg1;
+- (void)appendCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2;
+- (Class)classForCoder;
+- (void)insertString:(id)arg1 atIndex:(unsigned int)arg2;
+- (unsigned int)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2 options:(unsigned int)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)standardizeWhitespace;
 - (void)replaceNewlinesWithSpaces;
 - (void)_ICSStringParameterName:(id)arg1 value:(id)arg2;

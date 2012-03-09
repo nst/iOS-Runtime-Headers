@@ -9,7 +9,7 @@
 }
 
 
-- (id)graphicStyle;
 - (void)dealloc;
+- (id)graphicStyle;
 
 @end

@@ -12,15 +12,15 @@
 @property unsigned int priority;
 
 
-- (void)setPriority:(unsigned int)arg1;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (int)_rowForPriority:(unsigned int)arg1;
 - (unsigned int)priority;
 - (void)viewDidUnload;
 - (void)loadView;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (int)_rowForPriority:(unsigned int)arg1;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (void)setPriority:(unsigned int)arg1;
 
 @end

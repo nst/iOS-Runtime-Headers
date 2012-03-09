@@ -9,7 +9,7 @@
 }
 
 
-- (id)characterStyle;
 - (void)dealloc;
+- (id)characterStyle;
 
 @end

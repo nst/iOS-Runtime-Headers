@@ -7,8 +7,8 @@
 @interface AVChapterMetadataItemInternal : NSObject  {
     AVWeakReference *weakReference;
     struct OpaqueFigAsset { } *figAsset;
-    int chapterGroupIndex;
-    int chapterIndex;
+    long chapterGroupIndex;
+    long chapterIndex;
     NSString *chapterType;
     NSLocale *locale;
     id value;
@@ -25,7 +25,7 @@
         long long epoch; 
     } duration;
     int valueStatus;
-    int valueErrorCode;
+    long valueErrorCode;
     NSMutableArray *completions;
     struct dispatch_queue_s { } *readWriteQueue;
 }

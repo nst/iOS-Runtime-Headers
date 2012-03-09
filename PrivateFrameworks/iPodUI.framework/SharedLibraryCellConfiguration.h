@@ -10,7 +10,6 @@
 
 + (float)rowHeightForGlobalContext:(id)arg1;
 
-- (void)configureForMediaLibrary:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void)reloadLayoutInformation;
@@ -18,5 +17,6 @@
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (id)stringForLabelAtIndex:(unsigned int)arg1;
 - (void)drawBackgroundWithModifiers:(unsigned int)arg1;
+- (void)configureForMediaLibrary:(id)arg1;
 
 @end

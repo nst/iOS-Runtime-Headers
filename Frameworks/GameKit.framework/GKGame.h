@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKLoadStoreItemContext, NSNumber, NSString, SSItem, NSDictionary, GKGameInternal;
+@class NSNumber, GKGameInternal, SSItem, NSDictionary, NSString, NSDate, GKLoadStoreItemContext;
 
 @interface GKGame : NSObject  {
     GKGameInternal *_internal;
     SSItem *_storeItem;
     BOOL _sandboxed;
     GKLoadStoreItemContext *_storeItemLoadContext;
+    NSDate *_storeItemLoadExpirationDate;
 }
 
 @property(getter=isInstalled,readonly) BOOL installed;
@@ -26,6 +27,7 @@
 @property(readonly) NSString * defaultCategory;
 @property(retain) SSItem * storeItem;
 @property(readonly) struct GKGameInfo { BOOL x1; BOOL x2; BOOL x3; BOOL x4; unsigned int x5; unsigned int x6; unsigned int x7; } gameInfo;
+@property(retain) NSDate * storeItemLoadExpirationDate;
 @property(retain) GKLoadStoreItemContext * storeItemLoadContext;
 
 + (void)removeHistoryForGameWithBundleIdentifier:(id)arg1 completionHandler:(id)arg2;
@@ -35,6 +37,14 @@
 + (BOOL)isGameCenter;
 + (id)currentGame;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (BOOL)isDownloading;
 - (BOOL)isInstalled;
 - (void)setSandboxed:(BOOL)arg1;
@@ -45,9 +55,12 @@
 - (void)loadIconForStyle:(int)arg1 withCompletionHandler:(id)arg2;
 - (id)cachedIconForStyle:(int)arg1;
 - (id)loadAndRenderIconForStyle:(int)arg1 withImageBrush:(id)arg2 completionHandler:(id)arg3;
+- (id)storeItemLoadExpirationDate;
+- (void)setStoreItemLoadExpirationDate:(id)arg1;
 - (id)storeItemLoadContext;
 - (void)setStoreItemLoadContext:(id)arg1;
 - (id)storeItem;
+- (BOOL)isStoreItemUnexpired;
 - (id)imageSourceForIconStyle:(int)arg1;
 - (id)_imageURLForIconStyle:(int)arg1;
 - (id)gameDescriptor;
@@ -55,16 +68,8 @@
 - (id)internal;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (void)setInternal:(id)arg1;
+- (id)cacheKey;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
-- (id)cacheKey;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

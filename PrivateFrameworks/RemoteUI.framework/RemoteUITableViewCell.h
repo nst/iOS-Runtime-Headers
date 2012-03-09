@@ -19,6 +19,8 @@
 
 + (id)alertImage;
 
+- (void)dealloc;
+- (void)layoutSubviews;
 - (void)setRemoteUIAccessoryType:(int)arg1;
 - (void)setRowInvalid:(BOOL)arg1;
 - (id)remoteUIAccessoryView;
@@ -29,7 +31,5 @@
 - (void)setForceFullSizeDetailLabel:(BOOL)arg1;
 - (void)setRemoteUIAccessoryView:(id)arg1;
 - (void)_accessoriesChanged;
-- (void)layoutSubviews;
-- (void)dealloc;
 
 @end

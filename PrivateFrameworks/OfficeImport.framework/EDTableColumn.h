@@ -16,6 +16,10 @@
 
 + (id)tableColumnWithResources:(id)arg1;
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
+- (id)uniqueName;
+- (id)name;
 - (void)setUniqueName:(id)arg1;
 - (id)totalsRowLabel;
 - (void)setTotalsRowLabel:(id)arg1;
@@ -32,9 +36,5 @@
 - (id)dataAreaDxf;
 - (void)setDataAreaDxf:(id)arg1;
 - (id)initWithResources:(id)arg1;
-- (id)uniqueName;
-- (id)name;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

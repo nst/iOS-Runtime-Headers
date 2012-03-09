@@ -25,14 +25,14 @@
 @property(readonly) int indicatorStyleWhite;
 @property(readonly) int indicatorStyleGray;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 + (BOOL)copyURLStrings:(id*)arg1 forValue:(id)arg2;
 
 - (void)setTimeoutInterval:(id)arg1;
 - (id)timeoutInterval;
-- (id)attributeKeys;
+- (id)init;
 - (void)setSegmentedControl:(id)arg1;
 - (id)segmentedControl;
 - (void)setInputViewObeysDOMFocus:(id)arg1;
@@ -45,7 +45,7 @@
 - (void)_setShowsBackgroundShadow:(BOOL)arg1;
 - (BOOL)scrollingEnabled;
 - (void)reload;
-- (id)init;
+- (id)attributeKeys;
 - (int)indicatorStyleWhite;
 - (int)indicatorStyleGray;
 - (BOOL)shouldInvalidateForLowMemory;

@@ -14,6 +14,7 @@
 @property(retain) GKViewController * rootViewController;
 
 
+- (void)dealloc;
 - (BOOL)displayUsingSplitNavigationBar;
 - (BOOL)statusViewVisible;
 - (void)setStatusViewVisible:(BOOL)arg1;
@@ -23,6 +24,5 @@
 - (void)viewDidUnload;
 - (id)rootViewController;
 - (void)setRootViewController:(id)arg1;
-- (void)dealloc;
 
 @end

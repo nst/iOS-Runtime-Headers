@@ -12,6 +12,7 @@
 @property(getter=isLoading) BOOL loading;
 
 
+- (void)dealloc;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
 - (int)sectionRowCountInTableView:(id)arg1;
@@ -20,6 +21,5 @@
 - (float)sectionHeaderHeightInTableView:(id)arg1;
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)dealloc;
 
 @end

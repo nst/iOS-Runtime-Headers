@@ -13,7 +13,6 @@
 
 + (id)_operationQueueForPresenter:(id)arg1;
 
-- (void)finalize;
 - (void)handleCanceledServer;
 - (void)handleMessage:(void*)arg1;
 - (id)idForFileReactor:(id)arg1;
@@ -25,8 +24,8 @@
 - (void)_makeProvider:(id)arg1 cancelProvidingItemAtURL:(id)arg2 forAccessClaimWithID:(id)arg3;
 - (void)_makeProvider:(id)arg1 provideItemAtURL:(id)arg2 forAccessClaimWithID:(id)arg3 completionHandler:(id)arg4;
 - (void)_makePresenter:(id)arg1 observeVersionChangeOfKind:(id)arg2 withClientID:(id)arg3 name:(id)arg4 subitemURL:(id)arg5;
-- (void)_makePresenter:(id)arg1 observeMoveToURL:(id)arg2;
-- (void)_makePresenterObserveChange:(id)arg1;
+- (void)_makePresenter:(id)arg1 observeMoveToURL:(id)arg2 withSubitemURL:(id)arg3;
+- (void)_makePresenter:(id)arg1 observeChangeWithSubitemURL:(id)arg2;
 - (void)_makePresenter:(id)arg1 reacquireFromWritingClaimForID:(id)arg2;
 - (void)_makePresenter:(id)arg1 reacquireFromReadingClaimForID:(id)arg2;
 - (void)_makePresenter:(id)arg1 relinquishToWritingClaimWithID:(id)arg2 options:(unsigned int)arg3 subitemURL:(id)arg4 completionHandler:(id)arg5;
@@ -45,8 +44,9 @@
 - (void)grantSubarbitrationClaim:(id)arg1 withServer:(struct _xpc_connection_s { }*)arg2;
 - (void)revokeAccessClaimForID:(id)arg1;
 - (struct dispatch_semaphore_s { }*)grantAccessClaim:(id)arg1 synchronouslyIfPossible:(BOOL)arg2;
+- (void)dealloc;
 - (void)removeFilePresenter:(id)arg1;
 - (void)addFilePresenter:(id)arg1;
-- (void)dealloc;
+- (void)finalize;
 
 @end

@@ -15,12 +15,12 @@
 - (BOOL)isHTML;
 - (id)attachments;
 - (id)textHtmlPart;
+- (void)dealloc;
 - (BOOL)isRich;
 - (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3;
+- (unsigned int)numberOfAttachmentsSigned:(BOOL*)arg1 encrypted:(BOOL*)arg2;
 - (id)message;
 - (void)setMessage:(id)arg1;
 - (id)rawData;
-- (unsigned int)numberOfAttachmentsSigned:(BOOL*)arg1 encrypted:(BOOL*)arg2;
-- (void)dealloc;
 
 @end

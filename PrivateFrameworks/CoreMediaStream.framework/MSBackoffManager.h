@@ -23,6 +23,7 @@
 @property(retain) NSDate * retryAfterDate;
 
 
+- (void)dealloc;
 - (void)setRetryAfterDate:(id)arg1;
 - (id)retryAfterDate;
 - (void)setNextExpiryDate:(id)arg1;
@@ -41,6 +42,5 @@
 - (void)setCurrentInterval:(double)arg1;
 - (id)initWithInitialInterval:(double)arg1 backoffFactor:(double)arg2 randomizeFactor:(double)arg3 maxBackoffInterval:(double)arg4 retryAfterDate:(id)arg5;
 - (void)reset;
-- (void)dealloc;
 
 @end

@@ -6,9 +6,9 @@
 }
 
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (id)retain;
 - (void)release;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 
 @end

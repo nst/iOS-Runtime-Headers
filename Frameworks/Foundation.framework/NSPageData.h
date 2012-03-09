@@ -13,8 +13,6 @@
 + (int)_umask;
 + (void)initialize;
 
-- (id)initWithDataNoCopy:(id)arg1;
-- (id)data;
 - (unsigned int)writeFile:(id)arg1;
 - (unsigned int)writeFd:(int)arg1;
 - (id)deserializer;
@@ -23,14 +21,16 @@
 - (id)_mappedFile;
 - (id)initWithContentsOfMappedFile:(id)arg1 withFileAttributes:(id)arg2;
 - (void)_setOriginalFileInfoFromFileAttributes:(id)arg1;
-- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
-- (id)initWithContentsOfMappedFile:(id)arg1;
-- (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
-- (id)initWithData:(id)arg1;
-- (id)initWithContentsOfFile:(id)arg1;
-- (const void*)bytes;
 - (unsigned int)length;
 - (id)init;
 - (void)dealloc;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (id)data;
+- (id)initWithData:(id)arg1;
+- (id)initWithContentsOfFile:(id)arg1;
+- (const void*)bytes;
+- (id)initWithDataNoCopy:(id)arg1;
+- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
+- (id)initWithContentsOfMappedFile:(id)arg1;
 
 @end

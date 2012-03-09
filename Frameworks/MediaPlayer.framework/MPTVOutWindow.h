@@ -11,11 +11,11 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)_setupTargetScreen:(id)arg1;
 - (void)_playbackStateChanged:(id)arg1;
 - (BOOL)setVideoView:(id)arg1;
 - (id)videoView;
-- (id)init;
-- (void)dealloc;
 
 @end

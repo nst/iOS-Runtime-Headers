@@ -40,9 +40,28 @@
 
 + (void)initialize;
 
+- (void)dealloc;
 - (BOOL)isBusy;
+- (id)webView:(id)arg1 runJavaScriptTextInputPanelWithPrompt:(id)arg2 defaultText:(id)arg3 initiatedByFrame:(id)arg4;
+- (BOOL)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
+- (void)webView:(id)arg1 runJavaScriptAlertPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
+- (void)webView:(id)arg1 didClearWindowObject:(id)arg2 forFrame:(id)arg3;
+- (void)webView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
+- (void)setPaused:(BOOL)arg1;
+- (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
+- (id)viewController;
+- (void)setViewController:(id)arg1;
+- (void)setScrollingEnabled:(BOOL)arg1;
+- (BOOL)scrollingEnabled;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)alertViewCancel:(id)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (int)interfaceOrientation;
+- (id)delegate;
+- (void)didMoveToWindow;
 - (void)setDelegate:(id)arg1;
-- (BOOL)isShuttingDown;
+- (void)setBackgroundColor:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setActiveJavaScriptAlerts:(id)arg1;
 - (id)activeJavaScriptAlerts;
 - (void)setIsShuttingDown:(BOOL)arg1;
@@ -93,25 +112,6 @@
 - (void)setAdManagesPurchaseFlow:(BOOL)arg1;
 - (BOOL)adManagesPurchaseFlow;
 - (id)qToken;
-- (id)webView:(id)arg1 runJavaScriptTextInputPanelWithPrompt:(id)arg2 defaultText:(id)arg3 initiatedByFrame:(id)arg4;
-- (BOOL)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
-- (void)webView:(id)arg1 runJavaScriptAlertPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
-- (void)webView:(id)arg1 didClearWindowObject:(id)arg2 forFrame:(id)arg3;
-- (void)webView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
-- (void)setPaused:(BOOL)arg1;
-- (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
-- (id)viewController;
-- (void)setViewController:(id)arg1;
-- (void)setScrollingEnabled:(BOOL)arg1;
-- (BOOL)scrollingEnabled;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)alertViewCancel:(id)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (int)interfaceOrientation;
-- (id)delegate;
-- (void)didMoveToWindow;
-- (void)setBackgroundColor:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
+- (BOOL)isShuttingDown;
 
 @end

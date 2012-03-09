@@ -13,15 +13,15 @@
 
 + (id)sharedManager;
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isPaused;
 - (void)unpauseUUID:(id)arg1;
 - (void)pingPauseUUID:(id)arg1;
 - (void)_removeTimerUUID:(id)arg1;
 - (void)_addPauseUUID:(id)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)_timerDidFire:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

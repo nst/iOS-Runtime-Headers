@@ -37,6 +37,10 @@
 @property(copy) id responseBlock;
 
 
+- (void)sendDidFinish;
+- (id)userInfo;
+- (id)init;
+- (void)dealloc;
 - (id)responseBlock;
 - (id)messagingCenter;
 - (id)messageName;
@@ -50,9 +54,5 @@
 - (void)sendDidFailWithError:(id)arg1;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
-- (void)sendDidFinish;
-- (id)userInfo;
-- (id)init;
-- (void)dealloc;
 
 @end

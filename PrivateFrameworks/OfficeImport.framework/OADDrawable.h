@@ -13,6 +13,9 @@
 }
 
 
+- (void)dealloc;
+- (BOOL)hidden;
+- (void)setHidden:(BOOL)arg1;
 - (void)setDrawableProperties:(id)arg1;
 - (id)createOrientedBoundsWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)createWordClientDataWithTextType:(int)arg1;
@@ -27,8 +30,5 @@
 - (void)setParentTextListStyle:(id)arg1;
 - (unsigned long)id;
 - (void)setId:(unsigned long)arg1;
-- (BOOL)hidden;
-- (void)setHidden:(BOOL)arg1;
-- (void)dealloc;
 
 @end

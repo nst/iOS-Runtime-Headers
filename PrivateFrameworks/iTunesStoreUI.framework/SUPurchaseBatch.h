@@ -26,9 +26,9 @@
 @property(retain) NSArray * validPurchases;
 
 
+- (void)dealloc;
 - (id)initWithItems:(id)arg1;
 - (id)items;
-- (void)dealloc;
 - (id)offers;
 - (id)mergedErrorForError:(id)arg1 withCount:(int)arg2;
 - (void)setDocumentTargetIdentifier:(id)arg1;

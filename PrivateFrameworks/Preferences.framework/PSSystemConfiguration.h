@@ -6,9 +6,10 @@
     struct __SCPreferences { } *_prefs;
 }
 
-+ (void)releaseSharedInstance;
 + (id)sharedInstance;
++ (void)releaseSharedInstance;
 
+- (void)dealloc;
 - (struct __CFString { }*)dataServiceID;
 - (struct __CFString { }*)voicemailServiceID;
 - (struct __CFString { }*)getServiceIDForPDPContext:(unsigned int)arg1;
@@ -20,6 +21,5 @@
 - (void)setProtocolConfigurationValue:(id)arg1 forKey:(struct __CFString { }*)arg2 protocolType:(struct __CFString { }*)arg3 serviceID:(struct __CFString { }*)arg4;
 - (unsigned char)lockAndSynchronize;
 - (void)unlockAndSynchronize;
-- (void)dealloc;
 
 @end

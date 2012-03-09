@@ -9,8 +9,8 @@
 
 @property(readonly) MPMediaItem * nativeItem;
 
-+ (id)webScriptNameForSelector:(SEL)arg1;
 + (void)initialize;
++ (id)webScriptNameForSelector:(SEL)arg1;
 + (id)scriptPropertyForNativeProperty:(id)arg1;
 + (int)nativeMediaTypesForScriptMediaTypes:(id)arg1;
 + (id)copyScriptMediaTypesForNativeMediaTypes:(int)arg1;

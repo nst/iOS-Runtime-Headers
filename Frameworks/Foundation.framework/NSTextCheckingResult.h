@@ -24,7 +24,6 @@
 + (id)orthographyCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 orthography:(id)arg2;
 + (void)initialize;
 
-- (double)duration;
 - (void*)underlyingResult;
 - (id)regularExpression;
 - (id)replacementString;
@@ -37,16 +36,17 @@
 - (void)encodeRangeWithCoder:(id)arg1;
 - (unsigned int)numberOfRanges;
 - (id)components;
-- (unsigned long long)resultType;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
 - (id)phoneNumber;
 - (id)timeZone;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)URL;
+- (double)duration;
 - (id)date;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)resultType;
 
 @end

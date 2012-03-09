@@ -14,7 +14,7 @@
 @property <GEOSupportedTileSetsServerProxyDelegate> * delegate;
 
 
-- (void)loadAttributionBadgeDataHiDPI:(BOOL)arg1 isIPad:(BOOL)arg2 handler:(id)arg3;
+- (void)dealloc;
 - (void)_connectionDidFail;
 - (void)_writeDocumentToDisk:(id)arg1;
 - (void)_cancelConnection;
@@ -22,13 +22,13 @@
 - (id)documentDataFromDisk;
 - (void)updateAttributionBadgeDataHiDPI:(BOOL)arg1 isIPad:(BOOL)arg2 handler:(id)arg3;
 - (void)updateDocument;
-- (void)setDelegate:(id)arg1;
 - (id)documentURL;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (id)delegate;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)loadAttributionBadgeDataHiDPI:(BOOL)arg1 isIPad:(BOOL)arg2 handler:(id)arg3;
 
 @end

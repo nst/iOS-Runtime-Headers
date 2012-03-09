@@ -16,8 +16,8 @@
 - (id)regularExpression;
 - (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (unsigned int)numberOfRanges;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
 - (void)dealloc;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 
 @end

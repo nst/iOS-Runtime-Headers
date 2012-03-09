@@ -17,7 +17,15 @@
 @property BOOL showsDoneButton;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)setActionButtonTitle:(id)arg1 destructive:(BOOL)arg2 animated:(BOOL)arg3;
+- (void)_doneButtonPressed:(id)arg1;
+- (id)_descriptionCell;
+- (id)_headerCell;
+- (id)_cellForReuseIdentifier:(id)arg1;
+- (void)dealloc;
+- (id)initWithTrustDescription:(id)arg1;
+- (BOOL)showsDoneButton;
+- (void)setShowsDoneButton:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -25,15 +33,7 @@
 - (id)delegate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setDelegate:(id)arg1;
 - (void)_actionButtonPressed:(id)arg1;
-- (void)setShowsDoneButton:(BOOL)arg1;
-- (BOOL)showsDoneButton;
-- (void)dealloc;
-- (id)initWithTrustDescription:(id)arg1;
-- (void)setActionButtonTitle:(id)arg1 destructive:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)_doneButtonPressed:(id)arg1;
-- (id)_descriptionCell;
-- (id)_headerCell;
-- (id)_cellForReuseIdentifier:(id)arg1;
 
 @end

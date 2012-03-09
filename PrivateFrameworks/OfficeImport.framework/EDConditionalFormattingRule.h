@@ -24,8 +24,16 @@
 
 + (id)conditionalFormattingRuleWithResources:(id)arg1;
 
+- (void)dealloc;
 - (void)setRank:(unsigned int)arg1;
 - (unsigned int)rank;
+- (int)priority;
+- (int)type;
+- (void)setType:(int)arg1;
+- (id)text;
+- (void)setText:(id)arg1;
+- (bool)bottom;
+- (void)setBottom:(bool)arg1;
 - (unsigned int)differentialStyleIndex;
 - (void)setDifferentialStyleIndex:(unsigned int)arg1;
 - (int)operatorEnum;
@@ -50,13 +58,5 @@
 - (id)initWithResources:(id)arg1;
 - (void)setDifferentialStyle:(id)arg1;
 - (bool)percent;
-- (bool)bottom;
-- (void)setBottom:(bool)arg1;
-- (int)priority;
-- (int)type;
-- (void)setType:(int)arg1;
-- (id)text;
-- (void)setText:(id)arg1;
-- (void)dealloc;
 
 @end

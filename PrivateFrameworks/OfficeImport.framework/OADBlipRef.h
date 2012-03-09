@@ -14,6 +14,15 @@
 + (id)inflatedExtensionForGzippedExtension:(id)arg1;
 + (int)blipTypeForExtension:(id)arg1;
 
+- (void)setName:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)setPath:(id)arg1;
+- (long)index;
+- (id)name;
 - (void)addEffect:(id)arg1;
 - (unsigned int)effectCount;
 - (id)effectAtIndex:(unsigned int)arg1;
@@ -26,14 +35,5 @@
 - (void)setBlip:(id)arg1;
 - (id)initWithIndex:(long)arg1 name:(id)arg2;
 - (void)setIndex:(long)arg1;
-- (void)setPath:(id)arg1;
-- (long)index;
-- (id)name;
-- (void)setName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

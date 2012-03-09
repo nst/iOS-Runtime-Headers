@@ -27,6 +27,9 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (void)deactivate;
 - (void)_postFirePowersongNotification:(id)arg1;
 - (void)_handleNikeKeyUpTimer:(id)arg1;
 - (void)_postBeginMusicFastForwardNotification:(id)arg1;
@@ -58,8 +61,5 @@
 - (void)beginSearching;
 - (void)cancelLinking;
 - (void)beginLinking;
-- (void)deactivate;
-- (id)init;
-- (void)dealloc;
 
 @end

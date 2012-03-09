@@ -68,22 +68,11 @@
 @property BOOL usesSmallText;
 
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isTentative;
-- (void)setLocation:(id)arg1;
-- (BOOL)isBorderless;
-- (id)location;
-- (id)color;
-- (void)setCancelled:(BOOL)arg1;
-- (void)setColor:(id)arg1;
-- (id)title;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setTitle:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isCancelled;
+- (void)dealloc;
 - (void)setDimmed:(BOOL)arg1;
 - (BOOL)isDimmed;
+- (BOOL)isTentative;
 - (id)_locationMetricsForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_tentativeOutline;
 - (id)_locationFont;
@@ -99,8 +88,19 @@
 - (void)setBorderless:(BOOL)arg1;
 - (void)setUsesSmallText:(BOOL)arg1;
 - (void)setTentative:(BOOL)arg1;
-- (BOOL)isCancelled;
-- (void)dealloc;
+- (BOOL)isBorderless;
+- (id)location;
+- (id)color;
+- (void)setCancelled:(BOOL)arg1;
+- (void)setColor:(id)arg1;
+- (id)title;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setTitle:(id)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLocation:(id)arg1;
 - (void)setBirthday:(BOOL)arg1;
 
 @end

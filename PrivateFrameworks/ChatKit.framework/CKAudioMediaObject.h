@@ -12,7 +12,7 @@
 + (id)mimeTypesAllowedForMMS;
 + (id)mimeTypesToFileExtensions;
 
-- (unsigned long long)sizeInBytes;
+- (void)dealloc;
 - (id)transcodePath;
 - (id)transcodedPathExtension;
 - (id)effectiveExportedFilename;
@@ -27,7 +27,7 @@
 - (double)transcodeDuration;
 - (id)filenameForMedia;
 - (id)previewTitle;
+- (unsigned long long)sizeInBytes;
 - (int)mediaType;
-- (void)dealloc;
 
 @end

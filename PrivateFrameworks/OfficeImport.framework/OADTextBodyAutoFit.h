@@ -7,9 +7,9 @@
 }
 
 
-- (int)type;
-- (id)initWithType:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (int)type;
+- (id)initWithType:(int)arg1;
 
 @end

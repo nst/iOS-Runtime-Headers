@@ -25,6 +25,24 @@
 }
 
 
+- (void)dealloc;
+- (id)printPageRenderer;
+- (void)uiWebView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
+- (void)uiWebView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
+- (void)uiWebView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
+- (id)uiWebView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
+- (void)uiWebView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
+- (void)pdfViewHandlerCompletedLayoutAndIsUnlocked:(id)arg1;
+- (struct CGPoint { float x1; float x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { float x1; float x2; })arg2;
+- (int)pageCount;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)loadView;
+- (id)webView;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)didReceiveMemoryWarning;
+- (void)tearDownUI;
 - (void)scrubView:(id)arg1 didSelectPageAtIndex:(unsigned int)arg2;
 - (void)userInteractedWithScrubView:(id)arg1;
 - (int)numberOfPagesInScrubView:(id)arg1;
@@ -53,23 +71,5 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrameWithoutOverlay;
 - (BOOL)canPrint;
 - (id)pdfPreviewURL;
-- (id)printPageRenderer;
-- (void)uiWebView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
-- (void)uiWebView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
-- (void)uiWebView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
-- (id)uiWebView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
-- (void)uiWebView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
-- (void)pdfViewHandlerCompletedLayoutAndIsUnlocked:(id)arg1;
-- (struct CGPoint { float x1; float x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { float x1; float x2; })arg2;
-- (int)pageCount;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)loadView;
-- (id)webView;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)viewDidLayoutSubviews;
-- (void)didReceiveMemoryWarning;
-- (void)dealloc;
-- (void)tearDownUI;
 
 @end

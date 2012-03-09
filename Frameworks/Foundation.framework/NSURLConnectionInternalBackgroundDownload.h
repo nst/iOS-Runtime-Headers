@@ -2,51 +2,53 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class SSDownloadManager, SSDownload, NSTimer, SSDownloadHandler, NSMutableArray, NSCountedSet;
+@class AsyncSSDownloadManager, NSTimer, SSDownloadHandler, NSMutableArray, NSCountedSet;
 
 @interface NSURLConnectionInternalBackgroundDownload : NSURLConnectionInternal <NSURLConnectionRequired, SSDownloadManagerObserver, SSDownloadHandlerDelegate> {
     struct __CFRunLoopSource { } *_source;
     NSMutableArray *_pendingOps;
     NSCountedSet *_runloops;
     SSDownloadHandler *_handler;
-    SSDownloadManager *_manager;
-    SSDownload *_download;
+    AsyncSSDownloadManager *_manager;
+    long long _downloadIdent;
     long long _ctLast;
     BOOL _terminated;
     NSTimer *_deferredStartTimer;
 }
 
++ (void)_enableLogging;
 + (id)sharedDownloadManagerForMediaKind:(id)arg1 persistenceIdentifier:(id)arg2;
 
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
-- (void)start;
-- (void)sourcePerform;
+- (long long)_getDownloadIdent;
+- (void)_sourcePerform;
 - (void)downloadHandler:(id)arg1 handleAuthenticationSession:(id)arg2;
 - (BOOL)downloadHandler:(id)arg1 pauseSession:(id)arg2;
 - (void)downloadHandler:(id)arg1 cancelSession:(id)arg2;
 - (void)downloadHandlerDidDisconnect:(id)arg1;
-- (void)checkStartTimer;
 - (void)_sendTerminalDidFinishToDelegate:(id)arg1;
-- (id)myOnlyAsset;
-- (void)updateClientWithCurrentWrites;
+- (void)_updateClientWithCurrentWrites:(id)arg1;
+- (void)_createNewDownload;
 - (void)_managerFailedToStartInTime;
+- (void)setHandlerForDownload:(id)arg1 completionBlock:(id)arg2;
 - (void)_sendTerminalErrorToDelegate:(id)arg1;
 - (void)_postTerminalInvocation:(id)arg1;
 - (void)_preTerminalInvocation:(id)arg1;
 - (void)_invokeInvocation:(id)arg1 withConnection:(id)arg2;
+- (void)_updateDownloadState:(id)arg1;
 - (void)invokeForDelegate:(id)arg1;
 - (void)setDelegateQueue:(id)arg1;
 - (void)unscheduleFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)initWithInfo:(const struct InternalInit { id x1; id x2; id x3; id x4; BOOL x5; long long x6; }*)arg1;
+- (id)description;
+- (void)cancel;
+- (void)dealloc;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)_invalidate;
+- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
+- (void)start;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)cancelAuthenticationChallenge:(id)arg1;
-- (void)_invalidate;
-- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (id)description;
-- (void)cancel;
-- (void)dealloc;
 
 @end

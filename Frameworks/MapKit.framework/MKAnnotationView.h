@@ -32,8 +32,7 @@
 + (unsigned int)_selectedZIndex;
 + (unsigned int)_zIndex;
 
-- (struct { double x1; double x2; })coordinate;
-- (void)setDraggable:(BOOL)arg1;
+- (void)dealloc;
 - (void)setAnnotation:(id)arg1;
 - (id)annotation;
 - (void)setSelected:(BOOL)arg1;
@@ -89,10 +88,11 @@
 - (unsigned int)_zIndex;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
 - (BOOL)isDraggable;
+- (struct { double x1; double x2; })coordinate;
+- (void)setDraggable:(BOOL)arg1;
 - (void)setCanShowCallout:(BOOL)arg1;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (void)setLeftCalloutAccessoryView:(id)arg1;
 - (void)setRightCalloutAccessoryView:(id)arg1;
-- (void)dealloc;
 
 @end

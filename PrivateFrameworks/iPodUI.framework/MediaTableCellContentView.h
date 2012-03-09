@@ -31,6 +31,7 @@
 @property struct CGSize { float x1; float x2; } backgroundSize;
 
 
+- (void)dealloc;
 - (void)setCell:(id)arg1;
 - (struct CGSize { float x1; float x2; })backgroundSize;
 - (id)cell;
@@ -43,15 +44,6 @@
 - (id)_scriptingInfo;
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_drawBackgroundInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBackgroundSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_updateSubviewBackgrounds;
-- (void)setDrawInAlternateStyle:(BOOL)arg1;
-- (BOOL)drawInAlternateStyle;
-- (BOOL)_useSubviewLayout;
-- (void)setConfigurationNeedsDisplay;
-- (void)drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (void)_removeSubviewsForConfiguration;
 - (void)_startUsingSubviewLayout;
 - (void)_stopUsingSubviewLayout;
@@ -64,5 +56,13 @@
 - (void)setDeleteConfirmationVisisble:(BOOL)arg1;
 - (id)configuration;
 - (void)setConfiguration:(id)arg1;
+- (void)_drawBackgroundInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBackgroundSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_updateSubviewBackgrounds;
+- (void)setDrawInAlternateStyle:(BOOL)arg1;
+- (BOOL)drawInAlternateStyle;
+- (BOOL)_useSubviewLayout;
+- (void)setConfigurationNeedsDisplay;
+- (void)drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

@@ -11,8 +11,8 @@
 
 + (id)sharedProfileServer;
 
+- (id)init;
 - (void)stopProfiling;
 - (void)startProfiling;
-- (id)init;
 
 @end

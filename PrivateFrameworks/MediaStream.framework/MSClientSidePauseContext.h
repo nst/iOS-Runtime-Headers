@@ -11,10 +11,10 @@
 }
 
 
-- (void)_ping;
 - (id)initWithServer:(id)arg1;
+- (void)dealloc;
+- (void)_ping;
 - (void)resume;
 - (void)_timerDidFire:(id)arg1;
-- (void)dealloc;
 
 @end

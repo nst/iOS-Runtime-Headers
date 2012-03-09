@@ -26,22 +26,22 @@
 
 + (BOOL)isWorldClockCityProperties:(id)arg1;
 
-- (id)initWithALCityIdentifier:(int)arg1;
-- (id)initWithTimeZone:(id)arg1 countryCode:(id)arg2 name:(id)arg3 countryName:(id)arg4 unlocalizedName:(id)arg5 unlocalizedCountryName:(id)arg6;
-- (id)alCityId;
-- (id)unlocalizedCityName;
-- (id)initWithALCity:(id)arg1;
-- (id)idUrl;
-- (id)unlocalizedCountryName;
 - (id)countryCode;
-- (id)properties;
-- (id)initWithProperties:(id)arg1;
-- (id)timeZone;
-- (id)name;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (void)dealloc;
 - (id)countryName;
+- (id)unlocalizedCountryName;
+- (id)initWithALCityIdentifier:(int)arg1;
+- (id)initWithTimeZone:(id)arg1 countryCode:(id)arg2 name:(id)arg3 countryName:(id)arg4 unlocalizedName:(id)arg5 unlocalizedCountryName:(id)arg6;
+- (id)initWithALCity:(id)arg1;
+- (id)idUrl;
+- (id)properties;
+- (id)initWithProperties:(id)arg1;
+- (id)timeZone;
+- (id)name;
+- (id)alCityId;
+- (id)unlocalizedCityName;
 
 @end

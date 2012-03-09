@@ -71,16 +71,8 @@
 @property(readonly) EKDayOccurrenceView * draggingView;
 
 
-- (void)invalidate;
-- (void)setDelegate:(id)arg1;
 - (void)_update;
-- (struct CGPoint { float x1; float x2; })touchOffset;
-- (id)event;
-- (void)setEvent:(id)arg1;
-- (id)initWithView:(id)arg1;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)delegate;
+- (void)dealloc;
 - (struct CGPoint { float x1; float x2; })latestTouchPoint;
 - (struct CGPoint { float x1; float x2; })firstTouchPoint;
 - (void)setUsesXDragOffsetInCancelRegion:(BOOL)arg1;
@@ -114,7 +106,15 @@
 - (id)draggingView;
 - (void)endForcedStart;
 - (void)setUsesHorizontalDragLocking:(BOOL)arg1;
-- (void)dealloc;
+- (struct CGPoint { float x1; float x2; })touchOffset;
+- (id)event;
+- (void)setEvent:(id)arg1;
+- (id)initWithView:(id)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)invalidate;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)_cancel;
 
 @end

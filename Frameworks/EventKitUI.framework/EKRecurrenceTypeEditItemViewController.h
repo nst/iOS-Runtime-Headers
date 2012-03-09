@@ -14,8 +14,12 @@
 @property int repeatType;
 
 
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (void)setRepeatType:(int)arg1;
 - (int)repeatType;
+- (void)_checkItemAtIndexPath:(id)arg1;
+- (void)setCustomString:(id)arg1;
 - (void)viewDidUnload;
 - (void)loadView;
 - (void)viewDidLoad;
@@ -24,9 +28,5 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)_checkItemAtIndexPath:(id)arg1;
-- (void)setCustomString:(id)arg1;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 
 @end

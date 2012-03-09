@@ -14,8 +14,8 @@
 @property int dataclass;
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
+- (void)finishWithError:(id)arg1;
 - (void)addSourceID:(id)arg1 sourceFolder:(id)arg2 destinatonFolder:(id)arg3;
 - (void)setPushedMoveRequests:(id)arg1;
 - (void)setDataclass:(int)arg1;

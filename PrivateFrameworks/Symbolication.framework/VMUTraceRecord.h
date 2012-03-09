@@ -13,8 +13,6 @@
 
 
 - (unsigned long long)address;
-- (unsigned int)depth;
-- (unsigned int)type;
 - (id)initWithTraceRecord:(id)arg1;
 - (unsigned int)seqnum;
 - (unsigned int)threadID;
@@ -23,5 +21,7 @@
 - (id)initWithBacktrace:(id)arg1 forTask:(unsigned int)arg2;
 - (unsigned long long*)frames;
 - (unsigned long long)argument;
+- (unsigned int)type;
+- (unsigned int)depth;
 
 @end

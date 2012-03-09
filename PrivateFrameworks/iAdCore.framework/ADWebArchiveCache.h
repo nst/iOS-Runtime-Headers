@@ -28,6 +28,8 @@
 - (unsigned int)currentDiskUsage;
 - (unsigned int)currentMemoryUsage;
 - (struct dispatch_queue_s { }*)cacheAccessQueue;
+- (id)init;
+- (void)dealloc;
 - (BOOL)dirty;
 - (void)setCacheAccessQueue:(struct dispatch_queue_s { }*)arg1;
 - (void)setCacheNodesByURL:(id)arg1;
@@ -52,7 +54,5 @@
 - (void)setDirty:(BOOL)arg1;
 - (void)_handleLowMemory:(id)arg1;
 - (void)_insertCacheNode:(id)arg1 completionHandler:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

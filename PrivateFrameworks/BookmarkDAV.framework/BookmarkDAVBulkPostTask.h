@@ -23,6 +23,7 @@
 @property(retain) NSString * nextRootSyncToken;
 
 
+- (void)dealloc;
 - (id)folderURLToChildrenURLOrder;
 - (void)_foundChildrenOrder:(id)arg1 inFolderWithURL:(id)arg2;
 - (id)additionalHeaderValues;
@@ -35,6 +36,5 @@
 - (id)initWithDataPayload:(id)arg1 atURL:(id)arg2 checkCTag:(id)arg3 checkCTagURL:(id)arg4;
 - (void)setNextRootSyncToken:(id)arg1;
 - (void)setNextRootCTag:(id)arg1;
-- (void)dealloc;
 
 @end

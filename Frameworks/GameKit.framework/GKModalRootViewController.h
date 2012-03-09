@@ -16,6 +16,7 @@
 @property BOOL stopAuthenticating;
 
 
+- (void)dealloc;
 - (void)setStopAuthenticating:(BOOL)arg1;
 - (BOOL)stopAuthenticating;
 - (id)oldDelegate;
@@ -25,6 +26,5 @@
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)dealloc;
 
 @end

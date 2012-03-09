@@ -22,25 +22,18 @@
 
 @property(getter=isHighlighted) BOOL highlighted;
 
-+ (float)defaultHeight;
 + (void)_calculateWidths;
 + (void)_invalidateWidths;
 + (float)timeWidthIncludingDots:(BOOL)arg1;
 + (float)hourWidth;
++ (float)defaultHeight;
 
+- (BOOL)isCancelled;
+- (id)init;
+- (void)dealloc;
 - (id)initWithEvent:(id)arg1;
 - (void)setStartDate:(double)arg1;
 - (BOOL)isAllDay;
-- (void)setLocation:(id)arg1;
-- (void)setCancelled:(BOOL)arg1;
-- (BOOL)showDisclosure;
-- (BOOL)isHighlighted;
-- (void)setHighlighted:(BOOL)arg1;
-- (id)title;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setTitle:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIndentsForMissingDot:(BOOL)arg1;
 - (id)_selectedBackgroundImage;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 location:(id)arg3 startDate:(double)arg4 allDay:(BOOL)arg5 tentative:(BOOL)arg6;
@@ -52,8 +45,15 @@
 - (void)updateWithEvent:(id)arg1;
 - (void)setTentative:(BOOL)arg1;
 - (void)setIsAllDay:(BOOL)arg1;
-- (BOOL)isCancelled;
-- (id)init;
-- (void)dealloc;
+- (void)setCancelled:(BOOL)arg1;
+- (BOOL)showDisclosure;
+- (BOOL)isHighlighted;
+- (void)setHighlighted:(BOOL)arg1;
+- (id)title;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setTitle:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLocation:(id)arg1;
 
 @end

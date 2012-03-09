@@ -11,6 +11,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
@@ -33,7 +35,5 @@
 - (void)mediaActionButtonsCell:(id)arg1 clickedButtonAtIndex:(unsigned int)arg2;
 - (BOOL)hasSearchBar;
 - (void)reloadActionRows;
-- (id)init;
-- (void)dealloc;
 
 @end

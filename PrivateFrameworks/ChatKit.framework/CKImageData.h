@@ -12,12 +12,7 @@
 @property(readonly) NSData * data;
 
 
-- (id)data;
-- (id)mimeType;
-- (id)image;
-- (id)initWithData:(id)arg1;
-- (int)imageOrientation;
-- (struct CGSize { float x1; float x2; })size;
+- (void)dealloc;
 - (id)_newImageWithMaxLength:(int)arg1 transformOrientation:(BOOL)arg2;
 - (struct CGImageSource { }*)_imageSource;
 - (int)imageCount;
@@ -26,6 +21,11 @@
 - (id)jpegDataWithMaxLength:(int)arg1 compression:(float)arg2;
 - (id)imageWithMaxLength:(int)arg1;
 - (id)imageType;
-- (void)dealloc;
+- (id)mimeType;
+- (id)image;
+- (id)data;
+- (id)initWithData:(id)arg1;
+- (int)imageOrientation;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

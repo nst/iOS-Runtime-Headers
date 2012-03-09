@@ -8,6 +8,8 @@
 
 + (id)sharedArtStorage;
 
+- (id)init;
+- (void)dealloc;
 - (void)setLabelImage:(id)arg1 forColor:(id)arg2;
 - (id)labelImageForColor:(id)arg1;
 - (void)setOffImage:(id)arg1 forColor:(id)arg2;
@@ -18,7 +20,5 @@
 - (id)onImageForColor:(id)arg1;
 - (void)unregisterForColor:(id)arg1;
 - (void)registerForColor:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -31,16 +31,24 @@
 + (id)customActionRowConfigurationWithSimpleCellConfiguration:(id)arg1;
 + (float)rowHeightForGlobalContext:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
+- (void)setIsVideo:(BOOL)arg1;
 - (double)_durationInSeconds;
 - (id)artist;
-- (double)duration;
-- (void)setDuration:(double)arg1;
-- (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
 - (id)title;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (void)reloadData;
-- (void)setIsVideo:(BOOL)arg1;
+- (void)reloadLayoutInformation;
+- (void)reloadStrings;
+- (void)reloadImages;
+- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (id)fontForLabelAtIndex:(unsigned int)arg1;
+- (void)drawWithModifiers:(unsigned int)arg1;
+- (void)drawBackgroundWithModifiers:(unsigned int)arg1;
 - (id)actionRowTitle;
 - (void)setActionRowTitle:(id)arg1;
 - (id)subviewLayoutViewsWithModifiers:(unsigned int)arg1;
@@ -52,15 +60,7 @@
 - (void)setArtist:(id)arg1;
 - (void)configureForEntity:(id)arg1 query:(id)arg2 entityIndex:(unsigned int)arg3 entityCount:(unsigned int)arg4;
 - (id)backgroundColorWithModifiers:(unsigned int)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)reloadLayoutInformation;
-- (void)reloadStrings;
-- (void)reloadImages;
-- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
-- (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (void)drawWithModifiers:(unsigned int)arg1;
-- (void)drawBackgroundWithModifiers:(unsigned int)arg1;
+- (void)setIndex:(unsigned int)arg1;
 - (BOOL)isVideo;
 
 @end

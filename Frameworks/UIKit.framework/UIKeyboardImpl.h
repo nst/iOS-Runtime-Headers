@@ -108,6 +108,7 @@
     NSString *m_currentUsedInputMode;
     NSString *m_lastUsedInputMode;
     BOOL m_needsCandidates;
+    BOOL m_shouldSkipCandidateGeneration;
     BOOL m_updateLayoutOnShowKeyboard;
     int _currentAlertReason;
     <UIKeyboardTypology> *typologyRecorder;
@@ -147,20 +148,26 @@
 @property(retain) UIAlertView * keyboardAlertView;
 @property BOOL committingCandidate;
 
++ (id)activeInstance;
++ (id)sharedInstance;
 + (void)_clearHardwareKeyboardMinimizationPreference;
 + (void)setParentTestForProfiling:(id)arg1;
 + (int)orientationForSize:(struct CGSize { float x1; float x2; })arg1;
++ (struct CGPoint { float x1; float x2; })persistentDictationWindowOffset;
++ (void)setPersistentDictationWindowOffset:(struct CGPoint { float x1; float x2; })arg1;
++ (void)setPersistentDictationTargetZone:(int)arg1;
++ (int)persistentDictationTargetZone;
 + (void)setPersistentOffset:(struct CGPoint { float x1; float x2; })arg1;
 + (void)setPersistentSplitProgress:(float)arg1;
 + (float)splitProgress;
 + (BOOL)supportsSplit;
 + (BOOL)rivenTranslationPreference;
-+ (BOOL)rivenPreference;
++ (BOOL)rivenInstalled;
 + (id)normalizedInputModesFromPreference;
 + (void)hardwareKeyboardAvailabilityChanged;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
 + (struct CGPoint { float x1; float x2; })persistentOffset;
-+ (BOOL)rivenInstalled;
++ (BOOL)rivenPreference;
 + (void)refreshRivenStateWithTraits:(id)arg1;
 + (float)persistentSplitProgress;
 + (void)suppressSetPersistentOffset:(BOOL)arg1;
@@ -178,11 +185,18 @@
 + (void)applicationWillResignActive:(id)arg1;
 + (void)applicationDidReceiveMemoryWarning:(id)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (id)activeInstance;
-+ (id)sharedInstance;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
+- (void)setInHardwareKeyboardMode:(BOOL)arg1;
+- (BOOL)canHandleKeyHitTest;
+- (void)clearKeyAreas;
+- (void)registerKeyArea:(struct CGPoint { float x1; float x2; })arg1 withRadii:(struct CGPoint { float x1; float x2; })arg2 forKeyCode:(unsigned short)arg3 forLowerKey:(id)arg4 forUpperKey:(id)arg5;
+- (int)keyHitTest:(struct CGPoint { float x1; float x2; })arg1 touchStage:(int)arg2 atTime:(double)arg3 withTouch:(id)arg4 forceShift:(BOOL)arg5 forcingKey:(int)arg6;
+- (BOOL)keySlidIntoSwipe;
+- (void)setTypologyRecorder:(id)arg1;
+- (void)clearInput;
+- (void)setShift:(BOOL)arg1;
+- (struct __CFDictionary { }*)chargedKeyProbabilities;
+- (void)dealloc;
 - (BOOL)keyboardRecordingEnabled;
 - (unsigned int)_inputCountForAutocorrectionCandidate;
 - (void)_releaseInputManager;
@@ -263,7 +277,6 @@
 - (id)inputModeLastChosen;
 - (void)setInputModeToNextASCIICapableInPreferredList;
 - (void)setInputModeToNextInPreferredList;
-- (void)showForwardDeleteKeyInfoAlertIfNeeded;
 - (void)setShouldUpdateCacheOnInputModesChange:(BOOL)arg1;
 - (id)inputModeFirstPreference;
 - (void)saveInputModesPreference:(id)arg1;
@@ -310,6 +323,7 @@
 - (void)longPressAction;
 - (void)touchAutoDeleteTimerWithThreshold:(double)arg1;
 - (void)autoDeleteTimerFired:(id)arg1;
+- (id)accessibilityLabelForCandidate:(id)arg1;
 - (unsigned int)maximumNumberOfColumnsForSortingMethod:(id)arg1 interfaceOrientation:(int)arg2 isInline:(BOOL)arg3 reducedWidth:(BOOL)arg4;
 - (void)groupedCandidatesFromCandidates:(id)arg1 usingSortingMethod:(id)arg2 completion:(id)arg3;
 - (id)groupedCandidatesFromCandidates:(id)arg1 usingSortingMethod:(id)arg2;
@@ -322,7 +336,6 @@
 - (void)touchAutocorrectPromptTimer;
 - (id)_rangeForAutocorrection;
 - (id)_inputForAutocorrectionCandidate;
-- (void)updateAutocorrectPromptAction;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectToAutocorrectRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegateView:(id)arg2 container:(id)arg3;
 - (BOOL)delegateSupportsCorrectionUI;
 - (id)inputOverlayContainer;
@@ -331,7 +344,6 @@
 - (void)clearAutocorrectPromptTimer;
 - (void)resizeCandidateBarWithDelta:(float)arg1;
 - (void)updateAutocorrectPrompt:(id)arg1;
-- (void)updateTextCandidateView;
 - (BOOL)needsToDeferUpdateTextCandidateView;
 - (void)_setNeedsCandidates:(BOOL)arg1;
 - (void)addAutocorrectionRecord:(id)arg1 forTyping:(id)arg2;
@@ -401,7 +413,7 @@
 - (BOOL)currentKeyboardTraitsAllowCandidateBar;
 - (BOOL)showsCandidateInline;
 - (id)candidateList;
-- (BOOL)isUsingMarsVoltaInsertionLayout;
+- (BOOL)isUsingDictationLayout;
 - (void)generateCandidates;
 - (void)clearLongPressTimer;
 - (void)releaseSuppressUpdateCandidateView;
@@ -416,6 +428,8 @@
 - (id)arrowKeyHistory;
 - (void)callChanged;
 - (void)updateObserverState;
+- (void)updateTextCandidateView;
+- (void)updateAutocorrectPromptAction;
 - (id)changedDelegate;
 - (void)selectionDidChange:(id)arg1;
 - (void)setShiftOffIfNeeded;
@@ -535,6 +549,7 @@
 - (id)textInputTraits;
 - (void)setCaretBlinks:(BOOL)arg1;
 - (id)selectionView;
+- (void)textFrameChanged:(id)arg1;
 - (int)returnKeyType;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)_willMoveToWindow:(id)arg1 withAncestorView:(id)arg2;
@@ -546,19 +561,9 @@
 - (int)orientation;
 - (void)cancelAllKeyEvents;
 - (id)delegate;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setInHardwareKeyboardMode:(BOOL)arg1;
-- (BOOL)canHandleKeyHitTest;
-- (void)clearKeyAreas;
-- (void)registerKeyArea:(struct CGPoint { float x1; float x2; })arg1 withRadii:(struct CGPoint { float x1; float x2; })arg2 forKeyCode:(unsigned short)arg3 forLowerKey:(id)arg4 forUpperKey:(id)arg5;
-- (int)keyHitTest:(struct CGPoint { float x1; float x2; })arg1 touchStage:(int)arg2 atTime:(double)arg3 withTouch:(id)arg4 forceShift:(BOOL)arg5 forcingKey:(int)arg6;
-- (BOOL)keySlidIntoSwipe;
-- (void)setTypologyRecorder:(id)arg1;
-- (void)clearInput;
-- (void)setShift:(BOOL)arg1;
-- (struct __CFDictionary { }*)chargedKeyProbabilities;
-- (void)dealloc;
-- (id)accessibilityLabelForCandidate:(id)arg1;
 
 @end

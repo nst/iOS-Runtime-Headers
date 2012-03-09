@@ -16,12 +16,12 @@
 @property <CoreDAVTaskGroupDelegate> * delegate;
 
 
+- (void)dealloc;
 - (void)_finishWithError:(id)arg1;
 - (id)fetchTask;
 - (void)setFetchTask:(id)arg1;
 - (void)startTaskGroup;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
-- (void)dealloc;
 - (id)inboxURL;
 - (void)setInboxURL:(id)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 taskManager:(id)arg3;

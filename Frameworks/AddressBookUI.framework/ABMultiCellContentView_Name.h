@@ -7,8 +7,6 @@
 
 + (unsigned int)rowsForPropertyGroup:(id)arg1 info:(id)arg2;
 
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)reload;
 - (id)keyboardSettingsForKey:(id)arg1;
 - (void)reloadFromModelIncludingRows:(BOOL)arg1;
 - (id)labelTextColorWhenEditing:(BOOL)arg1;
@@ -16,5 +14,7 @@
 - (void)entryField:(id)arg1 valueDidChange:(id)arg2 forKey:(id)arg3;
 - (void)reloadLabelFromModel;
 - (void)reloadFromModel;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)reload;
 
 @end

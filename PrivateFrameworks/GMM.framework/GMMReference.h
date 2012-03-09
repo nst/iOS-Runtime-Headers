@@ -16,16 +16,16 @@
 
 
 - (void)setDomain:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (id)description;
+- (id)description;
+- (void)dealloc;
 - (id)domain;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (id)dictionaryRepresentation;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)description;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

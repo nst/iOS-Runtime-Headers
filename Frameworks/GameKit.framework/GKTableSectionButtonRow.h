@@ -40,6 +40,8 @@
 
 + (id)sectionWithButtonTitle:(id)arg1 action:(SEL)arg2;
 
+- (id)init;
+- (void)dealloc;
 - (void)setFooterText:(id)arg1;
 - (void)setMinButtonWidthThreshold:(float)arg1;
 - (void)setMinButtonWidthForNarrowTable:(float)arg1;
@@ -78,7 +80,5 @@
 - (id)buttons;
 - (int)buttonType;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

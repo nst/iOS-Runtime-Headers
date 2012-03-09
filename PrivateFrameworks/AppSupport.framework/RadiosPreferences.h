@@ -24,19 +24,19 @@
 
 
 - (BOOL)airplaneMode;
-- (void)synchronize;
-- (void)setDelegate:(id)arg1;
-- (void)setValue:(void*)arg1 forKey:(id)arg2;
-- (void)refresh;
+- (id)init;
+- (void)dealloc;
+- (void*)getValueForKey:(id)arg1;
 - (void)setNotifyForExternalChangeOnly:(BOOL)arg1;
 - (void)notifyTarget:(unsigned int)arg1;
 - (void)initializeSCPrefs:(id)arg1;
 - (void)setCallback:(int (*)())arg1 withContext:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
 - (BOOL)notifyForExternalChangeOnly;
+- (void)refresh;
 - (void)setAirplaneMode:(BOOL)arg1;
+- (void)synchronize;
+- (void)setValue:(void*)arg1 forKey:(id)arg2;
 - (id)delegate;
-- (void*)getValueForKey:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

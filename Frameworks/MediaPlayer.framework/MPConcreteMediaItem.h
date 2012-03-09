@@ -13,6 +13,10 @@
 
 
 - (unsigned long long)persistentID;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)incrementPlayCountForStopTime:(double)arg1;
 - (void)incrementPlayCountForPlayingToEnd;
 - (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL*)arg2;
@@ -24,16 +28,12 @@
 - (id)_nonBatchableValueForProperty:(id)arg1 isBatchable:(BOOL*)arg2;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
 - (id)initWithPersistentID:(unsigned long long)arg1 valuesForProperties:(id)arg2 library:(id)arg3;
-- (id)initWithPersistentID:(unsigned long long)arg1;
 - (BOOL)existsInLibrary;
+- (id)initWithPersistentID:(unsigned long long)arg1;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)mediaLibrary;
 
 @end

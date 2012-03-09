@@ -6,7 +6,7 @@
 }
 
 
-- (id)_disabledFontColor;
 - (id)init;
+- (id)_disabledFontColor;
 
 @end

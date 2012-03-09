@@ -17,7 +17,8 @@
 @property(retain) NSData * certificatePersistentID;
 
 
-- (id)title;
+- (id)description;
+- (void)dealloc;
 - (void)setInstalledOnDeviceID:(id)arg1;
 - (void)setCertificatePersistentID:(id)arg1;
 - (struct __SecCertificate { }*)copyCertificate;
@@ -34,7 +35,6 @@
 - (id)expiry;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
+- (id)title;
 
 @end

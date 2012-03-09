@@ -9,10 +9,10 @@
 }
 
 
+- (void)dealloc;
 - (struct __CFString { }*)name;
 - (BOOL)isHidden;
 - (BOOL)isRanged;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
-- (void)dealloc;
 
 @end

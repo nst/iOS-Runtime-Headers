@@ -9,12 +9,12 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithDx:(float)arg1 dy:(float)arg2 dz:(float)arg3;
 - (float)dx;
 - (float)dy;
 - (float)dz;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

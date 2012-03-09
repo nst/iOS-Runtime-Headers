@@ -6,6 +6,7 @@
 }
 
 + (void)log:(id)arg1;
++ (void)ensureDirectoryExists:(id)arg1;
 + (void)setShouldUseNikeAppPreferenceKeyForLogging:(BOOL)arg1;
 + (void)setShouldLogToFilesInDirectory:(id)arg1;
 + (id)__dateStringForDate:(id)arg1;
@@ -17,7 +18,6 @@
 + (id)nikeUserDefaultsNumberForKey:(id)arg1;
 + (BOOL)nikeUserDefaultsBoolForKey:(id)arg1;
 + (void)forDefault:(id)arg1 log:(id)arg2;
-+ (void)ensureDirectoryExists:(id)arg1;
 
 
 @end

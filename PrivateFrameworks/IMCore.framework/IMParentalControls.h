@@ -20,9 +20,11 @@
 @property(readonly) BOOL _disableAV;
 @property(readonly) BOOL _forceChatLogging;
 
-+ (id)standardControls;
 + (id)objectForKey:(id)arg1;
++ (id)standardControls;
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)_forceChatLogging;
 - (BOOL)_disableAV;
 - (id)_parentalControls;
@@ -45,7 +47,5 @@
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
 - (BOOL)active;
-- (id)init;
-- (void)dealloc;
 
 @end

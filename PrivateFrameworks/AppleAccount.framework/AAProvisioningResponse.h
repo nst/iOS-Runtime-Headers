@@ -18,16 +18,16 @@
 @property(readonly) NSNumber * primaryEmailVerified;
 
 
-- (id)appleIDAliases;
-- (id)primaryEmailVerified;
-- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
+- (void)dealloc;
 - (id)lastName;
 - (id)firstName;
-- (id)provisionedDataclasses;
-- (id)initWithDictionary:(id)arg1;
-- (void)dealloc;
 - (id)primaryEmail;
 - (id)dataclassProperties;
 - (id)appleID;
+- (id)provisionedDataclasses;
+- (id)appleIDAliases;
+- (id)primaryEmailVerified;
+- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
+- (id)initWithDictionary:(id)arg1;
 
 @end

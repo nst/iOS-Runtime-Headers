@@ -9,6 +9,7 @@
 }
 
 
+- (void)dealloc;
 - (void)_setImagePickerMediaTypes:(id)arg1;
 - (int)_imagePickerStatusBarStyle;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -23,6 +24,5 @@
 - (void)_showCancelButton;
 - (BOOL)_dismissButtonAllowed;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)dealloc;
 
 @end

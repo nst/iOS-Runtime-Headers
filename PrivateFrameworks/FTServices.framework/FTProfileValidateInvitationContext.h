@@ -20,20 +20,20 @@
 
 
 - (id)messageBody;
-- (void)setBasePhoneNumber:(id)arg1;
-- (id)responseExtraInfo;
-- (id)responseBasePhoneNumber;
-- (id)responseRegionID;
-- (void)setRegionID:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setResponseExtraInfo:(id)arg1;
 - (void)setResponseRegionID:(id)arg1;
 - (void)setResponseBasePhoneNumber:(id)arg1;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)basePhoneNumber;
 - (id)regionID;
 - (id)bagKey;
+- (void)setBasePhoneNumber:(id)arg1;
+- (id)responseExtraInfo;
+- (id)responseBasePhoneNumber;
+- (id)responseRegionID;
+- (void)setRegionID:(id)arg1;
 
 @end

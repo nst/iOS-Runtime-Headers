@@ -12,16 +12,16 @@
 }
 
 
-- (id)options;
-- (id)mediaSelectionOptionWithPropertyList:(id)arg1;
-- (id)initWithAsset:(id)arg1 alternateTrackIDs:(id)arg2;
-- (BOOL)_isAlternateTrackGroup;
-- (BOOL)allowsEmptySelection;
-- (id)_optionForTrackID:(int)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
-- (id)asset;
-- (id)trackIDs;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
+- (id)mediaSelectionOptionWithPropertyList:(id)arg1;
+- (id)initWithAsset:(id)arg1 alternateTrackIDs:(id)arg2;
+- (id)_optionForTrackID:(int)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
+- (BOOL)allowsEmptySelection;
+- (BOOL)_isAlternateTrackGroup;
+- (id)trackIDs;
+- (id)asset;
+- (id)options;
 
 @end

@@ -23,10 +23,10 @@
 @property(readonly) NSString * name;
 
 
-- (id)initWithName:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2 block:(id)arg3;
 - (id)block;
-- (id)name;
-- (struct dispatch_queue_s { }*)dispatchQueue;
 - (void)dealloc;
+- (struct dispatch_queue_s { }*)dispatchQueue;
+- (id)name;
+- (id)initWithName:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2 block:(id)arg3;
 
 @end

@@ -19,19 +19,19 @@
 @property BOOL allowsVOIP;
 
 
-- (id)mobileCountryCode;
-- (id)mobileNetworkCode;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setAllowsVOIP:(BOOL)arg1;
 - (void)setIsoCountryCode:(id)arg1;
 - (void)setMobileNetworkCode:(id)arg1;
 - (void)setMobileCountryCode:(id)arg1;
 - (void)setCarrierName:(id)arg1;
 - (id)isoCountryCode;
+- (id)mobileCountryCode;
+- (id)mobileNetworkCode;
 - (id)carrierName;
 - (BOOL)allowsVOIP;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

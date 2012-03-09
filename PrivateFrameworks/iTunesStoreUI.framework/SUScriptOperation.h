@@ -12,8 +12,8 @@
 + (void)registerPostOperationClass:(Class)arg1 forType:(id)arg2;
 + (Class)postOperationClassForType:(id)arg1;
 
-- (void)run;
 - (void)dealloc;
+- (void)run;
 - (id)_scriptOptions;
 - (void)_sendCompletionCallback;
 - (void)setScriptOptions:(id)arg1;

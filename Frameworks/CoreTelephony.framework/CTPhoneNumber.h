@@ -16,8 +16,10 @@
 
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
 
-- (id)digits;
 - (id)countryCode;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)digits;
 - (BOOL)isShortCode;
 - (id)formatForCallingCountry:(id)arg1;
 - (id)canonicalFormat;
@@ -25,7 +27,5 @@
 - (int)numberOfDigitsForShortCodeNumber;
 - (id)encodedString;
 - (id)initWithDigits:(id)arg1 countryCode:(id)arg2;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

@@ -11,6 +11,8 @@
 
 + (id)sharedInstance;
 
+- (id)init;
+- (void)dealloc;
 - (void)setAnimationStartTime:(double)arg1;
 - (void)enableAnimation;
 - (void)disableAnimation;
@@ -23,7 +25,5 @@
 - (void)setAnimationDuration:(double)arg1;
 - (BOOL)isInAnimationBlock;
 - (void)pushAnimationState:(id)arg1 withContext:(void*)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

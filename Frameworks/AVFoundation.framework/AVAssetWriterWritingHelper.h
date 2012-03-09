@@ -11,16 +11,16 @@
 }
 
 
-- (void)finalize;
-- (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)cancelWriting;
-- (void)finishWriting;
-- (id)initWithConfigurationState:(id)arg1;
-- (id)initWithConfigurationState:(id)arg1 error:(id*)arg2;
+- (void)dealloc;
 - (void)_handleFailedNotificationWithError:(id)arg1;
+- (id)initWithConfigurationState:(id)arg1 error:(id*)arg2;
+- (id)initWithConfigurationState:(id)arg1;
+- (void)finishWriting;
+- (void)cancelWriting;
+- (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_handleServerDiedNotification;
 - (int)status;
-- (void)dealloc;
+- (void)finalize;
 
 @end

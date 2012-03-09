@@ -75,10 +75,10 @@
 - (id)contentLocation;
 - (id)mimeBody;
 - (unsigned int)numberOfAttachments;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)download;
-- (BOOL)parseIMAPPropertyList:(id)arg1;
-- (void)getNumberOfAttachments:(unsigned int*)arg1 isSigned:(BOOL*)arg2 isEncrypted:(BOOL*)arg3;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)decodeMultipartRelated;
 - (id)decodeMultipartAlternative;
 - (id)decodeMultipart;
@@ -116,18 +116,18 @@
 - (id)contentsForTextSystemToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3;
 - (BOOL)isRich;
 - (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3;
-- (BOOL)isAttachment;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (int)numberOfAlternatives;
+- (unsigned int)totalTextSize;
+- (id)rfc822DecodedMessageBody;
+- (BOOL)parseIMAPPropertyList:(id)arg1;
+- (void)getNumberOfAttachments:(unsigned int*)arg1 isSigned:(BOOL*)arg2 isEncrypted:(BOOL*)arg3;
 - (id)type;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (void)setSubtype:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)subtype;
-- (int)numberOfAlternatives;
-- (unsigned int)totalTextSize;
-- (id)rfc822DecodedMessageBody;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (BOOL)isAttachment;
 - (void)setContentLocation:(id)arg1;
 - (id)newSignedPartWithData:(id)arg1 sender:(id)arg2 compositionSpecification:(id)arg3 signatureData:(id*)arg4;
 - (id)newEncryptedPartWithData:(id)arg1 compositionSpecification:(id)arg2 encryptedData:(id*)arg3;
@@ -136,7 +136,7 @@
 - (BOOL)_needsSignatureVerification:(id*)arg1;
 - (void)_setSigners:(id)arg1;
 - (void)_setSMIMEError:(id)arg1;
-- (id)copySigners;
 - (id)SMIMEError;
+- (id)copySigners;
 
 @end

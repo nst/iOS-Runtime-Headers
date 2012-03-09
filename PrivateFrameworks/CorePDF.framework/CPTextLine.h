@@ -68,11 +68,9 @@
 @property unsigned int leftSpacerIndex;
 
 
-- (BOOL)isListItem;
-- (float)baseline;
-- (void)setBaseline:(float)arg1;
-- (void)finalize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)wordArray;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsOfWordAtIndex:(unsigned int)arg1;
 - (void)anchorChunk:(id)arg1 atWordIndex:(unsigned int)arg2;
@@ -141,13 +139,15 @@
 - (void)translateObjectYBy:(float)arg1;
 - (void)fitBoundsToChildren;
 - (long)zOrder;
-- (void)dispose;
-- (int)align;
 - (id)properties;
 - (id)attributes;
 - (struct CGPoint { float x1; float x2; })anchor;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)finalize;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (int)align;
+- (BOOL)isListItem;
+- (float)baseline;
+- (void)setBaseline:(float)arg1;
+- (void)dispose;
 
 @end

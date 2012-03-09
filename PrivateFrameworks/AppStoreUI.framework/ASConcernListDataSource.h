@@ -15,6 +15,8 @@
 @property(readonly) ASTextViewCell * textViewCell;
 
 
+- (id)init;
+- (void)dealloc;
 - (int)tableViewStyle;
 - (int)numberOfSections;
 - (int)numberOfRowsInSection:(int)arg1;
@@ -24,8 +26,6 @@
 - (id)textViewCell;
 - (void)setSelectedConcernIndex:(int)arg1;
 - (int)selectedConcernIndex;
-- (id)init;
-- (void)dealloc;
 - (float)cellHeightForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
 

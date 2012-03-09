@@ -13,6 +13,7 @@
 
 + (Class)layerClass;
 
+- (void)dealloc;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
@@ -21,6 +22,5 @@
 - (id)stackItemCells;
 - (void)insertStackItemCell:(id)arg1 atColumn:(unsigned int)arg2;
 - (void)clearContents;
-- (void)dealloc;
 
 @end

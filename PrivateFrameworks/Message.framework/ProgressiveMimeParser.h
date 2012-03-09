@@ -33,13 +33,13 @@
 - (void)_continueParsingHeaders;
 - (void)_continueParsingBody;
 - (id)topLevelPart;
-- (id)currentPart;
-- (void)start;
-- (id)data;
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)_reportError:(id)arg1;
+- (void)start;
 - (id)context;
 - (void)setContext:(id)arg1;
-- (void)dealloc;
+- (id)data;
+- (void)setDelegate:(id)arg1;
+- (id)currentPart;
 
 @end

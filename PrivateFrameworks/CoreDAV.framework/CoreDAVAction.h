@@ -11,10 +11,10 @@
 @property(readonly) id context;
 
 
-- (id)initWithAction:(int)arg1 context:(id)arg2;
-- (id)context;
 - (id)description;
 - (int)action;
 - (void)dealloc;
+- (id)initWithAction:(int)arg1 context:(id)arg2;
+- (id)context;
 
 @end

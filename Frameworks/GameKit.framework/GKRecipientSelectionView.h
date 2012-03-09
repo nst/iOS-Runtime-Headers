@@ -34,6 +34,7 @@
 @property(readonly) void* ABAddressBook;
 
 
+- (void)dealloc;
 - (void)setDuringRotation:(BOOL)arg1;
 - (BOOL)duringRotation;
 - (BOOL)peoplePickerVisible;
@@ -69,7 +70,6 @@
 - (id)theme;
 - (void)setTheme:(id)arg1;
 - (id)recipients;
-- (void)setDelegate:(id)arg1;
 - (void)reset;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
@@ -77,6 +77,6 @@
 - (void)_updateContentSize;
 - (id)delegate;
 - (void)layoutSubviews;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

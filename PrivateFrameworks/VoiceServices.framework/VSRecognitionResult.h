@@ -5,10 +5,16 @@
 @interface VSRecognitionResult : NSObject  {
 }
 
-+ (id)recognitionResultWithModelIdentifier:(id)arg1 classIdentifiers:(id)arg2 values:(id)arg3;
 + (void)initialize;
++ (id)recognitionResultWithModelIdentifier:(id)arg1 classIdentifiers:(id)arg2 values:(id)arg3;
 
-- (int)elementCount;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
+- (id)description;
+- (id)retain;
+- (oneway void)release;
+- (id)init;
 - (id)modelIdentifier;
 - (id)recognitionResultByReplacingValueForClassIdentifier:(id)arg1 withValue:(id)arg2;
 - (id)valueOfFirstElementWithClassIdentifier:(id)arg1;
@@ -16,12 +22,6 @@
 - (void)setRecognitionAction:(id)arg1;
 - (id)recognitionAction;
 - (BOOL)getElementClassIdentifier:(id*)arg1 value:(id*)arg2 atIndex:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (unsigned int)retainCount;
-- (id)description;
-- (id)retain;
-- (id)init;
-- (oneway void)release;
+- (int)elementCount;
 
 @end

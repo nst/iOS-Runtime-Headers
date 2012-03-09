@@ -18,14 +18,11 @@
 
 + (id)symbolOwnerWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(unsigned int)arg7 currentVersion:(unsigned int)arg8 compatibilityVersion:(unsigned int)arg9;
 
-- (id)signature;
-- (id)path;
-- (unsigned int)currentVersion;
-- (id)symbols;
-- (int)compare:(id)arg1;
-- (unsigned int)flags;
-- (id)name;
-- (unsigned long long)size;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)regions;
+- (BOOL)validate;
 - (id)symbolForName:(id)arg1;
 - (BOOL)isPEF;
 - (BOOL)isAOut;
@@ -55,10 +52,13 @@
 - (id)sourceInfosInAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)architecture;
 - (BOOL)isMachO;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (BOOL)validate;
-- (id)regions;
+- (id)symbols;
+- (int)compare:(id)arg1;
+- (unsigned int)flags;
+- (id)path;
+- (id)name;
+- (unsigned long long)size;
+- (unsigned int)currentVersion;
+- (id)signature;
 
 @end

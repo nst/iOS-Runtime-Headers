@@ -19,11 +19,12 @@
 @property BOOL isRecording;
 
 
-- (void)start;
+- (void)dealloc;
+- (BOOL)isRecording;
 - (void)setStartDate:(id)arg1;
 - (id)startDate;
 - (void)stop;
-- (BOOL)isRecording;
+- (void)start;
 - (id)buffer;
 - (id)lastRecordingDate;
 - (void)addAbsoluteTimeCommentIfNeeded;
@@ -36,6 +37,5 @@
 - (void)recordError:(id)arg1;
 - (void)recordLocation:(id)arg1;
 - (void)writeTripToPath:(id)arg1;
-- (void)dealloc;
 
 @end

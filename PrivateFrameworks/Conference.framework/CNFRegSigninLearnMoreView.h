@@ -15,16 +15,16 @@
 @property int serviceType;
 
 
-- (float)preferredHeightForWidth:(float)arg1;
-- (id)initWithSpecifier:(id)arg1;
-- (void)setServiceType:(int)arg1;
-- (int)serviceType;
-- (void)layoutSubviews;
 - (void)dealloc;
+- (float)preferredHeightForWidth:(float)arg1;
 - (id)_splashImage;
 - (id)splashImageView;
 - (id)verbiageLabel;
 - (id)learnMoreButton;
 - (void)_learnMorePressed:(id)arg1;
+- (id)initWithSpecifier:(id)arg1;
+- (void)layoutSubviews;
+- (void)setServiceType:(int)arg1;
+- (int)serviceType;
 
 @end

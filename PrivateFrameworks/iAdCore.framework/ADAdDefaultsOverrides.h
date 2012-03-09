@@ -55,6 +55,9 @@
 @property unsigned int primaryResourceCacheNodeMaxSize;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasPrimaryResourceCacheNodeMaxSize:(BOOL)arg1;
 - (void)setHasPrimaryResourceCacheDiskSize:(BOOL)arg1;
@@ -80,6 +83,7 @@
 - (void)setBannerImpressionThreshold:(float)arg1;
 - (void)setBannerVisibilityTestInterval:(float)arg1;
 - (void)setDownloadWebArchivesBeforeShowingBanner:(BOOL)arg1;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (unsigned int)primaryResourceCacheNodeMaxSize;
 - (BOOL)hasPrimaryResourceCacheNodeMaxSize;
@@ -105,8 +109,5 @@
 - (BOOL)hasBannerVisibilityTestInterval;
 - (BOOL)downloadWebArchivesBeforeShowingBanner;
 - (BOOL)hasDownloadWebArchivesBeforeShowingBanner;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

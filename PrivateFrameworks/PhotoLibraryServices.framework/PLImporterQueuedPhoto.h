@@ -22,9 +22,7 @@
 
 + (id)queuedPhotoWithDirectoryPath:(id)arg1 baseName:(id)arg2 sidecarFileInfo:(id)arg3 event:(struct NSObject { Class x1; }*)arg4 progress:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)arg5 importSessionIdentifier:(id)arg6;
 
-- (id)baseName;
-- (struct NSObject { Class x1; }*)event;
-- (void)setEvent:(struct NSObject { Class x1; }*)arg1;
+- (void)dealloc;
 - (struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)progressStack;
 - (id)sidecarFileInfo;
 - (id)directoryPath;
@@ -33,7 +31,9 @@
 - (void)setSidecarFileInfo:(id)arg1;
 - (void)setBaseName:(id)arg1;
 - (void)setDirectoryPath:(id)arg1;
+- (id)baseName;
+- (struct NSObject { Class x1; }*)event;
+- (void)setEvent:(struct NSObject { Class x1; }*)arg1;
 - (id)importIdentifier;
-- (void)dealloc;
 
 @end

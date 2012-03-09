@@ -25,7 +25,9 @@
 @property(retain) <UIWebSelectionBlock> * extent;
 
 
-- (BOOL)valid;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingTextSelectionRect;
 - (void)moveEdge:(int)arg1 outwards:(BOOL)arg2;
 - (void)adjustSelectionFromPoint:(struct CGPoint { float x1; float x2; })arg1 towardsPoint:(struct CGPoint { float x1; float x2; })arg2 withNewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
@@ -57,6 +59,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingTextSelectionRectAndInsideFixedPosition:(int*)arg1;
 - (BOOL)isTextOnly;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
+- (BOOL)valid;
 - (id)initWithDocumentView:(id)arg1;
 - (id)elementAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)webFrame;
@@ -65,8 +68,5 @@
 - (void)selectionChanged;
 - (id)webView;
 - (id)extent;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

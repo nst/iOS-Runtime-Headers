@@ -15,8 +15,8 @@
 + (id)shortObjectIDURIFromURI:(id)arg1;
 
 - (id)shortObjectIDURI;
-- (BOOL)isRegisteredWithUserInterfaceContext;
 - (id)pl_shortDescription;
+- (BOOL)isRegisteredWithUserInterfaceContext;
 - (id)photoLibrary;
 
 @end

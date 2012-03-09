@@ -13,10 +13,10 @@
 @property(retain) NSArray * annotations;
 
 
+- (void)dealloc;
 - (void)setAnnotations:(id)arg1;
 - (id)annotations;
 - (void)setMapView:(id)arg1;
 - (id)mapView;
-- (void)dealloc;
 
 @end

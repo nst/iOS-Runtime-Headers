@@ -30,7 +30,17 @@
 @property(retain) NSString * countryName;
 
 
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
+- (id)description;
+- (id)description;
+- (void)dealloc;
+- (void)setCountryName:(id)arg1;
+- (id)countryName;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (BOOL)hasCountryCode;
+- (void)writeTo:(id)arg1;
 - (BOOL)hasCountryName;
 - (BOOL)hasPostalCode;
 - (BOOL)hasRegion;
@@ -42,20 +52,10 @@
 - (void)setDependentLocality:(id)arg1;
 - (void)setThoroughfare:(id)arg1;
 - (id)dependentLocality;
-- (id)countryCode;
-- (BOOL)hasCountryCode;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (void)setCountryCode:(id)arg1;
+- (id)region;
+- (void)setRegion:(id)arg1;
 - (id)postalCode;
 - (id)locality;
 - (id)thoroughfare;
-- (id)region;
-- (void)setRegion:(id)arg1;
-- (id)description;
-- (id)description;
-- (void)dealloc;
-- (void)setCountryName:(id)arg1;
-- (id)countryName;
 
 @end

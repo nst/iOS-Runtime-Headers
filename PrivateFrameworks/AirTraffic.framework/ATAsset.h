@@ -61,7 +61,10 @@
 + (id)uploadAssetWithIdentifier:(id)arg1 dataclass:(id)arg2 sourcePath:(id)arg3 prettyName:(id)arg4;
 + (id)downloadAssetWithIdentifier:(id)arg1 dataclass:(id)arg2 prettyName:(id)arg3;
 
+- (id)description;
+- (void)dealloc;
 - (void)setError:(id)arg1;
+- (id)error;
 - (void)setInfoPlist:(id)arg1;
 - (void)setStorePlist:(id)arg1;
 - (id)storePlist;
@@ -89,19 +92,16 @@
 - (BOOL)bypassStore;
 - (BOOL)isDownload;
 - (long long)storePID;
-- (id)path;
 - (void)setPath:(id)arg1;
+- (id)path;
 - (id)icon;
 - (void)setIcon:(id)arg1;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
-- (id)error;
-- (id)infoPlist;
-- (id)description;
-- (void)dealloc;
-- (void)setDataclass:(id)arg1;
-- (id)dataclass;
 - (id)assetType;
 - (void)setAssetType:(id)arg1;
+- (void)setDataclass:(id)arg1;
+- (id)dataclass;
+- (id)infoPlist;
 
 @end

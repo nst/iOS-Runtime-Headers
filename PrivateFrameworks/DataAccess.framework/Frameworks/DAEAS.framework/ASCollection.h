@@ -24,11 +24,11 @@
 + (BOOL)acceptsTopLevelLeaves;
 
 - (id)moreAvailable;
-- (void)setStatus:(id)arg1;
-- (id)status;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (void)setStatus:(id)arg1;
+- (id)status;
 - (id)collectionId;
 - (int)sniffableTypeForAccount:(id)arg1;
 - (id)changedItems;

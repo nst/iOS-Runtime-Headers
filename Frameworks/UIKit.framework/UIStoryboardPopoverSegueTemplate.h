@@ -17,6 +17,7 @@
 @property(retain) UIBarButtonItem * anchorBarButtonItem;
 
 
+- (void)dealloc;
 - (void)setAnchorView:(id)arg1;
 - (void)setAnchorBarButtonItem:(id)arg1;
 - (void)setPermittedArrowDirections:(unsigned int)arg1;
@@ -29,6 +30,5 @@
 - (id)passthroughViews;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

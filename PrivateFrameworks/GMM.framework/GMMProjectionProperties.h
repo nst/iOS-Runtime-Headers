@@ -39,7 +39,11 @@
 @property int maxVisiblePitchE6;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasMaxVisiblePitchE6:(BOOL)arg1;
 - (BOOL)hasMaxVisiblePitchE6;
 - (void)setHasMinVisiblePitchE6:(BOOL)arg1;
@@ -72,9 +76,5 @@
 - (void)setTiltPitchDegreeE6:(int)arg1;
 - (void)setTiltYawDegreeE6:(int)arg1;
 - (void)setPanoYawDegreeE6:(int)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

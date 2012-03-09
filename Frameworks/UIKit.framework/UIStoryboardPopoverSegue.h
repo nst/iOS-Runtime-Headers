@@ -28,6 +28,8 @@
 @property(setter=_setAnchorRect:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _anchorRect;
 
 
+- (void)perform;
+- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_anchorRect;
 - (id)_anchorView;
 - (id)_anchorBarButtonItem;
@@ -38,7 +40,5 @@
 - (void)_setPermittedArrowDirections:(unsigned int)arg1;
 - (id)popoverController;
 - (void)_setPopoverController:(id)arg1;
-- (void)perform;
-- (void)dealloc;
 
 @end

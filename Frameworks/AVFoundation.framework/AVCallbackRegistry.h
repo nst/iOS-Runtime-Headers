@@ -7,14 +7,14 @@
     struct dispatch_queue_s { } *_readWriteQueue;
 }
 
-+ (void)initialize;
 + (id)sharedCallbackRegistry;
++ (void)initialize;
 
-- (void)finalize;
-- (void)registerCallbackObserver:(id)arg1;
-- (void)unregisterCallbackObserver:(id)arg1;
-- (id)callbackObserver:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)callbackObserver:(id)arg1;
+- (void)unregisterCallbackObserver:(id)arg1;
+- (void)registerCallbackObserver:(id)arg1;
+- (void)finalize;
 
 @end

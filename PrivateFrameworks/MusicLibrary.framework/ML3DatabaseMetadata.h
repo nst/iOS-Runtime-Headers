@@ -5,11 +5,11 @@
 @interface ML3DatabaseMetadata : ML3Entity  {
 }
 
++ (id)defaultOrderingProperties;
++ (void)initialize;
 + (id)predisambiguatedProperties;
 + (id)allProperties;
 + (id)databaseTable;
-+ (id)defaultOrderingProperties;
-+ (void)initialize;
 
 
 @end

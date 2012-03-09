@@ -5,22 +5,22 @@
 @interface NSMutableData : NSData  {
 }
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)dataWithLength:(unsigned int)arg1;
 + (id)dataWithCapacity:(unsigned int)arg1;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)increaseLengthBy:(unsigned int)arg1;
-- (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2 length:(unsigned int)arg3;
 - (void)resetBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2;
-- (void)setLength:(unsigned int)arg1;
-- (void)setData:(id)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (void*)mutableBytes;
 - (id)initWithLength:(unsigned int)arg1;
 - (void)appendData:(id)arg1;
 - (Class)classForCoder;
 - (void)appendBytes:(const void*)arg1 length:(unsigned int)arg2;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (void)setLength:(unsigned int)arg1;
+- (void)setData:(id)arg1;
+- (void)increaseLengthBy:(unsigned int)arg1;
+- (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2 length:(unsigned int)arg3;
+- (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2;
 - (void)abAppendString:(id)arg1;
 - (void)mf_appendRFC2231CompliantValue:(id)arg1 forKey:(id)arg2;
 - (void)mf_convertNetworkLineEndingsToUnix;

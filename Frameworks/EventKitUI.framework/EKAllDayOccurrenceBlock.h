@@ -22,6 +22,8 @@
 @property(retain) EKDayOccurrenceView * occurrenceView;
 
 
+- (unsigned int)length;
+- (void)dealloc;
 - (unsigned int)calendarOrder;
 - (void)setOccurrenceView:(id)arg1;
 - (unsigned int)gapBetweenBlock:(id)arg1;
@@ -31,7 +33,5 @@
 - (unsigned int)rangeStart;
 - (unsigned int)eventIndex;
 - (id)occurrenceView;
-- (unsigned int)length;
-- (void)dealloc;
 
 @end

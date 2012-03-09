@@ -14,13 +14,13 @@
 
 + (id)subscribedStreamWithStreamID:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (void)setStreamID:(id)arg1;
 - (id)initWithStreamID:(id)arg1;
 - (id)streamID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (void)setCtag:(id)arg1;
 - (id)ctag;
 

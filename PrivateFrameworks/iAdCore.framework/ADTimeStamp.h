@@ -15,9 +15,13 @@
 @property unsigned long long timestampReport;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasTimestampReport:(BOOL)arg1;
 - (void)setHasTimestampEvent:(BOOL)arg1;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (unsigned long long)timestampReport;
 - (BOOL)hasTimestampReport;
@@ -25,8 +29,5 @@
 - (BOOL)hasTimestampEvent;
 - (void)setTimestampEvent:(unsigned long long)arg1;
 - (void)setTimestampReport:(unsigned long long)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

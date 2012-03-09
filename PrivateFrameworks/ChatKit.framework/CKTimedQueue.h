@@ -13,13 +13,13 @@
 @property id delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)_timerFired;
-- (id)delegate;
+- (void)dealloc;
 - (void)_updateFireTimer;
 - (void)enqueueItem:(id)arg1 fireDate:(id)arg2;
 - (id)dequeueItems;
 - (void)clearQueue;
-- (void)dealloc;
+- (void)_timerFired;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

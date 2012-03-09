@@ -26,9 +26,6 @@
 
 + (id)defaultValueForKey:(id)arg1;
 
-- (void)setStoppedVelocity:(float)arg1;
-- (void)setSprings:(id)arg1;
-- (void)setReactsToCollisions:(BOOL)arg1;
 - (void)setForceFields:(id)arg1;
 - (void)setTimeStep:(double)arg1;
 - (void)setMinimumTimeStep:(double)arg1;
@@ -49,5 +46,8 @@
 - (float)angularDrag;
 - (BOOL)reactsToCollisions;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (void)setStoppedVelocity:(float)arg1;
+- (void)setSprings:(id)arg1;
+- (void)setReactsToCollisions:(BOOL)arg1;
 
 @end

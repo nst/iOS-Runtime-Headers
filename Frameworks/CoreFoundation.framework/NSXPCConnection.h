@@ -33,8 +33,7 @@
 @property struct dispatch_queue_s { }* dispatchQueue;
 
 
-- (void)start;
-- (void)invalidate;
+- (void)dealloc;
 - (id)initWithXPCObject:(void*)arg1;
 - (void)sendMessage:(void*)arg1 waitForAck:(BOOL)arg2;
 - (void)sendMessage:(void*)arg1 waitForSend:(BOOL)arg2;
@@ -51,6 +50,7 @@
 - (id)serviceName;
 - (void)addInvalidationHandler:(id)arg1;
 - (void)__invalidate;
-- (void)dealloc;
+- (void)start;
+- (void)invalidate;
 
 @end

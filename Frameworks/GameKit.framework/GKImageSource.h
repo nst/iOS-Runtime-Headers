@@ -24,6 +24,7 @@
 + (void)clearCache;
 + (id)sharedCache;
 
+- (void)dealloc;
 - (BOOL)imageNeedsRefresh:(id)arg1 imageBrush:(id)arg2;
 - (void)loadImageForIdentifier:(id)arg1 imageBrush:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)loadRawImageForImageID:(id)arg1 withCompletionHandler:(id)arg2;
@@ -35,6 +36,7 @@
 - (id)renderedImageWithImage:(id)arg1 imageBrush:(id)arg2;
 - (BOOL)didRenderDefaultImageWithBrush;
 - (BOOL)shouldRenderDefaultImageWithBrush;
+- (id)renderedImageWithImage:(id)arg1 imageBrush:(id)arg2 returnContext:(id*)arg3;
 - (id)imageBrush;
 - (void)clearCachedImageForIdentifier:(id)arg1 imageBrush:(id)arg2;
 - (void)didReceiveCacheInvalidation:(id)arg1;
@@ -49,6 +51,5 @@
 - (void)setCache:(id)arg1;
 - (id)cache;
 - (id)name;
-- (void)dealloc;
 
 @end

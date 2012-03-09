@@ -8,9 +8,9 @@
 }
 
 
-- (id)initWithType:(int)arg1 position:(int)arg2;
-- (void)setPosition:(int)arg1;
 - (int)type;
 - (int)position;
+- (void)setPosition:(int)arg1;
+- (id)initWithType:(int)arg1 position:(int)arg2;
 
 @end

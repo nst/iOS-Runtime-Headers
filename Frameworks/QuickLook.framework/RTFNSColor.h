@@ -14,25 +14,25 @@
 @property float green;
 @property float red;
 
-+ (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-+ (id)colorWithCalibratedWhite:(float)arg1 alpha:(float)arg2;
 + (id)whiteColor;
 + (id)blackColor;
++ (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
++ (id)colorWithCalibratedWhite:(float)arg1 alpha:(float)arg2;
 
-- (id)colorUsingColorSpaceName:(id)arg1;
-- (void)setBlue:(float)arg1;
-- (void)setGreen:(float)arg1;
-- (void)setRed:(float)arg1;
-- (id)initWithCalibratedWhite:(float)arg1 alpha:(float)arg2;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (float)blue;
 - (float)green;
 - (float)red;
 - (void)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (void)setAlpha:(float)arg1;
 - (float)alpha;
+- (id)colorUsingColorSpaceName:(id)arg1;
 - (id)initWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
+- (void)setBlue:(float)arg1;
+- (void)setGreen:(float)arg1;
+- (void)setRed:(float)arg1;
+- (id)initWithCalibratedWhite:(float)arg1 alpha:(float)arg2;
 
 @end

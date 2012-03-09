@@ -16,10 +16,10 @@
 - (void)unlockWithCondition:(int)arg1;
 - (BOOL)lockWhenCondition:(int)arg1 beforeDate:(id)arg2;
 - (BOOL)lockBeforeDate:(id)arg1;
-- (BOOL)isLockedByMe;
-- (void)unlock;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (BOOL)isLockedByMe;
+- (void)unlock;
 
 @end

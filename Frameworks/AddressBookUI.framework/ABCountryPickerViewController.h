@@ -21,6 +21,15 @@
 @property(retain) NSString * selectedCountryCode;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)reloadCountryCodes;
+- (void)_setSelectedCountryCode:(id)arg1 atPath:(id)arg2;
+- (void)configureSections;
+- (id)selectedCountryCode;
+- (void)setSelectedCountryCode:(id)arg1;
+- (void)scrollToSearchFieldAnimated:(BOOL)arg1;
+- (float)ab_heightToFitForViewInPopoverView;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;
 - (void)searchDisplayControllerWillBeginSearch:(id)arg1;
@@ -38,14 +47,5 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)init;
-- (void)dealloc;
-- (void)reloadCountryCodes;
-- (void)_setSelectedCountryCode:(id)arg1 atPath:(id)arg2;
-- (void)configureSections;
-- (id)selectedCountryCode;
-- (void)setSelectedCountryCode:(id)arg1;
-- (void)scrollToSearchFieldAnimated:(BOOL)arg1;
-- (float)ab_heightToFitForViewInPopoverView;
 
 @end

@@ -16,17 +16,17 @@
 @property(retain) LBSGLocResponse * reply;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setStatus:(int)arg1;
+- (int)status;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)reply;
 - (void)setHasStatus:(BOOL)arg1;
 - (BOOL)hasStatus;
 - (BOOL)hasReply;
 - (void)setReply:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (int)status;
-- (id)description;
-- (void)dealloc;
 
 @end

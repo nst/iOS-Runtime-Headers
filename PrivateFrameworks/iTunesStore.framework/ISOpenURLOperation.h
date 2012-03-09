@@ -11,12 +11,12 @@
 @property(readonly) ISOpenURLRequest * openURLRequest;
 
 
-- (void)run;
+- (id)init;
+- (void)dealloc;
 - (id)openURLRequest;
 - (id)_newSortedTargetsArray;
 - (BOOL)_openURL:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)run;
 - (id)initWithOpenURLRequest:(id)arg1;
 
 @end

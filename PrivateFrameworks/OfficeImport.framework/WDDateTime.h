@@ -10,12 +10,12 @@
 }
 
 
+- (void)setProperties:(id)arg1;
+- (void)dealloc;
+- (id)properties;
+- (id)date;
 - (id)initWithParagraph:(id)arg1 date:(id)arg2;
 - (void)clearProperties;
 - (int)runType;
-- (id)properties;
-- (id)date;
-- (void)setProperties:(id)arg1;
-- (void)dealloc;
 
 @end

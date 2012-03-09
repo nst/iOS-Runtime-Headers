@@ -42,11 +42,10 @@
 + (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })regionThatFitsMapType:(unsigned int)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2 region:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 + (void)_countryProvidersDidChange:(id)arg1;
 
-- (void)addAnnotation:(id)arg1;
+- (void)dealloc;
 - (int)_interfaceOrientation;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)_isVisible;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRectInView:(id)arg1;
 - (void)setSuspended:(BOOL)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forViewPrintFormatter:(id)arg2;
 - (id)awakeAfterUsingCoder:(id)arg1;
@@ -77,13 +76,15 @@
 - (void)applicationWillTerminate:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
 - (id)delegate;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)didMoveToWindow;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)_isVisible;
 - (BOOL)regionChangeIsUserInitiated;
 - (id)overlays;
 - (id)viewForOverlay:(id)arg1;
@@ -101,6 +102,7 @@
 - (BOOL)isHeadingTrackingEnabled;
 - (void)resumeUserHeadingUpdates;
 - (void)pauseUserHeadingUpdates;
+- (BOOL)canRotateForHeading;
 - (void)_resetAnnotationContainerPerspective;
 - (void)_stopRotationLayer:(id)arg1 annotationViews:(id)arg2;
 - (void)_updateAngularVelocityWithAnimation:(id)arg1;
@@ -251,7 +253,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_debugViewFrame;
 - (void)_showAddedAnnotationsAnimated:(BOOL)arg1;
 - (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toRegionFromView:(id)arg2;
 - (void)setSelectedAnnotations:(id)arg1;
 - (id)annotationsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
@@ -314,7 +315,6 @@
 - (struct CGPoint { float x1; float x2; })_scrollViewOffsetForCenterMapPoint:(struct { double x1; double x2; })arg1;
 - (struct CGPoint { float x1; float x2; })_scrollViewOffsetForOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })_scrollViewOffsetForCenterPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (BOOL)effectsEnabled;
 - (void)setTrafficStatus:(int)arg1;
 - (float)_maxZoomLevelForCoordinate:(struct { double x1; double x2; })arg1;
@@ -379,7 +379,6 @@
 - (void)_cancelScrollToReCenterUser;
 - (void)_ensureLiveTrackingResourcesInitialized;
 - (void)_stopTrackingHeading;
-- (BOOL)canRotateForHeading;
 - (void)_setUserTrackingMode:(int)arg1 animated:(BOOL)arg2 shouldZoom:(BOOL)arg3 fromTrackingButton:(BOOL)arg4;
 - (BOOL)_shouldZoomOnLiveTracking;
 - (void)setUserTrackingMode:(int)arg1 animated:(BOOL)arg2;
@@ -454,8 +453,9 @@
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
 - (void)_countryProvidersDidChange:(id)arg1;
-- (id)mapRegion;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRectInView:(id)arg1;
+- (void)addAnnotation:(id)arg1;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toRegionFromView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 edgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 animated:(BOOL)arg3;
 - (id)viewForAnnotation:(id)arg1;
 - (id)dequeueReusableAnnotationViewWithIdentifier:(id)arg1;
@@ -468,6 +468,6 @@
 - (id)annotations;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)dealloc;
+- (id)mapRegion;
 
 @end

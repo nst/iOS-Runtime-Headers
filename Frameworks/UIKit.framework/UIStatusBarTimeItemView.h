@@ -9,8 +9,8 @@
 }
 
 
+- (void)dealloc;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (id)contentsImageForStyle:(int)arg1;
-- (void)dealloc;
 
 @end

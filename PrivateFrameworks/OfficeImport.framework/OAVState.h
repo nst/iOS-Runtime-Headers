@@ -14,6 +14,9 @@
 }
 
 
+- (void)dealloc;
+- (void)reset;
+- (Class)client;
 - (id)oaxState;
 - (void)setShapeType:(unsigned short)arg1 forId:(id)arg2;
 - (unsigned short)shapeTypeForId:(id)arg1;
@@ -27,8 +30,5 @@
 - (id)packagePart;
 - (id)drawableForVmlShapeId:(id)arg1;
 - (void)addDualDrawable:(id)arg1;
-- (Class)client;
-- (void)reset;
-- (void)dealloc;
 
 @end

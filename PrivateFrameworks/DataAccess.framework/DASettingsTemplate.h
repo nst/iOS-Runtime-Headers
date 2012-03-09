@@ -38,6 +38,11 @@
 + (BOOL)requiresPorts;
 + (id)knownTemplates;
 
+- (void)setName:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (void)setOrder:(int)arg1;
 - (int)order;
 - (id)descriptionForAccount:(id)arg1;
@@ -74,10 +79,5 @@
 - (id)primaryDomain;
 - (int)compare:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 
 @end

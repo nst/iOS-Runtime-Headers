@@ -8,8 +8,6 @@
 + (void)setPlayerIDHashParametersFromBag:(id)arg1;
 + (int)hashForPlayerID:(id)arg1;
 
-- (void)setHTTPUserAgent:(id)arg1;
-- (void)setHTTPShouldUsePipelining:(BOOL)arg1;
 - (void)setContentDispositionEncodingFallbackArray:(id)arg1;
 - (unsigned int)requestPriority;
 - (void)setRequestPriority:(unsigned int)arg1;
@@ -27,9 +25,11 @@
 - (void)setMainDocumentURL:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setHTTPUserAgent:(id)arg1;
+- (void)setHTTPShouldUsePipelining:(BOOL)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
 - (void)setURL:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)_web_setHTTPContentType:(id)arg1;
 - (void)_web_setHTTPReferrer:(id)arg1;
 - (void)_web_setHTTPUserAgent:(id)arg1;
@@ -42,6 +42,7 @@
 - (void)setProcessName:(id)arg1;
 - (void)setDeviceUniqueID:(id)arg1;
 - (void)setRestrictions:(id)arg1;
+- (void)setStoreMode:(id)arg1;
 - (void)setDeviceScreenCapabilities:(id)arg1;
 - (void)setPlayerID:(id)arg1 authToken:(id)arg2;
 - (void)setGameDescriptor:(id)arg1;

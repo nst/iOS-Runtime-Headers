@@ -56,6 +56,7 @@
 - (BOOL)alwaysWriteFullMessageFile;
 - (void)setLastViewedMessageID:(id)arg1;
 - (void)setPermanentTag:(id)arg1;
+- (void)setExtraAttributes:(id)arg1;
 - (id)initWithAccount:(id)arg1;
 - (id)_initWithName:(id)arg1 attributes:(unsigned int)arg2 forAccount:(id)arg3;
 - (id)_mutableChildren;
@@ -84,6 +85,7 @@
 - (id)childWithPermanentTag:(id)arg1;
 - (BOOL)setChildren:(id)arg1;
 - (id)permanentTag;
+- (id)extraAttributes;
 - (void)setRepresentedAccount:(id)arg1;
 - (id)initWithName:(id)arg1 attributes:(unsigned int)arg2 forAccount:(id)arg3 permanentTag:(id)arg4;
 - (id)initWithName:(id)arg1 attributes:(unsigned int)arg2 forAccount:(id)arg3 extraAttributes:(id)arg4;
@@ -99,13 +101,12 @@
 - (id)lastViewedMessageID;
 - (id)lastViewedMessageDate;
 - (id)URLString;
+- (void)setName:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isSelectable;
-- (id)childAtIndex:(unsigned int)arg1;
-- (id)parent;
-- (void)setParent:(id)arg1;
-- (void)invalidate;
-- (id)store;
-- (id)children;
 - (id)displayName;
 - (void)setAttributes:(unsigned int)arg1;
 - (unsigned int)attributes;
@@ -116,12 +117,11 @@
 - (id)name;
 - (void)setType:(int)arg1;
 - (BOOL)isValid;
-- (void)setExtraAttributes:(id)arg1;
-- (id)extraAttributes;
-- (void)setName:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)invalidate;
+- (id)children;
+- (id)childAtIndex:(unsigned int)arg1;
+- (id)parent;
+- (void)setParent:(id)arg1;
+- (id)store;
 
 @end

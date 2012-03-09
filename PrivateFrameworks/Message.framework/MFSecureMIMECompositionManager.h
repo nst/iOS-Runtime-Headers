@@ -63,12 +63,12 @@
 - (BOOL)_shouldSign_nts;
 - (BOOL)_shouldEncrypt_nts;
 - (id)compositionSpecification;
+- (id)init;
+- (void)dealloc;
 - (void)addRecipients:(id)arg1;
 - (id)recipients;
 - (void)invalidate;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

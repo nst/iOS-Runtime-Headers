@@ -7,7 +7,7 @@
 }
 
 
-- (struct __CFString { }*)value;
 - (void)dealloc;
+- (struct __CFString { }*)value;
 
 @end

@@ -31,10 +31,13 @@
 @property(retain) NSError * importError;
 
 
-- (unsigned long long)fileSize;
+- (id)description;
+- (void)dealloc;
+- (id)creationDate;
 - (id)identifier;
 - (BOOL)isLocked;
-- (id)creationDate;
+- (unsigned long long)fileSize;
+- (id)thumbnail;
 - (void)setImportedAsset:(id)arg1;
 - (id)importedAsset;
 - (void)setThumbnailData:(id)arg1;
@@ -84,8 +87,5 @@
 - (void)addRepresentationForCameraFile:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 parentFolder:(id)arg2;
 - (BOOL)isAudio;
-- (id)description;
-- (void)dealloc;
-- (id)thumbnail;
 
 @end

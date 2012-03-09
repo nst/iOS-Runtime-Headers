@@ -21,19 +21,19 @@
 @property(copy) NSString * videoID;
 
 
+- (id)download;
+- (id)init;
+- (void)dealloc;
 - (void)setStopTime:(double)arg1;
 - (void)setDownload:(id)arg1;
 - (id)initWithMPAVItem:(id)arg1;
 - (id)videoID;
 - (double)stopTime;
 - (void)setVideoID:(id)arg1;
-- (id)path;
-- (id)download;
 - (double)startTime;
 - (void)setPath:(id)arg1;
 - (id)item;
+- (id)path;
 - (void)setStartTime:(double)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

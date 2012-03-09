@@ -25,10 +25,11 @@
 @property(retain) NSString * title;
 
 
-- (id)ratingControl;
+- (void)dealloc;
 - (void)setQuery:(id)arg1;
 - (void)setArtworkImage:(id)arg1;
 - (id)artworkImage;
+- (id)ratingControl;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (id)item;
@@ -41,6 +42,7 @@
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setItem:(id)arg1;
 - (void)ratingControlRatingChanged:(id)arg1;
 - (void)ratingControlRatingBeganTracking:(id)arg1;
 - (id)headerControl;
@@ -52,7 +54,5 @@
 - (id)_bottomImageView;
 - (id)_topImageView;
 - (id)_backgroundImageView;
-- (void)dealloc;
-- (void)setItem:(id)arg1;
 
 @end

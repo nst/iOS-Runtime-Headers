@@ -12,9 +12,9 @@
 + (id)grayColor;
 + (id)whiteColor;
 
-- (void)setCGColor:(struct CGColor { }*)arg1;
-- (struct CGColor { }*)CGColor;
 - (void)dealloc;
+- (void)setCGColor:(struct CGColor { }*)arg1;
 - (void)setOnContext:(struct CGContext { }*)arg1;
+- (struct CGColor { }*)CGColor;
 
 @end

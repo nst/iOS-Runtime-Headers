@@ -16,10 +16,10 @@
 @property struct CGSize { float x1; float x2; } size;
 
 
+- (void)dealloc;
 - (id)image;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setImage:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;
-- (void)dealloc;
 
 @end

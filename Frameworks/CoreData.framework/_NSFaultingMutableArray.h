@@ -15,16 +15,29 @@
     } _flags;
 }
 
-+ (BOOL)accessInstanceVariablesDirectly;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (BOOL)accessInstanceVariablesDirectly;
 
-- (id)valueForKey:(id)arg1;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)turnIntoFault;
-- (id)relationship;
-- (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
-- (void)willRead;
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (unsigned int)retainCount;
+- (id)description;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)retain;
+- (void)addObject:(id)arg1;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (BOOL)isFault;
+- (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
+- (void)getObjects:(id*)arg1;
+- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
+- (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
+- (id)descriptionWithLocale:(id)arg1;
+- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)source;
 - (BOOL)_isDeallocating;
@@ -36,24 +49,11 @@
 - (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
 - (void)removeLastObject;
-- (BOOL)isFault;
-- (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (void)getObjects:(id*)arg1;
-- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
-- (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (id)descriptionWithLocale:(id)arg1;
-- (unsigned int)count;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (unsigned int)retainCount;
-- (id)description;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (id)retain;
-- (void)addObject:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (oneway void)release;
-- (void)dealloc;
+- (id)valueForKey:(id)arg1;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (void)turnIntoFault;
+- (id)relationship;
+- (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
+- (void)willRead;
 
 @end

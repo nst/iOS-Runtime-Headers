@@ -37,18 +37,15 @@
 
 - (id)subject;
 - (BOOL)isPlaceholder;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (void)cancel;
+- (void)dealloc;
+- (id)groupID;
 - (float)percentComplete;
 - (id)address;
 - (id)sequenceNumber;
-- (BOOL)hasAttachments;
-- (int)rowID;
-- (unsigned long)height;
-- (void)send;
-- (id)sender;
-- (int)compare:(id)arg1;
-- (double)timeIntervalSince1970;
-- (id)date;
-- (id)text;
+- (id)error;
 - (id)initWithService:(id)arg1;
 - (int)messageCount;
 - (void)_resetData;
@@ -105,11 +102,14 @@
 - (void)setIsFromDowngrading:(BOOL)arg1;
 - (BOOL)isForward;
 - (BOOL)isOutgoing;
-- (id)groupID;
-- (id)error;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (void)cancel;
-- (void)dealloc;
+- (BOOL)hasAttachments;
+- (int)rowID;
+- (unsigned long)height;
+- (void)send;
+- (id)sender;
+- (int)compare:(id)arg1;
+- (double)timeIntervalSince1970;
+- (id)date;
+- (id)text;
 
 @end

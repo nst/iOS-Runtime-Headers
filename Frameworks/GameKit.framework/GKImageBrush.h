@@ -5,7 +5,6 @@
 @interface GKImageBrush : GKThemeBrush  {
 }
 
-+ (id)renderedImageWithImage:(id)arg1 brush:(id)arg2;
 
 - (float)scaleForInput:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeForInput:(id)arg1;

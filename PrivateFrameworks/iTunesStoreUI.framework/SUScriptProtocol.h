@@ -15,8 +15,8 @@
 @property(readonly) NSString * protocolVersion;
 @property BOOL shouldShowInOverlay;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (void)initialize;
++ (id)webScriptNameForKey:(const char *)arg1;
 
 - (void)setProtocolVersion:(id)arg1;
 - (id)protocolVersion;

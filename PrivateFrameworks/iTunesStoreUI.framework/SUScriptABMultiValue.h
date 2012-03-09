@@ -13,15 +13,13 @@
 @property(readonly) unsigned int propertyType;
 @property(readonly) NSArray * values;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)valueAtIndex:(long)arg1;
-- (unsigned int)propertyType;
-- (id)attributeKeys;
-- (id)values;
 - (long)length;
+- (id)values;
+- (id)attributeKeys;
 - (void*)multiValue;
 - (id)labelAtIndex:(long)arg1;
 - (long)indexForIdentifier:(int)arg1;
@@ -30,5 +28,7 @@
 - (id)initWithMultiValue:(void*)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)valueAtIndex:(long)arg1;
+- (unsigned int)propertyType;
 
 @end

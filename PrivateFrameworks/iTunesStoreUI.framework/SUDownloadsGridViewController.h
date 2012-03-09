@@ -12,11 +12,11 @@
 @property(retain) NSArray * scriptButtons;
 
 
+- (id)init;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)setDataSource:(id)arg1;
-- (id)init;
 - (void)startPreOrderDownloadAction:(id)arg1;
 - (void)_reloadFooterView;
 - (void)_reloadColumnCountForOrientation:(int)arg1;

@@ -25,9 +25,9 @@
 - (id)signers;
 - (BOOL)isContentEncrypted;
 - (BOOL)isContentSigned;
-- (id)data;
+- (void)dealloc;
 - (int)appendData:(id)arg1;
 - (void)done;
-- (void)dealloc;
+- (id)data;
 
 @end

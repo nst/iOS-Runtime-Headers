@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSString, NSFileManager, PLPhotoLibrary, PLManagedObjectContext, NSObject<PhotoLibraryPTPDelegate>;
+@class NSObject<PhotoLibraryPTPDelegate>, PLManagedObjectContext, NSMutableArray, NSString, NSFileManager, PLPhotoLibrary, NSArray;
 
 @interface PLPTPdAssetManager : NSObject <PLManagedObjectContextPTPNotificationDelegate> {
     NSObject<PhotoLibraryPTPDelegate> *_delegate;
     NSArray *_albumObjectIDs;
     NSString *_firstDCIMFolderServiced;
+    NSMutableArray *_inflightAssets;
     NSFileManager *fileManager;
     PLPhotoLibrary *photoLibrary;
 }
@@ -19,11 +20,12 @@
 @property(retain) NSFileManager * fileManager;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (id)managedObjectContext;
+- (id)init;
+- (void)dealloc;
 - (id)assetsInAlbumWithObjectID:(id)arg1;
-- (id)_allAssetObjectIDs;
 - (BOOL)_isPTPAlbum:(id)arg1;
+- (id)_allAssetObjectIDs;
 - (BOOL)ptpCanDeleteFiles;
 - (id)ptpInformationForPhotosWithPrimaryKeys:(id)arg1;
 - (void)setPtpDelegate:(id)arg1;
@@ -41,15 +43,13 @@
 - (id)infoForAlbum:(struct NSObject { Class x1; }*)arg1;
 - (id)albumHandles;
 - (id)albumObjectIDs;
-- (void)managedObjectContext:(id)arg1 libraryChangedWithInsertedAssets:(id)arg2 deletedAssets:(id)arg3 changedAssets:(id)arg4;
 - (id)fileManager;
 - (void)setFileManager:(id)arg1;
+- (void)managedObjectContext:(id)arg1 libraryChangedWithInsertedAssets:(id)arg2 deletedAssets:(id)arg3 changedAssets:(id)arg4;
 - (BOOL)libraryIsAvailable;
 - (void)setPhotoLibrary:(id)arg1;
-- (void)_albumDidChange:(id)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (id)photoLibrary;
-- (id)managedObjectContext;
-- (id)init;
-- (void)dealloc;
 
 @end

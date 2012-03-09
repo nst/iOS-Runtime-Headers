@@ -21,11 +21,13 @@
 @property BOOL inDatabase;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (void)setPath:(id)arg1;
 - (id)path;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
-- (void)setPath:(id)arg1;
-- (id)forwardingTargetForSelector:(SEL)arg1;
 - (BOOL)inDatabase;
 - (void)setCameraFile:(id)arg1;
 - (BOOL)isJPEG;
@@ -41,7 +43,5 @@
 - (BOOL)canRequestThumbnail;
 - (void)setCanRequestMetadata:(BOOL)arg1;
 - (BOOL)isAudio;
-- (id)description;
-- (void)dealloc;
 
 @end

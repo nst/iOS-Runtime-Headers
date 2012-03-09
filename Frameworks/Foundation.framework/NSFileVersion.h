@@ -61,16 +61,16 @@
 - (id)replaceItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)isResolved;
 - (BOOL)isConflict;
+- (id)modificationDate;
 - (id)localizedNameOfSavingComputer;
 - (id)_initWithFileURL:(id)arg1 library:(id)arg2 clientID:(id)arg3 name:(id)arg4 contentsURL:(id)arg5 isBackup:(BOOL)arg6 revision:(id)arg7;
 - (id)persistentIdentifier;
-- (void)setResolved:(BOOL)arg1;
-- (id)modificationDate;
-- (id)localizedName;
-- (id)URL;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
 - (void)dealloc;
+- (id)localizedName;
+- (id)URL;
+- (void)setResolved:(BOOL)arg1;
 
 @end

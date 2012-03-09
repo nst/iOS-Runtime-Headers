@@ -41,6 +41,7 @@
     } _serviceFlags;
 }
 
++ (void)initialize;
 + (void)setInsomniaEnabled:(BOOL)arg1;
 + (id)sharedService;
 + (BOOL)sharedServiceIsSubscribed;
@@ -48,8 +49,20 @@
 + (void)_resetInsomniaState;
 + (void)_suppressInsomniaState;
 + (void)_setInsomniaState:(BOOL)arg1;
-+ (void)initialize;
 
+- (unsigned int)capabilities;
+- (id)mailboxName;
+- (void)setUnreadCount:(unsigned int)arg1;
+- (struct __CFString { }*)connectionServiceType;
+- (unsigned int)unreadCount;
+- (id)init;
+- (void)dealloc;
+- (void)removeAllRecords;
+- (void)setPassword:(id)arg1;
+- (void)setSubscribed:(BOOL)arg1;
+- (BOOL)isSubscribed;
+- (id)password;
+- (void)reportError:(id)arg1;
 - (void)clearRemoteUIDsForDetachedMessages;
 - (BOOL)shouldTrashCompactRecord:(void*)arg1;
 - (void)setMailboxUsage:(int)arg1;
@@ -133,18 +146,5 @@
 - (double)trashCompactionAge;
 - (void)_cancelAutomatedTrashCompaction;
 - (BOOL)doTrashCompaction;
-- (id)mailboxName;
-- (void)setUnreadCount:(unsigned int)arg1;
-- (struct __CFString { }*)connectionServiceType;
-- (unsigned int)unreadCount;
-- (void)setPassword:(id)arg1;
-- (void)reportError:(id)arg1;
-- (void)setSubscribed:(BOOL)arg1;
-- (BOOL)isSubscribed;
-- (id)password;
-- (id)init;
-- (void)dealloc;
-- (unsigned int)capabilities;
-- (void)removeAllRecords;
 
 @end

@@ -19,9 +19,14 @@
 + (void)initializeInContext:(struct OpaqueJSContext { }*)arg1;
 + (id)scriptSelectors;
 
+- (id)init;
+- (void)dealloc;
+- (id)listener;
+- (id)previewController:(id)arg1 previewItemAtIndex:(int)arg2;
+- (int)numberOfPreviewItemsInPreviewController:(id)arg1;
+- (void)previewControllerDidDismiss:(id)arg1;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
 - (id)pdfPath;
 - (void)previewController:(id)arg1 customActionButtonWasTappedForPreviewItem:(id)arg2;
 - (id)previewController:(id)arg1 customActionButtonTittleForPreviewItem:(id)arg2;
@@ -32,12 +37,7 @@
 - (void)setPdfPath:(id)arg1;
 - (void)addPDF:(id)arg1 replyTo:(id)arg2;
 - (void)setListener:(id)arg1;
-- (id)previewController:(id)arg1 previewItemAtIndex:(int)arg2;
-- (int)numberOfPreviewItemsInPreviewController:(id)arg1;
-- (void)previewControllerDidDismiss:(id)arg1;
-- (id)delegate;
-- (id)listener;
-- (id)init;
-- (void)dealloc;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 
 @end

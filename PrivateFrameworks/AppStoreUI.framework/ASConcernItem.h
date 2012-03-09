@@ -15,6 +15,7 @@
 @property(retain) NSString * title;
 
 
+- (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
@@ -22,6 +23,5 @@
 - (void)setTitle:(id)arg1;
 - (void)setDefaultConcern:(BOOL)arg1;
 - (BOOL)isDefaultConcern;
-- (void)dealloc;
 
 @end

@@ -94,6 +94,7 @@
 @property BOOL magnifying;
 
 
+- (void)dealloc;
 - (BOOL)inputViewIsChanging;
 - (BOOL)rotating;
 - (BOOL)scaling;
@@ -180,6 +181,5 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)removeFromSuperview;
-- (void)dealloc;
 
 @end

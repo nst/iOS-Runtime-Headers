@@ -9,9 +9,9 @@
 @property BOOL disappearsOnHighlight;
 
 
-- (void)setBackgroundColor:(id)arg1;
 - (void)forceSetBackgroundColor:(id)arg1;
 - (BOOL)disappearsOnHighlight;
 - (void)setDisappearsOnHighlight:(BOOL)arg1;
+- (void)setBackgroundColor:(id)arg1;
 
 @end

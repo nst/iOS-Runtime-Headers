@@ -2,33 +2,49 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class PFUbiquityKnowledgeVector, NSString, _PFUbiquityStack, PFUbiquityStoreMetadata;
+@class PFUbiquityTransactionLog, PFUbiquityStoreSaveSnapshot, PFUbiquityPeer, _PFUbiquityStack, PFUbiquityStoreMetadata, NSString, NSDictionary, PFUbiquityKnowledgeVector;
 
 @interface PFUbiquityImportContext : NSObject  {
     _PFUbiquityStack *_stack;
     PFUbiquityStoreMetadata *_storeMetadata;
+    PFUbiquityPeer *_actingPeer;
     PFUbiquityKnowledgeVector *_kv;
     PFUbiquityKnowledgeVector *_currentKnowledgeVector;
     NSString *_exportingPeerID;
+    PFUbiquityTransactionLog *_transactionLog;
+    PFUbiquityStoreSaveSnapshot *_storeSaveSnapshot;
+    NSDictionary *_globalIDToLocalIDURICache;
 }
 
+@property(retain) NSDictionary * globalIDToLocalIDURICache;
+@property(retain) PFUbiquityStoreSaveSnapshot * storeSaveSnapshot;
+@property(retain) PFUbiquityTransactionLog * transactionLog;
 @property(retain) NSString * exportingPeerID;
 @property(retain) PFUbiquityKnowledgeVector * currentKnowledgeVector;
 @property(retain) PFUbiquityKnowledgeVector * knowledgeVector;
+@property(readonly) PFUbiquityPeer * actingPeer;
 @property(readonly) PFUbiquityStoreMetadata * storeMetadata;
 @property(readonly) _PFUbiquityStack * stack;
 
 
+- (void)dealloc;
 - (id)initWithStack:(id)arg1 andStoreMetadata:(id)arg2;
+- (void)setActingPeer:(id)arg1;
+- (id)actingPeer;
+- (id)transactionLog;
+- (void)setGlobalIDToLocalIDURICache:(id)arg1;
 - (id)stack;
 - (id)initWithStoreName:(id)arg1 andUbiquityRootLocation:(id)arg2 withLocalPeerID:(id)arg3;
 - (void)setExportingPeerID:(id)arg1;
+- (void)setTransactionLog:(id)arg1;
+- (void)setStoreSaveSnapshot:(id)arg1;
 - (void)setKnowledgeVector:(id)arg1;
 - (void)setCurrentKnowledgeVector:(id)arg1;
 - (id)exportingPeerID;
 - (id)storeMetadata;
+- (id)storeSaveSnapshot;
+- (id)globalIDToLocalIDURICache;
 - (id)knowledgeVector;
 - (id)currentKnowledgeVector;
-- (void)dealloc;
 
 @end

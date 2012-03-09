@@ -17,6 +17,7 @@
 @property(retain) IUFoldingTransitionView * foldingTransitionView;
 
 
+- (void)dealloc;
 - (void)setFoldingTransitionView:(id)arg1;
 - (id)foldingTransitionView;
 - (void)setControllerToPush:(id)arg1;
@@ -25,6 +26,5 @@
 - (void)setSelectedAlbumIndex:(unsigned int)arg1;
 - (unsigned int)selectedAlbumIndex;
 - (id)wildcatViewController;
-- (void)dealloc;
 
 @end

@@ -41,28 +41,6 @@
 + (Class)classForProperty:(int)arg1;
 + (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forPropertyGroup:(id)arg2 info:(id)arg3 styleProvider:(id)arg4 whenEditing:(BOOL)arg5;
 
-- (id)pickerView;
-- (void)setCell:(id)arg1;
-- (id)cell;
-- (void)setAllowsEditing:(BOOL)arg1;
-- (BOOL)allowsEditing;
-- (BOOL)canResignFirstResponder;
-- (BOOL)isHighlighted;
-- (void)setEditing:(BOOL)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)isEditing;
-- (void)setHighlighted:(BOOL)arg1;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)becomeFirstResponder;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (BOOL)resignFirstResponder;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)reload;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setLabelText:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (BOOL)entryFieldShouldReturn:(id)arg1;
@@ -116,5 +94,27 @@
 - (void)setShouldIgnoreEndEditing:(BOOL)arg1;
 - (void)setAbCellStyle:(int)arg1;
 - (void)reloadFromModel;
+- (id)pickerView;
+- (void)setCell:(id)arg1;
+- (id)cell;
+- (void)setAllowsEditing:(BOOL)arg1;
+- (BOOL)allowsEditing;
+- (BOOL)canResignFirstResponder;
+- (BOOL)isHighlighted;
+- (void)setEditing:(BOOL)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)isEditing;
+- (void)setHighlighted:(BOOL)arg1;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)becomeFirstResponder;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (BOOL)resignFirstResponder;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)reload;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLabelText:(id)arg1;
 
 @end

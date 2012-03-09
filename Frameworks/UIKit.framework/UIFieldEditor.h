@@ -29,7 +29,7 @@
 + (id)sharedFieldEditor;
 + (void)releaseSharedInstance;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (void)_deleteBackwardAndNotify:(BOOL)arg1;
 - (void)updateAutoscroll:(id)arg1;
 - (BOOL)mouseEventsChangeSelection;
@@ -78,6 +78,7 @@
 - (void)setBaseWritingDirection:(int)arg1;
 - (void)becomeFieldEditorForView:(id)arg1;
 - (id)selectionView;
+- (BOOL)isEditing;
 - (id)style;
 - (void)setStyle:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrameForView:(id)arg1;
@@ -92,7 +93,7 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (BOOL)resignFirstResponder;
 - (id)text;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

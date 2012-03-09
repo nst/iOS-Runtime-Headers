@@ -23,6 +23,7 @@
 + (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 tapCount:(unsigned int)arg4;
 + (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 tapCount:(unsigned int)arg4 touchCount:(unsigned int)arg5;
 
+- (void)dealloc;
 - (void)_setDelaysRecognitionForGreaterTapCounts:(BOOL)arg1;
 - (BOOL)_delaysRecognitionForGreaterTapCounts;
 - (void)setMaximumIntervalBetweenSuccessiveTaps:(double)arg1;
@@ -55,6 +56,5 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

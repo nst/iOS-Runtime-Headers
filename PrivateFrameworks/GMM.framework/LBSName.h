@@ -31,9 +31,16 @@
 @property(retain) NSString * shortText;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setLanguage:(id)arg1;
 - (id)language;
+- (id)dictionaryRepresentation;
+- (int*)flags;
+- (id)text;
+- (void)setText:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)shortText;
 - (void)setHasRouteDirection:(BOOL)arg1;
 - (BOOL)hasRouteDirection;
@@ -50,12 +57,5 @@
 - (id)rawText;
 - (BOOL)hasRawText;
 - (void)setRawText:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (int*)flags;
-- (id)text;
-- (void)setText:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

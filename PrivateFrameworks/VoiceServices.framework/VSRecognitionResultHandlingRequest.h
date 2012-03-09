@@ -11,11 +11,11 @@
 }
 
 
+- (id)results;
+- (void)dealloc;
+- (id)handler;
 - (id)initWithHandler:(id)arg1 results:(id)arg2;
 - (id)nextAction;
 - (void)setNextAction:(id)arg1;
-- (id)handler;
-- (id)results;
-- (void)dealloc;
 
 @end

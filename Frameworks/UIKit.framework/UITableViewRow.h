@@ -16,6 +16,7 @@
 
 + (id)row;
 
+- (void)dealloc;
 - (void)setCell:(id)arg1;
 - (void)setHeight:(float)arg1;
 - (float)height;
@@ -24,6 +25,5 @@
 - (void)setIndentationLevel:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

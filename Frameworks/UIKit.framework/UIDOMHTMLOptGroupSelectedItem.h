@@ -11,6 +11,7 @@
 @property(retain) DOMHTMLOptGroupElement * _node;
 
 
+- (void)dealloc;
 - (void)unselect;
 - (id)node;
 - (id)initWithHTMLOptGroupNode:(id)arg1;
@@ -18,6 +19,5 @@
 - (id)_node;
 - (void)set_node:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
-- (void)dealloc;
 
 @end

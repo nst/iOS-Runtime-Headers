@@ -13,20 +13,20 @@
 }
 
 
-- (void)controlChanged:(id)arg1;
+- (void)dealloc;
 - (BOOL)loading;
 - (void)setLoading:(BOOL)arg1;
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (void)setValues:(id)arg1 titleDictionary:(id)arg2;
+- (BOOL)canReload;
+- (id)valueLabel;
 - (id)control;
 - (void)setControl:(id)arg1;
 - (void)setValue:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (id)titleLabel;
 - (void)layoutSubviews;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)setValues:(id)arg1 titleDictionary:(id)arg2;
+- (void)controlChanged:(id)arg1;
 - (void)setCellEnabled:(BOOL)arg1;
-- (void)dealloc;
-- (BOOL)canReload;
-- (id)valueLabel;
 
 @end

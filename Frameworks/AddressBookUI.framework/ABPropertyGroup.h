@@ -29,12 +29,8 @@
 }
 
 
-- (int)property;
-- (void*)context;
-- (id)serviceAtIndex:(int)arg1;
 - (id)description;
 - (void)dealloc;
-- (int)itemCount;
 - (BOOL)_propertyIsDate;
 - (id)_recordInfoForPerson:(void*)arg1;
 - (id)_recordInfoDictionaryForPerson:(void*)arg1;
@@ -149,6 +145,10 @@
 - (BOOL)hasMultipleAlertsAtIndex:(int)arg1;
 - (int)alertIdentifierAtIndex:(int)arg1;
 - (id)_getFromLineInfos:(id)arg1 key:(id)arg2 valueForKey:(id)arg3;
-- (id)_newLocalizedPlaceholder;
+- (id)_newLocalizedPlaceholderForKey:(id)arg1;
+- (int)itemCount;
+- (id)serviceAtIndex:(int)arg1;
+- (void*)context;
+- (int)property;
 
 @end

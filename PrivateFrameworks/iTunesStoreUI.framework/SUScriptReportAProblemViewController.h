@@ -9,13 +9,13 @@
 
 @property(readonly) NSNumber * adamID;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (void)initialize;
++ (id)webScriptNameForKey:(const char *)arg1;
 
+- (id)init;
 - (id)adamID;
 - (void)setAdamID:(id)arg1;
 - (id)attributeKeys;
-- (id)init;
 - (id)_copyAdamID;
 - (BOOL)_initWithAdamID:(id)arg1;
 - (id)initWithAdamID:(id)arg1;

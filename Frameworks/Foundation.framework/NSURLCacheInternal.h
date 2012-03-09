@@ -32,7 +32,7 @@
 }
 
 
-- (void)finalize;
 - (void)dealloc;
+- (void)finalize;
 
 @end

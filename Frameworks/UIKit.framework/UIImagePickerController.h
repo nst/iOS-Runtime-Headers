@@ -50,6 +50,8 @@
 + (BOOL)_isMediaTypeAvailable:(id)arg1 forSource:(unsigned int)arg2;
 + (BOOL)isSourceTypeAvailable:(unsigned int)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)_imagePickerDidCompleteWithInfoArray:(id)arg1;
 - (BOOL)_didRevertStatusBar;
 - (void)setCameraFlashMode:(int)arg1;
@@ -111,8 +113,6 @@
 - (void)_populateArchivedChildViewControllers:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (BOOL)ckCanDismissWhenSuspending;
 
 @end

@@ -13,10 +13,10 @@
 @property(readonly) SSURLRequestProperties * softwareUpdatesRequestProperties;
 
 
+- (void)dealloc;
 - (void)run;
 - (id)_bodyDataWithContentEncoding:(id*)arg1 error:(id*)arg2;
 - (id)initWithRequestProperties:(id)arg1 softwareTypes:(id)arg2;
 - (id)softwareUpdatesRequestProperties;
-- (void)dealloc;
 
 @end

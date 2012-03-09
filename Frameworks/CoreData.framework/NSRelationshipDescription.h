@@ -18,6 +18,13 @@
 
 + (void)initialize;
 
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)_setLazyDestinationEntityName:(id)arg1;
 - (void)setMaxCount:(unsigned int)arg1;
 - (void)setMinCount:(unsigned int)arg1;
@@ -45,12 +52,5 @@
 - (unsigned int)minCount;
 - (BOOL)_isRelationship;
 - (unsigned int)deleteRule;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

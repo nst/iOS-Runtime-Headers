@@ -16,8 +16,8 @@
 @property <CalDAVCalendarPropertyRefreshDelegate> * delegate;
 
 
-- (void)containerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 - (void)dealloc;
+- (void)containerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 - (void)refreshCalendarProperties;
 - (void)_finishRefresh;
 - (id)_generateTimeZoneString:(id)arg1;

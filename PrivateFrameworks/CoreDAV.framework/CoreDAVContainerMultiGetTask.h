@@ -23,6 +23,7 @@
 @property(retain) NSSet * additionalPropElements;
 
 
+- (void)dealloc;
 - (id)missingURLs;
 - (id)parsedContents;
 - (void)setShouldIgnoreResponseErrors:(BOOL)arg1;
@@ -34,7 +35,6 @@
 - (id)additionalPropElements;
 - (void)setAdditionalPropElements:(id)arg1;
 - (id)copyAdditionalPropElements;
-- (void)dealloc;
 - (id)httpMethod;
 - (id)requestBody;
 

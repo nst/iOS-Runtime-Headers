@@ -38,7 +38,11 @@
 + (BOOL)_verifyNotificationSettings:(id)arg1 againstAlarmSettings:(id)arg2;
 + (BOOL)verifySettings:(id)arg1;
 
-- (void)setDelegate:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)debugDescription;
+- (id)init;
+- (void)dealloc;
 - (id)initWithNotification:(id)arg1;
 - (id)initWithDefaultValues;
 - (void)revertToSnapshot;
@@ -55,7 +59,6 @@
 - (unsigned int)_notificationsCount;
 - (void)setAllowsSnooze:(BOOL)arg1;
 - (void)setDaySetting:(unsigned int)arg1;
-- (id)alarmId;
 - (void)markModified;
 - (int)compareTime:(id)arg1;
 - (void)scheduleNotifications;
@@ -67,6 +70,8 @@
 - (void)refreshActiveState;
 - (void)handleNotificationSnoozed:(id)arg1;
 - (void)handleAlarmFired:(id)arg1;
+- (void)setSound:(id)arg1;
+- (id)sound;
 - (id)settings;
 - (void)setMinute:(unsigned int)arg1;
 - (void)setHour:(unsigned int)arg1;
@@ -76,12 +81,7 @@
 - (BOOL)isActive;
 - (id)delegate;
 - (void)setTitle:(id)arg1;
-- (void)setSound:(id)arg1;
-- (id)sound;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)debugDescription;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (id)alarmId;
 
 @end

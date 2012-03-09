@@ -10,11 +10,11 @@
 
 + (BOOL)allowedCalendars:(id)arg1 contains:(id)arg2;
 
-- (id)childrenToWrite;
-- (id)copyParseRules;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)childrenToWrite;
+- (id)copyParseRules;
 - (void)addCompSet:(id)arg1;
 - (id)componentsAsString;
 

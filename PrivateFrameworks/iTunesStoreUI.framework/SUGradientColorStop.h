@@ -14,12 +14,12 @@
 @property(readonly) float offset;
 
 
+- (id)init;
+- (void)dealloc;
 - (int)compare:(id)arg1;
 - (float)offset;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)initWithColor:(struct CGColor { }*)arg1 offset:(float)arg2;
 - (struct CGColor { }*)copyCGColor;
 

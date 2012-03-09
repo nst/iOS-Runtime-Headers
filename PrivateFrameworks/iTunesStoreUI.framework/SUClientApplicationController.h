@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUTabBarController, ISOperation, SSRemoteNotificationClient, SUPlaceholderViewController, SULocationObserver, SUSectionsResponse, NSURL, NSString, UINavigationController;
+@class SUTabBarController, UINavigationController, ISOperation, SSRemoteNotificationClient, SUPlaceholderViewController, SULocationObserver, SUSectionsResponse, SUMediaPlayerViewController, NSURL, NSString;
 
 @interface SUClientApplicationController : SUClientController <SUTabBarControllerDelegate> {
+    SUMediaPlayerViewController *_activeMediaPlayer;
     SUPlaceholderViewController *_fetchSectionsPlaceholder;
     int _ignoreDownloadQueueChangeCount;
     NSURL *_launchURL;
@@ -12,6 +13,7 @@
     SUSectionsResponse *_lastSectionsResponse;
     ISOperation *_loadSectionsOperation;
     SULocationObserver *_locationObserver;
+    NSString *_preMediaDefaultPNG;
     BOOL _reloadForStorefrontChangeAfterAccountSetup;
     BOOL _reloadSectionsOnNextLaunch;
     SSRemoteNotificationClient *_remoteNotificationClient;
@@ -25,25 +27,28 @@
 @property(getter=isTabBarControllerLoaded,readonly) BOOL tabBarControllerLoaded;
 @property(readonly) SUTabBarController * tabBarController;
 @property(readonly) UINavigationController * topNavigationController;
+@property(getter=_activeMediaPlayer,setter=_setActiveMediaPlayer:,retain) SUMediaPlayerViewController * _activeMediaPlayer;
 
 + (id)sharedController;
 + (void)setSharedController:(id)arg1;
 
-- (id)tabBarController;
-- (double)defaultImageSnapshotExpiration;
 - (void)cancelAllOperations;
 - (void)dealloc;
-- (void)becomeActive;
+- (id)tabBarController;
+- (double)defaultImageSnapshotExpiration;
+- (void)_setActiveMediaPlayer:(id)arg1;
 - (id)showMainPageForItemKind:(id)arg1 sectionIdentifiers:(id)arg2;
 - (BOOL)isIgnoringDownloadQueueChanges;
 - (void)endIgnoringDownloadQueueChanges;
 - (void)beginIgnoringDownloadQueueChanges;
 - (void)_cancelSectionFetchPlaceholder;
+- (void)_restorePreMediaPlayerSettings;
 - (id)_accountViewController;
 - (void)_setupTabBarController;
 - (void)_beginObservingLocation;
 - (void)_remoteNotificationsAvailableNotification:(id)arg1;
 - (void)performActionForRemoteNotification:(id)arg1;
+- (id)_activeMediaPlayer;
 - (BOOL)presentAccountViewController:(id)arg1 showNavigationBar:(BOOL)arg2 animated:(BOOL)arg3;
 - (BOOL)displayClientURL:(id)arg1;
 - (void)bagDidLoadNotification:(id)arg1;
@@ -86,6 +91,7 @@
 - (BOOL)presentOverlayBackgroundViewController:(id)arg1;
 - (id)overlayBackgroundViewController;
 - (void)exitStoreAfterDialogsDismiss;
+- (void)becomeActive;
 - (void)resignActive;
 - (id)copySuspendSettings;
 - (BOOL)openClientURL:(id)arg1;

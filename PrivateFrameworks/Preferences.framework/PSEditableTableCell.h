@@ -10,17 +10,17 @@
 }
 
 
-- (void)controlChanged:(id)arg1;
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (void)endEditingAndSave;
-- (void)_setValueChanged;
-- (void)_saveForExit;
+- (void)dealloc;
+- (BOOL)canReload;
+- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
-- (void)dealloc;
-- (BOOL)canReload;
-- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)endEditingAndSave;
+- (void)_setValueChanged;
+- (void)_saveForExit;
+- (void)controlChanged:(id)arg1;
 
 @end

@@ -22,7 +22,9 @@
 + (BOOL)includeREVInVCards;
 + (BOOL)includeImageURIInVCards;
 
-- (id)imageData;
+- (id)init;
+- (void)dealloc;
+- (void*)record;
 - (id)initWithVCardRepresentation:(id)arg1;
 - (id)vCardRepresentationForMode:(int)arg1;
 - (id)_21vCardRepresentationAsData;
@@ -57,9 +59,7 @@
 - (id)propertyLineForIMPPProperty:(id)arg1 groupCount:(int*)arg2;
 - (BOOL)setValue:(void*)arg1 forProperty:(unsigned int)arg2;
 - (void*)valueForProperty:(unsigned int)arg1;
-- (void*)record;
-- (id)init;
-- (void)dealloc;
+- (id)imageData;
 - (id)initWithRecord:(void*)arg1;
 
 @end

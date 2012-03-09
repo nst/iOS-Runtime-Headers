@@ -14,11 +14,11 @@
 @property(readonly) <CalDAVPrincipal> * principal;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)cancelTaskGroup;
 - (void)bailWithError:(id)arg1;
 - (id)principal;
-- (id)init;
-- (void)dealloc;
 - (id)initWithPrincipal:(id)arg1;
 - (void)_tearDownAllTaskGroupsWithBlock:(id)arg1;
 - (id)outstandingTaskGroups;

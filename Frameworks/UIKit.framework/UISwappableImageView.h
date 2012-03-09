@@ -24,6 +24,7 @@
 }
 
 
+- (void)dealloc;
 - (void)animateImage:(float)arg1 withButtonBar:(id)arg2 withTag:(int)arg3 target:(id)arg4 didFinishSelector:(SEL)arg5;
 - (void)setFlipped:(BOOL)arg1;
 - (void)showAlternateImage:(BOOL)arg1;
@@ -35,6 +36,5 @@
 - (void)_willMoveToWindow:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)setImage:(id)arg1;
-- (void)dealloc;
 
 @end

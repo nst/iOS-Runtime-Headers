@@ -56,19 +56,13 @@
 
 + (struct CGGradient { }*)LineBackgroundGradient;
 
+- (id)init;
+- (void)dealloc;
 - (void)setPoints:(struct CGPoint { float x1; float x2; }*)arg1;
 - (struct CGPoint { float x1; float x2; }*)points;
 - (BOOL)isFinished;
 - (BOOL)isConcurrent;
 - (void)finish;
-- (id)lineColor;
-- (void)setLineColor:(id)arg1;
-- (void)start;
-- (void)setDelegate:(id)arg1;
-- (BOOL)isExecuting;
-- (void)setLineWidth:(float)arg1;
-- (float)lineWidth;
-- (id)delegate;
 - (BOOL)roundLineCaps;
 - (void)setRoundLineCaps:(BOOL)arg1;
 - (id)shadowLineColor;
@@ -103,7 +97,13 @@
 - (void)setLineGraphSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setVolumeGraphSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)graphImageSet;
-- (id)init;
-- (void)dealloc;
+- (void)start;
+- (void)setLineWidth:(float)arg1;
+- (float)lineWidth;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (BOOL)isExecuting;
+- (id)lineColor;
+- (void)setLineColor:(id)arg1;
 
 @end

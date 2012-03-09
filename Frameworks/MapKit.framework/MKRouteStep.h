@@ -74,20 +74,10 @@
 @property(readonly) NSString * subtitle;
 
 
-- (unsigned int)pointIndex;
-- (id)distance;
-- (id)notices;
-- (int)departureIntervalSeconds;
-- (void)setNotices:(id)arg1;
-- (void)setArrivalAddress:(id)arg1;
-- (void)setDepartureAddress:(id)arg1;
-- (id)arrivalAddress;
-- (id)departureAddress;
-- (int)durationSeconds;
-- (int)distanceMeters;
-- (struct { double x1; double x2; })coordinate;
+- (id)description;
+- (void)dealloc;
+- (id)instructions;
 - (void)setObject:(id)arg1;
-- (id)object;
 - (int)type;
 - (id)direction;
 - (id)subtitle;
@@ -95,7 +85,7 @@
 - (id)icon;
 - (void)setDirection:(id)arg1;
 - (id)title;
-- (id)instructions;
+- (id)object;
 - (void)setTransitCaption:(id)arg1;
 - (id)transitCaption;
 - (id)transitAgent;
@@ -121,7 +111,17 @@
 - (id)iconName;
 - (id)_initWithStep:(id)arg1 distanceMeters:(int)arg2 displaysMetric:(BOOL)arg3 type:(int)arg4 coordinate:(struct { double x1; double x2; })arg5 pointIndex:(unsigned int)arg6 transitAgent:(id)arg7;
 - (unsigned int)stepIndex;
-- (id)description;
-- (void)dealloc;
+- (struct { double x1; double x2; })coordinate;
+- (unsigned int)pointIndex;
+- (id)distance;
+- (id)notices;
+- (int)departureIntervalSeconds;
+- (void)setNotices:(id)arg1;
+- (void)setArrivalAddress:(id)arg1;
+- (void)setDepartureAddress:(id)arg1;
+- (id)arrivalAddress;
+- (id)departureAddress;
+- (int)durationSeconds;
+- (int)distanceMeters;
 
 @end

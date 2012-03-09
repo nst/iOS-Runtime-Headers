@@ -23,6 +23,7 @@
 @property(readonly) BOOL localRecordHasAdditionalProperties;
 
 
+- (void)dealloc;
 - (BOOL)importToPerson:(void*)arg1 removeExistingProperties:(BOOL)arg2;
 - (BOOL)importToGroup:(void*)arg1 removeExistingProperties:(BOOL)arg2;
 - (void*)createRecordInSource:(void*)arg1 outRecordType:(unsigned int*)arg2;
@@ -43,6 +44,5 @@
 - (BOOL)_handleUnknownTag:(id)arg1 withValue:(id)arg2;
 - (void)noteLackOfValueForImageData;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
 
 @end

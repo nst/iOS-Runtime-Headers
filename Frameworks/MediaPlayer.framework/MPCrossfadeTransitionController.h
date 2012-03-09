@@ -9,10 +9,10 @@
 @property BOOL statusBarHidden;
 
 
+- (id)init;
 - (void)_animationDidFinish:(id)arg1;
 - (BOOL)statusBarHidden;
 - (void)performTransition:(unsigned int)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1;
-- (id)init;
 
 @end

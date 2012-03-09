@@ -20,13 +20,17 @@
 @property(retain) DDAction * currentAction;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)_cleanup;
+- (void)performAction:(id)arg1;
+- (void)actionDidFinish;
 - (void)setPopoverController:(id)arg1;
 - (id)popoverController;
 - (id)interactionDelegate;
 - (void)setInteractionDelegate:(id)arg1;
 - (id)currentAction;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)actionDidFinish;
 - (id)baseView;
 - (void)dismissCurrentController;
 - (void)_presentController:(id)arg1;
@@ -36,9 +40,5 @@
 - (void)setBaseView:(id)arg1;
 - (id)defaultActionForURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
 - (id)actionsForURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
-- (void)_cleanup;
-- (id)init;
-- (void)dealloc;
-- (void)performAction:(id)arg1;
 
 @end

@@ -44,7 +44,7 @@
 @property(readonly) int toOrientation;
 
 
-- (float)duration;
+- (void)dealloc;
 - (void)_slideFooterWithStartSnapshot:(id)arg1 endSnapshot:(id)arg2 duration:(double)arg3;
 - (BOOL)_isFooterTranslucent;
 - (BOOL)_isHeaderTranslucent;
@@ -60,6 +60,6 @@
 - (id)initWithClient:(id)arg1 toOrientation:(int)arg2 duration:(float)arg3 andWindow:(id)arg4;
 - (void)_slideHeaderView:(id)arg1 andFooterView:(id)arg2 offScreen:(BOOL)arg3 forInterfaceOrientation:(int)arg4;
 - (void)_positionHeaderView:(id)arg1 andFooterView:(id)arg2 outsideContentViewForInterfaceOrientation:(int)arg3;
-- (void)dealloc;
+- (float)duration;
 
 @end

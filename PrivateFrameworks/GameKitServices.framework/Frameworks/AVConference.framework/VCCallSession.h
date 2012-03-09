@@ -226,6 +226,7 @@
     BOOL isInitiator;
     BOOL sentClientSuccessfulDidStart;
     double videoThrottlingTimeout;
+    BOOL useAWDStats;
 }
 
 @property(readonly) BOOL isCaller;
@@ -297,15 +298,13 @@
 
 + (id)keyPathsForValuesAffectingNetworkQuality;
 
-- (void)setDelegate:(id)arg1;
-- (void)unlock;
-- (void)lock;
-- (void)setState:(int)arg1;
-- (int)state;
-- (id)delegate;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (unsigned int)connectionResultCallback:(struct tagCONNRESULT { int x1; int x2; int x3; int x4; unsigned short x5; unsigned short x6; struct tagIPPORT { int x_7_1_1; BOOL x_7_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { int x_8_1_1; BOOL x_8_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { int x_9_1_1; BOOL x_9_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { int x_10_1_1; BOOL x_10_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { int x_11_1_1; BOOL x_11_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { int x_12_1_1; BOOL x_12_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; unsigned int x13; int x14; int x15; int x16; int x17; }*)arg1 didReceiveICEPacket:(BOOL)arg2 didUseRelay:(BOOL)arg3;
 - (int)sipCallback:(int)arg1 callID:(int)arg2 msgIn:(const char *)arg3 msgOut:(char *)arg4 optional:(void*)arg5 confIndex:(int*)arg6;
 - (void)doSipEndProc:(id)arg1;
+- (void)startAWDStats;
 - (void)setUseAFRC:(BOOL)arg1;
 - (BOOL)isBetterForIncomingSIPThanOtherSession:(id)arg1;
 - (void)handleCellDowngrade:(BOOL)arg1;
@@ -420,6 +419,7 @@
 - (id)remoteCallInfo;
 - (void)setRemoteCallInfo:(id)arg1;
 - (void)setLocalCallInfo:(id)arg1;
+- (BOOL)isCaller;
 - (BOOL)didUseICE;
 - (id)localCallInfo;
 - (BOOL)isCallOngoing;
@@ -467,7 +467,6 @@
 - (void)shutdownVoiceChatFromRemoteSIPSignal:(int)arg1;
 - (void)setupDTLSDefaults;
 - (void)setLocalIdentityForKeyExchange;
-- (BOOL)isCaller;
 - (struct __SecIdentity { }*)retreiveIdentity;
 - (void)logIdentity:(struct __SecIdentity { }*)arg1;
 - (int)calculateSIPEndAction:(BOOL)arg1 currentState:(int)arg2 error:(id)arg3;
@@ -534,8 +533,11 @@
 - (double)networkQuality;
 - (unsigned int)roundTripTime;
 - (int)natType;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)unlock;
+- (void)lock;
+- (void)setState:(int)arg1;
+- (int)state;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

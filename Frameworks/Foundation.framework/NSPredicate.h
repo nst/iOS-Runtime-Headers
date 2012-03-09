@@ -8,23 +8,23 @@
 
 + (id)predicateWithFormat:(id)arg1 arguments:(void*)arg2;
 + (id)newStringFrom:(id)arg1 usingUnicodeTransforms:(unsigned int)arg2;
-+ (id)predicateWithFormat:(id)arg1 argumentArray:(id)arg2;
-+ (struct __CFLocale { }*)retainedLocale;
-+ (id)predicateWithValue:(BOOL)arg1;
 + (id)predicateWithBlock:(id)arg1;
 + (id)predicateWithFormat:(id)arg1;
 + (void)initialize;
++ (id)predicateWithFormat:(id)arg1 argumentArray:(id)arg2;
++ (struct __CFLocale { }*)retainedLocale;
++ (id)predicateWithValue:(BOOL)arg1;
 
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
 - (id)generateMetadataDescription;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)predicateFormat;
 - (id)predicateWithSubstitutionVariables:(id)arg1;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (BOOL)evaluateWithObject:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)ab_hasCallback;
 - (id)ab_newQueryWithSortOrder:(unsigned int)arg1 addressBook:(void*)arg2 propertyIndices:(const struct __CFDictionary {}**)arg3;
 - (void)ab_addCallbackContextToArray:(struct __CFArray { }*)arg1;

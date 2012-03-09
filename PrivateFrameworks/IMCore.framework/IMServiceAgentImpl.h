@@ -18,7 +18,8 @@
 + (void)forgetStatusImageAppearance;
 + (void)initialize;
 
-- (void)finalize;
+- (id)init;
+- (void)dealloc;
 - (void)setMyAwayMessages:(id)arg1;
 - (void)setMyAvailableMessages:(id)arg1;
 - (id)myAwayMessages;
@@ -40,8 +41,7 @@
 - (id)serviceWithNameNonBlocking:(id)arg1;
 - (id)notificationCenter;
 - (id)serviceWithName:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)finalize;
 - (void)setupComplete;
 - (void)vcCapabilitiesChanged:(unsigned long long)arg1;
 

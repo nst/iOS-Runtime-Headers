@@ -21,6 +21,9 @@
 @property(retain,readonly) NSManagedObject * sourceObject;
 
 
+- (id)description;
+- (id)objectForKey:(id)arg1;
+- (void)dealloc;
 - (id)valueForKey:(id)arg1;
 - (id)initWithSource:(id)arg1 newVersion:(unsigned int)arg2 oldVersion:(unsigned int)arg3 cachedSnapshot:(id)arg4 persistedSnapshot:(id)arg5;
 - (unsigned int)oldVersionNumber;
@@ -30,8 +33,5 @@
 - (id)objectSnapshot;
 - (id)sourceObject;
 - (id)ancestorSnapshot;
-- (id)description;
-- (id)objectForKey:(id)arg1;
-- (void)dealloc;
 
 @end

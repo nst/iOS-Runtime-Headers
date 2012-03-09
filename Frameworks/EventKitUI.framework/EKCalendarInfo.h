@@ -22,9 +22,13 @@
 @property(readonly) BOOL isEditable;
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setGroup:(id)arg1;
 - (int)displayOrder;
 - (BOOL)isSubscribed;
 - (id)initWithCalendar:(id)arg1;
+- (BOOL)isShared;
 - (id)calendar;
 - (void)setCalendar:(id)arg1;
 - (BOOL)selected;
@@ -34,9 +38,5 @@
 - (void)setColor:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (id)title;
-- (void)setGroup:(id)arg1;
-- (BOOL)isShared;
-- (id)description;
-- (void)dealloc;
 
 @end

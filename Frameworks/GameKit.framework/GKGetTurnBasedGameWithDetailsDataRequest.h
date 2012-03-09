@@ -13,13 +13,13 @@
 @property(retain) GKTurnBasedMatch * match;
 
 
+- (void)dealloc;
 - (id)match;
 - (void)setMatch:(id)arg1;
 - (void)handleResponseFromServer:(id)arg1;
-- (id)key;
-- (id)request;
 - (id)sessionID;
 - (void)setSessionID:(id)arg1;
-- (void)dealloc;
+- (id)key;
+- (id)request;
 
 @end

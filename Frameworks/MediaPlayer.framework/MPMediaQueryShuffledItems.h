@@ -13,8 +13,13 @@
 }
 
 @property(readonly) MPMediaQuery * sourceMediaQuery;
+@property(readonly) NSArray * items;
 
 
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)sourceMediaQuery;
 - (void)unshuffle;
 - (void)shuffleItemsWithInitialIndex:(unsigned int)arg1;
@@ -29,13 +34,10 @@
 - (void)_rebuildCachesWithInitialIndex:(unsigned int)arg1;
 - (void)_rebuildCaches;
 - (id)initWithSourceMediaQuery:(id)arg1 orderedItems:(id)arg2 shuffleType:(unsigned int)arg3;
+- (id)items;
 - (unsigned int)indexOfObject:(id)arg1;
-- (void)_resetCaches;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)count;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)_resetCaches;
 
 @end

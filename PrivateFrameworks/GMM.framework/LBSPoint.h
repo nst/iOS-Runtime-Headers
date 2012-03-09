@@ -11,14 +11,14 @@
 @property unsigned int lngE7;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (unsigned int)lngE7;
 - (void)setLngE7:(unsigned int)arg1;
 - (unsigned int)latE7;
 - (void)setLatE7:(unsigned int)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

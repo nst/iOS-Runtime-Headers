@@ -18,6 +18,10 @@
 @property(readonly) NSDictionary * notificationUserInfo;
 
 
+- (void)dealloc;
+- (id)badgeValue;
+- (id)valueForKey:(id)arg1;
+- (int)actionType;
 - (id)notificationUserInfo;
 - (id)soundFileName;
 - (id)alertTitleString;
@@ -26,9 +30,5 @@
 - (id)alertBodyString;
 - (id)_valueForAlertKey:(id)arg1;
 - (id)initWithNotificationUserInfo:(id)arg1;
-- (id)valueForKey:(id)arg1;
-- (id)badgeValue;
-- (void)dealloc;
-- (int)actionType;
 
 @end

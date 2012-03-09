@@ -19,7 +19,11 @@
 @property BOOL fetchPanoMap;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasFetchPanoMap:(BOOL)arg1;
 - (BOOL)hasFetchPanoMap;
 - (void)setHasFetchDepthMap:(BOOL)arg1;
@@ -32,9 +36,5 @@
 - (void)setFetchPanoMap:(BOOL)arg1;
 - (void)setFetchDepthMap:(BOOL)arg1;
 - (void)setNeedsLinkStreetRange:(BOOL)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

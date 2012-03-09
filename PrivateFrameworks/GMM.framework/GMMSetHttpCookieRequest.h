@@ -15,7 +15,11 @@
 @property BOOL gmmInvokedViaUrl;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)gmmInvokedViaUrl;
 - (BOOL)gmmInvokedViaMimeType;
 - (void)setHasGmmInstalled:(BOOL)arg1;
@@ -24,9 +28,5 @@
 - (void)setGmmInvokedViaUrl:(BOOL)arg1;
 - (void)setGmmInvokedViaMimeType:(BOOL)arg1;
 - (void)setGmmInstalled:(BOOL)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

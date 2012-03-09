@@ -24,6 +24,9 @@
 + (id)collectionWithItems:(id)arg1;
 + (id)titlePropertyForGroupingType:(int)arg1;
 
+- (unsigned int)count;
+- (id)init;
+- (void)dealloc;
 - (id)itemsQuery;
 - (void)set_internal:(struct MPMediaItemCollectionInternal { id x1; unsigned int x2; id x3; int x4; })arg1;
 - (struct MPMediaItemCollectionInternal { id x1; unsigned int x2; id x3; int x4; })_internal;
@@ -33,9 +36,6 @@
 - (id)_init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)count;
-- (id)init;
-- (void)dealloc;
 - (id)representativeItem;
 - (unsigned int)indexOfMostLikelyItemForStartingPlayback;
 

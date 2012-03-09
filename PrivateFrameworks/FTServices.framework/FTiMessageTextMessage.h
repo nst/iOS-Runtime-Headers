@@ -15,14 +15,14 @@
 
 - (id)messageBody;
 - (id)messageData;
-- (int)command;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setEncryptionType:(id)arg1;
 - (void)setMessageData:(id)arg1;
 - (BOOL)payloadCanBeLogged;
 - (id)requiredKeys;
 - (id)encryptionType;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (int)command;
 
 @end

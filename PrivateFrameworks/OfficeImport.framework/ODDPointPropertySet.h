@@ -19,6 +19,7 @@
 }
 
 
+- (void)dealloc;
 - (id)layoutTypeId;
 - (void)setLayoutTypeId:(id)arg1;
 - (id)presentationName;
@@ -41,6 +42,5 @@
 - (void)setCustomOffsetX:(double)arg1;
 - (double)customOffsetY;
 - (void)setCustomOffsetY:(double)arg1;
-- (void)dealloc;
 
 @end

@@ -26,6 +26,8 @@
 @property(retain) IUModalContext * modalContext;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setArtworkImage:(id)arg1;
 - (id)artworkImage;
 - (void)_handleSwipeRight;
@@ -42,6 +44,7 @@
 - (id)title;
 - (id)dataSource;
 - (void)setTitle:(id)arg1;
+- (void)setItem:(id)arg1;
 - (id)customQuery;
 - (id)coverFlowDelegate;
 - (void)tableViewController:(id)arg1 didPerformDefaultActionForRow:(int)arg2;
@@ -58,8 +61,5 @@
 - (id)modalContext;
 - (void)setCustomQuery:(id)arg1;
 - (void)setCoverFlowDelegate:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setItem:(id)arg1;
 
 @end

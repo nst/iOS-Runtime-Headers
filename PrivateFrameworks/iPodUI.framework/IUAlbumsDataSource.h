@@ -14,6 +14,7 @@
 - (Class)cellConfigurationClassForEntity:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (BOOL)deleteRemovesEntireGroup;
+- (BOOL)allowsDownloadingAllEntities;
 - (BOOL)allowsDeletion;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (id)viewControllerContextForMediaQuery:(id)arg1;

@@ -19,6 +19,7 @@
 @property(retain) NSDate * date;
 
 
+- (void)dealloc;
 - (void)setIsHidden:(BOOL)arg1;
 - (void)setPercentComplete:(int)arg1;
 - (void)setAchievementID:(id)arg1;
@@ -31,6 +32,5 @@
 - (void)setDate:(id)arg1;
 - (id)date;
 - (BOOL)isHidden;
-- (void)dealloc;
 
 @end

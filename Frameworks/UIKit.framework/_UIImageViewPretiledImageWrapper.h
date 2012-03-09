@@ -13,10 +13,10 @@
 
 + (id)cacheValueWithPretiledImage:(id)arg1 cacheKey:(id)arg2;
 
-- (id)pretiledImage;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (void)dealloc;
+- (id)pretiledImage;
 
 @end

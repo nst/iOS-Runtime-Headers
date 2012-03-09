@@ -6,8 +6,8 @@
 }
 
 
-- (void)donePressed;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)init;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)donePressed;
 
 @end

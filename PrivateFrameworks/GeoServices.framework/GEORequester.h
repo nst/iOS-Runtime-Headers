@@ -14,14 +14,14 @@
 + (void)stopAllRequests;
 + (void)replayRequests;
 
-- (void)setDisableReplay:(BOOL)arg1;
-- (void)_handleResumeOnThread;
-- (BOOL)disableReplay;
-- (void)_handleSuspendOnThread;
+- (void)dealloc;
 - (void)_applicationWantsToReplayRequests:(id)arg1;
 - (void)_applicationDidStopAllRequests:(id)arg1;
 - (void)start;
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
-- (void)dealloc;
+- (void)setDisableReplay:(BOOL)arg1;
+- (void)_handleResumeOnThread;
+- (BOOL)disableReplay;
+- (void)_handleSuspendOnThread;
 
 @end

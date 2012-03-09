@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSURL, SSAuthenticationContext, NSString, NSNumber, SSURLBagContext;
+@class NSURL, SSAuthenticationContext, NSString, ISOperation, NSNumber, SSURLBagContext;
 
 @interface ISDataProvider : NSObject <NSCopying> {
     SSAuthenticationContext *_authenticationContext;
@@ -11,11 +11,13 @@
     long long _contentLength;
     NSString *_contentType;
     id _output;
+    ISOperation *_parentOperation;
     NSURL *_redirectURL;
 }
 
 @property(retain) SSAuthenticationContext * authenticationContext;
 @property(retain) SSURLBagContext * bagContext;
+@property ISOperation * parentOperation;
 @property long long contentLength;
 @property(retain) NSString * contentType;
 @property(retain) NSNumber * authenticatedAccountDSID;
@@ -25,9 +27,8 @@
 + (id)provider;
 
 - (void)setContentType:(id)arg1;
-- (id)contentType;
-- (void)setup;
-- (id)output;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setAuthenticatedAccountDSID:(id)arg1;
 - (void)setBagContext:(id)arg1;
 - (id)bagContext;
@@ -38,12 +39,15 @@
 - (void)closeStream;
 - (long long)streamedBytes;
 - (BOOL)isStream;
+- (id)parentOperation;
+- (void)setParentOperation:(id)arg1;
 - (void)setRedirectURL:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)contentType;
+- (void)setup;
 - (id)redirectURL;
 - (id)authenticatedAccountDSID;
 - (void)migrateOutputFromSubProvider:(id)arg1;
+- (id)output;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 - (void)configureFromProvider:(id)arg1;
 - (void)setOutput:(id)arg1;

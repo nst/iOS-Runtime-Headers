@@ -6,30 +6,30 @@
 }
 
 
-- (void)finalize;
 - (const char *)lossyCString;
 - (id)initWithCharactersNoCopy:(unsigned short*)arg1 length:(unsigned int)arg2;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (const char *)cString;
-- (int)compare:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (unsigned int)smallestEncoding;
-- (unsigned int)fastestEncoding;
-- (const char *)_fastCStringContents:(BOOL)arg1;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)cStringLength;
 - (BOOL)canBeConvertedToEncoding:(unsigned int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (unsigned int)retainCount;
 - (BOOL)isEqualToString:(id)arg1;
 - (id)retain;
+- (id)copy;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (unsigned int)length;
+- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)autorelease;
-- (oneway void)release;
 - (void)dealloc;
-- (id)copy;
+- (unsigned int)smallestEncoding;
+- (unsigned int)fastestEncoding;
+- (const char *)_fastCStringContents:(BOOL)arg1;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)cStringLength;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)finalize;
+- (const char *)cString;
+- (int)compare:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 
 @end

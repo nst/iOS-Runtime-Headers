@@ -33,11 +33,11 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithDocument:(id)arg1 silentRecoveryOptionIndex:(unsigned int)arg2 appModalRecoveryAttempter:(id)arg3 recoveryCanceler:(id)arg4;
 - (id)initWithDocument:(id)arg1 wrappedRecoveryAttempter:(id)arg2;
 - (void)cancelRecovery;
 - (BOOL)attemptSilentRecoveryFromError:(id)arg1 error:(id*)arg2;
 - (BOOL)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned int)arg2;
-- (void)dealloc;
 
 @end

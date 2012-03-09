@@ -20,19 +20,19 @@
 @property unsigned int activeStoreCount;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (unsigned int)activeStoreCount;
 - (void)setActiveStoreCount:(unsigned int)arg1;
 - (id)exporter;
 - (void)registerPersistentStoreCoordinator:(id)arg1 forPersistentStoreWithName:(id)arg2;
 - (void)unregisterPersistentStoreCoordinator:(id)arg1;
-- (id)createSetOfPersistentStoreCoordinatorsRegisteredForStoreName:(id)arg1;
 - (id)createSetOfActiveStoreNames;
-- (id)localPeerID;
-- (id)ubiquityRootURL;
+- (id)createSetOfPersistentStoreCoordinatorsRegisteredForStoreName:(id)arg1;
 - (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
+- (id)localPeerID;
 - (id)importer;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)ubiquityRootURL;
 
 @end

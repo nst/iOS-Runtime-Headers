@@ -16,13 +16,13 @@
 
 
 - (void)setProvider:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 - (void)setYear:(int)arg1;
 - (int)year;
 - (int)type;
 - (void)setType:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 - (id)provider;
 
 @end

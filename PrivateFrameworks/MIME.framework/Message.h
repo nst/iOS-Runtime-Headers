@@ -89,12 +89,10 @@
 - (void)calculateAttachmentInfoFromBody:(id)arg1;
 - (unsigned short)numberOfAttachments;
 - (unsigned int)messageSize;
-- (id)contentType;
-- (id)to;
-- (void)setTo:(id)arg1;
-- (id)path;
 - (void)setSender:(id)arg1;
-- (id)headerData;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)needsDateReceived;
 - (id)bodyDataIsComplete:(BOOL*)arg1;
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3;
@@ -113,17 +111,19 @@
 - (long long)_messageIDHeaderHashIvar;
 - (id)bodyDataIsComplete:(BOOL*)arg1 isPartial:(BOOL*)arg2;
 - (void)_calculateAttachmentInfoFromBody:(id)arg1;
-- (id)summary;
-- (id)headers;
-- (unsigned long)uid;
 - (id)additionalHeadersForReply;
 - (id)additionalHeadersForForward;
 - (id)bestAlternativeInPart:(id)arg1;
 - (id)defaultAlternativeInPart:(id)arg1;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)headerData;
+- (unsigned long)uid;
+- (id)path;
+- (id)summary;
+- (id)headers;
+- (id)contentType;
+- (id)to;
+- (void)setTo:(id)arg1;
 - (void)setCc:(id)arg1;
 
 @end

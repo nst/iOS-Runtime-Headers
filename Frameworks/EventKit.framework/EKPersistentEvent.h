@@ -41,9 +41,11 @@
 + (id)generateUniqueIDWithEvent:(id)arg1 originalEvent:(id)arg2 calendar:(id)arg3;
 
 - (int)availability;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setStatus:(int)arg1;
-- (BOOL)isFloating;
-- (double)duration;
+- (int)status;
 - (void)removeAction:(id)arg1;
 - (void)addAction:(id)arg1;
 - (void)setActions:(id)arg1;
@@ -94,9 +96,7 @@
 - (id)initCommon;
 - (id)URL;
 - (BOOL)isEditable;
-- (int)status;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (double)duration;
+- (BOOL)isFloating;
 
 @end

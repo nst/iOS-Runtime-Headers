@@ -14,10 +14,6 @@
 @property unsigned int capacity;
 
 
-- (id)allObjects;
-- (void)setCapacity:(unsigned int)arg1;
-- (unsigned int)capacity;
-- (void)_removeLRUObject;
 - (unsigned int)count;
 - (id)description;
 - (id)objectForKey:(id)arg1;
@@ -25,5 +21,9 @@
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
 - (void)dealloc;
+- (void)setCapacity:(unsigned int)arg1;
+- (unsigned int)capacity;
+- (void)_removeLRUObject;
+- (id)allObjects;
 
 @end

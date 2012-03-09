@@ -6,8 +6,8 @@
 }
 
 
+- (id)init;
 - (id)nameForDarkImage;
 - (id)nameForLightImage;
-- (id)init;
 
 @end

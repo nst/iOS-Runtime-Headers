@@ -20,22 +20,22 @@
 @property BOOL reversesLabels;
 
 
-- (id)rightLabel;
-- (id)leftLabel;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setNeedsDisplay;
-- (int)textAlignment;
-- (void)setTextAlignment:(int)arg1;
-- (void)sizeToFit;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (float)labelSpacing;
 - (BOOL)reversesLabels;
 - (BOOL)_labelsNeedSizing;
 - (void)_sizeLabelsToFit;
 - (void)setReversesLabels:(BOOL)arg1;
 - (void)setLabelSpacing:(float)arg1;
-- (void)dealloc;
+- (id)rightLabel;
+- (id)leftLabel;
+- (int)textAlignment;
+- (void)setTextAlignment:(int)arg1;
+- (void)sizeToFit;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (void)setNeedsDisplay;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

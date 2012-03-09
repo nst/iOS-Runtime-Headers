@@ -24,18 +24,18 @@
 
 
 - (id)bodyData;
+- (id)suggestedFilename;
+- (long long)expectedContentLength;
+- (id)textEncodingName;
+- (void)dealloc;
 - (id)allHeaderFields;
+- (int)statusCode;
+- (id)MIMEType;
+- (id)URL;
 - (id)initWithURLResponse:(id)arg1 bodyData:(id)arg2;
 - (void*)copyXPCEncoding;
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (id)suggestedFilename;
-- (long long)expectedContentLength;
-- (id)textEncodingName;
-- (int)statusCode;
-- (id)MIMEType;
-- (id)URL;
-- (void)dealloc;
 
 @end

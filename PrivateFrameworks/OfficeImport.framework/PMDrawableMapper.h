@@ -12,6 +12,7 @@
 
 + (id)orientedBoundsForDrawable:(id)arg1;
 
+- (void)dealloc;
 - (void)setTopLevelMapper:(BOOL)arg1;
 - (void)setDrawingContext:(id)arg1;
 - (BOOL)isTopLevelMapper;
@@ -29,6 +30,5 @@
 - (void)mapOfficeArtGroupAt:(id)arg1 withState:(id)arg2;
 - (void)mapDiagramAt:(id)arg1 withState:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (void)dealloc;
 
 @end

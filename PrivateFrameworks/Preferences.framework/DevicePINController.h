@@ -20,8 +20,18 @@
 
 + (BOOL)settingEnabled;
 
-- (void)setPane:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)willUnlock;
+- (void)cancelButtonTapped;
+- (void)_updateUI;
 - (void)setSpecifier:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (void)viewWillLayoutSubviews;
+- (void)suspend;
 - (int)pinLength;
 - (void)pinEntered:(id)arg1;
 - (id)pinInstructionsPrompt;
@@ -59,17 +69,7 @@
 - (BOOL)_success;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paneFrame;
 - (BOOL)requiresKeyboard;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (void)viewWillLayoutSubviews;
-- (void)suspend;
-- (void)_updateUI;
-- (id)init;
-- (void)dealloc;
+- (void)setPane:(id)arg1;
 - (void)_dismiss;
-- (void)willUnlock;
-- (void)cancelButtonTapped;
 
 @end

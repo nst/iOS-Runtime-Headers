@@ -36,14 +36,8 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (void)setDisplayName:(id)arg1;
-- (id)UUID;
-- (id)profile;
-- (id)displayName;
-- (int)version;
-- (id)type;
-- (id)identifier;
-- (id)title;
+- (id)description;
+- (void)dealloc;
 - (id)subtitle1Label;
 - (id)subtitle2Label;
 - (id)subtitle2Description;
@@ -58,7 +52,13 @@
 - (id)installationWarnings;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
+- (void)setDisplayName:(id)arg1;
+- (id)displayName;
+- (int)version;
+- (id)type;
+- (id)identifier;
+- (id)title;
+- (id)profile;
+- (id)UUID;
 
 @end

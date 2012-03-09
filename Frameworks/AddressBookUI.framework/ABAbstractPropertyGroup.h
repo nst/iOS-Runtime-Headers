@@ -15,11 +15,9 @@
 @property(retain) NSArray * people;
 
 
-- (int)property;
 - (BOOL)hasChanges;
 - (id)init;
 - (void)dealloc;
-- (id)people;
 - (void)setPeople:(id)arg1;
 - (void)updateRecord;
 - (BOOL)canSave;
@@ -27,5 +25,7 @@
 - (void)reloadFromModel;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
+- (id)people;
+- (int)property;
 
 @end

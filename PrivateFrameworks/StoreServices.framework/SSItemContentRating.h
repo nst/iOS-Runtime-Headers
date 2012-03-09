@@ -21,18 +21,14 @@
 + (id)stringForRatingSystem:(int)arg1;
 + (int)ratingSystemFromString:(id)arg1;
 
-- (void)setRank:(int)arg1;
-- (int)rank;
-- (void)_setValueCopy:(id)arg1 forProperty:(id)arg2;
-- (id)contentRatingDictionary;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (void)_setValue:(id)arg1 forProperty:(id)arg2;
-- (id)valueForProperty:(id)arg1;
-- (id)initWithDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)setRank:(int)arg1;
+- (int)rank;
+- (void)_setValue:(id)arg1 forProperty:(id)arg2;
+- (id)valueForProperty:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
 - (void)setShouldHideWhenRestricted:(BOOL)arg1;
 - (id)ratingSystemLogo;
 - (void)setRatingLabel:(id)arg1;
@@ -48,5 +44,9 @@
 - (int)ratingSystem;
 - (BOOL)isRestricted;
 - (void)setRatingSystem:(int)arg1;
+- (void)_setValueCopy:(id)arg1 forProperty:(id)arg2;
+- (id)contentRatingDictionary;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
 
 @end

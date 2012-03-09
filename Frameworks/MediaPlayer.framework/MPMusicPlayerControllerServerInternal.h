@@ -18,6 +18,8 @@
 
 + (BOOL)_canSeedGeniusWithItem:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)_registerClientPort:(unsigned int)arg1 forProcessID:(int)arg2 hasAudioBackgroundMode:(BOOL)arg3;
 - (BOOL)_currentClientPIDHasPermissionToPlay;
 - (id)_avControllerForClientPID:(int)arg1;
@@ -65,23 +67,21 @@
 - (void)_itemDidChangeNotification:(id)arg1;
 - (void)setCurrentPlaybackTime:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
-- (void)play;
 - (void)pause;
 - (void)stop;
 - (id)numberOfItems;
-- (id)init;
-- (void)dealloc;
-- (void)setRepeatMode:(id)arg1;
-- (id)repeatMode;
+- (void)play;
 - (void)skipToPreviousItem;
 - (void)skipToNextItem;
 - (void)skipToBeginning;
 - (void)setShuffleMode:(id)arg1;
+- (void)setRepeatMode:(id)arg1;
 - (void)setQueueWithQuery:(id)arg1;
 - (void)setQueueWithItemCollection:(id)arg1;
 - (id)currentPlaybackTime;
 - (void)endSeeking;
 - (id)shuffleMode;
+- (id)repeatMode;
 - (id)playbackState;
 - (id)nowPlayingItem;
 - (void)beginSeekingForward;

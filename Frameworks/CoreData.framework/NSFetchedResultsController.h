@@ -43,11 +43,16 @@
 @property(readonly) NSManagedObjectContext * managedObjectContext;
 @property(readonly) NSFetchRequest * fetchRequest;
 
++ (void)initialize;
 + (id)_CoreDataSectionCachesPath;
 + (unsigned int)_insertIndexForObject:(id)arg1 inArray:(id)arg2 lowIdx:(unsigned int)arg3 highIdx:(unsigned int)arg4 sortDescriptors:(id)arg5;
 + (void)deleteCacheWithName:(id)arg1;
-+ (void)initialize;
 
+- (id)managedObjectContext;
+- (void)dealloc;
+- (id)sections;
+- (id)sectionIndexTitles;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (BOOL)_didUseCachedSectionInfo;
 - (BOOL)_didUpdateOnlyStoreInfo;
@@ -92,10 +97,5 @@
 - (id)sectionIndexTitleForSectionName:(id)arg1;
 - (id)fetchedObjects;
 - (id)fetchRequest;
-- (id)sections;
-- (id)sectionIndexTitles;
-- (id)delegate;
-- (id)managedObjectContext;
-- (void)dealloc;
 
 @end

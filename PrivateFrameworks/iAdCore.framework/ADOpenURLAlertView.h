@@ -23,12 +23,12 @@
 + (id)openURL:(id)arg1 forAd:(id)arg2 fromClient:(id)arg3 completionBlock:(id)arg4;
 
 - (id)URLString;
+- (void)dealloc;
 - (id)completionBlock;
-- (void)setURLString:(id)arg1;
 - (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (void)didPresentAlertView:(id)arg1;
 - (void)setCompletionBlock:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)dealloc;
+- (void)setURLString:(id)arg1;
 
 @end

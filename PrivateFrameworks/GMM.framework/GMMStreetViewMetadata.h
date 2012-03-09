@@ -18,7 +18,13 @@
 @property(retain) GMMModel * model;
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setModel:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)model;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)annotationProperties;
 - (id)projectionProperties;
 - (id)dataProperties;
@@ -26,11 +32,5 @@
 - (void)setAnnotationProperties:(id)arg1;
 - (void)setProjectionProperties:(id)arg1;
 - (void)setDataProperties:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)model;
-- (id)description;
-- (void)dealloc;
-- (void)setModel:(id)arg1;
 
 @end

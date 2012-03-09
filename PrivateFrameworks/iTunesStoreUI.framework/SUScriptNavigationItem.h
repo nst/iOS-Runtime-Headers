@@ -18,14 +18,15 @@
 @property(retain) <SUScriptNavigationItem> * leftMostItem;
 @property(retain) <SUScriptNavigationItem> * rightItem;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 + (id)_rootScriptObjectForObject:(id)arg1;
 + (void)_disconnectNavigationItem:(id)arg1 scriptObject:(id)arg2;
 + (void)disconnectNavigationItem:(id)arg1 forScriptObject:(id)arg2;
 
-- (id)attributeKeys;
+- (id)init;
+- (void)dealloc;
 - (void)setHidesBackButton:(id)arg1;
 - (void)setPrompt:(id)arg1;
 - (id)prompt;
@@ -33,8 +34,7 @@
 - (void)setHidesBackButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)attributeKeys;
 - (void)setLeftMostItem:(id)arg1;
 - (id)leftMostItem;
 - (id)_copyScriptButtonForButtonItem:(id)arg1;

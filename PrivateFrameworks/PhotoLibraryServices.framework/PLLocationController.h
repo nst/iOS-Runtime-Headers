@@ -14,13 +14,12 @@
     BOOL _isHeadingEnabled;
 }
 
++ (id)sharedInstance;
 + (BOOL)usesEffectiveBundleIdentifier;
 + (void)setUsesEffectiveBundleIdentifier:(BOOL)arg1;
-+ (id)sharedInstance;
 
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
-- (id)location;
-- (void)setEnabled:(BOOL)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)addLocationToMediaWithAssetURLWhenAvailable:(id)arg1 deviceOrientation:(int)arg2 cameraWasRearFacing:(BOOL)arg3;
 - (void)_updatePendingAssets;
 - (BOOL)_addLocationToAsset:(id)arg1;
@@ -30,9 +29,10 @@
 - (void)_updateLocationRunState;
 - (void)_albumsChanged:(id)arg1;
 - (void)_applicationStateChanged:(id)arg1;
+- (id)location;
+- (void)setEnabled:(BOOL)arg1;
+- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 - (id)locationString;
 - (void)setHeadingEnabled:(BOOL)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

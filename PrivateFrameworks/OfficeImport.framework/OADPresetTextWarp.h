@@ -7,9 +7,9 @@
 }
 
 
-- (int)presetTextWarpType;
-- (void)setPresetTextWarpType:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (int)presetTextWarpType;
+- (void)setPresetTextWarpType:(int)arg1;
 
 @end

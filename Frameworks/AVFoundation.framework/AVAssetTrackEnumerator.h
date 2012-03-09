@@ -12,12 +12,12 @@
 
 + (id)trackEnumeratorWithAsset:(id)arg1;
 
-- (id)nextObject;
-- (id)initWithAsset:(id)arg1 mediaType:(id)arg2;
-- (id)initWithAsset:(id)arg1 mediaCharacteristic:(id)arg2;
-- (id)initWithAsset:(id)arg1;
-- (void)setMediaType:(id)arg1;
-- (void)setMediaCharacteristic:(id)arg1;
 - (void)dealloc;
+- (void)setMediaCharacteristic:(id)arg1;
+- (void)setMediaType:(id)arg1;
+- (id)initWithAsset:(id)arg1 mediaCharacteristic:(id)arg2;
+- (id)initWithAsset:(id)arg1 mediaType:(id)arg2;
+- (id)nextObject;
+- (id)initWithAsset:(id)arg1;
 
 @end

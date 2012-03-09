@@ -25,9 +25,8 @@
 @property(retain) NSMutableArray * providers;
 
 
-- (void)setBaseURL:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)multiTileURL;
+- (id)description;
+- (void)dealloc;
 - (id)providers;
 - (id)validVersions;
 - (id)preferredVersion;
@@ -41,7 +40,7 @@
 - (void)setValidVersions:(id)arg1;
 - (void)setPreferredVersion:(id)arg1;
 - (void)setMultiTileURL:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)setBaseURL:(id)arg1;
 - (id)baseURL;
 - (id)dictionaryRepresentation;
 - (int)style;
@@ -50,7 +49,8 @@
 - (void)setSize:(int)arg1;
 - (int)scale;
 - (int)size;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)multiTileURL;
 
 @end

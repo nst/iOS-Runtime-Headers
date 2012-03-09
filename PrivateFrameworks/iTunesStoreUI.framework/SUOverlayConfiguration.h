@@ -22,11 +22,11 @@
 @property(readonly) NSString * transitionName;
 
 
+- (id)init;
+- (void)dealloc;
 - (int)cornerRadius;
 - (id)initWithDictionary:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;
-- (id)init;
-- (void)dealloc;
 - (BOOL)matchesURLBagKey:(id)arg1;
 - (BOOL)matchesURL:(id)arg1;
 - (id)transitionName;

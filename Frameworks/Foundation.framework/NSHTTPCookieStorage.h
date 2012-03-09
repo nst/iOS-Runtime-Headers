@@ -24,9 +24,9 @@
 - (id)_initWithSharedStorage;
 - (void)_readAcceptCookiesPreference;
 - (struct OpaqueCFHTTPCookieStorage { }*)_cookieStorage;
-- (void)setCookie:(id)arg1;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (void)setCookie:(id)arg1;
 
 @end

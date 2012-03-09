@@ -33,6 +33,7 @@
 + (id)currentLocaleCurrencyCode;
 + (id)currencySymbolForCurrencyCode:(id)arg1;
 
+- (void)dealloc;
 - (BOOL)currencyFromString:(struct __CFString { }*)arg1 value:(double*)arg2 formatString:(const struct __CFString {}**)arg3 currencyCode:(const struct __CFString {}**)arg4;
 - (BOOL)findCurrencySymbolInString:(struct __CFString { }*)arg1;
 - (BOOL)decimalFromString:(struct __CFString { }*)arg1 value:(double*)arg2 formatString:(const struct __CFString {}**)arg3;
@@ -47,6 +48,5 @@
 - (BOOL)valueFromString:(struct __CFString { }*)arg1 formatters:(struct __CFArray { }*)arg2 value:(double*)arg3 formatString:(const struct __CFString {}**)arg4 currencyCode:(const struct __CFString {}**)arg5;
 - (id)currentLocaleCurrencyCode;
 - (id)currencySymbolForCurrencyCode:(id)arg1;
-- (void)dealloc;
 
 @end

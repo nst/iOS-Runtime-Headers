@@ -12,13 +12,13 @@
 @property(retain) GMMCopyright * copyright;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasCopyright;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
 - (id)description;
 - (void)dealloc;
+- (id)dictionaryRepresentation;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setCopyright:(id)arg1;
 - (id)copyright;
+- (BOOL)hasCopyright;
 
 @end

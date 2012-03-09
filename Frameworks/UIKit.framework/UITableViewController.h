@@ -18,6 +18,9 @@
 @property BOOL clearsSelectionOnViewWillAppear;
 
 
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)_setStaticDataSource:(id)arg1;
 - (id)_staticDataSource;
 - (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
@@ -48,9 +51,6 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)_gkTableView:(id)arg1 buttonCellWithTitle:(id)arg2 theme:(id)arg3;
 
 @end

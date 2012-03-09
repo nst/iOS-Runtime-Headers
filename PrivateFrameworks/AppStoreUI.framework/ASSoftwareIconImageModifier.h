@@ -11,12 +11,12 @@
 @property(getter=isNewsstandIcon) BOOL newsstandIcon;
 
 
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isNewsstandIcon;
 - (int)_iconVariantForImage:(id)arg1;
 - (int)iconOptions;
 - (void)setNewsstandIcon:(BOOL)arg1;
 - (void)setIconOptions:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
 - (id)newImageForImage:(id)arg1;
 
 @end

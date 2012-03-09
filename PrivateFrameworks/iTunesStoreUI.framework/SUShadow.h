@@ -20,8 +20,8 @@
 @property float radius;
 
 
-- (float)radius;
-- (void)setRadius:(float)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)color;
 - (void)setColor:(id)arg1;
 - (void)setOffset:(struct CGSize { float x1; float x2; })arg1;
@@ -30,8 +30,8 @@
 - (void)setOpacity:(float)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (float)radius;
+- (void)setRadius:(float)arg1;
 - (void)applyToLayer:(id)arg1;
 
 @end

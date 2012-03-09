@@ -19,8 +19,6 @@
 + (id)hostWithName:(id)arg1;
 + (id)currentHost;
 
-- (id)addresses;
-- (id)address;
 - (BOOL)isEqualToHost:(id)arg1;
 - (void)blockingResolveUntil:(int)arg1;
 - (void)resolve:(id)arg1;
@@ -29,10 +27,12 @@
 - (id)initToResolve:(id)arg1 as:(int)arg2;
 - (void)setReserved:(id)arg1;
 - (id)reserved;
+- (id)description;
+- (void)dealloc;
+- (id)addresses;
+- (id)address;
 - (id)names;
 - (id)localizedName;
 - (id)name;
-- (id)description;
-- (void)dealloc;
 
 @end

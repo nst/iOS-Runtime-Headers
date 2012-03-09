@@ -51,9 +51,8 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (void)setPassword:(id)arg1;
+- (void)dealloc;
 - (id)pin;
-- (id)password;
 - (void)setPin:(id)arg1;
 - (id)sharedSecret;
 - (void)setSharedSecret:(id)arg1;
@@ -78,7 +77,8 @@
 - (id)certificateUUID;
 - (unsigned char)passwordRequired;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (void)setPassword:(id)arg1;
 - (id)userName;
-- (void)dealloc;
+- (id)password;
 
 @end

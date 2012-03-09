@@ -19,7 +19,7 @@
 
 
 - (unsigned int)unreadCount;
-- (void)start;
+- (void)dealloc;
 - (void)setNotifyUnalerted:(BOOL)arg1;
 - (BOOL)notifyUnalerted;
 - (void)_checkforUnalertedEvents:(id)arg1;
@@ -33,6 +33,6 @@
 - (void)_protectedDataDidBecomeAvailable;
 - (void)_protectedDataWillBecomeUnavailable;
 - (void)stop;
-- (void)dealloc;
+- (void)start;
 
 @end

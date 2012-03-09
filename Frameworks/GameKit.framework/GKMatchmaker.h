@@ -22,6 +22,9 @@
 
 + (id)sharedMatchmaker;
 
+- (void)cancel;
+- (id)init;
+- (void)dealloc;
 - (id)inviteHandler;
 - (void)queryActivityWithCompletionHandler:(id)arg1;
 - (void)queryPlayerGroupActivity:(unsigned int)arg1 withCompletionHandler:(id)arg2;
@@ -39,8 +42,5 @@
 - (void)lookForInvite;
 - (void)setConnectivitySettings:(id)arg1;
 - (void)loadConnectivitySettingsWithCompletionHandler:(id)arg1;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
 
 @end

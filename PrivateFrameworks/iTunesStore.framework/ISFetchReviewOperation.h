@@ -21,15 +21,15 @@
 @property(retain) ISReview * review;
 
 
-- (void)setUrl:(id)arg1;
-- (id)url;
-- (void)run;
+- (void)dealloc;
 - (void)setSoftwareVersionIdentifier:(unsigned int)arg1;
 - (unsigned int)softwareVersionIdentifier;
 - (void)_fetchReviewInformation;
 - (void)setBackgroundReview:(BOOL)arg1;
 - (BOOL)isBackgroundReview;
-- (void)dealloc;
+- (void)setUrl:(id)arg1;
+- (id)url;
+- (void)run;
 - (int)assetType;
 - (id)review;
 - (void)setReview:(id)arg1;

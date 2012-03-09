@@ -16,6 +16,12 @@
 }
 
 
+- (void)setProperties:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)properties;
+- (int)rowSpan;
+- (void)setRowSpan:(int)arg1;
 - (int)spanAlongDir:(int)arg1;
 - (void)setGridSpan:(int)arg1;
 - (void)setHorzMerge:(BOOL)arg1;
@@ -30,11 +36,5 @@
 - (BOOL)horzMerge;
 - (void)setTextBody:(id)arg1;
 - (id)textBody;
-- (int)rowSpan;
-- (void)setRowSpan:(int)arg1;
-- (id)properties;
-- (void)setProperties:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

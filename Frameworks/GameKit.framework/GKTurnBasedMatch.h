@@ -31,6 +31,13 @@
 + (void)loadTurnBasedMatchDetailsForMatchIDs:(id)arg1 loadGameData:(BOOL)arg2 withCompletionHandler:(id)arg3;
 + (void)findMatchForRequest:(id)arg1 withCompletionHandler:(id)arg2;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)endMatchInTurnWithMatchData:(id)arg1 completionHandler:(id)arg2;
 - (void)participantQuitInTurnWithOutcome:(int)arg1 nextParticipant:(id)arg2 matchData:(id)arg3 completionHandler:(id)arg4;
 - (void)endTurnWithNextParticipant:(id)arg1 matchData:(id)arg2 completionHandler:(id)arg3;
@@ -49,18 +56,11 @@
 - (id)previousParticipantOrFirstKnownPlayer;
 - (id)firstWinnerOrTiedOrLastLoser;
 - (id)currentParticipant;
+- (int)status;
 - (id)internal;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (void)setInternal:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (int)status;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

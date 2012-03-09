@@ -13,6 +13,8 @@
 + (void)disableSDA;
 + (void)enableSDA;
 
+- (id)init;
+- (void)dealloc;
 - (void)cancelSearchingForFakeSensor:(id)arg1;
 - (void)beginSearchingForFakeSensor:(id)arg1;
 - (void)cancelLinkingForFakeSensor:(id)arg1;
@@ -20,7 +22,5 @@
 - (unsigned int)remainingBatteryLifetimeInHoursForFakeSensor:(id)arg1;
 - (void)_fakeNextPacketForTimer:(id)arg1;
 - (void)_schedulePacketTimerForFakeSensor:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

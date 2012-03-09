@@ -24,12 +24,15 @@
 
 + (id)codedPropertyKeys;
 
+- (id)description;
+- (void)dealloc;
 - (id)formattedValue;
 - (id)playerID;
 - (void)setFormattedValue:(id)arg1;
 - (void)setRank:(unsigned int)arg1;
 - (void)setPlayerID:(id)arg1;
 - (unsigned int)rank;
+- (id)category;
 - (void)setCategory:(id)arg1;
 - (long long)value;
 - (void)setValue:(long long)arg1;
@@ -37,8 +40,5 @@
 - (void)setContext:(unsigned long long)arg1;
 - (void)setDate:(id)arg1;
 - (id)date;
-- (id)category;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -13,6 +13,7 @@
 @property(retain) UIImage * maskFinalImage;
 
 
+- (void)dealloc;
 - (void)setMaskFinalImage:(id)arg1;
 - (id)maskFinalImage;
 - (id)maskImageForCALayerContents;
@@ -20,6 +21,5 @@
 - (id)maskImage;
 - (void)setMaskImage:(id)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

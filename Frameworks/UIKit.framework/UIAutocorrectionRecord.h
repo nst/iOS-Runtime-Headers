@@ -14,8 +14,8 @@
 
 + (id)recordOfTyping:(id)arg1 forAutocorrection:(id)arg2;
 
-- (id)typing;
 - (id)autocorrection;
 - (void)dealloc;
+- (id)typing;
 
 @end

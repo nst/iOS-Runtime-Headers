@@ -18,10 +18,11 @@
 @property BOOL hdrIsOn;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)delegate;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
 - (void)_enterPanoramaMode;
 - (void)_toggleEnableHDR:(id)arg1;
 - (BOOL)hdrIsOn;
@@ -30,6 +31,5 @@
 - (void)setHdrIsOn:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 showGrid:(BOOL)arg2 showHDR:(BOOL)arg3 showPano:(BOOL)arg4;
 - (void)setGridIsOn:(BOOL)arg1;
-- (void)dealloc;
 
 @end

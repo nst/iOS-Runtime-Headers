@@ -14,9 +14,7 @@
 }
 
 
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setNeedsLayout;
-- (void)setNeedsDisplay;
+- (void)dealloc;
 - (id)wakWindow;
 - (BOOL)layoutTilesInMainThread;
 - (BOOL)tileDrawingEnabled;
@@ -58,8 +56,10 @@
 - (void)_didScroll;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)willMoveToWindow:(id)arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)layoutSubviews;
+- (void)setNeedsLayout;
+- (void)setNeedsDisplay;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

@@ -29,17 +29,30 @@
 @property(retain) NSDictionary * deleteAction;
 @property BOOL rowInvalid;
 
++ (void)resetLocale;
++ (id)_monthAndDayFormatter;
 
+- (void)dealloc;
+- (void)_datePickerChanged:(id)arg1;
+- (id)deleteAction;
+- (int)selectedRow;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (id)data;
+- (void)setDate:(id)arg1;
+- (id)date;
+- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
+- (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
+- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
+- (int)numberOfComponentsInPickerView:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setImage:(id)arg1;
+- (void)setData:(id)arg1;
 - (id)_dateFormatter;
 - (id)tableCell;
-- (id)data;
-- (void)setDelegate:(id)arg1;
 - (BOOL)rowInvalid;
-- (id)imageAttributeAndScale:(float*)arg1;
 - (int)tableCellStyle;
 - (void)setDateMin:(id)arg1;
 - (void)setDateMax:(id)arg1;
-- (void)imageLoaded:(id)arg1;
 - (void)clearCachedHeight;
 - (id)dateMin;
 - (id)dateMax;
@@ -50,18 +63,6 @@
 - (void)setDeleteAction:(id)arg1;
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)setRowInvalid:(BOOL)arg1;
-- (void)setData:(id)arg1;
-- (id)deleteAction;
-- (int)selectedRow;
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (void)setDate:(id)arg1;
-- (id)date;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (int)numberOfComponentsInPickerView:(id)arg1;
 - (Class)tableCellClass;
-- (void)_datePickerChanged:(id)arg1;
-- (void)dealloc;
 
 @end

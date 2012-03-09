@@ -19,6 +19,9 @@
 + (id)bordersWithLeft:(id)arg1 right:(id)arg2 top:(id)arg3 bottom:(id)arg4 diagonal:(id)arg5 resources:(id)arg6;
 + (id)bordersWithResources:(id)arg1;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setVerticalBorder:(id)arg1;
 - (void)setHorizontalBorder:(id)arg1;
 - (BOOL)isEqualToBorders:(id)arg1;
@@ -35,8 +38,5 @@
 - (id)bottomBorder;
 - (id)horizontalBorder;
 - (id)diagonalBorder;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

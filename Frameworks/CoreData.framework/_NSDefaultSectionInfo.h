@@ -23,7 +23,12 @@
 @property(readonly) NSString * name;
 
 
+- (void)dealloc;
+- (void)setController:(id)arg1;
+- (id)name;
 - (unsigned int)indexOfObject:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithController:(id)arg1 name:(id)arg2 indexTitle:(id)arg3 sectionOffset:(unsigned int)arg4;
 - (void)setNumberOfObjects:(unsigned int)arg1;
 - (void)setSectionOffset:(unsigned int)arg1;
@@ -35,10 +40,5 @@
 - (unsigned int)numberOfObjects;
 - (id)indexTitle;
 - (void)clearSectionObjectsCache;
-- (void)setController:(id)arg1;
-- (id)name;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

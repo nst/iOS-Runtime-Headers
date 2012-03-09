@@ -6,7 +6,7 @@
 }
 
 
-- (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
 - (id)description;
+- (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
 
 @end

@@ -47,13 +47,12 @@
 - (void)setExternalID:(id)arg1;
 - (id)externalID;
 - (id)attachments;
+- (id)action;
+- (id)init;
 - (void)setCreationDate:(id)arg1;
+- (id)creationDate;
 - (void)setSequenceNumber:(int)arg1;
 - (int)sequenceNumber;
-- (id)externalData;
-- (void)setExternalData:(id)arg1;
-- (void)setPriority:(int)arg1;
-- (id)UUID;
 - (void)removeAttachment:(id)arg1;
 - (void)setAttachments:(id)arg1;
 - (BOOL)hasAttachments;
@@ -89,11 +88,12 @@
 - (void)addAlarm:(id)arg1;
 - (void)deleteSelfAndDetached;
 - (void)addExceptionDate:(id)arg1;
-- (BOOL)hasAttendees;
 - (id)detachedItems;
 - (void)setDetachedItems:(id)arg1;
 - (void)setExceptionDates:(id)arg1;
 - (id)moveToCalendar:(id)arg1;
+- (BOOL)hasAttendees;
+- (id)uniqueID;
 - (BOOL)isDetached;
 - (void)setRecurrenceRules:(id)arg1;
 - (id)recurrenceRules;
@@ -108,8 +108,6 @@
 - (id)startDate;
 - (BOOL)validate:(id*)arg1;
 - (BOOL)isAllDay;
-- (void)setLocation:(id)arg1;
-- (id)lastModifiedDate;
 - (int)priority;
 - (void)setURL:(id)arg1;
 - (id)calendar;
@@ -121,9 +119,11 @@
 - (void)setAction:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (id)uniqueID;
-- (id)creationDate;
-- (id)action;
-- (id)init;
+- (void)setLocation:(id)arg1;
+- (id)lastModifiedDate;
+- (id)externalData;
+- (void)setExternalData:(id)arg1;
+- (void)setPriority:(int)arg1;
+- (id)UUID;
 
 @end

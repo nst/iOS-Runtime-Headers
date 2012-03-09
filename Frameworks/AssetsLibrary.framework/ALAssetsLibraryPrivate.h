@@ -15,13 +15,13 @@
 @property BOOL isValid;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)setPhotoLibrary:(id)arg1;
 - (BOOL)isValid;
 - (void)setIsValid:(BOOL)arg1;
-- (void)setPhotoLibrary:(id)arg1;
 - (void)setAssets:(id)arg1;
 - (id)photoLibrary;
 - (id)assets;
-- (id)init;
-- (void)dealloc;
 
 @end

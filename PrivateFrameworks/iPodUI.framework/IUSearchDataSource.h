@@ -29,9 +29,12 @@
 
 + (int)mediaEntityType;
 
+- (id)init;
+- (void)dealloc;
 - (id)searchString;
 - (void)setSearchString:(id)arg1;
 - (id)title;
+- (int)searchScope;
 - (void)setSearchIdentifier:(id)arg1;
 - (id)searchIdentifier;
 - (BOOL)hasNoResultsForSearchString;
@@ -54,8 +57,5 @@
 - (BOOL)shouldShowGlobalSectionHeader;
 - (void)reloadActionRows;
 - (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
-- (id)init;
-- (void)dealloc;
-- (int)searchScope;
 
 @end

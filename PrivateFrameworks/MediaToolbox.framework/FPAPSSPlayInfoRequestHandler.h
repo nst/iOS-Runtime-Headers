@@ -10,12 +10,12 @@
 }
 
 
-- (void)playInfoRequest:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
-- (void)requestDidFinish:(id)arg1;
-- (void)setPlayer:(struct OpaqueFigPlayer { }*)arg1;
-- (void)setRequest:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)requestDidFinish:(id)arg1;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (void)setRequest:(id)arg1;
+- (void)setPlayer:(struct OpaqueFigPlayer { }*)arg1;
+- (void)playInfoRequest:(id)arg1 didReceiveResponse:(id)arg2;
 
 @end

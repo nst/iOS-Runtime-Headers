@@ -20,6 +20,8 @@
 + (id)newQueryFromABPredicate:(id)arg1 withSortOrder:(unsigned int)arg2 addressBook:(void*)arg3 propertyIndices:(const struct __CFDictionary {}**)arg4;
 + (id)personPredicateWithPhoneLike:(id)arg1 countryHint:(id)arg2 addressBook:(void*)arg3;
 
+- (id)init;
+- (void)dealloc;
 - (void)bindDouble:(double)arg1 toStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg2 withBindingOffset:(int*)arg3;
 - (id)querySelectProperties;
 - (id)queryGroupByProperties;
@@ -33,9 +35,7 @@
 - (id)queryWhereString;
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (void)bindString:(id)arg1 toStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg2 withBindingOffset:(int*)arg3;
-- (id)predicateFormat;
 - (BOOL)isValid;
-- (id)init;
-- (void)dealloc;
+- (id)predicateFormat;
 
 @end

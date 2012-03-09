@@ -50,9 +50,9 @@
 - (void)setMessageFlags:(unsigned long long)arg1;
 - (void)setSubject:(id)arg1;
 - (unsigned short)numberOfAttachments;
-- (void)setSummary:(id)arg1;
+- (void)dealloc;
 - (int)priority;
 - (id)URL;
-- (void)dealloc;
+- (void)setSummary:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIView, PLCameraFocusPointView, PLCameraFocusView, PLCameraFaceDetectionView, PLCameraFocusLockView;
+@class NSMutableDictionary, UIView, PLCameraFocusPointView, PLCameraFocusView, PLCameraFocusLockView;
 
 @interface PLCameraPreviewView : UIView  {
     struct CGPoint { 
@@ -12,29 +12,38 @@
     PLCameraFocusPointView *_focusView;
     PLCameraFocusView *_autoFocusView;
     PLCameraFocusLockView *_lockFocusView;
-    PLCameraFaceDetectionView *_faceDetectionView;
+    NSMutableDictionary *_faceIDsToViews;
     UIView *_disabledView;
     UIView *_snapshotView;
+    UIView *_dimmingView;
+    float _dimmingStrength;
     unsigned int _canShowFocus : 1;
     unsigned int _controlsAreVisible : 1;
 }
 
+@property float dimmingStrength;
+
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })defaultAffineTransform;
 
+- (void)dealloc;
 - (void)motionEnded:(int)arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)dimmingStrength;
 - (void)animateFocusScaleDown;
 - (void)animateFocusLock;
+- (void)showFaceTrackingViewsForFaces:(id)arg1;
 - (void)showAutofocusView;
-- (void)showFaceRectangleWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)removeAutofocusView;
+- (void)fadeOutFaceTrackingViews;
+- (void)removeAllFocusViews;
 - (void)setShouldShowFocus:(BOOL)arg1;
 - (void)showFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)showLockFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)zoomFromFactor:(float)arg1 toFactor:(float)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
-- (void)removeFocusView;
+- (void)setDimmingStrength:(float)arg1 duration:(double)arg2;
+- (void)setDimmingStrength:(float)arg1;
 - (void)setCameraIsChangingModes:(BOOL)arg1;
 - (void)focusDidEnd;
 - (void)setControlsAreVisible:(BOOL)arg1;
-- (void)dealloc;
 
 @end

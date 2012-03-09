@@ -18,6 +18,8 @@
 
 + (id)codedPropertyKeys;
 
+- (id)description;
+- (void)dealloc;
 - (void)setScoreType:(id)arg1;
 - (id)scoreType;
 - (void)setLocalizedTitle:(id)arg1;
@@ -26,7 +28,5 @@
 - (unsigned int)maxRank;
 - (id)localizedTitle;
 - (id)categoryID;
-- (id)description;
-- (void)dealloc;
 
 @end

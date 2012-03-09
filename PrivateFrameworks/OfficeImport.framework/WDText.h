@@ -12,6 +12,10 @@
 }
 
 
+- (void)dealloc;
+- (id)document;
+- (id)content;
+- (BOOL)isEmpty;
 - (id)blocks;
 - (int)indexOfBlock:(id)arg1;
 - (id)addParagraphAtIndex:(int)arg1;
@@ -33,9 +37,5 @@
 - (void)addBlock:(id)arg1;
 - (id)addParagraph;
 - (int)textType;
-- (id)document;
-- (id)content;
-- (BOOL)isEmpty;
-- (void)dealloc;
 
 @end

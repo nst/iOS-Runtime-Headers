@@ -14,6 +14,7 @@
 @property(retain) UIPopoverController * _popoverController;
 
 
+- (void)dealloc;
 - (id)_node;
 - (id)initWithDOMNode:(id)arg1;
 - (void)presentPopover;
@@ -24,6 +25,5 @@
 - (void)set_node:(id)arg1;
 - (id)_popoverController;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)dealloc;
 
 @end

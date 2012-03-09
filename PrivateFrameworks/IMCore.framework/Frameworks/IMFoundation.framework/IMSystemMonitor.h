@@ -40,11 +40,14 @@
 @property(retain) NSString * _userID;
 @property double _delayTime;
 
-+ (id)sharedMonitor;
 + (id)sharedInstance;
++ (id)sharedMonitor;
 
-- (BOOL)isSetup;
-- (id)_userID;
+- (id)init;
+- (void)dealloc;
+- (void)_removeEarlyListener:(id)arg1;
+- (void)_addEarlyListener:(id)arg1;
+- (BOOL)systemIsShuttingDown;
 - (BOOL)usesSystemIdleState;
 - (void)set_earlyListeners:(id)arg1;
 - (id)_earlyListeners;
@@ -88,9 +91,10 @@
 - (void)_suspendEventsOnly:(id)arg1;
 - (void)_resume:(id)arg1;
 - (void)_suspend:(id)arg1;
-- (void)_removeEarlyListener:(id)arg1;
-- (void)_addEarlyListener:(id)arg1;
-- (BOOL)systemIsShuttingDown;
+- (void)_screenLocked:(id)arg1;
+- (void)_screenUnlocked:(id)arg1;
+- (void)addListener:(id)arg1;
+- (void)removeListener:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
@@ -99,12 +103,8 @@
 - (BOOL)allowsWeakReference;
 - (BOOL)isActive;
 - (void)setActive:(BOOL)arg1;
-- (void)_screenLocked:(id)arg1;
-- (void)_screenUnlocked:(id)arg1;
-- (void)addListener:(id)arg1;
-- (void)removeListener:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (BOOL)isSetup;
+- (id)_userID;
 - (void)setUsesPowerNotifications:(BOOL)arg1;
 - (BOOL)isFastUserSwitched;
 

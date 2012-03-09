@@ -19,8 +19,8 @@
 - (id)mf_shortDescription;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setShortDescription:(id)arg1;
-- (id)localizedDescription;
 - (id)userInfo;
 - (void)dealloc;
+- (id)localizedDescription;
 
 @end

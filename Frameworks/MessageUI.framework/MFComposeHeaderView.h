@@ -14,6 +14,7 @@
 
 + (float)defaultHeight;
 
+- (void)dealloc;
 - (float)maxLabelX;
 - (id)navTitle;
 - (void)setNavTitle:(id)arg1;
@@ -21,13 +22,12 @@
 - (BOOL)_canBecomeFirstResponder;
 - (void)setLabelHighlighted:(BOOL)arg1;
 - (struct CGColor { }*)labelColor;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)_automationID;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

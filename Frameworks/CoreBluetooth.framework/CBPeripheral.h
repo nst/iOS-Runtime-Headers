@@ -21,13 +21,10 @@
 @property <CBPeripheralDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (struct __CFUUID { }*)UUID;
-- (id)name;
-- (id)delegate;
-- (id)services;
-- (BOOL)isConnected;
 - (void)setName:(id)arg1;
+- (BOOL)isConnected;
+- (void)setServices:(id)arg1;
+- (id)services;
 - (id)RSSI;
 - (void)readRSSI;
 - (void)discoverServices:(id)arg1;
@@ -44,6 +41,9 @@
 - (void)writeValue:(id)arg1 forDescriptor:(id)arg2;
 - (void)setRSSI:(id)arg1;
 - (void)setIsConnected:(BOOL)arg1;
-- (void)setServices:(id)arg1;
+- (id)name;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (struct __CFUUID { }*)UUID;
 
 @end

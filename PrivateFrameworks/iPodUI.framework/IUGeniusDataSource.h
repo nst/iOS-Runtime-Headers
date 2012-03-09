@@ -9,6 +9,8 @@
 @property(getter=isDeletablePlaylist,readonly) BOOL deletablePlaylist;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)playlist;
 - (id)title;
 - (BOOL)showShuffleButtonWhenApplicable;
@@ -32,7 +34,5 @@
 - (BOOL)allowsDeletion;
 - (void)reloadActionRows;
 - (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

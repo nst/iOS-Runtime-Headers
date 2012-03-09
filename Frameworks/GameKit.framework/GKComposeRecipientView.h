@@ -31,6 +31,8 @@
 @property NSObject<GKComposeRecipientViewDelegate> * composeDelegate;
 
 
+- (void)setProperties:(id)arg1;
+- (void)dealloc;
 - (void)parentDidClose;
 - (void)parentWillClose;
 - (void)removeAddresses;
@@ -58,17 +60,16 @@
 - (void)removeAddressAtIndex:(int)arg1;
 - (void)setComposeDelegate:(id)arg1;
 - (id)composeDelegate;
+- (id)fadeTransition;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (id)fadeTransition;
 - (int)maxRecipients;
 - (void)addRecipient:(id)arg1;
 - (void)setMaxRecipients:(int)arg1;
 - (void)reflow;
 - (void)setAddresses:(id)arg1;
 - (id)recipients;
-- (void)setProperty:(int)arg1;
 - (id)textField;
 - (void)setEditable:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
@@ -86,7 +87,6 @@
 - (BOOL)becomeFirstResponder;
 - (id)text;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setProperties:(id)arg1;
-- (void)dealloc;
+- (void)setProperty:(int)arg1;
 
 @end

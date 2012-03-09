@@ -22,14 +22,14 @@
 @property(setter=setASAccountVersion:) int asAccountVersion;
 
 + (id)supportedDataclasses;
-+ (id)defaultProperties;
 + (Class)clientClass;
++ (id)defaultProperties;
 + (Class)accountClass;
 + (void)cleanUpFilesForAccountWithId:(id)arg1;
 + (id)displayedAccountTypeString;
 + (id)displayedShortAccountTypeString;
-+ (Class)detailControllerClass;
 + (id)allowedDataclasses;
++ (Class)detailControllerClass;
 + (Class)syncControllerClass;
 + (void*)createSyncDataSourceForDataclass:(id)arg1 options:(id)arg2;
 
@@ -53,19 +53,19 @@
 - (void)setEncryptionIdentityPersistentReference:(id)arg1;
 - (BOOL)supportsDADataclass:(int)arg1;
 - (id)supportedDataclasses;
+- (void)setPort:(int)arg1;
+- (void)dealloc;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setProtocolVersion:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
 - (id)emailAddresses;
-- (void)setPort:(int)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (id)displayName;
 - (id)initWithProperties:(id)arg1;
 - (id)protocol;
 - (int)port;
 - (id)host;
-- (void)dealloc;
 - (id)localizedInvalidPasswordMessage;
 - (id)localizedIdenticalAccountFailureMessage;
 - (BOOL)isEqualToAccount:(id)arg1;
@@ -161,9 +161,9 @@
 - (BOOL)searchQueriesRunning;
 - (void)cancelAllSearchQueries;
 - (id)uniqueId;
+- (BOOL)supportsPush;
 - (id)enabledDataclasses;
 - (BOOL)otherAccountEnabledForDataclass:(id)arg1;
-- (BOOL)supportsPush;
 - (BOOL)isOwnedByPayload:(id)arg1;
 - (id)accountInfoUsername;
 - (id)_sortedVisibleASMailFolders;

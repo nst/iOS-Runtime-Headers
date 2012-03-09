@@ -13,9 +13,10 @@
 
 + (id)readOnlyDefaults;
 
+- (id)init;
+- (void)dealloc;
 - (id)diskUsageInfo;
 - (void)setDiskUsageInfo:(id)arg1;
-- (BOOL)hasCompletedDataMigration;
 - (void)setHasCompletedDataMigration:(BOOL)arg1;
 - (id)allHosts;
 - (id)hostInfoForIdentifier:(id)arg1;
@@ -24,7 +25,6 @@
 - (void)updateHostInfo:(id)arg1;
 - (void)upgradeDefaults;
 - (void)_updateDefaults;
-- (id)init;
-- (void)dealloc;
+- (BOOL)hasCompletedDataMigration;
 
 @end

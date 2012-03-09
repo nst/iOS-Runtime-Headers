@@ -11,10 +11,10 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (id)occurrenceBlocks;
 - (unsigned int)spaceGapFor:(id)arg1;
 - (void)addOccurrenceBlock:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

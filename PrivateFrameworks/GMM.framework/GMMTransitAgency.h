@@ -17,18 +17,18 @@
 @property(retain) NSString * phone;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasMainUrl;
-- (void)setMainUrl:(id)arg1;
-- (BOOL)hasPhone;
-- (id)mainUrl;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)name;
 - (void)setName:(id)arg1;
 - (id)description;
 - (id)description;
 - (void)dealloc;
+- (id)dictionaryRepresentation;
+- (id)name;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (BOOL)hasMainUrl;
+- (void)setMainUrl:(id)arg1;
+- (BOOL)hasPhone;
+- (id)mainUrl;
 - (id)phone;
 - (void)setPhone:(id)arg1;
 

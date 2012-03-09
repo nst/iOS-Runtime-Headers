@@ -15,6 +15,8 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (id)apnDefaults;
 - (BOOL)wasInstalled;
 - (void)setWasInstalled:(BOOL)arg1;
@@ -28,7 +30,5 @@
 - (id)subtitle1Description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
 
 @end

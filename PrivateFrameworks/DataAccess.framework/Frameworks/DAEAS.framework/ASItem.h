@@ -23,9 +23,9 @@
 + (BOOL)acceptsTopLevelLeaves;
 + (BOOL)expectsContent;
 
-- (id)parent;
 - (id)init;
 - (void)dealloc;
+- (id)parent;
 - (id)currentStreamInvocation;
 - (BOOL)_itemPathWithDCCPTMatches:(id)arg1 dccpt:(int)arg2;
 - (BOOL)_itemPathMatches:(id)arg1;

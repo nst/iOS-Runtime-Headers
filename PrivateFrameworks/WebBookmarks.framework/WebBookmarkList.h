@@ -17,6 +17,8 @@
 @property(readonly) unsigned int folderID;
 
 
+- (unsigned int)folderID;
+- (void)dealloc;
 - (id)initWithFolderID:(unsigned int)arg1 inCollection:(id)arg2 bookmarkCount:(unsigned int)arg3 skipOffset:(unsigned int)arg4 includeHidden:(BOOL)arg5;
 - (id)initWithBookmarksWhere:(id)arg1 collection:(id)arg2 bookmarkCount:(unsigned int)arg3 skipOffset:(unsigned int)arg4;
 - (void)_moveBookmarkAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
@@ -24,7 +26,5 @@
 - (BOOL)stepThroughIndex:(unsigned int)arg1;
 - (id)bookmarkAtIndex:(unsigned int)arg1;
 - (unsigned int)bookmarkCount;
-- (unsigned int)folderID;
-- (void)dealloc;
 
 @end

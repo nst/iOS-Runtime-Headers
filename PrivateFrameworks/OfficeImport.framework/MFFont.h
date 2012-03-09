@@ -33,6 +33,7 @@
 + (id)fontWithFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
 + (id)fontWithExtendedFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22;
 
+- (void)dealloc;
 - (double)escapement;
 - (int)getCharset;
 - (BOOL)strikeout;
@@ -44,6 +45,5 @@
 - (int)selectInto:(id)arg1;
 - (BOOL)underline;
 - (id)faceName;
-- (void)dealloc;
 
 @end

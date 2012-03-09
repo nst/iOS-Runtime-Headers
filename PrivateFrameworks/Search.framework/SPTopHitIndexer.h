@@ -13,6 +13,8 @@
 + (void)preheat;
 + (id)indexerForTopHits;
 
+- (id)init;
+- (void)dealloc;
 - (void)beginSearch:(id)arg1 domains:(id)arg2;
 - (void)setTopHit:(id)arg1 domain:(unsigned int)arg2 queryString:(id)arg3;
 - (id)_fetchAndCleanQueryResults:(id)arg1;
@@ -27,7 +29,5 @@
 - (void)removeIdentifier:(id)arg1;
 - (void)setIdentifier:(id)arg1 forRecordDictionary:(id)arg2;
 - (BOOL)_openOrCreateStore;
-- (id)init;
-- (void)dealloc;
 
 @end

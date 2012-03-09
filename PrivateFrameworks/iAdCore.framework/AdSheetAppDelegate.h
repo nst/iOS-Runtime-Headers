@@ -32,6 +32,9 @@
 + (void)takeAssertion:(id)arg1 duration:(double)arg2;
 
 - (void)shutdown;
+- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
+- (void)applicationDidFinishLaunching:(id)arg1;
+- (void)application:(id)arg1 didFinishLaunchingSuspendedWithOptions:(id)arg2;
 - (void)setPowerAssertionID:(unsigned int)arg1;
 - (unsigned int)powerAssertionID;
 - (void)setLastClientPowerAssertionReturned:(double)arg1;
@@ -54,12 +57,9 @@
 - (void)storyboardDismissed;
 - (void)storyboardPresentedWithPrecomposedErrorReport:(id)arg1 serverURL:(id)arg2;
 - (void)takeAssertion:(id)arg1;
-- (int)currentDeviceOrientation;
 - (void)returnAssertion:(id)arg1;
 - (void)takeAssertion:(id)arg1 duration:(double)arg2;
-- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
-- (void)applicationDidFinishLaunching:(id)arg1;
-- (void)application:(id)arg1 didFinishLaunchingSuspendedWithOptions:(id)arg2;
 - (void)accelerometer:(id)arg1 didChangeDeviceOrientation:(int)arg2;
+- (int)currentDeviceOrientation;
 
 @end

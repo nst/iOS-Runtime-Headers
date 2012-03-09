@@ -17,8 +17,9 @@
 @property(retain) NSDate * transacationDate;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setTransacationDate:(id)arg1;
-- (id)modelVersionHash;
 - (id)initWithSaveNotification:(id)arg1 withLocalPeerID:(id)arg2;
 - (id)storeNames;
 - (id)storeSaveSnapshotForStore:(id)arg1;
@@ -26,7 +27,6 @@
 - (id)localPeerID;
 - (id)storeSaveSnapshotForStoreName:(id)arg1;
 - (id)transacationDate;
-- (id)description;
-- (void)dealloc;
+- (id)modelVersionHash;
 
 @end

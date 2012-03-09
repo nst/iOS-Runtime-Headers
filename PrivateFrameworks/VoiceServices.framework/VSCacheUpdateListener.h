@@ -15,14 +15,14 @@
 + (id)sharedListener;
 + (id)sharedListenerIfExists;
 
+- (id)init;
+- (void)dealloc;
 - (void)_enqueueRequest:(id)arg1;
-- (void)_flush;
 - (id)_initShared;
 - (void)_spokenLanguageChanged:(id)arg1;
 - (void)performUpdateForModelIdentifier:(id)arg1 classIdentifier:(id)arg2;
+- (void)_flush;
 - (void)stopListening;
 - (void)startListening;
-- (id)init;
-- (void)dealloc;
 
 @end

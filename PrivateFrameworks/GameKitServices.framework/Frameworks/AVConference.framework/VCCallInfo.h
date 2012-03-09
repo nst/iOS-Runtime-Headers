@@ -35,6 +35,8 @@
 @property int callID;
 
 
+- (id)init;
+- (void)dealloc;
 - (unsigned long)auNumber;
 - (id)hardwareVersion;
 - (id)osVersion;
@@ -61,7 +63,5 @@
 - (unsigned long)maxBandwidth;
 - (int)callID;
 - (void)setCallID:(int)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

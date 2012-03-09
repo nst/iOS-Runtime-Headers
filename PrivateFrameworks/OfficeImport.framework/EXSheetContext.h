@@ -11,8 +11,8 @@
 }
 
 
+- (void)dealloc;
 - (bool)loadDelayedNode:(id)arg1;
 - (id)initWithSheetLocation:(id)arg1 sheetXmlType:(id)arg2 state:(id)arg3;
-- (void)dealloc;
 
 @end

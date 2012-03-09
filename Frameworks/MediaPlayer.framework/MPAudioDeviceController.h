@@ -19,6 +19,8 @@
 + (BOOL)routeDiscoveryEnabled;
 + (void)setRouteDiscoveryEnabled:(BOOL)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)_sendFakeRouteChange;
 - (BOOL)pickRouteAtIndex:(unsigned int)arg1;
 - (BOOL)routeRequiresPasswordAtIndex:(unsigned int)arg1;
@@ -60,10 +62,8 @@
 - (id)pickedRouteDescription;
 - (id)nameOfPickedRoute;
 - (BOOL)volumeControlIsAvailable;
-- (void)setDelegate:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

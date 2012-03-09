@@ -15,11 +15,11 @@
 
 - (id)failureReason;
 - (id)messageBody;
-- (int)command;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setFailureReason:(id)arg1;
 - (void)setFailedMessageID:(id)arg1;
 - (id)failedMessageID;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (int)command;
 
 @end

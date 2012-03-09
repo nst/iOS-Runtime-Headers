@@ -5,10 +5,7 @@
 @interface NSTimeZone : NSObject <NSCopying, NSCoding> {
 }
 
-+ (id)defaultTimeZone;
-+ (id)timeZoneForSecondsFromGMT:(int)arg1;
-+ (id)localTimeZone;
-+ (void)resetSystemTimeZone;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)timeZoneWithAbbreviation:(id)arg1;
 + (id)timeZoneWithName:(id)arg1;
 + (id)timeZoneWithName:(id)arg1 data:(id)arg2;
@@ -18,16 +15,18 @@
 + (id)knownTimeZoneNames;
 + (void)setDefaultTimeZone:(id)arg1;
 + (id)systemTimeZone;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)defaultTimeZone;
++ (id)timeZoneForSecondsFromGMT:(int)arg1;
++ (id)localTimeZone;
++ (void)resetSystemTimeZone;
 + (id)ICSQuickTimeZoneNames;
 + (id)calendarTimeZone;
 + (id)gmt;
 
-- (id)data;
-- (int)secondsFromGMTForDate:(id)arg1;
-- (id)name;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)nextDaylightSavingTimeTransition;
 - (double)daylightSavingTimeOffset;
 - (BOOL)isDaylightSavingTime;
@@ -43,10 +42,11 @@
 - (double)daylightSavingTimeOffsetForDate:(id)arg1;
 - (BOOL)isNSTimeZone__;
 - (unsigned long)_cfTypeID;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (int)secondsFromGMTForDate:(id)arg1;
+- (id)name;
+- (id)data;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

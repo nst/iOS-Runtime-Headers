@@ -11,6 +11,9 @@
 
 + (id)sharedInstance;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isAmbiguous;
 - (int)cellTelephonyType;
 - (void)_invalidateCachedState;
@@ -28,8 +31,5 @@
 - (int)maxSupportedCallCount;
 - (BOOL)isHardPauseAvailable;
 - (BOOL)isEndAndAnswerAllowed;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

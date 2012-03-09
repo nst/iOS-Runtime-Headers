@@ -12,7 +12,6 @@
 + (struct __CFDictionary { }*)_personToGroupPropertyMap;
 + (int)groupPropertyForPersonProperty:(int)arg1;
 
-- (id)imageData;
 - (BOOL)recordIsGroup;
 - (BOOL)propertyIsValidForPerson:(unsigned int)arg1;
 - (BOOL)setImageData:(id)arg1 cropRectX:(int)arg2 cropRectY:(int)arg3 cropRectWidth:(int)arg4 cropRectHeight:(int)arg5;
@@ -23,5 +22,6 @@
 - (void)_drainExistingProperties;
 - (BOOL)setValue:(void*)arg1 forProperty:(unsigned int)arg2;
 - (void*)valueForProperty:(unsigned int)arg1;
+- (id)imageData;
 
 @end

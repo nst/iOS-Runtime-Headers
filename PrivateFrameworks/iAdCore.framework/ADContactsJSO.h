@@ -18,6 +18,9 @@
 + (id)scriptingKeys;
 + (id)scriptSelectors;
 
+- (void)dealloc;
+- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (BOOL)readyToPresent;
 - (void*)contactRecord;
@@ -27,8 +30,5 @@
 - (void)setContactRecord:(void*)arg1;
 - (void*)_newPersonFromContactInfo:(id)arg1;
 - (void)presentComposer;
-- (id)delegate;
-- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
-- (void)dealloc;
 
 @end

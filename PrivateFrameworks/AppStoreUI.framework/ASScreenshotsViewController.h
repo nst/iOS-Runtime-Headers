@@ -12,12 +12,12 @@
 @property(readonly) NSArray * artworkImages;
 
 
+- (void)dealloc;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)artworkImages;
 - (id)initWithArtworkArray:(id)arg1;
 - (void)_requestMissingImages;
-- (void)dealloc;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 
 @end

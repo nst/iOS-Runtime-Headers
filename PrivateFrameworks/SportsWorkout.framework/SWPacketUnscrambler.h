@@ -9,6 +9,7 @@
 }
 
 
+- (id).cxx_construct;
 - (unsigned char)_getBlanDstAddrLen:(struct BlanSportsDataFrame { unsigned char x1[28]; }*)arg1;
 - (unsigned char)_getBlanSrcAddrLen:(struct BlanSportsDataFrame { unsigned char x1[28]; }*)arg1;
 - (char *)_getBlanPayloadPtr:(struct BlanSportsDataFrame { unsigned char x1[28]; }*)arg1;
@@ -29,6 +30,5 @@
 - (id)dataFrameForBlanPayload:(id)arg1 radioId:(unsigned int*)arg2;
 - (id)sourceTypeForBlanPayload:(id)arg1;
 - (id)unscrambleRunSensorDataFrame:(id)arg1;
-- (id).cxx_construct;
 
 @end

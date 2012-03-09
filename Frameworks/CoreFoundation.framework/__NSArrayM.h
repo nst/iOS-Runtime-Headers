@@ -14,10 +14,19 @@
     id *_list;
 }
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3 :(BOOL)arg4;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3 :(BOOL)arg4;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (void)addObject:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)_mutate;
+- (BOOL)_hasStrongReferences;
+- (BOOL)_hasObjects;
 - (void)finalize;
 - (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
 - (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
@@ -25,14 +34,5 @@
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
 - (void)removeLastObject;
-- (void)_mutate;
-- (BOOL)_hasStrongReferences;
-- (BOOL)_hasObjects;
-- (unsigned int)count;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (void)addObject:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

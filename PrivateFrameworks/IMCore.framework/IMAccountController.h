@@ -20,12 +20,14 @@
 @property(readonly) NSMutableArray * _accounts;
 @property(readonly) id bestAccountForStatus;
 
-+ (id)bestAccountFromAccounts:(id)arg1;
 + (id)sharedInstance;
++ (id)bestAccountFromAccounts:(id)arg1;
 
 - (id)accounts;
 - (id)activeAccounts;
 - (BOOL)deleteAccount:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)jabberAccount;
 - (id)aimAccount;
 - (id)mostLoggedInAccount;
@@ -62,21 +64,19 @@
 - (id)connectedAccounts;
 - (id)bestAccountForStatus;
 - (void)autoLogin;
-- (void)setReadOnly:(BOOL)arg1;
-- (BOOL)readOnly;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
-- (id)anyAccountForService:(id)arg1 login:(id)arg2 guid:(id)arg3;
-- (id)anyAccountForService:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (BOOL)addAccount:(id)arg1;
-- (id)accountForUniqueID:(id)arg1;
 - (BOOL)activateAccounts:(id)arg1;
 - (BOOL)deactivateAccounts:(id)arg1;
 - (id)accountsForService:(id)arg1;
 - (BOOL)activateAccount:(id)arg1;
 - (BOOL)deactivateAccount:(id)arg1;
 - (id)activeAccountsForService:(id)arg1;
+- (id)anyAccountForService:(id)arg1 login:(id)arg2 guid:(id)arg3;
+- (id)anyAccountForService:(id)arg1;
+- (BOOL)readOnly;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (void)setReadOnly:(BOOL)arg1;
+- (BOOL)addAccount:(id)arg1;
+- (id)accountForUniqueID:(id)arg1;
 
 @end

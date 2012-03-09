@@ -15,6 +15,8 @@
 + (id)dataWithDataPointCount:(unsigned int)arg1 resources:(id)arg2;
 + (id)dataWithResources:(id)arg1;
 
+- (void)dealloc;
+- (bool)isEmpty;
 - (unsigned int)averageDataPointDecimalCount;
 - (id)firstValueContentFormatWithWorkbook:(id)arg1;
 - (id)initWithDataPointCount:(unsigned int)arg1 resources:(id)arg2;
@@ -29,7 +31,5 @@
 - (void)setContentFormat:(id)arg1;
 - (unsigned int)countOfCellsBeingReferenced;
 - (id)initWithResources:(id)arg1;
-- (bool)isEmpty;
-- (void)dealloc;
 
 @end

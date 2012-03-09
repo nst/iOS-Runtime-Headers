@@ -5,8 +5,8 @@
 @interface AVCapturePrewarmer : NSObject  {
 }
 
-+ (void)prewarm;
 + (void)cancel;
++ (void)prewarm;
 
 
 @end

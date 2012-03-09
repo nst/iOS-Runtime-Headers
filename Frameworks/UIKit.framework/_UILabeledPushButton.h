@@ -14,6 +14,7 @@
 @property float labelOffset;
 
 
+- (void)dealloc;
 - (float)labelOffset;
 - (void)setLabelFontSize:(float)arg1;
 - (float)labelFontSize;
@@ -24,6 +25,5 @@
 - (void)drawTitleAtPoint:(struct CGPoint { float x1; float x2; })arg1 width:(float)arg2;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

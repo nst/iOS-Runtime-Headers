@@ -19,7 +19,6 @@
 @property(copy) id errorHandler;
 
 
-- (void)finalize;
 - (id)errorHandler;
 - (id)initWithURL:(id)arg1 includingPropertiesForKeys:(id)arg2 options:(unsigned int)arg3 errorHandler:(id)arg4;
 - (void)setErrorHandler:(id)arg1;
@@ -27,8 +26,9 @@
 - (void)skipDescendents;
 - (id)directoryAttributes;
 - (id)fileAttributes;
+- (void)dealloc;
+- (void)finalize;
 - (id)nextObject;
 - (unsigned int)level;
-- (void)dealloc;
 
 @end

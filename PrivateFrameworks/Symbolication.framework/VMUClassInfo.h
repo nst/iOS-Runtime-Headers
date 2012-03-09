@@ -47,14 +47,15 @@
 @property(readonly) unsigned long long remoteIsa;
 @property(readonly) unsigned int instanceSize;
 
-+ (void)initialize;
 + (id)descriptionForTypeEncoding:(const char *)arg1 ivarName:(const char *)arg2;
 + (id)classInfoWithClassName:(id)arg1 binaryName:(id)arg2 type:(int)arg3;
++ (void)initialize;
 
-- (id)className;
-- (id)type;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)debugDescription;
+- (void)dealloc;
 - (id)initWithIsaPointer:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
 - (void)scanObject:(unsigned long long)arg1 ofSize:(unsigned int)arg2 withBlock:(id)arg3;
 - (id)shortIvarDescription;
@@ -85,10 +86,9 @@
 - (id)initWithClassName:(id)arg1 binaryName:(id)arg2 type:(int)arg3;
 - (void)setMemoryReader:(id)arg1;
 - (unsigned int)instanceSize;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)debugDescription;
-- (void)dealloc;
+- (id)className;
+- (id)type;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

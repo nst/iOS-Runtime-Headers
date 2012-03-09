@@ -24,6 +24,7 @@
 @property(retain) NSArray * potentialContextPaths;
 
 
+- (void)dealloc;
 - (void)setPotentialContextPaths:(id)arg1;
 - (void)setWellKnownPath:(id)arg1;
 - (BOOL)didReceiveAuthenticationError;
@@ -58,6 +59,5 @@
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
-- (void)dealloc;
 
 @end

@@ -11,6 +11,8 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setConnectionNumber:(unsigned long)arg1;
 - (const char *)responderGUID;
 - (void)setResponderGUID:(char *)arg1;
@@ -21,7 +23,5 @@
 - (id)initWithConnectionNumber:(unsigned long)arg1 responderGUID:(char *)arg2 responderFriendlyName:(id)arg3;
 - (unsigned long)connectionNumber;
 - (id)responderGUIDString;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -13,11 +13,11 @@
 @property(retain) UIImage * image;
 
 
+- (void)dealloc;
 - (void)setImageView:(id)arg1;
 - (void)layout;
 - (id)imageView;
 - (id)image;
 - (void)setImage:(id)arg1;
-- (void)dealloc;
 
 @end

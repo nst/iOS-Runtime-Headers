@@ -19,6 +19,13 @@
 @property(setter=_setVibrationPatternToReplay:,retain) TLVibrationPattern * _vibrationPatternToReplay;
 
 
+- (void)dealloc;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (id)_vibrationPatternToReplay;
 - (void)enterReplayModeWithVibrationPattern:(id)arg1;
 - (void)currentVibrationComponentShouldEnd;
@@ -28,12 +35,5 @@
 - (void)exitReplayMode;
 - (void)exitRecordingMode;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 vibrationPatternMaximumDuration:(double)arg2;
-- (void)setDelegate:(id)arg1;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (id)delegate;
-- (void)dealloc;
 
 @end

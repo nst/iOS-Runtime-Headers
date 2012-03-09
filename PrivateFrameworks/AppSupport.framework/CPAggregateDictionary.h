@@ -9,7 +9,6 @@
 
 + (id)sharedAggregateDictionary;
 
-- (int)commit;
 - (void)significantTimeChanged;
 - (void)pushValue:(double)arg1 forKey:(id)arg2;
 - (void)setValue:(double)arg1 forDistributionKey:(id)arg2;
@@ -21,5 +20,6 @@
 - (void)setValue:(long long)arg1 forScalarKey:(id)arg2;
 - (void)clearScalarKey:(id)arg1;
 - (BOOL)isEnabled;
+- (int)commit;
 
 @end

@@ -15,6 +15,8 @@
 @property(retain) NSArray * inputCorrectionInfo;
 
 
+- (id)_initFromProperties:(id)arg1;
+- (id)_outputProperties;
 - (void)setInputCorrectionInfo:(id)arg1;
 - (id)inputCorrectionInfo;
 - (void)setInputCameraModel:(id)arg1;
@@ -24,7 +26,5 @@
 - (id)outputImage;
 - (BOOL)_isIdentity;
 - (void)setDefaults;
-- (id)_initFromProperties:(id)arg1;
-- (id)_outputProperties;
 
 @end

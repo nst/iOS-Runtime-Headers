@@ -44,6 +44,11 @@
 
 + (id)codedPropertyKeys;
 
+- (void)setName:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (void)setSupportsMultiplayer:(BOOL)arg1;
 - (void)setMaxAchievementPoints:(unsigned int)arg1;
 - (void)setNumberOfAchievements:(unsigned int)arg1;
@@ -78,10 +83,5 @@
 - (id)name;
 - (BOOL)isValid;
 - (id)bundleIdentifier;
-- (void)setName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 
 @end

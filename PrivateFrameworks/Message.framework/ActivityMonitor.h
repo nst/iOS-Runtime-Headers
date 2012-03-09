@@ -83,18 +83,18 @@
 - (BOOL)canBeCancelled;
 - (void)setMailbox:(id)arg1;
 - (BOOL)shouldCancel;
-- (void)setDisplayName:(id)arg1;
-- (void)setError:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setMaxCount:(int)arg1;
-- (id)displayName;
-- (void)reset;
-- (BOOL)isActive;
-- (int)changeCount;
-- (id)error;
 - (id)description;
 - (void)cancel;
 - (id)init;
 - (void)dealloc;
+- (void)setDisplayName:(id)arg1;
+- (void)setError:(id)arg1;
+- (id)error;
+- (id)displayName;
+- (void)reset;
+- (BOOL)isActive;
+- (int)changeCount;
+- (void)setDelegate:(id)arg1;
+- (void)setMaxCount:(int)arg1;
 
 @end

@@ -171,6 +171,7 @@
         double x; 
         double y; 
     } _zoomAnchorPoint;
+    id _scrollTestParameters;
 }
 
 @property(getter=isProgrammaticScrollEnabled) BOOL programmaticScrollEnabled;
@@ -203,6 +204,7 @@
 @property BOOL scrollsToTop;
 @property(readonly) UIPanGestureRecognizer * panGestureRecognizer;
 @property(readonly) UIPinchGestureRecognizer * pinchGestureRecognizer;
+@property(retain) id scrollTestParameters;
 @property(getter=_isVerticalBouncing,readonly) BOOL isVerticalBouncing;
 @property(getter=_isHorizontalBouncing,readonly) BOOL isHorizontalBouncing;
 @property(getter=_isAnimatingScroll,readonly) BOOL isAnimatingScroll;
@@ -213,15 +215,18 @@
 + (SEL)_panGestureAction;
 + (SEL)_pinchGestureAction;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setScrollViewOffsetPinned:(struct CGPoint { float x1; float x2; })arg1;
 - (float)maxVelocityInDirection:(int)arg1;
 - (int)scrollableDirections;
 - (void)_disableScrollingIfNecessary;
 - (void)_enableScrollingIfNecessary;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3;
+- (id)_scrollTestExtraResults;
+- (void)_incrementForScrollTest;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
 - (BOOL)_continueScrollingAtOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_runLoopModePopped:(id)arg1;
 - (void)_smoothScroll:(id)arg1;
@@ -270,6 +275,7 @@
 - (struct CGPoint { float x1; float x2; })_pageDecelerationTarget;
 - (double)_verticalVelocity;
 - (double)_horizontalVelocity;
+- (id)scrollTestParameters;
 - (id)pinchGestureRecognizer;
 - (id)panGestureRecognizer;
 - (BOOL)_isAnimatingZoom;
@@ -419,6 +425,7 @@
 - (void)_handleSwipe:(id)arg1;
 - (void)handlePinch:(id)arg1;
 - (void)handlePan:(id)arg1;
+- (void)setScrollTestParameters:(id)arg1;
 - (void)_stopScrollingNotify:(BOOL)arg1 dealloc:(BOOL)arg2 pin:(BOOL)arg3;
 - (void)_centerContentIfNecessary;
 - (BOOL)isZooming;
@@ -453,15 +460,16 @@
 - (id)delegate;
 - (BOOL)isDecelerating;
 - (BOOL)isDragging;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
 - (void)layoutSubviews;
 - (void)setShowsVerticalScrollIndicator:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)description;
-- (void)dealloc;
 - (void)ab_scrollToSelectionOfTextView:(id)arg1;
 - (void)ab_scrollToSelectionOfTextView:(id)arg1 animated:(BOOL)arg2;
 - (float)ab_verticalOverlapUsingKeyboardInfo:(id)arg1;

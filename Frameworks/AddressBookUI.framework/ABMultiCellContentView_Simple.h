@@ -13,17 +13,6 @@
 
 + (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 
-- (id)pickerView;
-- (struct { id x1; unsigned int x2; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
-- (BOOL)textFieldShouldClear:(id)arg1;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (BOOL)textFieldShouldEndEditing:(id)arg1;
-- (void)textFieldDidEndEditing:(id)arg1;
-- (void)textFieldDidBeginEditing:(id)arg1;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (id)text;
-- (void)reload;
 - (void)dealloc;
 - (BOOL)isValidValue:(id)arg1;
 - (BOOL)canHandleProperty:(int)arg1;
@@ -37,5 +26,16 @@
 - (id)viewForFirstResponder;
 - (void)setAbCellStyle:(int)arg1;
 - (void)reloadFromModel;
+- (id)pickerView;
+- (struct { id x1; unsigned int x2; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
+- (BOOL)textFieldShouldClear:(id)arg1;
+- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (BOOL)textFieldShouldEndEditing:(id)arg1;
+- (void)textFieldDidEndEditing:(id)arg1;
+- (void)textFieldDidBeginEditing:(id)arg1;
+- (BOOL)textFieldShouldBeginEditing:(id)arg1;
+- (id)text;
+- (void)reload;
 
 @end

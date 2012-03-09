@@ -27,6 +27,8 @@
 
 + (float)defaultRowHeight;
 
+- (id)init;
+- (void)dealloc;
 - (void)setRatingControl:(id)arg1;
 - (void)setDividerView:(id)arg1;
 - (id)dividerView;
@@ -52,7 +54,5 @@
 - (id)titleView;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -12,22 +12,22 @@
 }
 
 
-- (unsigned int)interfaceVersion;
-- (int)loadDriverWithIOElement:(id)arg1;
-- (BOOL)unloadDriver;
-- (BOOL)isDriverLoaded;
-- (BOOL)isSleeping;
-- (BOOL)supportsBlinkingCursor;
-- (BOOL)isInputEnabled;
-- (BOOL)postsKeyboardEvents;
-- (id)getInputEvents;
-- (int)mainSize;
-- (int)statusSize;
-- (BOOL)setMainCells:(const char *)arg1 length:(int)arg2;
-- (BOOL)setStatusCells:(const char *)arg1 length:(int)arg2;
-- (int)brailleInputMode;
-- (id)modelIdentifier;
 - (id)init;
 - (void)dealloc;
+- (int)brailleInputMode;
+- (id)modelIdentifier;
+- (BOOL)setStatusCells:(const char *)arg1 length:(int)arg2;
+- (BOOL)setMainCells:(const char *)arg1 length:(int)arg2;
+- (int)statusSize;
+- (int)mainSize;
+- (id)getInputEvents;
+- (BOOL)postsKeyboardEvents;
+- (BOOL)isInputEnabled;
+- (BOOL)supportsBlinkingCursor;
+- (BOOL)isSleeping;
+- (BOOL)isDriverLoaded;
+- (BOOL)unloadDriver;
+- (int)loadDriverWithIOElement:(id)arg1;
+- (unsigned int)interfaceVersion;
 
 @end

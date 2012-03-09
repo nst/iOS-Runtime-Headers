@@ -6,17 +6,17 @@
 }
 
 
-- (void)setMetadata:(id)arg1;
-- (id)initWithURL:(id)arg1 fileType:(id)arg2;
-- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
-- (void)setMovieTimeScale:(int)arg1;
-- (BOOL)canAddInput:(id)arg1;
-- (void)addInput:(id)arg1;
-- (void)startWriting;
-- (void)cancelWriting;
-- (id)initWithConfigurationState:(id)arg1;
 - (BOOL)_canAddInput:(id)arg1 exceptionReason:(id*)arg2;
+- (id)initWithConfigurationState:(id)arg1;
+- (void)cancelWriting;
+- (void)addInput:(id)arg1;
+- (BOOL)canAddInput:(id)arg1;
+- (id)initWithURL:(id)arg1 fileType:(id)arg2;
+- (void)setMovieTimeScale:(int)arg1;
+- (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
+- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (int)status;
+- (void)startWriting;
+- (void)setMetadata:(id)arg1;
 
 @end

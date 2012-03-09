@@ -16,13 +16,13 @@
 
 + (id)resultFromResponseItem:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
+- (id)principalURL;
 - (id)addresses;
 - (void)setAddresses:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setPrincipalURL:(id)arg1;
 - (id)displayName;
-- (id)principalURL;
-- (id)description;
-- (void)dealloc;
 
 @end

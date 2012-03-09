@@ -29,20 +29,10 @@
 
 - (void)setService:(id)arg1;
 - (id)messageBody;
-- (int)command;
-- (void)setProtocolVersion:(id)arg1;
-- (id)protocolVersion;
-- (id)URIs;
-- (id)responseCertificate;
-- (void)setURIs:(id)arg1;
-- (void)setAuthenticationInfo:(id)arg1;
-- (void)setUserID:(id)arg1;
-- (void)setCsr:(id)arg1;
-- (void)setRealm:(id)arg1;
-- (id)responseBindings;
-- (id)userID;
 - (id)realm;
-- (id)service;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setResponseCertificate:(id)arg1;
 - (id)authenticationInfo;
 - (id)csr;
@@ -55,9 +45,19 @@
 - (BOOL)wantsCompressedBody;
 - (id)requiredKeys;
 - (BOOL)wantsBinaryPush;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (int)command;
+- (void)setProtocolVersion:(id)arg1;
+- (id)protocolVersion;
 - (id)bagKey;
+- (id)service;
+- (id)URIs;
+- (id)responseCertificate;
+- (void)setURIs:(id)arg1;
+- (void)setAuthenticationInfo:(id)arg1;
+- (void)setUserID:(id)arg1;
+- (void)setCsr:(id)arg1;
+- (void)setRealm:(id)arg1;
+- (id)responseBindings;
+- (id)userID;
 
 @end

@@ -22,7 +22,6 @@
 
 @property int senderPID;
 
-+ (id)sharedManager;
 + (void)_setPathsRestrictionsFilePath:(id)arg1 defaultRestrictionsFilePath:(id)arg2 clientTypeLoadersFilePath:(id)arg3 profileRestrictionsFilePath:(id)arg4 clientRestrictionsFilePath:(id)arg5 userSettingsFilePath:(id)arg6 effectiveUserSettingsFilePath:(id)arg7;
 + (id)filterRestrictionDictionaryForPublicUse:(id)arg1;
 + (id)defaultParametersForBoolSetting:(id)arg1;
@@ -42,10 +41,10 @@
 + (id)valueForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
 + (BOOL)restrictedBool:(id)arg1 changedBetweenOldRestrictions:(id)arg2 andNewRestrictions:(id)arg3;
 + (BOOL)restrictedValue:(id)arg1 changedBetweenOldRestrictions:(id)arg2 andNewRestrictions:(id)arg3;
++ (id)sharedManager;
 
-- (void)invalidateSettings;
-- (void)invalidateRestrictions;
-- (id)_init;
+- (id)description;
+- (void)dealloc;
 - (id)defaultRestrictionsDictionary;
 - (BOOL)setProfileRestrictions:(id)arg1 outRestrictionsChanged:(BOOL*)arg2 outEffectiveSettingsChanged:(BOOL*)arg3 outRecomputedNag:(BOOL*)arg4 outError:(id*)arg5;
 - (id)clientRestrictionsForClientUUID:(id)arg1;
@@ -59,7 +58,7 @@
 - (int)restrictedBoolForFeature:(id)arg1;
 - (id)objectForFeature:(id)arg1;
 - (id)userSettings;
-- (BOOL)setParametersForSettingsByType:(id)arg1;
+- (void)setBoolValue:(BOOL)arg1 forSetting:(id)arg2;
 - (int)effectiveRestrictedBoolForSetting:(id)arg1;
 - (BOOL)isBoolSettingLockedDownByRestrictions:(id)arg1;
 - (BOOL)isValueSettingLockedDownByRestrictions:(id)arg1;
@@ -86,6 +85,7 @@
 - (id)combinedProfileRestrictions;
 - (id)clientRestrictions;
 - (id)_userSettings;
+- (BOOL)setParametersForSettingsByType:(id)arg1;
 - (BOOL)_setEffectiveUserSettings:(id)arg1;
 - (BOOL)_setUserSettings:(id)arg1;
 - (id)effectiveUserSettings;
@@ -96,10 +96,11 @@
 - (void)notifyClientsToRecomputeCompliance;
 - (id)currentRestrictionsDictionary;
 - (id)valueForFeature:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (void)invalidateRestrictions;
+- (void)invalidateSettings;
+- (id)_init;
+- (id)effectiveValueForSetting:(id)arg1;
 - (void)setUserInfo:(id)arg1 forClientUUID:(id)arg2;
 - (id)userInfoForClientUUID:(id)arg1;
-- (id)effectiveValueForSetting:(id)arg1;
 
 @end

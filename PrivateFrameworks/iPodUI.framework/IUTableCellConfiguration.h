@@ -56,12 +56,30 @@
 + (float)rowHeightForGlobalContext:(id)arg1;
 + (id)backgroundColorWithModifiers:(unsigned int)arg1;
 
+- (void)dealloc;
 - (id)mediaItem;
 - (struct CGSize { float x1; float x2; })backgroundSize;
 - (struct CGSize { float x1; float x2; })layoutSize;
 - (void)setNeedsDisplay:(BOOL)arg1;
 - (BOOL)needsDisplay;
 - (void)reloadData;
+- (BOOL)isDownloadable;
+- (void)setIsDeleteConfirmationVisible:(BOOL)arg1;
+- (BOOL)isDeleteConfirmationVisible;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForImageAtIndex:(unsigned int)arg1;
+- (id)imageAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (unsigned int)numberOfImages;
+- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (BOOL)getShadowColor:(id*)arg1 offset:(struct CGSize { float x1; float x2; }*)arg2 forLabelAtIndex:(unsigned int)arg3 withModifiers:(unsigned int)arg4;
+- (int)textAlignmentForLabelAtIndex:(unsigned int)arg1;
+- (id)fontForLabelAtIndex:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForLabelAtIndex:(unsigned int)arg1;
+- (id)stringForLabelAtIndex:(unsigned int)arg1;
+- (unsigned int)numberOfLabels;
+- (void)drawWithModifiers:(unsigned int)arg1;
+- (void)drawBackgroundWithModifiers:(unsigned int)arg1;
+- (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)globalContext;
 - (void)setIsNowPlaying:(BOOL)arg1;
 - (void)setSelectionEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDownloadable:(BOOL)arg1;
@@ -87,23 +105,5 @@
 - (void)invalidateDynamicTrackCaches;
 - (id)untruncationCalloutString;
 - (id)backgroundColorWithModifiers:(unsigned int)arg1;
-- (void)dealloc;
-- (BOOL)isDownloadable;
-- (void)setIsDeleteConfirmationVisible:(BOOL)arg1;
-- (BOOL)isDeleteConfirmationVisible;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForImageAtIndex:(unsigned int)arg1;
-- (id)imageAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
-- (unsigned int)numberOfImages;
-- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
-- (BOOL)getShadowColor:(id*)arg1 offset:(struct CGSize { float x1; float x2; }*)arg2 forLabelAtIndex:(unsigned int)arg3 withModifiers:(unsigned int)arg4;
-- (int)textAlignmentForLabelAtIndex:(unsigned int)arg1;
-- (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForLabelAtIndex:(unsigned int)arg1;
-- (id)stringForLabelAtIndex:(unsigned int)arg1;
-- (unsigned int)numberOfLabels;
-- (void)drawWithModifiers:(unsigned int)arg1;
-- (void)drawBackgroundWithModifiers:(unsigned int)arg1;
-- (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)globalContext;
 
 @end

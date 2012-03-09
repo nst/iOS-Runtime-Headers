@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, NSString, PFUbiquityPeer;
+@class PFUbiquityPeer, NSString, PFUbiquityStoreMetadata, NSNumber;
 
 @interface PFUbiquityPeerRange : NSManagedObject  {
 }
 
+@property(retain) PFUbiquityStoreMetadata * storeMetadata;
 @property(retain) PFUbiquityPeer * peer;
 @property(retain) NSNumber * start;
 @property(retain) NSString * peerEntityName;
@@ -14,13 +15,12 @@
 @property(retain) NSNumber * end;
 @property(retain) NSNumber * peerStart;
 
-+ (id)peerRangesForEntityName:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)fakeManagedObjectURIForStoreMetadata:(id)arg1 entityName:(id)arg2 andPrimaryKey:(id)arg3;
 + (id)createArrayOfRangesForAllUnmappedObjectsInStoreWithStoreMetadata:(id)arg1 withLocalPeerID:(id)arg2;
-+ (id)peerRangeForLocalPrimaryKey:(unsigned int)arg1 andEntityName:(id)arg2 inManagedObjectContext:(id)arg3;
++ (id)peerRangeForLocalPrimaryKey:(unsigned int)arg1 inStoreNamed:(id)arg2 andEntityName:(id)arg3 inManagedObjectContext:(id)arg4;
 
+- (void)loadFromStoreMetadataDictionary:(id)arg1;
 - (void)loadFromBaselineDictionary:(id)arg1;
 - (id)createBaselineDictionary;
-- (void)loadFromStoreMetadataDictionary:(id)arg1;
 
 @end

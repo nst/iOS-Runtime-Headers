@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (BOOL)isTableSchemaEqual:(id)arg1;
 - (void)_setCorrelationTableName:(id)arg1;
 - (void)_setOrderColumnName:(id)arg1;
@@ -27,6 +28,5 @@
 - (id)inverseColumnName;
 - (id)inverseOrderColumnName;
 - (id)orderColumnName;
-- (void)dealloc;
 
 @end

@@ -29,14 +29,14 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setDisplayName:(id)arg1;
-- (id)displayName;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (void)dealloc;
+- (void)setDisplayName:(id)arg1;
+- (id)displayName;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setRenameOnCollision:(BOOL)arg1;
 - (BOOL)renameOnCollision;
 - (int)localID;

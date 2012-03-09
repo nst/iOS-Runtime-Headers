@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIImageView, UILabel, IUCircleProgressView, CALayer, IUStaticReflectionTitleView;
+@class UIImageView, UILabel, IUCircleProgressView, IUBlurredStaticReflectionTitleView, CALayer, IUStaticReflectionTitleView;
 
 @interface IUStaticReflectionImageView : IUGridImageView  {
     CALayer *_dimmerLayer;
@@ -28,7 +28,8 @@
     UIImageView *_reflectionView;
     float _reflectionDistance;
     UIImageView *_shineImageView;
-    IUStaticReflectionTitleView *_titleBlurView;
+    IUBlurredStaticReflectionTitleView *_titleShadowView;
+    IUBlurredStaticReflectionTitleView *_titleReflectionView;
     int _titleStyle;
     IUStaticReflectionTitleView *_titleView;
 }
@@ -41,6 +42,7 @@
 @property(getter=isEmbossedProgressIndicatorVisible) BOOL embossedProgressIndicatorVisible;
 
 
+- (void)dealloc;
 - (float)progress;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
@@ -51,11 +53,12 @@
 - (void)layoutSubviews;
 - (void)setOpaque:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isDownloadable;
 - (BOOL)isEmbossedProgressIndicatorVisible;
 - (float)reflectionDistance;
 - (BOOL)reflectionHidden;
 - (void)_removeTitleViews;
-- (void)_createTitleViews;
+- (void)_createTitleViews:(id)arg1;
 - (void)setReflectionHidden:(BOOL)arg1;
 - (void)setEmbossedProgressIndicatorVisible:(BOOL)arg1;
 - (void)setReflectionDistance:(float)arg1;
@@ -65,7 +68,5 @@
 - (void)setTitleStyle:(int)arg1;
 - (int)titleStyle;
 - (void)setDownloadable:(BOOL)arg1;
-- (void)dealloc;
-- (BOOL)isDownloadable;
 
 @end

@@ -15,6 +15,11 @@
 }
 
 
+- (void)setTarget:(id)arg1;
+- (id)userInfo;
+- (id)target;
+- (void)cancel;
+- (void)dealloc;
 - (double)delay;
 - (BOOL)scheduled;
 - (void)touch;
@@ -23,10 +28,5 @@
 - (void)timerFired:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3 delay:(double)arg4 mode:(id)arg5;
 - (void)touchWithDelay:(double)arg1;
-- (void)setTarget:(id)arg1;
-- (id)userInfo;
-- (id)target;
-- (void)cancel;
-- (void)dealloc;
 
 @end

@@ -12,6 +12,10 @@
 }
 
 
+- (int)parseData:(id)arg1;
+- (void)dealloc;
+- (void)loadRequest:(id)arg1;
+- (void)clearDelegate;
 - (void)requestSuggestionsWithDelegate:(id)arg1 query:(id)arg2;
 - (id)_suggestionsURLForQuery:(id)arg1;
 - (void)_didAuthenticate:(id)arg1;
@@ -19,9 +23,5 @@
 - (void)_listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
-- (int)parseData:(id)arg1;
-- (void)loadRequest:(id)arg1;
-- (void)clearDelegate;
-- (void)dealloc;
 
 @end

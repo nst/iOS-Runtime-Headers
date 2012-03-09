@@ -19,13 +19,13 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)startAnimating;
 - (void)finishedScalingDown;
 - (id)_createLockBoundsAnimation;
 - (void)animateScaleDown;
 - (void)animateLock;
 - (void)focusDidEnd;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -27,10 +27,8 @@
 @property BOOL isSyncComplete;
 
 
-- (void)setCreationDate:(id)arg1;
-- (void)setLocation:(id)arg1;
-- (id)location;
-- (id)creationDate;
+- (id)description;
+- (void)dealloc;
 - (id)facesInfo;
 - (void)setIsSyncComplete:(BOOL)arg1;
 - (void)setIsVideo:(BOOL)arg1;
@@ -38,17 +36,19 @@
 - (void)setAlbumURIs:(id)arg1;
 - (void)setOriginalAssetURL:(id)arg1;
 - (id)serializedData;
+- (id)initFromSerializedData:(id)arg1;
 - (id)albumURIs;
 - (void)processFacesWithBlock:(id)arg1;
 - (id)sortToken;
 - (id)originalAssetURL;
 - (BOOL)isSyncComplete;
 - (void)setSortToken:(id)arg1;
-- (id)initFromSerializedData:(id)arg1;
 - (void)setUuid:(id)arg1;
+- (void)setCreationDate:(id)arg1;
+- (id)creationDate;
+- (id)location;
+- (void)setLocation:(id)arg1;
 - (id)uuid;
-- (id)description;
-- (void)dealloc;
 - (BOOL)isVideo;
 
 @end

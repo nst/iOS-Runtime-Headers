@@ -23,11 +23,10 @@
 @property(readonly) UIView<UITextSelectingContainer> * viewAsContainer;
 
 
-- (void)commit;
+- (void)dealloc;
 - (BOOL)pointAtStartOfLine:(struct CGPoint { float x1; float x2; })arg1;
 - (unsigned int)offsetInMarkedText;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })closestCaretRectForPoint:(struct CGPoint { float x1; float x2; })arg1 inSelection:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectAtEndOfDocument;
 - (id)initialExtent;
 - (id)viewAsContainer;
 - (void)setInitialExtent:(id)arg1;
@@ -54,6 +53,8 @@
 - (void)setRangedSelectionBaseToCurrentSelection;
 - (void)setGranularity:(int)arg1;
 - (void)alterSelection:(struct CGPoint { float x1; float x2; })arg1 granularity:(int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectAtBeginOfDocument;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectAtEndOfDocument;
 - (int)granularity;
 - (BOOL)hasEditableSelection;
 - (id)wordContainingCaretSelection;
@@ -65,6 +66,6 @@
 - (id)selectedText;
 - (void)selectionChanged;
 - (void)clearSelection;
-- (void)dealloc;
+- (void)commit;
 
 @end

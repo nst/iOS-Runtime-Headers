@@ -22,8 +22,8 @@
 - (void)stopMonitoringAllFolders;
 - (void)stopMonitoringFoldersForUpdates:(id)arg1;
 - (int)performResolveRecipientsRequest:(id)arg1 consumer:(id)arg2;
-- (id)initWithProperties:(id)arg1;
 - (void)dealloc;
+- (id)initWithProperties:(id)arg1;
 - (void)resolveRecipientsTask:(id)arg1 completedWithStatus:(int)arg2 error:(id)arg3 queriedEmailAddressToRecpient:(id)arg4;
 - (void)_sync:(id)arg1 withConsumer:(id)arg2;
 - (id)_copySetFlagsActionForRequest:(id)arg1;

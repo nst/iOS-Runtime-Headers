@@ -113,11 +113,11 @@
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
 - (BOOL)shouldCancel;
-- (BOOL)isBusy;
-- (void)commit;
 - (void)setThreadPriority:(int)arg1;
 - (int)threadPriority;
-- (id)initWithPath:(id)arg1;
 - (void)dealloc;
+- (BOOL)isBusy;
+- (id)initWithPath:(id)arg1;
+- (void)commit;
 
 @end

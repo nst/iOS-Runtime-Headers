@@ -20,22 +20,22 @@
 
 + (BOOL)matchOutcomeIsValidForDoneState:(int)arg1;
 
-- (BOOL)isWinner;
-- (id)basicMatchOutcomeString;
-- (id)matchOutcomeString;
-- (void)setStatus:(int)arg1;
-- (id)internal;
-- (id)initWithInternalRepresentation:(id)arg1;
-- (void)setInternal:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (id)valueForUndefinedKey:(id)arg1;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (int)status;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (BOOL)isWinner;
+- (id)basicMatchOutcomeString;
+- (id)matchOutcomeString;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (id)internal;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

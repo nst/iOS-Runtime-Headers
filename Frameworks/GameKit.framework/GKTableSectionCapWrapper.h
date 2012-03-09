@@ -18,6 +18,10 @@
 @property(getter=isLoading) BOOL loading;
 
 
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)setItemSection:(id)arg1;
 - (void)tableView:(id)arg1 showMoreInSection:(int)arg2;
 - (SEL)didShowMoreAction;
@@ -40,9 +44,5 @@
 - (void)setShowMoreItemCount:(int)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

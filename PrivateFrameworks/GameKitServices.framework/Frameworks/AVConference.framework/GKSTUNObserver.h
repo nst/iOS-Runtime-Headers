@@ -5,8 +5,8 @@
 @interface GKSTUNObserver : NSObject  {
 }
 
-+ (id)sharedSTUNObserver;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)sharedSTUNObserver;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

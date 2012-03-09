@@ -20,8 +20,7 @@
 }
 
 
-- (id)_titleView;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)dealloc;
 - (void)layoutForWidth:(float)arg1;
 - (void)setEditButtonVisibility:(BOOL)arg1;
 - (id)editButton;
@@ -33,6 +32,7 @@
 - (id)initWithEvent:(id)arg1 color:(id)arg2 style:(int)arg3;
 - (BOOL)setEvent:(id)arg1 color:(id)arg2;
 - (id)_locationView;
-- (void)dealloc;
+- (id)_titleView;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

@@ -10,6 +10,10 @@
     double m_lastProgressReport;
 }
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)setMessage:(id)arg1;
++ (void)reset;
++ (void)setProgress:(double)arg1;
 + (void)createStageWithSteps:(double)arg1;
 + (void)nextSubStageWillTakeThisManyOfMySteps:(double)arg1;
 + (id)sharedContext;
@@ -22,20 +26,16 @@
 + (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2;
 + (void)endStage;
 + (void)advanceProgress:(double)arg1;
-+ (void)setMessage:(id)arg1;
-+ (void)reset;
-+ (void)setProgress:(double)arg1;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id)currentStage;
-- (void)reportProgress:(double)arg1;
-- (void)_reset;
 - (unsigned int)retainCount;
 - (id)retain;
+- (void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)autorelease;
 - (id)init;
-- (void)release;
 - (void)dealloc;
+- (void)_reset;
+- (id)currentStage;
+- (void)reportProgress:(double)arg1;
 
 @end

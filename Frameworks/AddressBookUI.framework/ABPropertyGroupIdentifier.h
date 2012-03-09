@@ -12,11 +12,11 @@
 
 + (id)propertyGroupIdentifierWithProperty:(int)arg1 context:(void*)arg2;
 
-- (int)property;
-- (void*)context;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithProperty:(int)arg1 context:(void*)arg2;
+- (void*)context;
+- (int)property;
 
 @end

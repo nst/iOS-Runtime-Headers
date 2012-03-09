@@ -24,10 +24,10 @@
 + (id)customElementActionWithTitle:(id)arg1 actionHandler:(id)arg2;
 + (id)standardElementActionWithType:(int)arg1 customTitle:(id)arg2;
 
+- (void)dealloc;
 - (id)initWithTitle:(id)arg1 actionHandler:(id)arg2 type:(int)arg3;
 - (void)_runActionWithElement:(id)arg1 targetURL:(id)arg2 documentView:(id)arg3 interactionLocation:(struct CGPoint { float x1; float x2; })arg4;
 - (int)type;
 - (id)_title;
-- (void)dealloc;
 
 @end

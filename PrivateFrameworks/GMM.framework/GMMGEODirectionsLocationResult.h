@@ -11,8 +11,8 @@
 @property(retain) NSString * queryRefinementToken;
 
 
+- (id)description;
 - (void)setQueryRefinementToken:(id)arg1;
 - (id)queryRefinementToken;
-- (id)description;
 
 @end

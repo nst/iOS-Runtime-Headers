@@ -14,10 +14,10 @@
 @property(readonly) UITextPosition * end;
 
 
-- (id)start;
 - (BOOL)_isCaret;
 - (BOOL)_isRanged;
 - (id)end;
+- (id)start;
 - (BOOL)isEmpty;
 
 @end

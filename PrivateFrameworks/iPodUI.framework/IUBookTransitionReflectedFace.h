@@ -9,9 +9,9 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithImage:(id)arg1 initialSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)addAnimationsForTransition:(id)arg1;
 - (id)initWithView:(id)arg1 initialSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)dealloc;
 
 @end

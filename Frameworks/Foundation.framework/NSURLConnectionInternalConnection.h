@@ -15,7 +15,6 @@
 }
 
 
-- (void)start;
 - (struct _CFURLConnection { }*)_CFURLConnection;
 - (void)cleanupChallenges;
 - (void)sendCFChallenge:(struct _CFURLAuthChallenge { }*)arg1 toSelector:(SEL)arg2;
@@ -25,14 +24,15 @@
 - (id)initWithInfo:(const struct InternalInit { id x1; id x2; id x3; id x4; BOOL x5; long long x6; }*)arg1;
 - (void)_resumeLoading;
 - (void)_suspendLoading;
+- (void)cancel;
+- (void)dealloc;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)_invalidate;
+- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
+- (void)start;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)cancelAuthenticationChallenge:(id)arg1;
-- (void)_invalidate;
-- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)cancel;
-- (void)dealloc;
 
 @end

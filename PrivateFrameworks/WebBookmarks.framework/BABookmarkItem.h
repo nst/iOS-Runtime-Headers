@@ -13,10 +13,10 @@
 @property(readonly) WebBookmarkCollection * collection;
 
 
+- (void)dealloc;
 - (id)initWithBookmarkCollection:(id)arg1 bookmark:(id)arg2;
 - (void)setBookmark:(id)arg1;
-- (id)collection;
 - (id)bookmark;
-- (void)dealloc;
+- (id)collection;
 
 @end

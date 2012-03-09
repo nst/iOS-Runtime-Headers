@@ -5,9 +5,9 @@
 @interface _NSPersistenceUtilities : NSObject  {
 }
 
++ (void)initialize;
 + (BOOL)_setURL:(id)arg1 forPersistentStore:(id)arg2 withCoordinator:(id)arg3;
 + (unsigned int)attributeTypeForXMLInfo:(id)arg1;
-+ (void)initialize;
 
 
 @end

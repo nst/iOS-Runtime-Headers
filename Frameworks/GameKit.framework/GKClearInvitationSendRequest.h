@@ -15,6 +15,7 @@
 @property(retain) NSSet * pushTokens;
 
 
+- (void)dealloc;
 - (void)setPushTokens:(id)arg1;
 - (id)pushTokens;
 - (void)setSessionToken:(id)arg1;
@@ -23,6 +24,5 @@
 - (void)setPlayerID:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

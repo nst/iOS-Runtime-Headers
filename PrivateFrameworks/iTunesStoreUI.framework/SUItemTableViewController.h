@@ -9,10 +9,10 @@
 }
 
 
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)reloadData;
 - (id)init;
 - (void)dealloc;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)reloadData;
 - (void)_promptToOpenUTI:(id)arg1 fromIndexPath:(id)arg2 withCompletionHandler:(id)arg3;
 - (id)_preferredApplicationFromCandidates:(id)arg1;
 - (BOOL)purchaseItemAtIndexPath:(id)arg1;

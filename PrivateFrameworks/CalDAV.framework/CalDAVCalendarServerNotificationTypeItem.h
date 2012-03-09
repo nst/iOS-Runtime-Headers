@@ -15,10 +15,10 @@
 @property(retain) CoreDAVItemWithNoChildren * inviteNotification;
 
 
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)description;
 - (void)dealloc;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setInviteNotification:(id)arg1;
 - (void)setInviteReply:(id)arg1;
 - (BOOL)isInviteReply;

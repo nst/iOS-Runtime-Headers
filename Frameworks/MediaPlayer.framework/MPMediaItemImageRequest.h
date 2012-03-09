@@ -13,6 +13,7 @@
     BOOL _usePlaceholderAsFallback;
     BOOL _crop;
     BOOL _fillToSquareAspectRatio;
+    BOOL _canUseSurfaceBackedImage;
 }
 
 @property(readonly) MPMediaItem * mediaItem;
@@ -21,10 +22,14 @@
 @property BOOL crop;
 @property BOOL fillToSquareAspectRatio;
 @property int placeHolderMediaType;
+@property BOOL canUseSurfaceBackedImage;
 @property int artworkFormat;
 @property(copy) NSString * artworkCacheID;
 
 
+- (void)dealloc;
+- (void)setCanUseSurfaceBackedImage:(BOOL)arg1;
+- (BOOL)canUseSurfaceBackedImage;
 - (void)setPlaceHolderMediaType:(int)arg1;
 - (int)placeHolderMediaType;
 - (BOOL)usePlaceholderAsFallback;
@@ -45,7 +50,6 @@
 - (void)setRetrievalTimeForPlaybackTime:(double)arg1;
 - (id)initWithMediaItem:(id)arg1;
 - (id)mediaItem;
-- (void)dealloc;
 - (id)placeholderImage;
 
 @end

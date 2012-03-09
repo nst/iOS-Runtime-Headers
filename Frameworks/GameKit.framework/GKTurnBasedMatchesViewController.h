@@ -30,6 +30,8 @@
 @property int maxMatchesSeen;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setMaxMatchesSeen:(int)arg1;
 - (int)maxMatchesSeen;
 - (void)setShowExistingMatches:(BOOL)arg1;
@@ -59,7 +61,6 @@
 - (void)cancelButtonPressed;
 - (id)matchRequest;
 - (void)setMatchRequest:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidUnload;
@@ -68,7 +69,6 @@
 - (id)title;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)delegate;
-- (id)description;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

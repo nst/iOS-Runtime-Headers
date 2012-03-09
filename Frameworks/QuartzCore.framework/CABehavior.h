@@ -21,19 +21,24 @@
 @property id delegate;
 @property(copy) NSDictionary * style;
 
-+ (id)defaultValueForKey:(id)arg1;
-+ (id)behavior;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
++ (id)defaultValueForKey:(id)arg1;
 + (int (*)())CA_setterForType:(int)arg1;
 + (int (*)())CA_getterForType:(int)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)behavior;
 
-- (id)valueForKey:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (id)valueForUndefinedKey:(id)arg1;
+- (void)setName:(id)arg1;
+- (unsigned int)retainCount;
+- (id)debugDescription;
+- (id)retain;
+- (void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)_setCARenderBehavior:(struct Behavior { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct String {} *x4; unsigned int x5; unsigned int x6; unsigned int x7 : 8; unsigned int x8 : 8; struct Behavior {} *x9; }*)arg1;
+- (BOOL)shouldArchiveValueForKey:(id)arg1;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
 - (id)style;
@@ -43,18 +48,13 @@
 - (id)name;
 - (BOOL)isEnabled;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
+- (id)valueForKey:(id)arg1;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setName:(id)arg1;
-- (unsigned int)retainCount;
-- (id)debugDescription;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)release;
-- (void)dealloc;
-- (void)_setCARenderBehavior:(struct Behavior { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct String {} *x4; unsigned int x5; unsigned int x6; unsigned int x7 : 8; unsigned int x8 : 8; struct Behavior {} *x9; }*)arg1;
-- (BOOL)shouldArchiveValueForKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

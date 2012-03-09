@@ -8,14 +8,14 @@
 
 + (id)assertion;
 
-- (void)_applicationDidBecomeActive:(id)arg1;
-- (void)_applicationWillResignActive:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)_setupHeartBeatForConnection:(struct _xpc_connection_s { }*)arg1;
 - (void)_tearDownConnection;
 - (void)_unregisterForAppActiveNotifications;
 - (void)_setupConnection;
 - (void)_registerForAppActiveNotifications;
-- (id)init;
-- (void)dealloc;
+- (void)_applicationDidBecomeActive:(id)arg1;
+- (void)_applicationWillResignActive:(id)arg1;
 
 @end

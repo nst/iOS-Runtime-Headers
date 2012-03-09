@@ -105,7 +105,7 @@
 + (struct CGSize { float x1; float x2; })minimumSize;
 + (id)_popupAlertBackground;
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)showFromBarButtonItem:(id)arg1;
 - (void)showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (void)showFromTabBar:(id)arg1;
@@ -293,9 +293,10 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)setTitle:(id)arg1;
+- (void)removeFromSuperview;
+- (void)setDelegate:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (void)showFromObject:(id)arg1 animated:(BOOL)arg2;
 - (int)addButtonWithTitle:(id)arg1 tag:(id)arg2;
 - (id)tagForButtonIndex:(int)arg1;

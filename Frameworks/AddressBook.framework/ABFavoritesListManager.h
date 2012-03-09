@@ -16,12 +16,14 @@
     } _flags;
 }
 
-+ (id)sharedInstanceWithAddressBook:(void*)arg1;
 + (id)sharedInstance;
++ (id)sharedInstanceWithAddressBook:(void*)arg1;
 
+- (void)save;
+- (void)dealloc;
+- (id)entries;
 - (id)initWithAddressBook:(void*)arg1;
 - (void)_postChangeNotification;
-- (id)entries;
 - (id)entryFromEntries:(id)arg1 type:(int)arg2 property:(int)arg3 value:(id)arg4 label:(id)arg5;
 - (BOOL)containsEntryWithIdentifier:(int)arg1 forPerson:(void*)arg2;
 - (BOOL)containsEntryWithType:(int)arg1 forPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
@@ -48,7 +50,5 @@
 - (void)_delayedLookup;
 - (void)_listChangedExternally;
 - (BOOL)entryIsDuplicateAndThusRemoved:(id)arg1 oldUid:(int)arg2;
-- (void)save;
-- (void)dealloc;
 
 @end

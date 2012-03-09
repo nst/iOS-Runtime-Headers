@@ -34,7 +34,8 @@
 @property(retain) UIImage * selectedMoreListImage;
 
 
-- (BOOL)isTransient;
+- (id)description;
+- (void)dealloc;
 - (id)url;
 - (void)setSelectedImage:(id)arg1;
 - (id)valueForProperty:(id)arg1;
@@ -45,8 +46,6 @@
 - (id)image;
 - (id)title;
 - (void)setImage:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (void)setSelectedMoreListImage:(id)arg1;
 - (id)searchFieldConfiguration;
 - (void)setMoreListImage:(id)arg1;
@@ -65,5 +64,6 @@
 - (BOOL)isLocationSection;
 - (id)partnerHeader;
 - (BOOL)isDefaultSection;
+- (BOOL)isTransient;
 
 @end

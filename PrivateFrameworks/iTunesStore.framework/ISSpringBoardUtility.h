@@ -14,6 +14,8 @@
 
 + (id)sharedInstance;
 
+- (id)init;
+- (void)dealloc;
 - (struct SBSProcessAssertion { }*)takeProcessAssertionWithIdentifier:(id)arg1 displayIdentifier:(id)arg2 launchOptions:(id)arg3;
 - (void)releaseProcessAssertion:(struct SBSProcessAssertion { }*)arg1;
 - (void)suspendFrontApplication;
@@ -25,7 +27,5 @@
 - (void)cancelDownloadingIconForPurchase:(id)arg1;
 - (void)addDownloadingIconWithIdentifier:(id)arg1 bundleIdentifier:(id)arg2 softwareType:(id)arg3;
 - (void)cancelDownloadingIconForIdentifier:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

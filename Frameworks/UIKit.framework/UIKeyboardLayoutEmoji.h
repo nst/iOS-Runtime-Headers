@@ -57,14 +57,14 @@
 + (BOOL)isLandscape;
 + (id)emojiLayout;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })categoryFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deleteFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })globeFrame;
-- (id)emojiForPrivateCodePoint:(id)arg1;
 - (void)emojiSelected:(id)arg1;
 - (void)setKeyboardDefault;
 - (id)recents;
+- (id)emojiWithString:(id)arg1;
 - (void)handleFrameChangeNotification:(id)arg1;
 - (id)defaultsDictionary;
 - (void)categoryChangedNoSounds;
@@ -78,12 +78,12 @@
 - (BOOL)setDefaultsDictionary:(id)arg1;
 - (SEL)handlerForNotification:(id)arg1;
 - (void)showKeyboardType:(int)arg1 withAppearance:(int)arg2;
-- (void)clearUnusedObjects;
 - (BOOL)shouldShowIndicator;
 - (void)deactivateActiveKeys;
+- (void)clearUnusedObjects;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

@@ -15,16 +15,23 @@
     NSMutableDictionary *_hrefToETag;
     NSMutableDictionary *_uuidToErrorItems;
     NSMutableDictionary *_hrefToErrorItems;
+    NSMutableDictionary *_uuidToStatus;
+    NSMutableDictionary *_hrefToStatus;
 }
 
 @property(readonly) NSString * nextCTag;
 @property(readonly) NSDictionary * uuidToHREF;
 @property(readonly) NSDictionary * hrefToETag;
+@property(readonly) NSDictionary * uuidToStatus;
+@property(readonly) NSDictionary * hrefToStatus;
 @property(readonly) NSDictionary * uuidToErrorItems;
 @property(readonly) NSDictionary * hrefToErrorItems;
 
 
+- (void)dealloc;
 - (void)fillOutDataWithUUIDsToAddActions:(id)arg1 hrefsToModDeleteActions:(id)arg2;
+- (id)hrefToStatus;
+- (id)uuidToStatus;
 - (id)hrefToErrorItems;
 - (id)uuidToErrorItems;
 - (id)hrefToETag;
@@ -34,7 +41,6 @@
 - (id)nextCTag;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (void)dealloc;
 - (id)httpMethod;
 - (id)requestBody;
 

@@ -16,8 +16,8 @@
 @property(retain) NSString * path;
 
 
-- (id)path;
-- (void)finalize;
+- (id)description;
+- (void)dealloc;
 - (unsigned long)objHandle;
 - (id)itemForObjectHandle:(unsigned long)arg1;
 - (id)folderForObjectHandle:(unsigned long)arg1;
@@ -29,10 +29,10 @@
 - (void)enumerateContent;
 - (BOOL)deleteItemFromCamera:(id)arg1;
 - (void)setPath:(id)arg1;
+- (void)finalize;
 - (unsigned int)type;
 - (id)info;
 - (void)setInfo:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (id)path;
 
 @end

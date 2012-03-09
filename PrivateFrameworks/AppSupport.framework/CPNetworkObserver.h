@@ -20,6 +20,9 @@
 
 + (id)sharedNetworkObserver;
 
+- (void)removeObserver:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isWiFiEnabled;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 forHostname:(id)arg3;
 - (void)_networkReachableCallBack:(unsigned int)arg1;
@@ -29,13 +32,10 @@
 - (void)_networkObserversInitialize;
 - (void)_wifiFirstCallBack:(id)arg1;
 - (void)_wifiObserversInitialize;
+- (void)removeWiFiObserver:(id)arg1;
+- (void)addWiFiObserver:(id)arg1 selector:(SEL)arg2;
 - (void)removeNetworkReachableObserver:(id)arg1;
 - (void)addNetworkReachableObserver:(id)arg1 selector:(SEL)arg2;
 - (BOOL)isNetworkReachable;
-- (void)addWiFiObserver:(id)arg1 selector:(SEL)arg2;
-- (void)removeWiFiObserver:(id)arg1;
-- (void)removeObserver:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

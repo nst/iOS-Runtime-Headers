@@ -20,6 +20,7 @@
 }
 
 
+- (id)init;
 - (void)addModifiedPinyinToArray:(id)arg1 connection:(struct _PR_DB_IO { unsigned char x1; unsigned char x2; struct _PR_DOC_FORMAT { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned char x_3_1_6; unsigned short x_3_1_7; unsigned short x_3_1_8; } x3; unsigned short x4; unsigned short x5; unsigned long *x6; unsigned char x7; short x8; short x9; short x10; short x11; unsigned short x12; struct _PR_DBINIT { struct _PR_FILE {} *x_13_1_1[1]; struct _PR_FILE {} *x_13_1_2; struct _PR_FILE {} *x_13_1_3; struct _PR_FILE {} *x_13_1_4; struct _PR_FILE {} *x_13_1_5; struct _PR_FILE {} *x_13_1_6; struct _PR_FILE {} *x_13_1_7; } x13; struct _RULEFILE {} *x14[1]; struct _PR_STATUS { unsigned int x_15_1_1; int x_15_1_2; unsigned short x_15_1_3; } x15; }*)arg2 fromIndex:(unsigned int)arg3 startingModificationsAt:(unsigned int)arg4 inBuffer:(char *)arg5 length:(unsigned int)arg6 initialSyllableCount:(unsigned int)arg7 initialScore:(unsigned int)arg8 lastSyllableScore:(unsigned int)arg9;
 - (id)spellServer:(id)arg1 _retainedAlternativesForPinyinInputString:(id)arg2;
 - (id)_japaneseCorrectionForString:(id)arg1 connection:(struct _PR_DB_IO { unsigned char x1; unsigned char x2; struct _PR_DOC_FORMAT { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned char x_3_1_6; unsigned short x_3_1_7; unsigned short x_3_1_8; } x3; unsigned short x4; unsigned short x5; unsigned long *x6; unsigned char x7; short x8; short x9; short x10; short x11; unsigned short x12; struct _PR_DBINIT { struct _PR_FILE {} *x_13_1_1[1]; struct _PR_FILE {} *x_13_1_2; struct _PR_FILE {} *x_13_1_3; struct _PR_FILE {} *x_13_1_4; struct _PR_FILE {} *x_13_1_5; struct _PR_FILE {} *x_13_1_6; struct _PR_FILE {} *x_13_1_7; } x13; struct _RULEFILE {} *x14[1]; struct _PR_STATUS { unsigned int x_15_1_1; int x_15_1_2; unsigned short x_15_1_3; } x15; }*)arg2;
@@ -70,6 +71,5 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })spellServer:(id)arg1 findMisspelledWordInString:(id)arg2 language:(id)arg3 wordCount:(int*)arg4 countOnly:(BOOL)arg5 correction:(id*)arg6;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })spellServer:(id)arg1 checkGrammarInString:(id)arg2 language:(id)arg3 details:(id*)arg4;
 - (id)bundle;
-- (id)init;
 
 @end

@@ -18,12 +18,7 @@
 + (BOOL)_attachmentIsViewable:(id)arg1;
 + (id)cellControllersForAttachments:(id)arg1 givenExistingControllers:(id)arg2;
 
-- (void)setDelegate:(id)arg1;
-- (id)documentInteractionControllerViewForPreview:(id)arg1;
-- (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
-- (id)cell;
-- (void)tearDown;
-- (id)delegate;
+- (void)dealloc;
 - (void)_presentPreviewOnMainThreadWithInfo:(id)arg1;
 - (id)_downloadProgressStringWithDownloadedBytes:(id)arg1 outOfTotalBytes:(id)arg2;
 - (void)_presentPreviewWithURL:(id)arg1 filename:(id)arg2;
@@ -31,6 +26,11 @@
 - (id)attachment;
 - (void)setAttachment:(id)arg1;
 - (void)cellSelected;
-- (void)dealloc;
+- (id)documentInteractionControllerViewForPreview:(id)arg1;
+- (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
+- (id)cell;
+- (void)tearDown;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

@@ -41,6 +41,7 @@
 @property float previousBottomContentInset;
 
 
+- (void)dealloc;
 - (void)setBottomShadowView:(id)arg1;
 - (void)setShouldDelayTableReloadForDeselectAnimation:(BOOL)arg1;
 - (void)removeTouchCaptureOverlayView;
@@ -104,6 +105,5 @@
 - (void)viewDidLayoutSubviews;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
 
 @end

@@ -51,6 +51,7 @@
 + (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 + (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
+- (void)dealloc;
 - (void)autoFillWithElementValue;
 - (BOOL)currentTextChangeIsProgrammatic;
 - (void)sourceFieldTextDidEndEditing;
@@ -75,6 +76,5 @@
 - (struct { id x1; unsigned int x2; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
 - (void)acceptedAutoFillWord:(id)arg1;
 - (id)webFrame;
-- (void)dealloc;
 
 @end

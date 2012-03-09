@@ -25,6 +25,8 @@
 + (void)releaseSyncInProgressFileLock;
 + (BOOL)takeSyncInProgressFileLock:(BOOL)arg1;
 
+- (void)dealloc;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)setUploadCount:(int)arg1;
 - (int)uploadCount;
 - (void)setShouldMoveFilesToSynchedDirectoryWhenDone:(BOOL)arg1;
@@ -46,7 +48,5 @@
 - (void)connection:(id)arg1 didReplaceOldPINWithNewPIN:(id)arg2;
 - (void)connection:(id)arg1 didConfirmEmail:(id)arg2 screenName:(id)arg3;
 - (void)connection:(id)arg1 didGeneratePIN:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)dealloc;
 
 @end

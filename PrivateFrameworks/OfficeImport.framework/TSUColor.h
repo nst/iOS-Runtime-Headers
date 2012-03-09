@@ -8,9 +8,6 @@
 
 @property(readonly) struct CGColor { }* CGColor;
 
-+ (id)randomColor;
-+ (id)colorWithCalibratedHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
-+ (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (id)colorWithCGColor:(struct CGColor { }*)arg1;
 + (id)colorWithWhite:(float)arg1 alpha:(float)arg2;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
@@ -28,7 +25,23 @@
 + (id)grayColor;
 + (id)whiteColor;
 + (id)blackColor;
++ (id)randomColor;
++ (id)colorWithCalibratedHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
++ (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copy;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (float)alphaComponent;
+- (id)initWithCGColor:(struct CGColor { }*)arg1;
+- (id)colorWithAlphaComponent:(float)arg1;
+- (id)initWithWhite:(float)arg1 alpha:(float)arg2;
+- (BOOL)isOpaque;
+- (struct CGColor { }*)CGColor;
+- (void)set;
+- (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (id)grayscaleColor;
 - (id)invertedColor;
 - (float)luminance;
@@ -39,18 +52,5 @@
 - (float)redComponent;
 - (float)greenComponent;
 - (float)blueComponent;
-- (float)alphaComponent;
-- (id)initWithCGColor:(struct CGColor { }*)arg1;
-- (id)colorWithAlphaComponent:(float)arg1;
-- (id)initWithWhite:(float)arg1 alpha:(float)arg2;
-- (BOOL)isOpaque;
-- (struct CGColor { }*)CGColor;
-- (void)set;
-- (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)copy;
 
 @end

@@ -19,14 +19,14 @@
 @property unsigned int _mapkit_cache_accessTime;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)filePath;
 - (id)object;
 - (void)set_mapkit_cache_accessTime:(unsigned int)arg1;
 - (unsigned int)_mapkit_cache_accessTime;
 - (id)_mapkit_cache_key;
 - (BOOL)canPurge;
 - (id)initWithFilePath:(id)arg1 key:(id)arg2 canPurge:(BOOL)arg3;
-- (id)description;
-- (void)dealloc;
-- (id)filePath;
 
 @end

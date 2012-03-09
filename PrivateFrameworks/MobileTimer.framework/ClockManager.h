@@ -5,12 +5,15 @@
 @class NSArray;
 
 @interface ClockManager : NSObject  {
+    BOOL _performingUpgrade;
     NSArray *_scheduledLocalNotifications;
     BOOL runningInSpringBoard;
+    BOOL runningInAssistantPlugin;
     BOOL ignoringNotificationPostRequests;
 }
 
 @property(getter=isIgnoringNotificationPostRequests) BOOL ignoringNotificationPostRequests;
+@property(getter=isRunningInAssistantPlugin) BOOL runningInAssistantPlugin;
 @property(getter=isRunningInSpringBoard) BOOL runningInSpringBoard;
 
 + (void)saveAndNotifyForUserPreferences:(BOOL)arg1 localNotifications:(BOOL)arg2;
@@ -19,18 +22,20 @@
 + (void)loadUserPreferences;
 + (id)sharedManager;
 
+- (void)dealloc;
 - (BOOL)upgradeIfNeverAttempted;
 - (void)setIgnoringNotificationPostRequests:(BOOL)arg1;
+- (void)setRunningInAssistantPlugin:(BOOL)arg1;
 - (void)setRunningInSpringBoard:(BOOL)arg1;
 - (void)refreshScheduledLocalNotificationsCache;
 - (BOOL)isIgnoringNotificationPostRequests;
 - (BOOL)isRunningInSpringBoard;
+- (BOOL)isRunningInAssistantPlugin;
 - (BOOL)upgrade;
 - (BOOL)discardOldVersion;
 - (void)postUserPreferencesChangedNotification;
 - (id)scheduledLocalNotificationsCache;
 - (void)cancelLocalNotification:(id)arg1;
 - (void)scheduleLocalNotification:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -17,15 +17,16 @@
 
 
 - (void)setHost:(id)arg1;
-- (void)setPassword:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)_configureEventHandler;
-- (id)delegate;
+- (id)init;
+- (void)dealloc;
 - (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;
+- (void)setPassword:(id)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)getFeaturesWithCompletion:(id)arg1;
 - (void)stopWithOptions:(id)arg1 completion:(id)arg2;
 - (void)startWithOptions:(id)arg1 completion:(id)arg2;
-- (id)init;
-- (void)dealloc;
+- (void)getFeaturesWithOptions:(unsigned int)arg1 completion:(id)arg2;
+- (void)_configureEventHandler;
 
 @end

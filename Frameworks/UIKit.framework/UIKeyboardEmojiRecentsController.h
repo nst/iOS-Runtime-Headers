@@ -12,6 +12,7 @@
 }
 
 
+- (void)dealloc;
 - (void)clearAncientHistory;
 - (BOOL)isAncientSequence:(int)arg1;
 - (double)scoreForEmoji:(id)arg1;
@@ -21,6 +22,5 @@
 - (id)defaultsDictionary;
 - (void)readDefaultsDictionary:(id)arg1;
 - (id)initWithController:(id)arg1;
-- (void)dealloc;
 
 @end

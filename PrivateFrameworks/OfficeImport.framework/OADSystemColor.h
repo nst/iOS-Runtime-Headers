@@ -7,10 +7,10 @@
 }
 
 
-- (id)initWithSystemColorID:(int)arg1;
-- (int)systemColorID;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithSystemColorID:(int)arg1;
+- (int)systemColorID;
 
 @end

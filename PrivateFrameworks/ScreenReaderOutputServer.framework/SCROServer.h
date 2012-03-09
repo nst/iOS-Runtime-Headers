@@ -12,30 +12,30 @@
     struct __CFRunLoopTimer { } *_deathTimer;
     unsigned int _serverPort;
     unsigned int _deathPort;
-    int _clientCount;
+    long _clientCount;
     BOOL _isRegisteredWithMach;
 }
 
-+ (void)initialize;
-+ (id)sharedServer;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)sharedServer;
++ (void)initialize;
 
-- (BOOL)isRegisteredWithMach;
-- (BOOL)registerWithMach;
-- (void)unregisterWithMach;
-- (long)_incrementClientCount;
-- (struct __CFRunLoopTimer { }*)_deathTimer;
-- (int)_registerForNotificationOnDeathPort:(unsigned int)arg1;
-- (void)_setClientCount:(long)arg1;
-- (long)_clientCount;
-- (void)setDelegate:(id)arg1;
-- (struct __CFRunLoopSource { }*)serverSource;
-- (id)delegate;
 - (unsigned int)retainCount;
 - (id)retain;
+- (void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)autorelease;
 - (id)init;
-- (void)release;
+- (struct __CFRunLoopSource { }*)serverSource;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (BOOL)registerWithMach;
+- (BOOL)isRegisteredWithMach;
+- (int)_registerForNotificationOnDeathPort:(unsigned int)arg1;
+- (struct __CFRunLoopTimer { }*)_deathTimer;
+- (void)_setClientCount:(long)arg1;
+- (long)_incrementClientCount;
+- (long)_clientCount;
+- (void)unregisterWithMach;
 
 @end

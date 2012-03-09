@@ -34,20 +34,27 @@
     unsigned long long _debugInode;
 }
 
++ (void)initialize;
 + (void)_setDebugFlags:(int)arg1;
 + (void)__INode_Changed_AllThatIsLeftToUsIsHonor__;
 + (const char *)_databaseOpenURLStringForURL:(id)arg1;
 + (int)readMagicWordFromPath:(const char *)arg1;
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
-+ (void)initialize;
 
+- (void)dealloc;
+- (void)connect;
 - (void)finalize;
+- (void)commitTransaction;
+- (void)disconnect;
+- (void)insertRow:(id)arg1;
+- (void)deleteRow:(id)arg1;
 - (struct sqlite3_stmt { }*)_vmstatement;
 - (void**)_buffersForRegisteredFunctions;
 - (void)_ensureNoStatementPrepared;
 - (void)_ensureNoFetchInProgress;
 - (void)_ensureDatabaseOpen;
+- (long long)_fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (void)_executeSQLString:(id)arg1;
 - (BOOL)performIntegrityCheck;
 - (void)_registerExtraFunctions;
@@ -92,9 +99,17 @@
 - (void)endPrimaryKeyGeneration;
 - (BOOL)hasPrimaryKeyTable;
 - (void)_performPostSaveTasks;
+- (id)fetchUbiqiutyKnowledgeVector;
 - (void)updateUbiquityKnowledgeVector:(id)arg1;
+- (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;
 - (void)addPeerRangeForPeerID:(id)arg1 entityName:(id)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 peerRangeStart:(id)arg5 peerRangeEnd:(id)arg6;
 - (id)allPeerRanges;
+- (id)createMapOfEntityNameToPKMaxForEntitiesFromUBRangeTable:(id)arg1;
+- (id)createMapOfEntityNameToPKMaxForEntitiesFromPKTable:(id)arg1;
+- (id)createMapOfEntityNameToPKMaxForEntities:(id)arg1;
+- (void)setUbiquityTableValue:(id)arg1 forKey:(id)arg2;
+- (id)ubiquityTableKeysAndValues;
+- (id)ubiquityTableValueForKey:(id)arg1;
 - (void)updateRow:(id)arg1;
 - (void)insertCorrelation:(id)arg1;
 - (void)updateCorrelation:(id)arg1;
@@ -112,14 +127,6 @@
 - (void)resetSQLStatement;
 - (void)releaseSQLStatement;
 - (BOOL)isOpen;
-- (id)fetchUbiqiutyKnowledgeVector;
-- (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;
 - (id)_adapter;
-- (void)disconnect;
-- (void)insertRow:(id)arg1;
-- (void)deleteRow:(id)arg1;
-- (void)connect;
-- (void)commitTransaction;
-- (void)dealloc;
 
 @end

@@ -11,7 +11,7 @@
 }
 
 
-- (unsigned long)parameterAtIndex:(unsigned long)arg1;
+- (id)description;
 - (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 dataPhaseInfo:(unsigned long)arg3 numParameters:(unsigned long)arg4 parameters:(unsigned int*)arg5;
 - (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 dataPhaseInfo:(unsigned long)arg3 parameter1:(unsigned long)arg4 parameter2:(unsigned long)arg5 parameter3:(unsigned long)arg6 parameter4:(unsigned long)arg7;
 - (unsigned long)dataPhaseInfo;
@@ -42,6 +42,6 @@
 - (id)contentForTCP;
 - (unsigned long)transactionID;
 - (id)initWithTCPBuffer:(void*)arg1;
-- (id)description;
+- (unsigned long)parameterAtIndex:(unsigned long)arg1;
 
 @end

@@ -17,9 +17,9 @@
 @property(retain) NSMutableDictionary * metadata_hidden;
 
 
-- (BOOL)hasMetadata;
-- (void)finalize;
-- (id)metadata;
+- (id)description;
+- (void)dealloc;
+- (BOOL)hasThumbnail;
 - (void)setFileSize:(long long)arg1;
 - (void)overrideOrientation:(unsigned int)arg1;
 - (BOOL)raw;
@@ -35,18 +35,18 @@
 - (void)setFetchingThumbnail:(BOOL)arg1;
 - (void)setFetchingMetadata:(BOOL)arg1;
 - (void)handleCommandCompletionNotification:(id)arg1;
-- (long long)fileSize;
+- (void)finalize;
 - (void)setOrientation:(unsigned int)arg1;
 - (unsigned int)orientation;
-- (BOOL)hasThumbnail;
+- (long long)fileSize;
+- (struct CGImage { }*)thumbnail;
+- (id)metadata;
+- (BOOL)hasMetadata;
 - (BOOL)isRaw;
 - (void)flushThumbnailCache;
 - (void)flushMetadataCache;
 - (void)requestThumbnail;
 - (void)requestMetadata;
-- (id)description;
-- (void)dealloc;
-- (struct CGImage { }*)thumbnail;
 - (id)fileExtension;
 - (id)parentFolderName;
 - (id)importIdentifier;

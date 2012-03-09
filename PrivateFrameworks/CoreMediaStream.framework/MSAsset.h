@@ -31,33 +31,34 @@
 + (id)asset;
 
 - (id)metadataValueForKey:(id)arg1;
-- (void)setError:(id)arg1;
-- (id)path;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)setFileHash:(id)arg1;
+- (void)setMasterAssetHash:(id)arg1;
+- (id)fileHash;
+- (unsigned long long)_fileSize;
 - (void)setFileData:(id)arg1;
 - (void)setProtocolFileSize:(unsigned long long)arg1;
 - (unsigned long long)protocolFileSize;
 - (void)setMMCSURL:(id)arg1;
 - (id)MMCSURL;
-- (void)setFileHash:(id)arg1;
 - (id)fileData;
 - (void)addMetadataValue:(id)arg1 forKey:(id)arg2;
 - (id)MMCSAccessHeader;
 - (void)setMMCSAccessHeader:(id)arg1;
+- (unsigned long long)_fileSizeOnDisk;
 - (id)masterAssetHash;
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
+- (void)setError:(id)arg1;
+- (id)error;
 - (void)setPath:(id)arg1;
 - (id)type;
+- (id)path;
 - (void)setType:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long long)_fileSize;
-- (id)error;
-- (void)setMasterAssetHash:(id)arg1;
-- (id)fileHash;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 
 @end

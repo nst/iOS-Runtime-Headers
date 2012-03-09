@@ -22,11 +22,11 @@
 @property(readonly) NSString * path;
 
 
+- (void)dealloc;
 - (BOOL)_createTables;
-- (id)path;
-- (int)beginTransaction;
 - (id)initWithPath:(id)arg1;
 - (int)commitTransaction;
+- (id)path;
 - (BOOL)scalarsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 withConsumer:(id)arg4;
 - (id)initWithDefaultPath;
 - (BOOL)distributionsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 withConsumer:(id)arg4;
@@ -43,6 +43,6 @@
 - (int)_schemaVersion;
 - (BOOL)scalarsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 rowHandler:(id)arg4;
 - (BOOL)distributionsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 rowHandler:(id)arg4;
-- (void)dealloc;
+- (int)beginTransaction;
 
 @end

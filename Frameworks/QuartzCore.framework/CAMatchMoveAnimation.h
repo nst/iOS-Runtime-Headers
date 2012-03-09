@@ -24,10 +24,6 @@
 
 + (id)defaultValueForKey:(id)arg1;
 
-- (BOOL)isAdditive;
-- (void)setAdditive:(BOOL)arg1;
-- (void)setKeyPath:(id)arg1;
-- (id)keyPath;
 - (void)setSourceLayer:(id)arg1;
 - (void)setSourcePoints:(id)arg1;
 - (void)setTargetsSuperlayer:(BOOL)arg1;
@@ -45,5 +41,9 @@
 - (BOOL)appliesY;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (unsigned int)_propertyFlagsForLayer:(id)arg1;
+- (void)setKeyPath:(id)arg1;
+- (id)keyPath;
+- (BOOL)isAdditive;
+- (void)setAdditive:(BOOL)arg1;
 
 @end

@@ -11,6 +11,7 @@
 
 + (id)defaultTitleFont;
 
+- (void)dealloc;
 - (struct CGPoint { float x1; float x2; })textInset;
 - (struct CGPoint { float x1; float x2; })iconInset;
 - (id)_getTitleColor;
@@ -26,6 +27,5 @@
 - (void)layoutSubviews;
 - (void)setImage:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
-- (void)dealloc;
 
 @end

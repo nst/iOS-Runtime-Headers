@@ -42,15 +42,20 @@
 + (BOOL)usesNowPlayingIndicator;
 + (id)_imageCache;
 
+- (unsigned int)count;
+- (id)init;
+- (void)dealloc;
 - (void)setQuery:(id)arg1;
 - (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
-- (void)invalidate;
+- (id)entityAtIndex:(unsigned int)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (float)rowHeight;
 - (BOOL)isEmpty;
 - (id)query;
+- (void)invalidate;
 - (void)reloadData;
-- (id)entityAtIndex:(unsigned int)arg1;
+- (void)setMediaLibrary:(id)arg1;
+- (id)mediaLibrary;
 - (unsigned long long)nowPlayingItemPersistentID;
 - (void)setInvalidationBehavior:(int)arg1;
 - (int)invalidationBehavior;
@@ -119,10 +124,5 @@
 - (BOOL)hasPlayableItems;
 - (id)queries;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
-- (unsigned int)count;
-- (id)init;
-- (void)dealloc;
-- (void)setMediaLibrary:(id)arg1;
-- (id)mediaLibrary;
 
 @end

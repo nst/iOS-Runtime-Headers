@@ -25,14 +25,17 @@
 
 + (id)sharedInstance;
 
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
 - (BOOL)enableCriticalReliability;
 - (void)_setReliabilityTimeoutInterval;
 - (void)_reallySetCriticalReliability:(BOOL)arg1;
 - (void)_createAPSConnectionIfNeeded;
 - (void)_tryToEnableReliability;
 - (void)_clearReliabilityTimeoutInterval;
+- (BOOL)networkReachable;
+- (BOOL)networkActive;
+- (BOOL)networkEnabled;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 - (BOOL)wiFiActiveAndReachable;
 - (void)setEnableCriticalReliability:(BOOL)arg1;
 - (BOOL)willSearchForNetwork;
@@ -40,8 +43,5 @@
 - (BOOL)validNetworkEnabled;
 - (BOOL)validNetworkActive;
 - (BOOL)allowAnyNetwork;
-- (BOOL)networkReachable;
-- (BOOL)networkActive;
-- (BOOL)networkEnabled;
 
 @end

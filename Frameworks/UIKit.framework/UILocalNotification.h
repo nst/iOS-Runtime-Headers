@@ -33,6 +33,8 @@
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)clearNonSystemProperties;
 - (int)compareFireDates:(id)arg1;
 - (id)nextFireDateAfterDate:(id)arg1 localTimeZone:(id)arg2;
@@ -40,7 +42,5 @@
 - (BOOL)isValid;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 
 @end

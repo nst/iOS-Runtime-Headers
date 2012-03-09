@@ -17,6 +17,7 @@
 @property unsigned int currentViewIndex;
 
 
+- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForViewAtIndex:(unsigned int)arg1;
 - (void)setCurrentViewIndex:(unsigned int)arg1;
 - (void)configureView:(id)arg1 forIndex:(unsigned int)arg2;
@@ -37,6 +38,5 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)awakeFromNib;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

@@ -20,13 +20,12 @@
 @property(retain) SUImageModifier * modifier;
 
 
-- (id)modifier;
-- (id)fillColor;
-- (void)setFillColor:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)fillColor;
+- (void)setFillColor:(id)arg1;
 - (void)setFinalSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)newImageFromImage:(id)arg1;
 - (float)inputImageScale;
@@ -35,5 +34,6 @@
 - (void)setModifier:(id)arg1;
 - (void)setInputImageScale:(float)arg1;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
+- (id)modifier;
 
 @end

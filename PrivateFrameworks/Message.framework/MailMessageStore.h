@@ -136,11 +136,11 @@
 - (void)_setFlagsForMessages:(id)arg1;
 - (BOOL)_shouldChangeComponentMessageFlagsForMessage:(id)arg1;
 - (BOOL)_shouldChangeComponentMessageFlags;
-- (BOOL)isReadOnly;
-- (id)displayName;
-- (void)close;
-- (id)status;
 - (id)description;
 - (void)dealloc;
+- (id)status;
+- (id)displayName;
+- (void)close;
+- (BOOL)isReadOnly;
 
 @end

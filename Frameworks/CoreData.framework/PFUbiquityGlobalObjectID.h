@@ -20,20 +20,21 @@
 
 + (id)stringValueFromArray:(id)arg1 atIndexDescribedByStringNumber:(id)arg2;
 
-- (id)createCompressedStringWithEntityNameToIndex:(id)arg1 primaryKeyToIndex:(id)arg2 peerIDToIndex:(id)arg3;
-- (void)updateHash;
-- (id)owningPeerID;
-- (id)initWithStoreName:(id)arg1 entityName:(id)arg2 primaryKey:(id)arg3 andPeerID:(id)arg4;
-- (id)initWithCompressedString:(id)arg1 forStoreWithName:(id)arg2 andEntityNames:(id)arg3 primaryKeys:(id)arg4 peerIDs:(id)arg5;
-- (id)storeName;
-- (id)createGlobalIDString;
-- (id)entityName;
-- (id)primaryKey;
 - (id)initWithString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)initWithCompressedString:(id)arg1 forStoreWithName:(id)arg2 andEntityNames:(id)arg3 primaryKeys:(id)arg4 peerIDs:(id)arg5;
+- (id)createCompressedStringWithEntityNameToIndex:(id)arg1 primaryKeyToIndex:(id)arg2 peerIDToIndex:(id)arg3;
+- (void)updateHash;
+- (id)createGlobalIDString;
+- (id)owningPeerID;
+- (id)initWithStoreName:(id)arg1 entityName:(id)arg2 primaryKey:(id)arg3 andPeerID:(id)arg4;
+- (id)storeName;
+- (id)entityName;
+- (id)primaryKey;
 
 @end

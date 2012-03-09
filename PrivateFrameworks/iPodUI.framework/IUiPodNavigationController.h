@@ -13,6 +13,8 @@
 @property(readonly) NSString * rootIdentifier;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)popToRootViewControllerAnimated:(BOOL)arg1;
 - (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)popViewControllerAnimated:(BOOL)arg1;
@@ -23,7 +25,5 @@
 - (id)rootIdentifier;
 - (void)setModalContext:(id)arg1;
 - (id)modalContext;
-- (id)description;
-- (void)dealloc;
 
 @end

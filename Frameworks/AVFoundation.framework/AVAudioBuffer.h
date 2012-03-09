@@ -15,17 +15,17 @@
 @property(readonly) struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }* packetDescriptions;
 
 
-- (void*)data;
-- (void)finalize;
-- (int)channels;
-- (int)bytesCapacity;
-- (int)bytesDataSize;
-- (void)setBytesDataSize:(int)arg1;
-- (int)packetDescriptionCapacity;
-- (int)packetDescriptionCount;
-- (struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)packetDescriptions;
-- (void)setPacketDescriptions:(const struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)arg1 count:(int)arg2;
-- (id)initWithAudioQueueBuffer:(struct MyAudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1 channels:(int)arg2;
 - (void)dealloc;
+- (id)initWithAudioQueueBuffer:(struct MyAudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1 channels:(int)arg2;
+- (void)setPacketDescriptions:(const struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)arg1 count:(int)arg2;
+- (struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)packetDescriptions;
+- (int)packetDescriptionCount;
+- (int)packetDescriptionCapacity;
+- (void)setBytesDataSize:(int)arg1;
+- (int)bytesDataSize;
+- (int)bytesCapacity;
+- (void)finalize;
+- (void*)data;
+- (int)channels;
 
 @end

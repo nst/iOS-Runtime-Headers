@@ -6,9 +6,9 @@
 }
 
 + (id)hashTableWithOptions:(unsigned int)arg1;
-+ (id)hashTableWithWeakObjects;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)hashTableWithWeakObjects;
 
 - (id)setRepresentation;
 - (id)mutableSet;
@@ -23,8 +23,17 @@
 - (void)getKeys:(void**)arg1 count:(unsigned int*)arg2;
 - (void)insertKnownAbsentItem:(const void*)arg1;
 - (unsigned int)weakCount;
+- (void)removeAllItems;
+- (void)removeItem:(const void*)arg1;
 - (void*)getItem:(const void*)arg1;
 - (id)initWithOptions:(unsigned int)arg1 capacity:(unsigned int)arg2;
+- (unsigned int)count;
+- (id)description;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)copy;
+- (void)addObject:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)member:(id)arg1;
 - (id)objectEnumerator;
@@ -35,15 +44,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)removeObject:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)removeItem:(const void*)arg1;
-- (void)removeAllItems;
-- (unsigned int)count;
-- (id)description;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (void)addObject:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (id)copy;
 - (void)_mapkit_removeObjects:(id)arg1;
 
 @end

@@ -12,12 +12,12 @@
 @property <CNFSoundPlayerDelegateProtocol> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)stop;
-- (id)delegate;
 - (void)dealloc;
 - (void)playSelectedSound;
 - (BOOL)playingSound;
 - (void)playSound:(int)arg1 numOfLoops:(int)arg2 pauseDuration:(float)arg3;
+- (void)stop;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

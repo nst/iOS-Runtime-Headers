@@ -2,24 +2,27 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSArray;
+@class NSString, NSMutableSet;
 
 @interface PFUbiquityToManyConflictDiff : NSObject  {
-    NSMutableArray *_insertedObjectIDs;
-    NSMutableArray *_deletedObjectIDs;
+    NSMutableSet *_insertedObjectIDs;
+    NSMutableSet *_deletedObjectIDs;
+    NSString *_relationshipKey;
 }
 
-@property(readonly) NSArray * deletedObjectIDs;
-@property(readonly) NSArray * insertedObjectIDs;
+@property(readonly) NSString * relationshipKey;
+@property(readonly) NSMutableSet * deletedObjectIDs;
+@property(readonly) NSMutableSet * insertedObjectIDs;
 
 
-- (void)diffWithLogContents:(id)arg1 andPreviousDiff:(id)arg2;
-- (void)diffWithLogContents:(id)arg1 andPreviousContents:(id)arg2;
-- (id)insertedObjectIDs;
-- (id)deletedObjectIDs;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)relationshipKey;
+- (id)initForRelationshipAtKey:(id)arg1;
+- (void)diffWithLogSnapshot:(id)arg1 andPreviousSnapshot:(id)arg2;
+- (id)insertedObjectIDs;
+- (id)deletedObjectIDs;
 
 @end

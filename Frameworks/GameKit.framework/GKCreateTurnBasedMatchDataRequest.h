@@ -17,6 +17,7 @@
 @property(retain) NSString * sessionID;
 
 
+- (void)dealloc;
 - (id)inviteMessageDictionary;
 - (void)setInviteMessageDictionary:(id)arg1;
 - (id)matchRequest;
@@ -24,10 +25,9 @@
 - (void)setMatchRequest:(id)arg1;
 - (id)playersToInvite;
 - (void)setPlayersToInvite:(id)arg1;
-- (id)key;
-- (id)request;
 - (id)sessionID;
 - (void)setSessionID:(id)arg1;
-- (void)dealloc;
+- (id)key;
+- (id)request;
 
 @end

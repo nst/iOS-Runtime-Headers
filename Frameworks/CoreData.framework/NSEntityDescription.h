@@ -39,12 +39,35 @@
     long _modelsReferenceIDForEntity;
 }
 
++ (id)insertNewObjectForEntityForName:(id)arg1 inManagedObjectContext:(id)arg2;
++ (void)initialize;
 + (id)entityForName:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)_MOClassName;
-+ (void)initialize;
-+ (id)insertNewObjectForEntityForName:(id)arg1 inManagedObjectContext:(id)arg2;
 
+- (void)setName:(id)arg1;
+- (void)setManagedObjectClassName:(id)arg1;
+- (void)setProperties:(id)arg1;
+- (id)userInfo;
+- (id)managedObjectModel;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
+- (id)description;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)retain;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)properties;
+- (void)setUserInfo:(id)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)finalize;
+- (id)name;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)attributeKeys;
 - (void)setElementID:(id)arg1;
 - (id)elementID;
 - (id)knownKeysMappingStrategy;
@@ -68,6 +91,7 @@
 - (BOOL)_hasPropertiesIndexedBySpotlight;
 - (BOOL)_hasPropertiesStoredInTruthFile;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 uniquedMappings:(id)arg6 entities:(id)arg7;
+- (id)_flattenedSubentities;
 - (Class)_snapshotClass;
 - (BOOL)isKindOfEntity:(id)arg1;
 - (id)toManyRelationshipKeys;
@@ -120,28 +144,5 @@
 - (id)renamingIdentifier;
 - (id)propertiesByName;
 - (id)versionHash;
-- (id)attributeKeys;
-- (id)properties;
-- (void)setUserInfo:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (id)name;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setName:(id)arg1;
-- (void)setManagedObjectClassName:(id)arg1;
-- (void)setProperties:(id)arg1;
-- (id)userInfo;
-- (id)managedObjectModel;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (unsigned int)retainCount;
-- (id)description;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
 
 @end

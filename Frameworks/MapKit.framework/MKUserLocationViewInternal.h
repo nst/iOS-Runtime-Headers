@@ -80,11 +80,8 @@
 + (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })effectiveFrameWithFrame:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (float)accuracyDiameter:(float)arg1 level:(unsigned int)arg2;
 
-- (float)accuracy;
-- (void)setAccuracy:(float)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1;
-- (double)headingAccuracy;
+- (void)dealloc;
+- (BOOL)isStale;
 - (void)updateDot;
 - (void)didEndZoom;
 - (id)initWithView:(id)arg1;
@@ -94,8 +91,9 @@
 - (struct CADoublePoint { double x1; double x2; })position;
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1;
 - (id)delegate;
-- (BOOL)isStale;
+- (void)setDelegate:(id)arg1;
 - (void)removeSublayer:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)needsHalo;
 - (void)userLocationViewDidUpdate;
@@ -167,6 +165,8 @@
 - (void)setShouldDisplayEffects:(BOOL)arg1;
 - (unsigned int)mapType;
 - (void)setMapType:(unsigned int)arg1;
-- (void)dealloc;
+- (double)headingAccuracy;
+- (float)accuracy;
+- (void)setAccuracy:(float)arg1;
 
 @end

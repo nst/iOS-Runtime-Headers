@@ -23,9 +23,9 @@
 - (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
 - (BOOL)waitUntilDoneBeforeDate:(id)arg1;
 - (void)waitUntilDone;
-- (void)setError:(id)arg1;
-- (id)error;
 - (id)init;
 - (void)dealloc;
+- (void)setError:(id)arg1;
+- (id)error;
 
 @end

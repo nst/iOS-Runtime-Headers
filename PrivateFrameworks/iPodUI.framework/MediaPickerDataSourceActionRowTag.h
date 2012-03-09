@@ -10,8 +10,8 @@
 }
 
 
-- (id)initWithDataSource:(id)arg1 actionRowAtIndex:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (id)initWithDataSource:(id)arg1 actionRowAtIndex:(unsigned int)arg2;
 
 @end

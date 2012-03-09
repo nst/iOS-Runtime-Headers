@@ -76,6 +76,7 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionFrame;
 
 
+- (void)dealloc;
 - (BOOL)canFlip;
 - (void)touchChanged:(id)arg1 forHandleInText:(id)arg2;
 - (void)setSelectionFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
@@ -113,7 +114,7 @@
 - (void)setHandleCenters;
 - (void)hideCopyCallout;
 - (id)handles;
-- (void)showCopyCallout;
+- (void)showCopyCalloutWithAnimation:(BOOL)arg1;
 - (void)updateTextRangeViewSelectionRects;
 - (void)onAfterScrollShowingSelection:(BOOL)arg1;
 - (void)onBeforeScrollHidingSelection:(BOOL)arg1;
@@ -143,6 +144,5 @@
 - (void)_subscribeToScrollNotificationsIfNecessary:(id)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)removeFromSuperview;
-- (void)dealloc;
 
 @end

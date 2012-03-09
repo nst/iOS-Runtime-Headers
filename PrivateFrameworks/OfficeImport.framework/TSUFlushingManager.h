@@ -44,11 +44,21 @@
     NSThread *_bgThread;
 }
 
-+ (id)_singletonAlloc;
-+ (id)sharedManager;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)sharedManager;
++ (id)_singletonAlloc;
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (void)addObject:(id)arg1;
+- (void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)autorelease;
+- (id)init;
+- (void)dealloc;
 - (void)didEnterBackground;
+- (void)willEnterForeground;
+- (void)removeObject:(id)arg1;
 - (void)protectObject:(id)arg1;
 - (void)stopProtectingObject:(id)arg1;
 - (void)doneWithObject:(id)arg1;
@@ -68,15 +78,5 @@
 - (void)_backgroundThread:(id)arg1;
 - (BOOL)isNewObject:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned int x5[2]; }*)arg1;
 - (void)transferNewObjects;
-- (void)willEnterForeground;
-- (void)removeObject:(id)arg1;
-- (unsigned int)retainCount;
-- (id)retain;
-- (void)addObject:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (id)init;
-- (void)release;
-- (void)dealloc;
 
 @end

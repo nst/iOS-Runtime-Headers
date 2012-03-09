@@ -30,8 +30,15 @@
 @property long long normalizedMaxValue;
 
 
-- (long long)maxValue;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)snapshot;
+- (void)setMaxValue:(long long)arg1;
+- (int)operationType;
+- (long long)maxValue;
+- (void)setCurrentValue:(long long)arg1;
 - (void)setUnits:(int)arg1;
 - (void)setEstimatedTimeRemaining:(double)arg1;
 - (void)setChangeRate:(double)arg1;
@@ -50,14 +57,7 @@
 - (void)setCanPause:(BOOL)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (int)operationType;
-- (void)setMaxValue:(long long)arg1;
 - (double)estimatedTimeRemaining;
 - (void)_updateStatisticsFromSnapshots;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setCurrentValue:(long long)arg1;
 
 @end

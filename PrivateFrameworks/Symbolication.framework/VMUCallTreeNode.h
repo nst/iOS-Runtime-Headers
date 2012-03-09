@@ -32,12 +32,14 @@
 + (id)rootForSamples:(id)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2 sampler:(id)arg3 options:(unsigned int)arg4;
 + (void)compareChildrenOf:(id)arg1 toChildrenOf:(id)arg2 storeDiffIn:(id)arg3;
 
-- (unsigned long long)address;
-- (id)parent;
+- (unsigned int)count;
+- (unsigned int)retainCount;
+- (id)retain;
+- (void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (int)compareNames:(id)arg1;
-- (id)nextNode;
-- (int)compare:(id)arg1;
-- (id)name;
+- (unsigned long long)address;
 - (BOOL)isPseudo;
 - (id)filterOutWaiting;
 - (id)filterOutSymbols:(id)arg1;
@@ -63,11 +65,9 @@
 - (id)browserName;
 - (id)sortedChildrenWithPseudoNode;
 - (id)largestTopOfStackPath;
-- (unsigned int)count;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)release;
-- (void)dealloc;
+- (id)nextNode;
+- (int)compare:(id)arg1;
+- (id)name;
+- (id)parent;
 
 @end

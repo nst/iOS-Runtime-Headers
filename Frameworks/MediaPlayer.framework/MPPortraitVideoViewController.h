@@ -17,6 +17,8 @@
 
 + (BOOL)supportsFullscreenDisplay;
 
+- (id)init;
+- (void)dealloc;
 - (void)transportControlsDidResize:(id)arg1;
 - (BOOL)ownsTransportControls;
 - (id)copyOverlayViewForTransitionToItem:(id)arg1;
@@ -58,8 +60,6 @@
 - (id)navigationBar;
 - (int)statusBarStyle;
 - (BOOL)isStatusBarHidden;
-- (id)init;
-- (void)dealloc;
 - (void)setItem:(id)arg1;
 
 @end

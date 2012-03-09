@@ -29,6 +29,7 @@
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 
 
+- (void)dealloc;
 - (void)set_popover:(id)arg1;
 - (id)_popover;
 - (void)set_singleSelectionIndex:(unsigned int)arg1;
@@ -48,6 +49,5 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
 
 @end

@@ -18,9 +18,18 @@
     id _defaultValue;
 }
 
-+ (id)_classNameForType:(unsigned int)arg1;
 + (void)initialize;
++ (id)_classNameForType:(unsigned int)arg1;
 
+- (void)setAttributeType:(unsigned int)arg1;
+- (id)defaultValue;
+- (void)setDefaultValue:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)_initWithType:(unsigned int)arg1;
 - (void)setStoresBinaryDataExternally:(BOOL)arg1;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6 fetchRequests:(id)arg7;
@@ -48,14 +57,5 @@
 - (id)versionHash;
 - (unsigned int)attributeType;
 - (BOOL)storesBinaryDataExternally;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setAttributeType:(unsigned int)arg1;
-- (id)defaultValue;
-- (void)setDefaultValue:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

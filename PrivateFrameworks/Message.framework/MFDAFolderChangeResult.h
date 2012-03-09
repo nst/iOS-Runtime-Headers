@@ -21,8 +21,8 @@
 - (id)folderID;
 - (id)folderName;
 - (BOOL)wasSuccessful;
-- (int)statusCode;
-- (id)error;
 - (void)dealloc;
+- (id)error;
+- (int)statusCode;
 
 @end

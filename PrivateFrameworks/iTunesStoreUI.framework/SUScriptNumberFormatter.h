@@ -11,18 +11,18 @@
 @property(retain) NSString * localeIdentifier;
 @property(retain) NSString * style;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
-- (id)numberFromString:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)stringFromNumber:(id)arg1;
 - (id)localeIdentifier;
 - (id)style;
 - (void)setStyle:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)attributeKeys;
+- (id)numberFromString:(id)arg1;
 - (void)setLocaleIdentifier:(id)arg1;
 - (id)scriptAttributeKeys;
 

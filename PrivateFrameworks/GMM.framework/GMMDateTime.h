@@ -13,17 +13,17 @@
 @property int timeZoneOffsetMin;
 
 
+- (id)description;
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasTimeZoneOffsetMin:(BOOL)arg1;
 - (BOOL)hasTimeZoneOffsetMin;
 - (void)setTimeZoneOffsetMin:(int)arg1;
 - (void)setSecsSinceEpoch:(long long)arg1;
 - (int)timeZoneOffsetMin;
 - (long long)secsSinceEpoch;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (id)description;
-- (void)dealloc;
 
 @end

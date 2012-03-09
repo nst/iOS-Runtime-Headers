@@ -18,6 +18,10 @@
 + (id)generateUniqueIDWithReminder:(id)arg1 calendar:(id)arg2;
 + (id)defaultPropertiesToLoad;
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (BOOL)isCompleted;
 - (void)setCompleted:(BOOL)arg1;
 - (void)setDueDateAllDay:(BOOL)arg1;
 - (void)setDueDateTimeZone:(id)arg1;
@@ -33,9 +37,5 @@
 - (id)externalURI;
 - (int)entityType;
 - (BOOL)validate:(id*)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (BOOL)isCompleted;
 
 @end

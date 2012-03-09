@@ -20,7 +20,9 @@
 
 - (void)setExternalID:(id)arg1;
 - (id)externalID;
-- (id)UUID;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setUUID:(id)arg1;
 - (void)setDefaultAlarmOffset:(id)arg1;
 - (id)defaultAlarmOffset;
@@ -34,8 +36,6 @@
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
 - (void)setTitle:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)UUID;
 
 @end

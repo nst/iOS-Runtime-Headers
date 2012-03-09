@@ -34,22 +34,21 @@
 @property(readonly) NSString * countryCode;
 
 
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
 - (void)setContentType:(id)arg1;
 - (id)subject;
 - (void)setSubject:(id)arg1;
+- (void)setSender:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)initWithDate:(id)arg1;
 - (void)setRecipient:(id)arg1;
 - (void)removeRecipient:(id)arg1;
 - (void)addRecipient:(id)arg1;
 - (id)recipients;
 - (void)setRecipients:(id)arg1;
-- (id)contentType;
-- (void)setSender:(id)arg1;
-- (id)countryCode;
-- (id)sender;
-- (id)items;
-- (id)date;
-- (id)initWithDate:(id)arg1;
-- (void)setCountryCode:(id)arg1;
 - (unsigned int)replaceMessage;
 - (id)rawHeaders;
 - (void)setServiceCenter:(id)arg1;
@@ -70,8 +69,9 @@
 - (void)setRawHeaders:(id)arg1;
 - (void)addEmailRecipient:(id)arg1;
 - (void)addPhoneRecipient:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)sender;
+- (id)items;
+- (id)date;
+- (id)contentType;
 
 @end

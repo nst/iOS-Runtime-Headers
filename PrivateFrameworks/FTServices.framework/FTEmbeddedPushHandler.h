@@ -13,16 +13,7 @@
 }
 
 
-- (id)pushToken;
-- (void)setRegistered:(BOOL)arg1;
-- (void)_acceptIncomingPushes;
-- (void)_ignoreIncomingPushes;
-- (void)connectionDidReconnect:(id)arg1;
-- (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;
-- (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
-- (void)connection:(id)arg1 didSendOutgoingMessage:(id)arg2;
-- (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
-- (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
+- (void)dealloc;
 - (void)_handleGenericDataPush:(id)arg1;
 - (void)_handleGenericCommandPush:(id)arg1;
 - (void)_handleIncomingReadReceipt:(id)arg1;
@@ -45,9 +36,18 @@
 - (void)_updateTopics;
 - (void)updateTopics;
 - (int)connectionStatus;
-- (void)dealloc;
+- (id)pushToken;
+- (id)initWithTopics:(id)arg1;
+- (void)connectionDidReconnect:(id)arg1;
+- (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;
+- (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
+- (void)connection:(id)arg1 didSendOutgoingMessage:(id)arg2;
+- (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
+- (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
+- (void)setRegistered:(BOOL)arg1;
+- (void)_acceptIncomingPushes;
+- (void)_ignoreIncomingPushes;
 - (void)systemDidFastUserSwitchIn;
 - (void)systemDidFastUserSwitchOut;
-- (id)initWithTopics:(id)arg1;
 
 @end

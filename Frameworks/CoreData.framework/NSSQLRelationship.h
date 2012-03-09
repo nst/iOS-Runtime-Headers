@@ -10,6 +10,7 @@
 }
 
 
+- (void)dealloc;
 - (void)_setForeignOrderKey:(id)arg1;
 - (id)initForReadOnlyFetchWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (void)_setInverseRelationship:(id)arg1;
@@ -22,6 +23,5 @@
 - (id)destinationEntity;
 - (id)correlationTableName;
 - (id)foreignKey;
-- (void)dealloc;
 
 @end

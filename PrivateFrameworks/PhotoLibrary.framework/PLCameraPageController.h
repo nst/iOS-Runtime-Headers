@@ -24,6 +24,8 @@
 
 + (void)initialize;
 
+- (id)init;
+- (void)dealloc;
 - (void)pageControllerDidEndPaging:(id)arg1;
 - (void)pageControllerWillBeginPaging:(id)arg1;
 - (Class)_pageControllerScrollViewClass;
@@ -31,6 +33,8 @@
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)takePicture;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
@@ -42,13 +46,14 @@
 - (void)didReceiveMemoryWarning;
 - (void)prepareForDefaultImageSnapshot;
 - (void)applicationWillSuspend;
-- (id)initWithSessionID:(id)arg1;
-- (void)cameraPreviewWellImageDidChange:(id)arg1;
-- (void)_makeViewControllersPerformSelector:(SEL)arg1 withNotification:(id)arg2;
-- (void)dismissCameraAlbumForSuspension;
-- (void)_dismissCameraAlbumAnimated:(BOOL)arg1 forSuspension:(BOOL)arg2;
-- (void)_setupSwipeGesture;
+- (void)prepareForDismissal;
 - (void)stopCameraPreview;
+- (id)initWithSessionID:(id)arg1;
+- (void)_makeViewControllersPerformSelector:(SEL)arg1 withNotification:(id)arg2;
+- (void)cameraPreviewWellImageDidChange:(id)arg1;
+- (void)dismissCameraAlbumForSuspension;
+- (void)_setupSwipeGesture;
+- (void)_updatePhotoBrowsersGestureEnabledState;
 - (void)_stopCameraPreviewAnimated:(BOOL)arg1;
 - (id)_photoBrowser;
 - (void)_updateStatusBarPositionForView:(id)arg1;
@@ -57,10 +62,11 @@
 - (void)setCameraViewController:(id)arg1;
 - (id)_initWithSessionID:(id)arg1 useCameraLocationBundleID:(BOOL)arg2;
 - (void)_resetStatusBarPosition;
+- (void)_enableSwipeToCameraRoll:(BOOL)arg1;
 - (void)_createCameraViewControllerWithSessionAlbum:(BOOL)arg1 useCameraLocationBundleID:(BOOL)arg2;
 - (id)newAlbumNavigationController;
 - (void)dismissCameraAlbum:(id)arg1;
-- (void)dismissCameraAlbumAnimated:(BOOL)arg1;
+- (void)dismissCameraAlbumAnimated:(BOOL)arg1 forSuspension:(BOOL)arg2;
 - (id)cameraViewController;
 - (id)cameraAlbumNavigationController;
 - (unsigned int)albumPageIndex;
@@ -75,7 +81,5 @@
 - (void)cameraViewControllerUIShouldLock:(id)arg1;
 - (void)_libraryDidChange:(id)arg1;
 - (void)albumDidChange:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

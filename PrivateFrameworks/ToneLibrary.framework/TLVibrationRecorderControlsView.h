@@ -19,9 +19,13 @@
 @property(setter=_setLeftButton:,retain) id _leftButton;
 @property(setter=_setRightButton:,retain) id _rightButton;
 
-+ (void)_loadImages;
 + (float)defaultHeight;
++ (void)_loadImages;
 
+- (void)dealloc;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setRightButtonEnabled:(BOOL)arg1;
 - (BOOL)isRightButtonEnabled;
 - (void)setLeftButtonEnabled:(BOOL)arg1;
@@ -40,9 +44,5 @@
 - (id)_rightButton;
 - (id)_leftButton;
 - (void)_buttonTapped:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

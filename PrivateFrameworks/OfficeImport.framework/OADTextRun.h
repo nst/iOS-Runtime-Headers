@@ -9,11 +9,11 @@
 }
 
 
-- (void)removeUnnecessaryOverrides;
-- (id)properties;
-- (BOOL)isEmpty;
 - (void)setProperties:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)properties;
+- (BOOL)isEmpty;
+- (void)removeUnnecessaryOverrides;
 
 @end

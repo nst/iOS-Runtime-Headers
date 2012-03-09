@@ -23,19 +23,19 @@
 + (id)fromImage:(struct CGImage { }*)arg1;
 + (id)forImage:(id)arg1 usingContext:(id)arg2;
 
-- (const char *)rowAtIndex:(unsigned int)arg1;
-- (void)dumpImageAsDict:(id)arg1;
-- (void)dumpImageAsDeviceRGB:(id)arg1;
-- (void)dumpImage:(id)arg1;
-- (void)_dumpImage:(id)arg1 colorspace:(struct CGColorSpace { }*)arg2;
+- (id)init;
+- (void)dealloc;
+- (unsigned int)bytesPerPixel;
 - (unsigned long)height;
 - (short)blue;
 - (short)green;
 - (short)red;
 - (unsigned long)width;
 - (short)alpha;
-- (unsigned int)bytesPerPixel;
-- (id)init;
-- (void)dealloc;
+- (const char *)rowAtIndex:(unsigned int)arg1;
+- (void)dumpImageAsDict:(id)arg1;
+- (void)dumpImageAsDeviceRGB:(id)arg1;
+- (void)dumpImage:(id)arg1;
+- (void)_dumpImage:(id)arg1 colorspace:(struct CGColorSpace { }*)arg2;
 
 @end

@@ -16,13 +16,13 @@
 @property struct MPMovieAccessLogInternal { id x1; } _internal;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)set_internal:(struct MPMovieAccessLogInternal { id x1; })arg1;
 - (id)_initWithAVItemAccessLog:(id)arg1;
 - (struct MPMovieAccessLogInternal { id x1; })_internal;
-- (id)events;
-- (id)extendedLogData;
 - (unsigned int)extendedLogDataStringEncoding;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)extendedLogData;
+- (id)events;
 
 @end

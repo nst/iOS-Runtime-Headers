@@ -5,6 +5,9 @@
 @interface ML3Album : ML3Collection  {
 }
 
++ (id)defaultOrderingProperties;
++ (int)revisionTrackingCode;
++ (void)initialize;
 + (id)artworkCacheIDProperty;
 + (id)trackForeignPersistentID;
 + (id)propertiesForGroupingKey;
@@ -13,9 +16,6 @@
 + (id)allProperties;
 + (id)databaseTable;
 + (id)joinClauseForProperty:(id)arg1;
-+ (int)revisionTrackingCode;
-+ (id)defaultOrderingProperties;
-+ (void)initialize;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
 
 - (void)updateTrackValues:(id)arg1;

@@ -22,10 +22,9 @@
 
 - (void)setExternalID:(id)arg1;
 - (id)externalID;
-- (id)owner;
-- (id)externalData;
-- (void)setExternalData:(id)arg1;
-- (id)UUID;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (void)setAlarmType:(int)arg1;
 - (int)alarmType;
 - (void)setProximity:(int)arg1;
@@ -37,13 +36,14 @@
 - (BOOL)isAbsolute;
 - (int)entityType;
 - (BOOL)validate:(id*)arg1;
-- (void)setOwner:(id)arg1;
-- (void)setLocation:(id)arg1;
 - (id)location;
 - (id)timeZone;
 - (void)setTimeZone:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
+- (void)setOwner:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (id)owner;
+- (id)externalData;
+- (void)setExternalData:(id)arg1;
+- (id)UUID;
 
 @end

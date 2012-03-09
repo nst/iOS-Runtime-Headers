@@ -20,19 +20,19 @@
 @property BOOL completed;
 
 
+- (void)dealloc;
 - (void)_sendResults:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setCompleted:(BOOL)arg1;
 - (BOOL)completed;
 - (id)query;
 - (id)delegate;
-- (void)_sendError:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)_callbackPipeBrokenCallback:(struct __CFMachPort { }*)arg1;
+- (void)_sendError:(id)arg1;
 - (void)_sendCompletion;
 - (void)setSortsInFlight:(unsigned int)arg1;
 - (unsigned int)sortsInFlight;
 - (unsigned int)queryID;
 - (id)initWithQuery:(id)arg1 andCallbackPort:(unsigned int)arg2;
-- (void)dealloc;
 
 @end

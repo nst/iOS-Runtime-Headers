@@ -18,26 +18,26 @@
 @property(retain) NSMutableArray * searchs;
 
 
-- (void)setStatus:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (unsigned int)placeResultsCount;
-- (void)addPlaceResult:(id)arg1;
-- (void)setSearchs:(id)arg1;
-- (void)setPlaceResults:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)searchs;
 - (id)searchAtIndex:(unsigned int)arg1;
 - (unsigned int)searchsCount;
 - (id)placeResultAtIndex:(unsigned int)arg1;
 - (void)addSearch:(id)arg1;
 - (BOOL)hasMapRegion;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
+- (void)setStatus:(int)arg1;
 - (int)status;
+- (id)dictionaryRepresentation;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (unsigned int)placeResultsCount;
+- (void)addPlaceResult:(id)arg1;
+- (void)setSearchs:(id)arg1;
+- (void)setPlaceResults:(id)arg1;
 - (id)mapRegion;
 - (id)placeResults;
 - (void)setMapRegion:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)initWithLBSWrapperResponse:(id)arg1 atLatLng:(id)arg2;
 - (id)_bestAddressInResponse:(id)arg1;
 

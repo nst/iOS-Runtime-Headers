@@ -18,6 +18,8 @@
 + (id)createToManyJoinIntermediateForProperty:(id)arg1 lastStep:(id)arg2 inScope:(id)arg3 context:(id)arg4;
 + (id)createManyToManyJoinIntermediateForProperty:(id)arg1 direct:(BOOL)arg2 lastStep:(id)arg3 inScope:(id)arg4 context:(id)arg5;
 
+- (id)description;
+- (void)dealloc;
 - (BOOL)isDirect;
 - (void)setDirect:(BOOL)arg1;
 - (void)setDestinationAlias:(id)arg1;
@@ -35,7 +37,5 @@
 - (id)generateSQLStringInContext:(id)arg1;
 - (id)destinationEntity;
 - (id)relationship;
-- (id)description;
-- (void)dealloc;
 
 @end

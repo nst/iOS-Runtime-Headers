@@ -19,18 +19,18 @@
 
 + (id)musicStoreItemKinds;
 
+- (void)removeObserver:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)addObserver:(id)arg1;
+- (void)cancelPreorders:(id)arg1 withCompletionBlock:(id)arg2;
+- (id)initWithItemKinds:(id)arg1;
+- (id)preorders;
+- (void)reloadFromServer;
 - (id)itemKinds;
 - (void)_registerAsObserver;
 - (void)_sendMessageToObservers:(SEL)arg1;
 - (void)_handleMessage:(void*)arg1 fromServerConnection:(struct _xpc_connection_s { }*)arg2;
 - (void)_connectAsObserver;
-- (void)addObserver:(id)arg1;
-- (void)removeObserver:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)cancelPreorders:(id)arg1 withCompletionBlock:(id)arg2;
-- (id)initWithItemKinds:(id)arg1;
-- (id)preorders;
-- (void)reloadFromServer;
 
 @end

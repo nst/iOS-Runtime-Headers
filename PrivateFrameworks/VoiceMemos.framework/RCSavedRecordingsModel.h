@@ -16,6 +16,9 @@
 
 + (id)sharedModel;
 
+- (unsigned int)count;
+- (id)init;
+- (void)dealloc;
 - (id)recordingAtIndex:(unsigned int)arg1;
 - (id)indexPathForRecording:(id)arg1;
 - (id)recordingWithURIRepresentation:(id)arg1;
@@ -29,11 +32,8 @@
 - (id)_labelPresetsForQuery:(id)arg1;
 - (id)recordings;
 - (void)saveIfNecessary;
+- (id)_init;
 - (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned int)arg4 newIndexPath:(id)arg5;
 - (void)controllerDidChangeContent:(id)arg1;
-- (id)_init;
-- (unsigned int)count;
-- (id)init;
-- (void)dealloc;
 
 @end

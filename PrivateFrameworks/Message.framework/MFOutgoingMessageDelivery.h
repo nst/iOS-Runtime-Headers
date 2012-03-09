@@ -38,9 +38,9 @@
 - (id)originalHeaders;
 - (id)compositionSpecification;
 - (id)account;
-- (id)initWithMessage:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)message;
 - (void)dealloc;
+- (id)initWithMessage:(id)arg1;
+- (id)message;
+- (void)setDelegate:(id)arg1;
 
 @end

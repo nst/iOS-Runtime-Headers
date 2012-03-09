@@ -17,7 +17,6 @@
     void *_context;
     unsigned int _multiGetBatchSize;
     NSMutableArray *_unsubmittedTasks;
-    unsigned int _maxIndependentTasks;
     NSURL *_addMemberURL;
     BOOL _useMultiGet;
     NSMutableSet *_syncReportDeletedURLs;
@@ -37,11 +36,12 @@
 @property(readonly) void* context;
 @property unsigned int multiGetBatchSize;
 @property <CoreDAVLocalDBTreeInfoProvider> * delegate;
-@property unsigned int maxIndependentTasks;
 @property(readonly) NSDictionary * folderURLToChildrenURLOrder;
 @property(retain) NSString * nextCTag;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)folderURLToChildrenURLOrder;
 - (void)setPreflightCTag:(BOOL)arg1;
 - (BOOL)preflightCTag;
@@ -58,8 +58,6 @@
 - (id)previousSyncToken;
 - (id)previousCTag;
 - (id)folderURL;
-- (void)setMaxIndependentTasks:(unsigned int)arg1;
-- (unsigned int)maxIndependentTasks;
 - (void)setMultiGetBatchSize:(unsigned int)arg1;
 - (unsigned int)multiGetBatchSize;
 - (void)syncAway;
@@ -71,6 +69,7 @@
 - (void)_postTask:(id)arg1 didFinishWithError:(id)arg2;
 - (id)nextCTag;
 - (void)setPreviousSyncToken:(id)arg1;
+- (BOOL)isWhitelistedError:(id)arg1;
 - (id)copyMultiGetTaskWithURLs:(id)arg1;
 - (void)_getDataPayloads;
 - (void)_pushActions;
@@ -85,7 +84,5 @@
 - (void)bailWithError:(id)arg1;
 - (id)_copyContainerParserMappings;
 - (void*)context;
-- (id)description;
-- (void)dealloc;
 
 @end

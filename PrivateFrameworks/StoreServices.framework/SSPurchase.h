@@ -28,25 +28,16 @@
 
 + (id)purchaseWithBuyParameters:(id)arg1;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (long long)placeholderDownloadIdentifier;
 - (void)setFilteredAssetTypes:(id)arg1;
-- (id)initWithItem:(id)arg1;
-- (void)setPlaceholderDownloadIdentifier:(long long)arg1;
-- (id)filteredAssetTypes;
-- (void)setDownloadMetadata:(id)arg1;
-- (id)downloadMetadata;
-- (id)_initSSPurchase;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)uniqueIdentifier;
 - (id)item;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)initWithItem:(id)arg1;
 - (id)itemOffer;
 - (void)setDownloadProperties:(id)arg1;
 - (id)downloadProperties;
@@ -59,5 +50,14 @@
 - (void)setRequestProperties:(id)arg1;
 - (void)setBuyParameters:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
+- (void)setPlaceholderDownloadIdentifier:(long long)arg1;
+- (id)filteredAssetTypes;
+- (void)setDownloadMetadata:(id)arg1;
+- (id)downloadMetadata;
+- (id)_initSSPurchase;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
+- (id)copyPropertyListEncoding;
+- (id)initWithPropertyListEncoding:(id)arg1;
 
 @end

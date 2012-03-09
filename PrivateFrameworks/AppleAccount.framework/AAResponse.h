@@ -15,12 +15,12 @@
 @property(readonly) NSString * protocolVersion;
 
 
-- (void)_parseResponse:(id)arg1;
-- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
+- (void)dealloc;
 - (void)setError:(id)arg1;
 - (id)protocolVersion;
 - (id)error;
-- (void)dealloc;
+- (void)_parseResponse:(id)arg1;
+- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)responseDictionary;
 
 @end

@@ -11,15 +11,15 @@
 @property(retain) NSMutableArray * optionDefinitions;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)optionDefinitions;
 - (id)optionDefinitionAtIndex:(unsigned int)arg1;
 - (unsigned int)optionDefinitionsCount;
 - (void)addOptionDefinition:(id)arg1;
 - (void)setOptionDefinitions:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

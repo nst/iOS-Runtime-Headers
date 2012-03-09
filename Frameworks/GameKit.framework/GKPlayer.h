@@ -34,11 +34,18 @@
 
 + (void)loadPlayersForIdentifiers:(id)arg1 withCompletionHandler:(id)arg2;
 + (id)sharedCache;
-+ (id)photoKeyForSize:(int)arg1;
++ (int)sizeForPhotoSize:(int)arg1;
 + (id)anonymousPlayer;
 + (id)unknownPlayer;
 + (void)loadPlayersForIdentifiers:(id)arg1 withPieces:(unsigned int)arg2 withCompletionHandler:(id)arg3;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)friends;
 - (void)setInviteStatus:(int)arg1;
 - (int)inviteStatus;
@@ -81,17 +88,10 @@
 - (id)internal;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (void)setInternal:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (id)valueForUndefinedKey:(id)arg1;
 - (id)displayName;
 - (id)cacheKey;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

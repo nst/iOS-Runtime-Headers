@@ -20,6 +20,7 @@
 @property(retain) <UIWebSelectedItemPrivate> * _singleSelectionItem;
 
 
+- (void)dealloc;
 - (id)_singleSelectionItem;
 - (id)_cachedItems;
 - (void)set_singleSelectionItem:(id)arg1;
@@ -34,6 +35,5 @@
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (int)numberOfComponentsInPickerView:(id)arg1;
 - (void)pickerView:(id)arg1 row:(int)arg2 column:(int)arg3 checked:(BOOL)arg4;
-- (void)dealloc;
 
 @end

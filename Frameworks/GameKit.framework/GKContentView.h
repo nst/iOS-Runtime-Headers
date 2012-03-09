@@ -35,6 +35,7 @@
 
 + (float)maxTextWidth;
 
+- (void)dealloc;
 - (void)setIconView:(id)arg1;
 - (id)iconView;
 - (void)setMessageLabel:(id)arg1;
@@ -72,6 +73,5 @@
 - (void)layoutIfNeeded;
 - (void)setTitle:(id)arg1;
 - (id)titleLabel;
-- (void)dealloc;
 
 @end

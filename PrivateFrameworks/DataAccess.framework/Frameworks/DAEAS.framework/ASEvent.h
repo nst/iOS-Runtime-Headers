@@ -73,13 +73,14 @@
 
 - (id)subject;
 - (void)setSubject:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setCategories:(id)arg1;
 - (id)categories;
 - (id)organizerName;
 - (void)setAttendees:(id)arg1;
 - (id)attendees;
-- (void)setLocation:(id)arg1;
-- (void)setBody:(id)arg1;
 - (id)startTime;
 - (id)location;
 - (id)timeZone;
@@ -88,9 +89,9 @@
 - (void)setStartTime:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)setLocation:(id)arg1;
+- (void)setBody:(id)arg1;
+- (id)responseType;
 - (id)responseRequested;
 - (id)eventByMergingInEvent:(id)arg1 account:(id)arg2;
 - (BOOL)isEqualToEvent:(id)arg1;
@@ -181,6 +182,5 @@
 - (int)meetingResponse;
 - (id)asParseRules;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
-- (id)responseType;
 
 @end

@@ -10,15 +10,11 @@
     void *_reserved[3];
 }
 
-+ (id)defaultStore;
 + (void)_synchronizeStoresForced:(BOOL)arg1;
++ (id)defaultStore;
 + (void)_appWillActivate;
 + (void)_appWillDeactivate;
 
-- (id)stringForKey:(id)arg1;
-- (void)removeObjectForKey:(id)arg1;
-- (BOOL)synchronize;
-- (void)finalize;
 - (void)setLongLong:(long long)arg1 forKey:(id)arg2;
 - (long long)longLongForKey:(id)arg1;
 - (void)setData:(id)arg1 forKey:(id)arg2;
@@ -52,15 +48,19 @@
 - (void)setDouble:(double)arg1 forKey:(id)arg2;
 - (double)doubleForKey:(id)arg1;
 - (id)dictionaryForKey:(id)arg1;
-- (id)dataForKey:(id)arg1;
-- (id)arrayForKey:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)initWithBundleIdentifier:(id)arg1;
-- (BOOL)boolForKey:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
 - (void)dealloc;
+- (id)dictionaryRepresentation;
+- (void)finalize;
+- (id)initWithBundleIdentifier:(id)arg1;
+- (BOOL)synchronize;
+- (void)removeObjectForKey:(id)arg1;
+- (BOOL)boolForKey:(id)arg1;
+- (id)arrayForKey:(id)arg1;
+- (id)stringForKey:(id)arg1;
+- (id)dataForKey:(id)arg1;
 - (id)_initWithDomain:(id)arg1;
 - (void)_printDebugDescription;
 

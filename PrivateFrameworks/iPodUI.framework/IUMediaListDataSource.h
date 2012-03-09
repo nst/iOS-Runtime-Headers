@@ -54,12 +54,18 @@
 @property(readonly) BOOL allowsDownloadingAllEntities;
 
 
+- (unsigned int)count;
+- (id)init;
+- (void)dealloc;
 - (id)sectionInfo;
-- (void)invalidate;
 - (float)rowHeight;
 - (unsigned int)numberOfSections;
 - (BOOL)isEmpty;
+- (void)invalidate;
 - (void)reloadData;
+- (int)initialSelectedIndex;
+- (void)setCellConfigurationClass:(Class)arg1;
+- (Class)cellConfigurationClass;
 - (void)clearCachedActionState;
 - (void)cacheActionStateForActionWithContext:(id)arg1;
 - (BOOL)shouldDrawAsDisabledForIndex:(unsigned int)arg1;
@@ -84,7 +90,6 @@
 - (id)countStringFormat;
 - (id)aggregateTableHeaderViewConfiguration;
 - (BOOL)canMoveIndex:(unsigned int)arg1;
-- (BOOL)allowsDownloadingAllEntities;
 - (void)resetAggregateTableHeaderViewConfiguration;
 - (BOOL)skipSingleItemLists;
 - (BOOL)selectionPossibleForIndex:(unsigned int)arg1;
@@ -110,6 +115,7 @@
 - (id)viewControllerContextForActionRow:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (BOOL)deleteRemovesEntireGroup;
+- (BOOL)allowsDownloadingAllEntities;
 - (BOOL)allowsDeletion;
 - (unsigned int)removeActionRowWithTag:(int)arg1;
 - (id)actionRowAtIndex:(unsigned int)arg1;
@@ -127,11 +133,5 @@
 - (id)prefixActionRows;
 - (unsigned int)countOfActionRows;
 - (BOOL)hasPlayableItems;
-- (unsigned int)count;
-- (id)init;
-- (void)dealloc;
-- (int)initialSelectedIndex;
-- (void)setCellConfigurationClass:(Class)arg1;
-- (Class)cellConfigurationClass;
 
 @end

@@ -21,6 +21,10 @@
 @property(readonly) NSDictionary * logSnapshot;
 
 
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (int)compare:(id)arg1;
 - (void)computeDiffToPreviousSnapshot:(id)arg1;
 - (void)removeValuesChangedByPeerSnapshot:(id)arg1;
 - (id)initWithTranasctionEntry:(id)arg1 andLogSnapshot:(id)arg2;
@@ -29,11 +33,7 @@
 - (id)diffFromPrevious;
 - (id)transactionDate;
 - (id)exportingPeerID;
-- (id)knowledgeVector;
 - (id)transactionNumber;
-- (int)compare:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (id)knowledgeVector;
 
 @end

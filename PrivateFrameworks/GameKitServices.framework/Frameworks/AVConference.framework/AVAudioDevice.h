@@ -17,6 +17,8 @@
 @property(readonly) NSString * deviceName;
 
 
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)initWithDeviceID:(id)arg1;
 - (void)createNameForScope:(unsigned long)arg1;
 - (BOOL)isValidDevice;
@@ -27,7 +29,5 @@
 - (BOOL)inputAvailable;
 - (id)deviceName;
 - (id)deviceID;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end

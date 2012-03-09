@@ -18,8 +18,13 @@
 @property(retain) NSMutableArray * requestElements;
 
 
+- (id)description;
+- (void)dealloc;
 - (Class)responseClass;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (void)writeTo:(id)arg1;
 - (id)requestElements;
 - (id)userProfile;
 - (id)appProfiles;
@@ -35,10 +40,5 @@
 - (void)setUserProfile:(id)arg1;
 - (void)setAppProfiles:(id)arg1;
 - (void)setPlatformProfile:(id)arg1;
-- (unsigned int)requestTypeCode;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

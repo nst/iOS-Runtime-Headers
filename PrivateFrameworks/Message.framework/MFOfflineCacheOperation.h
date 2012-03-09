@@ -12,8 +12,8 @@
 - (void)setRowid:(long long)arg1;
 - (BOOL)hasRowid;
 - (long long)rowid;
+- (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)init;
 
 @end

@@ -15,6 +15,7 @@
 @property(retain) GKMatchmakerViewControllerPrivate * privateViewController;
 
 
+- (void)dealloc;
 - (void)setHostedPlayerReady:(id)arg1;
 - (void)setMatchmakerDelegate:(id)arg1;
 - (id)matchmakerDelegate;
@@ -32,6 +33,5 @@
 - (void)setHosted:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)dealloc;
 
 @end

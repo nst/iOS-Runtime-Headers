@@ -13,14 +13,14 @@
 }
 
 
+- (void)dealloc;
 - (void)setAlarms:(id)arg1;
-- (BOOL)update;
-- (BOOL)isEditable;
 - (id)_alertTitleView;
 - (id)_alert2View;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 platformStyle:(int)arg3;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
-- (void)dealloc;
+- (BOOL)update;
+- (BOOL)isEditable;
 - (id)_alertView;
 
 @end

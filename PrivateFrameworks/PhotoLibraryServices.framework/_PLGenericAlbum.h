@@ -7,12 +7,12 @@
 @interface _PLGenericAlbum : PLManagedObject  {
 }
 
+@property(retain) NSMutableSet * albumLists;
 @property(retain) NSString * title;
 @property(retain) NSString * uuid;
 @property(retain) NSNumber * kind;
 @property(retain) NSDictionary * slideshowSettings;
 @property(retain) PLManagedAsset * keyAsset;
-@property(retain) NSMutableSet * albumLists;
 @property unsigned int pendingItemsCount;
 @property unsigned int pendingItemsType;
 

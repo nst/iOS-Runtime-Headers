@@ -56,8 +56,13 @@
 + (id)name;
 
 - (void)setUid:(id)arg1;
+- (id)components;
+- (id)description;
+- (id)debugDescription;
+- (id)init;
+- (void)dealloc;
 - (void)setStatus:(int)arg1;
-- (void)setPriority:(unsigned int)arg1;
+- (int)status;
 - (void)fixExceptionDates;
 - (void)fixExceptionRules;
 - (void)fixRecurrenceDates;
@@ -99,11 +104,6 @@
 - (void)removeComponent:(id)arg1;
 - (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)removePropertiesForName:(id)arg1;
-- (id)allProperties;
-- (void)addComponent:(id)arg1;
-- (id)duration;
-- (void)setDuration:(id)arg1;
-- (id)components;
 - (void)setX_apple_structured_location:(id)arg1;
 - (id)rrule;
 - (id)exdate;
@@ -139,9 +139,6 @@
 - (unsigned int)sequence;
 - (id)dtstart;
 - (id)recurrence_id;
-- (id)summary;
-- (void)setSummary:(id)arg1;
-- (void)setLocation:(id)arg1;
 - (id)properties;
 - (void)setComponents:(id)arg1;
 - (unsigned int)priority;
@@ -150,11 +147,14 @@
 - (id)url;
 - (id)location;
 - (id)attach;
-- (int)status;
-- (id)description;
-- (id)debugDescription;
-- (id)init;
-- (void)dealloc;
+- (id)duration;
+- (void)setDuration:(id)arg1;
+- (id)summary;
+- (void)setSummary:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setPriority:(unsigned int)arg1;
 - (id)ICSStringWithOptions:(unsigned int)arg1;
+- (id)allProperties;
+- (void)addComponent:(id)arg1;
 
 @end

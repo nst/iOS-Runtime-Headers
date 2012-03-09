@@ -6,6 +6,7 @@
 }
 
 
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransform;
 - (struct CGPath { }*)_rectangleWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)_parallelogramWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)_trapezoidWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
@@ -41,6 +42,5 @@
 - (struct CGPath { }*)_pieWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)_diagramCircularArrowWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)createShapeWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransform;
 
 @end

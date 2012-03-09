@@ -7,8 +7,10 @@
 }
 
 
-- (void)setRegistered:(BOOL)arg1;
+- (id)init;
 - (BOOL)registered;
+- (int)pid;
+- (void)setPid:(int)arg1;
 - (void)setFdref:(struct __CFFileDescriptor { }*)arg1;
 - (void)setRemotePort:(struct __CFMessagePort { }*)arg1;
 - (struct __CFFileDescriptor { }*)fdref;
@@ -17,8 +19,6 @@
 - (void)setRemoteAddress:(int)arg1;
 - (int)serverFD;
 - (void)setServerFD:(int)arg1;
-- (int)pid;
-- (void)setPid:(int)arg1;
-- (id)init;
+- (void)setRegistered:(BOOL)arg1;
 
 @end

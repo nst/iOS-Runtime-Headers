@@ -18,6 +18,7 @@
 
 + (Class)contentViewClass;
 
+- (void)dealloc;
 - (id)mediaItem;
 - (void)setExpanded:(BOOL)arg1;
 - (BOOL)expanded;
@@ -38,6 +39,5 @@
 - (id)videoImageRequest;
 - (void)updateContentView;
 - (void)setMediaItem:(id)arg1;
-- (void)dealloc;
 
 @end

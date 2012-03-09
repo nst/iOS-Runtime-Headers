@@ -12,13 +12,13 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)_updateLastMediaTypeForItem;
 - (void)_stopPlaybackTimer;
 - (void)_handleItemTypeAvailableNotification:(id)arg1;
 - (void)_handleItemChangedNotification:(id)arg1;
 - (void)_handlePlaybackStateChangedNotification:(id)arg1;
 - (void)_startPlaybackTimer;
-- (id)init;
-- (void)dealloc;
 
 @end

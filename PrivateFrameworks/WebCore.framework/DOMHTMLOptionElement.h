@@ -17,8 +17,6 @@
 @property(copy) NSString * value;
 
 
-- (BOOL)defaultSelected;
-- (void)setDefaultSelected:(BOOL)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (BOOL)disabled;
 - (id)form;
@@ -30,6 +28,8 @@
 - (void)setLabel:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (id)text;
+- (BOOL)defaultSelected;
+- (void)setDefaultSelected:(BOOL)arg1;
 - (id)itemTitle;
 - (void)populateCell:(id)arg1;
 - (id)createPickerCell;

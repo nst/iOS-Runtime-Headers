@@ -26,8 +26,8 @@
 - (unsigned int)extraArgumentCount;
 - (id)containerClassID;
 - (id)initWithContainerClassID:(id)arg1 key:(id)arg2 implementation:(int (*)())arg3 selector:(SEL)arg4 extraArguments:(void*[3])arg5 count:(unsigned int)arg6;
+- (void)dealloc;
 - (id)key;
 - (SEL)selector;
-- (void)dealloc;
 
 @end

@@ -23,6 +23,7 @@
 @property(retain) UIView * headerView;
 
 
+- (void)dealloc;
 - (id)artwork;
 - (struct CGImage { }*)_newFaderImageBackgroundWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)newWebView;
@@ -39,14 +40,13 @@
 - (void)noteDidSnapshot;
 - (void)noteWillSnapshot;
 - (void)setArtwork:(id)arg1;
-- (void)setNeedsLayout;
 - (void)setHeaderView:(id)arg1;
 - (id)headerView;
 - (BOOL)hasText;
 - (void)didMoveToSuperview;
 - (void)layoutSubviews;
+- (void)setNeedsLayout;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 - (float)webViewWidth;
 - (void)webViewDidFinishLoading:(id)arg1;
 

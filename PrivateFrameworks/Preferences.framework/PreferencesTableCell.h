@@ -26,15 +26,14 @@
 @property(retain) PSSpecifier * specifier;
 
 
+- (void)setTarget:(id)arg1;
+- (SEL)action;
+- (id)target;
+- (void)dealloc;
+- (BOOL)canReload;
+- (id)valueLabel;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
-- (id)getIcon;
-- (id)blankIcon;
-- (id)getLazyIcon;
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (void)setShouldHideTitle:(BOOL)arg1;
-- (void)reloadWithSpecifier:(id)arg1;
-- (void)forceSynchronousIconLoadOnNextIconLoad;
 - (int)type;
 - (id)value;
 - (BOOL)isChecked;
@@ -52,13 +51,14 @@
 - (id)titleLabel;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
+- (id)getIcon;
+- (id)blankIcon;
+- (id)getLazyIcon;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)setShouldHideTitle:(BOOL)arg1;
+- (void)reloadWithSpecifier:(id)arg1;
+- (void)forceSynchronousIconLoadOnNextIconLoad;
 - (BOOL)cellEnabled;
 - (void)setCellEnabled:(BOOL)arg1;
-- (void)setTarget:(id)arg1;
-- (SEL)action;
-- (id)target;
-- (void)dealloc;
-- (BOOL)canReload;
-- (id)valueLabel;
 
 @end

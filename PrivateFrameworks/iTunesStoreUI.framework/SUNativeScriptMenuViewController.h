@@ -13,11 +13,11 @@
 @property(retain) NSArray * menuItems;
 
 
+- (id)action;
+- (void)dealloc;
 - (id)menuItems;
 - (void)setMenuItems:(id)arg1;
 - (void)setAction:(id)arg1;
-- (id)action;
-- (void)dealloc;
 - (BOOL)isMenuItemEnabledAtIndex:(int)arg1;
 - (id)titleOfMenuItemAtIndex:(int)arg1;
 - (void)performActionForMenuItemAtIndex:(int)arg1;

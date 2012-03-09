@@ -29,6 +29,17 @@
 @property(copy,readonly) NSURL * absoluteImageURL;
 
 
+- (void)setName:(id)arg1;
+- (void)setHeight:(int)arg1;
+- (int)height;
+- (int)y;
+- (int)x;
+- (id)absoluteImageURL;
+- (id)mimeType;
+- (id)dataRepresentation:(BOOL)arg1;
+- (void)setWidth:(int)arg1;
+- (int)width;
+- (id)name;
 - (BOOL)isMap;
 - (void)setIsMap:(BOOL)arg1;
 - (id)useMap;
@@ -53,17 +64,6 @@
 - (void)setVspace:(int)arg1;
 - (id)border;
 - (void)setBorder:(id)arg1;
-- (void)setHeight:(int)arg1;
-- (int)height;
-- (int)y;
-- (int)x;
-- (id)absoluteImageURL;
-- (id)mimeType;
-- (id)dataRepresentation:(BOOL)arg1;
-- (void)setWidth:(int)arg1;
-- (int)width;
-- (id)name;
-- (void)setName:(id)arg1;
 - (BOOL)showsTapHighlight;
 - (void)recursivelyRemoveMailAttributes;
 - (void)mf_constrainImageToSize:(struct CGSize { float x1; float x2; })arg1;

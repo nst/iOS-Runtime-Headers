@@ -9,7 +9,15 @@
 }
 
 
-- (id)initWithContainer:(id)arg1 key:(id)arg2 mutableOrderedSet:(id)arg3 mutationMethods:(id)arg4;
+- (void)addObjectsFromArray:(id)arg1;
+- (void)addObject:(id)arg1;
+- (void)dealloc;
+- (void)unionOrderedSet:(id)arg1;
+- (void)intersectOrderedSet:(id)arg1;
+- (void)insertObjects:(id)arg1 atIndexes:(id)arg2;
+- (void)addObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (void)sortRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingComparator:(id)arg3;
+- (void)insertObjects:(id*)arg1 count:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)minusOrderedSet:(id)arg1;
 - (void)removeObjectsAtIndexes:(id)arg1;
 - (void)unionSet:(id)arg1;
@@ -23,14 +31,6 @@
 - (void)intersectSet:(id)arg1;
 - (void)removeObjectsInArray:(id)arg1;
 - (void)removeAllObjects;
-- (void)unionOrderedSet:(id)arg1;
-- (void)intersectOrderedSet:(id)arg1;
-- (void)insertObjects:(id)arg1 atIndexes:(id)arg2;
-- (void)addObjects:(const id*)arg1 count:(unsigned int)arg2;
-- (void)sortRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingComparator:(id)arg3;
-- (void)insertObjects:(id*)arg1 count:(unsigned int)arg2 atIndex:(unsigned int)arg3;
-- (void)addObjectsFromArray:(id)arg1;
-- (void)addObject:(id)arg1;
-- (void)dealloc;
+- (id)initWithContainer:(id)arg1 key:(id)arg2 mutableOrderedSet:(id)arg3 mutationMethods:(id)arg4;
 
 @end

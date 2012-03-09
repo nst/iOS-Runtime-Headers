@@ -19,6 +19,7 @@
 @property(retain) UISwitch * accessorySwitch;
 
 
+- (void)dealloc;
 - (void)setTitleLabel:(id)arg1;
 - (int)type;
 - (id)title;
@@ -32,6 +33,5 @@
 - (id)accessorySwitch;
 - (void)setShouldCenterTitle:(BOOL)arg1;
 - (void)setAccessorySwitch:(id)arg1;
-- (void)dealloc;
 
 @end

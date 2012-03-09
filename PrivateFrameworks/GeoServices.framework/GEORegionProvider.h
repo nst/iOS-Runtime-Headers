@@ -14,18 +14,18 @@
 @property(retain) NSString * provider;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (void)setProvider:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)regionAtIndex:(unsigned int)arg1;
 - (unsigned int)regionsCount;
 - (void)addRegion:(id)arg1;
 - (void)setRegions:(id)arg1;
 - (BOOL)hasProvider;
-- (void)setProvider:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
-- (id)provider;
 - (id)regions;
+- (id)dictionaryRepresentation;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)provider;
 
 @end

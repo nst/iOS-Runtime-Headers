@@ -18,6 +18,8 @@
 @property(readonly) NSData * data;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)appendElement:(id)arg1 inNamespace:(id)arg2 withStringContentAsCDATA:(id)arg3 withAttributeNamesAndValues:(id)arg4;
 - (void)startElement:(id)arg1 inNamespace:(id)arg2 withAttributes:(id)arg3;
 - (BOOL)shouldAddFormattingSpaces;
@@ -29,7 +31,5 @@
 - (void)appendElement:(id)arg1 inNamespace:(id)arg2 withStringContent:(id)arg3 withAttributeNamesAndValues:(id)arg4;
 - (void)startElement:(id)arg1 inNamespace:(id)arg2 withAttributeNamesAndValues:(id)arg3;
 - (id)data;
-- (id)init;
-- (void)dealloc;
 
 @end

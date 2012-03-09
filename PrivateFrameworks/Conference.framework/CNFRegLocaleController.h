@@ -22,12 +22,6 @@
 @property(copy) NSString * currentRegionID;
 
 
-- (id)bundle;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)_updateUI;
 - (void)dealloc;
 - (id)countryList;
 - (id)currentCountryValueForSpecifier:(id)arg1;
@@ -72,5 +66,11 @@
 - (void)_setupEventHandlers;
 - (void)_failValidationWithError:(id)arg1;
 - (id)logName;
+- (void)_updateUI;
+- (id)bundle;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

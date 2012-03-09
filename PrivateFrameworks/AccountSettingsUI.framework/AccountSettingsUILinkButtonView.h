@@ -22,9 +22,10 @@
 @property(retain) NSString * text;
 
 
+- (void)dealloc;
+- (BOOL)showArrow;
+- (void)setShowArrow:(BOOL)arg1;
 - (float)preferredHeightForWidth:(float)arg1;
-- (BOOL)underline;
-- (void)setUnderline:(BOOL)arg1;
 - (id)initWithSpecifier:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
@@ -33,9 +34,8 @@
 - (void)setFont:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
-- (BOOL)showArrow;
-- (void)setShowArrow:(BOOL)arg1;
+- (BOOL)underline;
+- (void)setUnderline:(BOOL)arg1;
 - (void)_goToAccountURL;
 
 @end

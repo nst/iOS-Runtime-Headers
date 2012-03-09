@@ -16,6 +16,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithMigrationManager:(id)arg1;
 - (id)currentEntityMapping;
 - (void)setCurrentEntityMapping:(id)arg1;
@@ -29,6 +30,5 @@
 - (void)_createAssociationsByDestination:(id)arg1 fromSource:(id)arg2 forEntityMapping:(id)arg3;
 - (void)setCurrentPropertyMapping:(id)arg1;
 - (void)associateSourceInstance:(id)arg1 withDestinationInstance:(id)arg2 forEntityMapping:(id)arg3;
-- (void)dealloc;
 
 @end

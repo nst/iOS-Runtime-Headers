@@ -11,9 +11,12 @@
     void *_reserved1;
 }
 
-+ (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
++ (BOOL)accessInstanceVariablesDirectly;
 
+- (BOOL)isEqual:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)valueForKey:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)initWithObjectID:(id)arg1;
@@ -24,8 +27,5 @@
 - (unsigned int)_versionNumber;
 - (void)_setVersionNumber:(unsigned int)arg1;
 - (id)objectID;
-- (BOOL)isEqual:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

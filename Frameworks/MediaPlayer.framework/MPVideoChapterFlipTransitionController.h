@@ -15,6 +15,7 @@
 @property BOOL playAfterFlip;
 
 
+- (void)dealloc;
 - (void)setPlayAfterFlip:(BOOL)arg1;
 - (BOOL)playAfterFlip;
 - (id)_chapterGuideTitleLabel;
@@ -28,6 +29,5 @@
 - (int)_interfaceOrientation;
 - (void)setNavigationBar:(id)arg1;
 - (id)navigationBar;
-- (void)dealloc;
 
 @end

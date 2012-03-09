@@ -42,8 +42,10 @@
 @property BOOL dataContextActive;
 
 
+- (id)init;
+- (void)dealloc;
+- (struct __SCPreferences { }*)_prefs;
 - (void)_synchronize;
-- (void)setRegistered:(BOOL)arg1;
 - (void)setDataContextActive:(BOOL)arg1;
 - (BOOL)dataContextActive;
 - (void)setShouldBringUpDataContext:(BOOL)arg1;
@@ -89,9 +91,7 @@
 - (void)setDataConnectionActive:(BOOL)arg1;
 - (void)refresh;
 - (id)lock;
-- (struct __SCPreferences { }*)_prefs;
-- (id)init;
-- (void)dealloc;
+- (void)setRegistered:(BOOL)arg1;
 - (BOOL)isAirplaneModeEnabled;
 
 @end

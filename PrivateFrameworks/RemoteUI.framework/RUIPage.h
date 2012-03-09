@@ -44,9 +44,30 @@
 @property(copy) NSString * pageID;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)navTitle;
 - (void)setNavTitle:(id)arg1;
+- (id)containerView;
+- (id)buttons;
+- (id)toolbar;
+- (id)contentScrollView;
+- (void)_keyboardWillHide:(id)arg1;
+- (void)_keyboardWillShow:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)setButton:(id)arg1 enabled:(BOOL)arg2;
+- (void)setHidesBackButton:(BOOL)arg1;
+- (BOOL)hidesBackButton;
+- (void)viewDidLayoutSubviews;
 - (void)setDelegate:(id)arg1;
+- (float)_getKeyboardIntersectionHeight;
+- (void)_setContentInset:(float)arg1;
 - (void)setHasToolbar;
 - (void)setRightNavigationBarButton:(id)arg1;
 - (void)setLeftNavigationBarButton:(id)arg1;
@@ -77,27 +98,6 @@
 - (void)setPageID:(id)arg1;
 - (void)setValidationFunction:(id)arg1;
 - (void)setLoadingTitle:(id)arg1;
-- (float)_getKeyboardIntersectionHeight;
-- (void)_setContentInset:(float)arg1;
-- (id)containerView;
-- (id)buttons;
-- (id)toolbar;
-- (id)contentScrollView;
-- (void)_keyboardWillHide:(id)arg1;
-- (void)_keyboardWillShow:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)setButton:(id)arg1 enabled:(BOOL)arg2;
-- (void)setHidesBackButton:(BOOL)arg1;
-- (BOOL)hidesBackButton;
-- (void)viewDidLayoutSubviews;
 - (void)_updateToolbar;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

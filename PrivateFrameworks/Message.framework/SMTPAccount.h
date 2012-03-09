@@ -54,7 +54,7 @@
 - (Class)connectionClass;
 - (id)certUIService;
 - (struct __CFString { }*)connectionServiceType;
-- (id)serviceName;
 - (void)dealloc;
+- (id)serviceName;
 
 @end

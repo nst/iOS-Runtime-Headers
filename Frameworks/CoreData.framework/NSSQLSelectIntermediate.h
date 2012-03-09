@@ -15,6 +15,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initForCorrelationTarget:(id)arg1 alias:(id)arg2 fetchColumns:(id)arg3 inScope:(id)arg4;
 - (void)setColumnAlias:(id)arg1;
 - (void)setFetchEntity:(id)arg1;
@@ -25,6 +26,5 @@
 - (void)setIsCount:(BOOL)arg1;
 - (BOOL)isSelectTargetScoped;
 - (id)generateSQLStringInContext:(id)arg1;
-- (void)dealloc;
 
 @end

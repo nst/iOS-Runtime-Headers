@@ -16,12 +16,12 @@
 
 - (id)subject;
 - (void)setSubject:(id)arg1;
-- (id)sender;
+- (void)dealloc;
 - (id)initWithConversation:(id)arg1 text:(id)arg2 markup:(id)arg3 parts:(id)arg4;
 - (id)markup;
 - (unsigned int)messagePartCount;
 - (void)loadParts;
 - (id)parts;
-- (void)dealloc;
+- (id)sender;
 
 @end

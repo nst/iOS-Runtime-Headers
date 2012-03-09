@@ -9,6 +9,7 @@
 }
 
 
+- (void)dealloc;
 - (id)owningEventForAttachmentEditViewController:(id)arg1;
 - (BOOL)_shouldCondenseIntoSingleItem;
 - (id)owningEventForAttachmentCellController:(id)arg1;
@@ -21,7 +22,6 @@
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
 - (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (id)cellForSubitemAtIndex:(int)arg1;
-- (void)dealloc;
 - (BOOL)isInline;
 
 @end

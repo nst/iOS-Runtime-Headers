@@ -11,10 +11,10 @@
 + (void)setGestureServiceEnabled:(BOOL)arg1;
 + (BOOL)isGestureServiceEnabled;
 
-- (id)initWithPriority:(int)arg1;
-- (void)setGestureHandler:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)initWithPriority:(int)arg1;
+- (void)setGestureHandler:(id)arg1;
 - (id)gestureHandler;
 - (void)stopWatchdogCheckins;
 - (void)startWatchdogCheckins;

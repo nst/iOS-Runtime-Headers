@@ -80,7 +80,30 @@
 
 + (id)sharedDownloader;
 
+- (void)dealloc;
 - (BOOL)isBusy;
+- (double)startTime;
+- (void)uiWebView:(id)arg1 resource:(id)arg2 didReceiveAuthenticationChallenge:(id)arg3 fromDataSource:(id)arg4;
+- (void)webViewDidFinishLoad:(id)arg1;
+- (void)webViewDidStartLoad:(id)arg1;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
+- (void)setWebView:(id)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1 forWindow:(id)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
+- (id)webView;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillLayoutSubviews;
+- (void)didReceiveMemoryWarning;
+- (void)setStartTime:(double)arg1;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (unsigned int)actualSupportedInterfaceOrientations;
 - (void)setAdIsDismissing:(BOOL)arg1;
@@ -97,7 +120,6 @@
 - (void)setContentIsFullyLoaded:(BOOL)arg1;
 - (BOOL)contentIsFullyLoaded;
 - (id)popover;
-- (id)progressView;
 - (id)dismissButton;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenBounds;
 - (void)insertTransitionView:(id)arg1;
@@ -159,28 +181,6 @@
 - (void)setOverclickCount:(unsigned int)arg1;
 - (void)setImpressionSequence:(unsigned int)arg1;
 - (void)_handleLowMemory:(id)arg1;
-- (double)startTime;
-- (void)uiWebView:(id)arg1 resource:(id)arg2 didReceiveAuthenticationChallenge:(id)arg3 fromDataSource:(id)arg4;
-- (void)webViewDidFinishLoad:(id)arg1;
-- (void)webViewDidStartLoad:(id)arg1;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
-- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (void)setWebView:(id)arg1;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1 forWindow:(id)arg2;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidUnload;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
-- (id)webView;
-- (void)viewDidLayoutSubviews;
-- (void)viewWillLayoutSubviews;
-- (void)didReceiveMemoryWarning;
-- (void)setStartTime:(double)arg1;
-- (id)delegate;
-- (void)dealloc;
+- (id)progressView;
 
 @end

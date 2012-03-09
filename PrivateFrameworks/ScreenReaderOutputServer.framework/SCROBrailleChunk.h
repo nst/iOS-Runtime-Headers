@@ -28,17 +28,17 @@
 
 + (void)initialize;
 
-- (id)language;
-- (void)translate;
-- (BOOL)isFocusedOrSelected;
-- (int)locationForIndex:(int)arg1;
-- (id)brailleWithIBeamLocation:(int*)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
-- (id)initWithText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5 contractionMode:(int)arg6 showEightDot:(BOOL)arg7 showDotsSevenAndEight:(BOOL)arg8;
-- (id)_tableIdentifierForLanguage:(id)arg1;
-- (BOOL)hasSelection;
-- (BOOL)focused;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)language;
+- (BOOL)focused;
+- (BOOL)hasSelection;
+- (id)brailleWithIBeamLocation:(int*)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
+- (int)locationForIndex:(int)arg1;
+- (BOOL)isFocusedOrSelected;
+- (void)translate;
+- (id)_tableIdentifierForLanguage:(id)arg1;
+- (id)initWithText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5 contractionMode:(int)arg6 showEightDot:(BOOL)arg7 showDotsSevenAndEight:(BOOL)arg8;
 - (int)token;
 
 @end

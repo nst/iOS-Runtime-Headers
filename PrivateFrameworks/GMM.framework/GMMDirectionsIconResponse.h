@@ -15,7 +15,11 @@
 @property(retain) NSMutableArray * iconDefinitions;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)iconDefinitions;
 - (void)setHasIconVersion:(BOOL)arg1;
 - (BOOL)hasIconVersion;
@@ -25,9 +29,5 @@
 - (void)setIconVersion:(int)arg1;
 - (void)addIconDefinition:(id)arg1;
 - (void)setIconDefinitions:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

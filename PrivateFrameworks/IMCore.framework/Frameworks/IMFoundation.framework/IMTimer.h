@@ -17,10 +17,10 @@
 @property(readonly) id userInfo;
 
 
-- (void)setFireTimeInterval:(double)arg1;
-- (void)invalidate;
-- (id)initWithTimeInterval:(double)arg1 name:(id)arg2 shouldWake:(BOOL)arg3 target:(id)arg4 selector:(SEL)arg5 userInfo:(id)arg6;
 - (id)userInfo;
 - (void)dealloc;
+- (id)initWithTimeInterval:(double)arg1 name:(id)arg2 shouldWake:(BOOL)arg3 target:(id)arg4 selector:(SEL)arg5 userInfo:(id)arg6;
+- (void)invalidate;
+- (void)setFireTimeInterval:(double)arg1;
 
 @end

@@ -19,12 +19,12 @@
 @property BOOL gotOne;
 
 
+- (void)dealloc;
 - (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
 - (void)completedSearchWithFirstName:(id)arg1 lastName:(id)arg2;
 - (void)setGotOne:(BOOL)arg1;
 - (BOOL)gotOne;
 - (void)setCompletionHandler:(id)arg1;
 - (id)completionHandler;
-- (void)dealloc;
 
 @end

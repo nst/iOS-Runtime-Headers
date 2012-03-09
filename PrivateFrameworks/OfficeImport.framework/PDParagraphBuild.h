@@ -13,6 +13,10 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (int)type;
+- (void)setType:(int)arg1;
 - (int)timeNodeDataListCount;
 - (id)timeNodeDataAtIndex:(int)arg1;
 - (id)addTimeNodeData;
@@ -23,9 +27,5 @@
 - (void)setIsReversedParagraphOrder:(BOOL)arg1;
 - (int)buildLevel;
 - (void)setBuildLevel:(int)arg1;
-- (int)type;
-- (void)setType:(int)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

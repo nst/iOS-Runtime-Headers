@@ -40,6 +40,7 @@
 + (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 touchCount:(unsigned int)arg4;
 + (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(int)arg4 touchCount:(unsigned int)arg5;
 
+- (void)dealloc;
 - (void)setRateOfMaximumMovementDecay:(float)arg1;
 - (float)rateOfMaximumMovementDecay;
 - (void)setRateOfMinimumMovementDecay:(float)arg1;
@@ -72,6 +73,5 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

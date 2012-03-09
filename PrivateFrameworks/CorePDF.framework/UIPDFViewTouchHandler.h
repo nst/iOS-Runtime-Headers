@@ -20,6 +20,7 @@
 }
 
 
+- (void)dealloc;
 - (void)doubleTapRecognized:(id)arg1;
 - (void)singleTapRecognized:(id)arg1;
 - (void)briefPressRecognized:(id)arg1;
@@ -38,6 +39,5 @@
 - (BOOL)resignFirstResponder;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)nextResponder;
-- (void)dealloc;
 
 @end

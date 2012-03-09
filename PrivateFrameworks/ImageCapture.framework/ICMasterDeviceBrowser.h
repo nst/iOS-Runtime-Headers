@@ -18,7 +18,10 @@
 + (BOOL)exists;
 + (id)defaultBrowser;
 
-- (void)finalize;
+- (id)init;
+- (void)dealloc;
+- (id)devices;
+- (void)stop:(id)arg1;
 - (int)addRemoveMSCamera;
 - (id)deviceWithDelegate:(id)arg1;
 - (void)informBrowserDelegateUsingSelector:(SEL)arg1 withObject:(id)arg2;
@@ -32,9 +35,6 @@
 - (void)handleCommandCompletionNotification:(id)arg1;
 - (void)handleImageCaptureEventNotification:(id)arg1;
 - (int)start:(id)arg1;
-- (id)devices;
-- (void)stop:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)finalize;
 
 @end

@@ -12,22 +12,22 @@
 @property(readonly) NSSet * supportedMediaTypes;
 @property(readonly) NSString * UTI;
 @property(readonly) NSString * figFormatReaderFileFormat;
-@property(readonly) unsigned int audioFileTypeID;
+@property(readonly) unsigned long audioFileTypeID;
 
-+ (void)initialize;
 + (id)mediaFileTypeWithFileTypeIdentifier:(id)arg1;
 + (id)_mediaFileTypeWithFileTypeIdentifier:(id)arg1 exceptionReason:(id*)arg2;
 + (id)allFileTypeIdentifiers;
++ (void)initialize;
 
-- (id)UTI;
-- (id)defaultFileExtension;
-- (id)initWithFileTypeIdentifier:(id)arg1 exceptionReason:(id*)arg2;
-- (unsigned long)audioFileTypeID;
-- (id)figFormatReaderFileFormat;
-- (id)supportedMediaTypes;
-- (BOOL)supportsOutputSettings:(id)arg1 reason:(id*)arg2;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)defaultFileExtension;
+- (id)initWithFileTypeIdentifier:(id)arg1 exceptionReason:(id*)arg2;
+- (unsigned long)audioFileTypeID;
+- (BOOL)supportsOutputSettings:(id)arg1 reason:(id*)arg2;
+- (id)supportedMediaTypes;
+- (id)figFormatReaderFileFormat;
+- (id)UTI;
 
 @end

@@ -10,9 +10,8 @@
 }
 
 
+- (id)description;
 - (unsigned short)responseCode;
-- (unsigned long)parameterAtIndex:(unsigned long)arg1;
-- (void)setResponseCode:(unsigned short)arg1;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 numParameters:(unsigned long)arg3 parameters:(unsigned int*)arg4;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3;
@@ -39,6 +38,7 @@
 - (id)contentForTCP;
 - (unsigned long)transactionID;
 - (id)initWithTCPBuffer:(void*)arg1;
-- (id)description;
+- (unsigned long)parameterAtIndex:(unsigned long)arg1;
+- (void)setResponseCode:(unsigned short)arg1;
 
 @end

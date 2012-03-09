@@ -12,8 +12,8 @@
 
 + (id)geoDirectionsResponseFromGMMResponse:(id)arg1 error:(int*)arg2;
 
+- (void)dealloc;
 - (id)viaWaypointArrays;
 - (void)setViaWaypointArrays:(id)arg1;
-- (void)dealloc;
 
 @end

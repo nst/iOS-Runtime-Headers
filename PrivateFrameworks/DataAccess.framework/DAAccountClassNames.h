@@ -17,6 +17,8 @@
 @property(retain) NSString * agentClassName;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)agentClassName;
 - (id)daemonAccountClassName;
 - (id)clientAccountClassName;
@@ -25,7 +27,5 @@
 - (void)setDaemonAccountClassName:(id)arg1;
 - (void)setClientAccountClassName:(id)arg1;
 - (void)setAccountClassName:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

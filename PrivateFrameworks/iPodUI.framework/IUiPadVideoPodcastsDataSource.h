@@ -13,5 +13,6 @@
 - (int)gridTitleStyle;
 - (BOOL)deleteRemovesEntireGroup;
 - (SEL)libraryHasDisplayableEntitiesSelector;
+- (BOOL)shouldLoadLocalImagesSynchronously;
 
 @end

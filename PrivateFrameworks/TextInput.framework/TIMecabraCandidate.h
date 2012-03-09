@@ -2,24 +2,17 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString;
-
 @interface TIMecabraCandidate : UIKeyboardCandidate  {
     void *_candidate;
-    NSString *_accessibilityLabel;
 }
-
-@property(copy) NSString * accessibilityLabel;
 
 
 - (id)candidate;
 - (id)input;
 - (id)initConversionCandidateWithSurface:(id)arg1 andInput:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)accessibilityLabel;
 - (BOOL)isExtensionCandidate;
 - (BOOL)isForShortcutConversion;
-- (void)setAccessibilityLabel:(id)arg1;
 - (void)dealloc;
 - (id)initWithMecabraCandidate:(const void*)arg1;
 - (void*)mecabraCandidate;

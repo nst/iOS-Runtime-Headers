@@ -37,10 +37,14 @@
 @property int identifier;
 
 
-- (float)latitude;
-- (float)longitude;
-- (void)setLongitude:(float)arg1;
-- (void)setLatitude:(float)arg1;
+- (void)setName:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (void)setCountryName:(id)arg1;
+- (id)countryName;
 - (id)classicIdentifier;
 - (void)setUnlocalizedName:(id)arg1;
 - (void)setUnlocalizedCountryName:(id)arg1;
@@ -56,6 +60,9 @@
 - (id)unlocalizedName;
 - (id)unlocalizedCountryName;
 - (id)initWithSQLRow:(char **)arg1;
+- (void)setLongitude:(float)arg1;
+- (void)setLatitude:(float)arg1;
+- (id)displayNameIncludingCountry:(BOOL)arg1;
 - (id)properties;
 - (id)initWithProperties:(id)arg1;
 - (id)timeZone;
@@ -63,14 +70,7 @@
 - (void)setIdentifier:(int)arg1;
 - (id)name;
 - (void)setTimeZone:(id)arg1;
-- (id)displayNameIncludingCountry:(BOOL)arg1;
-- (void)setName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (void)setCountryName:(id)arg1;
-- (id)countryName;
+- (float)latitude;
+- (float)longitude;
 
 @end

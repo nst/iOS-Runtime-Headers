@@ -20,6 +20,8 @@
 
 + (id)purchaseForMediaItem:(id)arg1 purchaseReason:(int)arg2;
 
+- (id)description;
+- (void)dealloc;
 - (int)purchaseReason;
 - (void)invokeAndClearAllCompletionHandlers;
 - (void)setCompletedWithDownload:(id)arg1 error:(id)arg2;
@@ -29,8 +31,6 @@
 - (id)initWithMediaItem:(id)arg1 purchaseReason:(int)arg2;
 - (id)mediaItem;
 - (BOOL)completed;
-- (id)description;
-- (void)dealloc;
 - (id)purchase;
 
 @end

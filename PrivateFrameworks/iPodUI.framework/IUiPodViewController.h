@@ -35,12 +35,16 @@
 + (BOOL)supportsViewControllerStyle:(int)arg1;
 + (id)newViewControllerForContext:(id)arg1 redirectType:(int)arg2 didRedirect:(BOOL*)arg3;
 
-- (void)setLoading:(BOOL)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)modalContextDidDismiss:(id)arg1 withSuccess:(BOOL)arg2;
 - (void)unlockPlayer;
 - (void)lockPlayer;
 - (void)beginTransition;
 - (void)endTransition;
+- (void)setLoading:(BOOL)arg1;
+- (id)player;
 - (void)setPlayer:(id)arg1;
 - (BOOL)isLoading;
 - (void)applicationResumedEventsOnly:(BOOL)arg1;
@@ -66,7 +70,6 @@
 - (void)didReceiveMemoryWarning;
 - (id)query;
 - (void)reloadData;
-- (id)player;
 - (void)setShouldConfigureNavigationItem:(BOOL)arg1;
 - (BOOL)shouldConfigureNavigationItem;
 - (BOOL)isAppearingOrAppeared;
@@ -110,8 +113,5 @@
 - (void)scheduleInvocationAfterTransition:(id)arg1;
 - (void)cancelScheduledInvocationsWithTarget:(id)arg1 selector:(SEL)arg2;
 - (id)modalContext;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

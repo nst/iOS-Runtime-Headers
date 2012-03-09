@@ -13,11 +13,11 @@
 @property(retain) NSDate * fireDate;
 
 
+- (void)dealloc;
+- (id)obj;
+- (void)setObj:(id)arg1;
 - (id)fireDate;
 - (int)compare:(id)arg1;
 - (void)setFireDate:(id)arg1;
-- (id)obj;
-- (void)setObj:(id)arg1;
-- (void)dealloc;
 
 @end

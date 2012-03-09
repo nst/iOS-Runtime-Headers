@@ -14,14 +14,17 @@
     int _pendingAccountSetupCount;
 }
 
++ (id)sharedInstance;
 + (void)vendDaemonManagers:(Class)arg1;
 + (void)reacquireClientRestrictions:(id)arg1;
 + (id)oneshotListOfAccountPersistentUUIDs;
-+ (id)sharedInstance;
 
 - (void)reloadAccounts;
 - (id)accounts;
+- (id)init;
+- (void)dealloc;
 - (BOOL)removeAccount:(id)arg1;
+- (BOOL)hasActiveAccounts;
 - (void)checkValidityForAccount:(id)arg1 consumer:(id)arg2;
 - (BOOL)hasPendingAccountSetup;
 - (void)removePendingAccountSetup;
@@ -47,10 +50,7 @@
 - (void)_stopAgentMonitoring;
 - (void)_setExternalSource:(id)arg1 statusForDataTypes:(int)arg2;
 - (void)_setAccountName:(id)arg1 forDataTypes:(int)arg2;
-- (id)init;
-- (void)dealloc;
-- (BOOL)removeAccount:(id)arg1 forAccountIDReset:(BOOL)arg2;
 - (BOOL)addAccount:(id)arg1;
-- (BOOL)hasActiveAccounts;
+- (BOOL)removeAccount:(id)arg1 forAccountIDReset:(BOOL)arg2;
 
 @end

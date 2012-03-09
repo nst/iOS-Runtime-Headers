@@ -11,18 +11,22 @@
 @property(readonly) SSURLBagContext * context;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)uniqueKey;
-- (id)initWithBagContext:(id)arg1;
-- (void)run;
-- (id)context;
 - (void)_addHeadersToRequestProperties:(id)arg1;
+- (id)_diskCachePath;
 - (id)_copyProductionBootstrapURLs;
 - (id)_copySandboxBootstrapURLs;
+- (void)_writeURLBagToDiskCache:(id)arg1;
 - (void)_loadConfigurationFromURLBag:(id)arg1;
 - (void)_loadURLBagFromURL:(id)arg1;
 - (id)_copyBootstrapURLs;
-- (id)init;
-- (void)dealloc;
+- (id)_copyURLBagFromDiskCache;
+- (struct __CFString { }*)_diskCacheExpirationTimeKey;
+- (void)run;
+- (id)context;
+- (id)initWithBagContext:(id)arg1;
 - (BOOL)operation:(id)arg1 shouldSetStoreFrontID:(id)arg2;
 - (void)operation:(id)arg1 willSendRequest:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;

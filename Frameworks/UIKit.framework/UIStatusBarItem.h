@@ -19,6 +19,7 @@
 + (BOOL)typeIsValid:(int)arg1;
 + (id)itemWithType:(int)arg1;
 
+- (id)description;
 - (int)compareRightOrder:(id)arg1;
 - (int)compareLeftOrder:(id)arg1;
 - (Class)viewClass;
@@ -32,6 +33,5 @@
 - (BOOL)appearsOnLeft;
 - (int)type;
 - (id)initWithType:(int)arg1;
-- (id)description;
 
 @end

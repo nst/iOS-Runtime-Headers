@@ -21,6 +21,12 @@
 }
 
 
+- (void)dealloc;
+- (id)initWithDocument:(id)arg1;
+- (id)image;
+- (id)text;
+- (void)setText:(id)arg1;
+- (void)setImage:(id)arg1;
 - (long)startNumber;
 - (BOOL)startNumberOverridden;
 - (int)numberFormat;
@@ -50,11 +56,5 @@
 - (void)setLegacySpace:(long)arg1;
 - (void)setLegacyIndent:(long)arg1;
 - (void)setJustification:(int)arg1;
-- (id)initWithDocument:(id)arg1;
-- (id)image;
-- (id)text;
-- (void)setText:(id)arg1;
-- (void)setImage:(id)arg1;
-- (void)dealloc;
 
 @end

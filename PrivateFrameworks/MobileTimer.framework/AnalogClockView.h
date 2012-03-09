@@ -28,13 +28,13 @@
 + (void)_updateTimes;
 + (struct CGSize { float x1; float x2; })defaultSize;
 
+- (void)dealloc;
+- (void)updateTime;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 registerForUpdates:(BOOL)arg2 offsets:(struct CGPoint { float x1; float x2; }*)arg3 scales:(struct CGSize { float x1; float x2; }*)arg4 bundle:(id)arg5 snippetStyle:(BOOL)arg6;
 - (void)updateSweepBack;
 - (void)_setEvening:(BOOL)arg1;
 - (id)timeZone;
 - (void)setTime:(id)arg1;
 - (void)setTimeZone:(id)arg1;
-- (void)updateTime;
-- (void)dealloc;
 
 @end

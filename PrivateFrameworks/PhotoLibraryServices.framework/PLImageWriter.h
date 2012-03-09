@@ -21,11 +21,15 @@
 + (void)decorateThumbnailInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2 duration:(id)arg3 inContext:(struct CGContext { }*)arg4 format:(int)arg5;
 + (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)enqueueJob:(id)arg1;
 - (BOOL)canEnqueueJob:(id)arg1;
 - (void)_processJob:(id)arg1;
 - (void)_processIngestedSyncedAssetJob:(id)arg1;
 - (void)_processSavePhotoStreamImageToCameraRollJob:(id)arg1;
+- (void)_processReenqueueAssetUUIDsToPhotoStreamJob:(id)arg1;
+- (void)_processDeletePhotoStreamAssetsWithUUIDs:(id)arg1;
 - (void)_processDeletePhotoStreamDataJob:(id)arg1;
 - (void)_processSyncedVideoSaveJob:(id)arg1;
 - (void)_processImportImageJob:(id)arg1;
@@ -42,7 +46,5 @@
 - (BOOL)_isHighPriorityJob:(id)arg1;
 - (void)_postJobQueueNotificationIsAvailable:(BOOL)arg1;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

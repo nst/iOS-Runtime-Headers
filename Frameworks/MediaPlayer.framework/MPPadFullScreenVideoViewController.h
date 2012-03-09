@@ -11,6 +11,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)firstVideoFrameDisplayedNotification:(id)arg1;
 - (BOOL)canChangeScaleMode;
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
@@ -39,8 +41,6 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)loadView;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)setItem:(id)arg1;
 
 @end

@@ -16,6 +16,9 @@
 @property(copy) NSString * studioName;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)studioName;
 - (void)setStudioName:(id)arg1;
 - (void)setScreenwriters:(id)arg1;
@@ -32,8 +35,5 @@
 - (void)_setValueCopy:(id)arg1 forKey:(id)arg2;
 - (id)copyMoviePropertiesDictionary;
 - (id)initWithMoviePropertiesDictionary:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -48,8 +48,7 @@
 @property(retain) NSNumber * boxedIPodOutAlertType;
 
 
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 - (void)setTopic:(id)arg1;
 - (id)topic;
 - (void)setIPodOutAlertType:(int)arg1;
@@ -99,6 +98,7 @@
 - (void)setRealertCount:(unsigned int)arg1;
 - (unsigned int)realertCount;
 - (void)setUnlockActionLabel:(id)arg1;
-- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

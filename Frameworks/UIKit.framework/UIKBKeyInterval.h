@@ -13,11 +13,11 @@
 @property double interval;
 
 
+- (void)dealloc;
 - (double)interval;
 - (id)initWithKey:(id)arg1 interval:(double)arg2;
 - (void)setInterval:(double)arg1;
 - (void)setKey:(id)arg1;
 - (id)key;
-- (void)dealloc;
 
 @end

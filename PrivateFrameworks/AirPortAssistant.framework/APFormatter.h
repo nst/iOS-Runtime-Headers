@@ -39,17 +39,17 @@
 + (id)ascii7BitFormatter:(unsigned int)arg1;
 + (id)hexFormatter:(unsigned int)arg1;
 
-- (void)setCharacterSet:(id)arg1;
 - (BOOL)isPartialStringValid:(id*)arg1 proposedSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 errorDescription:(id*)arg5;
 - (BOOL)isPartialStringValid:(id)arg1 newEditingString:(id*)arg2 errorDescription:(id*)arg3;
 - (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 errorDescription:(id*)arg3;
+- (void)dealloc;
 - (id)initWithStringOfValidCharacters:(id)arg1 withMaxLength:(unsigned int)arg2;
 - (id)initWithMaxLength:(unsigned int)arg1;
 - (id)invertedCharacterSet;
 - (void)setInvertedCharacterSet:(id)arg1;
 - (id)initWithCharacterSet:(id)arg1 withMaxLength:(unsigned int)arg2;
-- (id)characterSet;
 - (id)stringForObjectValue:(id)arg1;
-- (void)dealloc;
+- (id)characterSet;
+- (void)setCharacterSet:(id)arg1;
 
 @end

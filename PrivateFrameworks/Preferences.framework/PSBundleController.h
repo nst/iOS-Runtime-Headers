@@ -9,9 +9,9 @@
 }
 
 
-- (id)specifiersWithSpecifier:(id)arg1;
-- (id)initWithParentListController:(id)arg1;
 - (void)unload;
 - (void)load;
+- (id)specifiersWithSpecifier:(id)arg1;
+- (id)initWithParentListController:(id)arg1;
 
 @end

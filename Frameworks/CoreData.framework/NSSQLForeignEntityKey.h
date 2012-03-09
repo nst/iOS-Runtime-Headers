@@ -9,12 +9,12 @@
 }
 
 
+- (void)dealloc;
 - (id)initForReadOnlyFetchingOfEntity:(id)arg1 toOneRelationship:(id)arg2;
 - (void)setFKForReadOnlyFetch:(id)arg1;
 - (id)initWithEntity:(id)arg1 foreignKey:(id)arg2;
 - (id)toOneRelationship;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)foreignKey;
-- (void)dealloc;
 
 @end

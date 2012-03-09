@@ -14,15 +14,15 @@
 
 + (Class)responseClass;
 
+- (void)dealloc;
+- (void)setPassword:(id)arg1;
+- (void)setUsername:(id)arg1;
+- (id)username;
 - (id)initWithURLString:(id)arg1 username:(id)arg2 password:(id)arg3;
 - (id)urlCredential;
 - (id)urlRequest;
 - (id)initWithUsername:(id)arg1 password:(id)arg2;
-- (void)setPassword:(id)arg1;
-- (void)setUsername:(id)arg1;
-- (id)username;
 - (id)password;
 - (id)urlString;
-- (void)dealloc;
 
 @end

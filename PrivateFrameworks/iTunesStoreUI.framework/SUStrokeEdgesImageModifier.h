@@ -22,12 +22,12 @@
 @property BOOL strokeCurrentPath;
 
 
-- (id)strokeColor;
-- (void)setStrokeColor:(id)arg1;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (id)strokeColor;
+- (void)setStrokeColor:(id)arg1;
 - (void)setStrokeCurrentPath:(BOOL)arg1;
 - (void)setFitToImage:(BOOL)arg1;
 - (BOOL)strokeCurrentPath;

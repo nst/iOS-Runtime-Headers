@@ -68,24 +68,7 @@
 @property int outlineStyle;
 
 
-- (void)setDelegate:(id)arg1;
-- (int)outlineStyle;
-- (void)setOutlineStyle:(int)arg1;
-- (id)calendar;
-- (void)setCalendar:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
-- (float)contentInset;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)setTimeZone:(id)arg1;
-- (id)delegate;
-- (id)dataSource;
-- (void)layoutSubviews;
-- (void)reloadData;
-- (void)setDataSource:(id)arg1;
+- (void)dealloc;
 - (id)displayDate;
 - (void)addViewToScroller:(id)arg1 isAllDay:(BOOL)arg2;
 - (void)highlightHour:(double)arg1;
@@ -182,6 +165,23 @@
 - (void)dayOccurrenceViewClicked:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setDarkensSelection:(BOOL)arg1;
 - (void)_localeChanged;
-- (void)dealloc;
+- (id)calendar;
+- (void)setCalendar:(id)arg1;
+- (void)setOrientation:(int)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (float)contentInset;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)setTimeZone:(id)arg1;
+- (id)delegate;
+- (id)dataSource;
+- (void)layoutSubviews;
+- (void)reloadData;
+- (void)setDelegate:(id)arg1;
+- (void)setDataSource:(id)arg1;
+- (int)outlineStyle;
+- (void)setOutlineStyle:(int)arg1;
 
 @end

@@ -19,6 +19,7 @@
 @property(readonly) UILabel * routeNameLabel;
 
 
+- (void)dealloc;
 - (void)_availableRoutesChangedNotification:(id)arg1;
 - (id)image;
 - (void)layoutSubviews;
@@ -30,6 +31,5 @@
 - (id)routePickerButton;
 - (void)reloadRoutePickerAnimated:(BOOL)arg1;
 - (id)_navBarTitle;
-- (void)dealloc;
 
 @end

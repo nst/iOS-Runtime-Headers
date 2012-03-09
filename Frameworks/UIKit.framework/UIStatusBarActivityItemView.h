@@ -11,11 +11,11 @@
 }
 
 
+- (void)dealloc;
 - (int)_activityIndicatorStyle;
 - (float)shadowPaddingForStyle:(int)arg1;
 - (float)updateContentsAndWidth;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (void)setVisible:(BOOL)arg1;
-- (void)dealloc;
 
 @end

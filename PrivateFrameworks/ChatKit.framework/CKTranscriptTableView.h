@@ -19,15 +19,15 @@
 @property(copy) id panGestureRecognizerBlock;
 
 
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)handlePan:(id)arg1;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)dealloc;
 - (void)cancelPanGesture;
 - (void)setIgnoresContentOffsetChanges:(BOOL)arg1;
 - (BOOL)isFastAnimationAvailableForContentOffset;
 - (BOOL)ignoresContentOffsetChanges;
 - (void)setPanGestureRecognizerBlock:(id)arg1;
 - (id)panGestureRecognizerBlock;
-- (void)dealloc;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)handlePan:(id)arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

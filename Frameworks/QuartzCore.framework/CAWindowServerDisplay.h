@@ -37,22 +37,9 @@
 @property(copy) NSString * TVSignalType;
 
 
-- (void)invalidate;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (float)overscanAmount;
-- (void)setOrientation:(id)arg1;
-- (id)name;
-- (int)tag;
-- (void)setTag:(int)arg1;
-- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toContextId:(unsigned int)arg2;
-- (unsigned int)contextIdAtPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (unsigned int)clientPortAtPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (id)orientation;
-- (float)contrast;
-- (void)setContrast:(float)arg1;
-- (id)deviceName;
 - (id)description;
 - (void)dealloc;
+- (id)deviceName;
 - (id)contextIdsWithClientPort:(unsigned int)arg1;
 - (unsigned int)clientPortOfContextId:(unsigned int)arg1;
 - (unsigned int)contextIdHostingContextId:(unsigned int)arg1;
@@ -90,5 +77,18 @@
 - (void)setColorMode:(id)arg1;
 - (BOOL)allowsVirtualModes;
 - (void)setAllowsVirtualModes:(BOOL)arg1;
+- (float)overscanAmount;
+- (void)setOrientation:(id)arg1;
+- (id)name;
+- (int)tag;
+- (void)setTag:(int)arg1;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toContextId:(unsigned int)arg2;
+- (unsigned int)contextIdAtPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (unsigned int)clientPortAtPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (id)orientation;
+- (void)invalidate;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (void)setContrast:(float)arg1;
+- (float)contrast;
 
 @end

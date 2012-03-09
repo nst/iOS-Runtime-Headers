@@ -15,6 +15,7 @@
 @property(retain) CalDAVScheduleResponseItem * scheduleResponse;
 
 
+- (void)dealloc;
 - (id)originator;
 - (void)setOriginator:(id)arg1;
 - (id)additionalHeaderValues;
@@ -22,7 +23,6 @@
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (void)setAttendees:(id)arg1;
 - (id)attendees;
-- (void)dealloc;
 - (id)scheduleResponse;
 - (void)setScheduleResponse:(id)arg1;
 - (id)initWithOriginator:(id)arg1 attendees:(id)arg2 outboxURL:(id)arg3 payload:(id)arg4;

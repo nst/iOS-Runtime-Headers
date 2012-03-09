@@ -14,8 +14,6 @@
 
 
 - (id)_initWithObservances:(id*)arg1 count:(unsigned int)arg2;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (unsigned int)retainCount;
@@ -23,5 +21,7 @@
 - (id)retain;
 - (oneway void)release;
 - (void)dealloc;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 
 @end

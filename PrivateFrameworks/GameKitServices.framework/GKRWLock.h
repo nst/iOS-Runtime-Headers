@@ -10,11 +10,11 @@
 }
 
 
-- (void)unlock;
+- (id)init;
+- (void)dealloc;
 - (int)tryrdlock;
 - (void)wrlock;
 - (void)rdlock;
-- (id)init;
-- (void)dealloc;
+- (void)unlock;
 
 @end

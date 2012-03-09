@@ -23,7 +23,7 @@
 @property <IUSearchHelperDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)searchString;
 - (void)setSearchString:(id)arg1;
 - (void)searchDisplayController:(id)arg1 didLoadSearchResultsTableView:(id)arg2;
@@ -37,11 +37,11 @@
 - (id)searchDisplayController;
 - (float)heightForTableHeaderViewHiding;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (BOOL)searchBarHidesAlone;
 - (void)_searchDataSourceNoResultsChangedNotification:(id)arg1;
 - (id)searchResultListViewController;
 - (void)setSearchBarHidesAlone:(BOOL)arg1;
 - (void)searchResultListViewController:(id)arg1 didSelectContext:(id)arg2;
-- (void)dealloc;
 
 @end

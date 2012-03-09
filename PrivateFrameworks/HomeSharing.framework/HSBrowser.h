@@ -28,6 +28,7 @@
 @property(readonly) NSArray * availableLibraries;
 
 
+- (void)dealloc;
 - (id)availableLibraries;
 - (void)startWithAddLibraryHandler:(id)arg1 removeLibraryHandler:(id)arg2;
 - (void)setHomeSharingGroupID:(id)arg1;
@@ -35,6 +36,5 @@
 - (void)stop;
 - (void)_didRemoveService:(id)arg1 moreComing:(BOOL)arg2;
 - (void)_didFindService:(id)arg1 moreComing:(BOOL)arg2;
-- (void)dealloc;
 
 @end

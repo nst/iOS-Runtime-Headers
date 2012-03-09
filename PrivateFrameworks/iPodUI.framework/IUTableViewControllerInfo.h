@@ -20,6 +20,8 @@
 @property(copy) NSString * searchString;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)searchString;
 - (void)setSearchString:(id)arg1;
 - (int)selectedRow;
@@ -30,7 +32,5 @@
 - (void)setSelectedRow:(int)arg1;
 - (void)setScrollOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })scrollOffset;
-- (id)init;
-- (void)dealloc;
 
 @end

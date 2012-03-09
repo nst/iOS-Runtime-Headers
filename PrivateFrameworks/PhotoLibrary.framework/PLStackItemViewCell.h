@@ -59,6 +59,7 @@
 + (void)initialize;
 + (struct CGSize { float x1; float x2; })badgeOffset;
 
+- (void)dealloc;
 - (BOOL)enabled;
 - (id)imageView;
 - (BOOL)textFieldShouldClear:(id)arg1;
@@ -105,6 +106,5 @@
 - (BOOL)isShadowEnabled;
 - (void)setShadowEnabled:(BOOL)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1 angle:(float)arg2;
-- (void)dealloc;
 
 @end

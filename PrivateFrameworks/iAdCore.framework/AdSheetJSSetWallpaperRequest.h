@@ -15,12 +15,12 @@
 @property(retain) WebScriptObject * listener;
 
 
-- (void)setListener:(id)arg1;
+- (void)dealloc;
+- (id)listener;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)listener;
-- (void)dealloc;
+- (void)setListener:(id)arg1;
 
 @end

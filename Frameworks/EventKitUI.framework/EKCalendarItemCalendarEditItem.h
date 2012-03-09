@@ -7,6 +7,7 @@
 }
 
 
+- (id)init;
 - (BOOL)_shouldShowSourceForCalendar:(id)arg1;
 - (id)initWithEntityType:(int)arg1;
 - (BOOL)editItemViewControllerCommit:(id)arg1;
@@ -15,6 +16,5 @@
 - (BOOL)shouldAppearWithVisibility:(int)arg1;
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
 - (id)cellForSubitemAtIndex:(int)arg1;
-- (id)init;
 
 @end

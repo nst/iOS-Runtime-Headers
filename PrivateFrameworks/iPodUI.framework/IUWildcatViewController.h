@@ -14,13 +14,13 @@
 @property(readonly) UIView * backstopView;
 
 
+- (id)init;
 - (id)topViewController;
 - (BOOL)_canReloadView;
+- (id)topNavigationController;
 - (id)directChildViewController;
 - (id)browserViewController;
 - (id)browserSegmentedViewController;
 - (id)backstopView;
-- (id)init;
-- (id)topNavigationController;
 
 @end

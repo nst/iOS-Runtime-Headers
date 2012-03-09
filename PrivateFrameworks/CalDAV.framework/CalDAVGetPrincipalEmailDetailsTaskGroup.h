@@ -15,14 +15,14 @@
 @property(retain) CalDAVPrincipalEmailDetailsResult * principalResult;
 
 
+- (void)dealloc;
+- (id)principalURL;
 - (id)addresses;
 - (void)_finishWithError:(id)arg1;
 - (void)setPrincipalURL:(id)arg1;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (id)displayName;
-- (id)principalURL;
-- (void)dealloc;
 - (void)setPrincipalResult:(id)arg1;
 - (void)_processPropFind:(id)arg1;
 - (id)principalResult;

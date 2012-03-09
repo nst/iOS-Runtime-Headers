@@ -16,6 +16,8 @@
 + (id)newCitiesByIdentifierMap:(id)arg1;
 + (id)sharedManager;
 
+- (id)init;
+- (void)dealloc;
 - (id)defaultCitiesForLocaleCode:(id)arg1;
 - (id)citySearchMatcher;
 - (id)citiesMatchingName:(id)arg1 localized:(BOOL)arg2;
@@ -26,10 +28,8 @@
 - (id)defaultCitiesForLocaleCode:(id)arg1 options:(int)arg2;
 - (id)bestCityForLegacyCity:(struct __CFArray { }*)arg1;
 - (id)citiesWithTimeZone:(id)arg1;
-- (id)localeWithCode:(id)arg1;
 - (id)defaultCityForTimeZone:(id)arg1;
 - (id)citiesMatchingName:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)localeWithCode:(id)arg1;
 
 @end

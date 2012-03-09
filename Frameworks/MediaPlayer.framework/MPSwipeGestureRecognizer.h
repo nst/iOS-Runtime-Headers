@@ -17,6 +17,7 @@
 @property(readonly) int swipeDirection;
 
 
+- (void)dealloc;
 - (int)swipeDirection;
 - (void)reset;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
@@ -24,6 +25,5 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 
 @end

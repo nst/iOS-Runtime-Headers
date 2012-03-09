@@ -14,12 +14,6 @@
 @property(readonly) int style;
 
 
-- (void)dim;
-- (void)setDelegate:(id)arg1;
-- (int)style;
-- (id)delegate;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
 - (void)dealloc;
 - (void)setIconOrientation:(int)arg1;
 - (int)_buttonPositionForButton:(id)arg1;
@@ -31,5 +25,11 @@
 - (void)setButton:(int)arg1 isSelected:(BOOL)arg2;
 - (void)setTitle:(id)arg1 image:(id)arg2 forButtonTag:(int)arg3;
 - (void)undim;
+- (int)style;
+- (id)delegate;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
+- (void)dim;
 
 @end

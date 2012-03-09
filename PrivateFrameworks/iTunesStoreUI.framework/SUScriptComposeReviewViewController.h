@@ -11,8 +11,8 @@
 
 + (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)attributeKeys;
 - (id)init;
+- (id)attributeKeys;
 - (id)_copyReview;
 - (void)_initWithScriptReview:(id)arg1;
 - (id)initWithScriptReview:(id)arg1;

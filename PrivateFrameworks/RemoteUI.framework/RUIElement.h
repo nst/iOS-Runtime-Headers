@@ -11,9 +11,13 @@
 @property(retain) NSDictionary * attributes;
 
 
-- (void)populatePostbackDictionary:(id)arg1;
+- (void)dealloc;
 - (void)setAttributes:(id)arg1;
 - (id)attributes;
-- (void)dealloc;
+- (void)setImage:(id)arg1;
+- (id)imageAttributeAndScale:(float*)arg1;
+- (void)imageLoaded:(id)arg1;
+- (BOOL)loadImage;
+- (void)populatePostbackDictionary:(id)arg1;
 
 @end

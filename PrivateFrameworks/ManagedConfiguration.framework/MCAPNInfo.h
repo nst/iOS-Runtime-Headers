@@ -19,10 +19,8 @@
 @property(retain) NSString * apnName;
 
 
-- (void)setPassword:(id)arg1;
-- (void)setUsername:(id)arg1;
-- (id)username;
-- (id)password;
+- (id)description;
+- (void)dealloc;
 - (id)proxyPort;
 - (id)proxy;
 - (void)setApnName:(id)arg1;
@@ -31,7 +29,9 @@
 - (id)defaultsRepresentation;
 - (id)strippedDefaultsRepresentation;
 - (id)apnName;
-- (id)description;
-- (void)dealloc;
+- (void)setPassword:(id)arg1;
+- (void)setUsername:(id)arg1;
+- (id)username;
+- (id)password;
 
 @end

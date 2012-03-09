@@ -9,10 +9,10 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithData:(id)arg1 andRuntimeResourceName:(id)arg2;
 - (id)initWithContentsOfFile:(id)arg1 andRuntimeResourceName:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

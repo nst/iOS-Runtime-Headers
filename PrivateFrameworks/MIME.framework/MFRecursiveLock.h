@@ -13,12 +13,12 @@
 
 - (id)initWithName:(id)arg1 andDelegate:(id)arg2;
 - (BOOL)lockBeforeDate:(id)arg1;
-- (BOOL)tryLock;
-- (BOOL)isLockedByMe;
-- (void)unlock;
-- (void)lock;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (BOOL)isLockedByMe;
+- (void)unlock;
+- (void)lock;
+- (BOOL)tryLock;
 
 @end

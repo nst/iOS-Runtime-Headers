@@ -10,10 +10,10 @@
 
 + (id)sharedThrottler;
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)allowRequest:(unsigned int)arg1 toURL:(id)arg2;
 - (void)clear;
 - (void)_countryProvidersDidChange:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

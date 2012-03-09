@@ -9,8 +9,8 @@
 }
 
 
+- (void)dealloc;
 - (void)setDisplayString:(id)arg1;
 - (id)displayString;
-- (void)dealloc;
 
 @end

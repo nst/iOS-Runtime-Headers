@@ -35,11 +35,12 @@
 @property(copy) id completionHandler;
 
 + (struct dispatch_semaphore_s { }*)semaphore;
++ (struct dispatch_queue_s { }*)queue;
 + (void)decrementCount;
 + (id)bannerWindow;
 + (void)incrementCount;
-+ (struct dispatch_queue_s { }*)queue;
 
+- (void)dealloc;
 - (void)showWithCompletionHandler:(id)arg1;
 - (id)initWithTitle:(id)arg1 message:(id)arg2;
 - (void)_hide;
@@ -49,8 +50,6 @@
 - (void)orientationChanged:(id)arg1;
 - (void)_layoutForOrientation:(int)arg1 animated:(BOOL)arg2;
 - (id)messageLabel;
-- (double)duration;
-- (void)setDuration:(double)arg1;
 - (void)setCompletionHandler:(id)arg1;
 - (id)completionHandler;
 - (id)message;
@@ -58,9 +57,10 @@
 - (id)imageView;
 - (id)backgroundView;
 - (id)title;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (id)titleLabel;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

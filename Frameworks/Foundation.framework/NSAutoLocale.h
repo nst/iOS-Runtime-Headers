@@ -9,17 +9,17 @@
 }
 
 
-- (void)_update:(id)arg1;
-- (Class)classForCoder;
-- (id)initWithLocaleIdentifier:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)_prefs;
-- (id)displayNameForKey:(id)arg1 value:(id)arg2;
 - (id)description;
 - (id)objectForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)_prefs;
+- (id)displayNameForKey:(id)arg1 value:(id)arg2;
+- (void)_update:(id)arg1;
+- (Class)classForCoder;
+- (id)initWithLocaleIdentifier:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

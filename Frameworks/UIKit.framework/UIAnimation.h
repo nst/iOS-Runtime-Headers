@@ -26,8 +26,9 @@
 }
 
 
-- (void)setDuration:(double)arg1;
-- (void)setDelegate:(id)arg1;
+- (SEL)action;
+- (id)target;
+- (void)dealloc;
 - (float)progressForFraction:(float)arg1;
 - (void)markStart:(double)arg1;
 - (void)setCompletion:(id)arg1;
@@ -41,9 +42,8 @@
 - (void)setProgress:(float)arg1;
 - (void)setAnimationCurve:(int)arg1;
 - (int)state;
+- (void)setDuration:(double)arg1;
 - (id)delegate;
-- (SEL)action;
-- (id)target;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

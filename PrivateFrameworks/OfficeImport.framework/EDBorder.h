@@ -17,16 +17,16 @@
 + (id)borderWithType:(int)arg1 color:(id)arg2 resources:(id)arg3;
 + (id)borderWithType:(int)arg1 colorReference:(id)arg2 resources:(id)arg3;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
+- (int)type;
+- (id)color;
+- (void)setType:(int)arg1;
 - (void)setDiagonalType:(int)arg1;
 - (id)initWithResources:(id)arg1;
 - (id)colorReference;
 - (int)diagonalType;
 - (BOOL)isEqualToBorder:(id)arg1;
-- (int)type;
-- (id)color;
-- (void)setType:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 
 @end

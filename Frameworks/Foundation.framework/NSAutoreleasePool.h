@@ -25,14 +25,14 @@
 + (void)addObject:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)drain;
 - (unsigned int)retainCount;
 - (id)retain;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (void)addObject:(id)arg1;
+- (oneway void)release;
 - (id)autorelease;
 - (id)init;
-- (oneway void)release;
 - (void)dealloc;
+- (void)drain;
 
 @end

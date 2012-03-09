@@ -14,19 +14,19 @@
 @property(retain) NSMutableArray * trafficSegments;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)setTrafficSegments:(id)arg1;
-- (void)setVertices:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (struct { int x1; int x2; }*)createUnpackedVerticesWithGutterSize:(int)arg1;
 - (id)trafficSegmentAtIndex:(unsigned int)arg1;
 - (unsigned int)trafficSegmentsCount;
 - (BOOL)hasVertices;
 - (void)addTrafficSegment:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)vertices;
 - (id)trafficSegments;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (void)setTrafficSegments:(id)arg1;
+- (void)setVertices:(id)arg1;
 
 @end

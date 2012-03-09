@@ -7,16 +7,12 @@
 @interface FTMessageDelivery_HTTP : FTMessageDelivery <FTMessageQueueDelegate> {
     NSURLConnection *_currentURLConnection;
     NSMutableData *_currentResponseData;
+    int _currentStatusCode;
 }
 
 
-- (void)invalidate;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)cancelMessage:(id)arg1;
-- (BOOL)sendMessage:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)_processResultData:(id)arg1 forMessage:(id)arg2 error:(id*)arg3;
 - (BOOL)_tryRetryMessageWithTimeInterval:(double)arg1;
 - (void)_updateWiFiAssertions;
@@ -28,7 +24,12 @@
 - (BOOL)busy;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
-- (id)init;
-- (void)dealloc;
+- (void)cancelMessage:(id)arg1;
+- (BOOL)sendMessage:(id)arg1;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)invalidate;
 
 @end

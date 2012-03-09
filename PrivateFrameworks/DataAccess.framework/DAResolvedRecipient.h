@@ -14,10 +14,10 @@
 
 
 - (id)resolvedEmailToX509Certs;
-- (void)setStatus:(int)arg1;
-- (int)status;
 - (id)description;
 - (void)dealloc;
+- (void)setStatus:(int)arg1;
+- (int)status;
 - (void)addCert:(id)arg1 forEmailAddress:(id)arg2;
 
 @end

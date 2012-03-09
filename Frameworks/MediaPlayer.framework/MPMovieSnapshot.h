@@ -18,12 +18,12 @@
 
 + (id)infoWithSize:(struct CGSize { float x1; float x2; })arg1 orientation:(int)arg2 time:(float)arg3 delegate:(id)arg4;
 
+- (id)description;
+- (void)dealloc;
 - (void)snapshotLayer:(id)arg1;
 - (BOOL)prepareForSnapshotOfLayer:(id)arg1 withPlayer:(id)arg2;
 - (id)snapshot;
 - (float)time;
 - (id)delegate;
-- (id)description;
-- (void)dealloc;
 
 @end

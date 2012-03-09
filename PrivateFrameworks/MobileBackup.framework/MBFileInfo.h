@@ -14,12 +14,12 @@
 
 + (id)fileInfoWithPath:(id)arg1 extendedAttributes:(id)arg2;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)path;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)extendedAttributes;
 - (id)initWithPath:(id)arg1 extendedAttributes:(id)arg2;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

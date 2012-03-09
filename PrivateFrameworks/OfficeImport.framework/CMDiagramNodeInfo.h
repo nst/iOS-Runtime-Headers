@@ -16,6 +16,9 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (int)row;
 - (void)setTreeDepth:(int)arg1;
 - (struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)xRanges;
 - (int)treeDepth;
@@ -29,8 +32,5 @@
 - (void)setRow:(int)arg1;
 - (float)xOffsetRelativeToParent;
 - (BOOL)connectToVerticalSide;
-- (int)row;
-- (id)init;
-- (void)dealloc;
 
 @end

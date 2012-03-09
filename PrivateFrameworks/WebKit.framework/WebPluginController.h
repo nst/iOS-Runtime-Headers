@@ -13,15 +13,12 @@
     NSMutableArray *_viewsNotInDocument;
 }
 
-+ (id)plugInViewWithArguments:(id)arg1 fromPluginPackage:(id)arg2;
 + (BOOL)isPlugInView:(id)arg1;
 + (void)addPlugInView:(id)arg1;
 + (void)pluginViewHidden:(id)arg1;
++ (id)plugInViewWithArguments:(id)arg1 fromPluginPackage:(id)arg2;
 
-- (id)initWithDocumentView:(id)arg1;
-- (id)webFrame;
-- (id)webView;
-- (void)setDataSource:(id)arg1;
+- (void)dealloc;
 - (BOOL)plugInsAreRunning;
 - (id)superlayerForPluginView:(id)arg1;
 - (void)stopPluginsForPageCache;
@@ -51,6 +48,9 @@
 - (void)pluginView:(id)arg1 receivedError:(id)arg2;
 - (void)pluginViewFinishedLoading:(id)arg1;
 - (void)pluginViewCreated:(id)arg1;
-- (void)dealloc;
+- (id)initWithDocumentView:(id)arg1;
+- (id)webFrame;
+- (id)webView;
+- (void)setDataSource:(id)arg1;
 
 @end

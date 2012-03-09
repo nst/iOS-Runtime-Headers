@@ -26,16 +26,22 @@
 
 + (void)initialize;
 
+- (id)description;
+- (void)dealloc;
 - (void)setError:(int)arg1;
+- (int)error;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasSupplyMetrics:(BOOL)arg1;
 - (void)setHasError:(BOOL)arg1;
 - (id)adAtIndex:(unsigned int)arg1;
+- (void)clearAds;
 - (unsigned int)adsCount;
 - (void)setSupplyMetrics:(BOOL)arg1;
 - (void)addAd:(id)arg1;
 - (void)setOverrideDefaults:(id)arg1;
 - (void)setAds:(id)arg1;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)overrideDefaults;
 - (BOOL)hasOverrideDefaults;
@@ -46,9 +52,5 @@
 - (BOOL)hasBatchId;
 - (void)setBatchId:(id)arg1;
 - (id)batchId;
-- (id)dictionaryRepresentation;
-- (int)error;
-- (id)description;
-- (void)dealloc;
 
 @end

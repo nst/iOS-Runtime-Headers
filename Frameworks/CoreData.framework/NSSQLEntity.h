@@ -47,12 +47,18 @@
 }
 
 
+- (id)entityDescription;
+- (id)description;
+- (void)dealloc;
+- (id)properties;
+- (id)attributes;
 - (void)finalize;
+- (id)model;
+- (id)name;
 - (id)initWithModel:(id)arg1 entityDescription:(id)arg2;
 - (unsigned int)fetchIndexForKey:(id)arg1;
 - (id)virtualForeignKeyColumns;
 - (BOOL)isKindOfSQLEntity:(id)arg1;
-- (id)attributeNamed:(id)arg1;
 - (id)_sqlPropertyWithRenamingIdentifier:(id)arg1;
 - (void)_generateInverseRelationshipsAndMore;
 - (id)insertStatement;
@@ -73,6 +79,7 @@
 - (id)propertyMapping;
 - (id)toManyRelationships;
 - (BOOL)hasAttributesWithExternalDataReferences;
+- (id)attributeNamed:(id)arg1;
 - (unsigned int)_pkCount;
 - (void)_setMaxPK:(long long)arg1;
 - (void)_resetPKCount;
@@ -111,12 +118,5 @@
 - (BOOL)isRootEntity;
 - (unsigned int)subentityMaxID;
 - (id)propertiesByName;
-- (id)properties;
-- (id)attributes;
-- (id)model;
-- (id)name;
-- (id)entityDescription;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -21,6 +21,8 @@
 @property(getter=isPreferringUserInteraction,readonly) BOOL preferringUserInteraction;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)imageCache;
 - (void)setColumnCount:(int)arg1;
 - (int)columnCount;
@@ -30,8 +32,6 @@
 - (int)numberOfSections;
 - (int)numberOfRowsInSection:(int)arg1;
 - (void)reloadData;
-- (id)init;
-- (void)dealloc;
 - (id)cellReuseSource;
 - (int)numberOfColumnsInSection:(int)arg1;
 - (BOOL)isPreferringUserInteraction;

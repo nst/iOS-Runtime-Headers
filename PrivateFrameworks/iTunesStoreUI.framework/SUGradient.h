@@ -34,11 +34,11 @@
 
 + (id)gradientWithColor:(id)arg1;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)initWithType:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (int)numberOfColorStops;
 - (id)colorStopOffsets;
 - (struct SUGradientPoint { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })p1;

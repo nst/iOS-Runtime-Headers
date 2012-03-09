@@ -32,12 +32,8 @@
 @property(readonly) NSArray * inputSources;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)open;
-- (id)initWithURL:(id)arg1;
-- (void)close;
-- (id)initWithData:(id)arg1;
-- (id)delegate;
+- (id)init;
+- (void)dealloc;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
@@ -51,8 +47,12 @@
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
 - (id)initWithFileAtPath:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)initWithURL:(id)arg1;
+- (void)close;
+- (id)initWithData:(id)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)open;
 - (id)inputSources;
 - (void)_streamEventCallback;
 - (void)_scheduleCallback;

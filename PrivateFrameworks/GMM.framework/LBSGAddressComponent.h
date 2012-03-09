@@ -16,17 +16,17 @@
 @property(retain) NSString * locale;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasLocale;
-- (int)featureType;
-- (void)setFeatureType:(int)arg1;
-- (void)writeTo:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)dictionaryRepresentation;
 - (id)locale;
 - (void)setLocale:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (BOOL)hasLocale;
+- (int)featureType;
+- (void)setFeatureType:(int)arg1;
 
 @end

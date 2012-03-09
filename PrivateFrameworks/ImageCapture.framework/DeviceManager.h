@@ -11,6 +11,10 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (void)stopRunning;
+- (void)startRunning;
 - (void)postCommandCompletionNotification:(id)arg1;
 - (void)openDeviceImp:(id)arg1;
 - (void)closeDeviceImp:(id)arg1;
@@ -33,9 +37,5 @@
 - (int)getThumbnailOfFile:(id)arg1 fromDevice:(id)arg2 contextInfo:(void*)arg3;
 - (int)getMetadataOfFile:(id)arg1 fromDevice:(id)arg2 contextInfo:(void*)arg3;
 - (void)postNotification:(id)arg1;
-- (void)startRunning;
-- (void)stopRunning;
-- (id)init;
-- (void)dealloc;
 
 @end

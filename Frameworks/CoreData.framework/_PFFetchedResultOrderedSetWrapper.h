@@ -9,18 +9,30 @@
     NSArray *_underlyingArray;
 }
 
-+ (BOOL)accessInstanceVariablesDirectly;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (BOOL)accessInstanceVariablesDirectly;
 
-- (unsigned int)indexOfObject:(id)arg1;
-- (id)newArrayFromObjectIDs;
-- (id)managedObjectIDAtIndex:(unsigned int)arg1;
-- (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
-- (id)arrayFromObjectIDs;
-- (Class)classForArchiver;
-- (void)willRead;
+- (unsigned int)count;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)retainCount;
+- (id)description;
+- (id)array;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)retain;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
+- (void)getObjects:(id*)arg1;
+- (id)sortedArrayWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
+- (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
+- (id)descriptionWithLocale:(id)arg1;
 - (BOOL)isEqualToOrderedSet:(id)arg1;
+- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (id)sortedArrayUsingComparator:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)_isDeallocating;
@@ -32,24 +44,12 @@
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (BOOL)containsObject:(id)arg1;
-- (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (void)getObjects:(id*)arg1;
-- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (id)sortedArrayWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
-- (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (id)descriptionWithLocale:(id)arg1;
-- (unsigned int)count;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)retainCount;
-- (id)description;
-- (id)array;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (oneway void)release;
-- (void)dealloc;
+- (unsigned int)indexOfObject:(id)arg1;
+- (id)newArrayFromObjectIDs;
+- (id)managedObjectIDAtIndex:(unsigned int)arg1;
+- (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
+- (id)arrayFromObjectIDs;
+- (Class)classForArchiver;
+- (void)willRead;
 
 @end

@@ -20,6 +20,9 @@
 
 + (void)__writePacketRecord:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
+- (void)deactivate;
 - (unsigned int)packetCount;
 - (unsigned int)_remainingBatteryLifetimeInHoursForPacket:(id)arg1 timestamp:(unsigned int)arg2;
 - (id)_serialNumberForPacket:(id)arg1 timestamp:(unsigned int)arg2 radioId:(unsigned int*)arg3;
@@ -40,8 +43,5 @@
 - (void)beginSearching;
 - (void)cancelLinking;
 - (void)beginLinking;
-- (void)deactivate;
-- (id)init;
-- (void)dealloc;
 
 @end

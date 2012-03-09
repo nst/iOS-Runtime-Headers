@@ -14,6 +14,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setFillColors:(id)arg1;
 - (void)setLineColors:(id)arg1;
 - (void)setEffectColors:(id)arg1;
@@ -27,6 +28,5 @@
 - (id)lineColors;
 - (id)effectColors;
 - (id)textFillColors;
-- (void)dealloc;
 
 @end

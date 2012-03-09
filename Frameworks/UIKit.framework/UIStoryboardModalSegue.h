@@ -15,6 +15,7 @@
 @property int modalTransitionStyle;
 
 
+- (void)perform;
 - (void)setUseDefaultModalTransitionStyle:(BOOL)arg1;
 - (void)setUseDefaultModalPresentationStyle:(BOOL)arg1;
 - (BOOL)useDefaultModalTransitionStyle;
@@ -23,6 +24,5 @@
 - (int)modalTransitionStyle;
 - (void)setModalPresentationStyle:(int)arg1;
 - (int)modalPresentationStyle;
-- (void)perform;
 
 @end

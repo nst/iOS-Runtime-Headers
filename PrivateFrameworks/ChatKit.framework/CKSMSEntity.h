@@ -16,9 +16,10 @@
 + (id)copyAllSMSEntities;
 + (id)copyAllEntities;
 
-- (int)propertyType;
-- (int)identifier;
-- (id)name;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (struct __IMDSMSAddress { }*)_smsAddress;
 - (void)setSmsAddress:(struct __IMDSMSAddress { }*)arg1;
 - (id)_existingEntityFromSharedSet;
@@ -33,10 +34,9 @@
 - (struct __CFPhoneNumber { }*)phoneNumberRef;
 - (void*)abRecord;
 - (id)rawAddress;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
+- (int)identifier;
+- (id)name;
 - (void)resetCaches;
+- (int)propertyType;
 
 @end

@@ -8,11 +8,12 @@
     NSThread *_originalThread;
 }
 
-+ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 delegate:(id)arg5;
 + (void)setUnitTestingResultsArray:(id)arg1;
 + (id)smi_serverCommandName;
 + (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 onlyInboxes:(BOOL)arg5 delegate:(id)arg6;
++ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 delegate:(id)arg5;
 
+- (void)dealloc;
 - (void)_generateUnitTestResponsesForResultArray:(id)arg1;
 - (id)_generateUnitTestReplyForMethod:(id)arg1 arg:(id)arg2 error:(id*)arg3;
 - (BOOL)_unitTestsAreEnabled;
@@ -20,6 +21,5 @@
 - (id)_didFindMessageData:(id)arg1 userInfo:(id)arg2;
 - (id)_findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 onlyInboxes:(BOOL)arg5;
 - (id)_initWithDelegate:(id)arg1;
-- (void)dealloc;
 
 @end

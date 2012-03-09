@@ -32,7 +32,8 @@
 @property int testPictureCounter;
 
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)takePicture;
@@ -43,6 +44,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)prepareForDefaultImageSnapshot;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)setTestPictureCounter:(int)arg1;
 - (int)testPictureCounter;
 - (void)pausePhotoStreams;
@@ -71,7 +73,6 @@
 - (void)cameraViewFinishedTakingPicture:(id)arg1;
 - (void)cameraViewIsReady:(id)arg1;
 - (BOOL)cameraViewShouldShowPreviewAfterSelection:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)tearDownCaptureSession;
 
 @end

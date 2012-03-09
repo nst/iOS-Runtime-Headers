@@ -16,18 +16,8 @@
 + (id)_repTypesAllowImageTypeOmission:(BOOL)arg1;
 + (Class)_representationClassForMIMEType:(id)arg1 allowingPlugins:(BOOL)arg2;
 
-- (id)initWithRequest:(id)arg1;
-- (id)data;
-- (void)finalize;
 - (id)textEncodingName;
-- (id)webArchive;
-- (BOOL)isLoading;
-- (id)request;
-- (id)initialRequest;
-- (id)_responseMIMEType;
-- (id)response;
-- (id)webFrame;
-- (id)representation;
+- (void)dealloc;
 - (id)_URL;
 - (id)_mainDocumentError;
 - (void)_addSubframeArchives:(id)arg1;
@@ -53,11 +43,21 @@
 - (id)_imageElementWithImageResource:(id)arg1;
 - (id)_initWithDocumentLoader:(struct PassRefPtr<WebDocumentLoaderMac> { struct WebDocumentLoaderMac {} *x1; })arg1;
 - (id)subresources;
-- (void)dealloc;
+- (id)webArchive;
+- (BOOL)isLoading;
+- (id)request;
+- (id)initialRequest;
+- (id)_responseMIMEType;
+- (id)response;
+- (void)finalize;
+- (id)webFrame;
+- (id)data;
+- (id)representation;
 - (void)addSubresource:(id)arg1;
 - (id)subresourceForURL:(id)arg1;
 - (id)mainResource;
 - (id)_webView;
+- (id)initWithRequest:(id)arg1;
 - (oneway void)_webcore_releaseOnWebThread;
 - (oneway void)release;
 

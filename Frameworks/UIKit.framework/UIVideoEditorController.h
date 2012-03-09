@@ -21,6 +21,7 @@
 
 + (BOOL)canEditVideoAtPath:(id)arg1;
 
+- (id)init;
 - (void)setVideoPath:(id)arg1;
 - (id)videoPath;
 - (void)editVideoViewController:(id)arg1 didFailWithError:(id)arg2;
@@ -45,6 +46,5 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillUnload;
-- (id)init;
 
 @end

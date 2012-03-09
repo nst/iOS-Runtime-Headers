@@ -26,19 +26,19 @@
 
 
 - (void)setUid:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setInviteStatus:(id)arg1;
 - (id)inviteStatus;
 - (id)copyParseRules;
 - (void)setOrganizer:(id)arg1;
 - (id)organizer;
+- (id)uid;
 - (id)summary;
 - (void)setSummary:(id)arg1;
 - (void)setHref:(id)arg1;
 - (id)href;
-- (id)uid;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (BOOL)isComponentSupportedForString:(id)arg1;
 - (void)setAccess:(id)arg1;
 - (void)setHostURL:(id)arg1;

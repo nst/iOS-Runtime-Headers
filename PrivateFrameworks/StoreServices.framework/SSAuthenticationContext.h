@@ -44,7 +44,17 @@
 + (id)contextForSignIn;
 
 - (id)initWithAccount:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)accountName;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithAccountIdentifier:(id)arg1;
+- (int)accountScope;
+- (id)HTTPHeaders;
+- (id)requestParameters;
+- (id)requiredUniqueIdentifier;
 - (id)userAgentComponents;
 - (int)tokenType;
 - (id)signupRequestParameters;
@@ -62,15 +72,5 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)initWithAccountIdentifier:(id)arg1;
-- (int)accountScope;
-- (id)HTTPHeaders;
-- (id)requestParameters;
-- (id)requiredUniqueIdentifier;
 
 @end

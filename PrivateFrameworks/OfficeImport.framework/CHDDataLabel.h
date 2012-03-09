@@ -22,6 +22,12 @@
 
 + (id)dataLabelWithResources:(id)arg1;
 
+- (id)string;
+- (void)setString:(id)arg1;
+- (void)dealloc;
+- (void)setShowValue:(bool)arg1;
+- (int)position;
+- (void)setPosition:(int)arg1;
 - (unsigned int)stringIndex;
 - (void)setStringIndex:(unsigned int)arg1;
 - (bool)isShowLeaderLines;
@@ -46,11 +52,5 @@
 - (id)contentFormat;
 - (void)setContentFormat:(id)arg1;
 - (id)initWithResources:(id)arg1;
-- (void)setPosition:(int)arg1;
-- (void)setShowValue:(bool)arg1;
-- (int)position;
-- (id)string;
-- (void)setString:(id)arg1;
-- (void)dealloc;
 
 @end

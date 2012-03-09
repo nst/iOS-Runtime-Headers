@@ -15,9 +15,9 @@
 + (void)cleanUpFilesForAccountWithId:(id)arg1;
 
 - (id)initWithAccount:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (void)setFolderCache:(id)arg1;
 - (id)foldersUnderFolderWithID:(id)arg1;
 - (void)_identityMatchAndSetFoldersThatExternalClientsCareAbout:(id)arg1;

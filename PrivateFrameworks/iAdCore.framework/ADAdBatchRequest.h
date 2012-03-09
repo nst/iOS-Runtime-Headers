@@ -21,16 +21,21 @@
 @property unsigned long long defaultsLastUpdate;
 
 
+- (id)description;
+- (void)dealloc;
 - (Class)responseClass;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
-- (unsigned long long)defaultsLastUpdate;
 - (void)setHasDefaultsLastUpdate:(BOOL)arg1;
-- (BOOL)hasDefaultsLastUpdate;
 - (id)requesterIdentifiers;
-- (id)specification;
+- (void)copyTo:(id)arg1;
 - (unsigned int)requestTypeCode;
+- (unsigned long long)defaultsLastUpdate;
+- (BOOL)hasDefaultsLastUpdate;
 - (id)requesterIdentifierAtIndex:(unsigned int)arg1;
+- (void)clearRequesterIdentifiers;
 - (unsigned int)requesterIdentifiersCount;
+- (id)specification;
 - (BOOL)hasSpecification;
 - (BOOL)hasRequestProperties;
 - (void)writeTo:(id)arg1;
@@ -38,9 +43,6 @@
 - (void)addRequesterIdentifier:(id)arg1;
 - (void)setRequesterIdentifiers:(id)arg1;
 - (void)setSpecification:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 - (id)requestProperties;
 - (void)setRequestProperties:(id)arg1;
 

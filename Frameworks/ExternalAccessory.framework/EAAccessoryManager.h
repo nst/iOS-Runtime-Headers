@@ -14,6 +14,8 @@
 + (BOOL)isLoggingEnabled;
 + (id)sharedAccessoryManager;
 
+- (id)init;
+- (void)dealloc;
 - (void)setAreLocationAccessoriesEnabled:(BOOL)arg1;
 - (BOOL)areLocationAccessoriesEnabled;
 - (void)accessibilitySystemPropertyRequest:(id)arg1;
@@ -49,7 +51,5 @@
 - (void)_externalAccessoryConnected:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

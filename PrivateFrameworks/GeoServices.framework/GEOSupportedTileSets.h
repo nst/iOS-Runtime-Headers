@@ -11,15 +11,15 @@
 @property(retain) NSMutableArray * tileSets;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)tileSets;
 - (id)tileSetAtIndex:(unsigned int)arg1;
 - (unsigned int)tileSetsCount;
 - (void)addTileSet:(id)arg1;
 - (void)setTileSets:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

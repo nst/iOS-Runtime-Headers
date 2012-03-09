@@ -16,8 +16,9 @@
 
 
 - (id)messageBody;
-- (void)setURI:(id)arg1;
-- (id)uri;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setResponseSessionTokens:(id)arg1;
 - (id)responseSessionTokens;
 - (void)setResponseIdentities:(id)arg1;
@@ -25,11 +26,11 @@
 - (void)handleResponseDictionary:(id)arg1;
 - (void)handleResponseHeaders:(id)arg1;
 - (id)additionalQueryStringParameters;
+- (BOOL)hasRequiredKeys:(id*)arg1;
 - (BOOL)wantsHTTPGet;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)bagKey;
+- (void)setURI:(id)arg1;
+- (id)uri;
 
 @end

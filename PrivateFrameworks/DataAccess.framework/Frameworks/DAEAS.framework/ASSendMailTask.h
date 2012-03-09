@@ -10,10 +10,10 @@
 }
 
 
+- (void)dealloc;
 - (id)command;
 - (void)finishWithError:(id)arg1;
 - (id)contentType;
-- (void)dealloc;
 - (id)requestBodyStreamOutKnownSize:(int*)arg1;
 - (id)initWithMessage:(id)arg1 messageID:(id)arg2;
 - (id)parameterData;

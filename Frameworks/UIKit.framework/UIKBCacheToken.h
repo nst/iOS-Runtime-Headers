@@ -22,7 +22,12 @@
 + (id)tokenTemplateForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 + (id)tokenTemplateForKey:(id)arg1 name:(id)arg2 style:(int)arg3 size:(struct CGSize { float x1; float x2; })arg4;
 + (id)tokenForKey:(id)arg1 style:(int)arg2 state:(int)arg3;
++ (id)tokenForKeyplane:(id)arg1;
 
+- (void)setName:(id)arg1;
+- (id)string;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setEmptyFields:(int)arg1;
 - (void)setDisplayHint:(int)arg1;
 - (int)displayHint;
@@ -30,6 +35,7 @@
 - (int)rowHint;
 - (id)initWithComponents:(id)arg1 name:(id)arg2;
 - (id)initWithComponents:(id)arg1 name:(id)arg2 emptyFields:(int)arg3;
+- (id)stringForSplitState:(BOOL)arg1;
 - (id)stringForKey:(id)arg1 state:(int)arg2;
 - (BOOL)hasKey;
 - (int)emptyFields;
@@ -37,9 +43,5 @@
 - (id)name;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })size;
-- (void)setName:(id)arg1;
-- (id)string;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

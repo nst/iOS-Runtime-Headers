@@ -46,6 +46,7 @@
 @property BOOL shouldOverrideTableFooterGroupPadding;
 
 
+- (void)dealloc;
 - (id)capCellWithReuseIdentifier:(id)arg1 sectionHeaderStyle:(int)arg2 tableView:(id)arg3;
 - (id)showMoreCapCellForSection:(int)arg1;
 - (id)loadingCapCellForSection:(int)arg1;
@@ -80,8 +81,6 @@
 - (void)setBackgroundTiles:(id)arg1;
 - (void)setShouldPlaceShadowBelowTableHeader:(BOOL)arg1;
 - (void)setBecomeFirstResponderOnTouch:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)backgroundStyle;
 - (void)setBackgroundStyle:(int)arg1;
 - (float)_backgroundInset;
@@ -93,10 +92,11 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)reloadData;
 - (void)didMoveToWindow;
-- (void)dealloc;
 
 @end

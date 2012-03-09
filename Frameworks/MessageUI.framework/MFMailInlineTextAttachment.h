@@ -20,6 +20,8 @@
 - (BOOL)hasBeenDownloaded;
 - (id)textEncodingGuess;
 - (void)download;
+- (void)dealloc;
+- (id)initWithWrapper:(id)arg1;
 - (void)setDisplayableInsidePlugin:(BOOL)arg1;
 - (void)_cacheImageSizeIfNecessary;
 - (void)setFileWrapper:(id)arg1;
@@ -32,7 +34,5 @@
 - (unsigned int)approximateSize;
 - (void)setDisplayableInline:(BOOL)arg1;
 - (BOOL)isDisplayableInline;
-- (id)initWithWrapper:(id)arg1;
-- (void)dealloc;
 
 @end

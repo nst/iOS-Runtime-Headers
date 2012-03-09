@@ -21,6 +21,8 @@
 @property(retain) UIColor * oddRowTopBorderColor;
 
 
+- (id)init;
+- (void)dealloc;
 - (int)tableViewStyle;
 - (void)configureColoringForCell:(id)arg1 indexPath:(id)arg2;
 - (id)oddRowTopBorderColor;
@@ -35,8 +37,6 @@
 - (void)setEvenRowTopBorderColor:(id)arg1;
 - (void)setEvenRowBottomBorderColor:(id)arg1;
 - (void)setEvenRowBackgroundColor:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)_subtitleForSectionIndex:(int)arg1;
 - (BOOL)canShowItemOfferButtonForItem:(id)arg1;
 - (id)newHeaderViewForSection:(int)arg1;

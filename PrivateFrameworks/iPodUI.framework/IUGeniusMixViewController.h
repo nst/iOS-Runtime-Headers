@@ -4,7 +4,7 @@
 
 @class UIImageView, UIPageControl, IUGeniusGridView, NSMutableArray, NSMutableSet, UIScrollView, MPGeniusMix;
 
-@interface IUGeniusMixViewController : IUiPodViewController <IUGeniusGridViewDelegate, UIScrollViewDelegate> {
+@interface IUGeniusMixViewController : IUiPodViewController <IUGeniusGridViewDelegate, SSDownloadManagerObserver, UIScrollViewDelegate> {
     UIScrollView *_scrollView;
     NSMutableArray *_gridViews;
     UIPageControl *_pageControl;
@@ -18,11 +18,14 @@
 @property(readonly) MPGeniusMix * selectedMix;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_nowPlayingItemDidChange:(id)arg1;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (id)_moreListTitle;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -31,14 +34,20 @@
 - (void)reloadData;
 - (void)geniusGridViewWasTapped:(id)arg1;
 - (void)_zoomOutDidStop;
+- (void)_downloadMixForCurrentPage:(id)arg1;
+- (void)_cancelDownloadingMixForCurrentPage:(id)arg1;
+- (struct CGPoint { float x1; float x2; })_contentOffsetForPage:(int)arg1;
 - (int)navigationTransition;
-- (struct CGPoint { float x1; float x2; })_contentOffsetForCurrentPage;
 - (void)_enqueueGridViewForReuse:(id)arg1;
 - (id)_dequeueExistingGridView;
 - (void)_pushViewControllerContext:(id)arg1;
 - (id)_viewControllerContextForCurrentPage;
-- (void)_pruneGridViewPages;
+- (struct CGPoint { float x1; float x2; })_contentOffsetForCurrentPage;
 - (BOOL)_hasGridViewForPage:(int)arg1;
+- (void)_createGridViewIfNecessaryForPage:(int)arg1;
+- (void)_pruneGridViewPages;
+- (void)_updateNavigationBarForCurrentPageAnimated:(BOOL)arg1;
+- (id)selectedMix;
 - (BOOL)_currentPageIsPlayingGeniusMix;
 - (void)_zoomArtworkInForDataSource:(id)arg1;
 - (void)_flipGridViewForAnimatedPop;
@@ -46,14 +55,9 @@
 - (void)_flipGridView:(id)arg1 toOrientation:(int)arg2 animated:(BOOL)arg3;
 - (int)_playingGeniusMixPage;
 - (int)_pageForContentOffset;
-- (void)reloadDataWithSelectedMix:(id)arg1;
-- (void)_createGridViewIfNecessaryForPage:(int)arg1;
-- (struct CGPoint { float x1; float x2; })_contentOffsetForPage:(int)arg1;
-- (id)selectedMix;
+- (void)_reloadDataWithSelectedMix:(id)arg1;
 - (void)_pageControlValueDidChange:(id)arg1;
 - (id)_geniusMixDataSource;
 - (void)_unloadGridViews;
-- (id)init;
-- (void)dealloc;
 
 @end

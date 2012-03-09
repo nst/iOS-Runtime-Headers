@@ -27,6 +27,8 @@
 + (id)recurrenceRuleFromICSString:(id)arg1;
 + (id)recurrenceRuleFromICSCString:(const char *)arg1;
 
+- (id)count;
+- (void)dealloc;
 - (void)setByhour:(id)arg1;
 - (void)setByminute:(id)arg1;
 - (void)setBysecond:(id)arg1;
@@ -66,8 +68,6 @@
 - (void)setCount:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)count;
-- (void)dealloc;
 - (id)ICSStringWithOptions:(unsigned int)arg1;
 
 @end

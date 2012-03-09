@@ -36,6 +36,7 @@
 @property(getter=_previousVelocitySample,readonly) UIPanGestureVelocitySample * _previousVelocitySample;
 
 
+- (void)dealloc;
 - (unsigned int)maximumNumberOfTouches;
 - (unsigned int)minimumNumberOfTouches;
 - (void)_setCanPanVertically:(BOOL)arg1;
@@ -78,6 +79,5 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -15,12 +15,12 @@
 @property(retain) UIImage * highlightedTableIcon;
 
 
+- (void)dealloc;
 - (id)highlightedTableIcon;
 - (id)tableIcon;
 - (id)checkmarkView;
 - (void)setHighlightedTableIcon:(id)arg1;
 - (void)setTableIcon:(id)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

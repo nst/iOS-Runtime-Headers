@@ -32,9 +32,12 @@
 @property(retain) UIKeyboardCandidateExtended * extendedCandidatesView;
 @property BOOL showingExtendedCandidatesView;
 
-+ (void)releaseSharedInstance;
 + (id)sharedInstance;
++ (void)releaseSharedInstance;
 
+- (unsigned int)count;
+- (id)candidates;
+- (void)dealloc;
 - (int)promptTextType;
 - (void)setPromptTextType:(int)arg1;
 - (void)animateInlineCandidate;
@@ -55,7 +58,6 @@
 - (id)currentCandidate;
 - (void)showPageAtIndex:(unsigned int)arg1;
 - (BOOL)needsWebDocumentViewEventsDirectly;
-- (id)_inlineView;
 - (void)candidateListShouldBeDismissed:(id)arg1;
 - (void)candidateListSelectionDidChange:(id)arg1;
 - (void)candidateListAcceptCandidate:(id)arg1;
@@ -71,9 +73,7 @@
 - (void)showNextPage;
 - (void)showPreviousCandidate;
 - (void)showNextCandidate;
+- (id)_inlineView;
 - (void)layout;
-- (unsigned int)count;
-- (id)candidates;
-- (void)dealloc;
 
 @end

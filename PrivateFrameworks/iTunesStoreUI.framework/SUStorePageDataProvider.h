@@ -13,9 +13,9 @@
 @property(copy) ISPropertyListProvider * propertyListDataProvider;
 
 
+- (void)dealloc;
 - (void)setOutputType:(int)arg1;
 - (int)outputType;
-- (void)dealloc;
 - (void)setPropertyListDataProvider:(id)arg1;
 - (void)_loadPersonalizedStoreOffersForPage:(id)arg1;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;

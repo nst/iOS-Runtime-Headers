@@ -40,28 +40,28 @@
 + (id)cacheKeyForPlayer:(id)arg1 game:(id)arg2;
 + (id)internalRepresentationCache;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)submitRating:(float)arg1 withCompletionHandler:(id)arg2;
 - (unsigned int)maxAchievements;
 - (BOOL)played;
 - (id)score;
+- (id)player;
 - (unsigned int)maxAchievementPoints;
 - (unsigned int)numberOfCategories;
 - (BOOL)supportsAchievements;
 - (BOOL)supportsLeaderboards;
 - (id)initWithInternalRepresentation:(id)arg1 player:(id)arg2 game:(id)arg3;
 - (id)game;
+- (void)setPlayer:(id)arg1;
 - (void)setGame:(id)arg1;
 - (id)internal;
 - (void)setInternal:(id)arg1;
-- (void)setPlayer:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (id)player;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

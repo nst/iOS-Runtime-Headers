@@ -6,8 +6,8 @@
 }
 
 
-- (id)name;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isContainerWrapper;
+- (id)name;
 
 @end

@@ -2,22 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSNumber, NSMutableIndexSet, UIImage, NSURL, NSIndexSet, NSMutableOrderedSet, PLIndexMapper, NSPredicate, NSDictionary, NSOrderedSet, <NSObject><NSCopying>, NSString, PLManagedAsset, NSObject<PLAssetContainer>;
+@class UIImage, NSMutableIndexSet, NSNumber, NSURL, NSIndexSet, NSMutableOrderedSet, PLIndexMapper, NSPredicate, NSDictionary, NSOrderedSet, <NSObject><NSCopying>, NSString, PLManagedAsset, NSObject<PLAssetContainer>;
 
-@interface PLFilteredAlbum : NSObject <PLIndexMapperDataSource, PLIndexMappingCache, PLAssetContainer> {
+@interface PLFilteredAlbum : NSObject <PLUserEditableAssetContainer, PLIndexMapperDataSource, PLIndexMappingCache> {
     PLIndexMapper *_indexMapper;
     NSMutableIndexSet *_filteredIndexes;
+    BOOL _backingAlbumSupportsEdits;
     NSMutableOrderedSet *_weak_assets;
-    NSObject<PLAssetContainer> *backingAlbum;
+    NSObject<PLAssetContainer> *_backingAlbum;
     int filter;
     NSPredicate *predicate;
     BOOL isObservingContextChanges;
 }
 
-@property(readonly) PLIndexMapper * indexMapper;
-@property(readonly) NSIndexSet * filteredIndexes;
-@property(readonly) <NSObject><NSCopying> * cachedIndexMapState;
 @property int filter;
+@property(readonly) PLIndexMapper * indexMapper;
 @property(retain) NSObject<PLAssetContainer> * backingAlbum;
 @property(retain) NSPredicate * predicate;
 @property BOOL isObservingContextChanges;
@@ -45,24 +44,20 @@
 @property(readonly) NSURL * groupURL;
 @property unsigned int pendingItemsCount;
 @property unsigned int pendingItemsType;
+@property(readonly) NSMutableOrderedSet * userEditableAssets;
+@property(readonly) NSIndexSet * filteredIndexes;
+@property(readonly) <NSObject><NSCopying> * cachedIndexMapState;
 
++ (struct NSObject { Class x1; }*)unfilteredAlbum:(struct NSObject { Class x1; }*)arg1;
++ (struct NSObject { Class x1; }*)filteredAlbum:(struct NSObject { Class x1; }*)arg1 intersectFilter:(int)arg2;
 + (id)filteredIndexesInAlbum:(struct NSObject { Class x1; }*)arg1 predicate:(id)arg2;
 + (id)predicateForAlbumFilter:(int)arg1;
 + (id)_filteredIndexesInManagedAlbum:(id)arg1 predicate:(id)arg2;
-+ (struct NSObject { Class x1; }*)unfilteredAlbum:(struct NSObject { Class x1; }*)arg1;
-+ (struct NSObject { Class x1; }*)filteredAlbum:(struct NSObject { Class x1; }*)arg1 intersectFilter:(int)arg2;
 + (struct NSObject { Class x1; }*)filteredAlbum:(struct NSObject { Class x1; }*)arg1 filter:(int)arg2;
 
-- (id)localizedTitle;
-- (id)posterImage;
-- (void)setPredicate:(id)arg1;
-- (id)predicate;
-- (int)filter;
-- (id)kind;
-- (id)title;
-- (id)name;
-- (void)setFilter:(int)arg1;
-- (BOOL)isEmpty;
+- (unsigned int)count;
+- (void)dealloc;
+- (BOOL)isObservingContextChanges;
 - (void)replaceFilteredAssetsAtIndexes:(id)arg1 withFilteredValues:(id)arg2;
 - (void)replaceObjectInFilteredAssetsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)removeFilteredAssetsAtIndexes:(id)arg1;
@@ -74,17 +69,29 @@
 - (id)objectInFilteredAssetsAtIndex:(unsigned int)arg1;
 - (unsigned int)indexInFilteredAssetsOfObject:(id)arg1;
 - (unsigned int)countOfFilteredAssets;
+- (id)indexMapper;
+- (id)cachedIndexMapState;
 - (void)mappedDataSourceChanged:(id)arg1;
 - (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
-- (id)cachedIndexMapState;
-- (id)indexMapper;
-- (void)setIsObservingContextChanges:(BOOL)arg1;
-- (BOOL)isObservingContextChanges;
+- (id)_editableBackingAlbum;
 - (void)backingContextDidChange:(id)arg1;
+- (void)setIsObservingContextChanges:(BOOL)arg1;
 - (id)filteredIndexes;
-- (void)setBackingAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)setBackingAlbum:(id)arg1;
 - (id)initWithBackingAlbum:(struct NSObject { Class x1; }*)arg1 filter:(int)arg2;
 - (struct NSObject { Class x1; }*)backingAlbum;
+- (id)posterImage;
+- (id)localizedTitle;
+- (id)kind;
+- (id)title;
+- (id)name;
+- (void)setFilter:(int)arg1;
+- (BOOL)isEmpty;
+- (int)filter;
+- (void)setPredicate:(id)arg1;
+- (id)predicate;
+- (id)_assets;
+- (void)set_assets:(id)arg1;
 - (void)setPendingItemsType:(unsigned int)arg1;
 - (unsigned int)pendingItemsType;
 - (void)setPendingItemsCount:(unsigned int)arg1;
@@ -93,26 +100,24 @@
 - (void)setImportSessionID:(id)arg1;
 - (id)importSessionID;
 - (BOOL)shouldDeleteWhenEmpty;
+- (BOOL)isPhotoStreamAlbum;
+- (BOOL)isCameraAlbum;
 - (BOOL)isLibrary;
 - (void)setKeyAsset:(id)arg1;
 - (id)keyAsset;
+- (unsigned int)videosCount;
+- (unsigned int)photosCount;
+- (id)mutableAssets;
+- (int)kindValue;
+- (void)batchFetchAssets:(id)arg1;
 - (void)updateStackedImage;
 - (void)reducePendingItemsCountBy:(unsigned int)arg1;
 - (id)displayableIndexesForCount:(unsigned int)arg1;
-- (id)_assets;
-- (void)set_assets:(id)arg1;
-- (unsigned int)videosCount;
-- (unsigned int)photosCount;
-- (int)kindValue;
-- (BOOL)isPhotoStreamAlbum;
-- (BOOL)isCameraAlbum;
-- (id)mutableAssets;
+- (id)userEditableAssets;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (void)setSlideshowSettings:(id)arg1;
 - (id)slideshowSettings;
 - (id)uuid;
 - (id)assets;
-- (unsigned int)count;
-- (void)dealloc;
 
 @end

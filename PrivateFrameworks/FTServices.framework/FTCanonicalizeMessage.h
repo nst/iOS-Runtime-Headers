@@ -16,9 +16,9 @@
 
 
 - (id)messageBody;
-- (int)command;
-- (id)URIs;
-- (void)setURIs:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setResponseNodes:(id)arg1;
 - (id)responseNodes;
 - (void)setRegionContext:(id)arg1;
@@ -30,9 +30,9 @@
 - (BOOL)wantsCompressedBody;
 - (id)requiredKeys;
 - (BOOL)wantsBinaryPush;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (int)command;
 - (id)bagKey;
+- (id)URIs;
+- (void)setURIs:(id)arg1;
 
 @end

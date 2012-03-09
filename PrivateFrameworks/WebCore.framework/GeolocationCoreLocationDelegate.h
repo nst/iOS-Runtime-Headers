@@ -28,6 +28,8 @@
 @property BOOL wantsHighAccuracy;
 
 
+- (void)dealloc;
+- (void)stop;
 - (void)start;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
@@ -37,7 +39,5 @@
 - (void)createLocationManager;
 - (void)sendError:(id)arg1 withString:(id)arg2;
 - (void)sendLocation:(id)arg1;
-- (void)stop;
-- (void)dealloc;
 
 @end

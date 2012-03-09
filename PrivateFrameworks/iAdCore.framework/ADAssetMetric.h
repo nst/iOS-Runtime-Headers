@@ -19,12 +19,8 @@
 @property unsigned long long time;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTime:(BOOL)arg1;
-- (BOOL)hasTime;
-- (BOOL)hasUrl;
-- (void)writeTo:(id)arg1;
-- (BOOL)hasUniqueIdentifier;
+- (id)description;
+- (void)dealloc;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
@@ -32,7 +28,12 @@
 - (id)uniqueIdentifier;
 - (unsigned long long)time;
 - (void)setTime:(unsigned long long)arg1;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTime:(BOOL)arg1;
+- (BOOL)hasTime;
+- (BOOL)hasUrl;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (BOOL)hasUniqueIdentifier;
 
 @end

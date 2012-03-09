@@ -40,6 +40,8 @@
     NSDictionary *_authenticateAlertDictionary;
     NSError *_authenticateError;
     GKAuthenticatePlayerRequest *_authenticateRequest;
+    int _lastAuthResult;
+    BOOL _alreadyShown;
 }
 
 @property(getter=isAuthenticated) BOOL authenticated;
@@ -71,11 +73,15 @@
 @property(retain) NSDictionary * authenticateAlertDictionary;
 @property(retain) NSError * authenticateError;
 @property(retain) GKAuthenticatePlayerRequest * authenticateRequest;
+@property int lastAuthResult;
+@property BOOL alreadyShown;
 
 + (BOOL)hasAuthenticatedAccount;
 + (id)accountName;
 + (id)localPlayer;
 
+- (id)init;
+- (void)dealloc;
 - (id)authenticateRequest;
 - (id)authenticateError;
 - (id)authenticateAlertDictionary;
@@ -122,10 +128,11 @@
 - (void)authenticateCurrentAccountForWebViewWithCompletionHandler:(id)arg1;
 - (void)authenticateExistingAccountWithCompletionHandler:(id)arg1;
 - (void)authenticateWithoutLoginWithCompletionHandler:(id)arg1;
+- (void)showEditAccountRestrictedAlert;
+- (void)showCreateAccountRestrictedAlert;
 - (void)loadFriendsWithCompletionHandler:(id)arg1;
 - (void)addPlayerAsFriend:(id)arg1;
 - (void)setInternal:(id)arg1 withFriends:(id)arg2;
-- (BOOL)isAuthenticating;
 - (void)setAddressBook:(id)arg1;
 - (id)addressBook;
 - (id)friendRequestForPlayerID:(id)arg1;
@@ -133,6 +140,7 @@
 - (void)setFriendRequests:(id)arg1;
 - (void)authenticateCurrentAccountWithCompletionHandler:(id)arg1;
 - (void)alertAndSendFriendRequest:(id)arg1 destination:(id)arg2;
+- (BOOL)isAuthenticating;
 - (void)signOutWithCompletionHandler:(id)arg1;
 - (void)accountViewControllerForMode:(int)arg1 completionHandler:(id)arg2;
 - (void)userCancelledAuthentication;
@@ -164,6 +172,9 @@
 - (void)daemonFetchGameInvite:(id)arg1;
 - (void)reset:(id)arg1;
 - (void)abortAuthenticationWithError:(id)arg1;
+- (void)setAlreadyShown:(BOOL)arg1;
+- (int)lastAuthResult;
+- (BOOL)alreadyShown;
 - (BOOL)handleUnderlyingAuthenticationError:(id)arg1;
 - (void)cancelAuthentication;
 - (void)showAlertForTag:(unsigned int)arg1;
@@ -174,6 +185,7 @@
 - (void)setAuthenticateRequest:(id)arg1;
 - (void)setAuthenticationCompletionHandler:(id)arg1;
 - (void)setLastUsernameAttempted:(id)arg1;
+- (void)setLastAuthResult:(int)arg1;
 - (void)setStatus:(id)arg1;
 - (id)friends;
 - (void)loadProfilePieces:(unsigned int)arg1 withCompletionHandler:(id)arg2;
@@ -192,7 +204,6 @@
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)setRootViewController:(id)arg1;
 - (void)applicationWillEnterForeground:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)applicationDidEnterBackground:(id)arg1;
 
 @end

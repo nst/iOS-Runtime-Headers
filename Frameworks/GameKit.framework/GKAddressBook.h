@@ -13,10 +13,10 @@
 + (id)sharedAddressBook;
 + (id)fullNameWithFirstName:(id)arg1 lastName:(id)arg2;
 
+- (void)dealloc;
 - (void)setSearchQueue:(id)arg1;
 - (void)acquireNamesForEmailAddresses:(id)arg1 completionHandler:(id)arg2;
 - (id)searchQueue;
 - (id)_emailSearchPredicateForEmails:(id)arg1;
-- (void)dealloc;
 
 @end

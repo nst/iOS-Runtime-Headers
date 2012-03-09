@@ -24,6 +24,16 @@
 + (id)scriptingKeys;
 + (id)scriptSelectors;
 
+- (id)init;
+- (void)dealloc;
+- (id)listener;
+- (id)URLs;
+- (void)setURLs:(id)arg1;
+- (void)setImages:(id)arg1;
+- (id)images;
+- (id)text;
+- (id)delegate;
+- (void)setText:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tweetURLs;
 - (void)setImageURLs:(id)arg1;
@@ -33,15 +43,5 @@
 - (void)setTweetURLs:(id)arg1;
 - (void)present;
 - (void)setListener:(id)arg1;
-- (id)URLs;
-- (void)setURLs:(id)arg1;
-- (void)setImages:(id)arg1;
-- (id)images;
-- (id)text;
-- (id)delegate;
-- (void)setText:(id)arg1;
-- (id)listener;
-- (id)init;
-- (void)dealloc;
 
 @end

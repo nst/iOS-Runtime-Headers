@@ -12,29 +12,29 @@
     NSArray *_eightDotCommands;
 }
 
-+ (id)sharedManager;
-+ (void)initialize;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
++ (id)sharedManager;
 
-- (void)configureWithDriverConfiguration:(id)arg1;
-- (id)driverIdentifierForDisplayWithToken:(long)arg1;
-- (id)modelIdentifierForDisplayWithToken:(long)arg1;
-- (id)commandForBrailleKey:(id)arg1;
-- (unsigned int)countForDisplayWithToken:(long)arg1;
-- (id)commandAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
-- (id)buttonNamesAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
-- (id)_commandsFromBrailleInputMode:(int)arg1;
-- (id)_bundle;
-- (id)_sixDotCommands;
-- (id)_eightDotCommands;
-- (id)inputIdentifierAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
-- (id)buttonNamesForInputIdentifier:(id)arg1 forDisplayWithToken:(long)arg2;
 - (unsigned int)retainCount;
 - (id)retain;
+- (void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)autorelease;
 - (id)init;
-- (void)release;
 - (void)dealloc;
+- (id)buttonNamesAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
+- (id)commandAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
+- (unsigned int)countForDisplayWithToken:(long)arg1;
+- (id)commandForBrailleKey:(id)arg1;
+- (id)modelIdentifierForDisplayWithToken:(long)arg1;
+- (id)driverIdentifierForDisplayWithToken:(long)arg1;
+- (void)configureWithDriverConfiguration:(id)arg1;
+- (id)buttonNamesForInputIdentifier:(id)arg1 forDisplayWithToken:(long)arg2;
+- (id)inputIdentifierAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
+- (id)_eightDotCommands;
+- (id)_sixDotCommands;
+- (id)_commandsFromBrailleInputMode:(int)arg1;
+- (id)_bundle;
 
 @end

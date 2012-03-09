@@ -11,6 +11,7 @@
 
 + (id)appManager;
 
+- (void)dealloc;
 - (void)removeAllDisabledDomainNames;
 - (BOOL)isDomainNameEnabled:(id)arg1;
 - (void)setEnabled:(BOOL)arg1 forDomainName:(id)arg2;
@@ -26,6 +27,5 @@
 - (id)_safeHarborsWithError:(id*)arg1;
 - (id)_appsWithPlists:(id)arg1 error:(id*)arg2;
 - (id)appWithBundleID:(id)arg1;
-- (void)dealloc;
 
 @end

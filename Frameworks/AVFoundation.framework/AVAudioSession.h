@@ -8,37 +8,37 @@
     void *_impl;
 }
 
-@property(readonly) NSString * mode;
-@property(readonly) int currentHardwareOutputNumberOfChannels;
-@property(readonly) int currentHardwareInputNumberOfChannels;
-@property(readonly) double preferredIOBufferDuration;
-@property(readonly) double preferredHardwareSampleRate;
-@property(readonly) double currentHardwareSampleRate;
-@property(readonly) BOOL inputIsAvailable;
-@property(readonly) NSString * category;
 @property <AVAudioSessionDelegate> * delegate;
+@property(readonly) NSString * category;
+@property(readonly) NSString * mode;
+@property(readonly) double preferredHardwareSampleRate;
+@property(readonly) double preferredIOBufferDuration;
+@property(readonly) BOOL inputIsAvailable;
+@property(readonly) double currentHardwareSampleRate;
+@property(readonly) int currentHardwareInputNumberOfChannels;
+@property(readonly) int currentHardwareOutputNumberOfChannels;
 
 + (id)sharedInstance;
 
-- (void)setDelegate:(id)arg1;
-- (id)mode;
-- (id)delegate;
-- (id)category;
-- (BOOL)setCategory:(id)arg1 error:(id*)arg2;
-- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
-- (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
-- (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
-- (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
-- (BOOL)inputIsAvailable;
-- (double)currentHardwareSampleRate;
-- (double)preferredHardwareSampleRate;
-- (double)preferredIOBufferDuration;
-- (int)currentHardwareInputNumberOfChannels;
-- (int)currentHardwareOutputNumberOfChannels;
-- (BOOL)setMode:(id)arg1 error:(id*)arg2;
-- (void)privateInputIsAvailableChanged:(id)arg1;
-- (void)privateBeginInterruption;
 - (void)privateEndInterruptionWithFlags:(id)arg1;
 - (void)privateEndInterruption;
+- (void)privateBeginInterruption;
+- (void)privateInputIsAvailableChanged:(id)arg1;
+- (BOOL)setMode:(id)arg1 error:(id*)arg2;
+- (int)currentHardwareOutputNumberOfChannels;
+- (int)currentHardwareInputNumberOfChannels;
+- (double)preferredIOBufferDuration;
+- (double)preferredHardwareSampleRate;
+- (double)currentHardwareSampleRate;
+- (BOOL)inputIsAvailable;
+- (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
+- (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
+- (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
+- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
+- (BOOL)setCategory:(id)arg1 error:(id*)arg2;
+- (id)category;
+- (id)mode;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

@@ -59,7 +59,8 @@
 + (id)copyPropertyMappingsForParser;
 + (id)convertPushTransportsForNSServerNotificationCenter:(id)arg1;
 
-- (id)owner;
+- (id)description;
+- (void)dealloc;
 - (id)addMemberURL;
 - (id)meCardURL;
 - (BOOL)supportsSyncCollectionReport;
@@ -104,11 +105,10 @@
 - (BOOL)isUnauthenticated;
 - (id)resourceType;
 - (void)applyParsedProperties:(id)arg1;
-- (void)setOwner:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
-- (id)description;
-- (void)dealloc;
+- (void)setOwner:(id)arg1;
+- (id)owner;
 - (id)maxImageSize;
 - (void)setMaxImageSize:(id)arg1;
 

@@ -94,8 +94,17 @@
 @property(retain) NSString * deprecatedDuration;
 
 
+- (id)description;
+- (id)description;
+- (void)dealloc;
+- (void)setInstructions:(id)arg1;
+- (id)instructions;
+- (id)dictionaryRepresentation;
+- (id)direction;
+- (void)setDirection:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (BOOL)hasDirection;
+- (void)writeTo:(id)arg1;
 - (id)stepCues;
 - (int)maneuverTurnNumber;
 - (void)setHasManeuverTurnNumber:(BOOL)arg1;
@@ -181,14 +190,5 @@
 - (BOOL)hasDurationSeconds;
 - (int)distanceMeters;
 - (BOOL)hasDistanceMeters;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)direction;
-- (void)setDirection:(id)arg1;
-- (id)instructions;
-- (void)setInstructions:(id)arg1;
-- (id)description;
-- (id)description;
-- (void)dealloc;
 
 @end

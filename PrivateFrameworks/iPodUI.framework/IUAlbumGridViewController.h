@@ -36,6 +36,8 @@
 
 + (BOOL)supportsViewControllerStyle:(int)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)imageCache:(id)arg1 loadedImage:(id)arg2 forRequest:(id)arg3;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
@@ -86,7 +88,7 @@
 - (void)_setDimmedAlbumIndex:(unsigned int)arg1;
 - (void)clearSelectedAlbum;
 - (void)restoreViewControllerInfo:(id)arg1 animated:(BOOL)arg2;
-- (id)_createCellContextWithBackgroundColor:(id)arg1 albumFillColor:(id)arg2 titleColor:(id)arg3 subtitleColor:(id)arg4;
+- (id)_createCellContextWithBackgroundColor:(id)arg1 albumFillColor:(id)arg2 titleColor:(id)arg3 subtitleColor:(id)arg4 previousContext:(id)arg5;
 - (void)_cancelDeleteConfirmationAlert:(BOOL)arg1;
 - (void)tableViewDidSelectNothing:(id)arg1;
 - (id)copyArchivableContexts;
@@ -104,7 +106,5 @@
 - (struct CGPoint { float x1; float x2; })actualImageOriginForCellContext:(id)arg1;
 - (struct CGSize { float x1; float x2; })thumbnailSizeForAlbumGridCellContext:(id)arg1;
 - (unsigned int)albumsPerRowForAlbumGridCellContext:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

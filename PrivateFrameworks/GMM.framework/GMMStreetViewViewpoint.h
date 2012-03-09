@@ -23,7 +23,11 @@
 @property int navigationCount;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasNavigationCount:(BOOL)arg1;
 - (BOOL)hasNavigationCount;
 - (void)setHasZoomingCount:(BOOL)arg1;
@@ -40,9 +44,5 @@
 - (BOOL)hasScene;
 - (int)scene;
 - (void)setScene:(int)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

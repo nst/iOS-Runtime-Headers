@@ -20,12 +20,12 @@
 @property(copy) id completionHandler;
 
 
+- (void)cancel;
+- (void)dealloc;
 - (void)setCompletionHandler:(id)arg1;
 - (id)completionHandler;
 - (void)documentInteractionController:(id)arg1 willBeginSendingToApplication:(id)arg2;
 - (void)documentInteractionControllerDidDismissOpenInMenu:(id)arg1;
 - (id)initWithDocumentInteractionController:(id)arg1;
-- (void)cancel;
-- (void)dealloc;
 
 @end

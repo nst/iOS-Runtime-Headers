@@ -31,9 +31,7 @@
 @property unsigned int clipIndex;
 
 
-- (void)setWrapType:(int)arg1;
-- (int)wrapType;
-- (void)setUser:(id)arg1;
+- (id)init;
 - (unsigned short)unicode;
 - (void)setBaselineOffset:(float)arg1;
 - (BOOL)isNarrow;
@@ -52,11 +50,13 @@
 - (unsigned int)clipIndex;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })renderedBounds;
 - (void)setClipIndex:(unsigned int)arg1;
-- (float)margin;
+- (void)setUser:(id)arg1;
 - (id)user;
 - (BOOL)isVisible;
 - (void)setMargin:(float)arg1;
+- (float)margin;
+- (void)setWrapType:(int)arg1;
+- (int)wrapType;
 - (float)baselineOffset;
-- (id)init;
 
 @end

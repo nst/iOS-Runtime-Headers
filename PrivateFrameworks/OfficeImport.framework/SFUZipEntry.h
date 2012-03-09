@@ -19,6 +19,8 @@
 }
 
 
+- (void)dealloc;
+- (id)data;
 - (id)backingFilePath;
 - (unsigned long long)backingFileDataOffset;
 - (void)setCompressionFlags:(unsigned short)arg1;
@@ -34,11 +36,9 @@
 - (void)readZip64ExtraField:(const char *)arg1 size:(unsigned long)arg2;
 - (long long)encodedLength;
 - (BOOL)isEncrypted;
+- (BOOL)isReadable;
 - (id)inputStream;
 - (void)copyToFile:(id)arg1;
 - (long long)dataLength;
-- (id)data;
-- (BOOL)isReadable;
-- (void)dealloc;
 
 @end

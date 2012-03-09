@@ -137,7 +137,7 @@
 
 
 - (id)initWithInfo:(id)arg1;
-- (id).cxx_construct;
 - (void)dealloc;
+- (id).cxx_construct;
 
 @end

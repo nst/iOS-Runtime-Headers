@@ -22,12 +22,8 @@
 
 + (id)sharedConnection;
 
-- (id)parametersForValueSetting:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setInteractionDelegate:(id)arg1;
-- (id)_init;
-- (int)effectiveRestrictedBoolValueForSetting:(id)arg1;
-- (void)addObserver:(id)arg1;
+- (void)removeObserver:(id)arg1;
+- (void)dealloc;
 - (void)checkCarrierProfile;
 - (void)performBootTimeChecks;
 - (void)storeCertificateData:(id)arg1 forHostIdentifier:(id)arg2;
@@ -51,9 +47,9 @@
 - (void)recomputeUserComplianceWarning;
 - (void)setParameters:(id)arg1 forBoolSetting:(id)arg2;
 - (void)setParameters:(id)arg1 forValueSetting:(id)arg2;
-- (void)setBoolValue:(BOOL)arg1 forSetting:(id)arg2;
 - (void)setValue:(id)arg1 forSetting:(id)arg2;
 - (id)parametersForBoolSetting:(id)arg1;
+- (id)parametersForValueSetting:(id)arg1;
 - (id)effectiveRestrictions;
 - (int)applyRestrictionDictionary:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 localizedClientDescription:(id)arg4 localizedWarningMessage:(id)arg5 complianceBlocking:(int)arg6 displayImmediateAlert:(BOOL)arg7 outRestrictionChanged:(BOOL*)arg8 outEffectiveSettingsChanged:(BOOL*)arg9 outError:(id*)arg10;
 - (id)popProfileFromHeadOfInstallationQueue;
@@ -128,7 +124,7 @@
 - (void)removeOrphanedClientRestrictions;
 - (id)objectForFeature:(id)arg1;
 - (id)userSettings;
-- (void)setParametersForSettingsByType:(id)arg1;
+- (void)setBoolValue:(BOOL)arg1 forSetting:(id)arg2;
 - (BOOL)isBoolSettingLockedDownByRestrictions:(id)arg1;
 - (BOOL)isValueSettingLockedDownByRestrictions:(id)arg1;
 - (void)removeBoolSetting:(id)arg1;
@@ -138,6 +134,7 @@
 - (id)defaultParametersForValueSetting:(id)arg1;
 - (int)defaultBoolValueForSetting:(id)arg1;
 - (id)defaultValueForSetting:(id)arg1;
+- (void)setParametersForSettingsByType:(id)arg1;
 - (id)effectiveUserSettings;
 - (id)effectiveParametersForBoolSetting:(id)arg1;
 - (id)effectiveParametersForValueSetting:(id)arg1;
@@ -164,12 +161,15 @@
 - (void)__passcodePolicyDidChange;
 - (void)__profileListDidChange;
 - (void)__effectiveSettingsDidChange:(id)arg1;
-- (void)removeObserver:(id)arg1;
-- (void)dealloc;
-- (void)setUserInfo:(id)arg1 forClientUUID:(id)arg2;
-- (id)userInfoForClientUUID:(id)arg1;
+- (int)effectiveRestrictedBoolValueForSetting:(id)arg1;
+- (void)addObserver:(id)arg1;
+- (void)setInteractionDelegate:(id)arg1;
+- (id)_init;
+- (void)setDelegate:(id)arg1;
 - (id)effectiveValueForSetting:(id)arg1;
 - (int)effectiveBoolValueForSetting:(id)arg1;
+- (void)setUserInfo:(id)arg1 forClientUUID:(id)arg2;
+- (id)userInfoForClientUUID:(id)arg1;
 - (BOOL)installConfigurationProfileWithData:(id)arg1;
 
 @end

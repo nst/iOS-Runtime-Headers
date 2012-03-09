@@ -19,7 +19,7 @@
 - (id)messageData;
 - (id)mutableHeaders;
 - (unsigned int)messageSize;
-- (id)headers;
 - (void)dealloc;
+- (id)headers;
 
 @end

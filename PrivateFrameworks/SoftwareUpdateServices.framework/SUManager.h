@@ -8,6 +8,8 @@
     <SUManagerDelegate> *_delegate;
     SUState *_state;
     BOOL _foreground;
+    int _prevNetworkType;
+    BOOL _recentlyChangedNetworks;
     SUScanOptions *_autoScanOptions;
     BOOL _scanning;
     NSMutableArray *_scanRequests;
@@ -30,23 +32,10 @@
 @property struct __MobileAsset { }* downloadAsset;
 @property struct __MobileAsset { }* assetToDownloadFromLastScan;
 
-+ (void)initialize;
 + (id)sharedInstance;
++ (void)initialize;
 
 - (BOOL)isForeground;
-- (BOOL)isDownloading;
-- (void)setForeground:(BOOL)arg1;
-- (struct __MobileAsset { }*)downloadAsset;
-- (void)setDownload:(id)arg1;
-- (BOOL)cancelDownload:(id*)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)download;
-- (void)setState:(id)arg1;
-- (id)state;
-- (id)delegate;
-- (void)setDownloading:(BOOL)arg1;
-- (id)init;
-- (void)dealloc;
 - (BOOL)installUpdate:(id*)arg1;
 - (void)_updateDownloadStatusForAssetState:(id)arg1;
 - (BOOL)startDownload:(id*)arg1;
@@ -57,6 +46,7 @@
 - (void)resumeOrResetIfNecessary;
 - (void)operatorBundleChanged;
 - (void)cellularRoamingStatusChanged:(BOOL)arg1;
+- (void)networkChangedFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (void)setInstalling:(BOOL)arg1;
 - (BOOL)isUpdateReadyForInstallation:(id*)arg1;
 - (void)_downloadFinished;
@@ -65,7 +55,9 @@
 - (BOOL)_shouldSendUpdatedProgressToDelegate;
 - (void)_updateNormalizedDownloadProgress;
 - (void)_updateNormalizedDownloadProgressAndNotifyDelegate;
+- (int)bestGuessDownloadNetworkType;
 - (void)_notePhaseCompleted:(id)arg1;
+- (id)getOrCreateDownloadInterfaceReport;
 - (BOOL)_reapplyExistingDownloadPolicyIfDownloadable:(BOOL)arg1;
 - (id)_createDownloadFromDescriptor:(id)arg1 andMetadata:(id)arg2;
 - (void)_cleanupPreviousDownload:(BOOL)arg1;
@@ -108,5 +100,18 @@
 - (BOOL)_updateMobileAssetDownloadOptions:(id)arg1;
 - (void)_setupManualDownloadPolicyPeriodIfNecessary:(id)arg1 fromDate:(id)arg2 save:(BOOL)arg3;
 - (void)_autoDownloadWiFiPeriodDidEnd;
+- (id)download;
+- (id)init;
+- (void)dealloc;
+- (struct __MobileAsset { }*)downloadAsset;
+- (void)setDownload:(id)arg1;
+- (BOOL)isDownloading;
+- (void)setState:(id)arg1;
+- (id)state;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)setForeground:(BOOL)arg1;
+- (BOOL)cancelDownload:(id*)arg1;
+- (void)setDownloading:(BOOL)arg1;
 
 @end

@@ -34,10 +34,9 @@
 
 
 - (id)persistentUUID;
-- (void)setDisplayName:(id)arg1;
-- (id)initWithDictionaryRepresentation:(id)arg1;
-- (void)setAccountType:(id)arg1;
-- (void)setPersistentUUID:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)falseMoreAvailableCount;
 - (id)downloadedElements;
 - (id)failedProtocolRequests;
@@ -54,13 +53,14 @@
 - (void)setAverageHBI:(id)arg1;
 - (void)setTimeInNetworking:(id)arg1;
 - (void)setTimeSpan:(id)arg1;
+- (void)setDisplayName:(id)arg1;
+- (void)setPersistentUUID:(id)arg1;
+- (id)accountType;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)displayName;
 - (id)dictionaryRepresentation;
-- (id)accountType;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (void)mergeStatusReport:(id)arg1;
+- (void)setAccountType:(id)arg1;
 - (void)noteFailedNetworkRequest;
 - (void)noteFailedProtocolRequest;
 - (void)noteSuccessfulRequestWithNumDownloadedElements:(int)arg1;

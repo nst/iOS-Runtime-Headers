@@ -25,10 +25,6 @@
 
 + (id)requestWithURL:(id)arg1;
 
-- (void)setValue:(id)arg1 forHeaderField:(id)arg2;
-- (int)URLBagType;
-- (int)allowedRetryCount;
-- (void)setExpectedContentLength:(long long)arg1;
 - (id)initWithURLRequest:(id)arg1;
 - (long long)expectedContentLength;
 - (void)setHTTPBodyStream:(id)arg1;
@@ -41,21 +37,22 @@
 - (void)setCachePolicy:(unsigned int)arg1;
 - (double)timeoutInterval;
 - (unsigned int)cachePolicy;
-- (id)initWithURL:(id)arg1;
-- (id)URLs;
-- (void)setURLs:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)setValue:(id)arg1 forHeaderField:(id)arg2;
 - (void)setValue:(id)arg1 forQueryStringParameter:(id)arg2;
 - (void)setQueryStringDictionary:(id)arg1;
 - (void)setCustomHeaders:(id)arg1;
 - (id)primaryURL;
 - (id)queryStringDictionary;
 - (id)customHeaders;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)initWithURL:(id)arg1;
+- (id)URLs;
+- (void)setURLs:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)_initCommon;
 - (void)setAllowedRetryCount:(int)arg1;
 - (id)appleClientApplication;
@@ -63,5 +60,8 @@
 - (void)setURLBagType:(int)arg1;
 - (id)initWithRequestProperties:(id)arg1;
 - (id)requestProperties;
+- (int)URLBagType;
+- (int)allowedRetryCount;
+- (void)setExpectedContentLength:(long long)arg1;
 
 @end

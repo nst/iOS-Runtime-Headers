@@ -11,14 +11,14 @@
 @property int height;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setHeight:(int)arg1;
 - (int)height;
 - (id)dictionaryRepresentation;
 - (void)setWidth:(int)arg1;
 - (int)width;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

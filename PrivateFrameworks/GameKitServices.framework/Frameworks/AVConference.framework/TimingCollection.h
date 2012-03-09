@@ -10,12 +10,12 @@
 }
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)startTimingForKey:(id)arg1;
 - (void)stopTimingForKey:(id)arg1;
 - (float)timingForKey:(id)arg1;
 - (BOOL)hasKey:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

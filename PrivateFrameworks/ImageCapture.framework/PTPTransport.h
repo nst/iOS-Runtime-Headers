@@ -40,9 +40,12 @@
 
 
 - (void)sendData:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (int)connectionStatus;
+- (void)setTimedOut:(BOOL)arg1;
+- (BOOL)timedOut;
 - (int)role;
-- (void)setResponse:(id)arg1;
 - (BOOL)isCallbackThreadRunning;
 - (void*)callbackThreadFunction;
 - (void)cleanupCallbackThread;
@@ -69,11 +72,8 @@
 - (id)response;
 - (unsigned short)type;
 - (BOOL)sendEvent:(id)arg1;
-- (int)connectionStatus;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)setResponse:(id)arg1;
 - (BOOL)sendResponse:(id)arg1;
-- (void)setTimedOut:(BOOL)arg1;
-- (BOOL)timedOut;
 
 @end

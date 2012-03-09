@@ -59,13 +59,14 @@
 @property(readonly) BOOL pansAndZoomsToRouteOverview;
 @property(retain) MKShinyRouteOverlayView * routeView;
 
-+ (id)sharedManager;
 + (void)reorientIfOffscreenAlternateRouteAnnotationView:(id)arg1 forMapView:(id)arg2;
 + (void)updateLocationAndOrientationOfAlternateRouteAnnotationViews:(id)arg1;
++ (id)sharedManager;
 
-- (void)setDelegate:(id)arg1;
-- (id)step;
+- (id)init;
+- (void)_cleanup;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)setRoutePositionViewCoordinate:(struct { double x1; double x2; })arg1;
 - (struct { double x1; double x2; })routePositionViewCoordinate;
 - (void)setIsShowingAlternateRouteAnnotationViews:(BOOL)arg1;
@@ -146,7 +147,6 @@
 - (id)routeView;
 - (void)gestureRecognizer:(id)arg1 tappedAnnotationView:(id)arg2;
 - (void)mapView:(id)arg1 resetDisplay:(BOOL)arg2;
-- (void)_cleanup;
-- (id)init;
+- (id)step;
 
 @end

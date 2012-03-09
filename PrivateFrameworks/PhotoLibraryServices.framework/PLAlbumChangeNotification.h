@@ -16,15 +16,15 @@
 
 + (id)notificationWithAlbum:(id)arg1 snapshot:(id)arg2 changedAssets:(id)arg3;
 
-- (id)album;
-- (id)name;
+- (id)userInfo;
+- (id)description;
+- (void)dealloc;
 - (id)_contentRelationshipName;
 - (BOOL)keyAssetDidChange;
 - (void)_calculateDiffs;
 - (id)notificaionForDerivedAlbum:(id)arg1;
+- (id)album;
+- (id)name;
 - (BOOL)titleDidChange;
-- (id)userInfo;
-- (id)description;
-- (void)dealloc;
 
 @end

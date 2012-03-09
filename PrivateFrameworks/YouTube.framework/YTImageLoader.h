@@ -30,6 +30,8 @@
 
 + (id)sharedImageLoader;
 
+- (id)init;
+- (id)notificationCenter;
 - (BOOL)isLoadingImages;
 - (struct CGImage { }*)imageForURL:(id)arg1 rounded:(BOOL)arg2 videoID:(id)arg3 loadIfAbsent:(BOOL)arg4;
 - (struct CGImage { }*)largeImageForURL:(id)arg1 videoID:(id)arg2 loadIfAbsent:(BOOL)arg3;
@@ -52,7 +54,5 @@
 - (struct CGImage { }*)_largeThumbnailOverlay;
 - (struct CGImage { }*)createSheenedThumbnailWithImage:(struct CGImage { }*)arg1 overlay:(struct CGImage { }*)arg2 width:(int)arg3 height:(int)arg4;
 - (void)_postImageLoadedNotification:(id)arg1;
-- (id)notificationCenter;
-- (id)init;
 
 @end

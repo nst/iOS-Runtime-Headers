@@ -19,6 +19,7 @@
 }
 
 
+- (void)dealloc;
 - (void)_loopAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)_serviceContentsImageForStyle:(int)arg1;
 - (id)_crossfadeContentsImageForStyle:(int)arg1;
@@ -38,6 +39,5 @@
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (BOOL)animatesFrameChange;
 - (id)contentsImageForStyle:(int)arg1;
-- (void)dealloc;
 
 @end

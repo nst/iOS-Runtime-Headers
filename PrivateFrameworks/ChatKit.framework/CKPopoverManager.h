@@ -29,9 +29,7 @@
 
 + (id)sharedInstance;
 
-- (void)setPopoverController:(id)arg1;
-- (id)popoverController;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)dealloc;
 - (void)setHandler:(id)arg1;
 - (void)setPresenter:(id)arg1;
 - (id)presenter;
@@ -40,6 +38,8 @@
 - (void)didFinishRotating;
 - (void)dismissCurrentPopover;
 - (void)showPopover:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
-- (void)dealloc;
+- (void)setPopoverController:(id)arg1;
+- (id)popoverController;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
 
 @end

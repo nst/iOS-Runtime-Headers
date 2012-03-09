@@ -32,6 +32,8 @@
 
 + (int)getROP:(id)arg1;
 
+- (void)dealloc;
+- (void)setTransform:(id)arg1;
 - (id)initWithCanvas:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)textOut:(id)arg1 :(int*)arg2 :(int*)arg3 :(id)arg4;
 - (int)arc:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
@@ -79,7 +81,5 @@
 - (int)excludeClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)intersectClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)setMetaRgn;
-- (void)setTransform:(id)arg1;
-- (void)dealloc;
 
 @end

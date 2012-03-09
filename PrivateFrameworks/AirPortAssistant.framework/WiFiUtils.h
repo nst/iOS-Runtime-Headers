@@ -18,6 +18,7 @@
 
 @property(retain) NSTimer * _scanTimer;
 
++ (id)sharedInstance;
 + (BOOL)stringArray:(id)arg1 containsBSSID:(id)arg2;
 + (int)barsForRSSI:(int)arg1;
 + (BOOL)scanInfoIs5GHz:(id)arg1;
@@ -26,8 +27,9 @@
 + (id)getNetworkPassword:(id)arg1;
 + (BOOL)networkIsApple:(id)arg1 productID:(unsigned int*)arg2;
 + (id)sharedInstanceRef;
-+ (id)sharedInstance;
 
+- (id)init;
+- (void)dealloc;
 - (void)mergeScanResults:(id)arg1;
 - (void)asyncWiFiScanThread:(id)arg1;
 - (long)joinNetworkWithScanInfo:(id)arg1 password:(id)arg2 rememberChoice:(int)arg3;
@@ -72,7 +74,5 @@
 - (long)setAutoJoinState:(BOOL)arg1;
 - (void)activateScanning:(BOOL)arg1;
 - (BOOL)airPortIsOn;
-- (id)init;
-- (void)dealloc;
 
 @end

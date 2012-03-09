@@ -19,6 +19,9 @@
 + (id)inputSetWithKeyboardAndAccessoryView:(id)arg1;
 + (id)emptyInputSet;
 
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)initWithInputView:(id)arg1 accessoryView:(id)arg2 isKeyboard:(BOOL)arg3;
 - (BOOL)usesKeyClicks;
 - (BOOL)isStrictSupersetOfViewSet:(id)arg1;
@@ -32,8 +35,5 @@
 - (void)setInputAccessoryView:(id)arg1;
 - (void)setInputView:(id)arg1;
 - (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

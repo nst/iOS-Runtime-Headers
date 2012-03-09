@@ -17,7 +17,6 @@
 
 + (id)newNode;
 
-- (void)finalize;
 - (void)setWaitOnTake:(BOOL)arg1;
 - (BOOL)waitOnTake;
 - (int)indexOf:(id)arg1;
@@ -25,11 +24,12 @@
 - (id)peek;
 - (id)take;
 - (void)put:(id)arg1;
-- (BOOL)remove:(id)arg1;
-- (void)clear;
-- (BOOL)isEmpty;
 - (unsigned int)count;
 - (id)init;
 - (void)dealloc;
+- (void)clear;
+- (void)finalize;
+- (BOOL)isEmpty;
+- (BOOL)remove:(id)arg1;
 
 @end

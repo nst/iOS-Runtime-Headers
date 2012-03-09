@@ -56,6 +56,7 @@
 @property float groupHeight;
 
 
+- (void)dealloc;
 - (void)setGroupHeight:(float)arg1;
 - (float)groupHeight;
 - (void)setPreviousGroupMaxY:(float)arg1;
@@ -92,6 +93,5 @@
 - (id)completion;
 - (float)rowHeight;
 - (void)setRowHeight:(float)arg1;
-- (void)dealloc;
 
 @end

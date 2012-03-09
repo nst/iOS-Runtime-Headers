@@ -29,7 +29,14 @@
 @property(copy) id actionHandler;
 
 
+- (void)dealloc;
+- (int)defaultAction;
 - (id)buttonTitles;
+- (id)bodyText;
+- (int)type;
+- (id)context;
+- (void)setContext:(id)arg1;
+- (id)title;
 - (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4 tableAction:(int)arg5;
 - (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4;
 - (id)selectedTableItem;
@@ -45,12 +52,5 @@
 - (id)actionHandler;
 - (void)setSelectedTableItemIndex:(int)arg1;
 - (int)tableAction;
-- (id)bodyText;
-- (int)type;
-- (id)context;
-- (void)setContext:(id)arg1;
-- (id)title;
-- (void)dealloc;
-- (int)defaultAction;
 
 @end

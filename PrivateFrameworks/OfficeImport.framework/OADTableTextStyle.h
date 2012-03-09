@@ -17,6 +17,10 @@
 + (int)defaultBold;
 + (int)defaultItalic;
 
+- (id)init;
+- (void)dealloc;
+- (id)color;
+- (void)setColor:(id)arg1;
 - (void)applyOverridesFrom:(id)arg1;
 - (id)fontReference;
 - (void)setFontReference:(id)arg1;
@@ -25,9 +29,5 @@
 - (id)shallowCopy;
 - (void)setBold:(int)arg1;
 - (void)setItalic:(int)arg1;
-- (id)color;
-- (void)setColor:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -10,6 +10,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
@@ -34,8 +36,6 @@
 - (void)moreInfoCellWasTapped:(id)arg1;
 - (id)_contentRatingImage;
 - (id)_itemArtworkImage;
-- (id)init;
-- (void)dealloc;
 - (void)_restrictionsChangedNotification:(id)arg1;
 - (id)newTermsAndConditionsFooter;
 - (id)newDataSource;

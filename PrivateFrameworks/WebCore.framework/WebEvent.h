@@ -54,6 +54,19 @@
 @property(readonly) int type;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)initWithTouchEventType:(int)arg1 timeStamp:(double)arg2 location:(struct CGPoint { float x1; float x2; })arg3 modifiers:(unsigned int)arg4 touchCount:(unsigned int)arg5 touchLocations:(id)arg6 touchGlobalLocations:(id)arg7 touchIdentifiers:(id)arg8 touchPhases:(id)arg9 isGesture:(BOOL)arg10 gestureScale:(float)arg11 gestureRotation:(float)arg12;
+- (id)touchPhases;
+- (id)touchIdentifiers;
+- (id)touchLocations;
+- (id)_typeDescription;
+- (struct CGPoint { float x1; float x2; })locationInWindow;
+- (id)initWithScrollWheelEventWithTimeStamp:(double)arg1 location:(struct CGPoint { float x1; float x2; })arg2 deltaX:(float)arg3 deltaY:(float)arg4;
+- (id)initWithMouseEventType:(int)arg1 timeStamp:(double)arg2 location:(struct CGPoint { float x1; float x2; })arg3;
+- (id)initWithKeyEventType:(int)arg1 timeStamp:(double)arg2 characters:(id)arg3 charactersIgnoringModifiers:(id)arg4 modifiers:(unsigned int)arg5 isRepeating:(BOOL)arg6 isPopupVariant:(BOOL)arg7 keyCode:(unsigned short)arg8 isTabKey:(BOOL)arg9 characterSet:(int)arg10;
+- (int)type;
+- (double)timestamp;
 - (id)_modiferFlagsDescription;
 - (BOOL)isPopupVariant;
 - (BOOL)isTabKey;
@@ -76,18 +89,5 @@
 - (unsigned int)modifierFlags;
 - (unsigned short)keyCode;
 - (int)characterSet;
-- (id)initWithTouchEventType:(int)arg1 timeStamp:(double)arg2 location:(struct CGPoint { float x1; float x2; })arg3 modifiers:(unsigned int)arg4 touchCount:(unsigned int)arg5 touchLocations:(id)arg6 touchGlobalLocations:(id)arg7 touchIdentifiers:(id)arg8 touchPhases:(id)arg9 isGesture:(BOOL)arg10 gestureScale:(float)arg11 gestureRotation:(float)arg12;
-- (id)touchPhases;
-- (id)touchIdentifiers;
-- (id)touchLocations;
-- (id)_typeDescription;
-- (struct CGPoint { float x1; float x2; })locationInWindow;
-- (id)initWithScrollWheelEventWithTimeStamp:(double)arg1 location:(struct CGPoint { float x1; float x2; })arg2 deltaX:(float)arg3 deltaY:(float)arg4;
-- (id)initWithMouseEventType:(int)arg1 timeStamp:(double)arg2 location:(struct CGPoint { float x1; float x2; })arg3;
-- (id)initWithKeyEventType:(int)arg1 timeStamp:(double)arg2 characters:(id)arg3 charactersIgnoringModifiers:(id)arg4 modifiers:(unsigned int)arg5 isRepeating:(BOOL)arg6 isPopupVariant:(BOOL)arg7 keyCode:(unsigned short)arg8 isTabKey:(BOOL)arg9 characterSet:(int)arg10;
-- (int)type;
-- (double)timestamp;
-- (id)description;
-- (void)dealloc;
 
 @end

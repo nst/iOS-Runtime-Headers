@@ -25,14 +25,14 @@
 @property(retain) NSError * error;
 
 
+- (void)dealloc;
 - (void)setError:(id)arg1;
-- (void)setOptions:(id)arg1;
-- (id)options;
-- (id)callback;
 - (id)error;
 - (id)result;
 - (void)setResult:(id)arg1;
-- (void)dealloc;
+- (id)options;
+- (void)setOptions:(id)arg1;
 - (void)setCallback:(id)arg1;
+- (id)callback;
 
 @end

@@ -2,26 +2,27 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKRibbonSegmentedControl, UIView;
+@class UIView, GKHeaderSegmentedControl;
 
-@interface GKLeaderboardControlSection : NSObject <GKTableSection, GKRibbonSegmentedControlDelegate> {
-    GKRibbonSegmentedControl *_timeScopeSegmentedControl;
+@interface GKLeaderboardControlSection : NSObject <GKTableSection, GKHeaderSegmentedControlDelegate> {
+    GKHeaderSegmentedControl *_timeScopeSegmentedControl;
     UIView *_controlContainer;
     BOOL _visible;
 }
 
-@property(retain) GKRibbonSegmentedControl * timeScopeSegmentedControl;
+@property(retain) GKHeaderSegmentedControl * timeScopeSegmentedControl;
 @property int timeScope;
 @property(retain) UIView * controlContainer;
 @property(getter=isVisible) BOOL visible;
 @property(getter=isLoading) BOOL loading;
 
 
+- (id)init;
 - (void)setControlContainer:(id)arg1;
 - (id)controlContainer;
 - (void)setTimeScopeSegmentedControl:(id)arg1;
 - (id)timeScopeSegmentedControl;
-- (void)ribbonSegmentedControlChanged:(id)arg1;
+- (void)headerSegmentedControlChanged:(id)arg1;
 - (id)sectionHeaderViewInTableView:(id)arg1;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
@@ -32,6 +33,5 @@
 - (BOOL)isVisible;
 - (void)setVisible:(BOOL)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (id)init;
 
 @end

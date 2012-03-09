@@ -15,16 +15,16 @@
 @property(retain) NSData * panoMap;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)panoMap;
 - (id)depthMap;
 - (BOOL)hasPanoMap;
 - (BOOL)hasDepthMap;
 - (void)setPanoMap:(id)arg1;
 - (void)setDepthMap:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

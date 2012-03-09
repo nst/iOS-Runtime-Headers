@@ -16,12 +16,16 @@
 @property(copy) NSString * errorDescription;
 @property(retain) NSArray * allowedClasses;
 
-+ (id)rootObjectForEncoding:(void*)arg1;
 + (id)rootObjectForEncoding:(void*)arg1 allowedClasses:(id)arg2;
 + (id)rootObjectForEncoding:(void*)arg1 allowedClasses:(id)arg2 errorDescription:(id)arg3;
++ (id)rootObjectForEncoding:(void*)arg1;
 
 - (void)setAllowedClasses:(id)arg1;
 - (id)allowedClasses;
+- (void)dealloc;
+- (void)_verifyCurrentObject;
+- (void)setErrorDescription:(id)arg1;
+- (BOOL)_classIsAllowed:(Class)arg1;
 - (id)errorDescription;
 - (id)initWithEncoding:(void*)arg1;
 - (int)versionForClassName:(id)arg1;
@@ -37,9 +41,5 @@
 - (BOOL)allowsKeyedCoding;
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (id)decodeObjectForKey:(id)arg1;
-- (void)dealloc;
-- (void)_verifyCurrentObject;
-- (void)setErrorDescription:(id)arg1;
-- (BOOL)_classIsAllowed:(Class)arg1;
 
 @end

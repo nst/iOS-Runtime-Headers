@@ -14,14 +14,14 @@
 @property(retain) CoreDAVBulkRequestsItem * simpleItem;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setSimpleItem:(id)arg1;
 - (void)setCrudItem:(id)arg1;
 - (id)simpleItem;
 - (id)crudItem;
 - (id)copyParseRules;
 - (id)dictRepresentation;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

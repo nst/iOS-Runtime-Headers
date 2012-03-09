@@ -12,10 +12,10 @@
 }
 
 
-- (id)signedURLRequestWithURLRequest:(id)arg1;
 - (id)initWithAccount:(id)arg1;
-- (void)dealloc;
-- (id)signedURLRequestWithURLRequest:(id)arg1 callingPID:(id)arg2;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)dealloc;
+- (id)signedURLRequestWithURLRequest:(id)arg1;
+- (id)signedURLRequestWithURLRequest:(id)arg1 callingPID:(id)arg2;
 
 @end

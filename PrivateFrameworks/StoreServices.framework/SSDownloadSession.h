@@ -14,14 +14,14 @@
 @property(readonly) SSDownloadAsset * downloadAsset;
 
 
-- (id)downloadAsset;
-- (void*)_copySessionPropertyWithKey:(const char *)arg1;
-- (id)_initSSDownloadSession;
-- (id)_initWithSessionIdentifier:(long long)arg1 controlConnection:(id)arg2;
 - (id)download;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
 - (void)dealloc;
+- (id)downloadAsset;
+- (void*)_copySessionPropertyWithKey:(const char *)arg1;
+- (id)_initSSDownloadSession;
+- (id)_initWithSessionIdentifier:(long long)arg1 controlConnection:(id)arg2;
 
 @end

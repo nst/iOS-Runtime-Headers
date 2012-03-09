@@ -80,8 +80,11 @@
 @property unsigned int pendingItemsType;
 
 
-- (id)localizedTitle;
+- (unsigned int)count;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)posterImage;
+- (id)localizedTitle;
 - (id)kind;
 - (id)annotation;
 - (id)title;
@@ -102,20 +105,6 @@
 - (unsigned int)indexOfPosterImage;
 - (void)setAssets:(id)arg1;
 - (id)initWithRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setPendingItemsType:(unsigned int)arg1;
-- (unsigned int)pendingItemsType;
-- (void)setPendingItemsCount:(unsigned int)arg1;
-- (unsigned int)pendingItemsCount;
-- (id)groupURL;
-- (void)setImportSessionID:(id)arg1;
-- (id)importSessionID;
-- (BOOL)shouldDeleteWhenEmpty;
-- (BOOL)isLibrary;
-- (void)setKeyAsset:(id)arg1;
-- (id)keyAsset;
-- (void)updateStackedImage;
-- (void)reducePendingItemsCountBy:(unsigned int)arg1;
-- (id)displayableIndexesForCount:(unsigned int)arg1;
 - (struct { double x1; double x2; })effectiveLocation;
 - (BOOL)isEqualToPlace:(id)arg1;
 - (id)assetsSet;
@@ -134,19 +123,31 @@
 - (void)setTitleIsNumberOfPhotos:(BOOL)arg1;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)set_assets:(id)arg1;
-- (unsigned int)videosCount;
-- (unsigned int)photosCount;
-- (int)kindValue;
+- (void)setPendingItemsType:(unsigned int)arg1;
+- (unsigned int)pendingItemsType;
+- (void)setPendingItemsCount:(unsigned int)arg1;
+- (unsigned int)pendingItemsCount;
+- (id)groupURL;
+- (void)setImportSessionID:(id)arg1;
+- (id)importSessionID;
+- (BOOL)shouldDeleteWhenEmpty;
 - (BOOL)isPhotoStreamAlbum;
 - (BOOL)isCameraAlbum;
+- (BOOL)isLibrary;
+- (void)setKeyAsset:(id)arg1;
+- (id)keyAsset;
+- (unsigned int)videosCount;
+- (unsigned int)photosCount;
 - (id)mutableAssets;
+- (int)kindValue;
+- (void)batchFetchAssets:(id)arg1;
+- (void)updateStackedImage;
+- (void)reducePendingItemsCountBy:(unsigned int)arg1;
+- (id)displayableIndexesForCount:(unsigned int)arg1;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (void)setSlideshowSettings:(id)arg1;
 - (id)slideshowSettings;
 - (id)uuid;
 - (id)assets;
-- (unsigned int)count;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end

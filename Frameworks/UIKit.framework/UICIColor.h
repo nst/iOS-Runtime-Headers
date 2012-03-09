@@ -10,6 +10,10 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (id)CIColor;
 - (id)initWithCIColor:(id)arg1;
 - (id)_rgbColor;
@@ -19,9 +23,5 @@
 - (struct CGColor { }*)CGColor;
 - (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (void)set;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 
 @end

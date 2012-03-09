@@ -12,6 +12,8 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setJoinSemantic:(unsigned int)arg1;
 - (void)setDestinationEntityExternalName:(id)arg1;
 - (void)setForeignKeys:(id)arg1;
@@ -23,7 +25,5 @@
 - (id)columnDefinitions;
 - (id)constraintDefinitions;
 - (id)relationship;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -18,8 +18,8 @@
 + (id)playButtonImage;
 + (id)pauseButtonImage;
 
+- (void)dealloc;
 - (id)actionButton;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)doneButtonPressed;
 - (id)videoControls;
 - (id)playPauseButton;
@@ -29,6 +29,6 @@
 - (void)toggleVideoPlay:(id)arg1;
 - (id)initWithItems:(id)arg1 startingIndex:(int)arg2 parts:(id)arg3 fullscreenMode:(BOOL)arg4;
 - (id)parts;
-- (void)dealloc;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

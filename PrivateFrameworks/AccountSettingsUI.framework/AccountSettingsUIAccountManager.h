@@ -11,10 +11,10 @@
 
 + (id)sharedInstance;
 
-- (id)allAccounts;
 - (id)init;
 - (void)dealloc;
 - (id)accountWithSyncStoreIdentifier:(id)arg1;
 - (id)accountsBySyncStoreIdentifier;
+- (id)allAccounts;
 
 @end

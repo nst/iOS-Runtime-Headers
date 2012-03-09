@@ -15,18 +15,18 @@
 @property(retain) NSString * logResponseToFile;
 
 
+- (void)setProvider:(unsigned short)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)init;
+- (void)dealloc;
 - (id)logResponseToFile;
 - (id)logRequestToFile;
-- (void)setProvider:(unsigned short)arg1;
+- (unsigned short)provider;
 - (void)setLogResponseToFile:(id)arg1;
 - (void)setLogRequestToFile:(id)arg1;
 - (id)initForwardGeocodeWithAddressString:(id)arg1;
 - (id)initForwardGeocodeWithAddressDictionary:(id)arg1;
 - (id)initReverseGeocodeWithCoordinate:(struct { double x1; double x2; })arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)init;
-- (void)dealloc;
-- (unsigned short)provider;
 
 @end

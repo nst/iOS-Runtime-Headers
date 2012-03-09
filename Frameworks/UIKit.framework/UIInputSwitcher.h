@@ -14,6 +14,8 @@
 + (id)activeInstance;
 + (id)sharedInstance;
 
+- (id)init;
+- (void)dealloc;
 - (void)touchSwitcherTimer;
 - (id)newMode;
 - (void)setNewMode:(id)arg1;
@@ -26,7 +28,5 @@
 - (BOOL)isVisible;
 - (BOOL)handleSwitchCommand:(BOOL)arg1;
 - (BOOL)switchMode:(id)arg1 withDelay:(BOOL)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

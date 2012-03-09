@@ -58,6 +58,7 @@
 
 + (id)defaultVideoConferenceManager;
 
+- (id)init;
 - (BOOL)hasVideoConference:(id)arg1;
 - (BOOL)isForcingAudioBitrate;
 - (int)clientPID;
@@ -119,6 +120,5 @@
 - (BOOL)isSpeakerPhoneEnabled;
 - (BOOL)isSpeakerPhoneEnabled;
 - (void)removeVideoConference:(id)arg1;
-- (id)init;
 
 @end

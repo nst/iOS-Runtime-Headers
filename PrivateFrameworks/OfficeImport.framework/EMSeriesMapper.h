@@ -6,6 +6,9 @@
 }
 
 
+- (struct CGColor { }*)fillColor;
+- (id)values;
+- (float)offset;
 - (bool)useSecondaryAxis;
 - (unsigned int)markerType;
 - (struct CGColor { }*)markerColor;
@@ -13,8 +16,5 @@
 - (struct CGColor { }*)strokeColor;
 - (float)strokeWidth;
 - (unsigned int)chartType;
-- (struct CGColor { }*)fillColor;
-- (id)values;
-- (float)offset;
 
 @end

@@ -15,10 +15,7 @@
 @property int width;
 
 
-- (id)src;
-- (void)setSrc:(id)arg1;
-- (id)align;
-- (void)setAlign:(id)arg1;
+- (void)setName:(id)arg1;
 - (void)setHeight:(int)arg1;
 - (int)height;
 - (id)type;
@@ -26,7 +23,10 @@
 - (int)width;
 - (id)name;
 - (void)setType:(id)arg1;
-- (void)setName:(id)arg1;
+- (id)src;
+- (void)setSrc:(id)arg1;
+- (id)align;
+- (void)setAlign:(id)arg1;
 - (BOOL)showsTapHighlight;
 
 @end

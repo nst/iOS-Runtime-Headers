@@ -13,15 +13,8 @@
 
 + (id)valueWithCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 
-- (BOOL)boolValue;
-- (unsigned long long)unsignedLongLongValue;
-- (unsigned int)unsignedIntegerValue;
-- (int)integerValue;
-- (long long)longLongValue;
-- (unsigned int)unsignedIntValue;
-- (double)doubleValue;
-- (float)floatValue;
-- (void)getValue:(void*)arg1;
+- (int)intValue;
+- (id)description;
 - (unsigned short)unsignedShortValue;
 - (short)shortValue;
 - (BOOL)charValue;
@@ -30,7 +23,14 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })CMTimeValue;
 - (unsigned char)unsignedCharValue;
 - (unsigned long)unsignedLongValue;
-- (int)intValue;
-- (id)description;
+- (unsigned long long)unsignedLongLongValue;
+- (unsigned int)unsignedIntegerValue;
+- (int)integerValue;
+- (long long)longLongValue;
+- (unsigned int)unsignedIntValue;
+- (double)doubleValue;
+- (float)floatValue;
+- (void)getValue:(void*)arg1;
+- (BOOL)boolValue;
 
 @end

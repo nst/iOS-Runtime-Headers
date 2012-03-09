@@ -9,11 +9,11 @@
 }
 
 
+- (void)dealloc;
 - (void)audioRoutingPicker:(id)arg1 didSelectRouteAtIndex:(int)arg2;
 - (id)initWithAudioCategory:(id)arg1;
 - (void)twoSidedAlertControllerDidDismiss:(id)arg1;
 - (id)createBackAlert;
 - (id)createFrontAlert;
-- (void)dealloc;
 
 @end

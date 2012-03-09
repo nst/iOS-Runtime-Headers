@@ -47,6 +47,9 @@
 
 + (id)attributesWithSystemFontOfSize:(float)arg1;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setDrawUnderline:(BOOL)arg1;
 - (BOOL)drawUnderline;
 - (void)setRenderString:(id*)arg1;
@@ -77,8 +80,5 @@
 - (void)setActualFontSize:(float)arg1;
 - (void)setFont:(id)arg1;
 - (int)alignment;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

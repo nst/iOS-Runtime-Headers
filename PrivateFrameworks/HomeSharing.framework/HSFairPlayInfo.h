@@ -13,6 +13,10 @@
 @property(readonly) NSString * deviceGUID;
 
 
+- (id)init;
+- (void)dealloc;
+- (id)securityInfoForURL:(id)arg1;
+- (id)deviceGUID;
 - (BOOL)setupMescalWithURL:(id)arg1 certificateURL:(id)arg2 requestsToSign:(id)arg3 userAgent:(id)arg4;
 - (void)endMescalSession;
 - (id)_hexStringForData:(id)arg1;
@@ -23,9 +27,5 @@
 - (id)continueNegotationWithData:(id)arg1 isComplete:(BOOL*)arg2;
 - (void)endSecuritySession;
 - (id)beginNegotiation;
-- (id)securityInfoForURL:(id)arg1;
-- (id)deviceGUID;
-- (id)init;
-- (void)dealloc;
 
 @end

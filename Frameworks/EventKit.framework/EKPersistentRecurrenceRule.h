@@ -27,8 +27,13 @@
 
 + (id)relations;
 
-- (id)owner;
-- (id)UUID;
+- (int)count;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)calendarIdentifier;
+- (id)_helper;
 - (BOOL)isDirty;
 - (int)firstDayOfTheWeek;
 - (id)cachedEndDate;
@@ -53,16 +58,11 @@
 - (id)endDate;
 - (int)entityType;
 - (BOOL)validate:(id*)arg1;
-- (void)setOwner:(id)arg1;
 - (int)interval;
 - (void)setInterval:(int)arg1;
 - (void)setCount:(int)arg1;
-- (id)calendarIdentifier;
-- (id)_helper;
-- (int)count;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setOwner:(id)arg1;
+- (id)owner;
+- (id)UUID;
 
 @end

@@ -12,14 +12,14 @@
 }
 
 
-- (BOOL)receivedValidResponse:(id)arg1;
-- (void)_createImage;
-- (void)_loadFinished;
-- (void)start;
+- (void)dealloc;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)dealloc;
+- (void)start;
+- (BOOL)receivedValidResponse:(id)arg1;
+- (void)_createImage;
+- (void)_loadFinished;
 
 @end

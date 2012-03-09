@@ -10,9 +10,9 @@
 
 + (id)defaultProperties;
 
+- (void)dealloc;
 - (BOOL)hasImageFill;
 - (void)setImageFill:(id)arg1;
 - (id)imageFill;
-- (void)dealloc;
 
 @end

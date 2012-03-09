@@ -17,20 +17,20 @@
 @property <MFMailComposeContactsSearchControllerDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (id)init;
+- (void)dealloc;
 - (void)_cancelSearchAndNotify:(BOOL)arg1;
 - (void)setTaskID:(id)arg1;
 - (void)_finishSearch;
 - (void)cancelSearch;
 - (void)searchWithString:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)taskID;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)endedNetworkActivity;
 - (void)beganNetworkActivity;
 - (void)finishedTaskWithID:(id)arg1;
 - (void)finishedSearchingForType:(int)arg1;
 - (void)consumeSearchResults:(id)arg1 type:(int)arg2 taskID:(id)arg3;
+- (id)taskID;
 
 @end

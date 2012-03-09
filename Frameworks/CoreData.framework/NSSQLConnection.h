@@ -16,7 +16,13 @@
 
 + (void)initialize;
 
+- (void)dealloc;
+- (void)connect;
 - (void)finalize;
+- (void)commitTransaction;
+- (void)disconnect;
+- (void)insertRow:(id)arg1;
+- (void)deleteRow:(id)arg1;
 - (void)_raiseOptimisticLockingExceptionWithReason:(id)arg1;
 - (id)initWithAdapter:(id)arg1;
 - (void)awake;
@@ -46,9 +52,17 @@
 - (void)endPrimaryKeyGeneration;
 - (BOOL)hasPrimaryKeyTable;
 - (void)_performPostSaveTasks;
+- (id)fetchUbiqiutyKnowledgeVector;
 - (void)updateUbiquityKnowledgeVector:(id)arg1;
+- (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;
 - (void)addPeerRangeForPeerID:(id)arg1 entityName:(id)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 peerRangeStart:(id)arg5 peerRangeEnd:(id)arg6;
 - (id)allPeerRanges;
+- (id)createMapOfEntityNameToPKMaxForEntitiesFromUBRangeTable:(id)arg1;
+- (id)createMapOfEntityNameToPKMaxForEntitiesFromPKTable:(id)arg1;
+- (id)createMapOfEntityNameToPKMaxForEntities:(id)arg1;
+- (void)setUbiquityTableValue:(id)arg1 forKey:(id)arg2;
+- (id)ubiquityTableKeysAndValues;
+- (id)ubiquityTableValueForKey:(id)arg1;
 - (void)updateRow:(id)arg1;
 - (void)insertCorrelation:(id)arg1;
 - (void)updateCorrelation:(id)arg1;
@@ -78,14 +92,6 @@
 - (void)resetSQLStatement;
 - (void)releaseSQLStatement;
 - (BOOL)isOpen;
-- (id)fetchUbiqiutyKnowledgeVector;
-- (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;
 - (id)columnsToFetch;
-- (void)disconnect;
-- (void)insertRow:(id)arg1;
-- (void)deleteRow:(id)arg1;
-- (void)connect;
-- (void)commitTransaction;
-- (void)dealloc;
 
 @end

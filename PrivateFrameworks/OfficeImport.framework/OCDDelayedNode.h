@@ -12,11 +12,11 @@
 + (void)disableDelayedLoading;
 + (void)enableDelayedLoading;
 
+- (void)dealloc;
 - (void)setLoaded:(bool)arg1;
-- (id)delayedContext;
-- (void)setDelayedContext:(id)arg1;
 - (bool)load;
 - (bool)isLoaded;
-- (void)dealloc;
+- (id)delayedContext;
+- (void)setDelayedContext:(id)arg1;
 
 @end

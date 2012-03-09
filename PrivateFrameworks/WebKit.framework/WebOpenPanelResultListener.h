@@ -15,9 +15,9 @@
 }
 
 
+- (void)cancel;
 - (void)chooseFilename:(id)arg1;
 - (void)chooseFilenames:(id)arg1;
 - (id)initWithChooser:(struct PassRefPtr<WebCore::FileChooser> { struct FileChooser {} *x1; })arg1;
-- (void)cancel;
 
 @end

@@ -15,11 +15,11 @@
 @property(readonly) NSURL * URL;
 
 
-- (id)buttonTitle;
-- (id)URL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)buttonTitle;
+- (id)URL;
 - (id)buttonDictionary;
 - (id)initWithButtonDictionary:(id)arg1;
 - (id)buttonLocation;

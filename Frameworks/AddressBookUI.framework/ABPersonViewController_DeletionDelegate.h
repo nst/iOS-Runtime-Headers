@@ -9,8 +9,8 @@
 }
 
 
+- (id)initWithPersonViewController:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)initWithPersonViewController:(id)arg1;
 
 @end

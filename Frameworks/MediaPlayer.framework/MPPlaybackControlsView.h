@@ -51,7 +51,7 @@
 
 + (unsigned int)defaultVisibleParts;
 
-- (void)reloadView;
+- (void)dealloc;
 - (void)_changeGeniusImageToNormalImage:(id)arg1;
 - (void)_changeGeniusImageToPressedImage:(id)arg1;
 - (void)reloadButtonVisibility;
@@ -80,6 +80,7 @@
 - (void)_rewindButton:(id)arg1;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
+- (void)_isGeniusEnabledDidChangeNotification:(id)arg1;
 - (void)_contentsChangedNotification:(id)arg1;
 - (void)_setVisiblePartsNeedReload;
 - (void)_initializeControls;
@@ -104,18 +105,18 @@
 - (void)_validityChangedNotification:(id)arg1;
 - (void)setVisibleParts:(unsigned int)arg1;
 - (unsigned int)visibleParts;
+- (void)setCurrentTime:(double)arg1;
+- (void)reloadView;
+- (id)player;
 - (void)setPlayer:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)item;
 - (void)didMoveToSuperview;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)delegate;
 - (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCurrentTime:(double)arg1;
-- (id)player;
-- (void)dealloc;
 - (id)newProgressIndicator;
 - (void)setItem:(id)arg1;
 

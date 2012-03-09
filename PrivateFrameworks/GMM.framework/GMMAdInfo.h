@@ -27,7 +27,13 @@
 
 
 - (id)uniqueId;
+- (id)description;
+- (void)dealloc;
+- (void)setHeadline:(id)arg1;
+- (id)headline;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)linkUrl;
 - (id)creativeLine2;
 - (id)creativeLine1;
@@ -42,11 +48,5 @@
 - (id)linkText;
 - (BOOL)hasLinkText;
 - (void)setLinkText:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
-- (void)setHeadline:(id)arg1;
-- (id)headline;
 
 @end

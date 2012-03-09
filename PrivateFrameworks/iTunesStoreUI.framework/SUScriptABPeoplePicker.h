@@ -10,9 +10,9 @@
 
 + (id)newPickEventWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 
-- (id)initWithOptions:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)initWithOptions:(id)arg1;
 - (id)newNativeViewController;
 - (void)setNativeViewController:(id)arg1;
 - (id)_className;

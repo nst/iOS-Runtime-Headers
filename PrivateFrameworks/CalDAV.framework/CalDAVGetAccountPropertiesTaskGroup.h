@@ -31,14 +31,14 @@
 @property(readonly) NSSet * calendarHomes;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)processPrincipalHeaders:(id)arg1;
 - (BOOL)forceOptionsRequest;
 - (void)startTaskGroup;
 - (id)homeSet;
 - (void)_setPropertiesFromParsedResponses:(id)arg1;
 - (id)_copyAccountPropertiesPropFindElements;
-- (id)description;
-- (void)dealloc;
 - (id)outboxURL;
 - (id)inboxURL;
 - (id)serverVersion;

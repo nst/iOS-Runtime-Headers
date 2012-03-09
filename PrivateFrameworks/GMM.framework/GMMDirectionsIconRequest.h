@@ -23,7 +23,13 @@
 @property(readonly) long long* cachedIconIDs;
 
 
+- (id)capabilities;
+- (id)description;
+- (void)dealloc;
+- (void)setCapabilities:(id)arg1;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasCachedIconVersion:(BOOL)arg1;
 - (BOOL)hasCachedIconVersion;
 - (void)setCachedIconIDs:(long long*)arg1 count:(unsigned int)arg2;
@@ -35,11 +41,5 @@
 - (int)cachedIconVersion;
 - (void)setCachedIconVersion:(int)arg1;
 - (BOOL)hasCapabilities;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (void)setCapabilities:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)capabilities;
 
 @end

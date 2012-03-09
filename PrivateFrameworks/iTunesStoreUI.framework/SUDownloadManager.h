@@ -19,9 +19,9 @@
 @property(readonly) NSArray * preorders;
 
 
+- (void)dealloc;
 - (id)downloads;
 - (id)downloadManager;
-- (void)dealloc;
 - (id)downloadForDownloadIdentifier:(long long)arg1;
 - (BOOL)deletePreorder:(id)arg1;
 - (BOOL)deleteDownload:(id)arg1;

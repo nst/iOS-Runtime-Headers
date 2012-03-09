@@ -22,12 +22,8 @@
 
 + (id)sharedPreferences;
 
+- (id)init;
 - (id)_cacheDirectoryPath;
-- (id)UUID;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (BOOL)isNetworkReachable;
 - (void)setupLogging;
 - (void)setNetworkReachable:(BOOL)arg1;
 - (id)newsServiceURLForStock:(id)arg1;
@@ -46,6 +42,10 @@
 - (BOOL)serviceDebugging;
 - (id)financeRequestAttributes;
 - (BOOL)multipleDataSourcesAllowedForGT;
-- (id)init;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (BOOL)isNetworkReachable;
+- (id)UUID;
 
 @end

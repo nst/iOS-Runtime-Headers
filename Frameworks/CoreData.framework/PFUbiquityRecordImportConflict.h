@@ -30,13 +30,17 @@
 @property(retain) NSManagedObject * sourceObject;
 @property(retain) NSString * conflictingObjectGlobalIDStr;
 
++ (void)initialize;
 + (id)createArrayOfLogURLsForTransactionEntries:(id)arg1;
 + (id)electAncestorKnowledgeVectorForKnowledgeVector:(id)arg1 withExportingPeerID:(id)arg2 fromPeerSnapshotCollection:(id)arg3;
 + (id)createTransactionLogForTransactionEntry:(id)arg1 withError:(id*)arg2;
 + (int)resolvedTypeForConflictingLogType:(int)arg1 andLatestTransactionEntry:(id)arg2 skipObject:(BOOL*)arg3;
-+ (void)initialize;
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setConflictingObjectGlobalIDStr:(id)arg1;
+- (id)_newNormalizedSnapshot:(id)arg1 forObject:(id)arg2;
 - (id)createSnapshotDictionaryFromLogEntry:(id)arg1 withError:(id*)arg2;
 - (BOOL)resolveMergeConflictForLogContent:(id)arg1 previousSnapshot:(id)arg2 andAncestorSnapshot:(id)arg3 withOldVersion:(unsigned int)arg4 andNewVersion:(unsigned int)arg5 error:(id*)arg6;
 - (id)createSnapshotFromManagedObject:(id)arg1;
@@ -65,8 +69,5 @@
 - (id)currentKnowledgeVector;
 - (id)sourceObject;
 - (BOOL)resolveConflict:(id*)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

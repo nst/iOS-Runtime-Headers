@@ -20,9 +20,12 @@
 @property(readonly) int musicSelection;
 @property(readonly) NSString * currentSongName;
 
-+ (id)newProxy;
 + (void)initialize;
++ (id)newProxy;
 
+- (void)endSeeking;
+- (void)beginSeekingForward;
+- (void)beginSeekingBackward;
 - (void)playMusic;
 - (void)pauseMusic;
 - (void)goToNowPlaying;
@@ -34,8 +37,5 @@
 - (void)playPowerSong;
 - (void)pauseWorkout;
 - (void)activateWorkout;
-- (void)endSeeking;
-- (void)beginSeekingForward;
-- (void)beginSeekingBackward;
 
 @end

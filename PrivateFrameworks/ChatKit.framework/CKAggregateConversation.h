@@ -29,17 +29,14 @@
 - (id)messages;
 - (BOOL)isPlaceholder;
 - (int)unreadCount;
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)groupID;
 - (unsigned int)recipientCount;
 - (id)recipient;
 - (id)recipients;
 - (void)setRecipients:(id)arg1;
-- (int)propertyType;
-- (id)shortDescription;
-- (id)uniqueIdentifier;
-- (int)identifier;
-- (id)name;
-- (BOOL)isEmpty;
-- (id)date;
 - (id)preferredConversation;
 - (id)preferredConversationCreate:(BOOL)arg1;
 - (void)subConversationMarkedAsRead;
@@ -108,10 +105,13 @@
 - (void)removeMessage:(id)arg1;
 - (void)updateMessage:(id)arg1;
 - (void)deleteAllMessages;
-- (id)groupID;
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (id)shortDescription;
+- (id)uniqueIdentifier;
+- (int)identifier;
+- (id)name;
+- (BOOL)isEmpty;
+- (id)date;
 - (void)resetCaches;
+- (int)propertyType;
 
 @end

@@ -46,14 +46,20 @@
 
 - (void)setGenerationNumber:(int)arg1;
 - (int)generationNumber;
-- (id)frame;
-- (void)setFrame:(id)arg1;
+- (void)main;
+- (void)cancel;
+- (id)results;
+- (void)setResults:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setStartOffset:(int)arg1;
 - (void)cleanup;
 - (int)endOffset;
 - (int)startOffset;
 - (id)context;
 - (void)setContext:(id)arg1;
+- (void)setFrame:(id)arg1;
+- (id)frame;
 - (void)setNeedContinuation:(BOOL)arg1;
 - (struct __DDScanQuery { }*)scanQuery;
 - (void)setIsDiscarded:(BOOL)arg1;
@@ -72,11 +78,5 @@
 - (void)setTryCount:(int)arg1;
 - (void)setDetectionTypes:(unsigned int)arg1;
 - (void)_createScanQueryOnWebThreadStartAfterRange:(id)arg1;
-- (void)main;
-- (void)cancel;
-- (id)results;
-- (void)setResults:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

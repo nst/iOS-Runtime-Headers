@@ -22,18 +22,18 @@
 
 + (id)tripPoint;
 
+- (void)dealloc;
 - (void)setError:(id)arg1;
+- (id)error;
+- (id)location;
+- (void)setCommandType:(int)arg1;
+- (int)commandType;
+- (void)setLocation:(id)arg1;
+- (id)heading;
 - (int)pointType;
 - (void)setPointType:(int)arg1;
 - (int)locationSource;
 - (void)setLocationSource:(int)arg1;
-- (void)setLocation:(id)arg1;
-- (id)heading;
-- (id)location;
-- (id)error;
-- (void)setCommandType:(int)arg1;
-- (int)commandType;
 - (void)setHeading:(id)arg1;
-- (void)dealloc;
 
 @end

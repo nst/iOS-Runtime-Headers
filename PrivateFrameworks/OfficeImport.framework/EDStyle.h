@@ -25,6 +25,14 @@
 
 + (id)styleWithResources:(id)arg1;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (unsigned int)index;
+- (id)font;
+- (id)fill;
+- (void)setFont:(id)arg1;
 - (unsigned int)contentFormatId;
 - (void)setContentFormatId:(unsigned int)arg1;
 - (unsigned int)parentIndex;
@@ -65,13 +73,5 @@
 - (void)setFill:(id)arg1;
 - (void)setParent:(id)arg1;
 - (void)setIndex:(unsigned int)arg1;
-- (unsigned int)index;
-- (id)font;
-- (id)fill;
-- (void)setFont:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

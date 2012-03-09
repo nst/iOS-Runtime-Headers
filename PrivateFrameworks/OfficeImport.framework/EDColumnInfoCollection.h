@@ -10,9 +10,9 @@
 }
 
 
+- (void)dealloc;
 - (id)columnInfoCreateIfNilForColumnNumber:(int)arg1;
 - (id)initWithResources:(id)arg1 worksheet:(id)arg2;
 - (id)columnInfoForColumnNumber:(int)arg1;
-- (void)dealloc;
 
 @end

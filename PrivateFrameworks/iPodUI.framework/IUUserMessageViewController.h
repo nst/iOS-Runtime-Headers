@@ -10,6 +10,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)setContext:(id)arg1;
@@ -18,7 +20,5 @@
 - (void)attemptReturnToSourceController;
 - (void)_contentsDidChangeNotification:(id)arg1;
 - (id)copyArchivableContexts;
-- (id)init;
-- (void)dealloc;
 
 @end

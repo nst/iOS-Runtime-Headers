@@ -25,6 +25,9 @@
 @property(retain) CoreDAVLeafItem * xmppURI;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setXmppURI:(id)arg1;
 - (void)setXmppServer:(id)arg1;
 - (void)setRefreshInterval:(id)arg1;
@@ -42,8 +45,5 @@
 - (id)apsBundleID;
 - (id)tokenURL;
 - (id)subscriptionURL;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

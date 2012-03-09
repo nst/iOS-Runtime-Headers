@@ -21,12 +21,12 @@
 
 + (Class)classForNavigationButton;
 
+- (void)dealloc;
 - (void)setLoading:(BOOL)arg1;
 - (void)setAccessoryView:(id)arg1;
 - (BOOL)isLoading;
 - (id)accessoryView;
 - (id)createViewForNavigationItem:(id)arg1;
-- (void)dealloc;
 - (void)_updateViewForAccessoryChange;
 - (id)_navigationButton;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })accessoryViewInsets;

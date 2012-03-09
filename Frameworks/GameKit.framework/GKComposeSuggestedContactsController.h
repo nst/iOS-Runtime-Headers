@@ -14,16 +14,16 @@
 @property(retain) NSArray * searchResultItems;
 
 
+- (void)dealloc;
 - (id)searchResultItems;
 - (void)setSearchResultItems:(id)arg1;
 - (id)searchResultsTable;
-- (void)setDelegate:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)delegate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

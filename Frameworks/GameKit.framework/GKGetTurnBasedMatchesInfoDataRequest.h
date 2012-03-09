@@ -13,12 +13,12 @@
 @property BOOL getGameStates;
 
 
+- (void)dealloc;
 - (BOOL)getGameStates;
 - (void)setGetGameStates:(BOOL)arg1;
 - (id)matchIDs;
 - (void)setMatchIDs:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

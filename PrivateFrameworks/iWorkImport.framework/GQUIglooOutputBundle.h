@@ -11,6 +11,8 @@
 
 
 - (struct __CFDictionary { }*)attachments;
+- (id)init;
+- (void)dealloc;
 - (void)setUriPrefix:(struct __CFString { }*)arg1;
 - (struct __CFDictionary { }*)createOutputDictionary;
 - (struct __CFData { }*)mainHtmlData;
@@ -19,7 +21,5 @@
 - (void)setPageElementXPath:(struct __CFString { }*)arg1 withThumbnailsOnLeft:(BOOL)arg2;
 - (BOOL)setData:(struct __CFData { }*)arg1 mimeType:(struct __CFString { }*)arg2 forNamedResource:(struct __CFString { }*)arg3;
 - (BOOL)setDataForMainHtmlResource:(struct __CFData { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -18,9 +18,9 @@
 
 + (id)_propertiesToFindForServerSupportSet:(id)arg1;
 
-- (id)searchItems;
 - (id)extraAttributes;
 - (void)dealloc;
+- (id)searchItems;
 - (void)setSearchContext:(void*)arg1;
 - (id)initWithSearchStrings:(id)arg1 searchTypes:(id)arg2 serverSupportSet:(id)arg3 atURL:(id)arg4;
 - (void*)searchContext;

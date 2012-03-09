@@ -18,6 +18,8 @@
 
 + (id)sharedDBWatcher;
 
+- (id)init;
+- (void)dealloc;
 - (void)removeConcernedBookmarkParty:(id)arg1;
 - (void)registerConcernedBookmarkParty:(id)arg1 withChangedBlock:(id)arg2;
 - (void)_handleBookmarkChangeNotification;
@@ -33,7 +35,5 @@
 - (int)lastSavedCalSequenceNumber;
 - (void)setLastSavedABSequenceNumber:(int)arg1;
 - (int)lastSavedABSequenceNumber;
-- (id)init;
-- (void)dealloc;
 
 @end

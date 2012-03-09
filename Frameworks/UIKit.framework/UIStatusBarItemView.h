@@ -24,6 +24,8 @@
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(int)arg4;
 + (id)imageNamed:(id)arg1 forForegroundStyle:(int)arg2;
 
+- (id)description;
+- (void)dealloc;
 - (void)endImageContext;
 - (id)imageFromImageContextClippedToWidth:(float)arg1;
 - (void)beginImageContextWithMinimumWidth:(float)arg1;
@@ -60,7 +62,5 @@
 - (void)setVisible:(BOOL)arg1;
 - (id)layoutManager;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

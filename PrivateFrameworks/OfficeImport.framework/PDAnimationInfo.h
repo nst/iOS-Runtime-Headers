@@ -13,12 +13,12 @@
 @property(retain) PDAnimationInfoData * mediaData;
 
 
+- (void)dealloc;
 - (id)mediaData;
 - (void)setMediaData:(id)arg1;
 - (void)setEntranceData:(id)arg1;
 - (void)setExitData:(id)arg1;
 - (id)entranceData;
 - (id)exitData;
-- (void)dealloc;
 
 @end

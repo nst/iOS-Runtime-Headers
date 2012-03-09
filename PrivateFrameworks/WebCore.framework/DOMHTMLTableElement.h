@@ -23,6 +23,12 @@
 @property(copy) NSString * width;
 
 
+- (void)setCellPadding:(id)arg1;
+- (id)cellPadding;
+- (int)structuralComplexityContribution;
+- (id)rows;
+- (void)setWidth:(id)arg1;
+- (id)width;
 - (id)caption;
 - (void)setCaption:(id)arg1;
 - (id)tHead;
@@ -52,11 +58,5 @@
 - (id)rules;
 - (id)border;
 - (void)setBorder:(id)arg1;
-- (void)setCellPadding:(id)arg1;
-- (id)cellPadding;
-- (int)structuralComplexityContribution;
-- (id)rows;
-- (void)setWidth:(id)arg1;
-- (id)width;
 
 @end

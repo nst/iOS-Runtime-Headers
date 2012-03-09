@@ -18,7 +18,8 @@
 @property(copy) NSString * sendButtonTitle;
 
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -26,8 +27,7 @@
 - (void)loadView;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)delegate;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (id)imagePickerMediaTypes;
 - (void)setImagePickerMediaTypes:(id)arg1;
 - (id)copyMessagePartsWithUTI:(id)arg1;

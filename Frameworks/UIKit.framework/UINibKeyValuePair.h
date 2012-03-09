@@ -15,14 +15,14 @@
 @property(readonly) id value;
 
 
+- (void)dealloc;
 - (id)initWithObject:(id)arg1 keyPath:(id)arg2 value:(id)arg3;
-- (id)object;
 - (void)apply;
 - (void)applyForSimulator;
 - (id)value;
+- (id)object;
 - (id)keyPath;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

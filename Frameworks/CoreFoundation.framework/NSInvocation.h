@@ -23,6 +23,15 @@
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 
+- (void)setTarget:(id)arg1;
+- (id)target;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)invokeSuper;
+- (void)invokeUsingIMP:(int (*)())arg1;
+- (void)_addAttachedObject:(id)arg1;
+- (BOOL)argumentsRetained;
 - (void)setReturnValue:(void*)arg1;
 - (void)getArgument:(void*)arg1 atIndex:(int)arg2;
 - (void)retainArguments;
@@ -33,15 +42,6 @@
 - (void)setSelector:(SEL)arg1;
 - (void)invoke;
 - (void)setArgument:(void*)arg1 atIndex:(int)arg2;
-- (void)invokeSuper;
-- (void)invokeUsingIMP:(int (*)())arg1;
-- (void)_addAttachedObject:(id)arg1;
-- (BOOL)argumentsRetained;
-- (void)setTarget:(id)arg1;
-- (id)target;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)_webkit_invokeAndHandleException:(id)arg1;
 - (BOOL)wantsReturnValue;
 - (id)withProtocol:(id)arg1;

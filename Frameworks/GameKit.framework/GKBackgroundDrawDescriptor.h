@@ -22,6 +22,8 @@
 @property BOOL drawOutline;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setDrawOutline:(BOOL)arg1;
 - (BOOL)drawOutline;
 - (void)setBorderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -30,7 +32,5 @@
 - (id)borderImage;
 - (void)setSectionLocation:(int)arg1;
 - (int)sectionLocation;
-- (id)description;
-- (void)dealloc;
 
 @end

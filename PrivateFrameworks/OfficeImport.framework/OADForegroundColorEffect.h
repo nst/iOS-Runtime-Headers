@@ -9,13 +9,13 @@
 }
 
 
-- (void)setStyleColor:(id)arg1;
-- (void)setForegroundColor:(id)arg1;
-- (id)foregroundColor;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)foregroundColor;
+- (void)setStyleColor:(id)arg1;
+- (void)setForegroundColor:(id)arg1;
 
 @end

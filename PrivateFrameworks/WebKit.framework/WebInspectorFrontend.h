@@ -31,8 +31,8 @@
 }
 
 
+- (id)initWithFrontendClient:(struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { struct InspectorFrontendHost {} *x_5_1_1; } x5; struct OwnPtr<WebCore::InspectorFrontendClientLocal::Settings> { struct Settings {} *x_6_1_1; } x6; id x7; struct RetainPtr<WebInspectorWindowController> { id x_8_1_1; } x8; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_9_1_1; } x9; }*)arg1;
 - (void)attach;
 - (void)detach;
-- (id)initWithFrontendClient:(struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { struct InspectorFrontendHost {} *x_5_1_1; } x5; struct OwnPtr<WebCore::InspectorFrontendClientLocal::Settings> { struct Settings {} *x_6_1_1; } x6; id x7; struct RetainPtr<WebInspectorWindowController> { id x_8_1_1; } x8; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_9_1_1; } x9; }*)arg1;
 
 @end

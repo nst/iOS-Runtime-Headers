@@ -20,6 +20,8 @@
 @property(retain) MPMediaItem * focusedItem;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setQuery:(id)arg1;
 - (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
 - (unsigned int)realShuffleType;
@@ -32,10 +34,15 @@
 - (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;
 - (Class)itemClass;
 - (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
+- (unsigned int)numberOfPaths;
+- (double)bookmarkTimeForIndex:(unsigned int)arg1;
+- (id)playbackInfoAtIndex:(unsigned int)arg1;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
+- (unsigned int)itemCount;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (id)preferredLanguages;
 - (id)query;
+- (id)pathAtIndex:(unsigned int)arg1;
 - (void)setFocusedItem:(id)arg1;
 - (id)focusedItem;
 - (unsigned int)unshuffledIndexOfAVItem:(id)arg1;
@@ -48,12 +55,5 @@
 - (id)mediaItemAtIndex:(unsigned int)arg1;
 - (void)_handleMediaLibraryDidChange;
 - (void)_libraryDidChangeNotification:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)playbackInfoAtIndex:(unsigned int)arg1;
-- (double)bookmarkTimeForIndex:(unsigned int)arg1;
-- (unsigned int)numberOfPaths;
-- (id)pathAtIndex:(unsigned int)arg1;
-- (unsigned int)itemCount;
 
 @end

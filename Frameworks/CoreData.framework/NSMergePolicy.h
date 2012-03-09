@@ -10,9 +10,16 @@
 
 @property(readonly) unsigned int mergeType;
 
-+ (BOOL)accessInstanceVariablesDirectly;
 + (void)load;
++ (BOOL)accessInstanceVariablesDirectly;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)type;
+- (id)initWithType:(unsigned int)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithMergeType:(unsigned int)arg1;
 - (unsigned int)mergeType;
 - (void)_mergeChangesStoreUpdatesTrumpForObject:(id)arg1 withRecord:(id)arg2;
@@ -21,12 +28,5 @@
 - (void)_mergeDeletionWithStoreChangesForObject:(id)arg1 withRecord:(id)arg2;
 - (BOOL)resolveConflict:(id)arg1;
 - (BOOL)resolveConflicts:(id)arg1 error:(id*)arg2;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)type;
-- (id)initWithType:(unsigned int)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

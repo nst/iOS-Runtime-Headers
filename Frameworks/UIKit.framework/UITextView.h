@@ -64,8 +64,10 @@
 @property(readonly) UIResponder<UITextSelection> * textDocument;
 
 + (id)bestInterpretationForMarsVoltas:(id)arg1;
++ (id)bestInterpretationForDictationResult:(id)arg1;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (void)dealloc;
 - (Class)_printFormatterClass;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isAccessibilityElementByDefault;
@@ -103,8 +105,8 @@
 - (void)scrollRectToVisibleInContainingScrollView;
 - (BOOL)shouldScrollEnclosingScrollView;
 - (id)undoManagerForWebView:(id)arg1;
-- (id)undoNameForMarsVoltaInsertion;
 - (void)_showTextStyleOptions:(id)arg1;
+- (void)setDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleTextRect;
 - (void)setSelectionToEnd;
 - (void)performBecomeEditableTasks;
@@ -176,10 +178,11 @@
 - (void)setSelectedTextRange:(id)arg1;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (BOOL)hasText;
-- (id)metadataDictionariesForMarsVoltas;
-- (void)removeYakushimasPlaceholder:(id)arg1 willInsertText:(BOOL)arg2;
-- (id)insertYakushimasPlaceholder:(struct CGSize { float x1; float x2; })arg1;
-- (void)insertMarsVoltas:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (id)metadataDictionariesForDictationResults;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
+- (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
+- (id)insertDictationResultPlaceholder;
+- (void)insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
 - (void)insertText:(id)arg1;
 - (void)deleteBackward;
 - (void)_underline:(id)arg1;
@@ -249,12 +252,11 @@
 - (void)setFont:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (void)dealloc;
 
 @end

@@ -24,15 +24,15 @@
 @property(readonly) NSString * shortDescription;
 
 
+- (id)block;
+- (id)description;
+- (void)dealloc;
 - (id)initWithItem:(id)arg1 block:(id)arg2;
 - (void)setBlock:(id)arg1;
-- (id)block;
 - (id)shortDescription;
 - (id)item;
 - (int)identifier;
 - (void)setIdentifier:(int)arg1;
-- (id)description;
-- (void)dealloc;
 - (void)setItem:(id)arg1;
 
 @end

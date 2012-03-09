@@ -7,9 +7,9 @@
 }
 
 
-- (float)value;
-- (void)setValue:(float)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (float)value;
+- (void)setValue:(float)arg1;
 
 @end

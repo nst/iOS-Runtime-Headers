@@ -6,7 +6,7 @@
 }
 
 
-- (unsigned short)sourceIdentifier;
 - (id)newImageForAsset:(id)arg1 createMetadata:(id*)arg2;
+- (unsigned short)sourceIdentifier;
 
 @end

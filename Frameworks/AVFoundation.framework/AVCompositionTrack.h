@@ -8,13 +8,13 @@
     AVCompositionTrackInternal *_priv;
 }
 
-@property(copy,readonly) NSArray * segments;
+@property(readonly) NSArray * segments;
 
 
-- (void)finalize;
+- (void)dealloc;
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
+- (void)finalize;
 - (id)segments;
-- (void)dealloc;
 
 @end

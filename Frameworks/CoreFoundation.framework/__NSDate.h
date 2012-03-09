@@ -6,12 +6,12 @@
     double _time;
 }
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (id)__new:(double)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)__new:(double)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (void)dealloc;
 - (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
 - (double)timeIntervalSinceReferenceDate;
-- (void)dealloc;
 
 @end

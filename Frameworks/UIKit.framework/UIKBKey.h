@@ -51,6 +51,11 @@
 + (id)keyWithKey:(id)arg1;
 + (id)key;
 
+- (void)setName:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setFlicks:(id)arg1;
 - (id)flicks;
 - (void)setVariantKeys:(id)arg1;
@@ -106,10 +111,5 @@
 - (void)setHidden:(BOOL)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

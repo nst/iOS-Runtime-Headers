@@ -18,10 +18,10 @@
 
 + (id)replacementWithRange:(id)arg1 original:(id)arg2 replacement:(id)arg3 menuTitle:(id)arg4;
 
+- (void)dealloc;
 - (id)menuTitle;
 - (id)replacementText;
 - (id)originalText;
 - (id)range;
-- (void)dealloc;
 
 @end

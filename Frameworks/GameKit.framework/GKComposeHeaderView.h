@@ -14,6 +14,7 @@
 
 + (float)defaultHeight;
 
+- (void)dealloc;
 - (float)maxLabelX;
 - (id)navTitle;
 - (void)setNavTitle:(id)arg1;
@@ -28,6 +29,5 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)_automationID;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

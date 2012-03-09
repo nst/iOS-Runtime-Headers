@@ -18,19 +18,19 @@
 @property(retain) LBSGGeocodeRequest * geocode;
 
 
+- (id)description;
+- (void)dealloc;
+- (BOOL)hasLocation;
+- (id)dictionaryRepresentation;
+- (id)location;
+- (void)setLocation:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)cellularProfile;
 - (BOOL)hasCellularProfile;
 - (void)setCellularProfile:(id)arg1;
 - (void)setGeocode:(id)arg1;
 - (id)geocode;
 - (BOOL)hasGeocode;
-- (BOOL)hasLocation;
-- (void)writeTo:(id)arg1;
-- (void)setLocation:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)location;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -13,12 +13,10 @@
 
 + (id)symbolWithName:(id)arg1 mangledName:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3 owner:(id)arg4 flags:(unsigned int)arg5;
 
-- (id)owner;
-- (void)setOwner:(id)arg1;
-- (int)compare:(id)arg1;
-- (unsigned int)flags;
-- (id)name;
-- (id)text;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (BOOL)isExternal;
 - (id)sourceInfos;
 - (BOOL)isObjcMethod;
 - (BOOL)isJavaMethod;
@@ -34,9 +32,11 @@
 - (id)initWithName:(id)arg1 mangledName:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3 owner:(id)arg4 flags:(unsigned int)arg5;
 - (id)sourceInfosInAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (BOOL)isExternal;
+- (int)compare:(id)arg1;
+- (unsigned int)flags;
+- (id)name;
+- (id)text;
+- (void)setOwner:(id)arg1;
+- (id)owner;
 
 @end

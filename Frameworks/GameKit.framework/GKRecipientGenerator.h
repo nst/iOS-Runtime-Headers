@@ -14,6 +14,7 @@
 @property(retain) NSArray * generateABPropertyTypes;
 
 
+- (void)dealloc;
 - (id)searchABPropertyTypes;
 - (id)generateABPropertyTypes;
 - (void)_appendSearchResults:(id)arg1 identifiers:(id)arg2 abPropertyType:(int)arg3 toArray:(id)arg4;
@@ -22,6 +23,5 @@
 - (id)resultsForText:(id)arg1;
 - (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (id)recipientWithAddress:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -22,8 +22,17 @@
 + (long long)_setValuesMessage;
 + (long long)_getValueMessage;
 + (long long)_getExternalValuesMessage;
++ (long long)_existsMessage;
 
+- (long long)bytesDownloaded;
+- (id)initWithURLRequest:(id)arg1;
+- (void)dealloc;
 - (id)sinfs;
+- (BOOL)isExternal;
+- (long long)fileSize;
+- (int)assetType;
+- (id)URLRequest;
+- (id)URLRequestProperties;
 - (id)finalizedPath;
 - (id)downloadPath;
 - (id)downloadFileName;
@@ -33,13 +42,5 @@
 - (id)_initWithDownloadMetadata:(id)arg1 type:(id)arg2;
 - (void)_resetLocalIVars;
 - (int)_legacyAssetType;
-- (id)initWithURLRequest:(id)arg1;
-- (long long)bytesDownloaded;
-- (long long)fileSize;
-- (void)dealloc;
-- (BOOL)isExternal;
-- (int)assetType;
-- (id)URLRequest;
-- (id)URLRequestProperties;
 
 @end

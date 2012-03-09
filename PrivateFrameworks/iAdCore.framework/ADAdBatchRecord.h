@@ -15,12 +15,12 @@
 @property BOOL supplyMetrics;
 
 
+- (void)dealloc;
 - (void)setSequenceNum:(int)arg1;
 - (int)sequenceNum;
 - (void)setSupplyMetrics:(BOOL)arg1;
 - (BOOL)supplyMetrics;
 - (void)setBatchId:(id)arg1;
 - (id)batchId;
-- (void)dealloc;
 
 @end

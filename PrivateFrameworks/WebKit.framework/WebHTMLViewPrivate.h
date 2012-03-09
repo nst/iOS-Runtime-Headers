@@ -36,8 +36,8 @@
 
 + (void)initialize;
 
-- (void)finalize;
-- (void)clear;
 - (void)dealloc;
+- (void)clear;
+- (void)finalize;
 
 @end

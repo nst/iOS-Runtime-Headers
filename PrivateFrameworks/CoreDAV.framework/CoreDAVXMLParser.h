@@ -20,8 +20,8 @@
 @property(retain) CoreDAVXMLElementGenerator * rootErrorGenerator;
 
 
+- (void)dealloc;
 - (void)setBaseURL:(id)arg1;
-- (id)rootElement;
 - (id)rootElementGenerator;
 - (void)setRootElementGenerator:(id)arg1;
 - (void)setRootErrorGenerator:(id)arg1;
@@ -33,6 +33,6 @@
 - (id)initWithRootElementNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3 baseURL:(id)arg4;
 - (id)baseURL;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
+- (id)rootElement;
 
 @end

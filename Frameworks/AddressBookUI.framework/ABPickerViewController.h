@@ -23,14 +23,6 @@
 @property void* context;
 
 
-- (void)cancelButtonClicked:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (BOOL)_allowsAutorotation;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
-- (void)viewDidLoad;
-- (void*)context;
-- (void)setContext:(void*)arg1;
-- (id)delegate;
 - (id)defaultValue;
 - (void)setDefaultValue:(id)arg1;
 - (void)dealloc;
@@ -44,5 +36,13 @@
 - (void)attemptDismissAfterSelectingItem:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
+- (void)cancelButtonClicked:(id)arg1;
+- (BOOL)_allowsAutorotation;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (void)viewDidLoad;
+- (void*)context;
+- (void)setContext:(void*)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

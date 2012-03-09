@@ -20,6 +20,14 @@
 
 + (id)trendline;
 
+- (void)setName:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (int)type;
+- (id)label;
+- (void)setLabel:(id)arg1;
+- (id)name;
+- (void)setType:(int)arg1;
 - (bool)isDisplayEquation;
 - (bool)isDisplayRSquaredValue;
 - (double)backward;
@@ -37,13 +45,5 @@
 - (void)setMovingAveragePeriod:(int)arg1;
 - (void)setGraphicProperties:(id)arg1;
 - (id)graphicProperties;
-- (int)type;
-- (id)label;
-- (void)setLabel:(id)arg1;
-- (id)name;
-- (void)setType:(int)arg1;
-- (void)setName:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

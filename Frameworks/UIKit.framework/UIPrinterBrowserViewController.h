@@ -16,6 +16,7 @@
 }
 
 
+- (void)dealloc;
 - (void)removePrinter:(id)arg1 moreGoing:(BOOL)arg2;
 - (void)addPrinter:(id)arg1 moreComing:(BOOL)arg2;
 - (void)updateSearching;
@@ -32,6 +33,5 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
 
 @end

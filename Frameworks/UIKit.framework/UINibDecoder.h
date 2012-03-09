@@ -73,7 +73,7 @@
 + (id)unarchiveObjectWithFile:(id)arg1;
 + (id)unarchiveObjectWithData:(id)arg1;
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (int)versionForClassName:(id)arg1;
 - (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
 - (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
@@ -112,8 +112,8 @@
 - (int)decodeIntegerForKey:(id)arg1;
 - (BOOL)allowsKeyedCoding;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (id)decodeObjectForKey:(id)arg1;
-- (void)dealloc;
 
 @end

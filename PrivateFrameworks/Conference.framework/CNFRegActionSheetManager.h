@@ -29,19 +29,19 @@
 
 + (id)sharedInstance;
 
+- (id)init;
+- (void)dealloc;
 - (id)actionSheet;
 - (void)setActionSheet:(id)arg1;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)handleWillRotate:(id)arg1;
+- (void)handleDidRotate:(id)arg1;
 - (void)setHandler:(id)arg1;
 - (void)setPresenter:(id)arg1;
 - (id)presenter;
 - (id)handler;
 - (void)dismissCurrentActionSheet;
 - (void)showActionSheet:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
-- (id)init;
-- (void)dealloc;
-- (void)handleWillRotate:(id)arg1;
-- (void)handleDidRotate:(id)arg1;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
 @end

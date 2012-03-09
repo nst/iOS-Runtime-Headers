@@ -10,9 +10,6 @@
 }
 
 
-- (id)bundle;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)dealloc;
 - (void)turnOnTapped:(id)arg1;
 - (id)getAccountNameForSpecifier:(id)arg1;
@@ -21,5 +18,8 @@
 - (void)_deactivateSpinner;
 - (id)specifierList;
 - (id)_rightButtonItem;
+- (id)bundle;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 
 @end

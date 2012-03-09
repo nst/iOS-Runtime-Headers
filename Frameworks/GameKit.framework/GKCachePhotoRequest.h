@@ -11,10 +11,10 @@
 @property(retain) NSDictionary * images;
 
 
+- (void)dealloc;
 - (id)key;
 - (void)setImages:(id)arg1;
 - (id)request;
 - (id)images;
-- (void)dealloc;
 
 @end

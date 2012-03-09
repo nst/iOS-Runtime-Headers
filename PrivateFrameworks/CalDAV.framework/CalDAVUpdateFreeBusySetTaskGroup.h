@@ -20,6 +20,7 @@
 @property <CoreDAVTaskGroupDelegate> * delegate;
 
 
+- (void)dealloc;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
 - (id)fetchTask;
 - (void)setFetchTask:(id)arg1;
@@ -29,7 +30,6 @@
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)setState:(int)arg1;
 - (int)state;
-- (void)dealloc;
 - (id)inboxURL;
 - (void)setInboxURL:(id)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 urlToAdd:(id)arg3 suffixToFilterOut:(id)arg4 taskManager:(id)arg5;

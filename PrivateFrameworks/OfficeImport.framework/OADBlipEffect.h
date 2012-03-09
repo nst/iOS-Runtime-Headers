@@ -7,11 +7,11 @@
 }
 
 
-- (void)setStyleColor:(id)arg1;
-- (int)type;
-- (id)initWithType:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (int)type;
+- (id)initWithType:(int)arg1;
+- (void)setStyleColor:(id)arg1;
 
 @end

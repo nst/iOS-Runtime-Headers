@@ -2,30 +2,26 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString, ML3Container, NSLock, ML3Predicate;
+@class ML3Container, NSArray, ML3Predicate;
 
 @interface ML3ContainerQuery : ML3Query  {
     ML3Predicate *_containerPredicate;
     ML3Container *_container;
-    NSLock *_limitCountLock;
-    unsigned int _limitCount;
-    BOOL _limitCountLoaded;
 }
 
-@property(readonly) unsigned int limitCount;
+@property(readonly) NSArray * limitedPersistentIDs;
 @property(readonly) ML3Container * container;
-@property(readonly) NSString * selectLimitingSQL;
 
++ (id)directionalityArrayForCount:(unsigned int)arg1 isDescending:(BOOL)arg2;
 
-- (unsigned int)limitCount;
+- (void)dealloc;
+- (id)container;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)limitedPersistentIDs;
 - (BOOL)requiresSmartLimiting;
 - (id)selectLimitingSQL;
 - (id)initWithEntityClass:(Class)arg1 container:(id)arg2 predicate:(id)arg3 orderingProperties:(id)arg4;
 - (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2;
-- (void)bindToPersistentIDsSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
-- (id)container;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

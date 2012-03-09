@@ -5,9 +5,6 @@
 @interface SUUtility : NSObject  {
 }
 
-+ (id)errorWithCode:(int)arg1;
-+ (id)serialNumber;
-+ (id)gregorianCalendar;
 + (id)URLIfFileExists:(id)arg1;
 + (id)currentProductCategory;
 + (BOOL)cellularDataIsEnabled;
@@ -31,6 +28,9 @@
 + (id)currentProductBuild;
 + (id)currentProductType;
 + (BOOL)isDaemon;
++ (id)errorWithCode:(int)arg1;
++ (id)gregorianCalendar;
++ (id)serialNumber;
 
 
 @end

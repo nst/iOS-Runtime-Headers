@@ -17,6 +17,10 @@
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netServiceDidResolveAddress:(id)arg1;
 - (void)netServiceDidStop:(id)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)stopRunning;
+- (void)startRunning;
 - (id)usbLocationIDsOfPTPDevices;
 - (void)handleEventImp:(id)arg1;
 - (int)handleEvent:(id)arg1 onDevice:(id)arg2 contextInfo:(void*)arg3;
@@ -30,9 +34,5 @@
 - (void)deleteFileImp:(id)arg1;
 - (void)downloadFileImp:(id)arg1;
 - (void)ejectImp:(id)arg1;
-- (void)startRunning;
-- (void)stopRunning;
-- (id)init;
-- (void)dealloc;
 
 @end

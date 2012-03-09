@@ -8,11 +8,14 @@
     ABFavoritesListManager *_favoritesListManager;
 }
 
-+ (id)sharedInstanceWithAddressBook:(void*)arg1;
 + (id)sharedInstance;
++ (id)sharedInstanceWithAddressBook:(void*)arg1;
 
-- (id)initWithAddressBook:(void*)arg1;
+- (void)save;
+- (void)dealloc;
+- (void)_applicationWillSuspend:(id)arg1;
 - (id)entries;
+- (id)initWithAddressBook:(void*)arg1;
 - (BOOL)containsEntryWithIdentifier:(int)arg1 forPerson:(void*)arg2;
 - (BOOL)containsEntryWithType:(int)arg1 forPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)addEntryForPerson:(void*)arg1 property:(int)arg2 withIdentifier:(int)arg3;
@@ -25,8 +28,5 @@
 - (BOOL)isFull;
 - (void)addEntry:(id)arg1;
 - (BOOL)entryIsDuplicateAndThusRemoved:(id)arg1 oldUid:(int)arg2;
-- (void)save;
-- (void)dealloc;
-- (void)_applicationWillSuspend:(id)arg1;
 
 @end

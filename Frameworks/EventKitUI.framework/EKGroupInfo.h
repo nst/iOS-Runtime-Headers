@@ -25,13 +25,10 @@
 @property(readonly) BOOL isSubscribed;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isSubscribed;
-- (void)setSource:(id)arg1;
-- (id)source;
-- (BOOL)selected;
-- (void)selectAll;
-- (void)setSelected:(BOOL)arg1;
-- (id)title;
 - (int)sortOrder;
 - (id)copyCalendars;
 - (id)calendarAtIndex:(int)arg1;
@@ -47,9 +44,12 @@
 - (id)initWithSource:(id)arg1;
 - (BOOL)showAddCalendarButton;
 - (id)calendarInfos;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (void)setSource:(id)arg1;
+- (id)source;
+- (BOOL)selected;
+- (void)selectAll;
+- (void)setSelected:(BOOL)arg1;
+- (id)title;
 - (void)removeCalendar:(id)arg1;
 
 @end

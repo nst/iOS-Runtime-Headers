@@ -6,8 +6,8 @@
 }
 
 
+- (void)dealloc;
 - (void)finalize;
 - (id)lookupNamespaceURI:(id)arg1;
-- (void)dealloc;
 
 @end

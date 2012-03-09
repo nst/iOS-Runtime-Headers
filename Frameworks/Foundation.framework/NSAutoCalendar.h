@@ -14,7 +14,20 @@
 }
 
 
-- (id)initWithCalendarIdentifier:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (unsigned int)ordinalityOfUnit:(unsigned int)arg1 inUnit:(unsigned int)arg2 forDate:(id)arg3;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })maximumRangeOfUnit:(unsigned int)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })minimumRangeOfUnit:(unsigned int)arg1;
+- (void)setGregorianStartDate:(id)arg1;
+- (id)gregorianStartDate;
+- (void)setMinimumDaysInFirstWeek:(unsigned int)arg1;
+- (unsigned int)minimumDaysInFirstWeek;
+- (void)setFirstWeekday:(unsigned int)arg1;
+- (unsigned int)firstWeekday;
+- (id)calendarIdentifier;
 - (void)_update:(id)arg1;
 - (BOOL)rangeOfUnit:(unsigned int)arg1 startDate:(id*)arg2 interval:(double*)arg3 forDate:(id)arg4;
 - (id)dateByAddingComponents:(id)arg1 toDate:(id)arg2 options:(unsigned int)arg3;
@@ -29,19 +42,6 @@
 - (void)setTimeZone:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)ordinalityOfUnit:(unsigned int)arg1 inUnit:(unsigned int)arg2 forDate:(id)arg3;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })maximumRangeOfUnit:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })minimumRangeOfUnit:(unsigned int)arg1;
-- (void)setGregorianStartDate:(id)arg1;
-- (id)gregorianStartDate;
-- (void)setMinimumDaysInFirstWeek:(unsigned int)arg1;
-- (unsigned int)minimumDaysInFirstWeek;
-- (void)setFirstWeekday:(unsigned int)arg1;
-- (unsigned int)firstWeekday;
-- (id)calendarIdentifier;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)initWithCalendarIdentifier:(id)arg1;
 
 @end

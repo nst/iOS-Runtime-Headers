@@ -14,9 +14,9 @@
 @property <CoreDAVTaskGroupDelegate> * delegate;
 
 
+- (void)dealloc;
 - (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)startTaskGroup;
-- (void)dealloc;
 - (id)inboxURL;
 - (void)setInboxURL:(id)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 calendarAvailability:(id)arg3 taskManager:(id)arg4;

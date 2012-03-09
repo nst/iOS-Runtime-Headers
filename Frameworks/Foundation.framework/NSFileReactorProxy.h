@@ -20,7 +20,6 @@
 }
 
 
-- (void)finalize;
 - (void)forwardUsingMessageSender:(id)arg1;
 - (id)descriptionWithIndenting:(id)arg1;
 - (id)initWithClient:(struct _xpc_connection_s { }*)arg1 reactorID:(id)arg2 messageSender:(id)arg3;
@@ -28,8 +27,9 @@
 - (id)itemLocation;
 - (id)reactorID;
 - (void)setItemLocation:(id)arg1;
-- (struct _xpc_connection_s { }*)client;
 - (id)description;
 - (void)dealloc;
+- (void)finalize;
+- (struct _xpc_connection_s { }*)client;
 
 @end

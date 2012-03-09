@@ -10,13 +10,13 @@
 }
 
 
-- (unsigned char)synchronize;
-- (void)finalize;
-- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
+- (id)init;
+- (void)dealloc;
 - (struct __CFDictionary { }*)copyDictionary;
 - (struct __CFArray { }*)copyKeyList;
 - (void*)getValueForKey:(struct __CFString { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)finalize;
+- (unsigned char)synchronize;
+- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 
 @end

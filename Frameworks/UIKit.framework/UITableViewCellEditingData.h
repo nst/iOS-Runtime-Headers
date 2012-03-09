@@ -16,12 +16,12 @@
 @property(getter=isDataRequired,readonly) BOOL dataRequired;
 
 
+- (void)dealloc;
 - (BOOL)isDataRequired;
 - (id)deleteConfirmationControl:(BOOL)arg1;
 - (id)reorderSeparatorView:(BOOL)arg1;
 - (id)reorderControl:(BOOL)arg1;
 - (id)initWithTableViewCell:(id)arg1 editingStyle:(int)arg2;
 - (id)editControl:(BOOL)arg1;
-- (void)dealloc;
 
 @end

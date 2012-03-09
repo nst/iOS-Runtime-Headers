@@ -27,6 +27,7 @@
 + (void)_setAnnotatesMigrationMetadata:(BOOL)arg1;
 + (BOOL)_annotatesMigrationMetadata;
 
+- (void)dealloc;
 - (void)_addReindexedProperty:(id)arg1 toSetForEntity:(id)arg2;
 - (id)createEntityMigrationStatements;
 - (id)createStatementsForUpdatingEntityKeys;
@@ -41,6 +42,5 @@
 - (id)initWithStore:(id)arg1 destinationModel:(id)arg2 mappingModel:(id)arg3;
 - (BOOL)performMigration:(id*)arg1;
 - (id)adapter;
-- (void)dealloc;
 
 @end

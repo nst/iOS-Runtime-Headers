@@ -7,9 +7,9 @@
 }
 
 
+- (id)init;
 - (int)explosion;
 - (id)shallowCopyWithIndex:(int)arg1;
 - (void)setExplosion:(int)arg1;
-- (id)init;
 
 @end

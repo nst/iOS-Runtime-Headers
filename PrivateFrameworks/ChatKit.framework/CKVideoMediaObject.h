@@ -14,7 +14,7 @@
 + (id)mimeTypesAllowedForMMS;
 + (id)mimeTypesToFileExtensions;
 
-- (unsigned long long)sizeInBytes;
+- (void)dealloc;
 - (void)_generateImageOnMainThreadForVideoFile:(id)arg1;
 - (id)_newPreviewImageWithTailStyle:(int)arg1;
 - (id)_newPreviewImageForIncomingVideoWithTailStyle:(int)arg1;
@@ -40,7 +40,7 @@
 - (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
 - (void)copyToPasteboard:(id)arg1;
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
+- (unsigned long long)sizeInBytes;
 - (int)mediaType;
-- (void)dealloc;
 
 @end

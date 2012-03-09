@@ -12,10 +12,10 @@
 @property(readonly) SUAVRemakerOutput * remakerOutput;
 
 
-- (void)run;
 - (void)cancel;
 - (id)init;
 - (void)dealloc;
+- (void)run;
 - (id)initWithImagePickerInfo:(id)arg1 remakerMode:(id)arg2;
 - (void)_remakerNotification:(id)arg1;
 - (void)stopRunLoop;

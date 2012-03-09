@@ -12,6 +12,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)_sendAllClearNotifications;
 - (void)_notifyWaitersForDataclasses:(id)arg1;
 - (BOOL)_canWakenWaiter:(id)arg1;
@@ -29,8 +31,6 @@
 - (void)registerWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id)arg3;
 - (void)claimedOwnershipOfDataclasses:(int)arg1;
 - (void)giveAccountWithIDAnotherChance:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)stateString;
 
 @end

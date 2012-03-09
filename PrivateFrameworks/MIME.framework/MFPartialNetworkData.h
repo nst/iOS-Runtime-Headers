@@ -10,6 +10,7 @@
 }
 
 
+- (void)dealloc;
 - (id)dataWithUnixLineEndings;
 - (id)copyDataWithUnixLineEndings;
 - (unsigned int)rawDataLength;
@@ -17,6 +18,5 @@
 - (void)setRawData:(id)arg1;
 - (void)purgeCaches;
 - (id)rawData;
-- (void)dealloc;
 
 @end

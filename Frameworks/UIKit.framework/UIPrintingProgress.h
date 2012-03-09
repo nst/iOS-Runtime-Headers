@@ -24,6 +24,7 @@
 }
 
 
+- (void)dealloc;
 - (void)showProgress:(id)arg1 immediately:(BOOL)arg2;
 - (void)progressCancel;
 - (BOOL)progressVisible;
@@ -36,6 +37,5 @@
 - (void)didPresentAlertView:(id)arg1;
 - (void)alertViewCancel:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)dealloc;
 
 @end

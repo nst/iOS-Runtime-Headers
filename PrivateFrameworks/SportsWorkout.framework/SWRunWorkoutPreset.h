@@ -31,6 +31,7 @@
 + (id)presetForGoal:(id)arg1;
 + (id)presetForCustomGoalWithAmount:(id)arg1 units:(id)arg2;
 
+- (void)dealloc;
 - (id)presetGoal;
 - (void)_setUpGoalCompletedTargetWithUnits:(id)arg1;
 - (void)_setUpHalfwayTargetWithUnits:(id)arg1;
@@ -64,6 +65,5 @@
 - (id)templateName;
 - (unsigned int)templateId;
 - (id)goalType;
-- (void)dealloc;
 
 @end

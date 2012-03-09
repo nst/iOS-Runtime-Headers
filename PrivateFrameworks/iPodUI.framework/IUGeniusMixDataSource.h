@@ -16,6 +16,8 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
+- (id)init;
+- (void)dealloc;
 - (void)reloadData;
 - (struct CGImage { }*)representativeImageAtIndex:(unsigned int)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 count:(unsigned int)arg3;
 - (unsigned int)countOfRepresentativeImagesAtIndex:(unsigned int)arg1 maxCount:(unsigned int)arg2;
@@ -30,7 +32,5 @@
 - (void)_invalidateForArtworkCacheChange;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (SEL)libraryHasDisplayableEntitiesSelector;
-- (id)init;
-- (void)dealloc;
 
 @end

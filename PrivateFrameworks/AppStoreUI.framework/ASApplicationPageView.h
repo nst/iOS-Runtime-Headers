@@ -32,6 +32,8 @@
 @property(readonly) UIView * screenshotsView;
 
 
+- (void)setTarget:(id)arg1;
+- (void)dealloc;
 - (void)reloadView;
 - (void)sizeToFit;
 - (void)layoutSubviews;
@@ -63,8 +65,6 @@
 - (void)_reloadNewsstandWhatsNew;
 - (void)_reloadMoreInfoView;
 - (void)setContentRatingImage:(id)arg1;
-- (void)setTarget:(id)arg1;
-- (void)dealloc;
 - (void)_reloadHeaderView;
 - (void)_reloadButtons;
 - (id)bottomBorderColor;

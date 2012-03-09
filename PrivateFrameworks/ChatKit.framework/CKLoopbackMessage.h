@@ -9,6 +9,8 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)initWithConversation:(id)arg1 text:(id)arg2 date:(id)arg3;
 - (id)initWithConversation:(id)arg1 text:(id)arg2;
 - (id)initPlaceholderConversation:(id)arg1 date:(id)arg2;
@@ -18,7 +20,5 @@
 - (BOOL)isRead;
 - (BOOL)isOutgoing;
 - (void)setOutgoing:(BOOL)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end

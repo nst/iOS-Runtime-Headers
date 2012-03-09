@@ -23,7 +23,9 @@
 
 - (id)messageID;
 - (id)messageBody;
-- (void)setMessageID:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setTargetSessionToken:(id)arg1;
 - (id)targetSessionToken;
 - (void)setTargetToken:(id)arg1;
@@ -35,8 +37,6 @@
 - (void)setTargetPeerID:(id)arg1;
 - (id)targetPeerID;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setMessageID:(id)arg1;
 
 @end

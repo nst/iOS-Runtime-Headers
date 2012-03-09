@@ -37,11 +37,11 @@
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (BOOL)allowsTrustPrompt;
 - (void)setAllowsTrustPrompt:(BOOL)arg1;
-- (id)hostname;
-- (void)setServiceName:(id)arg1;
-- (id)serviceName;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)setServiceName:(id)arg1;
+- (id)serviceName;
+- (id)hostname;
 
 @end

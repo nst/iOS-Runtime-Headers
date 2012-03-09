@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLVideoView, PLCameraZoomSlider, PLCameraIrisAnimationView, PLCameraElapsedTimeView, PLCropOverlayBottomBarButton, CADisplayLink, PLCameraGuideView, NSString, PLCropOverlay, UIAlertView, UILongPressGestureRecognizer, CALayer, PLCameraController, PLCameraProgressView, PLCameraToggleButton, PLCameraOptionsButton, UIView, PLSyncProgressView, PLCameraFlashButton, PLPreviewOverlayView, PLCameraOverlayTextLabelView, UIImage, AVCaptureVideoPreviewLayer, PLLowDiskSpaceAlertView, UIImageView, NSMutableArray, NSTimer, PLCameraPreviewView, PLPhotoLibrary, NSData, UIToolbar, PLCameraSettingsView, PLPhotoTileViewController, PLCameraPanoramaView, NSDictionary;
+@class PLVideoView, PLCameraZoomSlider, PLCameraIrisAnimationView, PLCameraElapsedTimeView, PLCropOverlayBottomBarButton, CADisplayLink, PLCameraGuideView, NSString, PLCropOverlay, UIAlertView, UILongPressGestureRecognizer, CALayer, PLCameraController, PLCameraFloatingShutterButtonView, PLCameraProgressView, PLCameraToggleButton, PLCameraOptionsButton, UIView, PLSyncProgressView, PLCameraFlashButton, PLPreviewOverlayView, PLCameraOverlayTextLabelView, UIImage, AVCaptureVideoPreviewLayer, PLLowDiskSpaceAlertView, UIImageView, NSMutableArray, NSTimer, PLCameraPreviewView, PLPhotoLibrary, NSData, UIToolbar, PLCameraSettingsView, PLPhotoTileViewController, PLCameraFloatingShutterButton, PLCameraPanoramaView, NSDictionary;
 
 @interface PLCameraView : UIView <PLCameraControllerDelegate, PLVideoViewDelegate, PLCameraFlashButtonDelegate, PLCameraSettingsViewDelegate, UIGestureRecognizerDelegate, UIAccelerometerDelegate> {
     UIToolbar *_cameraButtonBar;
@@ -17,6 +17,7 @@
     PLPhotoLibrary *_library;
     UIView *_previewContainerView;
     PLPreviewOverlayView *_overlayView;
+    PLCameraFloatingShutterButtonView *_floatingShutterButtonView;
     AVCaptureVideoPreviewLayer *_previewLayer;
     CALayer *_panoramaPreviewLayer;
     PLCameraPanoramaView *_panoramaView;
@@ -46,6 +47,8 @@
         } size; 
     } _unzoomedPreviewFrame;
     int _previewViewAspectMode;
+    BOOL _useFloatingShutterButton;
+    PLCameraFloatingShutterButton *_floatingShutterButton;
     PLCameraFlashButton *_flashButton;
     int _flashModeBeforeCapture;
     int _flashModeBeforeHDR;
@@ -70,6 +73,9 @@
     BOOL _focusIsLocked;
     BOOL _focusTapIsDown;
     BOOL _shouldEndFocusOnTapUp;
+    BOOL _showFaceTracking;
+    unsigned int _currentFacesCount;
+    NSTimer *_faceFadeOutTimer;
     PLSyncProgressView *_rebuildProgressView;
     PLCameraGuideView *_guideView;
     NSMutableArray *_viewsToBounce;
@@ -134,6 +140,7 @@
     unsigned int _shouldAnimateIrisClosed : 1;
     unsigned int _volumeUpButtonIsDown : 1;
     unsigned int _enableCameraAfterDidMoveToWindow : 1;
+    unsigned int _previewStartedBeforeViewMovedToWindow : 1;
     NSString *_cropTitle;
     NSString *_cropButtonTitle;
     NSData *_lastCapturedImageData;
@@ -161,12 +168,16 @@
 @property(readonly) BOOL isCameraReady;
 
 
+- (void)dealloc;
 - (id)overlayView;
 - (void)_applicationSuspended:(id)arg1;
 - (void)_deviceOrientationChanged:(id)arg1;
 - (void)_removeSnapshotView;
-- (void)setDelegate:(id)arg1;
-- (void)lockFocus;
+- (void)_setFlashMode:(int)arg1;
+- (void)setFlashMode:(int)arg1;
+- (int)flashMode;
+- (void)startPreview;
+- (void)stopPreview;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)setCameraDevice:(int)arg1;
 - (int)cameraDevice;
@@ -183,11 +194,10 @@
 - (void)prepareForDefaultImageSnapshot;
 - (void)layoutSubviews;
 - (void)didMoveToWindow;
-- (void)_setFlashMode:(int)arg1;
-- (int)flashMode;
-- (void)setFlashMode:(int)arg1;
-- (void)startPreview;
-- (void)stopPreview;
+- (void)setDelegate:(id)arg1;
+- (void)lockFocus;
+- (int)rotationStyle;
+- (void)setRotationStyle:(int)arg1;
 - (int)videoFlashMode;
 - (BOOL)gridIsOn;
 - (BOOL)HDRIsOn;
@@ -202,6 +212,7 @@
 - (void)openIrisWithDidFinishSelector:(SEL)arg1;
 - (void)didPlayVideoRecordingSound;
 - (void)timeLapseTimerFired;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_floatingShutterButtonFrame;
 - (void)setCameraButtonBar:(id)arg1;
 - (int)photoSavingOptions;
 - (void)setIsRebuildingLibrary:(BOOL)arg1;
@@ -216,7 +227,9 @@
 - (BOOL)irisIsClosed;
 - (void)enterPanoramaMode;
 - (void)_showSettings:(BOOL)arg1;
+- (void)_showSettings:(BOOL)arg1 sender:(id)arg2;
 - (void)_removeSettingsView;
+- (void)hideZoomSlider;
 - (void)_overlayDidFadeOut:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleDisplayRectForPreview;
 - (void)setGridIsOn:(BOOL)arg1;
@@ -245,7 +258,10 @@
 - (void)setPreviewViewAspectMode:(int)arg1;
 - (void)_setPreviewViewAspectMode:(int)arg1 force:(BOOL)arg2;
 - (BOOL)_isPreviewViewAspectModeAllowed:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })aspectFaceRectFromSquareFaceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 angle:(float)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertToViewCoordinatesFromISPCoordinates:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_startFaceFadeOutTimerWithTimeInterval:(double)arg1;
+- (void)_fadeOutFaceRects;
 - (struct CGPoint { float x1; float x2; })convertToPointOfInterestFromViewCoordinates:(struct CGPoint { float x1; float x2; })arg1 pointIsInsideContent:(BOOL*)arg2;
 - (struct CGPoint { float x1; float x2; })_irisCenter;
 - (void)_endZooming;
@@ -307,6 +323,7 @@
 - (int)previewViewAspectMode;
 - (void)_openIrisAndAnimatePreviewImage:(id)arg1;
 - (void)_preparePreviewWellImage:(id)arg1 isVideo:(BOOL)arg2;
+- (void)pausePreview;
 - (void)_setOverlayControlsVisible:(BOOL)arg1;
 - (void)_updateImageEditability;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unzoomedPreviewFrame;
@@ -321,6 +338,7 @@
 - (BOOL)_canEditVideo;
 - (void)_setKeepAlive:(BOOL)arg1;
 - (void)closeIrisWithDidFinishSelector:(SEL)arg1 withDuration:(float)arg2;
+- (void)_clearFocusViews;
 - (void)_setBottomBarEnabled:(BOOL)arg1;
 - (void)_updateModeSwitchVisibility;
 - (void)_updateFlashModeIfNecessary;
@@ -330,6 +348,8 @@
 - (void)_setShouldShowFocus:(BOOL)arg1;
 - (void)openIrisWithDidFinishSelector:(SEL)arg1 withDuration:(float)arg2;
 - (void)previewStartedOpenIrisAnimationFinished;
+- (void)resumePreview;
+- (void)_updatePreviewContentSizeWithCleanAperture:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)stopPreviewAnimated:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })_displaySizeForPreview;
 - (void)verifyViewOrdering;
@@ -351,15 +371,18 @@
 - (void)_resetDiskSpaceWarning;
 - (void)setManipulatingCrop:(BOOL)arg1;
 - (void)showStaticClosedIris;
+- (void)_clearFaceFadeOutTimer;
 - (void)_cancelZoomSliderTimer;
 - (void)enableCamera;
-- (void)_windowWillAnimateRotation:(id)arg1;
 - (void)primeStaticClosedIris;
+- (void)_windowDidRotate:(id)arg1;
+- (void)_windowWillAnimateRotation:(id)arg1;
 - (void)_resetImageTile;
 - (void)_teardownKeepAliveTimer;
 - (void)_processCapturedVideo;
 - (void)_registerForSystemSound;
 - (void)_updateButtonBarEnabledness;
+- (void)_resetFaceTracking;
 - (void)_handleVolumeUpButtonUp;
 - (void)_handleVolumeUpButtonDown;
 - (void)_beginSuspendAnimation:(id)arg1;
@@ -387,11 +410,14 @@
 - (void)cropOverlay:(id)arg1 didFinishSaving:(id)arg2;
 - (int)windowEdgeClippingMask;
 - (void)viewWillBeRemoved;
+- (id)_toggleButton;
+- (id)_optionsButton;
 - (BOOL)isFocusAllowed;
 - (void)setCameraMode:(int)arg1;
 - (int)cameraMode;
 - (id)previewLayer;
 - (void)cameraControllerTorchAvailabilityChanged:(id)arg1;
+- (void)cameraController:(id)arg1 faceMetadataDidChange:(id)arg2;
 - (void)cameraControllerFocusDidEnd:(id)arg1;
 - (void)cameraControllerFocusDidStart:(id)arg1;
 - (void)cameraControllerWillStartAutofocus:(id)arg1;
@@ -413,7 +439,7 @@
 - (void)cameraControllerSessionDidStop:(id)arg1;
 - (void)cameraControllerSessionDidStart:(id)arg1;
 - (void)cameraControllerWillStartPreview:(id)arg1;
-- (void)cameraControllerInputPortFormatDescriptionDidChange:(id)arg1 inputPort:(id)arg2;
+- (void)cameraController:(id)arg1 cleanApertureDidChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)cameraControllerModeDidChange:(id)arg1;
 - (void)cameraControllerModeWillChange:(id)arg1;
 - (void)cameraController:(id)arg1 didChangeCaptureAbility:(BOOL)arg2;
@@ -438,10 +464,5 @@
 - (id)imageTile;
 - (void)viewDidAppear;
 - (void)_simpleRemoteActionDidOccur:(id)arg1;
-- (void)dealloc;
-- (void)pausePreview;
-- (void)resumePreview;
-- (int)rotationStyle;
-- (void)setRotationStyle:(int)arg1;
 
 @end

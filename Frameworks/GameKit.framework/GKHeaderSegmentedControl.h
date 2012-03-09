@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKHeaderSegmentedControlDelegate>, NSArray;
+@class <GKHeaderSegmentedControlDelegate>, UIImageView, NSArray;
 
 @interface GKHeaderSegmentedControl : UIControl  {
     unsigned int _selectedSegment;
@@ -17,6 +17,11 @@
     SEL _themeSelectionImageSelector;
     SEL _themeDividerImageSelector;
     SEL _themeFontSelector;
+    SEL _themeSelectedTextColorSelector;
+    SEL _themeNormalTextColorSelector;
+    SEL _themeSecondaryTextColorSelector;
+    SEL _themeTextShadowColorSelector;
+    SEL _themeTextSelectedShadowColorSelector;
     SEL _segmentLayoutSelector;
     float _dividerOffsetY;
     float _calculatedFontSize;
@@ -36,6 +41,8 @@
         float right; 
     } _capInsets;
     NSArray *_processedLabels;
+    UIImageView *_backgroundView;
+    UIImageView *_foregroundView;
 }
 
 @property <GKHeaderSegmentedControlDelegate> * delegate;
@@ -51,6 +58,11 @@
 @property SEL themeSelectionImageSelector;
 @property SEL themeDividerImageSelector;
 @property SEL themeFontSelector;
+@property SEL themeSelectedTextColorSelector;
+@property SEL themeNormalTextColorSelector;
+@property SEL themeSecondaryTextColorSelector;
+@property SEL themeTextShadowColorSelector;
+@property SEL themeTextSelectedShadowColorSelector;
 @property SEL segmentLayoutSelector;
 @property float dividerOffsetY;
 @property float calculatedFontSize;
@@ -59,8 +71,11 @@
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } capInsets;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } selectionInsets;
 @property(retain) NSArray * processedLabels;
+@property(retain) UIImageView * backgroundView;
+@property(retain) UIImageView * foregroundView;
 
 
+- (void)dealloc;
 - (void)setProcessedLabels:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })selectionInsets;
 - (void)setSegmentNodes:(struct { float x1; float x2; id x3; }*)arg1;
@@ -72,17 +87,23 @@
 - (float)dividerOffsetY;
 - (void)drawLabelTextAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (SEL)themeSelectionImageSelector;
-- (void)drawLargeRibbonBackgroundInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawForegroundInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (SEL)segmentLayoutSelector;
 - (void)applyCalculatedFontSize;
 - (float)minFontSizeDelta;
 - (void)setCalculatedFontSize:(float)arg1;
 - (float)dividerWidth;
+- (id)largeRibbonBackgroundImageForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (SEL)themeBackgroundImageSelector;
 - (SEL)themeDividerImageSelector;
 - (float)textBaselineNudgeY;
 - (id)processedLabels;
 - (void)enumerateSegmentContentRectsUsingBlock:(id)arg1;
+- (SEL)themeTextSelectedShadowColorSelector;
+- (SEL)themeTextShadowColorSelector;
+- (SEL)themeSecondaryTextColorSelector;
+- (SEL)themeNormalTextColorSelector;
+- (SEL)themeSelectedTextColorSelector;
 - (float)calculatedFontSize;
 - (SEL)themeFontSelector;
 - (void)invalidateProcessedLabels;
@@ -97,6 +118,11 @@
 - (void)setTextBaselineNudgeY:(float)arg1;
 - (void)setDividerOffsetY:(float)arg1;
 - (void)setMinFontSizeDelta:(float)arg1;
+- (void)setThemeTextSelectedShadowColorSelector:(SEL)arg1;
+- (void)setThemeTextShadowColorSelector:(SEL)arg1;
+- (void)setThemeSecondaryTextColorSelector:(SEL)arg1;
+- (void)setThemeNormalTextColorSelector:(SEL)arg1;
+- (void)setThemeSelectedTextColorSelector:(SEL)arg1;
 - (void)setThemeFontSelector:(SEL)arg1;
 - (void)setThemeDividerImageSelector:(SEL)arg1;
 - (void)setThemeSelectionImageSelector:(SEL)arg1;
@@ -104,22 +130,25 @@
 - (void)setSegmentWidthAllocationStyle:(int)arg1;
 - (void)setTextPaddingWidth:(float)arg1;
 - (void)_tap:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)labels;
+- (id)foregroundView;
+- (void)setForegroundView:(id)arg1;
 - (id)dividerImage;
 - (float)defaultHeight;
 - (unsigned int)selectedSegmentIndex;
 - (int)segmentedControlStyle;
 - (void)setSelectedSegmentIndex:(unsigned int)arg1;
 - (void)setSegmentedControlStyle:(int)arg1;
+- (id)backgroundView;
+- (void)setBackgroundView:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })capInsets;
 - (id)delegate;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setNeedsLayout;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
+- (id)labels;
 
 @end

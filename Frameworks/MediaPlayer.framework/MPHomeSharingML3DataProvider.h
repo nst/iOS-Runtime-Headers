@@ -29,7 +29,7 @@
 + (void)beginScanningForLibraries;
 
 - (BOOL)requiresAuthentication;
-- (id)protectedContentSupportStorageURL;
+- (void)dealloc;
 - (void)setRentalPlaybackStartDateForItemID:(unsigned long long)arg1;
 - (void)updateUbiquitousBookmarksWithKey:(id)arg1 bookmarkMediaValue:(id)arg2;
 - (void)setTokenData:(id)arg1 forAuthorizedDSID:(unsigned long long)arg2;
@@ -51,14 +51,14 @@
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3;
 - (BOOL)hasArtworkImageForItemWithIdentifier:(long long)arg1;
 - (id)errorResolverForMediaItem:(id)arg1;
+- (id)protectedContentSupportStorageURL;
 - (void)downloadItemWithIdentifier:(long long)arg1 completionHandler:(id)arg2;
 - (BOOL)hasGeniusMixes;
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id)arg2 progressHandler:(id)arg3;
 - (void)_didEnterBackgroundNotification:(id)arg1;
 - (void)_willEnterForegroundNotification:(id)arg1;
-- (void)disconnect;
 - (id)uniqueIdentifier;
 - (id)name;
-- (void)dealloc;
+- (void)disconnect;
 
 @end

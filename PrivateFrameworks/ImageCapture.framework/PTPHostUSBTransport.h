@@ -29,7 +29,8 @@
 
 
 - (void)sendData:(id)arg1;
-- (unsigned short)cancelRequest:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (unsigned long)locationID;
 - (void)dumpData:(void*)arg1 length:(int)arg2 comment:(id)arg3;
 - (void)clearPipeStall:(unsigned char)arg1;
@@ -56,7 +57,6 @@
 - (void)sendDataPackets:(id)arg1;
 - (void)stop;
 - (BOOL)sendEvent:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (unsigned short)cancelRequest:(id)arg1;
 
 @end

@@ -22,17 +22,16 @@
 @property(readonly) NSString * connectionTypeHeader;
 @property(getter=isWiFiEnabled,readonly) BOOL wifiEnabled;
 
++ (id)sharedInstance;
 + (void)setWiFiEnabled:(BOOL)arg1;
 + (void)setAirplaneModeEnabled:(BOOL)arg1;
 + (void)set3GEnabled:(BOOL)arg1;
-+ (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)shouldShowCellularAutomaticDownloadsSwitch;
 - (BOOL)isCellularDataRestricted;
-- (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
-- (void)downloadQueueNetworkUsageChanged:(id)arg1;
-- (BOOL)isWiFiEnabled;
 - (void)_reloadCellularRestriction;
 - (void)setNetworkType:(int)arg1;
 - (void)endObservingDownloadQueue:(id)arg1;
@@ -49,12 +48,13 @@
 - (int)_currentNetworkType;
 - (id)connectionTypeHeader;
 - (double)lastNetworkTypeChangeTime;
-- (id)init;
-- (void)dealloc;
+- (BOOL)isWiFiEnabled;
 - (void)reloadNetworkType;
 - (void)endUsingNetwork;
 - (void)beginUsingNetwork;
 - (BOOL)isUsingNetwork;
 - (int)networkType;
+- (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
+- (void)downloadQueueNetworkUsageChanged:(id)arg1;
 
 @end

@@ -9,11 +9,11 @@
 }
 
 
-- (void)use;
-- (id)initWithName:(id)arg1;
 - (id)retain;
-- (id)init;
 - (oneway void)release;
+- (id)init;
 - (void)dealloc;
+- (id)initWithName:(id)arg1;
+- (void)use;
 
 @end

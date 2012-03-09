@@ -10,8 +10,8 @@
 }
 
 
-- (BOOL)isValid:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (BOOL)isValid:(id)arg1;
 
 @end

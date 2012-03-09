@@ -24,6 +24,9 @@
 }
 
 
+- (id)cancel;
+- (id)perform;
+- (void)dealloc;
 - (id)_session;
 - (void)setResultDisplayString:(id)arg1;
 - (void)setStatusDisplayString:(id)arg1;
@@ -39,8 +42,5 @@
 - (id)spokenFeedbackAttributedString;
 - (id)resultDisplayString;
 - (id)statusDisplayString;
-- (id)cancel;
-- (id)perform;
-- (void)dealloc;
 
 @end

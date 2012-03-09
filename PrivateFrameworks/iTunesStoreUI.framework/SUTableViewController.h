@@ -20,6 +20,8 @@
 @property int tableViewStyle;
 
 
+- (id)init;
+- (void)dealloc;
 - (int)tableViewStyle;
 - (id)tableView;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
@@ -53,8 +55,6 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)newTableView;
 - (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(int)arg2;
 - (void)_deliverTapCount:(int)arg1 forIndexPath:(id)arg2;

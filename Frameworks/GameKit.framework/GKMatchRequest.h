@@ -21,6 +21,9 @@
 @property BOOL attributesSet;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)playersToInvite;
 - (BOOL)attributesSet;
 - (unsigned int)playerAttributes;
@@ -35,8 +38,5 @@
 - (void)setMaxPlayers:(unsigned int)arg1;
 - (void)setMinPlayers:(unsigned int)arg1;
 - (void)setPlayerGroup:(unsigned int)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

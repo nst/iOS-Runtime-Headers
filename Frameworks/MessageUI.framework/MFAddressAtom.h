@@ -58,9 +58,15 @@
 
 + (void)initialize;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setMaxWidth:(unsigned int)arg1;
+- (void)dealloc;
+- (void*)ABPerson;
+- (int)ABPropertyType;
+- (id)unmodifiedAddressString;
+- (id)initWithAddress:(id)arg1 style:(int)arg2 isPhoneNumber:(BOOL)arg3 maxWidth:(float)arg4 useDisplayString:(BOOL)arg5;
+- (void)_addressBookRecordDidChange;
+- (void)_updateDisplayStringIncludingABPerson:(BOOL)arg1;
+- (void)_setupForStyle;
+- (void)_updateABPerson;
 - (id)displayString;
 - (void)_unregisterForNotifications;
 - (void)sendAction:(SEL)arg1 to:(id)arg2 forEvent:(id)arg3;
@@ -73,16 +79,10 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)_registerForNotifications;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
 - (void)setOpaque:(BOOL)arg1;
-- (void*)ABPerson;
-- (int)ABPropertyType;
-- (id)unmodifiedAddressString;
-- (id)initWithAddress:(id)arg1 style:(int)arg2 isPhoneNumber:(BOOL)arg3 maxWidth:(float)arg4 useDisplayString:(BOOL)arg5;
-- (void)_addressBookRecordDidChange;
-- (void)_updateDisplayStringIncludingABPerson:(BOOL)arg1;
-- (void)_setupForStyle;
-- (void)_updateABPerson;
-- (void)dealloc;
+- (void)setMaxWidth:(unsigned int)arg1;
 
 @end

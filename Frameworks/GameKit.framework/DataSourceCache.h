@@ -13,8 +13,8 @@
 + (id)leaderboardCache;
 + (id)cacheKeyForPlayer:(id)arg1 game:(id)arg2;
 
-- (void)purgeCache:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)purgeCache:(id)arg1;
 
 @end

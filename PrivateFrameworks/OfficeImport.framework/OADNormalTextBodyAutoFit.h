@@ -8,10 +8,10 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (id)initWithFontScalePercent:(float)arg1 lineSpacingReductionPercent:(float)arg2;
 - (float)fontScalePercent;
 - (float)lineSpacingReductionPercent;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 
 @end

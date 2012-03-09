@@ -5,11 +5,13 @@
 @class <IUDoorSwingTransitionViewDelegate>, IULiveReflectionView, UIView;
 
 @interface IUDoorSwingTransitionView : UIView  {
+    int _currentTransition;
     <IUDoorSwingTransitionViewDelegate> *_delegate;
     UIView *_doorsView;
-    IULiveReflectionView *_zoomView;
-    int _currentTransition;
+    UIView *_leftSnapshotView;
+    UIView *_rightSnapshotView;
     BOOL _transitioning;
+    IULiveReflectionView *_zoomView;
 }
 
 @property <IUDoorSwingTransitionViewDelegate> * delegate;
@@ -20,19 +22,20 @@
 
 + (double)defaultDurationForTransition:(int)arg1;
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (int)currentTransition;
 - (void)setCurrentTransition:(int)arg1;
 - (BOOL)isTransitioning;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)zoomView;
 - (id)doorsView;
 - (void)setZoomView:(id)arg1;
 - (void)setDoorsView:(id)arg1;
 - (void)_informDelegateOfCompletion;
-- (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3 usingOrientation:(int)arg4;
-- (void)dealloc;
+- (void)startTransition;
+- (void)prepareTransition:(int)arg1 fromView:(id)arg2 toView:(id)arg3 usingOrientation:(int)arg4;
 
 @end

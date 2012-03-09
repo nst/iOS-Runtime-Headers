@@ -18,9 +18,10 @@
 + (id)processIdentifier;
 + (id)commandPath;
 
-- (id)appName;
-- (void)setAppName:(id)arg1;
 - (BOOL)parse;
+- (void)dealloc;
+- (void)stop;
+- (int)run;
 - (int)argc;
 - (BOOL)isLaunchedAtLogin;
 - (void)addSubcommand:(id)arg1;
@@ -29,8 +30,7 @@
 - (id)_displayHelp:(id)arg1;
 - (char **)argv;
 - (id)_displayVersion:(id)arg1;
-- (void)stop;
-- (int)run;
-- (void)dealloc;
+- (id)appName;
+- (void)setAppName:(id)arg1;
 
 @end

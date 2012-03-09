@@ -10,11 +10,11 @@
 }
 
 
+- (void)dealloc;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_accessoryButtonAction:(id)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (BOOL)_isDownloadResumable:(id)arg1;
 - (void)_reloadProgressBar;
 - (void)_reloadAccessoryButton;

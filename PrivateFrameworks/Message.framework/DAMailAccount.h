@@ -135,12 +135,12 @@
 - (id)accountPropertyForKey:(id)arg1;
 - (BOOL)moveMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 markAsRead:(BOOL)arg4 unsuccessfulOnes:(id)arg5;
 - (BOOL)shouldRestoreMessagesAfterFailedDelete;
+- (void)dealloc;
 - (id)username;
-- (void)invalidate;
-- (id)hostname;
+- (void)stopListeningForNotifications;
 - (id)displayName;
 - (id)identifier;
-- (void)stopListeningForNotifications;
-- (void)dealloc;
+- (void)invalidate;
+- (id)hostname;
 
 @end

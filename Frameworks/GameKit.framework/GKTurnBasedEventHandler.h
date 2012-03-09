@@ -13,7 +13,7 @@
 + (id)sharedTurnBasedEventHandler;
 
 - (void)lookForEvent;
-- (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

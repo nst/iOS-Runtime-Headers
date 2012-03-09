@@ -20,6 +20,7 @@
 
 - (id)inputRotation;
 - (void)setInputRotation:(id)arg1;
+- (void)setInputPoint:(id)arg1;
 - (id)_colorKernel;
 - (id)_geomKernel;
 - (id)inputPoint;
@@ -29,6 +30,5 @@
 - (id)inputImage;
 - (id)outputImage;
 - (void)setDefaults;
-- (void)setInputPoint:(id)arg1;
 
 @end

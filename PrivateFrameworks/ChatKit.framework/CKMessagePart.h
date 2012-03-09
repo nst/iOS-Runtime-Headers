@@ -26,11 +26,8 @@
 + (id)copyMessagePartsFromComposition:(id)arg1;
 + (id)copyDetachedMessageParts:(id)arg1;
 
-- (id)imageData;
-- (int)rowID;
-- (int)type;
-- (id)image;
-- (id)text;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)previewImage;
 - (id)composeImages;
 - (id)imageFilename;
@@ -49,8 +46,11 @@
 - (id)highlightData;
 - (id)previewData;
 - (id)parentMessage;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
+- (int)rowID;
+- (int)type;
+- (id)image;
+- (id)text;
+- (id)imageData;
 - (id)mediaObject;
 - (BOOL)isDisplayable;
 

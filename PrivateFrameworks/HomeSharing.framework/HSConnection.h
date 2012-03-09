@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSString, HSConnectionStream, SSAccount, NSDictionary, HSFairPlayInfo, NSURL;
+@class HSFairPlayInfo, HSConnectionStream, SSAccount, NSString, NSDictionary, NSURL;
 
 @interface HSConnection : NSObject  {
     SSAccount *_account;
@@ -15,6 +15,7 @@
     struct __CFReadStream { } *_readStream;
     BOOL authenticationRequired;
     unsigned int basePlaylistContainerID;
+    NSString *buildIdentifier;
     NSDictionary *cookies;
     unsigned int databaseID;
     unsigned int databaseRevision;
@@ -28,6 +29,7 @@
 
 @property(readonly) NSURL * baseURL;
 @property(copy) NSString * userAgent;
+@property(copy) NSString * buildIdentifier;
 @property(copy) NSDictionary * cookies;
 @property(retain) SSAccount * account;
 @property(readonly) int connectionType;
@@ -45,13 +47,27 @@
 
 - (void)setAccount:(id)arg1;
 - (id)account;
+- (id)cookies;
+- (void)dealloc;
+- (void)checkForDatabaseUpdatesWithCompletionHandler:(id)arg1;
+- (id)fairPlayInfo;
+- (void)sendRequest:(id)arg1 withResponseHandler:(id)arg2;
+- (void)sendConcurrentRequest:(id)arg1 withResponseHandler:(id)arg2;
+- (unsigned int)databaseID;
+- (int)connectionState;
+- (void)setFairPlayInfo:(id)arg1;
+- (void)setHomeSharingGroupID:(id)arg1;
+- (id)homeSharingGroupID;
+- (void)connectWithCompletionHandler:(id)arg1;
 - (id)userAgent;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
 - (void)setCookies:(id)arg1;
+- (void)setBuildIdentifier:(id)arg1;
 - (BOOL)isAuthenticationRequired;
 - (id)initWithBaseURL:(id)arg1;
+- (id)buildIdentifier;
 - (unsigned int)basePlaylistContainerID;
 - (void)setBasePlaylistContainerID:(unsigned int)arg1;
 - (void)setDatabaseID:(unsigned int)arg1;
@@ -64,24 +80,12 @@
 - (void)setConnectionState:(int)arg1;
 - (void)setDatabaseRevision:(unsigned int)arg1;
 - (id)initWithBaseURL:(id)arg1 connectionType:(int)arg2;
-- (void)checkForDatabaseUpdatesWithCompletionHandler:(id)arg1;
-- (id)fairPlayInfo;
-- (void)sendRequest:(id)arg1 withResponseHandler:(id)arg2;
-- (void)sendConcurrentRequest:(id)arg1 withResponseHandler:(id)arg2;
-- (unsigned int)databaseID;
-- (int)connectionState;
-- (void)setFairPlayInfo:(id)arg1;
-- (void)setHomeSharingGroupID:(id)arg1;
-- (id)homeSharingGroupID;
-- (void)connectWithCompletionHandler:(id)arg1;
-- (id)cookies;
-- (void)disconnect;
-- (id)password;
-- (id)baseURL;
 - (unsigned int)sessionID;
 - (void)setSessionID:(unsigned int)arg1;
 - (int)connectionType;
-- (void)dealloc;
+- (id)password;
+- (id)baseURL;
+- (void)disconnect;
 - (void)setUserAgent:(id)arg1;
 
 @end

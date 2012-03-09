@@ -14,12 +14,12 @@
 
 + (Class)queueFeederClass;
 
+- (id)init;
 - (void)setShuffleType:(unsigned int)arg1;
 - (unsigned int)shuffleType;
 - (void)setPreservePlaybackState:(BOOL)arg1;
 - (BOOL)preservePlaybackState;
 - (BOOL)restartPlaybackOnly;
 - (void)setRestartPlaybackOnly:(BOOL)arg1;
-- (id)init;
 
 @end

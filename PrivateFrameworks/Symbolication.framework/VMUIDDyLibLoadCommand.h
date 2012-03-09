@@ -6,7 +6,7 @@
 }
 
 
-- (BOOL)isIDDyLib;
 - (id)description;
+- (BOOL)isIDDyLib;
 
 @end

@@ -19,6 +19,7 @@
 @property(getter=isBeingRemoved) BOOL beingRemoved;
 
 
+- (void)dealloc;
 - (BOOL)isBeingRemoved;
 - (void)setScrollListener:(id)arg1;
 - (id)scrollListener;
@@ -35,6 +36,5 @@
 - (id)node;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (id)superview;
-- (void)dealloc;
 
 @end

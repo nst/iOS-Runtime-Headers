@@ -7,19 +7,22 @@
 @interface GEOTileRemoteRequest : NSObject  {
     GEOTileKeyList *_list;
     struct __CFRunLoop { } *_queue;
+    unsigned long long _handle;
     BOOL _movedToNetwork;
 }
 
 @property(readonly) GEOTileKeyList * list;
 @property(readonly) struct __CFRunLoop { }* queue;
+@property(readonly) unsigned long long handle;
 @property BOOL movedToNetwork;
 
 
-- (id)initWithList:(id)arg1 queue:(struct __CFRunLoop { }*)arg2;
+- (void)dealloc;
+- (id)initWithList:(id)arg1 handle:(unsigned long long)arg2 queue:(struct __CFRunLoop { }*)arg3;
 - (void)setMovedToNetwork:(BOOL)arg1;
 - (BOOL)movedToNetwork;
-- (id)list;
-- (void)dealloc;
 - (struct __CFRunLoop { }*)queue;
+- (unsigned long long)handle;
+- (id)list;
 
 @end

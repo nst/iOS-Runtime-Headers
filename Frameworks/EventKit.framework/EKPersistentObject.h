@@ -7,7 +7,8 @@
 @interface EKPersistentObject : NSObject  {
     EKEventStore *_eventStore;
     id _objectID;
-    NSMutableDictionary *_loadedProperties;
+    struct __CFDictionary { } *_loadedProperties;
+    NSMutableDictionary *_referencers;
     NSMutableSet *_dirtyProperties;
     unsigned int _flags;
     NSMutableDictionary *_committedProperties;
@@ -22,7 +23,11 @@
 - (void)_setProperty:(id)arg1 forKey:(id)arg2;
 - (id)_propertyForKey:(id)arg1;
 - (id)dump;
-- (id)objectID;
+- (void)rollback;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)init;
+- (void)dealloc;
 - (void)setCommittedProperties:(id)arg1;
 - (id)committedProperties;
 - (void)primitiveSetDataValue:(id)arg1 forKey:(id)arg2;
@@ -61,9 +66,16 @@
 - (void)_addDirtyProperty:(id)arg1;
 - (id)_loadChildIdentifiersForKey:(id)arg1;
 - (BOOL)_loadRelationForKey:(id)arg1 value:(id*)arg2;
+- (void)_addReference:(id)arg1 forKey:(id)arg2;
+- (BOOL)_shouldRetainPropertyForKey:(id)arg1;
+- (void)_removeReference:(id)arg1 forKey:(id)arg2;
 - (void)_setDefaultPropertiesLoaded:(BOOL)arg1;
 - (id)_relationForKey:(id)arg1;
 - (void)changed;
+- (id)_loadedPropertyKeys;
+- (void)_releaseLoadedProperties;
+- (void)_clearWeakRelations;
+- (void)_clearReferences;
 - (BOOL)isDirty;
 - (void)unloadPropertyForKey:(id)arg1;
 - (id)committedValueForKey:(id)arg1;
@@ -86,10 +98,6 @@
 - (void)_setEventStore:(id)arg1;
 - (void)reset;
 - (id)initCommon;
-- (void)rollback;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)init;
-- (void)dealloc;
+- (id)objectID;
 
 @end

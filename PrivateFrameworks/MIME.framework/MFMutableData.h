@@ -18,18 +18,17 @@
 
 
 - (void)mf_makeImmutable;
-- (id)initWithContentsOfURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
-- (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)initWithContentsOfFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)initWithContentsOfMappedFile:(id)arg1;
+- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (unsigned int)length;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setMappingThreshold:(unsigned int)arg1;
 - (BOOL)mf_immutable;
 - (void)_mapMutableData:(BOOL)arg1;
 - (void)_flushToDisk:(unsigned int)arg1 capacity:(unsigned int)arg2;
 - (id)_initWithFd:(int)arg1 path:(id)arg2 mutable:(BOOL)arg3;
-- (void)setLength:(unsigned int)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
 - (BOOL)writeToURL:(id)arg1 atomically:(BOOL)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
@@ -43,11 +42,12 @@
 - (const void*)bytes;
 - (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
 - (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (unsigned int)length;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setLength:(unsigned int)arg1;
+- (id)initWithContentsOfURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
+- (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)initWithContentsOfFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)initWithContentsOfMappedFile:(id)arg1;
 
 @end

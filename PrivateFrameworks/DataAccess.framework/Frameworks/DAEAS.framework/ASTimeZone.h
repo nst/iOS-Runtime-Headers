@@ -20,17 +20,17 @@
 + (BOOL)acceptsTopLevelLeaves;
 + (BOOL)expectsContent;
 
-- (id)data;
-- (int)secondsFromGMTForDate:(id)arg1;
-- (id)name;
+- (id)description;
+- (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 data:(id)arg2;
 - (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
 - (BOOL)isDaylightSavingTimeForDate:(id)arg1;
 - (id)abbreviationForDate:(id)arg1;
 - (double)daylightSavingTimeOffsetForDate:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (int)secondsFromGMTForDate:(id)arg1;
+- (id)name;
+- (id)data;
 - (id)dictForCoding;
 - (id)initWithCodingDict:(id)arg1;
 - (struct { long x1; unsigned short x2[32]; struct _SYSTEMTIME { short x_3_1_1; short x_3_1_2; short x_3_1_3; short x_3_1_4; short x_3_1_5; short x_3_1_6; short x_3_1_7; short x_3_1_8; } x3; long x4; unsigned short x5[32]; struct _SYSTEMTIME { short x_6_1_1; short x_6_1_2; short x_6_1_3; short x_6_1_4; short x_6_1_5; short x_6_1_6; short x_6_1_7; short x_6_1_8; } x6; long x7; }*)mallocTZIForDate:(id)arg1;

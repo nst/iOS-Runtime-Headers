@@ -20,19 +20,19 @@
 @property(retain) NSString * title;
 @property(retain) id userInfo;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (void)initialize;
++ (id)webScriptNameForKey:(const char *)arg1;
 
+- (id)userInfo;
+- (void)dealloc;
 - (id)imageURL;
-- (id)attributeKeys;
 - (void)setUserInfo:(id)arg1;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
 - (id)image;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)userInfo;
-- (void)dealloc;
+- (id)attributeKeys;
 - (void)setImageURL:(id)arg1;
 - (id)_segmentedControl;
 - (void)_reloadUserInterface;

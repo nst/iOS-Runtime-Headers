@@ -17,6 +17,8 @@
 
 + (BOOL)supportsViewControllerStyle:(int)arg1;
 
+- (id)init;
+- (void)dealloc;
 - (void)_viewWasTapped:(id)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidUnload;
@@ -34,7 +36,5 @@
 - (void)_selectLibrary:(id)arg1;
 - (void)_updateConnectionProgressForCellAtIndexPath:(id)arg1;
 - (void)_mediaLibraryConnectionProgressDidChangeNotification:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

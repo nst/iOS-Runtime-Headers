@@ -13,11 +13,11 @@
 @property(getter=isLoaded,readonly) BOOL loaded;
 
 
+- (void)dealloc;
 - (unsigned int)trackCountForTypes:(unsigned int)arg1;
 - (BOOL)hasTracksForTypes:(unsigned int)arg1;
 - (void)setTrack:(id)arg1 forType:(unsigned int)arg2;
 - (id)currentTrackForType:(unsigned int)arg1;
-- (id)initWithItem:(id)arg1;
 - (void)commitTrackChanges;
 - (id)_keyForTrackType:(unsigned int)arg1;
 - (void)beginTrackChanges;
@@ -25,6 +25,6 @@
 - (id)tracksForType:(unsigned int)arg1;
 - (BOOL)isLoaded;
 - (void)reloadData;
-- (void)dealloc;
+- (id)initWithItem:(id)arg1;
 
 @end

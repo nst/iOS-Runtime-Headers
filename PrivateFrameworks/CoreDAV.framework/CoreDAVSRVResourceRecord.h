@@ -19,17 +19,17 @@
 @property(retain) NSString * target;
 
 
-- (id)weight;
-- (void)setWeight:(id)arg1;
-- (void)setPriority:(id)arg1;
-- (void)setServiceString:(id)arg1;
-- (id)serviceString;
 - (void)setPort:(id)arg1;
-- (id)priority;
-- (id)port;
 - (void)setTarget:(id)arg1;
 - (id)description;
 - (id)target;
 - (void)dealloc;
+- (void)setServiceString:(id)arg1;
+- (id)serviceString;
+- (id)priority;
+- (id)port;
+- (id)weight;
+- (void)setWeight:(id)arg1;
+- (void)setPriority:(id)arg1;
 
 @end

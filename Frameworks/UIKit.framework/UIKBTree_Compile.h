@@ -19,6 +19,7 @@
 + (id)uniqueNameWithType:(int)arg1;
 + (id)treeOfType:(int)arg1;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)refList;
 - (void)setAttributeSet:(id)arg1;
 - (void)setGeometrySet:(id)arg1;
@@ -48,6 +49,5 @@
 - (id)geometrySet:(BOOL)arg1;
 - (BOOL)isSameAsTree:(id)arg1;
 - (id)initWithType:(int)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

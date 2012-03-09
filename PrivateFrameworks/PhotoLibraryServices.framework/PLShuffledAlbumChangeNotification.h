@@ -13,22 +13,22 @@
 
 + (id)notificationForShuffledAlbum:(id)arg1 fromAlbumChangeNotification:(id)arg2;
 
-- (id)album;
-- (id)object;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (id)initWithShuffledAlbum:(id)arg1 albumChangeNotification:(id)arg2;
+- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (BOOL)countDidChange;
 - (id)_changedObjects;
 - (BOOL)keyAssetDidChange;
 - (id)_diffDescription;
 - (void)_calculateDiffs;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (id)album;
+- (id)object;
 - (BOOL)titleDidChange;
 - (BOOL)shouldReload;
 - (id)changedIndexes;
 - (id)insertedIndexes;
 - (id)deletedIndexes;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

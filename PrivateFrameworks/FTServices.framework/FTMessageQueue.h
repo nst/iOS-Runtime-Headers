@@ -19,11 +19,9 @@
 
 
 - (id)messages;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)removeAllMessages;
-- (BOOL)addMessage:(id)arg1;
-- (BOOL)removeMessage:(id)arg1;
+- (int)count;
+- (id)init;
+- (void)dealloc;
 - (void)set_addDates:(id)arg1;
 - (id)_addDates;
 - (void)set_queue:(id)arg1;
@@ -32,9 +30,11 @@
 - (void)_clearTimeout;
 - (void)_timeoutHit;
 - (id)topMessage;
-- (int)count;
-- (id)init;
-- (void)dealloc;
+- (void)removeAllMessages;
+- (BOOL)addMessage:(id)arg1;
+- (BOOL)removeMessage:(id)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (id)_queue;
 
 @end

@@ -13,10 +13,10 @@
 @property(readonly) id result;
 
 
-- (int)key;
+- (void)dealloc;
 - (int)status;
 - (id)result;
-- (void)dealloc;
+- (int)key;
 - (id)initWithKey:(int)arg1 status:(int)arg2 result:(id)arg3;
 
 @end

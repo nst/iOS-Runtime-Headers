@@ -10,10 +10,10 @@
 }
 
 
+- (void)dealloc;
 - (struct __CFString { }*)stringValue;
 - (id)layoutStorage;
 - (int)readContentForTextCell:(struct _xmlTextReader { }*)arg1;
 - (int)readContentForTCell:(struct _xmlTextReader { }*)arg1;
-- (void)dealloc;
 
 @end

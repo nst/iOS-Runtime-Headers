@@ -14,6 +14,7 @@
 @property(setter=_setSearchTextOffetValue:,retain) NSValue * _searchTextOffsetValue;
 
 
+- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustedTextOrEditingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)_offsetValueForIcon:(int)arg1;
 - (void)_setOffsetValue:(id)arg1 forIcon:(int)arg2;
@@ -29,6 +30,5 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_hasActionForEventMask:(int)arg1;
 - (BOOL)_becomeFirstResponderWhenPossible;
-- (void)dealloc;
 
 @end

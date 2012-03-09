@@ -16,12 +16,17 @@
 @property(readonly) NSArray * limitOrderingProperties;
 @property(readonly) long long limitValue;
 
++ (id)defaultOrderingProperties;
++ (int)revisionTrackingCode;
++ (void)initialize;
++ (void)populateDynamicContainersWithTrackPersistentID:(id)arg1 inLibrary:(id)arg2;
++ (void)populateDynamicContainersInLibrary:(id)arg1 createBuiltinSmartPlaylists:(BOOL)arg2;
 + (void)populateDynamicContainersInLibrary:(id)arg1;
 + (void)deleteAutoCreatedBuiltInSmartPlaylistsPIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)autoCreatedBuiltInSmartPlaylistsPIDs:(id)arg1;
-+ (BOOL)createMissingBuiltInSmartPlaylists:(id)arg1;
 + (BOOL)smartCriteriaCanBeEvaluated:(id)arg1;
-+ (void)populateDynamicContainersWithTrackPersistentID:(id)arg1 inLibrary:(id)arg2;
++ (BOOL)createMissingBuiltInSmartPlaylists:(id)arg1;
++ (void)populateDynamicContainersWithTrackPersistentID:(id)arg1 inLibrary:(id)arg2 createBuiltinSmartPlaylists:(BOOL)arg3;
 + (void)_insertNewSmartPlaylist:(id)arg1 criteriaBlob:(id)arg2 limited:(BOOL)arg3 trackOrder:(unsigned long)arg4 distinguishedKind:(int)arg5 inLibrary:(id)arg6 cachedNameOrders:(id)arg7;
 + (id)predicateForCriteriaList:(struct OpaqueSearchCriteriaList { }*)arg1 dynamicCriteria:(BOOL)arg2;
 + (id)nextFilepathForPlaylistType:(int)arg1 withPersistentID:(unsigned long long)arg2 inLibrary:(id)arg3;
@@ -34,15 +39,17 @@
 + (id)foreignColumnForProperty:(id)arg1;
 + (id)foreignDatabaseTableForProperty:(id)arg1;
 + (id)joinClauseForProperty:(id)arg1;
-+ (int)revisionTrackingCode;
 + (id)persistentIDColumnForTable:(id)arg1;
-+ (id)defaultOrderingProperties;
-+ (void)initialize;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
 
-- (BOOL)setTracksWithSwappedPersistentIDData:(id)arg1;
+- (BOOL)setTracksWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2;
 - (BOOL)moveTrackFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
+- (BOOL)removeAllTracks;
 - (BOOL)removeTracksWithPersistentIDs:(const long long*)arg1 atFilteredIndexes:(id)arg2;
+- (BOOL)addTracksWithPersistentIDs:(long long*)arg1 count:(unsigned int)arg2;
+- (BOOL)addTrackWithPersistentID:(long long)arg1;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
+- (BOOL)setTracksWithSwappedPersistentIDData:(id)arg1;
 - (BOOL)removeTracksAtIndexes:(id)arg1;
 - (void)getDisplayOrderingProperties:(id*)arg1 isDescending:(BOOL*)arg2;
 - (long long)limitValue;
@@ -52,25 +59,19 @@
 - (id)dynamicPredicate;
 - (BOOL)setTracksWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 notify:(BOOL)arg3;
 - (BOOL)_setSwappedItemPersistentIDs:(const long long*)arg1 size:(int)arg2;
-- (BOOL)addTracksWithPersistentIDs:(long long*)arg1 count:(unsigned int)arg2;
 - (BOOL)removeTracksAtIndexes:(id)arg1 notify:(BOOL)arg2 indexesTransformBlock:(id)arg3;
 - (BOOL)addTracksWithPersistentIDs:(long long*)arg1 count:(unsigned int)arg2 notify:(BOOL)arg3;
 - (BOOL)removeTracksAtIndexes:(id)arg1 notify:(BOOL)arg2;
 - (void)_accessCurrentSwappedPersisentIDsUsingBlock:(id)arg1;
 - (BOOL)_setSwappedItemPersistentIDs:(const long long*)arg1 size:(int)arg2 notify:(BOOL)arg3;
 - (BOOL)setContainsTrack:(BOOL)arg1 forPersistentID:(long long)arg2 notify:(BOOL)arg3;
-- (BOOL)setTracksWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2;
 - (void)bindPopulateStatement:(struct sqlite3_stmt { }*)arg1 withStaticTrackPersistentID:(id)arg2;
 - (id)populateSQLWithStaticTrackPersistentID:(id)arg1;
 - (id)staticPredicate;
 - (id)limitOrderingProperties;
 - (BOOL)isCustomContainerOrderingDescending;
 - (BOOL)isLimitOrderingDescending;
-- (BOOL)_isDescendingForTrackOrderProperty:(id)arg1 reverseOrderProperty:(id)arg2;
 - (struct OpaqueSearchCriteriaList { }*)importedCriteriaList;
 - (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
-- (BOOL)addTrackWithPersistentID:(long long)arg1;
-- (BOOL)removeAllTracks;
-- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
 
 @end

@@ -40,7 +40,6 @@
 }
 
 
-- (void)finalize;
 - (void)waitForDataInBackgroundAndNotify;
 - (void)acceptConnectionInBackgroundAndNotify;
 - (void)readToEndOfFileInBackgroundAndNotify;
@@ -73,15 +72,16 @@
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
 - (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
-- (void)seekToFileOffset:(unsigned long long)arg1;
-- (void)writeData:(id)arg1;
-- (void)closeFile;
-- (id)readDataOfLength:(unsigned int)arg1;
-- (id)port;
 - (id)retain;
+- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (oneway void)release;
 - (void)dealloc;
+- (id)readDataOfLength:(unsigned int)arg1;
+- (id)port;
+- (void)finalize;
+- (void)writeData:(id)arg1;
+- (void)closeFile;
+- (void)seekToFileOffset:(unsigned long long)arg1;
 
 @end

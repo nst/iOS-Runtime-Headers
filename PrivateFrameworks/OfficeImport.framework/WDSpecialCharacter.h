@@ -10,12 +10,12 @@
 }
 
 
+- (void)dealloc;
+- (id)properties;
 - (int)characterType;
 - (void)clearProperties;
 - (void)setCharacterType:(int)arg1;
 - (id)initWithParagraph:(id)arg1;
 - (int)runType;
-- (id)properties;
-- (void)dealloc;
 
 @end

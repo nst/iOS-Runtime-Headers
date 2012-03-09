@@ -13,6 +13,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (id)keypaths;
 - (id)subqueries;
 - (id)setExpressions;
@@ -20,7 +22,5 @@
 - (id)allModifierPredicates;
 - (void)visitPredicate:(id)arg1;
 - (void)visitPredicateExpression:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -18,6 +18,7 @@
 @property int layoutOptions;
 
 
+- (void)dealloc;
 - (id)topoDeviceLayers;
 - (void)performLayout;
 - (struct CGImage { }*)newImageForDeviceSpec:(id)arg1 wantSmall:(BOOL)arg2;
@@ -30,6 +31,5 @@
 - (void)setContainerLayer:(id)arg1;
 - (id)initWithContainerLayer:(id)arg1 andOptions:(int)arg2;
 - (id)topoDevicesDescriptor;
-- (void)dealloc;
 
 @end

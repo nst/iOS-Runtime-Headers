@@ -27,6 +27,9 @@
 + (id)printInfoWithDictionary:(id)arg1;
 + (id)printInfo;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setScaleUp:(BOOL)arg1;
 - (BOOL)scaleUp;
 - (void)setCopies:(int)arg1;
@@ -47,8 +50,5 @@
 - (int)orientation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

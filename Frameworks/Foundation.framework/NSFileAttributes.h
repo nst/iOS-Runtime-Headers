@@ -63,15 +63,15 @@
 - (id)fileGroupOwnerAccountName;
 - (unsigned int)fileOwnerAccountNumber;
 - (id)fileOwnerAccountName;
-- (unsigned int)filePosixPermissions;
-- (unsigned long long)fileSize;
-- (id)fileType;
-- (id)fileModificationDate;
-- (id)keyEnumerator;
 - (unsigned int)count;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)objectForKey:(id)arg1;
 - (void)dealloc;
+- (id)fileType;
+- (id)fileModificationDate;
+- (id)keyEnumerator;
+- (unsigned long long)fileSize;
+- (unsigned int)filePosixPermissions;
 
 @end

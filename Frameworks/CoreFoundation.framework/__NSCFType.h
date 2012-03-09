@@ -7,14 +7,14 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (void)finalize;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (unsigned int)retainCount;
 - (id)description;
 - (id)retain;
 - (oneway void)release;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)finalize;
 
 @end

@@ -25,6 +25,7 @@
 @property int sbsMode;
 
 
+- (void)dealloc;
 - (void)setSbsMode:(int)arg1;
 - (int)sbsMode;
 - (void)setSpinnerWithStatusBelowSpinner:(id)arg1;
@@ -47,6 +48,5 @@
 - (id)topoLayout;
 - (void)stepByStepUpdateProgress:(id)arg1 forState:(int)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)dealloc;
 
 @end

@@ -26,6 +26,11 @@
 
 + (id)sheetWithWorkbook:(id)arg1;
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
+- (id)name;
+- (void)setHidden:(bool)arg1;
+- (bool)isHidden;
 - (void)reduceMemoryIfPossible;
 - (id)escherDrawing;
 - (void)setEscherDrawing:(id)arg1;
@@ -61,10 +66,5 @@
 - (void)addDrawable:(id)arg1;
 - (void)teardown;
 - (id)drawables;
-- (id)name;
-- (void)setHidden:(bool)arg1;
-- (bool)isHidden;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

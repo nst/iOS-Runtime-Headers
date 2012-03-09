@@ -49,20 +49,10 @@
 @property(retain) EKEvent * dimmedOccurrence;
 
 
-- (id)grid;
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
 - (id)startDate;
-- (id)calendar;
-- (void)setCalendar:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (id)timeZone;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)setTimeZone:(id)arg1;
-- (id)delegate;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
 - (id)dimmedOccurrence;
 - (BOOL)darkensWeekends;
 - (BOOL)eventsIntersectRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -108,7 +98,17 @@
 - (void)dayOccurrenceViewStartTouch:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setUsesSmallText:(BOOL)arg1;
 - (void)setDarkensSelection:(BOOL)arg1;
-- (void)dealloc;
+- (id)calendar;
+- (void)setCalendar:(id)arg1;
+- (void)setOrientation:(int)arg1;
+- (id)timeZone;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)setTimeZone:(id)arg1;
+- (id)delegate;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
+- (id)grid;
 - (void)setOccurrences:(id)arg1;
 
 @end

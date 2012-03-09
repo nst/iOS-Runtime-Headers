@@ -32,6 +32,17 @@
 + (id)blackStroke;
 + (id)nullStroke;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)color;
+- (void)setColor:(id)arg1;
+- (void)setWidth:(float)arg1;
+- (float)width;
+- (id)fill;
+- (id)head;
 - (void)setTail:(id)arg1;
 - (void)setHead:(id)arg1;
 - (id)dash;
@@ -57,16 +68,5 @@
 - (void)setFill:(id)arg1;
 - (void)setParent:(id)arg1;
 - (id)initWithDefaults;
-- (id)head;
-- (id)color;
-- (void)setColor:(id)arg1;
-- (void)setWidth:(float)arg1;
-- (float)width;
-- (id)fill;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

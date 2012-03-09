@@ -17,6 +17,7 @@
 @property BOOL shouldDelayChanges;
 
 
+- (void)dealloc;
 - (id)rightBarButtonItem;
 - (id)leftBarButtonItem;
 - (void)setTitleView:(id)arg1;
@@ -25,7 +26,6 @@
 - (id)navigationBar;
 - (id)initWithNavigationItem:(id)arg1;
 - (id)titleView;
-- (void)dealloc;
 - (id)wrappedNavigationItem;
 - (void)_scheduleCommit;
 - (BOOL)shouldDelayChanges;

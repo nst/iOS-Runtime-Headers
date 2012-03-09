@@ -12,8 +12,8 @@
 
 
 - (id)initWithData:(id)arg1 partial:(BOOL)arg2 incomplete:(BOOL)arg3;
+- (void)dealloc;
 - (id)data;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -39,25 +39,6 @@
 + (id)_defaultLabelsForProperty:(int)arg1 person:(void*)arg2 propertyGroup:(id)arg3 index:(int)arg4 addressBook:(void*)arg5 outBestLabelIndex:(int*)arg6 forceIncludeLabels:(id)arg7;
 + (id)defaultLabelsForPropertyGroup:(id)arg1 index:(int)arg2 addressBook:(void*)arg3 outBestLabelIndex:(int*)arg4 forceIncludeLabels:(id)arg5;
 
-- (void)setAddressBook:(void*)arg1;
-- (void*)addressBook;
-- (void)setDelegate:(id)arg1;
-- (id)tableView;
-- (void)displayScrollerIndicators;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (BOOL)isEditing;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
-- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)reloadData;
-- (void)setBackgroundColor:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)canEdit;
 - (void)dealloc;
 - (void)setPropertyGroup:(id)arg1 itemIndex:(int)arg2;
 - (void)setAdditionalLabels:(id)arg1;
@@ -86,5 +67,24 @@
 - (void)_setSelectedLabel:(id)arg1 atPath:(id)arg2;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
+- (void)setAddressBook:(void*)arg1;
+- (void*)addressBook;
+- (id)tableView;
+- (void)displayScrollerIndicators;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (BOOL)isEditing;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)reloadData;
+- (void)setDelegate:(id)arg1;
+- (void)setBackgroundColor:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)canEdit;
 
 @end

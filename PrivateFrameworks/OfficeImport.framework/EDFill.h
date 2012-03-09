@@ -10,8 +10,8 @@
 
 + (id)fillWithResources:(id)arg1;
 
-- (id)initWithResources:(id)arg1;
-- (bool)isEmpty;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)isEmpty;
+- (id)initWithResources:(id)arg1;
 
 @end

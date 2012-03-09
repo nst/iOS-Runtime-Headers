@@ -11,9 +11,9 @@
 }
 
 
+- (void)dealloc;
 - (int)readAttributesForDurationCell:(struct _xmlTextReader { }*)arg1;
 - (struct __CFString { }*)createStringValue;
 - (void)setProcessorBundle:(struct __CFBundle { }*)arg1;
-- (void)dealloc;
 
 @end

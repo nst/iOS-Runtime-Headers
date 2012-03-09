@@ -19,6 +19,9 @@
 
 + (void)_runLookup;
 
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (void*)ABPerson;
 - (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (void)dictionaryRepresentation:(id*)arg1 isDirty:(BOOL*)arg2;
@@ -32,15 +35,12 @@
 - (void)_lookupNotFound;
 - (void)_lookupChanged:(id)arg1;
 - (void)_postEntryChanged;
-- (int)property;
 - (id)displayName;
 - (id)dictionaryRepresentation;
 - (int)type;
 - (id)label;
 - (id)value;
 - (int)identifier;
-- (void*)ABPerson;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
+- (int)property;
 
 @end

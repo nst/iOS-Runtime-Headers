@@ -12,9 +12,9 @@
 }
 
 
-- (id)initWithStatement:(struct sqlite3_stmt { }*)arg1;
-- (id)initWithName:(id)arg1 nameSection:(int)arg2 sortKey:(id)arg3;
 - (id)description;
 - (void)dealloc;
+- (id)initWithStatement:(struct sqlite3_stmt { }*)arg1;
+- (id)initWithName:(id)arg1 nameSection:(int)arg2 sortKey:(id)arg3;
 
 @end

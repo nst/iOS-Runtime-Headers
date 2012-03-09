@@ -15,9 +15,9 @@
 @property(readonly) SUSectionsResponse * sectionsResponse;
 
 
+- (void)dealloc;
 - (id)initWithURL:(id)arg1;
 - (void)run;
-- (void)dealloc;
 - (id)baseOperation;
 - (id)_copyLoadedItemImage:(id)arg1 returningError:(id*)arg2;
 - (id)_itemImageForSection:(id)arg1 imageKind:(id)arg2;

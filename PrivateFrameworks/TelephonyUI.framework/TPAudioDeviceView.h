@@ -16,6 +16,17 @@
 }
 
 
+- (void)dealloc;
+- (void)showTable;
+- (void)suboutTable;
+- (void)selectRow:(int)arg1;
+- (void)buttonPressed:(id)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)reloadData;
+- (void)setDelegate:(id)arg1;
 - (void)setActiveRow:(int)arg1;
 - (id)_unselectedImage;
 - (id)_selectedImage;
@@ -32,16 +43,5 @@
 - (void)_setupSurroundingTableViews;
 - (void)_setupButtons;
 - (void)_setupTable;
-- (void)setDelegate:(id)arg1;
-- (void)buttonPressed:(id)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)reloadData;
-- (void)dealloc;
-- (void)showTable;
-- (void)suboutTable;
-- (void)selectRow:(int)arg1;
 
 @end

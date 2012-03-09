@@ -14,14 +14,14 @@
 @property(retain) CoreDAVLeafItem * responseDescription;
 
 
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setOrderedResponses:(id)arg1;
 - (void)setResponseDescription:(id)arg1;
 - (id)responseDescription;
 - (id)copyParseRules;
 - (id)orderedResponses;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (void)addResponse:(id)arg1;
 - (id)responses;
 

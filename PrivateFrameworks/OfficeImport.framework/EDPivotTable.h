@@ -69,6 +69,15 @@
 
 + (id)pivotTableWithResources:(id)arg1;
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
+- (id)style;
+- (void)setStyle:(id)arg1;
+- (id)name;
+- (bool)compact;
+- (void)setCompact:(bool)arg1;
+- (bool)outline;
+- (void)setOutline:(bool)arg1;
 - (id)columnHeaderCaption;
 - (void)setColumnHeaderCaption:(id)arg1;
 - (id)rowHeaderCaption;
@@ -173,14 +182,5 @@
 - (id)rowFields;
 - (id)columnFields;
 - (id)pageFields;
-- (bool)compact;
-- (void)setCompact:(bool)arg1;
-- (bool)outline;
-- (void)setOutline:(bool)arg1;
-- (id)style;
-- (void)setStyle:(id)arg1;
-- (id)name;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

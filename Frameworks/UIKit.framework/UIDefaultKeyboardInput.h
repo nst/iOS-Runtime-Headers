@@ -45,8 +45,7 @@
 @property BOOL learnsCorrections;
 @property int shortcutConversionType;
 @property BOOL suppressReturnKeyStyling;
-@property BOOL acceptsForwardDelete;
-@property BOOL forceEnableForwardDelete;
+@property BOOL forceEnableDictation;
 @property(getter=isEditable,readonly) BOOL editable;
 @property(getter=isEditing,readonly) BOOL editing;
 @property int selectionGranularity;
@@ -56,6 +55,7 @@
 @property(readonly) UIResponder<UITextSelection> * textDocument;
 
 
+- (void)dealloc;
 - (void)setSecure:(BOOL)arg1;
 - (BOOL)isSecure;
 - (void)setupPlaceholderTextIfNeeded;
@@ -88,8 +88,8 @@
 - (unsigned short)characterBeforeCaretSelection;
 - (void)moveForward:(unsigned int)arg1;
 - (void)moveBackward:(unsigned int)arg1;
-- (id)nextUnperturbedMarsVoltasBoundaryFromPosition:(id)arg1;
-- (id)previousUnperturbedMarsVoltasBoundaryFromPosition:(id)arg1;
+- (id)nextUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
+- (id)previousUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectContainingCaretSelection;
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
 - (void)setSelectedDOMRange:(id)arg1 affinityDownstream:(BOOL)arg2;
@@ -156,6 +156,5 @@
 - (id)text;
 - (id)delegate;
 - (void)setText:(id)arg1;
-- (void)dealloc;
 
 @end

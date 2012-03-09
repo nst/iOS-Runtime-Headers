@@ -15,20 +15,22 @@
 
 + (void)initialize;
 
+- (id)description;
+- (void)dealloc;
 - (Class)responseClass;
+- (id)dictionaryRepresentation;
+- (id)metrics;
 - (BOOL)readFrom:(id)arg1;
 - (id)metricAtIndex:(unsigned int)arg1;
+- (void)clearMetrics;
 - (void)addMetric:(id)arg1;
 - (void)setMetrics:(id)arg1;
 - (BOOL)hasMetaData;
 - (void)setMetaData:(id)arg1;
+- (void)copyTo:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (unsigned int)metricsCount;
 - (id)metaData;
-- (id)dictionaryRepresentation;
-- (id)metrics;
-- (id)description;
-- (void)dealloc;
 
 @end

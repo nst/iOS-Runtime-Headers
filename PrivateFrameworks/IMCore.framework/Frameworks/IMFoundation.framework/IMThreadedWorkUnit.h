@@ -21,9 +21,8 @@
 
 - (void)setTimeout:(double)arg1;
 - (double)timeout;
-- (void)stopWatchingThread;
-- (void)startThread;
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)_setTimeoutTimer;
 - (void)_threadedDoStart;
 - (BOOL)inProgress;
@@ -36,7 +35,8 @@
 - (void)_workerThread;
 - (BOOL)done;
 - (id)delegate;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)stopWatchingThread;
+- (void)startThread;
 
 @end

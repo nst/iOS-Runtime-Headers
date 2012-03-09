@@ -36,10 +36,7 @@
 + (void)resetClassCache;
 + (id)contactImageThumbnailForMeCard;
 
-- (int)propertyType;
-- (int)identifier;
-- (void)setIdentifier:(int)arg1;
-- (id)name;
+- (void)dealloc;
 - (id)_initWithService:(id)arg1;
 - (unsigned long)textTone;
 - (void)setABRecord:(void*)arg1 withIdentifier:(int)arg2;
@@ -56,7 +53,10 @@
 - (BOOL)hasContactImage;
 - (void)setAddressBookUID:(int)arg1;
 - (id)rawAddress;
-- (void)dealloc;
+- (int)identifier;
+- (void)setIdentifier:(int)arg1;
+- (id)name;
 - (void)resetCaches;
+- (int)propertyType;
 
 @end

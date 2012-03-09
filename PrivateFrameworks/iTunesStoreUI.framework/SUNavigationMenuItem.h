@@ -15,12 +15,12 @@
 @property(readonly) NSURL * URL;
 
 
-- (id)URL;
-- (id)initWithDictionary:(id)arg1;
-- (id)title;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)URL;
+- (id)initWithDictionary:(id)arg1;
+- (id)title;
 - (id)contentRating;
 
 @end

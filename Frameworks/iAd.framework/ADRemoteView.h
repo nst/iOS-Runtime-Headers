@@ -18,11 +18,11 @@
 
 + (Class)layerClass;
 
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setUserTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })userTransform;
 - (unsigned int)remoteWindowContextId;
 - (void)setRemoteWindowContextId:(unsigned int)arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (void)didMoveToWindow;
 - (void)setUserInteractionEnabled:(BOOL)arg1;

@@ -35,9 +35,6 @@
 @property int busyLevel;
 
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBusyLevel:(int)arg1;
 - (BOOL)isInMonth;
 - (void)setIsToday:(BOOL)arg1;
@@ -54,6 +51,7 @@
 - (id)dayNumberFont;
 - (id)engravedTextColor;
 - (int)todayTextStyle;
+- (void)getDayWidth:(float*)arg1 height:(float*)arg2 x:(float*)arg3 y:(float*)arg4;
 - (float)digitHeight;
 - (float)twoDigitWidth;
 - (float)oneDigitWidth;
@@ -62,9 +60,15 @@
 - (float)heatmapFillInset;
 - (int)busyLevel;
 - (id)todayBackgroundImage;
+- (struct CGPoint { float x1; float x2; })todayBackgroundInset;
 - (id)outOfMonthBackgroundColor;
+- (void)drawNumberIntoContext:(struct CGContext { }*)arg1 atZero:(BOOL)arg2;
 - (id)inspectedBorderColor;
 - (id)inspectedBackgroundImage;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })displayedDay;
+- (void)drawBackground:(struct CGContext { }*)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

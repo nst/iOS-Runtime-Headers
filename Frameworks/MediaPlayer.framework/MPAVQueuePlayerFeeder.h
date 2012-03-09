@@ -2,17 +2,19 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableSet, MPAVItem, NSArray, MPQueuePlayer, NSMutableArray, <MPAVQueuePlayerFeederSource>;
+@class NSArray, NSMutableArray, MPAVItem, MPQueuePlayer, NSMutableSet, <MPAVQueuePlayerFeederSource>, MPDownloadManager;
 
-@interface MPAVQueuePlayerFeeder : NSObject  {
+@interface MPAVQueuePlayerFeeder : NSObject <SSDownloadManagerObserver> {
     BOOL _forceSynchronousQueueFilling;
     NSMutableArray *_items;
-    NSMutableSet *_itemsToIgnoreCurrentItemChanges;
+    MPDownloadManager *_downloadManager;
+    BOOL _fillQueueActive;
+    int _nextFillQueueToken;
+    NSMutableSet *_pausedDownloads;
     MPQueuePlayer *_player;
     struct dispatch_queue_s { } *_playerQueue;
     <MPAVQueuePlayerFeederSource> *_playlistItemSource;
-    int _nextFillQueueToken;
-    BOOL _fillQueueActive;
+    NSMutableSet *_reusableItems;
     int _desiredQueueDepth;
 }
 
@@ -22,26 +24,31 @@
 @property BOOL forceSynchronousQueueFilling;
 
 
+- (id)description;
+- (void)dealloc;
 - (int)desiredQueueDepth;
 - (void)setDesiredQueueDepth:(int)arg1;
 - (void)_removeInvalidItems:(id)arg1;
-- (id)_fillInQueueWithExtraSpace:(int)arg1;
-- (id)_fillInQueueWithExtraSpace:(int)arg1 ignoreExistingItems:(BOOL)arg2;
 - (void)_updatePlayerQueueWithRemovedItems:(id)arg1 addedItems:(id)arg2 removeCurrentItem:(BOOL)arg3;
+- (void)_markIsReusable:(BOOL)arg1 item:(id)arg2;
+- (id)_fillInQueueWithExtraSpace:(int)arg1 ignoreExistingItems:(BOOL)arg2 removeCurrentItem:(BOOL)arg3;
+- (id)_fillInQueueWithExtraSpace:(int)arg1 ignoreExistingItems:(BOOL)arg2;
+- (id)_fillInQueueWithExtraSpace:(int)arg1;
 - (void)_updateQueueDepthForRateChange;
 - (void)_removeCurrentItem;
+- (void)_pauseOrResumeDownloads:(id)arg1 currentDownloadID:(long long)arg2;
 - (void)_fillInQueue;
-- (void)_validatePlaybackQueue;
+- (id)acquireReusableItemsUsingBlock:(id)arg1;
 - (void)reloadQueueKeepingCurrentItem:(BOOL)arg1;
+- (void)cancelReusableItemsPassingTest:(id)arg1;
 - (id)initWithAVQueuePlayer:(id)arg1 itemSource:(id)arg2;
 - (BOOL)forceSynchronousQueueFilling;
 - (void)setForceSynchronousQueueFilling:(BOOL)arg1;
-- (void)invalidate;
+- (void)advanceToNextItem;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)currentItem;
 - (id)items;
-- (void)advanceToNextItem;
-- (id)description;
-- (void)dealloc;
+- (void)invalidate;
 
 @end

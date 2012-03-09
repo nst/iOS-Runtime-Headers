@@ -19,11 +19,7 @@
 + (id)_failPressedImage;
 + (id)_exclamationGlyphImage;
 
-- (id)_multiselectBackgroundColor;
-- (void)prepareForReuse;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
+- (void)dealloc;
 - (id)replacementMessageBubbleData;
 - (void)setReplacementMessageBubbleData:(id)arg1;
 - (void)_resetBalloonFrame;
@@ -38,6 +34,10 @@
 - (void)balloonViewDidTapSendAsSMS:(id)arg1;
 - (BOOL)balloonViewShouldShowSendAsSMSAction:(id)arg1;
 - (void)balloonViewDidTapBalloon:(id)arg1;
-- (void)dealloc;
+- (id)_multiselectBackgroundColor;
+- (void)prepareForReuse;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 
 @end

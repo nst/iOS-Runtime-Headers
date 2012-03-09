@@ -12,6 +12,11 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (void)endSeeking;
+- (void)beginSeekingForward;
+- (void)beginSeekingBackward;
 - (void)_postPropertyUpdateNotification;
 - (void)_handlePropertyUpdateTimer:(id)arg1;
 - (void)_clientDidCheckin;
@@ -30,10 +35,5 @@
 - (void)playPowerSong;
 - (void)pauseWorkout;
 - (void)activateWorkout;
-- (id)init;
-- (void)dealloc;
-- (void)endSeeking;
-- (void)beginSeekingForward;
-- (void)beginSeekingBackward;
 
 @end

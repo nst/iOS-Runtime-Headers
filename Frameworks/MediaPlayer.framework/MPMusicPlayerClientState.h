@@ -31,6 +31,7 @@
 @property BOOL videoPlaybackEnabled;
 
 
+- (void)dealloc;
 - (BOOL)seeking;
 - (BOOL)videoPlaybackEnabled;
 - (id)firstItem;
@@ -49,10 +50,9 @@
 - (void)setAllowsRemoteUIAccess:(BOOL)arg1;
 - (BOOL)allowsRemoteUIAccess;
 - (id)query;
-- (void)dealloc;
-- (void)setRepeatMode:(int)arg1;
-- (int)repeatMode;
 - (void)setShuffleMode:(int)arg1;
+- (void)setRepeatMode:(int)arg1;
 - (int)shuffleMode;
+- (int)repeatMode;
 
 @end

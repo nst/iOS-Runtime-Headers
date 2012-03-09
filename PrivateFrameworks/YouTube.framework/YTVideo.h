@@ -41,15 +41,28 @@
 
 }
 
++ (void)disableNotifications;
++ (void)enableNotifications;
 + (void)reset3GPlaybackStallCount;
 + (void)playbackDidStall;
 + (id)videoNotFoundError;
 + (id)unsupportedVideoError;
 + (id)videoIsProcessingError;
-+ (void)disableNotifications;
-+ (void)enableNotifications;
 
+- (BOOL)isProcessing;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
+- (id)thumbnailURL;
 - (id)dateAdded;
+- (BOOL)isPlayable;
+- (id)editURL;
+- (id)category;
+- (id)ID;
+- (id)title;
+- (id)author;
+- (id)infoURL;
 - (id)dateUpdated;
 - (id)dateAddedString;
 - (id)commentsURL;
@@ -85,19 +98,6 @@
 - (id)shortID;
 - (BOOL)isBookmarked;
 - (id)unplayable;
-- (BOOL)isProcessing;
-- (id)editURL;
-- (id)author;
 - (double)age;
-- (id)title;
-- (id)ID;
-- (BOOL)isPlayable;
-- (id)category;
-- (id)thumbnailURL;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
-- (id)infoURL;
 
 @end

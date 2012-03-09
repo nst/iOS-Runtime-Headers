@@ -41,6 +41,8 @@
 @property(setter=_setHidingDisconnect:) BOOL _hidingDisconnect;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)persistentProperties;
 - (BOOL)hasPostedSetupComplete;
 - (unsigned long long)vcCapabilities;
@@ -100,18 +102,16 @@
 - (unsigned long)myIdleTime;
 - (unsigned int)myStatus;
 - (id)serviceWithName:(id)arg1;
+- (void)accountRemoved:(id)arg1;
+- (id)allServices;
 - (id)properties;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)valueOfPersistentProperty:(id)arg1;
 - (void)account:(id)arg1 postedError:(id)arg2;
 - (void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
 - (void)property:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
 - (void)vcCapabilitiesChanged:(unsigned long long)arg1;
 - (void)addHandler:(id)arg1;
-- (void)accountRemoved:(id)arg1;
-- (id)allServices;
 
 @end

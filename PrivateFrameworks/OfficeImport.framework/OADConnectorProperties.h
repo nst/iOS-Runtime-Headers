@@ -11,10 +11,10 @@
 
 + (id)defaultProperties;
 
+- (id)init;
+- (void)dealloc;
 - (id)initWithDefaults;
 - (id)to;
 - (id)from;
-- (id)init;
-- (void)dealloc;
 
 @end

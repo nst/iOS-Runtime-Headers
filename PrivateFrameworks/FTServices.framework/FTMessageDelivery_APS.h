@@ -21,11 +21,8 @@
 
 + (id)sharedInstance;
 
-- (void)invalidate;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
-- (void)cancelMessage:(id)arg1;
-- (BOOL)sendMessage:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)_currentTimers;
 - (id)_currentAPSMessages;
 - (void)_noteMessageACKd:(id)arg1 ftMessage:(id)arg2;
@@ -55,17 +52,20 @@
 - (void)_notifyDelegateAboutError:(id)arg1 forMessage:(id)arg2;
 - (void)_dequeueIfNeeded;
 - (void)_serverBagLoaded:(id)arg1;
-- (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;
-- (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
-- (void)connection:(id)arg1 didSendOutgoingMessage:(id)arg2;
-- (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
-- (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)_updateTopics;
 - (int)maxMessageSize;
 - (BOOL)busy;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
-- (id)init;
-- (void)dealloc;
+- (void)cancelMessage:(id)arg1;
+- (BOOL)sendMessage:(id)arg1;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
+- (void)invalidate;
+- (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;
+- (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
+- (void)connection:(id)arg1 didSendOutgoingMessage:(id)arg2;
+- (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
+- (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 
 @end

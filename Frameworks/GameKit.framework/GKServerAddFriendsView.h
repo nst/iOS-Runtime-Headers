@@ -17,6 +17,7 @@
 @property(retain) UILabel * friendImportHelpLabel;
 
 
+- (void)dealloc;
 - (id)friendImportSectionHeader;
 - (id)friendImportHelpLabel;
 - (id)friendImportButton;
@@ -27,6 +28,5 @@
 - (id)theme;
 - (void)setTheme:(id)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

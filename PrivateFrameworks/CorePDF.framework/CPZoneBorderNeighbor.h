@@ -10,12 +10,12 @@
 }
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setNeighborShape:(id)arg1;
 - (void)setShapeSide:(int)arg1;
 - (id)neighborShape;
 - (int)shapeSide;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

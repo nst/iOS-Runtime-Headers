@@ -11,13 +11,13 @@
 
 + (id)defaultProperties;
 
-- (void)setFillRect:(id)arg1;
-- (BOOL)isFillRectOverridden;
-- (id)fillRect;
-- (id)initWithDefaults;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)setFillRect:(id)arg1;
+- (BOOL)isFillRectOverridden;
+- (id)fillRect;
+- (id)initWithDefaults;
 
 @end

@@ -30,6 +30,8 @@
 
 + (id)pushDictionaryForQuery:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (BOOL)purpleBuddyAccount;
 - (BOOL)shouldBadge;
 - (int)recipientKind;
@@ -48,11 +50,9 @@
 - (void)setRecipient:(id)arg1;
 - (id)recipient;
 - (void)setPurpleBuddyAccount:(BOOL)arg1;
-- (id)message;
-- (void)setMessage:(id)arg1;
 - (void)setHandle:(id)arg1;
 - (id)handle;
-- (id)description;
-- (void)dealloc;
+- (id)message;
+- (void)setMessage:(id)arg1;
 
 @end

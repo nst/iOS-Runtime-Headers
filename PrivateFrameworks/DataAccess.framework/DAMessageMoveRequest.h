@@ -18,13 +18,13 @@
 
 
 - (id)initMoveRequestWithMessage:(id)arg1 fromFolder:(id)arg2 toFolder:(id)arg3;
-- (id)message;
-- (id)context;
-- (void)setContext:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (void)dealloc;
+- (id)message;
+- (id)context;
+- (void)setContext:(id)arg1;
 - (id)toFolder;
 - (id)fromFolder;
 

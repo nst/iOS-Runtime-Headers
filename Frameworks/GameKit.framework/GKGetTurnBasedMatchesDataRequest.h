@@ -11,10 +11,10 @@
 @property(retain) NSArray * matches;
 
 
+- (void)dealloc;
 - (void)setMatches:(id)arg1;
 - (void)handleResponseFromServer:(id)arg1;
 - (id)matches;
 - (id)key;
-- (void)dealloc;
 
 @end

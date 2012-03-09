@@ -12,11 +12,11 @@
 @property(retain) NSString * language;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setLanguage:(id)arg1;
 - (void)addCaptionText:(id)arg1 startTime:(double)arg2 endTime:(double)arg3;
 - (id)timeMarkers;
 - (id)language;
-- (id)description;
-- (void)dealloc;
 
 @end

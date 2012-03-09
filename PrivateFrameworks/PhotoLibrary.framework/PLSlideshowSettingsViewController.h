@@ -34,7 +34,7 @@
 + (id)TVOutTransitions;
 + (int)_uiTransitionForTransitionKey:(id)arg1;
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
@@ -44,6 +44,9 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)mediaPickerDidCancel:(id)arg1;
+- (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
 - (id)_selectedMusic;
 - (void)_playMusicSwitchValueDidChange:(id)arg1;
 - (unsigned int)_airPlaySection;
@@ -63,8 +66,5 @@
 - (BOOL)slideshowShouldPlayMusic;
 - (id)initWithAirPlayServices:(id)arg1 selectedServiceIndex:(unsigned int)arg2;
 - (id)slideshowSettings;
-- (void)dealloc;
-- (void)mediaPickerDidCancel:(id)arg1;
-- (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
 
 @end

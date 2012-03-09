@@ -29,7 +29,14 @@
 
 + (id)tableWithResources:(id)arg1;
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
 - (void)setDisplayName:(id)arg1;
+- (id)displayName;
+- (id)tableColumns;
+- (id)style;
+- (void)setStyle:(id)arg1;
+- (id)name;
 - (unsigned int)headerRowDxfIndex;
 - (void)setHeaderRowDxfIndex:(unsigned int)arg1;
 - (unsigned int)totalsRowDxfIndex;
@@ -77,12 +84,5 @@
 - (id)initWithResources:(id)arg1;
 - (bool)showRowStripes;
 - (bool)showColumnStripes;
-- (id)displayName;
-- (id)tableColumns;
-- (id)style;
-- (void)setStyle:(id)arg1;
-- (id)name;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

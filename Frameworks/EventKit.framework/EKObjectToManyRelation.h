@@ -22,6 +22,11 @@
 
 
 - (void)addItem:(id)arg1;
+- (void)removeItem:(id)arg1;
+- (void)rollback;
+- (int)count;
+- (id)description;
+- (void)dealloc;
 - (void)setRemovedItems:(id)arg1;
 - (id)removedItems;
 - (void)setAddedItems:(id)arg1;
@@ -46,10 +51,5 @@
 - (void)reset;
 - (void)setItems:(id)arg1;
 - (id)items;
-- (void)removeItem:(id)arg1;
-- (void)rollback;
-- (int)count;
-- (id)description;
-- (void)dealloc;
 
 @end

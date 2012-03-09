@@ -21,13 +21,7 @@
 
 - (id)subject;
 - (void)setSubject:(id)arg1;
-- (id)textLabel;
-- (void)prepareForReuse;
-- (id)text;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setText:(id)arg1;
-- (void)layoutSubviews;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (float)tightenedWidth;
 - (void)setComposition:(id)arg1;
 - (void)setTextLabel:(id)arg1;
@@ -38,6 +32,12 @@
 - (id)subjectLabel;
 - (void)updateLabels;
 - (void)setMessagePart:(id)arg1;
-- (void)dealloc;
+- (id)textLabel;
+- (void)prepareForReuse;
+- (id)text;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setText:(id)arg1;
+- (void)layoutSubviews;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

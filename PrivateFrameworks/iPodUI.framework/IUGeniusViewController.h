@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)setContext:(id)arg1;
@@ -30,6 +31,5 @@
 - (void)mediaActionButtonsCell:(id)arg1 clickedButtonAtIndex:(unsigned int)arg2;
 - (BOOL)hasSearchBar;
 - (void)reloadActionRows;
-- (void)dealloc;
 
 @end

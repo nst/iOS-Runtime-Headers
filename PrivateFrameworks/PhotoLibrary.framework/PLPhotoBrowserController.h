@@ -46,6 +46,7 @@
     BOOL _scrubbingStarted;
     PLCropOverlay *_cropOverlay;
     SEL _photoAction;
+    id _photoActionInvoker;
     PLManagedAsset *_pendingPhoto;
     void *_person;
     UIWindow *_tvOutWindow;
@@ -188,13 +189,25 @@
 
 + (void)setPageControllerScrollViewClass:(Class)arg1;
 
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
-- (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
+- (void)dealloc;
 - (id)_navigationBar;
 - (struct NSObject { Class x1; }*)album;
 - (void)_fadeOut;
-- (void)setDelegate:(id)arg1;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
+- (BOOL)shouldShowActionMenu;
+- (void)displayActionMenu:(id)arg1;
+- (unsigned int)currentTileIndex;
+- (id)currentTile;
+- (id)photoScrollerTitle;
+- (void)_updateToolbar:(BOOL)arg1;
+- (void)hideOverlaysWithDuration:(float)arg1 hideStatusBar:(BOOL)arg2;
+- (void)videoView:(id)arg1 scrubberWasCreated:(id)arg2;
+- (void)setCanShowCopyCallout:(BOOL)arg1;
+- (void)smsComposeControllerDataInserted:(id)arg1;
+- (void)smsComposeControllerCancelled:(id)arg1;
+- (void)smsComposeControllerSendStarted:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
 - (id)_visibleViewController;
@@ -229,18 +242,10 @@
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (id)delegate;
-- (BOOL)shouldShowActionMenu;
-- (void)displayActionMenu:(id)arg1;
-- (unsigned int)currentTileIndex;
-- (id)currentTile;
-- (id)photoScrollerTitle;
-- (void)_updateToolbar:(BOOL)arg1;
-- (void)hideOverlaysWithDuration:(float)arg1 hideStatusBar:(BOOL)arg2;
-- (void)videoView:(id)arg1 scrubberWasCreated:(id)arg2;
-- (void)setCanShowCopyCallout:(BOOL)arg1;
-- (void)smsComposeControllerDataInserted:(id)arg1;
-- (void)smsComposeControllerCancelled:(id)arg1;
-- (void)smsComposeControllerSendStarted:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
+- (id)_navigationController;
+- (void)_dismissModalViewControllerAnimated:(BOOL)arg1;
 - (void)setIsCameraApp:(BOOL)arg1;
 - (BOOL)_didSetDataForCurrentItem;
 - (BOOL)_currentItemIsPlaying;
@@ -270,7 +275,6 @@
 - (void)imageViewWillSwitchToFullSizeImage:(id)arg1;
 - (void)setBottomBarDisabled:(BOOL)arg1;
 - (void)_showTileCache;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForCurrentImageAtDefaultScale;
 - (void)playSlideshowFromAlbumUsingOrigami:(BOOL)arg1;
 - (void)viewWillDisappear;
 - (void)viewWillAppear;
@@ -421,7 +425,6 @@
 - (double)_durationForCurrentVideo;
 - (void)setVideoEditingMode:(BOOL)arg1;
 - (void)_resetToolbarTimer:(float)arg1;
-- (id)_currentTVOutVideoView;
 - (void)_showSavingPhotoHUDForPhoto:(id)arg1;
 - (void)_updateNavigationBar;
 - (void)albumScrollerDidEndSmoothScroll;
@@ -443,6 +446,7 @@
 - (void)_performCATransition:(id)arg1;
 - (void)_dereferenceTile:(id)arg1;
 - (void)_transitionToImage:(id)arg1 fromOldIndex:(int)arg2 toNewIndex:(int)arg3 transition:(int)arg4 transitionView:(id)arg5;
+- (id)_currentTVOutVideoView;
 - (id)_currentTVOutTile;
 - (id)_albumAssetsForSlideShow:(id)arg1 startingAtIndex:(unsigned int)arg2;
 - (id)slideshowSettingsViewController:(id)arg1 transitionKeysForAirPlayService:(id)arg2;
@@ -507,6 +511,7 @@
 - (id)remakerContainerView;
 - (void)_redisplayPopovers;
 - (void)_redisplayActionSheet:(id)arg1;
+- (id)currentVideoView;
 - (void)updateOverlays;
 - (void)_didLoadImage:(id)arg1 forObjectID:(id)arg2;
 - (void)animateToIndex;
@@ -540,7 +545,7 @@
 - (BOOL)_currentItemIsVideo;
 - (void)_endSlideshow;
 - (void)_displayLastImageForSlideshowPlugin:(id)arg1;
-- (id)currentVideoView;
+- (id)_playbackVideoView;
 - (void)_cancelToolbarTimer;
 - (BOOL)setNextSlideshowState:(int)arg1;
 - (void)showOverlaysWithDuration:(float)arg1;
@@ -548,7 +553,7 @@
 - (void)_disableIdleTimer;
 - (void)_playTimerFired:(id)arg1;
 - (id)_tileForTileIndex:(unsigned int)arg1 shouldCreate:(BOOL)arg2 tileCache:(id)arg3;
-- (BOOL)_shouldShowVideoPlayOverlay;
+- (BOOL)_slideshowNotRunning;
 - (BOOL)canEditVideo;
 - (void)photoTileViewControllerCancelImageRequests:(id)arg1;
 - (void)_configureVideoViewInTile:(id)arg1;
@@ -577,9 +582,5 @@
 - (void)setPageControllerScrollView:(id)arg1;
 - (void)_capabilitiesChanged;
 - (id)photoCountFormatter;
-- (void)dealloc;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
-- (id)_navigationController;
-- (void)_dismissModalViewControllerAnimated:(BOOL)arg1;
 
 @end

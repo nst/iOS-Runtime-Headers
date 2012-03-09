@@ -9,6 +9,7 @@
 }
 
 
+- (void)dealloc;
 - (BOOL)overlap:(id)arg1 with:(id)arg2;
 - (unsigned int)categorizeGraphicsIn:(id)arg1;
 - (void)mergeQualifyingRectanglesIn:(id)arg1;
@@ -18,6 +19,5 @@
 - (id)makeZoneForStraddlersFrom:(id)arg1;
 - (void)addObjectsToStraddler:(id)arg1 from:(id)arg2;
 - (void)makeZonesIn:(id)arg1;
-- (void)dealloc;
 
 @end

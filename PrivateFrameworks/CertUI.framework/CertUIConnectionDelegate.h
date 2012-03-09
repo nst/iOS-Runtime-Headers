@@ -19,15 +19,15 @@
 
 + (id)defaultServiceForProtocol:(id)arg1;
 
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)setConnectionDisplayName:(id)arg1;
 - (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)connectionDisplayName;
 - (id)forwardingDelegate;
 - (void)setForwardingDelegate:(id)arg1;
 - (void)_continueConnectionWithResponse:(int)arg1 challenge:(id)arg2 service:(id)arg3;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (void)dealloc;
 
 @end

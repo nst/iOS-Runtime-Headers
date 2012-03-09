@@ -62,6 +62,7 @@
 + (Class)labelClass;
 + (float)defaultHeight;
 
+- (void)dealloc;
 - (int)timeLabelStyle;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })timeLabelInsets;
 - (float)detailScrubbingVerticalRange;
@@ -85,6 +86,7 @@
 - (id)timeLabelTextColorForStyle:(int)arg1;
 - (id)timeLabelFontForStyle:(int)arg1;
 - (float)timeLabelVerticalOffsetForStyle:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_thumbHitFrame;
 - (void)_setupControlsForStyle;
 - (void)cancelTracking;
 - (BOOL)detailScrubbingAvailableForCurrentDuration;
@@ -96,10 +98,6 @@
 - (void)setTimeLabelStyle:(int)arg1;
 - (BOOL)allowsDetailScrubbing;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (double)duration;
-- (void)setDuration:(double)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 value:(float)arg3;
 - (id)currentThumbImage;
@@ -111,10 +109,13 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)isTracking;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 - (id)delegate;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

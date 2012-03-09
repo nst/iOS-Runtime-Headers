@@ -23,8 +23,8 @@
 @property(retain) NSMutableDictionary * allSubtypeParameters;
 
 
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)parametersForSubtype:(int)arg1;
 - (BOOL)showsDateInFloatingLockScreenAlert;
 - (BOOL)orderSectionUsingRecencyDate;
@@ -40,7 +40,7 @@
 - (void)setAllSubtypeParameters:(id)arg1;
 - (void)setDefaultSubtypeParameters:(id)arg1;
 - (void)setMessageNumberOfLines:(unsigned int)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

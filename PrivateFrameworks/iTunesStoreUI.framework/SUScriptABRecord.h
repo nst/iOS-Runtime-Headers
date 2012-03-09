@@ -17,20 +17,20 @@
 @property(readonly) unsigned int recordType;
 @property(readonly) SUScriptABRecord * source;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 + (id)_checkInImagePoolRecord:(id)arg1;
 + (void)_checkOutImagePoolRecord:(id)arg1;
 
-- (int)recordID;
-- (id)compositeName;
-- (id)attributeKeys;
-- (id)source;
-- (id)valueForProperty:(int)arg1;
-- (void*)record;
 - (id)init;
 - (void)dealloc;
+- (int)recordID;
+- (id)compositeName;
+- (void*)record;
+- (id)source;
+- (id)valueForProperty:(int)arg1;
+- (id)attributeKeys;
 - (id)members;
 - (id)linkedPeople;
 - (id)hasImageData;

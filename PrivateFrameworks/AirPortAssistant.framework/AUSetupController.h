@@ -24,7 +24,8 @@
 
 + (id)setupController;
 
-- (BOOL)isMonitoring;
+- (id)init;
+- (void)dealloc;
 - (id)targetBaseInfoDict;
 - (void)handleSetupComplete;
 - (id)autoGuessSetupRecommendation;
@@ -72,7 +73,6 @@
 - (id)lastInstrumentation;
 - (id)context;
 - (void)setContext:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (BOOL)isMonitoring;
 
 @end

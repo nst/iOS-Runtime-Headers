@@ -11,6 +11,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setTextBodyProperties:(id)arg1;
 - (id)textBodyProperties;
 - (void)setShapeProperties:(id)arg1;
@@ -18,7 +20,5 @@
 - (id)initWithDefaults;
 - (id)textListStyle;
 - (id)shapeProperties;
-- (id)init;
-- (void)dealloc;
 
 @end

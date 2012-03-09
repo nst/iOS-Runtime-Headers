@@ -14,8 +14,8 @@
 - (BOOL)removeActivityTarget:(id)arg1;
 - (id)primaryTarget;
 - (void)setPrimaryTarget:(id)arg1;
+- (void)dealloc;
 - (id)displayName;
 - (id)allTargets;
-- (void)dealloc;
 
 @end

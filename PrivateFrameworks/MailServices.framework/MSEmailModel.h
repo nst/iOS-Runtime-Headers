@@ -26,19 +26,19 @@
 - (id)cc;
 - (id)subject;
 - (void)setSubject:(id)arg1;
-- (id)reference;
-- (void)setReference:(id)arg1;
-- (id)to;
-- (void)setTo:(id)arg1;
+- (void)dealloc;
 - (void)setBcc:(id)arg1;
 - (id)bcc;
-- (void)setBody:(id)arg1;
 - (int)type;
 - (id)body;
 - (void)setType:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
+- (void)setBody:(id)arg1;
+- (id)reference;
+- (void)setReference:(id)arg1;
+- (id)to;
+- (void)setTo:(id)arg1;
 - (void)setCc:(id)arg1;
 
 @end

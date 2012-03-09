@@ -9,10 +9,10 @@
 }
 
 
+- (void)dealloc;
 - (void)writeOpstat:(long*)arg1 tracePoint:(long)arg2 filter:(int)arg3;
 - (void)writeHeader;
 - (id)initWithFilename:(id)arg1;
 - (void)updateOpstat:(long*)arg1 isStarting:(bool)arg2;
-- (void)dealloc;
 
 @end

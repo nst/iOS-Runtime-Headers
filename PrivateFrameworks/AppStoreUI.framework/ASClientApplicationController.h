@@ -11,6 +11,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)_cancelDownloadingIconOnHomeScreenWithDisplayID:(id)arg1;
 - (BOOL)_cancelDownloadingIconOnHomeScreenWithDownload:(id)arg1;
 - (BOOL)_cancelDownloadingIconOnHomeScreenWithPurchase:(id)arg1;
@@ -18,9 +20,6 @@
 - (id)_startDownloadManager;
 - (void)_stopDownloadManager;
 - (void)_cancelGeniusStatisticsOperation;
-- (id)init;
-- (void)dealloc;
-- (void)becomeActive;
 - (BOOL)displayClientURL:(id)arg1;
 - (BOOL)libraryContainsItemIdentifier:(unsigned long long)arg1;
 - (BOOL)wasLaunchedFromLibrary;
@@ -34,6 +33,7 @@
 - (BOOL)reportAProblemForItemIdentifier:(unsigned long long)arg1;
 - (id)tabBarController:(id)arg1 viewControllerForContext:(id)arg2;
 - (id)tabBarController:(id)arg1 rootViewControllerForSection:(id)arg2;
+- (void)becomeActive;
 - (void)resignActive;
 
 @end

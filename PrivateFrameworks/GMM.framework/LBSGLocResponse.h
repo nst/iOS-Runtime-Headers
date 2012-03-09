@@ -16,8 +16,13 @@
 @property(retain) NSString * platformKey;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setStatus:(int)arg1;
+- (int)status;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)replyElements;
 - (id)replyElementsAtIndex:(unsigned int)arg1;
 - (unsigned int)replyElementsCount;
@@ -26,10 +31,5 @@
 - (id)platformKey;
 - (BOOL)hasPlatformKey;
 - (void)setPlatformKey:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (int)status;
-- (id)description;
-- (void)dealloc;
 
 @end

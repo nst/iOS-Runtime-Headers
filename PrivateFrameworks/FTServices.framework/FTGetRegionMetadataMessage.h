@@ -14,9 +14,9 @@
 
 
 - (id)messageBody;
-- (int)command;
-- (void)setLanguage:(id)arg1;
-- (id)language;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setResponseRegionInformation:(id)arg1;
 - (id)responseRegionInformation;
 - (void)handleResponseDictionary:(id)arg1;
@@ -27,9 +27,9 @@
 - (BOOL)wantsCompressedBody;
 - (id)requiredKeys;
 - (BOOL)wantsBinaryPush;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setLanguage:(id)arg1;
+- (id)language;
+- (int)command;
 - (id)bagKey;
 
 @end

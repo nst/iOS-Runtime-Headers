@@ -49,6 +49,7 @@
 
 + (id)defaultFont;
 
+- (void)dealloc;
 - (unsigned int)_rightFlexibleSpaceCount;
 - (unsigned int)_leftFlexibleSpaceCount;
 - (id)_rightItemSpaceList;
@@ -157,7 +158,6 @@
 - (void)setTitle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (void)resetAllValues;
 - (void)mergeValuesFromItem:(id)arg1;
 

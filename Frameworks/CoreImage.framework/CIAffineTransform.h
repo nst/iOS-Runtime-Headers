@@ -14,13 +14,13 @@
 
 + (id)customAttributes;
 
+- (id)_initFromProperties:(id)arg1;
+- (id)_outputProperties;
 - (id)inputTransform;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
 - (void)setInputTransform:(id)arg1;
 - (id)outputImage;
 - (void)setDefaults;
-- (id)_initFromProperties:(id)arg1;
-- (id)_outputProperties;
 
 @end

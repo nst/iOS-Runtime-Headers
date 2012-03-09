@@ -35,30 +35,10 @@
 
 + (void)addQuoteLevelMenuToCalloutBar;
 
+- (void)dealloc;
 - (void)setLoading:(BOOL)arg1;
-- (void)invalidate;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDirty;
-- (void)setDirty:(BOOL)arg1;
-- (float)contentWidth;
-- (void)webView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
-- (void)webView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
-- (id)webView:(id)arg1 identifierForInitialRequest:(id)arg2 fromDataSource:(id)arg3;
-- (id)webView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
-- (void)webView:(id)arg1 didFirstVisuallyNonEmptyLayoutInFrame:(id)arg2;
-- (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
-- (void)setSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)ensureSelection;
-- (BOOL)webView:(id)arg1 shouldDeleteDOMRange:(id)arg2;
-- (BOOL)webView:(id)arg1 shouldInsertText:(id)arg2 replacingDOMRange:(id)arg3 givenAction:(int)arg4;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })selectedRange;
-- (void)webViewDidChange:(id)arg1;
-- (BOOL)endEditing:(BOOL)arg1;
-- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1;
-- (void)deferredBecomeFirstResponder;
-- (BOOL)becomeFirstResponder;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMarkupString:(id)arg1;
+- (BOOL)isDirty;
 - (void)setLayoutInterval:(int)arg1;
 - (void)scaleImagesToScale:(int)arg1 withAttachmentStore:(id)arg2;
 - (void)unscaleImages;
@@ -107,6 +87,26 @@
 - (void)setMailComposeViewDelegate:(id)arg1;
 - (void)setPinHeight:(float)arg1;
 - (void)layoutWithMinimumSize;
-- (void)dealloc;
+- (float)contentWidth;
+- (void)webView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
+- (void)webView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
+- (id)webView:(id)arg1 identifierForInitialRequest:(id)arg2 fromDataSource:(id)arg3;
+- (id)webView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
+- (void)webView:(id)arg1 didFirstVisuallyNonEmptyLayoutInFrame:(id)arg2;
+- (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
+- (void)setSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)ensureSelection;
+- (BOOL)webView:(id)arg1 shouldDeleteDOMRange:(id)arg2;
+- (BOOL)webView:(id)arg1 shouldInsertText:(id)arg2 replacingDOMRange:(id)arg3 givenAction:(int)arg4;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })selectedRange;
+- (void)webViewDidChange:(id)arg1;
+- (BOOL)endEditing:(BOOL)arg1;
+- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1;
+- (void)deferredBecomeFirstResponder;
+- (BOOL)becomeFirstResponder;
+- (void)invalidate;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDirty:(BOOL)arg1;
 
 @end

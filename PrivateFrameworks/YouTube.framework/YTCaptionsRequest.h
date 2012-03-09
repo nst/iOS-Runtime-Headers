@@ -13,6 +13,11 @@
 }
 
 
+- (int)parseData:(id)arg1;
+- (void)dealloc;
+- (BOOL)isLoading;
+- (void)loadRequest:(id)arg1;
+- (id)video;
 - (id)initRequestingCaptionsForVideo:(id)arg1 withDelegate:(id)arg2;
 - (void)_requestCaptionsFromURL:(id)arg1;
 - (void)_didAuthenticate:(id)arg1;
@@ -20,10 +25,5 @@
 - (void)_listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
-- (id)video;
-- (int)parseData:(id)arg1;
-- (BOOL)isLoading;
-- (void)loadRequest:(id)arg1;
-- (void)dealloc;
 
 @end

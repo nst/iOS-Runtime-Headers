@@ -31,6 +31,8 @@
 @property BOOL mustShowStatusWindow;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)bannerWindow;
 - (void)setMustShowStatusWindow:(BOOL)arg1;
 - (BOOL)mustShowStatusWindow;
@@ -60,10 +62,8 @@
 - (void)setSupportsPortrait:(BOOL)arg1;
 - (void)clearBannerView;
 - (void)endTransitionOut;
+- (void)setStatusBarHidden:(BOOL)arg1;
 - (void)setBannerView:(id)arg1;
 - (id)bannerView;
-- (void)setStatusBarHidden:(BOOL)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

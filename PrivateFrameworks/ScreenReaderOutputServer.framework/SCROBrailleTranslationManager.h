@@ -16,33 +16,33 @@
     BOOL _auxTableSupportsEightDotBraille;
 }
 
-@property(readonly) BOOL auxiliaryTableSupportsEightDotBraille;
-@property(readonly) BOOL auxiliaryTableSupportsContractedBraille;
-@property(readonly) BOOL primaryTableSupportsEightDotBraille;
 @property(readonly) BOOL primaryTableSupportsContractedBraille;
+@property(readonly) BOOL primaryTableSupportsEightDotBraille;
+@property(readonly) BOOL auxiliaryTableSupportsContractedBraille;
+@property(readonly) BOOL auxiliaryTableSupportsEightDotBraille;
 
-+ (id)sharedManager;
-+ (void)initialize;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
++ (id)sharedManager;
 
-- (BOOL)auxiliaryTableSupportsEightDotBraille;
-- (BOOL)auxiliaryTableSupportsContractedBraille;
-- (id)printBrailleForText:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
-- (id)textForPrintBraille:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
-- (id)primaryTableIdentifier;
-- (void)setPrimaryTranslationTableWithTableIdentifier:(id)arg1;
-- (id)textForPrintBraille:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
-- (BOOL)primaryTableSupportsEightDotBraille;
-- (BOOL)primaryTableSupportsContractedBraille;
-- (void)setAuxiliaryTranslationTableWithTableIdentifier:(id)arg1;
-- (id)auxiliaryTableIdentifier;
-- (id)printBrailleForText:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
 - (unsigned int)retainCount;
 - (id)retain;
+- (void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)autorelease;
 - (id)init;
-- (void)release;
 - (void)dealloc;
+- (BOOL)auxiliaryTableSupportsEightDotBraille;
+- (BOOL)auxiliaryTableSupportsContractedBraille;
+- (id)textForPrintBraille:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
+- (id)printBrailleForText:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
+- (void)setPrimaryTranslationTableWithTableIdentifier:(id)arg1;
+- (id)primaryTableIdentifier;
+- (BOOL)primaryTableSupportsContractedBraille;
+- (BOOL)primaryTableSupportsEightDotBraille;
+- (id)textForPrintBraille:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
+- (id)printBrailleForText:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
+- (id)auxiliaryTableIdentifier;
+- (void)setAuxiliaryTranslationTableWithTableIdentifier:(id)arg1;
 
 @end

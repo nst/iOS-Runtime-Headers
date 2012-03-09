@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSString, NSMutableDictionary;
+@class NSString;
 
 @interface MSMMCSProtocol : NSObject <MSStorageProtocol> {
     NSString *_personID;
     NSString *_MMCSDirPath;
     struct __MMCSEngine { } *_engine;
     NSString *_engineDirPath;
-    NSString *_manifestPath;
-    NSMutableDictionary *_manifest;
 }
 
 @property(readonly) NSString * personID;
@@ -18,7 +16,8 @@
 
 + (id)computeItemIDForAsset:(id)arg1;
 
-- (void)abort;
+- (void)dealloc;
+- (id)personID;
 - (struct __MMCSEngine { }*)engine;
 - (void)_requestCompleted;
 - (void)_putItemDone:(unsigned long long)arg1 error:(id)arg2;
@@ -29,7 +28,6 @@
 - (void)didFinishUsingAssets:(id)arg1;
 - (void)deactivateRemoveAllFiles:(BOOL)arg1;
 - (void)deactivate;
-- (id)personID;
-- (void)dealloc;
+- (void)abort;
 
 @end

@@ -16,13 +16,13 @@
 }
 
 
+- (void)main;
+- (void)dealloc;
+- (void)completeOperation;
+- (id)initForOpeningResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4 delegate:(id)arg5;
 - (BOOL)isFinished;
 - (BOOL)isConcurrent;
 - (void)start;
 - (BOOL)isExecuting;
-- (void)completeOperation;
-- (id)initForOpeningResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4 delegate:(id)arg5;
-- (void)main;
-- (void)dealloc;
 
 @end

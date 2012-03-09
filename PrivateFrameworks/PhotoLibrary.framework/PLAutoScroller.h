@@ -18,6 +18,8 @@
 @property(readonly) float thresholdDistance;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setTargetPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })targetPoint;
 - (void)_stopAutoscrollTimer;
@@ -25,7 +27,5 @@
 - (void)_updateAutoscrollTimer:(id)arg1;
 - (id)initWithTargetScrollView:(id)arg1 thresholdDistance:(float)arg2;
 - (void)stopAndInvalidate;
-- (id)init;
-- (void)dealloc;
 
 @end

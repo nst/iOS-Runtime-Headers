@@ -116,14 +116,27 @@
 @property(readonly) BOOL hasOkButtonForPurchaseDialog;
 @property(retain) NSString * okButtonForPurchaseDialog;
 
-+ (id)adDataForLocalAd:(id)arg1 creative:(id)arg2 urlRoot:(id)arg3;
 + (void)initialize;
++ (id)adDataForLocalAd:(id)arg1 creative:(id)arg2 urlRoot:(id)arg3;
 
 - (id)humanReadableName;
+- (id)description;
+- (int)action;
+- (void)dealloc;
 - (void)setExpirationDate:(unsigned long long)arg1;
 - (void)setParameters:(id)arg1;
 - (id)parameters;
 - (unsigned long long)expirationDate;
+- (BOOL)hasAction;
+- (void)setHasAction:(BOOL)arg1;
+- (void)setUniqueIdentifier:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)uniqueIdentifier;
+- (void)setAction:(int)arg1;
+- (unsigned int)backgroundColor;
+- (void)setBackgroundColor:(unsigned int)arg1;
+- (BOOL)scrolling;
+- (void)setScrolling:(BOOL)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasBackgroundColor:(BOOL)arg1;
 - (void)setHasScrolling:(BOOL)arg1;
@@ -137,9 +150,11 @@
 - (void)setHasTransitionType:(BOOL)arg1;
 - (void)setHasExpirationDate:(BOOL)arg1;
 - (id)parametersAtIndex:(unsigned int)arg1;
+- (void)clearParameters;
 - (unsigned int)parametersCount;
 - (BOOL)hasStoryboardURL;
 - (id)trackingURLAtIndex:(unsigned int)arg1;
+- (void)clearTrackingURLs;
 - (BOOL)hasBannerWebArchiveURL;
 - (BOOL)hasBannerURL;
 - (void)addParameters:(id)arg1;
@@ -156,6 +171,7 @@
 - (void)setQToken:(id)arg1;
 - (void)setTrackingURLSubstitutionParameter:(id)arg1;
 - (void)setTrackingURLs:(id)arg1;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setAccessibilityDescription:(id)arg1;
 - (void)setBannerWebArchiveURL:(id)arg1;
@@ -225,18 +241,5 @@
 - (id)titleForExitDialog;
 - (BOOL)hasTitleForExitDialog;
 - (BOOL)suppressesPermissionToExitDialog;
-- (BOOL)scrolling;
-- (void)setScrolling:(BOOL)arg1;
-- (BOOL)hasAction;
-- (void)setHasAction:(BOOL)arg1;
-- (void)setUniqueIdentifier:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)uniqueIdentifier;
-- (void)setAction:(int)arg1;
-- (unsigned int)backgroundColor;
-- (void)setBackgroundColor:(unsigned int)arg1;
-- (id)description;
-- (int)action;
-- (void)dealloc;
 
 @end

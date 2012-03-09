@@ -19,6 +19,7 @@
 + (id)currentCollation;
 + (id)collationWithDictionary:(id)arg1;
 
+- (void)dealloc;
 - (id)sortedArrayFromArray:(id)arg1 collationStringSelector:(SEL)arg2;
 - (int)sectionForObject:(id)arg1 collationStringSelector:(SEL)arg2;
 - (int)sectionForSectionIndexTitleAtIndex:(int)arg1;
@@ -26,6 +27,5 @@
 - (id)sectionTitles;
 - (id)transformedCollationStringForString:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (void)dealloc;
 
 @end

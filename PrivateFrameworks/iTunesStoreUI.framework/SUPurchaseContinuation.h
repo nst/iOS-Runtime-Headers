@@ -9,9 +9,9 @@
 @property(readonly) id purchase;
 
 
-- (void)start;
 - (void)cancel;
 - (void)dealloc;
+- (void)start;
 - (id)initWithPurchase:(id)arg1;
 - (id)purchase;
 

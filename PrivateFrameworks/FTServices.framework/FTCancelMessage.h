@@ -14,13 +14,13 @@
 
 
 - (id)messageBody;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)requiredKeys;
 - (void)setReason:(id)arg1;
 - (id)peers;
 - (void)setPeers:(id)arg1;
-- (id)reason;
-- (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)bagKey;
+- (id)reason;
 
 @end

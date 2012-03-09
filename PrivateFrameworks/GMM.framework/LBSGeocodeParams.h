@@ -27,7 +27,16 @@
 @property int addressLinesLimit;
 
 
+- (id)description;
+- (void)dealloc;
+- (BOOL)hasLocation;
+- (void)setBoundingBox:(id)arg1;
+- (id)boundingBox;
+- (id)dictionaryRepresentation;
+- (id)location;
+- (void)setLocation:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasAddressLinesLimit:(BOOL)arg1;
 - (BOOL)hasAddressLinesLimit;
 - (BOOL)includeBoundingBoxes;
@@ -41,14 +50,5 @@
 - (void)setIncludeBoundingBoxes:(BOOL)arg1;
 - (void)setNumFeatureLimit:(int)arg1;
 - (void)setResultLanguage:(id)arg1;
-- (BOOL)hasLocation;
-- (void)writeTo:(id)arg1;
-- (void)setLocation:(id)arg1;
-- (void)setBoundingBox:(id)arg1;
-- (id)boundingBox;
-- (id)dictionaryRepresentation;
-- (id)location;
-- (id)description;
-- (void)dealloc;
 
 @end

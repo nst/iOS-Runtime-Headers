@@ -175,7 +175,6 @@
 + (id)defaultStyleProvider;
 + (id)defaultStyleProviderForStyle:(int)arg1;
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (struct __CFDictionary { }*)newBackgroundViewsForChameleonCell;
 - (int)membersSearchResultAccessoryType;
 - (int)membersSelectionStyle;
@@ -278,6 +277,8 @@
 - (id)editorViewLargeFont;
 - (float)personEditorFieldVerticalInset;
 - (void)setIndicatesFaceTimeHistory:(BOOL)arg1 onActionButton:(id)arg2;
+- (id)cardDeleteButtonImage;
+- (id)cardDeleteButtonImagePressed;
 - (id)newCardActionButton;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardDeleteButtonInsets;
 - (float)cardDeleteButtonHeight;
@@ -437,5 +438,6 @@
 - (int)peoplePickerBarStyle;
 - (BOOL)membersSearchBarScrolls;
 - (BOOL)searchIsAlwaysActive;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

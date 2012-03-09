@@ -11,25 +11,25 @@
 }
 
 
-- (id)locale;
-- (id)group;
 - (id)propertyList;
-- (id)initWithAssetTrack:(id)arg1 group:(id)arg2;
-- (id)initWithAssetTrack:(id)arg1 group:(id)arg2 displaysNonForcedSubtitles:(BOOL)arg3;
-- (id)_ancillaryDescription;
-- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
-- (id)mediaSubTypes;
-- (id)track;
-- (BOOL)displaysNonForcedSubtitles;
-- (id)mediaType;
-- (BOOL)hasMediaCharacteristic:(id)arg1;
-- (int)trackID;
-- (id)commonMetadata;
-- (id)availableMetadataFormats;
-- (id)metadataForFormat:(id)arg1;
-- (BOOL)isPlayable;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
+- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
+- (id)mediaSubTypes;
+- (id)_ancillaryDescription;
+- (id)initWithAssetTrack:(id)arg1 group:(id)arg2 displaysNonForcedSubtitles:(BOOL)arg3;
+- (id)initWithAssetTrack:(id)arg1 group:(id)arg2;
+- (id)track;
+- (BOOL)displaysNonForcedSubtitles;
+- (BOOL)isPlayable;
+- (id)metadataForFormat:(id)arg1;
+- (id)availableMetadataFormats;
+- (id)commonMetadata;
+- (int)trackID;
+- (BOOL)hasMediaCharacteristic:(id)arg1;
+- (id)locale;
+- (id)group;
+- (id)mediaType;
 
 @end

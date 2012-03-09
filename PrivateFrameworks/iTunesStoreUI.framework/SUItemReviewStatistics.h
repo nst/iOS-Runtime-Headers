@@ -19,11 +19,11 @@
 @property(copy) NSString * numberOfUserReviewsString;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (float)averageUserRating;
 - (int)numberOfUserRatings;
 - (id)initWithDictionary:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setNumberOfUserReviewsString:(id)arg1;
 - (id)numberOfUserReviewsString;
 - (void)setNumberOfUserReviews:(int)arg1;

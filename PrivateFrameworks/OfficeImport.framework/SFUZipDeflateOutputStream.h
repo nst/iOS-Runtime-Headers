@@ -31,6 +31,9 @@
 }
 
 
+- (void)dealloc;
+- (void)close;
+- (long long)offset;
 - (id)initWithOutputStream:(id)arg1;
 - (void)seekToOffset:(long long)arg1 whence:(int)arg2;
 - (BOOL)canCreateInputStream;
@@ -38,8 +41,5 @@
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 - (id)closeLocalStream;
 - (BOOL)canSeek;
-- (void)close;
-- (long long)offset;
-- (void)dealloc;
 
 @end

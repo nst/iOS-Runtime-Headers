@@ -13,6 +13,8 @@
 @property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)hrefsAsStrings;
 - (id)hrefsAsOriginalURLs;
 - (void)setUnauthenticated:(id)arg1;
@@ -22,7 +24,5 @@
 - (id)hrefs;
 - (id)unauthenticated;
 - (id)hrefsAsFullURLs;
-- (id)description;
-- (void)dealloc;
 
 @end

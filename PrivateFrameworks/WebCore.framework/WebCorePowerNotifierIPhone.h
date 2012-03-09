@@ -6,7 +6,7 @@
 }
 
 
-- (void)didWake;
 - (id)init;
+- (void)didWake;
 
 @end

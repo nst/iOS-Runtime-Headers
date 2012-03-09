@@ -11,9 +11,9 @@
 }
 
 
+- (void)dealloc;
 - (id)initInView:(id)arg1 title:(id)arg2;
 - (void)setMessage:(id)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

@@ -23,6 +23,8 @@
 
 + (id)sharedInstance;
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)isHandlingSimpleRemoteEvent;
 - (void)_switchToPlaylistContextForSpecifier:(id)arg1;
 - (BOOL)wantsSplashView;
@@ -56,7 +58,5 @@
 - (BOOL)isPlayingSingleMovie;
 - (BOOL)_setupMusicSoundController;
 - (BOOL)handleChangeTrackEvent:(int)arg1 deltaType:(int)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

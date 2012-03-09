@@ -2,35 +2,43 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString, NSDictionary;
+@class PFUbiquityKnowledgeVector, NSString, NSDictionary, PFUbiquityLocation;
 
 @interface PFUbiquityBaselineMetadata : NSObject <NSCoding> {
     NSString *_storeName;
     NSString *_authorPeerID;
     NSString *_modelVersionHash;
-    NSDictionary *_peerStates;
+    PFUbiquityLocation *_rootLocation;
+    PFUbiquityKnowledgeVector *_pKV;
+    PFUbiquityKnowledgeVector *_kv;
     NSDictionary *_peerRanges;
 }
 
 @property(readonly) NSDictionary * peerRanges;
-@property(readonly) NSDictionary * peerStates;
+@property(readonly) PFUbiquityKnowledgeVector * knowledgeVector;
+@property(readonly) PFUbiquityKnowledgeVector * previousKnowledgeVector;
+@property(readonly) PFUbiquityLocation * rootLocation;
 @property(readonly) NSString * modelVersionHash;
 @property(readonly) NSString * authorPeerID;
 @property(readonly) NSString * storeName;
 
 
-- (void)_migrateToModelVersionHash:(id)arg1;
-- (id)authorPeerID;
-- (id)initWithStoreMetadata:(id)arg1 forLocalPeerID:(id)arg2;
-- (id)peerRanges;
-- (id)modelVersionHash;
-- (id)storeName;
-- (id)peerStates;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setPreviousKnowledgeVectorFromCurrentMetadata:(id)arg1;
+- (void)_migrateToModelVersionHash:(id)arg1;
+- (id)authorPeerID;
+- (id)previousKnowledgeVector;
+- (id)rootLocation;
+- (id)initWithLocalPeerID:(id)arg1 storeName:(id)arg2 modelVersionHash:(id)arg3 andUbiquityRootLocation:(id)arg4;
+- (BOOL)gatherMetadataWithStoreMetadata:(id)arg1 andError:(id*)arg2;
+- (id)peerRanges;
+- (id)storeName;
+- (id)knowledgeVector;
+- (id)modelVersionHash;
 
 @end

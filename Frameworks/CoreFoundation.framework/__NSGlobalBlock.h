@@ -6,12 +6,12 @@
 }
 
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (unsigned int)retainCount;
 - (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (oneway void)release;
 - (id)copy;
+- (oneway void)release;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 
 @end

@@ -22,13 +22,8 @@
 @property(copy) NSArray * buttons;
 
 
+- (void)dealloc;
 - (void)setButtons:(id)arg1;
-- (id)buttons;
-- (void)setEditing:(BOOL)arg1;
-- (BOOL)editing;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSignedLabelText:(id)arg1;
 - (id)signedLabelText;
 - (id)secureLabelText;
@@ -40,7 +35,12 @@
 - (void)_insert:(BOOL)arg1 subview:(id)arg2;
 - (void)setSecureLabelText:(id)arg1;
 - (void)setWarningLabelText:(id)arg1;
-- (void)dealloc;
+- (id)buttons;
+- (void)setEditing:(BOOL)arg1;
+- (BOOL)editing;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setExplanationText:(id)arg1;
 - (id)explanationText;
 

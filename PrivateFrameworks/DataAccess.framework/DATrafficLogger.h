@@ -10,9 +10,9 @@
 
 + (BOOL)enabled;
 
-- (id)initWithFilename:(id)arg1;
-- (void)_ensureCustomLogFile;
 - (void)dealloc;
+- (void)_ensureCustomLogFile;
+- (id)initWithFilename:(id)arg1;
 - (void)logSnippet:(id)arg1;
 
 @end

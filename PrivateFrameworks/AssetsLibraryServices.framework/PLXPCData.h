@@ -7,12 +7,12 @@
 }
 
 
-- (id)initWithXPCData:(void*)arg1;
-- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
-- (const void*)bytes;
 - (id)debugDescription;
 - (unsigned int)length;
 - (void)dealloc;
+- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
+- (const void*)bytes;
+- (id)initWithXPCData:(void*)arg1;
 
 @end

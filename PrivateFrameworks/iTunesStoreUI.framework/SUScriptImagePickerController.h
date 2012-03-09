@@ -35,11 +35,11 @@
 @property(readonly) id sourceTypePhotoLibrary;
 @property(readonly) id sourceTypeSavedPhotosAlbum;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
+- (void)dealloc;
 - (id)mediaTypes;
 - (void)setMediaTypes:(id)arg1;
 - (void)setSourceType:(id)arg1;
@@ -51,7 +51,7 @@
 - (id)sourceType;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
-- (void)dealloc;
+- (id)attributeKeys;
 - (BOOL)_sendDidPickWithInfo:(id)arg1;
 - (BOOL)_sendCancel;
 - (id)sourceTypeSavedPhotosAlbum;

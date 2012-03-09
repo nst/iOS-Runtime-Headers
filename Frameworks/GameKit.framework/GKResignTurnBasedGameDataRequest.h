@@ -13,12 +13,12 @@
 @property int outcome;
 
 
+- (void)dealloc;
 - (int)outcome;
 - (void)setOutcome:(int)arg1;
 - (id)match;
 - (void)setMatch:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

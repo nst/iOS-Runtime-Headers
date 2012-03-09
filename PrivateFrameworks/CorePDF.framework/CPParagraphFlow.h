@@ -29,8 +29,8 @@
 @property(retain) CPParagraph * paragraph;
 
 
-- (id)paragraph;
-- (id)initWithParagraph:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)belowTwoSides:(unsigned int)arg1;
 - (void)removeFromBelow:(id)arg1;
 - (void)removeFromAbove:(id)arg1;
@@ -74,7 +74,7 @@
 - (float)area;
 - (int)rightOrder;
 - (int)leftOrder;
-- (id)description;
-- (void)dealloc;
+- (id)paragraph;
+- (id)initWithParagraph:(id)arg1;
 
 @end

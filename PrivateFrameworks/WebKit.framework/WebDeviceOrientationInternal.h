@@ -9,8 +9,8 @@
 }
 
 
-- (void).cxx_destruct;
-- (id).cxx_construct;
 - (id)initWithCoreDeviceOrientation:(struct PassRefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x1; })arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 
 @end

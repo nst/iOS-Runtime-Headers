@@ -14,6 +14,8 @@
 
 + (void)addNonCollapsableSpanAt:(id)arg1 withState:(id)arg2;
 
+- (void)dealloc;
+- (id)initWithText:(id)arg1;
 - (id)initWithWDCharacterRun:(id)arg1 parent:(id)arg2;
 - (void)map1At:(id)arg1 withState:(id)arg2;
 - (id)createCharacterStyle;
@@ -25,7 +27,5 @@
 - (int)defaultTabWidth;
 - (id)baseStyle;
 - (BOOL)isDeleted;
-- (id)initWithText:(id)arg1;
-- (void)dealloc;
 
 @end

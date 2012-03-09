@@ -36,27 +36,32 @@
 @property BOOL allowITunes;
 
 
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
-- (BOOL)allowITunes;
 - (void)setHasAllowITunes:(BOOL)arg1;
+- (void)setHasAllowInstallApps:(BOOL)arg1;
+- (void)setHasTvshowsRank:(BOOL)arg1;
+- (void)setHasMoviesRank:(BOOL)arg1;
+- (void)setHasAppsRank:(BOOL)arg1;
+- (void)setHasDenyExplicit:(BOOL)arg1;
+- (BOOL)allowITunes;
 - (BOOL)hasAllowITunes;
 - (BOOL)allowInstallApps;
-- (void)setHasAllowInstallApps:(BOOL)arg1;
 - (BOOL)hasAllowInstallApps;
 - (int)tvshowsRank;
-- (void)setHasTvshowsRank:(BOOL)arg1;
 - (BOOL)hasTvshowsRank;
 - (int)moviesRank;
-- (void)setHasMoviesRank:(BOOL)arg1;
 - (BOOL)hasMoviesRank;
 - (int)appsRank;
-- (void)setHasAppsRank:(BOOL)arg1;
 - (BOOL)hasAppsRank;
-- (id)countryCode;
-- (BOOL)denyExplicit;
-- (void)setHasDenyExplicit:(BOOL)arg1;
-- (BOOL)hasDenyExplicit;
 - (BOOL)hasCountryCode;
+- (BOOL)denyExplicit;
+- (BOOL)hasDenyExplicit;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setAllowITunes:(BOOL)arg1;
 - (void)setAllowInstallApps:(BOOL)arg1;
@@ -64,9 +69,5 @@
 - (void)setTvshowsRank:(int)arg1;
 - (void)setMoviesRank:(int)arg1;
 - (void)setDenyExplicit:(BOOL)arg1;
-- (id)dictionaryRepresentation;
-- (void)setCountryCode:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

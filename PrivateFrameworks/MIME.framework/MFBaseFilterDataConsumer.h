@@ -16,12 +16,12 @@
 + (id)filterWithConsumer:(id)arg1;
 
 - (id)initWithConsumer:(id)arg1;
+- (void)dealloc;
 - (id)consumers;
 - (BOOL)isSerialAppend;
 - (void)setSerialAppend:(BOOL)arg1;
 - (id)initWithConsumers:(id)arg1;
 - (int)appendData:(id)arg1;
 - (void)done;
-- (void)dealloc;
 
 @end

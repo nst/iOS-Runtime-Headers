@@ -14,12 +14,11 @@
 @property(readonly) NSNumber * handle;
 
 
-- (void)pair;
-- (id)handle;
 - (BOOL)isEqual:(id)arg1;
 - (id)retain;
 - (oneway void)release;
 - (void)dealloc;
+- (id)handle;
 - (void)readRSSI;
 - (void)discoverServices:(id)arg1;
 - (void)discoverIncludedServices:(id)arg1 forService:(id)arg2;
@@ -59,5 +58,6 @@
 - (void)handleCharacteristicDescriptorsDiscovered:(id)arg1;
 - (void)handleDescriptorValueUpdated:(id)arg1;
 - (void)handleDescriptorValueWritten:(id)arg1;
+- (void)pair;
 
 @end

@@ -51,7 +51,10 @@
 @property(readonly) UIKeyboardCandidatePadInlineFloatingBackgroundView * padInlineFloatingBackgroundView;
 
 
-- (void)setDelegate:(id)arg1;
+- (unsigned int)count;
+- (id)candidates;
+- (id)init;
+- (void)dealloc;
 - (BOOL)hasGroupBar;
 - (void)stepOneLine:(BOOL)arg1;
 - (void)padInlineFloatingExpand;
@@ -125,9 +128,6 @@
 - (id)delegate;
 - (unsigned int)numberOfColumns;
 - (void)setRowHeight:(float)arg1;
-- (unsigned int)count;
-- (id)candidates;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

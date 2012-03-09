@@ -10,11 +10,11 @@
 
 + (id)accountToRefreshForBasicAccount:(id)arg1;
 
-- (BOOL)refreshContainersForDataclass:(id)arg1 isUserRequested:(BOOL)arg2;
-- (BOOL)refreshContainerWithIdentifier:(id)arg1 forDataclass:(id)arg2 isUserRequested:(BOOL)arg3;
-- (id)_initWithBasicAccount:(id)arg1;
 - (void)dealloc;
 - (BOOL)refreshContainerListForDataclass:(id)arg1 isUserRequested:(BOOL)arg2;
 - (id)defaultContainerIdentifierForDataclass:(id)arg1;
+- (id)_initWithBasicAccount:(id)arg1;
+- (BOOL)refreshContainersForDataclass:(id)arg1 isUserRequested:(BOOL)arg2;
+- (BOOL)refreshContainerWithIdentifier:(id)arg1 forDataclass:(id)arg2 isUserRequested:(BOOL)arg3;
 
 @end

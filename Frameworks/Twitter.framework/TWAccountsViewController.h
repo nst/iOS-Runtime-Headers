@@ -12,6 +12,10 @@
 @property TWTweetComposeViewController * tweetSheetViewController;
 
 
+- (void)dealloc;
+- (id)tweetSheetViewController;
+- (void)deselectLastSelection;
+- (void)setTweetSheetViewController:(id)arg1;
 - (id)initWithStyle:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -26,9 +30,5 @@
 - (void)didReceiveMemoryWarning;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
-- (id)tweetSheetViewController;
-- (void)deselectLastSelection;
-- (void)setTweetSheetViewController:(id)arg1;
 
 @end

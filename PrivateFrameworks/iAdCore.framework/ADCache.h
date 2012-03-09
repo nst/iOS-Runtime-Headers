@@ -41,7 +41,10 @@
 @property BOOL didSendWillLoadBannerData;
 
 
+- (void)dealloc;
+- (id)queue;
 - (void)setBundleIdentifier:(id)arg1;
+- (id)bundleIdentifier;
 - (BOOL)didSendWillLoadBannerData;
 - (void)setCurrentBackoffIntervalExponent:(double)arg1;
 - (double)currentBackoffIntervalExponent;
@@ -91,9 +94,6 @@
 - (id)specification;
 - (void)setSpecification:(id)arg1;
 - (void)_handleLowMemory:(id)arg1;
-- (id)bundleIdentifier;
-- (void)dealloc;
-- (id)queue;
 - (void)setQueue:(id)arg1;
 
 @end

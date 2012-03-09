@@ -26,12 +26,12 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setStatus:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)status;
 - (id)init;
 - (void)dealloc;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)clientID;
 - (void)setChangeType:(int)arg1;
 - (int)changeType;

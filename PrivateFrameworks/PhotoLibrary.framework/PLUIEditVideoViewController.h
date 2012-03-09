@@ -14,12 +14,13 @@
 }
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)initWithProperties:(id)arg1;
 - (BOOL)_displaysFullScreen;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)navigationItem;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)setViewClass:(Class)arg1;
 - (id)initWithPhoto:(id)arg1 trimTitle:(id)arg2;
 - (void)_setupNavigationItemAndTrimTitle:(id)arg1;
@@ -38,6 +39,5 @@
 - (float)videoViewScrubberYOrigin:(id)arg1 forOrientation:(int)arg2;
 - (void)_trimVideo:(id)arg1;
 - (id)uiipc_imagePickerController;
-- (void)dealloc;
 
 @end

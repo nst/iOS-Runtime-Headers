@@ -26,13 +26,18 @@
 + (id)key;
 + (id)keyboard;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setName:(id)arg1;
+- (void)setProperties:(id)arg1;
+- (id)initWithType:(int)arg1 withName:(id)arg2 withProperties:(id)arg3 withSubtrees:(id)arg4 withCache:(id)arg5;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (BOOL)renderAsStringKey;
 - (id)cacheDisplayString;
 - (BOOL)shouldCacheKey;
 - (void)setGhost:(BOOL)arg1;
 - (void)setIsClientVariantOverride:(BOOL)arg1;
+- (BOOL)isLetters;
 - (id)keyAttributes;
 - (id)geometries;
 - (id)keyForString:(id)arg1;
@@ -46,6 +51,7 @@
 - (BOOL)isEqualToTree:(id)arg1;
 - (BOOL)isHashed;
 - (id)nameFromAttributes;
+- (BOOL)renderAsStringKeyExcludingPunctuation:(BOOL)arg1;
 - (int)_variantType;
 - (id)componentName;
 - (id)attributeSet:(BOOL)arg1;
@@ -85,6 +91,7 @@
 - (void)setShape:(id)arg1;
 - (BOOL)isClientVariantOverride;
 - (id)cache;
+- (BOOL)notUseCandidateSelection;
 - (void)removeClientVariantActionInfo;
 - (void)setClientVariantRepresentedString:(id)arg1;
 - (void)setClientVariantActionName:(id)arg1;
@@ -94,7 +101,6 @@
 - (void)setDisplayRowHint:(int)arg1;
 - (id)numberForProperty:(id)arg1;
 - (id)keySet;
-- (BOOL)notUseCandidateSelection;
 - (void)zipGeometrySet;
 - (id)firstCachedKeyWithName:(id)arg1;
 - (id)keysByKeyName:(id)arg1;
@@ -142,11 +148,7 @@
 - (id)name;
 - (id)initWithType:(int)arg1;
 - (void)setType:(int)arg1;
-- (void)setName:(id)arg1;
-- (void)setProperties:(id)arg1;
-- (id)initWithType:(int)arg1 withName:(id)arg2 withProperties:(id)arg3 withSubtrees:(id)arg4 withCache:(id)arg5;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 
 @end

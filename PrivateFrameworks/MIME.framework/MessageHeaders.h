@@ -33,7 +33,10 @@
 - (unsigned long)preferredEncoding;
 - (void)setPreferredEncoding:(unsigned long)arg1;
 - (id)firstHeaderForKey:(id)arg1;
-- (id)headerData;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)_isStructuredHeaderKey:(id)arg1;
 - (id)_headerValueForKey:(id)arg1;
 - (BOOL)hasHeaderForKey:(id)arg1;
@@ -55,13 +58,10 @@
 - (id)_copyAddressListForKey:(id)arg1;
 - (id)copyFirstHeaderForKey:(id)arg1;
 - (id)_headerValueForKey:(id)arg1 offset:(unsigned int*)arg2;
-- (id)references;
-- (id)mutableCopy;
 - (id)copyAddressListForReplyTo;
 - (id)allHeaderKeys;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)headerData;
+- (id)references;
+- (id)mutableCopy;
 
 @end

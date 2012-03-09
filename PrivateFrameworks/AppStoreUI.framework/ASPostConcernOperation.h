@@ -15,14 +15,14 @@
 @property unsigned long long itemIdentifier;
 
 
+- (void)dealloc;
+- (id)_httpBody;
 - (void)run;
 - (id)concern;
 - (id)commentText;
 - (void)setConcern:(id)arg1;
 - (void)setCommentText:(id)arg1;
 - (id)initWithConcern:(id)arg1;
-- (id)_httpBody;
-- (void)dealloc;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (unsigned long long)itemIdentifier;

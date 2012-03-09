@@ -12,11 +12,11 @@
 @property(copy) NSString * htmlFor;
 
 
+- (id)form;
+- (id)control;
 - (id)htmlFor;
 - (void)setHtmlFor:(id)arg1;
 - (id)accessKey;
 - (void)setAccessKey:(id)arg1;
-- (id)form;
-- (id)control;
 
 @end

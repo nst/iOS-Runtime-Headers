@@ -11,20 +11,11 @@
     id reserved;
 }
 
++ (void)raise:(id)arg1 format:(id)arg2 arguments:(void*)arg3;
 + (id)exceptionWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
 + (void)raise:(id)arg1 format:(id)arg2;
-+ (void)raise:(id)arg1 format:(id)arg2 arguments:(void*)arg3;
 + (void)errnoRaise:(id)arg1 format:(id)arg2;
 
-- (void)raise;
-- (id)callStackSymbols;
-- (id)reason;
-- (id)name;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)_installStackTraceKeyIfNeeded;
-- (id)callStackReturnAddresses;
-- (id)initWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
 - (id)userInfo;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
@@ -32,6 +23,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (BOOL)_installStackTraceKeyIfNeeded;
+- (id)callStackReturnAddresses;
+- (id)initWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
+- (void)raise;
+- (id)callStackSymbols;
+- (id)reason;
+- (id)name;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (int)localErrno;

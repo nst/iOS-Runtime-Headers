@@ -40,20 +40,21 @@
 
 
 - (id)messages;
+- (void)setName:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)groupID;
 - (unsigned int)recipientCount;
 - (id)recipient;
 - (id)recipients;
 - (void)setRecipients:(id)arg1;
-- (int)propertyType;
-- (id)uniqueIdentifier;
-- (int)identifier;
-- (id)name;
-- (BOOL)isEmpty;
 - (BOOL)updatesDisabled;
 - (void)_addGroupMessage:(id)arg1;
 - (void)resetPendingMessages;
 - (id)groupMessageWithAssociationID:(int)arg1;
 - (void)pendingMessagesTotalMessages:(int*)arg1 percentComplete:(float*)arg2;
+- (id)_existingMessageForMessage:(id)arg1;
+- (id)_existingMessageWithIdentifier:(int)arg1;
 - (int)limitToLoad;
 - (void)setLimitToLoad:(int)arg1;
 - (void)setGroupID:(id)arg1;
@@ -81,10 +82,11 @@
 - (void*)abRecord;
 - (BOOL)moreMessagesToLoad;
 - (void)requestRecipientStatuses;
-- (id)groupID;
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (id)uniqueIdentifier;
+- (int)identifier;
+- (id)name;
+- (BOOL)isEmpty;
 - (void)resetCaches;
+- (int)propertyType;
 
 @end

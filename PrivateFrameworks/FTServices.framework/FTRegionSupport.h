@@ -18,18 +18,18 @@
 + (id)sharedInstance;
 
 - (void)startLoading;
-- (BOOL)isLoaded;
-- (BOOL)isLoading;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
+- (void)dealloc;
 - (void)set_delivery:(id)arg1;
 - (id)_delivery;
 - (void)set_regions:(id)arg1;
 - (id)_regions;
 - (void)flushRegions;
 - (void)_buildMessageDeliveryIfNeeded;
-- (void)dealloc;
 - (id)regions;
 - (id)regionForID:(id)arg1;
+- (BOOL)isLoaded;
+- (BOOL)isLoading;
+- (BOOL)retainWeakReference;
+- (BOOL)allowsWeakReference;
 
 @end

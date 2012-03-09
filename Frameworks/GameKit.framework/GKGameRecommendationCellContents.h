@@ -12,10 +12,10 @@
 
 + (id)gameRecommendationCellContents;
 
+- (void)dealloc;
 - (void)setReasonForRecommending:(id)arg1;
 - (id)reasonForRecommending;
 - (void)updateLines;
 - (void)prepareForReuse;
-- (void)dealloc;
 
 @end

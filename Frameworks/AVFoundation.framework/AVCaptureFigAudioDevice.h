@@ -13,20 +13,20 @@
 
 + (id)_devices;
 
-- (id)initWithProperties:(id)arg1;
-- (id)localizedName;
-- (id)devicePropertiesDictionary;
-- (void)audioInputDevicesDidChangeHandler:(id)arg1;
-- (void)audioInputDeviceLocalizedNameDidChangeHandler:(id)arg1;
-- (id)modelID;
-- (BOOL)supportsAVCaptureSessionPreset:(id)arg1;
-- (BOOL)isInUseByAnotherApplication;
-- (BOOL)hasMediaType:(id)arg1;
-- (BOOL)isConnected;
-- (id)uniqueID;
-- (BOOL)startUsingDevice:(id*)arg1;
-- (void)stopUsingDevice;
 - (id)init;
 - (void)dealloc;
+- (id)devicePropertiesDictionary;
+- (void)audioInputDeviceLocalizedNameDidChangeHandler:(id)arg1;
+- (void)audioInputDevicesDidChangeHandler:(id)arg1;
+- (BOOL)isInUseByAnotherApplication;
+- (BOOL)supportsAVCaptureSessionPreset:(id)arg1;
+- (id)modelID;
+- (void)stopUsingDevice;
+- (BOOL)startUsingDevice:(id*)arg1;
+- (BOOL)isConnected;
+- (BOOL)hasMediaType:(id)arg1;
+- (id)uniqueID;
+- (id)initWithProperties:(id)arg1;
+- (id)localizedName;
 
 @end

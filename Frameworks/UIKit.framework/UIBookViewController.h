@@ -31,7 +31,7 @@
 @property double turnDuration;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)_startCurlAnimation;
 - (void)_setupCurlFilters;
 - (void)setTurnDuration:(double)arg1;
@@ -54,8 +54,8 @@
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)view;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end

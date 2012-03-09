@@ -25,8 +25,8 @@
 - (void)skipDescendents;
 - (id)directoryAttributes;
 - (id)fileAttributes;
+- (void)dealloc;
 - (id)nextObject;
 - (unsigned int)level;
-- (void)dealloc;
 
 @end

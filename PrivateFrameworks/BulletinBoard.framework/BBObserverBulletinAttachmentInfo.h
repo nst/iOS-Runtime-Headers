@@ -14,6 +14,8 @@
 @property BOOL sizesFetched;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setImage:(id)arg1 forKey:(id)arg2;
 - (id)imageForKey:(id)arg1;
 - (id)_pairForKey:(id)arg1 create:(BOOL)arg2;
@@ -23,7 +25,5 @@
 - (void)setImagesFetched:(BOOL)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeForKey:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

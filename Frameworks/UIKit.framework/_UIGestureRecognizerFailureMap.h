@@ -16,6 +16,8 @@
 + (void)buildFailureMapForGestureRecognizers:(id)arg1;
 + (void)buildFailureMapForGestureRecognizer:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (id)initWithRelatedGestures:(id)arg1;
 - (void)_queueRecognizersForResetIfFinished;
 - (void)_gestureRecognizerFinished:(id)arg1 withEvent:(id)arg2;
@@ -26,7 +28,5 @@
 - (void)gestureRecognizerFinished:(id)arg1 withEvent:(id)arg2;
 - (void)reloadFailureMap;
 - (void)gestureRecognizerDeallocated:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -11,6 +11,9 @@
 }
 
 
+- (void)dealloc;
+- (void)close;
+- (long long)offset;
 - (id)initWithFileDescriptor:(int)arg1 offset:(long long)arg2 length:(long long)arg3;
 - (id)initWithPath:(id)arg1 offset:(long long)arg2 length:(long long)arg3;
 - (id)initWithPath:(id)arg1 offset:(long long)arg2;
@@ -20,8 +23,5 @@
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
-- (void)close;
-- (long long)offset;
-- (void)dealloc;
 
 @end

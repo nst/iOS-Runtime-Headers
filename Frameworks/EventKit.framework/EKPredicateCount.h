@@ -23,9 +23,9 @@
 + (id)countOfRemindersWithPredicate:(id)arg1 store:(id)arg2 callback:(id)arg3;
 
 - (void)terminate;
+- (void)dealloc;
 - (void)_receivedCount:(int)arg1;
 - (id)initWithPredicate:(id)arg1 store:(id)arg2 callback:(id)arg3;
 - (void)run;
-- (void)dealloc;
 
 @end

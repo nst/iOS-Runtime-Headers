@@ -12,9 +12,11 @@
 
 + (id)sharedInstance;
 
-- (void)_localeChanged:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)_stringForTime:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 - (struct __CFDateFormatter { }*)timeFormatter;
+- (void)_localeChanged:(id)arg1;
 - (id)dateStringForInvitation:(id)arg1;
 - (id)dateStringForDate:(double)arg1 allDay:(BOOL)arg2 shortFormat:(BOOL)arg3;
 - (id)timeStringForDate:(double)arg1 inTimeZone:(id)arg2;
@@ -29,7 +31,5 @@
 - (struct __CFDateFormatter { }*)dayFormatter;
 - (struct __CFDateFormatter { }*)abbreviatedDayFormatter;
 - (void)_invalidateFormatters;
-- (id)init;
-- (void)dealloc;
 
 @end

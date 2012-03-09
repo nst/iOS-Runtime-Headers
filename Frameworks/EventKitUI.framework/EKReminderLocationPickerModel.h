@@ -29,12 +29,11 @@
 @property(retain) EKReminderLocationItem * customLocationItem;
 
 
+- (id)init;
+- (void)dealloc;
+- (void)addDelegate:(id)arg1;
 - (void*)addressBook;
 - (void)_killTimer;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
-- (void)setSelectedIndex:(int)arg1;
-- (int)selectedIndex;
 - (BOOL)meCardIsSet;
 - (BOOL)hasCustomLocationItem;
 - (void)_didChangeSelection;
@@ -65,8 +64,9 @@
 - (void)removeDelegate:(id)arg1;
 - (void)selectLocation:(id)arg1;
 - (id)selectedLocationItem;
-- (id)init;
-- (void)dealloc;
-- (void)addDelegate:(id)arg1;
+- (void)setSelectedIndex:(int)arg1;
+- (int)selectedIndex;
+- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 
 @end

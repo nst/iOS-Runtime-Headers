@@ -10,9 +10,9 @@
 }
 
 
+- (void)dealloc;
 - (id)style;
 - (id)initWithStyle:(id)arg1 parentIdentifier:(const char *)arg2;
 - (const char *)parentIdentifier;
-- (void)dealloc;
 
 @end

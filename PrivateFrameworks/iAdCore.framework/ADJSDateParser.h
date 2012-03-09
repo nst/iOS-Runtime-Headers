@@ -6,7 +6,7 @@
 }
 
 
-- (id)normalize:(id)arg1;
 - (id)init;
+- (id)normalize:(id)arg1;
 
 @end

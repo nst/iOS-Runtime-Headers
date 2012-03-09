@@ -20,6 +20,7 @@
 @property(retain) NSURL * url;
 
 
+- (void)dealloc;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (void)setBestSize:(struct CGSize { float x1; float x2; })arg1;
@@ -29,6 +30,5 @@
 - (BOOL)isPrecomposed;
 - (struct CGSize { float x1; float x2; })bestSize;
 - (BOOL)isSiteWide;
-- (void)dealloc;
 
 @end

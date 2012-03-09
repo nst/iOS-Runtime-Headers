@@ -167,6 +167,13 @@
 }
 
 
+- (void)dealloc;
+- (void)setColumnCount:(unsigned short)arg1;
+- (unsigned short)columnCount;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
+- (void)setRightMargin:(unsigned long)arg1;
+- (id)text;
 - (unsigned long)pageScale;
 - (BOOL)isPageScaleOverridden;
 - (BOOL)isLastColumnWidthDefined;
@@ -282,12 +289,5 @@
 - (id)bottomBorder;
 - (unsigned long)leftMargin;
 - (void)setLeftMargin:(unsigned long)arg1;
-- (void)setColumnCount:(unsigned short)arg1;
-- (unsigned short)columnCount;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
-- (void)setRightMargin:(unsigned long)arg1;
-- (id)text;
-- (void)dealloc;
 
 @end

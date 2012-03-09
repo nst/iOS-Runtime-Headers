@@ -26,12 +26,12 @@
 - (unsigned int)currentMemoryUsage;
 - (unsigned int)diskCapacity;
 - (unsigned int)memoryCapacity;
+- (id)init;
+- (void)dealloc;
 - (id)_ntsCacheForRequest:(id)arg1;
 - (void)_reloadForNewCaches:(id)arg1;
 - (id)_ntsCacheForPersistentIdentifier:(id)arg1;
 - (void)setCachesFromPropertyList:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)saveMemoryCacheToDisk;
 - (void)purgeMemoryCache;
 - (id)initWithClientIdentifier:(id)arg1;

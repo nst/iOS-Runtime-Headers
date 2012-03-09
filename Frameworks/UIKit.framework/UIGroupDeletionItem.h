@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setLastIndex:(unsigned int)arg1;
 - (unsigned int)lastIndex;
 - (id)indexes;
@@ -18,6 +19,5 @@
 - (id)initWithIndexes:(id)arg1 inGroup:(int)arg2;
 - (id)initWithGroup:(int)arg1;
 - (id)initWithGroup:(int)arg1 andIndexes:(id)arg2;
-- (void)dealloc;
 
 @end

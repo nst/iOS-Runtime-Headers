@@ -10,6 +10,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)_applicationIcon;
@@ -18,8 +20,6 @@
 - (id)_applicationIconURL;
 - (void)_updatePageView;
 - (id)_itemArtworkImage;
-- (id)init;
-- (void)dealloc;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
 

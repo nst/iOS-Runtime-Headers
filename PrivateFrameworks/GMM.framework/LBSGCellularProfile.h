@@ -21,7 +21,13 @@
 @property int prefetchMode;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
+- (long long)timestamp;
+- (void)setTimestamp:(long long)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasPrefetchMode:(BOOL)arg1;
 - (BOOL)hasPrefetchMode;
 - (id)historicalCells;
@@ -38,11 +44,5 @@
 - (void)setHistoricalCells:(id)arg1;
 - (void)setNeighbors:(id)arg1;
 - (void)setPrimaryCell:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (long long)timestamp;
-- (void)setTimestamp:(long long)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

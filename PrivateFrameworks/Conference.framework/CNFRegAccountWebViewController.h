@@ -13,14 +13,8 @@
 @property BOOL failedBagLoad;
 
 
-- (void)setHeadersForRequest:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)dealloc;
-- (void)_reload;
+- (void)setHeadersForRequest:(id)arg1;
 - (void)_reloadDelayed;
 - (BOOL)_loadURLFromBag;
 - (void)_startListeningForBagLoad;
@@ -35,6 +29,7 @@
 - (id)viewPortHeaderValue;
 - (id)securityHeaderValue;
 - (id)serviceHeaderValue;
+- (id)interfaceLayoutHeaderValue;
 - (void)doHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (void)_stopBagLoadTimer;
 - (void)_stopListeningForBagLoad;
@@ -54,5 +49,11 @@
 - (id)logName;
 - (void)cancelTapped;
 - (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)_reload;
 
 @end

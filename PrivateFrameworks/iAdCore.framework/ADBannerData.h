@@ -50,10 +50,15 @@
 + (id)bannerDataForLocalAdAtPath:(id)arg1 usingCreativeNamed:(id)arg2 error:(id*)arg3;
 + (id)sharedDownloader;
 
-- (BOOL)isExpired;
-- (id)contentURL;
-- (void)setDelegate:(id)arg1;
 - (void)startLoading;
+- (id)description;
+- (void)dealloc;
+- (id)contentURL;
+- (void)cancelLoading;
+- (BOOL)isExpired;
+- (id)backgroundColor;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (id)storyboardWebArchive;
 - (BOOL)hasStartedLoading;
 - (id)storyboardDownload;
@@ -105,10 +110,5 @@
 - (void)setBatchId:(id)arg1;
 - (id)batchId;
 - (id)batch;
-- (id)backgroundColor;
-- (id)delegate;
-- (void)cancelLoading;
-- (id)description;
-- (void)dealloc;
 
 @end

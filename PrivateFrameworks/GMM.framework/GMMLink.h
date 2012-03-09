@@ -25,7 +25,11 @@
 @property(retain) NSString * linkStreetRange;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasRoadArgb:(BOOL)arg1;
 - (BOOL)hasRoadArgb;
 - (void)setHasYawDegreeE6:(BOOL)arg1;
@@ -42,9 +46,5 @@
 - (void)setLinkText:(id)arg1;
 - (id)panoId;
 - (void)setPanoId:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

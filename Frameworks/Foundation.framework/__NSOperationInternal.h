@@ -47,12 +47,6 @@
 
 + (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 changeKind:(unsigned int)arg3 oldValue:(id)arg4 newValue:(id)arg5 indexes:(id)arg6 context:(void*)arg7;
 
-- (void)addDependency:(id)arg1;
-- (id)completionBlock;
-- (BOOL)isFinished;
-- (void)start;
-- (void)invalidate;
-- (void)finalize;
 - (id)__;
 - (id)dependencies;
 - (void)removeDependency:(id)arg1;
@@ -62,17 +56,23 @@
 - (void)setThreadPriority:(double)arg1;
 - (double)threadPriority;
 - (BOOL)isReady;
-- (BOOL)isExecuting;
-- (void)setCompletionBlock:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)waitUntilFinished;
 - (unsigned int)retainCount;
 - (void)cancel;
 - (id)retain;
 - (BOOL)isCancelled;
-- (id)init;
 - (oneway void)release;
+- (id)init;
 - (void)dealloc;
+- (void)waitUntilFinished;
+- (void)addDependency:(id)arg1;
+- (id)completionBlock;
+- (BOOL)isFinished;
+- (void)setCompletionBlock:(id)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)finalize;
+- (void)start;
+- (void)invalidate;
+- (BOOL)isExecuting;
 
 @end

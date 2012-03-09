@@ -67,11 +67,8 @@
 @property <CalendarEventLoaderDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)initWithEventStore:(id)arg1;
-- (struct CalFilter { }*)filter;
-- (void)setFilter:(struct CalFilter { }*)arg1;
-- (id)delegate;
 - (void)addOccurrenceAwaitingDeletion:(id)arg1;
 - (void)addOccurrenceAwaitingRefresh:(id)arg1;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })selectedDate;
@@ -95,7 +92,10 @@
 - (void)_updatePredicate;
 - (void)_reload:(BOOL)arg1;
 - (void)_eventStoreChanged:(id)arg1;
-- (void)dealloc;
+- (void)setFilter:(struct CalFilter { }*)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (struct CalFilter { }*)filter;
 - (void)timeZoneChanged;
 
 @end

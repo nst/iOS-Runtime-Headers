@@ -13,10 +13,10 @@
 @property int timeOption;
 
 
+- (void)dealloc;
 - (void)setTimeOption:(int)arg1;
 - (int)timeOption;
 - (void)setTimes:(id)arg1;
 - (id)times;
-- (void)dealloc;
 
 @end

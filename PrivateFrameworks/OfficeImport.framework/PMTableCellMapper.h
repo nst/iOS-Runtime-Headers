@@ -13,6 +13,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithOadTableCell:(id)arg1 rowIndex:(unsigned int)arg2 columnIndex:(int)arg3 parent:(id)arg4;
 - (float)widthWithState:(id)arg1;
 - (void)mapBordersWithState:(id)arg1;
@@ -20,6 +21,5 @@
 - (id)rowMapper;
 - (id)tableMapper;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (void)dealloc;
 
 @end

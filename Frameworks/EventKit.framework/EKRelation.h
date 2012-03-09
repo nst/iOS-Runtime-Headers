@@ -18,10 +18,10 @@
 + (id)relationWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3 ownsRelated:(BOOL)arg4;
 + (id)relationWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3;
 
-- (id)initWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3 ownsRelated:(BOOL)arg4;
-- (BOOL)ownsRelatedObject;
-- (id)inversePropertyName;
-- (BOOL)toMany;
 - (void)dealloc;
+- (id)initWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3 ownsRelated:(BOOL)arg4;
+- (id)inversePropertyName;
+- (BOOL)ownsRelatedObject;
+- (BOOL)toMany;
 
 @end

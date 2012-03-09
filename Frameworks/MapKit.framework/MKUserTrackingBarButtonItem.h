@@ -29,6 +29,7 @@
 + (Class)_activityIndicatorClass;
 + (id)_trackingNoneImage;
 
+- (void)dealloc;
 - (id)_navigationBar;
 - (void)set_state:(int)arg1;
 - (int)_state;
@@ -46,7 +47,6 @@
 - (id)_toolbar;
 - (void)set_imageView:(id)arg1;
 - (void)set_progressIndicator:(id)arg1;
-- (id)initWithMapView:(id)arg1;
 - (id)_imageForState:(int)arg1;
 - (int)_styleForState:(int)arg1;
 - (id)_contentAnimation;
@@ -59,8 +59,8 @@
 - (void)set_associatedView:(id)arg1;
 - (float)_verticalOffsetForState:(int)arg1;
 - (void)_goToNextMode:(id)arg1;
+- (id)initWithMapView:(id)arg1;
 - (void)setMapView:(id)arg1;
 - (id)mapView;
-- (void)dealloc;
 
 @end

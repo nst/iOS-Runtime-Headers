@@ -32,7 +32,7 @@
 @property BOOL wraps;
 
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)_pageControllerScrollView;
 - (int)indexOfViewController:(id)arg1;
 - (void)setDisplaysPageControl:(BOOL)arg1;
@@ -106,6 +106,6 @@
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)delegate;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

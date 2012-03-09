@@ -15,10 +15,10 @@
 @property int z;
 
 
-- (BOOL)readFrom:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setHasZ:(BOOL)arg1;
 - (BOOL)hasZ;
-- (void)writeTo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)setZ:(int)arg1;
 - (int)z;
@@ -26,7 +26,7 @@
 - (double)y;
 - (void)setX:(double)arg1;
 - (double)x;
-- (id)description;
-- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

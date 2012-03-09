@@ -24,6 +24,7 @@
 
 + (id)workoutWithSensor:(id)arg1;
 
+- (void)dealloc;
 - (void)setIsCalibration:(BOOL)arg1;
 - (BOOL)isCalibration;
 - (void)setWeightInLbs:(float)arg1;
@@ -44,6 +45,5 @@
 - (BOOL)canBeUsedForWalkCalibration;
 - (BOOL)isWalk;
 - (void)sensor:(id)arg1 didReceivePacketPayload:(const char *)arg2 timestamp:(unsigned long)arg3;
-- (void)dealloc;
 
 @end

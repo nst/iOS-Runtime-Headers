@@ -37,6 +37,7 @@
 }
 
 
+- (void)dealloc;
 - (void)_addMatchedEventIds:(struct __CFArray { }*)arg1;
 - (void)_addMatchedLocationIds:(struct __CFArray { }*)arg1;
 - (void)_addMatchedParticipantIds:(struct __CFArray { }*)arg1;
@@ -59,6 +60,5 @@
 - (void)startSearching;
 - (id)initWithDatabase:(struct CalDatabase { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; struct CPRecordStore {} *x3; struct CalEventOccurrenceCache {} *x4; struct __CFDictionary {} *x5; struct __CFDictionary {} *x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; boolx8; boolx9; unsigned int x10; unsigned int x11; struct __CFString {} *x12; int x13; int x14; struct __CFString {} *x15; int x16; }*)arg1 filter:(struct CalFilter { }*)arg2 dataSink:(id)arg3;
 - (void)_startLoadingResults;
-- (void)dealloc;
 
 @end

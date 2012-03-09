@@ -8,13 +8,6 @@
 }
 
 
-- (id)bundle;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)isDeliveryReportsEnabled:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void)setSpecifierLoading:(id)arg1 loading:(BOOL)arg2 animated:(BOOL)arg3;
@@ -76,5 +69,12 @@
 - (void)firstRunControllerDidFinish:(id)arg1 finished:(BOOL)arg2;
 - (void)willResignActive;
 - (void)willBecomeActive;
+- (id)isDeliveryReportsEnabled:(id)arg1;
+- (id)bundle;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 
 @end

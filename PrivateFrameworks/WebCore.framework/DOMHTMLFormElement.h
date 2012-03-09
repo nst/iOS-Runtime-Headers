@@ -18,6 +18,18 @@
 @property(copy) NSString * target;
 
 
+- (void)setName:(id)arg1;
+- (void)setTarget:(id)arg1;
+- (id)action;
+- (id)target;
+- (int)length;
+- (int)structuralComplexityContribution;
+- (void)reset;
+- (id)method;
+- (BOOL)autocorrect;
+- (id)elements;
+- (void)setAction:(id)arg1;
+- (id)name;
 - (BOOL)noValidate;
 - (void)setNoValidate:(BOOL)arg1;
 - (id)acceptCharset;
@@ -32,17 +44,5 @@
 - (void)submit;
 - (BOOL)checkValidity;
 - (id)encoding;
-- (int)structuralComplexityContribution;
-- (void)reset;
-- (id)method;
-- (BOOL)autocorrect;
-- (id)elements;
-- (void)setAction:(id)arg1;
-- (id)name;
-- (void)setName:(id)arg1;
-- (void)setTarget:(id)arg1;
-- (id)action;
-- (id)target;
-- (int)length;
 
 @end

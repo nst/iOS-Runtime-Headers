@@ -14,6 +14,9 @@
 + (id)authenticationDialogWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)sharedAuthenticator;
 
+- (id)init;
+- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (void)setAccount:(id)arg1 password:(id)arg2;
 - (void)userCancelledAccountAuthentication;
 - (void)addAuthenticationHeadersToRequest:(id)arg1 accountAuthRequired:(BOOL)arg2;
@@ -34,8 +37,5 @@
 - (void)clearAccountInfo;
 - (BOOL)isAccountAuthenticated;
 - (void)invalidateToken;
-- (void)setDelegate:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

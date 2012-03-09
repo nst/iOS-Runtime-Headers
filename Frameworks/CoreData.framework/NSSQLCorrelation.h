@@ -13,13 +13,13 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
 - (id)initWithManyToMany:(id)arg1 fk:(long long)arg2 invfk:(long long)arg3 fok:(unsigned int)arg4 invfok:(unsigned int)arg5;
 - (id)manyToMany;
 - (long long)fk;
 - (long long)invfk;
 - (unsigned int)fok;
 - (unsigned int)invfok;
-- (id)description;
-- (void)dealloc;
 
 @end

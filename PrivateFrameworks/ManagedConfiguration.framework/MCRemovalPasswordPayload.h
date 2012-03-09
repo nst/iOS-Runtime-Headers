@@ -13,10 +13,10 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
+- (void)dealloc;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)removalPasscode;
 - (void)setRemovalPasscode:(id)arg1;
 - (id)stubDictionary;
-- (void)dealloc;
 
 @end

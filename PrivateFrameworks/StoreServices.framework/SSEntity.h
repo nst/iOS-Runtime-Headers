@@ -12,6 +12,7 @@
     long long _pid;
 }
 
+@property(readonly) BOOL exists;
 @property(readonly) long long _persistentIdentifier;
 @property(getter=_localExternalValues,setter=_setLocalExternalValues:,copy) NSDictionary * _localExternalValues;
 @property(getter=_localValues,setter=_setLocalValues:,copy) NSDictionary * _localValues;
@@ -21,8 +22,19 @@
 + (long long)_setExternalValuesMessage;
 + (long long)_getValueMessage;
 + (long long)_getExternalValuesMessage;
++ (long long)_existsMessage;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)init;
+- (void)dealloc;
+- (BOOL)exists;
 - (void)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned int)arg3;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
+- (id)valueForProperty:(id)arg1;
+- (void)resetCachedProperties:(id*)arg1 count:(unsigned int)arg2;
+- (id)valueForExternalProperty:(id)arg1;
 - (void)resetCachedExternalProperties:(id*)arg1 count:(unsigned int)arg2;
 - (id)_clientValueForProperty:(id)arg1 databaseValue:(id)arg2;
 - (long long)_persistentIdentifier;
@@ -41,14 +53,5 @@
 - (BOOL)_isManaged;
 - (void)_becomeManagedOnConnection:(id)arg1;
 - (id)_initWithPersistentIdentifier:(long long)arg1;
-- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
-- (id)valueForProperty:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (void)resetCachedProperties:(id*)arg1 count:(unsigned int)arg2;
-- (id)valueForExternalProperty:(id)arg1;
 
 @end

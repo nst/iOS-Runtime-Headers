@@ -7,11 +7,11 @@
 }
 
 
-- (void)setAlpha:(float)arg1;
-- (float)alpha;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
+- (void)setAlpha:(float)arg1;
+- (float)alpha;
 
 @end

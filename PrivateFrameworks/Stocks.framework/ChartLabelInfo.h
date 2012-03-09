@@ -28,19 +28,19 @@
 + (id)ChartLabelFont;
 + (void)resetLocale;
 
-- (void)setPosition:(float)arg1;
-- (void)setImmutable:(BOOL)arg1;
-- (float)position;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
-- (void)setStringToMonthAndDayWithAbsoluteTime:(double)arg1 timeZone:(struct __CFTimeZone { }*)arg2;
-- (void)setStringToYearWithAbsoluteTime:(double)arg1 timeZone:(struct __CFTimeZone { }*)arg2;
-- (void)retainStringAndSizeFromLabelInfo:(id)arg1;
-- (BOOL)immutable;
 - (id)string;
 - (id)description;
 - (void)setString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)setImmutable:(BOOL)arg1;
+- (void)setStringToMonthAndDayWithAbsoluteTime:(double)arg1 timeZone:(struct __CFTimeZone { }*)arg2;
+- (void)setStringToYearWithAbsoluteTime:(double)arg1 timeZone:(struct __CFTimeZone { }*)arg2;
+- (void)retainStringAndSizeFromLabelInfo:(id)arg1;
+- (BOOL)immutable;
+- (float)position;
+- (void)setPosition:(float)arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

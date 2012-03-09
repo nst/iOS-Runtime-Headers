@@ -12,14 +12,14 @@
 @property(readonly) NSNumber * adamID;
 @property(readonly) NSString * phase;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (void)initialize;
++ (id)webScriptNameForKey:(const char *)arg1;
 + (id)phaseStringForDownload:(id)arg1;
 
-- (id)adamID;
-- (id)attributeKeys;
-- (id)phase;
 - (void)dealloc;
+- (id)adamID;
+- (id)phase;
+- (id)attributeKeys;
 - (BOOL)isEqualToDownload:(id)arg1;
 - (id)initWithAdamID:(id)arg1 phase:(id)arg2;
 - (id)initWithDownload:(id)arg1;

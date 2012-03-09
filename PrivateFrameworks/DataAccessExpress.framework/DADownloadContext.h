@@ -25,9 +25,9 @@
 }
 
 
+- (void)dealloc;
 - (void)finishedWithError:(id)arg1;
 - (void)updateProgressDownloadedByteCount:(long long)arg1 totalByteCount:(long long)arg2;
 - (id)initWithAttachmentUUID:(id)arg1 accountID:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 downloadProgressBlock:(id)arg4 completionBlock:(id)arg5;
-- (void)dealloc;
 
 @end

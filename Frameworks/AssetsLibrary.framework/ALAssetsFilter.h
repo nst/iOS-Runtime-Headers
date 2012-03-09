@@ -14,11 +14,11 @@
 + (id)allVideos;
 + (id)allPhotos;
 
+- (id)init;
+- (void)dealloc;
 - (id)internal;
 - (void)setInternal:(id)arg1;
 - (void)_setFilter:(int)arg1;
 - (int)_filter;
-- (id)init;
-- (void)dealloc;
 
 @end

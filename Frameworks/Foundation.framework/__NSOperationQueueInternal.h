@@ -25,8 +25,8 @@
 }
 
 
-- (void)finalize;
 - (id)init;
 - (void)dealloc;
+- (void)finalize;
 
 @end

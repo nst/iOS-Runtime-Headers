@@ -18,10 +18,8 @@
 
 + (id)relations;
 
-- (void)setFileFormat:(id)arg1;
-- (void)setFileName:(id)arg1;
-- (BOOL)isBinary;
-- (id)UUID;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setIsBinary:(BOOL)arg1;
 - (void)setXProperties:(id)arg1;
 - (id)XProperties;
@@ -29,11 +27,13 @@
 - (void)setLocalURL:(id)arg1;
 - (id)fileFormat;
 - (id)localURL;
-- (id)fileName;
-- (id)fileSize;
 - (void)setURL:(id)arg1;
 - (id)URL;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)fileName;
+- (id)fileSize;
+- (void)setFileFormat:(id)arg1;
+- (void)setFileName:(id)arg1;
+- (BOOL)isBinary;
+- (id)UUID;
 
 @end

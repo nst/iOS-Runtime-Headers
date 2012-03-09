@@ -39,12 +39,17 @@
 + (void)initializeInContext:(struct OpaqueJSContext { }*)arg1;
 + (id)scriptSelectors;
 
+- (id)init;
+- (void)dealloc;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (void)itemLookupRequest:(id)arg1 didFindItems:(id)arg2;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (void)itemLookupRequest:(id)arg1 didFindItems:(id)arg2;
+- (void)didPresentAlertView:(id)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (void)setHasRegisteredItems:(BOOL)arg1;
 - (BOOL)hasRegisteredItems;
@@ -85,11 +90,6 @@
 - (void)setPrivilegedClient:(BOOL)arg1;
 - (void)setAdManagesPurchaseFlow:(BOOL)arg1;
 - (BOOL)adManagesPurchaseFlow;
-- (void)didPresentAlertView:(id)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)delegate;
-- (id)init;
-- (void)dealloc;
 - (void)purchaseRequest:(id)arg1 purchaseDidSucceed:(id)arg2;
 - (void)purchaseRequest:(id)arg1 purchaseDidFail:(id)arg2 withError:(id)arg3;
 

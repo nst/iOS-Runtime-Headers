@@ -29,7 +29,8 @@
 @property(readonly) int status;
 
 
-- (BOOL)isFloating;
+- (void)dealloc;
+- (int)status;
 - (id)eventURI;
 - (int)eventID;
 - (id)organizerName;
@@ -40,7 +41,6 @@
 - (BOOL)isAllDay;
 - (id)location;
 - (id)title;
-- (int)status;
-- (void)dealloc;
+- (BOOL)isFloating;
 
 @end

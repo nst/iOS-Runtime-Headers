@@ -11,9 +11,9 @@
 @property(retain) NSString * directionSelector;
 
 
+- (void)dealloc;
 - (void)setDirectionSelector:(id)arg1;
 - (id)directionSelector;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (void)dealloc;
 
 @end

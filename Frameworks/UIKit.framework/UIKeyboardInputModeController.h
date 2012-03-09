@@ -20,6 +20,7 @@
 @property(readonly) NSArray * enabledInputModeIdentifiers;
 @property(readonly) NSArray * normalizedEnabledInputModeIdentifiers;
 @property(retain) UIKeyboardInputMode * currentInputMode;
+@property(readonly) BOOL containsDictationSupportedInputMode;
 @property(retain) NSString * currentLocale;
 @property(retain) NSString * currentLanguage;
 @property(retain) NSArray * keyboardInputModes;
@@ -28,12 +29,14 @@
 
 + (id)sharedInputModeController;
 
+- (void)dealloc;
 - (id)inputModesWithoutHardwareSupport;
 - (id)enabledInputModeIdentifiers:(BOOL)arg1;
 - (id)supportedInputModeIdentifiers;
 - (id)defaultEnabledInputModesForCurrentLocale:(BOOL)arg1;
 - (void)clearCachedValues;
 - (void)setCurrentInputMode:(id)arg1;
+- (BOOL)containsDictationSupportedInputMode;
 - (id)inputModeWithIdentifier:(id)arg1;
 - (id)normalizedInputModes;
 - (id)currentLanguage;
@@ -49,6 +52,5 @@
 - (id)currentLocale;
 - (id)enabledInputModeIdentifiers;
 - (id)normalizedEnabledInputModeIdentifiers;
-- (void)dealloc;
 
 @end

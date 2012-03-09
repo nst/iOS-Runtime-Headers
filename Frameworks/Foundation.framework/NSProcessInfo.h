@@ -14,9 +14,6 @@
 
 + (id)processInfo;
 
-- (void)setProcessName:(id)arg1;
-- (id)environment;
-- (unsigned int)activeProcessorCount;
 - (int)_suddenTerminationDisablingCount;
 - (void)_exitWhenSuddenTerminationEnabledWithStatus:(int)arg1;
 - (void)_exitIfSuddenTerminationEnabledWithStatus:(int)arg1;
@@ -32,14 +29,17 @@
 - (int)processIdentifier;
 - (void)setArguments:(id)arg1;
 - (unsigned int)operatingSystem;
+- (id)init;
+- (void)dealloc;
+- (void)setProcessName:(id)arg1;
+- (id)environment;
+- (id)userName;
 - (id)hostName;
 - (unsigned int)processorCount;
 - (id)processName;
 - (id)arguments;
 - (id)userHomeDirectory;
-- (id)userName;
-- (id)init;
-- (void)dealloc;
+- (unsigned int)activeProcessorCount;
 - (void)_disableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 - (void)_enableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 

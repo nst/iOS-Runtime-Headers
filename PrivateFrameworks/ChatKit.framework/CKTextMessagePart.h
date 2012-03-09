@@ -13,14 +13,14 @@
 
 
 - (id)contentLocation;
+- (id)description;
+- (void)dealloc;
+- (id)detachedCopy;
+- (void)copyToPasteboard;
 - (id)initWithText:(id)arg1;
 - (int)type;
 - (id)text;
-- (id)detachedCopy;
-- (void)copyToPasteboard;
-- (id)description;
-- (void)dealloc;
-- (void)setContentLocation:(id)arg1;
 - (BOOL)isDisplayable;
+- (void)setContentLocation:(id)arg1;
 
 @end

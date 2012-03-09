@@ -14,6 +14,9 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
+- (id)object;
 - (void)removeAdapterOperation:(id)arg1;
 - (id)rowForUpdate;
 - (id)adapterOperations;
@@ -27,8 +30,5 @@
 - (void)addAdapterOperation:(id)arg1;
 - (unsigned int)databaseOperator;
 - (id)objectID;
-- (id)object;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -11,6 +11,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (id)masterCellOfPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
 - (id)grid;
 - (id)rowAtIndex:(unsigned int)arg1;
@@ -20,7 +22,5 @@
 - (id)addRow;
 - (unsigned int)rowCount;
 - (void)setParentTextListStyle:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

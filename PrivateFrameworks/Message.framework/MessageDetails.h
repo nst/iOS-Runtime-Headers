@@ -29,11 +29,11 @@
 - (double)dateSentAsTimeIntervalSince1970;
 - (unsigned int)libraryID;
 - (unsigned long long)messageFlags;
-- (unsigned long)uid;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (unsigned long)uid;
 
 @end

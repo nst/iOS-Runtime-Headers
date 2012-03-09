@@ -22,15 +22,15 @@
 }
 
 
-- (void)didFinishScrollingOrZooming;
-- (id)initWithWebView:(id)arg1;
-- (void)scrollOrZoomChanged:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)hasFixedPositionLayers;
+- (void)dealloc;
 - (void)lockLayers;
 - (void)unlockLayers;
 - (void)addOrUpdateLayer:(id)arg1 sizing:(unsigned int)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 alignmentOffset:(struct CGSize { float x1; float x2; })arg4 insideLayerSync:(BOOL)arg5;
 - (void)removeLayer:(id)arg1 insideLayerSync:(BOOL)arg2;
 - (void)removeAllLayers;
-- (void)dealloc;
+- (void)didFinishScrollingOrZooming;
+- (id)initWithWebView:(id)arg1;
+- (void)scrollOrZoomChanged:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)hasFixedPositionLayers;
 
 @end

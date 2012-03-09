@@ -36,6 +36,8 @@
 @property(copy) NSArray * activeValues;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)activeValues;
 - (void)setVelocity:(double)arg1;
 - (void)_setVelocity:(double)arg1;
@@ -59,7 +61,5 @@
 - (double)velocity;
 - (double)value;
 - (void)setValue:(double)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

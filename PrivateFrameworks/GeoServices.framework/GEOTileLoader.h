@@ -22,13 +22,14 @@
 @property(readonly) int diskHits;
 @property(readonly) int networkHits;
 
-+ (id)sharedLoader;
 + (id)diskCacheLocation;
 + (void)setDiskCacheLocation:(id)arg1;
 + (void)useLocalLoader;
 + (void)useRemoteLoader;
++ (id)sharedLoader;
 
-- (id)renderDataForKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 asyncHandler:(id)arg2;
+- (id)init;
+- (void)dealloc;
 - (int)networkHits;
 - (int)diskHits;
 - (int)memoryHits;
@@ -42,9 +43,6 @@
 - (void)_asyncDecodeTile:(id)arg1 forKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 completion:(id)arg3;
 - (id)_decodeTile:(id)arg1 forKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2;
 - (void)_tileEditionChanged:(id)arg1;
-- (void)clearAllCaches;
-- (void)cancelRequest:(id)arg1;
-- (void)cancelAllRequests;
 - (id)expireTilesWithType:(unsigned char)arg1 provider:(unsigned short)arg2 olderThan:(double)arg3;
 - (void)registerTileDecoder:(id)arg1;
 - (void)registerTileLoader:(Class)arg1;
@@ -54,7 +52,9 @@
 - (void)loadTilesFromCacheAndNetwork:(id)arg1 progress:(id)arg2 finished:(id)arg3 error:(id)arg4;
 - (void)openDatabase;
 - (void)closeDatabase;
-- (id)init;
-- (void)dealloc;
+- (void)clearAllCaches;
+- (void)cancelRequest:(id)arg1;
+- (void)cancelAllRequests;
+- (id)renderDataForKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 asyncHandler:(id)arg2;
 
 @end

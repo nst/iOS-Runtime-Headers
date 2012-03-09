@@ -26,6 +26,25 @@
 + (SEL)fontSelectorForLanguageType:(int)arg1;
 + (SEL)fontOverriddenSelectorForLanguageType:(int)arg1;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (int)hidden;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
+- (unsigned short)fontSize;
+- (id)color;
+- (void)setFontSize:(unsigned short)arg1;
+- (void)setColor:(id)arg1;
+- (short)position;
+- (void)setPosition:(short)arg1;
+- (id)font;
+- (void)setFont:(id)arg1;
+- (void)setHidden:(int)arg1;
+- (id)border;
+- (int)outline;
+- (void)setOutline:(int)arg1;
+- (int)verticalAlign;
+- (void)setVerticalAlign:(int)arg1;
 - (BOOL)isBooleanProbablyDifferent:(int)arg1 than:(int)arg2;
 - (void)applyPropertiesFrom:(id)arg1 ifOverriddenIn:(id)arg2;
 - (void)removeEmptyFormattingChanges:(id)arg1;
@@ -159,24 +178,5 @@
 - (id)symbolFont;
 - (void)setUnderline:(int)arg1;
 - (void)setSymbolFont:(id)arg1;
-- (void)setPosition:(short)arg1;
-- (id)border;
-- (int)outline;
-- (void)setOutline:(int)arg1;
-- (int)verticalAlign;
-- (void)setVerticalAlign:(int)arg1;
-- (int)hidden;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
-- (unsigned short)fontSize;
-- (id)color;
-- (void)setFontSize:(unsigned short)arg1;
-- (void)setColor:(id)arg1;
-- (short)position;
-- (id)font;
-- (void)setFont:(id)arg1;
-- (void)setHidden:(int)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

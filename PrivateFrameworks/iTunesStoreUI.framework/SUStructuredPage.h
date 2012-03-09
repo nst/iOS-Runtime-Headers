@@ -36,14 +36,14 @@
 + (int)pageTypeForStorePageString:(id)arg1;
 + (int)pageTypeForStorePageDictionary:(id)arg1;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)protocol;
 - (int)type;
 - (id)item;
 - (id)title;
 - (void)setType:(int)arg1;
 - (void)setTitle:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (BOOL)wantsIndexBar;
 - (BOOL)shouldHideSignInButton;
 - (id)sectionsGroup;

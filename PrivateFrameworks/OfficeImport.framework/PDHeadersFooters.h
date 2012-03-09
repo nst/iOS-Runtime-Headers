@@ -18,6 +18,7 @@
 }
 
 
+- (void)dealloc;
 - (id)header;
 - (BOOL)hasDateTime;
 - (void)setHasDateTime:(BOOL)arg1;
@@ -36,6 +37,5 @@
 - (void)setHeader:(id)arg1;
 - (id)footer;
 - (void)setFooter:(id)arg1;
-- (void)dealloc;
 
 @end

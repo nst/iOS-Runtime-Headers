@@ -9,11 +9,11 @@
 }
 
 
+- (void)dealloc;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)reloadData;
-- (void)dealloc;
 - (id)_accessoryView;
 - (BOOL)_canWriteReview;
 - (void)_writeAReview:(id)arg1;

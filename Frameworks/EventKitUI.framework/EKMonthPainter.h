@@ -52,13 +52,7 @@
 @property BOOL dontStrokeOutline;
 
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)headerHeight;
-- (id)titleFont;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (void)setDontStrokeOutline:(BOOL)arg1;
 - (BOOL)dontStrokeOutline;
 - (void)setWeekRows:(int)arg1;
@@ -88,6 +82,12 @@
 - (void)setIsInspected:(BOOL)arg1;
 - (BOOL)isInspected;
 - (id)engravedTextColor;
-- (void)dealloc;
+- (float)headerHeight;
+- (id)titleFont;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

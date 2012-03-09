@@ -13,6 +13,7 @@
 @property(retain) NSDictionary * initRelayResponse;
 
 
+- (void)dealloc;
 - (id)initRelayResponse;
 - (void)setInitRelayRequest:(id)arg1;
 - (id)initRelayRequest;
@@ -20,6 +21,5 @@
 - (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

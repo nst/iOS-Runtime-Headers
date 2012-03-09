@@ -15,12 +15,12 @@
 @property int lastViewedPage;
 
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
 - (void)setLastViewedPage:(int)arg1;
 - (int)lastViewedPage;
 - (id)emoji;
 - (void)setEmoji:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

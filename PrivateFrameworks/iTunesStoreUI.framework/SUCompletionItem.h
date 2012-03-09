@@ -13,10 +13,10 @@
 @property(readonly) NSURL * URL;
 
 
-- (id)URL;
-- (id)title;
 - (id)init;
 - (void)dealloc;
+- (id)URL;
+- (id)title;
 - (id)initWithPropertyList:(id)arg1;
 
 @end

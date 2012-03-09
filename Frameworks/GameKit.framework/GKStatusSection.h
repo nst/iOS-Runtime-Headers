@@ -21,6 +21,8 @@
 @property(retain) GKBackgroundView * currentStatusView;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)currentStatusView;
 - (void)setStatusHeight:(float)arg1;
 - (float)statusHeight;
@@ -36,13 +38,11 @@
 - (void)setLoading:(BOOL)arg1;
 - (void)setError:(id)arg1;
 - (void)setStatus:(id)arg1;
+- (id)status;
+- (id)error;
 - (BOOL)isLoading;
 - (id)info;
 - (void)setInfo:(id)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (id)status;
-- (id)error;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -47,6 +47,8 @@
 
 + (void)brokenHash:(id)arg1 response:(char *)arg2;
 
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)peerList;
 - (float)sessionVolume;
 - (void)setSessionVolume:(float)arg1;
@@ -56,6 +58,21 @@
 - (void)stopSession;
 - (void)startSession;
 - (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
+- (void)updatedConnectedPeers:(id)arg1;
+- (unsigned int)talkingPeersLimit;
+- (void)setTalkingPeersLimit:(unsigned int)arg1;
+- (BOOL)isUsingSuppression;
+- (void)setIsUsingSuppression:(BOOL)arg1;
+- (void)didStartSpeaking:(id)arg1;
+- (void)didStopSpeaking:(id)arg1;
+- (void)cleanupProc:(id)arg1;
+- (void)lossRate:(float)arg1 forParticipantID:(id)arg2;
+- (id)participantID;
+- (id)sessionName;
+- (void)wifiStateDidChange:(BOOL)arg1;
+- (void)cleanup;
+- (id)delegate;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)session:(id)arg1 didReceiveAudioPacket:(id)arg2 fromPeerID:(id)arg3;
@@ -94,22 +111,5 @@
 - (void)voiceChatService:(id)arg1 sendData:(id)arg2 toParticipantID:(id)arg3;
 - (void)informClientVoiceChatDidStart:(id)arg1;
 - (void)informClientVoiceChatDidStop:(id)arg1;
-- (void)cleanup;
-- (id)delegate;
-- (id)delegate;
-- (void)updatedConnectedPeers:(id)arg1;
-- (unsigned int)talkingPeersLimit;
-- (void)setTalkingPeersLimit:(unsigned int)arg1;
-- (BOOL)isUsingSuppression;
-- (void)setIsUsingSuppression:(BOOL)arg1;
-- (void)didStartSpeaking:(id)arg1;
-- (void)didStopSpeaking:(id)arg1;
-- (void)cleanupProc:(id)arg1;
-- (void)lossRate:(float)arg1 forParticipantID:(id)arg2;
-- (id)participantID;
-- (id)sessionName;
-- (void)wifiStateDidChange:(BOOL)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end

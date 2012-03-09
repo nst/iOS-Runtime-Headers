@@ -16,19 +16,19 @@
 + (BOOL)canFilterByProperty:(id)arg1;
 
 - (unsigned long long)persistentID;
+- (unsigned int)count;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (int)playlistAttributes;
+- (BOOL)existsInLibrary;
 - (id)geniusMixArtworkForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithPersistentID:(unsigned long long)arg1;
-- (BOOL)existsInLibrary;
 - (int)mediaTypes;
 - (id)valueForProperty:(id)arg1;
 - (id)items;
 - (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)count;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)representativeItem;
 
 @end

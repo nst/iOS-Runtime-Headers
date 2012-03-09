@@ -12,8 +12,8 @@
 
 - (void)_proxyNonGCFinalize;
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
+- (unsigned int)count;
 - (id)member:(id)arg1;
 - (id)objectEnumerator;
-- (unsigned int)count;
 
 @end

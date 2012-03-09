@@ -9,6 +9,9 @@
 
 + (id)rowBlock;
 
+- (id)init;
+- (void)dealloc;
+- (unsigned int)index;
 - (unsigned int)indexOfCellWithColumnNumber:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
 - (void)removeCellAtIndex:(unsigned int)arg1 rowInfo:(struct EDRowInfo {}**)arg2;
 - (unsigned long)startOfCellsOrThrow;
@@ -30,8 +33,5 @@
 - (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)cellWithColumnNumber:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
 - (void)doneWithContent;
 - (void)setIndex:(unsigned int)arg1;
-- (unsigned int)index;
-- (id)init;
-- (void)dealloc;
 
 @end

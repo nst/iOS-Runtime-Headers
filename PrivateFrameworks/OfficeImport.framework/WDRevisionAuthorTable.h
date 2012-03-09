@@ -10,12 +10,12 @@
 }
 
 
+- (void)dealloc;
+- (id)initWithDocument:(id)arg1;
 - (int)authorCount;
 - (id)authorAt:(int)arg1;
 - (int)authorAddLookup:(id)arg1;
 - (void)addAuthor:(id)arg1;
 - (id)authors;
-- (id)initWithDocument:(id)arg1;
-- (void)dealloc;
 
 @end

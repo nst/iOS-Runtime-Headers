@@ -9,11 +9,11 @@
 }
 
 
-- (float)height;
+- (void)dealloc;
 - (id)_myTableView;
 - (id)_recurrenceLabel;
 - (void)setRecurrenceString:(id)arg1;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
-- (void)dealloc;
+- (float)height;
 
 @end

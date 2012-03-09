@@ -16,16 +16,17 @@
 
 @property(setter=setIMMessage:,retain) IMMessage * imMessage;
 
-+ (void)initialize;
 + (id)existingMessageForGuid:(id)arg1;
++ (void)initialize;
 
 - (id)subject;
 - (BOOL)isPlaceholder;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)address;
 - (id)sequenceNumber;
-- (BOOL)hasAttachments;
-- (int)rowID;
-- (id)sender;
+- (id)error;
 - (void)_fileTransferUpdated:(id)arg1;
 - (void)_observeFileTransfersIfNecessary;
 - (void)_parseIMMessagePartsWithTextProcessingBlock:(id)arg1 fileTransferProcessingBlock:(id)arg2;
@@ -61,9 +62,8 @@
 - (BOOL)hasBeenSent;
 - (id)parts;
 - (id)guid;
-- (id)error;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (BOOL)hasAttachments;
+- (int)rowID;
+- (id)sender;
 
 @end

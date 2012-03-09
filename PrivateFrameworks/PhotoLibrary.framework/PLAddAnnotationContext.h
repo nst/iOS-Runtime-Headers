@@ -17,6 +17,8 @@
 
 + (id)contextWithPlaces:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (void)appendUniqueContext:(id)arg1;
 - (void)_appendArray:(id)arg1 toVar:(id*)arg2;
 - (void)setAnimationOnlyAnnotations:(id)arg1;
@@ -26,7 +28,5 @@
 - (void)setAnnotationsToRemoveWhenAddAnimationStarts:(id)arg1;
 - (id)annotationsToRemoveWhenAddAnimationStarts;
 - (id)initWithPlaces:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

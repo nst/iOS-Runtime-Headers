@@ -19,7 +19,8 @@
 - (id)topLevelPart;
 - (id)attachments;
 - (id)textHtmlPart;
-- (void)setTopLevelPart:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setPreferredTextEncoding:(unsigned long)arg1;
 - (id)mimeSubtype;
 - (id)partWithNumber:(id)arg1;
@@ -27,12 +28,11 @@
 - (int)preferredAlternative;
 - (unsigned long)preferredTextEncoding;
 - (BOOL)isRich;
-- (id)mimeType;
 - (int)numberOfAlternatives;
 - (void)setPreferredAlternative:(int)arg1;
 - (unsigned int)totalTextSize;
 - (unsigned int)numberOfAttachmentsSigned:(BOOL*)arg1 encrypted:(BOOL*)arg2;
-- (id)init;
-- (void)dealloc;
+- (void)setTopLevelPart:(id)arg1;
+- (id)mimeType;
 
 @end

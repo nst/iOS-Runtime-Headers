@@ -18,19 +18,19 @@
 @property(retain) NSString * url;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasHeadline;
-- (BOOL)hasUrl;
-- (void)writeTo:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (void)setHeadline:(id)arg1;
+- (id)headline;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (id)dictionaryRepresentation;
 - (BOOL)hasText;
 - (id)text;
 - (void)setText:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (void)setHeadline:(id)arg1;
-- (id)headline;
+- (BOOL)readFrom:(id)arg1;
+- (BOOL)hasUrl;
+- (void)writeTo:(id)arg1;
+- (BOOL)hasHeadline;
 
 @end

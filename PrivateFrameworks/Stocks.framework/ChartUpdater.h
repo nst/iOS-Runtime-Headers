@@ -15,13 +15,13 @@
 
 + (id)_rangeStringForInterval:(int)arg1;
 
-- (void)didParseData;
-- (void)failWithError:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (int)parseData:(id)arg1;
-- (id)delegate;
-- (BOOL)updateChartForStock:(id)arg1 interval:(int)arg2;
 - (void)cancel;
 - (id)init;
+- (BOOL)updateChartForStock:(id)arg1 interval:(int)arg2;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
 
 @end

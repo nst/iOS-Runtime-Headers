@@ -14,9 +14,9 @@
 
 
 - (void)setMIMESupport:(int)arg1;
-- (void)finishWithError:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)finishWithError:(id)arg1;
 - (void)setStreamingMailMessage:(id)arg1;
 - (id)streamingMailMessage;
 - (void)setCommands:(id)arg1;

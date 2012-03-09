@@ -16,10 +16,10 @@
 @property(retain) <EKStyleProvider> * styleProvider;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)footerView;
-- (void)reset;
-- (id)delegate;
+- (void)dealloc;
+- (id)viewForActionSheet;
+- (void)setStyleProvider:(id)arg1;
+- (id)styleProvider;
 - (void)notifyRequiresHeightChange;
 - (void)notifyTextChanged;
 - (void)notifySubitemDidCommit:(int)arg1;
@@ -46,10 +46,11 @@
 - (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (id)cellForSubitemAtIndex:(int)arg1;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
-- (void)dealloc;
+- (id)footerView;
+- (void)reset;
+- (BOOL)applicationDidResume;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (BOOL)isInline;
-- (id)viewForActionSheet;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
 
 @end

@@ -16,6 +16,12 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
+- (unsigned long)fileType;
+- (void)setFileType:(unsigned long)arg1;
+- (id)initWithPath:(id)arg1;
+- (id)path;
 - (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2;
 - (id)initWithCopyOfData:(id)arg1 path:(id)arg2;
 - (void)deleteFileWhenDone;
@@ -26,15 +32,9 @@
 - (void)readFileAttributes;
 - (long long)encodedLength;
 - (BOOL)isEncrypted;
+- (BOOL)isReadable;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (id)inputStream;
 - (long long)dataLength;
-- (id)path;
-- (unsigned long)fileType;
-- (void)setFileType:(unsigned long)arg1;
-- (id)initWithPath:(id)arg1;
-- (BOOL)isReadable;
-- (id)description;
-- (void)dealloc;
 
 @end

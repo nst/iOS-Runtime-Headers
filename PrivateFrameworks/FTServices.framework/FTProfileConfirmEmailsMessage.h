@@ -15,12 +15,12 @@
 
 - (id)emailAddress;
 - (id)messageBody;
-- (void)setVettingToken:(id)arg1;
-- (id)vettingToken;
-- (void)setEmailAddress:(id)arg1;
-- (id)requiredKeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)requiredKeys;
 - (id)bagKey;
+- (void)setEmailAddress:(id)arg1;
+- (void)setVettingToken:(id)arg1;
+- (id)vettingToken;
 
 @end

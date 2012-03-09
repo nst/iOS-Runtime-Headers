@@ -8,11 +8,11 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
 - (id)initWithTimeInterval:(double)arg1 tzOffsetTo:(int)arg2;
 - (int)tzOffsetTo;
 - (double)interval;
 - (int)compare:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
 
 @end

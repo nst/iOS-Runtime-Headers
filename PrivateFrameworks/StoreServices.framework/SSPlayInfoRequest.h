@@ -14,6 +14,10 @@
 @property(readonly) SSPlayInfoResponse * playInfoResponse;
 
 
+- (id)init;
+- (void)dealloc;
+- (id)initWithPlayInfoContext:(id)arg1;
+- (id)playInfoResponse;
 - (id)playInfoContext;
 - (id)handleFailureResponse:(id)arg1;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
@@ -23,9 +27,5 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithPlayInfoContext:(id)arg1;
-- (id)playInfoResponse;
-- (id)init;
-- (void)dealloc;
 
 @end

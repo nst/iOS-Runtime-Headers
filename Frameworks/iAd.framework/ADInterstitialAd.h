@@ -19,7 +19,8 @@
 @property BOOL presentedInView;
 
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (BOOL)presentedInView;
 - (void)presentFromViewController:(id)arg1;
 - (BOOL)presentInView:(id)arg1;
@@ -35,13 +36,12 @@
 - (void)interstitialViewActionDidFinish:(id)arg1;
 - (BOOL)interstitialViewActionShouldBegin:(id)arg1 willLeaveApplication:(BOOL)arg2;
 - (void)interstitialViewDidUnloadAd:(id)arg1;
-- (void)setLocalAd:(id)arg1;
-- (void)setAuthenticationUserName:(id)arg1;
 - (BOOL)isLoaded;
 - (id)modalViewController;
 - (id)delegate;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (void)setLocalAd:(id)arg1;
+- (void)setAuthenticationUserName:(id)arg1;
 - (void)setModalViewController:(id)arg1;
 - (void)setSection:(id)arg1;
 

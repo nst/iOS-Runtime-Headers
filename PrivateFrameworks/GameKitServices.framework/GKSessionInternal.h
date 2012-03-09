@@ -79,6 +79,11 @@
 
 
 - (void)setDomain:(id)arg1;
+- (void)publish;
+- (void)setPort:(unsigned int)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)serviceName;
 - (id)privateDelegate;
 - (BOOL)wifiEnabled;
 - (void)disconnectFromAllPeers;
@@ -104,9 +109,16 @@
 - (BOOL)isPeerBusy:(id)arg1;
 - (id)displayNameForPeer:(id)arg1;
 - (void)setPrivateDelegate:(id)arg1;
+- (id)sessionID;
+- (id)connection;
+- (id)domain;
+- (id)displayName;
+- (void)reset;
+- (unsigned int)port;
+- (void)unlock;
+- (void)lock;
+- (id)delegate;
 - (void)setDelegate:(id)arg1;
-- (void)publish;
-- (void)setPort:(unsigned int)arg1;
 - (id)peerID;
 - (id)createNSErrorFromHRESULT:(long)arg1 description:(id)arg2 reason:(id)arg3;
 - (void)printDictionaries;
@@ -162,17 +174,5 @@
 - (void)didResolveService:(struct _DNSServiceRef_t { }*)arg1 forPeer:(id)arg2 hostName:(const char *)arg3 port:(unsigned short)arg4 interface:(unsigned int)arg5 txtLen:(unsigned short)arg6 txtRecord:(const void*)arg7 withError:(int)arg8 moreComing:(BOOL)arg9;
 - (BOOL)isShuttingDown;
 - (void)sendCallbacksToDelegate:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1 remotePeer:(unsigned int)arg2;
-- (id)domain;
-- (id)displayName;
-- (void)reset;
-- (unsigned int)port;
-- (void)unlock;
-- (void)lock;
-- (id)delegate;
-- (id)serviceName;
-- (id)sessionID;
-- (id)connection;
-- (id)description;
-- (void)dealloc;
 
 @end

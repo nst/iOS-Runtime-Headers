@@ -14,6 +14,7 @@
 @property BOOL updateSmartPlaylists;
 
 
+- (void)dealloc;
 - (void)setUpdateSmartPlaylists:(BOOL)arg1;
 - (BOOL)updateSmartPlaylists;
 - (void)setNameOrders:(id)arg1;
@@ -29,6 +30,5 @@
 - (id)_addAlbumArtistForImportTrackProperties:(id)arg1;
 - (BOOL)_shouldInsertITMediaKindIntoPurchasedPlaylist:(unsigned long)arg1;
 - (id)_newTrackPropertiesByProcessingImportTrack:(id)arg1 insertStringsIntoSortMap:(BOOL)arg2;
-- (void)dealloc;
 
 @end

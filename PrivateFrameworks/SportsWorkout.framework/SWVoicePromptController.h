@@ -24,8 +24,11 @@
 + (id)_currentLanguageIdentifier;
 + (id)sharedPromptController;
 
+- (id)init;
+- (void)dealloc;
 - (void)setLanguage:(id)arg1;
 - (id)language;
+- (BOOL)isPlaying;
 - (void)fireAmountPromptWithAmount:(id)arg1 units:(id)arg2 words:(id*)arg3 englishWords:(id*)arg4;
 - (id)gender;
 - (void)_fireStandaloneNumberPrompt:(id)arg1;
@@ -82,8 +85,5 @@
 - (void)fireResumingWorkoutPrompt;
 - (void)fireBeginningWorkoutPrompt;
 - (void)refreshSettings;
-- (BOOL)isPlaying;
-- (id)init;
-- (void)dealloc;
 
 @end

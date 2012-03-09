@@ -34,22 +34,19 @@
 
 + (id)lookupAttributeKeys;
 
-- (id)bundleVersion;
-- (id)storeFrontIdentifier;
-- (void)setBundleVersion:(id)arg1;
-- (void)setBundleIdentifier:(id)arg1;
-- (void)setStoreFrontIdentifier:(id)arg1;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)bundleIdentifier;
+- (id)description;
+- (void)dealloc;
 - (void)_loadMetadataFromContainer:(id)arg1;
 - (void)setContainerPath:(id)arg1;
 - (void)setAccountDSID:(id)arg1;
 - (void)setBundleShortVersionString:(id)arg1;
 - (id)bundleShortVersionString;
 - (id)containerPath;
-- (id)description;
-- (void)dealloc;
+- (id)bundleVersion;
+- (id)storeFrontIdentifier;
+- (void)setBundleVersion:(id)arg1;
+- (void)setBundleIdentifier:(id)arg1;
+- (id)bundleIdentifier;
 - (void)setVersionOrdering:(id)arg1;
 - (void)setVersionIdentifier:(id)arg1;
 - (void)setSoftwareType:(id)arg1;
@@ -64,5 +61,8 @@
 - (id)itemIdentifier;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountDSID;
+- (void)setStoreFrontIdentifier:(id)arg1;
+- (void*)copyXPCEncoding;
+- (id)initWithXPCEncoding:(void*)arg1;
 
 @end

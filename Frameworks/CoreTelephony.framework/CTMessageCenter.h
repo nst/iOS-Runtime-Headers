@@ -7,6 +7,7 @@
 
 + (id)sharedMessageCenter;
 
+- (id)init;
 - (struct { int x1; int x2; })send:(id)arg1;
 - (void)setDeliveryReportsEnabled:(BOOL)arg1;
 - (BOOL)getCharacterCount:(int*)arg1 andMessageSplitThreshold:(int*)arg2 forSmsText:(id)arg3;
@@ -30,6 +31,5 @@
 - (void)sendMessageAsSmsToShortCodeRecipients:(id)arg1 andReplaceData:(id*)arg2;
 - (id)encodeMessage:(id)arg1;
 - (BOOL)sendSMSWithText:(id)arg1 serviceCenter:(id)arg2 toAddress:(id)arg3;
-- (id)init;
 
 @end

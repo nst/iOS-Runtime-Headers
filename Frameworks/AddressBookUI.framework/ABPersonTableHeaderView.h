@@ -40,26 +40,6 @@
 @property(readonly) ABPersonImageView * imageView;
 
 
-- (id)messageFont;
-- (id)alternateName;
-- (void)setDelegate:(id)arg1;
-- (id)message;
-- (void)setMessage:(id)arg1;
-- (void)setAllowsEditing:(BOOL)arg1;
-- (id)imageView;
-- (BOOL)canResignFirstResponder;
-- (BOOL)isFirstResponder;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)_isSpecialInternalHeaderView;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)becomeFirstResponder;
-- (BOOL)resignFirstResponder;
-- (id)delegate;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
-- (void)reloadData;
-- (void)setBackgroundColor:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (void*)personForName;
 - (void*)personForImageView;
@@ -114,5 +94,25 @@
 - (void)setCustomMessageView:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
+- (id)messageFont;
+- (id)alternateName;
+- (id)message;
+- (void)setMessage:(id)arg1;
+- (void)setAllowsEditing:(BOOL)arg1;
+- (id)imageView;
+- (BOOL)canResignFirstResponder;
+- (BOOL)isFirstResponder;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)_isSpecialInternalHeaderView;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)becomeFirstResponder;
+- (BOOL)resignFirstResponder;
+- (id)delegate;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (void)reloadData;
+- (void)setDelegate:(id)arg1;
+- (void)setBackgroundColor:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

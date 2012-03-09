@@ -9,6 +9,8 @@
 + (id)messageForWarning:(int)arg1;
 + (id)formula;
 
+- (id)init;
+- (void)dealloc;
 - (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(unsigned int*)arg2;
 - (void)archiveByAppendingToMutableData:(struct __CFData { }*)arg1;
 - (id)initWithFormula:(id)arg1;
@@ -62,7 +64,5 @@
 - (void)setWarning:(int)arg1;
 - (char *)extendedDataForTokenAtIndex:(unsigned int)arg1 extendedDataIndex:(unsigned int)arg2 length:(unsigned int*)arg3;
 - (void)replaceTokenTypeAtIndex:(unsigned int)arg1 withType:(int)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

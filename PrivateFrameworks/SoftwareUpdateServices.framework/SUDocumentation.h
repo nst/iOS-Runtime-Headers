@@ -28,14 +28,6 @@
 @property(retain) NSURL * licenseAgreementURL;
 
 
-- (void)setPrimaryLanguage:(id)arg1;
-- (id)primaryLanguage;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)baseDocumentationURL;
 - (id)licenseAgreement;
 - (id)releaseNotes;
@@ -64,5 +56,13 @@
 - (void)setBaseDocumentationURL:(id)arg1;
 - (BOOL)hasAnyDocumentation;
 - (id)humanReadableUpdateName;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
+- (void)setPrimaryLanguage:(id)arg1;
+- (id)primaryLanguage;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

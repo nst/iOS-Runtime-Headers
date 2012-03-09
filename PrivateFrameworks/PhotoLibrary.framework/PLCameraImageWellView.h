@@ -2,37 +2,40 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIView, UIImageView, UIImage;
+@class UIImageView, UIView, UIImage, CAShapeLayer;
 
 @interface PLCameraImageWellView : UIView  {
     UIImage *_thumbnailImage;
+    int _buttonBarStyle;
     UIImageView *_containerImageView;
     UIImageView *_thumbnailImageView;
     UIView *_thumbnailOverlayView;
+    CAShapeLayer *_thumbnailMaskLayer;
     BOOL _watchingOrientationChanges;
     int _deviceOrientation;
 }
 
++ (float)imageWellCornerRadius;
 
+- (void)dealloc;
 - (void)_deviceOrientationChanged:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)thumbnailImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbnailFrame;
 - (void)beginContentFadeOutWithDuration:(float)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2 buttonBarStyle:(int)arg3;
 - (void)_setImageViewHighlighted:(BOOL)arg1;
 - (void)addMaskedSubview:(id)arg1;
 - (void)setThumbnailImage:(id)arg1;
 - (void)_startWatchingDeviceOrientationChanges;
 - (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)_stopWatchingDeviceOrientationChanges;
-- (void)dealloc;
 
 @end

@@ -19,9 +19,8 @@
 @property unsigned short transactionCount;
 
 
-- (id)fileURL;
-- (void)setAttributes:(id)arg1;
-- (id)attributes;
+- (id)description;
+- (void)dealloc;
 - (void)enumerateCompletionBlocks:(BOOL)arg1;
 - (void)setCompletionBlocks:(id)arg1;
 - (void)persist;
@@ -32,7 +31,8 @@
 - (unsigned short)transactionCount;
 - (id)completionBlocks;
 - (void)addCompletionBlock:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (id)fileURL;
+- (void)setAttributes:(id)arg1;
+- (id)attributes;
 
 @end

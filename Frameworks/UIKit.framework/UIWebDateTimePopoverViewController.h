@@ -11,10 +11,10 @@
 @property(retain) <UIWebFormControl> * _innerWebDateTimeControl;
 
 
+- (void)dealloc;
 - (id)_innerWebDateTimeControl;
 - (void)set_innerWebDateTimeControl:(id)arg1;
 - (id)initWithDOMHTMLInputElement:(id)arg1 datePickerMode:(int)arg2;
 - (void)loadView;
-- (void)dealloc;
 
 @end

@@ -27,7 +27,11 @@
 @property(retain) NSString * snippet;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)snippet;
 - (int)totalReviews;
 - (void)setHasTotalReviews:(BOOL)arg1;
@@ -45,9 +49,5 @@
 - (void)setTotalReviews:(int)arg1;
 - (void)setStarRatingAverageE3:(int)arg1;
 - (void)setSnippet:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -11,16 +11,39 @@
     unsigned char _hasTelephony;
 }
 
-+ (void)writePreference:(id)arg1;
-+ (BOOL)processedBundle:(id)arg1 parentController:(id)arg2 parentSpecifier:(id)arg3 bundleControllers:(id*)arg4 settings:(id)arg5;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 + (id)readPreferenceValue:(id)arg1;
++ (void)writePreference:(id)arg1;
++ (BOOL)processedBundle:(id)arg1 parentController:(id)arg2 parentSpecifier:(id)arg3 bundleControllers:(id*)arg4 settings:(id)arg5;
 
-- (BOOL)deallocating;
-- (void)setParentController:(id)arg1;
-- (id)parentController;
+- (void)dealloc;
+- (BOOL)busy;
+- (id)specifiers;
+- (void)didLock;
+- (void)willUnlock;
+- (void)didUnlock;
+- (void)pushController:(id)arg1;
+- (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
+- (id)readPreferenceValue:(id)arg1;
+- (void)statusBarWillAnimateByHeight:(float)arg1;
+- (BOOL)canBeShownFromSuspendedState;
+- (id)rootController;
+- (void)setRootController:(id)arg1;
+- (void)handleURL:(id)arg1;
+- (void)willResignActive;
+- (void)willBecomeActive;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
+- (void)setParentController:(id)arg1;
+- (id)parentController;
+- (id)popToRootViewControllerAnimated:(BOOL)arg1;
+- (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
+- (id)popViewControllerAnimated:(BOOL)arg1;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
+- (void)showLeftButton:(id)arg1 withStyle:(int)arg2 rightButton:(id)arg3 withStyle:(int)arg4;
+- (void)suspend;
+- (void)didWake;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2;
 - (id)tasksDescription;
 - (BOOL)taskIsRunning:(id)arg1;
@@ -36,29 +59,6 @@
 - (void)sendWillResignActive;
 - (void)statusBarWillChangeHeight:(id)arg1;
 - (void)_delayedControllerReleaseAfterPop:(id)arg1;
-- (void)didWake;
-- (id)popToRootViewControllerAnimated:(BOOL)arg1;
-- (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
-- (id)popViewControllerAnimated:(BOOL)arg1;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
-- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
-- (void)showLeftButton:(id)arg1 withStyle:(int)arg2 rightButton:(id)arg3 withStyle:(int)arg4;
-- (void)suspend;
-- (BOOL)busy;
-- (void)dealloc;
-- (id)specifiers;
-- (void)didLock;
-- (void)willUnlock;
-- (void)didUnlock;
-- (void)pushController:(id)arg1;
-- (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
-- (id)readPreferenceValue:(id)arg1;
-- (void)statusBarWillAnimateByHeight:(float)arg1;
-- (BOOL)canBeShownFromSuspendedState;
-- (id)rootController;
-- (void)setRootController:(id)arg1;
-- (void)handleURL:(id)arg1;
-- (void)willResignActive;
-- (void)willBecomeActive;
+- (BOOL)deallocating;
 
 @end

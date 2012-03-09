@@ -12,6 +12,7 @@
 @property(getter=isLoading) BOOL loading;
 
 
+- (SEL)action;
 - (BOOL)showMoreVisible;
 - (void)tableView:(id)arg1 didSelectItem:(id)arg2;
 - (BOOL)tableView:(id)arg1 shouldSelectItem:(id)arg2;
@@ -30,6 +31,5 @@
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forItem:(id)arg3;
 - (id)tableView:(id)arg1 itemAtIndex:(int)arg2;
 - (void)setAction:(SEL)arg1;
-- (SEL)action;
 
 @end

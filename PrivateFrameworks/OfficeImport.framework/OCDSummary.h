@@ -13,6 +13,9 @@
 }
 
 
+- (void)dealloc;
+- (id)title;
+- (void)setTitle:(id)arg1;
 - (id)author;
 - (void)setAuthor:(id)arg1;
 - (id)keywords;
@@ -21,8 +24,5 @@
 - (void)setComments:(id)arg1;
 - (id)hyperlinkBase;
 - (void)setHyperlinkBase:(id)arg1;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (void)dealloc;
 
 @end

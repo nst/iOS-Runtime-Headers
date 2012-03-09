@@ -13,6 +13,9 @@
 
 
 - (id)initWithAccount:(id)arg1;
+- (void)dealloc;
+- (id)initWithAuthenticationContext:(id)arg1;
+- (id)authenticationContext;
 - (id)handleFailureResponse:(id)arg1;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
@@ -21,8 +24,5 @@
 - (id)initWithXPCEncoding:(void*)arg1;
 - (id)copyPropertyListEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (void)dealloc;
-- (id)initWithAuthenticationContext:(id)arg1;
-- (id)authenticationContext;
 
 @end

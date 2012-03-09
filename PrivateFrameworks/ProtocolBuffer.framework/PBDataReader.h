@@ -15,23 +15,21 @@
 @property unsigned int position;
 
 
-- (BOOL)seekToOffset:(unsigned int)arg1;
-- (id)readBytes:(unsigned int)arg1;
-- (BOOL)isAtEnd;
-- (unsigned long long)readBigEndianFixed64;
-- (int)readSfixed32;
-- (id)readProtoBuffer;
-- (BOOL)readInt8;
-- (unsigned short)readBigEndianFixed16;
-- (long long)readSint64;
-- (int)readSint32;
-- (long long)readInt64;
-- (long long)readVarInt;
+- (unsigned int)length;
+- (void)dealloc;
+- (int)read:(const char *)arg1 maxLength:(unsigned int)arg2;
 - (unsigned int)readUint32;
 - (unsigned long long)readUint64;
 - (double)readDouble;
-- (id)data;
+- (unsigned int)offset;
+- (unsigned int)position;
 - (void)setPosition:(unsigned int)arg1;
+- (id)data;
+- (id)initWithData:(id)arg1;
+- (void)setLength:(unsigned int)arg1;
+- (BOOL)seekToOffset:(unsigned int)arg1;
+- (id)readBytes:(unsigned int)arg1;
+- (BOOL)isAtEnd;
 - (unsigned int)readFixed32;
 - (float)readFloat;
 - (BOOL)readBOOL;
@@ -43,14 +41,16 @@
 - (void)readTag:(unsigned short*)arg1 andType:(char *)arg2;
 - (BOOL)hasMoreData;
 - (BOOL)hasError;
-- (void)setLength:(unsigned int)arg1;
+- (unsigned long long)readBigEndianFixed64;
+- (int)readSfixed32;
+- (id)readProtoBuffer;
+- (BOOL)readInt8;
+- (unsigned short)readBigEndianFixed16;
+- (long long)readSint64;
+- (int)readSint32;
+- (long long)readInt64;
+- (long long)readVarInt;
 - (long long)readSfixed64;
 - (unsigned int)readBigEndianFixed32;
-- (unsigned int)offset;
-- (unsigned int)position;
-- (id)initWithData:(id)arg1;
-- (int)read:(const char *)arg1 maxLength:(unsigned int)arg2;
-- (unsigned int)length;
-- (void)dealloc;
 
 @end

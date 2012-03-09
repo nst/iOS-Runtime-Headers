@@ -12,14 +12,14 @@
 
 + (id)pairWithFirst:(id)arg1 second:(id)arg2;
 
-- (void)setFirst:(id)arg1;
-- (id)initWithFirst:(id)arg1 second:(id)arg2;
-- (id)first;
-- (void)setSecond:(id)arg1;
-- (id)second;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)setSecond:(id)arg1;
+- (id)second;
+- (void)setFirst:(id)arg1;
+- (id)initWithFirst:(id)arg1 second:(id)arg2;
+- (id)first;
 
 @end

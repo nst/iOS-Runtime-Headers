@@ -14,11 +14,11 @@
 
 + (id)sharedManager;
 
-- (void)setLocationManager:(id)arg1;
-- (id)locationManager;
+- (id)init;
+- (id)location;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 - (void)setLocation:(id)arg1;
-- (id)location;
-- (id)init;
+- (void)setLocationManager:(id)arg1;
+- (id)locationManager;
 
 @end

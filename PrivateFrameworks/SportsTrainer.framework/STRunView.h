@@ -61,19 +61,9 @@
 @property(readonly) SWRunWorkoutProxy * workoutProxy;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)_pause;
-- (void)_nowPlayingChanged:(id)arg1;
-- (void)resume;
-- (void)_applicationWillResignActive:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)suspend;
-- (int)orientation;
-- (id)delegate;
-- (void)layoutSubviews;
-- (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (void)_start;
+- (void)_applicationWillSuspend:(id)arg1;
 - (id)workoutProxy;
 - (int)interface;
 - (id)_greenButtonDownImage;
@@ -142,10 +132,20 @@
 - (void)_workoutStateDidChange:(id)arg1;
 - (void)_empedSearchStateChanged:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 workoutProxy:(id)arg2;
-- (void)dealloc;
+- (void)resume;
+- (void)_applicationWillResignActive:(id)arg1;
+- (void)setOrientation:(int)arg1;
+- (void)suspend;
+- (int)orientation;
+- (id)delegate;
+- (void)layoutSubviews;
+- (void)didMoveToWindow;
+- (void)setDelegate:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_pause;
 - (void)_stop;
 - (void)_cancel;
 - (void)_applicationResumed:(id)arg1;
-- (void)_applicationWillSuspend:(id)arg1;
+- (void)_nowPlayingChanged:(id)arg1;
 
 @end

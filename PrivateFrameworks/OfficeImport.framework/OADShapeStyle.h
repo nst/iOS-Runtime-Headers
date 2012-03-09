@@ -12,6 +12,8 @@
 }
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)applyToGraphicProperties:(id)arg1 styleMatrix:(id)arg2;
 - (void)applyToTextBody:(id)arg1;
 - (id)lineReference;
@@ -28,7 +30,5 @@
 - (void)setLineMatrixIndex:(unsigned long)arg1 color:(id)arg2;
 - (void)applyToGraphicProperties:(id)arg1 styleMatrix:(id)arg2 useNull:(BOOL)arg3 strokeWidthMultiplier:(float)arg4;
 - (void)setEffectMatrixIndex:(unsigned long)arg1 color:(id)arg2;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

@@ -33,27 +33,8 @@
 @property(readonly) EKCalendarItemEditItem * currentEditItem;
 
 
-- (void)setStore:(id)arg1;
-- (id)store;
-- (void)done:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidUnload;
-- (void)loadView;
-- (void)viewDidLoad;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
-- (void)tableViewDidFinishReload:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)didReceiveMemoryWarning;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)init;
+- (void)dealloc;
 - (id)currentEditItem;
 - (void)setScrollToNotes:(BOOL)arg1;
 - (void)setEditorDelegate:(id)arg1;
@@ -115,8 +96,28 @@
 - (void)_presentDetachSheet;
 - (void)setupForEvent;
 - (void)_localeChanged;
+- (void)done:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (void)viewDidLoad;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
+- (void)tableViewDidFinishReload:(id)arg1;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)applicationDidResume;
+- (void)didReceiveMemoryWarning;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setStore:(id)arg1;
+- (id)store;
 - (void)cancel:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

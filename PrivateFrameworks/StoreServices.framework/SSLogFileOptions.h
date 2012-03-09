@@ -17,6 +17,9 @@
 @property int maxNumberOfLogFiles;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setMaxNumberOfLogFiles:(int)arg1;
 - (int)maxNumberOfLogFiles;
 - (void)setMaxLogFileSize:(unsigned long)arg1;
@@ -25,8 +28,5 @@
 - (id)logFileBaseName;
 - (void)setLogDirectoryPath:(id)arg1;
 - (id)logDirectoryPath;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

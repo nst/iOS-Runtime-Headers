@@ -19,6 +19,7 @@
 @property(retain) _UITabBarItemAppearanceStorage * tabItemAppearanceStorage;
 
 
+- (void)dealloc;
 - (void)setSelectedImageTintColor:(id)arg1;
 - (id)selectedImageTintColor;
 - (void)setSelectionIndicatorImage:(id)arg1;
@@ -30,6 +31,5 @@
 - (id)tintColor;
 - (void)setBackgroundImage:(id)arg1;
 - (id)backgroundImage;
-- (void)dealloc;
 
 @end

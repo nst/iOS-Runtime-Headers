@@ -5,15 +5,15 @@
 @interface PLSharedPhotoLibrary : PLPhotoLibrary  {
 }
 
-+ (id)sharedPhotoLibrary;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)sharedPhotoLibrary;
 
-- (unsigned int)concurrencyType;
-- (void)_updateWithInsertedAssetsCount:(unsigned int)arg1 deletedCount:(unsigned int)arg2;
 - (unsigned int)retainCount;
 - (id)retain;
+- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)autorelease;
-- (oneway void)release;
+- (void)_updateWithInsertedAssetsCount:(unsigned int)arg1 deletedCount:(unsigned int)arg2 updatedAssets:(id)arg3;
+- (unsigned int)concurrencyType;
 
 @end

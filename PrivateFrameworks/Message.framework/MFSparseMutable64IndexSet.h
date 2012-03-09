@@ -15,12 +15,12 @@
 - (void)_garbageCollectStorageIfNecessary;
 - (void)removeIndex:(unsigned long long)arg1;
 - (void)addIndexes:(id)arg1;
+- (unsigned int)count;
+- (id)description;
+- (void)dealloc;
 - (void)addIndex:(unsigned long long)arg1;
 - (BOOL)containsIndex:(unsigned long long)arg1;
 - (unsigned long long)indexGreaterThanIndex:(unsigned long long)arg1;
 - (unsigned long long)firstIndex;
-- (unsigned int)count;
-- (id)description;
-- (void)dealloc;
 
 @end

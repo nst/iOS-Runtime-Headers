@@ -10,14 +10,14 @@
 
 @property(readonly) SUScriptMediaItemCollection * collection;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (void)initialize;
++ (id)webScriptNameForKey:(const char *)arg1;
 
 - (id)initWithCollection:(id)arg1;
-- (id)collection;
-- (id)attributeKeys;
 - (void)dealloc;
+- (id)attributeKeys;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)collection;
 
 @end

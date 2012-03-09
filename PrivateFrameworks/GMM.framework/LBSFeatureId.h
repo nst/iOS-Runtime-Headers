@@ -11,14 +11,14 @@
 @property unsigned long long fprint;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (unsigned long long)fprint;
 - (unsigned long long)cellId;
 - (void)setFprint:(unsigned long long)arg1;
 - (void)setCellId:(unsigned long long)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

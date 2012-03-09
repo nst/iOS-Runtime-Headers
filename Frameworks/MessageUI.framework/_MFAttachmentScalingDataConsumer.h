@@ -14,9 +14,9 @@
 
 
 - (void)setLock:(id)arg1;
-- (void)setStore:(id)arg1;
-- (id)store;
 - (int)appendData:(id)arg1;
 - (id)lock;
+- (void)setStore:(id)arg1;
+- (id)store;
 
 @end

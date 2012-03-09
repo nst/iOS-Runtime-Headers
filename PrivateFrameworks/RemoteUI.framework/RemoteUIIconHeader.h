@@ -2,22 +2,21 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSURL, UIImageView, UILabel;
+@class UIImageView, UILabel;
 
 @interface RemoteUIIconHeader : UIView <RemoteUITableHeader> {
     UILabel *_header;
     UILabel *_subHeader;
     UIImageView *_iconView;
     BOOL _isFirstSection;
-    NSURL *_iconURL;
 }
 
 
-- (void)imageLoaded;
-- (void)setSectionIsFirst:(BOOL)arg1;
-- (float)headerHeightForWidth:(float)arg1 inTableView:(id)arg2;
-- (void)layoutSubviews;
 - (void)dealloc;
 - (id)initWithAttributes:(id)arg1;
+- (void)layoutSubviews;
+- (void)setIconImage:(id)arg1;
+- (void)setSectionIsFirst:(BOOL)arg1;
+- (float)headerHeightForWidth:(float)arg1 inTableView:(id)arg2;
 
 @end

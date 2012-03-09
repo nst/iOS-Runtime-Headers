@@ -5,8 +5,8 @@
 @interface IMAVInvitationController : NSObject  {
 }
 
-+ (void)setDelegate:(id)arg1;
 + (id)delegate;
++ (void)setDelegate:(id)arg1;
 + (id)curentAVChatConnectedDate;
 + (id)curentAVChatRemoteUserID;
 + (unsigned int)currentAVChatEndedReason;

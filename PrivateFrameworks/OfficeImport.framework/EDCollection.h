@@ -11,14 +11,6 @@
 + (id)collectionWithObject:(id)arg1;
 + (id)collection;
 
-- (BOOL)isEqualToCollection:(id)arg1;
-- (unsigned int)addOrEquivalentObject:(id)arg1;
-- (unsigned int)indexOfObject:(id)arg1;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
-- (void)removeAllObjects;
-- (id)initWithObject:(id)arg1;
 - (unsigned int)count;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -27,5 +19,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)initWithObject:(id)arg1;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (unsigned int)indexOfObject:(id)arg1;
+- (void)removeAllObjects;
+- (BOOL)isEqualToCollection:(id)arg1;
+- (unsigned int)addOrEquivalentObject:(id)arg1;
 
 @end

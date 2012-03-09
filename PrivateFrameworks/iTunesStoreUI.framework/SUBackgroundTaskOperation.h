@@ -14,8 +14,8 @@
 @property(readonly) NSString * permissionIdentifier;
 
 
-- (void)run;
 - (void)dealloc;
+- (void)run;
 - (id)permissionIdentifier;
 - (id)initWithOperation:(id)arg1 identifier:(id)arg2;
 - (void)_cancelBackgroundAssertion;

@@ -55,6 +55,18 @@
 + (void)loadAnimationCache:(id)arg1 pdAnimation:(id)arg2 state:(id)arg3;
 + (id)createAnimationInfoDataForCacheItem:(id)arg1 order:(unsigned int)arg2;
 
+- (void)dealloc;
+- (double)direction;
+- (double)value;
+- (void)setDelay:(double)arg1;
+- (double)delay;
+- (void)setValue:(double)arg1;
+- (int)nodeType;
+- (void)setDirection:(double)arg1;
+- (int)level;
+- (void)setLevel:(int)arg1;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 - (id)initWithAnimationInfo:(id)arg1;
 - (void)setIsHead:(BOOL)arg1;
 - (void)setHasValue:(BOOL)arg1;
@@ -87,17 +99,5 @@
 - (BOOL)hasDelay;
 - (void)setGroupId:(id)arg1;
 - (id)groupId;
-- (double)duration;
-- (void)setDuration:(double)arg1;
-- (double)direction;
-- (double)value;
-- (void)setDelay:(double)arg1;
-- (double)delay;
-- (void)setValue:(double)arg1;
-- (int)nodeType;
-- (void)setDirection:(double)arg1;
-- (int)level;
-- (void)setLevel:(int)arg1;
-- (void)dealloc;
 
 @end

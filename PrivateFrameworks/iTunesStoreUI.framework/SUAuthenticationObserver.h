@@ -18,9 +18,9 @@
 
 - (void)setTimeout:(double)arg1;
 - (double)timeout;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (void)dealloc;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)_sendSuccessToDelegate;
 - (void)_sendFailureToDelegate;
 - (void)_sendTimeoutToDelegate;

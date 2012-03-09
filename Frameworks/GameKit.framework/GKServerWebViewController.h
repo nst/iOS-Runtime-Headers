@@ -56,6 +56,7 @@
 @property(retain) GKPhotoPicker * photoPicker;
 
 
+- (void)dealloc;
 - (BOOL)dismissOnAuthenticate;
 - (id)photoPicker;
 - (void)setAddedSheetFrame:(BOOL)arg1;
@@ -95,6 +96,7 @@
 - (void)setPushToken:(id)arg1;
 - (id)pushToken;
 - (void)setStatus:(int)arg1;
+- (int)status;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
@@ -114,7 +116,5 @@
 - (id)backgroundView;
 - (void)setBackgroundView:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (int)status;
-- (void)dealloc;
 
 @end

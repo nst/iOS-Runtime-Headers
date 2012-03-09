@@ -17,6 +17,7 @@
 
 + (id)customAttributes;
 
+- (void)dealloc;
 - (id)inputCubeData;
 - (id)inputCubeDimension;
 - (id)cubeImage;
@@ -27,6 +28,5 @@
 - (id)inputImage;
 - (id)outputImage;
 - (void)setDefaults;
-- (void)dealloc;
 
 @end

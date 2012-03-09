@@ -9,10 +9,10 @@
 }
 
 
+- (void)dealloc;
 - (id)textAttributeForKey:(id)arg1 state:(unsigned int)arg2;
 - (void)setTextAttribute:(id)arg1 forKey:(id)arg2 state:(unsigned int)arg3;
 - (void)setTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (id)textAttributesForState:(unsigned int)arg1;
-- (void)dealloc;
 
 @end

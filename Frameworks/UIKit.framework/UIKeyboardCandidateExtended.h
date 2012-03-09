@@ -36,6 +36,9 @@
 @property BOOL animating;
 
 
+- (unsigned int)count;
+- (id)candidates;
+- (void)dealloc;
 - (void)inputTextFieldCaretDidStartBlinking:(id)arg1;
 - (void)setSelectedCandidateIndex:(unsigned int)arg1;
 - (void)minimizeKeyboard;
@@ -98,8 +101,5 @@
 - (void)setAnimating:(BOOL)arg1;
 - (void)setInputView:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (unsigned int)count;
-- (id)candidates;
-- (void)dealloc;
 
 @end

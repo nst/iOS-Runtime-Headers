@@ -15,14 +15,14 @@
 @property ABPersonTableTinyActionCell * cell;
 
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
+- (void)unhighlight;
+- (void)refreshActions;
 - (id)actions;
 - (void)setCell:(id)arg1;
 - (id)cell;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
-- (void)unhighlight;
-- (void)refreshActions;
 
 @end

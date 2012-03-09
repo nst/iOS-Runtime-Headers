@@ -7,10 +7,10 @@
 }
 
 
+- (void)dealloc;
 - (void)finalize;
 - (void)setCachedSQLiteStatement:(struct sqlite3_stmt { }*)arg1;
 - (void)clearCaches;
 - (struct sqlite3_stmt { }*)cachedSQLiteStatement;
-- (void)dealloc;
 
 @end

@@ -9,9 +9,9 @@
 }
 
 
-- (id)attributesList;
-- (void)addAttributes:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)attributesList;
+- (void)addAttributes:(id)arg1;
 
 @end

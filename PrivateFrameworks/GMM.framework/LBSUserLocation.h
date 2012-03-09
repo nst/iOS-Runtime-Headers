@@ -44,9 +44,18 @@
 @property int locType;
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setAddress:(id)arg1;
 - (id)address;
+- (void)setSource:(id)arg1;
+- (id)source;
+- (id)dictionaryRepresentation;
+- (long long)timestamp;
+- (void)setTimestamp:(long long)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (int)confidence;
 - (BOOL)hasAddress;
 - (id)misc;
 - (int)locType;
@@ -74,18 +83,9 @@
 - (int)accuracy;
 - (void)setConfidence:(int)arg1;
 - (void)setAccuracy:(int)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setSource:(id)arg1;
-- (id)source;
-- (id)dictionaryRepresentation;
-- (long long)timestamp;
-- (void)setTimestamp:(long long)arg1;
-- (void)setLatLng:(id)arg1;
 - (void)setFeatures:(id)arg1;
 - (id)features;
 - (id)locationString;
-- (id)description;
-- (void)dealloc;
-- (int)confidence;
+- (void)setLatLng:(id)arg1;
 
 @end

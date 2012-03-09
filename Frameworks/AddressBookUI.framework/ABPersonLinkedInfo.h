@@ -17,11 +17,6 @@
 @property(retain) NSString * type;
 
 
-- (id)type;
-- (id)name;
-- (void)setType:(id)arg1;
-- (void)setPerson:(void*)arg1;
-- (void*)person;
 - (void)setName:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
@@ -29,5 +24,10 @@
 - (void)dealloc;
 - (BOOL)isUnified;
 - (void)setUnified:(BOOL)arg1;
+- (void)setPerson:(void*)arg1;
+- (void*)person;
+- (id)type;
+- (id)name;
+- (void)setType:(id)arg1;
 
 @end

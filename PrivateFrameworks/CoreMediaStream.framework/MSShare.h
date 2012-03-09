@@ -28,10 +28,12 @@
 + (id)share;
 
 - (id)emailAddress;
-- (void)setLastName:(id)arg1;
-- (void)setFirstName:(id)arg1;
-- (id)lastName;
-- (id)firstName;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
+- (void)setPersonID:(id)arg1;
+- (id)personID;
 - (void)setSharingTheirPhotostream:(int)arg1;
 - (int)sharingTheirPhotostream;
 - (void)setSharingOurPhotostream:(int)arg1;
@@ -40,18 +42,16 @@
 - (void)setSharingOurStream:(int)arg1;
 - (int)sharingTheirStream;
 - (int)sharingOurStream;
-- (id)UUID;
+- (void)setLastName:(id)arg1;
+- (void)setFirstName:(id)arg1;
+- (id)lastName;
+- (id)firstName;
+- (id)fullName;
+- (void)setFullName:(id)arg1;
 - (void)setUUID:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)fullName;
-- (void)setFullName:(id)arg1;
-- (id)personID;
-- (void)setPersonID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
+- (id)UUID;
 
 @end

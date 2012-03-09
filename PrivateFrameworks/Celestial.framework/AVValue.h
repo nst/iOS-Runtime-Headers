@@ -8,7 +8,7 @@
 
 + (id)valueWithSelector:(SEL)arg1;
 
-- (id)initWithSelector:(SEL)arg1;
 - (SEL)selectorValue;
+- (id)initWithSelector:(SEL)arg1;
 
 @end

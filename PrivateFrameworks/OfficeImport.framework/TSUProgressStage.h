@@ -15,6 +15,10 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
+- (void)end;
+- (void)setProgress:(double)arg1;
 - (id)initWithSteps:(double)arg1 takingSteps:(double)arg2 inContext:(id)arg3;
 - (double)nextSubStageParentSize;
 - (void)setNextSubStageParentSize:(double)arg1;
@@ -24,9 +28,5 @@
 - (double)currentPosition;
 - (id)initRootStageInContext:(id)arg1;
 - (void)advanceProgress:(double)arg1;
-- (void)end;
-- (void)setProgress:(double)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

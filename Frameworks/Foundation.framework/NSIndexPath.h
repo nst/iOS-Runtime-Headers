@@ -23,15 +23,6 @@
 + (id)indexPathForRow:(int)arg1 inSection:(int)arg2;
 + (id)indexPathForRow:(unsigned int)arg1 column:(unsigned int)arg2 inSection:(unsigned int)arg3;
 
-- (id)indexPathByRemovingLastIndex;
-- (id)initWithIndex:(unsigned int)arg1;
-- (void)getIndexes:(unsigned int*)arg1;
-- (unsigned int)indexAtPosition:(unsigned int)arg1;
-- (id)initWithIndexes:(unsigned int*)arg1 length:(unsigned int)arg2;
-- (int)compare:(id)arg1;
-- (id)indexPathByAddingIndex:(unsigned int)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
@@ -39,6 +30,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)indexPathByRemovingLastIndex;
+- (void)getIndexes:(unsigned int*)arg1;
+- (unsigned int)indexAtPosition:(unsigned int)arg1;
+- (id)initWithIndexes:(unsigned int*)arg1 length:(unsigned int)arg2;
+- (int)compare:(id)arg1;
+- (id)indexPathByAddingIndex:(unsigned int)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithIndex:(unsigned int)arg1;
 - (int)section;
 - (int)row;
 - (id)_gkIndexPathWithColumn:(int)arg1;

@@ -12,13 +12,13 @@
 @property(copy) NSArray * messageParts;
 @property(copy) NSString * postURL;
 
++ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
-+ (void)initialize;
 
-- (id)attributeKeys;
 - (id)init;
 - (void)dealloc;
+- (id)attributeKeys;
 - (id)uploadURLForAttachmentType:(id)arg1;
 - (void)setUploadURL:(id)arg1 forAttachmentType:(id)arg2;
 - (void)sendWithCompletionHandler:(id)arg1;

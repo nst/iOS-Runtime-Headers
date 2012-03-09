@@ -15,19 +15,19 @@
 @property(retain) <EKStyleProvider> * styleProvider;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)headerTitle;
-- (void)reset;
-- (BOOL)becomeFirstResponder;
-- (id)delegate;
+- (void)dealloc;
+- (void)setStyleProvider:(id)arg1;
+- (id)styleProvider;
 - (void)calendarEditor:(id)arg1 didSelectSubitem:(int)arg2;
 - (BOOL)saveStateToCalendar:(id)arg1;
 - (void)setCalendar:(id)arg1 store:(id)arg2;
 - (int)numberOfSubitems;
 - (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (id)cellForSubitemAtIndex:(int)arg1;
-- (void)dealloc;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
+- (id)headerTitle;
+- (void)reset;
+- (BOOL)becomeFirstResponder;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

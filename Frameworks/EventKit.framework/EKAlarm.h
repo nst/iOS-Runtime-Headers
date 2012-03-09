@@ -18,8 +18,10 @@
 + (BOOL)areLocationsAllowedWithAuthorizationStatus:(int)arg1;
 + (id)alarmWithRelativeOffset:(double)arg1;
 
-- (id)owner;
-- (id)UUID;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setLocationRelation:(id)arg1;
 - (id)locationRelation;
 - (id)ownerUUID;
@@ -38,15 +40,13 @@
 - (BOOL)isAbsolute;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (BOOL)validate:(id*)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)localizedDescription;
+- (id)owner;
+- (id)UUID;
 - (id)localizedDescriptionForReminder;
 - (id)localizedAllDayDescription;
 - (id)longLocalizedAllDayDescription;
 - (id)longLocalizedDescription;
 - (id)_localizedDescription:(BOOL)arg1 forEvent:(BOOL)arg2 isAllDay:(BOOL)arg3;
+- (id)localizedDescription;
 
 @end

@@ -13,7 +13,7 @@
 + (id)taskMemoryCacheForTask:(unsigned int)arg1;
 + (BOOL)taskIs64Bit:(unsigned int)arg1;
 
-- (void)finalize;
+- (void)dealloc;
 - (BOOL)copyRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 to:(void*)arg2;
 - (int)peekAtAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 returnsBuf:(void**)arg3;
 - (id)initWithTask:(unsigned int)arg1;
@@ -21,6 +21,6 @@
 - (int)startPeeking;
 - (int)stopPeeking;
 - (int)readPointerAt:(unsigned long long)arg1 value:(unsigned long long*)arg2;
-- (void)dealloc;
+- (void)finalize;
 
 @end

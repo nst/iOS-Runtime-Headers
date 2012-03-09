@@ -35,6 +35,8 @@
 @property(readonly) float rotation;
 
 
+- (id)description;
+- (void)dealloc;
 - (BOOL)inJavaScriptGesture;
 - (id)touchPhases;
 - (id)touchIdentifiers;
@@ -65,7 +67,5 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (float)scale;
-- (id)description;
-- (void)dealloc;
 
 @end

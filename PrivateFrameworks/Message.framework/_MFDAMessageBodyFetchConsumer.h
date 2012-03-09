@@ -23,10 +23,10 @@
 - (BOOL)succeeded;
 - (id)streamConsumer;
 - (void)handleResponse:(id)arg1 error:(id)arg2;
+- (void)dealloc;
 - (void)setError:(id)arg1;
+- (id)error;
 - (id)data;
 - (void)setData:(id)arg1;
-- (id)error;
-- (void)dealloc;
 
 @end

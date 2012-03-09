@@ -16,15 +16,15 @@
 @property(readonly) NSArray * mediaTypes;
 @property(readonly) SUScriptMediaItem * representativeItem;
 
-+ (id)webScriptNameForKey:(const char *)arg1;
 + (void)initialize;
++ (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)attributeKeys;
+- (int)count;
+- (void)dealloc;
 - (id)mediaTypes;
 - (id)initWithItems:(id)arg1;
 - (id)items;
-- (int)count;
-- (void)dealloc;
+- (id)attributeKeys;
 - (id)nativeCollection;
 - (id)representativeItem;
 - (id)_copyRepresentativeItem;

@@ -39,7 +39,8 @@
 @property(retain) NSDictionary * lastStepByStepInstrumentation;
 
 
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)restoreNetworkDone:(id)arg1;
 - (long)startRestoreNetwork:(id)arg1;
 - (void)setLastStepByStepInstrumentation:(id)arg1;
@@ -92,7 +93,6 @@
 - (id)targetMACAddress;
 - (int)state;
 - (id)delegate;
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 
 @end

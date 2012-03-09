@@ -24,6 +24,8 @@
 + (id)dynamicAnimationForView:(id)arg1 withInitialValue:(double)arg2 velocity:(double)arg3 type:(int)arg4 anchorPoint:(struct CGPoint { float x1; float x2; })arg5;
 + (void)_updateAnimations:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (BOOL)_isRunning;
 - (void)_setGrouped:(BOOL)arg1;
 - (BOOL)_isGrouped;
@@ -39,7 +41,5 @@
 - (BOOL)_animateForInterval:(double)arg1;
 - (void)_stopAnimation;
 - (int)state;
-- (id)description;
-- (void)dealloc;
 
 @end

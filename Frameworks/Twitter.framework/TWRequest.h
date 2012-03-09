@@ -21,13 +21,11 @@
 
 + (BOOL)shouldRetryAfterCount:(int)arg1 delay:(float*)arg2;
 
-- (void)performRequestWithHandler:(id)arg1;
 - (void)setAccount:(id)arg1;
 - (id)account;
-- (id)parameters;
-- (id)initWithURL:(id)arg1;
-- (id)URL;
 - (void)dealloc;
+- (id)parameters;
+- (void)performRequestWithHandler:(id)arg1;
 - (int)requestMethod;
 - (void)performJSONRequestWithHandler:(id)arg1;
 - (int)callingPID;
@@ -47,5 +45,7 @@
 - (id)credential;
 - (void)setRequestMethod:(int)arg1;
 - (void)setCredential:(id)arg1;
+- (id)initWithURL:(id)arg1;
+- (id)URL;
 
 @end

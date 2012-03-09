@@ -8,8 +8,8 @@
     AVAssetWriterInternal *_internal;
 }
 
-@property(copy,readonly) NSURL * outputURL;
-@property(copy,readonly) NSString * outputFileType;
+@property(readonly) NSURL * outputURL;
+@property(readonly) NSString * outputFileType;
 @property(readonly) NSArray * availableMediaTypes;
 @property(readonly) int status;
 @property(readonly) NSError * error;
@@ -18,40 +18,40 @@
 @property(readonly) NSArray * inputs;
 @property(getter=_helper,setter=_setHelper:,retain) AVAssetWriterHelper * helper;
 
-+ (void)initialize;
-+ (id)assetWriterWithURL:(id)arg1 fileType:(id)arg2 error:(id*)arg3;
-+ (id)keyPathsForValuesAffectingStatus;
 + (id)keyPathsForValuesAffectingError;
++ (id)keyPathsForValuesAffectingStatus;
++ (id)assetWriterWithURL:(id)arg1 fileType:(id)arg2 error:(id*)arg3;
++ (void)initialize;
 
-- (void)finalize;
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
-- (void)_transitionToFailedStatusWithError:(id)arg1;
-- (id)initWithURL:(id)arg1 fileType:(id)arg2 error:(id*)arg3;
-- (id)outputURL;
-- (id)outputFileType;
-- (id)_helper;
-- (id)availableMediaTypes;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
-- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (BOOL)shouldOptimizeForNetworkUse;
-- (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
-- (int)movieTimeScale;
-- (void)setMovieTimeScale:(int)arg1;
-- (id)inputs;
-- (BOOL)canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2;
-- (BOOL)canAddInput:(id)arg1;
-- (void)addInput:(id)arg1;
-- (BOOL)startWriting;
-- (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)cancelWriting;
-- (BOOL)finishWriting;
-- (void)_setHelper:(id)arg1;
-- (int)status;
-- (id)error;
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (void)_transitionToFailedStatusWithError:(id)arg1;
+- (void)_setHelper:(id)arg1;
+- (BOOL)finishWriting;
+- (void)cancelWriting;
+- (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)addInput:(id)arg1;
+- (BOOL)canAddInput:(id)arg1;
+- (BOOL)canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2;
+- (id)availableMediaTypes;
+- (id)outputFileType;
+- (id)outputURL;
+- (id)initWithURL:(id)arg1 fileType:(id)arg2 error:(id*)arg3;
+- (id)inputs;
+- (void)setMovieTimeScale:(int)arg1;
+- (int)movieTimeScale;
+- (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
+- (BOOL)shouldOptimizeForNetworkUse;
+- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
+- (int)status;
+- (id)error;
+- (id)_helper;
+- (void)finalize;
+- (BOOL)startWriting;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 
 @end

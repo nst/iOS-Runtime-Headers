@@ -9,9 +9,9 @@
 @property(retain) id gmm;
 
 
+- (void)dealloc;
 - (id)gmm;
 - (void)setGmm:(id)arg1;
-- (void)dealloc;
 - (id)initWithGMMSearchResult:(id)arg1;
 
 @end

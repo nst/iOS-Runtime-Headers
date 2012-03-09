@@ -13,9 +13,10 @@
 + (void)resetAllSharedEntityCaches;
 + (id)copyAllEntities;
 
-- (int)propertyType;
-- (int)identifier;
-- (id)name;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (id)_existingEntityFromSharedForIMHandle:(id)arg1;
 - (void)_setOtherIMHandlesForIMHandle:(id)arg1;
 - (void)_addToShared;
@@ -28,9 +29,8 @@
 - (struct __CFPhoneNumber { }*)phoneNumberRef;
 - (void*)abRecord;
 - (id)rawAddress;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
+- (int)identifier;
+- (id)name;
+- (int)propertyType;
 
 @end

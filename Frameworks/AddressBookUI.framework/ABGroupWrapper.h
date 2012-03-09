@@ -32,17 +32,9 @@
 + (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountsManager:(id)arg3;
 + (id)newGroupWrapperFromDictionaryRepresentation:(id)arg1 withAddressBook:(void*)arg2;
 
-- (int)score;
-- (void*)addressBook;
-- (void*)source;
-- (int)sourceType;
-- (void*)group;
-- (BOOL)isEditable;
-- (id)name;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)accountIdentifier;
 - (unsigned int)numberOfContacts;
 - (void)setAccountsManager:(id)arg1;
 - (int)compareToGroupWrapper:(id)arg1;
@@ -56,5 +48,13 @@
 - (BOOL)showLinkedPeople;
 - (id)initWithAddressBook:(void*)arg1 accountIdentifier:(id)arg2 source:(void*)arg3 group:(void*)arg4;
 - (id)copyDictionaryRepresentation;
+- (int)score;
+- (void*)addressBook;
+- (void*)source;
+- (int)sourceType;
+- (void*)group;
+- (BOOL)isEditable;
+- (id)name;
+- (id)accountIdentifier;
 
 @end

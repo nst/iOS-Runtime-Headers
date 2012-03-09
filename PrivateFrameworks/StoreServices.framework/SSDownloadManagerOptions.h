@@ -20,11 +20,6 @@
 
 
 - (void)setPrefetchedDownloadExternalProperties:(id)arg1;
-- (void)setShouldFilterExternalOriginatedDownloads:(BOOL)arg1;
-- (id)persistenceIdentifier;
-- (id)prefetchedDownloadProperties;
-- (id)prefetchedDownloadExternalProperties;
-- (BOOL)shouldFilterExternalOriginatedDownloads;
 - (void)setPrefetchedDownloadProperties:(id)arg1;
 - (void)setPersistenceIdentifier:(id)arg1;
 - (void)setDownloadKinds:(id)arg1;
@@ -33,5 +28,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)downloadKinds;
+- (void)setShouldFilterExternalOriginatedDownloads:(BOOL)arg1;
+- (id)persistenceIdentifier;
+- (id)prefetchedDownloadProperties;
+- (id)prefetchedDownloadExternalProperties;
+- (BOOL)shouldFilterExternalOriginatedDownloads;
 
 @end

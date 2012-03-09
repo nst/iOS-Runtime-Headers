@@ -14,9 +14,6 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)setDelegate:(id)arg1;
-- (int)state;
-- (id)delegate;
 - (id)initWithDelegate:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
 - (void)retrievePeripherals:(id)arg1;
 - (void)retrieveConnectedPeripherals;
@@ -24,5 +21,8 @@
 - (void)stopScan;
 - (void)connectPeripheral:(id)arg1 options:(id)arg2;
 - (void)cancelPeripheralConnection:(id)arg1;
+- (int)state;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 
 @end

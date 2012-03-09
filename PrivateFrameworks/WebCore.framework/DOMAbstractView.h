@@ -10,8 +10,8 @@
 @property(retain,readonly) DOMDocument * document;
 
 
-- (void)_disconnectFrame;
-- (id)document;
 - (void)dealloc;
+- (id)document;
+- (void)_disconnectFrame;
 
 @end

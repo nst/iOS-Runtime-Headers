@@ -26,9 +26,9 @@
 
 
 - (id)attachments;
-- (BOOL)isFloating;
-- (void)setPriority:(int)arg1;
-- (id)UUID;
+- (id)description;
+- (id)action;
+- (id)creationDate;
 - (void)removeAttendee:(id)arg1;
 - (void)setAttendees:(id)arg1;
 - (void)removeRecurrenceRule:(id)arg1;
@@ -56,11 +56,11 @@
 - (void)addAlarm:(id)arg1;
 - (void)rebase;
 - (id)structuredLocation;
-- (BOOL)hasAttendees;
 - (void)updatePersistentObjectSkippingProperties:(id)arg1;
 - (void)moveToCalendar:(id)arg1;
 - (BOOL)allowsRecurrenceModifications;
 - (BOOL)allowsAttendeeModifications;
+- (BOOL)hasAttendees;
 - (BOOL)allowsAlarmModifications;
 - (BOOL)requiresDetach;
 - (BOOL)allowsCalendarModifications;
@@ -80,8 +80,6 @@
 - (void)updatePersistentObject;
 - (BOOL)validate:(id*)arg1;
 - (BOOL)isAllDay;
-- (void)setLocation:(id)arg1;
-- (id)lastModifiedDate;
 - (int)priority;
 - (void)setURL:(id)arg1;
 - (id)calendar;
@@ -94,8 +92,10 @@
 - (void)setAction:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (id)creationDate;
-- (id)description;
-- (id)action;
+- (void)setLocation:(id)arg1;
+- (id)lastModifiedDate;
+- (BOOL)isFloating;
+- (void)setPriority:(int)arg1;
+- (id)UUID;
 
 @end

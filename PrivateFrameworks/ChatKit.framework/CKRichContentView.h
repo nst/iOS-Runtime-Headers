@@ -9,11 +9,7 @@
 @property id richContentDelegate;
 
 
-- (id)createDocumentFragment;
-- (id)supportedPasteboardTypesForCurrentSelection;
-- (id)DOMDocument;
-- (void)handleEvent:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (id)richContentDelegate;
 - (void)_wvRegisterForDOMEvents;
 - (void)_wvUnregisterForDOMEvents;
@@ -25,6 +21,10 @@
 - (id)html;
 - (void)setHTML:(id)arg1;
 - (void)setRichContentDelegate:(id)arg1;
-- (void)dealloc;
+- (id)supportedPasteboardTypesForCurrentSelection;
+- (id)DOMDocument;
+- (void)handleEvent:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)createDocumentFragment;
 
 @end

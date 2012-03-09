@@ -24,6 +24,11 @@
 }
 
 
+- (void)setName:(id)arg1;
+- (void)dealloc;
+- (id)background;
+- (void)setBackground:(id)arg1;
+- (id)name;
 - (id)partStyle:(int)arg1;
 - (void)setWholeTableStyle:(id)arg1;
 - (void)setBand1HorzStyle:(id)arg1;
@@ -53,10 +58,5 @@
 - (id)southEastStyle;
 - (id)id;
 - (void)setId:(id)arg1;
-- (id)background;
-- (void)setBackground:(id)arg1;
-- (id)name;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 
 @end

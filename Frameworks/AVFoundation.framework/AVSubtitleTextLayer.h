@@ -10,19 +10,19 @@
     BOOL _nonForcedSubtitleDisplayEnabled;
 }
 
-@property BOOL nonForcedSubtitleDisplayEnabled;
 @property BOOL currentSubtitleSampleIsForced;
+@property BOOL nonForcedSubtitleDisplayEnabled;
 
 
-- (void)finalize;
-- (void)drawInContext:(struct CGContext { }*)arg1;
-- (BOOL)currentSubtitleSampleIsForced;
-- (void)setSerialQueue:(struct dispatch_queue_s { }*)arg1;
-- (void)setCurrentSubtitleSampleIsForced:(BOOL)arg1;
-- (void)setCurrentSubtitleSample:(struct __CFAttributedString { }*)arg1;
-- (BOOL)nonForcedSubtitleDisplayEnabled;
-- (void)setNonForcedSubtitleDisplayEnabled:(BOOL)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)setCurrentSubtitleSample:(struct __CFAttributedString { }*)arg1;
+- (void)setCurrentSubtitleSampleIsForced:(BOOL)arg1;
+- (void)setSerialQueue:(struct dispatch_queue_s { }*)arg1;
+- (BOOL)currentSubtitleSampleIsForced;
+- (void)setNonForcedSubtitleDisplayEnabled:(BOOL)arg1;
+- (BOOL)nonForcedSubtitleDisplayEnabled;
+- (void)finalize;
+- (void)drawInContext:(struct CGContext { }*)arg1;
 
 @end

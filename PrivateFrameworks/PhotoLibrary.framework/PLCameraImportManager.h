@@ -17,6 +17,8 @@
 
 + (id)sharedCameraImportManager;
 
+- (id)init;
+- (void)dealloc;
 - (void)setImporters:(id)arg1;
 - (void)ejectCameras;
 - (void)stopListeningWithCallbackTarget:(id)arg1 selector:(SEL)arg2;
@@ -31,7 +33,5 @@
 - (id)importers;
 - (void)_stopListening;
 - (void)addImporter:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

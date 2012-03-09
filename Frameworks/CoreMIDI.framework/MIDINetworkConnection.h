@@ -12,8 +12,8 @@
 
 + (id)connectionWithHost:(id)arg1;
 
-- (id)host;
 - (id)init;
 - (void)dealloc;
+- (id)host;
 
 @end

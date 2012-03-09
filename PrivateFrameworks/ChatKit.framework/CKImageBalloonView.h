@@ -13,8 +13,7 @@
 + (float)entryFieldBalloonAdditionalHeight;
 + (BOOL)usesColoredBalloon;
 
-- (void)setImage:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (float)heightForWidth:(float)arg1;
 - (float)_receiptSpace;
 - (id)balloonImage;
@@ -22,6 +21,7 @@
 - (void)copyToPasteboard;
 - (BOOL)shouldManuallyDrawBackground;
 - (float)tightenedWidth;
-- (void)dealloc;
+- (void)setImage:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

@@ -102,7 +102,7 @@
 + (struct CGSize { float x1; float x2; })minimumSize;
 + (id)_alertWindow;
 
-- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)_willRotateKeyboard;
 - (int)alertViewStyle;
 - (void)setAlertViewStyle:(int)arg1;
@@ -286,7 +286,8 @@
 - (id)delegate;
 - (void)setTitle:(id)arg1;
 - (id)titleLabel;
+- (void)removeFromSuperview;
+- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
 
 @end

@@ -10,11 +10,15 @@
     float _lastLocationAccuracy;
     <CLLocationManagerDelegate> *_delegate;
     BOOL _isTrackingLocationEnabled;
-    NSTimer *_nonSLCLocationUpdateTimer;
+    NSTimer *_automaticLocationUpdateTimer;
     NSTimer *_accuracyFallbackTimer;
     int _authorizationStatus;
     double _oldestAcceptedTime;
     double _lastLocationUpdateTime;
+    struct { 
+        double latitude; 
+        double longitude; 
+    } _lastLocationCoord;
     double _nextPlannedUpdate;
     BOOL _isTrackingLocation;
 }
@@ -23,19 +27,13 @@
 @property int authorizationStatus;
 @property BOOL isTrackingLocationEnabled;
 @property <CLLocationManagerDelegate> * delegate;
+@property struct { double latitude; double longitude; } lastLocationCoord;
 @property float lastLocationAccuracy;
 @property(copy) NSDate * lastLocationTimeStamp;
 @property(retain) CLLocationManager * locationManager;
 
 + (id)sharedWeatherLocationManager;
 
-- (void)setDelegate:(id)arg1;
-- (void)setLocationManager:(id)arg1;
-- (id)locationManager;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
-- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
-- (int)authorizationStatus;
-- (id)delegate;
 - (void)forceLocationUpdate;
 - (BOOL)loadAndPrepareLocationTrackingState;
 - (int)forceLoadingAuthorizationStatus;
@@ -46,6 +44,7 @@
 - (void)setIsTrackingLocation:(BOOL)arg1;
 - (BOOL)isTrackingLocationEnabled;
 - (void)setIsTrackingLocationEnabled:(BOOL)arg1;
+- (struct { double x1; double x2; })lastLocationCoord;
 - (void)_clearLastLocUpdateTime;
 - (void)setLocationTrackingActive:(BOOL)arg1;
 - (void)setAuthorizationStatus:(int)arg1;
@@ -59,5 +58,13 @@
 - (void)setLastLocationTimeStamp:(id)arg1;
 - (void)setLastLocationAccuracy:(float)arg1;
 - (void)_updateLocation:(id)arg1;
+- (void)setLastLocationCoord:(struct { double x1; double x2; })arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (int)authorizationStatus;
+- (void)setLocationManager:(id)arg1;
+- (id)locationManager;
 
 @end

@@ -7,8 +7,8 @@
 }
 
 
-- (id)initWithPDFDocumentRef:(struct CGPDFDocument { }*)arg1;
 - (void)main;
 - (void)dealloc;
+- (id)initWithPDFDocumentRef:(struct CGPDFDocument { }*)arg1;
 
 @end

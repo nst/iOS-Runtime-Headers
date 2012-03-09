@@ -19,11 +19,11 @@
 @property double dt;
 
 
-- (struct CGPoint { float x1; float x2; })start;
 - (void)setDt:(double)arg1;
 - (double)dt;
 - (void)setEnd:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setStart:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })end;
+- (struct CGPoint { float x1; float x2; })start;
 
 @end

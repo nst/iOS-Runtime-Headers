@@ -26,6 +26,21 @@
 @property(setter=_setVibrationNameAlertView:,retain) UIAlertView * _vibrationNameAlertView;
 
 
+- (void)dealloc;
+- (void)_setSaveButton:(id)arg1;
+- (id)_saveButton;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (id)_recordedVibrationPattern;
 - (id)initWithVibratorController:(id)arg1;
 - (void)_accessibilityMakeAnnouncementWithStringForLocalizationIdentifier:(id)arg1;
@@ -56,20 +71,5 @@
 - (void)vibrationRecorderView:(id)arg1 buttonTappedWithIdentifier:(unsigned int)arg2;
 - (void)vibrationComponentDidEndForVibrationRecorderView:(id)arg1;
 - (void)vibrationComponentDidStartForVibrationRecorderView:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidUnload;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)delegate;
-- (void)dealloc;
-- (void)_setSaveButton:(id)arg1;
-- (id)_saveButton;
 
 @end

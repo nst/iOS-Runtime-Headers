@@ -25,21 +25,21 @@
 + (id)inputRequiredProperties;
 + (id)scriptingKeys;
 
-- (id)start;
+- (void)dealloc;
 - (id)allDay;
 - (void)setAllDay:(id)arg1;
-- (void)setEventDescription:(id)arg1;
-- (id)eventDescription;
-- (id)EKEventInEventStore:(id)arg1;
-- (id)initWithWebScriptObject:(id)arg1;
-- (id)summary;
-- (void)setSummary:(id)arg1;
-- (void)setLocation:(id)arg1;
 - (void)setEnd:(id)arg1;
 - (void)setStart:(id)arg1;
 - (id)location;
 - (id)end;
-- (void)dealloc;
+- (id)start;
+- (id)summary;
+- (void)setSummary:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setEventDescription:(id)arg1;
+- (id)eventDescription;
+- (id)EKEventInEventStore:(id)arg1;
+- (id)initWithWebScriptObject:(id)arg1;
 - (id)recurrence;
 - (void)setRecurrence:(id)arg1;
 

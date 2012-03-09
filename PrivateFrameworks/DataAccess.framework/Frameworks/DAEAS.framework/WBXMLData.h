@@ -14,11 +14,11 @@
 @property(readonly) NSMutableData * data;
 
 
-- (id)data;
-- (void)appendData:(id)arg1;
 - (void)appendString:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)appendData:(id)arg1;
+- (id)data;
 - (void)appendTag:(unsigned char)arg1 withByteArrayDataContent:(id)arg2;
 - (void)appendTag:(unsigned char)arg1 withStringContentAsData:(id)arg2;
 - (void)appendEmptyTag:(unsigned char)arg1;

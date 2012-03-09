@@ -13,6 +13,7 @@
 
 + (id)sharedPasswordsEditor;
 
+- (void)dealloc;
 - (void)removeAll;
 - (void)removeSelectedItems:(id)arg1;
 - (id)addressStringForCredential:(id)arg1;
@@ -21,6 +22,5 @@
 - (void)credentialsChanged:(id)arg1;
 - (void)resetCredentials;
 - (id)protectionSpaceForCredential:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -13,11 +13,11 @@
 @property(readonly) NSSet * propertiesToFetch;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)streamForWritingWithCount:(unsigned int)arg1 containedMediaTypes:(int)arg2 sectionInfo:(id)arg3;
 - (id)queryCriteria;
 - (id)initWithEntityStreamArray:(id)arg1;
 - (id)propertiesToFetch;
-- (id)description;
-- (void)dealloc;
 
 @end

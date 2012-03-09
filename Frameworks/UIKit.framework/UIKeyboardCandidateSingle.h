@@ -11,10 +11,10 @@
 @property(copy) NSString * candidate;
 
 
-- (void)setCandidate:(id)arg1;
 - (id)initWithCandidate:(id)arg1;
 - (id)candidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)setCandidate:(id)arg1;
 
 @end

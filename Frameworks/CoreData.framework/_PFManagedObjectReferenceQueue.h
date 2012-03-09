@@ -15,6 +15,12 @@
 }
 
 
+- (unsigned int)retainCount;
+- (id)retain;
+- (void)release;
+- (void)dealloc;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)finalize;
 - (BOOL)_signal;
 - (void)_processReferenceQueue:(BOOL)arg1;
@@ -25,11 +31,5 @@
 - (BOOL)_queueForDealloc:(id)arg1;
 - (BOOL)_GC_queueForDealloc:(id)arg1;
 - (BOOL)_queueBatchForDealloc:(struct __CFArray { }*)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned int)retainCount;
-- (id)retain;
-- (void)release;
-- (void)dealloc;
 
 @end

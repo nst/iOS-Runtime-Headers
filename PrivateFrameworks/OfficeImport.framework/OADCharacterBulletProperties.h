@@ -9,9 +9,9 @@
 }
 
 
-- (id)bullet;
-- (id)initWithBullet:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)bullet;
+- (id)initWithBullet:(id)arg1;
 
 @end

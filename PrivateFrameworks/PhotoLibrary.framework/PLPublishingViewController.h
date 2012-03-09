@@ -34,8 +34,9 @@
 
 
 - (id)contentDescription;
-- (void)setUsername:(id)arg1;
+- (void)dealloc;
 - (id)posterImage;
+- (void)setUsername:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
@@ -84,6 +85,5 @@
 - (int)_sectionIndexForPublishingSection:(int)arg1;
 - (void)editableCell:(id)arg1 textChanged:(id)arg2;
 - (void)editableCellReturnPressed:(id)arg1;
-- (void)dealloc;
 
 @end

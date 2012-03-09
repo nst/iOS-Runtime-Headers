@@ -35,10 +35,8 @@
 @property long long fileSize;
 
 
-- (BOOL)hasMetadata;
-- (void)finalize;
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
+- (void)dealloc;
+- (BOOL)hasThumbnail;
 - (void)setFileSize:(long long)arg1;
 - (void)setOriginalThumbnail:(struct CGImage { }*)arg1;
 - (void)setThumbnail:(struct CGImage { }*)arg1;
@@ -54,12 +52,14 @@
 - (id)metadata_hidden;
 - (void)setFetchingThumbnail:(BOOL)arg1;
 - (void)setFetchingMetadata:(BOOL)arg1;
-- (long long)fileSize;
+- (void)finalize;
 - (void)setOrientation:(unsigned int)arg1;
 - (unsigned int)orientation;
-- (BOOL)hasThumbnail;
-- (BOOL)isRaw;
-- (void)dealloc;
+- (long long)fileSize;
 - (struct CGImage { }*)thumbnail;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
+- (BOOL)hasMetadata;
+- (BOOL)isRaw;
 
 @end

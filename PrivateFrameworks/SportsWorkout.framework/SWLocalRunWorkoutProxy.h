@@ -6,6 +6,11 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (void)endSeeking;
+- (void)beginSeekingForward;
+- (void)beginSeekingBackward;
 - (id)sensorSearchState;
 - (id)currentSongName;
 - (int)musicSelection;
@@ -32,10 +37,5 @@
 - (void)pauseWorkout;
 - (void)activateWorkout;
 - (id)workoutData;
-- (id)init;
-- (void)dealloc;
-- (void)endSeeking;
-- (void)beginSeekingForward;
-- (void)beginSeekingBackward;
 
 @end

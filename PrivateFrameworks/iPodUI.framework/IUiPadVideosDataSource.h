@@ -10,6 +10,7 @@
 
 + (BOOL)usesNowPlayingIndicator;
 
+- (void)dealloc;
 - (void)setQuery:(id)arg1;
 - (id)detailMediaQueryForMediaItem:(id)arg1 baseQuery:(id)arg2;
 - (BOOL)isArtAStillFrameAtIndex:(unsigned int)arg1;
@@ -34,6 +35,5 @@
 - (struct CGPoint { float x1; float x2; })actualImageOrigin;
 - (struct CGSize { float x1; float x2; })thumbnailSize;
 - (void)reloadActionRows;
-- (void)dealloc;
 
 @end

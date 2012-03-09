@@ -32,9 +32,8 @@
 @property(setter=setRightToLeft:) BOOL isRightToLeft;
 
 
-- (void)setRightToLeft:(BOOL)arg1;
-- (BOOL)isRightToLeft;
-- (void)setForegroundColor:(id)arg1;
+- (void)appendString:(id)arg1;
+- (void)dealloc;
 - (void)appendFileTransferWithGUID:(id)arg1;
 - (void)popForegroundColor;
 - (void)pushForegroundColor:(id)arg1;
@@ -64,6 +63,8 @@
 - (void)_clearIvars;
 - (id)resultsForLogging;
 - (void)setFileTransferGUIDs:(id)arg1;
+- (id)fileTransferGUIDs;
+- (void)_updateFontSize;
 - (id)foregroundColor;
 - (void)reset;
 - (id)body;
@@ -71,9 +72,8 @@
 - (id)name;
 - (id)backgroundColor;
 - (void)setBackgroundColor:(id)arg1;
-- (id)fileTransferGUIDs;
-- (void)_updateFontSize;
-- (void)appendString:(id)arg1;
-- (void)dealloc;
+- (void)setRightToLeft:(BOOL)arg1;
+- (BOOL)isRightToLeft;
+- (void)setForegroundColor:(id)arg1;
 
 @end

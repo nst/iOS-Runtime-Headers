@@ -18,6 +18,8 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
+- (id)init;
+- (void)dealloc;
 - (void)reloadData;
 - (void)reloadQueriesEntities;
 - (void)reloadSectionInfo;
@@ -45,7 +47,5 @@
 - (id)viewControllerContextForMediaQuery:(id)arg1;
 - (void)reloadActionRows;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
-- (id)init;
-- (void)dealloc;
 
 @end

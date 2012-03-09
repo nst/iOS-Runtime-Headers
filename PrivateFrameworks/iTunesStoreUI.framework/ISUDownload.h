@@ -28,12 +28,12 @@
 + (id)downloadExternalProperties;
 + (id)downloadProperties;
 
-- (id)artistName;
-- (double)percentComplete;
 - (long long)bytesTotal;
 - (long long)bytesDownloaded;
-- (id)title;
 - (void)dealloc;
+- (id)artistName;
+- (double)percentComplete;
+- (id)title;
 - (id)storePreorderIdentifier;
 - (void)setManagedDownload:(id)arg1;
 - (BOOL)isPurchase;

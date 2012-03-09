@@ -15,16 +15,16 @@
 @property(retain) LBSGCell * cell;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasCell;
+- (id)description;
+- (void)dealloc;
 - (BOOL)hasLocation;
-- (void)writeTo:(id)arg1;
-- (void)setLocation:(id)arg1;
 - (void)setCell:(id)arg1;
 - (id)cell;
 - (id)dictionaryRepresentation;
 - (id)location;
-- (id)description;
-- (void)dealloc;
+- (void)setLocation:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (BOOL)hasCell;
 
 @end

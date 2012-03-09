@@ -14,6 +14,7 @@
 @property unsigned int selectedServiceIndex;
 
 
+- (void)dealloc;
 - (void)loadView;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -22,6 +23,5 @@
 - (void)setSelectedServiceIndex:(unsigned int)arg1;
 - (unsigned int)selectedServiceIndex;
 - (id)initWithAirPlayServices:(id)arg1 selectedServiceIndex:(unsigned int)arg2;
-- (void)dealloc;
 
 @end

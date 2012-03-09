@@ -18,13 +18,13 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bubbleFrameForType:(int)arg1 labelWidth:(float)arg2;
 + (id)_imageForType:(int)arg1;
 
-- (id)step;
+- (void)dealloc;
+- (int)_orientation;
 - (id)icon;
 - (void)setIcon:(id)arg1;
 - (id)image;
 - (void)layoutSubviews;
 - (void)setImage:(id)arg1;
-- (int)_orientation;
 - (void)_layoutLabel;
 - (void)_layoutIcon;
 - (void)_updateAnchorPoint;
@@ -35,6 +35,6 @@
 - (void)set_orientation:(int)arg1;
 - (id)rightCalloutAccessoryView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
-- (void)dealloc;
+- (id)step;
 
 @end

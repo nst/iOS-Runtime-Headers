@@ -21,8 +21,8 @@
 
 
 - (id)URLString;
-- (void)setURLString:(id)arg1;
-- (id)challenge;
+- (id)description;
+- (void)dealloc;
 - (id)_unsupportedValueErrorWithFieldName:(id)arg1 value:(id)arg2;
 - (BOOL)confirmInstallation;
 - (id)enrollmentIdentityPersistentID;
@@ -33,7 +33,7 @@
 - (id)payloads;
 - (id)initWithDictionary:(id)arg1 originalData:(id)arg2 wasEncrypted:(BOOL)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
+- (id)challenge;
+- (void)setURLString:(id)arg1;
 
 @end

@@ -17,21 +17,21 @@
 @property(retain) NSMutableArray * indexs;
 
 
+- (id)description;
+- (void)dealloc;
+- (int)tileSize;
+- (id)dictionaryRepresentation;
+- (void)addIndex:(id)arg1;
+- (void)setTileSize:(int)arg1;
 - (void)setZoom:(int)arg1;
 - (int)zoom;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)indexs;
 - (id)clientCapabilities;
 - (id)indexAtIndex:(unsigned int)arg1;
 - (unsigned int)indexsCount;
 - (void)setIndexs:(id)arg1;
 - (void)setClientCapabilities:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (int)tileSize;
-- (id)dictionaryRepresentation;
-- (void)addIndex:(id)arg1;
-- (void)setTileSize:(int)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

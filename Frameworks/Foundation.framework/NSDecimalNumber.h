@@ -13,13 +13,6 @@
     unsigned short _mantissa[0];
 }
 
-+ (id)numberWithUnsignedChar:(unsigned char)arg1;
-+ (id)decimalNumberWithString:(id)arg1 locale:(id)arg2;
-+ (id)numberWithUnsignedShort:(unsigned short)arg1;
-+ (id)numberWithDouble:(double)arg1;
-+ (id)numberWithBool:(BOOL)arg1;
-+ (id)numberWithFloat:(float)arg1;
-+ (id)numberWithUnsignedInt:(unsigned int)arg1;
 + (void)setDefaultBehavior:(id)arg1;
 + (id)one;
 + (id)maximumDecimalNumber;
@@ -29,20 +22,26 @@
 + (id)notANumber;
 + (id)decimalNumberWithDecimal:(struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; })arg1;
 + (id)zero;
-+ (id)numberWithChar:(BOOL)arg1;
-+ (id)decimalNumberWithString:(id)arg1;
++ (id)numberWithInt:(int)arg1;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)numberWithUnsignedChar:(unsigned char)arg1;
++ (id)numberWithShort:(short)arg1;
 + (id)numberWithUnsignedLongLong:(unsigned long long)arg1;
 + (id)numberWithLongLong:(long long)arg1;
 + (id)numberWithUnsignedInteger:(unsigned int)arg1;
 + (id)numberWithLong:(long)arg1;
 + (id)numberWithInteger:(int)arg1;
++ (id)numberWithFloat:(float)arg1;
 + (id)numberWithUnsignedLong:(unsigned long)arg1;
-+ (id)numberWithShort:(short)arg1;
-+ (id)numberWithInt:(int)arg1;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)numberWithUnsignedInt:(unsigned int)arg1;
++ (id)numberWithDouble:(double)arg1;
++ (id)numberWithBool:(BOOL)arg1;
++ (id)decimalNumberWithString:(id)arg1 locale:(id)arg2;
++ (id)numberWithUnsignedShort:(unsigned short)arg1;
++ (id)numberWithChar:(BOOL)arg1;
++ (id)decimalNumberWithString:(id)arg1;
 + (id)two;
 
-- (BOOL)boolValue;
 - (id)decimalNumberByRoundingAccordingToBehavior:(id)arg1;
 - (id)decimalNumberByMultiplyingByPowerOf10:(short)arg1;
 - (id)decimalNumberByRaisingToPower:(unsigned int)arg1;
@@ -62,16 +61,12 @@
 - (id)initWithString:(id)arg1 locale:(id)arg2;
 - (id)decimalNumberByDividingBy:(id)arg1;
 - (struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; })decimalValue;
-- (unsigned long long)unsignedLongLongValue;
-- (int)compare:(id)arg1;
-- (Class)classForCoder;
-- (long long)longLongValue;
-- (unsigned int)unsignedIntValue;
-- (double)doubleValue;
-- (float)floatValue;
-- (void)getValue:(void*)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithString:(id)arg1;
+- (int)intValue;
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copy;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned short)unsignedShortValue;
 - (short)shortValue;
 - (BOOL)charValue;
@@ -80,11 +75,16 @@
 - (id)descriptionWithLocale:(id)arg1;
 - (unsigned char)unsignedCharValue;
 - (unsigned long)unsignedLongValue;
-- (id)initWithString:(id)arg1;
-- (int)intValue;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)copy;
+- (unsigned long long)unsignedLongLongValue;
+- (int)compare:(id)arg1;
+- (Class)classForCoder;
+- (long long)longLongValue;
+- (unsigned int)unsignedIntValue;
+- (double)doubleValue;
+- (float)floatValue;
+- (void)getValue:(void*)arg1;
+- (BOOL)boolValue;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

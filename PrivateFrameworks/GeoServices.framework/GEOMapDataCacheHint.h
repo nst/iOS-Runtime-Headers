@@ -15,7 +15,6 @@
 @property double priority;
 
 
-- (void)setPriority:(double)arg1;
 - (void)setPolicy:(int)arg1;
 - (int)policy;
 - (void)setTileKeys:(id)arg1;
@@ -25,5 +24,6 @@
 - (void)cacheTilesForRegion:(id)arg1 atZoomLevel:(int)arg2;
 - (void)cacheTilesForCenter:(struct { double x1; double x2; })arg1 radius:(double)arg2 atZoomLevel:(int)arg3;
 - (double)priority;
+- (void)setPriority:(double)arg1;
 
 @end

@@ -18,10 +18,10 @@
 }
 
 
-- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 - (id)init;
 - (void)dealloc;
-- (void)deferOnRunloop_accelerometerEventsEnable;
 - (void)getVector:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
+- (void)deferOnRunloop_accelerometerEventsEnable;
+- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 
 @end

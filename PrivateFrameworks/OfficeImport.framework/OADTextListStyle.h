@@ -9,6 +9,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)setPropertiesForListLevel:(unsigned int)arg1 properties:(id)arg2;
 - (void)flatten;
 - (id)defaultProperties;
@@ -17,7 +19,5 @@
 - (id)propertiesForListLevel:(unsigned int)arg1;
 - (void)setParentTextListStyle:(id)arg1;
 - (id)initWithDefaults;
-- (id)init;
-- (void)dealloc;
 
 @end

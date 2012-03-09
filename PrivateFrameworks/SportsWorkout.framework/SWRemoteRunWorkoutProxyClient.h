@@ -21,6 +21,11 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
+- (void)endSeeking;
+- (void)beginSeekingForward;
+- (void)beginSeekingBackward;
 - (void)_checkinWithServer;
 - (void)_handlePropertyUpdateNotification:(id)arg1;
 - (id)sensorSearchState;
@@ -48,10 +53,5 @@
 - (void)pauseWorkout;
 - (void)activateWorkout;
 - (id)workoutData;
-- (id)init;
-- (void)dealloc;
-- (void)endSeeking;
-- (void)beginSeekingForward;
-- (void)beginSeekingBackward;
 
 @end

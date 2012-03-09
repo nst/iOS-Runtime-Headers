@@ -20,11 +20,6 @@
 @property(setter=abSetHighlighted:) BOOL abIsHighlighted;
 
 
-- (BOOL)_showsClearButtonWhenEmpty;
-- (BOOL)becomeFirstResponder;
-- (id)_previousKeyResponder;
-- (id)_nextKeyResponder;
-- (void)setTextColor:(id)arg1;
 - (void)dealloc;
 - (void)abSetHighlighted:(BOOL)arg1;
 - (void)setShowsClearButtonWhenEmpty:(BOOL)arg1;
@@ -36,5 +31,10 @@
 - (BOOL)abIsHighlightingEnabled;
 - (void)abSetHighlightingEnabled:(BOOL)arg1;
 - (BOOL)abIsHighlighted;
+- (BOOL)_showsClearButtonWhenEmpty;
+- (BOOL)becomeFirstResponder;
+- (id)_previousKeyResponder;
+- (id)_nextKeyResponder;
+- (void)setTextColor:(id)arg1;
 
 @end

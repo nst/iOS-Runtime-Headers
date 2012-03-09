@@ -38,8 +38,8 @@
 - (id)initWithCurrentTag:(id)arg1 accountID:(id)arg2 requests:(id)arg3 consumers:(id)arg4;
 - (BOOL)moreAvailable;
 - (void)taskFailed:(id)arg1 withStatusCode:(int)arg2;
+- (void)dealloc;
 - (void)reset;
 - (id)tag;
-- (void)dealloc;
 
 @end

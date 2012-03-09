@@ -51,29 +51,7 @@
 
 + (id)_createGutterDayViewWithDayView:(id)arg1;
 
-- (void)setDelegate:(id)arg1;
-- (void)applicationDidBecomeActive;
-- (id)calendar;
-- (void)setCalendar:(id)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidUnload;
-- (void)loadView;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)allowsSelection;
-- (void)setAllowsSelection:(BOOL)arg1;
-- (void)scrollViewWillBeginDecelerating:(id)arg1;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)setTimeZone:(id)arg1;
-- (id)delegate;
-- (id)dataSource;
-- (void)reloadData;
-- (void)setDataSource:(id)arg1;
+- (void)dealloc;
 - (id)pendingPreviousDate;
 - (id)pendingNextDate;
 - (void)reloadDataBetweenStart:(id)arg1 end:(id)arg2;
@@ -139,6 +117,28 @@
 - (void)calendarDayBanner:(id)arg1 arrowClicked:(int)arg2 forRepeat:(BOOL)arg3;
 - (void)_localeChanged;
 - (void)scrollToNow:(BOOL)arg1;
-- (void)dealloc;
+- (void)applicationDidBecomeActive;
+- (id)calendar;
+- (void)setCalendar:(id)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)allowsSelection;
+- (void)setAllowsSelection:(BOOL)arg1;
+- (void)scrollViewWillBeginDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)setTimeZone:(id)arg1;
+- (id)delegate;
+- (id)dataSource;
+- (void)reloadData;
+- (void)setDelegate:(id)arg1;
+- (void)setDataSource:(id)arg1;
 
 @end

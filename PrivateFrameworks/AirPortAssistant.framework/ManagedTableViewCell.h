@@ -22,6 +22,7 @@
 @property float forcedRightmostEditTextInset;
 
 
+- (void)dealloc;
 - (float)forcedRightmostEditTextInset;
 - (id)currentIndexPath;
 - (void)calculatePositionForView:(id)arg1 forItem:(id)arg2 atItemIndex:(unsigned int)arg3;
@@ -39,6 +40,5 @@
 - (void)prepareForReuse;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

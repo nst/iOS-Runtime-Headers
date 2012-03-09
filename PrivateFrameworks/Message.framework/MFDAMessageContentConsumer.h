@@ -38,7 +38,7 @@
 - (void)consumeData:(char *)arg1 length:(int)arg2 format:(int)arg3 mailMessage:(id)arg4;
 - (void)didEndStreamingForMailMessage:(id)arg1;
 - (id)bodyData;
-- (id)data;
 - (void)dealloc;
+- (id)data;
 
 @end

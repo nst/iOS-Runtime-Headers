@@ -19,17 +19,26 @@
 
 + (BOOL)isExpired;
 + (id)defaultStore;
++ (id)existingDefaultStore;
++ (void)resetExpiration;
 + (void)setDefaultStore:(id)arg1;
 + (double)tokenExpirationInterval;
 + (void)resetExpirationForTokenType:(int)arg1;
 + (BOOL)isExpiredForTokenType:(int)arg1;
-+ (id)existingDefaultStore;
-+ (void)resetExpiration;
 
 - (void)reloadAccounts;
 - (id)accounts;
+- (id)init;
+- (void)dealloc;
 - (BOOL)isExpired;
 - (id)activeAccount;
+- (void)resetExpiration;
+- (id)setActiveLockerAccount:(id)arg1;
+- (id)setActiveAccount:(id)arg1;
+- (id)activeLockerAccount;
+- (id)addAccount:(id)arg1;
+- (id)accountWithUniqueIdentifier:(id)arg1;
+- (void)signOutAllAccounts;
 - (void)setDistributedNotificationCenter:(id)arg1;
 - (id)distributedNotificationCenter;
 - (void)signOutAccount:(id)arg1;
@@ -44,14 +53,5 @@
 - (void)_invalidateAccounts;
 - (id)_accountWithUniqueIdentifier:(id)arg1;
 - (BOOL)_reloadAccountsIfNeeded;
-- (id)init;
-- (void)dealloc;
-- (void)resetExpiration;
-- (id)setActiveLockerAccount:(id)arg1;
-- (id)setActiveAccount:(id)arg1;
-- (id)activeLockerAccount;
-- (id)addAccount:(id)arg1;
-- (id)accountWithUniqueIdentifier:(id)arg1;
-- (void)signOutAllAccounts;
 
 @end

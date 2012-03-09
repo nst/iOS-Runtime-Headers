@@ -11,9 +11,9 @@
 @property(readonly) SUMovieMediaObject * movieMediaObject;
 
 
-- (void)run;
 - (id)init;
 - (void)dealloc;
+- (void)run;
 - (id)movieMediaObject;
 - (BOOL)_movieNeedsRemakeForMode:(id)arg1;
 - (id)initWithMovieMediaObject:(id)arg1;

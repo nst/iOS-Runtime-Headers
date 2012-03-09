@@ -11,10 +11,10 @@
 @property(retain) GKTurnBasedMatch * match;
 
 
+- (void)dealloc;
 - (id)match;
 - (void)setMatch:(id)arg1;
 - (id)key;
 - (id)request;
-- (void)dealloc;
 
 @end

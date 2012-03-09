@@ -12,6 +12,7 @@
 @property(retain) WDIterator * childIterator;
 
 
+- (void)dealloc;
 - (id)childIterator;
 - (void)incrementChildIterator;
 - (id)next;
@@ -20,6 +21,5 @@
 - (id)initWithParentIterator:(id)arg1;
 - (id)childIteratorFrom:(id)arg1;
 - (id)newChildIteratorFrom:(id)arg1;
-- (void)dealloc;
 
 @end

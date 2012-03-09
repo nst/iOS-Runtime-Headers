@@ -12,8 +12,8 @@
 @property(readonly) NSArray * caches;
 
 
-- (void)reset;
 - (void)dealloc;
+- (void)reset;
 - (id)caches;
 - (id)initWithTableHeight:(float)arg1;
 - (id)cacheForClass:(Class)arg1;

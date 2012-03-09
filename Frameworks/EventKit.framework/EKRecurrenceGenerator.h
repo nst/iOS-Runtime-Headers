@@ -38,6 +38,8 @@
 
 + (id)generator;
 
+- (id)init;
+- (void)dealloc;
 - (id)eventTimeZone;
 - (id)_copySimpleYearlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned int)arg4;
 - (BOOL)_isSimpleYearlyRecurrence;
@@ -84,7 +86,5 @@
 - (id)endDate;
 - (id)copyOccurrenceDatesWithInitialDate:(id)arg1 calRecurrences:(id)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 timeZone:(id)arg5;
 - (id)copyOccurrenceDatesWithCalEvent:(void*)arg1 startDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg3 timeZone:(id)arg4 limit:(int)arg5 locked:(BOOL)arg6;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -39,6 +39,7 @@
 @property(copy) NSArray * printFormatters;
 
 
+- (void)dealloc;
 - (id)printFormatters;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paperRect;
 - (void)setFooterHeight:(float)arg1;
@@ -63,6 +64,5 @@
 - (void)_removePrintFormatter:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })printableRect;
 - (int)numberOfPages;
-- (void)dealloc;
 
 @end

@@ -10,9 +10,14 @@
 }
 
 
+- (void)dealloc;
 - (Class)viewClass;
 - (unsigned int)numberOfButtons;
 - (id)backgroundImage;
+- (void)reloadLayoutInformation;
+- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (id)fontForLabelAtIndex:(unsigned int)arg1;
+- (unsigned int)numberOfLabels;
 - (void)_shuffleButtonClickedUp:(id)arg1;
 - (void)_shuffleButtonClickDelayed:(id)arg1;
 - (void)simpleCellPresetButton:(id)arg1 clicked:(int)arg2;
@@ -30,10 +35,5 @@
 - (BOOL)canDisplayShuffleButton;
 - (void)reloadDisplayValues;
 - (void)initStorage;
-- (void)dealloc;
-- (void)reloadLayoutInformation;
-- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
-- (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (unsigned int)numberOfLabels;
 
 @end

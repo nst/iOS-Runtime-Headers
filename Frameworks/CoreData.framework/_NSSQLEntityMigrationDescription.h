@@ -24,6 +24,7 @@
 @property(readonly) NSSQLEntity * sourceEntity;
 
 
+- (void)dealloc;
 - (id)initWithEntityMapping:(id)arg1 sourceEntity:(id)arg2 destinationEntity:(id)arg3;
 - (id)sourceEntitiesByToOneWithNewEntityKey;
 - (id)sqlValueForColumnName:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
@@ -40,6 +41,5 @@
 - (void)_generateSQLValueMappingsWithMigrationContext:(struct _NSSQLMigrationContext { id x1; })arg1;
 - (id)sourceEntity;
 - (id)destinationEntity;
-- (void)dealloc;
 
 @end

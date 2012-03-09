@@ -21,12 +21,12 @@
 + (BOOL)acceptsTopLevelLeaves;
 
 - (id)emailAddress;
+- (id)description;
+- (void)dealloc;
 - (void)addRecipient:(id)arg1;
 - (id)recipients;
 - (void)setRecipients:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (void)setEASStatus:(id)arg1;
 - (id)easStatus;
 - (id)asParseRules;

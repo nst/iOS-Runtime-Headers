@@ -34,12 +34,12 @@
 + (id)imagePool;
 + (id)viewControllerFactory;
 
-- (id)imageCache;
-- (void)setImageCache:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (id)init;
 - (void)dealloc;
+- (id)imageCache;
+- (void)setImageCache:(id)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (BOOL)dontSaveNavigationPath;
 - (void)setViewControllerFactory:(id)arg1;
 - (void)setSearchURLBagKey:(id)arg1;

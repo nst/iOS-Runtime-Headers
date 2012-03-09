@@ -24,6 +24,7 @@
 @property(readonly) _UIBarButtonItemAppearanceStorage * _barButtonAppearanceStorage;
 
 
+- (void)dealloc;
 - (void)setReversesShadowOffset:(BOOL)arg1;
 - (BOOL)reversesShadowOffset;
 - (void)setMiniTitleVerticalAdjustment:(id)arg1;
@@ -38,6 +39,5 @@
 - (id)backgroundImage;
 - (id)barButtonAppearanceStorage;
 - (id)_barButtonAppearanceStorage;
-- (void)dealloc;
 
 @end

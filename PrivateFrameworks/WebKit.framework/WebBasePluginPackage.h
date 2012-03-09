@@ -46,21 +46,14 @@
     int (*BP_CreatePluginMIMETypesPreferences)();
 }
 
-+ (void)initialize;
 + (id)pluginWithPath:(id)arg1;
 + (id)preferredLocalizationName;
++ (void)initialize;
 
-- (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
-- (void)finalize;
 - (id)MIMETypeForExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
 - (unsigned long)versionNumber;
 - (void)unload;
-- (void).cxx_destruct;
-- (id).cxx_construct;
-- (id)initWithPath:(id)arg1;
-- (BOOL)load;
-- (BOOL)isQuickTimePlugIn;
-- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleIdentifier;
+- (void)dealloc;
 - (BOOL)supportsMIMEType:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
 - (BOOL)getPluginInfoFromPLists;
 - (const struct PluginInfo { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct Vector<WebCore::MimeClassInfo,0ul> { unsigned int x_4_1_1; struct VectorBuffer<WebCore::MimeClassInfo,0ul> { struct MimeClassInfo {} *x_2_2_1; unsigned int x_2_2_2; } x_4_1_2; } x4; }*)pluginInfo;
@@ -72,7 +65,14 @@
 - (void)createPropertyListFile;
 - (id)_objectForInfoDictionaryKey:(id)arg1;
 - (id)pListForPath:(id)arg1 createFile:(BOOL)arg2;
-- (void)dealloc;
+- (id).cxx_construct;
+- (id)initWithPath:(id)arg1;
+- (BOOL)load;
+- (void)finalize;
+- (BOOL)isQuickTimePlugIn;
+- (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
+- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleIdentifier;
+- (void).cxx_destruct;
 - (oneway void)_webcore_releaseOnWebThread;
 - (oneway void)release;
 

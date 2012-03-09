@@ -12,9 +12,9 @@
 
 
 - (void)setService:(id)arg1;
+- (void)dealloc;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

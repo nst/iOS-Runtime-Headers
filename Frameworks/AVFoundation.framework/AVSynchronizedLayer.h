@@ -12,11 +12,11 @@
 
 + (id)synchronizedLayerWithPlayerItem:(id)arg1;
 
-- (void)layerDidBecomeVisible:(BOOL)arg1;
-- (void)finalize;
-- (void)setPlayerItem:(id)arg1;
-- (id)playerItem;
 - (id)init;
 - (void)dealloc;
+- (void)setPlayerItem:(id)arg1;
+- (id)playerItem;
+- (void)layerDidBecomeVisible:(BOOL)arg1;
+- (void)finalize;
 
 @end

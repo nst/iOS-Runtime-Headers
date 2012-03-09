@@ -18,9 +18,9 @@
 @property BOOL nonSquareImage;
 
 
-- (void)setImage:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)setImage:(id)arg1;
 - (void)setReflectionSpacing:(float)arg1;
 - (float)reflectionSpacing;
 - (void)setUseImageSize:(BOOL)arg1;

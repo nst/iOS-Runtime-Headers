@@ -19,6 +19,13 @@
 
 + (id)defaultProperties;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setAlignment:(int)arg1;
+- (int)alignment;
+- (float)offsetX;
+- (float)offsetY;
 - (void)setFlipMode:(int)arg1;
 - (BOOL)isFlipModeOverridden;
 - (int)flipMode;
@@ -34,12 +41,5 @@
 - (float)scaleY;
 - (BOOL)isAlignmentOverridden;
 - (id)initWithDefaults;
-- (float)offsetX;
-- (float)offsetY;
-- (void)setAlignment:(int)arg1;
-- (int)alignment;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

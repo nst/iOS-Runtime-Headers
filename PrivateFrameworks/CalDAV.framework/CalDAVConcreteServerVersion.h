@@ -13,7 +13,7 @@
 + (id)prototypes;
 
 - (id)regularExpression;
-- (void)setRegularExpression:(id)arg1;
 - (void)dealloc;
+- (void)setRegularExpression:(id)arg1;
 
 @end

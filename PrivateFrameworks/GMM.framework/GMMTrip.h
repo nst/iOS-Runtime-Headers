@@ -18,7 +18,12 @@
 @property int detailLevel;
 
 
+- (id)description;
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)altDescription;
 - (void)setHasDetailLevel:(BOOL)arg1;
 - (BOOL)hasDetailLevel;
@@ -32,10 +37,5 @@
 - (void)setTripSummary:(id)arg1;
 - (void)setRoutes:(id)arg1;
 - (id)routes;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (id)description;
-- (void)dealloc;
 
 @end

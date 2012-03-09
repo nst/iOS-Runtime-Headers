@@ -27,25 +27,25 @@
 + (id)searchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
 
 - (void)setConsumer:(id)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)description;
+- (void)dealloc;
 - (BOOL)isQueryRunning;
 - (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
 - (unsigned int)searchID;
 - (void)setSearchID:(unsigned int)arg1;
 - (void)sendResultsToConsumer:(id)arg1;
 - (void)sendFinishedToConsumerWithError:(id)arg1;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (int)timeLimit;
+- (void)setTimeLimit:(int)arg1;
 - (id)searchString;
 - (id)dictionaryRepresentation;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (void)setState:(int)arg1;
 - (int)state;
-- (int)timeLimit;
-- (void)setTimeLimit:(int)arg1;
-- (void)setMaxResults:(unsigned int)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
 - (unsigned int)maxResults;
 - (id)consumer;
+- (void)setMaxResults:(unsigned int)arg1;
 
 @end

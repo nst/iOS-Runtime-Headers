@@ -33,8 +33,7 @@
     int emptyContentReturnKeyType;
     int shortcutConversionType;
     BOOL suppressReturnKeyStyling;
-    BOOL acceptsForwardDelete;
-    BOOL forceEnableForwardDelete;
+    BOOL forceEnableDictation;
 }
 
 @property int autocapitalizationType;
@@ -65,19 +64,21 @@
 @property BOOL learnsCorrections;
 @property int shortcutConversionType;
 @property BOOL suppressReturnKeyStyling;
-@property BOOL acceptsForwardDelete;
-@property BOOL forceEnableForwardDelete;
+@property BOOL forceEnableDictation;
 
 + (id)defaultTextInputTraits;
 + (id)traitsByAdoptingTraits:(id)arg1;
 + (BOOL)keyboardTypeRequiresASCIICapable:(int)arg1;
 
+- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)dictionaryRepresentation;
 - (void)setToSecureValues;
-- (void)setForceEnableForwardDelete:(BOOL)arg1;
-- (BOOL)forceEnableForwardDelete;
-- (void)setAcceptsForwardDelete:(BOOL)arg1;
-- (BOOL)acceptsForwardDelete;
+- (void)setForceEnableDictation:(BOOL)arg1;
+- (BOOL)forceEnableDictation;
 - (void)setSuppressReturnKeyStyling:(BOOL)arg1;
 - (BOOL)suppressReturnKeyStyling;
 - (void)setShortcutConversionType:(int)arg1;
@@ -136,10 +137,5 @@
 - (void)setSpellCheckingType:(int)arg1;
 - (void)setAutocorrectionType:(int)arg1;
 - (void)setAutocapitalizationType:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

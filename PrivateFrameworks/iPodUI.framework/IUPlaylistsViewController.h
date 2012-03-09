@@ -10,9 +10,12 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)editPlaylist:(id)arg1;
 - (void)_updateCloudPlaylist:(id)arg1;
 - (void)_confirmAddingPlaylist;
@@ -21,8 +24,5 @@
 - (void)viewControllerDidFinishReloadForDataSourceInvalidation;
 - (void)modalContextWillDismiss:(id)arg1 withSuccess:(BOOL)arg2;
 - (void)addPlaylist:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 
 @end

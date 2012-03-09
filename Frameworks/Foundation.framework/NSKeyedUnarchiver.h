@@ -29,9 +29,6 @@
 + (id)unarchiveObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 + (id)_mapkit_safeUnarchiveObjectWithData:(id)arg1;
 
-- (id)initWithStream:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)finalize;
 - (unsigned int)_currentUniqueIdentifier;
 - (void)_replaceObject:(id)arg1 withObject:(id)arg2;
 - (void)_temporaryMapReplaceObject:(id)arg1 withObject:(id)arg2;
@@ -42,6 +39,9 @@
 - (id)_blobForCurrentObject;
 - (id)_decodePropertyListForKey:(id)arg1;
 - (id)_decodeArrayOfObjectsForKey:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (int)versionForClassName:(id)arg1;
 - (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
 - (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
@@ -56,6 +56,7 @@
 - (void)finishDecoding;
 - (id)initForReadingWithData:(id)arg1;
 - (unsigned int)systemVersion;
+- (void)finalize;
 - (double)decodeDoubleForKey:(id)arg1;
 - (int)decodeIntForKey:(id)arg1;
 - (BOOL)containsValueForKey:(id)arg1;
@@ -63,10 +64,9 @@
 - (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned int*)arg2;
 - (BOOL)allowsKeyedCoding;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (id)decodeObjectForKey:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
+- (id)initWithStream:(id)arg1;
 
 @end

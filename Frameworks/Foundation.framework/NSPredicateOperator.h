@@ -17,6 +17,14 @@
 - (id)initWithOperatorType:(unsigned int)arg1;
 - (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2;
 - (void)_setOptions:(unsigned int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)options;
+- (SEL)selector;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)symbol;
 - (BOOL)performOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
@@ -25,13 +33,5 @@
 - (unsigned int)modifier;
 - (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
 - (unsigned int)operatorType;
-- (unsigned int)options;
-- (SEL)selector;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

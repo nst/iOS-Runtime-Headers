@@ -31,7 +31,13 @@
 
 
 - (id)account;
+- (void)dealloc;
+- (void)_accountsChanged:(id)arg1;
+- (void)confirmDeleteAccount:(id)arg1;
+- (void)didConfirmDeleteAccount:(BOOL)arg1;
 - (void)cancelButtonClicked:(id)arg1;
+- (id)accountSpecifiers;
+- (id)specifiers;
 - (void)setAttemptedValidation:(BOOL)arg1;
 - (BOOL)attemptedValidation;
 - (void)setNeedsSave:(BOOL)arg1;
@@ -90,20 +96,14 @@
 - (id)newDefaultAccount;
 - (id)accountFromSpecifier;
 - (void)reloadAccount;
-- (void)_accountsChanged:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)updateDoneButton;
-- (void)doneButtonClicked:(id)arg1;
-- (void)dealloc;
-- (void)confirmDeleteAccount:(id)arg1;
-- (void)didConfirmDeleteAccount:(BOOL)arg1;
 - (void)account:(id)arg1 wasAutoDiscovered:(BOOL)arg2 error:(id)arg3;
 - (void)account:(id)arg1 isValid:(BOOL)arg2 validationError:(id)arg3;
-- (id)accountSpecifiers;
-- (id)specifiers;
+- (void)updateDoneButton;
+- (void)doneButtonClicked:(id)arg1;
 - (void)confirmationView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)finishedAccountSetup;
 - (BOOL)isPropertyEnabledForIdentityPickerController:(id)arg1;

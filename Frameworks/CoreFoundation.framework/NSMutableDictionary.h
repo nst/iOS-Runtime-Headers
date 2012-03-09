@@ -9,11 +9,8 @@
 + (id)nonRetainingDictionary;
 + (id)nonRetainingKeyAndValueDictionary;
 
-- (void)removeObjectForKey:(id)arg1;
-- (void)addEntriesFromDictionary:(id)arg1;
-- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
-- (void)invert;
-- (void)removeAllObjects;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setDictionary:(id)arg1;
 - (void)setObjects:(id)arg1 forKeys:(id)arg2;
 - (void)setObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
@@ -28,8 +25,11 @@
 - (void)addObject:(id)arg1 forKey:(id)arg2;
 - (void)_mutate;
 - (void)removeObjectsForKeys:(id)arg1;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2;
+- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
+- (void)invert;
+- (void)addEntriesFromDictionary:(id)arg1;
+- (void)removeObjectForKey:(id)arg1;
+- (void)removeAllObjects;
 - (id)initWithContentsOfURL:(id)arg1;
 - (Class)classForCoder;
 - (id)initWithContentsOfFile:(id)arg1;
@@ -49,14 +49,14 @@
 - (void)_webkit_setLongLong:(long long)arg1 forKey:(id)arg2;
 - (void)_webkit_setUnsignedLongLong:(unsigned long long)arg1 forKey:(id)arg2;
 - (void)_webkit_setUnsignedShort:(unsigned short)arg1 forKey:(id)arg2;
-- (void)encodeUInt64:(unsigned long long)arg1 forKey:(id)arg2;
-- (void)encodeUnsignedInteger:(unsigned int)arg1 forKey:(id)arg2;
-- (void)encodeLongLong:(long long)arg1 forKey:(id)arg2;
+- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeInteger:(int)arg1 forKey:(id)arg2;
 - (void)encodeBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
-- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
+- (void)encodeUInt64:(unsigned long long)arg1 forKey:(id)arg2;
+- (void)encodeUnsignedInteger:(unsigned int)arg1 forKey:(id)arg2;
+- (void)encodeLongLong:(long long)arg1 forKey:(id)arg2;
 - (void)addEntriesFromDictionaryWithRecursion:(id)arg1;
 - (void)mf_fixupRFC2231Values;
 - (void)mf_setInteger:(int)arg1 forKey:(id)arg2;

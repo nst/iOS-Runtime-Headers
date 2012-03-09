@@ -16,6 +16,8 @@
 
 + (id)rangeWithDOMRange:(id)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (void)setStartOffset:(long)arg1;
 - (void)setNode:(id)arg1;
 - (long)endOffset;
@@ -23,7 +25,5 @@
 - (long)startOffset;
 - (id)initWithDOMRange:(id)arg1;
 - (void)setEndOffset:(long)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

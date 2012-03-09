@@ -11,15 +11,13 @@
 + (void)initialize;
 
 - (void)addItem:(id)arg1;
-- (void)finalize;
-- (id)dictionaryRepresentation;
-- (void)goForward;
-- (void)goBack;
-- (id)currentItem;
-- (id)backItem;
+- (void)removeItem:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (void)setCapacity:(int)arg1;
 - (int)capacity;
-- (void)removeItem:(id)arg1;
+- (id)itemAtIndex:(int)arg1;
 - (void)setPageCacheSize:(unsigned int)arg1;
 - (void)setToMatchDictionaryRepresentation:(id)arg1;
 - (BOOL)containsItem:(id)arg1;
@@ -31,10 +29,12 @@
 - (int)backListCount;
 - (int)forwardListCount;
 - (id)initWithBackForwardList:(struct PassRefPtr<WebCore::BackForwardListImpl> { struct BackForwardListImpl {} *x1; })arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (id)itemAtIndex:(int)arg1;
+- (id)dictionaryRepresentation;
+- (void)goForward;
+- (void)goBack;
+- (id)currentItem;
+- (void)finalize;
+- (id)backItem;
 - (void)_close;
 
 @end

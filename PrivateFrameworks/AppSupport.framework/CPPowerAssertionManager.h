@@ -19,7 +19,9 @@
 
 + (id)sharedInstance;
 
-- (void)setDelegate:(id)arg1;
+- (id)description;
+- (id)init;
+- (void)dealloc;
 - (unsigned int)retainCountForContext:(id)arg1;
 - (void)setUUIDPrefix:(id)arg1;
 - (void)retainPowerAssertionWithContext:(id)arg1;
@@ -30,9 +32,7 @@
 - (void)_releaseAssertions;
 - (void)_retainAssertions;
 - (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (id)uuid;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

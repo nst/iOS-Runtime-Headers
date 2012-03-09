@@ -51,6 +51,34 @@
 @property(readonly) BOOL _showsOnlyEditableSections;
 
 
+- (void)dealloc;
+- (id)initWithVibrationType:(unsigned int)arg1 avController:(id)arg2 showsDefault:(BOOL)arg3 showsUserGenerated:(BOOL)arg4 showsNone:(BOOL)arg5;
+- (void)setShowsEditButtonAtRightSideOfCurrentNavigationController:(BOOL)arg1;
+- (id)selectedVibrationIdentifier;
+- (void)_handleUserGeneratedVibrationsDidChangeNotification;
+- (void)setShowsNothingSelected:(BOOL)arg1;
+- (void)setSelectedVibrationIdentifier:(id)arg1;
+- (void)setAVController:(id)arg1;
+- (id)avController;
+- (id)initWithStyle:(int)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (id)delegate;
+- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)_handleError:(id)arg1;
+- (float)contentHeight;
 - (unsigned int)_numberOfPrecedingSections;
 - (void)setAllowsDeletingCurrentSystemVibration:(BOOL)arg1;
 - (BOOL)allowsDeletingCurrentSystemVibration;
@@ -89,33 +117,5 @@
 - (int)_sectionForUserGeneratedGroup;
 - (void)finishedWithPicker;
 - (void)setNoneString:(id)arg1;
-- (void)setAVController:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)_handleError:(id)arg1;
-- (id)initWithStyle:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (id)delegate;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)dealloc;
-- (id)avController;
-- (float)contentHeight;
-- (id)initWithVibrationType:(unsigned int)arg1 avController:(id)arg2 showsDefault:(BOOL)arg3 showsUserGenerated:(BOOL)arg4 showsNone:(BOOL)arg5;
-- (void)setShowsEditButtonAtRightSideOfCurrentNavigationController:(BOOL)arg1;
-- (id)selectedVibrationIdentifier;
-- (void)_handleUserGeneratedVibrationsDidChangeNotification;
-- (void)setShowsNothingSelected:(BOOL)arg1;
-- (void)setSelectedVibrationIdentifier:(id)arg1;
 
 @end

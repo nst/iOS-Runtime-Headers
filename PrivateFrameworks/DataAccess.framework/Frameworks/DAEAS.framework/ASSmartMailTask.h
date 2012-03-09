@@ -13,9 +13,9 @@
 }
 
 
+- (void)dealloc;
 - (id)command;
 - (id)contentType;
-- (void)dealloc;
 - (id)requestBodyStreamOutKnownSize:(int*)arg1;
 - (void)handleTopLevelErrorStatus:(id)arg1;
 - (id)initWithMessage:(id)arg1 messageID:(id)arg2 messageType:(int)arg3 originalMessageID:(id)arg4 originalFolderID:(id)arg5 originalLongID:(id)arg6;

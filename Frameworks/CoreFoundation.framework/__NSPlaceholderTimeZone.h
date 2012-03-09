@@ -5,12 +5,14 @@
 @interface __NSPlaceholderTimeZone : NSTimeZone  {
 }
 
-+ (void)initialize;
 + (id)immutablePlaceholder;
++ (void)initialize;
 
-- (id)data;
-- (int)secondsFromGMTForDate:(id)arg1;
-- (id)name;
+- (unsigned int)retainCount;
+- (id)retain;
+- (oneway void)release;
+- (id)init;
+- (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 data:(id)arg2;
 - (id)__initWithName:(id)arg1 cache:(BOOL)arg2;
@@ -19,10 +21,8 @@
 - (BOOL)isDaylightSavingTimeForDate:(id)arg1;
 - (id)abbreviationForDate:(id)arg1;
 - (double)daylightSavingTimeOffsetForDate:(id)arg1;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)init;
-- (oneway void)release;
-- (void)dealloc;
+- (int)secondsFromGMTForDate:(id)arg1;
+- (id)name;
+- (id)data;
 
 @end

@@ -9,8 +9,8 @@
 }
 
 
+- (void)dealloc;
 - (void)_updateImages;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end

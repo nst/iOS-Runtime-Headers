@@ -18,7 +18,7 @@
 @property int characterCountNumerator;
 
 
-- (BOOL)isTextOnly;
+- (void)dealloc;
 - (void)_calculateInfoIfNecessary;
 - (void)setCharacterCountNumerator:(int)arg1;
 - (void)setCharacterCountDenominator:(int)arg1;
@@ -30,6 +30,6 @@
 - (void)updateByReloadingFromComposition:(id)arg1 replacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (int)characterCountNumerator;
 - (int)characterCountDenominator;
-- (void)dealloc;
+- (BOOL)isTextOnly;
 
 @end

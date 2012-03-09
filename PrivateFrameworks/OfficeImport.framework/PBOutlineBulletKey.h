@@ -9,10 +9,10 @@
 }
 
 
-- (id)initWithOutlineBullet:(id)arg1;
-- (id)initWithSlideId:(unsigned long)arg1 textType:(int)arg2 placeholderIndex:(unsigned long)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithOutlineBullet:(id)arg1;
+- (id)initWithSlideId:(unsigned long)arg1 textType:(int)arg2 placeholderIndex:(unsigned long)arg3;
 
 @end

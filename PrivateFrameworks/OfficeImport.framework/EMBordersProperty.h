@@ -16,6 +16,10 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)styleString;
+- (id)borderColor;
 - (id)initWithEDBorders:(id)arg1;
 - (BOOL)hasSameColorsAs:(id)arg1;
 - (BOOL)hasSameStylesAs:(id)arg1;
@@ -35,9 +39,5 @@
 - (id)stringFromColor:(id)arg1;
 - (id)initWithOADStroke:(id)arg1;
 - (id)cssStringForName:(id)arg1;
-- (id)borderColor;
-- (id)styleString;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

@@ -37,7 +37,6 @@
 + (BOOL)canWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned int)arg4;
 + (BOOL)canReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned int)arg4;
 
-- (void)finalize;
 - (void)ifSymbolicLinkAtURL:(id)arg1 withResolutionCount:(int*)arg2 thenReevaluateSelf:(id)arg3 elseInvokeClaimer:(id)arg4;
 - (void)devalueOldClaim:(id)arg1;
 - (void)makePresentersOfItemAtLocation:(id)arg1 orContainedItem:(BOOL)arg2 relinquishUsingProcedureGetter:(id)arg3;
@@ -76,9 +75,10 @@
 - (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
 - (BOOL)cameFromSuperarbiter;
 - (void)block;
-- (struct _xpc_connection_s { }*)client;
-- (void)cancelled;
 - (id)description;
 - (void)dealloc;
+- (void)finalize;
+- (void)cancelled;
+- (struct _xpc_connection_s { }*)client;
 
 @end

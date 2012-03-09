@@ -21,7 +21,7 @@
 }
 
 
-- (void)invalidate;
+- (void)dealloc;
 - (void)stopSearching;
 - (void)startSearching;
 - (int)dayIndexForDay:(double)arg1;
@@ -52,6 +52,6 @@
 - (void)invalidateCachedDays;
 - (void)invalidateCachedDayIndexes;
 - (void)invalidateCachedOccurrences;
-- (void)dealloc;
+- (void)invalidate;
 
 @end

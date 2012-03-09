@@ -31,17 +31,15 @@
 
 + (void)initialize;
 
-- (void)invalidate;
+- (void)setRemoteClass:(Class)arg1;
+- (void)restrictDecodingToWhitelistedClassNames:(id)arg1;
+- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1 queue:(struct dispatch_queue_s { }*)arg2 target:(id)arg3;
 - (id)errorHandler;
 - (void)setErrorHandler:(id)arg1;
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
-- (struct _xpc_connection_s { }*)connection;
 - (void)setTarget:(id)arg1;
 - (id)target;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setUseTraditionalEncoder:(BOOL)arg1;
 - (void)getProxyClassWithHandler:(id)arg1;
 - (BOOL)useTraditionalEncoder;
 - (id)_errorForXpcError:(void*)arg1;
@@ -56,8 +54,10 @@
 - (void*)_newXpcArgumentForInvocationArgumentAt:(void*)arg1 ofType:(const char *)arg2;
 - (id)_objectForXpcEncoding:(void*)arg1;
 - (void*)_newXpcEncodingForObject:(id)arg1;
-- (void)setRemoteClass:(Class)arg1;
-- (void)restrictDecodingToWhitelistedClassNames:(id)arg1;
-- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1 queue:(struct dispatch_queue_s { }*)arg2 target:(id)arg3;
+- (struct _xpc_connection_s { }*)connection;
+- (void)setUseTraditionalEncoder:(BOOL)arg1;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (void)invalidate;
 
 @end

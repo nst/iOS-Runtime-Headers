@@ -18,11 +18,9 @@
 
 
 - (id)messageBody;
-- (int)command;
-- (id)owner;
-- (id)signature;
-- (void)setSignature:(id)arg1;
-- (void)setOwner:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setResponseRequestorID:(id)arg1;
 - (id)responseRequestorID;
 - (void)setResponseAuthToken:(id)arg1;
@@ -30,8 +28,10 @@
 - (void)handleResponseDictionary:(id)arg1;
 - (int)responseCommand;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (int)command;
+- (void)setOwner:(id)arg1;
+- (id)owner;
+- (id)signature;
+- (void)setSignature:(id)arg1;
 
 @end

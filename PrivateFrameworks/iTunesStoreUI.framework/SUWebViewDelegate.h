@@ -23,6 +23,9 @@
 @property(retain) id originalUIDelegate;
 
 
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)webView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
 - (void)webView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
 - (id)webView:(id)arg1 runJavaScriptTextInputPanelWithPrompt:(id)arg2 defaultText:(id)arg3 initiatedByFrame:(id)arg4;
@@ -39,9 +42,6 @@
 - (id)webView;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)originalUIDelegate;
 - (id)originalResourceLoadDelegate;
 - (id)originalPolicyDelegate;

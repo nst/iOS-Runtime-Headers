@@ -11,11 +11,11 @@
 
 
 - (long long)expectedLength;
-- (void)close;
 - (BOOL)hasBytesAvailable;
-- (BOOL)open:(id*)arg1;
+- (void)close;
 - (id)copyAllData:(id*)arg1;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2 error:(id*)arg3;
 - (unsigned int)minimumReadLength;
+- (BOOL)open:(id*)arg1;
 
 @end

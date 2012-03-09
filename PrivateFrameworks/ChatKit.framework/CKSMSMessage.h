@@ -22,10 +22,11 @@
 - (id)messages;
 - (id)subject;
 - (BOOL)isPlaceholder;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 - (id)address;
 - (id)sequenceNumber;
-- (int)rowID;
-- (id)sender;
 - (void)setMessages:(id)arg1;
 - (void)prepareToResend;
 - (void)deliveredSubpart:(int)arg1 totalSubparts:(int)arg2 success:(BOOL)arg3;
@@ -64,8 +65,7 @@
 - (id)guid;
 - (void)setIsFromDowngrading:(BOOL)arg1;
 - (BOOL)isForward;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
+- (int)rowID;
+- (id)sender;
 
 @end

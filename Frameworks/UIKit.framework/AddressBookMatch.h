@@ -12,8 +12,8 @@
 }
 
 
-- (id)initWithValue:(id)arg1 property:(id)arg2 key:(id)arg3 identifier:(int)arg4;
 - (id)description;
 - (void)dealloc;
+- (id)initWithValue:(id)arg1 property:(id)arg2 key:(id)arg3 identifier:(int)arg4;
 
 @end

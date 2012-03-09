@@ -7,6 +7,10 @@
 }
 
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
 - (BOOL)isPatternColor;
 - (float)alphaComponent;
 - (void)setStroke;
@@ -16,9 +20,5 @@
 - (id)colorWithAlphaComponent:(float)arg1;
 - (struct CGColor { }*)CGColor;
 - (void)set;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 
 @end

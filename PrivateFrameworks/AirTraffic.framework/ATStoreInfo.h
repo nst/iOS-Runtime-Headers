@@ -27,8 +27,12 @@
 
 
 - (void)setCollectionID:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)adamID;
 - (void)setAdamID:(id)arg1;
+- (void)setAppleID:(id)arg1;
+- (id)appleID;
 - (id)assetDictionary;
 - (id)downloadDictionary;
 - (id)drmFree;
@@ -50,11 +54,7 @@
 - (void)setVersionID:(id)arg1;
 - (id)DSID;
 - (void)setDSID:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)collectionID;
 - (id)versionID;
-- (void)setAppleID:(id)arg1;
-- (id)appleID;
+- (id)collectionID;
 
 @end

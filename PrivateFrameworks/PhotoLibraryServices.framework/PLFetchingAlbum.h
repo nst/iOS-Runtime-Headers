@@ -11,31 +11,35 @@
     int _emptyState;
 }
 
-@property(readonly) BOOL hasAssetsCache;
 @property(retain) NSFetchRequest * fetchRequest;
+@property(readonly) BOOL hasAssetsCache;
 @property(retain) NSOrderedSet * fetchedAssets;
 @property(readonly) unsigned int countForDisplay;
 
++ (BOOL)contextShouldIgnoreChangesForFetchRequest;
++ (BOOL)contextShouldIgnoreChangesForFetchedAssetsSet;
++ (BOOL)contextShouldIgnoreChangesForFetchedAssets;
 
-- (void)awakeFromInsert;
-- (void)setFetchRequest:(id)arg1;
-- (void)awakeFromFetch;
-- (id)fetchRequest;
-- (void)didTurnIntoFault;
-- (BOOL)isEmpty;
+- (unsigned int)count;
 - (BOOL)hasAssetsCache;
 - (void)updateSnapshotAndClearCaches:(id)arg1;
 - (unsigned int)countForAssetsOfKind:(int)arg1;
 - (unsigned int)_fetchedCountForAssetsOfKind:(int)arg1;
 - (void)setupFetchRequest;
 - (id)primitiveAssets;
+- (BOOL)isEmpty;
+- (void)awakeFromInsert;
+- (void)setFetchRequest:(id)arg1;
+- (void)awakeFromFetch;
+- (id)fetchRequest;
+- (void)didTurnIntoFault;
 - (void)setAssets:(id)arg1;
+- (unsigned int)countForDisplay;
 - (void)setKeyAsset:(id)arg1;
 - (id)keyAsset;
-- (unsigned int)countForDisplay;
 - (id)mutableAssets;
+- (void)batchFetchAssets:(id)arg1;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (id)assets;
-- (unsigned int)count;
 
 @end

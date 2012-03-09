@@ -28,7 +28,7 @@
 @property struct CGSize { float x1; float x2; } centerToSelectionPointOffset;
 
 
-- (void)setPosition:(int)arg1;
+- (void)dealloc;
 - (void)setCenterToSelectionPointOffset:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })touchToCenterOffset;
 - (struct CGPoint { float x1; float x2; })applyOffsetInDirectionOfHandle:(float)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
@@ -50,7 +50,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)setPosition:(int)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 
 @end

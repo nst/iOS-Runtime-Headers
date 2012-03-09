@@ -23,7 +23,6 @@
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)insertInManagedObjectContext:(id)arg1;
 
-- (id)objectID;
 - (void)setPrimitiveCompressedSizeValue:(int)arg1;
 - (int)primitiveCompressedSizeValue;
 - (void)setCompressedSizeValue:(int)arg1;
@@ -32,5 +31,6 @@
 - (short)primitiveIndexValue;
 - (short)indexValue;
 - (void)setIndexValue:(short)arg1;
+- (id)objectID;
 
 @end

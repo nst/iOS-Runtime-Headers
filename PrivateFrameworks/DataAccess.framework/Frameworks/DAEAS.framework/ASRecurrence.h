@@ -36,6 +36,7 @@
 - (id)dayOfWeek;
 - (id)dayOfMonth;
 - (id)monthOfYear;
+- (void)dealloc;
 - (id)until;
 - (void)setUntil:(id)arg1;
 - (id)interval;
@@ -46,7 +47,6 @@
 - (void)setType:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (void)setParentEvent:(id)arg1;
 - (id)initWithCalRecurrence:(void*)arg1 parentEvent:(id)arg2;
 - (void)saveToCalendarWithParentASEvent:(id)arg1 existingRecord:(void*)arg2 shouldMergeProperties:(BOOL)arg3 outMergeDidChooseLocalProperties:(BOOL*)arg4;

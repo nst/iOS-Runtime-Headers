@@ -26,21 +26,9 @@
 @property(retain) CNFDisplayController * displayController;
 
 
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
-- (id)delegate;
-- (void)startPreview;
-- (void)stopPreview;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
-- (void)setIsSendingVideo:(BOOL)arg1;
+- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)animateFromVoiceControlWithName:(id)arg1 andSubtitle:(id)arg2;
 - (void)setIsOutgoingInvitation:(BOOL)arg1;
 - (void)hangUpConferenceOnScreenLock;
@@ -104,5 +92,17 @@
 - (void)conferenceDisplayController:(id)arg1 cancelCallFailureRecoveryWithReason:(unsigned int)arg2;
 - (BOOL)isShowingCallWaiting;
 - (BOOL)isShowingLock;
+- (void)startPreview;
+- (void)stopPreview;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)setIsSendingVideo:(BOOL)arg1;
 
 @end

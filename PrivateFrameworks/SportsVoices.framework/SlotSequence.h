@@ -10,13 +10,10 @@
 
 @property(retain) NSMutableArray * slots;
 
-+ (id)slotSequenceWithArray:(id)arg1;
 + (id)emptySlotSequence;
++ (id)slotSequenceWithArray:(id)arg1;
 
-- (id)first;
 - (BOOL)matches:(id)arg1;
-- (id)initWithArray:(id)arg1;
-- (BOOL)empty;
 - (int)count;
 - (id)description;
 - (void)dealloc;
@@ -32,5 +29,8 @@
 - (id)reversed;
 - (id)overlayedOn:(id)arg1;
 - (id)initFromPlist:(id)arg1;
+- (id)initWithArray:(id)arg1;
+- (id)first;
+- (BOOL)empty;
 
 @end

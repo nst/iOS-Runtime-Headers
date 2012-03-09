@@ -10,8 +10,9 @@
 }
 
 
-- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)dealloc;
+- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1;
 - (id)verifyCredentialsURL;
 - (void)authenticateAndSaveAccount:(id)arg1 withHandler:(id)arg2;
 - (void)swapCredentialsForAccount:(id)arg1 withHandler:(id)arg2;
@@ -21,6 +22,5 @@
 - (id)accessTokenURL;
 - (id)consumerSecret;
 - (id)consumerKey;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 
 @end

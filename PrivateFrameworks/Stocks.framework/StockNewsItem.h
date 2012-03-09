@@ -22,22 +22,22 @@
 
 + (id)localizedStringForDate:(id)arg1;
 
-- (id)archiveDictionary;
-- (id)link;
-- (void)setLink:(id)arg1;
-- (void)setSource:(id)arg1;
-- (id)source;
-- (void)setDate:(id)arg1;
-- (id)date;
+- (id)description;
+- (void)dealloc;
+- (void)setHeadline:(id)arg1;
+- (id)headline;
 - (unsigned long long)ID;
 - (id)localizedDateString;
 - (void)setID:(unsigned long long)arg1;
 - (id)initWithArchiveDictionary:(id)arg1;
 - (int)chronologicalComparisonWithNewsItem:(id)arg1;
 - (void)resetLocale;
-- (id)description;
-- (void)dealloc;
-- (void)setHeadline:(id)arg1;
-- (id)headline;
+- (void)setSource:(id)arg1;
+- (id)source;
+- (void)setDate:(id)arg1;
+- (id)date;
+- (id)link;
+- (void)setLink:(id)arg1;
+- (id)archiveDictionary;
 
 @end

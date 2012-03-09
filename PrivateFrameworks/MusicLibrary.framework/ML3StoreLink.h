@@ -5,8 +5,8 @@
 @interface ML3StoreLink : ML3Entity  {
 }
 
-+ (id)databaseTable;
 + (int)revisionTrackingCode;
++ (id)databaseTable;
 
 
 @end

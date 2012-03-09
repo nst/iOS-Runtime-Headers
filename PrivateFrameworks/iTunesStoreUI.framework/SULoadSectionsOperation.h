@@ -15,9 +15,9 @@
 @property(readonly) SUSectionsResponse * sectionsResponse;
 
 
-- (void)run;
 - (id)init;
 - (void)dealloc;
+- (void)run;
 - (void)setShouldUseCache:(BOOL)arg1;
 - (void)setActiveSectionVersionString:(id)arg1;
 - (id)activeSectionVersionString;

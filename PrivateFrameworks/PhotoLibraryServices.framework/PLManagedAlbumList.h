@@ -4,7 +4,7 @@
 
 @class PLFilteredAlbumList, NSString, NSMutableOrderedSet;
 
-@interface PLManagedAlbumList : _PLManagedAlbumList <PLIndexMappersDataOrigin, PLAlbumContainer> {
+@interface PLManagedAlbumList : _PLManagedAlbumList <PLAlbumContainer, PLIndexMappersDataOrigin> {
     PLFilteredAlbumList *_filteredAlbumLists[5];
     BOOL isRegisteredForChanges;
     BOOL didRegisteredWithUserInterfaceContext;
@@ -21,7 +21,6 @@
 @property(readonly) NSString * _typeDescription;
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
-+ (void)initialize;
 + (id)photoStreamAlbumListInManagedObjectContext:(id)arg1;
 + (id)placesAlbumListInManagedObjectContext:(id)arg1;
 + (id)facesAlbumListInManagedObjectContext:(id)arg1;
@@ -30,34 +29,35 @@
 + (id)_typeDescriptionForAlbumListType:(int)arg1;
 + (id)_albumListWithType:(int)arg1 inManagedObjectContext:(id)arg2;
 + (void)addSingletonObjectsToContext:(id)arg1;
-+ (id)photoStreamAlbumListInPhotoLibrary:(id)arg1;
 + (id)placesAlbumListInPhotoLibrary:(id)arg1;
 + (id)facesAlbumListInPhotoLibrary:(id)arg1;
++ (id)photoStreamAlbumListInPhotoLibrary:(id)arg1;
 + (id)eventListInPhotoLibrary:(id)arg1;
 + (id)albumListInPhotoLibrary:(id)arg1;
++ (void)initialize;
 
-- (void)awakeFromInsert;
-- (void)awakeFromFetch;
-- (void)willTurnIntoFault;
-- (int)filter;
-- (id)_typeDescription;
+- (void)dealloc;
 - (void)registerFilteredAlbumList:(id)arg1;
-- (void)enumerateFilteredAlbumLists:(id)arg1;
 - (void)setAlbumListType:(int)arg1;
+- (void)enumerateFilteredAlbumLists:(id)arg1;
 - (void)unregisterAllFilteredAlbums;
 - (void)enumerateDerivedIndexMappers:(id)arg1;
 - (void)setIsRegisteredForChanges:(BOOL)arg1;
-- (void)unregisterForChanges;
 - (BOOL)didRegisteredWithUserInterfaceContext;
-- (void)registerForChanges;
 - (void)setDidRegisteredWithUserInterfaceContext:(BOOL)arg1;
 - (BOOL)isRegisteredForChanges;
-- (int)albumListType;
+- (void)registerForChanges;
+- (void)unregisterForChanges;
+- (id)_typeDescription;
+- (int)filter;
+- (void)awakeFromInsert;
+- (void)awakeFromFetch;
+- (void)willTurnIntoFault;
 - (id)_prettyDescription;
+- (int)albumListType;
 - (BOOL)hasAtLeastOneAlbum;
 - (BOOL)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
 - (BOOL)canEditAlbums;
 - (id)albums;
-- (void)dealloc;
 
 @end

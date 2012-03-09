@@ -11,10 +11,10 @@
 
 + (id)linkWithType:(int)arg1;
 
-- (id)externalNames;
+- (void)dealloc;
 - (int)type;
 - (id)initWithType:(int)arg1;
 - (void)setType:(int)arg1;
-- (void)dealloc;
+- (id)externalNames;
 
 @end

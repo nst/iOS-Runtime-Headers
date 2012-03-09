@@ -17,6 +17,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithArchiver:(id)arg1;
 - (void)finishDocumentWithState:(id)arg1;
 - (void)reader:(id)arg1 didParseString:(id)arg2;
@@ -35,6 +36,5 @@
 - (void)readerDidEndTable:(id)arg1;
 - (void)readerDidStartTableRow:(id)arg1;
 - (id)_cellStyleStringFromCell:(id)arg1;
-- (void)dealloc;
 
 @end

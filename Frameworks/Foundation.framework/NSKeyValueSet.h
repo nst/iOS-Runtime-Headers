@@ -16,9 +16,9 @@
 - (void)_proxyNonGCFinalize;
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
 - (struct { id x1; id x2; })_proxyLocator;
-- (id)member:(id)arg1;
-- (id)objectEnumerator;
 - (unsigned int)count;
 - (void)dealloc;
+- (id)member:(id)arg1;
+- (id)objectEnumerator;
 
 @end

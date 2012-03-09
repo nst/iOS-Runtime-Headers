@@ -11,16 +11,16 @@
 @property(readonly) NSArray * ports;
 
 
+- (id)init;
+- (void)dealloc;
 - (id)ports;
 - (void)willStartForSession:(id)arg1;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (id)notReadyError;
-- (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (void)didStartForSession:(id)arg1;
+- (void)didStopForSession:(id)arg1 error:(id)arg2;
+- (id)_applyOverridesToCaptureOptions:(id)arg1;
 - (id)session;
 - (void)setSession:(id)arg1;
-- (id)_applyOverridesToCaptureOptions:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -17,6 +17,7 @@
 @property int style;
 
 
+- (void)dealloc;
 - (id)sectionIndexTitles;
 - (int)tableViewStyle;
 - (int)numberOfSections;
@@ -24,7 +25,6 @@
 - (void)setStyle:(int)arg1;
 - (int)numberOfRowsInSection:(int)arg1;
 - (void)reloadData;
-- (void)dealloc;
 - (BOOL)canShowItemOfferButtonForItem:(id)arg1;
 - (id)newHeaderViewForSection:(int)arg1;
 - (void)_configureLoadMoreCell:(id)arg1 forItem:(id)arg2;

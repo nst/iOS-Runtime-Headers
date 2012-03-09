@@ -5,6 +5,13 @@
 @interface _NSCoreManagedObjectID : NSManagedObjectID  {
 }
 
++ (id)retain;
++ (id)alloc;
++ (void)release;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (int)version;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)initialize;
 + (unsigned int)allocateBatch:(id*)arg1 count:(unsigned int)arg2;
 + (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2;
 + (id)managedObjectIDFromURIRepresentation:(id)arg1;
@@ -17,14 +24,12 @@
 + (id)_storeInfo1;
 + (void)_setStoreInfo1:(id)arg1;
 + (BOOL)accessInstanceVariablesDirectly;
-+ (int)version;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (void)initialize;
-+ (id)retain;
-+ (id)alloc;
-+ (void)release;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)retainCount;
+- (id)retain;
+- (void)release;
 - (void)finalize;
 - (BOOL)_isPersistentStoreAlive;
 - (id)URIRepresentation;
@@ -33,10 +38,5 @@
 - (id)entity;
 - (id)persistentStore;
 - (BOOL)isTemporaryID;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (unsigned int)retainCount;
-- (id)retain;
-- (void)release;
 
 @end

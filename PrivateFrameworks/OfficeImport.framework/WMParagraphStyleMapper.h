@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (id)labelStringWithGap:(id)arg1;
 - (bool)checkListId:(int)arg1 level:(int)arg2;
 - (void)mapBulletAt:(id)arg1 forLevel:(id)arg2 forIndex:(int)arg3 listState:(id)arg4 isOutline:(BOOL)arg5;
@@ -20,6 +21,5 @@
 - (void)mapListStyleAt:(id)arg1 state:(id)arg2;
 - (void)destyleEmptyParagraph;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (void)dealloc;
 
 @end

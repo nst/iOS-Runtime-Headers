@@ -6,9 +6,9 @@
 }
 
 
-- (void)_setDefaultValuesForScriptProperties:(id)arg1;
 - (id)newViewControllerForPage:(id)arg1 ofType:(int)arg2;
 - (id)newStorePageViewControllerWithSection:(id)arg1;
 - (id)newPlaceholderViewController;
+- (void)_setDefaultValuesForScriptProperties:(id)arg1;
 
 @end

@@ -9,10 +9,10 @@
 }
 
 
+- (void)dealloc;
 - (unsigned int)numberOfSections;
 - (id)titleOfSectionAtIndex:(unsigned int)arg1;
 - (unsigned int)indexOfSectionAtIndex:(unsigned int)arg1;
 - (void)addSectionWithTitle:(id)arg1 index:(unsigned int)arg2;
-- (void)dealloc;
 
 @end

@@ -25,6 +25,7 @@
     BOOL _sentPhoto;
     double _playStartTime;
     unsigned int _features;
+    struct dispatch_queue_s { } *_resolveQueue;
 }
 
 @property(readonly) NSNetService * netService;
@@ -44,16 +45,21 @@
 + (BOOL)canDisplayMedia:(id)arg1;
 
 - (BOOL)requiresPassword;
-- (void)setPassword:(id)arg1;
-- (BOOL)isAvailable;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netServiceDidResolveAddress:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
+- (void)dealloc;
+- (void)setRate:(float)arg1;
+- (void)setPassword:(id)arg1;
+- (BOOL)isAvailable;
+- (void)validate;
+- (id)deviceID;
 - (id)password;
 - (id)name;
 - (id)dataSource;
 - (void)setDataSource:(id)arg1;
-- (void)setRate:(float)arg1;
-- (id)deviceID;
 - (void)setFeatures:(unsigned int)arg1;
 - (unsigned int)features;
 - (BOOL)streamingLocalSlideShow;
@@ -95,10 +101,5 @@
 - (id)remoteLocalizationForSlideshowThemeKey:(id)arg1;
 - (id)supportedRemoteSlideshowThemes;
 - (BOOL)supportsRemoteSlideshow;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
-- (void)validate;
 
 @end

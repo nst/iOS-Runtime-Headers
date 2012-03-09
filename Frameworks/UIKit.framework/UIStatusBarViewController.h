@@ -16,6 +16,8 @@
 
 + (double)statusBarOrientationAnimationDurationFrom:(int)arg1 to:(int)arg2;
 
+- (id)init;
+- (void)dealloc;
 - (void)_changeStatusBarOrientationFinished:(id)arg1 finished:(BOOL)arg2 context:(void*)arg3;
 - (void)_setStatusBarBackgroundImageForOrientation:(int)arg1;
 - (void)_updateStatusBarGeometryWithOrientation:(int)arg1 slideUp:(BOOL)arg2 expandWindowForRotationAnimations:(BOOL)arg3;
@@ -33,7 +35,5 @@
 - (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarStyle:(int)arg1 animationParameters:(id)arg2;
 - (id)window;
-- (id)init;
-- (void)dealloc;
 
 @end

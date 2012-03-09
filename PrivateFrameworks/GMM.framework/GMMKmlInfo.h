@@ -16,7 +16,11 @@
 @property BOOL isUserCreated;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasIsUserCreated:(BOOL)arg1;
 - (BOOL)hasIsUserCreated;
 - (id)sourceDocument;
@@ -24,9 +28,5 @@
 - (BOOL)hasSourceDocument;
 - (void)setIsUserCreated:(BOOL)arg1;
 - (void)setSourceDocument:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

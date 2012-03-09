@@ -15,12 +15,12 @@
 @property BOOL hasArtworkAtPlaybackTime;
 
 
+- (void)dealloc;
 - (void)setHasArtworkAtPlaybackTime:(BOOL)arg1;
+- (void)setChapters:(id)arg1;
 - (void)setChapterIndex:(unsigned int)arg1;
 - (unsigned int)chapterIndex;
-- (BOOL)hasArtworkAtPlaybackTime;
-- (void)setChapters:(id)arg1;
 - (id)chapters;
-- (void)dealloc;
+- (BOOL)hasArtworkAtPlaybackTime;
 
 @end

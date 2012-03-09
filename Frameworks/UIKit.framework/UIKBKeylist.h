@@ -15,6 +15,12 @@
 
 + (id)keylist;
 
+- (void)setName:(id)arg1;
+- (unsigned int)count;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (id)keysWithInteractionType:(id)arg1;
 - (id)keyWithName:(id)arg1;
 - (id)initWithName:(id)arg1 keys:(id)arg2;
@@ -23,11 +29,5 @@
 - (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setName:(id)arg1;
-- (unsigned int)count;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

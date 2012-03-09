@@ -9,9 +9,9 @@
 }
 
 
-- (id)initWithBlipRef:(id)arg1;
-- (id)image;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)image;
+- (id)initWithBlipRef:(id)arg1;
 
 @end

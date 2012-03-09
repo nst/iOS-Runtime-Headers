@@ -15,13 +15,13 @@
 @property(retain) UIImage * arrowImage;
 
 
-- (void)layoutSubviews;
-- (void)setBackgroundColor:(id)arg1;
+- (void)dealloc;
 - (void)setShowsArrow:(BOOL)arg1;
 - (BOOL)showsArrow;
 - (id)arrowImage;
 - (void)setArrowImage:(id)arg1;
 - (id)detailTextLabel2;
-- (void)dealloc;
+- (void)layoutSubviews;
+- (void)setBackgroundColor:(id)arg1;
 
 @end

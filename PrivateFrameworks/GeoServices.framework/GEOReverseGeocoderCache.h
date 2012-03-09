@@ -7,9 +7,9 @@
 
 + (id)sharedCache;
 
-- (id)responseForRequest:(id)arg1;
+- (id)init;
 - (void)setResponse:(id)arg1 forRequest:(id)arg2;
 - (void)clear;
-- (id)init;
+- (id)responseForRequest:(id)arg1;
 
 @end

@@ -23,16 +23,16 @@
 @property(retain) SSItemLookupRequest * request;
 
 
+- (void)cancel;
+- (void)dealloc;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)itemLookupRequest:(id)arg1 didFindItems:(id)arg2;
+- (void)setRequest:(id)arg1;
 - (id)games;
 - (void)setGames:(id)arg1;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
-- (void)setRequest:(id)arg1;
-- (void)start;
 - (void)setCompletionHandler:(id)arg1;
 - (id)completionHandler;
 - (id)request;
-- (void)cancel;
-- (void)dealloc;
+- (void)start;
 
 @end

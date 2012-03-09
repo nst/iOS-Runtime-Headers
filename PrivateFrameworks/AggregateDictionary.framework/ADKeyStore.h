@@ -15,11 +15,11 @@
 
 + (id)defaultWhitelist;
 
+- (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (id)initWithDefaultPath;
 - (BOOL)scalarKeyIsWhitelisted:(id)arg1;
 - (BOOL)distributionKeyIsWhitelisted:(id)arg1;
 - (BOOL)metadataKeyIsWhitelisted:(id)arg1;
-- (void)dealloc;
 
 @end

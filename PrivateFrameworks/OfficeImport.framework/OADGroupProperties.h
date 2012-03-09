@@ -13,6 +13,8 @@
 
 + (id)defaultProperties;
 
+- (void)dealloc;
+- (id)fill;
 - (void)setScene3D:(id)arg1;
 - (void)setShape3D:(id)arg1;
 - (BOOL)hasScene3D;
@@ -25,7 +27,5 @@
 - (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
 - (id)initWithDefaults;
-- (id)fill;
-- (void)dealloc;
 
 @end

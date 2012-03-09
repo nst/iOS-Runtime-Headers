@@ -11,6 +11,11 @@
 @property(setter=setAVController:,retain) id avController;
 
 
+- (id)init;
+- (void)dealloc;
+- (id)_avController;
+- (void)setAVController:(id)arg1;
+- (id)avController;
 - (void)uninterruptAVControllerIfAppropriate;
 - (void)_turnOnWithVibrationPattern:(id)arg1;
 - (id)_interruptedAVController;
@@ -20,10 +25,5 @@
 - (void)turnOff;
 - (void)turnOnWithVibrationPattern:(id)arg1;
 - (id)initWithAVController:(id)arg1;
-- (id)_avController;
-- (void)setAVController:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)avController;
 
 @end

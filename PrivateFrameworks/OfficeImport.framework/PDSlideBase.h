@@ -17,7 +17,15 @@
 
 + (int)inheritedPlaceholderType:(int)arg1;
 
+- (void)setName:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setIsHidden:(BOOL)arg1;
+- (id)background;
+- (void)setBackground:(id)arg1;
+- (id)name;
+- (id)animation;
+- (BOOL)isHidden;
 - (void)addSlideNumberPlaceholder:(id)arg1;
 - (id)drawables;
 - (void)setDrawables:(id)arg1 defaultTextListStyle:(id)arg2;
@@ -45,13 +53,5 @@
 - (void)doneWithContent;
 - (id)transition;
 - (void)setTransition:(id)arg1;
-- (id)background;
-- (void)setBackground:(id)arg1;
-- (id)name;
-- (id)animation;
-- (BOOL)isHidden;
-- (void)setName:(id)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

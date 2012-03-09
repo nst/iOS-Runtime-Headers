@@ -52,6 +52,7 @@
 
 + (struct __CFArray { }*)supportedProperties;
 
+- (void)dealloc;
 - (BOOL)hasImportErrors;
 - (BOOL)_setIntValueOrNoteIfNull:(int)arg1 forProperty:(int)arg2;
 - (BOOL)_setDataValueOrNoteIfNull:(id)arg1 forProperty:(unsigned int)arg2;
@@ -110,10 +111,9 @@
 - (struct __CFArray { }*)peopleAndProperties:(const struct __CFArray {}**)arg1;
 - (id)_valueSetter;
 - (id)sortedPeopleAndProperties:(const struct __CFArray {}**)arg1;
-- (void)finalize;
 - (void)setSource:(void*)arg1;
 - (void*)source;
+- (void)finalize;
 - (id)initWithData:(id)arg1;
-- (void)dealloc;
 
 @end

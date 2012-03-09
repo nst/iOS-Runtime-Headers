@@ -16,6 +16,8 @@
 
 + (id)trendlineLabelWithResources:(id)arg1;
 
+- (void)dealloc;
+- (id)name;
 - (bool)isGeneratedText;
 - (bool)isAutomaticLabelDeleted;
 - (unsigned int)stringIndex;
@@ -32,7 +34,5 @@
 - (id)contentFormat;
 - (void)setContentFormat:(id)arg1;
 - (id)initWithResources:(id)arg1;
-- (id)name;
-- (void)dealloc;
 
 @end

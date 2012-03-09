@@ -23,10 +23,8 @@
 + (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 
-- (BOOL)fullScreen;
-- (id)label;
-- (id)URL;
-- (id)title;
+- (id)description;
+- (void)dealloc;
 - (BOOL)precomposed;
 - (BOOL)isRemovable;
 - (id)iconData;
@@ -36,7 +34,9 @@
 - (id)subtitle1Description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)description;
-- (void)dealloc;
+- (BOOL)fullScreen;
+- (id)label;
+- (id)URL;
+- (id)title;
 
 @end

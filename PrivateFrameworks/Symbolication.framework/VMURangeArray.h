@@ -10,8 +10,11 @@
 }
 
 
-- (void)addRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
+- (unsigned int)count;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)dealloc;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })rangeAtIndex:(unsigned int)arg1;
 - (void)setCapacity:(unsigned int)arg1;
 - (void)addRanges:(id)arg1;
@@ -29,10 +32,7 @@
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })subrangeNotExcludedBySelfForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)insertRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 atIndex:(unsigned int)arg2;
 - (void)removeRangeAtIndex:(unsigned int)arg1;
-- (unsigned int)count;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
+- (void)addRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

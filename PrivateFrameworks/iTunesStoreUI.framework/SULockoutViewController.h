@@ -17,11 +17,11 @@
 
 - (id)messageBody;
 - (void)setMessageBody:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)loadView;
 - (id)image;
 - (void)setImage:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)setMessageTitle:(id)arg1;
 - (id)messageTitle;
 - (id)copyArchivableContext;

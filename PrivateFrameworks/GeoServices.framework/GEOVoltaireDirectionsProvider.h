@@ -10,20 +10,20 @@
 
 @property(retain) GEORequester * requester;
 
-+ (id)providerHostname;
-+ (unsigned short)providerID;
 + (id)providerURL;
 + (void)resetProviderURL;
++ (id)providerHostname;
++ (unsigned short)providerID;
 
-- (void)cancelProviderRequest;
-- (void)startProviderWithRequest:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)cleanupRequester;
+- (void)setRequester:(id)arg1;
+- (id)requester;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)setRequester:(id)arg1;
-- (id)requester;
-- (id)init;
-- (void)dealloc;
+- (void)cancelProviderRequest;
+- (void)startProviderWithRequest:(id)arg1;
 
 @end

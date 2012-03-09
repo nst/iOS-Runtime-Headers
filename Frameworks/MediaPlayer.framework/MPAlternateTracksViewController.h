@@ -13,6 +13,7 @@
 }
 
 
+- (void)dealloc;
 - (void)removeLoadingUI;
 - (void)addLoadingUI;
 - (void)_setCell:(id)arg1 isChecked:(BOOL)arg2;
@@ -32,6 +33,5 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)reloadData;
-- (void)dealloc;
 
 @end

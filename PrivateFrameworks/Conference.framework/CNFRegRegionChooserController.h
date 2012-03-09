@@ -22,27 +22,6 @@
 @property(retain) NSArray * regionList;
 
 
-- (void)setDelegate:(id)arg1;
-- (void)setParentController:(id)arg1;
-- (id)parentController;
-- (void)setSpecifier:(id)arg1;
-- (id)specifier;
-- (void)didWake;
-- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
-- (void)searchDisplayController:(id)arg1 didHideSearchResultsTableView:(id)arg2;
-- (void)searchDisplayController:(id)arg1 willShowSearchResultsTableView:(id)arg2;
-- (void)searchDisplayController:(id)arg1 willUnloadSearchResultsTableView:(id)arg2;
-- (id)initWithStyle:(int)arg1;
-- (void)viewDidUnload;
-- (void)loadView;
-- (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)suspend;
-- (id)delegate;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)dealloc;
 - (id)sdc;
 - (void)setRegionList:(id)arg1;
@@ -73,5 +52,26 @@
 - (void)handleURL:(id)arg1;
 - (void)willResignActive;
 - (void)willBecomeActive;
+- (void)setSpecifier:(id)arg1;
+- (id)specifier;
+- (void)setParentController:(id)arg1;
+- (id)parentController;
+- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchDisplayController:(id)arg1 didHideSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willShowSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willUnloadSearchResultsTableView:(id)arg2;
+- (id)initWithStyle:(int)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)suspend;
+- (id)delegate;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)didWake;
 
 @end

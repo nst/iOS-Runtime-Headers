@@ -22,13 +22,13 @@
 
 
 - (long long)expectedLength;
+- (void)dealloc;
+- (BOOL)hasBytesAvailable;
 - (id)data;
 - (id)initWithData:(id)arg1;
-- (BOOL)hasBytesAvailable;
-- (BOOL)open:(id*)arg1;
-- (void)dealloc;
 - (id)copyAllData:(id*)arg1;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2 error:(id*)arg3;
+- (BOOL)open:(id*)arg1;
 - (id)initWithDataPromise:(id)arg1;
 
 @end

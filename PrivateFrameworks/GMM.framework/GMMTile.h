@@ -21,7 +21,13 @@
 + (void*)createImageRefFromTileData:(const char *)arg1 length:(unsigned long)arg2;
 + (void*)createImageRefFromTileData:(id)arg1 isCompact:(BOOL)arg2;
 
+- (id)description;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
+- (int)face;
+- (void)setFace:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)tileData;
 - (void)setTileData:(id)arg1;
 - (void)setHasFace:(BOOL)arg1;
@@ -30,11 +36,5 @@
 - (int)tileXIndex;
 - (void)setTileYIndex:(int)arg1;
 - (void)setTileXIndex:(int)arg1;
-- (void)writeTo:(id)arg1;
-- (int)face;
-- (void)setFace:(int)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -24,6 +24,13 @@
 + (void)_handleSystemVibrationDidChangeNotification;
 + (id)sharedVibrationManager;
 
+- (id)init;
+- (void)dealloc;
+- (void)_handleUserGeneratedVibrationsDidChangeNotification;
+- (BOOL)vibrationWithIdentifierIsValid:(id)arg1;
+- (void)setAllowsAutoRefresh:(BOOL)arg1;
+- (id)copyNameOfVibrationWithIdentifier:(id)arg1;
+- (BOOL)refresh;
 - (BOOL)allowsAutoRefresh;
 - (BOOL)_removeAllUserGeneratedVibrationsWithError:(id*)arg1;
 - (unsigned int)_numberOfUserGeneratedVibrations;
@@ -53,12 +60,5 @@
 - (BOOL)needsRefresh;
 - (id)initWithUnitTestingModeEnabled:(BOOL)arg1;
 - (id)noneVibrationIdentifier;
-- (BOOL)refresh;
-- (id)init;
-- (void)dealloc;
-- (void)_handleUserGeneratedVibrationsDidChangeNotification;
-- (BOOL)vibrationWithIdentifierIsValid:(id)arg1;
-- (void)setAllowsAutoRefresh:(BOOL)arg1;
-- (id)copyNameOfVibrationWithIdentifier:(id)arg1;
 
 @end

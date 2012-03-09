@@ -12,6 +12,8 @@
 @property(retain) UIWindow * window;
 
 
+- (id)init;
+- (void)dealloc;
 - (void)_applicationDidFinishLaunching:(id)arg1;
 - (BOOL)runTest:(id)arg1 options:(id)arg2;
 - (double)defaultImageSnapshotExpiration;
@@ -20,8 +22,6 @@
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
-- (id)init;
-- (void)dealloc;
 - (void)runTestInvocation:(id)arg1;
 - (void)_runScriptTestWithOptions:(id)arg1;
 - (void)_exitForStoreNotAvailable;

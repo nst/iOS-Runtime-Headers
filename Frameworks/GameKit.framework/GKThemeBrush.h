@@ -11,9 +11,9 @@
 @property(retain) GKUITheme * theme;
 
 
-- (id)theme;
-- (void)setTheme:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)theme;
+- (void)setTheme:(id)arg1;
 
 @end

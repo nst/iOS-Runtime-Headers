@@ -29,24 +29,6 @@
 @property(getter=isEditable) BOOL editable;
 
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
-- (void)endEditing;
-- (void)setEditable:(BOOL)arg1;
-- (id)inputView;
-- (id)_clearButton;
-- (BOOL)isEditable;
-- (BOOL)canResignFirstResponder;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)becomeFirstResponder;
-- (BOOL)resignFirstResponder;
-- (void)setDate:(id)arg1;
-- (id)date;
-- (id)delegate;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
-- (void)setUserInteractionEnabled:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (id)presentationDelegate;
 - (void)setPresentationDelegate:(id)arg1;
@@ -66,5 +48,23 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_attachToDatePicker:(id)arg1;
 - (struct CGSize { float x1; float x2; })datePickerSize;
+- (void)endEditing;
+- (void)setEditable:(BOOL)arg1;
+- (id)inputView;
+- (id)_clearButton;
+- (BOOL)isEditable;
+- (BOOL)canResignFirstResponder;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)becomeFirstResponder;
+- (BOOL)resignFirstResponder;
+- (void)setDate:(id)arg1;
+- (id)date;
+- (id)delegate;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (void)setDelegate:(id)arg1;
+- (void)setUserInteractionEnabled:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

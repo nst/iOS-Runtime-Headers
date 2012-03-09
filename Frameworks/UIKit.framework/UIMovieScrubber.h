@@ -94,10 +94,8 @@
 
 + (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
 
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (double)duration;
-- (void)setDuration:(double)arg1;
-- (void)setDelegate:(id)arg1;
+- (id)init;
+- (void)dealloc;
 - (void)setMinimumTrimLength:(double)arg1;
 - (double)minimumTrimLength;
 - (void)setMaximumTrimLength:(double)arg1;
@@ -177,14 +175,16 @@
 - (BOOL)cancelTouchTracking;
 - (id)scriptingInfoWithChildren;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 - (id)delegate;
 - (id)dataSource;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)reloadData;
 - (void)didMoveToWindow;
+- (void)setDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

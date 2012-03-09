@@ -10,6 +10,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)_setImagePickerMediaTypes:(id)arg1;
 - (int)_imagePickerStatusBarStyle;
@@ -20,7 +22,5 @@
 - (void)_updateFilteredAlbumListWithFilter:(int)arg1;
 - (void)updateNavigationItemButtons;
 - (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (id)init;
-- (void)dealloc;
 
 @end

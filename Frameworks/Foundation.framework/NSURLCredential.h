@@ -18,17 +18,17 @@
 - (BOOL)hasPassword;
 - (id)initWithTrust:(struct __SecTrust { }*)arg1;
 - (id)initWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
-- (struct _CFURLCredential { }*)_cfurlcredential;
-- (id)_initWithCFURLCredential:(struct _CFURLCredential { }*)arg1;
-- (id)user;
-- (id)initWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
-- (id)password;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)user;
+- (id)initWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
+- (id)password;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (struct _CFURLCredential { }*)_cfurlcredential;
+- (id)_initWithCFURLCredential:(struct _CFURLCredential { }*)arg1;
 
 @end

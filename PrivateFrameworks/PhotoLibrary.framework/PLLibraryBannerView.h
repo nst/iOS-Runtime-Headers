@@ -45,9 +45,10 @@
 @property(copy) id selectionButtonAction;
 
 
+- (void)dealloc;
+- (id)labelText;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)layoutSubviews;
-- (id)labelText;
 - (void)setSelectionButtonAction:(id)arg1;
 - (int)selectionButtonType;
 - (int)bannerStyle;
@@ -61,6 +62,5 @@
 - (void)updateDisplayForAssets:(id)arg1;
 - (id)initWithBannerStyle:(int)arg1;
 - (void)setLabelText:(id)arg1;
-- (void)dealloc;
 
 @end

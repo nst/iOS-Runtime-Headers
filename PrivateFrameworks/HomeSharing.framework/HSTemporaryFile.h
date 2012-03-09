@@ -9,7 +9,7 @@
 }
 
 
-- (id)initWithTemporaryFile:(id)arg1;
 - (void)dealloc;
+- (id)initWithTemporaryFile:(id)arg1;
 
 @end

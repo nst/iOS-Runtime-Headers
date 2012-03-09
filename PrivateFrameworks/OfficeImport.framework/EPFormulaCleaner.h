@@ -15,6 +15,8 @@
 }
 
 
+- (void)dealloc;
+- (void)reset;
 - (void)cleanFormula:(id)arg1 name:(id)arg2;
 - (void)cleanFormula:(id)arg1 sheet:(id)arg2;
 - (void)cleanFormula:(id)arg1 sheet:(id)arg2 name:(id)arg3;
@@ -53,7 +55,5 @@
 - (void)reportWarning:(int)arg1;
 - (bool)isObjectSupported:(id)arg1;
 - (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;
-- (void)reset;
-- (void)dealloc;
 
 @end

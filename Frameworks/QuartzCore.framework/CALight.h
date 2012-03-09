@@ -32,24 +32,6 @@
 + (id)defaultValueForKey:(id)arg1;
 + (id)lightWithType:(id)arg1;
 
-- (id)valueForKey:(id)arg1;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)setPosition:(struct CAPoint3D { float x1; float x2; float x3; })arg1;
-- (id)type;
-- (struct CAPoint3D { float x1; float x2; float x3; })direction;
-- (struct CGColor { }*)color;
-- (void)setColor:(struct CGColor { }*)arg1;
-- (void)setDirection:(struct CAPoint3D { float x1; float x2; float x3; })arg1;
-- (id)valueForKeyPath:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (id)name;
-- (struct CAPoint3D { float x1; float x2; float x3; })position;
-- (BOOL)isEnabled;
-- (void)setValue:(id)arg1 forKeyPath:(id)arg2;
-- (id)initWithType:(id)arg1;
-- (void)setType:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
@@ -71,6 +53,24 @@
 - (float)coneEdgeSoftness;
 - (void)setConeEdgeSoftness:(float)arg1;
 - (BOOL)shouldArchiveValueForKey:(id)arg1;
+- (id)type;
+- (struct CAPoint3D { float x1; float x2; float x3; })direction;
+- (struct CGColor { }*)color;
+- (void)setColor:(struct CGColor { }*)arg1;
+- (void)setDirection:(struct CAPoint3D { float x1; float x2; float x3; })arg1;
+- (id)valueForKeyPath:(id)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (id)name;
+- (struct CAPoint3D { float x1; float x2; float x3; })position;
+- (BOOL)isEnabled;
+- (void)setValue:(id)arg1 forKeyPath:(id)arg2;
+- (id)initWithType:(id)arg1;
+- (void)setType:(id)arg1;
+- (void)setPosition:(struct CAPoint3D { float x1; float x2; float x3; })arg1;
+- (id)valueForKey:(id)arg1;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 
 @end

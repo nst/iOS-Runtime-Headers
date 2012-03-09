@@ -6,11 +6,11 @@
 }
 
 
-- (id)predicateFormat;
-- (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
+- (id)predicateFormat;
+- (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
 
 @end

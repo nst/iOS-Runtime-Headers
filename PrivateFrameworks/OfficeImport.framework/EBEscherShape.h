@@ -12,6 +12,7 @@
 }
 
 
+- (void)dealloc;
 - (id)chartData;
 - (void)setChartData:(id)arg1;
 - (id)chartColorLocators;
@@ -20,6 +21,5 @@
 - (void)setShowLegend:(BOOL)arg1;
 - (id)chart;
 - (void)setChart:(id)arg1;
-- (void)dealloc;
 
 @end

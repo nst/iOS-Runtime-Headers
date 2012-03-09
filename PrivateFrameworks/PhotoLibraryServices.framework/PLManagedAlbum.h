@@ -2,51 +2,84 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableOrderedSet, NSOrderedSet;
+@class PLManagedAsset, NSMutableOrderedSet, NSOrderedSet, UIImage, NSString, NSDictionary, NSURL, NSNumber;
 
-@interface PLManagedAlbum : _PLManagedAlbum  {
+@interface PLManagedAlbum : _PLManagedAlbum <PLUserEditableAssetContainer> {
     BOOL _resolvingConflicts;
     BOOL stackedImageNeedsUpdateNotification;
 }
 
 @property BOOL resolvingConflicts;
+@property BOOL stackedImageNeedsUpdateNotification;
+@property(readonly) NSString * uuid;
+@property(readonly) NSNumber * kind;
+@property(readonly) int kindValue;
+@property(readonly) NSString * title;
+@property(readonly) NSString * localizedTitle;
 @property(readonly) NSOrderedSet * assets;
 @property(readonly) NSMutableOrderedSet * mutableAssets;
-@property BOOL stackedImageNeedsUpdateNotification;
+@property(readonly) unsigned int count;
+@property(readonly) unsigned int photosCount;
+@property(readonly) unsigned int videosCount;
+@property(readonly) BOOL isEmpty;
+@property(readonly) NSString * name;
+@property(retain) PLManagedAsset * keyAsset;
+@property(readonly) UIImage * posterImage;
+@property(readonly) BOOL isLibrary;
+@property(readonly) BOOL isCameraAlbum;
+@property(readonly) BOOL isPhotoStreamAlbum;
+@property(readonly) BOOL shouldDeleteWhenEmpty;
+@property(retain) NSDictionary * slideshowSettings;
+@property(retain) NSString * importSessionID;
+@property(readonly) NSURL * groupURL;
+@property unsigned int pendingItemsCount;
+@property unsigned int pendingItemsType;
+@property(readonly) NSMutableOrderedSet * userEditableAssets;
 
-+ (void)clearAssetOrderByAbumUUIDs;
-+ (id)assetOrderByAbumUUIDs;
-+ (id)pathToAssetAlbumOrderStructure;
 + (id)keyPathsForValuesAffectingVideosCount;
 + (id)keyPathsForValuesAffectingPhotosCount;
 + (id)keyPathsForValuesAffectingCount;
++ (id)assetOrderByAbumUUIDs;
++ (id)pathToAssetAlbumOrderStructure;
++ (id)_cameraRollAssetDerivedFromAsset:(id)arg1;
++ (void)clearAssetOrderByAbumUUIDs;
 
-- (void)awakeFromSnapshotEvents:(unsigned int)arg1;
-- (void)didSave;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)addAssetUsingiTunesAlbumOrder:(id)arg1;
+- (unsigned int)count;
+- (void)setResolvingConflicts:(BOOL)arg1;
+- (BOOL)resolvingConflicts;
 - (void)sortAssetsUsingiTunesAlbumOrder;
-- (id)_orderComparisonValueForAsset:(id)arg1 iTunesLookupOrder:(id)arg2;
-- (id)_assetOrderByAssetUUID;
 - (void)removePersistedFileSystemData;
 - (void)persistMetadataToFileSystem;
 - (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
 - (void)removeAssetsAtIndexes:(id)arg1;
 - (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
+- (unsigned int)_cachedCountForMigration;
+- (void)removeInternalUserEditableAssetsAtIndexes:(id)arg1;
+- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2;
+- (id)internalUserEditableAssetsAtIndexes:(id)arg1;
+- (void)getInternalUserEditableAssets:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)objectInInternalUserEditableAssetsAtIndex:(unsigned int)arg1;
+- (unsigned int)indexInInternalUserEditableAssetsOfObject:(id)arg1;
+- (unsigned int)countOfInternalUserEditableAssets;
+- (id)_orderComparisonValueForAsset:(id)arg1 iTunesLookupOrder:(id)arg2;
+- (id)_assetOrderByAssetUUID;
 - (void)_recalculateCachedCounts;
-- (void)unregisterForChanges;
-- (void)registerForChanges;
 - (id)_keysToBeObserved;
-- (void)setResolvingConflicts:(BOOL)arg1;
-- (BOOL)resolvingConflicts;
+- (BOOL)_shouldCopyAssetToCameraRollBeforeAdding:(id)arg1;
 - (void)setStackedImageNeedsUpdateNotification:(BOOL)arg1;
 - (BOOL)stackedImageNeedsUpdateNotification;
 - (void)_updateKeyAssetIfNeeded;
-- (void)updateStackedImage;
+- (void)addAssetUsingiTunesAlbumOrder:(id)arg1;
+- (void)registerForChanges;
+- (void)unregisterForChanges;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)awakeFromSnapshotEvents:(unsigned int)arg1;
+- (void)didSave;
 - (unsigned int)videosCount;
 - (unsigned int)photosCount;
 - (id)mutableAssets;
+- (void)updateStackedImage;
+- (id)userEditableAssets;
 - (BOOL)canPerformEditOperation:(int)arg1;
-- (unsigned int)count;
 
 @end

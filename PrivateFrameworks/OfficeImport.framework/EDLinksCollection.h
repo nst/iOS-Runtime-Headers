@@ -10,6 +10,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (bool)convertLinkReferenceIndex:(unsigned int)arg1 firstSheetIndex:(unsigned int*)arg2 lastSheetIndex:(unsigned int*)arg3;
 - (unsigned int)addOrEquivalentInternalLinkReferenceWithFirstSheetIndex:(unsigned int)arg1 lastSheetIndex:(unsigned int)arg2;
 - (void)addOrEquivalentExternalAddInName:(id)arg1 linkReferenceIndex:(unsigned int*)arg2 nameIndex:(unsigned int*)arg3;
@@ -23,7 +25,5 @@
 - (unsigned int)addReference:(id)arg1;
 - (unsigned int)addOrEquivalentLinkReferenceOfType:(int)arg1 firstSheetIndex:(unsigned int)arg2 lastSheetIndex:(unsigned int)arg3;
 - (id)referenceAtIndex:(unsigned int)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -15,6 +15,10 @@
 @property(retain) GKRecentMatchInternal * internal;
 
 
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)init;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)game;
 - (id)initWithInternalRepresentation:(id)arg1 game:(id)arg2;
 - (void)setGame:(id)arg1;
@@ -22,9 +26,5 @@
 - (void)setInternal:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -11,6 +11,9 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
+- (id)row;
 - (id)initWithAdapterOperator:(unsigned int)arg1 correlation:(id)arg2;
 - (void)setAdapterOperator:(unsigned int)arg1;
 - (id)correlation;
@@ -19,8 +22,5 @@
 - (unsigned int)adapterOperator;
 - (id)_opString;
 - (id)entity;
-- (id)row;
-- (id)description;
-- (void)dealloc;
 
 @end

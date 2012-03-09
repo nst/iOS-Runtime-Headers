@@ -26,12 +26,13 @@
 
 + (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
+- (void)dealloc;
+- (unsigned short)columnCount;
+- (struct __CFString { }*)name;
+- (struct __CFArray { }*)cells;
 - (id)cellAt:(unsigned short)arg1;
 - (unsigned short)headerRowCount;
 - (unsigned short)rowCount;
-- (struct __CFArray { }*)cells;
-- (unsigned short)columnCount;
-- (struct __CFString { }*)name;
 - (BOOL)isNameVisible;
 - (float)widthForColumn:(unsigned short)arg1;
 - (float)heightForRow:(unsigned short)arg1;
@@ -50,6 +51,5 @@
 - (void)setCells:(struct __CFArray { }*)arg1;
 - (unsigned short)headerColumnCount;
 - (unsigned short)footerRowCount;
-- (void)dealloc;
 
 @end

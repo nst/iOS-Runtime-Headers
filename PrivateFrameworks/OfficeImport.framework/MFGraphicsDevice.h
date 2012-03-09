@@ -15,6 +15,10 @@
 }
 
 
+- (int)deleteObject:(int)arg1;
+- (void)dealloc;
+- (void)done;
+- (int)setMiterLimit:(double)arg1;
 - (int)comment:(id)arg1;
 - (int)textOutEncoded:(int)arg1 :(int)arg2 :(id)arg3;
 - (int)extTextOutEncoded:(int)arg1 :(int)arg2 :(id)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int*)arg9 :(int)arg10;
@@ -109,9 +113,5 @@
 - (int)excludeClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)intersectClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)setMetaRgn;
-- (void)done;
-- (int)setMiterLimit:(double)arg1;
-- (int)deleteObject:(int)arg1;
-- (void)dealloc;
 
 @end

@@ -20,11 +20,12 @@
 + (id)imageURLForStatus:(unsigned int)arg1;
 + (id)imageNameForStatus:(unsigned int)arg1;
 + (void)forgetStatusImageAppearance;
-+ (id)aimService;
-+ (id)facetimeService;
 + (id)allServicesNonBlocking;
 + (id)allServices;
++ (id)aimService;
++ (id)facetimeService;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)infoForDisplayedPeople;
 - (id)infoForAllPeople;
 - (id)infoForPerson:(id)arg1;
@@ -38,11 +39,10 @@
 - (BOOL)initialSyncPerformed;
 - (void)logout;
 - (id)infoForScreenName:(id)arg1;
+- (unsigned int)status;
+- (void)login;
 - (id)localizedName;
 - (id)name;
 - (BOOL)isEnabled;
-- (unsigned int)status;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)login;
 
 @end

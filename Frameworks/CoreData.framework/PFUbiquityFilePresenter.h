@@ -13,15 +13,15 @@
 @property(readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(readonly) NSString * ubiquityRootPath;
 
-+ (id)sharedPrivateOperationQueue;
 + (void)initialize;
++ (id)sharedPrivateOperationQueue;
 
-- (id)initWithUbiquityRootPath:(id)arg1;
-- (id)ubiquityRootPath;
+- (void)dealloc;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
 - (void)relinquishPresentedItemToWriter:(id)arg1;
 - (void)relinquishPresentedItemToReader:(id)arg1;
-- (void)dealloc;
+- (id)initWithUbiquityRootPath:(id)arg1;
+- (id)ubiquityRootPath;
 
 @end

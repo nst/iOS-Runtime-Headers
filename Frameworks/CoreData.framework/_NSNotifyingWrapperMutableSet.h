@@ -11,9 +11,18 @@
 }
 
 
-- (id)valueForKey:(id)arg1;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
-- (id)initWithContainer:(id)arg1 key:(id)arg2 mutableSet:(id)arg3;
+- (void)addObjectsFromArray:(id)arg1;
+- (unsigned int)count;
+- (id)description;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (void)addObject:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (BOOL)isSubsetOfSet:(id)arg1;
+- (void)setSet:(id)arg1;
+- (void)getObjects:(id*)arg1;
+- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (id)descriptionWithLocale:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)member:(id)arg1;
 - (void)unionSet:(id)arg1;
@@ -27,20 +36,11 @@
 - (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)intersectSet:(id)arg1;
 - (BOOL)containsObject:(id)arg1;
+- (id)valueForKey:(id)arg1;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)removeAllObjects;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
 - (void)removeObject:(id)arg1;
-- (BOOL)isSubsetOfSet:(id)arg1;
-- (void)setSet:(id)arg1;
-- (void)getObjects:(id*)arg1;
-- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)descriptionWithLocale:(id)arg1;
-- (void)addObjectsFromArray:(id)arg1;
-- (unsigned int)count;
-- (id)description;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (void)addObject:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)initWithContainer:(id)arg1 key:(id)arg2 mutableSet:(id)arg3;
 
 @end

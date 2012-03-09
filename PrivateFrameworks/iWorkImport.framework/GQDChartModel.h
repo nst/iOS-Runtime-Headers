@@ -17,9 +17,10 @@
 }
 
 
-- (struct __CFArray { }*)chartData;
+- (void)dealloc;
 - (long)direction;
 - (struct __CFString { }*)title;
+- (struct __CFArray { }*)chartData;
 - (struct __CFArray { }*)columnNames;
 - (struct __CFArray { }*)rowNames;
 - (struct __CFDictionary { }*)propertyBag;
@@ -35,6 +36,5 @@
 - (struct __CFArray { }*)seriesArray;
 - (struct __CFDictionary { }*)propertiesForSeriesAtIndex:(long)arg1;
 - (BOOL)hasValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(const void**)arg3;
-- (void)dealloc;
 
 @end

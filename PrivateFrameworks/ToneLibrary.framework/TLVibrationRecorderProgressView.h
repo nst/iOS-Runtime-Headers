@@ -27,6 +27,11 @@
 @property unsigned int roundedCornersCompensationDelayMode;
 
 
+- (void)dealloc;
+- (BOOL)isAccessibilityElement;
+- (id)accessibilityValue;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (id)accessibilityLabel;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForDotAtTimeInterval:(double)arg1 duration:(double)arg2;
 - (double)_cappedValueForTimeInterval:(double)arg1;
 - (void)clearAllVibrationComponents;
@@ -37,10 +42,5 @@
 - (void)setCurrentTimeInterval:(double)arg1;
 - (double)currentTimeInterval;
 - (id)initWithProgressViewStyle:(int)arg1 maximumTimeInterval:(double)arg2;
-- (BOOL)isAccessibilityElement;
-- (id)accessibilityValue;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityLabel;
-- (void)dealloc;
 
 @end

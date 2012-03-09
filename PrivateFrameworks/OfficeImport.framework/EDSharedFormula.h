@@ -12,6 +12,8 @@
 }
 
 
+- (id)init;
+- (void)dealloc;
 - (void)updateBaseFormulaRangeWithRow:(int)arg1 column:(int)arg2;
 - (unsigned int)baseFormulaIndex;
 - (id)warningWithRowBlocks:(id)arg1;
@@ -27,7 +29,5 @@
 - (id)initWithFormula:(id)arg1;
 - (bool)isSharedFormula;
 - (bool)isBaseFormula;
-- (id)init;
-- (void)dealloc;
 
 @end

@@ -8,11 +8,11 @@
     NSString *_urlString;
 }
 
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
 - (id)description;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)subtitle1Label;
 - (id)subtitle1Description;
 - (id)initWithURLString:(id)arg1 profile:(id)arg2;

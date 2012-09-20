@@ -29,18 +29,18 @@
 @property(retain) PLCameraImporter * importer;
 
 
-- (id)init;
-- (void)dealloc;
 - (BOOL)isBusy;
+- (void)dealloc;
+- (id)init;
+- (id)importer;
 - (id)contentScrollView;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidUnload;
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)didReceiveMemoryWarning;
-- (id)importer;
+- (void)importAll;
 - (void)handleImportCompleteAlertResponse:(struct __CFUserNotification { }*)arg1 flags:(unsigned long)arg2;
 - (void)setImportDevice:(id)arg1;
 - (id)importDevice;
@@ -69,11 +69,11 @@
 - (void)_resetDuplicateBadgesForceDatabaseCheck:(BOOL)arg1;
 - (void)_icSleepPreventionTimerFired:(id)arg1;
 - (void)importSelected;
-- (void)importAll;
-- (id)albumView:(id)arg1 textBadgeForPhotoAtIndex:(unsigned int)arg2;
+- (id)albumView:(id)arg1 textBadgeForPhotoAtIndexPath:(id)arg2;
+- (id)footerSubtitleForAlbumView:(id)arg1;
 - (void)albumView:(id)arg1 imageCount:(unsigned int*)arg2 videoCount:(unsigned int*)arg3 otherCount:(unsigned int*)arg4 pendingCount:(unsigned int*)arg5 importOperation:(int*)arg6;
-- (id)albumView:(id)arg1 imageDataForPhotoAtIndex:(unsigned int)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
-- (unsigned int)numberOfPhotosForAlbumView:(id)arg1;
+- (id)albumView:(id)arg1 imageDataForPhotoAtIndexPath:(id)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
+- (unsigned int)albumView:(id)arg1 numberOfPhotosInSection:(unsigned int)arg2;
 - (void)stopImport;
 - (BOOL)isImporting;
 - (void)importer:(id)arg1 didCompleteRemovalOfItems:(id)arg2;
@@ -84,6 +84,9 @@
 - (void)importer:(id)arg1 didChangeImportItem:(id)arg2 changeType:(int)arg3 error:(id)arg4;
 - (void)importer:(id)arg1 didAddImportItem:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)importerDidFinishReadingImportItems:(id)arg1 error:(id)arg2;
+- (BOOL)footerSubtitleAllowsEmail:(id)arg1;
+- (id)footerAccessoryViewForAlbumView:(id)arg1;
 - (void)albumViewSelectionDidChange:(id)arg1 added:(id)arg2 removed:(id)arg3;
+- (id)albumView:(id)arg1 badgeImageForPhotoAtIndexPath:(id)arg2;
 
 @end

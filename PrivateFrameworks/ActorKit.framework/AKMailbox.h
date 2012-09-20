@@ -16,18 +16,18 @@
 
 + (id)mailboxWithTarget:(id)arg1 protocol:(id)arg2;
 
-- (id)initWithTarget:(id)arg1 protocol:(id)arg2;
 - (void)setTarget:(id)arg1;
-- (BOOL)conformsToProtocol:(id)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
 - (id)target;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (void)dealloc;
-- (void)setDispatchQueue:(id)arg1;
-- (id)dispatchQueue;
 - (id)send;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)setPrivateMessages:(id)arg1;
+- (id)dispatchQueue;
+- (void)setDispatchQueue:(id)arg1;
+- (id)initWithTarget:(id)arg1 protocol:(id)arg2;
 - (BOOL)swapCurrentTarget:(id)arg1 forNewTarget:(id)arg2;
+- (void)setPrivateMessages:(id)arg1;
 
 @end

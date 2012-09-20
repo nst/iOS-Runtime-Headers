@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class <AFSpeechDelegate>, DKConnection, <AFAssistantUIService>;
+@class DKConnection, NSString, <AFAssistantUIService>, <AFSpeechDelegate>, NSMutableDictionary;
 
 @interface AFConnection : NSObject <AFManagedStore> {
     DKConnection *_connection;
@@ -10,11 +10,14 @@
     <AFSpeechDelegate> *_speechDelegate;
     float _averagePower;
     float _peakPower;
+    NSString *_outstandingRequestClass;
     unsigned int _stateInSync : 1;
     unsigned int _shouldSpeak : 1;
     unsigned int _isCapturingSpeech : 1;
     unsigned int _hasOutstandingRequest : 1;
     unsigned int _replyContextMayInitiateCall : 1;
+    BOOL _hasActiveRequest;
+    NSMutableDictionary *_replies;
 }
 
 @property <AFAssistantUIService> * delegate;
@@ -22,7 +25,7 @@
 @property(readonly) BOOL isRecording;
 
 + (BOOL)isAvailable;
-+ (void)initialize;
++ (void)defrost;
 + (BOOL)userDataSyncNeeded;
 + (void)stopMonitoringAvailability;
 + (BOOL)assistantIsSupported;
@@ -30,22 +33,8 @@
 + (void)beginMonitoringAvailability;
 + (void)_reachabilityDidChange:(id)arg1;
 + (BOOL)assistantIsEnabled;
++ (void)initialize;
 
-- (id)init;
-- (void)dealloc;
-- (BOOL)isRecording;
-- (void)stopSpeech;
-- (void)cancelSpeech;
-- (void)endSession;
-- (float)averagePower;
-- (void)setRecordingAlertRoute:(int)arg1;
-- (void)preheat;
-- (id)_connection;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)rollbackRequest;
-- (void)clearContext;
-- (void)startSpeechRequest;
 - (void)_clearAssistantInfoForAccountWithIdentifier:(id)arg1;
 - (void)_asyncBarrierWithBlock:(id)arg1;
 - (void)_barrier;
@@ -63,10 +52,13 @@
 - (BOOL)replyContextMayInitiateCall;
 - (float)peakPower;
 - (void)startRequestWithCorrectedText:(id)arg1 forSpeechIdentifier:(id)arg2;
-- (void)setBluetoothDeviceAddress:(id)arg1;
+- (void)stopSpeech;
+- (void)updateSpeechOptions:(id)arg1;
+- (void)startSpeechRequestWithOptions:(id)arg1;
 - (void)startRequestWithText:(id)arg1;
-- (void)setLockState:(BOOL)arg1;
+- (void)setLockState:(BOOL)arg1 screenLocked:(BOOL)arg2;
 - (BOOL)setLanguageCode:(id)arg1 error:(id*)arg2;
+- (void)preheat;
 - (void)_msgSpeechRecognitionDidFail:(id)arg1;
 - (void)_msgSpeechRecognized:(id)arg1;
 - (void)_msgSpeechRecordingDidFail:(id)arg1;
@@ -77,14 +69,18 @@
 - (void)_msgSpeechRecordingWillBegin:(id)arg1;
 - (void)_msgReplyMayInitiateCall:(id)arg1;
 - (void)_msgRequestError:(id)arg1;
+- (void)_msgDismissAssistant:(id)arg1;
+- (void)_msgOpenURL:(id)arg1;
 - (void)_msgRequestCompleted:(id)arg1;
 - (void)_msgDoCommand:(id)arg1;
 - (void)setDomainObject:(id)arg1 forKey:(id)arg2;
 - (id)domainObjectForKey:(id)arg1;
-- (void)startSpeechRequestWithOptions:(id)arg1;
+- (void)clearAndSetApplicationContextWithBulletins:(id)arg1;
+- (void)sendGenericAceCommand:(id)arg1 conflictHandler:(id)arg2;
 - (void)startRequestWithText:(id)arg1 timeout:(double)arg2;
 - (void)_scheduleRequestTimeout:(double)arg1;
-- (void)_requestWillBegin;
+- (void)_requestWillBeginWithRequestClass:(id)arg1 logAggregateData:(BOOL)arg2;
+- (void)_willCancelRequest;
 - (void)_msgStateUpdate:(id)arg1;
 - (void)_invokeRequestTimeout;
 - (void)_handleMessage:(id)arg1;
@@ -100,11 +96,27 @@
 - (void)_tellSpeechDelegateRecordingWillBegin;
 - (void)_tellDelegateShouldSpeakChanged:(BOOL)arg1;
 - (BOOL)shouldSpeak;
-- (void)_tellDelegateRequestFailed:(id)arg1;
+- (void)_tellDelegateRequestFailed:(id)arg1 requestClass:(id)arg2;
 - (void)_tellDelegateRequestFinished;
 - (void)_requestDidEnd;
+- (void)_willFailRequest;
+- (void)_willCompleteRequest;
+- (void)_willStartRequest;
 - (void)_clearConnection;
 - (void)_requestStateUpdate;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (void)stopSpeechWithOptions:(id)arg1;
+- (void)cancelSpeech;
+- (void)endSession;
+- (float)averagePower;
+- (id)_connection;
 - (void)cancelRequest;
+- (void)rollbackRequest;
+- (void)clearContext;
+- (BOOL)isRecording;
 
 @end

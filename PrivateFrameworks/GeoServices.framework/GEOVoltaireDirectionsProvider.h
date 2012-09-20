@@ -10,19 +10,19 @@
 
 @property(retain) GEORequester * requester;
 
++ (void)setUsePersistentConnection:(BOOL)arg1;
 + (id)providerURL;
 + (void)resetProviderURL;
-+ (id)providerHostname;
 + (unsigned short)providerID;
 
-- (id)init;
 - (void)dealloc;
-- (void)cleanupRequester;
-- (void)setRequester:(id)arg1;
-- (id)requester;
+- (id)init;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
+- (void)cleanupRequester;
+- (void)setRequester:(id)arg1;
+- (id)requester;
 - (void)cancelProviderRequest;
 - (void)startProviderWithRequest:(id)arg1;
 

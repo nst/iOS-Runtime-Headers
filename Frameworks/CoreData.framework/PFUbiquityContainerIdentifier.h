@@ -13,20 +13,20 @@
     BOOL _usedExistingUUIDFile;
 }
 
-@property(readonly) BOOL usedExistingUUIDFile;
-@property(readonly) PFUbiquityLocation * uuidFileLocation;
 @property(readonly) NSString * uuidString;
+@property(readonly) PFUbiquityLocation * uuidFileLocation;
+@property(readonly) BOOL usedExistingUUIDFile;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)uuidFileLocation;
-- (void)setUUIDStringFromLocation:(id)arg1;
 - (BOOL)writeToDisk:(id*)arg1;
-- (id)initWithLocalPeerID:(id)arg1 storeName:(id)arg2 andUbiquityRootLocation:(id)arg3;
-- (BOOL)identifyContainer:(id*)arg1;
+- (void)setUUIDStringFromLocation:(id)arg1;
 - (BOOL)replaceIdentifierWithUUID:(id)arg1 error:(id*)arg2;
-- (BOOL)usedExistingUUIDFile;
 - (id)uuidString;
+- (BOOL)usedExistingUUIDFile;
+- (BOOL)identifyContainer:(id*)arg1;
+- (id)initWithLocalPeerID:(id)arg1 storeName:(id)arg2 andUbiquityRootLocation:(id)arg3;
 
 @end

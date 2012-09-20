@@ -5,14 +5,14 @@
 @interface CMGlobalCache : NSObject  {
 }
 
-+ (id)lengthPropertyCache;
-+ (id)borderStyleCache;
-+ (id)borderWidthCache;
-+ (id)cssStylesheetCache;
 + (id)drawableElementCache;
++ (id)cssStylesheetCache;
++ (id)borderWidthCache;
++ (id)borderStyleCache;
++ (id)lengthPropertyCache;
 + (id)colorPropertyCache;
-+ (void)initGlobalCache;
 + (void)releaseGlobalCache;
++ (void)initGlobalCache;
 
 
 @end

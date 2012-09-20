@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CISourceInCompositing : CICompositeFilter  {
+@interface CISourceInCompositing : _CICompositeFilter  {
 }
 
 + (id)_kernel_source;

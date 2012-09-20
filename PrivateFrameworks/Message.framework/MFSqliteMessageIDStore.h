@@ -11,14 +11,14 @@
 }
 
 
-- (id)initWithLibrary:(id)arg1 URLString:(id)arg2;
-- (id)knownMessageIDsFromSet:(id)arg1;
-- (id)messageIDsAddedBeforeDate:(double)arg1;
-- (void)deleteUIDsNotInArray:(id)arg1;
-- (unsigned int)numberOfMessageIDs;
-- (void)deleteAllUIDs;
-- (unsigned long long)flagsForUID:(id)arg1;
-- (void)_loadMailboxRowidIfNecessary:(struct sqlite3 { }*)arg1;
 - (void)dealloc;
+- (unsigned long long)flagsForUID:(id)arg1;
+- (void)deleteAllUIDs;
+- (unsigned int)numberOfMessageIDs;
+- (void)deleteUIDsNotInArray:(id)arg1;
+- (id)messageIDsAddedBeforeDate:(double)arg1;
+- (id)knownMessageIDsFromSet:(id)arg1;
+- (id)initWithLibrary:(id)arg1 URLString:(id)arg2;
+- (void)_loadMailboxRowidIfNecessary:(struct sqlite3 { }*)arg1;
 
 @end

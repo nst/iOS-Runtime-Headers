@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSURL * targetAppId;
-@property(retain) NSNumber * completionStatus;
+@property(copy) NSNumber * completionStatus;
 @property(copy) NSDate * dueAfter;
 @property(copy) NSDate * dueBefore;
 @property(copy) NSString * listName;
@@ -18,22 +18,22 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)groupIdentifier;
 - (id)subject;
 - (void)setSubject:(id)arg1;
-- (id)groupIdentifier;
-- (id)completionStatus;
-- (void)setCompletionStatus:(id)arg1;
-- (id)dueAfter;
-- (void)setDueAfter:(id)arg1;
-- (id)dueBefore;
-- (void)setDueBefore:(id)arg1;
-- (id)listName;
 - (void)setListName:(id)arg1;
-- (id)timeZoneId;
+- (id)listName;
+- (void)setCompletionStatus:(id)arg1;
+- (id)completionStatus;
 - (void)setTimeZoneId:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)timeZoneId;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
+- (id)dueBefore;
+- (id)dueAfter;
+- (void)setDueBefore:(id)arg1;
+- (void)setDueAfter:(id)arg1;
 
 @end

@@ -13,11 +13,17 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (unsigned int)retainCount;
+- (unsigned int)hash;
 - (id)retain;
+- (BOOL)isEqual:(id)arg1;
 - (oneway void)release;
+- (void)close;
+- (void)finalize;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (BOOL)hasSpaceAvailable;
 - (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 - (id)initToFileAtPath:(id)arg1 append:(BOOL)arg2;
@@ -33,12 +39,6 @@
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)close;
-- (void)finalize;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)open;
 
 @end

@@ -48,12 +48,12 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
+- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forAsset:(id)arg3 fromSource:(id)arg4;
+- (int)imageFormat;
 - (void)videoViewDidPausePlayback:(id)arg1 didFinish:(BOOL)arg2;
 - (void)cropOverlay:(id)arg1 didFinishSaving:(id)arg2;
 - (id)initWithVideoPath:(id)arg1;
 - (id)initWithImage:(struct CGImage { }*)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forAsset:(id)arg3 fromSource:(id)arg4;
-- (int)imageFormat;
 - (id)_trimMessage;
 - (void)_enableCropOverlayIfNecessary;
 - (void)didChooseVideoAtPath:(id)arg1 options:(id)arg2;
@@ -84,6 +84,7 @@
 - (BOOL)photoTileViewControllerAllowsEditing:(id)arg1;
 - (void)photoTileViewControllerDidEndGesture:(id)arg1;
 - (void)photoTileViewControllerWillBeginGesture:(id)arg1;
+- (void)photoTileViewControllerDoubleTap:(id)arg1;
 - (void)photoTileViewControllerSingleTap:(id)arg1;
 - (void)photoTileViewControllerRequestsFullSizeImage:(id)arg1;
 - (void)photoTileViewController:(id)arg1 didDisappear:(BOOL)arg2;

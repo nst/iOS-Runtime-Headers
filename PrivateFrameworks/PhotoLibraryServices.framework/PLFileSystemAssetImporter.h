@@ -10,23 +10,32 @@
     BOOL _hasProcessedAnyAssets;
     NSMutableSet *_existingUUIDs;
     NSMutableDictionary *_existingUUIDsByPath;
+    NSMutableDictionary *_existingOIDsByUUID;
+    unsigned int _thumbnailBatchFetchSize;
 }
 
 @property(retain) NSMutableSet * existingUUIDs;
 @property(retain) NSMutableDictionary * existingUUIDsByPath;
+@property(retain) NSMutableDictionary * existingOIDsByUUID;
+@property unsigned int thumbnailBatchFetchSize;
 
 
 - (void)dealloc;
+- (id)existingOIDsByUUID;
 - (id)existingUUIDsByPath;
 - (id)existingUUIDs;
+- (void)addAvailableThumbnailIndex:(unsigned int)arg1;
+- (id)addAssetWithURLs:(id)arg1 usingThumbnailsInformation:(id)arg2;
+- (unsigned int)thumbnailBatchFetchSize;
 - (unsigned int)nextThumbnailIndex;
-- (id)addAssetWithURLs:(id)arg1 usingThumbnailsInformation:(id)arg2 force:(BOOL)arg3;
 - (void)setModificationAndCreationDateOnAsset:(id)arg1 withURL:(id)arg2;
 - (void)createThumbnailForVideoAsset:(id)arg1;
 - (BOOL)setupPhotoAsset:(id)arg1 withURL:(id)arg2 thumbnailsInformation:(id)arg3 allowedToResetThumbnails:(BOOL)arg4;
-- (id)_addAssetWithURL:(id)arg1;
-- (id)assetURLisDuplicate:(id)arg1;
-- (id)addAssetWithURLs:(id)arg1 usingThumbnailsInformation:(id)arg2;
+- (id)_addAssetWithURL:(id)arg1 existingOID:(id)arg2;
+- (id)assetURLisInDatabase:(id)arg1;
+- (void)setThumbnailBatchFetchSize:(unsigned int)arg1;
+- (id)addAssetWithURLs:(id)arg1 usingThumbnailsInformation:(id)arg2 forceInsert:(BOOL)arg3 forceUpdate:(BOOL)arg4;
+- (void)setExistingOIDsByUUID:(id)arg1;
 - (void)setExistingUUIDsByPath:(id)arg1;
 - (void)setExistingUUIDs:(id)arg1;
 - (id)initWithPhotoLibrary:(id)arg1;

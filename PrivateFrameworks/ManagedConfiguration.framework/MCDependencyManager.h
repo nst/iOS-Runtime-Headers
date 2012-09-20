@@ -12,21 +12,21 @@
 + (void)_setDependencyFilePath:(id)arg1;
 + (id)sharedManager;
 
+- (void).cxx_destruct;
 - (id)init;
-- (void)dealloc;
-- (void)commitChanges;
-- (id)orphanedParentsForDomain:(id)arg1;
-- (void)addDependent:(id)arg1 ofParent:(id)arg2 inDomain:(id)arg3 reciprocalDomain:(id)arg4;
-- (void)removeDependent:(id)arg1 fromParent:(id)arg2 inDomain:(id)arg3 reciprocalDomain:(id)arg4;
-- (id)parentsInDomain:(id)arg1;
-- (void)removeParent:(id)arg1 fromDomain:(id)arg2;
 - (id)dependentsOfParent:(id)arg1 inDomain:(id)arg2;
-- (id)_domainsDict;
-- (id)_domainsDictionaryForDomain:(id)arg1 parent:(id)arg2 outParentsDict:(id*)arg3 outDependents:(id*)arg4;
-- (void)_removeOrphanParent:(id)arg1 fromDomain:(id)arg2;
-- (void)_addOrphanParent:(id)arg1 forDomain:(id)arg2;
-- (void)addDependent:(id)arg1 ofParent:(id)arg2 inDomain:(id)arg3;
+- (void)removeParent:(id)arg1 fromDomain:(id)arg2;
+- (id)parentsInDomain:(id)arg1;
+- (void)removeDependent:(id)arg1 fromParent:(id)arg2 inDomain:(id)arg3 reciprocalDomain:(id)arg4;
+- (void)addDependent:(id)arg1 ofParent:(id)arg2 inDomain:(id)arg3 reciprocalDomain:(id)arg4;
+- (id)orphanedParentsForDomain:(id)arg1;
+- (void)commitChanges;
 - (void)removeDependent:(id)arg1 fromParent:(id)arg2 inDomain:(id)arg3;
+- (void)addDependent:(id)arg1 ofParent:(id)arg2 inDomain:(id)arg3;
+- (void)_addOrphanParent:(id)arg1 forDomain:(id)arg2;
+- (void)_removeOrphanParent:(id)arg1 fromDomain:(id)arg2;
+- (id)_domainsDictionaryForDomain:(id)arg1 parent:(id)arg2 outParentsDict:(id*)arg3 outDependents:(id*)arg4;
+- (id)_domainsDict;
 - (id)_init;
 
 @end

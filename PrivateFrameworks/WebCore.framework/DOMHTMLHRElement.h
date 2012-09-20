@@ -17,9 +17,9 @@
 - (id)width;
 - (void)setSize:(id)arg1;
 - (id)size;
-- (BOOL)noShade;
 - (void)setNoShade:(BOOL)arg1;
-- (id)align;
+- (BOOL)noShade;
 - (void)setAlign:(id)arg1;
+- (id)align;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDate, NSNumber, NSMutableSet, NSManagedObject, NSString, NSObject, NSData, NSSet;
+@class NSDate, NSNumber, NSObject, NSManagedObject, NSMutableSet, NSString, NSData, NSSet;
 
 @interface _PLManagedAsset : PLManagedObject  {
 }
@@ -48,16 +48,21 @@
 @property BOOL completeValue;
 @property(retain) NSManagedObject * additionalAttributes;
 @property(retain) NSString * creatorBundleID;
+@property(retain) NSString * originalAssetsUUID;
 @property(retain) NSNumber * originalHeight;
 @property short originalHeightValue;
 @property(retain) NSNumber * originalWidth;
 @property short originalWidthValue;
 
-+ (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)entityName;
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)insertInManagedObjectContext:(id)arg1;
++ (id)entityInManagedObjectContext:(id)arg1;
++ (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 
+- (void)awakeFromInsert;
+- (id)objectID;
+- (id)duration;
+- (void)setDuration:(id)arg1;
 - (id)sidecarFilesSet;
 - (void)setPrimitiveCompleteValue:(BOOL)arg1;
 - (BOOL)primitiveCompleteValue;
@@ -90,10 +95,15 @@
 - (short)primitiveKindValue;
 - (void)setPrimitiveEmbeddedThumbnailWidthValue:(short)arg1;
 - (short)primitiveEmbeddedThumbnailWidthValue;
+- (id)originalOrientation;
+- (id)originalWidth;
+- (id)originalHeight;
 - (void)setPrimitiveHeightValue:(short)arg1;
 - (void)setPrimitiveWidthValue:(short)arg1;
 - (short)primitiveHeightValue;
 - (short)primitiveWidthValue;
+- (void)setHeightValue:(short)arg1;
+- (void)setWidthValue:(short)arg1;
 - (void)setDurationValue:(double)arg1;
 - (void)setOriginalHeight:(id)arg1;
 - (void)setOriginalWidth:(id)arg1;
@@ -102,34 +112,27 @@
 - (short)heightValue;
 - (short)widthValue;
 - (id)originalFilesize;
+- (void)setOriginalPath:(id)arg1;
+- (id)originalPath;
 - (id)creatorBundleID;
+- (void)setOriginalAssetsUUID:(id)arg1;
+- (id)originalAssetsUUID;
 - (id)highDynamicRangeType;
 - (id)albumsBeingKeyAssetForSet;
 - (void)setKindValue:(short)arg1;
-- (id)originalHeight;
-- (id)originalWidth;
+- (short)originalHeightValue;
+- (short)originalWidthValue;
+- (short)orientationValue;
+- (double)durationValue;
+- (void)setOrientationValue:(short)arg1;
+- (id)originalFilename;
+- (void)setOriginalFilename:(id)arg1;
 - (void)setHighDynamicRangeType:(id)arg1;
 - (void)setCreatorBundleID:(id)arg1;
+- (void)setOriginalFilesize:(id)arg1;
 - (BOOL)completeValue;
 - (id)albumsSet;
 - (void)setCompleteValue:(BOOL)arg1;
-- (id)duration;
-- (void)setDuration:(id)arg1;
-- (void)awakeFromInsert;
-- (id)objectID;
-- (id)originalFilename;
-- (id)originalPath;
-- (void)setOriginalPath:(id)arg1;
-- (id)originalOrientation;
-- (short)orientationValue;
-- (void)setHeightValue:(short)arg1;
-- (void)setWidthValue:(short)arg1;
-- (void)setOrientationValue:(short)arg1;
-- (void)setOriginalFilename:(id)arg1;
-- (void)setOriginalFilesize:(id)arg1;
-- (short)originalHeightValue;
-- (short)originalWidthValue;
-- (double)durationValue;
 - (void)setImportSessionID:(id)arg1;
 - (id)importSessionID;
 - (short)kindValue;

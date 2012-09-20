@@ -12,13 +12,14 @@
 }
 
 
-- (struct CGSize { float x1; float x2; })slideSize;
-- (void)setSlideSize:(struct CGSize { float x1; float x2; })arg1;
+- (id).cxx_construct;
 - (int)progressiveIndex;
-- (void)setProgressiveIndex:(int)arg1;
-- (void)incrementCurrentSlide;
-- (int)currentSlide;
 - (BOOL)shouldStreamContent;
+- (int)currentSlide;
+- (void)incrementCurrentSlide;
+- (void)setProgressiveIndex:(int)arg1;
 - (BOOL)shouldMapLinkWithUrl:(struct __CFString { }*)arg1;
+- (void)setSlideSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })slideSize;
 
 @end

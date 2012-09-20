@@ -2,36 +2,37 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSString, NSArray;
+@class NSArray, NSString, NSDictionary;
 
 @interface CKMessageComposition : NSObject  {
 }
 
-@property BOOL isTextOnly;
 @property(copy) NSString * subject;
 @property(copy) NSString * markupString;
-@property(copy) NSString * textString;
-@property(retain) NSArray * resources;
+@property(retain) NSDictionary * resources;
+@property(readonly) NSArray * messageParts;
+@property(readonly) NSString * textString;
+@property(readonly) BOOL hasNonwhiteSpaceContent;
 @property(readonly) BOOL hasContent;
+@property(readonly) BOOL isTextOnly;
 
-+ (id)messageCompositionFromFileWithPrefix:(id)arg1 path:(id)arg2;
++ (id)_createMessagePartFromResourceDictionary:(id)arg1 identifier:(id)arg2 relativeToPath:(id)arg3 version:(int)arg4;
 + (void)deleteFileWithPrefix:(id)arg1 path:(id)arg2;
++ (id)messageCompositionFromFileWithPrefix:(id)arg1 path:(id)arg2;
 + (id)newComposition;
-+ (id)newCompositionForMessage:(id)arg1;
 + (id)newCompositionForText:(id)arg1;
 
-- (id)markupString;
+- (id)messageParts;
 - (id)subject;
 - (void)setSubject:(id)arg1;
-- (void)writeToFileWithPrefix:(id)arg1 path:(id)arg2;
-- (void)setIsTextOnly:(BOOL)arg1;
-- (void)setMarkupString:(id)arg1;
-- (void)setTextString:(id)arg1;
-- (id)textString;
 - (BOOL)isTextOnly;
 - (BOOL)hasContent;
+- (void)writeToFileWithPrefix:(id)arg1 path:(id)arg2;
+- (BOOL)hasNonwhiteSpaceContent;
+- (void)setMarkupString:(id)arg1;
+- (id)textString;
+- (id)markupString;
 - (void)setResources:(id)arg1;
 - (id)resources;
-- (id)messageParts;
 
 @end

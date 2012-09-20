@@ -10,7 +10,7 @@
 
 
 - (id)masterGraphic;
-- (id)graphicProperties;
 - (void)setMasterGraphic:(id)arg1;
+- (id)graphicProperties;
 
 @end

@@ -4,7 +4,7 @@
 
 @class <PLPublishingAgentDelegate>, NSString, NSData, UIViewController, NSMutableArray, PLVideoRemaker;
 
-@interface PLPublishingAgent : NSObject <PLDataArrayInputStreamProgressDelegate> {
+@interface PLPublishingAgent : NSObject <PLDataArrayInputStreamProgressDelegate, UIAlertViewDelegate> {
     id _userInfo;
     id _delegate;
     NSString *_mediaPath;
@@ -58,24 +58,22 @@
 
 + (id)publishingAgentForBundleNamed:(id)arg1 toPublishMedia:(id)arg2;
 
-- (void)publish;
-- (id)userInfo;
-- (void)dealloc;
-- (id)serviceName;
-- (void)snapshot;
 - (float)percentComplete;
-- (void)setUserInfo:(id)arg1;
-- (void)dismiss;
-- (id)navigationController;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (id)mediaData;
-- (void)setMediaData:(id)arg1;
 - (int)remakerMode;
 - (id)mediaURL;
 - (void)setRemakerMode:(int)arg1;
 - (id)tellAFriendSubject;
 - (id)tellAFriendBody;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)userInfo;
+- (void)dealloc;
+- (void)snapshot;
+- (void)setUserInfo:(id)arg1;
+- (void)dismiss;
+- (id)navigationController;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)serviceName;
 - (void)setShouldCancelPublish:(BOOL)arg1;
 - (BOOL)shouldCancelPublish;
 - (float)progressMultiplier;
@@ -87,13 +85,13 @@
 - (long long)approximateSDUploadSize;
 - (long long)approximateHDUploadSize;
 - (BOOL)ownerIsCamera;
+- (void)showAlertWithError:(id)arg1;
 - (id)progressViewMessageDuringRemake;
 - (void)cancelRemaking;
 - (float)remakingPercentComplete;
 - (double)estimatedTimeRemaining;
 - (void)setTotalBytesWritten:(int)arg1 totalBytes:(int)arg2;
 - (double)maximumVideoDuration;
-- (id)tellAFriendURL;
 - (id)parentNavigationController;
 - (void)doneButtonClicked;
 - (void)cancelButtonClicked;
@@ -102,6 +100,9 @@
 - (BOOL)deleteMediaFileAfterPublishing;
 - (id)mediaPath;
 - (void)dataArrayInputStreamBytesWereRead:(id)arg1;
+- (id)tellAFriendURL;
+- (BOOL)allowsTellingFriend;
+- (BOOL)allowsViewingOnHost;
 - (void)_updateStatisticsFromSnapshots;
 - (id)mediaTitle;
 - (void)_stopNetworkObservation;
@@ -134,5 +135,8 @@
 - (void)setOwnerIsCamera:(BOOL)arg1;
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (void)presentModalSheetInViewController:(id)arg1;
+- (void)publish;
+- (void)setMediaData:(id)arg1;
+- (id)mediaData;
 
 @end

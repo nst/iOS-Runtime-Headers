@@ -10,14 +10,14 @@
 @property(copy) NSString * trend;
 @property(copy) NSString * value;
 
-+ (id)barometricPressure;
 + (id)barometricPressureWithDictionary:(id)arg1 context:(id)arg2;
++ (id)barometricPressure;
 
 - (id)groupIdentifier;
 - (id)value;
 - (void)setValue:(id)arg1;
-- (id)trend;
 - (void)setTrend:(id)arg1;
+- (id)trend;
 - (id)encodedClassName;
 
 @end

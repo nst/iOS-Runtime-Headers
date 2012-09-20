@@ -5,13 +5,13 @@
 @class NSArray, NSString, NSData, NSDate;
 
 @interface GKTurnBasedMatchInternal : GKInternalRepresentation  {
-    NSString *_sessionID;
+    NSString *_matchID;
     NSString *_status;
     NSDate *_creationDate;
     NSString *_currentPlayerID;
     NSDate *_lastTurnDate;
     NSString *_message;
-    NSString *_matchID;
+    NSString *_unusedID;
     NSString *_reason;
     int _minPlayers;
     int _maxPlayers;
@@ -21,15 +21,18 @@
     NSString *_lastTurnPlayerID;
     NSData *_matchData;
     NSArray *_participants;
+    NSData *_turnSequenceData;
+    int _turnSequenceIndex;
+    NSString *_matchDataVersion;
 }
 
-@property(retain) NSString * sessionID;
+@property(retain) NSString * matchID;
 @property(retain) NSString * status;
 @property(retain) NSDate * creationDate;
 @property(retain) NSString * currentPlayerID;
 @property(retain) NSDate * lastTurnDate;
 @property(retain) NSString * message;
-@property(retain) NSString * matchID;
+@property(retain) NSString * unusedID;
 @property(retain) NSString * reason;
 @property int minPlayers;
 @property int maxPlayers;
@@ -38,44 +41,53 @@
 @property int turnNumber;
 @property(retain) NSString * lastTurnPlayerID;
 @property(retain) NSData * matchData;
+@property(retain) NSString * matchDataVersion;
 @property(retain) NSArray * participants;
+@property(retain) NSData * turnSequenceData;
+@property int turnSequenceIndex;
 
 + (id)codedPropertyKeys;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
+- (void)setMatchDataVersion:(id)arg1;
+- (id)matchDataVersion;
+- (void)setTurnSequenceIndex:(int)arg1;
+- (int)turnSequenceIndex;
+- (void)setTurnSequenceData:(id)arg1;
+- (id)turnSequenceData;
+- (void)setParticipants:(id)arg1;
+- (id)participants;
+- (void)setMatchData:(id)arg1;
+- (id)matchData;
 - (void)setLastTurnPlayerID:(id)arg1;
 - (id)lastTurnPlayerID;
 - (void)setTurnNumber:(int)arg1;
-- (void)setDeletionDate:(id)arg1;
-- (id)deletionDate;
+- (int)turnNumber;
+- (void)setCurrentParticipant:(int)arg1;
+- (int)currentParticipant;
+- (void)setMinPlayers:(int)arg1;
+- (int)minPlayers;
+- (void)setUnusedID:(id)arg1;
+- (id)unusedID;
 - (void)setLastTurnDate:(id)arg1;
+- (id)lastTurnDate;
 - (void)setCurrentPlayerID:(id)arg1;
 - (id)currentPlayerID;
-- (void)setCreationDate:(id)arg1;
 - (void)setMatchID:(id)arg1;
-- (int)turnNumber;
-- (void)setMatchData:(id)arg1;
-- (id)matchData;
-- (void)setCurrentParticipant:(int)arg1;
-- (id)creationDate;
-- (void)setParticipants:(id)arg1;
-- (id)participants;
 - (id)matchID;
-- (id)lastTurnDate;
-- (int)currentParticipant;
 - (void)setReason:(id)arg1;
+- (int)maxPlayers;
+- (void)setMaxPlayers:(int)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setStatus:(id)arg1;
 - (id)status;
-- (int)maxPlayers;
-- (int)minPlayers;
-- (void)setMaxPlayers:(int)arg1;
-- (void)setMinPlayers:(int)arg1;
-- (id)sessionID;
-- (void)setSessionID:(id)arg1;
 - (id)message;
 - (void)setMessage:(id)arg1;
 - (id)reason;
+- (void)setDeletionDate:(id)arg1;
+- (id)deletionDate;
+- (void)setCreationDate:(id)arg1;
+- (id)creationDate;
 
 @end

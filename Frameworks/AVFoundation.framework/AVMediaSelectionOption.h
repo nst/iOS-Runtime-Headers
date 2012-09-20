@@ -8,6 +8,8 @@
     AVMediaSelectionOptionInternal *_mediaSelectionOption;
 }
 
+@property(readonly) BOOL mpIsAC3;
+@property(readonly) BOOL mpIsSDH;
 @property(readonly) NSString * mediaType;
 @property(readonly) NSArray * mediaSubTypes;
 @property(getter=isPlayable,readonly) BOOL playable;
@@ -15,26 +17,31 @@
 @property(readonly) NSArray * commonMetadata;
 @property(readonly) NSArray * availableMetadataFormats;
 
-+ (id)mediaSelectionOptionWithDictionary:(id)arg1 group:(id)arg2;
-+ (id)mediaSelectionOptionWithAssetTrack:(id)arg1 group:(id)arg2;
-+ (id)mediaSelectionOptionWithAssetTrack:(id)arg1 group:(id)arg2 displaysNonForcedSubtitles:(BOOL)arg3;
++ (id)mediaSelectionOptionForAsset:(id)arg1 group:(id)arg2 dictionary:(id)arg3 hasUnderlyingTrack:(BOOL)arg4;
 
-- (id)propertyList;
+- (BOOL)isPlayable;
+- (id)mediaSubTypes;
+- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
+- (BOOL)hasMediaCharacteristic:(id)arg1;
+- (id)dictionary;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
-- (id)mediaSubTypes;
-- (id)_ancillaryDescription;
+- (id)init;
+- (id)mediaType;
+- (id)locale;
+- (id)group;
+- (id)_title;
+- (id)commonMetadata;
+- (id)propertyList;
 - (BOOL)_isDesignatedDefault;
-- (BOOL)isPlayable;
+- (id)_ancillaryDescription;
+- (BOOL)displaysNonForcedSubtitles;
+- (id)optionID;
+- (id)_groupID;
 - (id)metadataForFormat:(id)arg1;
 - (id)availableMetadataFormats;
-- (id)commonMetadata;
-- (BOOL)hasMediaCharacteristic:(id)arg1;
-- (id)locale;
-- (id)_title;
-- (id)mediaType;
+- (BOOL)mpIsAC3;
+- (BOOL)mpIsSDH;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSLocale, NSString, AVWeakReference, NSMutableArray;
+@class NSLocale, NSString, AVWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface AVChapterMetadataItemInternal : NSObject  {
     AVWeakReference *weakReference;
@@ -27,7 +27,7 @@
     int valueStatus;
     long valueErrorCode;
     NSMutableArray *completions;
-    struct dispatch_queue_s { } *readWriteQueue;
+    NSObject<OS_dispatch_queue> *readWriteQueue;
 }
 
 

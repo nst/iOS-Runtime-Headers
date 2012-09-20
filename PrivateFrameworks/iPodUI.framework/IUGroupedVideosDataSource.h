@@ -18,8 +18,8 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)reloadData;
 - (void)reloadQueriesEntities;
 - (void)reloadSectionInfo;
@@ -45,6 +45,7 @@
 - (BOOL)allowsDeletion;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (id)viewControllerContextForMediaQuery:(id)arg1;
+- (BOOL)hideActionRowsOnAppear;
 - (void)reloadActionRows;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
 

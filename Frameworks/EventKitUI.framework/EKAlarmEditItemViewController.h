@@ -20,9 +20,9 @@
 
 
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
-- (BOOL)allDay;
-- (void)setAllDay:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (void)viewDidLoad;
 - (int)alarmIndex;
 - (id)alarm;
 - (void)setAlarm:(id)arg1;
@@ -34,8 +34,8 @@
 - (void)setPresetIdentifier:(int)arg1;
 - (BOOL)shouldAllowAlarmsTriggeringAfterStartDate;
 - (void)alarmTableDidChangeAlarm:(id)arg1;
-- (void)viewDidUnload;
-- (void)loadView;
-- (void)viewDidLoad;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (BOOL)allDay;
+- (void)setAllDay:(BOOL)arg1;
 
 @end

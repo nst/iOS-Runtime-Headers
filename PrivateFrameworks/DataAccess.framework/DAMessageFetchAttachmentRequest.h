@@ -10,12 +10,12 @@
 }
 
 
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)initWithAttachmentName:(id)arg1 andMessageServerID:(id)arg2;
 - (id)messageID;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 - (id)attachmentName;
 
 @end

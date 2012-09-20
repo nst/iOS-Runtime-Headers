@@ -16,11 +16,11 @@
 - (void)dealloc;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransform;
 - (float)maxAdjustedValue;
-- (void)setFileFormat:(int)arg1;
-- (struct CGPath { }*)createShapeWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setAdjustValues:(id)arg1;
-- (BOOL)isOffice12;
 - (void)setShapeType:(int)arg1;
+- (struct CGPath { }*)copyShapeWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setFileFormat:(int)arg1;
 - (void)setOrientedBounds:(id)arg1;
+- (BOOL)isOffice12;
 
 @end

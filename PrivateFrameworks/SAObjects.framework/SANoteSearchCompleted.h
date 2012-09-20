@@ -9,17 +9,17 @@
 
 @property(copy) NSArray * notes;
 @property(copy) NSArray * results;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)searchCompleted;
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)searchCompleted;
 
 - (id)groupIdentifier;
 - (id)results;
 - (void)setResults:(id)arg1;
+- (id)encodedClassName;
 - (void)setNotes:(id)arg1;
 - (id)notes;
-- (id)encodedClassName;
 
 @end

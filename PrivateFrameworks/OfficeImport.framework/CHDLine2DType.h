@@ -8,9 +8,9 @@
 }
 
 
-- (bool)showMarker;
-- (void)setShowMarker:(bool)arg1;
 - (bool)isStockType;
+- (void)setShowMarker:(bool)arg1;
+- (bool)showMarker;
 - (void)setStockType:(bool)arg1;
 - (id)initWithChart:(id)arg1;
 

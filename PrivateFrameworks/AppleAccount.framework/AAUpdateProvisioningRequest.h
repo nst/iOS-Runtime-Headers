@@ -12,13 +12,13 @@
 
 + (Class)responseClass;
 
-- (void)setAccount:(id)arg1;
-- (id)initWithAccount:(id)arg1;
-- (id)account;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)urlString;
 - (id)initWithURLString:(id)arg1 account:(id)arg2;
 - (id)urlCredential;
 - (id)urlRequest;
-- (id)urlString;
+- (void)setAccount:(id)arg1;
+- (id)initWithAccount:(id)arg1;
+- (id)account;
 
 @end

@@ -6,7 +6,7 @@
 }
 
 
-- (BOOL)isEndMark;
 - (id)description;
+- (BOOL)isEndMark;
 
 @end

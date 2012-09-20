@@ -12,19 +12,19 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToString:(id)arg1;
-- (id)init;
 - (void)dealloc;
-- (void)setNameString:(id)arg1;
-- (void)setFormula:(id)arg1 workbook:(id)arg2;
-- (void)setSheetIndex:(unsigned int)arg1;
+- (id)init;
 - (id)maxWorksheetReferences;
-- (BOOL)isEqualToEDName:(id)arg1;
 - (void)setCleanedFormula:(id)arg1;
+- (BOOL)isEqualToEDName:(id)arg1;
 - (id)nameString;
-- (id)formula;
+- (void)setFormula:(id)arg1 workbook:(id)arg2;
+- (void)setNameString:(id)arg1;
+- (void)setSheetIndex:(unsigned int)arg1;
 - (unsigned int)sheetIndex;
+- (id)formula;
 
 @end

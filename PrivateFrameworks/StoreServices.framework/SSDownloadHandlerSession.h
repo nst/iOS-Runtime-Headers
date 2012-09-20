@@ -13,14 +13,14 @@
 @property BOOL needsPowerAssertion;
 
 
+- (void)setPercentComplete:(float)arg1;
 - (void)finishSessionWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (void)setStatusDescription:(id)arg1;
 - (void)setCanBePaused:(BOOL)arg1;
 - (void)releaseSessionControl;
 - (id)downloadPhase;
-- (void)setBlocksOtherDownloads:(BOOL)arg1;
-- (void)setPercentComplete:(float)arg1;
 - (void)setNeedsPowerAssertion:(BOOL)arg1;
+- (void)setBlocksOtherDownloads:(BOOL)arg1;
 - (BOOL)needsPowerAssertion;
 - (void)disavowSessionWithError:(id)arg1;
 - (BOOL)canBePaused;

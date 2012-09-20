@@ -12,7 +12,7 @@
 
 - (void)dealloc;
 - (id)style;
-- (struct __CFArray { }*)children;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (struct __CFArray { }*)children;
 
 @end

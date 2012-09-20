@@ -4,47 +4,52 @@
 
 @class NSNumber, NSDictionary;
 
-@interface PFUbiquityKnowledgeVector : NSObject <NSCoding> {
+@interface PFUbiquityKnowledgeVector : NSObject <NSCoding, NSCopying> {
     NSDictionary *_kv;
+    NSDictionary *_storeKVDict;
     NSNumber *_sum;
     unsigned int _hash;
 }
 
-@property(readonly) unsigned int length;
-@property(readonly) unsigned int hash;
 @property(readonly) NSNumber * sum;
+@property(readonly) unsigned int hash;
+@property(readonly) unsigned int length;
 
 + (id)createKnowledgeVectorDictionaryFromString:(id)arg1;
 + (id)createSetOfAllPeerIDsInKnowledgeVectors:(id)arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (unsigned int)length;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (int)compare:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)length;
+- (BOOL)canMergeWithKnowledgeVector:(id)arg1;
+- (BOOL)isDescendantOfKnowledgeVector:(id)arg1;
+- (id)initFromCopy:(id)arg1 storeKVDict:(id)arg2 sum:(id)arg3 hash:(unsigned int)arg4;
+- (void)_updateSum;
+- (void)_updateHash;
+- (id)createSetOfAllPeerIDsWithOtherVector:(id)arg1;
+- (id)initWithKnowledgeVectorDictionary:(id)arg1;
+- (BOOL)isZeroVector;
+- (id)createAncestorVectorForConflictingVector:(id)arg1;
+- (id)newKnowledgeVectorByDecrementingPeerWithID:(id)arg1;
+- (id)newKnowledgeVectorByAddingKnowledgeVector:(id)arg1;
+- (id)createKnowledgeVectorString;
+- (id)initWithKnowledgeVectorString:(id)arg1;
+- (id)newKnowledgeVectorBySubtractingVector:(id)arg1;
+- (id)createStoreKnowledgeVectorDictionary;
+- (BOOL)conflictsWithKnowledgeVector:(id)arg1;
+- (id)allPeerIDs;
+- (BOOL)isAncestorOfKnowledgeVector:(id)arg1;
+- (id)initWithPeerStatesFromStoreMetadata:(id)arg1;
+- (void)updateWithKnowledgeVector:(id)arg1;
+- (id)transactionNumberForPeerID:(id)arg1;
+- (id)initWithStoreKnowledgeVectorDictionary:(id)arg1;
 - (id)sum;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isDescendantOfKnowledgeVector:(id)arg1;
-- (BOOL)isZeroVector;
-- (BOOL)canMergeWithKnowledgeVector:(id)arg1;
-- (id)createSetOfAllPeerIDsWithOtherVector:(id)arg1;
-- (void)_updateHash;
-- (void)_updateSum;
-- (id)newKnowledgeVectorBySubtractingVector:(id)arg1;
-- (id)initWithKnowledgeVectorDictionary:(id)arg1;
-- (BOOL)isAncestorOfKnowledgeVector:(id)arg1;
-- (id)newKnowledgeVectorByAddingKnowledgeVector:(id)arg1;
-- (id)newKnowledgeVectorByDecrementingPeerWithID:(id)arg1;
-- (id)createAncestorVectorForConflictingVector:(id)arg1;
-- (id)createKnowledgeVectorString;
-- (id)allPeerIDs;
-- (id)transactionNumberForPeerID:(id)arg1;
-- (id)initWithPeerStatesFromStoreMetadata:(id)arg1;
-- (id)initWithKnowledgeVectorString:(id)arg1;
-- (id)initWithStoreKnowledgeVectorDictionary:(id)arg1;
 
 @end

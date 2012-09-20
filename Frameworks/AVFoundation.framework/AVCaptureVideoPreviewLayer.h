@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSString, AVCaptureVideoPreviewLayerInternal, AVCaptureSession;
+@class NSString, AVCaptureVideoPreviewLayerInternal, AVCaptureConnection, AVCaptureSession;
 
 @interface AVCaptureVideoPreviewLayer : CALayer  {
     AVCaptureVideoPreviewLayerInternal *_internal;
 }
 
 @property(retain) AVCaptureSession * session;
+@property(readonly) AVCaptureConnection * connection;
 @property(copy) NSString * videoGravity;
 @property(getter=isOrientationSupported,readonly) BOOL orientationSupported;
 @property int orientation;
@@ -16,20 +17,46 @@
 @property BOOL automaticallyAdjustsMirroring;
 @property(getter=isMirrored) BOOL mirrored;
 
-+ (id)layerWithSession:(id)arg1;
 + (void)initialize;
++ (id)layerWithSession:(id)arg1;
 
-- (id)init;
+- (id)session;
+- (void)setSession:(id)arg1;
+- (void)setMirrored:(BOOL)arg1;
+- (void)layerDidBecomeVisible:(BOOL)arg1;
+- (id)videoGravity;
+- (void)setVideoGravity:(id)arg1;
 - (void)dealloc;
+- (id)init;
+- (id)connections;
+- (id)connection;
+- (id)_input;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)setPaused:(BOOL)arg1;
+- (id)initWithLayer:(id)arg1;
+- (void)setOrientation:(int)arg1;
+- (int)orientation;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHidden:(BOOL)arg1;
+- (id)initWithSession:(id)arg1;
+- (void)layoutSublayers;
+- (BOOL)isPaused;
+- (id)transformedMetadataObjectForMetadataObject:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForMetadataObject:(id)arg1;
+- (struct CGPoint { float x1; float x2; })pointForCaptureDevicePointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })captureDevicePointOfInterestForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)activeConnections;
+- (BOOL)isMirrored;
 - (void)setAutomaticallyAdjustsMirroring:(BOOL)arg1;
+- (BOOL)isOrientationSupported;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForCaptureDeviceFaceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isChromaNoiseReductionSupported;
 - (BOOL)isMirroringSupported;
-- (BOOL)isOrientationSupported;
-- (BOOL)isMirrored;
+- (void)_updateCaptureDeviceTransform;
+- (BOOL)_isMirrored;
+- (BOOL)_automaticallyAdjustsMirroring;
+- (int)_orientation;
 - (void)centerSublayer;
-- (id)initWithSession:(id)arg1;
-- (BOOL)isPaused;
 - (BOOL)automaticallyAdjustsMirroring;
 - (float)previewRotationDegrees;
 - (BOOL)isChromaNoiseReductionEnabled;
@@ -39,24 +66,13 @@
 - (id)addConnection:(id)arg1 error:(id*)arg2;
 - (BOOL)canAddConnectionForMediaType:(id)arg1;
 - (id)notReadyError;
+- (void)bumpChangeSeed;
+- (int)changeSeed;
 - (void)didStartForSession:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
+- (void)handleEnabledChangedForConnection:(id)arg1;
 - (id)connectionMediaTypes;
-- (id)_applyOverridesToCaptureOptions:(id)arg1;
-- (void)setVideoGravity:(id)arg1;
-- (id)videoGravity;
-- (void)setMirrored:(BOOL)arg1;
-- (id)session;
-- (void)setSession:(id)arg1;
-- (void)layerDidBecomeVisible:(BOOL)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)setPaused:(BOOL)arg1;
-- (id)initWithLayer:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (int)orientation;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHidden:(BOOL)arg1;
-- (void)layoutSublayers;
-- (id)connections;
+- (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (id)liveConnections;
 
 @end

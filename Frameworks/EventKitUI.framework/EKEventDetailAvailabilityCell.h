@@ -11,11 +11,11 @@
 
 
 - (void)dealloc;
-- (void)setAvailability:(int)arg1;
+- (BOOL)update;
 - (id)_availabilityTitleView;
 - (BOOL)isEditableForEvent;
 - (id)_availabilityView;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
-- (BOOL)update;
+- (void)setAvailability:(int)arg1;
 
 @end

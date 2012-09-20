@@ -23,8 +23,9 @@
 + (id)objectForKey:(id)arg1;
 + (id)standardControls;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (BOOL)active;
 - (BOOL)_forceChatLogging;
 - (BOOL)_disableAV;
 - (id)_parentalControls;
@@ -44,8 +45,5 @@
 - (void)_updateParentalSettings;
 - (void)setShouldPostNotifications:(BOOL)arg1;
 - (BOOL)okToConnectAccount:(id)arg1;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
-- (BOOL)active;
 
 @end

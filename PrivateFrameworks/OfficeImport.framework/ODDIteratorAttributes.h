@@ -16,13 +16,13 @@
 - (void)setStart:(int)arg1;
 - (int)start;
 - (void)setCount:(unsigned int)arg1;
-- (int)axis;
 - (void)setAxis:(int)arg1;
-- (int)step;
+- (int)axis;
 - (void)setStep:(int)arg1;
-- (BOOL)hideLastTransition;
+- (int)step;
 - (void)setHideLastTransition:(BOOL)arg1;
-- (int)pointType;
+- (BOOL)hideLastTransition;
 - (void)setPointType:(int)arg1;
+- (int)pointType;
 
 @end

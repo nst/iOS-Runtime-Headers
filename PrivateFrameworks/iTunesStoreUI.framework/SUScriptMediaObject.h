@@ -12,15 +12,10 @@
 @property(readonly) SUMediaObject * nativeMediaObject;
 @property(readonly) NSString * mediaType;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (id)valueForProperty:(id)arg1;
-- (id)attributeKeys;
-- (id)mediaType;
 - (void)saveToLibraryWithCompletionHandler:(id)arg1;
 - (void)loadLibraryThumbnailWithCompletionHandler:(id)arg1;
 - (void)generateThumbnailWithMaximumSize:(int)arg1 completionHandler:(id)arg2;
@@ -31,5 +26,10 @@
 - (void)_addScriptFunction:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)dealloc;
+- (id)init;
+- (id)mediaType;
+- (id)valueForProperty:(id)arg1;
+- (id)attributeKeys;
 
 @end

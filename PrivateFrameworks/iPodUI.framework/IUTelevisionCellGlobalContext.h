@@ -9,7 +9,7 @@
 @property BOOL showSeriesName;
 
 
-- (void)setShowSeriesName:(BOOL)arg1;
 - (BOOL)showSeriesName;
+- (void)setShowSeriesName:(BOOL)arg1;
 
 @end

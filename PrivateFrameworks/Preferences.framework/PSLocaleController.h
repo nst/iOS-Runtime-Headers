@@ -10,17 +10,17 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (id)specifiers;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)localeChangedAction;
-- (void)setLocale:(id)arg1 specifier:(id)arg2;
-- (void)updateChecked:(id)arg1;
-- (void)addLanguage:(id)arg1 toSupportedLanguages:(id)arg2;
-- (void)subcategorySelected:(id)arg1 specifier:(id)arg2;
 - (id)locale:(id)arg1;
+- (void)subcategorySelected:(id)arg1 specifier:(id)arg2;
+- (void)addLanguage:(id)arg1 toSupportedLanguages:(id)arg2;
+- (void)updateChecked:(id)arg1;
+- (void)setLocale:(id)arg1 specifier:(id)arg2;
+- (void)dealloc;
+- (id)init;
+- (void)viewWillAppear:(BOOL)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

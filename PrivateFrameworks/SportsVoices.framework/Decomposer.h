@@ -16,11 +16,11 @@
 @property id delegate;
 
 
-- (void)dealloc;
-- (id)optimalDecompositionOf:(id)arg1 isSubsetOfWhole:(BOOL)arg2;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (id)optimalDecompositionOf:(id)arg1;
 - (id)initWithDirectory:(id)arg1 bundle:(id)arg2;
+- (id)optimalDecompositionOf:(id)arg1 isSubsetOfWhole:(BOOL)arg2;
 
 @end

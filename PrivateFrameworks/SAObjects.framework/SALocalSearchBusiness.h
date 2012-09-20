@@ -7,7 +7,7 @@
 @interface SALocalSearchBusiness : AceObject <SAAceSerializable> {
 }
 
-@property(retain) NSNumber * businessId;
+@property(copy) NSNumber * businessId;
 @property(copy) NSDictionary * businessIds;
 @property(copy) NSURL * businessUrl;
 @property(copy) NSArray * categories;
@@ -17,34 +17,37 @@
 @property(copy) NSArray * phoneNumbers;
 @property(copy) NSURL * photo;
 @property(retain) SALocalSearchRating * rating;
+@property(copy) NSArray * reviews;
 @property int totalNumberOfReviews;
 
 + (id)business;
 + (id)businessWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (void)setName:(id)arg1;
-- (id)phoneNumbers;
-- (void)setPhoto:(id)arg1;
-- (void)setCategories:(id)arg1;
-- (id)categories;
 - (void)setRating:(id)arg1;
 - (id)rating;
+- (void)setCategories:(id)arg1;
+- (void)setName:(id)arg1;
 - (id)name;
-- (id)businessId;
-- (void)setBusinessId:(id)arg1;
-- (id)businessIds;
-- (void)setBusinessIds:(id)arg1;
-- (id)businessUrl;
-- (void)setBusinessUrl:(id)arg1;
-- (id)extSessionGuid;
-- (void)setExtSessionGuid:(id)arg1;
-- (id)openingHours;
-- (void)setOpeningHours:(id)arg1;
+- (id)categories;
 - (void)setPhoneNumbers:(id)arg1;
-- (int)totalNumberOfReviews;
-- (void)setTotalNumberOfReviews:(int)arg1;
-- (id)encodedClassName;
+- (id)phoneNumbers;
+- (void)setPhoto:(id)arg1;
 - (id)photo;
+- (id)reviews;
+- (void)setReviews:(id)arg1;
+- (void)setTotalNumberOfReviews:(int)arg1;
+- (int)totalNumberOfReviews;
+- (void)setOpeningHours:(id)arg1;
+- (id)openingHours;
+- (void)setExtSessionGuid:(id)arg1;
+- (id)extSessionGuid;
+- (void)setBusinessUrl:(id)arg1;
+- (id)businessUrl;
+- (void)setBusinessIds:(id)arg1;
+- (id)businessIds;
+- (void)setBusinessId:(id)arg1;
+- (id)businessId;
+- (id)encodedClassName;
 
 @end

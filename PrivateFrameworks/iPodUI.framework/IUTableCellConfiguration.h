@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class <NSObject>, NSString, MPMediaItem;
+@class <NSObject>, IUDownloadActionConfiguration, NSString, MPMediaItem;
 
 @interface IUTableCellConfiguration : NSObject  {
     struct CGSize { 
@@ -16,54 +16,50 @@
         float width; 
         float height; 
     } _layoutSize;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _selectionEdgeInsets;
-    unsigned int _ignoresLeftIndentWhenEditing : 1;
     unsigned int _isDeleteConfirmationVisible : 1;
     unsigned int _needsDisplay : 1;
     unsigned int _hasDownloadProgress : 1;
     unsigned int _downloadable : 1;
+    IUDownloadActionConfiguration *_purchaseActionConfiguration;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _purchaseButtonSize;
 }
 
+@property(readonly) int preset;
 @property(retain) id globalContext;
 @property struct CGSize { float x1; float x2; } backgroundSize;
 @property struct CGSize { float x1; float x2; } layoutSize;
+@property(readonly) Class layoutManagerClass;
 @property BOOL needsDisplay;
 @property(readonly) unsigned int numberOfImages;
 @property(readonly) unsigned int numberOfLabels;
 @property(readonly) BOOL showsUntruncationCallout;
 @property(readonly) NSString * untruncationCalloutString;
 @property BOOL isDeleteConfirmationVisible;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } selectionEdgeInsets;
-@property BOOL ignoresLeftIndentWhenEditing;
-@property(readonly) <NSObject> * downloadableAsset;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } selectionEdgeInsets;
 @property(readonly) MPMediaItem * mediaItem;
 @property(getter=isDownloadable) BOOL downloadable;
 @property BOOL hasDownloadProgress;
+@property(readonly) <NSObject> * downloadableAsset;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } downloadButtonFrame;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } downloadProgressIndicatorFrame;
+@property(retain) IUDownloadActionConfiguration * purchaseActionConfiguration;
+@property struct CGSize { float x1; float x2; } purchaseButtonSize;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } purchaseButtonFrame;
 @property BOOL isNowPlaying;
 
 + (float)minimumRowHeight;
-+ (void)configureTableDisplaySettings:(id)arg1 dataSource:(id)arg2;
 + (BOOL)drawsRowsInAlternateStyle;
++ (void)configureTableDisplaySettings:(id)arg1 dataSource:(id)arg2;
 + (id)customActionRowConfigurationWithSimpleCellConfiguration:(id)arg1;
 + (BOOL)showsUntruncationCallout;
 + (float)rowHeightForGlobalContext:(id)arg1;
 + (id)backgroundColorWithModifiers:(unsigned int)arg1;
 
-- (void)dealloc;
-- (id)mediaItem;
-- (struct CGSize { float x1; float x2; })backgroundSize;
-- (struct CGSize { float x1; float x2; })layoutSize;
-- (void)setNeedsDisplay:(BOOL)arg1;
-- (BOOL)needsDisplay;
-- (void)reloadData;
 - (BOOL)isDownloadable;
+- (void)reloadLayoutInformation;
 - (void)setIsDeleteConfirmationVisible:(BOOL)arg1;
 - (BOOL)isDeleteConfirmationVisible;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForImageAtIndex:(unsigned int)arg1;
@@ -80,23 +76,32 @@
 - (void)drawBackgroundWithModifiers:(unsigned int)arg1;
 - (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)globalContext;
+- (id)mediaItem;
+- (void)dealloc;
+- (struct CGSize { float x1; float x2; })backgroundSize;
+- (struct CGSize { float x1; float x2; })layoutSize;
+- (void)setNeedsDisplay:(BOOL)arg1;
+- (BOOL)needsDisplay;
+- (void)reloadData;
 - (void)setIsNowPlaying:(BOOL)arg1;
-- (void)setSelectionEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setDownloadable:(BOOL)arg1;
+- (void)setPurchaseActionConfiguration:(id)arg1;
+- (int)preset;
 - (void)setHasDownloadProgress:(BOOL)arg1;
+- (void)setDownloadable:(BOOL)arg1;
 - (id)untruncationCalloutStringWithLinesByStringIndexes:(id)arg1;
 - (id)subviewLayoutViewsWithModifiers:(unsigned int)arg1;
-- (id)backgroundViewWithModifiers:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })offsetForLabelAtIndex:(unsigned int)arg1;
 - (void)layoutSubviewLayoutViews:(id)arg1;
 - (int)lineBreakModeForLabelAtIndex:(unsigned int)arg1;
-- (void)setBackgroundSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setIgnoresLeftIndentWhenEditing:(BOOL)arg1;
-- (BOOL)ignoresLeftIndentWhenEditing;
-- (id)downloadableAsset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })selectionEdgeInsets;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })downloadButtonFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })downloadProgressIndicatorFrame;
+- (void)setBackgroundSize:(struct CGSize { float x1; float x2; })arg1;
+- (Class)layoutManagerClass;
+- (id)purchaseActionConfiguration;
+- (id)downloadableAsset;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })downloadButtonFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })purchaseButtonFrame;
+- (void)setPurchaseButtonSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })purchaseButtonSize;
 - (BOOL)isNowPlaying;
 - (BOOL)hasDownloadProgress;
 - (BOOL)showsUntruncationCallout;
@@ -104,6 +109,7 @@
 - (void)setGlobalContext:(id)arg1;
 - (void)invalidateDynamicTrackCaches;
 - (id)untruncationCalloutString;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })selectionEdgeInsets;
 - (id)backgroundColorWithModifiers:(unsigned int)arg1;
 
 @end

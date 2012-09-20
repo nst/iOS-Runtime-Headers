@@ -14,7 +14,7 @@
 @property BOOL updateSmartPlaylists;
 
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)setUpdateSmartPlaylists:(BOOL)arg1;
 - (BOOL)updateSmartPlaylists;
 - (void)setNameOrders:(id)arg1;

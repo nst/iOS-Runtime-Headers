@@ -2,20 +2,27 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class ACAccount;
+@class ACAccount, XPCProxy<ACDOAuthSignerProtocol>;
 
 @interface ACOAuthSigner : NSObject <XPCProxyTarget> {
-    id oauthSignerProxy;
+    XPCProxy<ACDOAuthSignerProtocol> *oauthSignerProxy;
     struct dispatch_queue_s { } *connectionQueue;
     struct _xpc_connection_s { } *connection;
     ACAccount *_account;
+    BOOL _shouldIncludeAppIdInRequest;
 }
 
+@property BOOL shouldIncludeAppIdInRequest;
 
-- (id)initWithAccount:(id)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (void)dealloc;
+
+- (BOOL)shouldIncludeAppIdInRequest;
 - (id)signedURLRequestWithURLRequest:(id)arg1;
-- (id)signedURLRequestWithURLRequest:(id)arg1 callingPID:(id)arg2;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (id)signedURLRequestWithURLRequest:(id)arg1 applicationID:(id)arg2 timestamp:(id)arg3;
+- (id)signedURLRequestWithURLRequest:(id)arg1 callingPID:(id)arg2 timestamp:(id)arg3;
+- (void)setShouldIncludeAppIdInRequest:(BOOL)arg1;
+- (id)initWithAccount:(id)arg1;
 
 @end

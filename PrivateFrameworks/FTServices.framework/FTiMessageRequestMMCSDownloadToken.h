@@ -17,10 +17,7 @@
 @property(copy) NSString * responseRequestorID;
 
 
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setSignature:(id)arg1;
 - (void)setResponseRequestorID:(id)arg1;
 - (id)responseRequestorID;
 - (void)setResponseAuthToken:(id)arg1;
@@ -28,10 +25,13 @@
 - (void)handleResponseDictionary:(id)arg1;
 - (int)responseCommand;
 - (id)requiredKeys;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (int)command;
-- (void)setOwner:(id)arg1;
-- (id)owner;
 - (id)signature;
-- (void)setSignature:(id)arg1;
+- (void)setOwner:(id)arg1;
+- (id)messageBody;
+- (id)owner;
 
 @end

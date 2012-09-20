@@ -11,8 +11,8 @@
 }
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id).cxx_construct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithRotationRate:(struct { float x1; float x2; float x3; })arg1;
 - (void)setRotationRate:(struct { float x1; float x2; float x3; })arg1;
 

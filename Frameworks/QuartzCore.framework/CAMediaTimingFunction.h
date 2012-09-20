@@ -13,11 +13,11 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)getControlPointAtIndex:(unsigned long)arg1 values:(float[2])arg2;
-- (void)_getPoints:(double*)arg1;
 - (id)initWithControlPoints:(float)arg1 :(float)arg2 :(float)arg3 :(float)arg4;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)getControlPointAtIndex:(unsigned long)arg1 values:(float[2])arg2;
+- (void)_getPoints:(double*)arg1;
 - (float)_solveForInput:(float)arg1;
 
 @end

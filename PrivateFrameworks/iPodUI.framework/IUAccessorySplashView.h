@@ -19,8 +19,8 @@
 @property(readonly) UILabel * routeNameLabel;
 
 
-- (void)dealloc;
 - (void)_availableRoutesChangedNotification:(id)arg1;
+- (void)dealloc;
 - (id)image;
 - (void)layoutSubviews;
 - (void)setImage:(id)arg1;

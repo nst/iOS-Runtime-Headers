@@ -20,15 +20,6 @@
 
 + (id)webScriptNameForKey:(const char *)arg1;
 
-- (void)dealloc;
-- (void)setURL:(id)arg1;
-- (id)subtitle;
-- (void)setSubtitle:(id)arg1;
-- (id)URL;
-- (id)initWithDictionary:(id)arg1;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (id)attributeKeys;
 - (id)copyNativeMediaPlayerItem;
 - (void)setPlayableDuration:(id)arg1;
 - (id)playableDuration;
@@ -44,5 +35,14 @@
 - (id)itemIdentifier;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)URL;
+- (void)dealloc;
+- (void)setURL:(id)arg1;
+- (id)subtitle;
+- (void)setSubtitle:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (id)attributeKeys;
 
 @end

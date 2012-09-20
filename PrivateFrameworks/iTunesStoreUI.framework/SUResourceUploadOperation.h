@@ -13,11 +13,11 @@
 @property(readonly) NSDictionary * responseDictionary;
 
 
-- (void)dealloc;
-- (void)run;
 - (void)_setResponseDictionary:(id)arg1;
 - (id)initWithURLRequestProperties:(id)arg1;
 - (id)responseDictionary;
 - (id)URLRequestProperties;
+- (void)dealloc;
+- (void)run;
 
 @end

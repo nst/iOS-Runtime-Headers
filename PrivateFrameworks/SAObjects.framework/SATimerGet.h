@@ -9,13 +9,13 @@
 
 @property(copy) NSURL * targetAppId;
 
-+ (id)get;
 + (id)getWithDictionary:(id)arg1 context:(id)arg2;
++ (id)get;
 
 - (id)groupIdentifier;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

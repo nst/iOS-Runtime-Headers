@@ -46,8 +46,8 @@
 + (id)bezierPath;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setUsesEvenOddFillRule:(BOOL)arg1;
 - (BOOL)usesEvenOddFillRule;
 - (void)setFlatness:(float)arg1;
@@ -79,16 +79,17 @@
 - (BOOL)isEmpty;
 - (void)setCGPath:(struct CGPath { }*)arg1;
 - (struct CGPath { }*)CGPath;
+- (id)bezierPathByReversingPath;
 - (void)removeAllPoints;
-- (void)closePath;
 - (void)applyTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)appendPath:(id)arg1;
 - (void)addArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4 clockwise:(BOOL)arg5;
-- (void)addQuadCurveToPoint:(struct CGPoint { float x1; float x2; })arg1 controlPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (void)addCurveToPoint:(struct CGPoint { float x1; float x2; })arg1 controlPoint1:(struct CGPoint { float x1; float x2; })arg2 controlPoint2:(struct CGPoint { float x1; float x2; })arg3;
-- (void)moveToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)addClip;
+- (void)addCurveToPoint:(struct CGPoint { float x1; float x2; })arg1 controlPoint1:(struct CGPoint { float x1; float x2; })arg2 controlPoint2:(struct CGPoint { float x1; float x2; })arg3;
+- (void)addQuadCurveToPoint:(struct CGPoint { float x1; float x2; })arg1 controlPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)addLineToPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)closePath;
+- (void)moveToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPath { }*)_mutablePath;
 - (struct CGPath { }*)_createMutablePathByDecodingData:(id)arg1;
 - (id)_initWithCGMutablePath:(struct CGPath { }*)arg1;

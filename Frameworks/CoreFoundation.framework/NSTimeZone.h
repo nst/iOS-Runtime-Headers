@@ -2,31 +2,38 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSTimeZone : NSObject <NSCopying, NSCoding> {
+@interface NSTimeZone : NSObject <NSCopying, NSSecureCoding> {
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)defaultTimeZone;
++ (id)localTimeZone;
++ (void)resetSystemTimeZone;
 + (id)timeZoneWithAbbreviation:(id)arg1;
 + (id)timeZoneWithName:(id)arg1;
 + (id)timeZoneWithName:(id)arg1 data:(id)arg2;
 + (id)timeZoneDataVersion;
 + (void)setAbbreviationDictionary:(id)arg1;
-+ (id)abbreviationDictionary;
 + (id)knownTimeZoneNames;
 + (void)setDefaultTimeZone:(id)arg1;
++ (id)abbreviationDictionary;
 + (id)systemTimeZone;
-+ (id)defaultTimeZone;
++ (BOOL)supportsSecureCoding;
 + (id)timeZoneForSecondsFromGMT:(int)arg1;
-+ (id)localTimeZone;
-+ (void)resetSystemTimeZone;
 + (id)ICSQuickTimeZoneNames;
 + (id)calendarTimeZone;
 + (id)gmt;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (id)name;
+- (id)data;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
+- (int)secondsFromGMTForDate:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)nextDaylightSavingTimeTransition;
 - (double)daylightSavingTimeOffset;
 - (BOOL)isDaylightSavingTime;
@@ -36,20 +43,15 @@
 - (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 data:(id)arg2;
 - (id)localizedName:(int)arg1 locale:(id)arg2;
-- (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
 - (BOOL)isDaylightSavingTimeForDate:(id)arg1;
 - (id)abbreviationForDate:(id)arg1;
 - (double)daylightSavingTimeOffsetForDate:(id)arg1;
 - (BOOL)isNSTimeZone__;
 - (unsigned long)_cfTypeID;
-- (int)secondsFromGMTForDate:(id)arg1;
-- (id)name;
-- (id)data;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
 - (id)ICSComputeTimeZoneChangeListFromDate:(id)arg1 toDate:(id)arg2;
 - (void)setCityName:(id)arg1;
 - (id)cityName;

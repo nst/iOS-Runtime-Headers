@@ -6,31 +6,34 @@
 
 @interface UIStoryboard : NSObject  {
     NSBundle *bundle;
-    NSString *relativePathFromBundle;
+    NSString *storyboardFileName;
     NSDictionary *identifierToNibNameMap;
     NSString *designatedEntryPointIdentifier;
     NSMutableDictionary *identifierToUINibMap;
 }
 
 @property(readonly) NSBundle * bundle;
-@property(readonly) NSString * relativePathFromBundle;
+@property(readonly) NSString * name;
+@property(readonly) NSString * storyboardFileName;
 @property(readonly) NSDictionary * identifierToNibNameMap;
 @property(readonly) NSString * designatedEntryPointIdentifier;
 @property(readonly) NSMutableDictionary * identifierToUINibMap;
 
 + (id)storyboardWithName:(id)arg1 bundle:(id)arg2;
 
+- (id)name;
 - (void)dealloc;
 - (id)identifierToUINibMap;
-- (id)instantiateViewControllerWithIdentifier:(id)arg1;
 - (id)designatedEntryPointIdentifier;
 - (id)nibForViewControllerWithIdentifier:(id)arg1;
 - (id)identifierToNibNameMap;
-- (id)relativePathFromBundle;
-- (id)initWithBundle:(id)arg1 relativePathFromBundle:(id)arg2 identifierToNibNameMap:(id)arg3 designatedEntryPointIdentifier:(id)arg4;
+- (id)storyboardFileName;
+- (id)initWithBundle:(id)arg1 storyboardFileName:(id)arg2 identifierToNibNameMap:(id)arg3 designatedEntryPointIdentifier:(id)arg4;
+- (id)identifierForStringsFile;
 - (id)bundle;
 - (id)nibForStoryboardNibNamed:(id)arg1;
 - (BOOL)containsNibNamed:(id)arg1;
+- (id)instantiateViewControllerWithIdentifier:(id)arg1;
 - (id)instantiateInitialViewController;
 
 @end

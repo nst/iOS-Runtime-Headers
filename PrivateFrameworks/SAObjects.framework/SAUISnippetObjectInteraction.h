@@ -9,8 +9,8 @@
 
 @property(retain) SADomainObject * object;
 
-+ (id)snippetObjectInteraction;
 + (id)snippetObjectInteractionWithDictionary:(id)arg1 context:(id)arg2;
++ (id)snippetObjectInteraction;
 
 - (id)groupIdentifier;
 - (void)setObject:(id)arg1;

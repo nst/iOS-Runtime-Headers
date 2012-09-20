@@ -22,29 +22,29 @@
 @property(setter=_setLogName:,copy) NSString * _logName;
 
 
-- (void)setService:(id)arg1;
-- (id)activeAccounts;
-- (void)setName:(id)arg1;
-- (void)dealloc;
 - (void)_stopListeningForNotifications;
-- (void)_startListeningForNotifications;
-- (void)_updateAccountState:(BOOL)arg1;
-- (id)_activeAccounts;
-- (void)_handleAccountNotification:(id)arg1;
 - (BOOL)_shouldHandleAccountNofication:(id)arg1;
-- (id)_logName;
+- (void)_handleAccountNotification:(id)arg1;
 - (void)_handleDaemonConnected:(id)arg1;
-- (BOOL)isConnectedToDaemon;
-- (id)initWithServiceType:(int)arg1 name:(id)arg2;
-- (id)service;
+- (id)_activeAccounts;
+- (void)_updateAccountState:(BOOL)arg1;
+- (id)_logName;
+- (void)setName:(id)arg1;
+- (id)name;
+- (void)dealloc;
 - (id)activeAccounts:(BOOL)arg1;
 - (void)_handleCapabilitiesChanged:(id)arg1;
 - (id)activeAccounts:(BOOL)arg1 requireConnection:(BOOL)arg2;
 - (void)_updateAccountState:(BOOL)arg1 blockUntilConnected:(BOOL)arg2;
 - (BOOL)serviceIsSupported;
 - (void)_setLogName:(id)arg1;
-- (id)name;
-- (void)setServiceType:(int)arg1;
 - (int)serviceType;
+- (void)setServiceType:(int)arg1;
+- (BOOL)isConnectedToDaemon;
+- (id)initWithServiceType:(int)arg1 name:(id)arg2;
+- (id)service;
+- (void)setService:(id)arg1;
+- (id)activeAccounts;
+- (void)_startListeningForNotifications;
 
 @end

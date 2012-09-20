@@ -11,21 +11,21 @@
 @property int characterChangeCount;
 @property(copy) NSString * interactionId;
 @property(copy) NSString * sessionId;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)speechCorrectionStatistics;
 + (id)speechCorrectionStatisticsWithDictionary:(id)arg1 context:(id)arg2;
++ (id)speechCorrectionStatistics;
 
 - (id)groupIdentifier;
-- (int)alternativeSelectCount;
-- (void)setAlternativeSelectCount:(int)arg1;
-- (int)characterChangeCount;
 - (void)setCharacterChangeCount:(int)arg1;
-- (id)interactionId;
+- (int)characterChangeCount;
+- (void)setAlternativeSelectCount:(int)arg1;
+- (int)alternativeSelectCount;
 - (void)setInteractionId:(id)arg1;
-- (id)sessionId;
+- (id)interactionId;
 - (void)setSessionId:(id)arg1;
+- (id)sessionId;
 - (id)encodedClassName;
 
 @end

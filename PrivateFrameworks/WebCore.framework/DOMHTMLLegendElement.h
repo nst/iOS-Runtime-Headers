@@ -7,15 +7,15 @@
 @interface DOMHTMLLegendElement : DOMHTMLElement  {
 }
 
-@property(retain,readonly) DOMHTMLFormElement * form;
-@property(copy) NSString * accessKey;
+@property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * align;
+@property(copy) NSString * accessKey;
 
 
 - (id)form;
-- (id)align;
 - (void)setAlign:(id)arg1;
-- (id)accessKey;
+- (id)align;
 - (void)setAccessKey:(id)arg1;
+- (id)accessKey;
 
 @end

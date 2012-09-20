@@ -7,8 +7,8 @@
 
 @property int rating;
 
-+ (id)albumCollection;
 + (id)albumCollectionWithDictionary:(id)arg1 context:(id)arg2;
++ (id)albumCollection;
 
 - (id)groupIdentifier;
 - (void)setRating:(int)arg1;

@@ -6,11 +6,14 @@
 
 @interface CIHighlightShadowAdjust : CIFilter  {
     CIImage *inputImage;
+    NSNumber *inputRadius;
     NSNumber *inputShadowAmount;
     NSNumber *inputHighlightAmount;
+    NSNumber *_inputRadius;
 }
 
 @property(retain) CIImage * inputImage;
+@property(copy) NSNumber * inputRadius;
 @property(copy) NSNumber * inputShadowAmount;
 @property(copy) NSNumber * inputHighlightAmount;
 
@@ -18,17 +21,21 @@
 
 - (id)_initFromProperties:(id)arg1;
 - (id)_outputProperties;
+- (id)inputRadius;
 - (id)inputHighlightAmount;
 - (id)inputShadowAmount;
+- (id)_kernelSH_v1;
+- (id)_kernelSHnoB_v1;
 - (id)_kernelSH;
 - (id)_kernelS;
-- (id)_kernelS_noblur;
+- (id)_kernelSnoB;
+- (void)setInputRadius:(id)arg1;
 - (void)setInputHighlightAmount:(id)arg1;
 - (void)setInputShadowAmount:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
-- (id)outputImage;
 - (BOOL)_isIdentity;
+- (id)outputImage;
 - (void)setDefaults;
 
 @end

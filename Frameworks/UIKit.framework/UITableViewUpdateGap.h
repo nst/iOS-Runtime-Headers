@@ -27,8 +27,8 @@
 + (id)gapWithUpdateItem:(id)arg1;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)insertItems;
 - (id)deleteItems;
 - (id)lastUpdateItem;

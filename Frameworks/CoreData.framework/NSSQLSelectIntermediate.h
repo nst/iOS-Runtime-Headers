@@ -16,14 +16,14 @@
 
 
 - (void)dealloc;
-- (id)initForCorrelationTarget:(id)arg1 alias:(id)arg2 fetchColumns:(id)arg3 inScope:(id)arg4;
-- (void)setColumnAlias:(id)arg1;
 - (void)setFetchEntity:(id)arg1;
+- (void)setColumnAlias:(id)arg1;
+- (id)initForCorrelationTarget:(id)arg1 alias:(id)arg2 fetchColumns:(id)arg3 inScope:(id)arg4;
 - (id)initWithEntity:(id)arg1 alias:(id)arg2 fetchColumns:(id)arg3 inScope:(id)arg4;
 - (BOOL)onlyFetchesAggregates;
-- (void)setFetchColumns:(id)arg1;
-- (void)setUseDistinct:(BOOL)arg1;
 - (void)setIsCount:(BOOL)arg1;
+- (void)setUseDistinct:(BOOL)arg1;
+- (void)setFetchColumns:(id)arg1;
 - (BOOL)isSelectTargetScoped;
 - (id)generateSQLStringInContext:(id)arg1;
 

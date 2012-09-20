@@ -18,11 +18,11 @@
 
 - (unsigned int)retainCount;
 - (id)retain;
-- (void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (id)init;
 - (void)dealloc;
+- (oneway void)release;
+- (id)init;
+- (id)autorelease;
 - (id)buttonNamesAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
 - (id)commandAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
 - (unsigned int)countForDisplayWithToken:(long)arg1;

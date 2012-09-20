@@ -13,22 +13,24 @@
     NSPersistentStore *_store;
 }
 
-@property(readonly) NSPersistentStore * store;
-@property(readonly) NSString * modelVersionHash;
-@property(readonly) NSManagedObjectModel * model;
-@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
-@property(readonly) NSString * storeName;
 @property(readonly) NSString * localPeerID;
+@property(readonly) NSString * storeName;
+@property(readonly) NSString * modelVersionHash;
+@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
+@property(readonly) NSManagedObjectModel * model;
+@property(readonly) NSPersistentStore * store;
 
 
 - (id)description;
 - (void)dealloc;
-- (id)model;
+- (id)initWithStoreName:(id)arg1 localPeerID:(id)arg2 modelVersionHash:(id)arg3 andRootLocation:(id)arg4;
+- (void)storeWillBeRemoved:(id)arg1;
+- (id)modelVersionHash;
 - (id)initWithStore:(id)arg1 andLocalPeerID:(id)arg2;
-- (id)localPeerID;
 - (id)storeName;
 - (id)ubiquityRootLocation;
-- (id)modelVersionHash;
+- (id)localPeerID;
 - (id)store;
+- (id)model;
 
 @end

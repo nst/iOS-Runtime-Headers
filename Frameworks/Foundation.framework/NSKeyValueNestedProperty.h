@@ -15,6 +15,8 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
 - (id)_initWithContainerClass:(id)arg1 keyPath:(id)arg2 firstDotIndex:(unsigned int)arg3 propertiesBeingInitialized:(struct __CFSet { }*)arg4;
 - (void)_addDependentValueKey:(id)arg1;
 - (void)_givenPropertiesBeingInitialized:(struct __CFSet { }*)arg1 getAffectingProperties:(id)arg2;
@@ -27,7 +29,5 @@
 - (void)object:(id)arg1 didRemoveObservance:(id)arg2 recurse:(BOOL)arg3;
 - (void)object:(id)arg1 didAddObservance:(id)arg2 recurse:(BOOL)arg3;
 - (id)dependentValueKeyOrKeysIsASet:(BOOL*)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

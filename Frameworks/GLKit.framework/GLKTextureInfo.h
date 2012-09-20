@@ -21,15 +21,16 @@
 @property(readonly) BOOL containsMipmaps;
 
 
+- (id)initWithTexture:(id)arg1 textureName:(unsigned int)arg2;
+- (BOOL)containsMipmaps;
+- (unsigned int)textureOrigin;
+- (unsigned int)alphaState;
+- (unsigned int)name;
 - (unsigned int)target;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned int)height;
 - (unsigned int)width;
-- (unsigned int)name;
-- (BOOL)containsMipmaps;
-- (unsigned int)textureOrigin;
-- (unsigned int)alphaState;
-- (id)initWithTexture:(id)arg1 textureName:(unsigned int)arg2;
 
 @end

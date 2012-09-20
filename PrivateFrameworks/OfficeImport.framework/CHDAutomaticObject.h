@@ -8,9 +8,9 @@
     NSString *mName;
 }
 
-+ (id)automaticStroke;
-+ (id)automaticFill;
 + (id)automaticEffects;
++ (id)automaticFill;
++ (id)automaticStroke;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

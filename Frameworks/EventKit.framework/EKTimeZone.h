@@ -16,11 +16,13 @@
 + (id)timeZoneWithName:(id)arg1;
 + (id)timeZoneWithNSTimeZone:(id)arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (id)name;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (double)secondsFromGMTForDate:(id)arg1;
 - (double)secondsFromGMT;
 - (id)abbreviation;
 - (id)initWithName:(id)arg1;
@@ -32,7 +34,5 @@
 - (double)nextDaylightSavingTimeTransitionAfterAbsoluteTime:(double)arg1;
 - (double)secondsFromGMTForAbsoluteTime:(double)arg1;
 - (id)NSTimeZone;
-- (double)secondsFromGMTForDate:(id)arg1;
-- (id)name;
 
 @end

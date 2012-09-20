@@ -35,9 +35,22 @@
 @property(getter=isDownloadableOverCellular) BOOL downloadableOverCellular;
 
 
+- (id)productBuildVersion;
+- (int)updateType;
+- (BOOL)isDownloadable;
+- (id)productVersion;
+- (unsigned long long)downloadSize;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)downloadPolicy;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isValidDescriptor;
 - (unsigned long long)totalRequiredFreeSpace;
-- (id)downloadPolicy;
 - (id)_buildCompareKey;
 - (BOOL)_hasValue:(id)arg1;
 - (BOOL)isDownloadableOverCellular;
@@ -45,33 +58,20 @@
 - (id)documentation;
 - (unsigned long long)installationSize;
 - (unsigned long long)preparationSize;
-- (unsigned long long)downloadSize;
 - (id)publisher;
-- (void)setDownloadableOverCellular:(BOOL)arg1;
-- (void)setAutoDownloadAllowableForCellular:(BOOL)arg1;
+- (id)productSystemName;
+- (id)humanReadableUpdateName;
 - (void)setDocumentation:(id)arg1;
 - (void)setUpdateType:(int)arg1;
 - (void)setInstallationSize:(unsigned long long)arg1;
 - (void)setPreparationSize:(unsigned long long)arg1;
 - (void)setDownloadSize:(unsigned long long)arg1;
+- (void)setDownloadableOverCellular:(BOOL)arg1;
+- (void)setAutoDownloadAllowableForCellular:(BOOL)arg1;
+- (void)setPublisher:(id)arg1;
+- (void)setProductSystemName:(id)arg1;
 - (void)setProductBuildVersion:(id)arg1;
 - (void)setProductVersion:(id)arg1;
-- (void)setProductSystemName:(id)arg1;
-- (void)setPublisher:(id)arg1;
-- (id)productSystemName;
-- (id)humanReadableUpdateName;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)productBuildVersion;
-- (int)updateType;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isDownloadable;
-- (id)productVersion;
 - (void)setDownloadable:(BOOL)arg1;
 
 @end

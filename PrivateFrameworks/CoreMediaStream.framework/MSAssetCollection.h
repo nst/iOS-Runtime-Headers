@@ -6,6 +6,7 @@
 
 @interface MSAssetCollection : NSObject <NSCoding> {
     NSString *_assetCollectionID;
+    NSString *_ctag;
     MSAsset *_masterAsset;
     NSArray *_derivedAssets;
     NSString *_fileName;
@@ -13,31 +14,34 @@
 }
 
 @property(retain) NSString * assetCollectionID;
+@property(retain) NSString * ctag;
 @property(retain) MSAsset * masterAsset;
 @property(readonly) NSData * masterAssetHash;
 @property(retain) NSArray * derivedAssets;
 @property(retain) NSString * fileName;
 @property BOOL wasDeleted;
 
-+ (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2;
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
++ (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2;
 
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (void)dealloc;
-- (id)initWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
+- (void).cxx_destruct;
+- (BOOL)isEqual:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setWasDeleted:(BOOL)arg1;
 - (void)setMasterAsset:(id)arg1;
 - (void)setDerivedAssets:(id)arg1;
+- (void)setCtag:(id)arg1;
 - (BOOL)wasDeleted;
+- (id)ctag;
 - (id)derivedAssets;
 - (id)masterAsset;
 - (id)masterAssetHash;
 - (void)setAssetCollectionID:(id)arg1;
 - (id)assetCollectionID;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)fileName;
+- (id)initWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 - (void)setFileName:(id)arg1;
+- (id)fileName;
 
 @end

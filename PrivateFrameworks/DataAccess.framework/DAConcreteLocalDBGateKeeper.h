@@ -12,10 +12,13 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)stateString;
 - (void)_sendAllClearNotifications;
+- (void)_registerWaiter:(id)arg1 forDataclassLocks:(int)arg2 preempt:(BOOL)arg3 completionHandler:(id)arg4;
 - (void)_notifyWaitersForDataclasses:(id)arg1;
+- (void)_setUnitTestHackRunLoopMode:(id)arg1;
 - (BOOL)_canWakenWaiter:(id)arg1;
 - (void)_removeRestrictedWaitersFromAllQueues;
 - (void)_abortWaiterForWrappers:(id)arg1;
@@ -28,9 +31,9 @@
 - (BOOL)babysitterEnabled;
 - (void)relinquishLocksForWaiter:(id)arg1 dataclasses:(int)arg2 moreComing:(BOOL)arg3;
 - (void)unregisterWaiterForDataclassLocks:(id)arg1;
+- (void)registerPreemptiveWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id)arg3;
 - (void)registerWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id)arg3;
 - (void)claimedOwnershipOfDataclasses:(int)arg1;
 - (void)giveAccountWithIDAnotherChance:(id)arg1;
-- (id)stateString;
 
 @end

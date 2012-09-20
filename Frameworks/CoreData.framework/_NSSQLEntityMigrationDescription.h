@@ -18,27 +18,27 @@
     NSMutableArray *_pendingTransforms;
 }
 
-@property(readonly) int migrationType;
-@property(readonly) NSEntityMapping * entityMapping;
-@property(readonly) NSSQLEntity * destinationEntity;
 @property(readonly) NSSQLEntity * sourceEntity;
+@property(readonly) NSSQLEntity * destinationEntity;
+@property(readonly) NSEntityMapping * entityMapping;
+@property(readonly) int migrationType;
 
 
 - (void)dealloc;
-- (id)initWithEntityMapping:(id)arg1 sourceEntity:(id)arg2 destinationEntity:(id)arg3;
-- (id)sourceEntitiesByToOneWithNewEntityKey;
-- (id)sqlValueForColumnName:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
-- (id)addedManyToManys;
-- (id)removedManyToManys;
-- (id)transformedManyToManys;
-- (id)nextPropertyTransform;
 - (int)migrationType;
-- (void)_populateSQLValuesByPropertyFromTransforms:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
-- (void)_populateSQLValuesForVirtualToOnesWithMigrationContext:(struct _NSSQLMigrationContext { id x1; })arg1;
-- (id)entityMapping;
-- (void)_populateSQLValuesForDestinationToOne:(id)arg1 fromSourceToOne:(id)arg2;
-- (id)_unmappedRelationshipForFormerlyVirtualToOne:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
+- (id)nextPropertyTransform;
+- (id)transformedManyToManys;
+- (id)removedManyToManys;
+- (id)addedManyToManys;
+- (id)sqlValueForColumnName:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
+- (id)sourceEntitiesByToOneWithNewEntityKey;
+- (id)initWithEntityMapping:(id)arg1 sourceEntity:(id)arg2 destinationEntity:(id)arg3;
 - (void)_generateSQLValueMappingsWithMigrationContext:(struct _NSSQLMigrationContext { id x1; })arg1;
+- (id)_unmappedRelationshipForFormerlyVirtualToOne:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
+- (void)_populateSQLValuesForDestinationToOne:(id)arg1 fromSourceToOne:(id)arg2;
+- (id)entityMapping;
+- (void)_populateSQLValuesForVirtualToOnesWithMigrationContext:(struct _NSSQLMigrationContext { id x1; })arg1;
+- (void)_populateSQLValuesByPropertyFromTransforms:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
 - (id)sourceEntity;
 - (id)destinationEntity;
 

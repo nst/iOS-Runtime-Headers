@@ -2,56 +2,48 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSData, CKMessage;
+@class <CKMessage>;
 
 @interface CKMessagePart : NSObject  {
-    unsigned int _height;
-    unsigned int _flags;
     int _rowID;
     int _outgoingBubbleColor;
-    CKMessage *_parentMessage;
+    <CKMessage> *_parentMessage;
 }
 
-@property(readonly) NSData * highlightData;
-@property int outgoingBubbleColor;
+@property <CKMessage> * parentMessage;
 @property int rowID;
-@property CKMessage * parentMessage;
+@property int outgoingBubbleColor;
 
 + (id)copyUnknownPart;
-+ (id)_assembleTextPartFromRange:(id)arg1;
-+ (id)_newPartsForNode:(id)arg1 resources:(id)arg2;
 + (id)copyDeletedPart;
-+ (id)_newPartForPartRepresentation:(id)arg1 previewPartRepresentation:(id)arg2;
-+ (id)copyMessagePartsFromArrayRepresentation:(id)arg1;
 + (id)copyMessagePartsFromComposition:(id)arg1;
 + (id)copyDetachedMessageParts:(id)arg1;
++ (id)copyMessagePartsFromComposition:(id)arg1 attachmentParts:(id*)arg2;
++ (id)_newPartsForNode:(id)arg1 resources:(id)arg2 attachments:(id*)arg3;
++ (id)_assembleTextPartFromRange:(id)arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)previewImage;
-- (id)composeImages;
-- (id)imageFilename;
-- (void)_storePartFlagsSync;
-- (void)setRowID:(int)arg1;
-- (void)setUIHeight:(unsigned long)arg1 flags:(unsigned long)arg2 store:(BOOL)arg3;
-- (id)composeData;
-- (void)setParentMessage:(id)arg1;
-- (void)getUIHeight:(unsigned int*)arg1 flags:(unsigned int*)arg2;
-- (id)previewText;
-- (void)setOutgoingBubbleColor:(int)arg1;
-- (id)detachedCopy;
-- (int)outgoingBubbleColor;
-- (BOOL)usesColoredBalloon;
-- (void)copyToPasteboard;
-- (id)highlightData;
-- (id)previewData;
-- (id)parentMessage;
-- (int)rowID;
-- (int)type;
-- (id)image;
-- (id)text;
-- (id)imageData;
 - (id)mediaObject;
 - (BOOL)isDisplayable;
+- (int)type;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)image;
+- (id)text;
+- (int)outgoingBubbleColor;
+- (void)setParentMessage:(id)arg1;
+- (id)composeData;
+- (id)previewData;
+- (void)setRowID:(int)arg1;
+- (id)imageFilename;
+- (id)composeImages;
+- (id)highlightData;
+- (id)parentMessage;
+- (id)previewText;
+- (id)detachedCopy;
+- (void)setOutgoingBubbleColor:(int)arg1;
+- (void)copyToPasteboard;
+- (id)previewImage;
+- (id)imageData;
+- (int)rowID;
 
 @end

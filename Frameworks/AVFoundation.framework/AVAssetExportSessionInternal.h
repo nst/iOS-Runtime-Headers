@@ -6,16 +6,16 @@
    See Warning(s) below.
  */
 
-@class NSError, AVURLAsset, AVWeakReference, AVAssetTrack, AVAudioMix, NSString, NSURL, AVVideoComposition, NSArray;
+@class NSError, AVAsset, NSObject<OS_dispatch_queue>, AVWeakReference, AVAssetTrack, AVAudioMix, NSString, NSURL, AVVideoComposition, NSArray;
 
 @interface AVAssetExportSessionInternal : NSObject  {
     AVWeakReference *weakReference;
-    struct dispatch_queue_s { } *readWriteQueue;
+    NSObject<OS_dispatch_queue> *readWriteQueue;
     struct OpaqueFigRemaker { } *remaker;
     int status;
     NSError *error;
     float progress;
-    AVURLAsset *asset;
+    AVAsset *asset;
     AVAssetTrack *firstVideoTrack;
     NSString *preset;
     NSString *preset16x9;
@@ -46,7 +46,10 @@
 
     BOOL optimizeForNetworkUse;
     BOOL outputFileCreatedByRemaker;
-    struct dispatch_queue_s { } *remakerNotificationSerializationQueue;
+    BOOL useHardwareVideoEncoderIfAvailable;
+    long compatibleFileTypesDispatchOncePredicate;
+    NSArray *compatibleFileTypes;
+    NSObject<OS_dispatch_queue> *remakerNotificationSerializationQueue;
 }
 
 

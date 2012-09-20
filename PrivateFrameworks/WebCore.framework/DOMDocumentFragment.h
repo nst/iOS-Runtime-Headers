@@ -6,7 +6,7 @@
 }
 
 
-- (id)querySelector:(id)arg1;
 - (id)querySelectorAll:(id)arg1;
+- (id)querySelector:(id)arg1;
 
 @end

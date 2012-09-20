@@ -32,6 +32,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _selectionButtonAction;
 
+    NSString *_selectionButtonCustomTitle;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -43,24 +44,27 @@
 @property(copy) NSString * labelText;
 @property int selectionButtonType;
 @property(copy) id selectionButtonAction;
+@property(copy) NSString * selectionButtonCustomTitle;
 
 
 - (void)dealloc;
-- (id)labelText;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)layoutSubviews;
 - (void)setSelectionButtonAction:(id)arg1;
-- (int)selectionButtonType;
+- (id)labelText;
 - (int)bannerStyle;
 - (void)animateThumbnailToStackViewCell:(id)arg1 inRootView:(id)arg2 completion:(id)arg3;
+- (void)animateThumbnailToCell:(id)arg1 completion:(id)arg2;
+- (void)setSelectionButtonCustomTitle:(id)arg1;
 - (void)setSelectionButtonType:(int)arg1;
+- (void)updateDisplayForAssets:(id)arg1;
+- (id)initWithBannerStyle:(int)arg1;
 - (id)selectionButtonAction;
 - (void)_plainAnimateThumbnailToView:(id)arg1 orCell:(id)arg2 inRootView:(id)arg3 wideJump:(BOOL)arg4 completion:(id)arg5;
 - (void)_fancyAnimateThumbnailToCell:(id)arg1 completion:(id)arg2;
+- (int)selectionButtonType;
 - (void)_selectionButtonTapped:(id)arg1;
-- (void)animateThumbnailToCell:(id)arg1 completion:(id)arg2;
-- (void)updateDisplayForAssets:(id)arg1;
-- (id)initWithBannerStyle:(int)arg1;
+- (id)selectionButtonCustomTitle;
 - (void)setLabelText:(id)arg1;
 
 @end

@@ -9,12 +9,12 @@
 }
 
 
-- (id)mailbox;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)send;
-- (id)deferredReply;
-- (id)startMigrantDispatchQueue;
 - (id)startThreadDispatchQueue;
+- (id)mailbox;
+- (id)startMigrantDispatchQueue;
+- (id)deferredReply;
 
 @end

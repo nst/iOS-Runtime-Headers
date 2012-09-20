@@ -4,13 +4,24 @@ The headers were produced using [RuntimeBrowser for iPhone](https://github.com/n
 
 You can use the headers this way:
 
-    NSBundle *b = [NSBundle bundleWithPath:@"/System/Library/PrivateFrameworks/Message.framework"];
+    NSBundle *b = [NSBundle bundleWithPath:@"/System/Library/PrivateFrameworks/GAIA.framework"];
     BOOL success = [b load];
+    
+    Class SKTelephonyController = NSClassFromString(@"SKTelephonyController");
+    id tc = [SKTelephonyController sharedInstance];
+    
+    NSLog(@"-- myPhoneNumber: %@", [tc myPhoneNumber]);
+    NSLog(@"-- imei: %@", [tc imei]);
+    
+Many other unique identifiers can be retrieved:
 
-    Class NetworkController = NSClassFromString(@"NetworkController");
-    id nc = [NetworkController sharedInstance];
+    Class AADeviceInfo = NSClassFromString(@"AADeviceInfo");
+    NSLog(@"-- serialNumber: %@", [AADeviceInfo serialNumber]);
+    NSLog(@"-- udid: %@", [AADeviceInfo udid]);
+    NSLog(@"-- appleIDClientIdentifier: %@", [AADeviceInfo appleIDClientIdentifier]);
 
-    NSLog(@"-- IMEI: %@", [nc IMEI]);
+    id deviceInfo = [[[AADeviceInfo alloc] init] autorelease];
+    NSLog(@"-- wifiMacAddress: %@", [deviceInfo wifiMacAddress]);
 
 You can search the headers with [github search](https://github.com/search):
 

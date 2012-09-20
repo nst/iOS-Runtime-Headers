@@ -3,20 +3,24 @@
  */
 
 @interface AVAssetWriterUnknownHelper : AVAssetWriterHelper  {
+    short _alternateGroupID;
 }
 
 
+- (void)setMetadata:(id)arg1;
+- (int)status;
+- (void)addInput:(id)arg1;
+- (BOOL)canAddInput:(id)arg1;
+- (void)startWriting;
+- (BOOL)_canAddInputGroup:(id)arg1 exceptionReason:(id*)arg2;
 - (BOOL)_canAddInput:(id)arg1 exceptionReason:(id*)arg2;
 - (id)initWithConfigurationState:(id)arg1;
 - (void)cancelWriting;
-- (void)addInput:(id)arg1;
-- (BOOL)canAddInput:(id)arg1;
+- (void)addInputGroup:(id)arg1;
+- (BOOL)canAddInputGroup:(id)arg1;
 - (id)initWithURL:(id)arg1 fileType:(id)arg2;
 - (void)setMovieTimeScale:(int)arg1;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (int)status;
-- (void)startWriting;
-- (void)setMetadata:(id)arg1;
 
 @end

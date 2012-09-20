@@ -17,13 +17,13 @@
 @property(retain) DAMessageMoveRequest * origRequest;
 
 
-- (id)sourceID;
-- (id)destID;
 - (id)description;
 - (void)dealloc;
 - (int)status;
-- (id)origRequest;
+- (id)destID;
+- (id)sourceID;
 - (void)setOrigRequest:(id)arg1;
 - (id)initWithStatus:(int)arg1 sourceID:(id)arg2 destID:(id)arg3;
+- (id)origRequest;
 
 @end

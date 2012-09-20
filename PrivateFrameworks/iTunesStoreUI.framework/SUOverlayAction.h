@@ -19,16 +19,16 @@
 @property(retain) UIViewController * viewController;
 
 
+- (void)setOtherViewController:(id)arg1;
+- (id)otherViewController;
 - (void)dealloc;
 - (id)viewController;
+- (id)transition;
+- (void)setTransition:(id)arg1;
 - (void)setViewController:(id)arg1;
 - (void)setAnimationCount:(int)arg1;
 - (int)animationCount;
-- (id)transition;
-- (void)setTransition:(id)arg1;
-- (void)setOtherViewController:(id)arg1;
-- (id)otherViewController;
-- (void)setActionType:(int)arg1;
 - (int)actionType;
+- (void)setActionType:(int)arg1;
 
 @end

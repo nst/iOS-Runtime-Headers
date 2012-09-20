@@ -10,27 +10,27 @@
 }
 
 
-- (void)setAddressListForSender:(id)arg1;
-- (void)setAddressListForTo:(id)arg1;
-- (void)setAddressListForCc:(id)arg1;
-- (void)stripInternalHeaders;
-- (void)removeHeaderForKey:(id)arg1;
-- (id)encodedHeaders;
-- (void)setHeader:(id)arg1 forKey:(id)arg2;
-- (id)firstHeaderForKey:(id)arg1;
+- (id)mutableCopy;
 - (id)description;
 - (void)dealloc;
 - (void)mergeHeaders:(id)arg1;
-- (void)_appendHeaderKey:(id)arg1 value:(id)arg2 toData:(id)arg3;
 - (void)_appendAddedHeaderKey:(id)arg1 value:(id)arg2 toData:(id)arg3;
-- (void)setAddressList:(id)arg1 forKey:(id)arg2;
-- (id)_headerValueForKey:(id)arg1;
+- (void)_appendHeaderKey:(id)arg1 value:(id)arg2 toData:(id)arg3;
 - (BOOL)hasHeaderForKey:(id)arg1;
-- (id)_copyHeaderValueForKey:(id)arg1 offset:(unsigned int*)arg2 decoded:(BOOL)arg3;
+- (id)_headerValueForKey:(id)arg1;
 - (id)_copyHeaderValueForKey:(id)arg1;
+- (id)_copyHeaderValueForKey:(id)arg1 offset:(unsigned int*)arg2 decoded:(BOOL)arg3;
 - (void)setAddressListForBcc:(id)arg1;
 - (id)allHeaderKeys;
-- (id)mutableCopy;
+- (void)setAddressListForCc:(id)arg1;
+- (void)setAddressListForTo:(id)arg1;
+- (void)setAddressListForSender:(id)arg1;
+- (void)removeHeaderForKey:(id)arg1;
+- (void)stripInternalHeaders;
+- (void)setHeader:(id)arg1 forKey:(id)arg2;
+- (id)encodedHeaders;
+- (id)firstHeaderForKey:(id)arg1;
 - (void)setReferences:(id)arg1;
+- (void)setAddressList:(id)arg1 forKey:(id)arg2;
 
 @end

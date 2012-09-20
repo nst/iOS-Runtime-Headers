@@ -25,12 +25,12 @@
 + (void)_resetURL;
 + (unsigned short)providerID;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)cancelRequest;
 - (void)startRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)cancelRequest;
 
 @end

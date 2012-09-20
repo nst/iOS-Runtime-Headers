@@ -2,39 +2,40 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class APSConnection, NSData;
+@class NSObject<OS_dispatch_semaphore>, APSConnection, NSData;
 
 @interface AADeviceInfo : NSObject  {
-    struct _lockdown_connection { } *connection;
     APSConnection *_apsConnection;
     BOOL _tokenDone;
     NSData *_token;
-    struct dispatch_semaphore_s { } *_tokenSema;
+    NSObject<OS_dispatch_semaphore> *_tokenSema;
 }
 
++ (id)serialNumber;
++ (id)appleIDClientIdentifier;
 + (id)udid;
-+ (id)osVersion;
++ (id)productVersion;
++ (id)infoDictionary;
++ (id)userAgentHeader;
 + (id)signatureWithDictionary:(id)arg1;
 + (id)apnsToken;
 + (id)clientInfoHeader;
-+ (id)infoDictionary;
-+ (id)productVersion;
-+ (id)serialNumber;
++ (id)osVersion;
 
-- (id)init;
-- (void)dealloc;
+- (id)serialNumber;
+- (id)appleIDClientIdentifier;
 - (id)udid;
-- (id)osVersion;
+- (id)productVersion;
+- (void).cxx_destruct;
+- (id)init;
+- (id)productType;
+- (id)buildVersion;
 - (id)wifiMacAddress;
-- (id)lockDownValueForKey:(struct __CFString { }*)arg1;
 - (id)regionCode;
-- (id)mobileMeSetupToken;
 - (id)osName;
 - (id)apnsToken;
 - (id)deviceInfoDictionary;
-- (id)buildVersion;
-- (id)productVersion;
-- (id)productType;
-- (id)serialNumber;
+- (id)osVersion;
+- (id)deviceClass;
 
 @end

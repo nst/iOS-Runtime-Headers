@@ -7,9 +7,9 @@
 @interface DOMTreeWalker : DOMObject  {
 }
 
-@property(retain,readonly) DOMNode * root;
+@property(readonly) DOMNode * root;
 @property(readonly) unsigned int whatToShow;
-@property(retain,readonly) <DOMNodeFilter> * filter;
+@property(readonly) <DOMNodeFilter> * filter;
 @property(readonly) BOOL expandEntityReferences;
 @property(retain) DOMNode * currentNode;
 
@@ -17,17 +17,17 @@
 - (void)dealloc;
 - (id)nextNode;
 - (id)previousSibling;
-- (id)parentNode;
 - (void)finalize;
+- (id)parentNode;
 - (id)lastChild;
 - (id)nextSibling;
 - (id)firstChild;
-- (id)currentNode;
 - (void)setCurrentNode:(id)arg1;
-- (id)root;
-- (unsigned int)whatToShow;
-- (id)filter;
-- (BOOL)expandEntityReferences;
+- (id)currentNode;
 - (id)previousNode;
+- (BOOL)expandEntityReferences;
+- (id)filter;
+- (unsigned int)whatToShow;
+- (id)root;
 
 @end

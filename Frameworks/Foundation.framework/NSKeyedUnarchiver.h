@@ -21,27 +21,23 @@
     void *_reserved0;
 }
 
-+ (void)setClass:(Class)arg1 forClassName:(id)arg2;
 + (id)unarchiveObjectWithFile:(id)arg1;
 + (Class)classForClassName:(id)arg1;
 + (id)unarchiveObjectWithData:(id)arg1;
 + (void)initialize;
++ (void)setClass:(Class)arg1 forClassName:(id)arg2;
 + (id)unarchiveObjectWithData:(id)arg1 allowedClasses:(id)arg2;
++ (id)MSSafeUnarchiveObjectWithFile:(id)arg1 outError:(id*)arg2;
++ (id)MSSafeUnarchiveObjectWithData:(id)arg1 outError:(id*)arg2;
++ (id)MSSafeUnarchiveObjectWithFile:(id)arg1;
++ (id)MSSafeUnarchiveObjectWithData:(id)arg1;
 + (id)_mapkit_safeUnarchiveObjectWithData:(id)arg1;
 
-- (unsigned int)_currentUniqueIdentifier;
-- (void)_replaceObject:(id)arg1 withObject:(id)arg2;
-- (void)_temporaryMapReplaceObject:(id)arg1 withObject:(id)arg2;
-- (id)_initWithStream:(struct __CFReadStream { }*)arg1 data:(id)arg2 topDict:(struct __CFDictionary { }*)arg3;
-- (void)setClass:(Class)arg1 forClassName:(id)arg2;
-- (void)setAllowedClasses:(id)arg1;
-- (id)allowedClasses;
-- (id)_blobForCurrentObject;
-- (id)_decodePropertyListForKey:(id)arg1;
-- (id)_decodeArrayOfObjectsForKey:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (int)versionForClassName:(id)arg1;
 - (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
 - (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
@@ -53,20 +49,34 @@
 - (long long)decodeInt64ForKey:(id)arg1;
 - (Class)classForClassName:(id)arg1;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
-- (void)finishDecoding;
 - (id)initForReadingWithData:(id)arg1;
 - (unsigned int)systemVersion;
 - (void)finalize;
 - (double)decodeDoubleForKey:(id)arg1;
-- (int)decodeIntForKey:(id)arg1;
-- (BOOL)containsValueForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
 - (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned int*)arg2;
 - (BOOL)allowsKeyedCoding;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (void)finishDecoding;
+- (int)decodeIntForKey:(id)arg1;
+- (BOOL)containsValueForKey:(id)arg1;
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (id)decodeObjectForKey:(id)arg1;
+- (unsigned int)_currentUniqueIdentifier;
+- (void)_replaceObject:(id)arg1 withObject:(id)arg2;
+- (id)_allowedClassNames;
+- (void)_temporaryMapReplaceObject:(id)arg1 withObject:(id)arg2;
+- (void)_setAllowedClassNames:(id)arg1;
+- (id)_initWithStream:(struct __CFReadStream { }*)arg1 data:(id)arg2 topDict:(struct __CFDictionary { }*)arg3;
+- (void)setClass:(Class)arg1 forClassName:(id)arg2;
+- (void)setRequiresSecureCoding:(BOOL)arg1;
+- (id)_blobForCurrentObject;
+- (void)setAllowedClasses:(id)arg1;
+- (id)allowedClasses;
+- (BOOL)requiresSecureCoding;
+- (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2;
+- (id)_decodePropertyListForKey:(id)arg1;
+- (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
+- (id)_decodeArrayOfObjectsForKey:(id)arg1;
 - (id)initWithStream:(id)arg1;
 
 @end

@@ -12,23 +12,23 @@
 
 
 - (void)setProperties:(id)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)properties;
 - (BOOL)isEmpty;
 - (void)addParagraphsFromTextBody:(id)arg1;
-- (void)removeAllParagraphs;
-- (void)applyTextListStyle:(id)arg1;
-- (void)removeTrailingNewlines;
-- (void)flattenProperties;
-- (id)plainText;
-- (unsigned int)paragraphCount;
-- (id)paragraphAtIndex:(unsigned int)arg1;
-- (id)addParagraph;
-- (id)overrideTextListStyle;
-- (void)removeUnnecessaryOverrides;
 - (id)findFirstTextRunOfClass:(Class)arg1;
-- (void)setParentTextListStyle:(id)arg1;
+- (void)removeTrailingNewlines;
+- (void)applyTextListStyle:(id)arg1;
+- (id)overrideTextListStyle;
+- (void)removeAllParagraphs;
 - (id)textListStyle;
+- (void)flattenProperties;
+- (void)removeUnnecessaryOverrides;
+- (id)addParagraph;
+- (void)setParentTextListStyle:(id)arg1;
+- (unsigned int)paragraphCount;
+- (id)plainText;
+- (id)paragraphAtIndex:(unsigned int)arg1;
 
 @end

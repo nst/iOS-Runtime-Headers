@@ -15,6 +15,22 @@
 + (struct __CFArray { }*)_ns2cfCookies:(id)arg1;
 + (id)cookieWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;
 
+- (id)path;
+- (id)name;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)domain;
+- (id)initWithProperties:(id)arg1;
+- (id)properties;
+- (unsigned int)version;
+- (BOOL)isSecure;
+- (id)value;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
 - (BOOL)_isExpired;
 - (int)_compareForHeaderOrder:(id)arg1;
 - (id)MaxAge;
@@ -38,21 +54,6 @@
 - (BOOL)isSessionOnly;
 - (id)initWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;
 - (id)_key;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (id)domain;
-- (id)properties;
-- (id)initWithProperties:(id)arg1;
-- (unsigned int)version;
-- (BOOL)isSecure;
-- (id)value;
-- (id)path;
-- (id)name;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)comment;
 
 @end

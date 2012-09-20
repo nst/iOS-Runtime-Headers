@@ -13,13 +13,14 @@
 @property <EKEditItemViewControllerDelegate> * editDelegate;
 
 
-- (id)init;
+- (id)_webView;
 - (void)dealloc;
-- (void)setNotes:(id)arg1;
-- (id)notes;
+- (id)init;
+- (void)webViewDidFinishLoad:(id)arg1;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)_webView;
+- (void)setNotes:(id)arg1;
+- (id)notes;
 
 @end

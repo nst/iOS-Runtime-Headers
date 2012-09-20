@@ -9,8 +9,6 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (void)setLoading:(BOOL)arg1;
 - (void)_performPurchaseAnimationForIndexPath:(id)arg1;
 - (BOOL)_addPurchaseBatch:(id)arg1 forIndexPath:(id)arg2;
@@ -18,5 +16,7 @@
 - (BOOL)openDocumentForItemAtIndexPath:(id)arg1 withApplication:(id)arg2;
 - (id)newNoItemsOverlayLabel;
 - (id)itemAtIndexPath:(id)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

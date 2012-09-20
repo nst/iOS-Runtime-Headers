@@ -7,7 +7,7 @@
 @interface SUStorePageProtocol : NSObject <NSCopying> {
     NSArray *_allowedOrientations;
     NSString *_copyright;
-    NSString *_expectedClientIdentifier;
+    NSArray *_expectedClientIdentifiers;
     NSNumber *_focusedItemIdentifier;
     NSArray *_navigationButtons;
     NSArray *_navigationHistoryItems;
@@ -21,7 +21,7 @@
 
 @property(retain) NSArray * allowedOrientations;
 @property(retain) NSString * copyright;
-@property(retain) NSString * expectedClientIdentifier;
+@property(copy) NSArray * expectedClientIdentifiers;
 @property(retain) NSNumber * focusedItemIdentifier;
 @property(copy) NSArray * navigationButtons;
 @property(retain) NSArray * navigationHistoryItems;
@@ -33,9 +33,6 @@
 @property BOOL shouldReplaceRootViewController;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)setNavigationMenus:(id)arg1;
 - (id)navigationMenus;
 - (void)setNavigationHistoryItems:(id)arg1;
@@ -48,7 +45,7 @@
 - (id)_newNavigationMenusFromArray:(id)arg1;
 - (id)_newNavigationHistoryItemsFromArray:(id)arg1;
 - (id)_newNavigationButtonsFromArray:(id)arg1;
-- (void)setExpectedClientIdentifier:(id)arg1;
+- (void)setExpectedClientIdentifiers:(id)arg1;
 - (id)_initCommon;
 - (void)setOverlayBackgroundURLRequest:(id)arg1;
 - (void)setCopyright:(id)arg1;
@@ -66,8 +63,11 @@
 - (id)navigationButtonForLocation:(id)arg1;
 - (BOOL)shouldDisplayInOverlay;
 - (id)allowedOrientations;
-- (id)expectedClientIdentifier;
+- (id)expectedClientIdentifiers;
 - (void)setShouldExcludeFromNavigationHistory:(BOOL)arg1;
 - (BOOL)shouldExcludeFromNavigationHistory;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

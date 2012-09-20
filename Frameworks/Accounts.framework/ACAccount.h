@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class ACAccountType, ACAccountCredential, ACAccount, NSDate, NSMutableSet, ACAccountStore, NSArray, NSSet, NSDictionary, NSString, NSMutableDictionary, NSURL;
+@class ACAccountType, ACAccountCredential, ACAccount, NSMutableSet, ACAccountStore, NSSet, NSArray, NSDictionary, NSDate, NSString, NSMutableDictionary, NSURL;
 
 @interface ACAccount : NSObject  {
     ACAccountStore *_store;
@@ -18,10 +18,13 @@
     NSMutableDictionary *_dataclassProperties;
     BOOL _accountAccessAvailable;
     BOOL _authenticated;
+    BOOL _active;
+    BOOL _supportsAuthentication;
     NSURL *_objectID;
     NSDate *_date;
     ACAccount *_parentAccount;
-    NSURL *_parentAccountObjectID;
+    BOOL _haveCheckedForParentAccount;
+    NSString *_parentAccountIdentifier;
     NSArray *_childAccounts;
     NSMutableSet *_enabledDataclasses;
     NSMutableSet *_provisionedDataclasses;
@@ -34,7 +37,7 @@
 @property(retain) ACAccountCredential * credential;
 @property(copy) NSURL * objectID;
 @property(retain) ACAccount * parentAccount;
-@property(readonly) NSURL * parentAccountObjectID;
+@property(readonly) NSString * parentAccountIdentifier;
 @property(readonly) NSArray * childAccounts;
 @property(retain) NSMutableSet * enabledDataclasses;
 @property(retain) NSSet * provisionedDataclasses;
@@ -42,52 +45,75 @@
 @property BOOL authenticated;
 @property(readonly) NSDictionary * accountProperties;
 @property(readonly) NSDate * date;
+@property(readonly) ACAccount * displayAccount;
+@property ACAccountStore * accountStore;
+@property BOOL active;
+@property BOOL supportsAuthentication;
 
 + (id)_createNewAccountUID;
 
-- (id)accountDescription;
-- (BOOL)isEnabledForDataclass:(struct NSString { Class x1; }*)arg1;
-- (void)setEnabled:(BOOL)arg1 forDataclass:(struct NSString { Class x1; }*)arg2;
-- (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
-- (id)accountPropertyForKey:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (void)setAccountDescription:(id)arg1;
+- (id)credential;
+- (id)username;
+- (void)setUsername:(id)arg1;
 - (void)setProperties:(id)arg1 forDataclass:(struct NSString { Class x1; }*)arg2;
-- (void)setEnabledDataclasses:(id)arg1;
+- (BOOL)isEnabledToSyncDataclass:(struct NSString { Class x1; }*)arg1;
 - (void)setProvisionedDataclasses:(id)arg1;
 - (id)childAccounts;
-- (id)parentAccountObjectID;
-- (id)initWithAccountType:(id)arg1;
+- (void)setSupportsAuthentication:(BOOL)arg1;
 - (void)setDataclassProperties:(id)arg1;
-- (void)setOwningBundleID:(id)arg1;
 - (void)setAccountProperties:(id)arg1;
 - (id)owningBundleID;
-- (id)accountProperties;
-- (void)setAccountStore:(id)arg1;
-- (void)setUsername:(id)arg1;
-- (void)setAuthenticated:(BOOL)arg1;
-- (id)username;
-- (id)dataclassProperties;
-- (id)provisionedDataclasses;
+- (id)enabledAndSyncableDataclasses;
+- (id)_enabledDataclassesShouldFaultEmptySet:(BOOL)arg1;
+- (BOOL)supportsAuthentication;
 - (id)accountType;
-- (BOOL)authenticated;
-- (id)credential;
-- (void)setCredential:(id)arg1;
-- (BOOL)isProvisionedForDataclass:(struct NSString { Class x1; }*)arg1;
-- (id)propertiesForDataclass:(struct NSString { Class x1; }*)arg1;
-- (id)parentAccount;
+- (void)setAccountType:(id)arg1;
 - (id)identifier;
+- (id)description;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)setObjectID:(id)arg1;
+- (id)objectID;
+- (void)credentialsChanged:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (BOOL)active;
 - (void)setDate:(id)arg1;
+- (void)setActive:(BOOL)arg1;
 - (id)date;
 - (void)reload;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setAccountType:(id)arg1;
+- (void)setAccountDescription:(id)arg1;
+- (void)setOwningBundleID:(id)arg1;
+- (void)setEnabledDataclasses:(id)arg1;
+- (void)setAuthenticated:(BOOL)arg1;
+- (id)propertiesForDataclass:(struct NSString { Class x1; }*)arg1;
+- (id)displayAccount;
 - (void)setParentAccount:(id)arg1;
-- (void)setObjectID:(id)arg1;
-- (id)objectID;
+- (BOOL)isProvisionedForDataclass:(struct NSString { Class x1; }*)arg1;
+- (BOOL)isEnabledForDataclass:(struct NSString { Class x1; }*)arg1;
+- (id)accountStore;
+- (void)setAccountStore:(id)arg1;
+- (id)accountDescription;
+- (void)setEnabled:(BOOL)arg1 forDataclass:(struct NSString { Class x1; }*)arg2;
+- (id)accountPropertyForKey:(id)arg1;
+- (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
+- (BOOL)authenticated;
+- (void)setCredential:(id)arg1;
+- (id)initWithAccountType:(id)arg1;
+- (id)accountProperties;
 - (id)enabledDataclasses;
+- (id)provisionedDataclasses;
+- (id)parentAccountIdentifier;
+- (id)dataclassProperties;
+- (id)parentAccount;
+- (id)appleID;
+- (void)setDSID:(id)arg1;
+- (id)_registeredBundles;
+- (BOOL)canRemoveAccount;
+- (void)unregisterBundle:(id)arg1;
+- (void)registerBundle:(id)arg1;
+- (id)initWithAppleID:(id)arg1 password:(id)arg2;
+- (id)dsid;
 
 @end

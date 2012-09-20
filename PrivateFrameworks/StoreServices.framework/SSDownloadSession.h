@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSXPCConnection, SSDownloadAsset, SSDownload;
+@class SSDownload, SSXPCConnection, NSObject<OS_dispatch_queue>, SSDownloadAsset;
 
 @interface SSDownloadSession : NSObject  {
     SSXPCConnection *_controlConnection;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     long long _sessionID;
 }
 
@@ -14,14 +14,14 @@
 @property(readonly) SSDownloadAsset * downloadAsset;
 
 
-- (id)download;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)init;
-- (void)dealloc;
 - (id)downloadAsset;
-- (void*)_copySessionPropertyWithKey:(const char *)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)_copySessionPropertyWithKey:(const char *)arg1;
 - (id)_initSSDownloadSession;
 - (id)_initWithSessionIdentifier:(long long)arg1 controlConnection:(id)arg2;
+- (id)download;
 
 @end

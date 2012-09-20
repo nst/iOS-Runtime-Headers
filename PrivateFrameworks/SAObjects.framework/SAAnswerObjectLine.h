@@ -10,8 +10,8 @@
 @property(copy) NSURL * image;
 @property(copy) NSString * text;
 
-+ (id)objectLine;
 + (id)objectLineWithDictionary:(id)arg1 context:(id)arg2;
++ (id)objectLine;
 
 - (id)groupIdentifier;
 - (id)image;

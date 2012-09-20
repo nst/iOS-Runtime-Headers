@@ -21,24 +21,23 @@
 @property(retain) NSArray * leaderboardSectionLocations;
 
 
-- (id)description;
-- (void)dealloc;
 - (id)leaderboardSectionLocations;
 - (id)leaderboardBorderStyles;
 - (int)bottomEdgeStyle;
 - (int)topEdgeStyle;
-- (float)contentsMargin;
+- (void)configureBackgroundView;
 - (void)setLeaderboardSectionLocations:(id)arg1;
 - (void)setBottomEdgeStyle:(int)arg1;
 - (void)setTopEdgeStyle:(int)arg1;
 - (void)setLeaderboardBorderStyles:(id)arg1;
 - (id)selectedLeaderboardBackgroundView;
 - (void)setLeaderboardCellStyles:(id)arg1;
+- (void)updateBackgroundViews;
 - (id)leaderboardCellStyles;
 - (id)leaderboardBackgroundView;
-- (void)updateBackgroundViews;
-- (void)configureBackgroundView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
+- (id)description;
+- (void)dealloc;
 - (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 
 @end

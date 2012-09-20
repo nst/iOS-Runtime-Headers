@@ -36,33 +36,34 @@
 }
 
 
+- (id).cxx_construct;
 - (void)dealloc;
-- (void)setFillImage:(struct CGImage { }*)arg1;
 - (void)setFillColor:(struct CGColor { }*)arg1;
 - (void)setLineWidth:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGContext { }*)_cgContext;
-- (void)setMapper:(id)arg1;
-- (id)mapper;
-- (float)currentScaleFactor;
-- (void)setStrokeColor:(struct CGColor { }*)arg1;
-- (void)setLineDash:(id)arg1;
-- (void)addDebugPath:(struct CGPath { }*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transformRectToPage:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_applyTransform:(id)arg1;
-- (void)_createCGContext;
-- (void)_playbackActions;
-- (void)_closeContext;
-- (void)_addTransform:(id)arg1;
-- (void)_restoreLastTransform;
+- (void)addPath:(struct CGPath { }*)arg1;
+- (void)addDebugPath:(struct CGPath { }*)arg1;
+- (void)setLineDash:(id)arg1;
+- (void)setFillImage:(struct CGImage { }*)arg1;
+- (void)setStrokeColor:(struct CGColor { }*)arg1;
+- (float)currentScaleFactor;
+- (id)mapper;
+- (void)setMapper:(id)arg1;
+- (struct CGContext { }*)_cgContext;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_transformRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withTransform:(id)arg2;
+- (void)_restoreLastTransform;
+- (void)_addTransform:(id)arg1;
+- (void)_closeContext;
+- (void)_playbackActions;
+- (void)_copyCGContext;
+- (void)_applyTransform:(id)arg1;
+- (id)copyPDF;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pdfFrame;
-- (id)createPDF;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transformRectToGroup:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })currentTransform;
 - (void)restoreLastTransform;
-- (void)addPath:(struct CGPath { }*)arg1;
 - (void)addTransform:(id)arg1;
 
 @end

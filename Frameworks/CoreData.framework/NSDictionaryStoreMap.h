@@ -11,18 +11,18 @@
 + (void)initialize;
 
 - (void)dealloc;
-- (id)initWithStore:(id)arg1 fromArchivedData:(id)arg2;
-- (id)_theDictionary;
-- (void)updateObject:(id)arg1 objectIDMap:(id)arg2;
-- (id)retainedObjectIDsForRelationship:(id)arg1 forObjectID:(id)arg2;
-- (id)handleFetchRequest:(id)arg1;
 - (id)_archivedData;
-- (id)_nodeFromObject:(id)arg1 objectIDMap:(id)arg2;
-- (void)removeObject:(id)arg1 objectIDMap:(id)arg2;
+- (id)handleFetchRequest:(id)arg1;
+- (id)retainedObjectIDsForRelationship:(id)arg1 forObjectID:(id)arg2;
+- (void)updateObject:(id)arg1 objectIDMap:(id)arg2;
+- (id)_theDictionary;
+- (id)initWithStore:(id)arg1 fromArchivedData:(id)arg2;
 - (void)addObject:(id)arg1 objectIDMap:(id)arg2;
+- (void)removeObject:(id)arg1 objectIDMap:(id)arg2;
+- (id)_nodeFromObject:(id)arg1 objectIDMap:(id)arg2;
 - (id)dataForKey:(id)arg1;
-- (id)initWithStore:(id)arg1 fromPath:(id)arg2;
-- (id)initWithStore:(id)arg1;
 - (void)saveToPath:(id)arg1;
+- (id)initWithStore:(id)arg1;
+- (id)initWithStore:(id)arg1 fromPath:(id)arg2;
 
 @end

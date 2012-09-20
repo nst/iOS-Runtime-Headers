@@ -6,7 +6,7 @@
 }
 
 
-- (id)next;
 - (BOOL)hasNext;
+- (id)next;
 
 @end

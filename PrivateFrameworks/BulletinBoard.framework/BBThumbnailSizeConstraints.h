@@ -21,7 +21,8 @@
 @property float thumbnailScale;
 
 
-- (float)fixedHeight;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (float)thumbnailScale;
 - (void)setThumbnailScale:(float)arg1;
 - (void)setMaxAspectRatio:(float)arg1;
@@ -31,12 +32,11 @@
 - (void)setFixedWidth:(float)arg1;
 - (void)setConstraintType:(int)arg1;
 - (float)fixedDimension;
-- (float)fixedWidth;
+- (float)fixedHeight;
 - (float)maxAspectRatio;
 - (float)minAspectRatio;
 - (int)constraintType;
 - (BOOL)areReasonable;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (float)fixedWidth;
 
 @end

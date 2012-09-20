@@ -10,6 +10,8 @@
 + (void)_accessibilityStartServer;
 + (void)initialize;
 + (id)loadAccessibilityBundle:(id)arg1 didLoad:(BOOL*)arg2;
++ (void)_accessibilityLoadSubbundles:(id)arg1;
++ (void)_accessibilityInitializeRuntimeOverrides;
 + (void)loadActualAccessibilityBundle:(id)arg1 didLoad:(BOOL*)arg2 loadSubbundles:(BOOL)arg3;
 + (id)_axBundleForBundle:(id)arg1;
 + (id)loadAccessibilityBundle:(id)arg1 didLoad:(BOOL*)arg2 force:(BOOL)arg3;

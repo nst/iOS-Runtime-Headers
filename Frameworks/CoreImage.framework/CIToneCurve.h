@@ -34,7 +34,6 @@
 - (id)inputPoint2;
 - (id)inputPoint1;
 - (id)inputPoint0;
-- (id)_kernel8;
 - (id)_kernel16;
 - (void)setInputPoint4:(id)arg1;
 - (void)setInputPoint3:(id)arg1;
@@ -43,8 +42,8 @@
 - (void)setInputPoint0:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
-- (id)outputImage;
 - (BOOL)_isIdentity;
+- (id)outputImage;
 - (void)setDefaults;
 
 @end

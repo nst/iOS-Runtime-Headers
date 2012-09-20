@@ -20,11 +20,13 @@
 @property(retain) CoreDAVItem * property;
 @property(retain) CoreDAVItemWithNoChildren * selfItem;
 
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (void)setAuthenticated:(id)arg1;
+- (id)init;
+- (void)setProperty:(id)arg1;
+- (id)property;
 - (id)initTypeIsSelf;
 - (id)initTypeIsUnauthenticated;
 - (id)initTypeIsAuthenticated;
@@ -32,18 +34,16 @@
 - (id)initTypeIsHREFWithURL:(id)arg1;
 - (id)initTypeIsAll;
 - (id)selfItem;
-- (id)authenticated;
 - (id)all;
 - (void)setSelfItem:(id)arg1;
 - (void)setUnauthenticated:(id)arg1;
+- (void)setAuthenticated:(id)arg1;
 - (void)setAll:(id)arg1;
 - (id)hashString;
-- (id)copyParseRules;
 - (id)unauthenticated;
 - (void)write:(id)arg1;
 - (void)setHref:(id)arg1;
 - (id)href;
-- (void)setProperty:(id)arg1;
-- (id)property;
+- (id)authenticated;
 
 @end

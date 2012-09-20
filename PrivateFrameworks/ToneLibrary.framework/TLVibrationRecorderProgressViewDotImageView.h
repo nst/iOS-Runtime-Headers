@@ -15,6 +15,10 @@
 @property double previousPauseDuration;
 
 
+- (void)setPreviousPauseDuration:(double)arg1;
+- (double)previousPauseDuration;
+- (void)setPreviousPauseTimeInterval:(double)arg1;
+- (double)previousPauseTimeInterval;
 - (BOOL)isAccessibilityElement;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
@@ -24,9 +28,5 @@
 - (id)accessibilityLabel;
 - (double)duration;
 - (void)setDuration:(double)arg1;
-- (void)setPreviousPauseDuration:(double)arg1;
-- (double)previousPauseDuration;
-- (void)setPreviousPauseTimeInterval:(double)arg1;
-- (double)previousPauseTimeInterval;
 
 @end

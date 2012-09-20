@@ -12,8 +12,12 @@
 @property BOOL showAttachments;
 
 
+- (id)event;
+- (void)setEvent:(id)arg1;
+- (void)loadView;
 - (BOOL)showAttachments;
 - (void)refreshStartAndEndDates;
+- (BOOL)saveCalendarItemWithSpan:(int)arg1 error:(id*)arg2;
 - (id)defaultTitleForCalendarItem;
 - (id)_viewForSheet;
 - (id)_nameForDeleteButton;
@@ -22,11 +26,10 @@
 - (void)setupDeleteButton;
 - (void)_revertEvent;
 - (id)notificationNamesForLocaleChange;
-- (id)preferredTitle;
 - (id)_editItems;
+- (id)preferredTitle;
 - (BOOL)_canDetachSingleOccurrence;
 - (void)setShowAttachments:(BOOL)arg1;
-- (id)event;
-- (void)setEvent:(id)arg1;
+- (unsigned int)entityType;
 
 @end

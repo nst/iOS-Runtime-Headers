@@ -25,9 +25,27 @@
 + (id)event;
 + (id)eventWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
 - (void)setParticipants:(id)arg1;
 - (id)participants;
+- (id)groupIdentifier;
+- (id)readOnly;
+- (id)location;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (id)recurrences;
+- (void)setRecurrences:(id)arg1;
+- (void)setReadOnly:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setTimeZoneId:(id)arg1;
+- (id)timeZoneId;
+- (void)setIncludeRecurrences:(id)arg1;
+- (id)includeRecurrences;
+- (void)setCalendarId:(id)arg1;
+- (id)calendarId;
+- (void)setAlerts:(id)arg1;
+- (id)alerts;
+- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
+- (id)encodedClassName;
 - (BOOL)allDay;
 - (void)setAttendees:(id)arg1;
 - (void)setNotes:(id)arg1;
@@ -38,23 +56,5 @@
 - (void)setAllDay:(BOOL)arg1;
 - (id)endDate;
 - (id)startDate;
-- (id)readOnly;
-- (id)location;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (void)setReadOnly:(id)arg1;
-- (void)setLocation:(id)arg1;
-- (id)recurrences;
-- (void)setRecurrences:(id)arg1;
-- (id)calendarId;
-- (void)setCalendarId:(id)arg1;
-- (id)includeRecurrences;
-- (void)setIncludeRecurrences:(id)arg1;
-- (id)timeZoneId;
-- (void)setTimeZoneId:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
-- (id)encodedClassName;
-- (id)alerts;
-- (void)setAlerts:(id)arg1;
 
 @end

@@ -15,16 +15,18 @@
 }
 
 + (id)sharedInstance;
++ (id)accountStore;
 + (void)vendDaemonManagers:(Class)arg1;
 + (void)reacquireClientRestrictions:(id)arg1;
 + (id)oneshotListOfAccountPersistentUUIDs;
 
+- (BOOL)removeAccount:(id)arg1;
+- (BOOL)addAccount:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)reloadAccounts;
 - (id)accounts;
-- (id)init;
-- (void)dealloc;
-- (BOOL)removeAccount:(id)arg1;
-- (BOOL)hasActiveAccounts;
+- (BOOL)removeAccount:(id)arg1 forAccountIDReset:(BOOL)arg2;
 - (void)checkValidityForAccount:(id)arg1 consumer:(id)arg2;
 - (BOOL)hasPendingAccountSetup;
 - (void)removePendingAccountSetup;
@@ -37,12 +39,14 @@
 - (void)setAsideAccountWithID:(id)arg1;
 - (BOOL)saveAllAccountSettings;
 - (void)cleanupLaunchdSemaphore;
+- (id)_childAccountTypes;
 - (void)_respondToAccountsChangedNotification;
 - (id)getStatusReports;
 - (BOOL)_addAccount:(id)arg1 checkUniqueness:(BOOL)arg2;
 - (BOOL)_saveAllAccountSettings:(BOOL)arg1;
 - (void)disableDaemon;
 - (void)enableDaemon;
+- (BOOL)hasActiveAccounts;
 - (void)_startAgentMonitoring;
 - (id)_accountSettingsAccountTypes;
 - (void)_updateExternalSourcesAndAccountNamesForAccounts:(id)arg1;
@@ -50,7 +54,7 @@
 - (void)_stopAgentMonitoring;
 - (void)_setExternalSource:(id)arg1 statusForDataTypes:(int)arg2;
 - (void)_setAccountName:(id)arg1 forDataTypes:(int)arg2;
-- (BOOL)addAccount:(id)arg1;
-- (BOOL)removeAccount:(id)arg1 forAccountIDReset:(BOOL)arg2;
+- (BOOL)_hasDataclassWeCareAbout:(id)arg1;
+- (id)acAccountsWeOwn;
 
 @end

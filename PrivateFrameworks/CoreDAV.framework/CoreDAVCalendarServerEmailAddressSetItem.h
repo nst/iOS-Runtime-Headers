@@ -12,15 +12,15 @@
 @property(retain) NSMutableSet * emailAddresses;
 @property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 
++ (id)copyParseRules;
 
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (void)setEmailAddresses:(id)arg1;
 - (id)emailAddresses;
-- (void)addEmailAddress:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (void)setUnauthenticated:(id)arg1;
-- (id)copyParseRules;
 - (id)unauthenticated;
+- (void)addEmailAddress:(id)arg1;
 
 @end

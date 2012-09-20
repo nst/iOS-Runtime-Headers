@@ -10,13 +10,13 @@
     unsigned int _consumedLength;
 }
 
-@property struct _NSRange { unsigned int location; unsigned int length; } range;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 
-+ (id)rangedFilterWithConsumers:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 + (id)rangedFilterWithConsumer:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (id)rangedFilterWithConsumers:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (int)appendData:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

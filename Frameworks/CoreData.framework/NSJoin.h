@@ -11,14 +11,14 @@
 
 + (id)joinWithSourceAttributeName:(id)arg1 destinationAttributeName:(id)arg2;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)destinationAttributeName;
+- (id)sourceAttributeName;
+- (id)initWithSourceAttributeName:(id)arg1 destinationAttributeName:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSourceAttributeName:(id)arg1 destinationAttributeName:(id)arg2;
-- (id)sourceAttributeName;
-- (id)destinationAttributeName;
 
 @end

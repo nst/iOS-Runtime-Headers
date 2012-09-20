@@ -14,20 +14,20 @@
 @property(retain) NSString * title;
 @property(retain) id userInfo;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
+- (void)_sendDidChange;
+- (id)_className;
+- (id)scriptAttributeKeys;
 - (id)userInfo;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setUserInfo:(id)arg1;
 - (BOOL)enabled;
 - (id)title;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (id)attributeKeys;
-- (void)_sendDidChange;
-- (id)_className;
-- (id)scriptAttributeKeys;
 
 @end

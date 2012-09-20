@@ -17,10 +17,10 @@
 
 - (unsigned int)retainCount;
 - (id)retain;
-- (void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
+- (oneway void)release;
 - (id)init;
+- (id)autorelease;
 - (BOOL)runScriptFile:(id)arg1;
 - (void)_killConnection;
 - (BOOL)_isReady;

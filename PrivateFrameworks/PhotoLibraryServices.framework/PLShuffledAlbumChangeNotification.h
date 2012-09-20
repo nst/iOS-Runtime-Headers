@@ -11,24 +11,24 @@
     NSOrderedSet *_newSet;
 }
 
-+ (id)notificationForShuffledAlbum:(id)arg1 fromAlbumChangeNotification:(id)arg2;
++ (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)object;
 - (id)initWithShuffledAlbum:(id)arg1 albumChangeNotification:(id)arg2;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (BOOL)countDidChange;
 - (id)_changedObjects;
+- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (BOOL)keyAssetDidChange;
+- (BOOL)titleDidChange;
 - (id)_diffDescription;
 - (void)_calculateDiffs;
-- (id)album;
-- (id)object;
-- (BOOL)titleDidChange;
-- (BOOL)shouldReload;
 - (id)changedIndexes;
 - (id)insertedIndexes;
 - (id)deletedIndexes;
+- (BOOL)shouldReload;
+- (id)album;
 
 @end

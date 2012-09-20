@@ -53,13 +53,21 @@
 
 
 - (void)dealloc;
+- (id)titleFont;
+- (void)setHeaderFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })headerFrame;
+- (float)headerHeight;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDontStrokeOutline:(BOOL)arg1;
 - (BOOL)dontStrokeOutline;
 - (void)setWeekRows:(int)arg1;
 - (int)weekRows;
 - (id)dayViews;
 - (void)setDisplayedMonth:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
-- (void)setHeaderFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setupDays;
 - (void)showYearInTitle:(BOOL)arg1;
 - (id)initWithDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -68,9 +76,10 @@
 - (id)monthTitleColor;
 - (id)headerFillColor;
 - (id)thisMonthBackgroundGradientImage;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })headerFrame;
 - (void)drawDayAreaWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawHeaderLine:(float)arg1;
 - (id)headerLineColor;
+- (void)drawGridlines;
 - (id)gridlineColor;
 - (id)engravedGridlineColor;
 - (float)weekRowHeight;
@@ -82,12 +91,5 @@
 - (void)setIsInspected:(BOOL)arg1;
 - (BOOL)isInspected;
 - (id)engravedTextColor;
-- (float)headerHeight;
-- (id)titleFont;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

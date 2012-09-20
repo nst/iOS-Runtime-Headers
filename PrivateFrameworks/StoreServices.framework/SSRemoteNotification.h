@@ -4,7 +4,7 @@
 
 @class NSString, NSDictionary;
 
-@interface SSRemoteNotification : NSObject  {
+@interface SSRemoteNotification : NSObject <SSXPCCoding> {
     NSDictionary *_userInfo;
 }
 
@@ -18,17 +18,19 @@
 @property(readonly) NSDictionary * notificationUserInfo;
 
 
-- (void)dealloc;
-- (id)badgeValue;
 - (id)valueForKey:(id)arg1;
-- (int)actionType;
+- (void)dealloc;
 - (id)notificationUserInfo;
 - (id)soundFileName;
 - (id)alertTitleString;
 - (id)alertOKString;
 - (id)alertCancelString;
 - (id)alertBodyString;
-- (id)_valueForAlertKey:(id)arg1;
 - (id)initWithNotificationUserInfo:(id)arg1;
+- (id)_valueForAlertKey:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (id)badgeValue;
+- (int)actionType;
 
 @end

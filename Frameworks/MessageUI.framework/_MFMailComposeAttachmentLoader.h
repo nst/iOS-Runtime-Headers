@@ -12,7 +12,7 @@
 
 
 - (void)dealloc;
-- (id)initWithMessage:(id)arg1 content:(id)arg2 isDraft:(BOOL)arg3;
 - (void)loadAttachments;
+- (id)initWithMessage:(id)arg1 content:(id)arg2 isDraft:(BOOL)arg3;
 
 @end

@@ -15,10 +15,9 @@
 @property(copy) NSArray * responseNodes;
 
 
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)URIs;
+- (void)setURIs:(id)arg1;
+- (id)bagKey;
 - (void)setResponseNodes:(id)arg1;
 - (id)responseNodes;
 - (void)setRegionContext:(id)arg1;
@@ -30,9 +29,10 @@
 - (BOOL)wantsCompressedBody;
 - (id)requiredKeys;
 - (BOOL)wantsBinaryPush;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (int)command;
-- (id)bagKey;
-- (id)URIs;
-- (void)setURIs:(id)arg1;
+- (id)messageBody;
 
 @end

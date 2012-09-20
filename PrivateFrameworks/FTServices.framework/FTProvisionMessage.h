@@ -6,6 +6,7 @@
 
 @interface FTProvisionMessage : FTMessage <NSCopying> {
     NSString *_service;
+    NSDictionary *_linkInfo;
     NSString *_realm;
     NSData *_csr;
     NSDictionary *_authenticationInfo;
@@ -22,20 +23,27 @@
 @property(copy) NSString * protocolVersion;
 @property(copy) NSString * userID;
 @property(copy) NSDictionary * authenticationInfo;
+@property(copy) NSDictionary * linkInfo;
 @property(copy) NSArray * URIs;
 @property(copy) NSData * responseCertificate;
 @property(copy) NSArray * responseBindings;
 
 
-- (void)setService:(id)arg1;
-- (id)messageBody;
-- (id)realm;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)URIs;
+- (id)responseCertificate;
+- (void)setURIs:(id)arg1;
+- (void)setAuthenticationInfo:(id)arg1;
+- (void)setLinkInfo:(id)arg1;
+- (void)setUserID:(id)arg1;
+- (void)setCsr:(id)arg1;
+- (void)setRealm:(id)arg1;
+- (id)responseBindings;
+- (id)userID;
+- (id)bagKey;
 - (void)setResponseCertificate:(id)arg1;
 - (id)authenticationInfo;
 - (id)csr;
+- (id)linkInfo;
 - (void)setResponseBindings:(id)arg1;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)additionalMessageHeaders;
@@ -45,19 +53,15 @@
 - (BOOL)wantsCompressedBody;
 - (id)requiredKeys;
 - (BOOL)wantsBinaryPush;
-- (int)command;
 - (void)setProtocolVersion:(id)arg1;
 - (id)protocolVersion;
-- (id)bagKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (int)command;
 - (id)service;
-- (id)URIs;
-- (id)responseCertificate;
-- (void)setURIs:(id)arg1;
-- (void)setAuthenticationInfo:(id)arg1;
-- (void)setUserID:(id)arg1;
-- (void)setCsr:(id)arg1;
-- (void)setRealm:(id)arg1;
-- (id)responseBindings;
-- (id)userID;
+- (void)setService:(id)arg1;
+- (id)messageBody;
+- (id)realm;
 
 @end

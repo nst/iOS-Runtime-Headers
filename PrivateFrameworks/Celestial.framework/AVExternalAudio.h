@@ -8,10 +8,11 @@
 
 + (id)avExternalAudio:(id)arg1;
 
-- (void)dealloc;
-- (id)initWithDelegate:(id)arg1;
-- (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (id)attributeForKey:(id)arg1;
+- (id)initWithDelegate:(id)arg1;
+- (void)dealloc;
+- (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (BOOL)isActive;
 - (void)fmpChangeConnectionActive:(BOOL)arg1;
 - (void)fmpUserVolumeDidChange;
 - (void)fmpServerConnectionDied;
@@ -20,7 +21,6 @@
 - (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
 - (BOOL)activate:(id*)arg1;
 - (BOOL)okToNotifyFromThisThread;
-- (BOOL)isActive;
 - (float)volume;
 
 @end

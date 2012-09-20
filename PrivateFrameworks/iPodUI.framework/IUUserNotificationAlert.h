@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSString;
+@class NSString, NSObject<OS_dispatch_queue>;
 
 @interface IUUserNotificationAlert : NSObject  {
 
@@ -14,7 +14,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
 
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     struct __CFDictionary { } *_notificationDictionary;
     struct __CFUserNotification { } *_userNotification;
 }
@@ -25,12 +25,13 @@
 
 
 - (void)cancel;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)_cancelUserNotification;
 - (void)setCompletionHandler:(id)arg1;
-- (id)completionHandler;
 - (id)message;
 - (void)setMessage:(id)arg1;
+- (id)completionHandler;
 - (id)title;
 - (void)show;
 - (void)setTitle:(id)arg1;
@@ -38,7 +39,6 @@
 - (void)_dismissWithResponseDictionary:(id)arg1 flags:(unsigned long)arg2;
 - (void)_redisplayIfNeeded;
 - (void)_setValue:(id)arg1 forUserNotificationKey:(struct __CFString { }*)arg2;
-- (void)_cancelUserNotification;
 - (void)setButtonTitle:(id)arg1 forKey:(struct __CFString { }*)arg2;
 
 @end

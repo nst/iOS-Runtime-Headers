@@ -2,68 +2,85 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary, NSArray, ML3AggregateQuery, ML3Predicate, NSString;
+@class ML3MusicLibrary, NSArray, NSString, ML3Predicate, ML3AggregateQuery;
 
 @interface ML3Query : NSObject <NSCoding> {
     ML3MusicLibrary *_library;
     Class _entityClass;
     ML3Predicate *_predicate;
-    NSArray *_orderingProperties;
-    NSArray *_directionality;
-    BOOL _usingSections;
+    NSArray *_orderingTerms;
+    NSString *_propertyToCount;
     ML3AggregateQuery *_nonDirectAggregateQuery;
+    BOOL _usingSections;
+    BOOL _filtersOnDynamicProperties;
 }
 
 @property(readonly) ML3MusicLibrary * library;
 @property(readonly) Class entityClass;
 @property(readonly) ML3Predicate * predicate;
-@property(readonly) NSArray * orderingProperties;
+@property(readonly) NSArray * orderingTerms;
+@property(readonly) NSString * propertyToCount;
 @property(readonly) BOOL hasEntities;
 @property(readonly) unsigned int countOfEntities;
 @property(readonly) ML3AggregateQuery * nonDirectAggregateQuery;
 @property(readonly) NSString * sectionProperty;
 @property(readonly) BOOL usingSections;
+@property(readonly) NSString * selectPersistentIDsSQL;
+@property(readonly) NSString * selectCountSQL;
+@property(readonly) NSString * persistentIDProperty;
+@property(readonly) BOOL distinctPersistentIDProperty;
+@property(readonly) BOOL filtersOnDynamicProperties;
 
 
-- (id)library;
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (void)dealloc;
-- (id)valueForAggregateFunction:(id)arg1 onEntitiesForProperty:(id)arg2;
-- (void)enumeratePersistentIDsAndProperties:(id)arg1 countedProperties:(id)arg2 usingBlock:(id)arg3;
-- (void)enumerateSectionsUsingBlock:(id)arg1;
-- (Class)entityClass;
-- (void)enumeratePersistentIDsAndProperties:(id)arg1 countedProperties:(id)arg2 ordered:(BOOL)arg3 cancelBlock:(id)arg4 usingBlock:(id)arg5;
-- (BOOL)hasEntities;
-- (id)orderingProperties;
-- (id)sections;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)bindToCountSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
+- (void).cxx_destruct;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)filtersOnDynamicProperties;
+- (void)bindToCountStatement:(id)arg1 bindingIndex:(inout int*)arg2;
 - (id)selectCountSQL;
 - (id)selectPersistentIDsSQL;
 - (id)selectUnorderedPersistentIDsSQL;
-- (id)selectSQLWithColumns:(id)arg1 orderingProperties:(id)arg2 directionality:(id)arg3;
-- (BOOL)deleteAllEntitiesFromLibrary;
+- (void)bindToLowerBoundStatement:(id)arg1 bindingIndex:(inout int*)arg2 orderingTerms:(id)arg3 lowerBoundPersistentID:(long long)arg4;
+- (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 orderingTerms:(id)arg3 directionality:(id)arg4 usingLowerBound:(BOOL)arg5;
+- (id)selectSQLWithColumns:(id)arg1 orderingTerms:(id)arg2 directionality:(id)arg3;
 - (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2;
-- (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 orderingProperties:(id)arg3;
-- (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 orderingProperties:(id)arg3 directionality:(id)arg4;
+- (id)valueForAggregateFunction:(id)arg1 onEntitiesForProperty:(id)arg2;
+- (void)enumeratePersistentIDsAndProperties:(id)arg1 countedProperties:(id)arg2 usingBlock:(id)arg3;
+- (BOOL)deleteAllEntitiesFromLibrary;
+- (id)selectSQLWithColumns:(id)arg1 orderingTerms:(id)arg2 distinct:(BOOL)arg3;
+- (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 distinct:(BOOL)arg3;
+- (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2 distinct:(BOOL)arg3;
+- (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 orderingTerms:(id)arg3;
+- (id)persistentIDProperty;
+- (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 orderingTerms:(id)arg3 directionality:(id)arg4 usingLowerBound:(BOOL)arg5 distinct:(BOOL)arg6 limit:(unsigned int)arg7;
 - (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2;
+- (void)enumeratePersistentIDsAndProperties:(id)arg1 countedProperties:(id)arg2 ordered:(BOOL)arg3 cancelBlock:(id)arg4 usingBlock:(id)arg5;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 countedProperties:(id)arg2 ordered:(BOOL)arg3 usingBlock:(id)arg4;
 - (id)sectionProperty;
-- (void)bindToSectionsSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
+- (void)bindToSectionsStatement:(id)arg1 bindingIndex:(inout int*)arg2;
 - (id)selectSectionsSQLWithDistinctPersistentIDProperty:(BOOL)arg1;
 - (BOOL)distinctPersistentIDProperty;
-- (unsigned int)countOfEntities;
 - (BOOL)deleteAllEntitiesFromLibraryWithDeletionType:(int)arg1;
-- (void)bindToPersistentIDsSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
-- (id)selectSQLWithColumns:(id)arg1 orderingProperties:(id)arg2;
-- (id)persistentIDProperty;
+- (void)enumerateSectionsUsingBlock:(id)arg1;
+- (unsigned int)countOfDistinctRowsForColumn:(id)arg1;
+- (id)selectSQLWithColumns:(id)arg1 orderingTerms:(id)arg2;
+- (BOOL)hasRowForColumn:(id)arg1;
+- (void)bindToPersistentIDsStatement:(id)arg1 bindingIndex:(inout int*)arg2;
+- (id)selectSQLWithColumns:(id)arg1 orderingTerms:(id)arg2 limit:(unsigned int)arg3;
 - (BOOL)usingSections;
+- (id)propertyToCount;
 - (id)nonDirectAggregateQuery;
-- (id)initWithLibrary:(id)arg1 entityClass:(Class)arg2 predicate:(id)arg3 orderingProperties:(id)arg4 usingSections:(BOOL)arg5 nonDirectAggregateQuery:(id)arg6;
+- (id)orderingTerms;
+- (Class)entityClass;
+- (id)initWithLibrary:(id)arg1 entityClass:(Class)arg2 predicate:(id)arg3 orderingTerms:(id)arg4 usingSections:(BOOL)arg5 nonDirectAggregateQuery:(id)arg6 propertyToCount:(id)arg7;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 usingBlock:(id)arg2;
+- (unsigned int)countOfEntities;
+- (id)library;
 - (void)enumeratePersistentIDsUsingBlock:(id)arg1;
+- (BOOL)hasEntities;
 - (id)predicate;
+- (id)sections;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

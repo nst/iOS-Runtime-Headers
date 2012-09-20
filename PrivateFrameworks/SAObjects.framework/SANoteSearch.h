@@ -16,15 +16,15 @@
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)contentQuery;
-- (void)setContentQuery:(id)arg1;
-- (id)fromDate;
-- (void)setFromDate:(id)arg1;
-- (id)toDate;
 - (void)setToDate:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)toDate;
+- (void)setFromDate:(id)arg1;
+- (id)fromDate;
+- (void)setContentQuery:(id)arg1;
+- (id)contentQuery;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

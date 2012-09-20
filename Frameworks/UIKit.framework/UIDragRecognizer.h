@@ -27,6 +27,7 @@
 @property(retain) UITouch * touch;
 
 
+- (id)touch;
 - (void)dealloc;
 - (double)startAngle;
 - (void)setStartAngle:(double)arg1;
@@ -35,15 +36,14 @@
 - (double)minimumDistance;
 - (double)angle;
 - (void)setStartPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setMaximumDeviation:(double)arg1;
+- (void)setMinimumDistance:(double)arg1;
+- (void)setAngle:(double)arg1;
 - (void)setRestrictsToAngle:(BOOL)arg1;
 - (void)tooSlow:(id)arg1;
 - (void)clearTimer;
 - (void)_resetGestureRecognizer;
 - (void)setTouch:(id)arg1;
-- (void)setMinimumDistance:(double)arg1;
-- (void)setMaximumDeviation:(double)arg1;
-- (void)setAngle:(double)arg1;
-- (id)touch;
 - (struct CGPoint { float x1; float x2; })startPosition;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

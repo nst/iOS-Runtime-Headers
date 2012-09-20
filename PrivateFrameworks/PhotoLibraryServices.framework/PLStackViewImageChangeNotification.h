@@ -12,13 +12,13 @@
 
 + (id)notificationWithAlbum:(id)arg1;
 
-- (id)userInfo;
+- (id)name;
 - (id)description;
+- (id)userInfo;
 - (void)dealloc;
+- (id)object;
+- (id)_init;
 - (id)_initWithAlbum:(id)arg1;
 - (id)album;
-- (id)object;
-- (id)name;
-- (id)_init;
 
 @end

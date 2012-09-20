@@ -8,22 +8,28 @@
  */
 
 @interface ACSystemConfigManager : NSObject  {
-    void *_prefs;
+    struct __SCPreferences { } *_prefs;
     BOOL _notifyForExternalChangeOnly;
     int _applySkipCount;
 }
 
++ (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
-- (void*)getValueForKey:(id)arg1;
-- (void)notifyTarget:(unsigned int)arg1;
-- (void)initializeSCPrefs:(id)arg1;
-- (void)setCallback:(int (*)())arg1 withContext:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
-- (void)setAccountsWithAccountTypeIdentifier:(id)arg1 exist:(BOOL)arg2;
-- (void)refresh;
-- (int)accountsWithAccountTypeIdentifierExist:(id)arg1;
-- (void)synchronize;
+- (void)unlockPrefs;
+- (BOOL)lockPrefs;
 - (void)setValue:(void*)arg1 forKey:(id)arg2;
+- (void)dealloc;
+- (id)init;
+- (void)synchronize;
+- (int)countOfAccountsWithAccountTypeIdentifier:(id)arg1;
+- (void)_tearDown;
+- (void)_keepAlive;
+- (int)accountsWithAccountTypeIdentifierExist:(id)arg1;
+- (void)setCountOfAccounts:(int)arg1 withAccountTypeIdentifier:(id)arg2;
+- (void)setAccountsWithAccountTypeIdentifier:(id)arg1 exist:(BOOL)arg2;
+- (void*)getValueForKey:(id)arg1;
+- (void)setCallback:(int (*)())arg1 withContext:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
+- (void)initializeSCPrefs:(id)arg1;
+- (void)notifyTarget:(unsigned int)arg1;
 
 @end

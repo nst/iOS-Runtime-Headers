@@ -9,17 +9,17 @@
 
 @property(copy) NSArray * stockList;
 @property(copy) NSArray * stockReferences;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)searchCompleted;
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)searchCompleted;
 
 - (id)groupIdentifier;
-- (id)stockList;
 - (void)setStockList:(id)arg1;
-- (id)stockReferences;
+- (id)stockList;
 - (void)setStockReferences:(id)arg1;
+- (id)stockReferences;
 - (id)encodedClassName;
 
 @end

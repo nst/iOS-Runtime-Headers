@@ -33,22 +33,23 @@
 
 
 - (void)dealloc;
-- (id)initWithTask:(unsigned int)arg1 symbolicator:(id)arg2;
-- (unsigned int)CFTypeCount;
-- (unsigned int)ObjCclassCount;
-- (unsigned int)CPlusPlusClassCount;
-- (id)objcRuntimeMallocBlocksHash;
-- (id)objcRuntimeMallocBlocks;
-- (BOOL)isValidRemotePointer:(unsigned long long)arg1;
-- (id)classInfoForObject:(unsigned long long)arg1;
-- (id)nullClassInfo;
 - (id)classInfoForObjectWithRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
-- (void)findCFTypes;
-- (void)findObjCclasses;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })vmRegionRangeForAddress:(unsigned long long)arg1;
-- (id)_classInfoForObject:(unsigned long long)arg1;
-- (id)classInfoForIsaPointer:(unsigned int)arg1;
+- (id)nullClassInfo;
+- (id)classInfoForObject:(unsigned long long)arg1;
+- (BOOL)isValidRemotePointer:(unsigned long long)arg1;
+- (id)objcRuntimeMallocBlocks;
+- (id)objcRuntimeMallocBlocksHash;
+- (unsigned int)CPlusPlusClassCount;
+- (unsigned int)ObjCclassCount;
+- (unsigned int)CFTypeCount;
+- (id)initWithTask:(unsigned int)arg1 symbolicator:(id)arg2;
+- (void)_addobjc_opt_ro_classesForOffsets:(struct objc_classheader_t { int x1; int x2; }*)arg1 count:(unsigned int)arg2 classOptAddress:(unsigned long long)arg3;
 - (id)classInfoForCFType:(struct __CFRuntimeBase { unsigned int x1; unsigned char x2[4]; }*)arg1;
+- (id)classInfoForIsaPointer:(unsigned int)arg1;
+- (id)_classInfoForObject:(unsigned long long)arg1;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })vmRegionRangeForAddress:(unsigned long long)arg1;
+- (void)findObjCclasses;
+- (void)findCFTypes;
 - (id)initWithTask:(unsigned int)arg1;
 
 @end

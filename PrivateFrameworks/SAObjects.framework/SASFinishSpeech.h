@@ -7,19 +7,22 @@
 @interface SASFinishSpeech : SABaseCommand <SAServerBoundCommand> {
 }
 
+@property(copy) NSString * endpoint;
 @property(copy) NSArray * orderedContext;
 @property int packetCount;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)finishSpeech;
 + (id)finishSpeechWithDictionary:(id)arg1 context:(id)arg2;
++ (id)finishSpeech;
 
 - (id)groupIdentifier;
-- (id)orderedContext;
-- (void)setOrderedContext:(id)arg1;
+- (id)endpoint;
 - (void)setPacketCount:(int)arg1;
-- (id)encodedClassName;
 - (int)packetCount;
+- (void)setOrderedContext:(id)arg1;
+- (id)orderedContext;
+- (void)setEndpoint:(id)arg1;
+- (id)encodedClassName;
 
 @end

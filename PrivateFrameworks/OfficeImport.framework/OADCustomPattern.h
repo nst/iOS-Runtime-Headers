@@ -11,13 +11,13 @@
 
 + (id)defaultProperties;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)isBlipRefOverridden;
+- (id)initWithDefaults;
 - (void)setBlipRef:(id)arg1;
 - (id)blipRef;
-- (id)initWithDefaults;
+- (BOOL)isBlipRefOverridden;
 
 @end

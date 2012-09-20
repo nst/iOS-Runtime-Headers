@@ -10,18 +10,18 @@
     NSMutableArray *_internalDevices;
 }
 
-@property(retain) NSMutableArray * internalDevices;
-@property(getter=isBrowsing) BOOL browsing;
 @property id delegate;
+@property(getter=isBrowsing) BOOL browsing;
+@property(retain) NSMutableArray * internalDevices;
 
 
-- (void)dealloc;
-- (void)setInternalDevices:(id)arg1;
-- (BOOL)isBrowsing;
-- (void)setBrowsing:(BOOL)arg1;
 - (id)internalDevices;
-- (void)finalize;
-- (id)delegate;
+- (void)setBrowsing:(BOOL)arg1;
+- (BOOL)isBrowsing;
+- (void)setInternalDevices:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)finalize;
 
 @end

@@ -8,11 +8,7 @@
     int mPrevRowIndex;
     int mPrevColumnIndex;
     GQDTTable *mTable;
-    struct vector<short unsigned int,std::allocator<short unsigned int> > { struct _Vector_impl { 
-            unsigned short *_M_start; 
-            unsigned short *_M_finish; 
-            unsigned short *_M_end_of_storage; 
-        } x1; } *mCellCountInColumns;
+    struct vector<unsigned short, std::allocator<unsigned short> > { struct _Vector_impl { unsigned short *x_1_1_1; unsigned short *x_1_1_2; unsigned short *x_1_1_3; } x1; } *mCellCountInColumns;
     int mGroupLevel;
     boolmSplitTable;
     double mCurrentTablePosition;
@@ -22,25 +18,25 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)table;
-- (bool)splitTable;
-- (double)currentTablePosition;
-- (void)addRowHeight:(float)arg1;
-- (struct vector<short unsigned int,std::allocator<short unsigned int> > { struct _Vector_impl { unsigned short *x_1_1_1; unsigned short *x_1_1_2; unsigned short *x_1_1_3; } x1; }*)cellCountInColumns;
-- (int)prevRowIndex;
-- (int)prevColumnIndex;
-- (void)setSplitTable:(bool)arg1;
-- (void)setSplitTableIndex:(long)arg1;
-- (void)setOriginalTableHeight:(double)arg1;
-- (void)setTable:(id)arg1;
-- (void)setLastAttachmentPosition:(double)arg1;
-- (void)setPrevRowIndex:(int)arg1 columnIndex:(int)arg2;
-- (void)setGroupLevel:(int)arg1;
-- (int)groupLevel;
-- (double)lastAttachmentPosition;
-- (long)nextSplitTableIndex;
 - (double)originalTableHeight;
+- (long)nextSplitTableIndex;
+- (double)lastAttachmentPosition;
+- (int)groupLevel;
+- (void)setGroupLevel:(int)arg1;
+- (void)setPrevRowIndex:(int)arg1 columnIndex:(int)arg2;
+- (void)setLastAttachmentPosition:(double)arg1;
+- (void)setTable:(id)arg1;
+- (void)setOriginalTableHeight:(double)arg1;
+- (void)setSplitTableIndex:(long)arg1;
+- (void)setSplitTable:(bool)arg1;
+- (int)prevColumnIndex;
+- (int)prevRowIndex;
+- (struct vector<unsigned short, std::allocator<unsigned short> > { struct _Vector_impl { unsigned short *x_1_1_1; unsigned short *x_1_1_2; unsigned short *x_1_1_3; } x1; }*)cellCountInColumns;
+- (void)addRowHeight:(float)arg1;
+- (double)currentTablePosition;
+- (bool)splitTable;
 
 @end

@@ -7,17 +7,20 @@
 @interface SABaseClientBoundCommand : SABaseCommand <SAClientBoundCommand> {
 }
 
+@property(copy) NSString * appId;
 @property(copy) NSArray * callbacks;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)baseClientBoundCommand;
 + (id)baseClientBoundCommandWithDictionary:(id)arg1 context:(id)arg2;
++ (id)baseClientBoundCommand;
 
 - (id)groupIdentifier;
 - (id)callbacks;
 - (void)setCallbacks:(id)arg1;
-- (id)encodedClassName;
+- (void)setAppId:(id)arg1;
+- (id)appId;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

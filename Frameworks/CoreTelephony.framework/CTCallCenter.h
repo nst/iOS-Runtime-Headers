@@ -9,7 +9,7 @@
 @class NSSet;
 
 @interface CTCallCenter : NSObject  {
-    void *_internal;
+    void *_server;
     NSSet *_currentCalls;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -23,19 +23,17 @@
 
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)currentCalls;
+- (void)broadcastCallStateChangesIfNeededWithFailureLogMessage:(id)arg1;
 - (void)setCurrentCalls:(id)arg1;
 - (id)callEventHandler;
 - (BOOL)getCurrentCallSetFromServer:(id)arg1;
 - (BOOL)calculateCallStateChanges:(id)arg1;
-- (void)broadcastCallStateChangesIfNeededWithFailureLogMessage:(id)arg1;
 - (void)setCallEventHandler:(id)arg1;
 - (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
-- (void)reestablishServerConnectionIfNeeded;
 - (void)cleanUpServerConnection;
-- (void)cleanUpServerConnectionNoLock;
 - (BOOL)setUpServerConnection;
-- (id)currentCalls;
 
 @end

@@ -6,10 +6,10 @@
 }
 
 + (id)localDsymPathForHeaderPath:(id)arg1 uuid:(id)arg2;
-+ (id)dsymPathForHeaderPath:(id)arg1 uuid:(id)arg2 searchingDirectories:(id)arg3;
-+ (id)spotlightDsymPathForHeaderPath:(id)arg1 uuid:(id)arg2;
-+ (id)directoryForDsymBundle:(id)arg1;
 + (id)fullHeaderPathForBaseBinaryDirectory:(id)arg1 oldHeaderPath:(id)arg2 checkUUID:(id)arg3 architecture:(id)arg4;
++ (id)directoryForDsymBundle:(id)arg1;
++ (id)spotlightDsymPathForHeaderPath:(id)arg1 uuid:(id)arg2;
++ (id)dsymPathForHeaderPath:(id)arg1 uuid:(id)arg2 searchingDirectories:(id)arg3;
 + (id)dsymExtractorWithMachOHeader:(id)arg1;
 
 - (id)initWithMachOHeader:(id)arg1;

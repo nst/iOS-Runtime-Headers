@@ -7,9 +7,9 @@
 
 + (id)defaultTest;
 
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)validateItem:(id)arg1 offer:(id)arg2 error:(id*)arg3;
 - (BOOL)validateItems:(id)arg1 offers:(id)arg2 error:(id*)arg3;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

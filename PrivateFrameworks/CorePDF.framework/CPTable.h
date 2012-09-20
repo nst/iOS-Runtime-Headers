@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPGraphicObject;
-
 @interface CPTable : CPChunk <CPDisposable, CPGraphicUser> {
     struct CGRect { 
         struct CGPoint { 
@@ -21,35 +19,35 @@
     float *columnX;
     struct CGColor { } *backgroundColor;
     unsigned int backgroundGraphicCount;
-    CPGraphicObject **backgroundGraphics;
+    id *backgroundGraphics;
     unsigned int usedGraphicCount;
     BOOL disposed;
 }
 
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } tableBounds;
 @property unsigned int rowCount;
-@property unsigned int columnCount;
-@property(readonly) unsigned int backgroundGraphicCount;
-@property(readonly) float* columnX;
 @property(readonly) float* rowY;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } tableBounds;
+@property unsigned int columnCount;
+@property(readonly) float* columnX;
+@property(readonly) unsigned int backgroundGraphicCount;
 
 
-- (void)dealloc;
-- (void)setRowCount:(unsigned int)arg1;
-- (void)setBackgroundGraphics:(id)arg1;
-- (id)backgroundGraphicAtIndex:(unsigned int)arg1;
 - (unsigned int)backgroundGraphicCount;
-- (float*)rowY;
+- (id)backgroundGraphicAtIndex:(unsigned int)arg1;
+- (void)setBackgroundGraphics:(id)arg1;
+- (void)setRowCount:(unsigned int)arg1;
 - (float*)columnX;
+- (float*)rowY;
 - (unsigned int)usedGraphicCount;
 - (void)incrementUsedGraphicCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableBounds;
+- (void)dispose;
+- (void)dealloc;
 - (void)setColumnCount:(unsigned int)arg1;
 - (unsigned int)columnCount;
 - (void)finalize;
 - (struct CGColor { }*)backgroundColor;
-- (unsigned int)rowCount;
 - (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dispose;
+- (unsigned int)rowCount;
 
 @end

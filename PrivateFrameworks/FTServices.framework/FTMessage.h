@@ -15,6 +15,7 @@
     unsigned int _uniqueID;
     NSDictionary *_userInfo;
     NSDate *_creationDate;
+    BOOL _forceCellular;
     NSString *_topic;
     double _timeout;
 
@@ -30,6 +31,7 @@
 
     BOOL _wantsResponse;
     NSDictionary *_cachedBody;
+    NSString *_dsAuthID;
     BOOL _wantsBinaryPush;
     BOOL _wantsIntegerUniqueIDs;
     NSDictionary *_responseAlert;
@@ -46,7 +48,11 @@
 @property(retain) NSString * topic;
 @property(readonly) int command;
 @property(readonly) int responseCommand;
+@property BOOL forceCellular;
+@property(readonly) BOOL wantsSignature;
+@property(readonly) BOOL wantsBodySignature;
 @property(readonly) BOOL wantsCFNetworkTimeout;
+@property(readonly) BOOL wantsManagedRetries;
 @property(readonly) BOOL wantsHTTPHeaders;
 @property(readonly) BOOL wantsCompressedBody;
 @property BOOL wantsBinaryPush;
@@ -68,6 +74,17 @@
 @property(readonly) NSDictionary * additionalQueryStringParameters;
 @property(readonly) NSDictionary * additionalMessageHeadersForOutgoingPush;
 @property(readonly) NSDictionary * nonStandardMessageHeadersForOutgoingPush;
+@property(readonly) struct __SecKey { }* pushPrivateKey;
+@property(readonly) struct __SecKey { }* pushPublicKey;
+@property(readonly) NSData * pushCertificate;
+@property(readonly) NSData * pushToken;
+@property(readonly) struct __SecKey { }* provisionPrivateKey;
+@property(readonly) struct __SecKey { }* provisionPublicKey;
+@property(readonly) NSData * provisionCertificate;
+@property(readonly) struct __SecKey { }* identityPrivateKey;
+@property(readonly) struct __SecKey { }* identityPublicKey;
+@property(readonly) NSData * IDCertificate;
+@property(setter=setDSAuthID:,copy) NSString * dsAuthID;
 @property(copy) NSData * serviceData;
 @property(copy) NSDictionary * clientInfo;
 @property(readonly) NSString * userAgentHeaderString;
@@ -78,13 +95,13 @@
 @property(setter=_setCachedBody:,retain) NSDictionary * _cachedBody;
 
 
-- (void)setTimeout:(double)arg1;
-- (double)timeout;
-- (id)messageBody;
-- (id)userInfo;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (struct __SecKey { }*)identityPublicKey;
+- (void)setClientInfo:(id)arg1;
+- (struct __SecKey { }*)identityPrivateKey;
+- (id)responseAlertInfo;
+- (void)setDSAuthID:(id)arg1;
+- (id)bagKey;
+- (id)_cachedBody;
 - (id)deliveryAcknowledgementBlock;
 - (void)_setUsingOutgoingPush:(BOOL)arg1;
 - (BOOL)_usingOutgoingPush;
@@ -98,13 +115,22 @@
 - (id)userAgentHeaderString;
 - (BOOL)wantsUserAgentInHeaders;
 - (BOOL)hasRequiredKeys:(id*)arg1;
-- (void)_cacheBody;
+- (id)IDCertificate;
+- (id)provisionCertificate;
+- (struct __SecKey { }*)provisionPublicKey;
+- (struct __SecKey { }*)provisionPrivateKey;
+- (id)pushCertificate;
+- (struct __SecKey { }*)pushPublicKey;
+- (struct __SecKey { }*)pushPrivateKey;
 - (BOOL)isValidMessage;
 - (BOOL)payloadCanBeLogged;
 - (double)customRetryInterval;
 - (BOOL)wantsCustomRetryInterval;
+- (BOOL)wantsBodySignature;
+- (BOOL)wantsSignature;
 - (BOOL)ignoresNetworkConnectivity;
 - (BOOL)wantsAPSRetries;
+- (BOOL)wantsManagedRetries;
 - (BOOL)wantsCFNetworkTimeout;
 - (BOOL)wantsBagKey;
 - (BOOL)wantsHTTPGet;
@@ -114,7 +140,7 @@
 - (id)uniqueIDString;
 - (id)messageBodyUsingCache;
 - (id)requiredKeys;
-- (id)_cachedBody;
+- (void)_cacheBody;
 - (void)setWantsIntegerUniqueIDs:(BOOL)arg1;
 - (BOOL)wantsIntegerUniqueIDs;
 - (void)setWantsBinaryPush:(BOOL)arg1;
@@ -123,24 +149,32 @@
 - (BOOL)wantsResponse;
 - (id)clientInfo;
 - (id)serviceData;
+- (void)setForceCellular:(BOOL)arg1;
+- (BOOL)forceCellular;
+- (id)dsAuthID;
 - (void)setResponseAlertInfo:(id)arg1;
 - (void)_setCachedBody:(id)arg1;
 - (void)setDeliveryAcknowledgementBlock:(id)arg1;
 - (void)setServiceData:(id)arg1;
 - (void)setTopic:(id)arg1;
+- (id)pushToken;
+- (id)userInfo;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)topic;
-- (void)setCreationDate:(id)arg1;
-- (id)creationDate;
-- (int)command;
-- (id)completionBlock;
-- (id)bagKey;
-- (void)setUniqueID:(unsigned int)arg1;
-- (unsigned int)uniqueID;
 - (void)setUserInfo:(id)arg1;
 - (void)setCompletionBlock:(id)arg1;
-- (id)context;
 - (void)setContext:(id)arg1;
-- (void)setClientInfo:(id)arg1;
-- (id)responseAlertInfo;
+- (id)context;
+- (int)command;
+- (id)messageBody;
+- (double)timeout;
+- (void)setTimeout:(double)arg1;
+- (id)completionBlock;
+- (void)setCreationDate:(id)arg1;
+- (id)creationDate;
+- (void)setUniqueID:(unsigned int)arg1;
+- (unsigned int)uniqueID;
 
 @end

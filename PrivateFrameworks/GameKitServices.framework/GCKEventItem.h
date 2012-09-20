@@ -7,16 +7,16 @@
     unsigned int _pid;
 }
 
-@property unsigned int pid;
 @property struct { int x1; char *x2; int x3; unsigned int x4; }* event;
+@property unsigned int pid;
 
 
-- (id)init;
 - (void)dealloc;
-- (unsigned int)pid;
-- (void)setPid:(unsigned int)arg1;
+- (id)init;
 - (struct { int x1; char *x2; int x3; unsigned int x4; }*)event;
 - (void)setEvent:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1;
 - (id)initWithEvent:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1 remotePeer:(unsigned int)arg2;
+- (void)setPid:(unsigned int)arg1;
+- (unsigned int)pid;
 
 @end

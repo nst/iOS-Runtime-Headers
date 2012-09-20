@@ -3,12 +3,18 @@
  */
 
 @interface _MFDAMessageStoreGetUpdatesRequest : DAMailboxGetUpdatesRequest <MFDAMailAccountRequest> {
+    BOOL _isUserRequested;
 }
+
+@property(readonly) BOOL shouldSend;
+@property(readonly) BOOL isUserRequested;
 
 
 - (BOOL)mf_alwaysReportFailures;
-- (id)deferredOperation;
+- (id)initRequestForBodyFormat:(int)arg1 withBodySizeLimit:(int)arg2 isUserRequested:(BOOL)arg3;
 - (BOOL)shouldSend;
+- (id)deferredOperation;
+- (BOOL)isUserRequested;
 - (unsigned long long)generationNumber;
 
 @end

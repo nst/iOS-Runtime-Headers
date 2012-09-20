@@ -7,43 +7,35 @@
 @interface CPBitmapStore : NSObject  {
     NSString *_path;
     NSString *_imagePath;
-    struct sqlite3 { } *_db;
-    struct sqlite3_stmt { } *_findStmt;
-    struct sqlite3_stmt { } *_saveStmt;
-    struct sqlite3_stmt { } *_beginStmt;
-    struct sqlite3_stmt { } *_commitStmt;
-    BOOL _dbIsReadOnly;
-    BOOL _dbIsMissing;
-    struct __CFRunLoopObserver { } *_txnObserver;
     NSCache *_cache;
     int _version;
 }
 
 @property(readonly) int version;
 
++ (id)CPBitmapStoreWithPath:(id)arg1 version:(int)arg2 useDirectHashing:(BOOL)arg3;
 
 - (void)dealloc;
-- (id)imagePath;
-- (BOOL)findImageWithKey:(id)arg1 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg2;
-- (BOOL)saveImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
-- (struct sqlite3_stmt { }*)findStmt;
-- (void)beginAutoTxn;
-- (struct sqlite3_stmt { }*)saveStmt;
-- (void)createDbAt:(const char *)arg1;
-- (struct sqlite3_stmt { }*)beginStmt;
-- (struct sqlite3_stmt { }*)commitStmt;
-- (int)imageCount;
-- (id)dbPath;
 - (void)removeImagesInGroups:(id)arg1;
-- (id)allGroups;
 - (struct CGImage { }*)copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 draw:(id)arg6;
 - (void)storeImageForKey:(id)arg1 inGroup:(id)arg2 opaque:(BOOL)arg3 image:(struct CGImage { }*)arg4;
-- (struct CGImage { }*)copyImageForKey:(id)arg1;
-- (void)commitTxn;
+- (struct CGImage { }*)copyImageForKey:(id)arg1 inGroup:(id)arg2;
+- (int)setVersion:(int)arg1;
 - (void)purge;
 - (id)initWithPath:(id)arg1 version:(int)arg2;
 - (int)version;
-- (int)setVersion:(int)arg1;
-- (struct sqlite3 { }*)db;
+- (void)commitTransaction;
+- (id)allGroups;
+- (int)imageCount;
+- (void)commitTxn;
+- (struct CGImage { }*)copyImageForKey:(id)arg1;
+- (id)_versionPath;
+- (struct CGImage { }*)_copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 fillMem:(id)arg6 alternateCompletion:(id)arg7;
+- (BOOL)saveImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
+- (unsigned int)memContentOffset;
+- (void*)openAndMmap:(id)arg1 withInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg2;
+- (BOOL)findImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
+- (id)imageNameForKey:(id)arg1 inGroup:(id)arg2;
+- (id)imagePath;
 
 @end

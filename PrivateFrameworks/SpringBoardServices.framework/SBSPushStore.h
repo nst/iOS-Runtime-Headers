@@ -9,22 +9,23 @@
     NSHashTable *_observers;
 }
 
-+ (id)pushStoreForBundleID:(id)arg1;
-+ (id)allNotificationEnabledBundleIDs;
-+ (unsigned int)effectivePushSettingsForBundleID:(id)arg1;
-+ (void)setEffectivePushSettings:(unsigned int)arg1 forBundleID:(id)arg2;
-+ (id)notificationsForBundleID:(id)arg1;
-+ (id)bundleIDsWithUpdatesSince:(id)arg1;
 + (void)initialize;
++ (void)setEffectivePushSettings:(unsigned int)arg1 forBundleID:(id)arg2;
++ (unsigned int)effectivePushSettingsForBundleID:(id)arg1;
++ (id)allNotificationEnabledBundleIDs;
++ (id)bundleIDsWithUpdatesSince:(id)arg1;
++ (id)uniqueIdentifierForNotification:(id)arg1;
++ (id)pushStoreForBundleID:(id)arg1;
++ (id)notificationsForBundleID:(id)arg1;
 
+- (void)addObserver:(id)arg1;
+- (id)initWithBundleID:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)dealloc;
-- (void)addObserver:(id)arg1;
 - (id)storedNotifications;
-- (id)initWithBundleID:(id)arg1;
-- (void)notifyPushStoreUpdated;
-- (void)notifyPushStoreCleared;
-- (void)notifyPushSettingsChanged;
 - (void)notifyPushDeliveryAccepted;
+- (void)notifyPushSettingsChanged;
+- (void)notifyPushStoreCleared;
+- (void)notifyPushStoreUpdated;
 
 @end

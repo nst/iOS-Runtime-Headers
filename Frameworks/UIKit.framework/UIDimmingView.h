@@ -25,12 +25,15 @@
 
 + (id)defaultDimmingColor;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (id)dimmingColor;
 - (void)setDisplayed:(BOOL)arg1;
 - (BOOL)ignoresTouches;
 - (void)setPassthroughViews:(id)arg1;
 - (id)passthroughViews;
+- (void)_simulateTap;
 - (id)highlightedBarButtonItem;
 - (void)setHighlightedBarButtonItem:(id)arg1;
 - (void)dimmingRemovalAnimationDidStop;
@@ -42,8 +45,6 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

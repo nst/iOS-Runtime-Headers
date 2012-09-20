@@ -6,8 +6,8 @@
 }
 
 + (void)initialize;
-+ (void)registerDefaults;
 + (void)registerGlobalClass:(Class)arg1 name:(const char *)arg2;
++ (void)registerDefaults;
 + (void)registerClass:(Class)arg1 forName:(const char *)arg2 inRootType:(Class)arg3;
 + (Class)classForName:(const char *)arg1 inRootType:(Class)arg2;
 

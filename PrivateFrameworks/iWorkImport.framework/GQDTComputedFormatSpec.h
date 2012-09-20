@@ -8,9 +8,9 @@
 
 
 - (void)dealloc;
-- (id)format;
 - (BOOL)isDurationFormat;
 - (BOOL)isNumberFormat;
 - (BOOL)isDateFormat;
+- (id)format;
 
 @end

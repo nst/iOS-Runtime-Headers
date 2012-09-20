@@ -9,15 +9,15 @@
     Message *_message;
 }
 
-@property(retain) Message * message;
 @property(retain) MessageLibrary * library;
+@property(retain) Message * message;
 
 
-- (id)dataConsumerForPart:(id)arg1;
-- (id)library;
-- (void)setLibrary:(id)arg1;
 - (void)dealloc;
+- (void)setLibrary:(id)arg1;
+- (id)library;
 - (id)message;
 - (void)setMessage:(id)arg1;
+- (id)dataConsumerForPart:(id)arg1;
 
 @end

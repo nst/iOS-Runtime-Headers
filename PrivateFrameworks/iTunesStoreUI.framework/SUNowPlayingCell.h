@@ -6,9 +6,9 @@
 }
 
 
+- (void)setHighlightsOnlyContentView:(BOOL)arg1;
 - (void)setAccessoryView:(id)arg1;
 - (void)setAccessoryType:(int)arg1;
 - (void)layoutSubviews;
-- (void)setHighlightsOnlyContentView:(BOOL)arg1;
 
 @end

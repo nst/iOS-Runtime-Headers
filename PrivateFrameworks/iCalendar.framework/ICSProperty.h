@@ -11,10 +11,16 @@
 }
 
 
+- (void)setParameters:(id)arg1;
+- (unsigned int)type;
 - (id)description;
 - (void)dealloc;
-- (void)setParameters:(id)arg1;
 - (id)parameters;
+- (id)stringValue;
+- (id)value;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)ICSStringWithOptions:(unsigned int)arg1;
 - (void)_setParsedValues:(id)arg1 type:(unsigned int)arg2;
 - (BOOL)isMultiValued;
 - (void)addParameter:(id)arg1 withRawValue:(id)arg2 options:(unsigned int)arg3;
@@ -29,11 +35,5 @@
 - (void)addParametersFromDictionary:(id)arg1;
 - (id)allParameters;
 - (id)initWithValue:(id)arg1 type:(unsigned int)arg2;
-- (id)stringValue;
-- (unsigned int)type;
-- (id)value;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)ICSStringWithOptions:(unsigned int)arg1;
 
 @end

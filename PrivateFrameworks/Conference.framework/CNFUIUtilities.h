@@ -5,14 +5,15 @@
 @interface CNFUIUtilities : NSObject  {
 }
 
-+ (id)statusStringForState:(unsigned int)arg1;
++ (id)networkSettingsURLAllowingCellular:(BOOL)arg1;
 + (id)faceTimeDisplayNameForDestination:(id)arg1 image:(id*)arg2;
++ (id)statusStringForState:(unsigned int)arg1;
 + (int)interfaceOrientationForDeviceOrientation:(int)arg1;
-+ (id)currentCallDurationString;
-+ (id)statusStringForContactName:(id)arg1 status:(int)arg2 useFloatingHUD:(BOOL)arg3;
-+ (int)statusForState:(unsigned int)arg1;
-+ (id)faceTimeDisplayNameForDestination:(id)arg1 image:(id*)arg2 fullscreenImage:(id*)arg3 isPhoneNumber:(BOOL*)arg4;
 + (id)formattedPhoneNumberFromString:(id)arg1;
++ (id)faceTimeDisplayNameForDestination:(id)arg1 image:(id*)arg2 fullscreenImage:(id*)arg3 isPhoneNumber:(BOOL*)arg4;
++ (int)statusForState:(unsigned int)arg1;
++ (id)statusStringForContactName:(id)arg1 status:(int)arg2 useFloatingHUD:(BOOL)arg3;
++ (id)currentCallDurationString;
 
 
 @end

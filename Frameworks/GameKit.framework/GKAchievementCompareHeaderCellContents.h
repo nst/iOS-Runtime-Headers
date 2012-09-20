@@ -18,18 +18,18 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } confirmationButtonRect;
 
 
-- (void)dealloc;
-- (void)setPoints:(unsigned int)arg1;
-- (unsigned int)points;
-- (unsigned int)achievements;
-- (void)setAchievements:(unsigned int)arg1;
 - (float)preferredHeightForOrientation:(int)arg1;
-- (id)theme;
-- (void)setTheme:(id)arg1;
-- (id)player;
+- (void)setPoints:(unsigned int)arg1;
+- (void)setAchievements:(unsigned int)arg1;
+- (unsigned int)achievements;
 - (void)setPlayer:(id)arg1;
+- (id)player;
+- (void)dealloc;
 - (void)prepareForReuse;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setTheme:(id)arg1;
+- (unsigned int)points;
+- (id)theme;
 
 @end

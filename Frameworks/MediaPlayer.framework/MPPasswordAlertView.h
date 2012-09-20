@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UITextField, NSString;
+@class UITextField;
 
 @interface MPPasswordAlertView : UIAlertView <UIAlertViewDelegate> {
 
@@ -15,21 +15,16 @@
     id _completionHandler;
 
     int _style;
-    UITextField *_accountTextField;
     UITextField *_passwordTextField;
 }
 
 @property(readonly) int style;
-@property(copy) NSString * accountTextFieldPlaceholder;
 
 
+- (id)initWithStyle:(int)arg1 routeName:(id)arg2 completionHandler:(id)arg3;
 - (void)dealloc;
-- (void)setAccountTextFieldPlaceholder:(id)arg1;
-- (id)accountTextFieldPlaceholder;
-- (id)initWithStyle:(int)arg1 title:(id)arg2 message:(id)arg3 completionHandler:(id)arg4;
-- (id)initWithTitle:(id)arg1 message:(id)arg2 completionHandler:(id)arg3;
+- (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (int)style;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 
 @end

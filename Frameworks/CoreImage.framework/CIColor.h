@@ -12,21 +12,21 @@
 + (id)colorWithString:(id)arg1;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 
-- (const float*)components;
 - (id)initWithString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (const float*)components;
 - (float)blue;
 - (float)green;
 - (float)red;
 - (void)finalize;
-- (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (struct CGColor { }*)cgColor;
-- (struct CGColor { }*)CGColor;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
+- (id)initWithCGColor:(struct CGColor { }*)arg1;
+- (struct CGColor { }*)CGColor;
 - (unsigned long)numberOfComponents;
 - (float)alpha;
 - (void)encodeWithCoder:(id)arg1;

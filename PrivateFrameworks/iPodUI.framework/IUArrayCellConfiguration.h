@@ -13,7 +13,6 @@
 }
 
 
-- (void)dealloc;
 - (id)_accessibilityStringsArrayPointer;
 - (id)initWithStringCount:(unsigned int)arg1 imageCount:(unsigned int)arg2;
 - (void)reloadLayoutInformation;
@@ -24,5 +23,6 @@
 - (id)stringForLabelAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfLabels;
 - (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)dealloc;
 
 @end

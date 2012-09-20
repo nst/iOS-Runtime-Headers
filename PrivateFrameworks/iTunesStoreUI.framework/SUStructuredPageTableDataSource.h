@@ -2,29 +2,23 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUItem, NSMutableArray, SUStructuredPage;
+@class SUStructuredPage, SUItem, SUClientInterface, NSMutableArray;
 
 @interface SUStructuredPageTableDataSource : SUTableDataSource  {
     SUItem *_activeLoadMoreItem;
     NSMutableArray *_cachedHeaderViews;
+    SUClientInterface *_clientInterface;
     float _offerButtonWidth;
     SUStructuredPage *_structuredPage;
     int _style;
 }
 
 @property(retain) SUItem * activeLoadMoreItem;
+@property(retain) SUClientInterface * clientInterface;
 @property(retain) SUStructuredPage * structuredPage;
 @property int style;
 
 
-- (void)dealloc;
-- (id)sectionIndexTitles;
-- (int)tableViewStyle;
-- (int)numberOfSections;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (int)numberOfRowsInSection:(int)arg1;
-- (void)reloadData;
 - (BOOL)canShowItemOfferButtonForItem:(id)arg1;
 - (id)newHeaderViewForSection:(int)arg1;
 - (void)_configureLoadMoreCell:(id)arg1 forItem:(id)arg2;
@@ -41,12 +35,22 @@
 - (BOOL)canSelectIndexPath:(id)arg1;
 - (id)titleForDeleteConfirmationForIndexPath:(id)arg1;
 - (float)cellHeightForIndexPath:(id)arg1;
-- (id)headerViewForSection:(int)arg1;
 - (BOOL)canDeleteIndexPath:(id)arg1;
 - (id)titleForHeaderInSection:(int)arg1;
 - (int)sectionIndexForIndexTitle:(id)arg1 atIndex:(int)arg2;
 - (id)cellForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (BOOL)deleteIndexPath:(id)arg1;
+- (void)setClientInterface:(id)arg1;
+- (id)clientInterface;
+- (void)dealloc;
+- (id)sectionIndexTitles;
+- (int)tableViewStyle;
+- (id)headerViewForSection:(int)arg1;
+- (int)numberOfSections;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (int)numberOfRowsInSection:(int)arg1;
+- (void)reloadData;
 
 @end

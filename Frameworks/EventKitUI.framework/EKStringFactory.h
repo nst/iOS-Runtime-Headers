@@ -12,24 +12,27 @@
 
 + (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
 - (id)_stringForTime:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
-- (struct __CFDateFormatter { }*)timeFormatter;
-- (void)_localeChanged:(id)arg1;
-- (id)dateStringForInvitation:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)dateStringForEventInvitation:(id)arg1 timeZone:(id)arg2;
 - (id)dateStringForDate:(double)arg1 allDay:(BOOL)arg2 shortFormat:(BOOL)arg3;
 - (id)timeStringForDate:(double)arg1 inTimeZone:(id)arg2;
 - (id)_stringForDateTime:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 timeZone:(struct __CFTimeZone { }*)arg2;
+- (id)stringForDay:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 withLongFormatString:(id)arg2;
 - (struct __CFDateFormatter { }*)standardTimeFormatter;
 - (struct __CFDateFormatter { }*)_customFormatter;
 - (id)_timeStringForDate:(double)arg1;
-- (id)_dayStringForDate:(double)arg1 allDay:(BOOL)arg2 shortFormat:(BOOL)arg3;
-- (id)stringForDay:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 withLongFormatString:(id)arg2;
+- (id)_dayStringForDate:(double)arg1 allDay:(BOOL)arg2 shortFormat:(BOOL)arg3 lowercase:(BOOL)arg4;
+- (id)dateStringForDate:(double)arg1 allDay:(BOOL)arg2 standalone:(BOOL)arg3 shortFormat:(BOOL)arg4;
 - (id)abbreviatedStringForDay:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 withLongFormatString:(id)arg2;
 - (id)_stringForDay:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 withLongFormatString:(id)arg2 useAbbreviatedFormats:(BOOL)arg3;
+- (id)stringForDay:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 withLongFormatString:(id)arg2 lowercase:(BOOL)arg3;
 - (struct __CFDateFormatter { }*)dayFormatter;
 - (struct __CFDateFormatter { }*)abbreviatedDayFormatter;
+- (id)_stringForDay:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 withLongFormatString:(id)arg2 useAbbreviatedFormats:(BOOL)arg3 lowerCase:(BOOL)arg4;
 - (void)_invalidateFormatters;
+- (void)_localeChanged:(id)arg1;
+- (struct __CFDateFormatter { }*)timeFormatter;
 
 @end

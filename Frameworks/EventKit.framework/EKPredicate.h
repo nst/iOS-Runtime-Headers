@@ -12,9 +12,9 @@
 
 
 - (void)dealloc;
-- (id)initWithCalendars:(id)arg1;
-- (id)calendars;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithCalendars:(id)arg1;
+- (id)calendars;
 
 @end

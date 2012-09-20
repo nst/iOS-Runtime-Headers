@@ -9,22 +9,18 @@
 @property id richContentDelegate;
 
 
-- (void)dealloc;
-- (id)richContentDelegate;
-- (void)_wvRegisterForDOMEvents;
-- (void)_wvUnregisterForDOMEvents;
-- (void)_wvHelperThawSelectionTag;
-- (void)_wvInsertHTML:(id)arg1;
-- (void)insertHTML:(id)arg1;
-- (id)brElement;
-- (id)nodeForImageSize:(struct CGSize { float x1; float x2; })arg1 ID:(id)arg2 URL:(id)arg3;
-- (id)html;
-- (void)setHTML:(id)arg1;
-- (void)setRichContentDelegate:(id)arg1;
 - (id)supportedPasteboardTypesForCurrentSelection;
 - (id)DOMDocument;
-- (void)handleEvent:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)createDocumentFragment;
+- (id)richContentDelegate;
+- (void)_wvInsertHTML:(id)arg1;
+- (void)_wvHelperThawSelectionTag;
+- (id)nodeForImageSize:(struct CGSize { float x1; float x2; })arg1 ID:(id)arg2 URL:(id)arg3;
+- (id)brElement;
+- (void)insertHTML:(id)arg1;
+- (void)setRichContentDelegate:(id)arg1;
+- (void)setHTML:(id)arg1;
+- (id)html;
 
 @end

@@ -8,8 +8,9 @@
     NSURL *_URL;
     NSURL *_previewURLOverride;
     NSString *_name;
-    NSURL *_URLToDeleteOnDealloc;
+    NSURL *_URLsToDeleteOnDealloc;
     NSString *_previewItemContentType;
+    NSURL *_URLToDeleteOnDealloc;
 }
 
 @property(copy) NSURL * previewItemURL;

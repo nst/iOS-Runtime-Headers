@@ -6,6 +6,8 @@
 }
 
 
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (unsigned int)_unsignedIntegerForKey:(id)arg1 defaultValue:(int)arg2;
 - (int)peakEndHour;
 - (int)peakStartHour;
@@ -21,7 +23,5 @@
 - (long long)_longLongForKey:(id)arg1 defaultValue:(long long)arg2;
 - (BOOL)_boolForKey:(id)arg1 defaultValue:(BOOL)arg2;
 - (id)_numberForKey:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

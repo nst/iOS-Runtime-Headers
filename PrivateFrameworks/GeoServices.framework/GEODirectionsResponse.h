@@ -2,50 +2,80 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
+@class NSData, NSMutableArray;
 
 @interface GEODirectionsResponse : PBCodable  {
-    int _status;
-    NSMutableArray *_routes;
-    NSMutableArray *_locationResponses;
-    BOOL _hasLocalDistanceUnits;
+    NSData *_directionsResponseID;
+    int _instructionSignFillColor;
     int _localDistanceUnits;
-    NSMutableArray *_transitAgents;
+    NSMutableArray *_placeSearchResponses;
+    NSMutableArray *_routes;
+    int _status;
+    BOOL _isNavigable;
+    BOOL _routeDeviatesFromOriginal;
+    struct { 
+        unsigned int instructionSignFillColor : 1; 
+        unsigned int localDistanceUnits : 1; 
+        unsigned int isNavigable : 1; 
+        unsigned int routeDeviatesFromOriginal : 1; 
+    } _has;
 }
 
 @property int status;
 @property(retain) NSMutableArray * routes;
-@property(retain) NSMutableArray * locationResponses;
+@property(retain) NSMutableArray * placeSearchResponses;
 @property BOOL hasLocalDistanceUnits;
 @property int localDistanceUnits;
-@property(retain) NSMutableArray * transitAgents;
+@property BOOL hasRouteDeviatesFromOriginal;
+@property BOOL routeDeviatesFromOriginal;
+@property(readonly) BOOL hasDirectionsResponseID;
+@property(retain) NSData * directionsResponseID;
+@property BOOL hasIsNavigable;
+@property BOOL isNavigable;
+@property BOOL hasInstructionSignFillColor;
+@property int instructionSignFillColor;
 
 
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)transitAgents;
-- (void)setHasLocalDistanceUnits:(BOOL)arg1;
-- (BOOL)hasLocalDistanceUnits;
-- (id)locationResponses;
-- (unsigned int)transitAgentsCount;
-- (id)locationResponseAtIndex:(unsigned int)arg1;
-- (unsigned int)locationResponsesCount;
-- (void)addTransitAgent:(id)arg1;
-- (void)addLocationResponse:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (int)status;
 - (id)dictionaryRepresentation;
-- (int)localDistanceUnits;
-- (id)transitAgentAtIndex:(unsigned int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTransitAgents:(id)arg1;
-- (void)setLocationResponses:(id)arg1;
-- (void)setLocalDistanceUnits:(int)arg1;
-- (id)routeAtIndex:(unsigned int)arg1;
-- (unsigned int)routesCount;
-- (void)addRoute:(id)arg1;
-- (void)setRoutes:(id)arg1;
+- (id)placeSearchResponses;
 - (id)routes;
+- (void)setHasInstructionSignFillColor:(BOOL)arg1;
+- (void)setHasIsNavigable:(BOOL)arg1;
+- (void)setHasRouteDeviatesFromOriginal:(BOOL)arg1;
+- (void)setHasLocalDistanceUnits:(BOOL)arg1;
+- (void)setInstructionSignFillColor:(int)arg1;
+- (int)instructionSignFillColor;
+- (BOOL)hasInstructionSignFillColor;
+- (void)setIsNavigable:(BOOL)arg1;
+- (BOOL)isNavigable;
+- (BOOL)hasIsNavigable;
+- (id)directionsResponseID;
+- (BOOL)hasDirectionsResponseID;
+- (void)setRouteDeviatesFromOriginal:(BOOL)arg1;
+- (BOOL)routeDeviatesFromOriginal;
+- (BOOL)hasRouteDeviatesFromOriginal;
+- (void)setLocalDistanceUnits:(int)arg1;
+- (int)localDistanceUnits;
+- (BOOL)hasLocalDistanceUnits;
+- (id)placeSearchResponseAtIndex:(unsigned int)arg1;
+- (void)clearPlaceSearchResponses;
+- (unsigned int)placeSearchResponsesCount;
+- (id)routeAtIndex:(unsigned int)arg1;
+- (void)clearRoutes;
+- (unsigned int)routesCount;
+- (void)addPlaceSearchResponse:(id)arg1;
+- (void)addRoute:(id)arg1;
+- (void)setDirectionsResponseID:(id)arg1;
+- (void)setPlaceSearchResponses:(id)arg1;
+- (void)setRoutes:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 
 @end

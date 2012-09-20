@@ -7,23 +7,31 @@
 @interface IUiPodNavigationController : UINavigationController  {
     IUModalContext *_modalContext;
     UINavigationItem *_navigationItemTemplate;
+    int _style;
 }
 
 @property(retain) IUModalContext * modalContext;
 @property(readonly) NSString * rootIdentifier;
+@property int style;
 
 
 - (id)description;
 - (void)dealloc;
 - (id)popToRootViewControllerAnimated:(BOOL)arg1;
+- (BOOL)_shouldNavigationBarInsetViewController:(id)arg1;
 - (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)popViewControllerAnimated:(BOOL)arg1;
-- (BOOL)_shouldNavigationBarInsetViewController:(id)arg1;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)loadView;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (int)style;
+- (BOOL)navigationBar:(id)arg1 shouldPushItem:(id)arg2;
+- (void)setStyle:(int)arg1;
+- (void)setTitle:(id)arg1;
 - (void)_updateViewControllersModalContext;
-- (id)rootIdentifier;
+- (void)updateStyleAnimated:(BOOL)arg1;
 - (void)setModalContext:(id)arg1;
+- (id)rootIdentifier;
 - (id)modalContext;
 
 @end

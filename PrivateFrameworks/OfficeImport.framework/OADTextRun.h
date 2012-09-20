@@ -10,8 +10,8 @@
 
 
 - (void)setProperties:(id)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)properties;
 - (BOOL)isEmpty;
 - (void)removeUnnecessaryOverrides;

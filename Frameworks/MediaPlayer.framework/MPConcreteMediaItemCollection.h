@@ -4,7 +4,7 @@
 
 @class MPMediaItem, MPMediaQuery;
 
-@interface MPConcreteMediaItemCollection : MPMediaItemCollection  {
+@interface MPConcreteMediaItemCollection : MPMediaItemCollection <NSCoding, NSCopying> {
     long long _identifier;
     MPMediaQuery *_itemsQuery;
     int _grouping;
@@ -12,21 +12,24 @@
 }
 
 
-- (unsigned long long)persistentID;
-- (unsigned int)count;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)representativeItem;
+- (id)mediaLibrary;
+- (id)initWithIdentifier:(long long)arg1 itemsQuery:(id)arg2 grouping:(int)arg3;
 - (id)itemsQuery;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
 - (id)initWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(long long)arg5;
-- (int)mediaTypes;
+- (id)valuesForProperties:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (unsigned int)count;
+- (unsigned long long)persistentID;
 - (id)valueForProperty:(id)arg1;
+- (int)mediaTypes;
 - (id)items;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)representativeItem;
-- (id)mediaLibrary;
+- (void)setValue:(id)arg1 forProperty:(id)arg2;
 
 @end

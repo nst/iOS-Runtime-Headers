@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class NoteContext;
+
 @interface DALocalDBHelper : NSObject  {
     void *_abDB;
     int _abConnectionCount;
@@ -13,6 +15,8 @@
     int _calConnectionCount;
     void *_bookmarkDB;
     int _bookmarkConnectionCount;
+    NoteContext *_noteDB;
+    int _noteConnectionCount;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -20,13 +24,23 @@
 
 }
 
++ (id)sharedInstanceForAccountType:(id)arg1 creatingClass:(Class)arg2;
 + (id)calTestCalDBDir;
 + (void)calSetTestCalDBDir:(id)arg1;
 + (id)abTestABDBDir;
 + (void)abSetTestABDBDir:(id)arg1;
-+ (id)sharedInstanceForAccountType:(id)arg1 creatingClass:(Class)arg2;
 
+- (id)noteDB;
+- (BOOL)calSaveDB;
+- (BOOL)abSaveDB;
+- (void*)abDB;
+- (BOOL)calCloseDBAndSave:(BOOL)arg1;
+- (void)calOpenDB;
+- (struct CalDatabase { }*)calDB;
 - (void)calUnitTestsSetCallbackBlockForSave:(id)arg1;
+- (int)noteConnectionCount;
+- (BOOL)noteCloseDBAndSave:(BOOL)arg1;
+- (void)noteOpenDB;
 - (void)bookmarkCloseDBAndSave:(BOOL)arg1;
 - (void)bookmarkSaveDB;
 - (BOOL)bookmarkOpenDB;
@@ -39,14 +53,8 @@
 - (void)abProcessAddedImages;
 - (void)abProcessAddedRecords;
 - (void)abOpenDB;
+- (BOOL)noteSaveDB;
 - (void)_registerForCalendarYieldNotifications;
 - (void)_registerForAddressBookYieldNotifications;
-- (void*)abDB;
-- (BOOL)abSaveDB;
-- (BOOL)calSaveDB;
-- (void)calProcessAddedRecords;
-- (BOOL)calCloseDBAndSave:(BOOL)arg1;
-- (void)calOpenDB;
-- (struct CalDatabase { }*)calDB;
 
 @end

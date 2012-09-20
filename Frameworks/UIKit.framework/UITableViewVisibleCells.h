@@ -9,14 +9,14 @@
 }
 
 
-- (unsigned int)count;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (void)removeLastObject;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)addObject:(id)arg1;
 - (void)dealloc;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (unsigned int)count;
 - (id)_array;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
-- (void)removeLastObject;
 
 @end

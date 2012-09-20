@@ -14,21 +14,22 @@
 
 + (id)subtitleLayerWithPlayer:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (void)_invalidateBoundaryTimeObserver;
-- (void)subtitlesDidChange:(id)arg1;
-- (void)_updateNonForcedSubtitleDisplayEnabled:(BOOL)arg1;
-- (void)setOverscanSubtitleSupportEnabled:(BOOL)arg1;
-- (id)subtitleLayerDisplay;
-- (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
-- (BOOL)isOverscanSubtitleSupportEnabled;
-- (id)player;
 - (void)setPlayer:(id)arg1;
+- (id)player;
 - (void)layerDidBecomeVisible:(BOOL)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)initWithLayer:(id)arg1;
 - (void)finalize;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)_updateNonForcedSubtitleDisplayEnabled:(BOOL)arg1;
+- (void)_setSubtitleSample:(id)arg1;
+- (void)setOverscanSubtitleSupportEnabled:(BOOL)arg1;
+- (id)subtitleLayerDisplay;
+- (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
+- (long)updateSubtitle:(id)arg1 forcedSubtitleSample:(BOOL)arg2 shouldBeHidden:(BOOL*)arg3;
+- (long)getLayout:(struct SubtitleLayoutParameters { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGAffineTransform { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; float x_3_1_5; float x_3_1_6; } x3; unsigned char x4; float x5; int x6; })arg1 suggestLayout:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 shouldUpdateCachedSubtitleSample:(BOOL)arg3;
+- (BOOL)isOverscanSubtitleSupportEnabled;
 
 @end

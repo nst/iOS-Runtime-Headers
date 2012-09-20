@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureInputPort, NSArray, AVCaptureOutput, NSMutableArray;
+@class AVCaptureInputPort, NSArray, AVCaptureOutput, NSMutableArray, AVCaptureVideoPreviewLayer;
 
 @interface AVCaptureConnectionInternal : NSObject  {
     NSMutableArray *inputPorts;
     AVCaptureOutput *output;
+    AVCaptureVideoPreviewLayer *videoPreviewLayer;
     BOOL active;
     BOOL enabled;
     int outputChangeSeedOnDisable;
@@ -16,8 +17,8 @@
     long long lastGetAudioLevelsTime;
     AVCaptureInputPort *videoInputPort;
     BOOL videoMirroringSupported;
+    BOOL automaticallyAdjustsVideoMirroring;
     BOOL videoMirrored;
-    BOOL videoMirroredIsSetByClient;
     BOOL videoOrientationSupported;
     int videoOrientation;
     struct { 
@@ -34,22 +35,9 @@
     } videoMaxFrameDuration;
     float videoMaxScaleAndCropFactor;
     float videoScaleAndCropFactor;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } videoCropRect;
-    BOOL videoFirstAndLastFramesUncropped;
     int videoRetainedBufferCountHint;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } videoMotionFilterOverlapRatios;
+    BOOL enablesVideoStabilizationWhenAvailable;
+    BOOL videoStabilizationEnabled;
 }
 
 

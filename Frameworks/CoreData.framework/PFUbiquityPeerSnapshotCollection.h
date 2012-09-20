@@ -13,13 +13,13 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (void)addSnapshot:(id)arg1;
-- (BOOL)calculateSnapshotDiffsWithError:(id*)arg1;
-- (id)snapshotForKnowledgeVector:(id)arg1;
-- (id)snapshotForPeerID:(id)arg1 andTransactionNumber:(id)arg2;
+- (id)init;
 - (id)knowledgeVectorsForTransactionNumber:(id)arg1 exportedByPeerWithID:(id)arg2;
+- (id)snapshotForPeerID:(id)arg1 andTransactionNumber:(id)arg2;
+- (id)snapshotForKnowledgeVector:(id)arg1;
+- (BOOL)calculateSnapshotDiffsWithError:(id*)arg1;
+- (void)addSnapshot:(id)arg1;
 - (id)allPeerIDs;
 
 @end

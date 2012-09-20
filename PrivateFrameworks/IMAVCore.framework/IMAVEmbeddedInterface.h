@@ -9,6 +9,8 @@
 
 - (void)_conferenceEnded:(id)arg1;
 - (void)_conferenceWillStart:(id)arg1;
+- (int)_checkNetworkForChat:(id)arg1 requiresWifi:(BOOL)arg2;
+- (int)_runPingTestForChat:(id)arg1;
 - (void)chatStateUpdated;
 
 @end

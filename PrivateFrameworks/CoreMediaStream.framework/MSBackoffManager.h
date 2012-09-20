@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSDate;
+@class NSDate, <MSBackoffManagerDelegate>;
 
-@interface MSBackoffManager : NSObject  {
+@interface MSBackoffManager : NSObject <NSCoding> {
+    <MSBackoffManagerDelegate> *_delegate;
     double _initialInterval;
     double _backoffFactor;
     double _randomizeFactor;
@@ -14,6 +15,7 @@
     NSDate *_retryAfterDate;
 }
 
+@property <MSBackoffManagerDelegate> * delegate;
 @property double initialInterval;
 @property double backoffFactor;
 @property double randomizeFactor;
@@ -23,7 +25,12 @@
 @property(retain) NSDate * retryAfterDate;
 
 
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)reset;
+- (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setRetryAfterDate:(id)arg1;
 - (id)retryAfterDate;
 - (void)setNextExpiryDate:(id)arg1;
@@ -36,11 +43,12 @@
 - (double)backoffFactor;
 - (void)setInitialInterval:(double)arg1;
 - (double)initialInterval;
+- (id)copyParameters;
 - (void)backoff;
 - (void)didReceiveRetryAfterDate:(id)arg1;
 - (id)nextExpiryDate;
 - (void)setCurrentInterval:(double)arg1;
 - (id)initWithInitialInterval:(double)arg1 backoffFactor:(double)arg2 randomizeFactor:(double)arg3 maxBackoffInterval:(double)arg4 retryAfterDate:(id)arg5;
-- (void)reset;
+- (void)_complainAboutMissingKeyInArchive:(id)arg1;
 
 @end

@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UITouch, UISelectionGrabber, UIView<UITextSelectingContainer>, UITextSelectionView, NSMutableArray;
+@class NSArray, UITouch, UISelectionGrabber, UIResponder<UITextInput>, UITextSelectionView, NSMutableArray;
 
 @interface UITextRangeView : UIView  {
     UITextSelectionView *m_selectionView;
-    UIView<UITextSelectingContainer> *m_container;
+    UIResponder<UITextInput> *m_container;
     int m_mode;
     NSArray *m_rects;
     NSMutableArray *m_rectViews;
@@ -67,7 +67,7 @@
 }
 
 @property(readonly) UITextSelectionView * selectionView;
-@property(readonly) UIView<UITextSelectingContainer> * container;
+@property(readonly) UIResponder<UITextInput> * container;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } startEdge;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endEdge;
 @property struct CGPoint { float x1; float x2; } basePoint;
@@ -98,19 +98,20 @@
 - (BOOL)inputViewIsChanging;
 - (BOOL)rotating;
 - (BOOL)scaling;
+- (BOOL)isScrolling;
 - (BOOL)magnifying;
 - (BOOL)animateUpdate;
 - (void)setEndGrabber:(id)arg1;
 - (void)setStartGrabber:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
+- (struct CGPoint { float x1; float x2; })convertFromMagnifierPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setBasePoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setMagnifierOrientation;
 - (struct CGPoint { float x1; float x2; })touchOffset;
 - (void)setTouchOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setInputViewIsChanging:(BOOL)arg1;
 - (void)setRotating:(BOOL)arg1;
 - (void)setScaling:(BOOL)arg1;
 - (void)setMagnifying:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })convertFromMagnifierPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)selectionAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)setAnimateUpdate:(BOOL)arg1;
 - (void)setExtentPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -122,7 +123,6 @@
 - (double)firstMovedTime;
 - (void)setFirstMovedTime:(double)arg1;
 - (void)beginMagnifying;
-- (BOOL)baseIsStart;
 - (struct CGPoint { float x1; float x2; })applyTouchOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setTouchOffset:(struct CGPoint { float x1; float x2; })arg1 touchPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setInitialDistance:(float)arg1;
@@ -140,6 +140,9 @@
 - (id)container;
 - (void)setCommandsWereShowing:(BOOL)arg1;
 - (void)setEnclosingScrollViewsEnabled:(BOOL)arg1;
+- (BOOL)_startIsHorizontal;
+- (BOOL)_endIsHorizontal;
+- (BOOL)baseIsStart;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endEdge;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })startEdge;
 - (void)setIsScrolling:(BOOL)arg1;
@@ -163,7 +166,6 @@
 - (BOOL)autoscrolled;
 - (BOOL)inGesture;
 - (void)updateSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)isScrolling;
 - (void)setInGesture:(BOOL)arg1;
 - (id)activeTouch;
 - (void)setActiveTouch:(id)arg1;
@@ -174,6 +176,7 @@
 - (void)startAnimating;
 - (void)stopAnimating;
 - (void)updateSelectionWithDocumentPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionClipRect;
 - (id)selectionView;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

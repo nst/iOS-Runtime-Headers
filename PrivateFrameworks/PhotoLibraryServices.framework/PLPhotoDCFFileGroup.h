@@ -22,10 +22,16 @@
 + (id)allMetadataFileExtensions;
 + (struct CGImage { }*)createThumbnailOfImage:(struct CGImage { }*)arg1 format:(int)arg2 fullPath:(id)arg3 orientation:(int)arg4 outThumbnailData:(id*)arg5;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (int)compare:(id)arg1;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void)setDate:(id)arg1;
+- (id)date;
+- (BOOL)isValid;
 - (void)createWildcatThumbnailsFromImage:(struct CGImage { }*)arg1 orientation:(int)arg2 options:(id)arg3 delegate:(id)arg4;
 - (BOOL)isWritePending;
 - (BOOL)hasPrebakedWildcatThumbnails;
@@ -50,7 +56,6 @@
 - (id)prebakedLandscapeScrubberThumbnailsFilename;
 - (id)thumbnailFilename;
 - (void)addExtensionsFromMetadataDirectory;
-- (id)pathForFullSizeImage;
 - (BOOL)hasVideoFile;
 - (id)pathForGroupWithoutExtension;
 - (id)prebakedThumbnailFilename;
@@ -59,20 +64,15 @@
 - (void)deleteFiles;
 - (id)initWithName:(id)arg1 number:(int)arg2 directory:(id)arg3;
 - (id)pathForLowResolutionFile;
-- (id)pathForPrebakedWildcatThumbnailsFile;
-- (id)directory;
-- (id)pathForPrebakedThumbnail;
-- (int)compare:(id)arg1;
-- (BOOL)isValid;
-- (void)setDate:(id)arg1;
-- (id)date;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (id)pathForTrimmedVideoFile;
 - (id)pathForPrebakedPortraitScrubberThumbnails;
 - (id)pathForPrebakedLandscapeScrubberThumbnails;
-- (id)pathForVideoPreviewFile;
+- (id)pathForTrimmedVideoFile;
+- (id)pathForPrebakedWildcatThumbnailsFile;
+- (id)directory;
+- (id)pathForFullSizeImage;
 - (void)addExtension:(id)arg1;
+- (id)pathForPrebakedThumbnail;
 - (id)pathForVideoFile;
+- (id)pathForVideoPreviewFile;
 
 @end

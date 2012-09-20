@@ -11,26 +11,26 @@
     BOOL _replaceMissingValueOnly;
 }
 
-@property BOOL replaceMissingValueOnly;
-@property(retain) NSPropertyTransform * prerequisiteTransform;
-@property(retain) NSExpression * valueExpression;
 @property(retain) NSString * propertyName;
+@property(retain) NSExpression * valueExpression;
+@property(retain) NSPropertyTransform * prerequisiteTransform;
+@property BOOL replaceMissingValueOnly;
 
 
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (BOOL)replaceMissingValueOnly;
+- (id)prerequisiteTransform;
+- (void)setPropertyName:(id)arg1;
+- (id)valueExpression;
+- (void)setValueExpression:(id)arg1;
+- (void)setReplaceMissingValueOnly:(BOOL)arg1;
+- (void)setPrerequisiteTransform:(id)arg1;
+- (id)initWithPropertyName:(id)arg1 valueExpression:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)propertyName;
-- (void)setPropertyName:(id)arg1;
-- (id)prerequisiteTransform;
-- (BOOL)replaceMissingValueOnly;
-- (id)valueExpression;
-- (id)initWithPropertyName:(id)arg1 valueExpression:(id)arg2;
-- (void)setPrerequisiteTransform:(id)arg1;
-- (void)setReplaceMissingValueOnly:(BOOL)arg1;
-- (void)setValueExpression:(id)arg1;
 
 @end

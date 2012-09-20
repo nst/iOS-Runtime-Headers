@@ -13,14 +13,14 @@
 @property(copy) NSString * subtitle;
 @property(copy) NSString * title;
 
-+ (id)menuItem;
 + (id)menuItemWithDictionary:(id)arg1 context:(id)arg2;
++ (id)menuItem;
 
 - (id)groupIdentifier;
+- (id)icon;
 - (void)setRef:(id)arg1;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
-- (id)icon;
 - (void)setIcon:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;

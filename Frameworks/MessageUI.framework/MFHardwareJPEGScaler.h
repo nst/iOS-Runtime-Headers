@@ -13,8 +13,8 @@
 
 
 - (void)dealloc;
-- (BOOL)_isJPEGImage:(struct CGImageSource { }*)arg1;
 - (BOOL)_decodeImageToIOSurface;
+- (BOOL)_isJPEGImage:(struct CGImageSource { }*)arg1;
 - (BOOL)scaleImageToFitLargestDimension:(id)arg1 dataConsumer:(id)arg2;
 - (id)initWithImageData:(id)arg1 imageSource:(struct CGImageSource { }*)arg2;
 

@@ -17,18 +17,16 @@
 @property unsigned int entityIndex;
 @property(getter=isFocusedMediaItem) BOOL focusedMediaItem;
 @property BOOL playImmediately;
-@property(readonly) BOOL playInOppositeApp;
 
 + (Class)queueFeederClass;
 + (id)newDataSourceWithQuery:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
 - (void)setQuery:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)query;
 - (BOOL)isFocusedMediaItem;
 - (void)setPlayImmediately:(BOOL)arg1;
-- (BOOL)playInOppositeApp;
 - (BOOL)playImmediately;
 - (unsigned int)entityIndex;
 - (id)prefixMediaItems;

@@ -11,21 +11,21 @@
 }
 
 
-- (id)string;
-- (void)appendString:(id)arg1;
 - (void)setString:(id)arg1;
+- (id)string;
 - (void)dealloc;
+- (void)appendString:(id)arg1;
 - (id)properties;
 - (BOOL)isEmpty;
-- (void)setPropertiesForDocument;
-- (void)clearString;
 - (id)initWithParagraph:(id)arg1 string:(id)arg2;
+- (void)setPropertiesForDocument;
 - (void)clearProperties;
-- (void)copyPropertiesFrom:(id)arg1;
 - (id)initWithParagraph:(id)arg1;
+- (void)copyPropertiesFrom:(id)arg1;
 - (void)removeLastCharacter:(unsigned short)arg1;
-- (BOOL)binaryWriterContentFlag;
+- (void)clearString;
 - (void)setBinaryWriterContentFlag:(BOOL)arg1;
+- (BOOL)binaryWriterContentFlag;
 - (int)runType;
 
 @end

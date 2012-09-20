@@ -21,12 +21,15 @@
 @property(retain) NSMutableSet * removedItems;
 
 
-- (void)addItem:(id)arg1;
-- (void)removeItem:(id)arg1;
-- (void)rollback;
-- (int)count;
+- (void)reset;
 - (id)description;
 - (void)dealloc;
+- (int)count;
+- (void)rollback;
+- (void)addItem:(id)arg1;
+- (void)setItems:(id)arg1;
+- (id)items;
+- (void)removeItem:(id)arg1;
 - (void)setRemovedItems:(id)arg1;
 - (id)removedItems;
 - (void)setAddedItems:(id)arg1;
@@ -48,8 +51,5 @@
 - (BOOL)validate:(id*)arg1;
 - (void)didCommit;
 - (void)refresh;
-- (void)reset;
-- (void)setItems:(id)arg1;
-- (id)items;
 
 @end

@@ -10,23 +10,23 @@
     int _state;
 }
 
-@property int state;
-@property(retain) NSURL * url;
 @property int action;
+@property(retain) NSURL * url;
+@property int state;
 
 
-- (id)description;
-- (int)action;
-- (void)dealloc;
 - (void)finishWithError:(id)arg1;
-- (void)startTaskGroup;
-- (void)task:(id)arg1 didFinishWithError:(id)arg2;
-- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
+- (int)action;
+- (int)state;
+- (id)description;
+- (void)dealloc;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (void)setAction:(int)arg1;
 - (void)setState:(int)arg1;
-- (int)state;
 - (id)initWithSharingAction:(int)arg1 atCalendarURL:(id)arg2 accountInfoProvider:(id)arg3 taskManager:(id)arg4;
+- (void)startTaskGroup;
+- (void)task:(id)arg1 didFinishWithError:(id)arg2;
+- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 
 @end

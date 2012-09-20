@@ -12,20 +12,20 @@
 }
 
 
-- (id)authScheme;
-- (BOOL)supportsInitialClientResponse;
-- (id)securityLayer;
-- (BOOL)isUsingSSL;
-- (BOOL)couldRetry;
-- (void)setMissingPasswordError;
-- (id)initWithAuthScheme:(id)arg1 account:(id)arg2 connection:(id)arg3;
-- (id)saslName;
-- (BOOL)base64EncodeResponseData;
-- (void)setAuthenticationState:(int)arg1;
-- (id)responseForServerData:(id)arg1;
-- (BOOL)justSentPlainTextPassword;
-- (int)authenticationState;
-- (id)account;
 - (void)dealloc;
+- (void)setMissingPasswordError;
+- (BOOL)couldRetry;
+- (BOOL)isUsingSSL;
+- (id)securityLayer;
+- (BOOL)supportsInitialClientResponse;
+- (id)authScheme;
+- (id)initWithAuthScheme:(id)arg1 account:(id)arg2 connection:(id)arg3;
+- (int)authenticationState;
+- (BOOL)justSentPlainTextPassword;
+- (id)responseForServerData:(id)arg1;
+- (void)setAuthenticationState:(int)arg1;
+- (BOOL)base64EncodeResponseData;
+- (id)saslName;
+- (id)account;
 
 @end

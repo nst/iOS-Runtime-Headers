@@ -10,21 +10,21 @@
     NSString *_accountIdentifier;
 }
 
-@property(copy) NSString * accountIdentifier;
-@property void* store;
 @property void* group;
+@property void* store;
+@property(copy) NSString * accountIdentifier;
 
 
-- (id)description;
-- (void)dealloc;
-- (void)setGroup:(void*)arg1;
-- (id)queryWhereString;
-- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
-- (void*)group;
-- (BOOL)isValid;
 - (id)accountIdentifier;
 - (void)setAccountIdentifier:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setStore:(void*)arg1;
 - (void*)store;
+- (void*)group;
+- (void)setGroup:(void*)arg1;
+- (BOOL)isValid;
+- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
+- (id)queryWhereString;
 
 @end

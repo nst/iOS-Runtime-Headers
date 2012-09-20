@@ -11,8 +11,8 @@
 
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)referencedObject;
 - (id)initWithReferencedObject:(id)arg1;
 

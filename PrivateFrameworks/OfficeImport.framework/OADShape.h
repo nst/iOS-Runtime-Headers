@@ -10,11 +10,11 @@
 }
 
 
-- (id)init;
+- (int)type;
 - (void)dealloc;
+- (id)init;
 - (void)setGeometry:(id)arg1;
 - (id)geometry;
-- (int)type;
 - (void)createPresetGeometryWithShapeType:(int)arg1;
 - (void)flattenProperties;
 - (void)removeUnnecessaryOverrides;

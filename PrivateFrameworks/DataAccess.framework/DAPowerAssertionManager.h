@@ -2,30 +2,29 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSCountedSet, NSMutableSet, NSString, NSMutableDictionary;
+@class NSMutableSet, NSCountedSet, NSMutableDictionary;
 
 @interface DAPowerAssertionManager : NSObject  {
-    NSString *_uuid;
     NSCountedSet *_contexts;
     NSMutableDictionary *_groupIdentifierToContexts;
     struct __CFDictionary { } *_contextToGroupIdentifier;
     NSMutableSet *_heldAsideGroupIdentifiers;
     NSCountedSet *_heldAsideContexts;
-    void *_timedAssertionRef;
+    struct __CFDictionary { } *_contextToPowerAssertionRef;
 }
 
-+ (void)vendDaemons:(Class)arg1;
 + (id)sharedPowerAssertionManager;
++ (void)vendDaemons:(Class)arg1;
 
-- (id)init;
 - (void)dealloc;
-- (unsigned int)powerAssertionRetainCount:(id)arg1;
-- (void)_releaseAssertions;
-- (void)_retainAssertions;
-- (void)releasePowerAssertion:(id)arg1;
-- (void)retainPowerAssertion:(id)arg1 withGroupIdentifier:(id)arg2;
+- (id)init;
 - (void)dropPowerAssertionsForGroupIdentifier:(id)arg1;
 - (void)reattainPowerAssertionsForGroupIdentifier:(id)arg1;
 - (id)stateString;
+- (unsigned int)powerAssertionRetainCount:(id)arg1;
+- (void)_releaseAssertionForContext:(id)arg1;
+- (void)_retainAssertionForContext:(id)arg1;
+- (void)releasePowerAssertion:(id)arg1;
+- (void)retainPowerAssertion:(id)arg1 withGroupIdentifier:(id)arg2;
 
 @end

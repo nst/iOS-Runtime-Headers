@@ -10,11 +10,11 @@
 
 
 - (id)init;
-- (double)to;
-- (void)setTo:(double)arg1;
-- (double)from;
-- (void)setFrom:(double)arg1;
 - (double)by;
 - (void)setBy:(double)arg1;
+- (void)setTo:(double)arg1;
+- (void)setFrom:(double)arg1;
+- (double)to;
+- (double)from;
 
 @end

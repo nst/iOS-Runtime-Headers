@@ -14,8 +14,11 @@
 
 + (id)stringFromOverwriteValue:(int)arg1;
 
+- (id)initWithURL:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (void)setDestinationURL:(id)arg1;
+- (id)destinationURL;
 - (void)setOverwrite:(int)arg1;
 - (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2;
 - (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
@@ -23,9 +26,6 @@
 - (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 andOverwrite:(int)arg3;
 - (id)additionalHeaderValues;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)initWithURL:(id)arg1;
-- (id)destinationURL;
-- (void)setDestinationURL:(id)arg1;
 - (id)requestBody;
 
 @end

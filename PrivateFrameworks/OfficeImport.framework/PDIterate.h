@@ -14,9 +14,9 @@
 - (double)value;
 - (void)setValue:(double)arg1;
 - (void)setType:(int)arg1;
-- (BOOL)isBackwards;
-- (void)setIsBackwards:(BOOL)arg1;
-- (BOOL)isValuePercentage;
 - (void)setIsValuePercentage:(BOOL)arg1;
+- (BOOL)isValuePercentage;
+- (void)setIsBackwards:(BOOL)arg1;
+- (BOOL)isBackwards;
 
 @end

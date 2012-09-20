@@ -10,15 +10,15 @@
 
 @property(retain) NSMutableSet * accessControlEntities;
 
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)liveACEs;
 - (id)notGrantedSubsetOfACEs:(id)arg1;
 - (void)setAccessControlEntities:(id)arg1;
 - (void)addACE:(id)arg1;
 - (id)accessControlEntities;
-- (id)copyParseRules;
 
 @end

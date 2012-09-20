@@ -9,15 +9,15 @@
 
 @property(copy) NSString * lastResponseId;
 @property(copy) NSString * requestId;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)restartRequest;
 + (id)restartRequestWithDictionary:(id)arg1 context:(id)arg2;
++ (id)restartRequest;
 
 - (id)groupIdentifier;
-- (id)lastResponseId;
 - (void)setLastResponseId:(id)arg1;
+- (id)lastResponseId;
 - (id)encodedClassName;
 - (void)setRequestId:(id)arg1;
 - (id)requestId;

@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDBorders, NSColorStub;
+@class EDBorders, TSUColor;
 
 @interface EMBordersProperty : CMProperty <NSCopying> {
     EDBorders *edValue;
-    NSColorStub *mBorderColor;
-    NSColorStub *mBorderTopColor;
-    NSColorStub *mBorderLeftColor;
-    NSColorStub *mBorderBottomColor;
-    NSColorStub *mBorderRightColor;
+    TSUColor *mBorderColor;
+    TSUColor *mBorderTopColor;
+    TSUColor *mBorderLeftColor;
+    TSUColor *mBorderBottomColor;
+    TSUColor *mBorderRightColor;
     int mBorderStyle[5];
     int mBorderWidth[5];
 }
@@ -20,23 +20,23 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)styleString;
 - (id)borderColor;
-- (id)initWithEDBorders:(id)arg1;
-- (BOOL)hasSameColorsAs:(id)arg1;
-- (BOOL)hasSameStylesAs:(id)arg1;
-- (BOOL)hasSameWidthsAs:(id)arg1;
-- (void)setBorderStyleAndWidth:(int)arg1 location:(unsigned int)arg2;
-- (id)styleHashNumber;
 - (id)widthHashNumber;
-- (int*)borderStyles;
+- (id)styleHashNumber;
 - (int*)borderWidths;
-- (BOOL)isNoneAtLocation:(int)arg1;
+- (int*)borderStyles;
+- (id)initWithEDBorders:(id)arg1;
+- (void)setBorderStyleAndWidth:(int)arg1 location:(unsigned int)arg2;
+- (BOOL)hasSameWidthsAs:(id)arg1;
+- (BOOL)hasSameStylesAs:(id)arg1;
+- (BOOL)hasSameColorsAs:(id)arg1;
 - (void)setNoneAtLocation:(int)arg1;
-- (id)cssString;
-- (id)widthString;
-- (id)colorString;
-- (id)stringFromStyleEnum:(int)arg1;
-- (id)stringFromWidthEnum:(int)arg1;
+- (BOOL)isNoneAtLocation:(int)arg1;
 - (id)stringFromColor:(id)arg1;
+- (id)stringFromWidthEnum:(int)arg1;
+- (id)stringFromStyleEnum:(int)arg1;
+- (id)colorString;
+- (id)widthString;
+- (id)cssString;
 - (id)initWithOADStroke:(id)arg1;
 - (id)cssStringForName:(id)arg1;
 

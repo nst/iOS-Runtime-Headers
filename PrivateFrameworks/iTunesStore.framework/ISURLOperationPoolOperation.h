@@ -13,12 +13,12 @@
 @property(readonly) ISURLOperation * mainOperation;
 
 
+- (void)cancelOperation:(id)arg1;
 - (void)addOperation:(id)arg1;
 - (void)dealloc;
+- (void)run;
 - (void)_forwardResponseFromOperation:(id)arg1 toOperation:(id)arg2;
 - (id)mainOperation;
 - (BOOL)containsOperation:(id)arg1;
-- (void)run;
-- (void)cancelOperation:(id)arg1;
 
 @end

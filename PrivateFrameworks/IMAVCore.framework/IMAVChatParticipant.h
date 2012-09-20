@@ -15,6 +15,8 @@
     BOOL _isAOLInterop;
     BOOL _usingICE;
     BOOL _networkStalled;
+    BOOL _videoDegraded;
+    BOOL _mediaStalled;
     BOOL _isRecording;
     NSString *_vcPartyID;
     int _avRelayStatus;
@@ -73,18 +75,21 @@
             float height; 
         } size; 
     } _remoteLandscapeContentRect;
+    unsigned int __screenOrientation;
 }
 
+@property(readonly) NSString * rawErrorString;
+@property(readonly) NSString * errorString;
+@property(readonly) IMAVChatParticipant * remoteErrorParticipant;
+@property void* videoLayer;
+@property void* videoBackLayer;
 @property(setter=setAudioMuted:) BOOL isAudioMuted;
 @property(setter=setVideoPaused:) BOOL isVideoPaused;
 @property(readonly) BOOL isSendingAudio;
 @property(readonly) BOOL isSendingVideo;
+@property(readonly) BOOL isVideoDegraded;
+@property(readonly) BOOL isMediaStalled;
 @property(setter=setSendingAuxVideo:) BOOL isSendingAuxVideo;
-@property void* videoLayer;
-@property void* videoBackLayer;
-@property(readonly) NSString * rawErrorString;
-@property(readonly) NSString * errorString;
-@property(readonly) IMAVChatParticipant * remoteErrorParticipant;
 @property(readonly) IMHandle * imHandle;
 @property(readonly) IMHandle * invitedBy;
 @property IMAVChat * avChat;
@@ -98,6 +103,8 @@
 @property(setter=setRecording:) BOOL isRecording;
 @property(setter=setAVRelayStatus:) int avRelayStatus;
 @property(setter=setNetworkStalled:) BOOL isNetworkStalled;
+@property(setter=setVideoDegraded:) BOOL isVideoDegraded;
+@property(setter=setMediaStalled:) BOOL isMediaStalled;
 @property(setter=setAOLInterop:) BOOL isAOLInterop;
 @property(setter=setVCPartyID:,retain) NSString * vcPartyID;
 @property NSData * remoteICEData;
@@ -119,6 +126,7 @@
 @property(setter=_setPreemptiveRelayUpdate:,retain) NSDictionary * _preemptiveRelayUpdate;
 @property(setter=_setCameraType:) unsigned int cameraType;
 @property(setter=_setCameraOrientation:) unsigned int cameraOrientation;
+@property(setter=_setScreenOrientation:) unsigned int _screenOrientation;
 @property(setter=setAudioMuted:) BOOL isAudioMuted;
 @property(setter=setVideoPaused:) BOOL isVideoPaused;
 @property(readonly) BOOL isSendingAudio;
@@ -127,21 +135,17 @@
 @property(readonly) BOOL isUsingICE;
 
 
-- (void)_setError:(int)arg1;
-- (void)setProperties:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (void*)videoLayer;
-- (BOOL)isRecording;
 - (id)invitedBy;
-- (int)error;
-- (id)properties;
-- (id)name;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
-- (unsigned int)cameraType;
 - (void)_enqueueOperation:(id)arg1;
+- (void*)videoLayer;
+- (unsigned int)state;
+- (void)setProperties:(id)arg1;
+- (id)name;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (id)properties;
+- (void)setState:(unsigned int)arg1;
 - (void)setVideoBackLayer:(void*)arg1;
 - (void*)videoBackLayer;
 - (void)setVideoLayer:(void*)arg1;
@@ -154,6 +158,8 @@
 - (void)sendRelayProposal;
 - (void)_connectTimeout:(id)arg1;
 - (void)resetWaitingToConnectTimer;
+- (void)_setScreenOrientation:(unsigned int)arg1;
+- (unsigned int)_screenOrientation;
 - (void)_setRemoteLandscapeContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_remoteLandscapeContentRect;
 - (void)_setRemotePortraitContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -181,8 +187,13 @@
 - (void)setARDRole:(int)arg1;
 - (void)_setChatError:(int)arg1;
 - (void)setRecording:(BOOL)arg1;
+- (void)setMediaStalled:(BOOL)arg1;
+- (BOOL)isMediaStalled;
+- (void)setVideoDegraded:(BOOL)arg1;
+- (BOOL)isVideoDegraded;
 - (void)setNetworkStalled:(BOOL)arg1;
 - (BOOL)isNetworkStalled;
+- (BOOL)isAOLInterop;
 - (void)setVideoPaused:(BOOL)arg1;
 - (BOOL)isVideoPaused;
 - (void)setAudioMuted:(BOOL)arg1;
@@ -198,16 +209,15 @@
 - (void)requestIconIfNecessary;
 - (id)initWithStatusNugget:(id)arg1 andChat:(id)arg2 account:(id)arg3;
 - (struct CGSize { float x1; float x2; })localAspectRatioForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
-- (BOOL)isLocalParticipant;
 - (void)_processPropertyUpdate:(id)arg1;
 - (void)_setState:(unsigned int)arg1 withReason:(unsigned int)arg2 andError:(int)arg3;
 - (BOOL)isInitiator;
 - (void)_setInviteDelivered:(BOOL)arg1;
 - (BOOL)_inviteDelivered;
+- (BOOL)isLocalParticipant;
 - (id)_initAs:(id)arg1 invitedBy:(id)arg2 sendingAudio:(BOOL)arg3 sendingVideo:(BOOL)arg4 usingICE:(BOOL)arg5 toChat:(id)arg6 inState:(unsigned int)arg7 withError:(int)arg8 andReason:(unsigned int)arg9 andVCPartyID:(id)arg10 account:(id)arg11;
 - (void)_setCameraType:(unsigned int)arg1;
 - (void)setAVChat:(id)arg1;
-- (BOOL)isAOLInterop;
 - (void)sendAVMessage:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)receivedRelayProposalAcceptWithConnectionData:(id)arg1;
 - (void)receivedRelayProposalRequestWithConnectionData:(id)arg1;
@@ -222,11 +232,13 @@
 - (id)statusNugget;
 - (id)initAs:(id)arg1 invitedBy:(id)arg2 ARDRole:(int)arg3 toChat:(id)arg4 account:(id)arg5;
 - (void)setStateToEndedWithReason:(unsigned int)arg1 andError:(int)arg2;
+- (id)_natType;
 - (void)disconnectFromAVChat;
 - (void)_cancelMessagesQueue;
 - (void)_flushMessagesQueue;
 - (void)setAVRelayStatus:(int)arg1;
 - (void)setRemoteICEData:(id)arg1;
+- (void)_noteInviteDelivered;
 - (void)_updateProperties:(id)arg1;
 - (void)cancelInvitation;
 - (void)_setConferenceID:(id)arg1;
@@ -238,13 +250,16 @@
 - (id)vcPartyID;
 - (void)setWaitingToConnect:(BOOL)arg1;
 - (int)avRelayStatus;
-- (void)_noteInviteDelivered;
 - (id)imHandle;
+- (id)avChat;
 - (id)_conferenceID;
 - (BOOL)isUsingICE;
 - (id)getLocalICEData;
-- (id)avChat;
 - (void)_setCameraOrientation:(unsigned int)arg1;
 - (unsigned int)cameraOrientation;
+- (void)_setError:(int)arg1;
+- (int)error;
+- (unsigned int)cameraType;
+- (BOOL)isRecording;
 
 @end

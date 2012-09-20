@@ -20,7 +20,14 @@
 }
 
 
+- (BOOL)setConfiguration:(unsigned char)arg1;
+- (BOOL)reset;
 - (void)dealloc;
+- (id)initWithIOObject:(unsigned int)arg1;
+- (BOOL)isConfigured;
+- (BOOL)close;
+- (BOOL)open;
+- (BOOL)setInterface:(unsigned char)arg1;
 - (BOOL)clearPipe:(unsigned char)arg1 bothEnds:(BOOL)arg2;
 - (void)abortPipe:(unsigned char)arg1;
 - (BOOL)getInformationForPipe:(unsigned char)arg1 direction:(char *)arg2 number:(char *)arg3 transferType:(char *)arg4 maxPacketSize:(unsigned short*)arg5 interval:(char *)arg6;
@@ -34,16 +41,9 @@
 - (unsigned char)numberOfConfigurations;
 - (long)product;
 - (long)vendor;
-- (BOOL)openWithSeize:(BOOL)arg1;
 - (unsigned long)_transferData:(void*)arg1 withSize:(unsigned long)arg2 toPipe:(unsigned char)arg3 withTimeout:(double)arg4 withFunction:(int (*)())arg5;
+- (BOOL)openWithSeize:(BOOL)arg1;
 - (void)registerForDisconnectNotifications:(BOOL)arg1;
-- (BOOL)setInterface:(unsigned char)arg1;
-- (id)initWithIOObject:(unsigned int)arg1;
-- (BOOL)isConfigured;
-- (BOOL)reset;
-- (BOOL)close;
-- (BOOL)open;
-- (BOOL)setConfiguration:(unsigned char)arg1;
 - (BOOL)isOpen;
 
 @end

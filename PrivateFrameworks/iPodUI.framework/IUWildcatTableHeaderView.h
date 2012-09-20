@@ -13,12 +13,12 @@
 @property float titleLeftPadding;
 
 
-- (id)init;
+- (id)_label;
 - (void)dealloc;
+- (id)init;
 - (id)title;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
-- (id)_label;
 - (float)titleLeftPadding;
 - (void)setTitleLeftPadding:(float)arg1;
 

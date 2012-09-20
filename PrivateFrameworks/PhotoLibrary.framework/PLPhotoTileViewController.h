@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class PLVideoView, PLManagedAsset, UIImageView, <PLPhotoTileViewControllerDelegate>, UIGestureRecognizer, PLImageScrollView, UIImage, PLExpandableImageView;
+@class PLVideoView, PLManagedAsset, PLPhotoTilePlaceholderView, UIImageView, PLCommentsViewController, UIGestureRecognizer, PLImageScrollView, UIImage, PLExpandableImageView, <PLPhotoTileViewControllerDelegate>;
 
-@interface PLPhotoTileViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate> {
+@interface PLPhotoTileViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate, PLCommentsViewControllerDelegate> {
     UIImage *_image;
     UIImage *_pendingImage;
     UIImage *_unscaledImage;
@@ -18,6 +18,8 @@
     PLVideoView *_videoView;
     UIImageView *_gradientView;
     UIImageView *_hdrBadgeImageView;
+    PLPhotoTilePlaceholderView *_placeholderView;
+    PLCommentsViewController *_commentsViewController;
     UIGestureRecognizer *_singleTapGestureRecognizer;
     UIGestureRecognizer *_doubleTapGestureRecognizer;
     <PLPhotoTileViewControllerDelegate> *_tileDelegate;
@@ -61,7 +63,7 @@
             float height; 
         } size; 
     } _cropRect;
-    float _maxZoomScale;
+    float _doubleTapZoomScale;
     float _minZoomScale;
     float _zoomToFillScale;
     int _mode;
@@ -105,6 +107,7 @@
     unsigned int _photoShouldBeHDRBadged : 1;
     unsigned int _hdrBadgeShouldBeVisible : 1;
     unsigned int _didSetHDRForModelPhoto : 1;
+    unsigned int _commentsTableVisible : 1;
 }
 
 @property(readonly) PLManagedAsset * photo;
@@ -114,18 +117,21 @@
 @property BOOL centerContentVertically;
 @property BOOL forceNativeScreenScale;
 @property BOOL force1XCroppedImage;
+@property(readonly) PLCommentsViewController * commentsViewController;
+@property(readonly) BOOL commentsTableIsVisible;
 
 + (struct CGSize { float x1; float x2; })tileSize;
++ (BOOL)shouldShowPlaceholderForAssetKind:(int)arg1;
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 modelPhoto:(id)arg2 mode:(int)arg3;
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2 allowZoomToFill:(BOOL)arg3 mode:(int)arg4;
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageRef:(struct CGImage { }*)arg2 imageOrientation:(int)arg3 allowZoomToFill:(BOOL)arg4 mode:(int)arg5;
 + (struct CGSize { float x1; float x2; })tvOutTileSize;
 
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (void)setVideoView:(id)arg1;
 - (id)videoView;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (id)thumbnailImage;
 - (BOOL)allowsEditing;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -133,6 +139,7 @@
 - (id)imageView;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
@@ -140,36 +147,39 @@
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)image;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)setZoomScale:(float)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
-- (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
-- (id)viewForZoomingInScrollView:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })scrollView:(id)arg1 contentSizeForZoomScale:(float)arg2 withProposedSize:(struct CGSize { float x1; float x2; })arg3;
-- (void)scrollViewDidZoom:(id)arg1;
 - (void)setGesturesEnabled:(BOOL)arg1;
 - (BOOL)gesturesEnabled;
 - (int)_imageOrientation;
 - (int)imageOrientation;
+- (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
+- (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
+- (id)viewForZoomingInScrollView:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidZoom:(id)arg1;
 - (void)setUnscaledImage:(id)arg1;
 - (void)setCenterContentVertically:(BOOL)arg1;
 - (BOOL)centerContentVertically;
 - (void)setAllowsZoomToFill:(BOOL)arg1;
 - (float)currentToDefaultZoomRatio;
-- (float)maxZoomScale;
 - (BOOL)didRequestFullSizeImage;
 - (BOOL)userDidAdjustWallpaper;
 - (id)tileDelegate;
 - (id)expandableImageView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tileFrame;
 - (id)initForPageController;
+- (void)commentsControllerWillBeginScrolling:(id)arg1;
+- (void)commentsControllerDidDisplayUnreadComment:(id)arg1;
+- (void)commentsControllerDidExitEditMode:(id)arg1;
+- (void)commentsControllerWillEnterEditMode:(id)arg1;
+- (void)commentsControllerInactiveAreaWasTapped:(id)arg1;
 - (void)_adjustZoomForEnteringMode:(BOOL)arg1;
 - (BOOL)isZoomedOut;
 - (void)_adjustScrollViewContentOffsetForInsets;
-- (void)_updateZoomScalesForView:(id)arg1;
 - (float)minZoomScale;
 - (float)zoomToFillScale;
 - (void)_setDidEndZoomingBlock:(id)arg1;
@@ -180,12 +190,16 @@
 - (float)minRotatedScale;
 - (void)_requestFullSizeImage;
 - (void)_performDidEndZoomBlock;
+- (void)initializeCommentsTable;
 - (BOOL)tileIsOnScreen;
+- (void)_updateAggdKeys;
 - (void)_setDefaultZoomScale;
 - (void)updateZoomScales;
 - (void)_updateModelPhotoWithImage:(id)arg1;
 - (void)_setupHDRBadge;
+- (void)_updatePlaceholderViewAnimated:(BOOL)arg1;
 - (BOOL)_clientIsWallpaper;
+- (void)_installSubview:(id)arg1;
 - (void)_showHDRBadgeIfAppropriate;
 - (void)_repositionHDRBadge;
 - (void)_updateGradientImageForOrientation:(int)arg1;
@@ -204,6 +218,7 @@
 - (void)noteParentViewControllerDidDisappear;
 - (void)setCropOverlayRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setForceNativeScreenScale:(BOOL)arg1;
+- (void)updateCommentsForVisibleOverlays:(BOOL)arg1;
 - (void)setHDRBadgeVisible:(BOOL)arg1;
 - (void)setClientIsWallpaper:(BOOL)arg1;
 - (id)newCGImageBackedUIImage;
@@ -219,11 +234,14 @@
 - (void)contentViewFrameChanged;
 - (void)ensureFullSizeImageLoaded;
 - (void)updateAfterCollapse;
+- (BOOL)commentsTableIsVisible;
+- (id)commentsViewController;
 - (void)setZoomingGesturesEnabled:(BOOL)arg1;
 - (void)forceZoomingGesturesEnabled;
 - (void)refreshTileWithFullScreenImage:(id)arg1;
 - (BOOL)photoShouldHaveHDRBadge;
 - (id)photo;
+- (void)setCommentsTableVisibility:(BOOL)arg1 duration:(float)arg2;
 - (void)setOrientationDelegate:(id)arg1;
 - (void)setTileDelegate:(id)arg1;
 - (void)setTVOut:(BOOL)arg1;

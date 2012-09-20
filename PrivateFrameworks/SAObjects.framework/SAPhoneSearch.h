@@ -10,7 +10,7 @@
 @property(copy) NSURL * targetAppId;
 @property(copy) NSDate * end;
 @property(copy) NSString * incomingPhoneNumber;
-@property(retain) NSNumber * limit;
+@property(copy) NSNumber * limit;
 @property BOOL missed;
 @property(copy) NSString * outgoingPhoneNumber;
 @property(copy) NSDate * start;
@@ -26,17 +26,17 @@
 - (id)start;
 - (id)limit;
 - (void)setLimit:(id)arg1;
-- (BOOL)missed;
 - (void)setMissed:(BOOL)arg1;
-- (id)incomingPhoneNumber;
-- (void)setIncomingPhoneNumber:(id)arg1;
-- (id)outgoingPhoneNumber;
+- (BOOL)missed;
 - (void)setOutgoingPhoneNumber:(id)arg1;
-- (id)timeZoneId;
+- (id)outgoingPhoneNumber;
+- (void)setIncomingPhoneNumber:(id)arg1;
+- (id)incomingPhoneNumber;
 - (void)setTimeZoneId:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)timeZoneId;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

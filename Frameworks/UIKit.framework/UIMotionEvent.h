@@ -25,6 +25,7 @@
 @property int shakeState;
 
 
+- (int)type;
 - (id)description;
 - (void)dealloc;
 - (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
@@ -35,15 +36,17 @@
 - (void)_accelerometerDidDetectMovementWithTimestamp:(double)arg1;
 - (void)_resetLowPassState;
 - (void)_idleTimerFired;
+- (BOOL)_detectWhenNotActive;
+- (void)_updateAccelerometerEnabled;
 - (void)_willSuspend;
 - (void)_willResume;
 - (void)_enablePeakDetectionIfNecessary;
 - (int)_shakeState;
-- (int)type;
 - (int)subtype;
 - (int)shakeState;
 - (void)setShakeState:(int)arg1;
 - (void)_setSubtype:(int)arg1;
+- (BOOL)_isDetectingMotionEvents;
 - (id)_init;
 
 @end

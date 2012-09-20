@@ -16,14 +16,14 @@
 
 
 - (void)setName:(id)arg1;
+- (id)name;
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)value;
+- (void)setValue:(id)arg1;
 - (id)initWithNameSpace:(id)arg1 name:(id)arg2 value:(id)arg3;
 - (void)setNameSpace:(id)arg1;
 - (id)nameSpace;
-- (id)value;
-- (void)setValue:(id)arg1;
-- (id)name;
 
 @end

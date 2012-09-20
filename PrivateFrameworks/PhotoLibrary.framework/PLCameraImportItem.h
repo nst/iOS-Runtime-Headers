@@ -31,13 +31,13 @@
 @property(retain) NSError * importError;
 
 
+- (id)identifier;
 - (id)description;
 - (void)dealloc;
-- (id)creationDate;
-- (id)identifier;
-- (BOOL)isLocked;
-- (unsigned long long)fileSize;
 - (id)thumbnail;
+- (BOOL)isLocked;
+- (BOOL)isAudio;
+- (BOOL)isJPEG;
 - (void)setImportedAsset:(id)arg1;
 - (id)importedAsset;
 - (void)setThumbnailData:(id)arg1;
@@ -53,7 +53,6 @@
 - (void)clearMetadata;
 - (id)metadataForRepresentationWithFileExtension:(id)arg1;
 - (id)_fileExtensionForTypeWithSelector:(SEL)arg1;
-- (BOOL)isJPEG;
 - (BOOL)isRaw;
 - (id)fileExtensions;
 - (BOOL)_isTypeWithSelector:(SEL)arg1;
@@ -86,6 +85,7 @@
 - (void)removeRepresentationForCameraFile:(id)arg1;
 - (void)addRepresentationForCameraFile:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 parentFolder:(id)arg2;
-- (BOOL)isAudio;
+- (unsigned long long)fileSize;
+- (id)creationDate;
 
 @end

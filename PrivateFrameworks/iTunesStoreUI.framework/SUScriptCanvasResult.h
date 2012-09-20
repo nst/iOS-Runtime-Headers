@@ -2,18 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class UIImage;
+
 @interface SUScriptCanvasResult : NSObject  {
-    struct CGImage { } *_image;
+    UIImage *_image;
     struct CGPath { } *_path;
 }
 
-@property(readonly) struct CGImage { }* canvasImage;
+@property(readonly) UIImage * canvasImage;
 @property(readonly) struct CGPath { }* canvasPath;
 
 
-- (void)dealloc;
 - (struct CGPath { }*)canvasPath;
 - (id)_initWithCanvas:(id)arg1;
-- (struct CGImage { }*)canvasImage;
+- (id)canvasImage;
+- (void)dealloc;
 
 @end

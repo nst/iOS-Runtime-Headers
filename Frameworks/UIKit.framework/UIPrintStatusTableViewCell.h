@@ -18,8 +18,8 @@
 - (void)setShowActive:(BOOL)arg1;
 - (void)setHostName:(id)arg1;
 - (id)hostName;
-- (id)initWithReuseIdentifier:(id)arg1;
 - (BOOL)showActive;
+- (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutSubviews;
 
 @end

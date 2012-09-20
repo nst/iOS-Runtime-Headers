@@ -12,12 +12,12 @@
 
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)init;
+- (id)accessLevel;
 - (id)initWithAccess:(int)arg1;
 - (void)setAccessLevel:(id)arg1;
-- (id)accessLevel;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 
 @end

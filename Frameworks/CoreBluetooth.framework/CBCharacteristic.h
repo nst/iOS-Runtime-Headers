@@ -7,30 +7,31 @@
 @interface CBCharacteristic : NSObject  {
     CBService *_service;
     CBUUID *_UUID;
-    unsigned int _properties;
+    int _properties;
     NSData *_value;
     NSArray *_descriptors;
     BOOL _isBroadcasted;
     BOOL _isNotifying;
 }
 
-@property(readonly) BOOL isNotifying;
-@property(readonly) BOOL isBroadcasted;
-@property(retain) NSArray * descriptors;
-@property(retain) NSData * value;
-@property(readonly) unsigned int properties;
+@property CBService * service;
 @property(readonly) CBUUID * UUID;
-@property(readonly) CBService * service;
+@property(readonly) int properties;
+@property(retain) NSData * value;
+@property(retain) NSArray * descriptors;
+@property(readonly) BOOL isBroadcasted;
+@property(readonly) BOOL isNotifying;
 
 
-- (id)service;
-- (BOOL)isNotifying;
-- (BOOL)isBroadcasted;
-- (id)descriptors;
-- (void)setDescriptors:(id)arg1;
-- (unsigned int)properties;
+- (id)UUID;
+- (int)properties;
 - (id)value;
 - (void)setValue:(id)arg1;
-- (id)UUID;
+- (id)service;
+- (void)setService:(id)arg1;
+- (BOOL)isNotifying;
+- (BOOL)isBroadcasted;
+- (void)setDescriptors:(id)arg1;
+- (id)descriptors;
 
 @end

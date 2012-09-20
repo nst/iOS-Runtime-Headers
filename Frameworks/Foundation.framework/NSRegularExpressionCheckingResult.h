@@ -11,14 +11,14 @@
 @property(readonly) NSArray * rangeArray;
 
 
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (unsigned long long)resultType;
 - (id)initWithRangeArray:(id)arg1 regularExpression:(id)arg2;
 - (id)rangeArray;
 - (id)initWithRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 count:(unsigned int)arg2 regularExpression:(id)arg3;
 - (id)regularExpression;
 - (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (id)description;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (unsigned long long)resultType;
 
 @end

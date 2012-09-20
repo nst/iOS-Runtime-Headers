@@ -9,18 +9,18 @@
     CoreDAVLeafItem *_commonName;
 }
 
-@property(retain) CoreDAVLeafItem * commonName;
 @property(retain) CoreDAVHrefItem * href;
+@property(retain) CoreDAVLeafItem * commonName;
 
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)setCommonName:(id)arg1;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setHref:(id)arg1;
 - (id)href;
-- (void)setCommonName:(id)arg1;
 - (id)commonName;
 
 @end

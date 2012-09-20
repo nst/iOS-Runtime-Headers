@@ -9,14 +9,14 @@
 @property unsigned int length;
 
 
-- (unsigned int)length;
 - (void)dealloc;
+- (unsigned int)length;
 - (id)item:(unsigned int)arg1;
 - (void)finalize;
 - (void)setSelectedIndex:(int)arg1;
 - (int)selectedIndex;
-- (void)setLength:(unsigned int)arg1;
 - (void)add:(id)arg1 index:(unsigned int)arg2;
+- (void)setLength:(unsigned int)arg1;
 - (id)namedItem:(id)arg1;
 - (void)remove:(unsigned int)arg1;
 

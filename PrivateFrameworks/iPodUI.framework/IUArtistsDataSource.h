@@ -6,6 +6,7 @@
     BOOL _groupByAlbumArtist;
 }
 
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tabBarItemIconImageInsets;
 + (id)queryCollectionPropertiesToFetch;
 + (int)mediaEntityType;
 + (id)tabBarItemTitleKey;
@@ -22,5 +23,6 @@
 - (BOOL)allowsDeletion;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (id)viewControllerContextForMediaQuery:(id)arg1;
+- (void)reloadActionRows;
 
 @end

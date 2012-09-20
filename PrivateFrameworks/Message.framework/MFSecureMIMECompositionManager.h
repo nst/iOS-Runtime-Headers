@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSSet, MailAccount, <MFSecureMIMECompositionManagerDelegate>, NSLock, NSString, NSMutableSet, MFError, NSMutableDictionary;
+@class NSSet, NSObject<OS_dispatch_queue>, MailAccount, <MFSecureMIMECompositionManagerDelegate>, NSLock, NSMutableSet, NSString, MFError, NSMutableDictionary;
 
 @interface MFSecureMIMECompositionManager : NSObject  {
     <MFSecureMIMECompositionManagerDelegate> *_delegate;
     NSLock *_lock;
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
     MailAccount *_sendingAccount;
     NSString *_sendingAddress;
     struct __SecIdentity { } *_signingIdentity;
@@ -35,40 +35,40 @@
 @property(readonly) int encryptionStatus;
 @property(readonly) NSSet * recipients;
 
-+ (struct __SecIdentity { }*)copySigningIdentityForAccount:(id)arg1 sendingAddress:(id)arg2 error:(id*)arg3;
-+ (struct __SecIdentity { }*)copyEncryptionIdentityForAccount:(id)arg1 sendingAddress:(id)arg2 error:(id*)arg3;
 + (id)copyEncryptionCertificatesForAccount:(id)arg1 recipientAddress:(id)arg2 error:(id*)arg3;
++ (struct __SecIdentity { }*)copyEncryptionIdentityForAccount:(id)arg1 sendingAddress:(id)arg2 error:(id*)arg3;
++ (struct __SecIdentity { }*)copySigningIdentityForAccount:(id)arg1 sendingAddress:(id)arg2 error:(id*)arg3;
 
-- (id)initWithSigningPolicy:(int)arg1 encryptionPolicy:(int)arg2;
-- (void)removeRecipients:(id)arg1;
-- (void)setSendingAddress:(id)arg1;
-- (id)sendingAddress;
-- (id)sendingAccount;
-- (int)signingPolicy;
-- (int)encryptionPolicy;
-- (int)signingStatus;
-- (int)encryptionStatus;
-- (BOOL)shouldAllowSend;
-- (id)initWithSendingAccount:(id)arg1 signingPolicy:(int)arg2 encryptionPolicy:(int)arg3;
-- (BOOL)_updateSigningStatus_nts;
-- (BOOL)_updateEncryptionStatus_nts;
-- (void)_notifyDelegateEncryptionStatusDidChange:(int)arg1 certsByRecipient:(id)arg2 errorsByRecipient:(id)arg3 identity:(struct __SecIdentity { }*)arg4 error:(id)arg5;
-- (void)_determineEncryptionStatusWithNewRecipients:(id)arg1;
-- (void)_notifyDelegateSigningStatusDidChange:(int)arg1 identity:(struct __SecIdentity { }*)arg2 error:(id)arg3;
-- (void)_determineSigningStatusWithSendingAddress:(id)arg1;
-- (void)_determineEncryptionStatusWithSendingAddress:(id)arg1;
-- (void)_setSigningIdentityError_nts:(id)arg1;
-- (void)_setEncryptionIdentityError_nts:(id)arg1;
-- (BOOL)_shouldAllowSend_nts;
-- (BOOL)_shouldSign_nts;
-- (BOOL)_shouldEncrypt_nts;
-- (id)compositionSpecification;
-- (id)init;
-- (void)dealloc;
-- (void)addRecipients:(id)arg1;
-- (id)recipients;
 - (void)invalidate;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (BOOL)shouldAllowSend;
+- (id)recipients;
+- (int)encryptionStatus;
+- (int)signingStatus;
+- (int)encryptionPolicy;
+- (int)signingPolicy;
+- (id)sendingAccount;
+- (id)sendingAddress;
+- (void)setSendingAddress:(id)arg1;
+- (void)removeRecipients:(id)arg1;
+- (void)addRecipients:(id)arg1;
+- (id)initWithSigningPolicy:(int)arg1 encryptionPolicy:(int)arg2;
+- (BOOL)_shouldEncrypt_nts;
+- (BOOL)_shouldSign_nts;
+- (BOOL)_shouldAllowSend_nts;
+- (void)_setEncryptionIdentityError_nts:(id)arg1;
+- (void)_setSigningIdentityError_nts:(id)arg1;
+- (void)_determineEncryptionStatusWithSendingAddress:(id)arg1;
+- (void)_determineSigningStatusWithSendingAddress:(id)arg1;
+- (void)_notifyDelegateSigningStatusDidChange:(int)arg1 identity:(struct __SecIdentity { }*)arg2 error:(id)arg3;
+- (void)_determineEncryptionStatusWithNewRecipients:(id)arg1;
+- (void)_notifyDelegateEncryptionStatusDidChange:(int)arg1 certsByRecipient:(id)arg2 errorsByRecipient:(id)arg3 identity:(struct __SecIdentity { }*)arg4 error:(id)arg5;
+- (BOOL)_updateEncryptionStatus_nts;
+- (BOOL)_updateSigningStatus_nts;
+- (id)initWithSendingAccount:(id)arg1 signingPolicy:(int)arg2 encryptionPolicy:(int)arg3;
+- (id)compositionSpecification;
 
 @end

@@ -2,12 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIBarButtonItem, UISegmentedControl, <UIWebFormAccessoryDelegate>;
+@class UISegmentedControl, UIToolbar, UIBarButtonItem, <UIWebFormAccessoryDelegate>;
 
-@interface UIWebFormAccessory : UIToolbar  {
+@interface UIWebFormAccessory : UIInputView  {
+    UIToolbar *_leftToolbar;
+    UIToolbar *_rightToolbar;
     UISegmentedControl *_tab;
     UIBarButtonItem *_autofill;
     UIBarButtonItem *_clearButton;
+    UIBarButtonItem *_doneButton;
+    UIBarButtonItem *_flexibleSpaceItem;
     <UIWebFormAccessoryDelegate> *delegate;
 }
 
@@ -19,8 +23,10 @@
 @property(getter=isNextEnabled) BOOL nextEnabled;
 @property(getter=isPreviousEnabled) BOOL previousEnabled;
 
++ (id)toolbarWithItems:(id)arg1;
 
-- (id)init;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (id)_autofill;
 - (id)_tab;
@@ -30,9 +36,10 @@
 - (void)setNextEnabled:(BOOL)arg1;
 - (void)setClearVisible:(BOOL)arg1;
 - (void)setAutoFillVisible:(BOOL)arg1;
-- (BOOL)isAutoFillEnabled;
 - (void)setAutoFillEnabled:(BOOL)arg1;
 - (void)autoFill:(id)arg1;
+- (BOOL)isAutoFillEnabled;
+- (void)_refreshAutofillPresentation;
 - (void)set_clearButton:(id)arg1;
 - (void)set_autofill:(id)arg1;
 - (void)_orientationDidChange:(id)arg1;
@@ -42,7 +49,7 @@
 - (void)set_tab:(id)arg1;
 - (void)clear:(id)arg1;
 - (id)_clearButton;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

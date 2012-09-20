@@ -12,21 +12,21 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (void)setAlignment:(int)arg1;
 - (int)alignment;
-- (void)setXScale:(float)arg1;
-- (void)setYScale:(float)arg1;
+- (void)setAlignment:(int)arg1;
 - (void)setXSkew:(float)arg1;
-- (void)setYSkew:(float)arg1;
-- (float)xScale;
-- (float)yScale;
-- (float)xSkew;
+- (void)setYScale:(float)arg1;
 - (float)ySkew;
-- (void)setRotateWithShape:(BOOL)arg1;
+- (float)xSkew;
+- (float)yScale;
+- (float)xScale;
 - (BOOL)rotateWithShape;
+- (void)setRotateWithShape:(BOOL)arg1;
+- (void)setXScale:(float)arg1;
+- (void)setYSkew:(float)arg1;
 
 @end

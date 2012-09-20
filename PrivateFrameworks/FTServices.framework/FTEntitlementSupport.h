@@ -7,7 +7,6 @@
 @interface FTEntitlementSupport : NSObject  {
     struct __CTServerConnection { } *_ctServerConnection;
     struct __CFString { } *_entitlementStatus;
-    struct __CFMachPort { } *_ctServerMachPort;
 }
 
 @property(readonly) BOOL faceTimeNonWiFiEntitled;
@@ -15,19 +14,17 @@
 
 + (id)sharedInstance;
 
-- (id)init;
+- (id)registrationState;
 - (void)_registrationStateChanged;
 - (void)_handleEntitlementNotification:(struct __CFDictionary { }*)arg1;
 - (void)_unregisterForCTEntitlementNotifications;
 - (BOOL)_registerForCTEntitlementNotifications;
-- (id)registrationState;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
+- (id)init;
+- (BOOL)faceTimeNonWiFiEntitled;
 - (void)_handleCTServiceRequestName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2 contextInfo:(void*)arg3;
 - (BOOL)_reconnectCTServerConnectionIfNecessary;
 - (BOOL)_disconnectCTServerConnection;
 - (BOOL)_setupCTServerConnection;
 - (void)_cleanupMachInfo;
-- (BOOL)faceTimeNonWiFiEntitled;
 
 @end

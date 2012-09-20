@@ -6,8 +6,12 @@
 }
 
 
+- (BOOL)tableView:(id)arg1 row:(int*)arg2 column:(int*)arg3 forItem:(id)arg4;
+- (BOOL)_showDisclosureChevronForPlayer:(id)arg1;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forItem:(id)arg3 column:(int)arg4;
-- (void)prepareLeaderboards;
+- (id)tableView:(id)arg1 itemAtIndex:(int)arg2 column:(int)arg3;
 - (int)numberOfContentColumnsInTableView:(id)arg1;
+- (int)columnCountInTableView:(id)arg1;
+- (void)prepareLeaderboards;
 
 @end

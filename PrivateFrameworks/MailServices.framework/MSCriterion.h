@@ -11,16 +11,16 @@
 }
 
 
-- (id)qualifier;
-- (id)criteria;
-- (id)initWithType:(id)arg1 qualifier:(id)arg2 expression:(id)arg3;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (id)_initWithType:(id)arg1 qualifier:(id)arg2 criteria:(id)arg3;
+- (id)initWithCriteria:(id)arg1 allRequired:(BOOL)arg2;
 - (id)type;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCriteria:(id)arg1 allRequired:(BOOL)arg2;
+- (id)_initWithType:(id)arg1 qualifier:(id)arg2 criteria:(id)arg3;
+- (id)criteria;
+- (id)qualifier;
+- (id)initWithType:(id)arg1 qualifier:(id)arg2 expression:(id)arg3;
 
 @end

@@ -16,9 +16,6 @@
     NSSet *_supportedReports;
     NSString *_quotaAvailable;
     NSString *_quotaUsed;
-    NSString *_maxResourceSize;
-    NSString *_maxImageSize;
-    NSURL *_meCardURL;
     NSURL *_owner;
     NSURL *_addMemberURL;
     NSDictionary *_bulkRequests;
@@ -35,18 +32,12 @@
 @property(retain) NSURL * resourceID;
 @property(retain) NSString * quotaAvailable;
 @property(retain) NSString * quotaUsed;
-@property(retain) NSString * maxResourceSize;
-@property(retain) NSString * maxImageSize;
-@property(retain) NSURL * meCardURL;
 @property(retain) NSSet * supportedReports;
 @property(retain) NSURL * owner;
 @property(retain) NSURL * addMemberURL;
 @property(retain) NSDictionary * bulkRequests;
 @property(retain) NSString * syncToken;
 @property(readonly) NSSet * resourceTypeAsStringSet;
-@property(readonly) BOOL isAddressBook;
-@property(readonly) BOOL isSharedAddressBook;
-@property(readonly) BOOL isSearchAddressBook;
 @property(readonly) BOOL isPrincipal;
 @property(readonly) NSSet * privilegesAsStringSet;
 @property(readonly) BOOL hasReadPrivileges;
@@ -56,32 +47,27 @@
 @property(readonly) BOOL supportsPrincipalPropertySearchReport;
 @property(readonly) BOOL supportsSyncCollectionReport;
 
-+ (id)copyPropertyMappingsForParser;
 + (id)convertPushTransportsForNSServerNotificationCenter:(id)arg1;
++ (id)copyPropertyMappingsForParser;
 
 - (id)description;
 - (void)dealloc;
+- (void)setUrl:(id)arg1;
+- (id)url;
 - (id)addMemberURL;
-- (id)meCardURL;
 - (BOOL)supportsSyncCollectionReport;
 - (BOOL)supportsPrincipalPropertySearchReport;
 - (BOOL)hasWritePropertiesPrivileges;
 - (BOOL)hasWriteContentPrivileges;
 - (BOOL)hasReadPrivileges;
 - (BOOL)isPrincipal;
-- (BOOL)isSharedAddressBook;
-- (BOOL)isSearchAddressBook;
 - (id)resourceTypeAsStringSet;
-- (id)initWithURL:(id)arg1 andProperties:(id)arg2;
-- (BOOL)isAddressBook;
-- (void)setMeCardURL:(id)arg1;
 - (void)setSyncToken:(id)arg1;
 - (void)setBulkRequests:(id)arg1;
 - (void)setPushTransports:(id)arg1;
 - (void)setAddMemberURL:(id)arg1;
 - (void)setSupportedReports:(id)arg1;
 - (id)supportedReports;
-- (void)setMaxResourceSize:(id)arg1;
 - (void)setQuotaUsed:(id)arg1;
 - (void)setQuotaAvailable:(id)arg1;
 - (void)setResourceID:(id)arg1;
@@ -95,7 +81,6 @@
 - (id)bulkRequests;
 - (id)pushTransports;
 - (id)supportedReportsAsStringSet;
-- (id)maxResourceSize;
 - (id)quotaUsed;
 - (id)quotaAvailable;
 - (id)resourceID;
@@ -105,11 +90,8 @@
 - (BOOL)isUnauthenticated;
 - (id)resourceType;
 - (void)applyParsedProperties:(id)arg1;
-- (void)setUrl:(id)arg1;
-- (id)url;
+- (id)initWithURL:(id)arg1 andProperties:(id)arg2;
 - (void)setOwner:(id)arg1;
 - (id)owner;
-- (id)maxImageSize;
-- (void)setMaxImageSize:(id)arg1;
 
 @end

@@ -7,15 +7,15 @@
 @interface DOMCounter : DOMObject  {
 }
 
-@property(copy,readonly) NSString * identifier;
-@property(copy,readonly) NSString * listStyle;
-@property(copy,readonly) NSString * separator;
+@property(readonly) NSString * identifier;
+@property(readonly) NSString * listStyle;
+@property(readonly) NSString * separator;
 
 
+- (id)identifier;
 - (void)dealloc;
 - (void)finalize;
-- (id)identifier;
-- (id)listStyle;
 - (id)separator;
+- (id)listStyle;
 
 @end

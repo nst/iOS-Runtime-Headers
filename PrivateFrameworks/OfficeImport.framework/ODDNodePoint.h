@@ -15,11 +15,11 @@
 - (void)dealloc;
 - (void)setType:(int)arg1;
 - (id)children;
-- (id)parentTransition;
-- (void)setParentTransition:(id)arg1;
-- (id)siblingTransition;
 - (void)setSiblingTransition:(id)arg1;
+- (void)setParentTransition:(id)arg1;
 - (void)addChild:(id)arg1 order:(unsigned long)arg2;
+- (id)parentTransition;
+- (id)siblingTransition;
 - (id)parent;
 
 @end

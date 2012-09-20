@@ -9,11 +9,19 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)removeObjectForKey:(id)arg1;
 - (void)setName:(id)arg1;
-- (id)objectForKey:(id)arg1;
+- (id)name;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (id)init;
+- (void)removeAllObjects;
+- (id)objectForKey:(id)arg1;
 - (void)dealloc;
+- (id)init;
+- (void)finalize;
+- (id)allObjects;
+- (BOOL)evictsObjectsWhenApplicationEntersBackground;
 - (void)setEvictsObjectsWithDiscardedContent:(BOOL)arg1;
 - (unsigned int)countLimit;
 - (void)setCountLimit:(unsigned int)arg1;
@@ -21,11 +29,6 @@
 - (void)setTotalCostLimit:(unsigned int)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned int)arg3;
 - (BOOL)evictsObjectsWithDiscardedContent;
-- (void)finalize;
-- (id)name;
-- (void)removeObjectForKey:(id)arg1;
-- (id)delegate;
-- (void)removeAllObjects;
-- (void)setDelegate:(id)arg1;
+- (void)setEvictsObjectsWhenApplicationEntersBackground:(BOOL)arg1;
 
 @end

@@ -14,13 +14,13 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (void)addSelection:(struct CGPDFSelection { }*)arg1;
+- (void)dispose;
+- (void)dealloc;
+- (id)init;
+- (void)finalize;
 - (id)webArchiveData;
 - (id)html;
-- (void)finalize;
 - (id)plainText;
-- (void)dispose;
 
 @end

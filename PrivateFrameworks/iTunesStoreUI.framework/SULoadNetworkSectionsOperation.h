@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUSectionsResponse, ISStoreURLOperation, NSString;
+@class ISStoreURLOperation, NSString, SUClientInterface, SUSectionsResponse;
 
 @interface SULoadNetworkSectionsOperation : ISOperation  {
     ISStoreURLOperation *_baseOperation;
+    SUClientInterface *_clientInterface;
     NSString *_expectedVersionString;
     SUSectionsResponse *_sectionsResponse;
 }
@@ -15,17 +16,18 @@
 @property(readonly) SUSectionsResponse * sectionsResponse;
 
 
-- (void)dealloc;
-- (id)initWithURL:(id)arg1;
-- (void)run;
-- (id)baseOperation;
-- (id)_copyLoadedItemImage:(id)arg1 returningError:(id*)arg2;
-- (id)_itemImageForSection:(id)arg1 imageKind:(id)arg2;
-- (BOOL)_loadArtworkForSections:(id)arg1 returningError:(id*)arg2;
-- (id)expectedVersionString;
 - (void)setBaseOperation:(id)arg1;
+- (id)baseOperation;
+- (id)_copyLoadedItemImage:(id)arg1 error:(id*)arg2;
+- (id)_bestItemImageForImages:(id)arg1 withImageKind:(id)arg2;
+- (id)_copyImageWithURL:(id)arg1 scale:(float)arg2 error:(id*)arg3;
+- (BOOL)_loadArtworkForResponse:(id)arg1;
+- (id)expectedVersionString;
 - (id)sectionsResponse;
 - (void)setExpectedVersionString:(id)arg1;
+- (id)initWithURL:(id)arg1 clientInterface:(id)arg2;
 - (void)_setSectionsResponse:(id)arg1;
+- (void)dealloc;
+- (void)run;
 
 @end

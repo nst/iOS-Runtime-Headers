@@ -2,22 +2,22 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSEnumerator, NSString;
+@class NSEnumerator, NSString, NSArray;
 
 @interface AVAssetTrackEnumerator : NSEnumerator  {
     NSString *_mediaType;
-    NSString *_mediaCharacteristic;
+    NSArray *_mediaCharacteristics;
     NSEnumerator *_enumerator;
 }
 
 + (id)trackEnumeratorWithAsset:(id)arg1;
 
 - (void)dealloc;
-- (void)setMediaCharacteristic:(id)arg1;
 - (void)setMediaType:(id)arg1;
-- (id)initWithAsset:(id)arg1 mediaCharacteristic:(id)arg2;
-- (id)initWithAsset:(id)arg1 mediaType:(id)arg2;
 - (id)nextObject;
 - (id)initWithAsset:(id)arg1;
+- (void)setMediaCharacteristics:(id)arg1;
+- (id)initWithAsset:(id)arg1 mediaCharacteristics:(id)arg2;
+- (id)initWithAsset:(id)arg1 mediaType:(id)arg2;
 
 @end

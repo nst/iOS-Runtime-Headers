@@ -2,33 +2,34 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKAchievementCompareViewSectionDataSource, UIImage, GKGameRecord, GKPlayer, NSArray, GKAchievementCompareHeaderDataSourceSection;
+@class UIImage, GKGameRecord, GKPlayer, NSArray, GKAchievementCompareHeaderSection, GKAchievementCompareViewSection;
 
 @interface GKAchievementCompareViewControllerPrivate : GKAchievementViewControllerPrivate  {
     GKPlayer *_friend;
     UIImage *_compositeCheckMark;
     GKGameRecord *_friendRecord;
     NSArray *_friendAchievements;
-    GKAchievementCompareViewSectionDataSource *_achievementCompareViewSection;
-    GKAchievementCompareHeaderDataSourceSection *_achievementCompareMeHeaderViewSection;
-    GKAchievementCompareHeaderDataSourceSection *_achievementCompareFriendHeaderViewSection;
+    GKAchievementCompareViewSection *_achievementCompareViewSection;
+    GKAchievementCompareHeaderSection *_achievementCompareMeHeaderViewSection;
+    GKAchievementCompareHeaderSection *_achievementCompareFriendHeaderViewSection;
 }
 
 @property(retain) GKGameRecord * friendRecord;
 @property(retain) NSArray * friendAchievements;
 @property(retain) UIImage * compositeCheckMark;
-@property(retain) GKAchievementCompareViewSectionDataSource * achievementCompareViewSection;
-@property(retain) GKAchievementCompareHeaderDataSourceSection * achievementCompareMeHeaderViewSection;
-@property(retain) GKAchievementCompareHeaderDataSourceSection * achievementCompareFriendHeaderViewSection;
+@property(retain) GKAchievementCompareViewSection * achievementCompareViewSection;
+@property(retain) GKAchievementCompareHeaderSection * achievementCompareMeHeaderViewSection;
+@property(retain) GKAchievementCompareHeaderSection * achievementCompareFriendHeaderViewSection;
 
 
-- (void)dealloc;
 - (void)setCompositeCheckMark:(id)arg1;
+- (void)setFriendAchievements:(id)arg1;
+- (void)updateStatusWithError:(id)arg1;
 - (id)compositeCheckMark;
 - (id)initWithGameRecord:(id)arg1 friendRecord:(id)arg2;
 - (id)friendRecord;
+- (void)setupSectionDataSource:(id)arg1;
 - (id)friendAchievements;
-- (void)setFriendAchievements:(id)arg1;
 - (id)achievementCompareFriendHeaderViewSection;
 - (id)achievementCompareMeHeaderViewSection;
 - (id)achievementCompareViewSection;
@@ -36,14 +37,13 @@
 - (void)setAchievementCompareFriendHeaderViewSection:(id)arg1;
 - (void)setAchievementCompareMeHeaderViewSection:(id)arg1;
 - (void)setAchievementCompareViewSection:(id)arg1;
-- (void)updateStatusWithError:(id)arg1;
-- (void)playTapped;
-- (void)setupSectionDataSource:(id)arg1;
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
+- (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkResetContents;
-- (void)viewDidUnload;
+- (void)playTapped;
+- (void)dealloc;
 - (void)viewDidLoad;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (id)title;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 
 @end

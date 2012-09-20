@@ -19,7 +19,7 @@
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)start;
 - (BOOL)receivedValidResponse:(id)arg1;
-- (void)_createImage;
 - (void)_loadFinished;
+- (void)_createImage;
 
 @end

@@ -27,13 +27,14 @@
     BOOL returnKeyGoesToNextResponder;
     BOOL acceptsFloatingKeyboard;
     BOOL acceptsSplitKeyboard;
-    BOOL richText;
     BOOL displaySecureTextUsingPlainText;
     BOOL learnsCorrections;
     int emptyContentReturnKeyType;
     int shortcutConversionType;
     BOOL suppressReturnKeyStyling;
     BOOL forceEnableDictation;
+    BOOL useInterfaceLanguageForLocalization;
+    BOOL deferBecomingResponder;
 }
 
 @property int autocapitalizationType;
@@ -59,24 +60,30 @@
 @property BOOL returnKeyGoesToNextResponder;
 @property BOOL acceptsFloatingKeyboard;
 @property BOOL acceptsSplitKeyboard;
-@property(getter=isRichText) BOOL richText;
 @property BOOL displaySecureTextUsingPlainText;
 @property BOOL learnsCorrections;
 @property int shortcutConversionType;
 @property BOOL suppressReturnKeyStyling;
 @property BOOL forceEnableDictation;
+@property BOOL useInterfaceLanguageForLocalization;
+@property BOOL deferBecomingResponder;
 
 + (id)defaultTextInputTraits;
 + (id)traitsByAdoptingTraits:(id)arg1;
 + (BOOL)keyboardTypeRequiresASCIICapable:(int)arg1;
 
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (void)setAutocapitalizationType:(int)arg1;
+- (int)autocapitalizationType;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
+- (id)init;
 - (void)setToSecureValues;
+- (id)dictionaryRepresentation;
+- (void)setDeferBecomingResponder:(BOOL)arg1;
+- (void)setUseInterfaceLanguageForLocalization:(BOOL)arg1;
+- (BOOL)useInterfaceLanguageForLocalization;
 - (void)setForceEnableDictation:(BOOL)arg1;
 - (BOOL)forceEnableDictation;
 - (void)setSuppressReturnKeyStyling:(BOOL)arg1;
@@ -84,7 +91,6 @@
 - (void)setShortcutConversionType:(int)arg1;
 - (int)shortcutConversionType;
 - (void)setDisplaySecureTextUsingPlainText:(BOOL)arg1;
-- (BOOL)isRichText;
 - (void)setAcceptsSplitKeyboard:(BOOL)arg1;
 - (void)setAcceptsFloatingKeyboard:(BOOL)arg1;
 - (void)setReturnKeyGoesToNextResponder:(BOOL)arg1;
@@ -92,6 +98,7 @@
 - (void)setEmptyContentReturnKeyType:(int)arg1;
 - (int)emptyContentReturnKeyType;
 - (void)setAcceptsEmoji:(BOOL)arg1;
+- (BOOL)acceptsEmoji;
 - (void)setContentsIsSingleValue:(BOOL)arg1;
 - (BOOL)contentsIsSingleValue;
 - (void)setTextSuggestionDelegate:(id)arg1;
@@ -101,11 +108,9 @@
 - (id)selectionBarColor;
 - (void)setTextTrimmingSet:(struct __CFCharacterSet { }*)arg1;
 - (void)setLearnsCorrections:(BOOL)arg1;
-- (BOOL)acceptsEmoji;
 - (BOOL)learnsCorrections;
 - (BOOL)acceptsFloatingKeyboard;
 - (BOOL)acceptsSplitKeyboard;
-- (void)setRichText:(BOOL)arg1;
 - (void)setToDefaultValues;
 - (struct __CFCharacterSet { }*)textTrimmingSet;
 - (void)takeTraitsFrom:(id)arg1;
@@ -121,6 +126,7 @@
 - (void)setTextSelectionBehavior:(int)arg1;
 - (unsigned int)insertionPointWidth;
 - (BOOL)displaySecureTextUsingPlainText;
+- (BOOL)deferBecomingResponder;
 - (BOOL)isSecureTextEntry;
 - (BOOL)enablesReturnKeyAutomatically;
 - (int)returnKeyType;
@@ -128,7 +134,6 @@
 - (int)keyboardAppearance;
 - (int)spellCheckingType;
 - (int)autocorrectionType;
-- (int)autocapitalizationType;
 - (void)setSecureTextEntry:(BOOL)arg1;
 - (void)setEnablesReturnKeyAutomatically:(BOOL)arg1;
 - (void)setReturnKeyType:(int)arg1;
@@ -136,6 +141,5 @@
 - (void)setKeyboardAppearance:(int)arg1;
 - (void)setSpellCheckingType:(int)arg1;
 - (void)setAutocorrectionType:(int)arg1;
-- (void)setAutocapitalizationType:(int)arg1;
 
 @end

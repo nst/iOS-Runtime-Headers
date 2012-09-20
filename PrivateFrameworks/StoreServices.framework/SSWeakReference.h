@@ -11,8 +11,8 @@
 
 + (id)weakReferenceWithObject:(id)arg1;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)object;
 

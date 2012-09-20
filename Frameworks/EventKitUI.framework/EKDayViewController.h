@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSCalendar, <EKDayViewControllerDelegate>, NSDateComponents, CalendarOccurrencesCollection, EKEventGestureController, EKDayView, UIView, EKDayBannerView, UIScrollView, <EKDayViewControllerDataSource>;
+@class NSCalendar, <EKDayViewControllerDelegate>, EKEventGestureController, CalendarOccurrencesCollection, NSDateComponents, EKDayView, UIView, EKDayBannerView, UIScrollView, <EKDayViewControllerDataSource>;
 
 @interface EKDayViewController : UIViewController <EKDayViewDelegate, EKDayViewDataSource, UIScrollViewDelegate, EKEventGestureControllerDelegate> {
     EKDayBannerView *_banner;
@@ -35,6 +35,8 @@
     BOOL _allowsSelection;
     BOOL _initialLoad;
     BOOL _instigatedDateChange;
+    BOOL _shouldAutoscrollOnNextActivation;
+    BOOL _viewAppeared;
     <EKDayViewControllerDelegate> *_delegate;
     <EKDayViewControllerDataSource> *_dataSource;
 }
@@ -46,18 +48,46 @@
 @property BOOL showsBanner;
 @property BOOL allowsDaySwitching;
 @property BOOL allowsSelection;
+@property BOOL shouldAutoscrollOnNextActivation;
 @property(copy) NSDateComponents * pendingNextDate;
 @property(copy) NSDateComponents * pendingPreviousDate;
 
 + (id)_createGutterDayViewWithDayView:(id)arg1;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (void)applicationWillResignActive;
+- (void)applicationDidBecomeActive;
+- (id)calendar;
+- (void)setCalendar:(id)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)allowsSelection;
+- (void)setAllowsSelection:(BOOL)arg1;
+- (void)setTimeZone:(id)arg1;
+- (id)dataSource;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)reloadData;
+- (void)setDataSource:(id)arg1;
 - (id)pendingPreviousDate;
 - (id)pendingNextDate;
+- (void)significantTimeChangeOccurred;
 - (void)reloadDataBetweenStart:(id)arg1 end:(id)arg2;
 - (void)editorDidCancelEditingEvent:(id)arg1;
 - (void)editorDidDeleteEvent:(id)arg1;
 - (void)editorDidSaveEvent:(id)arg1;
+- (void)scrollToSecond:(unsigned int)arg1;
 - (void)layoutContainerView:(id)arg1;
 - (BOOL)showsBanner;
 - (void)setShowsBanner:(BOOL)arg1;
@@ -83,6 +113,8 @@
 - (float)timedRegionOriginForEventGestureController:(id)arg1;
 - (id)occurrenceViewSuperviewForEventGestureController:(id)arg1;
 - (id)touchTrackingViewForEventGestureController:(id)arg1;
+- (void)setShouldAutoscrollOnNextActivation:(BOOL)arg1;
+- (BOOL)shouldAutoscrollOnNextActivation;
 - (void)_relayoutDaysDuringScrolling;
 - (void)setPendingNextDate:(id)arg1;
 - (void)setPendingPreviousDate:(id)arg1;
@@ -90,13 +122,13 @@
 - (id)_occurrencesForDayView:(id)arg1;
 - (id)_eventsForDay:(id)arg1;
 - (void)_setNextAndPreviousFirstVisibleSecondToCurrent;
-- (void)_delayedScrollDayViewAfterAppearence;
 - (void)_notifyDelegateOfSelectedDateChange;
 - (void)_setDisplayDate:(id)arg1 forRepeat:(BOOL)arg2;
 - (void)_setDayView:(id)arg1 toDate:(id)arg2;
-- (void)_disposeBannerView;
-- (void)_scrollDayViewAfterAppearence:(BOOL)arg1;
 - (void)_relayoutDays;
+- (void)_disposeBannerView;
+- (void)_delayedScrollDayViewAfterAppearence;
+- (void)_scrollDayViewAfterAppearence:(BOOL)arg1;
 - (BOOL)allowsDaySwitching;
 - (void)_createBannerView;
 - (void)_releaseViews;
@@ -106,7 +138,6 @@
 - (void)setAllowsDaySwitching:(BOOL)arg1;
 - (id)displayDate;
 - (void)bringEventToFront:(id)arg1;
-- (void)setDisplayDate:(id)arg1;
 - (void)dayViewDidTapEmptySpace:(id)arg1;
 - (void)dayView:(id)arg1 didCreateOccurrenceViews:(id)arg2;
 - (void)dayView:(id)arg1 didSelectEvent:(id)arg2;
@@ -117,28 +148,6 @@
 - (void)calendarDayBanner:(id)arg1 arrowClicked:(int)arg2 forRepeat:(BOOL)arg3;
 - (void)_localeChanged;
 - (void)scrollToNow:(BOOL)arg1;
-- (void)applicationDidBecomeActive;
-- (id)calendar;
-- (void)setCalendar:(id)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidUnload;
-- (void)loadView;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)allowsSelection;
-- (void)setAllowsSelection:(BOOL)arg1;
-- (void)scrollViewWillBeginDecelerating:(id)arg1;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)setTimeZone:(id)arg1;
-- (id)delegate;
-- (id)dataSource;
-- (void)reloadData;
-- (void)setDelegate:(id)arg1;
-- (void)setDataSource:(id)arg1;
+- (void)setDisplayDate:(id)arg1;
 
 @end

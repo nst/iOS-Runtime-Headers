@@ -2,23 +2,26 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString, NSMutableDictionary;
+@class NSString, NSObject<OS_xpc_object>, NSObject<OS_dispatch_queue>, NSMutableDictionary;
 
 @interface SSXPCServer : NSObject  {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_entitlementName;
-    struct _xpc_connection_s { } *_listener;
+    NSObject<OS_xpc_object> *_listener;
+    NSObject<OS_dispatch_queue> *_observerQueue;
     NSMutableDictionary *_observers;
+    NSString *_serviceName;
 }
 
 + (id)mainServer;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)removeObserver:(id)arg1 selector:(SEL)arg2 forMessage:(long long)arg3;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 forMessage:(long long)arg3;
-- (void)_dispatchMessage:(void*)arg1 connection:(struct _xpc_connection_s { }*)arg2;
-- (id)initWithServiceName:(id)arg1 entitlement:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3;
+- (void)_dispatchMessage:(id)arg1 connection:(id)arg2;
+- (id)initWithServiceName:(id)arg1 entitlement:(id)arg2 queue:(id)arg3;
+- (void)start;
 - (id)initWithServiceName:(id)arg1;
 
 @end

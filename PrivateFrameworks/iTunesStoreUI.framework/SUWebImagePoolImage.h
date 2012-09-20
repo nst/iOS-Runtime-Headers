@@ -13,9 +13,9 @@
 @property(readonly) NSString * MIMEType;
 
 
+- (id)initWithImage:(id)arg1 MIMEType:(id)arg2;
 - (void)dealloc;
 - (id)MIMEType;
 - (id)image;
-- (id)initWithImage:(id)arg1 MIMEType:(id)arg2;
 
 @end

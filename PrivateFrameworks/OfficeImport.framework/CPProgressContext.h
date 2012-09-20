@@ -12,26 +12,26 @@
 
 + (void)setMessage:(id)arg1;
 + (void)setProgress:(double)arg1;
-+ (void)addProgressObserver:(id)arg1 selector:(SEL)arg2;
-+ (void)removeProgressObserver:(id)arg1;
-+ (id)createBranchWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3;
-+ (void)endBranch:(id)arg1;
-+ (id)contextForCurrentThread;
-+ (id)stageForCurrentThread;
-+ (double)currentPosition;
-+ (void)createContextForCurrentThread;
-+ (void)removeContextForCurrentThread;
-+ (void)pushBranch:(id)arg1;
 + (void)popBranch;
-+ (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2;
-+ (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3;
-+ (void)endStage;
++ (void)pushBranch:(id)arg1;
++ (void)endBranch:(id)arg1;
++ (id)createBranchWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3;
++ (void)removeProgressObserver:(id)arg1;
++ (void)addProgressObserver:(id)arg1 selector:(SEL)arg2;
++ (double)currentPosition;
 + (void)advanceProgress:(double)arg1;
++ (id)stageForCurrentThread;
++ (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3;
++ (id)contextForCurrentThread;
++ (void)removeContextForCurrentThread;
++ (void)createContextForCurrentThread;
++ (void)endStage;
++ (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2;
 
-- (id)init;
 - (void)dealloc;
-- (id)currentStage;
-- (id)rootStage;
+- (id)init;
 - (void)reportProgress:(double)arg1;
+- (id)rootStage;
+- (id)currentStage;
 
 @end

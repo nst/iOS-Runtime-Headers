@@ -5,21 +5,22 @@
 @interface NSNotification : NSObject <NSCopying, NSCoding> {
 }
 
++ (id)notificationWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)notificationWithName:(id)arg1 object:(id)arg2;
-+ (id)notificationWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 
-- (id)initWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
-- (id)userInfo;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (id)name;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)userInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (Class)classForCoder;
+- (id)initWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (id)object;
-- (id)name;
+- (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
 
 @end

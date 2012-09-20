@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSNumber, NSMutableOrderedSet, PLManagedAsset, NSOrderedSet, NSURL, NSMutableArray, NSDictionary, NSString, PLPlacesMapAnnotation, UIImage, NSSet;
+@class NSSet, NSMutableOrderedSet, PLManagedAsset, NSOrderedSet, NSURL, NSMutableArray, NSDictionary, NSString, PLPlacesMapAnnotation, UIImage, NSNumber;
 
 @interface PLPlace : NSObject <PLAssetContainer> {
     PLPlacesMapAnnotation *_annotation;
@@ -13,16 +13,6 @@
     unsigned int numberOfVideos;
     NSSet *assetsSet;
     NSDictionary *slideshowSettings;
-    struct { 
-        struct { 
-            double latitude; 
-            double longitude; 
-        } center; 
-        struct { 
-            double latitudeDelta; 
-            double longitudeDelta; 
-        } span; 
-    } region;
     NSString *_uuid;
     NSMutableOrderedSet *_assets;
     struct { 
@@ -45,6 +35,16 @@
             double longitudeDelta; 
         } span; 
     } destinationRegion;
+    struct { 
+        struct { 
+            double latitude; 
+            double longitude; 
+        } center; 
+        struct { 
+            double latitudeDelta; 
+            double longitudeDelta; 
+        } span; 
+    } _region;
 }
 
 @property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } originalRegion;
@@ -62,9 +62,12 @@
 @property(readonly) NSString * localizedTitle;
 @property(readonly) NSOrderedSet * assets;
 @property(readonly) NSMutableOrderedSet * mutableAssets;
+@property(readonly) unsigned int approximateCount;
+@property(readonly) unsigned int assetsCount;
 @property(readonly) unsigned int count;
 @property(readonly) unsigned int photosCount;
 @property(readonly) unsigned int videosCount;
+@property BOOL hasUnseenContentBoolValue;
 @property(readonly) BOOL isEmpty;
 @property(readonly) NSString * name;
 @property(retain) PLManagedAsset * keyAsset;
@@ -72,24 +75,69 @@
 @property(readonly) BOOL isLibrary;
 @property(readonly) BOOL isCameraAlbum;
 @property(readonly) BOOL isPhotoStreamAlbum;
+@property(readonly) BOOL isCloudSharedAlbum;
+@property(readonly) BOOL isOwnedCloudSharedAlbum;
+@property(readonly) BOOL canShowComments;
 @property(readonly) BOOL shouldDeleteWhenEmpty;
 @property(retain) NSDictionary * slideshowSettings;
 @property(retain) NSString * importSessionID;
 @property(readonly) NSURL * groupURL;
+@property(readonly) id sortingComparator;
+@property(readonly) id sectioningComparator;
 @property unsigned int pendingItemsCount;
 @property unsigned int pendingItemsType;
 
 
-- (unsigned int)count;
+- (id)localizedTitle;
+- (id)name;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)posterImage;
-- (id)localizedTitle;
+- (unsigned int)count;
 - (id)kind;
 - (id)annotation;
 - (id)title;
-- (id)name;
 - (BOOL)isEmpty;
+- (id)_assets;
+- (void)set_assets:(id)arg1;
+- (unsigned int)indexOfPosterImage;
+- (void)setAssets:(id)arg1;
+- (void)setPendingItemsType:(unsigned int)arg1;
+- (unsigned int)pendingItemsType;
+- (void)setPendingItemsCount:(unsigned int)arg1;
+- (unsigned int)pendingItemsCount;
+- (id)sectioningComparator;
+- (id)sortingComparator;
+- (id)groupURL;
+- (void)setImportSessionID:(id)arg1;
+- (id)importSessionID;
+- (void)setSlideshowSettings:(id)arg1;
+- (id)slideshowSettings;
+- (BOOL)shouldDeleteWhenEmpty;
+- (BOOL)canShowComments;
+- (BOOL)isOwnedCloudSharedAlbum;
+- (BOOL)isPhotoStreamAlbum;
+- (BOOL)isLibrary;
+- (id)posterImage;
+- (void)setKeyAsset:(id)arg1;
+- (id)keyAsset;
+- (void)setHasUnseenContentBoolValue:(BOOL)arg1;
+- (BOOL)hasUnseenContentBoolValue;
+- (unsigned int)videosCount;
+- (unsigned int)photosCount;
+- (unsigned int)assetsCount;
+- (unsigned int)approximateCount;
+- (id)mutableAssets;
+- (id)assets;
+- (id)uuid;
+- (void)batchFetchAssets:(id)arg1;
+- (void)updateStackedImageShouldNotifyImmediately:(BOOL)arg1;
+- (void)reducePendingItemsCountBy:(unsigned int)arg1;
+- (id)displayableIndexesForCount:(unsigned int)arg1;
+- (id)titleForSectionStartingAtIndex:(unsigned int)arg1;
+- (BOOL)canPerformEditOperation:(int)arg1;
+- (BOOL)isCloudSharedAlbum;
+- (int)kindValue;
+- (BOOL)isCameraAlbum;
 - (void)_updatePlaceToPlace:(id)arg1;
 - (void)_setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDestinationRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -102,8 +150,6 @@
 - (BOOL)hasPhoto:(id)arg1;
 - (void)removePhoto:(id)arg1;
 - (void)addPhoto:(id)arg1;
-- (unsigned int)indexOfPosterImage;
-- (void)setAssets:(id)arg1;
 - (id)initWithRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct { double x1; double x2; })effectiveLocation;
 - (BOOL)isEqualToPlace:(id)arg1;
@@ -117,37 +163,9 @@
 - (void)setNumberOfVideos:(unsigned int)arg1;
 - (void)setNumberOfPhotos:(unsigned int)arg1;
 - (void)_updateAnnotationTitle;
-- (id)_assets;
 - (void)setAssetsSet:(id)arg1;
 - (void)set_uuid:(id)arg1;
 - (void)setTitleIsNumberOfPhotos:(BOOL)arg1;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)set_assets:(id)arg1;
-- (void)setPendingItemsType:(unsigned int)arg1;
-- (unsigned int)pendingItemsType;
-- (void)setPendingItemsCount:(unsigned int)arg1;
-- (unsigned int)pendingItemsCount;
-- (id)groupURL;
-- (void)setImportSessionID:(id)arg1;
-- (id)importSessionID;
-- (BOOL)shouldDeleteWhenEmpty;
-- (BOOL)isPhotoStreamAlbum;
-- (BOOL)isCameraAlbum;
-- (BOOL)isLibrary;
-- (void)setKeyAsset:(id)arg1;
-- (id)keyAsset;
-- (unsigned int)videosCount;
-- (unsigned int)photosCount;
-- (id)mutableAssets;
-- (int)kindValue;
-- (void)batchFetchAssets:(id)arg1;
-- (void)updateStackedImage;
-- (void)reducePendingItemsCountBy:(unsigned int)arg1;
-- (id)displayableIndexesForCount:(unsigned int)arg1;
-- (BOOL)canPerformEditOperation:(int)arg1;
-- (void)setSlideshowSettings:(id)arg1;
-- (id)slideshowSettings;
-- (id)uuid;
-- (id)assets;
 
 @end

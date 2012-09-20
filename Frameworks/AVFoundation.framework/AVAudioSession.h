@@ -2,43 +2,85 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVAudioSessionDelegate>, NSString;
+@class NSString, AVAudioSessionRouteDescription;
 
 @interface AVAudioSession : NSObject  {
     void *_impl;
 }
 
-@property <AVAudioSessionDelegate> * delegate;
 @property(readonly) NSString * category;
+@property(readonly) unsigned int categoryOptions;
 @property(readonly) NSString * mode;
-@property(readonly) double preferredHardwareSampleRate;
-@property(readonly) double preferredIOBufferDuration;
-@property(readonly) BOOL inputIsAvailable;
-@property(readonly) double currentHardwareSampleRate;
-@property(readonly) int currentHardwareInputNumberOfChannels;
-@property(readonly) int currentHardwareOutputNumberOfChannels;
+@property(getter=isOtherAudioPlaying,readonly) BOOL otherAudioPlaying;
+@property(readonly) AVAudioSessionRouteDescription * currentRoute;
 
 + (id)sharedInstance;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)privateAllocInitSingleton;
 
-- (void)privateEndInterruptionWithFlags:(id)arg1;
-- (void)privateEndInterruption;
-- (void)privateBeginInterruption;
-- (void)privateInputIsAvailableChanged:(id)arg1;
 - (BOOL)setMode:(id)arg1 error:(id*)arg2;
-- (int)currentHardwareOutputNumberOfChannels;
-- (int)currentHardwareInputNumberOfChannels;
-- (double)preferredIOBufferDuration;
-- (double)preferredHardwareSampleRate;
-- (double)currentHardwareSampleRate;
-- (BOOL)inputIsAvailable;
-- (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
-- (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
-- (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
-- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
 - (BOOL)setCategory:(id)arg1 error:(id*)arg2;
+- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
+- (id)init;
+- (id)autorelease;
 - (id)category;
 - (id)mode;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (double)sampleRate;
+- (void)privateHandleServerDied;
+- (void)privateHandlePromptStyleChange:(id)arg1;
+- (void)privateHandleOutputDataSourcesChange:(id)arg1;
+- (void)privateHandleInputDataSourcesChange:(id)arg1;
+- (void)privateHandleOutputVolumeChange:(id)arg1;
+- (void)privateHandleInputGainChange:(id)arg1;
+- (void)privateEndInterruptionWithFlags:(id)arg1;
+- (void)privateBeginInterruption;
+- (void)privateInputIsAvailableChanged:(id)arg1;
+- (double)preferredHardwareSampleRate;
+- (int)currentHardwareOutputNumberOfChannels;
+- (int)currentHardwareInputNumberOfChannels;
+- (double)currentHardwareSampleRate;
+- (BOOL)inputIsAvailable;
+- (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
+- (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
+- (id)currentRoute;
+- (BOOL)overrideOutputAudioPort:(unsigned int)arg1 error:(id*)arg2;
+- (double)preferredIOBufferDuration;
+- (double)IOBufferDuration;
+- (double)outputLatency;
+- (double)inputLatency;
+- (BOOL)isOtherAudioPlaying;
+- (BOOL)isInputGainSettable;
+- (id)outputDataSource;
+- (id)inputDataSource;
+- (float)inputGain;
+- (unsigned int)promptStyle;
+- (float)outputVolume;
+- (BOOL)setOutputDataSource:(id)arg1 error:(id*)arg2;
+- (BOOL)setInputDataSource:(id)arg1 error:(id*)arg2;
+- (BOOL)setInputGain:(float)arg1 error:(id*)arg2;
+- (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
+- (BOOL)setCategory:(id)arg1 withOptions:(unsigned int)arg2 error:(id*)arg3;
+- (unsigned int)categoryOptions;
+- (void)privateUpdatePromptStyle:(id)arg1;
+- (void)privateUpdateDataSources:(id)arg1 forInput:(BOOL)arg2;
+- (void)privateUpdateOutputVolume:(id)arg1;
+- (double)preferredSampleRate;
+- (int)outputNumberOfChannels;
+- (int)inputNumberOfChannels;
+- (BOOL)isInputAvailable;
+- (BOOL)setPreferredSampleRate:(double)arg1 error:(id*)arg2;
+- (BOOL)setActive:(BOOL)arg1 withOptions:(unsigned int)arg2 error:(id*)arg3;
+- (id)outputDataSources;
+- (id)inputDataSources;
+- (id)privateGetDataSources:(BOOL)arg1;
+- (void)privateUpdateInputGain:(id)arg1;
+- (BOOL)privateSetPropertyValue:(unsigned long)arg1 withBool:(BOOL)arg2 error:(id*)arg3;
+- (void)privateMarkKVOPropertiesDirty;
 
 @end

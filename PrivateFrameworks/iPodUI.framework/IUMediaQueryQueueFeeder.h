@@ -19,9 +19,9 @@
 @property(retain) NSArray * prefixMediaItems;
 @property(retain) MPMediaItem * focusedItem;
 
++ (id)imageCache;
 
-- (id)init;
-- (void)dealloc;
+- (void)_libraryDidChangeNotification:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
 - (unsigned int)realShuffleType;
@@ -31,18 +31,20 @@
 - (BOOL)shouldBeginPlaybackOfItem:(id)arg1 error:(id*)arg2;
 - (id)errorResolverForItem:(id)arg1;
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
+- (void)setSubsequenceFocused:(BOOL)arg1 currentItemIndex:(unsigned int)arg2;
+- (unsigned int)initialPlaybackQueueDepth;
 - (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;
 - (Class)itemClass;
 - (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
-- (unsigned int)numberOfPaths;
-- (double)bookmarkTimeForIndex:(unsigned int)arg1;
 - (id)playbackInfoAtIndex:(unsigned int)arg1;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (unsigned int)itemCount;
+- (unsigned int)nonRepeatingItemCount;
+- (void)dealloc;
+- (id)init;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (id)preferredLanguages;
 - (id)query;
-- (id)pathAtIndex:(unsigned int)arg1;
 - (void)setFocusedItem:(id)arg1;
 - (id)focusedItem;
 - (unsigned int)unshuffledIndexOfAVItem:(id)arg1;
@@ -54,6 +56,6 @@
 - (unsigned int)indexOfMediaItem:(id)arg1;
 - (id)mediaItemAtIndex:(unsigned int)arg1;
 - (void)_handleMediaLibraryDidChange;
-- (void)_libraryDidChangeNotification:(id)arg1;
+- (id)pathAtIndex:(unsigned int)arg1;
 
 @end

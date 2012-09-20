@@ -9,37 +9,38 @@
 }
 
 @property(retain) UIPopoverController * nativePopoverController;
+@property int backgroundStyle;
 @property float contentHeight;
 @property float contentWidth;
+@property(readonly) SUScriptViewController * presentingViewController;
 @property(retain) SUScriptViewController * viewController;
+@property(readonly) int backgroundStyleBlack;
+@property(readonly) int backgroundStyleClear;
+@property(readonly) int backgroundStyleCream;
+@property(readonly) int backgroundStyleDefault;
+@property(readonly) int backgroundStyleShare;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (void)dismissAnimated:(id)arg1;
-- (float)contentWidth;
-- (id)viewController;
-- (void)setViewController:(id)arg1;
-- (id)attributeKeys;
 - (void)_setIgnoresDismiss:(BOOL)arg1;
+- (int)backgroundStyleShare;
+- (int)backgroundStyleDefault;
+- (int)backgroundStyleCream;
+- (int)backgroundStyleClear;
+- (int)backgroundStyleBlack;
 - (void)setContentWidth:(float)arg1;
-- (void)setContentHeight:(float)arg1;
-- (float)contentHeight;
 - (BOOL)showFromNavigationItem:(id)arg1;
 - (BOOL)showFromElement:(id)arg1;
 - (void)setContentWidth:(float)arg1 height:(float)arg2 animated:(BOOL)arg3;
 - (void)setNativePopoverController:(id)arg1;
 - (id)nativePopoverController;
+- (id)_activeViewController;
+- (void)_setNativeViewController:(id)arg1;
+- (id)_nativeViewController;
 - (void)_showAsModalViewController;
 - (BOOL)_isViewControllerVisible;
-- (id)_activeViewController;
-- (id)_nativeViewController;
-- (void)_setNativeViewController:(id)arg1;
-- (void)_showFromNavigationItem:(id)arg1;
-- (void)_showFromDOMElement:(id)arg1;
 - (id)_popOverController;
 - (BOOL)_shouldDisplayAsPopover;
 - (void)_dismissAnimated:(BOOL)arg1;
@@ -48,5 +49,18 @@
 - (void)tearDownUserInterface;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)dealloc;
+- (id)init;
+- (int)backgroundStyle;
+- (void)setBackgroundStyle:(int)arg1;
+- (float)contentHeight;
+- (void)setContentHeight:(float)arg1;
+- (void)dismissAnimated:(id)arg1;
+- (float)contentWidth;
+- (BOOL)isVisible;
+- (id)viewController;
+- (void)setViewController:(id)arg1;
+- (id)presentingViewController;
+- (id)attributeKeys;
 
 @end

@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSMutableDictionary, GKTurnBasedMatchesSection, NSMutableArray, GKGameDetailHeaderSection;
+@class NSMutableDictionary, GKTurnBasedMatchesSection, NSMutableArray;
 
 @interface GKTurnBasedMatchesDataSource : GKSectionArrayDataSource  {
-    GKGameDetailHeaderSection *_headerSection;
     GKTurnBasedMatchesSection *_invitationSection;
     GKTurnBasedMatchesSection *_yourTurnSection;
     GKTurnBasedMatchesSection *_otherTurnSection;
@@ -14,7 +13,6 @@
     NSMutableDictionary *_players;
 }
 
-@property(retain) GKGameDetailHeaderSection * headerSection;
 @property(retain) GKTurnBasedMatchesSection * invitationSection;
 @property(retain) GKTurnBasedMatchesSection * yourTurnSection;
 @property(retain) GKTurnBasedMatchesSection * otherTurnSection;
@@ -24,9 +22,6 @@
 @property(readonly) int loadedMatchCount;
 
 
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (void)setFinishedSection:(id)arg1;
 - (id)finishedSection;
 - (void)setOtherTurnSection:(id)arg1;
@@ -35,8 +30,6 @@
 - (id)yourTurnSection;
 - (void)setInvitationSection:(id)arg1;
 - (id)invitationSection;
-- (void)setHeaderSection:(id)arg1;
-- (id)headerSection;
 - (void)loadMatchDetailsWithCompletionHandler:(id)arg1;
 - (int)loadedMatchCount;
 - (void)matchIDsLoaded:(id)arg1;
@@ -44,10 +37,13 @@
 - (void)loadPlayersForMatches:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)matchIDs;
 - (void)setMatchIDs:(id)arg1;
+- (id)players;
 - (void)tableView:(id)arg1 updateStatusViewAfterLoading:(id)arg2 withError:(id)arg3;
 - (void)tableView:(id)arg1 updateStatusViewBeforeLoading:(id)arg2;
-- (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
 - (void)setPlayers:(id)arg1;
-- (id)players;
+- (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)initWithController:(id)arg1;
 
 @end

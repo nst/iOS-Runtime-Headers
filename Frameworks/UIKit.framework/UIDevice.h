@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@class NSString, NSUUID;
 
 @interface UIDevice : NSObject  {
     int _numDeviceOrientationObservers;
@@ -26,6 +26,7 @@
 @property(readonly) NSString * systemVersion;
 @property(readonly) int orientation;
 @property(readonly) NSString * uniqueIdentifier;
+@property(readonly) NSUUID * identifierForVendor;
 @property(getter=isGeneratingDeviceOrientationNotifications,readonly) BOOL generatesDeviceOrientationNotifications;
 @property(getter=isBatteryMonitoringEnabled) BOOL batteryMonitoringEnabled;
 @property(readonly) int batteryState;
@@ -39,7 +40,11 @@
 + (id)currentDevice;
 + (id)modelSpecificLocalizedStringKeyForKey:(id)arg1;
 + (int)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
++ (id)platformString;
 
+- (id)name;
+- (int)userInterfaceIdiom;
+- (void)setIsWildcat:(BOOL)arg1;
 - (BOOL)isWildcat;
 - (BOOL)_isTTYEnabled;
 - (void)_setBatteryLevel:(float)arg1;
@@ -53,6 +58,7 @@
 - (int)batteryState;
 - (void)setBatteryMonitoringEnabled:(BOOL)arg1;
 - (BOOL)isBatteryMonitoringEnabled;
+- (id)identifierForVendor;
 - (id)uniqueIdentifier;
 - (id)buildVersion;
 - (id)systemVersion;
@@ -64,7 +70,6 @@
 - (void)_playSystemSound:(unsigned long)arg1;
 - (void)setOrientation:(int)arg1;
 - (id)model;
-- (id)name;
 - (void)endGeneratingDeviceOrientationNotifications;
 - (void)beginGeneratingDeviceOrientationNotifications;
 - (BOOL)isProximityMonitoringEnabled;
@@ -72,13 +77,12 @@
 - (void)_setProximityState:(BOOL)arg1;
 - (float)_backlightLevel;
 - (void)_setBacklightLevel:(float)arg1;
-- (void)setIsWildcat:(BOOL)arg1;
+- (void)_setActiveUserInterfaceIdiom:(int)arg1;
 - (int)orientation;
 - (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (BOOL)isGeneratingDeviceOrientationNotifications;
 - (void)_registerForSystemSounds:(id)arg1;
 - (void)_unregisterForSystemSounds:(id)arg1;
-- (int)userInterfaceIdiom;
 - (void)setIsMediaPicker:(BOOL)arg1;
 - (BOOL)isMediaPicker;
 

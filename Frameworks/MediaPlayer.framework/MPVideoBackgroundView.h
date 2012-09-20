@@ -35,7 +35,6 @@
 @property(copy) id layoutSubviewsPostflightHandler;
 
 
-- (void)dealloc;
 - (id)layoutSubviewsPostflightHandler;
 - (int)destinationPlaceholderStyle;
 - (id)destinationName;
@@ -54,6 +53,7 @@
 - (id)backgroundPlaceholderImage;
 - (void)setBackgroundPlaceholderImage:(id)arg1;
 - (id)backgroundPlaceholderView;
+- (void)dealloc;
 - (void)setInterfaceOrientation:(int)arg1;
 - (int)interfaceOrientation;
 - (void)layoutSubviews;

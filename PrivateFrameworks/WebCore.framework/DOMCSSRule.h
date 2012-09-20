@@ -9,16 +9,16 @@
 
 @property(readonly) unsigned short type;
 @property(copy) NSString * cssText;
-@property(retain,readonly) DOMCSSStyleSheet * parentStyleSheet;
-@property(retain,readonly) DOMCSSRule * parentRule;
+@property(readonly) DOMCSSStyleSheet * parentStyleSheet;
+@property(readonly) DOMCSSRule * parentRule;
 
 
+- (unsigned short)type;
 - (void)dealloc;
 - (void)finalize;
-- (unsigned short)type;
 - (void)setCssText:(id)arg1;
 - (id)cssText;
-- (id)parentStyleSheet;
 - (id)parentRule;
+- (id)parentStyleSheet;
 
 @end

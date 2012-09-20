@@ -19,7 +19,5 @@
 - (void)unregisterPerson:(id)arg1;
 - (id)personForUniqueID:(id)arg1;
 - (void)registerPerson:(id)arg1;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
 
 @end

@@ -2,38 +2,38 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class <WebInspectorXPCWrapperDelegate>, NSString;
+@class NSObject<OS_xpc_object>, <WebInspectorXPCWrapperDelegate>, NSString;
 
 @interface WebInspectorXPCWrapper : NSObject  {
     <WebInspectorXPCWrapperDelegate> *_delegate;
     NSString *_tag;
-    struct _xpc_connection_s { } *_connection;
-    void *_currentMessage;
+    NSObject<OS_xpc_object> *_connection;
+    NSObject<OS_xpc_object> *_currentMessage;
 }
 
-@property(readonly) BOOL available;
-@property void* currentMessage;
-@property struct _xpc_connection_s { }* connection;
-@property(copy) NSString * tag;
 @property <WebInspectorXPCWrapperDelegate> * delegate;
+@property(readonly) BOOL available;
+@property(copy) NSString * tag;
+@property NSObject<OS_xpc_object> * connection;
+@property NSObject<OS_xpc_object> * currentMessage;
 
 
+- (id)currentMessage;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
-- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1;
-- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
-- (void)barrierWithCompletionHandler:(id)arg1;
-- (void)setCurrentMessage:(void*)arg1;
-- (id)_deserializeMessage:(void*)arg1;
-- (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
-- (void)setConnection:(struct _xpc_connection_s { }*)arg1;
-- (struct _xpc_connection_s { }*)connection;
+- (id)initWithConnection:(id)arg1;
+- (id)connection;
 - (void)close;
 - (id)tag;
 - (void)setTag:(id)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)_handleEvent:(void*)arg1;
-- (void*)currentMessage;
 - (BOOL)available;
+- (void)setConnection:(id)arg1;
+- (void)_handleEvent:(id)arg1;
+- (void)setCurrentMessage:(id)arg1;
+- (void)barrierWithCompletionHandler:(id)arg1;
+- (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
+- (id)_deserializeMessage:(id)arg1;
+- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
 
 @end

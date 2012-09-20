@@ -7,11 +7,11 @@
 @interface SADomainObjectCancelCompleted : SABaseCommand <SAServerBoundCommand, SADomainObjectCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)domainObjectCancelCompleted;
 + (id)domainObjectCancelCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)domainObjectCancelCompleted;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

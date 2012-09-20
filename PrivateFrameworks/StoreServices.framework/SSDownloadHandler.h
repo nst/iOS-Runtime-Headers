@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSXPCConnection, <SSDownloadHandlerDelegate>, NSArray;
+@class NSArray, SSXPCConnection, <SSDownloadHandlerDelegate>, NSObject<OS_dispatch_queue>;
 
 @interface SSDownloadHandler : NSObject  {
     SSXPCConnection *_controlConnection;
     <SSDownloadHandlerDelegate> *_delegate;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_delegateQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSArray *_downloadPhasesToIgnore;
     long long _handlerID;
     SSXPCConnection *_observerConnection;
@@ -22,28 +23,28 @@
 @property(readonly) long long handlerIdentifier;
 
 
-- (void)setDownloadPhasesToIgnore:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (long long)handlerIdentifier;
 - (void)setSessionsShouldBlockOtherDownloads:(BOOL)arg1;
 - (void)setSessionsNeedPowerAssertion:(BOOL)arg1;
-- (void)_connectToDaemon;
-- (void)_setValue:(void*)arg1 forProperty:(const char *)arg2;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (BOOL)sessionsShouldBlockOtherDownloads;
 - (BOOL)sessionsNeedPowerAssertion;
 - (void)resetDisavowedSessions;
 - (id)downloadPhasesToIgnore;
-- (id)_newSessionWithMessage:(void*)arg1;
+- (id)_newSessionWithMessage:(id)arg1;
 - (id)_controlConnection;
-- (BOOL)_sendSessionPauseWithMessage:(void*)arg1;
-- (BOOL)_sendSessionCancelWithMessage:(void*)arg1;
-- (BOOL)_sendSessionHandleWithMessage:(void*)arg1;
-- (BOOL)_sendAuthenticationSessionWithMessage:(void*)arg1;
+- (BOOL)_sendSessionPauseWithMessage:(id)arg1;
+- (BOOL)_sendSessionCancelWithMessage:(id)arg1;
+- (BOOL)_sendSessionHandleWithMessage:(id)arg1;
+- (BOOL)_sendAuthenticationSessionWithMessage:(id)arg1;
 - (void)_sendDisconnectMessage;
-- (void)_handleMessage:(void*)arg1 fromServerConnection:(struct _xpc_connection_s { }*)arg2;
+- (void)_handleMessage:(id)arg1 fromServerConnection:(id)arg2;
+- (long long)handlerIdentifier;
+- (void)_setValue:(id)arg1 forProperty:(const char *)arg2;
+- (void)_connectToDaemon;
+- (void)setDownloadPhasesToIgnore:(id)arg1;
 
 @end

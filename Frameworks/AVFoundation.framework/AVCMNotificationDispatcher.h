@@ -7,22 +7,23 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSMutableDictionary, AVCallbackRegistry;
+@class NSObject<OS_dispatch_queue>, NSMutableDictionary, AVCallbackRegistry;
 
 @interface AVCMNotificationDispatcher : NSObject  {
     struct opaqueCMNotificationCenter { } *_cmNotificationCenter;
     AVCallbackRegistry *_callbackRegistry;
     NSMutableDictionary *_listenerObjectsPassedToFig;
-    struct dispatch_queue_s { } *_listenerObjectsQueue;
+    NSObject<OS_dispatch_queue> *_listenerObjectsQueue;
 }
 
 @property(readonly) struct opaqueCMNotificationCenter { }* CMNotificationCenter;
 @property(getter=_callbackRegistry,readonly) AVCallbackRegistry * callbackRegistry;
 
-+ (id)notificationDispatcherForCMNotificationCenter:(struct opaqueCMNotificationCenter { }*)arg1;
 + (void)initialize;
++ (id)notificationDispatcherForCMNotificationCenter:(struct opaqueCMNotificationCenter { }*)arg1;
 
 - (void)dealloc;
+- (void)finalize;
 - (id)_copyAndRemoveListenerAndCallbackForWeakReferenceToListener:(id)arg1 callback:(int (*)())arg2 name:(struct __CFString { }*)arg3 object:(const void*)arg4;
 - (struct opaqueCMNotificationCenter { }*)CMNotificationCenter;
 - (void)_addListenerAndCallback:(id)arg1 forWeakReferenceToListener:(id)arg2 callback:(int (*)())arg3 name:(struct __CFString { }*)arg4 object:(const void*)arg5;
@@ -30,6 +31,5 @@
 - (id)initWithCMNotificationCenter:(struct opaqueCMNotificationCenter { }*)arg1;
 - (void)removeListenerWithWeakReference:(id)arg1 callback:(int (*)())arg2 name:(struct __CFString { }*)arg3 object:(const void*)arg4;
 - (void)addListenerWithWeakReference:(id)arg1 callback:(int (*)())arg2 name:(struct __CFString { }*)arg3 object:(const void*)arg4 flags:(unsigned long)arg5;
-- (void)finalize;
 
 @end

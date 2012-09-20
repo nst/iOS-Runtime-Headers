@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIRoundedCornerView, UIView;
+@class UIView;
 
-@interface UILayoutContainerView : UIView <NSCoding, _UIViewFastModeSupport> {
+@interface UILayoutContainerView : UIView <NSCoding> {
     id _delegate;
     BOOL _usesRoundedCorners;
     float _cornerRadius;
-    BOOL _fastMode;
-    UIRoundedCornerView *_roundedCornerView;
     BOOL _usesInnerShadow;
     BOOL _shadowViewsInstalled;
     UIView *_shadowView;
@@ -17,27 +15,22 @@
 
 @property id delegate;
 @property BOOL usesInnerShadow;
-@property BOOL useFastMode;
 @property BOOL usesRoundedCorners;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (BOOL)usesInnerShadow;
 - (BOOL)usesRoundedCorners;
-- (BOOL)useFastMode;
-- (void)_endFastMode;
-- (void)_beginFastMode;
 - (void)_tearDownShadowViews;
 - (void)_installShadowViews;
 - (void)setUsesInnerShadow:(BOOL)arg1;
 - (void)setUsesRoundedCorners:(BOOL)arg1;
-- (void)setUseFastMode:(BOOL)arg1;
-- (id)delegate;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)addSubview:(id)arg1;
 - (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

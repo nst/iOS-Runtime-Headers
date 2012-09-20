@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableIndexSet, NSMutableArray;
+@class NSMutableIndexSet, NSMutableArray, PLUnreadMarkerView;
 
 @interface PLAlbumViewCell : UITableViewCell  {
     struct CGSize { 
@@ -22,11 +22,15 @@
     BOOL _usesViewBasedPhotoCells;
     NSMutableArray *_photoCellViews;
     NSMutableIndexSet *_selectionIndexes;
-    NSMutableIndexSet *_badgedIndexes;
     NSMutableIndexSet *_activityIndexes;
     NSMutableArray *_highlightViews;
+    NSMutableArray *_imageBadgeViews;
     NSMutableArray *_textBadgeViews;
     int _selectionStyle;
+    unsigned int _unreadStartMarkerIndex;
+    PLUnreadMarkerView *_unreadStartMarkerView;
+    unsigned int _unreadStartMarkerCount;
+    BOOL _unreadStartMarkerShowsProgress;
 }
 
 @property struct CGSize { float x1; float x2; } cellPhotoSize;
@@ -35,6 +39,9 @@
 @property unsigned int cellPhotoCount;
 @property BOOL usesViewBasedPhotoCells;
 @property int photoSelectionStyle;
+@property unsigned int unreadStartMarkerIndex;
+@property unsigned int unreadStartMarkerCount;
+@property BOOL unreadStartMarkerShowsProgress;
 
 + (unsigned int)cellPhotoIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1 cellBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 cellPhotoSize:(struct CGSize { float x1; float x2; })arg3;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfCellPhotoAtIndex:(unsigned int)arg1 cellBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 cellPhotoSize:(struct CGSize { float x1; float x2; })arg3;
@@ -47,14 +54,18 @@
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (struct CGPoint { float x1; float x2; })cellPhotoThumbnailOffset;
 - (struct CGSize { float x1; float x2; })cellPhotoThumbnailSize;
+- (id)badgeImageForCellPhotoAtIndex:(unsigned int)arg1;
 - (struct CGImage { }*)cgImageRef;
+- (void)_updateUnreadStartMarkerWithOldIndex:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)_updateBadgeImageVisibilityForCellPhotoAtIndex:(unsigned int)arg1;
 - (BOOL)usesViewBasedPhotoCells;
-- (void)_setCellPhotoAtIndex:(unsigned int)arg1 highlighted:(BOOL)arg2 badgedWithImage:(id)arg3 showActivityIndicator:(BOOL)arg4;
+- (void)_updateCellPhotoAtIndex:(unsigned int)arg1 highlighted:(BOOL)arg2 badgedWithImage:(id)arg3 showActivityIndicator:(BOOL)arg4;
 - (void)_updateHighlightAndBadgeForCellPhotoAtIndex:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })cellPhotoSize;
 - (void)_updatePhotoCells;
 - (void)_removePhotoCellViews;
-- (void)removeAllHighlights;
+- (void)_removeAllImageBadges;
+- (void)_removeAllHighlights;
 - (void)setCellPhotoCount:(unsigned int)arg1;
 - (void)setCellPhotoThumbnailSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setCellPhotoSize:(struct CGSize { float x1; float x2; })arg1;
@@ -68,13 +79,20 @@
 - (void)showActivityOnCellPhotoAtIndex:(unsigned int)arg1;
 - (void)hideActivityOnCellPhotoAtIndex:(unsigned int)arg1;
 - (unsigned int)cellPhotoIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setBadgeImage:(id)arg1 forCellPhotoAtIndex:(unsigned int)arg2;
 - (void)setTextBadgeString:(id)arg1 onCellPhotoAtIndex:(unsigned int)arg2;
 - (void)deselectCellPhotoAtIndex:(unsigned int)arg1;
 - (void)selectCellPhotoAtIndex:(unsigned int)arg1;
-- (void)debadgeCellPhotoAtIndex:(unsigned int)arg1;
-- (void)badgeCellPhotoAtIndex:(unsigned int)arg1;
 - (unsigned int)cellPhotoCount;
 - (void)setCellPhotoThumbnailOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (unsigned int)unreadStartMarkerCount;
+- (BOOL)unreadStartMarkerShowsProgress;
+- (void)setUnreadStartMarkerShowsProgress:(BOOL)arg1;
+- (unsigned int)unreadStartMarkerIndex;
+- (void)setUnreadStartMarkerIndex:(unsigned int)arg1;
+- (void)setUnreadStartMarkerShowsProgress:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setUnreadStartMarkerCount:(unsigned int)arg1;
+- (void)setUnreadStartMarkerIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (int)photoSelectionStyle;
 - (void)setPhotoSelectionStyle:(int)arg1;
 

@@ -10,18 +10,20 @@
 
 @property(readonly) int numberOfPendingDialogs;
 
-+ (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
++ (id)newDialogWithError:(id)arg1;
++ (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
 - (BOOL)presentDialogForError:(id)arg1;
 - (void)dialogDidCancel:(id)arg1;
 - (void)dialog:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (BOOL)presentDialogForError:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)_finishDialog:(id)arg1 withButtonIndex:(int)arg2;
 - (BOOL)_haveEquivalentDialog:(id)arg1;
-- (void)_dialogNotification:(id)arg1;
+- (BOOL)presentDialog:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)_performDefaultActionForDialog:(id)arg1 buttonIndex:(int)arg2;
 - (int)numberOfPendingDialogs;
 - (BOOL)presentDialog:(id)arg1;
+- (void)dealloc;
 
 @end

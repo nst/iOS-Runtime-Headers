@@ -10,8 +10,8 @@
 }
 
 
-- (id)formatValueAsNumber;
 - (id)insertRedSpanIfNegativeAt:(id)arg1;
+- (id)formatValueAsNumber;
 - (id)initWithDoubleValue:(double)arg1 style:(id)arg2 parent:(id)arg3;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 

@@ -16,8 +16,8 @@
 
 
 - (void)dealloc;
-- (BOOL)highlighted;
 - (BOOL)opaque;
+- (BOOL)highlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)backgroundColor;
 - (void)setBackgroundColor:(id)arg1;

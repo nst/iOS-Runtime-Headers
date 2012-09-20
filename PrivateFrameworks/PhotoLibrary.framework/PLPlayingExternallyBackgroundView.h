@@ -20,8 +20,8 @@
 
 
 - (void)dealloc;
-- (void)setMessage:(id)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setMessage:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;

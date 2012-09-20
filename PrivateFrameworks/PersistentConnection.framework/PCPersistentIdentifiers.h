@@ -7,8 +7,8 @@
 
 + (id)_processNamePrefix;
 + (int)pidFromMatchingIdentifer:(id)arg1;
-+ (id)processNamePidAndStringIdentifier:(id)arg1;
 + (unsigned long long)hostUniqueIdentifier;
++ (id)processNamePidAndStringIdentifier:(id)arg1;
 + (id)processNameAndPidIdentifier;
 
 

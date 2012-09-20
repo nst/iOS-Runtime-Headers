@@ -17,18 +17,18 @@
 @property(retain) PLPhotoLibrary * _photoLibrary;
 
 
-- (id)library;
-- (void)setLibrary:(id)arg1;
 - (void)dealloc;
+- (void)setIsValid:(BOOL)arg1;
+- (void)setLibrary:(id)arg1;
+- (id)library;
+- (BOOL)isValid;
 - (void)_performBlockAndWait:(id)arg1;
 - (void)setPhoto:(id)arg1;
-- (BOOL)isValid;
+- (id)photo;
 - (void)set_photoLibrary:(id)arg1;
-- (void)libraryDidChange;
 - (void)libraryWillDisappear;
 - (id)_photoLibrary;
-- (void)setIsValid:(BOOL)arg1;
+- (void)libraryDidChange;
 - (id)initWithManagedAsset:(id)arg1 library:(id)arg2;
-- (id)photo;
 
 @end

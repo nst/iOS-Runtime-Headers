@@ -13,6 +13,8 @@
 @property <TableViewManagerDelegate> * delegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (void)initAUUITableViewControllerCommon;
 - (id)tableManager;
@@ -20,8 +22,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)setTableView:(id)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 
 @end

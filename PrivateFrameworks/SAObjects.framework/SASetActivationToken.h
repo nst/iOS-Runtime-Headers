@@ -10,15 +10,15 @@
 @property(copy) NSData * activationToken;
 @property(copy) NSString * language;
 
-+ (id)setActivationToken;
 + (id)setActivationTokenWithDictionary:(id)arg1 context:(id)arg2;
++ (id)setActivationToken;
 
 - (id)groupIdentifier;
 - (void)setLanguage:(id)arg1;
 - (id)language;
-- (id)activationToken;
 - (void)setActivationToken:(id)arg1;
-- (id)encodedClassName;
+- (id)activationToken;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

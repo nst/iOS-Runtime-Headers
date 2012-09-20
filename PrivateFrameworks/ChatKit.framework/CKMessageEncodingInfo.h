@@ -6,30 +6,26 @@
 
 @interface CKMessageEncodingInfo : NSObject  {
     NSMutableString *_mutableText;
-    BOOL _isTextOnly;
     BOOL _infoCalculated;
     int _characterCountNumerator;
     int _characterCountDenominator;
 }
 
-@property BOOL isTextOnly;
 @property BOOL infoCalculated;
-@property int characterCountDenominator;
 @property int characterCountNumerator;
+@property int characterCountDenominator;
 
 
 - (void)dealloc;
-- (void)_calculateInfoIfNecessary;
-- (void)setCharacterCountNumerator:(int)arg1;
-- (void)setCharacterCountDenominator:(int)arg1;
-- (void)setInfoCalculated:(BOOL)arg1;
-- (BOOL)infoCalculated;
 - (void)calculateInfo;
-- (void)setIsTextOnly:(BOOL)arg1;
-- (id)initWithContentsOfComposition:(id)arg1;
-- (void)updateByReloadingFromComposition:(id)arg1 replacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
-- (int)characterCountNumerator;
+- (BOOL)infoCalculated;
+- (void)setInfoCalculated:(BOOL)arg1;
+- (void)setCharacterCountDenominator:(int)arg1;
+- (void)setCharacterCountNumerator:(int)arg1;
+- (void)_calculateInfoIfNecessary;
 - (int)characterCountDenominator;
-- (BOOL)isTextOnly;
+- (int)characterCountNumerator;
+- (void)updateByReloadingFromComposition:(id)arg1 replacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
+- (id)initWithContentsOfComposition:(id)arg1;
 
 @end

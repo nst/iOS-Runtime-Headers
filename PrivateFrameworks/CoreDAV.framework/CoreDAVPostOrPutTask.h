@@ -22,6 +22,7 @@
 @property(retain) NSString * requestDataContentType;
 
 
+- (id)initWithURL:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)priorOrderedURL;
@@ -38,7 +39,6 @@
 - (void)setAbsoluteOrder:(int)arg1;
 - (id)initWithDataPayload:(id)arg1 dataContentType:(id)arg2 atURL:(id)arg3 previousETag:(id)arg4;
 - (int)absoluteOrder;
-- (id)initWithURL:(id)arg1;
 - (id)requestBody;
 
 @end

@@ -7,42 +7,44 @@
 @interface DOMHTMLFormElement : DOMHTMLElement  {
 }
 
-@property(retain,readonly) DOMHTMLCollection * elements;
-@property(readonly) int length;
-@property(copy) NSString * name;
 @property(copy) NSString * acceptCharset;
 @property(copy) NSString * action;
-@property(copy) NSString * encoding;
 @property(copy) NSString * enctype;
+@property(copy) NSString * encoding;
 @property(copy) NSString * method;
+@property(copy) NSString * name;
 @property(copy) NSString * target;
+@property(readonly) DOMHTMLCollection * elements;
+@property(readonly) int length;
 
 
-- (void)setName:(id)arg1;
-- (void)setTarget:(id)arg1;
 - (id)action;
+- (void)setTarget:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)reset;
+- (id)name;
 - (id)target;
 - (int)length;
+- (id)encoding;
 - (int)structuralComplexityContribution;
-- (void)reset;
 - (id)method;
+- (id)autocomplete;
 - (BOOL)autocorrect;
 - (id)elements;
 - (void)setAction:(id)arg1;
-- (id)name;
-- (BOOL)noValidate;
-- (void)setNoValidate:(BOOL)arg1;
-- (id)acceptCharset;
-- (void)setAcceptCharset:(id)arg1;
-- (void)setEncoding:(id)arg1;
-- (id)enctype;
-- (void)setEnctype:(id)arg1;
-- (void)setMethod:(id)arg1;
-- (void)setAutocorrect:(BOOL)arg1;
-- (id)autocapitalize;
-- (void)setAutocapitalize:(id)arg1;
 - (void)submit;
+- (void)setAutocapitalize:(id)arg1;
+- (id)autocapitalize;
+- (void)setAutocorrect:(BOOL)arg1;
+- (void)setNoValidate:(BOOL)arg1;
+- (BOOL)noValidate;
+- (void)setMethod:(id)arg1;
+- (void)setEncoding:(id)arg1;
+- (void)setEnctype:(id)arg1;
+- (id)enctype;
+- (void)setAutocomplete:(id)arg1;
+- (void)setAcceptCharset:(id)arg1;
+- (id)acceptCharset;
 - (BOOL)checkValidity;
-- (id)encoding;
 
 @end

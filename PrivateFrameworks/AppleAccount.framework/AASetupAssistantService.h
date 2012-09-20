@@ -2,14 +2,17 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSOperationQueue, NSString, AASigningSession;
+@class AAAccount, NSOperationQueue, NSString, AASigningSession, NSDate;
 
 @interface AASetupAssistantService : NSObject  {
     NSOperationQueue *_requesterQueue;
     NSString *_appleID;
     NSString *_password;
     NSString *_emailChoice;
+    AAAccount *_account;
+    struct OpaqueCFHTTPCookieStorage { } *_cookieStorage;
     AASigningSession *_signingSession;
+    NSDate *_signingSessionCreationDate;
 }
 
 @property(copy) NSString * appleID;
@@ -19,12 +22,16 @@
 + (void)resetURLConfiguration;
 + (id)urlConfiguration;
 
-- (id)init;
-- (void)dealloc;
-- (void)setPassword:(id)arg1;
 - (void)setAppleID:(id)arg1;
 - (id)appleID;
+- (void)setPassword:(id)arg1;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (id)password;
 - (void)setEmailChoice:(id)arg1;
+- (void)upgradeiCloudTermsIfNecessaryWithHandler:(id)arg1;
+- (void)fetchDelegateTokensWithAccountParameters:(id)arg1 delegateHints:(id)arg2 handler:(id)arg3;
 - (void)setupDelegateAccountsWithParameters:(id)arg1 handler:(id)arg2;
 - (void)updateAppleIDWithParameters:(id)arg1 handler:(id)arg2;
 - (void)createAppleIDWithParameters:(id)arg1 handler:(id)arg2;
@@ -33,6 +40,7 @@
 - (id)initWithAppleID:(id)arg1 password:(id)arg2;
 - (id)emailChoice;
 - (id)_signingSession;
-- (id)password;
+- (void)setCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
+- (id)initWithAccount:(id)arg1;
 
 @end

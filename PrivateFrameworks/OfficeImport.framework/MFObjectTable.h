@@ -10,13 +10,13 @@
 
 
 - (int)deleteObject:(unsigned int)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)clear;
 - (int)size;
-- (unsigned int)insertPos;
-- (int)selectInto:(int)arg1 :(id)arg2;
-- (int)putObject:(id)arg1 :(unsigned int)arg2;
 - (id)getObject:(unsigned int)arg1;
+- (int)putObject:(id)arg1 :(unsigned int)arg2;
+- (int)selectInto:(int)arg1 :(id)arg2;
+- (unsigned int)insertPos;
 
 @end

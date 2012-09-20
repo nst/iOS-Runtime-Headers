@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureVideoDataOutputInternal, NSArray, <AVCaptureVideoDataOutputSampleBufferDelegate>, NSDictionary;
+@class AVCaptureVideoDataOutputInternal, NSArray, NSObject<OS_dispatch_queue>, <AVCaptureVideoDataOutputSampleBufferDelegate>, NSDictionary;
 
 @interface AVCaptureVideoDataOutput : AVCaptureOutput  {
     AVCaptureVideoDataOutputInternal *_internal;
 }
 
 @property(readonly) <AVCaptureVideoDataOutputSampleBufferDelegate> * sampleBufferDelegate;
-@property(readonly) struct dispatch_queue_s { }* sampleBufferCallbackQueue;
+@property(readonly) NSObject<OS_dispatch_queue> * sampleBufferCallbackQueue;
 @property(copy) NSDictionary * videoSettings;
 @property(readonly) NSArray * availableVideoCVPixelFormatTypes;
 @property(readonly) NSArray * availableVideoCodecTypes;
@@ -17,9 +17,11 @@
 @property BOOL alwaysDiscardsLateVideoFrames;
 
 + (void)initialize;
++ (id)supportedVideoSettingsKeys;
 
-- (id)init;
+- (void)setSession:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (void)_AVCaptureVideoDataOutput_VideoDataBecameReady;
 - (void)setAlwaysDiscardsLateVideoFrames:(BOOL)arg1;
 - (void)setMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -27,18 +29,21 @@
 - (void)setVideoSettings:(id)arg1;
 - (id)availableVideoCodecTypes;
 - (id)availableVideoCVPixelFormatTypes;
+- (id)vettedVideoSettingsForSettingsDictionary:(id)arg1;
 - (BOOL)alwaysDiscardsLateVideoFrames;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
+- (BOOL)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
+- (BOOL)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
+- (struct CGSize { float x1; float x2; })outputSizeForCaptureOptions:(id)arg1;
 - (void)didStartForSession:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (void)handleEnabledChangedForConnection:(id)arg1;
 - (id)connectionMediaTypes;
-- (void)setSampleBufferDelegate:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
-- (struct dispatch_queue_s { }*)sampleBufferCallbackQueue;
+- (void)setSampleBufferDelegate:(id)arg1 queue:(id)arg2;
+- (id)sampleBufferCallbackQueue;
 - (id)sampleBufferDelegate;
-- (id)_applyOverridesToCaptureOptions:(id)arg1;
+- (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (BOOL)isTheOnlyDataOutput;
 - (id)videoSettings;
-- (void)setSession:(id)arg1;
 
 @end

@@ -8,12 +8,12 @@
 }
 
 
-- (void)setDiscardable:(BOOL)arg1;
 - (void)setGroupIdentifier:(id)arg1;
 - (id)groupIdentifier;
-- (BOOL)isDiscardable;
-- (BOOL)isBeginMark;
 - (id)description;
 - (void)dealloc;
+- (void)setDiscardable:(BOOL)arg1;
+- (BOOL)isDiscardable;
+- (BOOL)isBeginMark;
 
 @end

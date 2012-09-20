@@ -5,28 +5,28 @@
 @class NSMutableArray;
 
 @interface OADCustomShapeGeometry : OADShapeGeometry  {
-    struct CsRect<long int> { long x1[4]; } *mGeometryCoordSpace;
-    struct CsPoint<long int> { long x1[2]; } *mLimo;
+    struct CsRect<long> { long x1[4]; } *mGeometryCoordSpace;
+    struct CsPoint<long> { long x1[2]; } *mLimo;
     NSMutableArray *mFormulas;
     NSMutableArray *mTextBodyRects;
     NSMutableArray *mPaths;
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (struct CsRect<long int> { long x1[4]; })geometryCoordSpace;
-- (void)setGeometryCoordSpace:(struct CsRect<long int> { long x1[4]; })arg1;
-- (struct CsPoint<long int> { long x1[2]; })limo;
-- (void)setLimo:(struct CsPoint<long int> { long x1[2]; })arg1;
-- (void)addFormula:(id)arg1;
-- (unsigned int)textBodyRectCount;
-- (id)textBodyRectAtIndex:(unsigned int)arg1;
+- (id)init;
+- (struct CsPoint<long> { long x1[2]; })limo;
+- (void)setLimo:(struct CsPoint<long> { long x1[2]; })arg1;
 - (void)addTextBodyRect:(id)arg1;
-- (unsigned int)pathCount;
-- (id)pathAtIndex:(unsigned int)arg1;
-- (void)addPath:(id)arg1;
+- (void)addFormula:(id)arg1;
 - (id)formulaAtIndex:(unsigned int)arg1;
 - (unsigned int)formulaCount;
+- (void)setGeometryCoordSpace:(struct CsRect<long> { long x1[4]; })arg1;
+- (id)pathAtIndex:(unsigned int)arg1;
+- (unsigned int)pathCount;
+- (void)addPath:(id)arg1;
+- (struct CsRect<long> { long x1[4]; })geometryCoordSpace;
+- (id)textBodyRectAtIndex:(unsigned int)arg1;
+- (unsigned int)textBodyRectCount;
 
 @end

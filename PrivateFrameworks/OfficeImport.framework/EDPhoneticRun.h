@@ -10,11 +10,11 @@
 
 
 - (id)init;
-- (unsigned int)charIndex;
-- (void)setCharIndex:(unsigned int)arg1;
-- (unsigned int)charBaseIndex;
-- (void)setCharBaseIndex:(unsigned int)arg1;
-- (unsigned int)charBaseCount;
 - (void)setCharBaseCount:(unsigned int)arg1;
+- (void)setCharBaseIndex:(unsigned int)arg1;
+- (void)setCharIndex:(unsigned int)arg1;
+- (unsigned int)charBaseCount;
+- (unsigned int)charBaseIndex;
+- (unsigned int)charIndex;
 
 @end

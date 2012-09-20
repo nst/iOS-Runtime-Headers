@@ -12,23 +12,23 @@
 
 
 - (void)dealloc;
-- (id)fileName;
-- (id)initWithWDom:(id)arg1 archiver:(id)arg2;
-- (void)setFileName:(id)arg1;
-- (id)archiver;
-- (struct CGSize { float x1; float x2; })pageSizeForDevice;
-- (struct CGSize { float x1; float x2; })contentSizeForDevice;
-- (id)documentTitle;
-- (void)mapDefaultCssStylesAt:(id)arg1;
-- (BOOL)hasSessionBreakAtIndex:(unsigned int)arg1;
 - (void)mapWithState:(id)arg1;
-- (int)defaultTabWidth;
-- (id)blipAtIndex:(unsigned int)arg1;
-- (float)rightMargin;
-- (float)topMargin;
+- (void)setFileName:(id)arg1;
+- (id)initWithWDom:(id)arg1 archiver:(id)arg2;
+- (id)archiver;
+- (id)fileName;
+- (id)styleMatrix;
+- (BOOL)hasSessionBreakAtIndex:(unsigned int)arg1;
+- (void)mapDefaultCssStylesAt:(id)arg1;
+- (id)documentTitle;
 - (float)bottomMargin;
 - (float)headerMargin;
+- (float)topMargin;
+- (float)rightMargin;
 - (float)leftMargin;
-- (id)styleMatrix;
+- (struct CGSize { float x1; float x2; })contentSizeForDevice;
+- (struct CGSize { float x1; float x2; })pageSizeForDevice;
+- (int)defaultTabWidth;
+- (id)blipAtIndex:(unsigned int)arg1;
 
 @end

@@ -26,18 +26,18 @@
 
 
 - (void)dealloc;
-- (BOOL)_isKeypathScopedToSubquery:(id)arg1;
-- (void)_setVariableColumn:(id)arg1;
-- (void)_createCollectionJoinsForFetchInContext:(id)arg1;
 - (void)_createSelectClauseInFetchWithContext:(id)arg1;
-- (id)_generateSQLForVariableExpression:(id)arg1 inContext:(id)arg2;
+- (void)_createCollectionJoinsForFetchInContext:(id)arg1;
+- (void)_setVariableColumn:(id)arg1;
+- (BOOL)_isKeypathScopedToSubquery:(id)arg1;
 - (void)_promoteJoinsForSubqueryScopedKeypath:(id)arg1;
+- (id)_generateSQLForVariableExpression:(id)arg1 inContext:(id)arg2;
 - (id)initWithExpression:(id)arg1 trailingKeypath:(id)arg2 inScope:(id)arg3;
 - (void)selectDistinct;
-- (void)_promoteJoinsForSubqueryScopedKeypaths;
-- (id)fetchIntermediateForKeypathExpression:(id)arg1;
-- (id)governingAliasForKeypathExpression:(id)arg1;
 - (BOOL)keypathExpressionIsSafeLHSForIn:(id)arg1;
+- (id)governingAliasForKeypathExpression:(id)arg1;
+- (id)fetchIntermediateForKeypathExpression:(id)arg1;
+- (void)_promoteJoinsForSubqueryScopedKeypaths;
 - (id)governingEntityForKeypathExpression:(id)arg1;
 - (id)generateSQLStringInContext:(id)arg1;
 

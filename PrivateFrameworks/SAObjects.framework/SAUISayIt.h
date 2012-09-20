@@ -10,15 +10,15 @@
 @property(retain) <SAAceSerializable> * context;
 @property(copy) NSString * message;
 
-+ (id)sayIt;
 + (id)sayItWithDictionary:(id)arg1 context:(id)arg2;
++ (id)sayIt;
 
 - (id)groupIdentifier;
 - (id)message;
 - (void)setMessage:(id)arg1;
-- (id)context;
 - (void)setContext:(id)arg1;
-- (id)encodedClassName;
+- (id)context;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

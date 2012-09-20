@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSError, NSInputStream, NSOutputStream, NSMutableDictionary;
+@class NSError, NSInputStream, NSOutputStream, NSObject<OS_dispatch_queue>, NSMutableDictionary;
 
 @interface MFStream : NSObject <NSStreamDelegate> {
     NSInputStream *_rStream;
@@ -17,9 +17,9 @@
   /* Error parsing encoded ivar type info: @? */
     id _callback;
 
-    struct dispatch_queue_s { } *_location;
-    unsigned int _capacity;
-    unsigned int _length;
+    NSObject<OS_dispatch_queue> *_location;
+    unsigned long _capacity;
+    unsigned long _length;
     char *_buffer;
     NSError *_error;
     BOOL _canRead;
@@ -27,26 +27,26 @@
     BOOL _sentCanRead;
 }
 
-@property(readonly) BOOL isOpen;
 @property(readonly) NSError * streamError;
+@property(readonly) BOOL isOpen;
 
++ (id)_networkDispatchQueue;
 + (void)setNetworkThread:(id)arg1;
 + (id)networkThread;
-+ (struct dispatch_queue_s { }*)_networkDispatchQueue;
 
-- (id)initCallBack:(id)arg1 onDispatchQueue:(struct dispatch_queue_s { }*)arg2;
-- (id)_copyPropertyForKey:(id)arg1;
-- (void)_readBytesFromStream;
-- (void)openToHostName:(id)arg1 port:(int)arg2;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)close;
 - (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (id)streamError;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
-- (void)close;
+- (void)openToHostName:(id)arg1 port:(int)arg2;
+- (void)_readBytesFromStream;
+- (id)_copyPropertyForKey:(id)arg1;
+- (id)initCallBack:(id)arg1 onDispatchQueue:(id)arg2;
 - (BOOL)isOpen;
 
 @end

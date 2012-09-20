@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, NSArray, NSManagedObject, NSDictionary, NSString, PFUbiquityImportContext, PFUbiquityKnowledgeVector, NSDate;
+@class NSDate, NSNumber, NSManagedObject, NSDictionary, NSString, PFUbiquityImportContext, PFUbiquityKnowledgeVector, NSArray;
 
 @interface PFUbiquityRecordImportConflict : NSObject  {
     NSString *_conflictingObjectGlobalIDStr;
@@ -18,56 +18,55 @@
     PFUbiquityImportContext *_importContext;
 }
 
-@property(retain) PFUbiquityKnowledgeVector * currentKnowledgeVector;
-@property(retain) NSNumber * conflictingLogTransactionNumber;
-@property(retain) PFUbiquityKnowledgeVector * conflictingLogKnowledgeVector;
-@property(retain) PFUbiquityImportContext * importContext;
-@property(retain) NSDictionary * globalIDIndexToLocalIDURIMap;
-@property(retain) NSArray * transactionHistory;
-@property(retain) NSDate * conflictLogDate;
-@property int conflictingLogTransactionType;
-@property(retain) NSDictionary * conflictingLogContent;
-@property(retain) NSManagedObject * sourceObject;
 @property(retain) NSString * conflictingObjectGlobalIDStr;
+@property(retain) NSManagedObject * sourceObject;
+@property(retain) NSDictionary * conflictingLogContent;
+@property(retain) PFUbiquityKnowledgeVector * conflictingLogKnowledgeVector;
+@property(retain) PFUbiquityKnowledgeVector * currentKnowledgeVector;
+@property int conflictingLogTransactionType;
+@property(retain) NSDate * conflictLogDate;
+@property(retain) NSNumber * conflictingLogTransactionNumber;
+@property(retain) NSArray * transactionHistory;
+@property(retain) NSDictionary * globalIDIndexToLocalIDURIMap;
+@property(retain) PFUbiquityImportContext * importContext;
 
-+ (void)initialize;
-+ (id)createArrayOfLogURLsForTransactionEntries:(id)arg1;
++ (id)createTransactionLogForTransactionEntry:(id)arg1 withImportContext:(id)arg2 error:(id*)arg3;
 + (id)electAncestorKnowledgeVectorForKnowledgeVector:(id)arg1 withExportingPeerID:(id)arg2 fromPeerSnapshotCollection:(id)arg3;
-+ (id)createTransactionLogForTransactionEntry:(id)arg1 withError:(id*)arg2;
 + (int)resolvedTypeForConflictingLogType:(int)arg1 andLatestTransactionEntry:(id)arg2 skipObject:(BOOL*)arg3;
++ (void)initialize;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (void)setConflictingObjectGlobalIDStr:(id)arg1;
-- (id)_newNormalizedSnapshot:(id)arg1 forObject:(id)arg2;
-- (id)createSnapshotDictionaryFromLogEntry:(id)arg1 withError:(id*)arg2;
-- (BOOL)resolveMergeConflictForLogContent:(id)arg1 previousSnapshot:(id)arg2 andAncestorSnapshot:(id)arg3 withOldVersion:(unsigned int)arg4 andNewVersion:(unsigned int)arg5 error:(id*)arg6;
-- (id)createSnapshotFromManagedObject:(id)arg1;
-- (id)transactionHistory;
-- (id)conflictingLogContent;
+- (id)init;
 - (id)conflictingLogTransactionNumber;
 - (id)conflictLogDate;
-- (id)conflictingLogKnowledgeVector;
-- (id)createSnapshotDictionaryForObjectWithEntry:(id)arg1 inTransactionLog:(id)arg2 withError:(id*)arg3;
+- (int)conflictingLogTransactionType;
+- (id)conflictingLogContent;
+- (id)conflictingObjectGlobalIDStr;
 - (id)createSetOfManagedObjectIDsForGlobalIDsInRelationship:(id)arg1 withValue:(id)arg2 withGlobalIDToLocalIDURIMap:(id)arg3 andTransactionLog:(id)arg4;
 - (id)globalIDIndexToLocalIDURIMap;
-- (id)conflictingObjectGlobalIDStr;
-- (int)conflictingLogTransactionType;
+- (id)createSnapshotDictionaryForObjectWithEntry:(id)arg1 inTransactionLog:(id)arg2 withError:(id*)arg3;
+- (id)createSnapshotFromManagedObject:(id)arg1;
+- (BOOL)resolveMergeConflictForLogContent:(id)arg1 previousSnapshot:(id)arg2 andAncestorSnapshot:(id)arg3 withOldVersion:(unsigned int)arg4 andNewVersion:(unsigned int)arg5 error:(id*)arg6;
+- (id)conflictingLogKnowledgeVector;
+- (id)createSnapshotDictionaryFromLogEntry:(id)arg1 withError:(id*)arg2;
+- (id)transactionHistory;
+- (id)_newNormalizedSnapshot:(id)arg1 forObject:(id)arg2;
+- (void)setConflictingObjectGlobalIDStr:(id)arg1;
+- (void)setConflictingLogContent:(id)arg1;
+- (id)createSnapshotFromLogContent:(id)arg1 withTransactionLog:(id)arg2;
+- (void)setImportContext:(id)arg1;
+- (void)setGlobalIDIndexToLocalIDURIMap:(id)arg1;
+- (void)setTransactionHistory:(id)arg1;
+- (void)setConflictingLogTransactionNumber:(id)arg1;
+- (id)currentKnowledgeVector;
+- (void)setConflictingLogKnowledgeVector:(id)arg1;
+- (void)setConflictingLogTransactionType:(int)arg1;
+- (void)setSourceObject:(id)arg1;
+- (void)setConflictLogDate:(id)arg1;
 - (void)setCurrentKnowledgeVector:(id)arg1;
 - (id)importContext;
-- (void)setConflictLogDate:(id)arg1;
-- (void)setSourceObject:(id)arg1;
-- (void)setConflictingLogTransactionType:(int)arg1;
-- (void)setConflictingLogKnowledgeVector:(id)arg1;
-- (void)setConflictingLogTransactionNumber:(id)arg1;
-- (void)setTransactionHistory:(id)arg1;
-- (void)setGlobalIDIndexToLocalIDURIMap:(id)arg1;
-- (void)setImportContext:(id)arg1;
-- (id)createSnapshotFromLogContent:(id)arg1 withTransactionLog:(id)arg2;
-- (void)setConflictingLogContent:(id)arg1;
-- (id)currentKnowledgeVector;
-- (id)sourceObject;
 - (BOOL)resolveConflict:(id*)arg1;
+- (id)sourceObject;
 
 @end

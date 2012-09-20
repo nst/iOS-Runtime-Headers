@@ -3,19 +3,16 @@
  */
 
 @interface CPImportTracing : CPTracing  {
-    long mReadingOpstat;
-    long mProcessorOpstat;
-    long mImportingOpstat;
 }
 
 
 - (void)dealloc;
-- (void)startImporting;
 - (void)stopImporting;
+- (void)startImporting;
 - (id)initWithFilename:(id)arg1;
-- (void)startProcessors;
 - (void)stopProcessors;
-- (void)startReading;
+- (void)startProcessors;
 - (void)stopReading;
+- (void)startReading;
 
 @end

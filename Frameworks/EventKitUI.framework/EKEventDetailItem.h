@@ -10,36 +10,40 @@
     <EKEventDetailItemDelegate> *_delegate;
     UIViewController<EKEditItemViewControllerProtocol> *_viewController;
     BOOL _allowsEditing;
+    BOOL _shouldIndent;
     int _cellPosition;
 }
 
 @property <EKEventDetailItemDelegate> * delegate;
 @property BOOL allowsEditing;
 @property int cellPosition;
+@property BOOL shouldIndent;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)reset;
 - (void)dealloc;
+- (void)setAllowsEditing:(BOOL)arg1;
+- (BOOL)allowsEditing;
+- (BOOL)shouldIndent;
+- (void)notifySubitemDidCommit:(int)arg1;
 - (BOOL)hasDetailViewControllerAtIndex:(unsigned int)arg1;
 - (void)layoutCellsForWidth:(float)arg1 position:(int)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
+- (int)numberOfSubitems;
 - (int)cellPosition;
-- (void)notifySubitemDidCommit:(int)arg1;
 - (void)notifyDidEndEditing;
 - (BOOL)editItemViewControllerCommit:(id)arg1;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (void)notifyDidStartEditing;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
-- (int)numberOfSubitems;
 - (void)eventViewController:(id)arg1 didSelectSubitem:(int)arg2;
 - (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (id)cellForSubitemAtIndex:(int)arg1;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
 - (void)setCellPosition:(int)arg1;
+- (void)setShouldIndent:(BOOL)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
 - (void)setEvent:(id)arg1 store:(id)arg2;
-- (void)reset;
-- (void)setAllowsEditing:(BOOL)arg1;
-- (BOOL)allowsEditing;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

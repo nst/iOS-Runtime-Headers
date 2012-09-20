@@ -25,13 +25,6 @@
 + (void)initialize;
 + (id)sharedManager;
 
-- (unsigned int)retainCount;
-- (id)retain;
-- (void)release;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
-- (id)init;
-- (void)dealloc;
 - (BOOL)auxiliaryTableSupportsEightDotBraille;
 - (BOOL)auxiliaryTableSupportsContractedBraille;
 - (id)textForPrintBraille:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
@@ -44,5 +37,12 @@
 - (id)printBrailleForText:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
 - (id)auxiliaryTableIdentifier;
 - (void)setAuxiliaryTranslationTableWithTableIdentifier:(id)arg1;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (oneway void)release;
+- (id)init;
+- (id)autorelease;
 
 @end

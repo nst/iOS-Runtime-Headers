@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUCellConfiguration, SUTableCellContentView, UIColor, SUItemOfferButton;
+@class SUCellConfiguration, SUTableCellContentView, UIColor, UIBezierPath, SUItemOfferButton;
 
 @interface SUTableCell : UITableViewCell  {
     UIColor *_bottomBorderColor;
@@ -20,6 +20,7 @@
 
 @property(retain) UIColor * bottomBorderColor;
 @property int clipCorners;
+@property(readonly) UIBezierPath * clippingPath;
 @property(retain) SUCellConfiguration * configuration;
 @property BOOL drawAsDisabled;
 @property BOOL highlightsOnlyContentView;
@@ -30,7 +31,26 @@
 @property BOOL usesSubviews;
 
 
+- (id)topBorderColor;
+- (id)bottomBorderColor;
+- (BOOL)showHighlight;
+- (void)setUsesSubviews:(BOOL)arg1;
+- (void)setTopBorderColor:(id)arg1;
+- (void)setShowHighlight:(BOOL)arg1;
+- (void)setBottomBorderColor:(id)arg1;
+- (id)itemOfferButton;
+- (id)clippingPath;
+- (id)copyPurchaseAnimationView;
+- (BOOL)usesSubviews;
+- (void)setHighlightsOnlyContentView:(BOOL)arg1;
+- (void)setDrawAsDisabled:(BOOL)arg1;
+- (BOOL)drawAsDisabled;
+- (BOOL)highlightsOnlyContentView;
+- (id)configuration;
+- (void)setConfiguration:(id)arg1;
 - (void)dealloc;
+- (void)setClipCorners:(int)arg1;
+- (int)clipCorners;
 - (void)setShowingDeleteConfirmation:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
@@ -42,23 +62,5 @@
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)topBorderColor;
-- (id)bottomBorderColor;
-- (BOOL)showHighlight;
-- (void)setUsesSubviews:(BOOL)arg1;
-- (void)setTopBorderColor:(id)arg1;
-- (void)setShowHighlight:(BOOL)arg1;
-- (void)setBottomBorderColor:(id)arg1;
-- (id)itemOfferButton;
-- (id)copyPurchaseAnimationView;
-- (BOOL)usesSubviews;
-- (void)setHighlightsOnlyContentView:(BOOL)arg1;
-- (void)setDrawAsDisabled:(BOOL)arg1;
-- (BOOL)drawAsDisabled;
-- (int)clipCorners;
-- (BOOL)highlightsOnlyContentView;
-- (id)configuration;
-- (void)setConfiguration:(id)arg1;
-- (void)setClipCorners:(int)arg1;
 
 @end

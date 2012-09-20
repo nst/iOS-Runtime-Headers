@@ -13,13 +13,13 @@
 
 
 - (void)dealloc;
+- (void)setChildIterator:(id)arg1;
 - (id)childIterator;
 - (void)incrementChildIterator;
-- (id)next;
-- (BOOL)hasNext;
-- (void)setChildIterator:(id)arg1;
 - (id)initWithParentIterator:(id)arg1;
-- (id)childIteratorFrom:(id)arg1;
 - (id)newChildIteratorFrom:(id)arg1;
+- (id)childIteratorFrom:(id)arg1;
+- (BOOL)hasNext;
+- (id)next;
 
 @end

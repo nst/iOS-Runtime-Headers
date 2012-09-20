@@ -13,11 +13,15 @@
     BOOL partial;
 }
 
+@property(readonly) BOOL shouldSend;
+@property(readonly) BOOL isUserRequested;
 
-- (id)deferredOperation;
-- (BOOL)shouldSend;
-- (unsigned long long)generationNumber;
-- (BOOL)isEqual:(id)arg1;
+
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)shouldSend;
+- (id)deferredOperation;
+- (BOOL)isUserRequested;
+- (unsigned long long)generationNumber;
 
 @end

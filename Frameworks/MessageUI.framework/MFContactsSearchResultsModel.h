@@ -9,12 +9,13 @@
 
 @class NSOperationQueue, NSMutableDictionary, NSArray;
 
-@interface MFContactsSearchResultsModel : NSObject  {
+@interface MFContactsSearchResultsModel : NSObject <_MFSearchResultsConsumer> {
     NSOperationQueue *_queue;
     NSArray *_recentSearchResults;
+    NSArray *_infrequentRecentSearchResults;
     NSMutableDictionary *_localSearchResultsByAddress;
     NSMutableDictionary *_serverSearchResultsByAddress;
-    NSMutableDictionary *_recipientsByAddress;
+    NSMutableDictionary *_recentRecipientsByAddress;
     struct __CFArray { } *_resultTypesSortOrder;
     struct __CFArray { } *_resultTypesPriorityOrder;
     struct __CFSet { } *_finishedResultTypes;
@@ -24,22 +25,22 @@
 }
 
 
-- (id)init;
+- (void)reset;
 - (void)dealloc;
-- (id)initWithFavorMobileNumbers:(BOOL)arg1;
+- (id)init;
 - (void)_finishSearchOfType:(int)arg1;
-- (id)_dictionaryForResultType:(int)arg1;
-- (id)_bestRecipientForAddress:(id)arg1 fallback:(id)arg2;
-- (void)_addBestRecipientsForRecipients:(id)arg1 excluding:(id)arg2 toArray:(id)arg3;
-- (BOOL)_isResetting;
-- (void)_addResults:(id)arg1 ofType:(int)arg2;
-- (BOOL)_shouldProcessResultsAfterFinishingType:(int)arg1;
-- (BOOL)_didFinishSearchForType:(int)arg1;
 - (void)_appendSortedResultsOfType:(int)arg1 excluding:(id)arg2 toResults:(id)arg3;
 - (void)_enumerateSearchResultTypesInSortOrderUsingBlock:(id)arg1;
+- (BOOL)_didFinishSearchForType:(int)arg1;
+- (BOOL)_shouldProcessResultsAfterFinishingType:(int)arg1;
+- (void)_addResults:(id)arg1 ofType:(int)arg2;
+- (BOOL)_isResetting;
+- (void)_addBestRecipientsForRecipients:(id)arg1 excluding:(id)arg2 toArray:(id)arg3;
+- (id)_bestRecipientForAddress:(id)arg1 fallback:(id)arg2;
+- (id)_dictionaryForResultType:(int)arg1;
 - (id)initWithResultTypeSortOrderComparator:(int (*)())arg1 resultTypePriorityComparator:(int (*)())arg2 favorMobileNumbers:(BOOL)arg3;
-- (void)reset;
 - (void)processAddedResultsOfType:(int)arg1 completion:(id)arg2;
 - (void)addResults:(id)arg1 ofType:(int)arg2;
+- (id)initWithFavorMobileNumbers:(BOOL)arg1;
 
 @end

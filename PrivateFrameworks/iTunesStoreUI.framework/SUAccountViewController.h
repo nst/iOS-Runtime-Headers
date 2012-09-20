@@ -10,14 +10,14 @@
 @property int style;
 
 
-- (id)init;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (int)style;
-- (void)setStyle:(int)arg1;
 - (id)_authenticationQueryParametersForStyle:(int)arg1;
 - (id)_bagKeyForStyle:(int)arg1;
 - (void)handleFailureWithError:(id)arg1;
 - (id)newViewControllerForPage:(id)arg1 ofType:(int)arg2 returningError:(id*)arg3;
 - (id)newFetchOperation;
+- (id)init;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (int)style;
+- (void)setStyle:(int)arg1;
 
 @end

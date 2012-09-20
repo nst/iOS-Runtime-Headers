@@ -14,6 +14,7 @@
 @property(copy) NSData * HTTPBody;
 @property(copy) NSString * HTTPMethod;
 @property(getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
+@property unsigned int networkServiceType;
 @property double timeoutInterval;
 @property(copy) NSString * URLBagKey;
 @property(retain) NSURL * URL;
@@ -21,32 +22,40 @@
 @property(copy) NSDictionary * HTTPHeaders;
 @property(copy) NSDictionary * requestParameters;
 @property(retain) NSInputStream * HTTPBodyStream;
+@property BOOL shouldDisableCellularFallback;
+@property BOOL requiresExtendedValidationCertificates;
+@property BOOL shouldDecodeResponse;
 @property BOOL shouldProcessProtocol;
 @property int URLBagType;
 @property(copy) id URLBagURLBlock;
 @property(copy) NSArray * URLs;
 
 
-- (void)setHTTPBodyStream:(id)arg1;
 - (void)setHTTPBody:(id)arg1;
-- (void)setHTTPMethod:(id)arg1;
-- (void)setTimeoutInterval:(double)arg1;
-- (void)setCachePolicy:(unsigned int)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
-- (void)setURLs:(id)arg1;
-- (void)setURL:(id)arg1;
+- (void)setHTTPMethod:(id)arg1;
+- (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
 - (void)setAllowedRetryCount:(int)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setShouldProcessProtocol:(BOOL)arg1;
 - (void)setITunesStoreRequest:(BOOL)arg1;
-- (void)setHTTPHeaders:(id)arg1;
 - (void)setURLBagType:(int)arg1;
 - (void)setRequestParameters:(id)arg1;
 - (void)setURLBagKey:(id)arg1;
-- (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setURLBagURLBlock:(id)arg1;
+- (void)setShouldDecodeResponse:(BOOL)arg1;
+- (void)setRequiresExtendedValidationCertificates:(BOOL)arg1;
+- (void)setMultiPartFormDataWithDictionary:(id)arg1;
+- (void)setShouldDisableCellularFallback:(BOOL)arg1;
 - (void)setUserAgentComponents:(id)arg1;
 - (void)setExpectedContentLength:(long long)arg1;
+- (void)setHTTPHeaders:(id)arg1;
+- (void)setURLs:(id)arg1;
+- (void)setURL:(id)arg1;
+- (void)setHTTPBodyStream:(id)arg1;
+- (void)setNetworkServiceType:(unsigned int)arg1;
+- (void)setTimeoutInterval:(double)arg1;
+- (void)setCachePolicy:(unsigned int)arg1;
 
 @end

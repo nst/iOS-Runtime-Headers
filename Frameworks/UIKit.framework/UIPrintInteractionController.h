@@ -45,9 +45,14 @@
 + (id)sharedPrintController;
 + (BOOL)isPrintingAvailable;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (oneway void)release;
 - (id)init;
-- (void)dealloc;
+- (void)_cancelManualPrintPage;
+- (void)_manualPrintPage;
+- (void)_enableManualPrintPage:(BOOL)arg1;
 - (void)setPrintingItems:(id)arg1;
 - (id)printingItems;
 - (id)printingItem;
@@ -89,11 +94,9 @@
 - (id)_currentPrintInfo;
 - (id)printPageRenderer;
 - (void)setPrintPageRenderer:(id)arg1;
-- (id)printInfo;
 - (void)dismissAnimated:(BOOL)arg1;
+- (id)printInfo;
 - (int)pageCount;
 - (id)_init;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

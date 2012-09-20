@@ -4,12 +4,12 @@
 
 @interface _MFNTLMAuthenticator : MFSASLAuthenticator  {
     struct NtlmGenerator { } *_ntlmGeneratorRef;
-    int _ntlmError;
+    long _ntlmError;
 }
 
 
-- (void)setAuthenticationState:(int)arg1;
-- (id)responseForServerData:(id)arg1;
 - (void)dealloc;
+- (id)responseForServerData:(id)arg1;
+- (void)setAuthenticationState:(int)arg1;
 
 @end

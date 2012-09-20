@@ -9,26 +9,24 @@
     NSLock *_lock;
 }
 
-@property(readonly) long long availableDiskSpace;
 @property(readonly) long long totalDiskCapacity;
 
 + (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
 - (struct __CFString { }*)copyDeviceGUID;
-- (long long)availableDiskSpace;
+- (void)dealloc;
+- (id)init;
 - (void)_setLocalValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 domain:(struct __CFString { }*)arg3;
 - (void*)_copyLocalValueForKey:(struct __CFString { }*)arg1 domain:(struct __CFString { }*)arg2;
 - (void)removeAccountFromDomain:(struct __CFString { }*)arg1;
+- (void*)copyITunesValueForKey:(struct __CFString { }*)arg1 usedDomain:(const struct __CFString {}**)arg2;
 - (id)copyAccountDictionaryForDomain:(struct __CFString { }*)arg1;
 - (long long)totalDiskCapacity;
 - (BOOL)_ntsSaveLocalDictionary;
 - (id)_localDictionaryFileName;
 - (id)_localDictionaryDirectory;
 - (id)_ntsLocalDictionary;
-- (void*)copyValueForKey:(struct __CFString { }*)arg1 domain:(struct __CFString { }*)arg2;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 domain:(struct __CFString { }*)arg3;
-- (void*)copyITunesValueForKey:(struct __CFString { }*)arg1 usedDomain:(const struct __CFString {}**)arg2;
+- (void*)copyValueForKey:(struct __CFString { }*)arg1 domain:(struct __CFString { }*)arg2;
 
 @end

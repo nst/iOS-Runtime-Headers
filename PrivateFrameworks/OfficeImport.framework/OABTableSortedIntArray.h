@@ -11,8 +11,8 @@
 
 - (void)dealloc;
 - (int)dim;
-- (id)initWithIntSet:(id)arg1;
-- (int)indexOfInt:(int)arg1;
 - (int)intAtIndex:(int)arg1;
+- (int)indexOfInt:(int)arg1;
+- (id)initWithIntSet:(id)arg1;
 
 @end

@@ -11,25 +11,25 @@
     NSTimer *_delayedScrollTimer;
 }
 
-@property(retain) NSTimer * delayedScrollTimer;
-@property BOOL manuallyAdjusted;
-@property float adjustment;
 @property(retain) UIScrollView * scrollView;
+@property float adjustment;
+@property BOOL manuallyAdjusted;
+@property(retain) NSTimer * delayedScrollTimer;
 
 + (id)recordWithScrollView:(id)arg1;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setDelayedScrollTimer:(id)arg1;
-- (id)delayedScrollTimer;
-- (void)setAdjustment:(float)arg1;
-- (void)setManuallyAdjusted:(BOOL)arg1;
-- (float)adjustment;
-- (void)cancelDelayedAdjustments;
-- (BOOL)manuallyAdjusted;
 - (void)_adjustTableForKeyboardInfo:(id)arg1;
 - (id)scrollView;
 - (void)setScrollView:(id)arg1;
+- (BOOL)manuallyAdjusted;
+- (void)cancelDelayedAdjustments;
+- (void)setManuallyAdjusted:(BOOL)arg1;
+- (void)setAdjustment:(float)arg1;
+- (float)adjustment;
+- (id)delayedScrollTimer;
+- (void)setDelayedScrollTimer:(id)arg1;
 
 @end

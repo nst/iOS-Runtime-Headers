@@ -16,14 +16,14 @@
 
 
 - (void)dealloc;
+- (void)layoutSubviews;
 - (id)twoPartTextLabel;
 - (void)shorten;
 - (void)checkValueWidths;
 - (void)_layoutSubviewsCore;
 - (void)layoutText:(id)arg1 andValue:(id)arg2;
+- (id)valueColor;
 - (void)setShortener:(id)arg1;
 - (id)shortener;
-- (id)valueColor;
-- (void)layoutSubviews;
 
 @end

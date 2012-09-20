@@ -27,6 +27,7 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
 - (void)handleDoubleTapEvent:(struct __GSEvent { }*)arg1;
 - (void)scheduleSingleTapHandlerForEvent:(struct __GSEvent { }*)arg1;
 - (void)_sendTouchPauseUpIfNecessary;
@@ -41,6 +42,5 @@
 - (id)initWithDelegate:(id)arg1 view:(id)arg2;
 - (void)releaseAndClearWeakRefs;
 - (BOOL)cancelMouseTracking;
-- (void)setDelegate:(id)arg1;
 
 @end

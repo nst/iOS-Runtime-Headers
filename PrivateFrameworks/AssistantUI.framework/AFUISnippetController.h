@@ -2,41 +2,66 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class <AFUISnippetDelegate>, UIView;
+@class <AFUISnippetDelegate>, NSArray, NSString, UIView;
 
 @interface AFUISnippetController : NSObject  {
     <AFUISnippetDelegate> *_delegate;
+    NSString *_title;
     int _phase;
+    NSString *_speakableText;
+    NSArray *_context;
 }
 
 @property(readonly) UIView * view;
 @property(readonly) <AFUISnippetDelegate> * delegate;
+@property(copy) NSString * title;
+@property(copy) NSString * speakableText;
+@property(copy) NSArray * context;
 
 
+- (void)viewDidAppear;
+- (id)delegate;
+- (id)description;
+- (void).cxx_destruct;
 - (id)init;
-- (void)dealloc;
-- (id)initWithAceObject:(id)arg1 delegate:(id)arg2;
-- (id)speakableTextForLanguageCode:(id)arg1;
-- (BOOL)wantsConfirmationTossBehavior;
-- (BOOL)_presentationShouldAnimate;
-- (BOOL)_wantsFullWidthOfScreen;
-- (BOOL)_wantsUnmodifiedHeight;
-- (BOOL)_wantsStaticPresentation;
-- (BOOL)_isServerResponse;
-- (BOOL)_supportsReload;
-- (BOOL)_affectsMagicPocket;
-- (void)_reloadWithAceObject:(id)arg1;
-- (void)assistantInterrupted;
-- (void)markWithStamp:(int)arg1;
-- (void)setIsLastInTranscript:(BOOL)arg1;
-- (id)parentViewController;
-- (id)view;
+- (void)setContext:(id)arg1;
+- (id)title;
+- (id)context;
 - (void)setPhase:(int)arg1;
 - (int)phase;
-- (id)delegate;
+- (id)parentViewController;
+- (id)view;
+- (void)setTitle:(id)arg1;
 - (void)viewDidDisappear;
 - (void)viewWillDisappear;
 - (void)viewWillAppear;
-- (void)viewDidAppear;
+- (void)_resetSnippetEditingState;
+- (void)setIsLastInTranscript:(BOOL)arg1;
+- (void)markWithStamp:(int)arg1;
+- (void)assistantWillActivate;
+- (void)assistantInterrupted;
+- (void)pushSirilandSnippet:(id)arg1;
+- (void)beginFadeInAnimation;
+- (BOOL)_affectsMagicPocket;
+- (BOOL)_forcesNoAnimationOnTableUpdates;
+- (BOOL)_supportsReload;
+- (BOOL)_isServerResponse;
+- (BOOL)_wantsStaticPresentation;
+- (BOOL)_wantsUnmodifiedHeight;
+- (BOOL)_wantsFullWidthOfScreen;
+- (BOOL)_presentationShouldAnimate;
+- (void)viewDidPresent;
+- (void)viewWillPresent;
+- (void)viewWillAppearFromSirilandWithAnimationDuration:(double)arg1;
+- (BOOL)viewIsReadyToAppear;
+- (void)willLeaveConversation;
+- (BOOL)wantsConfirmationTossBehavior;
+- (float)wantedHeightUpdate;
+- (double)resizeAnimationDuration;
+- (void)updateWithAceObject:(id)arg1;
+- (id)initWithAceObject:(id)arg1 delegate:(id)arg2;
+- (id)_speakableTextForAceObject:(id)arg1;
+- (void)setSpeakableText:(id)arg1;
+- (id)speakableText;
 
 @end

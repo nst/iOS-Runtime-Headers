@@ -12,16 +12,11 @@
     BOOL _timedOut;
     BOOL _responseReceived;
     PTPOperationResponsePacket *_response;
-    BOOL _callbackThreadIsRunning;
     struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[596]; } *_callbackThread;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
     } _callbackThreadMutex;
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    } _callbackThreadRunMutex;
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
@@ -33,47 +28,47 @@
     BOOL _headerBufferFound;
     BOOL _delegateNeedsResponse;
     BOOL _busy;
-    unsigned int _canceledTransactionID;
+    unsigned long _canceledTransactionID;
     PTPWrappedBytes *_dataForTransaction;
     unsigned long long _excessReceivedDataSize;
+    unsigned long _totalBytesFilled;
 }
 
 
-- (void)sendData:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (int)connectionStatus;
-- (void)setTimedOut:(BOOL)arg1;
-- (BOOL)timedOut;
-- (int)role;
-- (BOOL)isCallbackThreadRunning;
 - (void*)callbackThreadFunction;
 - (void)cleanupCallbackThread;
-- (BOOL)startCallbackThread;
 - (void)endCallbackThread;
-- (void)abortPendingIO;
-- (unsigned long long)excessReceivedDataSize;
-- (id)sendRequest:(id)arg1 sendData:(id)arg2 timeout:(unsigned long)arg3;
-- (unsigned short)deviceStatus;
+- (BOOL)startCallbackThread;
 - (void)deviceReset;
-- (BOOL)startResponder;
-- (BOOL)connected;
-- (id)sendRequest:(id)arg1 receiveData:(id)arg2 timeout:(unsigned long)arg3;
+- (unsigned short)deviceStatus;
+- (unsigned long long)excessReceivedDataSize;
+- (void)abortPendingIO;
 - (void)cancelTransaction:(id)arg1;
-- (BOOL)startInitiator;
-- (int)waitForCallbackThreadConditionSignalWithTimeout:(long)arg1;
-- (int)lockCallbackThreadMutex;
-- (int)unlockCallbackThreadMutex;
-- (void)setResponseReceived:(BOOL)arg1;
+- (id)sendRequest:(id)arg1 sendData:(id)arg2 timeout:(unsigned long)arg3;
+- (id)sendRequest:(id)arg1 receiveData:(id)arg2 timeout:(unsigned long)arg3;
+- (BOOL)connected;
+- (BOOL)startResponder;
 - (BOOL)responseReceived;
 - (int)signalCallbackThreadCondition;
+- (void)setResponseReceived:(BOOL)arg1;
+- (void)setResponse:(id)arg1;
+- (int)waitForCallbackThreadConditionSignalWithTimeout:(long)arg1;
+- (int)unlockCallbackThreadMutex;
+- (int)lockCallbackThreadMutex;
+- (BOOL)startInitiator;
 - (struct __CFRunLoop { }*)callbackThreadRunLoop;
+- (void)setTimedOut:(BOOL)arg1;
+- (BOOL)timedOut;
+- (int)connectionStatus;
+- (void)setDelegate:(id)arg1;
+- (unsigned short)type;
+- (void)dealloc;
+- (id)init;
 - (void)stop;
 - (id)response;
-- (unsigned short)type;
 - (BOOL)sendEvent:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setResponse:(id)arg1;
 - (BOOL)sendResponse:(id)arg1;
+- (void)sendData:(id)arg1;
+- (int)role;
 
 @end

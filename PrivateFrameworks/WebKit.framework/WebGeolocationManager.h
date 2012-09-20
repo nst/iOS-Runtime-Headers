@@ -10,8 +10,6 @@
 
 + (id)sharedGeolocationManager;
 
-- (id)init;
-- (void)dealloc;
 - (void)resume;
 - (void)suspend;
 

@@ -9,12 +9,12 @@
 
 @property(copy) NSArray * commands;
 
-+ (id)sendCommands;
 + (id)sendCommandsWithDictionary:(id)arg1 context:(id)arg2;
++ (id)sendCommands;
 
 - (id)groupIdentifier;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 - (void)setCommands:(id)arg1;
 - (id)commands;
 

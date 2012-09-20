@@ -29,37 +29,37 @@
 @property(copy) NSData * IDCertificate;
 
 
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (struct __SecKey { }*)provisionPublicKey;
-- (struct __SecKey { }*)provisionPrivateKey;
-- (struct __SecKey { }*)pushPublicKey;
-- (struct __SecKey { }*)pushPrivateKey;
+- (struct __SecKey { }*)identityPublicKey;
+- (void)setProvisionCertificate:(id)arg1;
+- (void)setProvisionPrivateKey:(struct __SecKey { }*)arg1;
+- (struct __SecKey { }*)identityPrivateKey;
+- (void)setPushCertificate:(id)arg1;
+- (void)setPushPrivateKey:(struct __SecKey { }*)arg1;
 - (void)setProvisionPublicKey:(struct __SecKey { }*)arg1;
 - (void)setIdentityPublicKey:(struct __SecKey { }*)arg1;
 - (void)setIdentityPrivateKey:(struct __SecKey { }*)arg1;
 - (void)setIDCertificate:(id)arg1;
 - (void)setPushPublicKey:(struct __SecKey { }*)arg1;
-- (id)IDCertificate;
-- (id)provisionCertificate;
-- (id)pushCertificate;
-- (id)nonStandardMessageHeadersForOutgoingPush;
 - (id)additionalMessageHeaders;
 - (int)responseCommand;
+- (id)IDCertificate;
+- (id)provisionCertificate;
+- (struct __SecKey { }*)provisionPublicKey;
+- (struct __SecKey { }*)provisionPrivateKey;
+- (id)pushCertificate;
+- (struct __SecKey { }*)pushPublicKey;
+- (struct __SecKey { }*)pushPrivateKey;
+- (BOOL)wantsBodySignature;
+- (BOOL)wantsSignature;
 - (BOOL)wantsBagKey;
 - (BOOL)wantsHTTPHeaders;
 - (BOOL)wantsCompressedBody;
 - (BOOL)wantsBinaryPush;
-- (int)command;
 - (void)setPushToken:(id)arg1;
 - (id)pushToken;
-- (struct __SecKey { }*)identityPublicKey;
-- (void)setProvisionCertificate:(id)arg1;
-- (void)setProvisionPrivateKey:(struct __SecKey { }*)arg1;
-- (void)setPushCertificate:(id)arg1;
-- (void)setPushPrivateKey:(struct __SecKey { }*)arg1;
-- (struct __SecKey { }*)identityPrivateKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (int)command;
 
 @end

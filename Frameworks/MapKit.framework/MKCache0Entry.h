@@ -21,7 +21,7 @@
 - (id)object;
 - (id)initWithObject:(id)arg1 key:(id)arg2;
 - (void)set_mapkit_cache_accessTime:(unsigned int)arg1;
-- (unsigned int)_mapkit_cache_accessTime;
 - (id)_mapkit_cache_key;
+- (unsigned int)_mapkit_cache_accessTime;
 
 @end

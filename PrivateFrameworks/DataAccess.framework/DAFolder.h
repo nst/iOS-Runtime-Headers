@@ -21,23 +21,23 @@
 @property BOOL hasRemoteChanges;
 
 
-- (id)folderID;
-- (id)folderName;
-- (id)parentFolderID;
-- (id)mailboxID;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void)setDataclass:(int)arg1;
+- (void)setParentFolderID:(id)arg1;
+- (void)setFolderName:(id)arg1;
+- (void)setFolderID:(id)arg1;
+- (id)parentFolderID;
+- (id)folderName;
+- (id)folderID;
+- (id)mailboxID;
+- (BOOL)isDefault;
+- (void)setIsDefault:(BOOL)arg1;
+- (int)dataclass;
 - (void)setHasRemoteChanges:(BOOL)arg1;
 - (BOOL)hasRemoteChanges;
 - (id)parentMailboxID;
-- (BOOL)isDefault;
-- (void)setIsDefault:(BOOL)arg1;
-- (void)setParentFolderID:(id)arg1;
-- (void)setFolderID:(id)arg1;
-- (void)setFolderName:(id)arg1;
-- (void)setDataclass:(int)arg1;
-- (int)dataclass;
 
 @end

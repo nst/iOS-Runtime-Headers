@@ -10,11 +10,11 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (id)supportedAccountTypes;
+- (id)init;
 - (BOOL)_cleanupAccountClass:(id)arg1;
-- (int)fixBasicAccountIfNeeded:(id)arg1 loggingMessage:(id)arg2;
+- (id)supportedAccountTypes;
 - (void)accountsHaveBeenSaved:(BOOL)arg1;
+- (int)fixBasicAccountIfNeeded:(id)arg1 loggingMessage:(id)arg2;
 
 @end

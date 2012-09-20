@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class PCPersistentTimer, NSTimer, NSDateFormatter, NSDate, CLLocationManager;
+@class PCPersistentTimer, NSTimer, NSObject<OS_dispatch_queue>, NSDate, NSDateFormatter, CLLocationManager;
 
 @interface _EKAlarmEngine : NSObject <CLLocationManagerDelegate> {
     int _lastDBSequence;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSDate *_nextFireDate;
     double _lastCheckpoint;
     PCPersistentTimer *_timer;
@@ -26,10 +26,17 @@
 + (id)sharedInstance;
 
 - (void)dealloc;
+- (void)stop;
+- (void)start;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (void)locationManager:(id)arg1 monitoringDidFailForRegion:(id)arg2 withError:(id)arg3;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)locationManager:(id)arg1 didExitRegion:(id)arg2;
+- (void)locationManager:(id)arg1 didEnterRegion:(id)arg2;
+- (id)_dateFormatter;
 - (void)_locationDaemonDidLaunch;
 - (void)_timeDidChangeSignificantly;
 - (void)_syncDidStart;
-- (void)_databaseChanged;
 - (void)reschedule;
 - (void)_proximityAlertTriggered:(id)arg1 entered:(BOOL)arg2;
 - (BOOL)_shouldAdjustFencesWithStatus:(int)arg1;
@@ -54,13 +61,6 @@
 - (void)_killSyncTimer;
 - (void)_protectedDataDidBecomeAvailable;
 - (void)_protectedDataWillBecomeUnavailable;
-- (void)stop;
-- (void)start;
-- (void)locationManager:(id)arg1 didEnterRegion:(id)arg2;
-- (void)locationManager:(id)arg1 didExitRegion:(id)arg2;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
-- (void)locationManager:(id)arg1 monitoringDidFailForRegion:(id)arg2 withError:(id)arg3;
-- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
-- (id)_dateFormatter;
+- (void)_databaseChanged;
 
 @end

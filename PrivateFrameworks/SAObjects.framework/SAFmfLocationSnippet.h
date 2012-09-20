@@ -7,23 +7,23 @@
 @interface SAFmfLocationSnippet : SAUISnippet  {
 }
 
-@property(retain) NSNumber * atRequestedLocation;
+@property(copy) NSNumber * atRequestedLocation;
 @property(copy) NSArray * locations;
 @property(copy) NSString * proximity;
 @property(copy) NSURL * searchContext;
 
-+ (id)locationSnippet;
 + (id)locationSnippetWithDictionary:(id)arg1 context:(id)arg2;
++ (id)locationSnippet;
 
 - (id)groupIdentifier;
+- (void)setLocations:(id)arg1;
+- (id)searchContext;
+- (void)setSearchContext:(id)arg1;
+- (id)locations;
+- (void)setAtRequestedLocation:(id)arg1;
+- (id)atRequestedLocation;
+- (id)encodedClassName;
 - (void)setProximity:(id)arg1;
 - (id)proximity;
-- (void)setLocations:(id)arg1;
-- (void)setSearchContext:(id)arg1;
-- (id)searchContext;
-- (id)atRequestedLocation;
-- (void)setAtRequestedLocation:(id)arg1;
-- (id)encodedClassName;
-- (id)locations;
 
 @end

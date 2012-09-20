@@ -6,9 +6,9 @@
 }
 
 
-- (void)drainMailbox;
-- (void)receiveSyncActions:(id)arg1;
 - (void)commitSyncActions;
+- (void)receiveSyncActions:(id)arg1;
+- (void)drainMailbox;
 - (void)handleResponse:(id)arg1 error:(id)arg2;
 - (BOOL)handleItems:(id)arg1;
 

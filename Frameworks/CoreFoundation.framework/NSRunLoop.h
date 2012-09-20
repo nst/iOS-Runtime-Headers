@@ -11,12 +11,21 @@
     void *_reserved[6];
 }
 
-+ (id)_new:(id)arg1;
 + (id)mainRunLoop;
 + (id)currentRunLoop;
++ (id)_new:(id)arg1;
 + (void)set_mapkit_networkIORunLoop:(id)arg1;
 + (id)_mapkit_networkIORunLoop;
 
+- (void)cancelPerformSelectorsWithTarget:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)run;
+- (id)currentMode;
+- (void)addTimer:(id)arg1 forMode:(id)arg2;
+- (struct __CFRunLoop { }*)getCFRunLoop;
 - (void)cancelPerformSelector:(SEL)arg1 target:(id)arg2 argument:(id)arg3;
 - (void)performSelector:(SEL)arg1 target:(id)arg2 argument:(id)arg3 order:(unsigned int)arg4 modes:(id)arg5;
 - (BOOL)runBeforeDate:(id)arg1;
@@ -40,14 +49,5 @@
 - (BOOL)_containsPort:(id)arg1 forMode:(id)arg2;
 - (void)_portInvalidated:(id)arg1;
 - (void)_enumerateInfoPairsWithBlock:(id)arg1;
-- (id)description;
-- (void)cancelPerformSelectorsWithTarget:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (struct __CFRunLoop { }*)getCFRunLoop;
-- (void)run;
-- (id)currentMode;
-- (void)addTimer:(id)arg1 forMode:(id)arg2;
 
 @end

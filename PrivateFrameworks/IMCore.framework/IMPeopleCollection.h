@@ -12,8 +12,8 @@
 @property NSMutableArray * _collectedPeople;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)set_collectedPeople:(id)arg1;
 - (BOOL)containsPerson:(id)arg1;
 - (void)removeIMPeople:(id)arg1;

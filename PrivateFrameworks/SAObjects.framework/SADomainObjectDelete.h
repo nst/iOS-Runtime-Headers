@@ -9,13 +9,13 @@
 
 @property(retain) SADomainObject * identifier;
 
-+ (id)domainObjectDelete;
 + (id)domainObjectDeleteWithDictionary:(id)arg1 context:(id)arg2;
++ (id)domainObjectDelete;
 
 - (id)groupIdentifier;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

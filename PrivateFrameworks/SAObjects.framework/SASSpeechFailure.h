@@ -10,15 +10,15 @@
 @property int reason;
 @property(copy) NSString * reasonDescription;
 
-+ (id)speechFailure;
 + (id)speechFailureWithDictionary:(id)arg1 context:(id)arg2;
++ (id)speechFailure;
 
-- (id)groupIdentifier;
 - (void)setReason:(int)arg1;
+- (id)groupIdentifier;
 - (int)reason;
-- (id)reasonDescription;
 - (void)setReasonDescription:(id)arg1;
-- (id)encodedClassName;
+- (id)reasonDescription;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

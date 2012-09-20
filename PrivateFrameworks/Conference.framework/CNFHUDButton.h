@@ -12,23 +12,24 @@
     float _contentViewHeightOffset;
 }
 
-@property(retain,readonly) UIImageView * imageView;
-@property(retain,readonly) UILabel * titleLabel;
-@property float contentViewHeightOffset;
-@property float contentViewWidthOffset;
-@property float contentViewOriginXOffset;
 @property BOOL resizesToFit;
+@property float contentViewOriginXOffset;
+@property float contentViewWidthOffset;
+@property float contentViewHeightOffset;
+@property(readonly) UIImageView * imageView;
+@property(readonly) UILabel * titleLabel;
 
 
 - (void)dealloc;
-- (float)contentViewOriginXOffset;
-- (float)contentViewWidthOffset;
 - (float)contentViewHeightOffset;
-- (void)setContentViewOriginXOffset:(float)arg1;
-- (void)setContentViewWidthOffset:(float)arg1;
-- (void)setContentViewHeightOffset:(float)arg1;
-- (BOOL)resizesToFit;
+- (float)contentViewWidthOffset;
+- (float)contentViewOriginXOffset;
+- (void)setTitleInset:(float)arg1;
 - (void)setTitle:(id)arg1 image:(id)arg2;
+- (BOOL)resizesToFit;
+- (void)setContentViewHeightOffset:(float)arg1;
+- (void)setContentViewWidthOffset:(float)arg1;
+- (void)setContentViewOriginXOffset:(float)arg1;
 - (void)setResizesToFit:(BOOL)arg1;
 - (void)setOrientation:(int)arg1;
 - (id)imageView;

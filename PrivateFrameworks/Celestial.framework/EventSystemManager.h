@@ -15,8 +15,8 @@
 
 + (id)sharedEventSystem;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)removeClient:(id)arg1;
 - (void)addClient:(id)arg1;
 - (id)clientList;

@@ -13,13 +13,13 @@
 }
 
 
+- (void)dealloc;
+- (id)init;
 - (void)addRequest:(id)arg1 consumer:(id)arg2;
-- (void)willAddRequests:(id)arg1 consumers:(id)arg2;
-- (void)_processRequests:(id)arg1 consumers:(id)arg2;
 - (void)processRequest:(id)arg1 consumer:(id)arg2;
+- (void)_processRequests:(id)arg1 consumers:(id)arg2;
+- (void)willAddRequests:(id)arg1 consumers:(id)arg2;
 - (void)processRequests:(id)arg1 consumers:(id)arg2;
 - (void)addRequests:(id)arg1 consumers:(id)arg2;
-- (id)init;
-- (void)dealloc;
 
 @end

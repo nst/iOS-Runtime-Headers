@@ -7,23 +7,20 @@
 @interface CIMirror : CIFilter  {
     CIImage *inputImage;
     CIVector *inputPoint;
-    NSNumber *inputOrientation;
-    NSNumber *inputMirroredStatus;
+    NSNumber *inputAngle;
 }
 
 @property(retain) CIImage * inputImage;
 @property(copy) CIVector * inputPoint;
-@property(copy) NSNumber * inputOrientation;
-@property(copy) NSNumber * inputMirroredStatus;
+@property(copy) NSNumber * inputAngle;
 
 + (id)customAttributes;
 
 - (void)setInputPoint:(id)arg1;
-- (id)inputMirroredStatus;
-- (id)inputOrientation;
 - (id)inputPoint;
-- (void)setInputMirroredStatus:(id)arg1;
-- (void)setInputOrientation:(id)arg1;
+- (struct Rectangle { double x1; double x2; double x3; double x4; })computeDOD:(struct vec2 { float x1; float x2; })arg1 tst:(struct vec3 { float x1; float x2; float x3; })arg2 off:(struct vec4 { float x1; float x2; float x3; float x4; })arg3 mtx:(struct vec4 { float x1; float x2; float x3; float x4; })arg4;
+- (void)setInputAngle:(id)arg1;
+- (id)inputAngle;
 - (id)_kernel;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;

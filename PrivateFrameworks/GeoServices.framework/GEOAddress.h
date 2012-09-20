@@ -6,30 +6,43 @@
 
 @interface GEOAddress : PBCodable  {
     NSMutableArray *_formattedAddressLines;
+    int _formattedAddressType;
     GEOStructuredAddress *_structuredAddress;
+    struct { 
+        unsigned int formattedAddressType : 1; 
+    } _has;
 }
 
 @property(retain) NSMutableArray * formattedAddressLines;
 @property(readonly) BOOL hasStructuredAddress;
 @property(retain) GEOStructuredAddress * structuredAddress;
+@property BOOL hasFormattedAddressType;
+@property int formattedAddressType;
 
 
-- (id)description;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)initWithAddressString:(id)arg1;
-- (id)formattedAddressLineAtIndex:(unsigned int)arg1;
-- (unsigned int)formattedAddressLinesCount;
-- (void)addFormattedAddressLine:(id)arg1;
-- (void)setFormattedAddressLines:(id)arg1;
-- (BOOL)hasStructuredAddress;
-- (void)setStructuredAddress:(id)arg1;
 - (id)formattedAddressLines;
 - (id)structuredAddress;
 - (id)addressDictionary;
-- (id)initWithGMMSearchResult:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (void)setHasFormattedAddressType:(BOOL)arg1;
+- (void)setFormattedAddressType:(int)arg1;
+- (int)formattedAddressType;
+- (BOOL)hasFormattedAddressType;
+- (id)formattedAddressLineAtIndex:(unsigned int)arg1;
+- (void)clearFormattedAddressLines;
+- (unsigned int)formattedAddressLinesCount;
+- (void)addFormattedAddressLine:(id)arg1;
+- (void)setStructuredAddress:(id)arg1;
+- (id)initWithAddressString:(id)arg1;
+- (BOOL)hasStructuredAddress;
+- (void)setFormattedAddressLines:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)singleLineAddress;
 
 @end

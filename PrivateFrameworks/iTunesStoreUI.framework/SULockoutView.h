@@ -2,34 +2,43 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIImageView, UILabel, NSString, UIImage;
+@class UIImageView, UIImage, UILabel, NSString;
 
 @interface SULockoutView : UIView  {
+    UIImageView *_backgroundImageView;
     UILabel *_bodyLabel;
+    UIImageView *_glowImageView;
     UIImageView *_imageView;
     int _layoutPreset;
     UILabel *_titleLabel;
 }
 
-@property(retain) NSString * body;
+@property(retain) UIImage * backgroundImage;
+@property(copy) NSString * body;
 @property(retain) UIImage * image;
+@property(retain) UIImage * glowImage;
 @property int layoutPreset;
-@property(retain) NSString * title;
+@property(copy) NSString * title;
 
 
+- (id)glowImage;
+- (id)_newLabel;
+- (void)_layoutForSlowNetwork;
+- (int)layoutPreset;
+- (id)_bodyLabel;
+- (void)setLayoutPreset:(int)arg1;
+- (void)setGlowImage:(id)arg1;
 - (void)dealloc;
+- (void)setBody:(id)arg1;
 - (id)_imageView;
 - (id)_titleLabel;
 - (id)body;
+- (void)setBackgroundImage:(id)arg1;
 - (id)image;
 - (id)title;
+- (id)backgroundImage;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
 - (void)setImage:(id)arg1;
-- (void)setBody:(id)arg1;
-- (id)_bodyLabel;
-- (void)_layoutForSlowNetwork;
-- (int)layoutPreset;
-- (void)setLayoutPreset:(int)arg1;
 
 @end

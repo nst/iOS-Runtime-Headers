@@ -32,47 +32,48 @@
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
         } desc; 
-        struct Vector<WebCore::MimeClassInfo,0ul> { 
+        struct Vector<WebCore::MimeClassInfo, 0> { 
             unsigned int m_size; 
-            struct VectorBuffer<WebCore::MimeClassInfo,0ul> { 
+            struct VectorBuffer<WebCore::MimeClassInfo, 0> { 
                 struct MimeClassInfo {} *m_buffer; 
                 unsigned int m_capacity; 
             } m_buffer; 
         } mimes; 
     } pluginInfo;
-    struct RetainPtr<__CFBundle*> { 
+    struct RetainPtr<__CFBundle *> { 
         struct __CFBundle {} *m_ptr; 
     } cfBundle;
     int (*BP_CreatePluginMIMETypesPreferences)();
 }
 
++ (void)initialize;
 + (id)pluginWithPath:(id)arg1;
 + (id)preferredLocalizationName;
-+ (void)initialize;
 
-- (id)MIMETypeForExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
-- (unsigned long)versionNumber;
-- (void)unload;
-- (void)dealloc;
-- (BOOL)supportsMIMEType:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
-- (BOOL)getPluginInfoFromPLists;
-- (const struct PluginInfo { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct Vector<WebCore::MimeClassInfo,0ul> { unsigned int x_4_1_1; struct VectorBuffer<WebCore::MimeClassInfo,0ul> { struct MimeClassInfo {} *x_2_2_1; unsigned int x_2_2_2; } x_4_1_2; } x4; }*)pluginInfo;
-- (BOOL)supportsExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
-- (BOOL)isJavaPlugIn;
-- (BOOL)isNativeLibraryData:(id)arg1;
-- (void)wasAddedToPluginDatabase:(id)arg1;
-- (void)wasRemovedFromPluginDatabase:(id)arg1;
-- (void)createPropertyListFile;
-- (id)_objectForInfoDictionaryKey:(id)arg1;
-- (id)pListForPath:(id)arg1 createFile:(BOOL)arg2;
+- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleVersion;
+- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleIdentifier;
+- (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
 - (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (BOOL)load;
 - (void)finalize;
 - (BOOL)isQuickTimePlugIn;
-- (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
-- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleIdentifier;
-- (void).cxx_destruct;
+- (BOOL)supportsMIMEType:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
+- (id)MIMETypeForExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
+- (unsigned long)versionNumber;
+- (void)unload;
+- (void)wasRemovedFromPluginDatabase:(id)arg1;
+- (void)wasAddedToPluginDatabase:(id)arg1;
+- (BOOL)isNativeLibraryData:(id)arg1;
+- (BOOL)isJavaPlugIn;
+- (BOOL)supportsExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
+- (const struct PluginInfo { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct Vector<WebCore::MimeClassInfo, 0> { unsigned int x_4_1_1; struct VectorBuffer<WebCore::MimeClassInfo, 0> { struct MimeClassInfo {} *x_2_2_1; unsigned int x_2_2_2; } x_4_1_2; } x4; }*)pluginInfo;
+- (BOOL)getPluginInfoFromPLists;
+- (id)pListForPath:(id)arg1 createFile:(BOOL)arg2;
+- (id)_objectForInfoDictionaryKey:(id)arg1;
+- (void)createPropertyListFile;
 - (oneway void)_webcore_releaseOnWebThread;
 - (oneway void)release;
 

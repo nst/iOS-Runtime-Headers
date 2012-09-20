@@ -20,21 +20,22 @@
 }
 
 
-- (void)dealloc;
-- (double)angle;
-- (void)setPath:(id)arg1;
-- (void)setAngle:(double)arg1;
 - (id)path;
-- (BOOL)hasPath;
-- (BOOL)hasAngle;
-- (BOOL)hasPointType;
-- (int)pointType;
-- (void)setPointType:(int)arg1;
-- (BOOL)hasOriginType;
-- (int)originType;
-- (void)setOriginType:(int)arg1;
-- (BOOL)hasRotationCenter;
-- (struct CGPoint { float x1; float x2; })rotationCenter;
+- (id).cxx_construct;
+- (void)dealloc;
+- (void)setPath:(id)arg1;
+- (double)angle;
+- (void)setAngle:(double)arg1;
 - (void)setRotationCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })rotationCenter;
+- (BOOL)hasRotationCenter;
+- (int)originType;
+- (BOOL)hasOriginType;
+- (BOOL)hasPointType;
+- (BOOL)hasAngle;
+- (BOOL)hasPath;
+- (void)setOriginType:(int)arg1;
+- (void)setPointType:(int)arg1;
+- (int)pointType;
 
 @end

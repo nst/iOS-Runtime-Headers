@@ -25,15 +25,6 @@
 @property(copy) NSString * sendButtonTitle;
 
 
-- (void)dealloc;
-- (void)textContentViewDidChange:(id)arg1;
-- (void)textContentView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
-- (BOOL)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)sizeToFit;
-- (id)delegate;
-- (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_isImageIdentifierDeleted:(int)arg1;
 - (void)setSendButtonTitle:(id)arg1;
 - (void)setSendButtonEnabled:(BOOL)arg1;
@@ -58,5 +49,14 @@
 - (id)_newSendButton;
 - (id)_newScrollView;
 - (id)_newPhotoButton;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)textContentViewDidChange:(id)arg1;
+- (void)textContentView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
+- (BOOL)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)sizeToFit;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

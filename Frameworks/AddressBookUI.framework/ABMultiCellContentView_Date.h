@@ -13,20 +13,20 @@
 + (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 
 - (void)dealloc;
-- (BOOL)dateFieldShouldReturn:(id)arg1;
-- (void)updateSubviewsForNewStateAnimated:(BOOL)arg1;
-- (id)hitTestForTouches:(id)arg1 withEvent:(id)arg2;
-- (BOOL)dateFieldShouldClear:(id)arg1;
-- (void)dateFieldDateDidChange:(id)arg1;
-- (BOOL)dateFieldShouldBeginEditing:(id)arg1;
-- (void)dateFieldDidBeginEditing:(id)arg1;
-- (BOOL)dateFieldShouldEndEditing:(id)arg1;
-- (void)dateFieldDidEndEditing:(id)arg1;
-- (void)setUpdateDelegate:(id)arg1;
-- (id)viewForFirstResponder;
-- (void)setAbCellStyle:(int)arg1;
-- (void)reloadFromModel;
 - (id)date;
 - (void)reload;
+- (BOOL)dateFieldShouldReturn:(id)arg1;
+- (id)viewForFirstResponder;
+- (id)hitTestForTouches:(id)arg1 withEvent:(id)arg2;
+- (void)updateSubviewsForNewStateAnimated:(BOOL)arg1;
+- (void)dateFieldDidEndEditing:(id)arg1;
+- (BOOL)dateFieldShouldEndEditing:(id)arg1;
+- (void)dateFieldDidBeginEditing:(id)arg1;
+- (BOOL)dateFieldShouldBeginEditing:(id)arg1;
+- (void)dateFieldDateDidChange:(id)arg1;
+- (BOOL)dateFieldShouldClear:(id)arg1;
+- (void)setUpdateDelegate:(id)arg1;
+- (void)setAbCellStyle:(int)arg1;
+- (void)reloadFromModel;
 
 @end

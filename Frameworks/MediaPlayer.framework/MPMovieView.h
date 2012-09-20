@@ -11,9 +11,9 @@
 @property <MPMovieViewDelegate> * delegate;
 
 
-- (void)willMoveToWindow:(id)arg1;
-- (id)delegate;
-- (void)didMoveToWindow;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)willMoveToWindow:(id)arg1;
+- (void)didMoveToWindow;
 
 @end

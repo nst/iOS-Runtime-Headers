@@ -2,53 +2,37 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABNewPersonViewControllerDelegate>, ABPersonViewControllerHelper, <ABStyleProvider>, ABGroupWrapper;
+@class <ABNewPersonViewControllerDelegate>, _UIAccessDeniedView, ABContactsFilter, ABPersonViewControllerHelper, ABPersonTableViewDataSource, <ABStyleProvider>;
 
 @interface ABNewPersonViewController : UIViewController  {
     <ABNewPersonViewControllerDelegate> *_newPersonViewDelegate;
     id _parentGroup;
     id _helper;
     void *_recordForNewPerson;
+    ABPersonTableViewDataSource *_dataSource;
+    _UIAccessDeniedView *_accessDeniedView;
+    BOOL _isRealViewLoaded;
 }
 
 @property <ABNewPersonViewControllerDelegate> * newPersonViewDelegate;
 @property void* addressBook;
 @property void* displayedPerson;
 @property void* parentGroup;
-@property(retain) ABGroupWrapper * parentGroupWrapper;
+@property(retain) ABContactsFilter * parentContactsFilter;
 @property(readonly) void* recordForNewPerson;
 @property(readonly) ABPersonViewControllerHelper * helper;
+@property(readonly) ABPersonTableViewDataSource * dataSource;
 @property BOOL savesNewContactOnSuspend;
 @property BOOL showsCancelButton;
 @property(retain) <ABStyleProvider> * styleProvider;
+@property(readonly) _UIAccessDeniedView * accessDeniedView;
+@property BOOL isRealViewLoaded;
 
 
 - (void)save:(id)arg1;
-- (id)init;
 - (void)dealloc;
-- (id)helper;
-- (id)newPersonViewDelegate;
-- (void*)parentGroup;
-- (void)setParentGroup:(void*)arg1;
-- (id)parentGroupWrapper;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
-- (BOOL)savesNewContactOnSuspend;
-- (void)savePerson:(void*)arg1;
-- (void)saveAndTellDelegate:(BOOL)arg1;
-- (void*)recordForNewPerson;
-- (void)attemptSaveAndTellDelegate:(BOOL)arg1;
-- (float)ab_heightToFitForViewInPopoverView;
-- (void)setParentGroupWrapper:(id)arg1;
-- (void)setSavesNewContactOnSuspend:(BOOL)arg1;
-- (int)abViewControllerType;
-- (void*)displayedPerson;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
+- (id)init;
 - (void)updateNavigationButtons;
-- (void)setAddressBook:(void*)arg1;
-- (void*)addressBook;
-- (void)setDisplayedPerson:(void*)arg1;
-- (void)setNewPersonViewDelegate:(id)arg1;
 - (BOOL)showsCancelButton;
 - (void)setShowsCancelButton:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1;
@@ -64,10 +48,39 @@
 - (void)viewDidLoad;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;
 - (void)applicationWillTerminate:(id)arg1;
+- (id)dataSource;
+- (void)setNewPersonViewDelegate:(id)arg1;
+- (void*)addressBook;
+- (void)setParentGroup:(void*)arg1;
+- (void*)parentGroup;
+- (id)newPersonViewDelegate;
+- (void)attemptSaveAndTellDelegate:(BOOL)arg1;
+- (void)setIsRealViewLoaded:(BOOL)arg1;
+- (BOOL)isRealViewLoaded;
+- (void*)recordForNewPerson;
+- (void)saveAndTellDelegate:(BOOL)arg1;
+- (void)savePerson:(void*)arg1;
+- (BOOL)savesNewContactOnSuspend;
+- (id)parentContactsFilter;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
+- (void)accessChanged;
+- (id)helper;
+- (float)ab_heightToFitForViewInPopoverView;
+- (void)setSavesNewContactOnSuspend:(BOOL)arg1;
+- (void)setParentContactsFilter:(id)arg1;
+- (id)accessDeniedView;
+- (int)abViewControllerType;
+- (id)styleProvider;
+- (void)setStyleProvider:(id)arg1;
+- (void*)displayedPerson;
+- (void)setDisplayedPerson:(void*)arg1;
 - (void)cancel:(id)arg1;
+- (void)setAddressBook:(void*)arg1;
 - (BOOL)ckCanDismissWhenSuspending;
 
 @end

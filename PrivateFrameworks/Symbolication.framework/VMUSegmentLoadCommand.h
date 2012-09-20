@@ -17,18 +17,18 @@
 }
 
 
+- (id)name;
 - (id)description;
 - (void)dealloc;
-- (unsigned long long)filesize;
-- (int)maxprot;
-- (int)initprot;
-- (unsigned long long)vmsize;
-- (unsigned long long)vmaddr;
-- (unsigned long long)fileoff;
-- (BOOL)isSegment;
-- (id)sectionNamed:(id)arg1;
 - (id)sections;
 - (unsigned int)flags;
-- (id)name;
+- (int)initprot;
+- (int)maxprot;
+- (unsigned long long)filesize;
+- (unsigned long long)vmsize;
+- (unsigned long long)fileoff;
+- (unsigned long long)vmaddr;
+- (BOOL)isSegment;
+- (id)sectionNamed:(id)arg1;
 
 @end

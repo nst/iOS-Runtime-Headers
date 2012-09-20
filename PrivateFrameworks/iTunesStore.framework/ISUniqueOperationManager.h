@@ -11,11 +11,11 @@
     NSMutableDictionary *_lockPool;
 }
 
-+ (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
++ (id)sharedInstance;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)uniqueOperationFinished:(id)arg1 forKey:(id)arg2;
 - (void)setPredecessorIfNeeded:(id)arg1 forKey:(id)arg2;
 - (id)predecessorForKey:(id)arg1 operation:(id)arg2;

@@ -16,25 +16,25 @@
 @property(readonly) double fireTime;
 @property(readonly) double remainingTime;
 
-+ (id)copyFetchScheduledNotification;
 + (id)newNotificationAt:(double)arg1 withSound:(id)arg2;
-+ (BOOL)upgrade;
++ (id)copyFetchScheduledNotification;
 + (BOOL)discardOldVersion;
++ (BOOL)upgrade;
 + (BOOL)isTimerNotification:(id)arg1;
 + (id)sharedManager;
 
-- (double)fireTime;
+- (BOOL)resume;
+- (int)state;
 - (BOOL)cancel;
+- (BOOL)pause;
+- (void)changeSound:(id)arg1;
+- (void)scheduleAt:(double)arg1 withSound:(id)arg2;
+- (void)reloadState;
 - (double)remainingTime;
 - (double)defaultDuration;
-- (void)reloadState;
-- (void)scheduleAt:(double)arg1 withSound:(id)arg2;
-- (void)changeSound:(id)arg1;
-- (id)defaultSound;
 - (void)setDefaultSound:(id)arg1;
+- (id)defaultSound;
 - (void)setDefaultDuration:(double)arg1;
-- (BOOL)resume;
-- (BOOL)pause;
-- (int)state;
+- (double)fireTime;
 
 @end

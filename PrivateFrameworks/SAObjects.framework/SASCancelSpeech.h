@@ -7,8 +7,8 @@
 @interface SASCancelSpeech : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
 + (id)cancelSpeech;
 + (id)cancelSpeechWithDictionary:(id)arg1 context:(id)arg2;

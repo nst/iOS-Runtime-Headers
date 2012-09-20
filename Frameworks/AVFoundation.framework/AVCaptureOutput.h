@@ -10,14 +10,24 @@
 
 @property(readonly) NSArray * connections;
 
++ (void)initialize;
 
-- (id)init;
+- (id)session;
+- (void)setSession:(id)arg1;
 - (void)dealloc;
+- (id)init;
+- (id)connections;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)removeConnection:(id)arg1;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
-- (id)connectionWithMediaType:(id)arg1;
+- (id)transformedMetadataObjectForMetadataObject:(id)arg1 connection:(id)arg2;
 - (BOOL)canAddConnectionForMediaType:(id)arg1;
 - (id)firstEnabledConnectionForMediaType:(id)arg1;
+- (void)updateMetadataTransformForCaptureOptions:(id)arg1;
+- (BOOL)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
+- (BOOL)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
+- (struct CGSize { float x1; float x2; })outputSizeForCaptureOptions:(id)arg1;
+- (id)_inputForConnection:(id)arg1;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (id)notReadyError;
 - (void)bumpChangeSeed;
@@ -25,10 +35,8 @@
 - (void)didStartForSession:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (void)handleEnabledChangedForConnection:(id)arg1;
-- (id)_applyOverridesToCaptureOptions:(id)arg1;
+- (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (id)connectionWithMediaType:(id)arg1;
 - (id)liveConnections;
-- (id)session;
-- (void)setSession:(id)arg1;
-- (id)connections;
 
 @end

@@ -13,11 +13,11 @@
 - (struct CGColor { }*)textColor;
 - (id)position;
 - (id)labels;
-- (float)maxValue;
-- (float)unit;
-- (bool)isLogarithmic;
-- (bool)centerLabels;
-- (struct CGColor { }*)strokeColor;
 - (float)strokeWidth;
+- (struct CGColor { }*)strokeColor;
+- (bool)centerLabels;
+- (bool)isLogarithmic;
+- (float)unit;
+- (float)maxValue;
 
 @end

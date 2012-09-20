@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class NSTimer, UIImage, MPMediaQuery, MPImageCacheRequest, IUMusicCoverFlowPlayIndicator, UIButton, MPImageCache, MPMediaItem, IUMusicCoverFlowView, UIView, IUNowPlayingAlbumBackViewController, IUMusicPropertiesView;
+@class NSTimer, UIImage, MPMediaQuery, MPImageCacheRequest, IUMusicCoverFlowPlayIndicator, MPImageCache, UIButton, MPMediaItem, IUMusicCoverFlowView, UIView, IUNowPlayingAlbumBackViewController, IUMusicPropertiesView;
 
 @interface IUMusicCoverFlowController : NSObject  {
     IUMusicCoverFlowView *_coverFlowView;
@@ -46,19 +46,19 @@
 + (id)_placeholderMusicImage;
 + (id)_placeholderAudioBookImage;
 
-- (void)dealloc;
-- (id)initWithDelegate:(id)arg1;
-- (void)_crossedTimeMarkerNotification:(id)arg1;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
 - (void)_playbackStateChanged:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)initWithDelegate:(id)arg1;
+- (int)state;
+- (void)dealloc;
 - (void)flipSelectedCover;
 - (BOOL)isTransitioning;
 - (BOOL)isEnabled;
-- (id)view;
-- (int)state;
-- (void)tearDown;
 - (id)query;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (id)view;
 - (BOOL)transitionIsPending;
 - (void)prepareForPendingTransition;
 - (id)transitionDelegate;
@@ -98,7 +98,7 @@
 - (void)_stopHeartbeat;
 - (void)_cancelInitialAlbumArtRequestAndReleaseArt;
 - (void)_popVolumeHUDContext;
-- (void)_mediaLibraryDidChangeNotification:(id)arg1;
+- (void)_wifiEnabledDidChangeNotification:(id)arg1;
 - (void)_suspendNotification:(id)arg1;
 - (int)displayedDeviceOrientation;
 - (void)coverFlowView:(id)arg1 transitionDidEnd:(unsigned int)arg2;
@@ -114,6 +114,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })placeholderImageSubRectForCoverFlowView:(id)arg1;
 - (int)numberOfPlaceholdersInCoverFlowView:(id)arg1;
 - (int)numberOfItemsInCoverFlowView:(id)arg1;
+- (void)tearDown;
 - (void)transitionFromCoverFlow:(BOOL)arg1 rotating:(BOOL)arg2 statusBarStyle:(int)arg3 statusBarHidden:(BOOL)arg4;
 - (BOOL)transitionToCoverFlow:(BOOL)arg1 rotating:(BOOL)arg2 deviceOrientation:(int)arg3 flipView:(id)arg4;
 - (void)setTransitionDelegate:(id)arg1;

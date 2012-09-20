@@ -11,26 +11,39 @@
     NSString *_systemItemString;
 }
 
+@property(getter=isShowingConfirmation,readonly) BOOL showingConfirmation;
 @property(readonly) int buttonType;
 @property(getter=isLoading) BOOL loading;
-@property(retain) UIImage * image;
 @property(retain) NSString * subtitle;
 @property(readonly) NSString * systemItemString;
+@property int tag;
 @property(retain) NSString * title;
+@property(retain) UIImage * image;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
+@property(getter=isBackButton,readonly) BOOL backButton;
 @property(readonly) NSString * styleString;
 
 + (id)objectWithDefaultButtonForScriptButton:(id)arg1;
 
-- (void)dealloc;
 - (void)setLoading:(BOOL)arg1;
 - (void)buttonAction:(id)arg1;
+- (id)systemItemString;
+- (BOOL)isShowingConfirmation;
+- (void)showConfirmationWithTitle:(id)arg1 animated:(BOOL)arg2;
+- (void)setStyleFromString:(id)arg1;
+- (void)connectButtonAction;
+- (void)disconnectButtonAction;
+- (void)hideConfirmationAnimated:(BOOL)arg1;
+- (BOOL)isBackButton;
+- (void)configureFromScriptButtonNativeObject:(id)arg1;
+- (id)initWithSystemItemString:(id)arg1;
+- (void)dealloc;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
+- (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (int)buttonType;
 - (BOOL)isLoading;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (id)styleString;
-- (id)systemItemString;
-- (void)setStyleFromString:(id)arg1;
-- (id)initWithSystemItemString:(id)arg1;
 
 @end

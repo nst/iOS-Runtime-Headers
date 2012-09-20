@@ -19,16 +19,16 @@
 @property(readonly) NSDictionary * mismatchedSoftwareCapabilities;
 
 
-- (void)dealloc;
-- (void)_setValid:(BOOL)arg1;
-- (BOOL)isValid;
 - (id)failedPurchase;
 - (id)mismatchedSoftwareCapabilities;
 - (id)deviceError;
 - (id)genericError;
+- (void)_setValid:(BOOL)arg1;
+- (void)dealloc;
 - (void)_setDeviceError:(id)arg1;
 - (void)_setMismatchedSoftwareCapabilities:(id)arg1;
 - (void)_setGenericError:(id)arg1;
 - (void)_setFailedPurchase:(id)arg1;
+- (BOOL)isValid;
 
 @end

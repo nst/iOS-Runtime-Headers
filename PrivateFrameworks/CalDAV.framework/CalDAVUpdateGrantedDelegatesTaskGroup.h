@@ -13,34 +13,34 @@
     NSSet *_updatedReadURLs;
 }
 
-@property(retain) NSSet * updatedReadURLs;
-@property(retain) NSSet * updatedWriteURLs;
-@property(retain) NSSet * removeURLs;
-@property(retain) NSSet * addReadURLs;
-@property(retain) NSSet * addWriteURLs;
 @property int state;
+@property(retain) NSSet * addWriteURLs;
+@property(retain) NSSet * addReadURLs;
+@property(retain) NSSet * removeURLs;
+@property(retain) NSSet * updatedWriteURLs;
+@property(retain) NSSet * updatedReadURLs;
 
 
+- (int)state;
 - (void)dealloc;
+- (void)setState:(int)arg1;
+- (id)initWithAccountInfoProvider:(id)arg1 addWriteURLs:(id)arg2 addReadURLs:(id)arg3 removeURLs:(id)arg4 taskManager:(id)arg5;
+- (void)_updateDelegatesWithAllowWrite:(BOOL)arg1;
+- (void)_populateUpdatesFromFetched:(id)arg1 allowWrite:(BOOL)arg2;
+- (void)_fetchExistingGrantedDelegates;
+- (void)setUpdatedReadURLs:(id)arg1;
+- (void)setUpdatedWriteURLs:(id)arg1;
+- (id)removeURLs;
+- (id)addReadURLs;
+- (id)addWriteURLs;
+- (id)updatedReadURLs;
+- (id)updatedWriteURLs;
+- (void)setRemoveURLs:(id)arg1;
+- (void)setAddReadURLs:(id)arg1;
+- (void)setAddWriteURLs:(id)arg1;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
 - (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
 - (void)startTaskGroup;
-- (void)setState:(int)arg1;
-- (int)state;
-- (id)initWithAccountInfoProvider:(id)arg1 addWriteURLs:(id)arg2 addReadURLs:(id)arg3 removeURLs:(id)arg4 taskManager:(id)arg5;
-- (void)setAddWriteURLs:(id)arg1;
-- (void)setAddReadURLs:(id)arg1;
-- (void)setRemoveURLs:(id)arg1;
-- (id)updatedWriteURLs;
-- (id)updatedReadURLs;
-- (void)setUpdatedWriteURLs:(id)arg1;
-- (void)setUpdatedReadURLs:(id)arg1;
-- (id)addWriteURLs;
-- (id)addReadURLs;
-- (id)removeURLs;
-- (void)_fetchExistingGrantedDelegates;
-- (void)_populateUpdatesFromFetched:(id)arg1 allowWrite:(BOOL)arg2;
-- (void)_updateDelegatesWithAllowWrite:(BOOL)arg1;
 
 @end

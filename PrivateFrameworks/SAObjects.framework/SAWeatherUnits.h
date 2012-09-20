@@ -12,18 +12,18 @@
 @property(copy) NSString * speedUnits;
 @property(copy) NSString * temperatureUnits;
 
-+ (id)unitsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)units;
++ (id)unitsWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)pressureUnits;
-- (void)setPressureUnits:(id)arg1;
-- (id)speedUnits;
-- (void)setSpeedUnits:(id)arg1;
-- (id)temperatureUnits;
 - (void)setTemperatureUnits:(id)arg1;
-- (id)encodedClassName;
-- (id)distanceUnits;
+- (id)temperatureUnits;
+- (void)setSpeedUnits:(id)arg1;
+- (id)speedUnits;
+- (void)setPressureUnits:(id)arg1;
+- (id)pressureUnits;
 - (void)setDistanceUnits:(id)arg1;
+- (id)distanceUnits;
+- (id)encodedClassName;
 
 @end

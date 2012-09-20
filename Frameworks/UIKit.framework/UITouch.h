@@ -5,6 +5,7 @@
 @class UIView, NSArray, UIWindow, NSMutableArray;
 
 @interface UITouch : NSObject  {
+    float _movementMagnitudeSquared;
     double _timestamp;
     int _phase;
     int _savedPhase;
@@ -58,23 +59,23 @@
 
 + (id)_createTouchesWithGSEvent:(struct __GSEvent { }*)arg1 phase:(int)arg2 view:(id)arg3;
 
+- (double)timestamp;
+- (void)setTimestamp:(double)arg1;
 - (id)description;
-- (unsigned char)_pathIndex;
-- (unsigned char)_pathIdentity;
 - (float)_pathMajorRadius;
+- (unsigned char)_pathIndex;
 - (void)dealloc;
 - (float)_distanceFrom:(id)arg1 inView:(id)arg2;
+- (BOOL)_isStationaryRelativeToTouches:(id)arg1;
 - (int)_compareIndex:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_previousLocationInWindow:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_locationInWindow:(id)arg1;
 - (id)_phaseDescription;
 - (void)_loadStateFromTouch:(id)arg1;
-- (void)setSentTouchesEnded:(BOOL)arg1;
 - (void)setIsDelayed:(BOOL)arg1;
-- (BOOL)_isFirstTouchForView;
-- (BOOL)sentTouchesEnded;
-- (void)_removeGestureRecognizer:(id)arg1;
 - (int)info;
+- (BOOL)_isFirstTouchForView;
+- (void)_removeGestureRecognizer:(id)arg1;
 - (BOOL)_wantsForwardingFromResponder:(id)arg1 toNextResponder:(id)arg2 withEvent:(id)arg3;
 - (id)_forwardingRecord;
 - (unsigned int)tapCount;
@@ -82,23 +83,24 @@
 - (void)_popPhase;
 - (void)_pushPhase:(int)arg1;
 - (BOOL)isDelayed;
-- (double)timestamp;
 - (id)_gestureRecognizers;
+- (void)setSentTouchesEnded:(BOOL)arg1;
 - (void)_addGestureRecognizer:(id)arg1;
 - (void)_clearGestureRecognizers;
 - (id)gestureView;
+- (unsigned char)_pathIdentity;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (void)_updateMovementMagnitudeForLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setIsFirstTouchForView:(BOOL)arg1;
 - (void)_setLocationInWindow:(struct CGPoint { float x1; float x2; })arg1 resetPrevious:(BOOL)arg2;
 - (void)setWarpedIntoView:(id)arg1;
 - (id)warpedIntoView;
-- (void)setTimestamp:(double)arg1;
 - (void)_setPathMajorRadius:(float)arg1;
 - (void)_setPathIdentity:(unsigned char)arg1;
 - (void)_setPathIndex:(unsigned char)arg1;
+- (BOOL)sentTouchesEnded;
 - (void)setGestureView:(id)arg1;
 - (void)setView:(id)arg1;
-- (id)view;
 - (id)gestureRecognizers;
 - (void)_setEaten:(BOOL)arg1;
 - (void)setPhase:(int)arg1;
@@ -107,6 +109,7 @@
 - (BOOL)isTap;
 - (int)phase;
 - (void)setIsTap:(BOOL)arg1;
+- (id)view;
 - (void)setWindow:(id)arg1;
 - (id)window;
 

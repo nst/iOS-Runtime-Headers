@@ -10,25 +10,25 @@
     NSString *_logFileName;
 }
 
-@property(retain) NSString * logFileName;
-@property(retain) NSData * logData;
 @property(retain) NSMutableDictionary * deviceInfoDictionary;
+@property(retain) NSData * logData;
+@property(retain) NSString * logFileName;
 
 
 - (void)dealloc;
-- (BOOL)collectAllDeviceInformation;
-- (BOOL)collectLogs;
+- (id)deviceInfoDictionary;
 - (id)logData;
-- (id)collectBasicDeviceData;
-- (id)collectGasGaugeData;
-- (id)collectAggdData;
-- (id)collectUbiquityData;
-- (void)setDeviceInfoDictionary:(id)arg1;
-- (BOOL)createTempDirectory;
-- (BOOL)copyLogsToTempDirectory;
-- (void)setLogFileName:(id)arg1;
+- (BOOL)collectLogs;
+- (BOOL)collectAllDeviceInformation;
 - (void)setLogData:(id)arg1;
 - (id)logFileName;
-- (id)deviceInfoDictionary;
+- (void)setLogFileName:(id)arg1;
+- (BOOL)copyLogsToTempDirectory;
+- (BOOL)createTempDirectory;
+- (void)setDeviceInfoDictionary:(id)arg1;
+- (id)collectUbiquityData;
+- (id)collectAggdData;
+- (id)collectGasGaugeData;
+- (id)collectBasicDeviceData;
 
 @end

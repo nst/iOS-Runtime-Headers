@@ -11,8 +11,8 @@
 @property(retain) UIImage * image;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)loadView;
 - (id)image;
 - (void)setImage:(id)arg1;

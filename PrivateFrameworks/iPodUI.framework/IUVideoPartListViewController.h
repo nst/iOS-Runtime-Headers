@@ -22,23 +22,23 @@
 + (Class)backstopViewClass;
 + (BOOL)supportsViewControllerStyle:(int)arg1;
 
-- (void)dealloc;
 - (void)imageCache:(id)arg1 loadedImage:(id)arg2 forRequest:(id)arg3;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
+- (void)alertViewCancel:(id)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)alertViewCancel:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)delegate;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)reloadData;
-- (void)setDelegate:(id)arg1;
 - (void)setScrollToContentPositionOnNextAppear;
 - (void)flashItemForMediaItem:(id)arg1 atTime:(double)arg2;
 - (void)resumeImageLoading;
@@ -52,12 +52,13 @@
 - (void)_cancelRentalAlertView:(BOOL)arg1;
 - (unsigned int)trackToPlayInDataSource:(id)arg1;
 - (void)pushPlaybackViewControllerForPlaybackIndex:(unsigned int)arg1 fillerImage:(id)arg2;
+- (void)updateFooterView;
 - (void)startPlaybackFromIndexPath:(id)arg1;
 - (id)mediaItemAtIndexPath:(id)arg1;
 - (id)indexPathForRowOfContentPosition;
-- (Class)tableViewCellClass;
 - (void)pushPlaybackViewControllerForPlaybackIndex:(unsigned int)arg1 fillerImage:(id)arg2 startTime:(double)arg3;
 - (id)indexPathForMediaItem:(id)arg1 atTime:(double)arg2;
 - (id)firstMediaItem;
+- (Class)tableViewCellClass;
 
 @end

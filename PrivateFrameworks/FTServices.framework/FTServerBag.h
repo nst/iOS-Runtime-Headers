@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSURLConnection, NSMutableData, NSMutableURLRequest, NSData, NSDate, NSNumber, NSDictionary, NSString, NSURL, IMConnectionMonitor, NSURLResponse;
+@class IMRemoteURLConnection, NSDate, NSObject<OS_dispatch_queue>, NSMutableURLRequest, NSNumber, NSDictionary, NSString, NSURL, IMConnectionMonitor, NSData;
 
 @interface FTServerBag : NSObject  {
     IMConnectionMonitor *_connectionMonitor;
@@ -11,10 +11,9 @@
     NSDictionary *_bag;
     NSDictionary *_cachedBag;
     NSMutableURLRequest *_urlRequest;
-    NSMutableData *_currentResponseData;
-    NSURLResponse *_currentResponse;
-    NSURLConnection *_currentURLConnection;
-    struct dispatch_queue_s { } *_bagQueue;
+    IMRemoteURLConnection *_remoteURLConnection;
+    NSObject<OS_dispatch_queue> *_bagQueue;
+    NSString *_cachedURLString;
     int _trustStatus;
     NSData *_certData;
     NSString *_cachedHash;
@@ -35,24 +34,25 @@
 @property(setter=_setBag:,retain) NSDictionary * _bag;
 @property(setter=_setCachedBag:,retain) NSDictionary * _cachedBag;
 @property(retain) NSMutableURLRequest * _urlRequest;
+@property(setter=_setCachedURLString:,retain) NSString * _cachedURLString;
 @property(retain) NSString * _cachedHash;
-@property(retain) NSMutableData * _currentResponseData;
 @property(retain) NSDate * _loadDate;
 @property(retain) NSNumber * _cacheTime;
-@property(retain) NSURLResponse * _currentResponse;
-@property NSURLConnection * _currentURLConnection;
-@property struct dispatch_queue_s { }* _bagQueue;
+@property IMRemoteURLConnection * _remoteURLConnection;
+@property NSObject<OS_dispatch_queue> * _bagQueue;
 @property(setter=_setTrustStatus:) int _trustStatus;
 @property(retain) NSData * _certData;
 
-+ (id)sharedInstance;
 + (id)_sharedInstance;
 + (id)_sharedInstanceForClass:(Class)arg1;
 + (id)_bagCreationLock;
++ (id)sharedInstance;
 + (id)sharedInstanceForBagType:(int)arg1;
 
-- (id)objectForKey:(id)arg1;
-- (void)dealloc;
+- (void)forceBagLoad;
+- (id)bagURL;
+- (id)apsEnvironmentName;
+- (id)urlWithKey:(id)arg1;
 - (void)setAllowUnsignedBags:(BOOL)arg1;
 - (BOOL)allowUnsignedBags;
 - (void)setAllowSelfSignedCertificates:(BOOL)arg1;
@@ -63,26 +63,23 @@
 - (id)_cachedHash;
 - (void)set_certData:(id)arg1;
 - (id)_certData;
-- (void)set_bagQueue:(struct dispatch_queue_s { }*)arg1;
-- (struct dispatch_queue_s { }*)_bagQueue;
-- (void)set_currentURLConnection:(id)arg1;
-- (id)_currentURLConnection;
-- (void)set_currentResponse:(id)arg1;
-- (id)_currentResponse;
-- (void)set_currentResponseData:(id)arg1;
-- (id)_currentResponseData;
+- (void)set_bagQueue:(id)arg1;
+- (id)_bagQueue;
+- (void)set_remoteURLConnection:(id)arg1;
+- (id)_remoteURLConnection;
 - (void)set_urlRequest:(id)arg1;
 - (id)_urlRequest;
 - (void)setApsEnvironmentName:(id)arg1;
 - (void)setBagURL:(id)arg1;
 - (void)set_connectionMonitor:(id)arg1;
 - (id)_connectionMonitor;
-- (void)reloadBag;
 - (id)_initWithURL:(id)arg1 apsEnvironmentName:(id)arg2 allowSelfSignedCertificates:(BOOL)arg3 allowUnsignedBags:(BOOL)arg4;
+- (void)_bagExternallyReloaded;
+- (void)_startBagLoad:(BOOL)arg1;
 - (void)_processBagResultData:(id)arg1 response:(id)arg2 inBackground:(BOOL)arg3;
 - (void)_cancelCurrentLoad;
-- (void)_startBagLoad;
-- (BOOL)isServerAvailable;
+- (void)_generateURLRequest;
+- (id)_cachedURLString;
 - (BOOL)_loadFromSignedDictionary:(id)arg1 returningError:(id*)arg2;
 - (BOOL)_loadFromDictionary:(id)arg1 returningError:(id*)arg2;
 - (int)_trustStatus;
@@ -92,25 +89,22 @@
 - (void)_saveCacheToPrefs;
 - (id)_cachedBag;
 - (void)__saveCacheToPrefs;
-- (void)_clearCache;
 - (void)_setTrustStatus:(int)arg1;
 - (void)_setBag:(id)arg1;
+- (void)_setCachedURLString:(id)arg1;
 - (void)_setCachedBag:(id)arg1;
 - (id)_bag;
 - (id)_bagDefaultsDomain;
 - (id)_cacheTime;
-- (void)connectionMonitorDidUpdate:(id)arg1;
-- (void)startBagLoad;
-- (id)urlWithKey:(id)arg1;
-- (id)_loadDate;
+- (void)_clearCache;
+- (id)objectForKey:(id)arg1;
+- (void)dealloc;
 - (void)_invalidate;
 - (BOOL)isLoaded;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (BOOL)isLoading;
-- (id)bagURL;
-- (id)apsEnvironmentName;
+- (id)_loadDate;
+- (BOOL)isServerAvailable;
+- (void)startBagLoad;
+- (void)connectionMonitorDidUpdate:(id)arg1;
 
 @end

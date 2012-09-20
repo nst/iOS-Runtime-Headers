@@ -17,8 +17,8 @@
 @property(readonly) SSItemOfferDeviceError * incompatibleSystemError;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)minimumProductVersion;
 - (id)incompatibleSystemError;
 - (id)incompatibleDeviceError;

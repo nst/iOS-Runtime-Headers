@@ -7,13 +7,13 @@
 @interface DOMRange : DOMObject <UIWebSelectionBlock> {
 }
 
-@property(retain,readonly) DOMNode * startContainer;
+@property(readonly) DOMNode * startContainer;
 @property(readonly) int startOffset;
-@property(retain,readonly) DOMNode * endContainer;
+@property(readonly) DOMNode * endContainer;
 @property(readonly) int endOffset;
 @property(readonly) BOOL collapsed;
-@property(retain,readonly) DOMNode * commonAncestorContainer;
-@property(copy,readonly) NSString * text;
+@property(readonly) DOMNode * commonAncestorContainer;
+@property(readonly) NSString * text;
 
 + (id)rangeForFirstPosition:(id)arg1 second:(id)arg2;
 
@@ -38,31 +38,31 @@
 - (void)setEnd:(id)arg1 offset:(int)arg2;
 - (void)setStart:(id)arg1 offset:(int)arg2;
 - (void)detach;
+- (void)selectNodeContents:(id)arg1;
 - (id)_text;
 - (id)text;
-- (void)move:(unsigned long)arg1 inDirection:(int)arg2;
 - (void)extend:(unsigned long)arg1 inDirection:(int)arg2;
-- (void)setStart:(id)arg1 :(int)arg2;
-- (void)setEnd:(id)arg1 :(int)arg2;
-- (void)setStartBefore:(id)arg1;
-- (void)setEndBefore:(id)arg1;
-- (void)collapse:(BOOL)arg1;
-- (void)selectNodeContents:(id)arg1;
-- (short)compareBoundaryPoints:(unsigned short)arg1 :(id)arg2;
-- (void)deleteContents;
-- (id)extractContents;
-- (void)surroundContents:(id)arg1;
-- (id)toString;
-- (id)createContextualFragment:(id)arg1;
-- (BOOL)intersectsNode:(id)arg1;
-- (short)compareNode:(id)arg1;
-- (short)comparePoint:(id)arg1 offset:(int)arg2;
-- (BOOL)isPointInRange:(id)arg1 offset:(int)arg2;
+- (void)move:(unsigned long)arg1 inDirection:(int)arg2;
 - (void)expand:(id)arg1;
+- (BOOL)isPointInRange:(id)arg1 offset:(int)arg2;
+- (short)comparePoint:(id)arg1 offset:(int)arg2;
+- (short)compareNode:(id)arg1;
+- (BOOL)intersectsNode:(id)arg1;
+- (id)createContextualFragment:(id)arg1;
+- (id)toString;
+- (void)surroundContents:(id)arg1;
+- (id)extractContents;
+- (void)deleteContents;
+- (short)compareBoundaryPoints:(unsigned short)arg1 :(id)arg2;
+- (void)collapse:(BOOL)arg1;
+- (void)setEndBefore:(id)arg1;
+- (void)setStartBefore:(id)arg1;
+- (void)setEnd:(id)arg1 :(int)arg2;
+- (void)setStart:(id)arg1 :(int)arg2;
 - (id)lineBoxRects;
 - (id)textRects;
-- (id)markupString;
 - (id)webArchive;
+- (id)markupString;
 - (id)enclosingWordRange;
 - (id)endPosition;
 - (id)startPosition;
@@ -83,10 +83,10 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectAndInsideFixedPosition:(int*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
 - (id)webFrame;
-- (id)mf_attachmentURLs;
-- (void)mf_hoistRange;
-- (id)mf_firstNode;
-- (id)mf_lastNode;
 - (void)mf_getBlockBoundaryParent:(id*)arg1 nextSibling:(id*)arg2 atStart:(BOOL)arg3;
+- (id)mf_lastNode;
+- (id)mf_firstNode;
+- (void)mf_hoistRange;
+- (id)mf_attachmentURLs;
 
 @end

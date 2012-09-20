@@ -8,6 +8,7 @@
     BOOL _hidden;
     NSString *_text;
     NSAttributedString *_attributedText;
+    NSAttributedString *_highlightedAttributedText;
     UIFont *_font;
     float _minFontSize;
     UIColor *_color;
@@ -29,11 +30,13 @@
         float width; 
         float height; 
     } _shadowOffset;
+    unsigned int _maxLines;
 }
 
 @property BOOL hidden;
 @property(retain) NSString * text;
 @property(retain) NSAttributedString * attributedText;
+@property(retain) NSAttributedString * highlightedAttributedText;
 @property(retain) UIFont * font;
 @property float minFontSize;
 @property(retain) UIColor * color;
@@ -44,43 +47,51 @@
 @property struct CGSize { float x1; float x2; } offset;
 @property struct CGSize { float x1; float x2; } size;
 @property int lineSpacing;
+@property unsigned int maxLines;
 @property(retain) UIColor * shadowColor;
 @property struct CGSize { float x1; float x2; } shadowOffset;
 
 
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (id)highlightedShadowColor;
 - (struct CGSize { float x1; float x2; })drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 highlighted:(BOOL)arg2;
-- (id)attributedText;
-- (void)setAttributedText:(id)arg1;
-- (void)setHighlightedShadowColor:(id)arg1;
+- (id)highlightedAttributedText;
+- (struct CGSize { float x1; float x2; })drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 highlighted:(BOOL)arg2 actualFontSize:(float*)arg3;
+- (struct CGSize { float x1; float x2; })sizeForWidth:(float)arg1 maxLineCount:(unsigned int)arg2 actualFontSize:(float*)arg3;
+- (void)setHighlightedAttributedText:(id)arg1;
 - (id)initWithTheme:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeForWidth:(float)arg1 maxLineCount:(unsigned int)arg2;
+- (unsigned int)maxLines;
+- (void)setHighlightedShadowColor:(id)arg1;
+- (void)setMaxLines:(unsigned int)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (BOOL)hidden;
 - (float)minFontSize;
 - (void)setMinFontSize:(float)arg1;
 - (id)highlightedColor;
-- (id)color;
-- (int)textAlignment;
-- (struct CGSize { float x1; float x2; })shadowOffset;
 - (void)setHighlightedColor:(id)arg1;
+- (id)shadowColor;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShadowColor:(id)arg1;
+- (id)color;
+- (struct CGSize { float x1; float x2; })shadowOffset;
+- (id)attributedText;
 - (void)setColor:(id)arg1;
+- (int)textAlignment;
 - (void)setTextAlignment:(int)arg1;
 - (void)setOffset:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })offset;
+- (id)text;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setLineBreakMode:(int)arg1;
 - (int)lineBreakMode;
 - (void)setLineSpacing:(int)arg1;
 - (int)lineSpacing;
 - (id)font;
-- (id)text;
+- (void)setLineBreakMode:(int)arg1;
 - (void)setFont:(id)arg1;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)setShadowColor:(id)arg1;
-- (id)shadowColor;
 - (void)setText:(id)arg1;
+- (void)setAttributedText:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })size;
 

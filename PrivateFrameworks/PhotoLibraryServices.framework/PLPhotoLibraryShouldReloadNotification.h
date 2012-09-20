@@ -6,9 +6,9 @@
 }
 
 
+- (id)name;
 - (id)userInfo;
 - (id)init;
 - (id)object;
-- (id)name;
 
 @end

@@ -11,7 +11,7 @@
 
 
 - (id)description;
-- (id)initWithString:(id)arg1 date:(id)arg2;
 - (id)stringValue;
+- (id)initWithString:(id)arg1 date:(id)arg2;
 
 @end

@@ -9,7 +9,7 @@
 @property unsigned int sessionID;
 
 
-- (unsigned int)sessionID;
 - (void)setSessionID:(unsigned int)arg1;
+- (unsigned int)sessionID;
 
 @end

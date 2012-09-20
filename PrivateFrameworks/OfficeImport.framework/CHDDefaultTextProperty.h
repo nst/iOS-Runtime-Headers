@@ -19,25 +19,25 @@
 + (id)defaultTextPropertyWithResources:(id)arg1;
 
 - (void)dealloc;
-- (unsigned int)key;
-- (int)defaultTextType;
-- (bool)isShowCategoryLabel;
-- (bool)isShowValueLabel;
-- (bool)isShowPercentageLabel;
+- (int)key;
 - (bool)isShowSeriesLabel;
+- (bool)isShowPercentageLabel;
+- (bool)isShowValueLabel;
+- (bool)isShowCategoryLabel;
+- (int)defaultTextType;
 - (int)labelPosition;
-- (void)setDefaultTextType:(int)arg1;
-- (void)setLabelPosition:(int)arg1;
-- (void)setIsShowCategoryLabel:(bool)arg1;
-- (void)setIsShowValueLabel:(bool)arg1;
-- (void)setIsShowPercentageLabel:(bool)arg1;
+- (void)setContentFormat:(id)arg1;
 - (void)setIsShowSeriesLabel:(bool)arg1;
-- (unsigned int)contentFormatId;
-- (void)setContentFormatId:(unsigned int)arg1;
+- (void)setIsShowPercentageLabel:(bool)arg1;
+- (void)setIsShowValueLabel:(bool)arg1;
+- (void)setIsShowCategoryLabel:(bool)arg1;
+- (void)setLabelPosition:(int)arg1;
+- (void)setDefaultTextType:(int)arg1;
 - (void)setRuns:(id)arg1;
+- (id)initWithResources:(id)arg1;
+- (void)setContentFormatId:(unsigned int)arg1;
 - (id)runs;
 - (id)contentFormat;
-- (void)setContentFormat:(id)arg1;
-- (id)initWithResources:(id)arg1;
+- (unsigned int)contentFormatId;
 
 @end

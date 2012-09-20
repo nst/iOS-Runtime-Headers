@@ -15,12 +15,12 @@
 @property(readonly) float speed;
 
 
-- (id)init;
-- (void)reset;
-- (struct { float x1; float x2; })location;
-- (float)speed;
 - (double)timeIntervalSinceCreation;
 - (void)configureWithTimeIntervalSinceCreation:(double)arg1 location:(struct { float x1; float x2; })arg2;
 - (void)configureWithTimeIntervalSinceCreation:(double)arg1 location:(struct { float x1; float x2; })arg2 speed:(float)arg3;
+- (void)reset;
+- (id)init;
+- (struct { float x1; float x2; })location;
+- (float)speed;
 
 @end

@@ -2,19 +2,21 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface AVCallbackRegistry : NSObject  {
     struct __CFBag { } *_observers;
-    struct dispatch_queue_s { } *_readWriteQueue;
+    NSObject<OS_dispatch_queue> *_readWriteQueue;
 }
 
-+ (id)sharedCallbackRegistry;
 + (void)initialize;
++ (id)sharedCallbackRegistry;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)finalize;
 - (id)callbackObserver:(id)arg1;
 - (void)unregisterCallbackObserver:(id)arg1;
 - (void)registerCallbackObserver:(id)arg1;
-- (void)finalize;
 
 @end

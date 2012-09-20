@@ -18,17 +18,17 @@
 + (id)posterImageURL;
 
 - (id)managedObjectContext;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)addWallpaperURLsForModel:(id)arg1 toURLs:(id)arg2;
 - (id)allExistingWallpaperAssets;
+- (void)importAll;
 - (void)deleteAll;
 - (id)wallpaperFileHash;
 - (id)allWallpaperURLs;
 - (void)updateAsNeeded;
 - (id)initWithPhotoLibrary:(id)arg1;
-- (void)setPhotoLibrary:(id)arg1;
-- (void)importAll;
 - (id)photoLibrary;
+- (void)setPhotoLibrary:(id)arg1;
 
 @end

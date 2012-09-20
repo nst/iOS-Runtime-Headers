@@ -3,21 +3,32 @@
  */
 
 @interface SUScriptNativeUIBarButtonItem : SUScriptButtonNativeObject  {
+    BOOL _isBackButton;
 }
 
 + (id)objectWithDefaultButtonForScriptButton:(id)arg1;
 
 - (void)setLoading:(BOOL)arg1;
+- (id)systemItemString;
+- (BOOL)isShowingConfirmation;
+- (void)showConfirmationWithTitle:(id)arg1 animated:(BOOL)arg2;
+- (void)setStyleFromString:(id)arg1;
+- (void)connectButtonAction;
+- (void)disconnectButtonAction;
+- (void)hideConfirmationAnimated:(BOOL)arg1;
+- (BOOL)isBackButton;
+- (void)setupNativeObject;
+- (void)destroyNativeObject;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
+- (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (int)buttonType;
 - (BOOL)isLoading;
 - (id)styleString;
 - (id)image;
 - (id)title;
+- (int)tag;
+- (void)setTag:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setImage:(id)arg1;
-- (id)systemItemString;
-- (void)setStyleFromString:(id)arg1;
-- (void)setupNativeObject;
-- (void)destroyNativeObject;
 
 @end

@@ -11,25 +11,30 @@
 @property(readonly) NSArray * options;
 @property(readonly) BOOL allowsEmptySelection;
 
-+ (id)mediaSelectionOptionsFromArray:(id)arg1 withoutMediaCharacteristics:(id)arg2;
 + (id)mediaSelectionOptionsFromArray:(id)arg1 withMediaCharacteristics:(id)arg2;
-+ (id)mediaSelectionOptionsFromArray:(id)arg1 withLocale:(id)arg2;
 + (id)playableMediaSelectionOptionsFromArray:(id)arg1;
-+ (id)mediaSelectionGroupWithAsset:(id)arg1 trackID:(int)arg2;
-+ (id)mediaSelectionGroupWithAsset:(id)arg1 alternateTrackIDs:(id)arg2;
++ (id)mediaSelectionOptionsFromArray:(id)arg1 withoutMediaCharacteristics:(id)arg2;
++ (id)mediaSelectionOptionsFromArray:(id)arg1 filteredAndSortedAccordingToPreferredLanguages:(id)arg2;
++ (id)mediaSelectionOptionsFromArray:(id)arg1 withLocale:(id)arg2;
 + (id)mediaSelectionGroupWithAsset:(id)arg1 dictionary:(id)arg2;
 
+- (id)dictionary;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)asset;
+- (void)finalize;
+- (id)options;
+- (id)_optionWithID:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
+- (id)_defaultOption;
 - (id)mediaSelectionOptionWithPropertyList:(id)arg1;
+- (BOOL)_matchesGroupID:(id)arg1 mediaType:(id)arg2;
 - (BOOL)_isKeyValueGroup;
+- (id)_groupID;
 - (BOOL)allowsEmptySelection;
 - (BOOL)_isAlternateTrackGroup;
+- (id)_mediaType;
 - (id)_weakReference;
-- (id)asset;
-- (id)options;
-- (void)finalize;
 
 @end

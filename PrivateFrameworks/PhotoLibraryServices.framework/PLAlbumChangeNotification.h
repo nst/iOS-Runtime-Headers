@@ -7,24 +7,27 @@
 @interface PLAlbumChangeNotification : PLContainerChangeNotification  {
     BOOL _titleDidChange;
     BOOL _keyAssetDidChange;
+    BOOL _invitationRecordsDidChange;
     NSDictionary *_userInfo;
 }
 
 @property(readonly) PLGenericAlbum * album;
 @property(readonly) BOOL titleDidChange;
 @property(readonly) BOOL keyAssetDidChange;
+@property(readonly) BOOL invitationRecordsDidChange;
 
 + (id)notificationWithAlbum:(id)arg1 snapshot:(id)arg2 changedAssets:(id)arg3;
 
-- (id)userInfo;
+- (id)name;
 - (id)description;
+- (id)userInfo;
 - (void)dealloc;
 - (id)_contentRelationshipName;
+- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (BOOL)invitationRecordsDidChange;
 - (BOOL)keyAssetDidChange;
-- (void)_calculateDiffs;
-- (id)notificaionForDerivedAlbum:(id)arg1;
-- (id)album;
-- (id)name;
 - (BOOL)titleDidChange;
+- (void)_calculateDiffs;
+- (id)album;
 
 @end

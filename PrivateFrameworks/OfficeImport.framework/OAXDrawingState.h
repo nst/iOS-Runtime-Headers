@@ -22,34 +22,35 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (id)documentState;
+- (void)dealloc;
+- (id)init;
 - (id)initWithClient:(id)arg1;
 - (id)client;
-- (id)blipRefForURL:(id)arg1;
 - (id)bulletBlipRefForURL:(id)arg1;
-- (id)blipRefWithURL:(id)arg1 blipArray:(id)arg2 blipURLtoIndexMap:(id)arg3;
-- (void)setDrawable:(id)arg1 forShapeId:(unsigned long)arg2;
-- (id)targetBlipCollection;
-- (id)drawableForShapeId:(unsigned long)arg1;
-- (void)setPackagePart:(id)arg1;
-- (void)setTableStyleCache:(id)arg1;
-- (void)setColorScheme:(id)arg1;
-- (void)setFontScheme:(id)arg1;
-- (void)setColorMap:(id)arg1;
-- (void)setDocumentState:(id)arg1;
-- (void)setOavState:(id)arg1;
-- (void)setTargetBlipCollection:(id)arg1;
 - (void)setTargetBulletBlipArray:(id)arg1;
-- (id)tableStyleCache;
+- (void)setDocumentState:(id)arg1;
 - (void)clearDrawableForShapeIdMap;
-- (id)packagePart;
+- (void)setTableStyleCache:(id)arg1;
+- (id)tableStyleCache;
+- (id)blipRefWithURL:(id)arg1 blipArray:(id)arg2 blipURLtoIndexMap:(id)arg3;
+- (id)blipRefForURL:(id)arg1;
+- (id)drawableForShapeId:(unsigned long)arg1;
+- (void)setDrawable:(id)arg1 forShapeId:(unsigned long)arg2;
+- (void)setOavState:(id)arg1;
 - (id)oavState;
+- (void)setPackagePart:(id)arg1;
+- (void)setTargetBlipCollection:(id)arg1;
+- (id)targetBlipCollection;
+- (void)clearTargetBlipCollection;
+- (void)setFontScheme:(id)arg1;
 - (void)setStyleMatrix:(id)arg1;
-- (id)colorMap;
-- (id)colorScheme;
+- (id)packagePart;
 - (id)fontScheme;
+- (void)setColorMap:(id)arg1;
+- (id)colorMap;
 - (id)styleMatrix;
+- (void)setColorScheme:(id)arg1;
+- (id)colorScheme;
 
 @end

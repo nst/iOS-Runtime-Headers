@@ -15,33 +15,33 @@
 @property BOOL complete;
 
 
-- (void)setComplete:(BOOL)arg1;
+- (int)inOrder;
+- (int)outOrder;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedBounds;
+- (void)setMaxRightPad:(float)arg1;
+- (float)maxRightPad;
+- (void)setMaxLeftPad:(float)arg1;
+- (float)maxLeftPad;
+- (void)setHasCentredParagraph:(BOOL)arg1;
+- (BOOL)hasCentredParagraph;
+- (float)bottomBaseline;
+- (BOOL)isShapeRegion;
+- (BOOL)isImageRegion;
+- (void)setIsImageRegion:(BOOL)arg1;
+- (BOOL)isRowRegion;
+- (BOOL)isGraphicalRegion;
+- (BOOL)isBoxRegion;
+- (void)setHasColumnBreak:(BOOL)arg1;
+- (float)selectionBottom;
+- (float)rightPad;
+- (float)leftPad;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })columnBounds;
+- (void)accept:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (int)outOrder;
-- (int)inOrder;
-- (void)setHasColumnBreak:(BOOL)arg1;
-- (BOOL)isBoxRegion;
-- (BOOL)isGraphicalRegion;
-- (BOOL)isRowRegion;
-- (void)setIsImageRegion:(BOOL)arg1;
-- (BOOL)isImageRegion;
-- (BOOL)isShapeRegion;
-- (float)bottomBaseline;
-- (BOOL)hasCentredParagraph;
-- (void)setHasCentredParagraph:(BOOL)arg1;
-- (float)maxLeftPad;
-- (void)setMaxLeftPad:(float)arg1;
-- (float)maxRightPad;
-- (void)setMaxRightPad:(float)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedBounds;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })columnBounds;
-- (float)leftPad;
-- (float)rightPad;
-- (float)selectionBottom;
-- (void)accept:(id)arg1;
+- (id)init;
 - (BOOL)complete;
+- (void)setComplete:(BOOL)arg1;
 
 @end

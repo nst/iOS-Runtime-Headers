@@ -4,17 +4,21 @@
 
 @class OCPZipPackage;
 
-@interface OCXReader : NSObject <OCDReader> {
+@interface OCXReader : OCDEncryptedReader  {
     OCPZipPackage *mZipPackage;
 }
 
-+ (id)readerWithZipPackage:(id)arg1;
-+ (id)readFromFileName:(id)arg1 cancel:(id)arg2 tracing:(id)arg3 asThumbnail:(BOOL)arg4 delegate:(id)arg5;
-+ (id)readFromData:(id)arg1 cancel:(id)arg2 tracing:(id)arg3 asThumbnail:(BOOL)arg4 delegate:(id)arg5;
+@property(retain) OCPZipPackage * zipPackage;
+
 
 - (void)dealloc;
-- (id)zipPackage;
+- (BOOL)start;
+- (void)restartReaderToUseDecryptedDocument;
 - (bool)isBinaryReader;
-- (id)initWithZipPackage:(id)arg1;
+- (BOOL)retainDecryptorWithErrorCode:(int*)arg1;
+- (BOOL)verifyFileFormat;
+- (id)zipPackage;
+- (id)read;
+- (void)setZipPackage:(id)arg1;
 
 @end

@@ -75,22 +75,7 @@
 + (id)displayWithIOElement:(id)arg1 driverIdentifier:(id)arg2 delegate:(id)arg3;
 + (BOOL)brailleDriverClassIsValid:(Class)arg1;
 
-- (void)dealloc;
-- (id)driverIdentifier;
-- (void)simulateKeypress:(id)arg1;
-- (long)masterStatusCellIndex;
-- (void)setMasterStatusCellIndex:(long)arg1;
-- (int)virtualStatusAlignment;
-- (void)setVirtualStatusAlignment:(int)arg1;
-- (id)aggregatedStatus;
-- (void)setAggregatedStatus:(id)arg1;
-- (BOOL)isLoaded;
-- (void)handleEvent:(id)arg1;
-- (BOOL)isValid;
-- (void)invalidate;
-- (void)endUpdates;
-- (void)beginUpdates;
-- (id)configuration;
+- (int)statusSize;
 - (void)setDelegateWantsPanningCallbacks:(BOOL)arg1;
 - (BOOL)delegateWantsPanningCallbacks;
 - (BOOL)delegateWantsDisplayCallback;
@@ -139,8 +124,23 @@
 - (void)_unloadNotification:(id)arg1;
 - (void)_delayedDisplayLoad;
 - (id)_initWithDriver:(id)arg1 driverIdentifier:(id)arg2 ioElement:(id)arg3 delegate:(id)arg4;
-- (int)statusSize;
 - (int)mainSize;
+- (id)configuration;
+- (void)invalidate;
+- (void)dealloc;
+- (id)driverIdentifier;
+- (void)simulateKeypress:(id)arg1;
+- (long)masterStatusCellIndex;
+- (void)setMasterStatusCellIndex:(long)arg1;
+- (int)virtualStatusAlignment;
+- (void)setVirtualStatusAlignment:(int)arg1;
+- (id)aggregatedStatus;
+- (void)setAggregatedStatus:(id)arg1;
+- (BOOL)isLoaded;
+- (void)handleEvent:(id)arg1;
+- (BOOL)isValid;
+- (void)endUpdates;
+- (void)beginUpdates;
 - (long)token;
 
 @end

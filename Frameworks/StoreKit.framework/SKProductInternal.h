@@ -2,9 +2,13 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSLocale, NSString, NSDecimalNumber;
+@class NSDecimalNumber, NSString, NSArray, NSLocale;
 
 @interface SKProductInternal : NSObject  {
+    NSString *_contentVersion;
+    BOOL _downloadable;
+    NSArray *_downloadContentLengths;
+    NSString *_localeIdentifier;
     NSString *_localizedDescription;
     NSString *_localizedTitle;
     NSDecimalNumber *_price;

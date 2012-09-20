@@ -4,10 +4,11 @@
 
 @class NSNumber, NSString, NSLock;
 
-@interface SSAccount : NSObject <SSCoding, NSCopying> {
+@interface SSAccount : NSObject <SSXPCCoding, NSCopying> {
     int _accountKind;
     NSString *_accountName;
     int _accountScope;
+    int _accountSource;
     BOOL _active;
     BOOL _activeLockerAccount;
     int _availableServiceTypes;
@@ -30,24 +31,16 @@
 @property(getter=isSocialEnabled) BOOL socialEnabled;
 @property(copy) NSString * storeFrontIdentifier;
 @property(retain) NSNumber * uniqueIdentifier;
+@property int accountSource;
 @property(copy) NSString * secureToken;
 @property(getter=isDemoAccount) BOOL demoAccount;
 @property(getter=isActive) BOOL active;
 @property(getter=isActiveLockerAccount) BOOL activeLockerAccount;
 
 
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)storeFrontIdentifier;
 - (void)setAccountName:(id)arg1;
 - (id)accountName;
 - (BOOL)isAuthenticated;
-- (void)setUniqueIdentifier:(id)arg1;
-- (id)uniqueIdentifier;
-- (BOOL)isActive;
-- (void)setActive:(BOOL)arg1;
 - (void)setSocialEnabled:(BOOL)arg1;
 - (void)removeEnabledServiceTypes:(int)arg1;
 - (void)addEnabledServiceTypes:(int)arg1;
@@ -59,25 +52,35 @@
 - (void)setSecureToken:(id)arg1;
 - (id)secureToken;
 - (void)setActiveLockerAccount:(BOOL)arg1;
+- (void)setStoreFrontIdentifier:(id)arg1;
 - (int)accountScope;
 - (id)creditsString;
+- (id)storeFrontIdentifier;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)setDemoAccount:(BOOL)arg1;
 - (void)resetTransientData;
 - (void)removeAvailableServiceTypes:(int)arg1;
 - (void)addAvailableServiceTypes:(int)arg1;
+- (int)accountSource;
+- (BOOL)isSocialEnabled;
 - (void)getPurchasedItemsForItems:(id)arg1 completionBlock:(id)arg2;
 - (void)getDownloadKindsEligibleForContentRestoreWithBlock:(id)arg1;
 - (int)availableServiceTypes;
-- (void)setStoreFrontIdentifier:(id)arg1;
+- (void)setAccountSource:(int)arg1;
 - (void)setEnabledServiceTypes:(int)arg1;
 - (void)setAvailableServiceTypes:(int)arg1;
 - (void)setAccountScope:(int)arg1;
+- (void)_sendBlockingXPCMessage:(id)arg1;
 - (BOOL)isDemoAccount;
 - (void)setLockdownDictionary:(id)arg1;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (BOOL)isSocialEnabled;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (void)setUniqueIdentifier:(id)arg1;
+- (id)uniqueIdentifier;
+- (BOOL)isActive;
+- (void)setActive:(BOOL)arg1;
 
 @end

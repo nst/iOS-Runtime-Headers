@@ -14,17 +14,17 @@
 @property(copy) NSString * ratingSystem;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)setRatingLabel:(id)arg1;
 - (id)ratingLabel;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (void)setRatingSystem:(id)arg1;
+- (void)setRatingRank:(id)arg1;
 - (void)setRatingDescription:(id)arg1;
 - (id)ratingDescription;
 - (id)ratingRank;
 - (id)ratingSystem;
-- (void)setRatingSystem:(id)arg1;
-- (void)setRatingRank:(id)arg1;
 - (id)initWithContentRatingDictionary:(id)arg1;
 - (void)_setValue:(id)arg1 forKey:(id)arg2;
 - (void)_setValueCopy:(id)arg1 forKey:(id)arg2;

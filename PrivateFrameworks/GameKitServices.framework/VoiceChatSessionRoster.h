@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class NSMutableDictionary, NSString, GKSessionInternal, GKVoiceChatSessionInternal, NSMutableArray;
+@class NSMutableDictionary, NSString, GKSessionInternal, NSObject<OS_dispatch_queue>, GKVoiceChatSessionInternal, NSMutableArray;
 
 @interface VoiceChatSessionRoster : NSObject  {
     GKSessionInternal *_gkSession;
     NSString *_peerID;
     GKVoiceChatSessionInternal *_gkvs;
-    struct dispatch_queue_s { } *_sendQueue;
+    NSObject<OS_dispatch_queue> *_sendQueue;
     NSMutableArray *_connectedPeers;
     NSMutableDictionary *_peerStateTable;
     struct _opaque_pthread_mutex_t { 
@@ -28,22 +28,22 @@
 
 - (void)dealloc;
 - (void)cleanup;
-- (BOOL)hasFocus;
-- (id)initWithGKSession:(id)arg1 peerID:(id)arg2 voiceChatSession:(id)arg3 sendQueue:(struct dispatch_queue_s { }*)arg4;
-- (void)startBeaconWrapper:(id)arg1;
-- (unsigned int)focusID;
-- (id)subscribedPeers;
-- (void)stopBeacon;
-- (void)peer:(id)arg1 didChangeState:(int)arg2;
-- (void)receivedBeacon:(id)arg1 fromPeer:(id)arg2;
-- (BOOL)recalculateFocusRating;
-- (void)updateBeacon;
-- (void)configureDeviceRating;
-- (void)startBeacon;
-- (void)sendBeacons;
-- (void)calculateFocus:(id)arg1;
-- (void)sendBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 ToPeer:(id)arg2;
-- (void)processSubscribeBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 beaconState:(id)arg2 fromPeer:(id)arg3;
 - (void)processUnsubscribeBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 beaconState:(id)arg2 fromPeer:(id)arg3;
+- (void)processSubscribeBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 beaconState:(id)arg2 fromPeer:(id)arg3;
+- (void)sendBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 ToPeer:(id)arg2;
+- (void)calculateFocus:(id)arg1;
+- (void)sendBeacons;
+- (void)startBeacon;
+- (void)configureDeviceRating;
+- (void)updateBeacon;
+- (BOOL)recalculateFocusRating;
+- (void)receivedBeacon:(id)arg1 fromPeer:(id)arg2;
+- (void)peer:(id)arg1 didChangeState:(int)arg2;
+- (void)stopBeacon;
+- (id)subscribedPeers;
+- (unsigned int)focusID;
+- (void)startBeaconWrapper:(id)arg1;
+- (id)initWithGKSession:(id)arg1 peerID:(id)arg2 voiceChatSession:(id)arg3 sendQueue:(id)arg4;
+- (BOOL)hasFocus;
 
 @end

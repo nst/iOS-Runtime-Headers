@@ -19,27 +19,27 @@
 @property BOOL shouldTriggerDownloads;
 
 
+- (void)setShouldProcessProtocol:(BOOL)arg1;
+- (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
+- (void)setShouldProcessDialogs:(BOOL)arg1;
+- (void)setShouldProcessAuthenticationDialogs:(BOOL)arg1;
+- (BOOL)shouldProcessDialogs;
+- (BOOL)shouldProcessAuthenticationDialogs;
+- (void)setShouldPostFooterSectionChanged:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
+- (BOOL)shouldProcessProtocol;
 - (void)setShouldTriggerDownloads:(BOOL)arg1;
-- (void)setShouldProcessAuthenticationDialogs:(BOOL)arg1;
 - (void)setShouldProcessAccount:(BOOL)arg1;
+- (void)_checkInAppPurchaseQueueForAction:(id)arg1;
 - (void)_selectFooterSection:(id)arg1;
 - (void)_checkDownloadQueues;
 - (BOOL)processPropertyList:(id)arg1 returningError:(id*)arg2;
 - (BOOL)_processFailureTypeFromPropertyList:(id)arg1 error:(id*)arg2;
 - (void)_performActionsForResponse:(id)arg1;
 - (BOOL)processDialogFromPropertyList:(id)arg1 returningError:(id*)arg2;
-- (BOOL)_runAuthorizationDialog:(id)arg1 returningError:(id*)arg2;
 - (BOOL)shouldTriggerDownloads;
-- (BOOL)shouldProcessDialogs;
-- (BOOL)shouldProcessAuthenticationDialogs;
 - (BOOL)shouldProcessAccount;
 - (BOOL)shouldPostFooterSectionChanged;
-- (void)setShouldProcessProtocol:(BOOL)arg1;
-- (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
-- (void)setShouldPostFooterSectionChanged:(BOOL)arg1;
-- (BOOL)shouldProcessProtocol;
-- (void)setShouldProcessDialogs:(BOOL)arg1;
 
 @end

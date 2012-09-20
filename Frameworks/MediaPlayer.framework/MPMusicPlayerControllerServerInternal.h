@@ -7,19 +7,34 @@
 @interface MPMusicPlayerControllerServerInternal : MPServerObject <MPMusicPlayerController> {
     <MPMusicPlayerControllerServerDelegate> *_delegate;
     MPMusicPlayerControllerServer *_musicPlayerServer;
+    int _activeClientPID;
     NSMutableArray *_clientPorts;
     NSMutableDictionary *_clientPortsForPIDs;
     NSMutableDictionary *_clientStateForPIDs;
-    MPVideoViewController *_videoViewController;
-    int _activeClientPID;
     int _extendedModeNotifyToken;
+    MPVideoViewController *_videoViewController;
     unsigned int _queuePrepared : 1;
 }
 
 + (BOOL)_canSeedGeniusWithItem:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
+- (void)setShuffleMode:(id)arg1;
+- (void)setRepeatMode:(id)arg1;
+- (id)shuffleMode;
+- (id)repeatMode;
+- (id)nowPlayingItem;
+- (id)currentPlaybackTime;
+- (void)skipToPreviousItem;
+- (void)skipToNextItem;
+- (void)skipToBeginning;
+- (void)setQueueWithQuery:(id)arg1;
+- (void)endSeeking;
+- (void)beginSeekingForward;
+- (void)beginSeekingBackward;
+- (void)setNowPlayingItem:(id)arg1;
+- (id)playbackState;
+- (void)setQueueWithItemCollection:(id)arg1;
+- (void)_setQueuePrepared:(BOOL)arg1;
 - (void)_registerClientPort:(unsigned int)arg1 forProcessID:(int)arg2 hasAudioBackgroundMode:(BOOL)arg3;
 - (BOOL)_currentClientPIDHasPermissionToPlay;
 - (id)_avControllerForClientPID:(int)arg1;
@@ -31,7 +46,9 @@
 - (BOOL)_clientPIDHasPermissionToPlay:(int)arg1;
 - (void)_clientPortInvalidated:(id)arg1;
 - (BOOL)useApplicationSpecificQueue;
+- (unsigned int)_numberOfItems;
 - (void)_endPlayback;
+- (void)_setQueueWithQuery:(id)arg1;
 - (id)_clientState;
 - (void)_prepareQueueIfNecessary;
 - (void)_tearDownVideoView;
@@ -39,7 +56,6 @@
 - (void)skipToNextChapter;
 - (void)skipToBeginningOrPreviousItem;
 - (void)shuffle;
-- (void)setNowPlayingItem:(id)arg1;
 - (void)prepareQueueForPlayback;
 - (id)queueAsQuery;
 - (void)playItem:(id)arg1;
@@ -59,33 +75,23 @@
 - (void)pauseWithFadeoutDuration:(id)arg1;
 - (id)nowPlayingItemAtIndex:(id)arg1;
 - (id)setQueueWithSeedItems:(id)arg1;
+- (id)isGeniusAvailableForSeedItems:(id)arg1;
 - (id)isGeniusAvailable;
 - (void)setQueueWithQuery:(id)arg1 firstItem:(id)arg2;
 - (void)_tvOutCapabilityDidChangeNotification:(id)arg1;
 - (id)_avController;
 - (void)_itemPlaybackDidEndNotification:(id)arg1;
 - (void)_itemDidChangeNotification:(id)arg1;
+- (void)setCurrentPlaybackRate:(id)arg1;
+- (id)currentPlaybackRate;
 - (void)setCurrentPlaybackTime:(id)arg1;
+- (void)prepareToPlay;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)pause;
 - (void)stop;
 - (id)numberOfItems;
 - (void)play;
-- (void)skipToPreviousItem;
-- (void)skipToNextItem;
-- (void)skipToBeginning;
-- (void)setShuffleMode:(id)arg1;
-- (void)setRepeatMode:(id)arg1;
-- (void)setQueueWithQuery:(id)arg1;
-- (void)setQueueWithItemCollection:(id)arg1;
-- (id)currentPlaybackTime;
-- (void)endSeeking;
-- (id)shuffleMode;
-- (id)repeatMode;
-- (id)playbackState;
-- (id)nowPlayingItem;
-- (void)beginSeekingForward;
-- (void)beginSeekingBackward;
-- (void)_setQueueWithQuery:(id)arg1;
 
 @end

@@ -12,23 +12,23 @@
 }
 
 @property void* searchContext;
-@property(retain) CalDAVPrincipalSearchPropertySet * serverSupportSet;
-@property(retain) NSSet * searchStrings;
 @property(retain) NSSet * searchTypes;
+@property(retain) NSSet * searchStrings;
+@property(retain) CalDAVPrincipalSearchPropertySet * serverSupportSet;
 
 + (id)_propertiesToFindForServerSupportSet:(id)arg1;
 
-- (id)extraAttributes;
 - (void)dealloc;
-- (id)searchItems;
-- (void)setSearchContext:(void*)arg1;
+- (id)extraAttributes;
 - (id)initWithSearchStrings:(id)arg1 searchTypes:(id)arg2 serverSupportSet:(id)arg3 atURL:(id)arg4;
-- (void*)searchContext;
-- (void)setSearchTypes:(id)arg1;
-- (void)setSearchStrings:(id)arg1;
-- (void)setServerSupportSet:(id)arg1;
-- (id)searchTypes;
-- (id)serverSupportSet;
 - (id)searchStrings;
+- (id)serverSupportSet;
+- (id)searchTypes;
+- (void)setServerSupportSet:(id)arg1;
+- (void)setSearchStrings:(id)arg1;
+- (id)searchItems;
+- (void)setSearchTypes:(id)arg1;
+- (void*)searchContext;
+- (void)setSearchContext:(void*)arg1;
 
 @end

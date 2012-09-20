@@ -16,9 +16,9 @@
 - (id)groupIdentifier;
 - (void)setTimer:(id)arg1;
 - (id)timer;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

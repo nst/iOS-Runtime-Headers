@@ -4,32 +4,33 @@
 
 @class NSDate, NSString;
 
-@interface MBRestoreInfo : NSObject <NSCoding> {
+@interface MBRestoreInfo : NSObject <NSCoding, NSCopying> {
     NSDate *_date;
     BOOL _wasCloudRestore;
     NSString *_deviceBuildVersion;
     NSString *_backupBuildVersion;
 }
 
-@property(readonly) NSString * backupBuildVersion;
-@property(readonly) NSString * deviceBuildVersion;
-@property(readonly) BOOL wasCloudRestore;
 @property(readonly) NSDate * date;
+@property(readonly) BOOL wasCloudRestore;
+@property(readonly) NSString * deviceBuildVersion;
+@property(readonly) NSString * backupBuildVersion;
 
 
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)setDate:(id)arg1;
 - (id)date;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setWasCloudRestore:(BOOL)arg1;
-- (void)setDeviceBuildVersion:(id)arg1;
-- (void)setBackupBuildVersion:(id)arg1;
 - (id)backupBuildVersion;
 - (id)deviceBuildVersion;
 - (BOOL)wasCloudRestore;
+- (void)setBackupBuildVersion:(id)arg1;
+- (void)setDeviceBuildVersion:(id)arg1;
+- (void)setWasCloudRestore:(BOOL)arg1;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 
 @end

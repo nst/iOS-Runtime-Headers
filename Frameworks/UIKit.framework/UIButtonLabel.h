@@ -8,9 +8,14 @@
 
 
 - (void)setReverseShadow:(BOOL)arg1;
+- (void)setMinimumScaleFactor:(float)arg1;
+- (void)_setMinimumFontSize:(float)arg1;
+- (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })shadowOffset;
+- (void)setTextAlignment:(int)arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)setLineBreakMode:(int)arg1;
 - (void)setFont:(id)arg1;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 
 @end

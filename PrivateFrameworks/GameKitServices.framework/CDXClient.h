@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <CDXClientDelegate>, NSError, NSString, NSData, NSMutableDictionary;
+@class NSError, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>, NSMutableDictionary, NSString, NSData, <CDXClientDelegate>;
 
 @interface CDXClient : NSObject  {
     <CDXClientDelegate> *delegate_;
@@ -20,6 +20,7 @@
     NSString *server_;
     unsigned short port_;
     unsigned short localPort_;
+    int restartCount_;
     struct sockaddr_in { 
         unsigned char sin_len; 
         unsigned char sin_family; 
@@ -34,9 +35,9 @@
     BOOL willReconfigureShortly_;
     struct __SCDynamicStore { } *scDynamicStore_;
     struct __CFRunLoopSource { } *scDynamicStoreRunLoopSource_;
-    struct dispatch_queue_s { } *queue_;
-    struct dispatch_source_s { } *source_;
-    struct dispatch_source_s { } *holePunchTimer_;
+    NSObject<OS_dispatch_queue> *queue_;
+    NSObject<OS_dispatch_source> *source_;
+    NSObject<OS_dispatch_source> *holePunchTimer_;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -45,36 +46,38 @@
     void *padding_[10];
 }
 
-@property <CDXClientDelegate> * delegate;
-@property(readonly) NSError * error;
-@property(readonly) NSData * preblob;
+@property(readonly) NSObject<OS_dispatch_queue> * queue;
 @property(copy) id preblobCallback;
-@property(readonly) struct dispatch_queue_s { }* queue;
+@property <CDXClientDelegate> * delegate;
+@property(readonly) NSData * preblob;
+@property(readonly) NSError * error;
 
++ (id)sharedClient;
 
-- (void)dealloc;
-- (struct dispatch_queue_s { }*)queue;
 - (void)setError:(id)arg1;
-- (id)error;
-- (void)start;
 - (void)invalidate;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
-- (id)initWithOptions:(id)arg1 delegate:(id)arg2;
-- (id)createSessionWithTicket:(id)arg1 sessionKey:(id)arg2;
-- (id)preblob;
-- (id)preblobCallback;
+- (id)delegate;
+- (void)dealloc;
+- (void)start;
 - (void)setPreblobCallback:(id)arg1;
-- (void)invalidateSession:(id)arg1;
-- (BOOL)sendRaw:(id)arg1;
-- (void)restart;
-- (void)sendHolePunch;
-- (void)setPreblob:(id)arg1;
-- (void)resetHolepunchTimer;
+- (id)preblobCallback;
+- (id)createSessionWithTicket:(id)arg1 sessionKey:(id)arg2;
 - (void)networkDidChange;
-- (void)handleFDEvent;
-- (void)startListeningOnSockets;
+- (id)preblob;
 - (BOOL)handleHolePunchEvent;
+- (void)startListeningOnSockets;
+- (void)handleFDEvent;
+- (void)resetHolepunchTimer;
+- (void)setPreblob:(id)arg1;
+- (void)sendHolePunch;
+- (void)restart;
+- (void)stopHolePunchTimer;
 - (void)stopListeningOnSockets;
+- (id)initWithOptions:(id)arg1 delegate:(id)arg2;
+- (BOOL)sendRaw:(id)arg1;
+- (void)invalidateSession:(id)arg1;
+- (id)queue;
+- (id)error;
 
 @end

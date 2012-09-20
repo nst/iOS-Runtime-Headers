@@ -11,13 +11,13 @@
 @property(readonly) PTPInitiator * initiator;
 
 
-- (void)dealloc;
-- (id)initWithUSBLocationID:(unsigned int)arg1;
-- (id)initWithTCPIPInfo:(id)arg1;
 - (void)addToEventHandlerQ:(id)arg1;
+- (id)initWithTCPIPInfo:(id)arg1;
+- (id)initWithUSBLocationID:(unsigned int)arg1;
 - (id)initiator;
-- (void)enumerateContent;
 - (BOOL)eject;
+- (void)enumerateContent;
+- (void)dealloc;
 - (void)finalize;
 
 @end

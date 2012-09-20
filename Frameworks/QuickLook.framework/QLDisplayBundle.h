@@ -2,98 +2,94 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSURLRequest, QLPreviewController, UIImageView, QLPreviewConverter, UIView, UIImage, <QLPreviewItem>, QLProgressLayer;
+@class NSString, <QLPreviewItemInteractionDelegate>, <QLPreviewItem>;
 
 @interface QLDisplayBundle : UIViewController  {
-    UIView *_displayViewContainer;
-    UIView *_displayView;
-    QLPreviewController *_owner;
-    id _delegate;
+    <QLPreviewItemInteractionDelegate> *_delegate;
     <QLPreviewItem> *_previewItem;
-    NSURLRequest *_previewRequest;
-    int _index;
-    QLProgressLayer *_progressLayer;
-    BOOL _loadingProgressVisible;
+    BOOL _overlayHidden;
+    int _previewMode;
     BOOL _loaded;
-    UIImage *_swipeImage;
-    UIImageView *_swipeImageView;
-    QLPreviewConverter *_previewConverter;
-    BOOL _preloaded;
-    BOOL _preloading;
+    BOOL _loading;
+    NSString *_password;
+    struct { 
+        int pid; 
+        struct { 
+            unsigned int val[8]; 
+        } audit_token; 
+        struct CGRect { 
+            struct CGPoint { 
+                float x; 
+                float y; 
+            } origin; 
+            struct CGSize { 
+                float width; 
+                float height; 
+            } size; 
+        } contentFrame; 
+    } clientContext;
+    int _index;
 }
 
+@property struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; } clientContext;
+@property <QLPreviewItemInteractionDelegate> * delegate;
 @property(retain) <QLPreviewItem> * previewItem;
-@property(retain) NSURLRequest * previewRequest;
-@property(retain) UIView * displayView;
-@property BOOL preloaded;
-@property BOOL preloading;
-@property(retain) UIImage * swipeImage;
+@property int previewMode;
 @property int index;
 @property BOOL loaded;
-@property(retain) QLPreviewConverter * previewConverter;
-@property id delegate;
-@property QLPreviewController * owner;
+@property BOOL loading;
+@property(retain) NSString * password;
 
++ (BOOL)needsAVControls;
 + (id)backgroundColorForBackgroundType:(int)arg1;
-+ (BOOL)canComputeSwipeImage;
-+ (id)copySwipeImageOperation;
-+ (BOOL)canPreloadInThread;
++ (int)backgroundTypeForUTI:(id)arg1 andMode:(int)arg2;
++ (double)allowedLoadingDelay;
 
+- (void)setClientContext:(struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })arg1;
+- (struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })clientContext;
+- (BOOL)overlayOwnedByDisplayBundle;
+- (BOOL)canCopyToPasteboard;
+- (BOOL)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
+- (int)backgroundType;
+- (void)requiresDisplayBundle:(id)arg1 withHints:(id)arg2;
+- (void)didFailLoadingWithError:(id)arg1;
+- (BOOL)overlayIsHidden;
+- (void)cancelLoadIfNeeded;
+- (BOOL)canBeCached;
+- (void)_notifyDidLoadWithError:(id)arg1;
+- (void)didLoad;
+- (void)loadIfNeededWithHints:(id)arg1;
+- (void)_performCancelLoad;
+- (id)previewItem;
+- (void)loadWithHints:(id)arg1;
+- (void)setPreviewItem:(id)arg1;
+- (void)togglePlayState;
+- (void)endScrubbing;
+- (void)scrubToValue:(double)arg1;
+- (void)beginScrubbing;
+- (id)printPageHelper;
+- (id)pdfPreviewData;
+- (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
+- (void)enterBackground;
+- (void)setPassword:(id)arg1;
+- (void)setLoading:(BOOL)arg1;
+- (BOOL)loading;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (id)description;
 - (void)dealloc;
-- (id)displayView;
-- (void)setLoaded:(BOOL)arg1;
-- (void)cancelLoad;
-- (id)printPageRenderer;
-- (int)index;
-- (void)loadView;
-- (void)deactivate;
-- (int)modalPresentationStyle;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (id)previewRequest;
-- (void)setOwner:(id)arg1;
-- (BOOL)loaded;
-- (id)owner;
-- (void)tearDownUI;
+- (id)init;
 - (void)setIndex:(int)arg1;
-- (void)setPreviewRequest:(id)arg1;
-- (void)setDisplayView:(id)arg1;
-- (void)startLoadWithHints:(id)arg1;
-- (void)startSlidingIn:(id)arg1;
-- (void)prepareForSlidingOut;
-- (void)prepareForZoomingOut;
-- (void)prepareForZoomingIn;
-- (void)didFailLoadingWithError:(id)arg1;
-- (void)startTearDownUI;
-- (void)overlayWillAppearAnimated:(BOOL)arg1;
-- (void)overlayWillDisappearAnimated:(BOOL)arg1;
-- (BOOL)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
-- (void)preloadInThread;
-- (BOOL)preloading;
-- (void)setPreloading:(BOOL)arg1;
-- (void)setSwipeImage:(id)arg1;
-- (id)previewConverter;
-- (void)setPreviewConverter:(id)arg1;
-- (void)setPreviewItem:(id)arg1;
-- (void)_addSwipeImage;
-- (void)_addProgressUI;
-- (void)_removeSwipeImage;
-- (void)_removeProgressiveUI;
-- (id)swipeImage;
-- (void)_showLoadingProgress:(BOOL)arg1;
-- (void)loadWithHints:(id)arg1;
-- (void)prepareForSlidingIn:(id)arg1;
-- (BOOL)preloaded;
-- (void)didLoad;
-- (void)setPreloaded:(BOOL)arg1;
-- (void)_notifyDidFailLoadingWithError:(id)arg1;
-- (void)_removeProgressiveUIAnimation:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (id)initWithPreviewItem:(id)arg1 owner:(id)arg2;
-- (int)backgroundType;
-- (id)previewItem;
-- (BOOL)hasCustomToolbar;
-- (BOOL)canPrint;
-- (id)pdfPreviewURL;
+- (id)printPageRenderer;
+- (id)password;
+- (int)index;
+- (void)viewDidAppear:(BOOL)arg1;
+- (int)modalPresentationStyle;
+- (void)didReceiveMemoryWarning;
+- (BOOL)loaded;
+- (void)cancelLoad;
+- (int)previewMode;
+- (void)setPreviewMode:(int)arg1;
+- (void)setLoaded:(BOOL)arg1;
 
 @end

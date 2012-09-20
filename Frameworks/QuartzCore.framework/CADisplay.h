@@ -18,7 +18,8 @@
 @property(readonly) CADisplayMode * preferredMode;
 @property(copy) NSString * colorMode;
 @property BOOL allowsVirtualModes;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } safeBounds;
 @property(readonly) NSString * name;
 @property(readonly) NSString * deviceName;
 @property(readonly) unsigned int displayId;
@@ -38,19 +39,11 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)displays;
 
-- (id)uniqueId;
+- (id)name;
 - (id)description;
-- (BOOL)isExternal;
-- (id)deviceName;
-- (unsigned int)displayId;
-- (id)colorMode;
-- (void)setColorMode:(id)arg1;
-- (BOOL)allowsVirtualModes;
-- (void)setAllowsVirtualModes:(BOOL)arg1;
-- (BOOL)isCloned;
-- (id)_initWithDisplay:(struct Display { int (**x1)(); id x2; struct __CFString {} *x3; struct __CFString {} *x4; unsigned int x5; struct __CFString {} *x6; struct ModeSet { unsigned int x_7_1_1; unsigned int x_7_1_2[1]; } x7; int x8; int x9; int x10; struct Bounds { int x_11_1_1; int x_11_1_2; int x_11_1_3; int x_11_1_4; } x11; unsigned int x12; unsigned int x13; float x14; int x15; boolx16; boolx17; boolx18; boolx19; boolx20; boolx21; unsigned int x22; double x23; boolx24; }*)arg1;
 - (void)_invalidate;
 - (BOOL)isSupported;
+- (BOOL)isExternal;
 - (void)setCurrentMode:(id)arg1;
 - (id)preferredMode;
 - (BOOL)isCloningSupported;
@@ -62,8 +55,17 @@
 - (id)availableModes;
 - (void)update;
 - (id)currentMode;
-- (id)name;
 - (int)tag;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (id)deviceName;
+- (id)uniqueId;
+- (BOOL)isCloned;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })safeBounds;
+- (void)setAllowsVirtualModes:(BOOL)arg1;
+- (BOOL)allowsVirtualModes;
+- (void)setColorMode:(id)arg1;
+- (id)colorMode;
+- (unsigned int)displayId;
+- (id)_initWithDisplay:(struct Display { int (**x1)(); id x2; struct __CFString {} *x3; struct __CFString {} *x4; unsigned int x5; struct __CFString {} *x6; struct ModeSet { unsigned int x_7_1_1; unsigned int x_7_1_2[1]; } x7; int x8; int x9; int x10; struct Bounds { int x_11_1_1; int x_11_1_2; int x_11_1_3; int x_11_1_4; } x11; unsigned int x12; unsigned int x13; float x14; int x15; boolx16; boolx17; boolx18; boolx19; boolx20; boolx21; unsigned int x22; double x23; boolx24; }*)arg1;
 
 @end

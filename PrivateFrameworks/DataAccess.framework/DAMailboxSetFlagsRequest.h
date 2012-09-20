@@ -11,13 +11,13 @@
 }
 
 
-- (id)initRequestWithSetFlags:(unsigned long long)arg1 unsetFlags:(unsigned long long)arg2 message:(id)arg3;
-- (unsigned long long)onFlags;
-- (unsigned long long)offFlags;
-- (id)messageID;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (unsigned long long)offFlags;
+- (unsigned long long)onFlags;
+- (id)initRequestWithSetFlags:(unsigned long long)arg1 unsetFlags:(unsigned long long)arg2 message:(id)arg3;
+- (id)messageID;
 
 @end

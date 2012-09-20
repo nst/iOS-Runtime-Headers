@@ -4,28 +4,25 @@
 
 @class SSPlayInfoResponse, <SSPlayInfoRequestDelegate>, SSPlayInfoRequestContext;
 
-@interface SSPlayInfoRequest : SSRequest <SSCoding> {
+@interface SSPlayInfoRequest : SSRequest <SSXPCCoding> {
     SSPlayInfoRequestContext *_context;
     SSPlayInfoResponse *_response;
 }
 
 @property(readonly) SSPlayInfoRequestContext * playInfoContext;
-@property <SSPlayInfoRequestDelegate> * delegate;
 @property(readonly) SSPlayInfoResponse * playInfoResponse;
+@property <SSPlayInfoRequestDelegate> * delegate;
 
 
-- (id)init;
-- (void)dealloc;
 - (id)initWithPlayInfoContext:(id)arg1;
 - (id)playInfoResponse;
+- (void)dealloc;
+- (id)init;
 - (id)playInfoContext;
-- (id)handleFailureResponse:(id)arg1;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
-- (void)_sendResponseToDelegate:(id)arg1;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (void)startWithPlayInfoResponseBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)start;
 
 @end

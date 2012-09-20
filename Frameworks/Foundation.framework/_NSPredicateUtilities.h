@@ -5,6 +5,27 @@
 @interface _NSPredicateUtilities : NSObject  {
 }
 
++ (id)distinct:(id)arg1;
++ (id)rightshift:(id)arg1 by:(id)arg2;
++ (id)leftshift:(id)arg1 by:(id)arg2;
++ (id)bitwiseOr:(id)arg1 with:(id)arg2;
++ (id)bitwiseAnd:(id)arg1 with:(id)arg2;
++ (id)modulus:(id)arg1 by:(id)arg2;
++ (id)divide:(id)arg1 by:(id)arg2;
++ (id)multiply:(id)arg1 by:(id)arg2;
++ (id)from:(id)arg1 subtract:(id)arg2;
++ (id)add:(id)arg1 to:(id)arg2;
++ (id)noindex:(id)arg1;
++ (id)abs:(id)arg1;
++ (id)onesComplement:(id)arg1;
++ (id)lowercase:(id)arg1;
++ (id)uppercase:(id)arg1;
++ (id)sum:(id)arg1;
++ (id)average:(id)arg1;
++ (id)min:(id)arg1;
++ (id)max:(id)arg1;
++ (id)count:(id)arg1;
++ (id)inverseOrderKey:(id)arg1;
 + (id)_parserableDateDescription:(id)arg1;
 + (BOOL)_isReservedWordInParser:(id)arg1;
 + (id)bitwiseXor:(id)arg1 with:(id)arg2;
@@ -29,27 +50,6 @@
 + (id)_convertStringToNumber:(id)arg1;
 + (unsigned int)_getCommonTypeFor:(id)arg1;
 + (unsigned int)_getITypeFor:(const char *)arg1;
-+ (id)count:(id)arg1;
-+ (id)max:(id)arg1;
-+ (id)min:(id)arg1;
-+ (id)average:(id)arg1;
-+ (id)sum:(id)arg1;
-+ (id)uppercase:(id)arg1;
-+ (id)lowercase:(id)arg1;
-+ (id)onesComplement:(id)arg1;
-+ (id)abs:(id)arg1;
-+ (id)noindex:(id)arg1;
-+ (id)add:(id)arg1 to:(id)arg2;
-+ (id)from:(id)arg1 subtract:(id)arg2;
-+ (id)multiply:(id)arg1 by:(id)arg2;
-+ (id)divide:(id)arg1 by:(id)arg2;
-+ (id)modulus:(id)arg1 by:(id)arg2;
-+ (id)bitwiseAnd:(id)arg1 with:(id)arg2;
-+ (id)bitwiseOr:(id)arg1 with:(id)arg2;
-+ (id)leftshift:(id)arg1 by:(id)arg2;
-+ (id)rightshift:(id)arg1 by:(id)arg2;
-+ (id)distinct:(id)arg1;
-+ (id)inverseOrderKey:(id)arg1;
 
 
 @end

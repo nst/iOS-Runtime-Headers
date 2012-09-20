@@ -8,27 +8,27 @@
     float mBlue;
 }
 
-+ (id)rgbColorWithRedByte:(float)arg1 greenByte:(float)arg2 blueByte:(float)arg3;
-+ (id)rgbColorWithWhite:(float)arg1;
 + (id)rgbColorWithWhiteByte:(float)arg1;
-+ (id)rgbColorWithNSColor:(id)arg1;
-+ (id)white;
++ (id)rgbColorWithWhite:(float)arg1;
++ (id)rgbColorWithRedByte:(float)arg1 greenByte:(float)arg2 blueByte:(float)arg3;
++ (id)rgbColorWithTSUColor:(id)arg1;
 + (id)rgbColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
++ (id)white;
 + (id)black;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (float)blue;
 - (float)green;
 - (float)red;
-- (id)rgbColorWithFraction:(float)arg1 ofRgbColor:(id)arg2;
-- (id)initWithWhite:(float)arg1;
 - (id)initWithWhiteByte:(float)arg1;
-- (unsigned char)redByte;
-- (unsigned char)greenByte;
+- (id)initWithWhite:(float)arg1;
+- (id)rgbColorWithFraction:(float)arg1 ofRgbColor:(id)arg2;
 - (unsigned char)blueByte;
-- (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
+- (unsigned char)greenByte;
+- (unsigned char)redByte;
 - (id)initWithRedByte:(float)arg1 greenByte:(float)arg2 blueByte:(float)arg3;
+- (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 
 @end

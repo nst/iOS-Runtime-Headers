@@ -2,26 +2,29 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class PLPhotoLibrary, NSMutableArray;
+@class NSHashTable, PLPhotoLibrary, ALAssetsLibrary, NSMutableDictionary;
 
 @interface ALAssetsLibraryPrivate : NSObject  {
+    ALAssetsLibrary *_assetsLibrary;
     PLPhotoLibrary *_photoLibrary;
-    NSMutableArray *_assets;
+    NSHashTable *_assetGroupInternals;
+    NSMutableDictionary *_groupURLSByAlbumOID;
     BOOL _isValid;
 }
 
-@property(retain) PLPhotoLibrary * photoLibrary;
-@property(retain) NSMutableArray * assets;
+@property ALAssetsLibrary * assetsLibrary;
+@property(readonly) PLPhotoLibrary * photoLibrary;
 @property BOOL isValid;
 
 
-- (id)init;
 - (void)dealloc;
-- (void)setPhotoLibrary:(id)arg1;
-- (BOOL)isValid;
 - (void)setIsValid:(BOOL)arg1;
-- (void)setAssets:(id)arg1;
+- (BOOL)isValid;
+- (id)assetsLibrary;
 - (id)photoLibrary;
-- (id)assets;
+- (id)initWithAssetsLibrary:(id)arg1;
+- (void)photoLibraryDidChange:(id)arg1;
+- (void)setAssetsLibrary:(id)arg1;
+- (void)registerAlbum:(struct NSObject { Class x1; }*)arg1 assetGroupPrivate:(id)arg2;
 
 @end

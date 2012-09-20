@@ -30,26 +30,25 @@
 + (float)rowHeightForContext:(id)arg1;
 + (struct CGSize { float x1; float x2; })thumbnailSizeForContext:(id)arg1;
 
-- (void)dealloc;
+- (struct CGSize { float x1; float x2; })artworkSize;
 - (float)topPadding;
 - (void)setTopPadding:(float)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (void)refreshImages;
 - (void)setEditing:(BOOL)arg1;
 - (void)prepareForReuse;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (id)context;
 - (void)setContext:(id)arg1;
+- (id)context;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (id)delegate;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (unsigned int)rowIndex;
-- (void)setRowIndex:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })artworkSize;
 - (void)setShouldLoadLocalImagesSynchronously:(BOOL)arg1;
 - (BOOL)shouldLoadLocalImagesSynchronously;
 - (id)gridRowView;
@@ -65,5 +64,6 @@
 - (void)unhideAlbums;
 - (void)setAlbumHidden:(BOOL)arg1 atIndex:(unsigned int)arg2;
 - (void)_longPressed:(id)arg1;
+- (void)setRowIndex:(unsigned int)arg1;
 
 @end

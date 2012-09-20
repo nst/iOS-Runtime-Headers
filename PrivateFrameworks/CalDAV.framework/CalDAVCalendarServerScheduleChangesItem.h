@@ -9,18 +9,18 @@
     CalDAVCalendarServerActionItem *_action;
 }
 
-@property(retain) CalDAVCalendarServerActionItem * action;
 @property(retain) CoreDAVLeafItem * dtstamp;
+@property(retain) CalDAVCalendarServerActionItem * action;
 
 
-- (id)description;
 - (id)action;
-- (id)init;
+- (id)description;
 - (void)dealloc;
+- (id)init;
+- (void)setAction:(id)arg1;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setDtstamp:(id)arg1;
 - (id)dtstamp;
-- (void)setAction:(id)arg1;
 
 @end

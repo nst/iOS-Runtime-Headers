@@ -11,11 +11,10 @@
 @property(retain) NSURL * url;
 
 
-- (void)dealloc;
 - (void)processGameKitURLComponents:(id)arg1;
+- (void)dealloc;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

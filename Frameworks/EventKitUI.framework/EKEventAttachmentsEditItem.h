@@ -4,24 +4,26 @@
 
 @class NSArray;
 
-@interface EKEventAttachmentsEditItem : EKEventEditItem <EKEventAttachmentCellControllerDelegate, EKEventAttachmentEditViewControllerDelegate> {
+@interface EKEventAttachmentsEditItem : EKEventEditItem <EKEventAttachmentCellControllerDelegate, EKEventAttachmentEditViewControllerDelegate, UIDocumentInteractionControllerDelegate> {
     NSArray *_cellControllers;
 }
 
 
 - (void)dealloc;
+- (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
+- (void)documentInteractionControllerWillEndPreview:(id)arg1;
 - (id)owningEventForAttachmentEditViewController:(id)arg1;
 - (BOOL)_shouldCondenseIntoSingleItem;
 - (id)owningEventForAttachmentCellController:(id)arg1;
-- (id)parentViewControllerForAttachmentCellController:(id)arg1;
+- (id)_parentViewControllerForAttachmentCellController;
 - (void)_cleanUpCellControllers;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
+- (BOOL)usesDetailViewControllerForSubitem:(int)arg1 inSubsection:(int)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2 inSubsection:(int)arg3;
 - (void)refreshFromCalendarItemAndStore;
-- (void)eventEditor:(id)arg1 didSelectSubitem:(int)arg2;
-- (int)numberOfSubitems;
+- (void)editor:(id)arg1 didSelectSubitem:(int)arg2 inSubsection:(int)arg3;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2 forWidth:(float)arg3;
+- (id)cellForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2;
+- (int)numberOfSubitemsInSubsection:(int)arg1;
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
-- (id)cellForSubitemAtIndex:(int)arg1;
-- (BOOL)isInline;
 
 @end

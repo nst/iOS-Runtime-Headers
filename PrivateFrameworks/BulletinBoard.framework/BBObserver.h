@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSMutableDictionary, NSMutableSet, <BBObserverDelegate>, NSMapTable;
+@class <BBObserverDelegate>, NSMutableDictionary, NSMutableSet;
 
 @interface BBObserver : NSObject <XPCProxyTarget> {
     id _serverProxy;
@@ -21,8 +21,9 @@
         unsigned int imageForThumbData : 1; 
         unsigned int sizeForThumbSize : 1; 
         unsigned int purgeReferences : 1; 
+        unsigned int alertBehaviorOverrides : 1; 
     } _delegateFlags;
-    NSMapTable *_bulletinLifeAssertions;
+    NSMutableDictionary *_bulletinLifeAssertions;
     NSMutableDictionary *_sectionParameters;
     NSMutableDictionary *_attachmentInfoByBulletinID;
     unsigned int _numberOfBulletinFetchesUnderway;
@@ -37,17 +38,24 @@
 
 + (void)initialize;
 
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (id)init;
+- (void)invalidate;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (id)init;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (unsigned int)observerFeed;
 - (void)assertionExpired:(id)arg1 transactionID:(unsigned int)arg2;
 - (struct CGSize { float x1; float x2; })attachmentSizeForKey:(id)arg1 forBulletinID:(id)arg2;
 - (id)attachmentImageForKey:(id)arg1 forBulletinID:(id)arg2;
 - (id)parametersForSectionID:(id)arg1;
+- (void)clearBulletins:(id)arg1 inSection:(id)arg2;
 - (void)clearSection:(id)arg1;
 - (void)getAttachmentImageForBulletin:(id)arg1 withCompletion:(id)arg2;
 - (void)getRecentUnacknowledgedBulletinsForFeeds:(unsigned int)arg1 withCompletion:(id)arg2;
+- (void)getPrivilegedAddressBookGroupRecordIDAndNameWithCompletion:(id)arg1;
+- (void)getPrivilegedSenderTypesWithCompletion:(id)arg1;
+- (void)getAlertBehaviorOverridesWithCompletion:(id)arg1;
 - (void)getSortDescriptorsForSectionID:(id)arg1 withCompletion:(id)arg2;
 - (void)requestListBulletinsForSectionID:(id)arg1;
 - (void)getSectionInfoWithCompletion:(id)arg1;
@@ -57,6 +65,7 @@
 - (void)_preFetchAttachmentInfoIfNecessaryForBulletin:(id)arg1 withCompletion:(id)arg2;
 - (void)_noteCompletedBulletinUpdateForSection:(id)arg1;
 - (void)_dequeueBulletinUpdateIfPossibleForSection:(id)arg1;
+- (void)noteAlertBehaviorOverridesChanged:(id)arg1;
 - (void)updateSectionParameters:(id)arg1 forSectionID:(id)arg2;
 - (void)updateSectionInfo:(id)arg1;
 - (void)updateSectionOrder:(id)arg1;
@@ -82,9 +91,7 @@
 - (void)_preFetchAttachmentInfoIfNecessaryForBulletins:(id)arg1 withCompletion:(id)arg2;
 - (void)_noteCompletedBulletinFetch;
 - (void)_registerBulletin:(id)arg1 withTransactionID:(unsigned int)arg2;
-- (void)invalidate;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)sendResponse:(id)arg1;
+- (id)initWithQueue:(id)arg1;
 
 @end

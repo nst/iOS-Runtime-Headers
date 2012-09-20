@@ -12,23 +12,23 @@
 @property BOOL wasInstalled;
 
 + (id)apnDomainName;
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
 - (id)description;
-- (void)dealloc;
-- (id)apnDefaults;
-- (BOOL)wasInstalled;
+- (void).cxx_destruct;
 - (void)setWasInstalled:(BOOL)arg1;
-- (id)_validationErrorType:(int)arg1 forInvalidKey:(id)arg2;
-- (BOOL)_checkForValidContents:(id)arg1 outError:(id*)arg2;
-- (void)_finishInitializationWithContents:(id)arg1;
+- (BOOL)wasInstalled;
+- (id)apnDefaults;
 - (id)_strippedAPNDefaults;
-- (id)subtitle1Label;
-- (id)subtitle2Label;
+- (void)_finishInitializationWithContents:(id)arg1;
+- (BOOL)_checkForValidContents:(id)arg1 outError:(id*)arg2;
+- (id)_validationErrorType:(int)arg1 forInvalidKey:(id)arg2;
 - (id)subtitle2Description;
+- (id)subtitle2Label;
+- (id)subtitle1Label;
 - (id)subtitle1Description;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 
 @end

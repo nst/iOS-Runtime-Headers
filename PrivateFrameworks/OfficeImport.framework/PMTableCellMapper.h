@@ -14,11 +14,11 @@
 
 
 - (void)dealloc;
-- (id)initWithOadTableCell:(id)arg1 rowIndex:(unsigned int)arg2 columnIndex:(int)arg3 parent:(id)arg4;
-- (float)widthWithState:(id)arg1;
-- (void)mapBordersWithState:(id)arg1;
-- (void)mapCellPropertiesWithState:(id)arg1 textAnchor:(int)arg2;
 - (id)rowMapper;
+- (float)widthWithState:(id)arg1;
+- (id)initWithOadTableCell:(id)arg1 rowIndex:(unsigned int)arg2 columnIndex:(int)arg3 parent:(id)arg4;
+- (void)mapCellPropertiesWithState:(id)arg1 textAnchor:(int)arg2;
+- (void)mapBordersWithState:(id)arg1;
 - (id)tableMapper;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 

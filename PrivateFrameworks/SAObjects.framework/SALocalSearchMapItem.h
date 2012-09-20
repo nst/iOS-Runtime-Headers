@@ -2,20 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SALocation, NSString, NSNumber, <SAAceSerializable>;
+@class SALocation, NSArray, NSString, SADistance, <SAAceSerializable>, NSNumber;
 
 @interface SALocalSearchMapItem : SADomainObject  {
 }
 
+@property(copy) NSArray * attributions;
 @property(retain) <SAAceSerializable> * detail;
 @property(copy) NSString * detailType;
-@property(retain) NSNumber * distanceInMiles;
+@property(copy) NSString * directionRole;
+@property(retain) SADistance * distance;
+@property(copy) NSNumber * distanceInMiles;
 @property(copy) NSString * label;
 @property(retain) SALocation * location;
-@property(retain) NSNumber * placeId;
+@property(copy) NSNumber * placeId;
 
-+ (id)mapItem;
 + (id)mapItemWithDictionary:(id)arg1 context:(id)arg2;
++ (id)mapItem;
 
 - (id)groupIdentifier;
 - (id)location;
@@ -24,13 +27,19 @@
 - (void)setLabel:(id)arg1;
 - (id)detail;
 - (void)setLocation:(id)arg1;
-- (id)detailType;
-- (void)setDetailType:(id)arg1;
-- (id)placeId;
+- (void)setAttributions:(id)arg1;
+- (id)attributions;
+- (id)distance;
+- (void)setDistance:(id)arg1;
 - (void)setPlaceId:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
-- (id)encodedClassName;
+- (id)placeId;
 - (void)setDistanceInMiles:(id)arg1;
 - (id)distanceInMiles;
+- (void)setDirectionRole:(id)arg1;
+- (id)directionRole;
+- (void)setDetailType:(id)arg1;
+- (id)detailType;
+- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
+- (id)encodedClassName;
 
 @end

@@ -9,10 +9,10 @@
 @property id delegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

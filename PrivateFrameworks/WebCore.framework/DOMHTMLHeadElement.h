@@ -10,7 +10,7 @@
 @property(copy) NSString * profile;
 
 
-- (id)profile;
 - (void)setProfile:(id)arg1;
+- (id)profile;
 
 @end

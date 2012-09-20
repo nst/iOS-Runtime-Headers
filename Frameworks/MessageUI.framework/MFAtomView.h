@@ -16,25 +16,25 @@
 @property BOOL selected;
 @property(readonly) MFAtomBackgroundView * backgroundView;
 
-+ (float)horizontalPadding;
-+ (BOOL)showActivityIndicatorForStyle:(int)arg1;
 + (float)defaultHeight;
++ (BOOL)showActivityIndicatorForStyle:(int)arg1;
++ (float)horizontalPadding;
 
 - (void)dealloc;
-- (void)showBackground:(BOOL)arg1;
-- (float)preferredWidth;
-- (void)_setupActivityIndicator;
-- (float)_leftInset;
-- (float)_rightInset;
-- (void)setScalingFactor:(float)arg1;
 - (BOOL)selected;
-- (void)setSelected:(BOOL)arg1;
 - (id)backgroundView;
+- (void)setSelected:(BOOL)arg1;
 - (int)style;
 - (void)setStyle:(int)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (void)showBackground:(BOOL)arg1;
+- (float)preferredWidth;
+- (void)setScalingFactor:(float)arg1;
+- (float)_rightInset;
+- (float)_leftInset;
+- (void)_setupActivityIndicator;
 
 @end

@@ -6,9 +6,9 @@
 }
 
 
-- (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
-- (void)imagePickerControllerDidCancel:(id)arg1;
 - (void)setupNativeObject;
 - (void)destroyNativeObject;
+- (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
+- (void)imagePickerControllerDidCancel:(id)arg1;
 
 @end

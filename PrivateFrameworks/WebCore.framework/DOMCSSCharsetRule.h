@@ -7,7 +7,7 @@
 @interface DOMCSSCharsetRule : DOMCSSRule  {
 }
 
-@property(copy,readonly) NSString * encoding;
+@property(readonly) NSString * encoding;
 
 
 - (id)encoding;

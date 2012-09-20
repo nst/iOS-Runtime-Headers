@@ -10,24 +10,25 @@
     } _u;
 }
 
++ (id)vectorWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)vectorWithString:(id)arg1;
 + (id)vectorWithCGAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 + (id)vectorWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (id)vectorWithX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
++ (id)vectorWithX:(float)arg1 Y:(float)arg2;
 + (id)vectorWithX:(float)arg1;
 + (id)vectorWithValues:(const float*)arg1 count:(unsigned long)arg2;
 + (id)vectorWithX:(float)arg1 Y:(float)arg2 Z:(float)arg3 W:(float)arg4;
-+ (id)vectorWithX:(float)arg1 Y:(float)arg2;
-+ (id)vectorWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 - (id)initWithString:(id)arg1;
-- (unsigned long)count;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (unsigned long)count;
+- (float)valueAtIndex:(unsigned long)arg1;
 - (void)finalize;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })CGAffineTransformValue;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })CGRectValue;
@@ -47,6 +48,5 @@
 - (float)Z;
 - (float)Y;
 - (float)X;
-- (float)valueAtIndex:(unsigned long)arg1;
 
 @end

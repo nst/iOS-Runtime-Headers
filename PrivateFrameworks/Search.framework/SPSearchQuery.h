@@ -9,8 +9,8 @@
     NSString *_searchString;
     BOOL _cancelled;
     BOOL _finished;
-    char *_domainVector;
-    int _domainCount;
+    NSArray *_searchDomains;
+    int _nextDomainIndex;
     double _creationTime;
     double _cancellationTime;
 }
@@ -22,20 +22,17 @@
 @property(readonly) double cancellationTime;
 
 
-- (id)initWithSearchString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (double)cancellationTime;
 - (unsigned int)hash;
 - (void)cancel;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithSearchString:(id)arg1 forSearchDomains:(id)arg2;
+- (id)initWithSearchString:(id)arg1;
 - (id)searchString;
 - (BOOL)cancelled;
-- (double)cancellationTime;
-- (double)creationTime;
-- (int)domainsVectorCount;
-- (char *)domainsVector;
-- (id)initWithSearchString:(id)arg1 andDomainsVector:(char *)arg2 vectorCount:(int)arg3;
 - (id)searchDomains;
+- (id)initWithSearchString:(id)arg1 forSearchDomains:(id)arg2;
+- (double)creationTime;
 
 @end

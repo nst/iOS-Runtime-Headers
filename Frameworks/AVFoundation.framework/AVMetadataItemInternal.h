@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSLocale, NSString, NSMutableDictionary;
+@class NSLocale, NSString, NSDictionary;
 
 @interface AVMetadataItemInternal : NSObject  {
     struct OpaqueFigMetadataReader { } *reader;
@@ -24,7 +24,7 @@
         unsigned int flags; 
         long long epoch; 
     } duration;
-    NSMutableDictionary *extras;
+    NSDictionary *extras;
 }
 
 

@@ -5,8 +5,8 @@
 @interface QLTop : NSObject  {
 }
 
-+ (void)fillHTMLArchiveForOfficeFile:(id)arg1 dataFormat:(int)arg2 archiver:(id)arg3;
 + (void)fillHTMLArchiveForOfficeData:(id)arg1 fileName:(id)arg2 dataFormat:(int)arg3 archiver:(id)arg4;
++ (void)fillHTMLArchiveForOfficeFile:(id)arg1 dataFormat:(int)arg2 archiver:(id)arg3;
 
 
 @end

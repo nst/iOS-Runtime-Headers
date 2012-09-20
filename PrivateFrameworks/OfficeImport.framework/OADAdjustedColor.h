@@ -14,16 +14,16 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (BOOL)invert;
-- (id)baseColor;
-- (BOOL)gray;
-- (unsigned char)adjustmentParam;
-- (int)adjustmentType;
 - (BOOL)invert128;
+- (int)adjustmentType;
+- (unsigned char)adjustmentParam;
+- (BOOL)gray;
+- (id)baseColor;
 - (id)initWithBaseColor:(id)arg1 adjustmentType:(int)arg2 adjustmentParam:(unsigned char)arg3 invert:(BOOL)arg4 invert128:(BOOL)arg5 gray:(BOOL)arg6;
 
 @end

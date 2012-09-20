@@ -11,27 +11,27 @@
     int _serverFD;
 }
 
-@property int serverFD;
-@property int remoteAddress;
-@property struct __CFMessagePort { }* remotePort;
-@property struct __CFFileDescriptor { }* fdref;
-@property(getter=didRegister) BOOL registered;
 @property int pid;
+@property(getter=didRegister) BOOL registered;
+@property struct __CFFileDescriptor { }* fdref;
+@property struct __CFMessagePort { }* remotePort;
+@property int remoteAddress;
+@property int serverFD;
 
 
-- (void)dealloc;
-- (int)pid;
-- (void)setPid:(int)arg1;
-- (void)setFdref:(struct __CFFileDescriptor { }*)arg1;
-- (void)setRemotePort:(struct __CFMessagePort { }*)arg1;
-- (BOOL)didRegister;
-- (struct __CFFileDescriptor { }*)fdref;
-- (struct __CFMessagePort { }*)remotePort;
-- (int)remoteAddress;
-- (void)setRemoteAddress:(int)arg1;
-- (int)serverFD;
-- (void)setServerFD:(int)arg1;
-- (void)finalize;
 - (void)setRegistered:(BOOL)arg1;
+- (void)setServerFD:(int)arg1;
+- (int)serverFD;
+- (void)setRemoteAddress:(int)arg1;
+- (int)remoteAddress;
+- (struct __CFMessagePort { }*)remotePort;
+- (struct __CFFileDescriptor { }*)fdref;
+- (BOOL)didRegister;
+- (void)setRemotePort:(struct __CFMessagePort { }*)arg1;
+- (void)setFdref:(struct __CFFileDescriptor { }*)arg1;
+- (void)dealloc;
+- (void)finalize;
+- (void)setPid:(int)arg1;
+- (int)pid;
 
 @end

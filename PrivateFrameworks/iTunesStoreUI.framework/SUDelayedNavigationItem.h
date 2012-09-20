@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUNavigationItem;
+@class NSNumber, SUNavigationItem;
 
 @interface SUDelayedNavigationItem : SUNavigationItem  {
-    id _delayedLeftBarButtonItem;
+    id _delayedBackButtonTitle;
+    id _delayedLeftBarButtonItems;
+    NSNumber *_delayedLeftItemsSupplementBackButton;
+    id _delayedTitle;
     id _delayedTitleView;
-    id _delayedRightBarButtonItem;
-    id _delayedSecondaryLeftBarButtonItem;
+    id _delayedRightBarButtonItems;
     BOOL _shouldDelayChanges;
     SUNavigationItem *_wrappedNavigationItem;
 }
@@ -17,15 +19,6 @@
 @property BOOL shouldDelayChanges;
 
 
-- (void)dealloc;
-- (id)rightBarButtonItem;
-- (id)leftBarButtonItem;
-- (void)setTitleView:(id)arg1;
-- (void)setRightBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (void)setLeftBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (id)navigationBar;
-- (id)initWithNavigationItem:(id)arg1;
-- (id)titleView;
 - (id)wrappedNavigationItem;
 - (void)_scheduleCommit;
 - (BOOL)shouldDelayChanges;
@@ -33,7 +26,24 @@
 - (void)commitDelayedChanges;
 - (void)setWrappedNavigationItem:(id)arg1;
 - (void)setShouldDelayChanges:(BOOL)arg1;
-- (void)setSecondaryLeftBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (id)internalTitleView;
+- (void)dealloc;
+- (BOOL)leftItemsSupplementBackButton;
+- (void)setLeftItemsSupplementBackButton:(BOOL)arg1;
+- (id)rightBarButtonItems;
+- (id)leftBarButtonItems;
+- (void)setBackButtonTitle:(id)arg1;
+- (id)rightBarButtonItem;
+- (id)leftBarButtonItem;
+- (void)setTitleView:(id)arg1;
+- (void)setRightBarButtonItems:(id)arg1 animated:(BOOL)arg2;
+- (void)setLeftBarButtonItems:(id)arg1 animated:(BOOL)arg2;
+- (void)setRightBarButtonItem:(id)arg1 animated:(BOOL)arg2;
+- (void)setLeftBarButtonItem:(id)arg1 animated:(BOOL)arg2;
+- (id)navigationBar;
+- (id)initWithNavigationItem:(id)arg1;
+- (id)titleView;
+- (id)backButtonTitle;
+- (id)title;
+- (void)setTitle:(id)arg1;
 
 @end

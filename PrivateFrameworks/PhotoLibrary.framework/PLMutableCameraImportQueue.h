@@ -10,8 +10,8 @@
 
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)currentItem;
 - (void)dequeueImportItem;
 - (void)enqueueImportItem:(id)arg1;

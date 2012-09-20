@@ -6,15 +6,15 @@
 
 @interface _NSManagedObject_st : NSObject  {
     int _cd_rc;
-    unsigned int _cd_stateFlags;
+    unsigned long _cd_stateFlags;
     id _cd_rawData;
     id _cd_entity;
     NSManagedObjectContext *_cd_managedObjectContext;
     NSManagedObjectID *_cd_objectID;
-    unsigned int _cd_extraFlags;
+    unsigned long _cd_extraFlags;
     id _cd_observationInfo;
     id *_cd_snapshots;
-    unsigned int _cd_lockingInfo;
+    unsigned long _cd_lockingInfo;
     id _cd_queueReference;
 }
 

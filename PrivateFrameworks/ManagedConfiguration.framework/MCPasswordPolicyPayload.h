@@ -18,23 +18,23 @@
     NSNumber *_minComplexCharacters;
 }
 
-@property(readonly) NSNumber * minComplexCharacters;
+@property(readonly) NSNumber * isSimplePasscodeAllowed;
+@property(readonly) NSNumber * isPasscodeRequired;
+@property(readonly) NSNumber * isAlphanumericPasscodeRequired;
+@property(readonly) NSNumber * isManualFetchingWhenRoaming;
+@property(readonly) NSNumber * minLength;
+@property(readonly) NSNumber * maxFailedAttempts;
+@property(readonly) NSNumber * maxGracePeriodMinutes;
+@property(readonly) NSNumber * maxInactivityMinutes;
 @property(readonly) NSNumber * maxPasscodeAgeDays;
 @property(readonly) NSNumber * passcodeHistoryCount;
-@property(readonly) NSNumber * maxInactivityMinutes;
-@property(readonly) NSNumber * maxGracePeriodMinutes;
-@property(readonly) NSNumber * maxFailedAttempts;
-@property(readonly) NSNumber * minLength;
-@property(readonly) NSNumber * isManualFetchingWhenRoaming;
-@property(readonly) NSNumber * isAlphanumericPasscodeRequired;
-@property(readonly) NSNumber * isPasscodeRequired;
-@property(readonly) NSNumber * isSimplePasscodeAllowed;
+@property(readonly) NSNumber * minComplexCharacters;
 
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
 - (id)description;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)maxPasscodeAgeDays;
 - (id)passcodeHistoryCount;
 - (id)maxInactivityMinutes;
@@ -42,13 +42,13 @@
 - (id)maxFailedAttempts;
 - (id)isManualFetchingWhenRoaming;
 - (id)isPasscodeRequired;
-- (id)minLength;
-- (id)isSimplePasscodeAllowed;
-- (id)isAlphanumericPasscodeRequired;
 - (id)minComplexCharacters;
+- (id)isAlphanumericPasscodeRequired;
+- (id)isSimplePasscodeAllowed;
+- (id)minLength;
 - (id)subtitle1Description;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)title;
 
 @end

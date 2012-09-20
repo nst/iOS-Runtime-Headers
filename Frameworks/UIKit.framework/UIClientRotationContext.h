@@ -35,11 +35,13 @@
     } _rotationSettings;
     float contentBottomInset;
     UIWindow *_window;
+    BOOL _skipClientRotationCallbacks;
 }
 
 @property(readonly) id rotatingClient;
 @property(readonly) UIView * contentView;
 @property(readonly) float duration;
+@property BOOL skipClientRotationCallbacks;
 @property(readonly) int fromOrientation;
 @property(readonly) int toOrientation;
 
@@ -49,12 +51,14 @@
 - (BOOL)_isFooterTranslucent;
 - (BOOL)_isHeaderTranslucent;
 - (void)finishFullRotateUsingOnePartAnimation:(BOOL)arg1;
+- (BOOL)skipClientRotationCallbacks;
 - (int)fromOrientation;
 - (void)finishFirstHalfRotation;
 - (int)toOrientation;
 - (void)rotateSnapshots;
 - (void)setupRotationOrderingKeyboardInAfterRotation:(BOOL)arg1;
 - (void)slideHeaderViewAndFooterViewOffScreen:(BOOL)arg1 forInterfaceOrientation:(int)arg2;
+- (void)setSkipClientRotationCallbacks:(BOOL)arg1;
 - (id)rotatingClient;
 - (id)contentView;
 - (id)initWithClient:(id)arg1 toOrientation:(int)arg2 duration:(float)arg3 andWindow:(id)arg4;

@@ -40,10 +40,10 @@
 
 + (id)convertFigTimeDictionaryToTimeIntervalWithKey:(id)arg1 stringURLToNSURLWithKey:(id)arg2 inArrayOfDictionaries:(id)arg3;
 
-- (void)release;
-- (void)dealloc;
 - (void)setBookmarkTime:(double)arg1;
 - (id)attributeForKey:(id)arg1;
+- (void)dealloc;
+- (void)release;
 - (void)removeFromPlayQueue:(struct OpaqueFigPlayer { }*)arg1;
 - (BOOL)addToPlayQueue:(struct OpaqueFigPlayer { }*)arg1 afterItem:(struct OpaqueFigPlaybackItem { }*)arg2;
 - (id)initWithDelegate:(id)arg1 item:(id)arg2;
@@ -80,9 +80,8 @@
 - (id)avItem;
 - (id)evenlySpacedThumbnailTimesFromStartTime:(double)arg1 toEndTime:(double)arg2 maxCount:(int)arg3;
 - (id)nextThumbnailTimesStartingAt:(double)arg1 minimumInterval:(double)arg2 forwards:(BOOL)arg3 maxCount:(int)arg4;
-- (id)chapterImageForImageID:(int)arg1;
+- (id)formatDetailsForTracks;
 - (void)setItemAttribute:(id)arg1 value:(id)arg2 forKey:(id)arg3 error:(id*)arg4;
 - (id)itemAttribute:(id)arg1 forKey:(id)arg2;
-- (id)formatDetailsForTracks;
 
 @end

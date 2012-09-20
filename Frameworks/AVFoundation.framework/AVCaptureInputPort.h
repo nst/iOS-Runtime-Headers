@@ -17,14 +17,14 @@
 
 - (id)description;
 - (id)input;
-- (id)init;
 - (void)dealloc;
-- (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(BOOL)arg4;
-- (void)_setFormatDescription:(struct opaqueCMFormatDescription { }*)arg1;
-- (struct opaqueCMFormatDescription { }*)formatDescription;
+- (id)init;
+- (id)mediaType;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
 - (void)setOwner:(id)arg1;
-- (id)mediaType;
+- (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(BOOL)arg4;
+- (void)_setFormatDescription:(struct opaqueCMFormatDescription { }*)arg1;
+- (struct opaqueCMFormatDescription { }*)formatDescription;
 
 @end

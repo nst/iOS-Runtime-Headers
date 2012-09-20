@@ -2,39 +2,54 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSMutableDictionary, NSArray;
+@class NSMutableDictionary, NSDictionary;
 
 @interface GKFriendPickerListSection : GKTableSection  {
-    NSArray *_friends;
-    NSMutableDictionary *_ranks;
+    NSDictionary *_ranks;
+    NSMutableDictionary *_inviteStatusDict;
     int _maxPlayers;
     int _numSelected;
+    unsigned int _scope;
+    unsigned int _headerTitle;
+    float _topMargin;
 }
 
-@property(retain) NSArray * friends;
-@property(retain) NSMutableDictionary * ranks;
+@property(retain) NSDictionary * ranks;
 @property int maxPlayers;
 @property int numSelected;
+@property unsigned int scope;
+@property unsigned int headerTitle;
+@property float topMargin;
+@property(retain) NSMutableDictionary * inviteStatusDict;
 
 
-- (id)init;
-- (void)dealloc;
-- (int)tableView:(id)arg1 indexOfItemForPlayerID:(id)arg2;
-- (int)sectionItemCountInTableView:(id)arg1;
-- (id)sectionReuseIdentifierInTableView:(id)arg1;
-- (float)sectionFooterHeightInTableView:(id)arg1;
-- (float)sectionHeaderHeightInTableView:(id)arg1;
-- (id)tableView:(id)arg1 willSelectIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 prepareContents:(id)arg2 forItem:(id)arg3;
-- (id)tableView:(id)arg1 itemAtIndex:(int)arg2;
-- (int)numSelected;
-- (void)setNumSelected:(int)arg1;
-- (void)filterWithSearchText:(id)arg1;
-- (id)ranks;
+- (void)setInviteStatusDict:(id)arg1;
+- (id)inviteStatusDict;
 - (void)setRanks:(id)arg1;
-- (id)friends;
-- (void)setFriends:(id)arg1;
+- (id)ranks;
+- (int)tableView:(id)arg1 indexOfItemForPlayerID:(id)arg2;
+- (void)tableView:(id)arg1 loadAdditionalDataForItems:(id)arg2 thenUpdateView:(id)arg3;
 - (int)maxPlayers;
 - (void)setMaxPlayers:(int)arg1;
+- (void)setNumSelected:(int)arg1;
+- (int)numSelected;
+- (id)tableView:(id)arg1 prepareContents:(id)arg2 forItem:(id)arg3;
+- (id)sectionReuseIdentifierInTableView:(id)arg1;
+- (int)columnCountInTableView:(id)arg1;
+- (void)tableView:(id)arg1 willDrawCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)filterWithSearchText:(id)arg1;
+- (void)tableView:(id)arg1 didSelectIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectIndexPath:(id)arg2;
+- (id)titleForHeaderInTableView:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setHeaderTitle:(unsigned int)arg1;
+- (unsigned int)headerTitle;
+- (float)heightForFooterInTableView:(id)arg1;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (void)setScope:(unsigned int)arg1;
+- (unsigned int)scope;
+- (void)setTopMargin:(float)arg1;
+- (float)topMargin;
 
 @end

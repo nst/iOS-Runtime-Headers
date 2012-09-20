@@ -2,10 +2,25 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class NSMutableArray, NSArray;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface EAAccessoryManager : NSObject  {
+@class NSArray, NSString, NSTimer, NSObject<OS_dispatch_queue>, EABluetoothAccessoryPicker, NSMutableArray;
+
+@interface EAAccessoryManager : NSObject <EABluetoothAccessoryPickerDelegate> {
     NSMutableArray *_connectedAccessories;
+    NSMutableArray *_sequesteredAccessories;
+    NSString *_selectedBluetoothAddress;
+    EABluetoothAccessoryPicker *_picker;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _pickerCompletion;
+
+    BOOL _sequesterNewAccessories;
+    NSTimer *_pickerTimer;
+    NSObject<OS_dispatch_queue> *_connectionQueue;
 }
 
 @property(readonly) NSArray * connectedAccessories;
@@ -14,27 +29,29 @@
 + (BOOL)isLoggingEnabled;
 + (id)sharedAccessoryManager;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)pointOfInterestSelection:(id)arg1;
 - (void)setAreLocationAccessoriesEnabled:(BOOL)arg1;
 - (BOOL)areLocationAccessoriesEnabled;
-- (void)accessibilitySystemPropertyRequest:(id)arg1;
-- (void)accessibilitySystemPropertyChange:(id)arg1;
-- (void)accessibilityItemPropertyRequest:(id)arg1;
-- (void)accessibilityContextChange:(id)arg1;
-- (void)accessibilityAction:(id)arg1;
 - (void)setShouldAllowCppRuntime:(BOOL)arg1;
 - (BOOL)shouldAllowCppRuntime;
 - (void)setShouldAllowInternalProtocols:(BOOL)arg1;
 - (BOOL)shouldAllowInternalProtocols;
 - (id)_connectedAccessories;
 - (BOOL)appDeclaresProtocol:(id)arg1;
-- (void)endSession:(unsigned int)arg1 forConnectionID:(unsigned int)arg2;
-- (void)openCompleteForSession:(unsigned int)arg1 connectionID:(unsigned int)arg2;
+- (void)wakeAccessoryWithToken:(id)arg1;
 - (void)registerForLocalNotifications;
 - (id)connectedAccessories;
-- (void)_cleanUpForTaskSuspend;
+- (void)showBluetoothAccessoryPickerWithNameFilter:(id)arg1 completion:(id)arg2;
+- (void)devicePicker:(id)arg1 didSelectAddress:(id)arg2 errorCode:(int)arg3;
+- (void)_handleAccessoryNotificationTimeout:(id)arg1;
+- (void)_integrateSequesteredAccessories;
 - (void)_notifyObserversThatAccessoryDisconnectedWithUserInfo:(id)arg1;
+- (void)_cleanUpForTaskSuspend;
+- (void)_removeAllAccessoriesFromArray:(id)arg1 notifyClients:(BOOL)arg2;
 - (void)_gpsTimeRequested:(id)arg1;
 - (void)_nmeaFilteringSupportChanged:(id)arg1;
 - (void)_ephemerisURLAvailable:(id)arg1;
@@ -49,7 +66,12 @@
 - (void)_externalAccessoryDisconnected:(id)arg1;
 - (void)_externalAccessoryUpdated:(id)arg1;
 - (void)_externalAccessoryConnected:(id)arg1;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)accessibilitySystemPropertyRequest:(id)arg1;
+- (void)accessibilitySystemPropertyChange:(id)arg1;
+- (void)accessibilityItemPropertyRequest:(id)arg1;
+- (void)accessibilityAction:(id)arg1;
+- (void)accessibilityContextChange:(id)arg1;
+- (void)endSession:(unsigned int)arg1 forConnectionID:(unsigned int)arg2;
+- (void)openCompleteForSession:(unsigned int)arg1 connectionID:(unsigned int)arg2;
 
 @end

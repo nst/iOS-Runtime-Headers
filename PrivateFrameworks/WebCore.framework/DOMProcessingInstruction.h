@@ -7,14 +7,14 @@
 @interface DOMProcessingInstruction : DOMNode  {
 }
 
-@property(copy,readonly) NSString * target;
+@property(readonly) NSString * target;
 @property(copy) NSString * data;
-@property(retain,readonly) DOMStyleSheet * sheet;
+@property(readonly) DOMStyleSheet * sheet;
 
 
 - (id)target;
 - (id)data;
-- (id)sheet;
 - (void)setData:(id)arg1;
+- (id)sheet;
 
 @end

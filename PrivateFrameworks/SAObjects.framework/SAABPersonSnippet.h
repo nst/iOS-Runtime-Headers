@@ -10,14 +10,14 @@
 @property(copy) NSArray * displayProperties;
 @property(copy) NSArray * persons;
 
-+ (id)personSnippet;
 + (id)personSnippetWithDictionary:(id)arg1 context:(id)arg2;
++ (id)personSnippet;
 
 - (id)groupIdentifier;
 - (id)displayProperties;
-- (void)setDisplayProperties:(id)arg1;
-- (id)persons;
 - (void)setPersons:(id)arg1;
+- (id)persons;
+- (void)setDisplayProperties:(id)arg1;
 - (id)encodedClassName;
 
 @end

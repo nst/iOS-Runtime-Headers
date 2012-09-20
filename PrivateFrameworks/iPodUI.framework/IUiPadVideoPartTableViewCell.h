@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class MPImageCache, UIImageView, IUiPadVideoPartTableViewCellContentView, UIView, NSMutableSet, UIImage, MPImageCacheRequest;
+@class UIImageView, UIView, IUiPadVideoPartTableViewCellContentView, UIImage, MPImageCacheRequest, MPImageCache;
 
 @interface IUiPadVideoPartTableViewCell : UITableViewCell <MPImageRequestDelegate> {
     IUiPadVideoPartTableViewCellContentView *_videoChapterContentView;
     MPImageCache *_imageCache;
-    NSMutableSet *_imageRequests;
     UIView *_topBevel;
     UIView *_bottomBevel;
     UIImageView *_videoImageView;
@@ -22,20 +21,18 @@
 + (Class)contentViewClass;
 + (struct CGSize { float x1; float x2; })videoImageSize;
 
-- (void)dealloc;
-- (void)imageRequest:(id)arg1 loadedImage:(id)arg2;
-- (void)imageRequest:(id)arg1 failedWithError:(id)arg2;
-- (id)imageCache;
 - (void)setImageCache:(id)arg1;
-- (id)videoImage;
+- (void)setDrawAsDisabled:(BOOL)arg1;
+- (BOOL)drawAsDisabled;
+- (id)imageCache;
+- (void)dealloc;
 - (void)prepareForReuse;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)setAlpha:(float)arg1;
 - (float)alpha;
-- (void)setDrawAsDisabled:(BOOL)arg1;
-- (BOOL)drawAsDisabled;
+- (id)videoImage;
 - (void)setVideoImage:(id)arg1;
 - (id)_imageForImageRequest:(id)arg1;
 - (void)_createVideoImageView;

@@ -10,8 +10,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setCurrentRowStyle:(id)arg1;
 - (id)listState;
 - (id)currentRowStyle;

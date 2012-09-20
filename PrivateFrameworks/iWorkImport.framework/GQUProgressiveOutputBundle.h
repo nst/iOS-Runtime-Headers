@@ -17,15 +17,15 @@
 
 - (void)dealloc;
 - (struct __CFURL { }*)getAttachmentURL:(struct __CFString { }*)arg1 mimeType:(struct __CFString { }*)arg2;
-- (id)initWithHandler:(id)arg1;
-- (struct __CFString { }*)createUriForResource:(struct __CFString { }*)arg1;
-- (void)setCurrentSheetUri:(struct __CFString { }*)arg1;
-- (BOOL)appendData:(struct __CFData { }*)arg1 mimeType:(struct __CFString { }*)arg2 resourceName:(struct __CFString { }*)arg3;
 - (void)closeAttachment:(struct __CFString { }*)arg1;
-- (void)setDocumentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPageElementXPath:(struct __CFString { }*)arg1 withThumbnailsOnLeft:(BOOL)arg2;
-- (void)startProgressiveData;
-- (BOOL)setData:(struct __CFData { }*)arg1 mimeType:(struct __CFString { }*)arg2 forNamedResource:(struct __CFString { }*)arg3;
+- (BOOL)appendData:(struct __CFData { }*)arg1 mimeType:(struct __CFString { }*)arg2 resourceName:(struct __CFString { }*)arg3;
+- (void)setCurrentSheetUri:(struct __CFString { }*)arg1;
+- (struct __CFString { }*)createUriForResource:(struct __CFString { }*)arg1;
 - (BOOL)setDataForMainHtmlResource:(struct __CFData { }*)arg1;
+- (BOOL)setData:(struct __CFData { }*)arg1 mimeType:(struct __CFString { }*)arg2 forNamedResource:(struct __CFString { }*)arg3;
+- (void)startProgressiveData;
+- (void)setPageElementXPath:(struct __CFString { }*)arg1 withThumbnailsOnLeft:(BOOL)arg2;
+- (void)setDocumentSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithHandler:(id)arg1;
 
 @end

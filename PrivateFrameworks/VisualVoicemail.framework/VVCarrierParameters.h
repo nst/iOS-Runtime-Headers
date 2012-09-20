@@ -9,15 +9,17 @@
 }
 
 + (BOOL)supportsDetachedStorage;
-+ (id)carrierServiceName;
-+ (BOOL)supportsGreetingChanges;
-+ (BOOL)supportsPasswordChanges;
-+ (BOOL)ignoresRoamingSwitch;
-+ (id)messageNotificationFallbackTimeout;
 + (id)retryIntervals;
++ (id)messageNotificationFallbackTimeout;
++ (BOOL)ignoresRoamingSwitch;
++ (BOOL)supportsPasswordChanges;
++ (BOOL)supportsGreetingChanges;
++ (id)carrierServiceName;
 
-- (void)dealloc;
-- (id)initForService:(id)arg1;
 - (id)parameterValueForKey:(id)arg1;
+- (id)initForServiceBundleId:(id)arg1;
+- (void)dealloc;
+- (void)_initForBundle:(id)arg1;
+- (id)initForService:(id)arg1;
 
 @end

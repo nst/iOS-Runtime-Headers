@@ -9,12 +9,12 @@
     NSMutableArray *_folders;
 }
 
-@property(retain) NSMutableArray * folders;
 @property(retain) NSMutableArray * files;
+@property(retain) NSMutableArray * folders;
 
 
-- (void)dealloc;
 - (void)setFiles:(id)arg1;
+- (void)dealloc;
 - (void)finalize;
 - (id)files;
 - (void)setFolders:(id)arg1;

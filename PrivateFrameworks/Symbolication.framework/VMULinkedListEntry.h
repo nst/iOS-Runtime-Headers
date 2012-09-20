@@ -15,12 +15,12 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)initWithSymbolOwner:(id)arg1;
-- (void)setPrev:(id)arg1;
-- (void)setNext:(id)arg1;
-- (id)prev;
-- (id)symbolOwner;
 - (unsigned int)size;
+- (id)prev;
+- (void)setPrev:(id)arg1;
+- (id)initWithSymbolOwner:(id)arg1;
+- (id)symbolOwner;
+- (void)setNext:(id)arg1;
 - (id)next;
 
 @end

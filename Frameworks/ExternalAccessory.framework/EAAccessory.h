@@ -25,10 +25,17 @@
 @property <EAAccessoryDelegate> * delegate;
 
 
+- (id)serialNumber;
+- (id)manufacturer;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)name;
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (BOOL)isConnected;
+- (id)init;
+- (id)macAddress;
+- (BOOL)supportsPointOfInterest;
+- (void)updateItemProperty:(int)arg1 withValue:(id)arg2;
 - (void)updateSystemProperty:(int)arg1 withValue:(id)arg2;
 - (BOOL)supportsAccessibility;
 - (BOOL)sendEphemeris:(id)arg1;
@@ -43,6 +50,7 @@
 - (BOOL)supportsLocation;
 - (id)allPublicProtocolStrings;
 - (BOOL)supportsPublicIap;
+- (id)wakeToken;
 - (int)iPodOutOptionsMask;
 - (unsigned int)eqIndex;
 - (id)eqNames;
@@ -54,6 +62,7 @@
 - (void)setCfAccessoryPortPropertyCallback:(int (*)())arg1;
 - (void)setCfAccessory:(struct __CFAccessory { }*)arg1;
 - (struct __CFAccessory { }*)cfAccessory;
+- (id)_createWakeToken;
 - (id)protocolStrings;
 - (id)hardwareRevision;
 - (id)firmwareRevision;
@@ -68,14 +77,13 @@
 - (void)_openCompleteForSession:(unsigned int)arg1;
 - (void)setIPodOutOptionsMask:(int)arg1;
 - (int (*)())cfAccessoryPortPropertyCallback;
-- (void)_updateAccessoryInfo:(id)arg1;
 - (unsigned int)connectionID;
+- (void)_updateAccessoryInfo:(id)arg1;
+- (BOOL)_internalNotPresentInIAPAccessoriesArray;
+- (void)_setNotPresentInIAPAccessoriesArray:(BOOL)arg1;
 - (void)_setConnected:(BOOL)arg1;
+- (unsigned int)_internalConnectionID;
 - (id)_initWithAccessory:(id)arg1;
-- (id)manufacturer;
-- (id)name;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (id)serialNumber;
+- (BOOL)isConnected;
 
 @end

@@ -2,24 +2,42 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class City;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class City, CLGeocoder;
 
 @interface LocationUpdater : WeatherUpdater  {
     BOOL _isGeoCoding;
-    City *currentCity;
+    CLGeocoder *_geoCoder;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _localWeatherHandler;
+
+    City *_currentCity;
 }
 
 @property(retain) City * currentCity;
 
++ (void)clearSharedLocationUpdater;
 + (id)sharedLocationUpdater;
 
+- (void)cancel;
 - (void)dealloc;
-- (void)updateWeatherForLocation:(id)arg1 city:(id)arg2;
-- (void)setCurrentCity:(id)arg1;
 - (id)currentCity;
-- (void)failCity:(id)arg1;
-- (void)_failed:(int)arg1;
-- (BOOL)isDataValid:(id)arg1;
+- (void)setCurrentCity:(id)arg1;
+- (void)enableProgressIndicator:(BOOL)arg1;
+- (void)updateWeatherForLocation:(id)arg1 city:(id)arg2;
+- (void)updateWeatherForLocation:(id)arg1 city:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)parsedResultCity:(id)arg1;
+- (BOOL)isDataValid:(id)arg1;
+- (void)handleNilCity;
+- (void)_failed:(int)arg1;
+- (void)failCity:(id)arg1;
+- (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(int)arg2;
+- (void)didProcessDocument;
+- (id)aggregateDictionaryDomain;
 
 @end

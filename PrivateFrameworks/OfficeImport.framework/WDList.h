@@ -13,15 +13,15 @@
 
 
 - (void)dealloc;
+- (void)setIndex:(int)arg1;
 - (id)document;
 - (int)index;
-- (id)listDefinition;
-- (int)levelOverrideCount;
-- (id)levelOverrideAt:(int)arg1;
-- (id)levelOverrides;
 - (id)initWithDocument:(id)arg1 listDefinition:(id)arg2;
-- (int)listId;
+- (id)levelOverrides;
+- (id)levelOverrideAt:(int)arg1;
+- (int)levelOverrideCount;
 - (id)addLevelOverride;
-- (void)setIndex:(int)arg1;
+- (int)listId;
+- (id)listDefinition;
 
 @end

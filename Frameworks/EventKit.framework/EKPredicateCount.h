@@ -24,8 +24,8 @@
 
 - (void)terminate;
 - (void)dealloc;
+- (void)run;
 - (void)_receivedCount:(int)arg1;
 - (id)initWithPredicate:(id)arg1 store:(id)arg2 callback:(id)arg3;
-- (void)run;
 
 @end

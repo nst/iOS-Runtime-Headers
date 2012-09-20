@@ -11,42 +11,44 @@
     NSInvocation *_pendingDeactivationInvocation;
 }
 
-@property(retain) NSString * activationContext;
-@property(retain) NSNumber * animationStartTime;
 @property BOOL shouldAnimateIn;
+@property(retain) NSNumber * animationStartTime;
+@property(retain) NSString * activationContext;
 
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (void)requestActivationAnimated:(BOOL)arg1 animateCurrentDisplayOut:(BOOL)arg2 withDelay:(BOOL)arg3;
-- (void)requestDeactivationAnimated:(BOOL)arg1 animateOldDisplayInWithStyle:(int)arg2;
-- (BOOL)allowSuspension;
-- (BOOL)displaysAboveStatusBar;
-- (void)viewWillAnimateOut;
-- (void)animateViewOut;
-- (void)finishedAnimatingIn;
-- (void)finishedAnimatingOut;
-- (BOOL)viewIsReadyToBeRemoved;
-- (BOOL)hasTranslucentBackground;
-- (BOOL)handleLockButtonPressed;
-- (BOOL)handleVolumeUpButtonPressed;
-- (BOOL)handleVolumeDownButtonPressed;
-- (BOOL)handleHeadsetButtonPressed:(BOOL)arg1;
-- (void)didFinishLaunchingFrontmost;
-- (void)setPendingDeactivationInvocation:(id)arg1;
-- (id)pendingDeactivationInvocation;
-- (id)activationContext;
-- (void)setActivationContext:(id)arg1;
-- (BOOL)shouldAnimateIn;
-- (void)setShouldAnimateIn:(BOOL)arg1;
-- (BOOL)isSlidingViewController;
-- (BOOL)handleMenuButtonTap;
+- (id)init;
 - (id)animationStartTime;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidUnload;
 - (void)viewDidLoad;
 - (void)setAnimationStartTime:(id)arg1;
 - (void)didReceiveMemoryWarning;
+- (id)activationContext;
+- (void)setShouldAnimateIn:(BOOL)arg1;
+- (BOOL)shouldAnimateIn;
+- (id)pendingDeactivationInvocation;
+- (void)setPendingDeactivationInvocation:(id)arg1;
+- (void)didFinishLaunchingFrontmost;
+- (void)handleAutoLock;
+- (BOOL)allowStackingOfAlert:(id)arg1;
+- (BOOL)hasTranslucentBackground;
+- (BOOL)viewIsReadyToBeRemoved;
+- (void)finishedAnimatingOut;
+- (void)finishedAnimatingIn;
+- (void)animateViewOut;
+- (void)viewWillAnimateOut;
+- (BOOL)displaysAboveStatusBar;
+- (BOOL)allowSuspension;
+- (void)requestDeactivationAnimated:(BOOL)arg1 animateOldDisplayInWithStyle:(int)arg2;
+- (void)requestActivationAnimated:(BOOL)arg1 animateCurrentDisplayOut:(BOOL)arg2 withDelay:(BOOL)arg3;
+- (BOOL)isSlidingViewController;
+- (BOOL)handleHeadsetButtonPressed:(BOOL)arg1;
+- (BOOL)handleVolumeDownButtonPressed;
+- (BOOL)handleVolumeUpButtonPressed;
+- (BOOL)handleLockButtonPressed;
+- (BOOL)handleMenuButtonTap;
+- (void)setActivationContext:(id)arg1;
 
 @end

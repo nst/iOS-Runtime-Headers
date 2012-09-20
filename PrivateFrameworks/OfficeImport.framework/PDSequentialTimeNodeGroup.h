@@ -23,19 +23,19 @@
 - (double)delay;
 - (void)setDirection:(double)arg1;
 - (int)triggerType;
-- (id)level1ParallelTimeNodeGroup;
-- (id)level2ParallelTimeNodeGroup;
-- (id)level3SetBehavior;
 - (void)setTriggerType:(int)arg1;
-- (void)setTargetElement:(id)arg1;
-- (int)iterateType;
-- (void)setPresetClass:(int)arg1;
+- (id)level3SetBehavior;
+- (id)level2ParallelTimeNodeGroup;
+- (id)level1ParallelTimeNodeGroup;
 - (void)setIterateType:(int)arg1;
+- (void)setPresetClass:(int)arg1;
+- (int)iterateType;
+- (void)setTargetElement:(id)arg1;
+- (int)presetId;
+- (void)setGroupId:(id)arg1;
 - (id)targetElement;
 - (int)presetClass;
-- (int)presetId;
 - (void)setPresetId:(int)arg1;
-- (void)setGroupId:(id)arg1;
 - (id)groupId;
 
 @end

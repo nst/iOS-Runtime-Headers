@@ -12,21 +12,21 @@
 
 + (id)defaultProperties;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)init;
+- (void)setParent:(id)arg1 myRestrictedClass:(Class)arg2;
 - (void)flatten;
-- (BOOL)isMerged;
-- (void)setMerged:(BOOL)arg1;
-- (BOOL)isMergedWithParent;
-- (void)setMergedWithParent:(BOOL)arg1;
-- (id)parent;
 - (void)removeUnnecessaryOverrides;
+- (void)setMerged:(BOOL)arg1;
+- (BOOL)isMerged;
 - (BOOL)isMergedPropertyForSelector:(SEL)arg1;
 - (id)overrideForSelector:(SEL)arg1;
-- (void)setParent:(id)arg1;
-- (void)setParent:(id)arg1 myRestrictedClass:(Class)arg2;
 - (id)initWithDefaults;
+- (void)setMergedWithParent:(BOOL)arg1;
+- (BOOL)isMergedWithParent;
+- (void)setParent:(id)arg1;
+- (id)parent;
 
 @end

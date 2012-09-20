@@ -16,7 +16,7 @@
 - (void)_appendSearchResults:(id)arg1 identifiers:(id)arg2 abPropertyType:(int)arg3 toArray:(id)arg4;
 - (void)setSearchABPropertyTypes:(id)arg1;
 - (id)resultsForText:(id)arg1;
-- (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (id)recipientWithAddress:(id)arg1;
+- (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 
 @end

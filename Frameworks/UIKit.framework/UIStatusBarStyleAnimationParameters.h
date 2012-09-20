@@ -4,12 +4,16 @@
 
 @interface UIStatusBarStyleAnimationParameters : UIStatusBarAnimationParameters  {
     int _styleAnimation;
+    double _delay;
 }
 
 @property int styleAnimation;
+@property double delay;
 
 
 - (int)styleAnimation;
+- (void)setDelay:(double)arg1;
+- (double)delay;
 - (void)setStyleAnimation:(int)arg1;
 - (id)initWithDefaultParameters;
 

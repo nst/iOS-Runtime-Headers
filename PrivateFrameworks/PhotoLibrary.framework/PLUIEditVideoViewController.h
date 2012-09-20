@@ -11,18 +11,24 @@
     id _delegate;
     Class _viewClass;
     unsigned int _canCreateMetadata;
+    BOOL _parentInPopoverException;
 }
 
+@property BOOL parentInPopoverException;
 
+
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (id)initWithProperties:(id)arg1;
 - (BOOL)_displaysFullScreen;
+- (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)navigationItem;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)setViewClass:(Class)arg1;
 - (id)initWithPhoto:(id)arg1 trimTitle:(id)arg2;
+- (BOOL)parentInPopoverException;
+- (void)setParentInPopoverException:(BOOL)arg1;
 - (void)_setupNavigationItemAndTrimTitle:(id)arg1;
 - (void)_cancelTrim:(id)arg1;
 - (BOOL)_editingForThirdParty;

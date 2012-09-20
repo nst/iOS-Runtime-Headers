@@ -12,14 +12,14 @@
 @property(readonly) int manifestType;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)removeItemsWithAssetPaths:(id)arg1 completionBlock:(id)arg2;
+- (id)initWithManifestType:(int)arg1;
 - (void)removeItemWithAssetPath:(id)arg1 completionBlock:(id)arg2;
 - (void)rebuildManifestWithCompletionBlock:(id)arg1;
 - (int)manifestType;
 - (void)getPathsForFilesWithClass:(int)arg1 completionBlock:(id)arg2;
 - (void)_removeItemsWithAssetPaths:(id)arg1 completionBlock:(id)arg2;
-- (void)removeItemsWithAssetPaths:(id)arg1 completionBlock:(id)arg2;
-- (id)initWithManifestType:(int)arg1;
 
 @end

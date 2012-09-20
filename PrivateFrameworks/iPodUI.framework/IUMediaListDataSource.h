@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class IUVariableCellConfigurationCache, IUActionRowDataSource, NSString, IUMediaListAggregateViewConfiguration, UIColor, IUSectionInfo;
 
 @interface IUMediaListDataSource : IUMediaDataSource  {
@@ -14,8 +18,14 @@
     IUActionRowDataSource *_prefixActionRows;
     IUSectionInfo *_sectionInfo;
     IUActionRowDataSource *_suffixActionRows;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _reloadActionRowsCompletion;
+
 }
 
+@property(copy) id reloadActionRowsCompletion;
 @property(readonly) unsigned int count;
 @property(readonly) BOOL hasPlayableItems;
 @property(readonly) NSString * countStringFormat;
@@ -24,7 +34,6 @@
 @property(readonly) float rowHeight;
 @property(readonly) BOOL skipSingleItemLists;
 @property(getter=isEmpty,readonly) BOOL empty;
-@property(getter=isEmptyAfterFiltering,readonly) BOOL emptyAfterFiltering;
 @property Class cellConfigurationClass;
 @property(readonly) struct CGSize { float x1; float x2; } thumbnailSize;
 @property(readonly) struct CGPoint { float x1; float x2; } actualImageOrigin;
@@ -45,31 +54,33 @@
 @property(readonly) IUActionRowDataSource * suffixActionRows;
 @property(readonly) unsigned int countOfActionRows;
 @property(readonly) BOOL hasActionRowsEvenWhenNoOtherRowsExist;
+@property(readonly) BOOL hideActionRowsOnAppear;
 @property(retain) IUSectionInfo * sectionInfo;
 @property(readonly) unsigned int numberOfSections;
 @property(readonly) float sectionTitleLeftPadding;
 @property(readonly) BOOL shouldShowGlobalSectionHeader;
 @property(readonly) BOOL allowsDeletion;
 @property(readonly) BOOL allowsRearrange;
-@property(readonly) BOOL allowsDownloadingAllEntities;
+@property(readonly) BOOL canShowDownloadAllEntities;
 
 
-- (unsigned int)count;
-- (id)init;
-- (void)dealloc;
-- (id)sectionInfo;
-- (float)rowHeight;
-- (unsigned int)numberOfSections;
-- (BOOL)isEmpty;
-- (void)invalidate;
-- (void)reloadData;
 - (int)initialSelectedIndex;
 - (void)setCellConfigurationClass:(Class)arg1;
 - (Class)cellConfigurationClass;
+- (id)sectionInfo;
+- (void)invalidate;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
+- (float)rowHeight;
+- (unsigned int)numberOfSections;
+- (BOOL)isEmpty;
+- (void)reloadData;
+- (void)setReloadActionRowsCompletion:(id)arg1;
+- (id)reloadActionRowsCompletion;
 - (void)clearCachedActionState;
 - (void)cacheActionStateForActionWithContext:(id)arg1;
 - (BOOL)shouldDrawAsDisabledForIndex:(unsigned int)arg1;
-- (BOOL)isEmptyAfterFiltering;
 - (id)selectionConfirmationAlertForIndex:(unsigned int)arg1;
 - (void)reloadIsEmpty;
 - (BOOL)gridTitleVisibleAtIndex:(unsigned int)arg1;
@@ -85,6 +96,7 @@
 - (id)gridTitleColor;
 - (id)gridAlbumFillColor;
 - (id)gridBackgroundColor;
+- (int)mediaEditingDisclosureStyleForIndex:(unsigned int)arg1;
 - (unsigned int)destinationIndexForMovingIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (BOOL)deleteIndex:(unsigned int)arg1;
 - (id)countStringFormat;
@@ -115,7 +127,6 @@
 - (id)viewControllerContextForActionRow:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (BOOL)deleteRemovesEntireGroup;
-- (BOOL)allowsDownloadingAllEntities;
 - (BOOL)allowsDeletion;
 - (unsigned int)removeActionRowWithTag:(int)arg1;
 - (id)actionRowAtIndex:(unsigned int)arg1;
@@ -123,15 +134,17 @@
 - (id)newGridImageView;
 - (struct CGPoint { float x1; float x2; })actualImageOrigin;
 - (struct CGSize { float x1; float x2; })thumbnailSize;
+- (BOOL)hideActionRowsOnAppear;
 - (BOOL)shouldShowGlobalSectionHeader;
 - (float)sectionTitleLeftPadding;
 - (void)reloadActionRows;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
 - (int)mediaDisclosureStyleForIndex:(unsigned int)arg1;
-- (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
+- (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
 - (id)accessoryViewForIndex:(unsigned int)arg1;
 - (id)prefixActionRows;
 - (unsigned int)countOfActionRows;
+- (BOOL)canShowDownloadAllEntities;
 - (BOOL)hasPlayableItems;
 
 @end

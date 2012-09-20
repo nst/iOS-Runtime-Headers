@@ -16,9 +16,9 @@
 
 
 - (int)type;
-- (BOOL)animated;
-- (id)viewController;
 - (void)setAnimated:(BOOL)arg1;
+- (id)viewController;
+- (BOOL)animated;
 - (void)setViewController:(id)arg1;
 - (void)setType:(int)arg1;
 

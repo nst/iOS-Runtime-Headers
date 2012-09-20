@@ -7,43 +7,48 @@
 @interface GKTurnBasedParticipantInternal : GKInternalRepresentation  {
     NSString *_sessionID;
     NSDate *_lastTurnDate;
+    NSDate *_timeoutDate;
     NSString *_playerID;
     NSString *_invitedBy;
     NSString *_inviteMessage;
     NSString *_status;
     int _matchOutcome;
-    int _order;
+    int _slot;
 }
 
 @property(retain) NSString * sessionID;
 @property(retain) NSDate * lastTurnDate;
+@property(retain) NSDate * timeoutDate;
 @property(retain) NSString * playerID;
 @property(retain) NSString * invitedBy;
 @property(retain) NSString * inviteMessage;
 @property(retain) NSString * status;
 @property int matchOutcome;
-@property int order;
+@property int slot;
 
 + (id)codedPropertyKeys;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
-- (void)setOrder:(int)arg1;
-- (void)setInvitedBy:(id)arg1;
-- (void)setLastTurnDate:(id)arg1;
+- (void)setSlot:(int)arg1;
 - (void)setMatchOutcome:(int)arg1;
-- (int)order;
-- (int)matchOutcome;
+- (void)setInvitedBy:(id)arg1;
 - (id)invitedBy;
+- (void)setTimeoutDate:(id)arg1;
+- (id)timeoutDate;
+- (int)matchOutcome;
+- (void)setLastTurnDate:(id)arg1;
 - (id)lastTurnDate;
-- (id)inviteMessage;
+- (id)serverRepresentation;
 - (void)setInviteMessage:(id)arg1;
-- (void)setStatus:(id)arg1;
-- (id)status;
+- (id)inviteMessage;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
-- (id)sessionID;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (int)slot;
+- (void)setStatus:(id)arg1;
+- (id)status;
 - (void)setSessionID:(id)arg1;
+- (id)sessionID;
 
 @end

@@ -13,9 +13,9 @@
 - (void)setChecked:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (id)enabledIcon;
-- (id)_shadowHighlightedColor;
 - (id)highlightedIcon;
+- (id)_shadowHighlightedColor;
+- (id)enabledIcon;
 - (id)_shadowColor;
 
 @end

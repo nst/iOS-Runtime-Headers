@@ -6,24 +6,24 @@
 
 @interface WDATextBox : NSObject  {
     WDText *mText;
-    unsigned int mNextTextBoxId;
+    unsigned long mNextTextBoxId;
     boolmOle;
     WDDocument *mDocument;
     WDAContent *mParent;
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)document;
 - (id)text;
 - (void)setText:(id)arg1;
-- (unsigned long)nextTextBoxId;
-- (void)setDocument:(id)arg1;
 - (void)setNextTextBoxId:(unsigned long)arg1;
+- (void)setDocument:(id)arg1;
 - (BOOL)isOle;
-- (id)parent;
 - (void)setOle:(BOOL)arg1;
 - (void)setParent:(id)arg1;
+- (id)parent;
+- (unsigned long)nextTextBoxId;
 
 @end

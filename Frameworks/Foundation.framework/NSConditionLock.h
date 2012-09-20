@@ -8,21 +8,21 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (BOOL)tryLock;
+- (int)condition;
+- (void)finalize;
+- (void)unlock;
+- (void)lock;
 - (void)unlockWithCondition:(int)arg1;
 - (BOOL)tryLockWhenCondition:(int)arg1;
 - (void)lockWhenCondition:(int)arg1;
 - (BOOL)lockWhenCondition:(int)arg1 beforeDate:(id)arg2;
 - (id)initWithCondition:(int)arg1;
 - (BOOL)lockBeforeDate:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (int)condition;
-- (void)finalize;
-- (void)unlock;
-- (void)lock;
-- (id)name;
-- (BOOL)tryLock;
 
 @end

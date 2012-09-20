@@ -36,22 +36,22 @@
 @property <PLDataArrayInputStreamProgressDelegate> * progressDelegate;
 
 
+- (void)_scheduleCallback;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (void)close;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (BOOL)hasBytesAvailable;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
+- (id)streamError;
 - (unsigned int)streamStatus;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)_updateProgress;
-- (void)close;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)open;
-- (void)_scheduleCallback;
 - (void)setProgressDelegate:(id)arg1;
 - (id)progressDelegate;
 - (void)_streamEventTrigger;
@@ -59,5 +59,6 @@
 - (void)_scheduleProgressUpdate;
 - (unsigned int)totalBytes;
 - (unsigned int)bytesRead;
+- (void)_updateProgress;
 
 @end

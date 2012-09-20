@@ -10,15 +10,15 @@
 @property(copy) NSString * aceHostHeader;
 @property BOOL reconnectNow;
 
-+ (id)setConnectionHeader;
 + (id)setConnectionHeaderWithDictionary:(id)arg1 context:(id)arg2;
++ (id)setConnectionHeader;
 
 - (id)groupIdentifier;
-- (id)aceHostHeader;
-- (void)setAceHostHeader:(id)arg1;
-- (BOOL)reconnectNow;
 - (void)setReconnectNow:(BOOL)arg1;
-- (id)encodedClassName;
+- (BOOL)reconnectNow;
+- (void)setAceHostHeader:(id)arg1;
+- (id)aceHostHeader;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

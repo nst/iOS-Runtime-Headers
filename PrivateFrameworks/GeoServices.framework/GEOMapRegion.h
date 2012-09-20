@@ -2,15 +2,20 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
+@class NSMutableArray;
+
 @interface GEOMapRegion : PBCodable  {
-    BOOL _hasSouthLat;
-    double _southLat;
-    BOOL _hasWestLng;
-    double _westLng;
-    BOOL _hasNorthLat;
-    double _northLat;
-    BOOL _hasEastLng;
     double _eastLng;
+    double _northLat;
+    double _southLat;
+    double _westLng;
+    NSMutableArray *_vertexs;
+    struct { 
+        unsigned int eastLng : 1; 
+        unsigned int northLat : 1; 
+        unsigned int southLat : 1; 
+        unsigned int westLng : 1; 
+    } _has;
 }
 
 @property(readonly) double centerLat;
@@ -25,38 +30,48 @@
 @property double northLat;
 @property BOOL hasEastLng;
 @property double eastLng;
+@property(retain) NSMutableArray * vertexs;
 
 
+- (BOOL)hasWestLng;
+- (BOOL)hasSouthLat;
+- (BOOL)hasNorthLat;
+- (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)dictionaryRepresentation;
+- (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
+- (BOOL)hasEastLng;
+- (double)centerLng;
+- (double)centerLat;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)initWithMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setWestLng:(double)arg1;
+- (void)setEastLng:(double)arg1;
+- (void)setSouthLat:(double)arg1;
+- (void)setNorthLat:(double)arg1;
+- (double)eastLng;
+- (double)southLat;
+- (double)westLng;
+- (double)northLat;
+- (id)vertexs;
 - (void)setHasEastLng:(BOOL)arg1;
 - (void)setHasNorthLat:(BOOL)arg1;
 - (void)setHasWestLng:(BOOL)arg1;
 - (void)setHasSouthLat:(BOOL)arg1;
-- (void)setSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
-- (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
-- (id)dictionaryRepresentation;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (id)vertexAtIndex:(unsigned int)arg1;
+- (void)clearVertexs;
+- (unsigned int)vertexsCount;
+- (void)addVertex:(id)arg1;
+- (void)setVertexs:(id)arg1;
 - (double)spanLng;
 - (double)spanLat;
-- (double)centerLng;
-- (double)centerLat;
 - (id)initWithSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
-- (double)westLng;
-- (double)eastLng;
-- (double)southLat;
-- (double)northLat;
-- (BOOL)hasWestLng;
-- (BOOL)hasEastLng;
-- (BOOL)hasSouthLat;
-- (BOOL)hasNorthLat;
-- (void)setEastLng:(double)arg1;
-- (void)setNorthLat:(double)arg1;
-- (void)setWestLng:(double)arg1;
-- (void)setSouthLat:(double)arg1;
-- (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
-- (id)initWithGMMGeometry:(id)arg1;
-- (id)initWithGMMMapInfo:(id)arg1;
+- (void)setSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
+- (void)setMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)readFrom:(id)arg1;
 
 @end

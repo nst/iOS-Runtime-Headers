@@ -24,23 +24,23 @@
 }
 
 
-- (id)cancel;
 - (id)perform;
+- (id)cancel;
 - (void)dealloc;
-- (id)_session;
-- (void)setResultDisplayString:(id)arg1;
-- (void)setStatusDisplayString:(id)arg1;
-- (void)setSpokenFeedbackString:(id)arg1;
-- (void)setSpokenFeedbackAttributedString:(id)arg1;
 - (void)completeWithNextAction:(id)arg1 error:(id)arg2;
+- (void)setSpokenFeedbackAttributedString:(id)arg1;
+- (void)setSpokenFeedbackString:(id)arg1;
+- (void)setStatusDisplayString:(id)arg1;
+- (void)setResultDisplayString:(id)arg1;
+- (id)_session;
 - (BOOL)sensitiveActionsEnabled;
-- (void)_continueAfterDeferredStart;
-- (BOOL)_hasDeferredStartCallback;
-- (int)completionType;
-- (void)_setSession:(id)arg1;
-- (id)spokenFeedbackString;
-- (id)spokenFeedbackAttributedString;
-- (id)resultDisplayString;
 - (id)statusDisplayString;
+- (id)resultDisplayString;
+- (id)spokenFeedbackAttributedString;
+- (id)spokenFeedbackString;
+- (void)_setSession:(id)arg1;
+- (int)completionType;
+- (BOOL)_hasDeferredStartCallback;
+- (void)_continueAfterDeferredStart;
 
 @end

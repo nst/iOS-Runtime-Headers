@@ -13,9 +13,9 @@
 + (id)resumeWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

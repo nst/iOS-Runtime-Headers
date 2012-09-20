@@ -11,8 +11,9 @@
 + (int)mediaEntityType;
 + (id)tabBarItemTitleKey;
 
-- (void)dealloc;
 - (void)setQuery:(id)arg1;
+- (void)dealloc;
+- (void)reloadData;
 - (id)_tvShowNameForTallyingFromItem:(id)arg1;
 - (unsigned int)_seasonCountForShowOfSeasonAtIndex:(unsigned int)arg1;
 - (id)detailMediaQueryForMediaItem:(id)arg1 baseQuery:(id)arg2;

@@ -21,11 +21,6 @@
 @property(copy) NSArray * targetPeers;
 
 
-- (id)messageID;
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)setTargetSessionToken:(id)arg1;
 - (id)targetSessionToken;
 - (void)setTargetToken:(id)arg1;
@@ -37,6 +32,11 @@
 - (void)setTargetPeerID:(id)arg1;
 - (id)targetPeerID;
 - (id)requiredKeys;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)messageID;
+- (id)messageBody;
 - (void)setMessageID:(id)arg1;
 
 @end

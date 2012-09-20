@@ -15,6 +15,7 @@
     CoreDAVItemWithNoChildren *_maxImageSize;
     CoreDAVItemWithNoChildren *_invalidImageType;
     CoreDAVItemWithNoChildren *_imageError;
+    CoreDAVItemWithNoChildren *_maxAttendees;
     CoreDAVLeafItem *_status;
 }
 
@@ -28,16 +29,20 @@
 @property(retain) CoreDAVItemWithNoChildren * maxImageSize;
 @property(retain) CoreDAVItemWithNoChildren * invalidImageType;
 @property(retain) CoreDAVItemWithNoChildren * imageError;
+@property(retain) CoreDAVItemWithNoChildren * maxAttendees;
 @property(retain) CoreDAVLeafItem * status;
 
++ (id)copyParseRules;
 
-- (void)setUid:(id)arg1;
+- (id)maxImageSize;
+- (void)setMaxImageSize:(id)arg1;
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setStatus:(id)arg1;
 - (id)status;
-- (id)copyParseRules;
+- (id)uid;
+- (void)setMaxAttendees:(id)arg1;
 - (void)setImageError:(id)arg1;
 - (void)setInvalidImageType:(id)arg1;
 - (void)setCtagOkay:(id)arg1;
@@ -45,6 +50,7 @@
 - (void)setNoUIDConflict:(id)arg1;
 - (void)setValidSyncToken:(id)arg1;
 - (void)setNumberOfMatchesWithinLimits:(id)arg1;
+- (id)maxAttendees;
 - (id)imageError;
 - (id)invalidImageType;
 - (id)ctagOkay;
@@ -54,8 +60,6 @@
 - (id)numberOfMatchesWithinLimits;
 - (void)setMaxResourceSize:(id)arg1;
 - (id)maxResourceSize;
-- (id)uid;
-- (id)maxImageSize;
-- (void)setMaxImageSize:(id)arg1;
+- (void)setUid:(id)arg1;
 
 @end

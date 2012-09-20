@@ -7,21 +7,21 @@
 }
 
 
-- (id)description;
-- (id)init;
-- (BOOL)isSimilarTo:(id)arg1;
-- (BOOL)isFirstLayout;
-- (void)setIsFirstLayout:(BOOL)arg1;
 - (void)addColumnBreaks;
+- (void)setIsFirstLayout:(BOOL)arg1;
+- (BOOL)isFirstLayout;
+- (BOOL)isSimilarTo:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layoutAreaBounds;
-- (BOOL)isBoxRegion;
-- (BOOL)isGraphicalRegion;
-- (BOOL)isRowRegion;
-- (void)setIsImageRegion:(BOOL)arg1;
-- (BOOL)isImageRegion;
 - (BOOL)isShapeRegion;
+- (BOOL)isImageRegion;
+- (void)setIsImageRegion:(BOOL)arg1;
+- (BOOL)isRowRegion;
+- (BOOL)isGraphicalRegion;
+- (BOOL)isBoxRegion;
 - (float)selectionBottom;
 - (void)accept:(id)arg1;
+- (id)description;
+- (id)init;
 - (id)properties;
 
 @end

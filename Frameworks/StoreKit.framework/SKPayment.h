@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSString, NSData;
+@class NSDictionary, NSString, NSData;
 
 @interface SKPayment : NSObject <NSCopying, NSMutableCopying> {
     id _internal;
@@ -11,17 +11,19 @@
 @property(readonly) NSString * productIdentifier;
 @property(readonly) NSData * requestData;
 @property(readonly) int quantity;
+@property(readonly) NSDictionary * requestParameters;
 
 + (id)paymentWithProductIdentifier:(id)arg1;
 + (id)paymentWithProduct:(id)arg1;
 
+- (id)requestParameters;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)requestData;
 - (int)quantity;
 - (id)productIdentifier;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 
 @end

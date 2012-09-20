@@ -28,6 +28,7 @@
 @property struct CGSize { float x1; float x2; } centerToSelectionPointOffset;
 
 
+- (id)touch;
 - (void)dealloc;
 - (void)setCenterToSelectionPointOffset:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })touchToCenterOffset;
@@ -44,7 +45,6 @@
 - (void)snapToCornerOfRange:(id)arg1 atStart:(BOOL)arg2;
 - (id)initWithPosition:(int)arg1 selectionView:(id)arg2;
 - (void)setTouch:(id)arg1;
-- (id)touch;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (int)position;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

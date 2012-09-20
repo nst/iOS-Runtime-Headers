@@ -12,14 +12,14 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setDelay:(int)arg1;
 - (int)delay;
-- (BOOL)hasDelay;
-- (int)triggerEvent;
-- (void)setTriggerEvent:(int)arg1;
-- (id)tgtElement;
 - (void)setTgtElement:(id)arg1;
+- (id)tgtElement;
+- (int)triggerEvent;
+- (BOOL)hasDelay;
+- (void)setTriggerEvent:(int)arg1;
 
 @end

@@ -9,18 +9,12 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(retain) <ABStyleProvider> * styleProvider;
 @property(retain) ABModel * model;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 
 - (void)dealloc;
-- (id)initWithModel:(id)arg1;
-- (id)peoplePickerNavigationController;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
-- (void)setModel:(id)arg1;
 - (void)updateNavigationButtons;
-- (void)setAddressBook:(void*)arg1;
 - (id)model;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
@@ -31,6 +25,12 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (struct CGSize { float x1; float x2; })contentSize;
+- (void)setModel:(id)arg1;
 - (int)behavior;
+- (id)initWithModel:(id)arg1;
+- (id)peoplePickerNavigationController;
+- (id)styleProvider;
+- (void)setStyleProvider:(id)arg1;
+- (void)setAddressBook:(void*)arg1;
 
 @end

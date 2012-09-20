@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKSendingProgressView, UIView, NSString, NSTimer, CKAggregateConversation, NSMutableSet;
+@class CKSendingProgressView, UIView, NSString, CKConversation, NSTimer, NSMutableSet;
 
 @interface CKTranscriptStatusController : NSObject  {
     UIView *_multipleRecipientTitleView;
     CKSendingProgressView *_statusView;
     NSString *_title;
-    CKAggregateConversation *_conversation;
+    CKConversation *_conversation;
     float _lastVal;
     NSString *_lastMsg;
     NSTimer *_progressUpdateTimer;
@@ -21,37 +21,37 @@
 }
 
 @property id delegate;
+@property(retain) CKConversation * conversation;
 @property(copy) NSString * title;
-@property(retain) CKAggregateConversation * conversation;
 
 
-- (void)dealloc;
-- (void)_updateTitle:(BOOL)arg1;
-- (void)_hideName;
-- (void)_updateCurrentMessages;
-- (BOOL)_shouldShowProgress;
-- (void)_updateNavItemTitleView:(BOOL)arg1;
-- (void)_startUpdatingProgress;
-- (id)_localizedTitleForSendingPart:(int)arg1 ofPart:(int)arg2;
-- (id)_statusView;
-- (void)_refreshNavigationItemViewAnimate:(BOOL)arg1;
-- (BOOL)_calcVals:(BOOL*)arg1;
-- (void)_refreshNavigationItemView;
-- (void)_finishProgress;
-- (float)_generateVal;
-- (id)_generateStatusTitle;
-- (void)brieflyShowName;
-- (void)resetProgress;
-- (id)conversation;
-- (void)setConversation:(id)arg1;
-- (void)refresh;
 - (void)resume;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)reset;
+- (void)dealloc;
 - (id)_title;
 - (id)title;
 - (void)suspend;
-- (id)delegate;
 - (void)setTitle:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (id)_generateStatusTitle;
+- (float)_generateVal;
+- (void)_finishProgress;
+- (void)_refreshNavigationItemView;
+- (BOOL)_calcVals:(BOOL*)arg1;
+- (void)_refreshNavigationItemViewAnimate:(BOOL)arg1;
+- (id)_statusView;
+- (id)_localizedTitleForSendingPart:(int)arg1 ofPart:(int)arg2;
+- (void)_startUpdatingProgress;
+- (void)_updateNavItemTitleView:(BOOL)arg1;
+- (BOOL)_shouldShowProgress;
+- (void)_updateCurrentMessages;
+- (void)_hideName;
+- (void)_updateTitle:(BOOL)arg1;
+- (void)setConversation:(id)arg1;
+- (void)resetProgress;
+- (id)conversation;
+- (void)brieflyShowName;
+- (void)refresh;
 
 @end

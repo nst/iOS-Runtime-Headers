@@ -9,15 +9,15 @@
 
 @property(copy) NSString * requestId;
 @property(copy) NSString * snippetId;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)snippetInteraction;
 + (id)snippetInteractionWithDictionary:(id)arg1 context:(id)arg2;
++ (id)snippetInteraction;
 
 - (id)groupIdentifier;
-- (id)snippetId;
 - (void)setSnippetId:(id)arg1;
+- (id)snippetId;
 - (id)encodedClassName;
 - (void)setRequestId:(id)arg1;
 - (id)requestId;

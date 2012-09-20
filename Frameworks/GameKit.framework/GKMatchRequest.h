@@ -2,15 +2,20 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSArray, NSString, GKMatchRequestInternal;
 
 @interface GKMatchRequest : NSObject  {
-    unsigned int _minPlayers;
-    unsigned int _maxPlayers;
-    unsigned int _playerGroup;
-    unsigned int _playerAttributes;
-    BOOL _attributesSet;
-    NSArray *_playersToInvite;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _inviteeResponseHandler;
+
+    GKMatchRequestInternal *_internal;
+    unsigned int _defaultNumberOfPlayers;
 }
 
 @property unsigned int minPlayers;
@@ -18,25 +23,35 @@
 @property unsigned int playerGroup;
 @property unsigned int playerAttributes;
 @property(retain) NSArray * playersToInvite;
-@property BOOL attributesSet;
+@property(copy) NSString * inviteMessage;
+@property unsigned int defaultNumberOfPlayers;
+@property(copy) id inviteeResponseHandler;
+@property(retain) GKMatchRequestInternal * internal;
 
++ (unsigned int)maxPlayersAllowedForMatchOfType:(unsigned int)arg1;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)playersToInvite;
-- (BOOL)attributesSet;
-- (unsigned int)playerAttributes;
-- (unsigned int)playerGroup;
-- (unsigned int)maxPlayers;
-- (unsigned int)minPlayers;
-- (BOOL)isTurnBasedValid;
+- (void)setDefaultNumberOfPlayers:(unsigned int)arg1;
+- (unsigned int)defaultNumberOfPlayers;
+- (void)removeLocalPlayerFromPlayersToInvite;
 - (BOOL)isValidForHosted:(BOOL)arg1;
-- (void)setPlayersToInvite:(id)arg1;
-- (void)setAttributesSet:(BOOL)arg1;
-- (void)setPlayerAttributes:(unsigned int)arg1;
-- (void)setMaxPlayers:(unsigned int)arg1;
-- (void)setMinPlayers:(unsigned int)arg1;
-- (void)setPlayerGroup:(unsigned int)arg1;
+- (BOOL)isValidWithMax:(unsigned int)arg1;
+- (BOOL)defaultNumberOfPlayersIsValid;
+- (void)setInviteeResponseHandler:(id)arg1;
+- (id)inviteeResponseHandler;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (BOOL)isTurnBasedValid;
+- (void)setInternal:(id)arg1;
+- (id)internal;
+- (id)description;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

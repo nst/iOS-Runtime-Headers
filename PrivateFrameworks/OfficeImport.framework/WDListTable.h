@@ -14,8 +14,8 @@
 - (id)initWithDocument:(id)arg1;
 - (id)document;
 - (id)lists;
+- (id)addList:(id)arg1;
 - (int)listCount;
 - (id)listAt:(int)arg1;
-- (id)addList:(id)arg1;
 
 @end

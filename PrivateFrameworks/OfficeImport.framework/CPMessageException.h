@@ -9,16 +9,16 @@
 }
 
 + (void)initialize;
-+ (id)exceptionWithUntaggedMessage:(id)arg1;
 + (id)nsError:(id)arg1 domain:(id)arg2;
 + (void)raiseUntaggedMessage:(id)arg1;
++ (id)exceptionWithUntaggedMessage:(id)arg1;
 + (id)exceptionWithMessage:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 + (void)raise:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 
 - (id)description;
 - (void)dealloc;
-- (id)initWithMessage:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 - (id)initWithUntaggedMessage:(id)arg1;
+- (id)initWithMessage:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 - (id)getEntry;
 
 @end

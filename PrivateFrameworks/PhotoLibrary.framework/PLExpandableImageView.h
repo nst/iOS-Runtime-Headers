@@ -61,7 +61,8 @@
 @property(copy) NSString * name;
 @property(readonly) struct CGSize { float x1; float x2; } imageSize;
 @property(retain) PLVideoView * videoView;
-@property(getter=borderIsVisible) BOOL borderVisible;
+@property(readonly) BOOL showsPlaceholder;
+@property(getter=isBorderAndAccessoriesVisible) BOOL borderAndAccessoriesVisible;
 @property(retain) PLManagedAsset * photo;
 @property(readonly) UIImageView * imageView;
 @property(getter=isShadowEnabled) BOOL shadowEnabled;
@@ -71,23 +72,23 @@
 
 + (float)imageBorderWidth;
 
-- (void)setName:(id)arg1;
-- (void)dealloc;
 - (void)setVideoView:(id)arg1;
 - (id)videoView;
-- (void)setPhoto:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)name;
+- (void)dealloc;
 - (id)imageView;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)image;
-- (id)name;
+- (id)_contentView;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPhoto:(id)arg1;
 - (float)imageRotationAngle;
-- (BOOL)borderIsVisible;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfImage;
 - (BOOL)isBeingManipulated;
 - (void)renderSnapshotInContext:(struct CGContext { }*)arg1;
@@ -96,8 +97,11 @@
 - (void)setTransitionProgress:(float)arg1;
 - (BOOL)isShadowEnabled;
 - (void)setShadowEnabled:(BOOL)arg1;
+- (void)setShowsPlaceholder:(BOOL)arg1 withOpaqueState:(BOOL)arg2;
+- (BOOL)showsPlaceholder;
 - (void)setPosterImage:(id)arg1 regionOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setImage:(id)arg1 isFullscreen:(BOOL)arg2;
+- (BOOL)isBorderAndAccessoriesVisible;
 - (void)setTransformAndCenterForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_bounceBack:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_bounceToPlace:(id)arg1 finished:(id)arg2 context:(void*)arg3;
@@ -106,20 +110,19 @@
 - (float)_currentScale;
 - (struct CGSize { float x1; float x2; })_newSizeFromSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1 angle:(float)arg2;
-- (void)_updateBorderAlpha;
+- (void)_updateBorderAndAccessoriesAlpha;
 - (void)_updatePinchWidthAndScaleWithLeftPoint:(struct CGPoint { float x1; float x2; })arg1 rightPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (float)_borderAlphaForExpansionFraction:(float)arg1;
 - (void)_setOriginalSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)_contentView;
-- (float)_expansionFractionForBorderAlpha:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 frameStyle:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 frameStyle:(int)arg2 withBorder:(BOOL)arg3;
-- (void)setBorderVisible:(BOOL)arg1;
+- (void)setBorderAndAccessoriesVisible:(BOOL)arg1;
 - (float)_expansionFraction;
 - (void)finishTransition;
 - (float)completeTrackingPinch:(id)arg1 toState:(int)arg2 duration:(double)arg3;
 - (float)continueTrackingPinch:(id)arg1;
 - (void)beginTrackingPinch:(id)arg1;
+- (void)stateDidChangeFrom:(int)arg1;
 - (id)photo;
 
 @end

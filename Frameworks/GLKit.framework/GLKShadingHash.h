@@ -12,11 +12,12 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (void)setCompiledFsh:(id)arg1 forKey:(id)arg2;
 - (id)compiledFshForKey:(id)arg1;
 - (void)setCompiledVsh:(id)arg1 forKey:(id)arg2;
 - (id)compiledVshForKey:(id)arg1;
+- (void)purgeAllShaders;
+- (void)dealloc;
+- (id)init;
 
 @end

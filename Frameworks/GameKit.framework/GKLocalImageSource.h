@@ -2,19 +2,19 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
+@class NSMapTable;
+
 @interface GKLocalImageSource : GKImageSource  {
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _imageSize;
+    NSMapTable *_keysForSizes;
 }
 
-@property struct CGSize { float x1; float x2; } imageSize;
+@property(retain) NSMapTable * keysForSizes;
 
 
-- (void)loadImageForIdentifier:(id)arg1 imageBrush:(id)arg2 withCompletionHandler:(id)arg3;
-- (id)renderedImageWithImage:(id)arg1 imageBrush:(id)arg2 returnContext:(id*)arg3;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (void)setKeysForSizes:(id)arg1;
+- (id)keysForSizes;
+- (id)imageForImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)keyForImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)dealloc;
 
 @end

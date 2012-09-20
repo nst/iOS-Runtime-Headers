@@ -12,10 +12,10 @@
 
 
 - (void)dealloc;
-- (id)currentParagraph;
 - (id)nextVmlShapeIdToTextBoxMap;
-- (id)initWithWXState:(id)arg1;
-- (id)wxState;
 - (void)setCurrentParagraph:(id)arg1;
+- (id)currentParagraph;
+- (id)wxState;
+- (id)initWithWXState:(id)arg1;
 
 @end

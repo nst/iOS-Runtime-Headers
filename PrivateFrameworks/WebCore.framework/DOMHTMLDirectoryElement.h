@@ -8,7 +8,7 @@
 @property BOOL compact;
 
 
-- (BOOL)compact;
 - (void)setCompact:(BOOL)arg1;
+- (BOOL)compact;
 
 @end

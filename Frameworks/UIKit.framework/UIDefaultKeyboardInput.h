@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextPosition, UIImage, UITextSelectionView, UITextInputTraits, UIColor, UITextRange, UITextInteractionAssistant, <UITextInputDelegate>, <UITextInputTokenizer>, UIView, UIView<UITextSelectingContent>, NSDictionary, UIResponder<UITextSelection>;
+@class UITextPosition, UIImage, UITextInteractionAssistant, UITextInputTraits, <UITextInputDelegate>, NSDictionary, UIView, <UITextInputTokenizer>, UIColor, UITextRange;
 
 @interface UIDefaultKeyboardInput : UIView <UIKeyboardInput> {
     UITextInputTraits *m_traits;
@@ -40,21 +40,18 @@
 @property BOOL returnKeyGoesToNextResponder;
 @property BOOL acceptsFloatingKeyboard;
 @property BOOL acceptsSplitKeyboard;
-@property(getter=isRichText) BOOL richText;
 @property BOOL displaySecureTextUsingPlainText;
 @property BOOL learnsCorrections;
 @property int shortcutConversionType;
 @property BOOL suppressReturnKeyStyling;
 @property BOOL forceEnableDictation;
-@property(getter=isEditable,readonly) BOOL editable;
-@property(getter=isEditing,readonly) BOOL editing;
-@property int selectionGranularity;
-@property(readonly) UITextSelectionView * selectionView;
+@property BOOL useInterfaceLanguageForLocalization;
+@property BOOL deferBecomingResponder;
 @property(readonly) UITextInteractionAssistant * interactionAssistant;
-@property(readonly) UIView<UITextSelectingContent> * content;
-@property(readonly) UIResponder<UITextSelection> * textDocument;
+@property int selectionGranularity;
 
 
+- (id)delegate;
 - (void)dealloc;
 - (void)setSecure:(BOOL)arg1;
 - (BOOL)isSecure;
@@ -76,6 +73,7 @@
 - (void)replaceCurrentWordWithText:(id)arg1;
 - (void)replaceRangeWithText:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementText:(id)arg2;
 - (void)setAcceptsEmoji:(BOOL)arg1;
+- (BOOL)acceptsEmoji;
 - (BOOL)isPosition:(id)arg1 withinTextUnit:(int)arg2 inDirection:(int)arg3;
 - (id)positionFromPosition:(id)arg1 toBoundary:(int)arg2 inDirection:(int)arg3;
 - (BOOL)isPosition:(id)arg1 atBoundary:(int)arg2 inDirection:(int)arg3;
@@ -93,21 +91,15 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectContainingCaretSelection;
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
 - (void)setSelectedDOMRange:(id)arg1 affinityDownstream:(BOOL)arg2;
-- (BOOL)acceptsEmoji;
 - (void)setBecomesEditableWithGestures:(BOOL)arg1;
 - (BOOL)becomesEditableWithGestures;
 - (void)updateSelection;
-- (void)detachInteractionAssistant;
-- (void)detachSelectionView;
 - (id)selectedDOMRange;
 - (id)textColorForCaretSelection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRect;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForNSRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)textDocument;
-- (id)content;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionClipRect;
-- (id)rectsForRange:(id)arg1;
+- (id)selectionRectsForRange:(id)arg1;
 - (id)characterRangeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1 withinRange:(id)arg2;
 - (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -117,7 +109,6 @@
 - (int)baseWritingDirectionForPosition:(id)arg1 inDirection:(int)arg2;
 - (id)characterRangeByExtendingPosition:(id)arg1 inDirection:(int)arg2;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
-- (id)tokenizer;
 - (void)setInputDelegate:(id)arg1;
 - (int)offsetFromPosition:(id)arg1 toPosition:(id)arg2;
 - (int)comparePosition:(id)arg1 toPosition:(id)arg2;
@@ -130,18 +121,17 @@
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setMarkedTextStyle:(id)arg1;
 - (id)markedTextStyle;
-- (id)markedTextRange;
 - (void)setSelectedTextRange:(id)arg1;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (BOOL)hasText;
 - (void)insertText:(id)arg1;
 - (void)deleteBackward;
+- (id)tokenizer;
 - (id)inputDelegate;
 - (id)textInRange:(id)arg1;
 - (id)selectedTextRange;
-- (void)endSelectionChange;
-- (void)beginSelectionChange;
 - (BOOL)hasSelection;
+- (id)markedTextRange;
 - (void)selectAll;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectionRange;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_markedTextNSRange;
@@ -149,12 +139,13 @@
 - (void)takeTraitsFrom:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)textInputTraits;
-- (id)interactionAssistant;
 - (id)selectionView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBounds;
-- (id)methodSignatureForSelector:(SEL)arg1;
+- (id)interactionAssistant;
+- (BOOL)isEditing;
 - (id)text;
-- (id)delegate;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBounds;
+- (BOOL)isEditable;
+- (id)methodSignatureForSelector:(SEL)arg1;
 - (void)setText:(id)arg1;
 
 @end

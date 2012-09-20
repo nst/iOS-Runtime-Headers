@@ -13,18 +13,18 @@
 }
 
 + (void)initialize;
-+ (id)sharedManager;
 + (BOOL)closedCaptionsEnabled;
++ (id)sharedManager;
 
-- (void)_processQueue;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)_processQueue;
 - (void)_processCaptionTrackQueue;
-- (void)captionTrack:(id)arg1 receivedTrackData:(id)arg2;
 - (void)captionTrack:(id)arg1 didFailWithError:(id)arg2;
-- (void)captionsRequest:(id)arg1 didFailWithError:(id)arg2;
+- (void)captionTrack:(id)arg1 receivedTrackData:(id)arg2;
 - (void)captionsRequest:(id)arg1 receivedCaptions:(id)arg2;
-- (void)loadCaptionsForVideo:(id)arg1;
+- (void)captionsRequest:(id)arg1 didFailWithError:(id)arg2;
 - (id)captionsForVideo:(id)arg1;
+- (void)loadCaptionsForVideo:(id)arg1;
 
 @end

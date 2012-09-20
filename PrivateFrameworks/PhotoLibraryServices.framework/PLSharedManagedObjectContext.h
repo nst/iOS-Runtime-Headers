@@ -6,9 +6,9 @@
 }
 
 
+- (void)_mergeChangesFromDidSaveDictionary:(id)arg1 usingObjectIDs:(BOOL)arg2;
 - (void)tearDownLocalChangeNotifications;
 - (void)setupLocalChangeNotifications;
 - (BOOL)isUserInterfaceContext;
-- (void)_mergeChangesFromDidSaveDictionary:(id)arg1 usingObjectIDs:(BOOL)arg2;
 
 @end

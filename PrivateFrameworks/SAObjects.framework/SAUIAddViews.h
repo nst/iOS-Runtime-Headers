@@ -12,19 +12,19 @@
 @property BOOL temporary;
 @property(copy) NSArray * views;
 
-+ (id)addViews;
 + (id)addViewsWithDictionary:(id)arg1 context:(id)arg2;
++ (id)addViews;
 
 - (id)groupIdentifier;
 - (id)views;
 - (void)setViews:(id)arg1;
-- (id)dialogPhase;
-- (void)setDialogPhase:(id)arg1;
 - (BOOL)scrollToTop;
-- (void)setScrollToTop:(BOOL)arg1;
-- (BOOL)temporary;
 - (void)setTemporary:(BOOL)arg1;
-- (id)encodedClassName;
+- (BOOL)temporary;
+- (void)setScrollToTop:(BOOL)arg1;
+- (void)setDialogPhase:(id)arg1;
+- (id)dialogPhase;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

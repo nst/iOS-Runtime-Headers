@@ -18,21 +18,20 @@
 + (int)lineCount;
 + (float)defaultRowHeight;
 
-- (void)dealloc;
 - (void)setLocalDetails:(id)arg1;
 - (id)textForLine:(int)arg1;
 - (id)leaderboardStringWithGameRecord:(id)arg1 localGameRecord:(id)arg2;
 - (id)achievementsStringWithGameRecord:(id)arg1;
 - (id)localDetails;
 - (id)details;
-- (void)updateIconFromCache;
 - (void)setDetails:(id)arg1;
+- (void)_setGame:(id)arg1;
 - (void)configureLines;
-- (void)refreshExpensiveContent;
 - (void)updateLines;
 - (id)initWithTheme:(id)arg1;
-- (id)game;
 - (void)setGame:(id)arg1;
+- (id)game;
+- (void)dealloc;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 

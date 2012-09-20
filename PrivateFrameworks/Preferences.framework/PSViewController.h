@@ -11,32 +11,30 @@
 }
 
 
-- (void)dealloc;
-- (void)formSheetViewWillDisappear;
-- (void)formSheetViewDidDisappear;
-- (void)didLock;
-- (void)willUnlock;
-- (void)didUnlock;
-- (void)pushController:(id)arg1;
-- (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
-- (id)readPreferenceValue:(id)arg1;
 - (void)statusBarWillAnimateByHeight:(float)arg1;
-- (BOOL)canBeShownFromSuspendedState;
-- (id)rootController;
-- (void)setRootController:(id)arg1;
-- (void)handleURL:(id)arg1;
-- (void)willResignActive;
 - (void)willBecomeActive;
-- (void)setSpecifier:(id)arg1;
-- (id)specifier;
+- (void)willResignActive;
+- (id)readPreferenceValue:(id)arg1;
+- (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
+- (void)pushController:(id)arg1;
+- (void)didUnlock;
+- (void)willUnlock;
+- (void)didLock;
+- (BOOL)canBeShownFromSuspendedState;
+- (void)formSheetViewDidDisappear;
+- (void)formSheetViewWillDisappear;
+- (void)handleURL:(id)arg1;
+- (id)rootController;
+- (void)popupViewDidDisappear;
+- (void)popupViewWillDisappear;
+- (void)dealloc;
 - (void)setParentController:(id)arg1;
 - (id)parentController;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)forwardInvocation:(id)arg1;
 - (void)suspend;
-- (id)methodSignatureForSelector:(SEL)arg1;
 - (void)didWake;
-- (void)popupViewDidDisappear;
-- (void)popupViewWillDisappear;
+- (void)setRootController:(id)arg1;
+- (void)setSpecifier:(id)arg1;
+- (id)specifier;
 
 @end

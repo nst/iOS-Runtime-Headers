@@ -2,36 +2,38 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUStoreSocialHistory;
+@class SUScriptInterface, UIImageView, NSString;
 
 @interface IUStoreClientController : SUClientController <SSDownloadManagerObserver, MCProfileConnectionObserver> {
     BOOL _isUsingNetwork;
-    BOOL _shouldIgnoreSocial;
-    BOOL _socialEnabled;
-    IUStoreSocialHistory *_socialHistory;
+    BOOL _hasContinueSearchCapability;
+    UIImageView *_purchasedItemView;
+    SUScriptInterface *_scriptInterface;
+    NSString *_purchasedItemIdentifier;
 }
 
-@property BOOL shouldIgnoreSocial;
-@property(getter=isSocialEnabled,readonly) BOOL socialEnabled;
-@property(readonly) IUStoreSocialHistory * socialHistory;
+@property(getter=isStoreRestricted,readonly) BOOL storeRestricted;
+@property(retain) UIImageView * purchasedItemView;
+@property(retain) SUScriptInterface * scriptInterface;
+@property(retain) NSString * purchasedItemIdentifier;
 
++ (void)setSharedController:(id)arg1;
 + (id)sharedController;
++ (id)continueSearchingURForMediaType:(int)arg1 searchString:(id)arg2;
 + (id)musicStoreURLWithAction:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
-- (void)bagDidLoadNotification:(id)arg1;
-- (void)_networkTypeChangedNotification:(id)arg1;
 - (id)initWithClientIdentifier:(id)arg1;
-- (void)becomeActive;
-- (id)socialHistory;
-- (void)setShouldIgnoreSocial:(BOOL)arg1;
-- (BOOL)shouldIgnoreSocial;
-- (BOOL)isSocialEnabled;
-- (void)_reloadSocialEnabled;
-- (void)_accountStoreChangedNotification:(id)arg1;
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (void)dealloc;
+- (id)init;
+- (void)setScriptInterface:(id)arg1;
+- (id)scriptInterface;
+- (void)setPurchasedItemIdentifier:(id)arg1;
+- (id)purchasedItemIdentifier;
+- (void)setPurchasedItemView:(id)arg1;
+- (id)purchasedItemView;
+- (BOOL)loadHasContinueSearchCapabilityWithUpdateBlock:(id)arg1;
+- (BOOL)isStoreRestricted;
 
 @end

@@ -16,21 +16,22 @@
 @property(readonly) NSString * nextTemporaryMessageID;
 
 
+- (void)dealloc;
+- (id)init;
 - (void)_applyReplayContextTransformation:(id)arg1;
-- (void)deleteOfflineCacheData;
 - (void)setSelectedMailboxID:(id)arg1;
-- (void)replaceTransferFailureSnapshotTemporaryID:(id)arg1 withTemporaryID:(id)arg2;
-- (void)setTranslatedID:(id)arg1 forTemporaryID:(id)arg2;
+- (void)deleteOfflineCacheData;
 - (void)setTransferFailureSnapshot:(id)arg1 forTemporaryID:(id)arg2;
-- (id)transferFailureSnapshotForTemporaryID:(id)arg1;
+- (void)setTranslatedID:(id)arg1 forTemporaryID:(id)arg2;
+- (void)replaceTransferFailureSnapshotTemporaryID:(id)arg1 withTemporaryID:(id)arg2;
 - (id)translatedIDForTemporaryID:(id)arg1;
+- (id)transferFailureSnapshotForTemporaryID:(id)arg1;
 - (id)selectedMailboxID;
-- (BOOL)hasDeferredOperations;
+- (BOOL)replayOperationsUsingBlock:(id)arg1;
+- (id)initWithLibrary:(id)arg1 account:(id)arg2;
 - (id)nextTemporaryMessageID;
 - (void)deferOperation:(id)arg1;
-- (id)initWithLibrary:(id)arg1 account:(id)arg2;
-- (BOOL)replayOperationsUsingBlock:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (BOOL)hasDeferredOperations;
+- (void)enumerateOperationsUsingBlock:(id)arg1;
 
 @end

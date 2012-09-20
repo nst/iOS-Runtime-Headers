@@ -11,22 +11,22 @@
     int mDiagonalType;
 }
 
-+ (id)borderWithType:(int)arg1 colorReference:(id)arg2 diagonalType:(int)arg3 resources:(id)arg4;
 + (id)borderWithType:(int)arg1 color:(id)arg2 diagonalType:(int)arg3 resources:(id)arg4;
-+ (id)borderWithType:(int)arg1 resources:(id)arg2;
 + (id)borderWithType:(int)arg1 color:(id)arg2 resources:(id)arg3;
++ (id)borderWithType:(int)arg1 resources:(id)arg2;
++ (id)borderWithType:(int)arg1 colorReference:(id)arg2 diagonalType:(int)arg3 resources:(id)arg4;
 + (id)borderWithType:(int)arg1 colorReference:(id)arg2 resources:(id)arg3;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 - (int)type;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)color;
 - (void)setType:(int)arg1;
-- (void)setDiagonalType:(int)arg1;
-- (id)initWithResources:(id)arg1;
 - (id)colorReference;
+- (void)setDiagonalType:(int)arg1;
 - (int)diagonalType;
 - (BOOL)isEqualToBorder:(id)arg1;
+- (id)initWithResources:(id)arg1;
 
 @end

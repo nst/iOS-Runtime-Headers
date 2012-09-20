@@ -5,8 +5,8 @@
 @interface SAUISnippetExpanded : SAUISnippetObjectInteraction  {
 }
 
-+ (id)snippetExpanded;
 + (id)snippetExpandedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)snippetExpanded;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

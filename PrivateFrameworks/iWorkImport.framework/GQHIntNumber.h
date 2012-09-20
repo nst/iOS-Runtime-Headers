@@ -10,7 +10,7 @@
 
 - (int)type;
 - (int)value;
-- (void)setType:(int)arg1 value:(int)arg2;
 - (struct __CFString { }*)createStringRef;
+- (void)setType:(int)arg1 value:(int)arg2;
 
 @end

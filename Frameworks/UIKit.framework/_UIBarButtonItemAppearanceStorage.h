@@ -49,7 +49,7 @@
 - (id)tintColor;
 - (void)setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 isMini:(BOOL)arg3;
 - (id)backButtonBackgroundImageForState:(unsigned int)arg1 isMini:(BOOL)arg2;
-- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 isMini:(BOOL)arg3;
-- (id)backgroundImageForState:(unsigned int)arg1 isMini:(BOOL)arg2;
+- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 style:(int)arg3 isMini:(BOOL)arg4;
+- (id)backgroundImageForState:(unsigned int)arg1 style:(int)arg2 isMini:(BOOL)arg3;
 
 @end

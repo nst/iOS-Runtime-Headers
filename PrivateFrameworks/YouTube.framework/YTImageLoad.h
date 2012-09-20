@@ -17,7 +17,7 @@
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)start;
-- (void)_createImage;
 - (void)_loadFinished;
+- (void)_createImage;
 
 @end

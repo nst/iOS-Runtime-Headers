@@ -2,15 +2,17 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString, NSKeyValueUnnestedProperty;
+@class NSString, NSKeyValueProperty;
 
 @interface NSKeyValueComputedProperty : NSKeyValueProperty  {
     NSString *_operationName;
     NSString *_operationArgumentKeyPath;
-    NSKeyValueUnnestedProperty *_operationArgumentProperty;
+    NSKeyValueProperty *_operationArgumentProperty;
 }
 
 
+- (id)description;
+- (void)dealloc;
 - (void)_addDependentValueKey:(id)arg1;
 - (void)_givenPropertiesBeingInitialized:(struct __CFSet { }*)arg1 getAffectingProperties:(id)arg2;
 - (id)_initWithContainerClass:(id)arg1 keyPath:(id)arg2 propertiesBeingInitialized:(struct __CFSet { }*)arg3;
@@ -22,7 +24,5 @@
 - (BOOL)matchesWithoutOperatorComponentsKeyPath:(id)arg1;
 - (void)object:(id)arg1 didRemoveObservance:(id)arg2 recurse:(BOOL)arg3;
 - (void)object:(id)arg1 didAddObservance:(id)arg2 recurse:(BOOL)arg3;
-- (id)description;
-- (void)dealloc;
 
 @end

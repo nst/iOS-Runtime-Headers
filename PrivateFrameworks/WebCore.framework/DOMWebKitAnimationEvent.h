@@ -7,12 +7,11 @@
 @interface DOMWebKitAnimationEvent : DOMEvent  {
 }
 
-@property(copy,readonly) NSString * animationName;
+@property(readonly) NSString * animationName;
 @property(readonly) double elapsedTime;
 
 
 - (id)animationName;
-- (void)initWebKitAnimationEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 animationNameArg:(id)arg4 elapsedTimeArg:(double)arg5;
 - (double)elapsedTime;
 
 @end

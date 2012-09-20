@@ -8,8 +8,8 @@
 
 
 - (id)init;
-- (int)explosion;
 - (id)shallowCopy;
 - (void)setExplosion:(int)arg1;
+- (int)explosion;
 
 @end

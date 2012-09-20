@@ -9,13 +9,13 @@
 
 @property(copy) NSArray * locales;
 
-+ (id)setSupportedLocales;
 + (id)setSupportedLocalesWithDictionary:(id)arg1 context:(id)arg2;
++ (id)setSupportedLocales;
 
 - (id)groupIdentifier;
-- (id)locales;
 - (void)setLocales:(id)arg1;
-- (id)encodedClassName;
+- (id)locales;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

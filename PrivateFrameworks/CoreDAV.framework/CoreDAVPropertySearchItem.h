@@ -15,11 +15,11 @@
 @property(retain) NSString * matchTypeAttribute;
 
 
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (id)match;
 - (void)setMatch:(id)arg1;
+- (id)match;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (void)setMatchTypeAttribute:(id)arg1;
 - (id)initWithSearchPropertyNameSpace:(id)arg1 andName:(id)arg2;
 - (id)matchTypeAttribute;

@@ -6,11 +6,9 @@
 }
 
 
-- (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)performAfterDelay:(double)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (id)copy;
 - (void)invoke;
+- (void)performAfterDelay:(double)arg1;
 
 @end

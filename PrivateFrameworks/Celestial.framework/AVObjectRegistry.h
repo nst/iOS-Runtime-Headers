@@ -11,8 +11,8 @@
 
 + (id)defaultObjectRegistry;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)safePostDelayedNotificationFromThread:(id)arg1 target:(id)arg2 name:(id)arg3 userInfo:(id)arg4;
 - (void)safePostNotificationFromThread:(id)arg1 target:(id)arg2 name:(id)arg3 userInfo:(id)arg4;
 - (void)safePostNotificationFromMainThreadTarget:(id)arg1 name:(id)arg2 userInfo:(id)arg3;

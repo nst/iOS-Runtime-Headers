@@ -9,26 +9,26 @@
     NSObject<CKContentEntryBridgeClient> *_entryView;
 }
 
-@property int outgoingBubbleColor;
 @property NSObject<CKContentEntryBridgeClient> * contentEntryView;
+@property int outgoingBubbleColor;
 
 + (id)newContentEntryBridge;
 
-- (id)attachments;
-- (void)dealloc;
-- (id)contentEntryView;
-- (void)updateComposition;
-- (void)setContentEntryView:(id)arg1;
-- (id)newContentViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setOutgoingBubbleColor:(int)arg1;
-- (int)outgoingBubbleColor;
-- (id)messageComposition;
-- (id)messageCompositionIfTextOnly;
-- (void)setMessageComposition:(id)arg1;
-- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
-- (BOOL)hasContent;
 - (void)setMessageParts:(id)arg1;
 - (id)messageParts;
 - (void)insertMessagePart:(id)arg1;
+- (void)reset;
+- (void)dealloc;
+- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
+- (BOOL)hasContent;
+- (id)contentEntryView;
+- (void)updateComposition;
+- (id)newContentViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContentEntryView:(id)arg1;
+- (int)outgoingBubbleColor;
+- (void)setMessageComposition:(id)arg1;
+- (id)messageComposition;
+- (void)setOutgoingBubbleColor:(int)arg1;
+- (id)attachments;
 
 @end

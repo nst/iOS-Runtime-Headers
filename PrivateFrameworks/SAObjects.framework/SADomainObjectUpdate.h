@@ -12,19 +12,19 @@
 @property(retain) SADomainObject * removeFields;
 @property(retain) SADomainObject * setFields;
 
-+ (id)domainObjectUpdate;
 + (id)domainObjectUpdateWithDictionary:(id)arg1 context:(id)arg2;
++ (id)domainObjectUpdate;
 
 - (id)groupIdentifier;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
-- (id)addFields;
-- (void)setAddFields:(id)arg1;
-- (id)removeFields;
-- (void)setRemoveFields:(id)arg1;
-- (id)setFields;
 - (void)setSetFields:(id)arg1;
-- (id)encodedClassName;
+- (id)setFields;
+- (void)setRemoveFields:(id)arg1;
+- (id)removeFields;
+- (void)setAddFields:(id)arg1;
+- (id)addFields;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

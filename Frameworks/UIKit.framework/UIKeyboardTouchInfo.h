@@ -24,6 +24,7 @@
 @property int stage;
 
 
+- (id)touch;
 - (void)dealloc;
 - (void)setStage:(int)arg1;
 - (int)stage;
@@ -36,6 +37,5 @@
 - (void)setKey:(id)arg1;
 - (void)setTouch:(id)arg1;
 - (id)key;
-- (id)touch;
 
 @end

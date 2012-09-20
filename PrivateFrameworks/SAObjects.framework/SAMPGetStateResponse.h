@@ -8,21 +8,21 @@
 }
 
 @property(retain) SAMPMediaItem * listeningToItem;
-@property(retain) NSNumber * listeningToMusicApplication;
+@property(copy) NSNumber * listeningToMusicApplication;
 @property int state;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)getStateResponse;
 + (id)getStateResponseWithDictionary:(id)arg1 context:(id)arg2;
++ (id)getStateResponse;
 
 - (id)groupIdentifier;
-- (void)setState:(int)arg1;
 - (int)state;
-- (id)listeningToItem;
-- (void)setListeningToItem:(id)arg1;
-- (id)listeningToMusicApplication;
+- (void)setState:(int)arg1;
 - (void)setListeningToMusicApplication:(id)arg1;
+- (id)listeningToMusicApplication;
+- (void)setListeningToItem:(id)arg1;
+- (id)listeningToItem;
 - (id)encodedClassName;
 
 @end

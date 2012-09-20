@@ -9,13 +9,13 @@
 
 @property(copy) NSArray * anchors;
 
-+ (id)getAnchorsResponse;
 + (id)getAnchorsResponseWithDictionary:(id)arg1 context:(id)arg2;
++ (id)getAnchorsResponse;
 
 - (id)groupIdentifier;
 - (id)anchors;
 - (void)setAnchors:(id)arg1;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

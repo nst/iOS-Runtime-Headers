@@ -2,42 +2,43 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIButton, CKBalloonView;
+@class UIButton, UIImageView, CKBalloonView;
 
-@interface CKMessageCell : CKTranscriptCell  {
+@interface CKMessageCell : CKTranscriptCell <CKBalloonViewActionDelegate> {
     CKBalloonView *_balloonView;
+    UIImageView *_contactImageView;
     UIButton *_failedButton;
     float _topPadding;
     float _bottomPadding;
     id _replacementMessageBubbleData;
 }
 
-@property(retain) id replacementMessageBubbleData;
 @property(readonly) CKBalloonView * balloonView;
+@property(retain) id replacementMessageBubbleData;
 
-+ (id)_failImage;
-+ (id)_failPressedImage;
 + (id)_exclamationGlyphImage;
++ (id)_failPressedImage;
++ (id)_failImage;
 
 - (void)dealloc;
-- (id)replacementMessageBubbleData;
-- (void)setReplacementMessageBubbleData:(id)arg1;
-- (void)_resetBalloonFrame;
-- (void)_failPressed:(id)arg1;
-- (void)__performTargetAction:(SEL)arg1;
-- (void)setFailed:(BOOL)arg1;
-- (void)setContactImage:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })failedButtonFrame;
-- (id)balloonView;
-- (void)addBalloonView:(id)arg1;
-- (void)setTopPadding:(float)arg1 bottomPadding:(float)arg2;
-- (void)balloonViewDidTapSendAsSMS:(id)arg1;
-- (BOOL)balloonViewShouldShowSendAsSMSAction:(id)arg1;
-- (void)balloonViewDidTapBalloon:(id)arg1;
 - (id)_multiselectBackgroundColor;
-- (void)prepareForReuse;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
+- (void)setReplacementMessageBubbleData:(id)arg1;
+- (id)replacementMessageBubbleData;
+- (void)__performTargetAction:(SEL)arg1;
+- (void)_failPressed:(id)arg1;
+- (void)_resetBalloonFrame;
+- (void)setTopPadding:(float)arg1 bottomPadding:(float)arg2;
+- (void)addBalloonView:(id)arg1;
+- (void)prepareForReuseForEditing;
+- (id)balloonView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })failedButtonFrame;
+- (void)setContactImage:(id)arg1;
+- (void)setFailed:(BOOL)arg1;
+- (void)balloonViewDidTapBalloon:(id)arg1;
+- (id)balloonViewSendAsSMSText:(id)arg1;
+- (void)balloonViewDidTapSendAsSMS:(id)arg1;
 
 @end

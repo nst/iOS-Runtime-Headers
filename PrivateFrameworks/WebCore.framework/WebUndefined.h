@@ -8,13 +8,13 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)undefined;
 
-- (unsigned int)retainCount;
 - (id)description;
+- (unsigned int)retainCount;
 - (id)retain;
-- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
 - (void)dealloc;
+- (oneway void)release;
+- (id)autorelease;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

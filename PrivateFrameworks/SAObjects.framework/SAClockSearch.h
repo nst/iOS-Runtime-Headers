@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSURL * targetAppId;
-@property(retain) NSNumber * alCityId;
+@property(copy) NSNumber * alCityId;
 @property(copy) NSString * countryCode;
 @property(copy) NSURL * identifier;
 @property(copy) NSString * unlocalizedCityName;
@@ -17,20 +17,20 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (void)setCountryCode:(id)arg1;
-- (id)countryCode;
 - (id)groupIdentifier;
-- (void)setUnlocalizedCountryName:(id)arg1;
-- (id)unlocalizedCountryName;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
-- (id)alCityId;
-- (void)setAlCityId:(id)arg1;
-- (id)unlocalizedCityName;
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
+- (void)setUnlocalizedCountryName:(id)arg1;
+- (id)unlocalizedCountryName;
 - (void)setUnlocalizedCityName:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)unlocalizedCityName;
+- (void)setAlCityId:(id)arg1;
+- (id)alCityId;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

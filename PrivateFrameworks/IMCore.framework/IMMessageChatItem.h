@@ -10,10 +10,12 @@
 @property(readonly) IMMessage * message;
 
 
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (void)_setMessage:(id)arg1;
-- (id)initWithMessage:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)message;
+- (void)_setMessage:(id)arg1;
+- (int)_compareToChatItem:(id)arg1;
+- (int)_reverseCompareToChatItem:(id)arg1;
+- (id)initWithMessage:(id)arg1;
 
 @end

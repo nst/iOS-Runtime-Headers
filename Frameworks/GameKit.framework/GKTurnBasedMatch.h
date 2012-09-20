@@ -7,6 +7,8 @@
 @interface GKTurnBasedMatch : NSObject <GKSessionDelegate> {
     NSArray *_participants;
     GKTurnBasedMatchInternal *_internal;
+    int _turnSequenceIndex;
+    NSArray *_turnSequence;
 }
 
 @property(readonly) NSString * matchID;
@@ -16,51 +18,69 @@
 @property(retain) GKTurnBasedParticipant * currentParticipant;
 @property(readonly) NSData * matchData;
 @property(copy) NSString * message;
+@property unsigned int matchDataMaximumSize;
 @property(retain) GKTurnBasedMatchInternal * internal;
 @property(retain) NSDate * lastTurnDate;
 @property(readonly) int turnNumber;
 @property(readonly) NSDate * dateSortKey;
+@property(retain) NSArray * turnSequence;
+@property int turnSequenceIndex;
 @property(readonly) GKTurnBasedParticipant * previousParticipant;
 @property(readonly) GKTurnBasedParticipant * previousParticipantOrFirstKnownPlayer;
+@property(readonly) GKTurnBasedParticipant * playingWithParticipantOrFirstKnownPlayer;
 @property(readonly) GKTurnBasedParticipant * localPlayerParticipant;
 @property(readonly) GKTurnBasedParticipant * firstWinnerOrTiedOrLastLoser;
 
++ (void)loadMatchWithID:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)loadMatchesWithCompletionHandler:(id)arg1;
-+ (void)loadTurnBasedMatchWithDetailsForMatchID:(id)arg1 withCompletionHandler:(id)arg2;
++ (id)matchesWithInternalRepresentations:(id)arg1;
 + (void)loadTurnBasedMatchSummaries:(id)arg1;
 + (void)loadTurnBasedMatchDetailsForMatchIDs:(id)arg1 loadGameData:(BOOL)arg2 withCompletionHandler:(id)arg3;
++ (void)loadTurnBasedMatchWithDetailsForMatchID:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)findMatchForRequest:(id)arg1 withCompletionHandler:(id)arg2;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)turnSequence;
+- (void)saveCurrentTurnWithMatchData:(id)arg1 completionHandler:(id)arg2;
 - (void)endMatchInTurnWithMatchData:(id)arg1 completionHandler:(id)arg2;
+- (void)participantQuitOutOfTurnWithOutcome:(int)arg1 withCompletionHandler:(id)arg2;
 - (void)participantQuitInTurnWithOutcome:(int)arg1 nextParticipant:(id)arg2 matchData:(id)arg3 completionHandler:(id)arg4;
 - (void)endTurnWithNextParticipant:(id)arg1 matchData:(id)arg2 completionHandler:(id)arg3;
-- (id)previousParticipant;
-- (void)setCurrentParticipant:(id)arg1;
-- (void)setParticipants:(id)arg1;
 - (void)removeWithCompletionHandler:(id)arg1;
-- (void)participantQuitOutOfTurnWithOutcome:(int)arg1 withCompletionHandler:(id)arg2;
-- (void)loadMatchDataWithCompletionHandler:(id)arg1;
-- (void)acceptInviteWithCompletionHandler:(id)arg1;
+- (id)firstWinnerOrTiedOrLastLoser;
+- (id)playingWithParticipantOrFirstKnownPlayer;
 - (void)declineInviteWithCompletionHandler:(id)arg1;
-- (id)participants;
 - (id)dateSortKey;
-- (id)matchID;
+- (unsigned int)matchDataMaximumSize;
+- (void)participantQuitInTurnWithOutcome:(int)arg1 nextParticipants:(id)arg2 turnTimeout:(double)arg3 matchData:(id)arg4 completionHandler:(id)arg5;
+- (void)loadMatchDataWithCompletionHandler:(id)arg1;
+- (id)indexesForParticipants:(id)arg1;
+- (void)endTurnWithNextParticipants:(id)arg1 turnTimeout:(double)arg2 matchData:(id)arg3 completionHandler:(id)arg4;
 - (id)localPlayerParticipant;
 - (id)previousParticipantOrFirstKnownPlayer;
-- (id)firstWinnerOrTiedOrLastLoser;
+- (id)previousParticipant;
+- (void)parseTurnSequence:(id)arg1;
+- (void)setTurnSequence:(id)arg1;
+- (void)acceptInviteWithCompletionHandler:(id)arg1;
+- (void)rematchWithCompletionHandler:(id)arg1;
+- (void)setTurnSequenceIndex:(int)arg1;
+- (int)turnSequenceIndex;
+- (void)setParticipants:(id)arg1;
+- (id)participants;
+- (void)setCurrentParticipant:(id)arg1;
 - (id)currentParticipant;
-- (int)status;
-- (id)internal;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (void)setInternal:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)internal;
+- (id)description;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (int)status;
 - (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

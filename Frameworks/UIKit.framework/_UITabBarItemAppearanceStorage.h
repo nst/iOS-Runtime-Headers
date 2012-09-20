@@ -12,7 +12,7 @@
 
 
 - (void)dealloc;
-- (id)titleOffset;
 - (void)setTitleOffset:(id)arg1;
+- (id)titleOffset;
 
 @end

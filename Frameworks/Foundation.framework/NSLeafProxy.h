@@ -24,19 +24,19 @@
      /* Encoded args for previous method:  */
 
 
-- (void)reallyDealloc;
-- (id)initDir:(id)arg1 file:(id)arg2 docInfo:(id)arg3;
-- (BOOL)isProxy;
 - (unsigned int)retainCount;
+- (BOOL)isProxy;
 - (id)retain;
-- (id)copy;
-- (void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
 - (void)dealloc;
+- (void)release;
+- (id)copy;
+- (id)autorelease;
+- (void)forwardInvocation:(id)arg1;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (void)reallyDealloc;
+- (id)initDir:(id)arg1 file:(id)arg2 docInfo:(id)arg3;
 
 @end

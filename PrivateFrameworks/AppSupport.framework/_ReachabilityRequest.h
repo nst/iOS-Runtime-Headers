@@ -17,14 +17,14 @@
 @property NSString * hostname;
 
 
-- (void)setHostname:(id)arg1;
 - (id)description;
 - (void)removeObserver:(id)arg1;
 - (void)dealloc;
-- (void)reachabilityChangedWithFlags:(unsigned int)arg1;
-- (id)initWithHostname:(id)arg1;
-- (void)addObserver:(id)arg1 selector:(SEL)arg2;
-- (BOOL)hasObservers;
 - (id)hostname;
+- (BOOL)hasObservers;
+- (void)addObserver:(id)arg1 selector:(SEL)arg2;
+- (id)initWithHostname:(id)arg1;
+- (void)reachabilityChangedWithFlags:(unsigned int)arg1;
+- (void)setHostname:(id)arg1;
 
 @end

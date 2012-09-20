@@ -16,13 +16,13 @@
 - (void)dealloc;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)author;
-- (void)setAuthor:(id)arg1;
-- (id)keywords;
-- (void)setKeywords:(id)arg1;
-- (id)comments;
-- (void)setComments:(id)arg1;
 - (id)hyperlinkBase;
+- (id)comments;
+- (id)keywords;
+- (id)author;
 - (void)setHyperlinkBase:(id)arg1;
+- (void)setComments:(id)arg1;
+- (void)setKeywords:(id)arg1;
+- (void)setAuthor:(id)arg1;
 
 @end

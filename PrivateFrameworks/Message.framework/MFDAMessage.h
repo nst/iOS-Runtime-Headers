@@ -14,17 +14,18 @@
 @property(readonly) DAMailMessage * DAMailMessage;
 
 
-- (id)DAMailMessage;
-- (id)initWithDAMailMessage:(id)arg1 mailbox:(id)arg2;
-- (id)externalConversationID;
-- (id)remoteMailboxURL;
-- (id)remoteID;
-- (id)mailbox;
-- (id)messageBody;
-- (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
-- (unsigned long long)messageFlags;
-- (unsigned int)messageSize;
 - (void)dealloc;
 - (id)headers;
+- (id)initWithDAMailMessage:(id)arg1 mailbox:(id)arg2;
+- (id)DAMailMessage;
+- (id)remoteMailboxURL;
+- (id)externalConversationID;
+- (id)mailbox;
+- (id)remoteID;
+- (id)headersIfAvailable;
+- (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
+- (id)messageBody;
+- (unsigned int)messageSize;
+- (unsigned long long)messageFlags;
 
 @end

@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet, NSString;
+@class <CoreDAVTaskManager>, NSError, NSString, NSSet, <CoreDAVAccountInfoProvider>;
 
-@interface CoreDAVContainerMultiGetTask : CoreDAVTask  {
+@interface CoreDAVContainerMultiGetTask : CoreDAVTask <CoreDAVContainerMultiGetSubmittable> {
     NSSet *_urls;
     NSString *_appSpecificNamespace;
     NSString *_appSpecificMultiGetNameSpace;
@@ -17,19 +17,24 @@
     NSSet *_missingURLs;
 }
 
-@property BOOL shouldIgnoreResponseErrors;
-@property(readonly) NSSet * parsedContents;
-@property(readonly) NSSet * missingURLs;
 @property(retain) NSSet * additionalPropElements;
+@property(copy) id completionBlock;
+@property <CoreDAVTaskManager> * taskManager;
+@property <CoreDAVAccountInfoProvider> * accountInfoProvider;
+@property(readonly) NSError * error;
+@property double timeoutInterval;
+@property(readonly) NSSet * missingURLs;
+@property(readonly) NSSet * parsedContents;
+@property BOOL shouldIgnoreResponseErrors;
 
 
 - (void)dealloc;
-- (id)missingURLs;
-- (id)parsedContents;
-- (void)setShouldIgnoreResponseErrors:(BOOL)arg1;
-- (BOOL)shouldIgnoreResponseErrors;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 appSpecificDataItemClass:(Class)arg3;
+- (void)setShouldIgnoreResponseErrors:(BOOL)arg1;
+- (BOOL)shouldIgnoreResponseErrors;
+- (id)parsedContents;
+- (id)missingURLs;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (void)setAdditionalProperties:(id)arg1 onDataItem:(id)arg2;
 - (id)additionalPropElements;

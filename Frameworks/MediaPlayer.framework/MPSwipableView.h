@@ -19,7 +19,6 @@
 @property <MPSwipableViewDelegate> * swipeDelegate;
 
 
-- (void)dealloc;
 - (void)setSimultaneousGestureTypes:(int)arg1;
 - (int)enabledGestureTypes;
 - (id)swipeDelegate;
@@ -30,10 +29,13 @@
 - (void)_updateGestureRecognizersForEnabledTypes;
 - (void)setEnabledGestureTypes:(int)arg1;
 - (void)setSwipeDelegate:(id)arg1;
+- (void)dealloc;
 - (void)_tapGestureRecognized:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)addGestureRecognizer:(id)arg1;
 - (void)removeGestureRecognizer:(id)arg1;
+- (void)willMoveToSuperview:(id)arg1;
+- (void)didMoveToSuperview;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 

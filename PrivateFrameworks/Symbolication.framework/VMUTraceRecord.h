@@ -13,15 +13,15 @@
 
 
 - (unsigned long long)address;
-- (id)initWithTraceRecord:(id)arg1;
-- (unsigned int)seqnum;
-- (unsigned int)threadID;
-- (id)initWithTraceRecord:(id)arg1 withDepth:(unsigned int)arg2;
-- (id)initWithLoggingRecord:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1 forTask:(unsigned int)arg2;
-- (id)initWithBacktrace:(id)arg1 forTask:(unsigned int)arg2;
-- (unsigned long long*)frames;
-- (unsigned long long)argument;
 - (unsigned int)type;
+- (unsigned int)seqnum;
+- (id)initWithTraceRecord:(id)arg1;
+- (id)initWithBacktrace:(id)arg1 forTask:(unsigned int)arg2;
+- (id)initWithLoggingRecord:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1 forTask:(unsigned int)arg2;
+- (id)initWithTraceRecord:(id)arg1 withDepth:(unsigned int)arg2;
+- (unsigned int)threadID;
+- (unsigned long long)argument;
+- (unsigned long long*)frames;
 - (unsigned int)depth;
 
 @end

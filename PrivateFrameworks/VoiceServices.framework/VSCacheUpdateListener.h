@@ -12,17 +12,17 @@
     BOOL _isListening;
 }
 
-+ (id)sharedListener;
 + (id)sharedListenerIfExists;
++ (id)sharedListener;
 
-- (id)init;
-- (void)dealloc;
-- (void)_enqueueRequest:(id)arg1;
-- (id)_initShared;
-- (void)_spokenLanguageChanged:(id)arg1;
-- (void)performUpdateForModelIdentifier:(id)arg1 classIdentifier:(id)arg2;
 - (void)_flush;
+- (void)dealloc;
+- (id)init;
+- (void)performUpdateForModelIdentifier:(id)arg1 classIdentifier:(id)arg2;
+- (void)_spokenLanguageChanged:(id)arg1;
+- (void)_enqueueRequest:(id)arg1;
 - (void)stopListening;
 - (void)startListening;
+- (id)_initShared;
 
 @end

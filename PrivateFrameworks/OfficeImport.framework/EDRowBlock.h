@@ -9,29 +9,29 @@
 
 + (id)rowBlock;
 
-- (id)init;
 - (void)dealloc;
-- (unsigned int)index;
-- (unsigned int)indexOfCellWithColumnNumber:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
-- (void)removeCellAtIndex:(unsigned int)arg1 rowInfo:(struct EDRowInfo {}**)arg2;
-- (unsigned long)startOfCellsOrThrow;
-- (void)checkCellOffsetOrThrow:(unsigned long)arg1;
-- (unsigned int)firstRowNumber;
-- (unsigned int)lastRowNumber;
-- (void)incrementIndex;
-- (unsigned int)indexOfRowInfoWithRowNumber:(unsigned int)arg1;
-- (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoWithRowNumber:(unsigned int)arg1;
-- (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)addRowInfoWithRowNumber:(unsigned int)arg1 cellCountHint:(unsigned int)arg2;
-- (unsigned int)expectedIndexOfCellWithColumnNumber:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
-- (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)cellAtIndex:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
-- (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(unsigned int*)arg2;
-- (void)archiveByAppendingToMutableData:(struct __CFData { }*)arg1;
-- (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoWithRowNumber:(unsigned int)arg1 createIfNil:(bool)arg2;
-- (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)addCellWithColumnNumber:(unsigned int)arg1 type:(int)arg2 isFormulaCell:(bool)arg3 rowInfo:(struct EDRowInfo {}**)arg4 rowBlocks:(id)arg5;
-- (unsigned int)rowCount;
-- (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoAtIndex:(unsigned int)arg1;
-- (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)cellWithColumnNumber:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
-- (void)doneWithContent;
+- (id)init;
 - (void)setIndex:(unsigned int)arg1;
+- (unsigned int)index;
+- (void)incrementIndex;
+- (void)checkCellOffsetOrThrow:(unsigned long)arg1;
+- (unsigned int)lastRowNumber;
+- (unsigned int)firstRowNumber;
+- (unsigned long)startOfCellsOrThrow;
+- (void)removeCellAtIndex:(unsigned int)arg1 rowInfo:(struct EDRowInfo {}**)arg2;
+- (unsigned int)indexOfCellWithColumnNumber:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
+- (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoWithRowNumber:(unsigned int)arg1 createIfNil:(bool)arg2;
+- (void)doneWithContent;
+- (unsigned int)expectedIndexOfCellWithColumnNumber:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
+- (unsigned int)indexOfRowInfoWithRowNumber:(unsigned int)arg1;
+- (void)archiveByAppendingToMutableData:(struct __CFData { }*)arg1;
+- (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(unsigned int*)arg2;
+- (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoAtIndex:(unsigned int)arg1;
+- (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)addRowInfoWithRowNumber:(unsigned int)arg1 cellCountHint:(unsigned int)arg2;
+- (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)addCellWithColumnNumber:(unsigned int)arg1 type:(int)arg2 isFormulaCell:(bool)arg3 rowInfo:(struct EDRowInfo {}**)arg4 rowBlocks:(id)arg5;
+- (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoWithRowNumber:(unsigned int)arg1;
+- (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)cellWithColumnNumber:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
+- (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)cellAtIndex:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
+- (unsigned int)rowCount;
 
 @end

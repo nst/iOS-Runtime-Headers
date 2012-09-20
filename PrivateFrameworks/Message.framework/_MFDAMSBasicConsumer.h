@@ -10,18 +10,18 @@
     MFMailMessageLibrary *library;
     ActivityMonitor *monitor;
     MFError *error;
-    int numNewMessages;
+    unsigned int numNewMessages;
 }
 
-@property(retain) MFError * error;
 @property(retain) ActivityMonitor * monitor;
+@property(retain) MFError * error;
 
 
+- (void)setError:(id)arg1;
+- (void)dealloc;
 - (void)setMonitor:(id)arg1;
 - (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 - (id)monitor;
-- (void)dealloc;
-- (void)setError:(id)arg1;
 - (id)error;
 
 @end

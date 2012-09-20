@@ -35,6 +35,7 @@
 @property(readonly) float rotation;
 
 
+- (int)type;
 - (id)description;
 - (void)dealloc;
 - (BOOL)inJavaScriptGesture;
@@ -59,7 +60,6 @@
 - (void)_reset;
 - (void)_resetGestureRecognizer;
 - (struct CGPoint { float x1; float x2; })locationInWindow;
-- (int)type;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

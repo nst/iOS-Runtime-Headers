@@ -13,13 +13,13 @@
 
 + (id)tokenTreeNodeWithIndexAndType:(unsigned int)arg1 type:(int)arg2;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)firstChild;
-- (void)setFirstChild:(id)arg1;
-- (void)setSibling:(id)arg1;
 - (id)initWithIndexAndType:(unsigned int)arg1 type:(int)arg2;
-- (unsigned int)tokenIndex;
+- (void)setSibling:(id)arg1;
+- (void)setFirstChild:(id)arg1;
 - (id)sibling;
+- (unsigned int)tokenIndex;
 
 @end

@@ -20,29 +20,29 @@
 
 + (void)initialize;
 
-- (id)init;
-- (void)dealloc;
+- (BOOL)setMode:(id)arg1 error:(id*)arg2;
+- (BOOL)setCategory:(id)arg1 error:(id*)arg2;
 - (BOOL)isApplicationAudioSession;
 - (void)setApplicationAudioSession:(BOOL)arg1;
+- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (id)category;
+- (id)mode;
 - (void)_setFigPlayer:(struct OpaqueFigPlayer { }*)arg1;
 - (void)_addFPListeners;
 - (void)_removeFPListeners;
 - (id)_weakReference;
-- (BOOL)setMode:(id)arg1 error:(id*)arg2;
+- (double)preferredHardwareSampleRate;
 - (int)currentHardwareOutputNumberOfChannels;
 - (int)currentHardwareInputNumberOfChannels;
-- (double)preferredIOBufferDuration;
-- (double)preferredHardwareSampleRate;
 - (double)currentHardwareSampleRate;
 - (BOOL)inputIsAvailable;
-- (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
 - (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
 - (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
-- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
-- (BOOL)setCategory:(id)arg1 error:(id*)arg2;
-- (id)category;
-- (id)mode;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (double)preferredIOBufferDuration;
+- (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
 
 @end

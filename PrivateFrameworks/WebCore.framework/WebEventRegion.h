@@ -22,8 +22,9 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (id).cxx_construct;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct FloatQuad { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatPoint { float x_2_1_1; float x_2_1_2; } x2; struct FloatPoint { float x_3_1_1; float x_3_1_2; } x3; struct FloatPoint { float x_4_1_1; float x_4_1_2; } x4; })quad;
 - (BOOL)hitTest:(struct CGPoint { float x1; float x2; })arg1;

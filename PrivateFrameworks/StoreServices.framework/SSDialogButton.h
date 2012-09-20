@@ -15,10 +15,10 @@
 @property(readonly) NSString * URLTarget;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)buttonTitle;
 - (id)URLTarget;
+- (id)buttonTitle;
+- (void)dealloc;
+- (id)init;
 - (id)buttonAction;
 - (id)actionParameter;
 - (id)valueForActionProperty:(id)arg1;

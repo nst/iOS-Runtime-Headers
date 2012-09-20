@@ -11,12 +11,12 @@
 
 
 - (void)setName:(id)arg1;
-- (id)init;
+- (id)name;
 - (void)dealloc;
-- (id)initWithName:(id)arg1;
+- (id)init;
+- (BOOL)tryLock;
 - (void)unlock;
 - (void)lock;
-- (id)name;
-- (BOOL)tryLock;
+- (id)initWithName:(id)arg1;
 
 @end

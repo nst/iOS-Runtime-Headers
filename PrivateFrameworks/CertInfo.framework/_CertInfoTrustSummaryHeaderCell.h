@@ -21,6 +21,14 @@
 @property(getter=isTrusted) BOOL trusted;
 
 
+- (id)_trustedLabel;
+- (id)actionButton;
+- (void)dealloc;
+- (id)_titleLabel;
+- (float)rowHeight;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
+- (id)_subtitleLabel;
 - (void)_layoutSubviewsWithActionButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTrusted:(BOOL)arg1;
 - (BOOL)isTrusted;
@@ -30,13 +38,5 @@
 - (id)trustSubtitle;
 - (void)setTrustTitle:(id)arg1;
 - (id)trustTitle;
-- (void)dealloc;
-- (id)actionButton;
-- (id)_titleLabel;
-- (float)rowHeight;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
-- (id)_trustedLabel;
-- (id)_subtitleLabel;
 
 @end

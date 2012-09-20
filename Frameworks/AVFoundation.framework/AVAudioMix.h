@@ -11,14 +11,15 @@
 @property(readonly) NSArray * inputParameters;
 
 
+- (void)setInputParameters:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (void)setInputParameters:(id)arg1;
-- (id)inputParameters;
-- (id)_audioVolumeCurveForTrackID:(int)arg1;
+- (id)init;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)finalize;
+- (id)inputParameters;
+- (struct opaqueMTAudioProcessingTap { }*)_audioTapProcessorForTrackID:(int)arg1;
+- (id)_audioVolumeCurveForTrackID:(int)arg1;
 
 @end

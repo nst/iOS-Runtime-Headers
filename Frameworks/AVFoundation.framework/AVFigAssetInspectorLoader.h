@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetInspector, NSURL, NSDictionary, AVAssetCache, NSMutableArray;
+@class AVAssetInspector, NSURL, NSObject<OS_dispatch_queue>, NSDictionary, NSMutableArray, AVAssetCache;
 
 @interface AVFigAssetInspectorLoader : AVAssetInspectorLoader  {
     struct OpaqueFigAsset { } *_figAsset;
     struct OpaqueFigFormatReader { } *_formatReader;
+    BOOL _formatReaderObtained;
     long _figAssetCreationStatus;
-    struct dispatch_queue_s { } *_completionHandlerQueue;
+    NSObject<OS_dispatch_queue> *_completionHandlerQueue;
     struct OpaqueFigSimpleMutex { } *_loadingMutex;
     struct OpaqueFigSemaphore { } *_playabilityValidationSemaphore;
     int _playableStatus;
@@ -27,6 +28,7 @@
     NSURL *_downloadDestinationURL;
     NSDictionary *_validationPlist;
     unsigned int _referenceRestrictions;
+    NSURL *_URL;
 }
 
 @property(readonly) NSDictionary * validationPlist;
@@ -34,46 +36,49 @@
 + (id)_figAssetTrackPropertiesForKeys;
 + (id)_figAssetPropertiesForKeys;
 
-- (BOOL)isEqual:(id)arg1;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
+- (unsigned long long)downloadToken;
+- (BOOL)hasProtectedContent;
+- (BOOL)isPlayable;
+- (BOOL)_isStreaming;
+- (id)lyrics;
+- (id)URL;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
+- (void)finalize;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (BOOL)isReadable;
 - (id)validationPlist;
 - (void)setIsCompatibleWithSavedPhotosAlbum:(BOOL)arg1 result:(long)arg2;
 - (void)setIsPlayable:(BOOL)arg1 result:(long)arg2;
 - (struct OpaqueFigSemaphore { }*)_cameraRollValidationSemaphor;
 - (struct OpaqueFigSemaphore { }*)_playabilityValidationSemaphore;
 - (id)_loadingBatches;
-- (struct dispatch_queue_s { }*)_completionHandlerQueue;
+- (id)_completionHandlerQueue;
 - (int)_loadStatusForProperty:(id)arg1 returningError:(int*)arg2;
+- (id)_initWithDownloadToken:(unsigned long long)arg1;
+- (id)_initWithFigAsset:(struct OpaqueFigAsset { }*)arg1 options:(id)arg2;
 - (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
 - (id)downloadDestinationURL;
-- (id)resolvedURL;
 - (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
 - (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
 - (id)assetCache;
 - (id)chapterGroupInfo;
+- (id)resolvedURL;
 - (id)assetInspector;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (BOOL)isCompatibleWithSavedPhotosAlbum;
 - (BOOL)isComposable;
 - (BOOL)isExportable;
-- (BOOL)isPlayable;
-- (BOOL)hasProtectedContent;
-- (id)lyrics;
-- (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;
 - (unsigned int)referenceRestrictions;
+- (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id)arg3;
-- (BOOL)_isStreaming;
 - (void)_removeFigAssetNotifications;
 - (void)_addFigAssetNotifications;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (void)cancelLoading;
-- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (void)finalize;
-- (id)URL;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (BOOL)isReadable;
-- (id)initWithURL:(id)arg1 options:(id)arg2;
 
 @end

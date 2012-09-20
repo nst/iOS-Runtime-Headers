@@ -9,13 +9,13 @@
 
 + (id)protectionWithHidden:(bool)arg1 locked:(bool)arg2;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (bool)isLocked;
 - (bool)isHidden;
-- (id)initWithHidden:(bool)arg1 locked:(bool)arg2;
 - (BOOL)isEqualToProtection:(id)arg1;
+- (id)initWithHidden:(bool)arg1 locked:(bool)arg2;
 
 @end

@@ -13,18 +13,18 @@
 }
 
 
+- (id)initWithURL:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithURL:(id)arg1;
-- (void)_ensureLocalizationDictionaryIsInitialized;
-- (id)_localizedStringForKey:(id)arg1 value:(void*)arg2;
-- (id)_cachedObjectForKey:(id)arg1 value:(void*)arg2;
 - (id)_localizedPropertyNameForProperty:(id)arg1 entity:(id)arg2;
-- (void)_ensureFullLocalizationDictionaryIsLoaded;
-- (id)localizationDictionary;
+- (id)_cachedObjectForKey:(id)arg1 value:(void*)arg2;
+- (id)_localizedStringForKey:(id)arg1 value:(void*)arg2;
+- (void)_ensureLocalizationDictionaryIsInitialized;
 - (void)setLocalizationDictionary:(id)arg1;
-- (id)localizedEntityNameForEntity:(id)arg1;
-- (id)localizedPropertyNameForProperty:(id)arg1;
+- (id)localizationDictionary;
+- (void)_ensureFullLocalizationDictionaryIsLoaded;
 - (id)localizedModelStringForKey:(id)arg1;
+- (id)localizedPropertyNameForProperty:(id)arg1;
+- (id)localizedEntityNameForEntity:(id)arg1;
 
 @end

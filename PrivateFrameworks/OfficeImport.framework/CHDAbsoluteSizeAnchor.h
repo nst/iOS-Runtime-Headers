@@ -14,9 +14,10 @@
 }
 
 
+- (id).cxx_construct;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })size;
-- (struct CGPoint { float x1; float x2; })from;
 - (void)setFrom:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })from;
 
 @end

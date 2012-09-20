@@ -11,12 +11,12 @@
 
 
 - (void)dealloc;
-- (id)dataWithUnixLineEndings;
-- (id)copyDataWithUnixLineEndings;
-- (unsigned int)rawDataLength;
-- (void)appendRawData:(id)arg1;
-- (void)setRawData:(id)arg1;
 - (void)purgeCaches;
+- (id)dataWithUnixLineEndings;
+- (unsigned int)rawDataLength;
+- (void)setRawData:(id)arg1;
+- (void)appendRawData:(id)arg1;
+- (id)copyDataWithUnixLineEndings;
 - (id)rawData;
 
 @end

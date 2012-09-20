@@ -21,22 +21,22 @@
 @property int sessionState;
 
 
-- (id)description;
-- (void)dealloc;
-- (void)snapshotProgressForItem:(id)arg1;
-- (id)sessionError;
-- (int)sessionState;
-- (void)setDownloadSession:(id)arg1;
-- (void)setSessionError:(id)arg1;
-- (id)downloadSession;
-- (void)setSessionState:(int)arg1;
-- (void)reloadNetworkConstraints;
-- (id)initWithItemDownloadProperties:(id)arg1;
-- (void)setAVAsset:(id)arg1;
-- (id)AVAsset;
-- (BOOL)isNetworkConstrainedForNetworkType:(int)arg1;
 - (void)setPercentComplete:(float)arg1;
 - (float)percentComplete;
 - (id)downloadProperties;
+- (void)setSessionState:(int)arg1;
+- (int)sessionState;
+- (void)setSessionError:(id)arg1;
+- (id)sessionError;
+- (id)downloadSession;
+- (void)setAVAsset:(id)arg1;
+- (id)AVAsset;
+- (void)snapshotProgressForItem:(id)arg1;
+- (void)setDownloadSession:(id)arg1;
+- (void)reloadNetworkConstraints;
+- (BOOL)isNetworkConstrainedForNetworkType:(int)arg1;
+- (id)initWithItemDownloadProperties:(id)arg1;
+- (id)description;
+- (void)dealloc;
 
 @end

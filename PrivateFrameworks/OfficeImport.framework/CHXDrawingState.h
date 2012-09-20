@@ -9,7 +9,7 @@
 }
 
 
-- (id)initWithCHXState:(id)arg1;
 - (id)chxState;
+- (id)initWithCHXState:(id)arg1;
 
 @end

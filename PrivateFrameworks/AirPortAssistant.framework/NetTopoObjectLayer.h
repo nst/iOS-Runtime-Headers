@@ -48,6 +48,7 @@
     } _selectionSize;
     NSString *_labelString;
     BubbleTextLayer *_labelLayer;
+    float _labelPinnedHeight;
     NSString *_secondaryLabelString;
     BubbleTextLayer *_secondaryLabelLayer;
     struct CGImage {} *_statusLights[4];
@@ -86,6 +87,7 @@
 @property NetTopoObjectLayer * ancestor;
 @property(retain) id associatedNode;
 @property(retain) NSString * label;
+@property float labelPinnedHeight;
 @property(retain) NSString * secondaryLabel;
 @property(retain) NetTopoObjectLayer * parent;
 @property(readonly) NetTopoObjectLayer * parentDevice;
@@ -102,13 +104,12 @@
 
 + (BOOL)needsDisplayForKey:(id)arg1;
 
-- (unsigned int)numberOfChildren;
-- (void)setChildren:(id)arg1;
-- (id)debugDescription;
-- (void)setShift:(float)arg1;
-- (id)init;
-- (void)dealloc;
+- (unsigned int)column;
 - (BOOL)isSelectable;
+- (id)debugDescription;
+- (void)dealloc;
+- (id)init;
+- (void)setLabelPinnedHeight:(float)arg1;
 - (void)setSelectable:(BOOL)arg1;
 - (void)setSelectionSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })selectionSize;
@@ -120,7 +121,6 @@
 - (id)ancestor;
 - (void)setContourThread:(id)arg1;
 - (id)contourThread;
-- (void)setNumber:(unsigned int)arg1;
 - (void)setChange:(float)arg1;
 - (float)change;
 - (void)setMod:(float)arg1;
@@ -143,33 +143,37 @@
 - (id)secondaryLabel;
 - (id)parentDevice;
 - (id)describeOne:(id)arg1 uiLayer:(id)arg2 indent:(unsigned int)arg3;
-- (unsigned int)column;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })getImageSelectionBounds;
+- (float)labelPinnedHeight;
 - (void)setBoundsSizeConstraint:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateStatusLight:(id)arg1;
 - (void)setStatusBadgeImage:(struct CGImage { }*)arg1;
 - (BOOL)smallSize;
 - (void)deallocStatusImages;
 - (struct CGSize { float x1; float x2; })boundsSizeConstraint;
+- (void)setExpanded:(BOOL)arg1;
 - (unsigned int)number;
 - (float)shift;
-- (void)setExpanded:(BOOL)arg1;
 - (void)removeChild:(id)arg1;
 - (id)label;
-- (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)lastChild;
 - (BOOL)isExpanded;
 - (id)firstChild;
 - (void)setLabel:(id)arg1;
 - (unsigned int)row;
+- (void)setShift:(float)arg1;
+- (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)layoutSublayers;
 - (id)children;
-- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setRow:(unsigned int)arg1;
-- (id)childAtIndex:(unsigned int)arg1;
+- (unsigned int)numberOfChildren;
+- (void)setChildren:(id)arg1;
+- (void)setNumber:(unsigned int)arg1;
 - (void)setColumn:(unsigned int)arg1;
-- (id)parent;
-- (void)addChild:(id)arg1;
+- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setParent:(id)arg1;
+- (void)setRow:(unsigned int)arg1;
+- (id)parent;
+- (id)childAtIndex:(unsigned int)arg1;
+- (void)addChild:(id)arg1;
 
 @end

@@ -18,39 +18,39 @@
     unsigned int _retryDelay;
 }
 
-@property(readonly) unsigned int retryDelay;
-@property(readonly) unsigned int retries;
-@property(readonly) NSDictionary * subjectAltName;
-@property(readonly) NSArray * CACaps;
-@property(readonly) NSData * CAFingerprint;
-@property(readonly) int usageFlags;
-@property(readonly) unsigned int keySize;
-@property(readonly) NSArray * subject;
-@property(readonly) NSString * challenge;
-@property(readonly) NSString * CAInstanceName;
 @property(readonly) NSString * URLString;
+@property(readonly) NSString * CAInstanceName;
+@property(readonly) NSData * CAFingerprint;
+@property(readonly) NSArray * CACaps;
+@property(readonly) NSString * challenge;
+@property(readonly) NSArray * subject;
+@property(readonly) unsigned int keySize;
+@property(readonly) int usageFlags;
+@property(readonly) NSDictionary * subjectAltName;
+@property(readonly) unsigned int retries;
+@property(readonly) unsigned int retryDelay;
 
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
-- (id)subject;
-- (id)URLString;
-- (id)description;
-- (void)dealloc;
-- (unsigned int)retryDelay;
 - (unsigned int)retries;
+- (id)description;
+- (void).cxx_destruct;
+- (unsigned int)retryDelay;
 - (id)subjectAltName;
 - (id)CACaps;
 - (id)CAFingerprint;
 - (int)usageFlags;
 - (unsigned int)keySize;
 - (id)CAInstanceName;
-- (struct __SecCertificate { }*)copyCertificate;
-- (struct __SecIdentity { }*)copyIdentityFromKeychain;
-- (BOOL)isIdentity;
 - (BOOL)isRoot;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (BOOL)isIdentity;
+- (struct __SecIdentity { }*)copyIdentityFromKeychain;
+- (struct __SecCertificate { }*)copyCertificate;
 - (id)stubDictionary;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)subject;
+- (id)URLString;
 - (id)challenge;
 
 @end

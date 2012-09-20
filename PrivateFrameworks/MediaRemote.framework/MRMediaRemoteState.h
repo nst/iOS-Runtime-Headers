@@ -15,7 +15,6 @@
   /* Error parsing encoded ivar type info: @? */
     id _commandHandlerBlock;
 
-    BOOL _includeVideoRoutes;
     BOOL _isOverrideApp;
     int _notifyLaunchedToken;
     NSData *_nowPlayingArtworkData;
@@ -23,30 +22,27 @@
     unsigned int _routeDiscoveryCount;
 }
 
-@property(retain) NSDictionary * nowPlayingInfo;
-@property(retain) NSData * nowPlayingArtworkData;
-@property BOOL isOverrideApp;
-@property BOOL includeVideoRoutes;
 @property(copy) id commandHandlerBlock;
 @property BOOL canBeNowPlayingApp;
+@property BOOL isOverrideApp;
+@property(retain) NSData * nowPlayingArtworkData;
+@property(retain) NSDictionary * nowPlayingInfo;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)nowPlayingInfo;
 - (void)setNowPlayingInfo:(id)arg1;
-- (BOOL)includeVideoRoutes;
-- (void)setCanBeNowPlayingApp:(BOOL)arg1;
-- (void)setCommandHandlerBlock:(id)arg1;
-- (BOOL)isOverrideApp;
-- (void)setIsOverrideApp:(BOOL)arg1;
-- (id)nowPlayingArtworkData;
-- (void)setNowPlayingArtworkData:(id)arg1;
-- (void)beginRouteDiscovery;
-- (void)endRouteDiscovery;
-- (void)setIncludeVideoRoutes:(BOOL)arg1;
-- (id)commandHandlerBlock;
-- (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
+- (id)nowPlayingInfo;
+- (void)dealloc;
+- (id)init;
 - (BOOL)canBeNowPlayingApp;
+- (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
+- (id)commandHandlerBlock;
+- (void)endRouteDiscovery;
+- (void)beginRouteDiscovery;
+- (void)setNowPlayingArtworkData:(id)arg1;
+- (id)nowPlayingArtworkData;
+- (void)setIsOverrideApp:(BOOL)arg1;
+- (BOOL)isOverrideApp;
+- (void)setCommandHandlerBlock:(id)arg1;
+- (void)setCanBeNowPlayingApp:(BOOL)arg1;
 
 @end

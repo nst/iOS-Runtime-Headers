@@ -12,8 +12,10 @@
 
 
 - (void)dealloc;
-- (id)initWithFlushingManager:(id)arg1;
-- (void)beginObserving;
+- (void)_simulateMemoryWarning:(id)arg1;
+- (void)_periodicallySimulateMemoryWarning:(id)arg1;
 - (void)stopObserving;
+- (void)beginObserving;
+- (id)initWithFlushingManager:(id)arg1;
 
 @end

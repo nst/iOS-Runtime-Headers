@@ -19,15 +19,15 @@
 - (void)dealloc;
 - (id)value;
 - (unsigned short)level;
-- (unsigned short)rowCount;
-- (unsigned short)rowIdx;
 - (BOOL)isCollapsed;
-- (int)readValue:(struct _xmlTextReader { }*)arg1;
-- (int)readElement:(struct _xmlTextReader { }*)arg1;
-- (int)readAttributes:(struct _xmlTextReader { }*)arg1;
+- (unsigned short)rowIdx;
 - (int)readRootFormat:(struct _xmlTextReader { }*)arg1;
-- (struct __CFString { }*)createFormattedValue;
+- (int)readAttributes:(struct _xmlTextReader { }*)arg1;
+- (int)readElement:(struct _xmlTextReader { }*)arg1;
+- (int)readValue:(struct _xmlTextReader { }*)arg1;
 - (BOOL)hasFormulaValue;
+- (struct __CFString { }*)createFormattedValue;
 - (void)setProcessorBundle:(struct __CFBundle { }*)arg1;
+- (unsigned short)rowCount;
 
 @end

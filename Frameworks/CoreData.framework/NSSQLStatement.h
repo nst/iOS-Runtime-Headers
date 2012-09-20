@@ -13,22 +13,22 @@
 }
 
 
+- (id)entity;
 - (id)description;
 - (void)dealloc;
-- (void)setBindVariables:(id)arg1;
 - (void)cacheFakeEntityForFetch:(id)arg1;
-- (id)fakeEntityForFetch;
-- (void)removeAllBindVariables;
+- (void)setBindVariables:(id)arg1;
 - (id)bindVariables;
+- (void)removeAllBindVariables;
+- (id)fakeEntityForFetch;
 - (void)clearCaches;
 - (BOOL)isImpossibleCondition;
-- (id)initWithEntity:(id)arg1 sqlString:(id)arg2;
 - (void)setSQLString:(id)arg1;
+- (id)initWithEntity:(id)arg1 sqlString:(id)arg2;
 - (id)initWithEntity:(id)arg1;
 - (BOOL)isReadOnly;
 - (id)sqlString;
-- (unsigned int)addBindVariable:(id)arg1;
 - (void)setImpossibleCondition:(BOOL)arg1;
-- (id)entity;
+- (unsigned int)addBindVariable:(id)arg1;
 
 @end

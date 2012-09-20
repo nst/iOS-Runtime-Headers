@@ -18,28 +18,28 @@
 @property(getter=_isDisplayingRemovableTextField,readonly) BOOL _displayingRemovableTextField;
 
 
+- (void)_layoutRemovableTextField;
+- (BOOL)_isDisplayingRemovableTextField;
+- (void)_makeRemovableTextFieldEditable:(BOOL)arg1;
+- (void)makeTextFieldResignFirstResponderIfNeeded;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
-- (id)initWithReuseIdentifier:(id)arg1;
+- (BOOL)isChecked;
 - (void)willTransitionToState:(unsigned int)arg1;
 - (void)didTransitionToState:(unsigned int)arg1;
-- (BOOL)isChecked;
 - (void)setEditable:(BOOL)arg1;
 - (void)setPlaceholder:(id)arg1;
-- (BOOL)isEditable;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (id)placeholder;
+- (id)initWithReuseIdentifier:(id)arg1;
 - (id)text;
-- (id)delegate;
+- (BOOL)isEditable;
 - (void)setChecked:(BOOL)arg1;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
-- (void)_layoutRemovableTextField;
-- (BOOL)_isDisplayingRemovableTextField;
-- (void)_makeRemovableTextFieldEditable:(BOOL)arg1;
-- (void)makeTextFieldResignFirstResponderIfNeeded;
 
 @end

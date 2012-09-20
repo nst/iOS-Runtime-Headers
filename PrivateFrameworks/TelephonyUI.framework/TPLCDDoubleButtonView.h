@@ -9,19 +9,19 @@
     TPWellButtonView *_rightWellButtonView;
 }
 
-@property(retain,readonly) TPButton * leftButton;
-@property(retain,readonly) TPButton * rightButton;
+@property(readonly) TPButton * leftButton;
+@property(readonly) TPButton * rightButton;
 
 
-- (void)dealloc;
-- (id)initWithDefaultSizeForOrientation:(int)arg1;
 - (id)rightButton;
 - (id)leftButton;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rightWellFrame;
+- (void)dealloc;
+- (id)initWithDefaultSizeForOrientation:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_leftWellFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fullSizedContentViewFrame;
-- (BOOL)shouldCenterContentView;
-- (BOOL)showImageViewOnLeftSide;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rightWellFrame;
 - (BOOL)shouldCenterText;
+- (BOOL)showImageViewOnLeftSide;
+- (BOOL)shouldCenterContentView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fullSizedContentViewFrame;
 
 @end

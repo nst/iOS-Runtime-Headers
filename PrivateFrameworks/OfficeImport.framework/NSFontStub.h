@@ -6,7 +6,5 @@
 }
 
 
-- (BOOL)isSymbolicFont;
-- (id)findSubstituteFontForString:(id)arg1;
 
 @end

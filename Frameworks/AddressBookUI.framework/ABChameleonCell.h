@@ -9,17 +9,17 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(retain) <ABStyleProvider> * styleProvider;
 @property int abCellStyle;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 
 - (void)dealloc;
-- (void)_updateBackgroundViewsForCellStyleAndLocation;
+- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 - (void)_updateTextStylesForCellStyle;
+- (void)_updateBackgroundViewsForCellStyleAndLocation;
 - (int)abCellStyle;
 - (void)setAbCellStyle:(int)arg1;
-- (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
+- (void)setStyleProvider:(id)arg1;
 
 @end

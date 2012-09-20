@@ -9,17 +9,17 @@
 
 @property(retain) SAPersonAttribute * recipient;
 @property(copy) NSArray * recipients;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)recipientSearchCompleted;
 + (id)recipientSearchCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)recipientSearchCompleted;
 
-- (id)groupIdentifier;
-- (void)setRecipient:(id)arg1;
 - (id)recipient;
-- (id)recipients;
+- (void)setRecipient:(id)arg1;
+- (id)groupIdentifier;
 - (void)setRecipients:(id)arg1;
+- (id)recipients;
 - (id)encodedClassName;
 
 @end

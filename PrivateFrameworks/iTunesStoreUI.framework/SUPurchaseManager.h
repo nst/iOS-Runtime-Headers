@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableSet, <SUPurchaseManagerDelegate>, NSSet, SUAuthenticationObserver, NSMutableArray;
+@class NSMutableSet, <SUPurchaseManagerDelegate>, NSString, SUQueueSessionManager, NSMutableArray, NSSet;
 
-@interface SUPurchaseManager : NSObject <SUAuthenticationDelegate, SUContinuationDelegate, SSDownloadManagerObserver, SSPurchaseRequestDelegate> {
-    SUAuthenticationObserver *_authenticationObserver;
+@interface SUPurchaseManager : NSObject <SUContinuationDelegate, SSDownloadManagerObserver, SSPurchaseRequestDelegate> {
     <SUPurchaseManagerDelegate> *_delegate;
     NSMutableSet *_futurePurchases;
     NSMutableSet *_inflightContinuations;
@@ -14,34 +13,31 @@
     NSMutableArray *_pendingPurchases;
     NSMutableSet *_purchasedIdentifiers;
     NSMutableArray *_purchaseRequests;
-    BOOL _shouldExitWhenFinished;
+    SUQueueSessionManager *_queueSessionManager;
     BOOL _showingErrorDialogs;
     int _updatesCount;
+    NSString *_userAgent;
     BOOL _waitingForAuthentication;
 }
 
-@property <SUPurchaseManagerDelegate> * delegate;
+@property(retain) SUQueueSessionManager * queueSessionManager;
+@property(copy) NSString * userAgent;
 @property(readonly) int numberOfPendingPurchases;
 @property(readonly) NSSet * futurePurchases;
 @property(readonly) NSSet * purchasedItemIdentifiers;
+@property <SUPurchaseManagerDelegate> * delegate;
 
-+ (id)sharedManager;
-+ (void)setSharedManager:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
+- (id)userAgent;
 - (void)requestDidFinish:(id)arg1;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
-- (id)delegate;
-- (void)endUpdates;
-- (void)beginUpdates;
-- (void)setDelegate:(id)arg1;
 - (void)purchaseScriptObject:(id)arg1;
 - (void)enqueueScriptPurchases:(id)arg1;
 - (id)copyPurchaseForScriptObject:(id)arg1;
 - (void)addExternalDownloads:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (id)_newExternalDownloadWithDownloadDictionary:(id)arg1;
 - (id)_newExternalDownloadWithItemDictionary:(id)arg1;
+- (void)_schedulePurchaseCallback:(id)arg1;
 - (void)purchaseScriptObject:(id)arg1 withOptions:(id)arg2 inContext:(struct OpaqueJSContext { }*)arg3;
 - (id)_newPurchaseBatchForPurchases:(id)arg1;
 - (id)copyPurchaseForScriptObject:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
@@ -49,10 +45,14 @@
 - (id)_newExternalDownloadWithDictionary:(id)arg1;
 - (id)_newDictionaryForWebScriptValue:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (void)addExternalDownloads:(id)arg1 withOptions:(id)arg2 inContext:(struct OpaqueJSContext { }*)arg3;
+- (void)setQueueSessionManager:(id)arg1;
+- (id)queueSessionManager;
 - (id)purchasedItemIdentifiers;
 - (id)futurePurchases;
+- (BOOL)_needsAuthenticationForPurchases:(id)arg1;
+- (void)_addDownloadingIconForPurchases:(id)arg1;
 - (int)numberOfPendingPurchases;
-- (id)newPurchaseBatchForItems:(id)arg1;
+- (id)newPurchaseBatchForItems:(id)arg1 offers:(id)arg2;
 - (BOOL)itemIdentifierIsPurchasing:(unsigned long long)arg1;
 - (BOOL)itemIdentifierIsPurchased:(unsigned long long)arg1;
 - (void)cancelFuturePurchase:(id)arg1;
@@ -62,13 +62,8 @@
 - (void)purchaseRequest:(id)arg1 purchaseDidFail:(id)arg2 withError:(id)arg3;
 - (void)continuationFinished:(id)arg1;
 - (void)continuation:(id)arg1 failedWithError:(id)arg2;
-- (void)authenticationDidTimeout:(id)arg1;
-- (void)authenticationDidFinish:(id)arg1;
-- (void)authenticationDidFail:(id)arg1;
 - (BOOL)_issuePurchaseRequestForPurchases:(id)arg1;
 - (void)_enqueueExternalDownload:(id)arg1;
-- (id)_authenticationObserver;
-- (BOOL)_needsAuthenticationForPurchases:(id)arg1;
 - (void)_startPurchases:(id)arg1;
 - (void)_startContinuations:(id)arg1;
 - (void)addPurchasedItemIdentifiers:(id)arg1;
@@ -83,5 +78,12 @@
 - (void)_showDialogsForErrors:(id)arg1;
 - (void)addPurchasedItemIdentifier:(unsigned long long)arg1;
 - (void)_dialogDidFinish:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (void)endUpdates;
+- (void)beginUpdates;
+- (void)setUserAgent:(id)arg1;
 
 @end

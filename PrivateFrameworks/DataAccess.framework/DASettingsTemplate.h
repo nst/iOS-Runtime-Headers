@@ -38,13 +38,15 @@
 + (BOOL)requiresPorts;
 + (id)knownTemplates;
 
+- (int)compare:(id)arg1;
 - (void)setName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (id)name;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setOrder:(int)arg1;
 - (int)order;
+- (void)setOrder:(int)arg1;
 - (id)descriptionForAccount:(id)arg1;
 - (void)setPort:(int)arg1 forAccount:(id)arg2;
 - (void)setUseSSL:(BOOL)arg1 forAccount:(id)arg2;
@@ -77,7 +79,5 @@
 - (BOOL)isDefaultTemplate;
 - (BOOL)_isDomainInAliases:(id)arg1;
 - (id)primaryDomain;
-- (int)compare:(id)arg1;
-- (id)name;
 
 @end

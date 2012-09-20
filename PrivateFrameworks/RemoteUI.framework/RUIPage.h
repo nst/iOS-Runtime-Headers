@@ -4,7 +4,7 @@
 
 @class UIToolbar, RUIWebView, RUITableView, UIView, NSDictionary, NSString, UIBarButtonItem, NSArray;
 
-@interface RUIPage : UIViewController  {
+@interface RUIPage : UIViewController <UIWebViewDelegate> {
     NSString *_pageID;
     UIView *_containerView;
     RUITableView *_tableViewOM;
@@ -26,31 +26,64 @@
     id _delegate;
 }
 
+@property(copy) NSString * pageID;
+@property(readonly) UIView * containerView;
 @property(readonly) RUITableView * tableViewOM;
 @property(readonly) RUIWebView * webViewOM;
-@property(readonly) NSArray * buttons;
-@property BOOL hidesBackButton;
-@property(readonly) UIToolbar * toolbar;
-@property(readonly) UIView * containerView;
-@property(retain) UIBarButtonItem * leftToolbarItem;
-@property(retain) UIBarButtonItem * rightToolbarItem;
-@property(retain) NSDictionary * leftToolbarButton;
-@property(retain) NSDictionary * rightToolbarButton;
-@property(retain) NSDictionary * leftNavigationBarButton;
-@property(retain) NSDictionary * rightNavigationBarButton;
-@property(copy) NSString * loadingTitle;
-@property(copy) NSString * navTitle;
 @property(retain) NSString * validationFunction;
-@property(copy) NSString * pageID;
+@property(copy) NSString * navTitle;
+@property(copy) NSString * loadingTitle;
+@property BOOL hidesBackButton;
+@property(retain) NSDictionary * rightNavigationBarButton;
+@property(retain) NSDictionary * leftNavigationBarButton;
+@property(retain) NSDictionary * rightToolbarButton;
+@property(retain) NSDictionary * leftToolbarButton;
+@property(readonly) NSArray * buttons;
+@property(retain) UIBarButtonItem * rightToolbarItem;
+@property(retain) UIBarButtonItem * leftToolbarItem;
+@property(readonly) UIToolbar * toolbar;
 
 
+- (float)_getKeyboardIntersectionHeight;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (id)navTitle;
-- (void)setNavTitle:(id)arg1;
+- (id)init;
+- (id)leftToolbarButton;
+- (id)rightToolbarButton;
+- (id)leftNavigationBarButton;
+- (id)rightNavigationBarButton;
+- (id)loadingTitle;
+- (id)validationFunction;
+- (id)pageID;
+- (BOOL)hasWebView;
+- (id)webViewOM;
+- (BOOL)hasTableView;
+- (void)setLeftToolbarButton:(id)arg1;
+- (void)setRightToolbarButton:(id)arg1;
+- (void)setLeftNavigationBarButton:(id)arg1;
+- (void)setRightNavigationBarButton:(id)arg1;
+- (void)setHasToolbar;
+- (void)setLoadingTitle:(id)arg1;
+- (void)setValidationFunction:(id)arg1;
+- (void)setPageID:(id)arg1;
+- (void)populatePostbackDictionary:(id)arg1;
+- (id)tableViewOM;
+- (void)_barButtonPressed:(id)arg1 isRight:(BOOL)arg2 isNavbar:(BOOL)arg3;
+- (void)setLeftToolbarItem:(id)arg1;
+- (void)_leftToolbarButtonPressed:(id)arg1;
+- (void)setRightToolbarItem:(id)arg1;
+- (void)_rightToolbarButtonPressed:(id)arg1;
+- (void)_leftNavigationBarButtonPressed:(id)arg1;
+- (id)_barButtonItemForDict:(id)arg1 action:(SEL)arg2;
+- (void)_rightNavigationBarButtonPressed:(id)arg1;
+- (id)leftToolbarItem;
+- (id)rightToolbarItem;
+- (void)_updateNavItemTitle;
 - (id)containerView;
 - (id)buttons;
+- (void)_setContentInset:(float)arg1;
 - (id)toolbar;
 - (id)contentScrollView;
 - (void)_keyboardWillHide:(id)arg1;
@@ -65,39 +98,8 @@
 - (void)setHidesBackButton:(BOOL)arg1;
 - (BOOL)hidesBackButton;
 - (void)viewDidLayoutSubviews;
-- (void)setDelegate:(id)arg1;
-- (float)_getKeyboardIntersectionHeight;
-- (void)_setContentInset:(float)arg1;
-- (void)setHasToolbar;
-- (void)setRightNavigationBarButton:(id)arg1;
-- (void)setLeftNavigationBarButton:(id)arg1;
-- (void)setRightToolbarButton:(id)arg1;
-- (void)setLeftToolbarButton:(id)arg1;
-- (BOOL)hasTableView;
-- (id)webViewOM;
-- (id)leftToolbarButton;
-- (id)rightToolbarButton;
-- (id)leftNavigationBarButton;
-- (id)rightNavigationBarButton;
-- (id)loadingTitle;
-- (id)validationFunction;
-- (id)pageID;
-- (void)_updateNavItemTitle;
-- (id)rightToolbarItem;
-- (id)leftToolbarItem;
-- (void)_rightNavigationBarButtonPressed:(id)arg1;
-- (id)_barButtonItemForDict:(id)arg1 action:(SEL)arg2;
-- (void)_leftNavigationBarButtonPressed:(id)arg1;
-- (void)_rightToolbarButtonPressed:(id)arg1;
-- (void)setRightToolbarItem:(id)arg1;
-- (void)_leftToolbarButtonPressed:(id)arg1;
-- (void)setLeftToolbarItem:(id)arg1;
-- (void)_barButtonPressed:(id)arg1 isRight:(BOOL)arg2 isNavbar:(BOOL)arg3;
-- (id)tableViewOM;
-- (void)populatePostbackDictionary:(id)arg1;
-- (void)setPageID:(id)arg1;
-- (void)setValidationFunction:(id)arg1;
-- (void)setLoadingTitle:(id)arg1;
+- (void)setNavTitle:(id)arg1;
+- (id)navTitle;
 - (void)_updateToolbar;
 
 @end

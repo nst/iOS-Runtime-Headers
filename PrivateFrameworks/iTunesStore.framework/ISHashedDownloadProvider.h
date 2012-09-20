@@ -32,9 +32,11 @@
 @property long long validatedBytes;
 
 
+- (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (long long)numberOfBytesToHash;
 - (void)setShouldResumeFromLocalBytes:(BOOL)arg1;
 - (void)setNumberOfBytesToHash:(long long)arg1;
 - (BOOL)_checkHashForByteCount:(long long)arg1;
@@ -58,7 +60,5 @@
 - (long long)streamedBytes;
 - (BOOL)isStream;
 - (void)setup;
-- (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
-- (long long)numberOfBytesToHash;
 
 @end

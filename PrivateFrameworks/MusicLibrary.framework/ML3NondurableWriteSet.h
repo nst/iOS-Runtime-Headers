@@ -13,10 +13,10 @@
 }
 
 
-- (id)description;
-- (void)dealloc;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)reset;
+- (id)description;
+- (void).cxx_destruct;
+- (void)dealloc;
 - (id)trackPersistentIDDataForContainerWithPersistentID:(long long)arg1;
 - (void)setTrackPersistentIDData:(id)arg1 forContainerWithPersistentID:(long long)arg2;
 - (id)insertedPersistentIDsForEntityClass:(Class)arg1;
@@ -29,5 +29,6 @@
 - (BOOL)hasInsertedPersistentID:(long long)arg1 forEntityClass:(Class)arg2;
 - (BOOL)containsDeletedPersistentID:(long long)arg1 forEntityClass:(Class)arg2;
 - (void)addValuesFromDictionary:(id)arg1 forEntityClass:(Class)arg2 withPersistentID:(long long)arg3;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 
 @end

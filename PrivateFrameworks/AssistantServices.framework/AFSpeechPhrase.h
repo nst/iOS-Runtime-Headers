@@ -13,12 +13,12 @@
 @property BOOL isLowConfidence;
 
 
-- (void)dealloc;
-- (id)interpretations;
-- (void)setInterpretations:(id)arg1;
 - (void)setIsLowConfidence:(BOOL)arg1;
 - (BOOL)isLowConfidence;
 - (id)dkPlistRepresentation;
 - (id)initWithDKPlistRepresentation:(id)arg1;
+- (void).cxx_destruct;
+- (id)interpretations;
+- (void)setInterpretations:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLTableViewEditableCell, UIKeyboard, UITableView, NSMutableArray, PLPublishAlbum, UIView, NSString, UITableViewCell, NSArray;
+@class PLTableViewEditableCell, UIKeyboard, UITableView, PLPublishAlbum, NSMutableArray, UIView, NSString, UITableViewCell, NSArray;
 
 @interface PLPublishingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     UIView *_containerView;
@@ -33,23 +33,23 @@
 @property int selectedUploadOption;
 
 
-- (id)contentDescription;
-- (void)dealloc;
-- (id)posterImage;
 - (void)setUsername:(id)arg1;
+- (void)dealloc;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)initWithTitle:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)initWithTitle:(id)arg1;
-- (void)scrollViewDidScroll:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)posterImage;
+- (id)contentDescription;
 - (void)setHdUploadSize:(long long)arg1;
 - (void)setSdUploadSize:(long long)arg1;
 - (BOOL)enableHDUploadOption;

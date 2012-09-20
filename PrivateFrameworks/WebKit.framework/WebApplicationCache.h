@@ -5,14 +5,14 @@
 @interface WebApplicationCache : NSObject  {
 }
 
-+ (long long)maximumSize;
 + (void)setMaximumSize:(long long)arg1;
-+ (void)initializeWithBundleIdentifier:(id)arg1;
-+ (long long)defaultOriginQuota;
-+ (void)setDefaultOriginQuota:(long long)arg1;
-+ (long long)diskUsageForOrigin:(id)arg1;
-+ (void)deleteCacheForOrigin:(id)arg1;
++ (long long)maximumSize;
 + (id)originsWithCache;
++ (void)deleteCacheForOrigin:(id)arg1;
++ (long long)diskUsageForOrigin:(id)arg1;
++ (void)setDefaultOriginQuota:(long long)arg1;
++ (long long)defaultOriginQuota;
++ (void)initializeWithBundleIdentifier:(id)arg1;
 + (void)deleteAllApplicationCaches;
 
 

@@ -6,39 +6,43 @@
     struct _Stream { } *m_pCStream;
 }
 
+@property(readonly) struct _Stream { }* cStream;
+
 
 - (void)dealloc;
 - (void)close;
-- (void)releaseCStream;
-- (void)seek:(long)arg1 fromOrigin:(int)arg2;
-- (unsigned long)getPos;
-- (id)readBytes:(unsigned long)arg1;
-- (BOOL)readLEchar;
-- (unsigned char)readLEbyte;
-- (unsigned char)readLEboolean;
-- (short)readLEshort;
-- (unsigned short)readLEword;
-- (long)readLElong;
-- (unsigned long)readLEdword;
-- (float)readLEfloat;
-- (double)readLEdouble;
-- (unsigned short)readLEunichar;
-- (id)readLEwstring:(unsigned long)arg1;
-- (void)writeBytes:(id)arg1;
-- (void)writeLEbyte:(unsigned char)arg1;
-- (void)writeLEchar:(BOOL)arg1;
-- (void)writeLEboolean:(unsigned char)arg1;
-- (void)writeLEshort:(short)arg1;
-- (void)writeLEword:(unsigned short)arg1;
-- (void)writeLElong:(long)arg1;
-- (void)writeLEdword:(unsigned long)arg1;
-- (void)writeLEfloat:(float)arg1;
-- (void)writeLEdouble:(double)arg1;
-- (void)writeLEunichar:(unsigned short)arg1;
-- (void)writeLEwstring:(id)arg1;
+- (struct _Stream { }*)cStream;
 - (void)writeLEwstringNoTerminator:(id)arg1;
-- (id)getInfo;
+- (void)writeLEwstring:(id)arg1;
+- (void)writeLEunichar:(unsigned short)arg1;
+- (void)writeLEdouble:(double)arg1;
+- (void)writeLEfloat:(float)arg1;
+- (void)writeLEdword:(unsigned long)arg1;
+- (void)writeLElong:(long)arg1;
+- (void)writeLEword:(unsigned short)arg1;
+- (void)writeLEshort:(short)arg1;
+- (void)writeLEboolean:(unsigned char)arg1;
+- (void)writeLEchar:(BOOL)arg1;
+- (void)writeLEbyte:(unsigned char)arg1;
+- (void)writeBytes:(id)arg1;
+- (id)readLEwstring:(unsigned long)arg1;
+- (unsigned short)readLEunichar;
+- (double)readLEdouble;
+- (float)readLEfloat;
+- (unsigned long long)readLEUnsignedLongLong;
+- (unsigned long)readLEdword;
+- (long)readLElong;
+- (unsigned short)readLEword;
+- (short)readLEshort;
+- (unsigned char)readLEboolean;
+- (unsigned char)readLEbyte;
+- (BOOL)readLEchar;
+- (id)readBytes:(unsigned long)arg1;
+- (unsigned long)getPos;
+- (void)seek:(long)arg1 fromOrigin:(int)arg2;
+- (void)releaseCStream;
 - (void)setClass:(struct { unsigned int x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
+- (id)getInfo;
 - (id)initWithCStream:(struct _Stream { }*)arg1;
 
 @end

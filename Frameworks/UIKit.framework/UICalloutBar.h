@@ -107,9 +107,12 @@
 + (void)_releaseSharedInstance;
 + (id)activeCalloutBar;
 + (id)sharedCalloutBar;
++ (void)fadeSharedCalloutBarIfNeededForView:(id)arg1 window:(id)arg2;
 + (void)hideSharedCalloutBar;
 + (void)fadeSharedCalloutBar;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (id)untruncatedString;
 - (void)setShowAllReplacements:(BOOL)arg1;
@@ -143,6 +146,7 @@
 - (void)setTargetDirection:(int)arg1;
 - (BOOL)calculateControlFrameForCalloutSize:(struct CGSize { float x1; float x2; })arg1 below:(BOOL)arg2;
 - (int)arrowDirection;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetRect;
 - (BOOL)rectClear:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)supressHorizontalXMovementIfNeededForPoint:(struct CGPoint { float x1; float x2; })arg1 proposedX:(float)arg2;
 - (BOOL)supressesHorizontalMovement;
@@ -158,7 +162,6 @@
 - (void)buttonPressed:(id)arg1;
 - (void)buttonHighlighted:(id)arg1 highlighted:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })targetPoint;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetRect;
 - (int)targetDirection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })controlFrame;
 - (id)replacements;
@@ -183,9 +186,7 @@
 - (void)setSupressesHorizontalMovement:(BOOL)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)show;
-- (id)delegate;
 - (void)removeFromSuperview;
-- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

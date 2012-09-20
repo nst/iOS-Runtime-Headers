@@ -16,13 +16,13 @@
 
 + (id)recommendationActionControllerWithTableManager:(id)arg1 andAssistantUIViewController:(id)arg2;
 
+- (void)setSectionIdentifier:(id)arg1;
+- (id)sectionIdentifier;
 - (id)actionKey;
 - (void)setActionKey:(id)arg1;
 - (void)setTableManager:(id)arg1;
-- (void)setSectionIdentifier:(id)arg1;
 - (void)selectPrimaryRecommendation;
 - (id)getSectionInfo;
-- (id)sectionIdentifier;
 - (BOOL)isPrimaryRecommendation;
 - (id)tableManager;
 

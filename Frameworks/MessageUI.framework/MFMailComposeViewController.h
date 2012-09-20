@@ -2,50 +2,53 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class <MFMailComposeViewControllerDelegate>;
 
 @interface MFMailComposeViewController : UINavigationController  {
     id _internal;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _setupAnimationBlock;
+
 }
 
 @property <MFMailComposeViewControllerDelegate> * mailComposeDelegate;
 
 + (BOOL)hasAutosavedMessageWithIdentifier:(id)arg1;
-+ (void)removeAutosavedMessageWithIdentifier:(id)arg1;
 + (BOOL)canSendMail;
++ (void)removeAutosavedMessageWithIdentifier:(id)arg1;
++ (unsigned int)maximumAttachmentSize;
 
-- (void)setSubject:(id)arg1;
-- (void)dealloc;
-- (BOOL)isDirty;
-- (id)mailComposeDelegate;
-- (id)_mailComposeController;
-- (void)_setCompositionContext:(id)arg1;
-- (id)initWithComposition:(id)arg1 contentSize:(struct CGSize { float x1; float x2; })arg2 mailComposeControllerOptions:(unsigned int)arg3;
-- (id)_rootViewController;
-- (id)_mailComposeView;
-- (id)_validEmailAddressesFromArray:(id)arg1;
-- (void)setInitialTitle:(id)arg1;
-- (void)setCcRecipients:(id)arg1;
-- (void)setBccRecipients:(id)arg1;
-- (int)resolution;
-- (void)scrollToTopAnimated:(BOOL)arg1;
-- (id)initWithURL:(id)arg1;
+- (void)recoverAutosavedMessageWithIdentifier:(id)arg1;
 - (void)setKeyboardVisible:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)autosaveWithHandler:(id)arg1;
+- (id)initWithURL:(id)arg1;
+- (void)dealloc;
+- (void)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+- (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
+- (void)setMailComposeDelegate:(id)arg1;
+- (void)setSubject:(id)arg1;
+- (void)__viewControllerWillBePresented:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)view;
+- (id)_validEmailAddressesFromArray:(id)arg1;
+- (id)mailComposeDelegate;
+- (id)_internalViewController;
+- (void)finalizeCompositionValues;
+- (void)setBccRecipients:(id)arg1;
+- (void)setCcRecipients:(id)arg1;
 - (void)setToRecipients:(id)arg1;
-- (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
-- (void)recoverAutosavedMessageWithIdentifier:(id)arg1;
-- (void)setMailComposeDelegate:(id)arg1;
-- (void)autosaveWithHandler:(id)arg1;
-- (id)performAutosaveImmediately;
-- (void)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+- (id)_addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+- (void)addSetupAnimationBlock:(id)arg1;
 - (void)setAutorotationDelegate:(id)arg1;
-- (id)initWithComposition:(id)arg1;
 - (void)setContentVisible:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForAttachmentWithIdentifier:(id)arg1;
+- (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id)arg2;
 
 @end

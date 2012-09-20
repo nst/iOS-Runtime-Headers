@@ -4,7 +4,7 @@
 
 @class UIFont, UIImageView, NSString, AccountSettingsUILinkButton, NSURL;
 
-@interface AccountSettingsUILinkButtonView : UIView <PreferencesTableCustomView> {
+@interface AccountSettingsUILinkButtonView : UIView <PSHeaderFooterView> {
     AccountSettingsUILinkButton *_linkButton;
     NSURL *_helpURL;
     float _height;
@@ -15,27 +15,27 @@
     BOOL _showArrow;
 }
 
-@property BOOL showArrow;
-@property BOOL underline;
-@property(retain) NSURL * url;
-@property(retain) UIFont * font;
 @property(retain) NSString * text;
+@property(retain) UIFont * font;
+@property(retain) NSURL * url;
+@property BOOL underline;
+@property BOOL showArrow;
 
 
-- (void)dealloc;
-- (BOOL)showArrow;
-- (void)setShowArrow:(BOOL)arg1;
 - (float)preferredHeightForWidth:(float)arg1;
-- (id)initWithSpecifier:(id)arg1;
+- (void)dealloc;
 - (void)setUrl:(id)arg1;
 - (id)url;
-- (id)font;
 - (id)text;
+- (id)font;
 - (void)setFont:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (BOOL)underline;
-- (void)setUnderline:(BOOL)arg1;
+- (void)setShowArrow:(BOOL)arg1;
+- (BOOL)showArrow;
 - (void)_goToAccountURL;
+- (void)setUnderline:(BOOL)arg1;
+- (BOOL)underline;
+- (id)initWithSpecifier:(id)arg1;
 
 @end

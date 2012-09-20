@@ -12,6 +12,7 @@
 + (id)videoCompositionCoreAnimationToolWithAdditionalLayer:(id)arg1 asTrackID:(int)arg2;
 
 - (void)dealloc;
+- (void)finalize;
 - (id)initWithMagicTrackID:(int)arg1 animationLayer:(id)arg2 videoLayer:(id)arg3;
 - (id)_postProcessingVideoLayer;
 - (int)_auxiliaryTrackID;
@@ -19,6 +20,5 @@
 - (BOOL)_hasPostProcessingLayers;
 - (id)_auxiliaryTrackLayer;
 - (BOOL)_hasLayerAsAuxiliaryTrack;
-- (void)finalize;
 
 @end

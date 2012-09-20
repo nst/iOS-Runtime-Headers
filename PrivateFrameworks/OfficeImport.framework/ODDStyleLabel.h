@@ -10,7 +10,7 @@
 
 
 - (void)dealloc;
-- (id)shapeStyle;
 - (void)setShapeStyle:(id)arg1;
+- (id)shapeStyle;
 
 @end

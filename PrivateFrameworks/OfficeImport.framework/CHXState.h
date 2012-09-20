@@ -19,22 +19,22 @@
 
 - (void)dealloc;
 - (void)setCurrentSeries:(id)arg1;
-- (id)initWithDrawingState:(id)arg1;
 - (void)setChartPart:(id)arg1;
-- (void)pushTitleTextProperties:(BOOL)arg1;
+- (id)initWithDrawingState:(id)arg1;
 - (void)popTitleTextProperties;
+- (void)pushTitleTextProperties:(BOOL)arg1;
 - (id)currentSeries;
+- (id)exState;
 - (void)setCurrentChartType:(id)arg1;
-- (id)chartPart;
 - (void)setDefaultTextPropertiesHaveExplicitFontSize:(BOOL)arg1;
+- (id)chartPart;
 - (id)currentChartType;
 - (id)drawingState;
 - (void)setDefaultTextProperties:(id)arg1;
+- (void)setChart:(id)arg1;
 - (id)defaultTextProperties;
 - (id)autoStyling;
 - (id)chart;
-- (void)setChart:(id)arg1;
-- (id)exState;
 - (void)setResources:(id)arg1;
 - (id)resources;
 

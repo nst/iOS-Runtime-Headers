@@ -15,8 +15,8 @@
 - (void)dealloc;
 - (BOOL)isTableCellContent;
 - (BOOL)setRectangular:(BOOL)arg1;
+- (int)textAnchor;
 - (id)initWithOadTextBody:(id)arg1 bounds:(id)arg2 parent:(id)arg3;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (int)textAnchor;
 
 @end

@@ -5,6 +5,17 @@
 @interface NSMutableCharacterSet : NSCharacterSet <NSCopying, NSMutableCopying> {
 }
 
++ (id)whitespaceCharacterSet;
++ (id)uppercaseLetterCharacterSet;
++ (id)lowercaseLetterCharacterSet;
++ (id)whitespaceAndNewlineCharacterSet;
++ (id)newlineCharacterSet;
++ (id)symbolCharacterSet;
++ (id)punctuationCharacterSet;
++ (id)alphanumericCharacterSet;
++ (id)characterSetWithCharactersInString:(id)arg1;
++ (id)characterSetWithContentsOfFile:(id)arg1;
++ (id)decimalDigitCharacterSet;
 + (id)characterSetWithBitmapRepresentation:(id)arg1;
 + (id)illegalCharacterSet;
 + (id)capitalizedLetterCharacterSet;
@@ -12,30 +23,19 @@
 + (id)nonBaseCharacterSet;
 + (id)controlCharacterSet;
 + (id)letterCharacterSet;
-+ (id)whitespaceCharacterSet;
-+ (id)characterSetWithContentsOfFile:(id)arg1;
-+ (id)lowercaseLetterCharacterSet;
-+ (id)uppercaseLetterCharacterSet;
-+ (id)whitespaceAndNewlineCharacterSet;
-+ (id)newlineCharacterSet;
-+ (id)symbolCharacterSet;
-+ (id)punctuationCharacterSet;
-+ (id)alphanumericCharacterSet;
-+ (id)characterSetWithCharactersInString:(id)arg1;
-+ (id)decimalDigitCharacterSet;
 + (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
-- (BOOL)isMutable;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (void)formIntersectionWithCharacterSet:(id)arg1;
-- (void)removeCharactersInString:(id)arg1;
-- (void)removeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)addCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)invert;
 - (void)addCharactersInString:(id)arg1;
 - (void)formUnionWithCharacterSet:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)formIntersectionWithCharacterSet:(id)arg1;
+- (void)removeCharactersInString:(id)arg1;
+- (void)removeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)isMutable;
 
 @end

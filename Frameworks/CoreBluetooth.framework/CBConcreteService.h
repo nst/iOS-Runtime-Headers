@@ -9,16 +9,16 @@
     NSNumber *_endHandle;
 }
 
-@property(readonly) NSNumber * endHandle;
 @property(readonly) NSNumber * startHandle;
+@property(readonly) NSNumber * endHandle;
 
 
+- (void)invalidate;
 - (void)dealloc;
-- (id)startHandle;
-- (id)endHandle;
-- (id)initWithPeripheral:(id)arg1 UUID:(id)arg2 startHandle:(id)arg3 endHandle:(id)arg4;
-- (id)handleIncludedServicesDiscovered:(id)arg1;
 - (id)handleCharacteristicsDiscovered:(id)arg1;
-- (void)handlePeripheralDisconnection;
+- (id)handleIncludedServicesDiscovered:(id)arg1;
+- (id)initWithPeripheral:(id)arg1 primary:(BOOL)arg2 UUID:(id)arg3 startHandle:(id)arg4 endHandle:(id)arg5;
+- (id)endHandle;
+- (id)startHandle;
 
 @end

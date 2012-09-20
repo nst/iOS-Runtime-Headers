@@ -2,19 +2,22 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@class SAUIAppPunchOut, NSArray;
 
 @interface SAAnswerSnippet : SAUISnippet  {
 }
 
+@property(retain) SAUIAppPunchOut * answerPunchOut;
 @property(copy) NSArray * answers;
 
-+ (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)snippet;
++ (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)answers;
 - (void)setAnswers:(id)arg1;
+- (id)answers;
+- (void)setAnswerPunchOut:(id)arg1;
+- (id)answerPunchOut;
 - (id)encodedClassName;
 
 @end

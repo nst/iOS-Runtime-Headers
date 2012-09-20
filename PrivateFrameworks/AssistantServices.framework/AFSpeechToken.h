@@ -21,21 +21,21 @@
 @property BOOL removeSpaceAfter;
 
 
+- (id)dkPlistRepresentation;
+- (id)initWithDKPlistRepresentation:(id)arg1;
 - (id)description;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (BOOL)removeSpaceAfter;
 - (BOOL)removeSpaceBefore;
 - (double)startTime;
-- (void)setStartTime:(double)arg1;
 - (id)text;
+- (void)setStartTime:(double)arg1;
 - (void)setText:(id)arg1;
-- (int)confidenceScore;
-- (void)setConfidenceScore:(int)arg1;
-- (void)setRemoveSpaceAfter:(BOOL)arg1;
-- (void)setRemoveSpaceBefore:(BOOL)arg1;
-- (id)dkPlistRepresentation;
-- (id)initWithDKPlistRepresentation:(id)arg1;
 - (double)endTime;
+- (void)setRemoveSpaceBefore:(BOOL)arg1;
+- (void)setRemoveSpaceAfter:(BOOL)arg1;
+- (void)setConfidenceScore:(int)arg1;
+- (int)confidenceScore;
 - (void)setEndTime:(double)arg1;
 
 @end

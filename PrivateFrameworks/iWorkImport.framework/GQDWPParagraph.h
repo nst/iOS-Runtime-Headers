@@ -15,11 +15,11 @@
 
 - (void)dealloc;
 - (BOOL)isHidden;
-- (long)listLevel;
-- (id)paragraphStyle;
-- (BOOL)restartList;
 - (BOOL)cont;
+- (BOOL)restartList;
+- (id)paragraphStyle;
 - (BOOL)isBlank;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (long)listLevel;
 
 @end

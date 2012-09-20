@@ -5,9 +5,9 @@
 @interface IUCompilationsDataSource : IUAlbumsDataSource  {
 }
 
-+ (int)tabBarSystemItem;
 + (int)mediaEntityType;
 + (id)tabBarItemTitleKey;
++ (id)tabBarItemIconName;
 
 - (SEL)libraryHasDisplayableEntitiesSelector;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUPurchaseManager, SUTabBarController, SUClient, SUSectionsResponse, UINavigationController, MFMailComposeViewController, NSDictionary, ISOperation, SULocationObserver, NSArray, NSString, UIWindow, NSURL;
+@class SUTabBarController, MFMailComposeViewController, UINavigationController, UIWindow, ISOperation, SUClient, NSDictionary, NSString, SUSectionsResponse, NSURL, NSArray;
 
 @interface SUStoreController : NSObject <SUClientDelegate, SUPurchaseManagerDelegate, SUTabBarControllerDelegate, UIApplicationDelegate, MFMailComposeViewControllerDelegate> {
     SUClient *_client;
@@ -11,9 +11,8 @@
     NSURL *_launchURL;
     ISOperation *_loadSectionsOperation;
     NSString *_localStoreFrontAtLastSuspend;
-    SULocationObserver *_locationObserver;
+    id _locationObserver;
     NSArray *_overlayConfigurations;
-    SUPurchaseManager *_purchaseManager;
     BOOL _reloadForStorefrontChangeAfterAccountSetup;
     BOOL _reloadSectionsOnNextLaunch;
     NSString *_synchedStoreFrontAtLastSuspend;
@@ -30,21 +29,14 @@
 @property(getter=isStoreEnabled,readonly) BOOL storeEnabled;
 @property(retain) UIWindow * window;
 
-+ (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
++ (id)sharedInstance;
 
-- (void)cancelAllOperations;
-- (id)init;
-- (void)dealloc;
-- (void)connect;
-- (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
-- (id)tabBarController;
-- (double)defaultImageSnapshotExpiration;
-- (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
 - (id)storeContentLanguage;
 - (BOOL)showDialogForCapabilities:(id)arg1 mismatches:(id)arg2;
+- (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
 - (void)prepareForSuspend;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
+- (id)downloadQueueForClient:(id)arg1 downloadKinds:(id)arg2;
 - (void)dismissMailComposeViewControllerAnimated:(BOOL)arg1;
 - (void)presentMailComposeViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)isComposingEmail;
@@ -79,38 +71,43 @@
 - (void)_cancelLoadSectionsOperation;
 - (void)tearDownUI;
 - (void)_accountControllerDisappearedNotification:(id)arg1;
-- (void)_selectFooterSectionNotification:(id)arg1;
 - (void)_storeFrontChangedNotification:(id)arg1;
+- (void)_selectFooterSectionNotification:(id)arg1;
 - (BOOL)libraryContainsItemIdentifier:(unsigned long long)arg1;
-- (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
+- (void)exitStoreWithReason:(int)arg1;
 - (void)_restrictionsChangedNotification:(id)arg1;
 - (BOOL)client:(id)arg1 openInternalURL:(id)arg2;
 - (BOOL)client:(id)arg1 presentAccountViewController:(id)arg2 animated:(BOOL)arg3;
 - (id)topViewControllerForClient:(id)arg1;
 - (BOOL)client:(id)arg1 presentModalViewController:(id)arg2 animated:(BOOL)arg3;
-- (id)downloadQueueForClient:(id)arg1 downloadKinds:(id)arg2;
 - (void)_bagDidLoadNotification:(id)arg1;
 - (void)purchaseManager:(id)arg1 didAddPurchases:(id)arg2;
 - (void)purchaseManager:(id)arg1 failedToAddPurchases:(id)arg2;
 - (void)purchaseManager:(id)arg1 willAddPurchases:(id)arg2;
-- (void)exitStoreWithReason:(int)arg1;
 - (void)purchaseManagerDidEndUpdates:(id)arg1;
 - (void)purchaseManagerWillBeginUpdates:(id)arg1;
+- (id)newScriptInterface;
 - (id)overlayConfigurationForStorePage:(id)arg1;
 - (BOOL)matchesClientApplication:(id)arg1;
-- (BOOL)gotoStorePage:(id)arg1 animated:(BOOL)arg2;
 - (void)_reloadForNetworkTypeChange:(id)arg1;
 - (void)handleApplicationURL:(id)arg1;
 - (BOOL)isTabBarControllerLoaded;
-- (id)newScriptInterface;
 - (BOOL)selectSectionWithIdentifier:(id)arg1;
 - (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
-- (BOOL)reportAProblemForItemIdentifier:(unsigned long long)arg1;
 - (void)dismissOverlayBackgroundViewController;
 - (BOOL)presentOverlayBackgroundViewController:(id)arg1;
 - (id)overlayBackgroundViewController;
 - (BOOL)isStoreEnabled;
 - (void)exitStoreAfterDialogsDismiss;
 - (id)copySuspendSettings;
+- (void)cancelAllOperations;
+- (void)dealloc;
+- (id)init;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
+- (void)connect;
+- (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
+- (id)tabBarController;
+- (double)defaultImageSnapshotExpiration;
+- (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
 
 @end

@@ -10,22 +10,22 @@
     <ABDatePickerViewControllerDismissDelegate> *_dismissDelegate;
 }
 
-@property <ABDatePickerViewControllerDismissDelegate> * dismissDelegate;
-@property(retain) UIDatePicker * datePicker;
 @property void* context;
+@property(retain) UIDatePicker * datePicker;
+@property <ABDatePickerViewControllerDismissDelegate> * dismissDelegate;
 
 + (struct CGSize { float x1; float x2; })datePickerSize;
 
 - (void)dealloc;
 - (id)dismissDelegate;
-- (void)setDatePicker:(id)arg1;
-- (id)datePicker;
 - (void)setDismissDelegate:(id)arg1;
-- (float)ab_heightToFitForViewInPopoverView;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewDidLoad;
-- (void*)context;
 - (void)setContext:(void*)arg1;
+- (void*)context;
+- (void)setDatePicker:(id)arg1;
+- (id)datePicker;
+- (float)ab_heightToFitForViewInPopoverView;
 
 @end

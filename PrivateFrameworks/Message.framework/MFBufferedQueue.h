@@ -12,24 +12,24 @@
     unsigned int _currentSize;
 }
 
-@property double maximumLatency;
-@property unsigned int maximumSize;
 @property(readonly) unsigned int size;
+@property unsigned int maximumSize;
+@property double maximumLatency;
 
 
-- (BOOL)addItem:(id)arg1;
-- (double)maximumLatency;
-- (void)setMaximumLatency:(double)arg1;
-- (unsigned int)maximumSize;
-- (void)setMaximumSize:(unsigned int)arg1;
-- (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
-- (unsigned int)sizeForItem:(id)arg1;
-- (BOOL)handleItems:(id)arg1;
-- (id)init;
+- (void)removeAllObjects;
 - (void)dealloc;
+- (id)init;
+- (BOOL)addItem:(id)arg1;
 - (BOOL)isEmpty;
 - (BOOL)flush;
-- (void)removeAllObjects;
 - (unsigned int)size;
+- (void)setMaximumSize:(unsigned int)arg1;
+- (void)setMaximumLatency:(double)arg1;
+- (double)maximumLatency;
+- (unsigned int)maximumSize;
+- (BOOL)handleItems:(id)arg1;
+- (unsigned int)sizeForItem:(id)arg1;
+- (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 
 @end

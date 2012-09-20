@@ -5,21 +5,20 @@
 @class MSDeleteStreamsProtocol, <MSDeleterDelegate>, MSObjectQueue, MSMediaStreamDaemon, NSMutableArray;
 
 @interface MSDeleter : MSCupidStateMachine <MSDeleter, MSDeleteStreamsProtocolDelegate> {
-    <MSDeleterDelegate> *_delegate;
-    MSMediaStreamDaemon *_daemon;
     MSDeleteStreamsProtocol *_protocol;
     int _state;
     MSObjectQueue *_deleteQueue;
     NSMutableArray *_requestedDeleteWrappers;
     int _batchSize;
     int _maxErrorCount;
+    <MSDeleterDelegate> *_delegate;
+    MSMediaStreamDaemon *_daemon;
 }
 
 @property MSMediaStreamDaemon * daemon;
 @property int batchSize;
 @property <MSDeleterDelegate> * delegate;
 
-+ (void)forgetPersonID:(id)arg1;
 + (id)_clearInstantiatedDeletersByPersonID;
 + (id)nextActivityDateForPersonID:(id)arg1;
 + (void)_setMasterNextActivityDate:(id)arg1 forPersonID:(id)arg2;
@@ -30,10 +29,15 @@
 + (BOOL)isInRetryState;
 + (id)personIDsWithOutstandingActivities;
 + (id)nextActivityDate;
++ (void)forgetPersonID:(id)arg1;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void).cxx_destruct;
 - (void)dealloc;
+- (void)stop;
+- (void)deactivate;
 - (void)setBatchSize:(int)arg1;
-- (int)batchSize;
 - (void)deleteProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
 - (void)deleteProtocol:(id)arg1 didFinishSuccessfulCollections:(id)arg2 failedCollections:(id)arg3 error:(id)arg4;
 - (void)_sendDeleteRequest;
@@ -42,17 +46,14 @@
 - (void)_forget;
 - (void)_abort;
 - (id)_abortedError;
+- (void)_stop;
 - (void)_updateMasterManifest;
 - (BOOL)_isInRetryState;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
 - (void)deleteAssetCollections:(id)arg1;
 - (void)performOutstandingActivities;
 - (void)setDaemon:(id)arg1;
-- (void)stop;
-- (void)deactivate;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (int)batchSize;
 - (void)abort;
-- (void)_stop;
 
 @end

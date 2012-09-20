@@ -8,17 +8,22 @@
     NSOperationQueue *_queue;
 }
 
-+ (id)mainQueue;
-+ (BOOL)isActive;
+@property BOOL adjustsMaxConcurrentOperationCount;
 
-- (int)maxConcurrentOperationCount;
-- (void)setMaxConcurrentOperationCount:(int)arg1;
++ (id)mainQueue;
+
 - (void)cancelAllOperations;
 - (void)addOperation:(id)arg1;
-- (id)init;
+- (void)setMaxConcurrentOperationCount:(int)arg1;
 - (void)dealloc;
-- (void)setSuspended:(BOOL)arg1;
-- (id)operations;
+- (id)init;
 - (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
+- (void)setSuspended:(BOOL)arg1;
+- (int)operationCount;
+- (id)operations;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)setAdjustsMaxConcurrentOperationCount:(BOOL)arg1;
+- (BOOL)adjustsMaxConcurrentOperationCount;
+- (int)maxConcurrentOperationCount;
 
 @end

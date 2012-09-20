@@ -11,12 +11,11 @@
 }
 
 
-- (id)init;
-- (id)_tooBigForNetworkErrorForError:(id)arg1 withCount:(int)arg2;
-- (id)_copyItemsByStorefrontFromItems:(id)arg1;
 - (id)mergedErrorForError:(id)arg1 withCount:(int)arg2;
 - (id)copyFilteredItemsFromItems:(id)arg1;
 - (id)everythingFailedErrorForError:(id)arg1;
 - (int (*)())errorEqualCallback;
+- (id)_tooBigForNetworkErrorForError:(id)arg1 withCount:(int)arg2;
+- (id)_copyItemsByStorefrontFromItems:(id)arg1;
 
 @end

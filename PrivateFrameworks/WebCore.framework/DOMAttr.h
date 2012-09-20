@@ -7,19 +7,19 @@
 @interface DOMAttr : DOMNode  {
 }
 
-@property(copy,readonly) NSString * name;
+@property(readonly) NSString * name;
 @property(readonly) BOOL specified;
 @property(copy) NSString * value;
-@property(retain,readonly) DOMElement * ownerElement;
-@property(retain,readonly) DOMCSSStyleDeclaration * style;
+@property(readonly) DOMElement * ownerElement;
+@property(readonly) DOMCSSStyleDeclaration * style;
 
 
+- (id)name;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (id)style;
-- (id)name;
-- (BOOL)specified;
-- (id)ownerElement;
 - (BOOL)isId;
+- (id)ownerElement;
+- (BOOL)specified;
 
 @end

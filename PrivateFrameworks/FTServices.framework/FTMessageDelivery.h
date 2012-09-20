@@ -21,38 +21,41 @@
 @property BOOL retryInAirplaneMode;
 @property(readonly) FTMessage * currentMessage;
 @property(readonly) NSArray * queuedMessages;
+@property(readonly) NSArray * allMessages;
 @property(readonly) int maxMessageSize;
 @property unsigned int maxConcurrentMessages;
 
-+ (id)alloc;
++ (Class)HTTPMessageDeliveryClass;
 + (Class)APNSMessageDeliveryClass;
 + (id)_errorForTDMessageDeliveryStatus:(int)arg1 userInfo:(id)arg2;
-+ (Class)HTTPMessageDeliveryClass;
++ (id)alloc;
 
-- (id)init;
-- (void)dealloc;
+- (void)cancelMessage:(id)arg1;
+- (id)queuedMessages;
+- (id)currentMessage;
+- (void)setRetryInAirplaneMode:(BOOL)arg1;
 - (BOOL)retryInAirplaneMode;
 - (void)setMaxConcurrentMessages:(unsigned int)arg1;
 - (unsigned int)maxConcurrentMessages;
+- (void)_signMessage:(id)arg1 useDataSignatures:(BOOL)arg2 body:(id)arg3 queryString:(id)arg4 intoDictionary:(id)arg5;
 - (int)maxMessageSize;
 - (void)_setRetryTimer:(double)arg1;
 - (BOOL)hasQueuedItems;
 - (BOOL)busy;
+- (id)allMessages;
 - (void)_informDelegateAboutMessage:(id)arg1 error:(id)arg2 result:(id)arg3 resultCode:(int)arg4;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (void)_retryTimerHit:(id)arg1;
 - (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
 - (void)_clearRetryTimer;
-- (id)userAgent;
 - (void)setProtocolVersion:(id)arg1;
+- (id)userAgent;
 - (id)protocolVersion;
-- (void)cancelMessage:(id)arg1;
-- (BOOL)sendMessage:(id)arg1;
 - (void)invalidate;
+- (void)dealloc;
+- (id)init;
+- (BOOL)sendMessage:(id)arg1;
 - (void)setUserAgent:(id)arg1;
-- (id)queuedMessages;
-- (id)currentMessage;
-- (void)setRetryInAirplaneMode:(BOOL)arg1;
 - (id)_queue;
 
 @end

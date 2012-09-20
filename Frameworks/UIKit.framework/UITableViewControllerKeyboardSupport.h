@@ -18,6 +18,7 @@
 
 - (void)setAdjustmentForKeyboard:(float)arg1;
 - (float)adjustmentForKeyboard;
+- (void)_keyboardDidChangeFrame:(id)arg1;
 - (void)_keyboardDidHide:(id)arg1;
 - (void)_keyboardDidShow:(id)arg1;
 - (id)initWithTableViewController:(id)arg1;

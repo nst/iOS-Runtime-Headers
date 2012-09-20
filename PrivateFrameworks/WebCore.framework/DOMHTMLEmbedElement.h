@@ -16,17 +16,17 @@
 
 
 - (void)setName:(id)arg1;
+- (id)name;
+- (id)type;
 - (void)setHeight:(int)arg1;
 - (int)height;
-- (id)type;
 - (void)setWidth:(int)arg1;
 - (int)width;
-- (id)name;
 - (void)setType:(id)arg1;
-- (id)src;
 - (void)setSrc:(id)arg1;
-- (id)align;
+- (id)src;
 - (void)setAlign:(id)arg1;
+- (id)align;
 - (BOOL)showsTapHighlight;
 
 @end

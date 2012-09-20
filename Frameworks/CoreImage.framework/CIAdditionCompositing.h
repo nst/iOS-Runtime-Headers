@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIAdditionCompositing : CICompositeFilter  {
+@interface CIAdditionCompositing : _CICompositeFilter  {
 }
 
 + (id)_kernel_source;

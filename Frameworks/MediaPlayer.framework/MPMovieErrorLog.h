@@ -16,13 +16,13 @@
 @property struct MPMovieErrorLogInternal { id x1; } _internal;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)events;
 - (void)set_internal:(struct MPMovieErrorLogInternal { id x1; })arg1;
-- (id)_initWithAVItemErrorLog:(id)arg1;
-- (struct MPMovieErrorLogInternal { id x1; })_internal;
 - (unsigned int)extendedLogDataStringEncoding;
 - (id)extendedLogData;
-- (id)events;
+- (id)_initWithAVItemErrorLog:(id)arg1;
+- (struct MPMovieErrorLogInternal { id x1; })_internal;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

@@ -15,8 +15,8 @@
 
 - (void)dealloc;
 - (void)setFontScheme:(id)arg1;
-- (id)colorScheme;
 - (id)fontScheme;
 - (id)styleMatrix;
+- (id)colorScheme;
 
 @end

@@ -2,35 +2,31 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SASyncAnchor;
+@class NSString, SASyncAnchor, NSArray;
 
-@interface SASyncChunkDenied : SABaseCommand <SAClientBoundCommand> {
+@interface SASyncChunkDenied : SABaseClientBoundCommand <SAClientBoundCommand> {
 }
 
-@property int errorCode;
-@property(copy) NSString * reason;
-@property(retain) SASyncAnchor * current;
-@property(copy) NSString * refId;
 @property(copy) NSArray * callbacks;
+@property(retain) SASyncAnchor * current;
+@property int errorCode;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
+@property(copy) NSString * appId;
 
-+ (id)chunkDenied;
-+ (id)chunkDeniedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)chunkDeniedWithErrorCode:(int)arg1;
-+ (id)chunkDeniedWithReason:(id)arg1;
++ (id)chunkDeniedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)chunkDenied;
 
 - (id)groupIdentifier;
 - (void)setCurrent:(id)arg1;
-- (void)setReason:(id)arg1;
-- (id)initWithReason:(id)arg1;
-- (id)reason;
-- (int)errorCode;
+- (id)callbacks;
 - (void)setErrorCode:(int)arg1;
+- (int)errorCode;
 - (id)current;
 - (id)initWithErrorCode:(int)arg1;
-- (id)callbacks;
 - (void)setCallbacks:(id)arg1;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

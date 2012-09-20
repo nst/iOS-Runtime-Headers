@@ -11,21 +11,17 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(retain) <ABStyleProvider> * styleProvider;
-@property(copy) NSString * placeholder;
-@property(copy) NSString * stringValue;
 @property <ABSimpleTextInputViewControllerDelegate> * delegate;
+@property(copy) NSString * stringValue;
+@property(copy) NSString * placeholder;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)save:(id)arg1;
-- (id)init;
 - (void)dealloc;
-- (void)updateSaveButton;
-- (void)propertyEditingTableViewCell:(id)arg1 valueDidChange:(id)arg2;
-- (float)ab_heightToFitForViewInPopoverView;
-- (void)setTitleLocalizationKey:(id)arg1;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
+- (id)init;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
 - (BOOL)_allowsAutorotation;
@@ -35,13 +31,17 @@
 - (void)viewDidLoad;
 - (void)setPlaceholder:(id)arg1;
 - (id)placeholder;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (id)delegate;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)setDelegate:(id)arg1;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)updateSaveButton;
+- (void)propertyEditingTableViewCell:(id)arg1 valueDidChange:(id)arg2;
+- (float)ab_heightToFitForViewInPopoverView;
+- (void)setTitleLocalizationKey:(id)arg1;
+- (id)styleProvider;
+- (void)setStyleProvider:(id)arg1;
 - (void)cancel:(id)arg1;
 
 @end

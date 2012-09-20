@@ -6,7 +6,6 @@
 }
 
 
-- (id)init;
 - (id)newNativeViewController;
 
 @end

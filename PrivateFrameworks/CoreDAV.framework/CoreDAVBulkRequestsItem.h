@@ -20,10 +20,11 @@
 @property(readonly) BOOL supportsUpdate;
 @property(readonly) BOOL supportsDelete;
 
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)supportedItems;
 - (id)maxSizeItem;
 - (id)maxResourcesItem;
@@ -35,7 +36,6 @@
 - (void)addSupportedItem:(id)arg1;
 - (void)setMaxSizeItem:(id)arg1;
 - (void)setMaxResourcesItem:(id)arg1;
-- (id)copyParseRules;
 - (id)dictRepresentation;
 - (int)maxSize;
 

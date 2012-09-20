@@ -10,14 +10,14 @@
 @property(copy) NSString * label;
 @property(copy) NSString * name;
 
-+ (id)relatedName;
 + (id)relatedNameWithDictionary:(id)arg1 context:(id)arg2;
++ (id)relatedName;
 
 - (id)groupIdentifier;
 - (void)setName:(id)arg1;
+- (id)name;
 - (id)label;
 - (void)setLabel:(id)arg1;
-- (id)name;
 - (id)encodedClassName;
 
 @end

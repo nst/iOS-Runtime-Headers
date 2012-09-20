@@ -13,20 +13,24 @@
 @property(readonly) NSSet * calendars;
 
 
-- (id)externalID;
 - (id)description;
 - (id)init;
-- (void)setDefaultAlarmOffset:(id)arg1;
-- (id)defaultAlarmOffset;
-- (id)_persistentItem;
-- (id)calendars;
-- (id)allCalendars;
 - (id)constraints;
-- (BOOL)commit:(id*)arg1;
-- (id)sourceIdentifier;
 - (int)sourceType;
 - (id)title;
 - (BOOL)isEnabled;
 - (BOOL)remove:(id*)arg1;
+- (id)sourceIdentifier;
+- (id)externalID;
+- (int)displayOrderForNewCalendar;
+- (void)setDefaultAlarmOffset:(id)arg1;
+- (id)defaultAlarmOffset;
+- (BOOL)isFacebookSource;
+- (id)_persistentItem;
+- (id)readWriteCalendarsForEntityType:(unsigned int)arg1;
+- (id)calendars;
+- (id)allCalendars;
+- (id)calendarsForEntityType:(unsigned int)arg1;
+- (BOOL)commit:(id*)arg1;
 
 @end

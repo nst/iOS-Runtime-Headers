@@ -10,20 +10,11 @@
 
 + (id)supportedMIMETypes;
 + (id)unsupportedTextMIMETypes;
-+ (id)supportedNonImageMIMETypes;
 + (id)supportedImageMIMETypes;
++ (id)supportedNonImageMIMETypes;
 
-- (id)init;
 - (void)dealloc;
-- (BOOL)canSaveAsWebArchive;
-- (BOOL)canProvideDocumentSource;
-- (id)documentSource;
-- (BOOL)_isDisplayingWebArchive;
-- (id)searchForLabels:(id)arg1 beforeElement:(id)arg2 resultDistance:(unsigned int*)arg3 resultIsInCellAbove:(BOOL*)arg4;
-- (void)_redirectDataToManualLoader:(id)arg1 forPluginView:(id)arg2;
-- (void)finishedLoadingWithDataSource:(id)arg1;
-- (void)receivedData:(id)arg1 withDataSource:(id)arg2;
-- (void)receivedError:(id)arg1 withDataSource:(id)arg2;
+- (id)init;
 - (id)controlsInForm:(id)arg1;
 - (id)searchForLabels:(id)arg1 beforeElement:(id)arg2;
 - (id)matchLabels:(id)arg1 againstElement:(id)arg2;
@@ -36,6 +27,15 @@
 - (id)DOMDocument;
 - (id)title;
 - (void)setDataSource:(id)arg1;
+- (BOOL)canSaveAsWebArchive;
+- (id)documentSource;
+- (BOOL)canProvideDocumentSource;
+- (id)searchForLabels:(id)arg1 beforeElement:(id)arg2 resultDistance:(unsigned int*)arg3 resultIsInCellAbove:(BOOL*)arg4;
+- (BOOL)_isDisplayingWebArchive;
+- (void)_redirectDataToManualLoader:(id)arg1 forPluginView:(id)arg2;
+- (void)receivedError:(id)arg1 withDataSource:(id)arg2;
+- (void)receivedData:(id)arg1 withDataSource:(id)arg2;
+- (void)finishedLoadingWithDataSource:(id)arg1;
 - (BOOL)formElementLooksLikeCreditCardNumberField:(id)arg1;
 - (BOOL)formElementLooksLikeSecurityCodeField:(id)arg1;
 

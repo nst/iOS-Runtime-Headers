@@ -14,10 +14,10 @@
 
 + (id)transactionWithBulletinID:(id)arg1;
 
+- (unsigned int)transactionID;
 - (void)dealloc;
 - (id)initWithBulletinID:(id)arg1;
 - (unsigned int)incrementTransactionID;
 - (id)bulletinID;
-- (unsigned int)transactionID;
 
 @end

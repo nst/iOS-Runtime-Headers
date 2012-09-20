@@ -9,19 +9,22 @@
     unsigned int _delegateRespondsToTextChange : 1;
 }
 
+@property(readonly) UITextField * textField;
 
+
+- (void)setDelegate:(id)arg1;
 - (void)dealloc;
-- (BOOL)_canBecomeFirstResponder;
+- (id)textField;
 - (BOOL)endEditing:(BOOL)arg1;
 - (void)textChanged:(id)arg1;
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
 - (void)textFieldDidResignFirstResponder:(id)arg1;
 - (void)textFieldDidBecomeFirstResponder:(id)arg1;
-- (BOOL)becomeFirstResponder;
 - (id)text;
+- (BOOL)becomeFirstResponder;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)_canBecomeFirstResponder;
 
 @end

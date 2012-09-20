@@ -22,22 +22,26 @@
 @property(retain) NSString * XID;
 @property(retain) NSString * flavor;
 @property(retain) NSString * dimensions;
+@property(retain) NSString * podcastEpisodeGUID;
 @property(readonly) NSDictionary * downloadDictionary;
 @property(readonly) NSDictionary * assetDictionary;
 
 
-- (void)setCollectionID:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)adamID;
-- (void)setAdamID:(id)arg1;
 - (void)setAppleID:(id)arg1;
 - (id)appleID;
+- (void)setDSID:(id)arg1;
+- (id)DSID;
+- (void)setAdamID:(id)arg1;
+- (id)adamID;
+- (id)versionID;
+- (void)dealloc;
+- (id)init;
+- (void)setPodcastEpisodeGUID:(id)arg1;
+- (id)podcastEpisodeGUID;
 - (id)assetDictionary;
 - (id)downloadDictionary;
 - (id)drmFree;
 - (void)setDrmFree:(id)arg1;
-- (id)dimensions;
 - (void)setDimensions:(id)arg1;
 - (id)flavor;
 - (void)setFlavor:(id)arg1;
@@ -52,9 +56,8 @@
 - (id)storefrontID;
 - (void)setStorefrontID:(id)arg1;
 - (void)setVersionID:(id)arg1;
-- (id)DSID;
-- (void)setDSID:(id)arg1;
-- (id)versionID;
+- (void)setCollectionID:(id)arg1;
+- (id)dimensions;
 - (id)collectionID;
 
 @end

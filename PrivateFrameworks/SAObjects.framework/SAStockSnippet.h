@@ -9,12 +9,12 @@
 
 @property(copy) NSArray * stocks;
 
-+ (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)snippet;
++ (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)stocks;
 - (void)setStocks:(id)arg1;
+- (id)stocks;
 - (id)encodedClassName;
 
 @end

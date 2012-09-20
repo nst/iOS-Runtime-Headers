@@ -53,18 +53,20 @@
 + (void)appendDebugString:(id)arg1;
 + (id)uniqueQueryIDString;
 
-- (int)parseData:(id)arg1;
+- (void).cxx_destruct;
 - (void)cancel;
-- (id)init;
 - (void)dealloc;
-- (id)connectionForRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
+- (id)init;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (BOOL)isLoading;
 - (void)loadRequest:(id)arg1;
+- (void)failWithError:(id)arg1;
+- (id)aggregateDictionaryDomain;
 - (void)willParseData;
 - (void)didParseData;
-- (void)failWithError:(id)arg1;
+- (id)connectionForRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
+- (int)parseData:(id)arg1;
 
 @end

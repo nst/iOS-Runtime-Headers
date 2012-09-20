@@ -12,15 +12,9 @@
 + (id)credentialWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
 + (id)credentialWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
 
-- (id)certificates;
-- (struct __SecIdentity { }*)identity;
-- (unsigned int)persistence;
-- (BOOL)hasPassword;
-- (id)initWithTrust:(struct __SecTrust { }*)arg1;
-- (id)initWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)user;
@@ -28,7 +22,13 @@
 - (id)password;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (struct _CFURLCredential { }*)_cfurlcredential;
 - (id)_initWithCFURLCredential:(struct _CFURLCredential { }*)arg1;
+- (struct _CFURLCredential { }*)_cfurlcredential;
+- (id)certificates;
+- (struct __SecIdentity { }*)identity;
+- (unsigned int)persistence;
+- (BOOL)hasPassword;
+- (id)initWithTrust:(struct __SecTrust { }*)arg1;
+- (id)initWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
 
 @end

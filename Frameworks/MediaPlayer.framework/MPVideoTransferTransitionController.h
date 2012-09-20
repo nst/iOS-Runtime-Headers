@@ -19,20 +19,20 @@
 @property BOOL showOverlayAfterTransition;
 
 
-- (id)init;
-- (void)dealloc;
 - (void)setTransitionBehindView:(id)arg1;
 - (id)transitionBehindView;
+- (void)setInflightBackstopViewController:(id)arg1;
+- (void)setShowOverlayAfterTransition:(BOOL)arg1;
 - (BOOL)showOverlayAfterTransition;
 - (id)portraitNavigationBar;
 - (id)inflightBackstopViewController;
 - (void)_transformView:(id)arg1 forOrientation:(int)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_prepareViewsWithBeginAnimationTransactionBlock:(id)arg1;
 - (void)_updateStatusBar;
+- (void)setPortraitNavigationBar:(id)arg1;
 - (void)_animationDidStop;
 - (void)performTransition:(unsigned int)arg1;
-- (void)setShowOverlayAfterTransition:(BOOL)arg1;
-- (void)setInflightBackstopViewController:(id)arg1;
-- (void)setPortraitNavigationBar:(id)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

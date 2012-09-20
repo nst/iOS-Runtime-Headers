@@ -12,12 +12,12 @@
 
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)addChangedProperty:(id)arg1;
+- (void)setChangedProperties:(id)arg1;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (void)addChangedProperty:(id)arg1;
 - (id)changedProperties;
-- (void)setChangedProperties:(id)arg1;
 
 @end

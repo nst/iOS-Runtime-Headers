@@ -12,12 +12,12 @@
 
 
 - (void)dealloc;
+- (BOOL)update;
+- (id)_titleView;
 - (id)_organizerView;
 - (BOOL)hasCustomLayout;
 - (BOOL)shouldDisplayForEvent;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (BOOL)update;
-- (id)_titleView;
 
 @end

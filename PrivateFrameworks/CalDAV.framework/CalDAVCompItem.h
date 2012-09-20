@@ -11,12 +11,12 @@
 @property(retain) NSString * nameAttribute;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)nameAttribute;
+- (void)setNameAttribute:(id)arg1;
 - (void)parserFoundAttributes:(id)arg1;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)write:(id)arg1;
-- (id)nameAttribute;
-- (void)setNameAttribute:(id)arg1;
 
 @end

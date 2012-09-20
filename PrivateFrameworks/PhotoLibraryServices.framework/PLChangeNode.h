@@ -2,33 +2,35 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
+@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
+
 @interface PLChangeNode : NSObject  {
-    void *_hubConnection;
+    NSObject<OS_xpc_object> *_hubConnection;
     Class _changeHubClass;
     unsigned char _nodeUUID[16];
     int _notifyToken;
-    struct dispatch_queue_s { } *_isolationQueue;
+    NSObject<OS_dispatch_queue> *_isolationQueue;
     unsigned long long _lastKnownChangeHubEventIndex;
 }
 
-+ (id)localChangeEventFromChangeHubEvent:(void*)arg1;
-+ (id)_descriptionForEvent:(void*)arg1;
++ (id)localChangeEventFromChangeHubEvent:(id)arg1;
++ (id)_descriptionForEvent:(id)arg1;
 + (id)sharedNode;
 
-- (id)init;
 - (void)dealloc;
-- (void)distributeLocalEvent:(void*)arg1;
-- (void)distributeRemoteChangeHubEvent:(void*)arg1 withGroup:(struct dispatch_group_s { }*)arg2;
-- (BOOL)isEventOriginatingFromHere:(void*)arg1;
-- (void)processRemoteEvents:(void*)arg1;
+- (id)init;
+- (void)distributeLocalEvent:(id)arg1;
+- (void)distributeRemoteChangeHubEvent:(id)arg1 withGroup:(id)arg2;
+- (BOOL)isEventOriginatingFromHere:(id)arg1;
+- (void)processRemoteEvents:(id)arg1;
 - (void)forceUserInterfaceReload;
 - (void)fetchNewEventsFromChangeHub;
-- (void)handleRemoteChangeHubRequest:(const void*)arg1;
-- (void*)createXPCObjectFromDidSaveNotification:(id)arg1;
+- (void)handleRemoteChangeHubRequest:(id)arg1;
+- (id)createXPCObjectFromDidSaveNotification:(id)arg1;
 - (void)sendChangeHubEventForDidSaveNotification:(id)arg1;
-- (void)sendEventToChangeHub:(void*)arg1;
-- (void)distributeRemoteContextDidSaveEvent:(const void*)arg1 withGroup:(struct dispatch_group_s { }*)arg2;
-- (void)_processDeletionsFromChangeHubEvent:(const void*)arg1;
+- (void)sendEventToChangeHub:(id)arg1;
+- (void)distributeRemoteContextDidSaveEvent:(id)arg1 withGroup:(id)arg2;
+- (void)_processDeletionsFromChangeHubEvent:(id)arg1;
 - (void)setupHubConnection;
 - (void)disconnectManagedObjectContext:(id)arg1;
 - (void)connectManagedObjectContext:(id)arg1;

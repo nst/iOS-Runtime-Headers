@@ -2,25 +2,13 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UILabel;
-
-@interface EKEventDetailAlarmCell : EKEventDetailCell  {
-    int _style;
-    UILabel *_alertTitleView;
-    UILabel *_alertView;
-    UILabel *_alert2View;
-    unsigned int _visibleItems;
+@interface EKEventDetailAlarmCell : EKEventDetailTwoValueCell  {
 }
 
 
-- (void)dealloc;
-- (void)setAlarms:(id)arg1;
-- (id)_alertTitleView;
-- (id)_alert2View;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 platformStyle:(int)arg3;
-- (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (BOOL)update;
 - (BOOL)isEditable;
-- (id)_alertView;
+- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 platformStyle:(int)arg3;
+- (void)setAlarms:(id)arg1;
 
 @end

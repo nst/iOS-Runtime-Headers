@@ -13,12 +13,12 @@
 + (id)pivotPageField;
 
 - (void)setName:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)name;
-- (id)cap;
+- (void)dealloc;
+- (id)init;
 - (void)setCap:(id)arg1;
-- (unsigned int)fieldId;
+- (id)cap;
 - (void)setFieldId:(unsigned int)arg1;
+- (unsigned int)fieldId;
 
 @end

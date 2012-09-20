@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class <NewsUpdaterDelegate>, StockNewsItemCollection, Stock;
+@class StockNewsItemCollection, Stock, NewsParserData, <NewsUpdaterDelegate>;
 
 @interface NewsUpdater : XMLHTTPRequest  {
     <NewsUpdaterDelegate> *_delegate;
@@ -10,6 +10,7 @@
     double _lastResponseTimestamp;
     StockNewsItemCollection *_lastNewsItemCollection;
     Stock *_stock;
+    NewsParserData *_newsParserData;
 }
 
 @property <NewsUpdaterDelegate> * delegate;
@@ -17,17 +18,20 @@
 + (id)sharedNewsUpdater;
 + (id)_newsItemCollectionCache;
 
-- (int)parseData:(id)arg1;
-- (id)init;
-- (BOOL)shouldReloadOnResume;
-- (void)loadNewsCacheFromDiskForSymbol:(id)arg1;
-- (BOOL)fetchNewsForStock:(id)arg1;
-- (void)saveLastResponse;
-- (void)clearNewsCacheOnDisk;
-- (void)resetLocale;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
-- (void)didParseData;
+- (id)delegate;
+- (void).cxx_destruct;
+- (void)cancel;
+- (id)init;
 - (void)failWithError:(id)arg1;
+- (id)aggregateDictionaryDomain;
+- (void)resetLocale;
+- (void)didParseData;
+- (void)saveLastResponse;
+- (BOOL)fetchNewsForStock:(id)arg1;
+- (void)loadNewsCacheFromDiskForSymbol:(id)arg1;
+- (BOOL)shouldReloadOnResume;
+- (void)clearNewsCacheOnDisk;
+- (int)parseData:(id)arg1;
 
 @end

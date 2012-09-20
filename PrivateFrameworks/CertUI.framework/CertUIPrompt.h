@@ -24,18 +24,11 @@
 @property(retain) NSString * service;
 @property(copy) NSString * connectionDisplayName;
 
-+ (struct dispatch_queue_s { }*)promptQueue;
++ (id)promptQueue;
 + (id)stringForResponse:(int)arg1;
 
-- (void)setHost:(id)arg1;
-- (void)setService:(id)arg1;
-- (void)setTrust:(struct __SecTrust { }*)arg1;
-- (int)showAndWaitForResponse;
 - (id)description;
 - (void)dealloc;
-- (void)showPromptWithResponseBlock:(id)arg1;
-- (void)setConnectionDisplayName:(id)arg1;
-- (id)service;
 - (id)host;
 - (void)_informConsumerOfResponse:(int)arg1;
 - (struct __SecTrust { }*)trust;
@@ -54,5 +47,12 @@
 - (id)_sendablePropertyFromProperty:(id)arg1;
 - (id)_sendablePropertiesFromProperties:(id)arg1;
 - (id)connectionDisplayName;
+- (id)service;
+- (int)showAndWaitForResponse;
+- (void)setTrust:(struct __SecTrust { }*)arg1;
+- (void)setService:(id)arg1;
+- (void)setHost:(id)arg1;
+- (void)showPromptWithResponseBlock:(id)arg1;
+- (void)setConnectionDisplayName:(id)arg1;
 
 @end

@@ -7,7 +7,9 @@
 @interface UIWebSelectTableViewController : UITableViewController <UIKeyInput> {
     DOMHTMLSelectElement *_selectionNode;
     NSArray *_cachedItems;
+    NSArray *_groupsAndOptions;
     unsigned int _singleSelectionIndex;
+    unsigned int _singleSelectionSection;
     BOOL _allowsMultipleSelection;
     float _fontSize;
     float _maximumTextWidth;
@@ -16,8 +18,8 @@
 }
 
 @property(retain) DOMHTMLSelectElement * _selectionNode;
+@property(retain) NSArray * _groupsAndOptions;
 @property(retain) NSArray * _cachedItems;
-@property unsigned int _singleSelectionIndex;
 @property UIWebSelectPopover * _popover;
 @property int autocapitalizationType;
 @property int autocorrectionType;
@@ -32,11 +34,13 @@
 - (void)dealloc;
 - (void)set_popover:(id)arg1;
 - (id)_popover;
-- (void)set_singleSelectionIndex:(unsigned int)arg1;
+- (id)_groupsAndOptions;
 - (float)heightForItems;
 - (id)initWithDOMHTMLSelectNode:(id)arg1 cachedItems:(id)arg2 singleSelectionIndex:(unsigned int)arg3 multipleSelection:(BOOL)arg4;
-- (BOOL)_hasItems;
-- (unsigned int)_singleSelectionIndex;
+- (id)_optionsForSection:(int)arg1;
+- (BOOL)_isEmpty;
+- (void)_setupGroupsAndOptions;
+- (void)set_groupsAndOptions:(id)arg1;
 - (id)_cachedItems;
 - (void)set_cachedItems:(id)arg1;
 - (id)_selectionNode;
@@ -45,9 +49,10 @@
 - (BOOL)hasText;
 - (void)insertText:(id)arg1;
 - (void)deleteBackward;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

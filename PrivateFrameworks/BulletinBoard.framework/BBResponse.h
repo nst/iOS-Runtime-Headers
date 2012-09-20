@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSString, BBAssertion;
+@class NSArray, NSString, BBAssertion;
 
 @interface BBResponse : NSObject <NSCoding> {
     BBAssertion *_lifeAssertion;
@@ -20,10 +20,11 @@
     NSString *_actionKey;
     BOOL _sent;
     NSString *_replyText;
+    NSArray *_lifeAssertions;
 }
 
 @property(copy) NSString * replyText;
-@property(retain) BBAssertion * lifeAssertion;
+@property(copy) NSArray * lifeAssertions;
 @property(copy) id sendBlock;
 @property(retain) NSString * bulletinID;
 @property BOOL deliverToPublisher;
@@ -31,9 +32,14 @@
 
 
 - (void)dealloc;
+- (id)actionKey;
+- (void)setActionKey:(id)arg1;
+- (void)send;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setSendBlock:(id)arg1;
-- (void)setLifeAssertion:(id)arg1;
-- (id)lifeAssertion;
+- (void)setLifeAssertions:(id)arg1;
+- (id)lifeAssertions;
 - (id)replyText;
 - (BOOL)deliverToPublisher;
 - (id)bulletinID;
@@ -41,10 +47,5 @@
 - (void)setDeliverToPublisher:(BOOL)arg1;
 - (void)setBulletinID:(id)arg1;
 - (id)sendBlock;
-- (id)actionKey;
-- (void)setActionKey:(id)arg1;
-- (void)send;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

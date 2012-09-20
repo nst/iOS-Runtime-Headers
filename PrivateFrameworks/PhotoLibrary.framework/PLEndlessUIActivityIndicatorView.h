@@ -9,8 +9,8 @@
 - (void)dealloc;
 - (void)startAnimating;
 - (void)stopAnimating;
-- (void)setAnimating:(BOOL)arg1;
 - (void)stopAnimation;
+- (void)setAnimating:(BOOL)arg1;
 - (void)_removeAllAnimations:(BOOL)arg1;
 - (void)reallyStartAnimating;
 

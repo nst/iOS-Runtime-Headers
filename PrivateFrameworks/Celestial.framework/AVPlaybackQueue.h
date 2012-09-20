@@ -17,6 +17,8 @@
 }
 
 
+- (void)setRepeatMode:(int)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void)removeItemsNoLongerInPlayQueue;
 - (void)fillInPBItemQueue;
@@ -35,7 +37,5 @@
 - (id)initWithDelegate:(id)arg1 figPlayer:(struct OpaqueFigPlayer { }*)arg2;
 - (void)endAVQueueTransaction;
 - (void)beginAVQueueTransaction;
-- (void)setDelegate:(id)arg1;
-- (void)setRepeatMode:(int)arg1;
 
 @end

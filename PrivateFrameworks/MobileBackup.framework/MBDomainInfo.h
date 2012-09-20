@@ -6,27 +6,29 @@
 
 @interface MBDomainInfo : NSObject <NSCopying, NSCoding> {
     NSString *_domainName;
-    unsigned long long _remoteSize;
     unsigned long long _localSize;
+    unsigned long long _remoteSize;
     BOOL _enabled;
+    BOOL _systemApp;
     BOOL _restricted;
 }
 
 @property(getter=isAppDomain,readonly) BOOL appDomain;
+@property(getter=isSystemApp) BOOL systemApp;
 @property(getter=isCameraRollDomain,readonly) BOOL cameraRollDomain;
+@property(retain) NSString * domainName;
 @property(readonly) NSString * bundleID;
 @property(readonly) unsigned long long size;
-@property(getter=isRestricted) BOOL restricted;
-@property(getter=isEnabled) BOOL enabled;
-@property unsigned long long localSize;
 @property unsigned long long remoteSize;
-@property(retain) NSString * domainName;
+@property unsigned long long localSize;
+@property(getter=isEnabled) BOOL enabled;
+@property(getter=isRestricted) BOOL restricted;
 
++ (id)domainInfoWithName:(id)arg1 systemApp:(BOOL)arg2 remoteSize:(unsigned long long)arg3 localSize:(unsigned long long)arg4 enabled:(BOOL)arg5 restricted:(BOOL)arg6;
 + (id)domainNameForBundleID:(id)arg1;
-+ (id)domainInfoWithName:(id)arg1 remoteSize:(unsigned long long)arg2 localSize:(unsigned long long)arg3 enabled:(BOOL)arg4 restricted:(BOOL)arg5;
 
-- (id)domainName;
-- (void)setDomainName:(id)arg1;
+- (id)bundleID;
+- (BOOL)isRestricted;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -35,15 +37,17 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)size;
-- (id)bundleID;
-- (BOOL)isRestricted;
-- (BOOL)isCameraRollDomain;
 - (void)setRestricted:(BOOL)arg1;
-- (unsigned long long)localSize;
-- (void)setLocalSize:(unsigned long long)arg1;
-- (unsigned long long)remoteSize;
+- (void)setSystemApp:(BOOL)arg1;
 - (void)setRemoteSize:(unsigned long long)arg1;
-- (id)initWithDomainName:(id)arg1 remoteSize:(unsigned long long)arg2 localSize:(unsigned long long)arg3 enabled:(BOOL)arg4 restricted:(BOOL)arg5;
+- (unsigned long long)remoteSize;
+- (void)setLocalSize:(unsigned long long)arg1;
+- (unsigned long long)localSize;
+- (BOOL)isCameraRollDomain;
+- (id)initWithDomainName:(id)arg1 systemApp:(BOOL)arg2 remoteSize:(unsigned long long)arg3 localSize:(unsigned long long)arg4 enabled:(BOOL)arg5 restricted:(BOOL)arg6;
+- (BOOL)isSystemApp;
 - (BOOL)isAppDomain;
+- (void)setDomainName:(id)arg1;
+- (id)domainName;
 
 @end

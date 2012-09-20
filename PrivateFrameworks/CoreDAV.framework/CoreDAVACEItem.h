@@ -21,24 +21,24 @@
 @property(retain) CoreDAVItemWithHrefChildItem * inherited;
 
 + (id)privilegeItemWithNameSpace:(id)arg1 andName:(id)arg2;
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)invert;
 - (id)initWithPrincipal:(id)arg1 shouldInvert:(BOOL)arg2 action:(int)arg3 withPrivileges:(id)arg4;
 - (void)setInherited:(id)arg1;
 - (void)setProtectedItem:(id)arg1;
 - (void)setDeny:(id)arg1;
 - (void)setGrant:(id)arg1;
 - (void)setInvert:(id)arg1;
+- (id)deny;
 - (void)setPrincipal:(id)arg1;
 - (id)protectedItem;
 - (id)inherited;
 - (id)grant;
-- (id)copyParseRules;
 - (id)principal;
-- (id)invert;
 - (void)write:(id)arg1;
-- (id)deny;
 
 @end

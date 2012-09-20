@@ -13,15 +13,15 @@
 }
 
 
-- (id)authenticationChallenge;
-- (void)dealloc;
 - (void)cancelAuthentication;
-- (void)sheetReturnKeyPressed:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)setDelegate:(id)arg1;
-- (void)addAuthenticationChallenge:(id)arg1;
 - (void)removeAuthenticationChallenge:(id)arg1;
-- (void)setShowingAuthentication:(BOOL)arg1;
+- (void)addAuthenticationChallenge:(id)arg1;
 - (void)addAuthenticationChallenge:(id)arg1 displayPanel:(BOOL)arg2;
+- (void)setShowingAuthentication:(BOOL)arg1;
+- (void)sheetReturnKeyPressed:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (id)authenticationChallenge;
 
 @end

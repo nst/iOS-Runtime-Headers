@@ -2,24 +2,22 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary;
+@class NSDate, NSDictionary;
 
 @interface MPNowPlayingInfoCenter : NSObject  {
-    struct MPNowPlayingInfoCenterInternal { 
-        NSDictionary *nowPlayingInfo; 
-    } _internal;
+    NSDictionary *_nowPlayingInfo;
+    NSDictionary *_queuedNowPlayingInfo;
+    NSDate *_pushDate;
 }
 
 @property(copy) NSDictionary * nowPlayingInfo;
-@property struct MPNowPlayingInfoCenterInternal { id x1; } _internal;
 
 + (id)defaultCenter;
 
-- (id)init;
-- (id)nowPlayingInfo;
 - (void)setNowPlayingInfo:(id)arg1;
-- (void)set_internal:(struct MPNowPlayingInfoCenterInternal { id x1; })arg1;
-- (struct MPNowPlayingInfoCenterInternal { id x1; })_internal;
+- (id)nowPlayingInfo;
+- (void)_pushNowPlayingInfoAndRetry:(BOOL)arg1;
+- (id)init;
 - (id)_init;
 
 @end

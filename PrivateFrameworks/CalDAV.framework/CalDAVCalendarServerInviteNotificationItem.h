@@ -15,36 +15,37 @@
     CalDAVSupportedCalendarComponentSet *_supportedCalendarComponentSet;
 }
 
-@property(retain) CalDAVSupportedCalendarComponentSet * supportedCalendarComponentSet;
-@property(retain) CoreDAVLeafItem * summary;
-@property(retain) CalDAVCalendarServerOrganizerItem * organizer;
-@property(retain) CoreDAVItemWithHrefChildItem * hostURL;
-@property(retain) CalDAVCalendarServerAccessItem * access;
-@property(retain) CoreDAVItemWithNoChildren * inviteStatus;
-@property(retain) CoreDAVHrefItem * href;
 @property(retain) CoreDAVLeafItem * uid;
+@property(retain) CoreDAVHrefItem * href;
+@property(retain) CoreDAVItemWithNoChildren * inviteStatus;
+@property(retain) CalDAVCalendarServerAccessItem * access;
+@property(retain) CoreDAVItemWithHrefChildItem * hostURL;
+@property(retain) CalDAVCalendarServerOrganizerItem * organizer;
+@property(retain) CoreDAVLeafItem * summary;
+@property(retain) CalDAVSupportedCalendarComponentSet * supportedCalendarComponentSet;
 
 
-- (void)setUid:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (void)setInviteStatus:(id)arg1;
 - (id)inviteStatus;
-- (id)copyParseRules;
-- (void)setOrganizer:(id)arg1;
-- (id)organizer;
+- (void)setInviteStatus:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (id)uid;
-- (id)summary;
-- (void)setSummary:(id)arg1;
-- (void)setHref:(id)arg1;
-- (id)href;
+- (id)access;
+- (id)supportedCalendarComponentSet;
+- (id)hostURL;
 - (BOOL)isComponentSupportedForString:(id)arg1;
+- (id)initForReplyWithUID:(id)arg1 href:(id)arg2 hostURL:(id)arg3 summary:(id)arg4;
 - (void)setAccess:(id)arg1;
 - (void)setHostURL:(id)arg1;
-- (id)hostURL;
-- (id)access;
 - (void)setSupportedCalendarComponentSet:(id)arg1;
-- (id)supportedCalendarComponentSet;
+- (id)copyParseRules;
+- (void)setSummary:(id)arg1;
+- (id)summary;
+- (void)setHref:(id)arg1;
+- (id)href;
+- (void)setUid:(id)arg1;
+- (void)setOrganizer:(id)arg1;
+- (id)organizer;
 
 @end

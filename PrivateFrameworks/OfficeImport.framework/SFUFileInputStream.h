@@ -14,14 +14,14 @@
 - (void)dealloc;
 - (void)close;
 - (long long)offset;
-- (id)initWithFileDescriptor:(int)arg1 offset:(long long)arg2 length:(long long)arg3;
 - (id)initWithPath:(id)arg1 offset:(long long)arg2 length:(long long)arg3;
+- (id)initWithFileDescriptor:(int)arg1 offset:(long long)arg2 length:(long long)arg3;
 - (id)initWithPath:(id)arg1 offset:(long long)arg2;
 - (id)closeLocalStream;
-- (BOOL)canSeek;
-- (void)seekToOffset:(long long)arg1;
-- (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
-- (void)disableSystemCaching;
 - (void)enableSystemCaching;
+- (void)disableSystemCaching;
+- (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
+- (void)seekToOffset:(long long)arg1;
+- (BOOL)canSeek;
 
 @end

@@ -8,11 +8,11 @@
 }
 
 @property(copy) NSString * requestId;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)rollbackRequest;
 + (id)rollbackRequestWithDictionary:(id)arg1 context:(id)arg2;
++ (id)rollbackRequest;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

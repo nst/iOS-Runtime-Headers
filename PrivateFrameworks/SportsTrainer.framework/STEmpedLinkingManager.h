@@ -15,8 +15,10 @@
 + (void)_startRemoteLinking;
 + (void)_startLinking;
 
-- (id)init;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (id)init;
 - (void)_fakeEmpedLinkingStateChanged:(BOOL)arg1 afterDelay:(double)arg2;
 - (void)unlinkSensor;
 - (void)startRemoteLinking;
@@ -25,8 +27,6 @@
 - (void)stopLinking;
 - (void)_remoteLinkingStateChanged:(id)arg1;
 - (void)_empedLinkingStateChanged:(id)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)unlinkRemote;
 
 @end

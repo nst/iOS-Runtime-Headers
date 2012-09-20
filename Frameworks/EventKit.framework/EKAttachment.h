@@ -16,16 +16,16 @@
 @property(readonly) NSURL * localURL;
 
 
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)init;
-- (int)compareFileNames:(id)arg1;
-- (id)fileFormat;
 - (id)localURL;
 - (id)URL;
-- (id)fileName;
+- (id)description;
+- (BOOL)isEqual:(id)arg1;
+- (id)init;
+- (id)UUID;
 - (id)fileSize;
 - (BOOL)isBinary;
-- (id)UUID;
+- (id)fileName;
+- (int)compareFileNames:(id)arg1;
+- (id)fileFormat;
 
 @end

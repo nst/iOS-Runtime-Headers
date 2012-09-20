@@ -16,8 +16,13 @@
 + (BOOL)supportsLanguage:(id)arg1;
 + (id)availableTagSchemesForLanguage:(id)arg1;
 
+- (id)description;
+- (void)setString:(id)arg1;
+- (id)string;
+- (void)dealloc;
 - (id)possibleTagsAtIndex:(unsigned int)arg1 scheme:(id)arg2 tokenRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 sentenceRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4 scores:(id*)arg5;
 - (id)tagAtIndex:(unsigned int)arg1 scheme:(id)arg2 tokenRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 sentenceRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;
+- (BOOL)_ngramTagsAndFrequenciesForMisspelledRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 word:(id)arg2 tags:(id*)arg3 frequencies:(id*)arg4;
 - (id)_rankedCandidatesForMisspelledRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 candidates:(id)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })sentenceRangeForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)stringEditedInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 changeInLength:(int)arg2;
@@ -39,9 +44,5 @@
 - (id)tagsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 scheme:(id)arg2 options:(unsigned int)arg3 tokenRanges:(id*)arg4;
 - (void)setOrthography:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithTagSchemes:(id)arg1 options:(unsigned int)arg2;
-- (id)string;
-- (id)description;
-- (void)setString:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -12,9 +12,9 @@
 + (id)instanceFromPlist:(id)arg1;
 
 - (void)dealloc;
-- (id)initFromPlist:(id)arg1;
-- (id)initWithIndex:(int)arg1 attributeName:(id)arg2;
 - (id)key;
 - (int)index;
+- (id)initFromPlist:(id)arg1;
+- (id)initWithIndex:(int)arg1 attributeName:(id)arg2;
 
 @end

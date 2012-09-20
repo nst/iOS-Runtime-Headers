@@ -21,8 +21,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)cancelSearchingForFakeSensor:(id)arg1;
 - (void)beginSearchingForFakeSensor:(id)arg1;
 - (void)cancelLinkingForFakeSensor:(id)arg1;

@@ -9,8 +9,8 @@
     NSString *_category;
 }
 
-@property(readonly) NSString * category;
 @property(readonly) NSString * string;
+@property(readonly) NSString * category;
 
 + (id)copyFacemarkCandidatesForLocale:(id)arg1;
 

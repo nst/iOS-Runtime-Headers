@@ -28,23 +28,23 @@
 + (id)printInfo;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setScaleUp:(BOOL)arg1;
 - (BOOL)scaleUp;
 - (void)setCopies:(int)arg1;
 - (int)copies;
 - (void)setDuplex:(int)arg1;
 - (int)duplex;
-- (void)setOutputType:(int)arg1;
 - (int)outputType;
-- (void)setJobName:(id)arg1;
 - (id)jobName;
 - (void)setPrinterID:(id)arg1;
 - (id)printerID;
 - (id)_createPrintSettingsForPrinter:(id)arg1;
 - (void)_updateWithPrinter:(id)arg1;
 - (id)_initWithDictionary:(id)arg1;
+- (void)setOutputType:(int)arg1;
+- (void)setJobName:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)setOrientation:(int)arg1;
 - (int)orientation;

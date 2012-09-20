@@ -7,29 +7,29 @@
 @interface DOMHTMLOptionElement : DOMHTMLElement  {
 }
 
-@property(retain,readonly) DOMHTMLFormElement * form;
-@property BOOL defaultSelected;
-@property(copy,readonly) NSString * text;
-@property(readonly) int index;
 @property BOOL disabled;
+@property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * label;
+@property BOOL defaultSelected;
 @property BOOL selected;
 @property(copy) NSString * value;
+@property(readonly) NSString * text;
+@property(readonly) int index;
 
 
-- (void)setDisabled:(BOOL)arg1;
-- (BOOL)disabled;
 - (id)form;
 - (int)index;
+- (void)setDisabled:(BOOL)arg1;
 - (id)label;
 - (BOOL)selected;
+- (BOOL)disabled;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (id)text;
-- (BOOL)defaultSelected;
 - (void)setDefaultSelected:(BOOL)arg1;
+- (BOOL)defaultSelected;
 - (id)itemTitle;
 - (void)populateCell:(id)arg1;
 - (id)createPickerCell;

@@ -5,33 +5,33 @@
 @interface LocalAccount : MailAccount  {
 }
 
-+ (id)localAccount;
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
++ (id)localAccount;
 + (id)accountTypeString;
 
-- (id)password:(BOOL)arg1;
-- (id)transientDraftsFolder;
-- (BOOL)canFetch;
-- (id)pushedMailboxUids;
-- (id)initWithLibrary:(id)arg1 properties:(id)arg2;
-- (id)primaryMailboxUid;
-- (id)mailboxUidForFileSystemPath:(id)arg1;
-- (BOOL)renameMailbox:(id)arg1 newName:(id)arg2 parent:(id)arg3;
-- (void)_synchronouslyLoadListingForParent:(id)arg1;
-- (BOOL)_setChildren:(id)arg1 forMailboxUid:(id)arg2;
-- (Class)storeClass;
-- (id)mailboxPathExtension;
-- (id)_URLScheme;
-- (id)_infoForMatchingURL:(id)arg1;
-- (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 existingMailboxUid:(id)arg4 dictionary:(id)arg5;
-- (BOOL)supportsAppend;
-- (void)setIsOffline:(BOOL)arg1;
-- (BOOL)canGoOffline;
-- (void)setHostname:(id)arg1;
-- (id)uniqueId;
-- (BOOL)deleteInPlaceForMailbox:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)displayName;
+- (id)transientDraftsFolder;
+- (id)password:(BOOL)arg1;
+- (id)pushedMailboxUids;
+- (BOOL)_shouldConfigureMailboxCache;
+- (BOOL)supportsAppend;
+- (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 existingMailboxUid:(id)arg4 dictionary:(id)arg5;
+- (id)_infoForMatchingURL:(id)arg1;
+- (id)_URLScheme;
+- (id)mailboxPathExtension;
+- (Class)storeClass;
+- (BOOL)_setChildren:(id)arg1 forMailboxUid:(id)arg2;
+- (void)_synchronouslyLoadListingForParent:(id)arg1;
+- (BOOL)renameMailbox:(id)arg1 newName:(id)arg2 parent:(id)arg3;
+- (id)mailboxUidForFileSystemPath:(id)arg1;
+- (id)primaryMailboxUid;
+- (id)initWithLibrary:(id)arg1 properties:(id)arg2;
+- (BOOL)canFetch;
+- (BOOL)canGoOffline;
+- (id)uniqueId;
+- (void)setHostname:(id)arg1;
+- (BOOL)deleteInPlaceForMailbox:(id)arg1;
 
 @end

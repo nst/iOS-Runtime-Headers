@@ -11,9 +11,9 @@
 @property <EKLayoutContainerViewDelegate> * delegate;
 
 
-- (void)dealloc;
-- (id)delegate;
-- (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)layoutSubviews;
 
 @end

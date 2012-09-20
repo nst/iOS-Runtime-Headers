@@ -15,12 +15,12 @@
 @property(retain) UIColor * subtitleShadowColor;
 
 
-- (void)dealloc;
-- (id)subtitle;
-- (void)setSubtitle:(id)arg1;
 - (id)subtitleShadowColor;
 - (id)subtitleColor;
 - (void)setSubtitleShadowColor:(id)arg1;
 - (void)setSubtitleColor:(id)arg1;
+- (void)dealloc;
+- (id)subtitle;
+- (void)setSubtitle:(id)arg1;
 
 @end

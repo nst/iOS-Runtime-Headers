@@ -15,14 +15,14 @@
 @property(readonly) BOOL needsReply;
 
 
+- (id)commandValueForKey:(id)arg1;
+- (id)aceDictionary;
+- (id)name;
 - (id)description;
-- (void)dealloc;
-- (id)initWithMessage:(id)arg1;
+- (void).cxx_destruct;
 - (id)domain;
 - (id)context;
-- (id)name;
-- (id)aceDictionary;
-- (id)commandValueForKey:(id)arg1;
 - (BOOL)needsReply;
+- (id)initWithMessage:(id)arg1;
 
 @end

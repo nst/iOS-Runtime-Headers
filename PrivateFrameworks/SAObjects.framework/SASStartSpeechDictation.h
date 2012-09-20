@@ -22,9 +22,10 @@
 @property(copy) NSString * region;
 @property(copy) NSString * selectedText;
 
-+ (id)startSpeechDictation;
 + (id)startSpeechDictationWithDictionary:(id)arg1 context:(id)arg2;
++ (id)startSpeechDictation;
 
+- (id)applicationVersion;
 - (id)groupIdentifier;
 - (void)setLanguage:(id)arg1;
 - (id)language;
@@ -39,21 +40,20 @@
 - (id)selectedText;
 - (id)keyboardType;
 - (void)setKeyboardType:(id)arg1;
-- (id)applicationName;
-- (id)fieldId;
-- (void)setFieldId:(id)arg1;
-- (id)activationToken;
-- (void)setActivationToken:(id)arg1;
-- (BOOL)censorSpeech;
-- (void)setCensorSpeech:(BOOL)arg1;
-- (id)fieldLabel;
-- (id)interactionId;
-- (void)setInteractionId:(id)arg1;
-- (id)keyboardReturnKey;
-- (void)setKeyboardReturnKey:(id)arg1;
-- (id)encodedClassName;
-- (id)applicationVersion;
 - (id)region;
 - (void)setRegion:(id)arg1;
+- (id)applicationName;
+- (void)setFieldId:(id)arg1;
+- (id)fieldId;
+- (void)setKeyboardReturnKey:(id)arg1;
+- (id)keyboardReturnKey;
+- (void)setInteractionId:(id)arg1;
+- (id)interactionId;
+- (id)fieldLabel;
+- (void)setCensorSpeech:(BOOL)arg1;
+- (BOOL)censorSpeech;
+- (void)setActivationToken:(id)arg1;
+- (id)activationToken;
+- (id)encodedClassName;
 
 @end

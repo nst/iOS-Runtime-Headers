@@ -9,9 +9,9 @@
 @property BOOL alwaysVisible;
 
 
+- (BOOL)update;
 - (void)setAlwaysVisible:(BOOL)arg1;
 - (BOOL)alwaysVisible;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (BOOL)update;
 
 @end

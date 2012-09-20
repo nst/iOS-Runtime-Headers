@@ -16,11 +16,10 @@
 @property <MFComposeRecipientAtomDelegate> * delegate;
 
 
-- (void)dealloc;
 - (id)recipient;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 recipient:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 recipient:(id)arg2 style:(int)arg3;
-- (void)handleTouchAndHold;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (void)moveLeft;
 - (void)moveRight;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
@@ -28,7 +27,8 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 recipient:(id)arg2;
+- (void)handleTouchAndHold;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 recipient:(id)arg2 style:(int)arg3;
 
 @end

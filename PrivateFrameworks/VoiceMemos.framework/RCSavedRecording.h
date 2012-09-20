@@ -10,39 +10,42 @@
     NSString *_pathForRemaking;
 }
 
+@property(copy) NSDate * date;
+@property(copy) NSString * path;
 @property double duration;
 @property unsigned int labelPreset;
+@property(copy) NSString * customLabel;
 @property long long iTunesPersistentID;
 @property(getter=isSynced) BOOL synced;
+@property(getter=isPendingRestore) BOOL pendingRestore;
 @property(readonly) NSString * label;
 @property(readonly) NSString * detailLabel;
 @property(readonly) AVItem * avItem;
 @property(getter=isBeingRemade) BOOL beingRemade;
 @property(copy) NSString * pathForRemaking;
-@property(copy) NSString * customLabel;
-@property(copy) NSString * path;
-@property(copy) NSDate * date;
 
 + (id)localizedStringForRecordingLabel:(unsigned int)arg1;
 
-- (void)dealloc;
-- (void)setLabelPreset:(unsigned int)arg1;
-- (BOOL)isSynced;
-- (void)setSynced:(BOOL)arg1;
-- (id)detailLabel;
-- (BOOL)isBeingRemade;
-- (id)pathForRemaking;
-- (void)setPathForRemaking:(id)arg1;
-- (void)setBeingRemade:(BOOL)arg1;
-- (unsigned int)labelPreset;
-- (long long)iTunesPersistentID;
-- (void)setITunesPersistentID:(long long)arg1;
-- (id)avItem;
+- (void).cxx_destruct;
+- (void)willSave;
+- (void)awakeFromInsert;
+- (void)awakeFromFetch;
 - (id)label;
 - (double)duration;
 - (void)setDuration:(double)arg1;
-- (void)awakeFromInsert;
-- (void)willSave;
-- (void)awakeFromFetch;
+- (id)avItem;
+- (id)pathForRemaking;
+- (BOOL)isBeingRemade;
+- (id)detailLabel;
+- (void)setSynced:(BOOL)arg1;
+- (BOOL)isSynced;
+- (void)setPendingRestore:(BOOL)arg1;
+- (BOOL)isPendingRestore;
+- (void)setLabelPreset:(unsigned int)arg1;
+- (unsigned int)labelPreset;
+- (void)setBeingRemade:(BOOL)arg1;
+- (void)setPathForRemaking:(id)arg1;
+- (void)setITunesPersistentID:(long long)arg1;
+- (long long)iTunesPersistentID;
 
 @end

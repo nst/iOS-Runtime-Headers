@@ -4,7 +4,7 @@
 
 @class CIColor, NSString;
 
-@interface UIColor : NSObject <NSCoding> {
+@interface UIColor : NSObject <NSCoding, NSCopying> {
     NSString *_systemColorName;
 }
 
@@ -13,6 +13,7 @@
 @property(getter=_systemColorName,setter=_setSystemColorName:,retain) NSString * systemColorName;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)_dimmingViewColor;
 + (id)_translucentPaperTextureColor;
 + (id)noContentDarkGradientBackgroundColor;
 + (id)noContentLightGradientBackgroundColor;
@@ -21,9 +22,12 @@
 + (id)viewFlipsideBackgroundColor;
 + (id)darkTextColor;
 + (id)lightTextColor;
++ (id)pinStripeColor;
++ (id)infoTextOverPinStripeTextColor;
 + (id)tableCellGrayTextColor;
 + (id)tableCellValue2BlueColor;
 + (id)tableCellValue1BlueColor;
++ (id)tableCellBlueTextColor;
 + (id)sectionHeaderBorderColor;
 + (id)sectionHeaderOpaqueBackgroundColor;
 + (id)sectionHeaderBackgroundColor;
@@ -40,9 +44,9 @@
 + (id)colorWithPatternImage:(id)arg1;
 + (id)colorWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 + (id)tableCellGroupedBackgroundColorLegacyWhite;
-+ (id)infoTextOverPinStripeTextColor;
-+ (id)tableCellBlueTextColor;
-+ (id)pinStripeColor;
++ (id)__halfTransparentWhiteColor;
++ (id)__halfTransparentBlackColor;
++ (id)classFallbacksForKeyedArchiver;
 + (id)textFieldAtomPurpleColor;
 + (id)textFieldAtomBlueColor;
 + (id)selectionHighlightColor;
@@ -72,37 +76,44 @@
 + (id)grayColor;
 + (id)whiteColor;
 + (id)blackColor;
-+ (id)padFaceTimeShadowedGroupBackgroundColor;
 + (id)padFaceTimeSectionOutlineColor;
-+ (id)padFaceTimeDarkSeparatorColor;
 + (id)padFaceTimeLightSeparatorColor;
-+ (id)padFaceTimeBabyBlueColor;
-+ (id)padFaceTimeLightBabyBlueColor;
++ (id)padFaceTimeDarkSeparatorColor;
 + (id)padFaceTimeShadowedGroupBackgroundColor;
-+ (id)padFaceTimeSectionOutlineColor;
-+ (id)padFaceTimeDarkSeparatorColor;
-+ (id)padFaceTimeLightSeparatorColor;
-+ (id)padFaceTimeBabyBlueColor;
 + (id)padFaceTimeLightBabyBlueColor;
++ (id)padFaceTimeBabyBlueColor;
++ (id)padFaceTimeSectionOutlineColor;
++ (id)padFaceTimeLightSeparatorColor;
++ (id)padFaceTimeDarkSeparatorColor;
 + (id)padFaceTimeShadowedGroupBackgroundColor;
-+ (id)padFaceTimeSectionOutlineColor;
-+ (id)padFaceTimeDarkSeparatorColor;
-+ (id)padFaceTimeLightSeparatorColor;
-+ (id)padFaceTimeBabyBlueColor;
 + (id)padFaceTimeLightBabyBlueColor;
-+ (id)_mapkit_userLocationAccuracyRingFillColor;
-+ (id)_mapkit_userLocationAccuracyRingStrokeColor;
-+ (id)tileGridBackgroundColor;
-+ (id)tileBackgroundColor;
++ (id)padFaceTimeBabyBlueColor;
++ (id)padFaceTimeSectionOutlineColor;
++ (id)padFaceTimeLightSeparatorColor;
++ (id)padFaceTimeDarkSeparatorColor;
++ (id)padFaceTimeShadowedGroupBackgroundColor;
++ (id)padFaceTimeLightBabyBlueColor;
++ (id)padFaceTimeBabyBlueColor;
 + (id)_gkColorFromRGBAHexString:(id)arg1;
++ (id)_mapkit_userLocationAccuracyRingFillColor;
++ (id)_mapkit_userLocationAccuracyRingStrokeColorSatellite;
++ (id)_mapkit_userLocationAccuracyRingStrokeColor;
++ (id)tileBackgroundColor;
++ (id)tileGridBackgroundColor;
++ (id)colorWithWLColor:(id)arg1;
 + (id)colorWithStyleString:(id)arg1;
 + (id)texturedTranscriptBackgroundColor;
++ (id)tangierScrollViewTexturedBackgroundColor;
++ (id)tableViewCellDarkBlueTextColor;
++ (id)transparentGrayCheckerboardColor;
++ (id)grayCheckerboardColor;
++ (id)checkerboardColorWithColor:(id)arg1 andColor:(id)arg2 squareSize:(struct CGSize { float x1; float x2; })arg3;
 + (id)_remoteUI_colorWithString:(id)arg1;
-+ (id)_iAd_colorWithRGBA:(unsigned int)arg1;
 + (id)disabledTextColor;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)_setSystemColorName:(id)arg1;
 - (id)initWithPatternImage:(id)arg1;
@@ -110,22 +121,23 @@
 - (id)initWithCIColor:(id)arg1;
 - (BOOL)getHue:(float*)arg1 saturation:(float*)arg2 brightness:(float*)arg3 alpha:(float*)arg4;
 - (id)initWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
+- (BOOL)_getWhite:(float*)arg1 alpha:(float*)arg2;
 - (BOOL)isPatternColor;
 - (float)alphaComponent;
 - (void)setStroke;
-- (void)setFill;
-- (Class)classForCoder;
-- (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (id)colorWithAlphaComponent:(float)arg1;
 - (id)styleString;
 - (struct CGColor { }*)cgColor;
+- (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (id)initWithWhite:(float)arg1 alpha:(float)arg2;
+- (void)setFill;
 - (id)_systemColorName;
-- (struct CGColor { }*)CGColor;
+- (Class)classForCoder;
 - (BOOL)getWhite:(float*)arg1 alpha:(float*)arg2;
 - (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
+- (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (void)set;
-- (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
+- (struct CGColor { }*)CGColor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)burnWithColor:(id)arg1;
@@ -137,11 +149,10 @@
 - (BOOL)isGreenOrYellow;
 - (id)soverWithColor:(id)arg1;
 - (float)luminance;
-- (float)redComponent;
-- (float)greenComponent;
 - (float)blueComponent;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (float)greenComponent;
+- (float)redComponent;
+- (BOOL)_vk_getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (id)initWithStyleString:(id)arg1;
-- (id)styleString;
 
 @end

@@ -11,20 +11,20 @@
     NSString *_partName;
 }
 
-@property(retain) NSString * partName;
-@property(getter=isComplete) BOOL complete;
 @property(getter=isPartial) BOOL partial;
+@property(getter=isComplete) BOOL complete;
 @property(retain) NSData * data;
+@property(retain) NSString * partName;
 
 
-- (void)setPartName:(id)arg1;
-- (void)setComplete:(BOOL)arg1;
-- (void)setPartial:(BOOL)arg1;
-- (id)partName;
-- (BOOL)isComplete;
-- (BOOL)isPartial;
-- (void)dealloc;
 - (id)data;
+- (void)dealloc;
+- (void)setComplete:(BOOL)arg1;
 - (void)setData:(id)arg1;
+- (void)setPartName:(id)arg1;
+- (void)setPartial:(BOOL)arg1;
+- (BOOL)isComplete;
+- (id)partName;
+- (BOOL)isPartial;
 
 @end

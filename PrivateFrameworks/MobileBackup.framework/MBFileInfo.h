@@ -6,20 +6,30 @@
 
 @interface MBFileInfo : NSObject <NSCopying, NSCoding> {
     NSString *_path;
+    BOOL _isDirectory;
+    int _priority;
     NSDictionary *_extendedAttributes;
 }
 
-@property(readonly) NSDictionary * extendedAttributes;
-@property(readonly) NSString * path;
+@property(copy) NSString * path;
+@property BOOL isDirectory;
+@property int priority;
+@property(copy) NSDictionary * extendedAttributes;
 
 + (id)fileInfoWithPath:(id)arg1 extendedAttributes:(id)arg2;
 
+- (id)path;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)path;
+- (void)setPath:(id)arg1;
+- (void)setPriority:(int)arg1;
+- (int)priority;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setExtendedAttributes:(id)arg1;
 - (id)extendedAttributes;
 - (id)initWithPath:(id)arg1 extendedAttributes:(id)arg2;
+- (BOOL)isDirectory;
+- (void)setIsDirectory:(BOOL)arg1;
 
 @end

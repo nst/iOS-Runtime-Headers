@@ -10,15 +10,15 @@
 @property(copy) NSURL * targetAppId;
 @property(copy) NSArray * stocks;
 
-+ (id)deleteWithDictionary:(id)arg1 context:(id)arg2;
 + (id)delete;
++ (id)deleteWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)stocks;
 - (void)setStocks:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)stocks;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

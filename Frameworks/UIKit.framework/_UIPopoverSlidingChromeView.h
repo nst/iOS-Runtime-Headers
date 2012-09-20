@@ -5,20 +5,19 @@
 @interface _UIPopoverSlidingChromeView : UIPopoverBackgroundView  {
 }
 
-+ (id)_shadowPathForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 arrowDirection:(unsigned int)arg2;
-+ (float)_shadowRadius;
-+ (float)_shadowOpacity;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_shadowInsets;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
 + (float)arrowBase;
 + (float)arrowHeight;
 + (float)cornerRadius;
-+ (struct CGSize { float x1; float x2; })_shadowOffset;
 
+- (id)_shadowPathForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 arrowDirection:(unsigned int)arg2;
+- (float)_shadowRadius;
+- (float)_shadowOpacity;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_shadowInsets;
 - (float)arrowOffset;
 - (void)setArrowOffset:(float)arg1;
 - (void)setArrowDirection:(unsigned int)arg1;
 - (unsigned int)arrowDirection;
-- (void)layoutSubviews;
+- (struct CGSize { float x1; float x2; })_shadowOffset;
 
 @end

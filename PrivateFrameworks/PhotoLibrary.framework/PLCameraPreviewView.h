@@ -2,16 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableDictionary, UIView, PLCameraFocusPointView, PLCameraFocusView, PLCameraFocusLockView;
+@class NSMutableDictionary, UIView, PLCameraFocusPointView, CALayer, PLCameraFocusView, PLCameraFocusLockView;
 
 @interface PLCameraPreviewView : UIView  {
+    UIView *_maskingContainerView;
+    UIView *_previewContainer;
+    CALayer *_previewLayer;
+    UIView *_focusContainerView;
+    PLCameraFocusPointView *_focusView;
+    PLCameraFocusView *_autoFocusView;
+    PLCameraFocusLockView *_lockFocusView;
     struct CGPoint { 
         float x; 
         float y; 
     } _touchLocation;
-    PLCameraFocusPointView *_focusView;
-    PLCameraFocusView *_autoFocusView;
-    PLCameraFocusLockView *_lockFocusView;
+    UIView *_facesContainerView;
     NSMutableDictionary *_faceIDsToViews;
     UIView *_disabledView;
     UIView *_snapshotView;
@@ -21,9 +26,9 @@
     unsigned int _controlsAreVisible : 1;
 }
 
+@property(retain) CALayer * previewLayer;
 @property float dimmingStrength;
 
-+ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })defaultAffineTransform;
 
 - (void)dealloc;
 - (void)motionEnded:(int)arg1 withEvent:(id)arg2;
@@ -39,11 +44,13 @@
 - (void)setShouldShowFocus:(BOOL)arg1;
 - (void)showFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)showLockFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)zoomFromFactor:(float)arg1 toFactor:(float)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
+- (void)zoomToFactor:(float)arg1;
 - (void)setDimmingStrength:(float)arg1 duration:(double)arg2;
 - (void)setDimmingStrength:(float)arg1;
 - (void)setCameraIsChangingModes:(BOOL)arg1;
+- (void)setPreviewLayer:(id)arg1;
 - (void)focusDidEnd;
+- (id)previewLayer;
 - (void)setControlsAreVisible:(BOOL)arg1;
 
 @end

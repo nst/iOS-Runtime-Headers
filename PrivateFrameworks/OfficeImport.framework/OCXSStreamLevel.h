@@ -3,17 +3,17 @@
  */
 
 @interface OCXSStreamLevel : NSObject  {
-    char *mName;
+    const char *mName;
     int mDepth;
 }
 
+@property const char * name;
 @property int depth;
-@property char * name;
 
 
 - (void)setName:(const char *)arg1;
 - (const char *)name;
-- (int)depth;
 - (void)setDepth:(int)arg1;
+- (int)depth;
 
 @end

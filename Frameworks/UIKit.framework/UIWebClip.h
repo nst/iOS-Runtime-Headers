@@ -12,17 +12,13 @@
     NSURL *startupImageURL;
     NSURL *startupLandscapeImageURL;
     NSString *title;
-    float scale;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } scrollPoint;
     BOOL fullScreen;
     BOOL classicMode;
     BOOL removalDisallowed;
     BOOL iconIsScreenShotBased;
     BOOL iconIsPrecomposed;
     BOOL iconIsPrerendered;
+    unsigned int supportedOrientations;
     int statusBarStyle;
     UIImage *iconImage;
     UIImage *startupImage;
@@ -42,14 +38,13 @@
 @property(retain) NSURL * startupImageURL;
 @property(retain) NSURL * startupLandscapeImageURL;
 @property(copy) NSString * title;
-@property float scale;
-@property struct CGPoint { float x1; float x2; } scrollPoint;
 @property BOOL fullScreen;
 @property BOOL classicMode;
 @property BOOL removalDisallowed;
 @property(readonly) BOOL iconIsScreenShotBased;
 @property(readonly) BOOL iconIsPrecomposed;
 @property(readonly) BOOL iconIsPrerendered;
+@property unsigned int supportedOrientations;
 @property int statusBarStyle;
 @property(readonly) NSString * iconImagePath;
 @property(readonly) UIImage * iconImage;
@@ -57,9 +52,15 @@
 @property(retain) UIImage * startupLandscapeImage;
 @property id delegate;
 
++ (id)pathForWebClipCacheWithIdentifier:(id)arg1;
++ (id)pathForWebClipStorageWithIdentifier:(id)arg1;
++ (unsigned int)webClipOrientationsForWebDocumentView:(id)arg1;
 + (BOOL)webClipClassicModeValueForWebDocumentView:(id)arg1;
++ (id)webClipTitleForWebDocumentView:(id)arg1;
 + (BOOL)webClipFullScreenValueForWebDocumentView:(id)arg1;
 + (int)webClipStatusBarStyleForWebDocumentView:(id)arg1;
++ (id)webClipIdentifierFromBundleIdentifier:(id)arg1;
++ (BOOL)bundleIdentifierContainsWebClipIdentifier:(id)arg1;
 + (id)webClips;
 + (id)webClipWithURL:(id)arg1;
 + (id)webClipIconsForWebDocumentView:(id)arg1;
@@ -69,12 +70,16 @@
 + (id)pathForWebClipWithIdentifier:(id)arg1;
 + (id)urlForWebClipWithIdentifier:(id)arg1;
 
+- (id)bundleIdentifier;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)identifier;
 - (void)dealloc;
+- (unsigned int)supportedOrientations;
 - (BOOL)iconIsPrerendered;
 - (BOOL)iconIsScreenShotBased;
 - (BOOL)removalDisallowed;
 - (BOOL)classicMode;
-- (struct CGPoint { float x1; float x2; })scrollPoint;
 - (id)startupLandscapeImageURL;
 - (id)startupImageURL;
 - (id)icons;
@@ -96,12 +101,11 @@
 - (BOOL)tryLoadingNextCustomIcon;
 - (void)requestCustomLandscapeStartupImageUpdate;
 - (void)requestCustomPortraitStartupImageUpdate;
-- (BOOL)fullScreen;
 - (void)requestCustomIconUpdate;
 - (void)setStartupLandscapeImageURL:(id)arg1;
 - (void)setStartupImageURL:(id)arg1;
 - (void)setIcons:(id)arg1;
-- (id)_displayIdentifierString;
+- (BOOL)fullScreen;
 - (void)stopLoadingStartupLandscapeImage;
 - (void)stopLoadingStartupImage;
 - (void)stopLoadingCustomIcon;
@@ -113,27 +117,22 @@
 - (id)iconImage;
 - (id)_bundleResourceWithName:(id)arg1;
 - (void)_reloadProperties;
+- (void)setIdentifier:(id)arg1;
 - (BOOL)updateOnDisk;
 - (void)setStartupLandscapeImage:(id)arg1;
 - (void)setStartupImage:(id)arg1;
 - (BOOL)_writeImage:(id)arg1 toDiskWithFileName:(id)arg2;
 - (void)_readPropertiesFromBundle:(struct __CFBundle { }*)arg1;
 - (id)pageURL;
+- (void)setSupportedOrientations:(unsigned int)arg1;
 - (void)setRemovalDisallowed:(BOOL)arg1;
 - (void)setClassicMode:(BOOL)arg1;
 - (void)setFullScreen:(BOOL)arg1;
-- (void)setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPageURL:(id)arg1;
 - (id)_info;
-- (id)identifier;
-- (void)setIdentifier:(id)arg1;
 - (id)title;
-- (void)setScale:(float)arg1;
-- (int)statusBarStyle;
 - (void)setStatusBarStyle:(int)arg1;
-- (float)scale;
-- (id)delegate;
+- (int)statusBarStyle;
 - (void)setTitle:(id)arg1;
-- (void)setDelegate:(id)arg1;
 
 @end

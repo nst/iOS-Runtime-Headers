@@ -5,15 +5,15 @@
 @class MIDINetworkHost;
 
 @interface MIDINetworkConnection : NSObject  {
-    struct _MIDINetworkConnectionImpl { MIDINetworkHost *x1; } *_impl;
+    struct _MIDINetworkConnectionImpl { id x1; } *_impl;
 }
 
-@property(retain,readonly) MIDINetworkHost * host;
+@property(readonly) MIDINetworkHost * host;
 
 + (id)connectionWithHost:(id)arg1;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)host;
 
 @end

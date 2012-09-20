@@ -14,11 +14,11 @@
 + (BOOL)isTableDeleted:(id)arg1;
 
 - (void)dealloc;
+- (id)copyStopArrayForRow:(unsigned int)arg1;
 - (void)setInsideBorders:(id)arg1;
-- (id)createColumnInfo;
-- (id)createStopArrayForRow:(unsigned int)arg1;
-- (id)columnInfo;
+- (id)copyColumnInfo;
 - (id)insideBorders;
+- (id)columnInfo;
 - (id)initWithWDTable:(id)arg1 parent:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 

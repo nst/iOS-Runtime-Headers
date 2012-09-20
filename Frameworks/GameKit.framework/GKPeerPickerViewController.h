@@ -56,7 +56,6 @@
 @property(retain) NSTimer * invitationWaitTimer;
 
 
-- (void)dealloc;
 - (void)setBluetoothStatus:(int)arg1;
 - (id)searchingForServicesString;
 - (void)session:(id)arg1 didFailWithError:(id)arg2;
@@ -71,7 +70,6 @@
 - (void)_changePanelAnimationDidEnd:(id)arg1;
 - (id)noPeersView;
 - (void)_createNoPeersViewIfNeeded;
-- (id)statusView;
 - (void)_createStatusViewIfNeeded;
 - (id)inviteView;
 - (void)_createInviteViewIfNeeded;
@@ -121,7 +119,6 @@
 - (void)setPeers:(id)arg1;
 - (void)setNoPeersView:(id)arg1;
 - (void)setInviteView:(id)arg1;
-- (void)setStatusView:(id)arg1;
 - (void)setListView:(id)arg1;
 - (void)setBtView:(id)arg1;
 - (void)setConnectTypeView:(id)arg1;
@@ -130,6 +127,12 @@
 - (void)setSearchingForServicesString:(id)arg1;
 - (unsigned int)connectionTypesMask;
 - (void)setConnectionTypesMask:(unsigned int)arg1;
+- (void)setStatusView:(id)arg1;
+- (id)statusView;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (int)state;
+- (void)dealloc;
 - (void)didPresentAlertView:(id)arg1;
 - (void)dismiss;
 - (BOOL)isVisible;
@@ -138,18 +141,15 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)setAnimating:(BOOL)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)setState:(int)arg1;
-- (int)state;
 - (void)didReceiveMemoryWarning;
 - (void)show;
-- (id)delegate;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)setDelegate:(id)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 
 @end

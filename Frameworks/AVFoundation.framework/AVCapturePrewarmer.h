@@ -6,6 +6,7 @@
 }
 
 + (void)cancel;
++ (void)prewarmUsingDefaultSettingsAfterDate:(id)arg1;
 + (void)prewarm;
 
 

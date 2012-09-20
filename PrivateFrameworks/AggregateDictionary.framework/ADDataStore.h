@@ -6,43 +6,19 @@
 
 @interface ADDataStore : NSObject  {
     NSString *_path;
-    struct sqlite3 { } *_db;
-    struct sqlite3_stmt { } *_selectScalarsWithPrefixInTimePeriodStatement;
-    struct sqlite3_stmt { } *_selectDistributionsWithPrefixInTimePeriodStatement;
-    struct sqlite3_stmt { } *_selectScalarStatement;
-    struct sqlite3_stmt { } *_insertScalarStatement;
-    struct sqlite3_stmt { } *_updateScalarStatement;
-    struct sqlite3_stmt { } *_selectDistributionStatement;
-    struct sqlite3_stmt { } *_insertDistributionStatement;
-    struct sqlite3_stmt { } *_updateDistributionStatement;
-    struct sqlite3_stmt { } *_deleteScalarStatement;
-    struct sqlite3_stmt { } *_deleteDistributionStatement;
+    struct Database { struct sqlite3 {} *x1; struct sqlite3_stmt {} *x2; struct sqlite3_stmt {} *x3; struct sqlite3_stmt {} *x4; struct sqlite3_stmt {} *x5; struct sqlite3_stmt {} *x6; struct sqlite3_stmt {} *x7; } *_database;
 }
 
 @property(readonly) NSString * path;
 
 
-- (void)dealloc;
-- (BOOL)_createTables;
-- (id)initWithPath:(id)arg1;
-- (int)commitTransaction;
-- (id)path;
 - (BOOL)scalarsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 withConsumer:(id)arg4;
-- (id)initWithDefaultPath;
+- (id)path;
+- (void)dealloc;
+- (id)initWithPath:(id)arg1;
 - (BOOL)distributionsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 withConsumer:(id)arg4;
-- (void)incrementalVacuum;
-- (void)deleteAllValuesOnOrBeforeDate:(int)arg1;
-- (int)scalar:(long long*)arg1 forKey:(id)arg2 withDaysSince1970:(int)arg3;
-- (int)distribution:(struct { double x1; double x2; double x3; double x4; int x5; }*)arg1 forKey:(id)arg2 withDaysSince1970:(int)arg3;
-- (void)updateScalar:(long long)arg1 forID:(int)arg2;
-- (void)updateDistribution:(struct { double x1; double x2; double x3; double x4; int x5; }*)arg1 forID:(int)arg2;
-- (void)insertScalar:(long long)arg1 forKey:(id)arg2 withDaysSince1970:(int)arg3;
-- (void)insertDistribution:(struct { double x1; double x2; double x3; double x4; int x5; }*)arg1 forKey:(id)arg2 withDaysSince1970:(int)arg3;
-- (void)deleteScalarForKey:(id)arg1 withDaysSince1970:(int)arg2;
-- (void)deleteDistributionForKey:(id)arg1 withDaysSince1970:(int)arg2;
-- (int)_schemaVersion;
-- (BOOL)scalarsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 rowHandler:(id)arg4;
 - (BOOL)distributionsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 rowHandler:(id)arg4;
-- (int)beginTransaction;
+- (BOOL)scalarsForKeyPrefix:(id)arg1 minDaysSince1970:(int)arg2 maxDaysSince1970:(int)arg3 rowHandler:(id)arg4;
+- (id)initWithDefaultPath;
 
 @end

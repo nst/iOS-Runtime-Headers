@@ -12,10 +12,10 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (id)generateTableAlias;
+- (id)init;
 - (id)generateSubqueryVariableAlias;
+- (id)generateTableAlias;
 - (id)initWithNestingLevel:(unsigned int)arg1;
 
 @end

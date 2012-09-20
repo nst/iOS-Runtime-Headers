@@ -13,11 +13,9 @@
 
 @property(retain) NSString * partnerIdentifier;
 
-+ (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
++ (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
 - (void)startNetworkAvailabilityTimer;
 - (void)checkPartnerAvailability;
 - (void)setPartnerIdentifier:(id)arg1;
@@ -36,6 +34,8 @@
 - (void)_partnerHeaderChanged:(id)arg1;
 - (void)operationFinished:(id)arg1;
 - (id)partnerIdentifier;
+- (void)dealloc;
+- (id)init;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

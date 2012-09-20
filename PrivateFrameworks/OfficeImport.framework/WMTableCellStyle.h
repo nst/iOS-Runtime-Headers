@@ -7,14 +7,14 @@
     double mRightPadding;
 }
 
-+ (id)dominantColorOf:(id)arg1;
-+ (id)resolveStyleColorWithPercentage:(float)arg1 shading:(id)arg2;
-+ (id)resolveStyleColorWithPercentage:(float)arg1 foregroundColor:(id)arg2 backgroundColor:(id)arg3;
 + (float)resolveColorValueWithPercentage:(float)arg1 foregroundComponent:(float)arg2 backgroundComponent:(float)arg3;
++ (id)resolveStyleColorWithPercentage:(float)arg1 foregroundColor:(id)arg2 backgroundColor:(id)arg3;
++ (id)resolveStyleColorWithPercentage:(float)arg1 shading:(id)arg2;
++ (id)dominantColorOf:(id)arg1;
 
-- (id)initWithTableCellProperties:(id)arg1;
-- (void)addTableCellProperties:(id)arg1;
-- (double)leftPadding;
 - (double)rightPadding;
+- (id)initWithTableCellProperties:(id)arg1;
+- (double)leftPadding;
+- (void)addTableCellProperties:(id)arg1;
 
 @end

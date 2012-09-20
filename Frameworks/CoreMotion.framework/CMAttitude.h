@@ -18,9 +18,9 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (double)yaw;
-- (double)pitch;
 - (double)roll;
+- (double)pitch;
+- (double)yaw;
 - (void)multiplyByInverseOfAttitude:(id)arg1;
 - (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })rotationMatrix;
 - (struct { double x1; double x2; double x3; double x4; })quaternion;

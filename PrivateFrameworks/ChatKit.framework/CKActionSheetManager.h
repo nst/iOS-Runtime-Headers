@@ -8,7 +8,7 @@
 
 @class UIActionSheet;
 
-@interface CKActionSheetManager : NSObject  {
+@interface CKActionSheetManager : NSObject <UIActionSheetDelegate> {
     UIActionSheet *_actionSheet;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -20,28 +20,35 @@
   /* Error parsing encoded ivar type info: @? */
     id _presenter;
 
+    BOOL _performBeforeAnimation;
     BOOL _dismissingActionSheetForRotation;
 }
 
-@property(retain) UIActionSheet * actionSheet;
-@property(copy) id presenter;
 @property(copy) id handler;
+@property(copy) id presenter;
+@property(retain) UIActionSheet * actionSheet;
+@property BOOL performBeforeAnimation;
 
 + (id)sharedInstance;
 
-- (id)init;
 - (void)dealloc;
-- (id)actionSheet;
-- (void)setActionSheet:(id)arg1;
+- (id)init;
 - (void)setHandler:(id)arg1;
-- (void)setPresenter:(id)arg1;
-- (id)presenter;
 - (id)handler;
-- (void)dismissCurrentActionSheet;
-- (void)willStartRotating;
-- (void)didFinishRotating;
-- (void)showActionSheet:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)dismissActionSheet:(id)arg1 withButtonIndex:(int)arg2;
+- (BOOL)performBeforeAnimation;
+- (id)presenter;
+- (void)setPerformBeforeAnimation:(BOOL)arg1;
+- (void)setPresenter:(id)arg1;
+- (void)setActionSheet:(id)arg1;
+- (id)actionSheet;
+- (void)showActionSheet:(id)arg1 withPresenter:(id)arg2 performBeforeAnimation:(BOOL)arg3 withHandler:(id)arg4;
+- (void)showActionSheet:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
+- (void)didFinishRotating;
+- (void)willStartRotating;
+- (void)dismissCurrentActionSheet;
 
 @end

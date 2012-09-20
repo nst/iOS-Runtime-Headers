@@ -9,9 +9,9 @@
 @property(readonly) double timestamp;
 
 
+- (double)timestamp;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (double)timestamp;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTimestamp:(double)arg1;

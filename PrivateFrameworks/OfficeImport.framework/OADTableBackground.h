@@ -12,9 +12,9 @@
 
 - (void)dealloc;
 - (id)fill;
+- (void)setEffects:(id)arg1;
 - (BOOL)hasEffects;
 - (id)effects;
-- (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
 
 @end

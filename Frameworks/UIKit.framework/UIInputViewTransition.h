@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIInputViewAnimationStyle, UIInputViewSet;
+@class UIInputViewAnimationStyle, UIInputViewSet, UISnapshotView;
 
 @interface UIInputViewTransition : NSObject  {
     UIInputViewSet *oldSet;
@@ -93,9 +93,22 @@
             float height; 
         } size; 
     } endFloatingFrameScreen;
+    UISnapshotView *snapshotView;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } snapshotViewEndFrame;
 }
 
 @property(retain) UIInputViewSet * oldSet;
+@property(retain) UISnapshotView * snapshotView;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotViewEndFrame;
 @property(retain) UIInputViewAnimationStyle * animationStyle;
 @property BOOL cancelled;
 @property int animationState;
@@ -130,7 +143,8 @@
 - (struct CGPoint { float x1; float x2; })deprecatedCenterEnd;
 - (struct CGPoint { float x1; float x2; })deprecatedCenterBegin;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deprecatedBounds;
-- (BOOL)canAnimate;
+- (void)setSnapshotViewEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSnapshotView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFloatingFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginFloatingFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginFrameScreen;
@@ -152,6 +166,8 @@
 - (BOOL)subsumesTransition:(id)arg1;
 - (int)endState;
 - (BOOL)requiresAutomaticAppearanceEnabled;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snapshotViewEndFrame;
+- (id)snapshotView;
 - (BOOL)fadeAccessoryView;
 - (id)newSet;
 - (id)oldSet;

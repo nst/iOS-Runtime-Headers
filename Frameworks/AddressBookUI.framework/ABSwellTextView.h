@@ -18,6 +18,9 @@
     } _flags;
 }
 
+@property float maxHeight;
+@property <ABSwellTextViewDelegate> * delegate;
+@property BOOL allowsEditing;
 @property(getter=isScrollEnabled) BOOL scrollEnabled;
 @property(getter=isHighlighted) BOOL highlighted;
 @property UIColor * highlightedTextColor;
@@ -25,19 +28,13 @@
 @property UIFont * font;
 @property UIColor * textColor;
 @property(retain) UIColor * shadowColor;
-@property struct CGSize { float width; float height; } shadowOffset;
-@property <ABSwellTextViewDelegate> * delegate;
-@property BOOL allowsEditing;
-@property float maxHeight;
+@property struct CGSize { float x1; float x2; } shadowOffset;
 
 + (float)lineHeightWithFont:(id)arg1;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
-- (float)abUITextView:(id)arg1 heightForContentSize:(struct CGSize { float x1; float x2; })arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection;
-- (void)setKeyboardSettings:(id)arg1;
-- (void)abUITextView:(id)arg1 contentSizeChanged:(struct CGSize { float x1; float x2; })arg2;
-- (void)textViewTextDidChange:(id)arg1;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (BOOL)allowsEditing;
 - (void)setHighlightedTextColor:(id)arg1;
@@ -48,37 +45,40 @@
 - (void)textViewDidBeginEditing:(id)arg1;
 - (void)_endPinningInputViews;
 - (void)_beginPinningInputViews;
+- (id)shadowColor;
 - (BOOL)canResignFirstResponder;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShadowColor:(id)arg1;
+- (void)setTextColor:(id)arg1;
 - (id)textColor;
-- (BOOL)isFirstResponder;
 - (struct CGSize { float x1; float x2; })shadowOffset;
+- (BOOL)isFirstResponder;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setScrollEnabled:(BOOL)arg1;
+- (id)text;
 - (BOOL)canBecomeFirstResponder;
-- (BOOL)becomeFirstResponder;
 - (void)_clearBecomeFirstResponderWhenCapable;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (BOOL)isScrollEnabled;
 - (id)font;
+- (void)setFont:(id)arg1;
+- (BOOL)becomeFirstResponder;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (BOOL)resignFirstResponder;
-- (id)text;
-- (void)setTextColor:(id)arg1;
-- (void)setFont:(id)arg1;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)setShadowColor:(id)arg1;
-- (id)shadowColor;
-- (id)delegate;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)maxHeight;
 - (void)setMaxHeight:(float)arg1;
+- (float)maxHeight;
+- (void)setKeyboardSettings:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection;
+- (float)abUITextView:(id)arg1 heightForContentSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)textViewTextDidChange:(id)arg1;
+- (void)abUITextView:(id)arg1 contentSizeChanged:(struct CGSize { float x1; float x2; })arg2;
 
 @end

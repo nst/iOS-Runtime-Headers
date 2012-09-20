@@ -4,7 +4,7 @@
 
 @class NSString, UIKeyboardCandidate;
 
-@interface UIKeyboardCandidateBarCell : UIView  {
+@interface UIKeyboardCandidateBarCell : UIView <UIKBCacheableView> {
     UIKeyboardCandidate *m_candidate;
     NSString *m_candidateText;
     id m_target;
@@ -19,6 +19,8 @@
 
 @property(readonly) struct CGSize { float x1; float x2; } stringSize;
 @property BOOL highlighted;
+@property(readonly) BOOL cacheDeferable;
+@property(readonly) float cachedWidth;
 
 + (id)fontForCandidateText:(id)arg1;
 
@@ -26,10 +28,13 @@
 - (struct CGSize { float x1; float x2; })stringSize;
 - (id)initWithCandidate:(id)arg1 tag:(int)arg2 target:(id)arg3 action:(SEL)arg4;
 - (id)initWithCandidateText:(id)arg1 tag:(int)arg2 target:(id)arg3 action:(SEL)arg4;
-- (id).cxx_construct;
+- (float)cachedWidth;
+- (BOOL)cacheDeferable;
+- (id)cacheKey;
+- (BOOL)shouldCache;
 - (BOOL)highlighted;
+- (void)displayLayer:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

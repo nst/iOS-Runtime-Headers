@@ -4,43 +4,35 @@
 
 @class UIImage, NSString, NSDictionary;
 
-@interface CKVideoMediaObject : CKAVMediaObject  {
+@interface CKVideoMediaObject : CKAVMediaObject <CKPreviewableAttachment> {
     NSDictionary *_transcodeOptions;
     UIImage *_videoPreviewImage;
     UIImage *_videoImage;
     NSString *_transcodePath;
 }
 
-+ (id)mimeTypesAllowedForMMS;
 + (id)mimeTypesToFileExtensions;
 
 - (void)dealloc;
-- (void)_generateImageOnMainThreadForVideoFile:(id)arg1;
-- (id)_newPreviewImageWithTailStyle:(int)arg1;
-- (id)_newPreviewImageForIncomingVideoWithTailStyle:(int)arg1;
-- (id)_newVideoPreviewImageForImage:(id)arg1 withTailStyle:(int)arg2;
-- (id)transcodePath;
-- (id)transcodedPathExtension;
-- (id)effectiveExportedFilename;
-- (void)prepareForTranscode;
-- (id)transcodedFilename;
-- (id)_transcodeOptions;
-- (id)transcodeMimeType;
-- (void)_generatePreviewOnMainThreadForVideoFile:(id)arg1;
-- (BOOL)shouldTranscodeForMMS;
-- (id)optionsForMedia;
-- (double)transcodeStartTime;
-- (double)transcodeEndTime;
-- (double)transcodeDuration;
-- (BOOL)shouldGeneratePreviewInBackground;
-- (id)filenameForMedia;
-- (id)videoImage;
-- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
-- (float)balloonHeightWithPreviewData:(id)arg1;
-- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
-- (void)copyToPasteboard:(id)arg1;
-- (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
-- (unsigned long long)sizeInBytes;
 - (int)mediaType;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (id)videoImage;
+- (void)_generatePreviewOnMainThreadForVideoFile:(id)arg1;
+- (id)_newVideoPreviewImageForImage:(id)arg1 withTailStyle:(int)arg2;
+- (id)_newPreviewImageForIncomingVideoWithTailStyle:(int)arg1;
+- (id)_newPreviewImageWithTailStyle:(int)arg1;
+- (void)_generateImageOnMainThreadForVideoFile:(id)arg1;
+- (id)effectiveExportedFilename;
+- (id)transcodedFilename;
+- (void)prepareForTranscode;
+- (id)transcodeMimeType;
+- (id)_transcodeOptions;
+- (double)transcodeDuration;
+- (double)transcodeEndTime;
+- (double)transcodeStartTime;
+- (void)copyToPasteboard:(id)arg1;
+- (BOOL)savePreview:(id)arg1 toPath:(id)arg2 forOrientation:(int)arg3;
+- (id)savedPreviewFromPath:(id)arg1 forOrientation:(int)arg2;
+- (id)previewForOrientation:(int)arg1 highlight:(BOOL)arg2;
 
 @end

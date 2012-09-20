@@ -12,10 +12,12 @@
     NSString *_formattedValue;
     NSDate *_date;
     unsigned long long _context;
+    NSString *_groupCategory;
 }
 
 @property(retain) NSString * playerID;
 @property(retain) NSString * category;
+@property(retain) NSString * groupCategory;
 @property unsigned int rank;
 @property long long value;
 @property(retain) NSString * formattedValue;
@@ -23,22 +25,31 @@
 @property unsigned long long context;
 
 + (id)codedPropertyKeys;
++ (BOOL)supportsSecureCoding;
 
-- (id)description;
-- (void)dealloc;
+- (id)challengeServerRepresentationForCancel:(BOOL)arg1;
+- (id)groupCategory;
+- (void)setGroupCategory:(id)arg1;
+- (id)initWithLeaderboardID:(id)arg1 serverRepresentation:(id)arg2;
+- (id)serverRepresentation;
 - (id)formattedValue;
 - (id)playerID;
 - (void)setFormattedValue:(id)arg1;
-- (void)setRank:(unsigned int)arg1;
 - (void)setPlayerID:(id)arg1;
-- (unsigned int)rank;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)category;
 - (void)setCategory:(id)arg1;
+- (void)setDate:(id)arg1;
 - (long long)value;
 - (void)setValue:(long long)arg1;
-- (unsigned long long)context;
 - (void)setContext:(unsigned long long)arg1;
-- (void)setDate:(id)arg1;
+- (unsigned long long)context;
 - (id)date;
+- (id)initWithCoder:(id)arg1;
+- (void)setRank:(unsigned int)arg1;
+- (unsigned int)rank;
 
 @end

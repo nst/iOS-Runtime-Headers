@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKLocationMediaObject : CKMediaObject  {
+@interface CKLocationMediaObject : CKCardMediaObject  {
 }
 
 + (id)mimeTypesToFileExtensions;
 
-- (BOOL)shouldTranscodeForMMS;
-- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
-- (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
+- (id)icon;
 - (int)mediaType;
+- (id)subtitle;
+- (id)title;
 
 @end

@@ -8,29 +8,29 @@
     NSMutableDictionary *_dictionary;
 }
 
-@property(readonly) int time;
+@property(readonly) long time;
 @property(retain) NSDate * simulatedDate;
 
 + (id)defaultDebugContext;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)valueForName:(id)arg1;
 - (void)setValue:(id)arg1 forName:(id)arg2;
 - (long)time;
-- (void)setSimulatedDate:(id)arg1;
-- (BOOL)isFlagSet:(id)arg1;
-- (void)setFlag:(id)arg1;
-- (void)setBool:(BOOL)arg1 forName:(id)arg2;
-- (BOOL)boolForName:(id)arg1;
-- (void)setInt:(int)arg1 forName:(id)arg2;
-- (int)intForName:(id)arg1;
-- (void)setDelegate:(id)arg1 andSelector:(SEL)arg2 forName:(id)arg3;
-- (id)performSelectorForName:(id)arg1;
-- (id)performSelectorForName:(id)arg1 withObject:(id)arg2;
 - (BOOL)eval:(id)arg1;
-- (id)simulatedDate;
+- (id)performSelectorForName:(id)arg1 withObject:(id)arg2;
+- (id)performSelectorForName:(id)arg1;
+- (void)setDelegate:(id)arg1 andSelector:(SEL)arg2 forName:(id)arg3;
+- (int)intForName:(id)arg1;
+- (void)setInt:(int)arg1 forName:(id)arg2;
+- (BOOL)boolForName:(id)arg1;
+- (void)setBool:(BOOL)arg1 forName:(id)arg2;
+- (void)setFlag:(id)arg1;
+- (BOOL)isFlagSet:(id)arg1;
+- (void)setSimulatedDate:(id)arg1;
 - (void)removeValueForName:(id)arg1;
+- (id)simulatedDate;
 
 @end

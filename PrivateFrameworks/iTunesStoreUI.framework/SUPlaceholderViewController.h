@@ -18,21 +18,22 @@
 @property BOOL shouldShowLoadingView;
 
 
-- (id)init;
-- (void)dealloc;
 - (void)setLoading:(BOOL)arg1;
-- (void)loadView;
 - (BOOL)shouldShowLoadingView;
-- (id)defaultBackgroundGradient;
 - (void)setShouldShowLoadingView:(BOOL)arg1;
 - (void)setDefaultBackgroundGradient:(id)arg1;
 - (id)_newURLBagBackgroundGradient;
+- (void)_reloadLoadingView;
 - (void)_reloadBackgroundGradient;
 - (void)_bagDidLoadNotification:(id)arg1;
+- (id)defaultBackgroundGradient;
 - (void)setBackgroundGradient:(id)arg1;
 - (void)parentViewControllerHierarchyDidChange;
 - (id)loadingView;
 - (id)backgroundGradient;
 - (id)copyArchivableContext;
+- (void)dealloc;
+- (id)init;
+- (void)loadView;
 
 @end

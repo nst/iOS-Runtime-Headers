@@ -27,8 +27,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)deactivate;
 - (void)_postFirePowersongNotification:(id)arg1;
 - (void)_handleNikeKeyUpTimer:(id)arg1;

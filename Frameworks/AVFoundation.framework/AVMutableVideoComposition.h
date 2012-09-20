@@ -14,8 +14,8 @@
 @property(copy) NSArray * instructions;
 @property(retain) AVVideoCompositionCoreAnimationTool * animationTool;
 
-+ (id)videoCompositionForAsset:(id)arg1 videoGravity:(id)arg2;
-+ (id)videoCompositionForAsset:(id)arg1;
++ (id)videoCompositionWithPropertiesOfAsset:(id)arg1 videoGravity:(id)arg2;
++ (id)videoCompositionWithPropertiesOfAsset:(id)arg1;
 + (id)videoComposition;
 
 - (void)setAnimationTool:(id)arg1;

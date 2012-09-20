@@ -5,7 +5,6 @@
 @class NSMutableArray, NSArray;
 
 @interface UIPrintPageRenderer : NSObject  {
-    int _pageCount;
     float _headerHeight;
     float _footerHeight;
     struct CGRect { 

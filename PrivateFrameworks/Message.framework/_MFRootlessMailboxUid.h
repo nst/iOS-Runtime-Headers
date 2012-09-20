@@ -6,9 +6,9 @@
 }
 
 
-- (id)tildeAbbreviatedPath;
-- (id)fullPath;
-- (id)storeForMailboxUid:(id)arg1;
 - (id)displayName;
+- (id)fullPath;
+- (id)tildeAbbreviatedPath;
+- (id)storeForMailboxUid:(id)arg1;
 
 @end

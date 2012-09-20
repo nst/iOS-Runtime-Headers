@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class MPAVController, MPAVItem, NSTimer, MPViewController, MPTransitionController;
+@class MPAVController, MPAVItem, NSTimer, MPViewController, MPTransitionController, UIView;
 
-@interface MPViewController : UIViewController <MPAVControllerNode> {
+@interface MPViewController : UIViewController <MPControllerProtocol, MPAVControllerNode> {
     id _delegate;
     NSTimer *_idleTimerDisablerTimer;
     int _interfaceOrientation;
@@ -24,36 +24,46 @@
     unsigned int _appearing : 1;
     unsigned int _observesApplicationSuspendResumeEventsOnly : 1;
     unsigned int _showOverlayWhileAppearingDisabled : 1;
+    BOOL _registeredForPlayerNotifications;
     int _playerLockedCount;
 }
 
+@property BOOL registeredForPlayerNotifications;
 @property(copy) id popViewControllerHandler;
 @property BOOL observesApplicationSuspendResumeEventsOnly;
-@property id delegate;
 @property(getter=idleTimerDisabled,setter=setIdleTimerDisabled:) BOOL idleTimerDisabled;
+@property id delegate;
 @property(retain) MPAVItem * item;
 @property int orientation;
 @property(retain) MPAVController * player;
+@property(readonly) UIView * view;
 
 
-- (id)init;
-- (void)dealloc;
+- (void)setPlayer:(id)arg1;
+- (id)player;
+- (void)setItem:(id)arg1;
+- (void)clearWeakReferencesToObject:(id)arg1;
+- (BOOL)registeredForPlayerNotifications;
 - (void)setAppearing:(BOOL)arg1;
 - (BOOL)idleTimerDisabled;
 - (BOOL)observesApplicationSuspendResumeEventsOnly;
 - (BOOL)isAppearing;
 - (int)displayableInterfaceOrientationForInterfaceOrientation:(int)arg1;
+- (void)endTransitionOverlayHidingWithTransferedOverlayView:(id)arg1;
 - (void)beginTransitionOverlayHidding;
-- (void)_disableIdleTimer:(id)arg1;
+- (id)copyOverlayViewForTransitionToItem:(id)arg1;
+- (void)incrementAggregateStatisticsDisplayCount;
+- (void)setRegisteredForPlayerNotifications:(BOOL)arg1;
 - (void)_popTransitionEnded:(id)arg1;
 - (void)_pushTransitionEnded:(id)arg1;
+- (void)applicationResumed;
 - (void)applicationDidResumeEventsOnly;
 - (void)applicationDidSuspendEventsOnly;
 - (void)setPopViewControllerHandler:(id)arg1;
 - (void)setObservesApplicationSuspendResumeEventsOnly:(BOOL)arg1;
 - (void)pushViewController:(id)arg1 withTransition:(id)arg2;
-- (id)copyOverlayViewForTransitionToItem:(id)arg1;
-- (void)endTransitionOverlayHiddingWithTransferedOverlayView:(id)arg1;
+- (void)unregisterForPlayerNotifications;
+- (void)registerForPlayerNotifications;
 - (void)stopTicking;
 - (void)startTicking;
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
@@ -62,18 +72,19 @@
 - (void)lockPlayer;
 - (void)noteIgnoredChangeTypes:(unsigned int)arg1;
 - (void)didChangeToInterfaceOrientation:(int)arg1;
+- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
 - (void)willChangeToInterfaceOrientation:(int)arg1;
 - (void)beginIgnoringChangeTypes:(unsigned int)arg1;
 - (void)endIgnoringChangeTypes:(unsigned int)arg1;
-- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
-- (id)player;
-- (void)setPlayer:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
 - (void)setOrientation:(int)arg1;
 - (id)item;
 - (id)popViewControllerAnimated:(BOOL)arg1;
 - (void)addChildViewController:(id)arg1;
 - (void)removeChildViewController:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
@@ -81,9 +92,5 @@
 - (void)setIdleTimerDisabled:(BOOL)arg1;
 - (void)setView:(id)arg1;
 - (int)orientation;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)setItem:(id)arg1;
-- (void)clearWeakReferencesToObject:(id)arg1;
 
 @end

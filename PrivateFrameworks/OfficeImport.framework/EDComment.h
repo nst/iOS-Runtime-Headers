@@ -12,8 +12,8 @@
 - (bool)isVisible;
 - (void)setVisible:(bool)arg1;
 - (int)rowIndex;
-- (void)setRowIndex:(int)arg1;
 - (int)columnIndex;
 - (void)setColumnIndex:(int)arg1;
+- (void)setRowIndex:(int)arg1;
 
 @end

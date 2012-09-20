@@ -40,25 +40,25 @@
 @property int selectionStyle;
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)setRightPhase:(float)arg1;
 - (float)rightPhase;
 - (void)setLeftPhase:(float)arg1;
 - (float)leftPhase;
+- (void)setFillColor:(id)arg1;
 - (id)fillColor;
 - (void)setSelectionColor:(id)arg1;
 - (id)selectionColor;
-- (void)setFillColor:(id)arg1;
 - (id)bottomShadowColor;
 - (void)setSectionLocation:(int)arg1;
+- (BOOL)opaque;
 - (id)topShadowColor;
 - (int)sectionLocation;
 - (int)selectionStyle;
-- (BOOL)opaque;
 - (BOOL)selected;
 - (void)setSelectionStyle:(int)arg1;
 - (void)setSelected:(BOOL)arg1;

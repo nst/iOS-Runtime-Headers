@@ -2,57 +2,58 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADXPCConnectionDelegate>, NSString;
+@class NSString, NSObject<OS_xpc_object>, <ADXPCConnectionDelegate>, NSObject<OS_dispatch_queue>;
 
 @interface ADXPCConnection : NSObject  {
     <ADXPCConnectionDelegate> *_delegate;
     NSString *_bundleId;
-    struct _xpc_connection_s { } *_connection;
-    void *_currentMessage;
+    NSObject<OS_xpc_object> *_connection;
+    NSObject<OS_xpc_object> *_currentMessage;
     unsigned int _synchronizationPort;
     double _synchronizationTime;
-    struct dispatch_queue_s { } *_dispatchQueue;
-    struct dispatch_queue_s { } *_internalQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_internalQueue;
 }
 
 @property <ADXPCConnectionDelegate> * delegate;
 @property(readonly) BOOL available;
 @property(copy) NSString * bundleId;
-@property struct _xpc_connection_s { }* connection;
-@property void* currentMessage;
+@property NSObject<OS_xpc_object> * connection;
+@property NSObject<OS_xpc_object> * currentMessage;
 @property unsigned int synchronizationPort;
 @property double synchronizationTime;
-@property struct dispatch_queue_s { }* dispatchQueue;
-@property struct dispatch_queue_s { }* internalQueue;
+@property NSObject<OS_dispatch_queue> * dispatchQueue;
+@property NSObject<OS_dispatch_queue> * internalQueue;
 
 
-- (void)closeConnection;
+- (id)currentMessage;
+- (id)initWithConnection:(id)arg1 delegate:(id)arg2;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
-- (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;
-- (struct dispatch_queue_s { }*)dispatchQueue;
-- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1 delegate:(id)arg2;
-- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
-- (void)barrierWithCompletionHandler:(id)arg1;
-- (void)setCurrentMessage:(void*)arg1;
-- (id)_deserializeMessage:(void*)arg1;
-- (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
-- (void)setConnection:(struct _xpc_connection_s { }*)arg1;
-- (struct _xpc_connection_s { }*)connection;
-- (void)setInternalQueue:(struct dispatch_queue_s { }*)arg1;
-- (struct dispatch_queue_s { }*)internalQueue;
+- (id)connection;
+- (BOOL)available;
+- (id)dispatchQueue;
+- (void)setDispatchQueue:(id)arg1;
+- (void)setConnection:(id)arg1;
+- (void)setInternalQueue:(id)arg1;
+- (id)internalQueue;
 - (void)setSynchronizationTime:(double)arg1;
 - (double)synchronizationTime;
 - (void)setSynchronizationPort:(unsigned int)arg1;
 - (unsigned int)synchronizationPort;
-- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1 delegate:(id)arg2 dispatchQueue:(struct dispatch_queue_s { }*)arg3;
-- (void)commitFence;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)_handleEvent:(void*)arg1;
-- (void)setBundleId:(id)arg1;
+- (BOOL)connectedProcessHasEntitlement:(id)arg1;
 - (void)beginFence;
+- (id)initWithConnection:(id)arg1 delegate:(id)arg2 dispatchQueue:(id)arg3;
+- (void)commitFence;
+- (void)closeConnection;
+- (void)_handleEvent:(id)arg1;
+- (void)setCurrentMessage:(id)arg1;
+- (void)barrierWithCompletionHandler:(id)arg1;
+- (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
+- (id)_deserializeMessage:(id)arg1;
+- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
+- (void)setBundleId:(id)arg1;
 - (id)bundleId;
-- (void*)currentMessage;
-- (BOOL)available;
 
 @end

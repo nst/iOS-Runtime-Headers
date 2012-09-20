@@ -2,66 +2,94 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface NSProxy <NSObject> {
     Class isa;
 }
 
-+ (Class)superclass;
-+ (Class)class;
-+ (id)self;
-+ (id)performSelector:(SEL)arg1;
-+ (id)performSelector:(SEL)arg1 withObject:(id)arg2;
-+ (BOOL)isProxy;
-+ (BOOL)conformsToProtocol:(id)arg1;
-+ (BOOL)respondsToSelector:(SEL)arg1;
-+ (unsigned int)retainCount;
++ (id)mutableCopy;
 + (id)debugDescription;
-+ (id)retain;
++ (id)description;
++ (unsigned int)retainCount;
++ (BOOL)respondsToSelector:(SEL)arg1;
++ (BOOL)conformsToProtocol:(id)arg1;
++ (BOOL)isMemberOfClass:(Class)arg1;
++ (BOOL)isProxy;
 + (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
++ (id)performSelector:(SEL)arg1 withObject:(id)arg2;
++ (id)performSelector:(SEL)arg1;
++ (struct _NSZone { }*)zone;
++ (id)self;
++ (Class)superclass;
++ (unsigned int)hash;
++ (BOOL)isKindOfClass:(Class)arg1;
++ (id)retain;
++ (BOOL)isEqual:(id)arg1;
++ (Class)class;
 + (id)alloc;
-+ (oneway void)release;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
-+ (id)autorelease;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)_copyDescription;
++ (void)dealloc;
++ (oneway void)release;
++ (id)init;
++ (id)copy;
++ (id)autorelease;
 + (BOOL)isFault;
-+ (BOOL)isAncestorOfObject:(id)arg1;
++ (id)forwardingTargetForSelector:(SEL)arg1;
 + (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (BOOL)retainWeakReference;
++ (BOOL)allowsWeakReference;
++ (void)finalize;
++ (id)instanceMethodSignatureForSelector:(SEL)arg1;
++ (void)forwardInvocation:(id)arg1;
++ (int (*)())instanceMethodForSelector:(SEL)arg1;
++ (int (*)())methodForSelector:(SEL)arg1;
++ (BOOL)_isDeallocating;
++ (BOOL)_tryRetain;
 + (void)initialize;
++ (id)methodSignatureForSelector:(SEL)arg1;
 + (BOOL)isSubclassOfClass:(Class)arg1;
++ (id)_copyDescription;
++ (void)doesNotRecognizeSelector:(SEL)arg1;
++ (BOOL)isAncestorOfObject:(id)arg1;
 
-- (long long)forward:(SEL)arg1 :(void*)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (Class)superclass;
-- (Class)class;
-- (id)self;
-- (struct _NSZone { }*)zone;
-- (id)performSelector:(SEL)arg1;
-- (id)performSelector:(SEL)arg1 withObject:(id)arg2;
-- (BOOL)isProxy;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)isMemberOfClass:(Class)arg1;
-- (BOOL)conformsToProtocol:(id)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (unsigned int)retainCount;
-- (id)description;
 - (id)debugDescription;
-- (id)retain;
+- (id)description;
+- (unsigned int)retainCount;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (BOOL)conformsToProtocol:(id)arg1;
+- (BOOL)isMemberOfClass:(Class)arg1;
+- (BOOL)isProxy;
 - (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
+- (id)performSelector:(SEL)arg1 withObject:(id)arg2;
+- (id)performSelector:(SEL)arg1;
+- (struct _NSZone { }*)zone;
+- (id)self;
+- (Class)superclass;
+- (unsigned int)hash;
+- (BOOL)isKindOfClass:(Class)arg1;
+- (id)retain;
+- (BOOL)isEqual:(id)arg1;
+- (Class)class;
+- (void)dealloc;
 - (oneway void)release;
 - (id)autorelease;
-- (void)dealloc;
-- (id)_copyDescription;
 - (BOOL)isFault;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (void)doesNotRecognizeSelector:(SEL)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
 - (void)finalize;
 - (void)forwardInvocation:(id)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (id)_copyDescription;
+- (void)doesNotRecognizeSelector:(SEL)arg1;
+- (BOOL)_allowsDirectEncoding;
 
 @end

@@ -42,15 +42,11 @@
 @property <MPImageRequestDelegate> * delegate;
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)main;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
+- (void)setFinalSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })finalSize;
+- (void)setModifier:(id)arg1;
+- (id)placeholderImage;
 - (void)setUniqueKey:(id)arg1;
-- (void)setDecodeOnFetch:(BOOL)arg1;
 - (BOOL)canRequestSynchronously;
 - (void)_getGeometryForCreatingNewImage:(id)arg1 finalSize:(struct CGSize { float x1; float x2; })arg2 contentSize:(struct CGSize { float x1; float x2; }*)arg3 contentSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4 imageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
 - (void)_sendImageToDelegate:(id)arg1;
@@ -61,22 +57,26 @@
 - (id)copyRawImageReturningError:(id*)arg1;
 - (id)copyImageFromImage:(id)arg1;
 - (id)uniqueKey;
+- (void)setDecodeOnFetch:(BOOL)arg1;
+- (void)main;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (unsigned int)hash;
+- (void)cancel;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)modifier;
 - (void)setCache:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
-- (id)completionHandler;
+- (void)setFillColor:(id)arg1;
 - (id)fillColor;
 - (id)cache;
-- (void)setFillColor:(id)arg1;
+- (id)completionHandler;
 - (long long)tag;
 - (int)contentMode;
 - (void)setContentMode:(int)arg1;
 - (void)setTag:(long long)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)setFinalSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })finalSize;
-- (void)setModifier:(id)arg1;
-- (id)placeholderImage;
-- (id)modifier;
 
 @end

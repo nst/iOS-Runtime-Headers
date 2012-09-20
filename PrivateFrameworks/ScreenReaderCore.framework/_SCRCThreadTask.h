@@ -7,16 +7,16 @@
 @interface _SCRCThreadTask : NSObject  {
     id _target;
     SEL _selector;
-    unsigned int _count;
+    unsigned long _count;
     void *_objects[4];
     NSConditionLock *_waitLock;
-    unsigned int _mask;
+    unsigned long _mask;
 }
 
 
+- (void)setWaitLock:(id)arg1;
+- (id)initWithTarget:(id)arg1 selector:(SEL)arg2 cancelMask:(unsigned long)arg3 count:(unsigned long)arg4 firstObject:(id)arg5 moreObjects:(void*)arg6;
 - (void)dealloc;
 - (void)fire;
-- (id)initWithTarget:(id)arg1 selector:(SEL)arg2 cancelMask:(unsigned long)arg3 count:(unsigned long)arg4 firstObject:(id)arg5 moreObjects:(void*)arg6;
-- (void)setWaitLock:(id)arg1;
 
 @end

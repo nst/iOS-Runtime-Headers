@@ -16,15 +16,15 @@
 @property(retain) MKAnnotationView * bubbleAnnotationView;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (BOOL)hasPendingAnimations;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)calloutView:(id)arg1 didMoveToAnchorPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3;
 - (void)calloutView:(id)arg1 willMoveToAnchorPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3;
 - (void)setAnimationsEnabled:(BOOL)arg1;
-- (id)delegate;
 - (void)addSubview:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_removeAnnotationViewsExcludingAnnotation:(id)arg1 ofClassType:(Class)arg2;
 - (void)_setRegisteredForAddressBookChanges:(BOOL)arg1;
@@ -37,9 +37,9 @@
 - (void)addOrderedAnnotations:(id)arg1;
 - (void)pinDidDrop:(id)arg1 animated:(BOOL)arg2;
 - (void)_scrollToBubble;
-- (void)_updateAnnotationViewPerspective;
 - (void)_resetAnnotationViewPerspective;
-- (void)setAnnotationViewsRotationRadians:(float)arg1 animation:(id)arg2;
+- (void)removeAnnotationViewsRotationAnimations;
+- (void)setMapTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)_deselectAnnotationViewWithAnimation:(BOOL)arg1;
 - (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_deselectAnnotationView;
@@ -58,6 +58,7 @@
 - (void)_dropPinsIfNeeded:(id)arg1 animated:(BOOL)arg2;
 - (id)_viewForInternalAnnotation:(id)arg1;
 - (id)bubblePin;
+- (BOOL)hasDroppingPins;
 - (void)_updateOrientationOfViews:(id)arg1;
 - (void)_updateOrientationOfViews:(id)arg1 relative:(id)arg2 projectionView:(id)arg3;
 - (void)_updateOrientationOfViewsFast:(id)arg1 relative:(id)arg2 projectionView:(id)arg3;
@@ -76,7 +77,6 @@
 - (void)_addCallout:(id)arg1 forAnnotationView:(id)arg2 anchorPoint:(struct CGPoint { float x1; float x2; })arg3 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 animated:(BOOL)arg5;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleCenteringRectInView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_bubbleAnchorPoint;
-- (void)_calloutAccessoryControlTapped:(id)arg1;
 - (void)_removeBubbleWithAnimation:(BOOL)arg1;
 - (void)_refreshDisplayedAnnotations;
 - (void)_updateAnnotationView:(id)arg1;
@@ -103,24 +103,21 @@
 - (void)updateUserLocationView:(BOOL)arg1;
 - (void)resetUserLocation;
 - (void)_userLocationInView:(id)arg1 frame:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 center:(struct CADoublePoint { double x1; double x2; }*)arg3 accuracy:(float*)arg4;
-- (id)_mapTileView;
 - (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2;
 - (void)setSelectedAnnotations:(id)arg1;
 - (id)annotationsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setMapTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (BOOL)hasDroppingPins;
+- (void)showBubbleAfterRegionChange;
+- (void)showBubbleAfterScroll;
 - (BOOL)showAddedAnnotationsAnimated:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })accessoryPadding;
 - (BOOL)freezeUserLocationView;
 - (struct { double x1; double x2; })coordinateForAnnotationView:(id)arg1;
-- (void)showBubbleAfterScroll;
-- (void)removeAnnotationViewsRotationAnimations;
 - (void)showAnnotationsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_updateAnnotationViewPerspective;
+- (void)setAnnotationViewsRotationRadians:(float)arg1 animation:(id)arg2;
 - (void)updateAnnotationLocationsDuringAnimation:(BOOL)arg1;
 - (id)userLocationView;
-- (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)updateUserLocationView;
-- (id)calloutView;
 - (void)_liftForDragging:(id)arg1 mouseDownPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)_deselectAnnotationViewWithAnimation:(BOOL)arg1 tellDelegate:(BOOL)arg2;
 - (void)_setSelectedAnnotationView:(id)arg1 bounce:(BOOL)arg2 pressed:(BOOL)arg3 scrollToFit:(BOOL)arg4;
@@ -129,13 +126,13 @@
 - (void)_dropDraggingAnnotationViewAnimated:(BOOL)arg1;
 - (id)_annotationViewForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1 avoidCurrent:(BOOL)arg2;
 - (id)annotationViewForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)userLocation;
-- (Class)calloutViewClass;
-- (void)setCalloutViewClass:(Class)arg1;
-- (unsigned int)mapType;
+- (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_calloutAccessoryControlTapped:(id)arg1;
+- (id)calloutView;
 - (void)setMapType:(unsigned int)arg1;
-- (void)set_mapTileView:(id)arg1;
-- (void)addAnnotation:(id)arg1;
+- (void)setCalloutViewClass:(Class)arg1;
+- (Class)calloutViewClass;
+- (unsigned int)mapType;
 - (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (id)viewForAnnotation:(id)arg1;
 - (id)dequeueReusableAnnotationViewWithIdentifier:(id)arg1;
@@ -145,5 +142,7 @@
 - (void)addAnnotations:(id)arg1;
 - (void)removeAnnotation:(id)arg1;
 - (id)annotations;
+- (id)userLocation;
+- (void)addAnnotation:(id)arg1;
 
 @end

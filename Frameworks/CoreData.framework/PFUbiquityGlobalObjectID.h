@@ -2,38 +2,47 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString;
+@class NSString, NSManagedObjectID;
 
-@interface PFUbiquityGlobalObjectID : NSObject  {
+@interface PFUbiquityGlobalObjectID : NSObject <NSCopying> {
     NSString *_storeName;
     NSString *_entityName;
     NSString *_primaryKey;
     NSString *_owningPeerID;
     unsigned int _hash;
+    NSManagedObjectID *_managedObjectID;
+    unsigned int _primaryKeyInteger;
 }
 
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * owningPeerID;
-@property(readonly) NSString * primaryKey;
-@property(readonly) NSString * entityName;
 @property(readonly) NSString * storeName;
+@property(readonly) NSString * entityName;
+@property(readonly) NSString * primaryKey;
+@property(readonly) NSString * owningPeerID;
+@property(readonly) unsigned int hash;
+@property(retain) NSManagedObjectID * managedObjectID;
+@property(readonly) unsigned int primaryKeyInteger;
 
-+ (id)stringValueFromArray:(id)arg1 atIndexDescribedByStringNumber:(id)arg2;
 
 - (id)initWithString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (int)compare:(id)arg1;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (id)initWithCompressedString:(id)arg1 forStoreWithName:(id)arg2 andEntityNames:(id)arg3 primaryKeys:(id)arg4 peerIDs:(id)arg5;
+- (id)init;
 - (id)createCompressedStringWithEntityNameToIndex:(id)arg1 primaryKeyToIndex:(id)arg2 peerIDToIndex:(id)arg3;
+- (id)initWithCompressedString:(id)arg1 forStoreWithName:(id)arg2 andEntityNames:(id)arg3 primaryKeys:(id)arg4 peerIDs:(id)arg5;
+- (id)initWithStoreName:(id)arg1 entityName:(id)arg2 primaryKey:(id)arg3 andPeerID:(id)arg4;
+- (id)initWithStoreName:(id)arg1 entityName:(id)arg2 primaryKeyInteger:(unsigned int)arg3 andPeerID:(id)arg4;
+- (unsigned int)primaryKeyInteger;
+- (id)initFromCopyWithStoreName:(id)arg1 entityName:(id)arg2 primaryKey:(id)arg3 peerID:(id)arg4 andHash:(unsigned int)arg5 managedObjectID:(id)arg6 primaryKeyInteger:(unsigned int)arg7;
 - (void)updateHash;
 - (id)createGlobalIDString;
-- (id)owningPeerID;
-- (id)initWithStoreName:(id)arg1 entityName:(id)arg2 primaryKey:(id)arg3 andPeerID:(id)arg4;
+- (void)setManagedObjectID:(id)arg1;
+- (id)managedObjectID;
 - (id)storeName;
+- (id)owningPeerID;
 - (id)entityName;
 - (id)primaryKey;
 

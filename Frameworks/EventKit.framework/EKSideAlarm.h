@@ -13,6 +13,8 @@
 @property(retain) NSDate * entityDate;
 @property(retain) NSString * entityTimeZone;
 @property(retain) NSNumber * allDay;
+@property(retain) NSString * externalID;
+@property(retain) NSDate * acknowledgedDate;
 
 
 

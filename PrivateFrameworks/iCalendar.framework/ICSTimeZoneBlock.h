@@ -15,6 +15,7 @@
 @property int tzoffsetto;
 
 
+- (int)compare:(id)arg1;
 - (id)computeTimeZoneChangeListFromDate:(id)arg1 toDate:(id)arg2;
 - (void)addRecurrenceDate:(id)arg1;
 - (void)setTzoffsetto:(int)arg1;
@@ -30,6 +31,5 @@
 - (BOOL)validate:(id*)arg1;
 - (void)setDtstart:(id)arg1;
 - (id)dtstart;
-- (int)compare:(id)arg1;
 
 @end

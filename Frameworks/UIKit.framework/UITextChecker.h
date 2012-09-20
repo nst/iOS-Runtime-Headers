@@ -23,10 +23,10 @@
 + (int)uniqueSpellDocumentTag;
 
 - (id)_initWithAsynchronousLoading:(BOOL)arg1;
-- (BOOL)_doneLoading;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })checkSpellingOfString:(id)arg1 startingAt:(int)arg2 language:(id)arg3 wrap:(BOOL)arg4 correction:(id*)arg5;
-- (id)init;
+- (BOOL)_doneLoading;
 - (void)dealloc;
+- (id)init;
 - (BOOL)isWordInUserDictionaries:(id)arg1 caseSensitive:(BOOL)arg2;
 - (id)ignoredWords;
 - (void)ignoreWord:(id)arg1;
@@ -44,8 +44,6 @@
 - (id)_checker;
 - (void)setIgnoredWords:(id)arg1;
 - (void)initGlobals;
-- (void)initUserPersonalEntries;
-- (void)initUserAddressBook;
 - (void)initUserDictionaries;
 - (id)_nameOfDictionaryForDocumentTag:(int)arg1;
 - (id)guessesForWordRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inString:(id)arg2 language:(id)arg3;

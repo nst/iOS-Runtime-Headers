@@ -19,21 +19,21 @@
 
 + (id)expressionForFetch:(id)arg1 context:(id)arg2 countOnly:(BOOL)arg3;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initForFetch:(id)arg1 context:(id)arg2 countOnly:(BOOL)arg3;
-- (id)predicateFormat;
-- (id)contextExpression;
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (BOOL)isCountOnlyRequest;
+- (id)contextExpression;
+- (id)predicateFormat;
+- (id)initForFetch:(id)arg1 context:(id)arg2 countOnly:(BOOL)arg3;
 - (id)requestExpression;
+- (BOOL)isCountOnlyRequest;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (unsigned int)expressionType;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

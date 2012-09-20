@@ -3,12 +3,14 @@
  */
 
 @interface GEOTrafficSegment : PBCodable  {
-    int _vertexOffset;
-    int _vertexCount;
-    BOOL _hasSpeed;
     int _speed;
-    BOOL _hasWidth;
+    int _vertexCount;
+    int _vertexOffset;
     int _width;
+    struct { 
+        unsigned int speed : 1; 
+        unsigned int width : 1; 
+    } _has;
 }
 
 @property int vertexOffset;
@@ -20,21 +22,24 @@
 
 
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setHasWidth:(BOOL)arg1;
-- (int)vertexOffset;
-- (void)setVertexCount:(int)arg1;
-- (void)setVertexOffset:(int)arg1;
-- (void)setHasSpeed:(BOOL)arg1;
-- (int)vertexCount;
 - (id)dictionaryRepresentation;
+- (void)setSpeed:(int)arg1;
 - (void)setWidth:(int)arg1;
 - (int)width;
 - (int)speed;
+- (void)setHasWidth:(BOOL)arg1;
 - (BOOL)hasWidth;
-- (void)setSpeed:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasSpeed;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (int)vertexCount;
+- (void)setVertexCount:(int)arg1;
+- (void)setVertexOffset:(int)arg1;
+- (int)vertexOffset;
+- (void)setHasSpeed:(BOOL)arg1;
+- (BOOL)hasSpeed;
+- (BOOL)readFrom:(id)arg1;
 
 @end

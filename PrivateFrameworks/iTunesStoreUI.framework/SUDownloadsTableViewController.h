@@ -11,21 +11,19 @@
 @property(retain) NSArray * scriptButtons;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)loadView;
-- (void)reloadData;
-- (void)_updateFooterView;
-- (void)startPreOrderDownloadAction:(id)arg1;
 - (id)_downloadsViewController;
 - (id)visibleDownloadCellForDownload:(id)arg1;
 - (void)reloadDownloadCellForDownload:(id)arg1;
-- (void)_reloadDataAnimated:(BOOL)arg1;
 - (void)setScriptButtons:(id)arg1;
 - (id)scriptButtons;
-- (void)_accountsChangedNotification:(id)arg1;
 - (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(int)arg2;
 - (BOOL)deleteRowAtIndexPath:(id)arg1;
+- (void)_reloadPreviewOverlayVisibility;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
+- (void)loadView;
 
 @end

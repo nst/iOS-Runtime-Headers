@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKTranscriptButtonViewDelegate>, UIPlacardButton;
+@class UIButton, <CKTranscriptButtonViewDelegate>;
 
 @interface CKTranscriptHeaderView : UIView <CKTranscriptButtonView> {
     id _transcriptButtonDelegate;
-    UIPlacardButton *_callButton;
-    UIPlacardButton *_faceTimeButton;
-    UIPlacardButton *_contactsButton;
-    UIPlacardButton *_loadMoreButton;
+    UIButton *_callButton;
+    UIButton *_faceTimeButton;
+    UIButton *_contactsButton;
+    UIButton *_loadMoreButton;
     BOOL _hasContact;
     BOOL _callingAvailable;
     BOOL _faceTimeAvailable;
@@ -19,36 +19,36 @@
     BOOL _isPhoneTranscript;
 }
 
-@property BOOL disableFirstButtonRow;
-@property BOOL hasMoreMessages;
-@property(readonly) BOOL isGroupMessage;
-@property(getter=isCallingAvailable) BOOL callingAvailable;
 @property(getter=isFaceTimeAvailable) BOOL faceTimeAvailable;
-@property BOOL hasContact;
+@property(getter=isCallingAvailable) BOOL callingAvailable;
+@property BOOL hasMoreMessages;
+@property BOOL disableFirstButtonRow;
 @property <CKTranscriptButtonViewDelegate> * transcriptButtonDelegate;
+@property BOOL hasContact;
+@property(readonly) BOOL isGroupMessage;
 
 + (float)defaultHeight;
 
 - (void)dealloc;
+- (void)_buttonClicked:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 - (BOOL)isCallingAvailable;
 - (BOOL)isFaceTimeAvailable;
 - (BOOL)hasContact;
 - (id)transcriptButtonDelegate;
-- (BOOL)disableFirstButtonRow;
-- (BOOL)isGroupMessage;
-- (void)_updateCallButton;
 - (BOOL)hasMoreMessages;
-- (void)setTranscriptButtonDelegate:(id)arg1;
-- (void)setHasContact:(BOOL)arg1;
-- (void)setButtonsEnabled:(BOOL)arg1;
-- (void)setFaceTimeAvailable:(BOOL)arg1;
-- (void)setCallingAvailable:(BOOL)arg1;
-- (void)setHasMoreMessages:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isPhoneTranscript:(BOOL)arg2 displayLoadPrevious:(BOOL)arg3 isGroupMessage:(BOOL)arg4;
-- (void)setDisableFirstButtonRow:(BOOL)arg1;
+- (void)_updateCallButton;
+- (BOOL)isGroupMessage;
+- (BOOL)disableFirstButtonRow;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForButton:(short)arg1;
-- (void)_buttonClicked:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
+- (void)setDisableFirstButtonRow:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isPhoneTranscript:(BOOL)arg2 displayLoadPrevious:(BOOL)arg3 isGroupMessage:(BOOL)arg4;
+- (void)setHasMoreMessages:(BOOL)arg1;
+- (void)setCallingAvailable:(BOOL)arg1;
+- (void)setFaceTimeAvailable:(BOOL)arg1;
+- (void)setButtonsEnabled:(BOOL)arg1;
+- (void)setHasContact:(BOOL)arg1;
+- (void)setTranscriptButtonDelegate:(id)arg1;
 
 @end

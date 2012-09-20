@@ -13,8 +13,8 @@
 
 
 - (id)description;
-- (void)dealloc;
-- (id)initWithStatement:(struct sqlite3_stmt { }*)arg1;
+- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 nameSection:(int)arg2 sortKey:(id)arg3;
+- (id)initWithName:(id)arg1 nameSection:(int)arg2 sortKey:(id)arg3 nameOrder:(long long)arg4;
 
 @end

@@ -5,16 +5,15 @@
 @class NSTimer;
 
 @interface MPLocalAssetDownloadObserver : MPMediaDownloadObserver  {
-    long long _itemPersistentID;
     NSTimer *_progressTimer;
 }
 
 + (void)beginDownloadForMediaItem:(id)arg1;
 
-- (void)dealloc;
+- (void)_updateProgress:(id)arg1;
 - (id)initWithItemPersistentID:(long long)arg1;
 - (BOOL)canCancel;
+- (void)dealloc;
 - (double)downloadProgress;
-- (void)_updateProgress:(id)arg1;
 
 @end

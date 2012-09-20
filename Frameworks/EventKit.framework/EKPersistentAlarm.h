@@ -17,16 +17,32 @@
 @property(readonly) NSString * UUID;
 @property(copy) EKPersistentLocation * location;
 @property int proximity;
+@property(copy) NSDate * acknowledgedDate;
+@property(getter=isDefaultAlarm) BOOL defaultAlarm;
 
 + (id)relations;
++ (id)defaultPropertiesToLoad;
 
-- (void)setExternalID:(id)arg1;
-- (id)externalID;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
+- (id)UUID;
+- (id)location;
+- (id)timeZone;
+- (void)setTimeZone:(id)arg1;
+- (void)setOwner:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
+- (id)owner;
+- (void)setExternalData:(id)arg1;
+- (id)externalData;
 - (void)setAlarmType:(int)arg1;
 - (int)alarmType;
+- (void)setDefaultAlarm:(BOOL)arg1;
+- (BOOL)isDefaultAlarm;
+- (void)setAcknowledgedDate:(id)arg1;
+- (id)acknowledgedDate;
 - (void)setProximity:(int)arg1;
 - (int)proximity;
 - (id)absoluteDate;
@@ -34,16 +50,7 @@
 - (void)setAbsoluteDate:(id)arg1;
 - (double)relativeOffset;
 - (BOOL)isAbsolute;
-- (int)entityType;
 - (BOOL)validate:(id*)arg1;
-- (id)location;
-- (id)timeZone;
-- (void)setTimeZone:(id)arg1;
-- (void)setOwner:(id)arg1;
-- (void)setLocation:(id)arg1;
-- (id)owner;
-- (id)externalData;
-- (void)setExternalData:(id)arg1;
-- (id)UUID;
+- (int)entityType;
 
 @end

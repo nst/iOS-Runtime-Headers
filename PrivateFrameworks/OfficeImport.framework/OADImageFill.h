@@ -9,7 +9,7 @@
     BOOL mIsBlipRefOverridden;
     OADRelativeRect *mSourceRect;
     BOOL mIsSourceRectOverridden;
-    int mDpi;
+    long mDpi;
     BOOL mIsDpiOverridden;
     BOOL mRotateWithShape;
     BOOL mIsRotateWithShapeOverridden;
@@ -19,28 +19,28 @@
 
 + (id)defaultProperties;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)color;
-- (void)setRotateWithShape:(BOOL)arg1;
-- (BOOL)isRotateWithShapeOverridden;
-- (BOOL)rotateWithShape;
-- (void)setSourceRect:(id)arg1;
-- (void)setDpi:(long)arg1;
-- (BOOL)isBlipRefOverridden;
-- (BOOL)isSourceRectOverridden;
-- (BOOL)isDpiOverridden;
-- (BOOL)isTechniqueOverridden;
-- (id)sourceRect;
 - (long)dpi;
+- (BOOL)isTechniqueOverridden;
+- (BOOL)isDpiOverridden;
+- (void)setDpi:(long)arg1;
+- (BOOL)rotateWithShape;
+- (BOOL)isRotateWithShapeOverridden;
+- (void)setRotateWithShape:(BOOL)arg1;
 - (void)setStyleColor:(id)arg1;
+- (id)initWithDefaults;
+- (void)setSourceRect:(id)arg1;
 - (void)setBlipRef:(id)arg1;
 - (void)setTechnique:(id)arg1;
 - (id)technique;
+- (id)sourceRect;
+- (BOOL)isSourceRectOverridden;
 - (id)blipRef;
+- (BOOL)isBlipRefOverridden;
 - (void)setParent:(id)arg1;
-- (id)initWithDefaults;
 
 @end

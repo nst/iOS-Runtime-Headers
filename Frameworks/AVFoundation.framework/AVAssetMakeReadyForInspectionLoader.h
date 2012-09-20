@@ -18,15 +18,25 @@
     NSURL *_URL;
 }
 
-@property(readonly) NSURL * URL;
 @property(readonly) AVAssetCache * assetCache;
 @property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
 @property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
 @property(readonly) NSURL * downloadDestinationURL;
 
 
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (BOOL)hasProtectedContent;
+- (BOOL)isPlayable;
+- (BOOL)_isStreaming;
+- (id)lyrics;
+- (id)URL;
+- (id)initWithURL:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
+- (void)finalize;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (BOOL)isReadable;
 - (id)_statusOfValueForKeyThatIsAlwaysLoaded;
 - (BOOL)_providesAccurateTiming;
 - (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
@@ -51,19 +61,8 @@
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (BOOL)isComposable;
 - (BOOL)isExportable;
-- (BOOL)isPlayable;
-- (BOOL)hasProtectedContent;
 - (void)_serverHasDied;
-- (id)lyrics;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
-- (BOOL)_isStreaming;
 - (void)cancelLoading;
-- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (id)initWithURL:(id)arg1;
-- (void)finalize;
-- (id)URL;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (BOOL)isReadable;
 
 @end

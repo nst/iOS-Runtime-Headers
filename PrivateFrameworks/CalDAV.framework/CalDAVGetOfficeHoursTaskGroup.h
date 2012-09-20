@@ -10,22 +10,22 @@
     ICSDocument *_calendarAvailability;
 }
 
-@property(retain) CoreDAVPropFindTask * fetchTask;
+@property <CoreDAVTaskGroupDelegate> * delegate;
 @property(retain) ICSDocument * calendarAvailability;
 @property(retain) NSURL * inboxURL;
-@property <CoreDAVTaskGroupDelegate> * delegate;
+@property(retain) CoreDAVPropFindTask * fetchTask;
 
 
 - (void)dealloc;
+- (id)inboxURL;
+- (void)setInboxURL:(id)arg1;
+- (id)calendarAvailability;
+- (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 taskManager:(id)arg3;
+- (void)setCalendarAvailability:(id)arg1;
 - (void)_finishWithError:(id)arg1;
 - (id)fetchTask;
 - (void)setFetchTask:(id)arg1;
 - (void)startTaskGroup;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
-- (id)inboxURL;
-- (void)setInboxURL:(id)arg1;
-- (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 taskManager:(id)arg3;
-- (id)calendarAvailability;
-- (void)setCalendarAvailability:(id)arg1;
 
 @end

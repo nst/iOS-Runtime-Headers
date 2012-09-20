@@ -25,13 +25,6 @@
 + (void)releaseCurrentDisplayLinkManager;
 + (id)currentDisplayLinkManager;
 
-- (id)init;
-- (void)dealloc;
-- (BOOL)isPaused;
-- (int)frameInterval;
-- (double)timestamp;
-- (double)duration;
-- (void)invalidate;
 - (BOOL)shouldInvalidateAutomatically;
 - (void)setShouldInvalidateAutomatically:(BOOL)arg1;
 - (id)_displayLink;
@@ -40,5 +33,12 @@
 - (void)addTarget:(id)arg1 selector:(SEL)arg2 frameInterval:(int)arg3;
 - (void)removeTarget:(id)arg1 selector:(SEL)arg2;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2;
+- (void)invalidate;
+- (double)timestamp;
+- (void)dealloc;
+- (id)init;
+- (int)frameInterval;
+- (double)duration;
+- (BOOL)isPaused;
 
 @end

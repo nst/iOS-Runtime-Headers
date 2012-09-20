@@ -18,12 +18,13 @@
 @property BOOL moreViewControllersChanged;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)_updateEditButton;
 - (void)_layoutCells;
 - (BOOL)moreViewControllersChanged;
 - (BOOL)allowsCustomizing;
+- (id)table;
 - (void)setMoreViewControllersChanged:(BOOL)arg1;
 - (void)setAllowsCustomizing:(BOOL)arg1;
 - (id)moreViewControllers;
@@ -32,10 +33,9 @@
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
-- (id)table;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

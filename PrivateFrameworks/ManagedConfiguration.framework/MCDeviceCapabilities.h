@@ -7,8 +7,8 @@
     BOOL _supportsFileLevelEncryption;
 }
 
-@property(readonly) BOOL supportsFileLevelEncryption;
 @property(readonly) BOOL supportsBlockLevelEncryption;
+@property(readonly) BOOL supportsFileLevelEncryption;
 
 + (id)currentDevice;
 

@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoViewController, UIView, UILabel, NSString, UIImageView, MPInlineAudioTransportControls;
+@class <MPVideoControllerProtocol>, UIView, UILabel, NSString, UIImageView, MPInlineAudioTransportControls;
 
 @interface MPInlineAudioOverlay : MPPlaybackControlsView  {
-    MPVideoViewController *_videoViewController;
+    <MPVideoControllerProtocol> *_videoViewController;
     int _style;
     UIView *_backgroundView;
     MPInlineAudioTransportControls *_transportControls;
@@ -24,30 +24,30 @@
     UIImageView *_largeRightImageView;
 }
 
-@property MPVideoViewController * videoViewController;
+@property <MPVideoControllerProtocol> * videoViewController;
 @property int style;
 @property(copy) NSString * playbackErrorDescription;
 
 
-- (void)dealloc;
+- (void)reloadView;
+- (void)setPlayer:(id)arg1;
+- (void)setCurrentTime:(double)arg1;
+- (id)newProgressIndicator;
+- (void)setItem:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameInBackgroundViewForDescriptionLabel:(id)arg1;
 - (id)_newDescriptionLabel;
 - (void)_updateVisiblePartsForAvailableRoutes;
 - (void)_itemDurationDidChangeNotification:(id)arg1;
-- (unsigned int)displayablePartsInPartMask:(unsigned int)arg1;
+- (unsigned long long)displayablePartsInPartMask:(unsigned long long)arg1;
 - (id)videoViewController;
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
 - (void)setVideoViewController:(id)arg1;
 - (id)playbackErrorDescription;
 - (void)setPlaybackErrorDescription:(id)arg1;
-- (void)setCurrentTime:(double)arg1;
-- (void)reloadView;
-- (void)setPlayer:(id)arg1;
+- (void)dealloc;
 - (int)style;
 - (void)setStyle:(int)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)newProgressIndicator;
-- (void)setItem:(id)arg1;
 
 @end

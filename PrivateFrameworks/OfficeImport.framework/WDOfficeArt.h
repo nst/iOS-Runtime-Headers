@@ -15,22 +15,22 @@
 - (void)setProperties:(id)arg1;
 - (void)dealloc;
 - (id)properties;
-- (id)overrideDrawable;
-- (void)clearDrawable;
-- (id)imageBlipRef;
-- (void)setImageBlipRef:(id)arg1;
-- (id)imageData;
+- (void)setFloating:(bool)arg1;
+- (void)propagateTextTypeToDrawables;
 - (id)imageName;
+- (id)imageData;
+- (void)setImageBlipRef:(id)arg1;
+- (id)imageBlipRef;
+- (void)clearDrawable;
+- (id)overrideDrawable;
 - (void)setTextType:(int)arg1 recursivelyToDrawable:(id)arg2;
 - (void)clearProperties;
-- (BOOL)isDrawableOverridden;
-- (void)propagateTextTypeToDrawables;
-- (void)setFloating:(bool)arg1;
 - (id)initWithParagraph:(id)arg1;
 - (void)checkForFloating:(id)arg1;
-- (bool)isFloating;
-- (int)runType;
 - (void)setDrawable:(id)arg1;
+- (int)runType;
+- (bool)isFloating;
 - (id)drawable;
+- (BOOL)isDrawableOverridden;
 
 @end

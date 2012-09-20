@@ -9,17 +9,17 @@
 
 @property BOOL alreadyExists;
 @property(copy) NSURL * worldClockId;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)addCompleted;
 + (id)addCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)addCompleted;
 
 - (id)groupIdentifier;
-- (BOOL)alreadyExists;
-- (void)setAlreadyExists:(BOOL)arg1;
-- (id)worldClockId;
 - (void)setWorldClockId:(id)arg1;
+- (id)worldClockId;
+- (void)setAlreadyExists:(BOOL)arg1;
+- (BOOL)alreadyExists;
 - (id)encodedClassName;
 
 @end

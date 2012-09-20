@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, UIImage, UIView;
+@class NSArray, UIImage, UIView, NSOrderedSet, NSDictionary, GKTableViewControllerV2;
 
 @interface GKTableView : UITableView  {
     UIView *_topShadowView;
@@ -26,8 +26,16 @@
     } _lastTouchStartedAt;
     unsigned int _loadingSequenceNumber;
     BOOL _shouldOverrideTableFooterGroupPadding;
+    NSOrderedSet *_displayedSections;
+    NSDictionary *_displayedSectionMetrics;
+    BOOL _shouldUseWideMarginsForLandscapeContentOnWidescreenDevice;
+    BOOL _disableOffsetAndBoundsHacks;
+    unsigned int _contentOffsetLockCount;
 }
 
+@property(readonly) GKTableViewControllerV2 * _controller;
+@property unsigned int contentOffsetLockCount;
+@property BOOL disableOffsetAndBoundsHacks;
 @property float shadowInset;
 @property(retain) NSArray * backgroundTiles;
 @property(retain) UIImage * backgroundImage;
@@ -36,56 +44,91 @@
 @property(readonly) int defaultColumnCount;
 @property float defaultColumnWidth;
 @property float tableHeaderPinnedHeight;
-@property(retain) UIView * topShadowView;
 @property BOOL shouldPinHeaderToTop;
 @property BOOL shouldPlaceShadowBelowTableHeader;
 @property BOOL shouldAdjustScrollInsetsForTableHeader;
 @property struct CGSize { float x1; float x2; } statusOffsetShift;
+@property BOOL shouldOverrideTableFooterGroupPadding;
+@property BOOL shouldUseWideMarginsForLandscapeContentOnWidescreenDevice;
 @property(readonly) struct CGPoint { float x1; float x2; } lastTouchStartedAt;
 @property(readonly) unsigned int loadingSequenceNumber;
-@property BOOL shouldOverrideTableFooterGroupPadding;
+@property(retain) NSOrderedSet * displayedSections;
+@property(retain) NSDictionary * displayedSectionMetrics;
+@property(retain) UIView * topShadowView;
+@property unsigned int contentOffsetLockCount;
+@property BOOL disableOffsetAndBoundsHacks;
 
 
-- (void)dealloc;
-- (id)capCellWithReuseIdentifier:(id)arg1 sectionHeaderStyle:(int)arg2 tableView:(id)arg3;
-- (id)showMoreCapCellForSection:(int)arg1;
-- (id)loadingCapCellForSection:(int)arg1;
-- (id)sectionHeaderCapCellWithTitle:(id)arg1 section:(int)arg2;
+- (id)_gkDescriptionWithChildren:(int)arg1;
+- (id)_gkDescription;
+- (id)loadingCapCell;
+- (id)showAllCapCell;
+- (id)capCellWithReuseIdentifier:(id)arg1 title:(id)arg2 labelStyle:(int)arg3;
+- (id)showMoreCapCell;
+- (id)sectionHeaderCapCellWithTitle:(id)arg1;
+- (void)restoreContentOffset:(struct CGPoint { float x1; float x2; })arg1 isRotating:(BOOL)arg2;
+- (BOOL)_kludgeTableIsWidescreen;
+- (void)updateHeightForTableHeaderViewHiding;
+- (void)_flashTableView:(id)arg1;
+- (void)resetDisplayedSections;
+- (id)validateDisplayedSections;
+- (void)scrollToTopWithPinnedHeaderAnimated:(BOOL)arg1;
+- (id)validateDisplayedSectionsWithSections:(id)arg1;
+- (void)unlockContentOffset;
+- (void)lockContentOffset;
+- (void)setContentOffsetLockCount:(unsigned int)arg1;
+- (void)setDisableOffsetAndBoundsHacks:(BOOL)arg1;
+- (void)setDisplayedSectionMetrics:(id)arg1;
+- (id)displayedSectionMetrics;
+- (id)displayedSections;
 - (BOOL)shouldOverrideTableFooterGroupPadding;
 - (unsigned int)loadingSequenceNumber;
 - (void)setTableHeaderPinnedHeight:(float)arg1;
 - (void)setShadowInset:(float)arg1;
 - (float)shadowInset;
-- (void)setTopShadowView:(id)arg1;
+- (void)deleteRowsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2 updateHeader:(BOOL)arg3;
+- (void)insertRowsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2 updateHeader:(BOOL)arg3;
+- (id)indexPathForNextSelectedRow;
+- (void)setDisplayedSections:(id)arg1;
+- (void)limitContentOffsetToHeightThatPinsHeader;
+- (BOOL)headerIsPinned;
 - (int)defaultColumnCount;
 - (BOOL)becomeFirstResponderOnTouch;
+- (void)_setDisplayedSections:(id)arg1;
+- (BOOL)disableOffsetAndBoundsHacks;
+- (unsigned int)contentOffsetLockCount;
 - (void)layoutTilesWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 offset:(struct CGSize { float x1; float x2; })arg2;
 - (void)updateBackgroundImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)_pinnedHeaderContentOffsetThreshold;
 - (void)updateShadowViews;
 - (BOOL)shouldAdjustScrollInsetsForTableHeader;
 - (id)topShadowView;
 - (float)tableHeaderPinnedHeight;
 - (BOOL)shouldPinHeaderToTop;
 - (BOOL)shouldPlaceShadowBelowTableHeader;
-- (float)defaultColumnWidth;
+- (BOOL)shouldUseWideMarginsForLandscapeContentOnWidescreenDevice;
 - (void)setShouldOverrideTableFooterGroupPadding:(BOOL)arg1;
-- (void)setShouldAdjustScrollInsetsForTableHeader:(BOOL)arg1;
 - (void)setShouldPinHeaderToTop:(BOOL)arg1;
-- (void)setDefaultColumnWidth:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableHeaderFrame;
 - (void)updateBackground;
-- (struct CGSize { float x1; float x2; })statusOffsetShift;
-- (struct CGPoint { float x1; float x2; })lastTouchStartedAt;
 - (void)setStatusOffsetShift:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })statusOffsetShift;
+- (void)setShouldAdjustScrollInsetsForTableHeader:(BOOL)arg1;
+- (void)setBecomeFirstResponderOnTouch:(BOOL)arg1;
+- (void)setTopShadowView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })lastTouchStartedAt;
 - (id)backgroundTiles;
 - (void)setBackgroundTiles:(id)arg1;
+- (void)setShouldUseWideMarginsForLandscapeContentOnWidescreenDevice:(BOOL)arg1;
 - (void)setShouldPlaceShadowBelowTableHeader:(BOOL)arg1;
-- (void)setBecomeFirstResponderOnTouch:(BOOL)arg1;
+- (BOOL)_tableIsLandscape;
+- (id)_controller;
+- (void)dealloc;
 - (int)backgroundStyle;
 - (void)setBackgroundStyle:(int)arg1;
+- (void)setBackgroundImage:(id)arg1;
 - (float)_backgroundInset;
 - (BOOL)usesVariableMargins;
-- (void)setBackgroundImage:(id)arg1;
 - (id)backgroundImage;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)canBecomeFirstResponder;
@@ -94,9 +137,13 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)endUpdates;
+- (void)beginUpdates;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)reloadData;
 - (void)didMoveToWindow;
+- (void)setDefaultColumnWidth:(float)arg1;
+- (float)defaultColumnWidth;
 
 @end

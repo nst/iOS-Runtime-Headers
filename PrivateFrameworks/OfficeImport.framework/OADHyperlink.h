@@ -16,32 +16,32 @@
     BOOL mDoAddToHistory;
 }
 
-@property BOOL doAddToHistory;
-@property BOOL isVisited;
 @property BOOL doEndSound;
+@property BOOL isVisited;
+@property BOOL doAddToHistory;
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)action;
-- (id)init;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (void)setAction:(id)arg1;
-- (id)targetFrame;
-- (id)invalidUrl;
+- (void)setDoAddToHistory:(BOOL)arg1;
 - (BOOL)doAddToHistory;
+- (void)setIsVisited:(BOOL)arg1;
 - (BOOL)isVisited;
+- (void)setDoEndSound:(BOOL)arg1;
 - (BOOL)doEndSound;
+- (void)setInvalidUrl:(id)arg1;
+- (id)invalidUrl;
+- (void)setTooltip:(id)arg1;
+- (void)setTargetFrame:(id)arg1;
+- (id)targetFrame;
+- (void)setTargetMode:(int)arg1;
+- (void)setTargetLocation:(id)arg1;
 - (id)tooltip;
 - (int)targetMode;
-- (void)setTargetLocation:(id)arg1;
-- (void)setTargetMode:(int)arg1;
-- (void)setTargetFrame:(id)arg1;
-- (void)setTooltip:(id)arg1;
-- (void)setInvalidUrl:(id)arg1;
-- (void)setDoEndSound:(BOOL)arg1;
-- (void)setIsVisited:(BOOL)arg1;
-- (void)setDoAddToHistory:(BOOL)arg1;
 - (id)targetLocation;
 
 @end

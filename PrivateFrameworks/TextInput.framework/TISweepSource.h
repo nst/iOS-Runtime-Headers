@@ -9,19 +9,19 @@
     int stepCount;
 }
 
-@property int stepCount;
 @property(readonly) NSMutableDictionary * debugValues;
+@property int stepCount;
 
 + (id)sharedInstance;
 
-- (void)addValue:(id)arg1 withMin:(float)arg2 withMax:(float)arg3;
-- (void)addValue:(id)arg1 withValue:(float)arg2;
-- (id)sweepStateHeader;
-- (id)sweepStateValues;
-- (void)advanceSweep;
-- (BOOL)finished;
-- (int)stepCount;
 - (void)setStepCount:(int)arg1;
+- (int)stepCount;
+- (BOOL)finished;
+- (void)advanceSweep;
+- (id)sweepStateValues;
+- (id)sweepStateHeader;
+- (void)addValue:(id)arg1 withValue:(float)arg2;
+- (void)addValue:(id)arg1 withMin:(float)arg2 withMax:(float)arg3;
 - (id)debugValues;
 - (void)dealloc;
 

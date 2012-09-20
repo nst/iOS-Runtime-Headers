@@ -13,37 +13,37 @@
     NSArray *_services;
 }
 
-@property(retain) NSArray * services;
-@property BOOL isConnected;
-@property(retain) NSNumber * RSSI;
-@property(retain) NSString * name;
-@property(readonly) struct __CFUUID { }* UUID;
 @property <CBPeripheralDelegate> * delegate;
+@property(readonly) struct __CFUUID { }* UUID;
+@property(retain) NSString * name;
+@property(retain) NSNumber * RSSI;
+@property BOOL isConnected;
+@property(retain) NSArray * services;
 
 
-- (void)setName:(id)arg1;
-- (BOOL)isConnected;
-- (void)setServices:(id)arg1;
 - (id)services;
-- (id)RSSI;
-- (void)readRSSI;
-- (void)discoverServices:(id)arg1;
-- (void)discoverIncludedServices:(id)arg1 forService:(id)arg2;
-- (void)discoverCharacteristics:(id)arg1 forService:(id)arg2;
-- (void)readValueForCharacteristic:(id)arg1;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 type:(int)arg3;
-- (void)reliablyWriteValues:(id)arg1 forCharacteristics:(id)arg2;
-- (void)setBroadcastValue:(BOOL)arg1 forCharacteristic:(id)arg2;
-- (void)setNotifyValue:(BOOL)arg1 forCharacteristic:(id)arg2;
-- (void)setIndicateValue:(BOOL)arg1 forCharacteristic:(id)arg2;
-- (void)discoverDescriptorsForCharacteristic:(id)arg1;
-- (void)readValueForDescriptor:(id)arg1;
-- (void)writeValue:(id)arg1 forDescriptor:(id)arg2;
-- (void)setRSSI:(id)arg1;
-- (void)setIsConnected:(BOOL)arg1;
-- (id)name;
-- (id)delegate;
+- (void)setServices:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)setName:(id)arg1;
+- (id)name;
 - (struct __CFUUID { }*)UUID;
+- (void)setIsConnected:(BOOL)arg1;
+- (id)RSSI;
+- (void)writeValue:(id)arg1 forDescriptor:(id)arg2;
+- (void)readValueForDescriptor:(id)arg1;
+- (void)discoverDescriptorsForCharacteristic:(id)arg1;
+- (void)setIndicateValue:(BOOL)arg1 forCharacteristic:(id)arg2;
+- (void)setNotifyValue:(BOOL)arg1 forCharacteristic:(id)arg2;
+- (void)setBroadcastValue:(BOOL)arg1 forCharacteristic:(id)arg2;
+- (void)reliablyWriteValues:(id)arg1 forCharacteristics:(id)arg2;
+- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 type:(int)arg3;
+- (void)readValueForCharacteristic:(id)arg1;
+- (void)discoverCharacteristics:(id)arg1 forService:(id)arg2;
+- (void)discoverIncludedServices:(id)arg1 forService:(id)arg2;
+- (void)discoverServices:(id)arg1;
+- (void)readRSSI;
+- (void)setRSSI:(id)arg1;
+- (BOOL)isConnected;
 
 @end

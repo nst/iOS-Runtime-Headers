@@ -13,12 +13,18 @@
 @property(retain) BBAction * action;
 
 + (id)buttonWithTitle:(id)arg1 action:(id)arg2;
++ (void)_removeButtonFromCache:(id)arg1;
++ (id)_possiblyCachedButtonForInitializedButton:(id)arg1;
++ (void)_addButtonToCache:(id)arg1;
 
 - (id)action;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)title;
 - (void)setAction:(id)arg1;
+- (id)title;
 - (void)setTitle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

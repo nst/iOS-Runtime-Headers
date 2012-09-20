@@ -9,15 +9,15 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)setName:(id)arg1;
+- (id)name;
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)waitUntilDate:(id)arg1;
 - (void)signal;
 - (void)finalize;
 - (void)unlock;
 - (void)lock;
-- (id)name;
 - (void)broadcast;
 - (void)wait;
 

@@ -14,36 +14,36 @@
 @property(copy) NSString * headsetId;
 @property(copy) NSString * headsetName;
 @property(copy) NSString * motionActivity;
-@property(retain) NSNumber * motionConfidence;
-@property(retain) NSNumber * noiseReductionLevel;
+@property(copy) NSNumber * motionConfidence;
+@property(copy) NSNumber * noiseReductionLevel;
 @property(copy) NSString * origin;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)startSpeech;
 + (id)startSpeechWithDictionary:(id)arg1 context:(id)arg2;
++ (id)startSpeech;
 
 - (id)groupIdentifier;
 - (void)setOrigin:(id)arg1;
 - (id)origin;
-- (id)audioSource;
-- (void)setAudioSource:(id)arg1;
-- (int)codec;
-- (void)setCodec:(int)arg1;
-- (id)dspStatus;
-- (void)setDspStatus:(id)arg1;
-- (id)headsetAddress;
-- (void)setHeadsetAddress:(id)arg1;
-- (id)headsetId;
-- (void)setHeadsetId:(id)arg1;
-- (id)headsetName;
-- (void)setHeadsetName:(id)arg1;
-- (id)motionActivity;
-- (void)setMotionActivity:(id)arg1;
-- (id)motionConfidence;
-- (void)setMotionConfidence:(id)arg1;
-- (id)noiseReductionLevel;
 - (void)setNoiseReductionLevel:(id)arg1;
+- (id)noiseReductionLevel;
+- (void)setMotionConfidence:(id)arg1;
+- (id)motionConfidence;
+- (void)setMotionActivity:(id)arg1;
+- (id)motionActivity;
+- (void)setHeadsetName:(id)arg1;
+- (id)headsetName;
+- (void)setHeadsetId:(id)arg1;
+- (id)headsetId;
+- (void)setHeadsetAddress:(id)arg1;
+- (id)headsetAddress;
+- (void)setDspStatus:(id)arg1;
+- (id)dspStatus;
+- (void)setCodec:(int)arg1;
+- (int)codec;
+- (void)setAudioSource:(id)arg1;
+- (id)audioSource;
 - (id)encodedClassName;
 
 @end

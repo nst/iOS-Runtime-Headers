@@ -16,11 +16,11 @@
 - (void)dealloc;
 - (id)initWithDocument:(id)arg1;
 - (id)document;
-- (int)nextId;
 - (void)setLastKnowGoodListDefinition:(id)arg1;
-- (int)definitionCount;
-- (id)definitionAt:(int)arg1;
+- (int)nextId;
 - (id)addDefinition;
+- (id)definitionAt:(int)arg1;
+- (int)definitionCount;
 - (id)definitionWithId:(int)arg1;
 - (id)addDefinition:(int)arg1;
 

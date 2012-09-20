@@ -9,7 +9,7 @@
     NSString *_style;
 }
 
-@property(retain) id nativeTextField;
+@property(readonly) BOOL canBecomeFirstResponder;
 @property(retain) NSString * autocapitalizationType;
 @property(retain) NSString * autocorrectionType;
 @property(retain) NSString * keyboardType;
@@ -19,48 +19,18 @@
 @property(retain) NSString * value;
 @property(retain) NSNumber * width;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (BOOL)_canBecomeFirstResponder;
-- (BOOL)focus;
-- (BOOL)blur;
-- (void)_setWidth:(float)arg1;
-- (id)value;
-- (void)setValue:(id)arg1;
-- (void)setPlaceholder:(id)arg1;
-- (BOOL)_resignFirstResponder;
-- (BOOL)_becomeFirstResponder;
-- (id)keyboardType;
-- (id)autocorrectionType;
-- (id)autocapitalizationType;
-- (id)placeholder;
-- (void)setKeyboardType:(id)arg1;
-- (void)setAutocorrectionType:(id)arg1;
-- (void)setAutocapitalizationType:(id)arg1;
-- (float)_width;
-- (id)style;
-- (void)setStyle:(id)arg1;
-- (void)setWidth:(id)arg1;
-- (id)width;
-- (id)attributeKeys;
 - (id)shouldFocusFunction;
 - (void)setShouldFocusFunction:(id)arg1;
-- (void)setNativeTextField:(id)arg1;
+- (void)setNativeObjectWithTextField:(id)arg1;
+- (void)setNativeObjectWithSearchBar:(id)arg1;
+- (void)setNativeObjectWithBarButtonItem:(id)arg1;
 - (float)_defaultWidth;
 - (id)_newTextField;
-- (id)nativeTextField;
 - (id)_copyValue;
-- (id)_copyShouldFocusFunction;
-- (void)_setValue:(id)arg1;
-- (void)_setShouldFocusFunction:(id)arg1;
-- (void)_setPlaceholder:(id)arg1;
-- (void)_setKeyboardType:(id)arg1;
-- (void)_setAutocorrectionType:(id)arg1;
-- (void)_setAutocapitalizationType:(id)arg1;
 - (id)_copyPlaceholder;
 - (id)_keyboardType;
 - (id)_autocorrectionType;
@@ -71,5 +41,24 @@
 - (id)buttonItem;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)setAutocapitalizationType:(id)arg1;
+- (id)autocapitalizationType;
+- (void)dealloc;
+- (id)init;
+- (BOOL)focus;
+- (BOOL)blur;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (void)setPlaceholder:(id)arg1;
+- (id)keyboardType;
+- (id)autocorrectionType;
+- (id)placeholder;
+- (void)setKeyboardType:(id)arg1;
+- (void)setAutocorrectionType:(id)arg1;
+- (id)style;
+- (void)setWidth:(id)arg1;
+- (id)width;
+- (BOOL)canBecomeFirstResponder;
+- (id)attributeKeys;
 
 @end

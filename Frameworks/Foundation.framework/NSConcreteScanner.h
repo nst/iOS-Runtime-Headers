@@ -17,6 +17,13 @@
 }
 
 
+- (id)initWithString:(id)arg1;
+- (id)string;
+- (void)dealloc;
+- (BOOL)scanInt:(int*)arg1;
+- (id)locale;
+- (void)finalize;
+- (void)setLocale:(id)arg1;
 - (BOOL)scanLongLong:(long long*)arg1;
 - (id)_invertedSkipSet;
 - (void)setCaseSensitive:(BOOL)arg1;
@@ -24,13 +31,6 @@
 - (id)charactersToBeSkipped;
 - (void)setScanLocation:(unsigned int)arg1;
 - (unsigned int)scanLocation;
-- (id)initWithString:(id)arg1;
-- (id)string;
-- (void)dealloc;
-- (id)locale;
-- (void)finalize;
-- (void)setLocale:(id)arg1;
 - (void)setCharactersToBeSkipped:(id)arg1;
-- (BOOL)scanInt:(int*)arg1;
 
 @end

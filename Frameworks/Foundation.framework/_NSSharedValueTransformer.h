@@ -6,13 +6,13 @@
 }
 
 
-- (BOOL)_isBooleanTransformer;
 - (id)retain;
-- (id)copy;
-- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
+- (id)copy;
 - (id)autorelease;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
+- (BOOL)_isBooleanTransformer;
 
 @end

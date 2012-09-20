@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SSDownload, NSNumber, NSURL;
+@class NSString, NSObject<OS_dispatch_queue>, SSDownload, NSNumber, NSURL;
 
 @interface ISUDownload : NSObject  {
     SSDownload *_download;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
 @property(retain) SSDownload * managedDownload;
@@ -24,29 +25,29 @@
 @property(readonly) NSString * statusDescription;
 @property(getter=isPausable,readonly) BOOL pausable;
 
-+ (void)initialize;
 + (id)downloadExternalProperties;
 + (id)downloadProperties;
++ (void)initialize;
 
-- (long long)bytesTotal;
-- (long long)bytesDownloaded;
-- (void)dealloc;
 - (id)artistName;
 - (double)percentComplete;
-- (id)title;
 - (id)storePreorderIdentifier;
 - (void)setManagedDownload:(id)arg1;
+- (void)resetPreorderState;
 - (BOOL)isPurchase;
-- (id)initWithManagedDownload:(id)arg1;
 - (double)estimatedSecondsRemaining;
+- (id)statusDescription;
 - (BOOL)isContentRestricted;
 - (id)copyLocalizedStatusString;
 - (id)thumbnailImageURL;
-- (id)statusDescription;
-- (id)phaseIdentifier;
-- (BOOL)isPausable;
-- (void)resetPreorderState;
 - (id)managedDownload;
 - (id)storeItemIdentifier;
+- (id)phaseIdentifier;
+- (id)initWithManagedDownload:(id)arg1;
+- (void)dealloc;
+- (id)title;
+- (BOOL)isPausable;
+- (long long)bytesTotal;
+- (long long)bytesDownloaded;
 
 @end

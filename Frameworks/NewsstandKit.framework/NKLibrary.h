@@ -25,18 +25,20 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedLibrary;
++ (void)load;
 + (id)sharedLibraryCreatingIfNecessary:(BOOL)arg1;
 + (BOOL)_isNewsstandApp;
 + (id)sharedLibraryIfExists;
-+ (void)load;
 
-- (unsigned int)retainCount;
 - (id)description;
+- (unsigned int)retainCount;
 - (id)retain;
-- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
+- (oneway void)release;
 - (id)init;
+- (id)autorelease;
+- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)_load;
 - (void)_issueChanged:(id)arg1;
 - (BOOL)_canPerformBackgroundDownloads;
 - (id)_fileManager;
@@ -60,7 +62,5 @@
 - (id)downloadingAssets;
 - (void)_applicationWillTerminate:(id)arg1;
 - (void)_didFinishLaunchingWasCalled;
-- (void)_applicationDidEnterBackground:(id)arg1;
-- (void)_load;
 
 @end

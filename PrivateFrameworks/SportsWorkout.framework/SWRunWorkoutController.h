@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class SWUserInteractionSnapshotObserver, SWRunWorkout, CLLocation, SWRunWorkoutPreset, SWRemote, SWDataControllerSnapshotObserver, SWFastestDistanceWindowObserver, SWRunSensor, SWIntervalSnapshotObserver, NSDictionary, SWDataController, CLLocationManager, NSString, NSMutableArray, NSTimer;
+@class SWUserInteractionSnapshotObserver, SWRunWorkout, CLLocation, SWRunWorkoutPreset, SWDataControllerSnapshotObserver, SWRemote, SWFastestDistanceWindowObserver, SWRunSensor, SWIntervalSnapshotObserver, NSDictionary, SWDataController, CLLocationManager, NSString, NSMutableArray, NSTimer;
 
 @interface SWRunWorkoutController : NSObject <CLLocationManagerDelegate> {
     SWRunSensor *_sensor;
@@ -71,13 +71,14 @@
 + (BOOL)__takeWorkoutInProgressFileLock;
 
 - (void)dealloc;
-- (id)preset;
-- (void)setPreset:(id)arg1;
 - (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
+- (void)setPreset:(id)arg1;
+- (id)preset;
+- (void)_postNotificationName:(id)arg1;
+- (id)remote;
 - (id)dataController;
 - (BOOL)hasEverStarted;
 - (id)workoutState;
-- (id)remote;
 - (BOOL)hasPowerSong;
 - (void)unregisterWorkoutObserver:(id)arg1;
 - (BOOL)saveCalibrationDataWithAdjustedDistanceInMiles:(float)arg1;
@@ -88,7 +89,6 @@
 - (BOOL)isCalibratedForWalk;
 - (void)stopVoicePrompts;
 - (void)prepareToActivateWorkout;
-- (void)unlinkRemote;
 - (id)powerSongName;
 - (id)_powerSongPersistentUIDString;
 - (void)_updateWorkoutObserversForTimer:(id)arg1;
@@ -101,7 +101,6 @@
 - (void)_beginSearchingForSensorAfterLink;
 - (void)_setWorkoutState:(id)arg1;
 - (void)_updateWorkoutObserversForOldState:(id)arg1 newState:(id)arg2;
-- (void)_postNotificationName:(id)arg1;
 - (void)endWorkout;
 - (void)playOnDemandPrompt;
 - (void)playPowerSong;
@@ -119,5 +118,6 @@
 - (void)resetCalibration;
 - (BOOL)canBeUsedForRunCalibration;
 - (BOOL)canBeUsedForWalkCalibration;
+- (void)unlinkRemote;
 
 @end

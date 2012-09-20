@@ -6,15 +6,17 @@
    See Warning(s) below.
  */
 
+@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
+
 @interface SSXPCConnection : NSObject  {
-    struct _xpc_connection_s { } *_connection;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_xpc_object> *_connection;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _disconnectBlock;
 
-    struct dispatch_queue_s { } *_replyQueue;
+    NSObject<OS_dispatch_queue> *_replyQueue;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -26,20 +28,21 @@
 @property(copy) id messageBlock;
 
 
-- (id)init;
 - (void)dealloc;
-- (void)sendMessage:(void*)arg1;
-- (void)setReplyQueue:(struct dispatch_queue_s { }*)arg1;
-- (struct dispatch_queue_s { }*)copyReplyQueue;
-- (id)disconnectBlock;
+- (id)init;
+- (void)setReplyQueue:(id)arg1;
+- (id)copyReplyQueue;
 - (void)_reloadEventHandler;
 - (id)_initSSXPCConnection;
-- (id)initWithXPCConnection:(struct _xpc_connection_s { }*)arg1;
-- (struct _xpc_endpoint_s { }*)createXPCEndpoint;
+- (id)initWithXPCConnection:(id)arg1;
+- (void)sendSynchronousMessage:(id)arg1 withReply:(id)arg2;
+- (id)disconnectBlock;
+- (id)createXPCEndpoint;
 - (id)messageBlock;
 - (void)setMessageBlock:(id)arg1;
 - (void)setDisconnectBlock:(id)arg1;
-- (void)sendMessage:(void*)arg1 withReply:(id)arg2;
+- (void)sendMessage:(id)arg1 withReply:(id)arg2;
+- (void)sendMessage:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
 
 @end

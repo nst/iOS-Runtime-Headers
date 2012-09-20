@@ -14,14 +14,8 @@
 @property(retain) SUStructuredPage * structuredPage;
 
 
-- (id)init;
-- (void)dealloc;
-- (Class)dataSourceClass;
 - (void)setLoading:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)reloadData;
+- (Class)dataSourceClass;
 - (id)newTermsAndConditionsFooter;
 - (id)newNoItemsOverlayLabel;
 - (void)_reloadLoadMoreCellAtIndexPath:(id)arg1;
@@ -43,6 +37,12 @@
 - (BOOL)hasDisplayableContent;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
 - (id)storePageProtocol;
+- (void)dealloc;
+- (id)init;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)reloadData;
 
 @end

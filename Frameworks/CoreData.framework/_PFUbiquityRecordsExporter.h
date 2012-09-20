@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSString, NSTimer, NSDate, PFUbiquityLocation, NSPersistentStoreCoordinator;
+@class NSTimer, NSLock, PFUbiquityLocation, NSString, NSPersistentStoreCoordinator, NSMutableDictionary, NSDate;
 
 @interface _PFUbiquityRecordsExporter : NSObject  {
     NSString *_localPeerID;
@@ -10,33 +10,34 @@
     NSDate *_lastTransactionDate;
     PFUbiquityLocation *_ubiquityRootLocation;
     NSPersistentStoreCoordinator *_monitoredPersistentStoreCoordinator;
+    NSLock *_transactionLock;
     NSMutableDictionary *_pendingTransactionsToStoreNameAndTransactionNumber;
 }
 
+@property(readonly) NSString * localPeerID;
+@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
 @property(retain) NSDate * lastTransactionDate;
 @property(retain) NSTimer * tempMoveTimer;
-@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
-@property(readonly) NSString * localPeerID;
 
-+ (void)initialize;
 
 - (void)managedObjectContextDidSave:(id)arg1;
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)onlyExportFromPersistentStoreCoordinator:(id)arg1;
-- (void)setTempMoveTimer:(id)arg1;
-- (void)setLastTransactionDate:(id)arg1;
-- (id)tempMoveTimer;
-- (id)lastTransactionDate;
+- (void)beginWatchingForChangesFromStore:(id)arg1;
 - (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
-- (void)cleanUpFromRolledbackPendingTransaction:(id)arg1 withNotification:(id)arg2;
-- (BOOL)shouldRespondToSaveNotification:(id)arg1;
-- (id)createSetOfStoresToExportForNotification:(id)arg1;
-- (id)createDictionaryForObjectsInSaveNotification:(id)arg1 forTransactionOfType:(int)arg2 withExportContext:(id)arg3 andSaveSnapshot:(id)arg4;
-- (void)scheduleTempMoveTimerWithPeerURL:(id)arg1;
 - (void)timerMoveLogsFromTempDirectory:(id)arg1;
-- (id)localPeerID;
+- (void)scheduleTempMoveTimerWithPeerURL:(id)arg1;
+- (id)createDictionaryForObjectsInSaveNotification:(id)arg1 forTransactionOfType:(int)arg2 withExportContext:(id)arg3 andSaveSnapshot:(id)arg4;
+- (id)createSetOfStoresToExportForNotification:(id)arg1;
+- (BOOL)shouldRespondToSaveNotification:(id)arg1;
+- (void)cleanUpFromRolledbackPendingTransaction:(id)arg1 withNotification:(id)arg2;
+- (id)lastTransactionDate;
+- (id)tempMoveTimer;
+- (void)setLastTransactionDate:(id)arg1;
+- (void)setTempMoveTimer:(id)arg1;
 - (id)ubiquityRootLocation;
+- (id)localPeerID;
 
 @end

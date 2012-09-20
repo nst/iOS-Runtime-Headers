@@ -13,10 +13,8 @@
 @property(copy) NSData * pushToken;
 
 
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)responseCertificateData;
+- (id)bagKey;
 - (void)setResponseCertificateData:(id)arg1;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)additionalMessageHeaders;
@@ -27,10 +25,12 @@
 - (BOOL)wantsCompressedBody;
 - (id)requiredKeys;
 - (BOOL)wantsBinaryPush;
-- (int)command;
 - (void)setPushToken:(id)arg1;
 - (id)pushToken;
-- (id)bagKey;
-- (id)responseCertificateData;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (int)command;
+- (id)messageBody;
 
 @end

@@ -20,23 +20,25 @@
     NSData *userInfoData;
     BOOL hideAlertTitle;
     BOOL allowSnooze;
-    BOOL soundNameIsARingtone;
+    int soundType;
     BOOL interruptAudioAndLockDevice;
     BOOL resumeApplicationInBackground;
     BOOL fireNotificationsWhenAppRunning;
     BOOL showAlarmStatusBarItem;
     NSString *customLockSliderLabel;
+    NSString *firedNotificationName;
+    NSString *snoozedNotificationName;
     BOOL isSystemAlert;
 }
 
 
-- (id)userInfo;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)userInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)isSystemAlert;
 - (int)remainingRepeatCount;
 - (void)clearNonSystemProperties;
@@ -44,12 +46,14 @@
 - (int)compareFireDates:(id)arg1;
 - (id)nextFireDateAfterDate:(id)arg1 localTimeZone:(id)arg2;
 - (id)nextFireDateForLastFireDate:(id)arg1;
+- (id)snoozedNotificationName;
+- (id)firedNotificationName;
 - (id)customLockSliderLabel;
 - (BOOL)showAlarmStatusBarItem;
 - (BOOL)fireNotificationsWhenAppRunning;
 - (BOOL)resumeApplicationInBackground;
 - (BOOL)interruptAudioAndLockDevice;
-- (BOOL)soundNameIsARingtone;
+- (int)soundType;
 - (BOOL)allowSnooze;
 - (BOOL)hideAlertTitle;
 - (id)soundName;
@@ -61,12 +65,13 @@
 - (id)repeatCalendar;
 - (id)fireDate;
 - (void)setIsSystemAlert:(BOOL)arg1;
+- (void)setSnoozedNotificationName:(id)arg1;
+- (void)setFiredNotificationName:(id)arg1;
 - (void)setCustomLockSliderLabel:(id)arg1;
 - (void)setShowAlarmStatusBarItem:(BOOL)arg1;
 - (void)setFireNotificationsWhenAppRunning:(BOOL)arg1;
 - (void)setResumeApplicationInBackground:(BOOL)arg1;
 - (void)setInterruptAudioAndLockDevice:(BOOL)arg1;
-- (void)setSoundNameIsARingtone:(BOOL)arg1;
 - (void)setAllowSnooze:(BOOL)arg1;
 - (void)setHideAlertTitle:(BOOL)arg1;
 - (void)_setUserInfoData:(id)arg1;
@@ -77,6 +82,7 @@
 - (void)setAlertBody:(id)arg1;
 - (void)setRemainingRepeatCount:(int)arg1;
 - (void)setRepeatCalendar:(id)arg1;
+- (void)setSoundType:(int)arg1;
 - (void)setTotalRepeatCount:(int)arg1;
 - (unsigned int)repeatInterval;
 - (id)timeZone;

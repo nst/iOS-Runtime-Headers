@@ -12,6 +12,7 @@
 
 
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)loadView;
 - (BOOL)isViewLoaded;
 - (void)setSearchResultListDelegate:(id)arg1;
 - (id)searchResultListDelegate;

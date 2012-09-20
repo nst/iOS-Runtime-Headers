@@ -2,19 +2,30 @@
    Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
  */
 
-@class NSString, NSTimer, CPDistributedMessagingCenter;
+@class NSString, NSObject<OS_dispatch_queue>, CPDistributedMessagingCenter, MSTimerGate;
 
 @interface MSClientSidePauseContext : NSObject  {
-    CPDistributedMessagingCenter *_server;
-    NSTimer *_timer;
     NSString *_UUID;
+    NSObject<OS_dispatch_queue> *_timerQueue;
+    CPDistributedMessagingCenter *_server;
+    MSTimerGate *_gate;
 }
 
+@property(retain) NSObject<OS_dispatch_queue> * timerQueue;
+@property(retain) CPDistributedMessagingCenter * server;
+@property(retain) MSTimerGate * gate;
 
-- (id)initWithServer:(id)arg1;
-- (void)dealloc;
-- (void)_ping;
+
 - (void)resume;
-- (void)_timerDidFire:(id)arg1;
+- (void).cxx_destruct;
+- (void)setServer:(id)arg1;
+- (void)setTimerQueue:(id)arg1;
+- (void)timerQueuePing;
+- (void)timerQueueTimerFired;
+- (id)server;
+- (void)setGate:(id)arg1;
+- (id)gate;
+- (id)timerQueue;
+- (id)initWithServer:(id)arg1;
 
 @end

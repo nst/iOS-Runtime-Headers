@@ -5,7 +5,7 @@
 @class NSArray, UIView, <UINavigationControllerDelegate><UIImagePickerControllerDelegate>, NSMutableDictionary;
 
 @interface UIImagePickerController : UINavigationController <NSCoding> {
-    unsigned int _sourceType;
+    int _sourceType;
     id _image;
     struct CGRect { 
         struct CGPoint { 
@@ -29,36 +29,36 @@
 }
 
 @property <UINavigationControllerDelegate><UIImagePickerControllerDelegate> * delegate;
-@property unsigned int sourceType;
+@property int sourceType;
 @property(copy) NSArray * mediaTypes;
 @property BOOL allowsEditing;
 @property BOOL allowsImageEditing;
 @property double videoMaximumDuration;
-@property unsigned int videoQuality;
+@property int videoQuality;
 @property BOOL showsCameraControls;
 @property(retain) UIView * cameraOverlayView;
 @property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } cameraViewTransform;
-@property unsigned int cameraCaptureMode;
-@property unsigned int cameraDevice;
+@property int cameraCaptureMode;
+@property int cameraDevice;
 @property int cameraFlashMode;
 
-+ (BOOL)isFlashAvailableForCameraDevice:(unsigned int)arg1;
-+ (id)availableCaptureModesForCameraDevice:(unsigned int)arg1;
-+ (BOOL)isCameraDeviceAvailable:(unsigned int)arg1;
-+ (id)availableMediaTypesForSourceType:(unsigned int)arg1;
++ (BOOL)isFlashAvailableForCameraDevice:(int)arg1;
++ (id)availableCaptureModesForCameraDevice:(int)arg1;
++ (BOOL)isCameraDeviceAvailable:(int)arg1;
++ (id)availableMediaTypesForSourceType:(int)arg1;
 + (BOOL)_reviewCapturedItems;
-+ (BOOL)_isMediaTypeAvailable:(id)arg1 forSource:(unsigned int)arg2;
-+ (BOOL)isSourceTypeAvailable:(unsigned int)arg1;
++ (BOOL)_isMediaTypeAvailable:(id)arg1 forSource:(int)arg2;
++ (BOOL)isSourceTypeAvailable:(int)arg1;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)_imagePickerDidCompleteWithInfoArray:(id)arg1;
 - (BOOL)_didRevertStatusBar;
 - (void)setCameraFlashMode:(int)arg1;
 - (int)cameraFlashMode;
-- (unsigned int)cameraCaptureMode;
-- (void)setCameraDevice:(unsigned int)arg1;
-- (unsigned int)cameraDevice;
+- (int)cameraCaptureMode;
+- (void)setCameraDevice:(int)arg1;
+- (int)cameraDevice;
 - (void)stopVideoCapture;
 - (BOOL)startVideoCapture;
 - (void)takePicture;
@@ -70,9 +70,10 @@
 - (BOOL)showsCameraControls;
 - (unsigned int)_imagePickerSavingOptions;
 - (void)_setImagePickerSavingOptions:(unsigned int)arg1;
+- (id)_properties;
 - (void)_setProperties:(id)arg1;
-- (void)setVideoQuality:(unsigned int)arg1;
-- (unsigned int)videoQuality;
+- (void)setVideoQuality:(int)arg1;
+- (int)videoQuality;
 - (void)setVideoMaximumDuration:(double)arg1;
 - (double)videoMaximumDuration;
 - (void)setAllowsEditing:(BOOL)arg1;
@@ -82,14 +83,14 @@
 - (void)_setAllowsMultipleSelection:(BOOL)arg1;
 - (id)mediaTypes;
 - (void)setMediaTypes:(id)arg1;
-- (void)setSourceType:(unsigned int)arg1;
 - (id)_initWithSourceImageData:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_imagePickerDidCompleteWithInfo:(id)arg1;
 - (void)_imagePickerDidCancel;
 - (void)_autoDismiss;
 - (id)_createInitialController;
+- (void)setSourceType:(int)arg1;
 - (void)_removeAllChildren;
-- (BOOL)_isCameraCaptureModeValid:(unsigned int)arg1;
+- (BOOL)_isCameraCaptureModeValid:(int)arg1;
 - (id)_cameraViewController;
 - (BOOL)_sourceTypeIsCamera;
 - (void)_initializeProperties;
@@ -97,12 +98,11 @@
 - (void)_setupControllersForCurrentMediaTypes;
 - (void)_updateCameraCaptureMode;
 - (void)_setupControllersForCurrentSourceType;
-- (void)setCameraCaptureMode:(unsigned int)arg1;
+- (void)setCameraCaptureMode:(int)arg1;
 - (BOOL)_allowsImageEditing;
 - (void)_setAllowsImageEditing:(BOOL)arg1;
-- (unsigned int)sourceType;
+- (int)sourceType;
 - (id)_valueForProperty:(id)arg1;
-- (id)_properties;
 - (BOOL)_allowsMultipleSelection;
 - (struct CGSize { float x1; float x2; })_adjustedContentSizeForPopover:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
@@ -111,6 +111,8 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillUnload;
 - (void)_populateArchivedChildViewControllers:(id)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)ckCanDismissWhenSuspending;

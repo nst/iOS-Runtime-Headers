@@ -9,10 +9,10 @@
 }
 
 
+- (id)newUnfilteredInputSource;
+- (id)composeText;
 - (void)dealloc;
 - (id)initWithText:(id)arg1;
 - (id)MIMEType;
-- (id)newUnfilteredInputSource;
-- (id)composeText;
 
 @end

@@ -7,26 +7,29 @@
 @interface PFUbiquitySaveSnapshot : NSObject  {
     NSDate *_transactionDate;
     NSString *_modelVersionHash;
+    NSString *_exportingPeerID;
     NSString *_localPeerID;
     NSMutableDictionary *_storeNameToStoreSaveSnapshots;
 }
 
+@property(retain) NSDate * transactionDate;
+@property(readonly) NSString * modelVersionHash;
+@property(readonly) NSString * exportingPeerID;
 @property(readonly) NSArray * storeNames;
 @property(readonly) NSString * localPeerID;
-@property(readonly) NSString * modelVersionHash;
-@property(retain) NSDate * transacationDate;
 
 
 - (id)description;
 - (void)dealloc;
-- (void)setTransacationDate:(id)arg1;
-- (id)initWithSaveNotification:(id)arg1 withLocalPeerID:(id)arg2;
-- (id)storeNames;
 - (id)storeSaveSnapshotForStore:(id)arg1;
-- (id)initWithTransactionLog:(id)arg1;
-- (id)localPeerID;
-- (id)storeSaveSnapshotForStoreName:(id)arg1;
-- (id)transacationDate;
+- (id)storeNames;
+- (id)initWithSaveNotification:(id)arg1 withLocalPeerID:(id)arg2;
 - (id)modelVersionHash;
+- (void)setTransactionDate:(id)arg1;
+- (id)transactionDate;
+- (id)storeSaveSnapshotForStoreName:(id)arg1;
+- (id)exportingPeerID;
+- (id)localPeerID;
+- (id)initWithTransactionLog:(id)arg1;
 
 @end

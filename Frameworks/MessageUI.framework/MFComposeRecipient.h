@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface MFComposeRecipient : NSObject <MFDraggableItem> {
+@interface MFComposeRecipient : NSObject <NSCopying, MFDraggableItem> {
     void *_record;
     int _recordID;
     int _property;
@@ -14,40 +14,43 @@
     NSString *_countryCode;
 }
 
+@property(getter=isRemovableFromSearchResults,readonly) BOOL removableFromSearchResults;
 @property(retain) NSString * countryCode;
 
-+ (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
-+ (id)recipientWithProperty:(int)arg1 address:(id)arg2;
-+ (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 + (id)mf_recipientWithGALResult:(id)arg1;
++ (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
++ (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
++ (id)recipientWithProperty:(int)arg1 address:(id)arg2;
 
-- (void)setCountryCode:(id)arg1;
-- (id)countryCode;
-- (BOOL)isEqual:(id)arg1;
+- (id)address;
+- (int)identifier;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (int)property;
+- (void*)record;
+- (id)displayString;
+- (void)setIdentifier:(int)arg1;
+- (id)label;
+- (id)normalizedAddress;
+- (id)_unformattedAddress;
+- (id)placeholderName;
+- (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
+- (BOOL)isRemovableFromSearchResults;
+- (id)objectForDragType:(id)arg1;
+- (id)supportedDragTypes;
+- (id)compositeName;
 - (id)unlocalizedLabel;
 - (id)commentedAddress;
-- (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
-- (int)recordID;
-- (id)compositeName;
-- (id)uncommentedAddress;
-- (id)_unformattedAddress;
-- (void*)record;
 - (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
-- (id)address;
-- (id)supportedDragTypes;
-- (id)objectForDragType:(id)arg1;
-- (id)displayString;
-- (id)label;
-- (int)identifier;
-- (void)setIdentifier:(int)arg1;
-- (int)property;
-- (BOOL)isPhone;
-- (BOOL)isEmail;
+- (int)recordID;
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
+- (id)uncommentedAddress;
 - (struct __CFPhoneNumber { }*)copyPhoneNumber;
+- (BOOL)isEmail;
+- (BOOL)isPhone;
 - (id)rawAddress;
-- (int)property;
 
 @end

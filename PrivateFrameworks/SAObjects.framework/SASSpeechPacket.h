@@ -10,19 +10,19 @@
 @property(copy) NSData * data;
 @property int packetNumber;
 @property(copy) NSArray * packets;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)speechPacket;
 + (id)speechPacketWithDictionary:(id)arg1 context:(id)arg2;
++ (id)speechPacket;
 
 - (id)groupIdentifier;
 - (id)data;
 - (void)setData:(id)arg1;
-- (int)packetNumber;
-- (void)setPacketNumber:(int)arg1;
-- (id)packets;
 - (void)setPackets:(id)arg1;
+- (id)packets;
+- (void)setPacketNumber:(int)arg1;
+- (int)packetNumber;
 - (id)encodedClassName;
 
 @end

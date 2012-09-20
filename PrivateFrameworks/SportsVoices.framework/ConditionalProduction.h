@@ -17,9 +17,9 @@
 
 - (id)description;
 - (void)dealloc;
+- (id)signature;
 - (id)expansions;
 - (id)delimiter;
 - (id)initFromPlist:(id)arg1;
-- (id)signature;
 
 @end

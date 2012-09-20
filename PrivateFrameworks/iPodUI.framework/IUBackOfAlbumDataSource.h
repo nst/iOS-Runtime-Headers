@@ -21,20 +21,20 @@
 @property(readonly) MPMediaItem * representativeItem;
 
 
-- (unsigned int)count;
-- (id)init;
-- (void)dealloc;
-- (void)setChapters:(id)arg1;
+- (id)representativeItem;
 - (void)setQuery:(id)arg1;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
+- (void)setChapters:(id)arg1;
 - (id)chapters;
-- (void)_crossedTimeMarkerNotification:(id)arg1;
-- (id)entityAtIndex:(unsigned int)arg1;
 - (unsigned int)currentIndex;
 - (float)rowHeight;
 - (int)style;
 - (void)setStyle:(int)arg1;
 - (id)query;
-- (id)representativeItem;
+- (id)entityAtIndex:(unsigned int)arg1;
 - (BOOL)indexIsActionRow:(unsigned int)arg1;
 - (BOOL)reloadFromItem:(id)arg1 query:(id)arg2;
 - (double)_durationInSecondsForIndex:(unsigned int)arg1;
@@ -44,6 +44,6 @@
 - (BOOL)_shouldReloadQueryForChangeToItem:(id)arg1;
 - (void)createGlobalContexts;
 - (BOOL)shouldShowGlobalSectionHeader;
-- (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
+- (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
 
 @end

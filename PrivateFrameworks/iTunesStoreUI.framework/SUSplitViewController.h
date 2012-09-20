@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUStructuredPage, SUShadow, SUSplitView, SUPlaceholderViewController, NSString, UIViewController, SUGradient, NSURL;
+@class SUStructuredPage, SUSplitView, SUShadow, SUPlaceholderViewController, NSString, UIViewController, SUGradient, NSURL;
 
 @interface SUSplitViewController : SUViewController  {
     NSURL *_displayedURL;
@@ -33,14 +33,7 @@
 + (BOOL)isValidSplitTypeString:(id)arg1;
 + (BOOL)isValidSplitPositionValue:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
 - (void)setLoading:(BOOL)arg1;
-- (BOOL)isLoaded;
-- (void)addChildViewController:(id)arg1;
-- (void)removeChildViewController:(id)arg1;
-- (void)loadView;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)secondViewController;
 - (id)splitTypeString;
 - (id)splitPositionString;
@@ -67,7 +60,6 @@
 - (void)setFirstViewController:(id)arg1;
 - (void)_reloadView;
 - (id)_splitView;
-- (BOOL)isVertical;
 - (BOOL)usesSharedPlaceholder;
 - (id)splitShadow;
 - (float)splitPosition;
@@ -89,5 +81,13 @@
 - (void)restoreArchivableContext:(id)arg1;
 - (id)copyArchivableContext;
 - (id)firstViewController;
+- (void)dealloc;
+- (id)init;
+- (BOOL)isVertical;
+- (BOOL)isLoaded;
+- (void)addChildViewController:(id)arg1;
+- (void)removeChildViewController:(id)arg1;
+- (void)loadView;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 
 @end

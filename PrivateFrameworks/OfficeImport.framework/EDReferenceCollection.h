@@ -6,18 +6,18 @@
     boolmCoalesce;
 }
 
-+ (id)noCoalesceCollection;
 + (id)coalesceCollection;
++ (id)noCoalesceCollection;
 
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (unsigned int)addObject:(id)arg1;
 - (id)init;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)reverseReferencesByRow:(bool)arg1;
-- (id)initWihNoCoalesce;
-- (void)coalesce;
-- (unsigned int)countOfCellsBeingReferenced;
-- (id)referenceToCellWithIndex:(unsigned int)arg1 byRow:(bool)arg2;
 - (bool)coalesceReferenceAtIndex1:(int)arg1 index2:(int)arg2;
+- (void)coalesce;
+- (id)initWihNoCoalesce;
+- (id)referenceToCellWithIndex:(unsigned int)arg1 byRow:(bool)arg2;
+- (id)reverseReferencesByRow:(bool)arg1;
+- (unsigned int)countOfCellsBeingReferenced;
 
 @end

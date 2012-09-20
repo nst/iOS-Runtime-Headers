@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSURL, NSArray;
+@class NSURL, NSData, NSArray;
 
 @interface AVFigAssetInspector : AVAssetInspector  {
     struct OpaqueFigAsset { } *_figAsset;
@@ -16,26 +16,37 @@
 @property(readonly) NSArray * chapterGroupInfo;
 @property(readonly) NSURL * resolvedURL;
 @property(readonly) BOOL hasProtectedContent;
+@property(readonly) unsigned long long downloadToken;
+@property(readonly) NSData * SHA1Digest;
 
 
-- (BOOL)isEqual:(id)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (unsigned long long)downloadToken;
+- (BOOL)hasProtectedContent;
+- (id)trackReferences;
+- (id)lyrics;
+- (id)URL;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (void)finalize;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (id)commonMetadata;
+- (BOOL)isReadable;
+- (id)creationDate;
 - (id)initWithFigAsset:(struct OpaqueFigAsset { }*)arg1;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (BOOL)_hasQTSaveRestriction;
-- (id)resolvedURL;
+- (id)SHA1Digest;
 - (id)chapterGroupInfo;
+- (id)resolvedURL;
 - (long)trackCount;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (BOOL)isComposable;
 - (BOOL)isExportable;
-- (BOOL)hasProtectedContent;
 - (id)metadataForFormat:(id)arg1;
 - (id)availableMetadataFormats;
-- (id)commonMetadata;
-- (id)lyrics;
-- (id)trackReferences;
 - (id)mediaSelectionGroups;
 - (id)alternateTrackGroups;
 - (BOOL)providesPreciseDurationAndTiming;
@@ -43,12 +54,5 @@
 - (float)preferredVolume;
 - (float)preferredRate;
 - (struct OpaqueFigAsset { }*)_figAsset;
-- (id)creationDate;
-- (void)finalize;
-- (id)URL;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (BOOL)isReadable;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
-- (struct CGSize { float x1; float x2; })naturalSize;
 
 @end

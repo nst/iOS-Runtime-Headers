@@ -9,8 +9,8 @@
 }
 
 
+- (void)dealloc;
 - (id)mutableCollectionGetter;
 - (id)initWithContainerClassID:(id)arg1 key:(id)arg2 mutableCollectionGetter:(id)arg3 proxyClass:(Class)arg4;
-- (void)dealloc;
 
 @end

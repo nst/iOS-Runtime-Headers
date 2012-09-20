@@ -2,25 +2,19 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class YTCaptionTrack, <YTCaptionTrackRequestDelegate>, NSMutableURLRequest;
+@class YTCaptionTrack, <YTCaptionTrackRequestDelegate>;
 
-@interface YTCaptionTrackRequest : XMLSAXHTTPRequest  {
+@interface YTCaptionTrackRequest : YTXMLHTTPRequest  {
     <YTCaptionTrackRequestDelegate> *_delegate;
     YTCaptionTrack *_captionTrack;
-    NSMutableURLRequest *_deferredRequest;
-    BOOL _isLoading;
 }
 
 
-- (int)parseData:(id)arg1;
 - (void)dealloc;
-- (void)loadRequest:(id)arg1;
-- (id)initCaptionTrackDataRequest:(id)arg1 withDelegate:(id)arg2;
-- (id)captionTrack;
-- (void)_requestCaptionTrackDataWithURL:(id)arg1;
-- (void)_didAuthenticate:(id)arg1;
-- (void)_failedToAuthenticate:(id)arg1;
-- (void)_listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)failWithError:(id)arg1;
+- (id)captionTrack;
+- (id)initCaptionTrackDataRequest:(id)arg1 withDelegate:(id)arg2;
+- (void)_requestCaptionTrackDataWithURL:(id)arg1;
+- (int)parseData:(id)arg1;
 
 @end

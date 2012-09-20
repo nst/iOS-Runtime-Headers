@@ -2,24 +2,26 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class PBRequester;
+@class GEORequester;
 
 @interface GEOVoltaireGeocodeProvider : GEOGeocodeProvider <PBRequesterDelegate> {
-    PBRequester *_requester;
+    GEORequester *_requester;
+    BOOL _isForwardGeocodeRequest;
 }
 
++ (unsigned short)provider;
 + (id)reverseGeocoderURL;
 + (id)forwardGeocoderURL;
-+ (unsigned short)provider;
 + (id)providerName;
++ (void)setUsePersistentConnection:(BOOL)arg1;
 
+- (void)forwardGeocode:(id)arg1 success:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
 - (void)cancel;
 - (void)dealloc;
 - (id)newRequester:(id)arg1;
+- (void)reverseGeocode:(id)arg1 success:(id)arg2 error:(id)arg3;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)reverseGeocode:(id)arg1 success:(id)arg2 error:(id)arg3;
-- (void)forwardGeocode:(id)arg1 success:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
 
 @end

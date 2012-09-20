@@ -11,11 +11,11 @@
 
 + (void)initialize;
 
-- (id)init;
 - (void)dealloc;
-- (id)timeListNodeList;
-- (id)addTimeListNodeList;
+- (id)init;
 - (id)buildMap;
 - (void)setBuildMap:(id)arg1;
+- (id)timeListNodeList;
+- (id)addTimeListNodeList;
 
 @end

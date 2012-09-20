@@ -13,16 +13,16 @@
 @property(copy) NSString * protocolVersion;
 
 
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)setValidationData:(id)arg1;
+- (id)validationData;
+- (id)bagKey;
 - (id)additionalMessageHeaders;
 - (BOOL)hasRequiredKeys:(id*)arg1;
 - (id)requiredKeys;
 - (void)setProtocolVersion:(id)arg1;
 - (id)protocolVersion;
-- (id)bagKey;
-- (void)setValidationData:(id)arg1;
-- (id)validationData;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)messageBody;
 
 @end

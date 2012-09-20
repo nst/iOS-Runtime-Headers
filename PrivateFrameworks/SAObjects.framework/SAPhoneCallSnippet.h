@@ -9,12 +9,12 @@
 
 @property(copy) NSArray * calls;
 
-+ (id)callSnippet;
 + (id)callSnippetWithDictionary:(id)arg1 context:(id)arg2;
++ (id)callSnippet;
 
 - (id)groupIdentifier;
+- (id)calls;
 - (void)setCalls:(id)arg1;
 - (id)encodedClassName;
-- (id)calls;
 
 @end

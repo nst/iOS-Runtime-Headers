@@ -25,32 +25,32 @@
     float maxParagraphDistance;
 }
 
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } pageBounds;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } pageBounds;
 
 
-- (id)init;
-- (void)dealloc;
-- (BOOL)intervalOverlapLeft:(float)arg1 right:(float)arg2 paragraphs:(id)arg3;
-- (BOOL)cuttingShapeBetween:(id)arg1 and:(id)arg2;
-- (BOOL)paragraph:(id)arg1 notOnSameShapeAs:(id)arg2;
-- (id)paragraphBelow:(id)arg1 in:(id)arg2;
-- (id)chunkAbove:(id)arg1 in:(id)arg2;
-- (BOOL)column:(id)arg1 isLinkedBelowTo:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pageBounds;
-- (BOOL)paragraph:(id)arg1 isAbove:(id)arg2;
-- (BOOL)paragraph:(id)arg1 isBelow:(id)arg2;
-- (id)paragraphAbove:(id)arg1 in:(id)arg2;
-- (BOOL)paragraph:(id)arg1 isLinkedBelowTo:(id)arg2;
-- (void)intersectionCallout:(id)arg1;
-- (float)averageSpacing:(id)arg1;
-- (BOOL)closeImagesBetween:(id)arg1 and:(id)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (void)partitionShapes:(id)arg1;
-- (void)callOuts;
-- (BOOL)canSafelyAdd:(id)arg1 to:(id)arg2;
-- (void)splitColumns:(id)arg1;
+- (BOOL)column:(id)arg1 isLinkedBelowTo:(id)arg2;
+- (id)chunkAbove:(id)arg1 in:(id)arg2;
+- (id)paragraphBelow:(id)arg1 in:(id)arg2;
+- (BOOL)paragraph:(id)arg1 notOnSameShapeAs:(id)arg2;
+- (BOOL)cuttingShapeBetween:(id)arg1 and:(id)arg2;
+- (BOOL)intervalOverlapLeft:(float)arg1 right:(float)arg2 paragraphs:(id)arg3;
 - (void)anchorImages;
+- (void)splitColumns:(id)arg1;
+- (BOOL)canSafelyAdd:(id)arg1 to:(id)arg2;
+- (void)callOuts;
+- (void)partitionShapes:(id)arg1;
+- (BOOL)closeImagesBetween:(id)arg1 and:(id)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (float)averageSpacing:(id)arg1;
+- (void)intersectionCallout:(id)arg1;
+- (BOOL)paragraph:(id)arg1 isLinkedBelowTo:(id)arg2;
+- (id)paragraphAbove:(id)arg1 in:(id)arg2;
+- (BOOL)paragraph:(id)arg1 isBelow:(id)arg2;
+- (BOOL)paragraph:(id)arg1 isAbove:(id)arg2;
 - (void)makeColumnsFrom:(id)arg1 zone:(id)arg2;
 - (void)setPageBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
+- (id)init;
 - (id)columns;
 
 @end

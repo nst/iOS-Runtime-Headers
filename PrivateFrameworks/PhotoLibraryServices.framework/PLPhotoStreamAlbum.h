@@ -9,19 +9,18 @@
 
 @property(retain) NSString * personID;
 
-+ (id)keyPathsForValuesAffectingPersonID;
-+ (id)photoStreamAlbumWithStreamID:(id)arg1 inPhotoLibrary:(id)arg2 createIfNeeded:(BOOL)arg3;
 + (id)entityName;
++ (id)keyPathsForValuesAffectingPersonID;
 + (id)entityInManagedObjectContext:(id)arg1;
++ (id)photoStreamAlbumWithStreamID:(id)arg1 inPhotoLibrary:(id)arg2 createIfNeeded:(BOOL)arg3;
 
+- (void)awakeFromInsert;
 - (void)_updateKeyAssetIfNeeded;
 - (void)setPersonID:(id)arg1;
 - (void)enforceImageLimitIfNecessary;
 - (void)addAssetOrderedByDataTaken:(id)arg1;
 - (id)personID;
 - (BOOL)isOwnPhotoStreamAlbum;
-- (id)title;
-- (void)awakeFromInsert;
 - (BOOL)shouldDeleteWhenEmpty;
 
 @end

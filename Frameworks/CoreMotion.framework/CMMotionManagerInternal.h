@@ -15,7 +15,7 @@
 
 @interface CMMotionManagerInternal : NSObject  {
     int fSampleLock;
-    struct Dispatcher { } *fAccelerometerDispatcher;
+    struct Dispatcher { int (**x1)(); } *fAccelerometerDispatcher;
     double fAccelerometerUpdateInterval;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -32,7 +32,7 @@
             float z; 
         } acceleration; 
     } fLatestAccelerometerSample;
-    struct Dispatcher { } *fGyroDispatcher;
+    struct Dispatcher { int (**x1)(); } *fGyroDispatcher;
     double fGyroUpdateInterval;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -48,9 +48,10 @@
             float y; 
             float z; 
         } rotationRate; 
+        unsigned short sampleNum; 
         boolfsync; 
     } fLatestGyroSample;
-    struct Dispatcher { } *fDeviceMotionDispatcher;
+    struct Dispatcher { int (**x1)(); } *fDeviceMotionDispatcher;
     double fDeviceMotionUpdateInterval;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -84,6 +85,9 @@
                 float z; 
             } magneticField; 
             int magneticFieldCalibrationLevel; 
+            booldoingYawCorrection; 
+            booldoingBiasEstimation; 
+            boolisInitialized; 
         } deviceMotion; 
         boolfsync; 
     } fLatestDeviceMotionSample;
@@ -104,7 +108,7 @@
     } fGeomagneticModel;
     boolfHaveSentTrueNorthUnavailableError;
     double fDeviceMotionStartTimestamp;
-    struct Dispatcher { } *fMagnetometerDispatcher;
+    struct Dispatcher { int (**x1)(); } *fMagnetometerDispatcher;
     double fMagnetometerUpdateInterval;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -122,22 +126,23 @@
         } magneticField; 
     } fLatestMagnetometerSample;
     boolfShowsDeviceMovementDisplay;
-    struct Dispatcher { } *fPrivateAccelerometerDataDispatcher;
+    struct Dispatcher { int (**x1)(); } *fPrivateAccelerometerDataDispatcher;
     int (*fPrivateAccelerometerDataCallback)();
     void *fPrivateAccelerometerDataCallbackInfo;
-    struct Dispatcher { } *fPrivateGyroDataDispatcher;
+    struct Dispatcher { int (**x1)(); } *fPrivateGyroDataDispatcher;
     int (*fPrivateGyroDataCallback)();
     void *fPrivateGyroDataCallbackInfo;
-    struct Dispatcher { } *fPrivateDeviceMotionDispatcher;
+    struct Dispatcher { int (**x1)(); } *fPrivateDeviceMotionDispatcher;
     int (*fPrivateDeviceMotionCallback)();
     void *fPrivateDeviceMotionCallbackInfo;
     boolfPrivateDeviceMotionUse9Axis;
+    boolfPrivateUseAccelerometer;
     boolfInactive;
 }
 
 
-- (id)initWithInfo:(id)arg1;
-- (void)dealloc;
 - (id).cxx_construct;
+- (void)dealloc;
+- (id)initWithInfo:(id)arg1;
 
 @end

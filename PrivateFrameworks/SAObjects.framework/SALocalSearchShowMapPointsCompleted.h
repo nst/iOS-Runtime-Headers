@@ -7,11 +7,11 @@
 @interface SALocalSearchShowMapPointsCompleted : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)showMapPointsCompleted;
 + (id)showMapPointsCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)showMapPointsCompleted;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

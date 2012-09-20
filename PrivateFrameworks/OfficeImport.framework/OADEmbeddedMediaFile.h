@@ -9,14 +9,14 @@
     NSString *mName;
 }
 
-@property(retain) NSString * name;
 @property(retain) NSData * data;
+@property(retain) NSString * name;
 
 
 - (void)setName:(id)arg1;
-- (void)dealloc;
 - (id)name;
 - (id)data;
+- (void)dealloc;
 - (void)setData:(id)arg1;
 
 @end

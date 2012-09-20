@@ -31,22 +31,22 @@
 @property(getter=isCanceled) BOOL canceled;
 
 
-- (void)cancel;
-- (void)dealloc;
-- (BOOL)isFinished;
-- (BOOL)isCanceled;
-- (void)setExecuting:(BOOL)arg1;
 - (void)setCanceled:(BOOL)arg1;
-- (void)_callHandler;
-- (id)initWithRequest:(id)arg1 handler:(id)arg2;
+- (void)setFinished:(BOOL)arg1;
+- (void).cxx_destruct;
+- (void)cancel;
+- (BOOL)isExecuting;
+- (BOOL)isFinished;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)start;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (BOOL)isCanceled;
+- (void)setExecuting:(BOOL)arg1;
+- (void)_callHandler;
+- (id)initWithRequest:(id)arg1 handler:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (BOOL)isExecuting;
-- (void)setFinished:(BOOL)arg1;
+- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 
 @end

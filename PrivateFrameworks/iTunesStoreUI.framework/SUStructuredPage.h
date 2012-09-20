@@ -36,14 +36,6 @@
 + (int)pageTypeForStorePageString:(id)arg1;
 + (int)pageTypeForStorePageDictionary:(id)arg1;
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)protocol;
-- (int)type;
-- (id)item;
-- (id)title;
-- (void)setType:(int)arg1;
-- (void)setTitle:(id)arg1;
 - (BOOL)wantsIndexBar;
 - (BOOL)shouldHideSignInButton;
 - (id)sectionsGroup;
@@ -51,7 +43,6 @@
 - (float)artworkWidth;
 - (BOOL)artworkShouldFitWidth;
 - (int)_displayStyleForString:(id)arg1;
-- (void)setProtocol:(id)arg1;
 - (void)setItem:(id)arg1;
 - (id)_copyItemFromDictionary:(id)arg1;
 - (void)setItemList:(id)arg1;
@@ -63,5 +54,14 @@
 - (BOOL)hasDisplayableContent;
 - (id)itemList;
 - (BOOL)loadFromDictionary:(id)arg1;
+- (int)type;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)protocol;
+- (id)item;
+- (id)title;
+- (void)setType:(int)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setProtocol:(id)arg1;
 
 @end

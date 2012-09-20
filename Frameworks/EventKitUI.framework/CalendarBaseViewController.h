@@ -10,9 +10,12 @@
 }
 
 
+- (int)type;
 - (void)dealloc;
-- (id)initWithModel:(id)arg1;
-- (void)setEditDelegate:(id)arg1;
+- (void)applicationWillResignActive;
+- (void)applicationDidBecomeActive;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)didReceiveMemoryWarning;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })preferredDateForDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 - (id)invitationDelegate;
 - (void)setInvitationDelegate:(id)arg1;
@@ -25,9 +28,7 @@
 - (id)inspectorPassthroughViews;
 - (void)inspectSelectedOccurrenceAnimated:(BOOL)arg1 isSearching:(BOOL)arg2 isNewEvent:(BOOL)arg3;
 - (id)navigationAreaBackgroundImageForOrientation:(int)arg1;
-- (void)applicationDidBecomeActive;
-- (int)type;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)didReceiveMemoryWarning;
+- (id)initWithModel:(id)arg1;
+- (void)setEditDelegate:(id)arg1;
 
 @end

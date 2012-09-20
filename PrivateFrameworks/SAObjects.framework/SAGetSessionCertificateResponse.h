@@ -9,13 +9,13 @@
 
 @property(copy) NSData * certificate;
 
-+ (id)getSessionCertificateResponse;
 + (id)getSessionCertificateResponseWithDictionary:(id)arg1 context:(id)arg2;
++ (id)getSessionCertificateResponse;
 
 - (id)groupIdentifier;
-- (id)certificate;
 - (void)setCertificate:(id)arg1;
-- (id)encodedClassName;
+- (id)certificate;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

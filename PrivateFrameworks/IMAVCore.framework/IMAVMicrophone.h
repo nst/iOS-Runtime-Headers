@@ -12,12 +12,12 @@
 @property(readonly) NSString * uniqueID;
 
 
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (id)uniqueID;
 - (id)name;
-- (id)_FTAudioDevice;
-- (id)_initWithFTAudioDevice:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (id)_AVAudioDevice;
+- (id)_initWithAVAudioDevice:(id)arg1;
+- (id)uniqueID;
 
 @end

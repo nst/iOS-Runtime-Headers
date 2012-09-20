@@ -18,23 +18,13 @@
 @property(copy) NSString * sendButtonTitle;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
-- (void)imagePickerControllerDidCancel:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (id)imagePickerMediaTypes;
 - (void)setImagePickerMediaTypes:(id)arg1;
 - (id)copyMessagePartsWithUTI:(id)arg1;
 - (void)_promptForSourceType;
 - (BOOL)_allowsVideoCamera;
 - (BOOL)_allowsCamera;
-- (void)_showImagePickerForSourceType:(unsigned int)arg1;
+- (void)_showImagePickerForSourceType:(int)arg1;
 - (void)_dismissImagePickerAnimated:(BOOL)arg1;
 - (void)_reloadMessageEntryView;
 - (id)_messageEntryView;
@@ -50,5 +40,15 @@
 - (void)messageEntryViewPhotoButtonAction:(id)arg1;
 - (void)messageEntryViewDidChange:(id)arg1;
 - (id)copyScriptViewController;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
+- (void)imagePickerControllerDidCancel:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
 @end

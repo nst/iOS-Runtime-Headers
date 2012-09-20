@@ -42,8 +42,9 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
-- (id)_invalidFieldErrorWithFieldName:(id)arg1;
 - (void)_chunkDidFindShareState:(id)arg1;
 - (void)_chunkDidFindSubscriptionTemporarilyUnavailableForPersonID:(id)arg1;
 - (void)_chunkDidFindSubscriptionGoneForPersonID:(id)arg1;
@@ -54,6 +55,7 @@
 - (void)_coreProtocolDidGetDataChunk:(id)arg1;
 - (void)_coreProtocolDidFinishError:(id)arg1;
 - (id)_assetFromCoreDictionary:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
+- (id)_invalidFieldErrorWithFieldName:(id)arg1;
 - (id)_invalidFieldErrorWithFieldName:(id)arg1 suggestion:(id)arg2;
 - (id)_assetCollectionsFromCoreArray:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)_parseNextChunk;
@@ -61,8 +63,6 @@
 - (void)_parseChunks;
 - (void)pollForSubscriptionUpdatesWithAccountAnchors:(id)arg1;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)abort;
 
 @end

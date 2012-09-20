@@ -24,9 +24,9 @@
 - (id)color;
 - (float)width;
 - (float)miterLimit;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (id)pattern;
 - (int)join;
 - (int)cap;
-- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 
 @end

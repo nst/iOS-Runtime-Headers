@@ -17,16 +17,7 @@
 @property(readonly) UIColor * topExtensionColor;
 
 
-- (void)dealloc;
 - (void)setLoading:(BOOL)arg1;
-- (int)tableViewStyle;
-- (BOOL)isLoading;
-- (id)initWithStyle:(int)arg1;
-- (id)backgroundColor;
-- (int)numberOfRowsInSection:(int)arg1;
-- (void)setUpdatesFromUpdateResponse:(id)arg1;
-- (void)configureColoringForCell:(id)arg1 indexPath:(id)arg2;
-- (int)updatesStyle;
 - (float)tableMargin;
 - (BOOL)canShowItemOfferButtonForItem:(id)arg1;
 - (id)newHeaderViewForSection:(int)arg1;
@@ -35,5 +26,14 @@
 - (id)cellForIndexPath:(id)arg1;
 - (id)topExtensionColor;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
+- (void)setUpdatesFromUpdateResponse:(id)arg1;
+- (void)configureColoringForCell:(id)arg1 indexPath:(id)arg2;
+- (int)updatesStyle;
+- (void)dealloc;
+- (int)tableViewStyle;
+- (BOOL)isLoading;
+- (id)initWithStyle:(int)arg1;
+- (id)backgroundColor;
+- (int)numberOfRowsInSection:(int)arg1;
 
 @end

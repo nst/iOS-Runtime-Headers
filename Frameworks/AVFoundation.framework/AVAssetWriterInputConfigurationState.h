@@ -7,7 +7,7 @@
 @interface AVAssetWriterInputConfigurationState : NSObject  {
     NSString *_mediaType;
     AVOutputSettings *_outputSettings;
-    struct opaqueCMFormatDescription { } *_sampleBufferFormatHint;
+    struct opaqueCMFormatDescription { } *_sourceFormatHint;
     NSDictionary *_sourcePixelBufferAttributes;
     BOOL _attachedToPixelBufferAdaptor;
     NSArray *_metadataItems;
@@ -21,20 +21,46 @@
     } _transform;
     int _mediaTimeScale;
     BOOL _expectsMediaDataInRealTime;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _naturalSize;
+    NSString *_languageCode;
+    NSString *_extendedLanguageTag;
+    BOOL _marksOutputTrackAsEnabled;
+    short _alternateGroupID;
+    NSDictionary *_trackReferences;
 }
 
 @property(copy) NSString * mediaType;
 @property(copy) AVOutputSettings * outputSettings;
-@property(retain) struct opaqueCMFormatDescription { }* sampleBufferFormatHint;
+@property(retain) struct opaqueCMFormatDescription { }* sourceFormatHint;
 @property(copy) NSDictionary * sourcePixelBufferAttributes;
 @property BOOL attachedToPixelBufferAdaptor;
 @property(copy) NSArray * metadataItems;
 @property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 @property int mediaTimeScale;
 @property BOOL expectsMediaDataInRealTime;
+@property struct CGSize { float x1; float x2; } naturalSize;
+@property(copy) NSString * languageCode;
+@property(copy) NSString * extendedLanguageTag;
+@property BOOL marksOutputTrackAsEnabled;
+@property short alternateGroupID;
+@property(copy) NSDictionary * trackReferences;
 
 
+- (id)trackReferences;
 - (void)dealloc;
+- (void)setMediaType:(id)arg1;
+- (id)mediaType;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (id)languageCode;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (void)setOutputSettings:(id)arg1;
+- (void)setTrackReferences:(id)arg1;
+- (void)setAlternateGroupID:(short)arg1;
+- (short)alternateGroupID;
 - (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
 - (void)setMediaTimeScale:(int)arg1;
 - (int)mediaTimeScale;
@@ -42,16 +68,17 @@
 - (BOOL)attachedToPixelBufferAdaptor;
 - (void)setSourcePixelBufferAttributes:(id)arg1;
 - (id)sourcePixelBufferAttributes;
-- (void)setSampleBufferFormatHint:(struct opaqueCMFormatDescription { }*)arg1;
-- (struct opaqueCMFormatDescription { }*)sampleBufferFormatHint;
-- (void)setOutputSettings:(id)arg1;
+- (void)setSourceFormatHint:(struct opaqueCMFormatDescription { }*)arg1;
+- (BOOL)marksOutputTrackAsEnabled;
+- (struct opaqueCMFormatDescription { }*)sourceFormatHint;
 - (BOOL)expectsMediaDataInRealTime;
+- (void)setMarksOutputTrackAsEnabled:(BOOL)arg1;
 - (void)setMetadataItems:(id)arg1;
 - (id)metadataItems;
 - (id)outputSettings;
-- (void)setMediaType:(id)arg1;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
-- (id)mediaType;
+- (void)setExtendedLanguageTag:(id)arg1;
+- (void)setLanguageCode:(id)arg1;
+- (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)extendedLanguageTag;
 
 @end

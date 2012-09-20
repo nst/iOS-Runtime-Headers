@@ -13,7 +13,6 @@
 }
 
 
-- (void)dealloc;
 - (void)removeLoadingUI;
 - (void)addLoadingUI;
 - (void)_setCell:(id)arg1 isChecked:(BOOL)arg2;
@@ -22,16 +21,16 @@
 - (void)_cancelButtonAction:(id)arg1;
 - (void)didChangeToInterfaceOrientation:(int)arg1;
 - (void)willChangeToInterfaceOrientation:(int)arg1;
+- (void)dealloc;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidUnload;
 - (void)loadView;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)reloadData;
 
 @end

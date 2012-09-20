@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIWindow, MediaApplication, UIViewController;
+@class UIWindow, UIViewController, UIApplication;
 
 @interface IUApplicationWindowTransitionController : NSObject  {
-    MediaApplication *_application;
+    UIApplication *_application;
     id _delegate;
     UIViewController *_viewController;
     UIViewController *_disappearingViewController;
@@ -15,10 +15,10 @@
 @property id delegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (id)popViewControllerWithTransition:(int)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (id)initWithApplication:(id)arg1 window:(id)arg2;
 - (void)_popAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)_rootController;

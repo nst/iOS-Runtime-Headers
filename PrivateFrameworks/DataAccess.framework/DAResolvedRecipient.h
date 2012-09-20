@@ -13,11 +13,11 @@
 @property(readonly) NSDictionary * resolvedEmailToX509Certs;
 
 
-- (id)resolvedEmailToX509Certs;
 - (id)description;
 - (void)dealloc;
 - (void)setStatus:(int)arg1;
 - (int)status;
+- (id)resolvedEmailToX509Certs;
 - (void)addCert:(id)arg1 forEmailAddress:(id)arg2;
 
 @end

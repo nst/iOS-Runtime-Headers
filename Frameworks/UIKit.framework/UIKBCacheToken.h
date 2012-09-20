@@ -22,9 +22,11 @@
 + (id)tokenTemplateForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 + (id)tokenTemplateForKey:(id)arg1 name:(id)arg2 style:(int)arg3 size:(struct CGSize { float x1; float x2; })arg4;
 + (id)tokenForKey:(id)arg1 style:(int)arg2 state:(int)arg3;
++ (id)tokenForKey:(id)arg1 style:(int)arg2 state:(int)arg3 clipCorners:(int)arg4;
 + (id)tokenForKeyplane:(id)arg1;
 
 - (void)setName:(id)arg1;
+- (id)name;
 - (id)string;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -40,7 +42,6 @@
 - (BOOL)hasKey;
 - (int)emptyFields;
 - (id)stringForState:(int)arg1;
-- (id)name;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })size;
 

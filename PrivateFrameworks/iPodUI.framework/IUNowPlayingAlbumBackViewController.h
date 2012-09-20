@@ -26,30 +26,31 @@
 @property(retain) IUModalContext * modalContext;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)setArtworkImage:(id)arg1;
+- (void)_reloadData;
+- (void)setItem:(id)arg1;
+- (id)aggregateStatisticsDisplayCountKey;
 - (id)artworkImage;
-- (void)_handleSwipeRight;
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
 - (void)swipableView:(id)arg1 tappedWithCount:(unsigned int)arg2;
 - (void)swipableView:(id)arg1 swipedInDirection:(int)arg2;
+- (void)dealloc;
+- (id)init;
 - (id)_tableViewController;
 - (id)tableView;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
+- (void)willMoveToParentViewController:(id)arg1;
 - (void)loadView;
 - (int)style;
 - (void)setStyle:(int)arg1;
 - (id)title;
 - (id)dataSource;
 - (void)setTitle:(id)arg1;
-- (void)setItem:(id)arg1;
 - (id)customQuery;
 - (id)coverFlowDelegate;
 - (void)tableViewController:(id)arg1 didPerformDefaultActionForRow:(int)arg2;
 - (void)_scrollCurrentRowToVisible;
-- (void)_reloadData;
+- (void)_handleSwipeRight;
 - (void)_reloadDataFromItemChange:(BOOL)arg1;
 - (BOOL)_shouldUseQueryRepresentativeTrackForItem;
 - (void)_trackWillChangeNotification:(id)arg1;
@@ -59,6 +60,7 @@
 - (void)accessoryButtonTapped:(id)arg1;
 - (void)setModalContext:(id)arg1;
 - (id)modalContext;
+- (void)setArtworkImage:(id)arg1;
 - (void)setCustomQuery:(id)arg1;
 - (void)setCoverFlowDelegate:(id)arg1;
 

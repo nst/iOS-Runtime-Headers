@@ -5,8 +5,8 @@
 @interface ISITunesSyncHelper : NSObject <ISSingleton> {
 }
 
-+ (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
++ (id)sharedInstance;
 
 
 @end

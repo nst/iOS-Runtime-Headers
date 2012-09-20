@@ -12,6 +12,7 @@
         float x; 
         float y; 
     } m_drawOrigin;
+    int m_clipCorners;
     struct __CFBoolean { } *m_allowsCaching;
 }
 
@@ -19,22 +20,28 @@
 @property(readonly) UIKBTree * key;
 @property(readonly) int state;
 @property struct CGPoint { float x1; float x2; } drawOrigin;
+@property int clipCorners;
+@property(readonly) BOOL shouldCache;
 @property(readonly) BOOL cacheDeferable;
+@property(readonly) float cachedWidth;
 
 
+- (int)state;
 - (void)dealloc;
 - (struct CGPoint { float x1; float x2; })drawOrigin;
-- (BOOL)shouldCache;
+- (void)setClipCorners:(int)arg1;
 - (void)updateForKeyboard:(id)arg1 key:(id)arg2;
+- (int)clipCorners;
 - (void)setDrawOrigin:(struct CGPoint { float x1; float x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 key:(id)arg3 state:(int)arg4;
+- (float)cachedWidth;
 - (BOOL)cacheDeferable;
 - (id)cacheKey;
+- (BOOL)shouldCache;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 key:(id)arg3 state:(int)arg4;
 - (id)key;
 - (int)textEffectsVisibilityLevel;
 - (void)displayLayer:(id)arg1;
 - (id)keyboard;
-- (int)state;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

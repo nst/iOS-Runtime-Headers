@@ -13,13 +13,13 @@
 + (id)sharedInstance;
 + (BOOL)enabled;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (struct CGImage { }*)renderBlock:(id)arg1 forView:(id)arg2 withKey:(id)arg3 fromLayout:(id)arg4;
-- (id)uniqueLayoutsFromInputModes:(id)arg1;
 - (void)cacheView:(id)arg1 forKey:(id)arg2 fromLayout:(id)arg3;
+- (id)uniqueLayoutsFromInputModes:(id)arg1;
 - (void)displayView:(id)arg1 withKey:(id)arg2 fromLayout:(id)arg3;
-- (struct CGImage { }*)cachedImageForKey:(id)arg1;
+- (struct CGImage { }*)cachedImageForKey:(id)arg1 fromLayout:(id)arg2;
 - (void)displayView:(id)arg1 imageWidth:(float)arg2 withKey:(id)arg3 fromLayout:(id)arg4;
 - (void)updateCacheForInputModes:(id)arg1;
 - (void)commitTransaction;

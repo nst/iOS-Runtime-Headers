@@ -2,28 +2,41 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
+@class UIImageView;
+
 @interface TPBottomBar : UIView  {
     int _orientation;
     int _style;
+    BOOL _suppressDrawingBackground;
+    UIImageView *_shadowView;
 }
 
-+ (float)defaultHeightForOrientation:(int)arg1;
+@property BOOL suppressDrawingBackground;
+@property(readonly) UIImageView * shadowView;
+
 + (id)_backgroundImage;
 + (float)defaultHeight;
 + (float)defaultHeightForStyle:(int)arg1;
++ (float)defaultHeightForOrientation:(int)arg1;
 + (int)fullscreenStyle;
 + (int)overlayStyle;
-+ (void)preloadImages;
++ (id)upsideDownShadowImage;
 + (float)defaultHeightForStyle:(int)arg1 orientation:(int)arg2;
 
+- (void)dealloc;
 - (id)init;
-- (id)initWithDefaultSizeForOrientation:(int)arg1;
 - (id)initWithDefaultSize;
 - (void)setOrientation:(int)arg1;
+- (id)shadowView;
 - (int)orientation;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithDefaultSizeForOrientation:(int)arg1;
+- (BOOL)suppressDrawingBackground;
 - (void)setOrientation:(int)arg1 updateFrame:(BOOL)arg2;
+- (void)setWellAlpha:(float)arg1;
+- (void)setSuppressDrawingBackground:(BOOL)arg1;
 
 @end

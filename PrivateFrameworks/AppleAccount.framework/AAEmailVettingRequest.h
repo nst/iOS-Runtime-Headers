@@ -11,11 +11,11 @@
 @property(retain) AAAccount * account;
 
 
+- (void).cxx_destruct;
+- (id)initWithURLString:(id)arg1 account:(id)arg2;
+- (id)urlRequest;
 - (void)setAccount:(id)arg1;
 - (id)initWithAccount:(id)arg1;
 - (id)account;
-- (void)dealloc;
-- (id)initWithURLString:(id)arg1 account:(id)arg2;
-- (id)urlRequest;
 
 @end

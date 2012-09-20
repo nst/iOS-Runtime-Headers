@@ -2,26 +2,29 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSString, StockChartData;
+@class ChartParserData, NSString, StockChartData;
 
 @interface ChartUpdater : XMLHTTPRequest  {
     id _delegate;
     NSString *_symbol;
     int _interval;
     StockChartData *_currentChartData;
+    ChartParserData *_chartParserData;
 }
 
 @property id delegate;
 
 + (id)_rangeStringForInterval:(int)arg1;
 
-- (int)parseData:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void).cxx_destruct;
 - (void)cancel;
 - (id)init;
-- (BOOL)updateChartForStock:(id)arg1 interval:(int)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)didParseData;
 - (void)failWithError:(id)arg1;
+- (id)aggregateDictionaryDomain;
+- (void)didParseData;
+- (BOOL)updateChartForStock:(id)arg1 interval:(int)arg2;
+- (int)parseData:(id)arg1;
 
 @end

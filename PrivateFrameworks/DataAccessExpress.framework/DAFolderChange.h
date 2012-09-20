@@ -4,7 +4,7 @@
 
 @class NSString, <DAFolderChangeConsumer>;
 
-@interface DAFolderChange : NSObject <NSCoding> {
+@interface DAFolderChange : NSObject <NSSecureCoding> {
     int _changeType;
     NSString *_folderId;
     NSString *_parentFolderId;
@@ -24,24 +24,26 @@
 @property <DAFolderChangeConsumer> * consumer;
 @property unsigned int taskId;
 
++ (BOOL)supportsSecureCoding;
 
-- (id)folderId;
-- (id)initFolderChangeWithChangeType:(int)arg1 folderId:(id)arg2 parentFolderId:(id)arg3 displayName:(id)arg4 dataclass:(int)arg5 consumer:(id)arg6;
-- (void)setConsumer:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)parentFolderId;
-- (void)setTaskId:(unsigned int)arg1;
-- (unsigned int)taskId;
-- (void)setDisplayName:(id)arg1;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setTaskId:(unsigned int)arg1;
+- (unsigned int)taskId;
+- (int)changeType;
+- (id)parentFolderId;
 - (void)setRenameOnCollision:(BOOL)arg1;
+- (id)folderId;
+- (void)setConsumer:(id)arg1;
+- (id)initFolderChangeWithChangeType:(int)arg1 folderId:(id)arg2 parentFolderId:(id)arg3 displayName:(id)arg4 dataclass:(int)arg5 consumer:(id)arg6;
+- (void)setDisplayName:(id)arg1;
 - (BOOL)renameOnCollision;
 - (void)setFolderId:(id)arg1;
-- (int)changeType;
 - (int)dataclass;
 - (id)consumer;
+- (id)mf_deferredOperation;
 
 @end

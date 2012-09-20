@@ -14,29 +14,29 @@
 }
 
 @property unsigned int maxThreadCount;
-@property(readonly) unsigned int invocationCount;
-@property double threadRecycleTimeout;
 @property int threadPriorityTrigger;
+@property double threadRecycleTimeout;
+@property(readonly) unsigned int invocationCount;
 @property(readonly) unsigned int threadCount;
 
 + (void)flushAllInvocationQueues;
 + (unsigned int)totalInvocationCount;
 + (id)sharedInvocationQueue;
 
-- (unsigned int)maxThreadCount;
-- (unsigned int)invocationCount;
+- (void)dealloc;
+- (id)init;
 - (double)threadRecycleTimeout;
-- (int)threadPriorityTrigger;
 - (void)setThreadPriorityTrigger:(int)arg1;
+- (int)threadPriorityTrigger;
 - (unsigned int)threadCount;
-- (id)initWithMaxThreadCount:(unsigned long)arg1;
+- (unsigned int)invocationCount;
+- (unsigned int)maxThreadCount;
 - (void)_drainQueue:(id)arg1;
+- (id)initWithMaxThreadCount:(unsigned long)arg1;
 - (void)didCancel:(id)arg1;
 - (void)setThreadRecycleTimeout:(double)arg1;
-- (void)setMaxThreadCount:(unsigned int)arg1;
 - (void)addInvocation:(id)arg1;
+- (void)setMaxThreadCount:(unsigned int)arg1;
 - (void)removeAllItems;
-- (id)init;
-- (void)dealloc;
 
 @end

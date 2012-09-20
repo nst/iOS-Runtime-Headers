@@ -9,8 +9,8 @@
 @property BOOL waitUntilDone;
 
 
-- (BOOL)waitUntilDone;
-- (void)setWaitUntilDone:(BOOL)arg1;
 - (void)invokeInvocation:(id)arg1;
+- (void)setWaitUntilDone:(BOOL)arg1;
+- (BOOL)waitUntilDone;
 
 @end

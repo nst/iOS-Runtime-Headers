@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class NSObject<ATConnectionDelegate>, ATXPCConnection;
+@class NSObject<ATConnectionDelegate>, NSMutableArray, ATXPCConnection;
 
 @interface ATConnection : NSObject  {
     ATXPCConnection *_connection;
     NSObject<ATConnectionDelegate> *_delegate;
     BOOL _registerForStatus;
+    NSMutableArray *_registeredDataclasses;
     int _atcRunningToken;
     BOOL _atcRunning;
 }
@@ -15,22 +16,26 @@
 @property(retain) NSObject<ATConnectionDelegate> * delegate;
 
 
-- (id)init;
-- (void)dealloc;
+- (void)_handleMessage:(id)arg1;
 - (void)unregisterForStatus;
 - (void)registerForStatus;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
 - (BOOL)isSyncing:(BOOL*)arg1 automatically:(BOOL*)arg2 wirelessly:(BOOL*)arg3;
+- (void)keepATCAlive:(BOOL)arg1;
 - (void)lowBatteryNotification;
 - (void)dataMigrationFinished;
 - (void)cancelSync;
 - (void)requestSyncForLibrary:(id)arg1;
-- (void)_setRegisterForStatus:(BOOL)arg1;
+- (void)purgePartialAsset:(id)arg1 forDataclass:(id)arg2;
+- (void)registerForAssetProgressForDataclass:(id)arg1;
+- (void)_sendStatusRegistration;
 - (void)_sendMessage:(id)arg1 info:(id)arg2 reply:(id)arg3;
 - (void)_resetConnection;
 - (void)clearSyncData;
+- (void)prioritizeAsset:(id)arg1 forDataclass:(id)arg2;
 - (id)_connection;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)_handleMessage:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSMutableSet, NSMutableArray, <DADataclassLockWatcher>;
+@class NSMutableSet, NSString, NSMutableArray, <DADataclassLockWatcher>;
 
 @interface DALocalDBGateKeeper : NSObject  {
     BOOL _claimedOwnershipOfContacts;
@@ -21,14 +21,16 @@
     <DADataclassLockWatcher> *_bookmarksLockHolder;
     NSMutableArray *_bookmarksWaiters;
     NSMutableSet *_waiterIDsExpectingBookmarksLock;
+    NSString *_unitTestHackRunLoopMode;
 }
 
 + (id)sharedGateKeeper;
 
+- (id)stateString;
 - (void)relinquishLocksForWaiter:(id)arg1 dataclasses:(int)arg2 moreComing:(BOOL)arg3;
 - (void)unregisterWaiterForDataclassLocks:(id)arg1;
+- (void)registerPreemptiveWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id)arg3;
 - (void)registerWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id)arg3;
 - (void)claimedOwnershipOfDataclasses:(int)arg1;
-- (id)stateString;
 
 @end

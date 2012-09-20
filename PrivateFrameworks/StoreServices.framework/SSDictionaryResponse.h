@@ -16,18 +16,18 @@
 @property(readonly) NSURL * versionMismatchURL;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)actions;
 - (id)responseDictionary;
 - (id)actionsWithActionType:(id)arg1;
 - (id)initWithResponseDictionary:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)versionMismatchURL;
 - (id)pingURLs;
 - (BOOL)isSupportedProtocolVersion;
 - (id)failureType;
 - (id)_copyAccount;
 - (id)_valueForProtocolKey:(id)arg1;
+- (id)actions;
 
 @end

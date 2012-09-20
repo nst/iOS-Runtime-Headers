@@ -5,8 +5,8 @@
 @interface SAReminderTrigger : AceObject <SAAceSerializable> {
 }
 
-+ (id)trigger;
 + (id)triggerWithDictionary:(id)arg1 context:(id)arg2;
++ (id)trigger;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

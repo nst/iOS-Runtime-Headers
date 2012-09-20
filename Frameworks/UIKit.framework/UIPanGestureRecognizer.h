@@ -28,6 +28,8 @@
     unsigned int _failsPastMaxTouches : 1;
     unsigned int _canPanHorizontally : 1;
     unsigned int _canPanVertically : 1;
+    unsigned int _ignoresStationaryTouches : 1;
+    NSMutableArray *_movingTouches;
 }
 
 @property unsigned int minimumNumberOfTouches;
@@ -38,15 +40,18 @@
 
 - (void)dealloc;
 - (unsigned int)maximumNumberOfTouches;
-- (unsigned int)minimumNumberOfTouches;
 - (void)_setCanPanVertically:(BOOL)arg1;
 - (void)_setCanPanHorizontally:(BOOL)arg1;
 - (BOOL)_canPanVertically;
 - (BOOL)_canPanHorizontally;
+- (BOOL)_ignoresStationaryTouches;
 - (int)_lastTouchCount;
+- (BOOL)failsPastMaxTouches;
+- (void)_handleEndedTouches:(id)arg1 withFinalStateAdjustments:(id)arg2;
 - (void)_removeHysteresisFromTranslation;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
 - (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
+- (BOOL)_updateMovingTouchesArraySavingOldArray:(id*)arg1;
 - (void)_touchesListChangedFrom:(id)arg1 to:(id)arg2;
 - (BOOL)_willScrollY;
 - (BOOL)_willScrollX;
@@ -62,16 +67,17 @@
 - (void)_resetGestureRecognizer;
 - (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (void)setMinimumNumberOfTouches:(unsigned int)arg1;
+- (unsigned int)minimumNumberOfTouches;
 - (void)setTranslation:(struct CGPoint { float x1; float x2; })arg1 inView:(id)arg2;
 - (struct CGPoint { float x1; float x2; })velocityInView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })translationInView:(id)arg1;
 - (unsigned int)numberOfTouches;
 - (void)_setHysteresis:(float)arg1;
 - (float)_hysteresis;
-- (BOOL)failsPastMaxTouches;
 - (void)setFailsPastMaxTouches:(BOOL)arg1;
-- (void)setMaximumNumberOfTouches:(unsigned int)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (void)_setIgnoresStationaryTouches:(BOOL)arg1;
+- (void)setMaximumNumberOfTouches:(unsigned int)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

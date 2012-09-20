@@ -9,19 +9,19 @@
     BOOL _serialAppend;
 }
 
-@property(readonly) NSArray * consumers;
 @property(getter=isSerialAppend) BOOL serialAppend;
+@property(readonly) NSArray * consumers;
 
-+ (id)filterWithConsumers:(id)arg1;
 + (id)filterWithConsumer:(id)arg1;
++ (id)filterWithConsumers:(id)arg1;
 
-- (id)initWithConsumer:(id)arg1;
 - (void)dealloc;
 - (id)consumers;
-- (BOOL)isSerialAppend;
 - (void)setSerialAppend:(BOOL)arg1;
+- (BOOL)isSerialAppend;
 - (id)initWithConsumers:(id)arg1;
 - (int)appendData:(id)arg1;
 - (void)done;
+- (id)initWithConsumer:(id)arg1;
 
 @end

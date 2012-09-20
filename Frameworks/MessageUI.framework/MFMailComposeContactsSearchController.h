@@ -13,19 +13,19 @@
     unsigned int _waitingOnSearchResultsCount;
 }
 
-@property(retain) NSNumber * taskID;
 @property <MFMailComposeContactsSearchControllerDelegate> * delegate;
+@property(retain) NSNumber * taskID;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)_cancelSearchAndNotify:(BOOL)arg1;
-- (void)setTaskID:(id)arg1;
-- (void)_finishSearch;
-- (void)cancelSearch;
-- (void)searchWithString:(id)arg1;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (void)_finishSearch;
+- (void)setTaskID:(id)arg1;
+- (void)_cancelSearchAndNotify:(BOOL)arg1;
+- (void)searchWithString:(id)arg1;
+- (void)cancelSearch;
 - (void)endedNetworkActivity;
 - (void)beganNetworkActivity;
 - (void)finishedTaskWithID:(id)arg1;

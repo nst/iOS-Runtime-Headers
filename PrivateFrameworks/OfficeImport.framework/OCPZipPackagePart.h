@@ -9,8 +9,8 @@
 }
 
 
-- (void)dealloc;
 - (id)data;
+- (void)dealloc;
 - (id)initWithArchive:(id)arg1 location:(id)arg2 package:(id)arg3;
 - (void)copyToFile:(id)arg1;
 - (struct _xmlTextReader { }*)xmlReader;

@@ -7,13 +7,13 @@
     int _sectionLocation;
 }
 
-@property int sectionLocation;
 @property int abCellStyle;
+@property int sectionLocation;
 
 
-- (int)abCellStyle;
-- (void)setAbCellStyle:(int)arg1;
 - (void)setSectionLocation:(int)arg1;
 - (int)sectionLocation;
+- (int)abCellStyle;
+- (void)setAbCellStyle:(int)arg1;
 
 @end

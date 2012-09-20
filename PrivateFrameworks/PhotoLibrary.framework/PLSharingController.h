@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MFMailComposeViewController, NSArray, UIView, UIViewController, NSMutableArray, NSMutableDictionary;
+@class <NSCoding>, NSMutableDictionary, NSMutableArray, UIView, UIViewController, MFMailComposeViewController, NSArray;
 
 @interface PLSharingController : NSObject <MFMailComposeViewControllerDelegate> {
     UIViewController *_parentController;
-    MFMailComposeViewController *_composeController;
     NSArray *_photos;
     NSMutableArray *_views;
     NSMutableDictionary *_trimmedFilePaths;
@@ -22,7 +21,10 @@
     unsigned int _delegateWillSetComposeFrame : 1;
     unsigned int _delegateDidFinishMail : 1;
     unsigned int _delegateViewForPhoto : 1;
+    MFMailComposeViewController *_composeController;
 }
+
+@property <NSCoding> * autosaveIdentifier;
 
 + (BOOL)canSendEmail;
 + (void)copyItemsToPasteboard:(id)arg1;
@@ -46,18 +48,18 @@
 - (void)_autosaveMailComposition;
 - (void)setAutosaveIdentifier:(id)arg1;
 - (void)_finishedSlidingImagesDown:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (id)_addAudio:(id)arg1 toCompositionContext:(id)arg2;
-- (id)_addVideo:(id)arg1 toCompositionContext:(id)arg2;
-- (id)_addPhoto:(id)arg1 toCompositionContext:(id)arg2 index:(unsigned int)arg3;
+- (id)_addAudio:(id)arg1 toCompositionController:(id)arg2;
+- (id)_addVideo:(id)arg1 toCompositionController:(id)arg2;
+- (id)_addPhoto:(id)arg1 toCompositionController:(id)arg2 index:(unsigned int)arg3;
 - (void)_reallySendViaEmail:(id)arg1 animated:(BOOL)arg2;
 - (void)_discardTrimmedFiles;
 - (void)_setComposeParentViewController:(id)arg1;
-- (void)_composeSheetDidDisplay;
 - (void)_finishedSlidingImageUp:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_animationDestinationRectForImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_displayComposeSheet;
 - (void)_animateSendToEmail;
 - (void)_performSendViaEmail;
+- (void)_composeSheetDidDisplay;
 - (void)_commonDidFinishEmailAnimation:(BOOL)arg1;
 
 @end

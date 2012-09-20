@@ -7,21 +7,27 @@
 @interface GKViewController : UIViewController  {
     GKViewController *_rootViewController;
     GKImageBackgroundView *_statusView;
+    BOOL _shouldUpdateContentOnlyWhenAuthenticated;
 }
 
 @property(retain) GKImageBackgroundView * statusView;
 @property BOOL statusViewVisible;
+@property BOOL shouldUpdateContentOnlyWhenAuthenticated;
 @property(retain) GKViewController * rootViewController;
 
 
-- (void)dealloc;
+- (void)setShouldUpdateContentOnlyWhenAuthenticated:(BOOL)arg1;
+- (void)pushFullScreenViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)displayUsingSplitNavigationBar;
+- (BOOL)shouldUpdateContentOnlyWhenAuthenticated;
 - (BOOL)statusViewVisible;
 - (void)setStatusViewVisible:(BOOL)arg1;
-- (id)statusView;
 - (void)setStatusView:(id)arg1;
+- (id)statusView;
+- (void)dealloc;
+- (void)popToRootViewControllerAnimated:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidUnload;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)rootViewController;
 - (void)setRootViewController:(id)arg1;
 

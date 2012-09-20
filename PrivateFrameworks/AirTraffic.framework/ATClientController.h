@@ -12,8 +12,8 @@
 + (id)sharedInstance;
 + (id)controllerForDataclasses:(id)arg1;
 
-- (void)dealloc;
 - (id)allClients;
+- (void)dealloc;
 - (void)waitToDrain;
 - (id)clientForDataclass:(id)arg1;
 - (BOOL)_loadClientsForDataclasses:(id)arg1;

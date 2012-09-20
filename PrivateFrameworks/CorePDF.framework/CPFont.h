@@ -40,42 +40,45 @@
     } descriptor;
     struct __CFDictionary { } *kernDictionary;
     double kernUnitsPerEm;
+    BOOL isHorizontal;
+    float defaultWidth;
     BOOL disposed;
 }
 
 
-- (void)dealloc;
-- (id)initWith:(struct CGPDFDictionary { }*)arg1;
-- (BOOL)isSameFontAs:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fontBBox;
-- (float)italicAngle;
-- (float)ascent;
-- (float)descent;
-- (float)stemV;
-- (float)stemH;
-- (float)avgWidth;
-- (float)missingWidth;
-- (float)spaceWidth;
-- (float)underlinePosition;
-- (float)underlineThickness;
-- (double)kernBetweenUnicode:(unsigned short)arg1 andUnicode:(unsigned short)arg2;
 - (BOOL)getGlyphs:(unsigned short*)arg1 forCodes:(const unsigned short*)arg2 count:(unsigned int)arg3;
-- (id)matchingFontName;
-- (void)loadExternalFontInfoFor:(id)arg1;
-- (void)getFontName;
-- (void)loadEmbeddedFontInfo;
+- (double)kernBetweenUnicode:(unsigned short)arg1 andUnicode:(unsigned short)arg2;
+- (float)underlinePosition;
+- (float)spaceWidth;
+- (float)missingWidth;
+- (float)avgWidth;
+- (float)stemH;
+- (float)stemV;
+- (float)descent;
+- (float)ascent;
+- (float)italicAngle;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fontBBox;
+- (BOOL)isSameFontAs:(id)arg1;
 - (struct CGFont { }*)cgFont;
-- (void)uniCharsFor:(unsigned long)arg1 count:(unsigned int*)arg2 toArray:(unsigned short*)arg3 maxChars:(unsigned int)arg4;
+- (void)loadEmbeddedFontInfo;
+- (void)getFontName;
+- (void)loadExternalFontInfoFor:(id)arg1;
+- (id)matchingFontName;
 - (struct CGPDFFont { }*)cgPDFFont;
+- (void)uniCharsFor:(unsigned long)arg1 count:(unsigned int*)arg2 toArray:(unsigned short*)arg3 maxChars:(unsigned int)arg4;
+- (void)dispose;
+- (void)dealloc;
+- (BOOL)isHorizontal;
 - (void)finalize;
 - (float)xHeight;
+- (float)leading;
 - (unsigned int)flags;
 - (float)fontWeight;
 - (id)fontName;
-- (float)leading;
 - (float)capHeight;
-- (float)fontStretch;
+- (float)underlineThickness;
 - (float)maxWidth;
-- (void)dispose;
+- (float)fontStretch;
+- (id)initWith:(struct CGPDFDictionary { }*)arg1;
 
 @end

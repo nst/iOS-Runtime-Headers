@@ -13,15 +13,19 @@
     BOOL _parentedInLayer;
     BOOL _isQuickTimePlugIn;
     BOOL _isMapViewPlugIn;
+    BOOL _isiAdPlugIn;
 }
 
 @property(getter=isParentedInLayer) BOOL parentedInLayer;
 @property BOOL isQuickTimePlugIn;
 @property BOOL isMapViewPlugIn;
+@property BOOL isiAdPlugIn;
 
 
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)dealloc;
+- (void)setIsiAdPlugIn:(BOOL)arg1;
+- (BOOL)isiAdPlugIn;
 - (void)setIsMapViewPlugIn:(BOOL)arg1;
 - (BOOL)isMapViewPlugIn;
 - (void)setIsQuickTimePlugIn:(BOOL)arg1;

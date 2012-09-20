@@ -11,11 +11,13 @@
     NSDateComponents *_startDate;
     NSDateComponents *_endDate;
     unsigned int _daysToDisplay;
+    NSArray *_dayStarts;
     int _orientation;
     float _verticalTopMargin;
     float _minimumHeight;
     float _occurrenceHRightInset;
     float _fixedDayWidth;
+    float _customLeftMarginWidth;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -50,6 +52,17 @@
     unsigned int _dimsNonSelectedItems : 1;
     unsigned int _leftMarginIncludesTimeView : 1;
     unsigned int _showsHalfOfScrolledEvents : 1;
+    BOOL _lazyAddsOccurrenceViews;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _latestVisibleRect;
     <EKPadAllDayViewDelegate> *_delegate;
     int _shouldAbbreviateDayNames;
     BOOL _usesSmallText;
@@ -64,10 +77,12 @@
 @property int style;
 @property BOOL dimsNonSelectedItems;
 @property BOOL showsHalfOfScrolledEvents;
+@property BOOL lazyAddsOccurrenceViews;
 @property float fixedDayWidth;
 @property BOOL usesSmallText;
 @property(readonly) float faderInset;
 @property int maxOccurrencesWithoutScroller;
+@property float customLeftMarginWidth;
 @property float minimumHeight;
 @property(readonly) float maximumHeight;
 @property(readonly) float firstEventYOffset;
@@ -76,17 +91,32 @@
 
 + (float)occurrenceHeight;
 
-- (void)dealloc;
-- (float)minimumHeight;
+- (float)maximumHeight;
 - (void)setMinimumHeight:(float)arg1;
-- (void)setStartDate:(id)arg1;
-- (id)startDate;
+- (float)minimumHeight;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)calendar;
+- (void)setCalendar:(id)arg1;
+- (void)setOrientation:(int)arg1;
+- (id)timeZone;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)setTimeZone:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)layoutSubviews;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setOutlineStyle:(int)arg1;
+- (void)setCustomLeftMarginWidth:(float)arg1;
+- (float)customLeftMarginWidth;
 - (void)setMaxOccurrencesWithoutScroller:(int)arg1;
 - (unsigned int)_calendarOrderForCalendar:(id)arg1;
 - (void)setLeftMarginIncludesTimeView:(BOOL)arg1;
-- (float)maximumHeight;
 - (void)setShowsHalfOfScrolledEvents:(BOOL)arg1;
-- (void)scrollToEvent:(id)arg1 animating:(BOOL)arg2;
 - (id)selectedOccurrenceView;
 - (void)setShowsLeftAllDayTitle:(BOOL)arg1;
 - (void)setShowsDayTitles:(BOOL)arg1;
@@ -107,6 +137,7 @@
 - (id)_calendarOrderSortDescriptor;
 - (id)occurrenceViewForOccurrence:(id)arg1;
 - (void)_removeDayLabels;
+- (void)_computeDayStartsAndEndDate;
 - (void)_updateDayLabels;
 - (void)updateDayLabels;
 - (void)_significantTimeChanged;
@@ -118,11 +149,14 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2 numberOfDaysToDisplay:(unsigned int)arg3 opaque:(BOOL)arg4 backgroundColor:(id)arg5 scrollbarShowsInside:(BOOL)arg6;
 - (float)nextAvailableOccurrenceViewYOriginForDay:(double)arg1;
 - (id)occurrenceVisibleRect:(id)arg1;
+- (void)scrollToEvent:(id)arg1 animating:(BOOL)arg2;
 - (BOOL)isAllDayLabelHighlighted;
 - (void)setAllDayLabelHighlighted:(BOOL)arg1;
 - (void)addViewToScroller:(id)arg1;
 - (float)firstEventYOffset;
 - (id)dimmedOccurrence;
+- (void)setLazyAddsOccurrenceViews:(BOOL)arg1;
+- (BOOL)lazyAddsOccurrenceViews;
 - (id)occurrenceViewForEvent:(id)arg1;
 - (void)setAllowsOccurrenceSelection:(BOOL)arg1;
 - (void)setDimmedOccurrence:(id)arg1;
@@ -130,6 +164,7 @@
 - (void)setDimsNonSelectedItems:(BOOL)arg1;
 - (void)selectEvent:(id)arg1;
 - (id)selectedEvent;
+- (void)rectBecameVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setViewsDimmed:(BOOL)arg1 forEvent:(id)arg2;
 - (id)occurrenceViews;
 - (float)fixedDayWidth;
@@ -141,23 +176,9 @@
 - (void)dayOccurrenceViewStartTouch:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setUsesSmallText:(BOOL)arg1;
 - (void)_localeChanged;
-- (id)calendar;
-- (void)setCalendar:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (id)timeZone;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
-- (void)setTimeZone:(id)arg1;
-- (id)delegate;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setOutlineStyle:(int)arg1;
 - (float)bottomInset;
 - (void)setOccurrences:(id)arg1;
+- (void)setStartDate:(id)arg1;
+- (id)startDate;
 
 @end

@@ -9,9 +9,9 @@
 + (id)_notEnoughRentalTimeRemainingAlertWithMediaItem:(id)arg1;
 + (id)playbackAlertWithRentalMediaItem:(id)arg1 style:(int*)arg2;
 
-- (void)dealloc;
-- (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
-- (void)show;
 - (id)initWithError:(id)arg1;
+- (void)dealloc;
+- (void)show;
+- (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 
 @end

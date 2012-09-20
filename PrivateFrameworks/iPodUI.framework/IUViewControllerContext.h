@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIImage, IUViewControllerContext, IUMediaEntitySpecifier, NSString, MPMediaQuery, <NSCoding><NSObject>, IUMediaDataSource;
+@class IUMediaEntitySpecifier, IUViewControllerContext, UIImage, NSString, MPMediaQuery, <NSCoding><NSObject>, IUMediaDataSource;
 
 @interface IUViewControllerContext : NSObject <NSCoding> {
     IUMediaDataSource *_dataSource;
     unsigned int _isRootController : 1;
-    unsigned int _showActionRowsOnAppear : 1;
     IUMediaEntitySpecifier *_specifier;
     MPMediaQuery *_query;
     IUViewControllerContext *_sourceContext;
@@ -20,6 +19,7 @@
 }
 
 @property(retain) NSString * defaultPNGName;
+@property(readonly) NSString * aggregateStatisticsDisplayCountKey;
 @property(getter=isArchivable,readonly) BOOL archivable;
 @property(getter=isRestorableNavigationPathNode,readonly) BOOL restorableNavigationPathNode;
 @property(retain) NSString * identifier;
@@ -30,23 +30,23 @@
 @property int style;
 @property BOOL titleIgnoresHistory;
 @property(retain) <NSCoding><NSObject> * viewControllerInfo;
-@property BOOL showActionRowsOnAppear;
 @property(readonly) IUViewControllerContext * rootContext;
 @property(retain) IUViewControllerContext * sourceContext;
 @property(readonly) BOOL startAtEndOnFirstAppear;
 @property(retain) UIImage * transitionImage;
 
++ (id)newViewControllerWithIdentifier:(id)arg1;
 + (id)contextWithDataSource:(id)arg1;
++ (id)contextWithIdentifier:(id)arg1;
 
+- (id)aggregateStatisticsDisplayCountKey;
+- (void)setQuery:(id)arg1;
+- (id)identifier;
 - (id)description;
 - (void)dealloc;
-- (void)setQuery:(id)arg1;
-- (void)setRootController:(BOOL)arg1;
-- (void)setSpecifier:(id)arg1;
-- (id)specifier;
-- (id)defaultPNGName;
-- (id)identifier;
+- (id)sourceContext;
 - (void)setIdentifier:(id)arg1;
+- (id)defaultPNGName;
 - (int)style;
 - (void)setStyle:(int)arg1;
 - (id)query;
@@ -54,16 +54,13 @@
 - (void)setDataSource:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setShowActionRowsOnAppear:(BOOL)arg1;
 - (void)_reloadDataSourceFromSourceContext;
 - (id)_newDataSourceFromType:(int)arg1 mediaQuery:(id)arg2;
 - (id)_newDataSourceFromType:(int)arg1 mediaSpecifier:(id)arg2;
 - (BOOL)titleIgnoresHistory;
 - (BOOL)isRootController;
 - (BOOL)startAtEndOnFirstAppear;
-- (BOOL)showActionRowsOnAppear;
 - (BOOL)isArchivable;
-- (void)setSourceContext:(id)arg1;
 - (id)copySpecifierHistory;
 - (id)viewControllerInfo;
 - (id)rootContext;
@@ -71,13 +68,16 @@
 - (void)setTransitionImage:(id)arg1;
 - (void)setViewControllerInfo:(id)arg1;
 - (id)newViewController;
+- (void)setRootController:(BOOL)arg1;
 - (void)setDefaultPNGName:(id)arg1;
 - (void)setTitleIgnoresHistory:(BOOL)arg1;
+- (void)setSourceContext:(id)arg1;
 - (void)setDataSourceFromMediaQuery:(id)arg1;
 - (BOOL)isRestorableNavigationPathNode;
 - (void)unloadReloadableData;
 - (void)setDataSourceFromMediaSpecifier:(id)arg1;
 - (unsigned long long)persistentPlaylistUID;
-- (id)sourceContext;
+- (void)setSpecifier:(id)arg1;
+- (id)specifier;
 
 @end

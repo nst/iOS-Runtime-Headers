@@ -14,11 +14,11 @@
 
 
 - (void)dealloc;
-- (id)mediaData;
 - (void)setMediaData:(id)arg1;
-- (void)setEntranceData:(id)arg1;
+- (id)mediaData;
+- (id)exitData;
 - (void)setExitData:(id)arg1;
 - (id)entranceData;
-- (id)exitData;
+- (void)setEntranceData:(id)arg1;
 
 @end

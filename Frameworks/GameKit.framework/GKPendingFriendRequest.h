@@ -30,16 +30,12 @@
 
 + (id)pushDictionaryForQuery:(id)arg1;
 
-- (id)description;
-- (void)dealloc;
 - (BOOL)purpleBuddyAccount;
 - (BOOL)shouldBadge;
 - (int)recipientKind;
 - (id)initWithURLQuery:(id)arg1;
 - (unsigned int)friendRequestCount;
 - (id)requestID;
-- (id)originatorEmail;
-- (id)originator;
 - (id)initWithPushDictionary:(id)arg1;
 - (void)setFriendRequestCount:(unsigned int)arg1;
 - (void)setShouldBadge:(BOOL)arg1;
@@ -47,12 +43,16 @@
 - (void)setOriginatorEmail:(id)arg1;
 - (void)setOriginator:(id)arg1;
 - (void)setRecipientKind:(int)arg1;
-- (void)setRecipient:(id)arg1;
 - (id)recipient;
+- (void)setRecipient:(id)arg1;
+- (id)originatorEmail;
+- (id)originator;
 - (void)setPurpleBuddyAccount:(BOOL)arg1;
-- (void)setHandle:(id)arg1;
-- (id)handle;
+- (id)description;
+- (void)dealloc;
 - (id)message;
 - (void)setMessage:(id)arg1;
+- (void)setHandle:(id)arg1;
+- (id)handle;
 
 @end

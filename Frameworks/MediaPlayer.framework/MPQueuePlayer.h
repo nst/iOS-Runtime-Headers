@@ -6,9 +6,10 @@
    See Warning(s) below.
  */
 
-@class NSError, AVPlayer, NSMutableArray, AVPlayerItem, AVAudioSessionMediaPlayerOnly, AVQueuePlayer, NSArray;
+@class NSError, NSObject<OS_dispatch_queue>, MPAudioDeviceController, NSMutableArray, AVPlayer, AVPlayerItem, NSDictionary, NSString, AVQueuePlayer, AVAudioSessionMediaPlayerOnly, NSArray;
 
-@interface MPQueuePlayer : NSObject  {
+@interface MPQueuePlayer : NSObject <MPAudioDeviceControllerDelegate> {
+    MPAudioDeviceController *_audioDeviceController;
     AVPlayerItem *_currentItem;
     struct { 
         long long value; 
@@ -17,7 +18,8 @@
         long long epoch; 
     } _currentTime;
     BOOL _isAirPlayVideoActive;
-    BOOL _pausedForPlaybackTransaction;
+    BOOL _pausedForPlaybackQueueTransaction;
+    NSDictionary *_pickedRouteDescription;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -26,9 +28,13 @@
     int _playbackQueueTransactionCount;
     AVQueuePlayer *_player;
     NSMutableArray *_queuedOperations;
+    NSObject<OS_dispatch_queue> *_queuedOperationsAccessQueue;
     float _rate;
     float _rateBeforePlaybackQueueTransaction;
+    BOOL _routeDidChangeDuringPlaybackQueueTransaction;
     int _status;
+    int _defaultItemEQPresetType;
+    BOOL _outputObscuredDueToInsufficientExternalProtection;
 }
 
 @property(readonly) int status;
@@ -39,6 +45,8 @@
 @property BOOL allowsAirPlayVideo;
 @property(getter=isAirPlayVideoActive,readonly) BOOL airPlayVideoActive;
 @property BOOL usesAirPlayVideoWhileAirPlayScreenIsActive;
+@property int defaultItemEQPresetType;
+@property(readonly) BOOL outputObscuredDueToInsufficientExternalProtection;
 @property(readonly) AVPlayerItem * currentItem;
 @property(copy) id playbackQueueCommitHandler;
 @property(readonly) BOOL isPlaybackQueueTransactionActive;
@@ -46,58 +54,68 @@
 @property(readonly) AVPlayer * _player;
 @property(setter=_setDisplaysUsedForPlayback:,copy) NSArray * _displaysUsedForPlayback;
 @property(readonly) int _externalProtectionStatus;
+@property(copy) NSString * externalPlaybackVideoGravity;
 @property(readonly) AVAudioSessionMediaPlayerOnly * playerAVAudioSession;
+@property BOOL disallowsAMRAudio;
 
 
-- (void)removeItem:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
+- (float)rate;
+- (void)setAllowsAirPlayVideo:(BOOL)arg1;
+- (void)removeTimeObserver:(id)arg1;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)playbackQueueCommitHandler;
+- (void)setDefaultItemEQPresetType:(int)arg1;
+- (void)prepareItem:(id)arg1 withCompletionHandler:(id)arg2;
+- (int)_externalProtectionStatus;
+- (id)_displaysUsedForPlayback;
+- (void)insertItem:(id)arg1 afterItem:(id)arg2;
 - (void)commitPlaybackQueueTransaction;
 - (void)setCurrentPlaybackQueueTransactionDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)beginPlaybackQueueTransactionAndPause:(BOOL)arg1;
-- (BOOL)isPlaybackQueueTransactionActive;
+- (int)defaultItemEQPresetType;
 - (void)setPlaybackQueueCommitHandler:(id)arg1;
 - (void)advanceToNextItem;
-- (void)insertItem:(id)arg1 afterItem:(id)arg2;
-- (BOOL)_resumePlayback:(double)arg1 error:(id*)arg2;
-- (void)_setPreferredLanguageList:(id)arg1;
-- (void)_setCALayerDestinationIsTVOut:(BOOL)arg1;
-- (void)_setClientName:(id)arg1;
-- (void)_setStoppingFadeOutDuration:(float)arg1;
-- (void)_setEQPreset:(int)arg1;
 - (void)_setWantsVolumeChangesWhenPausedOrInactive:(BOOL)arg1;
-- (BOOL)_CALayerDestinationIsTVOut;
-- (int)_externalProtectionStatus;
+- (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(id)arg3;
+- (void)_setClientName:(id)arg1;
 - (void)_setDisplaysUsedForPlayback:(id)arg1;
-- (id)_displaysUsedForPlayback;
-- (void)removeTimeObserver:(id)arg1;
-- (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2 usingBlock:(id)arg3;
+- (BOOL)outputObscuredDueToInsufficientExternalProtection;
+- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
+- (BOOL)_resumePlayback:(double)arg1 error:(id*)arg2;
+- (int)actionAtItemEnd;
+- (BOOL)isPlaybackQueueTransactionActive;
+- (void)_setCALayerDestinationIsTVOut:(BOOL)arg1;
+- (BOOL)_CALayerDestinationIsTVOut;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
+- (void)setExternalPlaybackVideoGravity:(id)arg1;
+- (id)playerAVAudioSession;
+- (void)_setPreferredLanguageList:(id)arg1;
+- (id)externalPlaybackVideoGravity;
+- (void)setClosedCaptionDisplayEnabled:(BOOL)arg1;
 - (void)setUsesAirPlayVideoWhileAirPlayScreenIsActive:(BOOL)arg1;
 - (BOOL)usesAirPlayVideoWhileAirPlayScreenIsActive;
-- (BOOL)isAirPlayVideoActive;
-- (BOOL)allowsAirPlayVideo;
-- (void)setClosedCaptionDisplayEnabled:(BOOL)arg1;
 - (BOOL)isClosedCaptionDisplayEnabled;
-- (int)actionAtItemEnd;
-- (void)prepareItem:(id)arg1 withCompletionHandler:(id)arg2;
-- (id)playerAVAudioSession;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setAllowsAirPlayVideo:(BOOL)arg1;
+- (BOOL)allowsAirPlayVideo;
+- (void)_setStoppingFadeOutDuration:(float)arg1;
+- (void)_setEQPreset:(int)arg1;
 - (void)setActionAtItemEnd:(int)arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
-- (float)rate;
+- (void)setDisallowsAMRAudio:(BOOL)arg1;
+- (BOOL)disallowsAMRAudio;
 - (void)setRate:(float)arg1;
+- (BOOL)isAirPlayVideoActive;
 - (id)_player;
+- (void)dealloc;
+- (id)init;
 - (int)status;
-- (id)error;
 - (void)pause;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)currentItem;
 - (id)items;
-- (float)_volume;
 - (void)_setVolume:(float)arg1;
+- (float)_volume;
 - (void)play;
+- (void)removeItem:(id)arg1;
+- (id)error;
 
 @end

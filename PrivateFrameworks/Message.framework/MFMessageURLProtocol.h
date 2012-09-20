@@ -12,15 +12,15 @@
     BOOL _stopped;
 }
 
++ (void)initialize;
 + (BOOL)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
 + (id)canonicalRequestForRequest:(id)arg1;
 + (BOOL)canInitWithRequest:(id)arg1;
-+ (void)initialize;
 
-- (void)_downloadAttachment;
-- (void)_downloadedData:(id)arg1 mimeType:(id)arg2;
 - (void)startLoading;
 - (void)dealloc;
 - (void)stopLoading;
+- (void)_downloadedData:(id)arg1 mimeType:(id)arg2;
+- (void)_downloadAttachment;
 
 @end

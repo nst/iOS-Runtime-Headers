@@ -14,9 +14,9 @@
 }
 
 
-- (id)initWithCachedResponse:(id)arg1 request:(id)arg2 key:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)initWithCachedResponse:(id)arg1 request:(id)arg2 key:(id)arg3;
 
 @end

@@ -8,8 +8,8 @@
 
 + (id)completionItem;
 
-- (id)init;
-- (void)dealloc;
 - (void)invalidate;
+- (void)dealloc;
+- (id)init;
 
 @end

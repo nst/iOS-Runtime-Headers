@@ -9,13 +9,13 @@
 
 @property(copy) NSArray * identifiers;
 
-+ (id)domainObjectRetrieve;
 + (id)domainObjectRetrieveWithDictionary:(id)arg1 context:(id)arg2;
++ (id)domainObjectRetrieve;
 
 - (id)groupIdentifier;
-- (void)setIdentifiers:(id)arg1;
-- (id)encodedClassName;
-- (BOOL)requiresResponse;
 - (id)identifiers;
+- (void)setIdentifiers:(id)arg1;
+- (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

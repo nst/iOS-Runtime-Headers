@@ -14,8 +14,8 @@
 
 - (void)dealloc;
 - (void)setShowActive:(BOOL)arg1;
-- (id)initWithReuseIdentifier:(id)arg1;
 - (BOOL)showActive;
+- (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutSubviews;
 
 @end

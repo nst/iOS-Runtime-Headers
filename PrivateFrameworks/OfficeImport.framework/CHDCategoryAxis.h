@@ -10,15 +10,15 @@
 }
 
 
-- (bool)isAutomatic;
-- (void)setAutomatic:(bool)arg1;
-- (bool)isNoMultipleLabellevel;
-- (void)setNoMultipleLevelLabel:(bool)arg1;
 - (int)labelAlignment;
-- (int)labelFrequency;
+- (void)setNoMultipleLevelLabel:(bool)arg1;
+- (bool)isNoMultipleLabellevel;
+- (void)setAutomatic:(bool)arg1;
+- (bool)isAutomatic;
 - (void)adjustAxisPositionForHorizontalChart;
-- (void)setLabelFrequency:(int)arg1;
+- (int)labelFrequency;
 - (void)setLabelAlignment:(int)arg1;
+- (void)setLabelFrequency:(int)arg1;
 - (id)initWithResources:(id)arg1;
 
 @end

@@ -7,13 +7,13 @@
 }
 
 
-- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3 position:(unsigned int)arg4;
 - (BOOL)isEqual:(id)arg1;
+- (id)symbol;
+- (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (SEL)selector;
 - (unsigned int)position;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)symbol;
-- (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3 position:(unsigned int)arg4;
 
 @end

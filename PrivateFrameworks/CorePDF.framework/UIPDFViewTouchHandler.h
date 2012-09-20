@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIPDFPageView, UILongPressGestureRecognizer, UIPDFSelectionController, UITextEffectsWindow, UIMenuController, UIPDFViewMagnifyController, UITapGestureRecognizer;
+@class UILongPressGestureRecognizer, UITapGestureRecognizer, UIPDFSelectionController, UIPDFPageView, UIPDFViewMagnifyController, UIMenuController;
 
 @interface UIPDFViewTouchHandler : UIResponder <UIGestureRecognizerDelegate> {
     UIPDFPageView *_pdfPageView;
@@ -10,31 +10,41 @@
     UITapGestureRecognizer *_singleTapRecognizer;
     UILongPressGestureRecognizer *_briefPressRecognizer;
     UILongPressGestureRecognizer *_longPressRecognizer;
+    UITapGestureRecognizer *_twoFingerTapRecognizer;
     UIMenuController *_menuController;
     UIPDFSelectionController *_selectionController;
     UIPDFViewMagnifyController *_magnifyController;
     BOOL _trackingSelection;
     BOOL _showMagnifier;
     BOOL _showLoupe;
-    UITextEffectsWindow *_textEffectsWindow;
+    BOOL _firstTouch;
+    BOOL _useDelegateForLinks;
+    BOOL _allowMenu;
 }
 
+@property BOOL allowMenu;
 
-- (void)dealloc;
-- (void)doubleTapRecognized:(id)arg1;
-- (void)singleTapRecognized:(id)arg1;
-- (void)briefPressRecognized:(id)arg1;
++ (void)releaseViewManager;
+
 - (void)longPressRecognized:(id)arg1;
-- (void)enableRecognizers;
-- (void)disableRecognizers;
-- (void)hideMenu;
+- (void)briefPressRecognized:(id)arg1;
+- (void)twoFingerTapRecognized:(id)arg1;
+- (void)singleTapRecognized:(id)arg1;
+- (void)doubleTapRecognized:(id)arg1;
+- (BOOL)allowMenu;
 - (void)showMenu;
-- (void)selectAll:(id)arg1;
+- (void)hideMenu;
+- (void)setFirstTouch;
+- (void)disableRecognizers;
+- (void)setAllowMenu:(BOOL)arg1;
+- (void)enableRecognizers;
+- (void)dealloc;
 - (void)copy:(id)arg1;
+- (void)selectAll:(id)arg1;
 - (id)initWithView:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)resignFirstResponder;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;

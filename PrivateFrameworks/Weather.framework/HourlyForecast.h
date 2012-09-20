@@ -11,21 +11,21 @@
     float _percentPrecipitation;
 }
 
-@property float percentPrecipitation;
-@property int conditionCode;
-@property(copy) NSString * temperature;
 @property(copy) NSString * time24Hour;
+@property(copy) NSString * temperature;
+@property int conditionCode;
+@property float percentPrecipitation;
 
 
 - (id)description;
 - (void)dealloc;
-- (float)percentPrecipitation;
 - (void)setPercentPrecipitation:(float)arg1;
+- (float)percentPrecipitation;
 - (id)time24Hour;
 - (void)setTime24Hour:(id)arg1;
-- (id)temperature;
 - (void)setTemperature:(id)arg1;
-- (int)conditionCode;
+- (id)temperature;
 - (void)setConditionCode:(int)arg1;
+- (int)conditionCode;
 
 @end

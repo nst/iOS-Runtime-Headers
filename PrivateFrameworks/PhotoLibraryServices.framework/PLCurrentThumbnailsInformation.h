@@ -6,10 +6,10 @@
 
 @interface PLCurrentThumbnailsInformation : NSObject  {
     PLThumbnailManager *_thumbnailManager;
-    const struct __CFDictionary { } *_indexSheetThumbIDsForAssets;
-    const struct __CFDictionary { } *_wildcatScrubberThumbIDsForAssets;
-    const struct __CFDictionary { } *_wildcatIndexThumbIDsForAssets;
-    const struct __CFDictionary { } *_wildcatStackThumbIDsForAssets;
+    struct __CFDictionary { } *_indexSheetThumbIDsForAssets;
+    struct __CFDictionary { } *_wildcatScrubberThumbIDsForAssets;
+    struct __CFDictionary { } *_wildcatIndexThumbIDsForAssets;
+    struct __CFDictionary { } *_wildcatStackThumbIDsForAssets;
 }
 
 @property(retain) PLThumbnailManager * _thumbnailManager;
@@ -31,8 +31,8 @@
 - (void)set_thumbnailManager:(id)arg1;
 - (void)resetThumbnailTables;
 - (BOOL)allThumbnailsAreAvailableForAsset:(id)arg1 index:(unsigned int*)arg2;
-- (void)_clearThumbIndexToAssetsTables;
 - (id)initWithThumbnailManager:(id)arg1;
+- (void)_clearThumbIndexToAssetsTables;
 - (id)_thumbnailManager;
 
 @end

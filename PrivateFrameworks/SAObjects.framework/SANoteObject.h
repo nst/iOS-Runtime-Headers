@@ -16,15 +16,15 @@
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (void)setCreatedDate:(id)arg1;
-- (id)createdDate;
-- (void)setLastModifiedDate:(id)arg1;
 - (id)title;
 - (void)setContents:(id)arg1;
 - (id)contents;
 - (void)setTitle:(id)arg1;
 - (id)lastModifiedDate;
+- (void)setCreatedDate:(id)arg1;
+- (id)createdDate;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setLastModifiedDate:(id)arg1;
 
 @end

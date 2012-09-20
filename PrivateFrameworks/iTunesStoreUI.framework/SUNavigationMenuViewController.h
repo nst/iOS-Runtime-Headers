@@ -11,13 +11,14 @@
 @property(readonly) SUNavigationMenu * navigationMenu;
 
 
-- (id)init;
-- (void)dealloc;
 - (void)_protocolButtonAction:(id)arg1;
 - (void)_cancelAction:(id)arg1;
 - (id)titleOfMenuItemAtIndex:(int)arg1;
 - (int)numberOfMenuItems;
 - (id)initWithNavigationMenu:(id)arg1;
 - (id)navigationMenu;
+- (void)dealloc;
+- (id)init;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

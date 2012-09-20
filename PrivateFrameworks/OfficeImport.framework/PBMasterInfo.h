@@ -7,24 +7,24 @@
 @interface PBMasterInfo : NSObject  {
     PDSlideMaster *mSlideMaster;
     NSMutableArray *mTgtSlideLayoutArray;
-    unsigned int mMainPbRef;
-    unsigned int mTitlePbRef;
+    unsigned long mMainPbRef;
+    unsigned long mTitlePbRef;
     NSDictionary *mLayoutMap;
     struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } *mSrcTextStyling;
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (unsigned long)mainPbRef;
-- (unsigned long)titlePbRef;
-- (id)slideLayoutForSlideHolder:(id)arg1;
-- (void)setMainPbRef:(unsigned long)arg1;
+- (id)init;
 - (struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)sourceTextStyling;
-- (void)setTitlePbRef:(unsigned long)arg1;
-- (void)cacheTargetLayoutType:(int)arg1;
-- (id)allTargetLayoutTypes;
+- (id)slideLayoutForSlideHolder:(id)arg1;
 - (void)cacheSlideLayouts;
+- (id)allTargetLayoutTypes;
+- (void)cacheTargetLayoutType:(int)arg1;
+- (unsigned long)titlePbRef;
+- (void)setTitlePbRef:(unsigned long)arg1;
+- (unsigned long)mainPbRef;
+- (void)setMainPbRef:(unsigned long)arg1;
 - (void)setSlideMaster:(id)arg1;
 - (id)slideMaster;
 

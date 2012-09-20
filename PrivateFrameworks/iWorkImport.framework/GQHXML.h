@@ -19,25 +19,25 @@
 
 - (void)dealloc;
 - (void)setAttribute:(const char *)arg1 value:(const char *)arg2;
-- (bool)isProgressive;
-- (void)setAttribute:(const char *)arg1 floatValue:(float)arg2;
 - (void)addViewportMetaTagForDocumentSize:(struct CGSize { float x1; float x2; })arg1 maximumScale:(float)arg2;
+- (void)setAttribute:(const char *)arg1 floatValue:(float)arg2;
 - (void)addViewportMetaTagForDocumentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setAttribute:(const char *)arg1 intValue:(int)arg2;
 - (void)addStyleClassLast:(struct __CFString { }*)arg1;
-- (id)initEmptyWithFilename:(struct __CFString { }*)arg1 useExternalCss:(BOOL)arg2;
-- (void)addCharRef:(const char *)arg1;
-- (void)addXmlCharContent:(const char *)arg1;
-- (BOOL)writeToOutputBundle:(id)arg1;
 - (id)initWithFilename:(struct __CFString { }*)arg1 documentSize:(struct CGSize { float x1; float x2; }*)arg2 outputBundle:(id)arg3 useExternalCss:(BOOL)arg4;
-- (void)addContent:(struct __CFString { }*)arg1;
-- (void)addStyleClass:(struct __CFString { }*)arg1;
-- (struct __CFData { }*)createProgressiveHtml;
-- (struct __CFData { }*)createProgressiveeCSSwithStyleTags:(unsigned char)arg1;
+- (BOOL)writeToOutputBundle:(id)arg1;
+- (void)addXmlCharContent:(const char *)arg1;
+- (void)addCharRef:(const char *)arg1;
+- (id)initEmptyWithFilename:(struct __CFString { }*)arg1 useExternalCss:(BOOL)arg2;
 - (struct __CFString { }*)cssFilename;
+- (struct __CFData { }*)createProgressiveeCSSwithStyleTags:(unsigned char)arg1;
+- (struct __CFData { }*)createProgressiveHtml;
+- (void)addStyleClass:(struct __CFString { }*)arg1;
+- (void)addContent:(struct __CFString { }*)arg1;
 - (void)endElementWithExpectedName:(const char *)arg1;
-- (void)startElement:(const char *)arg1;
-- (void)setAttribute:(const char *)arg1 cfStringValue:(struct __CFString { }*)arg2;
 - (void)endElement;
+- (void)setAttribute:(const char *)arg1 cfStringValue:(struct __CFString { }*)arg2;
+- (void)startElement:(const char *)arg1;
+- (bool)isProgressive;
 
 @end

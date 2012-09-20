@@ -10,10 +10,12 @@
 @property(readonly) NSNumber * status;
 @property(readonly) NSString * statusMessage;
 @property(readonly) NSString * personID;
+@property(readonly) NSString * appleID;
 
 
-- (id)statusMessage;
-- (id)personID;
+- (id)appleID;
 - (id)status;
+- (id)personID;
+- (id)statusMessage;
 
 @end

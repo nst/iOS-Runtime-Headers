@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScalingFlipView, NSArray, SUTouchCaptureView, SUOverlayViewController, NSMutableArray, <SUOverlayBackgroundDelegate>;
+@class SUTouchCaptureView, <SUOverlayBackgroundDelegate>, NSMutableArray, SUOverlayViewController, SUScalingFlipView, UISwipeGestureRecognizer, NSArray;
 
 @interface SUOverlayBackgroundViewController : SUViewController <SUScalingFlipViewDelegate, UIGestureRecognizerDelegate> {
     NSMutableArray *_actionQueue;
@@ -22,6 +22,7 @@
         } size; 
     } _keyboardFrame;
     int _selectedViewControllerIndex;
+    UISwipeGestureRecognizer *_swipeGestureRecognizer;
     NSMutableArray *_viewControllers;
 }
 
@@ -30,17 +31,6 @@
 @property(readonly) NSArray * viewControllers;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)dismissAnimated:(BOOL)arg1;
-- (id)selectedViewController;
-- (id)viewControllers;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)overlayPageViewTapped:(id)arg1;
 - (void)_performPresentAction:(id)arg1;
 - (void)_performDismissEverythingAction:(id)arg1;
@@ -55,9 +45,9 @@
 - (void)_finishDismissAction:(id)arg1;
 - (void)_finishDismissOfViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_overlayAnimationDidFinish;
-- (void)_shouldDismiss:(id)arg1 finishedWithValue:(id)arg2;
+- (void)_shouldDismissFinishedWithValue:(id)arg1;
 - (void)_addViewController:(id)arg1;
-- (void)_swipe:(id)arg1;
+- (void)_reloadGestureRecognizers;
 - (void)_captureViewAction:(id)arg1;
 - (void)_layoutForKeyboardChangeWithInfo:(id)arg1;
 - (void)layoutViewControllers;
@@ -73,15 +63,27 @@
 - (void)presentOverlay:(id)arg1 withTransition:(id)arg2;
 - (id)viewControllerForScriptWindowContext:(id)arg1;
 - (void)_performNextAction;
-- (void)storePage:(id)arg1 finishedWithSuccess:(BOOL)arg2;
 - (void)populateNavigationHistoryWithItems:(id)arg1;
+- (void)storePage:(id)arg1 finishedWithSuccess:(BOOL)arg2;
 - (void)dismissOverlay:(id)arg1 animated:(BOOL)arg2;
+- (id)copyArchivableJetsamContext;
 - (void)keyboardWillShowWithInfo:(id)arg1;
 - (void)keyboardWillHideWithInfo:(id)arg1;
-- (id)copyArchivableJetsamContext;
 - (BOOL)shouldExcludeFromNavigationHistory;
 - (id)copyChildViewControllersForReason:(int)arg1;
 - (void)restoreArchivableContext:(id)arg1;
 - (id)copyArchivableContext;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (void)_swipe:(id)arg1;
+- (void)dismissAnimated:(BOOL)arg1;
+- (id)selectedViewController;
+- (id)viewControllers;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 
 @end

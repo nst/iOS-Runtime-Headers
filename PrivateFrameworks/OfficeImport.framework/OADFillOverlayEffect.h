@@ -10,10 +10,10 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (id)fill;
 - (void)setBlendMode:(int)arg1;
 - (int)blendMode;

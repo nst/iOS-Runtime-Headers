@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSError, <CoreDAVAccountInfoProvider>, NSDictionary, NSString, NSURL, NSData, NSSet;
+@class NSError, NSSet, NSDictionary, NSString, NSURL, NSData, <CoreDAVAccountInfoProvider>;
 
 @interface CoreDAVDiscoveryAccountInfo : NSObject <CoreDAVAccountInfoProvider> {
     NSString *_scheme;
@@ -43,15 +43,20 @@
 @property(retain) <CoreDAVAccountInfoProvider> * backingAccountInfoProvider;
 
 
-- (void)setHost:(id)arg1;
-- (id)accountID;
-- (void)setPort:(int)arg1;
+- (id)oauthToken;
+- (void)setPassword:(id)arg1;
+- (void)setError:(id)arg1;
+- (void)setSuccess:(BOOL)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)principalURL;
-- (void)setError:(id)arg1;
-- (void)setPassword:(id)arg1;
-- (id)error;
+- (BOOL)success;
+- (int)port;
+- (id)user;
+- (id)password;
+- (id)url;
+- (id)host;
+- (id)scheme;
 - (void)setServerComplianceClasses:(id)arg1;
 - (void)setServerHeaders:(id)arg1;
 - (void)setStarted:(BOOL)arg1;
@@ -62,7 +67,6 @@
 - (id)initWithAccountInfoProvider:(id)arg1;
 - (BOOL)shouldTurnModalOnBadPassword;
 - (void)promptUserForNewCoreDAVPasswordWithCompletionBlock:(id)arg1;
-- (BOOL)shouldUseOpportunisticSockets;
 - (BOOL)shouldSendClientInfoHeaderForURL:(id)arg1;
 - (BOOL)shouldHandleHTTPCookiesForURL:(id)arg1;
 - (BOOL)handleShouldUseCredentialStorage;
@@ -74,24 +78,21 @@
 - (id)serverComplianceClasses;
 - (id)serverHeaders;
 - (void)setBackingAccountInfoProvider:(id)arg1;
-- (void)setAccountID:(id)arg1;
 - (void)setUserAgentHeader:(id)arg1;
 - (id)userAgentHeader;
 - (void)setUser:(id)arg1;
 - (void)setServerRoot:(id)arg1;
 - (id)serverRoot;
 - (id)additionalHeaderValues;
-- (int)port;
-- (id)user;
-- (id)password;
-- (id)url;
-- (id)host;
-- (id)scheme;
 - (void)setScheme:(id)arg1;
-- (BOOL)success;
-- (void)setSuccess:(BOOL)arg1;
+- (void)setHost:(id)arg1;
+- (id)accountID;
+- (void)setPort:(int)arg1;
+- (id)error;
+- (void)setAccountID:(id)arg1;
 - (BOOL)handleTrustChallenge:(id)arg1;
 - (BOOL)shouldFailAllTasks;
+- (BOOL)shouldUseOpportunisticSockets;
 - (struct __CFURLStorageSession { }*)copyStorageSession;
 - (id)identityPersist;
 - (void)setShouldFailAllTasks:(BOOL)arg1;

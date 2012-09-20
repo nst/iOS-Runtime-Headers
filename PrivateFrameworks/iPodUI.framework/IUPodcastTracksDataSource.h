@@ -3,21 +3,15 @@
  */
 
 @interface IUPodcastTracksDataSource : IUMediaQueriesDataSource  {
-    unsigned int _hideVideoIcon : 1;
 }
-
-@property BOOL hideVideoIcon;
 
 + (int)mediaEntityType;
 
 - (BOOL)shouldDisplayWhenEmpty;
 - (void)createGlobalContexts;
-- (id)viewControllerContextForActionRow:(id)arg1;
 - (Class)cellConfigurationClassForEntity:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (BOOL)allowsDeletion;
-- (void)setHideVideoIcon:(BOOL)arg1;
-- (BOOL)hideVideoIcon;
 - (void)reloadActionRows;
 
 @end

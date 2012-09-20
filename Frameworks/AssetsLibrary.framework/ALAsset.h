@@ -13,15 +13,17 @@
 @property(retain) ALAssetPrivate * internal;
 
 
+- (void)setInternal:(id)arg1;
+- (id)internal;
 - (id)description;
 - (void)dealloc;
-- (id)originalAsset;
-- (id)internal;
-- (void)setInternal:(id)arg1;
-- (id)defaultRepresentation;
 - (id)valueForProperty:(id)arg1;
+- (struct CGImage { }*)thumbnail;
+- (id)defaultRepresentation;
 - (BOOL)isEditable;
 - (BOOL)isValid;
+- (id)originalAsset;
+- (id)_uuid;
 - (void)setVideoAtPath:(id)arg1 completionBlock:(id)arg2;
 - (void)setImageData:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
 - (void)writeModifiedVideoAtPathToSavedPhotosAlbum:(id)arg1 completionBlock:(id)arg2;
@@ -30,7 +32,5 @@
 - (id)representationForUTI:(id)arg1;
 - (id)_typeAsString;
 - (id)initWithManagedAsset:(id)arg1 library:(id)arg2;
-- (struct CGImage { }*)thumbnail;
-- (id)_uuid;
 
 @end

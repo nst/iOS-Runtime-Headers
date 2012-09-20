@@ -19,25 +19,26 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (double)timestamp;
+- (void)setTimestamp:(double)arg1;
 - (unsigned int)retainCount;
 - (id)retain;
-- (void)release;
 - (void)dealloc;
+- (void)release;
+- (void)setRelatedIDs:(id)arg1 forKey:(id)arg2 options:(unsigned int)arg3 andTimestamp:(double)arg4;
+- (double)timestampForKey:(id)arg1;
+- (id)relatedIDsForKey:(id)arg1;
+- (unsigned int)optionsForKey:(id)arg1;
+- (void)updateFromOriginalRelationshipCaches:(id)arg1;
+- (void)incrementExternalReferenceCount:(int)arg1;
+- (int)externalReferenceCount;
+- (int)decrementRefCount;
+- (void)incrementRefCount;
+- (void)setRelationshipCaches:(id)arg1;
+- (id)initWithOptions:(unsigned int)arg1 andTimestamp:(double)arg2;
+- (id)relationshipCaches;
 - (unsigned int)options;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (double)timestamp;
-- (void)setTimestamp:(double)arg1;
-- (void)incrementRefCount;
-- (int)decrementRefCount;
-- (int)externalReferenceCount;
-- (void)incrementExternalReferenceCount:(int)arg1;
-- (unsigned int)optionsForKey:(id)arg1;
-- (id)relatedIDsForKey:(id)arg1;
-- (double)timestampForKey:(id)arg1;
-- (void)setRelatedIDs:(id)arg1 forKey:(id)arg2 options:(unsigned int)arg3 andTimestamp:(double)arg4;
-- (id)relationshipCaches;
-- (id)initWithOptions:(unsigned int)arg1 andTimestamp:(double)arg2;
-- (void)setRelationshipCaches:(id)arg1;
 
 @end

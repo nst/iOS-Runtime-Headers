@@ -21,8 +21,9 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forAsset:(id)arg3 fromSource:(id)arg4;
 - (void)_crossFadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_transitionToNextImage;
 - (void)_displayFirstImage;
@@ -34,7 +35,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentBounds;
 - (void)_requestNextImageSynchronously:(BOOL)arg1;
 - (void)resumeSlideshow;
-- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forAsset:(id)arg3 fromSource:(id)arg4;
 - (void)setAlbumAssets:(id)arg1;
 - (void)pauseSlideshow;
 - (void)slideshowViewDidAppear;

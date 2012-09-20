@@ -23,10 +23,19 @@
 @property BOOL attemptedConnection;
 
 
-- (id)userInfo;
+- (id)URLRequest;
+- (void)setURLRequest:(id)arg1;
+- (id)identifier;
 - (id)description;
-- (id)init;
+- (id)userInfo;
 - (void)dealloc;
+- (id)init;
+- (void)_cancel;
+- (id)connection;
+- (void)setUserInfo:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)downloadWithDelegate:(id)arg1;
 - (void)setAttemptedConnection:(BOOL)arg1;
 - (void)_connectionBackgroundDownloadPostCompleted:(id)arg1;
@@ -42,15 +51,6 @@
 - (BOOL)_isDecodingValid;
 - (BOOL)_attemptedConnection;
 - (void)setConnection:(id)arg1;
-- (id)connection;
 - (id)_connection;
-- (void)setUserInfo:(id)arg1;
-- (id)identifier;
-- (void)setIdentifier:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)_cancel;
-- (id)URLRequest;
-- (void)setURLRequest:(id)arg1;
 
 @end

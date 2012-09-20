@@ -7,7 +7,7 @@
 @interface UIStatusBarLayoutManager : NSObject  {
     UIStatusBarForegroundView *_foregroundView;
     int _region;
-    UIStatusBarItemView *_itemViews[23];
+    UIStatusBarItemView *_itemViews[24];
 }
 
 @property UIStatusBarForegroundView * foregroundView;
@@ -37,10 +37,12 @@
 - (float)widthNeededForItems:(id)arg1;
 - (void)clearOverlapFromItems:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForItems:(id)arg1;
-- (void)reflowWithVisibleItems:(id)arg1 duration:(double)arg2;
 - (void)makeVisibleItemsPerformPendedActions;
 - (void)removeDisabledItems:(BOOL*)arg1;
 - (void)positionInvisibleItems;
+- (void)setVisibilityOfItem:(id)arg1 visible:(BOOL)arg2;
+- (void)reflowWithVisibleItems:(id)arg1 duration:(double)arg2;
+- (void)setVisibilityOfAllItems:(BOOL)arg1;
 - (BOOL)updateItemsWithData:(id)arg1 actions:(int)arg2 animated:(BOOL)arg3;
 - (BOOL)prepareEnabledItems:(BOOL*)arg1 withData:(id)arg2 actions:(int)arg3;
 - (void)setForegroundView:(id)arg1;

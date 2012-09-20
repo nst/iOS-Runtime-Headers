@@ -22,17 +22,17 @@
     int isFinishedFlag;
 }
 
-+ (int)getNumActiveProcessors;
-+ (double)getProcessorSpeed;
 + (unsigned long long)getPhysicalMemory;
++ (double)getProcessorSpeed;
++ (int)getNumActiveProcessors;
 
 - (unsigned int)retainCount;
 - (id)retain;
-- (void)release;
 - (void)dealloc;
+- (void)release;
+- (id)initWithFunction:(int (*)())arg1 withArgument:(void*)arg2 andPriority:(int)arg3;
+- (void)finalize;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (void)finalize;
-- (id)initWithFunction:(int (*)())arg1 withArgument:(void*)arg2 andPriority:(int)arg3;
 
 @end

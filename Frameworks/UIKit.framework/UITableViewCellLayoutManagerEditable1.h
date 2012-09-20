@@ -6,14 +6,14 @@
 }
 
 
-- (float)defaultTextFieldFontSizeForCell:(id)arg1;
-- (id)editableTextFieldForCell:(id)arg1;
-- (id)detailTextLabelForCell:(id)arg1;
-- (id)textLabelForCell:(id)arg1;
 - (void)_textValueChanged:(id)arg1;
 - (void)_textFieldEndEditingOnReturn:(id)arg1;
 - (void)_textFieldEndEditing:(id)arg1;
 - (void)_textFieldStartEditing:(id)arg1;
+- (float)defaultTextFieldFontSizeForCell:(id)arg1;
+- (id)editableTextFieldForCell:(id)arg1;
+- (id)detailTextLabelForCell:(id)arg1;
+- (id)textLabelForCell:(id)arg1;
 - (void)layoutSubviewsOfCell:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;

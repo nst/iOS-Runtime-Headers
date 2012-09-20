@@ -10,14 +10,14 @@
 }
 
 
-- (void)dealloc;
 - (void)reloadView;
+- (void)_reloadButtons;
+- (void)_buttonAction:(id)arg1;
+- (void)setConfiguration:(id)arg1;
+- (void)dealloc;
 - (id)_newButton;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)_reloadButtons;
-- (void)_buttonAction:(id)arg1;
-- (void)setConfiguration:(id)arg1;
 
 @end

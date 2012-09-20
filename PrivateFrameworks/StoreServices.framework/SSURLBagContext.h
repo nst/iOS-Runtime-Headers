@@ -4,36 +4,57 @@
 
 @class NSString, NSDictionary, NSNumber, NSMutableDictionary;
 
-@interface SSURLBagContext : NSObject <SSCoding, SSXPCCoding, NSCopying> {
+@interface SSURLBagContext : NSObject <SSXPCCoding, NSCopying> {
+    int _allowedRetryCount;
+    BOOL _allowsExpiredBags;
     int _bagType;
     NSMutableDictionary *_httpHeaders;
+    BOOL _ignoresDiskCache;
     NSNumber *_userIdentifier;
+    BOOL _usesCachedBagsOnly;
 }
 
+@property int allowedRetryCount;
 @property int bagType;
 @property(readonly) NSString * cacheKey;
+@property BOOL ignoresDiskCache;
 @property(retain) NSNumber * userIdentifier;
 @property(copy) NSDictionary * allHTTPHeaders;
+@property(readonly) struct __CFString { }* diskCacheExpirationTimeKey;
+@property(readonly) NSString * diskCacheKey;
+@property(readonly) NSString * diskCachePath;
+@property BOOL allowsExpiredBags;
+@property BOOL usesCachedBagsOnly;
 
 + (id)contextWithBagType:(int)arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)valueForHTTPHeaderField:(id)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
-- (id)cacheKey;
-- (void)setAllHTTPHeaders:(id)arg1;
-- (id)allHTTPHeaders;
-- (int)bagType;
-- (id)userIdentifier;
+- (id)valueForHTTPHeaderField:(id)arg1;
+- (void)setAllowedRetryCount:(int)arg1;
 - (void)setUserIdentifier:(id)arg1;
 - (void)setBagType:(int)arg1;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setUsesCachedBagsOnly:(BOOL)arg1;
+- (BOOL)usesCachedBagsOnly;
+- (BOOL)ignoresDiskCache;
+- (void)setAllowsExpiredBags:(BOOL)arg1;
+- (BOOL)allowsExpiredBags;
+- (id)diskCachePath;
+- (struct __CFString { }*)diskCacheExpirationTimeKey;
+- (void)setAllHTTPHeaders:(id)arg1;
+- (id)allHTTPHeaders;
+- (id)diskCacheKey;
+- (int)bagType;
+- (id)userIdentifier;
+- (int)allowedRetryCount;
+- (void)setIgnoresDiskCache:(BOOL)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (id)cacheKey;
 
 @end

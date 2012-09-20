@@ -18,19 +18,19 @@
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (void)setEmailAddresses:(id)arg1;
-- (id)friends;
 - (void)setFriends:(id)arg1;
+- (void)setEmailAddresses:(id)arg1;
 - (id)emailAddresses;
-- (void)setProximity:(id)arg1;
-- (id)proximity;
+- (id)friends;
 - (void)setCurrentLocation:(id)arg1;
 - (id)currentLocation;
-- (id)requestedLocation;
 - (void)setRequestedLocation:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)requestedLocation;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
+- (void)setProximity:(id)arg1;
+- (id)proximity;
 
 @end

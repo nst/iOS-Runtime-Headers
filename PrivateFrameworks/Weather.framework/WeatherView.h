@@ -15,28 +15,28 @@
     UIView *_windView;
 }
 
-@property(setter=showCity:,retain) City * city;
 @property id delegate;
+@property(setter=showCity:,retain) City * city;
 
 
-- (void)dealloc;
-- (void)refreshLocalization;
-- (void)setBigIcon:(unsigned int)arg1 dayNightChanged:(BOOL)arg2;
-- (id)_secondaryBigIcon;
-- (void)showCity:(id)arg1;
-- (void)updateWeatherDisplayForCity:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })windFrame;
-- (id)bigImageBundle;
-- (void)_removeWindView;
-- (void)setupBigIconOffset:(int)arg1;
-- (void)setupSecondaryBigIconOffset:(int)arg1;
-- (void)updateWind;
-- (id)_bigIcon;
-- (void)cityDidStartWeatherUpdate:(id)arg1;
-- (void)cityDidFinishWeatherUpdate:(id)arg1;
-- (id)city;
-- (id)bundle;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)bundle;
+- (id)_secondaryBigIcon;
+- (void)setBigIcon:(unsigned int)arg1 dayNightChanged:(BOOL)arg2;
+- (void)refreshLocalization;
+- (void)showCity:(id)arg1;
+- (void)updateWind;
+- (void)setupSecondaryBigIconOffset:(int)arg1;
+- (void)setupBigIconOffset:(int)arg1;
+- (id)bigImageBundle;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })windFrame;
+- (BOOL)updateWeatherDisplayForCity:(id)arg1;
+- (void)cleanupWindView;
+- (id)_bigIcon;
+- (void)cityDidFinishWeatherUpdate:(id)arg1;
+- (void)cityDidStartWeatherUpdate:(id)arg1;
+- (id)city;
 
 @end

@@ -7,11 +7,12 @@
     Class *_classes;
 }
 
++ (id)signatureWithoutArguments;
 + (id)signatureWithArgumentCount:(unsigned int)arg1 classes:(Class)arg2;
 
-- (void)dealloc;
-- (Class)argumentClassAtIndex:(unsigned int)arg1;
-- (id)initWithArgumentCount:(unsigned int)arg1;
 - (void)setClass:(Class)arg1 forArgumentAtIndex:(unsigned int)arg2;
+- (id)initWithArgumentCount:(unsigned int)arg1;
+- (Class)argumentClassAtIndex:(unsigned int)arg1;
+- (void)dealloc;
 
 @end

@@ -49,23 +49,23 @@
 @property(retain) IUMediaDataSource * dataSource;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)setQuery:(id)arg1;
-- (id)imageCache;
-- (void)setImageCache:(id)arg1;
-- (BOOL)hasPlaceholderImage;
-- (id)titleColor;
-- (void)setTitleColor:(id)arg1;
-- (id)query;
-- (id)delegate;
-- (id)dataSource;
-- (void)setDelegate:(id)arg1;
-- (void)setDataSource:(id)arg1;
 - (id)subtitleColor;
 - (void)setSubtitleColor:(id)arg1;
 - (void)setPlaceholderImage:(id)arg1;
+- (void)setImageCache:(id)arg1;
 - (id)placeholderImage;
+- (id)imageCache;
+- (void)setQuery:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (BOOL)hasPlaceholderImage;
+- (void)setTitleColor:(id)arg1;
+- (id)titleColor;
+- (id)query;
+- (id)dataSource;
+- (void)setDataSource:(id)arg1;
 - (void)setUseUnmodifiedThumbnails:(BOOL)arg1;
 - (BOOL)useUnmodifiedThumbnails;
 - (BOOL)useTimedArtwork;

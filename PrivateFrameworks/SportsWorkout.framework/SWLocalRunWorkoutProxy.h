@@ -6,11 +6,11 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (void)endSeeking;
 - (void)beginSeekingForward;
 - (void)beginSeekingBackward;
+- (void)dealloc;
+- (id)init;
 - (id)sensorSearchState;
 - (id)currentSongName;
 - (int)musicSelection;

@@ -14,8 +14,8 @@
 
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithIndex:(unsigned int)arg1 inSection:(int)arg2;
 - (unsigned int)index;
 - (int)section;
+- (id)initWithIndex:(unsigned int)arg1 inSection:(int)arg2;
 
 @end

@@ -5,23 +5,20 @@
 @interface AuthScheme : NSObject  {
 }
 
-+ (id)knownSchemes;
++ (void)initialize;
 + (id)authSchemesForAccount:(id)arg1 connection:(id)arg2;
++ (id)knownSchemes;
 + (void)registerSchemeClass:(Class)arg1;
 + (id)schemeWithName:(id)arg1;
-+ (void)initialize;
 
-- (unsigned int)defaultPortForAccount:(id)arg1;
-- (BOOL)hasEncryption;
-- (id)authenticatorForAccount:(id)arg1 connection:(id)arg2;
-- (id)humanReadableName;
-- (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
-- (Class)authenticatorClass;
-- (BOOL)requiresPassword;
-- (Class)connectionClassForAccountClass:(Class)arg1;
-- (unsigned int)retainCount;
-- (id)retain;
-- (oneway void)release;
 - (id)name;
+- (id)humanReadableName;
+- (id)authenticatorForAccount:(id)arg1 connection:(id)arg2;
+- (BOOL)hasEncryption;
+- (unsigned int)defaultPortForAccount:(id)arg1;
+- (Class)authenticatorClass;
+- (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
+- (Class)connectionClassForAccountClass:(Class)arg1;
+- (BOOL)requiresPassword;
 
 @end

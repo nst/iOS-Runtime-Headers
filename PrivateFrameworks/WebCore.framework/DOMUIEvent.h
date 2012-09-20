@@ -7,7 +7,7 @@
 @interface DOMUIEvent : DOMEvent  {
 }
 
-@property(retain,readonly) DOMAbstractView * view;
+@property(readonly) DOMAbstractView * view;
 @property(readonly) int detail;
 @property(readonly) int keyCode;
 @property(readonly) int charCode;
@@ -19,15 +19,15 @@
 
 
 - (id)view;
-- (int)detail;
-- (int)layerX;
-- (int)layerY;
-- (int)which;
-- (void)initUIEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 detail:(int)arg5;
 - (void)initUIEvent:(id)arg1 :(BOOL)arg2 :(BOOL)arg3 :(id)arg4 :(int)arg5;
-- (int)pageX;
+- (void)initUIEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 detail:(int)arg5;
+- (int)which;
+- (int)layerY;
+- (int)layerX;
+- (int)detail;
 - (int)pageY;
-- (int)keyCode;
+- (int)pageX;
 - (int)charCode;
+- (int)keyCode;
 
 @end

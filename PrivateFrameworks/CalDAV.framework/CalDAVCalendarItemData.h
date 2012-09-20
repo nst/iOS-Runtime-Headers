@@ -2,18 +2,26 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSString, CalDAVCalendarServerScheduleChangesItem;
+@class CalDAVUpdateOwnerItem, NSString, CalDAVCalendarServerScheduleChangesItem;
 
 @interface CalDAVCalendarItemData : CoreDAVLeafDataPayload <CalDAVCalendarItemProtocol> {
     NSString *_scheduleTag;
     CalDAVCalendarServerScheduleChangesItem *_scheduleChanges;
+    CalDAVUpdateOwnerItem *_createdBy;
+    CalDAVUpdateOwnerItem *_updatedBy;
 }
 
 @property(retain) NSString * scheduleTag;
 @property(retain) CalDAVCalendarServerScheduleChangesItem * scheduleChanges;
+@property(retain) CalDAVUpdateOwnerItem * createdBy;
+@property(retain) CalDAVUpdateOwnerItem * updatedBy;
 
 
 - (void)dealloc;
+- (void)setUpdatedBy:(id)arg1;
+- (id)updatedBy;
+- (void)setCreatedBy:(id)arg1;
+- (id)createdBy;
 - (void)setScheduleChanges:(id)arg1;
 - (void)setScheduleTag:(id)arg1;
 - (id)scheduleTag;

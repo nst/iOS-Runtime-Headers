@@ -22,14 +22,14 @@
 @property(copy) id completionBlock;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)completionBlock;
-- (void)setCompletionBlock:(id)arg1;
 - (id)mediaObject;
 - (void)_beginTaskCompletion;
 - (void)_endTaskCompletion;
 - (void)writeMediaObject;
 - (id)initWithMediaObject:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setCompletionBlock:(id)arg1;
+- (id)completionBlock;
 
 @end

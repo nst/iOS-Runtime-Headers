@@ -7,7 +7,7 @@
 
 + (id)memoryViewWithAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 data:(char *)arg2 memory:(id)arg3;
 
-- (BOOL)isCursorPointerAligned;
 - (void)pointerAlignCursor;
+- (BOOL)isCursorPointerAligned;
 
 @end

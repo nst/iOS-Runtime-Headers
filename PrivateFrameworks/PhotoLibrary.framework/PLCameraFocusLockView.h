@@ -19,8 +19,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)startAnimating;
 - (void)finishedScalingDown;
 - (id)_createLockBoundsAnimation;

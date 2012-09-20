@@ -12,8 +12,9 @@
     BOOL _sendingAudio;
     BOOL _sendingVideo;
     BOOL _usingICE;
-    unsigned int _ardRole;
+    int _ardRole;
     unsigned int _state;
+    unsigned int _newState;
     int _error;
     unsigned int _reason;
 }
@@ -26,31 +27,34 @@
 @property(readonly) BOOL sendingAudio;
 @property(readonly) BOOL sendingVideo;
 @property(readonly) BOOL isUsingICE;
-@property(readonly) unsigned int ardRole;
+@property(readonly) int ardRole;
 @property(readonly) unsigned int state;
+@property(readonly) unsigned int newState;
 @property(readonly) int error;
 @property(readonly) unsigned int reason;
 
 + (id)filterNuggets:(id)arg1 filterEndedState:(BOOL)arg2 convertFromDict:(BOOL)arg3;
 + (id)nuggetWithDictionaryDescription:(id)arg1;
 
-- (void)dealloc;
 - (id)invitedBy;
-- (int)error;
-- (id)ID;
-- (unsigned int)reason;
-- (id)name;
 - (unsigned int)state;
+- (id)name;
+- (id)description;
+- (void)dealloc;
+- (unsigned int)reason;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)ID;
 - (void)setVCPartyID:(id)arg1;
-- (unsigned int)ardRole;
+- (int)ardRole;
 - (BOOL)sendingVideo;
 - (BOOL)sendingAudio;
+- (id)initWithParticipant:(id)arg1;
 - (id)dictionaryDescription;
 - (void)_configureWithDictionaryDescription:(id)arg1;
 - (id)vcPartyID;
+- (unsigned int)newState;
 - (BOOL)isUsingICE;
-- (id)initWithParticipant:(id)arg1;
+- (int)error;
 
 @end

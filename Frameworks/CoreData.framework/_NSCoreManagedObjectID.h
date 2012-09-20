@@ -7,36 +7,36 @@
 
 + (id)retain;
 + (id)alloc;
-+ (void)release;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)release;
++ (void)_storeDeallocated;
++ (id)_storeInfo1;
++ (void)_setStoreInfo1:(id)arg1;
++ (id)managedObjectIDFromURIRepresentation:(id)arg1;
++ (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2;
++ (unsigned int)allocateBatch:(id*)arg1 count:(unsigned int)arg2;
++ (Class)classWithStore:(id)arg1 andEntity:(id)arg2;
++ (void)setObjectStoreIdentifier:(id)arg1;
++ (void)_release_1;
++ (id)_retain_1;
++ (char *)generatedNameSuffix;
++ (BOOL)accessInstanceVariablesDirectly;
 + (int)version;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)initialize;
-+ (unsigned int)allocateBatch:(id*)arg1 count:(unsigned int)arg2;
-+ (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2;
-+ (id)managedObjectIDFromURIRepresentation:(id)arg1;
-+ (void)_storeDeallocated;
-+ (char *)generatedNameSuffix;
-+ (id)_retain_1;
-+ (void)_release_1;
-+ (void)setObjectStoreIdentifier:(id)arg1;
-+ (Class)classWithStore:(id)arg1 andEntity:(id)arg2;
-+ (id)_storeInfo1;
-+ (void)_setStoreInfo1:(id)arg1;
-+ (BOOL)accessInstanceVariablesDirectly;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (id)entity;
 - (unsigned int)retainCount;
+- (unsigned int)hash;
 - (id)retain;
+- (BOOL)isEqual:(id)arg1;
 - (void)release;
-- (void)finalize;
-- (BOOL)_isPersistentStoreAlive;
 - (id)URIRepresentation;
+- (BOOL)_isPersistentStoreAlive;
 - (id)_storeIdentifier;
 - (id)_storeInfo1;
-- (id)entity;
-- (id)persistentStore;
 - (BOOL)isTemporaryID;
+- (id)persistentStore;
+- (void)finalize;
 
 @end

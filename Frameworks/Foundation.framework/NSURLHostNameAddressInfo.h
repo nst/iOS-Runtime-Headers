@@ -10,10 +10,10 @@
 + (void)asyncResolveWithCallbackClient:(id)arg1;
 + (id)addressInfoForHost:(id)arg1;
 
+- (void)dealloc;
+- (void)finalize;
 - (struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; }*)addrinfo;
 - (id)_initWithAddressInfo:(struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; }*)arg1;
 - (double)_timestamp;
-- (void)dealloc;
-- (void)finalize;
 
 @end

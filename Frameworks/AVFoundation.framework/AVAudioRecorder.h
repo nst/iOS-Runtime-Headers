@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSURL, <AVAudioRecorderDelegate>, NSDictionary;
+@class <AVAudioRecorderDelegate>, NSArray, NSDictionary, NSURL;
 
 @interface AVAudioRecorder : NSObject  {
     void *_impl;
@@ -13,35 +13,42 @@
 @property(readonly) NSDictionary * settings;
 @property <AVAudioRecorderDelegate> * delegate;
 @property(readonly) double currentTime;
+@property(readonly) double deviceCurrentTime;
 @property(getter=isMeteringEnabled) BOOL meteringEnabled;
+@property(copy) NSArray * channelAssignments;
 
 
+- (double)currentTime;
+- (void)endInterruption;
+- (void)beginInterruption;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (void)pause;
+- (void)stop;
+- (id)settings;
+- (BOOL)record;
+- (id)url;
+- (void)finalize;
+- (void)endInterruptionWithFlags;
 - (BOOL)deleteRecording;
+- (BOOL)recordAtTime:(double)arg1 forDuration:(double)arg2;
 - (BOOL)recordForDuration:(double)arg1;
+- (BOOL)recordAtTime:(double)arg1;
 - (BOOL)prepareToRecord;
 - (BOOL)isRecording;
 - (id)initWithURL:(id)arg1 settings:(id)arg2 error:(id*)arg3;
 - (void)finishedRecording;
+- (void)setChannelAssignments:(id)arg1;
+- (id)channelAssignments;
 - (float)averagePowerForChannel:(unsigned int)arg1;
 - (float)peakPowerForChannel:(unsigned int)arg1;
 - (void)updateMeters;
 - (void)setMeteringEnabled:(BOOL)arg1;
 - (BOOL)isMeteringEnabled;
-- (double)currentTime;
+- (double)deviceCurrentTime;
 - (void)privCommonCleanup;
-- (void)endInterruption;
-- (void)endInterruptionWithFlags;
-- (void)beginInterruption;
 - (id)baseInit;
-- (struct AudioRecorderImpl { id x1; id x2; id x3; id x4; unsigned int x5; struct AudioStreamBasicDescription { double x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; unsigned int x_6_1_4; unsigned int x_6_1_5; unsigned int x_6_1_6; unsigned int x_6_1_7; unsigned int x_6_1_8; unsigned int x_6_1_9; } x6; struct OpaqueAudioFileID {} *x7; struct OpaqueAudioQueue {} *x8; long long x9; long long x10; long long x11; double x12; double x13; double x14; unsigned int x15; char *x16; unsigned int x17; struct AudioFormatListItem {} *x18; boolx19; boolx20; boolx21; boolx22; boolx23; boolx24; boolx25; struct AudioQueueLevelMeterState {} *x26; struct AudioQueueBuffer {} *x27[4]; struct AudioQueueBuffer {} *x28; boolx29; unsigned int x30; boolx31; }*)impl;
-- (BOOL)record;
-- (void)pause;
-- (void)stop;
-- (id)settings;
-- (id)url;
-- (void)finalize;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (struct AudioRecorderImpl { id x1; id x2; id x3; id x4; id x5; unsigned int x6; struct AudioStreamBasicDescription { double x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; unsigned int x_7_1_6; unsigned int x_7_1_7; unsigned int x_7_1_8; unsigned int x_7_1_9; } x7; struct OpaqueAudioFileID {} *x8; struct OpaqueAudioQueue {} *x9; long long x10; long long x11; long long x12; double x13; double x14; double x15; unsigned int x16; char *x17; unsigned int x18; struct AudioFormatListItem {} *x19; boolx20; boolx21; boolx22; boolx23; boolx24; boolx25; boolx26; struct AudioQueueLevelMeterState {} *x27; struct AudioQueueBuffer {} *x28[4]; struct AudioQueueBuffer {} *x29; boolx30; unsigned int x31; boolx32; }*)impl;
 
 @end

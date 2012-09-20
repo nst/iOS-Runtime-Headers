@@ -22,7 +22,7 @@
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)setRepeatInterval:(id)arg1;
-- (id)distanceUnits;
 - (void)setDistanceUnits:(id)arg1;
+- (id)distanceUnits;
 
 @end

@@ -9,8 +9,8 @@
 }
 
 @property(readonly) unsigned long long fsSN;
-@property(readonly) struct timespec { int tv_sec; long tv_nsec; } fsCreationTime;
-@property(readonly) struct timespec { int tv_sec; long tv_nsec; } fsModificationTime;
+@property(readonly) struct timespec { int x1; long x2; } fsCreationTime;
+@property(readonly) struct timespec { int x1; long x2; } fsModificationTime;
 @property(readonly) long long fsSize;
 @property unsigned int type;
 @property(copy) NSString * exifCreationDateTime;
@@ -25,38 +25,38 @@
 @property BOOL updatedBasicMetadata;
 
 
-- (void)dealloc;
-- (int)thmWidth;
-- (int)thmHeight;
-- (int)imgWidth;
-- (int)imgHeight;
-- (int)bitsPerPixel;
 - (void)setBitsPerPixel:(int)arg1;
-- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 fsSN:(unsigned long long)arg4 fsCreationTime:(struct timespec { int x1; long x2; })arg5 fsModificationTime:(struct timespec { int x1; long x2; })arg6 fsSize:(long long)arg7 fsFlags:(unsigned int)arg8;
-- (void)updateBasicMetadata;
-- (id)exifCreationDateTime;
-- (id)exifModificationDateTime;
-- (unsigned long long)fsSN;
-- (struct timespec { int x1; long x2; })fsCreationTime;
-- (long long)fsSize;
-- (int)thmSize;
-- (int)thmOffset;
-- (void)setExifCreationDateTime:(id)arg1;
-- (void)setExifModificationDateTime:(id)arg1;
-- (void)setImgWidth:(int)arg1;
-- (void)setImgHeight:(int)arg1;
-- (void)setThmSize:(int)arg1;
-- (void)setThmOffset:(int)arg1;
-- (void)setThmWidth:(int)arg1;
-- (void)setThmHeight:(int)arg1;
+- (int)bitsPerPixel;
+- (int)imgHeight;
+- (int)imgWidth;
+- (int)thmHeight;
+- (int)thmWidth;
 - (void)setUpdatedBasicMetadata:(BOOL)arg1;
+- (void)setThmHeight:(int)arg1;
+- (void)setThmWidth:(int)arg1;
+- (void)setThmOffset:(int)arg1;
+- (void)setThmSize:(int)arg1;
+- (void)setImgHeight:(int)arg1;
+- (void)setImgWidth:(int)arg1;
+- (void)setExifModificationDateTime:(id)arg1;
+- (void)setExifCreationDateTime:(id)arg1;
 - (BOOL)updatedBasicMetadata;
+- (int)thmOffset;
+- (int)thmSize;
 - (struct timespec { int x1; long x2; })fsModificationTime;
-- (id)thumbData;
-- (id)metadataDict;
+- (long long)fsSize;
+- (struct timespec { int x1; long x2; })fsCreationTime;
+- (unsigned long long)fsSN;
+- (id)exifModificationDateTime;
+- (id)exifCreationDateTime;
+- (void)updateBasicMetadata;
+- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 fsSN:(unsigned long long)arg4 fsCreationTime:(struct timespec { int x1; long x2; })arg5 fsModificationTime:(struct timespec { int x1; long x2; })arg6 fsSize:(long long)arg7 fsFlags:(unsigned int)arg8;
 - (long)writeDataToFile:(int)arg1 fromOffset:(long long)arg2 ofLength:(long long*)arg3;
-- (void)finalize;
+- (id)metadataDict;
+- (id)thumbData;
 - (unsigned int)type;
+- (void)dealloc;
+- (void)finalize;
 - (void)setType:(unsigned int)arg1;
 
 @end

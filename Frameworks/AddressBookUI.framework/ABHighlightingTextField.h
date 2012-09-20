@@ -13,28 +13,28 @@
     <ABResponderDelegate> *_responderDelegate;
 }
 
+@property(setter=abSetHighlighted:) BOOL abIsHighlighted;
+@property(setter=abSetHighlightingEnabled:) BOOL abIsHighlightingEnabled;
+@property(setter=abSetHighlightedTextColor:,retain) UIColor * abHighlightedTextColor;
 @property BOOL showsClearButtonWhenEmpty;
 @property <ABResponderDelegate> * responderDelegate;
-@property(setter=abSetHighlightedTextColor:,retain) UIColor * abHighlightedTextColor;
-@property(setter=abSetHighlightingEnabled:) BOOL abIsHighlightingEnabled;
-@property(setter=abSetHighlighted:) BOOL abIsHighlighted;
 
 
 - (void)dealloc;
-- (void)abSetHighlighted:(BOOL)arg1;
-- (void)setShowsClearButtonWhenEmpty:(BOOL)arg1;
-- (BOOL)showsClearButtonWhenEmpty;
-- (id)responderDelegate;
-- (void)setResponderDelegate:(id)arg1;
-- (id)abHighlightedTextColor;
-- (void)abSetHighlightedTextColor:(id)arg1;
-- (BOOL)abIsHighlightingEnabled;
-- (void)abSetHighlightingEnabled:(BOOL)arg1;
-- (BOOL)abIsHighlighted;
+- (void)setTextColor:(id)arg1;
 - (BOOL)_showsClearButtonWhenEmpty;
-- (BOOL)becomeFirstResponder;
 - (id)_previousKeyResponder;
 - (id)_nextKeyResponder;
-- (void)setTextColor:(id)arg1;
+- (BOOL)becomeFirstResponder;
+- (BOOL)showsClearButtonWhenEmpty;
+- (void)setResponderDelegate:(id)arg1;
+- (id)responderDelegate;
+- (void)abSetHighlightedTextColor:(id)arg1;
+- (id)abHighlightedTextColor;
+- (void)abSetHighlightingEnabled:(BOOL)arg1;
+- (BOOL)abIsHighlightingEnabled;
+- (BOOL)abIsHighlighted;
+- (void)setShowsClearButtonWhenEmpty:(BOOL)arg1;
+- (void)abSetHighlighted:(BOOL)arg1;
 
 @end

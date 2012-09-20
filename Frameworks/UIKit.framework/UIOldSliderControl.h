@@ -63,8 +63,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setSendActionDuringAnimation:(BOOL)arg1;
 - (float)_validatedValueForPoint:(struct CGPoint { float x1; float x2; })arg1 includeTickMarks:(BOOL)arg2;
 - (void)setMaxValueImage:(id)arg1;
@@ -100,17 +100,17 @@
 - (void)animator:(id)arg1 stopAnimation:(id)arg2;
 - (void)_sendDelayedActions;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
-- (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
-- (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
-- (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
-- (void)_controlMouseUp:(struct __GSEvent { }*)arg1;
-- (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)continueTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;
-- (BOOL)beginTrackingAt:(struct CGPoint { float x1; float x2; })arg1 withEvent:(struct __GSEvent { }*)arg2;
-- (void)endTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
+- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
+- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)_controlMouseUp:(struct __GSEvent { }*)arg1;
+- (void)endTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;
+- (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
+- (BOOL)continueTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;
+- (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
+- (BOOL)beginTrackingAt:(struct CGPoint { float x1; float x2; })arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)_scriptingInfo;
 - (void)setEnabled:(BOOL)arg1;

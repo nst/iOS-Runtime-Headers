@@ -15,34 +15,34 @@
     NSData *_lastCropRectChecksum;
 }
 
-@property(readonly) NSData * lastCropRectChecksum;
-@property(readonly) int lastCropRectHeight;
-@property(readonly) int lastCropRectWidth;
-@property(readonly) int lastCropRectY;
-@property(readonly) int lastCropRectX;
 @property(readonly) BOOL localRecordHasAdditionalProperties;
+@property(readonly) int lastCropRectX;
+@property(readonly) int lastCropRectY;
+@property(readonly) int lastCropRectWidth;
+@property(readonly) int lastCropRectHeight;
+@property(readonly) NSData * lastCropRectChecksum;
 
 
 - (void)dealloc;
-- (BOOL)importToPerson:(void*)arg1 removeExistingProperties:(BOOL)arg2;
-- (BOOL)importToGroup:(void*)arg1 removeExistingProperties:(BOOL)arg2;
-- (void*)createRecordInSource:(void*)arg1 outRecordType:(unsigned int*)arg2;
+- (id)initWithData:(id)arg1;
 - (id)lastCropRectChecksum;
 - (int)lastCropRectHeight;
 - (int)lastCropRectWidth;
 - (int)lastCropRectY;
 - (int)lastCropRectX;
 - (BOOL)localRecordHasAdditionalProperties;
+- (void*)createRecordInSource:(void*)arg1 outRecordType:(unsigned int*)arg2;
+- (BOOL)importToGroup:(void*)arg1 removeExistingProperties:(BOOL)arg2;
+- (BOOL)importToPerson:(void*)arg1 removeExistingProperties:(BOOL)arg2;
 - (id)defaultADRLabel;
-- (void)cleanUpCardState;
-- (id)defaultLabel;
-- (void)setLocalRecordHasAdditionalProperties:(BOOL)arg1;
-- (void)noteLackOfValueForProperty:(unsigned int)arg1;
-- (id)genericLabel;
-- (BOOL)parseUID;
-- (id)defaultURLLabel;
-- (BOOL)_handleUnknownTag:(id)arg1 withValue:(id)arg2;
 - (void)noteLackOfValueForImageData;
-- (id)initWithData:(id)arg1;
+- (BOOL)_handleUnknownTag:(id)arg1 withValue:(id)arg2;
+- (id)defaultURLLabel;
+- (BOOL)parseUID;
+- (id)genericLabel;
+- (void)noteLackOfValueForProperty:(unsigned int)arg1;
+- (void)setLocalRecordHasAdditionalProperties:(BOOL)arg1;
+- (id)defaultLabel;
+- (void)cleanUpCardState;
 
 @end

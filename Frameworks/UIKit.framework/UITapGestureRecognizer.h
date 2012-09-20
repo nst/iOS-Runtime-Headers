@@ -19,9 +19,9 @@
 @property(readonly) struct CGPoint { float x1; float x2; } location;
 @property(readonly) NSArray * touches;
 
-+ (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
-+ (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 tapCount:(unsigned int)arg4;
 + (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 tapCount:(unsigned int)arg4 touchCount:(unsigned int)arg5;
++ (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 tapCount:(unsigned int)arg4;
++ (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
 
 - (void)dealloc;
 - (void)_setDelaysRecognitionForGreaterTapCounts:(BOOL)arg1;
@@ -33,9 +33,7 @@
 - (void)tapRecognizerFailedToRecognizeTap:(id)arg1;
 - (void)tapRecognizerRecognizedTap:(id)arg1;
 - (BOOL)tapIsPossibleForTapRecognizer:(id)arg1;
-- (unsigned int)numberOfTouchesRequired;
 - (double)maximumIntervalBetweenSuccessiveTaps;
-- (unsigned int)numberOfTapsRequired;
 - (id)touches;
 - (struct CGPoint { float x1; float x2; })centroid;
 - (void)setAllowableMovement:(float)arg1;
@@ -46,6 +44,8 @@
 - (struct CGPoint { float x1; float x2; })location;
 - (void)setNumberOfTapsRequired:(unsigned int)arg1;
 - (void)setNumberOfTouchesRequired:(unsigned int)arg1;
+- (unsigned int)numberOfTapsRequired;
+- (unsigned int)numberOfTouchesRequired;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (unsigned int)numberOfTouches;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

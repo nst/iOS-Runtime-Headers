@@ -6,9 +6,9 @@
 }
 
 + (BOOL)includeABClipRectInVCardPhotos;
++ (BOOL)includeImageURIInVCards;
 + (BOOL)includeNotesInVCards;
 + (BOOL)includeREVInVCards;
-+ (BOOL)includeImageURIInVCards;
 
 - (BOOL)useThumbnailImageFormatIfAvailable;
 

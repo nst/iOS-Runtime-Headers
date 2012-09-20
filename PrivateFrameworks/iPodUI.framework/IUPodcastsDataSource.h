@@ -15,6 +15,7 @@
 - (id)createNoContentDataSource;
 - (void)createGlobalContexts;
 - (void)setQueries:(id)arg1;
+- (Class)cellConfigurationClassForEntity:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (BOOL)allowsDeletion;
 - (SEL)libraryHasDisplayableEntitiesSelector;

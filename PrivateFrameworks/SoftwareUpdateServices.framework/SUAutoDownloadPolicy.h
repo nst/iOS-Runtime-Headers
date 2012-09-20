@@ -6,10 +6,10 @@
 }
 
 
+- (id)computeTimeOfWifiOnlyPeriodEndFromDate:(id)arg1;
 - (unsigned int)wifiOnlyPeriodInDays;
 - (BOOL)isDownloadAllowableForCellular;
 - (BOOL)isPowerRequired;
-- (id)computeTimeOfWifiOnlyPeriodEndFromDate:(id)arg1;
 - (id)initWithDescriptor:(id)arg1;
 
 @end

@@ -14,10 +14,17 @@
 @property(copy) NSString * addressBookEntityID;
 
 + (id)relations;
++ (id)defaultPropertiesToLoad;
 
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (id)radius;
+- (void)setRadius:(id)arg1;
+- (id)longitude;
+- (id)latitude;
 - (id)alarmOwner;
 - (void)setAlarmOwner:(id)arg1;
 - (id)calendarItemOwner;
@@ -27,11 +34,5 @@
 - (void)setLongitude:(id)arg1;
 - (void)setLatitude:(id)arg1;
 - (int)entityType;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (id)radius;
-- (void)setRadius:(id)arg1;
-- (id)latitude;
-- (id)longitude;
 
 @end

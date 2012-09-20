@@ -7,11 +7,17 @@
 
 + (id)objectWithDefaultButtonForScriptButton:(id)arg1;
 
-- (id)image;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (void)setImage:(id)arg1;
+- (void)connectButtonAction;
+- (void)disconnectButtonAction;
 - (void)setupNativeObject;
 - (void)destroyNativeObject;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
+- (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)image;
+- (id)title;
+- (int)tag;
+- (void)setTag:(int)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setImage:(id)arg1;
 
 @end

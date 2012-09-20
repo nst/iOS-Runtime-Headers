@@ -6,6 +6,7 @@
 
 @interface SUScriptWindow : SUScriptObject  {
     SUScriptViewController *_backViewController;
+    BOOL _canSwipeToDismiss;
     SUScriptWindowContext *_context;
     SUScriptViewController *_frontViewController;
     id _height;
@@ -17,6 +18,7 @@
 }
 
 @property(readonly) SUScriptWindowContext * context;
+@property(copy) id canSwipeToDismiss;
 @property(retain) SUScriptViewController * backViewController;
 @property(retain) SUScriptViewController * frontViewController;
 @property(retain) NSNumber * height;
@@ -28,66 +30,49 @@
 @property(retain) NSNumber * width;
 @property(readonly) SUScriptViewController * windowParentViewController;
 
++ (void)dismissWindowsWithOptions:(id)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
-+ (void)_dismissWindowsAnimated:(BOOL)arg1;
-+ (void)dismissWindowsWithOptions:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (void)setHeight:(id)arg1;
-- (id)height;
-- (void)_setWidth:(float)arg1;
-- (void)setShadowOpacity:(id)arg1;
-- (void)setShadowRadius:(id)arg1;
-- (void)show:(id)arg1;
-- (id)style;
-- (id)context;
-- (void)setWidth:(id)arg1;
-- (id)width;
-- (id)attributeKeys;
-- (void)_reloadVisibility;
 - (id)windowParentViewController;
 - (void)setMaskFunction:(id)arg1;
 - (id)maskFunction;
-- (id)initWithContext:(id)arg1;
 - (void)flip:(id)arg1;
 - (void)dismiss:(id)arg1;
 - (void)_overlayDidShowNotification:(id)arg1;
 - (void)_overlayDidFlipNotification:(id)arg1;
 - (void)_overlayDidDismissNotification:(id)arg1;
-- (void)setShouldDismissFunction:(id)arg1;
-- (void)setFrontViewController:(id)arg1;
+- (id)shouldDismissFunction;
 - (id)shadowRadius;
 - (id)shadowOpacity;
-- (id)_newOverlayTransitionWithOptions:(id)arg1;
-- (id)_backgroundViewController:(BOOL)arg1;
-- (id)shouldDismissFunction;
-- (id)frontViewController;
-- (id)backViewController;
-- (id)_overlayViewController:(BOOL)arg1;
-- (id)_copyWindowParentViewController;
-- (id)_copyShouldDismissFunction;
-- (float)_mainThreadShadowRadius;
-- (float)_mainThreadShadowOpacity;
-- (void)_setShouldDismissFunction:(id)arg1;
-- (void)_setShadowRadius:(float)arg1;
-- (void)_setShadowOpacity:(float)arg1;
-- (void)_setFrontViewController:(id)arg1;
-- (void)_setMaskFunction:(id)arg1;
-- (void)_setHeight:(float)arg1;
-- (void)_setBackViewController:(id)arg1;
 - (struct CGSize { float x1; float x2; })_overlaySize;
-- (id)_copyFrontViewController;
-- (id)_copyBackViewController;
-- (void)_show:(id)arg1;
-- (void)_flip:(id)arg1;
-- (void)_dismiss:(id)arg1;
+- (id)frontViewController;
+- (id)canSwipeToDismiss;
+- (id)backViewController;
+- (void)setShouldDismissFunction:(id)arg1;
+- (void)setFrontViewController:(id)arg1;
+- (void)setCanSwipeToDismiss:(id)arg1;
+- (id)_newOverlayTransitionWithOptions:(id)arg1;
+- (id)_overlayViewController:(BOOL)arg1;
+- (id)_backgroundViewController:(BOOL)arg1;
 - (id)_copySafeTransitionOptionsFromOptions:(id)arg1;
 - (void)_registerForOverlayNotifications;
 - (void)setBackViewController:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)dealloc;
+- (id)init;
+- (id)initWithContext:(id)arg1;
+- (void)setHeight:(id)arg1;
+- (id)height;
+- (void)setShadowRadius:(id)arg1;
+- (void)setShadowOpacity:(id)arg1;
+- (void)show:(id)arg1;
+- (id)style;
+- (void)setWidth:(id)arg1;
+- (id)width;
+- (id)context;
+- (id)attributeKeys;
 
 @end

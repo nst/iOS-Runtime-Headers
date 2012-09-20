@@ -2,15 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSFileManager;
-
 @interface _NSFileManagerInfo : NSObject  {
-    NSFileManager *_fm;
     id _delegate;
     id _handler;
 }
 
 
-- (id)initWithFileManager:(id)arg1;
 
 @end

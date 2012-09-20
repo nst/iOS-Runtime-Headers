@@ -29,10 +29,12 @@
 + (id)_findPasteboard;
 + (id)generalPasteboard;
 
-- (id)string;
+- (id)name;
+- (id)URL;
 - (void)setString:(id)arg1;
-- (id)init;
+- (id)string;
 - (void)dealloc;
+- (id)init;
 - (id)colors;
 - (void)setColors:(id)arg1;
 - (id)URLs;
@@ -42,11 +44,12 @@
 - (void)setStrings:(id)arg1;
 - (void)setPersistent:(BOOL)arg1;
 - (BOOL)isPersistent;
+- (void)addItems:(id)arg1;
 - (id)itemSetWithPasteboardTypes:(id)arg1;
 - (void)setValue:(id)arg1 forPasteboardType:(id)arg2;
-- (id)dataForPasteboardType:(id)arg1;
+- (BOOL)containsPasteboardTypes:(id)arg1;
 - (id)pasteboardTypes;
-- (void)addItems:(id)arg1;
+- (void)_addItems:(id)arg1 oldPasteboardTypes:(id)arg2;
 - (void)_pasteboardChanged:(id)arg1;
 - (id)pasteboardTypesForItemSet:(id)arg1;
 - (void)setData:(id)arg1 forPasteboardType:(id)arg2;
@@ -57,20 +60,20 @@
 - (id)valuesForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (int)numberOfItems;
 - (int)changeCount;
-- (id)URL;
-- (BOOL)containsPasteboardTypes:(id)arg1;
 - (id)valueForPasteboardType:(id)arg1;
+- (id)dataForPasteboardType:(id)arg1;
 - (id)color;
 - (void)setColor:(id)arg1;
 - (id)image;
 - (void)setItems:(id)arg1;
 - (id)items;
-- (id)name;
 - (id)images;
 - (void)setImage:(id)arg1;
-- (void)pl_setAssets:(id)arg1;
-- (id)pl_assetsInPhotoLibrary:(id)arg1;
 - (BOOL)pl_containsAssets;
+- (id)pl_assetsInPhotoLibrary:(id)arg1;
+- (void)pl_setAssets:(id)arg1;
 - (void)pl_setAsset:(id)arg1;
+- (id)mf_getAttachmentsPasteboardRepresentations;
+- (void)mf_addPasteboardRepresentationsForAttachments:(id)arg1;
 
 @end

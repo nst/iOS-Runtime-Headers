@@ -9,10 +9,10 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (void)setDrawable:(id)arg1;
 - (id)drawable;
 

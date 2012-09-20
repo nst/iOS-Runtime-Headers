@@ -2,21 +2,36 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
+@class UIImage;
+
 @interface GKAchievementCellContent : GKMultilineCellContentView  {
     BOOL _highlighted;
     BOOL _offsetImage;
+    BOOL _largeIcons;
+    UIImage *_highlightedImage;
 }
 
 @property(getter=isHighlighted) BOOL highlighted;
 @property BOOL offsetImage;
+@property(readonly) BOOL largeIcons;
+@property(retain) UIImage * highlightedImage;
 
 
-- (id)init;
-- (void)setOffsetImage:(BOOL)arg1;
+- (BOOL)largeIcons;
 - (BOOL)offsetImage;
 - (void)drawLineIndex:(unsigned int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
-- (void)setTheme:(id)arg1;
+- (void)adjustLineRects:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 forLines:(id)arg2 inTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gkPopoverPresentationRect;
+- (id)initWithLargeIcons:(BOOL)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_gkPopoverPresentationInsets;
+- (void)setOffsetImage:(BOOL)arg1;
+- (void)dealloc;
+- (void)setHighlightedImage:(id)arg1;
+- (void)prepareForReuse;
+- (id)highlightedImage;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
+- (id)image;
+- (void)setTheme:(id)arg1;
 
 @end

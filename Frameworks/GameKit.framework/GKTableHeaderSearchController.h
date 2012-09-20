@@ -2,38 +2,39 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKTableView, NSArray, UISearchBar, GKTableViewControllerV2, UISearchDisplayController;
+@class GKTableView, UISearchBar, GKTableViewControllerV2, UISearchDisplayController, NSOrderedSet;
 
 @interface GKTableHeaderSearchController : NSObject <UISearchBarDelegate, UISearchDisplayDelegate> {
     GKTableView *_tableView;
     GKTableViewControllerV2 *_tableController;
     UISearchDisplayController *_searchController;
     UISearchBar *_searchBar;
-    NSArray *_searchTableSections;
+    NSOrderedSet *_searchTableSections;
     BOOL _searchBarHidden;
 }
 
 @property(readonly) GKTableView * tableView;
 @property(retain) UISearchDisplayController * searchDisplayController;
 @property GKTableViewControllerV2 * tableController;
-@property(retain) NSArray * searchTableSections;
+@property(retain) NSOrderedSet * searchTableSections;
 @property(retain) UISearchBar * searchBar;
 @property BOOL searchBarHidden;
 
 + (id)playerNamePredicateForSearchText:(id)arg1;
 + (id)searchControllerForTableView:(id)arg1 withController:(id)arg2;
 
-- (void)dealloc;
 - (void)setSearchBarHidden:(BOOL)arg1;
 - (BOOL)searchBarHidden;
 - (void)didTouchOverlayView;
 - (void)cancelSearchAndDismiss;
+- (void)updateStatusViewWithResults:(BOOL)arg1;
 - (id)searchTableSections;
 - (void)setTableController:(id)arg1;
 - (BOOL)isSearchActive;
 - (void)setTableView:(id)arg1 tableController:(id)arg2;
 - (id)tableController;
 - (void)setSearchTableSections:(id)arg1;
+- (void)dealloc;
 - (void)setSearchBar:(id)arg1;
 - (Class)_resultsTableViewClass;
 - (void)searchDisplayController:(id)arg1 didHideSearchResultsTableView:(id)arg2;

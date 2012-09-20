@@ -19,28 +19,28 @@
 
 + (void)_runLookup;
 
+- (int)identifier;
+- (int)type;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void*)ABPerson;
-- (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
-- (id)initWithDictionaryRepresentation:(id)arg1;
-- (void)dictionaryRepresentation:(id*)arg1 isDirty:(BOOL*)arg2;
-- (id)nonLocalizedLabel;
-- (int)_abUid;
-- (void)recheckAddressBook;
-- (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3 type:(int)arg4;
-- (id)initWithDictionaryRepresentation:(id)arg1 addressBook:(void*)arg2;
-- (void)_unqueueLookup;
-- (void)_queueLookup;
-- (void)_lookupNotFound;
-- (void)_lookupChanged:(id)arg1;
-- (void)_postEntryChanged;
+- (int)property;
 - (id)displayName;
 - (id)dictionaryRepresentation;
-- (int)type;
 - (id)label;
 - (id)value;
-- (int)identifier;
-- (int)property;
+- (void)_postEntryChanged;
+- (void)_lookupChanged:(id)arg1;
+- (void)_lookupNotFound;
+- (void)recheckAddressBook;
+- (int)_abUid;
+- (void*)ABPerson;
+- (id)nonLocalizedLabel;
+- (void)dictionaryRepresentation:(id*)arg1 isDirty:(BOOL*)arg2;
+- (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
+- (void)_queueLookup;
+- (void)_unqueueLookup;
+- (id)initWithDictionaryRepresentation:(id)arg1 addressBook:(void*)arg2;
+- (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3 type:(int)arg4;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 
 @end

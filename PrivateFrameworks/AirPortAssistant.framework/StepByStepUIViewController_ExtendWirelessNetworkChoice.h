@@ -16,13 +16,13 @@
 @property(retain) UILabel * justLabelView;
 
 
-- (void)updateNavigationButtons;
 - (void)setJustLabelView:(id)arg1;
 - (void)setupPickerTable;
 - (void)addBrowsedRecords:(id)arg1 toDestList:(id)arg2;
 - (id)justLabelView;
 - (BOOL)canBeExtendedWithDWDS;
 - (void)selectedDeviceUpdated;
+- (void)updateNavigationButtons;
 - (id)deviceTableLabel;
 - (id)devicePickerLabel;
 - (void)setupDevices;

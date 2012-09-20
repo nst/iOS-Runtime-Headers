@@ -2,35 +2,43 @@
    Image: /System/Library/PrivateFrameworks/AOSNotification.framework/AOSNotification
  */
 
-@class <AOSNotifySessionDelegate>;
+@class CPDistributedNotificationCenter, <AOSNotifySessionDelegate>;
 
 @interface AOSNotifySession : NSObject  {
-    unsigned int _serverPort;
     <AOSNotifySessionDelegate> *_delegate;
+    CPDistributedNotificationCenter *_center;
 }
 
 @property <AOSNotifySessionDelegate> * delegate;
 
-+ (id)copySetupToken:(id*)arg1;
-+ (id)copySerialNum:(id*)arg1;
++ (id)sharedInstance;
++ (id)copyLostModeParams;
++ (void)disableLostMode;
 + (id)copyStoreAccount;
++ (BOOL)lostModeIsActive;
 
-- (void)dealloc;
-- (id)initWithDelegate:(id)arg1;
-- (id)retrieveCurrentAccountForService:(id)arg1 returningAccount:(id*)arg2;
-- (id)retrieveAllAccounts:(id*)arg1;
-- (id)vetEmailAccount:(id)arg1;
-- (id)cancelEmailVet;
-- (id)getSetupToken:(id*)arg1;
-- (void)_topicNotified:(id)arg1;
-- (void)startListeningOnTopic:(id)arg1;
-- (void)stopListeningOnTopic:(id)arg1;
-- (void)_vetResultReceived:(id)arg1;
-- (void)_vetFinished:(id)arg1;
 - (id)removeAccount:(id)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (id)addAccount:(id)arg1;
-- (void)_stopDeliveringNotifications;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)initWithDelegate:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)dumpDebugInfo:(id)arg1;
+- (void)stopListeningOnTopic:(id)arg1;
+- (void)startListeningOnTopic:(id)arg1;
+- (id)cancelEmailVet;
+- (id)vetEmailAccount:(id)arg1;
+- (id)iCloudAccount;
+- (id)fmipAccount;
+- (id)retrieveFMFAccount:(id*)arg1;
+- (id)removeFMFAccountWithUsername:(id)arg1;
+- (id)addFMFAccount:(id)arg1;
+- (void)_vetFinished:(id)arg1;
+- (void)_vetResultReceived:(id)arg1;
+- (void)_stopVettingNotifications;
+- (id)_errorForCode:(int)arg1 message:(id)arg2;
+- (id)retrieveAllAccounts:(id*)arg1;
+- (id)retrieveCurrentAccountForService:(id)arg1 returningAccount:(id*)arg2;
 
 @end

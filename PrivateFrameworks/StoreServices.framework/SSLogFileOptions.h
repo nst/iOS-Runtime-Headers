@@ -18,8 +18,8 @@
 
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setMaxNumberOfLogFiles:(int)arg1;
 - (int)maxNumberOfLogFiles;
 - (void)setMaxLogFileSize:(unsigned long)arg1;

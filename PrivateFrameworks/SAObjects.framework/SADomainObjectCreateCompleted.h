@@ -8,11 +8,11 @@
 }
 
 @property(copy) NSURL * identifier;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)domainObjectCreateCompleted;
 + (id)domainObjectCreateCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)domainObjectCreateCompleted;
 
 - (id)groupIdentifier;
 - (id)identifier;

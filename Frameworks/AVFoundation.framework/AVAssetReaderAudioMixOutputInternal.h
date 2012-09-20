@@ -8,6 +8,7 @@
     NSArray *audioTracks;
     AVAudioMix *audioMix;
     NSMutableDictionary *audioVolumeCurvesForTracks;
+    NSMutableDictionary *audioTapProcessorsForTracks;
     AVAudioOutputSettings *audioOutputSettings;
 }
 

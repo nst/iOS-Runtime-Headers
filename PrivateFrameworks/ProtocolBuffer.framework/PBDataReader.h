@@ -7,6 +7,7 @@
 @interface PBDataReader : NSObject  {
     unsigned int _pos;
     BOOL _error;
+    const char *_bytes;
     NSData *_data;
     unsigned int _length;
 }
@@ -15,42 +16,45 @@
 @property unsigned int position;
 
 
-- (unsigned int)length;
+- (id)data;
 - (void)dealloc;
-- (int)read:(const char *)arg1 maxLength:(unsigned int)arg2;
-- (unsigned int)readUint32;
-- (unsigned long long)readUint64;
-- (double)readDouble;
+- (unsigned int)length;
 - (unsigned int)offset;
 - (unsigned int)position;
 - (void)setPosition:(unsigned int)arg1;
-- (id)data;
 - (id)initWithData:(id)arg1;
+- (id)readBigEndianShortThenString;
+- (void)recall:(const struct { unsigned int x1; unsigned int x2; }*)arg1;
+- (BOOL)mark:(struct { unsigned int x1; unsigned int x2; }*)arg1;
+- (id)readData;
+- (BOOL)readBOOL;
+- (long long)readSfixed64;
+- (int)readSfixed32;
+- (unsigned long long)readFixed64;
+- (unsigned int)readFixed32;
+- (long long)readSint64;
+- (int)readSint32;
+- (long long)readInt64;
+- (int)readInt32;
+- (double)readDouble;
+- (long long)readVarInt;
+- (BOOL)readInt8;
+- (id)readProtoBuffer;
+- (unsigned long long)readBigEndianFixed64;
+- (void)updateData:(id)arg1;
+- (unsigned short)readBigEndianFixed16;
+- (unsigned int)readBigEndianFixed32;
 - (void)setLength:(unsigned int)arg1;
 - (BOOL)seekToOffset:(unsigned int)arg1;
 - (id)readBytes:(unsigned int)arg1;
 - (BOOL)isAtEnd;
-- (unsigned int)readFixed32;
-- (float)readFloat;
-- (BOOL)readBOOL;
-- (int)readInt32;
+- (unsigned int)readUint32;
 - (BOOL)skipValueWithTag:(unsigned short)arg1 andType:(unsigned char)arg2;
-- (unsigned long long)readFixed64;
+- (float)readFloat;
+- (unsigned long long)readUint64;
 - (id)readString;
-- (id)readData;
+- (BOOL)hasError;
 - (void)readTag:(unsigned short*)arg1 andType:(char *)arg2;
 - (BOOL)hasMoreData;
-- (BOOL)hasError;
-- (unsigned long long)readBigEndianFixed64;
-- (int)readSfixed32;
-- (id)readProtoBuffer;
-- (BOOL)readInt8;
-- (unsigned short)readBigEndianFixed16;
-- (long long)readSint64;
-- (int)readSint32;
-- (long long)readInt64;
-- (long long)readVarInt;
-- (long long)readSfixed64;
-- (unsigned int)readBigEndianFixed32;
 
 @end

@@ -18,14 +18,6 @@
 
 + (struct CGSize { float x1; float x2; })imageSize;
 
-- (id)init;
-- (void)dealloc;
-- (int)currentIndex;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)sizeToFit;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)layoutSubviews;
 - (void)pageControl:(id)arg1 wasTappedInDirection:(int)arg2;
 - (void)setCurrentIndex:(int)arg1;
 - (void)_setCurrentIndex:(int)arg1;
@@ -33,6 +25,14 @@
 - (int)numberOfScreenshots;
 - (void)setImage:(id)arg1 forIndex:(int)arg2;
 - (id)initWithScreenshotCount:(int)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)imageAtIndex:(int)arg1;
+- (int)currentIndex;
+- (void)sizeToFit;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)layoutSubviews;
 
 @end

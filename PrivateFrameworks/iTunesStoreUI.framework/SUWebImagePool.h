@@ -2,8 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface SUWebImagePool : NSObject  {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     struct __CFDictionary { } *_images;
     int _poolIdentifier;
 }
@@ -14,13 +16,13 @@
 + (void)removeWebImagePool:(id)arg1;
 + (void)addWebImagePool:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
 - (int)_poolIdentifier;
 - (id)imageForImageIdentifier:(int)arg1;
 - (id)_poolImageForImageIdentifier:(int)arg1;
 - (void)removeImageForIdentifier:(int)arg1;
 - (id)addImage:(id)arg1 withMIMEType:(id)arg2 identifier:(int)arg3;
 - (id)imageURLForImageIdentifier:(int)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

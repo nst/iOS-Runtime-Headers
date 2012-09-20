@@ -20,27 +20,27 @@
 @property float trackingValue;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)setBrush:(id)arg1;
 - (float)trackingValue;
 - (struct CGPoint { float x1; float x2; })lastLocation;
 - (void)layoutSubviewsInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)valueForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setLastLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setTrackingValue:(float)arg1;
-- (id)brush;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRatingStarsWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
+- (id)init;
 - (float)value;
 - (void)setValue:(float)arg1;
-- (void)cancelTrackingWithEvent:(id)arg1;
+- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)cancelTrackingWithEvent:(id)arg1;
 - (void)sizeToFit;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)brush;
+- (void)setBrush:(id)arg1;
 
 @end

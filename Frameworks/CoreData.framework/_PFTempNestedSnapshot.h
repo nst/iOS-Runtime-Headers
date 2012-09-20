@@ -6,15 +6,15 @@
 
 @interface _PFTempNestedSnapshot : NSObject  {
     NSKnownKeysDictionary *_snapshot;
-    unsigned int _version;
+    unsigned long _version;
 }
 
 
-- (void)dealloc;
 - (id)valueForKey:(id)arg1;
+- (void)dealloc;
 - (id)initWithOwnedKKsD:(id)arg1 andVersion:(unsigned long)arg2;
-- (const id*)knownKeyValuesPointer;
 - (id)_snapshot_;
+- (const id*)knownKeyValuesPointer;
 - (unsigned int)_versionNumber;
 
 @end

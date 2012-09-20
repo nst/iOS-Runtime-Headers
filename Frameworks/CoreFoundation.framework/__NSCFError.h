@@ -7,18 +7,18 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (id)userInfo;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (unsigned int)retainCount;
+- (unsigned int)hash;
 - (id)retain;
-- (oneway void)release;
+- (BOOL)isEqual:(id)arg1;
+- (id)userInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
 - (int)code;
 - (id)domain;
+- (void)finalize;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (void)finalize;
 - (Class)classForCoder;
 
 @end

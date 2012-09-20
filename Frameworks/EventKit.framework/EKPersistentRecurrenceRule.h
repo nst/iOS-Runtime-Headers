@@ -12,7 +12,7 @@
 @property(readonly) NSString * UUID;
 @property(readonly) NSString * calendarIdentifier;
 @property(copy) NSDate * endDate;
-@property int count;
+@property unsigned int count;
 @property int frequency;
 @property int interval;
 @property int firstDayOfTheWeek;
@@ -22,22 +22,29 @@
 @property(copy) NSArray * weeksOfTheYear;
 @property(copy) NSArray * monthsOfTheYear;
 @property(copy) NSArray * setPositions;
+@property(readonly) NSDate * cachedEndDate;
 @property(retain) EKPersistentCalendarItem * owner;
 @property(readonly) BOOL shouldPinMonthDays;
 
 + (id)relations;
 
-- (int)count;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (unsigned int)count;
+- (id)UUID;
 - (id)calendarIdentifier;
+- (int)interval;
+- (void)setInterval:(int)arg1;
+- (void)setCount:(unsigned int)arg1;
+- (void)setOwner:(id)arg1;
+- (id)owner;
 - (id)_helper;
 - (BOOL)isDirty;
 - (int)firstDayOfTheWeek;
-- (id)cachedEndDate;
 - (BOOL)shouldPinMonthDays;
+- (id)cachedEndDate;
 - (void)setFirstDayOfTheWeek:(int)arg1;
 - (id)weeksOfTheYear;
 - (id)daysOfTheYear;
@@ -56,13 +63,7 @@
 - (struct { int x1; int x2; int x3; int x4; int x5; double x6; })gregorianUnits;
 - (void)setEndDate:(id)arg1;
 - (id)endDate;
-- (int)entityType;
 - (BOOL)validate:(id*)arg1;
-- (int)interval;
-- (void)setInterval:(int)arg1;
-- (void)setCount:(int)arg1;
-- (void)setOwner:(id)arg1;
-- (id)owner;
-- (id)UUID;
+- (int)entityType;
 
 @end

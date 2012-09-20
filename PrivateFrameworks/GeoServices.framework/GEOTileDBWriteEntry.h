@@ -28,12 +28,12 @@
 @property(readonly) unsigned int tileSet;
 
 
-- (void)dealloc;
-- (id)initWithKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1 data:(id)arg2 tileEdition:(unsigned int)arg3 tileSet:(unsigned int)arg4;
-- (unsigned int)tileSet;
-- (id).cxx_construct;
-- (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })key;
 - (id)data;
+- (id).cxx_construct;
+- (void)dealloc;
+- (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })key;
+- (unsigned int)tileSet;
+- (id)initWithKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1 data:(id)arg2 tileEdition:(unsigned int)arg3 tileSet:(unsigned int)arg4;
 - (unsigned int)tileEdition;
 
 @end

@@ -8,8 +8,8 @@
 
 + (id)sharedLogging;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)logDiagnosticForProvider:(id)arg1 withLevel:(int)arg2 format:(id)arg3 args:(void*)arg4;
 - (struct __CFSet { }*)delegatesToLogTransmittedDataForAccountInfoProvider:(id)arg1;
 - (void)removeLogDelegate:(id)arg1 forAccountInfoProvider:(id)arg2;

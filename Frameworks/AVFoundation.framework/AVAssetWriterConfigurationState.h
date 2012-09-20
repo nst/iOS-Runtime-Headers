@@ -17,6 +17,7 @@
     NSArray *_metadataItems;
     int _movieTimeScale;
     NSArray *_inputs;
+    NSArray *_inputGroups;
 }
 
 @property(copy) NSURL * URL;
@@ -26,11 +27,15 @@
 @property(copy) NSArray * metadataItems;
 @property int movieTimeScale;
 @property(copy) NSArray * inputs;
+@property(copy) NSArray * inputGroups;
 
 
+- (id)URL;
 - (void)dealloc;
+- (void)setURL:(id)arg1;
+- (void)setInputGroups:(id)arg1;
+- (id)inputGroups;
 - (void)setInputs:(id)arg1;
-- (id)inputs;
 - (void)setMovieTimeScale:(int)arg1;
 - (int)movieTimeScale;
 - (void)setMetadataItems:(id)arg1;
@@ -41,7 +46,6 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (void)setMediaFileType:(id)arg1;
 - (id)mediaFileType;
-- (void)setURL:(id)arg1;
-- (id)URL;
+- (id)inputs;
 
 @end

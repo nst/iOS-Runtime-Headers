@@ -14,11 +14,12 @@
 }
 
 
+- (id).cxx_construct;
 - (struct CGSize { float x1; float x2; })size;
-- (double)arcWidth;
-- (double)headAngle;
-- (double)arrowWidth;
 - (double)arrowLength;
+- (double)arrowWidth;
+- (double)headAngle;
+- (double)arcWidth;
 - (struct CGPath { }*)createBezierPath;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 

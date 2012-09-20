@@ -2,6 +2,10 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 /* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
    The runtime does not encode function signature information.  We use a signature of: 
            "int (*funcName)()",  where funcName might be null. 
@@ -10,7 +14,10 @@
 @class <CalSearchDataSink>;
 
 @interface CalSearch : NSObject  {
-    struct CalDatabase { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; struct CPRecordStore {} *x3; struct CalEventOccurrenceCache {} *x4; struct __CFDictionary {} *x5; struct __CFDictionary {} *x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; boolx8; boolx9; unsigned int x10; unsigned int x11; struct __CFString {} *x12; int x13; int x14; struct __CFString {} *x15; int x16; } *_database;
+
+  /* Error parsing encoded ivar type info: ^{CalDatabase={__CFRuntimeBase=I[4C]}i^{CPRecordStore}^{CalEventOccurrenceCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}BII^{__CFArray}^{__CFString}ii^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}} */
+    struct CalDatabase { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; struct CPRecordStore {} *x3; struct CalEventOccurrenceCache {} *x4; struct __CFDictionary {} *x5; struct __CFDictionary {} *x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; boolx8; unsigned int x9; unsigned int x10; struct __CFArray {} *x11; struct __CFString {} *x12; int x13; int x14; struct __CFString {} *x15; int x16; id x17; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x18; struct _opaque_pthread_mutex_t { long x_19_1_1; BOOL x_19_1_2[40]; } x19; } *_database;
+
     struct CalFilter { } *_filter;
     struct __CFString { } *_searchString;
     int _seed;
@@ -58,7 +65,9 @@
 - (bool)moreResultsAvailable;
 - (void)stopSearching;
 - (void)startSearching;
-- (id)initWithDatabase:(struct CalDatabase { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; struct CPRecordStore {} *x3; struct CalEventOccurrenceCache {} *x4; struct __CFDictionary {} *x5; struct __CFDictionary {} *x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; boolx8; boolx9; unsigned int x10; unsigned int x11; struct __CFString {} *x12; int x13; int x14; struct __CFString {} *x15; int x16; }*)arg1 filter:(struct CalFilter { }*)arg2 dataSink:(id)arg3;
+- (id)initWithDatabase:(struct CalDatabase { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; struct CPRecordStore {} *x3; struct CalEventOccurrenceCache {} *x4; struct __CFDictionary {} *x5; struct __CFDictionary {} *x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; boolx8; unsigned int x9; unsigned int x10; struct __CFArray {} *x11; struct __CFString {} *x12; int x13; int x14; struct __CFString {} *x15; int x16; id x17; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x18; struct _opaque_pthread_mutex_t { long x_19_1_1; BOOL x_19_1_2[40]; } x19; }*)arg1 filter:(struct CalFilter { }*)arg2 dataSink:(id)arg3;
+     /* Encoded args for previous method: @20@0:4^{CalDatabase={__CFRuntimeBase=I[4C]}i^{CPRecordStore}^{CalEventOccurrenceCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}BII^{__CFArray}^{__CFString}ii^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}}8^{CalFilter=}12@16 */
+
 - (void)_startLoadingResults;
 
 @end

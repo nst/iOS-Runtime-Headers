@@ -11,29 +11,29 @@
 @property(copy) NSString * directionsType;
 @property(retain) SALocalSearchMapItem * itemDestination;
 @property(retain) SALocalSearchMapItem * itemSource;
-@property(retain) NSNumber * regionOfInterestRadiusInMiles;
+@property(copy) NSNumber * regionOfInterestRadiusInMiles;
 @property BOOL showDirections;
 @property BOOL showTraffic;
 
-+ (id)showMapPoints;
 + (id)showMapPointsWithDictionary:(id)arg1 context:(id)arg2;
++ (id)showMapPoints;
 
 - (id)groupIdentifier;
-- (BOOL)showTraffic;
-- (id)directionsType;
-- (BOOL)showDirections;
 - (void)setShowTraffic:(BOOL)arg1;
-- (void)setDirectionsType:(id)arg1;
+- (BOOL)showTraffic;
 - (void)setShowDirections:(BOOL)arg1;
-- (id)itemDestination;
-- (void)setItemDestination:(id)arg1;
-- (id)itemSource;
+- (BOOL)showDirections;
 - (void)setItemSource:(id)arg1;
-- (id)regionOfInterestRadiusInMiles;
+- (id)itemSource;
+- (void)setItemDestination:(id)arg1;
+- (id)itemDestination;
+- (void)setDirectionsType:(id)arg1;
+- (id)directionsType;
 - (void)setRegionOfInterestRadiusInMiles:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)regionOfInterestRadiusInMiles;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

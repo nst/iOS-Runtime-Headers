@@ -10,22 +10,22 @@
     float stepSize;
 }
 
-@property float stepSize;
-@property float sweepMax;
-@property float sweepMin;
-@property float sweepValue;
 @property float defaultValue;
+@property float sweepValue;
+@property float sweepMin;
+@property float sweepMax;
+@property float stepSize;
 
 
-- (float)defaultValue;
-- (void)setDefaultValue:(float)arg1;
-- (void)setSweepValue:(float)arg1;
-- (void)setSweepMin:(float)arg1;
-- (void)setSweepMax:(float)arg1;
 - (void)setStepSize:(float)arg1;
-- (float)sweepMax;
 - (float)stepSize;
+- (void)setSweepMax:(float)arg1;
+- (float)sweepMax;
+- (void)setSweepMin:(float)arg1;
 - (float)sweepMin;
+- (void)setSweepValue:(float)arg1;
+- (void)setDefaultValue:(float)arg1;
+- (float)defaultValue;
 - (float)sweepValue;
 
 @end

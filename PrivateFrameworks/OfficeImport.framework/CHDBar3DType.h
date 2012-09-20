@@ -11,8 +11,8 @@
 
 - (int)shapeType;
 - (int)gapDepth;
-- (void)setShapeType:(int)arg1;
 - (void)setGapDepth:(int)arg1;
 - (id)initWithChart:(id)arg1;
+- (void)setShapeType:(int)arg1;
 
 @end

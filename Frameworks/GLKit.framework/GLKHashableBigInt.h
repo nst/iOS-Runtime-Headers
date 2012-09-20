@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@interface GLKHashableBigInt : NSObject  {
+@interface GLKHashableBigInt : NSObject <NSCopying> {
     struct GLKBigInt_s { 
         unsigned long long n0; 
         unsigned long long n1; 
@@ -10,9 +10,9 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithBigInt:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

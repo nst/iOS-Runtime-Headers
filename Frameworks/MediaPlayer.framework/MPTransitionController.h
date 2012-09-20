@@ -28,30 +28,30 @@
 @property(retain) UIViewController * toContainerViewController;
 
 
-- (void)removeObserver:(id)arg1;
-- (id)init;
-- (void)dealloc;
+- (int)toInterfaceOrientation;
+- (int)fromInterfaceOrientation;
 - (void)addViewToFadeOut:(id)arg1 restoreOnPop:(BOOL)arg2;
 - (void)addViewToFadeIn:(id)arg1 restoreOnPop:(BOOL)arg2;
 - (void)willBeginTransition:(unsigned int)arg1;
 - (void)messageObserversWithSuccess:(BOOL)arg1;
+- (void)setToViewController:(id)arg1;
+- (void)setRootView:(id)arg1;
+- (void)setFromViewController:(id)arg1;
+- (void)setFromInterfaceOrientation:(int)arg1;
+- (void)setToInterfaceOrientation:(int)arg1;
 - (id)toContainerViewController;
 - (void)didFinishTransition:(BOOL)arg1;
 - (void)fadeViewsForRestore:(BOOL)arg1;
+- (void)setToContainerViewController:(id)arg1;
 - (id)rootView;
 - (id)toViewController;
-- (void)setToInterfaceOrientation:(int)arg1;
-- (int)toInterfaceOrientation;
-- (void)setFromInterfaceOrientation:(int)arg1;
-- (int)fromInterfaceOrientation;
 - (void)performTransition:(unsigned int)arg1;
-- (void)setToViewController:(id)arg1;
-- (void)setToContainerViewController:(id)arg1;
-- (void)setRootView:(id)arg1;
-- (void)setFromViewController:(id)arg1;
 - (void)transition:(unsigned int)arg1;
 - (void)addObserver:(id)arg1 didEndSelector:(SEL)arg2;
 - (id)fromViewController;
+- (void)removeObserver:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (float)duration;
 - (void)setDuration:(float)arg1;
 

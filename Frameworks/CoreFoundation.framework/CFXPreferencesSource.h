@@ -9,15 +9,15 @@
 }
 
 
-- (id)init;
+- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)dealloc;
+- (id)init;
+- (long)generationCount;
+- (void)finalize;
+- (void)setDisabled:(BOOL)arg1;
+- (unsigned char)synchronize;
 - (struct __CFDictionary { }*)copyDictionary;
 - (struct __CFArray { }*)copyKeyList;
 - (void*)getValueForKey:(struct __CFString { }*)arg1;
-- (long)generationCount;
-- (void)setDisabled:(BOOL)arg1;
-- (void)finalize;
-- (unsigned char)synchronize;
-- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 
 @end

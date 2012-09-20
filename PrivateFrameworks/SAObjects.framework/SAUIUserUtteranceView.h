@@ -9,8 +9,8 @@
 
 @property(copy) NSString * text;
 
-+ (id)userUtteranceView;
 + (id)userUtteranceViewWithDictionary:(id)arg1 context:(id)arg2;
++ (id)userUtteranceView;
 
 - (id)groupIdentifier;
 - (id)text;

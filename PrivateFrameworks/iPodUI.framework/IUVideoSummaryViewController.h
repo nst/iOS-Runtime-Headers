@@ -15,15 +15,15 @@
 + (Class)backstopViewClass;
 + (BOOL)supportsViewControllerStyle:(int)arg1;
 
-- (id)init;
+- (void)_networkTypeChangedNotification:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)title;
 - (void)reloadData;
-- (void)_networkTypeChangedNotification:(id)arg1;
 - (id)mediaItemForVideoSummaryView:(id)arg1;
 - (id)footerViewForVideoSummaryView:(id)arg1;
 - (id)_newURLRequestPropertiesForMediaItem:(id)arg1;

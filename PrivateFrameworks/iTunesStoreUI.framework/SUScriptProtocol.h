@@ -15,18 +15,16 @@
 @property(readonly) NSString * protocolVersion;
 @property BOOL shouldShowInOverlay;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (void)setProtocolVersion:(id)arg1;
-- (id)protocolVersion;
-- (id)attributeKeys;
 - (BOOL)shouldShowInOverlay;
 - (void)setShouldShowInOverlay:(BOOL)arg1;
 - (void)setOverlayBackgroundURLRequest:(id)arg1;
 - (void)setExcludeFromNavigationHistory:(BOOL)arg1;
 - (void)setCopyright:(id)arg1;
 - (void)setAllowedOrientations:(id)arg1;
+- (id)protocolVersion;
 - (id)overlayBackgroundURLRequest;
 - (BOOL)excludeFromNavigationHistory;
 - (void)setValuesFromDictionary:(id)arg1;
@@ -34,11 +32,11 @@
 - (id)_webThreadValueForProtocolKey:(id)arg1;
 - (void)_setProtocol:(id)arg1;
 - (id)_copyProtocol;
-- (void)setClientIdentifier:(id)arg1;
-- (id)clientIdentifier;
 - (id)copyright;
 - (id)allowedOrientations;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)clientIdentifier;
+- (id)attributeKeys;
 
 @end

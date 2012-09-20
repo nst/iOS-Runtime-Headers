@@ -2,10 +2,15 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
+@class NSManagedObjectContext;
+
 @interface NSMemoryStoreInPredicateOperator : NSInPredicateOperator  {
+    NSManagedObjectContext *_context;
 }
 
 
+- (void)dealloc;
 - (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
+- (void)setContext:(id)arg1;
 
 @end

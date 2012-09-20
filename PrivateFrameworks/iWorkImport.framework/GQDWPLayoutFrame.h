@@ -13,8 +13,8 @@
 
 
 - (void)dealloc;
-- (id)storage;
 - (unsigned int)textScale;
+- (id)storage;
 - (void)resolveStyleRef;
 - (id)layoutStyle;
 - (BOOL)isBlank;

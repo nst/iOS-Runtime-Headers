@@ -23,23 +23,23 @@
 @property(retain) NSData * data;
 
 
-- (id)init;
-- (void)dealloc;
 - (void)setChecksum:(unsigned short)arg1;
 - (unsigned short)checksum;
 - (unsigned char)packetType;
-- (id)initWithMessage:(id)arg1;
 - (unsigned int)totalLength;
 - (void)setTotalLength:(unsigned int)arg1;
 - (void)setPacketType:(unsigned char)arg1;
-- (void)setValid:(BOOL)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (unsigned int)sequenceNumber;
+- (void)setValid:(BOOL)arg1;
+- (id)data;
+- (void)dealloc;
+- (id)init;
+- (void)setVersion:(unsigned char)arg1;
 - (id)message;
 - (unsigned char)version;
 - (BOOL)valid;
-- (id)data;
-- (void)setVersion:(unsigned char)arg1;
 - (void)setData:(id)arg1;
+- (id)initWithMessage:(id)arg1;
 
 @end

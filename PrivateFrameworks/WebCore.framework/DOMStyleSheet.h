@@ -7,24 +7,24 @@
 @interface DOMStyleSheet : DOMObject  {
 }
 
-@property(copy,readonly) NSString * type;
+@property(readonly) NSString * type;
 @property BOOL disabled;
-@property(retain,readonly) DOMNode * ownerNode;
-@property(retain,readonly) DOMStyleSheet * parentStyleSheet;
-@property(copy,readonly) NSString * href;
-@property(copy,readonly) NSString * title;
-@property(retain,readonly) DOMMediaList * media;
+@property(readonly) DOMNode * ownerNode;
+@property(readonly) DOMStyleSheet * parentStyleSheet;
+@property(readonly) NSString * href;
+@property(readonly) NSString * title;
+@property(readonly) DOMMediaList * media;
 
 
+- (id)type;
 - (void)dealloc;
+- (void)finalize;
 - (void)setDisabled:(BOOL)arg1;
 - (BOOL)disabled;
-- (void)finalize;
-- (id)type;
 - (id)title;
 - (id)ownerNode;
 - (id)parentStyleSheet;
-- (id)href;
 - (id)media;
+- (id)href;
 
 @end

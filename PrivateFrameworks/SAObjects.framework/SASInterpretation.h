@@ -9,8 +9,8 @@
 
 @property(copy) NSArray * tokens;
 
-+ (id)interpretation;
 + (id)interpretationWithDictionary:(id)arg1 context:(id)arg2;
++ (id)interpretation;
 
 - (id)groupIdentifier;
 - (id)tokens;

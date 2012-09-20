@@ -10,14 +10,14 @@
 @property(retain) SAUIConfirmationOptions * confirmationOptions;
 @property(copy) NSArray * otherOptions;
 
-+ (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)snippet;
++ (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)confirmationOptions;
-- (void)setConfirmationOptions:(id)arg1;
-- (id)otherOptions;
 - (void)setOtherOptions:(id)arg1;
+- (id)otherOptions;
+- (void)setConfirmationOptions:(id)arg1;
+- (id)confirmationOptions;
 - (id)encodedClassName;
 
 @end

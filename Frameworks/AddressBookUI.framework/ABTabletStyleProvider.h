@@ -6,36 +6,36 @@
 }
 
 
-- (BOOL)serverSearchNavigationBarHidingEnabled;
-- (BOOL)searchControllerForceKeyboardDisplayEnabled;
-- (float)personValueFontMinSize;
-- (id)personValueEmphasizedColor;
-- (id)personValueImportantColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardActionButtonTitleSingleLineInsets;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardActionButtonImageInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardActionButtonTitleSingleLineInsets;
+- (id)personValueImportantColor;
+- (id)personValueEmphasizedColor;
+- (float)personValueFontMinSize;
+- (int)composeModalPresentationStyle;
 - (id)cardTableCellBorderColor;
-- (id)personHeaderPasteboardColor;
-- (id)personValueHighlightColor;
+- (BOOL)searchControllerForceKeyboardDisplayEnabled;
+- (BOOL)serverSearchNavigationBarHidingEnabled;
 - (id)personHeaderShadowColor;
-- (id)editorViewSmallFont;
-- (id)editorViewColor;
-- (id)editorViewLargeFont;
+- (id)personValueHighlightColor;
+- (id)personHeaderPasteboardColor;
 - (float)personEditorFieldVerticalInset;
+- (id)editorViewLargeFont;
+- (id)editorViewColor;
+- (id)editorViewSmallFont;
 - (float)personViewHorizontalCellInset;
-- (float)personLabelFontMinSize;
-- (id)personLabelFont;
-- (id)personActionFont;
 - (id)personActionColor;
+- (id)personActionFont;
+- (id)personLabelFont;
+- (float)personLabelFontMinSize;
 - (id)personValueColor;
 - (int)abCellStyleForGroupsTablePlain;
-- (int)composeModalPresentationStyle;
 - (id)personLabelColor;
 - (BOOL)labelPickerShouldPushCustomLabelCreator;
-- (int)abCellStyleForMembersTable;
-- (int)separatorStyleForCellStyle:(int)arg1;
-- (id)membersHeaderBackgroundColor;
-- (BOOL)membersSearchBarScrolls;
 - (BOOL)searchIsAlwaysActive;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)membersSearchBarIsInTableHeader;
+- (id)membersHeaderBackgroundColor;
+- (int)separatorStyleForCellStyle:(int)arg1;
+- (int)abCellStyleForMembersTable;
 
 @end

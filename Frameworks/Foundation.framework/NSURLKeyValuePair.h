@@ -11,14 +11,14 @@
 + (id)pairWithKey:(id)arg1 value:(id)arg2;
 + (id)pair;
 
-- (id)initWithKey:(id)arg1 value:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)setKey:(id)arg1;
 - (id)key;
 - (id)value;
 - (void)setValue:(id)arg1;
+- (id)initWithKey:(id)arg1 value:(id)arg2;
 
 @end

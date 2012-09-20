@@ -8,6 +8,7 @@
     EKCalendar *_calendar;
     UIColor *_color;
     BOOL _selected;
+    int _customGroupType;
     EKGroupInfo *_group;
 }
 
@@ -19,24 +20,30 @@
 @property(readonly) int displayOrder;
 @property(readonly) BOOL isSubscribed;
 @property(readonly) BOOL isShared;
+@property(readonly) BOOL isPublished;
 @property(readonly) BOOL isEditable;
+@property int customGroupType;
 
 
 - (id)description;
 - (void)dealloc;
-- (void)setGroup:(id)arg1;
-- (int)displayOrder;
-- (BOOL)isSubscribed;
-- (id)initWithCalendar:(id)arg1;
-- (BOOL)isShared;
 - (id)calendar;
 - (void)setCalendar:(id)arg1;
-- (BOOL)selected;
 - (id)group;
-- (BOOL)isEditable;
+- (void)setGroup:(id)arg1;
+- (BOOL)selected;
 - (id)color;
 - (void)setColor:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (id)title;
+- (BOOL)isEditable;
+- (void)setCustomGroupType:(int)arg1;
+- (void)_updateCustomGroupType;
+- (BOOL)isShared;
+- (int)customGroupType;
+- (BOOL)isPublished;
+- (int)displayOrder;
+- (BOOL)isSubscribed;
+- (id)initWithCalendar:(id)arg1;
 
 @end

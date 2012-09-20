@@ -12,25 +12,19 @@
     NSData *_dataForHighlight;
 }
 
-@property(readonly) CKMediaObject * mediaObject;
 @property(copy) NSArray * composeImages;
+@property(readonly) CKMediaObject * mediaObject;
 
 
-- (void)dealloc;
-- (void)setComposeData:(id)arg1;
-- (id)composeImages;
-- (void)setPreviewData:(id)arg1;
-- (id)composeData;
-- (void)setComposeImages:(id)arg1;
-- (id)detachedCopy;
-- (int)_orientation;
-- (BOOL)usesColoredBalloon;
-- (void)copyToPasteboard;
-- (id)highlightData;
-- (id)previewData;
-- (int)type;
 - (id)mediaObject;
 - (id)initWithMediaObject:(id)arg1;
 - (BOOL)isDisplayable;
+- (int)type;
+- (void)dealloc;
+- (void)setComposeImages:(id)arg1;
+- (id)composeImages;
+- (id)detachedCopy;
+- (void)copyToPasteboard;
+- (int)_orientation;
 
 @end

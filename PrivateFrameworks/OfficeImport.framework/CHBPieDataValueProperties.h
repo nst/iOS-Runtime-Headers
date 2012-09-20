@@ -10,8 +10,8 @@
 @interface CHBPieDataValueProperties : NSObject  {
 }
 
-+ (id)chdDataValueProperties;
 + (void)read:(id)arg1 from:(const struct XlChartSeriesFormat { int (**x1)(); struct XlChartLineStyle {} *x2; struct XlChartFillStyle {} *x3; struct XlChartMarkerStyle {} *x4; struct XlChartPicF {} *x5; int x6; unsigned short x7; unsigned short x8; unsigned short x9; int x10; boolx11; boolx12; boolx13; boolx14; boolx15; boolx16; boolx17; boolx18; boolx19; boolx20; }*)arg2;
++ (id)chdDataValueProperties;
 
 
 @end

@@ -2,45 +2,43 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString, GEOTileSetVersion;
+@class NSString, NSMutableArray;
 
 @interface GEOTileSet : PBCodable  {
     NSString *_baseURL;
+    NSString *_localizationURL;
     NSString *_multiTileURL;
-    int _style;
-    GEOTileSetVersion *_preferredVersion;
-    NSMutableArray *_validVersions;
     int _scale;
     int _size;
-    NSMutableArray *_providers;
+    int _style;
+    NSMutableArray *_supportedLanguages;
+    NSMutableArray *_validVersions;
+    BOOL _multiTileURLUsesStatusCodes;
+    struct { 
+        unsigned int multiTileURLUsesStatusCodes : 1; 
+    } _has;
 }
 
+@property(readonly) BOOL hasBaseURL;
 @property(retain) NSString * baseURL;
+@property(readonly) BOOL hasMultiTileURL;
 @property(retain) NSString * multiTileURL;
 @property int style;
-@property(retain) GEOTileSetVersion * preferredVersion;
 @property(retain) NSMutableArray * validVersions;
 @property int scale;
 @property int size;
-@property(retain) NSMutableArray * providers;
+@property(readonly) BOOL hasLocalizationURL;
+@property(retain) NSString * localizationURL;
+@property(retain) NSMutableArray * supportedLanguages;
+@property BOOL hasMultiTileURLUsesStatusCodes;
+@property BOOL multiTileURLUsesStatusCodes;
 
 
-- (id)description;
-- (void)dealloc;
-- (id)providers;
-- (id)validVersions;
-- (id)preferredVersion;
-- (id)providerAtIndex:(unsigned int)arg1;
-- (unsigned int)providersCount;
-- (id)validVersionAtIndex:(unsigned int)arg1;
-- (unsigned int)validVersionsCount;
-- (void)addProvider:(id)arg1;
-- (void)addValidVersion:(id)arg1;
-- (void)setProviders:(id)arg1;
-- (void)setValidVersions:(id)arg1;
-- (void)setPreferredVersion:(id)arg1;
-- (void)setMultiTileURL:(id)arg1;
 - (void)setBaseURL:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)baseURL;
 - (id)dictionaryRepresentation;
 - (int)style;
@@ -49,8 +47,31 @@
 - (void)setSize:(int)arg1;
 - (int)scale;
 - (int)size;
-- (BOOL)readFrom:(id)arg1;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)supportedLanguages;
+- (id)validVersions;
+- (void)setHasMultiTileURLUsesStatusCodes:(BOOL)arg1;
+- (void)setMultiTileURLUsesStatusCodes:(BOOL)arg1;
+- (BOOL)multiTileURLUsesStatusCodes;
+- (BOOL)hasMultiTileURLUsesStatusCodes;
+- (id)supportedLanguageAtIndex:(unsigned int)arg1;
+- (void)clearSupportedLanguages;
+- (unsigned int)supportedLanguagesCount;
+- (id)localizationURL;
+- (BOOL)hasLocalizationURL;
+- (id)validVersionAtIndex:(unsigned int)arg1;
+- (void)clearValidVersions;
+- (unsigned int)validVersionsCount;
 - (id)multiTileURL;
+- (BOOL)hasMultiTileURL;
+- (BOOL)hasBaseURL;
+- (void)addSupportedLanguage:(id)arg1;
+- (void)addValidVersion:(id)arg1;
+- (void)setSupportedLanguages:(id)arg1;
+- (void)setLocalizationURL:(id)arg1;
+- (void)setValidVersions:(id)arg1;
+- (void)setMultiTileURL:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 
 @end

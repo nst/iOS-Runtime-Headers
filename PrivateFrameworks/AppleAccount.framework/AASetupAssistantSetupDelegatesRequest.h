@@ -2,18 +2,19 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class AASigningSession, NSDictionary;
+@class AASigningSession, AAAccount, NSDictionary;
 
 @interface AASetupAssistantSetupDelegatesRequest : AARequest  {
     NSDictionary *setupParameters;
     AASigningSession *signingSession;
+    AAAccount *_account;
 }
 
 + (Class)responseClass;
 
-- (void)dealloc;
-- (id)urlRequest;
-- (id)initWithSetupParameters:(id)arg1 signingSession:(id)arg2;
+- (void).cxx_destruct;
 - (id)urlString;
+- (id)urlRequest;
+- (id)initWithAccount:(id)arg1 withSetupParameters:(id)arg2 signingSession:(id)arg3;
 
 @end

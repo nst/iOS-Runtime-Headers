@@ -6,8 +6,10 @@
 }
 
 
+- (void)_reloadUserInterface;
+- (void)setLocalizationBundle:(id)arg1;
 - (id)init;
-- (void)loadView;
 - (void)setSection:(id)arg1;
+- (void)loadView;
 
 @end

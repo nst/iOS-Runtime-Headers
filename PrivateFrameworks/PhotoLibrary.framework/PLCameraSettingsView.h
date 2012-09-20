@@ -18,11 +18,11 @@
 @property BOOL hdrIsOn;
 
 
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)dealloc;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
 - (void)_enterPanoramaMode;
 - (void)_toggleEnableHDR:(id)arg1;
 - (BOOL)hdrIsOn;

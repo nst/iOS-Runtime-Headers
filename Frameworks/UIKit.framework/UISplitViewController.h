@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPanGestureRecognizer, <UISplitViewControllerDelegate>, UIView, UIBarButtonItem, NSString, UIPopoverController, NSArray;
+@class <UISplitViewControllerDelegate>, UIView, UIBarButtonItem, NSString, UIPopoverController, UIGestureRecognizer, NSArray;
 
 @interface UISplitViewController : UIViewController <UIGestureRecognizerDelegate, GKContentRefresh, GKURLHandling> {
     id _delegate;
@@ -40,9 +40,9 @@
     UIView *_masterBackgroundView;
     BOOL _presentsInFadingPopover;
     BOOL _presentsWithGesture;
-    UIPanGestureRecognizer *_masterViewPresentationGestureRecognizer;
-    UIPanGestureRecognizer *_dimmingViewGestureRecognizer;
+    UIGestureRecognizer *_popoverPresentationGestureRecognizer;
     struct { 
+        unsigned int validDelegateHiddenMasterOrientations : 5; 
         unsigned int delegateHiddenMasterOrientations : 5; 
         unsigned int delegateImplementsShouldHide : 1; 
         unsigned int hidden : 3; 
@@ -53,6 +53,7 @@
         unsigned int delegateWantsWillShowCallback : 1; 
         unsigned int delegateWantsWillHideCallback : 1; 
         unsigned int delegateWantsWillPresentCallback : 1; 
+        unsigned int delegateWantsNavigationRequests : 1; 
     } _splitViewControllerFlags;
 }
 
@@ -65,11 +66,12 @@
 + (BOOL)_forcePresentsInSlidingPopover;
 + (BOOL)_optsOutOfPopoverControllerHierarchyCheck;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (void)setPresentsWithGesture:(BOOL)arg1;
-- (void)dismissPresentedViewController;
-- (void)presentHiddenViewController;
-- (void)_dismissMasterView:(id)arg1;
+- (void)_presentGestureAttemptedWithPresentedPopoverController:(id)arg1;
+- (struct CGSize { float x1; float x2; })_contentSizeForChildViewController:(id)arg1 inPopoverController:(id)arg2;
 - (void)setGutterWidth:(float)arg1;
 - (float)gutterWidth;
 - (void)setMasterColumnWidth:(float)arg1;
@@ -80,13 +82,14 @@
 - (void)_removeRoundedCorners;
 - (void)_setupRoundedCorners;
 - (void)snapshotForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
-- (float)leftColumnWidth;
 - (void)snapshotAllViews;
 - (void)snapshotMasterView;
+- (BOOL)_isRotating;
 - (BOOL)hidesMasterViewDuringRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
 - (BOOL)revealsMasterViewDuringRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
-- (void)_toggleMasterVisible;
-- (void)_presentMasterViewController;
+- (void)_invalidateHidesMasterViewInOrientation:(int)arg1;
+- (float)leftColumnWidth;
+- (void)_presentMasterViewController:(BOOL)arg1;
 - (void)_dismissMasterViewController;
 - (void)_slideIn:(BOOL)arg1 viewController:(id)arg2 animated:(BOOL)arg3 totalDuration:(double)arg4 completion:(id)arg5;
 - (BOOL)_isMasterViewShown;
@@ -95,24 +98,24 @@
 - (void)_viewControllerHiding:(id)arg1;
 - (BOOL)_canSlideMaster;
 - (BOOL)_canDisplayHostedMaster;
+- (void)popoverWillAppear:(id)arg1;
 - (void)toggleMasterVisible:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_masterViewFrame;
-- (BOOL)_effectivePresentsWithGesture;
+- (void)_addOrRemovePopoverPresentationGestureRecognizer;
 - (void)_calculateDelegateHiddenMasterOrientations;
+- (BOOL)_effectivePresentsWithGesture;
+- (BOOL)_isHidesMasterInLandscapeValid;
+- (BOOL)_isHidesMasterInPortraitValid;
 - (BOOL)_delegateUsesLegacySlideSPI;
 - (BOOL)_presentsInFadingPopover;
 - (BOOL)hidesMasterViewInPortrait;
 - (BOOL)hidesMasterViewInLandscape;
-- (void)_addMasterViewPresentationGestureRecognizer:(BOOL)arg1;
 - (void)_loadNewSubviews:(id)arg1;
 - (void)loadSubviews;
 - (BOOL)_isMasterViewShownByDefault;
-- (void)_swipeMasterView:(id)arg1;
 - (void)_setPresentsInFadingPopover:(BOOL)arg1;
 - (id)masterViewController;
-- (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
-- (BOOL)_isRotating;
 - (id)detailViewController;
 - (void)__viewWillLayoutSubviews;
 - (void)setViewControllers:(id)arg1;
@@ -121,6 +124,7 @@
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (BOOL)_shouldSynthesizeSupportedOrientations;
 - (void)purgeMemoryForReason:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -131,16 +135,15 @@
 - (BOOL)_shouldPersistViewWhenCoding;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_commonInit;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
-- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (void)_gkSetContentsNeedUpdateWithHandler:(id)arg1;
-- (void)_gkResetContents;
 - (void)_gkForceNextContentUpdate;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
+- (void)_gkResetContents;
 
 @end

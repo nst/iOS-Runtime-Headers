@@ -59,6 +59,9 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_coreProtocolDidFinishUCResults:(id)arg1 error:(id)arg2;
 - (void)_coreProtocolDidFailAuthenticationError:(id)arg1;
@@ -71,8 +74,6 @@
 - (void)sendUploadCompleteForAssetCollections:(id)arg1;
 - (void)sendMetadataForAssetCollections:(id)arg1;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)abort;
 
 @end

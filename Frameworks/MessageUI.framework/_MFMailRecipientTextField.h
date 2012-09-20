@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface _MFMailRecipientTextField : UITextField  {
+@interface _MFMailRecipientTextField : MFComposeTextField  {
 }
 
 

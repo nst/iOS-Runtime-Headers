@@ -12,13 +12,14 @@
 @property(retain) NSMutableData * octetStreamData;
 @property(readonly) NSError * parserError;
 
++ (BOOL)canHandleContentType:(id)arg1;
 
-- (id)parserError;
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setOctetStreamData:(id)arg1;
 - (id)octetStreamData;
 - (BOOL)processData:(id)arg1 forTask:(id)arg2;
+- (id)parserError;
 
 @end

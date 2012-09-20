@@ -14,14 +14,14 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (void)_setConfirmed:(BOOL)arg1;
-- (void)setConfirmedAction:(id)arg1;
-- (id)confirmedAction;
-- (void)setDeniedAction:(id)arg1;
+- (id)init;
 - (id)deniedAction;
-- (id)initWithModelIdentifier:(id)arg1;
+- (void)setDeniedAction:(id)arg1;
+- (id)confirmedAction;
+- (void)setConfirmedAction:(id)arg1;
+- (void)_setConfirmed:(BOOL)arg1;
 - (int)completionType;
+- (id)initWithModelIdentifier:(id)arg1;
 
 @end

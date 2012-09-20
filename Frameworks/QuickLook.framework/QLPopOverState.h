@@ -4,35 +4,31 @@
 
 @class UIBarButtonItem, UIDocumentInteractionController;
 
-@interface QLPopOverState : NSObject <UIDocumentInteractionControllerDelegate, UIPrintInteractionControllerDelegate> {
+@interface QLPopOverState : NSObject <UIDocumentInteractionControllerDelegate> {
     id _delegate;
     UIDocumentInteractionController *_documentInteractionController;
     int _popOverState;
     UIBarButtonItem *_barButtonItem;
-    BOOL _inRotation;
 }
 
 @property int popOverState;
 
 
+- (void)setPopOverState:(int)arg1;
+- (id)initWithDocumentInteractionController:(id)arg1 delegate:(id)arg2;
+- (int)popOverState;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)dealloc;
-- (void)printInteractionControllerDidDismissPrinterOptions:(id)arg1;
-- (void)printInteractionControllerWillPresentPrinterOptions:(id)arg1;
+- (void)presentOpenInMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)presentOptionsMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)dismissMenuAnimated:(BOOL)arg1;
-- (void)documentInteractionControllerWillPresentOpenInMenu:(id)arg1;
-- (void)documentInteractionControllerWillPresentOptionsMenu:(id)arg1;
-- (BOOL)documentInteractionController:(id)arg1 canPerformAction:(SEL)arg2;
+- (id)printInfoForDocumentInteractionController:(id)arg1;
+- (id)activityItemForDocumentInteractionController:(id)arg1;
 - (void)documentInteractionController:(id)arg1 willBeginSendingToApplication:(id)arg2;
+- (void)documentInteractionControllerWillPresentOptionsMenu:(id)arg1;
+- (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
 - (void)documentInteractionControllerDidDismissOptionsMenu:(id)arg1;
-- (void)documentInteractionControllerDidDismissOpenInMenu:(id)arg1;
-- (BOOL)documentInteractionController:(id)arg1 performAction:(SEL)arg2;
-- (void)presentOpenInMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)didRotate;
 - (void)willRotate;
-- (void)setPopOverState:(int)arg1;
-- (int)popOverState;
-- (void)presentPrintMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (id)initWithDocumentInteractionController:(id)arg1 delegate:(id)arg2;
 
 @end

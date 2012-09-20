@@ -2,10 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UITabBarItemAppearanceStorage, UIColor, UIImage;
+@class UIImage, UIColor, _UITabBarItemAppearanceStorage, NSMutableDictionary;
 
 @interface _UITabBarAppearanceStorage : NSObject  {
+    NSMutableDictionary *_dividerImages;
     UIImage *backgroundImage;
+    UIImage *shadowImage;
     UIImage *selectionIndicatorImage;
     UIColor *tintColor;
     UIColor *selectedImageTintColor;
@@ -13,6 +15,7 @@
 }
 
 @property(retain) UIImage * backgroundImage;
+@property(retain) UIImage * shadowImage;
 @property(retain) UIImage * selectionIndicatorImage;
 @property(retain) UIColor * tintColor;
 @property(retain) UIColor * selectedImageTintColor;
@@ -24,12 +27,16 @@
 - (id)selectedImageTintColor;
 - (void)setSelectionIndicatorImage:(id)arg1;
 - (id)selectionIndicatorImage;
+- (id)_dividerImageForLeftButtonState:(unsigned int)arg1 rightButtonState:(unsigned int)arg2;
+- (void)_setDividerImage:(id)arg1 forLeftButtonState:(unsigned int)arg2 rightButtonState:(unsigned int)arg3;
 - (id)_tabItemAppearanceStorage;
 - (id)tabItemAppearanceStorage;
 - (void)setTabItemAppearanceStorage:(id)arg1;
+- (void)setBackgroundImage:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (id)tintColor;
-- (void)setBackgroundImage:(id)arg1;
+- (void)setShadowImage:(id)arg1;
+- (id)shadowImage;
 - (id)backgroundImage;
 
 @end

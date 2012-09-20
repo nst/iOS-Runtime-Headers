@@ -9,14 +9,14 @@
 }
 
 
-- (BOOL)hasPassword;
-- (void)dealloc;
-- (int)failureCount;
-- (void)useCredential:(id)arg1;
-- (id)initWithAuthenticationChallenge:(id)arg1;
 - (void)cancelAuthentication;
+- (void)dealloc;
 - (id)user;
 - (id)password;
 - (id)sender;
+- (int)failureCount;
+- (void)useCredential:(id)arg1;
+- (id)initWithAuthenticationChallenge:(id)arg1;
+- (BOOL)hasPassword;
 
 @end

@@ -13,30 +13,30 @@
     BOOL _fullScreen;
 }
 
-@property(readonly) BOOL fullScreen;
-@property(readonly) BOOL precomposed;
-@property(readonly) BOOL isRemovable;
-@property(readonly) NSData * iconData;
-@property(readonly) NSString * label;
 @property(readonly) NSURL * URL;
+@property(readonly) NSString * label;
+@property(readonly) NSData * iconData;
+@property(readonly) BOOL isRemovable;
+@property(readonly) BOOL precomposed;
+@property(readonly) BOOL fullScreen;
 
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
+- (id)URL;
 - (id)description;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (BOOL)precomposed;
 - (BOOL)isRemovable;
 - (id)iconData;
-- (id)subtitle1Label;
-- (id)subtitle2Label;
 - (id)subtitle2Description;
+- (id)subtitle2Label;
+- (id)subtitle1Label;
 - (id)subtitle1Description;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (BOOL)fullScreen;
 - (id)label;
-- (id)URL;
 - (id)title;
 
 @end

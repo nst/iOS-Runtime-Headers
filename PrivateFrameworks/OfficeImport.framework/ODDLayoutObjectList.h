@@ -9,8 +9,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)children;
 - (void)addChild:(id)arg1;
 

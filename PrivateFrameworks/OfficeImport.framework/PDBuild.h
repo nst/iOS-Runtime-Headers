@@ -10,8 +10,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)isAnimateBackground;
 - (void)setIsAnimateBackground:(BOOL)arg1;
 - (void)setDrawable:(id)arg1;

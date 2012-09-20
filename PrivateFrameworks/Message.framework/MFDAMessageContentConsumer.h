@@ -15,30 +15,30 @@
     double _timeOfLastActivity;
 }
 
-@property(readonly) double timeOfLastActivity;
 @property int requestedFormat;
-@property(retain) <MFMessageDataConsumerFactory> * consumerFactory;
-@property(retain,readonly) NSMutableData * bodyData;
-@property(retain) <MFCollectingDataConsumer> * alternatePartConsumer;
 @property(retain) <MFCollectingDataConsumer> * dataConsumer;
+@property(retain) <MFCollectingDataConsumer> * alternatePartConsumer;
+@property(retain) <MFMessageDataConsumerFactory> * consumerFactory;
+@property(readonly) NSMutableData * bodyData;
+@property(readonly) double timeOfLastActivity;
 
 
+- (id)bodyData;
+- (id)data;
+- (void)dealloc;
 - (int)requestedFormat;
+- (id)dataConsumer;
+- (id)alternatePartConsumer;
 - (void)setAlternatePartConsumer:(id)arg1;
 - (id)consumerFactory;
-- (id)alternatePartConsumer;
-- (id)dataConsumer;
-- (id)dataConsumerForPart:(id)arg1;
-- (double)timeOfLastActivity;
-- (BOOL)succeeded;
-- (void)setRequestedFormat:(int)arg1;
-- (void)setDataConsumer:(id)arg1;
-- (void)setConsumerFactory:(id)arg1;
-- (BOOL)shouldBeginStreamingForMailMessage:(id)arg1 format:(int)arg2;
-- (void)consumeData:(char *)arg1 length:(int)arg2 format:(int)arg3 mailMessage:(id)arg4;
 - (void)didEndStreamingForMailMessage:(id)arg1;
-- (id)bodyData;
-- (void)dealloc;
-- (id)data;
+- (void)consumeData:(char *)arg1 length:(int)arg2 format:(int)arg3 mailMessage:(id)arg4;
+- (BOOL)shouldBeginStreamingForMailMessage:(id)arg1 format:(int)arg2;
+- (id)dataConsumerForPart:(id)arg1;
+- (void)setConsumerFactory:(id)arg1;
+- (void)setDataConsumer:(id)arg1;
+- (void)setRequestedFormat:(int)arg1;
+- (BOOL)succeeded;
+- (double)timeOfLastActivity;
 
 @end

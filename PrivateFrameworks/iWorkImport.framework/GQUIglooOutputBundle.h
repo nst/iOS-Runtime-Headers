@@ -10,16 +10,16 @@
 }
 
 
-- (struct __CFDictionary { }*)attachments;
-- (id)init;
 - (void)dealloc;
-- (void)setUriPrefix:(struct __CFString { }*)arg1;
+- (id)init;
 - (struct __CFDictionary { }*)createOutputDictionary;
+- (void)setUriPrefix:(struct __CFString { }*)arg1;
 - (struct __CFData { }*)mainHtmlData;
 - (struct __CFString { }*)createUriForResource:(struct __CFString { }*)arg1;
-- (void)setDocumentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPageElementXPath:(struct __CFString { }*)arg1 withThumbnailsOnLeft:(BOOL)arg2;
-- (BOOL)setData:(struct __CFData { }*)arg1 mimeType:(struct __CFString { }*)arg2 forNamedResource:(struct __CFString { }*)arg3;
 - (BOOL)setDataForMainHtmlResource:(struct __CFData { }*)arg1;
+- (BOOL)setData:(struct __CFData { }*)arg1 mimeType:(struct __CFString { }*)arg2 forNamedResource:(struct __CFString { }*)arg3;
+- (void)setPageElementXPath:(struct __CFString { }*)arg1 withThumbnailsOnLeft:(BOOL)arg2;
+- (void)setDocumentSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct __CFDictionary { }*)attachments;
 
 @end

@@ -9,8 +9,8 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)color;
 - (id)initWithBulletColor:(id)arg1;

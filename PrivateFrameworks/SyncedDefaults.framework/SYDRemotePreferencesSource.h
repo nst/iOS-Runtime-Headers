@@ -9,8 +9,8 @@
 @class SYDClient, NSMutableDictionary;
 
 @interface SYDRemotePreferencesSource : NSObject  {
-    int _generationCount;
-    int _lastGenerationFromDisk;
+    long _generationCount;
+    long _lastGenerationFromDisk;
     struct __CFString { } *preferenceID;
     struct __CFURL { } *urlOnDisk;
     struct __CFDictionary { } *cache;
@@ -28,36 +28,40 @@
 
 }
 
++ (void)noteAccountChanges:(id)arg1;
++ (void)initialize;
 + (id)SYDRemotePreferencesSourceConfigurationDidChangeNotification;
 + (id)SYDRemotePreferencesSourceDidChangeNotification;
-+ (void)noteAccountChanges:(id)arg1;
 + (void)resetAllApplicationsWithCompletionHandler:(id)arg1;
 
+- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
+- (void)dealloc;
+- (long)generationCount;
+- (void)finalize;
+- (unsigned char)synchronize;
+- (struct __CFDictionary { }*)copyDictionary;
+- (struct __CFArray { }*)copyKeyList;
+- (void*)getValueForKey:(struct __CFString { }*)arg1;
 - (long)maximumTotalDataLength;
 - (long)maximumDataLengthPerKey;
 - (long)maximumKeyLength;
 - (long)maximumKeyCount;
 - (void)unregisterForSynchronizedDefaults;
-- (unsigned char)hasExternalChanges;
 - (void)registerForSynchronizedDefaults;
 - (void)updateConfiguration;
-- (id)copyExternalChangesWithChangeCount:(long long*)arg1;
-- (unsigned char)synchronizeForced:(unsigned char)arg1;
 - (void)scheduleRemoteSynchronization;
+- (id)copyExternalChangesWithChangeCount:(long long*)arg1;
+- (unsigned char)hasExternalChanges;
+- (unsigned char)synchronizeForced:(unsigned char)arg1;
 - (void)discardExternalChangesForChangeCount:(long long)arg1;
 - (id)initWithApplicationID:(struct __CFString { }*)arg1 shared:(BOOL)arg2;
-- (void)dealloc;
-- (struct __CFDictionary { }*)copyDictionary;
-- (struct __CFArray { }*)copyKeyList;
-- (void*)getValueForKey:(struct __CFString { }*)arg1;
-- (long)generationCount;
-- (void)finalize;
-- (unsigned char)synchronize;
-- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
+- (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3 additionalSource:(BOOL)arg4;
+- (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3;
+- (id)serverSideDebugDescription;
 - (struct __CFDictionary { }*)copyConfigurationDictionary;
-- (long)configurationValueForKey:(struct __CFString { }*)arg1;
-- (void)_cachePlistFromDisk;
 - (void)_storeConfiguration:(struct __CFDictionary { }*)arg1;
+- (void)_cachePlistFromDisk;
+- (long)configurationValueForKey:(struct __CFString { }*)arg1;
 - (unsigned char)isInitialSync;
 
 @end

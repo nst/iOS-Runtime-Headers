@@ -7,20 +7,20 @@
 @interface PFUbiquityPeerRange : NSManagedObject  {
 }
 
-@property(retain) PFUbiquityStoreMetadata * storeMetadata;
-@property(retain) PFUbiquityPeer * peer;
-@property(retain) NSNumber * start;
-@property(retain) NSString * peerEntityName;
-@property(retain) NSNumber * peerEnd;
-@property(retain) NSNumber * end;
 @property(retain) NSNumber * peerStart;
+@property(retain) NSNumber * end;
+@property(retain) NSNumber * peerEnd;
+@property(retain) NSString * peerEntityName;
+@property(retain) NSNumber * start;
+@property(retain) PFUbiquityPeer * peer;
+@property(retain) PFUbiquityStoreMetadata * storeMetadata;
 
 + (id)fakeManagedObjectURIForStoreMetadata:(id)arg1 entityName:(id)arg2 andPrimaryKey:(id)arg3;
-+ (id)createArrayOfRangesForAllUnmappedObjectsInStoreWithStoreMetadata:(id)arg1 withLocalPeerID:(id)arg2;
 + (id)peerRangeForLocalPrimaryKey:(unsigned int)arg1 inStoreNamed:(id)arg2 andEntityName:(id)arg3 inManagedObjectContext:(id)arg4;
++ (id)createArrayOfRangesForAllUnmappedObjectsInStoreWithStoreMetadata:(id)arg1 withLocalPeerID:(id)arg2;
 
 - (void)loadFromStoreMetadataDictionary:(id)arg1;
-- (void)loadFromBaselineDictionary:(id)arg1;
 - (id)createBaselineDictionary;
+- (void)loadFromBaselineDictionary:(id)arg1;
 
 @end

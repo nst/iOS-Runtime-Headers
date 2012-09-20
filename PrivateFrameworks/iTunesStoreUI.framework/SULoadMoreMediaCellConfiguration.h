@@ -10,7 +10,6 @@
 
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
-- (id)init;
 - (float)previousCellHeight;
 - (void)setPreviousCellHeight:(float)arg1;
 - (void)reloadLayoutInformation;
@@ -18,5 +17,6 @@
 - (void)reloadImages;
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
+- (id)init;
 
 @end

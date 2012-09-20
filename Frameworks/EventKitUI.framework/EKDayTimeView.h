@@ -32,16 +32,26 @@
 @property(readonly) float timeWidth;
 @property(readonly) float defaultHeight;
 
++ (float)timeWidthForOrientation:(int)arg1;
++ (void)_invalidateWidth;
 + (float)defaultHeightForOrientation:(int)arg1;
++ (float)_hourWidthForOrientation:(int)arg1;
++ (void)_calculateWidthForOrientation:(int)arg1;
 + (float)designatorSizeForOrientation:(int)arg1;
 + (float)hourSizeForOrientation:(int)arg1;
-+ (float)timeWidthForOrientation:(int)arg1;
-+ (float)verticalPadding;
 + (float)timeInsetForOrientation:(int)arg1;
 + (float)hourHeightForOrientation:(int)arg1;
++ (float)verticalPadding;
 
-- (void)dealloc;
 - (float)topPadding;
+- (void)dealloc;
+- (void)setOrientation:(int)arg1;
+- (float)defaultHeight;
+- (void)willMoveToSuperview:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setOpaque:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHoursToPad:(int)arg1;
 - (int)hoursToPad;
 - (BOOL)usesLightText;
@@ -63,12 +73,5 @@
 - (void)_invalidateMarkerTimer;
 - (void)setShowsLeftBorder:(BOOL)arg1;
 - (void)_localeChanged;
-- (void)setOrientation:(int)arg1;
-- (float)defaultHeight;
-- (void)willMoveToSuperview:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setOpaque:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

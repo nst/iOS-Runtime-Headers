@@ -14,18 +14,18 @@
 
 @property(readonly) NSData * data;
 
-+ (id)UUIDWithString:(id)arg1;
 + (id)UUIDWithCFUUID:(struct __CFUUID { }*)arg1;
 + (id)UUIDWithData:(id)arg1;
++ (id)UUIDWithString:(id)arg1;
 
 - (id)initWithString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (id)data;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithCFUUID:(struct __CFUUID { }*)arg1;
-- (id)data;
 - (id)initWithData:(id)arg1;
+- (id)initWithCFUUID:(struct __CFUUID { }*)arg1;
 
 @end

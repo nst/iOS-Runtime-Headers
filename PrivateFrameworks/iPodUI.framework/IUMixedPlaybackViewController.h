@@ -6,12 +6,11 @@
 
 @interface IUMixedPlaybackViewController : IUPlaybackViewController <IUCoverFlowOwner> {
     IUMediaEntitySpecifier *_albumContextSpecifier;
+    BOOL _animateREO;
+    BOOL _nextPushWillZoomArtwork;
     IUMediaEntitySpecifier *_playlistContextSpecifier;
+    BOOL _showFlipperHint;
     IUCoverFlowViewController *_transferredCoverFlowController;
-    unsigned int _animateREO : 1;
-    unsigned int _showFlipperHint : 1;
-    unsigned int _nextPushWillZoomArtwork : 1;
-    unsigned int _exiting : 1;
 }
 
 @property BOOL nextPushWillZoomArtwork;
@@ -19,33 +18,34 @@
 @property(readonly) BOOL isShowingCoverFlow;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)createTransitionControllerForChangeToInterfaceOrientation:(int)arg1 fromInterfaceOrientation:(int)arg2;
-- (id)createViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
+- (id)newViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
 - (void)setItem:(id)arg1 animated:(BOOL)arg2;
+- (void)dealloc;
+- (id)init;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (BOOL)nextPushWillZoomArtwork;
+- (id)newTransitionControllerForChangeToInterfaceOrientation:(int)arg1 fromInterfaceOrientation:(int)arg2;
 - (BOOL)_isExistingGeniusMixForDataSource:(id)arg1;
 - (BOOL)_previousViewControllerIsActiveGeniusMix;
 - (void)_setAnimatesForResumeEventsOnly:(BOOL)arg1;
-- (BOOL)_willStartPlaybackWhenViewAppears;
 - (void)_setFakeItemForDataSource:(id)arg1;
 - (void)_reloadTVOutForQuery:(id)arg1;
 - (void)_updateAnimateForResumeEventsOnly;
 - (void)exitPlayerForAccessorySplash;
 - (void)_exitToAlbumContext:(id)arg1 animated:(BOOL)arg2;
 - (void)_exitToPlaylistContext:(id)arg1 animated:(BOOL)arg2;
-- (id)createTransitionControllerForChangeToItem:(id)arg1 fromItem:(id)arg2;
+- (id)newTransitionControllerForChangeToItem:(id)arg1 fromItem:(id)arg2;
 - (void)_playlistChangeNotification:(id)arg1;
 - (void)_backOfAlbumTrackChangeNotification:(id)arg1;
 - (BOOL)isShowingCoverFlow;
 - (void)setCoverFlowViewController:(id)arg1;
 - (id)coverFlowViewController;
+- (id)newMediaNavigationItem;
+- (BOOL)IUShouldApplyInterfaceStyle;
 - (void)setNextPushWillZoomArtwork:(BOOL)arg1;
 - (unsigned int)transitionEffectForViewController:(id)arg1;
 - (void)exitPlayerAnimated:(BOOL)arg1;

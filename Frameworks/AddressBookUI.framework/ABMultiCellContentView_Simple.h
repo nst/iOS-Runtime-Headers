@@ -14,19 +14,6 @@
 + (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 
 - (void)dealloc;
-- (BOOL)isValidValue:(id)arg1;
-- (BOOL)canHandleProperty:(int)arg1;
-- (void)updateSubviewsForNewStateAnimated:(BOOL)arg1;
-- (void)textFieldTextDidChange:(id)arg1;
-- (id)hitTestForTouches:(id)arg1 withEvent:(id)arg2;
-- (BOOL)shouldSendTouchesToSuperviewForHitView:(id)arg1;
-- (void)setPropertyGroup:(id)arg1 andInfo:(id)arg2;
-- (BOOL)wantsLabelDivider;
-- (BOOL)tabToNextResponder:(BOOL)arg1 fromView:(id)arg2;
-- (id)viewForFirstResponder;
-- (void)setAbCellStyle:(int)arg1;
-- (void)reloadFromModel;
-- (id)pickerView;
 - (struct { id x1; unsigned int x2; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
 - (BOOL)textFieldShouldClear:(id)arg1;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
@@ -37,5 +24,18 @@
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (id)text;
 - (void)reload;
+- (BOOL)isValidValue:(id)arg1;
+- (id)viewForFirstResponder;
+- (BOOL)tabToNextResponder:(BOOL)arg1 fromView:(id)arg2;
+- (BOOL)shouldSendTouchesToSuperviewForHitView:(id)arg1;
+- (id)hitTestForTouches:(id)arg1 withEvent:(id)arg2;
+- (void)textFieldTextDidChange:(id)arg1;
+- (void)updateSubviewsForNewStateAnimated:(BOOL)arg1;
+- (BOOL)canHandleProperty:(int)arg1;
+- (BOOL)wantsLabelDivider;
+- (id)pickerView;
+- (void)setPropertyGroup:(id)arg1 andInfo:(id)arg2;
+- (void)setAbCellStyle:(int)arg1;
+- (void)reloadFromModel;
 
 @end

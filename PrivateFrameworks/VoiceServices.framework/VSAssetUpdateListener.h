@@ -11,17 +11,17 @@
 
 + (id)sharedListener;
 
-- (id)init;
 - (void)dealloc;
-- (void)_cleanupAssets;
-- (void)_scheduleNextCleanupForDate:(id)arg1;
-- (void)_rescheduleAssetCleanup;
-- (void)_flushLanguageChanges;
-- (void)_cancelAssetCleanupTimer;
+- (id)init;
 - (void)_updateNextCleanupDate;
-- (id)_initShared;
+- (void)_cancelAssetCleanupTimer;
+- (void)_flushLanguageChanges;
+- (void)_rescheduleAssetCleanup;
+- (void)_scheduleNextCleanupForDate:(id)arg1;
+- (void)_cleanupAssets;
 - (void)_spokenLanguageChanged:(id)arg1;
 - (void)stopListening;
 - (void)startListening;
+- (id)_initShared;
 
 @end

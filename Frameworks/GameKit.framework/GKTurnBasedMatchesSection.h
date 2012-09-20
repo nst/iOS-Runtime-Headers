@@ -9,38 +9,44 @@
     NSString *_sectionTitle;
     NSString *_deleteConfirmTitle;
     NSMutableDictionary *_players;
-    int _sectionStyle;
+    unsigned int _sectionStyle;
 }
 
 @property(retain) NSMutableArray * matches;
 @property(retain) NSString * sectionTitle;
 @property(retain) NSString * deleteConfirmTitle;
 @property(retain) NSMutableDictionary * players;
-@property int sectionStyle;
-@property(getter=isLoading) BOOL loading;
+@property unsigned int sectionStyle;
 
 
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (void)setDeleteConfirmTitle:(id)arg1;
 - (id)deleteConfirmTitle;
-- (void)setSectionStyle:(int)arg1;
-- (int)sectionStyle;
+- (void)setSectionTitle:(id)arg1;
+- (id)sectionTitle;
+- (id)tableView:(id)arg1 sectionIndex:(int)arg2 indexPathForItem:(id)arg3;
+- (void)tableView:(id)arg1 showDetailForMatch:(id)arg2;
+- (void)showDetail:(id)arg1;
+- (id)playerForMatch:(id)arg1 sectionStyle:(unsigned int)arg2;
+- (id)players;
+- (id)sectionStyleString;
+- (void)setMatches:(id)arg1;
+- (void)setSectionStyle:(unsigned int)arg1;
+- (unsigned int)sectionStyle;
+- (id)matches;
+- (void)setPlayers:(id)arg1;
+- (BOOL)tableView:(id)arg1 loadAdditionalDataForSection:(int)arg2 rows:(id)arg3 thenUpdateView:(id)arg4;
 - (id)swipeDeleteConfirmTitleInTableView:(id)arg1;
 - (void)tableView:(id)arg1 didSwipeToDeleteRow:(id)arg2;
 - (void)tableView:(id)arg1 didSelectIndexPath:(id)arg2;
-- (id)sectionHeaderTitleInTableView:(id)arg1;
+- (id)titleForHeaderInTableView:(id)arg1;
+- (struct { unsigned int x1; unsigned char x2; unsigned char x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; })currentMetricsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
-- (int)sectionRowCountInTableView:(id)arg1;
-- (float)sectionHeaderHeightInTableView:(id)arg1;
-- (void)setMatches:(id)arg1;
-- (void)setPlayers:(id)arg1;
-- (id)players;
-- (id)sectionTitle;
-- (void)setSectionTitle:(id)arg1;
-- (id)matches;
+- (int)rowCountInTableView:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (float)heightForHeaderInTableView:(id)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 
 @end

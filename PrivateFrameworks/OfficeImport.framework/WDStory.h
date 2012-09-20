@@ -13,8 +13,8 @@
 - (void)dealloc;
 - (id)text;
 - (id)head;
-- (id)initWithHead:(id)arg1;
 - (BOOL)isOle;
+- (id)initWithHead:(id)arg1;
 - (void)setOle:(BOOL)arg1;
 
 @end

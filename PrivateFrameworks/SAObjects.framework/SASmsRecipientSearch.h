@@ -11,17 +11,17 @@
 @property(retain) SAPerson * recipient;
 @property(copy) NSArray * recipients;
 
-+ (id)recipientSearch;
 + (id)recipientSearchWithDictionary:(id)arg1 context:(id)arg2;
++ (id)recipientSearch;
 
-- (id)groupIdentifier;
-- (void)setRecipient:(id)arg1;
 - (id)recipient;
-- (id)recipients;
+- (void)setRecipient:(id)arg1;
+- (id)groupIdentifier;
 - (void)setRecipients:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)recipients;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

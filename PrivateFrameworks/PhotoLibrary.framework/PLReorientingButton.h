@@ -36,23 +36,23 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setHidden:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIsInButtonBar:(BOOL)arg1;
 - (BOOL)isInButtonBar;
 - (float)endCapRadius;
-- (float)hitRectExtension;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForOrientation:(int)arg1;
 - (int)_modeForRotationFromOrientation:(int)arg1 toOrientation:(int)arg2;
 - (void)rotationAnimationDidStop;
 - (void)_setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1 rotationMode:(int)arg2;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformForOrientation:(int)arg1 rotationMode:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isInButtonBar:(BOOL)arg2;
 - (void)setEndCapRadius:(float)arg1;
 - (void)startWatchingDeviceOrientationChanges;
-- (void)setHidden:(BOOL)arg1 animationDuration:(double)arg2;
 - (void)stopWatchingDeviceOrientationChanges;
+- (void)setHidden:(BOOL)arg1 animationDuration:(double)arg2;
 - (void)setHitRectExtension:(float)arg1;
+- (void)setIsInButtonBar:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isInButtonBar:(BOOL)arg2;
 - (void)setAutorotationEnabled:(BOOL)arg1;
 - (BOOL)autorotationEnabled;
+- (float)hitRectExtension;
 - (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 
 @end

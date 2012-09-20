@@ -12,6 +12,7 @@
 @property(retain) NSMutableSet * hrefs;
 @property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 
++ (id)copyParseRules;
 
 - (id)description;
 - (void)dealloc;
@@ -20,7 +21,6 @@
 - (void)setUnauthenticated:(id)arg1;
 - (void)setHrefs:(id)arg1;
 - (void)addHref:(id)arg1;
-- (id)copyParseRules;
 - (id)hrefs;
 - (id)unauthenticated;
 - (id)hrefsAsFullURLs;

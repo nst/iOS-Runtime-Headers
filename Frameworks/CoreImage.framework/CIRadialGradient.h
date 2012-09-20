@@ -22,9 +22,9 @@
 
 - (id)inputRadius1;
 - (id)inputRadius0;
-- (id)inputCenter;
 - (void)setInputRadius1:(id)arg1;
 - (void)setInputRadius0:(id)arg1;
+- (id)inputCenter;
 - (void)setInputCenter:(id)arg1;
 - (id)inputColor1;
 - (id)inputColor0;

@@ -2,25 +2,31 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString;
+@class AVMediaSelectionOption, NSString;
 
 @interface MPAlternateTrack : NSObject  {
-    int _trackID;
-    NSString *_languageCode;
     NSString *_name;
+    AVMediaSelectionOption *_option;
+    BOOL _isSDH;
 }
+
+@property(readonly) NSString * name;
+@property(readonly) NSString * displayName;
+@property(readonly) AVMediaSelectionOption * option;
+@property BOOL isSDH;
 
 + (id)threeCharCodesForEncodedISO639_2_T:(id)arg1;
 + (id)copyOffTrack;
 
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)initWithTrackID:(id)arg1 languageCode:(id)arg2 name:(id)arg3;
-- (id)humanReadableLanguage;
-- (id)languageCode;
-- (int)trackID;
+- (void)setIsSDH:(BOOL)arg1;
+- (id)option;
+- (id)_humanReadableLanguage;
+- (BOOL)isSDH;
+- (id)initWithName:(id)arg1 option:(id)arg2;
 - (int)compare:(id)arg1;
 - (id)name;
+- (id)description;
+- (void)dealloc;
+- (id)displayName;
 
 @end

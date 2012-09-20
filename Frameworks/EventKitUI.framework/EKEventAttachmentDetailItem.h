@@ -4,14 +4,17 @@
 
 @class NSArray;
 
-@interface EKEventAttachmentDetailItem : EKEventDetailItem <EKEventAttachmentCellControllerDelegate> {
+@interface EKEventAttachmentDetailItem : EKEventDetailItem <EKEventAttachmentCellControllerDelegate, UIDocumentInteractionControllerDelegate> {
     NSArray *_cellControllers;
 }
 
 
+- (void)reset;
 - (void)dealloc;
+- (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
+- (void)documentInteractionControllerWillEndPreview:(id)arg1;
 - (id)owningEventForAttachmentCellController:(id)arg1;
-- (id)parentViewControllerForAttachmentCellController:(id)arg1;
+- (id)_parentViewControllerForAttachmentCellController;
 - (void)_cleanUpCellControllers;
 - (BOOL)hasDetailViewControllerAtIndex:(unsigned int)arg1;
 - (int)numberOfSubitems;
@@ -20,6 +23,5 @@
 - (id)cellForSubitemAtIndex:(int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
 - (void)setEvent:(id)arg1 store:(id)arg2;
-- (void)reset;
 
 @end

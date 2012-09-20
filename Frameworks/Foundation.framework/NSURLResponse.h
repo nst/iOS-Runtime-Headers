@@ -10,6 +10,16 @@
 
 + (id)_responseWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
 
+- (id)textEncodingName;
+- (id)URL;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)MIMEType;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithURL:(id)arg1 MIMEType:(id)arg2 expectedContentLength:(int)arg3 textEncodingName:(id)arg4;
+- (struct _CFURLResponse { }*)_CFURLResponse;
 - (id)_peerCertificateChain;
 - (double)_calculatedExpiration;
 - (double)_freshnessLifetime;
@@ -20,20 +30,10 @@
 - (void)_setExpectedContentLength:(long long)arg1;
 - (id)suggestedFilename;
 - (long long)expectedContentLength;
-- (id)textEncodingName;
 - (id)_initWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)MIMEType;
-- (id)URL;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 MIMEType:(id)arg2 expectedContentLength:(int)arg3 textEncodingName:(id)arg4;
-- (struct _CFURLResponse { }*)_CFURLResponse;
-- (id)_cacheTime;
-- (long long)maxExpectedContentLength;
 - (id)allHeaderFields;
 - (int)statusCode;
+- (long long)maxExpectedContentLength;
+- (id)_cacheTime;
 
 @end

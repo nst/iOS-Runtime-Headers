@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSMachPort;
+@class CUTWeakReference, NSMachPort;
 
 @interface PCDarwinNotificationRunLoopSource : NSObject  {
-    id _target;
+    CUTWeakReference *_target;
     SEL _selector;
     NSMachPort *_port;
     int _notifyToken;
 }
 
 
-- (void)handleMachMessage:(void*)arg1;
+- (void)invalidate;
 - (void)dealloc;
+- (id)initWithDarwinNotificationName:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)invalidate;
-- (id)initWithDarwinNotificationName:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
+- (void)handleMachMessage:(void*)arg1;
 
 @end

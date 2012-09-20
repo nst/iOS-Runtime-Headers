@@ -22,6 +22,9 @@
     BOOL _installOnly;
     BOOL _readyForStore;
     long long _storePID;
+    unsigned int _priority;
+    float _downloadProgress;
+    float _installProgress;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -51,6 +54,9 @@
 @property BOOL installOnly;
 @property BOOL readyForStore;
 @property long long storePID;
+@property unsigned int priority;
+@property float downloadProgress;
+@property float installProgress;
 @property id storeCompletion;
 @property id storeProgress;
 @property(retain) ATStoreInfo * storeInfo;
@@ -58,25 +64,36 @@
 @property(retain) NSString * infoPlist;
 @property(retain) NSError * error;
 
++ (id)assetWithSerializedAsset:(id)arg1;
++ (id)iCloudRestoreAssetWithIdentifier:(id)arg1 dataclass:(id)arg2 assetType:(id)arg3 restorePath:(id)arg4 displayName:(id)arg5;
 + (id)uploadAssetWithIdentifier:(id)arg1 dataclass:(id)arg2 sourcePath:(id)arg3 prettyName:(id)arg4;
 + (id)downloadAssetWithIdentifier:(id)arg1 dataclass:(id)arg2 prettyName:(id)arg3;
 
+- (id)icon;
+- (void)setError:(id)arg1;
+- (void)setAssetType:(id)arg1;
+- (id)path;
+- (id)identifier;
 - (id)description;
 - (void)dealloc;
-- (void)setError:(id)arg1;
-- (id)error;
+- (id)assetType;
+- (float)downloadProgress;
+- (void)setDownloadProgress:(float)arg1;
+- (void)setPath:(id)arg1;
+- (void)setPriority:(unsigned int)arg1;
+- (unsigned int)priority;
+- (void)setIdentifier:(id)arg1;
+- (void)setIcon:(id)arg1;
 - (void)setInfoPlist:(id)arg1;
 - (void)setStorePlist:(id)arg1;
-- (id)storePlist;
 - (void)setStoreInfo:(id)arg1;
-- (id)storeInfo;
 - (void)setStoreProgress:(id)arg1;
 - (id)storeProgress;
 - (void)setStoreCompletion:(id)arg1;
 - (id)storeCompletion;
+- (void)setInstallProgress:(float)arg1;
+- (float)installProgress;
 - (void)setStorePID:(long long)arg1;
-- (void)setReadyForStore:(BOOL)arg1;
-- (BOOL)readyForStore;
 - (void)setInstallOnly:(BOOL)arg1;
 - (void)setBypassStore:(BOOL)arg1;
 - (void)setIsRestore:(BOOL)arg1;
@@ -86,22 +103,20 @@
 - (void)setVariantOptions:(id)arg1;
 - (id)variantOptions;
 - (void)invokeStoreCompletion;
+- (id)serializedAsset;
+- (void)setReadyForStore:(BOOL)arg1;
 - (BOOL)installOnly;
 - (id)manifestEntry;
+- (BOOL)readyForStore;
+- (id)storePlist;
+- (id)storeInfo;
 - (BOOL)isRestore;
 - (BOOL)bypassStore;
 - (BOOL)isDownload;
 - (long long)storePID;
-- (void)setPath:(id)arg1;
-- (id)path;
-- (id)icon;
-- (void)setIcon:(id)arg1;
-- (id)identifier;
-- (void)setIdentifier:(id)arg1;
-- (id)assetType;
-- (void)setAssetType:(id)arg1;
-- (void)setDataclass:(id)arg1;
-- (id)dataclass;
 - (id)infoPlist;
+- (void)setDataclass:(id)arg1;
+- (id)error;
+- (id)dataclass;
 
 @end

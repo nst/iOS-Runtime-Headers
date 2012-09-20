@@ -18,8 +18,8 @@
 + (void)_createConnectionRunLoop;
 + (void)initialize;
 
+- (void)invalidate;
 - (void)dealloc;
-- (void)_stopConnection;
 - (void)_startConnection;
 - (void)_ping;
 - (id)handlerValueForKey:(int)arg1 withObject:(id)arg2;
@@ -29,6 +29,6 @@
 - (id)initWithHandlerType:(int)arg1 delegate:(id)arg2;
 - (id)handlerValueForKey:(int)arg1;
 - (int)sendEvent:(id)arg1;
-- (void)invalidate;
+- (void)_stopConnection;
 
 @end

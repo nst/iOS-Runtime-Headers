@@ -9,14 +9,14 @@
     MFConditionLock *_lock;
 }
 
-@property MFConditionLock * lock;
 @property MFGenericAttachmentStore * store;
+@property MFConditionLock * lock;
 
 
 - (void)setLock:(id)arg1;
-- (int)appendData:(id)arg1;
-- (id)lock;
 - (void)setStore:(id)arg1;
 - (id)store;
+- (int)appendData:(id)arg1;
+- (id)lock;
 
 @end

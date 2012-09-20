@@ -8,13 +8,13 @@
 @property(readonly) unsigned int length;
 
 
-- (unsigned int)length;
 - (void)dealloc;
+- (unsigned int)length;
 - (id)item:(unsigned int)arg1;
 - (void)finalize;
-- (BOOL)contains:(id)arg1;
-- (void)add:(id)arg1;
-- (void)remove:(id)arg1;
 - (BOOL)toggle:(id)arg1;
+- (void)remove:(id)arg1;
+- (void)add:(id)arg1;
+- (BOOL)contains:(id)arg1;
 
 @end

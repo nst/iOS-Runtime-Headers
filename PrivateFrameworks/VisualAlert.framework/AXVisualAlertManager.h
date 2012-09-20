@@ -19,33 +19,41 @@
     BOOL _torchDeviceOpen;
     BOOL _torchDeviceOn;
     BOOL _isDeviceLocked;
+    BOOL _isQuietModeEnabled;
     BOOL _captureSessionRunning;
     BOOL _conferenceCallRinging;
     BOOL _skipAutomaticStopOnUserInteraction;
+    unsigned int _typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
 }
 
 @property(readonly) NSDictionary * _patterns;
 @property(setter=_setActivePattern:,retain) NSDictionary * _activePattern;
-@property(setter=_setPatternToUseForVisualAlertAfterCaptureSessionStopsRunning:,retain) NSDictionary * _patternToUseForVisualAlertAfterCaptureSessionStopsRunning;
+@property(setter=_setTypeToUseForVisualAlertAfterCaptureSessionStopsRunning:) unsigned int _typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
 @property(getter=_isTorchDeviceOpen,setter=_setTorchDeviceOpen:) BOOL _torchDeviceOpen;
 @property(getter=_isTorchDeviceOn,setter=_setTorchDeviceOn:) BOOL _torchDeviceOn;
 
-+ (id)sharedVisualAlertManager;
 + (void)initialize;
++ (id)sharedVisualAlertManager;
 
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (void)stop;
+- (void)_stop;
+- (void)startForAlertTypes:(unsigned int)arg1 cameraTorchManager:(id)arg2;
 - (BOOL)_isTorchDeviceOn;
 - (BOOL)_isTorchDeviceOpen;
-- (id)_patternToUseForVisualAlertAfterCaptureSessionStopsRunning;
-- (void)_beginVisualAlertWithPattern:(id)arg1 repeat:(BOOL)arg2;
-- (id)_patterns;
+- (unsigned int)_typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
+- (void)_beginVisualAlertForType:(unsigned int)arg1 repeat:(BOOL)arg2;
 - (id)_activePattern;
 - (void)_setTorchDeviceOn:(BOOL)arg1;
 - (void)_processNextVisualAlertComponent;
 - (void)_setTorchDeviceOpen:(BOOL)arg1;
 - (void)_setActivePattern:(id)arg1;
 - (id)_normalizedStrobePatternForOriginalPattern:(id)arg1;
-- (void)_setPatternToUseForVisualAlertAfterCaptureSessionStopsRunning:(id)arg1;
-- (void)_beginVisualAlertWithPattern:(id)arg1 repeat:(BOOL)arg2 skipAutomaticStopOnUserInteraction:(BOOL)arg3;
+- (id)_patterns;
+- (void)_setTypeToUseForVisualAlertAfterCaptureSessionStopsRunning:(unsigned int)arg1;
+- (void)_beginVisualAlertForType:(unsigned int)arg1 repeat:(BOOL)arg2 skipAutomaticStopOnUserInteraction:(BOOL)arg3;
 - (void)_startForAlertTypes:(unsigned int)arg1 cameraTorchManager:(id)arg2;
 - (void)_endVisualAlert;
 - (void)_handleFaceTimeCallRinging;
@@ -53,6 +61,8 @@
 - (void)_handleSecondaryVisualAlertManagerDidStart;
 - (void)_handleCaptureSessionDidStopRunning;
 - (void)_handleCaptureSessionDidStartRunning;
+- (void)_handleQuietModeWasDisabled;
+- (void)_handleQuietModeWasEnabled;
 - (void)_handleDeviceWasUnlocked;
 - (void)_handleDeviceWasLocked;
 - (void)_handleVolumeChanged;
@@ -68,11 +78,5 @@
 - (void)_handleBeginVisualAlertForAlarmWithSound:(BOOL)arg1;
 - (void)_handleVisualAlertForRegularNotification;
 - (void)_handleVisualAlertForIncomingMessage;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (void)startForAlertTypes:(unsigned int)arg1 cameraTorchManager:(id)arg2;
-- (void)stop;
-- (void)_stop;
 
 @end

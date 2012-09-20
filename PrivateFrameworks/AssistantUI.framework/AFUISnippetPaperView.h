@@ -22,31 +22,31 @@
 @property(retain) UIColor * paperColor;
 @property(retain) UIImage * paperImage;
 @property float paperImageAlpha;
-@property BOOL hasBeveledEdge;
 @property BOOL usesGradient;
+@property BOOL hasBeveledEdge;
 
 
-- (void)dealloc;
-- (void)setHasBeveledEdge:(BOOL)arg1;
-- (void)setUsesGradient:(BOOL)arg1;
-- (void)setPaperImageAlpha:(float)arg1;
-- (float)paperImageAlpha;
-- (void)setGradientStartColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-- (void)setGradientEndColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-- (BOOL)hasBeveledEdge;
-- (BOOL)usesGradient;
-- (id)paperImage;
-- (void)setGradientValues:(const struct { float x1; float x2; float x3; float x4; }*)arg1;
-- (void)setPaperColor:(id)arg1;
-- (struct { float x1; float x2; float x3; float x4; float x5; })_uiGradientValueForValue:(struct { float x1; float x2; float x3; float x4; })arg1;
-- (void)setPaperImage:(id)arg1;
-- (id)paperColor;
+- (void)setDelegate:(id)arg1;
+- (void).cxx_destruct;
 - (id)color;
 - (void)setColor:(id)arg1;
 - (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNeedsDisplay;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)hasBeveledEdge;
+- (BOOL)usesGradient;
+- (void)setGradientEndColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
+- (void)setGradientStartColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
+- (float)paperImageAlpha;
+- (void)setPaperImageAlpha:(float)arg1;
+- (void)setUsesGradient:(BOOL)arg1;
+- (void)setHasBeveledEdge:(BOOL)arg1;
+- (id)paperColor;
+- (void)setPaperImage:(id)arg1;
+- (struct { float x1; float x2; float x3; float x4; float x5; })_uiGradientValueForValue:(struct { float x1; float x2; float x3; float x4; })arg1;
+- (void)setPaperColor:(id)arg1;
+- (void)setGradientValues:(const struct { float x1; float x2; float x3; float x4; }*)arg1;
+- (id)paperImage;
 
 @end

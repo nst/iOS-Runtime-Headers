@@ -17,12 +17,12 @@
 
 
 - (void)dealloc;
-- (void)finalize;
-- (id)initWithWeaksReferences:(BOOL)arg1;
-- (void)setForUseWithModel:(id)arg1;
-- (unsigned int)getAllObjects:(id*)arg1;
-- (void)setCapacityHint:(unsigned int)arg1 forSlot:(unsigned int)arg2;
 - (void)clearTemporaryIDs;
+- (void)setCapacityHint:(unsigned int)arg1 forSlot:(unsigned int)arg2;
+- (unsigned int)getAllObjects:(id*)arg1;
+- (void)setForUseWithModel:(id)arg1;
+- (id)initWithWeaksReferences:(BOOL)arg1;
 - (void)_dispose;
+- (void)finalize;
 
 @end

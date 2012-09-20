@@ -8,6 +8,7 @@
 @property(readonly) unsigned long long resultType;
 @property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
 
++ (void)initialize;
 + (id)transitInformationCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2;
 + (id)phoneNumberCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 phoneNumber:(id)arg2;
 + (id)regularExpressionCheckingResultWithRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 count:(unsigned int)arg2 regularExpression:(id)arg3;
@@ -22,8 +23,20 @@
 + (id)grammarCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 details:(id)arg2;
 + (id)spellCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)orthographyCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 orthography:(id)arg2;
-+ (void)initialize;
 
+- (id)URL;
+- (id)description;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)components;
+- (id)phoneNumber;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (id)timeZone;
+- (id)date;
+- (double)duration;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (unsigned long long)resultType;
 - (void*)underlyingResult;
 - (id)regularExpression;
 - (id)replacementString;
@@ -35,18 +48,5 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })decodeRangeWithCoder:(id)arg1;
 - (void)encodeRangeWithCoder:(id)arg1;
 - (unsigned int)numberOfRanges;
-- (id)components;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
-- (id)phoneNumber;
-- (id)timeZone;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (id)URL;
-- (double)duration;
-- (id)date;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (unsigned long long)resultType;
 
 @end

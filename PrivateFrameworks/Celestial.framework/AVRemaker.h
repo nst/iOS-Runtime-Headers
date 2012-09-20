@@ -11,13 +11,18 @@
 @property(readonly) long long approximateByteSize;
 @property(readonly) double progress;
 
-+ (double)maximumDurationWithinLimitsForMode:(id)arg1 options:(id)arg2;
 + (id)settingForMode:(id)arg1;
 + (id)figRemakerNotificationNames;
 + (long long)approximateByteSizeForMode:(id)arg1 duration:(double)arg2 options:(id)arg3;
++ (double)maximumDurationWithinLimitsForMode:(id)arg1 options:(id)arg2;
 
+- (void)setRangeStartTime:(double)arg1 endTime:(double)arg2;
+- (double)sourceDuration;
+- (id)initWithSource:(id)arg1 dest:(id)arg2 mode:(id)arg3 options:(id)arg4;
 - (void)cancel;
 - (void)dealloc;
+- (double)progress;
+- (id)start;
 - (long long)approximateByteSize;
 - (double)maxDurationWithinLimits;
 - (void)removeListeners;
@@ -28,15 +33,11 @@
 - (BOOL)sourceHasPortraitOrientationVideo;
 - (BOOL)canPassThroughVideo:(id)arg1;
 - (BOOL)canPassThroughAudio:(id)arg1;
+- (id)retrieveAudioSettingForNumChannels:(id)arg1;
 - (id)settingForFigRemaker;
 - (struct CGSize { float x1; float x2; })calculateDimensionsOfSource;
 - (id)videoPropertiesForTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
 - (id)audioPropertiesForTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
 - (BOOL)multipleNonEmptyEditsInTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
-- (double)progress;
-- (id)start;
-- (void)setRangeStartTime:(double)arg1 endTime:(double)arg2;
-- (double)sourceDuration;
-- (id)initWithSource:(id)arg1 dest:(id)arg2 mode:(id)arg3 options:(id)arg4;
 
 @end

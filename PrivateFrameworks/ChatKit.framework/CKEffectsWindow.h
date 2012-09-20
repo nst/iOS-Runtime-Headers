@@ -12,12 +12,12 @@
 @property(retain) UIImageView * shadowImageView;
 
 
-- (id)init;
 - (void)dealloc;
-- (BOOL)shadowHidden;
-- (void)setShadowHidden:(BOOL)arg1;
-- (void)setShadowImageView:(id)arg1;
-- (id)shadowImageView;
+- (id)init;
 - (void)didAddSubview:(id)arg1;
+- (BOOL)shadowHidden;
+- (id)shadowImageView;
+- (void)setShadowImageView:(id)arg1;
+- (void)setShadowHidden:(BOOL)arg1;
 
 @end

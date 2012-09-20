@@ -8,12 +8,12 @@
     struct DOMObjectInternal { } *_internal;
 }
 
-@property(retain,readonly) DOMStyleSheet * sheet;
+@property(readonly) DOMStyleSheet * sheet;
 
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)sheet;
 - (oneway void)_webcore_releaseOnWebThread;
 - (oneway void)release;

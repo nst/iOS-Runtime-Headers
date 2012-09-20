@@ -24,7 +24,7 @@
 - (void)reloadActionRows;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
 - (int)mediaDisclosureStyleForIndex:(unsigned int)arg1;
-- (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
+- (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
 - (id)prefixActionRows;
 
 @end

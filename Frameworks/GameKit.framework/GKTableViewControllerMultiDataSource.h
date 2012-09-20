@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSObject<GKTableViewControllerDataSource>, NSArray;
+@class GKSectionArrayDataSource, NSOrderedSet, NSArray;
 
 @interface GKTableViewControllerMultiDataSource : GKSectionArrayDataSource  {
     NSArray *_sectionDataSources;
@@ -11,28 +11,44 @@
 
 @property(retain) NSArray * sectionDataSources;
 @property int currentDataSourceIndex;
-@property(readonly) NSObject<GKTableViewControllerDataSource> * currentDataSource;
-@property(retain) NSArray * headerSections;
-@property(retain) NSArray * contentSections;
-@property(retain) NSArray * footerSections;
+@property(readonly) GKSectionArrayDataSource * currentDataSource;
+@property(retain) NSOrderedSet * headerSections;
+@property(retain) NSOrderedSet * contentSections;
+@property(retain) NSOrderedSet * footerSections;
 
 
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)description;
-- (void)dealloc;
-- (void)setCurrentDataSourceIndex:(int)arg1;
+- (id)_gkDescriptionWithChildren:(int)arg1;
+- (id)_gkDescription;
 - (void)setSectionDataSources:(id)arg1;
+- (void)setCurrentDataSourceIndex:(int)arg1;
 - (void)refreshCurrentDataSourceWithCompletionHandlerAndError:(id)arg1;
 - (int)currentDataSourceIndex;
 - (id)sectionDataSources;
-- (id)currentMultiSections;
 - (id)currentDataSource;
-- (void)setVisibleSections:(id)arg1;
-- (id)visibleSections;
-- (id)contentSections;
+- (void)prepareChildDataSources;
+- (void)setFooterSections:(id)arg1;
+- (id)footerSections;
+- (BOOL)allowsUpdatesForDataSource:(id)arg1;
+- (void)updateFlexibleSpaceHeightsInTableView:(id)arg1;
+- (void)tableView:(id)arg1 loadAdditionalDataForIndexPaths:(id)arg2 thenUpdateView:(id)arg3;
+- (int)refreshDataGeneration;
 - (void)tableView:(id)arg1 updateStatusViewAfterLoading:(id)arg2 context:(unsigned long long)arg3 withError:(id)arg4;
 - (unsigned long long)contextForTableView:(id)arg1 updateStatusViewBeforeLoading:(id)arg2;
-- (void)tableView:(id)arg1 prepareExpensiveContentAtIndexPaths:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)setPreviousContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })previousContentOffset;
+- (id)visibleSections;
+- (id)headerSections;
+- (void)setVisibleSections:(id)arg1;
+- (id)contentSections;
+- (void)setContentSections:(id)arg1;
+- (void)setHeaderSections:(id)arg1;
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
+- (void)endSectionUpdates;
+- (void)prepareSections;
+- (void)beginSectionUpdates;
+- (id)description;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (void)dealloc;
+- (id)sections;
 
 @end

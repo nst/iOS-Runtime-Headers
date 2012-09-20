@@ -12,11 +12,11 @@
 
 
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
-- (unsigned int)length;
 - (void)dealloc;
+- (unsigned int)length;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)_loadBundleIdentifierOrProcessName;
-- (id)_initWithExecutablePath:(id)arg1;
 - (BOOL)_isProcessName;
+- (id)_initWithExecutablePath:(id)arg1;
+- (void)_loadBundleIdentifierOrProcessName;
 
 @end

@@ -6,17 +6,22 @@
 
 @interface UIKeyboardEmoji : NSObject  {
     NSString *emojiString;
+    unsigned short _glyph;
 }
 
 @property(retain) NSString * emojiString;
 @property(readonly) NSString * key;
+@property unsigned short glyph;
 
++ (id)emojiWithString:(id)arg1;
 
 - (id)initWithString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (unsigned short)glyph;
 - (id)key;
-- (void)setEmojiString:(id)arg1;
 - (id)emojiString;
+- (void)setGlyph:(unsigned short)arg1;
+- (void)setEmojiString:(id)arg1;
 
 @end

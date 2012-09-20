@@ -2,44 +2,64 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@class NSArray, NSString, SADistance, NSNumber;
 
 @interface SALocation : SADomainObject  {
 }
 
-@property(retain) NSNumber * accuracy;
+@property(copy) NSNumber * accuracy;
 @property(copy) NSString * city;
 @property(copy) NSString * countryCode;
+@property(copy) NSArray * entryPoints;
 @property(copy) NSString * label;
-@property(retain) NSNumber * latitude;
-@property(retain) NSNumber * longitude;
+@property(copy) NSNumber * latitude;
+@property(copy) NSNumber * longitude;
 @property(copy) NSString * postalCode;
+@property(copy) NSString * regionType;
+@property(retain) SADistance * relativeDistance;
 @property(copy) NSString * stateCode;
 @property(copy) NSString * street;
+@property(copy) NSString * subThoroughfare;
+@property(copy) NSString * thoroughfare;
+@property(copy) NSString * timezoneId;
 
 + (id)location;
 + (id)locationWithDictionary:(id)arg1 context:(id)arg2;
 
-- (void)setCountryCode:(id)arg1;
-- (id)countryCode;
+- (id)postalCode;
+- (id)subThoroughfare;
+- (id)thoroughfare;
 - (id)groupIdentifier;
-- (void)setLongitude:(id)arg1;
-- (void)setLatitude:(id)arg1;
-- (id)city;
-- (id)street;
 - (id)label;
 - (void)setLabel:(id)arg1;
-- (id)latitude;
+- (id)accuracy;
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
+- (void)setSubThoroughfare:(id)arg1;
+- (void)setThoroughfare:(id)arg1;
+- (id)entryPoints;
+- (void)setEntryPoints:(id)arg1;
+- (id)street;
+- (id)city;
 - (id)longitude;
-- (void)setCity:(id)arg1;
-- (id)stateCode;
-- (void)setStateCode:(id)arg1;
+- (id)latitude;
 - (void)setStreet:(id)arg1;
+- (void)setStateCode:(id)arg1;
+- (id)stateCode;
+- (void)setRelativeDistance:(id)arg1;
+- (id)relativeDistance;
+- (void)setRegionType:(id)arg1;
+- (id)regionType;
+- (void)setPostalCode:(id)arg1;
+- (void)setCity:(id)arg1;
+- (void)setAccuracy:(id)arg1;
+- (void)setTimezoneId:(id)arg1;
+- (id)timezoneId;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (void)setPostalCode:(id)arg1;
-- (id)accuracy;
-- (void)setAccuracy:(id)arg1;
-- (id)postalCode;
+- (void)setLongitude:(id)arg1;
+- (void)setLatitude:(id)arg1;
+- (id)afui_mapKitAddressDictionaryRepresentation;
+- (id)afui_coreLocationRepresentation;
 
 @end

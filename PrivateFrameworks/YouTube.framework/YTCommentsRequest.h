@@ -2,32 +2,26 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableURLRequest, NSMutableString, NSMutableArray, YTVideo;
+@class YTVideo, NSMutableArray, NSMutableString;
 
-@interface YTCommentsRequest : XMLSAXHTTPRequest  {
+@interface YTCommentsRequest : YTXMLHTTPRequest  {
     id _delegate;
-    BOOL _isLoading;
     NSMutableArray *_comments;
     unsigned int _startIndex;
     unsigned int _totalResults;
-    NSMutableURLRequest *_deferredRequest;
     NSMutableString *_moreCommentsURLString;
     YTVideo *_video;
 }
 
 + (unsigned int)commentsPerRequest;
 
-- (int)parseData:(id)arg1;
 - (void)dealloc;
-- (BOOL)isLoading;
-- (void)loadRequest:(id)arg1;
-- (void)requestMoreComments;
-- (id)initRequestingCommentsForVideo:(id)arg1 withDelegate:(id)arg2;
-- (void)_requestCommentsFromURL:(id)arg1;
-- (void)_didAuthenticate:(id)arg1;
-- (void)_failedToAuthenticate:(id)arg1;
-- (void)_listenForAuthenticationNotifications:(BOOL)arg1;
-- (void)didParseData;
 - (void)failWithError:(id)arg1;
+- (id)initRequestingCommentsForVideo:(id)arg1 withDelegate:(id)arg2;
+- (void)requestMoreComments;
+- (void)didAuthenticate:(id)arg1;
+- (void)_requestCommentsFromURL:(id)arg1;
+- (void)didParseData;
+- (int)parseData:(id)arg1;
 
 @end

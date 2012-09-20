@@ -11,8 +11,8 @@
 @property(copy) NSString * title;
 @property(copy) NSString * url;
 
-+ (id)news;
 + (id)newsWithDictionary:(id)arg1 context:(id)arg2;
++ (id)news;
 
 - (id)groupIdentifier;
 - (void)setUrl:(id)arg1;

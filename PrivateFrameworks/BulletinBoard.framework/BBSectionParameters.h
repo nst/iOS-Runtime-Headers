@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBSectionSubtypeParameters, NSMutableDictionary;
+@class NSString, BBSectionSubtypeParameters, NSLock, NSData, NSMutableDictionary;
 
 @interface BBSectionParameters : NSObject  {
+    NSLock *_lock;
     BOOL _showsSubtitle;
     unsigned int _messageNumberOfLines;
     BOOL _usesVariableLayout;
@@ -12,6 +13,10 @@
     BOOL _showsDateInFloatingLockScreenAlert;
     BBSectionSubtypeParameters *_defaultSubtypeParameters;
     NSMutableDictionary *_allSubtypeParameters;
+    NSString *_displayName;
+    NSData *_iconData;
+    BOOL _displaysCriticalBulletins;
+    NSString *_uniqueIdentifier;
 }
 
 @property BOOL showsSubtitle;
@@ -19,12 +24,25 @@
 @property unsigned int messageNumberOfLines;
 @property BOOL orderSectionUsingRecencyDate;
 @property BOOL showsDateInFloatingLockScreenAlert;
+@property(copy) NSString * displayName;
+@property(retain) NSData * iconData;
+@property BOOL displaysCriticalBulletins;
 @property(retain) BBSectionSubtypeParameters * defaultSubtypeParameters;
 @property(retain) NSMutableDictionary * allSubtypeParameters;
+@property(retain) NSString * uniqueIdentifier;
 
++ (id)copyCachedSectionParametersWithIdentifier:(id)arg1;
++ (void)removeSectionParametersFromCache:(id)arg1;
++ (void)addSectionParametersToCache:(id)arg1;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)iconData;
+- (void)setUniqueIdentifier:(id)arg1;
+- (id)displayName;
+- (id)uniqueIdentifier;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)parametersForSubtype:(int)arg1;
 - (BOOL)showsDateInFloatingLockScreenAlert;
 - (BOOL)orderSectionUsingRecencyDate;
@@ -40,7 +58,9 @@
 - (void)setAllSubtypeParameters:(id)arg1;
 - (void)setDefaultSubtypeParameters:(id)arg1;
 - (void)setMessageNumberOfLines:(unsigned int)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (void)setDisplaysCriticalBulletins:(BOOL)arg1;
+- (BOOL)displaysCriticalBulletins;
+- (void)setIconData:(id)arg1;
+- (void)setDisplayName:(id)arg1;
 
 @end

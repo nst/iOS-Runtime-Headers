@@ -14,10 +14,10 @@
 }
 
 
-- (void)dealloc;
 - (id)data;
+- (void)dealloc;
+- (id)initFromCentralFileHeader:(const char *)arg1 inputStream:(id)arg2;
 - (id)inputStream;
 - (void)copyToFile:(id)arg1;
-- (id)initFromCentralFileHeader:(const char *)arg1 inputStream:(id)arg2;
 
 @end

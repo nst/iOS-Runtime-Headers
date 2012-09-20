@@ -9,11 +9,11 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)foregroundColor;
 - (void)setStyleColor:(id)arg1;
 - (void)setForegroundColor:(id)arg1;

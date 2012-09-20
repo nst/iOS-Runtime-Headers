@@ -21,7 +21,6 @@
 + (id)sharedMultipleIPFormatter;
 + (id)ipFormatter:(unsigned int)arg1;
 + (id)romanFormatter:(unsigned int)arg1;
-+ (id)formatterForBSFormatter:(int)arg1 withMaxLen:(long)arg2;
 + (id)domainNameSet;
 + (id)hexSet;
 + (id)ascii7BitSet;
@@ -38,10 +37,8 @@
 + (id)numberOnlyFormatter:(unsigned int)arg1;
 + (id)ascii7BitFormatter:(unsigned int)arg1;
 + (id)hexFormatter:(unsigned int)arg1;
++ (id)formatterForBSFormatter:(int)arg1 withMaxLen:(long)arg2;
 
-- (BOOL)isPartialStringValid:(id*)arg1 proposedSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 errorDescription:(id*)arg5;
-- (BOOL)isPartialStringValid:(id)arg1 newEditingString:(id*)arg2 errorDescription:(id*)arg3;
-- (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 errorDescription:(id*)arg3;
 - (void)dealloc;
 - (id)initWithStringOfValidCharacters:(id)arg1 withMaxLength:(unsigned int)arg2;
 - (id)initWithMaxLength:(unsigned int)arg1;
@@ -50,6 +47,9 @@
 - (id)initWithCharacterSet:(id)arg1 withMaxLength:(unsigned int)arg2;
 - (id)stringForObjectValue:(id)arg1;
 - (id)characterSet;
+- (BOOL)isPartialStringValid:(id*)arg1 proposedSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 errorDescription:(id*)arg5;
+- (BOOL)isPartialStringValid:(id)arg1 newEditingString:(id*)arg2 errorDescription:(id*)arg3;
+- (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 errorDescription:(id*)arg3;
 - (void)setCharacterSet:(id)arg1;
 
 @end

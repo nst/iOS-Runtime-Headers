@@ -20,16 +20,16 @@
 + (void)initialize;
 
 - (void)dealloc;
-- (id)initWithStyleType:(int)arg1;
-- (int)beginReadingFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
-- (int)doneReading:(id)arg1;
-- (BOOL)beginProperty:(const char *)arg1;
-- (void)handleObject:(id)arg1;
-- (void)doneProperty;
-- (void)handleBoolValue:(BOOL)arg1;
-- (void)handleIntValue:(int)arg1;
-- (void)handleFloatValue:(float)arg1;
-- (void)handleDoubleValue:(double)arg1;
 - (id)createStyle;
+- (void)handleDoubleValue:(double)arg1;
+- (void)handleFloatValue:(float)arg1;
+- (void)handleIntValue:(int)arg1;
+- (void)handleBoolValue:(BOOL)arg1;
+- (void)doneProperty;
+- (void)handleObject:(id)arg1;
+- (BOOL)beginProperty:(const char *)arg1;
+- (int)doneReading:(id)arg1;
+- (int)beginReadingFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (id)initWithStyleType:(int)arg1;
 
 @end

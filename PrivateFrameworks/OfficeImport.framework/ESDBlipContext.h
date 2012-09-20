@@ -17,7 +17,7 @@
 
 - (struct SsrwOOStream { int (**x1)(); }*)stream;
 - (bool)saveDelayedMedia:(id)arg1 toFile:(id)arg2;
-- (bool)loadDelayedNode:(id)arg1;
 - (id)initWithOffset:(unsigned int)arg1 byteCount:(unsigned int)arg2 stream:(struct SsrwOOStream { int (**x1)(); }*)arg3 streamID:(unsigned int)arg4;
+- (bool)loadDelayedNode:(id)arg1;
 
 @end

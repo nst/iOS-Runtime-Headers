@@ -26,17 +26,22 @@
 + (id)iCalendarValueFromDate:(id)arg1 isDateOnly:(BOOL)arg2 isFloating:(BOOL)arg3;
 + (id)iCalendarValueFromRecurrenceType:(int)arg1;
 
+- (void)reset;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)UUID;
 - (id)calendarIdentifier;
+- (int)interval;
+- (void)setInterval:(int)arg1;
+- (id)owner;
+- (BOOL)mayOccurAfterDate:(id)arg1;
 - (int)firstDayOfTheWeek;
-- (id)cachedEndDate;
 - (BOOL)shouldPinMonthDays;
 - (void)setCachedEnd:(id)arg1;
+- (id)cachedEndDate;
 - (id)cachedEnd;
-- (id)_persistentRule;
 - (void)setFirstDayOfTheWeek:(unsigned int)arg1;
 - (id)weeksOfTheYear;
 - (id)daysOfTheYear;
@@ -55,15 +60,11 @@
 - (void)setDaysOfTheWeek:(id)arg1;
 - (void)setFrequency:(int)arg1;
 - (id)initRecurrenceWithFrequency:(int)arg1 interval:(int)arg2 end:(id)arg3;
+- (id)_persistentRule;
 - (void)setRecurrenceEnd:(id)arg1;
 - (id)recurrenceEnd;
 - (struct { int x1; int x2; int x3; int x4; int x5; double x6; })gregorianUnits;
 - (BOOL)dirtyStateMayAffectExceptionDates;
 - (id)lazyLoadRelationForKey:(id)arg1;
-- (int)interval;
-- (void)setInterval:(int)arg1;
-- (void)reset;
-- (id)owner;
-- (id)UUID;
 
 @end

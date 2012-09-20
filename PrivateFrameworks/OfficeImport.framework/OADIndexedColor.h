@@ -8,8 +8,8 @@
 
 + (id)indexedColorWithIndex:(int)arg1;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)index;
 - (id)colorFromPalette:(id)arg1;

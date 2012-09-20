@@ -15,13 +15,13 @@
 }
 
 
+- (id)initWithURL:(id)arg1;
+- (void)dealloc;
 - (void)notifyObserver:(id)arg1;
 - (void)addMoveToURL:(id)arg1;
 - (void)addMoveToPath:(id)arg1;
 - (void)addDeletion;
 - (void)addContentsChange;
 - (void)addAttributeChange;
-- (void)dealloc;
-- (id)initWithURL:(id)arg1;
 
 @end

@@ -33,11 +33,12 @@
 @property(retain) NSURL * principalURL;
 
 
-- (BOOL)hasChanges;
 - (void)dealloc;
-- (id)etag;
-- (void)setEtag:(id)arg1;
+- (void)setClientVersion:(unsigned int)arg1;
 - (id)principalURL;
+- (BOOL)hasChanges;
+- (void)setCtag:(id)arg1;
+- (id)ctag;
 - (id)homeURL;
 - (void)setPrincipalURL:(id)arg1;
 - (void)setSyncToken:(id)arg1;
@@ -48,8 +49,9 @@
 - (id)bulkRequests;
 - (id)pushTransports;
 - (id)pushKey;
+- (id)etag;
+- (void)setEtag:(id)arg1;
 - (void)setAccountPrsId:(id)arg1;
-- (void)setClientVersion:(unsigned int)arg1;
 - (BOOL)supportsSyncCollection;
 - (id)accountPrsId;
 - (unsigned int)clientVersion;
@@ -75,7 +77,5 @@
 - (void)setHomeURL:(id)arg1;
 - (void)writeToBookmarkDB;
 - (id)initWithBookmarkDatabase:(void*)arg1;
-- (void)setCtag:(id)arg1;
-- (id)ctag;
 
 @end

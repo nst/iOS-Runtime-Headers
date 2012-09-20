@@ -6,12 +6,12 @@
    See Warning(s) below.
  */
 
-@class <MCJobQueueObserver>;
+@class NSObject<OS_dispatch_group>, <MCJobQueueObserver>, NSObject<OS_dispatch_queue>;
 
 @interface MCJobQueue : NSObject  {
-    struct dispatch_queue_s { } *_executionQueue;
-    struct dispatch_queue_s { } *_jobQueue;
-    struct dispatch_group_s { } *_jobGroup;
+    NSObject<OS_dispatch_queue> *_executionQueue;
+    NSObject<OS_dispatch_queue> *_jobQueue;
+    NSObject<OS_dispatch_group> *_jobGroup;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -20,20 +20,20 @@
     <MCJobQueueObserver> *_observer;
 }
 
+@property(retain) NSObject<OS_dispatch_queue> * executionQueue;
 @property <MCJobQueueObserver> * observer;
-@property struct dispatch_queue_s { }* executionQueue;
 
 
+- (void).cxx_destruct;
 - (id)init;
-- (void)dealloc;
-- (void)enqueueJob:(id)arg1;
-- (BOOL)hasJobsEnqueued;
-- (void)jobDidFinish;
-- (void)waitForEnqueuedJobsToCompleteCompletionBlock:(id)arg1;
+- (void)setExecutionQueue:(id)arg1;
+- (id)executionQueue;
 - (void)abortEnqueuedJobsCompletionBlock:(id)arg1;
-- (struct dispatch_queue_s { }*)executionQueue;
-- (void)setExecutionQueue:(struct dispatch_queue_s { }*)arg1;
-- (id)observer;
+- (void)waitForEnqueuedJobsToCompleteCompletionBlock:(id)arg1;
+- (void)jobDidFinish;
+- (BOOL)hasJobsEnqueued;
 - (void)setObserver:(id)arg1;
+- (id)observer;
+- (void)enqueueJob:(id)arg1;
 
 @end

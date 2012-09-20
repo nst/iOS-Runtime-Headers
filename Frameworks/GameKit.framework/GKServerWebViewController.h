@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSURLRequest, UIAlertView, GKBackgroundView, UIWebView, NSString, NSData, GKPhotoPicker;
+@class UIActivityIndicatorView, NSURLRequest, UIAlertView, GKBackgroundView, UIWebView, NSString, NSData;
 
 @interface GKServerWebViewController : GKViewController <UIWebViewDelegate, UIAlertViewDelegate> {
     GKBackgroundView *_backgroundView;
@@ -33,8 +33,10 @@
         float right; 
     } _backgroundInsets;
     UIAlertView *_alert;
-    GKPhotoPicker *_photoPicker;
     BOOL _dismissOnAuthenticate;
+    UIActivityIndicatorView *_rightNavSpinner;
+    NSString *_rightButtonTitle;
+    int _alertTag;
 }
 
 @property(retain) GKBackgroundView * backgroundView;
@@ -52,21 +54,26 @@
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } backgroundInsets;
 @property BOOL dismissOnAuthenticate;
 @property(copy) id completionHandler;
+@property(retain) UIActivityIndicatorView * rightNavSpinner;
 @property(retain) UIAlertView * alert;
-@property(retain) GKPhotoPicker * photoPicker;
+@property int alertTag;
+@property(retain) NSString * rightButtonTitle;
 
 
-- (void)dealloc;
 - (BOOL)dismissOnAuthenticate;
-- (id)photoPicker;
+- (id)alert;
 - (void)setAddedSheetFrame:(BOOL)arg1;
 - (BOOL)addedSheetFrame;
 - (id)previousRequest;
-- (void)setPhotoPicker:(id)arg1;
+- (void)setAlertTag:(int)arg1;
 - (id)okCallback;
 - (id)cancelCallback;
+- (int)alertTag;
 - (void)setCancelCallback:(id)arg1;
 - (void)setOkCallback:(id)arg1;
+- (void)setAlert:(id)arg1;
+- (id)rightButtonTitle;
+- (void)setRightButtonTitle:(id)arg1;
 - (id)rightCallback;
 - (id)leftCallback;
 - (void)rightNavButtonPressed;
@@ -74,40 +81,41 @@
 - (void)setRightCallback:(id)arg1;
 - (void)setLeftCallback:(id)arg1;
 - (void)authenticateAndTryURLRequestAgain:(id)arg1;
+- (void)updateNavBarForLoading:(BOOL)arg1;
 - (void)setPreviousRequest:(id)arg1;
+- (void)processSpinnerURLComponents:(id)arg1;
 - (void)uploadContacts;
-- (void)changePhoto;
 - (void)parseNavBarURLString:(id)arg1;
 - (void)parseAlertURLString:(id)arg1;
+- (void)webView:(id)arg1 processNativeCommand:(id)arg2;
+- (void)startCommandProcessingForWebView:(id)arg1;
+- (void)setPushToken:(id)arg1;
+- (id)pushToken;
 - (void)showMessageForError:(id)arg1;
 - (void)setHeadersForRequest:(id)arg1;
-- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)rightNavSpinner;
+- (void)setRightNavSpinner:(id)arg1;
+- (void)cancelAlertWithoutDelegateCallback;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
+- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)authToken;
+- (void)setAuthToken:(id)arg1;
 - (id)decodeDashEncodedString:(id)arg1;
 - (void)processGameKitURLComponents:(id)arg1;
 - (void)loadURL:(id)arg1;
-- (void)setDismissOnAuthenticate:(BOOL)arg1;
-- (void)setAlert:(id)arg1;
-- (id)alert;
-- (void)cancelAlertWithoutDelegateCallback;
 - (void)finish;
-- (void)setAuthToken:(id)arg1;
-- (id)authToken;
-- (void)setPushToken:(id)arg1;
-- (id)pushToken;
-- (void)setStatus:(int)arg1;
-- (int)status;
+- (void)setDismissOnAuthenticate:(BOOL)arg1;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
+- (void)dealloc;
+- (void)setStatus:(int)arg1;
+- (int)status;
 - (void)setCompletionHandler:(id)arg1;
-- (id)completionHandler;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)webViewDidStartLoad:(id)arg1;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)setWebView:(id)arg1;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
@@ -115,6 +123,7 @@
 - (id)webView;
 - (id)backgroundView;
 - (void)setBackgroundView:(id)arg1;
+- (id)completionHandler;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

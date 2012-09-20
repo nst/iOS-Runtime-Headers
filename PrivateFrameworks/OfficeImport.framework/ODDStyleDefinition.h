@@ -9,9 +9,9 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (id)labelForName:(id)arg1;
+- (id)init;
 - (void)setLabel:(id)arg1 forName:(id)arg2;
+- (id)labelForName:(id)arg1;
 
 @end

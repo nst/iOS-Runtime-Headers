@@ -10,15 +10,15 @@
 @property(copy) NSURL * targetAppId;
 @property int mediaItemType;
 
-+ (id)loadPredefinedQueue;
 + (id)loadPredefinedQueueWithDictionary:(id)arg1 context:(id)arg2;
++ (id)loadPredefinedQueue;
 
 - (id)groupIdentifier;
-- (int)mediaItemType;
 - (void)setMediaItemType:(int)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (int)mediaItemType;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

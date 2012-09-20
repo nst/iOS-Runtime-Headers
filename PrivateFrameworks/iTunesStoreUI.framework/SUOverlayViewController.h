@@ -8,6 +8,7 @@
     NSMutableArray *_actionQueue;
     UIViewController *_activeViewController;
     UIViewController *_backViewController;
+    BOOL _canSwipeToDismiss;
     UIViewController *_frontViewController;
     SUOverlayTransition *_lastFlipTransition;
     struct CGSize { 
@@ -31,6 +32,7 @@
 @property(retain) SUMaskProvider * maskProvider;
 @property float shadowOpacity;
 @property float shadowRadius;
+@property BOOL canSwipeToDismiss;
 @property(retain) SUScriptFunction * shouldDismissFunction;
 @property(getter=isActiveOverlay,readonly) BOOL activeOverlay;
 @property(getter=isOnFront,readonly) BOOL onFront;
@@ -38,16 +40,6 @@
 
 + (struct CGSize { float x1; float x2; })defaultOverlaySize;
 
-- (id)init;
-- (void)dealloc;
-- (void)setShadowOpacity:(float)arg1;
-- (void)setShadowRadius:(float)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)activeViewController;
 - (void)_performFlipAction:(id)arg1;
 - (BOOL)_isControllerLoaded:(id)arg1;
@@ -71,17 +63,19 @@
 - (void)_enqueueAction:(id)arg1;
 - (id)presentationTransition;
 - (void)imagePageViewTapped:(id)arg1;
-- (void)setShouldDismissFunction:(id)arg1;
-- (void)setMaskProvider:(id)arg1;
-- (void)setOverlaySize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setFrontViewController:(id)arg1;
-- (struct CGSize { float x1; float x2; })overlaySize;
+- (id)shouldDismissFunction;
 - (float)shadowRadius;
 - (float)shadowOpacity;
-- (void)flipWithTransition:(id)arg1;
-- (id)shouldDismissFunction;
+- (struct CGSize { float x1; float x2; })overlaySize;
 - (id)frontViewController;
+- (BOOL)canSwipeToDismiss;
 - (id)backViewController;
+- (void)setOverlaySize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMaskProvider:(id)arg1;
+- (void)setShouldDismissFunction:(id)arg1;
+- (void)setFrontViewController:(id)arg1;
+- (void)setCanSwipeToDismiss:(BOOL)arg1;
+- (void)flipWithTransition:(id)arg1;
 - (id)_activeViewController;
 - (void)_performNextAction;
 - (void)setBackViewController:(id)arg1;
@@ -93,5 +87,15 @@
 - (id)scriptWindowContext;
 - (void)restoreArchivableContext:(id)arg1;
 - (id)copyArchivableContext;
+- (void)dealloc;
+- (id)init;
+- (void)setShadowRadius:(float)arg1;
+- (void)setShadowOpacity:(float)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 
 @end

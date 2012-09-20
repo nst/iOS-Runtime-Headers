@@ -6,61 +6,76 @@
    See Warning(s) below.
  */
 
-@class UIImageView, UILabel, UIButton, PLAlbumTextField, UIImage, PLImageView, UIView, UIView<PLStackableImage>;
+@class PLAlbumTextField, UIImageView, UIButton, PLUnreadMarkerView, UIImage, NSString, PLImageView, UIView<PLStackableImage>, PLLabel;
 
 @interface PLStackItemViewCell : UIView <UITextFieldDelegate> {
-    UIView<PLStackableImage> *_sourceView;
-    UIImageView *_badgeView;
-    UIImage *_badgeImage;
+    float _previousEnabledAlpha;
     UIButton *_closeButton;
-    UILabel *_titleLabel;
+    PLLabel *_titleLabel;
+    PLLabel *_subtitleLabel;
     PLAlbumTextField *_editField;
-    float _stackedAngle;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _lastItemSize;
-    BOOL _didHaveSourceView;
+    UIImageView *_unreadBadge;
+    PLUnreadMarkerView *_unreadMarkerStartView;
+    UIImageView *_badgeView;
+    BOOL _showsUnreadIndicator;
+    NSString *_title;
     BOOL _ignoreEndEditing;
-    unsigned int _showBadge : 1;
-    unsigned int _titleIsEditable : 1;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _closeAction;
-
+    BOOL _unreadStartMarkerShowsProgress;
+    BOOL _enabled;
+    UIView<PLStackableImage> *_sourceView;
+    BOOL _labelsShadowEnabled;
+    float _stackedAngle;
+    float _labelsAlpha;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _renameAction;
 
-    BOOL _enabled;
-    float _previousEnabledAlpha;
+    UIImage *_badgeImage;
+    BOOL _labelsHidden;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _closeAction;
+
+    BOOL _showsUnreadStartMarker;
+    BOOL _labelIsEditable;
+    NSString *_subtitle;
+    unsigned int _unreadStartMarkerCount;
 }
 
 @property(retain) UIView<PLStackableImage> * sourceView;
 @property(readonly) PLImageView * imageView;
-@property(readonly) UIView * badgeView;
-@property(retain) UILabel * title;
+@property(copy) NSString * title;
+@property(copy) NSString * subtitle;
 @property(getter=isLabelEditable) BOOL labelIsEditable;
 @property(readonly) BOOL isLabelEditing;
+@property BOOL labelsHidden;
+@property float labelsAlpha;
+@property(getter=isLabelShadowEnabled) BOOL labelsShadowEnabled;
 @property BOOL ignoreEndEditing;
+@property BOOL showsUnreadIndicator;
 @property(getter=isCloseBoxShown) BOOL showCloseBox;
 @property(readonly) struct CGPoint { float x1; float x2; } closeBoxPosition;
 @property float stackedAngle;
-@property(getter=isBadgeShown) BOOL showBadge;
 @property(retain) UIImage * badgeImage;
 @property unsigned int imageIndex;
+@property BOOL showsUnreadStartMarker;
+@property unsigned int unreadStartMarkerCount;
+@property BOOL unreadStartMarkerShowsProgress;
 @property BOOL enabled;
 @property(getter=isShadowEnabled) BOOL shadowEnabled;
 @property(copy) id renameAction;
 @property(copy) id closeAction;
 
 + (void)initialize;
-+ (struct CGSize { float x1; float x2; })badgeOffset;
 
+- (id)badgeImage;
+- (void)setBadgeImage:(id)arg1;
 - (void)dealloc;
 - (BOOL)enabled;
+- (id)subtitle;
+- (void)setSubtitle:(id)arg1;
 - (id)imageView;
 - (BOOL)textFieldShouldClear:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })textField:(id)arg1 willChangeSelectionFromCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 toCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
@@ -71,30 +86,44 @@
 - (id)title;
 - (BOOL)canBecomeFirstResponder;
 - (void)setEnabled:(BOOL)arg1;
-- (BOOL)becomeFirstResponder;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)becomeFirstResponder;
 - (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)renameAction;
+- (unsigned int)unreadStartMarkerCount;
+- (BOOL)showsUnreadStartMarker;
 - (id)closeAction;
-- (BOOL)isBadgeShown;
+- (BOOL)labelsHidden;
+- (id)renameAction;
+- (float)labelsAlpha;
+- (BOOL)isLabelShadowEnabled;
+- (BOOL)unreadStartMarkerShowsProgress;
+- (void)setUnreadStartMarkerShowsProgress:(BOOL)arg1;
+- (void)setShowsUnreadStartMarker:(BOOL)arg1;
 - (BOOL)ignoreEndEditing;
+- (void)_updateLabelsState;
 - (void)_handleCloseBoxTap;
-- (void)_positionBadgeView;
+- (void)_getTitleFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 subtitleFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 unreadIndicatorFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (void)_updateUnreadStartMarkerAnimated:(BOOL)arg1;
+- (void)_updateBadgeViewAnimated:(BOOL)arg1 forImageChange:(BOOL)arg2;
 - (void)setRenameAction:(id)arg1;
 - (void)setCloseAction:(id)arg1;
 - (void)resetToInitialSizeAndAngle;
-- (id)badgeView;
-- (id)badgeImage;
-- (void)setShowBadge:(BOOL)arg1;
-- (void)setBadgeImage:(id)arg1;
+- (void)setLabelsShadowEnabled:(BOOL)arg1;
+- (void)setUnreadStartMarkerShowsProgress:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setUnreadStartMarkerCount:(unsigned int)arg1;
+- (void)setShowsUnreadStartMarker:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setBadgeImage:(id)arg1 animated:(BOOL)arg2;
 - (void)setShowCloseBox:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isLabelEditable;
 - (BOOL)pointIsInsideTitle:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setStackedAngle:(float)arg1;
+- (void)setLabelsAlpha:(float)arg1;
 - (float)stackedAngle;
 - (unsigned int)imageIndex;
 - (struct CGPoint { float x1; float x2; })closeBoxPosition;
+- (void)setLabelsHidden:(BOOL)arg1;
 - (BOOL)isCloseBoxShown;
 - (void)setLabelIsEditable:(BOOL)arg1;
 - (void)setImageIndex:(unsigned int)arg1;
@@ -106,5 +135,8 @@
 - (BOOL)isShadowEnabled;
 - (void)setShadowEnabled:(BOOL)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1 angle:(float)arg2;
+- (BOOL)showsUnreadIndicator;
+- (void)setShowsUnreadIndicator:(BOOL)arg1;
+- (void)setShowsUnreadIndicator:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

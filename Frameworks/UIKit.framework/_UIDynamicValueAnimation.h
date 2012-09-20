@@ -36,8 +36,8 @@
 @property(copy) NSArray * activeValues;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)activeValues;
 - (void)setVelocity:(double)arg1;
 - (void)_setVelocity:(double)arg1;
@@ -57,8 +57,8 @@
 - (id)initWithValue:(double)arg1 velocity:(double)arg2 unitSize:(double)arg3;
 - (BOOL)_animateForInterval:(double)arg1;
 - (void)_stopAnimation;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (double)velocity;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (double)value;
 - (void)setValue:(double)arg1;
 

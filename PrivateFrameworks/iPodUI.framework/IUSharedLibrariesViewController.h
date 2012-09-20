@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class NSIndexPath, MPMediaLibrary, NSDate, IUSharedLibraryCellLayoutManager;
+@class NSIndexPath, UITableViewCell, MPMediaLibrary, NSDate, IUSharedLibraryCellLayoutManager;
 
 @interface IUSharedLibrariesViewController : IUMediaListViewController  {
     NSDate *_connectionStartDate;
     IUSharedLibraryCellLayoutManager *_layoutManager;
+    UITableViewCell *_moreListTableViewCell;
     NSIndexPath *_selectedIndexPath;
     MPMediaLibrary *_selectedLibrary;
     BOOL _showsSectionHeader;
@@ -14,16 +15,19 @@
 
 @property BOOL showsSectionHeader;
 
++ (Class)tableViewCellClass;
++ (id)tableViewBackgroundColor;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)moreListTableCell;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)setShowsSectionHeader:(BOOL)arg1;
 - (BOOL)showsSectionHeader;
 - (BOOL)hideActionRowsOnAppear;

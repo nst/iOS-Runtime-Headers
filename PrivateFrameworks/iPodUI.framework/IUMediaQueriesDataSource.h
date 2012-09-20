@@ -2,14 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUMediaDataSource, NSArray, MPMediaQuery, NSMutableArray, MPMediaLibrary;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface IUMediaQueriesDataSource : IUMediaListDataSource  {
+@class MPStoreCompletionOffering, NSArray, MPMediaQuery, IUMediaQueriesDataSource, NSMutableArray, MPMediaLibrary;
+
+@interface IUMediaQueriesDataSource : IUMediaListDataSource <SKStoreProductViewControllerDelegate> {
     NSArray *_queries;
     MPMediaLibrary *_mediaLibrary;
     NSMutableArray *_queriesEntities;
-    NSArray *_queriesBeforeFiltering;
-    IUMediaDataSource *_dataSourceForFiltering;
+    NSArray *_queriesBeforeOverlay;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _overlayDataSourceLoadBlock;
+
+    IUMediaQueriesDataSource *_overlayDataSource;
+    MPStoreCompletionOffering *_completionOffering;
     BOOL _hasQueriesAreEmpty;
     BOOL _queriesAreEmpty;
     unsigned long long _nowPlayingItemPersistentID;
@@ -21,17 +31,20 @@
     unsigned int _hasPendingLibraryChanges : 1;
 }
 
+@property(retain) MPStoreCompletionOffering * completionOffering;
 @property(retain) NSArray * queries;
 @property(copy) MPMediaQuery * query;
 @property(retain) MPMediaLibrary * mediaLibrary;
 @property int invalidationBehavior;
 @property(readonly) unsigned long long nowPlayingItemPersistentID;
+@property(readonly) int filteredMediaTypes;
 @property(readonly) BOOL matchesNowPlayingQuery;
 @property(readonly) unsigned int requiredEntityCountForSections;
 @property(readonly) BOOL showShuffleButtonWhenApplicable;
 @property(readonly) BOOL alwaysGroupedInGridView;
 @property(readonly) BOOL shouldLoadLocalImagesSynchronously;
 
++ (id)_imageCache;
 + (id)queryItemPropertiesToFetch;
 + (id)newDataSourceWithQuery:(id)arg1;
 + (id)newDataSourceWithSpecifier:(id)arg1;
@@ -40,37 +53,44 @@
 + (id)queryCollectionPropertiesToFetch;
 + (int)mediaEntityType;
 + (BOOL)usesNowPlayingIndicator;
-+ (id)_imageCache;
 
-- (unsigned int)count;
-- (id)init;
-- (void)dealloc;
+- (void)setMediaLibrary:(id)arg1;
+- (id)mediaLibrary;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
+- (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (void)setQuery:(id)arg1;
+- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
-- (id)entityAtIndex:(unsigned int)arg1;
+- (void)invalidate;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (float)rowHeight;
 - (BOOL)isEmpty;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)query;
-- (void)invalidate;
 - (void)reloadData;
-- (void)setMediaLibrary:(id)arg1;
-- (id)mediaLibrary;
+- (id)entityAtIndex:(unsigned int)arg1;
 - (unsigned long long)nowPlayingItemPersistentID;
 - (void)setInvalidationBehavior:(int)arg1;
 - (int)invalidationBehavior;
 - (void)setArtAStillFrame:(BOOL)arg1 atIndex:(unsigned int)arg2;
 - (BOOL)alwaysGroupedInGridView;
 - (id)copyGetMoreFromITunesStoreActionRow;
+- (unsigned int)indexOfEntityWithStoreID:(unsigned long long)arg1;
 - (unsigned int)indexOfPersistentID:(unsigned long long)arg1;
 - (unsigned int)indexOfEntity:(id)arg1;
+- (void)productViewControllerDidFinish:(id)arg1;
+- (id)queriesAppropriateForGroupingProperty:(int)arg1 mediaType:(int)arg2;
 - (id)_newContextForCopyWithIdentifier:(id)arg1;
-- (void)_addPrefixActionRow:(id)arg1;
+- (BOOL)_hasGreaterThanOrEqualEntityCount:(unsigned int)arg1 playbackQuery:(BOOL)arg2;
 - (void)_getMoreAction:(id)arg1;
 - (id)bestStoreURL;
 - (id)_getMoreURLForMediaType:(int)arg1;
 - (id)_newGetMoreActionRowForMediaType:(int)arg1;
 - (BOOL)matchesNowPlayingQuery;
+- (void)_invalidateWithOverlayDataSourceLoadBlock:(id)arg1;
 - (void)_handleDefaultMediaLibraryDidChange;
 - (void)_handleTrackDynamicPropertiesChanged;
 - (void)_handleMediaLibraryDidChange;
@@ -78,25 +98,24 @@
 - (id)_newContextForShuffle;
 - (id)_newContextForAllSongs;
 - (id)_newContextForAllAlbums;
-- (void)_addDefaultOnTheGoActionRows;
-- (void)_addDefaultNormalActionRows;
 - (id)playbackContextForQuery:(id)arg1 entityIndex:(unsigned int)arg2;
+- (void)_removeStoreOffersFromQuery:(id*)arg1 entityIndex:(unsigned int*)arg2;
 - (id)entityAtIndex:(unsigned int)arg1 localEntityIndex:(unsigned int*)arg2 localEntityCount:(unsigned int*)arg3 query:(id*)arg4;
+- (BOOL)updateQueriesPredicates;
 - (void)reloadNowPlayingItemPersistentID;
-- (void)_reloadFilteredQueries;
+- (void)_reloadOverlayQueries;
 - (void)_setQueriesEntities:(id)arg1;
 - (id)_copyReloadedQueriesEntitiesForQueries:(id)arg1 library:(id)arg2;
-- (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (void)_appDefaultsDidChangeNotification:(id)arg1;
 - (BOOL)shouldDrawAsDisabledForIndex:(unsigned int)arg1;
-- (BOOL)isEmptyAfterFiltering;
 - (id)selectionConfirmationAlertForIndex:(unsigned int)arg1;
 - (void)reloadIsEmpty;
 - (id)countStringFormat;
 - (BOOL)skipSingleItemLists;
 - (BOOL)selectionPossibleForIndex:(unsigned int)arg1;
-- (BOOL)filterUsingDataSource:(id)arg1;
-- (BOOL)isFiltered;
+- (id)completionOffering;
+- (void)setCompletionOffering:(id)arg1;
+- (void)setIsEditing:(BOOL)arg1;
 - (id)viewControllerContextForSearchCompletion;
 - (void)reloadQueriesEntities;
 - (void)reloadSectionInfo;
@@ -118,11 +137,12 @@
 - (id)queryForIndex:(unsigned int)arg1 localEntityIndex:(unsigned int*)arg2;
 - (BOOL)shouldLoadLocalImagesSynchronously;
 - (void)invalidateDynamicTrackCaches;
-- (void)reloadActionRows;
 - (int)mediaDisclosureStyleForIndex:(unsigned int)arg1;
-- (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
+- (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
+- (void)downloadCloudAssets;
 - (BOOL)hasPlayableItems;
 - (id)queries;
-- (void)_mediaLibraryDidChangeNotification:(id)arg1;
+- (void)_wifiEnabledDidChangeNotification:(id)arg1;
+- (int)filteredMediaTypes;
 
 @end

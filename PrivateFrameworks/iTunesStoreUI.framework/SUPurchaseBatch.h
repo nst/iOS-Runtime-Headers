@@ -7,33 +7,30 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray;
+@class SUPurchaseManager, NSArray;
 
 @interface SUPurchaseBatch : NSObject  {
     NSArray *_continuations;
     NSArray *_errors;
     NSArray *_items;
     NSArray *_offers;
+    SUPurchaseManager *_purchaseManager;
     BOOL _shouldSuspendWhenFinished;
     NSArray *_validPurchases;
 }
 
 @property(readonly) NSArray * items;
 @property(readonly) NSArray * offers;
-@property BOOL storeShouldExitWhenFinished;
+@property SUPurchaseManager * purchaseManager;
 @property(retain) NSArray * continuations;
 @property(retain) NSArray * errors;
 @property(retain) NSArray * validPurchases;
 
 
-- (void)dealloc;
-- (id)initWithItems:(id)arg1;
-- (id)items;
 - (id)offers;
 - (id)mergedErrorForError:(id)arg1 withCount:(int)arg2;
 - (void)setDocumentTargetIdentifier:(id)arg1;
-- (void)setStoreShouldExitWhenFinished:(BOOL)arg1;
-- (id)_copyValidPurchasesForItems:(id)arg1 shouldExit:(BOOL*)arg2;
+- (id)_copyValidPurchasesForItems:(id)arg1;
 - (id)copyFilteredItemsFromItems:(id)arg1;
 - (void)setErrors:(id)arg1;
 - (id)everythingFailedErrorForError:(id)arg1;
@@ -44,11 +41,15 @@
 - (void)setContinuations:(id)arg1;
 - (id)copyContinuationsForPurchases:(id)arg1;
 - (void)_validateItems;
-- (id)initWithItems:(id)arg1 offers:(id)arg2;
 - (void)setPurchasesAndContinuationsFromPurchases:(id)arg1;
-- (BOOL)storeShouldExitWhenFinished;
+- (id)purchaseManager;
+- (void)setPurchaseManager:(id)arg1;
+- (id)initWithItems:(id)arg1 offers:(id)arg2;
 - (id)validPurchases;
 - (id)continuations;
 - (id)errors;
+- (void)dealloc;
+- (id)initWithItems:(id)arg1;
+- (id)items;
 
 @end

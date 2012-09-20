@@ -19,17 +19,17 @@
 @property(retain) NSDictionary * userInfo;
 
 
+- (void)setAllowedRetryCount:(int)arg1;
+- (id)dictionary;
 - (id)userInfo;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (int)allowedRetryCount;
+- (void)setUserInfo:(id)arg1;
 - (unsigned long)optionFlags;
 - (id)initWithDictionary:(id)arg1 options:(unsigned long)arg2;
 - (void)setCurrentRetryCount:(int)arg1;
 - (int)currentRetryCount;
 - (struct __CFUserNotification { }*)copyUserNotification;
-- (void)setUserInfo:(id)arg1;
-- (id)dictionary;
-- (void)setAllowedRetryCount:(int)arg1;
-- (int)allowedRetryCount;
 
 @end

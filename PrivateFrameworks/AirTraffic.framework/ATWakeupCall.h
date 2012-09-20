@@ -6,10 +6,11 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSThread, NSNetServiceBrowser, NSMutableArray;
+@class NSThread, NSMutableArray, NSNetServiceBrowser;
 
 @interface ATWakeupCall : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
-    NSArray *_hostLibraryIdentifiers;
+    NSMutableArray *_hostLibraryIdentifiers;
+    NSMutableArray *_resolvingHosts;
     NSMutableArray *_resolvedLibraryIdentifiers;
     NSMutableArray *_resolvedLibraryServices;
 
@@ -28,13 +29,14 @@
 + (void)sendWakeupCallToAllSyncHosts;
 + (void)sendWakeupCall:(id)arg1;
 
+- (void)dealloc;
+- (void)stop;
+- (void)wake;
+- (void)netServiceBrowserDidStopSearch:(id)arg1;
 - (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netServiceBrowser:(id)arg1 didNotSearch:(id)arg2;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netServiceDidResolveAddress:(id)arg1;
-- (void)dealloc;
-- (void)wake;
-- (void)stop;
 
 @end

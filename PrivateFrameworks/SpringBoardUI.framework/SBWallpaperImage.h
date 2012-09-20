@@ -9,17 +9,17 @@
     NSData *_data;
 }
 
-@property(readonly) NSData * data;
 @property(readonly) int variant;
+@property(readonly) NSData * data;
 
++ (void)preheatWallpaperDataForVariant:(int)arg1;
 + (void)clearCachedWallpaper;
 + (id)cachedWallpaperDataForVariant:(int)arg1;
-+ (void)preheatWallpaperDataForVariant:(int)arg1;
 
-- (int)variant;
+- (id)data;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)initWithVariant:(int)arg1;
-- (id)data;
+- (int)variant;
 
 @end

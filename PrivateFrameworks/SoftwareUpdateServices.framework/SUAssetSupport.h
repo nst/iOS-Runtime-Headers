@@ -5,19 +5,21 @@
 @interface SUAssetSupport : NSObject  {
 }
 
-+ (id)tryCreateDescriptorFromCachedAsset;
-+ (void)cleanupAssets:(id)arg1;
-+ (id)localURLForAsset:(struct __MobileAsset { }*)arg1;
 + (id)assetDownloadOptionsFromMetadata:(id)arg1 priority:(int)arg2;
++ (id)assetDownloadOptionsForDocumentation;
++ (void)purgeSoftwareUpdateAsset:(struct __MobileAsset { }*)arg1 includingDocumentation:(BOOL)arg2;
++ (id)tryCreateDescriptorFromCachedAsset;
 + (id)defaultAssetDownloadOptionsWithPriority:(int)arg1;
-+ (void)cancelDownloadIfNecessary:(struct __MobileAsset { }*)arg1;
-+ (id)tryCreateDocumentationFromAsset:(struct __MobileAsset { }*)arg1;
-+ (id)createPossibleDocumentationAssetsFromDescriptor:(id)arg1;
-+ (id)createDescriptorFromAsset:(struct __MobileAsset { }*)arg1 state:(id)arg2;
-+ (void)cleanupAsset:(struct __MobileAsset { }*)arg1;
-+ (id)tryCreateDescriptorFromAsset:(struct __MobileAsset { }*)arg1;
 + (struct __MobileAsset { }*)createUpdateAssetUsingProductType:(id)arg1 productBuild:(id)arg2 productVersion:(id)arg3 releaseType:(id)arg4;
-+ (void)cleanupUpdateAndDocumentationForAsset:(struct __MobileAsset { }*)arg1;
++ (void)cleanupAsset:(struct __MobileAsset { }*)arg1;
++ (void)cancelDownloadIfNecessary:(struct __MobileAsset { }*)arg1;
++ (void)cleanupAsset:(struct __MobileAsset { }*)arg1 withCompletion:(id)arg2;
++ (id)localURLForAsset:(struct __MobileAsset { }*)arg1;
++ (id)tryCreateDocumentationFromAsset:(struct __MobileAsset { }*)arg1;
++ (id)_createPossibleDocumentationAssetsFromSUAssetState:(id)arg1;
++ (id)createDescriptorFromAsset:(struct __MobileAsset { }*)arg1 state:(id)arg2 documentationAssetCandidates:(id*)arg3;
++ (id)tryCreateDescriptorFromAsset:(struct __MobileAsset { }*)arg1 documentationAssetCandidates:(id*)arg2;
++ (id)tryCreateDescriptorFromAsset:(struct __MobileAsset { }*)arg1;
 + (struct __MobileAsset { }*)createDefaultUpdateAsset;
 
 

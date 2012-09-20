@@ -10,9 +10,9 @@
 }
 
 
+- (void)dealloc;
+- (id)init;
 - (void)folderChange:(id)arg1 finishedWithStatus:(int)arg2 error:(id)arg3;
 - (id)waitForResult;
-- (id)init;
-- (void)dealloc;
 
 @end

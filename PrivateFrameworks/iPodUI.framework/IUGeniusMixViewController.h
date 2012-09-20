@@ -2,27 +2,34 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIImageView, UIPageControl, IUGeniusGridView, NSMutableArray, NSMutableSet, UIScrollView, MPGeniusMix;
+@class UIImageView, NSTimer, IUGeniusGridView, UIPageControl, NSMutableArray, NSMutableSet, UIScrollView, UITableViewCell, MPGeniusMix;
 
 @interface IUGeniusMixViewController : IUiPodViewController <IUGeniusGridViewDelegate, SSDownloadManagerObserver, UIScrollViewDelegate> {
-    UIScrollView *_scrollView;
-    NSMutableArray *_gridViews;
-    UIPageControl *_pageControl;
-    IUGeniusGridView *_flippedGridView;
-    NSMutableSet *_unusedGridViewPool;
     UIImageView *_artworkImageView;
-    unsigned int _didPushMix : 1;
-    unsigned int _isZooming : 1;
+    BOOL _didPushMix;
+    IUGeniusGridView *_flippedGridView;
+    NSMutableArray *_gridViews;
+    BOOL _isObservingDownloads;
+    BOOL _isZooming;
+    UITableViewCell *_moreListTableViewCell;
+    NSTimer *_navBarUpdateTimer;
+    UIPageControl *_pageControl;
+    UIScrollView *_scrollView;
+    BOOL _shouldUpdateNavBar;
+    NSMutableSet *_unusedGridViewPool;
 }
 
 @property(readonly) MPGeniusMix * selectedMix;
 
 
-- (id)init;
-- (void)dealloc;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_nowPlayingItemDidChange:(id)arg1;
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
+- (void)unregisterForPlayerNotifications;
+- (void)registerForPlayerNotifications;
+- (void)dealloc;
+- (id)init;
+- (id)moreListTableCell;
 - (id)_moreListTitle;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -37,10 +44,9 @@
 - (void)_downloadMixForCurrentPage:(id)arg1;
 - (void)_cancelDownloadingMixForCurrentPage:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_contentOffsetForPage:(int)arg1;
-- (int)navigationTransition;
 - (void)_enqueueGridViewForReuse:(id)arg1;
 - (id)_dequeueExistingGridView;
-- (void)_pushViewControllerContext:(id)arg1;
+- (int)navigationTransition;
 - (id)_viewControllerContextForCurrentPage;
 - (struct CGPoint { float x1; float x2; })_contentOffsetForCurrentPage;
 - (BOOL)_hasGridViewForPage:(int)arg1;
@@ -50,7 +56,6 @@
 - (id)selectedMix;
 - (BOOL)_currentPageIsPlayingGeniusMix;
 - (void)_zoomArtworkInForDataSource:(id)arg1;
-- (void)_flipGridViewForAnimatedPop;
 - (void)_zoomArtworkOut;
 - (void)_flipGridView:(id)arg1 toOrientation:(int)arg2 animated:(BOOL)arg3;
 - (int)_playingGeniusMixPage;

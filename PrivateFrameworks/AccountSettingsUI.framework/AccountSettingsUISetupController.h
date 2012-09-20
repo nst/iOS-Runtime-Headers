@@ -15,10 +15,10 @@
 
 
 - (void)dealloc;
-- (id)emailEnteredByUser;
 - (void)setEmailEnteredByUser:(id)arg1;
-- (id)syncControllerSpecifierNamed:(id)arg1 account:(id)arg2;
+- (id)emailEnteredByUser;
 - (void)_reallyFinishedAccountSetup;
+- (id)syncControllerSpecifierNamed:(id)arg1 account:(id)arg2;
 - (void)forceMailSetup;
 - (void)finishedAccountSetup;
 - (void)controller:(id)arg1 finishedSetupWithAccount:(id)arg2;

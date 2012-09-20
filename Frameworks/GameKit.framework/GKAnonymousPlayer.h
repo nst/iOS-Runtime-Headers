@@ -9,7 +9,7 @@
 - (id)sortName;
 - (BOOL)isAnonymousPlayer;
 - (id)displayNameWithIdentifiableName:(BOOL)arg1 quoteAlias:(BOOL)arg2;
-- (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1;
+- (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1 withFont:(id)arg2;
 - (id)alias;
 - (id)playerID;
 

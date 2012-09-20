@@ -9,8 +9,8 @@
 
 @property(copy) NSURL * identifier;
 
-+ (id)domainObject;
 + (id)domainObjectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)domainObject;
 
 - (id)groupIdentifier;
 - (id)identifier;

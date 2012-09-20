@@ -2,18 +2,23 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
+@class _WebSafeAsyncForwarder;
+
 @interface _WebSafeForwarder : NSObject  {
     id target;
     id defaultTarget;
     BOOL catchExceptions;
+    _WebSafeAsyncForwarder *asyncForwarder;
+    long asyncForwarderPred;
 }
 
 
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)dealloc;
-- (void)clearTarget;
-- (id)initWithTarget:(id)arg1 defaultTarget:(id)arg2 catchExceptions:(BOOL)arg3;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (id)initWithTarget:(id)arg1 defaultTarget:(id)arg2 catchExceptions:(BOOL)arg3;
+- (void)clearTarget;
+- (id)asyncForwarder;
 
 @end

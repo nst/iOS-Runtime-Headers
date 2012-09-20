@@ -4,16 +4,18 @@
 
 @interface UIMutableIndexPath : NSIndexPath  {
     unsigned int *_mutableIndexes;
+    BOOL _locked;
 }
 
++ (void)setIndex:(unsigned int)arg1 atPosition:(unsigned int)arg2 forIndexPath:(id*)arg3;
 
+- (int)compare:(id)arg1;
 - (id)description;
-- (id)copy;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setIndex:(unsigned int)arg1 atPosition:(unsigned int)arg2;
 - (void)getIndexes:(unsigned int*)arg1;
 - (unsigned int)indexAtPosition:(unsigned int)arg1;
-- (id)initWithIndexes:(unsigned int*)arg1 length:(unsigned int)arg2;
-- (int)compare:(id)arg1;
+- (id)initWithIndexes:(const unsigned int*)arg1 length:(unsigned int)arg2;
 
 @end

@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSObject<OS_dispatch_queue>;
 
-@interface SSOperationProgress : NSObject <SSCoding, NSCopying> {
+@interface SSOperationProgress : NSObject <SSXPCCoding, NSCopying> {
     BOOL _canPause;
     double _changeRate;
     long long _currentValue;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     double _estimatedTimeRemaining;
     long long _maxValue;
     long long _normalizedCurrentValue;
@@ -30,15 +30,11 @@
 @property long long normalizedMaxValue;
 
 
+- (void)setCurrentValue:(long long)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (void)snapshot;
-- (void)setMaxValue:(long long)arg1;
-- (int)operationType;
-- (long long)maxValue;
-- (void)setCurrentValue:(long long)arg1;
+- (id)init;
 - (void)setUnits:(int)arg1;
 - (void)setEstimatedTimeRemaining:(double)arg1;
 - (void)setChangeRate:(double)arg1;
@@ -49,15 +45,17 @@
 - (long long)normalizedMaxValue;
 - (long long)normalizedCurrentValue;
 - (BOOL)canPause;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void)setOperationType:(int)arg1;
 - (void)setNormalizedMaxValue:(long long)arg1;
 - (void)setNormalizedCurrentValue:(long long)arg1;
 - (void)setCanPause:(BOOL)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (void)snapshot;
+- (void)setMaxValue:(long long)arg1;
+- (int)operationType;
 - (double)estimatedTimeRemaining;
 - (void)_updateStatisticsFromSnapshots;
+- (long long)maxValue;
 
 @end

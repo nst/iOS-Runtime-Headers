@@ -12,28 +12,30 @@
     <CalDAVCalendar> *_calendar;
 }
 
-@property BOOL getScheduleChanges;
-@property BOOL getScheduleTags;
 @property <CalDAVCalendarSyncDelegate> * delegate;
+@property BOOL getScheduleTags;
+@property BOOL getScheduleChanges;
 
 
 - (void)dealloc;
+- (void)syncCalendar;
+- (id)initWithPrincipal:(id)arg1 calendar:(id)arg2 nextCtag:(id)arg3;
+- (void)_syncEventsForMerge;
+- (void)_processAddedOrModified:(id)arg1 removed:(id)arg2;
+- (void)_reallySyncCalendar;
+- (id)_distantFutureEndDate;
+- (BOOL)setLocalScheduleTag:(id)arg1 forItemWithURL:(id)arg2 inFolderWithURL:(id)arg3;
+- (BOOL)getScheduleChanges;
+- (BOOL)getScheduleTags;
+- (void)setGetScheduleChanges:(BOOL)arg1;
+- (void)setGetScheduleTags:(BOOL)arg1;
 - (void)_finishWithError:(id)arg1;
+- (BOOL)syncDeleteTask:(id)arg1 error:(id)arg2;
 - (BOOL)setLocalETag:(id)arg1 forItemWithURL:(id)arg2 inFolderWithURL:(id)arg3;
+- (BOOL)syncPutTask:(id)arg1 completedWithNewETag:(id)arg2 error:(id)arg3;
 - (void)containerSyncTask:(id)arg1 retrievedAddedOrModifiedActions:(id)arg2 removed:(id)arg3;
 - (id)copyAllLocalURLsInFolderWithURL:(id)arg1;
 - (id)copyLocalETagsForURLs:(id)arg1 inFolderWithURL:(id)arg2;
 - (void)containerSyncTask:(id)arg1 completedWithNewCTag:(id)arg2 newSyncToken:(id)arg3 addedOrModified:(id)arg4 removed:(id)arg5 error:(id)arg6;
-- (void)syncCalendar;
-- (id)initWithPrincipal:(id)arg1 calendar:(id)arg2 nextCtag:(id)arg3;
-- (id)_distantFutureEndDate;
-- (void)_reallySyncCalendar;
-- (void)_processAddedOrModified:(id)arg1 removed:(id)arg2;
-- (void)_syncEventsForMerge;
-- (BOOL)getScheduleTags;
-- (BOOL)getScheduleChanges;
-- (BOOL)setLocalScheduleTag:(id)arg1 forItemWithURL:(id)arg2 inFolderWithURL:(id)arg3;
-- (void)setGetScheduleTags:(BOOL)arg1;
-- (void)setGetScheduleChanges:(BOOL)arg1;
 
 @end

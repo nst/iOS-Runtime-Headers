@@ -20,25 +20,25 @@
 + (void)initialize;
 
 - (void)setName:(id)arg1;
-- (id)userInfo;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setUserInfo:(id)arg1;
-- (BOOL)isEditable;
 - (id)name;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)description;
+- (BOOL)isEqual:(id)arg1;
+- (id)userInfo;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)initWithName:(id)arg1 valueExpression:(id)arg2;
-- (id)_initWithDestinationName:(id)arg1 valueExpression:(id)arg2;
 - (id)_propertyTransforms;
+- (id)_initWithDestinationName:(id)arg1 valueExpression:(id)arg2;
 - (id)valueExpression;
 - (void)_setIsEditable:(BOOL)arg1;
-- (void)_throwIfNotEditable;
 - (void)_createCachesAndOptimizeState;
-- (void)setValueExpression:(id)arg1;
+- (void)_throwIfNotEditable;
 - (void)_setPropertyTransforms:(id)arg1;
+- (void)setValueExpression:(id)arg1;
+- (void)setUserInfo:(id)arg1;
+- (BOOL)isEditable;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

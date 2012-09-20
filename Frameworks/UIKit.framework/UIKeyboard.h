@@ -13,9 +13,14 @@
     int m_orientation;
 }
 
+@property BOOL caretBlinks;
+@property BOOL caretVisible;
 @property BOOL typingEnabled;
 @property(getter=isMinimized) BOOL minimized;
+@property BOOL showsCandidatesInline;
 
++ (BOOL)splitKeyboardEnabled;
++ (BOOL)shouldMinimizeForHardwareKeyboard;
 + (BOOL)respondsToProxGesture;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })onscreenFrameForTextInputTraits:(id)arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrameForInterfaceOrientation:(int)arg1;
@@ -23,13 +28,14 @@
 + (void)_clearActiveKeyboard;
 + (void)removeAllDynamicDictionaries;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
++ (BOOL)isInHardwareKeyboardMode;
 + (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
 + (BOOL)isOnScreen;
 + (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(int)arg1;
 + (id)activeKeyboard;
-+ (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
 
+- (id)delegate;
 - (void)dealloc;
 - (BOOL)_isAutomaticKeyboard;
 - (void)_clearCurrentInputManager;
@@ -45,11 +51,15 @@
 - (void)manualKeyboardWillBeOrderedOut;
 - (void)manualKeyboardWasOrderedIn;
 - (void)manualKeyboardWillBeOrderedIn;
+- (void)setShowsCandidatesInline:(BOOL)arg1;
+- (BOOL)showsCandidatesInline;
+- (id)targetWindow;
 - (void)syncMinimizedStateToHardwareKeyboardAttachedState;
 - (int)textEffectsVisibilityLevel;
 - (void)displayLayer:(id)arg1;
 - (void)setTypingEnabled:(BOOL)arg1;
 - (BOOL)typingEnabled;
+- (BOOL)hasAutocorrectPrompt;
 - (id)initWithDefaultSize;
 - (struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })geometryForImplHeightDelta:(float)arg1;
 - (void)maximize;
@@ -67,8 +77,11 @@
 - (id)_getLocalizedInputMode;
 - (id)_getCurrentKeyboardName;
 - (id)_getCurrentKeyplaneName;
+- (BOOL)caretVisible;
 - (BOOL)returnKeyEnabled;
 - (void)setDefaultTextInputTraits:(id)arg1;
+- (void)setCorrectionLearningAllowed:(BOOL)arg1;
+- (BOOL)caretBlinks;
 - (BOOL)isActive;
 - (BOOL)canDismiss;
 - (void)setMinimized:(BOOL)arg1;
@@ -79,14 +92,15 @@
 - (void)setReturnKeyEnabled:(BOOL)arg1;
 - (void)setCaretVisible:(BOOL)arg1;
 - (BOOL)isMinimized;
+- (BOOL)shouldSaveMinimizationState;
 - (void)removeAutocorrectPrompt;
 - (void)acceptAutocorrection;
 - (void)geometryChangeDone:(BOOL)arg1;
 - (void)prepareForGeometryChange;
-- (void)activate;
 - (void)updateLayout;
-- (void)setCaretBlinks:(BOOL)arg1;
+- (void)activate;
 - (void)deactivate;
+- (void)setCaretBlinks:(BOOL)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)movedFromSuperview:(id)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -96,8 +110,6 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (int)interfaceOrientation;
-- (int)orientation;
-- (id)delegate;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
 - (void)setNeedsDisplay;

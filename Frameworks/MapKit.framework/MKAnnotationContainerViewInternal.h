@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKAnnotationContainerViewDelegate>, UICalloutView, MKUserLocation, NSMapTable, MKMapTileView, NSMutableArray, MKUserLocationView, MKQuadTrie, NSMutableSet, MKAnnotationView, <MKAnnotation>;
+@class <MKAnnotationContainerViewDelegate>, UICalloutView, MKUserLocation, NSMapTable, NSMutableArray, MKUserLocationView, MKQuadTrie, NSMutableSet, MKAnnotationView, <MKAnnotation>;
 
 @interface MKAnnotationContainerViewInternal : NSObject  {
-    MKMapTileView *mapTileView;
     MKQuadTrie *annotationsTrie;
     NSMutableSet *pendingAnnotations;
     NSMutableArray *managedAnnotations;

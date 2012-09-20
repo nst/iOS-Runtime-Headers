@@ -9,13 +9,13 @@
 
 @property(copy) NSString * errorCode;
 
-+ (id)sessionValidationFailed;
 + (id)sessionValidationFailedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)sessionValidationFailed;
 
 - (id)groupIdentifier;
-- (id)errorCode;
 - (void)setErrorCode:(id)arg1;
-- (id)encodedClassName;
+- (id)errorCode;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

@@ -20,6 +20,7 @@
 @property float radius;
 
 
+- (void)applyToLayer:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)color;
@@ -32,6 +33,5 @@
 - (id)initWithCoder:(id)arg1;
 - (float)radius;
 - (void)setRadius:(float)arg1;
-- (void)applyToLayer:(id)arg1;
 
 @end

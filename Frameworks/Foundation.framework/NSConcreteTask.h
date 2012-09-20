@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, NSPort;
+@class NSPort, NSMutableDictionary, NSObject<OS_dispatch_source>;
 
 @interface NSConcreteTask : NSTask  {
     NSMutableDictionary *_dictionary;
@@ -22,11 +22,25 @@
 
     int _pid;
     int _platformExitInfo;
-    struct dispatch_source_s { } *_dsrc;
+    NSObject<OS_dispatch_source> *_dsrc;
     NSPort *_tmpPort;
 }
 
 
+- (void)setArguments:(id)arg1;
+- (void)terminate;
+- (void)setEnvironment:(id)arg1;
+- (int)processIdentifier;
+- (BOOL)resume;
+- (void)dealloc;
+- (id)init;
+- (void)setTerminationHandler:(id)arg1;
+- (BOOL)isRunning;
+- (void)finalize;
+- (id)arguments;
+- (BOOL)suspend;
+- (id)environment;
+- (id)terminationHandler;
 - (void)setStartsNewProcessGroup:(BOOL)arg1;
 - (int)_procid;
 - (void)terminateTask;
@@ -44,7 +58,6 @@
 - (void)setStandardInput:(id)arg1;
 - (id)launchPath;
 - (int)suspendCount;
-- (void)terminate;
 - (void)interrupt;
 - (void)setLaunchPath:(id)arg1;
 - (void)setCurrentDirectoryPath:(id)arg1;
@@ -52,19 +65,6 @@
 - (int)terminationReason;
 - (int)terminationStatus;
 - (void)launchWithDictionary:(id)arg1;
-- (int)processIdentifier;
-- (void)setArguments:(id)arg1;
 - (id)currentDirectoryPath;
-- (id)init;
-- (void)dealloc;
-- (void)setEnvironment:(id)arg1;
-- (id)environment;
-- (void)setTerminationHandler:(id)arg1;
-- (id)terminationHandler;
-- (BOOL)resume;
-- (BOOL)isRunning;
-- (void)finalize;
-- (id)arguments;
-- (BOOL)suspend;
 
 @end

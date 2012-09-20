@@ -21,13 +21,13 @@
 @property(retain) NSString * personalizedBaseName;
 
 
-- (void)updateNavigationButtons;
 - (void)setJustTextLabel2:(id)arg1;
-- (void)setJustTextContainerView2:(id)arg1;
 - (id)justTextLabel2;
+- (void)setJustTextContainerView2:(id)arg1;
 - (id)justTextContainerView2;
 - (void)setupEditableBaseStationName;
 - (void)selectedDeviceUpdated;
+- (void)updateNavigationButtons;
 - (void)prepareParams;
 - (void)primaryActionSelected:(BOOL)arg1;
 - (id)deviceTableLabel;

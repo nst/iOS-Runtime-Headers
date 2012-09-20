@@ -24,10 +24,11 @@
 @property(retain) CoreDAVLeafItem * xmppServer;
 @property(retain) CoreDAVLeafItem * xmppURI;
 
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setXmppURI:(id)arg1;
 - (void)setXmppServer:(id)arg1;
 - (void)setRefreshInterval:(id)arg1;
@@ -36,7 +37,6 @@
 - (void)setApsBundleID:(id)arg1;
 - (void)setTokenURL:(id)arg1;
 - (void)setSubscriptionURL:(id)arg1;
-- (id)copyParseRules;
 - (id)xmppURI;
 - (id)xmppServer;
 - (id)refreshInterval;

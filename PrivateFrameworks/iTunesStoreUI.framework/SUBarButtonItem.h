@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UINavigationItem, UIView;
+@class SUUIAppearance, UIView, UINavigationItem, NSString, SUTouchCaptureView;
 
 @interface SUBarButtonItem : UIBarButtonItem  {
     UIView *_accessoryView;
@@ -12,25 +12,36 @@
         float bottom; 
         float right; 
     } _accessoryViewInsets;
+    SUUIAppearance *_confirmationAppearance;
     UINavigationItem *_lastNavigationItem;
+    NSString *_preConfirmationTitle;
+    SUTouchCaptureView *_touchCaptureView;
 }
 
 @property(retain) UIView * accessoryView;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } accessoryViewInsets;
 @property(getter=isLoading) BOOL loading;
+@property(getter=isShowingConfirmation,readonly) BOOL showingConfirmation;
 
 + (Class)classForNavigationButton;
 
-- (void)dealloc;
 - (void)setLoading:(BOOL)arg1;
-- (void)setAccessoryView:(id)arg1;
-- (BOOL)isLoading;
-- (id)accessoryView;
-- (id)createViewForNavigationItem:(id)arg1;
+- (void)_addTouchCaptureViewForNavigationButton:(id)arg1;
 - (void)_updateViewForAccessoryChange;
 - (id)_navigationButton;
+- (void)_setTitle:(id)arg1 isConfirmation:(BOOL)arg2 appearance:(id)arg3 animated:(BOOL)arg4;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })accessoryViewInsets;
 - (void)setAccessoryViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_removeTouchCaptureView;
+- (void)_touchCaptureAction:(id)arg1;
+- (void)showConfirmationWithTitle:(id)arg1 appearance:(id)arg2 animated:(BOOL)arg3;
+- (void)hideConfirmationWithAppearance:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)isShowingConfirmation;
 - (void)configureFromScriptButton:(id)arg1;
+- (void)dealloc;
+- (id)accessoryView;
+- (void)setAccessoryView:(id)arg1;
+- (BOOL)isLoading;
+- (id)createViewForNavigationItem:(id)arg1;
 
 @end

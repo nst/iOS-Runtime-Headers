@@ -9,16 +9,16 @@
 }
 
 + (id)_allowedDefaults;
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
 - (id)description;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)subtitle1Description;
-- (BOOL)_checkForValidDefaults:(id)arg1 outError:(id*)arg2;
 - (id)defaultsForDomain:(id)arg1;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (BOOL)_checkForValidDefaults:(id)arg1 outError:(id*)arg2;
 - (id)stubDictionary;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)domains;
 
 @end

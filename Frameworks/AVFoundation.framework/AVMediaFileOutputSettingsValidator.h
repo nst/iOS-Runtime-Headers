@@ -10,14 +10,14 @@
 
 @property(readonly) AVMediaFileType * fileType;
 
-+ (id)mediaFileOutputSettingsValidatorForFileType:(id)arg1;
 + (void)initialize;
++ (id)mediaFileOutputSettingsValidatorForFileType:(id)arg1;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)fileType;
 - (BOOL)validateVideoOutputSettings:(id)arg1 reason:(id*)arg2;
 - (BOOL)validateAudioOutputSettings:(id)arg1 reason:(id*)arg2;
 - (id)initWithFileType:(id)arg1;
-- (id)fileType;
 
 @end

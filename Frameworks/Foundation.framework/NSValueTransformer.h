@@ -5,14 +5,14 @@
 @interface NSValueTransformer : NSObject  {
 }
 
++ (id)valueTransformerForName:(id)arg1;
 + (Class)transformedValueClass;
 + (id)valueTransformerNames;
 + (BOOL)allowsReverseTransformation;
 + (void)setValueTransformer:(id)arg1 forName:(id)arg2;
 + (id)_transformerRegistry;
-+ (id)valueTransformerForName:(id)arg1;
 
-- (id)transformedValue:(id)arg1;
 - (id)reverseTransformedValue:(id)arg1;
+- (id)transformedValue:(id)arg1;
 
 @end

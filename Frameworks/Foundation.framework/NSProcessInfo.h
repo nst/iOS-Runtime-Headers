@@ -14,33 +14,37 @@
 
 + (id)processInfo;
 
+- (void)setArguments:(id)arg1;
+- (int)processIdentifier;
+- (void)setProcessName:(id)arg1;
+- (double)systemUptime;
+- (void)dealloc;
+- (id)init;
+- (id)hostName;
+- (unsigned int)processorCount;
+- (id)processName;
+- (id)arguments;
+- (id)userHomeDirectory;
+- (id)environment;
+- (id)userName;
+- (BOOL)automaticTerminationSupportEnabled;
+- (void)setAutomaticTerminationSupportEnabled:(BOOL)arg1;
+- (void)enableAutomaticTermination:(id)arg1;
+- (void)disableAutomaticTermination:(id)arg1;
 - (int)_suddenTerminationDisablingCount;
 - (void)_exitWhenSuddenTerminationEnabledWithStatus:(int)arg1;
 - (void)_exitIfSuddenTerminationEnabledWithStatus:(int)arg1;
 - (void)enableSuddenTermination;
 - (void)disableSuddenTermination;
-- (double)systemUptime;
 - (BOOL)isTranslated;
 - (unsigned long long)physicalMemory;
 - (id)operatingSystemVersionString;
 - (id)operatingSystemName;
 - (id)userFullName;
 - (id)globallyUniqueString;
-- (int)processIdentifier;
-- (void)setArguments:(id)arg1;
 - (unsigned int)operatingSystem;
-- (id)init;
-- (void)dealloc;
-- (void)setProcessName:(id)arg1;
-- (id)environment;
-- (id)userName;
-- (id)hostName;
-- (unsigned int)processorCount;
-- (id)processName;
-- (id)arguments;
-- (id)userHomeDirectory;
 - (unsigned int)activeProcessorCount;
-- (void)_disableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 - (void)_enableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
+- (void)_disableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 
 @end

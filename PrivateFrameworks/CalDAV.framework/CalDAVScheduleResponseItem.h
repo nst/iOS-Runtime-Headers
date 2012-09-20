@@ -10,20 +10,20 @@
     NSMutableSet *_failedResponseItems;
 }
 
-@property(retain) NSMutableSet * failedResponseItems;
-@property(retain) NSMutableSet * successfulICS;
 @property(retain) NSMutableSet * responses;
+@property(retain) NSMutableSet * successfulICS;
+@property(retain) NSMutableSet * failedResponseItems;
 
 
 - (id)description;
 - (void)dealloc;
+- (id)failedResponseItems;
+- (id)successfulICS;
+- (void)addNewTopLevelItem:(id)arg1;
+- (void)setFailedResponseItems:(id)arg1;
+- (void)setSuccessfulICS:(id)arg1;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (void)setSuccessfulICS:(id)arg1;
-- (void)setFailedResponseItems:(id)arg1;
-- (void)addNewTopLevelItem:(id)arg1;
-- (id)successfulICS;
-- (id)failedResponseItems;
 - (void)setResponses:(id)arg1;
 - (id)responses;
 

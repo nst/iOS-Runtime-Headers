@@ -18,8 +18,8 @@
     unsigned int _maxRange;
     GKScore *_localPlayerScore;
     int _loadingCount;
-    int _sequenceNumber;
     NSObject<GKLeaderboardDelegate> *_weakDelegate;
+    NSString *_groupIdentifier;
 }
 
 @property int timeScope;
@@ -31,48 +31,52 @@
 @property unsigned int maxRange;
 @property(retain) GKScore * localPlayerScore;
 @property(getter=isLoading,readonly) BOOL loading;
+@property(retain) NSString * groupIdentifier;
 @property NSObject<GKLeaderboardDelegate> * delegate;
 @property(retain) NSArray * playerIDs;
 @property int loadingCount;
-@property int sequenceNumber;
 
 + (void)setDefaultLeaderboard:(id)arg1 withCompletionHandler:(id)arg2;
++ (void)loadLeaderboardsWithCompletionHandler:(id)arg1;
 + (void)loadCategoriesWithCompletionHandler:(id)arg1;
-+ (void)loadCategoriesForGame:(id)arg1 withPlayer:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadCategoriesForGame:(id)arg1 withCompletionHandler:(id)arg2;
++ (void)loadCategoriesForGame:(id)arg1 withPlayer:(id)arg2 withCompletionHandler:(id)arg3;
++ (void)loadCategoryWithID:(id)arg1 forGame:(id)arg2 withPlayer:(id)arg3 withCompletionHandler:(id)arg4;
 
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (void)setLoadingCount:(int)arg1;
 - (int)loadingCount;
-- (id)localPlayerScore;
-- (unsigned int)maxRange;
-- (void)loadScoresWithCompletionHandler:(id)arg1;
-- (id)initWithPlayerIDs:(id)arg1;
-- (void)setSequenceNumber:(int)arg1;
-- (void)setLocalPlayerScore:(id)arg1;
-- (void)setScores:(id)arg1;
-- (void)setMaxRange:(unsigned int)arg1;
-- (id)scores;
-- (int)sequenceNumber;
-- (void)decrementLoadingCountAtomically;
-- (id)playerIDs;
-- (void)incrementLoadingCountAtomically;
-- (void)loadScoresForGame:(id)arg1 withCompletionHandler:(id)arg2;
-- (id)category;
-- (int)playerScope;
-- (int)timeScope;
 - (void)setPlayerIDs:(id)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setLocalPlayerScore:(id)arg1;
+- (void)setMaxRange:(unsigned int)arg1;
+- (void)decrementLoadingCountAtomically;
+- (void)incrementLoadingCountAtomically;
+- (id)playerIDs;
+- (void)setGroupIdentifier:(id)arg1;
+- (id)groupIdentifier;
+- (void)loadScoresWithCompletionHandler:(id)arg1;
+- (id)scores;
+- (void)setScores:(id)arg1;
+- (void)loadScoresForGame:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setPlayerScope:(int)arg1;
+- (int)playerScope;
 - (void)setTimeScope:(int)arg1;
+- (int)timeScope;
+- (id)initWithPlayerIDs:(id)arg1;
+- (unsigned int)maxRange;
+- (id)localPlayerScore;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)category;
 - (void)setCategory:(id)arg1;
 - (BOOL)isLoading;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)title;
-- (id)delegate;
 - (void)setTitle:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

@@ -23,16 +23,16 @@
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)invalidateToken;
-- (void)_copyCertificateData:(id*)arg1 privateKey:(struct __SecKey {}**)arg2;
-- (void)_loadStatusChanged;
-- (void)_clearNonces;
-- (BOOL)_authenticate1;
-- (BOOL)canAuthenticate;
-- (void)authenticate;
-- (void)_connectionDidEnd;
-- (BOOL)_authenticate2;
 - (void)_succeeded;
+- (BOOL)_authenticate2;
+- (void)_connectionDidEnd;
+- (void)authenticate;
 - (void)_failWithErrorCode:(int)arg1;
+- (BOOL)canAuthenticate;
+- (BOOL)_authenticate1;
+- (void)_clearNonces;
+- (void)_loadStatusChanged;
+- (void)_copyCertificateData:(id*)arg1 privateKey:(struct __SecKey {}**)arg2;
 - (id)token;
 
 @end

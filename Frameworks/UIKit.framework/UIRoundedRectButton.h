@@ -2,25 +2,36 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIBezierPath;
+@class UIBezierPath, UIColor, UIView, UIGroupTableViewCellBackground;
 
 @interface UIRoundedRectButton : UIButton  {
     UIBezierPath *_fillPath;
     UIColor *_fillColor;
     UIColor *_tintColor;
+    UIGroupTableViewCellBackground *_tableViewStyleBackground;
+    UIView *_shadowView;
 }
 
 
 - (void)dealloc;
 - (int)buttonType;
+- (void)_invalidateBackingViews;
+- (void)_invalidatePaths;
+- (id)_setupBackgroundView;
+- (BOOL)_wantsTableViewStyleBackground;
 - (void)_commonRoundedRectButtonInit;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fillColor:(id)arg2;
-- (void)_invalidatePaths;
+- (id)_contentBackgroundColor;
+- (void)_updateState;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setTintColor:(id)arg1;
 - (id)tintColor;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_canDrawContent;
+- (id)_backgroundView;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_populateArchivedSubviews:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 

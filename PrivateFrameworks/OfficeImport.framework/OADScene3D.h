@@ -12,16 +12,16 @@
 
 + (id)nullScene3D;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setCamera:(id)arg1;
 - (id)camera;
-- (void)setLightRig:(id)arg1;
 - (void)setBackdrop:(id)arg1;
-- (id)lightRig;
+- (void)setLightRig:(id)arg1;
 - (id)backdrop;
+- (id)lightRig;
 
 @end

@@ -8,10 +8,10 @@
 }
 
 
-- (void)cancel;
 - (BOOL)isCancelled;
+- (void)cancel;
 - (id)init;
-- (void)quit;
 - (BOOL)isQuit;
+- (void)quit;
 
 @end

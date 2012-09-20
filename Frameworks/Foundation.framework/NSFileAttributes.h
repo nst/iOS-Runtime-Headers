@@ -56,6 +56,15 @@
 + (id)attributesWithStat:(struct stat { int x1; unsigned short x2; unsigned short x3; unsigned long long x4; unsigned int x5; unsigned int x6; int x7; struct timespec { int x_8_1_1; long x_8_1_2; } x8; struct timespec { int x_9_1_1; long x_9_1_2; } x9; struct timespec { int x_10_1_1; long x_10_1_2; } x10; struct timespec { int x_11_1_1; long x_11_1_2; } x11; long long x12; long long x13; int x14; unsigned int x15; unsigned int x16; int x17; long long x18[2]; }*)arg1;
 + (id)_attributesAtPath:(id)arg1 partialReturn:(BOOL)arg2 filterResourceFork:(BOOL)arg3 error:(id*)arg4;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)objectForKey:(id)arg1;
+- (void)dealloc;
+- (unsigned int)count;
+- (unsigned int)filePosixPermissions;
+- (id)fileType;
+- (id)fileModificationDate;
+- (id)keyEnumerator;
 - (BOOL)isDirectory;
 - (unsigned int)fileSystemFileNumber;
 - (int)fileSystemNumber;
@@ -63,15 +72,6 @@
 - (id)fileGroupOwnerAccountName;
 - (unsigned int)fileOwnerAccountNumber;
 - (id)fileOwnerAccountName;
-- (unsigned int)count;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)objectForKey:(id)arg1;
-- (void)dealloc;
-- (id)fileType;
-- (id)fileModificationDate;
-- (id)keyEnumerator;
 - (unsigned long long)fileSize;
-- (unsigned int)filePosixPermissions;
 
 @end

@@ -12,29 +12,29 @@
     NSString *_responseDescription;
 }
 
-@property(readonly) NSString * recipientString;
-@property(retain) NSString * responseDescription;
-@property(retain) CoreDAVErrorItem * topLevelErrorItem;
-@property(retain) ICSDocument * calendarData;
-@property(retain) CoreDAVLeafItem * requestStatus;
 @property(retain) CoreDAVItemWithHrefChildItem * recipientHREF;
+@property(readonly) NSString * recipientString;
+@property(retain) CoreDAVLeafItem * requestStatus;
+@property(retain) ICSDocument * calendarData;
+@property(retain) CoreDAVErrorItem * topLevelErrorItem;
+@property(retain) NSString * responseDescription;
 
 
 - (id)description;
 - (void)dealloc;
+- (id)topLevelErrorItem;
+- (id)recipientString;
+- (void)_setCalendarDataWithLeafItem:(id)arg1;
+- (void)setTopLevelErrorItem:(id)arg1;
+- (void)setCalendarData:(id)arg1;
+- (void)setRequestStatus:(id)arg1;
+- (void)setRecipientHREF:(id)arg1;
+- (id)calendarData;
+- (id)requestStatus;
+- (id)recipientHREF;
 - (void)setResponseDescription:(id)arg1;
 - (id)responseDescription;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (id)recipientString;
-- (id)topLevelErrorItem;
-- (id)recipientHREF;
-- (id)requestStatus;
-- (id)calendarData;
-- (void)setRecipientHREF:(id)arg1;
-- (void)setRequestStatus:(id)arg1;
-- (void)setCalendarData:(id)arg1;
-- (void)setTopLevelErrorItem:(id)arg1;
-- (void)_setCalendarDataWithLeafItem:(id)arg1;
 
 @end

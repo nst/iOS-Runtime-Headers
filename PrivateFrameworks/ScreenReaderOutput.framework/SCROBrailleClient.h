@@ -24,10 +24,11 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (id)initWithDelegate:(id)arg1;
-- (BOOL)isConnected;
+- (void)dealloc;
+- (id)init;
 - (void)handleCallback:(id)arg1;
 - (void)setPrimaryBrailleDisplay:(long)arg1;
 - (void)setPrepareToMemorizeNextKey:(BOOL)arg1 immediate:(BOOL)arg2 forDisplayWithToken:(long)arg3;
@@ -84,8 +85,7 @@
 - (void)_deathTimerHandler;
 - (void)displayIfNeeded;
 - (BOOL)needsDisplay;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)display;
+- (BOOL)isConnected;
 
 @end

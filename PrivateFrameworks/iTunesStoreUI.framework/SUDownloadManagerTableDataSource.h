@@ -6,12 +6,8 @@
 }
 
 
-- (int)tableViewStyle;
-- (id)_downloadCellForIndexPath:(id)arg1;
-- (id)_preorderCellForIndexPath:(id)arg1;
 - (void)reloadCellContexts;
 - (float)cellHeightForIndexPath:(id)arg1;
-- (id)cellForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 
 @end

@@ -15,18 +15,20 @@
 @property(readonly) unsigned int requestAudioReflectorStart;
 @property(readonly) unsigned int requestAudioReflectorStop;
 
++ (id)notificationCenter;
 + (void)setServiceAgentCapabilities:(int)arg1;
 + (int)serviceAgentCapabilities;
-+ (id)notificationCenter;
 + (id)sharedAgent;
 + (id)imageURLForStatus:(unsigned int)arg1;
 + (id)imageNameForStatus:(unsigned int)arg1;
 + (void)forgetStatusImageAppearance;
 
+- (id)notificationCenter;
 - (void)dealloc;
 - (unsigned int)requestVideoStillForPerson:(id)arg1;
 - (unsigned int)requestAudioReflectorStop;
 - (unsigned int)requestAudioReflectorStart;
+- (id)currentAVChatInfo;
 - (void)setMyAwayMessages:(id)arg1;
 - (void)setMyAvailableMessages:(id)arg1;
 - (id)myAwayMessages;
@@ -36,8 +38,6 @@
 - (unsigned long long)vcCapabilities;
 - (id)myPictureData;
 - (id)serviceWithNameNonBlocking:(id)arg1;
-- (id)notificationCenter;
 - (id)serviceWithName:(id)arg1;
-- (id)currentAVChatInfo;
 
 @end

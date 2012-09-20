@@ -13,12 +13,12 @@
 
 
 - (void)dealloc;
-- (id)initWithEvent:(id)arg1;
-- (void)attendeeSelected:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)title;
+- (void)attendeeSelected:(id)arg1;
+- (id)initWithEvent:(id)arg1;
 
 @end

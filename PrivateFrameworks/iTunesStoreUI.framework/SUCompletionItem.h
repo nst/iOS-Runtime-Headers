@@ -5,18 +5,21 @@
 @class NSURL, NSString;
 
 @interface SUCompletionItem : NSObject  {
+    NSString *_alternateTitle;
     NSString *_title;
     NSURL *_url;
 }
 
+@property(readonly) NSString * alternateTitle;
 @property(readonly) NSString * title;
 @property(readonly) NSURL * URL;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)URL;
-- (id)title;
+- (id)alternateTitle;
 - (id)initWithPropertyList:(id)arg1;
+- (id)URL;
+- (void)dealloc;
+- (id)init;
+- (id)title;
 
 @end

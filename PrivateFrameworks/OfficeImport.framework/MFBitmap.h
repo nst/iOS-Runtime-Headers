@@ -16,19 +16,19 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)isEmpty;
-- (id)initWithDIBitmap:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(int)arg4;
-- (id)initWithDIBitmap:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(const char *)arg4 :(unsigned int)arg5 :(int)arg6;
-- (id)initWithBitmap:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(const char *)arg6 :(unsigned int)arg7;
 - (void)setMonoPalette:(id)arg1;
-- (void)writePaletteEntry:(id)arg1 :(int)arg2;
-- (void)setNull;
-- (BOOL)parseHeader:(const char *)arg1 :(unsigned int)arg2;
-- (void)appendDIBPalette:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(int)arg4;
-- (BOOL)processDIBHeader:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(int)arg4;
-- (void)writeFileHeader;
+- (id)initWithBitmap:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(const char *)arg6 :(unsigned int)arg7;
+- (id)initWithDIBitmap:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(const char *)arg4 :(unsigned int)arg5 :(int)arg6;
+- (id)initWithDIBitmap:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(int)arg4;
 - (void)writeInfoHeader;
+- (void)writeFileHeader;
+- (BOOL)processDIBHeader:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(int)arg4;
+- (void)appendDIBPalette:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(int)arg4;
+- (BOOL)parseHeader:(const char *)arg1 :(unsigned int)arg2;
+- (void)setNull;
+- (void)writePaletteEntry:(id)arg1 :(int)arg2;
 
 @end

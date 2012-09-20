@@ -26,11 +26,10 @@
 
 + (struct CGSize { float x1; float x2; })thumbnailSize;
 
-- (void)dealloc;
-- (void)setQuery:(id)arg1;
-- (void)setArtworkImage:(id)arg1;
+- (void)setItem:(id)arg1;
 - (id)artworkImage;
-- (void)_reloadViews;
+- (void)setQuery:(id)arg1;
+- (void)dealloc;
 - (id)_titleLabel;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
@@ -41,7 +40,6 @@
 - (id)query;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
-- (void)setItem:(id)arg1;
 - (id)_infoTitle;
 - (id)_infoLabel;
 - (id)_subtitleLabel;
@@ -50,5 +48,7 @@
 - (void)_layoutForDefaultStyle;
 - (void)_layoutForGridStyle;
 - (void)_layoutForWildcatGridStyle;
+- (void)_reloadViews;
+- (void)setArtworkImage:(id)arg1;
 
 @end

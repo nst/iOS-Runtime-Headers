@@ -13,8 +13,8 @@
 + (id)recognition;
 
 - (id)groupIdentifier;
-- (id)phrases;
 - (void)setPhrases:(id)arg1;
+- (id)phrases;
 - (id)encodedClassName;
 
 @end

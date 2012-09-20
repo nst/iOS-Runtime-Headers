@@ -8,6 +8,7 @@
 }
 
 
+- (void)dealloc;
 - (BOOL)_handleForwardDistributedNotificationWithName:(id)arg1 object:(const void*)arg2 userInfo:(id)arg3;
 - (id)_prefixForForwardDistributedNotificationName;
 - (id)_forwardDistributedNotificationNameForHandler:(SEL)arg1;
@@ -18,6 +19,5 @@
 - (void)processHandler:(SEL)arg1;
 - (id)initWithNotificationName:(id)arg1 target:(id)arg2 dispatcher:(id)arg3 possibleHandlers:(SEL)arg4;
 - (id)initWithNotificationName:(id)arg1 target:(id)arg2 handler:(SEL)arg3;
-- (void)dealloc;
 
 @end

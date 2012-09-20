@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsTrainer.framework/SportsTrainer
  */
 
-@class STRunCaloriesLabel, STAnimatableButton, UIButton, STRunProgressView, STRunPaceLabel, UIView, STRunDistanceLabel, STRunTimeLabel, STShadowLabel, SWRunWorkoutProxy, <STRunViewDelegate>, NSString, UIImageView, NSTimer;
+@class STRunCaloriesLabel, STAnimatableButton, UIButton, STRunProgressView, STRunPaceLabel, UIView, STRunDistanceLabel, STShadowLabel, STRunTimeLabel, SWRunWorkoutProxy, <STRunViewDelegate>, NSString, UIImageView, NSTimer;
 
 @interface STRunView : UIView  {
     <STRunViewDelegate> *_delegate;
@@ -61,16 +61,31 @@
 @property(readonly) SWRunWorkoutProxy * workoutProxy;
 
 
+- (int)interface;
+- (void)resume;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (void)_applicationResumed:(id)arg1;
+- (void)_cancel;
+- (void)_applicationWillResignActive:(id)arg1;
+- (void)setOrientation:(int)arg1;
+- (void)suspend;
+- (int)orientation;
+- (void)layoutSubviews;
+- (void)didMoveToWindow;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_stop;
+- (void)_pause;
+- (void)setInterface:(int)arg1;
 - (void)_start;
 - (void)_applicationWillSuspend:(id)arg1;
+- (void)_nowPlayingChanged:(id)arg1;
 - (id)workoutProxy;
-- (int)interface;
 - (id)_greenButtonDownImage;
 - (id)_greenButtonImage;
 - (void)resumeWorkout;
 - (void)resumeEventsOnly;
-- (void)setInterface:(int)arg1;
 - (void)setAnimateForResumeEventsOnly:(BOOL)arg1;
 - (BOOL)animateForResumeEventsOnly;
 - (void)setIsLockScreen:(BOOL)arg1;
@@ -132,20 +147,5 @@
 - (void)_workoutStateDidChange:(id)arg1;
 - (void)_empedSearchStateChanged:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 workoutProxy:(id)arg2;
-- (void)resume;
-- (void)_applicationWillResignActive:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)suspend;
-- (int)orientation;
-- (id)delegate;
-- (void)layoutSubviews;
-- (void)didMoveToWindow;
-- (void)setDelegate:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_pause;
-- (void)_stop;
-- (void)_cancel;
-- (void)_applicationResumed:(id)arg1;
-- (void)_nowPlayingChanged:(id)arg1;
 
 @end

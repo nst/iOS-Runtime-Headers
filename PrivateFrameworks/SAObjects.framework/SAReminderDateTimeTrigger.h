@@ -12,18 +12,18 @@
 @property(retain) SAReminderDateTimeTriggerOffset * relativeTimeOffset;
 @property(copy) NSString * timeZoneId;
 
-+ (id)dateTimeTrigger;
 + (id)dateTimeTriggerWithDictionary:(id)arg1 context:(id)arg2;
++ (id)dateTimeTrigger;
 
 - (id)groupIdentifier;
+- (void)setDate:(id)arg1;
 - (void)setOffset:(id)arg1;
 - (id)offset;
-- (void)setDate:(id)arg1;
 - (id)date;
-- (id)relativeTimeOffset;
 - (void)setRelativeTimeOffset:(id)arg1;
-- (id)timeZoneId;
+- (id)relativeTimeOffset;
 - (void)setTimeZoneId:(id)arg1;
+- (id)timeZoneId;
 - (id)encodedClassName;
 
 @end

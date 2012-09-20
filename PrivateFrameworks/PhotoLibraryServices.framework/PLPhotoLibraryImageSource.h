@@ -9,12 +9,12 @@
 @property(readonly) int imageFormat;
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
-- (id)newImageForAsset:(id)arg1 createMetadata:(id*)arg2;
-- (unsigned short)sourceIdentifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)initWithImageFormat:(int)arg1;
+- (unsigned short)sourceIdentifier;
+- (id)newImageForAsset:(id)arg1 createMetadata:(id*)arg2;
 - (int)imageFormat;
 
 @end

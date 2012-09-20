@@ -9,8 +9,8 @@
 
 @property(copy) NSString * html;
 
-+ (id)htmlView;
 + (id)htmlViewWithDictionary:(id)arg1 context:(id)arg2;
++ (id)htmlView;
 
 - (id)groupIdentifier;
 - (id)html;

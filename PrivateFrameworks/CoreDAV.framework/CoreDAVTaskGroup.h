@@ -8,7 +8,7 @@
 
 @class <CoreDAVTaskManager>, NSMutableSet, NSError, <CoreDAVTaskGroupDelegate>, <CoreDAVAccountInfoProvider>;
 
-@interface CoreDAVTaskGroup : NSObject  {
+@interface CoreDAVTaskGroup : NSObject <CoreDAVSubmittable> {
     <CoreDAVTaskManager> *_taskManager;
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
     double _timeoutInterval;
@@ -34,32 +34,36 @@
 @property(copy) id progressBlock;
 @property(copy) id completionBlock;
 @property(retain) NSError * error;
-@property(readonly) <CoreDAVTaskManager> * taskManager;
-@property(readonly) <CoreDAVAccountInfoProvider> * accountInfoProvider;
+@property <CoreDAVTaskManager> * taskManager;
+@property <CoreDAVAccountInfoProvider> * accountInfoProvider;
 @property(readonly) NSMutableSet * outstandingTasks;
 
 
-- (void)setTimeoutInterval:(double)arg1;
-- (double)timeoutInterval;
-- (void)dealloc;
 - (void)setError:(id)arg1;
-- (id)completionBlock;
-- (id)error;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)setCompletionBlock:(id)arg1;
 - (id)outstandingTasks;
 - (void)_tearDownAllTasks;
 - (void)finishCoreDAVTaskGroupWithError:(id)arg1;
 - (void)syncAway;
 - (void)cancelTaskGroup;
+- (void)finishEarlyWithError:(id)arg1;
+- (void)submitWithTaskManager:(id)arg1;
 - (void)taskGroupWillCancelWithError:(id)arg1;
 - (void)startTaskGroup;
 - (id)accountInfoProvider;
 - (void)bailWithError:(id)arg1;
+- (void)setAccountInfoProvider:(id)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
+- (void)setTimeoutInterval:(double)arg1;
+- (double)timeoutInterval;
+- (id)completionBlock;
 - (id)progressBlock;
 - (void)setProgressBlock:(id)arg1;
-- (void)setCompletionBlock:(id)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (id)error;
+- (void)setTaskManager:(id)arg1;
 - (id)taskManager;
 
 @end

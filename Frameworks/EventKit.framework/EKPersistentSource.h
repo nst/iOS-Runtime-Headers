@@ -17,25 +17,26 @@
 @property(readonly) EKSourceConstraints * constraints;
 
 + (id)relations;
++ (id)defaultPropertiesToLoad;
 
-- (void)setExternalID:(id)arg1;
-- (id)externalID;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (void)setUUID:(id)arg1;
-- (void)setDefaultAlarmOffset:(id)arg1;
-- (id)defaultAlarmOffset;
-- (int)entityType;
-- (id)constraints;
-- (BOOL)refresh;
 - (void)reset;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (id)UUID;
+- (id)constraints;
 - (void)setSourceType:(int)arg1;
 - (int)sourceType;
 - (id)title;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
 - (void)setTitle:(id)arg1;
-- (id)UUID;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
+- (void)setUUID:(id)arg1;
+- (void)setDefaultAlarmOffset:(id)arg1;
+- (id)defaultAlarmOffset;
+- (BOOL)refresh;
+- (int)entityType;
 
 @end

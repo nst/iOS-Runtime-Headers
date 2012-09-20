@@ -34,14 +34,15 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
 - (void)setTarget:(id)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)_smoothScrollingDidEnd:(id)arg1;
+- (void)_smoothScrollingWillStart:(id)arg1;
 - (void)showFinger;
 - (void)setStopLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setInterpolation:(int (*)())arg1;
-- (void)_smoothScrollingDidEnd:(id)arg1;
-- (void)_smoothScrollingWillStart:(id)arg1;
 - (void)_stopDrag:(id)arg1;
 - (double)_delayUntilNextEvent;
 - (void)_continueDrag:(id)arg1;
@@ -51,6 +52,5 @@
 - (void)setStartLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setAction:(SEL)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setDelegate:(id)arg1;
 
 @end

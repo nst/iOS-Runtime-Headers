@@ -2,17 +2,19 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray;
+@class NSMutableArray, NSArray;
 
 @interface _NSKeyedUnarchiverHelper : NSObject  {
     NSArray *_white;
     unsigned int _lastRef;
+    NSMutableArray *_allowedClasses;
 }
 
 
-- (BOOL)classAllowed:(Class)arg1;
-- (void)setAllowedClasses:(id)arg1;
-- (id)allowedClasses;
 - (void)dealloc;
+- (id)init;
+- (BOOL)classNameAllowed:(Class)arg1;
+- (void)setAllowedClassNames:(id)arg1;
+- (id)allowedClassNames;
 
 @end

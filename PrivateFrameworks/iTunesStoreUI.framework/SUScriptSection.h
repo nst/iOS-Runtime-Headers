@@ -16,23 +16,20 @@
 @property(readonly) BOOL transient;
 @property(readonly) SUScriptViewController * viewController;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (void)dealloc;
-- (id)badgeValue;
-- (void)setBadgeValue:(id)arg1;
-- (id)viewController;
-- (id)identifier;
-- (id)attributeKeys;
 - (BOOL)transient;
-- (id)_copyViewController;
-- (id)_copyBadgeValue;
-- (void)_setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (id)initWithNativeSection:(id)arg1;
 - (void)setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)identifier;
+- (void)dealloc;
+- (id)badgeValue;
+- (void)setBadgeValue:(id)arg1;
+- (id)viewController;
+- (id)attributeKeys;
 
 @end

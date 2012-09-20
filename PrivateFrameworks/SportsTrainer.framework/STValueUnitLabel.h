@@ -20,15 +20,9 @@
 @property BOOL reversesLabels;
 
 
-- (void)dealloc;
-- (float)labelSpacing;
-- (BOOL)reversesLabels;
-- (BOOL)_labelsNeedSizing;
-- (void)_sizeLabelsToFit;
-- (void)setReversesLabels:(BOOL)arg1;
-- (void)setLabelSpacing:(float)arg1;
 - (id)rightLabel;
 - (id)leftLabel;
+- (void)dealloc;
 - (int)textAlignment;
 - (void)setTextAlignment:(int)arg1;
 - (void)sizeToFit;
@@ -37,5 +31,11 @@
 - (void)layoutSubviews;
 - (void)setNeedsDisplay;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLabelSpacing:(float)arg1;
+- (float)labelSpacing;
+- (BOOL)reversesLabels;
+- (BOOL)_labelsNeedSizing;
+- (void)_sizeLabelsToFit;
+- (void)setReversesLabels:(BOOL)arg1;
 
 @end

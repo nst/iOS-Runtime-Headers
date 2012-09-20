@@ -16,10 +16,10 @@
 
 - (unsigned int)retainCount;
 - (id)retain;
-- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
+- (oneway void)release;
 - (id)init;
+- (id)autorelease;
 - (void)stopDetectingDisplays;
 - (void)detectDisplays;
 - (BOOL)isAutoDetectEnabled;

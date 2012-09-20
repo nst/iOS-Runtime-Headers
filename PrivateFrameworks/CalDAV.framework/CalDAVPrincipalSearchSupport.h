@@ -8,8 +8,8 @@
 + (id)resultTypeForRecordType:(id)arg1;
 + (id)namespaceAndNameForWellKnownType:(int)arg1;
 + (id)propertySearchItemForWellKnownType:(int)arg1;
-+ (id)namespaceForWellKnownType:(int)arg1;
 + (id)nameForWellKnownType:(int)arg1;
++ (id)namespaceForWellKnownType:(int)arg1;
 
 
 @end

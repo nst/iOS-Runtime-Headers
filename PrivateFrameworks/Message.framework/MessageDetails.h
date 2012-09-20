@@ -8,8 +8,8 @@
     MessageLibrary *library;
     unsigned int libraryID;
     unsigned long long messageFlags;
-    unsigned int uid;
-    unsigned int encoding;
+    unsigned long uid;
+    unsigned long encoding;
     BOOL isInvalid;
     int mailboxID;
     long long conversationHash;
@@ -19,21 +19,21 @@
 }
 
 
-- (id)externalID;
-- (id)messageID;
-- (id)remoteID;
-- (id)mailbox;
-- (id)copyMessageInfo;
-- (unsigned int)mailboxID;
-- (double)dateReceivedAsTimeIntervalSince1970;
-- (double)dateSentAsTimeIntervalSince1970;
-- (unsigned int)libraryID;
-- (unsigned long long)messageFlags;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
-- (id)init;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (unsigned long)uid;
+- (id)externalID;
+- (id)copyMessageInfo;
+- (id)mailbox;
+- (id)remoteID;
+- (id)messageID;
+- (unsigned int)mailboxID;
+- (unsigned int)libraryID;
+- (double)dateSentAsTimeIntervalSince1970;
+- (double)dateReceivedAsTimeIntervalSince1970;
+- (unsigned long long)messageFlags;
 
 @end

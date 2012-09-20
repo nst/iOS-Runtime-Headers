@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class CPLRUDictionary, ML3NondurableWriteSet;
+@class ML3MusicLibrary, MLSQLiteConnection, CPLRUDictionary, MLSQLiteConnectionQueue, ML3NondurableWriteSet;
 
-@interface ML3MusicLibrary_SQLiteDatabaseContext : NSObject  {
-    struct sqlite3 { } *_db;
+@interface ML3MusicLibrary_SQLiteDatabaseContext : NSObject <MLSQLiteConnectionSQLiteDelegate> {
+    ML3MusicLibrary *_library;
+    MLSQLiteConnection *_connection;
     const void *_iTunesExtensions;
     struct iPhoneSortKeyBuilder { } *_sortKeyBuilder;
     CPLRUDictionary *_statementCache;
@@ -14,34 +15,41 @@
     unsigned int _writeStatementCount;
     unsigned int _transactionHasChanges : 1;
     unsigned int _transactionHasNonContentsChanges : 1;
+    unsigned int _transactionHasInvisiblePropertyChanges : 1;
     unsigned int _transactionHasDisplayValuesChanges : 1;
+    MLSQLiteConnectionQueue *_connectionQueue;
 }
 
-@property(readonly) struct sqlite3 { }* db;
+@property(readonly) MLSQLiteConnection * connection;
+@property(readonly) MLSQLiteConnectionQueue * connectionQueue;
 @property(readonly) struct iPhoneSortKeyBuilder { }* sortKeyBuilder;
 @property(retain) ML3NondurableWriteSet * nondurableWriteSet;
 @property int transactionKind;
 @property BOOL transactionHasChanges;
 @property BOOL transactionHasNonContentsChanges;
+@property BOOL transactionHasInvisiblePropertyChanges;
 @property BOOL transactionHasDisplayValuesChanges;
 
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)setTransactionKind:(int)arg1;
 - (int)transactionKind;
 - (void)setNondurableWriteSet:(id)arg1;
 - (id)nondurableWriteSet;
 - (struct iPhoneSortKeyBuilder { }*)sortKeyBuilder;
-- (id)copyStatementForSQL:(id)arg1 cache:(BOOL)arg2;
-- (BOOL)executeSQL:(id)arg1;
+- (id)connectionQueue;
 - (void)setTransactionHasDisplayValuesChanges:(BOOL)arg1;
 - (BOOL)transactionHasDisplayValuesChanges;
+- (void)setTransactionHasInvisiblePropertyChanges:(BOOL)arg1;
+- (BOOL)transactionHasInvisiblePropertyChanges;
 - (void)setTransactionHasNonContentsChanges:(BOOL)arg1;
 - (BOOL)transactionHasNonContentsChanges;
 - (void)setTransactionHasChanges:(BOOL)arg1;
 - (BOOL)transactionHasChanges;
-- (id)initWithDB:(struct sqlite3 { }*)arg1;
-- (BOOL)executeSQL:(id)arg1 waitIfBusy:(BOOL)arg2;
-- (struct sqlite3 { }*)db;
+- (id)initWithLibrary:(id)arg1 connectionQueue:(id)arg2;
+- (void)connection:(id)arg1 willCloseDBHandle:(struct sqlite3 { }*)arg2;
+- (void)connection:(id)arg1 didOpenDBHandle:(struct sqlite3 { }*)arg2;
+- (id)connection;
 
 @end

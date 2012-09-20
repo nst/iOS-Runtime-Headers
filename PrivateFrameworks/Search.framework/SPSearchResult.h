@@ -2,67 +2,75 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSURL, NSString, NSNumber;
+@class NSString;
 
-@interface SPSearchResult : NSObject <SPSearchResult, SPSearchResultCursor> {
-    int _domain;
-    int _resultDomain;
-    NSString *_resultDisplayIdentifier;
-    NSString *_title;
+@interface SPSearchResult : PBCodable  {
+    unsigned long long _identifier;
+    NSString *_auxiliarySubtitle;
+    NSString *_auxiliaryTitle;
+    int _flags;
     NSString *_subtitle;
     NSString *_summary;
-    NSString *_auxiliaryTitle;
-    NSString *_auxiliarySubtitle;
-    unsigned long long _identifier;
-    NSURL *_URL;
-    NSNumber *_badge;
+    NSString *_title;
+    NSString *_url;
+    struct { 
+        unsigned int identifier : 1; 
+        unsigned int flags : 1; 
+    } _has;
 }
 
-@property int domain;
-@property int resultDomain;
-@property(retain) NSString * resultDisplayIdentifier;
+@property(readonly) BOOL hasTitle;
 @property(retain) NSString * title;
+@property(readonly) BOOL hasSubtitle;
 @property(retain) NSString * subtitle;
+@property(readonly) BOOL hasSummary;
 @property(retain) NSString * summary;
+@property(readonly) BOOL hasAuxiliaryTitle;
 @property(retain) NSString * auxiliaryTitle;
+@property(readonly) BOOL hasAuxiliarySubtitle;
 @property(retain) NSString * auxiliarySubtitle;
+@property BOOL hasIdentifier;
 @property unsigned long long identifier;
-@property(retain) NSURL * URL;
-@property(copy) NSNumber * badge;
+@property(readonly) BOOL hasUrl;
+@property(retain) NSString * url;
+@property BOOL hasFlags;
+@property int flags;
 
 
-- (void)setDomain:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
-- (int)domain;
-- (void)setURL:(id)arg1;
-- (id)subtitle;
-- (void)setSubtitle:(id)arg1;
-- (id)URL;
-- (unsigned long long)identifier;
-- (void)setIdentifier:(unsigned long long)arg1;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (id)summary;
-- (void)setSummary:(id)arg1;
+- (BOOL)isEquivalentToResult:(id)arg1;
+- (void)setHasFlags:(BOOL)arg1;
+- (void)setHasIdentifier:(BOOL)arg1;
+- (BOOL)hasFlags;
+- (BOOL)hasIdentifier;
 - (id)auxiliarySubtitle;
+- (BOOL)hasAuxiliarySubtitle;
 - (id)auxiliaryTitle;
-- (id)badge;
-- (id)resultDisplayIdentifier;
-- (void)setBadge:(id)arg1;
+- (BOOL)hasAuxiliaryTitle;
+- (BOOL)hasSummary;
+- (BOOL)hasSubtitle;
 - (void)setAuxiliarySubtitle:(id)arg1;
 - (void)setAuxiliaryTitle:(id)arg1;
-- (void)setResultDisplayIdentifier:(id)arg1;
-- (void)setResultDomain:(int)arg1;
-- (BOOL)getBadgeValue:(float*)arg1;
-- (const char *)URLUTF8String;
-- (const char *)auxiliarySubtitleUTF8String;
-- (const char *)auxiliaryTitleUTF8String;
-- (const char *)summaryUTF8String;
-- (const char *)subtitleUTF8String;
-- (const char *)titleUTF8String;
-- (const char *)resultDisplayIdentifierUTF8String;
-- (int)resultDomain;
+- (unsigned long long)identifier;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (void)setIdentifier:(unsigned long long)arg1;
+- (void)setUrl:(id)arg1;
+- (id)url;
+- (id)dictionaryRepresentation;
+- (id)subtitle;
+- (void)setSubtitle:(id)arg1;
+- (int)flags;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)setSummary:(id)arg1;
+- (id)summary;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (BOOL)hasUrl;
+- (BOOL)hasTitle;
+- (void)setFlags:(int)arg1;
+- (BOOL)readFrom:(id)arg1;
 
 @end

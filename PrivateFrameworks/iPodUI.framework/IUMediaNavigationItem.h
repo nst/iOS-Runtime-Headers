@@ -4,20 +4,16 @@
 
 @interface IUMediaNavigationItem : UINavigationItem  {
     int _barStyle;
-    int _statusBarStyle;
     BOOL _statusBarHidden;
 }
 
 @property int barStyle;
-@property int statusBarStyle;
 @property(getter=isStatusBarHidden) BOOL statusBarHidden;
 
 
 - (int)barStyle;
 - (void)setBarStyle:(int)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1;
-- (int)statusBarStyle;
-- (void)setStatusBarStyle:(int)arg1;
 - (BOOL)isStatusBarHidden;
 
 @end

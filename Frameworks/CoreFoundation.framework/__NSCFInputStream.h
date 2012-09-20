@@ -13,11 +13,19 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)initWithURL:(id)arg1;
 - (unsigned int)retainCount;
+- (unsigned int)hash;
 - (id)retain;
+- (BOOL)isEqual:(id)arg1;
 - (oneway void)release;
+- (void)close;
+- (void)finalize;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (id)initWithData:(id)arg1;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
@@ -31,14 +39,6 @@
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
 - (id)initWithFileAtPath:(id)arg1;
-- (id)initWithURL:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)close;
-- (void)finalize;
-- (id)initWithData:(id)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)open;
 
 @end

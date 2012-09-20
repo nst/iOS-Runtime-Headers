@@ -7,18 +7,18 @@
 @interface _MFOutgoingMessageBody : MessageBody <MFCollectingDataConsumer> {
     MFBufferedDataConsumer *_consumer;
     NSData *_rawData;
-    unsigned int _count;
+    unsigned long _count;
     BOOL _lastNewLine;
 }
 
 
-- (BOOL)isLastCharacterNewLine;
-- (unsigned long)count;
-- (id)init;
+- (id)data;
 - (void)dealloc;
+- (id)init;
+- (unsigned long)count;
 - (id)rawData;
 - (int)appendData:(id)arg1;
 - (void)done;
-- (id)data;
+- (BOOL)isLastCharacterNewLine;
 
 @end

@@ -33,12 +33,13 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
-- (void)resetServerState;
 - (void)_coreProtocolDidFinishError:(id)arg1;
 - (void)_coreProtocolDidFailAuthenticationError:(id)arg1;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (void)resetServerState;
+- (void)abort;
 
 @end

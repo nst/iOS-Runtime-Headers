@@ -26,7 +26,7 @@
     } _screenFlags;
     BOOL _wantsSoftwareDimming;
     UISoftwareDimmingWindow *_softwareDimmingWindow;
-    int _ignoreBacklightLevelDidChangeNotificationsCount;
+    int _lastNotifiedBacklightLevel;
 }
 
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
@@ -40,7 +40,7 @@
 @property float brightness;
 @property BOOL wantsSoftwareDimming;
 @property(setter=_setSoftwareDimmingWindow:,retain) UISoftwareDimmingWindow * _softwareDimmingWindow;
-@property(setter=_setIgnoreBacklightLevelDidChangeNotificationsCount:) int _ignoreBacklightLevelDidChangeNotificationsCount;
+@property(setter=_setLastNotifiedBacklightLevel:) int _lastNotifiedBacklightLevel;
 
 + (void)_videoOutSettingsChanged;
 + (id)screens;
@@ -69,14 +69,11 @@
 - (double)_refreshRate;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)_lazySoftwareDimmingWindow;
-- (void)_incrementIgnoreBacklightLevelDidChangeNotificationsCount;
 - (float)rawBrightnessForBacklightLevel:(float)arg1;
 - (BOOL)_supportsBrightness;
 - (void)_postBrightnessDidChangeNotificationIfAppropriate;
-- (void)_decrementIgnoreBacklightLevelDidChangeNotificationsCount;
-- (BOOL)_shouldRepostBacklightLevelChangedNotification;
-- (void)_setIgnoreBacklightLevelDidChangeNotificationsCount:(int)arg1;
-- (int)_ignoreBacklightLevelDidChangeNotificationsCount;
+- (void)_setLastNotifiedBacklightLevel:(int)arg1;
+- (int)_lastNotifiedBacklightLevel;
 - (id)_softwareDimmingWindow;
 - (void)setCurrentMode:(id)arg1;
 - (id)preferredMode;
@@ -88,6 +85,7 @@
 - (void)_setSoftwareDimmingWindow:(id)arg1;
 - (void)_endObservingBacklightLevelNotifications;
 - (void)_beginObservingBacklightLevelNotifications;
+- (BOOL)_isExternal;
 - (void)_updateOverscanCompensationAllowingBackgroundUpdate:(BOOL)arg1;
 - (id)availableModes;
 - (id)initWithDisplay:(id)arg1;
@@ -98,15 +96,16 @@
 - (id)_name;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_realDisplayBounds;
 - (float)_horizontalPixelScale;
-- (BOOL)_isMainScreen;
 - (int)bitsPerComponent;
+- (float)_pointsPerInch;
 - (float)_scale;
+- (BOOL)_isMainScreen;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsInPixels;
 - (float)_rotation;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationFrame;
 - (void)_setScale:(float)arg1;
 - (void)_computeMetrics;
 - (float)scale;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 
 @end

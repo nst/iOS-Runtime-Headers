@@ -16,14 +16,14 @@
 + (id)recurrence;
 
 - (id)groupIdentifier;
+- (int)interval;
+- (void)setInterval:(int)arg1;
+- (void)setEndCount:(int)arg1;
+- (int)endCount;
+- (id)encodedClassName;
 - (int)frequency;
 - (void)setFrequency:(int)arg1;
 - (void)setEndDate:(id)arg1;
 - (id)endDate;
-- (int)interval;
-- (void)setInterval:(int)arg1;
-- (int)endCount;
-- (void)setEndCount:(int)arg1;
-- (id)encodedClassName;
 
 @end

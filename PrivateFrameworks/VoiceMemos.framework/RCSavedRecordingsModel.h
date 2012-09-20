@@ -4,7 +4,7 @@
 
 @class NSArray, NSFetchedResultsController, NSManagedObjectContext, NSFetchRequest, NSManagedObjectModel;
 
-@interface RCSavedRecordingsModel : NSObject  {
+@interface RCSavedRecordingsModel : NSObject <NSFetchedResultsControllerDelegate> {
     NSManagedObjectModel *_model;
     NSManagedObjectContext *_context;
     NSFetchRequest *_fetchRequest;
@@ -14,26 +14,28 @@
 @property(readonly) unsigned int count;
 @property(readonly) NSArray * recordings;
 
++ (void)invalidateSharedModel;
 + (id)sharedModel;
 
-- (unsigned int)count;
-- (id)init;
+- (void).cxx_destruct;
 - (void)dealloc;
-- (id)recordingAtIndex:(unsigned int)arg1;
-- (id)indexPathForRecording:(id)arg1;
-- (id)recordingWithURIRepresentation:(id)arg1;
-- (id)recordingWithITunesPersistentID:(long long)arg1;
-- (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3;
-- (void)deleteRecording:(id)arg1;
-- (BOOL)hasExistingRecordingForAudioFile:(id)arg1;
-- (id)recordingsForSpotlightSearch:(id)arg1;
-- (void)_generateAssetManifestPlist;
-- (id)recordingWithID:(id)arg1;
-- (id)_labelPresetsForQuery:(id)arg1;
-- (id)recordings;
-- (void)saveIfNecessary;
-- (id)_init;
-- (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned int)arg4 newIndexPath:(id)arg5;
+- (id)init;
+- (unsigned int)count;
 - (void)controllerDidChangeContent:(id)arg1;
+- (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned int)arg4 newIndexPath:(id)arg5;
+- (id)_init;
+- (id)recordingsForSpotlightSearch:(id)arg1;
+- (BOOL)hasExistingRecordingForAudioFile:(id)arg1;
+- (void)deleteRecording:(id)arg1;
+- (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3;
+- (id)recordingWithITunesPersistentID:(long long)arg1;
+- (id)recordingWithURIRepresentation:(id)arg1;
+- (id)indexPathForRecording:(id)arg1;
+- (id)recordingAtIndex:(unsigned int)arg1;
+- (void)saveIfNecessary;
+- (id)recordings;
+- (id)_labelPresetsForQuery:(id)arg1;
+- (id)recordingWithID:(id)arg1;
+- (void)_generateAssetManifestPlist;
 
 @end

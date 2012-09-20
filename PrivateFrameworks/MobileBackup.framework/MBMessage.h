@@ -2,27 +2,35 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSDictionary;
+@class NSObject<NSCoding><NSCopying>, NSError, NSObject<OS_xpc_object>, NSString, NSArray, NSMutableDictionary;
 
 @interface MBMessage : NSObject  {
-    void *_xpcObject;
-    NSDictionary *_messageInfo;
-    NSDictionary *_replyInfo;
+    NSObject<OS_xpc_object> *_xpcObject;
+    NSMutableDictionary *_messageInfo;
+    NSMutableDictionary *_replyInfo;
 }
 
-@property(readonly) NSDictionary * messageInfo;
-@property(copy) NSDictionary * replyInfo;
+@property(copy) NSObject<NSCoding><NSCopying> * reply;
+@property(copy) NSError * replyError;
+@property(readonly) NSString * name;
+@property(readonly) NSArray * arguments;
+@property(copy) NSError * error;
 
-+ (id)messageWithInfo:(id)arg1;
++ (id)messageWithName:(id)arg1 arguments:(id)arg2;
 
+- (void)setError:(id)arg1;
+- (id)name;
 - (id)description;
 - (void)dealloc;
+- (id)arguments;
+- (id)reply;
+- (void)setReply:(id)arg1;
+- (void)setReplyError:(id)arg1;
 - (void)sendReply;
-- (id)replyInfo;
-- (void)setReplyInfo:(id)arg1;
-- (id)_initWithXPCObject:(void*)arg1;
-- (void*)_xpcObject;
-- (id)initWithMessageInfo:(id)arg1;
-- (id)messageInfo;
+- (id)initWithName:(id)arg1 arguments:(id)arg2;
+- (id)_xpcObject;
+- (id)_initWithXPCObject:(id)arg1;
+- (id)replyError;
+- (id)error;
 
 @end

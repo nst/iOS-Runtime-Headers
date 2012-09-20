@@ -18,18 +18,18 @@
 + (id)server;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (void)removeDisplay:(id)arg1;
-- (void)removeAllDisplays;
-- (id)displayWithName:(id)arg1;
-- (unsigned int)rendererFlags;
-- (void)_detectDisplays;
-- (void)addDisplay:(id)arg1;
-- (void)setMirroringEnabled:(BOOL)arg1;
-- (BOOL)isMirroringEnabled;
+- (id)init;
 - (id)displays;
 - (void)setRendererFlags:(unsigned int)arg1;
 - (id)_init;
+- (unsigned int)rendererFlags;
+- (BOOL)isMirroringEnabled;
+- (void)setMirroringEnabled:(BOOL)arg1;
+- (void)_detectDisplays;
+- (id)displayWithName:(id)arg1;
+- (void)removeAllDisplays;
+- (void)removeDisplay:(id)arg1;
+- (void)addDisplay:(id)arg1;
 
 @end

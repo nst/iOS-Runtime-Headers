@@ -16,23 +16,22 @@
     BOOL _checkOutWhenRemoved;
 }
 
-@property(readonly) NSArray * localizedAccessRightDescriptions;
-@property(readonly) BOOL checkOutWhenRemoved;
-@property(readonly) BOOL signMessage;
-@property(readonly) int accessRights;
-@property(readonly) NSString * checkInURLString;
-@property(readonly) BOOL useDevelopmentAPNS;
-@property(readonly) NSString * serverURLString;
-@property(readonly) NSString * topic;
-@property(retain) NSData * identityPersistentID;
 @property(readonly) NSString * identityUUID;
+@property(retain) NSData * identityPersistentID;
+@property(readonly) NSString * topic;
+@property(readonly) NSString * serverURLString;
+@property(readonly) BOOL useDevelopmentAPNS;
+@property(readonly) NSString * checkInURLString;
+@property(readonly) int accessRights;
+@property(readonly) NSArray * localizedAccessRightDescriptions;
+@property(readonly) BOOL signMessage;
+@property(readonly) BOOL checkOutWhenRemoved;
 
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
 - (id)description;
-- (void)dealloc;
-- (id)localizedAccessRightDescriptions;
+- (void).cxx_destruct;
 - (BOOL)checkOutWhenRemoved;
 - (BOOL)signMessage;
 - (int)accessRights;
@@ -40,19 +39,20 @@
 - (BOOL)useDevelopmentAPNS;
 - (id)serverURLString;
 - (id)topic;
-- (id)identityPersistentID;
 - (void)setIdentityPersistentID:(id)arg1;
+- (id)identityPersistentID;
 - (id)identityUUID;
-- (id)_invalidRightsError;
-- (id)_invalidTopicError;
+- (id)localizedAccessRightDescriptions;
 - (id)_nonHTTPSURLErrorForField:(id)arg1;
-- (id)subtitle1Label;
-- (id)subtitle2Label;
+- (id)_invalidTopicError;
+- (id)_invalidRightsError;
 - (id)subtitle2Description;
+- (id)subtitle2Label;
+- (id)subtitle1Label;
 - (id)subtitle1Description;
 - (id)installationWarnings;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)title;
 
 @end

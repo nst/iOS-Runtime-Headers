@@ -17,15 +17,15 @@
 - (void)dealloc;
 - (id)font;
 - (void)setFont:(id)arg1;
-- (int)legendPosition;
 - (bool)isSingleColumnLegend;
-- (id)legendEntries;
-- (void)setLegendPosition:(int)arg1;
-- (void)setIsSingleColumnLegend:(bool)arg1;
-- (void)setGraphicProperties:(id)arg1;
-- (id)graphicProperties;
 - (unsigned int)fontIndex;
-- (void)setFontIndex:(unsigned int)arg1;
+- (id)legendEntries;
+- (void)setIsSingleColumnLegend:(bool)arg1;
+- (void)setLegendPosition:(int)arg1;
+- (void)setGraphicProperties:(id)arg1;
 - (id)initWithResources:(id)arg1;
+- (void)setFontIndex:(unsigned int)arg1;
+- (int)legendPosition;
+- (id)graphicProperties;
 
 @end

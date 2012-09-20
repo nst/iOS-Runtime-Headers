@@ -14,14 +14,16 @@
 + (id)activeInstance;
 + (id)sharedInstance;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)touchSwitcherTimer;
 - (id)newMode;
 - (void)setNewMode:(id)arg1;
 - (void)showSwitcher;
 - (void)handleRotate:(id)arg1;
+- (void)touchHideSwitcherTimer;
 - (void)cancelSwitcherTimer;
+- (void)clearHideSwitcherTimer;
 - (void)clearSwitcherTimer;
 - (BOOL)handleModifiersChangedEvent:(struct __GSEvent { }*)arg1;
 - (void)hideSwitcher;

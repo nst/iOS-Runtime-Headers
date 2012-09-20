@@ -22,12 +22,14 @@
 @property(retain) CoreDAVItemWithHrefChildItem * location;
 @property(retain) CoreDAVLeafItem * serverUID;
 
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setStatus:(id)arg1;
 - (id)status;
+- (id)location;
 - (BOOL)hasPropertyError;
 - (void)setHrefs:(id)arg1;
 - (void)setPropStats:(id)arg1;
@@ -39,12 +41,10 @@
 - (id)serverUID;
 - (id)responseDescription;
 - (id)propStats;
-- (id)copyParseRules;
 - (id)errorItem;
 - (id)firstHref;
 - (id)hrefs;
 - (id)successfulPropertiesToValues;
-- (id)location;
 - (void)setLocation:(id)arg1;
 
 @end

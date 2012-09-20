@@ -17,22 +17,22 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (id)options;
+- (void)setOptions:(id)arg1;
 - (int)type;
+- (void)dealloc;
+- (id)init;
+- (id)options;
+- (void)setSpeed:(int)arg1;
 - (int)speed;
 - (void)setType:(int)arg1;
-- (void)setSpeed:(int)arg1;
-- (BOOL)isAdvanceOnClick;
+- (BOOL)hasTransitionOptions;
+- (void)setAdvanceAfterTime:(int)arg1;
+- (void)setIsAdvanceOnClick:(BOOL)arg1;
 - (int)advanceAfterTime;
+- (BOOL)hasAdvanceAfterTime;
+- (BOOL)isAdvanceOnClick;
 - (BOOL)hasIsAdvanceOnClick;
 - (BOOL)hasSpeed;
-- (BOOL)hasAdvanceAfterTime;
-- (BOOL)hasTransitionOptions;
-- (void)setIsAdvanceOnClick:(BOOL)arg1;
-- (void)setAdvanceAfterTime:(int)arg1;
-- (void)setOptions:(id)arg1;
 - (BOOL)hasType;
 
 @end

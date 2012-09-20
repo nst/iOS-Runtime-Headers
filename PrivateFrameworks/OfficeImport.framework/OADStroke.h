@@ -25,18 +25,18 @@
     unsigned int mIsPenAlignmentOverridden : 1;
 }
 
-@property(retain) OADLineEnd * tail;
 @property(retain) OADLineEnd * head;
+@property(retain) OADLineEnd * tail;
 
 + (id)defaultProperties;
 + (id)blackStroke;
 + (id)nullStroke;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)color;
 - (void)setColor:(id)arg1;
 - (void)setWidth:(float)arg1;
@@ -45,28 +45,28 @@
 - (id)head;
 - (void)setTail:(id)arg1;
 - (void)setHead:(id)arg1;
-- (id)dash;
-- (void)setJoin:(id)arg1;
-- (id)join;
-- (id)tail;
-- (BOOL)isDashOverridden;
-- (BOOL)isJoinOverridden;
-- (BOOL)isCapOverridden;
-- (BOOL)isCompoundTypeOverridden;
-- (BOOL)isPenAlignmentOverridden;
-- (int)compoundType;
 - (int)penAlignment;
-- (void)setCompoundType:(int)arg1;
+- (BOOL)isPenAlignmentOverridden;
+- (BOOL)isCapOverridden;
+- (BOOL)isJoinOverridden;
 - (void)setPenAlignment:(int)arg1;
 - (void)setStyleColor:(id)arg1;
+- (id)initWithDefaults;
+- (id)join;
+- (void)setCompoundType:(int)arg1;
+- (void)setJoin:(id)arg1;
+- (void)setCap:(int)arg1;
+- (int)cap;
+- (void)setDash:(id)arg1;
+- (id)tail;
+- (void)setParent:(id)arg1;
+- (void)setFill:(id)arg1;
+- (int)compoundType;
+- (BOOL)isCompoundTypeOverridden;
+- (id)dash;
+- (BOOL)isDashOverridden;
+- (BOOL)isFillOverridden;
 - (BOOL)isColorOverridden;
 - (BOOL)isWidthOverridden;
-- (void)setDash:(id)arg1;
-- (BOOL)isFillOverridden;
-- (int)cap;
-- (void)setCap:(int)arg1;
-- (void)setFill:(id)arg1;
-- (void)setParent:(id)arg1;
-- (id)initWithDefaults;
 
 @end

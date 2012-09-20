@@ -26,10 +26,11 @@
 @property(readonly) float maximumValidCalibrationMiles;
 
 
-- (id)init;
-- (void)dealloc;
 - (void)setParameters:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)parameters;
+- (float)distanceInMiles;
 - (BOOL)recalibrateWithAdjustedDistanceMiles:(float)arg1;
 - (BOOL)calibrateWithDistanceMiles:(float)arg1 forWalk:(BOOL)arg2;
 - (void)resetCalibration;
@@ -51,7 +52,6 @@
 - (float)lifetimeUncalibratedWalkingMiles;
 - (unsigned int)runningStepCount;
 - (unsigned int)walkingStepCount;
-- (float)distanceInMiles;
 - (float)paceInSecondsPerMile;
 - (struct PaceModel { float x1; boolx2; unsigned char x3; unsigned short x4; boolx5; unsigned char x6; unsigned long x7; boolx8; unsigned long x9; unsigned long x10; unsigned long x11; unsigned long x12; unsigned long x13; unsigned char x14; unsigned short x15; unsigned long x16; unsigned long x17; float x18; short x19; float x20; short x21; float x22; float x23; float x24; short x25; float x26; short x27; float x28; float x29; unsigned char x30; unsigned char x31[3]; unsigned short x32[7]; unsigned char x33; boolx34; unsigned short x35; unsigned short x36; unsigned short x37; boolx38; boolx39; unsigned long x40; unsigned long x41; unsigned long x42; unsigned long x43; unsigned long x44; unsigned short x45; boolx46; unsigned char x47[3]; float x48; short x49; float x50; short x51; float x52; short x53; float x54; short x55; unsigned char x56; unsigned short x57; unsigned char x58; }*)_paceModel;
 - (void)startEventWithInitialMiles:(float)arg1 isCalibration:(BOOL)arg2;

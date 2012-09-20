@@ -5,29 +5,22 @@
 @interface CNFServiceHandler : NSObject  {
 }
 
++ (BOOL)connect:(BOOL)arg1;
++ (void)_daemonConnectedNotification:(id)arg1;
++ (void)_accountRegistrationStatusChanged:(id)arg1;
++ (BOOL)_isValidProcess;
++ (void)activateFaceTime;
++ (int)activationState;
++ (BOOL)faceTimeIsAvailable;
++ (void)setupServiceHandlerForControllerType:(int)arg1;
++ (void)updateConferenceCapabilitiesForControllerType:(int)arg1;
++ (BOOL)faceTimeIsSupported;
++ (id)faceTimeSourceAccount;
++ (BOOL)disconnect;
++ (BOOL)connect;
++ (void)setCapabilities:(unsigned long long)arg1;
 + (unsigned long long)capabilities;
 + (BOOL)isConnected;
-+ (BOOL)conferencingHasValidatedAliasForAccount:(id)arg1;
-+ (BOOL)_isValidProcess;
-+ (BOOL)conferencingIsRegisteredForAccount:(id)arg1;
-+ (void)_availabilityChanged:(id)arg1;
-+ (void)_accountRegistrationStatusChanged:(id)arg1;
-+ (BOOL)invitationListener;
-+ (BOOL)conferencingIsSupported;
-+ (void)updateConferenceCapabilitiesForControllerType:(int)arg1;
-+ (BOOL)conferencingIsRestricted;
-+ (BOOL)isFaceTimeActivated;
-+ (BOOL)conferencingIsAvailable;
-+ (void)activateFaceTime;
-+ (void)deactivateFaceTime;
-+ (int)activationState;
-+ (BOOL)connect:(BOOL)arg1;
-+ (id)faceTimeSourceAccount;
-+ (id)services;
-+ (void)setCapabilities:(unsigned long long)arg1;
-+ (void)_daemonConnectedNotification:(id)arg1;
-+ (BOOL)connect;
-+ (BOOL)disconnect;
 
 
 @end

@@ -8,9 +8,9 @@
 
 + (id)sharedObject;
 
-- (id)init;
-- (void)dealloc;
-- (void)setState:(int)arg1;
 - (int)state;
+- (void)dealloc;
+- (id)init;
+- (void)updateState;
 
 @end

@@ -7,15 +7,21 @@
 @interface MFWebAttachmentSource : NSObject  {
     MFLock *_attachmentsLock;
     NSMutableDictionary *_attachmentsByURL;
+    NSMutableDictionary *_removedAttachmentsByURL;
 }
+
+@property BOOL keepRemovedAttachments;
 
 + (id)allSources;
 
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (void)removeAttachmentForURL:(id)arg1;
+- (void)setKeepRemovedAttachments:(BOOL)arg1;
+- (BOOL)keepRemovedAttachments;
+- (id)attachmentForURL:(id)arg1 includeRemoved:(BOOL)arg2;
 - (BOOL)setAttachment:(id)arg1 forURL:(id)arg2;
 - (id)attachmentForURL:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 
 @end

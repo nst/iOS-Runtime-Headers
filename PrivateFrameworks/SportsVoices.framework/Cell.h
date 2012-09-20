@@ -15,39 +15,39 @@
 @property(retain) NSString * post;
 @property(retain) NSMutableDictionary * attributes;
 
++ (id)cell;
++ (id)cellWithContentString:(id)arg1;
 + (id)blank;
 + (id)wildcard;
 + (id)cellWithCell:(id)arg1;
 + (id)literalCellWithCell:(id)arg1;
 + (id)instanceFromPlist:(id)arg1;
-+ (id)cell;
-+ (id)cellWithContentString:(id)arg1;
 
-- (BOOL)matches:(id)arg1;
+- (id)attributeForKey:(id)arg1;
+- (int)type;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (id)attributeForKey:(id)arg1;
-- (id)flattened;
+- (id)init;
+- (void)setAttributes:(id)arg1;
+- (id)attributes;
+- (id)content;
+- (BOOL)hasContent;
+- (void)setAttribute:(id)arg1 forKey:(id)arg2;
+- (BOOL)isBlank;
+- (void)setContent:(id)arg1;
+- (BOOL)matches:(id)arg1;
+- (id)post;
 - (void)setPost:(id)arg1;
+- (id)flattened;
 - (void)setPre:(id)arg1;
 - (id)overlayedOn:(id)arg1;
 - (id)literalCell;
-- (id)post;
 - (id)pre;
 - (id)initWithAttributesDictionary:(id)arg1;
 - (id)initWithContentString:(id)arg1;
 - (id)initAsBlank;
 - (id)initAsWildcard;
 - (id)initFromPlist:(id)arg1;
-- (void)setAttribute:(id)arg1 forKey:(id)arg2;
-- (void)setAttributes:(id)arg1;
-- (id)attributes;
-- (int)type;
-- (id)content;
-- (BOOL)hasContent;
-- (void)setContent:(id)arg1;
-- (BOOL)isBlank;
 
 @end

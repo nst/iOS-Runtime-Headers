@@ -4,18 +4,18 @@
 
 @class UILabel;
 
-@interface RegionFormatSampleView : UIView <PreferencesTableCustomView> {
+@interface RegionFormatSampleView : UIView <PSHeaderFooterView> {
     UILabel *_labels[4];
     float _sized;
 }
 
 
-- (void)dealloc;
-- (float)preferredHeightForWidth:(float)arg1;
-- (id)initWithSpecifier:(id)arg1;
-- (void)layoutSubviews;
 - (id)_accessibilityLabels;
-- (void)setTextForRegionExample:(id)arg1;
 - (id)generateRegionSampleLabel;
+- (void)setTextForRegionExample:(id)arg1;
+- (float)preferredHeightForWidth:(float)arg1;
+- (void)dealloc;
+- (void)layoutSubviews;
+- (id)initWithSpecifier:(id)arg1;
 
 @end

@@ -2,49 +2,68 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImageView, MPAVController, NSString, NSTimer, UILabel;
+@class UIImageView, UILabel, NSTimer, MPAVController, NSString, UIView;
 
 @interface MPVolumeSlider : UISlider  {
     NSTimer *_commitTimer;
-    MPAVController *_avController;
-    NSString *_volumeAudioCategory;
-    int _style;
+    MPAVController *_player;
     UILabel *_routeNameLabel;
+    int _style;
     UIImageView *_thumbImageView;
     UIImageView *_thumbMaskImageView;
+    NSString *_volumeAudioCategory;
+    BOOL _isOffScreen;
+    BOOL _volumeWarningEnabled;
+    UIView *_volumeWarningView;
+    int _volumeWarningState;
+    float _EUVolumeLimit;
+    BOOL _volumeWarningBlinking;
 }
 
 @property(readonly) int style;
-@property(retain) MPAVController * MPAVController;
+@property(retain) MPAVController * player;
 @property(copy) NSString * volumeAudioCategory;
+@property(setter=_setIsOffScreen:) BOOL _isOffScreen;
 
 
-- (void)dealloc;
+- (void)setPlayer:(id)arg1;
+- (id)player;
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (BOOL)_isOffScreen;
+- (void)_setIsOffScreen:(BOOL)arg1;
 - (void)setVolumeAudioCategory:(id)arg1;
+- (void)_blinkWarningView;
 - (void)_routeNameLabelAnimationDidEnd;
-- (id)MPAVController;
+- (float)_volumeFromAVController;
+- (void)_beginBlinkingWarningView;
 - (void)_updateVolumeFromAVController;
 - (void)_layoutForAvailableRoutes;
 - (void)_layoutMaskForThumb;
 - (void)_endTracking;
 - (void)_commitVolumeChange;
 - (id)volumeAudioCategory;
+- (void)_layoutVolumeWarningView;
+- (void)_endBlinkingWarningView;
 - (void)_volumeDidChange:(id)arg1;
+- (void)_EUVolumeLimitEnforcedDidChange:(id)arg1;
+- (void)_EUVolumeLimitDidChange:(id)arg1;
 - (void)_systemMuteDidChange:(id)arg1;
 - (void)_systemVolumeDidChange:(id)arg1;
 - (id)_maxTrackImageForStyle:(int)arg1;
 - (id)_minTrackImageForStyle:(int)arg1;
 - (id)_thumbImageForStyle:(int)arg1;
-- (void)setMPAVController:(id)arg1;
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
 - (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
+- (void)dealloc;
+- (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 value:(float)arg3;
 - (float)maximumValue;
 - (float)minimumValue;
 - (id)createThumbView;
-- (void)cancelTrackingWithEvent:(id)arg1;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)cancelTrackingWithEvent:(id)arg1;
 - (int)style;
 - (void)didMoveToSuperview;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -57,7 +76,5 @@
 - (void)setHidden:(BOOL)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_applicationWillEnterForegroundNotification:(id)arg1;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 
 @end

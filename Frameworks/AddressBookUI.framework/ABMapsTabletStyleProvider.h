@@ -6,7 +6,8 @@
 }
 
 
-- (int)cardActionButtonType;
-- (id)cardCellBackgroundColor;
+- (id)cardActionConferenceIcon;
+- (id)personActionColor;
+- (id)cardLabelTextColor;
 
 @end

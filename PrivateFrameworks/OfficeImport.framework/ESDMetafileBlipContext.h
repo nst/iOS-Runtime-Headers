@@ -8,16 +8,16 @@
  */
 
 @interface ESDMetafileBlipContext : ESDBlipContext  {
-    unsigned int mCb;
-    unsigned int defaultHeaderSize;
+    unsigned long mCb;
+    unsigned long defaultHeaderSize;
 }
 
-@property unsigned int defaultHeaderSize;
+@property unsigned long defaultHeaderSize;
 
 
-- (id)initWithOffset:(unsigned int)arg1 byteCount:(unsigned int)arg2 uncompressed:(unsigned long)arg3 stream:(struct SsrwOOStream { int (**x1)(); }*)arg4 streamID:(unsigned int)arg5;
 - (unsigned long)defaultHeaderSize;
 - (void)setDefaultHeaderSize:(unsigned long)arg1;
+- (id)initWithOffset:(unsigned int)arg1 byteCount:(unsigned int)arg2 uncompressed:(unsigned long)arg3 stream:(struct SsrwOOStream { int (**x1)(); }*)arg4 streamID:(unsigned int)arg5;
 - (bool)loadDelayedNode:(id)arg1;
 
 @end

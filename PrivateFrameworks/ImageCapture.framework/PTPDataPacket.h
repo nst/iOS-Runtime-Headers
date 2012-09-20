@@ -6,7 +6,7 @@
 
 @interface PTPDataPacket : NSObject  {
     unsigned short _operationCode;
-    unsigned int _transactionID;
+    unsigned long _transactionID;
     id _data;
     NSString *_filepath;
     int _fd;
@@ -20,32 +20,32 @@
 }
 
 
-- (id)description;
-- (void)dealloc;
-- (int)setRange:(struct _PTPRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (id)filepath;
-- (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 andFilepath:(id)arg3;
-- (id)initWithUSBBuffer:(void*)arg1;
-- (id)contentForUSB;
-- (id)contentForUSBUsingBuffer:(void*)arg1 capacity:(unsigned long)arg2;
-- (void)setOperationCode:(unsigned short)arg1;
-- (long long)bufferSize;
-- (long long)offsetInBuffer;
-- (long long)bytesTransferred;
-- (long long)copyDataToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2 fromOffset:(unsigned long long)arg3;
-- (long long)copyHeaderToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
 - (long long)copyFromBuffer:(void*)arg1 numBytes:(long long)arg2;
+- (long long)copyHeaderToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
+- (long long)copyDataToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2 fromOffset:(unsigned long long)arg3;
+- (long long)bytesTransferred;
+- (long long)offsetInBuffer;
+- (long long)bufferSize;
+- (void)setOperationCode:(unsigned short)arg1;
+- (id)contentForUSBUsingBuffer:(void*)arg1 capacity:(unsigned long)arg2;
+- (id)contentForUSB;
+- (id)initWithUSBBuffer:(void*)arg1;
+- (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 andFilepath:(id)arg3;
+- (id)filepath;
 - (long long)copyToBuffer:(void*)arg1 numBytes:(long long)arg2;
 - (void)setTransactionID:(unsigned long)arg1;
-- (unsigned short)operationCode;
 - (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 andData:(id)arg3;
-- (id)contentForTCP;
-- (unsigned long)transactionID;
-- (long long)copyToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
-- (void)setBytesTransferred:(long long)arg1;
+- (unsigned short)operationCode;
 - (id)initWithTCPBuffer:(void*)arg1;
-- (struct _PTPRange { unsigned long long x1; unsigned long long x2; })range;
+- (void)setBytesTransferred:(long long)arg1;
+- (long long)copyToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
+- (unsigned long)transactionID;
+- (id)contentForTCP;
 - (id)data;
+- (id)description;
+- (void)dealloc;
+- (struct _PTPRange { unsigned long long x1; unsigned long long x2; })range;
 - (void)setData:(id)arg1;
+- (int)setRange:(struct _PTPRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

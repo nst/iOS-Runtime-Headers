@@ -9,18 +9,18 @@
     CoreDAVItemWithNoChildren *_canBeShared;
 }
 
-@property(retain) CoreDAVItemWithNoChildren * canBeShared;
 @property(retain) CoreDAVItemWithNoChildren * canBePublished;
+@property(retain) CoreDAVItemWithNoChildren * canBeShared;
 
 
+- (id)canBeShared;
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (void)setCanBePublished:(id)arg1;
 - (id)canBePublished;
-- (id)canBeShared;
+- (void)setCanBePublished:(id)arg1;
 - (void)setCanBeShared:(id)arg1;
 
 @end

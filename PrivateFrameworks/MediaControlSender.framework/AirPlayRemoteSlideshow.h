@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MediaControlSender.framework/MediaControlSender
  */
 
-@class MediaControlClient, <AirPlayRemoteSlideshowDelegate>;
+@class <AirPlayRemoteSlideshowDelegate>, MediaControlClient, NSObject<OS_dispatch_queue>;
 
 @interface AirPlayRemoteSlideshow : NSObject  {
-    struct dispatch_queue_s { } *_internalQueue;
+    NSObject<OS_dispatch_queue> *_internalQueue;
     MediaControlClient *_client;
     <AirPlayRemoteSlideshowDelegate> *_delegate;
-    struct dispatch_queue_s { } *_userQueue;
+    NSObject<OS_dispatch_queue> *_userQueue;
     BOOL _started;
     double _startTime;
 }
@@ -16,17 +16,17 @@
 @property <AirPlayRemoteSlideshowDelegate> * delegate;
 
 
-- (void)setHost:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;
 - (void)setPassword:(id)arg1;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (void)getFeaturesWithOptions:(unsigned int)arg1 completion:(id)arg2;
+- (void)_configureEventHandler;
+- (void)setDispatchQueue:(id)arg1;
+- (void)setHost:(id)arg1;
 - (void)getFeaturesWithCompletion:(id)arg1;
 - (void)stopWithOptions:(id)arg1 completion:(id)arg2;
 - (void)startWithOptions:(id)arg1 completion:(id)arg2;
-- (void)getFeaturesWithOptions:(unsigned int)arg1 completion:(id)arg2;
-- (void)_configureEventHandler;
 
 @end

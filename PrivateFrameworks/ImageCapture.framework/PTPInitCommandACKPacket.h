@@ -5,23 +5,23 @@
 @class NSString;
 
 @interface PTPInitCommandACKPacket : NSObject  {
-    unsigned int _connectionNumber;
+    unsigned long _connectionNumber;
     unsigned char _responderGUID[16];
     NSString *_responderFriendlyName;
 }
 
 
+- (void)setResponderFriendlyName:(id)arg1;
+- (id)responderFriendlyName;
+- (void)setResponderGUID:(char *)arg1;
+- (const char *)responderGUID;
+- (void)setConnectionNumber:(unsigned long)arg1;
+- (id)responderGUIDString;
+- (unsigned long)connectionNumber;
+- (id)initWithConnectionNumber:(unsigned long)arg1 responderGUID:(char *)arg2 responderFriendlyName:(id)arg3;
+- (id)initWithTCPBuffer:(void*)arg1;
+- (id)contentForTCP;
 - (id)description;
 - (void)dealloc;
-- (void)setConnectionNumber:(unsigned long)arg1;
-- (const char *)responderGUID;
-- (void)setResponderGUID:(char *)arg1;
-- (id)responderFriendlyName;
-- (void)setResponderFriendlyName:(id)arg1;
-- (id)contentForTCP;
-- (id)initWithTCPBuffer:(void*)arg1;
-- (id)initWithConnectionNumber:(unsigned long)arg1 responderGUID:(char *)arg2 responderFriendlyName:(id)arg3;
-- (unsigned long)connectionNumber;
-- (id)responderGUIDString;
 
 @end

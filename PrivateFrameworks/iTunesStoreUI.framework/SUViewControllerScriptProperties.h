@@ -2,25 +2,38 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIColor, SUGradient;
+@class SUGradient, UIColor, NSDictionary;
 
 @interface SUViewControllerScriptProperties : NSObject <NSCoding, NSCopying> {
+    BOOL _alwaysDispatchesScrollEvents;
     UIColor *_backgroundColor;
+    NSDictionary *_contextDictionary;
     BOOL _doubleTapEnabled;
     BOOL _embedded;
+    BOOL _flashesScrollIndicators;
     BOOL _inputViewObeysDOMFocus;
     int _loadingIndicatorStyle;
     UIColor *_loadingTextColor;
     UIColor *_loadingTextShadowColor;
     SUGradient *_placeholderBackgroundGradient;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _scrollContentInsets;
     BOOL _scrollingDisabled;
     BOOL _shouldLoadProgressively;
     BOOL _shouldShowFormAccessory;
+    BOOL _showsHorizontalScrollIndicator;
+    BOOL _showsVerticalScrollIndicator;
     BOOL _showsBackgroundShadow;
     UIColor *_topExtensionColor;
 }
 
+@property BOOL alwaysDispatchesScrollEvents;
 @property(retain) UIColor * backgroundColor;
+@property(copy) NSDictionary * contextDictionary;
 @property BOOL inputViewObeysDOMFocus;
 @property(getter=isDoubleTapEnabled) BOOL doubleTapEnabled;
 @property(getter=isScrollingDisabled) BOOL scrollingDisabled;
@@ -29,41 +42,57 @@
 @property(retain) UIColor * loadingTextColor;
 @property(retain) UIColor * loadingTextShadowColor;
 @property(retain) SUGradient * placeholderBackgroundGradient;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } scrollContentInsets;
 @property BOOL shouldLoadProgressively;
 @property BOOL shouldShowFormAccessory;
 @property BOOL showsBackgroundShadow;
+@property BOOL flashesScrollIndicators;
+@property BOOL showsHorizontalScrollIndicator;
+@property BOOL showsVerticalScrollIndicator;
 @property(retain) UIColor * topExtensionColor;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setInputViewObeysDOMFocus:(BOOL)arg1;
-- (BOOL)inputViewObeysDOMFocus;
-- (BOOL)isDoubleTapEnabled;
-- (void)setDoubleTapEnabled:(BOOL)arg1;
-- (id)backgroundColor;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setBackgroundColor:(id)arg1;
 - (void)setEmbedded:(BOOL)arg1;
+- (BOOL)isEmbedded;
+- (void)setContextDictionary:(id)arg1;
+- (id)contextDictionary;
 - (BOOL)shouldShowFormAccessory;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })scrollContentInsets;
+- (BOOL)flashesScrollIndicators;
 - (BOOL)shouldLoadProgressively;
+- (void)setScrollContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setShouldLoadProgressively:(BOOL)arg1;
 - (void)setShouldShowFormAccessory:(BOOL)arg1;
+- (void)setFlashesScrollIndicators:(BOOL)arg1;
 - (id)topExtensionColor;
 - (BOOL)showsBackgroundShadow;
 - (BOOL)isScrollingDisabled;
 - (void)setTopExtensionColor:(id)arg1;
 - (void)setShowsBackgroundShadow:(BOOL)arg1;
 - (void)setScrollingDisabled:(BOOL)arg1;
-- (BOOL)isEmbedded;
-- (id)loadingTextShadowColor;
-- (id)loadingTextColor;
 - (int)loadingIndicatorStyle;
 - (id)placeholderBackgroundGradient;
+- (void)setPlaceholderBackgroundGradient:(id)arg1;
 - (void)setLoadingTextShadowColor:(id)arg1;
 - (void)setLoadingTextColor:(id)arg1;
 - (void)setLoadingIndicatorStyle:(int)arg1;
-- (void)setPlaceholderBackgroundGradient:(id)arg1;
+- (id)loadingTextShadowColor;
+- (id)loadingTextColor;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (BOOL)alwaysDispatchesScrollEvents;
+- (void)setAlwaysDispatchesScrollEvents:(BOOL)arg1;
+- (void)setInputViewObeysDOMFocus:(BOOL)arg1;
+- (BOOL)inputViewObeysDOMFocus;
+- (BOOL)isDoubleTapEnabled;
+- (void)setDoubleTapEnabled:(BOOL)arg1;
+- (BOOL)showsVerticalScrollIndicator;
+- (void)setShowsHorizontalScrollIndicator:(BOOL)arg1;
+- (BOOL)showsHorizontalScrollIndicator;
+- (id)backgroundColor;
+- (void)setShowsVerticalScrollIndicator:(BOOL)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setBackgroundColor:(id)arg1;
 
 @end

@@ -12,12 +12,12 @@
 
 + (float)defaultHeight;
 
-- (void)dealloc;
 - (void)setTitleLabel:(id)arg1;
-- (id)initWithAceObject:(id)arg1 context:(id)arg2;
-- (id)speakableTextForLanguageCode:(id)arg1;
+- (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)titleLabel;
 - (void)layoutSubviews;
+- (id)initWithAceObject:(id)arg1 context:(id)arg2;
+- (id)speakableText;
 
 @end

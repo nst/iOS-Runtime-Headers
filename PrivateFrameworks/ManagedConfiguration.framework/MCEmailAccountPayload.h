@@ -25,32 +25,31 @@
     NSString *_outgoingMailServerUsername;
 }
 
-@property(readonly) NSString * outgoingMailServerUsername;
-@property(readonly) BOOL outgoingMailServerUseSSL;
-@property(readonly) NSNumber * outgoingMailServerPortNumber;
-@property(readonly) NSString * outgoingMailServerHostname;
-@property(readonly) NSString * outgoingMailServerAuthentication;
-@property(readonly) BOOL outgoingPasswordSameAsIncomingPassword;
-@property(readonly) NSString * outgoingPassword;
-@property(readonly) NSString * incomingPassword;
-@property(readonly) NSString * incomingMailServerIMAPPathPrefix;
-@property(readonly) NSString * incomingMailServerUsername;
-@property(readonly) BOOL incomingMailServerUseSSL;
-@property(readonly) NSNumber * incomingMailServerPortNumber;
-@property(readonly) NSString * incomingMailServerHostname;
-@property(readonly) NSString * incomingMailServerAuthentication;
-@property(readonly) NSString * emailAddress;
-@property(readonly) NSString * emailAccountType;
-@property(readonly) NSString * emailAccountName;
 @property(readonly) NSString * emailAccountDescription;
+@property(readonly) NSString * emailAccountName;
+@property(readonly) NSString * emailAccountType;
+@property(readonly) NSString * emailAddress;
+@property(readonly) NSString * incomingMailServerAuthentication;
+@property(readonly) NSString * incomingMailServerHostname;
+@property(readonly) NSNumber * incomingMailServerPortNumber;
+@property(readonly) BOOL incomingMailServerUseSSL;
+@property(readonly) NSString * incomingMailServerUsername;
+@property(readonly) NSString * incomingMailServerIMAPPathPrefix;
+@property(readonly) NSString * incomingPassword;
+@property(readonly) NSString * outgoingPassword;
+@property(readonly) BOOL outgoingPasswordSameAsIncomingPassword;
+@property(readonly) NSString * outgoingMailServerAuthentication;
+@property(readonly) NSString * outgoingMailServerHostname;
+@property(readonly) NSNumber * outgoingMailServerPortNumber;
+@property(readonly) BOOL outgoingMailServerUseSSL;
+@property(readonly) NSString * outgoingMailServerUsername;
 
 + (id)profileNameFromAccountTag:(id)arg1;
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
-- (id)emailAddress;
 - (id)description;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)outgoingMailServerUsername;
 - (BOOL)outgoingMailServerUseSSL;
 - (id)outgoingMailServerPortNumber;
@@ -65,15 +64,16 @@
 - (id)incomingMailServerPortNumber;
 - (id)incomingMailServerAuthentication;
 - (id)emailAccountName;
-- (id)emailAccountDescription;
-- (id)emailAccountType;
 - (id)incomingMailServerHostname;
-- (id)subtitle1Label;
-- (id)subtitle2Label;
+- (id)emailAccountType;
+- (id)emailAccountDescription;
 - (id)subtitle2Description;
+- (id)subtitle2Label;
+- (id)subtitle1Label;
 - (id)subtitle1Description;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)title;
+- (id)emailAddress;
 
 @end

@@ -27,13 +27,10 @@
 @property(readonly) NSString * groupingTypePodcastTitle;
 @property(readonly) NSString * groupingTypeTitle;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (void)dealloc;
-- (id)items;
-- (id)attributeKeys;
 - (id)groupingTypeTitle;
 - (id)groupingTypePodcastTitle;
 - (id)groupingTypePlaylist;
@@ -52,21 +49,15 @@
 - (id)filterPredicates;
 - (void)_beginWatchingLibraryIfNecessary;
 - (id)collections;
-- (id)canFilterByProperty:(id)arg1;
-- (void)_setGroupingType:(id)arg1;
-- (void)_setFilterPredicates:(id)arg1;
-- (id)_copyGroupingType;
-- (id)_copyFilterPredicates;
-- (id)_copyCollections;
-- (void)_removeFilterPredicate:(id)arg1;
-- (BOOL)_canFilterByProperty:(id)arg1;
-- (void)_addFilterPredicate:(id)arg1;
-- (void)_libraryChangedNotification:(id)arg1;
 - (void)removeFilterPredicate:(id)arg1;
+- (id)canFilterByProperty:(id)arg1;
+- (void)_libraryChangedNotification:(id)arg1;
 - (void)addFilterPredicate:(id)arg1;
-- (id)_copyItems;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)dealloc;
 - (void)_resetCaches;
+- (id)items;
+- (id)attributeKeys;
 
 @end

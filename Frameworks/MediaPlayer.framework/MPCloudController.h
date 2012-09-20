@@ -2,26 +2,33 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class HSSagaClient;
+@class HSCloudClient;
 
 @interface MPCloudController : NSObject  {
     BOOL _isCloudEnabled;
     BOOL _isUpdateInProgress;
-    HSSagaClient *_sagaClient;
+    HSCloudClient *_cloudClient;
+    BOOL _isInitialImport;
 }
 
+@property(readonly) BOOL canShowCloudTracks;
 @property(readonly) BOOL isCloudEnabled;
 @property(readonly) BOOL hasCloudLockerAccount;
 @property(readonly) BOOL isUpdateInProgress;
+@property(readonly) BOOL isInitialImport;
 @property(readonly) BOOL isGeniusEnabled;
 
++ (void)setCanObserveWiFiChanges:(BOOL)arg1;
++ (BOOL)canObserveWiFiChanges;
 + (id)sharedCloudController;
++ (BOOL)isCellularDataRestricted;
 
-- (id)init;
-- (void)dealloc;
+- (void)becomeActive;
+- (void)resignActive;
 - (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 completionHandler:(id)arg3;
 - (BOOL)isUpdateInProgress;
-- (BOOL)hasCloudLockerAccount;
+- (BOOL)isInitialImport;
+- (BOOL)canShowCloudTracks;
 - (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)loadUpdateProgressWithCompletionHandler:(id)arg1;
 - (void)incrementItemProperty:(id)arg1 forSagaID:(unsigned long long)arg2;
@@ -29,10 +36,11 @@
 - (void)addGeniusPlaylistWithName:(id)arg1 seedItemSagaIDs:(id)arg2 itemSagaIDs:(id)arg3 completionHandler:(id)arg4;
 - (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (BOOL)hasCloudLockerAccount;
 - (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (BOOL)isCloudEnabled;
 - (BOOL)isGeniusEnabled;
-- (void)becomeActive;
-- (void)resignActive;
+- (void)dealloc;
+- (id)init;
 
 @end

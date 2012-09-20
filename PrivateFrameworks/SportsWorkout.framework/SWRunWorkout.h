@@ -28,7 +28,6 @@
 - (void)setIsCalibration:(BOOL)arg1;
 - (BOOL)isCalibration;
 - (void)setWeightInLbs:(float)arg1;
-- (float)weightInLbs;
 - (id)sensor;
 - (float)maximumCalibrationDistanceMiles;
 - (float)minimumCalibrationDistanceMiles;
@@ -45,5 +44,6 @@
 - (BOOL)canBeUsedForWalkCalibration;
 - (BOOL)isWalk;
 - (void)sensor:(id)arg1 didReceivePacketPayload:(const char *)arg2 timestamp:(unsigned long)arg3;
+- (float)weightInLbs;
 
 @end

@@ -22,27 +22,27 @@
 @property(retain) CALayer * layer;
 @property(retain) CAValueFunction * function;
 
-+ (id)defaultValueForKey:(id)arg1;
 + (id)forceField;
++ (id)defaultValueForKey:(id)arg1;
 
+- (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setName:(id)arg1;
+- (id)name;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
+- (id)valueForKey:(id)arg1;
 - (void)dealloc;
-- (void)setFunction:(id)arg1;
+- (id)init;
+- (id)function;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (id)name;
 - (BOOL)isEnabled;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)setLayer:(id)arg1;
 - (id)layer;
-- (id)valueForKey:(id)arg1;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setFunction:(id)arg1;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
-- (id)function;
 
 @end

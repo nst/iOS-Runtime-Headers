@@ -43,9 +43,7 @@
 @property(copy) NSNumber * peerRelayPort;
 
 
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)bagKey;
 - (id)peerRelayPort;
 - (id)peerRelayIP;
 - (id)selfRelayPort;
@@ -54,10 +52,6 @@
 - (id)relayTransactionIdAlloc;
 - (id)relayConnectionId;
 - (id)relayType;
-- (void)setPeerNATIP:(id)arg1;
-- (void)setPeerBlob:(id)arg1;
-- (void)setPeerNATType:(id)arg1;
-- (void)setPeerPushToken:(id)arg1;
 - (void)setSelfNATIP:(id)arg1;
 - (void)setPeerRelayPort:(id)arg1;
 - (void)setPeerRelayIP:(id)arg1;
@@ -67,10 +61,6 @@
 - (void)setRelayTransactionIdAlloc:(id)arg1;
 - (void)setRelayConnectionId:(id)arg1;
 - (void)setRelayType:(id)arg1;
-- (id)peerNATIP;
-- (id)peerBlob;
-- (id)peerNATType;
-- (id)peerPushToken;
 - (id)selfNATIP;
 - (void)setSelfNATType:(id)arg1;
 - (void)setSelfPushToken:(id)arg1;
@@ -80,8 +70,19 @@
 - (id)requiredKeys;
 - (id)selfBlob;
 - (void)setSelfBlob:(id)arg1;
-- (id)bagKey;
+- (id)peerNATType;
+- (id)peerNATIP;
+- (id)peerPushToken;
+- (id)peerBlob;
+- (void)setPeerBlob:(id)arg1;
+- (void)setPeerNATIP:(id)arg1;
+- (void)setPeerNATType:(id)arg1;
+- (void)setPeerPushToken:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)setPeerID:(id)arg1;
 - (id)peerID;
+- (id)messageBody;
 
 @end

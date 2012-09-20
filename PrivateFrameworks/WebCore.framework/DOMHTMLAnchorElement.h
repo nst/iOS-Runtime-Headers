@@ -7,7 +7,6 @@
 @interface DOMHTMLAnchorElement : DOMHTMLElement  {
 }
 
-@property(copy) NSString * accessKey;
 @property(copy) NSString * charset;
 @property(copy) NSString * coords;
 @property(copy) NSString * href;
@@ -18,50 +17,51 @@
 @property(copy) NSString * shape;
 @property(copy) NSString * target;
 @property(copy) NSString * type;
-@property(copy,readonly) NSString * hashName;
-@property(copy,readonly) NSString * host;
-@property(copy,readonly) NSString * hostname;
-@property(copy,readonly) NSString * pathname;
-@property(copy,readonly) NSString * port;
-@property(copy,readonly) NSString * protocol;
-@property(copy,readonly) NSString * search;
-@property(copy,readonly) NSString * text;
-@property(copy,readonly) NSURL * absoluteLinkURL;
+@property(copy) NSString * accessKey;
+@property(readonly) NSString * hashName;
+@property(readonly) NSString * host;
+@property(readonly) NSString * hostname;
+@property(readonly) NSString * pathname;
+@property(readonly) NSString * port;
+@property(readonly) NSString * protocol;
+@property(readonly) NSString * search;
+@property(readonly) NSString * text;
+@property(readonly) NSURL * absoluteLinkURL;
 
 
-- (void)setName:(id)arg1;
 - (void)setTarget:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)name;
 - (id)target;
+- (id)type;
+- (void)setShape:(id)arg1;
 - (id)protocol;
 - (id)port;
-- (void)setShape:(id)arg1;
 - (id)shape;
+- (id)rel;
 - (id)absoluteLinkURL;
 - (id)host;
-- (id)type;
-- (id)name;
-- (void)setType:(id)arg1;
 - (id)text;
-- (id)accessKey;
-- (void)setAccessKey:(id)arg1;
-- (id)coords;
-- (void)setCoords:(id)arg1;
-- (void)setHref:(id)arg1;
-- (id)hreflang;
-- (void)setHreflang:(id)arg1;
-- (id)ping;
-- (void)setPing:(id)arg1;
-- (id)rel;
-- (void)setRel:(id)arg1;
-- (id)rev;
-- (void)setRev:(id)arg1;
-- (id)hashName;
-- (id)hostname;
-- (id)pathname;
+- (void)setType:(id)arg1;
 - (id)search;
-- (id)getParameter:(id)arg1;
-- (id)charset;
+- (id)pathname;
+- (id)hostname;
+- (id)hashName;
+- (void)setAccessKey:(id)arg1;
+- (id)accessKey;
+- (void)setRev:(id)arg1;
+- (id)rev;
+- (void)setRel:(id)arg1;
+- (void)setPing:(id)arg1;
+- (id)ping;
+- (void)setHreflang:(id)arg1;
+- (id)hreflang;
+- (void)setHref:(id)arg1;
+- (void)setCoords:(id)arg1;
+- (id)coords;
 - (void)setCharset:(id)arg1;
+- (id)charset;
 - (id)href;
+- (BOOL)alwaysAttemptToShowTapHighlight;
 
 @end

@@ -29,12 +29,12 @@
 @property(retain) NSString * searchString;
 
 
-- (void)cancel;
 - (id)results;
 - (void)setResults:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)resume;
+- (void)cancel;
+- (void)dealloc;
+- (id)init;
 - (void)pause;
 - (BOOL)searching;
 - (void)searchDidTimeOut:(id)arg1;

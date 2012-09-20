@@ -6,36 +6,37 @@
 }
 
 + (BOOL)sendPasscodeRestrictionChangeNotificationIfNeededWithOldRestrictions:(id)arg1 newRestrictions:(id)arg2;
-+ (id)characteristicsDictionaryFromPasscode:(id)arg1;
-+ (int)unlockScreenTypeForPasscodeCharacteristics:(id)arg1;
-+ (id)generateSalt;
-+ (id)hashForPasscode:(id)arg1 usingMethod:(int)arg2 salt:(id)arg3;
-+ (int)unlockScreenTypeForRestrictions:(id)arg1;
-+ (id)localizedDescriptionOfPasscodePolicyFromRestrictions:(id)arg1;
-+ (BOOL)passcode:(id)arg1 compliesWithPolicyFromRestrictions:(id)arg2 checkHistory:(BOOL)arg3 outError:(id*)arg4;
 + (BOOL)_passcodeCharacteristics:(id)arg1 compliesWithPolicyFromRestrictions:(id)arg2 outError:(id*)arg3;
++ (BOOL)passcode:(id)arg1 compliesWithPolicyFromRestrictions:(id)arg2 checkHistory:(BOOL)arg3 outError:(id*)arg4;
++ (id)localizedDescriptionOfPasscodePolicyFromRestrictions:(id)arg1;
++ (int)unlockScreenTypeForRestrictions:(id)arg1;
++ (id)hashForPasscode:(id)arg1 usingMethod:(int)arg2 salt:(id)arg3;
++ (id)generateSalt;
++ (int)unlockScreenTypeForPasscodeCharacteristics:(id)arg1;
++ (id)characteristicsDictionaryFromPasscode:(id)arg1;
 + (id)sharedManager;
 
-- (void)lockDevice;
-- (BOOL)isDeviceLocked;
-- (BOOL)changePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id*)arg3;
-- (BOOL)clearPasscodeWithEscrowKeybagData:(id)arg1 secret:(id)arg2 outError:(id*)arg3;
-- (id)_passcodeCharacteristics;
-- (int)currentUnlockScreenType;
-- (id)localizedDescriptionOfPasscodePolicy;
-- (BOOL)passcode:(id)arg1 compliesWithPolicyCheckHistory:(BOOL)arg2 outError:(id*)arg3;
-- (BOOL)isCurrentPasscodeCompliantOutError:(id*)arg1;
 - (id)passcodeExpiryDateOutError:(id*)arg1;
-- (id)_wrongPasscodeError;
-- (BOOL)unlockDeviceWithPasscode:(id)arg1 outError:(id*)arg2;
-- (id)_publicPasscodeDict;
-- (id)_privatePasscodeDict;
-- (void)_setPrivatePasscodeDict:(id)arg1;
-- (void)_sendPasscodeChangedNotification;
-- (int)newPasscodeEntryScreenType;
-- (BOOL)_checkPasscode:(id)arg1 againstHistoryWithRestrictions:(id)arg2 outError:(id*)arg3;
-- (BOOL)currentPasscodeCompliesWithPolicyFromRestrictions:(id)arg1 outError:(id*)arg2;
+- (BOOL)isCurrentPasscodeCompliantOutError:(id*)arg1;
+- (BOOL)passcode:(id)arg1 compliesWithPolicyCheckHistory:(BOOL)arg2 outError:(id*)arg3;
+- (id)localizedDescriptionOfPasscodePolicy;
+- (int)currentUnlockScreenType;
+- (id)_passcodeCharacteristics;
+- (BOOL)clearPasscodeWithEscrowKeybagData:(id)arg1 secret:(id)arg2 outError:(id*)arg3;
+- (BOOL)changePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id*)arg3;
+- (BOOL)isDeviceLocked;
+- (void)lockDevice;
+- (void)passcodeExpiryDateCompletionBlock:(id)arg1;
 - (BOOL)isPasscodeSet;
+- (BOOL)currentPasscodeCompliesWithPolicyFromRestrictions:(id)arg1 outError:(id*)arg2;
+- (BOOL)_checkPasscode:(id)arg1 againstHistoryWithRestrictions:(id)arg2 outError:(id*)arg3;
+- (int)newPasscodeEntryScreenType;
+- (void)_sendPasscodeChangedNotification;
+- (void)_setPrivatePasscodeDict:(id)arg1;
+- (id)_privatePasscodeDict;
+- (id)_publicPasscodeDict;
+- (BOOL)unlockDeviceWithPasscode:(id)arg1 outError:(id*)arg2;
+- (id)_wrongPasscodeError;
 - (id)_init;
 
 @end

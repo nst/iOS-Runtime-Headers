@@ -12,9 +12,9 @@
 + (id)afpSet;
 + (id)utf8Formatter:(unsigned int)arg1;
 
-- (BOOL)isPartialStringValid:(id)arg1 newEditingString:(id*)arg2 errorDescription:(id*)arg3;
 - (unsigned int)maxByteCount;
 - (void)setMaxByteCount:(unsigned int)arg1;
 - (id)initWithMaxByteCount:(unsigned int)arg1 maxLength:(unsigned int)arg2;
+- (BOOL)isPartialStringValid:(id)arg1 newEditingString:(id*)arg2 errorDescription:(id*)arg3;
 
 @end

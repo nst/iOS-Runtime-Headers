@@ -18,30 +18,30 @@
 
 
 - (void)dealloc;
-- (double)defaultColumnWidth;
-- (double)defaultRowHeight;
 - (int)height;
 - (int)columnCount;
 - (BOOL)isVisible;
 - (int)width;
-- (void)countRowsAndColumnsWithState:(id)arg1;
-- (void)setRowGrid;
-- (double)xlColumnWidthToPoints:(double)arg1;
-- (void)_initWithState:(id)arg1;
-- (void)mapTableAt:(id)arg1 withState:(id)arg2;
-- (void)mapDrawablesAt:(id)arg1 withState:(id)arg2;
-- (struct CGSize { float x1; float x2; })preprocessDrawableSizeWithState:(id)arg1;
-- (void)mapColumnInfosAt:(id)arg1 withState:(id)arg2;
-- (void)mapGridAt:(id)arg1;
 - (void)mapTableStyleAt:(id)arg1 withState:(id)arg2;
+- (void)mapGridAt:(id)arg1;
+- (void)mapColumnInfosAt:(id)arg1 withState:(id)arg2;
+- (struct CGSize { float x1; float x2; })preprocessDrawableSizeWithState:(id)arg1;
+- (void)mapDrawablesAt:(id)arg1 withState:(id)arg2;
+- (void)mapTableAt:(id)arg1 withState:(id)arg2;
+- (void)_initWithState:(id)arg1;
+- (double)xlColumnWidthToPoints:(double)arg1;
+- (void)setRowGrid;
+- (void)countRowsAndColumnsWithState:(id)arg1;
 - (id)initWithEDWorksheet:(id)arg1 parent:(id)arg2;
 - (struct CGSize { float x1; float x2; })preprocessSizeWithState:(id)arg1;
-- (double*)rowGrid;
-- (double*)columnGrid;
+- (double)defaultRowHeight;
+- (double)defaultColumnWidth;
 - (int)maxRowNumber;
-- (int)preprocessWidthWithState:(id)arg1;
-- (int)preprocessHeightWithState:(id)arg1;
-- (void)mapAt:(id)arg1 withState:(id)arg2;
+- (double*)columnGrid;
+- (double*)rowGrid;
 - (id)columnWidthConvertor;
+- (int)preprocessHeightWithState:(id)arg1;
+- (int)preprocessWidthWithState:(id)arg1;
+- (void)mapAt:(id)arg1 withState:(id)arg2;
 
 @end

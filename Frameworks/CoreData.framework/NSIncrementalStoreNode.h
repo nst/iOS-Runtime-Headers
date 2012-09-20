@@ -14,13 +14,14 @@
 + (void)initialize;
 
 - (void)dealloc;
-- (unsigned long long)version;
-- (id)initWithObjectID:(id)arg1 withValues:(id)arg2 version:(unsigned long long)arg3;
-- (void)updateWithValues:(id)arg1 version:(unsigned long long)arg2;
 - (id)valueForPropertyDescription:(id)arg1;
-- (const id*)knownKeyValuesPointer;
+- (void)updateWithValues:(id)arg1 version:(unsigned long long)arg2;
+- (id)initWithObjectID:(id)arg1 withValues:(id)arg2 version:(unsigned long long)arg3;
+- (id)_propertyCache;
 - (id)_snapshot_;
+- (const id*)knownKeyValuesPointer;
 - (unsigned int)_versionNumber;
 - (id)objectID;
+- (unsigned long long)version;
 
 @end

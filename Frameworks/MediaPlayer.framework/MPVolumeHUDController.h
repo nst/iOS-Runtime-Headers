@@ -13,8 +13,6 @@
 
 + (id)sharedInstance;
 
-- (id)init;
-- (void)dealloc;
 - (void)popContext;
 - (BOOL)_sliderIsVisible:(id)arg1;
 - (void)_updateVisibility;
@@ -23,5 +21,7 @@
 - (void)registerView:(id)arg1 inContext:(id)arg2;
 - (id)mainContext;
 - (void)setNeedsUpdate;
+- (void)dealloc;
+- (id)init;
 
 @end

@@ -5,23 +5,24 @@
 @interface __NSLocalTimeZone : NSTimeZone  {
 }
 
++ (BOOL)supportsSecureCoding;
 
-- (unsigned int)retainCount;
+- (id)name;
+- (id)data;
 - (id)description;
+- (unsigned int)retainCount;
 - (id)retain;
-- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
+- (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
+- (int)secondsFromGMTForDate:(id)arg1;
+- (Class)classForCoder;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)localizedName:(int)arg1 locale:(id)arg2;
-- (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
 - (BOOL)isDaylightSavingTimeForDate:(id)arg1;
 - (id)abbreviationForDate:(id)arg1;
 - (double)daylightSavingTimeOffsetForDate:(id)arg1;
-- (Class)classForCoder;
-- (int)secondsFromGMTForDate:(id)arg1;
-- (id)name;
-- (id)data;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

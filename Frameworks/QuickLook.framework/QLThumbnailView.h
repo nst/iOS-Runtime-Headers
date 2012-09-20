@@ -31,27 +31,27 @@
     } _unselectedFrame;
 }
 
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } unselectedFrame;
-@property BOOL alwaysVisible;
-@property int pageNumber;
-@property(retain) UIImage * image;
 @property(retain) QLThumbnailOperation * thumbnailOperation;
+@property(retain) UIImage * image;
+@property int pageNumber;
+@property BOOL alwaysVisible;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unselectedFrame;
 
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unselectedFrame;
+- (void)setThumbnailOperation:(id)arg1;
+- (id)thumbnailOperation;
+- (void)setUnselectedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPageNumber:(int)arg1;
 - (void)dealloc;
 - (int)pageNumber;
-- (void)setPageNumber:(int)arg1;
-- (void)setAlwaysVisible:(BOOL)arg1;
-- (BOOL)alwaysVisible;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)image;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setImage:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setUnselectedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setThumbnailOperation:(id)arg1;
-- (id)thumbnailOperation;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unselectedFrame;
+- (void)setAlwaysVisible:(BOOL)arg1;
+- (BOOL)alwaysVisible;
 
 @end

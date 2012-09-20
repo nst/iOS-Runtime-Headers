@@ -11,13 +11,16 @@
 @property(retain) NSDictionary * attributes;
 
 
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)dealloc;
+- (int)_horizontalAlignmentForString:(id)arg1;
+- (void)imageLoaded:(id)arg1;
+- (id)imageAttributeAndScale:(float*)arg1;
+- (BOOL)loadImage;
+- (void)populatePostbackDictionary:(id)arg1;
+- (void)setImageAlignment:(int)arg1;
 - (void)setAttributes:(id)arg1;
 - (id)attributes;
 - (void)setImage:(id)arg1;
-- (id)imageAttributeAndScale:(float*)arg1;
-- (void)imageLoaded:(id)arg1;
-- (BOOL)loadImage;
-- (void)populatePostbackDictionary:(id)arg1;
 
 @end

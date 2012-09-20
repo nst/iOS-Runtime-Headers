@@ -11,12 +11,15 @@
 @property(readonly) MPMoviePlayerController * moviePlayer;
 
 
-- (id)init;
-- (void)dealloc;
+- (id)moviePlayer;
 - (void)_restoreStatusBarAnimated:(BOOL)arg1;
 - (void)_moviePlayerViewController_playbackDidFinishNotification:(id)arg1;
 - (void)_moviePlayerViewController_applicationDidEnterBackgroundNotification:(id)arg1;
 - (id)initWithContentURL:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -27,6 +30,5 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
-- (id)moviePlayer;
 
 @end

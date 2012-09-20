@@ -17,8 +17,12 @@
 @property(readonly) NSString * inverseName;
 
 
-- (void)rollback;
+- (void)reset;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void)rollback;
+- (id)owner;
 - (id)relationName;
 - (void)_removeRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (void)_addRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
@@ -27,12 +31,10 @@
 - (void)relatedObjectDidChange;
 - (id)committedValue;
 - (BOOL)isDirty;
-- (id)initWithOwner:(id)arg1 relationName:(id)arg2 inverseRelationName:(id)arg3;
 - (void)updatePersistentObject;
+- (id)initWithOwner:(id)arg1 relationName:(id)arg2 inverseRelationName:(id)arg3;
 - (BOOL)validate:(id*)arg1;
 - (void)didCommit;
 - (void)refresh;
-- (void)reset;
-- (id)owner;
 
 @end

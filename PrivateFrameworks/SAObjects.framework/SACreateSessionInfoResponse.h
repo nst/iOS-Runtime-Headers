@@ -8,17 +8,17 @@
 }
 
 @property(copy) NSData * sessionInfo;
-@property(retain) NSNumber * validityDuration;
+@property(copy) NSNumber * validityDuration;
 
-+ (id)createSessionInfoResponse;
 + (id)createSessionInfoResponseWithDictionary:(id)arg1 context:(id)arg2;
++ (id)createSessionInfoResponse;
 
 - (id)groupIdentifier;
-- (id)sessionInfo;
-- (void)setSessionInfo:(id)arg1;
-- (id)validityDuration;
 - (void)setValidityDuration:(id)arg1;
-- (id)encodedClassName;
+- (id)validityDuration;
+- (void)setSessionInfo:(id)arg1;
+- (id)sessionInfo;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

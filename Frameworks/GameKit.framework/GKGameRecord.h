@@ -32,36 +32,36 @@
 @property float rating;
 
 + (void)loadGameRecordForPlayer:(id)arg1 game:(id)arg2 withCompletionHandler:(id)arg3;
-+ (void)updateGameRecords:(id)arg1 withCompletionHandlerAndError:(id)arg2;
 + (id)gameRecordForPlayer:(id)arg1 game:(id)arg2;
++ (void)partionGameRecords:(id)arg1 returniOS:(id*)arg2 returnMac:(id*)arg3;
 + (void)loadGameRecordsForPlayer:(id)arg1 games:(id)arg2 withCompletionHandler:(id)arg3;
 + (id)cacheKeyForPlayer:(id)arg1 internal:(id)arg2;
 + (id)internalRepresentationForPlayer:(id)arg1 game:(id)arg2;
-+ (id)cacheKeyForPlayer:(id)arg1 game:(id)arg2;
 + (id)internalRepresentationCache;
++ (void)updateGameRecords:(id)arg1 withCompletionHandlerAndError:(id)arg2;
++ (id)cacheKeyForPlayer:(id)arg1 game:(id)arg2;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (void)submitRating:(float)arg1 withCompletionHandler:(id)arg2;
-- (unsigned int)maxAchievements;
 - (BOOL)played;
-- (id)score;
-- (id)player;
 - (unsigned int)maxAchievementPoints;
-- (unsigned int)numberOfCategories;
+- (void)setInternal:(id)arg1;
 - (BOOL)supportsAchievements;
 - (BOOL)supportsLeaderboards;
+- (unsigned int)maxAchievements;
+- (id)score;
 - (id)initWithInternalRepresentation:(id)arg1 player:(id)arg2 game:(id)arg3;
-- (id)game;
-- (void)setPlayer:(id)arg1;
-- (void)setGame:(id)arg1;
 - (id)internal;
-- (void)setInternal:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (void)setPlayer:(id)arg1;
+- (id)player;
+- (void)setGame:(id)arg1;
+- (id)game;
+- (id)description;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (unsigned int)numberOfCategories;
 - (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

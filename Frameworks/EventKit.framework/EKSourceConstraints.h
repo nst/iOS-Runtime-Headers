@@ -34,6 +34,7 @@
         unsigned int eventAvalabilityLimited : 1; 
         unsigned int requiresMSFormattedUID : 1; 
         unsigned int shouldCancelDeletedEvents : 1; 
+        unsigned int shouldDeclineDeletedInvitations : 1; 
         unsigned int supportsStructuredLocations : 1; 
         unsigned int supportsReminderActions : 1; 
         unsigned int supportsReminderLocations : 1; 
@@ -43,6 +44,9 @@
         unsigned int allowsEvents : 1; 
         unsigned int supportsURLField : 1; 
         unsigned int supportsAllDayDueDates : 1; 
+        unsigned int supportsSharedCalendars : 1; 
+        unsigned int isFacebook : 1; 
+        unsigned int recurrenceSeriesMustIncludeMoreThanFirstOccurrence : 1; 
     } _flags;
 }
 
@@ -74,6 +78,7 @@
 @property BOOL eventAvalabilityLimited;
 @property BOOL requiresMSFormattedUID;
 @property BOOL shouldCancelDeletedEvents;
+@property BOOL shouldDeclineDeletedInvitations;
 @property BOOL supportsStructuredLocations;
 @property BOOL supportsReminderActions;
 @property BOOL supportsReminderLocations;
@@ -83,13 +88,20 @@
 @property BOOL allowsEvents;
 @property BOOL supportsURLField;
 @property BOOL supportsAllDayDueDates;
-@property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; } flags;
+@property BOOL supportsSharedCalendars;
+@property BOOL isFacebook;
+@property BOOL recurrenceSeriesMustIncludeMoreThanFirstOccurrence;
+@property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; } flags;
 
 
-- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; })arg1;
 - (id)init;
+- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; })flags;
+- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; })arg1;
 - (void)setMaxRecurrencesAllowed:(int)arg1;
 - (void)setMaxAlarmsAllowed:(int)arg1;
+- (void)setRecurrenceSeriesMustIncludeMoreThanFirstOccurrence:(BOOL)arg1;
+- (void)setIsFacebook:(BOOL)arg1;
+- (void)setSupportsSharedCalendars:(BOOL)arg1;
 - (void)setSupportsAllDayDueDates:(BOOL)arg1;
 - (BOOL)supportsAllDayDueDates;
 - (void)setSupportsURLField:(BOOL)arg1;
@@ -101,6 +113,7 @@
 - (void)setSupportsReminderLocations:(BOOL)arg1;
 - (void)setSupportsReminderActions:(BOOL)arg1;
 - (void)setSupportsStructuredLocations:(BOOL)arg1;
+- (void)setShouldDeclineDeletedInvitations:(BOOL)arg1;
 - (void)setShouldCancelDeletedEvents:(BOOL)arg1;
 - (void)setRequiresMSFormattedUID:(BOOL)arg1;
 - (void)setEventAvalabilityLimited:(BOOL)arg1;
@@ -123,7 +136,6 @@
 - (void)setRequiresOutgoingInvitationsInDefaultCalendar:(BOOL)arg1;
 - (void)setSupportsOutgoingInvitations:(BOOL)arg1;
 - (void)setSupportsIncomingInvitations:(BOOL)arg1;
-- (BOOL)supportsIncomingInvitations;
 - (void)setStatusesAreAccurate:(BOOL)arg1;
 - (void)setInviteesCanSeeAttendeeStatuses:(BOOL)arg1;
 - (BOOL)inviteesCanSeeAttendeeStatuses;
@@ -139,6 +151,7 @@
 - (BOOL)deliverySourceOrExternalIDRequiredForResponse;
 - (BOOL)proposedStatusRequiredForResponse;
 - (BOOL)requiresMSFormattedUID;
+- (BOOL)supportsIncomingInvitations;
 - (BOOL)supportsReminderActions;
 - (BOOL)supportsReminderLocations;
 - (BOOL)supportsStructuredLocations;
@@ -147,8 +160,11 @@
 - (BOOL)supportsAlarmTriggerDates;
 - (BOOL)supportsAlarmTriggerIntervals;
 - (BOOL)supportsInvitationModifications;
+- (BOOL)isFacebook;
 - (BOOL)recurrencesShouldPinToMonthDays;
 - (BOOL)supportsAlarmProximity;
+- (BOOL)recurrenceSeriesMustIncludeMoreThanFirstOccurrence;
+- (BOOL)shouldDeclineDeletedInvitations;
 - (BOOL)shouldCancelDeletedEvents;
 - (BOOL)futureStartDateLimitedToOccurrenceCacheBounds;
 - (BOOL)occurrencesMustOccurOnSeparateDays;
@@ -160,9 +176,9 @@
 - (BOOL)statusesAreAccurate;
 - (BOOL)eventAvalabilityLimited;
 - (BOOL)canSetAvailability;
+- (BOOL)supportsSharedCalendars;
 - (BOOL)allowsCalendarAddDeleteModify;
 - (BOOL)allowsTasks;
 - (BOOL)allowsEvents;
-- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; })flags;
 
 @end

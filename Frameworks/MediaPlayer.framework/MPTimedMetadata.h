@@ -15,13 +15,13 @@
 @property(readonly) NSDictionary * allMetadata;
 
 
-- (id)init;
-- (void)dealloc;
 - (id)allMetadata;
 - (id)keyspace;
 - (id)_initWithMetadataItem:(id)arg1;
+- (double)timestamp;
+- (void)dealloc;
+- (id)init;
 - (id)key;
 - (id)value;
-- (double)timestamp;
 
 @end

@@ -11,8 +11,8 @@
 
 + (id)linkWithType:(int)arg1;
 
-- (void)dealloc;
 - (int)type;
+- (void)dealloc;
 - (id)initWithType:(int)arg1;
 - (void)setType:(int)arg1;
 - (id)externalNames;

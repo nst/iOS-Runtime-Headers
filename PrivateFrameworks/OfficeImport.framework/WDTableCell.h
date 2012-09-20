@@ -18,11 +18,11 @@
 - (int)index;
 - (id)text;
 - (id)row;
-- (double)cellWidth;
-- (id)initWithRow:(id)arg1 at:(int)arg2;
-- (BOOL)useTrackedProperties;
-- (void)setUseTrackedProperties:(BOOL)arg1;
 - (int)compareIndex:(id)arg1;
+- (void)setUseTrackedProperties:(BOOL)arg1;
+- (BOOL)useTrackedProperties;
+- (id)initWithRow:(id)arg1 at:(int)arg2;
 - (void)clearProperties;
+- (double)cellWidth;
 
 @end

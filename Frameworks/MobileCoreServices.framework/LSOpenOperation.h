@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSURL, NSString;
+@class NSURL, NSString, NSDictionary;
 
 @interface LSOpenOperation : NSOperation  {
     BOOL _executing;
@@ -11,6 +11,7 @@
     NSString *_applicationIdentifier;
     NSString *_documentIdentifier;
     id _userInfoPList;
+    NSDictionary *_options;
     id _delegate;
     int _result;
 }
@@ -18,11 +19,12 @@
 
 - (void)main;
 - (void)dealloc;
-- (void)completeOperation;
-- (id)initForOpeningResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4 delegate:(id)arg5;
-- (BOOL)isFinished;
-- (BOOL)isConcurrent;
-- (void)start;
 - (BOOL)isExecuting;
+- (BOOL)isFinished;
+- (void)start;
+- (void)completeOperation;
+- (BOOL)didSucceed;
+- (id)initForOpeningResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4 options:(id)arg5 delegate:(id)arg6;
+- (BOOL)isConcurrent;
 
 @end

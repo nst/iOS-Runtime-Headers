@@ -2,9 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
+@class CalendarListHeaderCellContentView;
+
 @interface CalendarListHeaderCell : UIView  {
+    CalendarListHeaderCellContentView *_contentView;
     double _date;
-    unsigned int _indentsForDots : 1;
 }
 
 @property double date;
@@ -12,18 +14,17 @@
 @property(readonly) BOOL reusable;
 
 
-- (BOOL)indentsForDots;
-- (void)drawBackground:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIndentsForDots:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 date:(double)arg2;
+- (void)dealloc;
 - (id)_backgroundImage;
-- (void)drawTitle:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)drawTitle:(id)arg1 withColor:(id)arg2 withShadowColor:(id)arg3 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (void)setDate:(double)arg1;
 - (double)date;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplay;
 - (void)setOpaque:(BOOL)arg1;
 - (BOOL)reusable;
+- (BOOL)indentsForDots;
+- (void)setIndentsForDots:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 date:(double)arg2;
 
 @end

@@ -19,9 +19,11 @@
 @property BOOL usesStrongWriteBarrier;
 @property BOOL usesWeakReadAndWriteBarriers;
 
-+ (id)pointerFunctionsWithOptions:(unsigned int)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)pointerFunctionsWithOptions:(unsigned int)arg1;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithOptions:(unsigned int)arg1;
 - (BOOL)usesWeakReadAndWriteBarriers;
 - (BOOL)usesStrongWriteBarrier;
 - (int (*)())relinquishFunction;
@@ -38,7 +40,5 @@
 - (void)setSizeFunction:(int (*)())arg1;
 - (void)setIsEqualFunction:(int (*)())arg1;
 - (void)setHashFunction:(int (*)())arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithOptions:(unsigned int)arg1;
 
 @end

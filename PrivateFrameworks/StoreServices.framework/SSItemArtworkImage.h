@@ -4,7 +4,7 @@
 
 @class NSURL, NSMutableDictionary, NSString;
 
-@interface SSItemArtworkImage : NSObject <SSCoding, NSCopying> {
+@interface SSItemArtworkImage : NSObject <SSXPCCoding, NSCopying> {
     NSMutableDictionary *_dictionary;
     NSString *_imageKind;
 }
@@ -17,31 +17,31 @@
 @property(getter=isPrerendered,readonly) BOOL prerendered;
 @property(retain) NSURL * URL;
 @property(readonly) struct CGSize { float x1; float x2; } imageSize;
+@property(readonly) NSString * URLString;
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (BOOL)isPrerendered;
-- (int)height;
-- (void)setURL:(id)arg1;
-- (void)setValue:(id)arg1 forProperty:(id)arg2;
-- (id)valueForProperty:(id)arg1;
-- (id)URL;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (int)width;
-- (int)imageOrientation;
 - (id)initWithArtworkDictionary:(id)arg1;
 - (id)imageKind;
 - (float)imageScale;
+- (id)URL;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)_setValue:(id)arg1 forKey:(id)arg2;
 - (void)setImageKindWithTypeName:(id)arg1 variantName:(id)arg2;
 - (void)setImageKind:(id)arg1;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (void)_setValue:(id)arg1 forKey:(id)arg2;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (id)valueForProperty:(id)arg1;
+- (id)URLString;
+- (int)height;
+- (void)setURL:(id)arg1;
+- (struct CGSize { float x1; float x2; })imageSize;
+- (int)width;
+- (int)imageOrientation;
+- (void)setValue:(id)arg1 forProperty:(id)arg2;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class UITextField;
+@class UITextField, NSString, NSIndexSet;
 
 @interface GKTableSectionTextField : NSObject <GKTableSection> {
     UITextField *_textField;
@@ -13,27 +13,35 @@
         float right; 
     } _backgroundInsets;
     float _headerHeight;
+    BOOL _needsRedisplay;
 }
 
 @property(retain) UITextField * textField;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } backgroundInsets;
 @property float headerHeight;
-@property(getter=isLoading) BOOL loading;
+@property BOOL needsRedisplay;
+@property(retain) NSString * title;
+@property(retain) NSString * secondaryTitle;
+@property(retain) NSString * abbreviatedTitle;
+@property(retain) NSIndexSet * indexesOfRowsWithLoadedData;
 
 
-- (id)init;
-- (void)dealloc;
+- (void)setTextField:(id)arg1;
+- (BOOL)needsRedisplay;
+- (void)setNeedsRedisplay:(BOOL)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
+- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (int)tableView:(id)arg1 numberOfColumnsForRow:(int)arg2;
+- (struct { unsigned int x1; unsigned char x2; unsigned char x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; })currentMetricsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
-- (int)sectionRowCountInTableView:(id)arg1;
-- (float)sectionHeaderHeightInTableView:(id)arg1;
-- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
-- (void)setTextField:(id)arg1;
+- (int)rowCountInTableView:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)setHeaderHeight:(float)arg1;
 - (float)headerHeight;
 - (id)textField;
+- (float)heightForHeaderInTableView:(id)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 
 @end

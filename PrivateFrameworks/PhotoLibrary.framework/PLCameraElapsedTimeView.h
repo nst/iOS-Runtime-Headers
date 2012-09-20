@@ -5,7 +5,6 @@
 @class NSDate, NSTimer, UILabel;
 
 @interface PLCameraElapsedTimeView : UIImageView  {
-    UILabel *_hours;
     UILabel *_minutes;
     UILabel *_seconds;
     NSTimer *_timer;
@@ -27,6 +26,7 @@
 - (BOOL)autorotationEnabled;
 - (void)stopTimer;
 - (void)_setDeviceOrientation:(int)arg1 animated:(BOOL)arg2;
+- (id)_createTimeLabelWithFont:(id)arg1;
 - (void)_startWatchingDeviceOrientationChanges;
 - (void)_stopWatchingDeviceOrientationChanges;
 

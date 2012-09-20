@@ -10,23 +10,23 @@
     NSDate *lastModified;
 }
 
+@property(readonly) NSArray * cities;
 @property(retain) NSDate * lastModified;
-@property(retain,readonly) NSArray * cities;
 
 + (id)sharedManager;
 
 - (void)dealloc;
 - (void)removeAllCities;
-- (void)loadCities;
-- (BOOL)checkIfCitiesModified;
-- (id)cityWithIdUrl:(id)arg1;
-- (BOOL)addCity:(id)arg1;
-- (void)removeCity:(id)arg1;
-- (void)removeCityAtIndex:(unsigned int)arg1;
 - (void)moveCityFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
-- (void)saveCities;
-- (id)cities;
+- (void)removeCityAtIndex:(unsigned int)arg1;
+- (void)removeCity:(id)arg1;
+- (unsigned int)addCity:(id)arg1;
+- (id)cityWithIdUrl:(id)arg1;
+- (BOOL)checkIfCitiesModified;
+- (void)loadCities;
 - (BOOL)canAddCity;
+- (id)cities;
+- (void)saveCities;
 - (void)setLastModified:(id)arg1;
 - (id)lastModified;
 

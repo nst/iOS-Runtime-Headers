@@ -8,8 +8,8 @@
 }
 
 
-- (void)dealloc;
 - (int)type;
+- (void)dealloc;
 - (struct __CFString { }*)value;
 
 @end

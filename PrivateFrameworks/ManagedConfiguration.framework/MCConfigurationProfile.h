@@ -10,22 +10,21 @@
 }
 
 @property MCProfileServiceProfile * OTAProfile;
-@property(readonly) NSArray * payloads;
 
 
 - (id)description;
-- (void)dealloc;
-- (id)payloadWithUUID:(id)arg1;
-- (BOOL)isManagedByProfileService;
-- (id)localizedPayloadSummaryByType;
-- (id)earliestCertificateExpiryDate;
-- (id)OTAProfile;
+- (void).cxx_destruct;
 - (void)setOTAProfile:(id)arg1;
+- (id)OTAProfile;
 - (id)payloads;
-- (void)_addObjectsOfClass:(Class)arg1 fromArray:(id)arg2 toArray:(id)arg3;
-- (id)initWithDictionary:(id)arg1 originalData:(id)arg2 wasEncrypted:(BOOL)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
-- (void)_sortPayloads;
+- (id)earliestCertificateExpiryDate;
+- (id)localizedPayloadSummaryByType;
+- (BOOL)isManagedByProfileService;
+- (id)payloadWithUUID:(id)arg1;
 - (id)installationWarnings;
+- (void)_sortPayloads;
+- (id)initWithDictionary:(id)arg1 originalData:(id)arg2 wasEncrypted:(BOOL)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
+- (void)_addObjectsOfClass:(Class)arg1 fromArray:(id)arg2 toArray:(id)arg3;
 - (id)stubDictionary;
 
 @end

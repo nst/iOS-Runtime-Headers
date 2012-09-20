@@ -11,23 +11,23 @@
 }
 
 + (id)sharedInstance;
-+ (void)_createDraftSavePath;
-+ (id)_draftSavePath;
-+ (void)_createPendingRecipientPath;
 + (id)_pendingRecipientFile;
++ (void)_createPendingRecipientPath;
++ (id)_draftSavePath;
++ (void)_createDraftSavePath;
 
 - (void)save:(BOOL)arg1;
-- (id)init;
 - (void)dealloc;
-- (id)draftForConversation:(id)arg1;
-- (void)setDraft:(id)arg1 forConversation:(id)arg2;
+- (id)init;
 - (id)draftForPendingConversationWithRecipients:(id*)arg1;
-- (void)_setDraft:(id)arg1 forKey:(id)arg2;
-- (id)_draftForKey:(id)arg1;
-- (void)_clearDraftForConversation:(id)arg1;
-- (id)_pendingRecipients;
+- (void)setDraft:(id)arg1 forConversation:(id)arg2;
+- (id)draftForConversation:(id)arg1;
 - (void)_setPendingRecipients:(id)arg1;
-- (void)setDraftForPendingConversation:(id)arg1 withRecipients:(id)arg2;
+- (id)_pendingRecipients;
+- (void)_clearDraftForConversation:(id)arg1;
+- (id)_draftForKey:(id)arg1;
+- (void)_setDraft:(id)arg1 forKey:(id)arg2;
 - (void)clearDraftForPendingConversation;
+- (void)setDraftForPendingConversation:(id)arg1 withRecipients:(id)arg2;
 
 @end

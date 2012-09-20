@@ -42,8 +42,8 @@
 @property(copy) NSString * timingFunction;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setDoubleSided:(BOOL)arg1;
 - (void)setTimingFunction:(id)arg1;
 - (id)timingFunction;

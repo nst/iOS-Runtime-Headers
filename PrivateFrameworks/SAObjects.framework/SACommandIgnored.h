@@ -7,14 +7,14 @@
 @interface SACommandIgnored : SABaseClientBoundCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)commandIgnored;
 + (id)commandIgnoredWithDictionary:(id)arg1 context:(id)arg2;
++ (id)commandIgnored;
 
 - (id)groupIdentifier;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

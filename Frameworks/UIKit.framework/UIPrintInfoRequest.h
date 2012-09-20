@@ -25,9 +25,9 @@
 
 - (void)dealloc;
 - (void)setCompletionHandler:(id)arg1;
-- (id)completionHandler;
 - (void)setRequestState:(int)arg1;
 - (int)requestState;
 - (void)requestPrintInfo;
+- (id)completionHandler;
 
 @end

@@ -19,31 +19,31 @@
 }
 
 @property(readonly) NSString * loggingIdentifier;
-@property double maximumKeepAliveInterval;
-@property double minimumKeepAliveInterval;
 @property(readonly) double currentKeepAliveInterval;
+@property double minimumKeepAliveInterval;
+@property double maximumKeepAliveInterval;
 
-+ (void)_loadDefaults;
 + (void)_loadDefaultValue:(double*)arg1 forKey:(struct __CFString { }*)arg2;
++ (void)_loadDefaults;
 
 - (id)description;
 - (void)dealloc;
+- (id)loggingIdentifier;
+- (id)initWithKeepAliveInterval:(double)arg1 loggingIdentifier:(id)arg2 algorithmName:(id)arg3;
+- (double)_steadyStateTimeout;
+- (void)processNextAction:(int)arg1;
+- (void)_processBackoffAction:(int)arg1;
+- (void)_processSteadyStateAction:(int)arg1;
+- (void)_processRefinedGrowthAction:(int)arg1;
+- (void)_processInitialGrowthAction:(int)arg1;
+- (id)_stringForStage:(int)arg1;
+- (id)_stringForAction:(int)arg1;
+- (double)maximumKeepAliveInterval;
+- (void)_setCurrentKeepAliveInterval:(double)arg1;
+- (double)minimumKeepAliveInterval;
+- (void)_resetAlgorithmToInterval:(double)arg1;
 - (double)currentKeepAliveInterval;
 - (void)setMaximumKeepAliveInterval:(double)arg1;
 - (void)setMinimumKeepAliveInterval:(double)arg1;
-- (id)initWithKeepAliveInterval:(double)arg1 loggingIdentifier:(id)arg2 algorithmName:(id)arg3;
-- (id)loggingIdentifier;
-- (void)_resetAlgorithmToInterval:(double)arg1;
-- (double)minimumKeepAliveInterval;
-- (void)_setCurrentKeepAliveInterval:(double)arg1;
-- (double)maximumKeepAliveInterval;
-- (id)_stringForAction:(int)arg1;
-- (id)_stringForStage:(int)arg1;
-- (void)_processInitialGrowthAction:(int)arg1;
-- (void)_processRefinedGrowthAction:(int)arg1;
-- (void)_processSteadyStateAction:(int)arg1;
-- (void)_processBackoffAction:(int)arg1;
-- (void)processNextAction:(int)arg1;
-- (double)_steadyStateTimeout;
 
 @end

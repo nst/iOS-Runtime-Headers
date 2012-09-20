@@ -30,8 +30,8 @@
 
 + (float)bestWarmthForI:(float)arg1 q:(float)arg2 percentChange:(float*)arg3;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)shadow;
 - (id)borderHist;
 - (id)satHist;

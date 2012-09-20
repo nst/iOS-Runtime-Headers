@@ -23,22 +23,22 @@
 @property int type;
 
 
-- (id)cc;
+- (int)type;
+- (void)dealloc;
+- (id)bcc;
+- (void)setBcc:(id)arg1;
+- (void)setBody:(id)arg1;
 - (id)subject;
 - (void)setSubject:(id)arg1;
-- (void)dealloc;
-- (void)setBcc:(id)arg1;
-- (id)bcc;
-- (int)type;
 - (id)body;
 - (void)setType:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setBody:(id)arg1;
-- (id)reference;
+- (id)cc;
 - (void)setReference:(id)arg1;
-- (id)to;
 - (void)setTo:(id)arg1;
+- (id)to;
+- (id)reference;
 - (void)setCc:(id)arg1;
 
 @end

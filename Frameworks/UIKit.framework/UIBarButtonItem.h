@@ -41,6 +41,8 @@
     float _toolbarCharge;
     float _minimumWidth;
     float _maximumWidth;
+    NSSet *_possibleSystemItems;
+    BOOL _flexible;
 }
 
 @property(getter=isEnabled) BOOL enabled;
@@ -49,6 +51,7 @@
 @property(getter=_miniImageInsets,setter=_setMiniImageInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } miniImageInsets;
 @property(readonly) BOOL isSystemItem;
 @property(readonly) int systemItem;
+@property(getter=_possibleSystemItems,setter=_setPossibleSystemItems:,copy) NSSet * possibleSystemItems;
 @property BOOL selected;
 @property(setter=_setImageHasEffects:) BOOL _imageHasEffects;
 @property int style;
@@ -60,19 +63,22 @@
 @property(retain) UIColor * tintColor;
 @property(readonly) BOOL isSystemItem;
 @property(readonly) int systemItem;
+@property(getter=_possibleSystemItems,setter=_setPossibleSystemItems:,copy) NSSet * possibleSystemItems;
 @property BOOL selected;
 @property(setter=_setToolbarCharge:) float _toolbarCharge;
 @property(setter=_setMinimumWidth:) float _minimumWidth;
 @property(setter=_setMaximumWidth:) float _maximumWidth;
+@property(setter=_setFlexible:) BOOL _flexible;
 
 + (Class)classForNavigationButton;
 + (id)_appearanceProxyViewClasses;
++ (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8 usingSystemItem:(int)arg9 usingItemStyle:(int)arg10;
 
-- (void)setTarget:(id)arg1;
 - (SEL)action;
+- (void)setTarget:(id)arg1;
 - (id)target;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)_setWidth:(float)arg1;
 - (void)_setImageHasEffects:(BOOL)arg1;
 - (id)_toolbarButton;
@@ -80,9 +86,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_miniImageInsets;
 - (void)_setMiniImage:(id)arg1;
 - (id)_miniImage;
-- (void)_getToolbarEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 glowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg3 forBarStyle:(int)arg4 landscape:(BOOL)arg5 alwaysBordered:(BOOL)arg6;
-- (void)_getNavBarEdgeSizeAdjust:(struct CGSize { float x1; float x2; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 landscape:(BOOL)arg3;
-- (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8;
+- (void)_setFlexible:(BOOL)arg1;
 - (void)_setMaximumWidth:(float)arg1;
 - (void)_setMinimumWidth:(float)arg1;
 - (float)_toolbarCharge;
@@ -95,6 +99,8 @@
 - (float)backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
 - (void)setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (id)backButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
+- (void)_setPossibleSystemItems:(id)arg1;
+- (void)_setSystemItem:(int)arg1;
 - (id)possibleTitles;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })landscapeImagePhoneInsets;
 - (void)setLandscapeImagePhoneInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -102,6 +108,10 @@
 - (id)initWithImage:(id)arg1 landscapeImagePhone:(id)arg2 style:(int)arg3 target:(id)arg4 action:(SEL)arg5;
 - (id)initWithImage:(id)arg1 style:(int)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)_applyPositionAdjustmentToSegmentedControl:(id)arg1;
+- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 style:(int)arg3 barMetrics:(int)arg4;
+- (void)_getToolbarEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 glowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg3 forBarStyle:(int)arg4 landscape:(BOOL)arg5 alwaysBordered:(BOOL)arg6;
+- (void)_getNavBarEdgeSizeAdjust:(struct CGSize { float x1; float x2; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 landscape:(BOOL)arg3;
+- (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8;
 - (void)setCustomView:(id)arg1;
 - (void)setLandscapeImagePhone:(id)arg1;
 - (void)_setToolbarCharge:(float)arg1;
@@ -110,6 +120,7 @@
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
 - (id)initWithBarButtonSystemItem:(int)arg1 target:(id)arg2 action:(SEL)arg3;
 - (BOOL)selected;
+- (BOOL)_flexible;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
 - (id)customView;
 - (void)_updateView;
@@ -117,18 +128,21 @@
 - (id)createViewForToolbar:(id)arg1;
 - (id)titleTextAttributesForState:(unsigned int)arg1;
 - (id)backgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
+- (float)_width;
 - (void)setPossibleTitles:(id)arg1;
 - (id)initWithTitle:(id)arg1 style:(int)arg2 target:(id)arg3 action:(SEL)arg4;
-- (float)_width;
+- (void)setAction:(SEL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (float)_maximumWidth;
 - (float)_minimumWidth;
+- (id)_possibleSystemItems;
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (id)scriptingID;
-- (int)style;
 - (id)image;
+- (id)backgroundImageForState:(unsigned int)arg1 style:(int)arg2 barMetrics:(int)arg3;
+- (int)style;
 - (BOOL)_shouldBezelSystemButtonImage;
 - (void)setTintColor:(id)arg1;
 - (id)tintColor;
@@ -144,7 +158,6 @@
 - (BOOL)isSystemItem;
 - (id)title;
 - (id)_appearanceStorage;
-- (void)setAction:(SEL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (int)tag;
 - (BOOL)isEnabled;
@@ -157,7 +170,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
+- (void)mf_setMiniImageVerticalOffset:(float)arg1;
+- (void)mf_setImageVerticalOffset:(float)arg1;
+- (void)mf_setMiniImageOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)mf_setImageOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)configureFromScriptButton:(id)arg1;
+- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 
 @end

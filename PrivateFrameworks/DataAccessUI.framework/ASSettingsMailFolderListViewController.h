@@ -15,22 +15,22 @@
 }
 
 
-- (void)setAccount:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)_accountsChanged:(id)arg1;
 - (id)specifiers;
+- (void)dealloc;
+- (id)init;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)_accountsChanged:(id)arg1;
+- (void)setAccount:(id)arg1;
 - (id)indexPathForMailFolder:(id)arg1;
 - (BOOL)_isFolderMonitored:(id)arg1;
 - (int)_heightOfASFolder:(id)arg1;
 - (id)mailFolderForIndexPath:(id)arg1;
 - (void)_loadMailFolders;
 - (id)_inboxID;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)_foldersThatExternalClientsCareAboutChanged;
 - (void)_folderHierarchyChanged;
 

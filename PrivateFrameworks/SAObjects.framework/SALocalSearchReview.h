@@ -2,43 +2,34 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL, NSString, SALocalSearchRating;
+@class SAUIAppPunchOut, NSString, SACalendar, SALocalSearchRating;
 
 @interface SALocalSearchReview : AceObject <SAAceSerializable> {
 }
 
-@property(copy) NSString * excerpt;
-@property(copy) NSString * fullReview;
-@property(copy) NSString * provider;
+@property(copy) NSString * author;
+@property(copy) NSString * comment;
+@property(retain) SACalendar * lastUpdated;
 @property(copy) NSString * publication;
-@property(retain) SALocalSearchRating * rating;
-@property(copy) NSString * reviewerName;
-@property(copy) NSURL * reviewerUrl;
-@property(copy) NSString * type;
-@property(copy) NSURL * url;
+@property(retain) SAUIAppPunchOut * reviewPunchOut;
+@property(retain) SALocalSearchRating * reviewRating;
 
 + (id)review;
 + (id)reviewWithDictionary:(id)arg1 context:(id)arg2;
 
-- (void)setProvider:(id)arg1;
 - (id)groupIdentifier;
-- (void)setRating:(id)arg1;
-- (id)rating;
-- (void)setUrl:(id)arg1;
-- (id)url;
-- (id)type;
-- (void)setType:(id)arg1;
-- (id)provider;
-- (id)excerpt;
-- (void)setExcerpt:(id)arg1;
-- (id)fullReview;
-- (void)setFullReview:(id)arg1;
-- (id)publication;
+- (void)setLastUpdated:(id)arg1;
+- (id)lastUpdated;
+- (id)author;
+- (void)setAuthor:(id)arg1;
+- (void)setComment:(id)arg1;
+- (id)comment;
+- (void)setReviewRating:(id)arg1;
+- (id)reviewRating;
+- (void)setReviewPunchOut:(id)arg1;
+- (id)reviewPunchOut;
 - (void)setPublication:(id)arg1;
-- (id)reviewerName;
-- (void)setReviewerName:(id)arg1;
-- (id)reviewerUrl;
-- (void)setReviewerUrl:(id)arg1;
+- (id)publication;
 - (id)encodedClassName;
 
 @end

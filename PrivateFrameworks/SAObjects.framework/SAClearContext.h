@@ -7,11 +7,11 @@
 @interface SAClearContext : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)clearContext;
 + (id)clearContextWithDictionary:(id)arg1 context:(id)arg2;
++ (id)clearContext;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

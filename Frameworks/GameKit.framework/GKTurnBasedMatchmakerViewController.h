@@ -13,15 +13,20 @@
 @property(retain) GKTurnBasedMatchesViewController * privateViewController;
 
 
-- (void)dealloc;
 - (void)setTurnBasedMatchmakerDelegate:(id)arg1;
 - (id)turnBasedMatchmakerDelegate;
 - (void)setShowExistingMatches:(BOOL)arg1;
 - (BOOL)showExistingMatches;
-- (id)initWithMatchRequest:(id)arg1;
 - (id)privateViewController;
 - (void)setPrivateViewController:(id)arg1;
+- (id)initWithMatchRequest:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)__viewControllerWillBePresented:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

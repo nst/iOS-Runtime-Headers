@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, NSString;
+@class MPMediaItem, NSString, UIImage;
 
 @interface MPMediaItemImageRequest : MPImageCacheRequest  {
     NSString *_artworkCacheID;
@@ -25,9 +25,10 @@
 @property BOOL canUseSurfaceBackedImage;
 @property int artworkFormat;
 @property(copy) NSString * artworkCacheID;
+@property(readonly) UIImage * unscaledPlaceholderImage;
 
 
-- (void)dealloc;
+- (id)placeholderImage;
 - (void)setCanUseSurfaceBackedImage:(BOOL)arg1;
 - (BOOL)canUseSurfaceBackedImage;
 - (void)setPlaceHolderMediaType:(int)arg1;
@@ -43,13 +44,15 @@
 - (void)setArtworkCacheID:(id)arg1;
 - (id)artworkCacheID;
 - (void)composeUniqueKey;
+- (id)unscaledPlaceholderImage;
 - (void)setRetrievalTime:(double)arg1;
+- (BOOL)canRequestSynchronously;
 - (id)copyRawImageReturningError:(id*)arg1;
 - (id)uniqueKey;
 - (void)setUsePlaceholderAsFallback:(BOOL)arg1;
 - (void)setRetrievalTimeForPlaybackTime:(double)arg1;
 - (id)initWithMediaItem:(id)arg1;
 - (id)mediaItem;
-- (id)placeholderImage;
+- (void)dealloc;
 
 @end

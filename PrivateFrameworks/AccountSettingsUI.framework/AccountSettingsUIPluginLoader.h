@@ -14,15 +14,15 @@
 
 
 - (void)dealloc;
-- (id)pluginsForAccountTypes:(id)arg1;
-- (id)orderedPluginsForAdd;
-- (id)pluginsWithCommonsSpecifiers;
-- (void)invalidatePluginParentController;
-- (void)_addBundleWithName:(id)arg1 commonSpecifierMode:(int)arg2 accountTypes:(id)arg3;
-- (id)_pluginsWithCommonSpecifierMode:(int)arg1;
-- (id)pluginsWithEagerlyLoadedCommonSpecifiers;
-- (id)pluginsWithLazilyLoadedCommonSpecifiers;
-- (id)initWithParentController:(id)arg1 includeNonAccountBundles:(BOOL)arg2;
 - (id)plugins;
+- (void)invalidatePluginParentController;
+- (id)pluginsWithCommonsSpecifiers;
+- (id)orderedPluginsForAdd;
+- (id)pluginsForAccountTypes:(id)arg1;
+- (id)pluginsWithLazilyLoadedCommonSpecifiers;
+- (id)pluginsWithEagerlyLoadedCommonSpecifiers;
+- (id)_pluginsWithCommonSpecifierMode:(int)arg1;
+- (void)_addBundleWithName:(id)arg1 commonSpecifierMode:(int)arg2 accountTypes:(id)arg3;
+- (id)initWithParentController:(id)arg1 includeNonAccountBundles:(BOOL)arg2;
 
 @end

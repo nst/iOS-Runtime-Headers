@@ -35,23 +35,10 @@
 @property(readonly) id sourceTypePhotoLibrary;
 @property(readonly) id sourceTypeSavedPhotosAlbum;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (void)dealloc;
-- (id)mediaTypes;
-- (void)setMediaTypes:(id)arg1;
-- (void)setSourceType:(id)arg1;
-- (id)isFlashAvailableForCameraDevice:(id)arg1;
-- (id)availableCaptureModesForCameraDevice:(id)arg1;
-- (id)isCameraDeviceAvailable:(id)arg1;
-- (id)availableMediaTypesForSourceType:(id)arg1;
-- (id)isSourceTypeAvailable:(id)arg1;
-- (id)sourceType;
-- (void)setValue:(id)arg1 forProperty:(id)arg2;
-- (id)valueForProperty:(id)arg1;
-- (id)attributeKeys;
 - (BOOL)_sendDidPickWithInfo:(id)arg1;
 - (BOOL)_sendCancel;
 - (id)sourceTypeSavedPhotosAlbum;
@@ -84,5 +71,18 @@
 - (void)setNativeViewController:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)dealloc;
+- (id)valueForProperty:(id)arg1;
+- (id)mediaTypes;
+- (void)setMediaTypes:(id)arg1;
+- (id)isFlashAvailableForCameraDevice:(id)arg1;
+- (id)availableCaptureModesForCameraDevice:(id)arg1;
+- (id)isCameraDeviceAvailable:(id)arg1;
+- (id)availableMediaTypesForSourceType:(id)arg1;
+- (void)setSourceType:(id)arg1;
+- (id)isSourceTypeAvailable:(id)arg1;
+- (id)sourceType;
+- (id)attributeKeys;
+- (void)setValue:(id)arg1 forProperty:(id)arg2;
 
 @end

@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <NSCoding>, MFOutgoingMessageDelivery, MailMessage, <MailComposeDeliveryControllerDelegate>, MailboxUid, NSString, MFError, OutgoingMessage;
+@class OutgoingMessage, MFOutgoingMessageDelivery, MailMessage, <MailComposeDeliveryControllerDelegate>, MailboxUid, NSString, MFError, <NSCoding>;
 
 @interface MFMailComposeDeliveryController : NSObject <MFDeliveryDelegate> {
     <MailComposeDeliveryControllerDelegate> *_delegate;
     MFOutgoingMessageDelivery *_delivery;
-    OutgoingMessage *_message;
+    OutgoingMessage *_draftMessage;
     NSString *_sendingAddress;
     MailboxUid *_draftMailbox;
     NSString *_draftMessageID;
@@ -15,21 +15,37 @@
     <NSCoding> *_autosaveIdentifier;
     MFError *_error;
     int _composeType;
-    BOOL _shouldSave;
 }
 
 @property <MailComposeDeliveryControllerDelegate> * delegate;
+@property(copy) NSString * sendingAddress;
+@property(copy) NSString * draftMessageID;
+@property(retain) MailboxUid * draftMailbox;
+@property(retain) MailMessage * originalMessage;
+@property int composeType;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)draftMailbox;
+- (id)draftMessageID;
+- (BOOL)deliverMessage;
+- (void)_removeDraft;
+- (void)_setCodePointTranslationEnabled:(BOOL)arg1;
+- (id)_initWithDelivery:(id)arg1 draftMessage:(id)arg2;
+- (void)setComposeType:(int)arg1;
+- (void)setOriginalMessage:(id)arg1;
+- (void)setDraftMailbox:(id)arg1;
+- (void)setDraftMessageID:(id)arg1;
+- (id)initWithDelivery:(id)arg1;
+- (id)initWithDraftMessage:(id)arg1;
+- (id)originalMessage;
+- (int)composeType;
+- (id)sendingAddress;
+- (void)setSendingAddress:(id)arg1;
 - (void)notifyUserDeliverySucceeded:(id)arg1;
 - (void)setPercentDone:(double)arg1;
-- (void)dealloc;
 - (id)error;
-- (BOOL)deliverMessage;
-- (void)_setCodePointTranslationEnabled:(BOOL)arg1;
-- (void)_removeDraft;
-- (id)initWithDelivery:(id)arg1 outgoingMessage:(id)arg2 sendingAddress:(id)arg3 draftMessageID:(id)arg4 draftMailbox:(id)arg5 originalMessage:(id)arg6 composeType:(int)arg7 shouldSave:(BOOL)arg8;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

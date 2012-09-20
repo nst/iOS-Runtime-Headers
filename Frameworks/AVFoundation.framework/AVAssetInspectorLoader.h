@@ -25,6 +25,7 @@
 @property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
 @property(readonly) NSURL * resolvedURL;
 @property(readonly) NSURL * downloadDestinationURL;
+@property(readonly) unsigned long long downloadToken;
 @property(readonly) BOOL hasProtectedContent;
 @property(getter=_isStreaming,readonly) BOOL streaming;
 @property(readonly) unsigned int referenceRestrictions;
@@ -32,38 +33,39 @@
 
 + (void)initialize;
 
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (unsigned long long)downloadToken;
+- (BOOL)hasProtectedContent;
+- (BOOL)isPlayable;
+- (BOOL)_isStreaming;
+- (id)lyrics;
+- (id)URL;
+- (id)initWithURL:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (BOOL)isReadable;
 - (id)_mapFigErrorCodeToNSError:(long)arg1;
 - (id)downloadDestinationURL;
-- (id)resolvedURL;
 - (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
 - (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
 - (id)assetCache;
 - (id)chapterGroupInfo;
+- (id)resolvedURL;
 - (id)assetInspector;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (id)_weakReference;
 - (BOOL)isCompatibleWithSavedPhotosAlbum;
 - (BOOL)isComposable;
 - (BOOL)isExportable;
-- (BOOL)isPlayable;
-- (BOOL)hasProtectedContent;
 - (void)_serverHasDied;
-- (id)lyrics;
-- (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;
 - (unsigned int)referenceRestrictions;
+- (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id)arg3;
-- (BOOL)_isStreaming;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (void)cancelLoading;
-- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (id)initWithURL:(id)arg1;
-- (id)URL;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (BOOL)isReadable;
 
 @end

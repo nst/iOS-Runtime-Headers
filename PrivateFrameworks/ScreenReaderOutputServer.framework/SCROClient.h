@@ -12,20 +12,20 @@
     struct __CFSet { } *_callbackSet;
 }
 
-+ (void)initialize;
 + (void)registerCallbackWithKey:(int)arg1 forClientIdentifier:(unsigned int)arg2;
 + (id)callbacksForClientIdentifier:(unsigned int)arg1;
 + (void)sendCallback:(id)arg1;
 + (long)removeClientWithPort:(unsigned int)arg1;
 + (id)addClientGetIdentifier:(unsigned int*)arg1 getPort:(unsigned int*)arg2;
++ (void)initialize;
 
-- (id)init;
-- (void)dealloc;
-- (void)_invalidate;
 - (void)_registerCallbackWithKey:(int)arg1;
 - (id)_dequeueCallbacks;
 - (void)_sendCallback:(id)arg1;
 - (BOOL)_wantsCallback:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)_invalidate;
 - (void)_unlock;
 - (void)_lock;
 

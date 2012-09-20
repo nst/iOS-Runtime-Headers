@@ -8,7 +8,7 @@
 
 - (int)interactionType;
 - (id)localizedName;
-- (id)viewController;
 - (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
+- (void)prepareViewControllerForActionController:(id)arg1;
 
 @end

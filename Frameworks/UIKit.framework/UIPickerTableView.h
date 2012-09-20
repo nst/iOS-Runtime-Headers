@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableSet;
+@class NSMutableIndexSet;
 
 @interface UIPickerTableView : UITableView <UITableViewDelegate> {
     struct CGRect { 
@@ -16,7 +16,8 @@
         } size; 
     } _selectionBarRect;
     int _selectionBarRow;
-    NSMutableSet *_checkedRows;
+    NSMutableIndexSet *_checkedRows;
+    float _lastClickedOffset;
     struct { 
         unsigned int allowsMultipleSelection : 1; 
         unsigned int scrollingDirection : 2; 
@@ -33,25 +34,26 @@
 
 
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionBarRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionBarRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_scrollingFinished;
 - (BOOL)didSelectDisabled:(BOOL)arg1;
-- (BOOL)scrollCenterCellToSelectionBar;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionBarRect;
 - (void)_playClickIfNecessary;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionBarRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_checkedRows;
+- (struct CGPoint { float x1; float x2; })contentOffsetForRowAtIndexPath:(id)arg1;
 - (void)_setSelectionBarRow:(int)arg1;
 - (void)_rectChangedWithNewSize:(struct CGSize { float x1; float x2; })arg1 oldSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)_updateContentInsets;
+- (void)_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;
+- (BOOL)_beginTrackingWithEvent:(id)arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)scrollViewShouldScrollToTop:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
-- (void)_scrollViewAnimationEnded;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
-- (BOOL)_beginTrackingWithEvent:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(struct CGPoint { float x1; float x2; }*)arg3;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (BOOL)isRowChecked:(int)arg1;
 - (BOOL)_scrollRowAtIndexPathToSelectionBar:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)selectRow:(int)arg1 animated:(BOOL)arg2 notify:(BOOL)arg3;

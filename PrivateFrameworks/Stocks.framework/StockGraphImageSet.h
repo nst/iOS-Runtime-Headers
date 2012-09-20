@@ -10,17 +10,17 @@
     UIImage *_volumeGraphImage;
 }
 
-@property(retain) UIImage * volumeGraphImage;
-@property(retain) UIImage * plainLineImage;
 @property(retain) UIImage * lineGraphImage;
+@property(retain) UIImage * plainLineImage;
+@property(retain) UIImage * volumeGraphImage;
 
 
-- (void)dealloc;
-- (id)volumeGraphImage;
+- (void).cxx_destruct;
 - (void)setVolumeGraphImage:(id)arg1;
-- (id)plainLineImage;
+- (id)volumeGraphImage;
 - (void)setPlainLineImage:(id)arg1;
-- (id)lineGraphImage;
+- (id)plainLineImage;
 - (void)setLineGraphImage:(id)arg1;
+- (id)lineGraphImage;
 
 @end

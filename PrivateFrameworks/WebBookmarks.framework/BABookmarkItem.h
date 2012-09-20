@@ -9,14 +9,15 @@
     WebBookmark *_bookmark;
 }
 
-@property(retain) WebBookmark * bookmark;
 @property(readonly) WebBookmarkCollection * collection;
+@property(retain) WebBookmark * bookmark;
 
 
+- (id)description;
 - (void)dealloc;
-- (id)initWithBookmarkCollection:(id)arg1 bookmark:(id)arg2;
-- (void)setBookmark:(id)arg1;
 - (id)bookmark;
+- (void)setBookmark:(id)arg1;
+- (id)initWithBookmarkCollection:(id)arg1 bookmark:(id)arg2;
 - (id)collection;
 
 @end

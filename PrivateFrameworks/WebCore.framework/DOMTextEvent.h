@@ -7,7 +7,7 @@
 @interface DOMTextEvent : DOMUIEvent  {
 }
 
-@property(copy,readonly) NSString * data;
+@property(readonly) NSString * data;
 
 
 - (id)data;

@@ -10,14 +10,15 @@
     id _value;
 }
 
-@property(retain) id value;
+@property CBCharacteristic * characteristic;
 @property(readonly) CBUUID * UUID;
-@property(readonly) CBCharacteristic * characteristic;
+@property(retain) id value;
 
 
-- (id)characteristic;
+- (id)UUID;
 - (id)value;
 - (void)setValue:(id)arg1;
-- (id)UUID;
+- (id)characteristic;
+- (void)setCharacteristic:(id)arg1;
 
 @end

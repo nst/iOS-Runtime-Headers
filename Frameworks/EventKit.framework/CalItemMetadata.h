@@ -15,8 +15,10 @@
 + (id)metadataWithICSComponent:(id)arg1;
 + (id)metadataWithData:(id)arg1;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)x_props;
 - (id)dataRepresentationWithExistingMetaData:(id)arg1;
 - (void)applyToComponent:(id)arg1;
@@ -24,7 +26,5 @@
 - (void)setX_props:(id)arg1;
 - (void)setClassification:(int)arg1;
 - (int)classification;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

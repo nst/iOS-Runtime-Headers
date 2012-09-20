@@ -10,9 +10,8 @@
 @property(readonly) unsigned long long total;
 
 
-- (BOOL)lengthComputable;
-- (unsigned long long)loaded;
 - (unsigned long long)total;
-- (void)initProgressEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 lengthComputableArg:(BOOL)arg4 loadedArg:(unsigned long long)arg5 totalArg:(unsigned long long)arg6;
+- (unsigned long long)loaded;
+- (BOOL)lengthComputable;
 
 @end

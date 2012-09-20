@@ -17,20 +17,22 @@
 }
 
 
-- (void)mf_makeImmutable;
-- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (unsigned int)length;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setMappingThreshold:(unsigned int)arg1;
-- (BOOL)mf_immutable;
-- (void)_mapMutableData:(BOOL)arg1;
-- (void)_flushToDisk:(unsigned int)arg1 capacity:(unsigned int)arg2;
-- (id)_initWithFd:(int)arg1 path:(id)arg2 mutable:(BOOL)arg3;
-- (id)initWithContentsOfURL:(id)arg1;
 - (BOOL)writeToURL:(id)arg1 atomically:(BOOL)arg2;
+- (const void*)bytes;
+- (id)initWithContentsOfURL:(id)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)length;
+- (void)setMappingThreshold:(unsigned int)arg1;
+- (id)_initWithFd:(int)arg1 path:(id)arg2 mutable:(BOOL)arg3;
+- (void)_flushToDisk:(unsigned int)arg1 capacity:(unsigned int)arg2;
+- (void)_mapMutableData:(BOOL)arg1;
+- (BOOL)mf_immutable;
+- (id)initWithContentsOfURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)initWithContentsOfFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)initWithContentsOfMappedFile:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void*)mutableBytes;
 - (id)initWithLength:(unsigned int)arg1;
@@ -39,15 +41,13 @@
 - (id)initWithData:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (void)appendBytes:(const void*)arg1 length:(unsigned int)arg2;
-- (const void*)bytes;
 - (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
+- (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
 - (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (void)setLength:(unsigned int)arg1;
-- (id)initWithContentsOfURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (void)mf_makeImmutable;
 - (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
-- (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)initWithContentsOfFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)initWithContentsOfMappedFile:(id)arg1;
 
 @end

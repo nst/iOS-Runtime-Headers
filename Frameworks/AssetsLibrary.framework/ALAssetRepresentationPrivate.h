@@ -25,24 +25,24 @@
 + (int)_updateFileDescriptor:(int)arg1 forPersistentURL:(id)arg2;
 + (int)_fileDescriptorForPersistentURL:(id)arg1;
 
-- (id)library;
-- (void)setLibrary:(id)arg1;
 - (void)dealloc;
+- (void)setIsValid:(BOOL)arg1;
+- (void)setLibrary:(id)arg1;
+- (id)library;
+- (BOOL)_isImage;
+- (BOOL)_isVideo;
+- (BOOL)isValid;
 - (void)_performBlockAndWait:(id)arg1;
 - (void)setPhoto:(id)arg1;
-- (BOOL)isValid;
+- (id)photo;
 - (void)set_photoLibrary:(id)arg1;
 - (void)setExtension:(id)arg1;
 - (void)setSidecar:(id)arg1;
-- (void)libraryDidChange;
 - (void)libraryWillDisappear;
 - (id)_photoLibrary;
-- (void)setIsValid:(BOOL)arg1;
-- (BOOL)_isVideo;
-- (BOOL)_isImage;
+- (void)libraryDidChange;
 - (id)sidecar;
 - (id)extension;
 - (id)initWithManagedAsset:(id)arg1 sidecar:(id)arg2 extension:(id)arg3 library:(id)arg4;
-- (id)photo;
 
 @end

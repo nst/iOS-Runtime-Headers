@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UINavigationBar, UIActivityIndicatorView, UIImageView, UINavigationItem, UILabel, MPNowPlayingItemQueueInfoButton, NSString, UINavigationButton, UIPopoverController, MPPadFullScreenTransportControls;
+@class UINavigationBar, UIActivityIndicatorView, UIImageView, UINavigationItem, UILabel, UINavigationButton, NSString, MPNowPlayingItemQueueInfoButton, UIPopoverController, MPPadFullScreenTransportControls;
 
 @interface MPPadFullScreenVideoOverlay : MPVideoOverlay <UIPopoverControllerDelegate, MPNowPlayingItemQueueInfoButtonDelegate> {
     MPPadFullScreenTransportControls *_transportControls;
@@ -26,7 +26,8 @@
 @property(copy) NSString * title;
 
 
-- (void)dealloc;
+- (void)setPlayer:(id)arg1;
+- (void)setItem:(id)arg1;
 - (void)_scaleButton:(id)arg1;
 - (id)_navBarBackgroundImageForProgressControl:(BOOL)arg1 tallStyle:(BOOL)arg2;
 - (void)_scheduleHidePopoverTimer;
@@ -42,18 +43,20 @@
 - (void)_configureLinkButtonForCurrentItemTime;
 - (void)showAlternateTracks;
 - (void)hideAlternateTracks;
-- (unsigned int)disabledParts;
+- (unsigned long long)disabledParts;
 - (void)setVideoViewController:(id)arg1;
-- (void)crossedURLTimeMarker:(id)arg1;
-- (void)setDisabledParts:(unsigned int)arg1;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
 - (void)_itemDurationAvailableNotification:(id)arg1;
-- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (unsigned int)_convertedPartsMask:(unsigned int)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
+- (unsigned long long)_convertedPartsMask:(unsigned long long)arg1;
+- (void)setDisabledParts:(unsigned long long)arg1;
 - (void)_videoViewScaleModeDidChangeNotification:(id)arg1;
 - (BOOL)allowsWirelessPlayback;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
-- (void)setPlayer:(id)arg1;
+- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
+- (void)dealloc;
+- (void)_applicationWillResignActive:(id)arg1;
 - (void)_initSubviews;
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
@@ -64,6 +67,5 @@
 - (void)layoutSubviews;
 - (void)setAlpha:(float)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setItem:(id)arg1;
 
 @end

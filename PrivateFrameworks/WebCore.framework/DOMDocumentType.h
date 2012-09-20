@@ -7,19 +7,19 @@
 @interface DOMDocumentType : DOMNode  {
 }
 
-@property(copy,readonly) NSString * name;
-@property(retain,readonly) DOMNamedNodeMap * entities;
-@property(retain,readonly) DOMNamedNodeMap * notations;
-@property(copy,readonly) NSString * publicId;
-@property(copy,readonly) NSString * systemId;
-@property(copy,readonly) NSString * internalSubset;
+@property(readonly) NSString * name;
+@property(readonly) DOMNamedNodeMap * entities;
+@property(readonly) DOMNamedNodeMap * notations;
+@property(readonly) NSString * publicId;
+@property(readonly) NSString * systemId;
+@property(readonly) NSString * internalSubset;
 
 
-- (id)publicId;
-- (id)name;
 - (id)entities;
-- (id)notations;
-- (id)systemId;
+- (id)name;
+- (id)publicId;
 - (id)internalSubset;
+- (id)systemId;
+- (id)notations;
 
 @end

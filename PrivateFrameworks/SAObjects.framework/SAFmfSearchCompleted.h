@@ -7,22 +7,22 @@
 @interface SAFmfSearchCompleted : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(retain) NSNumber * atRequestedLocation;
+@property(copy) NSNumber * atRequestedLocation;
 @property(copy) NSArray * fmfLocations;
 @property(copy) NSURL * searchContext;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)searchCompleted;
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)searchCompleted;
 
 - (id)groupIdentifier;
-- (void)setSearchContext:(id)arg1;
 - (id)searchContext;
-- (id)fmfLocations;
+- (void)setSearchContext:(id)arg1;
 - (void)setFmfLocations:(id)arg1;
-- (id)atRequestedLocation;
+- (id)fmfLocations;
 - (void)setAtRequestedLocation:(id)arg1;
+- (id)atRequestedLocation;
 - (id)encodedClassName;
 
 @end

@@ -28,16 +28,21 @@
 @property(getter=isComposable,readonly) BOOL composable;
 
 
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (BOOL)hasProtectedContent;
+- (id)trackReferences;
+- (id)lyrics;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (id)commonMetadata;
+- (BOOL)isReadable;
+- (id)creationDate;
 - (long)trackCount;
 - (BOOL)isComposable;
 - (BOOL)isExportable;
-- (BOOL)hasProtectedContent;
 - (id)metadataForFormat:(id)arg1;
 - (id)availableMetadataFormats;
-- (id)commonMetadata;
-- (id)lyrics;
-- (id)trackReferences;
 - (id)mediaSelectionGroups;
 - (id)trackIDs;
 - (id)alternateTrackGroups;
@@ -45,10 +50,5 @@
 - (int)naturalTimeScale;
 - (float)preferredVolume;
 - (float)preferredRate;
-- (id)creationDate;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (BOOL)isReadable;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
-- (struct CGSize { float x1; float x2; })naturalSize;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSThread, NSTimer, NSDictionary, NSString, <AutoGuessUIDelegate>, NSMutableDictionary, NSArray;
+@class NSThread, NSTimer, NSDictionary, <AutoGuessUIDelegate>, NSString, NSMutableDictionary, NSArray;
 
 @interface AutoGuessController : AssistantCallbackController  {
     int _lastAutoGuessUISelector;
@@ -60,8 +60,10 @@
 + (id)restoreRecommendationDictionaryFromCompletionDict:(id)arg1;
 + (id)shortProductNameFromBaseStationDictionary:(id)arg1;
 
-- (id)init;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (id)init;
 - (id)createCompletionDictFromAutoGuessResults:(id)arg1;
 - (void)autoGuessEngineComplete;
 - (BOOL)okToSwitchToShortBonjourTimeout:(id)arg1;
@@ -111,7 +113,5 @@
 - (void)setBonjourBrowseStatus:(int)arg1;
 - (void)setWiFiScanStatus:(int)arg1;
 - (void)set_browsedBases:(id)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

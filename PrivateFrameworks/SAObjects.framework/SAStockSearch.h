@@ -15,13 +15,13 @@
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)companyNameList;
 - (void)setCompanyNameList:(id)arg1;
-- (id)stockReferences;
+- (id)companyNameList;
 - (void)setStockReferences:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)stockReferences;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

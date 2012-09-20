@@ -45,6 +45,7 @@
 - (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
 - (float)shadowPaddingForStyle:(int)arg1;
 - (id)textColorForStyle:(int)arg1;
+- (void)_drawText:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5 textAlignment:(int)arg6;
 - (BOOL)usesSmallerTextFont;
 - (id)textFont;
 - (void)drawText:(id)arg1 forStyle:(int)arg2 forWidth:(float)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5;
@@ -60,6 +61,7 @@
 - (id)item;
 - (void)setLayoutManager:(id)arg1;
 - (void)setVisible:(BOOL)arg1;
+- (int)textAlignment;
 - (id)layoutManager;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 

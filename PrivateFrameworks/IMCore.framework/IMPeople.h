@@ -17,8 +17,8 @@
 @property(readonly) unsigned int count;
 
 
-- (unsigned int)count;
 - (void)dealloc;
+- (unsigned int)count;
 - (BOOL)addPeopleFromArray:(id)arg1;
 - (BOOL)removePeopleFromArray:(id)arg1;
 - (BOOL)containsIMHandle:(id)arg1;

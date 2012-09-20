@@ -11,6 +11,7 @@
     NSArray *_orderingProperties;
     NSSet *_itemPropertiesToFetch;
     NSSet *_collectionPropertiesToFetch;
+    BOOL _useSections;
 }
 
 @property(readonly) BOOL specifiesPlaylistItems;
@@ -19,16 +20,20 @@
 @property(copy) NSSet * itemPropertiesToFetch;
 @property(copy) NSSet * collectionPropertiesToFetch;
 @property int groupingType;
+@property int entityOrder;
 @property(copy) NSArray * orderingProperties;
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setItemPropertiesToFetch:(id)arg1;
+- (void)setGroupingType:(int)arg1;
+- (void)setFilterPredicates:(id)arg1;
+- (int)groupingType;
+- (id)filterPredicates;
+- (void)removeFilterPredicate:(id)arg1;
+- (void)addFilterPredicate:(id)arg1;
+- (void)setEntityOrder:(int)arg1;
 - (void)removePredicatesForProperty:(id)arg1;
+- (int)entityOrder;
 - (id)ML3OrderingPropertiesForGroupingType:(int)arg1;
 - (id)ML3ItemsQueryInLibrary:(id)arg1 orderingProperties:(id)arg2 nameBlankProperty:(id)arg3;
 - (id)ML3OrderingPropertiesForMPOrderingProperties:(id)arg1;
@@ -41,14 +46,13 @@
 - (void)setCollectionPropertiesToFetch:(id)arg1;
 - (id)collectionPropertiesToFetch;
 - (id)itemPropertiesToFetch;
-- (id)sanitizedQueryCriteria;
+- (id)queryCriteriaByApplyingStandardPredicates:(BOOL)arg1 externalClientFilteringPredicates:(BOOL)arg2;
 - (BOOL)specifiesPlaylistItems;
-- (void)setGroupingType:(int)arg1;
-- (void)setFilterPredicates:(id)arg1;
-- (int)groupingType;
-- (id)filterPredicates;
-- (void)removeFilterPredicate:(id)arg1;
-- (void)addFilterPredicate:(id)arg1;
-- (void)setItemPropertiesToFetch:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

@@ -30,9 +30,10 @@
 
 
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfCurrentToken;
-- (void)setString:(id)arg1 withSearchRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)allTokensForString:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })advanceToNextToken;
-- (id)init;
+- (void)setString:(id)arg1 withSearchRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)dealloc;
+- (id)init;
 
 @end

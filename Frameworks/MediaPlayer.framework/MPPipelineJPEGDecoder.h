@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface MPPipelineJPEGDecoder : NSObject  {
     struct StackItem { void *x1; struct StackItem {} *x2; } *stackTopBGRA;
     struct StackItem { void *x1; struct StackItem {} *x2; } *stackTop420;
     struct StackItem { void *x1; struct StackItem {} *x2; } *stackTopJPEG;
-    struct dispatch_queue_s { } *stackQueueBGRA;
-    struct dispatch_queue_s { } *stackQueue420;
-    struct dispatch_queue_s { } *stackQueueJPEG;
+    NSObject<OS_dispatch_queue> *stackQueueBGRA;
+    NSObject<OS_dispatch_queue> *stackQueue420;
+    NSObject<OS_dispatch_queue> *stackQueueJPEG;
     struct __CFDictionary { } *acceleratorOptions;
     struct __CFDictionary { } *surfaceBGRAOptions;
     struct CGSize { 
@@ -25,11 +27,10 @@
 + (void)_pushSurfaceAccelerator:(struct __IOSurfaceAccelerator { }*)arg1;
 + (struct __IOSurfaceAccelerator { }*)_popSurfaceAccelerator;
 + (struct __IOSurfaceAccelerator { }*)_createAccelerator;
-+ (struct dispatch_queue_s { }*)_stackQueueTransferSession;
++ (id)_stackQueueTransferSession;
 
-- (void)dealloc;
 - (id)newImageFrom420Data:(id)arg1;
-- (void)_removeBGRASurface;
+- (BOOL)_removeBGRASurface;
 - (struct __IOSurface { }*)_createJPEGSurface;
 - (struct __IOSurface { }*)_create420Surface;
 - (unsigned int)maxJPEGSize;
@@ -46,5 +47,6 @@
 - (void)setMaxJPEGSize:(unsigned int)arg1;
 - (id)newImageFromJPEGData:(id)arg1;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 cachedCount:(int)arg2;
+- (void)dealloc;
 
 @end

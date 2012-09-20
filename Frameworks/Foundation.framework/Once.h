@@ -16,8 +16,8 @@
 }
 
 
+- (void)dealloc;
 - (void)doit;
 - (id)initWithBlock:(id)arg1;
-- (void)dealloc;
 
 @end

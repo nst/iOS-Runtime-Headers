@@ -9,7 +9,7 @@
     NSString *sessionPreset;
     int beginConfigRefCount;
     NSMutableDictionary *captureOptions;
-    NSMutableDictionary *previousFigRecorderOptions;
+    NSMutableDictionary *figRecorderOptions;
     AVCaptureFigAudioDevice *audioDevice;
     AVCaptureFigVideoDevice *videoDevice;
     struct OpaqueFigRecorder { } *recorder;
@@ -31,7 +31,7 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 
 @end

@@ -73,6 +73,8 @@
 + (id)unarchiveObjectWithFile:(id)arg1;
 + (id)unarchiveObjectWithData:(id)arg1;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (int)versionForClassName:(id)arg1;
 - (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
@@ -95,13 +97,10 @@
 - (BOOL)validateAndIndexClasses:(const void*)arg1 length:(unsigned long)arg2;
 - (BOOL)validateAndIndexData:(id)arg1 error:(id*)arg2;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
-- (void)finishDecoding;
 - (id)initForReadingWithData:(id)arg1;
 - (id)initForReadingWithData:(id)arg1 error:(id*)arg2;
 - (unsigned int)systemVersion;
 - (double)decodeDoubleForKey:(id)arg1;
-- (int)decodeIntForKey:(id)arg1;
-- (BOOL)containsValueForKey:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })decodeUIEdgeInsetsForKey:(id)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })decodeCGAffineTransformForKey:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeCGRectForKey:(id)arg1;
@@ -111,8 +110,9 @@
 - (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned int*)arg2;
 - (int)decodeIntegerForKey:(id)arg1;
 - (BOOL)allowsKeyedCoding;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (void)finishDecoding;
+- (int)decodeIntForKey:(id)arg1;
+- (BOOL)containsValueForKey:(id)arg1;
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (id)decodeObjectForKey:(id)arg1;
 

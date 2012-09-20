@@ -8,19 +8,19 @@
     NSSet *_setElements;
 }
 
-@property(retain) NSSet * setElements;
 @property <CalDAVMkcalendarTaskDelegate><CoreDAVTaskDelegate> * delegate;
+@property(retain) NSSet * setElements;
 
 
+- (id)initWithURL:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (void)setSupportForEvents:(BOOL)arg1 tasks:(BOOL)arg2;
+- (id)setElements;
+- (void)setSetElements:(id)arg1;
 - (id)initWithPropertiesToSet:(id)arg1 atURL:(id)arg2;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)initWithURL:(id)arg1;
-- (void)setSupportForEvents:(BOOL)arg1 tasks:(BOOL)arg2;
-- (void)setSetElements:(id)arg1;
-- (id)setElements;
 - (id)httpMethod;
 - (id)requestBody;
 

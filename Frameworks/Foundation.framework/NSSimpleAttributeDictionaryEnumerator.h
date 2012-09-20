@@ -10,9 +10,9 @@
 }
 
 
-- (id)initWithAttributeDictionary:(id)arg1;
 - (void)dealloc;
 - (void)finalize;
 - (id)nextObject;
+- (id)initWithAttributeDictionary:(id)arg1;
 
 @end

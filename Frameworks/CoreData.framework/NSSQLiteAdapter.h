@@ -9,15 +9,15 @@
 }
 
 
-- (void)dealloc;
 - (id)type;
+- (void)dealloc;
 - (id)pathnameForDatabase;
 - (id)sqliteVersion;
 - (id)initWithSQLCore:(id)arg1;
-- (id)createConnection;
-- (Class)statementClass;
-- (id)typeStringForColumn:(id)arg1;
 - (id)typeStringForSQLType:(unsigned int)arg1;
+- (id)typeStringForColumn:(id)arg1;
+- (Class)statementClass;
 - (BOOL)supportsCorrelatedSubqueries;
+- (id)createConnection;
 
 @end

@@ -29,28 +29,28 @@
 @property(copy) id actionHandler;
 
 
-- (void)dealloc;
-- (int)defaultAction;
 - (id)buttonTitles;
-- (id)bodyText;
+- (void)setActionHandler:(id)arg1;
+- (id)selectedTableItem;
+- (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4;
+- (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4 tableAction:(int)arg5;
+- (id)_buttonTitleForAction:(int)arg1;
+- (void)setHideAction:(int)arg1;
+- (void)setTableItems:(id)arg1 withTitles:(id)arg2;
+- (id)initWithType:(int)arg1 title:(id)arg2 bodyText:(id)arg3 defaultAction:(int)arg4 otherAction:(int)arg5 tableAction:(int)arg6;
+- (id)initWithType:(int)arg1 title:(id)arg2 bodyText:(id)arg3 defaultAction:(int)arg4 otherAction:(int)arg5;
+- (int)tableAction;
+- (void)setSelectedTableItemIndex:(int)arg1;
+- (id)actionHandler;
+- (int)actionForButtonTag:(unsigned int)arg1;
+- (int)hideAction;
+- (id)tableItems;
 - (int)type;
-- (id)context;
+- (void)dealloc;
+- (id)bodyText;
 - (void)setContext:(id)arg1;
 - (id)title;
-- (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4 tableAction:(int)arg5;
-- (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4;
-- (id)selectedTableItem;
-- (void)setActionHandler:(id)arg1;
-- (id)_buttonTitleForAction:(int)arg1;
-- (id)initWithType:(int)arg1 title:(id)arg2 bodyText:(id)arg3 defaultAction:(int)arg4 otherAction:(int)arg5;
-- (id)initWithType:(int)arg1 title:(id)arg2 bodyText:(id)arg3 defaultAction:(int)arg4 otherAction:(int)arg5 tableAction:(int)arg6;
-- (void)setTableItems:(id)arg1 withTitles:(id)arg2;
-- (void)setHideAction:(int)arg1;
-- (id)tableItems;
-- (int)hideAction;
-- (int)actionForButtonTag:(unsigned int)arg1;
-- (id)actionHandler;
-- (void)setSelectedTableItemIndex:(int)arg1;
-- (int)tableAction;
+- (id)context;
+- (int)defaultAction;
 
 @end

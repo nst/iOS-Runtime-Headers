@@ -12,30 +12,32 @@
     unsigned int _brokenHashVersion;
     BOOL _retainLeopardStyleDictionaries;
     BOOL _modelHasPrecomputedKeyOrder;
+    BOOL _hasVirtualToOnes;
 }
 
 
+- (id)entities;
 - (id)managedObjectModel;
 - (void)dealloc;
-- (void)finalize;
-- (id)entities;
-- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2;
-- (id)_sqlEntityWithRenamingIdentifier:(id)arg1;
-- (unsigned long)entityIDForName:(id)arg1;
 - (BOOL)_retainHashHack;
-- (void)_generateModel:(id)arg1;
-- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3 brokenHashVersion:(unsigned int)arg4;
+- (unsigned long)entityIDForName:(id)arg1;
+- (id)_sqlEntityWithRenamingIdentifier:(id)arg1;
+- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2;
 - (id)_entityMapping;
-- (BOOL)_modelHasPrecomputedKeyOrder;
-- (BOOL)_useLeopardStyleHashing;
-- (BOOL)_useSnowLeopardStyleHashing;
-- (id)_precomputedKeyOrderForEntity:(id)arg1;
+- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3 brokenHashVersion:(unsigned int)arg4;
+- (BOOL)_generateModel:(id)arg1 error:(id*)arg2;
 - (void)_addIndexedEntity:(id)arg1;
-- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 brokenHashVersion:(unsigned int)arg3;
+- (id)_precomputedKeyOrderForEntity:(id)arg1;
+- (BOOL)_useSnowLeopardStyleHashing;
+- (BOOL)_useLeopardStyleHashing;
+- (void)_recordHasVirtualToOnes;
+- (BOOL)_modelHasPrecomputedKeyOrder;
 - (id)entityForID:(unsigned long)arg1;
-- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3;
+- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 brokenHashVersion:(unsigned int)arg3;
 - (id)entityNamed:(id)arg1;
+- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3;
 - (id)configurationName;
 - (id)entitiesByName;
+- (void)finalize;
 
 @end

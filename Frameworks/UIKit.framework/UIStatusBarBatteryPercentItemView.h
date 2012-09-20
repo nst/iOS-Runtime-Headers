@@ -2,14 +2,19 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString;
+
 @interface UIStatusBarBatteryPercentItemView : UIStatusBarItemView  {
-    int _capacity;
+    NSString *_percentString;
 }
 
 
+- (void)dealloc;
 - (BOOL)animatesDataChange;
 - (float)extraRightPadding;
+- (BOOL)usesSmallerTextFont;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (id)contentsImageForStyle:(int)arg1;
+- (int)textAlignment;
 
 @end

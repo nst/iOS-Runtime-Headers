@@ -13,14 +13,14 @@
 }
 
 
-- (id)description;
-- (void)dealloc;
-- (BOOL)isEmail;
+- (id)participant;
 - (id)lastName;
 - (id)firstName;
-- (id)participant;
-- (id)initWithEKParticipant:(id)arg1;
-- (id)displayName;
 - (int)compare:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)displayName;
+- (id)initWithEKParticipant:(id)arg1;
+- (BOOL)isEmail;
 
 @end

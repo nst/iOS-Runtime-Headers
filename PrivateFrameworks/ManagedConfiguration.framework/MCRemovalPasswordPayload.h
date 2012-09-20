@@ -10,13 +10,13 @@
 
 @property(retain) NSString * removalPasscode;
 
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
-- (void)dealloc;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (id)removalPasscode;
-- (void)setRemovalPasscode:(id)arg1;
+- (void).cxx_destruct;
 - (id)stubDictionary;
+- (void)setRemovalPasscode:(id)arg1;
+- (id)removalPasscode;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 
 @end

@@ -4,7 +4,7 @@
 
 @class MailMessageStore, NSMutableDictionary;
 
-@interface MFDeliveryQueue : NSObject <MFDeliveryDelegate> {
+@interface MFDeliveryQueue : NSObject <MFDeliveryDelegate, MFContentProtectionObserver> {
     int _state;
     unsigned int _messagesTotal;
     unsigned int _messagesFromActiveAccounts;
@@ -18,33 +18,35 @@
 
 + (id)sharedDeliveryQueue;
 
-- (BOOL)isProcessing;
+- (void)dealloc;
+- (id)init;
+- (void)suspend;
+- (BOOL)isSuspended;
 - (void)resume:(BOOL)arg1;
-- (int)deliverSynchronously:(id)arg1;
 - (id)lastErrorForMessage:(id)arg1;
-- (id)_outboxStore;
-- (void)_mailAccountsChanged:(id)arg1;
-- (void)_flagsChanged:(id)arg1;
-- (void)_messagesAdded:(id)arg1;
-- (void)_updateCounts;
-- (void)_processQueue;
-- (void)processQueue;
-- (void)_closeOutboxStore:(BOOL)arg1;
-- (int)append:(id)arg1 newMessageIDs:(id)arg2;
-- (void)_setErrorForMessageLibraryID:(id)arg1 error:(id)arg2;
-- (void)_updateStateFile:(BOOL)arg1;
-- (void)_sendUnsentCountChangedNotification:(int)arg1 activeAccountsOnly:(int)arg2;
-- (void)_sendProcessingStartedNotification;
-- (void)_setDeliveryFlag:(id)arg1 state:(BOOL)arg2;
+- (int)deliverSynchronously:(id)arg1;
+- (BOOL)isProcessing;
+- (void)_sendProcessingFinishedNotification:(int)arg1 failed:(int)arg2 playSound:(BOOL)arg3;
 - (void)_setErrorForMessage:(id)arg1 error:(id)arg2;
-- (void)_sendProcessingFinishedNotification:(int)arg1 failed:(int)arg2;
+- (void)_setDeliveryFlag:(id)arg1 state:(BOOL)arg2;
+- (void)_sendProcessingStartedNotification;
+- (void)_sendUnsentCountChangedNotification:(int)arg1 activeAccountsOnly:(int)arg2;
+- (void)_updateStateFile:(BOOL)arg1;
+- (void)_setErrorForMessageLibraryID:(id)arg1 error:(id)arg2;
+- (int)append:(id)arg1 newMessageIDs:(id)arg2;
+- (void)_closeOutboxStore:(BOOL)arg1;
+- (void)processQueue;
+- (void)_processQueueAndPlaySoundOnSuccess:(id)arg1;
+- (void)_updateCounts;
+- (void)processQueueAndPlaySoundOnSuccess:(BOOL)arg1;
+- (void)_messagesAdded:(id)arg1;
+- (void)_flagsChanged:(id)arg1;
+- (void)_mailAccountsChanged:(id)arg1;
+- (id)_outboxStore;
 - (void)_reachabilityChanged:(id)arg1;
+- (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
 - (int)append:(id)arg1;
 - (void)setPercentDone:(double)arg1;
 - (BOOL)isReady;
-- (id)init;
-- (void)dealloc;
-- (void)suspend;
-- (BOOL)isSuspended;
 
 @end

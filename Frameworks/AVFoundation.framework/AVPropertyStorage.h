@@ -2,21 +2,21 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface AVPropertyStorage : NSObject  {
-    struct dispatch_queue_s { } *_storageAccessWorkQueue;
+    NSObject<OS_dispatch_queue> *_storageAccessWorkQueue;
     NSMutableDictionary *_propertyStorage;
 }
 
 
-- (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (id)init;
+- (id)objectForKey:(id)arg1;
 - (void)dealloc;
+- (id)init;
+- (void)finalize;
 - (id)objectForKey:(id)arg1 defaultObjectBlock:(id)arg2;
 - (void)didAccessKVOForKey:(id)arg1;
 - (void)willAccessKVOForKey:(id)arg1;
-- (void)finalize;
 
 @end

@@ -8,10 +8,20 @@
     AVCaptureSession *session;
     NSMutableArray *connections;
     int changeSeed;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
+    } metadataTransform;
+    float rollAdjustment;
+    BOOL physicallyMirrorsVideo;
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 
 @end

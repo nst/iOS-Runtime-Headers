@@ -27,12 +27,12 @@
 
 - (void)dealloc;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (id)syncDelegate;
+- (void)setSyncDelegate:(id)arg1;
 - (void)setUploadCount:(int)arg1;
 - (int)uploadCount;
 - (void)setShouldMoveFilesToSynchedDirectoryWhenDone:(BOOL)arg1;
 - (BOOL)shouldMoveFilesToSynchedDirectoryWhenDone;
-- (void)setSyncDelegate:(id)arg1;
-- (id)syncDelegate;
 - (unsigned int)unsyncedWorkoutsCount;
 - (void)syncAllWorkouts;
 - (id)initWithBaseDirectoryPath:(id)arg1;

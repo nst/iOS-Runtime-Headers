@@ -14,12 +14,12 @@
 + (id)beginAccountManagerSessionForObject:(id)arg1;
 + (void)endAccountManagerSessionForObject:(id)arg1;
 
-- (id)accounts;
-- (id)init;
-- (void)dealloc;
 - (void)_ntsReloadAccounts;
 - (void)_dispatchEvent:(id)arg1 forName:(id)arg2;
 - (void)_accountsChangedNotification:(id)arg1;
 - (id)accountForDSID:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)accounts;
 
 @end

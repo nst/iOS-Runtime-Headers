@@ -17,33 +17,38 @@
 }
 
 + (id)invocationWithMethodSignature:(id)arg1;
++ (id)_invocationWithMethodSignature:(id)arg1 frame:(void*)arg2;
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(void*)arg3;
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
-+ (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2;
++ (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
++ (id)invocationWithBlock:(id)arg1;
++ (void)executeBlock:(id)arg1;
 
 - (void)setTarget:(id)arg1;
 - (id)target;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (void)invokeSuper;
-- (void)invokeUsingIMP:(int (*)())arg1;
-- (void)_addAttachedObject:(id)arg1;
-- (BOOL)argumentsRetained;
+- (id)init;
 - (void)setReturnValue:(void*)arg1;
 - (void)getArgument:(void*)arg1 atIndex:(int)arg2;
-- (void)retainArguments;
 - (id)methodSignature;
 - (void)getReturnValue:(void*)arg1;
+- (void)retainArguments;
 - (void)invokeWithTarget:(id)arg1;
 - (SEL)selector;
 - (void)setSelector:(SEL)arg1;
 - (void)invoke;
 - (void)setArgument:(void*)arg1 atIndex:(int)arg2;
-- (void)_webkit_invokeAndHandleException:(id)arg1;
+- (void)invokeSuper;
+- (void)invokeUsingIMP:(int (*)())arg1;
+- (void)_addAttachedObject:(id)arg1;
+- (BOOL)argumentsRetained;
+- (id)debugDescription;
 - (BOOL)wantsReturnValue;
+- (void)_webkit_invokeAndHandleException:(id)arg1;
+- (int)_firstXPCProxyReplyHandlerArgumentIndex;
 - (id)withProtocol:(id)arg1;
 - (BOOL)mf_shouldLogInvocation;
 

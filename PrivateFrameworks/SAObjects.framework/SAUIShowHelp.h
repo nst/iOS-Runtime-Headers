@@ -10,15 +10,15 @@
 @property(copy) NSString * speakableText;
 @property(copy) NSString * text;
 
-+ (id)showHelp;
 + (id)showHelpWithDictionary:(id)arg1 context:(id)arg2;
++ (id)showHelp;
 
 - (id)groupIdentifier;
 - (id)text;
 - (void)setText:(id)arg1;
-- (id)speakableText;
 - (void)setSpeakableText:(id)arg1;
-- (id)encodedClassName;
+- (id)speakableText;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

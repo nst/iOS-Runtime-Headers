@@ -15,14 +15,14 @@
 + (id)macAddressSet;
 + (id)macFormatter;
 
-- (BOOL)isPartialStringValid:(id*)arg1 proposedSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 errorDescription:(id*)arg5;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)userPreferredSeparator;
 - (id)possibleSeparatorsInvertedSet;
 - (void)setUserPreferredSeparator:(id)arg1;
 - (void)setPossibleSeparatorsInvertedSet:(id)arg1;
 - (id)possibleSeparators;
 - (void)setPossibleSeparators:(id)arg1;
+- (BOOL)isPartialStringValid:(id*)arg1 proposedSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 errorDescription:(id*)arg5;
 
 @end

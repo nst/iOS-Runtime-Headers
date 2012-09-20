@@ -5,9 +5,8 @@
 @interface TPTopLockBar : TPBottomLockBar  {
 }
 
-+ (float)defaultHeightForOrientation:(int)arg1;
 + (float)defaultLabelFontSize;
++ (float)defaultHeightForOrientation:(int)arg1;
 
-- (float)knobTrackInsetLeft;
 
 @end

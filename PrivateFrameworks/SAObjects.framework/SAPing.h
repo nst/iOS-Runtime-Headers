@@ -7,14 +7,14 @@
 @interface SAPing : SABaseClientBoundCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
 + (id)ping;
 + (id)pingWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

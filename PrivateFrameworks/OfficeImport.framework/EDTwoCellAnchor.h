@@ -20,15 +20,15 @@
 }
 
 
-- (id)init;
 - (id).cxx_construct;
-- (BOOL)isRelative;
-- (void)setRelative:(BOOL)arg1;
+- (id)init;
 - (int)editAs;
 - (void)setEditAs:(int)arg1;
-- (struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })to;
+- (void)setRelative:(BOOL)arg1;
 - (void)setTo:(struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })arg1;
-- (struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })from;
 - (void)setFrom:(struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })arg1;
+- (struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })to;
+- (BOOL)isRelative;
+- (struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })from;
 
 @end

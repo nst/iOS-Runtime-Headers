@@ -17,15 +17,15 @@
 
 - (void)setWidth:(id)arg1;
 - (id)width;
-- (int)span;
 - (void)setSpan:(int)arg1;
-- (id)ch;
-- (void)setCh:(id)arg1;
-- (id)chOff;
-- (void)setChOff:(id)arg1;
-- (id)vAlign;
+- (int)span;
 - (void)setVAlign:(id)arg1;
-- (id)align;
+- (id)vAlign;
+- (void)setChOff:(id)arg1;
+- (id)chOff;
+- (void)setCh:(id)arg1;
+- (id)ch;
 - (void)setAlign:(id)arg1;
+- (id)align;
 
 @end

@@ -9,13 +9,13 @@
 
 @property(copy) NSString * contingency;
 
-+ (id)repeatIt;
 + (id)repeatItWithDictionary:(id)arg1 context:(id)arg2;
++ (id)repeatIt;
 
 - (id)groupIdentifier;
-- (id)contingency;
 - (void)setContingency:(id)arg1;
-- (id)encodedClassName;
+- (id)contingency;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

@@ -8,11 +8,11 @@
 }
 
 @property(copy) NSArray * results;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)listSearchCompleted;
 + (id)listSearchCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)listSearchCompleted;
 
 - (id)groupIdentifier;
 - (id)results;

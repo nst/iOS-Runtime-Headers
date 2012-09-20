@@ -22,20 +22,21 @@
 }
 
 
-- (unsigned int)count;
 - (id)description;
-- (void)dealloc;
 - (id).cxx_construct;
+- (void)dealloc;
+- (unsigned int)count;
+- (id)itemsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)remove:(id)arg1;
+- (BOOL)contains:(id)arg1;
 - (id)itemDescriptions;
+- (id)allItems;
+- (void)foreach:(id)arg1;
+- (id)itemsPassingRectTest:(id)arg1 coordinateTest:(id)arg2;
+- (void)insert:(id)arg1;
+- (id)initWithInitialRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 minimumSize:(struct { double x1; double x2; })arg2 maximumItems:(unsigned int)arg3;
 - (id)depthFirstDescription;
 - (id)breadthFirstDescription;
 - (void)clearAllItemsPerforming:(id)arg1;
-- (id)allItems;
-- (id)itemsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithInitialRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 minimumSize:(struct { double x1; double x2; })arg2 maximumItems:(unsigned int)arg3;
-- (void)insert:(id)arg1;
-- (void)foreach:(id)arg1;
-- (BOOL)contains:(id)arg1;
-- (BOOL)remove:(id)arg1;
 
 @end

@@ -10,26 +10,25 @@
 
 @property(readonly) NSArray * applications;
 
++ (void)invalidateCurrentMap;
++ (void)startObservingNotifications;
++ (id)applicationForBundleIdentifier:(id)arg1;
++ (id)loadedMap;
 + (void)_startWatchingInstallationNotifications;
 + (BOOL)haveApplicationsOfType:(struct __CFString { }*)arg1;
 + (id)currentMap;
 + (void)setCurrentMap:(id)arg1;
 + (BOOL)currentMapIsValid;
 + (id)applicationForBundleIdentifier:(id)arg1 applicationType:(struct __CFString { }*)arg2;
-+ (id)applicationForBundleIdentifier:(id)arg1;
-+ (void)invalidateCurrentMap;
-+ (void)startObservingNotifications;
-+ (id)loadedMap;
 
-- (id)init;
-- (void)dealloc;
-- (id)copySoftwareUpdatesPropertyList;
-- (id)_newSoftwareUpdateDictionaryForApplication:(id)arg1;
-- (id)_softwareUpdatesAccountsStringForApplications:(id)arg1;
-- (id)copySoftwareUpdatesPropertyListWithUpdatesContext:(id)arg1;
-- (void)_loadFromMobileInstallation;
 - (id)applicationForBundleIdentifier:(id)arg1;
 - (id)applications;
 - (id)applicationForItemIdentifier:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)copySoftwareUpdatesPropertyList;
+- (id)_newSoftwareUpdateDictionaryForApplication:(id)arg1;
+- (id)copySoftwareUpdatesPropertyListWithUpdatesContext:(id)arg1;
+- (void)_loadFromMobileInstallation;
 
 @end

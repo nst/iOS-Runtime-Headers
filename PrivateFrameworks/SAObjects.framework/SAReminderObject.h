@@ -21,28 +21,28 @@
 + (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)groupIdentifier;
 - (id)subject;
 - (void)setSubject:(id)arg1;
-- (id)groupIdentifier;
-- (void)setImportant:(BOOL)arg1;
-- (void)setCompleted:(BOOL)arg1;
-- (void)setDueDate:(id)arg1;
-- (id)dueDate;
-- (id)trigger;
-- (void)setTrigger:(id)arg1;
-- (BOOL)completed;
-- (id)payload;
 - (void)setPayload:(id)arg1;
+- (id)payload;
+- (void)setImportant:(BOOL)arg1;
 - (id)lists;
-- (id)alternateSubject;
-- (void)setAlternateSubject:(id)arg1;
-- (id)dueDateTimeZoneId;
-- (void)setDueDateTimeZoneId:(id)arg1;
-- (BOOL)important;
 - (void)setLists:(id)arg1;
+- (BOOL)important;
+- (void)setDueDateTimeZoneId:(id)arg1;
+- (id)dueDateTimeZoneId;
+- (void)setAlternateSubject:(id)arg1;
+- (id)alternateSubject;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
 - (id)recurrence;
 - (void)setRecurrence:(id)arg1;
+- (void)setDueDate:(id)arg1;
+- (id)dueDate;
+- (void)setCompleted:(BOOL)arg1;
+- (id)trigger;
+- (void)setTrigger:(id)arg1;
+- (BOOL)completed;
 
 @end

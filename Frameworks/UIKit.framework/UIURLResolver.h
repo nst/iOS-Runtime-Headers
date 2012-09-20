@@ -5,13 +5,13 @@
 @interface UIURLResolver : NSObject  {
 }
 
++ (void)invalidate;
++ (id)sharedResolver;
 + (id)urlCacheChangedNotificationName;
 + (id)urlCacheName;
-+ (id)sharedResolver;
-+ (void)invalidate;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)_url:(id)arg1 matchesHostWhitelist:(id)arg2;
 - (BOOL)_url:(id)arg1 matchesHostPatterns:(id)arg2 pathPatterns:(id)arg3;
 - (BOOL)_string:(id)arg1 matchesPatterns:(id)arg2;

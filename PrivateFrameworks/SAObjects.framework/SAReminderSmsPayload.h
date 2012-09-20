@@ -10,14 +10,14 @@
 @property(copy) NSString * message;
 @property(copy) NSArray * recipients;
 
-+ (id)smsPayload;
 + (id)smsPayloadWithDictionary:(id)arg1 context:(id)arg2;
++ (id)smsPayload;
 
 - (id)groupIdentifier;
-- (id)recipients;
-- (void)setRecipients:(id)arg1;
 - (id)message;
 - (void)setMessage:(id)arg1;
+- (void)setRecipients:(id)arg1;
+- (id)recipients;
 - (id)encodedClassName;
 
 @end

@@ -19,13 +19,13 @@
 
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void)setView:(id)arg1;
+- (id)view;
+- (id)initWithEventIndex:(unsigned int)arg1;
+- (unsigned int)eventIndex;
 - (void)setEndDate:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
 - (id)startDate;
-- (id)initWithEventIndex:(unsigned int)arg1;
-- (unsigned int)eventIndex;
-- (void)setView:(id)arg1;
-- (id)view;
 
 @end

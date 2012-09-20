@@ -5,22 +5,38 @@
 @class NSString, NSArray;
 
 @interface UIKeyboardEmojiCategory : NSObject  {
-    NSString *_name;
+    int _type;
     NSArray *_emoji;
-    int _lastViewedPage;
+    int _lastVisibleFirstEmojiIndex;
 }
 
-@property(retain) NSString * name;
+@property int categoryType;
+@property(readonly) NSString * name;
 @property(retain) NSArray * emoji;
-@property int lastViewedPage;
+@property int lastVisibleFirstEmojiIndex;
+@property(readonly) NSString * displayName;
+@property(readonly) NSString * displayDescription;
+@property(readonly) NSString * displaySymbol;
 
++ (id)categoryForType:(int)arg1;
++ (id)localizedStringForKey:(id)arg1;
++ (id)emojiRecentsFromPreferences;
++ (id)getGlyphForRecents:(id)arg1;
++ (id)categories;
++ (int)numberOfCategories;
 
-- (void)setName:(id)arg1;
-- (void)dealloc;
-- (void)setLastViewedPage:(int)arg1;
-- (int)lastViewedPage;
-- (id)emoji;
-- (void)setEmoji:(id)arg1;
 - (id)name;
+- (id)description;
+- (void)dealloc;
+- (void)setLastVisibleFirstEmojiIndex:(int)arg1;
+- (int)lastVisibleFirstEmojiIndex;
+- (id)displayDescription;
+- (id)displaySymbol;
+- (void)releaseCategories;
+- (id)displayName;
+- (int)categoryType;
+- (void)setEmoji:(id)arg1;
+- (id)emoji;
+- (void)setCategoryType:(int)arg1;
 
 @end

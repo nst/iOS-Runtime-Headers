@@ -12,9 +12,14 @@
 @property(getter=_playbackItem,setter=_setPlaybackItem:,retain) struct OpaqueFigPlaybackItem { }* playbackItem;
 
 
-- (BOOL)isEqual:(id)arg1;
+- (id)lyrics;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (void)finalize;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (id)commonMetadata;
 - (id)initWithPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackIDs:(id)arg2;
 - (void)_setPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
@@ -22,13 +27,8 @@
 - (id)compatibleTrackForCompositionTrack:(id)arg1;
 - (id)metadataForFormat:(id)arg1;
 - (id)availableMetadataFormats;
-- (id)commonMetadata;
-- (id)lyrics;
 - (id)trackIDs;
 - (BOOL)providesPreciseDurationAndTiming;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
-- (void)finalize;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (struct CGSize { float x1; float x2; })naturalSize;
 
 @end

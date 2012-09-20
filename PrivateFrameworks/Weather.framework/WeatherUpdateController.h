@@ -28,31 +28,33 @@
     CLLocationManager *locationManager;
 }
 
-@property(copy) id weatherInfoCompletion;
-@property(copy) id currentLocationCompletion;
-@property(copy) id searchCompletion;
 @property(retain) CLLocationManager * locationManager;
+@property(copy) id searchCompletion;
+@property(copy) id currentLocationCompletion;
+@property(copy) id weatherInfoCompletion;
 
 + (id)sharedWeatherUpdateController;
 
-- (void)didFailWithError:(id)arg1;
 - (void)dealloc;
-- (void)searchForCitiesWithName:(id)arg1 withCompletionHandler:(id)arg2;
-- (int)activeCity;
-- (id)addCityToWeatherAppList:(id)arg1;
-- (BOOL)weatherListContainsCity:(id)arg1;
-- (void)removeAllCities;
 - (id)weatherInfoCompletion;
-- (void)setSearchCompletion:(id)arg1;
-- (void)setCurrentLocationCompletion:(id)arg1;
-- (void)setWeatherInfoCompletion:(id)arg1;
-- (id)citiesInWeatherAppList;
-- (id)searchCompletion;
+- (void)weatherInformationForIDs:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)weatherInformationForLocation:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)removeAllCities;
+- (BOOL)weatherListContainsCity:(id)arg1;
+- (id)addCityToWeatherAppList:(id)arg1;
+- (int)activeCity;
+- (void)searchForCitiesWithName:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)currentLocationCompletion;
-- (void)didValidateLocation:(id)arg1;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (id)searchCompletion;
+- (id)citiesInWeatherAppList;
 - (void)setLocationManager:(id)arg1;
 - (id)locationManager;
+- (void)setWeatherInfoCompletion:(id)arg1;
+- (void)setCurrentLocationCompletion:(id)arg1;
+- (void)setSearchCompletion:(id)arg1;
+- (void)didValidateLocation:(id)arg1;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
+- (void)didFailWithError:(id)arg1;
 
 @end

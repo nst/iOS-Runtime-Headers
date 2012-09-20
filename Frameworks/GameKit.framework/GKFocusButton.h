@@ -13,8 +13,8 @@
 
 
 - (void)dealloc;
-- (id)theme;
-- (void)setTheme:(id)arg1;
 - (void)updateForMiniBarState:(BOOL)arg1;
+- (void)setTheme:(id)arg1;
+- (id)theme;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class NSData, NSString, GKSessionInternal;
+@class NSString, GKSessionInternal;
 
 @interface GKPeerInternal : NSObject <GKTableCleanupWhenRemoved> {
     unsigned int _pid;
@@ -13,7 +13,7 @@
     int _serviceCount;
     struct _DNSServiceRef_t { } *_resolveService;
     struct _DNSServiceRef_t { } *_txtRecordService;
-    NSData **_addrList;
+    id *_addrList;
     unsigned int *_interfaceList;
     unsigned int _servicePort;
     struct _DNSServiceRef_t {} **_lookupServiceList;
@@ -24,54 +24,54 @@
     BOOL _needsToTimeout;
 }
 
-@property BOOL needsToTimeout;
-@property double connectTimeout;
-@property(retain) GKSessionInternal * session;
-@property BOOL moreResolvesComing;
-@property unsigned int servicePort;
-@property struct _DNSServiceRef_t { }* txtRecordService;
-@property struct _DNSServiceRef_t { }* resolveService;
-@property int serviceCount;
-@property(getter=isBusy) BOOL busy;
 @property(readonly) unsigned int pid;
 @property(readonly) NSString * displayName;
 @property(readonly) NSString * serviceName;
+@property(getter=isBusy) BOOL busy;
+@property int serviceCount;
+@property struct _DNSServiceRef_t { }* resolveService;
+@property struct _DNSServiceRef_t { }* txtRecordService;
+@property unsigned int servicePort;
+@property BOOL moreResolvesComing;
+@property(retain) GKSessionInternal * session;
+@property double connectTimeout;
+@property BOOL needsToTimeout;
 
 + (void)freeLookupList:(struct _DNSServiceRef_t {}**)arg1 andAddrList:(id*)arg2 andInterfaceList:(unsigned int*)arg3 count:(int)arg4;
 
-- (void)dealloc;
-- (id)serviceName;
 - (id)session;
 - (void)setSession:(id)arg1;
 - (BOOL)isBusy;
 - (void)setBusy:(BOOL)arg1;
-- (unsigned int)pid;
+- (void)dealloc;
 - (id)displayName;
-- (void)copyLookupList:(struct _DNSServiceRef_t {}***)arg1 count:(int*)arg2;
-- (BOOL)moreResolvesComing;
 - (void)setMoreResolvesComing:(BOOL)arg1;
+- (BOOL)moreResolvesComing;
 - (unsigned int)servicePort;
 - (struct _DNSServiceRef_t { }*)txtRecordService;
-- (void)cleanupForGKTable:(id)arg1;
-- (BOOL)tryDetruncateDisplayName:(id)arg1;
-- (void)clearResolving;
-- (void)setNeedsToTimeout:(BOOL)arg1;
-- (void)stopResolving;
-- (void)stopTXTRecordMonitoring;
-- (double)connectTimeout;
-- (BOOL)needsToTimeout;
-- (void)setConnectTimeout:(double)arg1;
-- (void)setResolveService:(struct _DNSServiceRef_t { }*)arg1;
-- (int)serviceCount;
-- (void)setServiceCount:(int)arg1;
-- (id)initWithPID:(unsigned int)arg1 displayName:(id)arg2 serviceName:(id)arg3;
-- (void)setTxtRecordService:(struct _DNSServiceRef_t { }*)arg1;
-- (int)usableAddrs;
-- (void)removeAndReturnLookupList:(struct _DNSServiceRef_t {}***)arg1 andAddrList:(id**)arg2 andInterfaceList:(unsigned int**)arg3 count:(int*)arg4;
-- (BOOL)containsLookupService:(struct _DNSServiceRef_t { }*)arg1;
-- (void)setAddr:(const struct sockaddr_in { unsigned char x1; unsigned char x2; unsigned short x3; struct in_addr { unsigned int x_4_1_1; } x4; BOOL x5[8]; }*)arg1 interface:(unsigned int)arg2 forLookupService:(struct _DNSServiceRef_t { }*)arg3;
-- (struct _DNSServiceRef_t { }*)resolveService;
-- (void)setServicePort:(unsigned int)arg1;
+- (void)copyLookupList:(struct _DNSServiceRef_t {}***)arg1 count:(int*)arg2;
 - (void)addLookup:(struct _DNSServiceRef_t { }*)arg1;
+- (void)setServicePort:(unsigned int)arg1;
+- (struct _DNSServiceRef_t { }*)resolveService;
+- (void)setAddr:(const struct sockaddr_in { unsigned char x1; unsigned char x2; unsigned short x3; struct in_addr { unsigned int x_4_1_1; } x4; BOOL x5[8]; }*)arg1 interface:(unsigned int)arg2 forLookupService:(struct _DNSServiceRef_t { }*)arg3;
+- (BOOL)containsLookupService:(struct _DNSServiceRef_t { }*)arg1;
+- (void)removeAndReturnLookupList:(struct _DNSServiceRef_t {}***)arg1 andAddrList:(id**)arg2 andInterfaceList:(unsigned int**)arg3 count:(int*)arg4;
+- (int)usableAddrs;
+- (void)setTxtRecordService:(struct _DNSServiceRef_t { }*)arg1;
+- (id)initWithPID:(unsigned int)arg1 displayName:(id)arg2 serviceName:(id)arg3;
+- (void)setServiceCount:(int)arg1;
+- (int)serviceCount;
+- (void)setResolveService:(struct _DNSServiceRef_t { }*)arg1;
+- (void)setConnectTimeout:(double)arg1;
+- (BOOL)needsToTimeout;
+- (double)connectTimeout;
+- (void)stopTXTRecordMonitoring;
+- (void)stopResolving;
+- (void)setNeedsToTimeout:(BOOL)arg1;
+- (void)clearResolving;
+- (BOOL)tryDetruncateDisplayName:(id)arg1;
+- (void)cleanupForGKTable:(id)arg1;
+- (id)serviceName;
+- (unsigned int)pid;
 
 @end

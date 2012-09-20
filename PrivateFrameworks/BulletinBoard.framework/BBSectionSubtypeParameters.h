@@ -33,9 +33,9 @@
 @property BOOL inertWhenLocked;
 @property BOOL preservesUnlockActionCase;
 @property BOOL bannerShowsSubtitle;
-@property BOOL visuallyIndicatesWhenDateIsInFuture;
 @property unsigned int subtypePriority;
 @property int iPodOutAlertType;
+@property BOOL visuallyIndicatesWhenDateIsInFuture;
 @property BBSectionSubtypeParameters * fallbackParameters;
 @property(retain) NSNumber * boxedCoalescesWhenLocked;
 @property(retain) NSNumber * boxedSuppressesMessageForPrivacy;
@@ -48,9 +48,11 @@
 @property(retain) NSNumber * boxedIPodOutAlertType;
 
 
-- (void)dealloc;
 - (void)setTopic:(id)arg1;
+- (void)dealloc;
 - (id)topic;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setIPodOutAlertType:(int)arg1;
 - (void)setSubtypePriority:(unsigned int)arg1;
 - (void)setVisuallyIndicatesWhenDateIsInFuture:(BOOL)arg1;
@@ -98,7 +100,5 @@
 - (void)setRealertCount:(unsigned int)arg1;
 - (unsigned int)realertCount;
 - (void)setUnlockActionLabel:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

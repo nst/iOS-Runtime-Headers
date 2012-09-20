@@ -25,14 +25,7 @@
 @property(getter=isHighlighted) BOOL highlighted;
 
 
-- (void)dealloc;
 - (void)reloadView;
-- (BOOL)isHighlighted;
-- (void)setHighlighted:(BOOL)arg1;
-- (id)_scriptingInfo;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_removeSubviewsForConfiguration;
 - (id)_clippedImageForImage:(id)arg1;
 - (void)_startUsingSubviewLayout;
@@ -41,18 +34,25 @@
 - (void)_reloadSubviewAlphasAnimated:(BOOL)arg1;
 - (BOOL)isDeleteConfirmationVisible;
 - (void)_reloadSubviewsForConfiguration;
-- (id)_clipPath;
 - (void)setUsesSubviews:(BOOL)arg1;
 - (BOOL)usesSubviews;
 - (void)setHighlightsOnlyContentView:(BOOL)arg1;
 - (void)setDrawAsDisabled:(BOOL)arg1;
 - (BOOL)drawAsDisabled;
-- (int)clipCorners;
+- (id)_clipPath;
 - (BOOL)highlightsOnlyContentView;
 - (void)setUsesSubviews:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setDeleteConfirmationVisisble:(BOOL)arg1;
 - (id)configuration;
 - (void)setConfiguration:(id)arg1;
+- (void)dealloc;
 - (void)setClipCorners:(int)arg1;
+- (int)clipCorners;
+- (BOOL)isHighlighted;
+- (void)setHighlighted:(BOOL)arg1;
+- (id)_scriptingInfo;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

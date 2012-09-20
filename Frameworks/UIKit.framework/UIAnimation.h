@@ -18,7 +18,7 @@
     struct { 
         unsigned int curve : 4; 
         unsigned int tvOutput : 1; 
-        unsigned int reserved : 27; 
+        unsigned int useNSTimer : 1; 
     } _animationFlags;
     double _startTime;
     double _duration;
@@ -27,23 +27,25 @@
 
 
 - (SEL)action;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (int)state;
 - (id)target;
+- (int)type;
 - (void)dealloc;
+- (BOOL)usesNSTimer;
+- (void)setAction:(SEL)arg1;
+- (void)stopAnimation;
 - (float)progressForFraction:(float)arg1;
 - (void)markStart:(double)arg1;
 - (void)setCompletion:(id)arg1;
 - (id)completion;
 - (void)markStop;
-- (BOOL)tvOutput;
 - (float)fractionForTime:(double)arg1;
-- (void)stopAnimation;
-- (void)setAction:(SEL)arg1;
+- (void)setUsesNSTimer:(BOOL)arg1;
 - (id)initWithTarget:(id)arg1;
 - (void)setProgress:(float)arg1;
 - (void)setAnimationCurve:(int)arg1;
-- (int)state;
 - (void)setDuration:(double)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

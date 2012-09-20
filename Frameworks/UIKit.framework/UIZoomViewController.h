@@ -12,8 +12,8 @@
 @property(readonly) UIWindow * window;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1 forWindow:(id)arg2;
 - (void)_zoomOrientationAnimationFinished:(id)arg1 finished:(BOOL)arg2 context:(void*)arg3;
 - (void)_changeZoom:(id)arg1;
@@ -25,6 +25,7 @@
 - (void)_setupPositioningAndRotationForInterfaceOrientation:(int)arg1 offscreen:(BOOL)arg2;
 - (BOOL)isClassicControlWindow:(id)arg1;
 - (void)loadView;
+- (id)screen;
 - (id)window;
 
 @end

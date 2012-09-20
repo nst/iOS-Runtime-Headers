@@ -2,23 +2,23 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSEventMonitorDelegate>, SSXPCConnection;
+@class <SSEventMonitorDelegate>, SSXPCConnection, NSObject<OS_dispatch_queue>;
 
 @interface SSEventMonitor : NSObject  {
     <SSEventMonitorDelegate> *_delegate;
-    struct dispatch_queue_s { } *_delegateQueue;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_delegateQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSXPCConnection *_eventConnection;
 }
 
 @property <SSEventMonitorDelegate> * delegate;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
 - (void)_connectEventConnection;
-- (void)_handleMessage:(void*)arg1 fromServerConnection:(struct _xpc_connection_s { }*)arg2;
+- (void)_handleMessage:(id)arg1 fromServerConnection:(id)arg2;
 
 @end

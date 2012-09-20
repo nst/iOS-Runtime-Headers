@@ -4,7 +4,7 @@
 
 @class PLAlbumChangeNotification, NSIndexSet, PLFilteredAlbum, PLIndexMapper;
 
-@interface PLFilteredAlbumChangeNotification : PLAlbumChangeNotification <PLIndexMapperDataSource> {
+@interface PLFilteredAlbumChangeNotification : PLAlbumChangeNotification <PLIndexMapperDataSource, PLDerivedNotification> {
     PLFilteredAlbum *_album;
     NSIndexSet *_oldFilteredIndexes;
     NSIndexSet *_filteredIndexes;
@@ -16,25 +16,25 @@
 @property(copy) NSIndexSet * filteredIndexes;
 @property(readonly) PLIndexMapper * indexMapper;
 
-+ (id)notificationForFilteredAlbum:(id)arg1 fromAlbumChangeNotification:(id)arg2;
++ (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)object;
 - (void)setFilteredIndexes:(id)arg1;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (BOOL)countDidChange;
 - (id)updatedFilteredIndexes;
-- (id)initWithFilteredAlbum:(id)arg1 albumChangeNotification:(id)arg2;
+- (id)initWithFilteredAlbum:(id)arg1 priorChangeState:(id)arg2 albumChangeNotification:(id)arg3;
 - (id)_changedObjects;
+- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (BOOL)keyAssetDidChange;
+- (BOOL)titleDidChange;
 - (id)_diffDescription;
+- (BOOL)shouldReload;
+- (id)album;
 - (id)indexMapper;
 - (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
 - (id)filteredIndexes;
-- (id)album;
-- (id)object;
-- (BOOL)titleDidChange;
-- (BOOL)shouldReload;
 
 @end

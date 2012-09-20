@@ -11,12 +11,12 @@
 }
 
 
+- (void)dealloc;
+- (void)finalize;
 - (id)initFromPath:(id)arg1;
 - (void)readData:(void*)arg1 length:(unsigned int)arg2;
 - (unsigned int)readAlignedDataSize;
 - (int)readInt;
 - (id)initFromMemoryNoCopy:(const void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
-- (void)dealloc;
-- (void)finalize;
 
 @end

@@ -17,6 +17,7 @@
 @property(retain) NSSet * propertiesToSet;
 
 
+- (id)initWithURL:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (void)setPropertiesToSet:(id)arg1;
@@ -29,7 +30,6 @@
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (int)absoluteOrder;
-- (id)initWithURL:(id)arg1;
 - (id)httpMethod;
 - (id)requestBody;
 

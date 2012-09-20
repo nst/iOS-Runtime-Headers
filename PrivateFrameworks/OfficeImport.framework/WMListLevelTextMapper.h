@@ -14,8 +14,8 @@
 - (void)dealloc;
 - (id)initWithText:(id)arg1;
 - (id)token:(unsigned int)arg1;
-- (id)initWithText:(id)arg1 format:(int)arg2;
 - (id)listLevelTextforOutline:(id)arg1;
+- (id)initWithText:(id)arg1 format:(int)arg2;
 - (id)initWithText:(id)arg1 format:(int)arg2 initNumber:(int)arg3;
 - (unsigned int)tokenCount;
 

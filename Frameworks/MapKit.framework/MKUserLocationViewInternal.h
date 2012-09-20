@@ -29,7 +29,6 @@
         unsigned int enforceLowerBound : 1; 
         unsigned int shouldDisplayHalo : 1; 
         unsigned int shouldDisplayEffects : 1; 
-        unsigned int effectsVisible : 1; 
         unsigned int shouldDisplayAccuracy : 1; 
         unsigned int shouldDisplayHeading : 1; 
         unsigned int stale : 1; 
@@ -59,12 +58,10 @@
 @property(readonly) BOOL hasQuiesced;
 @property BOOL shouldDisplayHalo;
 @property BOOL shouldDisplayEffects;
-@property BOOL effectsVisible;
 @property BOOL shouldDisplayAccuracy;
 @property BOOL shouldDisplayHeading;
 @property int zoomDirection;
 
-+ (void)initialize;
 + (id)dotPressedImage;
 + (id)greyDotImage;
 + (id)greyDotPressedImage;
@@ -78,10 +75,11 @@
 + (float)maxVisibleAccuracyDiameter;
 + (void)frameLayer:(id)arg1 initialAccuracy:(float*)arg2 restAccuracy:(float*)arg3;
 + (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })effectiveFrameWithFrame:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-+ (float)accuracyDiameter:(float)arg1 level:(unsigned int)arg2;
++ (float)accuracyDiameter:(float)arg1;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
-- (BOOL)isStale;
 - (void)updateDot;
 - (void)didEndZoom;
 - (id)initWithView:(id)arg1;
@@ -92,9 +90,8 @@
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)removeSublayer:(id)arg1 animated:(BOOL)arg2;
+- (void)effectsVisibleDidChange;
 - (BOOL)needsHalo;
 - (void)userLocationViewDidUpdate;
 - (void)setDisableAccuracyDidUpdate:(BOOL)arg1;
@@ -121,7 +118,6 @@
 - (void)resetScale;
 - (void)applyScale:(float)arg1 animated:(BOOL)arg2;
 - (void)shouldDisplayAccuracyDidChange;
-- (void)effectsVisibleDidChange;
 - (void)shouldDisplayEffectsDidChange;
 - (void)staleDidChange;
 - (void)userLocationAccuracyDidUpdate;
@@ -132,7 +128,6 @@
 - (int)zoomDirection;
 - (BOOL)shouldDisplayHeading;
 - (BOOL)shouldDisplayAccuracy;
-- (BOOL)effectsVisible;
 - (BOOL)shouldDisplayEffects;
 - (void)clearViewReferences;
 - (id)positionAnimation;
@@ -152,7 +147,6 @@
 - (void)orderInLayer:(id)arg1 beginTime:(double)arg2;
 - (void)setHeadingAccuracy:(double)arg1;
 - (void)setShouldDisplayHeading:(BOOL)arg1;
-- (void)setStale:(BOOL)arg1;
 - (void)updateHalo;
 - (void)setShouldDisplayHalo:(BOOL)arg1;
 - (void)removeHover;
@@ -160,13 +154,14 @@
 - (BOOL)shouldDisplayHalo;
 - (void)stopHover;
 - (void)setZoomDirection:(int)arg1 deltaScale:(float)arg2;
-- (void)setEffectsVisible:(BOOL)arg1;
-- (void)setZoomDirection:(int)arg1;
 - (void)setShouldDisplayEffects:(BOOL)arg1;
-- (unsigned int)mapType;
-- (void)setMapType:(unsigned int)arg1;
+- (void)setZoomDirection:(int)arg1;
 - (double)headingAccuracy;
+- (BOOL)isStale;
+- (void)setStale:(BOOL)arg1;
 - (float)accuracy;
+- (void)setMapType:(unsigned int)arg1;
+- (unsigned int)mapType;
 - (void)setAccuracy:(float)arg1;
 
 @end

@@ -11,22 +11,22 @@
     NSData *_data;
 }
 
-@property(retain) NSData * data;
+@property(retain) <MFDAStreamingContentConsumer> * streamConsumer;
 @property(readonly) BOOL succeeded;
 @property(retain) MFError * error;
-@property(retain) <MFDAStreamingContentConsumer> * streamConsumer;
+@property(retain) NSData * data;
 
 
+- (void)setError:(id)arg1;
+- (id)data;
+- (void)dealloc;
+- (void)setData:(id)arg1;
 - (BOOL)wantsData;
 - (id)streamingContentConsumer;
-- (void)setStreamConsumer:(id)arg1;
-- (BOOL)succeeded;
 - (id)streamConsumer;
 - (void)handleResponse:(id)arg1 error:(id)arg2;
-- (void)dealloc;
-- (void)setError:(id)arg1;
+- (BOOL)succeeded;
+- (void)setStreamConsumer:(id)arg1;
 - (id)error;
-- (id)data;
-- (void)setData:(id)arg1;
 
 @end

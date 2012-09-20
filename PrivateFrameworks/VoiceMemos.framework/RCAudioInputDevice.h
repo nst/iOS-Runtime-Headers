@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class AVCaptureConnection, AVCaptureMovieFileOutput, MPAudioDeviceController, RCSavedRecording, AVCaptureSession, NSMutableArray, NSString, NSDate, AVRemaker;
+@class AVCaptureConnection, AVCaptureMovieFileOutput, MPAudioDeviceController, RCSavedRecording, AVCaptureSession, AVAssetExportSession, NSMutableArray, NSString, NSDate;
 
-@interface RCAudioInputDevice : NSObject  {
+@interface RCAudioInputDevice : NSObject <AVCaptureFileOutputRecordingDelegate, AVCaptureFileOutputPauseResumeDelegate> {
     AVCaptureSession *_captureController;
     AVCaptureMovieFileOutput *_movieFileOutput;
     AVCaptureConnection *_captureConnection;
@@ -26,7 +26,7 @@
     unsigned int _preparingToRecord : 1;
     unsigned int _stopRecordingImmediately : 1;
     unsigned int _previewStarted : 1;
-    AVRemaker *_remaker;
+    AVAssetExportSession *_exportSession;
     NSString *_originalRecordingPath;
     NSString *_remadeRecordingPath;
     NSMutableArray *_recordingsToRemake;
@@ -37,45 +37,49 @@
 @property(readonly) BOOL audioInputAvailable;
 @property(readonly) BOOL isRecording;
 @property(readonly) BOOL isPaused;
+@property(retain) NSDate * recordingStartDate;
 @property(readonly) double elapsedRecordingTime;
 @property(readonly) BOOL shouldSuspend;
-@property(retain) NSDate * recordingStartDate;
 @property(readonly) RCSavedRecording * recordingBeingRemade;
 
 + (id)savedRecordingsDirectory;
 + (id)sharedInputDevice;
 
-- (id)init;
-- (void)dealloc;
+- (void)becomeActive;
+- (void)resignActive;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
-- (void)getAverageAudioLevel:(float*)arg1 peakAudioLevel:(float*)arg2;
-- (double)elapsedRecordingTime;
-- (BOOL)shouldSuspend;
-- (id)recordingStartDate;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (id)_init;
+- (void)_applicationWillTerminate:(id)arg1;
 - (void)setRecordingStartDate:(id)arg1;
-- (void)_availableModesDidChange:(id)arg1;
-- (void)_createCaptureController;
-- (void)_removeCaptureObservers;
-- (void)endRecording;
-- (BOOL)_setupAudioInputQueue;
-- (void)_teardownAudioInputQueue;
+- (id)recordingStartDate;
 - (void)_beginRecording;
-- (BOOL)audioInputAvailable;
-- (void)_remakeRecording:(id)arg1;
-- (void)_sessionDidStartRunning:(id)arg1;
-- (void)_interruptionDidBegin:(id)arg1;
-- (void)_interruptionDidEnd:(id)arg1;
-- (void)_sessionErrored:(id)arg1;
-- (BOOL)_attachCaptureDevice;
-- (void)_setDisableSBMediaHUD:(BOOL)arg1;
-- (void)_recordingStopped;
-- (void)_captureCompleted;
-- (void)_audioInputAvailabilityDidChange:(BOOL)arg1;
-- (void)_adjustDurationForPauseIfNecessary;
+- (BOOL)shouldSuspend;
+- (double)elapsedRecordingTime;
+- (void)getAverageAudioLevel:(float*)arg1 peakAudioLevel:(float*)arg2;
 - (BOOL)beginRecording;
-- (void)_remakingCompleted:(id)arg1;
-- (void)remakeRecording:(id)arg1;
+- (void)_adjustDurationForPauseIfNecessary;
+- (void)_audioInputAvailabilityDidChange:(BOOL)arg1;
+- (void)_captureCompleted;
+- (void)_recordingStopped;
+- (void)_setDisableSBMediaHUD:(BOOL)arg1;
+- (BOOL)_attachCaptureDevice;
+- (void)_sessionErrored:(id)arg1;
+- (void)_interruptionDidEnd:(id)arg1;
+- (void)_interruptionDidBegin:(id)arg1;
+- (void)_sessionDidStartRunning:(id)arg1;
+- (void)_remakeRecording:(id)arg1;
+- (BOOL)audioInputAvailable;
+- (void)_teardownAudioInputQueue;
+- (BOOL)_setupAudioInputQueue;
+- (void)endRecording;
+- (void)_removeCaptureObservers;
+- (void)_createCaptureController;
+- (void)_availableModesDidChange:(id)arg1;
 - (id)recordingBeingRemade;
+- (void)remakeRecording:(id)arg1;
 - (BOOL)isPaused;
 - (void)captureOutput:(id)arg1 didResumeRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (void)captureOutput:(id)arg1 didPauseRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
@@ -84,9 +88,5 @@
 - (void)resumeRecording;
 - (void)pauseRecording;
 - (BOOL)isRecording;
-- (void)_applicationWillTerminate:(id)arg1;
-- (id)_init;
-- (void)becomeActive;
-- (void)resignActive;
 
 @end

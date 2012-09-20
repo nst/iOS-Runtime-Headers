@@ -15,35 +15,39 @@
     struct __CFRunLoopSource { } *_store_source;
     BOOL _dns;
     struct __CTServerConnection { } *_telephony;
-    struct __CFMachPort { } *_port;
-    struct __CFRunLoopSource { } *_port_source;
     NSMutableSet *_calls;
-    int _interface;
+    long _interface;
+    struct __SCPreferences { } *_wiFiPreferences;
+    BOOL _hasCellDataCapability;
+    BOOL _hasWiFiCapability;
+    BOOL _isWiFiEnabled;
+    BOOL _isRoamingAllowed;
     BOOL _data;
 }
 
-+ (id)networkAssertionWithIdentifier:(id)arg1;
 + (id)sharedInstance;
++ (id)networkAssertionWithIdentifier:(id)arg1;
 
-- (BOOL)inCallWithNoData;
+- (void)invalidate;
+- (void)dealloc;
+- (id)init;
 - (void)removeNetworkObserver:(id)arg1;
-- (void)_setFlags:(unsigned int)arg1 forReachability:(struct __SCNetworkReachability { }*)arg2;
-- (void)_checkKeys:(id)arg1 forStore:(struct __SCDynamicStore { }*)arg2;
+- (void)_handleWiFiNotification:(unsigned int)arg1;
 - (void)_handleNotification:(id)arg1 info:(id)arg2 forConnection:(struct __CTServerConnection { }*)arg3;
-- (void)_handleDeath:(struct __CFMachPort { }*)arg1;
-- (id)addNetworkObserverBlock:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
-- (void)_setUpTelephony_nts;
-- (void)_setDataStatus_nts:(id)arg1;
-- (void)_tearDownTelephony_nts;
-- (BOOL)_isNetworkUp_nts;
+- (void)_setFlags:(unsigned int)arg1 forReachability:(struct __SCNetworkReachability { }*)arg2;
 - (BOOL)isNetworkUp;
-- (void)_handleDeath_nts;
+- (BOOL)isDataAvailable;
 - (id)_networkAssertionWithIdentifier:(id)arg1;
+- (int)dataStatus;
+- (BOOL)_isNetworkUp_nts;
+- (void)_tearDownTelephony_nts;
+- (struct { int x1; int x2; })_pollDataAndCallStatus_nts;
+- (void)_setDataStatus_nts:(id)arg1;
+- (void)_setUpTelephony_nts;
+- (void)_checkKeys:(id)arg1 forStore:(struct __SCDynamicStore { }*)arg2;
+- (id)addNetworkObserverBlock:(id)arg1 queue:(id)arg2;
 - (BOOL)inAirplaneMode;
 - (BOOL)isOnWWAN;
 - (BOOL)isFatPipe;
-- (id)init;
-- (void)dealloc;
-- (void)invalidate;
 
 @end

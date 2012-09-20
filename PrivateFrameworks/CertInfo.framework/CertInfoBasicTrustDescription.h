@@ -8,6 +8,9 @@
 }
 
 
+- (void)dealloc;
+- (id)initWithTrust:(struct __SecTrust { }*)arg1 action:(int)arg2;
+- (id)_expirationDate;
 - (id)certificateIssuerSummaryAtIndex:(unsigned int)arg1;
 - (id)certificateExpirationDateAtIndex:(unsigned int)arg1;
 - (id)certificateSubjectSummaryAtIndex:(unsigned int)arg1;
@@ -17,8 +20,5 @@
 - (id)summaryTitle;
 - (id)certificatePropertiesAtIndex:(unsigned int)arg1;
 - (unsigned int)certificateCount;
-- (void)dealloc;
-- (id)initWithTrust:(struct __SecTrust { }*)arg1 action:(int)arg2;
-- (id)_expirationDate;
 
 @end

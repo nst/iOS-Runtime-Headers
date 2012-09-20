@@ -15,17 +15,13 @@
 @property(getter=isLeftButtonEnabled) BOOL leftButtonEnabled;
 @property(getter=isRightButtonEnabled) BOOL rightButtonEnabled;
 @property double currentTimeInterval;
-@property unsigned int roundedCornersCompensationDelayMode;
+@property int roundedCornersCompensationDelayMode;
 @property(setter=_setLeftButton:,retain) id _leftButton;
 @property(setter=_setRightButton:,retain) id _rightButton;
 
-+ (float)defaultHeight;
 + (void)_loadImages;
++ (float)defaultHeight;
 
-- (void)dealloc;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setRightButtonEnabled:(BOOL)arg1;
 - (BOOL)isRightButtonEnabled;
 - (void)setLeftButtonEnabled:(BOOL)arg1;
@@ -35,8 +31,8 @@
 - (void)clearAllVibrationComponents;
 - (void)vibrationComponentDidEnd;
 - (void)vibrationComponentDidStart;
-- (void)setRoundedCornersCompensationDelayMode:(unsigned int)arg1;
-- (unsigned int)roundedCornersCompensationDelayMode;
+- (void)setRoundedCornersCompensationDelayMode:(int)arg1;
+- (int)roundedCornersCompensationDelayMode;
 - (void)setCurrentTimeInterval:(double)arg1;
 - (double)currentTimeInterval;
 - (void)_setRightButton:(id)arg1;
@@ -44,5 +40,9 @@
 - (id)_rightButton;
 - (id)_leftButton;
 - (void)_buttonTapped:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

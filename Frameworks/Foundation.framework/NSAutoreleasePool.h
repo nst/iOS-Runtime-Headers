@@ -9,6 +9,8 @@
     void *_reserved;
 }
 
++ (void)addObject:(id)arg1;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)resetTotalAutoreleasedObjects;
 + (unsigned int)totalAutoreleasedObjects;
 + (void)setPoolCountHighWaterResolution:(unsigned int)arg1;
@@ -22,17 +24,15 @@
 + (unsigned int)autoreleasedObjectCount;
 + (void)releaseAllPools;
 + (void)showPools;
-+ (void)addObject:(id)arg1;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (unsigned int)retainCount;
-- (id)retain;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (void)addObject:(id)arg1;
-- (oneway void)release;
-- (id)autorelease;
-- (id)init;
-- (void)dealloc;
+- (id)retain;
 - (void)drain;
+- (void)dealloc;
+- (oneway void)release;
+- (id)init;
+- (id)autorelease;
 
 @end

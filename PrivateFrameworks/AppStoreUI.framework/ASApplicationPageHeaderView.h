@@ -23,18 +23,16 @@
     unsigned int _titleWraps : 1;
 }
 
-+ (id)backdropColor;
 + (id)placeholderImage;
++ (id)backdropColor;
 
-- (void)dealloc;
-- (void)reloadView;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
-- (void)setStyle:(unsigned int)arg1;
-- (void)willMoveToWindow:(id)arg1;
-- (void)sizeToFit;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)reloadView;
+- (void)_touchCaptureAction:(id)arg1;
+- (void)_softwareMapChangedNotification:(id)arg1;
+- (void)setItem:(id)arg1;
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)setPurchaseConfirmationTitle:(id)arg1;
 - (void)setItemImage:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_ratingsViewFrame;
@@ -54,10 +52,12 @@
 - (id)_subtitleColor;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_offerButtonFrame;
 - (void)_purchasesChangedNotification:(id)arg1;
-- (void)_touchCaptureAction:(id)arg1;
-- (void)_softwareMapChangedNotification:(id)arg1;
-- (void)setItem:(id)arg1;
-- (void)_applicationWillEnterForegroundNotification:(id)arg1;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)dealloc;
+- (void)setStyle:(unsigned int)arg1;
+- (void)willMoveToWindow:(id)arg1;
+- (void)sizeToFit;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

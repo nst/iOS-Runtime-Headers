@@ -9,13 +9,13 @@
 
 @property(retain) SASyncAnchor * current;
 
-+ (id)chunkAccepted;
 + (id)chunkAcceptedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)chunkAccepted;
 
 - (id)groupIdentifier;
 - (void)setCurrent:(id)arg1;
 - (id)current;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

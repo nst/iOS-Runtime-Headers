@@ -14,8 +14,8 @@
 
 + (id)runLoopStateWithRunLoop:(struct __CFRunLoop { }*)arg1;
 
-- (struct __CFRunLoop { }*)runLoop;
 - (void)dealloc;
+- (struct __CFRunLoop { }*)runLoop;
 - (void)setSignaled:(BOOL)arg1;
 - (BOOL)signaled;
 - (void)setSignalSource:(struct __CFRunLoopSource { }*)arg1;

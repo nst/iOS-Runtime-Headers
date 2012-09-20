@@ -6,7 +6,7 @@
 }
 
 
-- (id)urlRequest;
 - (id)urlString;
+- (id)urlRequest;
 
 @end

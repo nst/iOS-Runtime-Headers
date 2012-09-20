@@ -19,13 +19,13 @@
 - (void)dealloc;
 - (BOOL)valid;
 - (void)finalize;
-- (BOOL)valueMissing;
-- (BOOL)typeMismatch;
-- (BOOL)patternMismatch;
-- (BOOL)tooLong;
-- (BOOL)rangeUnderflow;
-- (BOOL)rangeOverflow;
-- (BOOL)stepMismatch;
 - (BOOL)customError;
+- (BOOL)stepMismatch;
+- (BOOL)rangeOverflow;
+- (BOOL)rangeUnderflow;
+- (BOOL)tooLong;
+- (BOOL)patternMismatch;
+- (BOOL)typeMismatch;
+- (BOOL)valueMissing;
 
 @end

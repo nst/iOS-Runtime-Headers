@@ -9,11 +9,6 @@
 }
 
 
-- (void)dealloc;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)reloadData;
 - (id)_accessoryView;
 - (BOOL)_canWriteReview;
 - (void)_writeAReview:(id)arg1;
@@ -21,5 +16,10 @@
 - (void)_reloadHeaderView;
 - (id)newTermsAndConditionsFooter;
 - (void)reloadForChangedRowCount:(int)arg1;
+- (void)dealloc;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)reloadData;
 
 @end

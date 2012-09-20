@@ -9,14 +9,16 @@
     NSNumber *_handle;
 }
 
+@property(readonly) CBConcretePeripheral * peripheral;
 @property(readonly) NSNumber * handle;
 
 
+- (void)invalidate;
 - (void)dealloc;
 - (id)handle;
-- (id)handleValueUpdated:(id)arg1;
+- (id)peripheral;
 - (id)handleValueWritten:(id)arg1;
-- (void)handlePeripheralDisconnection;
+- (id)handleValueUpdated:(id)arg1;
 - (id)initWithCharacteristic:(id)arg1 UUID:(id)arg2 peripheral:(id)arg3 handle:(id)arg4;
 
 @end

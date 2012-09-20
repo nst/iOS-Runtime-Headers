@@ -18,10 +18,10 @@
 }
 
 
+- (void)dealloc;
 - (void)removeAllBlockingAccessClaimIDs;
 - (void)removeBlockingAccessClaimID:(id)arg1;
 - (BOOL)setReacquirer:(id)arg1;
 - (BOOL)addBlockingAccessClaimID:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -8,42 +8,38 @@
     NSMutableArray *_uncommittedTouches;
     UITouch *_activeTouch;
     UITouch *_shiftKeyTouch;
-    UITouch *_swipeTouch;
     int _orientation;
     int m_orientation;
 }
 
 @property(retain) UITouch * activeTouch;
 @property(retain) UITouch * shiftKeyTouch;
-@property(retain) UITouch * swipeTouch;
 @property int orientation;
 
 
-- (void)setShift:(BOOL)arg1;
 - (void)dealloc;
-- (id)swipeTouch;
 - (id)shiftKeyTouch;
 - (float)flickDistance;
 - (void)addSwipeRecognizer;
 - (void)setDelegate:(id)arg1 forKey:(id)arg2;
 - (void)restoreDefaultsForKey:(id)arg1;
-- (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
-- (void)setAction:(SEL)arg1 forKey:(id)arg2;
-- (void)setTarget:(id)arg1 forKey:(id)arg2;
-- (void)setLabel:(id)arg1 forKey:(id)arg2;
+- (BOOL)performSpaceAction;
 - (void)touchCancelled:(id)arg1;
 - (id)activeTouch;
 - (void)touchUp:(id)arg1;
 - (void)touchDragged:(id)arg1;
 - (void)touchDown:(id)arg1;
 - (void)commitTouchesBeforeTouch:(id)arg1;
-- (void)setSwipeTouch:(id)arg1;
 - (void)setShiftKeyTouch:(id)arg1;
 - (void)setActiveTouch:(id)arg1;
 - (SEL)handlerForNotification:(id)arg1;
 - (void)addWipeRecognizer;
 - (void)wipeGestureRecognized:(id)arg1;
 - (void)swipeGestureRecognized:(id)arg1;
+- (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
+- (void)setAction:(SEL)arg1 forKey:(id)arg2;
+- (void)setTarget:(id)arg1 forKey:(id)arg2;
+- (void)setLabel:(id)arg1 forKey:(id)arg2;
 - (id)simulateTouchForCharacter:(id)arg1 errorVector:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
 - (id)simulateTouch:(struct CGPoint { float x1; float x2; })arg1;
 - (void)changeToKeyplane:(id)arg1;
@@ -52,7 +48,6 @@
 - (id)baseKeyForString:(id)arg1;
 - (void)updateLocalizedKeys:(BOOL)arg1;
 - (BOOL)isShiftKeyBeingHeld;
-- (BOOL)shiftKeyRequiresImmediateUpdate;
 - (BOOL)isShiftKeyPlaneChooser;
 - (BOOL)ignoresShiftState;
 - (float)hitBuffer;
@@ -61,7 +56,6 @@
 - (void)restoreDefaultsForAllKeys;
 - (void)didClearInput;
 - (void)phraseBoundaryDidChange;
-- (void)updateReturnKey;
 - (BOOL)usesAutoShift;
 - (BOOL)updateKeysWithDelegates;
 - (void)setAutoshift:(BOOL)arg1;
@@ -73,15 +67,17 @@
 - (BOOL)doesKeyCharging;
 - (id)activationIndicatorView;
 - (BOOL)shouldShowIndicator;
+- (struct CGSize { float x1; float x2; })dragGestureSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
 - (void)deactivateActiveKeys;
 - (void)clearAllKeyDelegates;
-- (void)clearUnusedObjects;
+- (void)clearUnusedObjects:(BOOL)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (int)orientation;
+- (void)setShift:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

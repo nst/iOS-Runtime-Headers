@@ -24,26 +24,26 @@
 @property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 @property(readonly) NSSet * stringSet;
 
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (void)setAddressBook:(id)arg1;
-- (id)addressBook;
+- (id)init;
 - (void)setCollection:(id)arg1;
 - (void)setShared:(id)arg1;
 - (void)setSearchAddressBook:(id)arg1;
 - (void)setUnauthenticated:(id)arg1;
 - (void)setPrincipal:(id)arg1;
-- (id)copyParseRules;
-- (id)principal;
 - (id)shared;
 - (BOOL)isTypeWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)searchAddressBook;
+- (id)principal;
 - (id)stringSet;
 - (id)unauthenticated;
 - (void)write:(id)arg1;
+- (id)addressBook;
 - (id)collection;
+- (void)setAddressBook:(id)arg1;
 - (void)setExtraChild:(id)arg1 forNameSpace:(id)arg2 name:(id)arg3;
 - (id)extraChildWithNameSpace:(id)arg1 name:(id)arg2;
 - (void)setBookmarkMenuFolder:(id)arg1;

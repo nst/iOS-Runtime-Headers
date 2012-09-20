@@ -7,15 +7,15 @@
 @interface PFUbiquityPeerState : NSManagedObject  {
 }
 
-@property(retain) PFUbiquityStoreMetadata * storeMetadata;
-@property(retain) PFUbiquityPeer * peer;
-@property(retain) NSNumber * transactionNumber;
-@property(retain) NSString * storeName;
 @property(retain) NSString * lastProcessedTransactionLogURL;
+@property(retain) NSString * storeName;
+@property(retain) NSNumber * transactionNumber;
+@property(retain) PFUbiquityPeer * peer;
+@property(retain) PFUbiquityStoreMetadata * storeMetadata;
 
 + (id)peerStatesMatchingStoreName:(id)arg1 inManagedObjectContext:(id)arg2 omittingLocalPeerID:(id)arg3;
-+ (id)peerStatesMatchingStoreName:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)peerStateForStoreName:(id)arg1 andPeerID:(id)arg2 inManagedObjectContext:(id)arg3;
++ (id)peerStatesMatchingStoreName:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)peerStateForStoreName:(id)arg1 andPeerID:(id)arg2 inManagedObjectContext:(id)arg3 createIfMissing:(BOOL)arg4;
 
 - (id)initWithStoreName:(id)arg1 insertIntoManagedObjectContext:(id)arg2;

@@ -94,9 +94,11 @@
 - (void)autoscrollTimerFired:(id)arg1;
 - (int)autoscrollDirectionsForHandle:(id)arg1;
 - (id)selectionNode;
+- (BOOL)isHorizontalWritingMode;
 - (void)animateSloppyReleaseOfHandleInText:(id)arg1 withMagnifier:(id)arg2;
 - (void)switchToBlockModeForHandle:(id)arg1;
 - (BOOL)shouldSwitchToBlockModeForHandle:(id)arg1;
+- (void)setOrientationOfMagnifier:(id)arg1 forHandleInText:(id)arg2;
 - (void)considerFlipping;
 - (void)stopAnyAutoscrolling;
 - (void)updateAutoscrollForHandle:(id)arg1;
@@ -116,8 +118,8 @@
 - (id)handles;
 - (void)showCopyCalloutWithAnimation:(BOOL)arg1;
 - (void)updateTextRangeViewSelectionRects;
-- (void)onAfterScrollShowingSelection:(BOOL)arg1;
-- (void)onBeforeScrollHidingSelection:(BOOL)arg1;
+- (void)onAfterScrollOrZoomShowingSelection:(BOOL)arg1;
+- (void)onBeforeScrollOrZoomHidingSelection:(BOOL)arg1;
 - (void)showControls;
 - (BOOL)updateRectForCalloutBar:(id)arg1 inWindow:(id)arg2;
 - (id)handleWithPosition:(int)arg1;
@@ -129,8 +131,8 @@
 - (void)startSelectionCreationWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)hideControls;
 - (id)initWithWebDocumentView:(id)arg1;
-- (void)didEndScrollingPage;
-- (void)willStartScrollingPage;
+- (void)didEndScrollingOrZoomingPage;
+- (void)willStartScrollingOrZoomingPage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionFrame;
 - (void)scaleChanged;
 - (void)didEndScrollingOverflow;

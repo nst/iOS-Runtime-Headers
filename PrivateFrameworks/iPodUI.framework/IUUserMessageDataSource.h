@@ -15,7 +15,9 @@
     NSString *_messageSubtitle;
     NSString *_messageTitle;
     NSURL *_findContentURL;
+    float _modalContextTopInset;
     BOOL _showStrings;
+    float _modalContextTopOffset;
 }
 
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
@@ -24,19 +26,22 @@
 @property(retain) NSString * messageSubtitle;
 @property(retain) NSURL * findContentURL;
 @property(readonly) BOOL showStrings;
+@property float modalContextTopOffset;
 
 
-- (id)init;
+- (void)setMessageTitle:(id)arg1;
+- (id)messageTitle;
 - (void)dealloc;
+- (id)init;
 - (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)image;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)setImage:(id)arg1;
-- (void)setMessageTitle:(id)arg1;
-- (id)messageTitle;
+- (float)modalContextTopOffset;
 - (BOOL)showStrings;
 - (id)findContentURL;
 - (id)messageSubtitle;
+- (void)setModalContextTopOffset:(float)arg1;
 - (id)initForMusic;
 - (BOOL)isRestorableNavigationPathNode;
 - (id)initForVideo;

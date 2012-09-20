@@ -10,7 +10,6 @@
 
 @interface SSPurchaseValidationContext : NSObject <NSCopying> {
     NSIndexSet *_allowedDeviceIdentifiers;
-    long long _diskSpaceAvailable;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -21,7 +20,6 @@
 }
 
 @property(copy) NSIndexSet * allowedDeviceIdentifiers;
-@property long long diskSpaceAvailable;
 @property(copy) id sizeLimitBlock;
 @property(copy) NSString * systemName;
 @property(copy) NSString * systemVersion;
@@ -29,18 +27,14 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)systemVersion;
-- (id)systemName;
-- (long long)diskSpaceAvailable;
+- (void)setSystemVersion:(id)arg1;
 - (void)setSystemName:(id)arg1;
 - (void)setSizeLimitBlock:(id)arg1;
-- (void)setDiskSpaceAvailable:(long long)arg1;
 - (void)setAllowedDeviceIdentifiers:(id)arg1;
-- (BOOL)_isAnyIPod;
-- (BOOL)_isAnyIPad;
 - (id)allowedDeviceIdentifiers;
 - (id)_supportedDeviceForOffer:(id)arg1;
 - (id)sizeLimitBlock;
-- (void)setSystemVersion:(id)arg1;
+- (id)systemVersion;
+- (id)systemName;
 
 @end

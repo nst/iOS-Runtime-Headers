@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIView<UITextSelectingContainer>, NSMutableArray, UIWebDragDotView;
+@class UIView<UITextInput>, NSArray, NSMutableArray, UIWebDragDotView;
 
 @interface UIWebTextRangeView : UIView  {
-    UIView<UITextSelectingContainer> *m_container;
+    UIView<UITextInput> *m_container;
     NSArray *_rects;
     NSMutableArray *_rectViews;
-    UIWebDragDotView *_topDot;
-    UIWebDragDotView *_bottomDot;
+    UIWebDragDotView *_startDot;
+    UIWebDragDotView *_endDot;
     BOOL _magnifying;
 }
 
-@property(readonly) UIView<UITextSelectingContainer> * container;
+@property(readonly) UIView<UITextInput> * container;
 @property(copy) NSArray * rects;
 
 
@@ -23,9 +23,11 @@
 - (struct CGPoint { float x1; float x2; })startCorner;
 - (struct CGPoint { float x1; float x2; })endCorner;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectAtIndex:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
+- (BOOL)endIsHorizontal;
+- (BOOL)startIsHorizontal;
 - (void)geometryChanged;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
 - (void)updateRectViews;
 - (id)container;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endEdge;

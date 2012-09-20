@@ -12,8 +12,8 @@
 
 + (id)wrapWebVisiblePosition:(id)arg1;
 
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)setWebVisiblePosition:(id)arg1;
 - (id)webVisiblePosition;

@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSURL, NSString, NSDictionary;
+@class NSString, NSObject<OS_dispatch_queue>, NSDictionary, NSURL;
 
 @interface SUMediaObject : NSObject  {
-    struct dispatch_queue_s { } *_dispatchQueue;
-    unsigned int _imagePickerQualityType;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    int _imagePickerQualityType;
     NSDictionary *_pickerInfo;
 }
 
 @property(readonly) NSDictionary * imagePickerInfo;
-@property unsigned int imagePickerQualityType;
+@property int imagePickerQualityType;
 @property(readonly) NSString * inputSourceMIMEType;
 @property(readonly) NSString * mediaType;
 @property(readonly) NSURL * mediaURL;
@@ -19,8 +19,6 @@
 
 + (id)newMediaObjectWithImagePickerInfo:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
 - (id)newComposeImageWithMaximumSize:(float)arg1;
 - (id)newInputSource;
 - (id)inputSourceMIMEType;
@@ -30,12 +28,14 @@
 - (id)referenceURL;
 - (id)initWithImagePickerInfo:(id)arg1;
 - (id)mediaURL;
-- (unsigned int)imagePickerQualityType;
-- (id)mediaType;
+- (int)imagePickerQualityType;
 - (id)imagePickerInfo;
 - (id)newThumbnailImageWithMaximumSize:(float)arg1;
 - (void)saveToLibraryWithCompletionBlock:(id)arg1;
 - (void)loadLibraryThumbnailWithCompletionBlock:(id)arg1;
-- (void)setImagePickerQualityType:(unsigned int)arg1;
+- (void)setImagePickerQualityType:(int)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)mediaType;
 
 @end

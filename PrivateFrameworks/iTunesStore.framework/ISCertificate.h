@@ -8,10 +8,10 @@
 
 
 - (void)dealloc;
+- (void)_invalidate;
+- (BOOL)isValid;
 - (void)setCertificateData:(id)arg1;
 - (BOOL)checkData:(id)arg1 againstAppleSignature:(id)arg2;
 - (BOOL)checkData:(id)arg1 againstSignature:(id)arg2;
-- (void)_invalidate;
-- (BOOL)isValid;
 
 @end

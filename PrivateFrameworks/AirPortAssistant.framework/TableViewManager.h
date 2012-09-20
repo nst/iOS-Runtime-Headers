@@ -21,8 +21,11 @@
 @property(retain) UITableView * managedTableView;
 
 
-- (id)init;
+- (void)buttonAction:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (id)init;
 - (id)progressView:(id)arg1;
 - (id)segmentedControlView:(id)arg1;
 - (id)buttonView:(id)arg1;
@@ -42,7 +45,6 @@
 - (void)setLabelViewValue:(id)arg1 usingItemInfo:(id)arg2;
 - (void)setImageViewValue:(id)arg1 usingItemInfo:(id)arg2;
 - (void)segmentedControlValueChanged:(id)arg1;
-- (void)buttonAction:(id)arg1;
 - (void)switchAction:(id)arg1;
 - (void)setRepresentedObject:(id)arg1 forCellAtIndexPath:(id)arg2;
 - (void)updateRowInfoValue:(id)arg1 forKey:(id)arg2 atIndexPath:(id)arg3;
@@ -54,7 +56,6 @@
 - (void)setNewRow:(id)arg1 tag:(unsigned int)arg2;
 - (BOOL)setNewRow:(id)arg1 itemAttribute:(id)arg2 forItemOfType:(id)arg3 atItemTypeIndex:(unsigned int)arg4 toValue:(id)arg5;
 - (void)setValue:(id)arg1 forItemOfType:(id)arg2 atItemTypeIndex:(unsigned int)arg3 inCellAtIndexPath:(id)arg4;
-- (id)getValueForFirstItemOfType:(id)arg1 inCellAtIndexPath:(id)arg2;
 - (id)createRowStyleProgressViewWithCancelAndStatus:(id)arg1 statusText:(id)arg2 altText:(id)arg3 withTag:(unsigned int)arg4;
 - (id)createRowStyleSegmentedControlWithItems:(id)arg1 selectedSegmentIndex:(id)arg2 enabled:(BOOL)arg3 withTag:(unsigned int)arg4;
 - (id)createRowStyleTitledParagraphWithLeftImage:(id)arg1 title:(id)arg2 bodyText:(id)arg3 withTag:(unsigned int)arg4;
@@ -74,6 +75,7 @@
 - (id)cellInfoOfSelectedRowInMenuSection:(unsigned int)arg1;
 - (unsigned int)indexOfSelectedRowInMenuSection:(unsigned int)arg1;
 - (id)findNextResponderInTableView:(id)arg1 foundParentCell:(id*)arg2;
+- (id)getValueForFirstItemOfType:(id)arg1 inCellAtIndexPath:(id)arg2;
 - (unsigned int)findAndSetItemObject:(id)arg1 toValue:(id)arg2 inCellWithTag:(unsigned int)arg3;
 - (id)getCellDictForCellAtIndexPath:(id)arg1;
 - (void)setDescriptorObject:(id)arg1 forKey:(id)arg2 inSection:(int)arg3;
@@ -131,24 +133,22 @@
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (void)deleteRowsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;
 - (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
-- (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)awakeFromNib;
-- (id)delegate;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)setDelegate:(id)arg1;
+- (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

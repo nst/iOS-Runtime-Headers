@@ -18,18 +18,18 @@
 @property(copy) NSData * data;
 
 
-- (void)setContentType:(id)arg1;
-- (id)contentLocation;
+- (id)data;
 - (void)dealloc;
+- (void)setData:(id)arg1;
+- (void)setContentLocation:(id)arg1;
+- (void)setContentId:(id)arg1;
+- (id)contentId;
 - (id)allContentTypeParameterNames;
 - (void)addContentTypeParameterWithName:(id)arg1 value:(id)arg2;
 - (id)contentTypeParameterWithName:(id)arg1;
 - (id)initWithData:(id)arg1 contentType:(id)arg2;
-- (id)data;
-- (void)setData:(id)arg1;
+- (void)setContentType:(id)arg1;
+- (id)contentLocation;
 - (id)contentType;
-- (id)contentId;
-- (void)setContentLocation:(id)arg1;
-- (void)setContentId:(id)arg1;
 
 @end

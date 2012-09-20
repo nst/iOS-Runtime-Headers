@@ -20,12 +20,13 @@
 - (void)cancelProgress;
 - (void)doneProgress;
 - (void)setDonePrinting:(BOOL)arg1;
-- (void)setMessage:(id)arg1;
 - (void)dismissAnimated:(BOOL)arg1;
+- (void)setMessage:(id)arg1;
 - (BOOL)visible;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)show;
 
 @end

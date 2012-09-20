@@ -12,11 +12,11 @@
 
 + (id)notificationWithAlbumList:(id)arg1 snapshot:(id)arg2 changedAlbums:(id)arg3;
 
-- (id)userInfo;
+- (id)name;
 - (id)description;
+- (id)userInfo;
 - (void)dealloc;
 - (id)_contentRelationshipName;
-- (id)name;
 - (struct NSObject { Class x1; }*)albumList;
 
 @end

@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSString, SSNetworkConstraints, NSURL;
+@class NSMutableSet, NSString, NSArray, NSURL;
 
-@interface MPItemDownloadProperties : NSObject <NSCopying> {
+@interface MPItemDownloadProperties : NSObject <SSDownloadManagerObserver, NSCopying> {
     long long _assetFileSize;
     NSURL *_destinationURL;
     BOOL _downloadExists;
     NSString *_downloadIdentifier;
-    SSNetworkConstraints *_networkConstraints;
+    long long _downloadSizeLimit;
+    unsigned long long _downloadToken;
+    NSMutableSet *_downloadTokenCompletionHandlers;
     NSArray *_sinfs;
     NSURL *_sourceURL;
 }
@@ -18,25 +20,30 @@
 @property(readonly) NSURL * destinationURL;
 @property(readonly) BOOL downloadExists;
 @property(readonly) NSString * downloadIdentifier;
-@property(readonly) SSNetworkConstraints * networkConstraints;
+@property unsigned long long downloadToken;
+@property(readonly) long long downloadSizeLimit;
 @property(readonly) NSURL * sourceURL;
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
+- (void)setDownloadToken:(unsigned long long)arg1;
+- (unsigned long long)downloadToken;
+- (BOOL)downloadExists;
+- (id)newAVAssetOptionsWithDownloadStyle:(int)arg1;
+- (void)acquireDownloadTokenWithCompletionHandler:(id)arg1;
+- (id)downloadIdentifier;
+- (id)initWithDownloadIdentifier:(id)arg1;
+- (id)initWithDownload:(id)arg1;
+- (void)_reloadNetworkConstraints;
+- (long long)downloadSizeLimit;
+- (long long)assetFileSize;
+- (id)initWithMediaItem:(id)arg1;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)_reloadNetworkConstraints;
-- (id)networkConstraints;
-- (long long)assetFileSize;
-- (id)newAVAssetOptionsWithDownloadStyle:(int)arg1;
-- (id)downloadIdentifier;
-- (BOOL)downloadExists;
-- (id)initWithDownloadIdentifier:(id)arg1;
-- (id)initWithMediaItem:(id)arg1;
-- (id)initWithDownload:(id)arg1;
-- (id)destinationURL;
 - (id)sourceURL;
+- (id)destinationURL;
 
 @end

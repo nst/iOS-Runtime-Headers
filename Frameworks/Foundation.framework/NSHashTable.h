@@ -5,11 +5,30 @@
 @interface NSHashTable : NSObject <NSCopying, NSCoding, NSFastEnumeration> {
 }
 
-+ (id)hashTableWithOptions:(unsigned int)arg1;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)hashTableWithOptions:(unsigned int)arg1;
++ (id)weakObjectsHashTable;
 + (id)hashTableWithWeakObjects;
 
+- (id)description;
+- (BOOL)containsObject:(id)arg1;
+- (void)removeAllObjects;
+- (void)addObject:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)init;
+- (id)copy;
+- (unsigned int)count;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)member:(id)arg1;
+- (id)initWithOptions:(unsigned int)arg1 capacity:(unsigned int)arg2;
+- (id)allObjects;
+- (id)anyObject;
+- (id)objectEnumerator;
+- (void)encodeWithCoder:(id)arg1;
+- (void)removeObject:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)setRepresentation;
 - (id)mutableSet;
 - (void)minusHashTable:(id)arg1;
@@ -18,7 +37,6 @@
 - (BOOL)isSubsetOfHashTable:(id)arg1;
 - (BOOL)isEqualToHashTable:(id)arg1;
 - (BOOL)intersectsHashTable:(id)arg1;
-- (id)pointerFunctions;
 - (id)initWithPointerFunctions:(id)arg1 capacity:(unsigned int)arg2;
 - (void)getKeys:(void**)arg1 count:(unsigned int*)arg2;
 - (void)insertKnownAbsentItem:(const void*)arg1;
@@ -26,24 +44,7 @@
 - (void)removeAllItems;
 - (void)removeItem:(const void*)arg1;
 - (void*)getItem:(const void*)arg1;
-- (id)initWithOptions:(unsigned int)arg1 capacity:(unsigned int)arg2;
-- (unsigned int)count;
-- (id)description;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (id)copy;
-- (void)addObject:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)member:(id)arg1;
-- (id)objectEnumerator;
-- (id)allObjects;
-- (id)anyObject;
-- (BOOL)containsObject:(id)arg1;
-- (void)removeAllObjects;
-- (void)encodeWithCoder:(id)arg1;
-- (void)removeObject:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)pointerFunctions;
 - (void)_mapkit_removeObjects:(id)arg1;
 
 @end

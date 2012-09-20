@@ -17,33 +17,33 @@
     int formatType;
 }
 
-+ (void)initFormatterCache;
 + (void)releaseFormatterCache;
++ (void)initFormatterCache;
 + (id)formatterForFormat:(id)arg1;
 
 - (void)dealloc;
 - (id)icuFormatString;
-- (id)initWithExcelFormatString:(id)arg1;
-- (id)initWithDefaultFormatString;
-- (void)preprocessIcuString;
-- (void)convertGenericNumberFormat;
-- (void)convertDateFormat;
-- (void)convertCurrencyFormat;
-- (struct __CFNumberFormatter { }*)_genericFormatterForDouble;
-- (struct __CFNumberFormatter { }*)_genericFormatterForPercent;
-- (struct __CFNumberFormatter { }*)_bigNumberFormatter;
-- (struct __CFNumberFormatter { }*)_smallNumberFormatter;
-- (struct __CFNumberFormatter { }*)_genericFormatter;
-- (struct __CFNumberFormatter { }*)_currencyFormatter;
 - (struct __CFDateFormatter { }*)_dateFormatter;
-- (id)formatDefault:(double)arg1;
-- (bool)isNegativeRed;
-- (id)formatDate:(id)arg1;
-- (id)formatPhoneNumber:(double)arg1;
-- (id)formatCurrency:(double)arg1;
-- (id)formatFraction:(double)arg1;
-- (id)formatPercent:(double)arg1;
+- (struct __CFNumberFormatter { }*)_currencyFormatter;
+- (struct __CFNumberFormatter { }*)_genericFormatter;
+- (struct __CFNumberFormatter { }*)_smallNumberFormatter;
+- (struct __CFNumberFormatter { }*)_bigNumberFormatter;
+- (struct __CFNumberFormatter { }*)_genericFormatterForPercent;
+- (struct __CFNumberFormatter { }*)_genericFormatterForDouble;
+- (void)convertCurrencyFormat;
+- (void)convertDateFormat;
+- (void)convertGenericNumberFormat;
+- (void)preprocessIcuString;
+- (id)initWithDefaultFormatString;
+- (id)initWithExcelFormatString:(id)arg1;
 - (id)formatDoubleValue:(double)arg1;
+- (id)formatPercent:(double)arg1;
+- (id)formatFraction:(double)arg1;
+- (id)formatCurrency:(double)arg1;
+- (id)formatPhoneNumber:(double)arg1;
+- (id)formatDate:(id)arg1;
+- (bool)isNegativeRed;
 - (int)formatType;
+- (id)formatDefault:(double)arg1;
 
 @end

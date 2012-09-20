@@ -8,6 +8,8 @@
     NetworkCheckOperation *_networkCheckOp;
     IMAVChatParticipant *_participant;
     NSData *_ICEData;
+    unsigned int _shouldWaitForWifi : 1;
+    unsigned int _showNetworkOptions : 1;
 }
 
 
@@ -16,6 +18,6 @@
 - (id)networkCheckOperation;
 - (id)ICEData;
 - (void)createChildOperations;
-- (id)initWithParticipant:(id)arg1;
+- (id)initWithParticipant:(id)arg1 shouldWaitForWifi:(BOOL)arg2 shouldShowNetworkOptions:(BOOL)arg3;
 
 @end

@@ -19,14 +19,15 @@
     int (*_volumeControlSupportChangedCallback)();
     void *_volumeControlSupportChangedContext;
     CPDistributedNotificationCenter *_dnCenter;
+    CPDistributedNotificationCenter *_dnCenteriAP2;
     struct __CFRunLoop { } *_dnCenterRunLoop;
     NSLock *_lock;
 }
 
 + (id)sharedInstance;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)clearVolumeControlSupportChangedCallback;
 - (void)setupVolumeControlSupportChangedCallback:(int (*)())arg1 withContext:(void*)arg2 andRunLoop:(struct __CFRunLoop { }*)arg3;
 - (void)clearPauseOnHeadphoneDisconnectChangedCallback;

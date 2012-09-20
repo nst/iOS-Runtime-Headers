@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class NSMutableArray, NSTimer;
+@class NSMutableArray;
 
 @interface IMAVHandler : NSObject  {
-    NSMutableArray *_wifiActivationQueue;
-    NSTimer *_wiFiQueueTimer;
+    NSMutableArray *_pendingChats;
+    NSMutableArray *_pendingLookups;
 }
 
 + (void)initialize;
 + (void)ensureHandlerSetup;
 
 - (void)dealloc;
-- (void)videoStillForPersonRequested:(id)arg1 withTransactionID:(unsigned int)arg2;
-- (void)audioReflectorRequested:(BOOL)arg1 transactionID:(unsigned int)arg2;
-- (void)currentAVChatInfoRequestedWithTransactionID:(unsigned int)arg1;
+- (void)account:(id)arg1 conference:(id)arg2 invitationSentSuccessfully:(BOOL)arg3;
 - (void)account:(id)arg1 relay:(id)arg2 handleCancel:(id)arg3 fromPerson:(id)arg4;
 - (void)account:(id)arg1 relay:(id)arg2 handleUpdate:(id)arg3 fromPerson:(id)arg4;
 - (void)account:(id)arg1 relay:(id)arg2 handleInitate:(id)arg3 fromPerson:(id)arg4;
@@ -28,6 +26,7 @@
 - (void)account:(id)arg1 conference:(id)arg2 cancelRequestInvitationWithBuddy:(id)arg3;
 - (void)account:(id)arg1 conference:(id)arg2 notifyMissedInvitationWithBuddy:(id)arg3;
 - (void)account:(id)arg1 conference:(id)arg2 requestInvitationWithBuddy:(id)arg3;
+- (void)_notifyMissedInvitationFor:(id)arg1;
 - (void)account:(id)arg1 conference:(id)arg2 requestSendResponseWithResult:(int)arg3 toPerson:(id)arg4;
 - (void)account:(id)arg1 conference:(id)arg2 changedToNewConferenceID:(id)arg3;
 - (void)account:(id)arg1 conference:(id)arg2 peerIDChangedFromID:(id)arg3 toID:(id)arg4;
@@ -37,13 +36,9 @@
 - (void)account:(id)arg1 conference:(id)arg2 receivedResponseToInvitationFrom:(id)arg3 properties:(id)arg4;
 - (void)account:(id)arg1 conference:(id)arg2 receivedCounterProposalFrom:(id)arg3 properties:(id)arg4;
 - (void)vcCapabilitiesChanged:(unsigned long long)arg1;
-- (void)_enqueueIMAVChatForWiFiActivation:(id)arg1;
-- (void)_setWiFiActivationTimer;
-- (void)_notifyInvitationFor:(id)arg1;
-- (void)_notifyMissedInvitationFor:(id)arg1;
+- (void)_enqueueIMAVChatForNetworkActivation:(id)arg1;
 - (void)_notifyOfIncomingInvitationFor:(id)arg1 notifyInvitationListeners:(BOOL)arg2;
-- (void)_clearWiFiActivationQueue;
-- (void)_checkWiFiQueue:(id)arg1;
+- (void)_notifyInvitationFor:(id)arg1;
 - (void)_handleIncomingAVChatForNotification:(id)arg1;
 - (void)account:(id)arg1 conference:(id)arg2 receivedInvitationFrom:(id)arg3 properties:(id)arg4;
 

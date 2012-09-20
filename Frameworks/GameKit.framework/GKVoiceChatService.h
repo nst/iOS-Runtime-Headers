@@ -20,7 +20,6 @@
 + (id)defaultVoiceChatService;
 + (void)initialize;
 
-- (void)dealloc;
 - (void)setRemoteParticipantVolume:(float)arg1;
 - (float)remoteParticipantVolume;
 - (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
@@ -29,15 +28,16 @@
 - (void)stopVoiceChatWithParticipantID:(id)arg1;
 - (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
 - (void)setClient:(id)arg1;
-- (void)receivedRealTimeData:(id)arg1 fromParticipantID:(id)arg2;
-- (BOOL)isOutputMeteringEnabled;
-- (void)setOutputMeteringEnabled:(BOOL)arg1;
-- (BOOL)isInputMeteringEnabled;
-- (void)setInputMeteringEnabled:(BOOL)arg1;
-- (float)outputMeterLevel;
-- (float)inputMeterLevel;
-- (void)setMicrophoneMuted:(BOOL)arg1;
-- (BOOL)isMicrophoneMuted;
+- (void)dealloc;
 - (id)client;
+- (BOOL)isMicrophoneMuted;
+- (void)setMicrophoneMuted:(BOOL)arg1;
+- (float)inputMeterLevel;
+- (float)outputMeterLevel;
+- (void)setInputMeteringEnabled:(BOOL)arg1;
+- (BOOL)isInputMeteringEnabled;
+- (void)setOutputMeteringEnabled:(BOOL)arg1;
+- (BOOL)isOutputMeteringEnabled;
+- (void)receivedRealTimeData:(id)arg1 fromParticipantID:(id)arg2;
 
 @end

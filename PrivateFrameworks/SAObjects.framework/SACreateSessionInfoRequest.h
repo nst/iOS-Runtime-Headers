@@ -8,15 +8,15 @@
 }
 
 @property(copy) NSData * sessionInfoRequest;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)createSessionInfoRequest;
 + (id)createSessionInfoRequestWithDictionary:(id)arg1 context:(id)arg2;
++ (id)createSessionInfoRequest;
 
-- (id)groupIdentifier;
-- (id)sessionInfoRequest;
-- (id)encodedClassName;
 - (void)setSessionInfoRequest:(id)arg1;
+- (id)sessionInfoRequest;
+- (id)groupIdentifier;
+- (id)encodedClassName;
 
 @end

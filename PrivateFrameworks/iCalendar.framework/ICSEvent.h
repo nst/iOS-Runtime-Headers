@@ -51,6 +51,7 @@
 
 + (id)name;
 
+- (BOOL)isDefaultAlarmDeleted;
 - (void)setX_apple_ews_busystatus:(int)arg1;
 - (int)x_apple_ews_busystatus;
 - (BOOL)x_wr_rsvpneeded;

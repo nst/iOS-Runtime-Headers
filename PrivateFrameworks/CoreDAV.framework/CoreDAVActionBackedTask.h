@@ -12,11 +12,11 @@
 @property(retain) CoreDAVAction * action;
 
 
-- (id)description;
 - (id)action;
+- (id)description;
 - (void)dealloc;
+- (void)setAction:(id)arg1;
 - (id)backingAction;
 - (void)setBackingAction:(id)arg1;
-- (void)setAction:(id)arg1;
 
 @end

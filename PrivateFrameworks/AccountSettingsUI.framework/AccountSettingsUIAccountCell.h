@@ -11,15 +11,15 @@
     BOOL _useCustomDetailsText;
 }
 
-+ (float)desiredRowHeight;
 + (void)initialize;
++ (float)desiredRowHeight;
 
 - (void)dealloc;
-- (void)setEnabledDataclasses:(id)arg1 supportedDataclasses:(id)arg2;
-- (void)setDetailsText:(id)arg1;
-- (id)_dataclassesLabel;
-- (id)enabledDataclassesTextForWidth:(float)arg1;
 - (void)layoutSubviews;
+- (void)setDetailsText:(id)arg1;
+- (void)setEnabledDataclasses:(id)arg1 supportedDataclasses:(id)arg2;
+- (id)enabledDataclassesTextForWidth:(float)arg1;
+- (id)_dataclassesLabel;
 - (void)setCellEnabled:(BOOL)arg1;
 
 @end

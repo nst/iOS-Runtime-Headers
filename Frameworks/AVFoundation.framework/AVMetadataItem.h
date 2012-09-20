@@ -21,35 +21,23 @@
 @property(readonly) <NSObject><NSCopying> * value;
 @property(readonly) NSDictionary * extraAttributes;
 
++ (id)metadataItemsFromArray:(id)arg1 withLocale:(id)arg2;
++ (id)metadataItemsFromArray:(id)arg1 withKey:(id)arg2 keySpace:(id)arg3;
 + (id)_figMetadataPropertyFromMetadataItems:(id)arg1;
 + (id)metadataItemsFromArray:(id)arg1 withStringValue:(id)arg2;
-+ (id)metadataItemsFromArray:(id)arg1 withKey:(id)arg2 keySpace:(id)arg3;
-+ (id)metadataItemsFromArray:(id)arg1 withLocale:(id)arg2;
++ (id)metadataItemsFromArray:(id)arg1 filteredAndSortedAccordingToPreferredLanguages:(id)arg2;
 
-- (id)extraAttributes;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)cancelLoading;
-- (id)_initWithFigMetadataDictionary:(id)arg1;
-- (id)_initWithReader:(struct OpaqueFigMetadataReader { }*)arg1 itemIndex:(long)arg2;
-- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (id)_figMetadataDictionary;
-- (id)_figMetadataFormat;
-- (id)_figMetadataProperties;
-- (struct CGImage { }*)imageValue;
-- (id)dateValue;
-- (id)_keyAsString;
-- (void)_makePropertiesReady;
-- (void)_makeValueReady;
-- (void)_updateCommonKey;
-- (void)_extractPropertiesFromDictionary:(id)arg1;
-- (id)commonKey;
 - (id)keySpace;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)extraAttributes;
+- (id)commonKey;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)key;
 - (id)locale;
@@ -60,5 +48,18 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)numberValue;
 - (id)dataValue;
+- (void)cancelLoading;
+- (id)_initWithFigMetadataDictionary:(id)arg1;
+- (id)_initWithReader:(struct OpaqueFigMetadataReader { }*)arg1 itemIndex:(long)arg2;
+- (id)_figMetadataDictionary;
+- (id)_figMetadataFormat;
+- (id)_figMetadataProperties;
+- (struct CGImage { }*)imageValue;
+- (id)dateValue;
+- (id)_keyAsString;
+- (void)_makePropertiesReady;
+- (void)_makeValueReady;
+- (void)_updateCommonKey;
+- (void)_extractPropertiesFromDictionary:(id)arg1;
 
 @end

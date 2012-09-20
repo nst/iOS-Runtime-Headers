@@ -6,7 +6,7 @@
 }
 
 
-- (BOOL)_wantsFullWidthOfScreen;
 - (BOOL)_wantsStaticPresentation;
+- (BOOL)_wantsFullWidthOfScreen;
 
 @end

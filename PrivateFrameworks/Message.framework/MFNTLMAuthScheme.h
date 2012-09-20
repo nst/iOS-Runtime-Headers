@@ -7,10 +7,10 @@
 
 + (void)initialize;
 
-- (BOOL)sendsPlainTextPasswords;
-- (BOOL)hasEncryption;
-- (id)humanReadableName;
-- (Class)authenticatorClass;
 - (id)name;
+- (BOOL)sendsPlainTextPasswords;
+- (id)humanReadableName;
+- (BOOL)hasEncryption;
+- (Class)authenticatorClass;
 
 @end

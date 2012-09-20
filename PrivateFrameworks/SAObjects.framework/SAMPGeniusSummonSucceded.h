@@ -7,11 +7,11 @@
 @interface SAMPGeniusSummonSucceded : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)geniusSummonSucceded;
 + (id)geniusSummonSuccededWithDictionary:(id)arg1 context:(id)arg2;
++ (id)geniusSummonSucceded;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

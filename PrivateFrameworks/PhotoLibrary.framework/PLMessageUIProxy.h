@@ -5,11 +5,15 @@
 @interface PLMessageUIProxy : NSObject  {
 }
 
-+ (id)newMailCompositionContext;
-+ (id)newComposeViewControllerWithComposition:(id)arg1;
-+ (id)newComposeViewController;
-+ (Class)MailCompositionContextClass;
 + (BOOL)canSendMail;
++ (id)newABUnknownPersonViewControllerWithEmailAddress:(id)arg1;
++ (Class)MFSearchShadowViewClass;
++ (Class)MFRecipientTableViewCellClass;
++ (Class)MFContactsSearchResultsModelClass;
++ (Class)MFContactsSearchManagerClass;
++ (Class)MFComposeRecipientClass;
++ (Class)_MFComposeRecipientViewClass;
++ (id)newComposeViewController;
 + (Class)MFMailComposeViewControllerClass;
 
 

@@ -9,20 +9,20 @@
 
 @property(copy) NSArray * emailResults;
 @property(copy) NSArray * results;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
 + (id)searchCompletedWithEmailResults:(id)arg1;
 + (id)searchCompletedWithResults:(id)arg1;
-+ (id)searchCompleted;
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)searchCompleted;
 
 - (id)groupIdentifier;
 - (id)results;
 - (void)setResults:(id)arg1;
 - (id)emailResults;
-- (id)initWithEmailResults:(id)arg1;
 - (void)setEmailResults:(id)arg1;
+- (id)initWithEmailResults:(id)arg1;
 - (id)initWithResults:(id)arg1;
 - (id)encodedClassName;
 

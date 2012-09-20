@@ -8,15 +8,15 @@
 }
 
 @property(copy) NSArray * phoneLogIds;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)searchCompleted;
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)searchCompleted;
 
 - (id)groupIdentifier;
-- (id)phoneLogIds;
 - (void)setPhoneLogIds:(id)arg1;
+- (id)phoneLogIds;
 - (id)encodedClassName;
 
 @end

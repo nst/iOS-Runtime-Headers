@@ -37,6 +37,7 @@
 
 - (id)description;
 - (void)dealloc;
+- (void*)context;
 - (BOOL)validCTag;
 - (void)setMultiPutBatchMaxSize:(unsigned int)arg1;
 - (unsigned int)multiPutBatchMaxSize;
@@ -58,6 +59,5 @@
 - (void)taskGroupWillCancelWithError:(id)arg1;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
-- (void*)context;
 
 @end

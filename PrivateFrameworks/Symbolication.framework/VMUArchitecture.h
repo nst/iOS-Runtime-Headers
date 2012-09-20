@@ -7,34 +7,34 @@
     int _cpuSubtype;
 }
 
-+ (id)currentArchitecture;
-+ (id)anyArchitecture;
-+ (id)ppcArchitecture;
-+ (id)ppc32Architecture;
-+ (id)ppc64Architecture;
-+ (id)i386Architecture;
-+ (id)x86_32Architecture;
-+ (id)x86_64Architecture;
-+ (id)armArchitecture;
-+ (id)architectureWithCpuType:(int)arg1 cpuSubtype:(int)arg2;
 + (void)initialize;
++ (id)architectureWithCpuType:(int)arg1 cpuSubtype:(int)arg2;
++ (id)armArchitecture;
++ (id)x86_64Architecture;
++ (id)x86_32Architecture;
++ (id)i386Architecture;
++ (id)ppc64Architecture;
++ (id)ppc32Architecture;
++ (id)ppcArchitecture;
++ (id)anyArchitecture;
++ (id)currentArchitecture;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })commpageAddressRange;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })objcpageAddressRange;
-- (BOOL)matchesArchitecture:(id)arg1;
-- (id)initWithCpuType:(int)arg1 cpuSubtype:(int)arg2;
-- (BOOL)isLittleEndian;
-- (BOOL)is64Bit;
-- (int)cpuType;
-- (int)cpuSubtype;
-- (BOOL)isEqualToArchitecture:(id)arg1;
-- (BOOL)is32Bit;
-- (BOOL)isBigEndian;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })objcpageAddressRange;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })commpageAddressRange;
+- (BOOL)matchesArchitecture:(id)arg1;
+- (BOOL)isBigEndian;
+- (BOOL)is32Bit;
+- (BOOL)isEqualToArchitecture:(id)arg1;
+- (int)cpuSubtype;
+- (int)cpuType;
+- (BOOL)is64Bit;
+- (BOOL)isLittleEndian;
+- (id)initWithCpuType:(int)arg1 cpuSubtype:(int)arg2;
 
 @end

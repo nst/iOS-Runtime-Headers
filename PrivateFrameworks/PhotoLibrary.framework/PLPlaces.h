@@ -18,22 +18,34 @@
     PLPlace *_nullPlace;
 }
 
+@property(readonly) id albumsSortingComparator;
 @property(readonly) int filter;
+@property(readonly) unsigned int unreadAlbumsCount;
 @property(readonly) NSString * _prettyDescription;
 @property(readonly) NSString * _typeDescription;
 
 
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
+- (id)identifier;
 - (id)managedObjectContext;
 - (void)dealloc;
 - (id)_typeDescription;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
-- (id)identifier;
 - (int)filter;
+- (unsigned int)unreadAlbumsCount;
+- (void)updateAlbumsOrderIfNeeded;
+- (BOOL)needsReordering;
+- (void)setNeedsReordering;
+- (BOOL)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
+- (BOOL)canEditAlbums;
+- (BOOL)hasAtLeastOneAlbum;
+- (int)albumListType;
+- (id)albumsSortingComparator;
+- (id)_prettyDescription;
+- (id)photoLibrary;
+- (id)albums;
 - (void)_logPhotos:(id)arg1;
 - (id)initWithMapView:(id)arg1;
-- (id)_prettyDescription;
-- (int)albumListType;
 - (id)_newAnimationAnnotationWithLongitude:(double)arg1 latitude:(double)arg2;
 - (void)_createMapAnnotationsFromChanges:(id)arg1 toChanges:(id)arg2 intoPlaces:(id)arg3;
 - (void)_updateCurrentPlaces:(id)arg1 newPlaces:(id)arg2 intoFromChanges:(id)arg3 toChanges:(id)arg4 fromOriginalRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg5 forNewRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg6;
@@ -49,14 +61,13 @@
 - (void)_resetAnnotationBuckets;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_defaultRegionForNoPlacesData;
 - (void)_loadPlacesData;
-- (BOOL)hasAtLeastOneAlbum;
 - (void)setupPlacesForRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })visibleMapRectangleForZoomedOutPins;
+- (id)places;
 - (id)newlyVIsibleAnnotations;
 - (id)addedAnnotations;
 - (id)deletedAnnotations;
 - (id)unaffectedAnnotations;
-- (id)places;
 - (void)updatePlacesFromRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2 viaZoom:(BOOL)arg3;
 - (void)updatePlacesWithAddedAssets:(id)arg1 deletedAssets:(id)arg2 updatedAssets:(id)arg3;
 - (void)fullReset;
@@ -64,9 +75,5 @@
 - (id)annotationsToRemoveWhenAddAnimationEnds;
 - (id)annotationsToRemoveWhenAddAnimationStarts;
 - (void)setMapView:(id)arg1;
-- (BOOL)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
-- (BOOL)canEditAlbums;
-- (id)photoLibrary;
-- (id)albums;
 
 @end

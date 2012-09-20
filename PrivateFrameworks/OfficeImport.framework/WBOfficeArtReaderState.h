@@ -9,8 +9,8 @@
     int mCurrentTextType;
 }
 
-@property int currentTextType;
 @property WBReader * reader;
+@property int currentTextType;
 
 
 - (id)initWithClient:(Class)arg1;

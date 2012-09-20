@@ -2,22 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSMutableSet;
-
-@interface CalDAVCalendarServerCancelItem : CoreDAVItem  {
-    NSMutableSet *_recurrences;
+@interface CalDAVCalendarServerCancelItem : CalDAVItemWithRecurrenceChildren  {
 }
 
-@property(retain) NSMutableSet * recurrences;
 
-
-- (id)description;
 - (id)init;
-- (void)dealloc;
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (id)recurrences;
-- (void)setRecurrences:(id)arg1;
-- (void)addRecurrence:(id)arg1;
 
 @end

@@ -22,8 +22,6 @@
 @property(retain) MPVideoView * videoView;
 
 
-- (id)init;
-- (void)dealloc;
 - (unsigned int)currentMarkerIndex;
 - (void)setCurrentMarker:(unsigned int)arg1;
 - (id)newImageRequestWithMediaEntity:(id)arg1 timeMarker:(id)arg2;
@@ -38,13 +36,14 @@
 - (void)setVideoView:(id)arg1;
 - (id)chapterTimeMarkers;
 - (id)videoView;
+- (void)dealloc;
+- (id)init;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidUnload;
 - (void)loadView;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

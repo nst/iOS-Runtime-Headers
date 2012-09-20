@@ -2,27 +2,50 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CoreDAVItem;
+@class CoreDAVHrefItem, CoreDAVLeafItem, CoreDAVItemWithHrefChildItem, CoreDAVItemWithNoChildren, NSString, NSURL;
 
 @interface CalDAVCalendarServerInviteReplyItem : CoreDAVItem  {
-    CoreDAVItem *_href;
-    CoreDAVItem *_inviteStatus;
-    CoreDAVItem *_hostURL;
-    CoreDAVItem *_inReplyTo;
-    CoreDAVItem *_summary;
+    CoreDAVHrefItem *_href;
+    CoreDAVItemWithNoChildren *_inviteStatus;
+    CoreDAVItemWithHrefChildItem *_hostURL;
+    CoreDAVLeafItem *_inReplyTo;
+    CoreDAVLeafItem *_summary;
+    NSString *_firstName;
+    NSString *_lastName;
+    NSURL *_acceptedURL;
 }
 
-@property(retain,readonly) CoreDAVItem * summary;
-@property(retain,readonly) CoreDAVItem * inReplyTo;
-@property(retain,readonly) CoreDAVItem * hostURL;
-@property(retain,readonly) CoreDAVItem * inviteStatus;
-@property(retain,readonly) CoreDAVItem * href;
+@property(retain) CoreDAVHrefItem * href;
+@property(retain) CoreDAVItemWithNoChildren * inviteStatus;
+@property(retain) CoreDAVItemWithHrefChildItem * hostURL;
+@property(retain) CoreDAVLeafItem * inReplyTo;
+@property(retain) CoreDAVLeafItem * summary;
+@property(retain) NSString * firstName;
+@property(retain) NSString * lastName;
+@property(retain) NSURL * acceptedURL;
 
 
 - (id)inviteStatus;
-- (id)summary;
-- (id)href;
+- (void)setInviteStatus:(id)arg1;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
+- (void)dealloc;
+- (id)init;
 - (id)inReplyTo;
 - (id)hostURL;
+- (id)acceptedURL;
+- (void)setAcceptedURLItem:(id)arg1;
+- (void)setLastNameItem:(id)arg1;
+- (void)setFirstNameItem:(id)arg1;
+- (void)setAcceptedURL:(id)arg1;
+- (void)setInReplyTo:(id)arg1;
+- (void)setHostURL:(id)arg1;
+- (id)copyParseRules;
+- (void)setSummary:(id)arg1;
+- (id)summary;
+- (void)setHref:(id)arg1;
+- (id)href;
 
 @end

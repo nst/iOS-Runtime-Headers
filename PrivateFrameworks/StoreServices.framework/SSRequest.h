@@ -2,67 +2,36 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSRequestGroup, <SSRequestDelegate>, NSString, NSLock;
+@class NSObject<OS_dispatch_queue>, SSXPCConnection, <SSRequestDelegate>;
 
-@interface SSRequest : NSObject <SSCoding> {
+@interface SSRequest : NSObject <SSXPCCoding> {
     int _backgroundTaskIdentifier;
     BOOL _cancelAfterTaskExpiration;
     <SSRequestDelegate> *_delegate;
-    SSRequestGroup *_group;
-    NSString *_groupIdentifier;
-    NSString *_identifier;
-    NSLock *_lock;
-    int _state;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    SSXPCConnection *_requestConnection;
+    SSXPCConnection *_responseConnection;
 }
 
 @property <SSRequestDelegate> * delegate;
-@property SSRequestGroup * requestGroup;
-@property(retain) NSString * requestGroupIdentifier;
-@property(retain) NSString * requestIdentifier;
-@property(readonly) int requestState;
 @property BOOL shouldCancelAfterTaskExpiration;
 
 
-- (void)sendDidFinish;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
-- (int)requestState;
-- (BOOL)start;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)disconnect;
-- (void)_failWithError:(id)arg1;
-- (void)_daemonExited:(id)arg1;
-- (void)setShouldCancelAfterTaskExpiration:(BOOL)arg1;
-- (id)requestGroupIdentifier;
-- (id)requestGroup;
-- (void)awakeFromDaemonInRequestGroup:(id)arg1;
-- (void)sendDidFailWithError:(id)arg1;
-- (BOOL)shouldCancelAfterTaskExpiration;
-- (void)handleBackgroundTaskExpiration;
-- (id)handleFailureResponse:(id)arg1;
-- (void)handleDaemonExit;
-- (void)_mainThreadDaemonExited:(id)arg1;
-- (id)_newIdentifier;
-- (void)_requestFinishedNotification:(id)arg1;
-- (void)_requestFailedNotification:(id)arg1;
-- (void)_finish;
-- (void)setRequestGroup:(id)arg1;
-- (void)_beginBackgroundTask;
-- (void)registerForDaemonNotifications;
 - (void)_endBackgroundTask;
-- (void)_setRequestState:(int)arg1;
-- (void)unregisterForDaemonNotifications;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)cancel;
+- (void)dealloc;
+- (id)init;
+- (BOOL)shouldCancelAfterTaskExpiration;
+- (void)setShouldCancelAfterTaskExpiration:(BOOL)arg1;
+- (void)_beginBackgroundTask;
+- (void)_shutdownRequestWithMessageID:(long long)arg1;
 - (id)_initSSRequest;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)requestIdentifier;
-- (void)setRequestIdentifier:(id)arg1;
-- (void)setRequestGroupIdentifier:(id)arg1;
+- (void)startWithCompletionBlock:(id)arg1;
+- (void)_startWithMessageID:(long long)arg1 messageBlock:(id)arg2;
+- (void)_shutdownRequest;
+- (void)disconnect;
+- (BOOL)start;
 
 @end

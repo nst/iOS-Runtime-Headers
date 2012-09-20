@@ -11,15 +11,15 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (id)imageViewForAsset:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 format:(int)arg3 loadImagesSynchronously:(BOOL)arg4;
-- (void)invalidateCachedImagesForAsset:(id)arg1;
-- (void)cancelLoadForAsset:(id)arg1;
-- (id)_imageSourceForFormat:(int)arg1;
-- (void)cancelLoadForAsset:(id)arg1 format:(int)arg2;
+- (id)init;
 - (void)resumeLoading;
 - (void)pauseLoading;
+- (id)imageViewForAsset:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 format:(int)arg3 loadImagesSynchronously:(BOOL)arg4;
+- (void)cancelLoadForAsset:(id)arg1;
+- (id)_imageSourceForFormat:(int)arg1;
+- (void)invalidateCachedImagesForAsset:(id)arg1;
+- (void)cancelLoadForAsset:(id)arg1 format:(int)arg2;
 - (void)invalidateCachedImagesForAsset:(id)arg1 format:(int)arg2;
 - (id)loadImageSynchronously:(BOOL)arg1 forAsset:(id)arg2 format:(int)arg3 priority:(int)arg4 completion:(id)arg5;
 

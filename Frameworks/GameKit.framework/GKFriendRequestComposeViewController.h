@@ -2,50 +2,49 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKComposeController, <GKFriendRequestComposeViewControllerDelegate>, NSString, NSNumber;
+@class NSString, <GKFriendRequestComposeViewControllerDelegate>, NSNumber, GKComposeHostedViewController;
 
-@interface GKFriendRequestComposeViewController : UINavigationController <GKComposeControllerDelegate> {
-    <GKFriendRequestComposeViewControllerDelegate> *_composeViewDelegate;
-    GKComposeController *_composeController;
+@interface GKFriendRequestComposeViewController : UINavigationController  {
+    <GKFriendRequestComposeViewControllerDelegate> *_composeViewDelegateWeak;
+    GKComposeHostedViewController *_composeController;
     NSString *_message;
     unsigned int _recipientCount;
 }
 
 @property <GKFriendRequestComposeViewControllerDelegate> * composeViewDelegate;
-@property(retain) GKComposeController * composeController;
+@property(retain) GKComposeHostedViewController * composeController;
 @property(retain) NSString * message;
 @property unsigned int recipientCount;
 @property(retain) NSNumber * rid;
 
 + (unsigned int)maxNumberOfRecipients;
 
-- (id)init;
-- (void)dealloc;
 - (void)setRecipientCount:(unsigned int)arg1;
 - (unsigned int)recipientCount;
 - (void)setComposeController:(id)arg1;
 - (void)setComposeViewDelegate:(id)arg1;
-- (void)addRecipientsWithAliases:(id)arg1;
-- (void)addRecipientsWithEmailAddresses:(id)arg1;
-- (void)addRecipientsWithPlayerIDs:(id)arg1;
-- (void)sendFinishedMessageToDelegateCancelled:(BOOL)arg1;
+- (BOOL)navigationBarHidden;
 - (id)composeViewDelegate;
-- (void)addRecipientsNonPlayerIDCommon:(id)arg1;
 - (void)prepareForNewRecipients:(id)arg1;
 - (id)composeController;
-- (void)composeControllerSendStarted:(id)arg1;
-- (void)composeControllerAppeared:(id)arg1;
-- (void)composeControllerCancelled:(id)arg1;
-- (id)rid;
+- (void)sendFinishedMessageToDelegateCancelled:(BOOL)arg1;
+- (void)addRecipientsWithEmailAddresses:(id)arg1;
+- (void)addRecipientsWithPlayerIDs:(id)arg1;
 - (void)setRid:(id)arg1;
-- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (id)rid;
+- (void)dealloc;
+- (id)init;
 - (id)message;
 - (void)setMessage:(id)arg1;
+- (void)__viewControllerWillBePresented:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (BOOL)shouldAutomaticallyForwardRotationMethods;
 - (void)viewDidLoad;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)didReceiveMemoryWarning;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

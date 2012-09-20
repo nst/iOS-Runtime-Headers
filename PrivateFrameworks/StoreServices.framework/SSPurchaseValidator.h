@@ -11,10 +11,10 @@
 @property(readonly) SSPurchaseValidationContext * purchaseValidationContext;
 
 
-- (id)init;
-- (void)dealloc;
 - (id)validatePurchases:(id)arg1;
 - (id)initWithPurchaseValidationContext:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)purchaseValidationContext;
 - (BOOL)_checkSystemVersionForPurchase:(id)arg1 response:(id)arg2;
 - (BOOL)_checkSoftwareCapabilitiesForPurchase:(id)arg1 response:(id)arg2;

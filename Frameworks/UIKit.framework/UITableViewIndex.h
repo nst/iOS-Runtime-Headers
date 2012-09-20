@@ -39,10 +39,10 @@
 - (id)titles;
 - (void)_selectSectionForTouch:(id)arg1 withEvent:(id)arg2;
 - (id)_displayTitles;
-- (void)cancelTrackingWithEvent:(id)arg1;
+- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)cancelTrackingWithEvent:(id)arg1;
 - (unsigned int)maximumNumberOfTitlesWithoutTruncationForHeight:(float)arg1;
 - (id)selectedSectionTitle;
 - (BOOL)pastBottom;

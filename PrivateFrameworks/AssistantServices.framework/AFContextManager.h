@@ -11,14 +11,15 @@
 
 + (id)defaultContextManager;
 
-- (id)init;
-- (void)dealloc;
-- (void)removeContextProvider:(id)arg1;
-- (BOOL)addContextProvider:(id)arg1;
 - (void)startCenter:(id)arg1;
 - (id)_collateContexts;
 - (void)_shutdownServer;
 - (void)_collateContextsIntoArray:(id)arg1;
 - (void)nothing;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (void)removeContextProvider:(id)arg1;
+- (BOOL)addContextProvider:(id)arg1;
 
 @end

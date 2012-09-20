@@ -9,22 +9,34 @@
     UIImage *miniBackgroundImage;
     UIImage *topBackgroundImage;
     UIImage *miniTopBackgroundImage;
+    UIImage *shadowImage;
+    UIImage *topShadowImage;
+    BOOL hidesShadow;
 }
 
 @property(retain) UIImage * backgroundImage;
 @property(retain) UIImage * miniBackgroundImage;
 @property(retain) UIImage * topBackgroundImage;
 @property(retain) UIImage * miniTopBackgroundImage;
+@property(retain) UIImage * shadowImage;
+@property(retain) UIImage * topShadowImage;
+@property BOOL hidesShadow;
 
 
 - (void)dealloc;
+- (void)setTopShadowImage:(id)arg1;
 - (void)setMiniTopBackgroundImage:(id)arg1;
 - (id)miniTopBackgroundImage;
 - (void)setTopBackgroundImage:(id)arg1;
 - (id)topBackgroundImage;
 - (void)setMiniBackgroundImage:(id)arg1;
-- (id)miniBackgroundImage;
 - (void)setBackgroundImage:(id)arg1;
+- (id)topShadowImage;
+- (void)setShadowImage:(id)arg1;
+- (id)shadowImage;
+- (void)setHidesShadow:(BOOL)arg1;
+- (BOOL)hidesShadow;
+- (id)miniBackgroundImage;
 - (id)backgroundImage;
 
 @end

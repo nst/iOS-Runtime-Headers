@@ -24,23 +24,23 @@
 + (long long)_getExternalValuesMessage;
 + (long long)_existsMessage;
 
-- (long long)bytesDownloaded;
 - (id)initWithURLRequest:(id)arg1;
-- (void)dealloc;
-- (id)sinfs;
-- (BOOL)isExternal;
-- (long long)fileSize;
-- (int)assetType;
 - (id)URLRequest;
 - (id)URLRequestProperties;
+- (id)sinfs;
+- (void)dealloc;
 - (id)finalizedPath;
 - (id)downloadPath;
 - (id)downloadFileName;
 - (id)initWithURLRequest:(id)arg1 type:(int)arg2;
 - (id)_copyURLRequestProperties;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (id)_initWithDownloadMetadata:(id)arg1 type:(id)arg2;
 - (void)_resetLocalIVars;
 - (int)_legacyAssetType;
+- (int)assetType;
+- (BOOL)isExternal;
+- (long long)bytesDownloaded;
+- (long long)fileSize;
 
 @end

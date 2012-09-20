@@ -4,7 +4,7 @@
 
 @class IUMediaActionButtonsCell, IUMediaActionSheet, NSArray;
 
-@interface IUGeniusViewController : IUMediaListViewController <UIActionSheetDelegate> {
+@interface IUGeniusViewController : IUMusicViewController <IUMediaActionButtonsCellDelegate, UIActionSheetDelegate> {
     IUMediaActionButtonsCell *_buttonsCell;
     NSArray *_buttonActionBlocks;
     IUMediaActionSheet *_confirmPlaylistChangeSheet;
@@ -13,9 +13,9 @@
 
 - (void)dealloc;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)setContext:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)_delayedDeleteAction:(id)arg1;
 - (void)_confirmDeletePlaylist;
 - (void)_delayedEditAction:(id)arg1;

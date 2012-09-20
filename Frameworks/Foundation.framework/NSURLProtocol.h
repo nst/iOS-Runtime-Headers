@@ -25,15 +25,15 @@
 + (id)canonicalRequestForRequest:(id)arg1;
 + (BOOL)canInitWithRequest:(id)arg1;
 
-- (void)_releaseProtocolClientReference;
-- (id)cachedResponse;
-- (void)_resumeLoading;
-- (void)_suspendLoading;
-- (id)initWithRequest:(id)arg1 cachedResponse:(id)arg2 client:(id)arg3;
 - (void)startLoading;
 - (void)dealloc;
 - (void)stopLoading;
 - (id)request;
 - (id)client;
+- (void)_releaseProtocolClientReference;
+- (id)cachedResponse;
+- (void)_resumeLoading;
+- (void)_suspendLoading;
+- (id)initWithRequest:(id)arg1 cachedResponse:(id)arg2 client:(id)arg3;
 
 @end

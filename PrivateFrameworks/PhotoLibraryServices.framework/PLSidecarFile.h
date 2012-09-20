@@ -10,7 +10,7 @@
 @property(readonly) NSURL * fileURL;
 
 
-- (void)setCaptureDateFromExifDictionary:(id)arg1;
 - (id)fileURL;
+- (void)setCaptureDateFromExifDictionary:(id)arg1;
 
 @end

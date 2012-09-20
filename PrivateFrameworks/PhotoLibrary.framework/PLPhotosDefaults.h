@@ -16,8 +16,8 @@
 + (id)sharedInstance;
 + (int)randomTransition;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (int)transition;
 - (void)setTransition:(int)arg1;
 - (id)musicCollection;

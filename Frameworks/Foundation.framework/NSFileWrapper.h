@@ -13,22 +13,32 @@
     id _moreVars;
 }
 
-+ (void)_writeAttributes:(id)arg1 toURL:(id)arg2;
-+ (id)_newContentsAtURL:(id)arg1 path:(id)arg2 itemKind:(id)arg3 oldChildrenByUniqueFileName:(id)arg4 options:(unsigned int)arg5 error:(id*)arg6;
-+ (BOOL)_forPath:(id)arg1 getItemKind:(id*)arg2 modificationDate:(id*)arg3;
-+ (BOOL)_canSafelyMapFilesAtPath:(id)arg1;
-+ (id)_pathForURL:(id)arg1 reading:(BOOL)arg2 error:(id*)arg3;
 + (BOOL)_finishWritingToURL:(id)arg1 byMovingItemAtURL:(id)arg2 addingAttributes:(id)arg3 error:(id*)arg4;
 + (BOOL)_finishWritingToURL:(id)arg1 byTakingContentsFromItemAtURL:(id)arg2 addingAttributes:(id)arg3 usingTemporaryDirectoryAtURL:(id)arg4 backupFileName:(id)arg5 error:(id*)arg6;
 + (id)_temporaryDirectoryURLForWritingToURL:(id)arg1 error:(id*)arg2;
 + (void)_removeTemporaryDirectoryAtURL:(id)arg1;
 + (void)initialize;
++ (void)_writeAttributes:(id)arg1 toURL:(id)arg2;
++ (id)_newContentsAtURL:(id)arg1 path:(id)arg2 itemKind:(id)arg3 oldChildrenByUniqueFileName:(id)arg4 options:(unsigned int)arg5 error:(id*)arg6;
++ (BOOL)_forPath:(id)arg1 getItemKind:(id*)arg2 modificationDate:(id*)arg3;
++ (BOOL)_canSafelyMapFilesAtPath:(id)arg1;
++ (id)_pathForURL:(id)arg1 reading:(BOOL)arg2 error:(id*)arg3;
 
+- (void)dealloc;
+- (id)init;
+- (void)setFilename:(id)arg1;
+- (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 originalContentsURL:(id)arg3 error:(id*)arg4;
+- (id)regularFileContents;
+- (BOOL)isRegularFile;
+- (id)initWithURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)initWithSerializedRepresentation:(id)arg1;
+- (id)_init;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)_fullDescription:(BOOL)arg1;
 - (id)addRegularFileWithContents:(id)arg1 preferredFilename:(id)arg2;
 - (id)initSymbolicLinkWithDestinationURL:(id)arg1;
 - (id)initDirectoryWithFileWrappers:(id)arg1;
-- (id)initWithSerializedRepresentation:(id)arg1;
 - (id)serializedRepresentation;
 - (id)_uniqueFileNameOfChild:(id)arg1;
 - (void)_resetFileModificationDate;
@@ -60,16 +70,6 @@
 - (id)initRegularFileWithContents:(id)arg1;
 - (id)fileAttributes;
 - (BOOL)isDirectory;
-- (id)init;
-- (void)dealloc;
-- (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 originalContentsURL:(id)arg3 error:(id*)arg4;
-- (id)regularFileContents;
-- (BOOL)isRegularFile;
-- (id)initWithURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)_init;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setFilename:(id)arg1;
 - (id)filename;
 
 @end

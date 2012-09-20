@@ -11,16 +11,16 @@
     NSArray *_headers;
 }
 
-+ (BOOL)pidIsTranslated:(int)arg1;
 + (id)findDyldHeaderInMemory:(id)arg1 address:(unsigned long long)arg2;
++ (BOOL)pidIsTranslated:(int)arg1;
 + (id)taskWithMachTaskContainer:(id)arg1;
 
-- (BOOL)isTranslated;
 - (void)dealloc;
-- (int)pid;
 - (id)initWithMachTaskContainer:(id)arg1;
 - (unsigned int)task;
 - (id)memory;
 - (id)headers;
+- (int)pid;
+- (BOOL)isTranslated;
 
 @end

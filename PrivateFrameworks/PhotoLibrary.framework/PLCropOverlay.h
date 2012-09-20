@@ -46,8 +46,11 @@
 @property BOOL previewMode;
 
 
+- (void)setCancelButtonTitle:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)dealloc;
-- (void)cancelButtonClicked:(id)arg1;
+- (void)_setMode:(int)arg1;
+- (id)toggleButton;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
 - (void)okButtonClicked:(id)arg1;
 - (void)dismiss;
@@ -56,7 +59,6 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)beginBackgroundSaveWithTile:(id)arg1 progressTitle:(id)arg2 completionCallbackTarget:(id)arg3 options:(int)arg4;
 - (BOOL)previewMode;
@@ -65,6 +67,7 @@
 - (void)removeProgress;
 - (void)setOKButtonShowsCamera:(BOOL)arg1;
 - (void)setOKButtonColor:(int)arg1;
+- (void)cropOverlayBottomBarToggleButtonClicked:(id)arg1;
 - (void)cropOverlayBottomBarDoneButtonClicked:(id)arg1;
 - (void)cropOverlayBottomBarCancelButtonClicked:(id)arg1;
 - (id)telephonyUIBottomBar;
@@ -77,7 +80,6 @@
 - (void)setControlsAreVisible:(BOOL)arg1;
 - (BOOL)controlsAreVisible;
 - (void)setCancelButtonHidden:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleCropRect;
 - (void)cropOverlayBottomBarPauseButtonClicked:(id)arg1;
 - (void)cropOverlayBottomBarPlayButtonClicked:(id)arg1;
 - (void)_fadeOutCompleted:(id)arg1;
@@ -85,18 +87,17 @@
 - (void)didPlayVideo;
 - (void)didCaptureVideo;
 - (void)didCapturePhoto;
-- (void)setCancelButtonTitle:(id)arg1;
 - (void)setOKButtonTitle:(id)arg1;
 - (void)_createCropView;
 - (id)modeSwitch;
 - (void)setModeSwitch:(id)arg1;
 - (id)_irisView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2 offsettingStatusBar:(BOOL)arg3 isDisplayedInPopover:(BOOL)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2 offsettingStatusBar:(BOOL)arg3 isDisplayedInPopover:(BOOL)arg4 buttonBarStyle:(int)arg5;
 - (void)setCropRectVisible:(BOOL)arg1 duration:(float)arg2;
 - (void)setShowsCropRegion:(BOOL)arg1;
 - (void)_updateTitle;
-- (void)_setMode:(int)arg1;
 - (void)statusBarHeightDidChange:(id)arg1;
+- (void)cancelButtonClicked:(id)arg1;
 - (id)shutterButton;
 - (id)_newOverlayViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 lighterEdgeOnTop:(BOOL)arg2;
 - (void)_updateToolbarItems:(BOOL)arg1;

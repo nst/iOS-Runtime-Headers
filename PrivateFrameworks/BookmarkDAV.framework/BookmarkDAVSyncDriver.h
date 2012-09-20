@@ -66,9 +66,9 @@
 @property(readonly) BookmarkDAVSyncData * topLevelSyncData;
 
 
+- (id)syncHandler;
+- (void)setSyncHandler:(id)arg1;
 - (void)dealloc;
-- (void)setPushTransport:(id)arg1;
-- (id)pushTransport;
 - (id)homeURL;
 - (void)recursiveContainerSyncTask:(id)arg1 receivedAddedOrModifiedFolder:(id)arg2;
 - (BOOL)setLocalETag:(id)arg1 forItemWithURL:(id)arg2;
@@ -83,6 +83,8 @@
 - (void)containerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 - (void)setPushKey:(id)arg1;
 - (id)pushKey;
+- (void)setPushTransport:(id)arg1;
+- (id)pushTransport;
 - (BOOL)_applyReturnedBookmarks:(id)arg1 withPushedBookmarks:(struct __CFArray { }*)arg2;
 - (id)_bookmarkXBELDataForBookmarkChanges:(struct __CFArray { }*)arg1 pushedBookmarks:(struct __CFArray { }*)arg2 maxResources:(int)arg3 maxSize:(int)arg4;
 - (void)_setRootCTag:(id)arg1 rootSyncToken:(id)arg2 knownOrderings:(id)arg3;
@@ -93,7 +95,6 @@
 - (BOOL)_matchParsedFolders:(id)arg1 toPushedFolders:(struct __CFDictionary { }*)arg2 unmatchedParsedFolders:(id)arg3 parsedSetsOfChildrenFoldersByParentURL:(id)arg4 arraysOfChildrenByNameByParent:(struct __CFDictionary { }*)arg5;
 - (BOOL)_handleErrorItem:(id)arg1 forBAItem:(void*)arg2;
 - (BOOL)_addChange:(void*)arg1 toData:(id)arg2 numActionsP:(int*)arg3 runningSizeP:(int*)arg4 maxResources:(int)arg5 maxSize:(int)arg6 foldersToAddByServerId:(struct __CFDictionary { }*)arg7 parentToArrayOfChildrenFolderChanges:(struct __CFDictionary { }*)arg8 pushedParentToArrayOfChildrenFolders:(struct __CFDictionary { }*)arg9;
-- (id)syncHandler;
 - (id)getAccountPropertiesHandler;
 - (unsigned int)outstandingActionCount;
 - (void)syncWithRemoteChanges:(BOOL)arg1 completionHandler:(id)arg2;
@@ -109,10 +110,9 @@
 - (id)_copyDAVFolderFromFolderRef:(void*)arg1;
 - (int)_serverOrderForChange:(void*)arg1;
 - (id)_copyDAVBookmarkFromBookmarkRef:(void*)arg1;
-- (void)_setServerIdOnItem:(void*)arg1 isBookmark:(BOOL)arg2;
+- (void)_setServerIdOnItem:(void*)arg1 isBookmark:(BOOL)arg2 suggestedId:(id)arg3;
 - (void)getAccountPropertiesWithCompletionHandler:(id)arg1;
 - (void)_syncWithRemoteChanges:(BOOL)arg1 completionHandler:(id)arg2 skipAddChanges:(BOOL)arg3;
-- (void)setSyncHandler:(id)arg1;
 - (id)_dbRelativeString:(id)arg1;
 - (void)setGetAccountPropertiesHandler:(id)arg1;
 - (void)_closeDBAndSave:(BOOL)arg1;

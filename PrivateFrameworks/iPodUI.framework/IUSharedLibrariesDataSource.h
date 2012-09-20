@@ -15,9 +15,9 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
-- (unsigned int)count;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (unsigned int)count;
 - (id)connectingMediaLibrary;
 - (void)setConnectingMediaLibrary:(id)arg1;
 - (BOOL)shouldShowGlobalSectionHeader;
@@ -25,7 +25,7 @@
 - (void)reloadActionRows;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
 - (int)mediaDisclosureStyleForIndex:(unsigned int)arg1;
-- (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
+- (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
 - (id)accessoryViewForIndex:(unsigned int)arg1;
 - (void)configureMoreListTableCell:(id)arg1;
 - (id)sharedMediaLibraries;

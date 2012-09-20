@@ -5,19 +5,22 @@
 @class NSString, NSMutableArray;
 
 @interface GEORating : PBCodable  {
-    BOOL _hasScore;
-    double _score;
-    BOOL _hasMaxScore;
     double _maxScore;
-    BOOL _hasNumberOfRatings;
+    double _score;
     int _numberOfRatings;
-    NSString *_provider;
-    NSString *_uRL;
-    NSMutableArray *_reviews;
-    BOOL _hasNumberOfReviews;
     int _numberOfReviews;
+    NSString *_provider;
+    NSMutableArray *_reviews;
+    NSString *_uRL;
+    struct { 
+        unsigned int maxScore : 1; 
+        unsigned int score : 1; 
+        unsigned int numberOfRatings : 1; 
+        unsigned int numberOfReviews : 1; 
+    } _has;
 }
 
+@property(readonly) float numberOfStars;
 @property BOOL hasScore;
 @property double score;
 @property BOOL hasMaxScore;
@@ -33,37 +36,42 @@
 @property int numberOfReviews;
 
 
-- (void)setProvider:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (int)numberOfReviews;
-- (void)setHasNumberOfReviews:(BOOL)arg1;
-- (BOOL)hasNumberOfReviews;
-- (id)reviews;
-- (int)numberOfRatings;
-- (void)setHasNumberOfRatings:(BOOL)arg1;
-- (BOOL)hasNumberOfRatings;
-- (double)maxScore;
-- (void)setHasMaxScore:(BOOL)arg1;
-- (BOOL)hasMaxScore;
-- (void)setHasScore:(BOOL)arg1;
-- (BOOL)hasScore;
-- (id)reviewAtIndex:(unsigned int)arg1;
-- (unsigned int)reviewsCount;
-- (BOOL)hasProvider;
-- (void)setNumberOfReviews:(int)arg1;
-- (void)addReview:(id)arg1;
-- (void)setNumberOfRatings:(int)arg1;
-- (void)setMaxScore:(double)arg1;
-- (void)setReviews:(id)arg1;
 - (void)setScore:(double)arg1;
 - (double)score;
+- (id)provider;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setURL:(id)arg1;
 - (id)dictionaryRepresentation;
-- (BOOL)readFrom:(id)arg1;
+- (void)setHasScore:(BOOL)arg1;
+- (BOOL)hasScore;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (void)setProvider:(id)arg1;
+- (id)reviews;
+- (void)setHasNumberOfReviews:(BOOL)arg1;
+- (void)setHasNumberOfRatings:(BOOL)arg1;
+- (void)setHasMaxScore:(BOOL)arg1;
+- (void)setNumberOfReviews:(int)arg1;
+- (int)numberOfReviews;
+- (BOOL)hasNumberOfReviews;
+- (id)reviewAtIndex:(unsigned int)arg1;
+- (void)clearReviews;
+- (unsigned int)reviewsCount;
+- (BOOL)hasProvider;
+- (void)setNumberOfRatings:(int)arg1;
+- (int)numberOfRatings;
+- (BOOL)hasNumberOfRatings;
+- (void)setMaxScore:(double)arg1;
+- (double)maxScore;
+- (BOOL)hasMaxScore;
+- (void)addReview:(id)arg1;
+- (void)setReviews:(id)arg1;
 - (id)uRL;
 - (BOOL)hasURL;
-- (void)writeTo:(id)arg1;
-- (id)provider;
+- (BOOL)readFrom:(id)arg1;
+- (float)numberOfStars;
 
 @end

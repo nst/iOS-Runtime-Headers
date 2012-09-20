@@ -16,49 +16,50 @@
     NSString *_persistentResourceID;
 }
 
-@property(readonly) NSString * friendlyName;
-@property(readonly) NSArray * installationWarnings;
-@property(retain) NSString * persistentResourceID;
-@property(readonly) int version;
-@property(readonly) NSString * UUID;
-@property(readonly) NSString * organization;
-@property(readonly) NSString * identifier;
-@property(retain) NSString * displayName;
-@property(readonly) NSString * payloadDescription;
-@property(readonly) NSString * type;
 @property(readonly) MCProfile * profile;
+@property(readonly) NSString * friendlyName;
+@property(readonly) NSString * type;
+@property(readonly) NSString * payloadDescription;
+@property(retain) NSString * displayName;
+@property(readonly) NSString * identifier;
+@property(readonly) NSString * organization;
+@property(readonly) NSString * UUID;
+@property(readonly) int version;
+@property(retain) NSString * persistentResourceID;
+@property(readonly) NSArray * installationWarnings;
 
-+ (id)badFieldValueErrorWithField:(id)arg1;
 + (id)wrapperPayloadDictionary;
-+ (id)payloadFromDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
++ (id)badFieldValueErrorWithField:(id)arg1;
 + (id)badFieldTypeErrorWithField:(id)arg1;
++ (id)payloadFromDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 + (id)payloadsFromArray:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
+- (id)identifier;
+- (id)type;
 - (id)description;
+- (void).cxx_destruct;
 - (void)dealloc;
-- (id)subtitle1Label;
-- (id)subtitle2Label;
-- (id)subtitle2Description;
+- (void)setPersistentResourceID:(id)arg1;
+- (void)setPersistentResourceID:(id)arg1;
 - (id)persistentResourceID;
-- (void)setPersistentResourceID:(id)arg1;
-- (void)setPersistentResourceID:(id)arg1;
+- (id)organization;
 - (id)payloadDescription;
+- (id)subtitle2Description;
+- (id)subtitle2Label;
+- (id)subtitle1Label;
 - (id)subtitle1Description;
 - (id)malformedPayloadErrorWithError:(id)arg1;
-- (id)organization;
-- (id)friendlyName;
 - (id)installationWarnings;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)friendlyName;
 - (id)stubDictionary;
-- (void)setDisplayName:(id)arg1;
-- (id)displayName;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)UUID;
 - (int)version;
-- (id)type;
-- (id)identifier;
+- (id)displayName;
 - (id)title;
 - (id)profile;
-- (id)UUID;
+- (void)setDisplayName:(id)arg1;
 
 @end

@@ -7,7 +7,7 @@
 
 + (id)_bagCreationLock;
 
-- (id)init;
 - (id)_bagDefaultsDomain;
+- (id)init;
 
 @end

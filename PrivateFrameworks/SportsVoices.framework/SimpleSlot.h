@@ -10,21 +10,21 @@
 
 @property(retain) Cell * cell;
 
-+ (id)blank;
-+ (id)instanceFromPlist:(id)arg1;
 + (id)empty;
 + (id)simpleSlotWithCell:(id)arg1;
++ (id)blank;
++ (id)instanceFromPlist:(id)arg1;
 
-- (BOOL)matches:(id)arg1;
+- (id)attributeForKey:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)attributeForKey:(id)arg1;
-- (id)reversed;
-- (id)overlayedOn:(id)arg1;
-- (id)initFromPlist:(id)arg1;
+- (id)initWithCell:(id)arg1;
 - (void)setCell:(id)arg1;
 - (id)cell;
 - (id)content;
-- (id)initWithCell:(id)arg1;
+- (id)reversed;
+- (BOOL)matches:(id)arg1;
+- (id)overlayedOn:(id)arg1;
+- (id)initFromPlist:(id)arg1;
 
 @end

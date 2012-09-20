@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class IMAVCamera, NSMutableArray, NSArray;
+@class IMAVCamera, NSArray, NSObject<OS_dispatch_queue>, NSMutableArray;
 
 @interface IMAVCameraController : NSObject  {
     NSMutableArray *_cameras;
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(readonly) NSArray * cameras;
@@ -14,13 +14,12 @@
 
 + (id)sharedInstance;
 
-- (id)init;
 - (void)dealloc;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
+- (id)init;
 - (id)currentCamera;
 - (void)_loadSavedCamera;
 - (void)_rebuildCameraList;
+- (id)cameraWithDeviceID:(unsigned int)arg1;
 - (void)setCurrentCamera:(id)arg1;
 - (id)cameras;
 

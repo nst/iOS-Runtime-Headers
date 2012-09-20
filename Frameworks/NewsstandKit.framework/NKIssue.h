@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
  */
 
-@class NSArray, NSURL, NSMapTable, NSMutableArray, NSMutableSet, NSString, NKLibrary, NSDate;
+@class NSDate, NSURL, NSMapTable, NSMutableArray, NSMutableSet, NSString, NKLibrary, NSArray;
 
 @interface NKIssue : NSObject  {
     NKLibrary *_library;
@@ -24,13 +24,18 @@
 @property(copy) NSString * directory;
 
 
-- (void)setName:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (id)directory;
 - (id)contentURL;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (int)status;
+- (void)setDate:(id)arg1;
+- (id)_commonInit;
+- (id)date;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)_assetChanged:(id)arg1;
 - (void)_cleanupAsset:(id)arg1;
 - (void)_markAssetAsResolved:(id)arg1;
@@ -42,12 +47,7 @@
 - (id)_initWithName:(id)arg1 date:(id)arg2 directory:(id)arg3;
 - (id)_library;
 - (id)downloadingAssets;
-- (id)name;
-- (id)_commonInit;
-- (void)setDate:(id)arg1;
-- (id)date;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)setDirectory:(id)arg1;
+- (id)directory;
 
 @end

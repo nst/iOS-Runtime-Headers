@@ -15,8 +15,8 @@
 }
 
 
-- (id)initWithBlock:(id)arg1;
 - (void)dealloc;
+- (id)initWithBlock:(id)arg1;
 - (void)callWithData:(id)arg1;
 
 @end

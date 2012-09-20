@@ -6,6 +6,7 @@
 
 @interface MPMoviePlayerController : NSObject <MPMediaPlayback> {
     void *_internal;
+    BOOL _readyForDisplay;
 }
 
 @property(copy) NSURL * contentURL;
@@ -16,32 +17,51 @@
 @property int controlStyle;
 @property int repeatMode;
 @property BOOL shouldAutoplay;
-@property BOOL useApplicationAudioSession;
 @property(getter=isFullscreen) BOOL fullscreen;
 @property int scalingMode;
+@property(readonly) BOOL readyForDisplay;
 @property(readonly) BOOL isPreparedToPlay;
 @property double currentPlaybackTime;
 @property float currentPlaybackRate;
 
 + (void)allInstancesResignActive;
 
-- (id)init;
-- (void)dealloc;
+- (int)movieMediaTypes;
+- (void)setAllowsAirPlay:(BOOL)arg1;
+- (void)setContentURL:(id)arg1;
+- (void)setEndPlaybackTime:(double)arg1;
+- (void)setInitialPlaybackTime:(double)arg1;
+- (double)playableDuration;
+- (void)setRepeatMode:(int)arg1;
+- (int)repeatMode;
+- (double)currentPlaybackTime;
+- (void)skipToPreviousItem;
+- (void)skipToNextItem;
+- (void)skipToBeginning;
+- (void)endSeeking;
+- (void)beginSeekingForward;
+- (void)beginSeekingBackward;
+- (int)playbackState;
+- (BOOL)readyForDisplay;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_videoFrame;
+- (BOOL)_isReadyForDisplay;
 - (void)_resignActive;
 - (void)setCurrentPlaybackRate:(float)arg1;
 - (float)currentPlaybackRate;
 - (void)setCurrentPlaybackTime:(double)arg1;
 - (double)endPlaybackTime;
 - (double)initialPlaybackTime;
+- (int)movieSourceType;
 - (void)setMovieSourceType:(int)arg1;
 - (BOOL)isPreparedToPlay;
+- (void)prepareToPlay;
+- (BOOL)isAirPlayVideoActive;
 - (BOOL)allowsAirPlay;
 - (void)setScalingMode:(int)arg1;
 - (int)scalingMode;
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFullscreen:(BOOL)arg1;
 - (BOOL)isFullscreen;
-- (BOOL)useApplicationAudioSession;
 - (void)setShouldAutoplay:(BOOL)arg1;
 - (BOOL)shouldAutoplay;
 - (void)setControlStyle:(int)arg1;
@@ -49,34 +69,16 @@
 - (int)loadState;
 - (id)contentURL;
 - (id)initWithContentURL:(id)arg1;
-- (BOOL)isAirPlayVideoActive;
-- (void)prepareToPlay;
+- (void)dealloc;
+- (id)init;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (void)pause;
 - (void)stop;
 - (void)forwardInvocation:(id)arg1;
 - (id)backgroundView;
-- (id)view;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (id)view;
 - (double)duration;
 - (void)play;
-- (int)movieSourceType;
-- (int)movieMediaTypes;
-- (void)setAllowsAirPlay:(BOOL)arg1;
-- (void)setContentURL:(id)arg1;
-- (void)setEndPlaybackTime:(double)arg1;
-- (void)setInitialPlaybackTime:(double)arg1;
-- (void)setUseApplicationAudioSession:(BOOL)arg1;
-- (double)playableDuration;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (void)skipToPreviousItem;
-- (void)skipToNextItem;
-- (void)skipToBeginning;
-- (void)setRepeatMode:(int)arg1;
-- (double)currentPlaybackTime;
-- (void)endSeeking;
-- (int)repeatMode;
-- (int)playbackState;
-- (void)beginSeekingForward;
-- (void)beginSeekingBackward;
 
 @end

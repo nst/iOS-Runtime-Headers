@@ -36,8 +36,8 @@
 
 + (id)codedPropertyKeys;
 
-- (id)description;
-- (void)dealloc;
+- (void)setRating:(float)arg1;
+- (float)rating;
 - (void)setMaxFriendRank:(unsigned int)arg1;
 - (unsigned int)maxFriendRank;
 - (void)setFriendRank:(unsigned int)arg1;
@@ -45,24 +45,25 @@
 - (void)setMaxRank:(unsigned int)arg1;
 - (void)setAchievementPoints:(unsigned int)arg1;
 - (void)setPurchaseDate:(id)arg1;
-- (void)setLastPlayedDate:(id)arg1;
 - (id)purchaseDate;
-- (unsigned int)achievementPoints;
-- (unsigned int)achievements;
-- (void)setAchievements:(unsigned int)arg1;
-- (id)lastPlayedDate;
+- (void)setLastPlayedDate:(id)arg1;
 - (void)setValid:(BOOL)arg1;
-- (void)setRating:(float)arg1;
-- (float)rating;
+- (unsigned int)maxRank;
+- (id)lastPlayedDate;
 - (void)setScore:(id)arg1;
 - (id)score;
-- (id)game;
+- (unsigned int)achievementPoints;
+- (void)setAchievements:(unsigned int)arg1;
+- (unsigned int)achievements;
+- (id)categoryID;
 - (void)setCategoryID:(id)arg1;
+- (void)setGame:(id)arg1;
+- (id)game;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)isValid;
 - (void)setRank:(unsigned int)arg1;
 - (unsigned int)rank;
-- (unsigned int)maxRank;
-- (void)setGame:(id)arg1;
-- (id)categoryID;
-- (BOOL)isValid;
 
 @end

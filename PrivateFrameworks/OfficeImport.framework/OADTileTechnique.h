@@ -19,27 +19,27 @@
 
 + (id)defaultProperties;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setAlignment:(int)arg1;
 - (int)alignment;
-- (float)offsetX;
+- (void)setAlignment:(int)arg1;
 - (float)offsetY;
-- (void)setFlipMode:(int)arg1;
-- (BOOL)isFlipModeOverridden;
-- (int)flipMode;
-- (void)setOffsetX:(float)arg1;
-- (void)setOffsetY:(float)arg1;
-- (void)setScaleX:(float)arg1;
-- (void)setScaleY:(float)arg1;
-- (BOOL)isOffsetXOverridden;
-- (BOOL)isOffsetYOverridden;
-- (BOOL)isScaleXOverridden;
-- (BOOL)isScaleYOverridden;
-- (float)scaleX;
+- (float)offsetX;
 - (float)scaleY;
+- (float)scaleX;
 - (BOOL)isAlignmentOverridden;
+- (BOOL)isScaleYOverridden;
+- (BOOL)isScaleXOverridden;
+- (BOOL)isOffsetYOverridden;
+- (BOOL)isOffsetXOverridden;
+- (void)setScaleY:(float)arg1;
+- (void)setScaleX:(float)arg1;
+- (void)setOffsetY:(float)arg1;
+- (void)setOffsetX:(float)arg1;
+- (int)flipMode;
+- (BOOL)isFlipModeOverridden;
+- (void)setFlipMode:(int)arg1;
 - (id)initWithDefaults;
 
 @end

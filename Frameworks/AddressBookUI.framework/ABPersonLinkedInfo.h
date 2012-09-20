@@ -11,23 +11,23 @@
     BOOL _unified;
 }
 
-@property(getter=isUnified) BOOL unified;
-@property void* person;
-@property(retain) NSString * name;
 @property(retain) NSString * type;
+@property(retain) NSString * name;
+@property void* person;
+@property(getter=isUnified) BOOL unified;
 
 
 - (void)setName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (id)name;
+- (id)type;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (BOOL)isUnified;
-- (void)setUnified:(BOOL)arg1;
 - (void)setPerson:(void*)arg1;
 - (void*)person;
-- (id)type;
-- (id)name;
 - (void)setType:(id)arg1;
+- (void)setUnified:(BOOL)arg1;
+- (BOOL)isUnified;
 
 @end

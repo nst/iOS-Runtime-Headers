@@ -9,12 +9,12 @@
 
 @property(copy) NSString * recipient;
 
-+ (id)phonePayload;
 + (id)phonePayloadWithDictionary:(id)arg1 context:(id)arg2;
++ (id)phonePayload;
 
-- (id)groupIdentifier;
-- (void)setRecipient:(id)arg1;
 - (id)recipient;
+- (void)setRecipient:(id)arg1;
+- (id)groupIdentifier;
 - (id)encodedClassName;
 
 @end

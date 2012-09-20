@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCameraView, PLSyncProgressView;
+@class PLCameraView;
 
 @interface PLCameraViewController : UIViewController  {
     PLCameraView *_cameraView;
-    PLSyncProgressView *_rebuildProgressView;
     BOOL _ignoreAppearCallbacks;
 }
 

@@ -11,15 +11,15 @@
     CoreDAVItem *_accessLevel;
 }
 
-@property(retain,readonly) CoreDAVItem * accessLevel;
-@property(retain,readonly) CoreDAVItem * summary;
-@property(retain,readonly) CoreDAVItem * commonName;
-@property(retain,readonly) CoreDAVItem * href;
+@property(readonly) CoreDAVItem * href;
+@property(readonly) CoreDAVItem * commonName;
+@property(readonly) CoreDAVItem * summary;
+@property(readonly) CoreDAVItem * accessLevel;
 
 
+- (id)accessLevel;
 - (id)summary;
 - (id)href;
 - (id)commonName;
-- (id)accessLevel;
 
 @end

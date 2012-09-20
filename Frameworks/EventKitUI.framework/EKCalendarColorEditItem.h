@@ -9,15 +9,18 @@
     unsigned int _checkedRow;
 }
 
+@property(readonly) NSMutableArray * cells;
 
+
+- (void)reset;
 - (void)dealloc;
+- (id)headerTitle;
+- (id)cells;
 - (id)_cellForColor:(id)arg1;
 - (void)calendarEditor:(id)arg1 didSelectSubitem:(int)arg2;
 - (BOOL)saveStateToCalendar:(id)arg1;
 - (void)setCalendar:(id)arg1 store:(id)arg2;
 - (int)numberOfSubitems;
 - (id)cellForSubitemAtIndex:(int)arg1;
-- (id)headerTitle;
-- (void)reset;
 
 @end

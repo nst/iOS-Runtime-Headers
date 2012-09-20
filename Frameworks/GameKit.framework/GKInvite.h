@@ -2,47 +2,44 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString, NSData, NSDictionary, GKPlayer;
+@class NSString, GKInviteInternal, GKPlayer, NSData;
 
 @interface GKInvite : NSObject  {
-    NSString *_inviteID;
-    NSData *_sessionToken;
-    NSDictionary *_inviteDictionary;
-    NSString *_message;
-    NSString *_inviter;
-    BOOL _hosted;
-    BOOL _cancelled;
     GKPlayer *_invitingPlayer;
+    GKInviteInternal *_internal;
+    BOOL _cancelled;
 }
 
-@property(retain) NSString * inviter;
-@property(getter=isHosted) BOOL hosted;
-@property(retain) NSString * inviteID;
-@property(retain) NSData * sessionToken;
-@property(retain) NSDictionary * inviteDictionary;
-@property(retain) NSString * message;
+@property(readonly) NSString * inviter;
+@property(getter=isHosted,readonly) BOOL hosted;
+@property(readonly) unsigned int playerGroup;
+@property(readonly) unsigned int playerAttributes;
+@property(retain) GKInviteInternal * internal;
+@property(readonly) NSString * inviteID;
+@property(readonly) NSData * sessionToken;
+@property(readonly) NSString * message;
+@property(readonly) BOOL isNearby;
+@property(readonly) GKPlayer * invitingPlayer;
 @property(getter=isCancelled) BOOL cancelled;
-@property(retain) GKPlayer * invitingPlayer;
 
-+ (id)inviteWithDictionary:(id)arg1;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 
-- (id)description;
-- (BOOL)isCancelled;
-- (void)dealloc;
-- (BOOL)isHosted;
-- (id)inviteDictionary;
-- (void)setSessionToken:(id)arg1;
-- (id)inviter;
 - (id)invitingPlayer;
-- (id)inviteID;
-- (void)setHosted:(BOOL)arg1;
-- (void)setInviter:(id)arg1;
-- (void)setInvitingPlayer:(id)arg1;
-- (void)setInviteDictionary:(id)arg1;
-- (void)setInviteID:(id)arg1;
-- (id)sessionToken;
-- (id)message;
-- (void)setMessage:(id)arg1;
+- (BOOL)isHosted;
+- (id)inviter;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (id)internal;
+- (id)description;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (unsigned int)hash;
+- (BOOL)isCancelled;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)setCancelled:(BOOL)arg1;
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

@@ -14,10 +14,10 @@
 + (id)conditionWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)conditionCode;
-- (void)setConditionCode:(id)arg1;
-- (int)conditionCodeIndex;
 - (void)setConditionCodeIndex:(int)arg1;
+- (int)conditionCodeIndex;
+- (void)setConditionCode:(id)arg1;
+- (id)conditionCode;
 - (id)encodedClassName;
 
 @end

@@ -12,9 +12,9 @@
 
 
 - (void)dealloc;
+- (id)initWithCalendar:(id)arg1 principal:(id)arg2 accountInfoProvider:(id)arg3 taskManager:(id)arg4;
 - (id)dataContentType;
 - (void)cancelTaskGroup;
 - (void)startTaskGroup;
-- (id)initWithCalendar:(id)arg1 principal:(id)arg2 accountInfoProvider:(id)arg3 taskManager:(id)arg4;
 
 @end

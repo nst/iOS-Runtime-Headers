@@ -11,20 +11,20 @@
 }
 
 @property(retain) NSArray * attendees;
-@property(retain) NSString * originator;
 @property(retain) CalDAVScheduleResponseItem * scheduleResponse;
+@property(retain) NSString * originator;
 
 
-- (void)dealloc;
-- (id)originator;
 - (void)setOriginator:(id)arg1;
+- (id)originator;
+- (void)dealloc;
+- (id)scheduleResponse;
+- (void)setScheduleResponse:(id)arg1;
+- (id)initWithOriginator:(id)arg1 attendees:(id)arg2 outboxURL:(id)arg3 payload:(id)arg4;
 - (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (void)setAttendees:(id)arg1;
 - (id)attendees;
-- (id)scheduleResponse;
-- (void)setScheduleResponse:(id)arg1;
-- (id)initWithOriginator:(id)arg1 attendees:(id)arg2 outboxURL:(id)arg3 payload:(id)arg4;
 
 @end

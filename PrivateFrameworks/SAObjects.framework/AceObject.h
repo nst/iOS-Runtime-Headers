@@ -9,37 +9,37 @@
     <AceContext> *_context;
 }
 
-+ (id)aceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
-+ (id)_aceObjectWithMutableDictionary:(id)arg1 context:(id)arg2;
-+ (id)aceObjectArrayWithDictionaryArray:(id)arg1 baseClass:(Class)arg2 context:(id)arg3;
-+ (id)aceObjectDictionaryWithDictionary:(id)arg1 baseClass:(Class)arg2 context:(id)arg3;
-+ (id)aceObjectArrayWithDictionaryArray:(id)arg1 baseProtocol:(id)arg2 context:(id)arg3;
-+ (id)aceObjectDictionaryWithDictionary:(id)arg1 baseProtocol:(id)arg2 context:(id)arg3;
-+ (id)dictionaryArrayWithAceObjectArray:(id)arg1;
 + (id)dictionaryWithAceObjectDictionary:(id)arg1;
-+ (id)newAceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)_newAceObjectWithMutableDictionary:(id)arg1 context:(id)arg2;
++ (id)dictionaryArrayWithAceObjectArray:(id)arg1;
++ (id)aceObjectDictionaryWithDictionary:(id)arg1 baseProtocol:(id)arg2 context:(id)arg3;
++ (id)aceObjectArrayWithDictionaryArray:(id)arg1 baseProtocol:(id)arg2 context:(id)arg3;
++ (id)aceObjectDictionaryWithDictionary:(id)arg1 baseClass:(Class)arg2 context:(id)arg3;
++ (id)aceObjectArrayWithDictionaryArray:(id)arg1 baseClass:(Class)arg2 context:(id)arg3;
++ (id)_aceObjectWithMutableDictionary:(id)arg1 context:(id)arg2;
++ (id)aceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
 + (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)_descriptionOf:(id)arg1 prefix:(id)arg2;
++ (id)_newAceObjectWithMutableDictionary:(id)arg1 context:(id)arg2;
++ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)newAceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (id)dictionary;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (void)setProperty:(id)arg1 forKey:(id)arg2;
-- (id)propertyForKey:(id)arg1;
-- (id)properties;
+- (id)init;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)properties;
 - (id)initWithDictionary:(id)arg1;
 - (id)context;
-- (id)dictionary;
+- (void)setProperty:(id)arg1 forKey:(id)arg2;
+- (id)propertyForKey:(id)arg1;
 - (void)setTopLevelProperty:(id)arg1 forKey:(id)arg2;
-- (id)_initWithMutableDictionary:(id)arg1 context:(id)arg2;
+- (void)_appendDescriptionOfObject:(id)arg1 toString:(id)arg2 atDepth:(int)arg3 withPrefixes:(id)arg4;
 - (id)topLevelPropertyForKey:(id)arg1;
+- (id)_initWithMutableDictionary:(id)arg1 context:(id)arg2;
 - (id)encodedClassName;
 - (id)initWithDictionary:(id)arg1 context:(id)arg2;
 

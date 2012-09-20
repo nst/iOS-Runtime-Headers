@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableIndexSet;
+@class NSMutableIndexSet, NSObject<OS_dispatch_queue>;
 
 @interface PLThumbnailIndexes : NSObject  {
-    struct dispatch_queue_s { } *isolation;
+    NSObject<OS_dispatch_queue> *isolation;
     NSMutableIndexSet *unusedIndexes;
     int usedMax;
-    NSMutableIndexSet *_blackList;
 }
 
 + (id)sharedInstance;

@@ -15,8 +15,9 @@
 + (Class)contentViewClass;
 + (struct CGSize { float x1; float x2; })videoImageSize;
 
-- (void)dealloc;
+- (void)setMediaItem:(id)arg1;
 - (id)mediaItem;
+- (void)dealloc;
 - (void)prepareForReuse;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
@@ -24,6 +25,5 @@
 - (id)videoImageRequest;
 - (void)setMediaItem:(id)arg1 chapterIndex:(unsigned int)arg2;
 - (void)updateContentView;
-- (void)setMediaItem:(id)arg1;
 
 @end

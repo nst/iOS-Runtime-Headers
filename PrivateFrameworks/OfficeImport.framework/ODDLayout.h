@@ -9,8 +9,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)rootNode;
 
 @end

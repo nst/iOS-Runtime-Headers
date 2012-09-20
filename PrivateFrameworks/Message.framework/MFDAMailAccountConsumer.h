@@ -11,14 +11,14 @@
 }
 
 
-- (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
-- (BOOL)waitUntilDoneBeforeDate:(id)arg1;
-- (void)waitUntilDone;
-- (BOOL)shouldRetryRequest;
-- (id)initWithAlwaysReportFailures:(BOOL)arg1;
-- (void)taskFailed:(id)arg1 withStatusCode:(int)arg2;
-- (void)setDone:(BOOL)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
+- (void)setDone:(BOOL)arg1;
+- (void)taskFailed:(id)arg1 statusCode:(int)arg2 error:(id)arg3;
+- (id)initWithAlwaysReportFailures:(BOOL)arg1;
+- (BOOL)shouldRetryRequest;
+- (void)waitUntilDone;
+- (BOOL)waitUntilDoneBeforeDate:(id)arg1;
 
 @end

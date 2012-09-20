@@ -10,15 +10,15 @@
 
 @property(readonly) NSData * pemData;
 
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
 - (id)description;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)pemData;
-- (struct __SecCertificate { }*)copyCertificate;
-- (struct __SecIdentity { }*)copyIdentityFromKeychain;
 - (BOOL)isIdentity;
+- (struct __SecIdentity { }*)copyIdentityFromKeychain;
+- (struct __SecCertificate { }*)copyCertificate;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 
 @end

@@ -13,14 +13,14 @@
 @property(copy) NSNumber * reason;
 
 
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)bagKey;
 - (id)requiredKeys;
 - (void)setReason:(id)arg1;
 - (id)peers;
 - (void)setPeers:(id)arg1;
-- (id)bagKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)reason;
+- (id)messageBody;
 
 @end

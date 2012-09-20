@@ -12,11 +12,12 @@
 }
 
 @property(copy) NSString * text;
+@property(readonly) UILabel * label;
 
 
-- (void)dealloc;
-- (id)_loadingString;
 - (void)setLoading:(BOOL)arg1;
+- (void)dealloc;
+- (id)label;
 - (id)text;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;

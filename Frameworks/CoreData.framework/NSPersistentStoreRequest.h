@@ -12,8 +12,8 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)affectedStores;
 - (void)setAffectedStores:(id)arg1;
+- (id)affectedStores;
 - (unsigned int)requestType;
 
 @end

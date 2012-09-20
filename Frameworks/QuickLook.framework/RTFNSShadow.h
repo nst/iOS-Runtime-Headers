@@ -13,16 +13,16 @@
     float shadowBlurRadius;
 }
 
-@property float shadowBlurRadius;
-@property struct CGSize { float width; float height; } shadowOffset;
 @property(retain) RTFNSColor * shadowColor;
+@property struct CGSize { float x1; float x2; } shadowOffset;
+@property float shadowBlurRadius;
 
 
-- (struct CGSize { float x1; float x2; })shadowOffset;
+- (float)shadowBlurRadius;
+- (void)setShadowBlurRadius:(float)arg1;
+- (id)shadowColor;
 - (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShadowColor:(id)arg1;
-- (id)shadowColor;
-- (void)setShadowBlurRadius:(float)arg1;
-- (float)shadowBlurRadius;
+- (struct CGSize { float x1; float x2; })shadowOffset;
 
 @end

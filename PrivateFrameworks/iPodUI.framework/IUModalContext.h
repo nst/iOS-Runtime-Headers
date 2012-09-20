@@ -21,14 +21,14 @@
 @property int tag;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (void)setParentViewController:(id)arg1;
 - (id)viewController;
-- (id)parentViewController;
 - (int)tag;
 - (void)setTag:(int)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (id)parentViewController;
 - (BOOL)shouldHideContainerNavigationBar;
 - (void)setDefaultControllerIdentifier:(id)arg1;
 - (BOOL)hideIndexBar;

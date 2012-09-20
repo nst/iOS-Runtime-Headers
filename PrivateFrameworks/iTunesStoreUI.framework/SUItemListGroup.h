@@ -14,12 +14,12 @@
 @property(retain) SUItem * separatorItem;
 
 
+- (void)setSeparatorItem:(id)arg1;
+- (id)separatorItem;
+- (id)indexBarTitle;
 - (id)description;
 - (void)dealloc;
 - (void)setItems:(id)arg1;
 - (id)items;
-- (void)setSeparatorItem:(id)arg1;
-- (id)separatorItem;
-- (id)indexBarTitle;
 
 @end

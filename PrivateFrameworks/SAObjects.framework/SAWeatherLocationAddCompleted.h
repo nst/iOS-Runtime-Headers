@@ -9,21 +9,21 @@
 
 @property(copy) NSString * error;
 @property(copy) NSURL * weatherLocationId;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)locationAddCompleted;
-+ (id)locationAddCompletedWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)locationAddCompletedWithError:(id)arg1;
 + (id)locationAddCompletedWithWeatherLocationId:(id)arg1;
++ (id)locationAddCompletedWithError:(id)arg1;
++ (id)locationAddCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)locationAddCompleted;
 
 - (id)groupIdentifier;
 - (void)setError:(id)arg1;
-- (id)error;
 - (id)initWithError:(id)arg1;
+- (id)error;
 - (id)weatherLocationId;
-- (id)initWithWeatherLocationId:(id)arg1;
 - (void)setWeatherLocationId:(id)arg1;
+- (id)initWithWeatherLocationId:(id)arg1;
 - (id)encodedClassName;
 
 @end

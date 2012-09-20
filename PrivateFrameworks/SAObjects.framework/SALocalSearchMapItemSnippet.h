@@ -9,24 +9,24 @@
 
 @property(copy) NSArray * items;
 @property(copy) NSArray * providerCommand;
-@property(retain) NSNumber * regionOfInterestRadiusInMiles;
+@property(copy) NSNumber * regionOfInterestRadiusInMiles;
 @property(retain) SALocation * searchRegionCenter;
-@property(retain) NSNumber * userCurrentLocation;
+@property(copy) NSNumber * userCurrentLocation;
 
-+ (id)mapItemSnippet;
 + (id)mapItemSnippetWithDictionary:(id)arg1 context:(id)arg2;
++ (id)mapItemSnippet;
 
 - (id)groupIdentifier;
 - (void)setItems:(id)arg1;
 - (id)items;
-- (id)providerCommand;
-- (void)setProviderCommand:(id)arg1;
-- (id)regionOfInterestRadiusInMiles;
-- (void)setRegionOfInterestRadiusInMiles:(id)arg1;
-- (id)searchRegionCenter;
-- (void)setSearchRegionCenter:(id)arg1;
-- (id)userCurrentLocation;
 - (void)setUserCurrentLocation:(id)arg1;
+- (id)userCurrentLocation;
+- (void)setSearchRegionCenter:(id)arg1;
+- (id)searchRegionCenter;
+- (void)setRegionOfInterestRadiusInMiles:(id)arg1;
+- (id)regionOfInterestRadiusInMiles;
+- (void)setProviderCommand:(id)arg1;
+- (id)providerCommand;
 - (id)encodedClassName;
 
 @end

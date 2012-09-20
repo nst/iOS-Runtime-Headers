@@ -38,8 +38,8 @@
 
 + (id)generator;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)eventTimeZone;
 - (id)_copySimpleYearlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned int)arg4;
 - (BOOL)_isSimpleYearlyRecurrence;
@@ -66,7 +66,6 @@
 - (void)setEventTimeZone:(id)arg1;
 - (void)setEventEndDate:(id)arg1;
 - (void)setEventStartDate:(id)arg1;
-- (id)nextOccurrenceDateWithEKRecurrences:(id)arg1 initialDate:(id)arg2 afterDate:(id)arg3;
 - (id)weeksOfTheYear;
 - (id)daysOfTheYear;
 - (id)monthsOfTheYear;
@@ -80,6 +79,10 @@
 - (void)setDaysOfTheMonth:(id)arg1;
 - (void)setDaysOfTheWeek:(id)arg1;
 - (id)copyOccurrenceDatesWithEvent:(id)arg1 recurrenceRule:(id)arg2 startDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg3 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg4 timeZone:(id)arg5 limit:(int)arg6;
+- (BOOL)occurrenceDate:(id)arg1 matchesRecurrenceRule:(id)arg2 forEvent:(id)arg3 includeDetachedEventsInSeries:(BOOL)arg4;
+- (id)copyOccurrenceDatesWithEKEvent:(id)arg1 recurrenceRule:(id)arg2 startDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg3 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg4 timeZone:(id)arg5 exceptionDates:(id)arg6 limit:(int)arg7;
+- (id)nextOccurrenceDateWithEKRecurrences:(id)arg1 exceptionDates:(id)arg2 initialDate:(id)arg3 afterDate:(id)arg4;
+- (id)nextOccurrenceDateWithEKRecurrences:(id)arg1 initialDate:(id)arg2 afterDate:(id)arg3;
 - (BOOL)isOccurrenceDate:(id)arg1 validForEvent:(id)arg2;
 - (void)setEndDate:(id)arg1;
 - (void)setAllDay:(BOOL)arg1;

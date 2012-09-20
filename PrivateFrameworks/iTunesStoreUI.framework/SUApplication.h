@@ -12,16 +12,6 @@
 @property(retain) UIWindow * window;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)_applicationDidFinishLaunching:(id)arg1;
-- (BOOL)runTest:(id)arg1 options:(id)arg2;
-- (double)defaultImageSnapshotExpiration;
-- (void)applicationDidFinishLaunching:(id)arg1;
-- (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
-- (void)applicationWillEnterForeground:(id)arg1;
-- (void)applicationDidEnterBackground:(id)arg1;
-- (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
 - (void)runTestInvocation:(id)arg1;
 - (void)_runScriptTestWithOptions:(id)arg1;
 - (void)_exitForStoreNotAvailable;
@@ -29,5 +19,16 @@
 - (void)_setupUI;
 - (void)_teardownUI;
 - (void)_storeEnabledChangeNotification:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)_applicationDidFinishLaunching:(id)arg1;
+- (BOOL)runTest:(id)arg1 options:(id)arg2;
+- (BOOL)applicationSuspend:(struct __GSEvent { }*)arg1 settings:(id)arg2;
+- (double)defaultImageSnapshotExpiration;
+- (void)applicationDidFinishLaunching:(id)arg1;
+- (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
+- (void)applicationWillEnterForeground:(id)arg1;
+- (void)applicationDidEnterBackground:(id)arg1;
+- (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
 
 @end

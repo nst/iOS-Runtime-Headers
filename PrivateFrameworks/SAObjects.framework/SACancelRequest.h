@@ -7,11 +7,11 @@
 @interface SACancelRequest : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)cancelRequestWithDictionary:(id)arg1 context:(id)arg2;
 + (id)cancelRequest;
++ (id)cancelRequestWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

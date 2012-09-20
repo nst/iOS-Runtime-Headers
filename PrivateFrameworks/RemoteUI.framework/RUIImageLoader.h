@@ -27,20 +27,20 @@
 
 + (id)sharedImageLoader;
 
-- (id)init;
 - (id)notificationCenter;
+- (id)init;
 - (struct CGImage { }*)imageForURL:(id)arg1 loadIfAbsent:(BOOL)arg2;
-- (void)_setImageData:(id)arg1 forURL:(id)arg2 cacheLocked:(BOOL)arg3;
-- (void)_loadImageURL:(id)arg1;
 - (void)_locked_loadImageForURL:(id)arg1;
-- (BOOL)isLoadingImages;
-- (void)_imageLoadFinished:(id)arg1;
-- (void)_startLoader;
-- (void)_mainThread_postLoadingStatusChanged;
-- (void)_postLoadingStatusChanged;
+- (void)_loadImageURL:(id)arg1;
+- (void)_setImageData:(id)arg1 forURL:(id)arg2 cacheLocked:(BOOL)arg3;
 - (void)_locked_imageLoadStarted:(id)arg1;
 - (void)_loadingStatusChanged;
-- (BOOL)_locked_URLIsLoading:(id)arg1;
 - (void)_postImageLoadedNotification:(id)arg1;
+- (BOOL)_locked_URLIsLoading:(id)arg1;
+- (void)_postLoadingStatusChanged;
+- (void)_mainThread_postLoadingStatusChanged;
+- (BOOL)isLoadingImages;
+- (void)_startLoader;
+- (void)_imageLoadFinished:(id)arg1;
 
 @end

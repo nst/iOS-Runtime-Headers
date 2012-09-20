@@ -17,11 +17,11 @@
 - (id)groupIdentifier;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
-- (id)contentsToAppend;
 - (void)setContentsToAppend:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)contentsToAppend;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

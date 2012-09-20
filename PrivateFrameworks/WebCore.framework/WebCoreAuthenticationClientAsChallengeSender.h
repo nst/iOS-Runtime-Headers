@@ -14,12 +14,12 @@
 
 
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
-- (void)detachClient;
-- (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
-- (void)cancelAuthenticationChallenge:(id)arg1;
 - (struct _CFURLAuthChallenge { }*)cfChallenge;
+- (void)setCFChallenge:(struct _CFURLAuthChallenge { }*)arg1;
+- (void)detachClient;
 - (struct AuthenticationClient { int (**x1)(); }*)client;
 - (id)initWithAuthenticationClient:(struct AuthenticationClient { int (**x1)(); }*)arg1;
-- (void)setCFChallenge:(struct _CFURLAuthChallenge { }*)arg1;
+- (void)cancelAuthenticationChallenge:(id)arg1;
+- (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 
 @end

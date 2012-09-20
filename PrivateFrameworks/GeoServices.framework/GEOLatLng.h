@@ -11,22 +11,19 @@
 @property double lng;
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
-- (unsigned int)unsignedLatE7;
-- (id)coordinateAsString;
-- (id)dictionaryRepresentation;
-- (BOOL)isValid;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (int)lngE7;
-- (int)latE7;
 - (void)setLng:(double)arg1;
 - (void)setLat:(double)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)dictionaryRepresentation;
+- (BOOL)isValid;
 - (double)lng;
 - (double)lat;
-- (id)initWithGMMGeometry:(id)arg1;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)coordinateAsString;
+- (BOOL)readFrom:(id)arg1;
 
 @end

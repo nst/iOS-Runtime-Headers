@@ -10,20 +10,20 @@
     struct __CFArray { } *paragraphs;
 }
 
-@property int number;
 @property(retain) CPList * list;
+@property int number;
 
 
-- (id)init;
-- (void)dealloc;
 - (void)addParagraph:(id)arg1;
-- (void)setNumber:(int)arg1;
+- (void)dispose;
+- (void)dealloc;
+- (id)init;
 - (int)number;
 - (id)list;
 - (void)finalize;
 - (void)setList:(id)arg1;
+- (void)setNumber:(int)arg1;
 - (unsigned int)paragraphCount;
 - (id)paragraphAtIndex:(unsigned int)arg1;
-- (void)dispose;
 
 @end

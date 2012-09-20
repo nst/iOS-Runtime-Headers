@@ -11,12 +11,12 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (id)documentPoint;
+- (id)init;
 - (void)setDocumentPoint:(id)arg1;
+- (void)setParentTextListStyle:(id)arg1;
 - (id)colorTransform;
 - (id)styleDefinition;
-- (void)setParentTextListStyle:(id)arg1;
+- (id)documentPoint;
 
 @end

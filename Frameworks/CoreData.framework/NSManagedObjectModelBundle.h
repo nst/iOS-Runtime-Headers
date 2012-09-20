@@ -11,15 +11,16 @@
 
 
 - (void)dealloc;
+- (id)_modelForVersionHashes:(id)arg1 inStyle:(unsigned int)arg2;
+- (id)modelVersions;
+- (id)urlForModelVersionWithName:(id)arg1;
+- (id)currentVersion;
+- (id)versionHashInfo;
+- (id)versionInfoDictionary;
+- (id)currentVersionURL;
+- (id)optimizedVersionURL;
+- (id)_modelForVersionHashes:(id)arg1;
 - (id)initWithPath:(id)arg1;
 - (id)bundle;
-- (id)modelVersions;
-- (id)versionInfoDictionary;
-- (id)versionHashInfo;
-- (id)currentVersion;
-- (id)urlForModelVersionWithName:(id)arg1;
-- (id)_modelForVersionHashes:(id)arg1;
-- (id)optimizedVersionURL;
-- (id)currentVersionURL;
 
 @end

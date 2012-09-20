@@ -7,15 +7,15 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)close;
-- (id)openStream:(id)arg1 withMode:(int)arg2;
-- (id)openStorage:(id)arg1 withMode:(int)arg2;
-- (id)getInfo;
-- (id)getChildrenInfo;
-- (int)getChildType:(id)arg1;
 - (void)setClass:(struct { unsigned int x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
+- (int)getChildType:(id)arg1;
+- (id)getChildrenInfo;
+- (id)getInfo;
+- (id)openStorage:(id)arg1 withMode:(int)arg2;
+- (id)openStream:(id)arg1 withMode:(int)arg2;
 - (id)initWithCStorage:(struct _Storage { }*)arg1;
 
 @end

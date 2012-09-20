@@ -16,12 +16,12 @@
 + (id)_currentMoviePlayerController;
 + (id)_playerKeysToObserve;
 
-- (void)dealloc;
+- (void)setInitialPlaybackTime:(double)arg1;
 - (int)movieControlMode;
 - (void)_preloadingComplete;
 - (void)_delayedHideOverlay;
 - (void)_expireImplicitAudioRouteChangePlaybackRestart;
-- (unsigned int)_visiblePartsForMovieControlMode;
+- (unsigned long long)_visiblePartsForMovieControlMode;
 - (void)_playerFadeOutAnimationDidEnd:(id)arg1 finished:(id)arg2;
 - (void)_delayedBeginFadeOut;
 - (void)_playerFadeInAnimationDidEnd:(id)arg1 finished:(id)arg2;
@@ -57,12 +57,12 @@
 - (id)initWithContentURL:(id)arg1;
 - (void)_setMoviePlayer:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
+- (void)dealloc;
 - (void)stop;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)backgroundColor;
 - (void)setBackgroundColor:(id)arg1;
 - (void)_play;
 - (void)play;
-- (void)setInitialPlaybackTime:(double)arg1;
 
 @end

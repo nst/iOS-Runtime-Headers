@@ -9,23 +9,25 @@
 }
 
 + (id)objectIDWithURL:(id)arg1;
-+ (id)objectIDWithEntityType:(int)arg1 rowID:(int)arg2;
 + (id)temporaryObjectIDWithEntityType:(int)arg1;
++ (id)objectIDWithEntityType:(int)arg1 rowID:(int)arg2;
 + (id)objectIDWithCADObjectID:(struct { int x1; int x2; })arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithEntityType:(int)arg1 rowID:(int)arg2 temporary:(BOOL)arg3;
-- (int)entityType;
-- (int)rowID;
-- (struct { int x1; int x2; })CADObjectID;
-- (BOOL)isTemporary;
+- (id)entityName;
+- (id)URIRepresentation;
+- (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)stringRepresentation;
-- (id)entityName;
-- (id)URIRepresentation;
+- (id)initWithEntityType:(int)arg1 rowID:(int)arg2 temporary:(BOOL)arg3;
+- (id)initWithDictionaryRepresentation:(id)arg1;
+- (BOOL)isTemporary;
+- (int)rowID;
+- (struct { int x1; int x2; })CADObjectID;
+- (int)entityType;
 
 @end

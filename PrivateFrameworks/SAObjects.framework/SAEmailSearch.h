@@ -19,24 +19,24 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)subject;
-- (void)setSubject:(id)arg1;
 - (id)groupIdentifier;
+- (id)subject;
 - (void)setStatus:(int)arg1;
 - (int)status;
+- (void)setSubject:(id)arg1;
+- (id)toEmail;
+- (void)setToEmail:(id)arg1;
+- (void)setFromEmail:(id)arg1;
+- (id)fromEmail;
+- (void)setTimeZoneId:(id)arg1;
+- (id)timeZoneId;
+- (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 - (void)setEndDate:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
 - (id)startDate;
-- (id)toEmail;
-- (void)setToEmail:(id)arg1;
-- (id)fromEmail;
-- (void)setFromEmail:(id)arg1;
-- (id)timeZoneId;
-- (void)setTimeZoneId:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
-- (BOOL)requiresResponse;
 
 @end

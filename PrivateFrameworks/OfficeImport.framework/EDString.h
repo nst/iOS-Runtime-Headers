@@ -16,23 +16,23 @@
 + (id)edStringWithString:(id)arg1;
 
 - (id)initWithString:(id)arg1;
-- (id)string;
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (BOOL)isEqualToString:(id)arg1;
 - (void)setString:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToString:(id)arg1;
+- (id)string;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (bool)isEmpty;
-- (id)firstRunFont;
-- (bool)areThereRuns;
-- (void)setRuns:(id)arg1;
-- (id)initWithString:(id)arg1 runs:(id)arg2;
-- (BOOL)isEqualToEDString:(id)arg1;
-- (id)phoneticInfo;
 - (void)setPhoneticInfo:(id)arg1;
-- (id)runs;
+- (BOOL)isEqualToEDString:(id)arg1;
+- (id)initWithString:(id)arg1 runs:(id)arg2;
 - (void)setDoNotModify:(bool)arg1;
+- (id)phoneticInfo;
+- (id)firstRunFont;
+- (void)setRuns:(id)arg1;
+- (bool)areThereRuns;
+- (id)runs;
 
 @end

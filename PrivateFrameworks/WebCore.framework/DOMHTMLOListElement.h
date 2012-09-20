@@ -12,11 +12,13 @@
 @property(copy) NSString * type;
 
 
+- (id)type;
 - (void)setStart:(int)arg1;
 - (int)start;
-- (id)type;
 - (void)setType:(id)arg1;
-- (BOOL)compact;
+- (void)setReversed:(BOOL)arg1;
+- (BOOL)reversed;
 - (void)setCompact:(BOOL)arg1;
+- (BOOL)compact;
 
 @end

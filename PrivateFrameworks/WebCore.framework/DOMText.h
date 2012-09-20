@@ -7,11 +7,11 @@
 @interface DOMText : DOMCharacterData  {
 }
 
-@property(copy,readonly) NSString * wholeText;
+@property(readonly) NSString * wholeText;
 
 
-- (id)wholeText;
-- (id)splitText:(unsigned int)arg1;
 - (id)replaceWholeText:(id)arg1;
+- (id)splitText:(unsigned int)arg1;
+- (id)wholeText;
 
 @end

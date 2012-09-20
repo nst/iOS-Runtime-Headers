@@ -9,19 +9,12 @@
 }
 
 
-- (struct __SecTrust { }*)serverTrust;
-- (id)distinguishedNames;
-- (BOOL)receivesCredentialSecurely;
-- (id)realm;
-- (id)initWithProxyHost:(id)arg1 port:(int)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
-- (id)_internalInit;
-- (struct _CFURLProtectionSpace { }*)_cfurlprtotectionspace;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (BOOL)isProxy;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)protocol;
 - (id)proxyType;
 - (id)initWithHost:(id)arg1 port:(int)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
@@ -31,5 +24,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_initWithCFURLProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
+- (struct __SecTrust { }*)serverTrust;
+- (id)distinguishedNames;
+- (BOOL)receivesCredentialSecurely;
+- (id)realm;
+- (id)initWithProxyHost:(id)arg1 port:(int)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
+- (id)_internalInit;
+- (struct _CFURLProtectionSpace { }*)_cfurlprtotectionspace;
 
 @end

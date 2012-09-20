@@ -20,16 +20,18 @@
     BOOL m_containsStart;
     BOOL m_containsEnd;
     BOOL m_isInFixedPosition;
+    BOOL m_isHorizontal;
 }
 
-@property BOOL isInFixedPosition;
-@property BOOL containsEnd;
-@property BOOL containsStart;
-@property BOOL isLastOnLine;
-@property BOOL isFirstOnLine;
-@property BOOL isLineBreak;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
 @property int writingDirection;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } rect;
+@property BOOL isLineBreak;
+@property BOOL isFirstOnLine;
+@property BOOL isLastOnLine;
+@property BOOL containsStart;
+@property BOOL containsEnd;
+@property BOOL isInFixedPosition;
+@property BOOL isHorizontal;
 
 + (id)selectionRect;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endEdge:(id)arg1;
@@ -38,21 +40,23 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (BOOL)isLineBreak;
-- (BOOL)isFirstOnLine;
-- (BOOL)isLastOnLine;
-- (void)setWritingDirection:(int)arg1;
-- (void)setIsLineBreak:(BOOL)arg1;
-- (void)setIsFirstOnLine:(BOOL)arg1;
-- (void)setIsLastOnLine:(BOOL)arg1;
-- (void)setContainsStart:(BOOL)arg1;
-- (void)setContainsEnd:(BOOL)arg1;
-- (void)setIsInFixedPosition:(BOOL)arg1;
 - (BOOL)containsEnd;
 - (int)writingDirection;
 - (BOOL)containsStart;
 - (BOOL)isInFixedPosition;
+- (BOOL)isHorizontal;
+- (void)setIsHorizontal:(BOOL)arg1;
 - (void)setRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rect;
+- (BOOL)isLastOnLine;
+- (BOOL)isFirstOnLine;
+- (BOOL)isLineBreak;
+- (void)setIsInFixedPosition:(BOOL)arg1;
+- (void)setContainsEnd:(BOOL)arg1;
+- (void)setContainsStart:(BOOL)arg1;
+- (void)setIsLastOnLine:(BOOL)arg1;
+- (void)setIsFirstOnLine:(BOOL)arg1;
+- (void)setIsLineBreak:(BOOL)arg1;
+- (void)setWritingDirection:(int)arg1;
 
 @end

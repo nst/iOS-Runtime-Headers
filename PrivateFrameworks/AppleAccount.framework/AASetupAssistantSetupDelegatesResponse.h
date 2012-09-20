@@ -10,11 +10,13 @@
 @property(readonly) NSNumber * status;
 @property(readonly) NSString * statusMessage;
 @property(readonly) NSDictionary * responseParameters;
+@property(readonly) NSString * dsid;
 
 
-- (id)statusMessage;
 - (id)status;
-- (id)responseParametersForServiceIdentifier:(id)arg1;
 - (id)responseParameters;
+- (id)responseParametersForServiceIdentifier:(id)arg1;
+- (id)dsid;
+- (id)statusMessage;
 
 @end

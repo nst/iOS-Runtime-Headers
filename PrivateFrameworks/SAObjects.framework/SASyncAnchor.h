@@ -20,10 +20,10 @@
 - (id)key;
 - (id)value;
 - (void)setValue:(id)arg1;
-- (id)generation;
 - (id)validity;
-- (void)setGeneration:(id)arg1;
+- (id)generation;
 - (void)setValidity:(id)arg1;
+- (void)setGeneration:(id)arg1;
 - (id)encodedClassName;
 
 @end

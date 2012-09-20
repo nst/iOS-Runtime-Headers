@@ -21,14 +21,14 @@
 + (id)objectsFromWrappers:(id)arg1;
 + (id)wrapperWithObject:(id)arg1 size:(long long)arg2;
 
-- (void)dealloc;
-- (id)initWithObject:(id)arg1 size:(long long)arg2;
-- (void)setErrorCount:(int)arg1;
-- (void)setUniqueID:(long long)arg1;
-- (long long)uniqueID;
-- (int)errorCount;
+- (void).cxx_destruct;
 - (id)object;
 - (void)setSize:(long long)arg1;
 - (long long)size;
+- (id)initWithObject:(id)arg1 size:(long long)arg2;
+- (void)setErrorCount:(int)arg1;
+- (int)errorCount;
+- (void)setUniqueID:(long long)arg1;
+- (long long)uniqueID;
 
 @end

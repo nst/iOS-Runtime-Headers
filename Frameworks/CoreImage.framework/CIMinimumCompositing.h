@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIMinimumCompositing : CICompositeFilter  {
+@interface CIMinimumCompositing : _CICompositeFilter  {
 }
 
 + (id)_kernel_source;

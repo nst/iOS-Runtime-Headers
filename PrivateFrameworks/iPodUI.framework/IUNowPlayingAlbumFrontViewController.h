@@ -2,46 +2,59 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class MPImageCacheRequest, MPPortraitInfoOverlay, MPReflectionImageView, MPSwipableView, MPImageCache;
+@class MPImageCacheRequest, ADBannerView, MPAVItem, MPReflectionImageView, MPSwipableView, IUPortraitInfoOverlay;
 
-@interface IUNowPlayingAlbumFrontViewController : MPViewController <MPSwipableViewDelegate> {
+@interface IUNowPlayingAlbumFrontViewController : MPViewController <IUPortraitInfoOverlayDelegate, MPSwipableViewDelegate> {
+    ADBannerView *_adView;
     MPReflectionImageView *_artworkView;
     MPSwipableView *_backstopView;
-    MPImageCache *_imageCache;
-    MPImageCacheRequest *_lastImageRequest;
-    MPPortraitInfoOverlay *_overlayView;
+    MPImageCacheRequest *_currentImageRequest;
+    float _filteredX;
+    float _filteredZ;
+    MPAVItem *_imageRequestPendingItem;
+    id _motionManagerObserver;
+    IUPortraitInfoOverlay *_overlayView;
+    int _style;
 }
 
+@property int style;
 
-- (id)init;
-- (void)dealloc;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForArtwork;
+
+- (void)setItem:(id)arg1;
 - (void)_displayValuesDidChangeNotification:(id)arg1;
-- (void)infoOverlayDidFinishHiding:(id)arg1;
-- (void)_crossedTimeMarkerNotification:(id)arg1;
+- (void)endTransitionOverlayHidingWithTransferedOverlayView:(id)arg1;
 - (id)copyOverlayViewForTransitionToItem:(id)arg1;
-- (void)_handleSwipeRight;
-- (void)endTransitionOverlayHiddingWithTransferedOverlayView:(id)arg1;
-- (void)_removeOverlayView;
-- (id)_overlayView;
 - (void)stopTicking;
 - (void)startTicking;
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
 - (void)swipableView:(id)arg1 tappedWithCount:(unsigned int)arg2;
 - (void)swipableView:(id)arg1 swipedInDirection:(int)arg2;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
+- (int)style;
+- (void)setStyle:(int)arg1;
 - (int)statusBarStyle;
-- (void)setItem:(id)arg1;
-- (void)artworkDidZoomOut;
+- (id)_overlayView;
+- (void)_handleDoubleTap:(id)arg1;
 - (void)artworkWillZoomOut;
-- (void)artworkDidZoomIn;
 - (void)artworkWillZoomIn;
+- (void)artworkDidZoomOut;
+- (void)artworkDidZoomIn;
+- (BOOL)infoOverlayShouldDisplayQueuePositionUI:(id)arg1;
+- (void)infoOverlayDidFinishHiding:(id)arg1;
 - (void)_handleSingleTap;
+- (void)_addOverlayView:(id)arg1;
 - (void)_updateArtworkForTime:(double)arg1;
+- (void)_removeOverlayView;
+- (void)_handleSwipeRight;
 - (void)coverFlowIsTransitioningOut:(BOOL)arg1;
 - (void)coverFlowDidTransitionOut:(BOOL)arg1;
+- (id)coverFlowControllerInitialTransitionImage:(id)arg1;
 - (void)coverFlowWillTransitionOut:(BOOL)arg1;
-- (void)_handleDoubleTap:(id)arg1;
 
 @end

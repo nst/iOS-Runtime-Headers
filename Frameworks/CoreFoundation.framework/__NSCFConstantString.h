@@ -6,11 +6,11 @@
 }
 
 
-- (BOOL)isKindOfClass:(Class)arg1;
 - (unsigned int)retainCount;
+- (BOOL)isKindOfClass:(Class)arg1;
 - (id)retain;
-- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
 - (id)autorelease;
 
 @end

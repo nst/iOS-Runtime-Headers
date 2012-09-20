@@ -48,8 +48,8 @@
 + (id)attributesWithSystemFontOfSize:(float)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setDrawUnderline:(BOOL)arg1;
 - (BOOL)drawUnderline;
 - (void)setRenderString:(id*)arg1;
@@ -58,7 +58,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })truncationRect;
 - (void)setIncludeEmoji:(BOOL)arg1;
 - (BOOL)includeEmoji;
-- (void)setAlignment:(int)arg1;
+- (int)alignment;
 - (float)actualTrackingAdjustment;
 - (void)setMinimumTrackingAdjustment:(float)arg1;
 - (float)minimumTrackingAdjustment;
@@ -66,7 +66,6 @@
 - (float)trackingAdjustment;
 - (void)setBaselineAdjustment:(int)arg1;
 - (int)baselineAdjustment;
-- (void)setLineBreakMode:(int)arg1;
 - (int)lineBreakMode;
 - (void)setLineSpacing:(float)arg1;
 - (float)lineSpacing;
@@ -74,11 +73,13 @@
 - (void)setMinimumFontSize:(float)arg1;
 - (float)minimumFontSize;
 - (id)font;
+- (id)attributesDictionary:(BOOL)arg1;
 - (int)ellipsisStyle;
 - (float)letterSpacing;
 - (void)setActualTrackingAdjustment:(float)arg1;
 - (void)setActualFontSize:(float)arg1;
+- (void)setAlignment:(int)arg1;
+- (void)setLineBreakMode:(int)arg1;
 - (void)setFont:(id)arg1;
-- (int)alignment;
 
 @end

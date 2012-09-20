@@ -9,11 +9,11 @@
 @property long long rowid;
 
 
-- (void)setRowid:(long long)arg1;
-- (BOOL)hasRowid;
-- (long long)rowid;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (long long)rowid;
+- (BOOL)hasRowid;
+- (void)setRowid:(long long)arg1;
 
 @end

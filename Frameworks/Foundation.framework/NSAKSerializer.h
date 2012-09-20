@@ -7,6 +7,7 @@
 }
 
 
+- (void)dealloc;
 - (id)serializerStream;
 - (id)initForSerializerStream:(id)arg1;
 - (unsigned int)serializePListValueIn:(id)arg1 key:(id)arg2 value:(id)arg3;
@@ -17,6 +18,5 @@
 - (unsigned int)serializePropertyList:(id)arg1;
 - (unsigned int)serializeList:(id)arg1;
 - (unsigned int)serializeData:(id)arg1;
-- (void)dealloc;
 
 @end

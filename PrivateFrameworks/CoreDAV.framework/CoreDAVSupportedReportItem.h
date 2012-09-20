@@ -10,12 +10,12 @@
 
 @property(retain) CoreDAVItem * report;
 
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setReport:(id)arg1;
-- (id)copyParseRules;
 - (id)report;
 
 @end

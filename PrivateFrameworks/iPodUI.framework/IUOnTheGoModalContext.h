@@ -13,9 +13,9 @@
 @property(retain) MPMediaPlaylist * playlist;
 
 
-- (void)dealloc;
 - (void)_doneAction:(id)arg1;
 - (id)playlist;
+- (void)dealloc;
 - (void)setPlaylist:(id)arg1;
 - (void)_addTracks:(id)arg1;
 - (void)_addTrackAtIndex:(unsigned int)arg1 dataSource:(id)arg2;
@@ -26,7 +26,6 @@
 - (void)handleSelectionForIndex:(unsigned int)arg1 dataSource:(id)arg2;
 - (id)newTabBarController;
 - (void)configureNavigationItem:(id)arg1;
-- (void)configureDataSource:(id)arg1;
 - (BOOL)canHandleSelectionForIndex:(unsigned int)arg1 dataSource:(id)arg2;
 - (id)copyQueryForQuery:(id)arg1;
 

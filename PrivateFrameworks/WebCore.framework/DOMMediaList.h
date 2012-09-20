@@ -11,13 +11,13 @@
 @property(readonly) unsigned int length;
 
 
-- (unsigned int)length;
 - (void)dealloc;
+- (unsigned int)length;
 - (id)item:(unsigned int)arg1;
 - (void)finalize;
-- (id)mediaText;
-- (void)setMediaText:(id)arg1;
-- (void)deleteMedium:(id)arg1;
 - (void)appendMedium:(id)arg1;
+- (void)deleteMedium:(id)arg1;
+- (void)setMediaText:(id)arg1;
+- (id)mediaText;
 
 @end

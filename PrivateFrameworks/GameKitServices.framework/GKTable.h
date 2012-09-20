@@ -4,32 +4,32 @@
 
 @interface GKTable : NSObject  {
     struct _gktableitem { unsigned int x1; id x2; double x3; double x4; } *_items;
-    unsigned int _count;
-    unsigned int _size;
+    unsigned long _count;
+    unsigned long _size;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
     } _lock;
 }
 
-@property(readonly) unsigned int count;
+@property(readonly) unsigned long count;
 
 
-- (unsigned long)count;
-- (id)objectForKey:(unsigned int)arg1;
+- (void)removeObjectForKey:(unsigned int)arg1;
 - (void)setObject:(id)arg1 forKey:(unsigned int)arg2;
-- (id)init;
+- (void)removeAllObjects;
+- (id)objectForKey:(unsigned int)arg1;
 - (void)dealloc;
-- (void)print;
+- (id)init;
+- (unsigned long)count;
 - (id)allObjects;
 - (void)unlock;
 - (void)lock;
 - (id)initWithSize:(unsigned long)arg1;
 - (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
-- (void)removeObjectForKey:(unsigned int)arg1;
-- (void)removeAllObjects;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
-- (void)touchObject:(id)arg1;
 - (void)touchObjectForKey:(unsigned int)arg1;
+- (void)touchObject:(id)arg1;
+- (void)print;
 
 @end

@@ -6,11 +6,11 @@
 }
 
 
-- (BOOL)sendsPlainTextPasswords;
-- (BOOL)hasEncryption;
-- (id)humanReadableName;
-- (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
-- (Class)authenticatorClass;
 - (id)name;
+- (BOOL)sendsPlainTextPasswords;
+- (id)humanReadableName;
+- (BOOL)hasEncryption;
+- (Class)authenticatorClass;
+- (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
 
 @end

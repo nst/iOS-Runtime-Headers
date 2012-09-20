@@ -6,6 +6,6 @@
 }
 
 
-- (BOOL)isCoverflowPlaceholder;
+- (BOOL)mpIsCoverflowPlaceholder;
 
 @end

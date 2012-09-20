@@ -11,6 +11,7 @@
     NSInputStream *_inputStream;
     NSOutputStream *_outputStream;
     BOOL _openCompleted;
+    int _sock;
 }
 
 @property(readonly) EAAccessory * accessory;
@@ -20,8 +21,8 @@
 
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)outputStream;
 - (id)accessory;
 - (void)setOpenCompleted:(BOOL)arg1;

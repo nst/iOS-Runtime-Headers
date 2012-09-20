@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSDateComponents, EKDayTimeView, UIScrollView, <EKDayViewDelegate>, NSCalendar, EKDayAllDayView, NSDate, UIView, EKDayViewContent, NSArray, EKEvent, UIScrollAnimation, <EKDayViewDataSource>, EKPadDayAllDayView, UIImageView;
+@class NSDateComponents, EKDayTimeView, UIScrollView, <EKDayViewDelegate>, NSCalendar, EKDayAllDayView, NSDate, UIView, EKDayViewContent, NSArray, EKEvent, UIScrollAnimation, <EKDayViewDataSource>, UIImageView, EKPadDayAllDayView;
 
 @interface EKDayView : UIView <UIScrollViewDelegate, EKDayAllDayViewDelegate, EKDayViewContentDelegate, EKPadAllDayViewDelegate> {
     <EKDayViewDataSource> *_dataSource;
@@ -25,7 +25,6 @@
     unsigned int _loadingOccurrences : 1;
     unsigned int _allowsOccurrenceSelection : 1;
     unsigned int _putSelectionOnTop : 1;
-    unsigned int _showsGrid : 1;
     unsigned int _didLoad : 1;
     unsigned int _scrollbarShowsInside : 1;
     unsigned int _scrollingToOccurrence : 1;
@@ -61,14 +60,31 @@
 @property BOOL showsTimeLine;
 @property BOOL showsTimeMarker;
 @property BOOL eventsFillGrid;
-@property BOOL showsGrid;
 @property BOOL showsLeftBorder;
 @property BOOL darkensSelection;
 @property BOOL dimsNonSelectedItems;
 @property int outlineStyle;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (id)calendar;
+- (void)setCalendar:(id)arg1;
+- (void)setOrientation:(int)arg1;
+- (float)contentInset;
+- (void)setTimeZone:(id)arg1;
+- (id)dataSource;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)layoutSubviews;
+- (void)reloadData;
+- (void)setDataSource:(id)arg1;
+- (void)setOutlineStyle:(int)arg1;
+- (int)outlineStyle;
 - (id)displayDate;
 - (void)addViewToScroller:(id)arg1 isAllDay:(BOOL)arg2;
 - (void)highlightHour:(double)arg1;
@@ -87,13 +103,13 @@
 - (void)dayAllDayView:(id)arg1 occurrenceViewClicked:(id)arg2;
 - (void)dayContentView:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_selectedDate;
-- (double)scrollToDate:(id)arg1 animated:(BOOL)arg2;
+- (void)scrollToDate:(id)arg1 animated:(BOOL)arg2 whenFinished:(id)arg3;
 - (void)scrollToEvent:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)showsSelectionOnTop;
 - (void)setShowsSelectionOnTop:(BOOL)arg1;
 - (double)dayEnd;
 - (double)dayStart;
-- (void)setDisplayDate:(id)arg1;
+- (void)adjustForSignificantTimeChange;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2 opaque:(BOOL)arg3;
 - (void)padAllDayView:(id)arg1 didSelectEvent:(id)arg2;
 - (void)padAllDayViewEmptySpaceClick:(id)arg1 onDay:(double)arg2;
@@ -113,7 +129,7 @@
 - (void)_clearVerticalGridExtensionImageCache;
 - (BOOL)alignsMidnightToTop;
 - (void)_finishedScrollToSecond;
-- (double)_scrollToSecond:(int)arg1 animated:(BOOL)arg2;
+- (void)_scrollToSecond:(int)arg1 animated:(BOOL)arg2 whenFinished:(id)arg3;
 - (id)_faderForFaderImage:(id)arg1 fader:(id)arg2 sizeToImage:(BOOL)arg3;
 - (void)firstVisibleSecondChanged;
 - (unsigned int)firstVisibleSecond;
@@ -136,7 +152,6 @@
 - (void)allDayViewDidLayoutSubviews:(id)arg1;
 - (id)dimmedOccurrence;
 - (id)occurrenceViewForEvent:(id)arg1;
-- (BOOL)showsGrid;
 - (BOOL)eventsFillGrid;
 - (BOOL)allowsOccurrenceSelection;
 - (void)setAllowsOccurrenceSelection:(BOOL)arg1;
@@ -152,7 +167,6 @@
 - (void)occurrenceDragExited:(id)arg1;
 - (id)occurrenceViews;
 - (void)setEventsFillGrid:(BOOL)arg1;
-- (void)setShowsGrid:(BOOL)arg1;
 - (double)highlightedHour;
 - (float)_positionOfSecond:(int)arg1;
 - (BOOL)showsLeftBorder;
@@ -165,23 +179,6 @@
 - (void)dayOccurrenceViewClicked:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setDarkensSelection:(BOOL)arg1;
 - (void)_localeChanged;
-- (id)calendar;
-- (void)setCalendar:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
-- (float)contentInset;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)setTimeZone:(id)arg1;
-- (id)delegate;
-- (id)dataSource;
-- (void)layoutSubviews;
-- (void)reloadData;
-- (void)setDelegate:(id)arg1;
-- (void)setDataSource:(id)arg1;
-- (int)outlineStyle;
-- (void)setOutlineStyle:(int)arg1;
+- (void)setDisplayDate:(id)arg1;
 
 @end

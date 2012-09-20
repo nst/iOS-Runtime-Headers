@@ -9,18 +9,18 @@
     CoreDAVItem *_content;
 }
 
-@property(retain) CoreDAVItem * content;
 @property(retain) CoreDAVLeafItem * dtstamp;
+@property(retain) CoreDAVItem * content;
 
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)content;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (void)setContent:(id)arg1;
 - (void)setDtstamp:(id)arg1;
 - (id)dtstamp;
-- (id)content;
-- (void)setContent:(id)arg1;
 
 @end

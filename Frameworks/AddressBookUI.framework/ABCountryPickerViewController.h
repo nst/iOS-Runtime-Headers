@@ -21,15 +21,8 @@
 @property(retain) NSString * selectedCountryCode;
 
 
-- (id)init;
 - (void)dealloc;
-- (void)reloadCountryCodes;
-- (void)_setSelectedCountryCode:(id)arg1 atPath:(id)arg2;
-- (void)configureSections;
-- (id)selectedCountryCode;
-- (void)setSelectedCountryCode:(id)arg1;
-- (void)scrollToSearchFieldAnimated:(BOOL)arg1;
-- (float)ab_heightToFitForViewInPopoverView;
+- (id)init;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;
 - (void)searchDisplayControllerWillBeginSearch:(id)arg1;
@@ -38,14 +31,21 @@
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)scrollToSearchFieldAnimated:(BOOL)arg1;
+- (void)setSelectedCountryCode:(id)arg1;
+- (id)selectedCountryCode;
+- (void)configureSections;
+- (void)_setSelectedCountryCode:(id)arg1 atPath:(id)arg2;
+- (void)reloadCountryCodes;
+- (float)ab_heightToFitForViewInPopoverView;
 
 @end

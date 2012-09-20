@@ -11,11 +11,11 @@
 @property <SUContinuationDelegate> * delegate;
 
 
-- (void)cancel;
-- (void)start;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)sendFinishToDelegate;
 - (void)sendErrorToDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)cancel;
+- (void)start;
 
 @end

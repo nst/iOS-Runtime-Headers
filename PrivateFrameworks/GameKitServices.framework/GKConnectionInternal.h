@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CDXClient, NSString, NSData, NSMutableArray, NSMutableDictionary;
+@class CDXClient, NSString, NSData, NSObject<OS_dispatch_source>, NSMutableArray, NSMutableDictionary;
 
 @interface GKConnectionInternal : GKConnection <CDXClientDelegate, CDXClientSessionDelegate> {
     unsigned int _gckPID;
@@ -59,61 +59,61 @@
     NSMutableDictionary *_pidToRelayUpdateInfoMap;
     NSMutableDictionary *_initRelayQueue;
     NSMutableDictionary *_updateRelayQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _awdMetricsCallback;
-
     int _fPreReleased;
+    int _localGamingCDXSocket;
+    unsigned short _localGamingCDXPort;
+    NSObject<OS_dispatch_source> *_localGamingCDXListenSource;
+    NSMutableDictionary *_localGamingSocketToPIDMap;
+    NSMutableDictionary *_localGamingSocketToConnectionDataMap;
 }
 
-@property(retain) NSMutableDictionary * cdxSessions;
 @property(retain) CDXClient * cdxClient;
-@property id awdMetricsCallback;
+@property(retain) NSMutableDictionary * cdxSessions;
 @property(retain) NSMutableDictionary * pidToConnectTimeoutSource;
 
 
-- (void)dealloc;
+- (id)networkStatistics;
 - (void)updateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 - (void)initiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
-- (void)connectParticipantsWithConnectionData:(id)arg1 withSessionInfo:(id)arg2;
-- (id)initWithParticipantID:(id)arg1 withOptions:(id)arg2;
-- (BOOL)convertPeerID:(id)arg1 toParticipantID:(id*)arg2;
 - (BOOL)convertParticipantID:(id)arg1 toPeerID:(id*)arg2;
+- (BOOL)convertPeerID:(id)arg1 toParticipantID:(id*)arg2;
+- (void)connectParticipantsWithConnectionData:(id)arg1 withSessionInfo:(id)arg2;
+- (id)getLocalConnectionDataForLocalGaming;
 - (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
 - (id)initWithParticipantID:(id)arg1;
-- (void)preRelease;
-- (struct OpaqueGCKSession { }*)gckSession;
-- (void)setEventDelegate:(id)arg1;
-- (id)eventDelegate;
-- (void)setAwdMetricsCallback:(id)arg1;
-- (id)awdMetricsCallback;
-- (unsigned int)gckPID;
-- (id)networkStatisticsDictionaryForGCKStats:(void*)arg1;
-- (void)addEvent:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1 remotePeer:(unsigned int)arg2;
-- (void)setCdxSessions:(id)arg1;
-- (void)setCdxClient:(id)arg1;
-- (void)setPidToConnectTimeoutSource:(id)arg1;
-- (id)cdxSessions;
-- (id)cdxClient;
-- (struct dispatch_queue_s { }*)asyncWorkQueue;
-- (id)createInsecureTicketUsingSortedConnectionsFromList:(id)arg1;
-- (void)setParticipantID:(id)arg1 forPeerID:(id)arg2;
-- (struct dispatch_queue_s { }*)timerQueue;
-- (void)cancelConnectParticipant:(id)arg1;
-- (id)createInitiateRelayDictionaryForParticipant:(id)arg1 remotePeerID:(id)arg2;
-- (void)internal_setRemoteConnectionData:(id)arg1 fromParticipantID:(id)arg2 pendingConnectionPIDList:(id)arg3;
-- (BOOL)shouldWeInitiateRelayWithPID:(unsigned int)arg1;
-- (void)connectPendingConnectionsFromList:(id)arg1 sessionInfo:(id)arg2;
-- (id)pidToConnectTimeoutSource;
-- (id)extractBlobUsingData:(id)arg1 withSourcePID:(unsigned int)arg2 destPID:(unsigned int)arg3;
-- (void)internalInitiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
-- (void)internalUpdateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
-- (id)createRelayUpdateDictionaryForParticipant:(id)arg1 didInitiate:(BOOL)arg2;
+- (void)dealloc;
+- (BOOL)startListeningForLocalGamingCDX;
+- (BOOL)localGamingCheckEstablishConnection:(id)arg1 connectionData:(id)arg2;
 - (void)doRelayCheckForRemotePeerID:(id)arg1;
-- (id)networkStatistics;
-- (void)CDXClientSession:(id)arg1 receivedData:(id)arg2 from:(int)arg3;
-- (void)CDXClient:(id)arg1 error:(id)arg2;
+- (id)createRelayUpdateDictionaryForParticipant:(id)arg1 didInitiate:(BOOL)arg2;
+- (void)internalUpdateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
+- (void)internalInitiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
+- (id)extractBlobUsingData:(id)arg1 withSourcePID:(unsigned int)arg2 destPID:(unsigned int)arg3;
+- (void)connectPendingConnectionsFromList:(id)arg1 sessionInfo:(id)arg2;
+- (void)internal_setRemoteConnectionData:(id)arg1 fromParticipantID:(id)arg2 pendingConnectionPIDList:(id)arg3;
+- (id)createInitiateRelayDictionaryForParticipant:(id)arg1 remotePeerID:(id)arg2;
+- (id)pidToConnectTimeoutSource;
+- (void)addEvent:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1 remotePeer:(unsigned int)arg2;
+- (id)timerQueue;
+- (void)localGamingReceiveDataHandler:(id)arg1 data:(id)arg2 time:(double)arg3 error:(id)arg4;
+- (BOOL)shouldWeInitiateRelayWithPID:(unsigned int)arg1;
+- (id)createInsecureTicketUsingSortedConnectionsFromList:(id)arg1;
+- (id)asyncWorkQueue;
+- (void)setPidToConnectTimeoutSource:(id)arg1;
+- (id)cdxClient;
+- (id)cdxSessions;
+- (void)setCdxClient:(id)arg1;
+- (void)setCdxSessions:(id)arg1;
+- (id)networkStatisticsDictionaryForGCKStats:(void*)arg1;
+- (void)cancelConnectParticipant:(id)arg1;
+- (void)setParticipantID:(id)arg1 forPeerID:(id)arg2;
+- (unsigned int)gckPID;
+- (id)eventDelegate;
+- (void)setEventDelegate:(id)arg1;
+- (struct OpaqueGCKSession { }*)gckSession;
+- (void)preRelease;
 - (void)CDXClient:(id)arg1 preblob:(id)arg2;
+- (void)CDXClient:(id)arg1 error:(id)arg2;
+- (void)CDXClientSession:(id)arg1 receivedData:(id)arg2 from:(int)arg3;
 
 @end

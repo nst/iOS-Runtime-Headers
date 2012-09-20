@@ -67,7 +67,7 @@
 
 @property(readonly) float UICalloutViewCapHeight;
 @property(readonly) float UICalloutViewCapPaddingTop;
-@property(readonly) float UICalloutViewLayoutDuration;
+@property(readonly) double UICalloutViewLayoutDuration;
 @property(readonly) float UICalloutViewButtonPadding;
 @property(readonly) float UICalloutViewHorizontalMargin;
 @property(readonly) float UICalloutViewHorizontalPadding;
@@ -90,10 +90,12 @@
 + (id)_bottomAnchorImage;
 + (float)defaultHeight;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (void)removeTarget:(id)arg1;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
-- (void)fadeOutWithDuration:(float)arg1;
+- (void)fadeOutWithDuration:(double)arg1;
 - (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 animate:(BOOL)arg3;
 - (BOOL)canAnchorFromBottom;
 - (void)setCanAnchorFromBottom:(BOOL)arg1;
@@ -114,18 +116,18 @@
 - (float)UICalloutViewHorizontalPadding;
 - (float)UICalloutViewHorizontalMargin;
 - (float)UICalloutViewButtonPadding;
-- (float)UICalloutViewLayoutDuration;
+- (double)UICalloutViewLayoutDuration;
 - (float)UICalloutViewCapPaddingTop;
 - (float)UICalloutViewCapHeight;
 - (void)_markDidMoveCalled;
 - (void)_setOriginForScale:(float)arg1;
-- (void)completeBounceAnimation;
 - (void)getActualAnchorPoint:(struct CGPoint { float x1; float x2; }*)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 position:(int*)arg3 forDesiredAnchorPoint:(struct CGPoint { float x1; float x2; })arg4 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5;
 - (void)setSubtitle:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightView:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
 - (void)_layoutAnimation;
 - (void)_setLayoutAnimationTimer:(id)arg1;
+- (void)completeBounceAnimation;
 - (void)_setRightView:(id)arg1;
 - (void)_scheduleViewToFadeIn:(id)arg1;
 - (void)_scheduleLayoutAnimation;
@@ -146,9 +148,7 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)delegate;
 - (void)setTitle:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isExpanded;
 

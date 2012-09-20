@@ -16,10 +16,11 @@
 @property(retain) CoreDAVErrorItem * errorItem;
 @property(retain) CoreDAVLeafItem * responseDescription;
 
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setStatus:(id)arg1;
 - (id)status;
 - (void)setProp:(id)arg1;
@@ -27,7 +28,6 @@
 - (void)setResponseDescription:(id)arg1;
 - (void)setErrorItem:(id)arg1;
 - (id)responseDescription;
-- (id)copyParseRules;
 - (id)errorItem;
 
 @end

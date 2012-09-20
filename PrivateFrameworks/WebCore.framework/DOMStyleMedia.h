@@ -7,12 +7,12 @@
 @interface DOMStyleMedia : DOMObject  {
 }
 
-@property(copy,readonly) NSString * type;
+@property(readonly) NSString * type;
 
 
+- (id)type;
 - (void)dealloc;
 - (void)finalize;
-- (id)type;
 - (BOOL)matchMedium:(id)arg1;
 
 @end

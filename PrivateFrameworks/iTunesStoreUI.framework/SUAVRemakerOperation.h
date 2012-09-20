@@ -12,18 +12,18 @@
 @property(readonly) SUAVRemakerOutput * remakerOutput;
 
 
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
-- (void)run;
 - (id)initWithImagePickerInfo:(id)arg1 remakerMode:(id)arg2;
 - (void)_remakerNotification:(id)arg1;
-- (void)stopRunLoop;
+- (BOOL)stopRunLoop;
 - (id)remakerOutput;
 - (void)_beginObservingAVRemaker:(id)arg1;
 - (void)_updateProgress:(id)arg1;
 - (void)_endObservingAVRemaker;
 - (id)_newDestinationURLForSourceURL:(id)arg1;
 - (id)initWithSourceURL:(id)arg1 remakerMode:(id)arg2 options:(id)arg3;
+- (void)cancel;
+- (void)dealloc;
+- (id)init;
+- (void)run;
 
 @end

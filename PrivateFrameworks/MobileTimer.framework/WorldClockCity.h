@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class ALCity, NSString, NSDictionary, NSNumber, NSURL;
+@class ALCity, NSString, City, NSDictionary, NSNumber, NSURL;
 
 @interface WorldClockCity : NSObject  {
     ALCity *_alCity;
+    City *_weatherCity;
     NSString *_timeZone;
     NSString *_name;
     NSString *_countryName;
@@ -15,7 +16,9 @@
 }
 
 @property(readonly) NSDictionary * properties;
+@property(readonly) ALCity * alCity;
 @property(readonly) NSNumber * alCityId;
+@property(retain) City * weatherCity;
 @property(readonly) NSString * timeZone;
 @property(readonly) NSString * name;
 @property(readonly) NSString * countryName;
@@ -26,22 +29,25 @@
 
 + (BOOL)isWorldClockCityProperties:(id)arg1;
 
-- (id)countryCode;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
-- (id)countryName;
-- (id)unlocalizedCountryName;
-- (id)initWithALCityIdentifier:(int)arg1;
-- (id)initWithTimeZone:(id)arg1 countryCode:(id)arg2 name:(id)arg3 countryName:(id)arg4 unlocalizedName:(id)arg5 unlocalizedCountryName:(id)arg6;
-- (id)initWithALCity:(id)arg1;
-- (id)idUrl;
-- (id)properties;
-- (id)initWithProperties:(id)arg1;
-- (id)timeZone;
 - (id)name;
-- (id)alCityId;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)initWithProperties:(id)arg1;
+- (id)properties;
+- (id)timeZone;
+- (id)alCity;
+- (void)setWeatherCity:(id)arg1;
+- (id)weatherCity;
+- (id)initWithTimeZone:(id)arg1 countryCode:(id)arg2 name:(id)arg3 countryName:(id)arg4 unlocalizedName:(id)arg5 unlocalizedCountryName:(id)arg6;
+- (id)initWithALCityIdentifier:(int)arg1;
+- (id)idUrl;
+- (id)initWithALCity:(id)arg1;
+- (id)countryName;
+- (id)countryCode;
+- (id)unlocalizedCountryName;
 - (id)unlocalizedCityName;
+- (id)alCityId;
 
 @end

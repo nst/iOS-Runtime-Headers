@@ -13,30 +13,30 @@
     NSString *_accountPersistentUUID;
 }
 
-@property(copy) NSString * accountPersistentUUID;
-@property(readonly) BOOL useSSL;
-@property(readonly) NSString * password;
-@property(readonly) NSString * username;
-@property(readonly) NSString * hostname;
 @property(readonly) NSString * accountDescription;
+@property(readonly) NSString * hostname;
+@property(readonly) NSString * username;
+@property(readonly) NSString * password;
+@property(readonly) BOOL useSSL;
+@property(copy) NSString * accountPersistentUUID;
 
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
-- (id)accountDescription;
-- (id)description;
-- (void)dealloc;
-- (void)setAccountPersistentUUID:(id)arg1;
-- (id)subtitle1Label;
-- (id)subtitle2Label;
-- (id)subtitle2Description;
-- (id)subtitle1Description;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (id)stubDictionary;
 - (id)username;
+- (id)description;
+- (void).cxx_destruct;
+- (void)setAccountPersistentUUID:(id)arg1;
+- (id)subtitle2Description;
+- (id)subtitle2Label;
+- (id)subtitle1Label;
+- (id)subtitle1Description;
+- (id)stubDictionary;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)password;
 - (id)title;
 - (id)hostname;
+- (id)accountDescription;
 - (id)accountPersistentUUID;
 - (BOOL)useSSL;
 

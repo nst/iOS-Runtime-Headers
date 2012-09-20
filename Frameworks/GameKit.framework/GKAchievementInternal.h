@@ -6,23 +6,30 @@
 
 @interface GKAchievementInternal : GKInternalRepresentation  {
     NSString *_identifier;
+    NSString *_groupIdentifier;
     NSDate *_lastReportedDate;
     double _percentComplete;
 }
 
 @property(retain) NSString * identifier;
+@property(retain) NSString * groupIdentifier;
 @property(retain) NSDate * lastReportedDate;
 @property double percentComplete;
 
 + (id)codedPropertyKeys;
 
-- (id)description;
-- (void)dealloc;
-- (id)lastReportedDate;
-- (void)setLastReportedDate:(id)arg1;
+- (id)challengeServerRepresentationForCancel:(BOOL)arg1;
 - (void)setPercentComplete:(double)arg1;
+- (void)setLastReportedDate:(id)arg1;
+- (id)lastReportedDate;
+- (void)setGroupIdentifier:(id)arg1;
+- (id)groupIdentifier;
+- (id)serverRepresentation;
 - (double)percentComplete;
 - (id)identifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setIdentifier:(id)arg1;
 
 @end

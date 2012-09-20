@@ -18,8 +18,8 @@
 
 - (long)index;
 - (float)width;
-- (BOOL)hasSpacing;
-- (float)spacing;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
+- (float)spacing;
+- (BOOL)hasSpacing;
 
 @end

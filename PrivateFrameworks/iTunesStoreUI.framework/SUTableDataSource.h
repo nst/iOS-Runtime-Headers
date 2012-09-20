@@ -21,30 +21,19 @@
 @property(getter=isPreferringUserInteraction,readonly) BOOL preferringUserInteraction;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)imageCache;
-- (void)setColumnCount:(int)arg1;
-- (int)columnCount;
-- (id)sectionIndexTitles;
-- (int)tableViewStyle;
-- (float)heightForFooterInSection:(int)arg1;
-- (int)numberOfSections;
-- (int)numberOfRowsInSection:(int)arg1;
-- (void)reloadData;
 - (id)cellReuseSource;
 - (int)numberOfColumnsInSection:(int)arg1;
 - (BOOL)isPreferringUserInteraction;
 - (id)cellContextForConfigurationClass:(Class)arg1;
 - (id)cachedConfigurationForClass:(Class)arg1 index:(int)arg2;
 - (void)reloadCellContexts;
+- (id)imageCache;
 - (void)didEndPreferringUserInteraction;
 - (void)didBeginPreferringUserInteraction;
 - (BOOL)canSelectIndexPath:(id)arg1;
 - (id)titleForDeleteConfirmationForIndexPath:(id)arg1;
 - (float)cellHeightForIndexPath:(id)arg1;
 - (float)heightForPlaceholderCells;
-- (id)headerViewForSection:(int)arg1;
 - (BOOL)canDeleteIndexPath:(id)arg1;
 - (BOOL)canDoubleTapIndexPath:(id)arg1;
 - (void)configurePlaceholderCell:(id)arg1 forIndexPath:(id)arg2;
@@ -60,5 +49,16 @@
 - (BOOL)deleteIndexPath:(id)arg1;
 - (void)setCellReuseSource:(id)arg1;
 - (id)imagePool;
+- (void)dealloc;
+- (id)init;
+- (void)setColumnCount:(int)arg1;
+- (int)columnCount;
+- (id)sectionIndexTitles;
+- (int)tableViewStyle;
+- (id)headerViewForSection:(int)arg1;
+- (float)heightForFooterInSection:(int)arg1;
+- (int)numberOfSections;
+- (int)numberOfRowsInSection:(int)arg1;
+- (void)reloadData;
 
 @end

@@ -5,35 +5,26 @@
 @class NSString;
 
 @interface IUPodcastCellConfiguration : IUDetailedCellConfiguration  {
+    NSString *_displayReleaseDate;
     NSString *_displayTitle;
     NSString *_fullDisplayTitle;
-    NSString *_displayReleaseDate;
 }
-
-@property(copy) NSString * displayTitle;
-@property(copy) NSString * fullDisplayTitle;
-@property(copy) NSString * displayReleaseDate;
 
 + (float)rowHeightForGlobalContext:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (void)reloadData;
 - (void)reloadLayoutInformation;
-- (void)reloadStrings;
 - (void)reloadImages;
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (id)displayReleaseDate;
-- (id)displayTitle;
-- (id)fullDisplayTitle;
-- (void)setDisplayReleaseDate:(id)arg1;
-- (void)setFullDisplayTitle:(id)arg1;
-- (void)setDisplayTitle:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)reloadData;
+- (id)displayProperties;
 - (float)alphaForLabelAtIndex:(unsigned int)arg1 fromAlpha:(float*)arg2;
 - (float)alphaForImageAtIndex:(unsigned int)arg1 fromAlpha:(float*)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })downloadProgressIndicatorFrame;
 - (id)untruncationCalloutString;
 - (void)configureForEntity:(id)arg1 query:(id)arg2 entityIndex:(unsigned int)arg3 entityCount:(unsigned int)arg4;
+- (void)reloadStringsWithProperties:(id)arg1;
 
 @end

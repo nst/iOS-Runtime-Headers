@@ -5,8 +5,10 @@
 @interface HSLoginRequest : HSRequest  {
 }
 
++ (int)preferredVideoQuality;
 
-- (id)init;
+- (id)initWithAction:(id)arg1;
 - (id)canonicalResponseForResponse:(id)arg1;
+- (id)init;
 
 @end

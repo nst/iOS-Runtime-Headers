@@ -13,14 +13,14 @@
 }
 
 
-- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2;
-- (id)replacementString;
-- (BOOL)_adjustRangesWithOffset:(int)arg1;
-- (id)resultByAdjustingRangesWithOffset:(int)arg1;
 - (id)description;
 - (void)dealloc;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2;
+- (id)replacementString;
+- (BOOL)_adjustRangesWithOffset:(int)arg1;
+- (id)resultByAdjustingRangesWithOffset:(int)arg1;
 
 @end

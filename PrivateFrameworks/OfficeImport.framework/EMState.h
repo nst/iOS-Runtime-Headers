@@ -9,13 +9,13 @@
     EDSheet *_currentSheet;
 }
 
-@property EDSheet * currentSheet;
 @property(retain) EDWorkbook * workbook;
+@property EDSheet * currentSheet;
 
 
 - (void)dealloc;
-- (void)setWorkbook:(id)arg1;
 - (void)setCurrentSheet:(id)arg1;
+- (void)setWorkbook:(id)arg1;
 - (id)currentSheet;
 - (id)workbook;
 

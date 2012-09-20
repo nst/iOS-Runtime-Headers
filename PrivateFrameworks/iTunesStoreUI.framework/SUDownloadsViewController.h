@@ -2,41 +2,46 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUViewController<SUDownloadsChildViewController>, SUDownloadManager;
+@class SUDownloadManager, UIView, SUViewController<SUDownloadsChildViewController>, SUClientInterface, NSObject<OS_dispatch_source>;
 
-@interface SUDownloadsViewController : SUViewController <SSDownloadManagerObserver, SSPreorderManagerObserver> {
+@interface SUDownloadsViewController : SUViewController <SSDownloadManagerObserver> {
     SUViewController<SUDownloadsChildViewController> *_childViewController;
+    SUClientInterface *_clientInterface;
     SUDownloadManager *_downloadManager;
+    UIView *_emptyDownloadQueueView;
     BOOL _isUsingNetwork;
+    NSObject<OS_dispatch_source> *_reloadFromServerTimer;
 }
 
 
-- (id)initWithManagerOptions:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)applicationWillEnterForeground;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
+- (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
+- (id)initWithManagerOptions:(id)arg1 preorderItemKinds:(id)arg2;
+- (void)_gotoPurchasedPlaylist:(id)arg1;
+- (void)_reloadDownloadManagerFromServer;
+- (void)_reloadEmptyDownloadQueueView;
+- (void)_updatePurchasedPlaylistButton;
+- (void)updateTabBarItemsAnimated:(BOOL)arg1;
+- (void)_setUsingNetwork:(BOOL)arg1;
+- (void)_cancelReloadFromServerTimer;
+- (void)_clientDidStopIgnoringDownloadsNotification:(id)arg1;
+- (id)_newChildViewController;
+- (void)_reloadDataAnimated:(BOOL)arg1;
+- (void)_startReloadFromServerTimer;
+- (id)initWithClientInterface:(id)arg1 managerOptions:(id)arg2 preorderItemKinds:(id)arg3;
+- (void)setScriptButtons:(id)arg1;
+- (id)scriptButtons;
+- (void)_tabConfigurationChanged:(id)arg1;
+- (id)copyScriptViewController;
+- (void)applicationWillEnterForeground;
+- (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)loadView;
 - (void)reload;
 - (void)reloadData;
-- (id)_headerViewWithTitle:(id)arg1 subtitle:(id)arg2;
-- (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
-- (id)_newPurchasedPlaylistButton;
-- (void)_gotoPurchasedPlaylist:(id)arg1;
-- (void)_updatePurchasedPlaylistButton;
-- (void)updateTabBarItemsAnimated:(BOOL)arg1;
-- (void)_reloadDataAnimated:(BOOL)arg1;
-- (void)_setUsingNetwork:(BOOL)arg1;
-- (void)_clientDidStopIgnoringDownloadsNotification:(id)arg1;
-- (id)_newChildViewController;
-- (id)initWithManagerOptions:(id)arg1 preorderItemKinds:(id)arg2;
-- (void)setScriptButtons:(id)arg1;
-- (id)scriptButtons;
-- (void)preorderManagerPreordersDidChange:(id)arg1;
-- (void)_tabConfigurationChanged:(id)arg1;
-- (id)copyScriptViewController;
-- (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
+- (id)initWithManagerOptions:(id)arg1;
 
 @end

@@ -17,24 +17,24 @@
 
 
 - (void)setProperties:(id)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)properties;
-- (int)rowSpan;
 - (void)setRowSpan:(int)arg1;
-- (int)spanAlongDir:(int)arg1;
-- (void)setGridSpan:(int)arg1;
-- (void)setHorzMerge:(BOOL)arg1;
-- (void)setVertMerge:(BOOL)arg1;
-- (BOOL)merge:(int)arg1;
-- (int)topRow;
-- (void)setTopRow:(int)arg1;
-- (int)leftColumn;
+- (int)rowSpan;
 - (void)setLeftColumn:(int)arg1;
+- (int)leftColumn;
+- (void)setTopRow:(int)arg1;
+- (int)topRow;
+- (int)spanAlongDir:(int)arg1;
+- (BOOL)merge:(int)arg1;
+- (void)setTextBody:(id)arg1;
+- (void)setVertMerge:(BOOL)arg1;
+- (void)setHorzMerge:(BOOL)arg1;
+- (void)setGridSpan:(int)arg1;
+- (id)textBody;
 - (int)gridSpan;
 - (BOOL)vertMerge;
 - (BOOL)horzMerge;
-- (void)setTextBody:(id)arg1;
-- (id)textBody;
 
 @end

@@ -4,34 +4,42 @@
 
 @class PLCameraButton, PLCameraOptionsButton, PLCameraToggleButton;
 
-@interface PLCameraButtonBar : UIToolbar  {
+@interface PLCameraButtonBar : UIToolbar <PLCameraButtonBarProtocol> {
     PLCameraOptionsButton *_optionsButton;
     PLCameraButton *_cameraButton;
     PLCameraToggleButton *_toggleButton;
     int _buttonBarStyle;
+    int _buttonBarMode;
+    unsigned int _isBackgroundVisible : 1;
 }
 
 @property(retain) PLCameraOptionsButton * optionsButton;
 @property(retain) PLCameraButton * cameraButton;
 @property(retain) PLCameraToggleButton * toggleButton;
 @property int buttonBarStyle;
+@property int buttonBarMode;
 
 + (float)defaultHeight;
 + (id)backgroundImage;
 + (id)backgroundImageForButtonBarStyle:(int)arg1;
++ (float)buttonBarHeightForTallScreen:(BOOL)arg1;
 
 - (void)dealloc;
-- (id)initInView:(id)arg1 withItems:(struct { int x1; int x2; id x3; id x4; float x5; int x6; SEL x7; id x8; }*)arg2 withCount:(int)arg3;
+- (id)toggleButton;
+- (void)setToggleButton:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setButtonBarStyle:(int)arg1;
-- (int)buttonBarStyle;
-- (void)setToggleButton:(id)arg1;
-- (id)toggleButton;
+- (void)setButtonBarMode:(int)arg1;
+- (int)buttonBarMode;
 - (void)setCameraButton:(id)arg1;
 - (id)cameraButton;
 - (void)setOptionsButton:(id)arg1;
 - (id)optionsButton;
+- (BOOL)isBackgroundVisible;
+- (void)setButtonBarMode:(int)arg1 animationDuration:(double)arg2;
+- (void)_setVisibility:(BOOL)arg1;
+- (int)buttonBarStyle;
+- (void)setButtonBarStyle:(int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 buttonBarStyle:(int)arg2;
 
 @end

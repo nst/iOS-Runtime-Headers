@@ -18,8 +18,8 @@
 - (void)setInputEV:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
-- (id)outputImage;
 - (BOOL)_isIdentity;
+- (id)outputImage;
 - (void)setDefaults;
 
 @end

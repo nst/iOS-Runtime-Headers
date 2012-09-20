@@ -20,9 +20,9 @@
 - (void)dealloc;
 - (id)color;
 - (void)setColor:(id)arg1;
-- (int)technique;
 - (void)invalidateFilteredImage;
 - (id)imageBinary;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (int)technique;
 
 @end

@@ -12,18 +12,18 @@
 @interface CoreMotionManager : NSObject  {
     CMMotionManager *m_motionManager;
     CLLocationManager *m_locationManager;
-    struct HashSet<WebCore::DeviceMotionClientIPhone*,WTF::PtrHash<WebCore::DeviceMotionClientIPhone*>,WTF::HashTraits<WebCore::DeviceMotionClientIPhone*> > { 
-        struct HashTable<WebCore::DeviceMotionClientIPhone*,WebCore::DeviceMotionClientIPhone*,WTF::IdentityExtractor<WebCore::DeviceMotionClientIPhone*>,WTF::PtrHash<WebCore::DeviceMotionClientIPhone*>,WTF::HashTraits<WebCore::DeviceMotionClientIPhone*>,WTF::HashTraits<WebCore::DeviceMotionClientIPhone*> > { 
-            struct DeviceMotionClientIPhone {} **m_table; 
+    struct HashSet<WebCore::DeviceMotionClientIOS *, WTF::PtrHash<WebCore::DeviceMotionClientIOS *>, WTF::HashTraits<WebCore::DeviceMotionClientIOS *> > { 
+        struct HashTable<WebCore::DeviceMotionClientIOS *, WebCore::DeviceMotionClientIOS *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::DeviceMotionClientIOS *>, WTF::HashTraits<WebCore::DeviceMotionClientIOS *>, WTF::HashTraits<WebCore::DeviceMotionClientIOS *> > { 
+            struct DeviceMotionClientIOS {} **m_table; 
             int m_tableSize; 
             int m_tableSizeMask; 
             int m_keyCount; 
             int m_deletedCount; 
         } m_impl; 
     } m_deviceMotionClients;
-    struct HashSet<WebCore::DeviceOrientationClientIPhone*,WTF::PtrHash<WebCore::DeviceOrientationClientIPhone*>,WTF::HashTraits<WebCore::DeviceOrientationClientIPhone*> > { 
-        struct HashTable<WebCore::DeviceOrientationClientIPhone*,WebCore::DeviceOrientationClientIPhone*,WTF::IdentityExtractor<WebCore::DeviceOrientationClientIPhone*>,WTF::PtrHash<WebCore::DeviceOrientationClientIPhone*>,WTF::HashTraits<WebCore::DeviceOrientationClientIPhone*>,WTF::HashTraits<WebCore::DeviceOrientationClientIPhone*> > { 
-            struct DeviceOrientationClientIPhone {} **m_table; 
+    struct HashSet<WebCore::DeviceOrientationClientIOS *, WTF::PtrHash<WebCore::DeviceOrientationClientIOS *>, WTF::HashTraits<WebCore::DeviceOrientationClientIOS *> > { 
+        struct HashTable<WebCore::DeviceOrientationClientIOS *, WebCore::DeviceOrientationClientIOS *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::DeviceOrientationClientIOS *>, WTF::HashTraits<WebCore::DeviceOrientationClientIOS *>, WTF::HashTraits<WebCore::DeviceOrientationClientIOS *> > { 
+            struct DeviceOrientationClientIOS {} **m_table; 
             int m_tableSize; 
             int m_tableSizeMask; 
             int m_keyCount; 
@@ -37,20 +37,20 @@
 
 + (id)sharedManager;
 
-- (id)init;
-- (void)dealloc;
 - (id).cxx_construct;
-- (void)update;
-- (void)addMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
-- (void)removeMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
-- (void)addOrientationClient:(struct DeviceOrientationClientIPhone { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; boolx5; }*)arg1;
-- (void)removeOrientationClient:(struct DeviceOrientationClientIPhone { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; boolx5; }*)arg1;
-- (BOOL)gyroAvailable;
 - (void).cxx_destruct;
-- (void)initializeOnMainThread;
-- (void)checkClientStatus;
-- (BOOL)headingAvailable;
-- (void)sendMotionData:(id)arg1 withHeading:(id)arg2;
+- (void)dealloc;
+- (id)init;
+- (void)update;
+- (BOOL)gyroAvailable;
+- (void)removeOrientationClient:(struct DeviceOrientationClientIOS { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; boolx5; }*)arg1;
+- (void)addOrientationClient:(struct DeviceOrientationClientIOS { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; boolx5; }*)arg1;
+- (void)removeMotionClient:(struct DeviceMotionClientIOS { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
+- (void)addMotionClient:(struct DeviceMotionClientIOS { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
 - (void)sendAccelerometerData:(id)arg1;
+- (void)sendMotionData:(id)arg1 withHeading:(id)arg2;
+- (BOOL)headingAvailable;
+- (void)checkClientStatus;
+- (void)initializeOnMainThread;
 
 @end

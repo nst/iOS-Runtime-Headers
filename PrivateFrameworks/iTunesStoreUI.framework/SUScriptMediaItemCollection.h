@@ -16,25 +16,20 @@
 @property(readonly) NSArray * mediaTypes;
 @property(readonly) SUScriptMediaItem * representativeItem;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (int)count;
+- (id)nativeCollection;
+- (id)representativeItem;
+- (void)_beginWatchingLibraryIfNecessary;
+- (void)_libraryChangedNotification:(id)arg1;
+- (id)_className;
+- (id)scriptAttributeKeys;
 - (void)dealloc;
+- (int)count;
 - (id)mediaTypes;
 - (id)initWithItems:(id)arg1;
 - (id)items;
 - (id)attributeKeys;
-- (id)nativeCollection;
-- (id)representativeItem;
-- (id)_copyRepresentativeItem;
-- (id)_copyMediaTypes;
-- (int)_mainThreadCount;
-- (void)_beginWatchingLibraryIfNecessary;
-- (void)_libraryChangedNotification:(id)arg1;
-- (void)_setItems:(id)arg1;
-- (id)_copyItems;
-- (id)_className;
-- (id)scriptAttributeKeys;
 
 @end

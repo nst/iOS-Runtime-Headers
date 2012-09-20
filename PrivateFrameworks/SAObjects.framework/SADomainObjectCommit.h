@@ -9,13 +9,13 @@
 
 @property(retain) SADomainObject * identifier;
 
-+ (id)domainObjectCommit;
 + (id)domainObjectCommitWithDictionary:(id)arg1 context:(id)arg2;
++ (id)domainObjectCommit;
 
 - (id)groupIdentifier;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

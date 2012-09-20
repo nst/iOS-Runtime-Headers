@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIViewController<EKEditItemViewControllerProtocol>, <EKCalendarItemEditItemDelegate>, <EKStyleProvider>, EKCalendarItem, EKEventStore;
+@class UIViewController<EKEditItemViewControllerProtocol>, <EKCalendarItemEditItemDelegate>, <EKStyleProvider>, EKCalendarItem, UIResponder, EKEventStore;
 
 @interface EKCalendarItemEditItem : NSObject <EKEditItemViewControllerDelegate> {
     EKEventStore *_store;
@@ -10,47 +10,57 @@
     UIViewController<EKEditItemViewControllerProtocol> *_viewController;
     <EKStyleProvider> *_styleProvider;
     EKCalendarItem *_calendarItem;
+    UIResponder *_selectedResponder;
 }
 
 @property <EKCalendarItemEditItemDelegate> * delegate;
 @property(retain) <EKStyleProvider> * styleProvider;
+@property(retain) UIResponder * selectedResponder;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)reset;
 - (void)dealloc;
-- (id)viewForActionSheet;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
+- (id)footerView;
+- (void)applicationDidResume;
+- (void)setSelectedResponder:(id)arg1;
 - (void)notifyRequiresHeightChange;
 - (void)notifyTextChanged;
-- (void)notifySubitemDidCommit:(int)arg1;
+- (void)notifySubitemDidCommit:(int)arg1 inSubsection:(int)arg2;
 - (void)notifyDidEndEditing;
-- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(int)arg2;
+- (id)titleForHeader;
+- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(int)arg2 inSubsection:(int)arg3;
 - (void)editItemViewControllerWantsKeyboardPinned:(BOOL)arg1;
 - (BOOL)editItemViewControllerCommit:(id)arg1;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
+- (BOOL)usesDetailViewControllerForSubitem:(int)arg1 inSubsection:(int)arg2;
 - (void)notifyDidStartEditing;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2 inSubsection:(int)arg3;
 - (void)refreshFromCalendarItemAndStore;
-- (id)calendarItem;
+- (void)editorDidScroll:(id)arg1;
 - (float)footerHeightForWidth:(float)arg1;
-- (void)eventEditor:(id)arg1 didTapAccessoryButtonForSubitem:(int)arg2;
-- (void)eventEditor:(id)arg1 didSelectSubitem:(int)arg2;
-- (int)numberOfSubitems;
+- (void)editor:(id)arg1 didDeselectSubitem:(int)arg2 inSubsection:(int)arg3;
+- (void)editor:(id)arg1 didSelectSubitem:(int)arg2 inSubsection:(int)arg3;
+- (BOOL)editor:(id)arg1 shouldClearSelectionFromSubitem:(int)arg2 inSubsection:(int)arg3;
+- (BOOL)editor:(id)arg1 canSelectSubitem:(int)arg2 inSubsection:(int)arg3;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2 forWidth:(float)arg3;
+- (id)cellForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2;
+- (int)numberOfSubitemsInSubsection:(int)arg1;
 - (BOOL)requiresReconfigurationOnCommit;
-- (id)selectedTextField;
+- (void)editor:(id)arg1 didStartEditingItem:(id)arg2;
+- (BOOL)shouldPinKeyboard;
+- (id)selectedResponder;
 - (void)setCalendarItem:(id)arg1 store:(id)arg2;
 - (BOOL)configureForCalendarConstraints:(id)arg1;
 - (BOOL)shouldAppearWithVisibility:(int)arg1;
+- (int)numberOfSubsections;
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (BOOL)shouldAppearForCalendarItem:(id)arg1;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
-- (id)cellForSubitemAtIndex:(int)arg1;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
-- (id)footerView;
-- (void)reset;
-- (BOOL)applicationDidResume;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (id)viewForActionSheet;
+- (id)styleProvider;
+- (void)setStyleProvider:(id)arg1;
 - (BOOL)isInline;
+- (id)calendarItem;
 
 @end

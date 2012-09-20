@@ -15,15 +15,15 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)setJoinSemantic:(unsigned int)arg1;
-- (void)setDestinationEntityExternalName:(id)arg1;
-- (void)setForeignKeys:(id)arg1;
-- (void)setJoins:(id)arg1;
-- (id)destinationEntityExternalName;
-- (id)foreignKeys;
-- (id)joins;
 - (unsigned int)joinSemantic;
-- (id)columnDefinitions;
+- (id)joins;
+- (id)foreignKeys;
+- (id)destinationEntityExternalName;
+- (void)setJoins:(id)arg1;
+- (void)setForeignKeys:(id)arg1;
+- (void)setDestinationEntityExternalName:(id)arg1;
 - (id)constraintDefinitions;
+- (id)columnDefinitions;
 - (id)relationship;
 
 @end

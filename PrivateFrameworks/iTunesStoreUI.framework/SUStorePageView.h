@@ -7,15 +7,19 @@
 @interface SUStorePageView : UIView  {
     UIView *_contentView;
     UIView *_headerView;
+    UIView *_previewOverlayView;
 }
 
 @property(retain) UIView * contentView;
 @property(retain) UIView * headerView;
+@property(retain) UIView * previewOverlayView;
 
 
+- (id)previewOverlayView;
+- (void)setPreviewOverlayView:(id)arg1;
 - (void)dealloc;
-- (void)setHeaderView:(id)arg1;
 - (id)headerView;
+- (void)setHeaderView:(id)arg1;
 - (void)setContentView:(id)arg1;
 - (id)contentView;
 - (void)layoutSubviews;

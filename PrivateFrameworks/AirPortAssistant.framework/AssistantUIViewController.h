@@ -90,6 +90,7 @@
 - (void)setCurrentTextField:(id)arg1;
 - (id)currentTextField;
 - (void)setSpinnerWithStatusAdjacentLabel:(id)arg1;
+- (id)spinnerWithStatusAdjacentLabel;
 - (void)setTextLinkButton:(id)arg1;
 - (id)textLinkButton;
 - (void)setJustTextLabel:(id)arg1;
@@ -124,7 +125,6 @@
 - (void)presentUIForRecommendationStatus;
 - (void)assistantUpdateProgress:(id)arg1 forState:(int)arg2;
 - (void)baseStationConfigurationComplete:(id)arg1;
-- (id)spinnerWithStatusAdjacentLabel;
 - (id)modifyTopoUIInLayer:(id)arg1 withLayout:(id)arg2 newLayout:(id)arg3;
 - (void)showUIForSetupStatus;
 - (id)newStepByStepControllerForStep:(int)arg1;
@@ -167,12 +167,11 @@
 - (void)popToRootViewControllerAnimated:(BOOL)arg1;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)viewDidUnload;
+- (BOOL)disablesAutomaticKeyboardDismissal;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)didReceiveMemoryWarning;
 
 @end

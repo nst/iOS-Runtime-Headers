@@ -2,61 +2,41 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, PFUbiquityLocation, NSString, NSPersistentStoreCoordinator, NSPersistentStore, NSManagedObjectContext;
+@class NSString, NSManagedObjectContext, PFUbiquityLocation, PFUbiquityMetadataFactoryEntry;
 
 @interface _PFUbiquityStack : NSObject  {
     NSManagedObjectContext *_metadataMOC;
-    NSPersistentStoreCoordinator *_metadataPSC;
-    NSPersistentStore *_metadataStore;
-    NSMutableDictionary *_peerRangeCache;
-    NSMutableDictionary *_objectHistoryCache;
+    PFUbiquityMetadataFactoryEntry *_metadataEntry;
     NSString *_localPeerID;
     PFUbiquityLocation *_ubiquityRootURL;
     PFUbiquityLocation *_metadataStoreFileLocation;
 }
 
-@property(readonly) PFUbiquityLocation * metadataStoreFileLocation;
-@property(readonly) PFUbiquityLocation * ubiquityRootURL;
-@property(readonly) NSString * localPeerID;
-@property(readonly) NSPersistentStoreCoordinator * metadataPSC;
 @property(readonly) NSManagedObjectContext * metadataMOC;
+@property(readonly) PFUbiquityMetadataFactoryEntry * metadataEntry;
+@property(readonly) NSString * localPeerID;
+@property(readonly) PFUbiquityLocation * ubiquityRootURL;
+@property(readonly) PFUbiquityLocation * metadataStoreFileLocation;
 
-+ (void)initialize;
-+ (id)defaultUbiquityLocationForPeerID:(id)arg1 andBundleIdentifier:(id)arg2 createIfMissing:(BOOL)arg3;
 + (BOOL)shouldRecoverStackMetadataForStore:(id)arg1 withLocalPeerID:(id)arg2;
-+ (id)getUbiquityModel;
-+ (int)integerFromPrimaryKeyString:(id)arg1;
-+ (unsigned int)peerRangeStartForPrimaryKey:(unsigned int)arg1;
-+ (id)defaultUbiquityLocationForBundleIdentifier:(id)arg1 createIfMissing:(BOOL)arg2;
++ (id)defaultUbiquityLocationForPeerID:(id)arg1 andBundleIdentifier:(id)arg2 createIfMissing:(BOOL)arg3;
 + (id)defaultUbiquityRootLocation;
++ (id)defaultUbiquityLocationForBundleIdentifier:(id)arg1 createIfMissing:(BOOL)arg2;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (BOOL)purgeAndInitializeMetadataStoreFileWithError:(id*)arg1;
-- (BOOL)purgeMetadataForStoreMetadata:(id)arg1 withError:(id*)arg2;
-- (id)createGlobalIdentifierForManagedObjectID:(id)arg1 withPersistentStoreCoordinator:(id)arg2;
-- (id)importStateForStoreName:(id)arg1 andPeerID:(id)arg2;
+- (id)init;
+- (id)metadataEntry;
 - (id)importStatesMatchingStoreName:(id)arg1;
-- (BOOL)shouldProcessTransactionLogAtLocation:(id)arg1 error:(id*)arg2;
-- (BOOL)initializeMetadataStoreWithError:(id*)arg1;
-- (id)metadataPSC;
-- (id)metadataStoreFileLocation;
-- (id)allPeers;
-- (id)createLocalIDURIForLocalPeerGlobalID:(id)arg1 withPeerRangeCache:(id)arg2 andStoreMetadata:(id)arg3 importContext:(id)arg4;
-- (unsigned int)localPrimaryKeyForPeerID:(id)arg1 inStoreNamed:(id)arg2 andPrimaryKey:(unsigned int)arg3 forEntityNamed:(id)arg4;
-- (void)createNewPeerRangesForFakeManagedObjects:(id)arg1 withPeerEntityNameRangeStartSetDictionary:(id)arg2 andStoreNameToFetchedMetadata:(id)arg3;
+- (id)importStateForStoreName:(id)arg1 andPeerID:(id)arg2;
 - (id)peerForPeerID:(id)arg1 createIfMissing:(BOOL)arg2;
-- (id)addPersistentStoreDescribedByMetadata:(id)arg1 toPersistentStoreCoordinator:(id)arg2;
-- (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
-- (id)localPeerID;
-- (id)createMapOfGlobalObjectIDsToLocalIDURIs:(id)arg1 forStoreSaveSnapshot:(id)arg2 withPersistentStoreCoordinator:(id)arg3 andImportContext:(id)arg4;
-- (void)cachePeerRanges;
-- (void)cacheTransactionHistoryWithPeerState:(id)arg1 andTransactionDate:(id)arg2 forStoreName:(id)arg3 andImportingPeerID:(id)arg4;
-- (id)metadataMOC;
-- (id)cachedTransactionEntryHistoryForLocalIDString:(id)arg1;
-- (id)addPersistentStoreWithName:(id)arg1 toPersistentStoreCoordinator:(id)arg2;
-- (id)newCoordinatorForPersistentStoreName:(id)arg1;
+- (id)allPeers;
+- (BOOL)purgeMetadataForStoreMetadata:(id)arg1 withError:(id*)arg2;
+- (BOOL)purgeAndInitializeMetadataStoreFileWithError:(id*)arg1;
+- (id)initWithMetadataEntry:(id)arg1;
 - (id)ubiquityRootURL;
+- (id)metadataStoreFileLocation;
+- (id)metadataMOC;
+- (id)localPeerID;
 
 @end

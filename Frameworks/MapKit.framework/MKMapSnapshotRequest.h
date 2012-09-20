@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableDictionary, UIImage, NSString, MKMapSnapshotCreator, GEOTileKeyList;
+@class UIImage, NSString, VKMapSnapshotCreator, MKMapSnapshotCreator;
 
 @interface MKMapSnapshotRequest : NSObject  {
     id _requester;
@@ -12,25 +12,14 @@
         double longitude; 
     } _coordinate;
     unsigned int _zoomLevel;
-    unsigned int _zoomAdd;
     struct CGSize { 
         float width; 
         float height; 
     } _size;
-    GEOTileKeyList *_tileKeyList;
     UIImage *_image;
     NSString *_attributionString;
     MKMapSnapshotCreator *_delegate;
-    unsigned int _minX;
-    unsigned int _minY;
-    unsigned int _maxX;
-    unsigned int _maxY;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _renderOffset;
-    BOOL _paused;
-    NSMutableDictionary *_objects;
+    VKMapSnapshotCreator *_snapshotCreator;
 }
 
 @property(retain) id context;
@@ -43,28 +32,24 @@
 @property(readonly) UIImage * image;
 
 
-- (void)startLoading;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (void)stopLoading;
-- (id)image;
-- (id)context;
-- (void)setContext:(id)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (void)cancel;
+- (void)dealloc;
+- (void)start;
+- (id)image;
+- (void)setContext:(id)arg1;
+- (id)context;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })size;
-- (void)_restartLoadingAfterPause:(id)arg1;
-- (void)tileRequesterFailedWithError:(id)arg1;
-- (void)tileRequesterCompleted;
 - (void)setAttributionString:(id)arg1;
-- (void)setRequester:(id)arg1;
 - (id)attributionString;
-- (id)requester;
 - (struct { double x1; double x2; })coordinate;
 - (unsigned int)zoomLevel;
 - (void)setZoomLevel:(unsigned int)arg1;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setRequester:(id)arg1;
+- (id)requester;
 
 @end

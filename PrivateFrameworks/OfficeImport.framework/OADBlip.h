@@ -5,20 +5,20 @@
 @class OADSubBlip;
 
 @interface OADBlip : NSObject  {
-    unsigned int mReferenceCount;
+    unsigned long mReferenceCount;
     OADSubBlip *mMainSubBlip;
     OADSubBlip *mAltSubBlip;
 }
 
 + (id)pathExtensionForBlipType:(int)arg1;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)altSubBlip;
 - (void)setAltSubBlip:(id)arg1;
 - (unsigned int*)referenceCount;
-- (id)mainSubBlip;
-- (id)altSubBlip;
 - (void)setMainSubBlip:(id)arg1;
+- (id)mainSubBlip;
 
 @end

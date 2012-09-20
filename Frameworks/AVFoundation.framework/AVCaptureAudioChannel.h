@@ -12,10 +12,10 @@
 @property(readonly) float peakHoldLevel;
 
 
+- (void)invalidate;
 - (void)dealloc;
+- (id)initWithConnection:(id)arg1;
 - (float)peakHoldLevel;
 - (float)averagePowerLevel;
-- (id)initWithConnection:(id)arg1;
-- (void)invalidate;
 
 @end

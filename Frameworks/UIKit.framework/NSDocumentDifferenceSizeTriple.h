@@ -16,8 +16,8 @@
 
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)betweenPreviousSavingAndSaving;
 - (id)betweenPreservingPreviousVersionAndSaving;
 - (id)dueToRecentChangesBeforeSaving;

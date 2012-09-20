@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFRecipientTextField : UITextField  {
+@interface MFRecipientTextField : MFComposeTextField  {
 }
 
 
 - (id)customOverlayContainer;
-- (BOOL)becomeFirstResponder;
 - (id)_previousKeyResponder;
+- (BOOL)becomeFirstResponder;
 
 @end

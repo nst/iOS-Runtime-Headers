@@ -9,7 +9,6 @@
     NSMutableArray *_longLivedViewControllers;
 }
 
-+ (id)sharedInstance;
 + (id)checkedInViewControllerOfClass:(Class)arg1;
 + (BOOL)viewControllerIsLongLived:(id)arg1;
 + (void)checkOutLongLivedViewController:(id)arg1;
@@ -17,8 +16,8 @@
 + (BOOL)isDelayingTerminate;
 + (void)endDelayingTerminate;
 + (void)beginDelayingTerminate;
++ (id)sharedInstance;
 
-- (void)dealloc;
 - (void)_endDelayingTerminate;
 - (void)_beginDelayingTerminate;
 - (BOOL)_isDelayingTerminate;
@@ -26,5 +25,6 @@
 - (BOOL)_viewControllerIsLongLived:(id)arg1;
 - (void)_checkOutLongLivedViewController:(id)arg1;
 - (void)_checkInLongLivedViewController:(id)arg1;
+- (void)dealloc;
 
 @end

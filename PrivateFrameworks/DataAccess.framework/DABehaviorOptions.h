@@ -5,8 +5,15 @@
 @interface DABehaviorOptions : NSObject  {
 }
 
++ (void)initialize;
 + (BOOL)isCustomerInstall;
-+ (void)_startListeningForNotifications;
++ (id)whitelistedEASProtocols;
++ (int)numForgivable401s;
++ (BOOL)cookiesEnabled;
++ (double)defaultEASTaskTimeoutOutWasFound:(BOOL*)arg1;
++ (BOOL)writeOutBrokenCancelationRequests;
++ (BOOL)ignoreSupportedCommands;
++ (BOOL)easNotesEnabled;
 + (BOOL)isAppleInternalInstall;
 + (BOOL)isInHoldingPattern;
 + (BOOL)sendMeCardEverywhere;
@@ -14,19 +21,17 @@
 + (BOOL)allIMAPServersSupportNotesSearch;
 + (id)mobileMeServerURL;
 + (id)APSEnv;
++ (BOOL)CFNetworkLogging;
++ (BOOL)perfLogging;
++ (BOOL)useThunderhillBetaServers;
 + (BOOL)compressRequests;
 + (BOOL)calDAVRemindersForAll;
 + (double)defaultDAVProbeTimeout;
 + (BOOL)ignoreBadLDAPCerts;
 + (int)refreshThrottleTime;
 + (BOOL)_shouldForceCookies:(BOOL*)arg1;
++ (void)_startListeningForNotifications;
 + (BOOL)promptForAllCerts;
-+ (void)initialize;
-+ (id)whitelistedEASProtocols;
-+ (BOOL)cookiesEnabled;
-+ (double)defaultEASTaskTimeoutOutWasFound:(BOOL*)arg1;
-+ (BOOL)writeOutBrokenCancelationRequests;
-+ (BOOL)ignoreSupportedCommands;
 
 
 @end

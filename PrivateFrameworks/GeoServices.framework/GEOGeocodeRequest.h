@@ -5,28 +5,26 @@
 @class NSString;
 
 @interface GEOGeocodeRequest : GEOPlaceSearchRequest  {
-    unsigned short _provider;
+    unsigned short _geocodeProvider;
     NSString *_logRequestToFile;
     NSString *_logResponseToFile;
 }
 
-@property unsigned short provider;
+@property unsigned short geocodeProvider;
 @property(retain) NSString * logRequestToFile;
 @property(retain) NSString * logResponseToFile;
 
 
-- (void)setProvider:(unsigned short)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)init;
-- (void)dealloc;
-- (id)logResponseToFile;
-- (id)logRequestToFile;
-- (unsigned short)provider;
 - (void)setLogResponseToFile:(id)arg1;
 - (void)setLogRequestToFile:(id)arg1;
 - (id)initForwardGeocodeWithAddressString:(id)arg1;
 - (id)initForwardGeocodeWithAddressDictionary:(id)arg1;
 - (id)initReverseGeocodeWithCoordinate:(struct { double x1; double x2; })arg1;
+- (void)dealloc;
+- (id)initReverseGeocodeWithCoordinate:(struct { double x1; double x2; })arg1 includeBusinessOptions:(BOOL)arg2;
+- (void)setGeocodeProvider:(unsigned short)arg1;
+- (id)logResponseToFile;
+- (id)logRequestToFile;
+- (unsigned short)geocodeProvider;
 
 @end

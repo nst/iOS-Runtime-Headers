@@ -7,11 +7,11 @@
 @interface SAWeatherLocationDeleteCompleted : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)locationDeleteCompleted;
 + (id)locationDeleteCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)locationDeleteCompleted;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

@@ -7,22 +7,14 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (Class)classForKeyedArchiver;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (unsigned int)retainCount;
+- (unsigned int)hash;
 - (BOOL)characterIsMember:(unsigned short)arg1;
 - (id)retain;
-- (oneway void)release;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)makeCharacterSetFast;
-- (void)makeCharacterSetCompact;
-- (void)formIntersectionWithCharacterSet:(id)arg1;
-- (void)removeCharactersInString:(id)arg1;
-- (void)removeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (BOOL)isSupersetOfSet:(id)arg1;
-- (id)bitmapRepresentation;
+- (oneway void)release;
+- (Class)classForArchiver;
 - (void)addCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)retainWeakReference;
@@ -34,6 +26,14 @@
 - (void)formUnionWithCharacterSet:(id)arg1;
 - (BOOL)longCharacterIsMember:(unsigned long)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (Class)classForArchiver;
+- (void)makeCharacterSetFast;
+- (void)makeCharacterSetCompact;
+- (BOOL)isSupersetOfSet:(id)arg1;
+- (id)bitmapRepresentation;
+- (void)formIntersectionWithCharacterSet:(id)arg1;
+- (void)removeCharactersInString:(id)arg1;
+- (void)removeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)hasMemberInPlane:(unsigned char)arg1;
+- (Class)classForKeyedArchiver;
 
 @end

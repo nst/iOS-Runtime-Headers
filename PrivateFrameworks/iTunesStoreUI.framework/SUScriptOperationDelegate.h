@@ -10,11 +10,11 @@
 }
 
 
-- (void)cancelAllOperations;
-- (void)dealloc;
 - (void)_removeOperation:(id)arg1;
 - (void)operationFinished:(id)arg1;
 - (void)enqueueOperation:(id)arg1;
+- (void)cancelAllOperations;
+- (void)dealloc;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

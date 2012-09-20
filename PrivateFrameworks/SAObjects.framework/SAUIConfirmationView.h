@@ -13,20 +13,20 @@
 @property(copy) NSArray * denyCommands;
 @property(copy) NSString * denyText;
 
-+ (id)confirmationView;
 + (id)confirmationViewWithDictionary:(id)arg1 context:(id)arg2;
++ (id)confirmationView;
 
 - (id)groupIdentifier;
-- (id)cancelTrigger;
-- (void)setCancelTrigger:(id)arg1;
-- (id)confirmCommands;
-- (void)setConfirmCommands:(id)arg1;
-- (id)confirmText;
-- (void)setConfirmText:(id)arg1;
-- (id)denyCommands;
-- (void)setDenyCommands:(id)arg1;
-- (id)denyText;
 - (void)setDenyText:(id)arg1;
+- (id)denyText;
+- (void)setDenyCommands:(id)arg1;
+- (id)denyCommands;
+- (void)setConfirmText:(id)arg1;
+- (id)confirmText;
+- (void)setConfirmCommands:(id)arg1;
+- (id)confirmCommands;
+- (void)setCancelTrigger:(id)arg1;
+- (id)cancelTrigger;
 - (id)encodedClassName;
 
 @end

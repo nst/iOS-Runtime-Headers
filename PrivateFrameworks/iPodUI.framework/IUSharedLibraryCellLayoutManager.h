@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@interface IUSharedLibraryCellLayoutManager : IUMediaTableCellLayoutManager  {
+@interface IUSharedLibraryCellLayoutManager : UITableViewCellLayoutManager  {
 }
 
 

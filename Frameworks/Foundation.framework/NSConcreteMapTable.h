@@ -14,9 +14,11 @@
         void **items; 
         BOOL wantsStrong; 
         BOOL wantsWeak; 
+        BOOL wantsARC; 
         BOOL shouldCopyIn; 
         BOOL usesStrong; 
         BOOL usesWeak; 
+        BOOL usesARC; 
         BOOL usesSentinel; 
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
@@ -38,9 +40,11 @@
         void **items; 
         BOOL wantsStrong; 
         BOOL wantsWeak; 
+        BOOL wantsARC; 
         BOOL shouldCopyIn; 
         BOOL usesStrong; 
         BOOL usesWeak; 
+        BOOL usesARC; 
         BOOL usesSentinel; 
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
@@ -68,6 +72,26 @@
 }
 
 
+- (void)removeObjectForKey:(id)arg1;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)objectForKey:(id)arg1;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (void)dealloc;
+- (id)init;
+- (id)copy;
+- (unsigned int)count;
+- (id)keyEnumerator;
+- (id)initWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2 capacity:(unsigned int)arg3;
+- (void)finalize;
+- (id)allValues;
+- (id)objectEnumerator;
+- (Class)classForCoder;
+- (id)allKeys;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)dump;
 - (BOOL)containsKeys:(const void**)arg1 values:(const void**)arg2 count:(unsigned int)arg3;
 - (void)zeroPairedEntries;
@@ -88,27 +112,7 @@
 - (void)rehash;
 - (unsigned int)rehashAround:(unsigned int)arg1;
 - (void)raiseCountUnderflowException;
-- (void)_initBlock;
 - (void)removeAllItems;
-- (unsigned int)count;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (id)objectForKey:(id)arg1;
-- (id)copy;
-- (void)setObject:(id)arg1 forKey:(id)arg2;
-- (id)init;
-- (void)dealloc;
-- (id)keyEnumerator;
-- (void)finalize;
-- (Class)classForCoder;
-- (id)objectEnumerator;
-- (id)allValues;
-- (id)allKeys;
-- (void)removeObjectForKey:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2 capacity:(unsigned int)arg3;
+- (void)_initBlock;
 
 @end

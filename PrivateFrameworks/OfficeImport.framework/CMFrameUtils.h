@@ -5,10 +5,10 @@
 @interface CMFrameUtils : NSObject  {
 }
 
-+ (id)createFramesetPageForDocument:(id)arg1 navPage:(id)arg2 firstPage:(id)arg3;
 + (id)scriptElementWithScriptString:(id)arg1;
-+ (id)createFramesetPageForDocument:(id)arg1 navPage:(id)arg2 firstPage:(id)arg3 isOnTop:(BOOL)arg4;
-+ (id)createFramesetElement:(int)arg1 isOnTop:(BOOL)arg2;
++ (id)copyFramesetPageForDocument:(id)arg1 navPage:(id)arg2 firstPage:(id)arg3;
++ (id)copyFramesetElement:(int)arg1 isOnTop:(BOOL)arg2;
++ (id)copyFramesetPageForDocument:(id)arg1 navPage:(id)arg2 firstPage:(id)arg3 isOnTop:(BOOL)arg4;
 
 
 @end

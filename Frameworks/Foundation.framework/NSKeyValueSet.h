@@ -13,12 +13,12 @@
 + (id)_proxyShare;
 + (struct { unsigned int x1; id x2[4]; }*)_proxyNonGCPoolPointer;
 
+- (void)dealloc;
+- (unsigned int)count;
+- (id)member:(id)arg1;
+- (id)objectEnumerator;
 - (void)_proxyNonGCFinalize;
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
 - (struct { id x1; id x2; })_proxyLocator;
-- (unsigned int)count;
-- (void)dealloc;
-- (id)member:(id)arg1;
-- (id)objectEnumerator;
 
 @end

@@ -15,24 +15,24 @@
 @property(copy) NSString * speakableSelectionResponse;
 @property(copy) NSString * speakableSuffix;
 
-+ (id)disambiguationList;
 + (id)disambiguationListWithDictionary:(id)arg1 context:(id)arg2;
++ (id)disambiguationList;
 
 - (id)groupIdentifier;
 - (void)setItems:(id)arg1;
 - (id)items;
-- (id)disambiguationKey;
-- (void)setDisambiguationKey:(id)arg1;
-- (id)speakableDelimiter;
-- (void)setSpeakableDelimiter:(id)arg1;
-- (id)speakableFinalDelimiter;
-- (void)setSpeakableFinalDelimiter:(id)arg1;
-- (id)speakableSuffix;
 - (void)setSpeakableSuffix:(id)arg1;
-- (id)selectionResponse;
-- (void)setSelectionResponse:(id)arg1;
-- (id)speakableSelectionResponse;
+- (id)speakableSuffix;
+- (void)setSpeakableFinalDelimiter:(id)arg1;
+- (id)speakableFinalDelimiter;
+- (void)setSpeakableDelimiter:(id)arg1;
+- (id)speakableDelimiter;
+- (void)setDisambiguationKey:(id)arg1;
+- (id)disambiguationKey;
 - (void)setSpeakableSelectionResponse:(id)arg1;
+- (id)speakableSelectionResponse;
+- (void)setSelectionResponse:(id)arg1;
+- (id)selectionResponse;
 - (id)encodedClassName;
 
 @end

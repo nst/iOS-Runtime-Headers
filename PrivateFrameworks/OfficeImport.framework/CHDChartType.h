@@ -17,20 +17,22 @@
 
 - (void)dealloc;
 - (bool)isHorizontal;
-- (bool)isPlotedOnSecondaryAxis;
-- (id)axisForClass:(Class)arg1;
-- (void)setSeriesCollection:(id)arg1;
 - (bool)isVaryColors;
+- (void)setSeriesCollection:(id)arg1;
+- (id)axisForClass:(Class)arg1;
+- (bool)isPlotedOnSecondaryAxis;
+- (unsigned int)categoryCount;
+- (unsigned int)seriesCount;
 - (int)defaultLabelPosition;
-- (id)defaultDataLabel;
-- (id)axes;
-- (void)setVaryColors:(bool)arg1;
-- (id)axisIds;
-- (id)seriesCollection;
 - (void)setDefaultDataLabel:(id)arg1;
+- (id)axisIds;
+- (void)setVaryColors:(bool)arg1;
 - (id)defaultTitleWithResources:(id)arg1;
 - (id)initWithChart:(id)arg1;
 - (id)chart;
+- (id)defaultDataLabel;
+- (id)seriesCollection;
+- (id)axes;
 - (id)contentFormat;
 
 @end

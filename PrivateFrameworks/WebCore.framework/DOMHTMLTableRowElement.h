@@ -9,7 +9,7 @@
 
 @property(readonly) int rowIndex;
 @property(readonly) int sectionRowIndex;
-@property(retain,readonly) DOMHTMLCollection * cells;
+@property(readonly) DOMHTMLCollection * cells;
 @property(copy) NSString * align;
 @property(copy) NSString * bgColor;
 @property(copy) NSString * ch;
@@ -17,20 +17,20 @@
 @property(copy) NSString * vAlign;
 
 
-- (int)rowIndex;
-- (int)sectionRowIndex;
-- (id)cells;
-- (id)insertCell:(int)arg1;
 - (void)deleteCell:(int)arg1;
-- (id)ch;
-- (void)setCh:(id)arg1;
-- (id)chOff;
-- (void)setChOff:(id)arg1;
-- (id)vAlign;
+- (id)insertCell:(int)arg1;
+- (id)cells;
+- (int)sectionRowIndex;
+- (int)rowIndex;
 - (void)setVAlign:(id)arg1;
-- (id)bgColor;
+- (id)vAlign;
+- (void)setChOff:(id)arg1;
+- (id)chOff;
+- (void)setCh:(id)arg1;
+- (id)ch;
 - (void)setBgColor:(id)arg1;
-- (id)align;
+- (id)bgColor;
 - (void)setAlign:(id)arg1;
+- (id)align;
 
 @end

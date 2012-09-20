@@ -9,20 +9,20 @@
 
 @property int errorCode;
 @property(copy) NSString * reason;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)geniusSummonFailed;
-+ (id)geniusSummonFailedWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)geniusSummonFailedWithErrorCode:(int)arg1;
 + (id)geniusSummonFailedWithReason:(id)arg1;
++ (id)geniusSummonFailedWithErrorCode:(int)arg1;
++ (id)geniusSummonFailedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)geniusSummonFailed;
 
-- (id)groupIdentifier;
-- (void)setReason:(id)arg1;
 - (id)initWithReason:(id)arg1;
+- (void)setReason:(id)arg1;
+- (id)groupIdentifier;
 - (id)reason;
-- (int)errorCode;
 - (void)setErrorCode:(int)arg1;
+- (int)errorCode;
 - (id)initWithErrorCode:(int)arg1;
 - (id)encodedClassName;
 

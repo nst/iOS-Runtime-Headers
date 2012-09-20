@@ -11,17 +11,17 @@
 @property(copy) NSArray * failureCommands;
 @property(copy) NSArray * successCommands;
 
-+ (id)unlockDevice;
 + (id)unlockDeviceWithDictionary:(id)arg1 context:(id)arg2;
++ (id)unlockDevice;
 
 - (id)groupIdentifier;
-- (id)cancellationCommands;
-- (void)setCancellationCommands:(id)arg1;
-- (id)failureCommands;
-- (void)setFailureCommands:(id)arg1;
-- (id)successCommands;
 - (void)setSuccessCommands:(id)arg1;
-- (id)encodedClassName;
+- (id)successCommands;
+- (void)setFailureCommands:(id)arg1;
+- (id)failureCommands;
+- (void)setCancellationCommands:(id)arg1;
+- (id)cancellationCommands;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

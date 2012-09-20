@@ -11,8 +11,6 @@
 
 + (void)initialize;
 
-- (id)init;
-- (void)dealloc;
 - (void)moveToMostRecent;
 - (BOOL)isOnMostRecent;
 - (BOOL)moveToPrevious;
@@ -23,5 +21,7 @@
 - (void)snapshotUnread;
 - (void)addString:(id)arg1;
 - (BOOL)_moveIndexBy:(long)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

@@ -14,12 +14,15 @@
 @property(readonly) NSArray * instructions;
 @property(readonly) AVVideoCompositionCoreAnimationTool * animationTool;
 
-+ (id)videoCompositionForAsset:(id)arg1 videoGravity:(id)arg2;
-+ (id)videoCompositionForAsset:(id)arg1;
++ (void)initialize;
++ (id)videoCompositionWithPropertiesOfAsset:(id)arg1 videoGravity:(id)arg2;
++ (id)videoCompositionWithPropertiesOfAsset:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (void)finalize;
 - (void)setAnimationTool:(id)arg1;
 - (void)setInstructions:(id)arg1;
 - (void)setRenderScale:(float)arg1;
@@ -41,7 +44,5 @@
 - (float)renderScale;
 - (BOOL)_isValidReturningExceptionReason:(id*)arg1;
 - (struct CGSize { float x1; float x2; })renderSize;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)finalize;
 
 @end

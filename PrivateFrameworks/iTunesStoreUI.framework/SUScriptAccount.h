@@ -18,23 +18,15 @@
 @property(retain) id purchaseHistoryEnabled;
 @property(retain) id socialEnabled;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (void)setAccount:(id)arg1;
-- (id)account;
-- (id)init;
-- (void)dealloc;
-- (id)kind;
-- (id)identifier;
-- (void)setIdentifier:(id)arg1;
-- (id)attributeKeys;
+- (void)setKind:(id)arg1;
 - (id)socialEnabled;
 - (void)setSocialEnabled:(id)arg1;
 - (void)setPurchaseHistoryEnabled:(id)arg1;
 - (void)setLockerEnabled:(id)arg1;
-- (void)setKind:(id)arg1;
 - (void)setDsID:(id)arg1;
 - (void)setCredits:(id)arg1;
 - (id)purchaseHistoryEnabled;
@@ -49,5 +41,13 @@
 - (id)dsID;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)identifier;
+- (void)dealloc;
+- (id)init;
+- (id)kind;
+- (void)setIdentifier:(id)arg1;
+- (id)attributeKeys;
+- (void)setAccount:(id)arg1;
+- (id)account;
 
 @end

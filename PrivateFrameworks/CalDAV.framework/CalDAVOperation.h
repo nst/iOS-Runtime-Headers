@@ -10,17 +10,17 @@
     NSMutableSet *_outstandingTaskGroups;
 }
 
-@property(readonly) NSMutableSet * outstandingTaskGroups;
 @property(readonly) <CalDAVPrincipal> * principal;
+@property(readonly) NSMutableSet * outstandingTaskGroups;
 
 
-- (id)init;
 - (void)dealloc;
-- (void)cancelTaskGroup;
-- (void)bailWithError:(id)arg1;
-- (id)principal;
+- (id)init;
 - (id)initWithPrincipal:(id)arg1;
 - (void)_tearDownAllTaskGroupsWithBlock:(id)arg1;
 - (id)outstandingTaskGroups;
+- (void)cancelTaskGroup;
+- (void)bailWithError:(id)arg1;
+- (id)principal;
 
 @end

@@ -15,6 +15,7 @@
 
 - (void)handleCompletedAsset:(id)arg1;
 - (void)copyAssetToAirlock:(id)arg1;
+- (void)purgeAssetWithIdentifier:(id)arg1 dataclass:(id)arg2;
 - (void)evacuateDataclasses:(id)arg1;
 - (void)createAirlockForDataclasses:(id)arg1;
 

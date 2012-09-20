@@ -15,10 +15,7 @@
 @property(copy) NSArray * responseSessionTokens;
 
 
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)bagKey;
 - (void)setResponseSessionTokens:(id)arg1;
 - (id)responseSessionTokens;
 - (void)setResponseIdentities:(id)arg1;
@@ -27,9 +24,14 @@
 - (void)handleResponseHeaders:(id)arg1;
 - (id)additionalQueryStringParameters;
 - (BOOL)hasRequiredKeys:(id*)arg1;
+- (BOOL)wantsBodySignature;
+- (BOOL)wantsManagedRetries;
 - (BOOL)wantsHTTPGet;
 - (id)requiredKeys;
-- (id)bagKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)messageBody;
 - (void)setURI:(id)arg1;
 - (id)uri;
 

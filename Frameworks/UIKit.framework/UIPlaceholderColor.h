@@ -8,9 +8,9 @@
 
 - (unsigned int)retainCount;
 - (id)retain;
+- (void)dealloc;
 - (oneway void)release;
 - (id)autorelease;
-- (void)dealloc;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
 

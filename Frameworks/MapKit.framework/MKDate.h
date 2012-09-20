@@ -14,15 +14,15 @@
 
 + (id)dateWithNSDate:(id)arg1;
 
-- (int)dayOfCommonEra;
 - (id)description;
 - (void)dealloc;
-- (id)descriptionWithLocale:(id)arg1;
 - (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
 - (id)timeZone;
 - (void)setTimeZone:(id)arg1;
 - (double)timeIntervalSinceReferenceDate;
 - (id)nsDate;
 - (id)initWithNSDate:(id)arg1;
+- (id)descriptionWithLocale:(id)arg1;
+- (int)dayOfCommonEra;
 
 @end

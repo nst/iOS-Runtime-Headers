@@ -9,19 +9,19 @@
     EDWorkbook *mWorkbook;
 }
 
-+ (id)formulaWithReference:(id)arg1;
 + (id)formulaWithReferences:(id)arg1;
++ (id)formulaWithReference:(id)arg1;
 
 - (void)dealloc;
 - (id)references;
-- (void)prepareTokens;
 - (bool)isConstantStringFormula;
-- (id)initWithReference:(id)arg1;
-- (id)initWithReferences:(id)arg1;
-- (id)referencesFromFormula;
-- (void)setReferences:(id)arg1;
-- (void)setWorkbook:(id)arg1;
+- (void)prepareTokens;
 - (id)initWithWorkbook:(id)arg1;
+- (void)setReferences:(id)arg1;
+- (id)referencesFromFormula;
+- (id)initWithReferences:(id)arg1;
+- (id)initWithReference:(id)arg1;
 - (unsigned int)countOfCellsBeingReferenced;
+- (void)setWorkbook:(id)arg1;
 
 @end

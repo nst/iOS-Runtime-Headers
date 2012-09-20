@@ -11,11 +11,11 @@
 @property(readonly) SUMovieMediaObject * movieMediaObject;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)run;
 - (id)movieMediaObject;
 - (BOOL)_movieNeedsRemakeForMode:(id)arg1;
 - (id)initWithMovieMediaObject:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)run;
 
 @end

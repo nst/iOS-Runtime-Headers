@@ -6,6 +6,7 @@
 
 @interface IUGeniusGridView : UIView  {
     UILabel *_artistsLabel;
+    UILabel *_basedOnLabel;
     <IUGeniusGridViewDelegate> *_delegate;
     BOOL _enabled;
     struct CGImage { } *_image;
@@ -16,6 +17,7 @@
     NSArray *_representativeArtists;
     BOOL _showsPlayButton;
     NSString *_title;
+    unsigned int _page;
     UILabel *_titleLabel;
 }
 
@@ -26,14 +28,19 @@
 @property(retain) NSArray * representativeArtists;
 @property BOOL showsPlayButton;
 @property(copy) NSString * title;
+@property unsigned int page;
 @property(readonly) double durationForFlip;
 @property(readonly) int orientation;
 
 + (float)coverImageSideLength;
 
-- (void)dealloc;
 - (id)representativeArtists;
-- (void)viewDidUnload;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)_invalidateLayout;
+- (void)setPage:(unsigned int)arg1;
+- (unsigned int)page;
 - (void)prepareForReuse;
 - (struct CGImage { }*)image;
 - (id)title;
@@ -41,10 +48,8 @@
 - (BOOL)isEnabled;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (int)orientation;
-- (id)delegate;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
 - (void)setImage:(struct CGImage { }*)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)showsPlayButton;
@@ -53,7 +58,6 @@
 - (void)_addFlipAnimationToLayer:(id)arg1 withBeginTime:(double)arg2 forwards:(BOOL)arg3;
 - (void)_setCoverImages;
 - (void)_updateArtistsLabelLayout;
-- (void)_invalidateLayout;
 - (id)_playButtonImage;
 - (unsigned int)_gridSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gridFrame;

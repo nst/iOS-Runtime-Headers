@@ -9,6 +9,7 @@
 
 @property int count;
 @property(copy) NSString * description;
+@property double maxValue;
 @property(copy) NSString * providerId;
 @property double value;
 
@@ -16,14 +17,16 @@
 + (id)ratingWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (int)count;
 - (id)description;
-- (void)setDescription:(id)arg1;
+- (int)count;
+- (void)setMaxValue:(double)arg1;
 - (double)value;
 - (void)setValue:(double)arg1;
 - (void)setCount:(int)arg1;
-- (id)providerId;
+- (double)maxValue;
 - (void)setProviderId:(id)arg1;
+- (id)providerId;
 - (id)encodedClassName;
+- (void)setDescription:(id)arg1;
 
 @end

@@ -7,12 +7,11 @@
 @interface DOMWebKitTransitionEvent : DOMEvent  {
 }
 
-@property(copy,readonly) NSString * propertyName;
+@property(readonly) NSString * propertyName;
 @property(readonly) double elapsedTime;
 
 
 - (id)propertyName;
-- (void)initWebKitTransitionEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 propertyNameArg:(id)arg4 elapsedTimeArg:(double)arg5;
 - (double)elapsedTime;
 
 @end

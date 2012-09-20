@@ -31,10 +31,12 @@
 @property BOOL videoPlaybackEnabled;
 
 
-- (void)dealloc;
+- (void)setShuffleMode:(int)arg1;
+- (void)setRepeatMode:(int)arg1;
+- (int)shuffleMode;
+- (int)repeatMode;
 - (BOOL)seeking;
 - (BOOL)videoPlaybackEnabled;
-- (id)firstItem;
 - (id)geniusMixPlaylist;
 - (void)setBackgroundPlaybackAccess:(int)arg1;
 - (BOOL)hasAudioBackgroundMode;
@@ -49,10 +51,8 @@
 - (void)setUseApplicationSpecificQueue:(BOOL)arg1;
 - (void)setAllowsRemoteUIAccess:(BOOL)arg1;
 - (BOOL)allowsRemoteUIAccess;
+- (void)dealloc;
+- (id)firstItem;
 - (id)query;
-- (void)setShuffleMode:(int)arg1;
-- (void)setRepeatMode:(int)arg1;
-- (int)shuffleMode;
-- (int)repeatMode;
 
 @end

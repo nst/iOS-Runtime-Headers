@@ -10,15 +10,15 @@
 @property(copy) NSURL * targetAppId;
 @property BOOL visible;
 
-+ (id)visibilityStateSet;
 + (id)visibilityStateSetWithDictionary:(id)arg1 context:(id)arg2;
++ (id)visibilityStateSet;
 
 - (id)groupIdentifier;
 - (BOOL)visible;
 - (void)setVisible:(BOOL)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

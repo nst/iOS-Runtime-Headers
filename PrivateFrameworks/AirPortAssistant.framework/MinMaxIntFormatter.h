@@ -9,11 +9,11 @@
 
 + (id)formatterForMin:(int)arg1 max:(int)arg2;
 
+- (id)initWithMin:(int)arg1 max:(int)arg2;
 - (void)setMaximum:(int)arg1;
 - (int)maximum;
 - (void)setMinimum:(int)arg1;
 - (int)minimum;
 - (BOOL)isPartialStringValid:(id)arg1 newEditingString:(id*)arg2 errorDescription:(id*)arg3;
-- (id)initWithMin:(int)arg1 max:(int)arg2;
 
 @end

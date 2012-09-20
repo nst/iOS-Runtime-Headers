@@ -2,17 +2,19 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface SSRemoteNotificationClient : NSObject  {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     int _notifyToken;
 }
 
 + (id)sharedClient;
 
-- (id)init;
 - (void)dealloc;
-- (void)unregisterForRemoteNotifications;
+- (id)init;
 - (void)registerForRemoteNotifications;
 - (id)popQueuedNotifications;
+- (void)unregisterForRemoteNotifications;
 
 @end

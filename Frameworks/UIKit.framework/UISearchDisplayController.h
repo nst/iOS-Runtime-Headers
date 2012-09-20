@@ -33,6 +33,8 @@
         unsigned int isRotatingWithPopover : 1; 
         unsigned int cancelButtonManagementDisabled : 1; 
         unsigned int allowDisablingNavigationBarHiding : 1; 
+        unsigned int showsResultsForEmptyField : 1; 
+        unsigned int adjustsSearchBarContentInsetForIndexBar : 1; 
     } _searchDisplayControllerFlags;
 }
 
@@ -53,8 +55,10 @@
 @property(readonly) BOOL hidNavigationBar;
 
 
-- (id)init;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (id)init;
 - (void)setSearchResultsTitle:(id)arg1;
 - (id)searchResultsDelegate;
 - (id)searchResultsDataSource;
@@ -63,6 +67,9 @@
 - (void)_setCancelButtonManagementDisabled:(BOOL)arg1;
 - (BOOL)_isCancelButtonManagementDisabled;
 - (void)setDimTableViewOnEmptySearchString:(BOOL)arg1;
+- (BOOL)_adjustsSearchBarContentInsetForIndexBar;
+- (void)_setAdjustsSearchBarContentInsetForIndexBar:(BOOL)arg1;
+- (void)_setShowsResultsForEmptyField:(BOOL)arg1;
 - (BOOL)_allowDisablingNavigationBarHiding;
 - (void)_setAllowDisablingNavigationBarHiding:(BOOL)arg1;
 - (void)setNavigationBarHidingEnabled:(BOOL)arg1;
@@ -80,6 +87,7 @@
 - (void)_enableParentScrollViews;
 - (void)_disableParentScrollViews;
 - (void)showHideAnimationDidFinish;
+- (BOOL)_showsResultsForEmptyField;
 - (void)navigationControllerDidShowViewController:(id)arg1;
 - (void)navigationControllerWillShowViewController:(id)arg1;
 - (void)_popoverKeyboardDidHide:(id)arg1;
@@ -119,6 +127,7 @@
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)_searchBarSuperviewChanged;
 - (void)_searchBarSuperviewWillChange;
+- (id)_topShadowView;
 - (BOOL)isActive;
 - (id)searchBar;
 - (void)_keyboardWillHide:(id)arg1;
@@ -126,8 +135,6 @@
 - (BOOL)hidNavigationBar;
 - (void)_clearViewController;
 - (void)setActive:(BOOL)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

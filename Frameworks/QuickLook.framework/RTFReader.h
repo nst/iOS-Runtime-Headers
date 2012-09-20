@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSData, NSMutableString, NSMutableDictionary, RTFNSColor, NSMapTable, RTF_CMArchiveManager, RTFCPZArchive, NSURL, RTFReaderState, RTFHTMLWriter;
+@class RTFReaderState, NSMutableString, NSMutableDictionary, RTFNSColor, NSMapTable, RTF_CMArchiveManager, RTFCPZArchive, NSURL, NSData, RTFHTMLWriter;
 
 @interface RTFReader : NSObject  {
     RTFReaderState *_readerState;
@@ -76,22 +76,22 @@
 }
 
 
-- (void)read;
+- (void)_insertAttachmentNamed:(id)arg1;
+- (id)initWithPackageURL:(id)arg1 archiver:(id)arg2;
+- (id)initWithZippedRTFD:(id)arg1 archiver:(id)arg2;
+- (id)initWithData:(id)arg1 archiver:(id)arg2;
+- (id)_initWithArchiver:(id)arg1;
 - (void)dealloc;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setReadOnly:(int)arg1;
-- (id)initWithData:(id)arg1 archiver:(id)arg2;
-- (id)initWithZippedRTFD:(id)arg1 archiver:(id)arg2;
-- (id)initWithPackageURL:(id)arg1 archiver:(id)arg2;
-- (float)defaultTabInterval;
-- (id)_initWithArchiver:(id)arg1;
-- (int)cocoaVersion;
-- (int)cocoaSubVersion;
-- (void)setCocoaVersion:(int)arg1;
-- (void)setDefaultTabInterval:(float)arg1;
-- (void)setHyphenationFactor:(float)arg1;
 - (void)setCocoaSubVersion:(int)arg1;
+- (void)setCocoaVersion:(int)arg1;
 - (float)floatCocoaVersion;
-- (void)_insertAttachmentNamed:(id)arg1;
+- (int)cocoaSubVersion;
+- (int)cocoaVersion;
+- (void)setDefaultTabInterval:(float)arg1;
+- (float)defaultTabInterval;
+- (void)setHyphenationFactor:(float)arg1;
+- (void)setReadOnly:(int)arg1;
+- (void)read;
 
 @end

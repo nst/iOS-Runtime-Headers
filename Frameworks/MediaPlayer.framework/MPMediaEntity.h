@@ -4,21 +4,36 @@
 
 @class MPMediaItem, MPMediaLibrary;
 
-@interface MPMediaEntity : NSObject <NSCoding> {
+@interface MPMediaEntity : NSObject <NSCopying, NSCoding> {
 }
 
+@property(readonly) BOOL isDownloadable;
+@property(readonly) BOOL isDownloadableStoreOffer;
+@property(readonly) BOOL isPurchasableStoreOffer;
+@property(readonly) int preferredStoreOfferVariant;
 @property(readonly) MPMediaLibrary * mediaLibrary;
 @property(readonly) unsigned long long persistentID;
 @property(readonly) MPMediaItem * representativeItem;
 
 + (BOOL)canFilterByProperty:(id)arg1;
 
-- (unsigned long long)persistentID;
+- (BOOL)isDownloadable;
+- (id)representativeItem;
+- (id)mediaLibrary;
+- (BOOL)isPurchasableStoreOffer;
+- (BOOL)isDownloadableStoreOffer;
+- (id)completionOfferForVariant:(int)arg1;
+- (id)buyOffer;
+- (id)buyOfferForVariant:(int)arg1;
+- (int)preferredStoreOfferVariant;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
+- (id)valuesForProperties:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)persistentID;
 - (id)valueForProperty:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)representativeItem;
-- (id)mediaLibrary;
 
 @end

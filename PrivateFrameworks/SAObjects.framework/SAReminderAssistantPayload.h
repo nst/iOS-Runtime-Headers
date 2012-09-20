@@ -9,12 +9,12 @@
 
 @property(copy) NSString * utterance;
 
-+ (id)assistantPayload;
 + (id)assistantPayloadWithDictionary:(id)arg1 context:(id)arg2;
++ (id)assistantPayload;
 
 - (id)groupIdentifier;
-- (id)utterance;
 - (void)setUtterance:(id)arg1;
+- (id)utterance;
 - (id)encodedClassName;
 
 @end

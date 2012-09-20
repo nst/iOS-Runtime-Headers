@@ -33,6 +33,7 @@
 + (id)referenceWithName:(id)arg1 value:(id)arg2 flags:(unsigned int)arg3;
 
 - (void)setName:(id)arg1;
+- (id)name;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -57,7 +58,6 @@
 - (id)value;
 - (unsigned int)flags;
 - (void)setValue:(id)arg1;
-- (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

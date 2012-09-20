@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDString, EDPageSetup, EDHeaderFooter, SFUPointerKeyDictionary, NSMutableArray, EDProcessors, EDWorkbook, ESDContainer, EDWarnings, EDColorReference;
+@class EDWarnings, EDString, EDPageSetup, EDHeaderFooter, NSMutableArray, EDProcessors, EDWorkbook, ESDContainer, TSUPointerKeyDictionary, EDColorReference;
 
 @interface EDSheet : OCDDelayedNode  {
     EDWorkbook *mWorkbook;
@@ -15,8 +15,8 @@
     EDHeaderFooter *mHeaderFooter;
     EDPageSetup *mPageSetup;
     NSMutableArray *mDrawables;
-    SFUPointerKeyDictionary *mTextBoxMap;
-    SFUPointerKeyDictionary *mCommentMap;
+    TSUPointerKeyDictionary *mTextBoxMap;
+    TSUPointerKeyDictionary *mCommentMap;
     EDProcessors *mProcessors;
     EDWarnings *mWarnings;
     ESDContainer *mEscherDrawing;
@@ -27,44 +27,44 @@
 + (id)sheetWithWorkbook:(id)arg1;
 
 - (void)setName:(id)arg1;
-- (void)dealloc;
 - (id)name;
+- (void)dealloc;
 - (void)setHidden:(bool)arg1;
 - (bool)isHidden;
-- (void)reduceMemoryIfPossible;
-- (id)escherDrawing;
-- (void)setEscherDrawing:(id)arg1;
-- (id)defaultGridlineColorReference;
 - (id)drawableEnumerator;
-- (void)doneWithNonRowContent;
-- (void)setDisplayFormulas:(bool)arg1;
-- (bool)isDisplayGridlines;
-- (void)setDisplayGridlines:(bool)arg1;
-- (id)defaultGridlineColor;
-- (void)setDefaultGridlineColor:(id)arg1;
-- (void)setHeaderFooter:(id)arg1;
-- (void)setPageSetup:(id)arg1;
-- (unsigned int)drawableCount;
-- (id)drawableAtIndex:(unsigned int)arg1;
-- (void)removeDrawableAtIndex:(unsigned int)arg1;
-- (id)edTextBoxForShape:(id)arg1;
-- (void)setEDTextBox:(id)arg1 forShape:(id)arg2;
-- (id)edCommentForShape:(id)arg1;
+- (id)defaultGridlineColorReference;
+- (void)setEscherDrawing:(id)arg1;
+- (id)escherDrawing;
+- (void)reduceMemoryIfPossible;
+- (bool)isDialogSheet;
 - (void)setEDComment:(id)arg1 forShape:(id)arg2;
+- (id)edCommentForShape:(id)arg1;
+- (void)setEDTextBox:(id)arg1 forShape:(id)arg2;
+- (id)edTextBoxForShape:(id)arg1;
+- (void)removeDrawableAtIndex:(unsigned int)arg1;
+- (void)setDefaultGridlineColor:(id)arg1;
+- (id)defaultGridlineColor;
+- (void)doneWithNonRowContent;
+- (void)setup;
+- (id)headerFooter;
+- (bool)isDisplayFormulas;
+- (void)teardown;
+- (void)setDefaultGridlineColorReference:(id)arg1;
+- (void)setDisplayGridlines:(bool)arg1;
+- (void)setDisplayFormulas:(bool)arg1;
+- (void)setIsDialogSheet:(bool)arg1;
 - (void)applyProcessors;
 - (id)warnings;
-- (bool)isDialogSheet;
-- (void)setIsDialogSheet:(bool)arg1;
-- (void)setup;
-- (void)setDefaultGridlineColorReference:(id)arg1;
-- (id)initWithWorkbook:(id)arg1;
+- (void)setPageSetup:(id)arg1;
 - (id)pageSetup;
-- (id)headerFooter;
-- (id)workbook;
-- (id)processors;
-- (bool)isDisplayFormulas;
+- (void)setHeaderFooter:(id)arg1;
 - (void)addDrawable:(id)arg1;
-- (void)teardown;
+- (id)initWithWorkbook:(id)arg1;
+- (id)processors;
 - (id)drawables;
+- (bool)isDisplayGridlines;
+- (id)drawableAtIndex:(unsigned int)arg1;
+- (unsigned int)drawableCount;
+- (id)workbook;
 
 @end

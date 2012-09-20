@@ -12,24 +12,24 @@
     BOOL _speechRecognition;
 }
 
-@property BOOL speechRecognition;
-@property(retain) NSURL * captionTrackURL;
-@property(retain) NSString * language;
-@property(retain) NSString * title;
 @property(retain) YTVideo * video;
+@property(retain) NSString * title;
+@property(retain) NSString * language;
+@property(retain) NSURL * captionTrackURL;
+@property BOOL speechRecognition;
 
 
-- (id)description;
-- (void)dealloc;
 - (void)setLanguage:(id)arg1;
 - (id)language;
+- (id)description;
+- (void)dealloc;
+- (void)setVideo:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)video;
-- (void)setVideo:(id)arg1;
 - (BOOL)speechRecognition;
 - (id)captionTrackURL;
-- (void)setCaptionTrackURL:(id)arg1;
 - (void)setSpeechRecognition:(BOOL)arg1;
+- (void)setCaptionTrackURL:(id)arg1;
+- (id)video;
 
 @end

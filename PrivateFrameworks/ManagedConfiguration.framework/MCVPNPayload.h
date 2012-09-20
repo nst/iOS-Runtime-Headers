@@ -27,38 +27,39 @@
     NSString *_pin;
 }
 
-@property(copy) NSString * pin;
-@property(copy) NSString * sharedSecret;
-@property(copy) NSString * proxyPassword;
-@property(copy) NSString * proxyUserName;
-@property(copy) NSString * password;
-@property(copy) NSString * userName;
-@property(readonly) NSString * pinKey;
-@property(readonly) NSString * sharedSecretKey;
-@property(readonly) NSString * proxyPasswordKey;
-@property(readonly) NSString * proxyUserNameKey;
-@property(readonly) NSString * passwordKey;
-@property(readonly) NSString * userNameKey;
-@property(readonly) unsigned char pinRequired;
-@property(readonly) unsigned char sharedSecretRequired;
-@property(readonly) unsigned char proxyPasswordRequired;
-@property(readonly) unsigned char proxyUserNameRequired;
-@property(readonly) unsigned char passwordRequired;
-@property(readonly) unsigned char userNameRequired;
-@property(readonly) NSString * certificateUUID;
 @property(readonly) NSDictionary * atom;
+@property(readonly) NSString * certificateUUID;
+@property(readonly) unsigned char userNameRequired;
+@property(readonly) unsigned char passwordRequired;
+@property(readonly) unsigned char proxyUserNameRequired;
+@property(readonly) unsigned char proxyPasswordRequired;
+@property(readonly) unsigned char sharedSecretRequired;
+@property(readonly) unsigned char pinRequired;
+@property(readonly) NSString * userNameKey;
+@property(readonly) NSString * passwordKey;
+@property(readonly) NSString * proxyUserNameKey;
+@property(readonly) NSString * proxyPasswordKey;
+@property(readonly) NSString * sharedSecretKey;
+@property(readonly) NSString * pinKey;
+@property(copy) NSString * userName;
+@property(copy) NSString * password;
+@property(copy) NSString * proxyUserName;
+@property(copy) NSString * proxyPassword;
+@property(copy) NSString * sharedSecret;
+@property(copy) NSString * pin;
 
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
-- (void)dealloc;
-- (id)pin;
+- (void)setPassword:(id)arg1;
+- (void).cxx_destruct;
 - (void)setPin:(id)arg1;
-- (id)sharedSecret;
+- (id)pin;
 - (void)setSharedSecret:(id)arg1;
+- (id)sharedSecret;
 - (void)setProxyPassword:(id)arg1;
-- (id)proxyUserName;
 - (void)setProxyUserName:(id)arg1;
+- (id)proxyUserName;
 - (void)setUserName:(id)arg1;
 - (id)pinKey;
 - (id)sharedSecretKey;
@@ -77,8 +78,7 @@
 - (id)certificateUUID;
 - (unsigned char)passwordRequired;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (void)setPassword:(id)arg1;
-- (id)userName;
 - (id)password;
+- (id)userName;
 
 @end

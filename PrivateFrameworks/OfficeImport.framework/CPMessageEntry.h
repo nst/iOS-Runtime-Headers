@@ -17,22 +17,22 @@
 
 + (void)initialize;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)getParameter:(unsigned int)arg1;
 - (int)timeStamp;
-- (int)getMessageTag;
-- (int)getParameterCount;
 - (void)logWithCat:(id)arg1;
-- (void)mergeEntries:(id)arg1;
-- (id)initWithTag:(int)arg1 affectedObject:(id)arg2 text:(id)arg3 parameters:(void*)arg4;
-- (void)addAffectedObject:(id)arg1;
-- (int)timeStampCompare:(id)arg1;
-- (id)affectedObjects;
-- (id)getMessageText;
+- (id)getParameter:(unsigned int)arg1;
+- (int)getParameterCount;
+- (int)getMessageTag;
 - (int)getCount;
+- (id)affectedObjects;
+- (int)timeStampCompare:(id)arg1;
+- (void)addAffectedObject:(id)arg1;
+- (id)initWithTag:(int)arg1 affectedObject:(id)arg2 text:(id)arg3 parameters:(void*)arg4;
 - (void)setTimeStamp:(int)arg1;
+- (void)mergeEntries:(id)arg1;
+- (id)getMessageText;
 
 @end

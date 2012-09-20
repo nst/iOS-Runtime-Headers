@@ -32,8 +32,8 @@
 
 - (void)main;
 - (void)cancel;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setNumberOfResultsToSkip:(unsigned int)arg1;
 - (unsigned int)numberOfResultsToSkip;
 - (id)searchDelegate;

@@ -13,16 +13,16 @@
 + (id)dayOfWeek:(int)arg1 weekNumber:(int)arg2;
 + (id)dayOfWeek:(int)arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (int)weekNumber;
 - (int)dayOfTheWeek;
 - (id)initWithDayOfTheWeek:(int)arg1 weekNumber:(int)arg2;
 - (id)iCalendarValueFromDayOfTheWeek:(unsigned int)arg1;
 - (id)iCalendarDescription;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

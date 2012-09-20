@@ -7,7 +7,6 @@
 @interface EKReminderEditor : EKCalendarItemEditor  {
     <EKStyleProvider> *_styleProvider;
     <EKReminderEditorDelegate> *_reminderEditorDelegate;
-    BOOL _locationsAllowed;
 }
 
 @property(retain) EKReminder * reminder;
@@ -16,13 +15,18 @@
 
 
 - (void)dealloc;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
+- (void)loadView;
+- (float)marginForTableView:(id)arg1;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (id)reminderEditorDelegate;
 - (id)reminder;
 - (void)setReminder:(id)arg1;
 - (void)setReminderEditorDelegate:(id)arg1;
-- (void)editItemDidCommit:(id)arg1;
+- (void)editItem:(id)arg1 didEndDatePickingAnimated:(BOOL)arg2;
+- (void)editItem:(id)arg1 willBeginDatePickingWithDate:(id)arg2 action:(SEL)arg3 animated:(BOOL)arg4 forSubitem:(int)arg5 inSubsection:(int)arg6;
+- (void)editItemTextChanged:(id)arg1;
+- (void)editItem:(id)arg1 didCommitFromDetailViewController:(BOOL)arg2;
+- (BOOL)saveCalendarItemWithSpan:(int)arg1 error:(id*)arg2;
 - (id)defaultTitleForCalendarItem;
 - (id)_viewForSheet;
 - (void)customizeActionSheet:(id)arg1;
@@ -34,11 +38,12 @@
 - (void)prepareEditItems;
 - (void)_revertEvent;
 - (id)notificationNamesForLocaleChange;
-- (id)preferredTitle;
+- (BOOL)shouldDisplayEditItem:(id)arg1 withVisibility:(int)arg2;
 - (id)_editItems;
+- (id)preferredTitle;
 - (BOOL)_canDetachSingleOccurrence;
-- (void)loadView;
-- (float)marginForTableView:(id)arg1;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (id)styleProvider;
+- (void)setStyleProvider:(id)arg1;
+- (unsigned int)entityType;
 
 @end

@@ -4,13 +4,13 @@
 
 @interface SFUTangierCryptoKey : SFUCryptoKey  {
     char *mKey;
-    unsigned int mKeyLength;
+    unsigned long mKeyLength;
 }
 
 
 - (void)dealloc;
-- (const char *)keyData;
 - (unsigned long)keyLength;
+- (const char *)keyData;
 - (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(unsigned int)arg2;
 - (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(unsigned int)arg2 iterationCount:(unsigned int)arg3;
 

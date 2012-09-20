@@ -5,8 +5,8 @@
 @interface MCInstallerReader : NSObject  {
 }
 
-+ (id)sharedReader;
 + (void)_setProfileStorageDirectory:(id)arg1;
++ (id)sharedReader;
 
 - (id)pathsToInstalledProfilesWithFilterFlags:(int)arg1;
 

@@ -8,11 +8,11 @@
 }
 
 @property(retain) SATimerObject * timer;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)cancelCompleted;
 + (id)cancelCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)cancelCompleted;
 
 - (id)groupIdentifier;
 - (void)setTimer:(id)arg1;

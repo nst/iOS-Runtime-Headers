@@ -9,28 +9,25 @@
     NSString *_mediaType;
     NSDictionary *_dictionary;
     AVWeakReference *_weakReferenceToGroup;
+    BOOL _displaysNonForcedSubtitles;
 }
 
 
-- (id)propertyList;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
-- (id)groupID;
-- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
-- (id)mediaSubTypes;
-- (id)_ancillaryDescription;
-- (id)initWithDictionary:(id)arg1 group:(id)arg2;
-- (BOOL)_isDesignatedDefault;
-- (id)optionID;
 - (BOOL)isPlayable;
-- (id)metadataForFormat:(id)arg1;
-- (id)availableMetadataFormats;
-- (id)commonMetadata;
+- (id)mediaSubTypes;
+- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
 - (BOOL)hasMediaCharacteristic:(id)arg1;
+- (id)dictionary;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)mediaType;
 - (id)locale;
 - (id)group;
-- (id)dictionary;
-- (id)mediaType;
+- (id)commonMetadata;
+- (id)initWithAsset:(id)arg1 group:(id)arg2 dictionary:(id)arg3;
+- (id)_groupID;
+- (id)metadataForFormat:(id)arg1;
+- (id)availableMetadataFormats;
 
 @end

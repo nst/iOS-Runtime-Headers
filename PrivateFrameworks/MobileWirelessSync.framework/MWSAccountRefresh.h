@@ -12,20 +12,20 @@
 
 + (id)accountToRefreshForBasicAccount:(id)arg1;
 
-- (id)init;
 - (void)dealloc;
-- (BOOL)refreshContainerListForDataclass:(id)arg1 isUserRequested:(BOOL)arg2;
-- (id)defaultContainerIdentifierForDataclass:(id)arg1;
+- (id)init;
 - (id)_initWithBasicAccount:(id)arg1;
+- (struct __CFString { }*)_mwsDataclassNameForDataclass:(id)arg1;
+- (BOOL)_isConfiguredSyncAccount;
 - (id)_username;
+- (id)defaultContainerIdentifierForDataclass:(id)arg1;
+- (BOOL)_refreshSubscribedCalendars;
+- (BOOL)_hasSubscribedCalendars;
+- (BOOL)_refreshDataclass:(id)arg1;
+- (BOOL)_refreshSubscribedCalendarWithIdentifier:(id)arg1;
+- (BOOL)_hasSubscribedCalendarWithIdentifier:(id)arg1;
+- (BOOL)refreshContainerListForDataclass:(id)arg1 isUserRequested:(BOOL)arg2;
 - (BOOL)refreshContainersForDataclass:(id)arg1 isUserRequested:(BOOL)arg2;
 - (BOOL)refreshContainerWithIdentifier:(id)arg1 forDataclass:(id)arg2 isUserRequested:(BOOL)arg3;
-- (BOOL)_hasSubscribedCalendarWithIdentifier:(id)arg1;
-- (BOOL)_refreshSubscribedCalendarWithIdentifier:(id)arg1;
-- (BOOL)_refreshDataclass:(id)arg1;
-- (BOOL)_hasSubscribedCalendars;
-- (BOOL)_refreshSubscribedCalendars;
-- (BOOL)_isConfiguredSyncAccount;
-- (struct __CFString { }*)_mwsDataclassNameForDataclass:(id)arg1;
 
 @end

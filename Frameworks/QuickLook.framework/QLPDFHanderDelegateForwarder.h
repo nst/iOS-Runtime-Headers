@@ -9,16 +9,16 @@
     UIWebView *_webView;
 }
 
-@property UIWebView * webView;
 @property <NSObject><UIWebPDFViewHandlerDelegate> * delegate;
+@property UIWebView * webView;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setWebView:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)webView;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @class UIView, <UIPickerViewDelegate>, <UIPickerViewDataSource>, NSMutableArray;
 
-@interface UIPickerView : UIView <NSCoding, UITableViewDataSource> {
+@interface UIPickerView : UIView <UITableViewDelegate, NSCoding, UITableViewDataSource> {
     NSMutableArray *_tables;
     UIView *_topFrame;
     NSMutableArray *_dividers;
@@ -20,6 +20,7 @@
         unsigned int delegateRespondsToDidSelectRow : 1; 
         unsigned int delegateRespondsToViewForRow : 1; 
         unsigned int delegateRespondsToTitleForRow : 1; 
+        unsigned int delegateRespondsToAttributedTitleForRow : 1; 
         unsigned int delegateRespondsToWidthForComponent : 1; 
         unsigned int delegateRespondsToRowHeightForComponent : 1; 
         unsigned int delegateRespondsToCheckableForRow : 1; 
@@ -28,27 +29,34 @@
         unsigned int allowSelectingCells : 1; 
         unsigned int soundsDisabled : 1; 
         unsigned int usesCheckedSelection : 1; 
+        unsigned int skipsBackground : 1; 
     } _pickerViewFlags;
+    BOOL _isInLayoutSubviews;
 }
 
 @property <UIPickerViewDataSource> * dataSource;
 @property <UIPickerViewDelegate> * delegate;
 @property BOOL showsSelectionIndicator;
 @property(readonly) int numberOfComponents;
+@property(setter=_setInLayoutSubviews:) BOOL _isInLayoutSubviews;
 
 + (struct CGSize { float x1; float x2; })sizeForCurrentOrientationThatFits:(struct CGSize { float x1; float x2; })arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForCurrentOrientation;
 + (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forInterfaceOrientation:(int)arg2;
 
-- (id)init;
-- (void)dealloc;
-- (BOOL)isAccessibilityElementByDefault;
+- (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (BOOL)isAccessibilityElementByDefault;
+- (void)_setInLayoutSubviews:(BOOL)arg1;
+- (BOOL)_isInLayoutSubviews;
 - (id)dataSource;
 - (void)selectRow:(int)arg1 inColumn:(int)arg2 animated:(BOOL)arg3;
 - (id)tableViewForColumn:(int)arg1;
 - (int)selectedRowForColumn:(int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })visibleRowsForColumn:(int)arg1;
+- (void)_setDrawsBackground:(BOOL)arg1;
 - (BOOL)_usesCheckedSelection;
 - (void)_setUsesCheckedSelection:(BOOL)arg1;
 - (BOOL)_usesCheckSelection;
@@ -63,6 +71,8 @@
 - (double)scrollAnimationDuration;
 - (void)_sendCheckedRow:(int)arg1 inTableView:(id)arg2 checked:(BOOL)arg3;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (void)reloadDataForColumn:(int)arg1;
 - (void)reload;
 - (BOOL)_soundsEnabled;
@@ -70,21 +80,25 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)_delegateTitleForRow:(int)arg1 forComponent:(int)arg2;
+- (id)_delegateAttributedTitleForRow:(int)arg1 forComponent:(int)arg2;
 - (void)selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3;
 - (void)_selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3 notify:(BOOL)arg4;
 - (void)_sendSelectionChangedFromTable:(id)arg1;
 - (void)_sendSelectionChangedForComponent:(int)arg1;
 - (int)selectedRowInComponent:(int)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_updateWithOldSize:(struct CGSize { float x1; float x2; })arg1 newSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)_delegateNumberOfRowsInComponent:(int)arg1;
+- (void)_resetSelectionOfTables;
 - (void)setAllowsMultipleSelection:(BOOL)arg1;
 - (id)_createTableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forComponent:(int)arg2;
 - (id)createDividerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)_wheelShift;
 - (float)_delegateWidthForComponent:(int)arg1 ofCount:(int)arg2 withSizeLeft:(float)arg3;
 - (id)_createViewForPickerPiece:(int)arg1;
+- (BOOL)_drawsBackground;
 - (int)numberOfComponents;
 - (int)numberOfRowsInComponent:(int)arg1;
 - (void)layoutSubviews;
@@ -92,6 +106,7 @@
 - (float)_delegateRowHeightForComponent:(int)arg1;
 - (float)_tableRowHeight;
 - (int)columnForTableView:(id)arg1;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })defaultSize;
 - (id)imageForPickerPiece:(int)arg1;
 - (id)_popoverSuffix;
@@ -105,7 +120,6 @@
 - (void)_updateSound;
 - (void)setHidden:(BOOL)arg1;
 - (void)setNeedsLayout;
-- (void)setDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;

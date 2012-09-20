@@ -7,10 +7,10 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSPredicate, NSThread, NSMutableIndexSet, NSMutableArray, NSString, NSMutableDictionary, NSArray;
+@class NSPredicate, NSObject<OS_dispatch_queue>, NSThread, NSMutableArray, NSMutableIndexSet, NSMetadataQuery, NSMutableDictionary, NSArray;
 
 @interface LBQuery : NSObject  {
-    NSString *_query;
+    NSMetadataQuery *_query;
     unsigned int _accumulatedItemCount;
     NSMutableArray *_changes;
     NSMutableDictionary *_toBeRemoved;
@@ -48,19 +48,54 @@
     unsigned long _scopeOptions;
     int (*_sort_fn)();
     void *_sort_context;
-    struct dispatch_queue_s { } *_notificationQueue;
+    NSObject<OS_dispatch_queue> *_notificationQueue;
     struct __LBItemUpdateObserver { } *_observer;
     NSThread *_executeThread;
-    struct dispatch_source_s { } *_notifyTimer;
-    unsigned long long _notifyInterval;
-    long long _disableCount;
+    bool_pendingNote;
+    unsigned long _notifyInterval;
+    int _disableCount;
     NSMutableDictionary *_created;
     NSPredicate *_predicate;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    } _stateLock;
 }
 
 
+- (void)dealloc;
+- (id)predicate;
+- (void)updateQueryResultForURL:(id)arg1 info:(id)arg2 updateType:(int)arg3;
+- (void)sendNote;
+- (void)_didInsert:(id)arg1;
+- (void)_willInsert:(id)arg1;
+- (void)_didRemove:(id)arg1;
+- (void)_willRemove:(id)arg1;
+- (void)_didReplace:(id)arg1;
+- (void)_willReplace:(id)arg1;
+- (void)_createChangeSets;
+- (void)_didChange:(unsigned int)arg1 inSet:(id)arg2;
+- (void)_willChange:(unsigned int)arg1 inSet:(id)arg2;
+- (void)_runQuery;
+- (void)_updateQueryResultForURL:(id)arg1 info:(id)arg2 updateType:(int)arg3;
+- (void)__updateQueryResultForURL:(id)arg1 info:(id)arg2 updateType:(int)arg3;
+- (void)runBlock:(id)arg1;
+- (void)addChangeToURL:(id)arg1 withInfo:(id)arg2;
+- (void)deleteURL:(id)arg1;
+- (void)addCreatedURL:(id)arg1 withInfo:(id)arg2;
+- (void)addItemWithURL:(id)arg1 usingInfo:(id)arg2;
+- (void)_processUpdates;
+- (void)_processChanges;
+- (void)postNote:(struct __CFString { }*)arg1;
+- (void)_enableUpdates;
+- (void)_sendNote;
+- (void)startObserver;
+- (void)_disableUpdates;
+- (void)performBlock:(id)arg1;
+- (void)stop;
+- (void)_stop;
 - (void)setBatchingParameters:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
-- (id)initWithQuery:(id)arg1 values:(id)arg2 sortingAttributes:(id)arg3 items:(struct __CFArray { }*)arg4;
+- (id)initWithQuery:(id)arg1 values:(id)arg2 sortingAttributes:(id)arg3 items:(id)arg4;
 - (void)setCreateResultFunction:(int (*)())arg1 withContext:(void*)arg2 callbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (void)setCreateValueFunction:(int (*)())arg1 withContext:(void*)arg2 callbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (void)setSortComparator:(int (*)())arg1 withContext:(void*)arg2;
@@ -72,35 +107,8 @@
 - (id)attributeValueForName:(id)arg1 forResultAtIndex:(int)arg2;
 - (int)indexOfResult:(const void*)arg1;
 - (const void*)resultAtIndex:(int)arg1;
-- (unsigned int)resultCount;
-- (void)dealloc;
-- (void)_didInsert:(id)arg1;
-- (void)_willInsert:(id)arg1;
-- (void)_didRemove:(id)arg1;
-- (void)_willRemove:(id)arg1;
-- (void)_didReplace:(id)arg1;
-- (void)_willReplace:(id)arg1;
-- (void)_postNote:(struct __CFString { }*)arg1;
-- (void)_createChangeSets;
-- (void)_didChange:(unsigned int)arg1 inSet:(id)arg2;
-- (void)_willChange:(unsigned int)arg1 inSet:(id)arg2;
-- (void)_runQuery;
-- (void)updateQueryResultForURL:(id)arg1 info:(id)arg2 updateType:(int)arg3;
-- (void)addChangeToURL:(id)arg1 withInfo:(id)arg2;
-- (void)deleteURL:(id)arg1;
-- (void)addCreatedURL:(id)arg1 withInfo:(id)arg2 makeLive:(bool)arg3;
-- (void)addItemWithURL:(id)arg1 usingInfo:(id)arg2;
-- (void)_processUpdates;
-- (void)_processChanges;
-- (void)postNote:(struct __CFString { }*)arg1;
-- (void)_enableUpdates;
-- (void)sendNote;
-- (void)startObserver;
-- (void)_disableUpdates;
-- (void)stop;
-- (void)_stop;
 - (void)disableUpdates;
 - (void)enableUpdates;
-- (id)predicate;
+- (unsigned int)resultCount;
 
 @end

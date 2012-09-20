@@ -15,11 +15,11 @@
 - (void)dealloc;
 - (id)color;
 - (void)setColor:(id)arg1;
-- (void)setMatrixIndex:(unsigned long)arg1;
-- (void)applyToStrokeInProperties:(id)arg1 styleMatrix:(id)arg2;
-- (void)applyToFillInProperties:(id)arg1 styleMatrix:(id)arg2;
 - (void)applyToEffectsInProperties:(id)arg1 styleMatrix:(id)arg2;
-- (unsigned long)matrixIndex;
+- (void)applyToFillInProperties:(id)arg1 styleMatrix:(id)arg2;
+- (void)applyToStrokeInProperties:(id)arg1 styleMatrix:(id)arg2;
+- (void)setMatrixIndex:(unsigned long)arg1;
 - (id)initWithMatrixIndex:(unsigned long)arg1 color:(id)arg2;
+- (unsigned long)matrixIndex;
 
 @end

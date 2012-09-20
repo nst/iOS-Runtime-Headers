@@ -7,18 +7,18 @@
 @interface ABModelRecord : NSObject  {
     int _recordID;
     struct __CFString { } *_sortKey;
-    int _highlightIndex;
+    long _highlightIndex;
     BOOL _isGroup;
     NSArray *_namePieces;
 }
 
 
 - (void)dealloc;
-- (struct __CFString { }*)sortKey;
-- (id)initWithRecordID:(int)arg1 highlightIndex:(long)arg2 group:(BOOL)arg3 namePieces:(id)arg4 sortKey:(struct __CFString { }*)arg5;
 - (BOOL)isGroup;
-- (long)highlightIndex;
-- (id)namePieces;
 - (int)recordID;
+- (struct __CFString { }*)sortKey;
+- (id)namePieces;
+- (long)highlightIndex;
+- (id)initWithRecordID:(int)arg1 highlightIndex:(long)arg2 group:(BOOL)arg3 namePieces:(id)arg4 sortKey:(struct __CFString { }*)arg5;
 
 @end

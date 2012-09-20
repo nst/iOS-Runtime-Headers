@@ -4,20 +4,20 @@
 
 @class NSString;
 
-@interface SABaseCommand : AceObject <SAAceCommand> {
+@interface SABaseCommand : AceObject <SAAceSerializable, SAAceCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)baseCommand;
 + (id)baseCommandWithDictionary:(id)arg1 context:(id)arg2;
++ (id)baseCommand;
 
 - (id)groupIdentifier;
-- (id)refId;
 - (void)setRefId:(id)arg1;
-- (id)aceId;
+- (id)refId;
 - (void)setAceId:(id)arg1;
+- (id)aceId;
 - (id)encodedClassName;
 
 @end

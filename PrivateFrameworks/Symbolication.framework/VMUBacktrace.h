@@ -21,25 +21,26 @@
 
 
 - (id)description;
+- (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)thread;
-- (id)initWithSamplingContext:(struct sampling_context_t { }*)arg1 thread:(unsigned int)arg2;
-- (id)initWithTask:(unsigned int)arg1 thread:(unsigned int)arg2 is64Bit:(BOOL)arg3;
-- (void)fixupStackWithTask:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2 taskMemoryCache:(id)arg3;
-- (void)fixupStackWithSamplingContext:(struct sampling_context_t { }*)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
-- (BOOL)hasSameCallstack:(id)arg1;
-- (unsigned long long)topmostFrame;
-- (void)removeTopmostFrame;
-- (void)setLengthTime:(double)arg1;
-- (unsigned long long*)backtrace;
-- (unsigned int)backtraceLength;
-- (void)setThreadState:(int)arg1;
-- (int)threadState;
-- (unsigned long long)dispatchQueueSerialNumber;
-- (id)initWithTask:(unsigned int)arg1 thread:(unsigned int)arg2 is64Bit:(BOOL)arg3 taskMemoryCache:(id)arg4;
-- (struct _CSTypeRef { unsigned int x1; unsigned int x2; })_symbolicator;
 - (void)setStartTime:(double)arg1;
+- (unsigned long long)dispatchQueueSerialNumber;
+- (int)threadState;
+- (void)setThreadState:(int)arg1;
+- (unsigned int)backtraceLength;
+- (unsigned long long*)backtrace;
+- (void)setLengthTime:(double)arg1;
+- (void)removeTopmostFrame;
+- (unsigned long long)topmostFrame;
+- (BOOL)hasSameCallstack:(id)arg1;
+- (void)fixupStackWithSamplingContext:(struct sampling_context_t { }*)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
+- (void)fixupStackWithTask:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2 taskMemoryCache:(id)arg3;
+- (id)initWithTask:(unsigned int)arg1 thread:(unsigned int)arg2 is64Bit:(BOOL)arg3;
+- (id)initWithSamplingContext:(struct sampling_context_t { }*)arg1 thread:(unsigned int)arg2;
+- (struct _CSTypeRef { unsigned int x1; unsigned int x2; })_symbolicator;
+- (id)initWithTask:(unsigned int)arg1 thread:(unsigned int)arg2 is64Bit:(BOOL)arg3 taskMemoryCache:(id)arg4;
+- (unsigned int)thread;
 - (void)setEndTime:(double)arg1;
 
 @end

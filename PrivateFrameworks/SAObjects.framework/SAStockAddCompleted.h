@@ -12,23 +12,23 @@
 @property(copy) NSArray * results;
 @property(copy) NSArray * stockReferences;
 @property(copy) NSArray * stocks;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)addCompleted;
 + (id)addCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)addCompleted;
 
 - (id)groupIdentifier;
 - (id)results;
 - (void)setResults:(id)arg1;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
-- (id)aceStock;
 - (void)setAceStock:(id)arg1;
-- (id)stockReferences;
-- (void)setStockReferences:(id)arg1;
-- (id)stocks;
+- (id)aceStock;
 - (void)setStocks:(id)arg1;
+- (id)stocks;
+- (void)setStockReferences:(id)arg1;
+- (id)stockReferences;
 - (id)encodedClassName;
 
 @end

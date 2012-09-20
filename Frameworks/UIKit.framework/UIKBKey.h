@@ -52,16 +52,16 @@
 + (id)key;
 
 - (void)setName:(id)arg1;
+- (id)name;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setFlicks:(id)arg1;
 - (id)flicks;
 - (void)setVariantKeys:(id)arg1;
 - (void)setTint:(id)arg1;
 - (id)tint;
-- (void)setDisabled:(BOOL)arg1;
 - (id)variantDisplayString;
 - (BOOL)hidden;
 - (id)initWithName:(id)arg1 representedString:(id)arg2 displayString:(id)arg3 displayType:(id)arg4 interactionType:(id)arg5 variantType:(id)arg6 attributes:(id)arg7 geometry:(id)arg8 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg9 paddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg10;
@@ -73,12 +73,12 @@
 - (BOOL)isGhost;
 - (void)setAttributes:(id)arg1;
 - (id)attributes;
+- (void)setVariantType:(id)arg1;
 - (void)mergeAttributes:(id)arg1;
 - (void)setInteractionType:(id)arg1;
 - (BOOL)behavesAsShiftKey;
 - (void)setRendering:(id)arg1;
 - (void)setVariantPopupBias:(id)arg1;
-- (void)setVariantType:(id)arg1;
 - (id)clientVariantRepresentedString;
 - (id)clientVariantActionName;
 - (void)setDisplayType:(id)arg1;
@@ -89,11 +89,10 @@
 - (void)setClientVariantActionName:(id)arg1;
 - (void)setOverrideDisplayString:(id)arg1;
 - (id)variantType;
-- (BOOL)disabled;
 - (void)setDisplayRowHint:(id)arg1;
 - (void)setRepresentedString:(id)arg1;
-- (void)setDisplayTypeHint:(unsigned int)arg1;
 - (void)setDisplayString:(id)arg1;
+- (void)setDisplayTypeHint:(unsigned int)arg1;
 - (id)cacheKey;
 - (id)displayString;
 - (unsigned int)displayTypeHint;
@@ -104,10 +103,11 @@
 - (id)displayType;
 - (BOOL)visible;
 - (id)representedString;
+- (void)setDisabled:(BOOL)arg1;
+- (BOOL)disabled;
 - (void)setVisible:(BOOL)arg1;
 - (int)textAlignment;
 - (void)setTextAlignment:(int)arg1;
-- (id)name;
 - (void)setHidden:(BOOL)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

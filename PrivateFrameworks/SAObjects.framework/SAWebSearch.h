@@ -14,14 +14,14 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (void)setProvider:(id)arg1;
 - (id)groupIdentifier;
+- (id)provider;
 - (void)setQuery:(id)arg1;
 - (id)query;
-- (id)provider;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (void)setProvider:(id)arg1;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

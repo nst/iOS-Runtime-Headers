@@ -7,7 +7,7 @@
 @interface ALAssetsGroupPrivate : NSObject <ALAssetsLibraryAsset> {
     BOOL _loadedAssets;
     ALAssetsLibrary *_library;
-    NSObject<PLAssetContainer> *_album;
+    struct NSObject { Class x1; } *_album;
     ALAssetsFilter *_assetsFilter;
     unsigned int _groupType;
     BOOL _isValid;
@@ -18,32 +18,34 @@
 @property(retain) ALAssetsFilter * assetsFilter;
 @property unsigned int groupType;
 @property BOOL isValid;
-@property(retain) NSMutableDictionary * propertyValues;
 @property ALAssetsLibrary * library;
+@property(retain) NSMutableDictionary * propertyValues;
 @property(retain) NSObject<PLAssetContainer> * album;
 @property(retain) PLPhotoLibrary * _photoLibrary;
 
 
-- (id)library;
-- (void)setLibrary:(id)arg1;
 - (void)dealloc;
-- (void)_performBlockAndWait:(id)arg1;
-- (struct NSObject { Class x1; }*)album;
+- (void)setIsValid:(BOOL)arg1;
+- (void)setLibrary:(id)arg1;
+- (id)library;
+- (id)valueForProperty:(id)arg1;
 - (BOOL)isValid;
+- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
+- (struct NSObject { Class x1; }*)album;
+- (void)_performBlockAndWait:(id)arg1;
+- (void)setValue:(id)arg1 forProperty:(id)arg2;
+- (void)setGroupType:(unsigned int)arg1;
+- (unsigned int)groupType;
 - (void)setPropertyValues:(id)arg1;
+- (id)propertyValues;
 - (id)assetsFilter;
 - (void)resetAssets;
 - (void)set_photoLibrary:(id)arg1;
-- (void)libraryDidChange;
 - (void)libraryWillDisappear;
 - (id)_photoLibrary;
-- (void)setIsValid:(BOOL)arg1;
+- (void)libraryDidChange;
 - (void)setAssetsFilter:(id)arg1;
 - (void)populateAssets;
-- (id)propertyValues;
-- (unsigned int)groupType;
-- (void)setGroupType:(unsigned int)arg1;
 - (id)initWithAlbum:(struct NSObject { Class x1; }*)arg1 library:(id)arg2;
-- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
 
 @end

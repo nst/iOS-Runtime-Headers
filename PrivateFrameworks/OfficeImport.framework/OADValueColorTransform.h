@@ -7,8 +7,8 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (float)value;
 - (void)setValue:(float)arg1;
 

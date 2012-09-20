@@ -11,34 +11,34 @@
     <ABPropertyEditingTableViewCellDelegate> *_delegate;
 }
 
-@property <ABPropertyEditingTableViewCellDelegate> * delegate;
+@property int property;
+@property BOOL usesLargeFont;
 @property(copy) NSString * placeholder;
 @property(copy) NSString * value;
-@property BOOL usesLargeFont;
-@property int property;
+@property <ABPropertyEditingTableViewCellDelegate> * delegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
-- (BOOL)usesLargeFont;
-- (void)setUsesLargeFont:(BOOL)arg1;
-- (void)textFieldValueDidChange:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2 property:(int)arg3 delegate:(id)arg4;
-- (void)_resizeAndCenterTextField;
-- (id)styleProvider;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
+- (void)setProperty:(int)arg1;
+- (int)property;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
 - (BOOL)canResignFirstResponder;
 - (BOOL)isFirstResponder;
 - (id)placeholder;
+- (id)initWithReuseIdentifier:(id)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (BOOL)resignFirstResponder;
-- (id)delegate;
 - (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
-- (void)setProperty:(int)arg1;
-- (int)property;
+- (void)setUsesLargeFont:(BOOL)arg1;
+- (BOOL)usesLargeFont;
+- (void)_resizeAndCenterTextField;
+- (id)initWithReuseIdentifier:(id)arg1 property:(int)arg2 delegate:(id)arg3;
+- (void)textFieldValueDidChange:(id)arg1;
+- (id)styleProvider;
 
 @end

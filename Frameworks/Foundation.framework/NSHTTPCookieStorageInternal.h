@@ -12,8 +12,8 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithSharedStorage;
 - (void)_syncCookies;
-- (void)dealloc;
 
 @end

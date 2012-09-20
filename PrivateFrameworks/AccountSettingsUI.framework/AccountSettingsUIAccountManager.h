@@ -11,8 +11,8 @@
 
 + (id)sharedInstance;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)accountWithSyncStoreIdentifier:(id)arg1;
 - (id)accountsBySyncStoreIdentifier;
 - (id)allAccounts;

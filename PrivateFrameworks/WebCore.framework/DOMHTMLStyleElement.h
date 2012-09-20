@@ -10,15 +10,15 @@
 @property BOOL disabled;
 @property(copy) NSString * media;
 @property(copy) NSString * type;
-@property(retain,readonly) DOMStyleSheet * sheet;
+@property(readonly) DOMStyleSheet * sheet;
 
 
+- (id)type;
 - (void)setDisabled:(BOOL)arg1;
 - (BOOL)disabled;
-- (id)type;
 - (void)setType:(id)arg1;
-- (void)setMedia:(id)arg1;
 - (id)sheet;
+- (void)setMedia:(id)arg1;
 - (id)media;
 
 @end

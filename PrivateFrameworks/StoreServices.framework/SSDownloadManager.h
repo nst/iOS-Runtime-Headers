@@ -2,19 +2,19 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSMutableSet, SSXPCConnection, SSDownloadManagerOptions;
+@class NSArray, NSMutableSet, SSXPCConnection, NSObject<OS_dispatch_queue>, SSDownloadManagerOptions;
 
 @interface SSDownloadManager : NSObject  {
-    struct dispatch_queue_s { } *_accessQueue;
+    NSObject<OS_dispatch_queue> *_accessQueue;
     NSArray *_activeDownloads;
     BOOL _activeDownloadsChanged;
-    struct dispatch_queue_s { } *_backgroundQueue;
+    NSObject<OS_dispatch_queue> *_backgroundQueue;
     SSXPCConnection *_connection;
     NSArray *_downloads;
     BOOL _downloadsChanged;
     BOOL _isUsingNetwork;
     SSXPCConnection *_observerConnection;
-    struct dispatch_queue_s { } *_observerQueue;
+    NSObject<OS_dispatch_queue> *_observerQueue;
     struct __CFArray { } *_observers;
     SSDownloadManagerOptions *_options;
     NSMutableSet *_removedDownloads;
@@ -26,6 +26,7 @@
 @property(getter=isUsingNetwork,readonly) BOOL usingNetwork;
 
 + (id)softwareDownloadManager;
++ (id)EBookDownloadKinds;
 + (id)softwareDownloadKinds;
 + (id)IPodDownloadKinds;
 + (void)retryAllRestoreDownloads;
@@ -35,25 +36,17 @@
 + (id)EBookDownloadManager;
 + (void)setDownloadHandler:(id)arg1;
 + (void)removePersistenceIdentifier:(id)arg1;
-+ (id)EBookDownloadKinds;
 + (void)_sendGlobalHandler:(id)arg1;
 
-- (id)initWithManagerOptions:(id)arg1;
-- (void)resumeDownloads:(id)arg1 completionBlock:(id)arg2;
-- (void)addDownloads:(id)arg1 completionBlock:(id)arg2;
-- (void)getDownloadsUsingBlock:(id)arg1;
-- (void)cancelDownloads:(id)arg1 completionBlock:(id)arg2;
-- (void)finishDownloads:(id)arg1;
-- (void)removeObserver:(id)arg1;
-- (void)dealloc;
 - (id)downloads;
 - (void)addObserver:(id)arg1;
-- (id)activeDownloads;
 - (BOOL)canCancelDownload:(id)arg1;
 - (void)reloadFromServer;
-- (id)initWithDownloadKinds:(id)arg1;
 - (id)managerOptions;
 - (BOOL)isUsingNetwork;
+- (void)removeObserver:(id)arg1;
+- (void)dealloc;
+- (void)_pauseDownloads:(id)arg1 completionBlock:(id)arg2;
 - (void)setDownloads:(id)arg1 completionBlock:(id)arg2;
 - (void)pauseDownloads:(id)arg1 completionBlock:(id)arg2;
 - (void)moveDownload:(id)arg1 beforeDownload:(id)arg2 completionBlock:(id)arg3;
@@ -61,26 +54,38 @@
 - (void)insertDownloads:(id)arg1 beforeDownload:(id)arg2 completionBlock:(id)arg3;
 - (void)insertDownloads:(id)arg1 afterDownload:(id)arg2 completionBlock:(id)arg3;
 - (void)cancelAllDownloadsWithCompletionBlock:(id)arg1;
-- (void*)_newOptionsDictionary;
-- (id)_copyDownloadKindsUsingNetwork;
-- (void)_handleDownloadStatesChanged:(void*)arg1;
-- (void)_handleDownloadsRemoved:(void*)arg1;
-- (void)_handleDownloadsChanged:(void*)arg1;
-- (void)_loadDownloadKindsUsingNetwork;
+- (id)activeDownloads;
+- (id)_newOptionsDictionary;
 - (void)_sendMessageToObservers:(SEL)arg1;
+- (id)_copyDownloadKindsUsingNetwork;
+- (void)_handleDownloadStatesChanged:(id)arg1;
+- (void)_handleDownloadsChanged:(id)arg1;
+- (void)_handleDownloadKindsUsingNetworkChanged:(id)arg1;
+- (void)_sendDownloadsChanged:(id)arg1;
+- (void)_loadDownloadKindsUsingNetwork;
+- (void)_reloadIsUsingNetworkWithDownloadKinds:(id)arg1;
 - (void)_sendObserverConnection;
-- (void)_handleMessage:(void*)arg1 fromServerConnection:(struct _xpc_connection_s { }*)arg2;
-- (void)_handleReply:(void*)arg1 forDownloads:(id)arg2 message:(void*)arg3 isRetry:(BOOL)arg4 block:(id)arg5;
+- (void)_handleMessage:(id)arg1 fromServerConnection:(id)arg2;
+- (void)_handleReply:(id)arg1 forDownloads:(id)arg2 message:(id)arg3 isRetry:(BOOL)arg4 block:(id)arg5;
 - (void)setDownloads:(id)arg1 forKinds:(id)arg2 completionBlock:(id)arg3;
+- (void)_pauseDownloads:(id)arg1 forced:(BOOL)arg2 completionBlock:(id)arg3;
 - (void)_moveDownload:(id)arg1 before:(id)arg2 after:(id)arg3 completionBlock:(id)arg4;
 - (id)_copyDownloads;
-- (void)_sendMessage:(void*)arg1 withCompletionBlock:(id)arg2;
+- (void)_sendMessage:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)_insertDownloads:(id)arg1 before:(id)arg2 after:(id)arg3 completionBlock:(id)arg4;
-- (id)_copyDownloadsForMessage:(long long)arg1 downloadIDs:(void*)arg2;
+- (id)_copyDownloadsForMessage:(long long)arg1 downloadIDs:(id)arg2;
 - (void)_connectAsObserver;
 - (id)_initSSDownloadManager;
 - (void)_finishDownloads:(id)arg1;
 - (void)_willFinishDownloads:(id)arg1;
+- (void)_handleDownloadsRemoved:(id)arg1;
 - (id)_XPCConnection;
+- (id)initWithDownloadKinds:(id)arg1;
+- (id)initWithManagerOptions:(id)arg1;
+- (void)resumeDownloads:(id)arg1 completionBlock:(id)arg2;
+- (void)addDownloads:(id)arg1 completionBlock:(id)arg2;
+- (void)getDownloadsUsingBlock:(id)arg1;
+- (void)cancelDownloads:(id)arg1 completionBlock:(id)arg2;
+- (void)finishDownloads:(id)arg1;
 
 @end

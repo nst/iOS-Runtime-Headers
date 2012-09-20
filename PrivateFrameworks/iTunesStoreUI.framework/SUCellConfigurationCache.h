@@ -12,12 +12,12 @@
 @property(retain) id cellContext;
 
 
-- (void)dealloc;
-- (void)reset;
 - (id)initWithClass:(Class)arg1 tableHeight:(float)arg2;
 - (void)setCellContext:(id)arg1;
 - (id)cellContext;
 - (id)configurationForRow:(unsigned int)arg1;
 - (void)resetLayoutCaches;
+- (void)reset;
+- (void)dealloc;
 
 @end

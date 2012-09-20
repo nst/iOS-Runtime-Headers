@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIImage;
+@class UIImage, NSString, NSObject<OS_dispatch_queue>;
 
 @interface SUMessagePart : NSObject  {
     NSString *_contentEncoding;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
 @property(readonly) UIImage * composeImage;
@@ -15,9 +15,6 @@
 @property(readonly) NSString * MIMEType;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)MIMEType;
 - (void)setContentEncoding:(id)arg1;
 - (id)copyBodyInputSource;
 - (id)contentEncoding;
@@ -26,5 +23,8 @@
 - (BOOL)conformsToUTI:(id)arg1;
 - (id)composeImage;
 - (id)composeText;
+- (void)dealloc;
+- (id)init;
+- (id)MIMEType;
 
 @end

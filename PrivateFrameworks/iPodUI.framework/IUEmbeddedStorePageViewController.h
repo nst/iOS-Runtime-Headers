@@ -29,15 +29,15 @@
 @property(copy) id loadHandler;
 
 
-- (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)loadView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
 - (void)storePage:(id)arg1 finishedWithSuccess:(BOOL)arg2;
 - (id)initWithRequestProperties:(id)arg1;
 - (id)requestProperties;
 - (void)_documentBoundsChangeNotification:(id)arg1;
 - (id)viewControllerFactory;
+- (void)dealloc;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)loadView;
 - (void)setLoadHandler:(id)arg1;
 - (id)loadHandler;
 - (void)setContentBoundsHandler:(id)arg1;

@@ -40,10 +40,10 @@
 - (void)dealloc;
 - (void)setScaleThreshold:(float)arg1;
 - (float)scaleThreshold;
+- (float)velocity;
 - (void)_setEndsOnSingleTouch:(BOOL)arg1;
 - (BOOL)_endsOnSingleTouch;
 - (void)_resetGestureRecognizer;
-- (float)velocity;
 - (void)setScale:(float)arg1;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
 - (void)_setHysteresis:(float)arg1;

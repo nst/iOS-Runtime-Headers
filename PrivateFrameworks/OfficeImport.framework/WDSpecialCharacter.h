@@ -12,8 +12,8 @@
 
 - (void)dealloc;
 - (id)properties;
-- (int)characterType;
 - (void)clearProperties;
+- (int)characterType;
 - (void)setCharacterType:(int)arg1;
 - (id)initWithParagraph:(id)arg1;
 - (int)runType;

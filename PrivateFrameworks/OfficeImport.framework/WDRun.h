@@ -9,12 +9,12 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)isEmpty;
 - (void)clearProperties;
-- (id)paragraph;
 - (id)initWithParagraph:(id)arg1;
 - (int)runType;
+- (id)paragraph;
 
 @end

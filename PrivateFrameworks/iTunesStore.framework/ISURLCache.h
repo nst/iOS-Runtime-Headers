@@ -16,26 +16,21 @@
 @property(readonly) unsigned int memoryCapacity;
 
 + (id)cacheDirectoryPath;
-+ (id)persistentIdentifierFromPropertyList:(id)arg1;
 
+- (void)dealloc;
+- (id)init;
+- (unsigned int)currentMemoryUsage;
+- (unsigned int)memoryCapacity;
+- (void)saveMemoryCacheToDisk;
+- (void)purgeMemoryCache;
+- (void)reloadWithCacheConfiguration:(id)arg1;
+- (id)initWithCacheConfiguration:(id)arg1;
 - (id)persistentIdentifier;
 - (void)removeAllCachedResponses;
 - (void)removeCachedResponseForRequest:(id)arg1;
 - (void)storeCachedResponse:(id)arg1 forRequest:(id)arg2;
 - (id)cachedResponseForRequest:(id)arg1;
 - (unsigned int)currentDiskUsage;
-- (unsigned int)currentMemoryUsage;
 - (unsigned int)diskCapacity;
-- (unsigned int)memoryCapacity;
-- (id)init;
-- (void)dealloc;
-- (BOOL)_urlStringMatchesURLPatterns:(id)arg1;
-- (BOOL)_urlStringMatchesFileExtensions:(id)arg1;
-- (BOOL)criteriaMatchesRequest:(id)arg1;
-- (BOOL)isUsableByClientWithIdentifier:(id)arg1;
-- (void)reloadWithCacheConfiguration:(id)arg1;
-- (id)initWithCacheConfiguration:(id)arg1;
-- (void)saveMemoryCacheToDisk;
-- (void)purgeMemoryCache;
 
 @end

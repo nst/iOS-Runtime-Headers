@@ -24,8 +24,8 @@
 - (void)dealloc;
 - (float)progress;
 - (id)highlightedColor;
-- (id)color;
 - (void)setHighlightedColor:(id)arg1;
+- (id)color;
 - (void)setColor:(id)arg1;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;

@@ -12,9 +12,9 @@
 @property BOOL shouldSwitchViewControllerContexts;
 
 
-- (id)init;
-- (void)dealloc;
 - (void)_cancelAction:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (BOOL)shouldSetEditing:(BOOL)arg1;
 - (void)handleSelectionForIndex:(unsigned int)arg1 dataSource:(id)arg2;
 - (id)newTabBarController;

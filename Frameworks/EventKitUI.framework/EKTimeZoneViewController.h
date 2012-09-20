@@ -16,17 +16,17 @@
 @property(readonly) int chooserStyle;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
-- (void)timeZoneChooserDidCancel:(id)arg1;
-- (void)timeZoneChooser:(id)arg1 didSelectTimeZone:(id)arg2 cityName:(id)arg3;
-- (int)chooserStyle;
-- (id)initWithChooserStyle:(int)arg1;
 - (id)timeZone;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)setTimeZone:(id)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (void)timeZoneChooserDidCancel:(id)arg1;
+- (void)timeZoneChooser:(id)arg1 didSelectTimeZone:(id)arg2 cityName:(id)arg3;
+- (int)chooserStyle;
+- (id)initWithChooserStyle:(int)arg1;
 
 @end

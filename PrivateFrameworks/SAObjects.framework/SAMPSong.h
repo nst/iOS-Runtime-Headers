@@ -5,8 +5,8 @@
 @interface SAMPSong : SAMPMediaItem  {
 }
 
-+ (id)song;
 + (id)songWithDictionary:(id)arg1 context:(id)arg2;
++ (id)song;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

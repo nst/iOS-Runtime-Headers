@@ -20,18 +20,20 @@
 @property(retain) DDAction * currentAction;
 
 
-- (id)init;
 - (void)dealloc;
-- (void)_cleanup;
-- (void)performAction:(id)arg1;
-- (void)actionDidFinish;
-- (void)setPopoverController:(id)arg1;
+- (id)init;
 - (id)popoverController;
+- (void)_cleanup;
+- (void)actionDidFinish;
 - (id)interactionDelegate;
 - (void)setInteractionDelegate:(id)arg1;
+- (void)setPopoverController:(id)arg1;
 - (id)currentAction;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)performAction:(id)arg1;
 - (id)baseView;
+- (void)failedToPrepareViewControllerForAction:(id)arg1;
+- (void)action:(id)arg1 viewControllerReady:(id)arg2;
 - (void)dismissCurrentController;
 - (void)_presentController:(id)arg1;
 - (void)setCurrentAction:(id)arg1;

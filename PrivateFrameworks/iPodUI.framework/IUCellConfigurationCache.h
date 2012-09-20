@@ -12,11 +12,11 @@
 @property(retain) id globalContext;
 
 
-- (void)dealloc;
-- (void)reset;
 - (id)initWithClass:(Class)arg1 tableHeight:(float)arg2;
 - (id)configurationForRow:(unsigned int)arg1;
 - (id)globalContext;
+- (void)reset;
+- (void)dealloc;
 - (void)setGlobalContext:(id)arg1;
 - (void)invalidateDynamicTrackCaches;
 

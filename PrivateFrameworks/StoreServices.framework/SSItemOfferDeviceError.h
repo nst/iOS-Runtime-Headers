@@ -17,9 +17,9 @@
 @property(readonly) NSURL * URL;
 
 
-- (void)dealloc;
 - (id)localizedTitle;
 - (id)URL;
+- (void)dealloc;
 - (id)localizedURLTitle;
 - (id)localizedMessage;
 - (id)_initWithMessage:(id)arg1 title:(id)arg2 URLTitle:(id)arg3 URL:(id)arg4;

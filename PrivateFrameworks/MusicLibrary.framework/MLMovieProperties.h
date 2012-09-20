@@ -16,9 +16,9 @@
 @property(copy) NSString * studioName;
 
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (void)dealloc;
 - (id)studioName;
 - (void)setStudioName:(id)arg1;
 - (void)setScreenwriters:(id)arg1;

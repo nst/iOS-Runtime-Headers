@@ -22,29 +22,29 @@
 @property(getter=isEnabled) BOOL enabled;
 @property BOOL cachesInputImage;
 
-+ (id)filterTypes;
 + (id)filterWithType:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)filterWithName:(id)arg1;
++ (id)filterTypes;
 
+- (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setName:(id)arg1;
+- (id)name;
+- (id)type;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)valueForKey:(id)arg1;
 - (void)dealloc;
-- (id)initWithName:(id)arg1;
-- (BOOL)cachesInputImage;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)enabled;
-- (id)type;
 - (void)setEnabled:(BOOL)arg1;
-- (id)name;
 - (BOOL)isEnabled;
 - (void)setCachesInputImage:(BOOL)arg1;
 - (id)initWithType:(id)arg1;
-- (id)valueForKey:(id)arg1;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setDefaults;
+- (id)initWithName:(id)arg1;
+- (BOOL)cachesInputImage;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (void)setDefaults;
 
 @end

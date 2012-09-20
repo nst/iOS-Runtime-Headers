@@ -10,22 +10,22 @@
     BOOL _isRotating;
 }
 
-@property BOOL isRotating;
-@property id mailPopoverManager;
 @property <MFMailPopoverManagerDelegate> * mailDelegate;
+@property id mailPopoverManager;
+@property BOOL isRotating;
 
 
 - (void)dealloc;
-- (id)mailPopoverManager;
-- (void)setMailPopoverManager:(id)arg1;
-- (void)setMailDelegate:(id)arg1;
-- (id)mailDelegate;
-- (void)setIsRotating:(BOOL)arg1;
 - (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 - (id)initWithContentViewController:(id)arg1;
+- (void)dismissPopoverAnimated:(BOOL)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
-- (void)dismissPopoverAnimated:(BOOL)arg1;
 - (BOOL)isRotating;
+- (id)mailPopoverManager;
+- (void)setIsRotating:(BOOL)arg1;
+- (id)mailDelegate;
+- (void)setMailDelegate:(id)arg1;
+- (void)setMailPopoverManager:(id)arg1;
 
 @end

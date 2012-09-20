@@ -13,13 +13,13 @@
 
 
 - (void)dealloc;
-- (id)chartData;
-- (void)setChartData:(id)arg1;
-- (id)chartColorLocators;
-- (void)setChartColorLocators:(id)arg1;
-- (BOOL)showLegend;
 - (void)setShowLegend:(BOOL)arg1;
-- (id)chart;
+- (BOOL)showLegend;
+- (void)setChartColorLocators:(id)arg1;
+- (id)chartColorLocators;
+- (void)setChartData:(id)arg1;
+- (id)chartData;
 - (void)setChart:(id)arg1;
+- (id)chart;
 
 @end

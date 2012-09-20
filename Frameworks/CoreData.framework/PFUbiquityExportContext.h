@@ -17,11 +17,11 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)initWithLocalPeerID:(id)arg1;
-- (void)setStoresToExportFrom:(id)arg1;
-- (id)storeExportContextForStoreName:(id)arg1;
 - (id)storeExportContextForStore:(id)arg1;
 - (id)storesToExportFrom;
+- (id)storeExportContextForStoreName:(id)arg1;
+- (void)setStoresToExportFrom:(id)arg1;
+- (id)initWithLocalPeerID:(id)arg1;
 - (id)localPeerID;
 
 @end

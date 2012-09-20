@@ -10,15 +10,15 @@
 @property(copy) NSString * assistantId;
 @property(copy) NSString * speechId;
 
-+ (id)assistantCreated;
 + (id)assistantCreatedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)assistantCreated;
 
 - (id)groupIdentifier;
-- (id)assistantId;
-- (void)setAssistantId:(id)arg1;
-- (id)speechId;
 - (void)setSpeechId:(id)arg1;
-- (id)encodedClassName;
+- (id)speechId;
+- (void)setAssistantId:(id)arg1;
+- (id)assistantId;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

@@ -5,10 +5,10 @@
 @interface OAVShapeGeometry : NSObject  {
 }
 
-+ (struct OADAdjustCoord { BOOL x1; int x2; })readAdjustCoord:(id)arg1;
-+ (void)readAdjustValuesFromManager:(id)arg1 toGeometry:(id)arg2;
-+ (void)readLimoFromManager:(id)arg1 toGeometry:(id)arg2;
 + (void)readTextBodyRectsFromManager:(id)arg1 toGeometry:(id)arg2;
++ (void)readLimoFromManager:(id)arg1 toGeometry:(id)arg2;
++ (void)readAdjustValuesFromManager:(id)arg1 toGeometry:(id)arg2;
++ (struct OADAdjustCoord { BOOL x1; int x2; })readAdjustCoord:(id)arg1;
 + (id)readFromManager:(id)arg1;
 
 

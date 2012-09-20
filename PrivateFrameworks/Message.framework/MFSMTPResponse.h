@@ -10,24 +10,24 @@
     unsigned int _statusDetail : 10;
 }
 
-@property(readonly) unsigned int statusDetail;
-@property(readonly) unsigned int statusSubject;
-@property(readonly) unsigned int statusClass;
 @property(readonly) int status;
+@property(readonly) unsigned int statusClass;
+@property(readonly) unsigned int statusSubject;
+@property(readonly) unsigned int statusDetail;
 
 
-- (unsigned int)statusDetail;
-- (unsigned int)statusSubject;
-- (unsigned int)statusClass;
-- (void)_updateEnhancedStatusCodesFromLastResponse;
-- (int)failureReason;
-- (id)lastResponseLine;
-- (id)errorMessageWithAddress:(id)arg1 defaultMessage:(id)arg2;
-- (id)initWithStatus:(int)arg1;
-- (void)setLastResponseLine:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (void)setStatus:(int)arg1;
 - (int)status;
+- (unsigned int)statusDetail;
+- (unsigned int)statusSubject;
+- (unsigned int)statusClass;
+- (int)failureReason;
+- (void)_updateEnhancedStatusCodesFromLastResponse;
+- (void)setLastResponseLine:(id)arg1;
+- (id)initWithStatus:(int)arg1;
+- (id)errorMessageWithAddress:(id)arg1 defaultMessage:(id)arg2;
+- (id)lastResponseLine;
 
 @end

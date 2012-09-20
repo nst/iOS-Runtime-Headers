@@ -16,10 +16,11 @@
 @property(retain) CoreDAVItem * include;
 @property(retain) CoreDAVItem * prop;
 
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setInclude:(id)arg1;
 - (void)setAllProp:(id)arg1;
 - (void)setPropName:(id)arg1;
@@ -28,6 +29,5 @@
 - (id)propName;
 - (void)setProp:(id)arg1;
 - (id)prop;
-- (id)copyParseRules;
 
 @end

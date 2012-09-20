@@ -10,12 +10,10 @@
 @property(getter=isActivityAvailable,readonly) BOOL activityAvailable;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)isActivityAvailable;
 - (id)activityHandler;
 - (void)setActivityHandler:(id)arg1;
-- (void)stopWatchdogCheckins;
-- (void)startWatchdogCheckins;
 
 @end

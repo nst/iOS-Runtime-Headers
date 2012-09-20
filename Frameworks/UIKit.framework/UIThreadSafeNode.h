@@ -10,11 +10,11 @@
 
 + (id)threadSafeNodeWithNode:(id)arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)conformsToProtocol:(id)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
 - (id)description;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (BOOL)conformsToProtocol:(id)arg1;
+- (BOOL)isKindOfClass:(Class)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)_realNode;
 - (id)initWithNode:(id)arg1;

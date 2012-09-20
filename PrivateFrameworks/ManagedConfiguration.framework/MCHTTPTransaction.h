@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSError, NSString, NSData, NSMutableData, NSURLConnection, NSURL;
+@class NSError, NSMutableData, NSObject<OS_dispatch_semaphore>, NSURLConnection, NSString, NSURL, NSData;
 
 @interface MCHTTPTransaction : NSObject  {
     NSURL *_requestURL;
@@ -20,41 +20,37 @@
     int _statusCode;
     NSError *_error;
     NSURLConnection *_connection;
-    struct dispatch_semaphore_s { } *_doneSema;
+    NSObject<OS_dispatch_semaphore> *_doneSema;
 }
 
-@property(readonly) int statusCode;
-@property(readonly) NSURL * permanentlyRedirectedURL;
-@property(readonly) NSError * error;
+@property(retain) NSURL * url;
+@property(retain) NSString * method;
+@property double timeout;
+@property(retain) NSString * userAgent;
+@property(retain) NSString * contentType;
+@property(retain) NSData * data;
 @property(retain) NSString * CMSSignatureHeaderName;
 @property(readonly) NSData * responseData;
-@property(retain) NSData * data;
-@property(retain) NSString * contentType;
-@property(retain) NSString * userAgent;
-@property double timeout;
-@property(retain) NSString * method;
-@property(retain) NSURL * url;
+@property(readonly) NSError * error;
+@property(readonly) NSURL * permanentlyRedirectedURL;
+@property(readonly) int statusCode;
 
-+ (id)transactionWithURL:(id)arg1 method:(id)arg2;
 + (id)performRequestURL:(id)arg1 method:(id)arg2 timeout:(double)arg3 userAgent:(id)arg4 contentType:(id)arg5 data:(id)arg6 identity:(struct __SecIdentity { }*)arg7 outPermanentlyRedirectedURL:(id*)arg8 outError:(id*)arg9;
++ (id)transactionWithURL:(id)arg1 method:(id)arg2;
 
-- (void)setContentType:(id)arg1;
-- (void)setTimeout:(double)arg1;
-- (double)timeout;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
-- (void)dealloc;
-- (id)responseData;
-- (id)CMSSignatureHeaderName;
-- (void)setCMSSignatureHeaderName:(id)arg1;
-- (id)initWithURL:(id)arg1 method:(id)arg2;
-- (void)setIdentity:(struct __SecIdentity { }*)arg1;
-- (void)performSynchronously;
-- (id)permanentlyRedirectedURL;
-- (void)_beginTransaction;
-- (BOOL)_shouldAllowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2;
 - (id)userAgent;
-- (id)error;
-- (struct __SecIdentity { }*)copyIdentity;
+- (id)responseData;
+- (id)data;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)setCMSSignatureHeaderName:(id)arg1;
+- (id)CMSSignatureHeaderName;
+- (BOOL)_shouldAllowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2;
+- (void)_beginTransaction;
+- (id)permanentlyRedirectedURL;
+- (void)performSynchronously;
+- (void)setIdentity:(struct __SecIdentity { }*)arg1;
+- (id)initWithURL:(id)arg1 method:(id)arg2;
 - (id)method;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
@@ -63,13 +59,18 @@
 - (int)statusCode;
 - (void)setUrl:(id)arg1;
 - (id)url;
-- (id)data;
-- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
-- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (void)setMethod:(id)arg1;
 - (void)setData:(id)arg1;
-- (id)contentType;
+- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
+- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
+- (void)setMethod:(id)arg1;
+- (struct __SecIdentity { }*)copyIdentity;
 - (void)setUserAgent:(id)arg1;
+- (void)setContentType:(id)arg1;
+- (double)timeout;
+- (void)setTimeout:(double)arg1;
+- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
+- (id)error;
+- (id)contentType;
 
 @end

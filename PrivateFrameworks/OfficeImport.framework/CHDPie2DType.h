@@ -10,16 +10,17 @@
 }
 
 
-- (int)firstSliceAngle;
-- (bool)isDoughnutType;
-- (bool)isPieOfPieType;
+- (bool)hasExplosion;
 - (bool)isBarOfPieType;
+- (bool)isPieOfPieType;
+- (int)firstSliceAngle;
 - (int)defaultLabelPosition;
-- (void)setFirstSliceAngle:(int)arg1;
-- (void)setDoughnutType:(bool)arg1;
-- (void)setPieOfPieType:(bool)arg1;
 - (void)setBarOfPieType:(bool)arg1;
+- (void)setPieOfPieType:(bool)arg1;
+- (void)setDoughnutType:(bool)arg1;
+- (void)setFirstSliceAngle:(int)arg1;
 - (id)initWithChart:(id)arg1;
+- (bool)isDoughnutType;
 - (id)contentFormat;
 
 @end

@@ -10,7 +10,7 @@
 @property(readonly) NSURLAuthenticationChallenge * authenticationChallenge;
 
 
-- (id)authenticationChallenge;
 - (void)_finishWithType:(int)arg1 credential:(id)arg2;
+- (id)authenticationChallenge;
 
 @end

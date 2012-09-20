@@ -13,27 +13,27 @@
     NSArray *_bogusPayloads;
 }
 
-@property(readonly) BOOL confirmInstallation;
-@property(retain) NSData * enrollmentIdentityPersistentID;
-@property(readonly) id challenge;
-@property(readonly) NSArray * deviceAttributes;
 @property(retain) NSString * URLString;
+@property(retain) NSData * enrollmentIdentityPersistentID;
+@property(readonly) NSArray * deviceAttributes;
+@property(readonly) id challenge;
+@property(readonly) BOOL confirmInstallation;
 
 
-- (id)URLString;
 - (id)description;
-- (void)dealloc;
-- (id)_unsupportedValueErrorWithFieldName:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 - (BOOL)confirmInstallation;
-- (id)enrollmentIdentityPersistentID;
 - (void)setEnrollmentIdentityPersistentID:(id)arg1;
+- (id)enrollmentIdentityPersistentID;
 - (id)deviceAttributes;
+- (id)_unsupportedValueErrorWithFieldName:(id)arg1 value:(id)arg2;
 - (id)_badDataTypeErrorWithFieldName:(id)arg1;
-- (id)localizedPayloadSummaryByType;
 - (id)payloads;
+- (id)localizedPayloadSummaryByType;
 - (id)initWithDictionary:(id)arg1 originalData:(id)arg2 wasEncrypted:(BOOL)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
 - (id)stubDictionary;
-- (id)challenge;
 - (void)setURLString:(id)arg1;
+- (id)URLString;
+- (id)challenge;
 
 @end

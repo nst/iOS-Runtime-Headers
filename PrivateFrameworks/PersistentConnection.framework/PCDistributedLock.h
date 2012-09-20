@@ -11,11 +11,11 @@
 
 
 - (void)dealloc;
-- (id)initWithName:(id)arg1;
+- (BOOL)tryLock;
 - (id)initWithPath:(id)arg1;
 - (void)unlock;
 - (void)lock;
 - (BOOL)_lockBlocking:(BOOL)arg1;
-- (BOOL)tryLock;
+- (id)initWithName:(id)arg1;
 
 @end

@@ -11,6 +11,9 @@
     NSArray *_sectionIndexTitles;
     NSArray *_sectionIndexMapping;
     NSString *_transform;
+    NSString *_firstSectionStartString;
+    NSString *_lastSectionStartString;
+    struct __CFStringTokenizer { } *_tokenizer;
 }
 
 @property(readonly) NSArray * sectionTitles;
@@ -26,6 +29,7 @@
 - (id)sectionIndexTitles;
 - (id)sectionTitles;
 - (id)transformedCollationStringForString:(id)arg1;
+- (struct __CFStringTokenizer { }*)tokenizer;
 - (id)initWithDictionary:(id)arg1;
 
 @end

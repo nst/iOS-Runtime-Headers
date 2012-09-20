@@ -2,16 +2,37 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
+@class IMHandle;
+
 @interface CKIMComposeRecipient : MFComposeRecipient  {
+    IMHandle *_handle;
 }
 
-+ (int)_recipientABProperty;
+@property(readonly) IMHandle * handle;
 
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)uncommentedAddress;
-- (id)_unformattedAddress;
+
 - (id)address;
+- (int)identifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (int)property;
+- (void*)record;
 - (id)displayString;
+- (void)setIdentifier:(int)arg1;
+- (id)label;
+- (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
+- (BOOL)isRemovableFromSearchResults;
+- (id)objectForDragType:(id)arg1;
+- (id)supportedDragTypes;
+- (id)compositeName;
+- (id)unlocalizedLabel;
+- (id)commentedAddress;
+- (id)initWithHandle:(id)arg1;
+- (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
+- (id)handle;
+- (int)recordID;
+- (id)uncommentedAddress;
 
 @end

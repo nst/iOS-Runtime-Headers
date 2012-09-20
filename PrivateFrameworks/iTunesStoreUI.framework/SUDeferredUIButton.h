@@ -24,6 +24,12 @@
 @property(getter=isDeferringInterfaceUpdates) BOOL deferringInterfaceUpdates;
 
 
+- (void)_saveTitlesAsDeferred;
+- (void)_saveImagesAsDeferred;
+- (void)_commitDeferredInterfaceUpdates;
+- (void)_saveCurrentStateAsDeferred;
+- (void)setDeferringInterfaceUpdates:(BOOL)arg1;
+- (BOOL)isDeferringInterfaceUpdates;
 - (void)dealloc;
 - (void)setTitle:(id)arg1 forState:(unsigned int)arg2;
 - (void)setImage:(id)arg1 forState:(unsigned int)arg2;
@@ -33,11 +39,5 @@
 - (BOOL)isEnabled;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (void)_saveTitlesAsDeferred;
-- (void)_saveImagesAsDeferred;
-- (void)_commitDeferredInterfaceUpdates;
-- (void)_saveCurrentStateAsDeferred;
-- (void)setDeferringInterfaceUpdates:(BOOL)arg1;
-- (BOOL)isDeferringInterfaceUpdates;
 
 @end

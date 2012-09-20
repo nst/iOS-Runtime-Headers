@@ -14,33 +14,25 @@
     BOOL _immutable;
 }
 
-@property(readonly) BOOL immutable;
-@property float position;
-@property struct CGSize { float width; float height; } size;
 @property(retain) NSString * string;
+@property struct CGSize { float x1; float x2; } size;
+@property float position;
+@property(readonly) BOOL immutable;
 
-+ (id)labelInfoForYAxis;
-+ (id)labelInfoWithUnsignedInteger:(unsigned int)arg1;
-+ (BOOL)use24hrTime;
-+ (id)monthLabelInfoArrayForLabelLength:(int)arg1;
-+ (id)labelInfoWithString:(id)arg1;
-+ (struct __CFString { }*)_CFDateFormatterPropertyForMonthLabelLength:(int)arg1;
-+ (id)ChartLabelFont;
-+ (void)resetLocale;
 
-- (id)string;
 - (id)description;
+- (void).cxx_destruct;
 - (void)setString:(id)arg1;
+- (id)string;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setImmutable:(BOOL)arg1;
-- (void)setStringToMonthAndDayWithAbsoluteTime:(double)arg1 timeZone:(struct __CFTimeZone { }*)arg2;
-- (void)setStringToYearWithAbsoluteTime:(double)arg1 timeZone:(struct __CFTimeZone { }*)arg2;
-- (void)retainStringAndSizeFromLabelInfo:(id)arg1;
-- (BOOL)immutable;
 - (float)position;
 - (void)setPosition:(float)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })size;
+- (BOOL)immutable;
+- (void)retainStringAndSizeFromLabelInfo:(id)arg1;
+- (void)setStringToYearWithAbsoluteTime:(double)arg1 timeZone:(id)arg2;
+- (void)setStringToMonthAndDayWithAbsoluteTime:(double)arg1 timeZone:(id)arg2;
+- (void)setImmutable:(BOOL)arg1;
 
 @end

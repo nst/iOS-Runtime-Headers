@@ -32,22 +32,26 @@
 @property(readonly) CMDeviceMotion * deviceMotion;
 @property BOOL showsDeviceMovementDisplay;
 
++ (void)initialize;
 + (void)setAllowInBackground:(BOOL)arg1;
 + (unsigned int)availableAttitudeReferenceFrames;
++ (void)dummySelector:(id)arg1;
 
-- (id)init;
+- (void)startAccelerometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
+- (BOOL)isAccelerometerAvailable;
 - (void)dealloc;
-- (void)stopDeviceMotionUpdates;
-- (void)stopAccelerometerUpdates;
-- (void)setDeviceMotionUpdateInterval:(double)arg1;
-- (void)setAccelerometerUpdateInterval:(double)arg1;
-- (BOOL)isDeviceMotionAvailable;
-- (void)startDeviceMotionUpdates;
-- (void)startAccelerometerUpdates;
-- (id)deviceMotion;
+- (id)init;
 - (id)accelerometerData;
-- (void)setDeviceMotionCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3 fsync:(BOOL)arg4 bandwidth:(int)arg5;
-- (id)initUsing6AxisSensorFusion:(BOOL)arg1;
+- (id)deviceMotion;
+- (void)startAccelerometerUpdates;
+- (void)startDeviceMotionUpdates;
+- (void)setAccelerometerUpdateInterval:(double)arg1;
+- (void)setDeviceMotionUpdateInterval:(double)arg1;
+- (BOOL)isDeviceMotionAvailable;
+- (void)stopAccelerometerUpdates;
+- (void)stopDeviceMotionUpdates;
+- (id)initUsingGyroOnlySensorFusion;
+- (id)initUsing6AxisSensorFusion;
 - (void)setShowsDeviceMovementDisplay:(BOOL)arg1;
 - (void)stopMagnetometerUpdates;
 - (void)startMagnetometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
@@ -67,14 +71,15 @@
 - (double)gyroUpdateInterval;
 - (void)setGyroUpdateInterval:(double)arg1;
 - (BOOL)isGyroActive;
-- (void)startAccelerometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
 - (double)accelerometerUpdateInterval;
 - (BOOL)isAccelerometerActive;
+- (BOOL)useAccelerometer;
+- (void)setUseAccelerometer:(BOOL)arg1;
 - (void)didBecomeActivePrivate:(id)arg1;
 - (void)willResignActivePrivate:(id)arg1;
 - (void)showDeviceMovementDisplay;
 - (BOOL)showsDeviceMovementDisplay;
-- (void)setDeviceMotionCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3 fsync:(BOOL)arg4 bandwidth:(int)arg5 useAccelerometer:(bool)arg6;
+- (void)setDeviceMotionCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3 fsync:(BOOL)arg4;
 - (void)setGyroDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setAccelerometerDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setShowsDeviceMovementDisplayPrivate:(BOOL)arg1;
@@ -92,7 +97,6 @@
 - (void)stopGyroUpdatesPrivate;
 - (void)startGyroUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)setGyroUpdateIntervalPrivate:(double)arg1;
-- (BOOL)isAccelerometerAvailable;
 - (void)stopAccelerometerUpdatesPrivate;
 - (void)startAccelerometerUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)setAccelerometerUpdateIntervalPrivate:(double)arg1;
@@ -100,11 +104,10 @@
 - (void)didBecomeActive:(id)arg1;
 - (void)willResignActive:(id)arg1;
 - (id)initPrivate;
-- (void)dummySelector:(id)arg1;
 - (void)onGeomagneticModel:(const struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; }*)arg1;
-- (void)onDeviceMotion:(const struct Sample { double x1; struct { struct { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_2_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; struct { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; struct { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_2_1_4; int x_2_1_5; } x2; boolx3; }*)arg1;
+- (void)onDeviceMotion:(const struct Sample { double x1; struct { struct { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_2_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; struct { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; struct { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_2_1_4; int x_2_1_5; boolx_2_1_6; boolx_2_1_7; boolx_2_1_8; } x2; boolx3; }*)arg1;
 - (void)onMagnetometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
-- (void)onGyro:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; boolx3; }*)arg1;
+- (void)onGyro:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; unsigned short x3; boolx4; }*)arg1;
 - (void)onAccelerometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
 
 @end

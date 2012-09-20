@@ -7,14 +7,14 @@
 @interface SACommandSucceeded : SABaseClientBoundCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)commandSucceeded;
 + (id)commandSucceededWithDictionary:(id)arg1 context:(id)arg2;
++ (id)commandSucceeded;
 
 - (id)groupIdentifier;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

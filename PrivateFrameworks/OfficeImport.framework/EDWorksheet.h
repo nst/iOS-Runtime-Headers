@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDPane, EDColumnInfoCollection, EDRowBlocks, SFUPointerKeyDictionary, EDMergedCellCollection, EDReference, EDCollection, EDWarnings;
+@class TSUPointerKeyDictionary, EDPane, EDColumnInfoCollection, EDRowBlocks, EDMergedCellCollection, EDReference, EDCollection, EDWarnings;
 
 @interface EDWorksheet : EDSheet  {
     EDRowBlocks *mRowBlocks;
@@ -20,47 +20,48 @@
     unsigned int mMaxColumnOutlineLevel;
     boolmFitToPage;
     EDReference *mMaxCellReferencedInFormulas;
-    SFUPointerKeyDictionary *mMergedRows;
-    SFUPointerKeyDictionary *mMergedCols;
+    TSUPointerKeyDictionary *mMergedRows;
+    TSUPointerKeyDictionary *mMergedCols;
     EDReference *mImplicitCellArea;
 }
 
 
-- (double)defaultColumnWidth;
-- (void)setDefaultColumnWidth:(double)arg1;
-- (unsigned short)defaultRowHeight;
-- (unsigned int)maxRowOutlineLevel;
-- (void)setMaxRowOutlineLevel:(unsigned int)arg1;
-- (void)updateMaxRowOutlineLevelIfNeeded:(unsigned int)arg1;
-- (unsigned int)maxColumnOutlineLevel;
-- (void)setMaxColumnOutlineLevel:(unsigned int)arg1;
-- (BOOL)hasMergedRow;
-- (BOOL)isRowMerged:(unsigned int)arg1;
-- (id)mergedRowRef:(unsigned int)arg1;
-- (BOOL)hasMergedCol;
-- (BOOL)isColMerged:(unsigned int)arg1;
-- (id)mergedColRef:(unsigned int)arg1;
-- (id)maxCellReferencedInFormulas;
-- (id)implicitCellArea;
 - (void)setImplicitCellArea:(id)arg1;
-- (void)setDefaultRowHeight:(unsigned short)arg1;
-- (bool)fitToPage;
-- (void)setFitToPage:(bool)arg1;
+- (id)implicitCellArea;
+- (id)maxCellReferencedInFormulas;
+- (id)mergedColRef:(unsigned int)arg1;
+- (BOOL)isColMerged:(unsigned int)arg1;
+- (BOOL)hasMergedCol;
+- (id)mergedRowRef:(unsigned int)arg1;
+- (BOOL)isRowMerged:(unsigned int)arg1;
+- (BOOL)hasMergedRow;
+- (void)setMergedColsRef:(id)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3;
+- (void)setMergedRowsRef:(id)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3;
+- (unsigned int)maxColumnOutlineLevel;
+- (void)updateMaxRowOutlineLevelIfNeeded:(unsigned int)arg1;
+- (unsigned int)maxRowOutlineLevel;
+- (bool)hasMergedCells;
+- (id)pivotTables;
+- (id)hyperlinks;
 - (id)conditionalFormattings;
-- (id)pane;
-- (void)setPane:(id)arg1;
-- (id)worksheetWarnings;
+- (bool)fitToPage;
 - (void)reduceMemoryIfPossible;
 - (void)setup;
+- (id)tables;
 - (void)updateMaxColumnOutlineLevelIfNeeded:(unsigned int)arg1;
 - (void)teardown;
-- (id)tables;
+- (void)setMaxColumnOutlineLevel:(unsigned int)arg1;
+- (void)setMaxRowOutlineLevel:(unsigned int)arg1;
+- (void)setFitToPage:(bool)arg1;
+- (void)setDefaultRowHeight:(unsigned short)arg1;
+- (void)setDefaultColumnWidth:(double)arg1;
+- (id)worksheetWarnings;
+- (void)setPane:(id)arg1;
+- (id)pane;
 - (id)columnInfos;
-- (id)pivotTables;
-- (id)mergedCells;
-- (void)setMergedRowsRef:(id)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3;
-- (void)setMergedColsRef:(id)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3;
+- (unsigned short)defaultRowHeight;
+- (double)defaultColumnWidth;
 - (id)rowBlocks;
-- (id)hyperlinks;
+- (id)mergedCells;
 
 @end

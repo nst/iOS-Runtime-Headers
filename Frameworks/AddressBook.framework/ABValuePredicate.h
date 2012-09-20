@@ -2,35 +2,41 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class <NSObject>, NSObject;
+@class <NSObject>, NSObject, NSArray;
 
 @interface ABValuePredicate : ABPredicate  {
     int _property;
-    int _comparison;
+    long _comparison;
     <NSObject> *_value;
+    NSArray *_orderedKeys;
     BOOL _dictionaryValue;
 }
 
-@property(copy) NSObject * value;
-@property int comparison;
 @property int property;
+@property long comparison;
+@property(copy) NSObject * value;
 
 + (id)stringForComparison:(id)arg1 withComparision:(long)arg2;
 
-- (id)init;
 - (void)dealloc;
-- (id)stringForComparison:(id)arg1;
-- (id)querySelectProperties;
-- (id)queryJoinsInCompound:(BOOL)arg1;
-- (id)queryWhereString;
-- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
-- (id)value;
-- (void)setValue:(id)arg1;
-- (BOOL)isValid;
+- (id)init;
 - (long)comparison;
 - (void)setComparison:(long)arg1;
 - (void)setProperty:(int)arg1;
 - (id)predicateFormat;
 - (int)property;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (BOOL)isValid;
+- (id)_ftsTokenizedTermStringForString:(id)arg1;
+- (id)_ftsAllQueryStrings;
+- (id)stringForComparison:(id)arg1;
+- (id)_ftsTermStringForString:(id)arg1;
+- (BOOL)_supportsFTSSearch;
+- (BOOL)_shouldConsultIndexForKey:(id)arg1;
+- (id)querySelectProperties;
+- (id)queryJoinsInCompound:(BOOL)arg1;
+- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
+- (id)queryWhereString;
 
 @end

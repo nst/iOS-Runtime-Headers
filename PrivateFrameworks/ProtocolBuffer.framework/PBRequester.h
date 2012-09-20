@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class NSString, NSMutableData, <PBRequesterDelegate>, NSArray, NSMutableArray, NSURLConnection, PBDataReader, NSURL, NSDictionary, NSMutableDictionary;
+@class NSString, NSMutableData, <PBRequesterDelegate>, NSArray, NSMutableArray, NSDictionary, PBDataReader, NSURLConnection, NSURL, NSMutableDictionary;
 
 @interface PBRequester : NSObject <NSURLConnectionDelegate> {
     NSURL *_URL;
@@ -12,6 +12,9 @@
     PBDataReader *_dataReader;
     unsigned int _lastGoodDataOffset;
     unsigned int _uploadPayloadSize;
+    unsigned int _downloadPayloadSize;
+    unsigned long long _timeRequestSent;
+    unsigned long long _timeResponseReceived;
     int _responseStatusCode;
     NSMutableArray *_requests;
     NSMutableArray *_responses;
@@ -23,6 +26,7 @@
     struct __CFRunLoopTimer { } *_timeoutTimer;
     NSString *_logRequestToFile;
     NSString *_logResponseToFile;
+    BOOL _didNotifyRequestCompleted;
     NSArray *_clientCertificates;
     BOOL _shouldHandleCookies;
     struct { 
@@ -48,6 +52,8 @@
 @property(retain) NSString * logResponseToFile;
 @property(readonly) NSArray * requests;
 @property(readonly) unsigned int uploadPayloadSize;
+@property(readonly) unsigned int downloadPayloadSize;
+@property(readonly) unsigned int requestResponseTime;
 @property double timeoutSeconds;
 @property(retain) NSArray * clientCertificates;
 @property(copy) NSDictionary * httpRequestHeaders;
@@ -57,71 +63,76 @@
 
 + (BOOL)usesEncodedMessages;
 
+- (void)setLogResponseToFile:(id)arg1;
+- (void)setLogRequestToFile:(id)arg1;
+- (void)_failWithError:(id)arg1;
+- (id)responseForRequest:(id)arg1;
+- (void)resume;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)URL;
 - (void)cancel;
 - (void)dealloc;
-- (void)_cleanup;
-- (void)setHttpRequestHeader:(id)arg1 forKey:(id)arg2;
-- (id)logResponseToFile;
-- (id)logRequestToFile;
-- (void)setIgnoresResponse:(BOOL)arg1;
-- (BOOL)isPaused;
-- (void)setConnection:(id)arg1;
-- (id)connection;
-- (void)resume;
+- (id)_osVersion;
 - (void)pause;
+- (id)connection;
+- (void)_cleanup;
 - (void)setURL:(id)arg1;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)start;
-- (id)requests;
-- (id)URL;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)_failWithError:(id)arg1;
-- (id)httpRequestHeaders;
-- (void)addRequest:(id)arg1;
-- (void)setTimeoutSeconds:(double)arg1;
-- (void)setHttpRequestHeaders:(id)arg1;
 - (void)setShouldHandleCookies:(BOOL)arg1;
-- (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
-- (id)responseForRequest:(id)arg1;
-- (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2 forResponseClass:(Class)arg3;
-- (BOOL)readResponsePreamble:(id)arg1;
-- (void)writeRequest:(id)arg1 into:(id)arg2;
-- (id)requestPreamble;
-- (void)handleResponse:(id)arg1 forInternalRequest:(id)arg2;
-- (void)cancelWithErrorCode:(int)arg1;
-- (void)addInternalRequest:(id)arg1;
-- (id)internalRequests;
-- (void)setNeedsCancel;
-- (BOOL)needsCancel;
-- (void)setLogResponseToFile:(id)arg1;
-- (void)setLogRequestToFile:(id)arg1;
 - (BOOL)shouldHandleCookies;
 - (void)setClientCertificates:(id)arg1;
 - (id)clientCertificates;
-- (unsigned int)uploadPayloadSize;
 - (double)timeoutSeconds;
 - (id)httpResponseHeaders;
 - (void)_timeoutTimerFired;
+- (void)setHttpRequestHeaders:(id)arg1;
 - (id)responseForInternalRequest:(id)arg1;
+- (void)addInternalRequest:(id)arg1;
+- (id)internalRequests;
 - (BOOL)ignoresResponse;
 - (id)decodeResponseData:(id)arg1;
 - (BOOL)_tryParseData;
+- (BOOL)readResponsePreamble:(id)arg1;
 - (void)_resetTimeoutTimer;
+- (void)handleResponse:(id)arg1 forInternalRequest:(id)arg2;
+- (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2 forResponseClass:(Class)arg3;
+- (void)cancelWithErrorCode:(int)arg1;
 - (void)_cancelWithErrorDomain:(id)arg1 errorCode:(int)arg2 userInfo:(id)arg3;
 - (void)_failWithErrorDomain:(id)arg1 errorCode:(int)arg2 userInfo:(id)arg3;
+- (BOOL)needsCancel;
+- (void)_cancelNoNotify;
 - (void)encodeRequestData:(id)arg1 startRequestCallback:(id)arg2;
 - (void)_sendPayload:(id)arg1;
+- (void)writeRequest:(id)arg1 into:(id)arg2;
+- (id)requestPreamble;
 - (void)_startTimeoutTimer;
-- (id)_osVersion;
+- (id)httpRequestHeaders;
 - (id)_applicationID;
 - (id)_languageLocale;
 - (void)setNeedsCancel:(BOOL)arg1;
 - (void)setHttpResponseHeaders:(id)arg1;
 - (void)_removeTimeoutTimer;
+- (void)setConnection:(id)arg1;
+- (BOOL)isPaused;
+- (void)setIgnoresResponse:(BOOL)arg1;
+- (unsigned int)requestResponseTime;
+- (unsigned int)downloadPayloadSize;
+- (unsigned int)uploadPayloadSize;
+- (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2;
+- (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
+- (void)setNeedsCancel;
+- (id)logResponseToFile;
+- (id)logRequestToFile;
+- (void)setTimeoutSeconds:(double)arg1;
+- (id)requests;
+- (void)addRequest:(id)arg1;
+- (void)setHttpRequestHeader:(id)arg1 forKey:(id)arg2;
 - (void)_scheduleThrottlingError;
 
 @end

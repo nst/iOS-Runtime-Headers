@@ -10,17 +10,17 @@
     int _changeType;
 }
 
-@property(readonly) int changeType;
-@property(readonly) WebBookmark * bookmark;
 @property(readonly) WebBookmarkCollection * collection;
+@property(readonly) WebBookmark * bookmark;
+@property(readonly) int changeType;
 
 
 - (id)description;
 - (void)dealloc;
+- (id)bookmark;
 - (id)changeTypeDescription;
 - (id)initWithBookmarkCollection:(id)arg1 bookmark:(id)arg2 changeType:(int)arg3;
-- (id)bookmark;
-- (id)collection;
 - (int)changeType;
+- (id)collection;
 
 @end

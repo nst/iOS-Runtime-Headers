@@ -19,23 +19,23 @@
 
 - (unsigned int)retainCount;
 - (id)retain;
-- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
+- (id)init;
 - (id)autorelease;
-- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
 - (id)adSheetConnection;
 - (double)lastTermination;
 - (void)setBootstrapState:(int)arg1;
 - (int)bootstrapState;
-- (void)setAdSheetConnection:(id)arg1;
 - (void)setLastTermination:(double)arg1;
+- (void)commitFence;
 - (void)_bootstrap;
+- (void)setAdSheetConnection:(id)arg1;
 - (BOOL)isBootstrapped;
 - (void)resetAdSheetThrottle;
-- (void)commitFence;
 - (id)remoteObjectForMessageName:(id)arg1 senderId:(id)arg2;
 - (void)xpcConnectionFailed:(id)arg1;
 - (void)xpcConnection:(id)arg1 receivedMessage:(id)arg2 userInfo:(id)arg3;
-- (BOOL)doesServerExist;
+- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
 
 @end

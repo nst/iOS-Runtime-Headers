@@ -4,7 +4,7 @@
 
 @class SSURLRequestProperties, NSURLRequest, <SSURLConnectionRequestDelegate>;
 
-@interface SSURLConnectionRequest : SSRequest <SSCoding> {
+@interface SSURLConnectionRequest : SSRequest <SSXPCCoding> {
     SSURLRequestProperties *_requestProperties;
 }
 
@@ -13,17 +13,17 @@
 @property <SSURLConnectionRequestDelegate> * delegate;
 
 
+- (void)startWithConnectionResponseBlock:(id)arg1;
 - (id)initWithURLRequest:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)URLRequest;
 - (id)initWithRequestProperties:(id)arg1;
 - (id)requestProperties;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)startWithCompletionBlock:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)start;
+- (id)sendSynchronousRequestReturningError:(id*)arg1;
 
 @end

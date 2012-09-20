@@ -13,7 +13,7 @@
 
 - (void)setRows:(id)arg1;
 - (id)rows;
-- (id)cols;
 - (void)setCols:(id)arg1;
+- (id)cols;
 
 @end

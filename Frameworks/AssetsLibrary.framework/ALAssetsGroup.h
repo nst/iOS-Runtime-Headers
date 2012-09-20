@@ -12,14 +12,16 @@
 @property(retain) ALAssetsGroupPrivate * internal;
 
 
+- (void)setInternal:(id)arg1;
+- (id)internal;
 - (id)description;
 - (void)dealloc;
-- (struct CGImage { }*)posterImage;
-- (id)internal;
-- (void)setInternal:(id)arg1;
 - (id)valueForProperty:(id)arg1;
 - (BOOL)isEditable;
 - (BOOL)isValid;
+- (struct CGImage { }*)posterImage;
+- (id)_uuid;
+- (BOOL)addAsset:(id)arg1;
 - (void)enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (void)enumerateAssetsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (void)enumerateAssetsUsingBlock:(id)arg1;
@@ -28,7 +30,5 @@
 - (void)setAssetsFilter:(id)arg1;
 - (int)numberOfAssets;
 - (id)_typeAsString;
-- (BOOL)addAsset:(id)arg1;
-- (id)_uuid;
 
 @end

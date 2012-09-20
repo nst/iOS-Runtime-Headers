@@ -7,8 +7,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)clearSubtitle;
 - (void)setSubtitleString:(struct __CFAttributedString { }*)arg1 forced:(BOOL)arg2;
 - (void)drawInContext:(struct CGContext { }*)arg1;

@@ -12,11 +12,13 @@
     NSString *_conferenceID;
     NSDictionary *_extraContext;
     unsigned int _useICE : 1;
+    unsigned int _shouldWaitForWifi : 1;
+    unsigned int _showNetworkOptions : 1;
 }
 
 
 - (void)dealloc;
-- (id)initWithParticipant:(id)arg1 conferenceID:(id)arg2;
+- (id)initWithParticipant:(id)arg1 conferenceID:(id)arg2 shouldWaitForWifi:(BOOL)arg3 shouldShowNetworkOptions:(BOOL)arg4;
 - (void)createChildOperations;
 
 @end

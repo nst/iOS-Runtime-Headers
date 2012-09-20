@@ -15,6 +15,7 @@
     int source;
     double timestamp;
     BOOL updating;
+    double course;
     <MKAnnotation> *annotation;
 }
 
@@ -28,9 +29,13 @@
 @property int source;
 @property double timestamp;
 @property(getter=isUpdating) BOOL updating;
+@property double course;
 
 
+- (void)setCourse:(double)arg1;
 - (void)setUpdating:(BOOL)arg1;
+- (double)timestamp;
+- (void)setTimestamp:(double)arg1;
 - (id)annotation;
 - (void)setSource:(int)arg1;
 - (int)source;
@@ -38,8 +43,6 @@
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (id)title;
-- (double)timestamp;
-- (void)setTimestamp:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (id)fixedLocation;
 - (void)setPredictedLocation:(id)arg1;
@@ -49,5 +52,6 @@
 - (void)setLocation:(id)arg1;
 - (id)heading;
 - (void)setHeading:(id)arg1;
+- (double)course;
 
 @end

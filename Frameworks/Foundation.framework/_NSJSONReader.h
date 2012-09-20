@@ -7,37 +7,18 @@
 @interface _NSJSONReader : NSObject  {
     id input;
     int kind;
-    char *buf;
-    unsigned int options;
     NSError *error;
-    unsigned int bufLength;
-    unsigned int idx;
-    struct { 
-        char *location; 
-        unsigned int length; 
-        id value; 
-        unsigned int hash; 
-    } cache[256];
 }
 
 + (BOOL)validForJSON:(id)arg1 depth:(unsigned int)arg2 allowFragments:(BOOL)arg3;
 
+- (void)setError:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)parseStream:(id)arg1 options:(unsigned int)arg2;
 - (id)parseData:(id)arg1 options:(unsigned int)arg2;
-- (id)parseUTF8JSONData:(id)arg1 skipBytes:(unsigned int)arg2;
+- (id)parseUTF8JSONData:(id)arg1 skipBytes:(unsigned int)arg2 options:(unsigned int)arg3;
 - (unsigned int)findEncodingFromData:(id)arg1 withBOMSkipLength:(unsigned int*)arg2;
-- (id)newJSONValue;
-- (BOOL)skipJSONWhitespace;
-- (id)newJSONNumber;
-- (id)newJSONBooleanOrNull;
-- (id)newJSONString;
-- (id)newJSONObject;
-- (id)newJSONArray;
-- (unsigned short)parseJSONUnicodePointAtLocation:(unsigned int)arg1 end:(unsigned int)arg2;
-- (id)newJSONNumberAtPosition:(unsigned int)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setError:(id)arg1;
 - (id)error;
 
 @end

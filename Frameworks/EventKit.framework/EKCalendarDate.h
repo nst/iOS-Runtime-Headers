@@ -23,14 +23,27 @@
 + (id)calendarDateWithGregorianDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 timeZone:(id)arg2;
 + (id)calendarDateWithDate:(id)arg1 timeZone:(id)arg2;
 
-- (id)components;
-- (unsigned int)dayOfYear;
-- (unsigned int)dayOfWeek;
-- (BOOL)isEqual:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)components;
+- (id)earlierDate:(id)arg1;
+- (id)laterDate:(id)arg1;
+- (unsigned int)weekOfYear;
+- (unsigned int)day;
+- (unsigned int)month;
+- (unsigned int)year;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (double)second;
+- (unsigned int)minute;
+- (unsigned int)hour;
+- (id)timeZone;
+- (id)date;
 - (int)secondsFromGMT;
+- (unsigned int)dayOfYear;
+- (unsigned int)dayOfWeek;
 - (id)calendarDateForYear;
 - (id)calendarDateForEndOfMonth;
 - (id)calendarDateForMonth;
@@ -59,18 +72,5 @@
 - (double)absoluteTime;
 - (id)calendarDateByAddingGregorianUnits:(struct { int x1; int x2; int x3; int x4; int x5; double x6; })arg1;
 - (id)calendarDateForDay;
-- (id)earlierDate:(id)arg1;
-- (id)laterDate:(id)arg1;
-- (unsigned int)weekOfYear;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)month;
-- (unsigned int)year;
-- (unsigned int)day;
-- (double)second;
-- (unsigned int)minute;
-- (unsigned int)hour;
-- (int)compare:(id)arg1;
-- (id)timeZone;
-- (id)date;
 
 @end

@@ -8,13 +8,13 @@
     BOOL _fetchPrincipalSearchProperties;
 }
 
-@property BOOL fetchPrincipalSearchProperties;
 @property <CalDAVAccountPropertyRefreshDelegate> * delegate;
+@property BOOL fetchPrincipalSearchProperties;
 
 
+- (void)refreshProperties;
 - (void)setFetchPrincipalSearchProperties:(BOOL)arg1;
 - (BOOL)fetchPrincipalSearchProperties;
 - (void)getAccountPropertiesTask:(id)arg1 completedWithError:(id)arg2;
-- (void)refreshProperties;
 
 @end

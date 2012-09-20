@@ -10,23 +10,23 @@
     unsigned int typeToSend;
 }
 
-@property unsigned int typeToSend;
-@property BOOL needsSend;
-@property unsigned int receivedState;
 @property unsigned int sentState;
+@property unsigned int receivedState;
+@property BOOL needsSend;
+@property unsigned int typeToSend;
 
 
-- (id)init;
 - (void)dealloc;
-- (void)setNeedsSend:(BOOL)arg1;
+- (id)init;
 - (void)setTypeToSend:(unsigned int)arg1;
-- (void)setSentState:(unsigned int)arg1;
-- (BOOL)needsSend;
 - (unsigned int)typeToSend;
-- (unsigned int)receivedState;
-- (struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)lastReceivedBeacon;
-- (void)setLastReceivedBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1;
+- (void)setNeedsSend:(BOOL)arg1;
+- (BOOL)needsSend;
 - (void)setReceivedState:(unsigned int)arg1;
+- (unsigned int)receivedState;
+- (void)setSentState:(unsigned int)arg1;
 - (unsigned int)sentState;
+- (void)setLastReceivedBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1;
+- (struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)lastReceivedBeacon;
 
 @end

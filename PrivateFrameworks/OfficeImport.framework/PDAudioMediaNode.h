@@ -7,7 +7,7 @@
 }
 
 
-- (BOOL)isNarration;
 - (void)setIsNarration:(BOOL)arg1;
+- (BOOL)isNarration;
 
 @end

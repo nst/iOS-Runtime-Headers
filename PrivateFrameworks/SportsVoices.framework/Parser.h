@@ -19,10 +19,10 @@
 + (id)loadGrammarsFromPlistAtPath:(id)arg1;
 
 - (void)dealloc;
+- (id)resultOfRulesAppliedToStrings:(id)arg1;
+- (id)initWithPlistAtPath:(id)arg1 grammar:(id)arg2;
 - (id)productionRules;
 - (id)resultOfRulesAppliedTo:(id)arg1;
-- (id)resultOfRulesAppliedToStrings:(id)arg1;
 - (void)setGrammar:(id)arg1;
-- (id)initWithPlistAtPath:(id)arg1 grammar:(id)arg2;
 
 @end

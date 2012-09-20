@@ -12,14 +12,14 @@
 
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (int)changeSinceChangeCount:(long long)arg1 forKey:(id)arg2;
-- (BOOL)removeChangesUntilChangeCount:(long long)arg1;
-- (id)changesSinceChangeCount:(long long)arg1;
-- (long long)maximumChangeCount;
-- (id)initWithMutableStore:(id)arg1;
-- (void)addChange:(int)arg1 forKey:(id)arg2 changeCount:(long long)arg3;
+- (id)init;
 - (id)initWithStore:(id)arg1;
+- (BOOL)removeChangesUntilChangeCount:(long long)arg1;
+- (int)changeSinceChangeCount:(long long)arg1 forKey:(id)arg2;
+- (void)addChange:(int)arg1 forKey:(id)arg2 changeCount:(long long)arg3;
+- (id)initWithMutableStore:(id)arg1;
+- (long long)maximumChangeCount;
+- (id)changesSinceChangeCount:(long long)arg1;
 
 @end

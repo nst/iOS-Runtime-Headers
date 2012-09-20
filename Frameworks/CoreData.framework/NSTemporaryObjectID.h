@@ -12,38 +12,38 @@
 
 + (id)retain;
 + (id)alloc;
-+ (void)release;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (int)version;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (void)initialize;
++ (void)release;
 + (Class)classForStore:(id)arg1;
 + (unsigned int)allocateBatch:(id*)arg1 forEntity:(id)arg2 count:(unsigned int)arg3;
 + (id)initWithEntity:(id)arg1;
 + (void)_storeDeallocated;
-+ (id)_retain_1;
-+ (void)_release_1;
-+ (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
 + (void)setObjectStoreIdentifier:(id)arg1;
++ (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
++ (void)_release_1;
++ (id)_retain_1;
 + (BOOL)accessInstanceVariablesDirectly;
++ (int)version;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)initialize;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (id)entity;
 - (unsigned int)retainCount;
+- (unsigned int)hash;
 - (id)retain;
-- (void)release;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
+- (void)release;
 - (id)initWithEntity:(id)arg1;
-- (BOOL)_isPersistentStoreAlive;
 - (id)URIRepresentation;
-- (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
-- (void)_setPersistentStore:(id)arg1;
+- (BOOL)_isPersistentStoreAlive;
 - (id)_storeIdentifier;
+- (void)_setPersistentStore:(id)arg1;
+- (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
 - (id)_referenceData;
 - (id)_retainedURIString;
-- (id)entity;
-- (id)persistentStore;
 - (BOOL)isTemporaryID;
+- (id)persistentStore;
+- (void)finalize;
 
 @end

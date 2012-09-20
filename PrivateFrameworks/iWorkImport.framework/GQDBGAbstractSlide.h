@@ -18,10 +18,10 @@
 
 
 - (void)dealloc;
-- (char *)ID;
 - (id)stylesheet;
 - (BOOL)isHidden;
-- (id)slideStyle;
+- (char *)ID;
 - (int)readAttributesForSlide:(struct _xmlTextReader { }*)arg1;
+- (id)slideStyle;
 
 @end

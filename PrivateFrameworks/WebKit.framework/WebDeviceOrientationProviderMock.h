@@ -10,12 +10,12 @@
 
 + (id)shared;
 
-- (id)init;
 - (void)dealloc;
-- (void)startUpdating;
-- (void)stopUpdating;
-- (id)lastOrientation;
+- (id)init;
 - (void)setController:(struct DeviceOrientationController { }*)arg1;
 - (void)setOrientation:(id)arg1;
+- (id)lastOrientation;
+- (void)stopUpdating;
+- (void)startUpdating;
 
 @end

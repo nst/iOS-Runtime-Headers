@@ -10,14 +10,14 @@
 @property(copy) NSString * dialogIdentifier;
 @property(copy) NSString * text;
 
-+ (id)assistantUtteranceView;
 + (id)assistantUtteranceViewWithDictionary:(id)arg1 context:(id)arg2;
++ (id)assistantUtteranceView;
 
 - (id)groupIdentifier;
 - (id)text;
 - (void)setText:(id)arg1;
-- (id)dialogIdentifier;
 - (void)setDialogIdentifier:(id)arg1;
+- (id)dialogIdentifier;
 - (id)deferredKeys;
 - (id)encodedClassName;
 

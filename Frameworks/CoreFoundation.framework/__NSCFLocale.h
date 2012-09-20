@@ -7,17 +7,17 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (unsigned int)retainCount;
-- (id)objectForKey:(id)arg1;
+- (unsigned int)hash;
 - (id)retain;
+- (BOOL)isEqual:(id)arg1;
+- (id)objectForKey:(id)arg1;
 - (oneway void)release;
-- (id)_prefs;
-- (id)displayNameForKey:(id)arg1 value:(id)arg2;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (void)finalize;
 - (id)initWithLocaleIdentifier:(id)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (id)displayNameForKey:(id)arg1 value:(id)arg2;
+- (id)_prefs;
 
 @end

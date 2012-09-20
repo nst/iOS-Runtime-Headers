@@ -6,8 +6,10 @@
    See Warning(s) below.
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface _MFNetworkObserver : NSObject  {
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -16,8 +18,8 @@
 }
 
 
-- (id)initWithBlock:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
 - (void)dealloc;
 - (void)execute;
+- (id)initWithBlock:(id)arg1 queue:(id)arg2;
 
 @end

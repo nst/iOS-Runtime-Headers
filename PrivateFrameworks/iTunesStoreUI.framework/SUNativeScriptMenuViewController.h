@@ -13,15 +13,15 @@
 @property(retain) NSArray * menuItems;
 
 
-- (id)action;
-- (void)dealloc;
-- (id)menuItems;
-- (void)setMenuItems:(id)arg1;
-- (void)setAction:(id)arg1;
 - (BOOL)isMenuItemEnabledAtIndex:(int)arg1;
 - (id)titleOfMenuItemAtIndex:(int)arg1;
 - (void)performActionForMenuItemAtIndex:(int)arg1;
 - (int)numberOfMenuItems;
 - (id)copyScriptViewController;
+- (id)action;
+- (void)dealloc;
+- (id)menuItems;
+- (void)setMenuItems:(id)arg1;
+- (void)setAction:(id)arg1;
 
 @end

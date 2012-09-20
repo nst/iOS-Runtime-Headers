@@ -13,12 +13,12 @@
 @property BOOL itemsHaveArtwork;
 
 
-- (id)init;
 - (BOOL)itemsHaveArtwork;
 - (int)hiddenMediaIconTypes;
 - (void)setItemsHaveArtwork:(BOOL)arg1;
 - (void)setHiddenMediaIconTypes:(int)arg1;
 - (void)setArtworkWidth:(float)arg1;
 - (float)artworkWidth;
+- (id)init;
 
 @end

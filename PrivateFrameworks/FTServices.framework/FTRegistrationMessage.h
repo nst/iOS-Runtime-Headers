@@ -12,10 +12,12 @@
     NSArray *_capabilities;
     NSString *_softwareVersion;
     NSString *_protocolVersion;
+    NSString *_deviceName;
     NSNumber *_responseNextHBI;
 }
 
 @property(copy) NSData * validationData;
+@property(copy) NSString * deviceName;
 @property(copy) NSString * hardwareVersion;
 @property(copy) NSString * osVersion;
 @property(copy) NSString * softwareVersion;
@@ -25,10 +27,12 @@
 @property(copy) NSNumber * responseNextHBI;
 
 
-- (id)capabilities;
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)responseNextHBI;
+- (id)responseBindings;
+- (void)setSoftwareVersion:(id)arg1;
+- (void)setValidationData:(id)arg1;
+- (id)validationData;
+- (id)bagKey;
 - (void)setResponseNextHBI:(id)arg1;
 - (void)setResponseBindings:(id)arg1;
 - (id)softwareVersion;
@@ -39,16 +43,16 @@
 - (id)requiredKeys;
 - (void)setProtocolVersion:(id)arg1;
 - (id)protocolVersion;
-- (id)bagKey;
-- (void)setCapabilities:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)hardwareVersion;
 - (id)osVersion;
-- (void)setOsVersion:(id)arg1;
+- (id)deviceName;
 - (void)setHardwareVersion:(id)arg1;
-- (id)responseNextHBI;
-- (id)responseBindings;
-- (void)setSoftwareVersion:(id)arg1;
-- (void)setValidationData:(id)arg1;
-- (id)validationData;
+- (void)setOsVersion:(id)arg1;
+- (void)setCapabilities:(id)arg1;
+- (id)capabilities;
+- (id)messageBody;
+- (void)setDeviceName:(id)arg1;
 
 @end

@@ -11,7 +11,7 @@
 
 
 - (id)initWithArray:(id)arg1;
-- (id)next;
 - (BOOL)hasNext;
+- (id)next;
 
 @end

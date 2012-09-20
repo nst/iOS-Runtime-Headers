@@ -7,17 +7,17 @@
 @interface DOMRect : DOMObject  {
 }
 
-@property(retain,readonly) DOMCSSPrimitiveValue * top;
-@property(retain,readonly) DOMCSSPrimitiveValue * right;
-@property(retain,readonly) DOMCSSPrimitiveValue * bottom;
-@property(retain,readonly) DOMCSSPrimitiveValue * left;
+@property(readonly) DOMCSSPrimitiveValue * top;
+@property(readonly) DOMCSSPrimitiveValue * right;
+@property(readonly) DOMCSSPrimitiveValue * bottom;
+@property(readonly) DOMCSSPrimitiveValue * left;
 
 
 - (void)dealloc;
 - (void)finalize;
-- (id)bottom;
-- (id)left;
-- (id)right;
 - (id)top;
+- (id)right;
+- (id)left;
+- (id)bottom;
 
 @end

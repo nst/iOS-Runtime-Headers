@@ -9,8 +9,8 @@
 
 @property(copy) NSArray * items;
 
-+ (id)disambiguationMap;
 + (id)disambiguationMapWithDictionary:(id)arg1 context:(id)arg2;
++ (id)disambiguationMap;
 
 - (id)groupIdentifier;
 - (void)setItems:(id)arg1;

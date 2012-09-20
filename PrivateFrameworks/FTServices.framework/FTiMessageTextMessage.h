@@ -13,16 +13,16 @@
 @property(copy) NSString * encryptionType;
 
 
-- (id)messageBody;
-- (id)messageData;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)setEncryptionType:(id)arg1;
 - (void)setMessageData:(id)arg1;
 - (BOOL)payloadCanBeLogged;
 - (id)requiredKeys;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setEncryptionType:(id)arg1;
 - (id)encryptionType;
 - (int)command;
+- (id)messageData;
+- (id)messageBody;
 
 @end

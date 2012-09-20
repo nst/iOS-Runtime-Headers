@@ -20,14 +20,16 @@
 @property(readonly) BOOL isFromArchive;
 
 
-- (void)dealloc;
-- (BOOL)isFromArchive;
-- (void)_setIsFromArchive:(BOOL)arg1;
-- (id)_initWithGUID:(id)arg1 date:(id)arg2 datum1:(id)arg3 datum2:(id)arg4 datum3:(id)arg5;
 - (id)guid;
+- (void)dealloc;
 - (id)message;
 - (id)stringValue;
 - (id)date;
+- (BOOL)isFromArchive;
+- (void)_setIsFromArchive:(BOOL)arg1;
+- (id)_initWithGUID:(id)arg1 date:(id)arg2 datum1:(id)arg3 datum2:(id)arg4 datum3:(id)arg5;
+- (int)_compareToChatItem:(id)arg1;
+- (int)_reverseCompareToChatItem:(id)arg1;
 - (void)setGuid:(id)arg1;
 
 @end

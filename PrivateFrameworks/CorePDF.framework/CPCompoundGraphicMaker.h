@@ -2,41 +2,32 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPCluster, CPChunk, CPGraphicObject;
+@class CPCluster, CPChunk;
 
 @interface CPCompoundGraphicMaker : NSObject <CPDisposable> {
     CPChunk *parentChunk;
     BOOL shapesAreVectorGraphics;
     unsigned int shapeCount;
-    CPGraphicObject **shapes;
+    id *shapes;
     double pageSpread;
     CPCluster *cluster;
     unsigned int groupInfoCount;
-    struct { unsigned int x1; struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } x2; } *groupInfoArray;
+    struct { unsigned int x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; } *groupInfoArray;
     BOOL disposed;
 }
 
 + (BOOL)makeCompoundGraphicsInZonesOf:(id)arg1;
 
-- (void)dealloc;
-- (id)initWithGraphicsIn:(id)arg1 ofClass:(Class)arg2;
-- (BOOL)makeCompoundGraphics;
-- (void)coalesceShapeGroups;
-- (void)makeCompoundGraphicFromShapesAtIndex:(unsigned int)arg1 count:(unsigned int)arg2;
-- (void)addGroupInfoWithIndex:(unsigned int)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (BOOL)makeCompoundGraphicsFromShapeGroups;
-- (BOOL)findClusterLevel;
 - (BOOL)groupOverlappingGraphics;
-- (void)finalize;
+- (BOOL)findClusterLevel;
+- (BOOL)makeCompoundGraphicsFromShapeGroups;
+- (void)addGroupInfoWithIndex:(unsigned int)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)makeCompoundGraphicFromShapesAtIndex:(unsigned int)arg1 count:(unsigned int)arg2;
+- (void)coalesceShapeGroups;
+- (BOOL)makeCompoundGraphics;
+- (id)initWithGraphicsIn:(id)arg1 ofClass:(Class)arg2;
 - (void)dispose;
+- (void)dealloc;
+- (void)finalize;
 
 @end

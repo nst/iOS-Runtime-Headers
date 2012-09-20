@@ -9,13 +9,13 @@
 
 @property(retain) SAAceView * initialView;
 
-+ (id)clearScreen;
 + (id)clearScreenWithDictionary:(id)arg1 context:(id)arg2;
++ (id)clearScreen;
 
 - (id)groupIdentifier;
-- (id)initialView;
 - (void)setInitialView:(id)arg1;
-- (id)encodedClassName;
+- (id)initialView;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

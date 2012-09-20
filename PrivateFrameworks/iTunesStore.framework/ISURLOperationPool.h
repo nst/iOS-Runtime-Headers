@@ -11,12 +11,12 @@
 @property(retain) ISOperationQueue * operationQueue;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)_poolOperationForOperation:(id)arg1 flags:(int)arg2;
 - (void)setOperationQueue:(id)arg1;
 - (void)addOperation:(id)arg1 withFlags:(int)arg2;
 - (void)cancelOperation:(id)arg1;
 - (id)operationQueue;
+- (void)dealloc;
+- (id)init;
+- (id)_poolOperationForOperation:(id)arg1 flags:(int)arg2;
 
 @end

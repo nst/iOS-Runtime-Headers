@@ -18,35 +18,35 @@
 @property double speed;
 @property(copy) NSString * status;
 @property(copy) NSDate * timestamp;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)setRequestOrigin;
 + (id)setRequestOriginWithDictionary:(id)arg1 context:(id)arg2;
++ (id)setRequestOrigin;
 
+- (void)setVerticalAccuracy:(double)arg1;
+- (void)setAltitude:(double)arg1;
+- (id)desiredAccuracy;
+- (void)setHorizontalAccuracy:(double)arg1;
 - (id)groupIdentifier;
+- (id)timestamp;
+- (void)setTimestamp:(id)arg1;
 - (void)setStatus:(id)arg1;
 - (id)status;
-- (void)setLongitude:(double)arg1;
-- (void)setLatitude:(double)arg1;
 - (double)direction;
 - (void)setDirection:(double)arg1;
-- (id)timestamp;
-- (double)speed;
-- (void)setTimestamp:(id)arg1;
 - (void)setSpeed:(double)arg1;
+- (double)speed;
 - (double)altitude;
 - (double)verticalAccuracy;
 - (double)horizontalAccuracy;
-- (id)desiredAccuracy;
 - (void)setDesiredAccuracy:(id)arg1;
-- (double)latitude;
 - (double)longitude;
-- (void)setHorizontalAccuracy:(double)arg1;
-- (id)encodedClassName;
-- (id)age;
+- (double)latitude;
 - (void)setAge:(id)arg1;
-- (void)setVerticalAccuracy:(double)arg1;
-- (void)setAltitude:(double)arg1;
+- (id)age;
+- (id)encodedClassName;
+- (void)setLongitude:(double)arg1;
+- (void)setLatitude:(double)arg1;
 
 @end

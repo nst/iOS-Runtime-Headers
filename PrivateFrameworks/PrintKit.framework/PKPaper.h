@@ -15,23 +15,23 @@
     int bottomMargin;
 }
 
-@property(readonly) struct CGSize { float width; float height; } paperSize;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } imageableAreaRect;
-@property(readonly) BOOL isBorderless;
-@property(readonly) NSString * baseName;
-@property(readonly) float imageableArea;
-@property int bottomMargin;
-@property int rightMargin;
-@property int topMargin;
-@property int leftMargin;
-@property int height;
-@property int width;
+@property(readonly) NSString * localizedName;
 @property(retain) NSString * name;
-@property(retain,readonly) NSString * localizedName;
+@property(readonly) NSString * baseName;
+@property(readonly) struct CGSize { float x1; float x2; } paperSize;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageableAreaRect;
+@property(readonly) float imageableArea;
+@property(readonly) BOOL isBorderless;
+@property int width;
+@property int height;
+@property int leftMargin;
+@property int topMargin;
+@property int rightMargin;
+@property int bottomMargin;
 
-+ (id)genericHagakiPaper;
-+ (id)genericWithName:(id)arg1;
 + (BOOL)willAdjustMarginsForDuplexMode:(id)arg1;
++ (id)genericWithName:(id)arg1;
++ (id)genericHagakiPaper;
 + (id)genericBorderlessWithName:(id)arg1;
 + (id)genericPRC32KPaper;
 + (id)genericA6Paper;
@@ -42,15 +42,17 @@
 + (id)generic4x6Paper;
 + (id)generic3_5x5Paper;
 
-- (void)setName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
-- (id)initWithPWGSize:(struct _pwg_size_s { struct _pwg_map_s { char *x_1_1_1; char *x_1_1_2; } x1; int x2; int x3; int x4; int x5; int x6; int x7; }*)arg1 localizedName:(id)arg2 codeName:(id)arg3;
-- (float)imageableArea;
 - (id)paperWithMarginsAdjustedForDuplexMode:(id)arg1;
-- (id)nameWithoutSuffixes:(id)arg1;
+- (float)imageableArea;
+- (id)initWithPWGSize:(struct _pwg_size_s { struct _pwg_map_s { char *x_1_1_1; char *x_1_1_2; } x1; int x2; int x3; int x4; int x5; int x6; int x7; }*)arg1 localizedName:(id)arg2 codeName:(id)arg3;
+- (id)localizedNameFromDimensions;
 - (id)initWithWidth:(int)arg1 Height:(int)arg2 Left:(int)arg3 Top:(int)arg4 Right:(int)arg5 Bottom:(int)arg6 localizedName:(id)arg7 codeName:(id)arg8;
+- (id)nameWithoutSuffixes:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)name;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setHeight:(int)arg1;
 - (BOOL)isBorderless;
 - (id)baseName;
@@ -61,13 +63,12 @@
 - (void)setRightMargin:(int)arg1;
 - (void)setWidth:(int)arg1;
 - (int)width;
-- (id)name;
-- (int)rightMargin;
-- (int)topMargin;
+- (void)setBottomMargin:(int)arg1;
+- (void)setLeftMargin:(int)arg1;
 - (void)setTopMargin:(int)arg1;
 - (int)bottomMargin;
-- (void)setBottomMargin:(int)arg1;
+- (int)topMargin;
+- (int)rightMargin;
 - (int)leftMargin;
-- (void)setLeftMargin:(int)arg1;
 
 @end

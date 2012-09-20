@@ -18,8 +18,8 @@
 
 
 - (id)init;
-- (id)final;
 - (void)updateWithBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (id)final;
 - (void)finalWithBytes:(void*)arg1 length:(unsigned int)arg2;
 
 @end

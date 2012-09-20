@@ -2,17 +2,21 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIAlertView, NSTimer, NSArray;
+@class UIAlertView, NSArray, AFDictationConnection, AFDictationOptions, NSTimer, AFPreferences;
 
-@interface UIDictationController : NSObject  {
+@interface UIDictationController : NSObject <AFDictationDelegate> {
+    AFDictationConnection *_connection;
+    AFDictationOptions *_options;
+    AFPreferences *_preferences;
     NSArray *_availableLanguages;
     NSTimer *_recordingLimitTimer;
     void *_callCenterFrameworkFileHandle;
     id _callCenter;
     void *_facetimeCallFrameworkFileHandle;
     id _facetimeCallManager;
-    BOOL _disabledDueToTelephonyActivity;
+    BOOL _wasDisabledDueToTelephonyActivity;
     UIAlertView *_dictationAvailableSoonAlert;
+    BOOL _connectionWasAlreadyAliveForStatisticsLogging;
     BOOL dictationStartedFromGesture;
 }
 
@@ -20,65 +24,84 @@
 
 + (id)activeInstance;
 + (id)sharedInstance;
-+ (id)serializedDictationPhrases:(id)arg1 fromKeyboard:(BOOL)arg2;
-+ (id)serializedInterpretationFromTokens:(id)arg1;
++ (id)serializedDictationPhrases:(id)arg1 fromKeyboard:(BOOL)arg2 transform:(struct __CFString { }*)arg3;
++ (id)interpretation:(id)arg1 forPhraseIndex:(unsigned int)arg2 isShiftLocked:(BOOL)arg3 autocapitalizationType:(int)arg4;
++ (id)serializedDictationPhrasesFromTokenMatrix:(id)arg1 fromKeyboard:(BOOL)arg2 transform:(struct __CFString { }*)arg3;
 + (void)enableGestureHandlerIfNecessary;
 + (void)logCorrectionStatistics;
 + (void)disableGestureHandler;
 + (BOOL)shouldEnableGestureHandler;
++ (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2;
 + (void)networkReachableCallback;
++ (void)siriPreferencesChanged;
 + (void)applicationWillResignActive;
 + (void)applicationDidBecomeActive;
 + (void)applicationDidChangeStatusBarFrame;
++ (BOOL)setupForPhraseSerialization;
++ (BOOL)setupForOpeningConnections;
++ (BOOL)openAssistantFrameworkIfNecessary;
 + (void)keyboardDidUpdateOnScreenStatus;
 + (void)updateLandingView;
 + (BOOL)isRunning;
++ (BOOL)dictationIsFunctional;
 + (BOOL)fetchCurrentInputModeSupportsDictation;
 + (id)prunedDictationResultForSingleLineEditor:(id)arg1;
 + (id)inputModeNameForDictation;
-+ (void)preheatIfNecessary;
 + (void)keyboardDidSetDelegate;
 + (void)keyboardDidSetInputMode;
 + (id)bestInterpretationForDictationResult:(id)arg1;
 + (id)serializedDictationPhrases:(id)arg1;
 + (void)willEndEditingInTextView:(id)arg1;
 
-- (id)init;
+- (int)state;
 - (void)dealloc;
+- (id)init;
+- (void)errorAnimationDidFinish;
+- (float)normalizedAudioLevel;
+- (void)dictationConnection:(id)arg1 didRecognizePhrases:(id)arg2 correctionIdentifier:(id)arg3;
 - (void)dictationConnection:(id)arg1 speechRecognitionDidFail:(id)arg2;
 - (void)dictationConnection:(id)arg1 speechRecordingDidFail:(id)arg2;
 - (void)dictationConnectionSpeechRecordingDidCancel:(id)arg1;
 - (void)dictationConnectionSpeechRecordingDidEnd:(id)arg1;
 - (void)dictationConnectionSpeechRecordingDidBegin:(id)arg1;
 - (void)dictationConnectionSpeechRecordingWillBegin:(id)arg1;
-- (void)dictationConnection:(id)arg1 didRecognizeSpeechPhrases:(id)arg2 correctionIdentifier:(id)arg3;
-- (void)errorAnimationDidFinish;
-- (float)normalizedAudioLevel;
+- (void)dictationConnection:(id)arg1 didRecognizePhrases:(id)arg2 languageModel:(id)arg3 correctionIdentifier:(id)arg4;
 - (id)dictationPhraseArrayFromDictationResult:(id)arg1;
+- (void)startDictation;
+- (void)startConnectionForReason:(int)arg1;
 - (void)startRecordingLimitTimer;
-- (void)startConnection;
+- (void)releaseConnection;
 - (void)cancelRecordingLimitTimer;
+- (void)releaseConnectionAfterDictationRequest;
+- (void)setupForDictationStart;
+- (void)setupConnectionOptions;
 - (id)selectedTextForInputDelegate:(id)arg1;
 - (id)postfixTextForInputDelegate:(id)arg1;
 - (id)prefixTextForInputDelegate:(id)arg1;
 - (id)fieldIdentifierInputDelegate:(id)arg1;
 - (float)audioLevel;
+- (id)connection;
 - (id)assistantCompatibleLanguageCodeForLanguage:(id)arg1 region:(id)arg2;
-- (BOOL)disabledDueToTelephonyActivity;
+- (BOOL)wasDisabledDueToTelephonyActivity;
 - (void)enableProximity;
 - (void)setDictationStartedFromGesture:(BOOL)arg1;
+- (void)startDictationForReason:(int)arg1;
 - (void)stopDictation;
 - (BOOL)dictationStartedFromGesture;
 - (void)reenableAutorotation;
 - (void)disableAutorotation;
+- (void)releaseConnectionAfterStatisticsLogging;
+- (id)connectionForStatisticsLogging;
 - (id)inputModeThatInvokedDictation;
 - (BOOL)dictationEnabled;
-- (id)_connection;
+- (BOOL)disabledDueToTelephonyActivity;
+- (void)delayedTelephonyCheckingSetup;
+- (void)startConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
+- (void)startDictationForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (BOOL)supportsInputMode:(id)arg1 error:(id*)arg2;
-- (void)startDictation;
+- (void)startDictationFromLayout;
 - (void)cancelDictation;
 - (void)setState:(int)arg1;
-- (int)state;
 - (void)proximityStateChanged:(id)arg1;
 
 @end

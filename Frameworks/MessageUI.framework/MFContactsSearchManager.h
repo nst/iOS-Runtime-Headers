@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSOperationQueue, NSArray, NSSet, NSMutableDictionary;
+@class NSOperationQueue, NSArray, NSOrderedSet, NSObject<OS_dispatch_queue>, NSString, NSMutableDictionary;
 
 @interface MFContactsSearchManager : NSObject <DASearchQueryConsumer> {
     struct __CFDictionary { } *_taskIDsBySearchQuery;
@@ -10,30 +10,43 @@
     void *_addressBook;
     NSOperationQueue *_queue;
     unsigned int _genNumber;
-    NSSet *_properties;
+    NSOrderedSet *_properties;
     unsigned int _searchTypes;
     NSArray *_searchAccountIDs;
-    struct dispatch_queue_s { } *_serverSearchQueue;
+    NSObject<OS_dispatch_queue> *_serverSearchQueue;
+    BOOL _registeredForAddressBookChanges;
+    NSString *_recentsBundleIdentifier;
+    NSString *_sendingAddress;
 }
 
 @property(retain) NSArray * searchAccountIDs;
+@property(copy) NSString * sendingAddress;
+@property(copy) NSString * recentsBundleIdentifier;
 
 
-- (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
-- (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
-- (void)cancelTaskWithID:(id)arg1;
 - (void)dealloc;
-- (void)_handleLocalSearchResults:(id)arg1 type:(int)arg2 operation:(id)arg3 taskID:(id)arg4;
-- (void)_handleSearchQueriesByAccountID:(id)arg1 operation:(id)arg2 taskID:(id)arg3;
-- (id)searchAccountIDs;
-- (void)_handleTaskFinished:(id)arg1 context:(id)arg2;
-- (struct dispatch_queue_s { }*)_serverSearchQueue;
-- (void)_handleSearchQueryFinished:(id)arg1 context:(id)arg2;
-- (void)_handleSearchQuery:(id)arg1 returnedResults:(id)arg2;
-- (void)_handleSearchQuery:(id)arg1 finishedWithError:(id)arg2;
 - (void)setSearchAccountIDs:(id)arg1;
-- (void)setSearchTypes:(unsigned int)arg1;
+- (void)setRecentsBundleIdentifier:(id)arg1;
+- (id)recentsBundleIdentifier;
+- (void)_handleAddressBookChangeNotification;
 - (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3;
+- (void)_handleSearchQuery:(id)arg1 finishedWithError:(id)arg2;
+- (void)_handleSearchQuery:(id)arg1 returnedResults:(id)arg2;
+- (void)_handleSearchQueryFinished:(id)arg1 context:(id)arg2;
+- (id)_serverSearchQueue;
+- (void)_handleTaskFinished:(id)arg1 context:(id)arg2;
+- (void)_registerForAddressBookChanges;
+- (id)searchAccountIDs;
+- (void)_handleSearchQueriesByAccountID:(id)arg1 operation:(id)arg2 taskID:(id)arg3;
+- (void)_handleLocalSearchResults:(id)arg1 type:(int)arg2 operation:(id)arg3 taskID:(id)arg4;
+- (void)_handleRecentsSearchFrequentResults:(id)arg1 infrequentResults:(id)arg2 operation:(id)arg3 taskID:(id)arg4;
+- (id)sendingAddress;
+- (void)setSendingAddress:(id)arg1;
+- (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
+- (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
+- (void)cancelTaskWithID:(id)arg1;
 - (id)searchForText:(id)arg1 consumer:(id)arg2;
+- (void)setSearchTypes:(unsigned int)arg1;
+- (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3 recentsBundleIdentifier:(id)arg4;
 
 @end

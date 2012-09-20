@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class NSNumber, NSData, NoteBodyObject, NoteStoreObject, NSURL, NSString, NSDate;
+@class NSDate, NSNumber, NoteBodyObject, NoteStoreObject, NSURL, NSString, NSData;
 
 @interface NoteObject : NSManagedObject  {
 }
@@ -35,23 +35,24 @@
 @property(retain) NSString * externalContentRef;
 
 
-- (void)setFlags:(unsigned long long)arg1;
-- (unsigned long long)flags;
 - (id)content;
-- (BOOL)isPlainText;
-- (void)setIsPlainText:(BOOL)arg1;
-- (void)setContent:(id)arg1;
-- (id)externalRepresentation;
+- (unsigned long long)flags;
+- (BOOL)containsAttachments;
 - (BOOL)isMarkedForDeletion;
-- (void)setExternalRepresentation:(id)arg1;
 - (void)setServerIntId:(long long)arg1;
 - (long long)serverIntId;
 - (BOOL)hasValidServerIntId;
+- (void)setContent:(id)arg1;
+- (void)setIsPlainText:(BOOL)arg1;
+- (void)setFlags:(unsigned long long)arg1;
 - (id)noteId;
 - (void)setExternalContentRef:(id)arg1;
 - (id)externalContentRef;
 - (id)contentAsPlainTextPreservingNewlines;
-- (id)contentAsPlainText;
 - (void)markForDeletion;
+- (void)setExternalRepresentation:(id)arg1;
+- (id)contentAsPlainText;
+- (BOOL)isPlainText;
+- (id)externalRepresentation;
 
 @end

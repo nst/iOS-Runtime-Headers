@@ -2,34 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUMediaPlayerItem, AVFileValidator;
+@class SUMediaPlayerItem;
 
 @interface SUPrepareMediaItemOperation : ISOperation  {
-    AVFileValidator *_fileValidator;
     SUMediaPlayerItem *_mediaItem;
-    int _movieSourceType;
 }
 
 @property(readonly) SUMediaPlayerItem * mediaPlayerItem;
-@property(readonly) int movieSourceType;
 
 
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
-- (void)run;
-- (int)movieSourceType;
-- (void)_mainThreadStartAVFileValidator;
-- (void)_startAVFileValidator;
-- (void)_timeoutTimer:(id)arg1;
-- (void)_beginObservingAVFileValidator:(id)arg1;
-- (void)_validationFinished:(id)arg1;
-- (void)_setMovieSourceType:(int)arg1;
-- (void)_runAVFileValidator;
 - (BOOL)_runHEADRequest:(id*)arg1;
-- (void)_endObservingAVFileValidator;
 - (id)mediaPlayerItem;
 - (id)initWithMediaPlayerItem:(id)arg1;
-- (void)stopRunLoop;
+- (void)dealloc;
+- (id)init;
+- (void)run;
 
 @end

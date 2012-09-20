@@ -7,16 +7,16 @@
     unsigned int _task;
 }
 
-+ (id)machTaskContainerWithTask:(unsigned int)arg1;
-+ (id)machTaskContainerWithPid:(int)arg1;
 + (id)machTaskContainerWithPid:(int)arg1 task:(unsigned int)arg2;
++ (id)machTaskContainerWithPid:(int)arg1;
++ (id)machTaskContainerWithTask:(unsigned int)arg1;
 + (id)machTaskContainer;
 
 - (id)description;
 - (void)dealloc;
-- (int)pid;
+- (void)finalize;
 - (id)initWithPid:(int)arg1 task:(unsigned int)arg2;
 - (unsigned int)task;
-- (void)finalize;
+- (int)pid;
 
 @end

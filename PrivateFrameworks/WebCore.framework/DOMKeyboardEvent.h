@@ -7,7 +7,7 @@
 @interface DOMKeyboardEvent : DOMUIEvent  {
 }
 
-@property(copy,readonly) NSString * keyIdentifier;
+@property(readonly) NSString * keyIdentifier;
 @property(readonly) unsigned int keyLocation;
 @property(readonly) BOOL ctrlKey;
 @property(readonly) BOOL shiftKey;
@@ -18,17 +18,17 @@
 @property(readonly) int charCode;
 
 
-- (id)keyIdentifier;
-- (unsigned int)keyLocation;
-- (BOOL)altGraphKey;
-- (int)keyCode;
-- (int)charCode;
-- (BOOL)getModifierState:(id)arg1;
-- (void)initKeyboardEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 keyIdentifier:(id)arg5 keyLocation:(unsigned int)arg6 ctrlKey:(BOOL)arg7 altKey:(BOOL)arg8 shiftKey:(BOOL)arg9 metaKey:(BOOL)arg10 altGraphKey:(BOOL)arg11;
 - (void)initKeyboardEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 keyIdentifier:(id)arg5 keyLocation:(unsigned int)arg6 ctrlKey:(BOOL)arg7 altKey:(BOOL)arg8 shiftKey:(BOOL)arg9 metaKey:(BOOL)arg10;
-- (BOOL)ctrlKey;
-- (BOOL)shiftKey;
-- (BOOL)altKey;
+- (void)initKeyboardEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 keyIdentifier:(id)arg5 keyLocation:(unsigned int)arg6 ctrlKey:(BOOL)arg7 altKey:(BOOL)arg8 shiftKey:(BOOL)arg9 metaKey:(BOOL)arg10 altGraphKey:(BOOL)arg11;
+- (BOOL)getModifierState:(id)arg1;
+- (int)charCode;
+- (int)keyCode;
+- (BOOL)altGraphKey;
+- (unsigned int)keyLocation;
+- (id)keyIdentifier;
 - (BOOL)metaKey;
+- (BOOL)altKey;
+- (BOOL)shiftKey;
+- (BOOL)ctrlKey;
 
 @end

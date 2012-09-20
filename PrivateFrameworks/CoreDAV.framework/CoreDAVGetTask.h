@@ -14,7 +14,6 @@
 @property BOOL forceNoCache;
 
 
-- (unsigned int)cachePolicy;
 - (id)description;
 - (void)dealloc;
 - (void)setForceNoCache:(BOOL)arg1;
@@ -23,6 +22,7 @@
 - (id)appSpecificDataItemResult;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
+- (unsigned int)cachePolicy;
 - (id)httpMethod;
 - (id)requestBody;
 

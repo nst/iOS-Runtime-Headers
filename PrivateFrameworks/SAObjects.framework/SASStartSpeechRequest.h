@@ -5,14 +5,17 @@
 @interface SASStartSpeechRequest : SASStartSpeech  {
 }
 
+@property BOOL eyesFree;
 @property BOOL handsFree;
 
-+ (id)startSpeechRequest;
 + (id)startSpeechRequestWithDictionary:(id)arg1 context:(id)arg2;
++ (id)startSpeechRequest;
 
 - (id)groupIdentifier;
-- (BOOL)handsFree;
 - (void)setHandsFree:(BOOL)arg1;
+- (BOOL)handsFree;
+- (void)setEyesFree:(BOOL)arg1;
+- (BOOL)eyesFree;
 - (id)encodedClassName;
 
 @end

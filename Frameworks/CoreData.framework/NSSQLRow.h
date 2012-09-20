@@ -9,36 +9,37 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (void)initialize;
-+ (unsigned int)newBatchRowAllocation:(id*)arg1 count:(unsigned int)arg2 forSQLEntity:(id)arg3 withOwnedObjectIDs:(struct _NSScalarObjectID {}**)arg4 andTimestamp:(double)arg5;
 + (id)allocForSQLEntity:(id)arg1;
++ (unsigned int)newBatchRowAllocation:(id*)arg1 count:(unsigned int)arg2 forSQLEntity:(id)arg3 withOwnedObjectIDs:(struct _NSScalarObjectID { Class x1; }**)arg4 andTimestamp:(double)arg5;
++ (void)initialize;
 
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)copy;
-- (void)dealloc;
-- (id)valueForKey:(id)arg1;
-- (void)setForeignEntityKeySlot:(unsigned int)arg1 unsigned:(unsigned int)arg2;
-- (void)setForeignKeySlot:(unsigned int)arg1 int64:(long long)arg2;
-- (void)setForeignOrderKeySlot:(unsigned int)arg1 unsigned:(unsigned int)arg2;
-- (void)setOptLock:(long long)arg1;
-- (void)setObjectID:(struct _NSScalarObjectID { Class x1; }*)arg1;
-- (id)initWithSQLEntity:(id)arg1 ownedObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2 andTimestamp:(double)arg3;
-- (id)initWithSQLEntity:(id)arg1 objectID:(struct _NSScalarObjectID { Class x1; }*)arg2;
-- (void)_validateToOnes;
-- (struct _NSScalarObjectID { Class x1; }*)newObjectIDForToOne:(id)arg1;
-- (const id*)knownKeyValuesPointer;
-- (id)_snapshot_;
-- (unsigned int)_versionNumber;
-- (long long)pk64;
-- (unsigned int)entityID;
-- (long long)optLock;
-- (long long)foreignKeyForSlot:(unsigned int)arg1;
-- (unsigned int)foreignEntityKeyForSlot:(unsigned int)arg1;
-- (unsigned int)foreignOrderKeyForSlot:(unsigned int)arg1;
-- (id)attributeValueForSlot:(unsigned int)arg1;
-- (struct __CFBitVector { }*)newCalculatedDeltaMaskFrom:(id)arg1;
 - (id)entity;
+- (id)description;
+- (BOOL)isEqual:(id)arg1;
+- (id)valueForKey:(id)arg1;
+- (void)dealloc;
+- (id)copy;
+- (struct _NSScalarObjectID { Class x1; }*)newObjectIDForToOne:(id)arg1;
+- (void)_validateToOnes;
+- (id)initWithSQLEntity:(id)arg1 objectID:(struct _NSScalarObjectID { Class x1; }*)arg2;
+- (id)initWithSQLEntity:(id)arg1 ownedObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2 andTimestamp:(double)arg3;
+- (void)setObjectID:(struct _NSScalarObjectID { Class x1; }*)arg1;
+- (void)setOptLock:(long long)arg1;
+- (void)setForeignOrderKeySlot:(unsigned int)arg1 unsigned:(unsigned int)arg2;
+- (void)setForeignKeySlot:(unsigned int)arg1 int64:(long long)arg2;
+- (void)setForeignEntityKeySlot:(unsigned int)arg1 unsigned:(unsigned int)arg2;
+- (id)_snapshot_;
+- (const id*)knownKeyValuesPointer;
+- (unsigned int)_versionNumber;
+- (struct __CFBitVector { }*)newCalculatedDeltaMaskFrom:(id)arg1;
+- (id)attributeValueForSlot:(unsigned int)arg1;
+- (unsigned int)foreignOrderKeyForSlot:(unsigned int)arg1;
+- (unsigned int)foreignEntityKeyForSlot:(unsigned int)arg1;
+- (long long)foreignKeyForSlot:(unsigned int)arg1;
+- (long long)optLock;
+- (unsigned int)entityID;
+- (long long)pk64;
 - (struct _NSScalarObjectID { Class x1; }*)objectID;
+- (long long)version;
 
 @end

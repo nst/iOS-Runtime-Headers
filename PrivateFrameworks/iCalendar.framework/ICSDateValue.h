@@ -12,20 +12,20 @@
 @property(readonly) int month;
 @property(readonly) int day;
 
-+ (id)dateFromICSUTF8String:(const char *)arg1;
 + (id)dateFromICSString:(id)arg1;
++ (id)dateFromICSUTF8String:(const char *)arg1;
 
-- (id)components;
+- (int)compare:(id)arg1;
 - (id)description;
-- (int)dateType;
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3;
+- (id)components;
+- (int)day;
 - (int)month;
 - (int)year;
-- (int)day;
-- (int)compare:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)icsString;
+- (int)dateType;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3;
 
 @end

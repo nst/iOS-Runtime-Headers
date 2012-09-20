@@ -10,11 +10,11 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (void)reset;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)generateGroupId;
 - (void)addBuild:(id)arg1 order:(unsigned int)arg2;
 - (id)buildOrderMap;
-- (unsigned int)generateGroupId;
 
 @end

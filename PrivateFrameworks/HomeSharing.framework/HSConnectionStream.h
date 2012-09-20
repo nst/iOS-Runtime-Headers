@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface HSConnectionStream : NSObject  {
     struct __CFReadStream { } *_readStream;
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (void)sendCFHTTPMessage:(struct __CFHTTPMessage { }*)arg1 withResponseHandler:(id)arg2;
+- (void)dealloc;
+- (id)init;
 
 @end

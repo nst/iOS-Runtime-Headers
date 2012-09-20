@@ -17,18 +17,18 @@
 @property(copy) NSNumber * reason;
 
 
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setPeerPushToken:(id)arg1;
-- (id)peerPushToken;
+- (id)bagKey;
 - (void)setSelfPushToken:(id)arg1;
 - (id)selfPushToken;
 - (id)requiredKeys;
+- (id)peerPushToken;
+- (void)setPeerPushToken:(id)arg1;
 - (void)setReason:(id)arg1;
-- (id)bagKey;
-- (id)reason;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setPeerID:(id)arg1;
 - (id)peerID;
+- (id)reason;
+- (id)messageBody;
 
 @end

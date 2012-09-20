@@ -11,9 +11,9 @@
 @property(copy) NSString * dateTime;
 
 
-- (id)cite;
-- (void)setCite:(id)arg1;
-- (id)dateTime;
 - (void)setDateTime:(id)arg1;
+- (id)dateTime;
+- (void)setCite:(id)arg1;
+- (id)cite;
 
 @end

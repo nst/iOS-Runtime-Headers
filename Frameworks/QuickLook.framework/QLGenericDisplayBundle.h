@@ -15,13 +15,12 @@
 @property(retain) NSError * error;
 
 
-- (void)setError:(id)arg1;
-- (id)error;
-- (void)loadView;
-- (void)_loadPreviewItemInfos;
 - (void)_showLoadingProgress:(BOOL)arg1;
-- (void)loadWithHints:(id)arg1;
-- (void)prepareForSlidingIn:(id)arg1;
+- (void)_loadPreviewItemInfos;
 - (void)_relayout;
+- (void)loadWithHints:(id)arg1;
+- (void)setError:(id)arg1;
+- (void)loadView;
+- (id)error;
 
 @end

@@ -17,11 +17,11 @@
 - (void)dealloc;
 - (void)end;
 - (void)setProgress:(double)arg1;
-- (id)initWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3 inContext:(id)arg4;
-- (id)parentStage;
-- (id)initBranchWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3 inContext:(id)arg4;
-- (double)currentPosition;
 - (id)initRootStageInContext:(id)arg1;
+- (double)currentPosition;
 - (void)advanceProgress:(double)arg1;
+- (id)initBranchWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3 inContext:(id)arg4;
+- (id)parentStage;
+- (id)initWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3 inContext:(id)arg4;
 
 @end

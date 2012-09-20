@@ -8,15 +8,15 @@
 }
 
 @property(copy) NSURL * phoneLogId;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)callStarted;
 + (id)callStartedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)callStarted;
 
 - (id)groupIdentifier;
-- (id)phoneLogId;
 - (void)setPhoneLogId:(id)arg1;
+- (id)phoneLogId;
 - (id)encodedClassName;
 
 @end

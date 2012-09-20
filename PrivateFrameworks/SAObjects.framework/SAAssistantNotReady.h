@@ -9,13 +9,13 @@
 
 @property(copy) NSString * language;
 
-+ (id)assistantNotReady;
 + (id)assistantNotReadyWithDictionary:(id)arg1 context:(id)arg2;
++ (id)assistantNotReady;
 
 - (id)groupIdentifier;
 - (void)setLanguage:(id)arg1;
 - (id)language;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

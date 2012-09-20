@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class NSDate, NSString, NSDictionary, IUUserNotificationAlert, UILocalNotification;
+@class NSDate, NSString, NSObject<OS_dispatch_queue>, NSDictionary, IUUserNotificationAlert, UILocalNotification;
 
 @interface IURentalData : NSObject  {
     IUUserNotificationAlert *_alert;
     int _deferRentalEventsCount;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_downloadIdentifier;
     BOOL _failed;
     NSDictionary *_fileProcessorInfo;
@@ -32,14 +32,14 @@
 
 + (BOOL)_shouldReadDemoRentalInfoForMediaItem:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
+- (id)expirationDate;
 - (id)downloadIdentifier;
 - (id)initWithMediaItem:(id)arg1;
 - (BOOL)isPlaying;
-- (void)setLoaded:(BOOL)arg1;
-- (id)expirationDate;
+- (void)dealloc;
+- (id)init;
 - (void)setFailed:(BOOL)arg1;
+- (id)mediaPath;
 - (void)setFileProcessorInfo:(id)arg1;
 - (void)resetForReason:(unsigned int)arg1;
 - (id)nextEventDate;
@@ -62,11 +62,11 @@
 - (void)performDeferredLocalNotifications;
 - (void)_setFileProcessorInfo:(id)arg1;
 - (void)_loadDemoRentalInfoFromMediaItem:(id)arg1;
+- (unsigned long long)trackPersistentIdentifier;
 - (void)endDeferringRentalEvents;
 - (void)beginDeferringRentalEvents;
 - (id)_expirationDate;
-- (unsigned long long)trackPersistentIdentifier;
 - (int)rentalState;
-- (id)mediaPath;
+- (void)setLoaded:(BOOL)arg1;
 
 @end

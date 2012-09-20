@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIImage, MPMediaItemImageRequest, UIAlertView, IUVideoTitleView, MPImageCache, MPMediaItem, NSSet, IUVideoPartListViewController, MPMediaDownloadObserver, IUWildcatVideoDetailView, IUiPodSegmentedViewController, <IUWildcatVideoDetailViewControllerDelegate>;
+@class UIImage, MPMediaItemImageRequest, UIAlertView, IUVideoTitleView, MPImageCache, MPMediaItem, NSSet, IUWildcatVideoDetailView, IUVideoPartListViewController, MPMediaDownloadObserver, IUiPodSegmentedViewController, <IUWildcatVideoDetailViewControllerDelegate>;
 
 @interface IUWildcatVideoDetailViewController : IUiPodViewController <IUSegmentedViewControllerDelegate, IUWildcatVideoDetailViewDelegate, UIAlertViewDelegate, IUVideoPartListViewControllerDelegate> {
     <IUWildcatVideoDetailViewControllerDelegate> *_delegate;
@@ -26,6 +26,7 @@
 @property <IUWildcatVideoDetailViewControllerDelegate> * delegate;
 @property(readonly) MPMediaItem * firstMediaItem;
 @property unsigned long long representativeTrackPersistentUID;
+@property(readonly) BOOL hasAtLeastOneItem;
 @property(readonly) IUWildcatVideoDetailView * backstopView;
 @property(readonly) IUiPodSegmentedViewController * segmentedViewController;
 @property(retain) UIImage * preloadedSnapshotImage;
@@ -33,20 +34,20 @@
 
 + (Class)backstopViewClass;
 
-- (id)init;
-- (void)dealloc;
 - (void)_backButtonAction:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)alertViewCancel:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)delegate;
 - (void)reloadData;
-- (void)setDelegate:(id)arg1;
+- (BOOL)hasAtLeastOneItem;
 - (void)foldingTransitionViewDidTakeSnapshot;
 - (void)foldingTransitionViewWillTakeSnapshot;
 - (BOOL)shouldShowReflection;
@@ -59,9 +60,11 @@
 - (void)_reallyPlayMovie;
 - (id)preloadedSnapshotImage;
 - (id)_transitionImageWithPosterAspectRatio;
-- (void)_updateForDownloadProgress:(double)arg1 currentlyPlayable:(BOOL)arg2;
 - (id)_representativeMediaItem;
+- (void)_updateForDownloadProgress:(double)arg1 currentlyPlayable:(BOOL)arg2;
+- (id)_nonSelectionPlaybackMediaItem;
 - (BOOL)_isDownloadInProgress;
+- (BOOL)_hasListOfMediaItems;
 - (struct CGSize { float x1; float x2; })_posterImageCacheRequestSize;
 - (void)_generatePreloadedSnapshotImageFromDefaultTrack;
 - (void)_setupDownloadObserver;

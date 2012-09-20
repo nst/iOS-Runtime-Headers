@@ -2,24 +2,30 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSError, NSArray, AVAudioSessionMediaPlayerOnly, AVWeakReference, AVPlayerItem, NSMutableSet, CALayer, NSMutableDictionary, AVPropertyStorage;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class AVWeakReference, AVPropertyStorage, NSError, AVAudioSessionMediaPlayerOnly, AVPlayerItem, NSMutableSet, AVPixelBufferAttributeMediator, NSArray, NSObject<OS_dispatch_queue>, NSDictionary, NSString, NSMutableDictionary;
 
 @interface AVPlayerInternal : NSObject  {
     AVWeakReference *weakReference;
     struct OpaqueFigPlayer { } *figPlayer;
+    struct OpaqueCMClock { } *figMasterClock;
     AVPropertyStorage *propertyStorage;
+    AVPixelBufferAttributeMediator *pixelBufferAttributeMediator;
     NSMutableDictionary *pendingFigPlayerProperties;
     AVPlayerItem *currentItem;
     AVPlayerItem *lastItem;
     struct OpaqueFigPlaybackItem { } *figPlaybackItemToIdentifyNextCurrentItem;
     NSMutableSet *items;
-    CALayer *caLayer;
+    NSObject<OS_dispatch_queue> *layersQ;
+    NSMutableSet *caLayers;
+    NSString *externalPlaybackVideoGravity;
     int status;
     NSError *error;
-    struct dispatch_queue_s { } *stateDispatchQueue;
+    NSObject<OS_dispatch_queue> *stateDispatchQueue;
     NSArray *displaysUsedForPlayback;
-    int figPlayerType;
-    BOOL waitsUntilItemsAreReadyForInspectionBeforeEnqueuingIntoFigPlayer;
     BOOL needsToCreateFigPlayer;
     BOOL logPerformanceData;
     BOOL reevaluateBackgroundPlayback;
@@ -27,6 +33,16 @@
     BOOL hadAssociatedOnscreenPlayerLayerWhenSuspended;
     BOOL iapdExtendedModeIsActive;
     AVAudioSessionMediaPlayerOnly *audioSessionMediaPlayerOnly;
+    struct OpaqueFigSimpleMutex { } *prerollIDMutex;
+    int nextPrerollIDToGenerate;
+    int pendingPrerollID;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id prerollCompletionHandler;
+
+    NSObject<OS_dispatch_queue> *subtitleQueue;
+    NSDictionary *currentSubtitlesPayload;
 }
 
 

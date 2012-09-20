@@ -12,10 +12,10 @@
 @property(retain) ISPropertyListProvider * dataProvider;
 
 
-- (void)dealloc;
-- (void)run;
 - (id)initWithPropertyList:(id)arg1;
+- (void)dealloc;
 - (id)dataProvider;
 - (void)setDataProvider:(id)arg1;
+- (void)run;
 
 @end

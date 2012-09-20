@@ -7,6 +7,5 @@
 
 + (id)mimeTypesToFileExtensions;
 
-- (BOOL)shouldTranscodeForMMS;
 
 @end

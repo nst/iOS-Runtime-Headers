@@ -12,7 +12,7 @@
 
 - (void)dealloc;
 - (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
-- (BOOL)validate:(id*)arg1;
 - (id)httpMethod;
+- (BOOL)validate:(id*)arg1;
 
 @end

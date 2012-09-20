@@ -7,8 +7,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)getObjectForCStringKey:(char *)arg1;
 - (void)setObject:(id)arg1 forCStringKey:(char *)arg2;
 

@@ -28,17 +28,15 @@
 
 @property struct { double x1; double x2; } coordinate;
 @property(retain) id context;
-@property(readonly) NSString * title;
-@property(readonly) NSString * subtitle;
 
 
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
-- (id)context;
 - (void)setContext:(id)arg1;
 - (id)title;
+- (id)context;
 - (void)setTitle:(id)arg1;
 - (struct { double x1; double x2; })coordinate;
 - (void)clearAnimationInformation;

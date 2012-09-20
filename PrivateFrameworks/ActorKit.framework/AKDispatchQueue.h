@@ -12,17 +12,17 @@
     NSConditionLock *_runStateLock;
 }
 
-+ (id)currentRunLoopDispatchQueue;
-+ (id)migrantDispatchQueue;
 + (id)newThreadRunLoopDispatchQueue;
++ (id)migrantDispatchQueue;
++ (id)currentRunLoopDispatchQueue;
 
-- (id)init;
 - (void)dealloc;
-- (union qed_queue_u { }*)queue;
+- (id)init;
 - (void)stop;
 - (void)start;
-- (void)_afterStartedAddRunLoopSourceTo:(id)arg1;
-- (void)runThreadDispatchQueue:(id)arg1;
+- (union qed_queue_u { }*)queue;
 - (void)switchToState:(id)arg1;
+- (void)runThreadDispatchQueue:(id)arg1;
+- (void)_afterStartedAddRunLoopSourceTo:(id)arg1;
 
 @end

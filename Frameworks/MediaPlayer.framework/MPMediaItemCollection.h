@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, NSArray;
+@class MPMediaItem, MPMediaQuery, NSArray;
 
 @interface MPMediaItemCollection : MPMediaEntity  {
     struct MPMediaItemCollectionInternal { 
         NSArray *_items; 
+        MPMediaQuery *_itemsQuery; 
         unsigned int _itemsCount; 
         MPMediaItem *_representativeItem; 
         int _containedMediaTypes; 
@@ -17,26 +18,29 @@
 @property(readonly) MPMediaItem * representativeItem;
 @property(readonly) unsigned int count;
 @property(readonly) int mediaTypes;
-@property struct MPMediaItemCollectionInternal { id x1; unsigned int x2; id x3; int x4; } _internal;
+@property struct MPMediaItemCollectionInternal { id x1; id x2; unsigned int x3; id x4; int x5; } _internal;
 
 + (id)representativePersistentIDPropertyForGroupingType:(int)arg1;
 + (id)sortTitlePropertyForGroupingType:(int)arg1;
 + (id)collectionWithItems:(id)arg1;
 + (id)titlePropertyForGroupingType:(int)arg1;
 
-- (unsigned int)count;
-- (id)init;
-- (void)dealloc;
+- (id)representativeItem;
+- (BOOL)hasDownloadableItem;
+- (BOOL)hasDownloadingItem;
 - (id)itemsQuery;
-- (void)set_internal:(struct MPMediaItemCollectionInternal { id x1; unsigned int x2; id x3; int x4; })arg1;
-- (struct MPMediaItemCollectionInternal { id x1; unsigned int x2; id x3; int x4; })_internal;
+- (id)initWithItemsQuery:(id)arg1;
+- (void)set_internal:(struct MPMediaItemCollectionInternal { id x1; id x2; unsigned int x3; id x4; int x5; })arg1;
+- (struct MPMediaItemCollectionInternal { id x1; id x2; unsigned int x3; id x4; int x5; })_internal;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
 - (int)mediaTypes;
 - (id)initWithItems:(id)arg1;
 - (id)items;
 - (id)_init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)representativeItem;
 - (unsigned int)indexOfMostLikelyItemForStartingPlayback;
 
 @end

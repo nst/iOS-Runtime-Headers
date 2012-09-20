@@ -8,8 +8,8 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long)_cfTypeID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (unsigned long)_cfTypeID;
 
 @end

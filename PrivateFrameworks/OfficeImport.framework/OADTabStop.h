@@ -11,7 +11,7 @@
 - (unsigned int)hash;
 - (int)position;
 - (void)setPosition:(int)arg1;
-- (int)align;
 - (void)setAlign:(int)arg1;
+- (int)align;
 
 @end

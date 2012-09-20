@@ -10,6 +10,10 @@
 
 + (id)sharedHTTPCookieStorage;
 
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (void)setCookie:(id)arg1;
 - (void)setCookieAcceptPolicy:(unsigned int)arg1;
 - (void)setCookies:(id)arg1 forURL:(id)arg2 mainDocumentURL:(id)arg3;
 - (id)cookiesForURL:(id)arg1;
@@ -24,9 +28,5 @@
 - (id)_initWithSharedStorage;
 - (void)_readAcceptCookiesPreference;
 - (struct OpaqueCFHTTPCookieStorage { }*)_cookieStorage;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (void)setCookie:(id)arg1;
 
 @end

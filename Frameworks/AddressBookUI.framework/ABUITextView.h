@@ -23,36 +23,36 @@
     ABSwellTextView *_parent;
 }
 
-@property struct CGSize { float width; float height; } shadowOffset;
-@property(retain) UIColor * shadowColor;
-@property BOOL disallowsSetContentOffset;
-@property(retain) UIColor * highlightedTextColor;
-@property(getter=isHighlighted) BOOL highlighted;
 @property ABSwellTextView * parent;
+@property(getter=isHighlighted) BOOL highlighted;
+@property(retain) UIColor * highlightedTextColor;
+@property(retain) UIColor * shadowColor;
+@property struct CGSize { float x1; float x2; } shadowOffset;
+@property BOOL disallowsSetContentOffset;
 
 
 - (void)dealloc;
-- (BOOL)disallowsSetContentOffset;
-- (void)_updateStylesheet;
-- (void)_secretSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDisallowsSetContentOffset:(BOOL)arg1;
 - (void)setHighlightedTextColor:(id)arg1;
 - (id)highlightedTextColor;
 - (void)_endPinningInputViews;
 - (void)_beginPinningInputViews;
+- (id)shadowColor;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShadowColor:(id)arg1;
+- (void)setTextColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })shadowOffset;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)becomeFirstResponder;
-- (void)setTextColor:(id)arg1;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)setShadowColor:(id)arg1;
-- (id)shadowColor;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)parent;
+- (BOOL)disallowsSetContentOffset;
+- (void)_secretSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDisallowsSetContentOffset:(BOOL)arg1;
+- (void)_updateStylesheet;
 - (void)setParent:(id)arg1;
+- (id)parent;
 
 @end

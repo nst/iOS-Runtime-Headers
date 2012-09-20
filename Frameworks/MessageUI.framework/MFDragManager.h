@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFDragDestination>, NSMutableArray, MFMailComposeView, UIView, UIGestureRecognizer, <MFDraggableItem>, MFGobblerGestureRecognizer, NSMutableDictionary, NSTimer;
+@class <MFDragDestination>, UIWindow, NSMutableArray, NSTimer, UIView, UIGestureRecognizer, <MFDraggableItem>, MFGobblerGestureRecognizer, NSMutableDictionary;
 
 @interface MFDragManager : NSObject <UIGestureRecognizerDelegate> {
+    NSMutableArray *_dragContextValues;
     NSMutableArray *_dragDestinations;
     NSMutableArray *_dragSources;
     NSMutableDictionary *_gestureRecognizersForSource;
@@ -13,8 +14,8 @@
     UIView *_draggedItemView;
     <MFDragDestination> *_currentDestination;
     UIGestureRecognizer *_currentGestureBeingProcessed;
+    UIWindow *_dragWindow;
     MFGobblerGestureRecognizer *_gobblerGestureRecognizer;
-    MFMailComposeView *_currentlyDisplayedComposeView;
     NSTimer *_scrollTimer;
     struct CGPoint { 
         float x; 
@@ -39,26 +40,23 @@
     BOOL _scrollingForDrag;
 }
 
-@property MFMailComposeView * currentlyDisplayedComposeView;
-
 + (id)sharedInstance;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (void)initialize;
 
-- (id)init;
 - (void)dealloc;
-- (void)addDragDestination:(id)arg1;
-- (void)removeDragDestination:(id)arg1;
-- (void)addDragSource:(id)arg1;
-- (void)removeDragSource:(id)arg1;
-- (void)_handleLongPress:(id)arg1;
-- (void)_processGestureUpdate;
-- (void)_cleanUpAfterDragCompleted;
-- (void)_scrollViewIfNecessary;
-- (void)cancelCurrentDragOperation;
-- (void)setCurrentlyDisplayedComposeView:(id)arg1;
-- (id)currentlyDisplayedComposeView;
+- (id)init;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (void)removeDragSource:(id)arg1;
+- (void)addDragSource:(id)arg1;
+- (void)removeDragDestination:(id)arg1;
+- (void)addDragDestination:(id)arg1;
+- (void)_scrollViewIfNecessary;
+- (void)_cleanUpAfterDragCompleted;
+- (void)_processGestureUpdate;
+- (void)enumerateDragContextsUsingBlock:(id)arg1;
+- (void)_handleLongPress:(id)arg1;
+- (void)cancelCurrentDragOperation;
+- (void)removeDragContext:(id)arg1;
+- (void)addDragContext:(id)arg1;
 
 @end

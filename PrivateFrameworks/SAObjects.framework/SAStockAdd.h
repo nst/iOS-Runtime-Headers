@@ -17,16 +17,16 @@
 + (id)addWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)stockReferences;
-- (void)setStockReferences:(id)arg1;
-- (id)stocks;
-- (void)setStocks:(id)arg1;
-- (id)tickerSymbol;
 - (void)setTickerSymbol:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)tickerSymbol;
+- (void)setStocks:(id)arg1;
+- (id)stocks;
+- (void)setStockReferences:(id)arg1;
+- (id)stockReferences;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 - (id)companyName;
 - (void)setCompanyName:(id)arg1;
 

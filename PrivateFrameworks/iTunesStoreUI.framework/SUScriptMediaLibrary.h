@@ -16,6 +16,8 @@
 @property(readonly) NSString * itemPropertyDiscNumber;
 @property(readonly) NSString * itemPropertyGenre;
 @property(readonly) NSString * itemPropertyIsCompilation;
+@property(readonly) NSString * itemPropertyIsHD;
+@property(readonly) NSString * itemPropertyIsRental;
 @property(readonly) NSString * itemPropertyLastPlayedDate;
 @property(readonly) NSString * itemPropertyLyrics;
 @property(readonly) NSString * itemPropertyMediaType;
@@ -55,13 +57,11 @@
 @property(readonly) NSString * queryPresetTVShows;
 @property(readonly) NSString * queryPresetVideoPodcasts;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (id)attributeKeys;
+- (void)_connectNativeObject;
 - (id)playerTypeIPod;
 - (id)playerTypeApplication;
 - (id)mediaTypeVideoPodcast;
@@ -87,6 +87,8 @@
 - (id)itemPropertyMediaType;
 - (id)itemPropertyLyrics;
 - (id)itemPropertyLastPlayedDate;
+- (id)itemPropertyIsRental;
+- (id)itemPropertyIsHD;
 - (id)itemPropertyIsCompilation;
 - (id)itemPropertyGenre;
 - (id)itemPropertyDiscNumber;
@@ -95,12 +97,18 @@
 - (id)itemPropertyArtist;
 - (id)itemPropertyAlbumTitle;
 - (id)itemPropertyAlbumArtist;
+- (id)playVideoWithAdamID:(id)arg1;
+- (id)playSongsWithAdamIDs:(id)arg1;
+- (id)playSongsInCollectionWithAdamID:(id)arg1 firstItemID:(id)arg2;
 - (id)musicPlayerForType:(id)arg1;
 - (id)makeQueryWithPreset:(id)arg1;
 - (id)makePickerWithMediaTypes:(id)arg1;
 - (id)makeCollectionWithItems:(id)arg1;
+- (void)getProperties:(id)arg1 ofAdamIDs:(id)arg2 withCompletionFunction:(id)arg3;
 - (id)containsAdamIDs:(id)arg1;
 - (id)containsAdamID:(id)arg1;
+- (void)_launchMusicApp;
+- (void)_launchMusicAppAfterPlayback:(id)arg1 firstItem:(id)arg2;
 - (id)queryPresetVideoPodcasts;
 - (id)queryPresetTVShows;
 - (id)queryPresetMusicVideos;
@@ -114,10 +122,10 @@
 - (id)queryPresetSongs;
 - (id)queryPresetArtists;
 - (id)queryPresetAlbums;
-- (id)_copyQueryWithPreset:(id)arg1;
 - (BOOL)_isRestricted;
-- (void)_loadNativeObject;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)dealloc;
+- (id)attributeKeys;
 
 @end

@@ -9,21 +9,21 @@
     BOOL _nonChaperonePairingAllowed;
 }
 
-@property(readonly) BOOL nonChaperonePairingAllowed;
 @property(readonly) NSData * pairingCertificateData;
+@property(readonly) BOOL nonChaperonePairingAllowed;
 
-+ (id)typeStrings;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)typeStrings;
 
 - (id)description;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (BOOL)nonChaperonePairingAllowed;
 - (id)pairingCertificateData;
-- (id)subtitle1Label;
-- (id)subtitle2Label;
 - (id)subtitle2Description;
+- (id)subtitle2Label;
+- (id)subtitle1Label;
 - (id)subtitle1Description;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 
 @end

@@ -16,31 +16,31 @@
 @property(copy) NSString * rev;
 @property(copy) NSString * target;
 @property(copy) NSString * type;
-@property(retain,readonly) DOMStyleSheet * sheet;
-@property(copy,readonly) NSURL * absoluteLinkURL;
+@property(readonly) DOMStyleSheet * sheet;
+@property(readonly) NSURL * absoluteLinkURL;
 
 
 - (void)setTarget:(id)arg1;
 - (id)target;
-- (void)setDisabled:(BOOL)arg1;
-- (BOOL)disabled;
+- (id)type;
 - (BOOL)_mediaQueryMatches;
 - (BOOL)_mediaQueryMatchesForOrientation:(int)arg1;
-- (id)absoluteLinkURL;
-- (id)type;
-- (void)setType:(id)arg1;
-- (void)setMedia:(id)arg1;
-- (id)sheet;
-- (void)setHref:(id)arg1;
-- (id)hreflang;
-- (void)setHreflang:(id)arg1;
 - (id)rel;
-- (void)setRel:(id)arg1;
-- (id)rev;
+- (id)absoluteLinkURL;
+- (void)setDisabled:(BOOL)arg1;
+- (BOOL)disabled;
+- (void)setType:(id)arg1;
+- (id)sheet;
+- (void)setMedia:(id)arg1;
 - (void)setRev:(id)arg1;
-- (id)charset;
+- (id)rev;
+- (void)setRel:(id)arg1;
+- (void)setHreflang:(id)arg1;
+- (id)hreflang;
+- (void)setHref:(id)arg1;
 - (void)setCharset:(id)arg1;
-- (id)href;
+- (id)charset;
 - (id)media;
+- (id)href;
 
 @end

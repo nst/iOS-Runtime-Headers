@@ -20,18 +20,18 @@
 
 
 - (int)accountType;
-- (id)constraints;
 - (void)setAccountType:(int)arg1;
 - (void).cxx_destruct;
-- (void)setConstraints:(id)arg1;
+- (void)didTurnIntoFault;
+- (id)constraints;
 - (void)setPathToConstraintsPlist:(id)arg1;
 - (id)pathToConstraintsPlist;
 - (id)storeForExternalId:(id)arg1;
-- (void)didTurnIntoFault;
 - (BOOL)validateDefaultStore:(id*)arg1 error:(id*)arg2;
 - (id)basicAccountIdentifier;
 - (BOOL)shouldMarkNotesAsDeleted;
 - (id)collectionInfo;
 - (id)predicateForNotes;
+- (void)setConstraints:(id)arg1;
 
 @end

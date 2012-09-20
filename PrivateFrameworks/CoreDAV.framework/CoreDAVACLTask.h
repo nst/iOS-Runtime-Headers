@@ -12,13 +12,13 @@
 @property(retain) NSArray * accessControlEntities;
 
 
+- (id)initWithURL:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)initWithAccessControlEntities:(id)arg1 atURL:(id)arg2;
 - (void)setAccessControlEntities:(id)arg1;
 - (id)accessControlEntities;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)initWithURL:(id)arg1;
 - (id)httpMethod;
 - (id)requestBody;
 

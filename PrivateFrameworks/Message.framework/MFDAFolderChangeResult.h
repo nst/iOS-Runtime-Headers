@@ -11,18 +11,19 @@
     int _statusCode;
 }
 
-@property(readonly) NSString * folderName;
-@property(readonly) NSString * folderID;
-@property(readonly) NSError * error;
 @property(readonly) int statusCode;
+@property(readonly) NSError * error;
+@property(readonly) NSString * folderID;
+@property(readonly) NSString * folderName;
 
 
-- (id)initWithStatusCode:(int)arg1 error:(id)arg2 folderID:(id)arg3 folderName:(id)arg4;
-- (id)folderID;
-- (id)folderName;
-- (BOOL)wasSuccessful;
+- (id)description;
 - (void)dealloc;
-- (id)error;
 - (int)statusCode;
+- (id)initWithStatusCode:(int)arg1 error:(id)arg2 folderID:(id)arg3 folderName:(id)arg4;
+- (BOOL)wasSuccessful;
+- (id)folderName;
+- (id)folderID;
+- (id)error;
 
 @end

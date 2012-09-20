@@ -12,13 +12,13 @@
 + (void)initialize;
 + (id)currentReply;
 
-- (id)invocation;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setReturnValue:(void*)arg1;
-- (void)becomeCurrentReply;
-- (void)resignCurrentReply;
-- (id)initWithInvocation:(id)arg1 andBlockingLock:(id)arg2;
 - (void)sendReply;
+- (id)invocation;
+- (void)resignCurrentReply;
+- (void)becomeCurrentReply;
+- (id)initWithInvocation:(id)arg1 andBlockingLock:(id)arg2;
 
 @end

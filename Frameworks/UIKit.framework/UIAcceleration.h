@@ -15,13 +15,14 @@
 @property double z;
 
 
+- (double)timestamp;
+- (void)setTimestamp:(double)arg1;
+- (id)description;
 - (void)setZ:(double)arg1;
 - (double)z;
 - (void)setY:(double)arg1;
 - (double)y;
 - (void)setX:(double)arg1;
 - (double)x;
-- (double)timestamp;
-- (void)setTimestamp:(double)arg1;
 
 @end

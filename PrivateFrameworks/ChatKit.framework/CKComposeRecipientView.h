@@ -2,65 +2,87 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableDictionary, NSError, UIActionSheet, CKService;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class IMService, NSMutableDictionary, UIActionSheet;
 
 @interface CKComposeRecipientView : _MFComposeRecipientView  {
-    CKService *_preferredService;
+    IMService *_preferredService;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _sendBlock;
+
+    BOOL _autoSendUponResolving;
+    BOOL _atomizedForAutoSend;
+    BOOL _resolvedForAutoSend;
     BOOL _canSend;
-    NSError *_serviceError;
+    int _serviceError;
     BOOL _alreadyShowedAlertForTooManyRecipientsError;
     NSMutableDictionary *_recipientAvailabilityTimeoutTimers;
     UIActionSheet *_actionSheet;
 }
 
-@property(retain) UIActionSheet * actionSheet;
-@property(retain) NSError * serviceError;
+@property(retain) IMService * preferredService;
 @property BOOL canSend;
-@property(retain) CKService * preferredService;
+@property int serviceError;
+@property(retain) UIActionSheet * actionSheet;
 
 
-- (void)dealloc;
-- (id)actionSheet;
-- (void)setActionSheet:(id)arg1;
-- (void)removeAddresses;
-- (BOOL)_addable;
-- (void)removeRecipient:(id)arg1;
-- (void)selectComposeRecipientAtom:(id)arg1;
-- (void)removeAddressAtIndex:(int)arg1;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (void)addRecipient:(id)arg1;
-- (void)reflow;
-- (int)atomStyleForRecipient:(id)arg1;
-- (BOOL)canSend;
-- (void)handleMadridServiceActiveAccountsChangedNotification:(id)arg1;
-- (void)handlePreferredServiceChangedNotification:(id)arg1;
-- (void)stopCheckingRecipientAvailabilityAndRemoveAllTimers;
-- (void)_showActionSheetForAtom:(id)arg1 animated:(BOOL)arg2;
-- (void)setPreferredService:(id)arg1;
-- (void)setCanSend:(BOOL)arg1;
-- (void)setServiceError:(id)arg1;
-- (id)serviceError;
-- (void)removeAvailabilityTimeoutTimerForRecipient:(id)arg1;
-- (void)_checkAvailabilityOfAlternateAddressesForMFComposeRecipient:(id)arg1;
-- (void)startAvailabilityTimeoutTimerForRecipient:(id)arg1;
-- (void)addRecipient:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)_addRecipient:(id)arg1;
-- (void)_showOneTimeErrorAlertForTooManyRecipientsUponAddIfNecessary;
-- (void)_addRecipient:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)_refreshActionSheet;
-- (id)_alternateAddressesForMFComposeRecipient:(id)arg1 onlyIMessageAble:(BOOL)arg2;
-- (void)handleRecipientAvailabilityTimeout:(id)arg1;
-- (void)_showErrorAlertForTooManyRecipientsUponAdd;
-- (id)_recipientCausingTooManyRecipientsError;
-- (void)_showErrorAlertForTooManyRecipientsUponSend;
-- (void)showErrorAlertForTooManyRecipientsUponSendIfNecessary;
-- (BOOL)canInsertMoreRecipients;
-- (id)preferredService;
-- (void)updateRecipientLimit;
-- (void)stopCheckingRecipientAvailability;
 - (void)reset;
+- (void)dealloc;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (id)customOverlayContainer;
+- (void)textFieldDidResignFirstResponder:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)removeRecipient:(id)arg1;
+- (BOOL)canSend;
+- (BOOL)_addable;
+- (int)atomStyleForRecipient:(id)arg1;
+- (void)_showErrorAlertForTooManyRecipientsUponSend;
+- (id)_recipientCausingTooManyRecipientsError;
+- (void)_showErrorAlertForTooManyRecipientsUponAdd;
+- (int)_calculateRecipientLimit;
+- (void)_stopCheckingRecipientAvailability;
+- (void)handleRecipientAvailabilityTimeout:(id)arg1;
+- (id)_alternateAddressesForMFComposeRecipient:(id)arg1 onlyIMessageAble:(BOOL)arg2;
+- (BOOL)_hasAddressWithAvailability:(int)arg1;
+- (void)_refreshActionSheet;
+- (void)_addRecipient:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)_showOneTimeErrorAlertForTooManyRecipientsUponAddIfNecessary;
+- (BOOL)_serviceErrorIsForTooManyRecipients;
+- (void)_addRecipient:(id)arg1;
+- (void)addRecipient:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)startAvailabilityTimeoutTimerForRecipient:(id)arg1;
+- (void)_checkAvailabilityOfAlternateAddressesForMFComposeRecipient:(id)arg1;
+- (void)removeAvailabilityTimeoutTimerForRecipient:(id)arg1;
+- (int)serviceError;
+- (int)iMessageAvailabilityForRecipient:(id)arg1;
+- (BOOL)hasFailedAtoms;
+- (void)_reallyAutoSendIfReady;
+- (void)_autoSendIfReady;
+- (BOOL)hasPendingAtoms;
+- (void)setPreferredService:(id)arg1;
+- (void)setServiceError:(int)arg1;
+- (void)setCanSend:(BOOL)arg1;
+- (void)_showActionSheetForAtom:(id)arg1 animated:(BOOL)arg2;
+- (void)handlePreferredServiceChangedNotification:(id)arg1;
+- (void)setActionSheet:(id)arg1;
+- (id)actionSheet;
+- (BOOL)canInsertMoreRecipients;
+- (void)showErrorAlertForTooManyRecipientsUponSendIfNecessary;
+- (void)stopCheckingRecipientAvailabilityAndRemoveAllTimers;
+- (void)removeAddresses;
+- (void)atomizeAndInvokeBlock:(id)arg1;
+- (id)preferredService;
+- (BOOL)finishedComposingRecipients;
+- (void)updateRecipientLimit;
+- (void)selectComposeRecipientAtom:(id)arg1;
+- (void)addRecipient:(id)arg1;
+- (void)removeAddressAtIndex:(int)arg1;
+- (void)reflow;
 
 @end

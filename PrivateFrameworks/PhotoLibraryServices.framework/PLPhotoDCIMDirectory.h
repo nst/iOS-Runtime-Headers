@@ -19,12 +19,10 @@
 }
 
 
-- (void)saveUserInfo;
-- (id)userInfoObjectForKey:(id)arg1;
-- (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
 - (id)userInfo;
 - (void)dealloc;
-- (id)nextAvailableDirectory;
+- (void)setHasChangedExternally:(BOOL)arg1;
+- (BOOL)hasChangedExternally;
 - (void)clearDCFDirectories;
 - (id)posterImagePath;
 - (void)countOfAllPhotos:(int*)arg1 andVideos:(int*)arg2 stopAfterFirst:(BOOL)arg3;
@@ -36,11 +34,13 @@
 - (id)miscPath;
 - (void)reloadUserInfo;
 - (id)dcimPath;
+- (void)saveUserInfo;
+- (id)userInfoObjectForKey:(id)arg1;
 - (void)unlockDirectory;
+- (id)nextAvailableDirectory;
 - (void)lockDirectory;
 - (id)countOfAllPhotosAndVideos;
 - (id)initWithDCIMPath:(id)arg1;
-- (void)setHasChangedExternally:(BOOL)arg1;
-- (BOOL)hasChangedExternally;
+- (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
 
 @end

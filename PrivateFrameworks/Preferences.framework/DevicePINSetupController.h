@@ -8,8 +8,8 @@
 
 
 - (BOOL)canBeShownFromSuspendedState;
-- (BOOL)usePopupStyle;
 - (BOOL)popupStyleIsModal;
+- (BOOL)usePopupStyle;
 - (BOOL)success;
 
 @end

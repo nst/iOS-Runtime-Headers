@@ -11,26 +11,19 @@
 @property(readonly) NSArray * mediaTypes;
 @property(retain) NSString * prompt;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)mediaTypes;
-- (void)setMediaTypes:(id)arg1;
-- (void)setPrompt:(id)arg1;
-- (id)prompt;
-- (id)attributeKeys;
 - (void)setAllowsPickingMultipleItems:(BOOL)arg1;
 - (BOOL)allowsPickingMultipleItems;
-- (void)_setAllowsPickingMultipleItems:(BOOL)arg1;
-- (BOOL)_allowsPickingMultipleItems;
-- (void)_setMediaTypes:(id)arg1;
-- (id)_copyMediaTypes;
 - (id)initWithMediaTypes:(id)arg1;
-- (void)_setPrompt:(id)arg1;
-- (id)_copyPrompt;
 - (id)newNativeViewController;
 - (void)setNativeViewController:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)mediaTypes;
+- (void)setPrompt:(id)arg1;
+- (id)prompt;
+- (id)attributeKeys;
 
 @end

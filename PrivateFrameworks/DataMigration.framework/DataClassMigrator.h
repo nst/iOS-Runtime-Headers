@@ -8,25 +8,25 @@
     NSDictionary *_context;
 }
 
+@property(retain) NSDictionary * context;
 @property(readonly) BOOL didRestoreFromBackup;
 @property(readonly) BOOL didMigrateBackupFromDifferentDevice;
 @property(readonly) BOOL didRestoreFromCloudBackup;
 @property(readonly) BOOL shouldPreserveSettingsAfterRestore;
 @property(readonly) BOOL wasPasscodeSetInBackup;
-@property(retain) NSDictionary * context;
 
 
 - (void)dealloc;
-- (id)context;
-- (void)setContext:(id)arg1;
-- (BOOL)didRestoreFromBackup;
-- (BOOL)didMigrateBackupFromDifferentDevice;
-- (BOOL)didRestoreFromCloudBackup;
-- (BOOL)shouldPreserveSettingsAfterRestore;
-- (BOOL)wasPasscodeSetInBackup;
-- (id)dataClassName;
-- (BOOL)performMigration;
-- (float)estimatedDuration;
 - (float)migrationProgress;
+- (void)setContext:(id)arg1;
+- (id)context;
+- (float)estimatedDuration;
+- (BOOL)performMigration;
+- (id)dataClassName;
+- (BOOL)wasPasscodeSetInBackup;
+- (BOOL)shouldPreserveSettingsAfterRestore;
+- (BOOL)didRestoreFromCloudBackup;
+- (BOOL)didMigrateBackupFromDifferentDevice;
+- (BOOL)didRestoreFromBackup;
 
 @end

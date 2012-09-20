@@ -14,13 +14,13 @@
 @property(retain) id cellContext;
 
 
-- (void)dealloc;
-- (void)reset;
 - (id)caches;
 - (void)setCellContext:(id)arg1;
 - (id)initWithTableHeight:(float)arg1;
 - (id)cellContext;
 - (id)cacheForClass:(Class)arg1;
 - (void)resetLayoutCaches;
+- (void)reset;
+- (void)dealloc;
 
 @end

@@ -10,8 +10,8 @@
 
 + (BOOL)usesNowPlayingIndicator;
 
-- (void)dealloc;
 - (void)setQuery:(id)arg1;
+- (void)dealloc;
 - (id)detailMediaQueryForMediaItem:(id)arg1 baseQuery:(id)arg2;
 - (BOOL)isArtAStillFrameAtIndex:(unsigned int)arg1;
 - (void)setArtAStillFrame:(BOOL)arg1 atIndex:(unsigned int)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PrintKit.framework/PrintKit
  */
 
-@class NSFileHandle, NSMutableDictionary, NSMutableArray, <PKPrinterBrowserDelegate>;
+@class NSFileHandle, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSMutableArray, <PKPrinterBrowserDelegate>;
 
 @interface PKPrinterBrowser : NSObject  {
     <PKPrinterBrowserDelegate> *delegate;
@@ -16,40 +16,40 @@
     NSFileHandle *handle;
     unsigned char originalCellFlag;
     unsigned char originalWifiFlag;
-    struct dispatch_queue_s { } *printersQueue;
+    NSObject<OS_dispatch_queue> *printersQueue;
     NSMutableArray *pendingList;
 }
 
-@property(retain) NSMutableDictionary * printersByUUID;
-@property(retain) NSMutableArray * pendingList;
-@property(readonly) struct dispatch_queue_s { }* printersQueue;
 @property(retain) NSMutableDictionary * printers;
+@property(retain) NSMutableDictionary * printersByUUID;
 @property(retain) NSFileHandle * handle;
 @property <PKPrinterBrowserDelegate> * delegate;
+@property(readonly) NSObject<OS_dispatch_queue> * printersQueue;
+@property(retain) NSMutableArray * pendingList;
 
 + (id)browserWithDelegate:(id)arg1;
 
-- (void)dealloc;
-- (id)initWithDelegate:(id)arg1;
-- (void)setPrinters:(id)arg1;
-- (void)setPrintersByUUID:(id)arg1;
-- (void)handleNotification:(id)arg1;
-- (void)setPendingList:(id)arg1;
+- (void)queryCallback:(int)arg1 flags:(unsigned int)arg2 fullName:(const char *)arg3 rdlen:(unsigned short)arg4 rdata:(const void*)arg5;
+- (void)browseLocalCallback:(unsigned int)arg1 interface:(unsigned int)arg2 name:(const char *)arg3 regType:(const char *)arg4 domain:(const char *)arg5;
+- (void)browseCallback:(unsigned int)arg1 interface:(unsigned int)arg2 name:(const char *)arg3 regType:(const char *)arg4 domain:(const char *)arg5;
+- (void)reissueTXTQuery:(id)arg1;
+- (void)addQueryResult:(id)arg1 toPrinter:(id)arg2;
+- (void)addLimboPrinter:(id)arg1 local:(BOOL)arg2;
+- (id)printersQueue;
+- (id)pendingList;
+- (id)printersByUUID;
+- (void)removePrinter:(id)arg1;
 - (void)addBlockToPendingList:(id)arg1;
 - (id)printers;
-- (void)removePrinter:(id)arg1;
-- (id)printersByUUID;
-- (id)pendingList;
-- (struct dispatch_queue_s { }*)printersQueue;
-- (void)addLimboPrinter:(id)arg1 local:(BOOL)arg2;
-- (void)addQueryResult:(id)arg1 toPrinter:(id)arg2;
-- (void)reissueTXTQuery:(id)arg1;
-- (void)browseCallback:(unsigned int)arg1 interface:(unsigned int)arg2 name:(const char *)arg3 regType:(const char *)arg4 domain:(const char *)arg5;
-- (void)browseLocalCallback:(unsigned int)arg1 interface:(unsigned int)arg2 name:(const char *)arg3 regType:(const char *)arg4 domain:(const char *)arg5;
-- (void)queryCallback:(int)arg1 flags:(unsigned int)arg2 fullName:(const char *)arg3 rdlen:(unsigned short)arg4 rdata:(const void*)arg5;
+- (void)queryHardcodedPrinters;
+- (void)setPrintersByUUID:(id)arg1;
+- (void)setPrinters:(id)arg1;
+- (void)setPendingList:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)initWithDelegate:(id)arg1;
+- (void)dealloc;
 - (void)setHandle:(id)arg1;
 - (id)handle;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

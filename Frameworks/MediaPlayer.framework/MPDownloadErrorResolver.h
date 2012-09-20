@@ -11,9 +11,9 @@
 @property(readonly) MPMediaItem * mediaItem;
 
 
-- (void)dealloc;
 - (id)initWithMediaItem:(id)arg1;
 - (void)resolveError:(id)arg1;
 - (id)mediaItem;
+- (void)dealloc;
 
 @end

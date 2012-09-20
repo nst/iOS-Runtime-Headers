@@ -10,14 +10,20 @@
 }
 
 
-- (void)dealloc;
-- (id)initWithIconImageView:(id)arg1 imageView:(id)arg2;
-- (void)_clearAsStyleProvider;
-- (BOOL)cardPlaceholderImageShouldApplyMaskAndOverlay;
-- (id)cardPlaceholderPersonImage;
-- (id)cardPlaceholderCompanyImage;
-- (id)cardPhotoOverlayImage;
-- (id)cardPhotoMaskImage;
 - (void)clearWeakReferencesToObject:(id)arg1;
+- (void)dealloc;
+- (void)_clearAsStyleProvider;
+- (id)initWithIconImageView:(id)arg1 imageView:(id)arg2;
+- (BOOL)cardPlaceholderImageShouldApplyMaskAndOverlay;
+- (float)personViewHeaderImageHeight;
+- (float)personViewHeaderImageWidth;
+- (struct CGSize { float x1; float x2; })cardPhotoOffset;
+- (id)cardPlaceholderCompanyImage;
+- (id)cardPlaceholderPersonImage;
+- (float)cardPhotoFrameBorderSize;
+- (id)cardPhotoFacebookAttributionImage;
+- (id)cardPhotoOverlayImage;
+- (id)cardPhotoBackgroundImage;
+- (id)cardPhotoMaskImage;
 
 @end

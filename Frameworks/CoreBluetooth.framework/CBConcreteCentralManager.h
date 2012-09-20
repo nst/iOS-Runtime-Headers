@@ -2,45 +2,37 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class NSMutableDictionary;
+@class CBXpcConnection, NSMutableDictionary;
 
-@interface CBConcreteCentralManager : CBCentralManager  {
-    struct _xpc_connection_s { } *_xpcConnection;
+@interface CBConcreteCentralManager : CBCentralManager <CBXpcConnectionDelegate> {
+    CBXpcConnection *_connection;
     NSMutableDictionary *_peripherals;
+    BOOL _isScanning;
 }
 
 
-- (oneway void)release;
 - (void)dealloc;
-- (void)retainPeripheral:(id)arg1;
 - (void)releasePeripheral:(id)arg1;
-- (void*)createXpcArrayWithNSArray:(id)arg1;
-- (void*)createXpcDictionaryWithNSDictionary:(id)arg1;
-- (void*)createXpcObjectWithNSObject:(id)arg1;
-- (id)nsArrayWithXpcArray:(void*)arg1;
-- (id)nsDictionaryWithXpcDictionary:(void*)arg1;
-- (id)nsObjectWithXpcObject:(void*)arg1;
-- (void)sendMsg:(int)arg1 args:(id)arg2;
-- (void)orphanPeripherals;
-- (void)checkOut;
-- (void)handleConnectionEvent:(void*)arg1;
-- (id)peripheralForHandle:(id)arg1 args:(id)arg2;
-- (void)handleStateUpdated:(id)arg1;
-- (void)handlePeripheralDiscovered:(id)arg1;
-- (void)handlePeripheralsRetrieved:(id)arg1;
-- (void)handleConnectedPeripheralsRetrieved:(id)arg1;
-- (void)handlePeripheralConnectionCompleted:(id)arg1;
-- (void)handlePeripheralDisconnectionCompleted:(id)arg1;
+- (void)retainPeripheral:(id)arg1;
+- (void)xpcConnection:(id)arg1 didReceiveMessage:(int)arg2 arguments:(id)arg3;
+- (void)xpcConnectionDidReset:(id)arg1;
 - (void)handlePeripheralEvent:(id)arg1 selector:(SEL)arg2;
-- (void)handleConnectionMsg:(void*)arg1;
-- (void)handleConnectionReset;
-- (id)initWithDelegate:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
-- (void)retrievePeripherals:(id)arg1;
-- (void)retrieveConnectedPeripherals;
-- (void)scanForPeripheralsWithServices:(id)arg1 options:(id)arg2;
-- (void)stopScan;
-- (void)connectPeripheral:(id)arg1 options:(id)arg2;
+- (void)handlePeripheralDisconnectionCompleted:(id)arg1;
+- (void)handlePeripheralConnectionCompleted:(id)arg1;
+- (void)handleConnectedPeripheralsRetrieved:(id)arg1;
+- (void)handlePeripheralsRetrieved:(id)arg1;
+- (void)handlePeripheralDiscovered:(id)arg1;
+- (void)handleStateUpdated:(id)arg1;
+- (id)peripheralForHandle:(id)arg1 args:(id)arg2;
+- (void)cancelPeripheralConnection:(id)arg1 force:(BOOL)arg2;
+- (void)orphanPeripherals;
+- (void)sendMsg:(int)arg1 args:(id)arg2;
 - (void)cancelPeripheralConnection:(id)arg1;
-- (void)checkIn:(BOOL)arg1;
+- (void)connectPeripheral:(id)arg1 options:(id)arg2;
+- (void)stopScan;
+- (void)scanForPeripheralsWithServices:(id)arg1 options:(id)arg2;
+- (void)retrieveConnectedPeripherals;
+- (void)retrievePeripherals:(id)arg1;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 
 @end

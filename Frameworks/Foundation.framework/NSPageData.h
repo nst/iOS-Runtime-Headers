@@ -10,10 +10,19 @@
     NSString *_originalFilePath;
 }
 
-+ (int)_umask;
 + (void)initialize;
++ (int)_umask;
 
+- (const void*)bytes;
+- (id)data;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)length;
 - (unsigned int)writeFile:(id)arg1;
+- (id)initWithContentsOfMappedFile:(id)arg1;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (id)initWithData:(id)arg1;
+- (id)initWithContentsOfFile:(id)arg1;
 - (unsigned int)writeFd:(int)arg1;
 - (id)deserializer;
 - (id)initFromSerializerStream:(id)arg1 length:(unsigned int)arg2;
@@ -21,16 +30,7 @@
 - (id)_mappedFile;
 - (id)initWithContentsOfMappedFile:(id)arg1 withFileAttributes:(id)arg2;
 - (void)_setOriginalFileInfoFromFileAttributes:(id)arg1;
-- (unsigned int)length;
-- (id)init;
-- (void)dealloc;
-- (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
-- (id)data;
-- (id)initWithData:(id)arg1;
-- (id)initWithContentsOfFile:(id)arg1;
-- (const void*)bytes;
 - (id)initWithDataNoCopy:(id)arg1;
 - (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
-- (id)initWithContentsOfMappedFile:(id)arg1;
 
 @end

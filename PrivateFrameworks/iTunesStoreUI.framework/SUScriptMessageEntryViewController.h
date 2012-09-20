@@ -16,13 +16,10 @@
 @property(copy) NSString * sendButtonTitle;
 @property(retain) id shouldSendMessageFunction;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (void)dealloc;
-- (void)focus;
-- (id)attributeKeys;
 - (id)_shouldSendMessageFunction;
 - (id)_messageChangedFunction;
 - (id)shouldSendMessageFunction;
@@ -44,5 +41,8 @@
 - (void)setNativeViewController:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)dealloc;
+- (void)focus;
+- (id)attributeKeys;
 
 @end

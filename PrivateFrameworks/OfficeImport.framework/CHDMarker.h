@@ -11,8 +11,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (int)style;
 - (void)setStyle:(int)arg1;
 - (void)setSize:(unsigned int)arg1;

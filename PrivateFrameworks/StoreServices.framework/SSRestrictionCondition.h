@@ -10,7 +10,7 @@
 
 
 - (void)dealloc;
-- (id)initWithDictionary:(id)arg1;
 - (BOOL)evaluateWithContext:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
 
 @end

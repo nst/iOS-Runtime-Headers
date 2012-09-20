@@ -5,14 +5,14 @@
 @interface __NSPlaceholderDate : NSDate  {
 }
 
-+ (id)immutablePlaceholder;
 + (void)initialize;
++ (id)immutablePlaceholder;
 
 - (unsigned int)retainCount;
 - (id)retain;
+- (void)dealloc;
 - (oneway void)release;
 - (id)init;
-- (void)dealloc;
 - (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
 - (double)timeIntervalSinceReferenceDate;
 

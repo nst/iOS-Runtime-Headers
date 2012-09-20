@@ -10,9 +10,9 @@
 @property struct { double x1; double x2; } coordinate;
 
 
-- (void)setProviderID:(unsigned short)arg1;
 - (struct { double x1; double x2; })coordinate;
-- (unsigned short)providerID;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setProviderID:(unsigned short)arg1;
+- (unsigned short)providerID;
 
 @end

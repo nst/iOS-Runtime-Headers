@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMRange, UIResponder<UITextSelection>, UIView<UITextSelectingContainer>, UITextRange;
+@class UIResponder<UITextInputPrivate>, DOMRange, UITextRange;
 
 @interface UITextSelection : NSObject  {
-    UIResponder<UITextSelection> *_document;
+    UIResponder<UITextInputPrivate> *_document;
     int _granularity;
     UITextRange *_selectedRange;
     UITextRange *_base;
@@ -13,25 +13,25 @@
     BOOL _isCommitting;
 }
 
-@property(readonly) UIResponder<UITextSelection> * document;
+@property(readonly) UIResponder<UITextInputPrivate> * document;
 @property(retain) UITextRange * selectedRange;
 @property int granularity;
 @property(readonly) BOOL isCommitting;
 @property(retain) UITextRange * base;
 @property(retain) UITextRange * initialExtent;
 @property(getter=_domRange,readonly) DOMRange * domRange;
-@property(readonly) UIView<UITextSelectingContainer> * viewAsContainer;
 
 
+- (void)invalidate;
 - (void)dealloc;
 - (BOOL)pointAtStartOfLine:(struct CGPoint { float x1; float x2; })arg1;
 - (unsigned int)offsetInMarkedText;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })closestCaretRectForPoint:(struct CGPoint { float x1; float x2; })arg1 inSelection:(BOOL)arg2;
 - (id)initialExtent;
-- (id)viewAsContainer;
 - (void)setInitialExtent:(id)arg1;
 - (void)setBase:(id)arg1;
 - (id)base;
+- (struct CGPoint { float x1; float x2; })clipPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)smartExtendRangedSelection:(int)arg1 downstream:(BOOL)arg2;
 - (id)initWithDocument:(id)arg1;
 - (id)document;
@@ -47,25 +47,26 @@
 - (BOOL)pointAtEndOfLine:(struct CGPoint { float x1; float x2; })arg1;
 - (void)moveCaretToBoundaryOfWhitespaceOrLine;
 - (id)_domRange;
-- (id)selectionRects;
 - (void)setRangedSelectionWithExtentPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clearRangedSelectionInitialExtent;
 - (void)setRangedSelectionBaseToCurrentSelection;
 - (void)setGranularity:(int)arg1;
 - (void)alterSelection:(struct CGPoint { float x1; float x2; })arg1 granularity:(int)arg2;
+- (id)selectionRects;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectAtBeginOfDocument;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectAtEndOfDocument;
 - (int)granularity;
 - (BOOL)hasEditableSelection;
+- (void)collapseSelection;
 - (id)wordContainingCaretSelection;
 - (void)setSelectedRange:(id)arg1;
-- (void)collapseSelection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRect;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)selectedRange;
 - (id)selectedText;
 - (void)selectionChanged;
 - (void)clearSelection;
+- (void)selectAll;
 - (void)commit;
 
 @end

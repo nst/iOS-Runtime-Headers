@@ -15,18 +15,18 @@
     NSString *_tag;
 }
 
-+ (BOOL)isEnableAction:(id)arg1;
 + (BOOL)isNonDestructiveAction:(id)arg1;
++ (BOOL)isEnableAction:(id)arg1;
 
-- (id)init;
 - (void)dealloc;
-- (void)setIsEnableAction:(BOOL)arg1;
-- (void)setupButtonIndexesForActions:(id)arg1;
-- (BOOL)userCancelled;
-- (BOOL)userChoiceWillDeleteData;
-- (id)userAction;
+- (id)init;
 - (id)tag;
 - (void)setTag:(id)arg1;
+- (id)userAction;
+- (BOOL)userChoiceWillDeleteData;
+- (BOOL)userCancelled;
+- (void)setupButtonIndexesForActions:(id)arg1;
+- (void)setIsEnableAction:(BOOL)arg1;
 - (void)setDataclass:(id)arg1;
 
 @end

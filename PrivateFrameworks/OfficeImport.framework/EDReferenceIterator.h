@@ -24,14 +24,14 @@
 + (id)referenceIteratorWithReferenceArray:(id)arg1 workbook:(id)arg2;
 
 - (void)dealloc;
-- (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)nextCell;
-- (unsigned int)currentCellIndex;
-- (id)initWithReferenceArray:(id)arg1 reference:(id)arg2 workbook:(id)arg3;
-- (id)initWithReference:(id)arg1 workbook:(id)arg2;
-- (id)initWithReferenceArray:(id)arg1 workbook:(id)arg2;
-- (bool)nextRow;
 - (bool)nextReference;
-- (void)setCurrentSheet:(id)arg1;
+- (bool)nextRow;
+- (id)initWithReferenceArray:(id)arg1 workbook:(id)arg2;
+- (id)initWithReference:(id)arg1 workbook:(id)arg2;
+- (id)initWithReferenceArray:(id)arg1 reference:(id)arg2 workbook:(id)arg3;
 - (void)setReference:(id)arg1;
+- (unsigned int)currentCellIndex;
+- (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)nextCell;
+- (void)setCurrentSheet:(id)arg1;
 
 @end

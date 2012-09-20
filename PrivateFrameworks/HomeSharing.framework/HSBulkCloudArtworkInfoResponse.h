@@ -11,8 +11,8 @@
 @property(copy) NSArray * artworkInfoDictionaries;
 
 
-- (void)dealloc;
 - (id)artworkInfoDictionaries;
 - (void)setArtworkInfoDictionaries:(id)arg1;
+- (void)dealloc;
 
 @end

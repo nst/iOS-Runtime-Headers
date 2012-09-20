@@ -17,15 +17,15 @@
 @property(copy) NSString * oauthTokenSecret;
 
 
-- (void)dealloc;
-- (void)setOauthTokenSecret:(id)arg1;
-- (void)setOauthToken:(id)arg1;
-- (void)setConsumerKey:(id)arg1;
-- (void)setConsumerSecret:(id)arg1;
-- (id)signingKey;
-- (id)oauthTokenSecret;
 - (id)oauthToken;
-- (id)consumerSecret;
+- (void)dealloc;
 - (id)consumerKey;
+- (id)consumerSecret;
+- (void)setOauthTokenSecret:(id)arg1;
+- (id)oauthTokenSecret;
+- (void)setOauthToken:(id)arg1;
+- (void)setConsumerSecret:(id)arg1;
+- (void)setConsumerKey:(id)arg1;
+- (id)signingKey;
 
 @end

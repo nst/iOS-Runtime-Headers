@@ -27,16 +27,20 @@
 
 }
 
-+ (void)_resetURL;
-+ (id)hostname;
 + (unsigned short)provider;
++ (int)defaultLocalSearchProviderID;
++ (id)searchProviderURL;
++ (id)_searchURLForRequest:(id)arg1;
++ (void)_resetURL;
++ (void)setUsePersistentConnection:(BOOL)arg1;
++ (int)localSearchProviderID;
 
 - (void)cancel;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)search:(id)arg1 finished:(id)arg2 spellingSuggestion:(id)arg3 refinement:(id)arg4 error:(id)arg5;
+- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id)arg4 spellingSuggestion:(id)arg5 refinement:(id)arg6 error:(id)arg7 isCompletions:(BOOL)arg8;
 
 @end

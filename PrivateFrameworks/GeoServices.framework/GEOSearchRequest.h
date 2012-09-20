@@ -3,23 +3,15 @@
  */
 
 @interface GEOSearchRequest : GEOPlaceSearchRequest  {
-    int _type;
-    int _zoomLevel;
     unsigned short _provider;
 }
 
-@property int type;
-@property int zoomLevel;
 @property unsigned short provider;
 
 
-- (void)setProvider:(unsigned short)arg1;
-- (id)init;
-- (Class)responseClass;
-- (int)type;
-- (void)setType:(int)arg1;
 - (unsigned short)provider;
-- (int)zoomLevel;
-- (void)setZoomLevel:(int)arg1;
+- (id)init;
+- (void)setProvider:(unsigned short)arg1;
+- (Class)responseClass;
 
 @end

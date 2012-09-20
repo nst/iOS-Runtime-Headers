@@ -2,13 +2,20 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
+@class TIMecabraWrapper;
+
 @interface TIWordSearchOperationCancelLastAcceptedCandidate : TIWordSearchOperation  {
+    TIMecabraWrapper *_mecabraWrapper;
 }
 
+@property(retain) TIMecabraWrapper * mecabraWrapper;
 
-- (id)initWithTIWordSearchObj:(id)arg1;
-- (void)cancel;
+
+- (void)setMecabraWrapper:(id)arg1;
 - (void)perform;
+- (id)initWithWordSearch:(id)arg1;
+- (void)cancel;
+- (id)mecabraWrapper;
 - (void)dealloc;
 
 @end

@@ -2,35 +2,36 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEventAttachmentCell, EKAttachment, <EKEventAttachmentCellControllerDelegate>;
+@class EKAttachment, UIDocumentInteractionController, EKEventAttachmentCell, <EKEventAttachmentCellControllerDelegate><UIDocumentInteractionControllerDelegate>;
 
-@interface EKEventAttachmentCellController : NSObject <UIDocumentInteractionControllerDelegate> {
+@interface EKEventAttachmentCellController : NSObject  {
     EKAttachment *_attachment;
     id _downloadID;
     EKEventAttachmentCell *_cell;
-    <EKEventAttachmentCellControllerDelegate> *_delegate;
+    <EKEventAttachmentCellControllerDelegate><UIDocumentInteractionControllerDelegate> *_delegate;
+    UIDocumentInteractionController *_documentController;
 }
 
 @property(readonly) EKEventAttachmentCell * cell;
 @property(retain) EKAttachment * attachment;
-@property <EKEventAttachmentCellControllerDelegate> * delegate;
+@property <EKEventAttachmentCellControllerDelegate><UIDocumentInteractionControllerDelegate> * delegate;
 
 + (BOOL)_attachmentIsViewable:(id)arg1;
 + (id)cellControllersForAttachments:(id)arg1 givenExistingControllers:(id)arg2;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (id)cell;
+- (id)attachment;
+- (void)setAttachment:(id)arg1;
+- (id)initWithAttachment:(id)arg1;
 - (void)_presentPreviewOnMainThreadWithInfo:(id)arg1;
 - (id)_downloadProgressStringWithDownloadedBytes:(id)arg1 outOfTotalBytes:(id)arg2;
 - (void)_presentPreviewWithURL:(id)arg1 filename:(id)arg2;
-- (id)initWithAttachment:(id)arg1;
-- (id)attachment;
-- (void)setAttachment:(id)arg1;
+- (void)_clearDownloadID;
+- (void)_cleanupDocumentController;
 - (void)cellSelected;
-- (id)documentInteractionControllerViewForPreview:(id)arg1;
-- (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
-- (id)cell;
 - (void)tearDown;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

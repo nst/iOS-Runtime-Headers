@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString;
-
 @interface MKTeleportingUserLocation : NSObject <MKAnnotation> {
     struct { 
         double latitude; 
@@ -12,8 +10,6 @@
 }
 
 @property struct { double x1; double x2; } coordinate;
-@property(readonly) NSString * title;
-@property(readonly) NSString * subtitle;
 
 
 - (struct { double x1; double x2; })coordinate;

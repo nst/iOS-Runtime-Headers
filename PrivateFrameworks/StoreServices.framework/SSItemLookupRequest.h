@@ -2,25 +2,29 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSItemLookupRequestDelegate>, NSMutableDictionary;
+@class <SSItemLookupRequestDelegate>, NSMutableDictionary, NSDictionary;
 
-@interface SSItemLookupRequest : SSRequest  {
+@interface SSItemLookupRequest : SSRequest <SSXPCCoding> {
     NSMutableDictionary *_parameters;
 }
 
 @property <SSItemLookupRequestDelegate> * delegate;
+@property(readonly) NSDictionary * parameters;
 
 
-- (id)init;
 - (void)dealloc;
-- (void)setValue:(id)arg1 forParameter:(id)arg2;
+- (id)init;
+- (id)parameters;
+- (id)copyQueryStringParameters;
 - (id)valueForParameter:(id)arg1;
-- (id)_copyStringParameters;
-- (void)_sendItemsToDelegate:(id)arg1;
-- (id)_copyItemsFromResponse:(id)arg1 userInfo:(id)arg2;
+- (void)setValue:(id)arg1 forParameter:(id)arg2;
+- (void)startWithItemLookupBlock:(id)arg1;
+- (id)_copyItemsFromResponse:(id)arg1 expirationDate:(id)arg2;
 - (id)_errorForStatusCode:(int)arg1;
 - (id)_convertedValueForValue:(id)arg1;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
+- (void)startWithCompletionBlock:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)start;
 
 @end

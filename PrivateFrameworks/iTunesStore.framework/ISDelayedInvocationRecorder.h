@@ -9,8 +9,8 @@
 @property double delayInterval;
 
 
+- (void)invokeInvocation:(id)arg1;
 - (double)delayInterval;
 - (void)setDelayInterval:(double)arg1;
-- (void)invokeInvocation:(id)arg1;
 
 @end

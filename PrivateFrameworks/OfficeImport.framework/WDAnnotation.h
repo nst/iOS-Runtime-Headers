@@ -17,16 +17,16 @@
 
 - (void)dealloc;
 - (void)setDate:(id)arg1;
-- (id)date;
 - (id)text;
+- (id)date;
 - (void)setOwner:(id)arg1;
-- (id)initWithParagraph:(id)arg1 type:(int)arg2;
-- (int)annotationType;
-- (id)owner;
-- (id)otherEndOfRangedAnnotation;
 - (void)setOtherEndOfRangedAnnotation:(id)arg1;
-- (BOOL)referencePropertiesFixed;
+- (id)otherEndOfRangedAnnotation;
+- (id)owner;
+- (int)annotationType;
+- (id)initWithParagraph:(id)arg1 type:(int)arg2;
 - (void)setReferencePropertiesFixed;
+- (BOOL)referencePropertiesFixed;
 - (int)runType;
 - (id)reference;
 

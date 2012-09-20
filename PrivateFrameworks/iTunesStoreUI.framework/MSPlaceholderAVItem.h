@@ -7,7 +7,7 @@
 }
 
 
-- (unsigned int)type;
 - (id)initWithAVItemType:(unsigned int)arg1;
+- (unsigned int)type;
 
 @end

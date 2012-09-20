@@ -12,24 +12,24 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (unsigned int)count;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (unsigned int)retainCount;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (id)objectForKey:(id)arg1;
-- (id)retain;
+- (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (oneway void)release;
+- (unsigned int)retainCount;
+- (unsigned int)hash;
+- (void)removeAllObjects;
+- (id)retain;
+- (BOOL)isEqual:(id)arg1;
+- (id)objectForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setObservationInfo:(void*)arg1;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (oneway void)release;
+- (unsigned int)count;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (id)keyEnumerator;
 - (void)finalize;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (Class)classForCoder;
-- (void)removeObjectForKey:(id)arg1;
-- (void)removeAllObjects;
+- (void)setObservationInfo:(void*)arg1;
 
 @end

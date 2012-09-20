@@ -17,24 +17,24 @@
 + (id)tableColumnWithResources:(id)arg1;
 
 - (void)setName:(id)arg1;
+- (id)name;
 - (void)dealloc;
 - (id)uniqueName;
-- (id)name;
-- (void)setUniqueName:(id)arg1;
-- (id)totalsRowLabel;
 - (void)setTotalsRowLabel:(id)arg1;
-- (unsigned int)headerRowDxfIndex;
-- (void)setHeaderRowDxfIndex:(unsigned int)arg1;
-- (unsigned int)totalsRowDxfIndex;
-- (void)setTotalsRowDxfIndex:(unsigned int)arg1;
-- (unsigned int)dataAreaDxfIndex;
+- (id)totalsRowLabel;
+- (void)setUniqueName:(id)arg1;
 - (void)setDataAreaDxfIndex:(unsigned int)arg1;
-- (id)headerRowDxf;
-- (void)setHeaderRowDxf:(id)arg1;
-- (id)totalsRowDxf;
-- (void)setTotalsRowDxf:(id)arg1;
-- (id)dataAreaDxf;
+- (unsigned int)dataAreaDxfIndex;
+- (void)setTotalsRowDxfIndex:(unsigned int)arg1;
+- (unsigned int)totalsRowDxfIndex;
+- (void)setHeaderRowDxfIndex:(unsigned int)arg1;
+- (unsigned int)headerRowDxfIndex;
 - (void)setDataAreaDxf:(id)arg1;
+- (id)dataAreaDxf;
+- (void)setTotalsRowDxf:(id)arg1;
+- (id)totalsRowDxf;
+- (void)setHeaderRowDxf:(id)arg1;
+- (id)headerRowDxf;
 - (id)initWithResources:(id)arg1;
 
 @end

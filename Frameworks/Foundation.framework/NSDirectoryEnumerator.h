@@ -6,11 +6,11 @@
 }
 
 
+- (unsigned int)level;
+- (id)nextObject;
 - (void)skipDescendants;
 - (void)skipDescendents;
 - (id)directoryAttributes;
 - (id)fileAttributes;
-- (id)nextObject;
-- (unsigned int)level;
 
 @end

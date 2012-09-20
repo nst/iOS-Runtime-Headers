@@ -22,8 +22,6 @@
 
 + (void)initialize;
 
-- (id)description;
-- (void)dealloc;
 - (id)privateImpl;
 - (id)initWithConnection:(id)arg1 delegate:(id)arg2;
 - (id)privateDelegate;
@@ -50,11 +48,13 @@
 - (BOOL)isPeerBusy:(id)arg1;
 - (id)displayNameForPeer:(id)arg1;
 - (void)setPrivateDelegate:(id)arg1;
-- (id)sessionID;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (void)dealloc;
+- (id)peerID;
 - (id)connection;
 - (id)displayName;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (id)peerID;
+- (id)sessionID;
 
 @end

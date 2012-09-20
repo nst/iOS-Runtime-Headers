@@ -11,11 +11,11 @@
 @property(readonly) NSData * consumedData;
 
 
-- (id)init;
-- (void)dealloc;
 - (void)finish;
 - (id)mutableConsumedData;
 - (int)consumeData:(id)arg1;
 - (id)consumedData;
+- (void)dealloc;
+- (id)init;
 
 @end

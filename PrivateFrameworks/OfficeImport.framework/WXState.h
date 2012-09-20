@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OCPPackagePart, NSMutableArray, SFUNoCopyDictionary, WXOAVState, OAXDrawingState, WDDocument, <OCCancelDelegate>;
+@class <OCCancelDelegate>, OCPPackagePart, NSMutableArray, WXOAVState, OAXDrawingState, WDCharacterRun, TSUNoCopyDictionary, WDDocument;
 
 @interface WXState : NSObject  {
     WDDocument *mDocument;
-    SFUNoCopyDictionary *mTextNodesToBeAdded;
-    SFUNoCopyDictionary *mMapBookmarkIdToName;
-    SFUNoCopyDictionary *mMapAnnotationIdToAnnotation;
+    TSUNoCopyDictionary *mTextNodesToBeAdded;
+    TSUNoCopyDictionary *mMapBookmarkIdToName;
+    TSUNoCopyDictionary *mMapAnnotationIdToAnnotation;
     OCPPackagePart *mPackagePart;
     OCPPackagePart *mAnnotationPart;
     struct _xmlDoc { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; int x10; int x11; struct _xmlDtd {} *x12; struct _xmlDtd {} *x13; struct _xmlNs {} *x14; char *x15; char *x16; void *x17; void *x18; char *x19; int x20; struct _xmlDict {} *x21; void *x22; int x23; int x24; } *mFootnoteDocument;
@@ -26,6 +26,7 @@
     WXOAVState *mWXOavState;
     OAXDrawingState *mDrawingState;
     int mCurrentOfficeArtTextType;
+    WDCharacterRun *mReadSymbolTo;
     BOOL mNewSectionRequested;
     unsigned long mCurrentRowCNFStyle;
     unsigned long mCurrentCellCNFStyle;
@@ -34,57 +35,60 @@
     BOOL mIsThumbnail;
 }
 
-@property(retain) <OCCancelDelegate> * cancelDelegate;
 @property int currentOfficeArtTextType;
+@property(retain) <OCCancelDelegate> * cancelDelegate;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)document;
-- (id)initNoStacksWith:(id)arg1;
-- (void)addText:(id)arg1 node:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg2;
-- (void)addAnnotationID:(long)arg1 annotation:(id)arg2;
-- (id)annotationWithID:(long)arg1;
-- (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)xmlAnnotationWithID:(long)arg1;
-- (id)annotationPart;
-- (void)setAnnotationPart:(id)arg1;
-- (void)pushFormatAuthor:(id)arg1 date:(id)arg2;
-- (void)popFormatAuthorDate;
-- (id)currentFormatAuthor;
-- (id)currentFormatDate;
-- (void)setCurrentRowCNFStyle:(unsigned long)arg1;
-- (void)setCurrentCellCNFStyle:(unsigned long)arg1;
-- (void)setCurrentTableWraps:(BOOL)arg1;
 - (BOOL)currentTableWraps;
-- (unsigned long)currentRowCNFStyle;
-- (unsigned long)currentCellCNFStyle;
-- (id)nodesToBeAdded:(id)arg1;
+- (void)setCurrentTableWraps:(BOOL)arg1;
+- (void)setCurrentCellCNFStyle:(unsigned long)arg1;
+- (void)setCurrentRowCNFStyle:(unsigned long)arg1;
+- (id)currentFormatDate;
+- (id)currentFormatAuthor;
+- (void)popFormatAuthorDate;
+- (void)pushFormatAuthor:(id)arg1 date:(id)arg2;
+- (void)setAnnotationPart:(id)arg1;
+- (void)addText:(id)arg1 node:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg2;
 - (void)clearOutNodesToBeAdded:(id)arg1;
-- (void)pushEditAuthor:(id)arg1 date:(id)arg2;
-- (void)popEditAuthorDate;
-- (void)pushDeleteAuthor:(id)arg1 date:(id)arg2;
+- (id)nodesToBeAdded:(id)arg1;
 - (void)popDeleteAuthorDate;
+- (void)pushDeleteAuthor:(id)arg1 date:(id)arg2;
+- (void)popEditAuthorDate;
+- (void)pushEditAuthor:(id)arg1 date:(id)arg2;
+- (id)readSymbolTo;
+- (unsigned long)currentCellCNFStyle;
+- (unsigned long)currentRowCNFStyle;
 - (int)currentOfficeArtTextType;
 - (void)setCurrentOfficeArtTextType:(int)arg1;
-- (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)xmlFootnoteWithID:(long)arg1;
-- (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)xmlEndnoteWithID:(long)arg1;
-- (BOOL)isNewSectionRequested;
+- (void)setReadSymbolTo:(id)arg1;
 - (void)setNewSectionRequested:(BOOL)arg1;
-- (void)setDocumentPart:(id)arg1;
+- (BOOL)isNewSectionRequested;
+- (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)xmlEndnoteWithID:(long)arg1;
+- (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)xmlFootnoteWithID:(long)arg1;
 - (id)wxoavState;
-- (id)currentDeleteAuthor;
-- (id)currentDeleteDate;
-- (id)currentEditAuthor;
+- (void)setDocumentPart:(id)arg1;
 - (id)currentEditDate;
-- (void)addBookmarkId:(int)arg1 name:(id)arg2;
+- (id)currentEditAuthor;
+- (id)currentDeleteDate;
+- (id)currentDeleteAuthor;
 - (id)bookmarkName:(int)arg1;
+- (void)addBookmarkId:(int)arg1 name:(id)arg2;
+- (id)initNoStacksWith:(id)arg1;
+- (id)annotationPart;
+- (void)addAnnotationID:(long)arg1 annotation:(id)arg2;
+- (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)xmlAnnotationWithID:(long)arg1;
+- (id)annotationWithID:(long)arg1;
+- (bool)hasAnnotations;
 - (void)setDocument:(id)arg1;
-- (BOOL)isThumbnail;
-- (void)setIsThumbnail:(BOOL)arg1;
-- (id)drawingState;
-- (void)setPackagePart:(id)arg1;
 - (void)setCancelDelegate:(id)arg1;
-- (id)packagePart;
 - (id)cancelDelegate;
+- (void)setPackagePart:(id)arg1;
+- (id)packagePart;
+- (id)drawingState;
+- (void)setIsThumbnail:(BOOL)arg1;
+- (BOOL)isThumbnail;
 
 @end

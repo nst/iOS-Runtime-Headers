@@ -7,38 +7,26 @@
 @interface SAUIConfirmationOptions : AceObject <SAAceSerializable> {
 }
 
-@property(copy) NSArray * cancelCommands;
-@property(copy) NSString * cancelLabel;
 @property(copy) NSString * cancelTrigger;
 @property(copy) NSArray * confirmCommands;
 @property(copy) NSString * confirmText;
 @property(copy) NSArray * denyCommands;
 @property(copy) NSString * denyText;
-@property(copy) NSArray * submitCommands;
-@property(copy) NSString * submitLabel;
 
 + (id)confirmationOptionsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)confirmationOptions;
 
 - (id)groupIdentifier;
-- (id)cancelCommands;
-- (void)setCancelCommands:(id)arg1;
-- (id)cancelLabel;
-- (void)setCancelLabel:(id)arg1;
-- (id)cancelTrigger;
-- (void)setCancelTrigger:(id)arg1;
-- (id)confirmCommands;
-- (void)setConfirmCommands:(id)arg1;
-- (id)confirmText;
-- (void)setConfirmText:(id)arg1;
-- (id)denyCommands;
-- (void)setDenyCommands:(id)arg1;
-- (id)denyText;
 - (void)setDenyText:(id)arg1;
-- (id)submitCommands;
-- (void)setSubmitCommands:(id)arg1;
-- (id)submitLabel;
-- (void)setSubmitLabel:(id)arg1;
+- (id)denyText;
+- (void)setDenyCommands:(id)arg1;
+- (id)denyCommands;
+- (void)setConfirmText:(id)arg1;
+- (id)confirmText;
+- (void)setConfirmCommands:(id)arg1;
+- (id)confirmCommands;
+- (void)setCancelTrigger:(id)arg1;
+- (id)cancelTrigger;
 - (id)encodedClassName;
 
 @end

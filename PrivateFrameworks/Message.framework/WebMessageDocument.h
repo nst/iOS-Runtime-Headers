@@ -13,33 +13,33 @@
     MFLock *_lock;
     NSMutableDictionary *_partsByURL;
     NSMutableDictionary *_partsByFilename;
-    unsigned int _preferredEncoding;
+    unsigned long _preferredEncoding;
 }
 
-@property unsigned int preferredEncoding;
-@property(readonly) NSData * htmlData;
-@property(readonly) MimePart * mimePart;
-@property(readonly) MimeBody * mimeBody;
 @property(readonly) NSURL * baseURL;
+@property(readonly) MimeBody * mimeBody;
+@property(readonly) MimePart * mimePart;
+@property(readonly) NSData * htmlData;
+@property unsigned long preferredEncoding;
 
 + (id)sourceForURL:(id)arg1;
 
-- (id)initWithMimeBody:(id)arg1;
-- (id)initWithMimePart:(id)arg1 htmlData:(id)arg2 encoding:(unsigned long)arg3;
-- (id)attachmentsInDocument;
-- (id)fileWrapper;
-- (id)initWithMimePart:(id)arg1;
-- (id)_initWithMimePart:(id)arg1 htmlData:(id)arg2;
-- (id)mimePartForURL:(id)arg1;
-- (id)htmlData;
-- (id)attachmentForURL:(id)arg1;
-- (id)preferredCharacterSet;
-- (id)mimePart;
-- (id)mimeBody;
-- (unsigned long)preferredEncoding;
-- (void)setPreferredEncoding:(unsigned long)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)baseURL;
+- (id)fileWrapper;
+- (id)attachmentsInDocument;
+- (id)initWithMimePart:(id)arg1 htmlData:(id)arg2 encoding:(unsigned long)arg3;
+- (id)initWithMimeBody:(id)arg1;
+- (id)htmlData;
+- (id)mimePartForURL:(id)arg1;
+- (id)_initWithMimePart:(id)arg1 htmlData:(id)arg2;
+- (id)initWithMimePart:(id)arg1;
+- (id)preferredCharacterSet;
+- (id)attachmentForURL:(id)arg1;
+- (id)mimePart;
+- (void)setPreferredEncoding:(unsigned long)arg1;
+- (unsigned long)preferredEncoding;
+- (id)mimeBody;
 
 @end

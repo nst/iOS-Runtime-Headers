@@ -7,21 +7,21 @@
 }
 
 
-- (unsigned long)count;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)deepCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)indexes;
-- (void)removeAllObjects;
-- (id)initWithObjects:(id*)arg1 andIndexes:(unsigned int*)arg2 count:(unsigned long)arg3;
-- (void)addObjectsFromIndexMap:(id)arg1;
-- (unsigned int*)_createIndexesWithSize:(unsigned int*)arg1;
-- (id)_initWithIndexMap:(id)arg1;
-- (id)_initAndDeepCopyIndexMap:(id)arg1;
 - (void)removeObjectForIndex:(unsigned long)arg1;
 - (void)setObject:(id)arg1 forIndex:(unsigned long)arg2;
 - (id)objectForIndex:(unsigned long)arg1;
+- (void)addObjectsFromIndexMap:(id)arg1;
+- (id)indexes;
+- (id)initWithObjects:(id*)arg1 andIndexes:(unsigned int*)arg2 count:(unsigned long)arg3;
+- (id)_initAndDeepCopyIndexMap:(id)arg1;
+- (id)_initWithIndexMap:(id)arg1;
+- (unsigned int*)_createIndexesWithSize:(unsigned int*)arg1;
+- (id)description;
+- (void)removeAllObjects;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (unsigned long)count;
+- (id)deepCopyWithZone:(struct _NSZone { }*)arg1;
 
 @end

@@ -19,20 +19,20 @@
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)constraints;
-- (id)searchProperties;
-- (void)setSearchTypes:(id)arg1;
-- (id)searchTypes;
-- (void)setConstraints:(id)arg1;
 - (void)setSearchProperties:(id)arg1;
-- (id)searchValue;
-- (void)setSearchValue:(id)arg1;
-- (BOOL)strict;
+- (id)searchProperties;
+- (id)constraints;
+- (id)searchTypes;
+- (void)setSearchTypes:(id)arg1;
 - (void)setStrict:(BOOL)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (BOOL)strict;
+- (void)setSearchValue:(id)arg1;
+- (id)searchValue;
+- (void)setConstraints:(id)arg1;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 - (int)maxResults;
 - (void)setMaxResults:(int)arg1;
 

@@ -30,17 +30,20 @@
     BOOL is_submap;
     unsigned int mallocBlockCount;
     unsigned int mallocTypeFlag;
+    unsigned int pages_purgable_vol;
+    unsigned int pages_purgable_non_vol;
+    unsigned int pages_purgable_empty;
 }
 
 
-- (BOOL)isEqual:(id)arg1;
+- (id)type;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
+- (id)breakAtLength:(unsigned long)arg1;
 - (BOOL)isSubmap;
 - (id)descriptionWithOptions:(unsigned int)arg1 maximumLength:(unsigned int)arg2;
-- (id)breakAtLength:(unsigned long)arg1;
-- (id)type;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
 - (unsigned int)protection;
 
 @end

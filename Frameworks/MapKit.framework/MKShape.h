@@ -14,6 +14,7 @@
 @property(readonly) struct { double x1; double x2; } coordinate;
 
 
+- (void)dealloc;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (id)title;

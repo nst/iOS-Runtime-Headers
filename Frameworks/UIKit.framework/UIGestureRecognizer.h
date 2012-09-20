@@ -27,13 +27,14 @@
         unsigned int delegateShouldBeRequiredToFail : 1; 
         unsigned int delegateFailed : 1; 
         unsigned int privateDelegateShouldBegin : 1; 
+        unsigned int privateDelegateCanPrevent : 1; 
+        unsigned int privateDelegateCanBePrevented : 1; 
         unsigned int privateDelegateShouldRecognizeSimultaneously : 1; 
         unsigned int privateDelegateShouldReceiveTouch : 1; 
         unsigned int subclassShouldRequireFailure : 1; 
         unsigned int cancelsTouchesInView : 1; 
         unsigned int delaysTouchesBegan : 1; 
         unsigned int delaysTouchesEnded : 1; 
-        unsigned int notExclusive : 1; 
         unsigned int disabled : 1; 
         unsigned int dirty : 1; 
         unsigned int queriedFailureRequirements : 1; 
@@ -53,9 +54,13 @@
 
 + (BOOL)_touchesBeganWasDelayedForTouch:(id)arg1;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (int)state;
+- (void)reset;
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)_detach;
 - (void)_invalidate;
 - (id)_briefDescription;
@@ -74,8 +79,6 @@
 - (struct CGPoint { float x1; float x2; })_centroidOfTouches:(id)arg1 excludingEnded:(BOOL)arg2;
 - (void)_setFailureMap:(id)arg1;
 - (id)_failureMap;
-- (void)setExclusive:(BOOL)arg1;
-- (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)_appendDescription:(id)arg1 forDependencies:(id)arg2 toString:(id)arg3 atLevel:(int)arg4;
 - (void)_appendSubclassDescription:(id)arg1;
 - (BOOL)delaysTouchesEnded;
@@ -86,7 +89,6 @@
 - (void)_addFailureDependent:(id)arg1;
 - (BOOL)_delegateCanPreventGestureRecognizer:(id)arg1;
 - (BOOL)_affectedByGesture:(id)arg1;
-- (BOOL)isExclusive;
 - (void)_resetGestureRecognizer;
 - (void)_updateGestureWithEvent:(id)arg1;
 - (BOOL)_shouldRequireFailureOfGestureRecognizer:(id)arg1;
@@ -98,16 +100,16 @@
 - (void)_delayTouch:(id)arg1 forEvent:(id)arg2;
 - (void)_enqueueDelayedTouchToSend:(id)arg1;
 - (BOOL)_isFriendWithGesture:(id)arg1;
+- (BOOL)_shouldBegin;
 - (void)_clearUpdateTimer;
-- (void)reset;
 - (void)_enqueueDelayedTouchesToSend;
 - (void)_relatedGestureReleased:(id)arg1;
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
 - (void)setCancelsTouchesInView:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (void)requireOtherGestureToFail:(id)arg1;
-- (BOOL)_delegateShouldReceiveTouch:(id)arg1;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
+- (BOOL)_delegateShouldReceiveTouch:(id)arg1;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (BOOL)_isRecognized;
@@ -117,6 +119,7 @@
 - (void)requireGestureRecognizerToFail:(id)arg1;
 - (void)setDelaysTouchesEnded:(BOOL)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
 - (void)_setDirty;
@@ -125,16 +128,13 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (void)setView:(id)arg1;
-- (id)view;
 - (void)_queueForResetIfFinished;
 - (void)_updateGestureStateWithEvent:(id)arg1 afterDelay:(BOOL)arg2;
 - (void)setState:(int)arg1;
 - (void)ignoreTouch:(id)arg1 forEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (int)state;
 - (BOOL)_isDirty;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (id)view;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

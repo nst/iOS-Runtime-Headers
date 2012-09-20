@@ -15,13 +15,15 @@
 @property UIViewController * displayedViewController;
 @property BOOL moreViewControllersChanged;
 
++ (Class)_moreListControllerClass;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)moreViewControllersChanged;
 - (BOOL)allowsCustomizing;
 - (id)_preparedViewController:(id)arg1;
 - (void)_restoreOriginalNavigationController;
+- (void)_redisplayMoreTableView;
 - (void)setMoreViewControllersChanged:(BOOL)arg1;
 - (void)setAllowsCustomizing:(BOOL)arg1;
 - (void)setDisplayedViewController:(id)arg1;

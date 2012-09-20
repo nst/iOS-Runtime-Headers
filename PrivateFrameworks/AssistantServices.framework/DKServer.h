@@ -26,6 +26,11 @@
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
+    id _defaultMessageHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
     id _disconnectHandler;
 
 
@@ -33,26 +38,17 @@
   /* Error parsing encoded ivar type info: @? */
     id _shutdownHandler;
 
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _defaultMessageHandler;
-
     struct dispatch_queue_s { } *_dispatchQueue;
 }
 
 @property(readonly) NSSet * connections;
 @property(copy) id allowConnectionHandler;
 @property(copy) id newConnectionHandler;
-@property(copy) id defaultMessageHandler;
 @property(copy) id disconnectHandler;
 @property(copy) id shutdownHandler;
+@property(copy) id defaultMessageHandler;
 
 
-- (void)shutdown;
-- (void)dealloc;
-- (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;
-- (void)resume;
 - (void)setShutdownHandler:(id)arg1;
 - (id)shutdownHandler;
 - (id)defaultMessageHandler;
@@ -60,7 +56,6 @@
 - (id)newConnectionHandler;
 - (void)setAllowConnectionHandler:(id)arg1;
 - (id)allowConnectionHandler;
-- (BOOL)hasActiveConnections;
 - (void)setHandlerForMessageName:(id)arg1 handler:(id)arg2;
 - (id)initListenerWithServiceName:(id)arg1;
 - (struct dispatch_queue_s { }*)_highAvailabilityQueue;
@@ -72,6 +67,11 @@
 - (id)_connections;
 - (void)setDisconnectHandler:(id)arg1;
 - (id)disconnectHandler;
+- (void)resume;
+- (void).cxx_destruct;
+- (void)dealloc;
 - (id)connections;
+- (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;
+- (void)shutdown;
 
 @end

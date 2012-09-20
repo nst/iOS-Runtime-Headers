@@ -2,23 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class PBDataWriter, PBStreamWriter;
+@class NSOutputStream;
 
 @interface PBMessageStreamWriter : NSObject  {
-    PBStreamWriter *_writer;
-    PBDataWriter *_messageWriter;
+    NSOutputStream *_stream;
 }
-
-@property(retain) PBStreamWriter * writer;
-@property(retain) PBDataWriter * messageWriter;
 
 
 - (void)dealloc;
-- (id)initWithOutputStream:(id)arg1;
-- (id)writer;
-- (void)setWriter:(id)arg1;
 - (BOOL)writeMessage:(id)arg1;
-- (id)messageWriter;
-- (void)setMessageWriter:(id)arg1;
+- (id)initWithOutputStream:(id)arg1;
 
 @end

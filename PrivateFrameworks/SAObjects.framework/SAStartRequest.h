@@ -7,28 +7,31 @@
 @interface SAStartRequest : SABaseCommand <SAServerBoundCommand> {
 }
 
+@property BOOL eyesFree;
 @property BOOL handsFree;
 @property(copy) NSString * motionActivity;
-@property(retain) NSNumber * motionConfidence;
+@property(copy) NSNumber * motionConfidence;
 @property(copy) NSString * origin;
 @property(copy) NSString * utterance;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)startRequest;
 + (id)startRequestWithDictionary:(id)arg1 context:(id)arg2;
++ (id)startRequest;
 
 - (id)groupIdentifier;
 - (void)setOrigin:(id)arg1;
 - (id)origin;
-- (BOOL)handsFree;
 - (void)setHandsFree:(BOOL)arg1;
-- (id)utterance;
+- (BOOL)handsFree;
+- (void)setEyesFree:(BOOL)arg1;
+- (BOOL)eyesFree;
 - (void)setUtterance:(id)arg1;
-- (id)motionActivity;
-- (void)setMotionActivity:(id)arg1;
-- (id)motionConfidence;
+- (id)utterance;
 - (void)setMotionConfidence:(id)arg1;
+- (id)motionConfidence;
+- (void)setMotionActivity:(id)arg1;
+- (id)motionActivity;
 - (id)encodedClassName;
 
 @end

@@ -2,26 +2,30 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UITextRange;
+@class NSArray, NSString, UITextRange;
 
 @interface UITextReplacement : NSObject  {
     UITextRange *_range;
     NSString *_originalText;
     NSString *_replacementText;
     NSString *_menuTitle;
+    NSArray *_usageTrackingTypes;
 }
 
 @property(readonly) UITextRange * range;
 @property(readonly) NSString * originalText;
 @property(readonly) NSString * replacementText;
 @property(readonly) NSString * menuTitle;
+@property(retain) NSArray * usageTrackingTypes;
 
 + (id)replacementWithRange:(id)arg1 original:(id)arg2 replacement:(id)arg3 menuTitle:(id)arg4;
 
+- (id)usageTrackingTypes;
 - (void)dealloc;
 - (id)menuTitle;
+- (void)setUsageTrackingTypes:(id)arg1;
 - (id)replacementText;
-- (id)originalText;
 - (id)range;
+- (id)originalText;
 
 @end

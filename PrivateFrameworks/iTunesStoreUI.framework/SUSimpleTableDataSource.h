@@ -13,9 +13,6 @@
 @property(retain) NSArray * objects;
 
 
-- (void)dealloc;
-- (int)numberOfSections;
-- (int)numberOfRowsInSection:(int)arg1;
 - (void)setObjects:(id)arg1;
 - (void)setCellConfigurationClass:(Class)arg1;
 - (Class)cellConfigurationClass;
@@ -24,6 +21,9 @@
 - (float)cellHeightForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
+- (void)dealloc;
 - (id)objects;
+- (int)numberOfSections;
+- (int)numberOfRowsInSection:(int)arg1;
 
 @end

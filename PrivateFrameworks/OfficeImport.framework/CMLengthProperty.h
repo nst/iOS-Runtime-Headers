@@ -11,11 +11,11 @@
 
 - (int)intValue;
 - (double)value;
-- (id)initWithNumber:(double)arg1;
 - (int)compareValue:(id)arg1;
+- (id)initWithNumber:(double)arg1;
 - (id)cssString;
 - (id)cssStringForName:(id)arg1;
-- (id)initWithNumber:(double)arg1 unit:(int)arg2;
 - (int)unitType;
+- (id)initWithNumber:(double)arg1 unit:(int)arg2;
 
 @end

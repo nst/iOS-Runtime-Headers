@@ -52,9 +52,9 @@
 
 - (id)description;
 - (void)dealloc;
+- (void*)context;
 - (void)setActionsOnly:(BOOL)arg1;
 - (BOOL)actionsOnly;
-- (void)setBulkChangeCheckCTag:(id)arg1;
 - (id)bulkChangeCheckCTag;
 - (id)localItemURLOrder;
 - (BOOL)useSyncCollection;
@@ -78,9 +78,9 @@
 - (BOOL)shouldFetchMoreETags;
 - (void)setNextCTag:(id)arg1;
 - (void)_bulkChangeTask:(id)arg1 didFinishWithError:(id)arg2;
-- (void)_getTask:(id)arg1 finishedWithParsedContents:(id)arg2 error:(id)arg3;
 - (void)_syncReportTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)_postTask:(id)arg1 didFinishWithError:(id)arg2;
+- (void)setBulkChangeCheckCTag:(id)arg1;
 - (id)nextCTag;
 - (void)_getOrder;
 - (BOOL)shouldFetchResourceWithEtag:(id)arg1 propertiesToValues:(id)arg2;
@@ -91,6 +91,8 @@
 - (BOOL)isWhitelistedError:(id)arg1;
 - (void)_bulkChange;
 - (id)copyGetTaskWithURL:(id)arg1;
+- (void)_getTask:(id)arg1 finishedWithParsedContents:(id)arg2 error:(id)arg3;
+- (void)_configureMultiGet:(id)arg1;
 - (id)copyMultiGetTaskWithURLs:(id)arg1;
 - (void)_getDataPayloads;
 - (id)copyGetEtagTaskWithPropertiesToFind:(id)arg1;
@@ -115,6 +117,5 @@
 - (void)setBulkRequests:(id)arg1;
 - (void)setAddMemberURL:(id)arg1;
 - (id)bulkRequests;
-- (void*)context;
 
 @end

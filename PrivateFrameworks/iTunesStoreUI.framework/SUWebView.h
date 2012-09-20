@@ -2,73 +2,41 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUWebViewDelegate>, WebView, SUScriptDebugDelegate, NSMutableArray, SUWebViewDelegate, SUScriptInterface, NSString, WebDataSource, SSAuthenticationContext;
+@class NSString, UIColor, <SUWebViewDelegate>;
 
-@interface SUWebView : UIWebView <SUScriptInterfaceDelegate> {
-    SSAuthenticationContext *_authenticationContext;
-    SUScriptDebugDelegate *_debugDelegate;
-    SUWebViewDelegate *_delegateProxy;
-    unsigned int _openURLsExternally : 1;
-    SUScriptInterface *_scriptInterface;
-    NSMutableArray *_scrollRequests;
+@interface SUWebView : UIWebView  {
+    UIColor *_originalBackgroundColor;
+    BOOL _originalShowsBackgroundShadow;
     unsigned int _scrollingDisabled : 1;
-    unsigned int _sourceIsTrusted : 1;
+    BOOL _showsTopBackgroundShadow;
     int _synchronousLayoutCount;
+    UIColor *_topBackgroundColor;
 }
 
 @property <SUWebViewDelegate> * delegate;
-@property(copy) SSAuthenticationContext * authenticationContext;
-@property BOOL openURLsExternally;
 @property(getter=isScrollingEnabled) BOOL scrollingEnabled;
-@property BOOL sourceIsTrusted;
 @property(readonly) NSString * title;
-@property(readonly) SUScriptInterface * scriptInterface;
-@property(readonly) WebDataSource * webDataSource;
+@property BOOL showsTopBackgroundShadow;
+@property(retain) UIColor * topBackgroundColor;
 @property(readonly) id windowScriptObject;
-@property(readonly) struct OpaqueJSContext { }* globalExecutionContext;
-@property(readonly) WebView * webView;
 
 
-- (void)dealloc;
-- (void)stopLoading;
-- (void)_setRichTextReaderViewportSettings;
-- (id)superviewForImageSheetForWebView:(id)arg1;
-- (void)view:(id)arg1 didSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (id)webView;
-- (id)title;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
-- (void)setScrollingEnabled:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setAuthenticationContext:(id)arg1;
-- (id)authenticationContext;
-- (void)reloadWindowScriptObject:(id)arg1;
-- (void)setOpenURLsExternally:(BOOL)arg1;
-- (void)scrollElementToVisible:(id)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
-- (BOOL)openURLsExternally;
+- (void)setTopBackgroundColor:(id)arg1;
+- (id)topBackgroundColor;
+- (void)setShowsTopBackgroundShadow:(BOOL)arg1;
+- (BOOL)showsTopBackgroundShadow;
 - (BOOL)isScrollingEnabled;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForElementWithIdentifier:(id)arg1;
+- (BOOL)getStatusBarStyle:(int*)arg1;
 - (void)endSynchronousLayout;
 - (void)beginSynchronousLayout;
-- (BOOL)copyImage:(struct CGImage {}**)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forElement:(id)arg3;
-- (id)webDataSource;
-- (id)scriptInterface;
-- (id)_newImageViewForElement:(id)arg1;
-- (id)_newLabelForElement:(id)arg1 withText:(id)arg2;
-- (void)_finishActiveScrollRequest;
-- (void)_performNextScrollRequest;
-- (void)loadArchive:(id)arg1;
-- (id)_DOMDocument;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForElement:(id)arg1;
-- (void)resetScriptInterface;
-- (id)_localStoragePath;
-- (BOOL)sourceIsTrusted;
-- (void)setSourceIsTrusted:(BOOL)arg1;
 - (id)windowScriptObject;
-- (void)scriptInterface:(id)arg1 receivedEventOfType:(int)arg2 userInfo:(id)arg3;
-- (void)scriptInterface:(id)arg1 animatePurchaseForIdentifier:(id)arg2;
-- (void)scriptInterface:(id)arg1 parsedPropertyList:(id)arg2 ofType:(int)arg3;
-- (id)parentViewControllerForScriptInterface:(id)arg1;
-- (struct OpaqueJSContext { }*)javaScriptContextForScriptInterface:(id)arg1;
-- (struct OpaqueJSContext { }*)globalExecutionContext;
+- (void)loadArchive:(id)arg1;
+- (void)dealloc;
+- (void)_setRichTextReaderViewportSettings;
+- (void)view:(id)arg1 didSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (id)title;
+- (void)setScrollingEnabled:(BOOL)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

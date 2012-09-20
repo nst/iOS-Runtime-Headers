@@ -15,15 +15,16 @@
 @property(retain) NSArray * nonExtensionCandidates;
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)candidates;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)addCandidate:(id)arg1;
 - (void)setNonExtensionCandidates:(id)arg1;
 - (id)mutableCandidates;
 - (id)initWithTitle:(id)arg1 candidates:(id)arg2;
 - (id)nonExtensionCandidates;
+- (BOOL)hasAlternativeText;
 - (void)sortWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
 - (void)setCandidates:(id)arg1;
 - (id)title;

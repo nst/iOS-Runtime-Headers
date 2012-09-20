@@ -9,16 +9,16 @@
     double expirationTime;
 }
 
-@property double expirationTime;
 @property(retain) NSArray * newsItems;
+@property double expirationTime;
 
 
-- (void)dealloc;
-- (id)initWithArchiveArray:(id)arg1;
-- (id)newsItems;
-- (id)archiveArray;
-- (void)setNewsItems:(id)arg1;
 - (double)expirationTime;
 - (void)setExpirationTime:(double)arg1;
+- (void).cxx_destruct;
+- (void)setNewsItems:(id)arg1;
+- (id)newsItems;
+- (id)archiveArray;
+- (id)initWithArchiveArray:(id)arg1;
 
 @end

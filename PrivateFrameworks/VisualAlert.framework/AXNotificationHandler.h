@@ -29,6 +29,12 @@
 + (void)_safelyRemoveObserverForIdentifier:(unsigned int)arg1;
 + (unsigned int)_safelyRegisterObserver:(id)arg1;
 
+- (void)invalidate;
+- (id)description;
+- (void)dealloc;
+- (void)_setTarget:(id)arg1;
+- (id)_target;
+- (BOOL)isValid;
 - (void)_handleNotificationWithName:(id)arg1 object:(const void*)arg2 userInfo:(id)arg3;
 - (id)_dispatcher;
 - (void)_stopObserving;
@@ -41,11 +47,5 @@
 - (void)processHandler:(SEL)arg1;
 - (id)initWithNotificationName:(id)arg1 target:(id)arg2 handler:(SEL)arg3;
 - (id)initWithNotificationName:(id)arg1 target:(id)arg2 dispatcher:(id)arg3;
-- (id)description;
-- (void)dealloc;
-- (void)_setTarget:(id)arg1;
-- (id)_target;
-- (BOOL)isValid;
-- (void)invalidate;
 
 @end

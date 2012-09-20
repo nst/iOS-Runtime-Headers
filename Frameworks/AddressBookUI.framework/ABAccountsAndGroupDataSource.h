@@ -2,55 +2,57 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class AccountsManager, NSArray, ABModel, NSDictionary, NSMutableDictionary;
+@class NSArray, ABModel, NSDictionary, ACAccountStore, AccountsManager;
 
 @interface ABAccountsAndGroupDataSource : NSObject <UITableViewDataSource> {
     ABModel *_model;
     NSArray *_accountIdentifiers;
     NSArray *_accountDisplayNames;
     NSDictionary *_groupsByAccountIdentifier;
-    NSMutableDictionary *_headerViewsBySection;
     BOOL _hidesSearchableSources;
     BOOL _hidesGlobalGroupWrapper;
     AccountsManager *_accountsManager;
+    ACAccountStore *_accountStore;
+    BOOL _dirty;
 }
 
 @property(retain) ABModel * model;
-@property(retain) AccountsManager * accountsManager;
-@property BOOL hidesGlobalGroupWrapper;
 @property BOOL hidesSearchableSources;
+@property BOOL hidesGlobalGroupWrapper;
+@property(getter=isDirty) BOOL dirty;
+@property(retain) AccountsManager * accountsManager;
+@property(retain) ACAccountStore * accountStore;
 
 
-- (id)init;
 - (void)dealloc;
-- (int)numberOfGroupsForAccountIdentifier:(id)arg1;
-- (void)reloadDataIncludingAccountsManager:(BOOL)arg1;
-- (int)numberOfGroupsInAccountAtIndex:(int)arg1;
-- (id)groupNameForIndexPath:(id)arg1;
-- (id)accountGroupWrappers;
-- (void)setAccountsManager:(id)arg1;
-- (int)preferredTableViewStyle;
-- (BOOL)hasMultipleAccountsOrGroups;
-- (id)defaultGroupWrapper;
-- (BOOL)hidesGlobalGroupWrapper;
-- (id)indexPathForGroupWrapper:(id)arg1;
-- (void)scheduleRefresh;
-- (void)cancelScheduledRefresh;
-- (id)cachedHeaderViewForSection:(unsigned int)arg1;
-- (id)accountDisplayNameAtIndex:(int)arg1;
-- (void)cacheHeaderView:(id)arg1 forSection:(unsigned int)arg2;
-- (id)groupWrapperForIndexPath:(id)arg1;
-- (id)accountsManager;
-- (BOOL)hidesSearchableSources;
-- (void)setHidesSearchableSources:(BOOL)arg1;
-- (void)setHidesGlobalGroupWrapper:(BOOL)arg1;
-- (void)setModel:(id)arg1;
-- (int)numberOfAccounts;
+- (id)init;
 - (id)model;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)reloadData;
+- (void)setModel:(id)arg1;
+- (int)numberOfGroupsForAccountIdentifier:(id)arg1;
+- (id)indexPathForGroupWrapper:(id)arg1;
+- (id)defaultGroupWrapper;
+- (int)numberOfAccounts;
+- (int)numberOfGroupsInAccountAtIndex:(int)arg1;
+- (void)reloadDataIncludingAccountsManager:(BOOL)arg1 usingArchivedState:(BOOL)arg2;
+- (id)accountsManager;
+- (id)accountStore;
+- (void)setAccountStore:(id)arg1;
+- (void)setAccountsManager:(id)arg1;
+- (id)groupWrapperForIndexPath:(id)arg1;
+- (void)setDirty:(BOOL)arg1;
+- (id)newContactsFilterFromSelectedGroupWrappers;
+- (id)accountDisplayNameAtIndex:(int)arg1;
+- (void)cancelScheduledRefresh;
+- (void)scheduleRefresh;
+- (BOOL)hidesGlobalGroupWrapper;
+- (void)setHidesGlobalGroupWrapper:(BOOL)arg1;
+- (BOOL)hidesSearchableSources;
+- (void)setHidesSearchableSources:(BOOL)arg1;
+- (BOOL)isDirty;
 
 @end

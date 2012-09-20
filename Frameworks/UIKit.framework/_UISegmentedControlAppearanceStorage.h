@@ -25,8 +25,8 @@
 @property(retain) UIImage * optionsBackgroundImage;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setOptionsBackgroundImage:(id)arg1;
 - (id)optionsBackgroundImage;
 - (void)setIsTiled:(BOOL)arg1 leftCapWidth:(unsigned int)arg2 rightCapWidth:(unsigned int)arg3;
@@ -34,12 +34,14 @@
 - (BOOL)legacySuppressOptionsBackground;
 - (id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2 isMini:(BOOL)arg3;
 - (id)anyDividerImage;
+- (id)backgroundImageForState:(unsigned int)arg1 isMini:(BOOL)arg2;
 - (id)contentPositionOffsetForSegment:(int)arg1 inMiniBar:(BOOL)arg2;
 - (id)backgroundPositionAdjustmentInMiniBar:(BOOL)arg1;
 - (void)setBackgroundPositionAdjustment:(id)arg1 inMiniBar:(BOOL)arg2;
 - (BOOL)wantsTrackingSuppressed;
 - (void)takeTextAttributesFrom:(struct { id x1; id x2; id x3; id x4; id x5; struct CGSize { float x_6_1_1; float x_6_1_2; } x6; })arg1 forState:(unsigned int)arg2;
 - (void)setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3 isMini:(BOOL)arg4;
+- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 isMini:(BOOL)arg3;
 - (void)setContentPositionOffset:(id)arg1 forSegment:(int)arg2 inMiniBar:(BOOL)arg3;
 - (id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2 isMini:(BOOL)arg3 withFallback:(BOOL)arg4;
 - (id)anyDividerImageForMini:(BOOL)arg1;
@@ -47,7 +49,5 @@
 - (id)contentPositionOffsetForSegment:(int)arg1 inMiniBar:(BOOL)arg2 noFallback:(BOOL)arg3;
 - (void)setTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (id)textAttributesForState:(unsigned int)arg1;
-- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 isMini:(BOOL)arg3;
-- (id)backgroundImageForState:(unsigned int)arg1 isMini:(BOOL)arg2;
 
 @end

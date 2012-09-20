@@ -15,12 +15,21 @@
 @property(readonly) NSArray * outputs;
 @property(getter=_figAssetReader,readonly) struct OpaqueFigAssetReader { }* figAssetReader;
 
-+ (id)assetReaderWithAsset:(id)arg1 error:(id*)arg2;
 + (void)initialize;
++ (id)_errorForOSStatus:(long)arg1;
++ (id)assetReaderWithAsset:(id)arg1 error:(id*)arg2;
 
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (int)status;
+- (id)asset;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)finalize;
+- (void)addOutput:(id)arg1;
+- (id)error;
+- (BOOL)startReading;
 - (struct OpaqueFigAssetReader { }*)_figAssetReader;
 - (void)_handleServerDiedNotification;
 - (BOOL)canAddOutput:(id)arg1;
@@ -31,13 +40,5 @@
 - (void)cancelReading;
 - (void)setTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
 - (id)outputs;
-- (void)addOutput:(id)arg1;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
-- (int)status;
-- (id)error;
-- (id)asset;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)finalize;
-- (BOOL)startReading;
 
 @end

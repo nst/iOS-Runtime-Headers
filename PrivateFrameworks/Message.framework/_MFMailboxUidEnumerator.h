@@ -10,8 +10,8 @@
 }
 
 
-- (id)initWithMailbox:(id)arg1;
 - (void)dealloc;
 - (id)nextObject;
+- (id)initWithMailbox:(id)arg1;
 
 @end

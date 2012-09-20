@@ -60,5 +60,6 @@
 - (int)pageCount;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

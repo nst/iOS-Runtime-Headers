@@ -12,7 +12,7 @@
 
 
 - (void)dealloc;
-- (id)initWithContentsOfPath:(id)arg1 languageIdentifier:(id)arg2;
 - (id)processedTextFromString:(id)arg1;
+- (id)initWithContentsOfPath:(id)arg1 languageIdentifier:(id)arg2;
 
 @end

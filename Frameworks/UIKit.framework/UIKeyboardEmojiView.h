@@ -25,8 +25,8 @@
 - (void)setImageView:(id)arg1;
 - (id)createAndInstallKeyPopupView;
 - (void)uninstallPopup;
-- (id)emoji;
 - (void)setEmoji:(id)arg1;
+- (id)emoji;
 - (id)imageView;
 
 @end

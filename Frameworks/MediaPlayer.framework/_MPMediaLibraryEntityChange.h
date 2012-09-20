@@ -15,10 +15,10 @@
 @property(readonly) int deletionType;
 
 
-- (void)dealloc;
 - (int)deletionType;
 - (id)initWithEntity:(id)arg1 anchor:(id)arg2 deletionType:(int)arg3;
-- (id)anchor;
 - (id)entity;
+- (void)dealloc;
+- (id)anchor;
 
 @end

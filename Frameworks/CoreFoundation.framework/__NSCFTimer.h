@@ -8,23 +8,23 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (id)userInfo;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (void)invalidate;
 - (unsigned int)retainCount;
+- (unsigned int)hash;
 - (id)retain;
+- (BOOL)isEqual:(id)arg1;
+- (id)userInfo;
 - (oneway void)release;
 - (id)init;
-- (void)fire;
-- (unsigned long)_cfTypeID;
 - (id)fireDate;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (void)finalize;
 - (double)timeInterval;
 - (id)initWithFireDate:(id)arg1 interval:(double)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 repeats:(BOOL)arg6;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)setFireDate:(id)arg1;
 - (BOOL)isValid;
-- (void)invalidate;
+- (void)fire;
+- (unsigned long)_cfTypeID;
 
 @end

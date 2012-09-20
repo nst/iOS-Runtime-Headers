@@ -35,29 +35,30 @@
 @property(readonly) NSArray * changedObjects;
 
 
-- (id)init;
+- (id)deletedObjects;
+- (id)insertedObjects;
+- (id)name;
 - (void)dealloc;
+- (id)init;
+- (id)snapshot;
+- (id)object;
+- (id)_init;
+- (BOOL)_didCalculateDiffs;
 - (id)changedObjects;
 - (BOOL)hasMoves;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (BOOL)countDidChange;
 - (id)_contentRelationshipName;
 - (id)_changedObjects;
+- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (id)_initWithObject:(id)arg1 snapshot:(id)arg2 changedObjects:(id)arg3;
-- (BOOL)_didCalculateDiffs;
+- (void)_calculateDiffsIfNecessary;
 - (id)_diffDescription;
 - (void)_calculateDiffs;
 - (id)_managedObject;
-- (id)snapshot;
-- (id)object;
-- (id)name;
-- (id)_init;
-- (id)insertedObjects;
-- (id)deletedObjects;
-- (BOOL)shouldReload;
-- (void)enumerateMovesWithBlock:(id)arg1;
 - (id)changedIndexes;
+- (void)enumerateMovesWithBlock:(id)arg1;
 - (id)insertedIndexes;
 - (id)deletedIndexes;
+- (BOOL)shouldReload;
 
 @end

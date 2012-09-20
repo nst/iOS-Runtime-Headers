@@ -2,48 +2,76 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class NSArray;
+@class NSArray, NSString, XPCProxy<ACDAccountStoreProtocol>;
 
 @interface ACAccountStore : NSObject <XPCProxyTarget> {
-    id _accountStoreProxy;
+    XPCProxy<ACDAccountStoreProtocol> *_accountStoreProxy;
     struct dispatch_queue_s { } *_connectionQueue;
+    struct dispatch_queue_s { } *_replyQueue;
     struct _xpc_connection_s { } *_connection;
+    NSString *_clientBundleID;
 }
 
 @property(readonly) NSArray * accounts;
+@property(readonly) NSString * effectiveBundleID;
+@property(readonly) XPCProxy<ACDAccountStoreProtocol> * accountStoreProxy;
 
++ (BOOL)canSaveAccountsOfAccountTypeIdentifier:(id)arg1;
++ (int)countOfAccountsWithAccountTypeIdentifier:(id)arg1;
 + (int)accountsWithAccountTypeIdentifierExist:(id)arg1;
 
-- (id)accounts;
-- (id)accountWithIdentifier:(id)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (id)init;
-- (void)dealloc;
+- (void)requestAccessToAccountsWithType:(id)arg1 options:(id)arg2 completion:(id)arg3;
+- (id)accountsWithAccountType:(id)arg1;
+- (id)accountTypeWithAccountTypeIdentifier:(id)arg1;
+- (id)typeIdentifierForDomain:(id)arg1;
 - (BOOL)permissionForAccountType:(id)arg1;
-- (void)clearPermissionGrantedForBundleID:(id)arg1 onAccountType:(id)arg2;
+- (void)clearAllPermissionsGrantedForAccountType:(id)arg1;
 - (void)setPermissionGranted:(BOOL)arg1 forBundleID:(id)arg2 onAccountType:(id)arg3;
 - (id)appPermissionsForAccountType:(id)arg1;
+- (id)accessKeysForAccountType:(id)arg1;
+- (id)syncableDataclassesForAccountType:(id)arg1;
 - (id)provisionedDataclassesForAccount:(id)arg1;
 - (id)enabledDataclassesForAccount:(id)arg1;
 - (id)childAccountsForAccount:(id)arg1;
 - (id)parentAccountForAccount:(id)arg1;
-- (id)credentialForAccount:(id)arg1;
+- (id)credentialForAccount:(id)arg1 bundleID:(id)arg2;
 - (id)typeForAccount:(id)arg1;
 - (id)allDataclasses;
-- (id)allAccountTypes;
 - (void)requestAccessToAccountsWithType:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)saveAccount:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)removeAccount:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)insertAccountDataclass:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)removeAccountType:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)insertAccountType:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)sendAccountDatabaseDidChangeNotificationWithHandler:(id)arg1;
-- (void)establishAccountStoreConnection;
-- (void)_noteAccountStoreConnectionInterrupted;
-- (void)tearDownAccountStoreConnection;
-- (void)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1;
-- (id)accountsWithAccountType:(id)arg1;
-- (id)accountTypeWithAccountTypeIdentifier:(id)arg1;
+- (id)accountStoreProxy;
+- (void)tearDownConnection;
+- (void)_configureWithConnection:(struct _xpc_connection_s { }*)arg1;
+- (struct _xpc_connection_s { }*)_newConnectionWithName:(const char *)arg1;
+- (id)effectiveBundleID;
+- (id)initWithEffectiveBundleID:(id)arg1;
+- (void)renewCredentialsForAccount:(id)arg1 completion:(id)arg2;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)setNotificationsEnabled:(BOOL)arg1;
+- (id)credentialForAccount:(id)arg1;
+- (int)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1;
+- (void)accountCredentialsDidChangeForAccountWithIdentifier:(id)arg1 handler:(id)arg2;
 - (void)saveAccount:(id)arg1 forPID:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)addAccount:(id)arg1;
+- (void)saveVerifiedAccount:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)promptUserForCredentialsWithAccount:(id)arg1 withHandler:(id)arg2;
+- (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id)arg3;
+- (id)accountIdentifiersEnabledToSyncDataclass:(id)arg1;
+- (id)accountWithIdentifier:(id)arg1;
+- (id)accounts;
+- (id)supportedDataclassesForAccountType:(id)arg1;
+- (id)displayTypeForAccountWithIdentifier:(id)arg1;
+- (void)verifyCredentialsForAccount:(id)arg1 withHandler:(id)arg2;
+- (void)saveAccount:(id)arg1 withCompletionHandler:(id)arg2;
+- (id)allAccountTypes;
+- (void)removeAccount:(id)arg1 withCompletionHandler:(id)arg2;
+- (id)accountWithAppleID:(id)arg1;
+- (id)accountWithDSID:(id)arg1;
+- (id)appleIDAccountType;
 
 @end

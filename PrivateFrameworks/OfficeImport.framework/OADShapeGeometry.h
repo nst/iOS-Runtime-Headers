@@ -10,13 +10,13 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (BOOL)isEscher;
-- (BOOL)hasAdjustValueAtIndex:(unsigned int)arg1;
-- (id)adjustValues;
+- (id)init;
 - (void)setAdjustValue:(long)arg1 atIndex:(unsigned int)arg2;
-- (long)adjustValueAtIndex:(unsigned int)arg1;
+- (BOOL)hasAdjustValueAtIndex:(unsigned int)arg1;
 - (void)setIsEscher:(BOOL)arg1;
+- (long)adjustValueAtIndex:(unsigned int)arg1;
+- (BOOL)isEscher;
+- (id)adjustValues;
 
 @end

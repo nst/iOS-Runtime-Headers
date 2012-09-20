@@ -11,10 +11,9 @@
 + (void)initialize;
 + (id)_newDelegate;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)deactivate;
-- (void)_fakeLinkingFailure;
 - (unsigned int)remainingBatteryLifetimeInHours;
 - (void)cancelSearching;
 - (void)beginSearching;
@@ -23,5 +22,6 @@
 - (void)_fakeNextPacketWithPayload:(id)arg1 timestamp:(unsigned long)arg2;
 - (void)_fakeSearchSuccess;
 - (void)_fakeLinkingSuccess;
+- (void)_fakeLinkingFailure;
 
 @end

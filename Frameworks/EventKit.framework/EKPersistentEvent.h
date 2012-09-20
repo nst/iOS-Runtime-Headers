@@ -22,7 +22,8 @@
 @property(readonly) int birthdayID;
 @property(copy) NSURL * URL;
 @property(copy) NSString * responseComment;
-@property unsigned int readStatus;
+@property unsigned int invitationStatus;
+@property(readonly) unsigned int invitationChangedProperties;
 @property int status;
 @property int availability;
 @property unsigned int privacyLevel;
@@ -36,21 +37,24 @@
 @property(readonly) int pendingParticipationStatus;
 @property(copy) NSDate * originalStartDate;
 
-+ (id)defaultPropertiesToLoad;
-+ (id)relations;
 + (id)generateUniqueIDWithEvent:(id)arg1 originalEvent:(id)arg2 calendar:(id)arg3;
++ (id)relations;
++ (id)defaultPropertiesToLoad;
 
-- (int)availability;
+- (id)URL;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)setStatus:(int)arg1;
 - (int)status;
+- (void)setURL:(id)arg1;
+- (id)initCommon;
+- (BOOL)isEditable;
+- (double)duration;
+- (BOOL)isFloating;
 - (void)removeAction:(id)arg1;
 - (void)addAction:(id)arg1;
 - (void)setActions:(id)arg1;
-- (void)setReadStatus:(unsigned int)arg1;
-- (unsigned int)readStatus;
 - (int)birthdayId;
 - (BOOL)isMeeting;
 - (id)committedStartDate;
@@ -60,12 +64,13 @@
 - (BOOL)_hasExternalIDOrDeliverySource;
 - (BOOL)isInvitation;
 - (id)actions;
-- (BOOL)_hasValidEventAction;
+- (BOOL)hasValidEventAction;
 - (BOOL)_areDurationUnitsCached;
 - (void)_invalidateCachedDurationUnits;
 - (void)primitiveValueChangedForKey:(id)arg1;
 - (void)setResponseComment:(id)arg1;
 - (id)responseComment;
+- (int)availability;
 - (BOOL)needsOccurrenceCacheUpdate;
 - (void)setOriginalStartDate:(id)arg1;
 - (id)detachWithStartDate:(id)arg1 newStartDate:(id)arg2 future:(BOOL)arg3;
@@ -76,6 +81,7 @@
 - (void)setParticipationStatus:(int)arg1;
 - (int)pendingParticipationStatus;
 - (BOOL)responseMustApplyToAll;
+- (unsigned int)invitationChangedProperties;
 - (id)organizer;
 - (int)birthdayID;
 - (int)participationStatus;
@@ -89,14 +95,10 @@
 - (id)exportToICS;
 - (id)eventIdentifier;
 - (id)endDate;
-- (int)entityType;
+- (void)setInvitationStatus:(unsigned int)arg1;
+- (unsigned int)invitationStatus;
 - (BOOL)validate:(id*)arg1;
 - (BOOL)refresh;
-- (void)setURL:(id)arg1;
-- (id)initCommon;
-- (id)URL;
-- (BOOL)isEditable;
-- (double)duration;
-- (BOOL)isFloating;
+- (int)entityType;
 
 @end

@@ -10,18 +10,18 @@
     PFUbiquityStoreSaveSnapshot *_destinationStoreSaveSnapshot;
 }
 
-@property(retain) PFUbiquityStoreSaveSnapshot * destinationStoreSaveSnapshot;
-@property(retain) PFUbiquityStoreSaveSnapshot * sourceStoreSaveSnapshot;
 @property(retain) PFUbiquityTransactionLog * transactionLog;
+@property(retain) PFUbiquityStoreSaveSnapshot * sourceStoreSaveSnapshot;
+@property(retain) PFUbiquityStoreSaveSnapshot * destinationStoreSaveSnapshot;
 
 
 - (void)dealloc;
 - (id)sourceStoreSaveSnapshot;
-- (void)setSourceStoreSaveSnapshot:(id)arg1;
-- (void)setDestinationStoreSaveSnapshot:(id)arg1;
 - (id)sourceGlobalObjectIDFromCompressedID:(id)arg1;
 - (id)destinationStoreSaveSnapshot;
-- (id)transactionLog;
+- (void)setDestinationStoreSaveSnapshot:(id)arg1;
+- (void)setSourceStoreSaveSnapshot:(id)arg1;
 - (void)setTransactionLog:(id)arg1;
+- (id)transactionLog;
 
 @end

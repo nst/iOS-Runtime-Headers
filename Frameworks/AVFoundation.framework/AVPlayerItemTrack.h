@@ -13,22 +13,23 @@
 
 + (id)playerItemTrackWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (int)trackID;
+- (id)assetTrack;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void)finalize;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)isEnabled;
 - (id)_audioVolumeCurve;
 - (id)fallbackTrack;
 - (id)_initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;
 - (id)_playerItem;
+- (void)_setAudioTapProcessor:(struct opaqueMTAudioProcessingTap { }*)arg1;
 - (void)_setAudioVolumeCurve:(id)arg1;
-- (id)assetTrack;
 - (struct OpaqueFigPlaybackItem { }*)_figPlaybackItem;
-- (int)trackID;
 - (void)_removeLayer:(id)arg1;
 - (void)_addLayer:(id)arg1;
-- (void)finalize;
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)isEnabled;
 
 @end

@@ -15,5 +15,6 @@
 }
 
 
+- (id).cxx_construct;
 
 @end

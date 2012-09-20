@@ -14,7 +14,7 @@
 - (id)init;
 - (BOOL)shouldContinuePlayingCurrentItem;
 - (void)setShouldContinuePlayingCurrentItem:(BOOL)arg1;
-- (BOOL)seedGeniusPlaylist:(id)arg1 withItem:(id)arg2 error:(id*)arg3;
+- (void)seedGeniusPlaylist:(id)arg1 withItem:(id)arg2 timeout:(double)arg3 completionBlock:(id)arg4;
 - (void)setShouldSwitchViewControllerContexts:(BOOL)arg1;
 - (BOOL)shouldSwitchViewControllerContexts;
 

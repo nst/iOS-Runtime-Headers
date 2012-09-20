@@ -8,34 +8,15 @@
     BOOL dataSourceHasBeenSet;
     struct CGPDFDocument { } *_PDFDocument;
     NSString *_title;
-    struct CGRect { struct CGPoint { 
-            float x; 
-            float y; 
-        } x1; struct CGSize { 
-            float width; 
-            float height; 
-        } x2; } *_pageRects;
+    struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } *_pageRects;
 }
 
++ (struct CGColor { }*)shadowColor;
++ (struct CGColor { }*)backgroundColor;
 + (id)supportedMIMETypes;
 + (Class)_representationClassForWebFrame:(id)arg1;
-+ (struct CGColor { }*)backgroundColor;
-+ (struct CGColor { }*)shadowColor;
 
 - (void)dealloc;
-- (unsigned int)pageNumberForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)_pagesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawPage:(struct CGPDFPage { }*)arg1;
-- (void)_checkPDFTitle;
-- (void)_computePageRects;
-- (BOOL)canProvideDocumentSource;
-- (id)documentSource;
-- (void)viewWillMoveToHostWindow:(id)arg1;
-- (void)viewDidMoveToHostWindow;
-- (void)finishedLoadingWithDataSource:(id)arg1;
-- (void)receivedData:(id)arg1 withDataSource:(id)arg2;
-- (void)dataSourceUpdated:(id)arg1;
-- (void)receivedError:(id)arg1 withDataSource:(id)arg2;
 - (struct CGPDFDocument { }*)doc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageNumber:(unsigned int)arg1;
 - (unsigned int)totalPages;
@@ -44,5 +25,18 @@
 - (id)title;
 - (void)setDataSource:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned int)pageNumberForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_computePageRects;
+- (void)_checkPDFTitle;
+- (void)drawPage:(struct CGPDFPage { }*)arg1;
+- (id)_pagesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)documentSource;
+- (BOOL)canProvideDocumentSource;
+- (void)viewDidMoveToHostWindow;
+- (void)viewWillMoveToHostWindow:(id)arg1;
+- (void)receivedError:(id)arg1 withDataSource:(id)arg2;
+- (void)dataSourceUpdated:(id)arg1;
+- (void)receivedData:(id)arg1 withDataSource:(id)arg2;
+- (void)finishedLoadingWithDataSource:(id)arg1;
 
 @end

@@ -21,32 +21,32 @@
     UIView *_pinstripeView;
 }
 
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } pinstripeRect;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } pinstripeRect;
 
-+ (float)preferredHeight;
 + (id)defaultBackgroundColor;
++ (float)preferredHeight;
 
+- (void)doneEditing;
+- (void)addNewValue;
+- (BOOL)wantsNewButton;
+- (id)specifierLabel;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pinstripeRect;
+- (void)setPinstripeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)handlesDoneButton;
+- (id)preferenceValue;
+- (void)viewDidBecomeVisible;
+- (id)preferenceSpecifier;
+- (void)setPreferenceValue:(id)arg1;
+- (void)setPreferenceSpecifier:(id)arg1;
+- (BOOL)requiresKeyboard;
+- (void)setDelegate:(id)arg1;
 - (void)dealloc;
-- (BOOL)changed;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPinstripeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pinstripeRect;
-- (id)specifierLabel;
-- (BOOL)wantsNewButton;
-- (void)addNewValue;
 - (void)editMode;
-- (void)doneEditing;
-- (BOOL)requiresKeyboard;
-- (void)setPreferenceSpecifier:(id)arg1;
-- (void)setPreferenceValue:(id)arg1;
-- (id)preferenceSpecifier;
-- (void)viewDidBecomeVisible;
-- (id)preferenceValue;
-- (BOOL)handlesDoneButton;
+- (BOOL)changed;
 
 @end

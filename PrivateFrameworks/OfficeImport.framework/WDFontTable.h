@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class SFUNoCopyDictionary, NSMutableArray;
+@class TSUNoCopyDictionary, NSMutableArray;
 
 @interface WDFontTable : NSObject  {
-    SFUNoCopyDictionary *mFontTable;
+    TSUNoCopyDictionary *mFontTable;
     NSMutableArray *mFontsInOrderOfInsertion;
 }
 
 
-- (int)count;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (int)count;
 - (void)clear;
 - (id)fontWithName:(id)arg1;
 - (id)fontWithName:(id)arg1 create:(BOOL)arg2;

@@ -30,11 +30,12 @@
 @property(readonly) double duration;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (int)transitionDirection;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (double)duration;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrame;
 - (struct CGPoint { float x1; float x2; })_anchorPointForPivotEdge:(int)arg1;
@@ -55,7 +56,6 @@
 - (void)_addUnfoldAnimationsToFacesWithDuration:(double)arg1;
 - (id)_containerLayerAnimation;
 - (void)_prepareForTransition;
-- (int)transitionDirection;
 - (void)setFacesWithControllerToSnapshot:(id)arg1;
 - (void)setFinalFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTransitionDirection:(int)arg1;

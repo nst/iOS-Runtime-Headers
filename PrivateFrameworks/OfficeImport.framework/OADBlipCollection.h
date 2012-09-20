@@ -11,11 +11,11 @@
 @property(retain) NSMutableArray * blips;
 
 
-- (id)init;
 - (void)dealloc;
-- (unsigned long)addBlip:(id)arg1;
-- (unsigned long)blipCount;
+- (id)init;
 - (void)setBlips:(id)arg1;
+- (unsigned long)blipCount;
+- (unsigned long)addBlip:(id)arg1;
 - (id)blipAtIndex:(long)arg1;
 - (id)blips;
 

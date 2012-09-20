@@ -10,12 +10,12 @@
 
 @property(retain) NSMutableSet * supportedReports;
 
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)addSupportedReport:(id)arg1;
-- (id)copyParseRules;
 - (void)setSupportedReports:(id)arg1;
 - (id)supportedReports;
 

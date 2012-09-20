@@ -6,7 +6,7 @@
 
 @interface WDFieldMarker : WDRun  {
     WDCharacterProperties *mProperties;
-    int mFieldPosition;
+    long mFieldPosition;
     int mMarkerType;
     unsigned char mFieldType;
     unsigned int mZombieEmbed : 1;
@@ -22,27 +22,27 @@
 - (void)dealloc;
 - (id)properties;
 - (void)setLocked:(BOOL)arg1;
-- (long)fieldPosition;
-- (unsigned char)fieldType;
-- (BOOL)zombieEmbed;
-- (void)setZombieEmbed:(BOOL)arg1;
-- (BOOL)resultDirty;
-- (void)setResultDirty:(BOOL)arg1;
-- (BOOL)resultEdited;
-- (void)setResultEdited:(BOOL)arg1;
-- (BOOL)locked;
-- (BOOL)privateResult;
-- (void)setPrivateResult:(BOOL)arg1;
-- (BOOL)nested;
-- (void)setNested:(BOOL)arg1;
-- (BOOL)hasSeparator;
 - (void)setHasSeparator:(BOOL)arg1;
+- (BOOL)hasSeparator;
+- (void)setNested:(BOOL)arg1;
+- (BOOL)nested;
+- (void)setPrivateResult:(BOOL)arg1;
+- (BOOL)privateResult;
+- (BOOL)locked;
+- (void)setResultEdited:(BOOL)arg1;
+- (BOOL)resultEdited;
+- (void)setResultDirty:(BOOL)arg1;
+- (BOOL)resultDirty;
+- (void)setZombieEmbed:(BOOL)arg1;
+- (BOOL)zombieEmbed;
+- (long)fieldPosition;
 - (void)clearProperties;
-- (int)fieldMarkerType;
 - (id)initWithParagraph:(id)arg1;
-- (void)setFieldPosition:(long)arg1;
-- (void)setFieldMarkerType:(int)arg1;
 - (void)setFieldType:(unsigned char)arg1;
+- (void)setFieldMarkerType:(int)arg1;
+- (void)setFieldPosition:(long)arg1;
 - (int)runType;
+- (int)fieldMarkerType;
+- (unsigned char)fieldType;
 
 @end

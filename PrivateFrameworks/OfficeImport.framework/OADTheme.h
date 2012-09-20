@@ -12,15 +12,15 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (void)addDefaults;
-- (id)lineDefaults;
-- (id)addShapeDefaults;
-- (id)addLineDefaults;
+- (id)init;
 - (id)addTextDefaults;
-- (id)shapeDefaults;
+- (id)addLineDefaults;
+- (id)addShapeDefaults;
+- (void)addDefaults;
 - (id)textDefaults;
+- (id)lineDefaults;
+- (id)shapeDefaults;
 - (id)baseStyles;
 
 @end

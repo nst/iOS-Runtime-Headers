@@ -13,16 +13,21 @@
 - (void)_setImagePickerMediaTypes:(id)arg1;
 - (int)_imagePickerStatusBarStyle;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
-- (void)albumView:(id)arg1 didTapPhotoAtIndex:(unsigned int)arg2;
+- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
+- (BOOL)footerSubtitleAllowsEmail:(id)arg1;
+- (id)footerAccessoryViewForAlbumView:(id)arg1;
+- (void)albumView:(id)arg1 didTapPhotoAtIndexPath:(id)arg2;
 - (void)albumViewSelectionDidChange:(id)arg1 added:(id)arg2 removed:(id)arg3;
+- (id)albumView:(id)arg1 badgeImageForPhotoAtIndexPath:(id)arg2;
+- (void)updateUnreadMarkerAnimated:(BOOL)arg1;
 - (void)_showDoneButton;
 - (void)_doneButtonClicked:(id)arg1;
 - (void)_cancelButtonClicked:(id)arg1;
 - (void)_libraryDidChange:(id)arg1;
 - (void)_showCancelButton;
 - (BOOL)_dismissButtonAllowed;
-- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
 
 @end

@@ -9,9 +9,9 @@
 @property BOOL allowsHeaderAndFooterToFloat;
 
 
-- (BOOL)allowsFooterViewsToFloat;
-- (BOOL)allowsHeaderViewsToFloat;
 - (BOOL)allowsHeaderAndFooterToFloat;
 - (void)setAllowsHeaderAndFooterToFloat:(BOOL)arg1;
+- (BOOL)allowsFooterViewsToFloat;
+- (BOOL)allowsHeaderViewsToFloat;
 
 @end

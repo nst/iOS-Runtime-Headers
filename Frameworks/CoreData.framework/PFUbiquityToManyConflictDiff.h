@@ -10,19 +10,19 @@
     NSString *_relationshipKey;
 }
 
-@property(readonly) NSString * relationshipKey;
-@property(readonly) NSMutableSet * deletedObjectIDs;
 @property(readonly) NSMutableSet * insertedObjectIDs;
+@property(readonly) NSMutableSet * deletedObjectIDs;
+@property(readonly) NSString * relationshipKey;
 
 
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (id)relationshipKey;
-- (id)initForRelationshipAtKey:(id)arg1;
 - (void)diffWithLogSnapshot:(id)arg1 andPreviousSnapshot:(id)arg2;
-- (id)insertedObjectIDs;
+- (id)initForRelationshipAtKey:(id)arg1;
 - (id)deletedObjectIDs;
+- (id)insertedObjectIDs;
 
 @end

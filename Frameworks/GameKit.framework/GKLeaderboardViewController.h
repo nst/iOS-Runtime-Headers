@@ -2,37 +2,24 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString, <GKLeaderboardViewControllerDelegate>, GKLeaderboardCategoryViewController, GKLeaderboardViewControllerPrivate;
+@class <GKLeaderboardViewControllerDelegate>, NSString;
 
-@interface GKLeaderboardViewController : UINavigationController  {
-    GKLeaderboardCategoryViewController *_categoryController;
-    GKLeaderboardViewControllerPrivate *_privateViewController;
+@interface GKLeaderboardViewController : GKGameCenterViewController  {
+    <GKLeaderboardViewControllerDelegate> *_leaderboardDelegate;
 }
 
 @property int timeScope;
 @property(retain) NSString * category;
 @property <GKLeaderboardViewControllerDelegate> * leaderboardDelegate;
-@property(retain) GKLeaderboardViewControllerPrivate * privateViewController;
-@property(retain) GKLeaderboardCategoryViewController * categoryController;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)authenticatedStatusChanged;
-- (void)setLeaderboardDelegate:(id)arg1;
+- (void)notifyDelegateOnWillFinish;
 - (id)leaderboardDelegate;
-- (id)categoryController;
-- (void)setCategoryController:(id)arg1;
-- (id)privateViewController;
-- (void)setPrivateViewController:(id)arg1;
-- (id)game;
-- (void)setGame:(id)arg1;
-- (id)category;
-- (int)timeScope;
+- (void)setLeaderboardDelegate:(id)arg1;
 - (void)setTimeScope:(int)arg1;
+- (int)timeScope;
+- (id)init;
+- (id)category;
 - (void)setCategory:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

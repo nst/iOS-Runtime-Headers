@@ -6,7 +6,7 @@
 }
 
 
-- (int)numAddControllersInStack;
 - (id)specifiers;
+- (int)numAddControllersInStack;
 
 @end

@@ -11,16 +11,16 @@
 @property(retain) SALocation * location;
 @property(copy) NSString * timing;
 
-+ (id)locationTrigger;
 + (id)locationTriggerWithDictionary:(id)arg1 context:(id)arg2;
++ (id)locationTrigger;
 
 - (id)groupIdentifier;
 - (id)location;
 - (void)setLocation:(id)arg1;
-- (id)contactIdentifier;
-- (void)setContactIdentifier:(id)arg1;
-- (id)timing;
 - (void)setTiming:(id)arg1;
+- (id)timing;
+- (void)setContactIdentifier:(id)arg1;
+- (id)contactIdentifier;
 - (id)encodedClassName;
 
 @end

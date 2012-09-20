@@ -10,12 +10,12 @@
 @property(retain) SAReminderDateTimeTrigger * dateTimeTrigger;
 @property(retain) SAReminderLocationTrigger * locationTrigger;
 
-+ (id)compositeTrigger;
 + (id)compositeTriggerWithDictionary:(id)arg1 context:(id)arg2;
++ (id)compositeTrigger;
 
 - (id)groupIdentifier;
-- (void)setDateTimeTrigger:(id)arg1;
 - (void)setLocationTrigger:(id)arg1;
+- (void)setDateTimeTrigger:(id)arg1;
 - (id)locationTrigger;
 - (id)dateTimeTrigger;
 - (id)encodedClassName;

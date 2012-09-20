@@ -30,15 +30,15 @@
 - (id)links;
 - (id)border;
 - (void)setThemes:(id)arg1;
-- (id)initWithStringOptimization:(bool)arg1;
-- (id)contentFormats;
-- (id)alignmentInfos;
 - (id)fills;
+- (id)alignmentInfos;
 - (id)tableStyles;
-- (id)fonts;
 - (id)differentialStyles;
 - (id)themes;
-- (id)borders;
+- (id)initWithStringOptimization:(bool)arg1;
+- (id)contentFormats;
+- (id)fonts;
 - (id)styles;
+- (id)borders;
 
 @end

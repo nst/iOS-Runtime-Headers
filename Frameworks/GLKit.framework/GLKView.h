@@ -55,24 +55,6 @@
 
 + (Class)layerClass;
 
-- (void)dealloc;
-- (id)snapshot;
-- (void)displayLayer:(id)arg1;
-- (id)context;
-- (void)setContext:(id)arg1;
-- (BOOL)_controlsOwnScaleFactor;
-- (BOOL)_canDrawContent;
-- (void)setContentScaleFactor:(float)arg1;
-- (id)delegate;
-- (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)display;
-- (void)setDrawableProperties:(id)arg1;
-- (id)drawableProperties;
-- (void)_initCommon;
 - (void)setDrawRectIMP:(int (*)())arg1;
 - (int (*)())drawRectIMP;
 - (int)drawableHeight;
@@ -107,12 +89,30 @@
 - (void)setDrawableColorFormat:(int)arg1;
 - (int)drawableColorFormat;
 - (void)deleteDrawable;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
 - (void)_display:(BOOL)arg1;
 - (BOOL)_presentFramebuffer;
 - (void)_resolveAndDiscard;
 - (void)_setFramebuffer:(BOOL*)arg1;
-- (void)_createFramebuffer;
 - (void)_deleteFramebuffer;
+- (void)_initCommon;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)snapshot;
+- (void)displayLayer:(id)arg1;
+- (void)setContext:(id)arg1;
+- (BOOL)_controlsOwnScaleFactor;
+- (BOOL)_canDrawContent;
+- (void)setContentScaleFactor:(float)arg1;
+- (id)context;
+- (void)layoutSubviews;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)display;
+- (void)_createFramebuffer;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
+- (void)setDrawableProperties:(id)arg1;
+- (id)drawableProperties;
 
 @end

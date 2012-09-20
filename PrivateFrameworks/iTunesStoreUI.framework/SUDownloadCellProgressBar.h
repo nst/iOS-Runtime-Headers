@@ -13,6 +13,10 @@
 @property float value;
 
 
+- (id)_newSliderForTable;
+- (id)_newSliderForGrid;
+- (id)_newSliderWithEmptyImage:(id)arg1 fullImage:(id)arg2;
+- (id)_slider;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1;
 - (float)value;
@@ -20,9 +24,5 @@
 - (int)style;
 - (void)sizeToFit;
 - (void)layoutSubviews;
-- (id)_newSliderForTable;
-- (id)_newSliderForGrid;
-- (id)_newSliderWithEmptyImage:(id)arg1 fullImage:(id)arg2;
-- (id)_slider;
 
 @end

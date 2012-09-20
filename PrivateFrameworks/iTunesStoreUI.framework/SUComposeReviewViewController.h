@@ -12,22 +12,22 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)_setReviewByMergingWithReview:(id)arg1;
 - (void)_fetchReviewInfo;
 - (void)_submit;
-- (void)_cancel;
 - (id)copyReview;
 - (void)composeReviewViewValidityChanged:(id)arg1;
 - (void)setReview:(id)arg1;
 - (id)copyScriptViewController;
 - (void)operationFinished:(id)arg1;
 - (void)applicationDidEnterBackground;
+- (void)dealloc;
+- (id)init;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
+- (void)_cancel;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

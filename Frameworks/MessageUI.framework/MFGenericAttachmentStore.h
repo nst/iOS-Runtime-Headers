@@ -2,36 +2,47 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSMutableArray, MFConditionLock;
+@class MFConditionLock, NSArray, NSObject<OS_dispatch_queue>, NSMutableArray;
 
 @interface MFGenericAttachmentStore : MFWebAttachmentSource  {
     struct __CFDictionary { } *_attachmentSizes;
     NSMutableArray *_attachmentsOrder;
     unsigned int _size;
-    struct dispatch_queue_s { } *_scalingQueue;
+    NSObject<OS_dispatch_queue> *_scalingQueue;
     MFConditionLock *_scalingThrottle;
+    int _pendingImageScalingOperations;
     BOOL _outgoing;
     BOOL _didCancelImageScalingOperations;
+    BOOL _isScalingEnabled;
+    BOOL _isScalingThrottled;
 }
 
-+ (void)beginPreventingInlinePDFs;
-+ (void)endPreventingInlinePDFs;
-+ (BOOL)isPreventingInlinePDFs;
+@property BOOL scalingThrottled;
+@property(readonly) NSArray * attachments;
 
-- (void)removeAttachmentForURL:(id)arg1;
-- (id)attachments;
-- (BOOL)setAttachment:(id)arg1 forURL:(id)arg2;
++ (void)addAttachmentUniqueIdentifierStore:(id)arg1;
++ (BOOL)isPreventingInlinePDFs;
++ (void)endPreventingInlinePDFs;
++ (void)beginPreventingInlinePDFs;
+
 - (id)description;
 - (void)dealloc;
 - (BOOL)addAttachment:(id)arg1;
-- (unsigned long)sizeForScale:(int)arg1 imagesOnly:(BOOL)arg2;
-- (id)initOutgoing;
+- (unsigned long)sizeForScale:(unsigned int)arg1 imagesOnly:(BOOL)arg2;
+- (BOOL)scalingThrottled;
 - (void)removeAttachmentsForURLs:(id)arg1;
+- (BOOL)hasPendingImageScalingOperations;
+- (id)initOutgoing;
+- (void)_decrementPendingImageScalingOperations;
 - (BOOL)didCancelImageScalingOperations;
-- (void)_delayedSetScalingEnabled;
-- (void)cancelImageScalingOperations;
-- (void)setScalingThrottled:(BOOL)arg1;
-- (void)_enqueueScaleAttachment:(id)arg1 withFlags:(unsigned int)arg2 originalSize:(unsigned int)arg3;
+- (void)_inrementPendingImageScalingOperations;
 - (BOOL)addAttachment:(id)arg1 allowingOverride:(id)arg2;
+- (void)_notifyAttachmentCachedSizesChanged;
+- (void)_enqueueScaleAttachment:(id)arg1 withFlags:(unsigned int)arg2 originalSize:(unsigned int)arg3;
+- (void)setScalingThrottled:(BOOL)arg1;
+- (void)cancelImageScalingOperations;
+- (void)removeAttachmentForURL:(id)arg1;
+- (BOOL)setAttachment:(id)arg1 forURL:(id)arg2;
+- (id)attachments;
 
 @end

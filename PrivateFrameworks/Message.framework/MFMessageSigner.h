@@ -11,21 +11,25 @@
     NSString *_uncommentedSender;
 }
 
+@property(readonly) NSString * sender;
+@property(readonly) NSString * commonName;
+@property(readonly) NSString * emailAddress;
 @property(readonly) int action;
 @property(readonly) NSArray * certificates;
 @property(readonly) MFError * error;
-@property(readonly) NSString * sender;
 
 
-- (id)initWithSender:(id)arg1 trust:(struct __SecTrust { }*)arg2 verification:(int)arg3;
-- (struct __SecTrust { }*)copyTrust;
-- (void)addTrustException;
-- (void)removeTrustException;
-- (BOOL)hasTrustException;
-- (id)certificates;
 - (int)action;
 - (void)dealloc;
-- (id)error;
 - (id)sender;
+- (BOOL)hasTrustException;
+- (void)removeTrustException;
+- (void)addTrustException;
+- (struct __SecTrust { }*)copyTrust;
+- (id)emailAddress;
+- (id)commonName;
+- (id)initWithSender:(id)arg1 trust:(struct __SecTrust { }*)arg2 verification:(int)arg3;
+- (id)certificates;
+- (id)error;
 
 @end

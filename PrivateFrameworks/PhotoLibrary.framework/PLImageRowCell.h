@@ -14,8 +14,8 @@
 + (Class)layerClass;
 
 - (void)dealloc;
-- (id)initWithReuseIdentifier:(id)arg1;
 - (void)prepareForReuse;
+- (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutSubviews;
 - (void)setRowImage:(struct CGImage { }*)arg1;
 - (void)removeStackItemCell:(id)arg1;

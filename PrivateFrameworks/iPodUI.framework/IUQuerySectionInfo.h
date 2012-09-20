@@ -9,8 +9,8 @@
 }
 
 
-- (void)dealloc;
 - (unsigned int)indexOfSectionForSectionIndexTitleAtIndex:(unsigned int)arg1;
+- (void)dealloc;
 - (unsigned int)numberOfSections;
 - (id)titleOfIndexBarSectionAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfIndexBarTitles;

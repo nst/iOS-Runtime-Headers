@@ -12,21 +12,21 @@
 @property(copy) NSString * URLBagKey;
 @property(copy) id URLs;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (void)setTimeoutInterval:(id)arg1;
-- (id)timeoutInterval;
-- (id)init;
-- (void)dealloc;
-- (id)URLs;
-- (void)setURLs:(id)arg1;
-- (id)attributeKeys;
 - (id)copyNativeRequestProperties;
 - (id)initWithNativeRequestProperties:(id)arg1;
 - (id)URLBagKey;
 - (void)setURLBagKey:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)dealloc;
+- (id)init;
+- (id)URLs;
+- (void)setURLs:(id)arg1;
+- (id)attributeKeys;
+- (void)setTimeoutInterval:(id)arg1;
+- (id)timeoutInterval;
 
 @end

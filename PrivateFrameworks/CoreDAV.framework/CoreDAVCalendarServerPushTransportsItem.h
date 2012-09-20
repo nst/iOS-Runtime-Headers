@@ -10,13 +10,13 @@
 
 @property(retain) NSMutableSet * transports;
 
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setTransports:(id)arg1;
 - (void)addTransport:(id)arg1;
-- (id)copyParseRules;
 - (id)transports;
 
 @end

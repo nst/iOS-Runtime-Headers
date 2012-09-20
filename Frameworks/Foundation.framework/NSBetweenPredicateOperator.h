@@ -6,8 +6,8 @@
 }
 
 
-- (void)_setOptions:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
+- (void)_setOptions:(unsigned int)arg1;
 
 @end

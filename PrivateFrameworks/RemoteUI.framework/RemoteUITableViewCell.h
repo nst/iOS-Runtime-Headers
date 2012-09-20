@@ -12,24 +12,24 @@
     UIView *_remoteUIAccessoryView;
 }
 
-@property(retain) UIView * remoteUIAccessoryView;
-@property int remoteUIAccessoryType;
-@property BOOL leftAlignDetailLabel;
 @property BOOL forceFullSizeDetailLabel;
+@property BOOL leftAlignDetailLabel;
+@property int remoteUIAccessoryType;
+@property(retain) UIView * remoteUIAccessoryView;
 
 + (id)alertImage;
 
 - (void)dealloc;
-- (void)layoutSubviews;
-- (void)setRemoteUIAccessoryType:(int)arg1;
-- (void)setRowInvalid:(BOOL)arg1;
 - (id)remoteUIAccessoryView;
 - (int)remoteUIAccessoryType;
-- (BOOL)leftAlignDetailLabel;
 - (void)setLeftAlignDetailLabel:(BOOL)arg1;
-- (BOOL)forceFullSizeDetailLabel;
+- (BOOL)leftAlignDetailLabel;
 - (void)setForceFullSizeDetailLabel:(BOOL)arg1;
-- (void)setRemoteUIAccessoryView:(id)arg1;
+- (BOOL)forceFullSizeDetailLabel;
+- (void)setRowInvalid:(BOOL)arg1;
+- (void)setRemoteUIAccessoryType:(int)arg1;
 - (void)_accessoriesChanged;
+- (void)setRemoteUIAccessoryView:(id)arg1;
+- (void)layoutSubviews;
 
 @end

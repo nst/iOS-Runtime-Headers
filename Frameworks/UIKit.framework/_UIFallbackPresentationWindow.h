@@ -6,5 +6,7 @@
 }
 
 
+- (BOOL)_affectsTintView;
+- (BOOL)_includeInDefaultImageSnapshot;
 
 @end

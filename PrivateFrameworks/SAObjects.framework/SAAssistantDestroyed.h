@@ -9,13 +9,13 @@
 
 @property(copy) NSString * assistantId;
 
-+ (id)assistantDestroyed;
 + (id)assistantDestroyedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)assistantDestroyed;
 
 - (id)groupIdentifier;
-- (id)assistantId;
 - (void)setAssistantId:(id)arg1;
-- (id)encodedClassName;
+- (id)assistantId;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

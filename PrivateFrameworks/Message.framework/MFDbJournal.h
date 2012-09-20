@@ -14,16 +14,14 @@
     NSMutableData *_buffer;
 }
 
-+ (id)sharedInstance;
 
-- (void)_resetBuffer;
-- (BOOL)_processJournalFile:(id)arg1 db:(struct sqlite3 { }*)arg2;
-- (void)moveOrDeleteFile;
-- (BOOL)append:(const char *)arg1;
-- (BOOL)mergeWithDatabase:(struct sqlite3 { }*)arg1;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (void)clear;
 - (BOOL)flush;
+- (BOOL)_processJournalFile:(id)arg1 db:(struct sqlite3 { }*)arg2;
+- (void)_resetBuffer;
+- (BOOL)mergeWithDatabase:(struct sqlite3 { }*)arg1;
+- (BOOL)append:(const char *)arg1;
 
 @end

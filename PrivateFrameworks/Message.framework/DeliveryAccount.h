@@ -5,40 +5,42 @@
 @interface DeliveryAccount : Account  {
 }
 
-+ (void)reloadDeliveryAccounts;
-+ (void)setDeliveryAccounts:(id)arg1;
-+ (void)removeDeliveryAccount:(id)arg1;
-+ (id)accountWithHostname:(id)arg1 username:(id)arg2;
-+ (id)carrierDeliveryAccount;
 + (id)newDefaultInstance;
-+ (void)_postDeliveryAccountsHaveChanged;
-+ (id)deliveryAccounts;
-+ (id)accountWithHostname:(id)arg1 username:(id)arg2 lookForExistingAccounts:(BOOL)arg3;
-+ (id)existingAccountWithHostname:(id)arg1 username:(id)arg2;
++ (id)carrierDeliveryAccount;
++ (id)accountWithHostname:(id)arg1 username:(id)arg2;
++ (void)removeDeliveryAccount:(id)arg1;
++ (void)setDeliveryAccounts:(id)arg1;
++ (void)reloadDeliveryAccounts;
 + (void)addDeliveryAccount:(id)arg1;
-+ (id)accountWithUniqueId:(id)arg1;
++ (id)existingAccountWithHostname:(id)arg1 username:(id)arg2;
++ (id)accountWithHostname:(id)arg1 username:(id)arg2 lookForExistingAccounts:(BOOL)arg3;
++ (id)deliveryAccounts;
++ (void)_postDeliveryAccountsHaveChanged;
++ (id)existingAccountWithIdentifier:(id)arg1;
 + (id)accountWithIdentifier:(id)arg1;
-+ (id)supportedDataclasses;
++ (id)accountWithUniqueId:(id)arg1;
 + (void)saveAccountInfoToDefaults;
++ (id)supportedDataclasses;
 + (id)basicAccountProperties;
++ (id)existingAccountForUniqueID:(id)arg1;
 
-- (BOOL)shouldUseAuthentication;
-- (void)setMaximumMessageBytes:(unsigned long long)arg1;
-- (id)mailAccountIfAvailable;
-- (BOOL)hasNoReferences;
-- (id)displayHostname;
-- (BOOL)canBeFallbackAccount;
-- (BOOL)supportsSoftBankCodePoints;
-- (BOOL)supportsOutboxCopy;
-- (BOOL)shouldUseSaveSentForAccount:(id)arg1;
-- (Class)deliveryClass;
-- (void)setShouldUseAuthentication:(BOOL)arg1;
-- (unsigned long long)maximumMessageBytes;
-- (id)newDeliveryWithMessage:(id)arg1;
-- (id)newDeliveryWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
-- (id)newDeliveryWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
-- (BOOL)hasEnoughInformationForEasySetup;
 - (void)setUsername:(id)arg1;
 - (id)identifier;
+- (BOOL)shouldUseSaveSentForAccount:(id)arg1;
+- (BOOL)supportsOutboxCopy;
+- (BOOL)supportsSoftBankCodePoints;
+- (BOOL)canBeFallbackAccount;
+- (id)displayHostname;
+- (BOOL)hasNoReferences;
+- (id)mailAccountIfAvailable;
+- (void)setMaximumMessageBytes:(unsigned long long)arg1;
+- (BOOL)shouldUseAuthentication;
+- (unsigned long long)maximumMessageBytes;
+- (void)setShouldUseAuthentication:(BOOL)arg1;
+- (Class)deliveryClass;
+- (id)newDeliveryWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
+- (id)newDeliveryWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
+- (id)newDeliveryWithMessage:(id)arg1;
+- (BOOL)hasEnoughInformationForEasySetup;
 
 @end

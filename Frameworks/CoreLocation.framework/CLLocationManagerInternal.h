@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class <CLLocationManagerDelegate>;
+@class <CLLocationManagerDelegate>, NSString;
 
 @interface CLLocationManagerInternal : NSObject  {
     struct __CLClient { } *fClient;
@@ -27,7 +27,13 @@
         int confidence; 
         double lifespan; 
         int type; 
+        struct { 
+            double latitude; 
+            double longitude; 
+        } rawCoordinate; 
+        double rawCourse; 
     } fLocation;
+    NSString *fLocationEventType;
     BOOL fCapabilitiesValid;
     struct { 
         double bestAccuracy; 
@@ -36,13 +42,21 @@
     double fHeadingFilter;
     int fHeadingOrientation;
     BOOL fPersistentMonitoringEnabled;
-    BOOL fLocationServicesPreferencesDialogEnabled;
+    BOOL fAllowsLocationPrompts;
     BOOL fPreviousAuthorizationStatusValid;
     int fPreviousAuthorizationStatus;
+    int fActivityType;
+    int fPausesLocationUpdatesAutomatically;
+    BOOL fPaused;
+    BOOL fAllowsMapCorrection;
+    BOOL fBatchingLocation;
 }
 
 
-- (void)dealloc;
+- (void)stopUpdatingLocationAutoPaused;
+- (int)PausesLocationUpdatesAutomatically;
+- (void)setPausesLocationUpdatesAutomatically:(int)arg1;
 - (id)initWithInfo:(id)arg1 bundleIdentifier:(id)arg2 bundle:(id)arg3;
+- (void)dealloc;
 
 @end

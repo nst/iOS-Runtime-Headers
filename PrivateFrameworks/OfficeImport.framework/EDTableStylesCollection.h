@@ -11,12 +11,12 @@
 
 
 - (void)dealloc;
-- (id)defaultPivotStyle;
-- (id)defaultTableStyleName;
-- (void)setDefaultTableStyleName:(id)arg1;
 - (void)setDefaultPivotStyleName:(id)arg1;
-- (id)defaultPivotStyleName;
-- (id)objectWithName:(id)arg1;
+- (void)setDefaultTableStyleName:(id)arg1;
+- (id)defaultTableStyleName;
+- (id)defaultPivotStyle;
 - (id)defaultTableStyle;
+- (id)objectWithName:(id)arg1;
+- (id)defaultPivotStyleName;
 
 @end

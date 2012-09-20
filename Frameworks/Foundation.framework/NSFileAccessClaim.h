@@ -6,10 +6,10 @@
    See Warning(s) below.
  */
 
-@class NSMutableOrderedSet, NSError, NSString, NSMutableSet, NSMutableArray, NSMutableDictionary;
+@class NSError, NSMutableOrderedSet, NSMutableArray, NSObject<OS_xpc_object>, NSObject<OS_dispatch_semaphore>, NSString, NSMutableSet, NSMutableDictionary;
 
 @interface NSFileAccessClaim : NSObject  {
-    struct _xpc_connection_s { } *_client;
+    NSObject<OS_xpc_object> *_client;
     NSString *_claimID;
     NSString *_purposeIDOrNil;
     BOOL _cameFromSuperarbiter;
@@ -29,7 +29,8 @@
     NSMutableDictionary *_reacquisitionProceduresByPresenterID;
     NSMutableArray *_revocationProcedures;
     id _claimerOrNil;
-    struct dispatch_semaphore_s { } *_claimerWaiterOrNull;
+    NSObject<OS_dispatch_semaphore> *_claimerWaiterOrNull;
+    id _sandboxToken;
     BOOL _didMakePresentersRelinquishToWriter;
     BOOL _revokingIsInexorable;
 }
@@ -37,6 +38,13 @@
 + (BOOL)canWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned int)arg4;
 + (BOOL)canReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned int)arg4;
 
+- (id)description;
+- (void)dealloc;
+- (void)finalize;
+- (void)cancelled;
+- (id)client;
+- (void)block;
+- (id)purposeIDOfClaimOnItemAtLocation:(id)arg1 forMessagingPresenter:(id)arg2;
 - (void)ifSymbolicLinkAtURL:(id)arg1 withResolutionCount:(int*)arg2 thenReevaluateSelf:(id)arg3 elseInvokeClaimer:(id)arg4;
 - (void)devalueOldClaim:(id)arg1;
 - (void)makePresentersOfItemAtLocation:(id)arg1 orContainedItem:(BOOL)arg2 relinquishUsingProcedureGetter:(id)arg3;
@@ -47,7 +55,7 @@
 - (void)evaluateNewClaim:(id)arg1;
 - (id)claimerError;
 - (BOOL)didWait;
-- (id)initWithClient:(struct _xpc_connection_s { }*)arg1 claimID:(id)arg2 purposeID:(id)arg3;
+- (id)initWithClient:(id)arg1 claimID:(id)arg2 purposeID:(id)arg3;
 - (id)descriptionWithIndenting:(id)arg1;
 - (void)devalueSelf;
 - (void)setClaimerError:(id)arg1;
@@ -60,10 +68,10 @@
 - (BOOL)claimerInvokingIsBlockedByReactorWithID:(id)arg1;
 - (void)invokeClaimer;
 - (void)granted;
-- (struct dispatch_semaphore_s { }*)newClaimerWaiter;
+- (id)newClaimerWaiter;
 - (id)pendingClaims;
 - (void)setCameFromSuperarbiter;
-- (id)initWithClient:(struct _xpc_connection_s { }*)arg1 messageParameters:(id)arg2 replySender:(id)arg3;
+- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 replySender:(id)arg3;
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
 - (BOOL)isGranted;
 - (BOOL)isRevoked;
@@ -74,11 +82,5 @@
 - (id)claimID;
 - (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
 - (BOOL)cameFromSuperarbiter;
-- (void)block;
-- (id)description;
-- (void)dealloc;
-- (void)finalize;
-- (void)cancelled;
-- (struct _xpc_connection_s { }*)client;
 
 @end

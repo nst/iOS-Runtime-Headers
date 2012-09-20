@@ -9,15 +9,15 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (id)itemForIndex:(unsigned int)arg1;
-- (unsigned int)numberOfPaths;
 - (unsigned int)itemCount;
-- (void)shuffleWithCurrentIndex:(unsigned int)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)initWithArray:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)shuffleWithCurrentIndex:(unsigned int)arg1;
+- (unsigned int)numberOfPaths;
 - (id)pathAtIndex:(unsigned int)arg1;
 
 @end

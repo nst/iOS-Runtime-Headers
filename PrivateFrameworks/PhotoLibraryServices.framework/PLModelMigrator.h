@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLPhotoLibrary, PLCurrentThumbnailsInformation, NSFileManager;
+@class PLPhotoLibrary, PLXPCTransaction, NSFileManager, PLCurrentThumbnailsInformation;
 
 @interface PLModelMigrator : NSObject  {
     double startTime;
     NSFileManager *_fileManager;
-    BOOL _didBeginTransaction;
+    PLXPCTransaction *_transaction;
     PLPhotoLibrary *_photoLibrary;
     long _photoLibraryOnce;
     PLCurrentThumbnailsInformation *_thumbnailsInformation;
@@ -17,48 +17,52 @@
 @property(readonly) PLPhotoLibrary * photoLibrary;
 @property(retain) PLCurrentThumbnailsInformation * _thumbnailsInformation;
 
++ (id)archivedAssetUUIDForURL:(id)arg1;
++ (BOOL)restartingAfterRestoreFromBackup;
 + (void)recalculateCachedCounts;
-+ (void)dontImportFileSystemDataIntoDatabase;
-+ (long long)secondsNeededToCleanupDualCameraRollAfterTellurideCorruption;
++ (id)eventNameFromDate:(id)arg1;
++ (BOOL)shouldRebuildDCIMSubDirectoryAtURL:(id)arg1 directoryEnumerator:(id)arg2 assetsKind:(int*)arg3;
++ (void)setDidImportFileSystemAssets:(BOOL)arg1;
++ (id)assetUUIDForPathPlistURL;
 + (long long)secondsNeededToCleanupModelAfteriTunesRestore;
-+ (void)cleanupDualCameraRollAfterTellurideCorruption;
 + (void)cleanupModelAfterRestoreFromiTunes;
 + (void)recreateThumbnailTablesIfNecessary;
 + (id)modelMigrator;
-+ (void)_waitForDataMigratorToExit;
-+ (void)setDidImportFileSystemAssets:(BOOL)arg1;
-+ (BOOL)restartingAfterOTAMigration;
-+ (void)addSingletonObjectsToContext:(id)arg1;
++ (id)sharedModelMigratorForImport;
++ (void)waitForDataMigratorToExit;
 + (void)loadFileSystemDataIntoDatabase;
++ (void)dontImportFileSystemDataIntoDatabase;
++ (BOOL)restartingAfterOTAMigration;
++ (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id)arg3;
++ (void)repairSingletonObjectsInDatabaseWithCompletionHandler:(id)arg1;
 + (void)createDatabase;
++ (void)archiveAssetUUIDForPathPlist:(id)arg1;
++ (id)generateAssetUUIDForPathPlist;
 + (BOOL)didImportFileSystemAssets;
-+ (void)importAfterCrash;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)set_thumbnailsInformation:(id)arg1;
 - (id)_thumbnailsInformation;
+- (BOOL)_shouldReimportCameraRollAssets;
+- (void)resumePhotoStreams;
+- (void)pausePhotoStreams;
+- (void)collectFileURLs:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 assetsKind:(int)arg4;
 - (id)fileManager;
-- (void)importFileSystemImportAssets:(id)arg1;
-- (id)_orderedAssetsToImportReadOnly:(BOOL)arg1;
-- (void)collectContentsOfDirectoryURL:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 isPhotoStream:(BOOL)arg4 isSavedPhotos:(BOOL)arg5 isCameraKit:(BOOL)arg6;
-- (BOOL)shouldRebuildDCIMSubDirectoryAtURL:(id)arg1 directoryEnumerator:(id)arg2 isCameraKit:(BOOL*)arg3;
-- (BOOL)shouldRebuildDCIMDirectoryAtURL:(id)arg1 directoryEnumerator:(id)arg2 isPhotoStream:(BOOL*)arg3;
-- (BOOL)_shouldReimportDCIMAssets;
+- (id)importFileSystemImportAssets:(id)arg1 forceUpdate:(BOOL)arg2;
+- (id)_orderedAssetsToImportCameraRollOnly:(BOOL)arg1;
+- (void)collectContentsOfDirectoryURL:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 assetsKind:(int)arg4;
+- (BOOL)shouldRebuildDCIMDirectoryAtURL:(id)arg1 directoryEnumerator:(id)arg2 isPhotoStream:(BOOL*)arg3 cameraRollOnly:(BOOL)arg4;
 - (void)_importAllDCIMAssets;
 - (void)setFileManager:(id)arg1;
-- (void)dontImportFileSystemDataIntoDatabase;
-- (BOOL)restartingAfterOTADataMigration;
-- (long long)secondsNeededToCleanupDualCameraRollAfterTellurideCorruption;
+- (id)initWithImplicitTransaction:(BOOL)arg1;
 - (long long)secondsNeededToCleanupModelAfteriTunesRestore;
-- (void)recalculateCachedCountsWithSemaphore:(struct dispatch_semaphore_s { }*)arg1;
-- (void)cleanupDualCameraRollAfterTellurideCorruption;
+- (void)recalculateCachedCountsWithSemaphore:(id)arg1;
 - (void)cleanupModelAfterRestoreFromiTunes;
 - (void)recreateThumbnailTablesIfNecessary;
 - (void)loadFileSystemDataIntoDatabase;
-- (void)importAfterCrash;
-- (void)pausePhotoStreams;
-- (void)resumePhotoStreams;
+- (void)dontImportFileSystemDataIntoDatabase;
+- (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id)arg3;
 - (id)photoLibrary;
 
 @end

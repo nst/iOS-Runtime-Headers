@@ -7,8 +7,8 @@
 }
 
 
-- (int)bodyFormat;
 - (int)requestType;
+- (int)bodyFormat;
 - (BOOL)mf_alwaysReportFailures;
 
 @end

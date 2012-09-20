@@ -22,15 +22,15 @@
 @property(retain) EKDayOccurrenceView * occurrenceView;
 
 
-- (unsigned int)length;
 - (void)dealloc;
+- (unsigned int)length;
+- (unsigned int)rangeEnd;
+- (unsigned int)rangeStart;
 - (unsigned int)calendarOrder;
 - (void)setOccurrenceView:(id)arg1;
 - (unsigned int)gapBetweenBlock:(id)arg1;
 - (id)lengthForSorting;
 - (id)initWithEventIndex:(unsigned int)arg1 calendarOrder:(unsigned int)arg2 dayRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (unsigned int)rangeEnd;
-- (unsigned int)rangeStart;
 - (unsigned int)eventIndex;
 - (id)occurrenceView;
 

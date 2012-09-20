@@ -13,18 +13,18 @@
 @property id replacement;
 
 
-- (id)attributesForNames:(id)arg1;
-- (id)attributeNames;
+- (id)path;
+- (id)initWithURL:(id)arg1;
+- (id)valueForKey:(id)arg1;
 - (void)dealloc;
 - (void)updateInfo:(id)arg1;
 - (void)setReplacement:(id)arg1;
 - (id)initWithURL:(id)arg1 itemUpdateInfo:(id)arg2;
 - (id)replacement;
-- (id)initWithURL:(id)arg1;
 - (id)url;
 - (id)_attributes;
-- (id)path;
-- (id)valueForKey:(id)arg1;
+- (id)attributesForNames:(id)arg1;
+- (id)attributeNames;
 - (id)attributeForName:(id)arg1;
 
 @end

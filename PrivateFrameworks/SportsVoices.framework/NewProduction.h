@@ -17,12 +17,12 @@
 
 - (id)description;
 - (void)dealloc;
+- (id)overlays;
+- (id)indices;
 - (void)setOverlays:(id)arg1;
 - (void)setIndices:(id)arg1;
-- (id)indices;
 - (id)initWithSimpleSlotSequence:(id)arg1;
 - (id)initWithOverlays:(id)arg1 indices:(id)arg2;
 - (id)initFromPlist:(id)arg1;
-- (id)overlays;
 
 @end

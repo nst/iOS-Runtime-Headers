@@ -12,13 +12,13 @@
 @property(copy) NSDictionary * filterSettings;
 @property(copy) PLManagedAsset * asset;
 
-+ (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
++ (void)convertStraightenAngle:(float)arg1 andCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg3 andCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromImageSize:(struct CGSize { float x1; float x2; })arg2 toImageSize:(struct CGSize { float x1; float x2; })arg3;
-+ (id)insertInPhotoLibrary:(id)arg1;
 + (void)convertAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toStraightenAngle:(float*)arg3 andCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
 + (id)ciFiltersForAdjustmentsOnManagedAsset:(id)arg1 forDestinationImageSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)insertInPhotoLibrary:(id)arg1;
 + (struct CGSize { float x1; float x2; })scaledFullImageSizeForOriginalImageSize:(struct CGSize { float x1; float x2; })arg1 andCroppedSize:(struct CGSize { float x1; float x2; })arg2;
-+ (void)convertStraightenAngle:(float)arg1 andCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg3 andCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
++ (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 
 - (id)metadataProperties;
 - (void)setAdjustmentType:(int)arg1;

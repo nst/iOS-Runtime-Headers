@@ -7,15 +7,15 @@
     BOOL _portPassing;
 }
 
-@property BOOL portPassing;
 @property unsigned int replyPort;
+@property BOOL portPassing;
 
 
 - (void)dealloc;
 - (void)setPortPassing:(BOOL)arg1;
-- (id)initWithReplyPort:(unsigned int)arg1 portPassing:(BOOL)arg2;
-- (void)setReplyPort:(unsigned int)arg1;
 - (BOOL)portPassing;
+- (void)setReplyPort:(unsigned int)arg1;
 - (unsigned int)replyPort;
+- (id)initWithReplyPort:(unsigned int)arg1 portPassing:(BOOL)arg2;
 
 @end

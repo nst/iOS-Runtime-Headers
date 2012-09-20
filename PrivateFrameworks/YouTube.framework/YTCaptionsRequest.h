@@ -2,28 +2,22 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableURLRequest, <YTCaptionsRequestDelegate>, NSMutableArray, YTVideo;
+@class YTVideo, NSMutableArray, <YTCaptionsRequestDelegate>;
 
-@interface YTCaptionsRequest : XMLSAXHTTPRequest  {
+@interface YTCaptionsRequest : YTXMLHTTPRequest  {
     <YTCaptionsRequestDelegate> *_delegate;
-    BOOL _isLoading;
     NSMutableArray *_captions;
-    NSMutableURLRequest *_deferredRequest;
     YTVideo *_video;
 }
 
 
-- (int)parseData:(id)arg1;
 - (void)dealloc;
-- (BOOL)isLoading;
-- (void)loadRequest:(id)arg1;
-- (id)video;
+- (void)failWithError:(id)arg1;
 - (id)initRequestingCaptionsForVideo:(id)arg1 withDelegate:(id)arg2;
 - (void)_requestCaptionsFromURL:(id)arg1;
-- (void)_didAuthenticate:(id)arg1;
-- (void)_failedToAuthenticate:(id)arg1;
-- (void)_listenForAuthenticationNotifications:(BOOL)arg1;
+- (void)didAuthenticate:(id)arg1;
 - (void)didParseData;
-- (void)failWithError:(id)arg1;
+- (int)parseData:(id)arg1;
+- (id)video;
 
 @end

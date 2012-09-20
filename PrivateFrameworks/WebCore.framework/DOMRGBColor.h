@@ -7,10 +7,10 @@
 @interface DOMRGBColor : DOMObject  {
 }
 
-@property(retain,readonly) DOMCSSPrimitiveValue * red;
-@property(retain,readonly) DOMCSSPrimitiveValue * green;
-@property(retain,readonly) DOMCSSPrimitiveValue * blue;
-@property(retain,readonly) DOMCSSPrimitiveValue * alpha;
+@property(readonly) DOMCSSPrimitiveValue * red;
+@property(readonly) DOMCSSPrimitiveValue * green;
+@property(readonly) DOMCSSPrimitiveValue * blue;
+@property(readonly) DOMCSSPrimitiveValue * alpha;
 
 
 - (void)dealloc;

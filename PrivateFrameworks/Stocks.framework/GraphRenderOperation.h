@@ -4,9 +4,7 @@
 
 @class NSArray, UIColor, <GraphRenderOperationDelegate>, StockGraphImageSet;
 
-@interface GraphRenderOperation : NSOperation  {
-    BOOL _isExecuting;
-    BOOL _isFinished;
+@interface GraphRenderOperation : NSObject  {
     struct CGPoint { float x1; float x2; } *points;
     NSArray *linePointCounts;
     NSArray *dottedLinePositions;
@@ -32,45 +30,51 @@
     UIColor *lineColor;
     UIColor *backgroundLinesColor;
     UIColor *shadowLineColor;
+    BOOL _cancelled;
 }
 
-@property BOOL roundLineCaps;
-@property(retain) UIColor * shadowLineColor;
-@property(retain) UIColor * backgroundLinesColor;
-@property(retain) UIColor * lineColor;
-@property(retain) UIColor * axisColor;
-@property(retain) StockGraphImageSet * graphImageSet;
-@property BOOL letterPress;
-@property BOOL detailedMode;
-@property struct CGSize { float width; float height; } volumeGraphSize;
-@property struct CGSize { float width; float height; } lineGraphSize;
-@property <GraphRenderOperationDelegate> * delegate;
-@property unsigned int volumeCount;
-@property unsigned long long maxVolume;
-@property float volumeBarWidth;
-@property struct { float x1; unsigned long long x2; }* volumeBars;
-@property float lineWidth;
-@property(retain) NSArray * dottedLinePositions;
-@property(retain) NSArray * linePointCounts;
+@property(getter=isCancelled,readonly) BOOL cancelled;
 @property struct CGPoint { float x1; float x2; }* points;
+@property(retain) NSArray * linePointCounts;
+@property(retain) NSArray * dottedLinePositions;
+@property float lineWidth;
+@property struct { float x1; unsigned long long x2; }* volumeBars;
+@property float volumeBarWidth;
+@property unsigned long long maxVolume;
+@property unsigned int volumeCount;
+@property <GraphRenderOperationDelegate> * delegate;
+@property struct CGSize { float x1; float x2; } lineGraphSize;
+@property struct CGSize { float x1; float x2; } volumeGraphSize;
+@property(retain) StockGraphImageSet * graphImageSet;
+@property BOOL detailedMode;
+@property BOOL letterPress;
+@property BOOL roundLineCaps;
+@property(retain) UIColor * axisColor;
+@property(retain) UIColor * lineColor;
+@property(retain) UIColor * backgroundLinesColor;
+@property(retain) UIColor * shadowLineColor;
 
 + (struct CGGradient { }*)LineBackgroundGradient;
 
-- (id)init;
-- (void)dealloc;
 - (void)setPoints:(struct CGPoint { float x1; float x2; }*)arg1;
-- (struct CGPoint { float x1; float x2; }*)points;
-- (BOOL)isFinished;
-- (BOOL)isConcurrent;
-- (void)finish;
-- (BOOL)roundLineCaps;
+- (void)render;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void).cxx_destruct;
+- (BOOL)isCancelled;
+- (void)cancel;
+- (id)init;
+- (void)setLineWidth:(float)arg1;
+- (float)lineWidth;
 - (void)setRoundLineCaps:(BOOL)arg1;
+- (BOOL)roundLineCaps;
+- (void)setShadowLineColor:(id)arg1;
 - (id)shadowLineColor;
+- (void)setBackgroundLinesColor:(id)arg1;
 - (id)backgroundLinesColor;
 - (id)axisColor;
-- (BOOL)letterPress;
 - (void)setLetterPress:(BOOL)arg1;
-- (BOOL)detailedMode;
+- (BOOL)letterPress;
 - (struct CGSize { float x1; float x2; })volumeGraphSize;
 - (struct CGSize { float x1; float x2; })lineGraphSize;
 - (unsigned int)volumeCount;
@@ -78,32 +82,26 @@
 - (float)volumeBarWidth;
 - (struct { float x1; unsigned long long x2; }*)volumeBars;
 - (id)linePointCounts;
-- (void)_deliverDelegateCallback;
-- (void)renderLineGraph;
-- (void)renderVolumeGraph;
-- (void)setBackgroundLinesColor:(id)arg1;
-- (void)setShadowLineColor:(id)arg1;
 - (void)renderGraphLineInContext:(struct CGContext { }*)arg1 withColor:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3;
+- (void)_deliverDelegateCallback;
+- (void)renderVolumeGraph;
+- (void)renderLineGraph;
+- (BOOL)detailedMode;
 - (id)dottedLinePositions;
-- (void)setGraphImageSet:(id)arg1;
-- (void)setLinePointCounts:(id)arg1;
-- (void)setDottedLinePositions:(id)arg1;
-- (void)setVolumeBars:(struct { float x1; unsigned long long x2; }*)arg1;
-- (void)setVolumeCount:(unsigned int)arg1;
-- (void)setVolumeBarWidth:(float)arg1;
-- (void)setMaxVolume:(unsigned long long)arg1;
-- (void)setDetailedMode:(BOOL)arg1;
-- (void)setAxisColor:(id)arg1;
-- (void)setLineGraphSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setVolumeGraphSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)graphImageSet;
-- (void)start;
-- (void)setLineWidth:(float)arg1;
-- (float)lineWidth;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (BOOL)isExecuting;
+- (void)setVolumeGraphSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLineGraphSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setAxisColor:(id)arg1;
+- (void)setDetailedMode:(BOOL)arg1;
+- (void)setMaxVolume:(unsigned long long)arg1;
+- (void)setVolumeBarWidth:(float)arg1;
+- (void)setVolumeCount:(unsigned int)arg1;
+- (void)setVolumeBars:(struct { float x1; unsigned long long x2; }*)arg1;
+- (void)setDottedLinePositions:(id)arg1;
+- (void)setLinePointCounts:(id)arg1;
+- (void)setGraphImageSet:(id)arg1;
 - (id)lineColor;
 - (void)setLineColor:(id)arg1;
+- (struct CGPoint { float x1; float x2; }*)points;
 
 @end

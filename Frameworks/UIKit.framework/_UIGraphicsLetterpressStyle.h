@@ -45,6 +45,8 @@
 
 + (id)defaultLetterpressStyle;
 + (id)old2xLetterpressStyle;
++ (id)afui_brightGraphicsLetterpressStyle;
++ (id)pl_alternateLetterpressStyle;
 
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

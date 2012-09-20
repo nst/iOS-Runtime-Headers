@@ -17,9 +17,11 @@
 @property BOOL shouldAddFormattingSpaces;
 @property(readonly) NSData * data;
 
++ (BOOL)string:(id)arg1 isEqualToXmlCharString:(const char *)arg2;
 
-- (id)init;
+- (id)data;
 - (void)dealloc;
+- (id)init;
 - (void)appendElement:(id)arg1 inNamespace:(id)arg2 withStringContentAsCDATA:(id)arg3 withAttributeNamesAndValues:(id)arg4;
 - (void)startElement:(id)arg1 inNamespace:(id)arg2 withAttributes:(id)arg3;
 - (BOOL)shouldAddFormattingSpaces;
@@ -30,6 +32,5 @@
 - (void)endElement:(id)arg1 inNamespace:(id)arg2;
 - (void)appendElement:(id)arg1 inNamespace:(id)arg2 withStringContent:(id)arg3 withAttributeNamesAndValues:(id)arg4;
 - (void)startElement:(id)arg1 inNamespace:(id)arg2 withAttributeNamesAndValues:(id)arg3;
-- (id)data;
 
 @end

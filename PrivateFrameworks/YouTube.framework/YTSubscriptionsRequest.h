@@ -2,33 +2,34 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, NSMutableURLRequest;
+@class NSMutableArray;
 
-@interface YTSubscriptionsRequest : XMLSAXHTTPRequest  {
+@interface YTSubscriptionsRequest : YTXMLHTTPRequest  {
     id _delegate;
     NSMutableArray *_subscriptions;
     int _mode;
-    NSMutableURLRequest *_deferredRequest;
+    int _startIndex;
+    int _totalResults;
+    int _resultsPerPage;
 }
 
-+ (id)displayStringForSubscription:(id)arg1;
-+ (BOOL)isSubscription:(id)arg1 channelOfUser:(id)arg2;
 + (id)URLForSubscription:(id)arg1;
++ (BOOL)isSubscription:(id)arg1 channelOfUser:(id)arg2;
++ (id)displayStringForSubscription:(id)arg1;
++ (unsigned int)resultsPerRequest;
 
-- (int)parseData:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (void)loadRequest:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)requestSubscriptions;
-- (void)requestPlaylists;
-- (void)createPlaylistNamed:(id)arg1;
-- (void)subscribeToUser:(id)arg1;
-- (void)_doRequestWithURL:(id)arg1;
-- (void)_didAuthenticate:(id)arg1;
-- (void)_failedToAuthenticate:(id)arg1;
-- (void)_listenForAuthenticationNotifications:(BOOL)arg1;
-- (void)didParseData;
+- (void)dealloc;
+- (id)init;
 - (void)failWithError:(id)arg1;
+- (void)subscribeToUser:(id)arg1;
+- (void)createPlaylistNamed:(id)arg1;
+- (void)requestPlaylistsFromIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2 searchTerm:(id)arg3;
+- (void)requestUserPlaylistsFromIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2;
+- (void)requestUserSubscriptionsFromIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2;
+- (void)_doRequestWithURL:(id)arg1;
+- (void)didAuthenticate:(id)arg1;
+- (void)didParseData;
+- (int)parseData:(id)arg1;
 
 @end

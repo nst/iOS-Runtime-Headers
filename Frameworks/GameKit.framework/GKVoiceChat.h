@@ -28,23 +28,23 @@
 
 + (BOOL)isVoIPAllowed;
 
-- (void)dealloc;
 - (void)setGkVoiceChatSession:(id)arg1;
 - (id)playerStateUpdateHandler;
 - (void)setMute:(BOOL)arg1 forPlayer:(id)arg2;
-- (id)initChat:(id)arg1 withSession:(id)arg2;
 - (void)gkVoiceChatSession:(id)arg1 stateUpdate:(unsigned int)arg2 forPeer:(id)arg3;
 - (id)gkSession;
 - (id)gkVoiceChatSession;
 - (void)setPlayerStateUpdateHandler:(id)arg1;
 - (void)setGkSession:(id)arg1;
+- (id)initChat:(id)arg1 withSession:(id)arg2;
 - (id)playerIDs;
+- (id)name;
+- (void)dealloc;
 - (void)stop;
 - (BOOL)isActive;
 - (void)start;
 - (void)setActive:(BOOL)arg1;
-- (id)name;
-- (float)volume;
 - (void)setVolume:(float)arg1;
+- (float)volume;
 
 @end

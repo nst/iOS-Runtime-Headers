@@ -12,10 +12,10 @@
 @property(readonly) NSData * data;
 
 
-- (void)dealloc;
-- (id)MIMEType;
-- (id)data;
 - (id)initWithData:(id)arg1 MIMEType:(id)arg2;
 - (id)newUnfilteredInputSource;
+- (id)data;
+- (void)dealloc;
+- (id)MIMEType;
 
 @end

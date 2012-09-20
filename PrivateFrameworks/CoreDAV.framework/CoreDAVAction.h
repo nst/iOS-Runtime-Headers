@@ -5,16 +5,20 @@
 @interface CoreDAVAction : NSObject  {
     int _action;
     id _context;
+    id _changeContext;
 }
 
 @property(readonly) int action;
 @property(readonly) id context;
+@property(retain) id changeContext;
 
 
-- (id)description;
 - (int)action;
+- (id)description;
 - (void)dealloc;
-- (id)initWithAction:(int)arg1 context:(id)arg2;
 - (id)context;
+- (void)setChangeContext:(id)arg1;
+- (id)changeContext;
+- (id)initWithAction:(int)arg1 context:(id)arg2;
 
 @end

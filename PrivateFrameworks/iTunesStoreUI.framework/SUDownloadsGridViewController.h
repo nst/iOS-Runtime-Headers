@@ -5,20 +5,12 @@
 @class SUTableDataSource, NSArray;
 
 @interface SUDownloadsGridViewController : SUGridViewController <SUDownloadsChildViewController> {
-    NSArray *_scriptButtons;
 }
 
 @property(retain) SUTableDataSource * dataSource;
 @property(retain) NSArray * scriptButtons;
 
 
-- (id)init;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)setDataSource:(id)arg1;
-- (void)startPreOrderDownloadAction:(id)arg1;
-- (void)_reloadFooterView;
 - (void)_reloadColumnCountForOrientation:(int)arg1;
 - (id)_downloadsViewController;
 - (id)visibleDownloadCellForDownload:(id)arg1;
@@ -26,5 +18,10 @@
 - (void)setScriptButtons:(id)arg1;
 - (id)scriptButtons;
 - (BOOL)deleteCellAtIndexPath:(id)arg1;
+- (id)init;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)setDataSource:(id)arg1;
 
 @end

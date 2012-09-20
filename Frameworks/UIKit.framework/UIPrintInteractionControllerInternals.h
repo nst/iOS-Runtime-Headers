@@ -20,6 +20,7 @@
     int _printInfoState;
     BOOL _supressNotifyDismissed;
     UIPrintPageRenderer *_formatterRenderer;
+    BOOL _manualPrintPageEnabled;
 }
 
 

@@ -11,33 +11,37 @@
     BOOL _animatingOut;
 }
 
-@property(readonly) UIView * bottomBar;
 @property(readonly) UIView * topBar;
+@property(readonly) UIView * bottomBar;
 
 
 - (void)dealloc;
 - (id)topBar;
-- (id)newTopBar;
-- (id)newBottomBar;
-- (BOOL)shouldShowBottomBar;
-- (void)prepareToAnimateDisplayIn;
-- (void)performAnimateDisplayIn;
-- (BOOL)_animatingToHomescreenWallpaper;
-- (BOOL)isShowingWallpaper;
-- (void)animateDisplayIn:(float)arg1 middleDelay:(float)arg2;
-- (BOOL)displaysAboveStatusBar;
-- (void)viewWillAnimateOut;
-- (void)animateViewOut;
-- (void)finishedAnimatingIn;
-- (void)finishedAnimatingOut;
-- (BOOL)viewIsReadyToBeRemoved;
-- (BOOL)isSlidingViewController;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (void)viewDidLoad;
 - (id)backgroundView;
+- (void)updateSpringBoardInPreparationForTransparentDismiss;
+- (float)_animationDelayForOthersActivation;
+- (void)animateDisplayIn:(float)arg1 middleDelay:(float)arg2;
+- (BOOL)isShowingWallpaper;
+- (BOOL)_animatingToHomescreenWallpaper;
+- (void)_viewAnimatedOut;
+- (float)_slideOutAnimationDuration;
+- (float)_slideOutAnimationDelay;
+- (void)performAnimateDisplayIn;
+- (void)prepareToAnimateDisplayIn;
+- (BOOL)shouldShowBottomBar;
+- (id)newBottomBar;
+- (id)newTopBar;
+- (BOOL)viewIsReadyToBeRemoved;
+- (void)finishedAnimatingOut;
+- (void)finishedAnimatingIn;
+- (void)animateViewOut;
+- (void)viewWillAnimateOut;
+- (BOOL)displaysAboveStatusBar;
+- (BOOL)isSlidingViewController;
 - (id)bottomBar;
-- (void)_fadeOutCompleted:(id)arg1;
 
 @end

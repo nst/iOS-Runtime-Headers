@@ -21,22 +21,22 @@
 
 
 - (void)dealloc;
-- (void)setRepeatedSpokenFeedbackString:(id)arg1;
-- (id)repeatedSpokenFeedbackString;
-- (id)sequenceTag;
-- (void)setSequenceTag:(id)arg1;
-- (id)knownValueForClassIdentifier:(id)arg1;
-- (void)setKnownValue:(id)arg1 phoneticValue:(id)arg2 forClassIdentifier:(id)arg3;
-- (id)knownValuesForClassIdentifier:(id)arg1;
-- (void)setKnownValues:(id)arg1 phoneticValues:(id)arg2 forClassIdentifier:(id)arg3;
-- (id)ambiguousValuesForClassIdentifier:(id)arg1;
-- (void)setAmbiguousValues:(id)arg1 phoneticValues:(id)arg2 forClassIdentifier:(id)arg3;
-- (id)_keywords;
-- (struct __VSRecognition { }*)_createRecognitionInstanceWithCallbacks:(struct { int (*x1)(); int (*x2)(); int (*x3)(); }*)arg1 info:(void*)arg2;
 - (id)_actionForEmptyResults;
+- (struct __VSRecognition { }*)_createRecognitionInstanceWithCallbacks:(struct { int (*x1)(); int (*x2)(); int (*x3)(); }*)arg1 info:(void*)arg2;
+- (id)_keywords;
+- (void)setAmbiguousValues:(id)arg1 phoneticValues:(id)arg2 forClassIdentifier:(id)arg3;
+- (id)ambiguousValuesForClassIdentifier:(id)arg1;
+- (void)setKnownValues:(id)arg1 phoneticValues:(id)arg2 forClassIdentifier:(id)arg3;
+- (id)knownValuesForClassIdentifier:(id)arg1;
+- (void)setKnownValue:(id)arg1 phoneticValue:(id)arg2 forClassIdentifier:(id)arg3;
+- (id)knownValueForClassIdentifier:(id)arg1;
+- (void)setSequenceTag:(id)arg1;
+- (id)sequenceTag;
+- (id)repeatedSpokenFeedbackString;
+- (void)setRepeatedSpokenFeedbackString:(id)arg1;
 - (struct __VSRecognitionDisambiguationContext { }*)_disambiguationContext;
-- (int)completionType;
 - (BOOL)_keywordIndexChanged;
+- (int)completionType;
 - (void)setKeywords:(id)arg1;
 
 @end

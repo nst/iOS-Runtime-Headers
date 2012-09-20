@@ -16,13 +16,13 @@
 
 + (id)notificationStringsWithTitle:(id)arg1 body:(id)arg2 sourcePersonID:(id)arg3;
 
-- (void)dealloc;
-- (void)setSourcePersonID:(id)arg1;
-- (id)sourcePersonID;
-- (id)initWithTitle:(id)arg1 body:(id)arg2 sourcePersonID:(id)arg3;
+- (void).cxx_destruct;
+- (void)setBody:(id)arg1;
 - (id)body;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (void)setBody:(id)arg1;
+- (void)setSourcePersonID:(id)arg1;
+- (id)sourcePersonID;
+- (id)initWithTitle:(id)arg1 body:(id)arg2 sourcePersonID:(id)arg3;
 
 @end

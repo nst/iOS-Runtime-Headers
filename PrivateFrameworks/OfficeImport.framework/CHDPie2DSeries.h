@@ -8,7 +8,7 @@
 
 
 - (id)init;
-- (int)explosion;
 - (void)setExplosion:(int)arg1;
+- (int)explosion;
 
 @end

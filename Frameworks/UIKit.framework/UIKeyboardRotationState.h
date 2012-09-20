@@ -20,6 +20,7 @@
 
 + (id)stateWithState:(int)arg1 targetOrientation:(int)arg2;
 
+- (int)state;
 - (void)dealloc;
 - (void)setTargetOrientation:(int)arg1;
 - (void)setPostRotationState:(int)arg1;
@@ -31,6 +32,5 @@
 - (int)targetOrientation;
 - (id)animationStyle;
 - (void)setState:(int)arg1;
-- (int)state;
 
 @end

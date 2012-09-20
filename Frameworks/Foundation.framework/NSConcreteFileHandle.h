@@ -6,12 +6,14 @@
    See Warning(s) below.
  */
 
+@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_source>;
+
 @interface NSConcreteFileHandle : NSFileHandle  {
     int _fd;
     void *_nativeHandle;
-    struct dispatch_data_s { } *_anchor;
+    NSObject<OS_dispatch_data> *_anchor;
     unsigned short _flags;
-    struct dispatch_source_s { } *_dsrc;
+    NSObject<OS_dispatch_source> *_dsrc;
     BOOL _padding[2];
     struct __CFRunLoopSource { } *_source;
     struct __CFRunLoop { } *_rl;
@@ -21,7 +23,7 @@
     void *_resultBytes;
     unsigned long _resultLength;
     int _resultSocket;
-    struct dispatch_queue_s { } *_fhLock;
+    NSObject<OS_dispatch_queue> *_fhLock;
     long long _weakRefCount;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -33,22 +35,35 @@
   /* Error parsing encoded ivar type info: @? */
     id _writeabilityHandler;
 
-    struct dispatch_source_s { } *_readMonitoringSource;
-    struct dispatch_source_s { } *_writeMonitoringSource;
-    struct dispatch_queue_s { } *_readMonitoringQueue;
-    struct dispatch_queue_s { } *_writeMonitoringQueue;
+    NSObject<OS_dispatch_source> *_readMonitoringSource;
+    NSObject<OS_dispatch_source> *_writeMonitoringSource;
+    NSObject<OS_dispatch_queue> *_readMonitoringQueue;
+    NSObject<OS_dispatch_queue> *_writeMonitoringQueue;
 }
 
 
+- (int)fileDescriptor;
+- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
+- (id)retain;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (oneway void)release;
+- (id)init;
+- (void)seekToFileOffset:(unsigned long long)arg1;
+- (id)readDataOfLength:(unsigned int)arg1;
+- (id)port;
+- (void)finalize;
+- (void)encodeWithCoder:(id)arg1;
+- (void)closeFile;
+- (void)writeData:(id)arg1;
 - (void)waitForDataInBackgroundAndNotify;
 - (void)acceptConnectionInBackgroundAndNotify;
 - (void)readToEndOfFileInBackgroundAndNotify;
 - (void)readInBackgroundAndNotify;
 - (void)setPort:(id)arg1;
 - (unsigned int)readDataOfLength:(unsigned int)arg1 buffer:(char *)arg2;
-- (id)initWithFileDescriptor:(int)arg1;
 - (void)lockedRelease;
-- (struct dispatch_source_s { }*)_monitor:(const struct dispatch_source_type_s { }*)arg1 source:(struct dispatch_source_s { }*)arg2 onQueue:(struct dispatch_queue_s { }*)arg3;
+- (id)_monitor:(const struct dispatch_source_type_s { }*)arg1 source:(id)arg2 onQueue:(id)arg3;
 - (id)lockedRetain;
 - (void)waitForDataInBackgroundAndNotifyForModes:(id)arg1;
 - (void)acceptConnectionInBackgroundAndNotifyForModes:(id)arg1;
@@ -62,7 +77,6 @@
 - (id)readabilityHandler;
 - (void)setWriteabilityHandler:(id)arg1;
 - (id)writeabilityHandler;
-- (int)fileDescriptor;
 - (void)synchronizeFile;
 - (void)truncateFileAtOffset:(unsigned long long)arg1;
 - (unsigned long long)seekToEndOfFile;
@@ -71,17 +85,6 @@
 - (id)availableData;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
-- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
-- (id)retain;
-- (oneway void)release;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)readDataOfLength:(unsigned int)arg1;
-- (id)port;
-- (void)finalize;
-- (void)writeData:(id)arg1;
-- (void)closeFile;
-- (void)seekToFileOffset:(unsigned long long)arg1;
+- (id)initWithFileDescriptor:(int)arg1;
 
 @end

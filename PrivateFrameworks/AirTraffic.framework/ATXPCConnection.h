@@ -27,6 +27,7 @@
     id _disconnectHandler;
 
     NSMutableSet *_outstandingMessages;
+    BOOL _assertionHeld;
     id _context;
 }
 
@@ -34,32 +35,35 @@
 @property(copy) id lockdownHandler;
 @property(copy) id messageHandler;
 @property(copy) id disconnectHandler;
+@property BOOL assertionHeld;
 @property(retain) id context;
 
 
-- (void)shutdown;
-- (void)dealloc;
-- (id)serviceName;
-- (void)sendMessage:(id)arg1;
-- (void)setLockdownHandler:(id)arg1;
-- (id)lockdownHandler;
-- (void)_handleLockdownMessage:(void*)arg1;
-- (id)context;
-- (void)setContext:(id)arg1;
 - (void)setDisconnectHandler:(id)arg1;
 - (id)disconnectHandler;
-- (int)_outstandingMessages;
-- (void)_removeMessage:(id)arg1;
-- (void)_registerMessage:(id)arg1;
 - (id)initWithServiceName:(id)arg1 onQueue:(struct dispatch_queue_s { }*)arg2;
 - (void)_handleXPCMessage:(void*)arg1;
 - (void)_sendMessage:(id)arg1 handler:(id)arg2;
 - (void)_setEventHandlerOnConnection:(struct _xpc_connection_s { }*)arg1;
+- (void)dealloc;
 - (id)initWithXPCConnection:(struct _xpc_connection_s { }*)arg1;
 - (void)sendMessage:(id)arg1 withReply:(id)arg2;
-- (id)messageHandler;
+- (void)setContext:(id)arg1;
+- (id)context;
 - (struct dispatch_queue_s { }*)eventQueue;
+- (void)setAssertionHeld:(BOOL)arg1;
+- (BOOL)assertionHeld;
+- (void)setLockdownHandler:(id)arg1;
+- (id)lockdownHandler;
+- (int)_outstandingMessages;
+- (void)_removeMessage:(id)arg1;
+- (void)_registerMessage:(id)arg1;
+- (void)_handleLockdownMessage:(void*)arg1;
+- (id)serviceName;
+- (void)sendMessage:(id)arg1;
+- (id)messageHandler;
 - (void)_handleXPCError:(void*)arg1;
 - (void)setMessageHandler:(id)arg1;
+- (void)shutdown;
 
 @end

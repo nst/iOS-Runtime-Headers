@@ -7,11 +7,11 @@
 @interface SAAlarmDeleteCompleted : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)deleteCompleted;
 + (id)deleteCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)deleteCompleted;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

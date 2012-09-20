@@ -7,7 +7,7 @@
 
 + (void)throwIfError:(int)arg1;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 
 @end

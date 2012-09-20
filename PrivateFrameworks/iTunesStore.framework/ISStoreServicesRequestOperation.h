@@ -11,17 +11,10 @@
 @property(readonly) SSRequest * request;
 
 
+- (id)initWithRequest:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
-- (void)_requestStateChangedNotification:(id)arg1;
-- (void)_delayedStopRequest;
-- (void)_delayedStartRequest;
 - (id)request;
 - (void)run;
-- (void)stopRunLoop;
-- (void)_beginObservingNotifications;
-- (void)_endObservingNotifications;
-- (void)_timer:(id)arg1;
-- (id)initWithRequest:(id)arg1;
 
 @end

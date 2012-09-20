@@ -17,30 +17,30 @@
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (void)initialize;
 + (unsigned int)newBatchAllocation:(id*)arg1 count:(unsigned int)arg2 withOwnedObjectIDs:(id*)arg3;
-+ (void)_entityDeallocated;
 + (Class)classForEntity:(id)arg1;
++ (void)_entityDeallocated;
++ (void)initialize;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (unsigned int)retainCount;
-- (id)description;
-- (id)retain;
-- (id)copy;
-- (oneway void)release;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)finalize;
 - (id)mutableCopy;
-- (id)valueForKey:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
+- (id)entity;
+- (id)description;
+- (unsigned int)retainCount;
+- (unsigned int)hash;
+- (id)retain;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)valueForKey:(id)arg1;
+- (void)dealloc;
+- (oneway void)release;
+- (id)copy;
 - (id)_descriptionValues;
 - (id)initWithObjectID:(id)arg1;
-- (id)entity;
 - (id)objectID;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (void)finalize;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 
 @end

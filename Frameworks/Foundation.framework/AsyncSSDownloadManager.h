@@ -12,6 +12,10 @@
 }
 
 
+- (void)downloadManagerDownloadsDidChange:(id)arg1;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
+- (void)addOperationWithBlock:(id)arg1;
+- (void)dealloc;
 - (void)downloadHandlerDisconnected:(BOOL)arg1;
 - (void)addDownload:(id)arg1 completionBlock:(id)arg2;
 - (void)finishDownload:(long long)arg1;
@@ -23,9 +27,5 @@
 - (void)addDownloads:(id)arg1 completionBlock:(id)arg2;
 - (void)withDownload:(long long)arg1 performAsync:(id)arg2;
 - (void)withDownload:(long long)arg1 perform:(id)arg2;
-- (void)dealloc;
-- (void)addOperationWithBlock:(id)arg1;
-- (void)downloadManagerDownloadsDidChange:(id)arg1;
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 
 @end

@@ -29,11 +29,11 @@
     long long mOffset;
     <SFUBufferedInputStream> *mInput;
     char *mOutBuffer;
-    unsigned int mOutBufferSize;
+    unsigned long mOutBufferSize;
     BOOL mReachedEnd;
     BOOL mIsFromZip;
-    unsigned int mCalculatedCrc;
-    unsigned int mCheckCrc;
+    unsigned long mCalculatedCrc;
+    unsigned long mCheckCrc;
 }
 
 
@@ -45,11 +45,11 @@
 - (id)initWithOffset:(long long)arg1 end:(long long)arg2 uncompressedSize:(unsigned long long)arg3 crc:(unsigned long)arg4 dataRepresentation:(id)arg5;
 - (id)initWithInput:(id)arg1;
 - (id)closeLocalStream;
-- (unsigned long)readToOwnBuffer:(const char **)arg1 size:(unsigned long)arg2;
-- (BOOL)canSeek;
-- (void)seekToOffset:(long long)arg1;
-- (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
-- (void)disableSystemCaching;
 - (void)enableSystemCaching;
+- (void)disableSystemCaching;
+- (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
+- (void)seekToOffset:(long long)arg1;
+- (BOOL)canSeek;
+- (unsigned long)readToOwnBuffer:(const char **)arg1 size:(unsigned long)arg2;
 
 @end

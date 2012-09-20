@@ -12,7 +12,7 @@
         unsigned int length; 
     } _range;
     int _timeLimit;
-    unsigned int _searchID;
+    NSString *_searchID;
     <DASearchQueryConsumer> *_consumer;
 }
 
@@ -21,31 +21,31 @@
 @property unsigned int maxResults;
 @property int timeLimit;
 @property <DASearchQueryConsumer> * consumer;
-@property unsigned int searchID;
+@property(copy) NSString * searchID;
 @property int state;
 
 + (id)searchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
 
-- (void)setConsumer:(id)arg1;
+- (int)state;
 - (id)description;
 - (void)dealloc;
-- (BOOL)isQueryRunning;
-- (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
-- (unsigned int)searchID;
-- (void)setSearchID:(unsigned int)arg1;
-- (void)sendResultsToConsumer:(id)arg1;
-- (void)sendFinishedToConsumerWithError:(id)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (int)timeLimit;
-- (void)setTimeLimit:(int)arg1;
+- (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
 - (id)searchString;
 - (id)dictionaryRepresentation;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (void)setState:(int)arg1;
-- (int)state;
-- (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
-- (unsigned int)maxResults;
+- (int)timeLimit;
+- (void)setTimeLimit:(int)arg1;
+- (BOOL)isQueryRunning;
+- (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
+- (id)searchID;
+- (void)setSearchID:(id)arg1;
+- (void)sendResultsToConsumer:(id)arg1;
+- (void)sendFinishedToConsumerWithError:(id)arg1;
+- (void)setConsumer:(id)arg1;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)consumer;
+- (unsigned int)maxResults;
 - (void)setMaxResults:(unsigned int)arg1;
 
 @end

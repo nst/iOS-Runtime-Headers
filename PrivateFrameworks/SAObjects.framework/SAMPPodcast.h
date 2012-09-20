@@ -5,8 +5,8 @@
 @interface SAMPPodcast : SAMPMediaItem  {
 }
 
-+ (id)podcast;
 + (id)podcastWithDictionary:(id)arg1 context:(id)arg2;
++ (id)podcast;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

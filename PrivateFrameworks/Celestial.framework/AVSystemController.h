@@ -9,19 +9,20 @@
 + (id)sharedAVSystemController;
 + (void)initialize;
 
-- (id)init;
-- (void)dealloc;
+- (BOOL)getVolume:(float*)arg1 forCategory:(id)arg2;
 - (id)volumeCategoryForAudioCategory:(id)arg1;
-- (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (BOOL)allowUserToExceedEUVolumeLimit;
 - (BOOL)setVolumeTo:(float)arg1 forCategory:(id)arg2;
 - (id)attributeForKey:(id)arg1;
-- (BOOL)getVolume:(float*)arg1 forCategory:(id)arg2;
-- (BOOL)getActiveCategoryVolume:(float*)arg1 andName:(id*)arg2;
-- (id)pickableRoutesForCategory:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (BOOL)setPickedRouteWithPassword:(id)arg1 withPassword:(id)arg2;
+- (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (void)postEffectiveVolumeNotification:(void*)arg1;
 - (void)postFullMuteDidChangeNotification:(void*)arg1;
 - (void)handleServerDied;
 - (BOOL)currentRouteHasVolumeControl;
+- (id)pickableRoutesForCategory:(id)arg1;
 - (id)routeForCategory:(id)arg1;
 - (BOOL)enablePortDiscovery:(BOOL)arg1;
 - (BOOL)getPortDiscoveryEnabled;
@@ -35,10 +36,10 @@
 - (BOOL)changeActiveCategoryVolumeBy:(float)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;
 - (BOOL)setActiveCategoryVolumeTo:(float)arg1;
 - (BOOL)changeActiveCategoryVolumeBy:(float)arg1;
+- (BOOL)getActiveCategoryVolume:(float*)arg1 andName:(id*)arg2;
 - (BOOL)getActiveCategoryVolume:(float*)arg1 andName:(id*)arg2 fallbackCategory:(id)arg3;
 - (BOOL)setActiveCategoryVolumeTo:(float)arg1 fallbackCategory:(id)arg2 resultVolume:(float*)arg3 affectedCategory:(id*)arg4;
 - (BOOL)changeActiveCategoryVolumeBy:(float)arg1 fallbackCategory:(id)arg2 resultVolume:(float*)arg3 affectedCategory:(id*)arg4;
-- (BOOL)setPickedRouteWithPassword:(id)arg1 withPassword:(id)arg2;
 - (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
 - (BOOL)okToNotifyFromThisThread;
 

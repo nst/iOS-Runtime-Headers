@@ -12,16 +12,33 @@
     void *_reserved;
 }
 
-+ (id)dateWithNaturalLanguageString:(id)arg1 date:(id)arg2 locale:(id)arg3;
-+ (id)dateWithString:(id)arg1 calendarFormat:(id)arg2 locale:(id)arg3;
-+ (id)dateWithString:(id)arg1 calendarFormat:(id)arg2;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)calendarDate;
 + (id)distantPast;
 + (id)distantFuture;
++ (id)dateWithNaturalLanguageString:(id)arg1 date:(id)arg2 locale:(id)arg3;
++ (id)dateWithString:(id)arg1 calendarFormat:(id)arg2 locale:(id)arg3;
++ (id)dateWithString:(id)arg1 calendarFormat:(id)arg2;
 + (id)dateWithYear:(int)arg1 month:(unsigned int)arg2 day:(unsigned int)arg3 hour:(unsigned int)arg4 minute:(unsigned int)arg5 second:(unsigned int)arg6 timeZone:(id)arg7;
 + (id)combinedDateWithYMDFrom:(id)arg1 HMSFrom:(id)arg2 componentDatesTimezone:(id)arg3;
 
+- (id)initWithString:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (oneway void)release;
+- (id)init;
+- (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
+- (id)descriptionWithCalendarFormat:(id)arg1;
+- (id)timeZone;
+- (Class)classForCoder;
+- (void)setTimeZone:(id)arg1;
+- (double)timeIntervalSinceReferenceDate;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
+- (id)addTimeInterval:(double)arg1;
+- (id)descriptionWithLocale:(id)arg1;
 - (id)initWithString:(id)arg1 calendarFormat:(id)arg2;
 - (void)years:(int*)arg1 months:(int*)arg2 days:(int*)arg3 hours:(int*)arg4 minutes:(int*)arg5 seconds:(int*)arg6 sinceDate:(id)arg7;
 - (id)dateByAddingYears:(int)arg1 months:(int)arg2 days:(int)arg3 hours:(int)arg4 minutes:(int)arg5 seconds:(int)arg6;
@@ -41,27 +58,11 @@
 - (id)calendarFormat;
 - (id)initWithYear:(int)arg1 month:(unsigned int)arg2 day:(unsigned int)arg3 hour:(unsigned int)arg4 minute:(unsigned int)arg5 second:(unsigned int)arg6 timeZone:(id)arg7;
 - (void)setCalendarFormat:(id)arg1;
-- (id)initWithString:(id)arg1;
-- (id)description;
-- (oneway void)release;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)addTimeInterval:(double)arg1;
-- (id)descriptionWithLocale:(id)arg1;
-- (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
-- (id)descriptionWithCalendarFormat:(id)arg1;
-- (Class)classForCoder;
-- (id)timeZone;
-- (void)setTimeZone:(id)arg1;
-- (double)timeIntervalSinceReferenceDate;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)ekmsuidStringForYearMonthDay;
 - (id)ekmsuidGMTDateToDateInTimeZone:(id)arg1;
 - (void)getGregorianDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg1;
-- (id)gmtDateToDateInTimeZone:(id)arg1;
 - (id)nearestMidnight;
+- (id)gmtDateToDateInTimeZone:(id)arg1;
 - (id)tzDateToDateInGMT:(id)arg1;
 
 @end

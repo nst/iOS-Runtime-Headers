@@ -11,14 +11,14 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (void)setTextBodyProperties:(id)arg1;
-- (id)textBodyProperties;
-- (void)setShapeProperties:(id)arg1;
+- (id)init;
 - (void)setTextListStyle:(id)arg1;
-- (id)initWithDefaults;
+- (id)textBodyProperties;
+- (void)setTextBodyProperties:(id)arg1;
+- (void)setShapeProperties:(id)arg1;
 - (id)textListStyle;
+- (id)initWithDefaults;
 - (id)shapeProperties;
 
 @end

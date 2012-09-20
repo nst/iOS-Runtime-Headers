@@ -12,12 +12,12 @@
 - (id)init;
 - (id)initWithText:(id)arg1;
 - (id)document;
-- (BOOL)isEmpty;
 - (id)text;
+- (BOOL)isEmpty;
 - (void)clearProperties;
 - (id)runIterator;
 - (id)newRunIterator;
-- (int)blockType;
 - (int)textType;
+- (int)blockType;
 
 @end

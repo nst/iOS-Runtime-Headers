@@ -19,15 +19,19 @@
         unsigned int shouldRestoreFromViewAlpha : 1; 
         unsigned int shouldRasterize : 1; 
         unsigned int enableRotationAfterTransition : 1; 
-        unsigned int reserved : 25; 
+        unsigned int removeFromView : 1; 
     } _transitionViewFlags;
+    float _curlUpRevealedHeight;
 }
 
 @property BOOL shouldNotifyDidCompleteImmediately;
 
 + (double)defaultDurationForTransition:(int)arg1;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (float)_curlUpRevealedHeight;
 - (void)setRasterizesOnTransition:(BOOL)arg1;
 - (BOOL)_isTransitioningFromFromView:(id)arg1;
 - (id)toView;
@@ -36,18 +40,17 @@
 - (void)setShouldNotifyDidCompleteImmediately:(BOOL)arg1;
 - (void)_transitionDidStop:(id)arg1 finished:(id)arg2;
 - (BOOL)isTransitioning;
+- (void)_didCompleteTransition:(BOOL)arg1;
 - (void)_startTransition:(int)arg1 withDuration:(float)arg2;
 - (BOOL)rasterizesOnTransition;
-- (void)_didCompleteTransition:(BOOL)arg1;
 - (void)_didStartTransition;
+- (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3 removeFromView:(BOOL)arg4;
 - (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3;
 - (void)notifyDidCompleteTransition:(id)arg1;
 - (BOOL)shouldNotifyDidCompleteImmediately;
 - (double)durationForTransition:(int)arg1;
 - (BOOL)ignoresInteractionEvents;
 - (void)setIgnoresInteractionEvents:(BOOL)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

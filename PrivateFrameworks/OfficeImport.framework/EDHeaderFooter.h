@@ -12,9 +12,9 @@
 + (id)headerFooter;
 
 - (void)dealloc;
-- (id)headerString;
-- (void)setHeaderString:(id)arg1;
 - (id)footerString;
+- (id)headerString;
 - (void)setFooterString:(id)arg1;
+- (void)setHeaderString:(id)arg1;
 
 @end

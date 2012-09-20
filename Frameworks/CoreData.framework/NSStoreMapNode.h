@@ -14,22 +14,22 @@
 
 + (void)initialize;
 
+- (id)entity;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)_relatedNodes;
+- (id)destinationsForRelationship:(id)arg1;
+- (void)setDestinations:(id)arg1 forRelationship:(id)arg2;
+- (void)_setMap:(id)arg1;
+- (id)_snapshot_;
+- (const id*)knownKeyValuesPointer;
+- (id)initWithObjectID:(id)arg1;
+- (void)_setVersionNumber:(unsigned int)arg1;
+- (unsigned int)_versionNumber;
+- (id)configurationName;
+- (id)objectID;
 - (id)key;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)_relatedNodes;
-- (void)setDestinations:(id)arg1 forRelationship:(id)arg2;
-- (id)destinationsForRelationship:(id)arg1;
-- (void)_setMap:(id)arg1;
-- (id)initWithObjectID:(id)arg1;
-- (const id*)knownKeyValuesPointer;
-- (id)_snapshot_;
-- (id)configurationName;
-- (unsigned int)_versionNumber;
-- (void)_setVersionNumber:(unsigned int)arg1;
-- (id)entity;
-- (id)objectID;
 
 @end

@@ -13,31 +13,31 @@
     <ABStyleProvider> *_styleProvider;
 }
 
+@property(retain) <ABStyleProvider> * styleProvider;
+@property(getter=isEditing) BOOL tableEditing;
 @property(readonly) NSString * attribution;
 @property(getter=isAttributionEnabled,readonly) BOOL attributionEnabled;
 @property(retain) UIView * accessoryView;
-@property(retain) <ABStyleProvider> * styleProvider;
-@property(getter=isEditing) BOOL tableEditing;
 
 
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })attributionFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deleteViewFrame;
-- (void)setDeleteActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 animated:(BOOL)arg4;
-- (void)removeDeleteAction;
-- (void)setTableEditing:(BOOL)arg1;
-- (BOOL)isAttributionEnabled;
-- (id)attribution;
-- (void)setAttribution:(id)arg1 enabled:(BOOL)arg2 target:(id)arg3 action:(SEL)arg4;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
-- (void)setAccessoryView:(id)arg1;
 - (id)accessoryView;
+- (void)setAccessoryView:(id)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isEditing;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deleteViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })attributionFrame;
+- (BOOL)isAttributionEnabled;
+- (void)setTableEditing:(BOOL)arg1;
+- (void)removeDeleteAction;
+- (void)setDeleteActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 animated:(BOOL)arg4;
+- (void)setAttribution:(id)arg1 enabled:(BOOL)arg2 target:(id)arg3 action:(SEL)arg4;
+- (id)attribution;
+- (id)styleProvider;
+- (void)setStyleProvider:(id)arg1;
 
 @end

@@ -10,7 +10,7 @@
     unsigned short _accessCapability;
     unsigned long long _maxCapacity;
     unsigned long long _freeSpaceInBytes;
-    unsigned int _freeSpaceInImages;
+    unsigned long _freeSpaceInImages;
     NSString *_storageDescription;
     NSString *_volumeLabel;
     NSMutableData *_content;
@@ -19,29 +19,29 @@
 }
 
 
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (unsigned short)storageType;
-- (void)setStorageType:(unsigned short)arg1;
-- (unsigned short)filesystemType;
-- (void)setFilesystemType:(unsigned short)arg1;
-- (void)setAccessCapability:(unsigned short)arg1;
-- (unsigned long long)maxCapacity;
-- (void)setMaxCapacity:(unsigned long long)arg1;
-- (unsigned long long)freeSpaceInBytes;
-- (void)setFreeSpaceInBytes:(unsigned long long)arg1;
-- (unsigned long)freeSpaceInImages;
-- (void)setFreeSpaceInImages:(unsigned long)arg1;
-- (id)storageDescription;
-- (void)setStorageDescription:(id)arg1;
-- (id)volumeLabel;
 - (void)setVolumeLabel:(id)arg1;
+- (id)volumeLabel;
+- (void)setStorageDescription:(id)arg1;
+- (id)storageDescription;
+- (void)setFreeSpaceInImages:(unsigned long)arg1;
+- (unsigned long)freeSpaceInImages;
+- (void)setFreeSpaceInBytes:(unsigned long long)arg1;
+- (unsigned long long)freeSpaceInBytes;
+- (void)setAccessCapability:(unsigned short)arg1;
+- (void)setFilesystemType:(unsigned short)arg1;
+- (unsigned short)filesystemType;
+- (void)setStorageType:(unsigned short)arg1;
+- (unsigned short)storageType;
 - (void)updateContent;
-- (id)initWithMutableData:(id)arg1;
 - (unsigned short)accessCapability;
+- (id)initWithMutableData:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (id)content;
 - (id)initWithData:(id)arg1;
 - (void)setContent:(id)arg1;
+- (unsigned long long)maxCapacity;
+- (void)setMaxCapacity:(unsigned long long)arg1;
 
 @end

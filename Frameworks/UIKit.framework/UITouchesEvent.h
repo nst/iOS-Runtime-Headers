@@ -12,6 +12,7 @@
 }
 
 
+- (int)type;
 - (id)description;
 - (void)dealloc;
 - (id)_touchesForGesture:(id)arg1 withPhase:(int)arg2;
@@ -22,7 +23,6 @@
 - (id)_touchesForWindow:(id)arg1;
 - (id)_touchesForGestureRecognizer:(id)arg1;
 - (id)touchesForWindow:(id)arg1;
-- (int)type;
 - (id)_initWithEvent:(struct __GSEvent { }*)arg1 touches:(id)arg2;
 - (id)_firstTouchForView:(id)arg1;
 - (void)_moveTouchesFromView:(id)arg1 toView:(id)arg2;

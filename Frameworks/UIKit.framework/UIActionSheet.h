@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIToolbar, UIWindow, UILabel, NSMutableArray, UIView, UIImage, NSString, UIPopoverController, <UIActionSheetDelegate>;
+@class UIToolbar, UIWindow, UIImageView, UILabel, NSMutableArray, UIView, NSAttributedString, UIImage, UIPopoverController, <UIActionSheetDelegate>, NSString;
 
 @interface UIActionSheet : UIView  {
     <UIActionSheetDelegate> *_delegate;
     UILabel *_titleLabel;
+    NSAttributedString *_attributedTitleString;
     UILabel *_subtitleLabel;
     UILabel *_bodyTextLabel;
     UILabel *_taglineTextLabel;
@@ -90,6 +91,7 @@
     int _actionSheetStyle;
     UIImage *_selectedButtonGlyphImage;
     UIImage *_selectedButtonGlyphHighlightedImage;
+    UIImageView *_shadowImageView;
 }
 
 @property <UIActionSheetDelegate> * delegate;
@@ -105,6 +107,8 @@
 + (struct CGSize { float x1; float x2; })minimumSize;
 + (id)_popupAlertBackground;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (void)showFromBarButtonItem:(id)arg1;
 - (void)showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
@@ -117,6 +121,7 @@
 - (void)showFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)_presentPopoverInCenterOfWindowForView:(id)arg1;
 - (id)_presentingViewForView:(id)arg1;
+- (void)_presentViaResponderChain:(id)arg1 asPopoverFromBarButtonItem:(id)arg2 orFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4 withPreferredArrowDirections:(int)arg5 passthroughViews:(id)arg6 backgroundStyle:(int)arg7 animated:(BOOL)arg8;
 - (void)_presentFromBarButtonItem:(id)arg1 orFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(int)arg4 allowInteractionWithViews:(id)arg5 backgroundStyle:(int)arg6 animated:(BOOL)arg7;
 - (void)showFromToolbar:(id)arg1;
 - (void)setSelectedButtonGlyphHighlightedImage:(id)arg1;
@@ -129,8 +134,10 @@
 - (void)presentSheetInPopoverView:(id)arg1;
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)_buttonAtIndex:(int)arg1;
+- (id)buttonAtIndex:(int)arg1;
 - (id)addMediaButtonWithTitle:(id)arg1 iconView:(id)arg2 andTableIconView:(id)arg3;
-- (void)_doneScrolling:(id)arg1;
+- (id)_attributedTitleString;
+- (void)_setAttributedTitleString:(id)arg1;
 - (void)setThreeColumnsLayoutMode:(int)arg1;
 - (void)setTwoColumnsLayoutMode:(int)arg1;
 - (int)twoColumnsLayoutMode;
@@ -140,6 +147,7 @@
 - (id)_dimViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1 inView:(id)arg2;
 - (void)presentSheetInContentView:(id)arg1;
+- (void)_presentViaResponderChainFromYCoordinate:(float)arg1;
 - (void)_hideActionSheetInsidePopOverAnimated:(BOOL)arg1;
 - (void)_hideHostingPopOverViewAnimated:(BOOL)arg1;
 - (void)_representActionSheetInsidePopOverAnimated:(BOOL)arg1;
@@ -154,8 +162,6 @@
 - (int)defaultButtonIndex;
 - (id)message;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
-- (void)setDefaultButtonIndex:(int)arg1;
-- (void)setMessage:(id)arg1;
 - (void)presentSheetFromButtonBar:(id)arg1;
 - (int)numberOfLinesInTitle;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
@@ -169,6 +175,7 @@
 - (int)alertSheetStyle;
 - (struct CGSize { float x1; float x2; })backgroundSize;
 - (void)_slideSheetOut:(BOOL)arg1;
+- (void)setDimView:(id)arg1;
 - (void)presentSheetToAboveView:(id)arg1;
 - (void)presentSheetInView:(id)arg1;
 - (BOOL)isBodyTextTruncated;
@@ -193,6 +200,7 @@
 - (int)titleMaxLineCount;
 - (id)bodyText;
 - (void)setTaglineText:(id)arg1;
+- (void)setBodyText:(id)arg1;
 - (void)_createTitleLabelIfNeeded;
 - (void)presentSheetFromBehindView:(id)arg1;
 - (void)presentSheetFromAboveView:(id)arg1;
@@ -210,6 +218,7 @@
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1;
 - (void)_setAlertSheetStyleFromButtonBar:(id)arg1;
 - (void)popupAlertAnimated:(BOOL)arg1 atOffset:(float)arg2;
+- (void)_appSuspended:(id)arg1;
 - (void)_layoutPopupAlertWithOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)_rotatingAnimationDidStop:(id)arg1;
 - (struct CGSize { float x1; float x2; })minimumSize;
@@ -226,6 +235,7 @@
 - (void)_bubbleAnimationShrinkDidStop:(id)arg1 finished:(id)arg2;
 - (void)_cleanupAfterPopupAnimation;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_layoutIfNeeded;
 - (BOOL)_canShowAlerts;
 - (void)_temporarilyHideAnimated:(BOOL)arg1;
 - (void)_cancelAnimated:(BOOL)arg1;
@@ -242,63 +252,56 @@
 - (void)_createSubtitleLabelIfNeeded;
 - (void)_createTaglineTextLabelIfNeeded;
 - (void)_createBodyTextLabelIfNeeded;
-- (BOOL)requiresPortraitOrientation;
-- (id)buttonAtIndex:(int)arg1;
-- (void)_layoutIfNeeded;
 - (void)setAlertSheetStyle:(int)arg1;
+- (BOOL)requiresPortraitOrientation;
 - (id)buttonTitleAtIndex:(int)arg1;
 - (id)initWithTitle:(id)arg1 delegate:(id)arg2 cancelButtonTitle:(id)arg3 destructiveButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (BOOL)_isAnimating;
-- (void)setBodyText:(id)arg1;
+- (id)textField;
+- (void)setDefaultButtonIndex:(int)arg1;
 - (void)setRunsModal:(BOOL)arg1;
+- (void)setMessage:(id)arg1;
 - (int)numberOfButtons;
 - (id)_relinquishPopoverController;
-- (void)setCancelButtonIndex:(int)arg1;
-- (int)addButtonWithTitle:(id)arg1;
 - (void)setTitleMaxLineCount:(int)arg1;
 - (id)_titleLabel;
 - (void)setActionSheetStyle:(int)arg1;
-- (void)setDimView:(id)arg1;
 - (void)popupAlertAnimated:(BOOL)arg1;
 - (void)setNumberOfRows:(int)arg1;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (void)dismiss;
+- (id)keyboard;
 - (BOOL)isVisible;
 - (id)tableView;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (void)showInView:(id)arg1;
-- (id)textField;
-- (id)keyboard;
 - (void)layout;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
-- (id)table;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)_appSuspended:(id)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (int)numberOfRows;
-- (id)context;
 - (void)setContext:(id)arg1;
 - (id)title;
-- (void)scrollViewWillBeginDragging:(id)arg1;
 - (BOOL)canBecomeFirstResponder;
+- (id)context;
 - (BOOL)becomeFirstResponder;
 - (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
 - (BOOL)resignFirstResponder;
+- (void)setCancelButtonIndex:(int)arg1;
+- (int)addButtonWithTitle:(id)arg1;
 - (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 - (int)cancelButtonIndex;
-- (id)delegate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)setTitle:(id)arg1;
 - (void)removeFromSuperview;
-- (void)setDelegate:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)showFromObject:(id)arg1 animated:(BOOL)arg2;
-- (int)addButtonWithTitle:(id)arg1 tag:(id)arg2;
 - (id)tagForButtonIndex:(int)arg1;
+- (int)addButtonWithTitle:(id)arg1 tag:(id)arg2;
+- (void)showFromObject:(id)arg1 animated:(BOOL)arg2;
 
 @end

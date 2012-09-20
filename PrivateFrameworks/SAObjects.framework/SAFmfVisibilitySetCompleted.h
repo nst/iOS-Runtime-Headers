@@ -9,18 +9,18 @@
 
 @property(copy) NSURL * targetAppId;
 @property(copy) NSURL * searchContext;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)visibilitySetCompleted;
 + (id)visibilitySetCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)visibilitySetCompleted;
 
 - (id)groupIdentifier;
-- (void)setSearchContext:(id)arg1;
 - (id)searchContext;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (void)setSearchContext:(id)arg1;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

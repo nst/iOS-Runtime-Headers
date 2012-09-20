@@ -9,32 +9,32 @@
     NSString *_installedOnDeviceID;
 }
 
+@property(copy) NSString * installedOnDeviceID;
+@property(retain) NSData * certificatePersistentID;
 @property(readonly) BOOL isRoot;
 @property(readonly) BOOL isIdentity;
 @property(readonly) NSDate * expiry;
 @property(readonly) BOOL isSigned;
-@property(copy) NSString * installedOnDeviceID;
-@property(retain) NSData * certificatePersistentID;
 
 
 - (id)description;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)setInstalledOnDeviceID:(id)arg1;
 - (void)setCertificatePersistentID:(id)arg1;
-- (struct __SecCertificate { }*)copyCertificate;
-- (struct __SecIdentity { }*)copyIdentityFromKeychain;
-- (BOOL)isIdentity;
-- (id)installedOnDeviceID;
-- (id)certificatePersistentID;
-- (BOOL)isRoot;
-- (id)subtitle1Label;
-- (id)subtitle2Label;
-- (id)subtitle2Description;
-- (id)subtitle1Description;
 - (BOOL)isSigned;
+- (BOOL)isRoot;
+- (id)certificatePersistentID;
+- (id)installedOnDeviceID;
+- (BOOL)isIdentity;
+- (struct __SecIdentity { }*)copyIdentityFromKeychain;
+- (struct __SecCertificate { }*)copyCertificate;
+- (id)subtitle2Description;
+- (id)subtitle2Label;
+- (id)subtitle1Label;
+- (id)subtitle1Description;
 - (id)expiry;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)title;
 
 @end

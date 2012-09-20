@@ -13,14 +13,14 @@
 @property(retain) NSMutableArray * orderedResponses;
 @property(retain) CoreDAVLeafItem * responseDescription;
 
++ (id)copyParseRules;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)setOrderedResponses:(id)arg1;
 - (void)setResponseDescription:(id)arg1;
 - (id)responseDescription;
-- (id)copyParseRules;
 - (id)orderedResponses;
 - (void)addResponse:(id)arg1;
 - (id)responses;

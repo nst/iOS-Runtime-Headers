@@ -14,13 +14,13 @@
 
 + (id)callForCTCallRef:(struct __CTCall { }*)arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)callID;
-- (void)setCallID:(id)arg1;
 - (void)setCallState:(id)arg1;
 - (id)callState;
+- (void)setCallID:(id)arg1;
+- (id)callID;
 
 @end

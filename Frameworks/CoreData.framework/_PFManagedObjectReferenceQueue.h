@@ -17,19 +17,19 @@
 
 - (unsigned int)retainCount;
 - (id)retain;
-- (void)release;
 - (void)dealloc;
+- (void)release;
+- (BOOL)_queueBatchForDealloc:(struct __CFArray { }*)arg1;
+- (BOOL)_signal;
+- (int)_queueCount;
+- (id)initForContext:(id)arg1;
+- (void)_contextDidDealloc;
+- (void)_unregisterRunloopObservers;
+- (void)_processReferenceQueue:(BOOL)arg1;
+- (BOOL)_GC_queueForDealloc:(id)arg1;
+- (BOOL)_queueForDealloc:(id)arg1;
+- (void)finalize;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (void)finalize;
-- (BOOL)_signal;
-- (void)_processReferenceQueue:(BOOL)arg1;
-- (void)_unregisterRunloopObservers;
-- (void)_contextDidDealloc;
-- (id)initForContext:(id)arg1;
-- (int)_queueCount;
-- (BOOL)_queueForDealloc:(id)arg1;
-- (BOOL)_GC_queueForDealloc:(id)arg1;
-- (BOOL)_queueBatchForDealloc:(struct __CFArray { }*)arg1;
 
 @end

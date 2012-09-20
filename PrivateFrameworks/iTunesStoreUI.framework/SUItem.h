@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SSItemImageCollection, NSURL, SSItemOffer, SUItemContentRating, SUItemReviewStatistics, NSDate, NSArray, SUItemLink, NSDictionary, SUItem, NSString, NSNumber;
+@class NSURL, SSItemImageCollection, SSItemOffer, SUItemContentRating, SUItemReviewStatistics, NSDate, NSDictionary, SUItemLink, NSArray, SUItem, NSString, NSNumber;
 
 @interface SUItem : NSObject <NSCopying> {
     NSString *_artistName;
@@ -35,6 +35,7 @@
     NSArray *_storeOffers;
     NSDictionary *_tellAFriendDictionary;
     NSString *_title;
+    NSDictionary *_tweetDictionary;
     NSString *_unmodifiedTitle;
     NSNumber *_versionIdentifier;
     NSArray *_versionOrdering;
@@ -75,26 +76,21 @@
 @property(readonly) NSString * tellAFriendBodyMIMEType;
 @property(readonly) NSURL * tellAFriendBodyURL;
 @property(readonly) NSString * tellAFriendSubject;
+@property(readonly) NSString * tweetInitialText;
+@property(readonly) NSURL * tweetURL;
 @property(copy) SSItemImageCollection * itemImageCollection;
 @property(readonly) NSDictionary * itemDictionary;
 @property(readonly) NSString * itemTypeString;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)bundleVersion;
-- (void)setSecondaryTitle:(id)arg1;
-- (id)secondaryTitle;
-- (id)artistName;
+- (void)setArtistName:(id)arg1;
 - (BOOL)isInstalled;
+- (id)bundleVersion;
 - (void)setBundleVersion:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
-- (void)_reloadProperties;
-- (id)valueForProperty:(id)arg1;
-- (id)initWithDictionary:(id)arg1;
-- (id)title;
-- (id)bundleIdentifier;
-- (void)setTitle:(id)arg1;
+- (id)artistName;
+- (void)setSecondaryTitle:(id)arg1;
+- (id)secondaryTitle;
 - (void)setVersionOrdering:(id)arg1;
 - (void)setVersionIdentifier:(id)arg1;
 - (void)setUnmodifiedTitle:(id)arg1;
@@ -116,12 +112,12 @@
 - (id)disclaimerString;
 - (void)setCopyrightString:(id)arg1;
 - (id)copyrightString;
-- (void)setContentRating:(id)arg1;
 - (void)setContainerName:(id)arg1;
 - (id)containerName;
 - (void)setCollectionName:(id)arg1;
 - (id)collectionName;
-- (void)setArtistName:(id)arg1;
+- (id)tweetURL;
+- (id)tweetInitialText;
 - (id)tellAFriendSubject;
 - (id)tellAFriendBodyURL;
 - (id)tellAFriendBodyMIMEType;
@@ -158,7 +154,6 @@
 - (id)firstItemLinkForType:(int)arg1;
 - (id)versionIdentifier;
 - (id)softwareType;
-- (id)contentRating;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (id)dateValueForProperty:(id)arg1;
 - (id)stringValueForProperty:(id)arg1;
@@ -173,5 +168,15 @@
 - (unsigned long long)itemIdentifier;
 - (id)defaultStoreOffer;
 - (id)itemImageCollection;
+- (id)bundleIdentifier;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)setContentRating:(id)arg1;
+- (id)contentRating;
+- (id)valueForProperty:(id)arg1;
+- (void)_reloadProperties;
+- (id)initWithDictionary:(id)arg1;
+- (id)title;
+- (void)setTitle:(id)arg1;
 
 @end

@@ -23,14 +23,14 @@
 }
 
 
+- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (id)description;
 - (void)dealloc;
+- (void)finalize;
+- (unsigned char)synchronize;
 - (id)initWithURL:(struct __CFURL { }*)arg1 mode:(unsigned short)arg2 owner:(unsigned int)arg3 group:(unsigned int)arg4 format:(long)arg5;
 - (void)_reenableSuddenTermination;
 - (void)_assimilateSync:(id)arg1;
 - (void)synchronizeInBackgroundWithCompletionBlock:(id)arg1;
-- (void)finalize;
-- (unsigned char)synchronize;
-- (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 
 @end

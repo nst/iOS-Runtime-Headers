@@ -31,6 +31,8 @@
 @property double turnDuration;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (void)_startCurlAnimation;
 - (void)_setupCurlFilters;
@@ -53,8 +55,6 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)view;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

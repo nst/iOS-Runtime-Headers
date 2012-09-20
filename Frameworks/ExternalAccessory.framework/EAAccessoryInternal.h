@@ -18,13 +18,14 @@
     NSString *_serialNumber;
     NSString *_firmwareRevision;
     NSString *_hardwareRevision;
+    NSString *_macAddress;
     NSString *_preferredApp;
     int _classType;
     NSDictionary *_audioPorts;
     unsigned int _capabilities;
+    BOOL _notPresentInIAPAccessoriesArray;
     NSMutableArray *_sessionsList;
     NSArray *_eqNames;
-    unsigned int _eqItems;
     int _iPodOutOptionsMask;
     struct __CFAccessory { } *_cfAccessory;
     int (*_cfAccessoryPortPropertyCallback)();
@@ -42,10 +43,12 @@
 @property(copy) NSString * serialNumber;
 @property(copy) NSString * firmwareRevision;
 @property(copy) NSString * hardwareRevision;
+@property(copy) NSString * macAddress;
 @property(copy) NSString * preferredApp;
 @property int classType;
 @property(retain) NSDictionary * audioPorts;
 @property unsigned int capabilities;
+@property BOOL notPresentInIAPAccessoriesArray;
 @property(readonly) NSArray * sessionsList;
 @property struct __CFAccessory { }* cfAccessory;
 @property int (* cfAccessoryPortPropertyCallback;
@@ -57,11 +60,22 @@
 @property <EAAccessoryDelegate> * delegate;
 
 
-- (unsigned int)capabilities;
+- (void)addSession:(id)arg1;
+- (void)setConnected:(BOOL)arg1;
+- (void)setSerialNumber:(id)arg1;
+- (id)serialNumber;
+- (void)setManufacturer:(id)arg1;
+- (id)manufacturer;
+- (BOOL)connected;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)setName:(id)arg1;
-- (id)init;
+- (id)name;
 - (void)dealloc;
-- (void)setCapabilities:(unsigned int)arg1;
+- (id)init;
+- (void)setMacAddress:(id)arg1;
+- (id)macAddress;
+- (void)removeSession:(id)arg1;
 - (int)iPodOutOptionsMask;
 - (unsigned int)eqIndex;
 - (id)eqNames;
@@ -73,8 +87,9 @@
 - (void)setCfAccessoryPortPropertyCallback:(int (*)())arg1;
 - (void)setCfAccessory:(struct __CFAccessory { }*)arg1;
 - (struct __CFAccessory { }*)cfAccessory;
+- (BOOL)notPresentInIAPAccessoriesArray;
 - (id)sessionsList;
-- (void)addSession:(id)arg1;
+- (void)setNotPresentInIAPAccessoriesArray:(BOOL)arg1;
 - (id)protocols;
 - (id)hardwareRevision;
 - (id)firmwareRevision;
@@ -92,15 +107,7 @@
 - (void)setIPodOutOptionsMask:(int)arg1;
 - (int (*)())cfAccessoryPortPropertyCallback;
 - (unsigned int)connectionID;
-- (void)setConnected:(BOOL)arg1;
-- (id)manufacturer;
-- (void)setManufacturer:(id)arg1;
-- (void)setSerialNumber:(id)arg1;
-- (BOOL)connected;
-- (id)name;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (id)serialNumber;
-- (void)removeSession:(id)arg1;
+- (void)setCapabilities:(unsigned int)arg1;
+- (unsigned int)capabilities;
 
 @end

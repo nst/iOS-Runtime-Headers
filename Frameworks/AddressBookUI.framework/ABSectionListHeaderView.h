@@ -4,7 +4,7 @@
 
 @class <ABStyleProvider>;
 
-@interface ABSectionListHeaderView : UITableHeaderFooterView  {
+@interface ABSectionListHeaderView : UITableViewHeaderFooterView  {
     <ABStyleProvider> *_styleProvider;
 }
 
@@ -12,8 +12,8 @@
 
 
 - (void)dealloc;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
 - (void)_updateBackgroundImage;
+- (id)styleProvider;
+- (void)setStyleProvider:(id)arg1;
 
 @end

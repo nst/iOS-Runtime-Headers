@@ -17,6 +17,7 @@
     SEL _themeSelectionImageSelector;
     SEL _themeDividerImageSelector;
     SEL _themeFontSelector;
+    SEL _secondaryFontSelector;
     SEL _themeSelectedTextColorSelector;
     SEL _themeNormalTextColorSelector;
     SEL _themeSecondaryTextColorSelector;
@@ -43,11 +44,13 @@
     NSArray *_processedLabels;
     UIImageView *_backgroundView;
     UIImageView *_foregroundView;
+    float _maxWidth;
 }
 
 @property <GKHeaderSegmentedControlDelegate> * delegate;
 @property(readonly) float defaultHeight;
 @property float textPaddingWidth;
+@property float maxWidth;
 @property unsigned int selectedSegmentIndex;
 @property(retain) NSArray * labels;
 @property(retain) NSArray * abbreviatedLabels;
@@ -58,6 +61,7 @@
 @property SEL themeSelectionImageSelector;
 @property SEL themeDividerImageSelector;
 @property SEL themeFontSelector;
+@property SEL themeSecondaryFontSelector;
 @property SEL themeSelectedTextColorSelector;
 @property SEL themeNormalTextColorSelector;
 @property SEL themeSecondaryTextColorSelector;
@@ -73,9 +77,9 @@
 @property(retain) NSArray * processedLabels;
 @property(retain) UIImageView * backgroundView;
 @property(retain) UIImageView * foregroundView;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } segmentBounds;
 
 
-- (void)dealloc;
 - (void)setProcessedLabels:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })selectionInsets;
 - (void)setSegmentNodes:(struct { float x1; float x2; id x3; }*)arg1;
@@ -93,6 +97,7 @@
 - (float)minFontSizeDelta;
 - (void)setCalculatedFontSize:(float)arg1;
 - (float)dividerWidth;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })segmentBounds;
 - (id)largeRibbonBackgroundImageForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (SEL)themeBackgroundImageSelector;
 - (SEL)themeDividerImageSelector;
@@ -104,6 +109,7 @@
 - (SEL)themeSecondaryTextColorSelector;
 - (SEL)themeNormalTextColorSelector;
 - (SEL)themeSelectedTextColorSelector;
+- (SEL)themeSecondaryFontSelector;
 - (float)calculatedFontSize;
 - (SEL)themeFontSelector;
 - (void)invalidateProcessedLabels;
@@ -123,6 +129,7 @@
 - (void)setThemeSecondaryTextColorSelector:(SEL)arg1;
 - (void)setThemeNormalTextColorSelector:(SEL)arg1;
 - (void)setThemeSelectedTextColorSelector:(SEL)arg1;
+- (void)setThemeSecondaryFontSelector:(SEL)arg1;
 - (void)setThemeFontSelector:(SEL)arg1;
 - (void)setThemeDividerImageSelector:(SEL)arg1;
 - (void)setThemeSelectionImageSelector:(SEL)arg1;
@@ -130,6 +137,9 @@
 - (void)setSegmentWidthAllocationStyle:(int)arg1;
 - (void)setTextPaddingWidth:(float)arg1;
 - (void)_tap:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (id)foregroundView;
 - (void)setForegroundView:(id)arg1;
 - (id)dividerImage;
@@ -141,14 +151,14 @@
 - (id)backgroundView;
 - (void)setBackgroundView:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })capInsets;
-- (id)delegate;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setNeedsLayout;
-- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)labels;
+- (void)setMaxWidth:(float)arg1;
+- (float)maxWidth;
 
 @end

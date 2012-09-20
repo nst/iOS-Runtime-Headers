@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFAddContactButton : UIPushButton  {
+@interface MFAddContactButton : UIButton  {
 }
 
 

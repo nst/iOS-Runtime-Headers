@@ -16,6 +16,7 @@
 
 
 - (int)type;
+- (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })point;
 - (struct CGSize { float x1; float x2; })size;
 - (int)mapStrType:(struct __CFString { }*)arg1;

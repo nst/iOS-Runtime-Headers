@@ -7,17 +7,21 @@
     BOOL _useDefaultModalTransitionStyle;
     int _modalPresentationStyle;
     int _modalTransitionStyle;
+    BOOL _animates;
 }
 
 @property BOOL useDefaultModalPresentationStyle;
 @property BOOL useDefaultModalTransitionStyle;
 @property int modalPresentationStyle;
 @property int modalTransitionStyle;
+@property BOOL animates;
 
 
 - (void)perform;
+- (void)setAnimates:(BOOL)arg1;
 - (void)setUseDefaultModalTransitionStyle:(BOOL)arg1;
 - (void)setUseDefaultModalPresentationStyle:(BOOL)arg1;
+- (BOOL)animates;
 - (BOOL)useDefaultModalTransitionStyle;
 - (BOOL)useDefaultModalPresentationStyle;
 - (void)setModalTransitionStyle:(int)arg1;

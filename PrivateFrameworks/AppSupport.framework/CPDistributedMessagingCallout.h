@@ -9,15 +9,15 @@
     BOOL _returnsVoidIsValid;
 }
 
-@property(readonly) BOOL returnsVoid;
+@property(readonly) id target;
 @property(readonly) SEL selector;
-@property(retain,readonly) id target;
+@property(readonly) BOOL returnsVoid;
 
 
 - (id)target;
 - (void)dealloc;
-- (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
-- (BOOL)returnsVoid;
 - (SEL)selector;
+- (BOOL)returnsVoid;
+- (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 
 @end

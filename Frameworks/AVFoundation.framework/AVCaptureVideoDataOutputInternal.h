@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVCaptureVideoDataOutputSampleBufferDelegate>, NSDictionary;
+@class <AVCaptureVideoDataOutputSampleBufferDelegate>, NSDictionary, NSObject<OS_dispatch_queue>;
 
 @interface AVCaptureVideoDataOutputInternal : NSObject  {
     <AVCaptureVideoDataOutputSampleBufferDelegate> *delegate;
-    struct dispatch_queue_s { } *clientQueue;
-    unsigned long pixelFormatType;
+    NSObject<OS_dispatch_queue> *clientQueue;
     NSDictionary *videoSettings;
     struct { 
         long long value; 
@@ -19,7 +18,7 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 
 @end

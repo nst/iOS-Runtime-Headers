@@ -17,13 +17,13 @@
 + (long long)freeDiskSpaceThreshold;
 + (long long)diskSpaceAvailableForUse;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (long long)bytesToAutomaticallyClear;
+- (BOOL)hasEnoughDiskToTakePicture;
 - (void)_diskSpaceDidBecomeLow;
 - (void)_updateCookie;
 - (void)_actuallyUpdateCookie;
-- (long long)bytesToAutomaticallyClear;
 - (void)updateAvailableDiskSpace;
-- (BOOL)hasEnoughDiskToTakePicture;
 
 @end

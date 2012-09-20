@@ -4,25 +4,23 @@
 
 @class PFUbiquityKnowledgeVector, PFUbiquityLocation;
 
-@interface PFUbiquityPeerReceipt : NSObject <NSCoding> {
+@interface PFUbiquityPeerReceipt : PFUbiquitySafeSaveFile  {
     PFUbiquityKnowledgeVector *_kv;
-    PFUbiquityLocation *_receiptFileLocation;
 }
 
-@property(readonly) PFUbiquityKnowledgeVector * kv;
 @property(readonly) PFUbiquityLocation * receiptFileLocation;
+@property(readonly) PFUbiquityKnowledgeVector * kv;
 
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (BOOL)writeFileToLocation:(id)arg1 error:(id*)arg2;
 - (id)receiptFileLocation;
-- (id)initWithPeerID:(id)arg1 storeName:(id)arg2 modelVersionHash:(id)arg3 andUbiquityRootLocation:(id)arg4;
-- (BOOL)existsInCloud;
-- (BOOL)loadReceiptFile:(id*)arg1;
+- (BOOL)loadFileFromLocation:(id)arg1 error:(id*)arg2;
+- (id)initWithLocalPeerID:(id)arg1 andReceiptFileLocation:(id)arg2;
+- (id)initWithLocalPeerID:(id)arg1 receiptPeerID:(id)arg2 storeName:(id)arg3 modelVersionHash:(id)arg4 andUbiquityRootLocation:(id)arg5;
 - (id)kv;
-- (id)initWithReceiptFileLocation:(id)arg1;
-- (id)initWithKnowledgeVector:(id)arg1 forPeerID:(id)arg2 storeName:(id)arg3 modelVersionHash:(id)arg4 andUbiquityRootLocation:(id)arg5;
-- (BOOL)writeReceiptToFile:(id*)arg1;
+- (id)initWithLocalPeerID:(id)arg1 andKnowledgeVector:(id)arg2 forPeerID:(id)arg3 storeName:(id)arg4 modelVersionHash:(id)arg5 andUbiquityRootLocation:(id)arg6;
 
 @end

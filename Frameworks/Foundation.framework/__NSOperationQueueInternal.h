@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSOperation;
+@class NSOperation, NSObject<OS_dispatch_queue>;
 
 @interface __NSOperationQueueInternal : NSObject  {
     int __queueLock;
@@ -12,7 +12,7 @@
     NSOperation *__pendingLastOperation;
     NSOperation *__firstPriOperation[5];
     NSOperation *__lastPriOperation[5];
-    struct dispatch_queue_s { } *__pending_barrier;
+    NSObject<OS_dispatch_queue> *__pending_barrier;
     int __maxNumOps;
     int __actualMaxNumOps;
     int __numExecOps;
@@ -25,8 +25,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)finalize;
 
 @end

@@ -24,20 +24,21 @@
 
 + (id)currentDevice;
 
-- (id)init;
-- (void)dealloc;
-- (id)storeUserAgent;
-- (id)userAgent;
-- (id)gameKitVersion;
-- (id)userAgentWithProcessName:(id)arg1 protocolVersion:(id)arg2;
+- (BOOL)isGameCenterSupported;
+- (id)screenCapabilities;
+- (id)udid;
 - (id)buildVersionHeader;
 - (id)protocolVersionHeader;
+- (id)storeUserAgent;
+- (id)gameKitVersion;
 - (id)processNameHeader;
-- (id)udid;
-- (id)screenCapabilities;
-- (BOOL)isGameCenterSupported;
-- (id)deviceName;
-- (id)osVersion;
+- (id)userAgentWithProcessName:(id)arg1 protocolVersion:(id)arg2;
+- (void)_initPlatform;
+- (id)userAgent;
+- (void)dealloc;
+- (id)init;
 - (id)buildVersion;
+- (id)osVersion;
+- (id)deviceName;
 
 @end

@@ -12,25 +12,31 @@
 @property(readonly) int participantStatus;
 @property(readonly) int participantRole;
 @property(readonly) int participantType;
+@property(readonly) BOOL isCurrentUser;
 
++ (void*)findABPersonByURL:(id)arg1 inAddressBook:(void*)arg2;
 
-- (id)emailAddress;
-- (void)setExternalID:(id)arg1;
-- (id)externalID;
-- (void)setName:(id)arg1;
+- (void)setAddress:(id)arg1;
+- (id)address;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
+- (id)name;
+- (id)URL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)UUID;
+- (id)emailAddress;
+- (void)setDisplayName:(id)arg1;
 - (void*)ABRecordWithAddressBook:(void*)arg1;
 - (BOOL)isEqualToParticipant:(id)arg1;
 - (int)participantRole;
 - (int)participantType;
-- (void)setEmailAddress:(id)arg1;
 - (id)_persistentItem;
 - (BOOL)isCurrentUser;
 - (int)participantStatus;
-- (id)URL;
-- (id)name;
-- (id)UUID;
-- (id)displayNameWithDecomposedFirstName:(id*)arg1 lastName:(id*)arg2 department:(id*)arg3;
+- (void)setEmailAddress:(id)arg1;
 - (id)displayName;
+- (id)displayNameWithDecomposedFirstName:(id*)arg1 lastName:(id*)arg2 department:(id*)arg3;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImage, <PLStackViewDataSource>, UIGestureRecognizer, NSMutableIndexSet, NSData, NSIndexSet, PLExpandableView, PLStackedImageView, PLAutoScroller, UILongPressGestureRecognizer, UIView, NSArray, PLTableView, <PLStackViewDelegate>, PLStackItemViewCell, NSString, NSMutableDictionary, NSMutableArray, CADynamicsBehavior;
+@class UIImage, <PLStackViewDataSource>, UIGestureRecognizer, NSMutableIndexSet, NSIndexSet, NSData, PLExpandableView, PLStackedImageView, PLAutoScroller, UILongPressGestureRecognizer, UIView, NSArray, PLTableView, <PLStackViewDelegate>, PLStackItemViewCell, NSString, NSMutableDictionary, NSMutableArray, CADynamicsBehavior;
 
 @interface PLStackView : PLExpandableView <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate> {
     PLTableView *_tableView;
@@ -17,6 +17,10 @@
     PLExpandableView *_forwardingView;
     unsigned int _itemCount;
     unsigned int _tableViewRowCount;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
+    } _pendingRemoveRows;
     <PLStackViewDelegate> *_stackDelegate;
     <PLStackViewDataSource> *_dataSource;
     NSArray *_stackedViews;
@@ -25,6 +29,7 @@
     NSMutableIndexSet *_badgedIndexes;
     UIImage *_badgeImage;
     NSMutableDictionary *_customBadgeImages;
+    unsigned int _unreadStartMarkerIndex;
     UIImage *_placeholder;
     UIImage *_stackedImage;
     PLStackedImageView *_stackedImageView;
@@ -53,6 +58,10 @@
         float width; 
         float height; 
     } _preferredStackedImageSize;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _collapsedImageOffset;
     struct __CFDictionary { } *_itemCellsByIndex;
     struct _NSRange { 
         unsigned int location; 
@@ -122,7 +131,10 @@
         unsigned int dragInProgress : 1; 
         unsigned int dataSourceImplementsDataForImage : 1; 
         unsigned int dataSourceImplementsTextBadgeStringForImage : 1; 
-        unsigned int dataSourceImplementsLabelForItem : 1; 
+        unsigned int dataSourceImplementsImageBadgeForImage : 1; 
+        unsigned int dataSourceImplementsTitleForItem : 1; 
+        unsigned int dataSourceImplementsSubtitleForItem : 1; 
+        unsigned int dataSourceImplementsShowUnreadIndicatorForItem : 1; 
         unsigned int dataSourceImplementsPreheatImagesInRange : 1; 
         unsigned int dataSourcePrefersLazyPreheating : 1; 
         unsigned int dataSourceImplementsEditingOptionsForItemAtIndex : 1; 
@@ -131,6 +143,7 @@
         unsigned int stackDelegateImplementsShouldSelectItemAtIndex : 1; 
         unsigned int stackDelegateImplementsShouldEnableItemAtIndex : 1; 
         unsigned int stackDelegateImplementsSelectionDidChange : 1; 
+        unsigned int stackDelegateImplementsShouldProcessTap : 1; 
         unsigned int replaceBitmapWithItemViewCells : 1; 
         unsigned int dragSelectionState : 2; 
         unsigned int expansionFractionIsDirty : 1; 
@@ -153,6 +166,7 @@
 @property(retain) UIImage * placeholder;
 @property struct CGSize { float x1; float x2; } collapsedImageSize;
 @property struct CGSize { float x1; float x2; } expandedImageSize;
+@property struct CGPoint { float x1; float x2; } collapsedImageOffset;
 @property float verticalSpacing;
 @property BOOL canCreateStackedImage;
 @property BOOL allowsPinchToCollapse;
@@ -160,6 +174,7 @@
 @property BOOL expandingItemImagesLoadSynchronously;
 @property(retain) UIImage * badgeImage;
 @property(retain) NSIndexSet * badgedIndexes;
+@property unsigned int unreadStartMarkerIndex;
 @property(getter=isEditing) BOOL editing;
 @property int editAnimation;
 @property BOOL dimNonMovableItems;
@@ -182,40 +197,34 @@
 + (id)selectionBadgeImage;
 + (float)maxStackedAngle;
 
-- (void)dealloc;
+- (id)badgeImage;
+- (void)setBadgeImage:(id)arg1;
 - (unsigned int)itemCount;
+- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)setFooterView:(id)arg1;
 - (id)footerView;
-- (void)setHeaderView:(id)arg1;
 - (id)headerView;
+- (void)setHeaderView:(id)arg1;
 - (void)tap:(id)arg1;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)_isAnimating;
 - (int)selectionStyle;
-- (void)setAllowsReordering:(BOOL)arg1;
 - (id)tableView;
+- (void)setSelectionStyle:(int)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
 - (id)placeholder;
-- (void)setSelectionStyle:(int)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)_setTableView:(id)arg1;
 - (void)_reloadDataIfNeeded;
 - (BOOL)allowsSelection;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)setAllowsSelection:(BOOL)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)isEditing;
 - (void)longPress:(id)arg1;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (BOOL)scrollViewShouldScrollToTop:(id)arg1;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
-- (void)scrollViewDidScrollToTop:(id)arg1;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
-- (void)scrollViewDidScroll:(id)arg1;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (void)didMoveToSuperview;
 - (void)willMoveToWindow:(id)arg1;
@@ -226,14 +235,23 @@
 - (unsigned int)numberOfColumns;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)scrollViewDidScrollToTop:(id)arg1;
+- (BOOL)scrollViewShouldScrollToTop:(id)arg1;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)endUpdates;
 - (void)beginUpdates;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)reloadData;
-- (void)setDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })collapsedImageOffset;
+- (unsigned int)unreadStartMarkerIndex;
 - (id)contextItemCell;
 - (id)forwardingView;
 - (id)initialScrollPositionOffsetKey;
@@ -245,6 +263,7 @@
 - (void)setCanCreateStackedImage:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })expandedImageSize;
 - (void)setExpandedImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setCollapsedImageOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })collapsedImageSize;
 - (void)setCollapsedImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setVerticalSpacing:(float)arg1;
@@ -253,8 +272,10 @@
 - (void)_deselectAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)deselectAllNotifyingDelegate:(id)arg1;
 - (void)selectAllNotifyingDelegate:(id)arg1;
+- (void)setAllowsReordering:(BOOL)arg1;
 - (void)setAllowsItemExpansionDuringEditing:(BOOL)arg1;
 - (void)setAllowsSelectionGestures:(BOOL)arg1;
+- (void)setUnreadStartMarkerIndex:(unsigned int)arg1;
 - (id)customBadgeForItemAtIndex:(unsigned int)arg1;
 - (void)beginEditingItemAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (int)editAnimation;
@@ -271,7 +292,6 @@
 - (void)preheatImageDataAroundCurrentScrollLocation;
 - (void)removeItemsAtIndexes:(id)arg1;
 - (void)insertItemsAtIndexes:(id)arg1;
-- (void)reloadImagesForItemAtIndex:(int)arg1;
 - (BOOL)isScrollingDownward;
 - (id)_jiggleAnimation;
 - (BOOL)dimNonMovableItems;
@@ -283,16 +303,16 @@
 - (BOOL)_pointIsInBlankSpaceAfterLastItem:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setSelectedIndexes:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)allowsSelectionGestures;
+- (void)setFooterView:(id)arg1 animated:(BOOL)arg2;
 - (void)setAllowsSelection:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)deselectAll:(BOOL)arg1;
-- (id)badgeImage;
-- (void)setBadgeImage:(id)arg1;
-- (void)_badgeChangeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (id)visibleItemIndexes;
+- (void)setUnreadStartMarkerIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)endEditingCurrentItem;
 - (void)_nudgeAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_moveItemsFromTableView;
 - (void)_moveItemsToTableView;
+- (void)_updateExpansionInitialScrollPosition;
+- (id)visibleItemIndexes;
 - (void)updateItemViewPositionForContractedState;
 - (void)_beginExpansion;
 - (BOOL)allowsPinchToCollapse;
@@ -316,6 +336,7 @@
 - (id)_stackedImage;
 - (BOOL)isItemExpansionDuringEditingAllowed;
 - (BOOL)showTextBadges;
+- (void)_updateUnreadMarkerForCell:(id)arg1 atIndex:(unsigned int)arg2 animated:(BOOL)arg3;
 - (void)_updateBadgesForItemAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (id)bakedAngles;
 - (void)_tileStackItemsWithDuration:(double)arg1;
@@ -333,7 +354,7 @@
 - (void)_preheatImageDataForDownwardScroll:(BOOL)arg1 windowSize:(unsigned int)arg2;
 - (void)_shiftAnimationDidStop:(id)arg1 finished:(id)arg2 shiftedItemCells:(id)arg3;
 - (void)removeItemsAtIndexes:(id)arg1 withItemAnimation:(int)arg2;
-- (void)unloadItemAtIndex:(int)arg1;
+- (void)unloadItemAtIndex:(int)arg1 hideLabel:(BOOL)arg2;
 - (void)_imageDidChangeForItemsAtIndexes:(id)arg1;
 - (void)_addAnimationDidStop:(id)arg1 finished:(id)arg2 shiftedItemCells:(id)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfImageAtIndex:(int)arg1 inView:(id)arg2;
@@ -343,14 +364,13 @@
 - (id)collapsedStackIndexes;
 - (id)_itemViewAtIndex:(int)arg1 synchronously:(BOOL)arg2;
 - (id)visibleItemCellAtIndex:(int)arg1;
-- (void)_reloadItemAtIndex:(int)arg1 synchronously:(BOOL)arg2;
 - (void)_invalidateStackedImage;
 - (void)_updateItemCount;
 - (BOOL)_canReload;
 - (void)_layoutItemCellsFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2 inTableCell:(id)arg3 animated:(BOOL)arg4;
 - (id)stackedItemCells;
 - (void)_updateStackedImageView;
-- (void)scrollToVisibleItemAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)scrollToVisibleItemAtIndex:(unsigned int)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)_calculateLayout;
 - (void)_updateDisplayedImageIndexes;
 - (void)_reconfigureViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 force:(BOOL)arg2;
@@ -362,11 +382,12 @@
 - (void)_dragSelect:(id)arg1;
 - (void)setAllowsPinchToCollapse:(BOOL)arg1;
 - (void)setExpandedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)expandWithAnimation:(BOOL)arg1;
+- (void)expandWithAnimation:(BOOL)arg1 completion:(id)arg2;
 - (float)completeTrackingPinch:(id)arg1 toState:(int)arg2 duration:(double)arg3;
 - (int)snapState:(BOOL)arg1;
 - (float)continueTrackingPinch:(id)arg1;
 - (void)beginTrackingPinch:(id)arg1;
+- (void)setExpansionFraction:(float)arg1;
 - (void)stateDidChangeFrom:(int)arg1;
 - (void)stateWillChangeTo:(int)arg1;
 - (void)setDataSource:(id)arg1 reloadData:(BOOL)arg2;

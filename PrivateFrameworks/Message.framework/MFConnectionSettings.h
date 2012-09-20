@@ -11,37 +11,41 @@
     unsigned int _portNumber;
     struct __CFString { } *_connectionServiceType;
     BOOL _usesSSL;
+    BOOL _usesOpportunisticSockets;
     BOOL _tryDirectSSLConnection;
     BOOL _allowsTrustPrompt;
 }
 
-@property BOOL allowsTrustPrompt;
-@property BOOL tryDirectSSL;
-@property BOOL usesSSL;
-@property unsigned int portNumber;
-@property(copy) NSString * serviceName;
-@property(copy) NSString * hostname;
 @property(copy) NSString * certUIService;
+@property(copy) NSString * hostname;
+@property(copy) NSString * serviceName;
+@property unsigned int portNumber;
+@property BOOL usesSSL;
+@property BOOL usesOpportunisticSockets;
+@property BOOL tryDirectSSL;
+@property BOOL allowsTrustPrompt;
 
 
-- (BOOL)usesSSL;
-- (unsigned int)portNumber;
-- (void)setUsesSSL:(BOOL)arg1;
-- (void)setHostname:(id)arg1;
-- (void)setPortNumber:(unsigned int)arg1;
-- (id)certUIService;
-- (void)setCertUIService:(id)arg1;
-- (void)setTryDirectSSL:(BOOL)arg1;
-- (BOOL)tryDirectSSL;
-- (struct __CFString { }*)connectionServiceType;
-- (void)setConnectionServiceType:(struct __CFString { }*)arg1;
-- (BOOL)allowsTrustPrompt;
-- (void)setAllowsTrustPrompt:(BOOL)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setServiceName:(id)arg1;
 - (id)serviceName;
 - (id)hostname;
+- (void)setUsesOpportunisticSockets:(BOOL)arg1;
+- (BOOL)usesOpportunisticSockets;
+- (void)setAllowsTrustPrompt:(BOOL)arg1;
+- (BOOL)allowsTrustPrompt;
+- (void)setConnectionServiceType:(struct __CFString { }*)arg1;
+- (struct __CFString { }*)connectionServiceType;
+- (void)setServiceName:(id)arg1;
+- (BOOL)tryDirectSSL;
+- (void)setTryDirectSSL:(BOOL)arg1;
+- (void)setCertUIService:(id)arg1;
+- (id)certUIService;
+- (void)setPortNumber:(unsigned int)arg1;
+- (void)setHostname:(id)arg1;
+- (void)setUsesSSL:(BOOL)arg1;
+- (unsigned int)portNumber;
+- (BOOL)usesSSL;
 
 @end

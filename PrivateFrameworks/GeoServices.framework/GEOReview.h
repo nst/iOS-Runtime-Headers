@@ -2,23 +2,56 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
+@class GEOUser, NSString;
 
 @interface GEOReview : PBCodable  {
+    double _reviewTime;
+    double _score;
+    GEOUser *_reviewer;
     NSString *_snippet;
+    NSString *_uid;
+    struct { 
+        unsigned int reviewTime : 1; 
+        unsigned int score : 1; 
+    } _has;
 }
 
 @property(readonly) BOOL hasSnippet;
 @property(retain) NSString * snippet;
+@property BOOL hasScore;
+@property double score;
+@property BOOL hasReviewTime;
+@property double reviewTime;
+@property(readonly) BOOL hasReviewer;
+@property(retain) GEOUser * reviewer;
+@property(readonly) BOOL hasUid;
+@property(retain) NSString * uid;
 
 
+- (void)setScore:(double)arg1;
+- (double)score;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)uid;
 - (id)dictionaryRepresentation;
-- (BOOL)readFrom:(id)arg1;
+- (void)setHasScore:(BOOL)arg1;
+- (BOOL)hasScore;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setUid:(id)arg1;
+- (void)setHasReviewTime:(BOOL)arg1;
+- (BOOL)hasUid;
+- (id)reviewer;
+- (BOOL)hasReviewer;
+- (void)setReviewTime:(double)arg1;
+- (double)reviewTime;
+- (BOOL)hasReviewTime;
 - (id)snippet;
 - (BOOL)hasSnippet;
+- (void)setReviewer:(id)arg1;
 - (void)setSnippet:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 
 @end

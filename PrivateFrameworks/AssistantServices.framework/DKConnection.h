@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSString, NSMutableSet;
+@class NSString;
 
 @interface DKConnection : NSObject  {
     struct dispatch_queue_s { } *_queue;
@@ -22,33 +22,34 @@
   /* Error parsing encoded ivar type info: @? */
     id _disconnectHandler;
 
-    NSMutableSet *_outstandingMessages;
-    BOOL _activeFlag;
+    id _target;
 }
 
 @property(readonly) NSString * serviceName;
 @property(copy) id messageHandler;
 @property(copy) id disconnectHandler;
+@property(retain) id target;
 
 
-- (void)dealloc;
-- (id)serviceName;
-- (void)sendMessage:(id)arg1;
 - (void)setDisconnectHandler:(id)arg1;
 - (id)disconnectHandler;
-- (int)_outstandingMessages;
-- (void)_removeMessage:(id)arg1;
-- (void)_registerMessage:(id)arg1;
-- (BOOL)_checkIsActiveAndReset;
-- (void)syncBarrier;
+- (void)remoteBarrier;
+- (void)asyncBarrierWithBlock:(id)arg1;
 - (void)sendMessage:(id)arg1 withReplySync:(id)arg2;
 - (id)_initWithXPCConnection:(struct _xpc_connection_s { }*)arg1;
 - (id)initWithServiceName:(id)arg1 onQueue:(struct dispatch_queue_s { }*)arg2;
 - (void)_handleXPCMessage:(void*)arg1;
-- (void)asyncBarrierWithBlock:(id)arg1;
+- (void)_handleBarrierMessage:(void*)arg1;
+- (BOOL)remoteBarrierWithTimeout:(double)arg1;
 - (void)_sendMessage:(id)arg1 handler:(id)arg2;
 - (void)_setEventHandlerOnConnection:(struct _xpc_connection_s { }*)arg1;
+- (void)setTarget:(id)arg1;
+- (id)target;
+- (void).cxx_destruct;
+- (void)dealloc;
 - (void)sendMessage:(id)arg1 withReply:(id)arg2;
+- (id)serviceName;
+- (void)sendMessage:(id)arg1;
 - (id)messageHandler;
 - (void)_handleXPCError:(void*)arg1;
 - (void)setMessageHandler:(id)arg1;

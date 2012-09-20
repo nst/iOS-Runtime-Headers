@@ -7,7 +7,7 @@
 @interface DOMAbstractView : DOMObject  {
 }
 
-@property(retain,readonly) DOMDocument * document;
+@property(readonly) DOMDocument * document;
 
 
 - (void)dealloc;

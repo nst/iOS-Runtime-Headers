@@ -9,8 +9,8 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)font;
 - (id)initWithFont:(id)arg1;

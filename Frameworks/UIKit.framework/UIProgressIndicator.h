@@ -12,8 +12,8 @@
 - (void)startAnimation;
 - (int)progressIndicatorStyle;
 - (void)setProgressIndicatorStyle:(int)arg1;
-- (void)setAnimating:(BOOL)arg1;
 - (void)stopAnimation;
+- (void)setAnimating:(BOOL)arg1;
 - (void)setStyle:(int)arg1;
 
 @end

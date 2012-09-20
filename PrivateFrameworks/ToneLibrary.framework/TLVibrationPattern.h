@@ -20,9 +20,6 @@
 + (BOOL)isValidVibrationPatternPropertyListRepresentation:(id)arg1;
 + (id)simpleVibrationPatternWithVibrationDuration:(double)arg1 pauseDuration:(double)arg2;
 
-- (id)init;
-- (void)dealloc;
-- (double)_duration;
 - (double)computedDuration;
 - (id)initWithPropertyListRepresentation:(id)arg1 skipValidation:(BOOL)arg2;
 - (void)setContextObject:(id)arg1;
@@ -32,5 +29,8 @@
 - (id)contextObject;
 - (id)_artificiallyRepeatingPropertyListRepresentation;
 - (id)initWithPropertyListRepresentation:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (double)_duration;
 
 @end

@@ -12,7 +12,7 @@
 
 - (void)dealloc;
 - (id)colors;
-- (id)fills;
 - (id)initWithColors:(id)arg1 fills:(id)arg2;
+- (id)fills;
 
 @end

@@ -7,24 +7,28 @@
 @interface AFUIServerUtteranceView : AFUIUtteranceView  {
     UILabel *_titleLabel;
     UIButton *_infoButton;
+    UILabel *_transitionView;
 }
 
 @property BOOL hasInfoButton;
 
++ (double)textResizingAnimationDuration;
 
-- (void)dealloc;
-- (id)_textView;
-- (void)setHasInfoButton:(BOOL)arg1;
-- (BOOL)hasInfoButton;
-- (void)setTextAnimated:(id)arg1;
-- (float)_singleLineHeight;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bubbleImageFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textContentFrame;
-- (void)_infoButtonHit:(id)arg1;
+- (void).cxx_destruct;
 - (void)setNumberOfLines:(int)arg1;
 - (id)text;
+- (id)_transitionView;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_textView;
+- (void)setTextAnimated:(id)arg1;
+- (BOOL)hasInfoButton;
+- (void)setHasInfoButton:(BOOL)arg1;
+- (void)_infoButtonHit:(id)arg1;
+- (void)clearTransitionView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textContentFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bubbleImageFrame;
+- (float)_singleLineHeight;
 
 @end

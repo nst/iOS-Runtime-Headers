@@ -14,6 +14,7 @@
 @property(retain) NSString * externalContentRef;
 
 
+- (BOOL)containsAttachments;
 - (id)contentAsPlainTextPreservingNewlines;
 - (id)contentAsPlainText;
 

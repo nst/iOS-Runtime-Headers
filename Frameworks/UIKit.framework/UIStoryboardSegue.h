@@ -2,24 +2,37 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSString;
 
 @interface UIStoryboardSegue : NSObject  {
     NSString *_identifier;
     id _sourceViewController;
     id _destinationViewController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _performHandler;
+
 }
 
 @property(readonly) NSString * identifier;
 @property(readonly) id sourceViewController;
 @property(readonly) id destinationViewController;
+@property(copy) id performHandler;
 
++ (id)segueWithIdentifier:(id)arg1 source:(id)arg2 destination:(id)arg3 performHandler:(id)arg4;
 
 - (void)perform;
+- (id)identifier;
 - (void)dealloc;
+- (id)performHandler;
 - (id)destinationViewController;
 - (id)sourceViewController;
+- (void)setPerformHandler:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 source:(id)arg2 destination:(id)arg3;
-- (id)identifier;
 
 @end

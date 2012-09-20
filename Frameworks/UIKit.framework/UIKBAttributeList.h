@@ -18,11 +18,12 @@
 
 
 - (void)setName:(id)arg1;
-- (unsigned int)count;
+- (id)name;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (unsigned int)count;
 - (BOOL)explicitlySpecified;
 - (id)arrayValueForName:(id)arg1;
 - (int)intValueForName:(id)arg1;
@@ -37,7 +38,6 @@
 - (void)setValue:(id)arg1 forName:(id)arg2;
 - (void)setExplicitlySpecified:(BOOL)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

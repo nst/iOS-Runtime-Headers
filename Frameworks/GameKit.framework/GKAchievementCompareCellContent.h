@@ -13,14 +13,14 @@
 @property(retain) UIImage * imageCheck1;
 
 
-- (id)init;
-- (void)dealloc;
 - (void)setImageCheck1:(id)arg1;
 - (void)setImageCheck0:(id)arg1;
 - (id)imageCheck1;
 - (id)imageCheck0;
-- (void)drawLineIndex:(unsigned int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
-- (void)setTheme:(id)arg1;
+- (void)adjustLineRects:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 forLines:(id)arg2 inTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)dealloc;
+- (id)init;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setTheme:(id)arg1;
 
 @end

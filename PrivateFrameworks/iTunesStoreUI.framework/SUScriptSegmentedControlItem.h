@@ -20,31 +20,28 @@
 @property(retain) NSString * title;
 @property(retain) id userInfo;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
+- (void)setImageURL:(id)arg1;
+- (id)imageURL;
+- (void)_setImage:(id)arg1;
+- (id)initWithPageSection:(id)arg1;
+- (id)newPageSection;
+- (void)setCanvas:(id)arg1;
+- (void)_reloadUserInterface;
+- (id)_segmentedControl;
+- (id)_className;
+- (id)scriptAttributeKeys;
+- (id)identifier;
 - (id)userInfo;
 - (void)dealloc;
-- (id)imageURL;
 - (void)setUserInfo:(id)arg1;
-- (id)identifier;
 - (void)setIdentifier:(id)arg1;
 - (id)image;
 - (id)title;
 - (void)setTitle:(id)arg1;
 - (id)attributeKeys;
-- (void)setImageURL:(id)arg1;
-- (id)_segmentedControl;
-- (void)_reloadUserInterface;
-- (void)_setImageFromURL:(id)arg1;
-- (void)_setImage:(id)arg1;
-- (id)initWithPageSection:(id)arg1;
-- (id)newPageSection;
-- (void)setCanvas:(id)arg1;
 - (id)canvas;
-- (id)_copyTitle;
-- (void)_setTitle:(id)arg1;
-- (id)_className;
-- (id)scriptAttributeKeys;
 
 @end

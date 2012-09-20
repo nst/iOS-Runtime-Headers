@@ -9,12 +9,12 @@
 }
 
 
+- (void)main;
+- (void)dealloc;
+- (id)init;
+- (id)result;
 - (id)invocation;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
 - (id)initWithInvocation:(id)arg1;
-- (void)main;
-- (id)init;
-- (void)dealloc;
-- (id)result;
 
 @end

@@ -7,26 +7,26 @@
 @interface CADisplayMode : NSObject  {
     void *_priv;
     CADisplay *_dpy;
-    unsigned int _width;
-    unsigned int _height;
+    unsigned long _width;
+    unsigned long _height;
 }
 
-@property(readonly) unsigned int width;
-@property(readonly) unsigned int height;
+@property(readonly) unsigned long width;
+@property(readonly) unsigned long height;
 @property(readonly) float pixelAspectRatio;
 
 + (id)_displayModeWithMode:(int)arg1 display:(id)arg2;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)_setWidth:(unsigned long)arg1 height:(unsigned long)arg2;
-- (int)_mode;
-- (id)_initWithMode:(int)arg1 display:(id)arg2;
 - (unsigned long)height;
 - (id)_display;
 - (float)pixelAspectRatio;
 - (unsigned long)width;
+- (void)_setWidth:(unsigned long)arg1 height:(unsigned long)arg2;
+- (id)_initWithMode:(int)arg1 display:(id)arg2;
+- (int)_mode;
 
 @end

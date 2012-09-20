@@ -13,10 +13,10 @@
 @property(readonly) NSString * title;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)title;
 - (id)completionItems;
 - (id)initWithPropertyList:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)title;
 
 @end

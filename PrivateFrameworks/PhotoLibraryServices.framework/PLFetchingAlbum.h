@@ -21,25 +21,28 @@
 + (BOOL)contextShouldIgnoreChangesForFetchedAssets;
 
 - (unsigned int)count;
-- (BOOL)hasAssetsCache;
-- (void)updateSnapshotAndClearCaches:(id)arg1;
-- (unsigned int)countForAssetsOfKind:(int)arg1;
-- (unsigned int)_fetchedCountForAssetsOfKind:(int)arg1;
-- (void)setupFetchRequest;
-- (id)primitiveAssets;
-- (BOOL)isEmpty;
 - (void)awakeFromInsert;
 - (void)setFetchRequest:(id)arg1;
-- (void)awakeFromFetch;
-- (id)fetchRequest;
 - (void)didTurnIntoFault;
+- (id)fetchRequest;
+- (void)awakeFromFetch;
+- (BOOL)isEmpty;
+- (BOOL)mayHaveAssetsInCommon:(id)arg1;
+- (id)fastPointerAccessSetForAssets:(id)arg1;
+- (BOOL)hasAssetsCache;
+- (unsigned int)countForAssetsOfKind:(int)arg1;
 - (void)setAssets:(id)arg1;
 - (unsigned int)countForDisplay;
+- (unsigned int)_fetchedCountForAssetsOfKind:(int)arg1;
+- (void)setupFetchRequest;
+- (unsigned int)batchSize;
+- (void)updateSnapshotAndClearCaches:(id)arg1;
+- (id)primitiveAssets;
 - (void)setKeyAsset:(id)arg1;
 - (id)keyAsset;
 - (id)mutableAssets;
+- (id)assets;
 - (void)batchFetchAssets:(id)arg1;
 - (BOOL)canPerformEditOperation:(int)arg1;
-- (id)assets;
 
 @end

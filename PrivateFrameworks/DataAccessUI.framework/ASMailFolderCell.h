@@ -16,12 +16,12 @@
 + (int)_mailboxUidTypeForASFolderType:(int)arg1;
 
 - (void)dealloc;
-- (void)setMailFolder:(id)arg1 withIndent:(unsigned int)arg2;
-- (void)_setupMailFolderIconForImage:(id)arg1;
 - (BOOL)isChecked;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setChecked:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
+- (void)setMailFolder:(id)arg1 withIndent:(unsigned int)arg2;
+- (void)_setupMailFolderIconForImage:(id)arg1;
 
 @end

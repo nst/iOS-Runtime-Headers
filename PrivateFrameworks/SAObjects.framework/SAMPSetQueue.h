@@ -2,23 +2,29 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL, SAMPCollection;
+@class NSURL, SAMPCollection, NSArray;
 
 @interface SAMPSetQueue : SABaseClientBoundCommand  {
 }
 
 @property(copy) NSURL * targetAppId;
+@property(copy) NSArray * filters;
 @property(retain) SAMPCollection * mediaItems;
+@property(copy) NSArray * sort;
 
-+ (id)setQueue;
 + (id)setQueueWithDictionary:(id)arg1 context:(id)arg2;
++ (id)setQueue;
 
 - (id)groupIdentifier;
-- (id)mediaItems;
+- (id)filters;
+- (void)setFilters:(id)arg1;
+- (id)sort;
+- (void)setSort:(id)arg1;
 - (void)setMediaItems:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)mediaItems;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

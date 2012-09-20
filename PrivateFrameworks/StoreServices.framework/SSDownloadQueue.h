@@ -30,10 +30,6 @@
 + (id)softwareApplicationDownloadKinds;
 + (id)mediaDownloadKinds;
 
-- (void)getDownloadsUsingBlock:(id)arg1;
-- (void)removeObserver:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
@@ -42,27 +38,32 @@
 - (void)addObserver:(id)arg1;
 - (BOOL)canCancelDownload:(id)arg1;
 - (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
-- (id)preorders;
 - (BOOL)reloadFromServer;
-- (id)initWithDownloadKinds:(id)arg1;
 - (id)downloadKinds;
 - (BOOL)isUsingNetwork;
+- (BOOL)cancelDownload:(id)arg1;
+- (void)removeObserver:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)setShouldAutomaticallyFinishDownloads:(BOOL)arg1;
 - (BOOL)shouldAutomaticallyFinishDownloads;
 - (void)_sendQueuePreOrdersChanged;
 - (BOOL)startPreOrderDownload:(id)arg1;
 - (void)removePlaceholderDownload:(id)arg1;
+- (id)preorders;
 - (id)placeholderDownloads;
 - (id)downloadForItemIdentifier:(unsigned long long)arg1;
 - (void)addPlaceholderDownloads:(id)arg1;
-- (BOOL)cancelDownload:(id)arg1;
 - (BOOL)addDownload:(id)arg1;
 - (id)initWithDownloadManagerOptions:(id)arg1;
 - (void)_sendQueueChangedWithRemovals:(id)arg1;
 - (void)_messageObserversWithFunction:(int (*)())arg1 context:(void*)arg2;
 - (void)_sendQueueNetworkUsageChanged;
+- (void)_handleDownloadsRemoved:(id)arg1;
 - (void)_sendDownloadStatusChangedAtIndex:(int)arg1;
 - (id)_initWithDownloadManagerOptions:(id)arg1;
+- (id)initWithDownloadKinds:(id)arg1;
 - (void)_handleDownloadsDidChange:(id)arg1;
+- (void)getDownloadsUsingBlock:(id)arg1;
 
 @end

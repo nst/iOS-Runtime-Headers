@@ -19,10 +19,12 @@
     BOOL _modal;
     <EKStyleProvider> *_styleProvider;
     <EKEditItemViewControllerDelegate> *_editDelegate;
+    int _subsection;
     BOOL _showsDoneButton;
 }
 
 @property int subitem;
+@property int subsection;
 @property BOOL modal;
 @property BOOL showsDoneButton;
 @property <EKEditItemViewControllerDelegate> * editDelegate;
@@ -30,11 +32,20 @@
 
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
-- (id)editDelegate;
-- (void)setEditDelegate:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (float)marginForTableView:(id)arg1;
+- (void)didReceiveMemoryWarning;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setModal:(BOOL)arg1;
 - (BOOL)modal;
+- (void)setSubsection:(int)arg1;
+- (int)subsection;
 - (void)setSubitem:(int)arg1;
 - (int)subitem;
 - (void)setCell:(id)arg1 checked:(BOOL)arg2;
@@ -45,14 +56,8 @@
 - (void)saveAndDismissWithExtremePrejudice;
 - (BOOL)showsDoneButton;
 - (void)setShowsDoneButton:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (float)marginForTableView:(id)arg1;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (void)didReceiveMemoryWarning;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)editDelegate;
+- (void)setEditDelegate:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 
 @end

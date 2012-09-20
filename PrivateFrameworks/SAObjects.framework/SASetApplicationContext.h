@@ -8,15 +8,15 @@
 }
 
 @property(copy) NSArray * orderedContext;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)setApplicationContext;
 + (id)setApplicationContextWithDictionary:(id)arg1 context:(id)arg2;
++ (id)setApplicationContext;
 
 - (id)groupIdentifier;
-- (id)orderedContext;
 - (void)setOrderedContext:(id)arg1;
+- (id)orderedContext;
 - (id)encodedClassName;
 
 @end

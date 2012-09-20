@@ -2,23 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class NSInputStream;
-
-@interface PBStreamReader : PBDataReader  {
-    NSInputStream *_stream;
+@interface PBStreamReader : NSObject  {
 }
-
-@property(retain) NSInputStream * stream;
 
 + (id)readProtoBuffersOfClass:(Class)arg1 fromFile:(id)arg2 error:(id*)arg3;
 
-- (void)dealloc;
-- (int)read:(const char *)arg1 maxLength:(unsigned int)arg2;
-- (id)initWithStream:(id)arg1;
-- (BOOL)seekToOffset:(unsigned int)arg1;
-- (id)readBytes:(unsigned int)arg1;
-- (id)stream;
-- (id)readProtoBuffer;
-- (void)setStream:(id)arg1;
 
 @end

@@ -18,20 +18,22 @@
 @property(retain) id byValue;
 
 
-- (id)byValue;
-- (void)setEndAngle:(float)arg1;
-- (void)setByValue:(id)arg1;
-- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)_copyRenderAnimationForLayer:(id)arg1;
-- (BOOL)roundsToInteger;
-- (float)endAngle;
+- (id)fromValue;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
-- (void)CA_prepareRenderValue;
 - (float)startAngle;
 - (void)setStartAngle:(float)arg1;
 - (void)setRoundsToInteger:(BOOL)arg1;
 - (void)setToValue:(id)arg1;
 - (void)setFromValue:(id)arg1;
-- (id)fromValue;
 - (id)toValue;
+- (void)CA_prepareRenderValue;
+- (void)setEndAngle:(float)arg1;
+- (void)setByValue:(id)arg1;
+- (double)_timeFunction:(double)arg1;
+- (float)endAngle;
+- (BOOL)roundsToInteger;
+- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Ref<CA::Render::Timing> { struct Timing {} *x_4_1_1; } x4; struct Ref<CA::Render::Vector> { struct Vector {} *x_5_1_1; } x5; void *x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; }*)_copyRenderAnimationForLayer:(id)arg1;
+- (BOOL)_setCARenderAnimation:(struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Ref<CA::Render::Timing> { struct Timing {} *x_4_1_1; } x4; struct Ref<CA::Render::Vector> { struct Vector {} *x_5_1_1; } x5; void *x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; }*)arg1 layer:(id)arg2;
+- (id)byValue;
 
 @end

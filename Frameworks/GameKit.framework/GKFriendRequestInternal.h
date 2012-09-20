@@ -18,11 +18,13 @@
 
 + (id)codedPropertyKeys;
 
-- (void)dealloc;
-- (void)setEmail:(id)arg1;
 - (id)email;
+- (void)setEmail:(id)arg1;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)message;
 - (void)setMessage:(id)arg1;
 - (void)setDate:(id)arg1;

@@ -14,6 +14,7 @@
 
 
 - (id)init;
+- (id)initWithEmptyParameters;
 - (double)startTime;
 - (int)curve;
 - (double)duration;

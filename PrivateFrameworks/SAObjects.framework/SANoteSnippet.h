@@ -9,12 +9,12 @@
 
 @property(copy) NSArray * notes;
 
-+ (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)snippet;
++ (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
+- (id)encodedClassName;
 - (void)setNotes:(id)arg1;
 - (id)notes;
-- (id)encodedClassName;
 
 @end

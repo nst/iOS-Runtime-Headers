@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel, UIColor, NSString, UIImage, UIFont;
+@class UIImageView, UILabel, UIFont, NSAttributedString, UIImage, NSString, UIColor, NSArray;
 
 @interface UIButton : UIControl <NSCoding> {
     struct __CFDictionary { } *_contentLookup;
@@ -38,6 +38,7 @@
         unsigned int buttonType : 8; 
         unsigned int shouldHandleScrollerMouseEvent : 1; 
     } _buttonFlags;
+    NSArray *_contentConstraints;
 }
 
 @property(retain) UIFont * font;
@@ -57,8 +58,10 @@
 @property(readonly) UIColor * currentTitleShadowColor;
 @property(readonly) UIImage * currentImage;
 @property(readonly) UIImage * currentBackgroundImage;
+@property(readonly) NSAttributedString * currentAttributedTitle;
 @property(readonly) UILabel * titleLabel;
 @property(readonly) UIImageView * imageView;
+@property(setter=_setContentConstraints:,copy) NSArray * _contentConstraints;
 
 + (id)_defaultContentForType:(int)arg1 andState:(unsigned int)arg2;
 + (id)buttonWithType:(int)arg1;
@@ -70,6 +73,8 @@
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isAccessibilityElementByDefault;
 - (unsigned long long)defaultAccessibilityTraits;
+- (void)_setAttributedTitle:(id)arg1 forStates:(unsigned int)arg2;
+- (void)_setLetterpressStyle:(id)arg1 forState:(unsigned int)arg2;
 - (void)crossfadeToImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)_setShouldHandleScrollerMouseEvent:(BOOL)arg1;
 - (void)crossfadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
@@ -79,18 +84,27 @@
 - (void)setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })titleShadowOffset;
 - (struct CGSize { float x1; float x2; })_titleShadowOffset;
+- (id)_contentConstraints;
+- (id)currentAttributedTitle;
 - (id)currentBackgroundImage;
 - (id)currentTitleShadowColor;
+- (id)currentTitleColor;
+- (void)setAttributedTitle:(id)arg1 forState:(unsigned int)arg2;
 - (void)setImageEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setReversesTitleShadowWhenHighlighted:(BOOL)arg1;
 - (BOOL)reversesTitleShadowWhenHighlighted;
+- (id)_letterpressStyleForState:(unsigned int)arg1;
 - (BOOL)adjustsImageWhenDisabled;
 - (BOOL)showsTouchWhenHighlighted;
 - (BOOL)adjustsImageWhenHighlighted;
+- (BOOL)_likelyToHaveTitle;
+- (id)_viewForBaselineLayout;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageEdgeInsets;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 calculatePositionForEmptyTitle:(BOOL)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })titleEdgeInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentEdgeInsets;
-- (id)_backgroundForState:(unsigned int)arg1 usesBackgroundForNormalState:(BOOL*)arg2;
+- (id)attributedTitleForState:(unsigned int)arg1;
+- (id)_attributedTitleForState:(unsigned int)arg1;
 - (id)_imageForState:(unsigned int)arg1 usesImageForNormalState:(BOOL*)arg2;
 - (id)_shadowColorForState:(unsigned int)arg1;
 - (id)_titleColorForState:(unsigned int)arg1;
@@ -98,36 +112,40 @@
 - (void)_setupImageView;
 - (void)_setupTitleView;
 - (BOOL)_canHaveTitle;
+- (struct CGPoint { float x1; float x2; })pressFeedbackPosition;
+- (BOOL)autosizesToFit;
 - (id)_archivableContent:(id*)arg1;
 - (void)_takeContentFromArchivableContent:(id)arg1 overrides:(id)arg2;
 - (void)_setButtonType:(int)arg1;
 - (void)setShowsTouchWhenHighlighted:(BOOL)arg1;
-- (id)_setupBackgroundView;
+- (void)_invalidateContentConstraints;
+- (void)_setContentConstraints:(id)arg1;
 - (id)titleShadowColorForState:(unsigned int)arg1;
+- (id)titleColorForState:(unsigned int)arg1;
 - (void)_setShadowColor:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_setTitleColor:(id)arg1 forStates:(unsigned int)arg2;
 - (int)buttonType;
 - (int)_buttonType;
+- (id)_setupBackgroundView;
+- (id)_backgroundForState:(unsigned int)arg1 usesBackgroundForNormalState:(BOOL*)arg2;
 - (void)setTitleColor:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_titleAttributesChanged;
+- (void)setShowPressFeedback:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_imageView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setContent:(id)arg1 forState:(unsigned int)arg2;
 - (id)_contentForState:(unsigned int)arg1;
+- (id)currentImage;
 - (id)currentTitle;
 - (void)setTitle:(id)arg1 forState:(unsigned int)arg2;
+- (void)setAutosizesToFit:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)imageView;
-- (void)setShowPressFeedback:(BOOL)arg1;
-- (BOOL)autosizesToFit;
-- (id)titleColorForState:(unsigned int)arg1;
-- (id)currentTitleColor;
-- (id)currentImage;
-- (struct CGPoint { float x1; float x2; })pressFeedbackPosition;
+- (id)viewForBaselineLayout;
+- (void)updateConstraints;
 - (void)setImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)setAutosizesToFit:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setContentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
@@ -135,6 +153,7 @@
 - (id)imageForState:(unsigned int)arg1;
 - (id)titleForState:(unsigned int)arg1;
 - (void)setDisabledDimsImage:(BOOL)arg1;
+- (void)setContentVerticalAlignment:(int)arg1;
 - (void)setContentHorizontalAlignment:(int)arg1;
 - (void)setImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)setTitle:(id)arg1 forStates:(unsigned int)arg2;
@@ -145,9 +164,9 @@
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setAdjustsImageWhenDisabled:(BOOL)arg1;
 - (void)setAdjustsImageWhenHighlighted:(BOOL)arg1;
-- (void)_setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTitleShadowColor:(id)arg1 forState:(unsigned int)arg2;
 - (void)setTitleColor:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (id)image;
 - (void)setTintColor:(id)arg1;
 - (id)tintColor;
@@ -155,27 +174,34 @@
 - (id)title;
 - (void)_setLineBreakMode:(int)arg1;
 - (id)_scriptingInfo;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)setEnabled:(BOOL)arg1;
+- (void)invalidateIntrinsicContentSize;
 - (int)_lineBreakMode;
 - (id)_font;
-- (void)setLineBreakMode:(int)arg1;
 - (int)lineBreakMode;
 - (id)font;
+- (void)setLineBreakMode:(int)arg1;
 - (void)setFont:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (id)_backgroundView;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (void)setTitle:(id)arg1;
 - (id)titleLabel;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)ab_addConferenceIcon;
-- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 - (void)configureFromScriptButton:(id)arg1;
+- (void)insetsForRightAlignedImage:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1 imageInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
+- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 
 @end

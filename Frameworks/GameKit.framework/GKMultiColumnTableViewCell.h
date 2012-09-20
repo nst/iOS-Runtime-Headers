@@ -28,14 +28,11 @@
 @property int highlightedColumn;
 
 
-- (void)dealloc;
+- (id)_gkDescriptionWithChildren:(int)arg1;
 - (BOOL)multiCellEnabled;
-- (void)setColumnSeparatorWidth:(float)arg1;
 - (void)setHighlightedColumn:(int)arg1;
-- (int)highlightedColumn;
-- (void)setContentsArray:(id)arg1;
 - (int)activeColumn;
-- (void)setMultiCellEnabled:(BOOL)arg1;
+- (int)highlightedColumn;
 - (float)columnSeparatorWidth;
 - (id)selectedCellBackgroundView;
 - (id)cellBackgroundView;
@@ -46,14 +43,18 @@
 - (void)multiColumnHighlight:(BOOL)arg1 view:(id)arg2;
 - (void)_multiColumnHighlight:(BOOL)arg1 view:(id)arg2;
 - (SEL)columnCountSetter;
-- (id)contentsArray;
 - (void)setSelectedColumnSetter:(SEL)arg1;
 - (void)setColumnCountSetter:(SEL)arg1;
-- (void)updateBackgroundViews;
+- (void)setColumnSeparatorWidth:(float)arg1;
+- (void)setMultiCellEnabled:(BOOL)arg1;
+- (void)setContentsArray:(id)arg1;
 - (void)configureBackgroundView;
+- (void)updateBackgroundViews;
+- (id)contentsArray;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
 - (int)selectedColumn;
 - (void)setSelectedColumn:(int)arg1;
+- (void)dealloc;
 - (void)setColumnCount:(unsigned int)arg1;
 - (unsigned int)columnCount;
 - (void)_updateHighlightColorsForView:(id)arg1 highlighted:(BOOL)arg2;

@@ -8,15 +8,15 @@
 }
 
 @property(copy) NSArray * context;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)setAlertContext;
 + (id)setAlertContextWithDictionary:(id)arg1 context:(id)arg2;
++ (id)setAlertContext;
 
 - (id)groupIdentifier;
-- (id)context;
 - (void)setContext:(id)arg1;
+- (id)context;
 - (id)encodedClassName;
 
 @end

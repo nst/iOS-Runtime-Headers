@@ -8,13 +8,13 @@
 }
 
 
-- (float)header;
-- (void)setBottom:(float)arg1;
-- (void)setLeft:(float)arg1;
-- (void)setRight:(float)arg1;
 - (void)setTop:(float)arg1;
-- (void)setHeader:(float)arg1;
-- (float)footer;
+- (void)setRight:(float)arg1;
+- (void)setLeft:(float)arg1;
+- (void)setBottom:(float)arg1;
 - (void)setFooter:(float)arg1;
+- (float)footer;
+- (void)setHeader:(float)arg1;
+- (float)header;
 
 @end

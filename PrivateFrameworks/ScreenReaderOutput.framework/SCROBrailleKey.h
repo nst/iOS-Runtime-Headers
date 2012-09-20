@@ -16,16 +16,16 @@
 }
 
 
+- (id)identifier;
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)getRouterIndex:(int*)arg1 token:(int*)arg2 location:(int*)arg3 appToken:(id*)arg4;
 - (void)setRouterIndex:(long)arg1 token:(int)arg2 location:(long)arg3 appToken:(id)arg4;
 - (id)keyMasks;
 - (void)addKeyMask:(unsigned long)arg1;
 - (long)displayToken;
 - (void)setDisplayToken:(long)arg1;
-- (id)identifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

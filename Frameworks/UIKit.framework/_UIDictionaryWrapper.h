@@ -2,38 +2,48 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSURL, NSString;
+@class NSArray, NSString, NSOrderedSet, ASAsset;
 
 @interface _UIDictionaryWrapper : NSObject  {
-    const struct __DCSDictionary { } *dictionary;
-    NSURL *fileURL;
+    struct __DCSDictionary { } *dictionary;
     NSString *indexLanguage;
     NSString *definitionLanguage;
     int type;
+    ASAsset *asset;
 }
 
+@property(readonly) ASAsset * asset;
 @property(readonly) struct __DCSDictionary { }* dictionary;
-@property(readonly) NSURL * fileURL;
 @property(readonly) NSString * indexLanguage;
 @property(readonly) NSString * definitionLanguage;
 @property(readonly) int type;
 @property(readonly) unsigned int definitionLanguageDirection;
+@property(readonly) NSString * dictionaryPackageName;
+@property(readonly) NSArray * countryCodes;
+@property(readonly) NSOrderedSet * supportedKeyboardStrings;
 
-+ (id)dictionariesWithDictionary:(struct __DCSDictionary { }*)arg1;
++ (id)_wrappersWithAsset:(id)arg1;
++ (id)_availableDictionaryAssets;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (struct __DCSDictionary { }*)dictionary;
+- (int)type;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (BOOL)_correspondsToCurrentInputKeyboardAndIsNotPresent;
 - (id)markupForString:(id)arg1;
 - (unsigned int)definitionLanguageDirection;
-- (id)initWithDictionary:(struct __DCSDictionary { }*)arg1 language:(id)arg2;
+- (id)dictionaryPackageName;
+- (id)supportedKeyboardStrings;
+- (id)countryCodes;
+- (id)languageCode;
+- (BOOL)_isBilingual;
+- (id)initWithAsset:(id)arg1 indexLanguage:(id)arg2;
 - (id)definitionLanguage;
 - (int)compareToDictionary:(id)arg1;
 - (id)indexLanguage;
-- (id)fileURL;
-- (int)type;
+- (id)asset;
 - (BOOL)hasMarkupForString:(id)arg1;
-- (struct __DCSDictionary { }*)dictionary;
 
 @end

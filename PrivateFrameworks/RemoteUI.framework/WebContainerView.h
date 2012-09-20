@@ -10,16 +10,16 @@
     BOOL _reallyHighlighted;
 }
 
-@property(getter=isHighlighted) BOOL highlighted;
 @property(retain) UIWebView * webView;
+@property(getter=isHighlighted) BOOL highlighted;
 
 
 - (void)dealloc;
+- (void)_setHighlightedNow;
 - (void)setWebView:(id)arg1;
 - (id)webView;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)layoutSubviews;
-- (void)_setHighlightedNow;
 
 @end

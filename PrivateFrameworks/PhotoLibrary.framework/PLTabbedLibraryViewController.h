@@ -2,54 +2,71 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UINavigationController, NSDictionary, PLImportViewController, PLPhotosPickerSession;
+@class UINavigationController, PLPhotosPickerSession, NSDictionary;
 
-@interface PLTabbedLibraryViewController : UITabBarController <UITabBarControllerDelegate, UINavigationControllerDelegate, PLPhotosPickerSessionParticipant, PLAlbumListChangeObserver, PLAlbumChangeObserver> {
-    PLImportViewController *_importViewController;
+@interface PLTabbedLibraryViewController : UITabBarController <UITabBarControllerDelegate, UINavigationControllerDelegate, PLPhotosPickerSessionParticipant, PLAlbumListChangeObserver, PLAlbumChangeObserver, PLDismissableViewController, PLRootLibraryNavigationController> {
     PLPhotosPickerSession *_currentPickerSession;
     NSDictionary *_filteredAlbumListsByContentMode;
+    int _pendingSelectedContentMode;
+    int _baseAlbumListFilter;
     BOOL _showPlacesTab;
-    BOOL _showImportTab;
+    BOOL _psBadgeIsDirty;
     BOOL _barHiddenExplicitly;
 }
 
+@property(readonly) int baseAlbumListFilter;
 @property(readonly) UINavigationController * selectedNavigationController;
-@property(retain) PLImportViewController * importViewController;
 @property(readonly) BOOL needsTabBar;
 @property int selectedContentMode;
 @property(retain) PLPhotosPickerSession * currentPickerSession;
 
++ (void)initialize;
 
-- (id)init;
+- (id)selectedNavigationController;
 - (void)dealloc;
+- (id)init;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)showBarWithTransition:(int)arg1;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)prepareForDefaultImageSnapshot;
-- (id)selectedNavigationController;
-- (void)setImportViewController:(id)arg1;
-- (id)importViewController;
-- (void)hideImportTab:(BOOL)arg1;
-- (void)showImportTab:(BOOL)arg1;
-- (int)selectedContentMode;
-- (void)setSelectedContentMode:(int)arg1;
-- (id)_navigationControllerWithAlbumList:(id)arg1 contentMode:(int)arg2;
-- (id)libraryViewControllerWithAlbumList:(struct NSObject { Class x1; }*)arg1 contentMode:(int)arg2;
-- (void)_navigateToAlbum:(struct NSObject { Class x1; }*)arg1 andPerformAction:(int)arg2 animated:(BOOL)arg3 completion:(id)arg4;
-- (id)_navigationControllerForContentMode:(int)arg1;
+- (void)albumListDidChange:(id)arg1;
+- (void)albumDidChange:(id)arg1;
+- (int)baseAlbumListFilter;
+- (id)_navigationControllerForContentMode:(int)arg1 replacedController:(id*)arg2;
+- (void)_updatePhotoStreamTabBadgeForNavigationController:(id)arg1;
+- (id)libraryViewControllerWithContentMode:(int)arg1 singleAlbum:(BOOL)arg2;
+- (BOOL)_photoStreamTabShouldShowSingleAlbum;
+- (BOOL)_navigationControllerIsShowingSingleAlbum:(id)arg1;
+- (void)_navigateToAsset:(id)arg1 andPerformAction:(int)arg2 inAlbum:(struct NSObject { Class x1; }*)arg3 animated:(BOOL)arg4;
+- (struct NSObject { Class x1; }*)_availableAlbumToNavigateToAsset:(id)arg1 preferredAlbum:(struct NSObject { Class x1; }*)arg2;
+- (void)_navigateToAlbum:(struct NSObject { Class x1; }*)arg1 andPerformAction:(int)arg2 initiallyHidden:(BOOL)arg3 animated:(BOOL)arg4 completion:(id)arg5;
+- (BOOL)_navigateToRootOfCurrentTabAnimated:(BOOL)arg1;
+- (int)_contentModeForAlbum:(struct NSObject { Class x1; }*)arg1;
+- (id)_existingNavigationControllerForContentMode:(int)arg1;
 - (void)_updateDisplayedTabs:(BOOL)arg1;
 - (void)_makeViewControllersPerformSelector:(SEL)arg1 withNotification:(id)arg2;
 - (void)showTabBarIfNeeded:(BOOL)arg1;
 - (void)hideTabBar:(BOOL)arg1;
 - (BOOL)needsTabBar;
-- (void)albumListDidChange:(id)arg1;
 - (void)_libraryDidChange:(id)arg1;
-- (void)navigateToRevealAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2;
+- (int)selectedContentMode;
+- (void)setSelectedContentMode:(int)arg1;
+- (id)initWithBaseAlbumListFilter:(int)arg1;
 - (void)setCurrentPickerSession:(id)arg1;
 - (id)currentPickerSession;
+- (BOOL)commentIsAvailableForNavigation:(id)arg1 inAsset:(id)arg2;
+- (BOOL)assetIsAvailableForNavigation:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2;
+- (BOOL)albumIsAvailableForNavigation:(struct NSObject { Class x1; }*)arg1;
+- (BOOL)contentModeIsAvailableForNavigation:(int)arg1;
+- (void)navigateToComment:(id)arg1 forAsset:(id)arg2 animated:(BOOL)arg3;
+- (void)navigateToRevealAsset:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 animated:(BOOL)arg3;
+- (void)navigateToAsset:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 animated:(BOOL)arg3;
 - (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (void)albumDidChange:(id)arg1;
+- (void)navigateToContentMode:(int)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)navigateToRevealAlbum:(struct NSObject { Class x1; }*)arg1 initiallyHidden:(BOOL)arg2 animated:(BOOL)arg3;
+- (BOOL)prepareForDismissingAnimated:(BOOL)arg1;
 
 @end

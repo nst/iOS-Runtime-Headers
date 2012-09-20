@@ -9,26 +9,26 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id)initWithCStringNoCopy:(char *)arg1 length:(unsigned int)arg2;
-- (BOOL)canBeConvertedToEncoding:(unsigned int)arg1;
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (BOOL)isEqualToString:(id)arg1;
-- (id)stringByAppendingString:(id)arg1;
+- (BOOL)hasSuffix:(id)arg1;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
-- (unsigned int)length;
+- (BOOL)isEqual:(id)arg1;
+- (id)stringByAppendingString:(id)arg1;
+- (BOOL)isEqualToString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (unsigned int)length;
+- (BOOL)getBytes:(void*)arg1 maxLength:(unsigned int)arg2 usedLength:(unsigned int*)arg3 encoding:(unsigned int)arg4 options:(unsigned int)arg5 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 remainingRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg7;
+- (void)finalize;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (int)compare:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (BOOL)hasPrefix:(id)arg1;
 - (unsigned int)smallestEncoding;
 - (unsigned int)fastestEncoding;
 - (id)_newSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 zone:(struct _NSZone { }*)arg2;
 - (const char *)_fastCStringContents:(BOOL)arg1;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)cStringLength;
-- (void)finalize;
-- (BOOL)hasSuffix:(id)arg1;
-- (BOOL)hasPrefix:(id)arg1;
-- (int)compare:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (BOOL)getBytes:(void*)arg1 maxLength:(unsigned int)arg2 usedLength:(unsigned int*)arg3 encoding:(unsigned int)arg4 options:(unsigned int)arg5 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 remainingRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg7;
+- (BOOL)canBeConvertedToEncoding:(unsigned int)arg1;
+- (id)initWithCStringNoCopy:(char *)arg1 length:(unsigned int)arg2;
 
 @end

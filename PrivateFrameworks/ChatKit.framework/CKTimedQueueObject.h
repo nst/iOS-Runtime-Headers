@@ -9,15 +9,15 @@
     id _obj;
 }
 
-@property(retain) id obj;
 @property(retain) NSDate * fireDate;
+@property(retain) id obj;
 
 
-- (void)dealloc;
-- (id)obj;
-- (void)setObj:(id)arg1;
-- (id)fireDate;
 - (int)compare:(id)arg1;
+- (void)dealloc;
+- (id)fireDate;
 - (void)setFireDate:(id)arg1;
+- (void)setObj:(id)arg1;
+- (id)obj;
 
 @end

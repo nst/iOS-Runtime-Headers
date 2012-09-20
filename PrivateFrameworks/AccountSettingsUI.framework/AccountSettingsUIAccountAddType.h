@@ -11,22 +11,22 @@
     BOOL _wantsToBeLast;
 }
 
-@property BOOL wantsToBeLast;
-@property(retain) NSString * otherDataclassHeader;
-@property(retain) NSArray * dataclasses;
 @property(retain) PSSpecifier * specifier;
+@property(retain) NSArray * dataclasses;
+@property(retain) NSString * otherDataclassHeader;
+@property BOOL wantsToBeLast;
 
 
 - (void)dealloc;
 - (BOOL)wantsToBeLast;
 - (id)otherDataclassHeader;
 - (void)setOtherDataclassHeader:(id)arg1;
+- (void)setWantsToBeLast:(BOOL)arg1;
+- (id)initWithSpecifier:(id)arg1 dataclasses:(id)arg2;
+- (id)initWithSpecifier:(id)arg1 dataclasses:(id)arg2 otherDataclassHeader:(id)arg3;
 - (void)setDataclasses:(id)arg1;
 - (id)dataclasses;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
-- (id)initWithSpecifier:(id)arg1 dataclasses:(id)arg2 otherDataclassHeader:(id)arg3;
-- (id)initWithSpecifier:(id)arg1 dataclasses:(id)arg2;
-- (void)setWantsToBeLast:(BOOL)arg1;
 
 @end

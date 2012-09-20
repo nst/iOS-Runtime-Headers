@@ -7,18 +7,18 @@
 @interface DOMCSSStyleSheet : DOMStyleSheet  {
 }
 
-@property(retain,readonly) DOMCSSRule * ownerRule;
-@property(retain,readonly) DOMCSSRuleList * cssRules;
-@property(retain,readonly) DOMCSSRuleList * rules;
+@property(readonly) DOMCSSRule * ownerRule;
+@property(readonly) DOMCSSRuleList * cssRules;
+@property(readonly) DOMCSSRuleList * rules;
 
 
-- (id)ownerRule;
-- (id)rules;
-- (int)addRule:(id)arg1 style:(id)arg2 index:(unsigned int)arg3;
 - (void)removeRule:(unsigned int)arg1;
-- (id)cssRules;
-- (unsigned int)insertRule:(id)arg1 index:(unsigned int)arg2;
-- (unsigned int)insertRule:(id)arg1 :(unsigned int)arg2;
+- (int)addRule:(id)arg1 style:(id)arg2 index:(unsigned int)arg3;
+- (id)rules;
+- (id)ownerRule;
 - (void)deleteRule:(unsigned int)arg1;
+- (unsigned int)insertRule:(id)arg1 :(unsigned int)arg2;
+- (unsigned int)insertRule:(id)arg1 index:(unsigned int)arg2;
+- (id)cssRules;
 
 @end

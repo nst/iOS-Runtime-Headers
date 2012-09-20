@@ -23,13 +23,6 @@
 @property(readonly) NSString * openTitle;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
-- (id)menuItems;
-- (int)location;
-- (id)initWithDictionary:(id)arg1;
-- (void)setLocation:(int)arg1;
 - (id)_newMenuItemsFromArray:(id)arg1;
 - (void)_loadFromDictionary:(id)arg1;
 - (int)_locationForString:(id)arg1;
@@ -40,5 +33,12 @@
 - (id)openTitle;
 - (id)closedTitle;
 - (id)navigationButtonForLocation:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)menuItems;
+- (int)location;
+- (id)initWithDictionary:(id)arg1;
+- (void)setLocation:(int)arg1;
 
 @end

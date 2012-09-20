@@ -11,8 +11,8 @@
 
 - (void)dealloc;
 - (void)_purgeCaches:(id)arg1;
-- (void)_clearBinding;
 - (id)_retainedBinding;
+- (void)_clearBinding;
 - (id)initWithSQLCore:(id)arg1;
 
 @end

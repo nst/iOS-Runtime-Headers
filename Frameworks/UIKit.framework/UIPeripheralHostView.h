@@ -2,12 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPeripheralHostLayer;
+@class UIPeripheralHostLayer, UIKeyboardCornerView;
 
 @interface UIPeripheralHostView : UIView  {
     int _explicitLayoutCount;
+    UIKeyboardCornerView *_cornerViewLeft;
+    UIKeyboardCornerView *_cornerViewRight;
 }
 
+@property(readonly) UIKeyboardCornerView * cornerViewLeft;
+@property(readonly) UIKeyboardCornerView * cornerViewRight;
 @property(readonly) UIPeripheralHostLayer * layer;
 
 + (Class)layerClass;
@@ -15,11 +19,14 @@
 - (void)dealloc;
 - (void)endExplicitLayout;
 - (void)beginExplicitLayout;
+- (id)cornerViewRight;
+- (id)cornerViewLeft;
 - (int)textEffectsVisibilityLevel;
+- (int)_clipCornersOfView:(id)arg1;
 - (void)resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)layer;
 - (BOOL)_shouldUseKeyWindowStack;
+- (id)layer;
 - (void)removeFromSuperview;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

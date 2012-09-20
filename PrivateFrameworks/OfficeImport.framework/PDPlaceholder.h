@@ -11,16 +11,16 @@
 }
 
 
+- (int)type;
 - (id)init;
+- (void)setIndex:(int)arg1;
 - (int)index;
 - (void)setOrientation:(int)arg1;
-- (int)type;
 - (void)setType:(int)arg1;
 - (void)setSize:(int)arg1;
 - (int)orientation;
 - (int)size;
-- (int)boundsTrack;
 - (void)setBoundsTrack:(int)arg1;
-- (void)setIndex:(int)arg1;
+- (int)boundsTrack;
 
 @end

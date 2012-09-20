@@ -48,11 +48,13 @@
 @property <UIMovieScrubberTrackViewDelegate> * delegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (void)unzoom;
 - (BOOL)zoomAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)zoomAnimationDuration;
-- (void)setZoomAnimationDuration:(float)arg1;
+- (double)zoomAnimationDuration;
+- (void)setZoomAnimationDuration:(double)arg1;
 - (void)setThumbnailImage:(struct CGImage { }*)arg1 forTimestamp:(id)arg2;
 - (void)_unzoomAnimation:(id)arg1 didFinish:(id)arg2 context:(void*)arg3;
 - (void)_setOverlayViewIsZoomed:(BOOL)arg1 minValue:(float)arg2 maxValue:(float)arg3;
@@ -65,12 +67,10 @@
 - (void)animateFillFramesAway;
 - (void)setValue:(double)arg1;
 - (void)setEditing:(BOOL)arg1;
-- (id)delegate;
 - (id)dataSource;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)reloadData;
-- (void)setDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

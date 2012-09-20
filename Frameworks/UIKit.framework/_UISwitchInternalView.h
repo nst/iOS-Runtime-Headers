@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UIImage, UIColor, UIView;
+@class UIImageView, UIImage, UIColor, UIView, CALayer;
 
 @interface _UISwitchInternalView : UIView  {
     UIImage *_colorMask;
@@ -15,29 +15,45 @@
     UIImageView *_colorView;
     UIImageView *_thumbView;
     UIImageView *_labelView;
+    UIColor *_onTintColor;
     UIColor *_tintColor;
+    UIColor *_thumbTintColor;
     UIColor *_nonAlternateColor;
+    UIImage *_onImage;
+    UIImage *_offImage;
     BOOL _on;
     BOOL _sendAction;
-    BOOL _useAleternateColor;
+    BOOL _useAlternateColor;
     BOOL _animating;
     UIImageView *_idleImageView;
     UIView *_interactiveView;
+    CALayer *_backgroundLayer;
 }
 
+@property(retain) UIColor * onTintColor;
 @property(retain) UIColor * tintColor;
+@property(retain) UIColor * thumbTintColor;
+@property(retain) UIImage * onImage;
+@property(retain) UIImage * offImage;
 @property BOOL on;
-@property BOOL useAleternateColor;
+@property BOOL useAlternateColor;
 
++ (id)_defaultOnTintColor;
 
 - (void)dealloc;
-- (BOOL)useAleternateColor;
+- (BOOL)useAlternateColor;
 - (void)setOn:(BOOL)arg1;
 - (BOOL)on;
+- (id)onTintColor;
+- (id)offImage;
+- (id)onImage;
+- (void)setOffImage:(id)arg1;
+- (void)setOnImage:(id)arg1;
 - (BOOL)sendAction;
 - (void)setSendAction:(BOOL)arg1;
 - (void)_setOn:(BOOL)arg1 animated:(BOOL)arg2 force:(BOOL)arg3;
-- (void)setUseAleternateColor:(BOOL)arg1;
+- (void)setUseAlternateColor:(BOOL)arg1;
+- (void)setOnTintColor:(id)arg1;
 - (void)_prepareForInteraction;
 - (void)_setProgress:(float)arg1;
 - (void)_sendActions;
@@ -45,11 +61,15 @@
 - (void)_onAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)_snapshotImage;
 - (void)_buildControl;
+- (void)_setupBackgroundLayer;
+- (void)_setupThumbImages;
+- (void)_setOnTintColor:(id)arg1;
 - (void)_cleanUpAfterAnimating;
 - (id)_colorImage;
-- (id)_createLabelImage;
+- (id)_labelImage;
+- (id)thumbTintColor;
+- (void)setThumbTintColor:(id)arg1;
 - (void)_setPressed:(BOOL)arg1;
-- (void)_setTintColor:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (id)tintColor;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

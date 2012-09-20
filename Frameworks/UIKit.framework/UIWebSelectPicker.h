@@ -23,6 +23,7 @@
 - (void)dealloc;
 - (id)_singleSelectionItem;
 - (id)_cachedItems;
+- (int)_itemIndexForRowIndex:(int)arg1;
 - (void)set_singleSelectionItem:(id)arg1;
 - (void)set_cachedItems:(id)arg1;
 - (id)_selectionNode;

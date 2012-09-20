@@ -13,9 +13,9 @@
 
 + (id)cacheValueWithPretiledImage:(id)arg1 cacheKey:(id)arg2;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)pretiledImage;
 

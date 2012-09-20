@@ -2,20 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class NSOutputStream;
-
-@interface PBStreamWriter : PBDataWriter  {
-    NSOutputStream *_stream;
+@interface PBStreamWriter : NSObject  {
 }
-
-@property(retain) NSOutputStream * stream;
 
 + (id)writeProtoBuffers:(id)arg1 toFile:(id)arg2;
 
-- (void)dealloc;
-- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
-- (id)initWithOutputStream:(id)arg1;
-- (id)stream;
-- (void)setStream:(id)arg1;
 
 @end

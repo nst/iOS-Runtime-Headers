@@ -9,7 +9,7 @@
 
 - (void)reloadFromModelIncludingRows:(BOOL)arg1;
 - (void)textFieldTextDidChange:(id)arg1;
-- (void)reloadFromModel;
 - (id)pickerView;
+- (void)reloadFromModel;
 
 @end

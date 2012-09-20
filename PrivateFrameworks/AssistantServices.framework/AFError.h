@@ -5,8 +5,8 @@
 @interface AFError : NSObject  {
 }
 
-+ (id)errorWithCode:(int)arg1;
 + (id)errorWithCode:(int)arg1 description:(id)arg2 underlyingError:(id)arg3;
++ (id)errorWithCode:(int)arg1;
 
 
 @end

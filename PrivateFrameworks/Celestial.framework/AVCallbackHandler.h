@@ -17,16 +17,16 @@
 @property SEL mainThreadAction;
 
 
-- (void)setTarget:(id)arg1;
 - (SEL)action;
+- (void)setTarget:(id)arg1;
 - (id)target;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)setAction:(SEL)arg1;
 - (void)setMainThreadAction:(SEL)arg1;
 - (BOOL)hasParams;
 - (id)waitForCallbackParams;
 - (void)setCallbackParams:(id)arg1;
 - (SEL)mainThreadAction;
-- (void)setAction:(SEL)arg1;
 
 @end

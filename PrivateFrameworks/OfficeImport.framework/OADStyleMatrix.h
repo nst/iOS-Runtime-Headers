@@ -12,22 +12,22 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (void)addFill:(id)arg1;
-- (unsigned int)fillCount;
-- (id)fillAtIndex:(unsigned int)arg1 color:(id)arg2;
-- (void)addStroke:(id)arg1;
-- (unsigned int)strokeCount;
-- (void)addEffects:(id)arg1;
-- (unsigned int)effectsCount;
-- (id)effectsAtIndex:(unsigned int)arg1 color:(id)arg2;
-- (void)addBgFill:(id)arg1;
+- (id)init;
 - (unsigned int)bgFillCount;
+- (void)addBgFill:(id)arg1;
+- (id)effectsAtIndex:(unsigned int)arg1 color:(id)arg2;
+- (unsigned int)effectsCount;
+- (void)addEffects:(id)arg1;
+- (unsigned int)strokeCount;
+- (void)addStroke:(id)arg1;
+- (id)fillAtIndex:(unsigned int)arg1 color:(id)arg2;
+- (unsigned int)fillCount;
+- (void)addFill:(id)arg1;
 - (id)bgFillAtIndex:(unsigned int)arg1;
-- (id)strokeAtIndex:(unsigned int)arg1;
-- (id)fillAtIndex:(unsigned int)arg1;
 - (id)effectsAtIndex:(unsigned int)arg1;
+- (id)fillAtIndex:(unsigned int)arg1;
+- (id)strokeAtIndex:(unsigned int)arg1;
 - (id)strokeAtIndex:(unsigned int)arg1 color:(id)arg2;
 
 @end

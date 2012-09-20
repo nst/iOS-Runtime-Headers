@@ -25,11 +25,11 @@
 - (id)footerView;
 - (void)setFooterTitle:(id)arg1;
 - (id)footerTitle;
-- (void)setHeaderView:(id)arg1;
 - (id)headerView;
 - (void)setHeaderTitle:(id)arg1;
 - (id)headerTitle;
 - (void)setRows:(id)arg1;
+- (void)setHeaderView:(id)arg1;
 - (id)rows;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

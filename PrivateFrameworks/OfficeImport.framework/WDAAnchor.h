@@ -30,42 +30,43 @@
     int mZIndex;
 }
 
-@property BOOL allowOverlap;
-@property int textWrappingModeType;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property int textWrappingMode;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
+@property int textWrappingModeType;
+@property BOOL allowOverlap;
 
 
+- (id).cxx_construct;
 - (id)init;
+- (void)setZIndex:(int)arg1;
+- (int)zIndex;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (int)zIndex;
-- (void)setZIndex:(int)arg1;
-- (double)wrapDistanceLeft;
-- (double)wrapDistanceTop;
-- (double)wrapDistanceRight;
-- (double)wrapDistanceBottom;
-- (int)relativeHorizontalPosition;
-- (int)relativeVerticalPosition;
-- (int)zIndexTotal;
 - (void)setZIndexTotal:(int)arg1;
-- (BOOL)allowOverlap;
-- (void)setAllowOverlap:(BOOL)arg1;
+- (int)zIndexTotal;
 - (int)textWrappingModeType;
-- (int)textWrappingMode;
+- (double)wrapDistanceBottom;
+- (double)wrapDistanceRight;
+- (double)wrapDistanceTop;
+- (double)wrapDistanceLeft;
+- (BOOL)allowOverlap;
 - (void)setBehindText:(BOOL)arg1;
+- (void)setAllowOverlap:(BOOL)arg1;
 - (void)setWrapDistanceBottom:(double)arg1;
-- (void)setWrapDistanceLeft:(double)arg1;
 - (void)setWrapDistanceRight:(double)arg1;
 - (void)setWrapDistanceTop:(double)arg1;
+- (void)setWrapDistanceLeft:(double)arg1;
+- (void)setVerticalPosition:(int)arg1;
+- (void)setHorizontalPosition:(int)arg1;
+- (void)setTextWrappingModeType:(int)arg1;
+- (void)setTextWrappingMode:(int)arg1;
+- (void)setRelativeVerticalPosition:(int)arg1;
+- (void)setRelativeHorizontalPosition:(int)arg1;
 - (int)verticalPosition;
 - (int)horizontalPosition;
-- (void)setHorizontalPosition:(int)arg1;
-- (void)setVerticalPosition:(int)arg1;
-- (void)setRelativeHorizontalPosition:(int)arg1;
-- (void)setRelativeVerticalPosition:(int)arg1;
-- (void)setTextWrappingMode:(int)arg1;
-- (void)setTextWrappingModeType:(int)arg1;
+- (int)relativeHorizontalPosition;
+- (int)textWrappingMode;
 - (BOOL)isBehindText;
+- (int)relativeVerticalPosition;
 
 @end

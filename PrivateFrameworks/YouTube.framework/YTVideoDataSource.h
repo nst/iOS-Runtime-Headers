@@ -15,31 +15,31 @@
 
 + (id)sharedDataSource;
 + (void)saveDataSources;
-+ (BOOL)shouldRemoveOldDefaults;
 + (void)setShouldRemoveOldDefaults;
++ (BOOL)shouldRemoveOldDefaults;
 
-- (void)_didChange;
-- (id)init;
+- (void)loadFromDefaults;
 - (void)dealloc;
-- (BOOL)hasLoaded;
-- (void)loadMore;
+- (id)init;
 - (BOOL)isLoading;
 - (void)reloadData;
-- (void)loadFromDefaults;
-- (id)lastError;
-- (unsigned int)videosRemaining;
-- (unsigned int)maxVideosToSave;
-- (void)removeVideoAtIndex:(int)arg1;
 - (void)removeAllVideos;
-- (void)_saveToDefaults;
-- (void)_searchRequestLoadingStatusDidChange;
-- (void)_setLastError:(id)arg1;
-- (id)_deprecatedVideosDefaultsKey;
-- (void)_setVideos:(id)arg1;
-- (void)addVideos:(id)arg1 toTop:(BOOL)arg2;
+- (void)removeVideoAtIndex:(int)arg1;
+- (unsigned int)maxVideosToSave;
+- (unsigned int)videosRemaining;
+- (id)lastError;
 - (void)_clearVideos;
+- (void)addVideos:(id)arg1 toTop:(BOOL)arg2;
+- (void)_setVideos:(id)arg1;
+- (id)_deprecatedVideosDefaultsKey;
+- (void)_setLastError:(id)arg1;
+- (void)_searchRequestLoadingStatusDidChange;
+- (void)_saveToDefaults;
 - (id)videos;
-- (void)searchRequest:(id)arg1 receivedVideos:(id)arg2 startIndex:(unsigned int)arg3 videosRemaining:(unsigned int)arg4;
 - (void)searchRequest:(id)arg1 didFailWithError:(id)arg2;
+- (void)searchRequest:(id)arg1 receivedVideos:(id)arg2 startIndex:(unsigned int)arg3 videosRemaining:(unsigned int)arg4;
+- (void)loadMore;
+- (BOOL)hasLoaded;
+- (void)_didChange;
 
 @end

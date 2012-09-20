@@ -16,8 +16,8 @@
 - (int)barStyle;
 - (void)setBarStyle:(int)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1;
-- (int)statusBarStyle;
 - (void)setStatusBarStyle:(int)arg1;
+- (int)statusBarStyle;
 - (BOOL)isStatusBarHidden;
 
 @end

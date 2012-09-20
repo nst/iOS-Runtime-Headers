@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface JapaneseOffcenterCell : PSTableCell  {
+@interface JapaneseOffcenterCell : LanguageCell  {
 }
 
 

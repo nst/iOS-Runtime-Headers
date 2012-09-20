@@ -10,11 +10,11 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (void)setFilter:(id)arg1;
-- (id)filter;
+- (id)init;
 - (int)transition;
 - (void)setTransition:(int)arg1;
+- (void)setFilter:(id)arg1;
+- (id)filter;
 
 @end

@@ -10,7 +10,7 @@
 @property(copy) NSString * align;
 
 
-- (id)align;
 - (void)setAlign:(id)arg1;
+- (id)align;
 
 @end

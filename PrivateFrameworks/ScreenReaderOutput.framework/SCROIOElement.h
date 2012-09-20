@@ -8,13 +8,13 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
+- (int)transport;
+- (long)identifier;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)transport;
 - (unsigned int)ioObject;
 - (id)initWithIOObject:(unsigned int)arg1;
-- (long)identifier;
 
 @end

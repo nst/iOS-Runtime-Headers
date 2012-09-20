@@ -19,9 +19,11 @@
 @property(getter=_playbackItem,readonly) struct OpaqueFigPlaybackItem { }* playbackItem;
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void)finalize;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)_playbackItemPropertiesForKeys:(id)arg1;
 - (void)_removeFigObjectNotifications;
 - (void)_addFigObjectNotifications;
@@ -33,7 +35,5 @@
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (id)initWithURL:(id)arg1 playbackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;
 - (void)cancelLoading;
-- (void)finalize;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 
 @end

@@ -11,13 +11,13 @@
 }
 
 
+- (void)_downloadDidFail:(id)arg1;
+- (void)_cleanUp;
+- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)downloadDidFinish:(id)arg1;
 - (void)download:(id)arg1 decideDestinationWithSuggestedFilename:(id)arg2;
 - (void)downloadDidBegin:(id)arg1;
 - (void)download:(id)arg1 didFailWithError:(id)arg2;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (void)_cleanUp;
-- (void)_downloadDidFail:(id)arg1;
 
 @end

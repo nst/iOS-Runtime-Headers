@@ -31,8 +31,8 @@
 @property float cropConstrain;
 
 
-- (float)angle;
 - (void)reset;
+- (float)angle;
 - (void)setAngle:(float)arg1;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })size;

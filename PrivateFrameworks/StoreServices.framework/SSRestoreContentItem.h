@@ -7,14 +7,17 @@
 @interface SSRestoreContentItem : NSObject  {
     NSNumber *_accountID;
     NSString *_appleID;
+    NSString *_bundleID;
     NSNumber *_cloudMatchStatus;
     BOOL _isRestore;
     NSMutableDictionary *_properties;
 }
 
+@property(copy) NSString * bundleID;
 @property(retain) NSNumber * cloudItemID;
 @property(retain) NSNumber * cloudMatchStatus;
 @property(copy) NSString * downloadKind;
+@property(copy) NSString * podcastEpisodeGUID;
 @property(copy) NSString * storeAccountAppleID;
 @property(retain) NSNumber * storeAccountID;
 @property(copy) NSString * storeFrontID;
@@ -25,11 +28,12 @@
 @property(copy) NSString * videoDimensions;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)_setValue:(id)arg1 forProperty:(id)arg2;
+- (void)setBundleID:(id)arg1;
+- (id)bundleID;
 - (id)storeFrontID;
 - (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
+- (void)dealloc;
+- (id)init;
 - (id)videoDimensions;
 - (id)storeSoftwareVersionID;
 - (id)storeItemID;
@@ -56,7 +60,10 @@
 - (id)_restoreKeyForAssetProperty:(id)arg1;
 - (void)setValue:(id)arg1 forAssetProperty:(id)arg2;
 - (id)_initSSRestoreContentItem;
+- (void)setPodcastEpisodeGUID:(id)arg1;
+- (id)podcastEpisodeGUID;
 - (BOOL)isEligibleForRestore:(id*)arg1;
 - (id)initWithRestoreDownload:(id)arg1;
+- (void)_setValue:(id)arg1 forProperty:(id)arg2;
 
 @end

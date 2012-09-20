@@ -22,6 +22,7 @@
             double longitudeDelta; 
         } span; 
     } _previousRegion;
+    float _previousZoomLevel;
     <PlacesMapViewDelegateDetailsDelegate> *_detailsDelegate;
 }
 
@@ -42,7 +43,6 @@
 - (BOOL)_displaysAlbumPosterOnLeft;
 - (BOOL)_displayMoreDetailsButton;
 - (id)_createAnnotationViewWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)_didMapViewChangeZoomLevel:(id)arg1;
 - (void)_updateAnnotationsInMapView:(id)arg1;
 - (void)_setupMapViewCenteredOnAllPlaces:(id)arg1;
 - (void)_flushAnnotation:(id)arg1 fromMap:(id)arg2;

@@ -2,19 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSString;
+@class SPContentResult, NSString;
 
 @interface SPTopHitsCompoundResult : NSObject  {
-    void *_content;
+    SPContentResult *_content;
     unsigned int _domain;
     NSString *_displayIdentifier;
 }
 
 
+- (id)initWithContent:(id)arg1 domain:(unsigned int)arg2 displayIdentifier:(id)arg3;
 - (void)dealloc;
 - (unsigned int)domain;
-- (void*)content;
+- (id)content;
 - (id)displayIdentifier;
-- (id)initWithContent:(void*)arg1 domain:(unsigned int)arg2 displayIdentifier:(id)arg3;
 
 @end

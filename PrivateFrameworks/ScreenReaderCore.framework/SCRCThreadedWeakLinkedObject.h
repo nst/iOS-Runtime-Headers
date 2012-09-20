@@ -13,9 +13,9 @@
 
 - (unsigned int)retainCount;
 - (id)retain;
+- (void)dealloc;
 - (oneway void)release;
 - (id)init;
-- (void)dealloc;
 - (void)invalidateThreadsWithWeakLinks;
 
 @end

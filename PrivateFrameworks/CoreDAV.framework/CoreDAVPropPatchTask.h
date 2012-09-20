@@ -21,6 +21,7 @@
 @property(retain) NSSet * propPatchSetElements;
 
 
+- (id)initWithURL:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (void)setPropPatchSetElements:(id)arg1;
@@ -37,7 +38,6 @@
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (int)absoluteOrder;
-- (id)initWithURL:(id)arg1;
 - (id)httpMethod;
 - (id)requestBody;
 

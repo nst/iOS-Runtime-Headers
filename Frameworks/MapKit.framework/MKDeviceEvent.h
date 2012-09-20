@@ -33,10 +33,10 @@
 @property(readonly) int type;
 
 
-- (struct CGPoint { float x1; float x2; })centroid;
-- (id)event;
-- (struct CGPoint { float x1; float x2; })velocity;
 - (int)type;
+- (struct CGPoint { float x1; float x2; })centroid;
+- (struct CGPoint { float x1; float x2; })velocity;
+- (id)event;
 - (struct CGPoint { float x1; float x2; })startingPoint;
 
 @end

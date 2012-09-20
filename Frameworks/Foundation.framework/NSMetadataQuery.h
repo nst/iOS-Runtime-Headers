@@ -9,9 +9,21 @@
     void *_reserved;
 }
 
-+ (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 
+- (id)results;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)setSortDescriptors:(id)arg1;
+- (id)sortDescriptors;
+- (void)setPredicate:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)predicate;
+- (void)finalize;
+- (void)_update;
+- (BOOL)isStarted;
 - (id)groupedResults;
 - (id)valueLists;
 - (unsigned int)indexOfResult:(id)arg1;
@@ -20,7 +32,10 @@
 - (BOOL)isStopped;
 - (BOOL)isGathering;
 - (void)stopQuery;
+- (BOOL)startQuery;
+- (id)_queryString;
 - (void)setSearchItemURLs:(id)arg1;
+- (void)setSearchScopes:(id)arg1;
 - (id)searchScopes;
 - (void)setNotificationBatchingInterval:(double)arg1;
 - (double)notificationBatchingInterval;
@@ -28,13 +43,13 @@
 - (void)setGroupingAttributes:(id)arg1;
 - (void)setValueListAttributes:(id)arg1;
 - (id)valueOfAttribute:(id)arg1 forResultAtIndex:(unsigned int)arg2;
-- (void)_update;
+- (void)disableUpdates;
+- (void)enableUpdates;
 - (unsigned int)resultCount;
 - (void)_noteNote4:(id)arg1;
 - (void)_noteNote3:(id)arg1;
 - (void)_noteNote2:(id)arg1;
 - (void)_noteNote1:(id)arg1;
-- (id)_queryString;
 - (id)searchItemURLs;
 - (void)_resetQueryState;
 - (void)_setBatchingParams;
@@ -42,20 +57,5 @@
 - (id)groupingAttributes;
 - (id)valueListAttributes;
 - (void)_recreateQuery;
-- (id)sortDescriptors;
-- (void)setSortDescriptors:(id)arg1;
-- (id)results;
-- (id)init;
-- (void)dealloc;
-- (BOOL)isStarted;
-- (void)finalize;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)setSearchScopes:(id)arg1;
-- (void)disableUpdates;
-- (BOOL)startQuery;
-- (void)enableUpdates;
-- (void)setPredicate:(id)arg1;
-- (id)predicate;
 
 @end

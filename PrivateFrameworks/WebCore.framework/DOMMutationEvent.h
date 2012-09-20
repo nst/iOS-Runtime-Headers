@@ -7,19 +7,19 @@
 @interface DOMMutationEvent : DOMEvent  {
 }
 
-@property(retain,readonly) DOMNode * relatedNode;
-@property(copy,readonly) NSString * prevValue;
-@property(copy,readonly) NSString * newValue;
-@property(copy,readonly) NSString * attrName;
+@property(readonly) DOMNode * relatedNode;
+@property(readonly) NSString * prevValue;
+@property(readonly) NSString * newValue;
+@property(readonly) NSString * attrName;
 @property(readonly) unsigned short attrChange;
 
 
-- (id)relatedNode;
-- (id)prevValue;
-- (id)newValue;
-- (id)attrName;
-- (unsigned short)attrChange;
-- (void)initMutationEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 relatedNode:(id)arg4 prevValue:(id)arg5 newValue:(id)arg6 attrName:(id)arg7 attrChange:(unsigned short)arg8;
 - (void)initMutationEvent:(id)arg1 :(BOOL)arg2 :(BOOL)arg3 :(id)arg4 :(id)arg5 :(id)arg6 :(id)arg7 :(unsigned short)arg8;
+- (void)initMutationEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 relatedNode:(id)arg4 prevValue:(id)arg5 newValue:(id)arg6 attrName:(id)arg7 attrChange:(unsigned short)arg8;
+- (unsigned short)attrChange;
+- (id)attrName;
+- (id)newValue;
+- (id)prevValue;
+- (id)relatedNode;
 
 @end

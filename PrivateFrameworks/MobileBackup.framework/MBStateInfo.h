@@ -4,7 +4,7 @@
 
 @class NSError, NSDate;
 
-@interface MBStateInfo : NSObject  {
+@interface MBStateInfo : NSObject <NSCoding, NSCopying> {
     int _state;
     float _progress;
     unsigned int _estimatedTimeRemaining;
@@ -12,29 +12,29 @@
     NSDate *_date;
 }
 
-@property(readonly) NSDate * date;
-@property(readonly) NSError * error;
-@property(readonly) unsigned int estimatedTimeRemaining;
-@property(readonly) float progress;
 @property(readonly) int state;
+@property(readonly) float progress;
+@property(readonly) unsigned int estimatedTimeRemaining;
+@property(readonly) NSError * error;
+@property(readonly) NSDate * date;
 
 
+- (void)setError:(id)arg1;
+- (int)state;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setError:(id)arg1;
-- (id)error;
-- (id)initWithDictionaryRepresentation:(id)arg1;
+- (void)setEstimatedTimeRemaining:(unsigned int)arg1;
 - (float)progress;
 - (id)dictionaryRepresentation;
 - (void)setProgress:(float)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
 - (id)date;
+- (void)setState:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setEstimatedTimeRemaining:(unsigned int)arg1;
-- (unsigned int)estimatedTimeRemaining;
 - (id)initWithState:(int)arg1 progress:(float)arg2 estimatedTimeRemaining:(unsigned int)arg3 error:(id)arg4;
+- (unsigned int)estimatedTimeRemaining;
+- (id)error;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 
 @end

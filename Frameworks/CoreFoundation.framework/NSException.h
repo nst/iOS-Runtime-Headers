@@ -11,30 +11,35 @@
     id reserved;
 }
 
-+ (void)raise:(id)arg1 format:(id)arg2 arguments:(void*)arg3;
 + (id)exceptionWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
 + (void)raise:(id)arg1 format:(id)arg2;
++ (void)raise:(id)arg1 format:(id)arg2 arguments:(void*)arg3;
++ (void)raiseWithError:(id)arg1;
++ (void)errnoRaise:(id)arg1 format:(id)arg2;
 + (void)errnoRaise:(id)arg1 format:(id)arg2;
 
-- (id)userInfo;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (id)name;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)userInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)callStackSymbols;
+- (id)reason;
+- (void)raise;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)_installStackTraceKeyIfNeeded;
 - (id)callStackReturnAddresses;
 - (id)initWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
-- (void)raise;
-- (id)callStackSymbols;
-- (id)reason;
-- (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
+- (id)error;
 - (int)localErrno;
 - (id)_crashReporterString;
+- (int)localErrno;
 
 @end

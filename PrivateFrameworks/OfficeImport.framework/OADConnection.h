@@ -8,9 +8,9 @@
 }
 
 
-- (long)drawableId;
-- (void)setDrawableId:(long)arg1;
 - (int)locationIndex;
+- (long)drawableId;
 - (void)setLocationIndex:(int)arg1;
+- (void)setDrawableId:(long)arg1;
 
 @end

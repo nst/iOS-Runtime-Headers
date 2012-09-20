@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVCaptureAudioDataOutputSampleBufferDelegate>;
+@class NSObject<OS_dispatch_queue>, <AVCaptureAudioDataOutputSampleBufferDelegate>;
 
 @interface AVCaptureAudioDataOutputInternal : NSObject  {
     <AVCaptureAudioDataOutputSampleBufferDelegate> *delegate;
-    struct dispatch_queue_s { } *clientQueue;
+    NSObject<OS_dispatch_queue> *clientQueue;
 }
 
 

@@ -9,11 +9,11 @@
 
 @property(copy) NSArray * emails;
 
-+ (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)snippet;
++ (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
 - (id)emails;
+- (id)groupIdentifier;
 - (void)setEmails:(id)arg1;
 - (id)encodedClassName;
 

@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSTimer, NSMutableDictionary, NSDictionary;
+@class NSObject<OS_dispatch_semaphore>, NSTimer, NSDictionary, NSMutableDictionary;
 
 @interface WiFiUtils : NSObject  {
     NSDictionary *_unmergedScanInfoDict;
     NSMutableDictionary *_missingBSSIDCounts;
     struct WiFiShimContext { } *_wifiShim;
-    struct dispatch_semaphore_s { } *_wifiBusy;
+    NSObject<OS_dispatch_semaphore> *_wifiBusy;
     BOOL _scanInProgress;
     BOOL _joinInProgress;
     BOOL _scanningActive;
@@ -21,15 +21,16 @@
 + (id)sharedInstance;
 + (BOOL)stringArray:(id)arg1 containsBSSID:(id)arg2;
 + (int)barsForRSSI:(int)arg1;
++ (BOOL)scanInfoIsIBSS:(id)arg1;
 + (BOOL)scanInfoIs5GHz:(id)arg1;
 + (void)sharedInstanceRelease;
-+ (BOOL)networkIsSecure:(id)arg1 secMode:(int*)arg2;
++ (BOOL)networkIsSecure:(id)arg1 secMode:(int*)arg2 isEnterprise:(BOOL*)arg3;
 + (id)getNetworkPassword:(id)arg1;
 + (BOOL)networkIsApple:(id)arg1 productID:(unsigned int*)arg2;
 + (id)sharedInstanceRef;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)mergeScanResults:(id)arg1;
 - (void)asyncWiFiScanThread:(id)arg1;
 - (long)joinNetworkWithScanInfo:(id)arg1 password:(id)arg2 rememberChoice:(int)arg3;
@@ -59,6 +60,7 @@
 - (long)joinNetworkWithNameAsync:(id)arg1 password:(id)arg2 rememberChoice:(int)arg3;
 - (id)scanInfoForName:(id)arg1 wifiType:(int)arg2;
 - (id)scanInfoForMACAddress:(id)arg1;
+- (id)getNetworkPasswordForNetworkNamed:(id)arg1;
 - (id)mergedScanInfoArray;
 - (BOOL)isScanningActive;
 - (long)scanInfoViaDirectedScanAsync:(id)arg1 waitingForNetwork:(BOOL)arg2;

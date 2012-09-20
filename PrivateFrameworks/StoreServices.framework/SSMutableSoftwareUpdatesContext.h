@@ -4,7 +4,7 @@
 
 @class NSString, NSArray;
 
-@interface SSMutableSoftwareUpdatesContext : SSSoftwareUpdatesContext  {
+@interface SSMutableSoftwareUpdatesContext : SSSoftwareUpdatesContext <SSXPCCoding> {
 }
 
 @property(getter=isForced) BOOL forced;
@@ -15,5 +15,7 @@
 - (void)setSoftwareTypes:(id)arg1;
 - (void)setForced:(BOOL)arg1;
 - (void)setClientIdentifierHeader:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 
 @end

@@ -10,12 +10,12 @@
 
 @property(retain) NSString * maskedUID;
 
-+ (id)freeBusyDocumentWithOrganizer:(id)arg1 attendees:(id)arg2 start:(id)arg3 end:(id)arg4 maskedUID:(id)arg5;
 + (id)_icsDate:(id)arg1 calendar:(id)arg2;
++ (id)freeBusyDocumentWithOrganizer:(id)arg1 attendees:(id)arg2 start:(id)arg3 end:(id)arg4 maskedUID:(id)arg5;
 
 - (void)dealloc;
-- (id)initWithOrganizer:(id)arg1 originator:(id)arg2 attendees:(id)arg3 start:(id)arg4 end:(id)arg5 outboxURL:(id)arg6 maskedUID:(id)arg7;
 - (id)maskedUID;
+- (id)initWithOrganizer:(id)arg1 originator:(id)arg2 attendees:(id)arg3 start:(id)arg4 end:(id)arg5 outboxURL:(id)arg6 maskedUID:(id)arg7;
 - (void)setMaskedUID:(id)arg1;
 
 @end

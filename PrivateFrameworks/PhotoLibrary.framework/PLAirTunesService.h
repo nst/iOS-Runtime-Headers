@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MCMediaControlClientRemote, MediaControlClient, NSMutableArray, <PLAirTunesServicePhotoBrowsingDataSource>, NSDictionary, NSString, NSNetService, AirPlayRemoteSlideshow;
+@class MCMediaControlClientRemote, MediaControlClient, NSObject<OS_dispatch_queue>, NSMutableArray, <PLAirTunesServicePhotoBrowsingDataSource>, NSDictionary, NSString, AirPlayRemoteSlideshow, NSNetService;
 
 @interface PLAirTunesService : NSObject <NSNetServiceDelegate> {
     NSNetService *_netService;
@@ -21,11 +21,14 @@
     NSDictionary *_remoteSlideshowAvailableFeatures;
     NSString *_password;
     BOOL _requiresPassword;
+    BOOL _requiresPIN;
+    BOOL _showingPasswordAlert;
     BOOL _validPassword;
+    BOOL _validated;
     BOOL _sentPhoto;
     double _playStartTime;
     unsigned int _features;
-    struct dispatch_queue_s { } *_resolveQueue;
+    NSObject<OS_dispatch_queue> *_resolveQueue;
 }
 
 @property(readonly) NSNetService * netService;
@@ -36,6 +39,7 @@
 @property(retain) AirPlayRemoteSlideshow * remoteSlideshow;
 @property(retain) NSDictionary * remoteSlideshowAvailableFeatures;
 @property BOOL requiresPassword;
+@property BOOL requiresPIN;
 @property BOOL validPassword;
 @property(retain) NSString * password;
 @property unsigned int features;
@@ -44,25 +48,25 @@
 + (void)endNetworkAssertion;
 + (BOOL)canDisplayMedia:(id)arg1;
 
-- (BOOL)requiresPassword;
-- (void)netService:(id)arg1 didNotResolve:(id)arg2;
-- (void)netServiceDidResolveAddress:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
-- (void)setRate:(float)arg1;
-- (void)setPassword:(id)arg1;
 - (BOOL)isAvailable;
-- (void)validate;
-- (id)deviceID;
-- (id)password;
+- (void)setPassword:(id)arg1;
+- (void)setRate:(float)arg1;
 - (id)name;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)password;
 - (id)dataSource;
 - (void)setDataSource:(id)arg1;
+- (id)deviceID;
+- (void)validate;
+- (BOOL)requiresPassword;
 - (void)setFeatures:(unsigned int)arg1;
 - (unsigned int)features;
 - (BOOL)streamingLocalSlideShow;
+- (void)setRequiresPIN:(BOOL)arg1;
+- (BOOL)requiresPIN;
 - (void)setRequiresPassword:(BOOL)arg1;
 - (id)remoteSlideshowAvailableFeatures;
 - (void)setIpAddress:(id)arg1;
@@ -74,16 +78,15 @@
 - (void)_streamPhotosAdjacentToPhoto:(id)arg1 withTransition:(id)arg2;
 - (id)_fixLegacyEvent:(id)arg1;
 - (void)_streamPhoto:(id)arg1 withTransition:(id)arg2 andAction:(id)arg3;
-- (void)stopRemoteSlideshow;
 - (BOOL)_streaming;
+- (void)stopRemoteSlideshow;
 - (BOOL)_allowsPhotoCaching;
 - (void)_reallySendPhotoData:(id)arg1 forPhotoWithUUID:(id)arg2 withTransition:(id)arg3 andAction:(id)arg4;
-- (void)_invalidatePassword;
 - (BOOL)_supportsPhotoCaching;
 - (BOOL)validPassword;
-- (void)_validateWithCompletionBlock:(id)arg1;
-- (void*)_keychainAccessibility;
+- (void)_validateForBadPassword:(BOOL)arg1 completionBlock:(id)arg2;
 - (void)setValidPassword:(BOOL)arg1;
+- (void*)_keychainAccessibility;
 - (void)_resolveWithTimeout:(double)arg1;
 - (void)_cancelResolve;
 - (id)netService;
@@ -101,5 +104,8 @@
 - (id)remoteLocalizationForSlideshowThemeKey:(id)arg1;
 - (id)supportedRemoteSlideshowThemes;
 - (BOOL)supportsRemoteSlideshow;
+- (void)invalidatePhotoCache;
+- (void)netService:(id)arg1 didNotResolve:(id)arg2;
+- (void)netServiceDidResolveAddress:(id)arg1;
 
 @end

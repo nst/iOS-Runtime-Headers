@@ -7,8 +7,5 @@
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)_shouldUseKeyWindowStack;
-- (BOOL)_shouldUseNextFirstResponder;
-- (BOOL)_shouldUseDefaultFirstResponder;
 
 @end

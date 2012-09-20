@@ -24,27 +24,27 @@
 @property BOOL displayIsPicked;
 @property int displayRouteType;
 
-+ (id)wirelessDisplayRouteForRoute:(id)arg1;
 + (id)videoRouteForRoute:(id)arg1;
 + (id)_availableRoutesFromAudioDeviceController:(id)arg1 forType:(unsigned int)arg2;
++ (id)wirelessDisplayRouteForRoute:(id)arg1;
 + (BOOL)availableRoutesExistForType:(unsigned int)arg1;
 + (id)_audioDeviceController;
 + (id)availableRoutesForType:(unsigned int)arg1;
 
-- (BOOL)requiresPassword;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
 - (int)displayRouteType;
 - (BOOL)displayIsPicked;
 - (void)setDisplayRouteType:(int)arg1;
 - (void)setDisplayIsPicked:(BOOL)arg1;
 - (void)setIsPicked:(BOOL)arg1;
-- (id)initWithName:(id)arg1 routeType:(int)arg2 routeUID:(id)arg3 routeIndex:(unsigned int)arg4 requiresPassword:(BOOL)arg5;
+- (id)_initWithName:(id)arg1 routeType:(int)arg2 routeUID:(id)arg3 routeIndex:(unsigned int)arg4 requiresPassword:(BOOL)arg5;
 - (id)routeUID;
 - (unsigned int)routeIndex;
 - (int)routeType;
 - (BOOL)isPicked;
 - (id)name;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)requiresPassword;
 
 @end

@@ -15,7 +15,6 @@
 @property(retain) NSString * currentAudioRoute;
 
 
-- (void)dealloc;
 - (void)pickRouteAtIndex:(unsigned int)arg1;
 - (void)restorePickedRoute;
 - (BOOL)pickHandsetRoute;
@@ -32,19 +31,21 @@
 - (BOOL)_routeIsHandset:(id)arg1;
 - (id)_pickableRoutes;
 - (id)routeNameAtIndex:(unsigned int)arg1 isPicked:(BOOL*)arg2;
-- (void)clearCachedRoutes;
 - (void)_registerForAVControllerNotifications;
 - (BOOL)routeOtherThanHandsetIsAvailable;
+- (void)clearCachedRoutes;
 - (void)setAVController:(id)arg1;
-- (BOOL)pickRouteWithUID:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (BOOL)isUsingBlueToothLEA;
 - (BOOL)isAirPlayMirroring;
-- (BOOL)audioCategoryIsTTY;
+- (BOOL)pickRouteWithUID:(id)arg1;
+- (void)_pickableRoutesChanged;
+- (void)invalidateAVController;
+- (void)setCurrentAudioRoute:(id)arg1;
 - (BOOL)_routeIsAirTunes:(id)arg1;
 - (id)currentAudioRoute;
-- (void)setCurrentAudioRoute:(id)arg1;
-- (void)invalidateAVController;
-- (void)_pickableRoutesChanged;
+- (BOOL)audioCategoryIsTTY;
 - (BOOL)auxiliaryAudioRoutesAvailable;
-- (void)setDelegate:(id)arg1;
 
 @end

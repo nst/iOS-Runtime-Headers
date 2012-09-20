@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@class NSString, UIView;
 
 @interface UIKBBackgroundView : UIView <UIKBCacheableView> {
     int _visualStyle;
@@ -17,7 +17,7 @@
             float width; 
             float height; 
         } size; 
-    } _splitLeft;
+    } _splitLeftRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -27,14 +27,41 @@
             float width; 
             float height; 
         } size; 
-    } _splitRight;
+    } _splitLeftCacheRect;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _splitRightRect;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _splitRightCacheRect;
+    int _topCorners;
+    UIView *_splitLeft;
+    UIView *_splitRight;
+    BOOL _isSplit;
+    BOOL _centerFilled;
 }
 
 @property(readonly) BOOL cacheDeferable;
+@property(readonly) float cachedWidth;
 
 
 - (void)dealloc;
 - (void)refreshStyleForKeyboard:(id)arg1;
+- (float)cachedWidth;
 - (BOOL)cacheDeferable;
 - (id)cacheKey;
 - (void)displayLayer:(id)arg1;

@@ -9,10 +9,10 @@
 }
 
 
+- (void)dealloc;
 - (void)_openConnection;
 - (Class)deliveryClass;
-- (id)newMessageWriter;
 - (int)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
-- (void)dealloc;
+- (id)newMessageWriter;
 
 @end

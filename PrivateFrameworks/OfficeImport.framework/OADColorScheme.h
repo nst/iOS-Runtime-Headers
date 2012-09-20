@@ -10,12 +10,12 @@
 
 
 - (BOOL)isEqual:(id)arg1;
-- (id)init;
 - (void)dealloc;
-- (void)setColor:(id)arg1 index:(int)arg2;
+- (id)init;
 - (void)addDefaultColors;
-- (unsigned int)colorCount;
-- (id)colorForIndex:(int)arg1;
+- (void)setColor:(id)arg1 index:(int)arg2;
 - (void)addColor:(id)arg1 index:(int)arg2;
+- (id)colorForIndex:(int)arg1;
+- (unsigned int)colorCount;
 
 @end

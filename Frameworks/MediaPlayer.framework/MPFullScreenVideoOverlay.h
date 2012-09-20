@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPVideoOverlayDelegate>, MPCenteringNavigationBar, UINavigationButton, MPAVItem, UILabel, MPAVController, MPTransportControls, UIView, MPNowPlayingItemQueueInfoButton, MPVideoViewController, UINavigationBar, MPDetailSlider, UIImageView, UINavigationItem;
+@class <MPVideoOverlayDelegate>, MPCenteringNavigationBar, <MPVideoControllerProtocol>, MPAVItem, UINavigationButton, UILabel, MPAVController, MPTransportControls, UIView, MPNowPlayingItemQueueInfoButton, UINavigationBar, MPDetailSlider, UIImageView, UINavigationItem;
 
 @interface MPFullScreenVideoOverlay : MPSwipableView <MPDetailSliderDelegate, MPNowPlayingItemQueueInfoButtonDelegate, MPVideoOverlay> {
-    MPVideoViewController *_videoViewController;
+    <MPVideoControllerProtocol> *_videoViewController;
     <MPVideoOverlayDelegate> *_delegate;
     MPAVController *_player;
     MPAVItem *_item;
@@ -22,9 +22,9 @@
     MPDetailSlider *_scrubControl;
     UILabel *_scrubSpeedLabel;
     UILabel *_scrubInstructionsLabel;
-    unsigned int _desiredParts;
-    unsigned int _disabledParts;
-    unsigned int _visibleParts;
+    unsigned long long _desiredParts;
+    unsigned long long _disabledParts;
+    unsigned long long _visibleParts;
     unsigned int _tvOutEnabled : 1;
     unsigned int _wantsTick : 1;
     unsigned int _allowsDetailScrubbing : 1;
@@ -35,18 +35,21 @@
 @property(readonly) MPTransportControls * transportControls;
 @property BOOL TVOutEnabled;
 @property BOOL allowsDetailScrubbing;
-@property MPVideoViewController * videoViewController;
+@property <MPVideoControllerProtocol> * videoViewController;
 @property BOOL allowsWirelessPlayback;
 @property(retain) MPAVItem * item;
 @property int interfaceOrientation;
-@property unsigned int desiredParts;
-@property unsigned int visibleParts;
-@property unsigned int disabledParts;
+@property unsigned long long desiredParts;
+@property unsigned long long visibleParts;
+@property unsigned long long disabledParts;
 @property(retain) MPAVController * player;
 @property <MPVideoOverlayDelegate> * delegate;
 
 
-- (void)dealloc;
+- (void)setPlayer:(id)arg1;
+- (id)player;
+- (BOOL)TVOutEnabled;
+- (void)setItem:(id)arg1;
 - (id)_newStreamingTitleViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)videoViewController;
 - (int)nowPlayingItemQueueInfoButton:(id)arg1 willDisplayInfoType:(int)arg2;
@@ -64,61 +67,61 @@
 - (id)_newTitleViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 text:(id)arg2 showSpinner:(BOOL)arg3;
 - (void)_hideScrubInstructions;
 - (void)_showScrubInstructions;
-- (unsigned int)_visiblePartsForTransportControlsWithParts:(unsigned int)arg1;
-- (void)_reloadNavigationBarWithAnimation:(BOOL)arg1;
 - (BOOL)_updateTitleViewItemVisibility;
 - (void)_initNavigationBarBackground;
+- (void)_reloadNavigationBarWithAnimation:(BOOL)arg1;
 - (void)_initNavigationBar;
 - (BOOL)updateTimeBasedValues;
-- (void)_scaleModeDidChangeNotification:(id)arg1;
-- (void)_statusBarHeightChanged:(id)arg1;
 - (void)_bufferingStateDidChange:(id)arg1;
-- (unsigned int)_desiredPartsForTransportControlsWithParts:(unsigned int)arg1;
+- (void)_statusBarHeightChanged:(id)arg1;
+- (void)_didChangeStatusBarOrientation:(id)arg1;
+- (unsigned long long)_visiblePartsForTransportControlsWithParts:(unsigned long long)arg1;
 - (void)_configureLinkButtonForCurrentItemTime;
 - (void)_reloadTransportControls:(BOOL)arg1;
 - (void)showAlternateTracks;
 - (void)hideAlternateTracks;
+- (void)unregisterForPlayerNotifications;
+- (void)registerForPlayerNotifications;
 - (void)restoreSanity;
 - (id)transportControls;
-- (unsigned int)disabledParts;
-- (unsigned int)desiredParts;
+- (unsigned long long)disabledParts;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 interfaceOrientation:(int)arg2;
 - (BOOL)allowsDetailScrubbing;
 - (id)viewsToFadeOutWhenShowingBackside;
 - (void)stopTicking;
 - (void)startTicking;
 - (void)setVideoViewController:(id)arg1;
-- (void)crossedURLTimeMarker:(id)arg1;
-- (void)setDisabledParts:(unsigned int)arg1;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
-- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (void)setDesiredParts:(unsigned int)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)_tickNotification:(id)arg1;
 - (void)_validityChangedNotification:(id)arg1;
+- (void)setDisabledParts:(unsigned long long)arg1;
+- (void)_videoViewScaleModeDidChangeNotification:(id)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1;
+- (unsigned long long)desiredParts;
+- (unsigned long long)visibleParts;
 - (BOOL)allowsWirelessPlayback;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
-- (void)setVisibleParts:(unsigned int)arg1;
-- (unsigned int)visibleParts;
 - (void)_timeDidJumpNotification:(id)arg1;
+- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
-- (id)player;
-- (void)setPlayer:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (id)item;
 - (void)setInterfaceOrientation:(int)arg1;
 - (id)navigationBar;
 - (void)didMoveToSuperview;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (int)interfaceOrientation;
-- (id)delegate;
 - (void)layoutSubviews;
 - (void)didMoveToWindow;
 - (void)setAlpha:(float)arg1;
 - (void)setHidden:(BOOL)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)TVOutEnabled;
-- (void)setItem:(id)arg1;
 
 @end

@@ -24,16 +24,16 @@
 @property float topMargin;
 
 
-- (id)init;
-- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })toFrame;
 - (id)_subtypeForTransitionType:(unsigned int)arg1;
 - (void)setFromView:(id)arg1;
 - (void)setToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)performTransition:(unsigned int)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)fromView;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (float)topMargin;
 - (void)setTopMargin:(float)arg1;
+- (float)topMargin;
 
 @end

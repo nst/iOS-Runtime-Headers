@@ -14,9 +14,9 @@
 
 + (Class)queueFeederClass;
 
-- (id)init;
 - (void)setShuffleType:(unsigned int)arg1;
 - (unsigned int)shuffleType;
+- (id)init;
 - (void)setPreservePlaybackState:(BOOL)arg1;
 - (BOOL)preservePlaybackState;
 - (BOOL)restartPlaybackOnly;

@@ -12,10 +12,10 @@
 
 + (void)initialize;
 
+- (void)dealloc;
 - (id)languageMap;
 - (id)dominantScript;
 - (unsigned int)orthographyFlags;
 - (id)initWithDominantScript:(id)arg1 languageMap:(id)arg2;
-- (void)dealloc;
 
 @end

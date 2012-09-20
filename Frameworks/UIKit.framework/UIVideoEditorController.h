@@ -17,7 +17,7 @@
 @property <UINavigationControllerDelegate><UIVideoEditorControllerDelegate> * delegate;
 @property(copy) NSString * videoPath;
 @property double videoMaximumDuration;
-@property unsigned int videoQuality;
+@property int videoQuality;
 
 + (BOOL)canEditVideoAtPath:(id)arg1;
 
@@ -29,9 +29,10 @@
 - (void)editVideoViewControllerDidCancel:(id)arg1;
 - (void)_setupControllers;
 - (BOOL)_didRevertStatusBar;
+- (id)_properties;
 - (void)_setProperties:(id)arg1;
-- (void)setVideoQuality:(unsigned int)arg1;
-- (unsigned int)videoQuality;
+- (void)setVideoQuality:(int)arg1;
+- (int)videoQuality;
 - (void)setVideoMaximumDuration:(double)arg1;
 - (double)videoMaximumDuration;
 - (void)_autoDismiss;
@@ -40,7 +41,6 @@
 - (void)_initializeProperties;
 - (void)_setValue:(id)arg1 forProperty:(id)arg2;
 - (id)_valueForProperty:(id)arg1;
-- (id)_properties;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

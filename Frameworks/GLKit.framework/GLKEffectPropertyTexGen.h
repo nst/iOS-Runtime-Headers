@@ -27,11 +27,6 @@
 @property unsigned int textureIndex;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)bind;
-- (int)mode;
-- (void)setMode:(int)arg1;
 - (unsigned int)textureIndex;
 - (void)setEyePlaneByInvModelviewLoc:(int)arg1;
 - (int)eyePlaneByInvModelviewLoc;
@@ -49,15 +44,14 @@
 - (void)setModeNameString:(char *)arg1;
 - (void)setModeLoc:(int)arg1;
 - (int)modeLoc;
-- (char **)fshMaskStr;
-- (char **)vshMaskStr;
-- (unsigned int)fshMaskCt;
-- (unsigned int)vshMaskCt;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)fshMasks;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)vshMasks;
-- (void)initializeMasks;
 - (void)setShaderBindings;
+- (void)initializeMasks;
 - (void)setTextureIndex:(unsigned int)arg1;
 - (void)dirtyAllUniforms;
+- (void)dealloc;
+- (id)init;
+- (int)mode;
+- (void)setMode:(int)arg1;
+- (void)bind;
 
 @end

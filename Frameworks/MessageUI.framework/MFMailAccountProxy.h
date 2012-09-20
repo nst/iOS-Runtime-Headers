@@ -2,33 +2,40 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSDictionary;
+@class NSArray, NSString, NSDictionary;
 
 @interface MFMailAccountProxy : NSObject  {
     NSDictionary *_properties;
 }
 
-+ (void)reloadAccounts;
-+ (id)mailAccounts;
-+ (id)activeAccounts;
-+ (id)accountContainingEmailAddress:(id)arg1 includingInactive:(BOOL)arg2;
-+ (id)defaultMailAccountForDelivery;
+@property(readonly) NSString * fullUserName;
+@property(readonly) NSString * username;
+@property(readonly) NSString * firstEmailAddress;
+@property(readonly) NSArray * emailAddresses;
+@property(readonly) NSArray * fromEmailAddresses;
+@property(readonly) NSArray * fromEmailAddressesIncludingDisabled;
+@property(readonly) NSString * uniqueID;
+@property(readonly) BOOL isDefaultDeliveryAccount;
+@property(readonly) BOOL supportsSoftBankCodePoints;
+@property(readonly) BOOL restrictsRepliesAndForwards;
+@property(readonly) id mailAccount;
 
-- (id)fromEmailAddresses;
-- (id)fullUserName;
-- (id)firstEmailAddress;
-- (void)dealloc;
-- (id)username;
+
 - (id)emailAddresses;
-- (id)uniqueID;
-- (id)_initWithProperties:(id)arg1;
-- (BOOL)_isActive;
-- (BOOL)isDefaultDeliveryAccount;
-- (id)_emailAddressesAndAliases;
-- (BOOL)allowsEmoji;
-- (BOOL)supportsEmoji;
-- (BOOL)restrictsRepliesAndForwards;
-- (id)mailAccount;
+- (id)username;
 - (BOOL)_isRestricted;
+- (void)dealloc;
+- (BOOL)_isActive;
+- (id)_emailAddressesAndAliases;
+- (BOOL)isDefaultDeliveryAccount;
+- (id)_initWithProperties:(id)arg1;
+- (id)mailAccount;
+- (BOOL)restrictsRepliesAndForwards;
+- (BOOL)supportsSoftBankCodePoints;
+- (id)fromEmailAddresses;
+- (id)firstEmailAddress;
+- (id)fromEmailAddressesIncludingDisabled;
+- (id)fullUserName;
+- (id)uniqueID;
 
 @end

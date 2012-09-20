@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIToolbar, NSArray, UINavigationItem, UIBarButtonItem;
+@class UIBarButtonItem, UINavigationItem, UIToolbar;
 
 @interface PLPhotoScrollerViewController : PLPhotoBrowserController <PLAlbumChangeObserver> {
     UINavigationItem *_navItem;
     UIBarButtonItem *_doneItem;
-    NSArray *_items;
     int _previousInterfaceOrientation;
     unsigned int _modalSheetIsPresent : 1;
     unsigned int _dontChangeStatusBar : 1;
@@ -21,11 +20,6 @@
 
 
 - (void)dealloc;
-- (void)_updateToolbar:(BOOL)arg1;
-- (id)initWithItems:(id)arg1 startingIndex:(int)arg2;
-- (unsigned int)visibleItemIndex;
-- (id)itemAtIndex:(unsigned int)arg1;
-- (id)initWithItems:(id)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
@@ -35,26 +29,30 @@
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)navigationItem;
+- (void)viewWillLayoutSubviews;
 - (void)willPresentActionSheet:(id)arg1;
 - (id)doneItem;
 - (void)setDoneItem:(id)arg1;
+- (unsigned int)visibleItemIndex;
 - (BOOL)dontChangeStatusBar;
 - (void)setDontChangeStatusBar:(BOOL)arg1;
+- (id)_initWithAlbum:(struct NSObject { Class x1; }*)arg1 lockStatusBar:(BOOL)arg2 currentImageIndex:(int)arg3 delayImageLoading:(BOOL)arg4;
 - (void)_forceRotationToPortaitIfNecessary;
 - (void)setToolbarHidden:(BOOL)arg1 withDuration:(double)arg2;
 - (void)_setupButtonBar;
 - (id)_currentToolbarItems;
-- (BOOL)_visibleItemAllowsRotation;
 - (id)buttonBar;
+- (void)_updateCommentsButtonFrameForUIOrientation:(int)arg1;
 - (void)setButtonBar:(id)arg1;
-- (id)_initWithAlbum:(struct NSObject { Class x1; }*)arg1 lockStatusBar:(BOOL)arg2 currentImageIndex:(int)arg3 delayImageLoading:(BOOL)arg4;
-- (void)addAirTunesButton;
 - (void)updateAirTunesButton;
+- (void)addAirTunesButton;
 - (void)removeAirTunesButton;
 - (id)airTunesButton;
+- (void)removeRemakerContainerView;
 - (void)startSettingWallpaper;
 - (void)updateNavigationItemTitle;
 - (void)didMoveToPhotoAtIndex:(unsigned int)arg1;
 - (id)remakerContainerView;
+- (void)_updateToolbar:(BOOL)arg1;
 
 @end

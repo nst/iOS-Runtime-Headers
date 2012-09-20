@@ -8,18 +8,19 @@
     NSLocale *loc;
 }
 
++ (BOOL)supportsSecureCoding;
 
 - (id)description;
 - (id)objectForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (id)_prefs;
-- (id)displayNameForKey:(id)arg1 value:(id)arg2;
+- (id)init;
 - (void)_update:(id)arg1;
-- (Class)classForCoder;
 - (id)initWithLocaleIdentifier:(id)arg1;
+- (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)displayNameForKey:(id)arg1 value:(id)arg2;
+- (id)_prefs;
 
 @end

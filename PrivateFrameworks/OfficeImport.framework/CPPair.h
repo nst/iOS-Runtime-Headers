@@ -11,20 +11,20 @@
     BOOL m_secondIsWrapped;
 }
 
-+ (id)pairWithFirstPointer:(id)arg1 andSecond:(id)arg2;
-+ (id)pairWithFirst:(id)arg1 andSecondPointer:(id)arg2;
 + (id)pairWithFirstPointer:(id)arg1 andSecondPointer:(id)arg2;
++ (id)pairWithFirst:(id)arg1 andSecondPointer:(id)arg2;
++ (id)pairWithFirstPointer:(id)arg1 andSecond:(id)arg2;
 + (id)pairWithFirst:(id)arg1 andSecond:(id)arg2;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)second;
-- (id)initWithFirstPointer:(id)arg1 andSecond:(id)arg2;
-- (id)initWithFirst:(id)arg1 andSecondPointer:(id)arg2;
 - (id)initWithFirstPointer:(id)arg1 andSecondPointer:(id)arg2;
-- (id)initWithFirst:(id)arg1 andSecond:(id)arg2;
+- (id)initWithFirst:(id)arg1 andSecondPointer:(id)arg2;
+- (id)initWithFirstPointer:(id)arg1 andSecond:(id)arg2;
 - (id)first;
+- (id)initWithFirst:(id)arg1 andSecond:(id)arg2;
 
 @end

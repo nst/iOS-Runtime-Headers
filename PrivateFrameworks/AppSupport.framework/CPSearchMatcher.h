@@ -5,20 +5,23 @@
 @class NSData, NSArray;
 
 @interface CPSearchMatcher : NSObject  {
+    int _options;
     NSArray *_components;
+    NSArray *_asciiComponents;
     NSData *_wholeSearchStringData;
     NSData *_context;
 }
 
 
-- (id)initWithSearchString:(id)arg1;
-- (BOOL)matchesUTF8String:(const char *)arg1;
-- (BOOL)matches:(id)arg1;
 - (void)dealloc;
-- (BOOL)matches:(id)arg1 matchType:(int)arg2;
+- (BOOL)matchesUTF8String:(const char *)arg1;
+- (id)initWithSearchString:(id)arg1;
 - (id)initWithSearchString:(id)arg1 andLocale:(id)arg2;
-- (id)initWithSearchString:(id)arg1 options:(int)arg2;
-- (BOOL)matchesUTF8String:(const char *)arg1 matchType:(int)arg2;
+- (BOOL)matches:(id)arg1 matchType:(int)arg2;
 - (id)initWithSearchString:(id)arg1 andLocale:(id)arg2 andOptions:(int)arg3;
+- (BOOL)matchesASCIIString:(const char *)arg1 matchType:(int)arg2;
+- (BOOL)matchesUTF8String:(const char *)arg1 matchType:(int)arg2;
+- (id)initWithSearchString:(id)arg1 options:(int)arg2;
+- (BOOL)matches:(id)arg1;
 
 @end

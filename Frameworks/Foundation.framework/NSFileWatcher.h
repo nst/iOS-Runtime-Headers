@@ -6,10 +6,10 @@
    See Warning(s) below.
  */
 
-@class NSURL, NSMutableDictionary, NSFileWatcherObservations;
+@class NSMutableDictionary, NSString, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>, NSFileWatcherObservations, NSURL;
 
 @interface NSFileWatcher : NSObject  {
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
     NSURL *_url;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -17,22 +17,28 @@
     id _observer;
 
     BOOL _isWatching;
-    struct dispatch_source_s { } *_eventSource;
+    NSObject<OS_dispatch_source> *_eventSource;
+    unsigned long long _lastObservedEventID;
     struct __FSEventStream { } *_eventStream;
+    BOOL _eventsAreAboutDirectory;
     BOOL _isUnsettled;
     NSFileWatcherObservations *_itemObservations;
     NSMutableDictionary *_subitemObservationsByEventPath;
+    NSURL *_fileReferenceURL;
+    NSString *_formerPath;
     NSURL *_formerURL;
 }
 
 
+- (void)dealloc;
+- (void)stop;
+- (void)setURL:(id)arg1;
+- (void)unsettle;
 - (void)handleFSEventPath:(id)arg1 flags:(unsigned long)arg2 id:(unsigned long long)arg3;
 - (void)watchItem;
 - (void)startWithObserver:(id)arg1;
 - (void)settle;
-- (id)initWithQueue:(struct dispatch_queue_s { }*)arg1;
-- (void)dealloc;
-- (void)stop;
-- (void)setURL:(id)arg1;
+- (void)setLastObservedEventID:(unsigned long long)arg1;
+- (id)initWithQueue:(id)arg1;
 
 @end

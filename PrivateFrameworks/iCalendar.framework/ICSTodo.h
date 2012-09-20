@@ -45,11 +45,11 @@
 
 - (void)setPercentComplete:(int)arg1;
 - (int)percentComplete;
-- (void)setX_apple_sort_order:(unsigned int)arg1;
-- (unsigned int)x_apple_sort_order;
 - (void)fixComponent;
+- (void)setX_apple_sort_order:(unsigned int)arg1;
 - (void)setDue:(id)arg1;
 - (void)setX_apple_activity:(id)arg1;
+- (unsigned int)x_apple_sort_order;
 - (id)x_apple_activity;
 - (void)setCompleted:(id)arg1;
 - (BOOL)validate:(id*)arg1;

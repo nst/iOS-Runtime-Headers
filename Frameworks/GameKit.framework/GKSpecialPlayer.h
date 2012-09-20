@@ -6,15 +6,15 @@
 }
 
 
+- (id)sortName;
+- (id)displayNameWithIdentifiableName:(BOOL)arg1 quoteAlias:(BOOL)arg2;
+- (void)loadProfilePieces:(unsigned int)arg1 withCompletionHandler:(id)arg2;
+- (struct { int x1; int x2; int x3; int x4; int x5; int x6; })stats;
+- (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1 withFont:(id)arg2;
+- (id)alias;
+- (BOOL)isFriend;
 - (id)managedObjectContext;
 - (oneway void)release;
 - (id)autorelease;
-- (id)sortName;
-- (void)loadProfilePieces:(unsigned int)arg1 withCompletionHandler:(id)arg2;
-- (struct { int x1; int x2; int x3; int x4; int x5; int x6; })stats;
-- (id)displayNameWithIdentifiableName:(BOOL)arg1 quoteAlias:(BOOL)arg2;
-- (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1;
-- (BOOL)isFriend;
-- (id)alias;
 
 @end

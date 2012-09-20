@@ -9,11 +9,11 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
-- (id)initWithMaximumCapacity:(int)arg1;
 - (void)removeAllCachedImages;
 - (id)imageForURL:(id)arg1 dataProvider:(id)arg2;
 - (void)addImage:(id)arg1 forURL:(id)arg2 dataProvider:(id)arg3;
+- (void)dealloc;
+- (id)init;
+- (id)initWithMaximumCapacity:(int)arg1;
 
 @end

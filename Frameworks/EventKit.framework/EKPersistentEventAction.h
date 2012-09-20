@@ -16,18 +16,18 @@
 
 + (id)relations;
 
-- (void)setExternalID:(id)arg1;
+- (void)setOwner:(id)arg1;
 - (id)externalID;
+- (void)setExternalID:(id)arg1;
+- (id)owner;
+- (void)setExternalData:(id)arg1;
+- (id)externalData;
+- (void)setExternalModTag:(id)arg1;
 - (id)externalModTag;
 - (void)setExternalScheduleID:(id)arg1;
 - (id)externalScheduleID;
 - (void)setExternalFolderID:(id)arg1;
 - (id)externalFolderID;
-- (void)setExternalModTag:(id)arg1;
 - (int)entityType;
-- (void)setOwner:(id)arg1;
-- (id)owner;
-- (id)externalData;
-- (void)setExternalData:(id)arg1;
 
 @end

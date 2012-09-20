@@ -44,22 +44,23 @@
      /* Encoded args for previous method: ^{__DDScanner={__CFRuntimeBase=I[4C]}^{__DDLRTable}^{__DDLexer}^{__DDLookupTable}^{__DDCache}^{__DDTokenCache}^{__DDLexemCache}^{__DDScanQuery}^{__DDScanQuery}^{__CFArray}^{__CFArray}iii*@?b1b1}12@0:4I8 */
 
 
-- (void)setGenerationNumber:(int)arg1;
-- (int)generationNumber;
 - (void)main;
-- (void)cancel;
 - (id)results;
 - (void)setResults:(id)arg1;
-- (id)init;
+- (void)cancel;
 - (void)dealloc;
-- (void)setStartOffset:(int)arg1;
+- (id)init;
 - (void)cleanup;
 - (int)endOffset;
 - (int)startOffset;
-- (id)context;
 - (void)setContext:(id)arg1;
+- (id)context;
 - (void)setFrame:(id)arg1;
 - (id)frame;
+- (void)setGenerationNumber:(int)arg1;
+- (int)generationNumber;
+- (void)setEndOffset:(int)arg1;
+- (void)setStartOffset:(int)arg1;
 - (void)setNeedContinuation:(BOOL)arg1;
 - (struct __DDScanQuery { }*)scanQuery;
 - (void)setIsDiscarded:(BOOL)arg1;
@@ -67,7 +68,6 @@
 - (void)setEndNode:(id)arg1;
 - (void)setStartNode:(id)arg1;
 - (id)startNode;
-- (void)setEndOffset:(int)arg1;
 - (id)endNode;
 - (BOOL)needContinuation;
 - (BOOL)_doURLificationOnDocument;

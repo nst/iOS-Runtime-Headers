@@ -13,15 +13,16 @@
 
 + (id)playlistControllerWithSeedTracks:(id)arg1 error:(id*)arg2;
 + (BOOL)populateContainer:(id)arg1 withSeedTrack:(id)arg2 error:(id*)arg3;
-+ (BOOL)hasGeniusFeatureEnabled;
 + (void)ignoreUnusedWarnings;
 + (BOOL)useFakeGeniusData;
 + (unsigned int)defaultTrackCount;
 + (unsigned int)defaultMinTrackCount;
++ (BOOL)hasGeniusFeatureEnabled;
 + (BOOL)hasGeniusDataAvailable;
 
-- (id)init;
+- (void).cxx_destruct;
 - (void)dealloc;
+- (id)init;
 - (id)tracksFromClusterForCount:(unsigned int)arg1 error:(id*)arg2;
 - (id)_sharedBlobMutableData;
 - (id)_tracksFromClusterForPlaylistItemMax:(unsigned int)arg1 error:(id*)arg2;

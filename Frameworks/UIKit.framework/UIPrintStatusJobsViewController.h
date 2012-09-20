@@ -11,8 +11,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)handleJobListDidChange;
 - (void)pushSingleJobAnimated:(BOOL)arg1;
 - (void)updateJobInfo:(id)arg1;
@@ -26,9 +26,9 @@
 - (void)loadView;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

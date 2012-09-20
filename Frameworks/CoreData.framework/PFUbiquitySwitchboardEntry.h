@@ -2,37 +2,54 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSURL, NSMutableDictionary, NSString, _PFUbiquityRecordsImporter, _PFUbiquityRecordsExporter;
+@class _PFUbiquityRecordsExporter, _PFUbiquityRecordsImporter, NSRecursiveLock, PFUbiquityLocation, NSString, PFUbiquityFilePresenter, NSMutableDictionary, NSDictionary;
 
 @interface PFUbiquitySwitchboardEntry : NSObject  {
     _PFUbiquityRecordsImporter *_importer;
     _PFUbiquityRecordsExporter *_exporter;
     NSString *_localPeerID;
-    NSURL *_ubiquityRootURL;
+    PFUbiquityLocation *_ubiquityRootLocation;
+    PFUbiquityFilePresenter *_fp;
     unsigned int _activeStoreCount;
+    NSMutableDictionary *_storeNameToStores;
+    NSMutableDictionary *_storeNameToModelVersionHash;
+    NSMutableDictionary *_storeNameToImporterPSC;
     NSMutableDictionary *_registeredCoordinators;
+    NSMutableDictionary *_storeNameToCacheWrapper;
+    NSRecursiveLock *_storeNameToCacheWrapperLock;
 }
 
-@property(readonly) _PFUbiquityRecordsExporter * exporter;
-@property(readonly) _PFUbiquityRecordsImporter * importer;
-@property(readonly) NSURL * ubiquityRootURL;
-@property(readonly) NSString * localPeerID;
 @property unsigned int activeStoreCount;
+@property(readonly) _PFUbiquityRecordsImporter * importer;
+@property(readonly) _PFUbiquityRecordsExporter * exporter;
+@property(readonly) NSString * localPeerID;
+@property(readonly) NSDictionary * storeNameToStores;
+@property(readonly) NSDictionary * storeNameToModelVersionHash;
+@property(readonly) NSDictionary * storeNameToImporterPSC;
+@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
+@property(readonly) PFUbiquityFilePresenter * filePresenter;
 
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (unsigned int)activeStoreCount;
+- (id)init;
 - (void)setActiveStoreCount:(unsigned int)arg1;
 - (id)exporter;
-- (void)registerPersistentStoreCoordinator:(id)arg1 forPersistentStoreWithName:(id)arg2;
+- (void)entryWillBeRemovedFromSwitchboard;
+- (unsigned int)activeStoreCount;
 - (void)unregisterPersistentStoreCoordinator:(id)arg1;
-- (id)createSetOfActiveStoreNames;
+- (void)registerPersistentStore:(id)arg1 withStoreName:(id)arg2;
+- (id)filePresenter;
 - (id)createSetOfPersistentStoreCoordinatorsRegisteredForStoreName:(id)arg1;
+- (id)storeNameToStores;
+- (id)storeNameToModelVersionHash;
+- (id)createSetOfActiveStoreNames;
 - (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
-- (id)localPeerID;
 - (id)importer;
-- (id)ubiquityRootURL;
+- (id)cacheWrapperForStoreName:(id)arg1;
+- (id)storeNameToImporterPSC;
+- (id)ubiquityRootLocation;
+- (id)localPeerID;
+- (void)unregisterPersistentStore:(id)arg1;
 
 @end

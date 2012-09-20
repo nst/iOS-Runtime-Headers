@@ -14,12 +14,12 @@
 
 + (id)defaultSeparatorImage;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)setSeparatorImage:(id)arg1;
 - (id)separatorImage;
-- (void)setShowSeparator:(BOOL)arg1;
-- (BOOL)showSeparator;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
+- (BOOL)showSeparator;
+- (void)setShowSeparator:(BOOL)arg1;
 
 @end

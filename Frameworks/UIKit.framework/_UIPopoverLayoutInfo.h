@@ -55,6 +55,7 @@
     float _offset;
     unsigned int _arrowDirection;
     BOOL _updatesEnabled;
+    BOOL _preferLandscapeOrientations;
 }
 
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
@@ -65,6 +66,7 @@
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } containingFrameInsets;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetRect;
 @property BOOL constrainToTargetRect;
+@property BOOL preferLandscapeOrientations;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
 @property(readonly) float offset;
 @property(readonly) unsigned int arrowDirection;
@@ -74,17 +76,19 @@
 
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)_updatesEnabled;
 - (float)arrowHeight;
 - (struct CGSize { float x1; float x2; })_popoverViewSizeForContentSize:(struct CGSize { float x1; float x2; })arg1 arrowDirection:(unsigned int)arg2;
+- (BOOL)preferLandscapeOrientations;
 - (BOOL)constrainToTargetRect;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })containingFrameInsets;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containingFrame;
 - (unsigned int)preferredArrowDirections;
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)_updateOutputs;
+- (void)setPreferLandscapeOrientations:(BOOL)arg1;
 - (void)setConstrainToTargetRect:(BOOL)arg1;
 - (void)setContainingFrameInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setContainingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

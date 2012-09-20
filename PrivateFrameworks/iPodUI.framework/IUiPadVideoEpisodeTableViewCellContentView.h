@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIImageView, NSArray, NSString, UIView, MPButton;
+@class UIImageView, MPButton, UIButton, NSString, IUStoreOfferDownloadActionConfiguration, MPDownloadProgressIndicator, NSArray;
 
 @interface IUiPadVideoEpisodeTableViewCellContentView : IUiPadVideoPartTableViewCellContentView  {
     NSString *_expirationText;
@@ -18,9 +18,13 @@
     id _moreButtonTarget;
     SEL _moreButtonAction;
     BOOL _expanded;
+    BOOL _shouldHideMoreButton;
     int _unplayedState;
     UIImageView *_unplayedIndicator;
-    UIView *_disabledView;
+    UIButton *_downloadButton;
+    IUStoreOfferDownloadActionConfiguration *_downloadAction;
+    MPDownloadProgressIndicator *_downloadProgressIndicator;
+    int _downloadProgressIndicatorStyle;
 }
 
 @property BOOL expanded;
@@ -30,25 +34,33 @@
 @property(retain) NSString * summary;
 @property(retain) NSArray * supertitles;
 @property int unplayedState;
+@property(readonly) int downloadProgressIndicatorStyle;
+@property(retain) MPDownloadProgressIndicator * downloadProgressIndicator;
 @property BOOL expiresSoon;
 @property(retain) NSString * expirationText;
+@property(retain) IUStoreOfferDownloadActionConfiguration * downloadAction;
 
 
+- (void)setDrawAsDisabled:(BOOL)arg1;
 - (void)dealloc;
 - (void)setExpanded:(BOOL)arg1;
 - (BOOL)expanded;
+- (void)setEditing:(BOOL)arg1;
+- (void)prepareForReuse;
 - (id)title;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)summary;
 - (void)setSummary:(id)arg1;
+- (id)summary;
+- (id)downloadAction;
 - (int)unplayedState;
 - (id)expirationText;
 - (void)setExpiresSoon:(BOOL)arg1;
 - (BOOL)expiresSoon;
+- (int)downloadProgressIndicatorStyle;
 - (void)setExpirationText:(id)arg1;
 - (id)supertitles;
 - (void)setHighlightedOrSelected:(BOOL)arg1;
@@ -58,9 +70,13 @@
 - (void)setSupertitles:(id)arg1;
 - (SEL)moreButtonAction;
 - (id)moreButtonTarget;
+- (void)setDownloadAction:(id)arg1;
 - (void)setUnplayedState:(int)arg1;
 - (void)setMoreButtonTarget:(id)arg1;
 - (void)setMoreButtonAction:(SEL)arg1;
 - (void)_moreButtonSelected:(id)arg1;
+- (id)downloadProgressIndicator;
+- (void)setDownloadProgressIndicator:(id)arg1;
+- (void)_purchaseButtonPressed:(id)arg1;
 
 @end

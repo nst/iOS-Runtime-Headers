@@ -8,19 +8,19 @@
 }
 
 @property(copy) NSString * emailAddress;
-@property(retain) NSNumber * favoriteFacetime;
+@property(copy) NSNumber * favoriteFacetime;
 @property(copy) NSString * label;
 
 + (id)email;
 + (id)emailWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)emailAddress;
 - (id)groupIdentifier;
-- (void)setEmailAddress:(id)arg1;
 - (id)label;
 - (void)setLabel:(id)arg1;
-- (id)favoriteFacetime;
+- (id)emailAddress;
 - (void)setFavoriteFacetime:(id)arg1;
+- (id)favoriteFacetime;
 - (id)encodedClassName;
+- (void)setEmailAddress:(id)arg1;
 
 @end

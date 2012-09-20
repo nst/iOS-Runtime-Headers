@@ -11,8 +11,8 @@
 
 
 - (void)dealloc;
-- (struct __CFString { }*)href;
 - (id)characterStyle;
 - (int)readStyleFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (struct __CFString { }*)href;
 
 @end

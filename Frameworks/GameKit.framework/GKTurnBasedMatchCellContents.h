@@ -2,28 +2,29 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKTurnBasedMatch, NSMutableDictionary;
+@class GKTurnBasedMatch, GKTableView;
 
 @interface GKTurnBasedMatchCellContents : GKPlayerCellContentView  {
     GKTurnBasedMatch *_match;
-    NSMutableDictionary *_players;
-    int _sectionStyle;
+    unsigned int _sectionStyle;
+    GKTableView *_tableView;
 }
 
 @property(retain) GKTurnBasedMatch * match;
-@property(retain) NSMutableDictionary * players;
-@property int sectionStyle;
+@property unsigned int sectionStyle;
+@property(retain) GKTableView * tableView;
 
 + (id)turnBasedMatchCellContentWithTheme:(id)arg1;
 
-- (void)dealloc;
-- (void)setSectionStyle:(int)arg1;
-- (int)sectionStyle;
-- (void)updateLines;
-- (id)match;
+- (void)setSectionStyle:(unsigned int)arg1;
+- (unsigned int)sectionStyle;
 - (void)setMatch:(id)arg1;
-- (void)setPlayers:(id)arg1;
-- (id)players;
+- (id)match;
+- (BOOL)shouldShowPhoto;
+- (void)updateLines;
+- (void)dealloc;
+- (id)tableView;
 - (void)prepareForReuse;
+- (void)setTableView:(id)arg1;
 
 @end

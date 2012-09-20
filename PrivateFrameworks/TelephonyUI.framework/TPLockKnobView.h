@@ -9,7 +9,6 @@
     UIAlphaAnimation *_animation;
     float _centerDelta;
     BOOL _tracking;
-    BOOL _isSecondaryKnob;
 }
 
 
@@ -21,11 +20,8 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)initWithImage:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (id)initWithImage:(id)arg1 isSecondaryKnob:(BOOL)arg2;
-- (BOOL)shouldBeginTracking:(id)arg1;
-- (void)beginTracking:(id)arg1;
 - (void)setLockView:(id)arg1;
-- (BOOL)isSecondaryKnob;
-- (float)currentProgress;
+- (void)beginTracking:(id)arg1;
+- (BOOL)shouldBeginTracking:(id)arg1;
 
 @end

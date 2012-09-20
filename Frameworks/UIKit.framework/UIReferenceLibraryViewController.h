@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIView, NSString, UIWindow, UIWebView;
+@class _UIDictionaryDownloadViewController, UIView, NSString, UIWindow, UIWebView;
 
 @interface UIReferenceLibraryViewController : UIViewController  {
     int _oldPopoverStyle;
@@ -23,6 +23,8 @@
     id _dismissCompletionHandler;
 
     UIWindow *_rotationDecider;
+    _UIDictionaryDownloadViewController *_downloadViewController;
+    BOOL _downloadableDictionaryAvailable;
 }
 
 @property(readonly) NSString * stringToDefine;
@@ -33,38 +35,48 @@
 @property(retain) NSString * definitionHTML;
 @property(copy) id dismissCompletionHandler;
 @property(setter=_setRotationDecider:,retain) UIWindow * _rotationDecider;
+@property(retain) _UIDictionaryDownloadViewController * downloadViewController;
+@property BOOL downloadableDictionaryAvailable;
 
++ (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned int)arg2;
++ (id)_popoverControllerForReferenceLibraryWithString:(id)arg1;
 + (BOOL)dictionaryHasDefinitionForTerm:(id)arg1;
 + (id)_noDefinitionLabel;
 + (id)_diddlydoLineColor;
 + (id)_foregroundColor;
-+ (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned int)arg2;
-+ (id)_popoverControllerForReferenceLibraryWithString:(id)arg1;
 + (id)_backgroundColor;
-+ (void)initialize;
 
 - (void)dealloc;
+- (void)setDownloadableDictionaryAvailable:(BOOL)arg1;
+- (BOOL)downloadableDictionaryAvailable;
+- (void)setDownloadViewController:(id)arg1;
+- (id)downloadViewController;
 - (id)_rotationDecider;
 - (void)setDefinitionHTML:(id)arg1;
 - (id)definitionHTML;
 - (id)stylesheet;
 - (id)definitionView;
 - (id)stringToDefine;
-- (void)definitionService:(id)arg1 hasNewHTML:(id)arg2;
+- (void)downloadActionsAreComplete:(id)arg1;
+- (void)_userChoseToDownload:(id)arg1;
+- (void)showDownloadInterface;
 - (id)definitionContainerView;
 - (id)modalHeaderView;
 - (void)_repositionSubviews;
 - (void)_setRotationDecider:(id)arg1;
+- (void)_dismissModalReferenceView:(id)arg1;
+- (id)initWithTerm:(id)arg1;
 - (void)setDismissCompletionHandler:(id)arg1;
 - (id)dismissCompletionHandler;
-- (id)initWithTerm:(id)arg1;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)_setPopoverController:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)_dismissModalReferenceView:(id)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillLayoutSubviews;
 
 @end

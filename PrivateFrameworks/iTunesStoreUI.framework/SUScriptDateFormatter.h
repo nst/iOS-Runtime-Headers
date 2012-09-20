@@ -18,22 +18,10 @@
 @property(readonly) unsigned int dateFormatterNoStyle;
 @property(readonly) unsigned int dateFormatterShortStyle;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (unsigned int)timeStyle;
-- (unsigned int)dateStyle;
-- (id)dateFormat;
-- (id)init;
-- (void)dealloc;
-- (void)setTimeStyle:(unsigned int)arg1;
-- (void)setDateStyle:(unsigned int)arg1;
-- (id)localeIdentifier;
-- (double)dateFromString:(id)arg1;
-- (id)stringFromDate:(id)arg1;
-- (void)setDateFormat:(id)arg1;
-- (id)attributeKeys;
 - (unsigned int)dateFormatterShortStyle;
 - (unsigned int)dateFormatterNoStyle;
 - (unsigned int)dateFormatterMediumStyle;
@@ -42,5 +30,17 @@
 - (void)setLocaleIdentifier:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)dealloc;
+- (id)init;
+- (void)setTimeStyle:(unsigned int)arg1;
+- (void)setDateStyle:(unsigned int)arg1;
+- (id)localeIdentifier;
+- (double)dateFromString:(id)arg1;
+- (id)stringFromDate:(id)arg1;
+- (void)setDateFormat:(id)arg1;
+- (id)attributeKeys;
+- (unsigned int)timeStyle;
+- (unsigned int)dateStyle;
+- (id)dateFormat;
 
 @end

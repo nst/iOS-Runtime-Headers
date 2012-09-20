@@ -12,26 +12,26 @@
 }
 
 
+- (void)setGroupIdentifier:(id)arg1;
+- (id)groupIdentifier;
+- (id)description;
+- (void)removeAllObjects;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
+- (void)removeObject:(id)arg1;
+- (void)setMax:(unsigned int)arg1;
+- (unsigned int)max;
 - (id)_beginMark;
 - (void)_removeBottom;
 - (void)removeAllObjectsWithTarget:(id)arg1;
 - (BOOL)popAndInvoke;
 - (void)setDiscardable:(BOOL)arg1;
-- (void)setGroupIdentifier:(id)arg1;
-- (id)groupIdentifier;
 - (void)markEnd;
 - (id)popUndoObject;
 - (BOOL)isDiscardable;
 - (void)markBegin;
 - (id)topUndoObject;
-- (unsigned int)count;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (void)removeAllObjects;
-- (void)removeObject:(id)arg1;
-- (unsigned int)max;
-- (void)setMax:(unsigned int)arg1;
 - (void)push:(id)arg1;
 - (unsigned int)nestingLevel;
 

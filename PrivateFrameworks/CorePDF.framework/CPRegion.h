@@ -14,31 +14,31 @@
 }
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (BOOL)isBodyZone;
-- (BOOL)isCompoundShape;
-- (void)setIsCompoundShape:(BOOL)arg1;
-- (BOOL)isZone;
-- (id)nextRegion;
 - (void)setNextRegion:(id)arg1;
+- (id)nextRegion;
+- (BOOL)isZone;
+- (void)setIsCompoundShape:(BOOL)arg1;
+- (BOOL)isCompoundShape;
+- (BOOL)isBodyZone;
 - (BOOL)isTableCellRegion;
-- (BOOL)isParagraphRegion;
-- (BOOL)isListItemRegion;
-- (BOOL)isTextRegion;
 - (void)setIsTextRegion:(BOOL)arg1;
-- (BOOL)isBoxRegion;
-- (BOOL)isGraphicalRegion;
-- (BOOL)isRowRegion;
-- (void)setIsImageRegion:(BOOL)arg1;
-- (BOOL)isImageRegion;
+- (BOOL)isTextRegion;
+- (BOOL)isListItemRegion;
+- (BOOL)isParagraphRegion;
 - (BOOL)isShapeRegion;
+- (BOOL)isImageRegion;
+- (void)setIsImageRegion:(BOOL)arg1;
+- (BOOL)isRowRegion;
+- (BOOL)isGraphicalRegion;
+- (BOOL)isBoxRegion;
 - (BOOL)isIndivisible;
 - (void)accept:(id)arg1;
-- (void)setOrder:(int)arg1;
-- (int)order;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (BOOL)isRotated;
-- (id)link;
 - (void)setLink:(id)arg1;
+- (id)link;
+- (int)order;
+- (void)setOrder:(int)arg1;
 
 @end

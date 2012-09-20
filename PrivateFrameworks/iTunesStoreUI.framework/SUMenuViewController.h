@@ -14,18 +14,6 @@
 @property int selectedIndex;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)setSelectedIndex:(int)arg1;
-- (int)selectedIndex;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)delegate;
-- (void)reload;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)setDelegate:(id)arg1;
 - (BOOL)_sendDidCancel;
 - (BOOL)isMenuItemEnabledAtIndex:(int)arg1;
 - (id)titleOfMenuItemAtIndex:(int)arg1;
@@ -33,5 +21,18 @@
 - (int)numberOfMenuItems;
 - (struct CGSize { float x1; float x2; })minimumViewSize;
 - (struct CGSize { float x1; float x2; })maximumViewSize;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (id)_tableView;
+- (void)setSelectedIndex:(int)arg1;
+- (int)selectedIndex;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)reload;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

@@ -11,15 +11,15 @@
 @property(readonly) NSDictionary * scalars;
 
 + (void)setValue:(long long)arg1 forScalarKey:(id)arg2;
-+ (void)incrementScalarKey:(id)arg1;
 + (void)pushValue:(double)arg1 forDistributionKey:(id)arg2;
++ (void)incrementScalarKey:(id)arg1;
 + (void)addValue:(long long)arg1 forScalarKey:(id)arg2;
 
 - (void)save;
-- (id)init;
 - (void)dealloc;
-- (id)scalars;
+- (id)init;
 - (void)addCountAndSizeOfFile:(id)arg1;
+- (id)scalars;
 - (void)_addScalarValue:(unsigned long long)arg1 forKey:(id)arg2;
 
 @end

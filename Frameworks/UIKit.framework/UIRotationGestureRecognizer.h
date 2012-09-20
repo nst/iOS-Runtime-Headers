@@ -18,6 +18,8 @@
     } _anchorPoint;
     id _transformAnalyzer;
     UITouch *_touches[2];
+    float _preRecognitionWeight;
+    float _postRecognitionWeight;
 }
 
 @property float rotation;
@@ -25,10 +27,15 @@
 
 
 - (void)dealloc;
-- (void)setRotation:(float)arg1;
+- (float)_postRecognitionWeight;
+- (void)_setPostRecognitionWeight:(float)arg1;
+- (float)_preRecognitionWeight;
+- (void)_setPreRecognitionWeight:(float)arg1;
 - (float)rotation;
-- (void)_resetGestureRecognizer;
+- (void)setRotation:(float)arg1;
+- (void)_updateTransformAnalyzerWeights;
 - (float)velocity;
+- (void)_resetGestureRecognizer;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

@@ -11,25 +11,29 @@
 @property(readonly) int mediaTypes;
 @property <MPMediaPickerControllerDelegate> * delegate;
 @property BOOL allowsPickingMultipleItems;
+@property BOOL showsCloudItems;
 @property(copy) NSString * prompt;
 
 + (void)preheatMediaPicker;
 
-- (id)init;
-- (void)dealloc;
+- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
+- (BOOL)allowsPickingMultipleItems;
+- (id)initWithMediaTypes:(int)arg1;
+- (BOOL)showsCloudItems;
 - (void)modalContextDidDismiss:(id)arg1 withSuccess:(BOOL)arg2;
 - (void)mediaPickerModalContext:(id)arg1 didPickMediaItems:(id)arg2;
 - (void)_pickerDidPickItems:(id)arg1;
 - (void)_pickerDidCancel;
+- (void)setShowsCloudItems:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
 - (int)mediaTypes;
-- (void)viewDidUnload;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)setPrompt:(id)arg1;
 - (id)prompt;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
-- (BOOL)allowsPickingMultipleItems;
-- (id)initWithMediaTypes:(int)arg1;
 
 @end

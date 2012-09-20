@@ -13,8 +13,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)fill;
-- (id)effects;
 - (void)setEffects:(id)arg1;
+- (id)effects;
 - (void)setFill:(id)arg1;
 
 @end

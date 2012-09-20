@@ -11,10 +11,11 @@
 @property(readonly) NSArray * segments;
 
 
+- (id)segments;
+- (id)description;
 - (void)dealloc;
+- (void)finalize;
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
-- (void)finalize;
-- (id)segments;
 
 @end

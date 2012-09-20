@@ -45,11 +45,11 @@
 
 + (id)_appearanceProxyViewClasses;
 
-- (void)setTarget:(id)arg1;
 - (SEL)action;
+- (void)setTarget:(id)arg1;
 - (id)target;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)animatedBadge;
 - (void)setAnimatedBadge:(BOOL)arg1;
 - (BOOL)viewIsCustom;
@@ -60,8 +60,6 @@
 - (id)finishedUnselectedImage;
 - (id)finishedSelectedImage;
 - (void)setFinishedSelectedImage:(id)arg1 withFinishedUnselectedImage:(id)arg2;
-- (id)badgeValue;
-- (void)setBadgeValue:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setInternalTemplateImage:(id)arg1;
@@ -74,17 +72,19 @@
 - (void)_updateView;
 - (id)titleTextAttributesForState:(unsigned int)arg1;
 - (id)_internalTemplateImage;
+- (id)badgeValue;
 - (id)_internalTitle;
 - (id)initWithTabBarSystemItem:(int)arg1 tag:(int)arg2;
+- (void)setBadgeValue:(id)arg1;
 - (id)unselectedImage;
 - (id)selectedImage;
 - (id)initWithTitle:(id)arg1 image:(id)arg2 tag:(int)arg3;
+- (void)setAction:(SEL)arg1;
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (id)image;
 - (int)systemItem;
 - (BOOL)isSystemItem;
 - (id)title;
-- (void)setAction:(SEL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (int)tag;
 - (BOOL)isEnabled;

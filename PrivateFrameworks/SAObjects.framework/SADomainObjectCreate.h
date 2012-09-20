@@ -10,15 +10,15 @@
 @property(copy) NSURL * targetAppId;
 @property(retain) SADomainObject * object;
 
-+ (id)domainObjectCreate;
 + (id)domainObjectCreateWithDictionary:(id)arg1 context:(id)arg2;
++ (id)domainObjectCreate;
 
 - (id)groupIdentifier;
 - (void)setObject:(id)arg1;
 - (id)object;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

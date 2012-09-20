@@ -9,23 +9,23 @@
 }
 
 
-- (void)setTarget:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (SEL)action;
-- (id)target;
-- (id)init;
-- (void)dealloc;
-- (id)option;
-- (id)argument;
-- (int)compare:(id)arg1;
-- (void)setAction:(SEL)arg1;
 - (BOOL)isRequired;
+- (id)option;
 - (BOOL)process;
-- (id)argumentDescription;
-- (void)setOption:(id)arg1;
-- (void)setArgument:(id)arg1;
-- (void)setArgumentDescription:(id)arg1;
 - (void)setIsRequired:(BOOL)arg1;
+- (void)setArgumentDescription:(id)arg1;
+- (void)setArgument:(id)arg1;
+- (void)setOption:(id)arg1;
+- (id)argumentDescription;
+- (SEL)action;
+- (void)setTarget:(id)arg1;
+- (int)compare:(id)arg1;
+- (id)target;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setAction:(SEL)arg1;
+- (id)argument;
 
 @end

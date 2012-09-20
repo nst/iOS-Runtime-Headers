@@ -23,15 +23,20 @@
 @property(readonly) NSString * mobileMeOfferAlertURL;
 @property(readonly) NSString * signingSessionCertURL;
 @property(readonly) NSString * signingSessionURL;
+@property(readonly) NSString * emailLookupURL;
+@property(readonly) NSString * genericTermsURL;
 
-+ (id)urlConfiguration;
 + (void)reset;
++ (id)urlConfiguration;
 
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)initWithDictionary:(id)arg1;
 - (id)validateURL;
 - (id)registerURL;
 - (id)updateAccountURL;
 - (id)accountCreationURL;
+- (id)genericTermsURL;
+- (id)emailLookupURL;
 - (id)mobileMeOfferAlertURL;
 - (id)completeValidateEmailURL;
 - (id)initiateValidateEmailURL;
@@ -43,6 +48,5 @@
 - (id)authenticateURL;
 - (id)signingSessionURL;
 - (id)signingSessionCertURL;
-- (id)initWithDictionary:(id)arg1;
 
 @end

@@ -7,37 +7,40 @@
 @interface ABMemberCell : UITableViewCell  {
     int _memberID;
     NSArray *_namePieces;
-    int _highlightIndex;
+    long _highlightIndex;
     BOOL _drawsComponentsRTL;
     BOOL _isGroup;
     <ABStyleProvider> *_styleProvider;
+    BOOL _isMe;
 }
 
 @property(retain) <ABStyleProvider> * styleProvider;
+@property BOOL isMe;
 
 
 - (id)description;
 - (void)dealloc;
-- (void)setGroup:(BOOL)arg1;
-- (void)setNamePieces:(id)arg1;
-- (void)setHighlightIndex:(long)arg1;
-- (void)setMemberID:(int)arg1;
-- (struct CGSize { float x1; float x2; })_drawText:(id)arg1 withColor:(id)arg2 shadowColor:(id)arg3 shadowOffset:(struct CGSize { float x1; float x2; })arg4 atPoint:(struct CGPoint { float x1; float x2; })arg5 forWidth:(float)arg6 withFont:(id)arg7 lineBreakMode:(int)arg8;
-- (float)memberCellFieldSpacing;
-- (id)regularFont;
-- (id)boldFont;
-- (id)italicFont;
-- (struct CGSize { float x1; float x2; })_drawText:(id)arg1 withColor:(id)arg2 shadowColor:(id)arg3 shadowOffset:(struct CGSize { float x1; float x2; })arg4 atPoint:(struct CGPoint { float x1; float x2; })arg5 withFont:(id)arg6;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
-- (int)memberID;
 - (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
 - (id)groupName;
+- (void)setGroup:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)_scriptingInfo;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setIsMe:(BOOL)arg1;
+- (void)setMemberID:(int)arg1;
+- (void)setHighlightIndex:(long)arg1;
+- (void)setNamePieces:(id)arg1;
+- (struct CGSize { float x1; float x2; })_drawText:(id)arg1 withColor:(id)arg2 shadowColor:(id)arg3 shadowOffset:(struct CGSize { float x1; float x2; })arg4 atPoint:(struct CGPoint { float x1; float x2; })arg5 withFont:(id)arg6;
+- (id)italicFont;
+- (id)boldFont;
+- (id)regularFont;
+- (BOOL)isMe;
+- (float)memberCellFieldSpacing;
+- (struct CGSize { float x1; float x2; })_drawText:(id)arg1 withColor:(id)arg2 shadowColor:(id)arg3 shadowOffset:(struct CGSize { float x1; float x2; })arg4 atPoint:(struct CGPoint { float x1; float x2; })arg5 forWidth:(float)arg6 withFont:(id)arg7 lineBreakMode:(int)arg8;
+- (int)memberID;
+- (id)styleProvider;
+- (void)setStyleProvider:(id)arg1;
 
 @end

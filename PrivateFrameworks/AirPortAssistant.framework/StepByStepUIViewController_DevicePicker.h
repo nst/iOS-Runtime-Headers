@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class AnimatedPickerView, RecommendationActionController, PoppablePickerViewController, NSDictionary, NSString, UIPopoverController, NSArray;
+@class NSArray, AnimatedPickerView, PoppablePickerViewController, NSDictionary, NSString, UIPopoverController, RecommendationActionController;
 
 @interface StepByStepUIViewController_DevicePicker : StepByStepUIViewController <UIPickerViewDataSource, UIPickerViewDelegate, TableViewManagerDelegate> {
     NSDictionary *_selectedDevice;

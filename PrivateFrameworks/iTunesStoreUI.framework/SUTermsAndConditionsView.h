@@ -2,31 +2,25 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIAlertView, SUSubtitledButton, SULinkControl;
+@class UIAlertView, SUSubtitledButton, SULinkControl, SUClientInterface;
 
 @interface SUTermsAndConditionsView : UIView  {
     UIAlertView *_accountButtonAlert;
     SUSubtitledButton *_button;
+    SUClientInterface *_clientInterface;
     BOOL _hideAccountButton;
     float _rightMargin;
     int _style;
     SULinkControl *_termsAndConditionsControl;
+    SUClientInterface *clientInterface;
 }
 
+@property(retain) SUClientInterface * clientInterface;
 @property BOOL hideAccountButton;
 @property float rightMargin;
 @property int style;
 
 
-- (void)dealloc;
-- (int)style;
-- (void)setRightMargin:(float)arg1;
-- (void)setStyle:(int)arg1;
-- (void)sizeToFit;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)rightMargin;
 - (BOOL)hideAccountButton;
 - (void)_termsAndConditionsAction:(id)arg1;
 - (void)_updateButton;
@@ -39,5 +33,16 @@
 - (void)_accountsChangedNotification:(id)arg1;
 - (void)setHideAccountButton:(BOOL)arg1;
 - (void)_buttonAction:(id)arg1;
+- (void)setClientInterface:(id)arg1;
+- (id)clientInterface;
+- (void)dealloc;
+- (void)setRightMargin:(float)arg1;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)sizeToFit;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)rightMargin;
 
 @end

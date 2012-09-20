@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate, NSString, NSTimeZone;
+@class NSDate, EKObjectID, NSTimeZone;
 
 @interface EKPersistentReminder : EKPersistentCalendarItem  {
-    NSString *_parentUUID;
+    EKObjectID *_parentID;
 }
 
 @property(copy) NSDate * dueDate;
@@ -13,29 +13,31 @@
 @property BOOL dueDateAllDay;
 @property(getter=isCompleted) BOOL completed;
 @property(copy) NSDate * completionDate;
-@property(copy) NSString * parentUUID;
+@property unsigned int displayOrder;
+@property(copy) EKObjectID * parentID;
 
 + (id)generateUniqueIDWithReminder:(id)arg1 calendar:(id)arg2;
-+ (id)defaultPropertiesToLoad;
 
+- (void)setCompletionDate:(id)arg1;
+- (id)completionDate;
+- (BOOL)isCompleted;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)isCompleted;
-- (void)setCompleted:(BOOL)arg1;
 - (void)setDueDateAllDay:(BOOL)arg1;
 - (void)setDueDateTimeZone:(id)arg1;
 - (void)setDueDate:(id)arg1;
-- (void)setParentUUID:(id)arg1;
-- (id)parentUUID;
-- (void)setCompletionDate:(id)arg1;
-- (id)completionDate;
+- (void)setParentID:(id)arg1;
+- (id)parentID;
 - (BOOL)dueDateAllDay;
 - (id)dueDateTimeZone;
 - (id)dueDate;
 - (void)_sendModifiedNote;
 - (id)externalURI;
-- (int)entityType;
+- (void)setDisplayOrder:(unsigned int)arg1;
+- (unsigned int)displayOrder;
+- (void)setCompleted:(BOOL)arg1;
 - (BOOL)validate:(id*)arg1;
+- (int)entityType;
 
 @end

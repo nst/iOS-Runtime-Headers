@@ -9,6 +9,7 @@
 }
 
 @property(readonly) int numberOfSegmentsDownloaded;
+@property(readonly) int numberOfMediaRequests;
 @property(readonly) NSDate * playbackStartDate;
 @property(readonly) NSString * URI;
 @property(readonly) NSString * serverAddress;
@@ -24,9 +25,6 @@
 @property(readonly) int numberOfDroppedVideoFrames;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (int)numberOfDroppedVideoFrames;
 - (double)indicatedBitrate;
 - (double)observedBitrate;
@@ -40,8 +38,12 @@
 - (id)serverAddress;
 - (id)playbackStartDate;
 - (int)numberOfSegmentsDownloaded;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)finalize;
 - (id)initWithDictionary:(id)arg1;
 - (id)URI;
+- (int)numberOfMediaRequests;
 
 @end

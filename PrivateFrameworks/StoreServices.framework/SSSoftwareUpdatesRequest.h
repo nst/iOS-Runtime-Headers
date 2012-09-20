@@ -15,11 +15,10 @@
 - (void)dealloc;
 - (id)updateQueueContext;
 - (id)initWithUpdateQueueContext:(id)arg1;
-- (id)handleFailureResponse:(id)arg1;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
-- (void)_sendResponseToDelegate:(id)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (void)startWithUpdatesResponseBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)start;
 
 @end

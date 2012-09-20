@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, SSItemOffer, NSURL, SSItemImageCollection, NSMutableArray, NSDictionary, NSString, SSURLConnectionRequest, NSDate, NSArray;
+@class NSArray, SSItemOffer, NSURL, SSItemImageCollection, NSMutableArray, NSDictionary, NSString, SSURLConnectionRequest, NSDate, NSNumber;
 
 @interface SSItem : NSObject <SSURLConnectionRequestDelegate> {
     NSDate *_expirationDate;
@@ -31,30 +31,22 @@
 @property(readonly) NSArray * thumbnailImages;
 
 
-- (id)description;
-- (void)dealloc;
-- (void)urlConnectionRequest:(id)arg1 didReceiveResponse:(id)arg2;
+- (id)viewItemURL;
+- (void)loadTellAFriendMessageWithCompletionHandler:(id)arg1;
+- (id)expirationDate;
 - (id)bundleVersion;
-- (float)averageUserRating;
 - (int)numberOfUserRatings;
+- (float)averageUserRating;
 - (id)priceDisplay;
 - (id)artistName;
 - (void)requestDidFinish:(id)arg1;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
-- (id)ITunesStoreIdentifier;
-- (id)expirationDate;
-- (id)shortDescription;
-- (id)valueForProperty:(id)arg1;
-- (id)itemTitle;
-- (id)bundleIdentifier;
-- (id)defaultItemOffer;
-- (id)itemOfferForIdentifier:(id)arg1;
-- (id)itemKind;
-- (id)allItemOffers;
 - (id)imageCollection;
 - (id)genreName;
 - (BOOL)isGameCenterEnabled;
 - (id)collectionName;
+- (id)tweetURL;
+- (id)tweetInitialText;
 - (id)tellAFriendSubject;
 - (id)tellAFriendBodyURL;
 - (id)tellAFriendBodyMIMEType;
@@ -66,22 +58,31 @@
 - (id)initWithItemDictionary:(id)arg1;
 - (id)buyParameters;
 - (id)softwareType;
-- (id)contentRating;
 - (BOOL)isRestricted;
+- (id)bundleIdentifier;
+- (id)description;
+- (void)dealloc;
+- (id)ITunesStoreIdentifier;
+- (id)contentRating;
+- (id)seasonNumber;
 - (id)viewReviewsURL;
 - (id)sendGiftURL;
-- (id)viewItemURL;
 - (id)thumbnailImages;
-- (void)loadTellAFriendMessageWithCompletionHandler:(id)arg1;
+- (int)numberOfPrintedPages;
+- (id)allItemOffers;
 - (void)_finishTellAFriendLoadWithError:(id)arg1;
 - (id)_tellAFriendDictionary;
 - (id)_offers;
 - (void)_setExpirationDate:(id)arg1;
+- (void)urlConnectionRequest:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)rawItemDictionary;
+- (id)itemOfferForIdentifier:(id)arg1;
 - (id)releaseDateString;
+- (id)podcastFeedURL;
+- (id)itemKind;
 - (id)videoDetails;
 - (id)seriesName;
-- (id)seasonNumber;
+- (id)podcastEpisodeGUID;
 - (id)numberOfItemsInCollection;
 - (id)numberOfCollectionsInCollectionGroup;
 - (id)networkName;
@@ -97,5 +98,9 @@
 - (id)collectionArtistName;
 - (id)artistIdentifier;
 - (id)preOrderIdentifier;
+- (id)defaultItemOffer;
+- (id)valueForProperty:(id)arg1;
+- (id)shortDescription;
+- (id)itemTitle;
 
 @end

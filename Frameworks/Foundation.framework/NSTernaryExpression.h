@@ -11,18 +11,18 @@
 }
 
 
-- (id)initWithPredicate:(id)arg1 trueExpression:(id)arg2 falseExpression:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)trueExpression;
 - (id)falseExpression;
-- (id)predicateFormat;
+- (id)trueExpression;
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
+- (id)predicateFormat;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)predicate;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithPredicate:(id)arg1 trueExpression:(id)arg2 falseExpression:(id)arg3;
 
 @end

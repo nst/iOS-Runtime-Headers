@@ -15,10 +15,12 @@
 }
 
 @property(readonly) NSDictionary * transfers;
-@property(readonly) NSArray * activeTransfers;
-@property(readonly) NSArray * orderedTransfers;
+@property(readonly) NSArray * activeTransferGUIDs;
+@property(readonly) NSArray * orderedTransfersGUIDs;
 @property(readonly) BOOL hasActiveFileTransfers;
 @property(readonly) BOOL hasPendingFileTransfers;
+@property(readonly) NSArray * activeTransfers;
+@property(readonly) NSArray * orderedTransfers;
 
 + (id)sharedInstance;
 + (void)setTransferCenterClass:(Class)arg1;
@@ -26,21 +28,23 @@
 + (Class)transferCenterClass;
 
 - (void)dealloc;
+- (BOOL)wasFileTransferPreauthorized:(id)arg1;
 - (void)preauthorizeFileTransferFromOtherPerson:(id)arg1 account:(id)arg2 filename:(id)arg3 saveToPath:(id)arg4;
 - (void)clearFinishedTransfers;
+- (id)orderedTransfersGUIDs;
 - (id)orderedTransfers;
+- (id)activeTransferGUIDs;
 - (id)activeTransfers;
 - (id)transfers;
 - (void)retargetTransfer:(id)arg1 toPath:(id)arg2;
-- (void)removeTransfer:(id)arg1;
 - (void)sendTransfer:(id)arg1;
+- (id)chatForTransfer:(id)arg1;
 - (void)assignTransfer:(id)arg1 toHandle:(id)arg2;
 - (BOOL)hasActiveFileTransfers;
 - (void)acknowledgePendingTransfer:(id)arg1;
 - (BOOL)hasPendingFileTransfers;
 - (void)acceptFileTransferIfPreauthorzed:(id)arg1;
 - (void)_clearTransfers;
-- (BOOL)wasFileTransferPreauthorized:(id)arg1;
 - (void)acceptTransfer:(id)arg1 withPath:(id)arg2 autoRename:(BOOL)arg3 overwrite:(BOOL)arg4;
 - (BOOL)isFileTransfer:(id)arg1 preauthorizedWithDictionary:(id)arg2;
 - (void)_addActiveTransfer:(id)arg1;
@@ -60,9 +64,10 @@
 - (void)_handleStandaloneFileTransferRegistered:(id)arg1;
 - (void)stopTransfer:(id)arg1;
 - (id)transfersForAccount:(id)arg1;
-- (void)deleteTransfer:(id)arg1;
-- (id)guidForNewOutgoingTransferWithLocalURL:(id)arg1;
 - (void)assignTransfer:(id)arg1 toMessage:(id)arg2 account:(id)arg3;
+- (void)deleteTransfer:(id)arg1;
+- (void)removeTransfer:(id)arg1;
 - (id)transferForGUID:(id)arg1;
+- (id)guidForNewOutgoingTransferWithLocalURL:(id)arg1;
 
 @end

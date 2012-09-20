@@ -15,8 +15,8 @@
 
 - (void)dealloc;
 - (id)typeLabel;
-- (float)titleOffset;
 - (void)setTitleOffset:(float)arg1;
+- (float)titleOffset;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)layoutSubviews;
 

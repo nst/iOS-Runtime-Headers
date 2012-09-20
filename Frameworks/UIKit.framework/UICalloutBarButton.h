@@ -41,6 +41,7 @@
 + (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 maxWidth:(float)arg3 action:(SEL)arg4 type:(int)arg5 inView:(id)arg6;
 
 - (SEL)action;
+- (int)type;
 - (void)dealloc;
 - (BOOL)dontDismiss;
 - (void)setImageVerticalAdjust:(float)arg1;
@@ -61,7 +62,7 @@
 - (void)fadeAndSendAction;
 - (void)setForceFlash:(BOOL)arg1;
 - (BOOL)forceFlash;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustRectForPosition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 scaleVertically:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustRectForPosition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 scaleRect:(BOOL)arg2;
 - (void)configureLabel;
 - (void)cancelFlash;
 - (void)_commonSetupWithAction:(SEL)arg1 type:(int)arg2;
@@ -73,7 +74,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDontDismiss:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)type;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)removeFromSuperview;
 - (void)layoutSubviews;

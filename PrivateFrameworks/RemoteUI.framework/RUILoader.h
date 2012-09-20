@@ -7,18 +7,28 @@
 @interface RUILoader : RUIHTTPRequest  {
     RUIParser *_parser;
     NSURL *_url;
+    BOOL _allowNonSecureHTTP;
 }
 
+@property BOOL allowNonSecureHTTP;
 
-- (void)parseData:(id)arg1;
-- (void)cancel;
+
 - (id)URL;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)loadXMLUIWithURL:(id)arg1;
-- (void)loadXMLUIWithRequest:(id)arg1;
+- (void)cancel;
+- (void)dealloc;
+- (void)setAllowNonSecureHTTP:(BOOL)arg1;
 - (void)loadXMLUIWithData:(id)arg1 baseURL:(id)arg2;
+- (void)loadXMLUIWithRequest:(id)arg1;
+- (void)loadXMLUIWithURL:(id)arg1;
+- (void)allWebViewsFinishedLoading;
+- (void)webViewFinishedLoading;
+- (BOOL)anyWebViewLoading;
 - (void)_finishLoad;
-- (void)didParseData;
+- (BOOL)allowNonSecureHTTP;
+- (void)loadRequest:(id)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)failWithError:(id)arg1;
+- (void)didParseData;
+- (void)parseData:(id)arg1;
 
 @end

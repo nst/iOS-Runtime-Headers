@@ -5,9 +5,9 @@
 @interface ML3BaseLocation : ML3Entity  {
 }
 
-+ (int)revisionTrackingCode;
 + (BOOL)insertionChangesLibraryContents;
 + (id)databaseTable;
++ (int)revisionTrackingCode;
 
 - (void)enumerateOrphanedAssetsUsingBlock:(id)arg1;
 

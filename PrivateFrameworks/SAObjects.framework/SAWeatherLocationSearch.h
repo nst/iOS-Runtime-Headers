@@ -11,17 +11,17 @@
 @property(copy) NSURL * identifier;
 @property(copy) NSString * locationId;
 
-+ (id)locationSearch;
 + (id)locationSearchWithDictionary:(id)arg1 context:(id)arg2;
++ (id)locationSearch;
 
 - (id)groupIdentifier;
 - (id)identifier;
 - (void)setIdentifier:(id)arg1;
-- (id)locationId;
 - (void)setLocationId:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)locationId;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

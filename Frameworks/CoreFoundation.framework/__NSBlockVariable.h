@@ -8,7 +8,7 @@
  */
 
 @interface __NSBlockVariable : NSObject  {
-    struct Block_byref { void *x1; struct Block_byref {} *x2; int x3; int x4; int (*x5)(); int (*x6)(); } *forwarding;
+    struct Block_byref { void *x1; struct Block_byref {} *x2; int x3; unsigned int x4; int (*x5)(); int (*x6)(); } *forwarding;
     int flags;
     int size;
     int (*byref_keep)();

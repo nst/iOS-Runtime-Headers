@@ -16,11 +16,13 @@
 
 + (id)codedPropertyKeys;
 
-- (void)dealloc;
-- (id)game;
 - (id)playerID;
-- (void)setPlayerID:(id)arg1;
 - (void)setGame:(id)arg1;
+- (id)game;
+- (void)setPlayerID:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setDate:(id)arg1;
 - (id)date;
 

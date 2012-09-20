@@ -54,15 +54,6 @@
 @property unsigned int texCoordVBO;
 
 
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (id)label;
-- (void)draw;
-- (void)setLabel:(id)arg1;
-- (void)setCenter:(union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })arg1;
-- (id)transform;
-- (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })center;
 - (void)setTexCoordVBO:(unsigned int)arg1;
 - (unsigned int)texCoordVBO;
 - (void)setPositionVBO:(unsigned int)arg1;
@@ -80,11 +71,20 @@
 - (void)createAndBindVAOWithPositions:(float*)arg1 texCoords:(float*)arg2;
 - (void)setProgramName:(unsigned int)arg1;
 - (unsigned int)programName;
-- (id)effect;
 - (void)setEffectStale:(unsigned char)arg1;
 - (unsigned char)effectStale;
 - (id)propertyArray;
 - (void)prepareToDraw;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (id)label;
+- (void)draw;
+- (void)setLabel:(id)arg1;
+- (void)setCenter:(union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })arg1;
+- (id)transform;
+- (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })center;
+- (id)effect;
 - (void)setEffect:(id)arg1;
 
 @end

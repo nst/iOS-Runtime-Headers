@@ -2,26 +2,30 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIImage;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface CKImageBalloonView : CKBalloonView  {
-    UIImage *_img;
-    UIImage *_balloonImage;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _highlightedImageBlock;
+
 }
 
-+ (struct CGPoint { float x1; float x2; })entryFieldBalloonOffset;
-+ (float)entryFieldBalloonAdditionalHeight;
-+ (BOOL)usesColoredBalloon;
+@property(copy) id highlightedImageBlock;
 
++ (float)entryFieldBalloonAdditionalHeight;
++ (struct CGPoint { float x1; float x2; })entryFieldBalloonOffset;
++ (BOOL)fixedWidth;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsetsForBalloonOrientation:(int)arg1;
+
+- (id)description;
 - (void)dealloc;
-- (float)heightForWidth:(float)arg1;
-- (float)_receiptSpace;
-- (id)balloonImage;
-- (void)tighten;
-- (void)copyToPasteboard;
-- (BOOL)shouldManuallyDrawBackground;
-- (float)tightenedWidth;
-- (void)setImage:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)prepareForReuse;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlightedImageBlock:(id)arg1;
+- (id)highlightedImageBlock;
 
 @end

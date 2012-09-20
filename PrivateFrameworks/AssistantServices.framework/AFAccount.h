@@ -5,16 +5,17 @@
 @class NSString, NSDictionary;
 
 @interface AFAccount : NSObject  {
-    NSString *_identifier;
-    NSString *_label;
-    NSString *_assistantIdentifier;
-    NSString *_speechIdentifier;
-    NSString *_hostname;
     NSString *_predefinedServer;
-    NSString *_aceHost;
-    NSDictionary *_lastSyncDates;
-    NSString *_localeIdentifier;
     BOOL _isActive;
+    NSString *_localeIdentifier;
+    NSString *_hostname;
+    NSString *_group;
+    NSString *_aceHost;
+    NSString *_label;
+    NSString *_identifier;
+    NSDictionary *_lastSyncDates;
+    NSString *_speechIdentifier;
+    NSString *_assistantIdentifier;
 }
 
 @property(copy) NSString * identifier;
@@ -24,27 +25,17 @@
 @property(copy) NSString * hostname;
 @property(copy) NSString * predefinedServer;
 @property(copy) NSString * aceHost;
+@property(copy) NSString * group;
 @property(copy) NSDictionary * lastSyncDates;
 @property(copy) NSString * localeIdentifier;
 @property(readonly) BOOL isActive;
 
 
-- (void)setHostname:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)localeIdentifier;
-- (BOOL)isActive;
-- (id)label;
-- (void)setLabel:(id)arg1;
-- (id)identifier;
-- (void)setIdentifier:(id)arg1;
-- (id)hostname;
-- (void)setLocaleIdentifier:(id)arg1;
+- (id)assistantIdentifier;
+- (id)speechIdentifier;
 - (id)lastSyncDates;
 - (id)aceHost;
 - (id)predefinedServer;
-- (id)speechIdentifier;
-- (id)assistantIdentifier;
 - (id)messageDictionary;
 - (id)initWithMessageDictionary:(id)arg1;
 - (void)setLastSyncDates:(id)arg1;
@@ -52,5 +43,18 @@
 - (void)setPredefinedServer:(id)arg1;
 - (void)setSpeechIdentifier:(id)arg1;
 - (void)setAssistantIdentifier:(id)arg1;
+- (void)setLocaleIdentifier:(id)arg1;
+- (id)identifier;
+- (id)description;
+- (void).cxx_destruct;
+- (id)localeIdentifier;
+- (void)setIdentifier:(id)arg1;
+- (BOOL)isActive;
+- (id)group;
+- (void)setGroup:(id)arg1;
+- (id)label;
+- (void)setLabel:(id)arg1;
+- (id)hostname;
+- (void)setHostname:(id)arg1;
 
 @end

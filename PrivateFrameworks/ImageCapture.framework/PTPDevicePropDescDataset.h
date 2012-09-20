@@ -22,35 +22,35 @@
 }
 
 
+- (void)setSupportedValues:(id)arg1;
+- (id)supportedValues;
+- (void)setNumberOfValues:(unsigned short)arg1;
+- (unsigned short)numberOfValues;
+- (void)setFormFlag:(unsigned char)arg1;
+- (unsigned char)formFlag;
+- (void)setFactoryDefaultValue:(id)arg1;
+- (id)factoryDefaultValue;
+- (void)setReadWriteAttribute:(unsigned char)arg1;
+- (unsigned char)readWriteAttribute;
+- (void)setDataTypeCode:(unsigned short)arg1;
+- (unsigned short)dataTypeCode;
+- (void)setDevicePropertyCode:(unsigned short)arg1;
+- (unsigned short)devicePropertyCode;
+- (void)updateContent;
+- (id)initWithMutableData:(id)arg1;
+- (void)setCurrentValue:(id)arg1;
 - (void)setStepSize:(id)arg1;
 - (id)stepSize;
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (unsigned short)devicePropertyCode;
-- (void)setDevicePropertyCode:(unsigned short)arg1;
-- (unsigned short)dataTypeCode;
-- (void)setDataTypeCode:(unsigned short)arg1;
-- (unsigned char)readWriteAttribute;
-- (void)setReadWriteAttribute:(unsigned char)arg1;
-- (id)factoryDefaultValue;
-- (void)setFactoryDefaultValue:(id)arg1;
-- (unsigned char)formFlag;
-- (void)setFormFlag:(unsigned char)arg1;
-- (unsigned short)numberOfValues;
-- (void)setNumberOfValues:(unsigned short)arg1;
-- (id)supportedValues;
-- (void)setSupportedValues:(id)arg1;
-- (void)updateContent;
-- (id)initWithMutableData:(id)arg1;
+- (id)init;
+- (id)currentValue;
+- (id)content;
 - (void)setMaximumValue:(id)arg1;
 - (void)setMinimumValue:(id)arg1;
 - (id)maximumValue;
 - (id)minimumValue;
-- (id)content;
 - (id)initWithData:(id)arg1;
 - (void)setContent:(id)arg1;
-- (void)setCurrentValue:(id)arg1;
-- (id)currentValue;
 
 @end

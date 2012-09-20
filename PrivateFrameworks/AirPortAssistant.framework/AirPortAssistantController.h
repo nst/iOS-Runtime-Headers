@@ -21,11 +21,11 @@
 + (id)assistantUIViewControllerWithParameters:(id)arg1;
 + (BOOL)launchAUForNetwork:(id)arg1 withMacAddress:(id)arg2 getAUFromAppStore:(BOOL)arg3;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (void)assistantComplete;
 - (id)viewController;
 - (void)setViewController:(id)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

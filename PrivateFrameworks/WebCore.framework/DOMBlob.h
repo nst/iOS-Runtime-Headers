@@ -8,9 +8,9 @@
 @property(readonly) unsigned long long size;
 
 
+- (id)type;
 - (void)dealloc;
 - (void)finalize;
-- (id)type;
 - (unsigned long long)size;
 
 @end

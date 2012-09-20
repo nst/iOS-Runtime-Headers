@@ -6,21 +6,21 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
 + (id)mutablePlaceholder;
 + (id)immutablePlaceholder;
-+ (void)initialize;
 
-- (unsigned int)count;
 - (unsigned int)retainCount;
-- (id)retain;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (void)addObject:(id)arg1;
+- (id)retain;
+- (void)dealloc;
 - (oneway void)release;
 - (id)init;
-- (void)dealloc;
+- (unsigned int)count;
 - (id)member:(id)arg1;
-- (id)objectEnumerator;
 - (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (id)objectEnumerator;
 - (void)removeObject:(id)arg1;
 
 @end

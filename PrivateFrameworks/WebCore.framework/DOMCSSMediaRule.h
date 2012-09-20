@@ -7,14 +7,14 @@
 @interface DOMCSSMediaRule : DOMCSSRule  {
 }
 
-@property(retain,readonly) DOMMediaList * media;
-@property(retain,readonly) DOMCSSRuleList * cssRules;
+@property(readonly) DOMMediaList * media;
+@property(readonly) DOMCSSRuleList * cssRules;
 
 
-- (id)cssRules;
-- (unsigned int)insertRule:(id)arg1 index:(unsigned int)arg2;
-- (unsigned int)insertRule:(id)arg1 :(unsigned int)arg2;
 - (void)deleteRule:(unsigned int)arg1;
+- (unsigned int)insertRule:(id)arg1 :(unsigned int)arg2;
+- (unsigned int)insertRule:(id)arg1 index:(unsigned int)arg2;
+- (id)cssRules;
 - (id)media;
 
 @end

@@ -14,15 +14,15 @@
 @property(readonly) struct CGSize { float x1; float x2; } coverSize;
 @property(readonly) unsigned long long entityArtworkCacheHash;
 
-+ (id)artworkCacheWithCoverCount:(unsigned int)arg1 coverSize:(struct CGSize { float x1; float x2; })arg2 entityArtworkCacheHash:(unsigned long long)arg3 artworkData:(void*)arg4 length:(unsigned int)arg5;
 + (id)artworkCacheWithContentsOfFile:(id)arg1;
++ (id)artworkCacheWithCoverCount:(unsigned int)arg1 coverSize:(struct CGSize { float x1; float x2; })arg2 entityArtworkCacheHash:(unsigned long long)arg3 artworkData:(void*)arg4 length:(unsigned int)arg5;
 
-- (id)init;
-- (void)dealloc;
 - (struct CGSize { float x1; float x2; })coverSize;
 - (unsigned int)coverCount;
-- (BOOL)writeToFile:(id)arg1;
 - (unsigned long long)entityArtworkCacheHash;
 - (struct CGImage { }*)artworkImage;
+- (BOOL)writeToFile:(id)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

@@ -8,15 +8,15 @@
 }
 
 @property(copy) NSArray * sources;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)getAnchors;
 + (id)getAnchorsWithDictionary:(id)arg1 context:(id)arg2;
++ (id)getAnchors;
 
 - (id)groupIdentifier;
 - (void)setSources:(id)arg1;
-- (id)sources;
 - (id)encodedClassName;
+- (id)sources;
 
 @end

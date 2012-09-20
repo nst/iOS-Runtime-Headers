@@ -9,11 +9,11 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)setProperty:(id)arg1;
-- (id)initWithProperty:(id)arg1;
 - (id)property;
+- (id)initWithProperty:(id)arg1;
 
 @end

@@ -20,22 +20,22 @@
 @property(retain) FTRegion * _parentRegion;
 
 
-- (id)description;
-- (void)dealloc;
+- (id)regionID;
+- (id)subRegions;
+- (id)regionWithID:(id)arg1;
+- (id)parentRegion;
+- (id)isoCode;
+- (id)basePhoneNumber;
 - (void)set_parentRegion:(id)arg1;
 - (id)_parentRegion;
 - (void)set_dictionary:(id)arg1;
 - (id)_dictionary;
 - (void)_setParentRegion:(id)arg1;
-- (id)parentRegion;
-- (id)regionWithID:(id)arg1;
-- (id)subRegions;
-- (id)basePhoneNumber;
-- (id)isoCode;
-- (id)regionID;
+- (id)description;
+- (void)dealloc;
 - (id)_initWithDictionary:(id)arg1;
 - (id)label;
-- (BOOL)isLeafNode;
 - (BOOL)search:(id)arg1 withResults:(id)arg2;
+- (BOOL)isLeafNode;
 
 @end

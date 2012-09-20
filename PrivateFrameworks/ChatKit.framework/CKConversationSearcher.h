@@ -2,43 +2,28 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class SPSearchResultDeserializer, UISearchBar, NSTimer, UISearchDisplayController, <CKConversationSearcherDelegate>, SPDaemonQueryToken;
+@class NSArray, UISearchBar, CKSpotlightQuery, UISearchDisplayController, <CKConversationSearcherDelegate>;
 
-@interface CKConversationSearcher : NSObject <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, SPDaemonQueryDelegate> {
+@interface CKConversationSearcher : NSObject <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate> {
     <CKConversationSearcherDelegate> *_delegate;
+    NSArray *_sortedSearchResults;
     UISearchDisplayController *_searchController;
     UISearchBar *_searchBar;
-    SPDaemonQueryToken *_queryToken;
-    NSTimer *_resultProcessor;
-    unsigned int _deserializerIndex;
-    SPSearchResultDeserializer *_deserializer;
-    struct _CKSpotlightSearchResultList { 
-        unsigned int length; 
-        unsigned int capacity; 
-        struct _CKSpotlightSearchResult {} *array; 
-    } _allSearchResults;
-    struct _CKSpotlightSearchResultList { 
-        unsigned int length; 
-        unsigned int capacity; 
-        struct _CKSpotlightSearchResult {} *array; 
-    } _perConversationSearchResults;
+    CKSpotlightQuery *_currentQuery;
     BOOL _shouldDisplayNoResults;
     BOOL _active;
     BOOL _showingSearchResults;
 }
 
-@property(getter=isShowingSearchResults,readonly) BOOL showingSearchResults;
-@property(getter=isActive,readonly) BOOL active;
 @property(readonly) UISearchDisplayController * searchController;
+@property(getter=isActive,readonly) BOOL active;
+@property(getter=isShowingSearchResults,readonly) BOOL showingSearchResults;
 
 
-- (void)dealloc;
+- (void)setDelegate:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
-- (BOOL)isShowingSearchResults;
-- (void)searchDaemonQuery:(id)arg1 addedResults:(id)arg2;
-- (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
-- (void)searchDaemonQueryCompleted:(id)arg1;
-- (void)_processSearchResults;
+- (void)dealloc;
+- (void)_cancel;
 - (id)searchController;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;
@@ -54,11 +39,10 @@
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (BOOL)isActive;
 - (id)searchBar;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)setDelegate:(id)arg1;
-- (void)_cancel;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (BOOL)isShowingSearchResults;
 
 @end

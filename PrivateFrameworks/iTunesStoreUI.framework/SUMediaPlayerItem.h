@@ -32,14 +32,6 @@
 @property(retain) NSURL * URL;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setURL:(id)arg1;
-- (id)subtitle;
-- (void)setSubtitle:(id)arg1;
-- (id)URL;
-- (id)title;
-- (void)setTitle:(id)arg1;
 - (void)setPlaybackPingURLs:(id)arg1;
 - (id)playbackPingURLs;
 - (void)setPlayableDuration:(double)arg1;
@@ -61,5 +53,13 @@
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (int)itemType;
 - (unsigned long long)itemIdentifier;
+- (id)URL;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)setURL:(id)arg1;
+- (id)subtitle;
+- (void)setSubtitle:(id)arg1;
+- (id)title;
+- (void)setTitle:(id)arg1;
 
 @end

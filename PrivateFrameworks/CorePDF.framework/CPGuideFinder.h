@@ -20,35 +20,35 @@
 }
 
 + (BOOL)guideSeparates:(id)arg1 from:(id)arg2;
-+ (BOOL)gutterSeparates:(id)arg1 from:(id)arg2;
-+ (void)reclusterPreservingAlignment:(id)arg1;
 + (void)reclusterBetweenGuides:(id)arg1;
++ (void)reclusterPreservingAlignment:(id)arg1;
++ (BOOL)gutterSeparates:(id)arg1 from:(id)arg2;
 
-- (void)dealloc;
-- (float)medianFontSizeOfFirstCharacter;
 - (float)medianFontSizeOfLastCharacter;
-- (BOOL)addStripTo:(id)arg1 bottom:(float)arg2 left:(float)arg3 top:(float)arg4 right:(float)arg5;
-- (void)setAlignForWordWithExtent:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg1 stripArray:(id)arg2 stripMax:(double)arg3;
-- (void)subdivideStripInto:(id)arg1 from:(double)arg2 to:(double)arg3 borderedBy:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg4 ofCount:(unsigned int)arg5 crossedBy:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg6 ofCount:(unsigned int)arg7;
-- (void)getWordEdges;
-- (void)findWordEdgeClusters;
-- (void)subdivideGutterFrom:(unsigned int)arg1 to:(unsigned int)arg2;
-- (void)subdivideLeftGuideAt:(unsigned int)arg1;
-- (void)subdivideRightGuideAt:(unsigned int)arg1;
-- (BOOL)hasGutters;
-- (BOOL)hasLeftGuides;
-- (BOOL)hasRightGuides;
-- (void)splitTextLinesAtBorderWords;
+- (float)medianFontSizeOfFirstCharacter;
 - (void)splitTextLinesBetweenBorderWords;
-- (id)initWithContentZone:(id)arg1;
-- (void)findGutters;
-- (void)findGuides;
-- (void)markTextLines;
+- (void)splitTextLinesAtBorderWords;
+- (BOOL)hasRightGuides;
+- (BOOL)hasLeftGuides;
+- (BOOL)hasGutters;
+- (void)subdivideRightGuideAt:(unsigned int)arg1;
+- (void)subdivideLeftGuideAt:(unsigned int)arg1;
+- (void)subdivideGutterFrom:(unsigned int)arg1 to:(unsigned int)arg2;
+- (void)findWordEdgeClusters;
+- (void)getWordEdges;
+- (void)subdivideStripInto:(id)arg1 from:(double)arg2 to:(double)arg3 borderedBy:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg4 ofCount:(unsigned int)arg5 crossedBy:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg6 ofCount:(unsigned int)arg7;
+- (void)setAlignForWordWithExtent:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg1 stripArray:(id)arg2 stripMax:(double)arg3;
+- (BOOL)addStripTo:(id)arg1 bottom:(float)arg2 left:(float)arg3 top:(float)arg4 right:(float)arg5;
 - (void)splitTextLines;
-- (id)leftGuides;
-- (id)rightGuides;
+- (void)markTextLines;
+- (void)findGuides;
+- (void)findGutters;
+- (id)initWithContentZone:(id)arg1;
 - (id)gutters;
-- (void)finalize;
+- (id)rightGuides;
+- (id)leftGuides;
 - (void)dispose;
+- (void)dealloc;
+- (void)finalize;
 
 @end

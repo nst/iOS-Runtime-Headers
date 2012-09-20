@@ -21,8 +21,12 @@
     int _autoscrollDirections;
     float _touchOffsetFromMagnificationPoint;
     float _magnifierOffsetFromTouch;
+    BOOL _isHorizontal;
+    BOOL _isAnimating;
+    int _delayedAnimationType;
 }
 
+@property BOOL isHorizontal;
 @property(retain) UIResponder<UITextInput> * text;
 @property(retain) UIView * target;
 @property(readonly) struct CGPoint { float x1; float x2; } terminalPoint;
@@ -37,9 +41,11 @@
 - (void)dealloc;
 - (BOOL)wasPlacedCarefullyAtTime:(double)arg1;
 - (int)horizontalMovementAtTime:(double)arg1;
+- (struct CGPoint { float x1; float x2; })clipPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)updateFrame;
 - (struct CGPoint { float x1; float x2; })snappedPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (float)offsetFromMagnificationPoint;
+- (BOOL)isHorizontal;
 - (struct CGPoint { float x1; float x2; })animationPoint;
 - (void)zoomDownAnimation;
 - (void)windowWillRotate:(id)arg1;
@@ -57,6 +63,7 @@
 - (int)horizontalMovement;
 - (BOOL)terminalPointPlacedCarefully;
 - (void)setAutoscrollDirections:(int)arg1;
+- (void)setIsHorizontal:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })terminalPoint;
 - (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { float x1; float x2; })arg3 offset:(struct CGPoint { float x1; float x2; })arg4 animated:(BOOL)arg5;

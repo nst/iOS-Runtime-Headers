@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSURL, <CoreDAVLocalDBTreeInfoProvider>, NSMutableArray, NSDictionary, NSString, NSMutableSet, NSMutableDictionary, NSArray;
+@class <CoreDAVLocalDBTreeInfoProvider>, NSURL, NSMutableArray, NSDictionary, NSString, NSMutableSet, NSMutableDictionary, NSArray;
 
 @interface CoreDAVRecursiveContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVDeleteTaskDelegate, CoreDAVPutTaskDelegate, CoreDAVTaskGroupDelegate, CoreDAVMkcolTaskDelegate, CoreDAVPropPatchTaskDelegate> {
     int _phase;
@@ -42,6 +42,7 @@
 
 - (id)description;
 - (void)dealloc;
+- (void*)context;
 - (id)folderURLToChildrenURLOrder;
 - (void)setPreflightCTag:(BOOL)arg1;
 - (BOOL)preflightCTag;
@@ -64,12 +65,12 @@
 - (void)putTask:(id)arg1 completedWithNewETag:(id)arg2 error:(id)arg3;
 - (void)deleteTask:(id)arg1 completedWithError:(id)arg2;
 - (void)setNextCTag:(id)arg1;
-- (void)_getTask:(id)arg1 finishedWithParsedContents:(id)arg2 error:(id)arg3;
 - (void)_syncReportTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)_postTask:(id)arg1 didFinishWithError:(id)arg2;
 - (id)nextCTag;
 - (void)setPreviousSyncToken:(id)arg1;
 - (BOOL)isWhitelistedError:(id)arg1;
+- (void)_getTask:(id)arg1 finishedWithParsedContents:(id)arg2 error:(id)arg3;
 - (id)copyMultiGetTaskWithURLs:(id)arg1;
 - (void)_getDataPayloads;
 - (void)_pushActions;
@@ -83,6 +84,5 @@
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)bailWithError:(id)arg1;
 - (id)_copyContainerParserMappings;
-- (void*)context;
 
 @end

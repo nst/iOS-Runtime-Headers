@@ -5,42 +5,26 @@
 @interface SUClientDispatch : NSObject  {
 }
 
-+ (id)imageCache;
-+ (id)userAgent;
-+ (id)tabBarController;
 + (BOOL)wasLaunchedFromLibrary;
-+ (void)returnToLibrary;
-+ (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
-+ (void)endPreorderManagerSessionWithManager:(id)arg1;
-+ (id)beginPreorderManagerSessionWithItemKinds:(id)arg1;
-+ (id)searchURLBagKey;
-+ (id)searchHintsURLBagKey;
 + (struct __CFArray { }*)assetTypes;
 + (BOOL)composeReviewWithViewController:(id)arg1 animated:(BOOL)arg2;
-+ (void)exitStoreWithReason:(int)arg1;
-+ (id)beginDownloadManagerSessionWithDownloadKinds:(id)arg1;
-+ (id)beginDownloadManagerSessionForDownloadKind:(id)arg1;
-+ (void)endDownloadManagerSessionForManager:(id)arg1;
-+ (id)clientIdentifier;
 + (BOOL)sendActionForDialog:(id)arg1 button:(id)arg2;
-+ (BOOL)openURL:(id)arg1 inClientApplication:(id)arg2;
++ (id)newScriptInterface;
++ (id)imageCache;
 + (BOOL)enterAccountFlowWithViewController:(id)arg1 animated:(BOOL)arg2;
-+ (BOOL)openExternalURL:(id)arg1;
 + (id)overlayConfigurationForStorePage:(id)arg1;
 + (BOOL)matchesClientApplication:(id)arg1;
-+ (BOOL)gotoStorePage:(id)arg1 animated:(BOOL)arg2;
++ (id)exitStoreButtonTitle;
 + (BOOL)isTabBarControllerLoaded;
-+ (id)newScriptInterface;
 + (id)imagePool;
-+ (BOOL)selectSectionWithIdentifier:(id)arg1;
 + (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
-+ (BOOL)reportAProblemForItemIdentifier:(unsigned long long)arg1;
 + (void)dismissOverlayBackgroundViewController;
 + (BOOL)presentOverlayBackgroundViewController:(id)arg1;
-+ (id)viewControllerFactory;
 + (id)overlayBackgroundViewController;
++ (id)clientInterface;
 + (BOOL)openClientURL:(id)arg1;
 + (id)scriptExecutionContext;
++ (id)tabBarController;
 
 
 @end

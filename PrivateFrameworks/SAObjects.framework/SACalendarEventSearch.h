@@ -18,31 +18,31 @@
 @property(copy) NSString * timeZoneId;
 @property(copy) NSString * title;
 
-+ (id)eventSearch;
 + (id)eventSearchWithDictionary:(id)arg1 context:(id)arg2;
++ (id)eventSearch;
 
-- (id)groupIdentifier;
 - (void)setParticipants:(id)arg1;
 - (id)participants;
-- (void)setNotes:(id)arg1;
-- (id)notes;
-- (void)setEndDate:(id)arg1;
-- (void)setStartDate:(id)arg1;
-- (id)endDate;
-- (id)startDate;
+- (id)groupIdentifier;
 - (id)location;
 - (id)title;
 - (void)setTitle:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (id)limit;
 - (void)setLimit:(id)arg1;
-- (id)timeZoneId;
 - (void)setTimeZoneId:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)timeZoneId;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 - (void)setEventId:(id)arg1;
 - (id)eventId;
+- (void)setNotes:(id)arg1;
+- (id)notes;
+- (void)setEndDate:(id)arg1;
+- (void)setStartDate:(id)arg1;
+- (id)endDate;
+- (id)startDate;
 
 @end

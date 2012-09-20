@@ -6,6 +6,7 @@
 
 @interface GKLeaderboardCategoryInternal : GKInternalRepresentation  {
     NSString *_categoryID;
+    NSString *_groupID;
     NSString *_localizedTitle;
     unsigned int _overallRank;
     unsigned int _overallRankCount;
@@ -21,22 +22,27 @@
 @property unsigned int rankAmongFriends;
 @property unsigned int friendCount;
 @property(retain) NSDictionary * icons;
+@property(retain) NSString * groupID;
 
 + (id)codedPropertyKeys;
 
-- (void)dealloc;
 - (void)setFriendCount:(unsigned int)arg1;
 - (void)setRankAmongFriends:(unsigned int)arg1;
 - (void)setOverallRankCount:(unsigned int)arg1;
 - (void)setOverallRank:(unsigned int)arg1;
 - (void)setLocalizedTitle:(id)arg1;
-- (void)setCategoryID:(id)arg1;
-- (unsigned int)friendCount;
-- (unsigned int)rankAmongFriends;
-- (unsigned int)overallRankCount;
-- (unsigned int)overallRank;
+- (void)setGroupID:(id)arg1;
+- (id)groupID;
 - (id)localizedTitle;
+- (unsigned int)overallRank;
+- (unsigned int)friendCount;
+- (unsigned int)overallRankCount;
 - (id)categoryID;
+- (void)setCategoryID:(id)arg1;
+- (unsigned int)rankAmongFriends;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)icons;
 - (void)setIcons:(id)arg1;
 

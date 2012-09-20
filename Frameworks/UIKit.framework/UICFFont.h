@@ -6,10 +6,10 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (unsigned int)retainCount;
+- (unsigned int)hash;
 - (id)retain;
+- (BOOL)isEqual:(id)arg1;
 - (oneway void)release;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;

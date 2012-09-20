@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface WDFormField : WDRun  {
-    unsigned int mPosition;
+    unsigned long mPosition;
     BOOL mLinkAbsolute;
     BOOL mLinkSpecifyingNamedLocation;
     NSString *mNamedLocation;
@@ -18,18 +18,18 @@
 - (void)dealloc;
 - (unsigned long)position;
 - (void)setPosition:(unsigned long)arg1;
-- (BOOL)linkAbsolute;
-- (void)setLinkAbsolute:(BOOL)arg1;
-- (BOOL)linkSpecifyingNamedLocation;
-- (void)setLinkSpecifyingNamedLocation:(BOOL)arg1;
-- (id)namedLocation;
-- (void)setNamedLocation:(id)arg1;
-- (id)URI;
-- (void)setURI:(id)arg1;
-- (id)macName;
-- (void)setMacName:(id)arg1;
-- (id)dosName;
 - (void)setDosName:(id)arg1;
+- (id)dosName;
+- (void)setMacName:(id)arg1;
+- (id)macName;
+- (void)setURI:(id)arg1;
+- (id)URI;
+- (void)setNamedLocation:(id)arg1;
+- (id)namedLocation;
+- (void)setLinkSpecifyingNamedLocation:(BOOL)arg1;
+- (BOOL)linkSpecifyingNamedLocation;
+- (void)setLinkAbsolute:(BOOL)arg1;
+- (BOOL)linkAbsolute;
 - (id)initWithParagraph:(id)arg1;
 - (int)runType;
 

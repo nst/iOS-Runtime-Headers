@@ -9,11 +9,14 @@
     BOOL _allowsImport;
     BOOL _allowsEditing;
     BOOL _allowsSubitems;
+    BOOL _actionsDisabled;
     EKEventStore *_eventStore;
     EKEventViewController *_currentImport;
     UIViewController *_contentViewController;
     <EKICSPreviewControllerDelegate> *_previewDelegate;
     BOOL _importing;
+    BOOL _hasCustomCancelButton;
+    int _cancelButtonType;
     BOOL _allowsToDos;
     BOOL _allowsInvalidProperties;
 }
@@ -22,6 +25,7 @@
 @property BOOL allowsImport;
 @property BOOL allowsEditing;
 @property BOOL allowsSubitems;
+@property BOOL actionsDisabled;
 @property BOOL allowsInvalidProperties;
 @property BOOL allowsToDos;
 @property(readonly) BOOL isImporting;
@@ -30,23 +34,30 @@
 
 
 - (void)dealloc;
-- (id)initWithData:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
+- (void)setAllowsEditing:(BOOL)arg1;
+- (BOOL)allowsEditing;
+- (id)viewController;
 - (void)setAllowsInvalidProperties:(BOOL)arg1;
 - (BOOL)allowsInvalidProperties;
 - (void)setAllowsToDos:(BOOL)arg1;
 - (BOOL)allowsToDos;
+- (void)setActionsDisabled:(BOOL)arg1;
 - (BOOL)allowsImport;
 - (void)setPreviewDelegate:(id)arg1;
 - (id)previewDelegate;
 - (void)icsPreviewListControllerDidRequestImportAll:(id)arg1;
 - (void)icsPreviewListController:(id)arg1 didSelectEvent:(id)arg2;
+- (void)removeCancelButton;
+- (void)setCancelButtonWithTarget:(id)arg1 action:(SEL)arg2;
 - (id)popoverContentController;
 - (id)initWithData:(id)arg1 eventStore:(id)arg2;
 - (id)initWithURL:(id)arg1 eventStore:(id)arg2;
+- (void)_updateCancelButton;
 - (void)importAllIntoCalendar:(id)arg1;
 - (void)importEventFromController:(id)arg1 intoCalendar:(id)arg2;
 - (void)presentCalendarChooserForController:(id)arg1;
 - (void)importAllRequested:(id)arg1;
+- (void)_createCancelButtonWithType:(int)arg1 target:(id)arg2 action:(SEL)arg3;
 - (void)setAllowsImport:(BOOL)arg1;
 - (id)detailViewForEvent:(id)arg1 eventInRealStore:(BOOL)arg2;
 - (int)unimportedEventCount;
@@ -58,9 +69,8 @@
 - (BOOL)allowsSubitems;
 - (void)eventViewControllerDidRequestAddToCalendar:(id)arg1;
 - (void)setAllowsSubitems:(BOOL)arg1;
-- (void)setAllowsEditing:(BOOL)arg1;
-- (BOOL)allowsEditing;
-- (id)viewController;
+- (id)initWithData:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
 - (BOOL)isImporting;
+- (BOOL)actionsDisabled;
 
 @end

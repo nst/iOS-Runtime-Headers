@@ -12,14 +12,14 @@
 @property(retain) NSNumber * authenticatedDSID;
 
 
-- (id)init;
-- (void)dealloc;
-- (void)run;
 - (void)setAuthenticatedDSID:(id)arg1;
 - (id)authenticatedDSID;
 - (void)sendCompletionCallback:(id)arg1;
 - (void)setScriptOptions:(id)arg1;
 - (id)initWithAccountIdentifier:(id)arg1;
 - (id)authenticatedAccountDSID;
+- (void)dealloc;
+- (id)init;
+- (void)run;
 
 @end

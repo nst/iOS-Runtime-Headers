@@ -11,10 +11,10 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (unsigned int)type;
 - (id)data;
+- (void)dealloc;
+- (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)band;

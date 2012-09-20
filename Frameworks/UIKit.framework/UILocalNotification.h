@@ -22,12 +22,14 @@
 @property int remainingRepeatCount;
 @property BOOL hideAlertTitle;
 @property BOOL allowSnooze;
-@property BOOL soundNameIsARingtone;
+@property int soundType;
 @property BOOL interruptAudioAndLockDevice;
 @property BOOL resumeApplicationInBackground;
 @property BOOL fireNotificationsWhenAppRunning;
 @property BOOL showAlarmStatusBarItem;
 @property(copy) NSString * customLockSliderLabel;
+@property(copy) NSString * firedNotificationName;
+@property(copy) NSString * snoozedNotificationName;
 @property BOOL isSystemAlert;
 
 + (id)alloc;

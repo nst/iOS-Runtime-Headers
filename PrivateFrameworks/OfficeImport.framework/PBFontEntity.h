@@ -12,11 +12,11 @@
 }
 
 
-- (void)dealloc;
 - (int)type;
-- (int)family;
+- (void)dealloc;
 - (id)initWithName:(id)arg1 charSet:(int)arg2 type:(int)arg3 family:(int)arg4;
-- (int)charSet;
 - (id)faceName;
+- (int)family;
+- (int)charSet;
 
 @end

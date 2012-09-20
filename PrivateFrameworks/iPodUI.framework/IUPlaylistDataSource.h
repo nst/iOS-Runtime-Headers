@@ -12,9 +12,9 @@
 
 + (int)mediaEntityType;
 
-- (id)init;
-- (void)dealloc;
 - (void)_isGeniusEnabledDidChangeNotification:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (unsigned long long)selectedPlaylistPersistentID;
 - (int)rowIndexOfPlaylistWithPersistentUID:(unsigned long long)arg1;
 - (void)setSelectedPlaylistPersistentID:(unsigned long long)arg1;

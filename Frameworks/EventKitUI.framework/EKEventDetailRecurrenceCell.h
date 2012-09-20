@@ -6,14 +6,16 @@
 
 @interface EKEventDetailRecurrenceCell : EKEventDetailCell  {
     UILabel *_recurrenceLabel;
+    float _lastLayoutWidth;
 }
 
 
 - (void)dealloc;
+- (float)height;
+- (void)layoutSubviews;
 - (id)_myTableView;
 - (id)_recurrenceLabel;
 - (void)setRecurrenceString:(id)arg1;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
-- (float)height;
 
 @end

@@ -4,7 +4,7 @@
 
 @class NSNumber, NSString, <SSAuthorizationRequestDelegate>;
 
-@interface SSAuthorizationRequest : SSRequest <SSCoding> {
+@interface SSAuthorizationRequest : SSRequest <SSXPCCoding> {
     NSNumber *_accountIdentifier;
     NSString *_keybagPath;
     id _token;
@@ -16,18 +16,17 @@
 @property <SSAuthorizationRequestDelegate> * delegate;
 
 
-- (id)init;
-- (void)dealloc;
+- (id)accountIdentifier;
 - (void)setKeybagPath:(id)arg1;
 - (id)initWithAuthorizationToken:(id)arg1 accountIdentifier:(id)arg2;
-- (id)authorizationToken;
-- (id)accountIdentifier;
+- (void)dealloc;
+- (id)init;
 - (id)keybagPath;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (void)startWithAuthorizationResponseBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)start;
+- (id)authorizationToken;
 
 @end

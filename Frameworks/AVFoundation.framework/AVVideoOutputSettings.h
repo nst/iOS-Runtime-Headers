@@ -13,20 +13,21 @@
 @property(readonly) BOOL dimensionsAreBoundingBox;
 @property(readonly) NSDictionary * videoSettingsDictionary;
 
++ (id)videoOutputSettingsWithTrustedVideoSettingsDictionary:(id)arg1;
 + (id)_validValuesForScalingMode;
-+ (id)videoOutputSettingsWithVideoSettingsDictionary:(id)arg1;
 + (id)defaultVideoOutputSettings;
 + (id)registeredOutputSettingsClasses;
++ (id)videoOutputSettingsWithVideoSettingsDictionary:(id)arg1;
 + (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 
+- (int)height;
+- (int)width;
 - (BOOL)dimensionsAreBoundingBox;
 - (id)initWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 - (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
 - (id)videoSettingsDictionary;
 - (id)pixelTransferProperties;
 - (id)compatibleMediaTypes;
-- (int)height;
-- (int)width;
 
 @end

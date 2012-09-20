@@ -11,8 +11,8 @@
 + (void)invalidate;
 + (id)defaultMappingGenerator;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)newUniqueNameWithBase:(unsigned short*)arg1 withLength:(unsigned int)arg2;
 - (id)generateTableName:(id)arg1;
 - (id)newGeneratedPropertyName:(id)arg1;

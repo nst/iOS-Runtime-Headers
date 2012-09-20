@@ -15,21 +15,21 @@
 }
 
 
-- (void)dealloc;
 - (long)column;
+- (void)dealloc;
 - (id)table;
 - (long)row;
 - (BOOL)isStreaming;
-- (id)initWithStreaming:(BOOL)arg1 table:(id)arg2;
-- (BOOL)alwaysPutReadCellsInArray;
 - (void)setLastCellRead:(id)arg1;
+- (BOOL)alwaysPutReadCellsInArray;
+- (id)initWithStreaming:(BOOL)arg1 table:(id)arg2;
 - (id)lastCellRead;
-- (void)setAlwaysPutReadCellsInArray:(BOOL)arg1;
 - (void)setIsCountingCount:(BOOL)arg1;
-- (void)skipCells:(long)arg1;
-- (void)incrementCellPosition;
-- (BOOL)isCounting;
-- (id)currentOverlapCell;
+- (void)setAlwaysPutReadCellsInArray:(BOOL)arg1;
 - (void)setCurrentOverlapCell:(id)arg1;
+- (id)currentOverlapCell;
+- (BOOL)isCounting;
+- (void)incrementCellPosition;
+- (void)skipCells:(long)arg1;
 
 @end

@@ -6,33 +6,31 @@
 
 @interface MimeBody : MessageBody  {
     MimePart *_topLevelPart;
-    unsigned int _preferredTextEncoding;
     unsigned int _preferredAlternative : 16;
     unsigned int _numAlternatives : 16;
 }
 
-+ (id)copyNewMimeBoundary;
 + (id)versionString;
++ (id)copyNewMimeBoundary;
 
-- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
-- (BOOL)isHTML;
-- (id)topLevelPart;
-- (id)attachments;
-- (id)textHtmlPart;
-- (id)init;
 - (void)dealloc;
-- (void)setPreferredTextEncoding:(unsigned long)arg1;
-- (id)mimeSubtype;
+- (id)init;
+- (id)firstPartPassingTest:(id)arg1;
 - (id)partWithNumber:(id)arg1;
-- (id)preferredBodyPart;
+- (id)mimeSubtype;
 - (int)preferredAlternative;
-- (unsigned long)preferredTextEncoding;
+- (id)preferredBodyPart;
 - (BOOL)isRich;
-- (int)numberOfAlternatives;
-- (void)setPreferredAlternative:(int)arg1;
-- (unsigned int)totalTextSize;
-- (unsigned int)numberOfAttachmentsSigned:(BOOL*)arg1 encrypted:(BOOL*)arg2;
-- (void)setTopLevelPart:(id)arg1;
 - (id)mimeType;
+- (unsigned int)numberOfAttachmentsSigned:(BOOL*)arg1 encrypted:(BOOL*)arg2;
+- (unsigned int)totalTextSize;
+- (void)setPreferredAlternative:(int)arg1;
+- (int)numberOfAlternatives;
+- (void)setTopLevelPart:(id)arg1;
+- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
+- (id)attachments;
+- (id)topLevelPart;
+- (BOOL)isHTML;
+- (id)textHtmlPart;
 
 @end

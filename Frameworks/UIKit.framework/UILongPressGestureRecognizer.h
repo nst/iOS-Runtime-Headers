@@ -7,7 +7,7 @@
 @interface UILongPressGestureRecognizer : UIGestureRecognizer  {
     NSArray *_touches;
     NSMutableSet *_activeTouches;
-    int _numberOfTouchesRequired;
+    unsigned int _numberOfTouchesRequired;
     double _minimumPressDuration;
     float _allowableMovement;
     struct CGPoint { 
@@ -23,8 +23,8 @@
     unsigned int _cancelPastAllowableMovement : 1;
 }
 
-@property int numberOfTapsRequired;
-@property int numberOfTouchesRequired;
+@property unsigned int numberOfTapsRequired;
+@property unsigned int numberOfTouchesRequired;
 @property double minimumPressDuration;
 @property float allowableMovement;
 @property double delay;
@@ -35,6 +35,7 @@
 
 + (void)addLongPressGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 minimumPressDuration:(double)arg4 touchCount:(int)arg5;
 
+- (void)invalidate;
 - (void)dealloc;
 - (float)allowableMovement;
 - (void)tapRecognizerFailedToRecognizeTap:(id)arg1;
@@ -43,13 +44,11 @@
 - (void)setCancelPastAllowableMovement:(BOOL)arg1;
 - (BOOL)cancelPastAllowableMovement;
 - (double)minimumPressDuration;
-- (int)numberOfTouchesRequired;
 - (void)_startTapFinishedTimer;
 - (void)startTimer;
 - (struct CGPoint { float x1; float x2; })centroidScreen;
 - (void)tooMuchElapsed:(id)arg1;
 - (void)enoughTimeElapsed:(id)arg1;
-- (int)numberOfTapsRequired;
 - (void)setTouches:(id)arg1;
 - (void)clearTimer;
 - (id)touches;
@@ -57,10 +56,12 @@
 - (void)setAllowableMovement:(float)arg1;
 - (void)_resetGestureRecognizer;
 - (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
-- (void)setNumberOfTapsRequired:(int)arg1;
-- (void)setNumberOfTouchesRequired:(int)arg1;
+- (void)setNumberOfTapsRequired:(unsigned int)arg1;
+- (void)setNumberOfTouchesRequired:(unsigned int)arg1;
 - (void)setDelay:(double)arg1;
 - (double)delay;
+- (unsigned int)numberOfTapsRequired;
+- (unsigned int)numberOfTouchesRequired;
 - (struct CGPoint { float x1; float x2; })startPoint;
 - (void)setMinimumPressDuration:(double)arg1;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
@@ -72,7 +73,6 @@
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (void)setView:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)invalidate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

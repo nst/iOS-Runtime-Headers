@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, <UITabBarDelegate>, UIView, UITabBarItem, UIColor, UIImage;
+@class UIColor, UIImageView, <UITabBarDelegate>, NSMutableArray, UIView, UIImage, UITabBarItem, NSArray;
 
-@interface UITabBar : UIView  {
+@interface UITabBar : UIView <_UIShadowedView> {
     UIView *_customizeView;
     UIView *_backgroundView;
+    UIImageView *_shadowView;
     <UITabBarDelegate> *_delegate;
     NSArray *_items;
     UITabBarItem *_selectedItem;
@@ -22,6 +23,12 @@
     NSArray *_buttonItems;
     struct __CFArray { } *_hiddenItems;
     id _appearanceStorage;
+    float _nextSelectionSlideDuration;
+    float _tabButtonWidth;
+    float _interTabButtonSpacing;
+    BOOL _dividerImagesChangeWithSelection;
+    BOOL _dividerImagesAreInvalid;
+    NSMutableArray *_dividerImageViews;
 }
 
 @property(setter=_setBackgroundView:,retain) UIView * _backgroundView;
@@ -32,23 +39,56 @@
 @property(retain) UIColor * selectedImageTintColor;
 @property(retain) UIImage * backgroundImage;
 @property(retain) UIImage * selectionIndicatorImage;
+@property(retain) UIImage * shadowImage;
+@property(setter=_setNextSelectionSlideDuration:) float _nextSelectionSlideDuration;
+@property(setter=_setTabButtonWidth:) float _tabButtonWidth;
+@property(setter=_setInterTabButtonSpacing:) float _interTabButtonSpacing;
+@property(setter=_setDividerImagesChangeWithSelection:) BOOL _dividerImagesChangeWithSelection;
+@property(setter=_setDividerImagesAreInvalid:) BOOL _dividerImagesAreInvalid;
+@property(setter=_setDividerImageViews:,retain) NSMutableArray * _dividerImageViews;
 
 + (float)_buttonGap;
 + (float)defaultHeightForBarSize:(int)arg1;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (BOOL)_hasCustomAutolayoutNeighborSpacing;
+- (float)_autolayoutSpacingAtEdge:(int)arg1 nextToNeighbor:(id)arg2;
+- (float)_autolayoutSpacingAtEdge:(int)arg1 inContainer:(id)arg2;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+- (BOOL)_isHidden:(id)arg1;
+- (void)_updateAppearanceCustomizationIfNecessaryForItem:(id)arg1;
 - (void)_customizeDoneButtonAction:(id)arg1;
 - (void)_finishCustomizeAnimation:(id)arg1;
 - (void)_adjustButtonSelection:(id)arg1;
 - (void)_alertDidHide;
+- (void)_alertWillShow:(BOOL)arg1 duration:(float)arg2;
 - (void)dismissCustomizeSheet:(BOOL)arg1;
 - (void)_tabBarFinishedAnimating;
+- (void)_setDividerImageViews:(id)arg1;
+- (id)_dividerImageViews;
+- (void)_setDividerImagesAreInvalid:(BOOL)arg1;
+- (BOOL)_dividerImagesAreInvalid;
+- (void)_setDividerImagesChangeWithSelection:(BOOL)arg1;
+- (BOOL)_dividerImagesChangeWithSelection;
+- (void)_setInterTabButtonSpacing:(float)arg1;
+- (float)_interTabButtonSpacing;
+- (void)_setTabButtonWidth:(float)arg1;
+- (float)_tabButtonWidth;
+- (void)_setNextSelectionSlideDuration:(float)arg1;
+- (float)_nextSelectionSlideDuration;
 - (BOOL)endCustomizingAnimated:(BOOL)arg1;
 - (id)selectedItem;
 - (void)_updateTintedImages:(id)arg1 selected:(BOOL)arg2;
 - (void)_dismissCustomizeSheet:(BOOL)arg1;
 - (void)_customizeWithAvailableItems:(id)arg1;
+- (void)_hideItemsAnimated:(BOOL)arg1;
+- (void)_showItemsAnimated:(BOOL)arg1;
+- (void)_animateSelectionChangeFromView:(id)arg1 toView:(id)arg2 duration:(float)arg3;
+- (void)_updateDividerImagesIfNecessary;
+- (void)_invalidateDividerImages;
+- (id)_topmostDividerImageView;
 - (void)_setLabelShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setLabelShadowColor:(id)arg1;
 - (void)_setLabelTextColor:(id)arg1 selectedTextColor:(id)arg2;
@@ -61,37 +101,45 @@
 - (id)selectedImageTintColor;
 - (void)setSelectionIndicatorImage:(id)arg1;
 - (id)selectionIndicatorImage;
-- (BOOL)_isHidden:(id)arg1;
+- (id)_dividerImageForLeftButtonState:(unsigned int)arg1 rightButtonState:(unsigned int)arg2;
+- (void)_setDividerImage:(id)arg1 forLeftButtonState:(unsigned int)arg2 rightButtonState:(unsigned int)arg3;
 - (void)_buttonCancel:(id)arg1;
 - (void)_buttonUp:(id)arg1;
 - (void)_buttonDown:(id)arg1;
 - (void)_buttonDownDelayed:(id)arg1;
-- (void)_alertWillShow:(BOOL)arg1 duration:(float)arg2;
 - (void)setButtonItems:(id)arg1;
 - (id)buttonItems;
 - (void)setBadgeAnimated:(BOOL)arg1 forButton:(int)arg2;
 - (void)setBadgeGlyph:(id)arg1 forButton:(int)arg2;
 - (void)setBadgeValue:(id)arg1 forButton:(int)arg2;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
+- (void)_activityViewControllerIsDisappearing:(id)arg1;
+- (void)_activityViewControllerIsAppearing:(id)arg1;
 - (void)_finishSetItems:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)setBackgroundImage:(id)arg1;
 - (BOOL)isCustomizing;
 - (void)beginCustomizingItems:(id)arg1;
 - (void)setSelectedItem:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (id)tintColor;
+- (void)removeConstraint:(id)arg1;
+- (void)addConstraint:(id)arg1;
 - (void)setLocked:(BOOL)arg1;
 - (void)setItems:(id)arg1;
 - (id)items;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)_updateBackgroundImage;
+- (id)_shadowView;
 - (void)_setBackgroundView:(id)arg1;
 - (id)_appearanceStorage;
-- (void)setBackgroundImage:(id)arg1;
+- (void)setShadowImage:(id)arg1;
+- (id)shadowImage;
 - (id)backgroundImage;
 - (BOOL)_subclassImplementsDrawRect;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (BOOL)_canDrawContent;
+- (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
@@ -99,17 +147,18 @@
 - (BOOL)isLocked;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (id)_backgroundView;
-- (id)delegate;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setAutoresizingMask:(unsigned int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 
 @end

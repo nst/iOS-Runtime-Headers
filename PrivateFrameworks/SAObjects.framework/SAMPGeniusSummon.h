@@ -10,15 +10,15 @@
 @property(copy) NSURL * targetAppId;
 @property(retain) SAMPMediaItem * mediaItem;
 
-+ (id)geniusSummon;
 + (id)geniusSummonWithDictionary:(id)arg1 context:(id)arg2;
++ (id)geniusSummon;
 
 - (id)groupIdentifier;
-- (id)mediaItem;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
-- (BOOL)requiresResponse;
 - (void)setMediaItem:(id)arg1;
+- (id)mediaItem;
+- (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

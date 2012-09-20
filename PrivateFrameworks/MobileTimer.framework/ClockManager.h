@@ -2,40 +2,45 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class NSArray;
+@class NSArray, NSMutableArray, ObjectUpdates;
 
 @interface ClockManager : NSObject  {
     BOOL _performingUpgrade;
-    NSArray *_scheduledLocalNotifications;
+    NSMutableArray *_scheduledLocalNotifications;
+    ObjectUpdates *_localNotificationUpdates;
     BOOL runningInSpringBoard;
     BOOL runningInAssistantPlugin;
     BOOL ignoringNotificationPostRequests;
 }
 
-@property(getter=isIgnoringNotificationPostRequests) BOOL ignoringNotificationPostRequests;
-@property(getter=isRunningInAssistantPlugin) BOOL runningInAssistantPlugin;
 @property(getter=isRunningInSpringBoard) BOOL runningInSpringBoard;
+@property(getter=isRunningInAssistantPlugin) BOOL runningInAssistantPlugin;
+@property(getter=isIgnoringNotificationPostRequests) BOOL ignoringNotificationPostRequests;
+@property(readonly) NSArray * scheduledLocalNotificationsCache;
+@property(readonly) ObjectUpdates * updatesToLocalNotificationsCache;
 
-+ (void)saveAndNotifyForUserPreferences:(BOOL)arg1 localNotifications:(BOOL)arg2;
-+ (void)openClockAppWithSection:(int)arg1;
 + (int)sectionFromClockAppURL:(id)arg1;
++ (id)urlForClockAppSection:(int)arg1;
++ (void)saveAndNotifyForUserPreferences:(BOOL)arg1 localNotifications:(BOOL)arg2;
 + (void)loadUserPreferences;
 + (id)sharedManager;
 
 - (void)dealloc;
-- (BOOL)upgradeIfNeverAttempted;
+- (void)cancelLocalNotification:(id)arg1;
+- (void)scheduleLocalNotification:(id)arg1;
 - (void)setIgnoringNotificationPostRequests:(BOOL)arg1;
 - (void)setRunningInAssistantPlugin:(BOOL)arg1;
 - (void)setRunningInSpringBoard:(BOOL)arg1;
+- (id)updatesToLocalNotificationsCache;
+- (void)resetUpdatesToLocalNotificationsCache;
 - (void)refreshScheduledLocalNotificationsCache;
-- (BOOL)isIgnoringNotificationPostRequests;
-- (BOOL)isRunningInSpringBoard;
+- (BOOL)upgradeIfNeverAttempted;
 - (BOOL)isRunningInAssistantPlugin;
-- (BOOL)upgrade;
+- (BOOL)isRunningInSpringBoard;
+- (BOOL)isIgnoringNotificationPostRequests;
 - (BOOL)discardOldVersion;
-- (void)postUserPreferencesChangedNotification;
+- (BOOL)upgrade;
 - (id)scheduledLocalNotificationsCache;
-- (void)cancelLocalNotification:(id)arg1;
-- (void)scheduleLocalNotification:(id)arg1;
+- (void)postUserPreferencesChangedNotification;
 
 @end

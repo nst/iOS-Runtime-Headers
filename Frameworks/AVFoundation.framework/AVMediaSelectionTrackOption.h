@@ -2,34 +2,35 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetTrack, AVWeakReference;
+@class AVWeakReference, AVAssetTrack, NSDictionary;
 
 @interface AVMediaSelectionTrackOption : AVMediaSelectionOption  {
+    id _groupID;
     AVAssetTrack *_track;
+    NSDictionary *_dictionary;
     AVWeakReference *_weakReferenceToGroup;
     BOOL _displaysNonForcedSubtitles;
 }
 
 
-- (id)propertyList;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
-- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
-- (id)mediaSubTypes;
-- (id)_ancillaryDescription;
-- (id)initWithAssetTrack:(id)arg1 group:(id)arg2 displaysNonForcedSubtitles:(BOOL)arg3;
-- (id)initWithAssetTrack:(id)arg1 group:(id)arg2;
-- (id)track;
-- (BOOL)displaysNonForcedSubtitles;
-- (BOOL)isPlayable;
-- (id)metadataForFormat:(id)arg1;
-- (id)availableMetadataFormats;
-- (id)commonMetadata;
 - (int)trackID;
+- (BOOL)isPlayable;
+- (id)mediaSubTypes;
+- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
 - (BOOL)hasMediaCharacteristic:(id)arg1;
+- (id)dictionary;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)mediaType;
 - (id)locale;
 - (id)group;
-- (id)mediaType;
+- (id)commonMetadata;
+- (id)initWithAsset:(id)arg1 group:(id)arg2 dictionary:(id)arg3;
+- (id)track;
+- (BOOL)displaysNonForcedSubtitles;
+- (id)_groupID;
+- (id)metadataForFormat:(id)arg1;
+- (id)availableMetadataFormats;
 
 @end

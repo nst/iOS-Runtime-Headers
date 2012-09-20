@@ -2,57 +2,62 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVURLAssetFailedURLRequestHandling>, AVURLAssetInternal, NSString, AVAssetCache, NSURL;
+@class NSURL, NSString, AVURLAssetInternal, AVAssetCache, AVAssetResourceLoader;
 
 @interface AVURLAsset : AVAsset  {
     AVURLAssetInternal *_asset;
 }
 
-@property(setter=setFailedURLRequestDelegate:) <AVURLAssetFailedURLRequestHandling> * failedURLRequestDelegate;
 @property(readonly) AVAssetCache * assetCache;
 @property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
 @property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
 @property(readonly) NSString * cacheKey;
+@property(readonly) AVAssetResourceLoader * resourceLoader;
 @property(readonly) NSURL * URL;
 
++ (id)URLAssetWithURL:(id)arg1 options:(id)arg2;
 + (BOOL)isPlayableExtendedMIMEType:(id)arg1;
 + (id)audiovisualTypes;
 + (id)_avfValidationPlist;
 + (id)audiovisualMIMETypes;
-+ (void)_ensureAudiovisualTypes;
-+ (id)URLAssetWithURL:(id)arg1 options:(id)arg2;
-+ (void)initialize;
++ (id)_UTTypes;
++ (id)_figMIMETypes;
 
+- (id)initWithURL:(id)arg1 options:(id)arg2;
+- (unsigned long long)downloadToken;
+- (id)tracks;
+- (id)lyrics;
+- (id)URL;
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (void)finishHandlingFailedURLRequestWithResponseProperties:(id)arg1;
-- (id)failedURLRequestDelegate;
-- (void)setFailedURLRequestDelegate:(id)arg1;
+- (id)init;
+- (id)chapterMetadataGroupsWithTitleLocale:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
+- (id)availableChapterLocales;
+- (id)cacheKey;
+- (void)finalize;
+- (id)requestForStreamingKeyForContext:(id)arg1 appID:(id)arg2 assetID:(id)arg3 options:(id)arg4 errorOut:(id*)arg5;
+- (void)_handleURLRequest:(id)arg1;
+- (void)_finishLoadingURLRequestWithResponseProperties:(id)arg1 context:(id)arg2;
+- (id)resourceLoader;
+- (id)SHA1Digest;
 - (id)downloadDestinationURL;
-- (id)resolvedURL;
 - (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
 - (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
 - (id)assetCache;
-- (unsigned int)_addChapterMetadataItem:(id)arg1 withDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3 toChapters:(id)arg4 fromIndex:(unsigned int)arg5;
+- (unsigned int)_addChapterMetadataItem:(id)arg1 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg2 toChapters:(id)arg3 fromIndex:(unsigned int)arg4;
 - (id)_chapterGroupInfo;
 - (id)_errorForFigNotificationPayload:(struct __CFDictionary { }*)arg1 key:(struct __CFString { }*)arg2;
+- (id)resolvedURL;
+- (id)_tracks;
 - (void)_setAssetInspectorLoader:(id)arg1;
-- (id)chapterMetadataGroupsWithTitleLocale:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
-- (id)availableChapterLocales;
+- (id)chapterMetadataGroupsBestMatchingPreferredLanguages:(id)arg1;
 - (void)_tracksDidChange;
-- (struct __CFURL { }*)_URL;
+- (id)_absoluteURL;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
-- (id)tracks;
-- (id)lyrics;
 - (id)_assetInspector;
 - (id)_assetInspectorLoader;
 - (void)_removeFigAssetNotifications;
 - (void)_addFigAssetNotifications;
 - (void)cancelLoading;
-- (id)cacheKey;
-- (void)finalize;
-- (id)URL;
-- (id)initWithURL:(id)arg1 options:(id)arg2;
 
 @end

@@ -13,13 +13,12 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (void)_fadeOut;
+- (void)dealloc;
+- (id)init;
 - (void)startAnimating;
 - (void)stopAnimating;
 - (void)focusDidEnd;
-- (void)scaleFrame:(float)arg1 reposition:(BOOL)arg2;
 - (void)_fadeOutDidFinish;
 - (double)fadeOutDuration;
 - (double)fadeInDuration;

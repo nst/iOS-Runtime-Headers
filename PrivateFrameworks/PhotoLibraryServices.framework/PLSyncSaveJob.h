@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSSet, NSNumber, CLLocation, NSString, NSURL, NSDate, NSArray;
+@class NSNumber, NSSet, CLLocation, NSString, NSURL, NSDate, NSArray;
 
 @interface PLSyncSaveJob : NSObject  {
     NSArray *facesInfo;
@@ -10,6 +10,7 @@
     BOOL isVideo;
     NSString *uuid;
     NSDate *creationDate;
+    NSDate *modificationDate;
     NSSet *albumURIs;
     CLLocation *location;
     NSNumber *sortToken;
@@ -20,6 +21,7 @@
 @property BOOL isVideo;
 @property(copy) NSString * uuid;
 @property(copy) NSDate * creationDate;
+@property(copy) NSDate * modificationDate;
 @property(copy) NSSet * albumURIs;
 @property(copy) CLLocation * location;
 @property(retain) NSArray * facesInfo;
@@ -29,7 +31,9 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)facesInfo;
+- (BOOL)isVideo;
+- (id)location;
+- (void)setLocation:(id)arg1;
 - (void)setIsSyncComplete:(BOOL)arg1;
 - (void)setIsVideo:(BOOL)arg1;
 - (void)setFacesInfo:(id)arg1;
@@ -38,17 +42,17 @@
 - (id)serializedData;
 - (id)initFromSerializedData:(id)arg1;
 - (id)albumURIs;
+- (id)facesInfo;
 - (void)processFacesWithBlock:(id)arg1;
 - (id)sortToken;
 - (id)originalAssetURL;
 - (BOOL)isSyncComplete;
 - (void)setSortToken:(id)arg1;
 - (void)setUuid:(id)arg1;
+- (void)setModificationDate:(id)arg1;
+- (id)uuid;
+- (id)modificationDate;
 - (void)setCreationDate:(id)arg1;
 - (id)creationDate;
-- (id)location;
-- (void)setLocation:(id)arg1;
-- (id)uuid;
-- (BOOL)isVideo;
 
 @end

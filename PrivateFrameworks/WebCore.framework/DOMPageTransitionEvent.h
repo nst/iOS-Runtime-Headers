@@ -9,6 +9,5 @@
 
 
 - (BOOL)persisted;
-- (void)initPageTransitionEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 persisted:(BOOL)arg4;
 
 @end

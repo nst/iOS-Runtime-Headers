@@ -7,8 +7,8 @@
     BOOL mHasDuration;
 }
 
-@property BOOL hasDuration;
 @property float duration;
+@property BOOL hasDuration;
 
 
 - (float)duration;

@@ -12,16 +12,20 @@
 
 
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (Class)responseClass;
 - (id)dictionaryRepresentation;
-- (BOOL)readFrom:(id)arg1;
-- (unsigned int)requestTypeCode;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)requestElements;
+- (Class)responseClass;
+- (unsigned int)requestTypeCode;
 - (id)requestElementsAtIndex:(unsigned int)arg1;
+- (void)clearRequestElements;
 - (unsigned int)requestElementsCount;
 - (void)addRequestElements:(id)arg1;
 - (void)setRequestElements:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 
 @end

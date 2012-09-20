@@ -15,8 +15,8 @@
 @property(readonly) NSDictionary * workoutData;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)workoutState;
 - (void)pauseWorkout;
 - (void)activateWorkout;

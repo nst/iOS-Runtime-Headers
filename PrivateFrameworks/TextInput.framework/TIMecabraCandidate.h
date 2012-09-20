@@ -2,19 +2,30 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
+@class NSString;
+
 @interface TIMecabraCandidate : UIKeyboardCandidate  {
     void *_candidate;
+    NSString *_displayReading;
+    NSString *_firstSyllable;
 }
 
+@property(readonly) NSString * displayReading;
+@property(readonly) NSString * convertedInput;
+@property(readonly) NSString * firstSyllable;
 
-- (id)candidate;
-- (id)input;
-- (id)initConversionCandidateWithSurface:(id)arg1 andInput:(id)arg2;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isExtensionCandidate;
+
 - (BOOL)isForShortcutConversion;
-- (void)dealloc;
+- (BOOL)isExtensionCandidate;
+- (id)displayReading;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initConversionCandidateWithSurface:(id)arg1 andInput:(id)arg2;
+- (id)firstSyllable;
+- (id)candidate;
+- (id)convertedInput;
+- (id)input;
 - (id)initWithMecabraCandidate:(const void*)arg1;
+- (void)dealloc;
 - (void*)mecabraCandidate;
 
 @end

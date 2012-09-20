@@ -5,7 +5,7 @@
 @interface IMService : NSObject  {
 }
 
-+ (id)iMessageService;
++ (id)notificationCenter;
 + (id)jabberService;
 + (id)subnetService;
 + (id)canonicalFormOfID:(id)arg1 withIDSensitivity:(int)arg2;
@@ -13,19 +13,24 @@
 + (unsigned int)statusForIMPerson:(id)arg1;
 + (BOOL)isEmailAddress:(id)arg1 inDomains:(id)arg2;
 + (id)serviceWithNameNonBlocking:(id)arg1;
++ (id)allServicesNonBlocking;
 + (id)myIdleTime;
 + (unsigned int)myStatus;
-+ (id)notificationCenter;
 + (id)serviceWithName:(id)arg1;
++ (id)allServices;
 + (id)imageURLForStatus:(unsigned int)arg1;
 + (id)imageNameForStatus:(unsigned int)arg1;
 + (void)forgetStatusImageAppearance;
-+ (id)allServicesNonBlocking;
-+ (id)allServices;
++ (id)iMessageService;
++ (id)smsService;
 + (id)aimService;
 + (id)facetimeService;
 
+- (id)name;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)status;
+- (id)localizedName;
+- (BOOL)isEnabled;
 - (id)infoForDisplayedPeople;
 - (id)infoForAllPeople;
 - (id)infoForPerson:(id)arg1;
@@ -38,11 +43,11 @@
 - (id)localizedShortName;
 - (BOOL)initialSyncPerformed;
 - (void)logout;
-- (id)infoForScreenName:(id)arg1;
-- (unsigned int)status;
 - (void)login;
-- (id)localizedName;
-- (id)name;
-- (BOOL)isEnabled;
+- (id)infoForScreenName:(id)arg1;
+- (int)__ck_maxRecipientCount;
+- (id)__ck_displayName;
+- (BOOL)__ck_isiMessage;
+- (BOOL)__ck_isSMS;
 
 @end

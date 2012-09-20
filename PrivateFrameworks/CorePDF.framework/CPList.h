@@ -22,31 +22,31 @@
     struct __CFArray { } *items;
 }
 
-@property(retain) CPListItem * parentItem;
-@property unsigned int ordinalSuffixLength;
-@property unsigned int ordinalPrefixLength;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } spacer;
 @property int type;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } spacer;
+@property unsigned int ordinalPrefixLength;
+@property unsigned int ordinalSuffixLength;
+@property(retain) CPListItem * parentItem;
 
 
-- (void)addItem:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (BOOL)containsParagraph:(id)arg1;
-- (BOOL)isMultilevel;
 - (void)setParentItem:(id)arg1;
-- (unsigned int)ordinalSuffixLength;
 - (void)setOrdinalSuffixLength:(unsigned int)arg1;
-- (unsigned int)ordinalPrefixLength;
+- (unsigned int)ordinalSuffixLength;
 - (void)setOrdinalPrefixLength:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })spacer;
+- (unsigned int)ordinalPrefixLength;
 - (void)setSpacer:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })spacer;
+- (BOOL)isMultilevel;
+- (BOOL)containsParagraph:(id)arg1;
 - (id)parentItem;
-- (unsigned int)itemCount;
-- (id)itemAtIndex:(unsigned int)arg1;
-- (void)finalize;
-- (int)type;
-- (void)setType:(int)arg1;
 - (void)dispose;
+- (unsigned int)itemCount;
+- (int)type;
+- (void)dealloc;
+- (id)init;
+- (void)addItem:(id)arg1;
+- (void)finalize;
+- (void)setType:(int)arg1;
+- (id)itemAtIndex:(unsigned int)arg1;
 
 @end

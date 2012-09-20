@@ -16,21 +16,23 @@
 @property(copy) NSString * type;
 
 
+- (id)type;
 - (id)event;
 - (void)setEvent:(id)arg1;
-- (id)type;
-- (void)setType:(id)arg1;
 - (id)text;
+- (void)setType:(id)arg1;
 - (void)setText:(id)arg1;
-- (BOOL)async;
-- (void)setAsync:(BOOL)arg1;
-- (BOOL)defer;
 - (void)setDefer:(BOOL)arg1;
-- (id)htmlFor;
+- (BOOL)defer;
+- (void)setAsync:(BOOL)arg1;
+- (BOOL)async;
 - (void)setHtmlFor:(id)arg1;
-- (id)src;
+- (id)htmlFor;
+- (void)setCrossOrigin:(id)arg1;
+- (id)crossOrigin;
 - (void)setSrc:(id)arg1;
-- (id)charset;
+- (id)src;
 - (void)setCharset:(id)arg1;
+- (id)charset;
 
 @end

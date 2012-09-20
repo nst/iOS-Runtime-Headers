@@ -12,19 +12,17 @@
 @property(readonly) NSString * styleNameSignUp;
 @property(readonly) NSString * styleNameViewAccount;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (void)_setStyle:(id)arg1;
-- (id)style;
-- (void)setStyle:(id)arg1;
-- (id)_style;
-- (id)attributeKeys;
+- (id)styleNameDefault;
 - (id)styleNameViewAccount;
 - (id)styleNameSignUp;
-- (id)styleNameDefault;
 - (id)newNativeViewController;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)style;
+- (void)setStyle:(id)arg1;
+- (id)attributeKeys;
 
 @end

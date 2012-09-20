@@ -6,11 +6,11 @@
    See Warning(s) below.
  */
 
-@class AVAssetWriterInputWritingHelper;
+@class AVAssetWriterInputWritingHelper, NSObject<OS_dispatch_queue>;
 
 @interface AVAssetWriterInputMediaDataRequester : NSObject  {
     AVAssetWriterInputWritingHelper *_writingHelper;
-    struct dispatch_queue_s { } *_requestQueue;
+    NSObject<OS_dispatch_queue> *_requestQueue;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -18,19 +18,19 @@
 
 }
 
-@property(readonly) struct dispatch_queue_s { }* requestQueue;
+@property(readonly) NSObject<OS_dispatch_queue> * requestQueue;
 @property(readonly) id requestBlock;
 
 
-- (id)init;
+- (void)invalidate;
 - (void)dealloc;
-- (void)_requestMediaDataIfReady;
-- (id)requestBlock;
-- (void)startRequestingMediaData;
-- (id)initWithAssetWriterInputWritingHelper:(id)arg1 requestQueue:(struct dispatch_queue_s { }*)arg2 requestBlock:(id)arg3;
-- (struct dispatch_queue_s { }*)requestQueue;
+- (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)finalize;
-- (void)invalidate;
+- (void)_requestMediaDataIfReady;
+- (id)requestBlock;
+- (id)requestQueue;
+- (void)startRequestingMediaData;
+- (id)initWithAssetWriterInputWritingHelper:(id)arg1 requestQueue:(id)arg2 requestBlock:(id)arg3;
 
 @end

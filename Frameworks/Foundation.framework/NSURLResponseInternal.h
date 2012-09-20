@@ -7,7 +7,7 @@
 }
 
 
-- (id)initWithURLResponse:(struct _CFURLResponse { }*)arg1;
 - (void)dealloc;
+- (id)initWithURLResponse:(struct _CFURLResponse { }*)arg1;
 
 @end

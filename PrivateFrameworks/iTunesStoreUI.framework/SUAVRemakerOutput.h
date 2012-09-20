@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSURL, NSString, NSDictionary;
+@class NSString, NSObject<OS_dispatch_queue>, NSDictionary, NSURL;
 
 @interface SUAVRemakerOutput : NSObject <NSCopying> {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSURL *_mediaURL;
     NSString *_remakerMode;
     NSDictionary *_remakerOptions;
@@ -16,14 +16,14 @@
 @property(copy) NSDictionary * remakerOptions;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)remakerOptions;
 - (id)remakerMode;
 - (id)mediaFileURL;
 - (void)setRemakerOptions:(id)arg1;
 - (void)setRemakerMode:(id)arg1;
 - (void)setMediaFileURL:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

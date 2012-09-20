@@ -14,11 +14,11 @@
 
 + (id)codedPropertyKeys;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
-- (id)game;
 - (void)setGame:(id)arg1;
+- (id)game;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)icons;
 - (void)setIcons:(id)arg1;
 

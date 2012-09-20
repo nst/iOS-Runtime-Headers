@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAPhone, SAEmail, SALocation, NSString, NSURL, NSDate, NSNumber;
+@class NSURL, SAEmail, SALocation, NSString, SAPhone, NSDate, NSNumber;
 
 @interface SAABPersonSearch : SABaseClientBoundCommand  {
 }
@@ -13,37 +13,37 @@
 @property(copy) NSDate * birthday;
 @property(copy) NSString * company;
 @property(retain) SAEmail * email;
-@property(retain) NSNumber * me;
+@property(copy) NSNumber * me;
 @property(copy) NSString * name;
 @property(retain) SAPhone * phone;
 @property(copy) NSString * relationship;
 @property(copy) NSString * scope;
 
-+ (id)personSearch;
 + (id)personSearchWithDictionary:(id)arg1 context:(id)arg2;
++ (id)personSearch;
 
-- (id)groupIdentifier;
-- (void)setName:(id)arg1;
-- (void)setAddress:(id)arg1;
-- (void)setEmail:(id)arg1;
 - (id)email;
+- (id)groupIdentifier;
+- (void)setAddress:(id)arg1;
 - (id)address;
-- (id)me;
-- (id)name;
-- (id)scope;
-- (void)setScope:(id)arg1;
+- (void)setEmail:(id)arg1;
 - (id)accountIdentifier;
 - (void)setAccountIdentifier:(id)arg1;
-- (void)setMe:(id)arg1;
-- (void)setRelationship:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
-- (BOOL)requiresResponse;
+- (void)setName:(id)arg1;
+- (id)name;
 - (id)relationship;
+- (id)me;
+- (void)setScope:(id)arg1;
+- (id)scope;
+- (id)company;
+- (void)setRelationship:(id)arg1;
+- (void)setMe:(id)arg1;
+- (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 - (id)birthday;
 - (void)setBirthday:(id)arg1;
-- (id)company;
 - (id)phone;
 - (void)setCompany:(id)arg1;
 - (void)setPhone:(id)arg1;

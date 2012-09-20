@@ -8,12 +8,13 @@
 
 - (unsigned int)retainCount;
 - (id)retain;
-- (void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (void)release;
+- (id)init;
+- (Class)classForArchiver;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (Class)classForCoder:(id)arg1;
+- (Class)classForCoder;
 
 @end

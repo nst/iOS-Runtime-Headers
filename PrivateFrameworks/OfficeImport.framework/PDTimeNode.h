@@ -21,34 +21,34 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (id)behavior;
+- (id)init;
+- (void)setVideo:(id)arg1;
 - (void)setBehavior:(id)arg1;
+- (id)behavior;
+- (void)setTimeConditions:(id)arg1;
+- (id)timeConditions;
+- (id)sequential;
+- (id)parallel;
+- (id)video;
+- (id)audio;
 - (id)commonBehavior;
-- (id)timeBehavior;
-- (void)setTimeBehavior:(id)arg1;
-- (id)effectBehavior;
-- (void)setEffectBehavior:(id)arg1;
-- (id)motionBehavior;
-- (void)setMotionBehavior:(id)arg1;
-- (id)rotateBehavior;
+- (void)setCmdBehavior:(id)arg1;
 - (void)setRotateBehavior:(id)arg1;
+- (void)setMotionBehavior:(id)arg1;
+- (void)setEffectBehavior:(id)arg1;
+- (void)setColorBehavior:(id)arg1;
+- (void)setTimeBehavior:(id)arg1;
+- (void)setAudio:(id)arg1;
+- (void)setParallel:(id)arg1;
+- (id)cmdBehavior;
+- (id)rotateBehavior;
+- (id)motionBehavior;
+- (id)effectBehavior;
+- (id)colorBehavior;
+- (id)timeBehavior;
 - (id)scaleBehavior;
 - (void)setScaleBehavior:(id)arg1;
-- (id)colorBehavior;
-- (void)setColorBehavior:(id)arg1;
-- (id)audio;
-- (void)setAudio:(id)arg1;
-- (id)video;
-- (void)setVideo:(id)arg1;
-- (id)parallel;
-- (void)setParallel:(id)arg1;
-- (id)sequential;
 - (void)setSequential:(id)arg1;
-- (id)timeConditions;
-- (void)setTimeConditions:(id)arg1;
-- (id)cmdBehavior;
-- (void)setCmdBehavior:(id)arg1;
 
 @end

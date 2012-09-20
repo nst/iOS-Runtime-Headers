@@ -10,24 +10,24 @@
 }
 
 @property(readonly) unsigned int type;
-@property(readonly) unsigned int storageID;
-@property(readonly) unsigned int objHandle;
+@property(readonly) unsigned long storageID;
+@property(readonly) unsigned long objHandle;
 @property(copy) id info;
 @property(retain) NSString * path;
 
 
-- (void)dealloc;
-- (unsigned long)objHandle;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 type:(unsigned int)arg4 storageID:(unsigned long)arg5 objectHandle:(unsigned long)arg6;
 - (unsigned long)storageID;
-- (id)thumbData;
-- (id)metadataDict;
+- (unsigned long)objHandle;
 - (long)writeDataToFile:(int)arg1 fromOffset:(long long)arg2 ofLength:(long long*)arg3;
-- (void)setPath:(id)arg1;
-- (void)finalize;
-- (unsigned int)type;
-- (id)info;
+- (id)metadataDict;
+- (id)thumbData;
 - (void)setInfo:(id)arg1;
 - (id)path;
+- (unsigned int)type;
+- (void)dealloc;
+- (void)setPath:(id)arg1;
+- (id)info;
+- (void)finalize;
 
 @end

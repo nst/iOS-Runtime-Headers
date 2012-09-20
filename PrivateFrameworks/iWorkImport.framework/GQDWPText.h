@@ -8,8 +8,8 @@
 
 
 - (void)dealloc;
-- (id)initWithContent:(const char *)arg1;
 - (const char *)content;
 - (BOOL)isBlank;
+- (id)initWithContent:(const char *)arg1;
 
 @end

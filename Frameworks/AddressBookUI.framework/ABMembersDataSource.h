@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABModel, <ABMembersDataSourceDelegate>, <ABStyleProvider>, NSMutableArray;
+@class ABModel, <ABMembersDataSourceDelegate>, <ABStyleProvider>, NSMutableArray, ABBannerView;
 
 @interface ABMembersDataSource : NSObject <UITableViewDelegate, UITableViewDataSource> {
     <ABMembersDataSourceDelegate> *_delegate;
@@ -15,39 +15,48 @@
     struct __CFDictionary { } *_sectionHeaderToDisplayableSectionHeader;
     struct __CFDictionary { } *_displayableSectionIndexToSectionIndex;
     struct __CFDictionary { } *_sectionIndexToDisplayableSectionIndex;
+    ABBannerView *_bannerView;
 }
 
-@property(retain) <ABStyleProvider> * styleProvider;
-@property void* addressBook;
-@property(retain) ABModel * model;
 @property <ABMembersDataSourceDelegate> * delegate;
+@property(retain) <ABStyleProvider> * styleProvider;
+@property(retain) ABModel * model;
+@property void* addressBook;
 
 
-- (void)dealloc;
-- (void)createAllDisplayableSectionIndexAndHeaderCaches;
-- (id)displayableSectionHeaderFromSectionHeader:(id)arg1;
-- (id)displayableSectionIndexFromSectionIndex:(id)arg1;
-- (id)sectionIndexFromDisplayableSectionIndex:(id)arg1;
-- (struct __CFDictionary { }*)sectionHeaderSortingIndices;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
-- (void)setModel:(id)arg1;
-- (void)setAddressBook:(void*)arg1;
-- (void*)addressBook;
-- (id)model;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableView:(id)arg1 frameForSectionIndexGivenProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)scrollViewWillBeginDragging:(id)arg1;
+- (id)titleForHeaderInSection:(int)arg1;
+- (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)dealloc;
+- (id)model;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableView:(id)arg1 frameForSectionIndexGivenProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)setDelegate:(id)arg1;
-- (id)titleForHeaderInSection:(int)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)setModel:(id)arg1;
+- (void*)addressBook;
+- (unsigned int)displayedMemberIndexForIndexPath:(id)arg1 inTableView:(id)arg2;
+- (int)globalRowForBanner;
+- (struct __CFDictionary { }*)sectionHeaderSortingIndices;
+- (id)sectionIndexFromDisplayableSectionIndex:(id)arg1;
+- (id)displayableSectionIndexFromSectionIndex:(id)arg1;
+- (id)displayableSectionHeaderFromSectionHeader:(id)arg1;
+- (void)createAllDisplayableSectionIndexAndHeaderCaches;
+- (void)setBannerView:(id)arg1 inTableView:(id)arg2;
+- (BOOL)shouldShowGroups;
+- (id)indexPathForDisplayedMemberIndex:(unsigned int)arg1 inTableView:(id)arg2;
+- (int)globalRowForDisplayedMemberIndex:(unsigned int)arg1;
+- (id)styleProvider;
+- (void)setStyleProvider:(id)arg1;
+- (id)bannerView;
+- (void)setAddressBook:(void*)arg1;
 
 @end

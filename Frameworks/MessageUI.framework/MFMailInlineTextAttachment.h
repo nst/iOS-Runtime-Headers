@@ -12,27 +12,37 @@
         float height; 
     } _cachedImageSize;
     unsigned int _hasBeenDownloaded : 1;
+    BOOL _displayableAsIcon;
 }
 
+@property BOOL displayableAsIcon;
 
-- (BOOL)shouldDownloadAttachmentOnDisplay;
-- (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
-- (BOOL)hasBeenDownloaded;
-- (id)textEncodingGuess;
-- (void)download;
++ (unsigned int)precedenceLevel;
+
 - (void)dealloc;
-- (id)initWithWrapper:(id)arg1;
+- (BOOL)needsRedownload;
+- (void)setNeedsRedownload:(BOOL)arg1;
 - (void)setDisplayableInsidePlugin:(BOOL)arg1;
-- (void)_cacheImageSizeIfNecessary;
-- (void)setFileWrapper:(id)arg1;
 - (void)_setImageDimensions:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })imageDimensions;
 - (float)constrainedWidth;
-- (id)initWithMimeTextAttachment:(id)arg1 andMessageBody:(id)arg2;
+- (id)mimeTextAttachment;
+- (id)textEncodingGuess;
+- (id)persistentUniqueIdentifier;
+- (void)setFileWrapper:(id)arg1;
+- (BOOL)displayableAsIcon;
+- (void)setDisplayableAsIcon:(BOOL)arg1;
+- (void)_cacheImageSizeIfNecessary;
 - (void)setupForComposition;
+- (id)initWithMimeTextAttachment:(id)arg1 andMessageBody:(id)arg2;
+- (id)initWithWrapper:(id)arg1;
 - (BOOL)isDisplayableInsidePlugin;
-- (unsigned int)approximateSize;
 - (void)setDisplayableInline:(BOOL)arg1;
+- (unsigned int)approximateSize;
 - (BOOL)isDisplayableInline;
+- (BOOL)shouldDownloadAttachmentOnDisplay;
+- (BOOL)hasBeenDownloaded;
+- (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
+- (void)download;
 
 @end

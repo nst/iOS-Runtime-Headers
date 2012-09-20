@@ -16,6 +16,7 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; })activity;
 - (BOOL)isRunning;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -23,7 +24,6 @@
 - (BOOL)isWalking;
 - (BOOL)isMoving;
 - (int)confidence;
-- (struct CLMotionActivity { int x1; int x2; })activity;
-- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; })arg1 andTimestamp:(double)arg2;
+- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; })arg1 andTimestamp:(double)arg2;
 
 @end

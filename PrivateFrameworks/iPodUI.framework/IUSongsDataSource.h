@@ -5,11 +5,6 @@
 @class NSString;
 
 @interface IUSongsDataSource : IUMediaQueriesDataSource  {
-    BOOL _showAlbumConfigured;
-    BOOL _showAlbum;
-    BOOL _showDurationConfigured;
-    BOOL _showDuration;
-    int _interfaceOrientation;
     NSString *_syncProgressString;
     int _syncAssetTotalToken;
     BOOL _syncAssetTotalTokenIsValid;
@@ -19,35 +14,26 @@
     unsigned int _syncCurrentAssetNumber;
 }
 
-@property BOOL showAlbum;
-@property BOOL showDuration;
-@property int interfaceOrientation;
-
-+ (Class)cellConfigurationClassForAlbumSongs;
 + (id)queryItemPropertiesToFetch;
 + (int)mediaEntityType;
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
-- (id)init;
-- (void)dealloc;
-- (void)setShowDuration:(BOOL)arg1;
-- (void)setInterfaceOrientation:(int)arg1;
-- (int)interfaceOrientation;
 - (Class)cellConfigurationClass;
+- (void)dealloc;
+- (id)init;
 - (void)_updateSyncProgressString;
-- (Class)songCellConfigurationGlobalContextClass;
+- (BOOL)allowsDownloadingAllEntities;
 - (int)_containingParentEntityType;
+- (Class)songCellConfigurationGlobalContextClass;
 - (id)countStringFormat;
 - (void)createGlobalContexts;
 - (unsigned int)requiredEntityCountForSections;
 - (Class)cellConfigurationClassForEntity:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
-- (BOOL)allowsDownloadingAllEntities;
 - (BOOL)allowsDeletion;
 - (SEL)libraryHasDisplayableEntitiesSelector;
-- (BOOL)showDuration;
-- (void)setShowAlbum:(BOOL)arg1;
-- (BOOL)showAlbum;
+- (void)reloadActionRows;
+- (BOOL)canShowDownloadAllEntities;
 
 @end

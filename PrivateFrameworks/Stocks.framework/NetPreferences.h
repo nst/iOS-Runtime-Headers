@@ -2,18 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSString, NSMutableData, NSURLConnection, NSURL;
+@class NSURL, NSString;
 
-@interface NetPreferences : NSObject <NSURLConnectionDelegate> {
+@interface NetPreferences : NSObject  {
     NSString *_buildVersion;
     NSString *_productVersion;
     NSString *_UUID;
     NSURL *_serviceURL;
-    NSURL *_serviceURLGT;
-    NSURLConnection *_gtButtonLogoConnection;
-    NSMutableData *_gtButtonLogoData;
-    NSURLConnection *_gtBacksideLogoConnection;
-    NSMutableData *_gtBacksideLogoData;
     BOOL _serviceDebugging;
     BOOL _isNetworkReachable;
 }
@@ -21,31 +16,28 @@
 @property(getter=isNetworkReachable) BOOL networkReachable;
 
 + (id)sharedPreferences;
++ (void)clearSharedPreferences;
 
-- (id)init;
 - (id)_cacheDirectoryPath;
-- (void)setupLogging;
-- (void)setNetworkReachable:(BOOL)arg1;
-- (id)newsServiceURLForStock:(id)arg1;
-- (id)fullQuoteURLOverrideForStock:(id)arg1;
-- (id)backsideLogoURL;
-- (id)logoButtonImage;
-- (id)logoBacksideImage;
-- (id)_stocksUserAgent;
-- (id)_stocksCountryCode;
-- (id)_stocksAcceptLanguage;
-- (id)_urlStringWithHost:(id)arg1;
-- (id)serviceDebuggingPath;
-- (id)serviceURLGT;
-- (id)serviceURL;
-- (void)addStocksHeadersToPostRequest:(id)arg1;
-- (BOOL)serviceDebugging;
-- (id)financeRequestAttributes;
-- (BOOL)multipleDataSourcesAllowedForGT;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (BOOL)isNetworkReachable;
+- (void).cxx_destruct;
+- (id)init;
 - (id)UUID;
+- (BOOL)isNetworkReachable;
+- (BOOL)serviceDebugging;
+- (id)logoButtonImage;
+- (id)serviceDebuggingPath;
+- (id)logoBacksideImage;
+- (id)backsideLogoURL;
+- (id)fullQuoteURLOverrideForStock:(id)arg1;
+- (id)newsServiceURLForStock:(id)arg1;
+- (void)setNetworkReachable:(BOOL)arg1;
+- (void)setupLogging;
+- (id)_urlStringWithHost:(id)arg1;
+- (id)_stocksAcceptLanguage;
+- (id)_stocksCountryCode;
+- (id)_stocksUserAgent;
+- (id)financeRequestAttributes;
+- (void)addStocksHeadersToPostRequest:(id)arg1;
+- (id)serviceURL;
 
 @end

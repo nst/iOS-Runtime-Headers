@@ -8,18 +8,14 @@
  */
 
 @interface CARenderObject : NSObject  {
-    struct Object { int (**x1)(); struct Atomic { 
-            struct { 
-                int x; 
-            } _v; 
-        } x2; } *_object;
+    struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; } *_object;
 }
 
 + (id)objectWithRenderObject:(struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)arg1;
 
 - (void)dealloc;
-- (id)initWithRenderObject:(struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)arg1;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)object;
+- (id)initWithRenderObject:(struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)arg1;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 
 @end

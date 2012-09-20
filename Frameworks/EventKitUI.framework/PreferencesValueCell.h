@@ -11,9 +11,9 @@
 @property <EKCellShortener> * shortener;
 
 
+- (void)layoutSubviews;
 - (void)setShortener:(id)arg1;
 - (id)shortener;
 - (void)_checkValueWidth;
-- (void)layoutSubviews;
 
 @end

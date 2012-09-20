@@ -20,8 +20,8 @@
 @property(retain) NSString * personalizedBaseName;
 
 
-- (void)updateNavigationButtons;
 - (void)selectedDeviceUpdated;
+- (void)updateNavigationButtons;
 - (void)primaryActionSelected:(BOOL)arg1;
 - (id)deviceTableLabel;
 - (id)devicePickerLabel;

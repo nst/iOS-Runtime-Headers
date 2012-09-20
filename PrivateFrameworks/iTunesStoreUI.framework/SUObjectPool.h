@@ -12,10 +12,10 @@
 @property(readonly) NSArray * vendedObjects;
 
 
-- (void)dealloc;
 - (void)addObjects:(id)arg1 forClass:(Class)arg2;
 - (id)addObjectsOfClass:(Class)arg1 count:(int)arg2 forClass:(Class)arg3;
 - (id)vendedObjects;
 - (id)copyPoppedObjectForClass:(Class)arg1;
+- (void)dealloc;
 
 @end

@@ -8,12 +8,12 @@
 }
 
 
-- (id)valuesForAttributes:(id)arg1;
-- (id)_init:(void*)arg1;
-- (void)_setQuery:(id)arg1;
+- (id)valueForKey:(id)arg1;
 - (void)dealloc;
 - (id)attributes;
-- (id)valueForKey:(id)arg1;
+- (id)valuesForAttributes:(id)arg1;
 - (id)valueForAttribute:(id)arg1;
+- (id)_init:(union { id x1; id x2; })arg1;
+- (void)_setQuery:(id)arg1;
 
 @end

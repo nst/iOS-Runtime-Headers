@@ -21,27 +21,27 @@
 
 
 - (void)setName:(id)arg1;
+- (id)name;
 - (id)code;
 - (void)setHeight:(id)arg1;
 - (id)height;
 - (void)setObject:(id)arg1;
+- (id)object;
 - (void)setWidth:(id)arg1;
 - (id)width;
-- (id)object;
-- (id)name;
-- (id)align;
-- (void)setAlign:(id)arg1;
-- (id)alt;
-- (void)setAlt:(id)arg1;
-- (id)archive;
-- (void)setArchive:(id)arg1;
-- (void)setCode:(id)arg1;
-- (id)codeBase;
-- (void)setCodeBase:(id)arg1;
-- (int)hspace;
-- (void)setHspace:(int)arg1;
-- (int)vspace;
 - (void)setVspace:(int)arg1;
+- (int)vspace;
+- (void)setHspace:(int)arg1;
+- (int)hspace;
+- (void)setCodeBase:(id)arg1;
+- (id)codeBase;
+- (void)setCode:(id)arg1;
+- (void)setArchive:(id)arg1;
+- (id)archive;
+- (void)setAlt:(id)arg1;
+- (id)alt;
+- (void)setAlign:(id)arg1;
+- (id)align;
 - (BOOL)showsTapHighlight;
 
 @end

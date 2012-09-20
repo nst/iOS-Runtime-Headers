@@ -2,36 +2,26 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSString, NSArray;
+@class NSArray, NSString, NSDictionary;
 
 @interface CKMessageStandaloneComposition : CKMessageComposition  {
     NSString *_textString;
     NSString *_markupString;
     NSString *_subject;
-    NSArray *_resources;
+    NSDictionary *_resources;
     NSArray *_messageParts;
-    BOOL _isTextOnly;
 }
 
-@property BOOL isTextOnly;
-@property(retain) NSArray * resources;
-@property(copy) NSString * subject;
-@property(copy) NSString * textString;
-@property(copy) NSString * markupString;
 
-
-- (id)markupString;
+- (id)messageParts;
+- (void)dealloc;
 - (id)subject;
 - (void)setSubject:(id)arg1;
-- (void)dealloc;
-- (void)_clearMessageParts;
-- (void)setIsTextOnly:(BOOL)arg1;
+- (void)_clearDerivedValues;
 - (void)setMarkupString:(id)arg1;
-- (void)setTextString:(id)arg1;
 - (id)textString;
-- (BOOL)isTextOnly;
+- (id)markupString;
 - (void)setResources:(id)arg1;
 - (id)resources;
-- (id)messageParts;
 
 @end

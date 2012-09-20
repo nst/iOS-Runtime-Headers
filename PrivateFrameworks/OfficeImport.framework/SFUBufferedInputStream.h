@@ -7,8 +7,8 @@
 @interface SFUBufferedInputStream : NSObject <SFUBufferedInputStream> {
     <SFUInputStream> *mStream;
     char *mBuffer;
-    unsigned int mBufferSize;
-    unsigned int mBufferOffset;
+    unsigned long mBufferSize;
+    unsigned long mBufferOffset;
     long long mBufferStart;
     long long mBufferEnd;
 }
@@ -17,17 +17,16 @@
 - (void)dealloc;
 - (void)close;
 - (long long)offset;
-- (id)initWithSFUStream:(id)arg1;
-- (id)initWithStream:(id)arg1;
 - (id)initWithStream:(id)arg1 dataLength:(long long)arg2;
-- (BOOL)seekWithinBufferToOffset:(long long)arg1;
+- (id)initWithStream:(id)arg1;
 - (id)closeLocalStream;
+- (BOOL)seekWithinBufferToOffset:(long long)arg1;
+- (void)enableSystemCaching;
+- (void)disableSystemCaching;
+- (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
+- (void)seekToOffset:(long long)arg1;
+- (BOOL)canSeek;
 - (id)initWithStream:(id)arg1 bufferSize:(unsigned long)arg2;
 - (unsigned long)readToOwnBuffer:(const char **)arg1 size:(unsigned long)arg2;
-- (BOOL)canSeek;
-- (void)seekToOffset:(long long)arg1;
-- (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
-- (void)disableSystemCaching;
-- (void)enableSystemCaching;
 
 @end

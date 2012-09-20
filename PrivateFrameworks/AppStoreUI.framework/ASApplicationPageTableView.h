@@ -15,17 +15,17 @@
 @property float snapToBottomY;
 
 
-- (void)dealloc;
-- (void)_scrollViewAnimationEnded;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (float)snapToBottomY;
 - (void)_snapIntoPlaceIfNeededForEvent:(id)arg1;
 - (void)_reenableScrolling;
 - (void)_safeResetScrollingWithUIEvent:(id)arg1;
 - (void)setSnapToBottomY:(float)arg1;
 - (void)setScreenshotsView:(id)arg1;
+- (void)resetAfterAnimation;
 - (void)screenshotsViewBeganScroll:(id)arg1;
 - (id)screenshotsView;
+- (void)dealloc;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 
 @end

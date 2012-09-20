@@ -12,29 +12,29 @@
     PTPCameraDeviceManager *_ptpDevManager;
 }
 
-@property(readonly) NSMutableArray * browsers;
 @property(readonly) NSMutableArray * devices;
+@property(readonly) NSMutableArray * browsers;
 
-+ (BOOL)exists;
 + (id)defaultBrowser;
++ (BOOL)exists;
 
-- (id)init;
+- (id)browsers;
+- (void)informBrowserDelegateUsingSelector:(SEL)arg1 withObject:(id)arg2;
+- (id)deviceWithDelegate:(id)arg1;
+- (void)removeMSCamera:(id)arg1;
+- (int)addRemoveMSCamera;
+- (void)removePTPCamera:(id)arg1;
+- (void)removeBrowser:(id)arg1;
+- (int)addMSCamera:(id)arg1;
+- (int)addPTPCamera:(id)arg1;
+- (void)addBrowser:(id)arg1;
+- (void)handleImageCaptureEventNotification:(id)arg1;
+- (void)handleCommandCompletionNotification:(id)arg1;
+- (int)start:(id)arg1;
 - (void)dealloc;
+- (id)init;
+- (void)finalize;
 - (id)devices;
 - (void)stop:(id)arg1;
-- (int)addRemoveMSCamera;
-- (id)deviceWithDelegate:(id)arg1;
-- (void)informBrowserDelegateUsingSelector:(SEL)arg1 withObject:(id)arg2;
-- (id)browsers;
-- (int)addPTPCamera:(id)arg1;
-- (void)removePTPCamera:(id)arg1;
-- (int)addMSCamera:(id)arg1;
-- (void)removeMSCamera:(id)arg1;
-- (void)addBrowser:(id)arg1;
-- (void)removeBrowser:(id)arg1;
-- (void)handleCommandCompletionNotification:(id)arg1;
-- (void)handleImageCaptureEventNotification:(id)arg1;
-- (int)start:(id)arg1;
-- (void)finalize;
 
 @end

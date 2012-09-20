@@ -2,25 +2,37 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSMutableArray, UIView<RemoteUITableHeader>;
+@class UIView<RemoteUITableFooter>, NSMutableArray, UIView<RemoteUITableHeader>;
 
 @interface RUITableViewSection : RUIElement  {
     NSMutableArray *_rows;
     UIView<RemoteUITableHeader> *_header;
+    UIView<RemoteUITableFooter> *_footer;
+    id _delegate;
+    UIView<RemoteUITableFooter> *_footerView;
 }
 
-@property(retain) UIView<RemoteUITableHeader> * headerView;
 @property(readonly) NSMutableArray * rows;
+@property(retain) UIView<RemoteUITableHeader> * headerView;
+@property(retain) UIView<RemoteUITableFooter> * footerView;
 
 
-- (id)init;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setDelegate:(id)arg1;
 - (void)dealloc;
-- (void)setHeaderView:(id)arg1;
+- (id)init;
+- (BOOL)hasCustomFooter;
+- (BOOL)hasCustomHeader;
+- (void)remoteUILinkFooterActivatedLink:(id)arg1;
+- (Class)_customFooterClass;
+- (Class)_customHeaderClass;
+- (void)populatePostbackDictionary:(id)arg1;
+- (void)setImageAlignment:(int)arg1;
+- (void)setFooterView:(id)arg1;
+- (id)footerView;
 - (id)headerView;
+- (void)setHeaderView:(id)arg1;
 - (id)rows;
 - (void)setImage:(id)arg1;
-- (Class)_customHeaderClass;
-- (BOOL)hasCustomHeader;
-- (void)populatePostbackDictionary:(id)arg1;
 
 @end

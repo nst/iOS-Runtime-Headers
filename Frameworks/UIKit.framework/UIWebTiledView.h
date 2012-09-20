@@ -11,6 +11,7 @@
     BOOL _didFirstTileLayout;
     BOOL _layoutTilesInMainThread;
     BOOL _tilingModeIsLocked;
+    BOOL _allowsPaintingAndScriptsWhilePanning;
 }
 
 
@@ -27,6 +28,8 @@
 - (BOOL)drawsGrid;
 - (void)setDrawsGrid:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })tileSize;
+- (void)setAllowsPaintingAndScriptsWhilePanning:(BOOL)arg1;
+- (BOOL)allowsPaintingAndScriptsWhilePanning;
 - (void)unlockTilingMode;
 - (void)lockTilingMode;
 - (void)layoutTilesNowOnWebThread;
@@ -36,9 +39,9 @@
 - (void)setKeepsZoomedOutTiles:(BOOL)arg1;
 - (BOOL)tilesOpaque;
 - (void)updateTilingMode;
-- (void)_updateForScreen:(id)arg1;
 - (void)layoutTilesNowForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_screenChanged:(id)arg1;
+- (void)_updateForScreen:(id)arg1;
 - (int)tilingArea;
 - (void)setInGesture:(int)arg1;
 - (void)removeForegroundTiles;
@@ -46,7 +49,7 @@
 - (void)setTilesOpaque:(BOOL)arg1;
 - (void)setTilingArea:(int)arg1;
 - (void)removeAllNonVisibleTiles;
-- (struct WKWindow { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct WKView {} *x4; struct WKView {} *x5; struct WKView {} *x6; struct CGSize { float x_7_1_1; float x_7_1_2; } x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; float x9; unsigned int x10 : 1; }*)wkWindow;
+- (struct WKWindow { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct WKView {} *x3; struct WKView {} *x4; struct WKView {} *x5; }*)wkWindow;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (void)setLayoutTilesInMainThread:(BOOL)arg1;
 - (void)setTilingEnabled:(BOOL)arg1;

@@ -7,7 +7,7 @@
 @interface DOMWebKitAnimation : DOMObject  {
 }
 
-@property(copy,readonly) NSString * name;
+@property(readonly) NSString * name;
 @property(readonly) double duration;
 @property double elapsedTime;
 @property(readonly) double delay;
@@ -18,19 +18,19 @@
 @property(readonly) unsigned short fillMode;
 
 
+- (id)name;
 - (void)dealloc;
 - (void)pause;
 - (BOOL)paused;
 - (void)finalize;
 - (unsigned short)direction;
 - (double)delay;
-- (id)name;
 - (double)duration;
-- (double)elapsedTime;
-- (void)setElapsedTime:(double)arg1;
-- (int)iterationCount;
-- (BOOL)ended;
-- (unsigned short)fillMode;
 - (void)play;
+- (unsigned short)fillMode;
+- (BOOL)ended;
+- (int)iterationCount;
+- (void)setElapsedTime:(double)arg1;
+- (double)elapsedTime;
 
 @end

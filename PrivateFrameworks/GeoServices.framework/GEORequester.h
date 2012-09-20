@@ -2,26 +2,39 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSThread;
+@class NSString, NSThread;
 
 @interface GEORequester : PBRequester  {
     BOOL _disableReplay;
     NSThread *_thread;
+    BOOL _usePersistentConnection;
+    BOOL _useBackgroundConnection;
+    NSString *_debugRequestName;
 }
 
 @property BOOL disableReplay;
+@property(retain) NSString * debugRequestName;
 
-+ (void)stopAllRequests;
 + (void)replayRequests;
++ (void)stopAllRequests;
 
 - (void)dealloc;
-- (void)_applicationWantsToReplayRequests:(id)arg1;
-- (void)_applicationDidStopAllRequests:(id)arg1;
 - (void)start;
-- (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
 - (void)setDisableReplay:(BOOL)arg1;
+- (id)debugRequestName;
+- (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2;
+- (id)persistentConnectionSession;
+- (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
 - (void)_handleResumeOnThread;
 - (BOOL)disableReplay;
 - (void)_handleSuspendOnThread;
+- (void)_applicationWantsToReplayRequests:(id)arg1;
+- (void)_applicationDidStopAllRequests:(id)arg1;
+- (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
+- (id)logResponseToFile;
+- (id)logRequestToFile;
+- (id)initWithURL:(id)arg1 andDelegate:(id)arg2 usePersistentConnection:(BOOL)arg3 useBackgroundConnection:(BOOL)arg4;
+- (void)setDebugRequestName:(id)arg1;
+- (id)initWithURL:(id)arg1 andDelegate:(id)arg2 usePersistentConnection:(BOOL)arg3;
 
 @end

@@ -8,11 +8,11 @@
 
 
 - (int)value;
-- (id)initWithEnum:(int)arg1;
 - (id)cssStringForName:(id)arg1;
-- (id)mapJustification;
-- (id)mapVerticalAlign;
-- (id)mapUnderline;
+- (id)initWithEnum:(int)arg1;
 - (id)mapCellTextVAlign;
+- (id)mapUnderline;
+- (id)mapVerticalAlign;
+- (id)mapJustification;
 
 @end

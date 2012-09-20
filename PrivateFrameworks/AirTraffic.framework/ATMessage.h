@@ -16,25 +16,26 @@
 @property(retain) NSData * sig;
 @property(readonly) unsigned int sessionNumber;
 
-+ (id)messageWithName:(id)arg1 parameters:(id)arg2;
++ (id)messageWithName:(id)arg1 parameters:(id)arg2 session:(unsigned int)arg3;
 + (id)messageFromData:(id)arg1;
 + (void)setSessionNumber:(unsigned int)arg1;
 + (unsigned int)currentSessionNumber;
 + (unsigned int)nextSessionNumber;
++ (id)messageWithName:(id)arg1 parameters:(id)arg2;
 + (id)messageFromDictionary:(id)arg1;
 
-- (void)setName:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (void)setParameters:(id)arg1;
-- (id)parameters;
-- (id)sig;
-- (unsigned int)sessionNumber;
-- (id)parameterForKey:(id)arg1;
-- (void)setSig:(id)arg1;
-- (id)initWithDictionary:(id)arg1;
+- (id)dictionary;
+- (void)setName:(id)arg1;
 - (id)name;
 - (id)data;
-- (id)dictionary;
+- (id)description;
+- (void)dealloc;
+- (id)parameters;
+- (id)initWithDictionary:(id)arg1;
+- (id)parameterForKey:(id)arg1;
+- (id)sig;
+- (unsigned int)sessionNumber;
+- (void)setSig:(id)arg1;
 
 @end

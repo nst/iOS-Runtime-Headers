@@ -18,14 +18,14 @@
 
 + (id)codedPropertyKeys;
 
-- (void)dealloc;
+- (void)setPushToken:(id)arg1;
+- (id)pushToken;
+- (id)authToken;
 - (void)setAccountName:(id)arg1;
 - (id)accountName;
 - (void)setAuthToken:(id)arg1;
-- (id)authToken;
-- (void)setPushToken:(id)arg1;
-- (id)pushToken;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
+- (void)dealloc;
 
 @end

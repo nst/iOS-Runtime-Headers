@@ -17,6 +17,9 @@
 @property(retain) SUDescriptor * descriptor;
 
 
+- (BOOL)isDownloadable;
+- (id)description;
+- (void)dealloc;
 - (void)setCellularCapable:(BOOL)arg1;
 - (BOOL)isCellularCapable;
 - (void)setCarrierPolicy:(id)arg1;
@@ -29,16 +32,15 @@
 - (BOOL)_isCellularCapable;
 - (void)setNetworkMonitor:(id)arg1;
 - (id)_stringForBool:(BOOL)arg1;
+- (BOOL)isSamePolicy:(id)arg1;
 - (BOOL)isDownloadAllowableForWiFi;
+- (BOOL)isDownloadAllowableForCellularRoaming;
 - (BOOL)isDownloadAllowableForCellular;
 - (BOOL)isDownloadAllowableForCellular2G;
-- (BOOL)isDownloadFreeForCellular;
-- (void)setDescriptor:(id)arg1;
 - (BOOL)isPowerRequired;
+- (BOOL)isDownloadFreeForCellular;
 - (id)descriptor;
+- (void)setDescriptor:(id)arg1;
 - (id)initWithDescriptor:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (BOOL)isDownloadable;
 
 @end

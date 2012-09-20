@@ -10,6 +10,13 @@
 
 + (id)_createAuthenticationChallengeForCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
 
+- (void)dealloc;
+- (id)init;
+- (id)sender;
+- (id)protectionSpace;
+- (int)previousFailureCount;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setSender:(id)arg1;
 - (id)initWithAuthenticationChallenge:(id)arg1 sender:(id)arg2;
 - (id)_initWithCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
@@ -17,13 +24,6 @@
 - (id)proposedCredential;
 - (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(int)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
 - (struct _CFURLAuthChallenge { }*)_createCFAuthChallenge;
-- (id)init;
-- (void)dealloc;
 - (id)error;
-- (id)sender;
-- (id)protectionSpace;
-- (int)previousFailureCount;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

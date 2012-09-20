@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CalDAVServerVersion, NSString, NSSet, NSURL;
+@class NSSet, NSURL, CalDAVServerVersion;
 
 @interface CalDAVGetAccountPropertiesTaskGroup : CoreDAVGetAccountPropertiesTaskGroup  {
     NSSet *_calendarHomes;
@@ -14,36 +14,27 @@
     NSURL *_notificationURL;
     NSURL *_delegatePrincipalURL;
     NSURL *_updatedPrincipalURL;
-    NSString *_allowedCalendarComponentSet;
     CalDAVServerVersion *_serverVersion;
 }
 
-@property(readonly) NSURL * updatedPrincipalURL;
-@property(readonly) NSString * allowedCalendarComponentSet;
-@property(readonly) CalDAVServerVersion * serverVersion;
-@property(readonly) NSSet * originalUserAddresses;
-@property(readonly) NSSet * userAddresses;
-@property(readonly) NSURL * notificationURL;
-@property(readonly) NSURL * dropboxURL;
-@property(readonly) NSURL * outboxURL;
-@property(readonly) NSURL * inboxURL;
 @property(retain) NSURL * delegatePrincipalURL;
 @property(readonly) NSSet * calendarHomes;
+@property(readonly) NSSet * userAddresses;
+@property(readonly) NSSet * originalUserAddresses;
+@property(readonly) NSURL * inboxURL;
+@property(readonly) NSURL * outboxURL;
+@property(readonly) NSURL * dropboxURL;
+@property(readonly) NSURL * notificationURL;
+@property(readonly) NSURL * updatedPrincipalURL;
+@property(readonly) CalDAVServerVersion * serverVersion;
 
 
 - (id)description;
 - (void)dealloc;
-- (void)processPrincipalHeaders:(id)arg1;
-- (BOOL)forceOptionsRequest;
-- (void)startTaskGroup;
-- (id)homeSet;
-- (void)_setPropertiesFromParsedResponses:(id)arg1;
-- (id)_copyAccountPropertiesPropFindElements;
 - (id)outboxURL;
 - (id)inboxURL;
 - (id)serverVersion;
 - (id)updatedPrincipalURL;
-- (id)allowedCalendarComponentSet;
 - (id)originalUserAddresses;
 - (id)userAddresses;
 - (id)notificationURL;
@@ -51,5 +42,11 @@
 - (void)setDelegatePrincipalURL:(id)arg1;
 - (id)calendarHomes;
 - (id)delegatePrincipalURL;
+- (void)processPrincipalHeaders:(id)arg1;
+- (BOOL)forceOptionsRequest;
+- (void)startTaskGroup;
+- (id)homeSet;
+- (void)_setPropertiesFromParsedResponses:(id)arg1;
+- (id)_copyAccountPropertiesPropFindElements;
 
 @end

@@ -30,11 +30,20 @@
 + (id)fallbackUserName;
 + (id)me;
 
-- (id)init;
+- (id)emails;
+- (id)email;
+- (id)lastName;
+- (id)firstName;
+- (id)nickname;
+- (id)guid;
 - (void)dealloc;
+- (id)init;
+- (id)person;
+- (id)fullName;
 - (id)bestIMHandle;
 - (BOOL)isIMHandleLoginIMHandle:(id)arg1;
 - (id)loginIMHandles;
+- (id)imHandles;
 - (id)_imHandlesWithIDs:(id)arg1 onAccount:(id)arg2;
 - (void)setFirstName:(id)arg1 lastName:(id)arg2;
 - (void)rebuildIMHandles;
@@ -45,14 +54,5 @@
 - (BOOL)addLoginIMHandle:(id)arg1;
 - (void)resetABPerson;
 - (BOOL)removeLoginIMHandle:(id)arg1;
-- (id)emails;
-- (id)email;
-- (id)lastName;
-- (id)firstName;
-- (id)imHandles;
-- (id)person;
-- (id)fullName;
-- (id)guid;
-- (id)nickname;
 
 @end

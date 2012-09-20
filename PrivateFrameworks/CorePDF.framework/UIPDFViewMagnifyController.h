@@ -23,28 +23,34 @@
     UIPDFMagnifiedView *_magnifiedView;
     UIWindow *_textEffectsWindow;
     UIPDFPageView *_pageView;
+    int _lock;
     float _magnification;
+    BOOL needImage;
 }
 
-@property float magnification;
 @property UIPDFPageView * pageView;
+@property float magnification;
+@property BOOL needImage;
 
 
-- (id)init;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1 viewPoint:(struct CGPoint { float x1; float x2; })arg2 loupe:(BOOL)arg3;
-- (void)showLoupe;
-- (void)showMagnifier;
-- (void)move;
-- (float)magnification;
 - (void)setMagnification:(float)arg1;
-- (struct CGImage { }*)createBitMap:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 source:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (float)magnification;
+- (void)move;
+- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1 viewPoint:(struct CGPoint { float x1; float x2; })arg2 loupe:(BOOL)arg3;
+- (void)showMagnifier;
+- (void)showLoupe;
 - (struct CGPoint { float x1; float x2; })transformPointToTSpace:(struct CGPoint { float x1; float x2; })arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2;
-- (void)selectPower;
-- (struct CGImage { }*)createBackingImage;
-- (void)setSelectionPath;
 - (void)showGlass:(BOOL)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (id)pageView;
+- (void)setSelectionPath;
+- (void)_makeMagnifiedImage;
+- (void)setNeedImage:(BOOL)arg1;
+- (void)selectPower;
+- (struct CGImage { }*)newBackingImage;
+- (struct CGImage { }*)newBitMap:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 source:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (BOOL)needImage;
 - (void)setPageView:(id)arg1;
+- (id)pageView;
+- (id)init;
 - (void)hide;
 
 @end

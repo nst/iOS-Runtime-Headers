@@ -6,7 +6,6 @@
 
 @interface PLPhonePhotoScrollerViewController : PLPhotoScrollerViewController <UINavigationControllerDelegate> {
     UIView *_savedButtonBarSuperview;
-    int _previousGroup;
     unsigned int _isModalTransition : 1;
     unsigned int _didDisappearUnderModalTransition : 1;
     UIView *_viewToRemoveForSlideShow;
@@ -25,8 +24,8 @@
 - (BOOL)_isPerformingModalTransitionFromCamera;
 - (void)beginSlideshowByRemovingView:(id)arg1;
 - (id)initWithPhoto:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 lockStatusBar:(BOOL)arg3 delayImageLoading:(BOOL)arg4;
-- (void)_updateNavigationBar;
 - (void)didMoveToPhotoAtIndex:(unsigned int)arg1;
 - (BOOL)_isAirPlayEnabled;
+- (void)_updateNavigationBar;
 
 @end

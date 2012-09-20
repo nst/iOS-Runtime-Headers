@@ -21,8 +21,8 @@
 
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)hideGaps:(BOOL)arg1;
 - (int)indexForGapIndex:(int)arg1;
 - (struct { int x1; int x2; int x3; int x4; BOOL x5; BOOL x6; })indexesFromOffset:(float)arg1 toOffset:(float)arg2;

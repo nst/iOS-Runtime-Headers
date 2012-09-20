@@ -17,9 +17,9 @@
 @property(retain) NSString * personalizedBaseName;
 
 
-- (void)updateNavigationButtons;
 - (void)setupEditableBaseStationName;
 - (void)selectedDeviceUpdated;
+- (void)updateNavigationButtons;
 - (void)prepareParams;
 - (void)primaryActionSelected:(BOOL)arg1;
 - (id)deviceTableLabel;

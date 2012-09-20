@@ -7,13 +7,13 @@
 @interface DOMCSSImportRule : DOMCSSRule  {
 }
 
-@property(copy,readonly) NSString * href;
-@property(retain,readonly) DOMMediaList * media;
-@property(retain,readonly) DOMCSSStyleSheet * styleSheet;
+@property(readonly) NSString * href;
+@property(readonly) DOMMediaList * media;
+@property(readonly) DOMCSSStyleSheet * styleSheet;
 
 
-- (id)href;
-- (id)media;
 - (id)styleSheet;
+- (id)media;
+- (id)href;
 
 @end

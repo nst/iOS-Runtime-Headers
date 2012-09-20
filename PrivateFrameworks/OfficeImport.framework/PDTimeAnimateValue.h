@@ -10,11 +10,11 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (id)timeValue;
-- (void)setTimeValue:(id)arg1;
+- (id)init;
 - (double)percentTime;
+- (void)setTimeValue:(id)arg1;
+- (id)timeValue;
 - (void)setPercentTime:(double)arg1;
 
 @end

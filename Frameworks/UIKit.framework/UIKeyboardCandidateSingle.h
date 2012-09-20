@@ -6,15 +6,23 @@
 
 @interface UIKeyboardCandidateSingle : UIKeyboardCandidate  {
     NSString *_candidate;
+    NSString *_input;
 }
 
 @property(copy) NSString * candidate;
+@property(copy) NSString * input;
 
++ (id)candidateWithCandidate:(id)arg1 forInput:(id)arg2;
++ (id)candidateWithUnchangedInput:(id)arg1;
 
-- (id)initWithCandidate:(id)arg1;
-- (id)candidate;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setCandidate:(id)arg1;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2;
+- (void)setInput:(id)arg1;
+- (id)initWithUnchangedInput:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)candidate;
+- (id)input;
+- (void)dealloc;
+- (id)initWithCandidate:(id)arg1;
 
 @end

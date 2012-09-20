@@ -7,17 +7,17 @@
 @interface SAWeatherDailyForecast : SAWeatherForecast  {
 }
 
-@property(retain) NSNumber * highTemperature;
-@property(retain) NSNumber * lowTemperature;
+@property(copy) NSNumber * highTemperature;
+@property(copy) NSNumber * lowTemperature;
 
-+ (id)dailyForecast;
 + (id)dailyForecastWithDictionary:(id)arg1 context:(id)arg2;
++ (id)dailyForecast;
 
 - (id)groupIdentifier;
-- (id)highTemperature;
-- (void)setHighTemperature:(id)arg1;
-- (id)lowTemperature;
 - (void)setLowTemperature:(id)arg1;
+- (id)lowTemperature;
+- (void)setHighTemperature:(id)arg1;
+- (id)highTemperature;
 - (id)encodedClassName;
 
 @end

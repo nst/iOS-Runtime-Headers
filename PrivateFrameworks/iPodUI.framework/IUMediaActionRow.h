@@ -14,10 +14,13 @@
     BOOL _showDisclosure;
     BOOL _showPlusButton;
     int _tag;
+    int _mediaTypes;
 }
 
+@property(readonly) SEL action;
+@property(readonly) int tag;
+@property(readonly) int mediaTypes;
 @property(readonly) UIView * accessoryView;
-@property SEL action;
 @property(retain) IUMediaTableCell * cell;
 @property(retain) IUTableCellConfiguration * configuration;
 @property(readonly) int mediaDisclosureStyle;
@@ -26,35 +29,35 @@
 @property BOOL showCheckmark;
 @property BOOL showDisclosure;
 @property BOOL showPlusButton;
-@property int tag;
 
++ (id)actionRowWithPreset:(int)arg1 action:(SEL)arg2 title:(id)arg3;
 + (id)actionRowWithPreset:(int)arg1 action:(SEL)arg2;
-+ (id)hyperlinkActionRowWithTitle:(id)arg1;
++ (id)hyperlinkActionRowWithTag:(int)arg1 mediaType:(int)arg2 title:(id)arg3 action:(SEL)arg4;
++ (id)actionRowWithPreset:(int)arg1 action:(SEL)arg2 title:(id)arg3 cellConfigurationClass:(Class)arg4;
++ (id)actionRowWithTag:(int)arg1 action:(SEL)arg2;
 
-- (id)description;
+- (id)configuration;
+- (void)setConfiguration:(id)arg1;
 - (SEL)action;
+- (id)description;
 - (void)dealloc;
 - (void)setSelectable:(BOOL)arg1;
 - (void)setCell:(id)arg1;
 - (BOOL)selectable;
 - (id)cell;
+- (int)mediaTypes;
 - (id)accessoryView;
-- (BOOL)showDisclosure;
-- (void)setShowDisclosure:(BOOL)arg1;
-- (void)setAction:(SEL)arg1;
 - (int)tag;
-- (void)setTag:(int)arg1;
-- (id)configuration;
-- (void)setConfiguration:(id)arg1;
 - (BOOL)showPlusButton;
-- (void)setSimpleConfigurationPreset:(int)arg1;
+- (BOOL)showDisclosure;
+- (id)initWithPreset:(int)arg1 mediaTypes:(int)arg2 title:(id)arg3 action:(SEL)arg4 cellConfigurationClass:(Class)arg5;
+- (id)initWithTag:(int)arg1 mediaTypes:(int)arg2 selectable:(BOOL)arg3 action:(SEL)arg4;
 - (BOOL)includeInDisplayedRowCount;
-- (void)setSimpleConfigurationWithTitle:(id)arg1;
-- (void)setShowPlusButton:(BOOL)arg1;
 - (void)setIncludeInDisplayedRowCount:(BOOL)arg1;
+- (void)setShowDisclosure:(BOOL)arg1;
+- (void)setShowPlusButton:(BOOL)arg1;
 - (int)mediaDisclosureStyle;
 - (BOOL)showCheckmark;
 - (void)setShowCheckmark:(BOOL)arg1;
-- (id)initWithTag:(int)arg1 action:(SEL)arg2;
 
 @end

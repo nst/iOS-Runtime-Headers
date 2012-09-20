@@ -6,7 +6,7 @@
 }
 
 
-- (void)dealloc;
 - (BOOL)clearsWeakScriptReferences;
+- (void)dealloc;
 
 @end

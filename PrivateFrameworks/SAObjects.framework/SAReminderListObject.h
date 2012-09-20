@@ -9,8 +9,8 @@
 
 @property(copy) NSString * name;
 
-+ (id)listObject;
 + (id)listObjectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)listObject;
 
 - (id)groupIdentifier;
 - (void)setName:(id)arg1;

@@ -19,6 +19,11 @@
 + (id)recurrence;
 
 - (id)groupIdentifier;
+- (int)interval;
+- (void)setInterval:(int)arg1;
+- (void)setFrequencyTimeUnit:(id)arg1;
+- (id)frequencyTimeUnit;
+- (id)encodedClassName;
 - (id)weeksOfTheYear;
 - (id)daysOfTheYear;
 - (id)monthsOfTheYear;
@@ -29,10 +34,5 @@
 - (void)setMonthsOfTheYear:(id)arg1;
 - (void)setDaysOfTheMonth:(id)arg1;
 - (void)setDaysOfTheWeek:(id)arg1;
-- (int)interval;
-- (void)setInterval:(int)arg1;
-- (id)frequencyTimeUnit;
-- (void)setFrequencyTimeUnit:(id)arg1;
-- (id)encodedClassName;
 
 @end

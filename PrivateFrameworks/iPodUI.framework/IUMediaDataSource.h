@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUModalContext, NSString;
+@class MPStoreCompletionOffering, IUModalContext, NSString;
 
 @interface IUMediaDataSource : NSObject  {
     IUModalContext *_modalContext;
@@ -13,6 +13,7 @@
     int _coalesceInvalidateNotifications;
     BOOL _editing;
     NSString *_backButtonTitle;
+    MPStoreCompletionOffering *_completionOffering;
 }
 
 @property BOOL ignoresInvalidation;
@@ -20,33 +21,38 @@
 @property(retain) NSString * title;
 @property(readonly) BOOL shouldDisplayWhenEmpty;
 @property(getter=isRestorableNavigationPathNode,readonly) BOOL restorableNavigationPathNode;
-@property(readonly) BOOL isFiltered;
 @property(getter=isEditing,setter=setIsEditing:) BOOL editing;
 @property(retain) NSString * backButtonTitle;
+@property(retain) MPStoreCompletionOffering * completionOffering;
+@property(readonly) BOOL canShowCompletionOfferings;
+@property(readonly) BOOL isContentDisplayEnabled;
 
 + (BOOL)isLoadingDisabled;
 + (void)setLoadingDisabled:(BOOL)arg1;
 + (id)shortNoContextNavigationTitleKey;
++ (int)tabBarSystemItem;
 + (id)moreListTitleKey;
 + (id)defaultTitle;
-+ (int)tabBarSystemItem;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tabBarItemIconImageInsets;
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
+- (void)invalidate;
 - (void)dealloc;
-- (void)setIsEditing:(BOOL)arg1;
 - (BOOL)isEditing;
 - (void)setBackButtonTitle:(id)arg1;
 - (id)backButtonTitle;
 - (id)title;
-- (void)invalidate;
 - (void)setTitle:(id)arg1;
 - (void)reloadData;
 - (BOOL)shouldHideContainerNavigationBar;
+- (id)completionOffering;
 - (void)setIgnoresInvalidation:(BOOL)arg1;
 - (BOOL)ignoresInvalidation;
-- (BOOL)filterUsingDataSource:(id)arg1;
-- (BOOL)isFiltered;
+- (BOOL)canShowCompletionOfferings;
+- (void)setCompletionOffering:(id)arg1;
+- (BOOL)isContentDisplayEnabled;
+- (void)setIsEditing:(BOOL)arg1;
 - (id)viewControllerContextForSearchCompletion;
 - (id)viewControllerContextForSpecifier:(id)arg1;
 - (void)setModalContext:(id)arg1;
@@ -66,5 +72,6 @@
 - (id)viewControllerContextForMediaQuery:(id)arg1;
 - (id)modalContext;
 - (void)configureMoreListTableCell:(id)arg1;
+- (int)filteredMediaTypes;
 
 @end

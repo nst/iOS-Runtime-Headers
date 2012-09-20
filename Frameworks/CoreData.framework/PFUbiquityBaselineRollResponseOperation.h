@@ -11,8 +11,9 @@
 
 
 - (void)main;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (BOOL)canAdoptBaseline:(id)arg1 byReplacingLocalStoreFile:(BOOL*)arg2 withStack:(id)arg3 withError:(id*)arg4;
+- (id)retainedDelegate;
 
 @end

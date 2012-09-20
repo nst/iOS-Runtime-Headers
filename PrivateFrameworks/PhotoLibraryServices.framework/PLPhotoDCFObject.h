@@ -11,12 +11,12 @@
 
 + (id)validDCFNameForName:(id)arg1 requiredLength:(int)arg2 nameLength:(int)arg3 number:(int*)arg4 numberRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 suffix:(id)arg6;
 
-- (id)description;
-- (void)dealloc;
-- (void)setWriteIsPending:(BOOL)arg1;
-- (id)initWithName:(id)arg1 number:(int)arg2;
-- (int)number;
 - (int)compare:(id)arg1;
 - (id)name;
+- (id)description;
+- (void)dealloc;
+- (int)number;
+- (void)setWriteIsPending:(BOOL)arg1;
+- (id)initWithName:(id)arg1 number:(int)arg2;
 
 @end

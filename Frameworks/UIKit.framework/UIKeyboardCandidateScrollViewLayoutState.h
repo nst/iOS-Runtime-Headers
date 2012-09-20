@@ -19,6 +19,7 @@
     float _rowHeight;
     BOOL _grouped;
     float _groupBarWidth;
+    BOOL _hasIndex;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -46,6 +47,7 @@
 @property float rowHeight;
 @property BOOL grouped;
 @property float groupBarWidth;
+@property BOOL hasIndex;
 @property(copy) id completion;
 @property BOOL layoutFinished;
 @property unsigned int currentGroupIndex;
@@ -69,13 +71,14 @@
 - (unsigned int)currentGroupIndex;
 - (void)setLayoutFinished:(BOOL)arg1;
 - (BOOL)layoutFinished;
+- (void)setHasIndex:(BOOL)arg1;
+- (BOOL)hasIndex;
 - (void)setGroupBarWidth:(float)arg1;
 - (float)groupBarWidth;
 - (void)setGrouped:(BOOL)arg1;
 - (BOOL)grouped;
 - (void)setTotalWidth:(float)arg1;
 - (float)totalWidth;
-- (void)setCandidateGroups:(id)arg1;
 - (id)candidateGroups;
 - (void)setGroupHeaderCells:(id)arg1;
 - (id)groupHeaderCells;
@@ -83,6 +86,7 @@
 - (id)candidateCells;
 - (void)setAllCells:(id)arg1;
 - (id)allCells;
+- (void)setCandidateGroups:(id)arg1;
 - (void)setColumnCount:(unsigned int)arg1;
 - (unsigned int)columnCount;
 - (void)setColumnWidth:(float)arg1;

@@ -2,56 +2,33 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CalendarModel;
+@class NSArray, NSSet, EKEventStore, NSMutableDictionary;
 
 @interface OccurrenceCacheDataSource : NSObject <OccurrenceCacheDataSourceProtocol> {
-    struct CalDatabase { } *_database;
-    struct CalFilter { } *_filter;
-    struct __CFArray { } *_cachedDays;
-    int _cachedDayCount;
-    struct __CFArray { } *_cachedOccurrences;
-    int _cachedOccurrenceCount;
-    struct __CFArray { } *_cachedDayIndexes;
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    } _cachedDayRange;
-    int _totalOccurrencesCount;
-    CalendarModel *_model;
+    EKEventStore *_eventStore;
+    NSSet *_calendars;
+    NSArray *_cachedDays;
+    NSMutableDictionary *_cachedOccurrences;
+    int _cachedDaysSeed;
 }
 
 
+- (void)invalidate;
 - (void)dealloc;
-- (void)stopSearching;
-- (void)startSearching;
-- (int)dayIndexForDay:(double)arg1;
-- (void)restartSearchWithTerm:(id)arg1;
-- (struct CalEventOccurrence { }*)cachedOccurrenceAtIndex:(int)arg1;
-- (int)fixDayIndexToFitInCachedDays:(int)arg1;
-- (int)indexOfFirstCachedOccurrence;
-- (int)dayIndexOfCachedOccurrenceIndex:(int)arg1;
-- (int)dayIndexOfCachedOccurrenceAtIndex:(int)arg1;
-- (int)indexOfLastOccurrenceForDayIndex:(int)arg1;
-- (int)indexOfFirstOccurrenceForDayIndex:(int)arg1;
-- (int)dayCountBeforeDay:(double)arg1;
-- (int)countOfOccurrencesOnDay:(double)arg1;
-- (void)loadOccurrencesForRange:(struct { int x1; int x2; })arg1;
-- (double)dateForDayIndex:(int)arg1;
-- (BOOL)dayIndexAlreadyCached:(int)arg1;
-- (int)cachedOccurrenceCountOnOrAfterDate:(double)arg1;
-- (int)cachedOccurrenceCount;
+- (void)searchWithTerm:(id)arg1;
+- (void)fetchDaysInBackgroundStartingFromSection:(int)arg1;
+- (int)sectionForCachedOccurrencesOnDate:(id)arg1;
+- (id)cachedOccurrenceAtIndexPath:(id)arg1;
+- (id)dateAtDayIndex:(int)arg1;
+- (int)countOfOccurrencesAtDayIndex:(int)arg1;
 - (BOOL)cachedOccurrencesAreBeingGenerated;
+- (BOOL)cachedOccurrencesAreLoaded;
 - (BOOL)supportsFakeTodaySection;
 - (BOOL)supportsInvitations;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })cachedDayRange;
-- (id)initWithDatabase:(struct CalDatabase { }*)arg1 filter:(struct CalFilter { }*)arg2;
-- (int)totalOccurrencesCount;
+- (id)initWithEventStore:(id)arg1 calendars:(id)arg2;
 - (int)cachedDayCount;
-- (struct __CFArray { }*)_cachedDayIndexes;
-- (void)setCachedDayRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)invalidateCachedDays;
-- (void)invalidateCachedDayIndexes;
+- (id)_cachedDays;
 - (void)invalidateCachedOccurrences;
-- (void)invalidate;
+- (void)stopSearching;
 
 @end

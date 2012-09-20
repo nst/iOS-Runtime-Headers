@@ -10,13 +10,13 @@
 }
 
 
-- (void)dealloc;
-- (id)MIMEType;
 - (id)_bubbleImageForImage:(id)arg1;
 - (id)newUnfilteredInputSource;
 - (id)copyPreparationOperations;
 - (void)generateComposeImage;
 - (id)initWithMediaObject:(id)arg1;
 - (id)composeImage;
+- (void)dealloc;
+- (id)MIMEType;
 
 @end

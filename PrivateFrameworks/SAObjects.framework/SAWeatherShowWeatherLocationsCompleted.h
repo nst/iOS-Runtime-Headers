@@ -7,11 +7,11 @@
 @interface SAWeatherShowWeatherLocationsCompleted : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)showWeatherLocationsCompleted;
 + (id)showWeatherLocationsCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)showWeatherLocationsCompleted;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

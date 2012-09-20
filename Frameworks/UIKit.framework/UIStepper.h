@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, UIImageView, UIButton;
+@class UIImageView, UIButton, NSTimer, UIColor, NSMutableDictionary;
 
 @interface UIStepper : UIControl  {
     BOOL _isRtoL;
@@ -11,6 +11,8 @@
     UIButton *_minusButton;
     NSTimer *_repeatTimer;
     int _repeatCount;
+    NSMutableDictionary *_dividerImages;
+    UIColor *_tintColor;
     double _value;
     double _minimumValue;
     double _maximumValue;
@@ -27,17 +29,29 @@
 @property double minimumValue;
 @property double maximumValue;
 @property double stepValue;
+@property(retain) UIColor * tintColor;
 
 
 - (void)dealloc;
 - (void)setAutorepeat:(BOOL)arg1;
 - (BOOL)autorepeat;
 - (double)stepValue;
+- (id)decrementImageForState:(unsigned int)arg1;
+- (id)incrementImageForState:(unsigned int)arg1;
 - (void)setStepValue:(double)arg1;
+- (void)setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3;
+- (void)_setDecrementImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setIncrementImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)_stopTimer;
 - (void)_updateCount:(id)arg1;
 - (void)_updateHighlightingAtPoint:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_startTimer;
+- (id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2;
+- (void)_updateDividerImageForButtonState;
+- (void)setDecrementImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)setIncrementImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3;
+- (void)_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)_updateButtonEnabled;
 - (void)_commonStepperInit;
 - (void)setWraps:(BOOL)arg1;
@@ -50,13 +64,22 @@
 - (double)minimumValue;
 - (double)value;
 - (void)setValue:(double)arg1;
-- (void)cancelTrackingWithEvent:(id)arg1;
+- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)cancelTrackingWithEvent:(id)arg1;
+- (id)backgroundImageForState:(unsigned int)arg1;
+- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)setTintColor:(id)arg1;
+- (id)tintColor;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;

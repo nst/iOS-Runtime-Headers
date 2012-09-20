@@ -2,57 +2,23 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKLabel, GKGame, UIImageView, UIView, GKRatingHeaderControl, GKGameRecord, NSURL;
+@class UIImageView, GKGameTitleView, GKHeaderSegmentedControl, GKGameRecord;
 
-@interface GKGameDetailHeaderView : UIView <GKTableViewCellContents> {
-    GKLabel *_titleView;
-    GKLabel *_subtitleView;
-    UIImageView *_iconView;
-    GKGame *_game;
-    GKGameRecord *_gameRecord;
-    NSURL *_fontURL;
-    UIView *_dividerView;
-    GKRatingHeaderControl *_ratingControl;
+@interface GKGameDetailHeaderView : GKDetailHeaderView  {
 }
 
-@property(retain) GKGame * game;
-@property(retain) GKGameRecord * gameRecord;
-@property(retain) GKLabel * titleView;
-@property(retain) GKLabel * subtitleView;
 @property(retain) UIImageView * iconView;
-@property(retain) GKRatingHeaderControl * ratingControl;
-@property(retain) NSURL * fontURL;
-@property(retain) UIView * dividerView;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } confirmationButtonRect;
+@property(retain) GKGameTitleView * titleView;
+@property GKHeaderSegmentedControl * segmentedControl;
+@property(retain) GKGameRecord * gameRecordLocalPlayer;
+@property BOOL landscapeStyle;
+@property(readonly) int gameIconStyle;
 
-+ (float)defaultRowHeight;
++ (id)ratableHeaderView;
++ (id)headerView;
 
-- (id)init;
-- (void)dealloc;
-- (void)setRatingControl:(id)arg1;
-- (void)setDividerView:(id)arg1;
-- (id)dividerView;
-- (void)setSubtitleView:(id)arg1;
-- (void)applyRating:(id)arg1;
-- (void)readRating;
-- (void)setSubtitleText:(id)arg1;
-- (id)ratingControl;
-- (id)subtitleView;
-- (id)fontURL;
-- (void)setFontURL:(id)arg1;
-- (id)gameRecord;
-- (void)setGameRecord:(id)arg1;
-- (float)preferredHeightForOrientation:(int)arg1;
-- (id)theme;
-- (void)setTheme:(id)arg1;
-- (void)setIconView:(id)arg1;
-- (id)iconView;
-- (id)game;
-- (void)setGame:(id)arg1;
-- (void)prepareForReuse;
-- (void)setTitleView:(id)arg1;
-- (id)titleView;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
+- (void)applyStoreItem:(id)arg1 toBuyButton:(id)arg2 titleView:(id)arg3;
+- (int)gameIconStyle;
+- (void)updateFromGameRecord;
 
 @end

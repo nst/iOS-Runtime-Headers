@@ -7,11 +7,11 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (id)userInfo;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (unsigned int)retainCount;
+- (unsigned int)hash;
 - (id)retain;
+- (BOOL)isEqual:(id)arg1;
+- (id)userInfo;
 - (oneway void)release;
 - (int)code;
 - (id)domain;

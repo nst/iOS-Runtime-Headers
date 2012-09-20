@@ -10,15 +10,15 @@
 @property(copy) NSURL * targetAppId;
 @property int state;
 
-+ (id)setState;
 + (id)setStateWithDictionary:(id)arg1 context:(id)arg2;
++ (id)setState;
 
 - (id)groupIdentifier;
-- (void)setState:(int)arg1;
 - (int)state;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (void)setState:(int)arg1;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

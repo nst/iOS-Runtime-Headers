@@ -18,12 +18,9 @@
 @property(retain) NSString * title;
 @property BOOL usesSharedPlaceholder;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (id)attributeKeys;
 - (id)splitType;
 - (id)splitShadowRadius;
 - (id)splitShadowOpacity;
@@ -33,24 +30,6 @@
 - (void)setSplitShadowOpacity:(id)arg1;
 - (void)setSplitShadowColor:(id)arg1;
 - (id)_splitViewController;
-- (id)_copySplitType;
-- (id)_copySplitShadowRadius;
-- (id)_copySplitShadowOpacity;
-- (id)_copySplitShadowColor;
-- (id)_copySplitPosition;
-- (void)_setUsesSharedPlaceholder:(BOOL)arg1;
-- (void)_setSplitType:(id)arg1;
-- (void)_setSplitShadowRadius:(id)arg1;
-- (void)_setSplitShadowOpacity:(id)arg1;
-- (void)_setSplitShadowColor:(struct CGColor { }*)arg1;
-- (void)_setSplitPosition:(id)arg1;
-- (void)_setSecondViewController:(id)arg1;
-- (void)_setMinimumPaneSize:(id)arg1;
-- (void)_setFirstViewController:(id)arg1;
-- (id)_copySecondViewController;
-- (id)_copyMinimumPaneSize;
-- (id)_copyFirstViewController;
-- (BOOL)_usesSharedPlaceholder;
 - (id)secondViewController;
 - (void)setMinimumPaneSize:(id)arg1;
 - (void)setUsesSharedPlaceholder:(BOOL)arg1;
@@ -61,10 +40,11 @@
 - (id)splitPosition;
 - (id)minimumPaneSize;
 - (id)newNativeViewController;
-- (id)_copyTitle;
-- (void)_setTitle:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
 - (id)firstViewController;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (id)attributeKeys;
 
 @end

@@ -22,26 +22,28 @@
 
 @property UIScrollView * scrollView;
 @property(getter=isDirectionalLockEnabled) BOOL directionalLockEnabled;
+@property(getter=_caughtDeceleratingScrollView,readonly) BOOL caughtDeceleratingScrollView;
 
 
+- (void)setDelegate:(id)arg1;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
 - (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
 - (struct CGPoint { float x1; float x2; })_adjustScreenLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)_resetGestureRecognizer;
 - (id)scrollView;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (void)_scrollViewDidEndZooming;
 - (struct CGPoint { float x1; float x2; })velocityInView:(id)arg1;
+- (BOOL)_caughtDeceleratingScrollView;
 - (struct CGPoint { float x1; float x2; })translationInView:(id)arg1;
 - (float)_hysteresis;
 - (BOOL)isDirectionalLockEnabled;
 - (void)setDirectionalLockEnabled:(BOOL)arg1;
-- (void)setScrollView:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (void)removeTarget:(id)arg1 action:(SEL)arg2;
+- (void)setScrollView:(id)arg1;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)setDelegate:(id)arg1;
 
 @end

@@ -39,16 +39,37 @@
     BOOL _simplePIN;
 }
 
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property BOOL enablesReturnKeyAutomatically;
-@property int returnKeyType;
-@property int spellCheckingType;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property int autocorrectionType;
 @property int autocapitalizationType;
+@property int autocorrectionType;
+@property int spellCheckingType;
+@property int keyboardType;
+@property int keyboardAppearance;
+@property int returnKeyType;
+@property BOOL enablesReturnKeyAutomatically;
+@property(getter=isSecureTextEntry) BOOL secureTextEntry;
 
 
+- (void)clearPassword;
+- (void)activateKeypadView;
+- (void)_setKeypadState:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setPlaysKeyboardClicks:(BOOL)arg1;
+- (void)pinView:(id)arg1 pinEntered:(id)arg2;
+- (void)adjustButtonsNow;
+- (void)setSimplePIN:(BOOL)arg1 requiresKeyboard:(BOOL)arg2;
+- (void)slideToNewPasscodeField:(BOOL)arg1 withKeyboard:(BOOL)arg2;
+- (void)okButtonPressed;
+- (BOOL)simplePIN;
+- (void)setPINPolicyString:(id)arg1 visible:(BOOL)arg2;
+- (void)hideError;
+- (void)hideFailedAttempts;
+- (void)showError:(id)arg1 error:(id)arg2 isBlocked:(BOOL)arg3 animate:(BOOL)arg4;
+- (void)showFailedAttempts:(int)arg1;
+- (void)dismissKeypad;
+- (void)deactivateKeypadView;
+- (id)specifierLabel;
+- (BOOL)requiresKeyboard;
+- (void)setAutocapitalizationType:(int)arg1;
+- (int)autocapitalizationType;
 - (void)dealloc;
 - (id)password;
 - (BOOL)hasText;
@@ -58,37 +79,17 @@
 - (int)keyboardType;
 - (int)keyboardAppearance;
 - (int)autocorrectionType;
-- (int)autocapitalizationType;
 - (void)setKeyboardType:(int)arg1;
 - (void)setKeyboardAppearance:(int)arg1;
 - (void)setAutocorrectionType:(int)arg1;
-- (void)setAutocapitalizationType:(int)arg1;
 - (void)transitionViewDidComplete:(id)arg1;
+- (id)text;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (BOOL)resignFirstResponder;
-- (id)text;
 - (void)setTitle:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)clearPassword;
-- (void)_setPlaysKeyboardClicks:(BOOL)arg1;
-- (void)_setKeypadState:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)activateKeypadView;
-- (void)pinView:(id)arg1 pinEntered:(id)arg2;
-- (void)deactivateKeypadView;
-- (void)dismissKeypad;
-- (void)showFailedAttempts:(int)arg1;
-- (void)showError:(id)arg1 error:(id)arg2 isBlocked:(BOOL)arg3 animate:(BOOL)arg4;
-- (void)hideFailedAttempts;
-- (void)hideError;
-- (void)setPINPolicyString:(id)arg1 visible:(BOOL)arg2;
-- (BOOL)simplePIN;
-- (void)okButtonPressed;
-- (void)slideToNewPasscodeField:(BOOL)arg1 withKeyboard:(BOOL)arg2;
-- (void)setSimplePIN:(BOOL)arg1 requiresKeyboard:(BOOL)arg2;
-- (id)specifierLabel;
-- (BOOL)requiresKeyboard;
 
 @end

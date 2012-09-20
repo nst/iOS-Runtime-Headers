@@ -7,7 +7,7 @@
 @interface SAClockObject : SADomainObject  {
 }
 
-@property(retain) NSNumber * alCityId;
+@property(copy) NSNumber * alCityId;
 @property(copy) NSString * cityName;
 @property(copy) NSString * countryCode;
 @property(copy) NSString * countryName;
@@ -18,21 +18,21 @@
 + (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
 
-- (void)setCountryCode:(id)arg1;
-- (id)countryCode;
 - (id)groupIdentifier;
-- (void)setCountryName:(id)arg1;
-- (id)countryName;
-- (void)setUnlocalizedCountryName:(id)arg1;
-- (id)unlocalizedCountryName;
 - (void)setCityName:(id)arg1;
 - (id)cityName;
-- (id)alCityId;
-- (void)setAlCityId:(id)arg1;
-- (id)unlocalizedCityName;
+- (void)setCountryName:(id)arg1;
+- (id)countryName;
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
+- (void)setUnlocalizedCountryName:(id)arg1;
+- (id)unlocalizedCountryName;
 - (void)setUnlocalizedCityName:(id)arg1;
-- (id)timezoneId;
+- (id)unlocalizedCityName;
+- (void)setAlCityId:(id)arg1;
+- (id)alCityId;
 - (void)setTimezoneId:(id)arg1;
+- (id)timezoneId;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
 

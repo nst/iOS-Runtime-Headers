@@ -11,11 +11,11 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (BOOL)_errorIsFairPlayError:(id)arg1;
 - (id)initWithMediaItem:(id)arg1;
 - (void)resolveError:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)alertViewCancel:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)_destroyPlaybackAlertView;

@@ -11,29 +11,35 @@
 @interface UIViewControllerAction : NSObject  {
     UIViewController *_viewController;
     NSString *_name;
-    BOOL _animated;
+    int _transition;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _completion;
 
+    float _curlUpRevealedHeight;
 }
 
 @property UIViewController * viewController;
 @property(retain) NSString * name;
-@property BOOL animated;
+@property(readonly) BOOL animated;
+@property int transition;
 @property(copy) id completion;
+@property(setter=_setCurlUpRevealedHeight:) float _curlUpRevealedHeight;
 
 
 - (void)setName:(id)arg1;
+- (id)name;
 - (void)dealloc;
-- (BOOL)animated;
 - (id)viewController;
-- (id)initWithViewController:(id)arg1 name:(id)arg2 animated:(BOOL)arg3;
-- (void)setAnimated:(BOOL)arg1;
+- (void)_setCurlUpRevealedHeight:(float)arg1;
+- (BOOL)animated;
+- (id)initWithViewController:(id)arg1 name:(id)arg2 transition:(int)arg3;
+- (int)transition;
+- (void)setTransition:(int)arg1;
 - (void)setViewController:(id)arg1;
 - (void)setCompletion:(id)arg1;
 - (id)completion;
-- (id)name;
+- (float)_curlUpRevealedHeight;
 
 @end

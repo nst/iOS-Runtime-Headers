@@ -9,12 +9,12 @@
 }
 
 
+- (BOOL)matchesURL:(id)arg1;
 - (void)dealloc;
-- (id)initWithPatternString:(id)arg1;
-- (BOOL)matchesSubdomains;
 - (id)host;
 - (BOOL)isValid;
 - (id)scheme;
-- (BOOL)matchesURL:(id)arg1;
+- (BOOL)matchesSubdomains;
+- (id)initWithPatternString:(id)arg1;
 
 @end

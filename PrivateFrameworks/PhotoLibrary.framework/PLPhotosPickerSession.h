@@ -6,14 +6,16 @@
    See Warning(s) below.
  */
 
-@class NSMutableSet, NSString, NSObject<PLAssetContainer>, UIViewController, NSSet, NSMutableDictionary;
+@class NSObject<PLAssetContainer>, NSSet, <PLPhotosPickerSessionDelegate>, NSMutableSet, NSString, NSMutableDictionary, UIViewController;
 
 @interface PLPhotosPickerSession : NSObject  {
     struct NSObject { Class x1; } *_destinationAlbum;
     UIViewController *_rootViewController;
     NSString *_currentPrompt;
+    <PLPhotosPickerSessionDelegate> *_delegate;
     NSMutableDictionary *_selectedAssetsByAlbumID;
     NSMutableSet *_allSelectedAssets;
+    int _albumFilter;
     int _bannerButtonType;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -27,32 +29,40 @@
 
 }
 
+@property <PLPhotosPickerSessionDelegate> * delegate;
 @property(retain) NSObject<PLAssetContainer> * destinationAlbum;
 @property(copy) NSString * currentPrompt;
 @property int bannerButtonType;
 @property(copy) id bannerButtonAction;
 @property(readonly) NSSet * allSelectedAssets;
+@property(readonly) BOOL hasAlbumFilter;
+@property int albumFilter;
 @property(retain) NSMutableDictionary * selectedAssetsByAlbumID;
 
 
-- (id)init;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (id)init;
+- (void)setDestinationAlbum:(struct NSObject { Class x1; }*)arg1;
+- (struct NSObject { Class x1; }*)destinationAlbum;
 - (void)setBannerButtonAction:(id)arg1;
 - (id)bannerButtonAction;
 - (void)setBannerButtonType:(int)arg1;
 - (int)bannerButtonType;
-- (void)cancelSessionAnimated:(BOOL)arg1;
 - (void)setCurrentPrompt:(id)arg1;
 - (id)currentPrompt;
 - (id)selectedAssetsByAlbumID;
-- (void)_dismissSessionAnimated:(BOOL)arg1;
+- (void)_dismissSessionSuccessfully:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelectedAssetsByAlbumID:(id)arg1;
 - (void)_updatePromptText;
-- (id)allSelectedAssets;
 - (void)setSelectedAssets:(id)arg1 forAlbumWithID:(id)arg2 added:(id)arg3 removed:(id)arg4;
-- (void)beginSessionWithModalViewController:(id)arg1 overViewController:(id)arg2 completionHandler:(id)arg3;
-- (void)setDestinationAlbum:(struct NSObject { Class x1; }*)arg1;
+- (id)allSelectedAssets;
+- (void)setAlbumFilter:(int)arg1;
+- (void)cancelSessionAnimated:(BOOL)arg1;
+- (void)beginSessionWithModalViewController:(id)arg1 overViewController:(id)arg2 didShowHandler:(id)arg3 completionHandler:(id)arg4;
 - (void)handleDoneButton:(id)arg1;
-- (struct NSObject { Class x1; }*)destinationAlbum;
+- (BOOL)hasAlbumFilter;
+- (int)albumFilter;
 
 @end

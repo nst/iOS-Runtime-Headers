@@ -24,22 +24,22 @@
 }
 
 
-- (id)initWithBodyData:(id)arg1 topLevelHeaders:(id)arg2 headersToPreserve:(id)arg3;
-- (void)noteDataLengthChanged:(unsigned int)arg1;
-- (void)_initializeTopLevelPartWithHeaders:(id)arg1;
-- (void)_continueParsing;
-- (id)_currentBoundary;
-- (void)_continueParsingStartOfPart;
-- (void)_continueParsingHeaders;
-- (void)_continueParsingBody;
-- (id)topLevelPart;
+- (void)setDelegate:(id)arg1;
+- (id)data;
 - (void)dealloc;
 - (void)_reportError:(id)arg1;
 - (void)start;
-- (id)context;
 - (void)setContext:(id)arg1;
-- (id)data;
-- (void)setDelegate:(id)arg1;
+- (id)context;
+- (void)noteDataLengthChanged:(unsigned int)arg1;
+- (id)initWithBodyData:(id)arg1 topLevelHeaders:(id)arg2 headersToPreserve:(id)arg3;
+- (void)_continueParsingBody;
+- (void)_continueParsingHeaders;
+- (void)_continueParsingStartOfPart;
+- (id)_currentBoundary;
+- (void)_continueParsing;
+- (void)_initializeTopLevelPartWithHeaders:(id)arg1;
+- (id)topLevelPart;
 - (id)currentPart;
 
 @end

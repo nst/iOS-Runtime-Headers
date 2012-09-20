@@ -11,7 +11,6 @@
 @property(readonly) NSArray * remadeVariants;
 
 
-- (void)dealloc;
 - (id)_activeRemadeVariant;
 - (id)_newSnapshotImageWithMaximumSize:(float)arg1;
 - (id)newComposeImageWithMaximumSize:(float)arg1;
@@ -23,5 +22,6 @@
 - (void)addRemadeVariant:(id)arg1;
 - (id)newThumbnailImageWithMaximumSize:(float)arg1;
 - (void)saveToLibraryWithCompletionBlock:(id)arg1;
+- (void)dealloc;
 
 @end

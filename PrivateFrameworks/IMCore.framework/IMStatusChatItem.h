@@ -7,18 +7,17 @@
 @interface IMStatusChatItem : IMChatItem  {
 }
 
-@property(readonly) NSString * stringValue;
 @property(readonly) NSString * formatString;
 @property(readonly) NSArray * handles;
 @property(readonly) int statusType;
 
 
 - (id)description;
-- (int)statusType;
-- (id)initWithString:(id)arg1 date:(id)arg2 statusType:(int)arg3;
-- (id)initWithFormat:(id)arg1 handles:(id)arg2 date:(id)arg3 statusType:(int)arg4;
+- (id)formatString;
 - (id)handles;
 - (id)stringValue;
-- (id)formatString;
+- (id)initWithString:(id)arg1 date:(id)arg2 statusType:(int)arg3;
+- (int)statusType;
+- (id)initWithFormat:(id)arg1 handles:(id)arg2 date:(id)arg3 statusType:(int)arg4;
 
 @end

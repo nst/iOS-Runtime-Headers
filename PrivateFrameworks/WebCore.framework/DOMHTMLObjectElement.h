@@ -7,7 +7,7 @@
 @interface DOMHTMLObjectElement : DOMHTMLElement  {
 }
 
-@property(retain,readonly) DOMHTMLFormElement * form;
+@property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * code;
 @property(copy) NSString * align;
 @property(copy) NSString * archive;
@@ -24,50 +24,50 @@
 @property(copy) NSString * useMap;
 @property int vspace;
 @property(copy) NSString * width;
-@property(retain,readonly) DOMDocument * contentDocument;
-@property(copy,readonly) NSURL * absoluteImageURL;
+@property(readonly) DOMDocument * contentDocument;
+@property(readonly) NSURL * absoluteImageURL;
 
 
 - (void)setName:(id)arg1;
+- (id)name;
+- (id)type;
+- (id)data;
 - (id)code;
 - (void)setHeight:(id)arg1;
 - (id)height;
 - (id)absoluteImageURL;
 - (id)form;
-- (id)type;
 - (void)setWidth:(id)arg1;
 - (id)width;
-- (id)name;
 - (void)setType:(id)arg1;
-- (id)data;
-- (id)codeType;
-- (void)setCodeType:(id)arg1;
-- (BOOL)declare;
-- (void)setDeclare:(BOOL)arg1;
-- (id)standby;
+- (void)setData:(id)arg1;
 - (void)setStandby:(id)arg1;
-- (id)useMap;
+- (id)standby;
+- (void)setDeclare:(BOOL)arg1;
+- (BOOL)declare;
+- (void)setCodeType:(id)arg1;
+- (id)codeType;
 - (void)setUseMap:(id)arg1;
+- (id)useMap;
 - (id)contentDocument;
+- (void)setCustomValidity:(id)arg1;
+- (BOOL)checkValidity;
+- (id)validationMessage;
 - (id)validity;
 - (BOOL)willValidate;
-- (id)validationMessage;
-- (BOOL)checkValidity;
-- (void)setCustomValidity:(id)arg1;
-- (id)align;
-- (void)setAlign:(id)arg1;
-- (id)archive;
-- (void)setArchive:(id)arg1;
-- (void)setCode:(id)arg1;
-- (id)codeBase;
-- (void)setCodeBase:(id)arg1;
-- (int)hspace;
-- (void)setHspace:(int)arg1;
-- (int)vspace;
 - (void)setVspace:(int)arg1;
-- (id)border;
+- (int)vspace;
+- (void)setHspace:(int)arg1;
+- (int)hspace;
+- (void)setCodeBase:(id)arg1;
+- (id)codeBase;
+- (void)setCode:(id)arg1;
+- (void)setArchive:(id)arg1;
+- (id)archive;
+- (void)setAlign:(id)arg1;
+- (id)align;
 - (void)setBorder:(id)arg1;
-- (void)setData:(id)arg1;
+- (id)border;
 - (id)contentFrame;
 - (BOOL)showsTapHighlight;
 

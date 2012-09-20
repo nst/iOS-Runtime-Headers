@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class NSPersistentStoreCoordinator, NSDictionary, NSManagedObjectContext;
+@class NSObject<OS_dispatch_queue>, NSPersistentStoreCoordinator, NSManagedObjectContext, NSDictionary;
 
 @interface SWDataController : NSObject  {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _isPerformingMigration;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
     NSManagedObjectContext *_managedObjectContext;
@@ -16,9 +16,9 @@
 
 + (id)sharedDataController;
 
-- (id)init;
-- (void)dealloc;
 - (id)achievements;
+- (void)dealloc;
+- (id)init;
 - (void)performMigrationIfNecessary;
 - (void)clearAchievementForName:(id)arg1;
 - (void)importExistingWorkoutSnapshotsWithCompletionBlock:(id)arg1;

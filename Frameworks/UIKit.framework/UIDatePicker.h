@@ -2,27 +2,34 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimeZone, NSLocale, NSCalendar, NSDate, UIPickerView;
+@class _UIDatePickerView, NSLocale, NSCalendar, NSDate, NSTimeZone;
 
 @interface UIDatePicker : UIControl <NSCoding> {
-    UIPickerView *_pickerView;
+    _UIDatePickerView *_pickerView;
 }
 
 @property(getter=_usesBlackChrome,setter=_setUsesBlackChrome:) BOOL usesBlackChrome;
+@property(getter=_drawsBackground,setter=_setDrawsBackground:) BOOL drawsBackground;
+@property(getter=_allowsZeroCountdownDuration,setter=_setAllowsZeroCountdownDuration:) BOOL allowsZeroCountdownDuration;
 @property(getter=_dateUnderSelectionBar,readonly) NSDate * dateUnderSelectionBar;
 @property int datePickerMode;
 @property(retain) NSLocale * locale;
-@property(retain) NSTimeZone * timeZone;
 @property(copy) NSCalendar * calendar;
+@property(retain) NSTimeZone * timeZone;
 @property(retain) NSDate * date;
 @property(retain) NSDate * minimumDate;
 @property(retain) NSDate * maximumDate;
 @property double countDownDuration;
 @property int minuteInterval;
 
++ (Class)_pickerViewClass;
 
+- (void)setDelegate:(id)arg1;
+- (id)_selectedTextForCalendarUnit:(unsigned int)arg1;
 - (id)_dateUnderSelectionBar;
 - (void)_setHighlightsToday:(BOOL)arg1;
+- (void)_setAllowsZeroCountdownDuration:(BOOL)arg1;
+- (BOOL)_allowsZeroCountdownDuration;
 - (BOOL)_usesBlackChrome;
 - (void)_setUsesBlackChrome:(BOOL)arg1;
 - (void)_setHidesLabels:(BOOL)arg1;
@@ -55,14 +62,20 @@
 - (void)setLocale:(id)arg1;
 - (id)timeZone;
 - (double)timeInterval;
-- (void)setTimeInterval:(double)arg1;
-- (void)awakeFromNib;
-- (void)setTimeZone:(id)arg1;
 - (void)setDate:(id)arg1;
+- (void)setTimeInterval:(double)arg1;
+- (void)invalidateIntrinsicContentSize;
+- (void)awakeFromNib;
 - (id)date;
+- (void)setTimeZone:(id)arg1;
+- (void)_setDrawsBackground:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
+- (BOOL)_drawsBackground;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;

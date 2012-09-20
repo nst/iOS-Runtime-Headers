@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
+@class NSString, NSMapTable;
 
 @interface GEOSearchResponse : GEOPlaceSearchResponse  {
     NSString *_businessQuery;
+    NSMapTable *_attributionKeysToInfo;
 }
 
 @property(retain) NSString * businessQuery;
@@ -13,7 +14,8 @@
 
 - (void)dealloc;
 - (id)businessQuery;
+- (id)attributionInfoForSourceIdentifier:(id)arg1 sourceVersion:(unsigned int)arg2;
+- (void)_addAttributionInfo:(id)arg1;
 - (void)setBusinessQuery:(id)arg1;
-- (id)initWithGMMSearchResponse:(id)arg1 includePanoramaID:(BOOL)arg2;
 
 @end

@@ -9,9 +9,9 @@
 @property int gridPosition;
 
 
-- (void)deleteConfirmationControlWasClicked:(id)arg1;
-- (void)removeControl:(id)arg1 willRemoveTarget:(id)arg2;
 - (int)gridPosition;
 - (void)setGridPosition:(int)arg1;
+- (void)deleteConfirmationControlWasClicked:(id)arg1;
+- (void)removeControl:(id)arg1 willRemoveTarget:(id)arg2;
 
 @end

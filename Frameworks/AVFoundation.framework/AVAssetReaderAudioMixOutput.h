@@ -14,19 +14,21 @@
 
 + (id)assetReaderAudioMixOutputWithAudioTracks:(id)arg1 audioSettings:(id)arg2;
 
+- (void)setAudioMix:(id)arg1;
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)mediaType;
+- (void)finalize;
+- (struct opaqueMTAudioProcessingTap { }*)_audioTapProcessorForTrack:(id)arg1;
 - (id)_audioVolumeCurveForTrack:(id)arg1;
+- (void)_setAudioTapProcessor:(struct opaqueMTAudioProcessingTap { }*)arg1 forTrack:(id)arg2;
 - (void)_setAudioVolumeCurve:(id)arg1 forTrack:(id)arg2;
 - (id)audioSettings;
 - (id)initWithAudioTracks:(id)arg1 audioSettings:(id)arg2;
 - (id)audioTracks;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
-- (void)setAudioMix:(id)arg1;
 - (id)audioMix;
 - (id)_asset;
-- (void)finalize;
-- (id)mediaType;
 
 @end

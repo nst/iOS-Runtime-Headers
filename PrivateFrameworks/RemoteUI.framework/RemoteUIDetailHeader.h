@@ -12,9 +12,9 @@
 
 
 - (void)dealloc;
-- (id)initWithAttributes:(id)arg1;
-- (void)layoutSubviews;
-- (void)setSectionIsFirst:(BOOL)arg1;
 - (float)headerHeightForWidth:(float)arg1 inTableView:(id)arg2;
+- (void)setSectionIsFirst:(BOOL)arg1;
+- (void)layoutSubviews;
+- (id)initWithAttributes:(id)arg1;
 
 @end

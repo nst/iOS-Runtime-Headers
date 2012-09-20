@@ -15,25 +15,25 @@
 
 + (Class)classForType:(unsigned short)arg1;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (BOOL)floating;
 - (id)anchor;
 - (BOOL)hasText;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)createTextBoxWithDocument:(id)arg1 textType:(int)arg2;
-- (bool)isLine;
 - (bool)isTopLevelObject;
-- (bool)isShape;
-- (BOOL)floating;
+- (bool)isLine;
+- (id)createTextBoxWithDocument:(id)arg1 textType:(int)arg2;
 - (id)createAnchor;
 - (void)setTextType:(int)arg1;
 - (void)clearAnchor;
-- (id)textBox;
+- (int)textType;
+- (void)setDrawable:(id)arg1;
 - (void)setTextBox:(id)arg1;
 - (BOOL)hasBounds;
-- (void)setDrawable:(id)arg1;
+- (id)textBox;
+- (bool)isShape;
 - (id)drawable;
-- (int)textType;
 
 @end

@@ -13,31 +13,34 @@
     NSString *_SMIMEEncryptionIdentityUUID;
     NSData *_SMIMESigningIdentityPersistentID;
     NSData *_SMIMEEncryptionIdentityPersistentID;
+    BOOL _isRecentsSyncingDisabled;
 }
 
-@property(retain) NSData * SMIMEEncryptionIdentityPersistentID;
-@property(retain) NSData * SMIMESigningIdentityPersistentID;
-@property(readonly) NSString * SMIMEEncryptionIdentityUUID;
-@property(readonly) NSString * SMIMESigningIdentityUUID;
-@property(readonly) BOOL SMIMEEncryptionEnabled;
-@property(readonly) BOOL SMIMEEnabled;
-@property(readonly) BOOL preventAppSheet;
 @property(readonly) BOOL preventMove;
+@property(readonly) BOOL preventAppSheet;
+@property(readonly) BOOL SMIMEEnabled;
+@property(readonly) BOOL SMIMEEncryptionEnabled;
+@property(readonly) BOOL isRecentsSyncingDisabled;
+@property(readonly) NSString * SMIMESigningIdentityUUID;
+@property(readonly) NSString * SMIMEEncryptionIdentityUUID;
+@property(retain) NSData * SMIMESigningIdentityPersistentID;
+@property(retain) NSData * SMIMEEncryptionIdentityPersistentID;
 
 
 - (id)description;
-- (void)dealloc;
-- (id)SMIMEEncryptionIdentityPersistentID;
+- (void).cxx_destruct;
 - (void)setSMIMEEncryptionIdentityPersistentID:(id)arg1;
-- (id)SMIMESigningIdentityPersistentID;
+- (id)SMIMEEncryptionIdentityPersistentID;
 - (void)setSMIMESigningIdentityPersistentID:(id)arg1;
+- (id)SMIMESigningIdentityPersistentID;
 - (id)SMIMEEncryptionIdentityUUID;
 - (id)SMIMESigningIdentityUUID;
+- (BOOL)isRecentsSyncingDisabled;
 - (BOOL)SMIMEEncryptionEnabled;
 - (BOOL)SMIMEEnabled;
 - (BOOL)preventAppSheet;
 - (BOOL)preventMove;
-- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
+- (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 
 @end

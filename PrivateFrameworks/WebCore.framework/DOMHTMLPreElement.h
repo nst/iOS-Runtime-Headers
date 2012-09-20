@@ -11,7 +11,7 @@
 
 - (void)setWidth:(int)arg1;
 - (int)width;
-- (BOOL)wrap;
 - (void)setWrap:(BOOL)arg1;
+- (BOOL)wrap;
 
 @end

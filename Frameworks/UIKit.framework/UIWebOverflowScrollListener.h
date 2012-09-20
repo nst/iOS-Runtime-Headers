@@ -11,9 +11,9 @@
 
 - (void)_didCompleteScrolling;
 - (id)initWithScrollView:(id)arg1;
-- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScrollToTop:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 
 @end

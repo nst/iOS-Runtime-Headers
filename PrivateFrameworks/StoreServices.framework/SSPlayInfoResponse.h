@@ -4,7 +4,7 @@
 
 @class NSError, NSData;
 
-@interface SSPlayInfoResponse : NSObject <SSCoding, NSCopying> {
+@interface SSPlayInfoResponse : NSObject <SSXPCCoding, NSCopying> {
     NSError *_error;
     NSData *_playInfoData;
 }
@@ -13,15 +13,13 @@
 @property(readonly) NSData * playInfoData;
 
 
+- (id)playInfoData;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)error;
-- (id)playInfoData;
 - (id)initWithPlayInfoData:(id)arg1 error:(id)arg2;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (id)error;
 
 @end

@@ -7,13 +7,23 @@
     struct IONotificationPort { } *_batteryIONotifyPort;
     unsigned int _batteryNotificationRef;
     double _currentLevel;
+    BOOL _isExteralPowerConnected;
 }
+
+@property BOOL isExternalPowerConnected;
+@property double currentLevel;
 
 + (id)defaultMonitor;
 
-- (id)init;
 - (void)dealloc;
-- (void)_updateBatteryLevelWithBatteryEntry:(unsigned int)arg1;
+- (id)init;
+- (void)updateBatteryConnectedStateWithBatteryEntry:(unsigned int)arg1;
+- (void)setExternalPowerConnected:(BOOL)arg1;
+- (BOOL)isExternalPowerConnected;
+- (BOOL)_updateBatteryConnectedStateWithBatteryEntry:(unsigned int)arg1;
+- (void)updateBatteryLevelWithBatteryEntry:(unsigned int)arg1;
 - (double)batteryPercentRemaining;
+- (double)currentLevel;
+- (void)setCurrentLevel:(double)arg1;
 
 @end

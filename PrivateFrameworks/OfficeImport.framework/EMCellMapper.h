@@ -19,22 +19,22 @@
 
 - (double)columnWidth;
 - (id)mapHyperlinkAt:(id)arg1;
-- (id)initWithEDCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2 parent:(id)arg3 state:(id)arg4;
-- (void)resetColumnSpan:(int)arg1;
-- (int)columnSpan;
-- (BOOL)isCellEmpty;
-- (void)setFirstCellFlag;
-- (BOOL)isFirstCell;
-- (BOOL)isCellSpreading:(id)arg1;
-- (BOOL)isCellMerged;
 - (void)adjustColumnSpanForGrid:(double*)arg1 columnCount:(unsigned int)arg2 nextCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg3 withState:(id)arg4;
-- (void)mapAt:(id)arg1 withState:(id)arg2 height:(double)arg3;
-- (void)mapRowColSpansAt:(id)arg1 withState:(id)arg2;
-- (void)mapAt:(id)arg1 withState:(id)arg2;
-- (id)initWithParent:(id)arg1;
+- (BOOL)isCellMerged;
+- (BOOL)isCellSpreading:(id)arg1;
+- (BOOL)isFirstCell;
+- (void)setFirstCellFlag;
+- (BOOL)isCellEmpty;
+- (int)columnSpan;
+- (void)resetColumnSpan:(int)arg1;
 - (void)setFirstColumn:(int)arg1;
 - (void)setLastColumn:(int)arg1;
-- (int)firstColumn;
+- (id)initWithEDCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2 parent:(id)arg3 state:(id)arg4;
+- (void)mapRowColSpansAt:(id)arg1 withState:(id)arg2;
+- (void)mapAt:(id)arg1 withState:(id)arg2 height:(double)arg3;
 - (int)lastColumn;
+- (int)firstColumn;
+- (void)mapAt:(id)arg1 withState:(id)arg2;
+- (id)initWithParent:(id)arg1;
 
 @end

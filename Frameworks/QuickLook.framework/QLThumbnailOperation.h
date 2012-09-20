@@ -13,18 +13,18 @@
     UIImage *_image;
 }
 
-@property(retain) UIImage * image;
-@property struct CGSize { float width; float height; } size;
 @property int index;
+@property struct CGSize { float x1; float x2; } size;
+@property(retain) UIImage * image;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)setIndex:(int)arg1;
 - (int)index;
 - (id)image;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setImage:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;
-- (void)setIndex:(int)arg1;
 
 @end

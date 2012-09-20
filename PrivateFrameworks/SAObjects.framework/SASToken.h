@@ -7,11 +7,11 @@
 @interface SASToken : AceObject <SAAceSerializable> {
 }
 
-@property(retain) NSNumber * confidenceScore;
-@property(retain) NSNumber * endTime;
+@property(copy) NSNumber * confidenceScore;
+@property(copy) NSNumber * endTime;
 @property BOOL removeSpaceAfter;
 @property BOOL removeSpaceBefore;
-@property(retain) NSNumber * startTime;
+@property(copy) NSNumber * startTime;
 @property(copy) NSString * text;
 
 + (id)tokenWithDictionary:(id)arg1 context:(id)arg2;
@@ -21,15 +21,15 @@
 - (BOOL)removeSpaceAfter;
 - (BOOL)removeSpaceBefore;
 - (id)startTime;
-- (void)setStartTime:(id)arg1;
 - (id)text;
+- (void)setStartTime:(id)arg1;
 - (void)setText:(id)arg1;
-- (id)confidenceScore;
-- (void)setConfidenceScore:(id)arg1;
-- (void)setRemoveSpaceAfter:(BOOL)arg1;
-- (void)setRemoveSpaceBefore:(BOOL)arg1;
-- (id)encodedClassName;
 - (id)endTime;
+- (void)setRemoveSpaceBefore:(BOOL)arg1;
+- (void)setRemoveSpaceAfter:(BOOL)arg1;
+- (void)setConfidenceScore:(id)arg1;
+- (id)confidenceScore;
+- (id)encodedClassName;
 - (void)setEndTime:(id)arg1;
 
 @end

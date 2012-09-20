@@ -2,21 +2,28 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIAlertView, NSIndexPath;
+@class UIAlertView, MPStoreCompletionOffering, NSIndexPath;
 
-@interface IUVideoEpisodesViewController : IUVideoPartListViewController <UIAlertViewDelegate> {
+@interface IUVideoEpisodesViewController : IUVideoPartListViewController <IUiPadSeasonOfferTableFooterViewDelegate, UIAlertViewDelegate> {
     UIAlertView *_deleteConfirmAlertView;
     NSIndexPath *_expandedIndexPath;
     float _expandedRowHeight;
+    MPStoreCompletionOffering *_storeCompletionOffering;
+    unsigned int _cmaLookupToken;
+    BOOL _needsTableFooterViewScrolledToVisible;
 }
 
 @property(retain) NSIndexPath * expandedIndexPath;
+@property(retain) MPStoreCompletionOffering * storeCompletionOffering;
+@property BOOL needsTableFooterViewScrolledToVisible;
 
 
-- (id)init;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (id)title;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
@@ -24,19 +31,32 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (unsigned int)trackToPlayInDataSource:(id)arg1;
+- (void)seasonOfferTableFooterView:(id)arg1 showItemsInOffer:(id)arg2;
+- (void)seasonOfferTableFooterView:(id)arg1 didChangeToOfferVariant:(int)arg2;
+- (BOOL)needsTableFooterViewScrolledToVisible;
 - (void)_moreButtonPressedForCell:(id)arg1;
 - (void)_destroyDeleteConfirmAlertView;
 - (void)_deleteEpisodeAtIndex:(int)arg1;
+- (void)autoscrollTableFooterViewToVisibleIfNeeded;
+- (void)setNeedsTableFooterViewScrolledToVisible:(BOOL)arg1;
 - (id)expandedIndexPath;
 - (void)cancelMoreButtonExpansion;
+- (void)_reloadCompletionOffering;
+- (void)_clearLookupToken;
+- (void)updateFooterView;
+- (id)storeCompletionOffering;
+- (BOOL)_canShowCompletionOfferings;
+- (void)setStoreCompletionOffering:(id)arg1;
 - (void)setExpandedIndexPath:(id)arg1;
 - (void)_cancelDeleteConfirmAlertView:(BOOL)arg1;
+- (void)_cancelCompletionLookup;
 - (void)startPlaybackFromIndexPath:(id)arg1;
 - (id)mediaItemAtIndexPath:(id)arg1;
 - (id)indexPathForRowOfContentPosition;
-- (Class)tableViewCellClass;
 - (id)indexPathForMediaItem:(id)arg1 atTime:(double)arg2;
 - (void)_rentalDataDidLoadNotification:(id)arg1;
+- (Class)tableViewCellClass;
 
 @end

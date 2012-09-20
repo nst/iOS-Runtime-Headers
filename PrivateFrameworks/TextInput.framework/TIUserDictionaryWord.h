@@ -8,18 +8,29 @@
     NSString *_sectionIndex;
 }
 
+@property(copy) NSString * target;
 @property(copy) NSString * shortcut;
 @property(copy) NSString * sectionIndex;
-@property(copy) NSString * target;
 
++ (int)validateWithNewTarget:(id)arg1 newShortcut:(id)arg2 otherWords:(id)arg3;
 + (id)entityDescription;
++ (BOOL)userWord:(id)arg1 duplicatesTarget:(id)arg2 andShortcut:(id)arg3;
++ (id)predicateFilteringForSearchText:(id)arg1;
 + (id)sortDescriptors;
++ (id)predicateMatchingTarget:(id)arg1 shortcut:(id)arg2;
 
-- (int)validateWithNewTarget:(id)arg1 newShortcut:(id)arg2;
 - (id)sectionIndex;
-- (void)setSectionIndex:(id)arg1;
-- (void)setTarget:(id)arg1;
 - (void)setShortcut:(id)arg1;
+- (void)setTarget:(id)arg1;
+- (void)setSectionIndex:(id)arg1;
+- (id)filteredValues:(id)arg1;
+- (id)changeDescriptionKey:(id)arg1;
+- (int)compare:(id)arg1;
+- (id)copyWithContext:(id)arg1;
+- (void)updateTimestamp;
+- (id)changeDescription;
+- (BOOL)hasChangesToTargetOrShortcut;
+- (void)takeValuesFrom:(id)arg1 overwriteExistingValues:(BOOL)arg2;
 - (void)dealloc;
 
 @end

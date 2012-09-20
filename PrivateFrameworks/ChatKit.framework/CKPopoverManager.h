@@ -8,7 +8,7 @@
 
 @class UIPopoverController;
 
-@interface CKPopoverManager : NSObject  {
+@interface CKPopoverManager : NSObject <UIPopoverControllerDelegate> {
     UIPopoverController *_popoverController;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -23,23 +23,23 @@
     BOOL _dismissingPopoverForRotation;
 }
 
-@property(retain) UIPopoverController * popoverController;
-@property(copy) id handler;
 @property(copy) id presenter;
+@property(copy) id handler;
+@property(retain) UIPopoverController * popoverController;
 
 + (id)sharedInstance;
 
 - (void)dealloc;
 - (void)setHandler:(id)arg1;
-- (void)setPresenter:(id)arg1;
-- (id)presenter;
 - (id)handler;
-- (void)willStartRotating;
-- (void)didFinishRotating;
-- (void)dismissCurrentPopover;
-- (void)showPopover:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
-- (void)setPopoverController:(id)arg1;
 - (id)popoverController;
+- (void)setPopoverController:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (id)presenter;
+- (void)setPresenter:(id)arg1;
+- (void)showPopover:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
+- (void)dismissCurrentPopover;
+- (void)didFinishRotating;
+- (void)willStartRotating;
 
 @end

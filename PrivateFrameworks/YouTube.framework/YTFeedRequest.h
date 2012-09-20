@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSURL, NSMutableArray, NSMutableURLRequest;
+@class NSURL, NSMutableArray;
 
-@interface YTFeedRequest : XMLSAXHTTPRequest  {
+@interface YTFeedRequest : YTXMLHTTPRequest  {
     id _delegate;
     NSMutableArray *_videos;
     NSURL *_batchURL;
@@ -12,24 +12,16 @@
     unsigned int _videosPerPage;
     unsigned int _totalResults;
     BOOL _invalidatedToken;
-    BOOL _isLoading;
-    BOOL _accountAuthRequired;
-    NSMutableURLRequest *_deferredRequest;
 }
 
 + (int)partialFeedType;
 
-- (int)parseData:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (BOOL)isLoading;
-- (void)loadRequest:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)listenForAuthenticationNotifications:(BOOL)arg1;
-- (void)_didAuthenticate:(id)arg1;
-- (void)_failedToAuthenticate:(id)arg1;
-- (void)didParseData;
+- (void)dealloc;
+- (id)init;
 - (void)failWithError:(id)arg1;
 - (void)loadRequest:(id)arg1 withDelegate:(id)arg2 accountAuthRequired:(BOOL)arg3;
+- (void)didParseData;
+- (int)parseData:(id)arg1;
 
 @end

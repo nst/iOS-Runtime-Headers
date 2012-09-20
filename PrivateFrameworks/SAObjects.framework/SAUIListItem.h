@@ -19,15 +19,15 @@
 
 - (id)groupIdentifier;
 - (void)setObject:(id)arg1;
-- (id)title;
 - (id)object;
+- (id)title;
 - (void)setTitle:(id)arg1;
-- (id)selectionResponse;
-- (void)setSelectionResponse:(id)arg1;
-- (id)selectionText;
-- (void)setSelectionText:(id)arg1;
-- (id)speakableSelectionResponse;
 - (void)setSpeakableSelectionResponse:(id)arg1;
+- (id)speakableSelectionResponse;
+- (void)setSelectionText:(id)arg1;
+- (id)selectionText;
+- (void)setSelectionResponse:(id)arg1;
+- (id)selectionResponse;
 - (id)encodedClassName;
 - (void)setCommands:(id)arg1;
 - (id)commands;

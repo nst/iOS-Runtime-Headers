@@ -15,33 +15,33 @@
     NSMutableDictionary *_userData;
 }
 
-@property(retain) NSMutableDictionary * userData;
-@property BOOL locked;
-@property(retain) NSDate * modificationDate;
-@property(retain) NSDate * creationDate;
-@property(retain) NSString * UTI;
-@property(retain) NSString * name;
-@property ICCameraFolder * parentFolder;
 @property ICCameraDevice * device;
+@property ICCameraFolder * parentFolder;
+@property(retain) NSString * name;
+@property(retain) NSString * UTI;
+@property(retain) NSDate * creationDate;
+@property(retain) NSDate * modificationDate;
+@property BOOL locked;
+@property(retain) NSMutableDictionary * userData;
 
 
-- (id)modificationDate;
-- (void)setName:(id)arg1;
-- (void)dealloc;
-- (void)setCreationDate:(id)arg1;
-- (id)creationDate;
 - (void)setParentFolder:(id)arg1;
+- (void)setDevice:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)name;
+- (void)dealloc;
+- (id)device;
 - (void)setUTI:(id)arg1;
 - (id)UTI;
 - (void)setUserData:(id)arg1;
 - (id)userData;
 - (void)finalize;
 - (void)setLocked:(BOOL)arg1;
-- (id)name;
-- (BOOL)locked;
-- (void)setDevice:(id)arg1;
-- (id)device;
 - (void)setModificationDate:(id)arg1;
 - (id)parentFolder;
+- (id)modificationDate;
+- (BOOL)locked;
+- (void)setCreationDate:(id)arg1;
+- (id)creationDate;
 
 @end

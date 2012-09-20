@@ -16,14 +16,14 @@
 @property(copy) NSDictionary * info;
 
 
-- (void)dealloc;
-- (id)initWithName:(id)arg1;
-- (void)sendReply:(id)arg1;
-- (id)info;
 - (void)setInfo:(id)arg1;
-- (id)name;
-- (BOOL)needsReply;
-- (id)_initWithXPCMessage:(void*)arg1 onConnection:(id)arg2;
 - (void*)_createXPCMessage;
+- (void)sendReply:(id)arg1;
+- (id)name;
+- (void)dealloc;
+- (id)info;
+- (id)_initWithXPCMessage:(void*)arg1 onConnection:(id)arg2;
+- (id)initWithName:(id)arg1;
+- (BOOL)needsReply;
 
 @end

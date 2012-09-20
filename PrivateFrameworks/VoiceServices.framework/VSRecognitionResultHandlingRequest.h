@@ -14,8 +14,8 @@
 - (id)results;
 - (void)dealloc;
 - (id)handler;
-- (id)initWithHandler:(id)arg1 results:(id)arg2;
-- (id)nextAction;
 - (void)setNextAction:(id)arg1;
+- (id)nextAction;
+- (id)initWithHandler:(id)arg1 results:(id)arg2;
 
 @end

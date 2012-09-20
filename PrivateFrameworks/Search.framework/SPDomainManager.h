@@ -8,8 +8,8 @@
 + (id)defaultManager;
 
 - (void)applicationWasUninstalled:(id)arg1;
-- (void)notifyIndexer;
 - (void)_removeAllDomainsForDisplayIdentifier:(id)arg1;
+- (void)notifyIndexer;
 - (void)registerApplication:(id)arg1 withCategories:(id)arg2;
 
 @end

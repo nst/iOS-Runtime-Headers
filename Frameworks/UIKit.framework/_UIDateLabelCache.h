@@ -34,8 +34,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)timeDesignatorAppearsBeforeTime;
 - (BOOL)use24HourTime;
 - (void)setMainTimeSize:(struct CGSize { float x1; float x2; })arg1 forDateKey:(struct __CFDate { }*)arg2 forceTimeOnly:(BOOL)arg3;

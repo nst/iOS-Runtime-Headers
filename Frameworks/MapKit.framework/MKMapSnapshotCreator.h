@@ -15,11 +15,10 @@
 @property(retain) MKMapSnapshotRequest * servingRequest;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)createSnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 handler:(id)arg4;
 - (void)flushRequestQueue;
-- (void)didDisplaySnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 - (id)recreateCurrentSnapshotWithRequester:(id)arg1 context:(id)arg2;
 - (void)createSnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 requester:(id)arg4 context:(id)arg5;
 - (id)_newSnapshotWithView:(id)arg1;

@@ -20,6 +20,10 @@
     GLKEffectPropertyTexGen *_texGenS;
     GLKEffectPropertyTexGen *_texGenT;
     GLKEffectPropertyTexGen *_texGenR;
+    struct GLKBigInt_s { 
+        unsigned long long n0; 
+        unsigned long long n1; 
+    } _allFshMasks;
 }
 
 @property unsigned char enabled;
@@ -41,20 +45,11 @@
 @property(readonly) unsigned char vPositionEyeMask;
 @property(readonly) unsigned char vNormalEyeMask;
 @property(readonly) unsigned char useTexCoordAttribMask;
+@property(readonly) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } allFshMasks;
 
++ (void)clearAllTexturingMasks:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg1 fshMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg2;
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
-- (void)setName:(unsigned int)arg1;
-- (void)setTarget:(int)arg1;
-- (id)description;
-- (int)target;
-- (id)init;
-- (void)dealloc;
-- (void)bind;
-- (id)filePath;
-- (unsigned char)enabled;
-- (void)setEnabled:(unsigned char)arg1;
-- (unsigned int)name;
 - (id)texGenArray;
 - (void)setUnitCubeLoc:(int)arg1;
 - (int)unitCubeLoc;
@@ -69,26 +64,30 @@
 - (id)texGenR;
 - (id)texGenT;
 - (id)texGenS;
-- (void)reflectionMapMask;
-- (void)texGenMask;
 - (void)setUnitCubeNameString:(char *)arg1;
 - (void)setUnit2dNameString:(char *)arg1;
 - (int)textureIndex;
-- (void)setMasks;
-- (char **)fshMaskStr;
-- (char **)vshMaskStr;
-- (unsigned int)fshMaskCt;
-- (unsigned int)vshMaskCt;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)fshMasks;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)vshMasks;
-- (void)initializeMasks;
+- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })allFshMasks;
 - (void)setShaderBindings;
-- (bool)includeShaderTextForRootNode:(id)arg1;
+- (void)initializeMasks;
+- (bool)includeFshShaderTextForRootNode:(id)arg1;
+- (bool)includeVshShaderTextForRootNode:(id)arg1;
 - (void)setTextureIndex:(int)arg1;
 - (unsigned char)vPositionEyeMask;
 - (unsigned char)vNormalEyeMask;
 - (unsigned char)normalizedNormalsMask;
 - (unsigned char)useTexCoordAttribMask;
 - (void)dirtyAllUniforms;
+- (void)setTarget:(int)arg1;
+- (void)setName:(unsigned int)arg1;
+- (unsigned int)name;
+- (int)target;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (id)filePath;
+- (unsigned char)enabled;
+- (void)setEnabled:(unsigned char)arg1;
+- (void)bind;
 
 @end

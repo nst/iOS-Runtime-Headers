@@ -19,14 +19,6 @@
 + (float)kgForLbs:(float)arg1;
 + (float)lbsForKg:(float)arg1;
 
-- (int)selectedWeightUnit;
-- (void)setWeightPickerDelegate:(id)arg1;
-- (id)weightPickerDelegate;
-- (float)_weightFractionForRow:(int)arg1;
-- (void)saveCurrentWeight;
-- (float)weightInKg;
-- (void)setWeightInLbs:(float)arg1 animated:(BOOL)arg2;
-- (float)_weightForRow:(int)arg1;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
 - (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
@@ -35,6 +27,14 @@
 - (id)pickerImageNamePrefix;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setWeightInLbs:(float)arg1;
+- (int)selectedWeightUnit;
+- (void)setWeightPickerDelegate:(id)arg1;
+- (id)weightPickerDelegate;
+- (float)_weightFractionForRow:(int)arg1;
+- (void)saveCurrentWeight;
+- (float)weightInKg;
+- (void)setWeightInLbs:(float)arg1 animated:(BOOL)arg2;
 - (float)weightInLbs;
+- (float)_weightForRow:(int)arg1;
 
 @end

@@ -10,7 +10,6 @@
     float _timeWidth;
     unsigned int _leftBorder : 1;
     unsigned int _rightBorder : 1;
-    unsigned int _drawsContent : 1;
     unsigned int _showsTimeMarker : 1;
     unsigned int _showsTimeLine : 1;
     int _selected;
@@ -48,7 +47,6 @@
 @property BOOL rightBorderInsetsOccurrences;
 @property BOOL showsTimeLine;
 @property BOOL showsTimeMarker;
-@property BOOL drawsContent;
 @property float fixedDayWidth;
 @property int hoursToPadTop;
 @property int hoursToPadBottom;
@@ -61,9 +59,15 @@
 + (void)cacheBackgroundImage:(id)arg1 forKey:(id)arg2;
 + (id)cachedBackgroundImageForKey:(id)arg1;
 
-- (void)dealloc;
-- (float)bottomPadding;
 - (float)topPadding;
+- (void)dealloc;
+- (void)setOrientation:(int)arg1;
+- (void)setSelected:(BOOL)arg1;
+- (BOOL)isSelected;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)removeFromSuperview;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)drawsGrayOutsideExtents;
 - (void)setHoursToPadBottom:(int)arg1;
 - (int)hoursToPadBottom;
@@ -83,7 +87,6 @@
 - (void)setShowsTimeMarker:(BOOL)arg1;
 - (BOOL)showsTimeLine;
 - (void)setShowsTimeLine:(BOOL)arg1;
-- (BOOL)drawsContent;
 - (float)timeInset;
 - (float)widthForOccurrences;
 - (float)_dayWidth;
@@ -97,13 +100,6 @@
 - (void)_invalidateMarkerTimer;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundColor:(id)arg2 opaque:(BOOL)arg3 numberOfDaysToDisplay:(unsigned int)arg4;
 - (void)setShowsLeftBorder:(BOOL)arg1;
-- (void)setDrawsContent:(BOOL)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (BOOL)isSelected;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)removeFromSuperview;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)bottomPadding;
 
 @end

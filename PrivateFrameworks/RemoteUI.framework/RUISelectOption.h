@@ -9,8 +9,8 @@
     NSString *value;
 }
 
-@property(retain) NSString * value;
 @property(retain) NSString * label;
+@property(retain) NSString * value;
 
 
 - (void)dealloc;

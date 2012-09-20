@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class UISwitch, RemoteUITableViewCell, WebContainerView, NSMutableArray, NSDictionary, UIWebView, NSData, NSDate;
+@class UISwitch, RemoteUITableViewCell, WebContainerView, NSMutableArray, UIWebView, NSDictionary, NSData, NSDate;
 
 @interface RUITableViewRow : RUIElement <UIPickerViewDelegate, UITextFieldDelegate> {
     RemoteUITableViewCell *_tableCell;
@@ -21,48 +21,48 @@
     float _cachedHeight;
 }
 
-@property(retain) NSDate * dateMax;
-@property(retain) NSDate * dateMin;
-@property(retain) NSDate * date;
-@property(readonly) int selectedRow;
-@property(retain) NSData * data;
-@property(retain) NSDictionary * deleteAction;
 @property BOOL rowInvalid;
+@property(retain) NSDictionary * deleteAction;
+@property(retain) NSData * data;
+@property(readonly) int selectedRow;
+@property(retain) NSDate * date;
+@property(retain) NSDate * dateMin;
+@property(retain) NSDate * dateMax;
 
-+ (void)resetLocale;
 + (id)_monthAndDayFormatter;
++ (void)resetLocale;
 
-- (void)dealloc;
-- (void)_datePickerChanged:(id)arg1;
-- (id)deleteAction;
-- (int)selectedRow;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (id)data;
+- (void)dealloc;
+- (id)dateMax;
+- (id)dateMin;
+- (BOOL)rowInvalid;
+- (void)_activate;
+- (void)clearCachedHeight;
+- (float)rowHeightWithMax:(float)arg1 peggedHeight:(float)arg2 tableView:(id)arg3 indexPath:(id)arg4;
+- (BOOL)supportsAutomaticSelection;
+- (void)setDateMax:(id)arg1;
+- (void)setDateMin:(id)arg1;
+- (int)tableCellStyle;
+- (Class)tableCellClass;
+- (void)setDeleteAction:(id)arg1;
+- (id)selectOptions;
+- (void)populatePostbackDictionary:(id)arg1;
+- (void)setRowInvalid:(BOOL)arg1;
+- (id)deleteAction;
 - (void)setDate:(id)arg1;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)setData:(id)arg1;
 - (id)date;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (int)numberOfComponentsInPickerView:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setData:(id)arg1;
-- (id)_dateFormatter;
+- (void)_datePickerChanged:(id)arg1;
+- (int)selectedRow;
 - (id)tableCell;
-- (BOOL)rowInvalid;
-- (int)tableCellStyle;
-- (void)setDateMin:(id)arg1;
-- (void)setDateMax:(id)arg1;
-- (void)clearCachedHeight;
-- (id)dateMin;
-- (id)dateMax;
-- (void)_activate;
-- (float)rowHeightWithMax:(float)arg1 tableView:(id)arg2 indexPath:(id)arg3;
-- (BOOL)supportsAutomaticSelection;
-- (id)selectOptions;
-- (void)setDeleteAction:(id)arg1;
-- (void)populatePostbackDictionary:(id)arg1;
-- (void)setRowInvalid:(BOOL)arg1;
-- (Class)tableCellClass;
+- (id)_dateFormatter;
 
 @end

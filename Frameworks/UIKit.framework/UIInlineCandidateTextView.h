@@ -21,18 +21,18 @@
 
 
 - (void)dealloc;
+- (void)showHighlightedArrow;
 - (BOOL)_arrowHighlighted;
 - (void)_mouseUp:(struct __GSEvent { }*)arg1 wasCancelled:(BOOL)arg2;
 - (void)redrawArrow;
 - (id)findCell:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_cellSelected:(id)arg1;
-- (float)_layoutCandidates:(id)arg1 maxCount:(int)arg2 height:(float)arg3 maxScreenWidth:(float)arg4;
+- (float)_layoutCandidates:(id)arg1 maxCount:(int)arg2 height:(float)arg3 maxScreenWidth:(float)arg4 hasExtensionCandidates:(BOOL)arg5;
 - (unsigned int)selectedItem;
-- (void)showHighlightedArrow;
-- (unsigned int)numberOfShownItems;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (int)edgeType;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 candidates:(id)arg2 type:(int)arg3 maxScreenWidth:(float)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 candidates:(id)arg2 type:(int)arg3 maxScreenWidth:(float)arg4 hasExtensionCandidates:(BOOL)arg5;
+- (unsigned int)numberOfShownItems;
 - (BOOL)needsWebDocumentViewEventsDirectly;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateRectForExpandedHitRegion;
 - (void)setEdgeType:(int)arg1;

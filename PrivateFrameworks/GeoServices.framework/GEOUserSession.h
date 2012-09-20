@@ -2,20 +2,26 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOSessionID;
-
 @interface GEOUserSession : NSObject  {
     double _lastSessionCreationTime;
-    GEOSessionID *_sessionID;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
+    } _sessionID;
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
+    } _probeID;
 }
 
-@property(readonly) GEOSessionID * sessionID;
+@property(readonly) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property(readonly) struct { unsigned long long x1; unsigned long long x2; } probeID;
 
 + (id)sharedInstance;
 
 - (id)init;
-- (void)dealloc;
-- (void)_updateSessionIDIfNeeded;
-- (id)sessionID;
+- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
+- (struct { unsigned long long x1; unsigned long long x2; })probeID;
+- (void)_updateWithNewUUIDForSessionID:(struct { unsigned long long x1; unsigned long long x2; }*)arg1;
 
 @end

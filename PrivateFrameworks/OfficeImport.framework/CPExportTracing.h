@@ -3,16 +3,14 @@
  */
 
 @interface CPExportTracing : CPTracing  {
-    long mExportingOpstat;
-    long mWritingOpstat;
 }
 
 
 - (void)dealloc;
-- (void)startExporting;
-- (void)stopExporting;
-- (void)startWriting;
 - (void)stopWriting;
+- (void)startWriting;
+- (void)stopExporting;
+- (void)startExporting;
 - (id)initWithFilename:(id)arg1;
 
 @end

@@ -14,23 +14,23 @@
     BOOL _createdTimer;
 }
 
-+ (void)initialize;
 + (void)_runThread;
++ (void)initialize;
 
-- (void)cancel;
+- (void)_dispatchSCRCThread;
+- (void)_dispatchMainThread;
+- (void)_dispatch;
+- (id)threadKey;
+- (void)dispatchAfterDelay:(double)arg1 withObject:(id)arg2;
+- (BOOL)_createdTimer;
+- (void)invalidate;
 - (BOOL)isCancelled;
-- (void)release;
+- (void)cancel;
 - (void)dealloc;
-- (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
+- (oneway void)release;
 - (void)dispatchAfterDelay:(double)arg1;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 threadKey:(id)arg3;
-- (void)invalidate;
-- (void)dispatchAfterDelay:(double)arg1 withObject:(id)arg2;
 - (BOOL)isPending;
-- (id)threadKey;
-- (void)_dispatch;
-- (void)_dispatchMainThread;
-- (void)_dispatchSCRCThread;
-- (BOOL)_createdTimer;
+- (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 
 @end

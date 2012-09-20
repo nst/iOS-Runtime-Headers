@@ -2,43 +2,56 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableArray;
+@class CKSMSComposeRemoteViewController, _UIAsyncInvocation, UINavigationController, CKSMSComposeQueuingRemoteViewControllerProxy;
 
-@interface CKSMSComposeController : CKTranscriptController  {
+@interface CKSMSComposeController : UIViewController <CKSMSCompose, CKSMSComposeRemoteViewControllerDelegate> {
     id _delegate;
-    BOOL _mimeType;
-    BOOL _alreadySetUp;
-    NSMutableArray *_partsToInsert;
-    NSMutableArray *_typesToInsert;
     int _entryViewInvisible;
+    _UIAsyncInvocation *_cancellationInvocation;
+    UINavigationController *_clientNavigationController;
+    BOOL _safeToAdd;
+    CKSMSComposeQueuingRemoteViewControllerProxy *_remoteViewControllerProxy;
+    CKSMSComposeRemoteViewController *_remoteViewController;
 }
 
-@property BOOL mimeType;
 @property id delegate;
+@property(retain) CKSMSComposeRemoteViewController * remoteViewController;
+@property(retain) CKSMSComposeQueuingRemoteViewControllerProxy * remoteViewControllerProxy;
 
 + (BOOL)acceptsMIMEType:(id)arg1;
 + (double)maxTrimDurationForAudio;
-+ (double)maxTrimDurationForVideo;
 + (BOOL)canSendPhotos:(int)arg1 videos:(int)arg2 audioClips:(int)arg3;
-+ (id)_newMediaObjectForFilename:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
++ (double)maxTrimDurationForVideo;
 
-- (void)send:(id)arg1;
-- (void)cancelButtonClicked:(id)arg1;
-- (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
-- (BOOL)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
-- (void)setTextEntryContentsVisible:(BOOL)arg1;
-- (void)setMimeType:(BOOL)arg1;
-- (void)_addPart:(id)arg1;
-- (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
-- (BOOL)_insertMediaObject:(id)arg1;
-- (id)initWithNavigationController:(id)arg1;
-- (BOOL)ckCanDismissWhenSuspending;
-- (void)transitionFromNewMessageToConversation;
-- (BOOL)shouldDismissAfterSend;
-- (BOOL)mimeType;
+- (id)remoteViewController;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (void)setRemoteViewController:(id)arg1;
+- (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)_addRemoteVCIfNeeded;
+- (id)remoteViewControllerProxy;
+- (void)setRemoteViewControllerProxy:(id)arg1;
+- (void)forceCancelComposition;
+- (void)setUICustomizationData:(id)arg1;
+- (void)setText:(id)arg1 addresses:(id)arg2;
+- (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
+- (void)smsComposeControllerSendStartedWithText:(id)arg1;
+- (void)smsComposeControllerCancelled;
+- (void)smsComposeControllerAppeared;
+- (void)setTextEntryContentsVisible:(BOOL)arg1;
+- (void)setPendingAddresses:(id)arg1;
+- (BOOL)insertTextPart:(id)arg1;
+- (void)smsComposeControllerDataInserted;
+- (void)setCanEditRecipients:(BOOL)arg1;
+- (id)initWithNavigationController:(id)arg1;
+- (BOOL)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
+- (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
+- (void)disableCameraAttachments;
 
 @end

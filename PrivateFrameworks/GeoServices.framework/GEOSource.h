@@ -5,8 +5,8 @@
 @class NSString;
 
 @interface GEOSource : PBCodable  {
-    NSString *_sourceName;
     NSString *_sourceId;
+    NSString *_sourceName;
     NSString *_sourceVersion;
 }
 
@@ -17,16 +17,19 @@
 
 
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)sourceVersion;
+- (id)dictionaryRepresentation;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (BOOL)hasSourceVersion;
 - (id)sourceId;
 - (id)sourceName;
-- (BOOL)hasSourceVersion;
 - (void)setSourceVersion:(id)arg1;
 - (void)setSourceId:(id)arg1;
 - (void)setSourceName:(id)arg1;
-- (id)dictionaryRepresentation;
+- (id)sourceVersion;
 - (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 
 @end

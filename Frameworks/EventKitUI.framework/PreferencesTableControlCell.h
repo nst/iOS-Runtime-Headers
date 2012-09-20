@@ -12,8 +12,8 @@
 
 
 - (void)dealloc;
+- (void)layoutSubviews;
 - (id)control;
 - (void)setControl:(id)arg1;
-- (void)layoutSubviews;
 
 @end

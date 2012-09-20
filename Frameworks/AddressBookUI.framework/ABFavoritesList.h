@@ -14,19 +14,19 @@
 - (void)save;
 - (void)dealloc;
 - (void)_applicationWillSuspend:(id)arg1;
-- (id)entries;
-- (id)initWithAddressBook:(void*)arg1;
-- (BOOL)containsEntryWithIdentifier:(int)arg1 forPerson:(void*)arg2;
-- (BOOL)containsEntryWithType:(int)arg1 forPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (BOOL)addEntryForPerson:(void*)arg1 property:(int)arg2 withIdentifier:(int)arg3;
-- (void)removeEntryAtIndex:(int)arg1;
 - (void)moveEntryAtIndex:(int)arg1 toIndex:(int)arg2;
-- (void)recacheIdentitiesSoon;
-- (id)entriesForPerson:(void*)arg1;
-- (id)entryWithType:(int)arg1 forPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (id)entryWithIdentifier:(int)arg1 forPerson:(void*)arg2;
-- (BOOL)isFull;
+- (void)removeEntryAtIndex:(int)arg1;
+- (BOOL)addEntryForPerson:(void*)arg1 property:(int)arg2 withIdentifier:(int)arg3;
+- (BOOL)containsEntryWithType:(int)arg1 forPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (BOOL)containsEntryWithIdentifier:(int)arg1 forPerson:(void*)arg2;
+- (id)entries;
 - (void)addEntry:(id)arg1;
+- (BOOL)isFull;
+- (id)entryWithIdentifier:(int)arg1 forPerson:(void*)arg2;
+- (id)entryWithType:(int)arg1 forPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (id)entriesForPerson:(void*)arg1;
+- (void)recacheIdentitiesSoon;
 - (BOOL)entryIsDuplicateAndThusRemoved:(id)arg1 oldUid:(int)arg2;
+- (id)initWithAddressBook:(void*)arg1;
 
 @end

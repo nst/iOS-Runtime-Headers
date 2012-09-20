@@ -12,30 +12,30 @@
 }
 
 
-- (id)init;
+- (struct __CFString { }*)defaultDomain;
+- (void)_updateCell:(id)arg1 forDomain:(int)arg2;
+- (int)domainForIndexRow:(unsigned int)arg1;
+- (id)stringForDomain:(int)arg1;
+- (void)_saveIfNecessary;
+- (id)displayNameForExtendedDomain:(int)arg1;
+- (id)keyForDomain:(int)arg1;
+- (void)_loadEnabledState;
+- (void)_loadOrdering;
+- (struct __CFString { }*)disabledKey;
+- (void)removeUnwantedDomains;
+- (void)defaultOrdering;
+- (int)domainCount;
+- (int)domainForKey:(id)arg1;
+- (id)allDomainKeys;
+- (struct __CFString { }*)reorderingKey;
 - (void)dealloc;
+- (id)init;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (struct __CFString { }*)reorderingKey;
-- (struct __CFString { }*)defaultDomain;
-- (id)allDomainKeys;
-- (int)domainForKey:(const id)arg1;
-- (int)domainCount;
-- (void)defaultOrdering;
-- (void)removeUnwantedDomains;
-- (struct __CFString { }*)disabledKey;
-- (void)_loadOrdering;
-- (void)_loadEnabledState;
-- (id)keyForDomain:(int)arg1;
-- (id)displayNameForExtendedDomain:(int)arg1;
-- (void)_saveIfNecessary;
-- (id)stringForDomain:(int)arg1;
-- (int)domainForIndexRow:(unsigned int)arg1;
-- (void)_updateCell:(id)arg1 forDomain:(int)arg2;
+- (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

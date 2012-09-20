@@ -5,6 +5,9 @@
 @class NSData, NSString;
 
 @interface FTProfileMessage : FTMessage <NSCopying> {
+    NSData *_pushCert;
+    struct __SecKey { } *_pushKey;
+    struct __SecKey { } *_pushPublicKey;
     NSData *_pushToken;
     NSString *_authToken;
     NSString *_profileID;
@@ -12,27 +15,36 @@
 
 @property(copy) NSString * profileID;
 @property(copy) NSString * authToken;
+@property struct __SecKey { }* pushPrivateKey;
+@property struct __SecKey { }* pushPublicKey;
+@property(copy) NSData * pushCertificate;
 @property(copy) NSData * pushToken;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (void)setPushCertificate:(id)arg1;
+- (void)setPushPrivateKey:(struct __SecKey { }*)arg1;
+- (void)setProfileID:(id)arg1;
+- (id)profileID;
+- (void)setPushPublicKey:(struct __SecKey { }*)arg1;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)additionalMessageHeadersForOutgoingPush;
 - (id)additionalMessageHeaders;
 - (int)responseCommand;
 - (BOOL)hasRequiredKeys:(id*)arg1;
+- (id)pushCertificate;
+- (struct __SecKey { }*)pushPublicKey;
+- (struct __SecKey { }*)pushPrivateKey;
 - (BOOL)wantsBagKey;
 - (BOOL)wantsHTTPHeaders;
 - (BOOL)wantsCompressedBody;
 - (BOOL)wantsBinaryPush;
-- (int)command;
-- (void)setAuthToken:(id)arg1;
-- (id)authToken;
 - (void)setPushToken:(id)arg1;
 - (id)pushToken;
-- (void)setProfileID:(id)arg1;
-- (id)profileID;
+- (id)authToken;
+- (void)setAuthToken:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (int)command;
 
 @end

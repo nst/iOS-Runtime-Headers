@@ -2,16 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureSession;
+@class AVCaptureDeviceInput, AVCaptureDeviceFormat;
 
 @interface AVCaptureDeviceInternal : NSObject  {
-    AVCaptureSession *_session;
     int _openRefCount;
     int _configLockRefCount;
     int _configLockPid;
     BOOL _usingDevice;
-    BOOL _subjectMonitoringEnabled;
-    BOOL _faceDetectionDrivenImageProcessingEnabled;
+    AVCaptureDeviceFormat *_activeFormat;
+    AVCaptureDeviceInput *_activeInput;
 }
 
 

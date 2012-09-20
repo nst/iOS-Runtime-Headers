@@ -7,7 +7,7 @@
 }
 
 
-- (id)initWithContainerClassID:(id)arg1 key:(id)arg2 method:(struct objc_method { }*)arg3;
 - (struct objc_method { }*)method;
+- (id)initWithContainerClassID:(id)arg1 key:(id)arg2 method:(struct objc_method { }*)arg3;
 
 @end

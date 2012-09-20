@@ -18,9 +18,9 @@
 @property(readonly) int (* callback;
 
 
-- (void)dealloc;
-- (id)initWithWeakReferenceToListener:(id)arg1 callback:(int (*)())arg2;
-- (id)listener;
 - (int (*)())callback;
+- (void)dealloc;
+- (id)listener;
+- (id)initWithWeakReferenceToListener:(id)arg1 callback:(int (*)())arg2;
 
 @end

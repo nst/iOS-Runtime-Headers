@@ -7,6 +7,10 @@
 @interface IUGeniusMixDataSource : IUMediaDataSource  {
     NSMutableArray *_mixes;
     unsigned int _countOfMixes;
+    BOOL _needsBackgroundPreload;
+    BOOL _canScheduledBackgroundPreload;
+    double _lastPreloadTime;
+    double _preloadDelay;
 }
 
 @property(readonly) unsigned int countOfMixes;
@@ -16,20 +20,21 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)reloadData;
-- (struct CGImage { }*)representativeImageAtIndex:(unsigned int)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 count:(unsigned int)arg3;
-- (unsigned int)countOfRepresentativeImagesAtIndex:(unsigned int)arg1 maxCount:(unsigned int)arg2;
+- (struct CGImage { }*)loadRepresentativeImageAtIndex:(unsigned int)arg1 withTileLength:(float)arg2 completionBlock:(id)arg3;
 - (id)representativeArtistsAtIndex:(unsigned int)arg1;
 - (id)mixNameAtIndex:(unsigned int)arg1;
 - (unsigned int)indexOfMix:(id)arg1;
 - (id)mixAtIndex:(unsigned int)arg1;
 - (unsigned int)countOfMixes;
 - (id)_geniusMixAtIndex:(unsigned int)arg1;
+- (void)_invalidateForArtworkCacheChange;
 - (void)unloadReloadableData;
 - (void)_cacheMixArtworkInBackground:(id)arg1;
-- (void)_invalidateForArtworkCacheChange;
+- (void)_scheduleBackgroundPreload;
+- (void)_artworkCacheDidChangeNotification:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 

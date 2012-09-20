@@ -8,15 +8,15 @@
 }
 
 @property(copy) NSArray * objects;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)domainObjectRetrieveCompleted;
 + (id)domainObjectRetrieveCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)domainObjectRetrieveCompleted;
 
 - (id)groupIdentifier;
 - (void)setObjects:(id)arg1;
-- (id)encodedClassName;
 - (id)objects;
+- (id)encodedClassName;
 
 @end

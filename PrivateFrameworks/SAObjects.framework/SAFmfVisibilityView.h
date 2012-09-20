@@ -10,14 +10,14 @@
 @property(copy) NSURL * searchContext;
 @property BOOL visible;
 
-+ (id)visibilityView;
 + (id)visibilityViewWithDictionary:(id)arg1 context:(id)arg2;
++ (id)visibilityView;
 
 - (id)groupIdentifier;
 - (BOOL)visible;
 - (void)setVisible:(BOOL)arg1;
-- (void)setSearchContext:(id)arg1;
 - (id)searchContext;
+- (void)setSearchContext:(id)arg1;
 - (id)encodedClassName;
 
 @end

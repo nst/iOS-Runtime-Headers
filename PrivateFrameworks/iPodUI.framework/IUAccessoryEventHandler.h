@@ -23,8 +23,8 @@
 
 + (id)sharedInstance;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)isHandlingSimpleRemoteEvent;
 - (void)_switchToPlaylistContextForSpecifier:(id)arg1;
 - (BOOL)wantsSplashView;
@@ -32,10 +32,11 @@
 - (void)showSplashView:(BOOL)arg1;
 - (void)setSplashViewImage:(id)arg1;
 - (void)hideSplashView;
-- (void)handleSimpleRemoteAction:(int)arg1 withContext:(int)arg2;
-- (BOOL)handleChangeChapterEvent:(int)arg1;
+- (void)handleSimpleRemoteAction:(int)arg1 withContext:(int)arg2 trackID:(long long)arg3;
 - (BOOL)isHandlingRemoteEvent;
 - (void)tearDownSplashView;
+- (void)handleFastForwardEventWithSeconds:(double)arg1;
+- (void)handleRewindEventWithSeconds:(double)arg1;
 - (void)handleDownArrowEvent;
 - (void)handleUpArrowEvent;
 - (void)handleSelectEvent;
@@ -45,6 +46,7 @@
 - (BOOL)handleRepeatAdvanceEvent;
 - (BOOL)handleShuffleAdvanceEvent;
 - (BOOL)handlePlaylistSeek:(int)arg1;
+- (BOOL)handleChangeChapterEvent:(int)arg1;
 - (BOOL)handlePauseEvent;
 - (BOOL)handlePlayEvent;
 - (BOOL)_handleEventWithHandler:(SEL)arg1 ifCurrentItemType:(unsigned int)arg2;

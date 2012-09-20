@@ -14,11 +14,11 @@
 
 + (id)invitationStringsWithTitle:(id)arg1 body:(id)arg2;
 
-- (void)dealloc;
-- (id)initWithTitle:(id)arg1 body:(id)arg2;
+- (void).cxx_destruct;
+- (void)setBody:(id)arg1;
 - (id)body;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (void)setBody:(id)arg1;
+- (id)initWithTitle:(id)arg1 body:(id)arg2;
 
 @end

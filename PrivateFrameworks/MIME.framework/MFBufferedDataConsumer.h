@@ -12,10 +12,10 @@
 }
 
 
-- (id)init;
+- (id)data;
 - (void)dealloc;
+- (id)init;
 - (int)appendData:(id)arg1;
 - (void)done;
-- (id)data;
 
 @end

@@ -13,7 +13,7 @@
 
 - (id)type;
 - (void)setType:(id)arg1;
-- (BOOL)compact;
 - (void)setCompact:(BOOL)arg1;
+- (BOOL)compact;
 
 @end

@@ -10,7 +10,9 @@
 
 @property(readonly) NSString * signingSessionCertURL;
 @property(readonly) NSString * signingSessionURL;
+@property(readonly) NSString * aboutURL;
 @property(readonly) NSString * xmlUI;
+@property(readonly) NSString * upgradeIOSTermsUI;
 @property(readonly) NSString * authenticateURL;
 @property(readonly) NSString * createAppleIDURL;
 @property(readonly) NSString * updateAppleIDURL;
@@ -19,14 +21,21 @@
 @property(readonly) NSString * iForgotURL;
 @property(readonly) NSString * existingAppleIDTermsUIURL;
 @property(readonly) BOOL setupAssistantServerEnabled;
+@property(readonly) NSString * loginDelegatesURL;
+@property(readonly) NSString * activeEmailDomain;
 
 
+- (void).cxx_destruct;
+- (id)activeEmailDomain;
 - (BOOL)setupAssistantServerEnabled;
 - (id)existingAppleIDTermsUIURL;
 - (id)iForgotURL;
 - (id)checkValidityURL;
+- (id)aboutURL;
 - (id)xmlUI;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
+- (id)upgradeIOSTermsUI;
+- (id)loginDelegatesURL;
 - (id)createDelegateAccountsURL;
 - (id)updateAppleIDURL;
 - (id)createAppleIDURL;

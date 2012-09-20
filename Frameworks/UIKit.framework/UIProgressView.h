@@ -11,7 +11,7 @@
     UIColor *_progressTintColor;
     UIColor *_trackTintColor;
     UIImageView *_trackView;
-    UIImageView *_progressViews[3];
+    UIImageView *_progressView;
     BOOL _isAnimating;
     UIImage *_trackImage;
     UIImage *_progressImage;
@@ -24,10 +24,8 @@
 @property(retain) UIImage * progressImage;
 @property(retain) UIImage * trackImage;
 
-+ (struct { id x1; id x2; id x3; id x4; })_standardImagesForStyle:(int)arg1 barStyle:(int)arg2;
-+ (struct { id x1; id x2; id x3; id x4; })_sliceImage:(id)arg1;
++ (struct { id x1; id x2; })_standardImagesForStyle:(int)arg1 barStyle:(int)arg2;
 + (int)_indexForStyle:(int)arg1 barStyle:(int)arg2;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
 
 - (void)dealloc;
@@ -36,6 +34,7 @@
 - (id)progressImage;
 - (id)trackImage;
 - (float)progress;
+- (int)progressViewStyle;
 - (void)setTrackImage:(id)arg1;
 - (void)setTrackTintColor:(id)arg1;
 - (void)setProgressImage:(id)arg1;
@@ -46,20 +45,23 @@
 - (void)setProgressTintColor:(id)arg1;
 - (id)progressTintColor;
 - (void)_setProgressAnimated:(float)arg1 duration:(double)arg2 delay:(double)arg3 options:(unsigned int)arg4;
-- (void)_updateCapsAtStartOfAnimation;
-- (void)_updateCapsAtEndOfAnimation;
-- (BOOL)_shouldTintTrack;
+- (id)_appropriateTrackImage;
+- (id)_appropriateProgressImage;
 - (BOOL)_shouldTintProgress;
+- (BOOL)_shouldTintTrack;
+- (void)setProgressViewStyle:(int)arg1;
 - (void)_setProgress:(float)arg1;
 - (void)_updateImages;
-- (void)setProgressViewStyle:(int)arg1;
-- (int)progressViewStyle;
 - (int)barStyle;
 - (void)setBarStyle:(int)arg1;
 - (void)setProgress:(float)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;

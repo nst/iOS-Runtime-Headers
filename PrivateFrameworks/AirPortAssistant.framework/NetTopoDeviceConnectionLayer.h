@@ -43,8 +43,8 @@
 
 
 - (id)debugDescription;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (struct CGPath { }*)hitTestPath;
 - (unsigned int)connectionMediumFallback;
 - (void)setSiblingMergePoint:(struct CGPoint { float x1; float x2; })arg1;

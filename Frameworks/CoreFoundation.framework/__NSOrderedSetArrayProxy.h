@@ -7,10 +7,10 @@
 }
 
 
-- (unsigned int)count;
-- (id)objectAtIndex:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (unsigned int)count;
 - (id)initWithOrderedSet:(id)arg1;
 
 @end

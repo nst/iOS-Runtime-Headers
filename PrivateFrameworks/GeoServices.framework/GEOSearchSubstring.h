@@ -3,9 +3,9 @@
  */
 
 @interface GEOSearchSubstring : PBCodable  {
-    int _stringType;
     int _beginIndex;
     int _endIndex;
+    int _stringType;
 }
 
 @property int stringType;
@@ -14,15 +14,18 @@
 
 
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (int)endIndex;
-- (int)beginIndex;
-- (int)stringType;
-- (void)setEndIndex:(int)arg1;
-- (void)setBeginIndex:(int)arg1;
-- (void)setStringType:(int)arg1;
 - (id)dictionaryRepresentation;
-- (BOOL)readFrom:(id)arg1;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setEndIndex:(int)arg1;
+- (int)endIndex;
+- (void)setBeginIndex:(int)arg1;
+- (int)beginIndex;
+- (void)setStringType:(int)arg1;
+- (int)stringType;
+- (BOOL)readFrom:(id)arg1;
 
 @end

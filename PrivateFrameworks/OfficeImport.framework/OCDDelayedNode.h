@@ -9,14 +9,12 @@
     boolmLoaded;
 }
 
-+ (void)disableDelayedLoading;
-+ (void)enableDelayedLoading;
 
 - (void)dealloc;
-- (void)setLoaded:(bool)arg1;
 - (bool)load;
 - (bool)isLoaded;
 - (id)delayedContext;
+- (void)setLoaded:(bool)arg1;
 - (void)setDelayedContext:(id)arg1;
 
 @end

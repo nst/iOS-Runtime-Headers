@@ -25,12 +25,19 @@
 @property unsigned long flags;
 
 
-- (void)setFlags:(unsigned long)arg1;
+- (id)dirtyProperties;
+- (void)setDirtyProperties:(id)arg1;
+- (void)reset;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (void)setPropertyName:(id)arg1;
 - (void)rollback;
 - (BOOL)hasChanges;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (void)dealloc;
+- (id)objectID;
+- (unsigned long)flags;
+- (id)propertyName;
+- (void)setFlags:(unsigned long)arg1;
+- (id)owner;
 - (void)setWeakRelations:(id)arg1;
 - (id)weakRelations;
 - (void)setRelations:(id)arg1;
@@ -38,14 +45,12 @@
 - (id)owningRelation;
 - (void)setCachedProperties:(id)arg1;
 - (id)cachedProperties;
-- (void)setDirtyProperties:(id)arg1;
 - (void)removeWeakRelation:(id)arg1;
 - (void)addWeakRelation:(id)arg1;
 - (void)childRelationChanged:(id)arg1;
 - (id)propertyValueForKey:(id)arg1;
 - (BOOL)existsInStore;
 - (void)cachePropertyValue:(id)arg1 forKey:(id)arg2;
-- (id)relations;
 - (BOOL)boolPropertyForKey:(id)arg1 withPersistentFallback:(id)arg2;
 - (id)propertyForKey:(id)arg1 withPersistentFallback:(id)arg2;
 - (int)intPropertyForKey:(id)arg1 withPersistentFallback:(id)arg2;
@@ -55,7 +60,6 @@
 - (void)setPersistentObject:(id)arg1;
 - (void)updatePersistentValueForKeyIfNeeded:(id)arg1;
 - (id)committedValueForKey:(id)arg1;
-- (id)dirtyProperties;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (void)deletePersistentObject;
 - (void)updatePersistentObject;
@@ -64,18 +68,13 @@
 - (id)relationForKey:(id)arg1;
 - (void)setPropertyValue:(id)arg1 forKey:(id)arg2;
 - (id)persistentOrDirtyPropertyForKey:(id)arg1;
-- (BOOL)validate:(id*)arg1;
 - (id)persistentObject;
+- (BOOL)validate:(id*)arg1;
 - (void)didCommit;
 - (id)eventStore;
 - (id)initWithPersistentObject:(id)arg1;
 - (BOOL)refresh;
 - (BOOL)isNew;
-- (void)reset;
-- (unsigned long)flags;
-- (id)propertyName;
-- (id)owner;
-- (void)setPropertyName:(id)arg1;
-- (id)objectID;
+- (id)relations;
 
 @end

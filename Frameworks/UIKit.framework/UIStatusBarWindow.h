@@ -8,15 +8,18 @@
     UIStatusBar *_statusBar;
     int _orientation;
     UIStatusBarCorners *_topCorners;
+    float _topCornersOffset;
     UIStatusBarCorners *_bottomCorners;
     BOOL _cornersHidden;
 }
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })statusBarWindowFrame;
++ (BOOL)isIncludedInClassicJail;
 
 - (void)dealloc;
-- (void)setTopCornerStyle:(int)arg1 bottomCornerStyle:(int)arg2 animationParameters:(id)arg3;
+- (void)setTopCornerStyle:(int)arg1 topCornersOffset:(float)arg2 bottomCornerStyle:(int)arg3 animationParameters:(id)arg4;
 - (void)setCornersHidden:(BOOL)arg1 animationParameters:(id)arg2;
+- (void)_styleAnimationDidStop:(id)arg1 finished:(id)arg2 completion:(void*)arg3;
 - (void)_fadeAnimationStopped:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_rotate;
 - (BOOL)_disableViewScaling;

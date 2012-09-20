@@ -2,13 +2,36 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
+@class NSString;
+
 @interface ML3UbiquitousDatabase : ML3SqliteDatabase <ML3SqliteDatabaseSubclass> {
+    BOOL _needsToPurgeOldEntries;
+    BOOL _isInTransaction;
 }
 
+@property unsigned long long ubiquitousBookmarkEntityRevisionAnchor;
+@property(copy) NSString * ubiquitousBookmarkDomainVersionAnchorToken;
+
 + (BOOL)migrateFromVersion:(int)arg1 outUserVersion:(int*)arg2 usingHandle:(struct sqlite3 { }*)arg3;
-+ (int)userVersionCurrent;
++ (int)currentUserVersion;
 + (id)allSchemaSQL;
 + (id)databasePath;
 
+- (void)dumpUbiquitousMetadata;
+- (void)removeUbiquitousBookmarkMetadataForTrack:(id)arg1;
+- (id)ubiquitousBookmarkDomainVersionAnchorToken;
+- (void)setUbiquitousBookmarkDomainVersionAnchorToken:(id)arg1;
+- (unsigned long long)ubiquitousBookmarkEntityRevisionAnchor;
+- (void)setUbiquitousBookmarkEntityRevisionAnchor:(unsigned long long)arg1;
+- (void)insertUbiquitousBookmarkMetadataWithMetadataIdentifier:(id)arg1 propertyValues:(id)arg2 timestamp:(double)arg3;
+- (void)_updateUbiquitousBookmarkMetadataWithMetadataIdentifier:(id)arg1 propertyValues:(id)arg2 timestamp:(double)arg3;
+- (void)purgeOldEntriesIfNecessary;
+- (id)_valueForDatabaseProperty:(id)arg1;
+- (BOOL)_setValue:(id)arg1 forDatabaseProperty:(id)arg2;
+- (void)applyUbiqiutousBookmarkMetadataToTrack:(id)arg1;
+- (void)didCommitInDatabaseContext:(id)arg1;
+- (void)insertUbiquitousBookmarkMetadataWithValuesFromTrack:(id)arg1;
+- (void)resetUbiquitousMetadata;
+- (void)performTransactionWithBlock:(id)arg1;
 
 @end

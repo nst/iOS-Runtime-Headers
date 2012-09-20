@@ -15,8 +15,10 @@
 + (id)assetReaderVideoCompositionOutputWithVideoTracks:(id)arg1 videoSettings:(id)arg2;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)mediaType;
+- (void)finalize;
 - (id)videoSettings;
 - (id)initWithVideoTracks:(id)arg1 videoSettings:(id)arg2;
 - (id)videoTracks;
@@ -26,7 +28,5 @@
 - (void)setVideoComposition:(id)arg1;
 - (id)videoComposition;
 - (id)_asset;
-- (void)finalize;
-- (id)mediaType;
 
 @end

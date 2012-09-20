@@ -22,7 +22,9 @@
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (id)viewControllerContextForMediaQuery:(id)arg1;
+- (BOOL)hideActionRowsOnAppear;
 - (void)reloadActionRows;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
+- (int)filteredMediaTypes;
 
 @end

@@ -22,12 +22,28 @@
     QLPageNumberView *_pageNumberLabel;
 }
 
-@property BOOL runOnMainThread;
-@property id delegate;
 @property <QLScrubViewDataSource> * dataSource;
+@property id delegate;
+@property BOOL runOnMainThread;
 
 + (float)defaultWidth;
 
+- (BOOL)runOnMainThread;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_thumbnailFrameForPageAtIndex:(int)arg1;
+- (void)_hidePageLabel;
+- (void)_notifyScrubingEnded;
+- (void)_handleSwipAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_notifyScrubingStarted;
+- (void)_showPageLabel;
+- (void)_notifyPageChanged;
+- (void)_updateSelectedThumbnailView;
+- (void)_removeThumbviews;
+- (void)_cancelAllOperations;
+- (void)setRunOnMainThread:(BOOL)arg1;
+- (void)reloadThumbnails;
+- (void)selectPageNumber:(int)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
@@ -36,27 +52,11 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)didReceiveMemoryWarning;
-- (id)delegate;
 - (id)dataSource;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)runOnMainThread;
-- (void)_cancelAllOperations;
-- (void)_removeThumbviews;
-- (void)_updateSelectedThumbnailView;
-- (void)_notifyPageChanged;
-- (void)_showPageLabel;
-- (void)_notifyScrubingStarted;
-- (void)_handleSwipAtLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_notifyScrubingEnded;
-- (void)_hidePageLabel;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_thumbnailFrameForPageAtIndex:(int)arg1;
-- (void)reloadThumbnails;
-- (void)selectPageNumber:(int)arg1;
-- (void)setRunOnMainThread:(BOOL)arg1;
 
 @end

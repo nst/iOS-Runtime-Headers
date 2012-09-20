@@ -23,6 +23,17 @@
 @property <CertInfoSheetViewControllerDelegate> * delegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)_cancel;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)serviceName;
+- (void)setServiceName:(id)arg1;
+- (void)_accept;
 - (void)setTrustExpiration:(id)arg1;
 - (void)setTrustPurpose:(id)arg1;
 - (void)_pushDetailsView;
@@ -32,20 +43,9 @@
 - (id)trustSubtitle;
 - (void)setTrustTitle:(id)arg1;
 - (id)trustTitle;
-- (void)_accept;
 - (void)_dismissWithResult:(int)arg1;
 - (void)setTrustProperties:(id)arg1;
 - (void)_setupNavItem;
 - (id)trustProperties;
-- (void)dealloc;
-- (void)setServiceName:(id)arg1;
-- (id)serviceName;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)_cancel;
 
 @end

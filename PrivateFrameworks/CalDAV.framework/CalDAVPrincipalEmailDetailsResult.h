@@ -11,18 +11,18 @@
 }
 
 @property(retain) NSURL * principalURL;
-@property(retain) NSSet * addresses;
 @property(retain) NSString * displayName;
+@property(retain) NSSet * addresses;
 
 + (id)resultFromResponseItem:(id)arg1;
 
 - (id)description;
 - (void)dealloc;
 - (id)principalURL;
-- (id)addresses;
-- (void)setAddresses:(id)arg1;
-- (void)setDisplayName:(id)arg1;
-- (void)setPrincipalURL:(id)arg1;
 - (id)displayName;
+- (void)setPrincipalURL:(id)arg1;
+- (void)setAddresses:(id)arg1;
+- (id)addresses;
+- (void)setDisplayName:(id)arg1;
 
 @end

@@ -2,10 +2,24 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class <PLExpandableViewDelegate>;
 
 @interface PLExpandableView : UIView  {
     <PLExpandableViewDelegate> *_delegate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _collapsingCompletionHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _expansionCompletionHandler;
+
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -75,22 +89,23 @@
 @property BOOL allowsExpansion;
 
 
-- (int)previousState;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (int)state;
+- (void)dealloc;
 - (void)willMoveToWindow:(id)arg1;
 - (BOOL)isTracking;
-- (int)state;
-- (id)delegate;
 - (void)didMoveToWindow;
-- (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)canCollapse;
 - (float)expansionFraction;
+- (int)previousState;
 - (void)setAllowsExpansion:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })expandedFrame;
 - (void)setExpandedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contractedFrame;
-- (void)expandWithAnimation:(BOOL)arg1;
-- (void)collapseWithAnimation:(BOOL)arg1;
+- (void)expandWithAnimation:(BOOL)arg1 completion:(id)arg2;
+- (void)collapseWithAnimation:(BOOL)arg1 completion:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pinchRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 insetTouches:(BOOL)arg3;
 - (void)finishTransition;
 - (void)canceledPinch:(id)arg1;
@@ -104,10 +119,10 @@
 - (float)continueTrackingPinch:(id)arg1;
 - (void)notifyExpansionFraction:(float)arg1 force:(BOOL)arg2;
 - (void)beginTrackingPinch:(id)arg1;
-- (void)_setState:(int)arg1 withDuration:(double)arg2;
+- (void)setState:(int)arg1 withDuration:(double)arg2;
 - (void)updatePinchState:(id)arg1;
 - (BOOL)_canPinch;
-- (void)_setExpansionFraction:(float)arg1;
+- (void)setExpansionFraction:(float)arg1;
 - (void)stateDidChangeFrom:(int)arg1;
 - (void)_transitionFromCompleteContract:(int)arg1 withDuration:(double)arg2;
 - (void)_transitionFromCancelContract:(int)arg1 withDuration:(double)arg2;

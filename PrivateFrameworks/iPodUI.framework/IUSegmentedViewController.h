@@ -41,8 +41,11 @@
 @property(retain) UIView * leftView;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (id)segmentedControl;
+- (id)accessoryView;
 - (void)setAccessoryView:(id)arg1;
 - (BOOL)editable;
 - (void)setEditable:(BOOL)arg1;
@@ -58,13 +61,10 @@
 - (BOOL)_canReloadView;
 - (void)loadView;
 - (void)viewDidLoad;
-- (id)accessoryView;
 - (id)leftView;
 - (void)setLeftView:(id)arg1;
 - (void)setNavigationBar:(id)arg1;
 - (id)navigationBar;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (struct CGSize { float x1; float x2; })accessoryViewOffset;
 - (int)segmentedControlAlignment;
 - (void)_popTopViewController:(id)arg1;
@@ -76,7 +76,6 @@
 - (void)_segmentedControlChanged:(id)arg1;
 - (id)_newSegmentedControl;
 - (void)setViewControllers:(id)arg1 transient:(BOOL)arg2;
-- (void)setSelectedIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (id)_createDefaultNavigationBar;
 - (void)_toggleEdit:(id)arg1;
 - (void)_updateSegmentedControlVisibility;
@@ -84,6 +83,7 @@
 - (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)_setNavigationControllerDelegate:(id)arg1;
 - (void)_destroySegmentControl;
+- (void)setSelectedIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setAccessoryViewOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)reloadSegmentedControl;
 - (void)reloadEnabledState;

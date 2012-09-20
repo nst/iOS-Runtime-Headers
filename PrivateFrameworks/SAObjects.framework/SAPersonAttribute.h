@@ -11,16 +11,16 @@
 @property(copy) NSString * displayText;
 @property(retain) SAPerson * object;
 
-+ (id)personAttribute;
 + (id)personAttributeWithDictionary:(id)arg1 context:(id)arg2;
++ (id)personAttribute;
 
 - (id)groupIdentifier;
-- (id)displayText;
-- (void)setDisplayText:(id)arg1;
+- (id)data;
 - (void)setObject:(id)arg1;
 - (id)object;
-- (id)data;
 - (void)setData:(id)arg1;
+- (void)setDisplayText:(id)arg1;
+- (id)displayText;
 - (id)encodedClassName;
 
 @end

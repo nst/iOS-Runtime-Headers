@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface MFFont : NSObject <MFObject> {
-    int m_lfHeight;
-    int m_lfWidth;
-    int m_lfEscapement;
-    int m_lfOrientation;
-    int m_lfWeight;
+    long m_lfHeight;
+    long m_lfWidth;
+    long m_lfEscapement;
+    long m_lfOrientation;
+    long m_lfWeight;
     boolm_lfItalic;
     boolm_lfUnderline;
     boolm_lfStrikeOut;
@@ -30,20 +30,21 @@
 }
 
 + (id)fontWithStockFont:(int)arg1;
-+ (id)fontWithFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
 + (id)fontWithExtendedFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22;
++ (id)fontWithFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
 
 - (void)dealloc;
-- (double)escapement;
-- (int)getCharset;
-- (BOOL)strikeout;
+- (id)stringWithBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textExtent:(id)arg1 :(int)arg2 :(int*)arg3 :(int)arg4;
-- (id)initWithAllFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22;
-- (id)initWithFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
-- (id)initWithStockFont:(int)arg1;
+- (id)faceName;
+- (BOOL)strikeout;
+- (int)getCharset;
 - (double)fontHeight;
+- (double)escapement;
+- (id)initWithStockFont:(int)arg1;
+- (id)initWithFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
+- (id)initWithAllFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22;
 - (int)selectInto:(id)arg1;
 - (BOOL)underline;
-- (id)faceName;
 
 @end

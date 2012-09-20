@@ -11,15 +11,15 @@
 - (void)dealloc;
 - (void)setAttribute:(const char *)arg1 value:(const char *)arg2;
 - (void)removeStyleSheetLinkNodeAndAddStyle:(struct __CFString { }*)arg1;
-- (id)initEmpty;
-- (id)initWithHead;
-- (struct __CFData { }*)createHtml;
 - (struct __CFData { }*)createHtmlWithCss:(struct __CFString { }*)arg1;
-- (void)addCharRef:(const char *)arg1;
+- (struct __CFData { }*)createHtml;
+- (id)initWithHead;
+- (id)initEmpty;
 - (void)addXmlCharContent:(const char *)arg1;
+- (void)addCharRef:(const char *)arg1;
 - (struct __CFData { }*)createProgressiveHtml;
 - (void)endElementWithExpectedName:(const char *)arg1;
-- (void)startElement:(const char *)arg1;
 - (void)endElement;
+- (void)startElement:(const char *)arg1;
 
 @end

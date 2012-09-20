@@ -11,24 +11,24 @@
     CalDAVCalendarServerReplyItem *_reply;
 }
 
+@property(retain) CoreDAVItemWithNoChildren * create;
+@property(retain) CalDAVCalendarServerUpdateItem * update;
 @property(retain) CalDAVCalendarServerCancelItem * cancel;
 @property(retain) CalDAVCalendarServerReplyItem * reply;
-@property(retain) CalDAVCalendarServerUpdateItem * update;
-@property(retain) CoreDAVItemWithNoChildren * create;
 
 
 - (id)description;
 - (id)cancel;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)update;
+- (id)reply;
+- (id)create;
+- (void)setCancel:(id)arg1;
+- (void)setReply:(id)arg1;
+- (void)setUpdate:(id)arg1;
+- (void)setCreate:(id)arg1;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (id)update;
-- (id)create;
-- (void)setCreate:(id)arg1;
-- (void)setUpdate:(id)arg1;
-- (void)setCancel:(id)arg1;
-- (id)reply;
-- (void)setReply:(id)arg1;
 
 @end

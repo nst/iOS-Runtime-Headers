@@ -5,11 +5,11 @@
 @interface SACancelSucceeded : SABaseClientBoundCommand  {
 }
 
-+ (id)cancelSucceeded;
 + (id)cancelSucceededWithDictionary:(id)arg1 context:(id)arg2;
++ (id)cancelSucceeded;
 
 - (id)groupIdentifier;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

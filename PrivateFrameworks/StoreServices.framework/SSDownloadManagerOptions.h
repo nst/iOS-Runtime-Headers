@@ -19,19 +19,19 @@
 @property(copy) NSArray * prefetchedDownloadExternalProperties;
 
 
-- (void)setPrefetchedDownloadExternalProperties:(id)arg1;
-- (void)setPrefetchedDownloadProperties:(id)arg1;
-- (void)setPersistenceIdentifier:(id)arg1;
-- (void)setDownloadKinds:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (id)downloadKinds;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)downloadKinds;
 - (void)setShouldFilterExternalOriginatedDownloads:(BOOL)arg1;
 - (id)persistenceIdentifier;
 - (id)prefetchedDownloadProperties;
 - (id)prefetchedDownloadExternalProperties;
 - (BOOL)shouldFilterExternalOriginatedDownloads;
+- (void)setPrefetchedDownloadExternalProperties:(id)arg1;
+- (void)setPrefetchedDownloadProperties:(id)arg1;
+- (void)setPersistenceIdentifier:(id)arg1;
+- (void)setDownloadKinds:(id)arg1;
 
 @end

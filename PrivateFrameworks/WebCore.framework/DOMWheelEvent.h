@@ -23,22 +23,23 @@
 @property(readonly) BOOL isHorizontal;
 
 
+- (BOOL)isHorizontal;
 - (int)y;
 - (int)x;
-- (int)wheelDelta;
-- (int)wheelDeltaX;
-- (int)wheelDeltaY;
-- (BOOL)isHorizontal;
 - (void)initWheelEvent:(int)arg1 wheelDeltaY:(int)arg2 view:(id)arg3 screenX:(int)arg4 screenY:(int)arg5 clientX:(int)arg6 clientY:(int)arg7 ctrlKey:(BOOL)arg8 altKey:(BOOL)arg9 shiftKey:(BOOL)arg10 metaKey:(BOOL)arg11;
-- (int)screenX;
-- (int)screenY;
-- (int)clientX;
-- (int)clientY;
-- (int)offsetX;
+- (BOOL)webkitDirectionInvertedFromDevice;
+- (int)wheelDeltaY;
+- (int)wheelDeltaX;
+- (int)wheelDelta;
 - (int)offsetY;
-- (BOOL)ctrlKey;
-- (BOOL)shiftKey;
-- (BOOL)altKey;
+- (int)offsetX;
+- (int)clientY;
+- (int)clientX;
+- (int)screenY;
+- (int)screenX;
 - (BOOL)metaKey;
+- (BOOL)altKey;
+- (BOOL)shiftKey;
+- (BOOL)ctrlKey;
 
 @end

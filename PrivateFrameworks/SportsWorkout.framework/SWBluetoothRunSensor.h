@@ -20,8 +20,8 @@
 
 + (void)__writePacketRecord:(id)arg1;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)deactivate;
 - (unsigned int)packetCount;
 - (unsigned int)_remainingBatteryLifetimeInHoursForPacket:(id)arg1 timestamp:(unsigned int)arg2;

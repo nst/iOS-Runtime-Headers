@@ -10,6 +10,7 @@
 }
 
 
+- (id)initWithMachServiceName:(id)arg1;
 - (void)dealloc;
 - (void)wakeTimerFired;
 - (void)backgroundContinuationEnabledDidChange:(BOOL)arg1;
@@ -21,10 +22,9 @@
 - (void)sheetWithRemoteViewIdentifierDidDismiss:(id)arg1;
 - (void)simpleRemoteActionDidOccur:(int)arg1;
 - (void)statusBarWillChangeOrientation:(int)arg1 duration:(float)arg2;
-- (void)showTopMostMiniAlert;
-- (void)hideTopMostMiniAlert:(int)arg1;
+- (void)showTopMostMiniAlertWithSynchronizationPort:(unsigned int)arg1;
+- (void)hideTopMostMiniAlert;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (void)updatePort;
-- (id)initWithMachServiceName:(id)arg1;
 
 @end

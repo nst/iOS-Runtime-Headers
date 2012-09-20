@@ -16,16 +16,16 @@
 
 
 - (void)dealloc;
-- (void)_updatePlaceholder;
 - (id)textView;
 - (void)setPlaceholder:(id)arg1;
 - (id)_placeholderLabel;
 - (void)textChanged:(id)arg1;
 - (id)placeholder;
-- (BOOL)becomeFirstResponder;
 - (id)text;
+- (BOOL)becomeFirstResponder;
 - (void)setText:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
+- (void)_updatePlaceholder;
 
 @end

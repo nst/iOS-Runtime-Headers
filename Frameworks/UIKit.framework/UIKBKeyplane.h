@@ -22,10 +22,11 @@
 + (id)keyplane;
 
 - (void)setName:(id)arg1;
+- (id)name;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (BOOL)usesAdaptiveKeys;
 - (id)keysOrderedByPosition;
 - (BOOL)looksLike:(id)arg1;
@@ -50,7 +51,6 @@
 - (BOOL)isShiftKeyPlaneChooser;
 - (BOOL)shouldSkipCandidateSelection;
 - (BOOL)usesAutoShift;
-- (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

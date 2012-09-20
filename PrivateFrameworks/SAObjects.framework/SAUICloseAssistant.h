@@ -5,11 +5,11 @@
 @interface SAUICloseAssistant : SABaseClientBoundCommand  {
 }
 
-+ (id)closeAssistant;
 + (id)closeAssistantWithDictionary:(id)arg1 context:(id)arg2;
++ (id)closeAssistant;
 
 - (id)groupIdentifier;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

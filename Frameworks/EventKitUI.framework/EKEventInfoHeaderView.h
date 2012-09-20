@@ -13,26 +13,27 @@
     UIImageView *_dotView;
     EKStrikethroughLabel *_titleView;
     UIView<CalendarLabelTextMetrics> *_locationView;
+    BOOL _dataDetectedInLocation;
     CalendarCustomTimeView *_customTimeView;
     float _lastLayoutWidth;
     float _lastMaxY;
     BOOL _isBirthday;
+    BOOL _isFacebook;
+    BOOL _needsReply;
 }
 
 
 - (void)dealloc;
+- (id)_titleView;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutForWidth:(float)arg1;
 - (void)setEditButtonVisibility:(BOOL)arg1;
 - (id)editButton;
-- (id)textColorForCalendarColor:(id)arg1;
 - (float)layoutHeaderForWidth:(float)arg1;
 - (id)_customTimeView;
 - (id)_editButton;
-- (id)initWithEvent:(id)arg1 color:(id)arg2 style:(int)arg3 opaque:(BOOL)arg4;
 - (id)initWithEvent:(id)arg1 color:(id)arg2 style:(int)arg3;
-- (BOOL)setEvent:(id)arg1 color:(id)arg2;
+- (void)setEvent:(id)arg1 color:(id)arg2;
 - (id)_locationView;
-- (id)_titleView;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

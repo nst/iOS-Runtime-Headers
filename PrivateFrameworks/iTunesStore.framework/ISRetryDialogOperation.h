@@ -10,8 +10,8 @@
 
 + (id)operationWithTitle:(id)arg1 message:(id)arg2;
 
-- (void)handleButtonSelected:(int)arg1 withResponseDictionary:(id)arg2;
 - (BOOL)shouldRetry;
 - (void)setShouldRetry:(BOOL)arg1;
+- (void)handleButtonSelected:(int)arg1 withResponseDictionary:(id)arg2;
 
 @end

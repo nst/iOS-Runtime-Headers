@@ -12,12 +12,12 @@
 @property(retain) NSString * loctype;
 
 
+- (id)title;
+- (void)setTitle:(id)arg1;
 - (void)setLoctype:(id)arg1;
 - (id)loctype;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)setFmtype:(id)arg1;
 - (id)fmtype;
-- (id)title;
-- (void)setTitle:(id)arg1;
 
 @end

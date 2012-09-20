@@ -10,10 +10,10 @@
 
 
 - (BOOL)isEqual:(id)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)addDefaultMappings:(BOOL)arg1;
 - (void)addMapping:(int)arg1 index:(int)arg2;
 - (int)mappingForIndex:(int)arg1;
-- (void)addDefaultMappings:(BOOL)arg1;
 
 @end

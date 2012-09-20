@@ -9,13 +9,13 @@
 
 @property(copy) NSURL * ref;
 
-+ (id)openLink;
 + (id)openLinkWithDictionary:(id)arg1 context:(id)arg2;
++ (id)openLink;
 
 - (id)groupIdentifier;
 - (void)setRef:(id)arg1;
 - (id)ref;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

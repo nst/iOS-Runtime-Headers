@@ -4,7 +4,7 @@
 
 @class Stock, NSLock, NSMutableArray, SymbolValidator;
 
-@interface YahooCompensator : NSObject  {
+@interface YahooCompensator : NSObject <SymbolValidatorDelegate> {
     BOOL _compensatedForAllStocks;
     SymbolValidator *_validator;
     NSMutableArray *_stockQueue;
@@ -12,16 +12,17 @@
     Stock *_currentStock;
 }
 
++ (id)fixOverEncodedXml:(id)arg1;
 + (id)sharedCompensator;
 + (BOOL)compensationRequired;
 
-- (id)init;
-- (void)dealloc;
-- (void)compensateForStock:(id)arg1;
-- (void)symbolValidator:(id)arg1 didValidateSymbols:(id)arg2;
-- (void)symbolValidator:(id)arg1 didFailWithError:(id)arg2;
-- (void)_compensateForNextStock;
-- (void)compensateForAllStocks;
 - (void)reset;
+- (void).cxx_destruct;
+- (id)init;
+- (void)compensateForStock:(id)arg1;
+- (void)symbolValidator:(id)arg1 didFailWithError:(id)arg2;
+- (void)symbolValidator:(id)arg1 didValidateSymbols:(id)arg2;
+- (void)compensateForStocks:(id)arg1;
+- (void)_compensateForNextStock;
 
 @end

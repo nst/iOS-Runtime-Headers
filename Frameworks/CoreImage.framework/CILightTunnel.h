@@ -6,13 +6,13 @@
 
 @interface CILightTunnel : CIFilter  {
     CIImage *inputImage;
-    CIVector *inputPoint;
+    CIVector *inputCenter;
     NSNumber *inputRotation;
     NSNumber *inputRadius;
 }
 
 @property(retain) CIImage * inputImage;
-@property(copy) CIVector * inputPoint;
+@property(copy) CIVector * inputCenter;
 @property(copy) NSNumber * inputRotation;
 @property(copy) NSNumber * inputRadius;
 
@@ -20,10 +20,10 @@
 
 - (id)inputRotation;
 - (void)setInputRotation:(id)arg1;
-- (void)setInputPoint:(id)arg1;
+- (id)inputCenter;
+- (void)setInputCenter:(id)arg1;
 - (id)inputRadius;
 - (void)setInputRadius:(id)arg1;
-- (id)inputPoint;
 - (id)_kernel;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;

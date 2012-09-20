@@ -6,31 +6,29 @@
    See Warning(s) below.
  */
 
-@interface MPMediaChapter : NSObject <NSCoding> {
+@interface MPMediaChapter : NSObject  {
     int _chapterType;
+    unsigned int _indexInChaptersWithAnyType;
+    unsigned int _indexInChaptersWithSameType;
+    double _playbackDuration;
+    double _playbackTime;
     id _value;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _valueLoader;
 
-    unsigned int _indexInChaptersWithAnyType;
-    unsigned int _indexInChaptersWithSameType;
-    double _playbackTime;
-    double _playbackDuration;
 }
 
 @property int chapterType;
 @property(retain) id value;
-@property unsigned int indexInChaptersWithSameType;
-@property unsigned int indexInChaptersWithAnyType;
 @property double playbackTime;
 @property double playbackDuration;
 @property(copy) id valueLoader;
+@property unsigned int indexInChaptersWithSameType;
+@property unsigned int indexInChaptersWithAnyType;
 
 
-- (id)description;
-- (void)dealloc;
 - (id)valueLoader;
 - (unsigned int)indexInChaptersWithSameType;
 - (void)setValueLoader:(id)arg1;
@@ -44,6 +42,8 @@
 - (double)playbackTime;
 - (int)chapterType;
 - (double)playbackDuration;
+- (id)description;
+- (void)dealloc;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (id)title;

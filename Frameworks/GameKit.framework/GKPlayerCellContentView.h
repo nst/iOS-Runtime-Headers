@@ -16,23 +16,24 @@
 @property BOOL showAlias;
 @property BOOL shouldShowPhoto;
 
++ (void)loadPhotoOfSize:(int)arg1 forPlayer:(id)arg2 completionHandler:(id)arg3;
++ (id)cachedPhotoOfSize:(int)arg1 forPlayer:(id)arg2;
 + (id)playerContentView;
++ (id)imageSourceForPhotoSize:(int)arg1;
 
-- (void)dealloc;
-- (id)imageSourceForPhotoSize:(int)arg1;
-- (int)photoSize;
-- (id)lastPlayedGameStringForDate:(id)arg1 withGame:(id)arg2;
-- (void)updatePhotoFromCache;
 - (void)setShowAlias:(BOOL)arg1;
-- (BOOL)showAlias;
-- (id)initWithNumberOfLines:(unsigned int)arg1;
-- (BOOL)shouldShowPhoto;
-- (void)setPhotoSize:(int)arg1;
-- (void)refreshExpensiveContent;
-- (void)updateLines;
+- (id)lastPlayedGameStringForDate:(id)arg1 withGame:(id)arg2;
 - (void)setShouldShowPhoto:(BOOL)arg1;
-- (id)player;
+- (BOOL)shouldShowPhoto;
+- (int)photoSize;
+- (void)setPhotoSize:(int)arg1;
+- (void)updateLines;
+- (BOOL)showAlias;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gkPopoverPresentationRect;
+- (id)initWithNumberOfLines:(unsigned int)arg1;
 - (void)setPlayer:(id)arg1;
+- (id)player;
+- (void)dealloc;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 

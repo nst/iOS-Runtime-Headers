@@ -17,23 +17,23 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (BOOL)_isOrdered;
 - (unsigned int)options;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)_isOrdered;
-- (id)_markerTitle;
-- (id)_markerPrefix;
-- (id)_markerSpecifier;
-- (id)_unaffixedMarkerFormat;
-- (id)_unaffixedMarkerTitle;
 - (id)_markerSuffix;
-- (unsigned int)listOptions;
-- (void)setStartingItemNumber:(int)arg1;
-- (id)markerFormat;
-- (int)startingItemNumber;
-- (id)_markerForMarkerFormat:(id)arg1 itemNumber:(int)arg2 isNumbered:(BOOL*)arg3 substitutionStart:(unsigned int*)arg4 end:(unsigned int*)arg5 specifierStart:(unsigned int*)arg6 end:(unsigned int*)arg7;
-- (id)markerForItemNumber:(int)arg1;
+- (id)_unaffixedMarkerTitle;
+- (id)_unaffixedMarkerFormat;
+- (id)_markerSpecifier;
+- (id)_markerPrefix;
+- (id)_markerTitle;
 - (id)_unaffixedMarkerForItemNumber:(int)arg1;
+- (id)markerForItemNumber:(int)arg1;
+- (id)_markerForMarkerFormat:(id)arg1 itemNumber:(int)arg2 isNumbered:(BOOL*)arg3 substitutionStart:(unsigned int*)arg4 end:(unsigned int*)arg5 specifierStart:(unsigned int*)arg6 end:(unsigned int*)arg7;
+- (int)startingItemNumber;
+- (id)markerFormat;
+- (void)setStartingItemNumber:(int)arg1;
 - (id)initWithMarkerFormat:(id)arg1 options:(unsigned int)arg2;
+- (unsigned int)listOptions;
 
 @end

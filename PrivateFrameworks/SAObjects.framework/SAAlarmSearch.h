@@ -8,32 +8,32 @@
 }
 
 @property(copy) NSURL * targetAppId;
-@property(retain) NSNumber * enabled;
+@property(copy) NSNumber * enabled;
 @property(copy) NSArray * frequency;
-@property(retain) NSNumber * hour;
+@property(copy) NSNumber * hour;
 @property(copy) NSURL * identifier;
 @property(copy) NSString * label;
-@property(retain) NSNumber * minute;
+@property(copy) NSNumber * minute;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
-- (id)frequency;
-- (void)setFrequency:(id)arg1;
-- (id)enabled;
+- (id)identifier;
 - (void)setMinute:(id)arg1;
 - (void)setHour:(id)arg1;
+- (id)enabled;
+- (void)setIdentifier:(id)arg1;
 - (id)minute;
 - (id)hour;
 - (id)label;
 - (void)setLabel:(id)arg1;
-- (id)identifier;
-- (void)setIdentifier:(id)arg1;
 - (void)setEnabled:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
+- (id)frequency;
+- (void)setFrequency:(id)arg1;
 
 @end

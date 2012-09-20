@@ -10,6 +10,7 @@
 @property(readonly) NSDictionary * audioSettingsDictionary;
 
 + (id)audioConverterPropertiesForAudioSettingsDictionary:(id)arg1;
++ (id)audioOutputSettingsWithTrustedAudioSettingsDictionary:(id)arg1;
 + (id)audioOutputSettingsWithAudioSettingsDictionary:(id)arg1;
 + (id)defaultAudioOutputSettings;
 + (id)registeredOutputSettingsClasses;

@@ -12,20 +12,20 @@
 @property(retain) NSString * validationRules;
 
 
+- (BOOL)isCompleted;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
+- (id)initWithURL:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
-- (BOOL)isCompleted;
+- (id)url;
+- (float)progress;
 - (void)validateForCameraRoll;
+- (BOOL)isStreaming;
 - (id)validateBlocking:(BOOL)arg1;
 - (void)postNotificationForCallback:(id)arg1;
 - (id)notificationForFileCheckResult:(id)arg1;
 - (id)validationRules;
 - (void)validate;
-- (id)initWithURL:(id)arg1;
-- (id)url;
-- (float)progress;
-- (BOOL)isStreaming;
-- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (BOOL)validateSyncWithError:(id*)arg1;
 - (void)setValidationRules:(id)arg1;
 

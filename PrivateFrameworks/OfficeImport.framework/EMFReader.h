@@ -9,8 +9,8 @@
 }
 
 
-- (oneway void)release;
 - (void)dealloc;
+- (oneway void)release;
 - (id)initWithEMFPlayer:(id)arg1;
 - (int)play:(id)arg1;
 

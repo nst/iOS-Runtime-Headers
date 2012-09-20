@@ -17,17 +17,17 @@
 @property(readonly) BOOL isSuspended;
 
 
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (id)uniqueID;
 - (id)name;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (BOOL)isSuspended;
-- (id)_FTCamera;
+- (id)_AVCamera;
 - (BOOL)isShutterOpen;
 - (BOOL)hasShutter;
 - (BOOL)isWideScreen;
-- (id)_initWithFTCamera:(id)arg1;
+- (id)_initWithAVCamera:(id)arg1;
 - (int)cameraStyle;
+- (id)uniqueID;
 
 @end

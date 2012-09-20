@@ -16,10 +16,11 @@
 + (id)snapshotForManagedObject:(id)arg1 changeNotificationCenter:(id)arg2 useCommitedValues:(BOOL)arg3;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)filteredIndexesForFilter:(id)arg1;
 - (id)snapshotValueForProperty:(id)arg1;
+- (id)indexMapStateForDerivedObject:(id)arg1;
 - (id)_snapshotValueForProperty:(id)arg1;
 - (id)initWithManagedObject:(id)arg1 properties:(id)arg2 toOneRelationships:(id)arg3 indexMaps:(struct __CFDictionary { }*)arg4 useCommitedValues:(BOOL)arg5;
 - (id)_allSnapshotValuesDescription;

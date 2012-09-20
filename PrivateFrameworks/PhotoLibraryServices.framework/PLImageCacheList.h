@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLLoadRequestKey;
+@class PLLoadRequestKey, NSObject<OS_dispatch_queue>;
 
 @interface PLImageCacheList : NSObject  {
-    struct dispatch_queue_s { } *_isolation;
+    NSObject<OS_dispatch_queue> *_isolation;
     unsigned int _length;
     unsigned int _lastFailLocation;
     id *_keys;
@@ -16,11 +16,11 @@
 
 + (id)newImageCacheList;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)_init;
 - (void)setImage:(id)arg1 forKey:(id)arg2;
 - (id)imageForKey:(id)arg1;
 - (void)removeImageForKey:(id)arg1;
-- (id)_init;
 
 @end

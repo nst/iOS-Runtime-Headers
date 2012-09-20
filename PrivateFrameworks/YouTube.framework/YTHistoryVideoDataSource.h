@@ -9,12 +9,12 @@
 }
 
 
+- (void)loadFromDefaults;
 - (void)clearHistory;
 - (void)reloadData;
-- (void)loadFromDefaults;
+- (id)_history;
 - (void)addVideo:(id)arg1;
 - (unsigned int)maxVideosToSave;
 - (void)_saveToDefaults;
-- (id)_history;
 
 @end

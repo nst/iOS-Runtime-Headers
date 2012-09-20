@@ -11,10 +11,10 @@
 }
 
 
-- (id)initWithData:(id)arg1 streaming:(BOOL)arg2 streamingDone:(BOOL)arg3;
-- (BOOL)streaming;
-- (BOOL)streamingDone;
-- (void)dealloc;
 - (id)data;
+- (void)dealloc;
+- (id)initWithData:(id)arg1 streaming:(BOOL)arg2 streamingDone:(BOOL)arg3;
+- (BOOL)streamingDone;
+- (BOOL)streaming;
 
 @end

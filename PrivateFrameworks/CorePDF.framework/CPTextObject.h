@@ -13,11 +13,10 @@
 }
 
 
-- (float)maxFontSize;
-- (double)maxFontLineHeight;
 - (void)calculateMetrics;
+- (double)maxFontLineHeight;
+- (float)maxFontSize;
 - (void)clearCachedInfo;
 - (void)translateObjectYBy:(float)arg1;
-- (float)center;
 
 @end

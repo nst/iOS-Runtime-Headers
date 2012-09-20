@@ -11,9 +11,9 @@
 @property(readonly) id target;
 
 
-- (id)description;
 - (SEL)action;
 - (id)target;
+- (id)description;
 - (void)setEventMask:(unsigned int)arg1;
 - (unsigned int)eventMask;
 - (void)connect;

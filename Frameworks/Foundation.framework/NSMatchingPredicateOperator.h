@@ -8,13 +8,13 @@
 }
 
 
+- (void)dealloc;
+- (id)symbol;
+- (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
+- (void)finalize;
+- (SEL)selector;
 - (void)_clearContext;
 - (BOOL)_shouldEscapeForLike;
 - (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3;
-- (void)dealloc;
-- (void)finalize;
-- (SEL)selector;
-- (id)symbol;
-- (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 
 @end

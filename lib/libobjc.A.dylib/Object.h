@@ -6,8 +6,14 @@
     Class isa;
 }
 
++ (id)retain;
 + (id)class;
++ (void)release;
++ (id)autorelease;
 + (id)initialize;
 
+- (id)retain;
+- (void)release;
+- (id)autorelease;
 
 @end

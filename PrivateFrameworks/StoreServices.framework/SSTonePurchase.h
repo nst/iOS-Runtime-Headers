@@ -4,7 +4,7 @@
 
 @class NSNumber, NSString, NSArray;
 
-@interface SSTonePurchase : SSPurchase <SSCoding, NSCoding, NSCopying> {
+@interface SSTonePurchase : SSPurchase <SSXPCCoding, NSCoding, NSCopying> {
     NSArray *_allowedToneStyles;
     NSNumber *_assigneeIdentifier;
     NSString *_assigneeToneStyle;
@@ -19,24 +19,22 @@
 @property BOOL shouldMakeDefaultTextTone;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setShouldMakeDefaultRingtone:(BOOL)arg1;
-- (void)setAssigneeIdentifier:(id)arg1;
 - (id)allowedToneStyles;
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (void)setAllowedToneStyles:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (BOOL)shouldMakeDefaultTextTone;
 - (BOOL)shouldMakeDefaultRingtone;
 - (id)assigneeToneStyle;
 - (id)assigneeIdentifier;
 - (void)setShouldMakeDefaultTextTone:(BOOL)arg1;
+- (void)setShouldMakeDefaultRingtone:(BOOL)arg1;
 - (void)setAssigneeToneStyle:(id)arg1;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (void)setAssigneeIdentifier:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

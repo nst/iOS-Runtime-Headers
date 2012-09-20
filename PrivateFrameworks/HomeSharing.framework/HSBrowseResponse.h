@@ -11,8 +11,8 @@
 @property(copy) NSArray * collections;
 
 
-- (void)dealloc;
 - (id)collections;
+- (void)dealloc;
 - (void)setCollections:(id)arg1;
 
 @end

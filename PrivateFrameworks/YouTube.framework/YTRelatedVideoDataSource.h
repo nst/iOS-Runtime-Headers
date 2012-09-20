@@ -10,7 +10,7 @@
 
 
 - (void)dealloc;
-- (void)reloadData;
 - (void)setVideo:(id)arg1;
+- (void)reloadData;
 
 @end

@@ -35,12 +35,10 @@
 
 + (float)maxTextWidth;
 
-- (void)dealloc;
 - (void)setIconView:(id)arg1;
 - (id)iconView;
 - (void)setMessageLabel:(id)arg1;
 - (id)messageLabel;
-- (void)setTitleLabel:(id)arg1;
 - (void)setActivityIndicator:(id)arg1;
 - (id)activityIndicator;
 - (id)connectionButtons;
@@ -49,6 +47,7 @@
 - (int)numberOfMessageLines;
 - (void)setNumberOfTitleLines:(int)arg1;
 - (int)numberOfTitleLines;
+- (id)icon;
 - (void)setConnectionButtonTypes:(unsigned int)arg1;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 icon:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitle:(id)arg5;
 - (id)otherButton;
@@ -59,15 +58,16 @@
 - (id)_createConnectionButtonWithType:(unsigned int)arg1;
 - (void)_createOtherButtonWithTitle:(id)arg1;
 - (void)_createCancelButtonWithTitle:(id)arg1;
+- (void)setTitleLabel:(id)arg1;
+- (void)dealloc;
+- (id)titleFont;
 - (id)message;
-- (void)setMessage:(id)arg1;
 - (void)_createTitleLabelIfNeeded;
 - (id)cancelButton;
 - (void)setCancelButton:(id)arg1;
+- (void)setMessage:(id)arg1;
 - (void)layout;
 - (id)table;
-- (id)titleFont;
-- (id)icon;
 - (void)setIcon:(id)arg1;
 - (id)title;
 - (void)layoutIfNeeded;

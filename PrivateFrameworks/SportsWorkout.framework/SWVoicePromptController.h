@@ -24,13 +24,14 @@
 + (id)_currentLanguageIdentifier;
 + (id)sharedPromptController;
 
-- (id)init;
-- (void)dealloc;
 - (void)setLanguage:(id)arg1;
 - (id)language;
 - (BOOL)isPlaying;
-- (void)fireAmountPromptWithAmount:(id)arg1 units:(id)arg2 words:(id*)arg3 englishWords:(id*)arg4;
+- (void)dealloc;
+- (id)init;
+- (void)setGender:(id)arg1;
 - (id)gender;
+- (void)fireAmountPromptWithAmount:(id)arg1 units:(id)arg2 words:(id*)arg3 englishWords:(id*)arg4;
 - (void)_fireStandaloneNumberPrompt:(id)arg1;
 - (void)fireDistanceRemainingPromptWithDistanceRemaining:(id)arg1 units:(id)arg2;
 - (void)fireCaloriesRemainingPromptWithCaloriesRemaining:(id)arg1;
@@ -38,7 +39,6 @@
 - (void)fireAmountBeyondGoalPromptWithAmount:(id)arg1 units:(id)arg2 words:(id*)arg3 englishWords:(id*)arg4;
 - (void)fireAmountCompletedPromptWithAmount:(id)arg1 units:(id)arg2 words:(id*)arg3 englishWords:(id*)arg4;
 - (void)fireWalkAroundToActivateSensorPrompt;
-- (void)setGender:(id)arg1;
 - (BOOL)_fireOneLinerPromptUsingRandomGenderWithString:(id)arg1;
 - (void)_firePrompt:(id)arg1 amount:(id)arg2 units:(id)arg3 words:(id*)arg4 englishWords:(id*)arg5;
 - (void)_firePrompt:(id)arg1 amount:(id)arg2 units:(id)arg3 pronounceUnits:(BOOL)arg4 words:(id*)arg5 englishWords:(id*)arg6;

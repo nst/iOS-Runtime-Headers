@@ -8,9 +8,9 @@
 
 - (unsigned int)retainCount;
 - (id)retain;
-- (id)copy;
-- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (oneway void)release;
+- (id)copy;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 

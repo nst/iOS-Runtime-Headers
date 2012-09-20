@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class MPMediaItem, IUiPadVideoEpisodeTableViewCellContentView;
+@class MPMediaItem, IUiPadVideoEpisodeTableViewCellContentView, MPMediaDownloadObserver;
 
 @interface IUiPadVideoEpisodeTableViewCell : IUiPadVideoPartTableViewCell  {
     id _moreButtonTarget;
     SEL _moreButtonAction;
     MPMediaItem *_mediaItem;
+    MPMediaDownloadObserver *_mediaDownloadObserver;
 }
 
 @property SEL moreButtonAction;
@@ -18,8 +19,9 @@
 
 + (Class)contentViewClass;
 
-- (void)dealloc;
+- (void)setMediaItem:(id)arg1;
 - (id)mediaItem;
+- (void)dealloc;
 - (void)setExpanded:(BOOL)arg1;
 - (BOOL)expanded;
 - (void)setEditing:(BOOL)arg1;
@@ -31,13 +33,16 @@
 - (void)hideDeleteConfirmationView;
 - (SEL)moreButtonAction;
 - (id)moreButtonTarget;
+- (void)_updateContentViewDownloadProgress;
 - (void)setMoreButtonTarget:(id)arg1;
 - (void)setMoreButtonAction:(SEL)arg1;
 - (void)_moreButtonSelected:(id)arg1;
+- (void)_releaseMediaDownloadObserver;
+- (void)_releaseMediaDownloadObserverAndProgressIndicator;
 - (id)videoEpisodeContentView;
 - (BOOL)imageRequestIsValid:(id)arg1;
 - (id)videoImageRequest;
 - (void)updateContentView;
-- (void)setMediaItem:(id)arg1;
+- (void)_cancelDownloadAction:(id)arg1;
 
 @end

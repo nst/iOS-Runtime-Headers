@@ -2,24 +2,24 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSColorStub;
+@class TSUColor;
 
 @interface MFPen : NSObject <MFObject> {
     int m_penStyle;
-    int m_penWidth;
-    NSColorStub *m_colour;
+    long m_penWidth;
+    TSUColor *m_colour;
     double *m_userStyleArray;
 }
 
 + (id)penWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
 + (id)pen;
 
-- (id)init;
 - (void)dealloc;
-- (long)getWidth;
-- (id)initWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
+- (id)init;
 - (int)getStyle;
+- (long)getWidth;
 - (id)getColor;
+- (id)initWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
 - (int)selectInto:(id)arg1;
 
 @end

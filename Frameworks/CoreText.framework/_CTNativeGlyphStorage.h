@@ -14,8 +14,11 @@
 
 - (unsigned int)retainCount;
 - (id)retain;
-- (oneway void)release;
 - (void)dealloc;
+- (oneway void)release;
+- (void)finalize;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (const int*)stringIndices;
 - (void)prepareWithCapacity:(long)arg1 preallocated:(bool)arg2;
 - (void)moveGlyphsFromRange:(struct { int x1; int x2; })arg1 toIndex:(long)arg2;
@@ -32,10 +35,7 @@
 - (void)setAttachmentCount:(long)arg1 atIndex:(long)arg2;
 - (void)initGlyphStackWithCapacity:(long)arg1;
 - (void)setProps:(unsigned int)arg1 atIndex:(long)arg2;
-- (void)setCapacity:(long)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)finalize;
 - (id)initWithCount:(long)arg1;
+- (void)setCapacity:(long)arg1;
 
 @end

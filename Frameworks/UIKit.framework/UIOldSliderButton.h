@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIOldSliderButton : UIPushButton  {
+@interface UIOldSliderButton : UIButton  {
 }
 
 

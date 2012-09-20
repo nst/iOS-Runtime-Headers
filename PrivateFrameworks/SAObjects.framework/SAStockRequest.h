@@ -15,13 +15,13 @@
 + (id)requestWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
+- (id)requestType;
+- (void)setRequestType:(id)arg1;
+- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
+- (id)encodedClassName;
 - (void)setEndDate:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
 - (id)startDate;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
-- (id)encodedClassName;
-- (id)requestType;
-- (void)setRequestType:(id)arg1;
 
 @end

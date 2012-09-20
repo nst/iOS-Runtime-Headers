@@ -11,14 +11,14 @@
     CPLRUDictionaryNode *prev;
 }
 
-@property(retain) id object;
 @property(readonly) id key;
+@property(retain) id object;
 
 
 - (void)dealloc;
-- (id)initWithKey:(id)arg1 object:(id)arg2;
 - (void)setObject:(id)arg1;
 - (id)key;
 - (id)object;
+- (id)initWithKey:(id)arg1 object:(id)arg2;
 
 @end

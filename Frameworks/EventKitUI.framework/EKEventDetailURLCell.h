@@ -10,11 +10,11 @@
 }
 
 
+- (void)setURL:(id)arg1;
+- (BOOL)update;
 - (id)_URLTitleView;
 - (id)_URLView;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 style:(int)arg3;
-- (void)setURL:(id)arg1;
-- (BOOL)update;
 
 @end

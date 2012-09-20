@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel, NSObject<UIDocumentPasswordViewDelegate>, UITextField;
+@class UIImageView, UILabel, NSObject<UIDocumentPasswordViewDelegate>, UITextField, UIDocumentPasswordField;
 
 @interface UIDocumentPasswordView : UIView <UITextFieldDelegate> {
     UIImageView *_iconView;
-    UITextField *_passwordTextField;
+    UIDocumentPasswordField *_passwordTextField;
     UILabel *_label;
-    UILabel *_errorLabel;
     NSObject<UIDocumentPasswordViewDelegate> *passwordDelegate;
 }
 
@@ -18,7 +17,7 @@
 
 - (void)dealloc;
 - (id)passwordDelegate;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_iconRectForWidth:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_iconRectForContainerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_passwordEntered:(id)arg1;
 - (void)setPasswordDelegate:(id)arg1;
 - (id)initWithDocumentName:(id)arg1;

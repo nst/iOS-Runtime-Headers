@@ -12,10 +12,10 @@
 @property(retain) MFError * error;
 
 
+- (void)setError:(id)arg1;
+- (void)dealloc;
 - (void)messageSentWithContext:(void*)arg1;
 - (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
-- (void)dealloc;
-- (void)setError:(id)arg1;
 - (id)error;
 
 @end

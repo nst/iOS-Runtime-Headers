@@ -23,16 +23,16 @@
 
 - (void)dealloc;
 - (id)initWithPDPresentation:(id)arg1 archiver:(id)arg2;
-- (void)setHtmlDocumentSizeInArchiver;
 - (void)_pushEmptySlideWithMessage:(id)arg1;
-- (void)startMappingWithState:(id)arg1;
-- (void)mapElement:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
-- (void)finishMappingWithState:(id)arg1;
-- (id)archiver;
-- (struct CGSize { float x1; float x2; })pageSizeForDevice;
-- (id)documentTitle;
-- (void)mapDefaultCssStylesAt:(id)arg1;
-- (id)blipAtIndex:(unsigned int)arg1;
+- (void)setHtmlDocumentSizeInArchiver;
 - (struct CGSize { float x1; float x2; })slideSize;
+- (void)finishMappingWithState:(id)arg1;
+- (void)mapElement:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
+- (void)startMappingWithState:(id)arg1;
+- (id)archiver;
+- (void)mapDefaultCssStylesAt:(id)arg1;
+- (id)documentTitle;
+- (struct CGSize { float x1; float x2; })pageSizeForDevice;
+- (id)blipAtIndex:(unsigned int)arg1;
 
 @end

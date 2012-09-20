@@ -18,14 +18,11 @@
 + (id)fileGroupRequiredEmptyPrefixes;
 + (void)initializeFileGroupPrefixAndExtensions;
 
-- (id)fullPath;
 - (void)dealloc;
 - (void)setConsiderInvalidFileGroups:(BOOL)arg1;
 - (void)setWriteIsPending:(BOOL)arg1;
 - (void)removeFileGroup:(id)arg1;
 - (id)nextAvailableVideoFileGroupWithExtension:(id)arg1;
-- (id)nextAvailableFileGroup;
-- (void)ensureDirectoryExists;
 - (BOOL)canAddVideo;
 - (BOOL)canAddImage;
 - (id)initWithName:(id)arg1 number:(int)arg2 dcimDirectory:(id)arg3;
@@ -36,8 +33,11 @@
 - (BOOL)_canAddItemWithPrefix:(id)arg1 minimumFileGroupNumber:(int)arg2;
 - (id)fileGroups;
 - (BOOL)canAddFileGroupWithGroupNumber:(int)arg1;
+- (id)fullPath;
 - (unsigned int)_calculateBaseDirectoryValue;
 - (id)_lastUsedFileGroupUserInfoKey;
+- (void)ensureDirectoryExists;
+- (id)nextAvailableFileGroup;
 - (id)dcimDirectory;
 
 @end

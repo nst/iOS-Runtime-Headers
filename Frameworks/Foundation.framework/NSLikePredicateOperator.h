@@ -6,8 +6,8 @@
 }
 
 
-- (BOOL)_shouldEscapeForLike;
-- (SEL)selector;
 - (id)symbol;
+- (SEL)selector;
+- (BOOL)_shouldEscapeForLike;
 
 @end

@@ -10,31 +10,31 @@
 
 + (void)initialize;
 
-- (void)addItem:(id)arg1;
-- (void)removeItem:(id)arg1;
+- (void)_close;
 - (id)description;
-- (id)init;
 - (void)dealloc;
-- (void)setCapacity:(int)arg1;
-- (int)capacity;
-- (id)itemAtIndex:(int)arg1;
-- (void)setPageCacheSize:(unsigned int)arg1;
+- (id)init;
+- (void)addItem:(id)arg1;
 - (void)setToMatchDictionaryRepresentation:(id)arg1;
-- (BOOL)containsItem:(id)arg1;
-- (void)goToItem:(id)arg1;
-- (id)forwardItem;
-- (id)backListWithLimit:(int)arg1;
-- (id)forwardListWithLimit:(int)arg1;
-- (unsigned int)pageCacheSize;
-- (int)backListCount;
-- (int)forwardListCount;
-- (id)initWithBackForwardList:(struct PassRefPtr<WebCore::BackForwardListImpl> { struct BackForwardListImpl {} *x1; })arg1;
 - (id)dictionaryRepresentation;
 - (void)goForward;
 - (void)goBack;
 - (id)currentItem;
 - (void)finalize;
 - (id)backItem;
-- (void)_close;
+- (id)itemAtIndex:(int)arg1;
+- (void)setPageCacheSize:(unsigned int)arg1;
+- (int)capacity;
+- (void)removeItem:(id)arg1;
+- (int)forwardListCount;
+- (int)backListCount;
+- (unsigned int)pageCacheSize;
+- (void)setCapacity:(int)arg1;
+- (id)forwardListWithLimit:(int)arg1;
+- (id)backListWithLimit:(int)arg1;
+- (id)forwardItem;
+- (void)goToItem:(id)arg1;
+- (BOOL)containsItem:(id)arg1;
+- (id)initWithBackForwardList:(struct PassRefPtr<WebCore::BackForwardListImpl> { struct BackForwardListImpl {} *x1; })arg1;
 
 @end

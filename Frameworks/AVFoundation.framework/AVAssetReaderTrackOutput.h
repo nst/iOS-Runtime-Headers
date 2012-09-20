@@ -14,8 +14,10 @@
 + (id)assetReaderTrackOutputWithTrack:(id)arg1 outputSettings:(id)arg2;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)mediaType;
+- (void)finalize;
 - (id)initWithTrack:(id)arg1 outputSettings:(id)arg2;
 - (id)outputSettings;
 - (id)track;
@@ -23,7 +25,5 @@
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
 - (BOOL)_trimsSampleDurations;
 - (id)_asset;
-- (void)finalize;
-- (id)mediaType;
 
 @end

@@ -12,8 +12,8 @@
 
 + (id)prototypes;
 
-- (id)regularExpression;
 - (void)dealloc;
 - (void)setRegularExpression:(id)arg1;
+- (id)regularExpression;
 
 @end

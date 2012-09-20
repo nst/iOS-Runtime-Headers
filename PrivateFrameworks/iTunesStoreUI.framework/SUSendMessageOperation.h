@@ -12,17 +12,17 @@
 @property(readonly) SUMessage * message;
 
 
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
-- (id)initWithMessage:(id)arg1;
-- (id)message;
-- (void)run;
 - (id)_copyResourcesForUploadOperation:(id)arg1;
 - (id)_copyResourcesForLocalPart:(id)arg1;
 - (id)_newUploadOperationForMessagePart:(id)arg1;
 - (id)_newStoreURLOperationForResources:(id)arg1 error:(id*)arg2;
 - (id)_copyResourcesByUploadingParts:(id*)arg1;
 - (BOOL)_prepareMessageParts:(id*)arg1;
+- (void)cancel;
+- (void)dealloc;
+- (id)init;
+- (id)message;
+- (void)run;
+- (id)initWithMessage:(id)arg1;
 
 @end

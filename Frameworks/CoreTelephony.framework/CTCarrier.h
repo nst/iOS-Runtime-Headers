@@ -19,10 +19,10 @@
 @property BOOL allowsVOIP;
 
 
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (void)setAllowsVOIP:(BOOL)arg1;
 - (void)setIsoCountryCode:(id)arg1;
 - (void)setMobileNetworkCode:(id)arg1;

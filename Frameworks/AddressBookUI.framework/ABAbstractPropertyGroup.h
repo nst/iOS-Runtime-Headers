@@ -8,24 +8,28 @@
     NSArray *_people;
     <ABStyleProvider> *_styleProvider;
     BOOL _hasChanges;
+    void *_preinsertedPerson;
 }
 
-@property(retain) <ABStyleProvider> * styleProvider;
-@property BOOL hasChanges;
 @property(retain) NSArray * people;
+@property void* preinsertedPerson;
+@property BOOL hasChanges;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 
-- (BOOL)hasChanges;
-- (id)init;
 - (void)dealloc;
-- (void)setPeople:(id)arg1;
-- (void)updateRecord;
-- (BOOL)canSave;
-- (void)setHasChanges:(BOOL)arg1;
-- (void)reloadFromModel;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
-- (id)people;
+- (id)init;
 - (int)property;
+- (BOOL)hasChanges;
+- (void)setPreinsertedPerson:(void*)arg1;
+- (void)setPeople:(id)arg1;
+- (BOOL)canSave;
+- (void)updateRecord;
+- (void)reloadFromModel;
+- (void)setHasChanges:(BOOL)arg1;
+- (void*)preinsertedPerson;
+- (id)people;
+- (id)styleProvider;
+- (void)setStyleProvider:(id)arg1;
 
 @end

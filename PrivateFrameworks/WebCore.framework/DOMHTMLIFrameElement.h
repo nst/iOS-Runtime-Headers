@@ -17,35 +17,37 @@
 @property(copy) NSString * scrolling;
 @property(copy) NSString * src;
 @property(copy) NSString * width;
-@property(retain,readonly) DOMDocument * contentDocument;
-@property(retain,readonly) DOMAbstractView * contentWindow;
+@property(readonly) DOMDocument * contentDocument;
+@property(readonly) DOMAbstractView * contentWindow;
 
 
 - (void)setName:(id)arg1;
+- (id)name;
 - (void)setHeight:(id)arg1;
 - (id)height;
 - (int)structuralComplexityContribution;
 - (void)setWidth:(id)arg1;
 - (id)width;
-- (id)name;
-- (id)sandbox;
+- (void)setSrcdoc:(id)arg1;
+- (id)srcdoc;
 - (void)setSandbox:(id)arg1;
-- (id)frameBorder;
-- (void)setFrameBorder:(id)arg1;
-- (id)longDesc;
-- (void)setLongDesc:(id)arg1;
-- (id)marginHeight;
-- (void)setMarginHeight:(id)arg1;
-- (id)marginWidth;
-- (void)setMarginWidth:(id)arg1;
-- (id)scrolling;
-- (void)setScrolling:(id)arg1;
-- (id)contentDocument;
+- (id)sandbox;
 - (id)contentWindow;
-- (id)src;
+- (id)contentDocument;
+- (void)setScrolling:(id)arg1;
+- (id)scrolling;
+- (void)setMarginWidth:(id)arg1;
+- (id)marginWidth;
+- (void)setMarginHeight:(id)arg1;
+- (id)marginHeight;
+- (void)setLongDesc:(id)arg1;
+- (id)longDesc;
+- (void)setFrameBorder:(id)arg1;
+- (id)frameBorder;
 - (void)setSrc:(id)arg1;
-- (id)align;
+- (id)src;
 - (void)setAlign:(id)arg1;
+- (id)align;
 - (id)contentFrame;
 
 @end

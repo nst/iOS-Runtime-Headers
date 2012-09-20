@@ -8,8 +8,8 @@
     NSSet *_properties;
 }
 
-@property(readonly) BOOL supportsPropertySearch;
 @property(readonly) NSSet * stringProperties;
+@property(readonly) BOOL supportsPropertySearch;
 
 + (id)searchSetWithProperties:(id)arg1;
 
@@ -18,8 +18,8 @@
 - (BOOL)supportsPropertySearch;
 - (id)stringProperties;
 - (id)initWithStringProperties:(id)arg1;
-- (BOOL)supportsPropertyTypeWithNameSpace:(id)arg1 andName:(id)arg2;
 - (BOOL)isEqualToPropertySet:(id)arg1;
+- (BOOL)supportsPropertyTypeWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)initWithSearchProperties:(id)arg1;
 
 @end

@@ -21,45 +21,45 @@
     BOOL _hasOverriddenOrientation;
 }
 
+@property long long fileSize;
+@property BOOL hasThumbnail;
+@property BOOL hasMetadata;
+@property(getter=isRaw) BOOL raw;
 @property BOOL fetchingThumbnail;
 @property BOOL fetchingMetadata;
-@property BOOL hasOverriddenOrientation;
-@property unsigned int orientation;
-@property(retain) NSMutableDictionary * metadata_hidden;
-@property(retain) NSMutableDictionary * metadata;
-@property struct CGImage { }* thumbnail;
 @property struct CGImage { }* originalThumbnail;
-@property(getter=isRaw) BOOL raw;
-@property BOOL hasMetadata;
-@property BOOL hasThumbnail;
-@property long long fileSize;
+@property struct CGImage { }* thumbnail;
+@property(retain) NSMutableDictionary * metadata;
+@property(retain) NSMutableDictionary * metadata_hidden;
+@property unsigned int orientation;
+@property BOOL hasOverriddenOrientation;
 
 
-- (void)dealloc;
-- (BOOL)hasThumbnail;
-- (void)setFileSize:(long long)arg1;
-- (void)setOriginalThumbnail:(struct CGImage { }*)arg1;
-- (void)setThumbnail:(struct CGImage { }*)arg1;
-- (void)setMetadata_hidden:(id)arg1;
-- (void)setHasMetadata:(BOOL)arg1;
 - (void)setHasOverriddenOrientation:(BOOL)arg1;
-- (void)setRaw:(BOOL)arg1;
 - (BOOL)hasOverriddenOrientation;
-- (void)setHasThumbnail:(BOOL)arg1;
-- (BOOL)fetchingThumbnail;
-- (BOOL)fetchingMetadata;
-- (struct CGImage { }*)originalThumbnail;
 - (id)metadata_hidden;
-- (void)setFetchingThumbnail:(BOOL)arg1;
+- (void)setRaw:(BOOL)arg1;
+- (void)setHasMetadata:(BOOL)arg1;
+- (BOOL)hasMetadata;
+- (void)setHasThumbnail:(BOOL)arg1;
+- (BOOL)fetchingMetadata;
+- (BOOL)fetchingThumbnail;
+- (struct CGImage { }*)originalThumbnail;
+- (void)setMetadata_hidden:(id)arg1;
+- (void)setOriginalThumbnail:(struct CGImage { }*)arg1;
 - (void)setFetchingMetadata:(BOOL)arg1;
+- (void)setFetchingThumbnail:(BOOL)arg1;
+- (void)dealloc;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
+- (struct CGImage { }*)thumbnail;
+- (void)setThumbnail:(struct CGImage { }*)arg1;
 - (void)finalize;
 - (void)setOrientation:(unsigned int)arg1;
 - (unsigned int)orientation;
-- (long long)fileSize;
-- (struct CGImage { }*)thumbnail;
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
-- (BOOL)hasMetadata;
+- (BOOL)hasThumbnail;
 - (BOOL)isRaw;
+- (long long)fileSize;
+- (void)setFileSize:(long long)arg1;
 
 @end

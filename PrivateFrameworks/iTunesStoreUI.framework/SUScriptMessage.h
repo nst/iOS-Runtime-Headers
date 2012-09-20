@@ -12,13 +12,10 @@
 @property(copy) NSArray * messageParts;
 @property(copy) NSString * postURL;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (id)attributeKeys;
 - (id)uploadURLForAttachmentType:(id)arg1;
 - (void)setUploadURL:(id)arg1 forAttachmentType:(id)arg2;
 - (void)sendWithCompletionHandler:(id)arg1;
@@ -37,5 +34,8 @@
 - (id)messageParts;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)dealloc;
+- (id)init;
+- (id)attributeKeys;
 
 @end

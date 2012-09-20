@@ -13,10 +13,10 @@
 @property(retain) NSString * textFieldValue;
 
 
-- (void)dealloc;
 - (void)setButtonIndex:(int)arg1;
 - (void)setTextFieldValue:(id)arg1;
 - (id)textFieldValue;
 - (int)buttonIndex;
+- (void)dealloc;
 
 @end

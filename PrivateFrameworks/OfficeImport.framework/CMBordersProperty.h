@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSColorStub;
+@class TSUColor;
 
 @interface CMBordersProperty : CMProperty  {
-    NSColorStub *mBorderColor;
-    NSColorStub *mBorderTopColor;
-    NSColorStub *mBorderLeftColor;
-    NSColorStub *mBorderBottomColor;
-    NSColorStub *mBorderRightColor;
+    TSUColor *mBorderColor;
+    TSUColor *mBorderTopColor;
+    TSUColor *mBorderLeftColor;
+    TSUColor *mBorderBottomColor;
+    TSUColor *mBorderRightColor;
     int mBorderStyle[5];
     int mBorderWidth[5];
     int mCustomWidth;
@@ -19,17 +19,17 @@
 
 - (id)init;
 - (id)styleString;
-- (BOOL)isNoneAtLocation:(int)arg1;
-- (void)setNoneAtLocation:(int)arg1;
 - (void)setFromOadStroke:(id)arg1 atLocation:(int)arg2 state:(id)arg3;
-- (id)cssString;
-- (id)widthString;
-- (id)colorString;
-- (id)stringFromStyleEnum:(int)arg1;
-- (id)stringFromWidthEnum:(int)arg1;
+- (void)setNoneAtLocation:(int)arg1;
+- (BOOL)isNoneAtLocation:(int)arg1;
 - (id)stringFromColor:(id)arg1;
+- (id)stringFromWidthEnum:(int)arg1;
+- (id)stringFromStyleEnum:(int)arg1;
+- (id)colorString;
+- (id)widthString;
+- (id)cssString;
+- (void)adjustValues;
 - (id)initWithOADStroke:(id)arg1;
 - (id)cssStringForName:(id)arg1;
-- (void)adjustValues;
 
 @end

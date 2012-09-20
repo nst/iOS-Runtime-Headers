@@ -13,17 +13,15 @@
 + (void)_setDefaultCapabilitiesManager:(id)arg1;
 + (id)defaultCapabilitiesManager;
 
-- (id)init;
-- (void)dealloc;
-- (BOOL)isSensitiveUIAllowed;
-- (BOOL)hasAdditionalTextTones;
-- (BOOL)isRingtoneStoreAvailable;
-- (void)_checkRingtoneStoreAvailability;
-- (void)setIsRingtoneStoreAvailable:(BOOL)arg1;
-- (BOOL)hasVibratorCapability;
-- (BOOL)hasTelephonyCapability;
 - (BOOL)isToneStoreAvailable;
-- (BOOL)areCustomVibrationsAllowed;
+- (BOOL)isRingtoneStoreAvailable;
 - (void)setIsToneStoreAvailable:(BOOL)arg1;
+- (void)setIsRingtoneStoreAvailable:(BOOL)arg1;
+- (void)_checkRingtoneStoreAvailability;
+- (void)dealloc;
+- (id)init;
+- (BOOL)hasAdditionalTextTones;
+- (BOOL)hasTelephonyCapability;
+- (BOOL)hasVibratorCapability;
 
 @end

@@ -2,62 +2,66 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSMutableArray, AVWeakReference;
+@class NSArray, NSObject<OS_dispatch_queue>, AVWeakReference, NSMutableArray;
 
 @interface AVFigAssetTrackInspector : AVAssetTrackInspector  {
     struct OpaqueFigAssetTrack { } *_figAssetTrack;
     struct OpaqueFigSimpleMutex { } *_loadingMutex;
     struct OpaqueFigSemaphore { } *_playabilityValidationSemaphore;
-    struct dispatch_queue_s { } *_completionHandlerQueue;
+    NSObject<OS_dispatch_queue> *_completionHandlerQueue;
     int _playableStatus;
     long _playableResult;
     BOOL _playable;
     NSMutableArray *_loadingBatches;
     AVWeakReference *_weakReferenceToAsset;
+    NSArray *_cachedMediaCharacteristics;
 }
 
 
-- (BOOL)isEqual:(id)arg1;
+- (int)trackID;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (id)segments;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
+- (BOOL)isPlayable;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
+- (id)mediaType;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (id)languageCode;
+- (id)asset;
+- (void)finalize;
+- (BOOL)isEnabled;
+- (int)layer;
+- (id)commonMetadata;
 - (struct OpaqueFigAssetTrack { }*)_figAssetTrack;
+- (unsigned long)_figMediaType;
 - (int)_loadStatusForFigAssetTrackProperty:(id)arg1 returningError:(int*)arg2;
 - (void)_removeFigAssetTrackNotifications;
 - (void)_addFigAssetTrackNotifications;
 - (void)setIsPlayable:(BOOL)arg1 result:(long)arg2;
 - (struct OpaqueFigSemaphore { }*)_playabilityValidationSemaphore;
 - (id)_loadingBatches;
-- (struct dispatch_queue_s { }*)_completionHandlerQueue;
+- (id)_completionHandlerQueue;
 - (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
+- (BOOL)isExcludedFromAutoselectionInTrackGroup;
 - (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (float)nominalFrameRate;
+- (struct CGSize { float x1; float x2; })dimensions;
 - (id)extendedLanguageTag;
-- (id)languageCode;
 - (float)estimatedDataRate;
-- (BOOL)isExcludedFromAutoselectionInTrackGroup;
+- (id)mediaCharacteristics;
 - (long long)totalSampleDataLength;
 - (BOOL)isSelfContained;
 - (id)formatDescriptions;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
-- (BOOL)isPlayable;
 - (id)metadataForFormat:(id)arg1;
 - (id)availableMetadataFormats;
-- (id)commonMetadata;
-- (int)trackID;
-- (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;
 - (int)naturalTimeScale;
+- (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;
 - (float)preferredVolume;
-- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (id)asset;
-- (void)finalize;
-- (BOOL)isEnabled;
-- (int)layer;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (id)mediaType;
-- (id)segments;
 
 @end

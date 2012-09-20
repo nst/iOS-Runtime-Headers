@@ -2,55 +2,28 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CalSearch, NSMutableArray;
+@class NSMutableArray, EKOccurrenceCacheSearch;
 
-@interface OccurrenceCacheSearchDataSource : OccurrenceCacheDataSource <CalSearchDataSink> {
-    CalSearch *_calSearch;
-    BOOL _searching;
-    BOOL _resetting;
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    } _dataSourceLock;
-    struct dispatch_queue_s { } *_searchQueue;
-    struct dispatch_group_s { } *_searchQueueGroup;
+@interface OccurrenceCacheSearchDataSource : OccurrenceCacheDataSource  {
+    EKOccurrenceCacheSearch *_search;
+    NSMutableArray *_processingCachedDays;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
     } _resultsLock;
-    NSMutableArray *_results;
 }
 
 
-- (void)_addResult:(id)arg1;
+- (void)invalidate;
 - (void)dealloc;
-- (void)calSearch:(id)arg1 showResultsStartingOnDate:(double)arg2;
-- (void)calSearch:(id)arg1 foundOccurrences:(struct __CFArray { }*)arg2 cachedDays:(struct __CFArray { }*)arg3 cachedDaysIndexes:(struct __CFArray { }*)arg4;
-- (void)calSearchComplete:(id)arg1;
-- (void)stopSearching;
-- (void)startSearching;
-- (void)dumpInfo;
-- (void)_clearResults;
-- (void)releaseResources;
-- (void)_notifyThatTheDateToShowResultsWasFound:(id)arg1;
-- (void)_processResults;
-- (void)_tellMobileCalToUpdateItsUI;
-- (int)_lockedTotalOccurrencesCount;
-- (void)restartSearchWithTerm:(id)arg1;
-- (int)dayCountBeforeDay:(double)arg1;
-- (int)countOfOccurrencesOnDay:(double)arg1;
-- (void)loadOccurrencesForRange:(struct { int x1; int x2; })arg1;
-- (int)cachedOccurrenceCountOnOrAfterDate:(double)arg1;
-- (int)cachedOccurrenceCount;
+- (void)_setCachedDaysAndNotify:(id)arg1 withDateToScrollTo:(id)arg2;
+- (void)searchWithTerm:(id)arg1;
+- (int)countOfOccurrencesAtDayIndex:(int)arg1;
 - (BOOL)supportsFakeTodaySection;
 - (BOOL)supportsInvitations;
-- (id)initWithDatabase:(struct CalDatabase { }*)arg1 filter:(struct CalFilter { }*)arg2;
-- (int)totalOccurrencesCount;
-- (int)cachedDayCount;
-- (struct __CFArray { }*)_cachedDayIndexes;
-- (void)setCachedDayRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)invalidateCachedDays;
-- (void)invalidateCachedDayIndexes;
+- (id)initWithEventStore:(id)arg1 calendars:(id)arg2;
+- (id)_cachedDays;
 - (void)invalidateCachedOccurrences;
+- (void)stopSearching;
 
 @end

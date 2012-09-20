@@ -18,19 +18,19 @@
 @property(retain) NSString * reportURL;
 @property(retain) NSString * passwordURL;
 
-+ (id)codedPropertyKeys;
 + (id)responseWithStoreBagResponse:(id)arg1;
++ (id)codedPropertyKeys;
 
-- (void)dealloc;
+- (id)passwordURL;
+- (id)editURL;
+- (id)authorizeURL;
+- (id)setupURL;
 - (void)setPasswordURL:(id)arg1;
 - (void)setReportURL:(id)arg1;
 - (void)setEditURL:(id)arg1;
 - (void)setAuthorizeURL:(id)arg1;
 - (void)setSetupURL:(id)arg1;
 - (id)reportURL;
-- (id)editURL;
-- (id)passwordURL;
-- (id)authorizeURL;
-- (id)setupURL;
+- (void)dealloc;
 
 @end

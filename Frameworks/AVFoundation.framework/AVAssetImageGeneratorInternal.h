@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSString, AVVideoComposition, AVWeakReference, NSMutableArray, AVAsset;
+@class AVVideoComposition, NSString, NSObject<OS_dispatch_queue>, AVWeakReference, NSMutableArray, AVAsset;
 
 @interface AVAssetImageGeneratorInternal : NSObject  {
     AVWeakReference *weakReference;
@@ -27,10 +27,10 @@
         long long epoch; 
     } requestedTimeToleranceAfter;
     NSMutableArray *requests;
-    struct dispatch_queue_s { } *requestsQueue;
+    NSObject<OS_dispatch_queue> *requestsQueue;
     int nextRequestID;
     AVVideoComposition *videoComposition;
-    struct dispatch_queue_s { } *imageRequestQueue;
+    NSObject<OS_dispatch_queue> *imageRequestQueue;
     int cancelledRequestIDThreshold;
 }
 

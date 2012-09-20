@@ -2,13 +2,16 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@interface GKInternalRepresentation : NSObject <NSCoding> {
+@interface GKInternalRepresentation : NSObject <NSCoding, NSCopying, NSSecureCoding> {
 }
 
 + (id)codedPropertyKeys;
 + (id)internalRepresentation;
++ (BOOL)supportsSecureCoding;
 
+- (id)serverRepresentation;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

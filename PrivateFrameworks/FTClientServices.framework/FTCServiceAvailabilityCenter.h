@@ -10,11 +10,8 @@
 
 + (id)sharedInstance;
 
-- (id)init;
 - (void)dealloc;
-- (BOOL)addListenerID:(id)arg1 forService:(int)arg2;
-- (BOOL)removeListenerID:(id)arg1 forService:(int)arg2;
-- (int)availabilityForListenerID:(id)arg1 forService:(int)arg2;
+- (id)init;
 - (BOOL)hasListenerID:(id)arg1 forService:(int)arg2;
 - (void)_stopListeningToMonitor:(id)arg1;
 - (id)containerForService:(int)arg1 create:(BOOL)arg2;
@@ -22,7 +19,8 @@
 - (BOOL)_isValidServiceType:(int)arg1;
 - (void)_handleServiceMonitorNotification:(id)arg1;
 - (void)_postNotificationForService:(int)arg1 availability:(int)arg2;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
+- (int)availabilityForListenerID:(id)arg1 forService:(int)arg2;
+- (BOOL)removeListenerID:(id)arg1 forService:(int)arg2;
+- (BOOL)addListenerID:(id)arg1 forService:(int)arg2;
 
 @end

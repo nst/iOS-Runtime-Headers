@@ -4,21 +4,21 @@
 
 @class NSValue, NSString;
 
-@interface PDBuildMapKey : NSObject  {
+@interface PDBuildMapKey : NSObject <NSCopying> {
     NSValue *mDrawableValue;
     NSString *mGroupId;
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (id)initWithDrawable:(id)arg1 groupId:(id)arg2;
-- (void)setDrawable:(id)arg1;
-- (id)drawable;
+- (id)init;
 - (void)setGroupId:(id)arg1;
+- (void)setDrawable:(id)arg1;
+- (id)initWithDrawable:(id)arg1 groupId:(id)arg2;
 - (id)groupId;
+- (id)drawable;
 
 @end

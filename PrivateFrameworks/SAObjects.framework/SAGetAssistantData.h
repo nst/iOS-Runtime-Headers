@@ -5,11 +5,11 @@
 @interface SAGetAssistantData : SABaseClientBoundCommand  {
 }
 
-+ (id)getAssistantData;
 + (id)getAssistantDataWithDictionary:(id)arg1 context:(id)arg2;
++ (id)getAssistantData;
 
 - (id)groupIdentifier;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

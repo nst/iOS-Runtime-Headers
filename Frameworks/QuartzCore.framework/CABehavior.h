@@ -22,39 +22,39 @@
 @property(copy) NSDictionary * style;
 
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
-+ (id)defaultValueForKey:(id)arg1;
-+ (int (*)())CA_setterForType:(int)arg1;
-+ (int (*)())CA_getterForType:(int)arg1;
-+ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)behavior;
++ (int (*)())CA_getterForType:(int)arg1;
++ (int (*)())CA_setterForType:(int)arg1;
++ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
++ (id)defaultValueForKey:(id)arg1;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setName:(id)arg1;
-- (unsigned int)retainCount;
+- (id)name;
 - (id)debugDescription;
+- (unsigned int)retainCount;
 - (id)retain;
-- (void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
+- (id)valueForKey:(id)arg1;
 - (void)dealloc;
-- (void)_setCARenderBehavior:(struct Behavior { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct String {} *x4; unsigned int x5; unsigned int x6; unsigned int x7 : 8; unsigned int x8 : 8; struct Behavior {} *x9; }*)arg1;
-- (BOOL)shouldArchiveValueForKey:(id)arg1;
+- (oneway void)release;
+- (id)init;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
 - (id)style;
 - (void)setStyle:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (id)name;
 - (BOOL)isEnabled;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
-- (id)valueForKey:(id)arg1;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (void)_setCARenderBehavior:(struct Behavior { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct Ref<CA::Render::String> { struct String {} *x_4_1_1; } x4; unsigned int x5; unsigned int x6; unsigned int x7 : 8; unsigned int x8 : 8; struct Ref<const CA::Render::Behavior> { struct Behavior {} *x_9_1_1; } x9; }*)arg1;
+- (BOOL)shouldArchiveValueForKey:(id)arg1;
 
 @end

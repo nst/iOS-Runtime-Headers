@@ -7,23 +7,23 @@
 @interface SAWeatherForecast : AceObject <SAAceSerializable> {
 }
 
-@property(retain) NSNumber * chanceOfPrecipitation;
+@property(copy) NSNumber * chanceOfPrecipitation;
 @property(retain) SAWeatherCondition * condition;
-@property(retain) NSNumber * isUserRequested;
-@property(retain) NSNumber * timeIndex;
+@property(copy) NSNumber * isUserRequested;
+@property(copy) NSNumber * timeIndex;
 
-+ (id)forecast;
 + (id)forecastWithDictionary:(id)arg1 context:(id)arg2;
++ (id)forecast;
 
 - (id)groupIdentifier;
 - (void)setCondition:(id)arg1;
 - (id)condition;
-- (id)chanceOfPrecipitation;
-- (void)setChanceOfPrecipitation:(id)arg1;
 - (id)isUserRequested;
-- (void)setIsUserRequested:(id)arg1;
-- (id)timeIndex;
 - (void)setTimeIndex:(id)arg1;
+- (id)timeIndex;
+- (void)setIsUserRequested:(id)arg1;
+- (void)setChanceOfPrecipitation:(id)arg1;
+- (id)chanceOfPrecipitation;
 - (id)encodedClassName;
 
 @end

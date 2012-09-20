@@ -5,11 +5,11 @@
 @interface MSSaveEmail : MSMailDefaultService  {
 }
 
-+ (id)saveEmail:(id)arg1 delegate:(id)arg2;
-+ (id)smi_serverCommandName;
++ (void)saveEmail:(id)arg1 completionBlock:(id)arg2;
++ (void)saveMessageData:(id)arg1 forAccountWithID:(id)arg2 autosaveIdentifier:(id)arg3 completionBlock:(id)arg4;
 
-- (id)_didSaveEmail:(id)arg1 userInfo:(id)arg2;
-- (id)_saveEmail:(id)arg1 delegate:(id)arg2;
-- (void)_smi_notifyClientDidFinishWithError:(id)arg1;
+- (void)_saveEmail:(id)arg1 completionBlock:(id)arg2;
+- (void)_saveMessageData:(id)arg1 forAccountWithID:(id)arg2 autosaveIdentifier:(id)arg3 completionBlock:(id)arg4;
+- (void)_simulateServicesMethod:(id)arg1 arguments:(id)arg2 callback:(id)arg3;
 
 @end

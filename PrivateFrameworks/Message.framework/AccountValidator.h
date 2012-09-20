@@ -23,24 +23,24 @@
 }
 
 
-- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2;
-- (void)validateAccountWithoutFallbacks:(id)arg1;
-- (void)cancelValidation;
-- (id)_ispAccountInfo;
-- (BOOL)accountValidationCanceled;
-- (BOOL)accountIsValid;
-- (BOOL)accountSupportsSSL;
-- (void)_validateAccountInBackground:(id)arg1 withFallbacks:(BOOL)arg2;
-- (void)_backgroundValidateAccountFinished:(id)arg1 authSchemes:(id)arg2;
-- (void)_validateAccount:(id)arg1;
-- (void)_validateAccountWithoutFallbacks:(id)arg1;
-- (BOOL)_outgoingServerValid;
-- (BOOL)_incomingServerValid;
-- (id)account;
-- (id)init;
-- (void)dealloc;
-- (id)error;
-- (void)stop;
 - (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)stop;
+- (BOOL)accountSupportsSSL;
+- (BOOL)accountIsValid;
+- (BOOL)accountValidationCanceled;
+- (id)_ispAccountInfo;
+- (void)cancelValidation;
+- (void)validateAccountWithoutFallbacks:(id)arg1;
+- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2;
+- (BOOL)_incomingServerValid;
+- (BOOL)_outgoingServerValid;
+- (void)_validateAccountWithoutFallbacks:(id)arg1;
+- (void)_validateAccount:(id)arg1;
+- (void)_backgroundValidateAccountFinished:(id)arg1 authSchemes:(id)arg2;
+- (void)_validateAccountInBackground:(id)arg1 withFallbacks:(BOOL)arg2;
+- (id)account;
+- (id)error;
 
 @end

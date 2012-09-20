@@ -21,27 +21,27 @@
 @property BOOL inDatabase;
 
 
+- (id)path;
 - (id)description;
 - (void)dealloc;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)setPath:(id)arg1;
-- (id)path;
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
+- (id)fileExtension;
+- (BOOL)isAudio;
+- (BOOL)isJPEG;
 - (BOOL)inDatabase;
 - (void)setCameraFile:(id)arg1;
-- (BOOL)isJPEG;
 - (BOOL)isRaw;
 - (void)setInDatabase:(BOOL)arg1;
 - (BOOL)canRequestMetadata;
 - (id)initWithCameraFile:(id)arg1;
-- (id)fileExtension;
 - (BOOL)isInDatabaseForce:(BOOL)arg1;
 - (BOOL)isMovie;
 - (id)cameraFile;
 - (void)setCanRequestThumbnail:(BOOL)arg1;
 - (BOOL)canRequestThumbnail;
 - (void)setCanRequestMetadata:(BOOL)arg1;
-- (BOOL)isAudio;
 
 @end

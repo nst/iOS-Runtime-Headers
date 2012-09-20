@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIImageView, UILabel, MPWebDocumentView, UIView, NSDictionary, <IUVideoSummaryViewDataSource>, UIScrollView, MPMediaItem, UIButton;
+@class UILabel, MPWebDocumentView, UIView, NSDictionary, <IUVideoSummaryViewDataSource>, UIScrollView, MPMediaItem;
 
 @interface IUVideoSummaryView : UIView  {
     <IUVideoSummaryViewDataSource> *_dataSource;
@@ -29,12 +29,10 @@
 @property(readonly) UILabel * producerContentLabel;
 @property(readonly) UILabel * screenwriterHeaderLabel;
 @property(readonly) UILabel * screenwriterContentLabel;
+@property(readonly) UILabel * lengthHeaderLabel;
+@property(readonly) UILabel * lengthContentLabel;
 @property(readonly) UILabel * summaryHeaderLabel;
 @property(readonly) MPWebDocumentView * summaryContentTextView;
-@property(readonly) UILabel * soundtrackHeaderLabel;
-@property(readonly) UILabel * soundtrackContentLabel;
-@property(readonly) UIImageView * soundtrackAlbumArtImageView;
-@property(readonly) UIButton * soundtrackBuyButton;
 @property(readonly) UIView * lowerBackgroundView;
 
 + (float)contentWidthForBoundsWidth:(float)arg1;
@@ -48,10 +46,6 @@
 - (void)setDataSource:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)movieInfo;
-- (id)soundtrackBuyButton;
-- (id)soundtrackAlbumArtImageView;
-- (id)soundtrackContentLabel;
-- (id)soundtrackHeaderLabel;
 - (void)_layoutNoMetadataColumn2;
 - (void)_layoutNoMetadataColumn1;
 - (id)_newlineSeperatedListOfNames:(id)arg1;
@@ -59,6 +53,8 @@
 - (void)_setFooterView:(id)arg1;
 - (void)_populateHeaderAndContentLabels:(id)arg1 key:(id)arg2 singular:(id)arg3 plural:(id)arg4 header:(id)arg5 content:(id)arg6;
 - (id)lowerBackgroundView;
+- (id)lengthContentLabel;
+- (id)lengthHeaderLabel;
 - (id)summaryContentTextView;
 - (id)summaryHeaderLabel;
 - (id)screenwriterContentLabel;
@@ -71,6 +67,7 @@
 - (id)actorHeaderLabel;
 - (void)setMovieInfo:(id)arg1;
 - (void)layoutSubviewsWithNoMetadata;
+- (void)_layoutOnMainThread;
 - (BOOL)haveEnoughMetadataForMetadataView;
 - (void)layoutSubviewsWithMetadata;
 - (id)contentLabelWithTag:(int)arg1 name:(id)arg2 width:(float)arg3;

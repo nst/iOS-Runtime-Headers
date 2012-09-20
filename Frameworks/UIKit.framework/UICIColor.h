@@ -10,18 +10,20 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)CIColor;
 - (id)initWithCIColor:(id)arg1;
 - (id)_rgbColor;
+- (BOOL)_getWhite:(float*)arg1 alpha:(float*)arg2;
 - (void)setStroke;
-- (void)setFill;
 - (id)colorWithAlphaComponent:(float)arg1;
-- (struct CGColor { }*)CGColor;
+- (void)setFill;
 - (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (void)set;
+- (struct CGColor { }*)CGColor;
 
 @end

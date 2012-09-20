@@ -7,11 +7,23 @@
 
 @property(copy) id terminationHandler;
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)launchedTaskWithLaunchPath:(id)arg1 arguments:(id)arg2;
 + (id)launchedTaskWithDictionary:(id)arg1;
 + (id)currentTaskDictionary;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (void)setArguments:(id)arg1;
+- (void)terminate;
+- (void)setEnvironment:(id)arg1;
+- (int)processIdentifier;
+- (BOOL)resume;
+- (id)init;
+- (void)setTerminationHandler:(id)arg1;
+- (BOOL)isRunning;
+- (id)arguments;
+- (BOOL)suspend;
+- (id)environment;
+- (id)terminationHandler;
 - (id)standardError;
 - (id)standardOutput;
 - (id)standardInput;
@@ -20,24 +32,12 @@
 - (void)setStandardInput:(id)arg1;
 - (id)launchPath;
 - (int)suspendCount;
-- (void)terminate;
 - (void)interrupt;
 - (void)setLaunchPath:(id)arg1;
 - (void)setCurrentDirectoryPath:(id)arg1;
 - (void)launch;
 - (int)terminationReason;
 - (int)terminationStatus;
-- (int)processIdentifier;
-- (void)setArguments:(id)arg1;
 - (id)currentDirectoryPath;
-- (id)init;
-- (void)setEnvironment:(id)arg1;
-- (id)environment;
-- (void)setTerminationHandler:(id)arg1;
-- (id)terminationHandler;
-- (BOOL)resume;
-- (BOOL)isRunning;
-- (id)arguments;
-- (BOOL)suspend;
 
 @end

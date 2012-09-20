@@ -2,12 +2,37 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSMutableArray, NSArray;
+
 @interface WeatherIdentifierUpdater : WeatherUpdater  {
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _woeidWeatherHandler;
+
+    NSArray *_requestedCities;
+    NSMutableArray *_parsedCities;
 }
 
+@property(retain) NSArray * requestedCities;
+@property(retain) NSMutableArray * parsedCities;
+
++ (void)clearSharedIdentifierUpdater;
 + (id)sharedWeatherIdentifierUpdater;
 
+- (void)dealloc;
+- (void)setParsedCities:(id)arg1;
+- (id)parsedCities;
+- (void)setRequestedCities:(id)arg1;
+- (id)requestedCities;
+- (void)updateWeatherForCities:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)_failed:(int)arg1;
+- (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(int)arg2;
+- (id)aggregateDictionaryDomain;
 - (void)updateWeatherForCity:(id)arg1;
 
 @end

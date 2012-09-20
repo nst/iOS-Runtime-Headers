@@ -8,14 +8,14 @@
 }
 
 + (id)presetPatternHeader;
-+ (id)nameForPresetPatternType:(int)arg1;
 + (id)namedBitmapDataForPresetPatternType:(int)arg1;
++ (id)nameForPresetPatternType:(int)arg1;
 + (id)defaultProperties;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)type;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setType:(int)arg1;
 - (BOOL)isTypeOverridden;
 - (id)initWithDefaults;

@@ -16,15 +16,15 @@
 
 - (void)dealloc;
 - (bool)isCategoryAxesReversed:(bool)arg1;
-- (bool)hasSecondaryYAxisDeleted;
-- (void)markSecondaryAxes;
 - (bool)containsVolumeStockType;
+- (void)markSecondaryAxes;
+- (bool)hasSecondaryYAxisDeleted;
 - (bool)hasSecondaryAxis;
-- (id)axes;
 - (id)chartTypes;
 - (void)setContainsVolumeStockType:(bool)arg1;
 - (void)setGraphicProperties:(id)arg1;
-- (id)graphicProperties;
 - (id)initWithChart:(id)arg1;
+- (id)axes;
+- (id)graphicProperties;
 
 @end

@@ -7,8 +7,8 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (unsigned int)port;
 
 @end

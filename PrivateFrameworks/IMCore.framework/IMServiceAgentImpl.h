@@ -9,17 +9,19 @@
     BOOL _anyAccountsConnected;
 }
 
++ (id)notificationCenter;
++ (void)initialize;
 + (void)_statusImageAppearanceChanged:(id)arg1;
 + (void)_determineStatusImageAppearance;
-+ (id)notificationCenter;
 + (id)sharedAgent;
 + (id)imageURLForStatus:(unsigned int)arg1;
 + (id)imageNameForStatus:(unsigned int)arg1;
 + (void)forgetStatusImageAppearance;
-+ (void)initialize;
 
-- (id)init;
+- (id)notificationCenter;
 - (void)dealloc;
+- (id)init;
+- (void)finalize;
 - (void)setMyAwayMessages:(id)arg1;
 - (void)setMyAvailableMessages:(id)arg1;
 - (id)myAwayMessages;
@@ -36,12 +38,10 @@
 - (void)centerWillAddObserver;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
 - (unsigned long long)vcCapabilities;
-- (void)account:(id)arg1 loginStatusChanged:(unsigned int)arg2 message:(id)arg3 reason:(unsigned int)arg4 properties:(id)arg5;
+- (void)account:(id)arg1 loginStatusChanged:(unsigned int)arg2 message:(id)arg3 reason:(int)arg4 properties:(id)arg5;
 - (void)activeAccountsChanged:(id)arg1 forService:(id)arg2;
 - (id)serviceWithNameNonBlocking:(id)arg1;
-- (id)notificationCenter;
 - (id)serviceWithName:(id)arg1;
-- (void)finalize;
 - (void)setupComplete;
 - (void)vcCapabilitiesChanged:(unsigned long long)arg1;
 

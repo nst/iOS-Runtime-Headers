@@ -9,8 +9,8 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithMailboxes:(id)arg1;
 - (BOOL)filterMessageWithStatement:(struct sqlite3_stmt { }*)arg1;
-- (void)dealloc;
 
 @end

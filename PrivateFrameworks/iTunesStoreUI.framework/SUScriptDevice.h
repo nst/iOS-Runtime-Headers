@@ -10,6 +10,7 @@
 
 @property(readonly) int activeNetworkType;
 @property(readonly) NSArray * automaticDownloadMediaTypes;
+@property(readonly) unsigned long deviceTypeIdentifier;
 @property(readonly) NSNumber * diskSpaceAvailable;
 @property(readonly) int hardwareType;
 @property(readonly) NSNumber * mainScreenScale;
@@ -25,6 +26,8 @@
 @property(readonly) int freeSpaceEffortLevelManualSpaceManagement;
 @property(readonly) int freeSpaceEffortLevelPromptUser;
 @property(readonly) NSString * freeSpaceOptionEffortLevel;
+@property(readonly) int hardwareTypeAppleTVJ33;
+@property(readonly) int hardwareTypeAppleTVK66;
 @property(readonly) int hardwareTypeIPadJ1;
 @property(readonly) int hardwareTypeIPadJ2;
 @property(readonly) int hardwareTypeIPadJ2a;
@@ -39,8 +42,8 @@
 @property(readonly) int hardwareTypeIPhoneN92;
 @property(readonly) int hardwareTypeIPhoneN94;
 @property(readonly) int hardwareTypeIPodTouchN45;
-@property(readonly) int hardwareTypeIPodTouchN72;
 @property(readonly) int hardwareTypeIPodTouchN18;
+@property(readonly) int hardwareTypeIPodTouchN72;
 @property(readonly) int hardwareTypeIPodTouchN81;
 @property(readonly) int hardwareTypeIPodTouchN81a;
 @property(readonly) int hardwareTypeUnknown;
@@ -67,6 +70,8 @@
 @property(readonly) NSString * restrictionAllowVoiceDialing;
 @property(readonly) NSString * restrictionAppInstallationAllowed;
 @property(readonly) NSString * restrictionAppRemovalAllowed;
+@property(readonly) NSString * restrictionBookStoreAllowed;
+@property(readonly) NSString * restrictionBookStoreEroticaAllowed;
 @property(readonly) NSString * restrictionCameraAllowed;
 @property(readonly) NSString * restrictionCellularHDUploadsAllowed;
 @property(readonly) NSString * restrictionITunesAllowed;
@@ -83,13 +88,10 @@
 @property(readonly) NSString * UTIMovie;
 @property(readonly) NSString * UTIText;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (id)attributeKeys;
 - (id)UTIText;
 - (id)UTIMovie;
 - (id)UTIImage;
@@ -102,6 +104,8 @@
 - (id)restrictionITunesAllowed;
 - (id)restrictionCellularHDUploadsAllowed;
 - (id)restrictionCameraAllowed;
+- (id)restrictionBookStoreEroticaAllowed;
+- (id)restrictionBookStoreAllowed;
 - (id)restrictionAppRemovalAllowed;
 - (id)restrictionAppInstallationAllowed;
 - (id)restrictionAllowVoiceDialing;
@@ -151,6 +155,9 @@
 - (int)hardwareTypeIPadJ2a;
 - (int)hardwareTypeIPadJ2;
 - (int)hardwareTypeIPadJ1;
+- (int)hardwareTypeAppleTVK66;
+- (int)hardwareTypeAppleTVJ33;
+- (unsigned long)deviceTypeIdentifier;
 - (int)networkTypeNone;
 - (int)networkTypeWiFi;
 - (int)networkType9G;
@@ -168,7 +175,6 @@
 - (id)freeSpaceOptionEffortLevel;
 - (void)_addScriptFunction:(id)arg1;
 - (int)_deviceCapabilityForString:(id)arg1;
-- (void)_showDialogForCapabilities:(id)arg1 mismatches:(id)arg2;
 - (void)_autoDownloadKindsChangedNotification:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
@@ -180,5 +186,8 @@
 - (id)capabilityNamePodcasts;
 - (int)activeNetworkType;
 - (id)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(BOOL)arg2;
+- (void)dealloc;
+- (id)init;
+- (id)attributeKeys;
 
 @end

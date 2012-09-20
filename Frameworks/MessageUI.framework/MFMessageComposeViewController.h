@@ -10,28 +10,30 @@
     NSString *_body;
 }
 
-@property(copy) NSString * body;
-@property(copy) NSArray * recipients;
 @property <MFMessageComposeViewControllerDelegate> * messageComposeDelegate;
+@property(copy) NSArray * recipients;
+@property(copy) NSString * body;
 
-+ (void)_startListeningForAvailabilityNotifications;
-+ (void)_setupAccountMonitor;
-+ (BOOL)_canSendText;
-+ (void)_updateServiceAvailability;
-+ (void)_serviceAvailabilityChanged:(id)arg1;
-+ (void)initialize;
 + (BOOL)canSendText;
++ (void)initialize;
++ (void)_startListeningForAvailabilityNotifications;
++ (void)_serviceAvailabilityChanged:(id)arg1;
++ (void)_updateServiceAvailability;
++ (BOOL)_canSendText;
++ (void)_setupAccountMonitor;
 
-- (id)recipients;
-- (void)setRecipients:(id)arg1;
-- (void)smsComposeControllerCancelled:(id)arg1;
-- (void)smsComposeControllerSendStarted:(id)arg1;
-- (id)messageComposeDelegate;
+- (void)dealloc;
+- (void)setBody:(id)arg1;
+- (void)setMessageComposeDelegate:(id)arg1;
 - (id)body;
 - (void)setModalPresentationStyle:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)setBody:(id)arg1;
-- (void)setMessageComposeDelegate:(id)arg1;
+- (id)messageComposeDelegate;
+- (void)setRecipients:(id)arg1;
+- (id)recipients;
+- (void)smsComposeControllerSendStarted:(id)arg1;
+- (void)smsComposeControllerCancelled:(id)arg1;
 
 @end

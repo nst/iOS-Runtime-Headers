@@ -2,8 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
+@class NSArray;
+
 @interface TIZephyrCandidate : UIKeyboardCandidateSingle  {
     unsigned int _wordOriginFeedbackID;
+    NSArray *_usageTrackingTypes;
     BOOL extensionCandidate;
 }
 
@@ -11,9 +14,13 @@
 
 
 - (void)setExtensionCandidate:(BOOL)arg1;
-- (id)initWithCandidate:(id)arg1 wordOriginFeedbackID:(unsigned int)arg2;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned int)arg3;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned int)arg3 usageTrackingTypes:(id)arg4;
+- (BOOL)isAutocorrection;
 - (unsigned int)wordOriginFeedbackID;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)usageTrackingTypes;
 - (BOOL)isExtensionCandidate;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

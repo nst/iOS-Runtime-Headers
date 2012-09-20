@@ -16,14 +16,15 @@
 @property <MSSubscribeStorageProtocolDelegate> * delegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void).cxx_destruct;
 - (void)dealloc;
+- (void)deactivate;
 - (void)_tellDelegateProtocolDidFinishRetrievingAssetParams:(id)arg1;
 - (void)_requestCompleted;
 - (void)_getItemDone:(unsigned long long)arg1 path:(id)arg2 error:(id)arg3;
 - (void)retrieveAssets:(id)arg1;
 - (id)initWithPersonID:(id)arg1;
-- (void)deactivate;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

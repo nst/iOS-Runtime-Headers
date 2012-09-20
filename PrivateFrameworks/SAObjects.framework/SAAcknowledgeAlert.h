@@ -9,13 +9,13 @@
 
 @property(retain) SADomainObject * object;
 
-+ (id)acknowledgeAlert;
 + (id)acknowledgeAlertWithDictionary:(id)arg1 context:(id)arg2;
++ (id)acknowledgeAlert;
 
 - (id)groupIdentifier;
 - (void)setObject:(id)arg1;
 - (id)object;
-- (id)encodedClassName;
 - (BOOL)requiresResponse;
+- (id)encodedClassName;
 
 @end

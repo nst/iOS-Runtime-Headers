@@ -16,23 +16,23 @@
 @property(copy) NSIndexSet * filteredIndexes;
 @property(readonly) PLIndexMapper * indexMapper;
 
-+ (id)notificationForFilteredAlbumList:(id)arg1 fromAlbumListChangeNotification:(id)arg2;
++ (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;
 
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)object;
 - (id)initWithFilteredAlbumList:(id)arg1 albumListChangeNotification:(id)arg2;
 - (void)setFilteredIndexes:(id)arg1;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (BOOL)countDidChange;
 - (id)updatedFilteredIndexes;
 - (id)_changedObjects;
+- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (id)_diffDescription;
+- (BOOL)shouldReload;
+- (id)albumList;
 - (id)indexMapper;
 - (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
 - (id)filteredIndexes;
-- (id)object;
-- (BOOL)shouldReload;
-- (id)albumList;
 
 @end

@@ -9,6 +9,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithOldIndexPath:(id)arg1 newIndexPath:(id)arg2;
 - (id)newIndexPath;
 

@@ -10,10 +10,10 @@
 }
 
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (id)_assetComparisonToken;
 - (id)trackIDs;
 - (id)initWithAsset:(id)arg1 trackIDs:(id)arg2;

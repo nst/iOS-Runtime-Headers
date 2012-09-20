@@ -15,24 +15,24 @@
 }
 
 + (id)sharedInstance;
-+ (BOOL)usesEffectiveBundleIdentifier;
 + (void)setUsesEffectiveBundleIdentifier:(BOOL)arg1;
++ (BOOL)usesEffectiveBundleIdentifier;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)location;
+- (void)setEnabled:(BOOL)arg1;
 - (void)addLocationToMediaWithAssetURLWhenAvailable:(id)arg1 deviceOrientation:(int)arg2 cameraWasRearFacing:(BOOL)arg3;
+- (void)setHeadingEnabled:(BOOL)arg1;
+- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)_updatePendingAssets;
 - (BOOL)_addLocationToAsset:(id)arg1;
 - (id)locationDictionaryForImageWithDeviceOrientation:(int)arg1 rearFacingCamera:(BOOL)arg2;
+- (id)locationString;
 - (void)_startUpdating;
 - (void)_stopUpdating;
 - (void)_updateLocationRunState;
 - (void)_albumsChanged:(id)arg1;
 - (void)_applicationStateChanged:(id)arg1;
-- (id)location;
-- (void)setEnabled:(BOOL)arg1;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
-- (id)locationString;
-- (void)setHeadingEnabled:(BOOL)arg1;
 
 @end

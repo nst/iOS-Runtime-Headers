@@ -40,14 +40,15 @@
 @property(readonly) NSString * personID;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void).cxx_destruct;
 - (void)dealloc;
-- (id)personID;
 - (void)_didFinishWithResponse:(id)arg1 error:(id)arg2;
 - (void)queryConfiguration;
 - (void)_didFailAuthenticationWithError:(id)arg1;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (id)personID;
 - (void)abort;
 
 @end

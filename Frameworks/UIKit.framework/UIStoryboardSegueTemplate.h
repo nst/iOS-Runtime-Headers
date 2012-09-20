@@ -9,19 +9,24 @@
     NSString *_segueClassName;
     UIViewController *_viewController;
     NSString *_destinationViewControllerIdentifier;
+    BOOL _performOnViewLoad;
 }
 
 @property(readonly) NSString * identifier;
 @property UIViewController * viewController;
+@property BOOL performOnViewLoad;
 
 
+- (id)identifier;
 - (void)dealloc;
+- (void)setPerformOnViewLoad:(BOOL)arg1;
 - (id)segueWithDestinationViewController:(id)arg1;
 - (Class)effectiveSegueClass;
 - (id)defaultSegueClassName;
+- (void)_perform:(id)arg1;
+- (BOOL)performOnViewLoad;
 - (id)viewController;
 - (void)setViewController:(id)arg1;
-- (id)identifier;
 - (void)perform:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -14,13 +14,13 @@
 @property(readonly) NSString * permissionIdentifier;
 
 
-- (void)dealloc;
-- (void)run;
 - (id)permissionIdentifier;
 - (id)initWithOperation:(id)arg1 identifier:(id)arg2;
 - (void)_cancelBackgroundAssertion;
 - (void)_removeBackgroundAssertion;
 - (void)_takeBackgroundAssertion;
 - (id)operation;
+- (void)dealloc;
+- (void)run;
 
 @end

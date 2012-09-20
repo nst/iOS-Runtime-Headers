@@ -24,10 +24,11 @@
 + (id)keyboard;
 
 - (void)setName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (id)name;
 - (id)description;
-- (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (void)setKeysetCache:(id)arg1;
 - (id)keysetCache;
 - (void)setKeyCache:(id)arg1;
@@ -39,14 +40,13 @@
 - (id)keyplanes;
 - (void)cacheKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)keyCache;
+- (void)setVisualStyle:(id)arg1;
 - (id)cacheKey;
 - (id)layoutName;
 - (void)makeLikeOther:(id)arg1;
 - (id)visualStyle;
-- (void)setVisualStyle:(id)arg1;
 - (id)keyplaneForKey:(id)arg1;
 - (void)layout;
-- (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

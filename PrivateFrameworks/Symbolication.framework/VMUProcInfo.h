@@ -24,41 +24,41 @@
 }
 
 + (int)processParentId:(int)arg1;
-+ (BOOL)isProcessRunning:(int)arg1;
 + (id)getProcessIds;
++ (BOOL)isProcessRunning:(int)arg1;
 
 - (BOOL)terminate;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
+- (int)compare:(id)arg1;
+- (id)name;
 - (id)description;
-- (id)init;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (int)pid;
-- (BOOL)signal:(int)arg1;
+- (id)init;
+- (struct timeval { int x1; int x2; })startTime;
+- (BOOL)isRunning;
+- (void)update;
+- (void)finalize;
+- (id)arguments;
 - (int)compareByUserAppName:(id)arg1;
-- (int)ppid;
-- (int)compareByName:(id)arg1;
-- (BOOL)isApp;
-- (BOOL)isNative;
-- (id)_infoFromCommandLine:(int)arg1;
-- (id)procTableName;
-- (id)realAppName;
-- (id)firstArgument;
-- (id)userAppName;
-- (id)envVars;
-- (id)requestedAppName;
-- (BOOL)isCFM;
+- (BOOL)signal:(int)arg1;
 - (id)initWithPid:(int)arg1;
+- (BOOL)isNative;
+- (BOOL)isApp;
+- (int)compareByName:(id)arg1;
+- (int)ppid;
+- (BOOL)isCFM;
+- (id)requestedAppName;
+- (id)envVars;
+- (id)userAppName;
+- (id)firstArgument;
+- (id)realAppName;
+- (id)procTableName;
+- (id)_infoFromCommandLine:(int)arg1;
 - (id)initWithTask:(unsigned int)arg1;
 - (unsigned int)task;
 - (BOOL)isMachO;
 - (int)cpuType;
-- (struct timeval { int x1; int x2; })startTime;
-- (BOOL)isRunning;
-- (int)compare:(id)arg1;
-- (void)update;
-- (void)finalize;
-- (id)name;
-- (id)arguments;
+- (int)pid;
 
 @end

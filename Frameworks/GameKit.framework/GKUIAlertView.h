@@ -18,9 +18,10 @@
 
 + (id)_gkAlertWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 otherButtonTitle:(id)arg4 dismissHandler:(id)arg5;
 
-- (void)dealloc;
 - (id)dismissHandler;
 - (void)setDismissHandler:(id)arg1;
+- (void)dealloc;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)show;
 
 @end

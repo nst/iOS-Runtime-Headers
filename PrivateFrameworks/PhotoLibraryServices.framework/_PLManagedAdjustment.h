@@ -6,8 +6,8 @@
 }
 
 + (id)entityName;
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)insertInManagedObjectContext:(id)arg1;
++ (id)entityInManagedObjectContext:(id)arg1;
 
 - (id)objectID;
 

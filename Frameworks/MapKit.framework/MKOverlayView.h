@@ -16,14 +16,7 @@
             double height; 
         } size; 
     } _boundingMapRect;
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    } _mapTransform;
+    float _mapZoomScale;
     id _geometryDelegate;
     id _canDrawCache;
     double _lastTile;
@@ -41,10 +34,9 @@
 + (Class)layerClass;
 + (BOOL)_useMiniTiledLayer;
 
-- (void)dealloc;
-- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(int)arg3;
-- (double)_edgePadding;
 - (id).cxx_construct;
+- (void)dealloc;
+- (double)_edgePadding;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_canDrawContent;
@@ -58,7 +50,10 @@
 - (void)set_prefetchedTiles:(unsigned int)arg1;
 - (id)_geometryDelegate;
 - (void)_invalidateTilesInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_scheduleSetZoomScale;
 - (void)_scheduledScaleTimerFired;
+- (void)_scheduleVisibleRectChanged;
+- (void)_setZoomScale:(float)arg1;
 - (void)setNeedsDisplayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
 - (void)setNeedsDisplayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct { double x1; double x2; })mapPointForPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -70,24 +65,22 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })_miniLayerRectForMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct { double x1; double x2; })_originMapPoint;
+- (float)mapZoomScale;
 - (void)set_keepAlive:(BOOL)arg1;
-- (BOOL)_keepAlive;
 - (void)set_geometryDelegate:(id)arg1;
 - (void)set_boundingMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)set_drawingEnabled:(BOOL)arg1;
 - (void)set_levelCrossFade:(BOOL)arg1;
+- (void)_visibleRectChanged;
 - (BOOL)_drawingEnabled;
 - (void)drawMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2 inContext:(struct CGContext { }*)arg3;
 - (BOOL)canDrawMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
 - (struct CGPoint { float x1; float x2; })pointForMapPoint:(struct { double x1; double x2; })arg1;
-- (id)initWithOverlay:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_boundingMapRect;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })mapTransform;
-- (void)setMapTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)set_drawingEnabled:(BOOL)arg1;
-- (void)_scheduleVisibleRectChanged;
-- (void)_visibleRectChanged;
-- (void)_setZoomScale:(float)arg1;
-- (void)_scheduleSetZoomScale;
+- (void)setMapZoomScale:(float)arg1;
+- (BOOL)_keepAlive;
+- (id)initWithOverlay:(id)arg1;
 - (id)overlay;
+- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(int)arg3;
 
 @end

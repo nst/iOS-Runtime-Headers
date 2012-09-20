@@ -18,11 +18,11 @@
 
 + (id)sharedAccelerometer;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (id)init;
 - (void)setUpdateInterval:(double)arg1;
 - (double)updateInterval;
 - (void)_acceleratedInX:(double)arg1 y:(double)arg2 z:(double)arg3 timestamp:(double)arg4;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

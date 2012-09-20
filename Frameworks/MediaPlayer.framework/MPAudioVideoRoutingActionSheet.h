@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIWindow, UIViewController, MPAudioDeviceController;
+@class NSArray, UIWindow, UIViewController, MPAudioDeviceController;
 
 @interface MPAudioVideoRoutingActionSheet : UIActionSheet <UIActionSheetDelegate> {
     int _airPlayPasswordAlertDidAppearToken;
@@ -20,14 +20,15 @@
 
     UIViewController *_viewControllerForActionSheet;
     UIWindow *_windowForActionSheet;
+    NSArray *_displayedRoutes;
 }
 
 
-- (void)dealloc;
 - (void)showInPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 backgroundStyle:(int)arg3 animated:(BOOL)arg4 completionHandler:(id)arg5;
 - (BOOL)_isDeviceVideoRoute:(id)arg1;
-- (id)_routes;
+- (id)_availableRoutes;
 - (void)showWithValidInterfaceOrientationsBlock:(id)arg1 completionHandler:(id)arg2;
+- (void)dealloc;
 - (id)initWithType:(unsigned int)arg1;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;

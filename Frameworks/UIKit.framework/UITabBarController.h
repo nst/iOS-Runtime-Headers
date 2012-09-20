@@ -38,9 +38,12 @@
 
 + (Class)_moreNavigationControllerClass;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (void)setMoreChildViewControllers:(id)arg1;
 - (id)moreChildViewControllers;
+- (void)_setBadgeValue:(id)arg1 forTabBarItem:(id)arg2;
 - (void)_setMaximumNumberOfItems:(unsigned int)arg1;
 - (BOOL)showsEditButtonOnLeft;
 - (void)setShowsEditButtonOnLeft:(BOOL)arg1;
@@ -81,13 +84,13 @@
 - (id)selectedViewController;
 - (void)__viewWillLayoutSubviews;
 - (void)setViewControllers:(id)arg1;
-- (id)viewControllers;
 - (void)showBarWithTransition:(int)arg1;
 - (id)tabBar;
 - (void)hideBarWithTransition:(int)arg1;
 - (id)_selectedViewControllerInTabBar;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
 - (void)_layoutViewController:(id)arg1;
+- (id)viewControllers;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)updateTabBarItemForViewController:(id)arg1;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
@@ -100,6 +103,7 @@
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (id)rotatingFooterView;
 - (id)rotatingHeaderView;
+- (BOOL)_shouldSynthesizeSupportedOrientations;
 - (BOOL)_allowsAutorotation;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (BOOL)_reallyWantsFullScreenLayout;
@@ -118,16 +122,17 @@
 - (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
 - (id)_transitionView;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)defaultFirstResponder;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)_gkRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
-- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (void)_gkSetContentsNeedUpdateWithHandler:(id)arg1;
-- (void)_gkResetContents;
 - (void)_gkForceNextContentUpdate;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
+- (void)_gkResetContents;
 - (id)selectedNavigationController;
 - (id)selectedNavigationController;
 - (id)activeNavigationController;

@@ -20,21 +20,21 @@
 - (void)dealloc;
 - (long)direction;
 - (struct __CFString { }*)title;
-- (struct __CFArray { }*)chartData;
-- (struct __CFArray { }*)columnNames;
-- (struct __CFArray { }*)rowNames;
-- (struct __CFDictionary { }*)propertyBag;
-- (BOOL)hasStringValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(const struct __CFString {}**)arg3;
-- (BOOL)hasIntValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(int*)arg3;
-- (BOOL)hasFloatValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(float*)arg3;
-- (struct __CFString { }*)catagoryTitle;
-- (struct __CFString { }*)valueTitle;
-- (struct __CFString { }*)value2Title;
 - (BOOL)isFormulaChart;
-- (void)setProcessorBundle:(struct __CFBundle { }*)arg1;
-- (void)transpose;
-- (struct __CFArray { }*)seriesArray;
-- (struct __CFDictionary { }*)propertiesForSeriesAtIndex:(long)arg1;
+- (struct __CFString { }*)value2Title;
+- (struct __CFString { }*)valueTitle;
+- (struct __CFString { }*)catagoryTitle;
+- (BOOL)hasFloatValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(float*)arg3;
+- (BOOL)hasIntValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(int*)arg3;
+- (BOOL)hasStringValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(const struct __CFString {}**)arg3;
+- (struct __CFDictionary { }*)propertyBag;
+- (struct __CFArray { }*)rowNames;
+- (struct __CFArray { }*)columnNames;
 - (BOOL)hasValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(const void**)arg3;
+- (struct __CFDictionary { }*)propertiesForSeriesAtIndex:(long)arg1;
+- (struct __CFArray { }*)seriesArray;
+- (void)transpose;
+- (void)setProcessorBundle:(struct __CFBundle { }*)arg1;
+- (struct __CFArray { }*)chartData;
 
 @end

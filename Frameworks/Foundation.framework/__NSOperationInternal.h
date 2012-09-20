@@ -47,32 +47,32 @@
 
 + (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 changeKind:(unsigned int)arg3 oldValue:(id)arg4 newValue:(id)arg5 indexes:(id)arg6 context:(void*)arg7;
 
+- (void)invalidate;
+- (void)waitUntilFinished;
+- (unsigned int)retainCount;
+- (BOOL)isCancelled;
+- (void)cancel;
+- (id)retain;
+- (void)dealloc;
+- (oneway void)release;
+- (id)init;
+- (BOOL)isExecuting;
+- (BOOL)isFinished;
+- (void)setCompletionBlock:(id)arg1;
+- (void)finalize;
+- (void)start;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)__;
 - (id)dependencies;
 - (void)removeDependency:(id)arg1;
+- (void)addDependency:(id)arg1;
 - (void)waitUntilFinishedOrTimeout:(double)arg1;
 - (void)setQueuePriority:(int)arg1;
 - (int)queuePriority;
+- (id)completionBlock;
 - (void)setThreadPriority:(double)arg1;
 - (double)threadPriority;
 - (BOOL)isReady;
-- (unsigned int)retainCount;
-- (void)cancel;
-- (id)retain;
-- (BOOL)isCancelled;
-- (oneway void)release;
-- (id)init;
-- (void)dealloc;
-- (void)waitUntilFinished;
-- (void)addDependency:(id)arg1;
-- (id)completionBlock;
-- (BOOL)isFinished;
-- (void)setCompletionBlock:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)finalize;
-- (void)start;
-- (void)invalidate;
-- (BOOL)isExecuting;
 
 @end

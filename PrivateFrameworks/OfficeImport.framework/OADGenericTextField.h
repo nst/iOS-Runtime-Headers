@@ -9,8 +9,8 @@
 }
 
 
-- (void)dealloc;
 - (id)type;
+- (void)dealloc;
 - (void)setType:(id)arg1;
 
 @end

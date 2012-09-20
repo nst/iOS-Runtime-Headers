@@ -7,14 +7,14 @@
 @interface SAWeatherHourlyForecast : SAWeatherForecast  {
 }
 
-@property(retain) NSNumber * temperature;
+@property(copy) NSNumber * temperature;
 
-+ (id)hourlyForecast;
 + (id)hourlyForecastWithDictionary:(id)arg1 context:(id)arg2;
++ (id)hourlyForecast;
 
 - (id)groupIdentifier;
-- (id)temperature;
 - (void)setTemperature:(id)arg1;
+- (id)temperature;
 - (id)encodedClassName;
 
 @end

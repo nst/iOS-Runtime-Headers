@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSDictionary, UIImageView, AVRemaker, PLMoviePlayerController, PLPhotoBakedThumbnails, PLVideoEditingOverlayView, PLVideoOutBackgroundView, NSString, PLVideoPosterFrameView, NSTimer, PLAirTunesService, PLManagedAsset, PLPhotoTileViewController, UIMovieScrubber, PLAirPlayBackgroundView, NSLock, NSMutableDictionary, <PLVideoViewDelegate>, UIButton, NSArray, UIImage, UIView, NSURL;
+@class NSDictionary, UIImageView, AVRemaker, PLMoviePlayerController, PLPhotoBakedThumbnails, PLVideoEditingOverlayView, PLVideoOutBackgroundView, NSString, PLVideoPosterFrameView, NSTimer, PLAirTunesService, PLManagedAsset, PLPhotoTileViewController, UIMovieScrubber, PLAirPlayBackgroundView, NSLock, NSMutableDictionary, <PLVideoViewDelegate>, UIButton, PLProgressStack, NSArray, UIImage, UIView, NSURL;
 
 @interface PLVideoView : UIView <UIMovieScrubberDelegate, UIMovieScrubberDataSource, PLMoviePlayerControllerDelegate> {
     PLManagedAsset *_videoCameraImage;
@@ -31,7 +31,7 @@
     NSString *_videoPathAfterTrim;
     NSTimer *_trimProgressTimer;
     PLManagedAsset *_trimmedVideoClip;
-    struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; } *_trimProgressStack;
+    PLProgressStack *_trimProgressStack;
     float _progress;
     int _interfaceOrientation;
     PLMoviePlayerController *_moviePlayer;
@@ -117,6 +117,7 @@
 @property BOOL scrubberIsSubview;
 @property float scrubberWidth;
 @property double currentTime;
+@property(retain) PLProgressStack * trimProgressStack;
 @property(readonly) NSString * _pathForOriginalFile;
 @property(readonly) NSString * _pathForVideoPreviewFile;
 @property(readonly) NSString * _pathForPrebakedLandscapeScrubberThumbnails;
@@ -127,8 +128,9 @@
 
 + (id)videoViewForVideoFileAtURL:(id)arg1;
 
-- (id)description;
-- (void)dealloc;
+- (void)viewDidAppear;
+- (double)currentTime;
+- (void)setCurrentTime:(double)arg1;
 - (void)_screenDidDisconnect:(id)arg1;
 - (void)_screenDidConnect:(id)arg1;
 - (BOOL)moviePlayerExitRequest:(id)arg1 exitReason:(int)arg2;
@@ -141,11 +143,12 @@
 - (BOOL)moviePlayerHeadsetPreviousTrackPressed:(id)arg1;
 - (BOOL)moviePlayerHeadsetNextTrackPressed:(id)arg1;
 - (BOOL)moviePlayerHeadsetPlayPausePressed:(id)arg1;
-- (void)toggleScaleMode:(float)arg1;
-- (void)setCurrentTime:(double)arg1;
-- (double)currentTime;
 - (BOOL)isPlaying;
-- (id)videoScrubber;
+- (void)toggleScaleMode:(float)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (void)dealloc;
 - (void)pause;
 - (void)stop;
 - (double)startTime;
@@ -180,12 +183,10 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (int)interfaceOrientation;
 - (double)duration;
-- (id)delegate;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
 - (void)play;
-- (double)endTime;
+- (id)pathForVideoFile;
 - (id)posterFrameView;
 - (void)setScrubberWidth:(float)arg1;
 - (id)_moviePlayer;
@@ -202,6 +203,7 @@
 - (BOOL)wasTrimmedInPlace;
 - (id)videoOverlayPlayButton;
 - (id)videoOverlayBackgroundView;
+- (BOOL)moviePlayerCanManageStatusBar:(id)arg1;
 - (void)didBecomeMoviePlayerDelegate:(id)arg1;
 - (void)willResignMoviePlayerDelegate:(id)arg1;
 - (id)_parentViewForExternalOutputBackground;
@@ -229,6 +231,7 @@
 - (void)_removeTrimProgressTimer;
 - (void)cancelTrim;
 - (void)_trimProgressChanged:(id)arg1;
+- (id)trimProgressStack;
 - (void)_updateTrimProgress;
 - (void)_stopDeliveringNotifications;
 - (void)_informDelegateAboutProgressChange:(float)arg1;
@@ -240,7 +243,6 @@
 - (void)_didScrubToValue:(double)arg1 withHandle:(int)arg2;
 - (void)_invalidateSnapshotImage;
 - (void)_hideVideoOverlay:(BOOL)arg1;
-- (BOOL)playingToAirTunes;
 - (void)_removeScrubberUpdateTimer;
 - (void)_updateScrubberValue;
 - (id)_loadThumbnailsIntoDictionary:(id)arg1 isLandscape:(BOOL)arg2 aspectRatio:(float)arg3;
@@ -274,6 +276,7 @@
 - (float)scrubberWidth;
 - (void)_hideTrimMessageView:(BOOL)arg1;
 - (void)_clearImageGenerators;
+- (void)setTrimProgressStack:(id)arg1;
 - (void)_resetMoviePlayer;
 - (void)_cancelRemaking:(id)arg1;
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 videoCameraImage:(id)arg2 orientation:(int)arg3;
@@ -284,18 +287,19 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 videoCameraImage:(id)arg2 orientation:(int)arg3;
 - (BOOL)playingToVideoOut;
 - (BOOL)shouldShowCopyCalloutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)playingToAirTunes;
 - (void)setShowsScrubber:(BOOL)arg1 duration:(double)arg2;
 - (id)trimmedVideoClip;
 - (id)videoPathAfterTrim;
 - (void)trimUsingMode:(int)arg1 saveACopy:(BOOL)arg2;
 - (id)newPreviewImageData:(id*)arg1 fullScreenImage:(id*)arg2;
+- (double)endTime;
 - (id)imageTile;
 - (void)adjustUIForVideoOut:(BOOL)arg1;
 - (id)videoCameraImage;
-- (id)pathForVideoFile;
 - (void)setShowsScrubber:(BOOL)arg1;
+- (id)videoScrubber;
 - (BOOL)deleteOriginalFileAfterTrim;
-- (void)viewDidAppear;
 - (void)removeVideoOverlay;
 - (BOOL)isTrimming;
 - (void)setLoadMediaImmediately:(BOOL)arg1;

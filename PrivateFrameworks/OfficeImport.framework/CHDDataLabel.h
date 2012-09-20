@@ -22,35 +22,35 @@
 
 + (id)dataLabelWithResources:(id)arg1;
 
-- (id)string;
 - (void)setString:(id)arg1;
+- (id)string;
 - (void)dealloc;
 - (void)setShowValue:(bool)arg1;
 - (int)position;
 - (void)setPosition:(int)arg1;
-- (unsigned int)stringIndex;
 - (void)setStringIndex:(unsigned int)arg1;
-- (bool)isShowLeaderLines;
-- (bool)isShowCategoryName;
-- (bool)isShowSeriesName;
-- (bool)isShowPercent;
-- (bool)isShowValue;
-- (bool)isShowLegendKey;
-- (void)setIsPositionAffineTransform:(bool)arg1;
-- (bool)isPositionAffineTransform;
+- (unsigned int)stringIndex;
 - (double)rotationAngle;
-- (void)setShowLeaderLines:(bool)arg1;
-- (void)setShowCategoryName:(bool)arg1;
-- (void)setShowPercent:(bool)arg1;
-- (void)setGraphicProperties:(id)arg1;
-- (void)setShowLegendKey:(bool)arg1;
-- (void)setShowSeriesName:(bool)arg1;
-- (void)setRotationAngle:(double)arg1;
-- (id)graphicProperties;
-- (unsigned int)contentFormatId;
-- (void)setContentFormatId:(unsigned int)arg1;
-- (id)contentFormat;
+- (bool)isPositionAffineTransform;
+- (void)setIsPositionAffineTransform:(bool)arg1;
+- (bool)isShowLegendKey;
+- (bool)isShowPercent;
+- (bool)isShowSeriesName;
+- (bool)isShowCategoryName;
+- (bool)isShowLeaderLines;
 - (void)setContentFormat:(id)arg1;
+- (void)setRotationAngle:(double)arg1;
+- (void)setShowSeriesName:(bool)arg1;
+- (void)setShowLegendKey:(bool)arg1;
+- (void)setGraphicProperties:(id)arg1;
+- (void)setShowPercent:(bool)arg1;
+- (void)setShowCategoryName:(bool)arg1;
+- (void)setShowLeaderLines:(bool)arg1;
 - (id)initWithResources:(id)arg1;
+- (void)setContentFormatId:(unsigned int)arg1;
+- (bool)isShowValue;
+- (id)contentFormat;
+- (unsigned int)contentFormatId;
+- (id)graphicProperties;
 
 @end

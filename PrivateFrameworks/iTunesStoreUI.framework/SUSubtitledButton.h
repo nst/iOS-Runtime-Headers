@@ -15,10 +15,6 @@
 @property(readonly) UILabel * subtitleLabel;
 
 
-- (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
 - (id)_subtitledContentForState:(unsigned int)arg1;
 - (id)subtitleShadowColorForState:(unsigned int)arg1;
 - (id)subtitleColorForState:(unsigned int)arg1;
@@ -35,5 +31,9 @@
 - (id)subtitleLabel;
 - (void)setSubtitleShadowColor:(id)arg1 forState:(unsigned int)arg2;
 - (void)setSubtitleColor:(id)arg1 forState:(unsigned int)arg2;
+- (void)dealloc;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 
 @end

@@ -9,13 +9,15 @@
     NSDictionary *_appleAccount;
 }
 
+@property(readonly) NSString * fmipToken;
 @property(readonly) NSString * authToken;
 @property(readonly) NSString * personID;
 
 
-- (void)dealloc;
-- (id)personID;
 - (id)authToken;
+- (void).cxx_destruct;
+- (id)fmipToken;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
+- (id)personID;
 
 @end

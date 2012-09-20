@@ -37,13 +37,14 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_coreProtocolDidFailAuthenticationError:(id)arg1;
 - (void)_coreProtocolDidFinishResponse:(id)arg1 error:(id)arg2;
 - (void)requestReauthorizationForAssets:(id)arg1;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)abort;
 
 @end

@@ -21,11 +21,11 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (void)endSeeking;
 - (void)beginSeekingForward;
 - (void)beginSeekingBackward;
+- (void)dealloc;
+- (id)init;
 - (void)_checkinWithServer;
 - (void)_handlePropertyUpdateNotification:(id)arg1;
 - (id)sensorSearchState;

@@ -29,15 +29,15 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setReflectionEnabled:(BOOL)arg1;
 - (BOOL)isReflectionEnabled;
-- (void)setEndColor:(struct CGColor { }*)arg1;
-- (void)setStartColor:(struct CGColor { }*)arg1;
 - (void)setReplicatorView:(id)arg1;
-- (struct CGColor { }*)startColor;
-- (struct CGColor { }*)endColor;
 - (id)containerAnimationToReflectionDistance:(float)arg1;
 - (id)gradientLayer;
 - (id)replicatorView;
 - (float)reflectionDistance;
 - (void)setReflectionDistance:(float)arg1;
+- (struct CGColor { }*)endColor;
+- (struct CGColor { }*)startColor;
+- (void)setEndColor:(struct CGColor { }*)arg1;
+- (void)setStartColor:(struct CGColor { }*)arg1;
 
 @end

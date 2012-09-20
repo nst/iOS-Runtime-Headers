@@ -14,14 +14,14 @@
 
 
 - (void)dealloc;
-- (void)setAccountDescription:(id)arg1;
-- (id)imageSizeHeaderLabelView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_initialLabelFrame;
-- (id)imageSizeLabel;
-- (id)placeholderImageSizeLabel;
-- (void)setImageSizeDescription:(id)arg1;
-- (void)setShowsImageSize:(BOOL)arg1;
 - (void)layoutSubviews;
+- (void)setAccountDescription:(id)arg1;
+- (id)placeholderImageSizeLabel;
+- (id)imageSizeLabel;
 - (id)accountLabel;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_initialLabelFrame;
+- (id)imageSizeHeaderLabelView;
+- (void)setShowsImageSize:(BOOL)arg1;
+- (void)setImageSizeDescription:(id)arg1;
 
 @end

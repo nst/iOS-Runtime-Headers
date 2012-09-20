@@ -2,25 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSNumber, SSAuthenticateRequest, SSAuthenticationContext;
+@class NSNumber, SSAuthenticationContext, SSMutableAuthenticationContext;
 
 @interface ISStoreAuthenticateOperation : ISOperation <SSAuthenticateRequestDelegate> {
     NSNumber *_authenticatedDSID;
-    SSAuthenticateRequest *_request;
+    SSMutableAuthenticationContext *_authenticationContext;
 }
 
 @property(readonly) SSAuthenticationContext * authenticationContext;
 
 
-- (void)dealloc;
-- (id)uniqueKey;
-- (void)_setAuthenticatedDSID:(id)arg1;
-- (id)_authenticatedDSID;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
-- (void)run;
 - (id)initWithAuthenticationContext:(id)arg1;
 - (id)authenticatedAccountDSID;
 - (id)authenticationContext;
-- (void)authenticateRequest:(id)arg1 didReceiveResponse:(id)arg2;
+- (id)uniqueKey;
+- (void)dealloc;
+- (void)run;
+- (void)_setAuthenticatedDSID:(id)arg1;
+- (void)_handleAuthenticateResponse:(id)arg1;
+- (id)_authenticatedDSID;
 
 @end

@@ -28,6 +28,8 @@
     BOOL _isEV0Image;
     BOOL _chromaNoiseReductionEnabled;
     BOOL _suspendsVideoProcessing;
+    float _jpegQuality;
+    BOOL _jpegQualitySpecified;
 }
 
 @property(copy) id sbufCompletionBlock;
@@ -36,6 +38,8 @@
 @property(getter=isStillImageMirrored) BOOL stillImageMirrored;
 @property struct CGSize { float x1; float x2; } previewImageSize;
 @property unsigned long imageDataFormatType;
+@property float jpegQuality;
+@property BOOL jpegQualitySpecified;
 @property BOOL isHDRImage;
 @property BOOL isEV0Image;
 @property BOOL chromaNoiseReductionEnabled;
@@ -61,6 +65,10 @@
 - (int)stillImageOrientation;
 - (void)setStillImageMirrored:(BOOL)arg1;
 - (BOOL)isStillImageMirrored;
+- (void)setJpegQualitySpecified:(BOOL)arg1;
+- (BOOL)jpegQualitySpecified;
+- (void)setJpegQuality:(float)arg1;
+- (float)jpegQuality;
 - (void)setImageDataFormatType:(unsigned long)arg1;
 - (unsigned long)imageDataFormatType;
 - (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;

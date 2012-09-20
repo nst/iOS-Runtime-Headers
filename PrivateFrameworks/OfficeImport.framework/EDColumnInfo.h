@@ -18,8 +18,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setRange:(id)arg1;
-- (unsigned int)key;
+- (int)key;
 - (id)range;
 - (id)style;
 - (void)setStyle:(id)arg1;
@@ -27,13 +26,14 @@
 - (double)width;
 - (void)setHidden:(bool)arg1;
 - (bool)isHidden;
-- (void)setStyleIndex:(unsigned int)arg1;
-- (void)setRangeWithFirstColumn:(int)arg1 lastColumn:(int)arg2;
 - (unsigned char)outlineLevel;
-- (void)setOutlineLevel:(unsigned char)arg1;
-- (id)initWithResources:(id)arg1 worksheet:(id)arg2;
+- (void)setRange:(id)arg1;
 - (int)widthInXlUnits;
+- (void)setOutlineLevel:(unsigned char)arg1;
+- (void)setRangeWithFirstColumn:(int)arg1 lastColumn:(int)arg2;
 - (void)setWidthInXlUnits:(int)arg1;
+- (id)initWithResources:(id)arg1 worksheet:(id)arg2;
+- (void)setStyleIndex:(unsigned int)arg1;
 - (unsigned int)styleIndex;
 
 @end

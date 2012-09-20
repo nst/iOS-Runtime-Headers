@@ -18,11 +18,11 @@
 
 
 - (void)dealloc;
+- (id)list;
+- (struct __CFRunLoop { }*)queue;
+- (unsigned long long)handle;
 - (id)initWithList:(id)arg1 handle:(unsigned long long)arg2 queue:(struct __CFRunLoop { }*)arg3;
 - (void)setMovedToNetwork:(BOOL)arg1;
 - (BOOL)movedToNetwork;
-- (struct __CFRunLoop { }*)queue;
-- (unsigned long long)handle;
-- (id)list;
 
 @end

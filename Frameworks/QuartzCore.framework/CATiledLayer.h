@@ -8,34 +8,23 @@
 @property struct CGColor { }* fillColor;
 @property float maximumTileScale;
 @property(getter=isDrawingEnabled) BOOL drawingEnabled;
-@property unsigned int levelsOfDetail;
-@property unsigned int levelsOfDetailBias;
-@property struct CGSize { float width; float height; } tileSize;
+@property unsigned long levelsOfDetail;
+@property unsigned long levelsOfDetailBias;
+@property struct CGSize { float x1; float x2; } tileSize;
 
-+ (id)defaultValueForKey:(id)arg1;
 + (unsigned int)prefetchedTiles;
-+ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
-+ (double)fadeDuration;
 + (BOOL)shouldDrawOnMainThread;
++ (double)fadeDuration;
++ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
++ (id)defaultValueForKey:(id)arg1;
 + (id)displayDisableFadeOptions;
 + (id)displayUncollectableOptions;
 
 - (void)didChangeValueForKey:(id)arg1;
 - (void)dealloc;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2;
-- (void)displayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2 options:(id)arg3;
-- (BOOL)queueIsEmpty;
-- (void)setMaximumTileScale:(float)arg1;
-- (BOOL)canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2;
-- (BOOL)isDrawingEnabled;
-- (unsigned long)levelsOfDetail;
-- (unsigned long)levelsOfDetailBias;
-- (float)maximumTileScale;
-- (BOOL)_canDisplayConcurrently;
-- (BOOL)shouldArchiveValueForKey:(id)arg1;
+- (void)setFillColor:(struct CGColor { }*)arg1;
 - (struct CGColor { }*)fillColor;
 - (struct CGSize { float x1; float x2; })tileSize;
-- (void)setFillColor:(struct CGColor { }*)arg1;
 - (void)setDrawingEnabled:(BOOL)arg1;
 - (void)_display;
 - (void)_dealloc;
@@ -43,11 +32,22 @@
 - (void)setContents:(id)arg1;
 - (void)invalidateContents;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setLevelsOfDetail:(unsigned long)arg1;
-- (void)setLevelsOfDetailBias:(unsigned long)arg1;
+- (void)displayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2 options:(id)arg3;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2 options:(id)arg3;
-- (void)setNeedsDisplayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2;
+- (void)setLevelsOfDetailBias:(unsigned long)arg1;
+- (void)setLevelsOfDetail:(unsigned long)arg1;
+- (void)setMaximumTileScale:(float)arg1;
+- (BOOL)queueIsEmpty;
+- (BOOL)canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2;
+- (float)maximumTileScale;
+- (unsigned long)levelsOfDetailBias;
+- (unsigned long)levelsOfDetail;
+- (BOOL)isDrawingEnabled;
+- (BOOL)_canDisplayConcurrently;
+- (BOOL)shouldArchiveValueForKey:(id)arg1;
 - (void)displayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2 options:(id)arg3;
 - (void)setNeedsDisplayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2 options:(id)arg3;
+- (void)setNeedsDisplayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2;
 
 @end

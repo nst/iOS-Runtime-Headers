@@ -13,11 +13,11 @@
 @property(readonly) NSString * PIN;
 
 
-- (void)dealloc;
-- (id)delegate;
+- (void)handleResponse:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (id)PIN;
 - (id)initWithPIN:(id)arg1 host:(id)arg2 delegate:(id)arg3;
-- (void)handleResponse:(id)arg1;
 
 @end

@@ -26,14 +26,14 @@
 + (void)clearCachedDatabaseData;
 + (id)sharedMusicController;
 
-- (id)init;
-- (void)dealloc;
-- (void)pause;
-- (id)_init;
-- (void)play;
 - (void)endSeeking;
 - (void)beginSeekingForward;
 - (void)beginSeekingBackward;
+- (void)dealloc;
+- (id)init;
+- (void)pause;
+- (id)_init;
+- (void)play;
 - (void)_nowPlayingItemChanged:(id)arg1;
 - (BOOL)isNowPlaying;
 - (id)latestSelectedPlaylistName;

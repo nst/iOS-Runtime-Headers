@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayer, AVSubtitleTextLayer;
+@class AVPlayer, NSObject<OS_dispatch_queue>, NSDictionary;
 
 @interface AVSubtitleLayerInternal : NSObject  {
     AVPlayer *player;
     struct OpaqueFigSubtitleRenderer { } *renderer;
-    AVSubtitleTextLayer *textLayer;
-    struct __CFAttributedString { } *currentSubtitleSample;
-    id boundaryTimeObserver;
+    NSDictionary *currentSubtitleSample;
     BOOL currentSubtitleSampleIsForced;
     BOOL nonForcedSubtitleDisplayEnabled;
     BOOL shouldObservePlayer;
     BOOL isObservingPlayer;
     BOOL hasPlayerToObserve;
-    struct dispatch_queue_s { } *serialQueue;
+    NSObject<OS_dispatch_queue> *serialQueue;
     BOOL isPresentationLayer;
     BOOL isOverscanSubtitleSupportEnabled;
 }

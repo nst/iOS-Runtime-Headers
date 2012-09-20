@@ -5,12 +5,12 @@
 @class CALayer;
 
 @interface UIPDFPageContentLayer : CALayer  {
-    CALayer *selectionLayer;
+    CALayer *_selectionLayer;
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)setNeedsDisplay;
 - (void)layoutSublayers;

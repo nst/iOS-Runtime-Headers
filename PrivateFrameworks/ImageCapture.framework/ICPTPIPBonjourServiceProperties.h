@@ -9,7 +9,7 @@
     NSString *_hostName;
     unsigned short _hostPort;
     NSString *_hostGUID;
-    unsigned int _hostMaxConnections;
+    unsigned long _hostMaxConnections;
     int _hostSecuritylevel;
     NSString *_serviceType;
     NSDictionary *_txtRecordsDict;
@@ -20,45 +20,45 @@
     int _clientsSpinLock;
 }
 
-@property id delegate;
-@property int clientsSpinLock;
-@property(retain) NSMutableArray * clients;
-@property struct __CFNetService { }* publishedService;
-@property(retain) NSDictionary * txtRecordsDict;
-@property(retain) NSString * serviceType;
-@property int hostSecurityLevel;
-@property unsigned int hostMaxConnections;
-@property(retain) NSString * hostGUID;
-@property unsigned short hostPort;
-@property(retain) NSString * hostName;
 @property struct __CFSocket { }* hostSocket;
+@property(retain) NSString * hostName;
+@property unsigned short hostPort;
+@property(retain) NSString * hostGUID;
+@property unsigned long hostMaxConnections;
+@property int hostSecurityLevel;
+@property(retain) NSString * serviceType;
+@property(retain) NSDictionary * txtRecordsDict;
+@property struct __CFNetService { }* publishedService;
+@property(retain) NSMutableArray * clients;
+@property int clientsSpinLock;
+@property id delegate;
 
 
-- (void)dealloc;
-- (int)hostSecurityLevel;
-- (struct __CFNetService { }*)publishedService;
-- (void)setClients:(id)arg1;
-- (void)setHostGUID:(id)arg1;
-- (void)setTxtRecordsDict:(id)arg1;
-- (void)setHostMaxConnections:(unsigned long)arg1;
-- (void)setHostSecurityLevel:(int)arg1;
-- (void)setHostPort:(unsigned short)arg1;
 - (void)setClientsSpinLock:(int)arg1;
-- (struct __CFSocket { }*)hostSocket;
-- (unsigned short)hostPort;
-- (void)setPublishedService:(struct __CFNetService { }*)arg1;
-- (id)txtRecordsDict;
-- (void)setHostSocket:(struct __CFSocket { }*)arg1;
+- (int)clientsSpinLock;
 - (id)clients;
+- (void)setPublishedService:(struct __CFNetService { }*)arg1;
+- (struct __CFNetService { }*)publishedService;
+- (id)txtRecordsDict;
+- (void)setHostSecurityLevel:(int)arg1;
+- (int)hostSecurityLevel;
+- (void)setHostMaxConnections:(unsigned long)arg1;
 - (unsigned long)hostMaxConnections;
 - (id)hostGUID;
-- (int)clientsSpinLock;
+- (void)setHostPort:(unsigned short)arg1;
+- (unsigned short)hostPort;
+- (void)setHostSocket:(struct __CFSocket { }*)arg1;
+- (struct __CFSocket { }*)hostSocket;
+- (void)setTxtRecordsDict:(id)arg1;
+- (void)setHostGUID:(id)arg1;
+- (void)setClients:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (void)setHostName:(id)arg1;
 - (id)hostName;
 - (void)finalize;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)setServiceType:(id)arg1;
 - (id)serviceType;
+- (void)setServiceType:(id)arg1;
 
 @end

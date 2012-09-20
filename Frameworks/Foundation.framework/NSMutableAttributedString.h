@@ -7,24 +7,48 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)addAttributesWeakly:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
+- (void)appendAttributedString:(id)arg1;
+- (void)endEditing;
+- (void)beginEditing;
 - (void)addAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)removeAttribute:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)mutableString;
+- (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setAttributedString:(id)arg1;
 - (void)insertAttributedString:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
-- (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)endEditing;
-- (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (void)removeAttribute:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)beginEditing;
-- (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)mutableString;
-- (void)appendAttributedString:(id)arg1;
+- (void)addAttributesWeakly:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)replaceNewlinesWithSpaces;
 - (void)removeCharactersWithAttribute:(id)arg1;
 - (void)replaceAttribute:(id)arg1 value:(id)arg2 withValue:(id)arg3;
 - (void)trimWhitespace;
+- (void)convertWritingDirectionToBidiControlCharacters;
+- (BOOL)readFromData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;
+- (BOOL)readFromURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;
+- (void)unscriptRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)subscriptRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)superscriptRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setAlignment:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)fixAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })convertWritingDirectionToBidiControlCharactersForParagraphAtIndex:(unsigned int)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })convertBidiControlCharactersToWritingDirectionForParagraphAtIndex:(unsigned int)arg1;
+- (void)setBaseWritingDirection:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (BOOL)readFromData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
+- (BOOL)readFromURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
+- (void)_changeIntAttribute:(id)arg1 by:(int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (BOOL)_shouldSetOriginalFontAttribute;
+- (void)fixAttachmentAttributeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)fixParagraphStyleAttributeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)fixFontAttributeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)fixGlyphInfoAttributeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)convertBidiControlCharactersToWritingDirection;
+- (void)mf_setString:(id)arg1;
+- (void)mf_removeAttribute:(id)arg1;
+- (void)mf_addAttribute:(id)arg1 value:(id)arg2;
 - (void)appendString:(id)arg1 withAttributes:(id)arg2;
+- (void)replaceOccurrencesOfCharactersFromSet:(id)arg1 withString:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 
 @end

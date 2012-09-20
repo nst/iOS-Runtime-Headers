@@ -10,15 +10,15 @@
 @property(copy) NSURL * targetAppId;
 @property(copy) NSURL * outputSourceId;
 
-+ (id)setOutputSource;
 + (id)setOutputSourceWithDictionary:(id)arg1 context:(id)arg2;
++ (id)setOutputSource;
 
 - (id)groupIdentifier;
-- (id)outputSourceId;
 - (void)setOutputSourceId:(id)arg1;
-- (id)encodedClassName;
-- (id)targetAppId;
-- (void)setTargetAppId:(id)arg1;
+- (id)outputSourceId;
 - (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 
 @end

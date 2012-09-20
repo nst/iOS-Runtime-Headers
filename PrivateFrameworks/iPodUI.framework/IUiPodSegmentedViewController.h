@@ -16,11 +16,12 @@
 @property(readonly) IUViewControllerContext * selectedViewControllerContext;
 
 
-- (id)init;
-- (void)dealloc;
-- (BOOL)editable;
 - (id)selectedIdentifier;
 - (void)setSelectedIdentifier:(id)arg1;
+- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (BOOL)editable;
 - (id)selectedViewControllerContext;
 - (void)setViewControllersWithContexts:(id)arg1;
 - (void)_resetViewControllersWithContexts:(id)arg1;

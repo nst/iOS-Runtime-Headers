@@ -10,13 +10,14 @@
 + (id)sharedInstance;
 + (id)sharedIPCAppInstance;
 
-- (id)init;
-- (void)dealloc;
 - (BOOL)isInExtendedMode;
 - (void)_itemWillChange:(id)arg1;
 - (void)airPlayVideoEnded;
 - (void)_itemReadyToPlay:(id)arg1;
 - (BOOL)currentItemIsRental;
+- (BOOL)showPlaybackStateOverlaysOnTVOut;
+- (void)dealloc;
+- (id)init;
 - (void)play;
 - (void)_setRentalIsPlaying:(BOOL)arg1 forItem:(id)arg2;
 - (void)_scheduleExpirationTimerIfNecessary;

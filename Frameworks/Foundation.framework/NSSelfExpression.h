@@ -6,23 +6,23 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (void)initialize;
 + (id)defaultInstance;
++ (void)initialize;
 
-- (id)_initPrivate;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (unsigned int)retainCount;
+- (unsigned int)hash;
 - (id)retain;
-- (oneway void)release;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
+- (oneway void)release;
 - (id)init;
+- (id)autorelease;
+- (id)predicateFormat;
+- (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)predicateFormat;
-- (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
+- (id)_initPrivate;
 
 @end

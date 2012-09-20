@@ -10,14 +10,14 @@
 @property(copy) NSString * query;
 @property(copy) NSArray * searchProperties;
 
-+ (id)searchConstraint;
 + (id)searchConstraintWithDictionary:(id)arg1 context:(id)arg2;
++ (id)searchConstraint;
 
 - (id)groupIdentifier;
 - (void)setQuery:(id)arg1;
-- (id)query;
-- (id)searchProperties;
 - (void)setSearchProperties:(id)arg1;
+- (id)searchProperties;
+- (id)query;
 - (id)encodedClassName;
 
 @end

@@ -11,21 +11,11 @@
     BOOL _editable;
 }
 
-@property int textAlignment;
 @property BOOL editable;
+@property int textAlignment;
 
 
-- (void)dealloc;
-- (id)_textView;
-- (void)setCorrectablePhrases:(id)arg1 correctionIdentifier:(id)arg2;
-- (void)utteranceTextDidBecomeFirstResponder:(id)arg1;
-- (void)utteranceTextDidResignFirstResponder:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textViewFrameForLayoutFromFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bubbleImageFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustTextFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)_notifyTextWillBeginCorrecting;
-- (void)_notifyTextDidFinishCorrecting;
-- (void)_notifyTextDidChange;
+- (void).cxx_destruct;
 - (BOOL)editable;
 - (void)textViewDidChange:(id)arg1;
 - (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
@@ -36,10 +26,20 @@
 - (BOOL)isFirstResponder;
 - (int)textAlignment;
 - (void)setTextAlignment:(int)arg1;
-- (BOOL)resignFirstResponder;
 - (id)text;
+- (BOOL)resignFirstResponder;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_textView;
+- (void)setCorrectablePhrases:(id)arg1 correctionIdentifier:(id)arg2;
+- (void)_notifyTextDidChange;
+- (void)_notifyTextDidFinishCorrecting;
+- (void)_notifyTextWillBeginCorrecting;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustTextFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bubbleImageFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textViewFrameForLayoutFromFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)utteranceTextDidResignFirstResponder:(id)arg1;
+- (void)utteranceTextDidBecomeFirstResponder:(id)arg1;
 
 @end

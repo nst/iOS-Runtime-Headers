@@ -12,11 +12,13 @@
 + (id)eligibleOutputSettingsDictionaryKeys;
 + (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 
-- (id)initWithPixelBufferAttributes:(id)arg1 exceptionReason:(id*)arg2;
-- (BOOL)isDictionaryFullyFormed;
-- (id)pixelBufferAttributes;
-- (BOOL)willYieldCompressedSamples;
 - (int)height;
 - (int)width;
+- (id)initWithPixelBufferAttributes:(id)arg1 exceptionReason:(id*)arg2;
+- (id)initWithTrustedPixelBufferAttributes:(id)arg1;
+- (BOOL)isCodecAvailableOnCurrentSystem;
+- (BOOL)canFullySpecifyOutputFormatReturningReason:(id*)arg1;
+- (id)pixelBufferAttributes;
+- (BOOL)willYieldCompressedSamples;
 
 @end

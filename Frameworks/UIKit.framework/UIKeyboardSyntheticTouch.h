@@ -29,9 +29,10 @@
 
 + (id)syntheticTouchWithPoint:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 window:(id)arg3;
 
-- (unsigned char)_pathIndex;
-- (unsigned char)_pathIdentity;
+- (double)timestamp;
+- (void)setTimestamp:(double)arg1;
 - (float)_pathMajorRadius;
+- (unsigned char)_pathIndex;
 - (void)set_pathMajorRadius:(float)arg1;
 - (struct CGPoint { float x1; float x2; })locationInWindow;
 - (void)setLocationInWindow:(struct CGPoint { float x1; float x2; })arg1;
@@ -39,9 +40,8 @@
 - (id)initWithPoint:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 window:(id)arg3;
 - (unsigned int)tapCount;
 - (struct CGPoint { float x1; float x2; })previousLocationInView:(id)arg1;
-- (double)timestamp;
+- (unsigned char)_pathIdentity;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
-- (void)setTimestamp:(double)arg1;
 - (void)setPhase:(int)arg1;
 - (void)setTapCount:(unsigned int)arg1;
 - (int)phase;

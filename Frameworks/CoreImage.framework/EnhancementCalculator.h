@@ -15,8 +15,8 @@
 @property BOOL shadowsEnabled;
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)setupFaceColorFromImage:(id)arg1 usingContext:(id)arg2 detectorOpts:(id)arg3;
 - (id)histogramFromRows:(id)arg1 componentOffset:(unsigned int)arg2;
 - (void)analyzeFeatures:(id)arg1 usingContext:(id)arg2 baseImage:(id)arg3;

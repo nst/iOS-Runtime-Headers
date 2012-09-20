@@ -18,6 +18,11 @@
 
 + (id)backgroundColorForIndex:(unsigned int)arg1;
 
+- (void)setItemLink:(id)arg1;
+- (float)labelWidth;
+- (id)itemLink;
+- (void)setLabelColumnWidth:(float)arg1;
+- (float)labelColumnWidth;
 - (void)dealloc;
 - (id)label;
 - (id)value;
@@ -31,10 +36,5 @@
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setItemLink:(id)arg1;
-- (float)labelWidth;
-- (id)itemLink;
-- (void)setLabelColumnWidth:(float)arg1;
-- (float)labelColumnWidth;
 
 @end

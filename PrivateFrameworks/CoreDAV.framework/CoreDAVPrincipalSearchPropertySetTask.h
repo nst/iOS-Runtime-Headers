@@ -10,9 +10,9 @@
 @property <CoreDAVPrincipalSearchPropertySetTaskDelegate> * delegate;
 
 
+- (id)initWithURL:(id)arg1;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)initWithURL:(id)arg1;
 - (id)httpMethod;
 - (id)requestBody;
 

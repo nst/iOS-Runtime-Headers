@@ -9,8 +9,8 @@
 @property int keyAssetFaceThumbnailIndex;
 
 + (id)entityName;
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)insertInManagedObjectContext:(id)arg1;
++ (id)entityInManagedObjectContext:(id)arg1;
 
 - (void)setKeyAssetFaceThumbnailIndex:(int)arg1;
 - (int)keyAssetFaceThumbnailIndex;

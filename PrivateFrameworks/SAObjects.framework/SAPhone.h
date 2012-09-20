@@ -7,8 +7,8 @@
 @interface SAPhone : AceObject <SAAceSerializable> {
 }
 
-@property(retain) NSNumber * favoriteFacetime;
-@property(retain) NSNumber * favoriteVoice;
+@property(copy) NSNumber * favoriteFacetime;
+@property(copy) NSNumber * favoriteVoice;
 @property(copy) NSString * label;
 @property(copy) NSString * number;
 
@@ -16,14 +16,14 @@
 + (id)phone;
 
 - (id)groupIdentifier;
-- (void)setNumber:(id)arg1;
 - (id)number;
 - (id)label;
 - (void)setLabel:(id)arg1;
-- (id)favoriteVoice;
+- (void)setNumber:(id)arg1;
 - (void)setFavoriteVoice:(id)arg1;
-- (id)favoriteFacetime;
+- (id)favoriteVoice;
 - (void)setFavoriteFacetime:(id)arg1;
+- (id)favoriteFacetime;
 - (id)encodedClassName;
 
 @end

@@ -14,10 +14,10 @@
 + (id)currencyConverter;
 
 - (void)dealloc;
-- (id)lassoCurrencyCodeFromXl:(id)arg1;
-- (id)xlCurrencyCodeFromLasso:(id)arg1;
 - (int)xlAccountFormatFromLasso:(id)arg1;
-- (void)populateDictionaries;
+- (id)xlCurrencyCodeFromLasso:(id)arg1;
+- (id)lassoCurrencyCodeFromXl:(id)arg1;
 - (id)lassoCurrencyCodeForDollar;
+- (void)populateDictionaries;
 
 @end

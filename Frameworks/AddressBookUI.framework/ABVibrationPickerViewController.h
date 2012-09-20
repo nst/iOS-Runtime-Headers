@@ -10,19 +10,19 @@
     UIBarButtonItem *_saveButton;
 }
 
-@property(retain,readonly) id vibrationPickerViewController;
+@property(readonly) id vibrationPickerViewController;
 @property(setter=_setSaveButton:,retain) UIBarButtonItem * _saveButton;
 
 
 - (void)dealloc;
-- (void)_vibrationSaveButtonClicked:(id)arg1;
-- (void)_setSaveButton:(id)arg1;
-- (id)_saveButton;
-- (id)initWithVibrationType:(unsigned int)arg1;
-- (id)vibrationPickerViewController;
-- (float)ab_heightToFitForViewInPopoverView;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)loadView;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)initWithVibrationType:(int)arg1;
+- (id)_saveButton;
+- (id)vibrationPickerViewController;
+- (void)_setSaveButton:(id)arg1;
+- (void)_vibrationSaveButtonClicked:(id)arg1;
+- (float)ab_heightToFitForViewInPopoverView;
 
 @end

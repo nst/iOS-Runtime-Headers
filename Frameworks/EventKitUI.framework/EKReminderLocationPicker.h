@@ -2,44 +2,75 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKReminderLocationPickerModel, <EKStyleProvider>, UIAlertView;
+@class EKReminderLocationPickerModel, UIAlertView, <EKStyleProvider>, EKReminderLocationPickerCell, <EKReminderLocationPickerDelegate>;
 
-@interface EKReminderLocationPicker : UITableViewController <ABPeoplePickerNavigationControllerDelegate, EKReminderLocationPickerModelDelegate, UIAlertViewDelegate> {
+@interface EKReminderLocationPicker : UITableViewController <ABPeoplePickerNavigationControllerDelegate, EKReminderLocationPickerModelDelegate, UIAlertViewDelegate, UITextFieldDelegate, EKReminderLocationPickerCellButtonHandler> {
     EKReminderLocationPickerModel *_model;
     <EKStyleProvider> *_styleProvider;
     int _savedStatusBarStyle;
     UIAlertView *_meCardAlert;
+    EKReminderLocationPickerCell *_currentLocationCell;
+    EKReminderLocationPickerCell *_typedLocationCell;
+    BOOL _hasEditedText;
+    BOOL _isShowingPeopleAddressPicker;
+    BOOL _allowsShowInMap;
+    BOOL _isEditingContactAddress;
     BOOL _ignoreNextSelectionChange;
+    <EKReminderLocationPickerDelegate> *_locationPickerDelegate;
 }
+
+@property <EKReminderLocationPickerDelegate> * locationPickerDelegate;
 
 
 - (void)dealloc;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 withLinkedPeople:(struct __CFArray { }*)arg3;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)viewDidLoad;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (void)textFieldClearButtonPressed:(id)arg1;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)textFieldDidEndEditing:(id)arg1;
+- (void)textFieldDidBeginEditing:(id)arg1;
+- (float)marginForTableView:(id)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (id)locationPickerDelegate;
 - (void)locationPickerModelDidEndOperation:(id)arg1;
 - (void)locationPickerModelDidBeginOperation:(id)arg1;
+- (void)contactsButtonPressed;
+- (void)failureButtonPressed;
 - (void)_presentPersonPicker;
 - (void)_dismissPeoplePicker;
 - (void)_setLocationFromRecord:(void*)arg1 multiValueIdentifier:(int)arg2;
-- (void)_presentPeopleAddressPicker;
+- (id)_prepareCurrentLocationCell;
+- (id)_prepareTypedLocationCell;
+- (void)_updateAccessoryViewForTypedLocation;
+- (void)_typedLocationCellTextDidChange;
+- (void)_styleCell:(id)arg1;
+- (id)_indexPathForSelectedItem;
+- (void)_reloadCustomLocationRow;
+- (BOOL)_shouldShowTypedLocation;
+- (BOOL)_isCustomLocationRow:(id)arg1;
+- (int)_accessoryTypeForLocationItem:(id)arg1 isSelected:(BOOL)arg2;
 - (void)_showPickMeCardAlertIfNecessary;
 - (void)_removeExistingMeCardAlert;
 - (void)locationPickerModel:(id)arg1 didEncounterError:(id)arg2;
 - (void)locationPickerModelDidChangeSelection:(id)arg1;
-- (void)locationPickerModel:(id)arg1 didUpdateLocationItemAtIndex:(int)arg2;
+- (void)locationPickerModel:(id)arg1 didUpdateMeCardItem:(int)arg2;
+- (void)locationPickerModelDidUpdateCustomLocation:(id)arg1;
+- (void)locationPickerModelDidUpdateCurrentLocation:(id)arg1;
+- (void)setLocationPickerDelegate:(id)arg1;
 - (id)initWithModel:(id)arg1 styleProvider:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (float)marginForTableView:(id)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 withLinkedPeople:(struct __CFArray { }*)arg3;
 - (void)_setCell:(id)arg1 checked:(BOOL)arg2;
 
 @end

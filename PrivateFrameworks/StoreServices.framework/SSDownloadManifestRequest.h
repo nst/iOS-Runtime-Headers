@@ -4,32 +4,30 @@
 
 @class NSURLRequest, <SSDownloadManifestRequestDelegate>;
 
-@interface SSDownloadManifestRequest : SSRequest <SSCoding> {
+@interface SSDownloadManifestRequest : SSRequest <SSXPCCoding> {
     int _manifestFormat;
     BOOL _shouldHideUserPrompts;
     NSURLRequest *_urlRequest;
 }
 
 @property(readonly) NSURLRequest * URLRequest;
-@property <SSDownloadManifestRequestDelegate> * delegate;
 @property BOOL shouldHideUserPrompts;
+@property <SSDownloadManifestRequestDelegate> * delegate;
 @property int manifestFormat;
 
 
 - (id)initWithURLRequest:(id)arg1;
-- (id)init;
-- (void)dealloc;
 - (void)setManifestFormat:(int)arg1;
 - (id)URLRequest;
-- (void)setShouldHideUserPrompts:(BOOL)arg1;
-- (BOOL)shouldHideUserPrompts;
+- (void)dealloc;
+- (id)init;
+- (void)startWithCompletionBlock:(id)arg1;
 - (int)manifestFormat;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
-- (void)_sendResponseToDelegate:(id)arg1;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (BOOL)shouldHideUserPrompts;
+- (void)setShouldHideUserPrompts:(BOOL)arg1;
+- (void)startWithManifestResponseBlock:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)start;
 
 @end

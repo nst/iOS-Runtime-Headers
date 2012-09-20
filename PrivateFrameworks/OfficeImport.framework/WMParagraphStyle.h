@@ -8,11 +8,11 @@
 
 + (BOOL)isShadingNull:(id)arg1;
 
-- (id)initWithWDParagraphProperties:(id)arg1 isInTextFrame:(BOOL)arg2;
 - (void)addListProperties:(id)arg1;
-- (void)addParagraphProperties:(id)arg1;
-- (id)initWithWDStyle:(id)arg1 isInTextFrame:(BOOL)arg2;
-- (void)addParagraphStyleCharacterProperties:(id)arg1;
+- (id)initWithWDParagraphProperties:(id)arg1 isInTextFrame:(BOOL)arg2;
 - (void)mapBorders:(id)arg1;
+- (void)addParagraphStyleCharacterProperties:(id)arg1;
+- (id)initWithWDStyle:(id)arg1 isInTextFrame:(BOOL)arg2;
+- (void)addParagraphProperties:(id)arg1;
 
 @end

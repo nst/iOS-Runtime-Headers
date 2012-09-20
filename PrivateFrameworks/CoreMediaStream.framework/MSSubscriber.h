@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSReauthorizationProtocol, <MSSubscribeStorageProtocol>, MSObjectQueue, MSSubscribeStreamsProtocol, <MSSubscriberDelegate>, MSMediaStreamDaemon, NSMutableArray, NSMutableDictionary;
+@class MSReauthorizationProtocol, MSObjectQueue, <MSSubscribeStorageProtocol>, MSSubscribeStreamsProtocol, <MSSubscriberDelegate>, MSMediaStreamDaemon, NSMutableArray, NSMutableDictionary;
 
 @interface MSSubscriber : MSCupidStateMachine <MSSubscriber, MSSubscribeStreamsProtocolDelegate, MSSubscribeStorageProtocolDelegate, MSReauthorizationProtocolDelegate> {
     <MSSubscriberDelegate> *_delegate;
@@ -26,7 +26,6 @@
 @property int retrievalBatchSize;
 @property <MSSubscriberDelegate> * delegate;
 
-+ (void)forgetPersonID:(id)arg1;
 + (id)nextActivityDateForPersonID:(id)arg1;
 + (void)_setMasterNextActivityDate:(id)arg1 forPersonID:(id)arg2;
 + (id)_clearInstantiatedSubscribersByPersonID;
@@ -36,8 +35,14 @@
 + (BOOL)isInRetryState;
 + (id)personIDsWithOutstandingActivities;
 + (id)nextActivityDate;
++ (void)forgetPersonID:(id)arg1;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void).cxx_destruct;
 - (void)dealloc;
+- (void)stop;
+- (void)deactivate;
 - (void)setRetrievalBatchSize:(int)arg1;
 - (int)retrievalBatchSize;
 - (void)setTargetRetrievalByteCount:(long long)arg1;
@@ -49,7 +54,7 @@
 - (void)subscribeStreamsProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
 - (void)subscribeStreamsProtocol:(id)arg1 didFinishError:(id)arg2;
 - (void)subscribeStreamsProtocol:(id)arg1 didFindShareState:(id)arg2;
-- (void)subscribeStreamsProtocol:(id)arg1 difFindTemporarilyUnavailableSubscriptionForPersonID:(id)arg2;
+- (void)subscribeStreamsProtocol:(id)arg1 didFindTemporarilyUnavailableSubscriptionForPersonID:(id)arg2;
 - (void)subscribeStreamsProtocol:(id)arg1 didFindDisappearedSubscriptionForPersonID:(id)arg2;
 - (void)subscribeStreamsProtocol:(id)arg1 didFinishReceivingUpdatesForPersonID:(id)arg2 ctag:(id)arg3;
 - (void)subscribeStreamsProtocol:(id)arg1 didReceiveAssetCollections:(id)arg2 forPersonID:(id)arg3;
@@ -82,10 +87,6 @@
 - (void)checkForNewAssetCollections;
 - (void)checkForOutstandingActivities;
 - (void)setDaemon:(id)arg1;
-- (void)stop;
-- (void)deactivate;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)abort;
 
 @end

@@ -13,14 +13,14 @@
 @property(retain) NSString * region;
 
 
+- (void)setInfo:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (id)language;
+- (id)info;
+- (id)region;
+- (void)setRegion:(id)arg1;
 - (void)setFeature:(id)arg1;
 - (id)feature;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (id)info;
-- (void)setInfo:(id)arg1;
-- (id)region;
-- (void)setRegion:(id)arg1;
 
 @end

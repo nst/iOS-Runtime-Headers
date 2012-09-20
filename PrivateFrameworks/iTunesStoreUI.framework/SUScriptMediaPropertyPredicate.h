@@ -15,22 +15,18 @@
 @property(readonly) NSString * property;
 @property(readonly) id value;
 
++ (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
 
-- (void)dealloc;
-- (id)value;
-- (id)attributeKeys;
-- (id)_playlistAttributesForScriptArray:(id)arg1;
 - (id)comparisonType;
-- (id)_copyProperty;
-- (id)_copyComparisonType;
-- (void)_setProperty:(id)arg1 value:(id)arg2 comparisonType:(int)arg3;
-- (id)nativePredicate;
+- (id)_playlistAttributesForScriptArray:(id)arg1;
 - (id)initWithProperty:(id)arg1 value:(id)arg2 comparisonType:(id)arg3;
-- (id)_copyValue;
+- (id)nativePredicate;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)dealloc;
 - (id)property;
+- (id)value;
+- (id)attributeKeys;
 
 @end

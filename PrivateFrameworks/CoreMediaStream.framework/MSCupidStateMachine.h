@@ -10,15 +10,19 @@
     NSMutableDictionary *_userManifest;
     MSBackoffManager *_streamsBackoffManager;
     MSBackoffManager *_MMCSBackoffManager;
+    BOOL _hasDeactivated;
 }
 
 @property(retain) NSMutableDictionary * _userManifest;
 @property(readonly) NSString * personID;
+@property BOOL hasDeactivated;
 
 
+- (void).cxx_destruct;
 - (void)dealloc;
-- (id)personID;
+- (void)deactivate;
 - (void)set_userManifest:(id)arg1;
+- (void)setHasDeactivated:(BOOL)arg1;
 - (void)_commitUserManifest;
 - (id)_userManifest;
 - (void)_forget;
@@ -30,10 +34,11 @@
 - (void)_resetStreamsBackoffTimer;
 - (void)_backoffStreamsBackoffTimer;
 - (void)_didReceiveStreamsRetryAfterDate:(id)arg1;
+- (BOOL)hasDeactivated;
 - (void)_updateMasterManifest;
 - (id)_latestNextActivityDate;
 - (id)initWithPersonID:(id)arg1;
 - (void)forget;
-- (void)deactivate;
+- (id)personID;
 
 @end

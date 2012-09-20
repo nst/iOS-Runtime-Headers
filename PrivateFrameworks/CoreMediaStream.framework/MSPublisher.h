@@ -29,7 +29,6 @@
 @property int publishBatchSize;
 @property <MSPublisherDelegate> * delegate;
 
-+ (void)forgetPersonID:(id)arg1;
 + (id)nextActivityDateForPersonID:(id)arg1;
 + (void)_setMasterNextActivityDate:(id)arg1 forPersonID:(id)arg2;
 + (id)_clearInstantiatedPublishersByPersonID;
@@ -39,9 +38,14 @@
 + (BOOL)isInRetryState;
 + (id)personIDsWithOutstandingActivities;
 + (id)nextActivityDate;
++ (void)forgetPersonID:(id)arg1;
 
-- (void)publish;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void).cxx_destruct;
 - (void)dealloc;
+- (void)stop;
+- (void)deactivate;
 - (void)setPublishTargetByteCount:(long long)arg1;
 - (long long)publishTargetByteCount;
 - (id)storageProtocolURL;
@@ -60,6 +64,7 @@
 - (void)submitAssetCollectionsForPublication:(id)arg1;
 - (void)_abort;
 - (id)_abortedError;
+- (int)_stop;
 - (void)_categorizeError:(id)arg1 setOutIsIgnorable:(BOOL*)arg2 setOutIsCounted:(BOOL*)arg3 setOutIsFatal:(BOOL*)arg4 setOutNeedsBackoff:(BOOL*)arg5 setOutIsTemporary:(BOOL*)arg6 setOutIsTokenAuth:(BOOL*)arg7 setOutIsAuthError:(BOOL*)arg8;
 - (void)setStorageProtocolURL:(id)arg1;
 - (id)_invalidStreamsResponseErrorUnderlyingError:(id)arg1;
@@ -80,11 +85,7 @@
 - (void)computeHashForAsset:(id)arg1;
 - (BOOL)enqueueAssetCollections:(id)arg1 outError:(id*)arg2;
 - (void)setDaemon:(id)arg1;
-- (void)stop;
-- (void)deactivate;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (void)publish;
 - (void)abort;
-- (int)_stop;
 
 @end

@@ -16,17 +16,20 @@
 @property(retain) GKFriendRequestInternal * internal;
 
 
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)initWithPendingFriendRequest:(id)arg1;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (id)internal;
 - (id)description;
-- (id)init;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)setStatus:(int)arg1;
 - (int)status;
-- (id)internal;
-- (id)initWithInternalRepresentation:(id)arg1;
-- (void)setInternal:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

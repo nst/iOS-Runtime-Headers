@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, _UISegmentedControlAppearanceStorage, UIView;
+@class _UISegmentedControlAppearanceStorage, UIView, UIColor, NSString, _UIBadgeView, NSArray;
 
 @interface UISegment : UIImageView  {
     UIView *_info;
@@ -14,6 +14,10 @@
     } _contentOffset;
     UIColor *_tintColor;
     int _barStyle;
+    unsigned int _rightSegmentState;
+    NSString *_badgeValue;
+    _UIBadgeView *_badgeView;
+    id _objectValue;
     struct { 
         unsigned int style : 3; 
         unsigned int size : 2; 
@@ -26,14 +30,19 @@
         unsigned int autosizeText : 1; 
         unsigned int isMomentary : 1; 
     } _segmentFlags;
+    NSArray *_infoConstraints;
 }
 
+@property(setter=_setInfoConstraints:,copy) NSArray * _infoConstraints;
 @property(getter=isSelected) BOOL selected;
 @property(getter=isMomentary) BOOL momentary;
 @property int controlSize;
+@property(copy) NSString * badgeValue;
+@property(readonly) UIView * badgeView;
 
 
 - (void)dealloc;
+- (id)_infoConstraints;
 - (float)_idealWidth;
 - (id)infoName;
 - (void)animateRemoveForWidth:(float)arg1;
@@ -41,14 +50,18 @@
 - (void)setShowDivider:(BOOL)arg1;
 - (void)setMomentary:(BOOL)arg1;
 - (BOOL)isMomentary;
+- (id)badgeView;
 - (void)setAutosizeText:(BOOL)arg1;
+- (void)updateForAppearance:(id)arg1 style:(int)arg2;
 - (id)initWithInfo:(id)arg1 style:(int)arg2 size:(int)arg3 barStyle:(int)arg4 tintColor:(id)arg5 appearanceStorage:(id)arg6 position:(unsigned int)arg7 isDisclosure:(BOOL)arg8 autosizeText:(BOOL)arg9;
-- (void)_positionInfo;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
+- (void)_setInfoConstraints:(id)arg1;
 - (float)_barHeight;
-- (float)_paddingForLeft:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_paddingInsets;
+- (void)_invalidateInfoConstraints;
 - (void)_setEnabledAppearance:(BOOL)arg1;
-- (void)updateDividerViewToMatchSegment:(id)arg1;
+- (void)_positionInfo;
 - (id)_currentOptionsStyleTextShadowColor;
 - (id)_currentOptionsStyleTextColor;
 - (id)disabledTextColor;
@@ -57,19 +70,24 @@
 - (void)_tileImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)_texturedFillImage;
 - (id)_texturedLeftCapImage;
-- (id)_dividerImageForRight:(BOOL)arg1;
-- (id)_dividerImageForRight:(BOOL)arg1 isCustom:(BOOL*)arg2;
+- (id)_dividerImage;
+- (id)_dividerImageIsCustom:(BOOL*)arg1;
+- (void)updateDividerViewForChangedSegment:(id)arg1;
 - (unsigned int)_segmentState;
 - (BOOL)_isInMiniBar;
-- (id)info;
+- (id)objectValue;
 - (void)_commonInitWithInfo:(id)arg1 position:(unsigned int)arg2 autosizeText:(BOOL)arg3;
 - (void)_updateTextColors;
 - (void)insertDividerView;
-- (void)setInfo:(id)arg1;
+- (void)setObjectValue:(id)arg1;
+- (id)badgeValue;
+- (void)setBadgeValue:(id)arg1;
+- (id)viewForBaselineLayout;
+- (void)updateConstraints;
 - (void)setSelected:(BOOL)arg1;
-- (BOOL)isHighlighted;
 - (BOOL)isSelected;
 - (int)controlSize;
+- (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setBarStyle:(int)arg1;

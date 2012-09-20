@@ -44,14 +44,6 @@
 @property(copy) id shutdownHandler;
 
 
-- (void)dealloc;
-- (void)setIdleTimerInterval:(double)arg1;
-- (void)_runShutdownHandler;
-- (void)_rescheduleIdleTimerSourceWithInterval:(double)arg1;
-- (BOOL)_doingWork;
-- (void)_resetMessageFlag;
-- (void)setLockdownHandler:(id)arg1;
-- (id)lockdownHandler;
 - (void)setShutdownHandler:(id)arg1;
 - (id)shutdownHandler;
 - (id)defaultMessageHandler;
@@ -64,6 +56,14 @@
 - (id)_connections;
 - (void)setDisconnectHandler:(id)arg1;
 - (id)disconnectHandler;
+- (void)dealloc;
 - (id)connections;
+- (void)setIdleTimerInterval:(double)arg1;
+- (void)_runShutdownHandler;
+- (void)_rescheduleIdleTimerSourceWithInterval:(double)arg1;
+- (BOOL)_doingWork;
+- (void)_resetMessageFlag;
+- (void)setLockdownHandler:(id)arg1;
+- (id)lockdownHandler;
 
 @end

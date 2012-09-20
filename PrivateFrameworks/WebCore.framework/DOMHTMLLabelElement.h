@@ -7,16 +7,16 @@
 @interface DOMHTMLLabelElement : DOMHTMLElement  {
 }
 
-@property(retain,readonly) DOMHTMLFormElement * form;
-@property(copy) NSString * accessKey;
+@property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * htmlFor;
+@property(copy) NSString * accessKey;
 
 
 - (id)form;
 - (id)control;
-- (id)htmlFor;
 - (void)setHtmlFor:(id)arg1;
-- (id)accessKey;
+- (id)htmlFor;
 - (void)setAccessKey:(id)arg1;
+- (id)accessKey;
 
 @end

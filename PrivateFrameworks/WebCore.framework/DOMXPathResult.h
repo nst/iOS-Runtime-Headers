@@ -9,9 +9,9 @@
 
 @property(readonly) unsigned short resultType;
 @property(readonly) double numberValue;
-@property(copy,readonly) NSString * stringValue;
+@property(readonly) NSString * stringValue;
 @property(readonly) BOOL booleanValue;
-@property(retain,readonly) DOMNode * singleNodeValue;
+@property(readonly) DOMNode * singleNodeValue;
 @property(readonly) BOOL invalidIteratorState;
 @property(readonly) unsigned int snapshotLength;
 
@@ -19,13 +19,13 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)stringValue;
-- (unsigned short)resultType;
-- (double)numberValue;
-- (BOOL)booleanValue;
-- (id)singleNodeValue;
-- (BOOL)invalidIteratorState;
-- (unsigned int)snapshotLength;
-- (id)iterateNext;
 - (id)snapshotItem:(unsigned int)arg1;
+- (id)iterateNext;
+- (unsigned int)snapshotLength;
+- (BOOL)invalidIteratorState;
+- (id)singleNodeValue;
+- (BOOL)booleanValue;
+- (double)numberValue;
+- (unsigned short)resultType;
 
 @end

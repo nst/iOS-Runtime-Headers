@@ -50,13 +50,13 @@
 - (int)selectionStyle;
 - (void)setSelectionTintColor:(id)arg1;
 - (void)displayLayer:(id)arg1;
-- (void)_layoutSubviews:(BOOL)arg1;
 - (void)setSelectionStyle:(int)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
+- (void)_layoutSubviews:(BOOL)arg1;
 - (id)_sectionBorderColor;
 - (id)_separatorColor;
 - (int)separatorStyle;
+- (void)setSelected:(BOOL)arg1;
+- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 - (BOOL)isSelected;
 - (void)setSeparatorStyle:(int)arg1;
 - (id)_backgroundColor;

@@ -3,14 +3,19 @@
  */
 
 @interface IUVideosDataSource : IUMediaQueriesDataSource  {
+    BOOL _showMoreFromiTunesActionRow;
 }
+
+@property BOOL showMoreFromiTunesActionRow;
 
 + (id)queryItemPropertiesToFetch;
 + (Class)cellConfigurationClassForSongs;
 + (int)mediaEntityType;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (BOOL)showMoreFromiTunesActionRow;
+- (void)setShowMoreFromiTunesActionRow:(BOOL)arg1;
 - (id)copyGetMoreFromITunesStoreActionRow;
 - (BOOL)shouldDisplayWhenEmpty;
 - (void)_rentalInfoChangedNotification:(id)arg1;

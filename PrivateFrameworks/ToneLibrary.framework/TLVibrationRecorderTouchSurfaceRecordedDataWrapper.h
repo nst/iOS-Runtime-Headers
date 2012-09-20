@@ -15,13 +15,13 @@
 }
 
 
-- (void)dealloc;
-- (BOOL)getTouchLocation:(struct CGPoint { float x1; float x2; }*)arg1 touchPhase:(unsigned int*)arg2 forTimeInterval:(double)arg3;
+- (BOOL)getTouchLocation:(struct CGPoint { float x1; float x2; }*)arg1 touchPhase:(int*)arg2 forTimeInterval:(double)arg3;
 - (void)didStopRecording;
-- (void)recordTouchLocation:(struct CGPoint { float x1; float x2; })arg1 touchPhase:(unsigned int)arg2;
+- (void)recordTouchLocation:(struct CGPoint { float x1; float x2; })arg1 touchPhase:(int)arg2;
 - (id)initWithVibrationPatternMaximumDuration:(double)arg1;
-- (void)_recordFinalDataWithTouchLocation:(struct CGPoint { float x1; float x2; })arg1 touchPhase:(unsigned int)arg2 timeIntervalSinceBeginningOfPattern:(double)arg3;
+- (void)_recordFinalDataWithTouchLocation:(struct CGPoint { float x1; float x2; })arg1 touchPhase:(int)arg2 timeIntervalSinceBeginningOfPattern:(double)arg3;
 - (void)_prepareRecordedDataBufferForStoringEnoughElementsForRecordingDuration:(double)arg1 maximumFramesPerSecondsRate:(unsigned int)arg2;
 - (void)_updateMaximumFramesPerSecondRate:(id)arg1;
+- (void)dealloc;
 
 @end

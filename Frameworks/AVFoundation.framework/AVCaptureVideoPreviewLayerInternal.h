@@ -2,12 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSString, CALayer, NSMutableArray, AVCaptureSession;
+@class NSString, AVCaptureConnection, CALayer, AVCaptureSession;
 
 @interface AVCaptureVideoPreviewLayerInternal : NSObject  {
     AVCaptureSession *session;
-    NSMutableArray *connections;
+    AVCaptureConnection *connection;
     CALayer *sublayer;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } sensorSize;
+    NSString *sensorToPreviewVTScalingMode;
     struct CGSize { 
         float width; 
         float height; 
@@ -22,6 +27,16 @@
     BOOL visible;
     BOOL isPaused;
     BOOL chromaNoiseReductionEnabled;
+    int changeSeed;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
+    } captureDeviceTransform;
+    float rollAdjustment;
 }
 
 

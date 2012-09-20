@@ -7,7 +7,7 @@
 }
 
 
-- (id)nextObject;
 - (id)initWithListMember:(struct _SCRCStackNode { id x1; void *x2; void *x3; }*)arg1;
+- (id)nextObject;
 
 @end

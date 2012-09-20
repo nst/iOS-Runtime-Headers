@@ -11,19 +11,19 @@
 @property(copy) NSString * ch;
 @property(copy) NSString * chOff;
 @property(copy) NSString * vAlign;
-@property(retain,readonly) DOMHTMLCollection * rows;
+@property(readonly) DOMHTMLCollection * rows;
 
 
 - (id)rows;
-- (id)insertRow:(int)arg1;
 - (void)deleteRow:(int)arg1;
-- (id)ch;
-- (void)setCh:(id)arg1;
-- (id)chOff;
-- (void)setChOff:(id)arg1;
-- (id)vAlign;
+- (id)insertRow:(int)arg1;
 - (void)setVAlign:(id)arg1;
-- (id)align;
+- (id)vAlign;
+- (void)setChOff:(id)arg1;
+- (id)chOff;
+- (void)setCh:(id)arg1;
+- (id)ch;
 - (void)setAlign:(id)arg1;
+- (id)align;
 
 @end

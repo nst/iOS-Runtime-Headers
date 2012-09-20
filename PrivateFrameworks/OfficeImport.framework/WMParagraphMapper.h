@@ -15,14 +15,14 @@
 
 - (void)dealloc;
 - (id)initWithBlock:(id)arg1 parent:(id)arg2;
-- (BOOL)isTextFrame;
-- (BOOL)containsOfficeArt;
-- (void)mapParagraphBodyWithState:(id)arg1;
 - (BOOL)isCollapsable:(id)arg1;
+- (void)mapParagraphBodyWithState:(id)arg1;
+- (BOOL)containsOfficeArt;
+- (BOOL)isTextFrame;
 - (id)runAtIndex:(int)arg1;
 - (void)mapFieldMarkerAt:(id)arg1 marker:(id)arg2 withState:(id)arg3;
-- (id)activeNode;
 - (void)mapRunAt:(id)arg1 run:(id)arg2 withState:(id)arg3;
+- (id)activeNode;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 
 @end

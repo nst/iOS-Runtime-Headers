@@ -9,14 +9,14 @@
     NSString *mName;
 }
 
-@property(readonly) NSString * name;
 @property(readonly) NSData * data;
+@property(readonly) NSString * name;
 
 + (id)namedDataWithData:(id)arg1 named:(id)arg2;
 
-- (void)dealloc;
 - (id)name;
 - (id)data;
+- (void)dealloc;
 - (id)initWithData:(id)arg1 named:(id)arg2;
 
 @end

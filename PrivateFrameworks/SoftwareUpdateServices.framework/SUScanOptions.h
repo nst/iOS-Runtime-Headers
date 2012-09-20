@@ -15,21 +15,21 @@
 @property(retain) NSSet * types;
 
 
+- (id)identifier;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (void)setForced:(BOOL)arg1;
+- (BOOL)isForced;
+- (void)setIdentifier:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)clearTypes;
 - (BOOL)findsAnyUpdate;
 - (void)removeType:(int)arg1;
 - (BOOL)containsType:(int)arg1;
 - (void)setTypes:(id)arg1;
-- (id)description;
-- (id)init;
-- (void)dealloc;
 - (void)addType:(int)arg1;
 - (id)types;
-- (id)identifier;
-- (void)setIdentifier:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setForced:(BOOL)arg1;
-- (BOOL)isForced;
 
 @end

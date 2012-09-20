@@ -34,28 +34,29 @@
 @property double duration;
 @property(copy) id completionHandler;
 
-+ (struct dispatch_semaphore_s { }*)semaphore;
-+ (struct dispatch_queue_s { }*)queue;
++ (id)semaphore;
 + (void)decrementCount;
 + (id)bannerWindow;
 + (void)incrementCount;
++ (id)queue;
 
-- (void)dealloc;
 - (void)showWithCompletionHandler:(id)arg1;
 - (id)initWithTitle:(id)arg1 message:(id)arg2;
 - (void)_hide;
 - (void)setShowing:(BOOL)arg1;
 - (void)_show;
 - (BOOL)showing;
+- (id)initWithTitle:(id)arg1 image:(id)arg2 message:(id)arg3;
 - (void)orientationChanged:(id)arg1;
 - (void)_layoutForOrientation:(int)arg1 animated:(BOOL)arg2;
 - (id)messageLabel;
+- (void)dealloc;
 - (void)setCompletionHandler:(id)arg1;
-- (id)completionHandler;
 - (id)message;
 - (void)setMessage:(id)arg1;
 - (id)imageView;
 - (id)backgroundView;
+- (id)completionHandler;
 - (id)title;
 - (double)duration;
 - (void)setDuration:(double)arg1;

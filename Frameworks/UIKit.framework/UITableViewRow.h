@@ -10,7 +10,6 @@
     float _height;
 }
 
-@property int indentationLevel;
 @property float height;
 @property(retain) UITableViewCell * cell;
 

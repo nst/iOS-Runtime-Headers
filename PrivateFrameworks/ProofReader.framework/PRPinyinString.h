@@ -2,29 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
  */
 
-@class NSString;
-
-@interface PRPinyinString : NSString  {
-    NSString *_string;
-    unsigned int _syllableCount;
-    unsigned int _score;
-    unsigned int _rangeCount;
-    struct _NSRange { unsigned int x1; unsigned int x2; } *_ranges;
+@interface PRPinyinString : NSPinyinString  {
 }
 
-+ (id)alternativesForInputString:(id)arg1;
 
-- (id)string;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
-- (unsigned int)length;
-- (void)dealloc;
-- (unsigned int)score;
-- (unsigned int)syllableCount;
-- (unsigned int)numberOfNonPinyinRanges;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })nonPinyinRangeAtIndex:(unsigned int)arg1;
-- (id)initWithString:(id)arg1 syllableCount:(unsigned int)arg2 score:(unsigned int)arg3 rangeCount:(unsigned int)arg4 ranges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg5;
 
 @end

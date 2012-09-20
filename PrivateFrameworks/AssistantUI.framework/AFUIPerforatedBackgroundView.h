@@ -10,16 +10,16 @@
     BOOL _outset;
 }
 
-@property(readonly) struct UIEdgeInsets { float top; float left; float bottom; float right; } edgeInsets;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 
 + (void)initialize;
 
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundView:(id)arg2 outset:(BOOL)arg3;
+- (void).cxx_destruct;
 - (void)displayLayer:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)layoutSubviews;
 - (void)setNeedsDisplay;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundView:(id)arg2 outset:(BOOL)arg3;
 
 @end

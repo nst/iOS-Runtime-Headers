@@ -10,6 +10,7 @@
 
 
 - (id)init;
+- (id)initWithPath:(id)arg1;
 - (void)_removeSqliteFiles;
 - (id)_urlForPersistentStore;
 - (id)_managedObjectModel;
@@ -24,6 +25,5 @@
 - (id)insertNewAlarm;
 - (void)deleteAllAlarms;
 - (id)settingForKey:(id)arg1;
-- (id)initWithPath:(id)arg1;
 
 @end

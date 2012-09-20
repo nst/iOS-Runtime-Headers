@@ -42,6 +42,7 @@
 @property(getter=isEmbossedProgressIndicatorVisible) BOOL embossedProgressIndicatorVisible;
 
 
+- (BOOL)isDownloadable;
 - (void)dealloc;
 - (float)progress;
 - (BOOL)isHighlighted;
@@ -53,14 +54,13 @@
 - (void)layoutSubviews;
 - (void)setOpaque:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDownloadable;
 - (BOOL)isEmbossedProgressIndicatorVisible;
 - (float)reflectionDistance;
 - (BOOL)reflectionHidden;
+- (void)setEmbossedProgressIndicatorVisible:(BOOL)arg1;
 - (void)_removeTitleViews;
 - (void)_createTitleViews:(id)arg1;
 - (void)setReflectionHidden:(BOOL)arg1;
-- (void)setEmbossedProgressIndicatorVisible:(BOOL)arg1;
 - (void)setReflectionDistance:(float)arg1;
 - (void)setImage:(id)arg1 imageSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageSubRect;

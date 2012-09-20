@@ -5,11 +5,11 @@
 @interface ODIPyramid : NSObject  {
 }
 
-+ (BOOL)verticalFlipWithState:(id)arg1;
-+ (void)mapWithState:(id)arg1 apexUp:(BOOL)arg2;
 + (void)addTrapezoidForNode:(id)arg1 top:(float)arg2 height:(float)arg3 topBase:(float)arg4 bottomBase:(float)arg5 state:(id)arg6;
-+ (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;
++ (void)mapWithState:(id)arg1 apexUp:(BOOL)arg2;
++ (BOOL)verticalFlipWithState:(id)arg1;
 + (unsigned int)nodeCountWithState:(id)arg1;
++ (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;
 
 
 @end

@@ -7,6 +7,7 @@
 }
 
 
+- (void)dealloc;
 - (id)deserializerStream;
 - (id)initForDeserializerStream:(id)arg1;
 - (id)deserializeNewKeyString;
@@ -22,6 +23,5 @@
 - (id)deserializeNewPList;
 - (id)deserializeNewList;
 - (id)deserializeNewData;
-- (void)dealloc;
 
 @end

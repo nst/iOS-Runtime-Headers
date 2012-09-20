@@ -30,8 +30,8 @@
 @property(retain) NSArray * rotationAngles;
 
 
-- (id)string;
 - (void)setString:(id)arg1;
+- (id)string;
 - (void)setBoundingBox:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPageIndex:(unsigned int)arg1;
 - (void)setRotationAngles:(id)arg1;

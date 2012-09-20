@@ -8,11 +8,11 @@
 
 - (unsigned int)retainCount;
 - (id)retain;
-- (id)copy;
-- (oneway void)release;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
 - (void)dealloc;
+- (oneway void)release;
+- (id)copy;
+- (id)autorelease;
 - (void)_forceDealloc;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;

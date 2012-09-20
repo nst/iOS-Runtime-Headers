@@ -4,21 +4,24 @@
 
 @class NSArray, NSString, NSDictionary, NSNumber;
 
-@interface SSAuthenticationContext : NSObject <SSCoding, NSCopying, NSMutableCopying> {
+@interface SSAuthenticationContext : NSObject <SSXPCCoding, NSCopying, NSMutableCopying> {
     NSString *_accountName;
     BOOL _accountNameEditable;
     int _accountScope;
+    BOOL _allowsRetry;
     BOOL _canCreateNewAccount;
+    BOOL _canSetActiveAccount;
     NSString *_clientIdentifierHeader;
     BOOL _demoAccount;
     NSDictionary *_httpHeaders;
-    BOOL _ignoresTokenExpiration;
+    NSString *_initialPassword;
     NSString *_preferredITunesStoreClient;
     int _promptStyle;
     NSDictionary *_requestParameters;
     NSNumber *_requiredUniqueIdentifier;
     BOOL _shouldFollowAccountButtons;
     BOOL _shouldIgnoreProtocol;
+    BOOL _shouldSuppressDialogs;
     NSDictionary *_signupRequestParameters;
     int _tokenType;
     NSArray *_userAgentComponents;
@@ -27,13 +30,17 @@
 @property(readonly) NSString * accountName;
 @property(readonly) int accountScope;
 @property(getter=isAccountNameEditable,readonly) BOOL accountNameEditable;
+@property(readonly) BOOL allowsRetry;
 @property(readonly) BOOL canCreateNewAccount;
+@property(readonly) BOOL canSetActiveAccount;
 @property(readonly) NSDictionary * HTTPHeaders;
+@property(readonly) NSString * initialPassword;
 @property(readonly) NSString * preferredITunesStoreClient;
 @property(readonly) int promptStyle;
 @property(readonly) NSDictionary * requestParameters;
 @property(readonly) NSNumber * requiredUniqueIdentifier;
 @property(readonly) BOOL shouldFollowAccountButtons;
+@property(readonly) BOOL shouldSuppressDialogs;
 @property(readonly) NSDictionary * signupRequestParameters;
 @property(readonly) NSArray * userAgentComponents;
 @property(readonly) NSString * clientIdentifierHeader;
@@ -43,34 +50,37 @@
 
 + (id)contextForSignIn;
 
-- (id)initWithAccount:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (id)accountName;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithAccountIdentifier:(id)arg1;
 - (int)accountScope;
 - (id)HTTPHeaders;
 - (id)requestParameters;
 - (id)requiredUniqueIdentifier;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)userAgentComponents;
 - (int)tokenType;
 - (id)signupRequestParameters;
+- (BOOL)shouldSuppressDialogs;
 - (BOOL)shouldIgnoreProtocol;
 - (BOOL)shouldFollowAccountButtons;
-- (int)promptStyle;
 - (id)preferredITunesStoreClient;
+- (id)initialPassword;
 - (id)clientIdentifierHeader;
+- (BOOL)canSetActiveAccount;
 - (BOOL)canCreateNewAccount;
+- (BOOL)allowsRetry;
 - (BOOL)isAccountNameEditable;
 - (void)_copyIvarsToCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;
 - (id)_initSSAuthenticationContext;
+- (BOOL)_allowCreateAccount;
 - (BOOL)isDemoAccount;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithAccount:(id)arg1;
+- (int)promptStyle;
 
 @end

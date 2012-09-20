@@ -25,8 +25,8 @@
 @property(retain) <UIWebSelectionBlock> * extent;
 
 
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingTextSelectionRect;
 - (void)moveEdge:(int)arg1 outwards:(BOOL)arg2;
@@ -46,13 +46,12 @@
 - (void)shrinkSelectionFromPoint:(struct CGPoint { float x1; float x2; })arg1 towardsPoint:(struct CGPoint { float x1; float x2; })arg2 withNewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)webArchive;
 - (id)asDomRange;
-- (id)textSelection;
 - (struct CGSize { float x1; float x2; })desiredSize;
 - (id)blockAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setExtent:(id)arg1;
 - (void)setBase:(id)arg1;
-- (id)base;
 - (void)applySelectionToWebDocumentView;
+- (id)base;
 - (BOOL)blockContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)textSelectionRects;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectAndInsideFixedPosition:(int*)arg1;
@@ -60,8 +59,10 @@
 - (BOOL)isTextOnly;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
 - (BOOL)valid;
+- (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1 ignoringLargeBlocks:(BOOL)arg2;
 - (id)initWithDocumentView:(id)arg1;
 - (id)elementAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)textSelection;
 - (id)webFrame;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)documentView;

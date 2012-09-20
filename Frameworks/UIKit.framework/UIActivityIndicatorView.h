@@ -28,6 +28,7 @@
     BOOL _useArtwork;
     NSString *_artBackupKeyString;
     UIImageView *_internalView;
+    BOOL _useOutlineShadow;
 }
 
 @property int activityIndicatorViewStyle;
@@ -47,6 +48,7 @@
 @property float spinningDuration;
 @property BOOL useArtwork;
 @property(readonly) NSString * artBackupKeyString;
+@property BOOL useOutlineShadow;
 
 + (id)_loadResourcesForStyle:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForStyle:(int)arg1;
@@ -54,6 +56,7 @@
 
 - (void)dealloc;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+- (BOOL)useOutlineShadow;
 - (id)internalView;
 - (id)artBackupKeyString;
 - (void)setUseArtwork:(BOOL)arg1;
@@ -74,6 +77,7 @@
 - (void)setSpokeFrameRatio:(int)arg1;
 - (void)setInnerRadius:(float)arg1;
 - (void)setSpokeCount:(int)arg1;
+- (void)setUseOutlineShadow:(BOOL)arg1;
 - (id)initWithActivityIndicatorStyle:(int)arg1;
 - (BOOL)_canCustomizeStyle:(int)arg1;
 - (void)_updateInternalViewFrameWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -107,24 +111,28 @@
 - (void)startAnimating;
 - (void)stopAnimating;
 - (BOOL)isAnimating;
+- (void)stopAnimation;
+- (id)shadowColor;
 - (void)setAnimating:(BOOL)arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShadowColor:(id)arg1;
 - (id)color;
 - (struct CGSize { float x1; float x2; })shadowOffset;
 - (void)setColor:(id)arg1;
-- (void)stopAnimation;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setWidth:(float)arg1;
 - (float)width;
+- (void)_removeAllAnimations:(BOOL)arg1;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)setAnimationDuration:(double)arg1;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)setShadowColor:(id)arg1;
-- (id)shadowColor;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;

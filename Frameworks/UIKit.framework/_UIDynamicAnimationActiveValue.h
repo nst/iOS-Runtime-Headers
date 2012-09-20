@@ -22,9 +22,10 @@
 + (id)lowerBoundary:(double)arg1 ofType:(int)arg2;
 + (id)activeValue:(double)arg1 ofType:(int)arg2;
 
+- (int)type;
 - (id)description;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)_setBoundaryPull:(double)arg1;
 - (double)_boundaryPull;
 - (void)setMaximumActiveValue:(double)arg1;
@@ -35,7 +36,6 @@
 - (BOOL)_isUpperBoundary;
 - (BOOL)_isLowerBoundary;
 - (void)_appendDescriptionToString:(id)arg1 atLevel:(int)arg2;
-- (int)type;
 - (double)value;
 - (void)setValue:(double)arg1;
 - (void)setType:(int)arg1;

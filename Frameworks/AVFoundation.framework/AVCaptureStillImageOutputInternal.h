@@ -12,16 +12,19 @@
     } previewImageSize;
     unsigned long imageDataFormatType;
     long long imageMaxDataSize;
+    float jpegQuality;
+    BOOL jpegQualitySpecified;
     BOOL HDRCaptureEnabled;
     BOOL EV0CaptureEnabled;
     BOOL chromaNoiseReductionEnabled;
     BOOL suspendsVideoProcessingDuringCapture;
     NSDictionary *outputSettings;
     BOOL isCapturingPhoto;
+    BOOL rawCaptureEnabled;
 }
 
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 
 @end

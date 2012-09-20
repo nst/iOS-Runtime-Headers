@@ -10,8 +10,8 @@
 @property int code;
 @property(copy) NSArray * commands;
 
-+ (id)resultCallback;
 + (id)resultCallbackWithDictionary:(id)arg1 context:(id)arg2;
++ (id)resultCallback;
 
 - (id)groupIdentifier;
 - (int)code;

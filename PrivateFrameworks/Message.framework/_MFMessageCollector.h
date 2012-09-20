@@ -9,11 +9,11 @@
 }
 
 
-- (void)newMessagesAvailable:(id)arg1;
-- (id)messages;
-- (id)copyMessages;
-- (BOOL)shouldCancel;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)copyMessages;
+- (id)messages;
+- (void)newMessagesAvailable:(id)arg1;
+- (BOOL)shouldCancel;
 
 @end

@@ -18,8 +18,9 @@
 @property double endWaitTime;
 
 
-- (id)init;
+- (void)reset;
 - (void)dealloc;
+- (id)init;
 - (double)endWaitTime;
 - (double)interspeechWaitTime;
 - (double)startWaitTime;
@@ -31,6 +32,5 @@
 - (void)setStartWaitTime:(double)arg1;
 - (void)setEndpointMode:(int)arg1;
 - (int)getStatus:(float*)arg1 count:(unsigned long)arg2;
-- (void)reset;
 
 @end

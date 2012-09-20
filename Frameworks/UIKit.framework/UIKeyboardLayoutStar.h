@@ -56,6 +56,7 @@
     BOOL _dragChangedKey;
     BOOL _touchDownInMoreKey;
     BOOL _touchDownInShiftKey;
+    BOOL _touchDownInDeleteKey;
     BOOL _wasShifted;
     BOOL _dragDismissStarted;
     BOOL _swipeDetected;
@@ -112,7 +113,6 @@
 
 
 - (id)keyboardWithName:(id)arg1;
-- (void)setShift:(BOOL)arg1;
 - (void)dealloc;
 - (id)overlayCharacterImageForKey:(id)arg1 direction:(int)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 flickString:(id)arg4 popupInfo:(id)arg5;
 - (id)getPopupBackgroundImageForKey:(id)arg1 direction:(int)arg2 popupInfo:(id)arg3 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
@@ -135,8 +135,6 @@
 - (BOOL)autoShift;
 - (BOOL)shift;
 - (void)setKeyboardName:(id)arg1;
-- (id)shapesForControlKeyShapes:(id)arg1 split:(BOOL)arg2;
-- (void)updateKeyplaneViewMask;
 - (struct CGImage { }*)renderedKeyplaneWithToken:(id)arg1 split:(BOOL)arg2;
 - (struct CGImage { }*)renderedImageWithToken:(id)arg1;
 - (struct CGPoint { float x1; float x2; })applyError:(struct CGPoint { float x1; float x2; })arg1 toKey:(id)arg2;
@@ -147,6 +145,7 @@
 - (void)upActionShift;
 - (void)nextCandidatesAction;
 - (void)confirmAction;
+- (id)flickStringForInputKey:(id)arg1 direction:(int)arg2;
 - (BOOL)shouldRetestKey:(id)arg1 withKeyplane:(id)arg2;
 - (void)refreshGhostKeyState;
 - (unsigned int)upActionFlagsForKey:(id)arg1;
@@ -160,6 +159,7 @@
 - (void)sendStringAction:(id)arg1 forKey:(id)arg2 isPopupVariant:(BOOL)arg3;
 - (void)touchDownWithKey:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)handlePopupView:(id)arg1;
+- (id)flickPopupStringForKey:(id)arg1 withString:(id)arg2;
 - (void)clearInfoForTouch:(id)arg1;
 - (id)keyHitTestForTouchInfo:(id)arg1 touchStage:(int)arg2;
 - (id)generateInfoForTouch:(id)arg1;
@@ -168,6 +168,7 @@
 - (void)finishSplit;
 - (float)interpretPinchSeparationValues;
 - (void)prepareForSplitTransition;
+- (id)_keyplaneVariantsKeyForString:(id)arg1;
 - (id)touchForKey:(id)arg1;
 - (void)showPopupVariantsForKey:(id)arg1;
 - (unsigned int)downActionFlagsForKey:(id)arg1;
@@ -181,16 +182,9 @@
 - (id)keyHitTestWithoutCharging:(struct CGPoint { float x1; float x2; })arg1;
 - (id)keyHitTestClosestToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)keyHitTestContainingPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)keyHitTestContainingPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)shouldHitTestKey:(id)arg1;
 - (void)setKeyboardDim:(BOOL)arg1;
-- (void)handleDismissFlickView:(id)arg1;
 - (void)setKeyboardName:(id)arg1 appearance:(int)arg2;
-- (id)spaceKey;
-- (void)updateDictationKeyOnNumberPads;
-- (id)mergableKeyplaneSwitchKeyForRendering:(int)arg1;
-- (id)findLeftMoreKey;
-- (id)shapesForControlKeyShapes:(id)arg1 split:(BOOL)arg2 alternateCJMerge:(BOOL)arg3;
 - (void)updateTransitionWithFlags:(int)arg1;
 - (void)rebuildSplitTransitionView;
 - (int)stateForKeyplaneSwitchKey:(id)arg1;
@@ -222,6 +216,7 @@
 - (id)defaultNameForKeyplaneName:(id)arg1;
 - (void)flushKeyCache:(id)arg1;
 - (void)setActiveKey:(id)arg1;
+- (void)handleDismissFlickView:(id)arg1;
 - (void)clearAllTouchInfo;
 - (void)uninstallGestureRecognizers;
 - (void)refreshForDictationAvailablityDidChange;
@@ -232,21 +227,23 @@
 - (void)deactivateActiveKeysClearingTouchInfo:(BOOL)arg1 clearingDimming:(BOOL)arg2;
 - (void)setDelegate:(id)arg1 forKey:(id)arg2;
 - (void)restoreDefaultsForKey:(id)arg1;
-- (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
-- (void)setAction:(SEL)arg1 forKey:(id)arg2;
-- (void)setTarget:(id)arg1 forKey:(id)arg2;
-- (void)setLabel:(id)arg1 forKey:(id)arg2;
+- (BOOL)performSpaceAction;
 - (void)touchCancelled:(id)arg1;
 - (void)touchUp:(id)arg1;
 - (void)touchDragged:(id)arg1;
 - (void)touchDown:(id)arg1;
 - (SEL)handlerForNotification:(id)arg1;
+- (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
+- (void)setAction:(SEL)arg1 forKey:(id)arg2;
+- (void)setTarget:(id)arg1 forKey:(id)arg2;
+- (void)setLabel:(id)arg1 forKey:(id)arg2;
 - (id)simulateTouchForCharacter:(id)arg1 errorVector:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
 - (id)simulateTouch:(struct CGPoint { float x1; float x2; })arg1;
 - (void)changeToKeyplane:(id)arg1;
 - (id)keyplaneNamed:(id)arg1;
 - (id)keyplaneForKey:(id)arg1;
 - (id)baseKeyForString:(id)arg1;
+- (id)keyboard;
 - (id)localizedInputMode;
 - (id)keyboardName;
 - (id)keyplaneName;
@@ -279,19 +276,20 @@
 - (BOOL)pinchSplitGestureEnabled;
 - (void)setSplitProgress:(float)arg1;
 - (BOOL)pinchDetected;
+- (struct CGSize { float x1; float x2; })dragGestureSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
 - (void)deactivateActiveKeys;
 - (void)clearAllKeyDelegates;
-- (void)clearUnusedObjects;
-- (id)keyboard;
+- (void)clearUnusedObjects:(BOOL)arg1;
 - (void)setKeyboardAppearance:(int)arg1;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)isRotating;
 - (id)scriptingInfoWithChildren;
 - (double)lastTouchUpTimestamp;
 - (void)removeFromSuperview;
+- (void)setShift:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

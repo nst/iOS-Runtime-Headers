@@ -13,10 +13,10 @@
 + (id)operationWithChallenge:(id)arg1;
 
 - (void)dealloc;
+- (void)run;
+- (void)setChallenge:(id)arg1;
+- (id)challenge;
 - (id)_copyCredentialForSignInResponseDictionary:(id)arg1;
 - (void)handleButtonSelected:(int)arg1 withResponseDictionary:(id)arg2;
-- (void)run;
-- (id)challenge;
-- (void)setChallenge:(id)arg1;
 
 @end

@@ -16,41 +16,45 @@
 @property(copy) NSString * fullName;
 @property(copy) NSString * lastName;
 @property(copy) NSString * lastNamePhonetic;
-@property(retain) NSNumber * me;
+@property(copy) NSNumber * me;
 @property(copy) NSString * middleName;
 @property(copy) NSString * nickName;
 @property(copy) NSArray * phones;
 @property(copy) NSString * prefix;
 @property(copy) NSArray * relatedNames;
+@property(copy) NSArray * socialProfiles;
 @property(copy) NSString * suffix;
 
 + (id)person;
 + (id)personWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
-- (id)addresses;
-- (void)setAddresses:(id)arg1;
-- (void)setLastName:(id)arg1;
-- (void)setFirstName:(id)arg1;
 - (id)emails;
+- (id)groupIdentifier;
+- (void)setLastName:(id)arg1;
 - (id)lastName;
+- (void)setFirstName:(id)arg1;
 - (id)firstName;
-- (void)setEmails:(id)arg1;
-- (void)setPhones:(id)arg1;
 - (id)fullName;
 - (void)setFullName:(id)arg1;
 - (id)me;
-- (id)prefix;
 - (void)setPrefix:(id)arg1;
+- (id)prefix;
+- (void)setPhones:(id)arg1;
+- (void)setEmails:(id)arg1;
+- (void)setAddresses:(id)arg1;
+- (id)addresses;
+- (id)company;
 - (id)suffix;
 - (void)setSuffix:(id)arg1;
-- (id)firstNamePhonetic;
-- (void)setFirstNamePhonetic:(id)arg1;
-- (id)lastNamePhonetic;
-- (void)setLastNamePhonetic:(id)arg1;
-- (id)phones;
-- (id)relatedNames;
+- (void)setSocialProfiles:(id)arg1;
+- (id)socialProfiles;
 - (void)setRelatedNames:(id)arg1;
+- (id)relatedNames;
+- (id)phones;
+- (void)setLastNamePhonetic:(id)arg1;
+- (id)lastNamePhonetic;
+- (void)setFirstNamePhonetic:(id)arg1;
+- (id)firstNamePhonetic;
 - (void)setMe:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
@@ -60,7 +64,6 @@
 - (void)setNickName:(id)arg1;
 - (void)setMiddleName:(id)arg1;
 - (void)setBirthday:(id)arg1;
-- (id)company;
 - (void)setCompany:(id)arg1;
 
 @end

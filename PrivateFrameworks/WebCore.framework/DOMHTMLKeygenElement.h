@@ -10,33 +10,33 @@
 @property BOOL autofocus;
 @property(copy) NSString * challenge;
 @property BOOL disabled;
-@property(retain,readonly) DOMHTMLFormElement * form;
+@property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * keytype;
 @property(copy) NSString * name;
-@property(copy,readonly) NSString * type;
+@property(readonly) NSString * type;
 @property(readonly) BOOL willValidate;
-@property(retain,readonly) DOMValidityState * validity;
-@property(copy,readonly) NSString * validationMessage;
-@property(retain,readonly) DOMNodeList * labels;
+@property(readonly) DOMValidityState * validity;
+@property(readonly) NSString * validationMessage;
+@property(readonly) DOMNodeList * labels;
 
 
 - (void)setName:(id)arg1;
+- (id)name;
+- (id)type;
+- (id)form;
 - (void)setDisabled:(BOOL)arg1;
 - (BOOL)disabled;
-- (id)form;
-- (id)type;
-- (id)name;
-- (id)challenge;
-- (void)setChallenge:(id)arg1;
-- (id)keytype;
 - (void)setKeytype:(id)arg1;
-- (id)validity;
-- (BOOL)autofocus;
-- (void)setAutofocus:(BOOL)arg1;
-- (BOOL)willValidate;
-- (id)validationMessage;
-- (id)labels;
-- (BOOL)checkValidity;
+- (id)keytype;
+- (void)setChallenge:(id)arg1;
+- (id)challenge;
 - (void)setCustomValidity:(id)arg1;
+- (BOOL)checkValidity;
+- (id)labels;
+- (id)validationMessage;
+- (id)validity;
+- (BOOL)willValidate;
+- (void)setAutofocus:(BOOL)arg1;
+- (BOOL)autofocus;
 
 @end

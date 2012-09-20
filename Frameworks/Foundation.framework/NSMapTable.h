@@ -5,14 +5,37 @@
 @interface NSMapTable : NSObject <NSCopying, NSCoding, NSFastEnumeration> {
 }
 
-+ (id)mapTableWithStrongToStrongObjects;
-+ (id)mapTableWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2;
++ (id)weakToStrongObjectsMapTable;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)weakToWeakObjectsMapTable;
 + (id)mapTableWithStrongToWeakObjects;
 + (id)mapTableWithWeakToStrongObjects;
 + (id)mapTableWithWeakToWeakObjects;
++ (id)strongToWeakObjectsMapTable;
++ (id)strongToStrongObjectsMapTable;
++ (id)mapTableWithStrongToStrongObjects;
++ (id)mapTableWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2;
 
+- (void)removeObjectForKey:(id)arg1;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
+- (id)description;
+- (void)removeAllObjects;
+- (id)objectForKey:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)init;
+- (id)copy;
+- (unsigned int)count;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)keyEnumerator;
+- (id)initWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2 capacity:(unsigned int)arg3;
+- (id)dictionaryRepresentation;
+- (id)allValues;
+- (id)objectEnumerator;
+- (id)allKeys;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)mutableDictionary;
 - (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
 - (BOOL)mapMember:(const void*)arg1 originalKey:(const void**)arg2 value:(const void**)arg3;
@@ -26,24 +49,5 @@
 - (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned int)arg3;
 - (id)enumerator;
 - (void)removeAllItems;
-- (unsigned int)count;
-- (id)description;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (id)objectForKey:(id)arg1;
-- (id)copy;
-- (void)setObject:(id)arg1 forKey:(id)arg2;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)dictionaryRepresentation;
-- (id)keyEnumerator;
-- (id)objectEnumerator;
-- (id)allValues;
-- (id)allKeys;
-- (void)removeObjectForKey:(id)arg1;
-- (void)removeAllObjects;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2 capacity:(unsigned int)arg3;
 
 @end

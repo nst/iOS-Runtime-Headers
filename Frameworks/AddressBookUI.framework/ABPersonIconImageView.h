@@ -17,42 +17,40 @@
 }
 
 @property BOOL shouldPickBestImage;
-@property(retain) UIImage * overlayImage;
-@property(retain) UIImage * maskImage;
 @property(readonly) int imageType;
+@property(retain) UIImage * maskImage;
+@property(retain) UIImage * overlayImage;
 
-+ (struct CGSize { float x1; float x2; })optimalIconSize;
-+ (id)newImageViewWithIconSize:(struct CGSize { float x1; float x2; })arg1 imageType:(int)arg2;
 + (id)genericBlankPlaceholderImageOfSize:(struct CGSize { float x1; float x2; })arg1;
-+ (id)leftRightBorderOverlayImageOfSize:(struct CGSize { float x1; float x2; })arg1;
-+ (id)rightBorderOverlayImageOfSize:(struct CGSize { float x1; float x2; })arg1;
-+ (BOOL)_cardPlaceholderImageShouldApplyMaskAndOverlayForType:(int)arg1;
-+ (id)_placeholderPersonImageForType:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)newImageViewWithIconSize:(struct CGSize { float x1; float x2; })arg1 imageType:(int)arg2;
++ (struct CGSize { float x1; float x2; })optimalIconSize;
 + (id)_placeholderCompanyImageForType:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)_placeholderPersonImageForType:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (BOOL)_cardPlaceholderImageShouldApplyMaskAndOverlayForType:(int)arg1;
++ (id)rightBorderOverlayImageOfSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)leftRightBorderOverlayImageOfSize:(struct CGSize { float x1; float x2; })arg1;
 
-- (id)init;
-- (void)dealloc;
-- (id)initWithIconSize:(struct CGSize { float x1; float x2; })arg1 imageType:(int)arg2;
-- (void)setNeedsRecompositing;
-- (id)_overlayImageOrNSNull;
-- (id)_maskImageOrNSNull;
-- (BOOL)_cardPlaceholderImageShouldApplyMaskAndOverlay;
-- (id)_placeholderPersonImage;
-- (id)_placeholderCompanyImage;
-- (id)personImageView;
-- (void)setBackgroundLoadingQueue:(id)arg1 addressBook:(void*)arg2;
-- (BOOL)hasImageToDisplay;
-- (BOOL)shouldPickBestImage;
-- (void)setShouldPickBestImage:(BOOL)arg1;
-- (void)setBackgroundLoadingQueue:(id)arg1 addressBook:(void*)arg2 cache:(id)arg3;
-- (void*)displayedPerson;
-- (void)setNeedsReload;
 - (id)overlayImage;
 - (id)maskImage;
 - (void)setOverlayImage:(id)arg1;
 - (void)setMaskImage:(id)arg1;
-- (int)imageType;
-- (void)setDisplayedPerson:(void*)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)_updateImages;
+- (void)setNeedsReload;
+- (id)_placeholderCompanyImage;
+- (id)_placeholderPersonImage;
+- (BOOL)_cardPlaceholderImageShouldApplyMaskAndOverlay;
+- (id)_overlayImageOrNSNull;
+- (id)_maskImageOrNSNull;
+- (void)setNeedsRecompositing;
+- (int)imageType;
+- (id)initWithIconSize:(struct CGSize { float x1; float x2; })arg1 imageType:(int)arg2;
+- (void)setShouldPickBestImage:(BOOL)arg1;
+- (BOOL)shouldPickBestImage;
+- (BOOL)hasImageToDisplay;
+- (id)personImageView;
+- (void*)displayedPerson;
+- (void)setDisplayedPerson:(void*)arg1;
 
 @end

@@ -12,10 +12,10 @@
 
 + (id)titleForURL:(id)arg1;
 
-- (void)dealloc;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)_copyResponseByRunningModal;
 - (id)copyResponseByRunningModal;
 - (id)initWithDialog:(id)arg1;
+- (void)dealloc;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
 @end

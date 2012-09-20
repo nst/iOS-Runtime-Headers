@@ -18,12 +18,12 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)setStartOffset:(long)arg1;
 - (void)setNode:(id)arg1;
 - (long)endOffset;
 - (id)node;
 - (long)startOffset;
 - (id)initWithDOMRange:(id)arg1;
 - (void)setEndOffset:(long)arg1;
+- (void)setStartOffset:(long)arg1;
 
 @end

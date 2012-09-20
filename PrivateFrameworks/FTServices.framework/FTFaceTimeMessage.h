@@ -11,13 +11,13 @@
 @property(copy) NSData * sessionToken;
 
 
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
 - (BOOL)isValidMessage;
 - (id)requiredKeys;
 - (void)setSessionToken:(id)arg1;
 - (id)sessionToken;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)messageBody;
 
 @end

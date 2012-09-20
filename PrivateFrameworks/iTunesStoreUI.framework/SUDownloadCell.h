@@ -10,16 +10,16 @@
 }
 
 
+- (BOOL)_isDownloadResumable:(id)arg1;
+- (void)_reloadProgressBar;
+- (void)_reloadAccessoryButton;
+- (void)reloadForStatusChange;
+- (void)setConfiguration:(id)arg1;
 - (void)dealloc;
+- (BOOL)handleTap;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_accessoryButtonAction:(id)arg1;
 - (void)layoutSubviews;
-- (BOOL)_isDownloadResumable:(id)arg1;
-- (void)_reloadProgressBar;
-- (void)_reloadAccessoryButton;
-- (BOOL)handleTap;
-- (void)reloadForStatusChange;
-- (void)setConfiguration:(id)arg1;
 
 @end

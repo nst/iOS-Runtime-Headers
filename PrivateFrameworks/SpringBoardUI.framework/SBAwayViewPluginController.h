@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class UIView;
 
 @interface SBAwayViewPluginController : NSObject  {
@@ -10,50 +14,33 @@
     BOOL _fullscreen;
     BOOL _alwaysFullscreen;
     int _orientation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _disableTransitionBlock;
+
 }
 
 @property(retain) UIView * view;
-@property(getter=isAlwaysFullscreen,readonly) BOOL alwaysFullscreen;
 @property int orientation;
-@property(getter=isFullscreen,readonly) BOOL fullscreen;
 @property BOOL viewCanBeDisplayed;
+@property(getter=isAlwaysFullscreen,readonly) BOOL alwaysFullscreen;
+@property(getter=isFullscreen,readonly) BOOL fullscreen;
 
-+ (void)enableBundleNamed:(id)arg1;
 + (void)disableBundleNamed:(id)arg1;
++ (void)enableBundleNamed:(id)arg1;
++ (void)disableBundleNamed:(id)arg1 deactivationContext:(id)arg2;
++ (void)enableBundleNamed:(id)arg1 activationContext:(id)arg2;
++ (id)_serializedDataForContext:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isFullscreen;
-- (void)purgeView;
-- (void)setViewCanBeDisplayed:(BOOL)arg1;
-- (BOOL)viewWantsFullscreenLayout;
-- (BOOL)shouldDisableOnRelock;
-- (BOOL)shouldDisableOnUnlock;
-- (BOOL)shouldShowLockStatusBarTime;
-- (double)viewFadeInDuration;
-- (void)setAlwaysFullscreen:(BOOL)arg1;
-- (BOOL)isAlwaysFullscreen;
-- (void)deviceLockViewWillShow;
-- (void)deviceLockViewDidHide;
-- (BOOL)retainsPriorityWhileInactive;
-- (int)pluginPriority;
-- (BOOL)animateResumingToApplicationWithIdentifier:(id)arg1;
-- (BOOL)showAwayItems;
-- (BOOL)showDateView;
-- (BOOL)canScreenDim;
-- (BOOL)handleMenuButtonTap;
-- (BOOL)handleMenuButtonDoubleTap;
-- (BOOL)wantsMenuButtonHeldEvent;
-- (BOOL)handleMenuButtonHeld;
-- (BOOL)handleGesture:(int)arg1 fingerCount:(unsigned int)arg2;
-- (BOOL)wantsAutomaticFullscreenTimer;
-- (BOOL)wantsSwipeGestureRecognizer;
-- (BOOL)viewCanBeDisplayed;
-- (void)setFullscreen:(BOOL)arg1 duration:(double)arg2;
-- (BOOL)canBeAlwaysFullscreen;
-- (void)alwaysFullscreenValueHasChanged;
+- (void)dealloc;
+- (id)init;
 - (void)setOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
@@ -63,5 +50,60 @@
 - (id)view;
 - (int)orientation;
 - (void)disable;
+- (BOOL)viewCanBeDisplayed;
+- (BOOL)showsBeneathNotifications;
+- (BOOL)showsAboveHeader;
+- (BOOL)wantsSwipeGestureRecognizer;
+- (BOOL)wantsAutomaticFullscreenTimer;
+- (BOOL)handleHeadsetButtonPressed:(BOOL)arg1;
+- (BOOL)handleVolumeDownButtonPressed;
+- (BOOL)handleVolumeUpButtonPressed;
+- (BOOL)handleLockButtonPressed;
+- (BOOL)handleGesture:(int)arg1 fingerCount:(unsigned int)arg2;
+- (BOOL)handleMenuButtonHeld;
+- (BOOL)wantsMenuButtonHeldEvent;
+- (BOOL)handleMenuButtonDoubleTap;
+- (BOOL)handleMenuButtonTap;
+- (BOOL)showsDuringCall;
+- (BOOL)wantsUserWallpaper;
+- (BOOL)wantsHardwareEventsWhenScreenDimmed;
+- (BOOL)wantsToOpenURLsWhilePasscodeLocked;
+- (BOOL)allowsSiri;
+- (BOOL)allowsPhotoSlideshow;
+- (BOOL)allowsLockScreenMediaControls;
+- (BOOL)allowsLockScreenCamera;
+- (BOOL)canScreenDim;
+- (BOOL)showHeaderView;
+- (BOOL)disablesAwayItemsCompletely;
+- (BOOL)showAwayItems;
+- (id)bundleIDForUnlock;
+- (BOOL)animateResumingToApplicationWithIdentifier:(id)arg1;
+- (int)pluginPriority;
+- (BOOL)retainsPriorityWhileInactive;
+- (void)deviceLockViewDidHide;
+- (void)deviceLockViewWillShow;
+- (BOOL)isAlwaysFullscreen;
+- (void)setAlwaysFullscreen:(BOOL)arg1;
+- (double)transitionDuration;
+- (BOOL)shouldAutoHideNotifications;
+- (BOOL)shouldShowLockStatusBarTime;
+- (BOOL)shouldDisableOnUnlock;
+- (BOOL)shouldDisableOnRelock;
+- (BOOL)viewWantsFullscreenLayout;
+- (id)enableTransitionBlock;
+- (id)_disableTransitionBlock;
+- (void)setDeactivationContext:(id)arg1;
+- (void)setActivationContext:(id)arg1;
+- (void)setViewCanBeDisplayed:(BOOL)arg1;
+- (void)purgeView;
+- (BOOL)viewWantsOverlayLayout;
+- (BOOL)showDateView;
+- (void)alwaysFullscreenValueHasChanged;
+- (BOOL)canBeAlwaysFullscreen;
+- (double)viewFadeInDuration;
+- (void)setFullscreen:(BOOL)arg1 duration:(double)arg2;
+- (void)_setDisableTransitionBlock:(id)arg1;
+- (void)disableWithTransitionBlock:(id)arg1;
+- (id)customHeaderView;
 
 @end

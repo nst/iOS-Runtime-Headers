@@ -10,12 +10,13 @@
 
 + (id)sharedClient;
 
+- (void).cxx_destruct;
 - (id)init;
-- (BOOL)authenticateWithCheckInURL:(id)arg1 identity:(struct __SecIdentity { }*)arg2 topic:(id)arg3 useDevelopmentAPNS:(BOOL)arg4 signMessage:(BOOL)arg5 outError:(id*)arg6;
-- (BOOL)checkOutCheckInURL:(id)arg1 identity:(struct __SecIdentity { }*)arg2 topic:(id)arg3 signMessage:(BOOL)arg4 outError:(id*)arg5;
-- (void)notifyNewConfiguration;
-- (void)scheduleTokenUpdate;
-- (void)simulatePush;
 - (void)removeManagedAppsAccordingToFlags;
+- (void)simulatePush;
+- (void)scheduleTokenUpdate;
+- (void)notifyNewConfiguration;
+- (BOOL)checkOutCheckInURL:(id)arg1 identity:(struct __SecIdentity { }*)arg2 topic:(id)arg3 signMessage:(BOOL)arg4 outError:(id*)arg5;
+- (BOOL)authenticateWithCheckInURL:(id)arg1 identity:(struct __SecIdentity { }*)arg2 topic:(id)arg3 useDevelopmentAPNS:(BOOL)arg4 signMessage:(BOOL)arg5 outError:(id*)arg6;
 
 @end

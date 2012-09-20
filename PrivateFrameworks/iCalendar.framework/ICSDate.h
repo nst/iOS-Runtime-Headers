@@ -10,15 +10,15 @@
 @property(retain) NSString * tzid;
 
 
+- (id)description;
 - (id)components;
 - (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3 hour:(int)arg4 minute:(int)arg5 second:(int)arg6 timeZone:(id)arg7;
-- (id)description;
 - (void)setTzid:(id)arg1;
 - (BOOL)hasTimeComponent;
 - (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3;
-- (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3 hour:(int)arg4 minute:(int)arg5 second:(int)arg6;
 - (id)tzid;
 - (id)initWithValue:(id)arg1;
+- (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3 hour:(int)arg4 minute:(int)arg5 second:(int)arg6;
 - (BOOL)hasFloatingTimeZone;
 
 @end

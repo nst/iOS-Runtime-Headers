@@ -6,10 +6,10 @@
 }
 
 
-- (id)initForReadOnlyFetchWithExpression:(id)arg1;
 - (BOOL)shouldIndex;
-- (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
+- (id)initForReadOnlyFetchWithExpression:(id)arg1;
 - (unsigned int)_sqlTypeForAttributeType:(unsigned int)arg1 flags:(unsigned int)arg2;
+- (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)attributeDescription;
 
 @end

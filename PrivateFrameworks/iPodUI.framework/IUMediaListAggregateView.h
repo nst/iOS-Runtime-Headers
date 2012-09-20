@@ -9,7 +9,7 @@
     IUMediaListAggregateViewConfiguration *_configuration;
     IUReflectionImageView *_artworkView;
     NSMutableArray *_configurationSubviews;
-    unsigned int _needsViewsLoaded : 1;
+    BOOL _needsViewsLoaded;
     unsigned int _drawAsDisabled : 1;
 }
 
@@ -17,17 +17,19 @@
 @property id delegate;
 
 
-- (void)dealloc;
-- (void)_reloadViews;
-- (id)delegate;
-- (void)layoutSubviews;
-- (void)setDelegate:(id)arg1;
 - (void)_reloadSubviewsForConfiguration;
 - (id)configuration;
 - (void)setConfiguration:(id)arg1;
+- (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)layoutSubviews;
+- (void)reloadData;
+- (void)_reloadViews;
 - (void)_reloadArtworkView;
 - (void)_removeSubviewsForConfiguration:(BOOL)arg1;
-- (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
+- (void)_setNeedsViewsLoaded;
 - (id)initWithConfiguration:(id)arg1;
 
 @end

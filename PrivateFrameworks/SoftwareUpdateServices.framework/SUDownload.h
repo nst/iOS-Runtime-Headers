@@ -15,15 +15,15 @@
 @property(retain) SUDownloadMetadata * metadata;
 
 
-- (void)setDescriptor:(id)arg1;
-- (id)descriptor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 - (id)progress;
 - (void)setProgress:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
+- (id)descriptor;
+- (void)setDescriptor:(id)arg1;
 
 @end

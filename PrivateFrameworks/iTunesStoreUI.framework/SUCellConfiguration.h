@@ -25,21 +25,12 @@
 @property(readonly) unsigned int numberOfLabels;
 @property BOOL isDeleteConfirmationVisible;
 
-+ (float)minimumRowHeight;
 + (id)copyDefaultContext;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
++ (float)minimumRowHeight;
 
-- (void)dealloc;
 - (id)representedObject;
 - (void)setRepresentedObject:(id)arg1;
-- (struct CGSize { float x1; float x2; })layoutSize;
-- (void)setNeedsDisplay:(BOOL)arg1;
-- (id)context;
-- (void)setContext:(id)arg1;
-- (BOOL)needsDisplay;
-- (void)setView:(id)arg1;
-- (id)view;
-- (void)reloadData;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForAccessoryViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIsDeleteConfirmationVisible:(BOOL)arg1;
 - (BOOL)isDeleteConfirmationVisible;
@@ -57,5 +48,14 @@
 - (void)drawBackgroundWithModifiers:(unsigned int)arg1;
 - (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)indexOfLabelForPurchaseAnimation;
+- (void)dealloc;
+- (struct CGSize { float x1; float x2; })layoutSize;
+- (void)setNeedsDisplay:(BOOL)arg1;
+- (void)setContext:(id)arg1;
+- (BOOL)needsDisplay;
+- (id)context;
+- (void)setView:(id)arg1;
+- (id)view;
+- (void)reloadData;
 
 @end

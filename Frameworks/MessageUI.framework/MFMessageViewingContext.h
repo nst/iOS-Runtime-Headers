@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class ActivityMonitor, NSObject<MFMessageViewingContextDelegate>, MailMessage, NSTimer, MimePart, MessageBody, MFLock, MFError, NSArray;
+@class ActivityMonitor, NSObject<MFMessageViewingContextDelegate>, MailMessage, MimePart, MessageBody, MFLock, MFError, NSArray;
 
 @interface MFMessageViewingContext : NSObject  {
     NSObject<MFMessageViewingContextDelegate> *_delegate;
@@ -14,8 +14,6 @@
     MimePart *_loadedPart;
     NSArray *_signers;
     MFError *_secureMIMEError;
-    struct __CFDictionary { } *_progresses;
-    NSTimer *_updater;
     unsigned int _contentOffset;
     unsigned int _loadIncrement;
     unsigned int _loadedFullData : 1;
@@ -27,76 +25,75 @@
     unsigned int _isEditableMessage : 1;
 }
 
+@property(readonly) MailMessage * message;
+@property(readonly) MessageBody * messageBody;
+@property(readonly) ActivityMonitor * loadTask;
+@property(readonly) MimePart * loadedPart;
+@property(readonly) NSArray * signers;
+@property(readonly) MFError * secureMimeError;
 @property(readonly) BOOL hasLoaded;
 @property(readonly) BOOL isPartial;
 @property(readonly) BOOL failedToLoad;
 @property(readonly) id content;
+@property(readonly) unsigned int contentOffset;
 @property(readonly) BOOL hasNoContent;
 @property(readonly) BOOL isMessageSigned;
 @property(readonly) BOOL isMessageEncrypted;
+@property NSObject<MFMessageViewingContextDelegate> * delegate;
 @property BOOL isOutgoingMessage;
 @property BOOL isDraftMessage;
 @property BOOL isEditableMessage;
-@property NSObject<MFMessageViewingContextDelegate> * delegate;
-@property(readonly) unsigned int contentOffset;
-@property(readonly) MFError * secureMimeError;
-@property(readonly) NSArray * signers;
-@property(readonly) MimePart * loadedPart;
-@property(readonly) ActivityMonitor * loadTask;
-@property(readonly) MessageBody * messageBody;
-@property(readonly) MailMessage * message;
 
 + (unsigned int)nextOffsetForOffset:(unsigned int)arg1 totalLength:(unsigned int)arg2 requestedAmount:(unsigned int)arg3;
++ (BOOL)isAttachmentTooLarge:(id)arg1;
 
-- (id)signers;
-- (void)_setSigners:(id)arg1;
-- (id)attachments;
-- (id)messageBody;
-- (void)unload;
-- (BOOL)isPartial;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
-- (id)initWithMessage:(id)arg1;
-- (id)uniqueID;
-- (BOOL)hasNoContent;
-- (BOOL)isMessageSigned;
-- (BOOL)isMessageEncrypted;
-- (BOOL)isOutgoingMessage;
-- (void)setIsOutgoingMessage:(BOOL)arg1;
-- (BOOL)isDraftMessage;
-- (void)setIsDraftMessage:(BOOL)arg1;
-- (BOOL)isEditableMessage;
-- (void)setIsEditableMessage:(BOOL)arg1;
-- (id)secureMimeError;
-- (unsigned int)numberOfImageAttachments;
-- (BOOL)failedToLoad;
-- (void)loadAttachment:(id)arg1 progress:(id)arg2;
-- (void)loadBestAlternative;
-- (id)loadedPart;
-- (id)loadTask;
-- (id)fileWrappersForImageAttachments;
-- (void)_notifyAttachmentComplete:(id)arg1 monitor:(id)arg2;
-- (void)_notifyCompletelyComplete;
-- (void)cancelLoad;
-- (void)_setContent:(id)arg1;
-- (void)_setMessageBody:(id)arg1;
-- (void)_notifyInitialLoadComplete;
-- (void)_notifyFullMessageLoadFailed;
-- (void)_setLoadedPart:(id)arg1;
-- (void)_setSecureMIMEError:(id)arg1;
-- (void)loadAsPlainText:(BOOL)arg1 asHTML:(BOOL)arg2 downloadIfNecessary:(BOOL)arg3;
-- (void)_loadAttachments:(id)arg1;
-- (void)loadFull;
-- (void)setLoadTask:(id)arg1;
-- (void)loadWithPriority:(int)arg1;
-- (BOOL)hasLoaded;
-- (void)loadMore;
 - (id)message;
 - (void)_setContentOffset:(unsigned int)arg1;
 - (void)load;
 - (id)content;
 - (unsigned int)contentOffset;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)_updateProgress:(id)arg1;
+- (id)loadedPart;
+- (id)loadTask;
+- (void)loadBestAlternative;
+- (BOOL)failedToLoad;
+- (id)fileWrappersForImageAttachments;
+- (id)saveableAttachments;
+- (id)secureMimeError;
+- (void)setIsEditableMessage:(BOOL)arg1;
+- (BOOL)isEditableMessage;
+- (void)setIsDraftMessage:(BOOL)arg1;
+- (BOOL)isDraftMessage;
+- (void)setIsOutgoingMessage:(BOOL)arg1;
+- (BOOL)isOutgoingMessage;
+- (BOOL)isMessageEncrypted;
+- (BOOL)isMessageSigned;
+- (BOOL)hasNoContent;
+- (void)loadWithPriority:(int)arg1;
+- (void)setLoadTask:(id)arg1;
+- (void)loadFull;
+- (void)_loadAttachments:(id)arg1;
+- (void)loadAsPlainText:(BOOL)arg1 asHTML:(BOOL)arg2 downloadIfNecessary:(BOOL)arg3;
+- (void)_setSecureMIMEError:(id)arg1;
+- (void)_setLoadedPart:(id)arg1;
+- (void)_notifyFullMessageLoadFailed;
+- (void)_notifyInitialLoadComplete;
+- (void)_setMessageBody:(id)arg1;
+- (void)_setContent:(id)arg1;
+- (void)_notifyCompletelyComplete;
+- (void)_notifyAttachmentComplete:(id)arg1 monitor:(id)arg2;
+- (void)loadMore;
+- (BOOL)hasLoaded;
+- (void)cancelLoad;
+- (void)_setSigners:(id)arg1;
+- (id)signers;
+- (BOOL)isPartial;
+- (id)attachments;
+- (id)messageBody;
+- (void)unload;
+- (id)initWithMessage:(id)arg1;
+- (id)uniqueID;
 
 @end

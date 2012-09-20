@@ -26,6 +26,12 @@
 }
 
 
+- (id)initWithBrailleDisplayManager:(id)arg1;
+- (int)handleGetValue:(id*)arg1 forKey:(int)arg2 withObject:(id)arg3 trusted:(BOOL)arg4;
+- (void)handleBrailleDriverDisconnected;
+- (void)handleBrailleDriverDidLoad;
+- (void)configurationDidChange;
+- (void)invalidate;
 - (void)dealloc;
 - (int)handleSetValue:(id)arg1 forKey:(int)arg2 trusted:(BOOL)arg3;
 - (int)handleRegisterCallbackForKey:(int)arg1 trusted:(BOOL)arg2;
@@ -41,11 +47,5 @@
 - (void)handleBrailleKeyMemorize:(id)arg1;
 - (void)handleBrailleKeyWillMemorize:(id)arg1;
 - (void)handleBrailleKeypress:(id)arg1;
-- (void)invalidate;
-- (id)initWithBrailleDisplayManager:(id)arg1;
-- (int)handleGetValue:(id*)arg1 forKey:(int)arg2 withObject:(id)arg3 trusted:(BOOL)arg4;
-- (void)handleBrailleDriverDisconnected;
-- (void)handleBrailleDriverDidLoad;
-- (void)configurationDidChange;
 
 @end

@@ -12,10 +12,10 @@
 
 
 - (void)dealloc;
+- (id)initWithPath:(id)arg1;
+- (BOOL)isValid;
 - (void)_startValidation;
 - (void)_validationCompleted:(id)arg1;
 - (void)_setupOnMainThread:(id)arg1;
-- (id)initWithPath:(id)arg1;
-- (BOOL)isValid;
 
 @end

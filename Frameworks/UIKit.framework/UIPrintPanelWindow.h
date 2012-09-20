@@ -6,5 +6,6 @@
 }
 
 
+- (BOOL)_affectsTintView;
 
 @end

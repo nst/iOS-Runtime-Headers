@@ -2,37 +2,64 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString, <MFLabelledAtomListDelegate>, NSMutableArray, UITextLabel;
+@class UILabel, NSString, <MFLabelledAtomListDelegate>, NSMutableArray, NSDictionary;
 
 @interface MFLabelledAtomList : UIView <MFPassthroughViewProvider, MFAddressAtomDelegate> {
     NSMutableArray *_addressAtoms;
-    UITextLabel *_label;
+    UILabel *_label;
     NSString *_title;
+    UILabel *_captionLabel;
     <MFLabelledAtomListDelegate> *_delegate;
+    NSDictionary *_recipients;
     float _firstLineWidth;
+    BOOL _usePadDisplayStyle;
     unsigned int _needsReflow : 1;
     unsigned int _isChangingFrame : 1;
+    void *_addressBook;
+    BOOL _labelVisible;
+    BOOL _primary;
 }
 
+@property BOOL usePadDisplayStyle;
+@property(getter=isLabelVisible) BOOL labelVisible;
+@property(getter=isCaptionVisible) BOOL captionVisible;
+@property BOOL primary;
+@property(retain) NSDictionary * recipients;
 
+
+- (void)setPrimary:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)dealloc;
-- (void)_reflow;
-- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6 style:(int)arg7;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
-- (id)atomDisplayStrings;
-- (void)setAtomAlpha:(float)arg1;
-- (id)labelText;
-- (void)setFirstLineWidth:(float)arg1;
-- (void)setAddressAtomTarget:(id)arg1 action:(SEL)arg2;
-- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6;
-- (id)initWithLabel:(id)arg1 totalWidth:(float)arg2 firstLineWidth:(float)arg3 addresses:(id)arg4 arePhoneNumbers:(id)arg5;
-- (id)addressAtoms;
-- (void)_setNeedsReflow;
-- (void)addressAtom:(id)arg1 displayStringDidChange:(id)arg2;
 - (id)passthroughViews;
 - (id)title;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setOpaque:(BOOL)arg1;
+- (void)setUsePadDisplayStyle:(BOOL)arg1;
+- (void)crossFadeLabelVisibility:(BOOL)arg1 animationDuration:(double)arg2;
+- (id)addressAtoms;
+- (void)updateAtomsForVIP;
+- (void)setCaptionWithToRecipients:(id)arg1 ccRecipients:(id)arg2 bccRecipients:(id)arg3 withReceivingEmailAddresses:(id)arg4;
+- (void)setCaptionVisible:(BOOL)arg1;
+- (void)setLabelVisible:(BOOL)arg1;
+- (void)_createCaptionLabelIfNecessary;
+- (BOOL)primary;
+- (BOOL)isLabelVisible;
+- (void)_setNeedsReflow;
+- (void)_updateCaptionText;
+- (BOOL)isCaptionVisible;
+- (void)setFirstLineWidth:(float)arg1 reflow:(BOOL)arg2;
+- (void)addressBookDidChange:(id)arg1;
+- (void)addressAtom:(id)arg1 displayStringDidChange:(id)arg2;
+- (BOOL)usePadDisplayStyle;
+- (void)setRecipients:(id)arg1;
+- (void)_reflow;
+- (void)setAddressAtomTarget:(id)arg1 action:(SEL)arg2;
+- (void)setFirstLineWidth:(float)arg1;
+- (void)setAtomAlpha:(float)arg1;
+- (id)atomDisplayStrings;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
+- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6 style:(int)arg7 addressBook:(void*)arg8 completionBlock:(id)arg9;
+- (id)recipients;
+- (id)labelText;
 
 @end

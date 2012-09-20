@@ -10,9 +10,9 @@
 
 
 - (void)dealloc;
-- (Class)viewFactory;
 - (id)initWithPath:(id)arg1;
 - (BOOL)load;
 - (id)bundle;
+- (Class)viewFactory;
 
 @end

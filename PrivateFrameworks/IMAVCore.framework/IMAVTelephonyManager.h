@@ -18,17 +18,13 @@
 + (id)sharedInstance;
 + (id)numberToDialForNumber:(id)arg1 dialAssist:(BOOL*)arg2;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (unsigned int)callState;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
 - (void)stopWatchingForCTRequests;
 - (void)_disconnectCSCallWithID:(id)arg1;
 - (void)_handleCTServiceRequestName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2 contextInfo:(void*)arg3;
-- (BOOL)_reconnectCTServerConnectionIfNecessary;
 - (BOOL)_wantsBreakBeforeMake;
-- (BOOL)_disconnectCTServerConnection;
 - (void)notifyCallEndedForChat:(id)arg1;
 - (void)notifyCallConnectedForChat:(id)arg1;
 - (void)notifyCallConnectingForChat:(id)arg1;
@@ -36,6 +32,8 @@
 - (void)_setCallRef:(struct __CTCall { }*)arg1 forChat:(id)arg2;
 - (void)_setCurrentCallStatus:(int)arg1 forChat:(id)arg2;
 - (void)notifyCallStartedForChat:(id)arg1;
+- (BOOL)_reconnectCTServerConnectionIfNecessary;
+- (BOOL)_disconnectCTServerConnection;
 - (void)_hangUpCall:(struct __CTCall { }*)arg1;
 - (void)_answerCall:(struct __CTCall { }*)arg1;
 - (void)_dialRequested:(struct __CFDictionary { }*)arg1;
@@ -48,7 +46,7 @@
 - (void)_chatStateChanged:(id)arg1;
 - (void)startWatchingForCTRequests;
 - (void)_handleCallEvent:(id)arg1;
-- (BOOL)_isOnCallToID:(id)arg1;
 - (BOOL)_breakCSCallsIfNecessary;
+- (BOOL)_isOnCallToID:(id)arg1;
 
 @end

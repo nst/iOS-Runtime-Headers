@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppStoreUI.framework/AppStoreUI
  */
 
-@class UIImage, UIColor, NSMutableArray, ASApplicationPageCell, UILabel, SUReviewsButton, SUGradientButton, UIView, ASApplicationPageInfoListingView, SUItem, ASApplicationPageHeaderView, ASScreenshotsViewController;
+@class UIImage, UIColor, NSMutableArray, SUClientInterface, ASApplicationPageCell, UILabel, SUReviewsButton, SUGradientButton, UIView, ASApplicationPageInfoListingView, SUItem, ASApplicationPageHeaderView, ASScreenshotsViewController;
 
 @interface ASApplicationPageView : UIView  {
     id _target;
@@ -21,39 +21,41 @@
     ASScreenshotsViewController *_screenshotsController;
     SUReviewsButton *_reviewsButton;
     SUGradientButton *_reportAProblemButton;
-    SUGradientButton *_tellAFriendButton;
+    SUGradientButton *_shareButton;
     ASApplicationPageInfoListingView *_infoListingView;
     NSMutableArray *_userAgreementCells;
+    SUClientInterface *_clientInterface;
 }
 
 @property(retain) UIImage * applicationImage;
 @property(retain) UIColor * bottomBorderColor;
+@property(retain) SUClientInterface * clientInterface;
 @property(retain) UIImage * contentRatingImage;
 @property(readonly) UIView * screenshotsView;
 
 
-- (void)setTarget:(id)arg1;
-- (void)dealloc;
 - (void)reloadView;
-- (void)sizeToFit;
-- (void)layoutSubviews;
-- (void)setBackgroundColor:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_reloadHeaderView;
+- (void)_reloadButtons;
+- (id)bottomBorderColor;
+- (void)setBottomBorderColor:(id)arg1;
+- (void)setItem:(id)arg1;
+- (void)setClientInterface:(id)arg1;
+- (id)clientInterface;
 - (id)contentRatingImage;
 - (id)applicationImage;
 - (void)clearSelectionWithFade:(BOOL)arg1;
 - (void)setApplicationImage:(id)arg1;
 - (id)screenshotsView;
 - (id)_newCellForLicenseLink:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)_tellAFriendAction:(id)arg1;
+- (void)_shareAction:(id)arg1;
 - (void)_reviewsAction:(id)arg1;
 - (void)_reportAProblemAction:(id)arg1;
 - (void)_moreInfoCellAction:(id)arg1;
 - (id)_newGradientButtonWithTitle:(id)arg1 action:(SEL)arg2;
 - (void)_giftButtonAction:(id)arg1;
 - (BOOL)_shouldShowNewsstandWhatsNew;
-- (void)_reloadTellAFriendButton;
+- (void)_reloadShareButton;
 - (void)_reloadReviewsButton;
 - (void)_reloadReportAProblemButton;
 - (void)_reloadGiftButton;
@@ -65,10 +67,12 @@
 - (void)_reloadNewsstandWhatsNew;
 - (void)_reloadMoreInfoView;
 - (void)setContentRatingImage:(id)arg1;
-- (void)_reloadHeaderView;
-- (void)_reloadButtons;
-- (id)bottomBorderColor;
-- (void)setBottomBorderColor:(id)arg1;
-- (void)setItem:(id)arg1;
+- (void)setTarget:(id)arg1;
+- (void)dealloc;
+- (void)sizeToFit;
+- (void)layoutSubviews;
+- (void)setBackgroundColor:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

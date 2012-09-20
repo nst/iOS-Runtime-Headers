@@ -11,7 +11,7 @@
 @property(copy) NSArray * itemIDs;
 
 
-- (id)itemIDs;
 - (void)setItemIDs:(id)arg1;
+- (id)itemIDs;
 
 @end

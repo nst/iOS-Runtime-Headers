@@ -21,9 +21,25 @@
     BOOL _watchingOrientationChanges;
 }
 
++ (id)backgroundPanoOnPressedImageName;
++ (id)backgroundPanoOnImageName;
++ (id)backgroundPanoOffPressedImageName;
++ (id)backgroundPanoOffImageName;
++ (id)backgroundVideoPressedImageName;
++ (id)backgroundVideoImageName;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitRectExtension;
++ (id)videoOnIconName;
++ (id)videoOffIconName;
++ (id)photoIconLandscapeName;
++ (id)photoIconPortraitName;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundResizableEdgeInsets;
++ (id)defaultIconName;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
++ (id)backgroundPressedImageName;
++ (id)backgroundImageName;
 
-- (void)dealloc;
 - (void)_deviceOrientationChanged:(id)arg1;
+- (void)dealloc;
 - (id)initWithDefaultSize;
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;

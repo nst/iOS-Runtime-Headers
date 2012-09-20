@@ -8,21 +8,24 @@
 }
 
 @property(copy) NSData * activationToken;
+@property(copy) NSString * connectionType;
 @property(copy) NSString * language;
 @property(copy) NSData * validationData;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)createAssistant;
 + (id)createAssistantWithDictionary:(id)arg1 context:(id)arg2;
++ (id)createAssistant;
 
+- (void)setValidationData:(id)arg1;
+- (id)validationData;
 - (id)groupIdentifier;
 - (void)setLanguage:(id)arg1;
 - (id)language;
-- (id)activationToken;
+- (void)setConnectionType:(id)arg1;
+- (id)connectionType;
 - (void)setActivationToken:(id)arg1;
+- (id)activationToken;
 - (id)encodedClassName;
-- (void)setValidationData:(id)arg1;
-- (id)validationData;
 
 @end

@@ -10,8 +10,8 @@
 
 + (id)sharedInstance;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (void)_dumpOutAllIMHandles;
 - (void)imHandleInfoChanged:(id)arg1;
 - (void)setNameStyle:(int)arg1;
@@ -27,16 +27,17 @@
 - (void)_accountsChanged:(id)arg1;
 - (id)allIMHandles;
 - (id)siblingsForIMHandle:(id)arg1;
+- (id)_chatSiblingsForHandle:(id)arg1;
+- (id)_existingChatSiblingsForHandle:(id)arg1;
 - (id)_accountSiblingsForHandle:(id)arg1;
 - (id)_existingAccountSiblingsForHandle:(id)arg1;
 - (void)reassessIMHandleForUniqueName:(id)arg1;
 - (int)nameStyle;
+- (void)_clearChatSiblingsForGUID:(id)arg1;
 - (void)_clearAccountSiblingsForGUID:(id)arg1;
 - (void)unregisterIMHandle:(id)arg1;
 - (void)registerIMHandle:(id)arg1;
 - (void)clearSiblingCacheForIMHandle:(id)arg1;
 - (void)_dumpOutAllIMHandlesForAccount:(id)arg1;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
 
 @end

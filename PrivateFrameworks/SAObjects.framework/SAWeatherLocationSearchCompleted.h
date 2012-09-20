@@ -8,17 +8,17 @@
 }
 
 @property(copy) NSArray * weatherLocations;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)locationSearchCompleted;
-+ (id)locationSearchCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)locationSearchCompletedWithWeatherLocations:(id)arg1;
++ (id)locationSearchCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)locationSearchCompleted;
 
 - (id)groupIdentifier;
 - (id)weatherLocations;
-- (id)initWithWeatherLocations:(id)arg1;
 - (void)setWeatherLocations:(id)arg1;
+- (id)initWithWeatherLocations:(id)arg1;
 - (id)encodedClassName;
 
 @end

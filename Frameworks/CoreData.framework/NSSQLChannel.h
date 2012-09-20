@@ -14,23 +14,23 @@
 
 
 - (void)dealloc;
-- (id)connection;
-- (void)finalize;
-- (void)setCurrentContext:(id)arg1;
-- (id)currentContext;
-- (id)_propertiesToFetch;
-- (void)selectRowsWithFetchRequest:(id)arg1;
-- (void)selectRowsWithStatement:(id)arg1;
-- (void)selectRowsWithCachedStatement:(id)arg1;
-- (BOOL)selectCountWithFetchRequest:(id)arg1;
-- (void)_openChannel;
-- (void)_closeChannel;
 - (void)_setCurrentEntityAndRelationshipWithFetchRequest:(id)arg1;
-- (void)endFetch;
-- (BOOL)isFetchInProgress;
-- (void)endFetchAndRecycleStatement:(BOOL)arg1;
+- (void)_closeChannel;
+- (void)_openChannel;
+- (BOOL)selectCountWithFetchRequest:(id)arg1;
+- (void)selectRowsWithCachedStatement:(id)arg1;
+- (void)selectRowsWithStatement:(id)arg1;
+- (void)selectRowsWithFetchRequest:(id)arg1;
+- (id)_propertiesToFetch;
 - (void)setCurrentEntity:(id)arg1;
+- (void)endFetchAndRecycleStatement:(BOOL)arg1;
+- (BOOL)isFetchInProgress;
+- (void)endFetch;
 - (id)initWithSQLCore:(id)arg1;
 - (id)sqlCore;
+- (id)connection;
+- (void)finalize;
+- (id)currentContext;
+- (void)setCurrentContext:(id)arg1;
 
 @end

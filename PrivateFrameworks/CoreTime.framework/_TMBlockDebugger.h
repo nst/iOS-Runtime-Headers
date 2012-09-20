@@ -10,10 +10,10 @@
 
 
 - (id)retain;
+- (void)dealloc;
 - (oneway void)release;
 - (id)init;
-- (void)dealloc;
-- (id)initWithName:(id)arg1;
 - (void)use;
+- (id)initWithName:(id)arg1;
 
 @end

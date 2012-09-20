@@ -13,16 +13,16 @@
 }
 
 @property(readonly) <AccountSettingsUIPlugin> * plugin;
-@property(readonly) int commonSpecifierMode;
-@property(readonly) NSSet * accountTypes;
 @property(readonly) NSString * path;
+@property(readonly) NSSet * accountTypes;
+@property(readonly) int commonSpecifierMode;
 
 
-- (void)dealloc;
-- (id)initWithPath:(id)arg1 parentController:(id)arg2 commonSpecifierMode:(int)arg3 accountTypes:(id)arg4;
-- (id)plugin;
-- (id)accountTypes;
-- (int)commonSpecifierMode;
 - (id)path;
+- (void)dealloc;
+- (int)commonSpecifierMode;
+- (id)accountTypes;
+- (id)plugin;
+- (id)initWithPath:(id)arg1 parentController:(id)arg2 commonSpecifierMode:(int)arg3 accountTypes:(id)arg4;
 
 @end

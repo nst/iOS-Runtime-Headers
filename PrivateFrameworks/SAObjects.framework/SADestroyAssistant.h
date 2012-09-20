@@ -9,17 +9,17 @@
 
 @property(copy) NSString * assistantId;
 @property(copy) NSString * speechId;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)destroyAssistant;
 + (id)destroyAssistantWithDictionary:(id)arg1 context:(id)arg2;
++ (id)destroyAssistant;
 
 - (id)groupIdentifier;
-- (id)assistantId;
-- (void)setAssistantId:(id)arg1;
-- (id)speechId;
 - (void)setSpeechId:(id)arg1;
+- (id)speechId;
+- (void)setAssistantId:(id)arg1;
+- (id)assistantId;
 - (id)encodedClassName;
 
 @end

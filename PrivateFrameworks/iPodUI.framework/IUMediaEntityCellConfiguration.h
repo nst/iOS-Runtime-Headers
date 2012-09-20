@@ -2,38 +2,57 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIImage, MPMediaEntity, MPImageCacheRequest;
+@class MPImageCacheRequest, UIImage, MPMediaEntity, MPMediaDownloadObserver, MPDownloadProgressIndicator;
 
 @interface IUMediaEntityCellConfiguration : IUArrayCellConfiguration  {
     MPImageCacheRequest *_artworkImageRequest;
     UIImage *_artwork;
     MPMediaEntity *_entity;
     BOOL _isGenius;
+    BOOL _isSelectable;
+    BOOL _isDisabled;
+    MPMediaDownloadObserver *_downloadObserver;
+    MPDownloadProgressIndicator *_progressIndicator;
+    int _downloadStatus;
+    long long _downloadPersistentID;
 }
 
 @property BOOL isGenius;
+@property BOOL isSelectable;
+@property BOOL isDisabled;
 @property(retain) UIImage * artwork;
 @property(readonly) MPMediaEntity * entity;
+@property(retain) MPMediaDownloadObserver * downloadObserver;
+@property(retain) MPDownloadProgressIndicator * progressIndicator;
 @property(readonly) struct CGSize { float x1; float x2; } artworkSize;
-@property(readonly) BOOL displaysArtworkFromReprentativeItem;
+@property(readonly) BOOL displaysArtworkFromRepresentativeItem;
 
 
-- (id)description;
-- (void)dealloc;
+- (BOOL)isSelectable;
+- (void)setProgressIndicator:(id)arg1;
+- (id)progressIndicator;
+- (struct CGSize { float x1; float x2; })artworkSize;
+- (void)reloadImages;
 - (id)artwork;
 - (void)setArtwork:(id)arg1;
 - (void)setArtworkImageRequest:(id)arg1 artworkLoadCompletionHandler:(id)arg2;
 - (id)mediaItem;
+- (id)entity;
+- (id)description;
+- (void)dealloc;
 - (void)reloadData;
-- (struct CGSize { float x1; float x2; })artworkSize;
-- (void)reloadStrings;
-- (void)reloadImages;
+- (void)setDownloadObserver:(id)arg1;
+- (id)downloadObserver;
 - (BOOL)isGenius;
-- (BOOL)displaysArtworkFromReprentativeItem;
+- (void)setIsDisabled:(BOOL)arg1;
+- (void)setIsSelectable:(BOOL)arg1;
+- (BOOL)displaysArtworkFromRepresentativeItem;
 - (void)setIsGenius:(BOOL)arg1;
+- (id)displayProperties;
 - (id)downloadableAsset;
 - (id)newImageRequestWithMediaEntity:(id)arg1;
 - (void)configureForEntity:(id)arg1 query:(id)arg2 entityIndex:(unsigned int)arg3 entityCount:(unsigned int)arg4;
-- (id)entity;
+- (void)reloadStringsWithProperties:(id)arg1;
+- (BOOL)isDisabled;
 
 @end

@@ -5,9 +5,13 @@
 @interface _MFDAMessageStoreSetFlagsRequest : DAMailboxSetFlagsRequest <MFDAMailAccountRequest> {
 }
 
+@property(readonly) BOOL shouldSend;
+@property(readonly) BOOL isUserRequested;
 
-- (id)deferredOperation;
+
 - (BOOL)shouldSend;
+- (id)deferredOperation;
+- (BOOL)isUserRequested;
 - (unsigned long long)generationNumber;
 
 @end

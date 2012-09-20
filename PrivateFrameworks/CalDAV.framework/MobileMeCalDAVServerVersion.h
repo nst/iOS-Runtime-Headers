@@ -6,7 +6,7 @@
 }
 
 
-- (id)init;
 - (id)type;
+- (id)init;
 
 @end

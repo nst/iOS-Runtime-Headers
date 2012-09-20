@@ -8,7 +8,7 @@
     NSString *mPath;
     int mSharedFd;
     long long mFileLength;
-    unsigned int mFileType;
+    unsigned long mFileType;
     BOOL mHasFileAttributes;
     long long mPlaintextDataLength;
     SFUCryptoKey *mCryptoKey;
@@ -16,24 +16,24 @@
 }
 
 
+- (id)path;
 - (id)description;
 - (void)dealloc;
 - (unsigned long)fileType;
 - (void)setFileType:(unsigned long)arg1;
 - (id)initWithPath:(id)arg1;
-- (id)path;
-- (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2;
-- (id)initWithCopyOfData:(id)arg1 path:(id)arg2;
 - (void)deleteFileWhenDone;
-- (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2 cryptoKey:(id)arg3 dataLength:(long long)arg4;
-- (id)initWithCopyOfData:(id)arg1 path:(id)arg2 cryptoKey:(id)arg3;
-- (BOOL)isCryptoKeyIdenticalToKey:(id)arg1;
-- (id)initWithPath:(id)arg1 cryptoKey:(id)arg2 dataLength:(long long)arg3;
+- (id)initWithCopyOfData:(id)arg1 path:(id)arg2;
+- (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2;
 - (void)readFileAttributes;
-- (long long)encodedLength;
+- (id)initWithPath:(id)arg1 cryptoKey:(id)arg2 dataLength:(long long)arg3;
+- (BOOL)isCryptoKeyIdenticalToKey:(id)arg1;
+- (id)initWithCopyOfData:(id)arg1 path:(id)arg2 cryptoKey:(id)arg3;
+- (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2 cryptoKey:(id)arg3 dataLength:(long long)arg4;
 - (BOOL)isEncrypted;
-- (BOOL)isReadable;
+- (long long)encodedLength;
 - (BOOL)hasSameLocationAs:(id)arg1;
+- (BOOL)isReadable;
 - (id)inputStream;
 - (long long)dataLength;
 

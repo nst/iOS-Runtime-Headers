@@ -11,9 +11,9 @@
 
 + (id)sharedInstance;
 
-- (id)init;
 - (void)dealloc;
-- (void)_mainThreadPopulateDictForMimeType:(id)arg1;
+- (id)init;
 - (int)dictValueForMimeType:(id)arg1;
+- (void)_mainThreadPopulateDictForMimeType:(id)arg1;
 
 @end

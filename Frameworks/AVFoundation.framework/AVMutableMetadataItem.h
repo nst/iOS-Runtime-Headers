@@ -18,11 +18,9 @@
 
 + (id)metadataItem;
 
-- (void)setExtraAttributes:(id)arg1;
-- (id)extraAttributes;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setKeySpace:(id)arg1;
 - (id)keySpace;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)extraAttributes;
 - (void)setKey:(id)arg1;
 - (id)key;
 - (id)locale;
@@ -33,5 +31,7 @@
 - (void)setValue:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)setDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setKeySpace:(id)arg1;
+- (void)setExtraAttributes:(id)arg1;
 
 @end

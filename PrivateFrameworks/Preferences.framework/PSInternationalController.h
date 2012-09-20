@@ -12,38 +12,38 @@
     NSArray *_voiceControlValues;
 }
 
++ (id)capitalizeFirstPartOfCountry:(id)arg1;
++ (id)voiceControlLanguageData;
 + (void)setLanguage:(id)arg1;
 + (void)setLocale:(id)arg1;
-+ (id)voiceControlLanguageData;
-+ (id)capitalizeFirstPartOfCountry:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (id)specifiers;
 - (void)reloadSpecifiers;
+- (id)specifiers;
+- (id)calendar:(id)arg1;
+- (void)setCalendar:(id)arg1 specifier:(id)arg2;
+- (id)voiceControlLanguage:(id)arg1;
+- (void)setVoiceControlLanguage:(id)arg1 specifier:(id)arg2;
+- (id)localizedLanguage:(id)arg1;
+- (void)showLanguageSheet:(id)arg1;
+- (void)_initVoiceControlData;
+- (void)_loadLocaleIfNeeded;
+- (id)voiceControlShortTitles;
+- (id)voiceControlTitles:(id)arg1;
+- (id)voiceControlValues:(id)arg1;
+- (id)formattedPhoneNumber:(id)arg1;
+- (id)formattedTime:(id)arg1;
+- (id)formattedDate:(id)arg1;
+- (id)defaultCalendarForLocale:(id)arg1;
+- (id)localizedComponent:(id)arg1 forDictionary:(id)arg2;
+- (void)reloadLocale;
+- (void)localeChangedAction;
+- (id)locale:(id)arg1;
+- (void)setLocale:(id)arg1 specifier:(id)arg2;
+- (id)language:(id)arg1;
+- (void)setLanguage:(id)arg1 specifier:(id)arg2;
+- (void)dealloc;
+- (id)init;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)showLanguageSheet:(id)arg1;
-- (id)localizedLanguage:(id)arg1;
-- (void)setVoiceControlLanguage:(id)arg1 specifier:(id)arg2;
-- (id)voiceControlLanguage:(id)arg1;
-- (void)setCalendar:(id)arg1 specifier:(id)arg2;
-- (id)calendar:(id)arg1;
-- (void)reloadLocale;
-- (id)localizedComponent:(id)arg1 forDictionary:(id)arg2;
-- (id)defaultCalendarForLocale:(id)arg1;
-- (id)formattedDate:(id)arg1;
-- (id)formattedTime:(id)arg1;
-- (id)formattedPhoneNumber:(id)arg1;
-- (id)voiceControlValues:(id)arg1;
-- (id)voiceControlTitles:(id)arg1;
-- (id)voiceControlShortTitles;
-- (void)_loadLocaleIfNeeded;
-- (void)_initVoiceControlData;
-- (void)localeChangedAction;
-- (void)setLocale:(id)arg1 specifier:(id)arg2;
-- (id)locale:(id)arg1;
-- (void)setLanguage:(id)arg1 specifier:(id)arg2;
-- (id)language:(id)arg1;
 
 @end

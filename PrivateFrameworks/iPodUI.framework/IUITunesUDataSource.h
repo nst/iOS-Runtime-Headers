@@ -12,5 +12,6 @@
 - (void)setQueries:(id)arg1;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (id)viewControllerContextForMediaQuery:(id)arg1;
+- (int)filteredMediaTypes;
 
 @end

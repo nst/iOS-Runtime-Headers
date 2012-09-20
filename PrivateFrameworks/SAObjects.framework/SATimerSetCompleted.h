@@ -7,11 +7,11 @@
 @interface SATimerSetCompleted : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)setCompleted;
 + (id)setCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)setCompleted;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

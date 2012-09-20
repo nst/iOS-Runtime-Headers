@@ -6,6 +6,7 @@
 
 @interface MMCSController : NSObject  {
     int _connectionBehavior;
+    id _powerAssertion;
     struct __MMCSEngine { } *_engine;
     struct __CFURL { } *_chunkStoreURL;
     unsigned long long _currentItemID;
@@ -33,15 +34,16 @@
 - (BOOL)unregisterFiles:(id)arg1;
 - (BOOL)registerFiles:(id)arg1;
 - (id)_registeredTransferForItemID:(unsigned long long)arg1;
-- (void)_processCompletedItem:(id)arg1;
+- (void)_processCompletedItem:(id)arg1 error:(id)arg2;
 - (BOOL)_putTransfers:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 token:(id)arg4 error:(id*)arg5;
 - (void)_setScheduledTransfers:(id)arg1 block:(id)arg2;
 - (BOOL)_getTransfers:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 token:(id)arg4 error:(id*)arg5;
 - (BOOL)_unregisterTransfers:(id)arg1;
 - (BOOL)_registerTransfers:(id)arg1;
-- (id)_options;
 - (struct __MMCSEngine { }*)_engine;
 - (id)_registeredTransferForGUID:(id)arg1;
 - (int)connectionBehavior;
+- (void)_checkWiFiAssertion;
+- (id)_options;
 
 @end

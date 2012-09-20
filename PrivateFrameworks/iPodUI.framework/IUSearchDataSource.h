@@ -19,29 +19,34 @@
     NSNumberFormatter *_resultCountNumberFormatter;
     NSString *_searchIdentifier;
     BOOL _hasNoResultsForSearchString;
+    BOOL _searchFinished;
 }
 
 @property(retain) IUMediaQueriesDataSource * dataSourceToSearch;
 @property(copy) NSString * searchString;
 @property int searchScope;
 @property(readonly) BOOL hasNoResultsForSearchString;
+@property(readonly) BOOL canContinueSearchInITunesStore;
 @property(retain) NSString * searchIdentifier;
 
 + (int)mediaEntityType;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)searchString;
 - (void)setSearchString:(id)arg1;
 - (id)title;
-- (int)searchScope;
 - (void)setSearchIdentifier:(id)arg1;
 - (id)searchIdentifier;
 - (BOOL)hasNoResultsForSearchString;
+- (int)searchScope;
 - (id)dataSourceToSearch;
 - (void)setSearchScope:(int)arg1;
 - (void)_postResultsChangedNotification:(id)arg1;
 - (id)_humanizedTitleWithResultCount:(unsigned int)arg1 searchStyle:(struct { int (*x1)(); int (*x2)(); int x3; int x4; int x5; id x6; id x7; id x8; }*)arg2;
+- (void)_continueSearchInITunesStore:(id)arg1;
+- (BOOL)canContinueSearchInITunesStore;
+- (id)copyContinueSearchInITunesStoreActionRow;
 - (void)_updateDataInBackground;
 - (void)_playlistContentsDidChangeNotification:(id)arg1;
 - (void)_searchPerformOperation:(id)arg1 didProduceQuery:(id)arg2 forSearchIdentifier:(id)arg3;
@@ -56,6 +61,6 @@
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (BOOL)shouldShowGlobalSectionHeader;
 - (void)reloadActionRows;
-- (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
+- (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
 
 @end

@@ -12,8 +12,8 @@
 
 
 - (void)setDisabled:(BOOL)arg1;
-- (BOOL)disabled;
 - (id)label;
+- (BOOL)disabled;
 - (void)setLabel:(id)arg1;
 - (id)itemTitle;
 - (void)populateCell:(id)arg1;

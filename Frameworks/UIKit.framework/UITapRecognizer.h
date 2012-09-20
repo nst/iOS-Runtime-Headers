@@ -36,8 +36,10 @@
 @property(readonly) NSArray * touches;
 
 
-- (id)init;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (id)init;
 - (void)setMaximumIntervalBetweenSuccessiveTaps:(double)arg1;
 - (void)setMaximumSingleTapDuration:(double)arg1;
 - (double)maximumSingleTapDuration;
@@ -46,21 +48,19 @@
 - (void)tooSlow:(id)arg1;
 - (void)clearTapTimer;
 - (float)allowableMovement;
-- (unsigned int)numberOfTouchesRequired;
 - (double)maximumIntervalBetweenSuccessiveTaps;
 - (void)_reset;
-- (unsigned int)numberOfTapsRequired;
 - (id)touches;
 - (void)setAllowableMovement:(float)arg1;
 - (void)setNumberOfTapsRequired:(unsigned int)arg1;
 - (void)setNumberOfTouchesRequired:(unsigned int)arg1;
+- (unsigned int)numberOfTapsRequired;
+- (unsigned int)numberOfTouchesRequired;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

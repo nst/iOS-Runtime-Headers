@@ -11,13 +11,13 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
 - (int)type;
+- (void)dealloc;
+- (id)init;
 - (void)setType:(int)arg1;
-- (int)presetType;
-- (void)setPresetType:(int)arg1;
-- (id)adjustments;
 - (void)addAdjustment:(id)arg1;
+- (id)adjustments;
+- (void)setPresetType:(int)arg1;
+- (int)presetType;
 
 @end

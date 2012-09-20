@@ -47,6 +47,7 @@
 - (void)setSymbols:(id)arg1;
 - (id)attributeSet:(BOOL)arg1;
 - (id)geometrySet:(BOOL)arg1;
+- (BOOL)_needsScaling;
 - (BOOL)isSameAsTree:(id)arg1;
 - (id)initWithType:(int)arg1;
 

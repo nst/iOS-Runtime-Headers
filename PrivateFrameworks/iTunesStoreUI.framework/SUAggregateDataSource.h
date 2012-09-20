@@ -14,13 +14,6 @@
 @property(readonly) NSArray * sources;
 
 
-- (void)dealloc;
-- (id)sources;
-- (int)tableViewStyle;
-- (void)setTableViewStyle:(int)arg1;
-- (int)numberOfSections;
-- (int)numberOfRowsInSection:(int)arg1;
-- (void)reloadData;
 - (id)indexPathForRowIndex:(unsigned int)arg1 inSectionIndex:(unsigned int)arg2;
 - (void)addDataSource:(id)arg1 withHeaderView:(id)arg2;
 - (id)dataSourceForIndexPath:(id)arg1;
@@ -29,12 +22,19 @@
 - (void)reloadCellContexts;
 - (BOOL)canSelectIndexPath:(id)arg1;
 - (float)cellHeightForIndexPath:(id)arg1;
-- (id)headerViewForSection:(int)arg1;
 - (BOOL)canDeleteIndexPath:(id)arg1;
 - (BOOL)canDoubleTapIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (BOOL)deleteIndexPath:(id)arg1;
 - (void)setCellReuseSource:(id)arg1;
+- (void)dealloc;
+- (int)tableViewStyle;
+- (id)headerViewForSection:(int)arg1;
+- (void)setTableViewStyle:(int)arg1;
+- (int)numberOfSections;
+- (int)numberOfRowsInSection:(int)arg1;
+- (void)reloadData;
+- (id)sources;
 
 @end

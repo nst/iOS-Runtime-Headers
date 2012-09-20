@@ -6,28 +6,29 @@
 }
 
 
-- (id)rfc822Data;
-- (id)conversationId;
-- (id)cc;
-- (int)bodySize;
-- (id)meetingRequestUUID;
-- (id)longID;
-- (int)smimeType;
-- (id)meetingRequestMetaData;
-- (BOOL)read;
-- (BOOL)readIsSet;
-- (BOOL)flaggedIsSet;
-- (BOOL)flagged;
-- (BOOL)verbIsSet;
-- (int)lastVerb;
-- (id)folderID;
-- (id)remoteID;
 - (id)subject;
-- (id)attachments;
 - (id)body;
 - (id)date;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)flagged;
+- (id)conversationId;
+- (id)rfc822Data;
+- (id)cc;
+- (BOOL)meetingRequestIsActionable;
+- (id)meetingRequestMetaData;
+- (int)smimeType;
+- (int)lastVerb;
+- (BOOL)verbIsSet;
+- (BOOL)flaggedIsSet;
+- (BOOL)readIsSet;
+- (id)longID;
+- (id)meetingRequestUUID;
+- (int)bodySize;
+- (id)folderID;
+- (id)remoteID;
+- (id)attachments;
+- (BOOL)read;
 - (id)to;
 - (id)from;
 - (id)conversationIndex;

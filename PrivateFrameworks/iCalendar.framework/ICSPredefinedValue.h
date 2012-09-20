@@ -9,9 +9,12 @@
 + (id)numberWithLong:(long)arg1;
 
 - (const char *)objCType;
-- (long)longValue;
-- (void)getValue:(void*)arg1;
 - (id)initWithLong:(long)arg1;
+- (Class)classForCoder;
+- (void)getValue:(void*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (long)longValue;
 - (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
 
 @end

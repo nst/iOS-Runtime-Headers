@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class WebPDFViewPlaceholder, NSArray, UIPDFDocument, NSMutableArray, NSObject<UIWebPDFViewDelegate>, NSString, NSURL, UIColor, UITapGestureRecognizer;
+@class NSArray, WebPDFViewPlaceholder, UIPDFDocument, NSMutableArray, NSObject<UIWebPDFViewDelegate>, NSString, NSURL, UIColor, UITapGestureRecognizer;
 
 @interface UIWebPDFView : UIView <WebPDFViewPlaceholderDelegate, UIPopoverControllerDelegate, UIGestureRecognizerDelegate> {
     NSMutableArray *_backingLayerImageViews;
@@ -25,7 +25,6 @@
     NSURL *_documentURL;
     BOOL _rotating;
     BOOL _zooming;
-    BOOL _inDidZoom;
     float _initialZoomScale;
     struct CGAffineTransform { 
         float a; 
@@ -42,16 +41,14 @@
         float y; 
     } _contentOffsetAtScrollStart;
     NSMutableArray *_pageViews;
-    struct _IndexPair { 
-        int first; 
-        int last; 
-    } _installedPageIndices;
+    NSArray *_pageMinYs;
     WebPDFViewPlaceholder *pdfPlaceHolderView;
     BOOL hidePageViewsUntilReadyToRender;
     UIColor *backgroundColorForUnRenderedContent;
     BOOL hideActivityIndicatorForUnRenderedContent;
     NSString *documentPassword;
     NSArray *pageRects;
+    BOOL readyForSnapshot;
 }
 
 @property NSObject<UIWebPDFViewDelegate> * pdfDelegate;
@@ -60,6 +57,7 @@
 @property(readonly) unsigned int totalPages;
 @property(readonly) struct CGPDFDocument { }* cgPDFDocument;
 @property(readonly) UIPDFDocument * document;
+@property BOOL readyForSnapshot;
 @property WebPDFViewPlaceholder * pdfPlaceHolderView;
 @property float initialZoomScale;
 @property(retain) UIColor * backgroundColorForUnRenderedContent;
@@ -70,10 +68,13 @@
 @property(retain) NSString * documentPassword;
 @property(readonly) float documentScale;
 @property(retain) NSArray * pageRects;
+@property(retain) NSArray * pageMinYs;
 
 + (void)setAsPDFDocRepAndView;
 
 - (void)dealloc;
+- (id)pageMinYs;
+- (BOOL)readyForSnapshot;
 - (void)setHideActivityIndicatorForUnRenderedContent:(BOOL)arg1;
 - (BOOL)hideActivityIndicatorForUnRenderedContent;
 - (id)backgroundColorForUnRenderedContent;
@@ -87,40 +88,47 @@
 - (float)initialZoomScale;
 - (id)pdfDelegate;
 - (id)documentURL;
-- (void)didTouch:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withAnnotationDictionary:(struct CGPDFDictionary { }*)arg3;
-- (void)resetZoom:(id)arg1;
-- (void)zoom:(id)arg1 to:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 kind:(int)arg3;
+- (id)imageForContactRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 onPageInViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 destinationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)annotationIsBeingPressed:(id)arg1 annotation:(id)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
+- (void)annotationWasTouched:(id)arg1 annotation:(id)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
+- (void)zoom:(id)arg1 to:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 kind:(int)arg4;
 - (BOOL)_tryToUnlockDocumentWithPassword:(id)arg1;
 - (void)snapshotComplete;
-- (void)prepareForSnapshot;
+- (void)prepareForSnapshot:(BOOL)arg1;
 - (id)_addPageAtIndex:(unsigned int)arg1;
 - (id)initWithWebPDFViewPlaceholder:(id)arg1;
 - (BOOL)_hasPageRects;
 - (void)setPdfDelegate:(id)arg1;
 - (void)setIgnoreContentOffsetChanges:(int)arg1;
-- (struct CGPDFDocument { }*)cgPDFDocument;
 - (void)didCompleteLayout;
 - (void)viewWillClose;
+- (struct CGPDFDocument { }*)cgPDFDocument;
+- (unsigned int)_pageNumberForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_pageWithSelection;
+- (void)didLongPress:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToPageIndex:(unsigned int)arg4;
+- (void)didLongPress:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToURL:(id)arg4;
+- (void)didTouch:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToPageIndex:(unsigned int)arg4;
+- (void)didTouch:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToURL:(id)arg4;
+- (void)resetZoom:(id)arg1;
 - (BOOL)_checkIfDocumentNeedsUnlock;
 - (id)documentPassword;
 - (void)_recreateUIPDFDocument;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewportBoundsInUIViewCoords;
-- (void)ensureCorrectPagesAreInstalled;
+- (void)ensureCorrectPagesAreInstalled:(BOOL)arg1;
 - (void)_scheduleRemovePageViewsNotInViewCoordsRect;
-- (void)_addSubViewsInViewCoordsBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_addSubViewsInViewCoordsBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 force:(BOOL)arg2;
 - (void)_removePageViewsNotInCurrentViewCoordsRect;
 - (void)_removePageViewsNotInViewCoordsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewCachingBoundsInUIViewCoords;
 - (id)_installViewAtIndex:(int)arg1 inFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (struct _IndexPair { int x1; int x2; })_addForwardSubViewsInDocCoordsBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withPageRects:(id)arg2 usingIndices:(struct _IndexPair { int x1; int x2; })arg3;
-- (struct _IndexPair { int x1; int x2; })_addBackwardSubViewsInDocCoordsBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withPageRects:(id)arg2 usingIndices:(struct _IndexPair { int x1; int x2; })arg3;
 - (id)viewAtIndex:(int)arg1;
+- (void)setReadyForSnapshot:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewportBoundsInUIVIewCoordsWithView:(id)arg1;
 - (id)viewportView;
 - (void)_removeBackgroundImageObserverIfNeeded:(id)arg1;
 - (void)setDocumentPassword:(id)arg1;
 - (void)setDocumentURL:(id)arg1;
+- (void)setPageMinYs:(id)arg1;
 - (void)setPageRects:(id)arg1;
 - (void)willScroll:(id)arg1;
 - (void)didZoom:(id)arg1;
@@ -133,14 +141,13 @@
 - (unsigned int)firstVisiblePageNumber;
 - (id)_selection;
 - (id)document;
+- (void)didRotate:(id)arg1;
+- (void)willRotate:(id)arg1;
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)pageRects;
 - (unsigned int)totalPages;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
-- (void)didRotate:(id)arg1;
-- (void)willRotate:(id)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)_define:(id)arg1;
 - (void)clearSelection;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;

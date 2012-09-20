@@ -17,14 +17,14 @@
 @property(retain) id context;
 
 
-- (id)initMoveRequestWithMessage:(id)arg1 fromFolder:(id)arg2 toFolder:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)message;
-- (id)context;
 - (void)setContext:(id)arg1;
+- (id)context;
+- (id)initMoveRequestWithMessage:(id)arg1 fromFolder:(id)arg2 toFolder:(id)arg3;
 - (id)toFolder;
 - (id)fromFolder;
 

@@ -14,14 +14,14 @@
 - (void)_setForeignOrderKey:(id)arg1;
 - (id)initForReadOnlyFetchWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (void)_setInverseRelationship:(id)arg1;
-- (id)relationshipDescription;
 - (id)sourceEntity;
+- (id)relationshipDescription;
 - (void)copyValuesForReadOnlyFetch:(id)arg1;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
-- (id)inverseRelationship;
 - (BOOL)isOrdered;
-- (id)destinationEntity;
-- (id)correlationTableName;
+- (id)inverseRelationship;
 - (id)foreignKey;
+- (id)correlationTableName;
+- (id)destinationEntity;
 
 @end

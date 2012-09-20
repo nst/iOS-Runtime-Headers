@@ -18,8 +18,10 @@
 
 + (void)initialize;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (id)mediaType;
+- (void)finalize;
 - (void)_figAssetReaderFailed;
 - (void)_figAssetReaderDecodeError;
 - (void)_figAssetReaderSampleBufferDidBecomeAvailableForExtractionID:(int)arg1;
@@ -41,7 +43,5 @@
 - (int)_status;
 - (struct opaqueCMSampleBuffer { }*)copyNextSampleBuffer;
 - (id)_asset;
-- (void)finalize;
-- (id)mediaType;
 
 @end

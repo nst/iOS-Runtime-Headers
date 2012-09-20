@@ -5,17 +5,17 @@
 @interface SUBannerCellConfiguration : SUItemCellConfiguration  {
 }
 
-+ (float)minimumRowHeight;
 + (id)copyDefaultContext;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
++ (float)minimumRowHeight;
 
-- (id)init;
-- (void)reloadData;
 - (struct CGSize { float x1; float x2; })_imageSizeForLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)reloadAfterArtworkLoad;
 - (id)copyImageDataProvider;
 - (void)reloadLayoutInformation;
 - (void)reloadStrings;
 - (void)reloadImages;
+- (id)init;
+- (void)reloadData;
 
 @end

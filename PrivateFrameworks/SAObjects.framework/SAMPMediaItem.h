@@ -9,6 +9,7 @@
 
 @property(copy) NSString * album;
 @property(copy) NSString * artist;
+@property(copy) NSString * composer;
 @property(copy) NSString * genre;
 @property int playCount;
 @property int rating;
@@ -20,23 +21,25 @@
 + (id)mediaItemWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
+- (void)setRating:(int)arg1;
+- (int)rating;
 - (void)setPlayCount:(int)arg1;
 - (int)playCount;
 - (id)genre;
+- (id)composer;
 - (id)artist;
+- (void)setGenre:(id)arg1;
+- (void)setAlbum:(id)arg1;
 - (id)album;
-- (void)setRating:(int)arg1;
-- (int)rating;
-- (id)sortAlbum;
-- (void)setSortAlbum:(id)arg1;
-- (id)sortArtist;
-- (void)setSortArtist:(id)arg1;
-- (int)trackNumber;
+- (void)setArtist:(id)arg1;
 - (void)setTrackNumber:(int)arg1;
+- (int)trackNumber;
+- (void)setSortArtist:(id)arg1;
+- (id)sortArtist;
+- (void)setSortAlbum:(id)arg1;
+- (id)sortAlbum;
+- (void)setComposer:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (void)setGenre:(id)arg1;
-- (void)setArtist:(id)arg1;
-- (void)setAlbum:(id)arg1;
 
 @end

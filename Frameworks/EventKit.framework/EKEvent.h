@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKCalendarDate, NSString, EKRecurrenceRule, NSDate, NSNumber, EKParticipant;
+@class EKCalendarDate, NSString, NSDate, NSNumber, EKParticipant;
 
 @interface EKEvent : EKCalendarItem  {
     EKCalendarDate *_occurrenceStartDate;
@@ -18,7 +18,6 @@
 @property(copy) NSDate * startDate;
 @property(copy) NSDate * endDate;
 @property(readonly) EKParticipant * organizer;
-@property(retain) EKRecurrenceRule * recurrenceRule;
 @property int availability;
 @property(readonly) int status;
 @property(readonly) BOOL isDetached;
@@ -32,17 +31,18 @@
 
 + (id)eventWithEventStore:(id)arg1;
 
-- (int)availability;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)rollback;
+- (int)status;
+- (void)setTimeZone:(id)arg1;
+- (double)duration;
 - (id)uniqueId;
 - (id)attachments;
-- (void)rollback;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (int)status;
-- (BOOL)occurrenceIsAllDay;
+- (id)_dateForNextOccurrence;
 - (void)revert;
 - (id)dirtyPropertiesToSkip;
 - (BOOL)canBeRespondedTo;
@@ -51,13 +51,16 @@
 - (BOOL)canDetachSingleOccurrence;
 - (int)compareStartDateWithEvent:(id)arg1;
 - (BOOL)isTentative;
-- (void)setReadState:(unsigned int)arg1;
+- (BOOL)locationChanged;
+- (BOOL)titleChanged;
+- (BOOL)timeChanged;
+- (BOOL)dateChanged;
 - (void)setResponseComment:(id)arg1;
 - (id)responseComment;
+- (int)availability;
 - (void)setRecurrenceRule:(id)arg1;
 - (id)recurrenceRule;
 - (int)attendeeCount;
-- (int)birthdayPersonID;
 - (int)_parentParticipationStatus;
 - (BOOL)needsOccurrenceCacheUpdate;
 - (id)initialEndDate;
@@ -65,24 +68,28 @@
 - (id)endCalendarDate;
 - (id)startCalendarDate;
 - (id)birthdayTitleWithAddressBook:(void*)arg1;
+- (BOOL)isAllDayDirty;
 - (BOOL)isEndDateDirty;
 - (BOOL)isStartDateDirty;
 - (BOOL)isStatusDirty;
-- (id)externalURL;
 - (BOOL)_deleteWithSpan:(int)arg1 error:(id*)arg2;
+- (BOOL)_shouldDeclineInsteadOfDelete;
 - (BOOL)_cancelWithSpan:(int)arg1 error:(id*)arg2;
 - (BOOL)_shouldCancelInsteadOfDeleteWithSpan:(int)arg1;
+- (void)_deleteThisOccurrence;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDatePinnedForAllDay;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
 - (int)alarmCount;
 - (BOOL)_occurrenceExistsOnDate:(double)arg1 timeZone:(id)arg2;
 - (BOOL)_checkStartDateConstraintAgainstDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 timeZone:(id)arg2 error:(id*)arg3;
 - (id)originalOccurrenceIsAllDay;
+- (BOOL)occurrenceIsAllDay;
 - (void)setParticipationStatus:(int)arg1;
 - (void)_detachWithStartDate:(id)arg1 newStartDate:(id)arg2 future:(BOOL)arg3;
 - (BOOL)_isInitialOccurrenceDate:(id)arg1;
 - (BOOL)allowsRecurrenceModifications;
 - (BOOL)_validateDatesAndRecurrencesGivenSpan:(int)arg1 error:(id*)arg2;
+- (BOOL)_isAlarmAcknowledgedPropertyDirty;
 - (void)_sendModifiedNote;
 - (BOOL)allowsAlarmModifications;
 - (int)pendingParticipationStatus;
@@ -103,6 +110,7 @@
 - (unsigned int)modifiedProperties;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDateGr;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDateGr;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_gregorianDateCorrectedForTimeZoneFromCalendarDate:(id)arg1 orNSDate:(id)arg2;
 - (id)initialStartDate;
 - (id)_effectiveTimeZone;
 - (void)setOriginalOccurrenceEndDate:(id)arg1;
@@ -112,11 +120,13 @@
 - (void)setStartDate:(id)arg1;
 - (void)setAllDay:(BOOL)arg1;
 - (void)setOriginalOccurrenceIsAllDay:(id)arg1;
+- (int)birthdayPersonID;
 - (id)committedValueForKey:(id)arg1;
 - (id)originalOccurrenceEndDate;
 - (id)occurrenceStartDate;
 - (id)originalOccurrenceStartDate;
 - (id)exportToICS;
+- (id)externalURL;
 - (id)eventIdentifier;
 - (id)_persistentEvent;
 - (void)setOccurrenceIsAllDay:(BOOL)arg1;
@@ -124,11 +134,13 @@
 - (void)setOccurrenceEndDate:(id)arg1;
 - (void)setOccurrenceStartDate:(id)arg1;
 - (id)initWithEventStore:(id)arg1;
-- (unsigned int)readState;
 - (id)endDate;
 - (id)startDate;
+- (id)externalURI;
+- (void)setInvitationStatus:(unsigned int)arg1;
+- (unsigned int)invitationStatus;
 - (BOOL)canSetAvailability;
-- (void)clearReadState;
+- (void)clearInvitationStatus;
 - (BOOL)removeWithSpan:(int)arg1 error:(id*)arg2;
 - (BOOL)commitWithSpan:(int)arg1 error:(id*)arg2;
 - (BOOL)validateWithSpan:(int)arg1 error:(id*)arg2;
@@ -138,12 +150,11 @@
 - (id)initWithPersistentObject:(id)arg1;
 - (BOOL)refresh;
 - (BOOL)isAllDay;
-- (void)setTimeZone:(id)arg1;
-- (double)duration;
 - (BOOL)hasHumanInviteesToDisplay;
 - (id)sortedEKParticipantsDisplayStringsIgnoringNonHumans:(id)arg1;
 - (id)sortEKParticipantsIgnoringNonHumans:(id)arg1;
 - (id)_sortedEKParticipantsForSortingIgnoringNonHumans:(id)arg1;
+- (id)displayTitle;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDatePinnedForAllDay;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
 - (id)sortedEKAttachmentsDisplayStrings;

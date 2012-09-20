@@ -15,17 +15,17 @@
 
 - (void)dealloc;
 - (id)fill;
-- (void)setScene3D:(id)arg1;
-- (void)setShape3D:(id)arg1;
-- (BOOL)hasScene3D;
-- (BOOL)hasShape3D;
-- (id)scene3D;
 - (id)shape3D;
-- (BOOL)hasFill;
+- (id)scene3D;
+- (BOOL)hasShape3D;
+- (BOOL)hasScene3D;
+- (void)setShape3D:(id)arg1;
+- (void)setScene3D:(id)arg1;
+- (id)initWithDefaults;
+- (void)setEffects:(id)arg1;
 - (BOOL)hasEffects;
 - (id)effects;
-- (void)setEffects:(id)arg1;
+- (BOOL)hasFill;
 - (void)setFill:(id)arg1;
-- (id)initWithDefaults;
 
 @end

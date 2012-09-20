@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSTimer, UITextRangeView, UIView<UITextSelectingContainer>, NSArray, UITextSelection;
+@class UITextSelection, UIView, NSTimer, UITextRangeView, NSArray, UITextInteractionAssistant;
 
 @interface UITextSelectionView : UIView  {
-    UIView<UITextSelectingContainer> *m_view;
+    UITextInteractionAssistant *m_interactionAssistant;
     UITextSelection *m_selection;
     NSTimer *m_caretTimer;
     UIView *m_caretView;
@@ -23,7 +23,7 @@
     struct __CFRunLoopObserver { } *m_observer;
 }
 
-@property(readonly) UIView<UITextSelectingContainer> * view;
+@property(readonly) UITextInteractionAssistant * interactionAssistant;
 @property(readonly) UITextSelection * selection;
 @property BOOL caretBlinks;
 @property BOOL visible;
@@ -33,6 +33,7 @@
 @property(readonly) UITextRangeView * rangeView;
 
 
+- (void)invalidate;
 - (void)dealloc;
 - (void)configureForReplacementMode;
 - (void)updateSelectionRectsIfNeeded;
@@ -44,8 +45,8 @@
 - (void)calculateAndShowReplacements:(id)arg1;
 - (void)deferredUpdateSelectionCommands;
 - (id)replacements;
-- (BOOL)updateCalloutBarRects:(id)arg1 effectsWindow:(id)arg2;
 - (void)setReplacements:(id)arg1;
+- (BOOL)updateCalloutBarRects:(id)arg1 effectsWindow:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clippedTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)showCommandsWithReplacements:(id)arg1;
 - (void)touchCaretBlinkTimer;
@@ -62,12 +63,15 @@
 - (void)showCalloutBarAfterDelay:(double)arg1;
 - (BOOL)affectedByScrollerNotification:(id)arg1;
 - (id)rangeView;
+- (void)appearOrFadeIfNecessary;
 - (void)viewAnimate:(id)arg1;
 - (void)inputViewDidAnimate;
 - (void)inputViewWillAnimate;
 - (void)inputViewDidMove;
 - (void)inputViewWillMove;
-- (void)appearOrFadeIfNecessary;
+- (void)windowDidResignOrBecomeKey;
+- (void)didRotate:(id)arg1;
+- (void)willRotate:(id)arg1;
 - (void)scaleDidChange:(id)arg1;
 - (void)scaleWillChange:(id)arg1;
 - (void)selectionDidScroll:(id)arg1;
@@ -81,30 +85,28 @@
 - (void)updateBaseIsStartWithDocumentPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)cancelDelayedCommandRequests;
 - (void)configureForSelectionMode;
-- (void)configureForHighlightMode;
 - (void)showSelectionCommands;
+- (void)configureForHighlightMode;
+- (id)initWithInteractionAssistant:(id)arg1;
 - (void)layoutChangedByScrolling:(BOOL)arg1;
 - (id)scrollView;
 - (void)startCaretBlinkIfNeeded;
 - (BOOL)visible;
-- (void)didRotate:(id)arg1;
-- (void)willRotate:(id)arg1;
-- (void)deferredUpdateSelectionRects;
+- (BOOL)caretBlinks;
 - (void)detach;
 - (void)updateSelectionWithDocumentPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)activate;
-- (void)setVisible:(BOOL)arg1;
-- (BOOL)caretBlinks;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionBoundingBox;
 - (void)hideSelectionCommands;
 - (void)selectionChanged;
 - (id)selection;
+- (void)setVisible:(BOOL)arg1;
+- (void)activate;
+- (void)deactivate;
+- (void)deferredUpdateSelectionRects;
 - (void)setCaretBlinks:(BOOL)arg1;
 - (void)updateSelectionRects;
-- (void)deactivate;
-- (id)initWithView:(id)arg1;
+- (id)interactionAssistant;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)view;
 - (void)removeFromSuperview;
 
 @end

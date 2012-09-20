@@ -18,8 +18,9 @@
 
 + (void)initialize;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)stopRecording;
 - (void)setMinFreeDiskSpaceLimit:(long long)arg1;
 - (void)setMaxRecordedFileSize:(long long)arg1;
 - (void)setMaxRecordedDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -36,6 +37,5 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxRecordedDuration;
 - (id)outputFileURL;
 - (BOOL)isRecording;
-- (void)stopRecording;
 
 @end

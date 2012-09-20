@@ -9,11 +9,11 @@
     NSMutableSet *_shareesToSet;
 }
 
-@property(retain,readonly) NSMutableSet * shareesToSet;
-@property(retain,readonly) NSMutableSet * shareesToRemove;
+@property(readonly) NSMutableSet * shareesToRemove;
+@property(readonly) NSMutableSet * shareesToSet;
 
 
-- (id)shareesToSet;
 - (id)shareesToRemove;
+- (id)shareesToSet;
 
 @end

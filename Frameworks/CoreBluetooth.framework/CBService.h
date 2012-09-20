@@ -7,21 +7,24 @@
 @interface CBService : NSObject  {
     CBPeripheral *_peripheral;
     CBUUID *_UUID;
+    BOOL _isPrimary;
     NSArray *_includedServices;
     NSArray *_characteristics;
 }
 
-@property(retain) NSArray * characteristics;
-@property(retain) NSArray * includedServices;
-@property(readonly) CBUUID * UUID;
 @property(readonly) CBPeripheral * peripheral;
+@property(readonly) CBUUID * UUID;
+@property(readonly) BOOL isPrimary;
+@property(retain) NSArray * includedServices;
+@property(retain) NSArray * characteristics;
 
 
-- (id)characteristics;
-- (id)includedServices;
-- (id)peripheral;
-- (void)setIncludedServices:(id)arg1;
-- (void)setCharacteristics:(id)arg1;
+- (BOOL)isPrimary;
 - (id)UUID;
+- (id)characteristics;
+- (void)setCharacteristics:(id)arg1;
+- (id)includedServices;
+- (void)setIncludedServices:(id)arg1;
+- (id)peripheral;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKUITheme, UIView<GKTableViewCellContents>, UIImageView;
+@class UIView<GKTableViewCellContents>, UIImageView, UIButton, GKUITheme;
 
 @interface GKTableViewCell : UITableViewCell  {
     UIView<GKTableViewCellContents> *_contents;
@@ -26,6 +26,7 @@
     } _backgroundInsets;
     int _backgroundStyle;
     BOOL _groupHighlightEnabled;
+    UIButton *_disclosureButton;
 }
 
 @property(retain) UIView<GKTableViewCellContents> * contents;
@@ -36,42 +37,46 @@
 @property(readonly) BOOL isGroupedTableView;
 @property BOOL leaveAccessorySpace;
 @property BOOL groupHighlightEnabled;
+@property(retain) UIButton * disclosureButton;
 
 
-- (id)description;
-- (void)dealloc;
+- (id)_gkDescriptionWithChildren:(int)arg1;
+- (void)setDisclosureButton:(id)arg1;
 - (BOOL)groupHighlightEnabled;
-- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setContentsInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setLeaveAccessorySpace:(BOOL)arg1;
 - (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(int)arg2;
-- (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(int)arg2 backgroundStyle:(int)arg3;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
+- (id)disclosureButton;
 - (BOOL)leaveAccessorySpace;
 - (void)setGroupSelectedOrHighlighted:(BOOL)arg1 isHighlight:(BOOL)arg2 animated:(BOOL)arg3;
-- (BOOL)isSelectable;
 - (void)setGroupHighlightEnabled:(BOOL)arg1;
+- (BOOL)isSelectable;
+- (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(int)arg2 backgroundStyle:(int)arg3;
+- (void)setLeaveAccessorySpace:(BOOL)arg1;
 - (void)configureBackgroundView;
 - (BOOL)isGroupedTableView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
-- (id)theme;
-- (void)setTheme:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
+- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)description;
+- (void)dealloc;
 - (int)backgroundStyle;
 - (void)setBackgroundStyle:(int)arg1;
-- (id)initWithReuseIdentifier:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSelectedBackgroundView:(id)arg1 animated:(BOOL)arg2;
 - (void)setSelectionStyle:(int)arg1;
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 - (void)setAccessoryType:(int)arg1;
+- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 - (void)prepareForReuse;
+- (void)setBackgroundView:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setBackgroundView:(id)arg1;
+- (id)initWithReuseIdentifier:(id)arg1;
 - (void)setContents:(id)arg1;
 - (id)contents;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
+- (void)setTheme:(id)arg1;
+- (id)theme;
 
 @end

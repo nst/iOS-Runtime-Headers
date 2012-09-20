@@ -8,15 +8,15 @@
     CoreDAVItemWithNoChildren *_transparent;
 }
 
-@property(readonly) BOOL isScheduleTransparent;
 @property(retain) CoreDAVItemWithNoChildren * transparent;
+@property(readonly) BOOL isScheduleTransparent;
 
 
 - (void)dealloc;
+- (id)transparent;
+- (void)setTransparent:(id)arg1;
+- (BOOL)isScheduleTransparent;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (void)setTransparent:(id)arg1;
-- (id)transparent;
-- (BOOL)isScheduleTransparent;
 
 @end

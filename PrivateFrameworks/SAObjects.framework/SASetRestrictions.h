@@ -8,15 +8,15 @@
 }
 
 @property(copy) NSArray * restrictions;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)setRestrictions;
 + (id)setRestrictionsWithDictionary:(id)arg1 context:(id)arg2;
++ (id)setRestrictions;
 
 - (id)groupIdentifier;
-- (id)restrictions;
 - (void)setRestrictions:(id)arg1;
+- (id)restrictions;
 - (id)encodedClassName;
 
 @end

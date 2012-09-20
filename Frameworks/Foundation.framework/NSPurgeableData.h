@@ -10,20 +10,20 @@
 }
 
 
-- (void)_destroyMemory;
-- (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
+- (const void*)bytes;
 - (id)description;
 - (id)initWithCapacity:(unsigned int)arg1;
-- (unsigned int)length;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (unsigned int)length;
 - (void*)mutableBytes;
 - (BOOL)isContentDiscarded;
 - (void)discardContentIfPossible;
 - (void)endContentAccess;
 - (BOOL)beginContentAccess;
 - (void)finalize;
-- (const void*)bytes;
 - (void)setLength:(unsigned int)arg1;
+- (void)_destroyMemory;
+- (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
 
 @end

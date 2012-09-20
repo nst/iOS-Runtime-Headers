@@ -10,5 +10,6 @@
 - (void)createGlobalContexts;
 - (Class)cellConfigurationClassForEntity:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
+- (BOOL)hideActionRowsOnAppear;
 
 @end

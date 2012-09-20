@@ -2,26 +2,28 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPageControl, UILabel, <UIKeyboardEmojiController>, UIScrollView, UIKeyboardEmojiCategory, NSMutableArray;
+@class UIPageControl, UILabel, UIScrollView, UIKeyboardEmojiInputController, UIKeyboardEmojiCategory, NSMutableArray;
 
-@interface UIKeyboardEmojiScrollView : UIView <UIScrollViewDelegate> {
+@interface UIKeyboardEmojiScrollView : UIKBKeyView <UIScrollViewDelegate, UIKeyboardEmojiInput> {
+    UIKeyboardEmojiInputController *_inputController;
     UIKeyboardEmojiCategory *_category;
     UIPageControl *_pageControl;
     UIScrollView *_scrollView;
     UILabel *_categoryLabel;
+    UILabel *_optionalDescription;
     NSMutableArray *_pages;
     int _currentPage;
-    <UIKeyboardEmojiController> *_controller;
-    BOOL _emojiInteractionEnabled;
 }
-
-@property <UIKeyboardEmojiController> * controller;
-@property BOOL emojiInteractionEnabled;
 
 
 - (void)dealloc;
-- (BOOL)emojiInteractionEnabled;
+- (void)goToFirstPage;
 - (void)setScrollDelay:(double)arg1;
+- (BOOL)shouldCache;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 key:(id)arg3 state:(int)arg4;
+- (void)reloadForCategory:(id)arg1;
+- (void)saveFirstVisibleEmojiIndex;
+- (int)emojiCountPerPageForRotation;
 - (void)interruptScrolling;
 - (void)delayLayout;
 - (void)ensureSurrounded;
@@ -30,16 +32,11 @@
 - (void)layoutRecents;
 - (void)doLayout;
 - (void)pageChanged;
-- (void)goToFirstPage;
-- (void)setCategory:(id)arg1;
-- (void)setEmojiInteractionEnabled:(BOOL)arg1;
-- (id)controller;
-- (void)setController:(id)arg1;
 - (int)currentPage;
 - (void)forceLayout;
-- (void)scrollViewWillBeginDecelerating:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 
 @end

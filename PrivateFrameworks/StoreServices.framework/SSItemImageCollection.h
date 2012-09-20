@@ -11,19 +11,17 @@
 @property(readonly) NSArray * itemImages;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithImageCollection:(id)arg1;
 - (id)initWithItemImages:(id)arg1;
 - (id)imagesForKind:(id)arg1;
 - (id)bestImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)itemImages;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)_imagesForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)imagesForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_newImagesForDictionary:(id)arg1;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 
 @end

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CDXClient, NSIndexSet, NSData, <CDXClientSessionDelegate>, NSMutableIndexSet;
+@class CDXClient, NSIndexSet, NSData, <CDXClientSessionDelegate>, NSMutableIndexSet, NSObject<OS_dispatch_source>;
 
 @interface CDXClientSession : NSObject  {
     <CDXClientSessionDelegate> *delegate_;
@@ -20,7 +20,7 @@
     unsigned short seq_;
     unsigned char pid_;
     unsigned short *ack_;
-    struct dispatch_source_s { } *retransmitTimer_;
+    NSObject<OS_dispatch_source> *retransmitTimer_;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -28,34 +28,34 @@
 
 }
 
-@property(copy) id inboundHandler;
-@property(copy,readonly) NSIndexSet * participantsInFlight;
-@property(copy,readonly) NSData * sessionKey;
-@property(copy) NSData * ticket;
+@property(readonly) CDXClient * CDXClient;
 @property <CDXClientSessionDelegate> * delegate;
-@property(retain,readonly) CDXClient * CDXClient;
+@property(copy) NSData * ticket;
+@property(readonly) NSData * sessionKey;
+@property(readonly) NSIndexSet * participantsInFlight;
+@property(copy) id inboundHandler;
 
 
-- (BOOL)sendData:(id)arg1;
-- (void)dealloc;
 - (void)invalidate;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
-- (void)setTicket:(id)arg1;
-- (id)inboundHandler;
+- (id)delegate;
+- (void)dealloc;
 - (void)setInboundHandler:(id)arg1;
+- (id)inboundHandler;
 - (id)participantsInFlight;
 - (id)sessionKey;
-- (void)stopRetransmitTimer;
-- (BOOL)sendRaw:(id)arg1 toParticipants:(id)arg2;
-- (BOOL)retransmitEvent;
-- (id)CDXClient;
-- (id)ticket;
-- (id)encrypt:(id)arg1;
-- (BOOL)sendData:(id)arg1 toParticipants:(id)arg2;
-- (void)resetRetransmitTimer;
-- (id)decrypt:(id)arg1 ticket:(id)arg2;
 - (void)recvRaw:(id)arg1 ticket:(id)arg2;
+- (void)setTicket:(id)arg1;
 - (id)initWithCDXClient:(id)arg1 ticket:(id)arg2 sessionKey:(id)arg3;
+- (id)decrypt:(id)arg1 ticket:(id)arg2;
+- (void)resetRetransmitTimer;
+- (BOOL)sendData:(id)arg1 toParticipants:(id)arg2;
+- (id)encrypt:(id)arg1;
+- (id)ticket;
+- (id)CDXClient;
+- (BOOL)retransmitEvent;
+- (BOOL)sendRaw:(id)arg1 toParticipants:(id)arg2;
+- (void)stopRetransmitTimer;
+- (BOOL)sendData:(id)arg1;
 
 @end

@@ -18,13 +18,13 @@
 
 
 - (void)setTarget:(id)arg1;
-- (id)description;
 - (id)target;
-- (id)init;
+- (id)description;
 - (void)dealloc;
+- (id)init;
 - (SEL)selector;
-- (id)context;
 - (void)setContext:(id)arg1;
+- (id)context;
 - (id)set;
 - (void)setSelector:(SEL)arg1;
 - (BOOL)empty;

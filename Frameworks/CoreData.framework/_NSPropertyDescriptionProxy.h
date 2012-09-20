@@ -13,21 +13,21 @@
 
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 
+- (id)entity;
+- (id)description;
+- (BOOL)isKindOfClass:(Class)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (Class)class;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (id)description;
+- (id)initWithPropertyDescription:(id)arg1;
+- (void)_setEntitysReferenceID:(unsigned int)arg1;
+- (void)_setEntity:(id)arg1;
+- (void)_versionHash:(char *)arg1 inStyle:(unsigned int)arg2;
+- (void)_createCachesAndOptimizeState;
+- (id)_underlyingProperty;
+- (unsigned int)_entitysReferenceID;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)_setEntity:(id)arg1;
-- (void)_setEntitysReferenceID:(unsigned int)arg1;
-- (id)initWithPropertyDescription:(id)arg1;
-- (void)_createCachesAndOptimizeState;
-- (void)_versionHash:(char *)arg1;
-- (id)_underlyingProperty;
-- (unsigned int)_entitysReferenceID;
-- (id)entity;
 
 @end

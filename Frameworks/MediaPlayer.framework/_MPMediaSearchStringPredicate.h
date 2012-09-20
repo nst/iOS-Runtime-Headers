@@ -14,14 +14,14 @@
 
 + (id)predicateWithSearchString:(id)arg1 forProperties:(id)arg2;
 
-- (void)setProperties:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (void)dealloc;
 - (id)_ML3PredicateForEntityClass:(Class)arg1;
 - (id)ML3PredicateForContainer;
 - (id)ML3PredicateForTrack;
+- (void)setProperties:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)searchString;
 - (void)setSearchString:(id)arg1;
 - (id)properties;

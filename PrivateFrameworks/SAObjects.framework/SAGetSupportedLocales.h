@@ -7,11 +7,11 @@
 @interface SAGetSupportedLocales : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)getSupportedLocales;
 + (id)getSupportedLocalesWithDictionary:(id)arg1 context:(id)arg2;
++ (id)getSupportedLocales;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

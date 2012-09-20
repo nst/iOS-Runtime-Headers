@@ -19,21 +19,21 @@
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)groupIdentifier;
+- (void)setUnits:(id)arg1;
+- (id)units;
 - (void)setView:(id)arg1;
 - (id)view;
-- (void)setCurrentConditions:(id)arg1;
-- (id)dailyForecasts;
-- (void)setDailyForecasts:(id)arg1;
-- (id)extendedForecastUrl;
-- (void)setExtendedForecastUrl:(id)arg1;
-- (id)hourlyForecasts;
 - (void)setHourlyForecasts:(id)arg1;
-- (id)weatherLocation;
+- (id)hourlyForecasts;
+- (void)setExtendedForecastUrl:(id)arg1;
+- (id)extendedForecastUrl;
+- (void)setDailyForecasts:(id)arg1;
+- (id)dailyForecasts;
+- (void)setCurrentConditions:(id)arg1;
 - (void)setWeatherLocation:(id)arg1;
+- (id)weatherLocation;
 - (id)currentConditions;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (void)setUnits:(id)arg1;
-- (id)units;
 
 @end

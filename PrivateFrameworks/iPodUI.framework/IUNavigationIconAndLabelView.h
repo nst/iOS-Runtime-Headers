@@ -13,9 +13,6 @@
 
 
 - (void)dealloc;
-- (id)titleFont;
-- (id)title;
-- (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithTitle:(id)arg1 icon:(id)arg2;
 

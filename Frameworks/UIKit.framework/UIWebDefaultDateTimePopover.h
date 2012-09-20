@@ -4,7 +4,7 @@
 
 @class UIWebDateTimePopoverViewController;
 
-@interface UIWebDefaultDateTimePopover : UIWebRotatingPopover <UIWebFormControl> {
+@interface UIWebDefaultDateTimePopover : UIWebRotatingAccessoryPopover <UIWebFormControl> {
     UIWebDateTimePopoverViewController *_webDateTimeViewController;
 }
 

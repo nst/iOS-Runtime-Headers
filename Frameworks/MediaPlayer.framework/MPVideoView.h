@@ -2,24 +2,18 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoBufferLayerContainer, MPAVController, UIView, MPMovieSnapshotController, CALayer, NSString;
+@class NSString, MPAVController, MPMovieSnapshotController;
 
 @interface MPVideoView : UIView  {
     MPAVController *_player;
-    UIView *_videoBufferContainerView;
-    MPVideoBufferLayerContainer *_videoBufferContainerLayer;
-    CALayer *_videoBufferLayer;
     MPMovieSnapshotController *_snapshotController;
     NSString *_moviePath;
     NSString *_movieSubtitle;
     NSString *_movieTitle;
     NSString *_videoID;
-    unsigned int _scaleMode;
     double _startTime;
     double _stopTime;
-    unsigned int _effectiveScaleMode;
-    unsigned int _disableFudgingScaleToFullScreen : 1;
-    unsigned int _requiresIntegralScreenFrame : 1;
+    unsigned int _scaleMode;
 }
 
 @property MPAVController * player;
@@ -30,31 +24,20 @@
 @property double stopTime;
 @property(readonly) BOOL canChangeScaleMode;
 @property unsigned int scaleMode;
-@property unsigned int effectiveScaleMode;
-@property BOOL requiresIntegralScreenFrame;
+@property(readonly) unsigned int effectiveScaleMode;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } movieFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } movieContentFrame;
 
++ (Class)layerClass;
 
-- (void)dealloc;
-- (id)mpavController;
-- (void)setEffectiveScaleMode:(unsigned int)arg1;
+- (void)setPlayer:(id)arg1;
+- (id)player;
 - (void)scheduleThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 orientation:(int)arg2 time:(float)arg3 delegate:(id)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })movieFrame;
-- (void)setRequiresIntegralScreenFrame:(BOOL)arg1;
-- (BOOL)requiresIntegralScreenFrame;
 - (void)playFromBeginning;
 - (void)playWhenLikelyToKeepUp;
-- (BOOL)_sizeDifferenceFromFullScreenIsLessThan:(struct CGSize { float x1; float x2; })arg1 allowingZero:(BOOL)arg2 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
-- (void)_layoutVideoLayers:(BOOL)arg1;
 - (void)setScaleMode:(unsigned int)arg1 duration:(float)arg2;
 - (void)prepareAVControllerQueue;
-- (void)_AddVideoBufferLayerToViewHierarchyAndHideIfNecessary;
-- (BOOL)_isExactlyFullScreenWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (BOOL)_isCloseToFullScreenWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (BOOL)_allowFudgingScaleToFullScreen;
-- (void)_sizeDidChangedNotification:(id)arg1;
-- (void)_itemWillChangeNotification:(id)arg1;
-- (void)_layoutSublayers;
 - (void)_playbackStateChangedNotification:(id)arg1;
 - (void)cancelSnapshots;
 - (void)setScaleMode:(unsigned int)arg1;
@@ -64,45 +47,21 @@
 - (id)videoID;
 - (double)stopTime;
 - (id)moviePath;
-- (void)prepareToDisplayVideo;
 - (void)toggleScaleMode:(BOOL)arg1;
-- (int)bufferingStatusMask;
-- (void)setCurrentTime:(double)arg1 timeSnapOption:(int)arg2;
-- (int)playableContentType;
 - (void)setMovieWithPath:(id)arg1;
 - (void)setVideoID:(id)arg1;
-- (void)_validityChangedNotification:(id)arg1;
 - (void)_bufferingStateChangedNotification:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })movieContentFrame;
 - (void)setMovieTitle:(id)arg1;
 - (void)setMovieSubtitle:(id)arg1;
 - (unsigned int)effectiveScaleMode;
-- (id)avPlayer;
 - (unsigned int)scaleMode;
 - (id)movieSubtitle;
 - (id)movieTitle;
-- (void)setCurrentTime:(double)arg1;
-- (double)currentTime;
-- (id)player;
-- (void)setPlayer:(id)arg1;
-- (void)pause;
-- (void)stop;
+- (void)dealloc;
 - (double)startTime;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)insertSubview:(id)arg1 below:(id)arg2;
-- (void)exchangeSubviewAtIndex:(int)arg1 withSubviewAtIndex:(int)arg2;
-- (void)insertSubview:(id)arg1 atIndex:(int)arg2;
-- (id)viewWithTag:(int)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (double)duration;
 - (void)setStartTime:(double)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)bringSubviewToFront:(id)arg1;
-- (void)addSubview:(id)arg1;
-- (void)setNeedsDisplay;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)play;
-- (void)play;
-- (void)setRepeatMode:(int)arg1;
-- (int)playbackState;
 
 @end

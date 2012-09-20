@@ -7,7 +7,6 @@
 
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
-- (id)init;
 - (void)reloadLayoutInformation;
 - (void)reloadStrings;
 - (void)reloadImages;
@@ -15,5 +14,6 @@
 - (BOOL)getShadowColor:(id*)arg1 offset:(struct CGSize { float x1; float x2; }*)arg2 forLabelAtIndex:(unsigned int)arg3 withModifiers:(unsigned int)arg4;
 - (int)textAlignmentForLabelAtIndex:(unsigned int)arg1;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
+- (id)init;
 
 @end

@@ -19,9 +19,9 @@
 @property(retain) UISwitch * accessorySwitch;
 
 
-- (void)dealloc;
 - (void)setTitleLabel:(id)arg1;
 - (int)type;
+- (void)dealloc;
 - (id)title;
 - (void)setType:(int)arg1;
 - (void)setTitle:(id)arg1;

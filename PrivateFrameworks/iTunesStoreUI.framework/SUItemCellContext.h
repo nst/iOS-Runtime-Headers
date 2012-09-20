@@ -23,12 +23,12 @@
 @property struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); } stringSizeCacheKeyCallBacks;
 
 
-- (id)init;
-- (void)dealloc;
 - (void)setStringSizeCacheKeyCallBacks:(struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); })arg1;
 - (struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); })stringSizeCacheKeyCallBacks;
 - (struct CGSize { float x1; float x2; })sizeForString:(id)arg1 font:(id)arg2 constrainedToSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)ratingImageForRating:(float)arg1 style:(int)arg2;
 - (void)resetLayoutCaches;
+- (void)dealloc;
+- (id)init;
 
 @end

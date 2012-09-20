@@ -17,16 +17,16 @@
 
 
 - (void)setName:(id)arg1;
-- (unsigned int)count;
+- (id)name;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (unsigned int)count;
 - (void)addIdentifier:(id)arg1;
 - (id)list;
 - (BOOL)explicitlySpecified;
 - (void)setExplicitlySpecified:(BOOL)arg1;
-- (id)name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

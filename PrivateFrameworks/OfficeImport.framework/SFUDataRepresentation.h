@@ -2,24 +2,29 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class NSData;
+
 @interface SFUDataRepresentation : NSObject  {
     BOOL mHasHash;
     unsigned int mHash;
+    BOOL mHasSha1Hash;
+    NSData *mSha1Hash;
 }
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (int)compare:(id)arg1;
-- (long long)encodedLength;
-- (BOOL)isEncrypted;
-- (id)bufferedInputStreamWithBufferSize:(unsigned long)arg1;
-- (struct _xmlTextReader { }*)xmlReaderForGzippedData;
-- (struct CGDataProvider { }*)cgDataProvider;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)sha1Hash;
 - (unsigned long)readIntoData:(id)arg1;
-- (struct _xmlTextReader { }*)xmlReaderForGzippedDataWithInputStream:(id*)arg1;
-- (BOOL)isReadable;
+- (struct CGDataProvider { }*)cgDataProvider;
+- (struct _xmlTextReader { }*)xmlReaderForGzippedData;
+- (id)bufferedInputStreamWithBufferSize:(unsigned long)arg1;
+- (BOOL)isEncrypted;
+- (long long)encodedLength;
 - (BOOL)hasSameLocationAs:(id)arg1;
+- (BOOL)isReadable;
+- (struct _xmlTextReader { }*)xmlReaderForGzippedDataWithInputStream:(id*)arg1;
 - (id)bufferedInputStream;
 - (id)inputStream;
 - (long long)dataLength;

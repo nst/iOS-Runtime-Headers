@@ -14,28 +14,28 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)accessInstanceVariablesDirectly;
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (unsigned int)retainCount;
 - (id)description;
-- (BOOL)isEqualToString:(id)arg1;
-- (id)retain;
-- (id)copy;
+- (unsigned int)retainCount;
+- (unsigned int)hash;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
-- (unsigned int)length;
-- (void)getCharacters:(unsigned short*)arg1;
+- (id)retain;
+- (BOOL)isEqual:(id)arg1;
 - (const char *)UTF8String;
-- (oneway void)release;
+- (void)getCharacters:(unsigned short*)arg1;
+- (BOOL)isEqualToString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (const char *)_fastCStringContents:(BOOL)arg1;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)cStringLength;
+- (oneway void)release;
+- (id)copy;
+- (unsigned int)length;
+- (void)getCString:(char *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (const char *)cString;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (const char *)cString;
 - (void)encodeWithCoder:(id)arg1;
-- (void)getCString:(char *)arg1;
+- (const char *)_fastCStringContents:(BOOL)arg1;
+- (unsigned int)cStringLength;
 
 @end

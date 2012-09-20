@@ -23,10 +23,11 @@
 @property BOOL shouldRepeat;
 
 
-- (void)dealloc;
-- (struct NSObject { Class x1; }*)album;
-- (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
+- (struct NSObject { Class x1; }*)album;
 - (BOOL)shuffleAlbum;
 - (id)albumAssets;
 - (void)resumeSlideshow;
@@ -44,6 +45,5 @@
 - (void)stopSlideshow;
 - (void)slideshowViewDidDisappear;
 - (double)secondsPerSlide;
-- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
 
 @end

@@ -6,7 +6,6 @@
 }
 
 
-- (void)_initWithMediaPlayerItem:(id)arg1;
 - (id)initWithMediaPlayerItem:(id)arg1;
 - (id)_className;
 

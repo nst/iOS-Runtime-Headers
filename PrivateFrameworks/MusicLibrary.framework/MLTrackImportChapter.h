@@ -21,22 +21,23 @@
 @property(copy) NSString * URLTitle;
 
 
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setURL:(id)arg1;
 - (int)compare:(id)arg1;
 - (id)URL;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (id)imageData;
+- (id)description;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setImageCacheKey:(id)arg1;
 - (void)setURLTitle:(id)arg1;
 - (void)setStartTimeInMilliseconds:(unsigned int)arg1;
 - (void)setImageData:(id)arg1;
 - (BOOL)isEqualIgnoringTimesAndTitle:(id)arg1;
+- (void)normalizeProperties;
 - (id)URLTitle;
 - (id)imageCacheKey;
 - (unsigned int)startTimeInMilliseconds;
+- (void)setURL:(id)arg1;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (id)imageData;
 
 @end

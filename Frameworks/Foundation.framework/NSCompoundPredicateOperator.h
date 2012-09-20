@@ -9,13 +9,13 @@
 + (id)andPredicateOperator;
 + (id)notPredicateOperator;
 
-- (BOOL)evaluatePredicates:(id)arg1 withObject:(id)arg2;
-- (BOOL)evaluatePredicates:(id)arg1 withObject:(id)arg2 substitutionVariables:(id)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)symbol;
 - (id)predicateFormat;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)evaluatePredicates:(id)arg1 withObject:(id)arg2;
+- (BOOL)evaluatePredicates:(id)arg1 withObject:(id)arg2 substitutionVariables:(id)arg3;
 - (id)minimalFormInContext:(id)arg1 ofPredicates:(id)arg2;
 
 @end

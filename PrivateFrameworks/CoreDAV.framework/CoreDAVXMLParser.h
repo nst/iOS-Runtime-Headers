@@ -19,20 +19,21 @@
 @property(retain) CoreDAVXMLElementGenerator * rootElementGenerator;
 @property(retain) CoreDAVXMLElementGenerator * rootErrorGenerator;
 
++ (BOOL)canHandleContentType:(id)arg1;
 
-- (void)dealloc;
 - (void)setBaseURL:(id)arg1;
+- (void)dealloc;
+- (id)baseURL;
+- (id)initWithData:(id)arg1;
 - (id)rootElementGenerator;
 - (void)setRootElementGenerator:(id)arg1;
 - (void)setRootErrorGenerator:(id)arg1;
 - (id)rootErrorGenerator;
-- (id)rootError;
 - (id)parseHints;
+- (id)rootError;
 - (BOOL)processData:(id)arg1 forTask:(id)arg2;
 - (void)setParseHints:(id)arg1;
 - (id)initWithRootElementNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3 baseURL:(id)arg4;
-- (id)baseURL;
-- (id)initWithData:(id)arg1;
 - (id)rootElement;
 
 @end

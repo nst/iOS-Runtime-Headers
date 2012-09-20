@@ -7,11 +7,11 @@
 @interface SAWebSearchStarted : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)searchStarted;
 + (id)searchStartedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)searchStarted;
 
 - (id)groupIdentifier;
 - (id)encodedClassName;

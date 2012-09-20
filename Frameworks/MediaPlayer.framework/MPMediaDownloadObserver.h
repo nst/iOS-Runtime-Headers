@@ -6,15 +6,18 @@
    See Warning(s) below.
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface MPMediaDownloadObserver : NSObject  {
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
 
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
     BOOL _hasPendingProgressHandlerExecution;
     BOOL _invalidated;
+    long long _pid;
     int _retainCount;
 }
 
@@ -23,28 +26,30 @@
 @property(copy) id progressHandler;
 @property(readonly) BOOL canCancel;
 @property(getter=isRestoreDownload,readonly) BOOL restoreDownload;
+@property(readonly) long long persistentID;
 
++ (id)sharedITunesStoreDownloadManager;
 + (id)newObserverForMediaItem:(id)arg1;
 + (id)newObserverForDownloadIdentifier:(id)arg1 downloadStatus:(int)arg2 itemPersistentID:(long long)arg3;
-+ (id)newObserverForDownloadIdentifier:(id)arg1 downloadPersistentID:(long long)arg2;
-+ (id)sharedITunesStoreDownloadManager;
++ (id)newObserverForDownloadIdentifier:(id)arg1 downloadStatus:(int)arg2 downloadPersistentID:(long long)arg3;
 
-- (unsigned int)retainCount;
-- (id)retain;
-- (oneway void)release;
-- (id)init;
-- (void)dealloc;
-- (void)setProgressHandler:(id)arg1;
 - (id)progressHandler;
 - (BOOL)isCurrentlyPlayable;
 - (void)_onQueue_setShouldFireProgressHandler;
 - (void)_onQueue_invalidate;
 - (BOOL)canCancel;
 - (BOOL)isRestoreDownload;
-- (double)downloadProgress;
 - (void)cancelDownload;
+- (void)invalidate;
+- (unsigned int)retainCount;
+- (id)retain;
+- (void)dealloc;
+- (oneway void)release;
+- (id)init;
+- (long long)persistentID;
+- (void)setProgressHandler:(id)arg1;
+- (double)downloadProgress;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (void)invalidate;
 
 @end

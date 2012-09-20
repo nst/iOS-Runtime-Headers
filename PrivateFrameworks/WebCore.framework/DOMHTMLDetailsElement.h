@@ -8,7 +8,7 @@
 @property BOOL open;
 
 
-- (BOOL)open;
 - (void)setOpen:(BOOL)arg1;
+- (BOOL)open;
 
 @end

@@ -10,17 +10,21 @@
 }
 
 
-- (id)init;
 - (void)dealloc;
-- (void)cancelButtonClicked:(id)arg1;
+- (id)init;
 - (void)_setImagePickerMediaTypes:(id)arg1;
 - (int)_imagePickerStatusBarStyle;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)albumListDidChange:(id)arg1;
+- (BOOL)subtitleForAlbumAllowsEmail;
 - (void)_updateFilteredAlbumListWithFilter:(int)arg1;
 - (void)updateNavigationItemButtons;
+- (BOOL)shouldShowUnreadIndicatorForAlbum:(struct NSObject { Class x1; }*)arg1;
+- (int)accessoryTypeForAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)fixContentInsetIfNeeded;
+- (void)cancelButtonClicked:(id)arg1;
 - (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 
 @end

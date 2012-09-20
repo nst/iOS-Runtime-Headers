@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
+@class NoteContext;
+
 @interface DALocalDBWatcher : NSObject  {
     int _lastSavedCalSequenceNumber;
     int _lastSavedABSequenceNumber;
     void *_abWatcher;
     struct CalDatabase { } *_calWatcher;
+    NoteContext *_noteWatcher;
     struct __CFDictionary { } *_concernedABPartyToBlockMap;
     struct __CFDictionary { } *_concernedCalPartyToBlockMap;
+    struct __CFDictionary { } *_concernedNotePartyToBlockMap;
     BOOL _watchingBookmarks;
     struct __CFDictionary { } *_concernedBookmarkPartyToBlockMap;
 }
@@ -18,8 +22,10 @@
 
 + (id)sharedDBWatcher;
 
-- (id)init;
 - (void)dealloc;
+- (id)init;
+- (void)removeConcernedNoteParty:(id)arg1;
+- (void)registerConcernedNoteParty:(id)arg1 withChangedBlock:(id)arg2;
 - (void)removeConcernedBookmarkParty:(id)arg1;
 - (void)registerConcernedBookmarkParty:(id)arg1 withChangedBlock:(id)arg2;
 - (void)_handleBookmarkChangeNotification;
@@ -29,6 +35,7 @@
 - (void)removeConcernedABParty:(id)arg1;
 - (void)registerConcernedABParty:(id)arg1 withChangedBlock:(id)arg2;
 - (void)_handleABChangeNotificationWithInfo:(id)arg1;
+- (void)_notesChangedExternally:(id)arg1;
 - (void)noteCalDBDirChanged;
 - (void)noteABDBDirChanged;
 - (void)setLastSavedCalSequenceNumber:(int)arg1;

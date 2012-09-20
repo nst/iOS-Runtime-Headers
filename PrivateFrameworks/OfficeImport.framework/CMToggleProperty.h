@@ -8,9 +8,9 @@
 
 
 - (int)value;
-- (id)mapBold;
-- (id)mapItalic;
 - (id)mapStrikeTrough;
+- (id)mapItalic;
+- (id)mapBold;
 - (int)compareValue:(id)arg1;
 - (void)resolveWithBaseProperty:(id)arg1;
 - (id)cssStringForName:(id)arg1;

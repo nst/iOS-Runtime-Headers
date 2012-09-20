@@ -20,16 +20,13 @@
     id reserved;
 }
 
-+ (id)classNameDecodedForArchiveClassName:(id)arg1;
-+ (void)decodeClassName:(id)arg1 asClassName:(id)arg2;
 + (id)unarchiveObjectWithFile:(id)arg1;
 + (id)unarchiveObjectWithData:(id)arg1;
 + (void)initialize;
++ (id)classNameDecodedForArchiveClassName:(id)arg1;
++ (void)decodeClassName:(id)arg1 asClassName:(id)arg2;
 
-- (struct _NSZone { }*)objectZone;
-- (void)setObjectZone:(struct _NSZone { }*)arg1;
-- (id)classNameDecodedForArchiveClassName:(id)arg1;
-- (void)decodeClassName:(id)arg1 asClassName:(id)arg2;
+- (id)data;
 - (void)dealloc;
 - (void)_setAllowedClasses:(id)arg1;
 - (int)versionForClassName:(id)arg1;
@@ -43,7 +40,10 @@
 - (id)initForReadingWithData:(id)arg1;
 - (unsigned int)systemVersion;
 - (void)finalize;
-- (id)data;
+- (struct _NSZone { }*)objectZone;
+- (void)setObjectZone:(struct _NSZone { }*)arg1;
+- (id)classNameDecodedForArchiveClassName:(id)arg1;
+- (void)decodeClassName:(id)arg1 asClassName:(id)arg2;
 - (BOOL)isAtEnd;
 
 @end

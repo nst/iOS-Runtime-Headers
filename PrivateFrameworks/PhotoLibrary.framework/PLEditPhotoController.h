@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSTimer, PLManagedAsset, UIImage, UIToolbar, UIAlertView, UILabel, UIScrollView, UIProgressHUD, NSUndoManager, UIView, PLImageAdjustmentView, NSDictionary, UINavigationBar, UIPopoverController, NSArray, CIFilter, NSMutableArray, UIActionSheet;
+@class NSTimer, PLManagedAsset, UIImage, UIToolbar, UIAlertView, UILabel, UIScrollView, UIProgressHUD, NSUndoManager, UIView, PLImageAdjustmentView, NSDictionary, UINavigationBar, UIPopoverController, NSArray, CIFilter, NSObject<OS_dispatch_queue>, NSMutableArray, UIActionSheet;
 
 @interface PLEditPhotoController : UIViewController <PLImageAdjustmentViewDelegate, UIScrollViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate> {
     UIScrollView *_scrollView;
@@ -58,7 +58,7 @@
     float _rotationAngle;
     NSDictionary *_cachedMetadata;
     UIImage *_scaledCachedImage;
-    struct dispatch_queue_s { } *_cachedImageQueue;
+    NSObject<OS_dispatch_queue> *_cachedImageQueue;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -80,6 +80,7 @@
     unsigned int _isUserAction : 1;
     unsigned int _isCroppingImage : 1;
     unsigned int _didTapForRedEyeCorrection : 1;
+    unsigned int _didEverTapForRedEyeCorrection : 1;
     unsigned int _isCanceling : 1;
     unsigned int _isOrderedOut : 1;
     unsigned int _autoAdjustmentEnabled : 1;
@@ -106,6 +107,7 @@
 
 - (void)save:(id)arg1;
 - (void)dealloc;
+- (void)_setUndoManager:(id)arg1;
 - (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (void)willPresentAlertView:(id)arg1;
 - (id)scrollView;
@@ -127,8 +129,6 @@
 - (id)navigationItem;
 - (void)setNavigationBar:(id)arg1;
 - (id)navigationBar;
-- (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
-- (id)viewForZoomingInScrollView:(id)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (void)orderOut:(BOOL)arg1;
 - (void)undo:(id)arg1;
@@ -137,9 +137,9 @@
 - (void)willPresentActionSheet:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)applicationDidEnterBackground:(id)arg1;
-- (float)rotationAngle;
-- (void)setRotationAngle:(float)arg1;
-- (void)_setUndoManager:(id)arg1;
+- (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
+- (id)viewForZoomingInScrollView:(id)arg1;
+- (void)albumDidChange:(id)arg1;
 - (id)actionCompletionBlock;
 - (id)redEyePoints;
 - (id)_autoAdjustmentFilters;
@@ -160,6 +160,7 @@
 - (void)_setAutoRedEyeFilterFromArray:(id)arg1;
 - (id)_croppedStraightenedImage;
 - (void)_saveAdjustmentsToCopy;
+- (void)_updateAggregateInfoForCurrentAdjustmentState;
 - (void)_saveFiltersToAsset:(id)arg1;
 - (void)_saveXMPPropertiesToPhoto:(id)arg1;
 - (void)_writeXMPSidecarToPhoto:(id)arg1 properties:(id)arg2 orientation:(int)arg3;
@@ -235,7 +236,6 @@
 - (BOOL)_dismissPopoverViews;
 - (void)_dismissSavingHUD;
 - (id)_currentToolbarItems;
-- (void)albumDidChange:(id)arg1;
 - (void)startEditingAsset:(id)arg1 proxyImage:(id)arg2 completion:(id)arg3;
 - (BOOL)savesAdjustmentsToCameraRoll;
 - (void)zoomToScale:(float)arg1 completionBlock:(id)arg2;
@@ -245,5 +245,7 @@
 - (void)cancel:(id)arg1;
 - (id)pendingPhoto;
 - (id)editedPhoto;
+- (float)rotationAngle;
+- (void)setRotationAngle:(float)arg1;
 
 @end

@@ -26,6 +26,15 @@
 @property(readonly) BOOL timeIsApproximate;
 
 
+- (id)description;
+- (void)dealloc;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (id)timeZone;
+- (id)date;
+- (double)duration;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (unsigned long long)resultType;
 - (BOOL)timeIsApproximate;
 - (BOOL)timeIsSignificant;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4 referenceDate:(id)arg5 underlyingResult:(void*)arg6;
@@ -37,14 +46,5 @@
 - (void*)underlyingResult;
 - (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)timeZone;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (double)duration;
-- (id)date;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (unsigned long long)resultType;
 
 @end

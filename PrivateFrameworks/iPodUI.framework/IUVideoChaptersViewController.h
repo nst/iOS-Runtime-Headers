@@ -13,9 +13,9 @@
 - (void)startPlaybackFromIndexPath:(id)arg1;
 - (id)mediaItemAtIndexPath:(id)arg1;
 - (id)indexPathForRowOfContentPosition;
-- (Class)tableViewCellClass;
 - (BOOL)shouldDisableWhileDownloading;
 - (void)_playChapter;
 - (id)indexPathForMediaItem:(id)arg1 atTime:(double)arg2;
+- (Class)tableViewCellClass;
 
 @end

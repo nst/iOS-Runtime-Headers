@@ -32,18 +32,17 @@
 @property(copy) NSString * importSessionIdentifier;
 
 
-- (void)dealloc;
 - (void)removeItems:(id)arg1;
-- (void)setCamera:(id)arg1;
-- (id)camera;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (void)setItems:(id)arg1;
 - (id)items;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (void)setCamera:(id)arg1;
+- (id)camera;
 - (void)setItemsMapping:(id)arg1;
 - (void)stopImport;
 - (void)importItems:(id)arg1;
-- (struct NSObject { Class x1; }*)_eventWithDate:(id)arg1;
 - (unsigned long long)approximateBytesRequiredToImportItem:(id)arg1;
 - (void)readThumbnailsForImportItems:(id)arg1;
 - (void)readMetadataForImportItems:(id)arg1;
@@ -87,7 +86,6 @@
 - (void)didDownloadFile:(id)arg1 error:(id)arg2 options:(id)arg3 contextInfo:(void*)arg4;
 - (void)_separateItems:(id)arg1 intoEventsWithGranularity:(int)arg2;
 - (void)_clearImportItemsForDownload:(id)arg1;
-- (id)_eventNameFromDate:(id)arg1;
 - (void)importImportItem:(id)arg1;
 - (void)didReceiveThumbnail:(struct CGImage { }*)arg1 forImportItem:(id)arg2 error:(id)arg3;
 - (void)_didFinishDeletingItems:(id)arg1;

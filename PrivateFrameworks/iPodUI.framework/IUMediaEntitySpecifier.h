@@ -42,8 +42,8 @@
 + (id)mediaQueryWithEntitiesOfType:(int)arg1 givenSpecifier:(id)arg2;
 + (id)mediaEntitySpecifierForAudibleAudioBooks;
 
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

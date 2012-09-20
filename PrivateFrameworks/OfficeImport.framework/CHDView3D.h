@@ -6,27 +6,33 @@
     int mRotationX;
     int mRotationY;
     int mDepthPercent;
+    int mGapDepthPercent;
     int mHeightPercent;
     int mPerspective;
     boolmRightAngleAxes;
     boolmCluster;
+    boolmAutoscale;
 }
 
 
 - (id)init;
-- (int)rotationY;
-- (int)rotationX;
-- (int)depthPercent;
-- (int)heightPercent;
-- (int)perspective;
-- (bool)isRightAngleAxes;
 - (bool)isCluster;
-- (void)setRotationX:(int)arg1;
-- (void)setRotationY:(int)arg1;
-- (void)setPerspective:(int)arg1;
-- (void)setRightAngleAxes:(bool)arg1;
-- (void)setDepthPercent:(int)arg1;
-- (void)setHeightPercent:(int)arg1;
+- (bool)isRightAngleAxes;
+- (int)rotationY;
+- (bool)isAutoscale;
+- (int)heightPercent;
+- (int)rotationX;
+- (int)perspective;
+- (int)gapDepthPercent;
+- (int)depthPercent;
 - (void)setCluster:(bool)arg1;
+- (void)setAutoscale:(bool)arg1;
+- (void)setHeightPercent:(int)arg1;
+- (void)setGapDepthPercent:(int)arg1;
+- (void)setDepthPercent:(int)arg1;
+- (void)setRightAngleAxes:(bool)arg1;
+- (void)setPerspective:(int)arg1;
+- (void)setRotationY:(int)arg1;
+- (void)setRotationX:(int)arg1;
 
 @end

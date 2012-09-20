@@ -17,20 +17,20 @@
 @property BOOL responseValidated;
 
 
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (BOOL)responseValidated;
+- (id)responseExtraInfo;
+- (id)responseBasePhoneNumber;
+- (id)responseRegionID;
+- (id)bagKey;
 - (void)setResponseValidated:(BOOL)arg1;
 - (void)setResponseExtraInfo:(id)arg1;
 - (void)setResponseRegionID:(id)arg1;
 - (void)setResponseBasePhoneNumber:(id)arg1;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)requiredKeys;
-- (id)bagKey;
-- (BOOL)responseValidated;
-- (id)responseExtraInfo;
-- (id)responseBasePhoneNumber;
-- (id)responseRegionID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)messageBody;
 
 @end

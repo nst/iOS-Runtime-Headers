@@ -14,15 +14,15 @@
 
 - (void)dealloc;
 - (id)defaultCellFillWithState:(id)arg1;
-- (void)mapTablePropertiesWithState:(id)arg1;
-- (void)mapColumnGridAt:(id)arg1 withState:(id)arg2;
-- (id)initWithOadTable:(id)arg1 bounds:(id)arg2 parent:(id)arg3;
-- (float)columnWidthAtIndex:(int)arg1 state:(id)arg2;
-- (id)tableBorderStyle;
-- (id)defaultCellFillForRow:(unsigned int)arg1 withState:(id)arg2;
-- (void)mapAt:(id)arg1 withState:(id)arg2;
 - (id)grid;
+- (void)mapColumnGridAt:(id)arg1 withState:(id)arg2;
+- (void)mapTablePropertiesWithState:(id)arg1;
+- (id)initWithOadTable:(id)arg1 bounds:(id)arg2 parent:(id)arg3;
+- (id)defaultCellFillForRow:(unsigned int)arg1 withState:(id)arg2;
 - (id)cellStyle;
+- (id)tableBorderStyle;
+- (float)columnWidthAtIndex:(int)arg1 state:(id)arg2;
 - (unsigned int)rowCount;
+- (void)mapAt:(id)arg1 withState:(id)arg2;
 
 @end

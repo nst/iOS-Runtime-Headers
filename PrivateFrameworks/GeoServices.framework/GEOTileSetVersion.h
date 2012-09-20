@@ -2,28 +2,62 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOTileSetVersion : PBCodable  {
+    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_availableTiles;
+    unsigned int _availableTilesCount;
+    unsigned int _availableTilesSpace;
+    struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_genericTiles;
+    unsigned int _genericTilesCount;
+    unsigned int _genericTilesSpace;
     unsigned int _identifier;
-    NSMutableArray *_availableTiles;
+    unsigned int _supportedLanguagesVersion;
+    unsigned int _timeToLiveSeconds;
+    struct { 
+        unsigned int supportedLanguagesVersion : 1; 
+        unsigned int timeToLiveSeconds : 1; 
+    } _has;
 }
 
 @property unsigned int identifier;
-@property(retain) NSMutableArray * availableTiles;
+@property(readonly) unsigned int availableTilesCount;
+@property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }* availableTiles;
+@property BOOL hasTimeToLiveSeconds;
+@property unsigned int timeToLiveSeconds;
+@property(readonly) unsigned int genericTilesCount;
+@property(readonly) struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }* genericTiles;
+@property BOOL hasSupportedLanguagesVersion;
+@property unsigned int supportedLanguagesVersion;
 
 
-- (id)description;
-- (void)dealloc;
-- (id)availableTiles;
-- (id)availableTilesAtIndex:(unsigned int)arg1;
-- (unsigned int)availableTilesCount;
-- (void)addAvailableTiles:(id)arg1;
-- (void)setAvailableTiles:(id)arg1;
-- (id)dictionaryRepresentation;
 - (unsigned int)identifier;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setIdentifier:(unsigned int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
+- (unsigned int)timeToLiveSeconds;
+- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setHasSupportedLanguagesVersion:(BOOL)arg1;
+- (void)setGenericTiles:(struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
+- (struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)genericTiles;
+- (void)setHasTimeToLiveSeconds:(BOOL)arg1;
+- (void)setAvailableTiles:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)availableTiles;
+- (void)setSupportedLanguagesVersion:(unsigned int)arg1;
+- (unsigned int)supportedLanguagesVersion;
+- (BOOL)hasSupportedLanguagesVersion;
+- (void)addGenericTile:(struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
+- (struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })genericTileAtIndex:(unsigned int)arg1;
+- (unsigned int)genericTilesCount;
+- (void)setTimeToLiveSeconds:(unsigned int)arg1;
+- (BOOL)hasTimeToLiveSeconds;
+- (void)addAvailableTiles:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })availableTilesAtIndex:(unsigned int)arg1;
+- (unsigned int)availableTilesCount;
+- (void)clearGenericTiles;
+- (void)clearAvailableTiles;
+- (BOOL)readFrom:(id)arg1;
 
 @end

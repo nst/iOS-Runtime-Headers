@@ -5,7 +5,7 @@
 @class UIImageView, UIImage;
 
 @interface UIClassicStatusBarView : UIScrollsToTopInitiatorView  {
-    UIImageView *_imageView;
+    UIImageView *_backgroundView;
 }
 
 @property(retain) UIImage * image;

@@ -11,8 +11,8 @@
 
 - (void)dealloc;
 - (id)initWithObject:(id)arg1;
-- (id)decodedObject;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)decodedObject;
 
 @end

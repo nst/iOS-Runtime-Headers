@@ -15,20 +15,20 @@
 
 + (void)initialize;
 
-- (id)init;
-- (void)dealloc;
 - (id)peerPickerViewController:(id)arg1 sessionForConnectionType:(unsigned int)arg2;
 - (void)peerPickerViewController:(id)arg1 didSelectConnectionType:(unsigned int)arg2;
 - (void)peerPickerViewController:(id)arg1 didConnectPeer:(id)arg2 toSession:(id)arg3;
 - (void)peerPickerViewControllerDidCancel:(id)arg1;
-- (id)pickerViewController;
 - (unsigned int)connectionTypesMask;
+- (id)pickerViewController;
 - (void)_createPicker;
 - (void)setConnectionTypesMask:(unsigned int)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
 - (void)dismiss;
 - (BOOL)isVisible;
 - (void)show;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

@@ -8,11 +8,11 @@
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
-- (id)init;
-- (void)dealloc;
 - (id)isPurchasingItemIdentifier:(id)arg1;
 - (id)isPurchasedItemIdentifier:(id)arg1;
 - (void)_purchaseRequestsChangedNotification:(id)arg1;
 - (id)_className;
+- (void)dealloc;
+- (id)init;
 
 @end

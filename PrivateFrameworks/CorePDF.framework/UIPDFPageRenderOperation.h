@@ -10,14 +10,18 @@
     BOOL finished;
 }
 
+@property(retain) UIPDFPageRenderJob * job;
 
+
+- (void)setJob:(id)arg1;
+- (id)job;
 - (void)main;
 - (void)dealloc;
-- (void)completeOperation;
+- (BOOL)isExecuting;
 - (BOOL)isFinished;
-- (BOOL)isConcurrent;
 - (id)initWithJob:(id)arg1;
 - (void)start;
-- (BOOL)isExecuting;
+- (void)completeOperation;
+- (BOOL)isConcurrent;
 
 @end

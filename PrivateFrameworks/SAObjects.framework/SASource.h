@@ -10,7 +10,7 @@
 @property(copy) NSString * accountIdentifier;
 @property(copy) NSString * accountName;
 @property(copy) NSString * domainIdentifier;
-@property(retain) NSNumber * remote;
+@property(copy) NSNumber * remote;
 
 + (id)source;
 + (id)sourceWithDictionary:(id)arg1 context:(id)arg2;
@@ -20,11 +20,11 @@
 - (id)accountName;
 - (id)accountIdentifier;
 - (void)setAccountIdentifier:(id)arg1;
-- (id)domainIdentifier;
-- (void)setDomainIdentifier:(id)arg1;
 - (void)setRemote:(id)arg1;
+- (id)remote;
+- (void)setDomainIdentifier:(id)arg1;
+- (id)domainIdentifier;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (id)remote;
 
 @end

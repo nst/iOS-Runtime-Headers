@@ -12,24 +12,28 @@
     NSMutableSet *_pickedDataSourceActionRowSet;
     NSMutableSet *_pickedPersistentIDSet;
     unsigned int _allowsPickingMultipleItems : 1;
+    unsigned int _showsCloudItems : 1;
     unsigned int _wantsNavigationButtons : 1;
 }
 
 @property BOOL allowsPickingMultipleItems;
+@property BOOL showsCloudItems;
 @property BOOL wantsNavigationButtons;
 @property(copy) NSString * prompt;
 @property <IUModalContextDelegate><MediaPickerModalContextDelegate> * delegate;
 
 
-- (void)dealloc;
-- (void)_doneAction:(id)arg1;
-- (id)viewController;
-- (void)setPrompt:(id)arg1;
-- (id)prompt;
 - (void)setAllowsPickingMultipleItems:(BOOL)arg1;
 - (BOOL)allowsPickingMultipleItems;
 - (id)initWithMediaTypes:(int)arg1;
 - (void)_cancelAction:(id)arg1;
+- (void)_doneAction:(id)arg1;
+- (BOOL)showsCloudItems;
+- (void)setShowsCloudItems:(BOOL)arg1;
+- (void)dealloc;
+- (id)viewController;
+- (void)setPrompt:(id)arg1;
+- (id)prompt;
 - (void)orderOut;
 - (BOOL)wantsNavigationButtons;
 - (void)setWantsNavigationButtons:(BOOL)arg1;

@@ -22,12 +22,12 @@
 - (struct CGPoint { float x1; float x2; })maximumContentOffset;
 - (void)setMaxMinZoomScalesForCurrentBounds;
 - (void)displayView:(id)arg1;
+- (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
-- (id)viewForZoomingInScrollView:(id)arg1;
 - (void)setView:(id)arg1;
 - (id)view;
+- (id)viewForZoomingInScrollView:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIndex:(unsigned int)arg1;
 
 @end

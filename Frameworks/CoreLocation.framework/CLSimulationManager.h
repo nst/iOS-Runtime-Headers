@@ -17,8 +17,6 @@
 @property int locationRepeatBehavior;
 
 
-- (id)init;
-- (void)flush;
 - (int)locationDeliveryBehavior;
 - (int)locationRepeatBehavior;
 - (double)locationSpeed;
@@ -47,5 +45,7 @@
 - (id)availableScenarios;
 - (void)loadScenarioFromURL:(id)arg1;
 - (id)scenariosPath;
+- (id)init;
+- (void)flush;
 
 @end

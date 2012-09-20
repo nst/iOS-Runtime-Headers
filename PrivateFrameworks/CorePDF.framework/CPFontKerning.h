@@ -4,7 +4,7 @@
 
 @interface CPFontKerning : NSObject <CPDisposable> {
     struct __CFData { } *kernTable;
-    char *dataPtr;
+    const char *dataPtr;
     unsigned int offset;
     unsigned int kernTableLength;
     struct __CFDictionary { } *kernDictionary;
@@ -13,23 +13,23 @@
 }
 
 
-- (void)dealloc;
-- (id)initWithCGFont:(struct CGFont { }*)arg1;
-- (short)readShort;
 - (struct __CFDictionary { }*)createKernTable;
-- (id)initWithKernData:(struct __CFData { }*)arg1;
-- (void)doKerningPair;
-- (void)doSubtableFormat0;
-- (void)doSubtableFormat1;
-- (void)doSubtableFormat2;
-- (void)doSubtableFormat3;
-- (void)doOTSubtable;
-- (void)doTTSubtable;
+- (short)readShort;
+- (id)initWithCGFont:(struct CGFont { }*)arg1;
 - (void)doTable;
-- (unsigned char)readByte;
-- (unsigned int)readUnsignedLong;
+- (void)doTTSubtable;
+- (void)doOTSubtable;
+- (void)doSubtableFormat3;
+- (void)doSubtableFormat2;
+- (void)doSubtableFormat1;
+- (void)doSubtableFormat0;
+- (void)doKerningPair;
 - (unsigned short)readUnsignedShort;
-- (void)finalize;
+- (id)initWithKernData:(struct __CFData { }*)arg1;
+- (unsigned int)readUnsignedLong;
+- (unsigned char)readByte;
 - (void)dispose;
+- (void)dealloc;
+- (void)finalize;
 
 @end

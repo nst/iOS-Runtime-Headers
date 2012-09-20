@@ -6,10 +6,10 @@
    See Warning(s) below.
  */
 
-@class NSFileAccessNode;
+@class NSFileAccessNode, NSObject<OS_xpc_object>;
 
 @interface NSFileReactorProxy : NSObject  {
-    struct _xpc_connection_s { } *_client;
+    NSObject<OS_xpc_object> *_client;
     id _reactorID;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -20,16 +20,16 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
+- (void)finalize;
+- (id)client;
 - (void)forwardUsingMessageSender:(id)arg1;
 - (id)descriptionWithIndenting:(id)arg1;
-- (id)initWithClient:(struct _xpc_connection_s { }*)arg1 reactorID:(id)arg2 messageSender:(id)arg3;
+- (id)initWithClient:(id)arg1 reactorID:(id)arg2 messageSender:(id)arg3;
 - (id)messageSender;
 - (id)itemLocation;
 - (id)reactorID;
 - (void)setItemLocation:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (void)finalize;
-- (struct _xpc_connection_s { }*)client;
 
 @end

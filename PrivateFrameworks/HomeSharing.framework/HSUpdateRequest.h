@@ -6,8 +6,11 @@
 }
 
 + (id)requestWithDatabaseRevision:(unsigned int)arg1;
++ (id)requestWithDatabaseRevision:(unsigned int)arg1 sessionID:(unsigned int)arg2;
 
+- (id)initWithDatabaseRevision:(unsigned int)arg1 sessionID:(unsigned int)arg2;
 - (id)initWithDatabaseRevision:(unsigned int)arg1;
+- (id)_bodyDataForDatabaseRevision:(unsigned int)arg1 sessionID:(unsigned int)arg2;
 - (id)canonicalResponseForResponse:(id)arg1;
 
 @end

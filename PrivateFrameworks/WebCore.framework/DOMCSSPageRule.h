@@ -8,11 +8,11 @@
 }
 
 @property(copy) NSString * selectorText;
-@property(retain,readonly) DOMCSSStyleDeclaration * style;
+@property(readonly) DOMCSSStyleDeclaration * style;
 
 
 - (id)style;
-- (id)selectorText;
 - (void)setSelectorText:(id)arg1;
+- (id)selectorText;
 
 @end

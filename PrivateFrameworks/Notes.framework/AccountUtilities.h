@@ -12,11 +12,11 @@
 
 + (id)sharedAccountUtilities;
 
-- (id)init;
+- (void).cxx_destruct;
 - (void)dealloc;
+- (id)init;
 - (void)accountsChanged;
 - (id)accountsManager;
-- (void).cxx_destruct;
 - (id)syncAccountIdForDisplayAccountId:(id)arg1;
 - (id)allDisplayAccounts;
 - (id)allSyncableAccounts;

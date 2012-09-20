@@ -18,6 +18,7 @@
 @property(readonly) BOOL validNetworkReachable;
 @property(readonly) BOOL wiFiActiveAndReachable;
 @property(readonly) BOOL willSearchForNetwork;
+@property(readonly) BOOL dataActiveAndReachable;
 @property(readonly) BOOL networkEnabled;
 @property(readonly) BOOL networkActive;
 @property(readonly) BOOL networkReachable;
@@ -25,23 +26,22 @@
 
 + (id)sharedInstance;
 
+- (BOOL)networkEnabled;
+- (BOOL)networkActive;
+- (BOOL)networkReachable;
 - (BOOL)enableCriticalReliability;
 - (void)_setReliabilityTimeoutInterval;
 - (void)_reallySetCriticalReliability:(BOOL)arg1;
 - (void)_createAPSConnectionIfNeeded;
 - (void)_tryToEnableReliability;
 - (void)_clearReliabilityTimeoutInterval;
-- (BOOL)networkReachable;
-- (BOOL)networkActive;
-- (BOOL)networkEnabled;
-- (BOOL)retainWeakReference;
-- (BOOL)allowsWeakReference;
-- (BOOL)wiFiActiveAndReachable;
 - (void)setEnableCriticalReliability:(BOOL)arg1;
+- (BOOL)dataActiveAndReachable;
+- (BOOL)wiFiActiveAndReachable;
 - (BOOL)willSearchForNetwork;
 - (BOOL)validNetworkReachable;
-- (BOOL)validNetworkEnabled;
 - (BOOL)validNetworkActive;
+- (BOOL)validNetworkEnabled;
 - (BOOL)allowAnyNetwork;
 
 @end

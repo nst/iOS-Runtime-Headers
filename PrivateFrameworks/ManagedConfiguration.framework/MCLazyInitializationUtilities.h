@@ -5,8 +5,8 @@
 @interface MCLazyInitializationUtilities : NSObject  {
 }
 
++ (void)initPowerlog;
 + (void)initVPNUtilities;
-+ (void)initUIApplication;
 
 
 @end

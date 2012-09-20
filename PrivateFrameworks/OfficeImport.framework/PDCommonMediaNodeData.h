@@ -15,15 +15,15 @@
 
 - (void)setTarget:(id)arg1;
 - (id)target;
-- (id)init;
 - (void)dealloc;
-- (long)volume;
+- (id)init;
 - (void)setVolume:(long)arg1;
+- (long)volume;
+- (void)setNumberOfSlides:(long)arg1;
+- (long)numberOfSlides;
+- (BOOL)isShowWhenStopped;
 - (BOOL)isMuted;
 - (void)setIsMuted:(BOOL)arg1;
-- (BOOL)isShowWhenStopped;
 - (void)setIsShowWhenStopped:(BOOL)arg1;
-- (long)numberOfSlides;
-- (void)setNumberOfSlides:(long)arg1;
 
 @end

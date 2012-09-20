@@ -22,8 +22,9 @@
 @property id delegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
 - (void)displayTick;
 - (int)indexOfSelectedCover;
 - (void)flipSelectedCover;
@@ -42,8 +43,8 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (void)setOverlay:(id)arg1;
+- (id)overlay;
 - (BOOL)isIdle;
 - (int)displayedDeviceOrientation;
 - (void)setDisplayedDeviceOrientation:(int)arg1 animate:(BOOL)arg2;
@@ -51,8 +52,7 @@
 - (id)coverFlowLayer;
 - (void)setLeftAdornmentView:(id)arg1;
 - (void)setRightAdornmentView:(id)arg1;
-- (void)setOverlay:(id)arg1;
-- (id)overlay;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
 - (struct CGPoint { float x1; float x2; })_coverFlowPointForTouch:(id)arg1;
 - (void)_cancelTouchTracking;
 - (void)_updateSubviewsForDeviceOrientation:(BOOL)arg1;

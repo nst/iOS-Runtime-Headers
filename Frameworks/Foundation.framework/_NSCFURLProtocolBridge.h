@@ -16,6 +16,11 @@
 + (void)permitRequest:(struct _CFURLRequest { }*)arg1;
 + (void)barRequest:(struct _CFURLRequest { }*)arg1;
 
+- (void)resume;
+- (id)description;
+- (void)dealloc;
+- (void)stop;
+- (void)start;
 - (void)bridgeRelease;
 - (void)bridgeRetain;
 - (void)useCredential:(struct _CFURLCredential { }*)arg1 forChallenge:(struct _CFURLAuthChallenge { }*)arg2;
@@ -41,10 +46,5 @@
 - (void)URLProtocol:(id)arg1 didFailWithError:(id)arg2;
 - (void)URLProtocolDidFinishLoading:(id)arg1;
 - (void)URLProtocol:(id)arg1 didReceiveResponse:(id)arg2 cacheStoragePolicy:(unsigned int)arg3;
-- (id)description;
-- (void)dealloc;
-- (void)resume;
-- (void)stop;
-- (void)start;
 
 @end

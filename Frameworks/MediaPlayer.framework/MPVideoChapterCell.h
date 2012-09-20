@@ -16,7 +16,6 @@
 @property(retain) MPImageCache * artworkImageCache;
 
 
-- (void)dealloc;
 - (id)artworkImageCache;
 - (id)timeMarker;
 - (float)timeColumnWidth;
@@ -28,10 +27,11 @@
 - (void)setTimeColumnWidth:(float)arg1;
 - (void)setCurrent:(BOOL)arg1;
 - (void)setTimeMarker:(id)arg1;
+- (void)dealloc;
+- (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
 - (void)prepareForReuse;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)setIndex:(unsigned int)arg1;
 
 @end

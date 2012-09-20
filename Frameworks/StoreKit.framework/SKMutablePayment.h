@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSString, NSData;
+@class NSDictionary, NSString, NSData;
 
 @interface SKMutablePayment : SKPayment  {
 }
@@ -10,8 +10,10 @@
 @property(copy) NSString * productIdentifier;
 @property int quantity;
 @property(copy) NSData * requestData;
+@property(copy) NSDictionary * requestParameters;
 
 
+- (void)setRequestParameters:(id)arg1;
 - (void)setRequestData:(id)arg1;
 - (void)setQuantity:(int)arg1;
 - (void)setProductIdentifier:(id)arg1;

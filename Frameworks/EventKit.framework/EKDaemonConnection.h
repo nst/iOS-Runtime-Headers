@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSString, NSMutableDictionary;
+@class NSString, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSMutableDictionary;
 
 @interface EKDaemonConnection : NSObject  {
     unsigned long _options;
@@ -10,11 +10,12 @@
     unsigned int _serverPort;
     unsigned int _machPort;
     unsigned int _connectionPort;
+    NSObject<OS_dispatch_queue> *_connectionLock;
     id _delegate;
     NSMutableDictionary *_replyHandlers;
     unsigned int _nextID;
-    struct dispatch_source_s { } *_replySource;
-    struct dispatch_queue_s { } *_replyHandlerLock;
+    NSObject<OS_dispatch_source> *_replySource;
+    NSObject<OS_dispatch_queue> *_replyHandlerLock;
     BOOL _registeredForStartNote;
 }
 
@@ -22,17 +23,17 @@
 @property id delegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
+- (void)disconnect;
+- (unsigned int)port;
 - (void)_daemonRestarted;
-- (void)_processReplyWithID:(unsigned int)arg1 data:(id)arg2;
+- (void)_processReplyWithID:(unsigned int)arg1 data:(id)arg2 finished:(BOOL)arg3;
 - (void)_finishAllRepliesOnServerDeath;
 - (BOOL)_connectToServer;
 - (void)removeReplyHandler:(id)arg1;
 - (id)addReplyHandler:(id)arg1;
 - (id)initWithOptions:(unsigned long)arg1 path:(id)arg2;
-- (unsigned int)port;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)disconnect;
 
 @end

@@ -12,27 +12,27 @@
 
 
 - (void)setProperties:(id)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)init;
 - (id)properties;
 - (BOOL)isEmpty;
-- (void)removeAllTextRuns;
-- (id)addGenericTextField;
-- (void)setParagraphEndCharacterProperties:(id)arg1;
-- (BOOL)hasBulletCharacterProperties;
-- (id)bulletCharacterProperties;
+- (id)addSlideNumberField;
+- (id)findFirstTextRunOfClass:(Class)arg1;
 - (void)applyProperties:(id)arg1;
-- (id)plainText;
-- (unsigned int)textRunCount;
+- (id)bulletCharacterProperties;
+- (BOOL)hasBulletCharacterProperties;
+- (void)setParagraphEndCharacterProperties:(id)arg1;
 - (id)addFooterField;
 - (id)addDateTimeField;
-- (id)addRegularTextRun;
+- (id)addGenericTextField;
 - (id)addTextLineBreak;
-- (id)textRunAtIndex:(unsigned int)arg1;
-- (id)paragraphEndCharacterProperties;
+- (void)removeAllTextRuns;
 - (void)removeUnnecessaryOverrides;
-- (id)findFirstTextRunOfClass:(Class)arg1;
-- (id)addSlideNumberField;
+- (id)addRegularTextRun;
 - (void)setParentTextListStyle:(id)arg1;
+- (id)paragraphEndCharacterProperties;
+- (id)textRunAtIndex:(unsigned int)arg1;
+- (unsigned int)textRunCount;
+- (id)plainText;
 
 @end

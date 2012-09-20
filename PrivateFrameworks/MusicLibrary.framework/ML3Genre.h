@@ -5,15 +5,16 @@
 @interface ML3Genre : ML3Collection  {
 }
 
-+ (id)defaultOrderingProperties;
-+ (int)revisionTrackingCode;
-+ (void)initialize;
 + (id)trackForeignPersistentID;
 + (id)propertiesForGroupingKey;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
 + (id)predisambiguatedProperties;
 + (id)allProperties;
 + (id)databaseTable;
++ (int)revisionTrackingCode;
++ (id)defaultOrderingProperties;
++ (void)initialize;
++ (id)countingQueryForMPMediaEntityProperty:(id)arg1 library:(id)arg2 identifier:(long long)arg3;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
 
 - (void)updateTrackValues:(id)arg1;

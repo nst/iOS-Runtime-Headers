@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AOSKit.framework/AOSKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 /* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
    The runtime does not encode function signature information.  We use a signature of: 
            "int (*funcName)()",  where funcName might be null. 
@@ -11,24 +15,34 @@
 
 @interface AOSContext : NSObject <NSPortDelegate> {
     struct AOSAccount { } *_account;
-    struct AOSTransaction { } *_transaction;
+
+  /* Error parsing encoded ivar type info: ^{AOSTransactionC=#CC^v^{__CFError}^?@?^{dispatch_queue_s}^v@^?^?} */
+    struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; struct dispatch_queue_s {} *x9; void *x10; id x11; int (*x12)(); int (*x13)(); } *_transaction;
+
     int (*_callback)();
     NSThread *_callbackThread;
     id _info;
 }
 
-+ (id)contextWithAccount:(struct AOSAccount { }*)arg1 andTransaction:(struct AOSTransaction { }*)arg2;
++ (id)contextWithAccount:(struct AOSAccount { }*)arg1 andTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; struct dispatch_queue_s {} *x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)arg2;
+     /* Encoded args for previous method: @16@0:4^{AOSAccount=}8^{AOSTransactionC=#CC^v^{__CFError}^?@?^{dispatch_queue_s}^v@^?^?}12 */
 
+
+- (struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; struct dispatch_queue_s {} *x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)transaction;
+     /* Encoded args for previous method: ^{AOSTransactionC=#CC^v^{__CFError}^?@?^{dispatch_queue_s}^v@^?^?}8@0:4 */
+
+- (void)setTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; struct dispatch_queue_s {} *x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)arg1;
+     /* Encoded args for previous method: v12@0:4^{AOSTransactionC=#CC^v^{__CFError}^?@?^{dispatch_queue_s}^v@^?^?}8 */
+
+- (BOOL)scheduleCallback;
+- (void)_performCallback;
+- (id)_callbackThread;
+- (void)setInfo:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)info;
+- (void)finalize;
 - (void)setAccount:(struct AOSAccount { }*)arg1;
 - (struct AOSAccount { }*)account;
-- (id)init;
-- (void)dealloc;
-- (BOOL)scheduleCallback;
-- (void)setTransaction:(struct AOSTransaction { }*)arg1;
-- (struct AOSTransaction { }*)transaction;
-- (id)_callbackThread;
-- (void)_performCallback;
-- (id)info;
-- (void)setInfo:(id)arg1;
 
 @end

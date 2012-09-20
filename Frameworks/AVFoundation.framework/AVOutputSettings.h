@@ -10,7 +10,7 @@
 
 @property(readonly) NSSet * compatibleMediaTypes;
 @property(readonly) BOOL willYieldCompressedSamples;
-@property(getter=isDictionaryFullyFormed,readonly) BOOL dictionaryFullyFormed;
+@property(getter=isCodecAvailableOnCurrentSystem,readonly) BOOL codecAvailableOnCurrentSystem;
 @property(readonly) NSDictionary * outputSettingsDictionary;
 
 + (id)defaultOutputSettingsForMediaType:(id)arg1;
@@ -23,11 +23,12 @@
 
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)dealloc;
-- (id)initWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
+- (id)init;
 - (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
-- (BOOL)isDictionaryFullyFormed;
+- (id)initWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
+- (BOOL)isCodecAvailableOnCurrentSystem;
+- (BOOL)canFullySpecifyOutputFormatReturningReason:(id*)arg1;
 - (id)outputSettingsDictionary;
 - (BOOL)willYieldCompressedSamples;
 - (id)compatibleMediaTypes;

@@ -7,18 +7,18 @@
 @interface OADSound : OCDDelayedMedia  {
     NSData *mSoundData;
     NSString *mName;
-    int mSizeInBytes;
+    long mSizeInBytes;
 }
 
 
 - (void)setName:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (bool)isLoaded;
 - (id)name;
-- (id)soundData;
+- (void)dealloc;
+- (id)init;
+- (bool)isLoaded;
 - (void)setSoundData:(id)arg1;
-- (long)sizeInBytes;
+- (id)soundData;
 - (void)setSizeInBytes:(long)arg1;
+- (long)sizeInBytes;
 
 @end

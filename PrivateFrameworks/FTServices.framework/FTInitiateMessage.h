@@ -27,10 +27,7 @@
 @property(copy) NSArray * canonicalizedPeers;
 
 
-- (id)messageBody;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (void)dealloc;
+- (id)bagKey;
 - (void)setRegionInformation:(id)arg1;
 - (id)canonicalizedPeers;
 - (void)setAliasSignature:(id)arg1;
@@ -53,6 +50,9 @@
 - (void)setSelfBlob:(id)arg1;
 - (id)peers;
 - (void)setPeers:(id)arg1;
-- (id)bagKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)messageBody;
 
 @end

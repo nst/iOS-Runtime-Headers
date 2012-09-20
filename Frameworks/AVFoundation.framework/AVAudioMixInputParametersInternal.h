@@ -7,6 +7,7 @@
 @interface AVAudioMixInputParametersInternal : NSObject  {
     int trackID;
     NSMutableArray *ramps;
+    struct opaqueMTAudioProcessingTap { } *tap;
 }
 
 

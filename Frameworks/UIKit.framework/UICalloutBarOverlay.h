@@ -13,7 +13,7 @@
             float height; 
         } size; 
     } m_arrowRect;
-    float m_dividerOffsets[12];
+    float m_dividerOffsets[20];
     BOOL highlighted;
     struct CGRect { 
         struct CGPoint { 

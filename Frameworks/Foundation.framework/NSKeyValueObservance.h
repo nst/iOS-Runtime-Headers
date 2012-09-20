@@ -17,16 +17,16 @@
 }
 
 
-- (id)_initWithObserver:(id)arg1 property:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4 originalObservable:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (unsigned int)retainCount;
 - (id)description;
+- (unsigned int)retainCount;
+- (unsigned int)hash;
 - (id)retain;
-- (oneway void)release;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (oneway void)release;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
+- (id)_initWithObserver:(id)arg1 property:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4 originalObservable:(id)arg5;
 
 @end

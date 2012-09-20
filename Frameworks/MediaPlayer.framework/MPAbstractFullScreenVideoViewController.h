@@ -13,12 +13,14 @@
 }
 
 
-- (id)init;
-- (void)dealloc;
+- (void)setPlayer:(id)arg1;
+- (void)setItem:(id)arg1;
 - (void)_hideOverlayWithAnimation:(BOOL)arg1;
-- (BOOL)transportControls:(id)arg1 releasedHeldButtonPart:(unsigned int)arg2;
-- (BOOL)transportControls:(id)arg1 heldButtonPart:(unsigned int)arg2;
-- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned int)arg2;
+- (BOOL)transportControls:(id)arg1 releasedHeldButtonPart:(unsigned long long)arg2;
+- (BOOL)transportControls:(id)arg1 heldButtonPart:(unsigned long long)arg2;
+- (void)overlayDidEndScrubbing:(id)arg1;
+- (void)overlayDidBeginScrubbing:(id)arg1;
+- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
 - (void)displayVideoViewOnScreen;
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
 - (BOOL)forceScaleToFitInPortrait;
@@ -27,7 +29,8 @@
 - (int)orientationForStatusBar;
 - (void)_autohideControlsOverlay;
 - (void)cancelControlsOverlayAutohide;
-- (void)bufferingStateChangedNotification:(id)arg1;
+- (void)videoView_playbackStateChangedNotification:(id)arg1;
+- (void)videoView_bufferingStateChangedNotification:(id)arg1;
 - (BOOL)inhibitOverlay;
 - (void)showOverlayIfNecessary;
 - (void)hideOverlayAnimated:(BOOL)arg1;
@@ -36,31 +39,28 @@
 - (void)_setStatusBarVisible:(BOOL)arg1 duration:(float)arg2;
 - (int)_validInterfaceOrientation;
 - (void)transformVideoForInterfaceOrientation:(int)arg1 animate:(BOOL)arg2;
-- (BOOL)phoneTVOutModeEnabled;
 - (void)scheduleControlsOverlayAutohideAfterDelay:(double)arg1;
-- (void)_stopWatchingAVController;
 - (void)_resumedEventsOnlyNotification:(id)arg1;
-- (void)playbackStateDidChangeNotification:(id)arg1;
 - (void)showOverlayAnimated:(BOOL)arg1;
 - (void)setInhibitOverlay:(BOOL)arg1;
-- (void)setDisabledParts:(unsigned int)arg1;
 - (BOOL)canHideOverlay:(BOOL)arg1;
-- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
+- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
 - (void)setDisableControlsAutohide:(BOOL)arg1;
-- (void)setTVOutEnabled:(BOOL)arg1;
+- (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
 - (BOOL)controlsOverlayVisible;
-- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
 - (BOOL)canShowControlsOverlay;
 - (void)setCanShowControlsOverlay:(BOOL)arg1;
-- (void)setPlayer:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)_applicationDidBecomeActive:(id)arg1;
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (int)statusBarStyle;
-- (void)setItem:(id)arg1;
 
 @end

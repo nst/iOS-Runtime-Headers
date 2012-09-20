@@ -29,18 +29,18 @@
 
 - (void)dealloc;
 - (void)_addReindexedProperty:(id)arg1 toSetForEntity:(id)arg2;
-- (id)createEntityMigrationStatements;
-- (id)createStatementsForUpdatingEntityKeys;
-- (void)_populateTableMigrationDescriptions;
-- (void)_determinePropertyDependenciesOnIDForEntity:(id)arg1;
-- (void)_determineReindexedEntitiesAndAffectedProperties;
-- (void)_populateEntityMigrationDescriptionsAndEntityMap;
 - (void)_addEntityMigration:(id)arg1 toTableMigrationForRootEntity:(id)arg2 migrationType:(int)arg3;
-- (id)tableMigrationDescriptionForEntity:(id)arg1;
+- (void)_populateEntityMigrationDescriptionsAndEntityMap;
+- (void)_determineReindexedEntitiesAndAffectedProperties;
+- (void)_determinePropertyDependenciesOnIDForEntity:(id)arg1;
+- (void)_populateTableMigrationDescriptions;
+- (id)createStatementsForUpdatingEntityKeys;
+- (id)createEntityMigrationStatements;
 - (id)createIndexStatementsForEntity:(id)arg1;
+- (id)tableMigrationDescriptionForEntity:(id)arg1;
 - (id)entityMigrationDescriptionForEntity:(id)arg1;
-- (id)initWithStore:(id)arg1 destinationModel:(id)arg2 mappingModel:(id)arg3;
 - (BOOL)performMigration:(id*)arg1;
+- (id)initWithStore:(id)arg1 destinationModel:(id)arg2 mappingModel:(id)arg3;
 - (id)adapter;
 
 @end

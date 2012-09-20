@@ -21,16 +21,16 @@
 @property(readonly) long long mediaFileSize;
 
 
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
-- (id)init;
-- (void)dealloc;
-- (id)URL;
 - (int)durationInMilliseconds;
 - (id)mediaKind;
 - (int)fullDurationInMilliseconds;
 - (long long)mediaFileSize;
+- (id)URL;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (BOOL)isProtectedMedia;
 - (void)setMediaKind:(id)arg1;
 - (id)initWithStoreOfferDictionary:(id)arg1;

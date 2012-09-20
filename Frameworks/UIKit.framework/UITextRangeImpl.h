@@ -15,16 +15,16 @@
 + (id)wrapDOMRange:(id)arg1;
 + (id)wrapDOMRange:(id)arg1 withAffinity:(int)arg2;
 
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)adjustAffinityOfPosition:(id)arg1 isStart:(BOOL)arg2;
 - (void)setAffinity:(int)arg1;
 - (void)setDomRange:(id)arg1;
-- (id)domRange;
 - (int)affinity;
 - (id)end;
 - (id)start;
+- (id)domRange;
 - (BOOL)isEmpty;
 
 @end

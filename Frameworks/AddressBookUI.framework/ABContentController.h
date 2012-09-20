@@ -13,19 +13,19 @@
 @property void* addressBook;
 
 
-- (id)init;
 - (void)dealloc;
-- (id)contentControllerDelegate;
-- (void)setContentControllerDelegate:(id)arg1;
-- (void)cleanUpContentLayer;
-- (BOOL)contentViewIsVisible;
-- (void)preloadController;
-- (void)back:(BOOL)arg1 save:(BOOL)arg2;
-- (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
-- (void)setAddressBook:(void*)arg1;
-- (void*)addressBook;
+- (id)init;
 - (void)displayScrollerIndicators;
 - (id)contentView;
 - (void)reload;
+- (void*)addressBook;
+- (void)preloadController;
+- (BOOL)contentViewIsVisible;
+- (void)cleanUpContentLayer;
+- (void)setContentControllerDelegate:(id)arg1;
+- (id)contentControllerDelegate;
+- (void)back:(BOOL)arg1 save:(BOOL)arg2;
+- (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
+- (void)setAddressBook:(void*)arg1;
 
 @end

@@ -16,19 +16,19 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)object;
 - (void)removeAdapterOperation:(id)arg1;
-- (id)rowForUpdate;
-- (id)adapterOperations;
-- (void)setDatabaseOperator:(unsigned int)arg1;
-- (id)dbSnapshot;
-- (id)initWithObject:(id)arg1 entity:(id)arg2;
-- (void)setDBSnapshot:(id)arg1;
-- (void)setRowForUpdate:(id)arg1;
-- (void)addDelta:(id)arg1 forManyToManyKey:(id)arg2;
-- (id)manyToManyDeltas;
-- (void)addAdapterOperation:(id)arg1;
 - (unsigned int)databaseOperator;
+- (void)addAdapterOperation:(id)arg1;
+- (id)manyToManyDeltas;
+- (void)addDelta:(id)arg1 forManyToManyKey:(id)arg2;
+- (void)setRowForUpdate:(id)arg1;
+- (void)setDBSnapshot:(id)arg1;
+- (id)initWithObject:(id)arg1 entity:(id)arg2;
+- (id)dbSnapshot;
+- (void)setDatabaseOperator:(unsigned int)arg1;
+- (id)adapterOperations;
+- (id)rowForUpdate;
 - (id)objectID;
+- (id)object;
 
 @end

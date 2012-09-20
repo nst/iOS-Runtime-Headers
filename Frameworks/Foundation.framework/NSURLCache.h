@@ -8,11 +8,16 @@
     NSURLCacheInternal *_internal;
 }
 
++ (id)sharedURLCache;
 + (void)_diskCacheSyncLoop:(id)arg1;
 + (void)_performDiskCacheSync;
 + (void)setSharedURLCache:(id)arg1;
-+ (id)sharedURLCache;
 
+- (void)dealloc;
+- (id)init;
+- (void)setMemoryCapacity:(unsigned int)arg1;
+- (unsigned int)currentMemoryUsage;
+- (unsigned int)memoryCapacity;
 - (void)_diskCacheScheduleRemoval:(id)arg1;
 - (void)_diskCacheScheduleWrite:(id)arg1;
 - (id)_diskCacheGet:(id)arg1;
@@ -51,14 +56,9 @@
 - (void)removeAllCachedResponses;
 - (void)removeCachedResponseForRequest:(id)arg1;
 - (void)setDiskCapacity:(unsigned int)arg1;
-- (void)setMemoryCapacity:(unsigned int)arg1;
 - (void)storeCachedResponse:(id)arg1 forRequest:(id)arg2;
 - (id)cachedResponseForRequest:(id)arg1;
 - (unsigned int)currentDiskUsage;
-- (unsigned int)currentMemoryUsage;
 - (unsigned int)diskCapacity;
-- (unsigned int)memoryCapacity;
-- (id)init;
-- (void)dealloc;
 
 @end

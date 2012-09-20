@@ -2,55 +2,60 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSString;
+@class NSString, NSArray;
 
 @interface ABNamePredicate : ABPredicate  {
     void *_addressBook;
     NSString *_name;
-    void *_source;
-    void *_group;
-    NSString *_accountIdentifier;
-    BOOL _showPersonLinks;
     BOOL _matchWholeWords;
-    BOOL _matchNameOnly;
-    struct __CFArray { } *_tokenizations;
+    BOOL _matchPersonOrCompanyNamesExclusively;
+    BOOL _matchPreferredName;
+    void *_tokenizations;
     struct __CFArray { } *_tokenizationSortKeys;
+    NSArray *_groups;
+    NSArray *_sources;
 }
 
-@property void* source;
-@property void* group;
-@property BOOL matchNameOnly;
-@property BOOL matchWholeWords;
-@property BOOL showPersonLinks;
-@property(copy) NSString * accountIdentifier;
 @property void* addressBook;
 @property(copy) NSString * name;
+@property(retain) NSArray * sources;
+@property(retain) NSArray * groups;
+@property void* source;
+@property void* group;
+@property(copy) NSString * accountIdentifier;
+@property BOOL matchWholeWords;
+@property BOOL matchPersonOrCompanyNamesExclusively;
+@property BOOL matchPreferredName;
 
 
+- (id)accountIdentifier;
+- (void)setAccountIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
-- (id)init;
+- (id)name;
 - (void)dealloc;
-- (void)setGroup:(void*)arg1;
-- (void)setAddressBook:(void*)arg1;
-- (void*)addressBook;
-- (id)queryJoinsInCompound:(BOOL)arg1;
-- (BOOL)matchNameOnly;
-- (void)setMatchNameOnly:(BOOL)arg1;
-- (BOOL)matchWholeWords;
-- (void)setMatchWholeWords:(BOOL)arg1;
-- (BOOL)showPersonLinks;
-- (void)setShowPersonLinks:(BOOL)arg1;
-- (struct __CFArray { }*)tokenizations;
-- (void)_doBindingWithStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 bindingOffset:(int*)arg2;
-- (id)queryWhereString;
-- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
+- (id)init;
+- (id)predicateFormat;
 - (void)setSource:(void*)arg1;
 - (void*)source;
 - (void*)group;
-- (id)name;
+- (void)setGroup:(void*)arg1;
 - (BOOL)isValid;
-- (id)accountIdentifier;
-- (void)setAccountIdentifier:(id)arg1;
-- (id)predicateFormat;
+- (void*)addressBook;
+- (id)groups;
+- (void)setMatchPreferredName:(BOOL)arg1;
+- (BOOL)matchPreferredName;
+- (void)setMatchPersonOrCompanyNamesExclusively:(BOOL)arg1;
+- (BOOL)matchPersonOrCompanyNamesExclusively;
+- (void)setMatchWholeWords:(BOOL)arg1;
+- (BOOL)matchWholeWords;
+- (id)queryJoinsInCompound:(BOOL)arg1;
+- (id)_personNameKeys;
+- (void*)tokenizations;
+- (void)setSources:(id)arg1;
+- (void)setGroups:(id)arg1;
+- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
+- (id)queryWhereString;
+- (void)setAddressBook:(void*)arg1;
+- (id)sources;
 
 @end

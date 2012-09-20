@@ -8,15 +8,15 @@
 }
 
 @property(copy) NSURL * alarmId;
-@property(copy) NSString * refId;
 @property(copy) NSString * aceId;
+@property(copy) NSString * refId;
 
-+ (id)updateCompleted;
 + (id)updateCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)updateCompleted;
 
 - (id)groupIdentifier;
-- (id)alarmId;
 - (void)setAlarmId:(id)arg1;
+- (id)alarmId;
 - (id)encodedClassName;
 
 @end

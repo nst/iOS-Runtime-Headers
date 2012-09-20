@@ -17,11 +17,11 @@
 @property unsigned int tapCount;
 
 
-- (void)dealloc;
 - (void)_setTapTimerWithDuration:(double)arg1;
 - (void)_resetTapTimer;
 - (void)_delayedHandleTaps:(id)arg1;
 - (void)reset;
+- (void)dealloc;
 - (unsigned int)tapCount;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

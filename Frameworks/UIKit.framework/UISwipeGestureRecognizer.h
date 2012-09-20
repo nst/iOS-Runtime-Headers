@@ -14,7 +14,7 @@
     float _rateOfMaximumMovementDecay;
     unsigned int _numberOfTouchesRequired;
     NSMutableArray *_touches;
-    int _direction;
+    unsigned int _direction;
     struct CGPoint { 
         float x; 
         float y; 
@@ -25,7 +25,7 @@
 }
 
 @property unsigned int numberOfTouchesRequired;
-@property int direction;
+@property unsigned int direction;
 @property double maximumDuration;
 @property float minimumPrimaryMovement;
 @property float maximumPrimaryMovement;
@@ -35,10 +35,10 @@
 @property float rateOfMaximumMovementDecay;
 @property(readonly) struct CGPoint { float x1; float x2; } startPoint;
 
-+ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
-+ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(int)arg4;
++ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(unsigned int)arg4 touchCount:(unsigned int)arg5;
 + (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 touchCount:(unsigned int)arg4;
-+ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(int)arg4 touchCount:(unsigned int)arg5;
++ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(unsigned int)arg4;
++ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
 
 - (void)dealloc;
 - (void)setRateOfMaximumMovementDecay:(float)arg1;
@@ -54,16 +54,16 @@
 - (float)minimumPrimaryMovement;
 - (double)maximumDuration;
 - (BOOL)_checkForSwipeWithDelta:(struct CGPoint { float x1; float x2; })arg1 time:(double)arg2;
-- (unsigned int)numberOfTouchesRequired;
 - (void)_appendSubclassDescription:(id)arg1;
 - (void)_resetGestureRecognizer;
 - (void)setMinimumPrimaryMovement:(float)arg1;
 - (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (void)setNumberOfTouchesRequired:(unsigned int)arg1;
-- (int)direction;
+- (unsigned int)direction;
+- (unsigned int)numberOfTouchesRequired;
 - (struct CGPoint { float x1; float x2; })startPoint;
 - (void)setMaximumDuration:(double)arg1;
-- (void)setDirection:(int)arg1;
+- (void)setDirection:(unsigned int)arg1;
 - (unsigned int)numberOfTouches;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

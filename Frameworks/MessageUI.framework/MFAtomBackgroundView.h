@@ -8,18 +8,18 @@
     float _scalingFactor;
 }
 
-@property float scalingFactor;
-@property BOOL selected;
 @property int style;
+@property BOOL selected;
+@property float scalingFactor;
 
 
-- (void)setScalingFactor:(float)arg1;
-- (float)scalingFactor;
 - (BOOL)selected;
 - (void)setSelected:(BOOL)arg1;
 - (int)style;
 - (void)setStyle:(int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)scalingFactor;
+- (void)setScalingFactor:(float)arg1;
 
 @end

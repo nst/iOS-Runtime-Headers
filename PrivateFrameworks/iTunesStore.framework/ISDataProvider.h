@@ -13,6 +13,7 @@
     id _output;
     ISOperation *_parentOperation;
     NSURL *_redirectURL;
+    int _errorHandlerResponseType;
 }
 
 @property(retain) SSAuthenticationContext * authenticationContext;
@@ -23,29 +24,13 @@
 @property(retain) NSNumber * authenticatedAccountDSID;
 @property(retain) id output;
 @property(retain) NSURL * redirectURL;
+@property int errorHandlerResponseType;
 
 + (id)provider;
 
-- (void)setContentType:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setAuthenticatedAccountDSID:(id)arg1;
-- (void)setBagContext:(id)arg1;
-- (id)bagContext;
-- (long long)contentLength;
-- (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
-- (void)resetStream;
-- (void)setContentLength:(long long)arg1;
-- (void)closeStream;
-- (long long)streamedBytes;
-- (BOOL)isStream;
-- (id)parentOperation;
-- (void)setParentOperation:(id)arg1;
-- (void)setRedirectURL:(id)arg1;
-- (id)contentType;
-- (void)setup;
 - (id)redirectURL;
 - (id)authenticatedAccountDSID;
+- (BOOL)runAuthorizationDialog:(id)arg1 error:(id*)arg2;
 - (void)migrateOutputFromSubProvider:(id)arg1;
 - (id)output;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
@@ -53,5 +38,25 @@
 - (void)setOutput:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)setErrorHandlerResponseType:(int)arg1;
+- (void)setAuthenticatedAccountDSID:(id)arg1;
+- (void)setBagContext:(id)arg1;
+- (id)bagContext;
+- (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
+- (void)resetStream;
+- (void)setContentLength:(long long)arg1;
+- (int)errorHandlerResponseType;
+- (void)closeStream;
+- (long long)streamedBytes;
+- (BOOL)isStream;
+- (id)parentOperation;
+- (void)setParentOperation:(id)arg1;
+- (void)setRedirectURL:(id)arg1;
+- (void)setContentType:(id)arg1;
+- (long long)contentLength;
+- (id)contentType;
+- (void)setup;
 
 @end

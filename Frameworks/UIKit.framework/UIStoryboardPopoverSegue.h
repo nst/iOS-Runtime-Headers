@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPopoverController, UIBarButtonItem, UIView;
+@class UIView, NSArray, UIPopoverController, UIBarButtonItem;
 
 @interface UIStoryboardPopoverSegue : UIStoryboardSegue  {
     UIPopoverController *_popoverController;
+    NSArray *_passthroughViews;
     unsigned int _permittedArrowDirections;
     UIView *_anchorView;
     UIBarButtonItem *_anchorBarButtonItem;
@@ -21,7 +22,8 @@
     } _anchorRect;
 }
 
-@property(retain) UIPopoverController * popoverController;
+@property(readonly) UIPopoverController * popoverController;
+@property(setter=_setPassthroughViews:,copy) NSArray * _passthroughViews;
 @property(setter=_setPermittedArrowDirections:) unsigned int _permittedArrowDirections;
 @property(setter=_setAnchorBarButtonItem:,retain) UIBarButtonItem * _anchorBarButtonItem;
 @property(setter=_setAnchorView:,retain) UIView * _anchorView;
@@ -38,7 +40,8 @@
 - (void)_setAnchorView:(id)arg1;
 - (void)_setAnchorBarButtonItem:(id)arg1;
 - (void)_setPermittedArrowDirections:(unsigned int)arg1;
+- (void)_setPassthroughViews:(id)arg1;
 - (id)popoverController;
-- (void)_setPopoverController:(id)arg1;
+- (id)_passthroughViews;
 
 @end

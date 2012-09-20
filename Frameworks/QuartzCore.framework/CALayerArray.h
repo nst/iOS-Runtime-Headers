@@ -2,27 +2,31 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class CALayer;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class count;
 
 @interface CALayerArray : NSArray  {
-    struct _CALayerArrayIvars { 
-        CALayer **layers; 
-        unsigned int count; 
-        unsigned int capacity; 
-        unsigned long mutations; 
-        BOOL retained; 
+
+  /* Error parsing encoded ivar type info: {_CALayerArrayIvars="layers"^@"count"I"capacity"I"mutations"L"retained"c} */
+    /* Warning: unhandled struct encoding: '{_CALayerArrayIvars="layers"^@"count"I"capacity"I"mutations"L"retained"c}' */ struct _CALayerArrayIvars { 
+        count **layers; 
     } _ivars;
+
 }
 
 
-- (unsigned int)count;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
-- (void)getObjects:(id*)arg1;
-- (id)initWithLayers:(id*)arg1 count:(unsigned long)arg2 retain:(BOOL)arg3;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (unsigned int)count;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)getObjects:(id*)arg1;
+- (id)initWithLayers:(id*)arg1 count:(unsigned long)arg2 retain:(BOOL)arg3;
 
 @end

@@ -18,16 +18,16 @@
 + (void)makeReferencesToObjectWeak:(id)arg1;
 + (void)clearWeakReferencesToObject:(id)arg1;
 
-- (id)init;
-- (void)dealloc;
-- (void)setObject:(id)arg1;
-- (void)unlock;
-- (void)lock;
-- (id)object;
 - (void)_nativeObjectBecameWeakNotification:(id)arg1;
 - (void)setScriptObject:(id)arg1;
 - (id)scriptObject;
 - (void)setupNativeObject;
 - (void)destroyNativeObject;
+- (void)dealloc;
+- (id)init;
+- (void)setObject:(id)arg1;
+- (id)object;
+- (void)unlock;
+- (void)lock;
 
 @end

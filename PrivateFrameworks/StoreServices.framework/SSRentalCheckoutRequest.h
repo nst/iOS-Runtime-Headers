@@ -4,7 +4,7 @@
 
 @class NSNumber, NSArray;
 
-@interface SSRentalCheckoutRequest : SSRequest <SSCoding> {
+@interface SSRentalCheckoutRequest : SSRequest <SSXPCCoding> {
     NSNumber *_accountIdentifier;
     long long _downloadIdentifier;
     NSNumber *_rentalKeyIdentifier;
@@ -17,20 +17,17 @@
 @property(readonly) long long downloadIdentifier;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)sinfs;
+- (id)accountIdentifier;
 - (long long)downloadIdentifier;
 - (id)initWithDownloadIdentifier:(long long)arg1;
+- (id)sinfs;
 - (id)initWithAccountIdentifier:(id)arg1 rentalKeyIdentifier:(id)arg2;
-- (id)accountIdentifier;
+- (void)dealloc;
+- (id)init;
 - (id)rentalKeyIdentifier;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
-- (void*)copyXPCEncoding;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (id)copyPropertyListEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (void)startWithCompletionBlock:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)initWithSinfs:(id)arg1;
 
 @end

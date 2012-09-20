@@ -16,10 +16,10 @@
 - (BOOL)isExistenceScoped;
 - (BOOL)_isKeypathScopedToSubquery:(id)arg1;
 - (id)_generateSQLForVariableExpression:(id)arg1 inContext:(id)arg2;
-- (id)fetchIntermediateForKeypathExpression:(id)arg1;
 - (id)governingAliasForKeypathExpression:(id)arg1;
+- (id)fetchIntermediateForKeypathExpression:(id)arg1;
 - (id)governingEntityForKeypathExpression:(id)arg1;
-- (id)initWithPredicate:(id)arg1 inScope:(id)arg2;
 - (id)generateSQLStringInContext:(id)arg1;
+- (id)initWithPredicate:(id)arg1 inScope:(id)arg2;
 
 @end

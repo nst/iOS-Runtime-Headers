@@ -13,15 +13,15 @@
 @property(readonly) NSURL * fileURL;
 
 
-- (long long)expectedLength;
-- (id)init;
-- (void)dealloc;
-- (BOOL)hasBytesAvailable;
-- (id)initWithFileURL:(id)arg1;
-- (id)fileURL;
-- (void)close;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)open:(id*)arg1;
 - (void)_close;
+- (id)fileURL;
+- (id)initWithFileURL:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)close;
+- (BOOL)hasBytesAvailable;
+- (long long)expectedLength;
 
 @end

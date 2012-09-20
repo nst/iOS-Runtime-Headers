@@ -7,32 +7,25 @@
 @interface GLKEffectProperty : NSObject  {
     int _location;
     char *_nameString;
-    struct GLKEffectPropertyPrv { struct GLKBigInt_s {} *x1; struct GLKBigInt_s {} *x2; struct GLKBigInt_s {} *x3; struct GLKBigInt_s {} *x4; } *_prv;
+    struct GLKEffectPropertyPrv { struct GLKBigInt_s {} *x1; struct GLKBigInt_s {} *x2; struct GLKBigInt_s {} *x3; struct GLKBigInt_s {} *x4; id x5; } *_prv;
     char *_vshSource;
     char *_fshSource;
     unsigned long long _dirtyUniforms;
-    GLKEffect *_effect;
     unsigned char _masksInitialized;
+    GLKEffect *_effect;
 }
 
-@property GLKEffect * effect;
 @property int location;
 @property char * nameString;
 @property char * vshSource;
 @property char * fshSource;
 @property unsigned long long dirtyUniforms;
 @property unsigned char masksInitialized;
+@property GLKEffect * effect;
 
 + (void)logSetMasksWithLabel:(id)arg1 obj:(id)arg2 typeStr:(id)arg3;
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
-- (id)init;
-- (void)dealloc;
-- (void)bind;
-- (int)location;
-- (void)setLocation:(int)arg1;
-- (void)setNameString:(char *)arg1;
-- (char *)nameString;
 - (void)setFshSource:(char *)arg1;
 - (char *)fshSource;
 - (void)setVshSource:(char *)arg1;
@@ -42,15 +35,23 @@
 - (void)setVSHSource:(char *)arg1;
 - (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)vshMask;
 - (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)fshMask;
-- (void)setMasksInitialized:(unsigned char)arg1;
-- (void)initializeMasks;
 - (unsigned char)masksInitialized;
+- (void)setMasksInitialized:(unsigned char)arg1;
 - (void)setShaderBindings;
-- (bool)includeShaderTextForRootNode:(id)arg1;
+- (void)initializeMasks;
+- (bool)includeFshShaderTextForRootNode:(id)arg1;
+- (bool)includeVshShaderTextForRootNode:(id)arg1;
 - (unsigned long long)dirtyUniforms;
 - (void)setDirtyUniforms:(unsigned long long)arg1;
 - (void)dirtyAllUniforms;
+- (void)dealloc;
+- (id)init;
+- (int)location;
+- (void)bind;
+- (void)setLocation:(int)arg1;
 - (id)effect;
 - (void)setEffect:(id)arg1;
+- (char *)nameString;
+- (void)setNameString:(char *)arg1;
 
 @end

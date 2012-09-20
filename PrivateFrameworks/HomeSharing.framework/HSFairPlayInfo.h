@@ -5,6 +5,7 @@
 @class NSString, NSArray;
 
 @interface HSFairPlayInfo : NSObject  {
+    BOOL _hasValidMescalSession;
     void *_hwInfo;
     NSArray *_requestsToSign;
     void *_session;
@@ -13,19 +14,19 @@
 @property(readonly) NSString * deviceGUID;
 
 
-- (id)init;
-- (void)dealloc;
-- (id)securityInfoForURL:(id)arg1;
-- (id)deviceGUID;
 - (BOOL)setupMescalWithURL:(id)arg1 certificateURL:(id)arg2 requestsToSign:(id)arg3 userAgent:(id)arg4;
 - (void)endMescalSession;
 - (id)_hexStringForData:(id)arg1;
 - (BOOL)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1;
 - (id)processSignedResponseData:(id)arg1 withSignature:(id)arg2;
-- (id)signatureForData:(id)arg1;
 - (BOOL)shouldSignRequestAction:(id)arg1;
 - (id)continueNegotationWithData:(id)arg1 isComplete:(BOOL*)arg2;
 - (void)endSecuritySession;
 - (id)beginNegotiation;
+- (id)securityInfoForURL:(id)arg1;
+- (id)deviceGUID;
+- (void)dealloc;
+- (id)init;
+- (id)signatureForData:(id)arg1;
 
 @end

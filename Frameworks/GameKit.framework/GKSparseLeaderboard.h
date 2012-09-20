@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, GKPlayer, GKScore, GKGame, NSError, NSMutableArray;
+@class NSError, NSObject<OS_dispatch_queue>, GKGame, GKPlayer, NSMutableArray, GKScore, NSArray;
 
 @interface GKSparseLeaderboard : GKLeaderboard  {
     GKGame *_game;
@@ -14,81 +14,66 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _availableRange;
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     } _displayedRange;
-    NSArray *_availableScores;
     NSArray *_showcasedScores;
     unsigned int _maxLoaded;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
     } _currentRange;
+    NSMutableArray *_allScores;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_loadQueue;
     GKScore *_comparePlayerScore;
     NSError *_error;
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    } _oldRange;
-    NSMutableArray *_oldScores;
+    BOOL _loaded;
 }
 
 @property(retain) GKGame * game;
 @property(retain) GKPlayer * player;
 @property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } totalRange;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } availableRange;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } displayedRange;
-@property(retain) NSArray * availableScores;
 @property(retain) GKScore * comparePlayerScore;
 @property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } loadedRange;
 @property(readonly) BOOL displayLocalPlayer;
 @property(readonly) BOOL displayComparePlayer;
 @property(readonly) BOOL moreScoresAvailable;
 @property(readonly) BOOL showcasedScoresAdjacent;
+@property(readonly) BOOL loaded;
 @property(retain) NSError * error;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } oldRange;
-@property(retain) NSMutableArray * oldScores;
+@property(readonly) NSObject<OS_dispatch_queue> * loadQueue;
 
-+ (id)unionOldScoreArray:(id)arg1 withScoreArray:(id)arg2;
-+ (struct _NSRange { unsigned int x1; unsigned int x2; })rangeForScoreArray:(id)arg1;
 
-- (id)description;
-- (void)dealloc;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })oldRange;
 - (void)setDisplayedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })availableRange;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })totalRange;
+- (void)setPlayer:(id)arg1;
 - (id)scoresForPlayerIDs:(id)arg1;
 - (id)scoreForPlayerID:(id)arg1;
-- (void)purgeOldScores;
-- (void)loadScoresInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withCompletionHandler:(id)arg2;
-- (void)swapScores;
+- (unsigned int)indexOfScoreForPlayerID:(id)arg1;
 - (BOOL)showcasedScoresAdjacent;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeToLoadForRank:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })loadedRange;
 - (id)visibleScoreAtIndex:(unsigned int)arg1;
 - (BOOL)moreScoresAvailable;
-- (id)availableScores;
-- (unsigned int)indexOfScoreForPlayerID:(id)arg1;
+- (id)initWithGame:(id)arg1;
+- (void)addScores:(id)arg1;
+- (void)setError:(id)arg1;
 - (void)setComparePlayerScore:(id)arg1;
-- (void)setOldRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)setOldScores:(id)arg1;
-- (id)oldScores;
-- (void)setAvailableScores:(id)arg1;
+- (void)loadScoresForGame:(id)arg1 withCompletionHandler:(id)arg2;
+- (id)player;
+- (id)loadQueue;
 - (BOOL)displayComparePlayer;
 - (BOOL)displayLocalPlayer;
 - (id)scoreAtIndex:(unsigned int)arg1;
 - (id)showcasedScoreAtShowcaseIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })displayedRange;
 - (id)comparePlayerScore;
-- (id)player;
-- (void)setError:(id)arg1;
-- (id)initWithGame:(id)arg1;
-- (id)game;
-- (void)setPlayer:(id)arg1;
-- (id)error;
+- (id)placeholderScoresForRankRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withPlaceholderPlayerID:(id)arg2;
 - (void)setGame:(id)arg1;
+- (id)game;
+- (id)description;
+- (void)dealloc;
+- (BOOL)loaded;
+- (id)error;
 
 @end

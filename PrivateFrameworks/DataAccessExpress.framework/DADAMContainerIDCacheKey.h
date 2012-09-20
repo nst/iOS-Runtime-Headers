@@ -13,13 +13,13 @@
 @property(readonly) int dataclass;
 
 
-- (id)accountID;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithAccountID:(id)arg1 andDataclass:(int)arg2;
+- (id)accountID;
 - (int)dataclass;
 
 @end

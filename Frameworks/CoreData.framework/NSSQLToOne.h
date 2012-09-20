@@ -19,14 +19,14 @@
 - (void)_setForeignOrderKey:(id)arg1;
 - (id)initForReadOnlyFetchWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)initWithEntity:(id)arg1 inverseToMany:(id)arg2;
-- (BOOL)isVirtual;
-- (id)foreignEntityKey;
 - (id)foreignOrderKey;
+- (id)foreignEntityKey;
+- (BOOL)isVirtual;
 - (void)copyValuesForReadOnlyFetch:(id)arg1;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
-- (id)columnName;
-- (unsigned int)slot;
 - (id)foreignKey;
+- (unsigned int)slot;
+- (id)columnName;
 - (BOOL)isOptional;
 
 @end

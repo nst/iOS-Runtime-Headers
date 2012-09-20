@@ -28,7 +28,6 @@
 + (id)popoverViewContainingView:(id)arg1;
 
 - (void)dealloc;
-- (void)setPopoverController:(id)arg1;
 - (id)presentedActionSheet;
 - (void)setShowsContentViewHighlight:(BOOL)arg1;
 - (BOOL)showsContentViewHighlight;
@@ -36,8 +35,12 @@
 - (BOOL)showsBackgroundViewHighlight;
 - (void)setShowsBackgroundComponentHighlights:(BOOL)arg1;
 - (BOOL)showsBackgroundComponentHighlights;
+- (id)_viewForModalPresentationOfViewController:(id)arg1;
+- (void)_hideArrow;
+- (void)_showArrow;
 - (void)_setCornerRadius:(float)arg1;
 - (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 arrowOffset:(float)arg2;
+- (void)_layoutToolbarShine;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundViewClass:(Class)arg2;
 - (id)standardChromeView;
 - (int)backgroundStyle;
@@ -52,11 +55,11 @@
 - (void)_setIgnoreTapsInDimmingView:(BOOL)arg1;
 - (BOOL)_isIgnoringTapsInDimmingView;
 - (void)setPresentedActionSheet:(id)arg1;
-- (id)_viewForModalPresentationOfViewController:(id)arg1;
 - (id)popoverController;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_snapshotBounds;
 - (void)setArrowDirection:(unsigned int)arg1;
 - (unsigned int)arrowDirection;
+- (void)setPopoverController:(id)arg1;
 - (BOOL)_allowsCustomizationOfContent;
 - (id)toolbarShine;
 - (void)setUseToolbarShine:(BOOL)arg1;

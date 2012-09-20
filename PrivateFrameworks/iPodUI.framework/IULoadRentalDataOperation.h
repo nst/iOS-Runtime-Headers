@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IURentalData, SSRentalCheckoutRequest, NSLock, NSDictionary, NSRunLoop;
+@class IURentalData, NSDictionary, NSLock, NSRunLoop;
 
 @interface IULoadRentalDataOperation : NSOperation <SSRequestDelegate> {
     BOOL _didCheckOutKeys;
-    SSRentalCheckoutRequest *_existingCheckoutRequest;
     NSLock *_lock;
     int _reason;
     IURentalData *_rentalData;
@@ -19,16 +18,15 @@
 @property(readonly) NSDictionary * rentalInformation;
 
 
-- (void)main;
-- (void)cancel;
-- (id)init;
-- (void)dealloc;
 - (void)requestDidFinish:(id)arg1;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (void)main;
+- (void)cancel;
+- (void)dealloc;
+- (id)init;
 - (id)rentalInformation;
 - (id)rentalData;
 - (int)loadReason;
-- (id)initWithRentalData:(id)arg1 checkoutRequest:(id)arg2;
 - (id)initWithRentalData:(id)arg1;
 - (void)_delayedStopRunLoop:(id)arg1;
 - (id)_runLoop;
@@ -43,6 +41,6 @@
 - (BOOL)_checkOutRentalKeys;
 - (id)_rentalInformationFromMedia;
 - (void)_stopRunLoop;
-- (id)initWithRentalData:(id)arg1 checkoutRequest:(id)arg2 reason:(int)arg3;
+- (id)initWithRentalData:(id)arg1 reason:(int)arg2;
 
 @end

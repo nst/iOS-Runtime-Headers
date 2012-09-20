@@ -14,13 +14,10 @@
 + (id)queueWithArray:(id)arg1 error:(id*)arg2;
 + (id)avQueue;
 
-- (void)removeAllItems;
-- (BOOL)removeItem:(id)arg1;
-- (id)init;
-- (void)dealloc;
-- (BOOL)removeItemAtIndex:(unsigned int)arg1;
+- (id)initWithError:(id*)arg1;
 - (unsigned int)itemCount;
-- (id)itemAtIndex:(unsigned int)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)initWithArray:(id)arg1 error:(id*)arg2;
 - (BOOL)isBeingModified;
 - (void)removeItemsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -31,8 +28,11 @@
 - (void)itemWasAdded:(id)arg1 atIndex:(int)arg2;
 - (BOOL)insertItem:(id)arg1 atIndex:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)appendItem:(id)arg1 error:(id*)arg2;
+- (id)itemAtIndex:(unsigned int)arg1;
 - (BOOL)appendItemsFromArray:(id)arg1 error:(id*)arg2;
 - (int)_instantiateItem;
-- (id)initWithError:(id*)arg1;
+- (BOOL)removeItemAtIndex:(unsigned int)arg1;
+- (void)removeAllItems;
+- (BOOL)removeItem:(id)arg1;
 
 @end

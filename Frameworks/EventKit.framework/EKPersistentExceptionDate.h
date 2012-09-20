@@ -11,16 +11,16 @@
 @property(readonly) NSDate * date;
 @property(retain) EKPersistentCalendarItem * owner;
 
-+ (id)relations;
 + (id)exceptionDateWithDate:(id)arg1;
++ (id)relations;
 
-- (unsigned int)hash;
 - (id)description;
+- (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithExceptionDate:(id)arg1;
-- (int)entityType;
 - (id)date;
 - (void)setOwner:(id)arg1;
 - (id)owner;
+- (id)initWithExceptionDate:(id)arg1;
+- (int)entityType;
 
 @end

@@ -2,12 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardLayoutStar, UIKBTree, NSTimer, NSMutableDictionary;
+@class UIKeyboardLayoutStar, UIView, UIKBTree, UIKBKeyView, NSTimer, NSMutableDictionary;
 
 @interface UIKBKeyplaneView : UIView <UIKBCacheableView> {
     UIKBTree *_keyboard;
     UIKBTree *_keyplane;
     UIKeyboardLayoutStar *_layout;
+    UIView *_splitRight;
+    UIKBKeyView *_candidateGapView;
     NSMutableDictionary *_states;
     NSMutableDictionary *_subviewIndex;
     NSMutableDictionary *_activeViewIndex;
@@ -15,11 +17,13 @@
     NSMutableDictionary *_delayedDeactivationKeys;
     NSTimer *_activatedTimer;
     BOOL _performingDeactivation;
+    BOOL _shouldDrawRect;
 }
 
 @property(retain) UIKBTree * keyplane;
 @property UIKeyboardLayoutStar * layout;
 @property(readonly) BOOL cacheDeferable;
+@property(readonly) float cachedWidth;
 
 
 - (void)dealloc;
@@ -31,20 +35,23 @@
 - (id)containingViewForKey:(id)arg1 withState:(int)arg2;
 - (void)deactivateKey:(id)arg1;
 - (void)removeKeyFromDelayedDeactivationSet:(id)arg1;
-- (BOOL)keyIsMaskable:(id)arg1;
 - (void)scheduleDelayedDeactivation;
 - (void)performDelayedDeactivation:(id)arg1;
 - (void)cancelDelayedDeactivation;
+- (int)cornerMaskForKey:(id)arg1 recursive:(BOOL)arg2;
+- (BOOL)_shouldDrawLowResBackground;
 - (void)addKeyToDelayedDeactivationSet:(id)arg1;
 - (id)viewForKey:(id)arg1;
 - (void)deactivateKeys;
+- (void)updateDecorationViewsIfNeeded;
 - (void)setLayout:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 keyplane:(id)arg3;
 - (BOOL)validForKeyplane:(id)arg1 withVisualStyle:(int)arg2;
-- (void)purgeKeyViews;
 - (int)stateForKey:(id)arg1;
 - (void)setState:(int)arg1 forKey:(id)arg2;
+- (void)purgeKeyViews;
 - (void)purgeSubviews;
+- (float)cachedWidth;
 - (BOOL)cacheDeferable;
 - (id)cacheKey;
 - (id)keyplane;

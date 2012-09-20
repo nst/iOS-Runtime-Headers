@@ -7,16 +7,16 @@
     void *_context;
 }
 
-@property(readonly) void* context;
 @property(readonly) int property;
+@property(readonly) void* context;
 
 + (id)propertyGroupIdentifierWithProperty:(int)arg1 context:(void*)arg2;
 
-- (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithProperty:(int)arg1 context:(void*)arg2;
-- (void*)context;
 - (int)property;
+- (void*)context;
+- (id)initWithProperty:(int)arg1 context:(void*)arg2;
 
 @end

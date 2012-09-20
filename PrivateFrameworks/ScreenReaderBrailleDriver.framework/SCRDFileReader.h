@@ -12,12 +12,12 @@
 }
 
 
+- (void)invalidate;
 - (void)dealloc;
+- (void)start;
+- (BOOL)isValid;
 - (id)initWithDelegate:(id)arg1 fileHandle:(id)arg2;
 - (BOOL)hasStarted;
 - (void)_readHandler:(id)arg1;
-- (void)start;
-- (BOOL)isValid;
-- (void)invalidate;
 
 @end

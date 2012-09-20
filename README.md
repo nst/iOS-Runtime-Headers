@@ -1,6 +1,6 @@
 Here are iOS Objective-C headers as derived from runtime introspection.
 
-The headers were produced using [RuntimeBrowser for iPhone](https://github.com/nst/RuntimeBrowser/).
+The headers were generated using [RuntimeBrowser for iPhone](https://github.com/nst/RuntimeBrowser/).
 
 You can use the headers this way:
 
@@ -13,7 +13,7 @@ You can use the headers this way:
     NSLog(@"-- myPhoneNumber: %@", [tc myPhoneNumber]);
     NSLog(@"-- imei: %@", [tc imei]);
     
-Many other unique identifiers can be retrieved:
+Note that many other unique identifiers can be retrieved:
 
     Class AADeviceInfo = NSClassFromString(@"AADeviceInfo");
     NSLog(@"-- serialNumber: %@", [AADeviceInfo serialNumber]);
